@@ -11,7 +11,7 @@ parser: v2
 ---
 
 ## You will learn
-  - How to deploy your CAP business service on SAP Business Technology Platform (SAP BTP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
+  - How to deploy your CAP business service on SAP Business Technology Platform (SAP BTP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details
 
 ## Prerequisites
 - You have finished the tutorial [Create a CAP Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
