@@ -3,8 +3,8 @@ title: Extend SAP SuccessFactors on SAP BTP, Cloud Foundry Environment
 description: Extend SAP SuccessFactors with the task management sample application for SAP SuccessFactors solutions running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, software-product-function>sap-btp-command-line-interface, software-product-function>sap-btp-cockpit, products>sap-successfactors-hxm-suite]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, software-product-function>sap-btp-command-line-interface, software-product-function>sap-btp-cockpit, software-product>sap-successfactors-hxm-suite]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 author_name: Ekaterina Mitova
 author_profile: https://github.com/ekaterina-mitova
 ---
