@@ -1,5 +1,5 @@
 ---
-title: Set Up Account for Document Information Extraction and Go to Application
+title: Use Trial to Set Up Account for Document Information Extraction and Go to Application
 description: Get access to the Document Information Extraction Trial UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5

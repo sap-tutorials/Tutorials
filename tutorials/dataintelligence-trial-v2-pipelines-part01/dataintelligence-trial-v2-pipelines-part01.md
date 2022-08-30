@@ -1,8 +1,8 @@
 ---
 title: Generate Sensor Data in SAP Data Intelligence, Trial Edition
 description: Generate sensor data and display it in a terminal by using SAP Data Intelligence, Trial Edition.
-primary_tag: products>sap-data-intelligence
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+primary_tag: software-product>sap-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, software-product>sap-data-intelligence ]
 time: 15
 author_name: Roy Zhong
 author_profile: https://github.com/roy-zhong
@@ -27,7 +27,7 @@ As a result of the previous tutorial, you are logged as a `system` user to a `de
 
     !![Launchpad](datahub-trial-v2-pipelines-part01-0.png)
 
-2. While being in the **Graphs** tab in the **Navigation** on the left, click **Create Graph** to create a new pipeline. The pipeline opens in the **editor**.
+2. While being in the **Graphs** tab in the **Navigation** on the left, click **Create Graph** and **Use Generation 1 Operator** to create a new pipeline. The pipeline opens in the **editor**.
 
     !![Create Graph](datahub-trial-v2-pipelines-part01-1.png)
 

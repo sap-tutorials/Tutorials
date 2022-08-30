@@ -158,5 +158,4 @@ What is the numeric id of the Spatial Reference System that implements geodetic 
 ### Optional
 - Example: [ASCII art map of the World](https://blogs.sap.com/2017/02/13/ascii-art-map-of-the-world-using-sap-hana-geospatial-processing/)
 - Example: [Tell me where the center of Europe is](https://blogs.sap.com/2017/04/11/sap-hana-tell-me-where-the-center-of-europe-is/)
-- Read blog [Spatial Reference Systems – Background Knowledge and the use in SAP HANA](https://archive.sap.com/documents/docs/DOC-75363)
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a2ea357787c101488ecd1b725836f07.html)

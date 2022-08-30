@@ -434,6 +434,7 @@ See [Establish Trust Between SAP SuccessFactors and SAP BTP](https://help.sap.co
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 11: ](Configure the subaccount as a trusted service provider in SAP SuccessFactors)]
 
 To configure the subaccount as a trusted service provider in SAP SuccessFactors, you have to create an **SAP SuccessFactors Extensibility** service instance using the **sso-configuration** service plan.

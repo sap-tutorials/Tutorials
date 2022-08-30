@@ -84,15 +84,17 @@ To automate a web application, you need to: capture, declare and test the applic
 [ACCORDION-BEGIN [Step 4: ](Capture application to automate)]
 > The artifact of type Application lets you capture an application and its screens for use in automations. Capturing means identifying the applications you want to control in an automation.
 
-1. In the **Untitled** new application tab, choose the `Browse Orders` application.
+1. In the **Untitled** new application tab, select the **Filter** icon. A **Filter running screens** pop-up opens, select **Web** as Technology. Choose Filter.
+
+    !![Filter](Filter.png)
+
+2. Choose the `Browse Orders` application.
+
+3. Select **Capture Application** and then **Capture** to start capturing the application. It will take a few seconds.
 
     !![Choose Browse Orders](Choose Browse Orders.png)
 
-2. Choose **Capture** to start capturing the application. It will take a few seconds.
-
-    !![Capture Browse Orders](Capture Browse Orders.png)
-
-3. The captured application is visible under the **Declared Application** section.
+4. The captured application is visible under the **Declared Application** section.
 
     !![Browse Orders application](Browse Orders application.png)
 

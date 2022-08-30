@@ -27,7 +27,7 @@ time: 30
 
 It's now time to switch to SAP HANA as a database and prepare your project for an MTA deployment to SAP BTP Cloud Foundry. To continue with this tutorial you need to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
-> ### Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
+> Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
 1. If `cds watch` is still running in VS Code, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
@@ -90,6 +90,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
     cf login
     ```
 
+    > For this you need the cf command line client, see the prerequisites.
 
     > This will ask you to select Cloud Foundry API, org, and space.
 
@@ -110,12 +111,18 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```Shell/Bash
     mbt build -t gen --mtar mta.tar
     ```
+
+    > For this you need the MBT Build Tool, see the prerequisites.
+
     The `-t` option defines the target folder of the build result as the `gen` folder of your project. As part of this build implicitly `cds build --production` is executed. This implicit build uses then all the configuration you've added in the step 1.2 when using `--for production`.
 
 2. Deploy the archive using `cf deploy`.
     ```Shell/Bash
     cf deploy gen/mta.tar
     ```
+
+    > For this you need the MultiApps CF CLI plugin, see the prerequisites.
+
     During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
 
     > This process takes some minutes. In this one step the archive is uploaded to Cloud Foundry, service instances are created, the applications are staged, and then deployed to their target runtimes.

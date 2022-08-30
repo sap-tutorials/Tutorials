@@ -23,22 +23,32 @@ primary_tag: software-product>sap-hana-cloud
 [ACCORDION-BEGIN [Step 1: ](Debugger)]
 The debugger can be used to help find issues in procedures, functions, or anonymous blocks.  The steps below demonstrate how to use the debugger to debug a procedure.
 
-  1. To start a debugging session, navigate to the procedure `RESERVATION_GENERATOR`, right-click, and select **Open For Debugging**.
+1. To start a debugging session, navigate to the procedure `RESERVATION_GENERATOR`, right-click, and select **Open For Debugging**.
 
     ![Open For Debugging](OpenForDebugging.png)
 
-
-  2. From the **Debugger Attach Options** dialog, ensure that **SQL console connections** is selected.  
+2. From the **Debugger Attach Options** dialog, ensure that **SQL console connections** is selected.  
 
     ![Debugger Attach Options](DebuggerAttachOptions.png)
 
-    >Note that anonymous blocks can also be debugged if the **Stop at execution start** option is checked.
+    >Note that anonymous blocks can also be debugged if the **Stop at execution start** option is checked.  An example of an anonymous block is shown below.
 
-  3. Set breakpoints in the procedure by clicking next to the line number.  A check mark will appear next to the line number to  indicate that a breakpoint has been set.
+    >
+    ```SQL
+    DO BEGIN
+        USING SQLSCRIPT_PRINT AS PRTLIB;
+        DECLARE count INT := 0;
+        SQLQUERY = SELECT count(*) C from HOTEL.MAINTENANCE;
+        SELECT C INTO count from :SQLQUERY;
+        PRTLIB:PRINT_LINE(CONCAT('Entries in the maintenance table is: ', count));
+    END
+    ```
+
+3. Set breakpoints in the procedure by clicking next to the line number.  A check mark will appear next to the line number to  indicate that a breakpoint has been set.
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
+4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -46,7 +56,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Run call statement](ExecuteCallStatement.png)
 
-  5. When the breakpoint is hit, execution will suspend.
+5. When the breakpoint is hit, execution will suspend.
 
     ![Debugger Suspended](DebuggerSuspended.png)
 
@@ -54,7 +64,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Variables](DebuggerVariables.png)
 
-  6. Execution can be continued by using the navigation icons at the top of the debugger. The debugging session can be stopped by using the detach icon.
+6. Execution can be continued by using the navigation icons at the top of the debugger. The debugging session can be stopped by using the detach icon.
 
     ![Debugger Navigation Icons](DebuggerNavigationIcons.png)
 
@@ -174,7 +184,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
     * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
-3. Right-click the procedure and choose **Analyze SQLScript Code**.
+6. Right-click the procedure and choose **Analyze SQLScript Code**.
 
     Notice that only one warning remains
 
@@ -199,7 +209,7 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
     WITH HINT (IGNORE_PLAN_CACHE);
     ```
 
-    > Notice that a hint is provided which indicates that if a query plan is found in the cache it is ignored.
+    > Notice that a hint is provided which indicates that if a query plan is found in the cache, it should be ignored.
 
     ![Reservations by Hotel](explainPlanSQL.png)
 
@@ -223,7 +233,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 1. Run the following SQL.
 
     ```SQL
-    SELECT HOTEL_NAME, count(*) AS "NUMBER OF RESERVATIONS" FROM HOTEL.RESERVATION_VIEW group by HOTEL_NAME order by HOTEL_NAME;
+    SELECT HOTEL_NAME, COUNT(*) AS "NUMBER OF RESERVATIONS" FROM HOTEL.RESERVATION_VIEW GROUP BY HOTEL_NAME ORDER BY HOTEL_NAME;
     ```
 
     ![Reservations by Hotel](explainPlanSQL.png)
@@ -234,32 +244,32 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     Once the file has been saved it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
 
-    * Visual Studio
+    * In Visual Studio Code:
 
-        Install the plugin
+        * Install the plugin
 
-        ![VS Code Ex](vsCodeExtension.png)
+            ![VS Code Ex](vsCodeExtension.png)
 
-        Add the plan file
+        * Add the plan file
 
-        ![Add Plan File](VSCodeAddPlanFile.png)
+            ![Add Plan File](VSCodeAddPlanFile.png)
 
-    * SAP Business Application studio
+    * In SAP Business Application Studio:
 
-        Add the additional extension
+        * Add the additional extension
 
-        ![performance tools plugin](bas-sql-analyzer.png)
+            ![performance tools plugin](bas-sql-analyzer.png)
 
-        Add the plan file
+        * Add the plan file
 
-        ![Add plan file](bas-add-plan-file.png)
+            ![Add plan file](bas-add-plan-file.png)
 
 
 3. If using an on-premise edition, choose **Analyze | Analyze SQL** to execute the SQL and to view graphically how the SQL was executed.  Alternatively, choose to download the `plv` file and open it in the SQL Analyzer in Visual Studio Code or the SAP Business Application Studio.
 
     ![Analyze SQL](SQLAnalyzer0.png)  
 
-4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the time it took to compile and execute the SQL statement, the peak memory, the result record count and accessed tables.
+4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the time it took to compile and execute the SQL statement, the peak memory, the result record count, and accessed tables.
 
     ![SQL Analyzer](SQLAnalyzerNew.png)
 
@@ -267,7 +277,8 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![timeline](SQLAnalyzer2New.png)
 
->Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/1458a4079b294a58a57eca5823025108.html) and [SQL Analyzer Extension](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/50bc09af2fa549c3ace4178b61056da8.html) for more information.
+>Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/1458a4079b294a58a57eca5823025108.html) and [SQL analyzer tool for SAP HANA](https://help.sap.com/docs/HANA_SQL_ANALYZER) for more information.
+
 
 ---
 
@@ -335,8 +346,6 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 5. Examine the trace file.
 
     ![Open Trace File](openTrace.png)
-
-    >Note that in SP 12 and older versions of the database explorer, the file can be found under the `other` folder rather than the `sqltrace` folder.
 
     The SQL queries that return information about the memory being used by the HANA instance can be viewed in the file.  For example, the highlighted query is one such SQL request.
 
@@ -432,7 +441,69 @@ The SAP HANA database provides a set of monitoring views enabling access to the 
     >Notice above that the modification section can be used to set the begin and end time.
 
 
-Congratulations! You have now explored many of the available tools in the SAP HANA database explorer to help diagnose or debug.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Data lake Relational Engine diagnostic files)]    
+
+A data lake Relational engine can contain log files, query plans, and audit files.
+
+1. Log files and query plans can be located and viewed as shown below.
+
+    ![Show Files](showFilesRE.png)
+
+    If the log file is clicked on it can be opened or if it is selected, it can be downloaded.
+
+2. The logs can also be accessed through SQL.
+
+    ```SQL
+    CALL sp_list_directory('/diag/logs');
+    SELECT * FROM sa_split_list(cast( READ_SERVER_FILE('/diag/logs/<file_path>') as long varchar ), '\n');
+    ```
+
+    Additional details can be found at [Diagnostic Logs for Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8937bea84f21015a80bc776cf758d50/02e694dff4c44c0db8e1b3783d599d6b.html).
+
+3. Query plans can be enabled, configured, and viewed.
+
+    ```SQL
+    SET TEMPORARY OPTION Query_Plan_As_HTML = 'ON';
+    SET TEMPORARY OPTION QUERY_DETAIL = 'ON';
+    SET TEMPORARY OPTION QUERY_TIMING  = 'ON';
+    SELECT * FROM HOTEL.TOURIST_REVIEWS WHERE DESTINATION_RATING = 5;
+    SET TEMPORARY OPTION QUERY_DETAIL = 'OFF';
+    SET TEMPORARY OPTION QUERY_TIMING  = 'OFF';
+    SET TEMPORARY OPTION Query_Plan_As_HTML = 'OFF';
+    ```
+
+    ![Download Query Plan](DownloadQueryPlan.png)
+
+    The query plan can be downloaded and viewed in a browser.
+
+    ![data lake query plan](DLQueryPlan.png)
+
+    Additional details can be found at [Generating Query Plans](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8982cc084f21015a7b4b7fcdeb0953d/a606f4e784f210159f4dfa0340fac977.html).
+
+4. Audit logs can be enabled, configured, and viewed.
+
+    Additional details can be found at [Configuring Auditing](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8982cc084f21015a7b4b7fcdeb0953d/a606f4e784f210159f4dfa0340fac977.html).
+
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'On';
+    CALL sa_enable_auditing_type( 'all' );
+    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+    CALL sa_audit_string( 'yyz3 Started audit testing here.' );
+    SET OPTION PUBLIC.auditing = 'Off';
+    SELECT * FROM SYSOPTIONS where "option" like '%audit%';
+    CALL sp_list_directory('/diag/audit');
+    SELECT * FROM sp_list_etd_files('*');
+    SELECT * FROM sp_read_etd( 'audit_log_20220726_115854.382_mpx-writer-0-0.etd' ) WHERE event_data LIKE '%yyz%';
+    ```
+
+    ![Viewing an audit log](audit.png)
+
+    For additional methods such as using the HDLFSCLI to access logs, see [View your SAP HANA Cloud, data lake Diagnostic Files and Audit Logs](data-lake-customer-facing-diagnostic-files).
+
+Congratulations! You have now explored many of the available tools in the SAP HANA database explorer that help to debug and diagnose.
 
 [VALIDATE_1]
 [ACCORDION-END]

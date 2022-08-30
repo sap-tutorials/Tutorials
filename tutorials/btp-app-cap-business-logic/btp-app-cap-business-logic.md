@@ -11,18 +11,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
+ - For this tutorial, you have two options:
+     - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-ui-fiori-elements`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-fiori-elements) branch.
+    - Complete the previous tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) with all its prerequisites.
 
 ## Details
 ### You will learn
  - How to add custom code to your application
 
-
-
-To start with this tutorial use the result in the [`create-ui-fiori-elements`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-fiori-elements) branch.
 
 ---
 

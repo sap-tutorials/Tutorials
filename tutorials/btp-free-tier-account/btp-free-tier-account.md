@@ -4,14 +4,14 @@ description: Sign up for a productive account on SAP Business Technology Platfor
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
-primary_tag: software-product-function>sap-btp-cockpit
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 ## Prerequisites
-- To activate your consumption-based SAP BTP global account with free tier service plans, you need:
-    - an **e-mail address**
-    - and a **credit card** for authentication and eventually later for billing purposes.
-    **Note:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
+To activate your consumption-based SAP BTP global account with free tier service plans, you need:
+  - an **e-mail address**
+  - and a **credit card** for authentication and eventually later for billing purposes.
+  > **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
 
 ### How Does Free Tier Work?
@@ -21,6 +21,7 @@ The global account you will create in this tutorial gives you access to a produc
 If you want to know which services currently offer free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings under **Free Tier Services**.
 
 !![SAP Discovery Center](btp-free-tier-account-dc.png)
+
 
 If you're interested in further information about Free Tier, or if you want to exchange information with other users, explore the [BTP Community Topic page](https://community.sap.com/topics/business-technology-platform).
 
@@ -39,11 +40,10 @@ Start your SAP journey in the SAP Store and create an account for the SAP Store.
 
 1. Visit the [SAP Store](https://store.sap.com/dcp/en/product/display-9999951781_live_v1/SAP%20Business%20Technology%20Platform).
 
-2. Scroll down to **Plans and Pricing** and select **Start Now**.
-> If you already have an existing user for the SAP Store, select **Manage Orders**.
+2. Scroll down to **Plans and Pricing**. Select **Based on Usage** > **Add to Cart**.
 
 2. You are now being asked to register your account. Select **Register**.
-    > If you already have an account on www.sap.com (e.g. a P, S, C, D or I number), you can enter your account details or the associated e-mail address along with your password. Select **Continue**.
+    > If you already have an account on www.sap.com (for example, a P, S, C, D or I number), you can enter your account details or the associated e-mail address along with your password. Select **Continue**.
 
     !![Register at sap.com](free-tier-btp-register.png)
 
@@ -225,11 +225,10 @@ As a last step, you now need to create a space to develop in.
 
 You will receive a success message "Space created successfully."
 
+**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
+
+
 [VALIDATE_5]
 [ACCORDION-END]
-
----
-
-**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
 
 ---
