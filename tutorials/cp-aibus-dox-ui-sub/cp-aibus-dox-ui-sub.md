@@ -1,5 +1,5 @@
 ---
-title: Subscribe to Document Information Extraction Trial UI
+title: Use Trial to Subscribe to Document Information Extraction Trial UI
 description: Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 10
