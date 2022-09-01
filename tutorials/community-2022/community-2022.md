@@ -44,7 +44,7 @@ In the following, you will get an overview of the SAP Community homepage.
 
 [ACCORDION-BEGIN [Step 2: ](Your Profile)]
 
-We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you'll miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
+We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you will miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
 
 1. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Account** feature)
 
