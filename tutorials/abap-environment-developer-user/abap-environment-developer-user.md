@@ -33,6 +33,9 @@ To be connected to your system in ADT, expose an ABAP service and consume this s
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Log in to SAP Fiori Launchpad as administrator)]
+
+If you do not have already an existing ADT project, you need to find the URL to the launchpad in the BTP cockpit. For more information see the [link] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/11e765e8af6d476f99ce014b3f02bd64.html). Otherwise you can use the existing project to find out the launchpad link as follows:
+
  1. Open Eclipse and do right click on your system and navigate to **Properties**.
 
     ![Open Eclipse](Picture17.png)

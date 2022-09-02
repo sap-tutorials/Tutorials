@@ -5,8 +5,8 @@ title: Extend SAP S/4HANA Cloud on SAP BTP, Cloud Foundry Environment
 description: Extend SAP S/4HANA Cloud with an extension application running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, tutorial>license, products>sap-business-technology-platform, topic>cloud, products>sap-s-4hana-cloud]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-s-4hana-cloud]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 ---
 
 ## Prerequisites
@@ -16,8 +16,8 @@ primary_tag: products>sap-btp--cloud-foundry-environment
     - [Cloud Foundry Command Line Interface (cf CLI)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html?q=cf%20CLI)
     - [git](https://git-scm.com/download/)
  - On SAP BTP side:
-    - You have either an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) or a [trial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) global account in SAP BTP.
-    - You have an S-user or P-user (if you are using an enterprise global account), and a trial user (if you are using a trial account). See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
+    - You have a [global account](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d61c2819034b48e68145c45c36acba6e.html#loiod61c2819034b48e68145c45c36acba6e) in SAP BTP.
+    - You have an S-user or P-user. See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
     - You are an administrator of the global account where you want to register your SAP S/4HANA Cloud system.
     - You have enabled the Cloud Foundry capabilities for your subaccount in SAP BTP.
  - On SAP S/4HANA Cloud side:

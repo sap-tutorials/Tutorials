@@ -181,7 +181,7 @@ And your application like this:
     </Card>
     ```
 
-    We didn't pass a value to `headerInteractive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
+    We didn't pass a value to `interactive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
 
 2.  To make the header react to a click, add a function as value to the `onClick` prop.
 

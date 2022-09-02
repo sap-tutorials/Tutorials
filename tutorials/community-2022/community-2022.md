@@ -44,7 +44,7 @@ In the following, you will get an overview of the SAP Community homepage.
 
 [ACCORDION-BEGIN [Step 2: ](Your Profile)]
 
-We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you'll miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
+We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you will miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
 
 1. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Account** feature)
 
@@ -88,7 +88,7 @@ As just mentioned, you can follow a tag from the topic page to get notified (via
 
 1. Click the blue **Follow** button on the topic page.
 
-    ![topic_page_overview](topic_page_overview.png) 
+    ![topic_page_overview](topic_page_overview.png)
 
 2. Some topic pages have multiple tags mapped (there can be up to 7 tags). In such a case you can choose which tags you would like to follow:
 
@@ -144,6 +144,8 @@ To get full insights into the features of Q&A, watch this video.
 
 When you follow a question, activities related to the question, such as comments and/or answers will appear in your [Activity Stream](https://activities.sap.com/). Depending on your [Communication settings](https://people.sap.com/#communications), you will also get notified via e-mail and/or your SAP Community inbox.
 
+> Keep in mind: To ensure harmonious interactions amongst each other, it is important to understand the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) that will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post.
+
 [DONE]
 [ACCORDION-END]
 
@@ -165,7 +167,11 @@ To get full insights into the features of Blogging, watch this video.
 
 When you follow a blog post, activities related to the blog post (such as comments) will appear in your **Activity Stream**.  Depending on your [Communication settings](https://people.sap.com/#communications), you will also get notified via e-mail and/or your SAP Community inbox.
 
-There is one prerequisite before you can start blogging: In order for your blogging permissions to change from **Subscriber** to **Contributor** ([learn more](https://community.sap.com/resources/blogging)), you need to receive the **Hello World** badge. You will be awarded the **Hello World** badge by performing at least one of the **`follow activities`** mentioned during the previous steps (follow person, follow tag, follow question, follow blog post). Learn more under [Missions & Badges](https://community.sap.com/resources/missions-badges).
+There is one prerequisite before you can start blogging: In order for your blogging permissions to change from **Subscriber** to **Contributor** ([learn more](https://community.sap.com/resources/blogging)), you need to receive the **Hello World** badge. You will be awarded the **Hello World** badge by performing at least one of the **`follow activities`** mentioned during the previous steps (follow person, follow tag, follow question, follow blog post). Find out more under [Missions & Badges](https://community.sap.com/resources/missions-badges). Simply log out and log back into your SAP user account from the [Blogging area](https://blogs.sap.com/) to see the changes in your blogging permissions. Go to the [Write a Blog Post](https://blogs.sap.com/wp-admin/post-new.php) page to confirm your permissions.
+
+If your blogging permissions haven't changed or you have other questions related to this tutorial, please contact <a href="mailto:community@sap.com">community@sap.com</a>.
+
+> Keep in mind: To ensure harmonious interactions amongst each other, it is important to understand the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) that will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post.
 
 [DONE]
 [ACCORDION-END]
@@ -183,7 +189,7 @@ To learn more about community Events, watch this video.
 
 The new event listings make it easy for you to save the event to your calendar. Let your fellow community members know when you will be attending an event and see who else is coming.
 
-  ![event_listing](event_listing.png)
+  ![event_listing_2](event_listing_2.png)
 
 Explore a variety of different events, such as SAP Community Call, SAP CodeJam, and SAP Inside Track and indicate whether you will be attending the event.
 

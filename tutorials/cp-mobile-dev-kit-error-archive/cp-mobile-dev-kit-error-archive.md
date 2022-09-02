@@ -56,14 +56,16 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img-1.3.png)    
+    !![MDK](img-1.3.png)  
+
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDK_ErrorArchive` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_ErrorArchive` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -89,9 +91,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.5.png)
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
-
-    Since you will create an offline based app, hence **Enable Offline** option is selected.        
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. Since we have Enable Offline set to Yes, the generated application will be offline enabled in the MDK Mobile client.
 
 6. In *Data Collections* step, unselect `Customers`, select `Suppliers`, `PurchaseOrderHeaders` and `PurchaseOrderItems`.
 
@@ -524,11 +524,11 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 8: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-8.1.png)
 
@@ -536,7 +536,7 @@ The On-boarding QR code is now displayed.
 
 !![MDK](img-8.2.png)
 
->Leave the Onboarding dialog box open for step 9.
+>Leave the Onboarding dialog box open for the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -550,7 +550,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.1.png)
 
@@ -600,7 +600,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.9.png)
 
