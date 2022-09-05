@@ -26,18 +26,20 @@ To set up the API Management capability from Integration Suite, you should first
 
 1. Log on to SAP BTP Cockpit and navigate to your subaccount.
 
-2. Navigate to **Service Marketplace**, search for the **Integration Suite** tile and choose **Create**.
+2. In the navigation area of the subaccount, choose **Services** > **Service Marketplace**. Search for **Integration Suite** and choose **Create**.
    !![Integration Suite Tile](Isuite-tile.png)
 
-3. On the **New Instances and Subscriptions** dialog, select the **Service** and the **Plan** from the dropdown list and choose **Create**.
+3. On the **New Instances and Subscriptions** dialog, select the **Service** and the **Plan** and choose **Create**.
+   Wait for the subscription to complete successfully.
    !![Create Integration Suite Subscription](Isuite-create.png)
 
 4. Choose **View Subscription** on the **Creation in Progress** dialog.
    !![Creation of Integration Suite Subscription in Progress](View-Subscription.png)
+   Check the status of the submission in subscriptions section on the **Instances and Subscriptions** page. If the subscription is successful you'll notice the status of the **Integration Suite** shown as **Subscribed**.
 
-   You have successfully subscribed to the Integration Suite.
+   To access Integration Suite, you must first assign the "Integration Provisioner" role to yourself.
 
-  >**IMPORTANT** After subscribing to the Integration Suite, don't immediately choose **Go to Application**. To access Integration Suite, you must first assign the "Integration Provisioner" role to yourself. If you choose **Go to Application** without assigning the **Integration Provisioner** role, an application authentication error appears. If the error persists after assigning the role, clear your web browser cache, and log out of the application and log in again.
+>**IMPORTANT** If you choose **Go to Application** without assigning the **Integration Provisioner** role, an application authentication error appears. If the error persists after assigning the role, clear your web browser cache, and log out of the application and log in again.
 
 
 [VALIDATE_1]
@@ -89,6 +91,7 @@ To set up the API Management capability from Integration Suite, you should first
 6. Log out of **Integration Suite**.
 
 >**IMPORTANT** At this stage, navigate back to the **SAP BTP Cockpit** and assign the **APIManagement.Selfservice.Administrator** role to the user. This role is required to configure API Management service in Integration Suite. To assign the role, choose **Security** > **Users** and select the user to whom you want to assign the role. Under **Role Collections** section, choose **Assign Role Collection**. In the resulting dialog box, select the **APIManagement.Selfservice.Administrator** role and choose **Assign Role Collection**.
+   !![Assigning the APIManagement.Selfservice.Administrator role](apim-selfservice-role.png)
 
 
 
