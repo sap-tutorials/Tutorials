@@ -4,7 +4,7 @@ description: Add a classic SAP UI app (like those typically run by SAP customers
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
