@@ -110,7 +110,7 @@ The code builds a model using the [California Housing Dataset](https://scikit-le
 
 [ACCORDION-BEGIN [Step 4: ](Transform your AI code into a Docker image)]
 
-In the same directory, create a file named `Dockerfile` with has **no extension**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content **exactly** as it is, into the file:
+In the same directory, create a file named `Dockerfile` with **no extension**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content **exactly** as it is, into the file:
 
 ```TEXT
 # Specify which base layers (default dependencies) to use

@@ -399,7 +399,7 @@ aws configure
 
 Enter your AWS credentials. Note that the appearance of the screen will not change as you type. You can leave the `Default output format` entry as blank. Press **enter** to submit your credentials.
 
-Your credentials are stored in your system and used by the AWS CLI to interact with AWS. Fore more informaiton, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+Your credentials are stored in your system and used by the AWS CLI to interact with AWS. Fore more information, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
 [DONE]
 [ACCORDION-END]
