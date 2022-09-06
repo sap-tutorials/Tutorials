@@ -64,7 +64,7 @@ Link your cloud providers to SAP Cloud Appliance Library. This step is described
 
 Open the SAP Cloud Appliance Library in your web browser using the following link: <https://cal.sap.com>.
 
-If you are a first-time user of SAP Cloud Appliance Library, familiarize yourself with its basic concepts and how to work with the user interface by reading the [documentation](https://lkgstatic.hana.ondemand.com/res/~1522937040047~/docEN/6381cffb595143db8d4d7314afa0ae65.html).
+If you are a first-time user of SAP Cloud Appliance Library, familiarize yourself with its basic concepts and how to work with the user interface by reading the [documentation](https://calstatic.hana.ondemand.com/res/docEN/729e7cfaa8c84423b89ba81b0a7ff974.html).
 
 [DONE]
 
