@@ -1,5 +1,5 @@
 ---
-title: Setting Up API Management from Integration Suite
+title: Set Up API Management from Integration Suite
 description: Use this tutorial to provision the API Management capability from  Integration Suite.
 auto_validation: true
 time: 15
@@ -44,7 +44,6 @@ To set up the API Management capability from Integration Suite, you should first
 
 [VALIDATE_1]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Assign the Integration Provisioner Role)]
 
