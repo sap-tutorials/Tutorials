@@ -1,5 +1,5 @@
 ---
-title: Use Free Tier to Create a Service Instance for Personalized Recommendation
+title: Use Free Tier to Create a Service Instance for Personalized Recommendation 
 description: Create a service instance and the associated service key for Personalized Recommendation using the free tier service plan.
 auto_validation: true
 time: 15

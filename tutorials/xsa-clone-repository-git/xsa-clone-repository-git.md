@@ -2,12 +2,12 @@
 title: SAP HANA XS Advanced, Connecting to the WebIDE and cloning a Git Repository to begin development
 description: Part 1 of 3, Connect to Web IDE and Clone a Git Repository to begin development
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
+tags: [  tutorial>beginner, programming-tool>html5, products>sap-hana, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
- - [Get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/sap-hana-express.html)
+ - [Get your own instance of SAP HANA, express edition with XS Advanced](https://community.sap.com/topics/hana)
 
 ## Details
 SAP HANA XS Advanced is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures. To begin with you will need see how to connect to the SAP Web IDE for SAP HANA and clone a Git Repository.

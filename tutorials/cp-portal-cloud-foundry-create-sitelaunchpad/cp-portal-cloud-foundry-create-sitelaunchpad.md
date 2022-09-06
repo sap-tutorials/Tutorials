@@ -4,7 +4,7 @@ description: Create a launchpad site to which you can later add business apps.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, products>sap-launchpad-service ]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -22,7 +22,7 @@ In this tutorial we'll create a launchpad site for a recruiting company called `
 
 When you access the SAP Launchpad service, the Site Directory is in focus. From here you'll create your new site.
 
-> Note: in the side panel of the SAP Launchpad service, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites. The fourth icon opens **Settings** where you can configure various settings related to the SAP Launchpad service.
+> In the side panel of the SAP Launchpad service, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Channel Manager** where you manage different channels that expose business content that you can integrate into your launchpad sites. The fourth icon opens **Settings** where you can configure various settings related to the SAP Launchpad service.
 
 
 1. Click **Create Site**.

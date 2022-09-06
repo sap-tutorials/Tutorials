@@ -273,7 +273,7 @@ Now simulate locally business partner creation and update, and see the results:
     > Can't run the `curl` command?
 
     > * If you encounter any errors running the `curl` command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
-    > * If you still like to use a different command line interpreter, here is a useful tutorial on how to [Install cURL](iot-cf-install-curl).
+    > * If you still like to use a different command line interpreter, you can use cURL. For MacOS cURL should already be available, for Windows see the instructions on how to install [cURL](https://chocolatey.org/packages/Curl).
 
 
 4. Refresh the page and choose **Go** again. You will see a new risk in the table.
