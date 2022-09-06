@@ -4,7 +4,7 @@ description: Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
