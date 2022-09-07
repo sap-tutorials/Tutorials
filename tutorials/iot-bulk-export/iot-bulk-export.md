@@ -10,7 +10,7 @@ time: 30
 ## Prerequisites
  - Your tenant is onboarded in or after SAP IoT 2010b release.
  - You created an application and a device model.
- - You onboarded (virtual) devices and are send data with timestamps across multiple days or weeks.
+ - You have onboarded (virtual) devices and have enabled them to send data with timestamps over a period of several days or weeks.
    <ul> <li>For testing purpose, you can ingest data for a week so that you have a considerable amount of data for further analysis.</li></ul>
 
 ## Details
