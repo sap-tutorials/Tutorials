@@ -99,7 +99,8 @@ Locate your ***SAP AppGyver*** subscription and click to **open** the applicatio
 
 ![Open Appgyver](Open_Appgyver.png)
 
-You're now in the Application Development lobby, from which you will create an AppGyver project in the following tutorials.  
+You're now in the Application Development lobby, from which you will create an AppGyver project in the following tutorials.
+
 
 [DONE]
 [ACCORDION-END]
