@@ -2,8 +2,8 @@
 title: Set Up SAP Data Intelligence, Trial Edition
 description: Create a solution instance of SAP Data Intelligence 3.0, Trial Edition.
 auto_validation: true
-primary_tag: products>sap-data-intelligence
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+primary_tag: software-product>sap-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, software-product>sap-data-intelligence ]
 time: 240
 ---
 
