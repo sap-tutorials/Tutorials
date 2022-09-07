@@ -2,7 +2,7 @@
 title: Export Time Series Data
 description: Export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
 auto_validation: true
-tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform, products>sap-hana-cloud]
+tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, software-product>sap-edge-services, software-product>sap-iot-services-for-sap-btp, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
 primary_tag: topic>internet-of-things
 time: 30
 ---
