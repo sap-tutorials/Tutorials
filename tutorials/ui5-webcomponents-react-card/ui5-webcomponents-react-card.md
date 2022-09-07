@@ -3,8 +3,8 @@ title: Create a Card Component
 description: Define your first component using UI5 Web Components for React.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+tags: [ tutorial>beginner, software-product>sap-fiori]
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
@@ -181,7 +181,7 @@ And your application like this:
     </Card>
     ```
 
-    We didn't pass a value to `headerInteractive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
+    We didn't pass a value to `interactive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
 
 2.  To make the header react to a click, add a function as value to the `onClick` prop.
 

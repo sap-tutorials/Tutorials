@@ -2,8 +2,8 @@
 title: Create a Customer Record in an MDK App
 description: Allow the user to create a customer record in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -22,7 +22,6 @@ author_profile: https://github.com/jitendrakansal
 If you didn't follow the prerequisite then you may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
 
 ---
-
 
 ![MDK](img_1.gif)
 
@@ -49,9 +48,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
     Now, you will add the fields (like first name, last name, phone, email address & date of birth) for creating a new customer record by the end-user.
 
-4. In the Layout Editor, expand the **Control** | **Container Item** section.
-
-    Drag and drop a **Simple Property** onto the Page area.
+4. In the Layout Editor, expand the **Controls** section, drag and drop a **Simple Property** onto the Page area.
 
     !![MDK](img_1.4.gif)
 
@@ -97,9 +94,12 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreateEmail` |
     | `Caption` | `Email` |
+    | `KeyboardType` | `Email` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img-1.9.png)
+
+    >[`KeyboardType`](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/SimpleProperty.schema.html#keyboardtype) streamlines the data entry. When entering an email address, it would display the email address keyboard in mobile clients.
 
 10. Drag and drop a **Date Picker** control onto the page area for date of birth parameter.
 
@@ -298,10 +298,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-6.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test the application)]
+[ACCORDION-BEGIN [Step 7: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 
@@ -309,7 +313,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, click **+** icon to create a new record.
+2. Tap **Customer List**, click **+** icon to create a new record.
 
     ![MDK](img_7.1.png)
 
@@ -325,7 +329,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On Main page, tap **SYNC**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_7.4.png)
 
@@ -365,7 +369,7 @@ Deploy the updated application to your MDK client.
 
     >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img-7.11.png)
+    >!![MDK](img-7.11.png)   
 
 2. Click **Customer List**, click **+ Add** icon to create a new record.
 
@@ -373,7 +377,11 @@ Deploy the updated application to your MDK client.
 
 3. Enter the values, and click **Save**.
 
-    !![MDK](img_7.13.gif)
+    !![MDK](img_7.13.png)
+
+    Local record gets created accordingly.
+
+    !![MDK](img_7.14.png)
 
 [OPTION END]
 
@@ -391,9 +399,5 @@ You can cross verify if a record has been updated in the backend.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a Customer Record and you are now all set to [delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 ---

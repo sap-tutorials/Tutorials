@@ -4,13 +4,15 @@ description: Create a connection between SAP BTP, Cloud Foundry environment and 
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
-- You've created an account on the Gateway Demo System: [Create an Account on the Gateway Demo System](gateway-demo-signup). Note that when you create your account, make a note of the user name and password that you entered -- you'll be needing it in this tutorial.
+- You've created an account in SAP BTP and have subscribed to and configured the SAP Launchpad service.
+
+
 
 ## Details
 ### You will learn
@@ -22,13 +24,17 @@ author_profile: https://github.com/LindsayBert
 
 [ACCORDION-BEGIN [Step 1: ](Open your subaccount)]
 
-1. Log on to SAP BTP and click **Enter Your Trial Account**.
+1. Log on to SAP BTP.
 
-    !![Log on to SAP Cloud Platform](1-enter-trial-account.png)
+2. Select your subaccount.
 
-2. Click on the **trial** tile to navigate to your trial subaccount in the SAP BTP cockpit. If you're using your own subaccount, you can select it instead.
+    !![Select subaccount](2-click-trial.png)
 
-    !![Click trial account](2-click-trial.png)
+> If you're using an SAP BTP Trial account, after you log in to SAP BTP, you would first need to click **Go To Your Trial Account**.  !![Enter trial account](1-enter-trial-account.png)
+
+
+
+
 
 [DONE]
 [ACCORDION-END]
@@ -67,7 +73,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 5. Enter the following **Additional Properties** depending on your scenario. Click the **New Property** button each time to add a new property.
 
-    >If you are not sure which ones to enter, enter all of them.
+    >If you're not sure which ones to enter, enter all of them.
 
     |  Field     | Value
     |  :------------- | :-------------

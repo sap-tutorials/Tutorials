@@ -3,16 +3,16 @@ title: Get Started with UI5 Web Components for React
 description: Start building a React web application leveraging UI5 Web Components for React.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+tags: [ tutorial>beginner, software-product>sap-fiori]
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
 
 
 ## Prerequisites
-- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **16.8.0 or higher** )
-- [Node.js](https://nodejs.org/), **version 12 or later** (check the version with `node -v`)
+- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **16.14.0 or higher** )
+- [Node.js](https://nodejs.org/), **version 14 or later** (check the version with `node -v`)
 
 
 ## Details
@@ -68,7 +68,9 @@ With this you created your first `React` component. To actually render the compo
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Embed your new component)]
 
-1. In `App.js` remove everything inside of the `<ThemeProvider>`. You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
+1. In `App.js` remove everything inside of the `<ThemeProvider>` (or [React.Fragment](https://reactjs.org/docs/fragments.html) `<></>`). You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
+
+> If the `ThemeProvider` is not present in this file, please look in the `index.js` file to see if the component is there. If it is, you do not need to use it here as well, otherwise please continue as described.
 
 2. Import your created component.
 
@@ -92,7 +94,7 @@ Your `App.js` file should now look like this:
 ```JavaScript  / JSX
 import React from "react";
 import { MyApp } from "./MyApp";
-import { ThemeProvider } from "@ui5/webcomponents-react/dist/ThemeProvider";
+import { ThemeProvider } from "@ui5/webcomponents-react";
 
 function App() {
   return (

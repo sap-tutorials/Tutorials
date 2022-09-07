@@ -12,7 +12,7 @@ author_profile: https://github.com/mervey45
 ## Prerequisites
 - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
 - You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
+- You have a **subaccount and dev space US East (VA) as region**
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
 ## Details
@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create a trial user
   - How to create an ABAP Cloud project
 
-You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+You should have a subaccount on Cloud Foundry Trial with **US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
 
 This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials, each of which will earn you a badge:
 
@@ -40,7 +40,7 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
     !![Trial global account](trial_home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Please select **Europe (Frankfurt) or US (VA) as a region**. Your user profile will be set up for you automatically.  
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Please select **US East (VA) as a region**. Your user profile will be set up for you automatically.  
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -90,7 +90,7 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
       ![Create ABAP cloud project](project2x.png)
 
   3. Enter your **connection settings**:
-     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)
+     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. US East (VA)
      - Email: your email address
      - Password: your password    
 
@@ -129,8 +129,64 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Alternative 2: Create ABAP cloud project)]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+You can also create your ABAP cloud project with a service key. For that, follow the instruction:
+
+  1. Log in to [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+
+  2. Select your **trial** subaccount.
+
+      ![Create ABAP cloud project](keytrial.png)
+
+  3. Click **Instances and Subscriptions**.
+
+      ![Create ABAP cloud project](keytrial2.png)
+
+  4. Select **Instances**, navigate to **`default_abap-trial`** and select the arrow on the right side.
+
+      ![Create ABAP cloud project](keytrial3.png)
+
+  5. Select **Service Key**, the menu and click **Download**.
+
+      ![Create ABAP cloud project](keytrial4.png)
+
+      Now your service key gets downloaded. You can use it in the next steps.
+
+  6. Switch to Eclipse and select **File** > **New** > **Other** > **ABAP Cloud Project** and click **Next >**.
+
+      ![Create ABAP cloud project](cloud.png)
+
+  7. Select **Use a Service Key** and click **Next >**.
+
+      ![Create ABAP cloud project](key5.png)
+
+  8. Paste your service key and click **Next >**.
+
+      ![Create ABAP cloud project](key6.png)
+
+  9. Click **Open Logon Page in Browser**.
+
+      ![Create ABAP cloud project](key7.png)
+
+ 10. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
+
+     Go back to ADT.
+
+      ![Create ABAP cloud project](project52.png)
+
+      Click **Finish**.
+
+
+  7. Your trial system appears on the project explorer.
+
+      ![Create ABAP cloud project](project62.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -140,7 +196,3 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 After completing this mission, you might be interested in the next in the series: [Create and Expose a CDS-Based Data Model With SAP BTP ABAP Environment](mission.cp-starter-extensions-abap)
 
 ---
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-trial-onboarding" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

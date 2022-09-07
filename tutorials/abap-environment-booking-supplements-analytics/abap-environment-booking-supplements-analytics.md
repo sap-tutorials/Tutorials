@@ -3,7 +3,7 @@ title: Develop Queries Based on Booking Supplement and Consume on SAP Analytics 
 description: Develop analytical queries based on booking supplements from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 auto_validation: true
 time: 60
-tags: [ tutorial>advanced, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>advanced, programming-tool>abap-connectivity, products>sap-business-technology-platform, software-product>sap-analytics-cloud, tutorial>license]
 primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter

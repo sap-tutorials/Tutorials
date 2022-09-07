@@ -146,7 +146,7 @@ CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / World Mercator"
  STORAGE FORMAT 'Internal';
 ```
 
-Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://www.epsg.org) that you can search and download if needed.
+Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://epsg.org) that you can search and download if needed.
 
 Once SQL statements above are executed successfully you should see these new `SRS` ids in `ST_SPATIAL_REFERENCE_SYSTEMS` view.
 
@@ -158,5 +158,4 @@ What is the numeric id of the Spatial Reference System that implements geodetic 
 ### Optional
 - Example: [ASCII art map of the World](https://blogs.sap.com/2017/02/13/ascii-art-map-of-the-world-using-sap-hana-geospatial-processing/)
 - Example: [Tell me where the center of Europe is](https://blogs.sap.com/2017/04/11/sap-hana-tell-me-where-the-center-of-europe-is/)
-- Read blog [Spatial Reference Systems – Background Knowledge and the use in SAP HANA](https://archive.sap.com/documents/docs/DOC-75363)
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a2ea357787c101488ecd1b725836f07.html)

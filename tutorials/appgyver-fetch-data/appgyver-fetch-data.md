@@ -1,18 +1,18 @@
 ---
-title: Fetch Data from Public API to your AppGyver Application
-description: In this tutorial, you will learn how to configure your application to fetch records from a public API when a food item is scanned. This is achieved using a Get Record command, which first needs to be configured.
+title: Fetch Data from Public API to Your AppGyver Application
+description: Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, tutorial>license, topic>mobile]
-primary_tag: products>sap-business-technology-platform
-author_name: Tom Beck
-author_profile: https://github.com/heytombeck
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-appgyver
+author_name: Akseli Virtanen
+author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
 - Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
 - Previously followed the steps provided in [Connect your AppGyver Application to a Public API](appgyver-connect-publicapi)
-- Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://itunes.apple.com/us/app/appgyver/id1311492157) / [Android](https://play.google.com/store/apps/details?id=com.appgyver.agclient)
+ - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 ## Details
 ### You will learn
@@ -23,7 +23,7 @@ In the previous tutorial, you learned how to connect your application to a publi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Remove Alert Component)]
+[ACCORDION-BEGIN [Step 1: ](Remove alert component)]
 
 Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
 
@@ -40,7 +40,7 @@ Remove the ***Alert*** component from your logic panel, as this is no longer nee
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Get Record Component)]
+[ACCORDION-BEGIN [Step 2: ](Add Get Record component)]
 
 You now need to add your new logic flow for what should happen after the barcode has been scanned. For your application, you want the barcode scanner to fetch data from the data resource you configured in the previous tutorial.
 
@@ -56,7 +56,7 @@ Add a connector from the top Scan QR/barcode option to the Get Record option, in
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Edit Binding)]
+[ACCORDION-BEGIN [Step 3: ](Edit binding)]
 
 Once the logic flow is set, you need to bind the information to the output of the scanner node.
 
@@ -82,7 +82,7 @@ The Get Record flow function should now be able to fetch data for any food barco
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Data Variables)]
+[ACCORDION-BEGIN [Step 4: ](Add data variables)]
 
 You now need to configure your application to store the data it receives. To do this, you need to add data variables.
 
@@ -123,7 +123,7 @@ The data variables are now configured for your application.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set Data Variable for Scan Button)]
+[ACCORDION-BEGIN [Step 5: ](Set data variable for scan button)]
 
 Now click **View** to switch back to your application interface view. From here, you will need to add the final piece to your logic flow.
 
@@ -145,14 +145,26 @@ Now, click the **Set data variable** element and click **Currently bound to: obj
 
 ![Currently bound](currently_bound_option.png)
 
-Select **Output value of another node** and then choose the following:
+Now you must store the data you just retrieved to the data variable.
 
-- ***Select logic node***: Get record
-- ***Select node output***: Record
+>**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
-![Link text e.g., Destination screen](select_get_record.png)
+-  Select **Output value of another node** and then choose the following:
 
-Then click **Save** to save this logic.
+    - ***Select logic node***: Get record
+    - ***Select node output***: Record
+
+    ![Link text e.g., Destination screen](select_get_record.png)
+
+- Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
+
+    Select **Formula**, and then enter for the formula the following:
+
+    ```
+    outputs["Get record"].record
+    ```
+
+Then click **Save** to save this logic (no matter how you entered it).
 
 ![Save the logic](save_data_variable.png)
 

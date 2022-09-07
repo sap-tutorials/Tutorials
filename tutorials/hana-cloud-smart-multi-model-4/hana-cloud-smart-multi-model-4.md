@@ -19,7 +19,7 @@ primary_tag: products>sap-hana-cloud
 - How to create a circle to identify a relevant area in your spatial data
 - How to flag nodes of the transportation network located in a circle
 
-
+ 
 In this tutorial, you will learn how to identify a relevant area in your spatial data.
 Now that you know the distance from your location to the target destination you want to go to, your next task is to find a route in the transportation network. Instead of finding the path while considering the whole transportation network, it is more useful to first select a meaningful sub-network that represents only the area of the network relevant to your route.
 

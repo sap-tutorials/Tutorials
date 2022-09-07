@@ -5,8 +5,8 @@ title: Extend SAP S/4HANA Cloud on SAP BTP, Cloud Foundry Environment
 description: Extend SAP S/4HANA Cloud with an extension application running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, tutorial>license, products>sap-business-technology-platform, topic>cloud, products>sap-s-4hana-cloud]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-s-4hana-cloud]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 ---
 
 ## Prerequisites
@@ -16,8 +16,8 @@ primary_tag: products>sap-btp--cloud-foundry-environment
     - [Cloud Foundry Command Line Interface (cf CLI)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html?q=cf%20CLI)
     - [git](https://git-scm.com/download/)
  - On SAP BTP side:
-    - You have either an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) or a [trial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) global account in SAP BTP.
-    - You have an S-user or P-user (if you are using an enterprise global account), and a trial user (if you are using a trial account). See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
+    - You have a [global account](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d61c2819034b48e68145c45c36acba6e.html#loiod61c2819034b48e68145c45c36acba6e) in SAP BTP.
+    - You have an S-user or P-user. See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
     - You are an administrator of the global account where you want to register your SAP S/4HANA Cloud system.
     - You have enabled the Cloud Foundry capabilities for your subaccount in SAP BTP.
  - On SAP S/4HANA Cloud side:
@@ -51,33 +51,33 @@ Using this application, you can:
 
 To do that, you must register your SAP S/4HANA Cloud system in your global account in SAP BTP. During this process, an integration token is created and then used by the SAP S/4HANA Cloud system tenant administrator to configure the integration on the SAP S/4HANA Cloud system side.
 
-1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape** > **Systems**.
+1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape**.
 
-2. In the **Systems** panel, choose **Register System**.
+2. In the **Systems** tab, choose **Add System**.
 
-    ![In the **Systems** panel, choose **Register System**.](screenshots.png/1-systems-view.png)
+    ![In the **Systems** panel, choose **Add System**.](screenshots.png/1-systems-view-new.png)
 
-3. In the **Register** System dialog box:
+3. In the **Add System** dialog box:
 
     - Enter a name for the system you want to register.
 
         >Use only printable ASCII characters.
 
-        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view.png)
+        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view-new.png)
 
     - In the **Type** dropdown list, select the system type.
 
-        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view.png)
+        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view-new.png)
 
-    - Choose **Register**.
+    - Choose **Add**.
 
         > SAP BTP generates an integration token that the tenant administrator of the extended SAP S/4HANA Cloud system uses when configuring the integration between your SAP S/4HANA Cloud system and the cloud platform on the respective SAP S/4HANA Cloud system side.
 
-4. Copy the integration token. You need it for configuring the integration on the extended SAP S/4HANA Cloud system side.
+4. To get a token to register this system with global account, choose **Get Token**. You need it for configuring the integration on the extended SAP S/4HANA Cloud system side.
 
-5. Close the dialog box.
+5. Copy the registration token and close the dialog box.
 
-    > The SAP S/4HANA Cloud system appears in the list of registered systems. Its status is **Pending** because the registration process is not yet completed.
+    > The SAP S/4HANA Cloud system appears in the list of added systems. Its status is **Pending** because the registration process is not yet completed.
 
 [DONE]
 [ACCORDION-END]
@@ -100,13 +100,13 @@ To do that, you must register your SAP S/4HANA Cloud system in your global accou
 
     > The status of the integration should have changed to **Enabled**.
 
-6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **Systems** page, check if the status of the SAP system has changed to **Registered**.
+6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **System Landscape** page, check if the status of the SAP system has changed to **Registered**.
 
-    > If you are already on the **Systems** page, refresh the page to check if the status has changed.
+    > If you are already on the **System Landscape** page, refresh the page to check if the status has changed.
 
     > You can register a system only once with the same name per global account.
 
-    ![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view.png)
+    ![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view-new.png)
 
 [DONE]
 [ACCORDION-END]

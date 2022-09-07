@@ -3,8 +3,8 @@ title: Deploy MSSQL in the Kyma Runtime
 description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -168,6 +168,7 @@ Run the following commands from the `database-mssql` directory using your CLI.
     ```Shell/Bash
     kubectl create namespace dev
     ```
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
 2. Apply the `PersistentVolumeClaim`:
 
@@ -210,16 +211,16 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 1.  Confirm the port on which the Pod is listening:
 
     ```Shell/Bash
-    kubectl get pod mssql-6df65c689d-qdj4r -n dev --template="{{(index (index .spec.containers 0).ports 0).containerPort}}"
+    kubectl get pod mssql-6df65c689d-qdj4r -n dev -o jsonpath="{.spec.containers[*].ports}"
     ```
 
-    This command should return:
+    This command should return the ports of two containers existing within the pod:
 
     ```Shell/Bash
-    1433
+    [{"containerPort":15090,"name":"http-envoy-prom","protocol":"TCP"}] [{"containerPort":1433,"protocol":"TCP"}]
     ```
 
-2. Apply the port-forward to the Pod:
+2. Apply the port-forward to the Pod using the port 1433 used by the MSQL Deployment:
 
     ```Shell/Bash
     kubectl port-forward mssql-6df65c689d-qdj4r -n dev 1433:1433

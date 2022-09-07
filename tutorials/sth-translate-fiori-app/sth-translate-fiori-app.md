@@ -4,13 +4,13 @@ author_profile: https://github.com/beapasch
 title: Translate an SAP Fiori App
 description: Use SAP Translation Hub to translate your SAP Fiori app.
 auto_validation: true
-primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5, tutorial>license ]
+primary_tag: software-product>sap-translation-hub
+tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5, tutorial>license ]
 time: 10
 ---
 
 ## Prerequisites  
-  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
+  - **IMPORTANT:** This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ time: 10
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
-To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
+To go to the overview screen of the SAP BTP cockpit, choose your user ID at the top of the screen.
 
 ![Choose user ID](sth-translate-fiori-app-choose-user-ID.png)
 
@@ -29,7 +29,7 @@ To go to the overview screen of the SAP Cloud Platform cockpit, choose your user
 
 [ACCORDION-BEGIN [Step 2: ](Locate SAP Translation Hub in the cockpit)]
 
-Choose **Services** and locate the **SAP Translation Hub** tile by searching for **`transl`**. Then choose the tile.
+Choose **Services** and locate the **SAP Translation Hub** tile by searching for **`trans`**. Then choose the tile.
 ![Locate SAP Translation Hub](sth-prep-locate-STH.png)
 
 [DONE]
@@ -38,7 +38,7 @@ Choose **Services** and locate the **SAP Translation Hub** tile by searching for
 
 [ACCORDION-BEGIN [Step 3: ](Open SAP Translation Hub)]
 
-In the service description for SAP Translation Hub, choose **Go to UI for Translation Workflow**.
+In the **Take Action** section for SAP Translation Hub, choose **Go to UI for Translation Workflow**.
 
 ![Open SAP Translation Hub](sth-translate-fiori-app-go-to-sth.png)
 
@@ -72,7 +72,7 @@ Now you need to specify the Git details in the **Git Repository Details**:
 
 Field Name | Value
 :-------------  | :-------------
-Git Server | **SAP Cloud Platform**
+Git Server | **SAP BTP**
 Application Name | **`sampleshop`**
 Branch | **master**
 Path to Properties File | **`webapp/i18n/i18n.properties`**
@@ -143,7 +143,7 @@ Enter your Git password and choose **Submit**.
 
 To see the translations in SAP Web IDE, you need to pull the translations from the Git repository.
 
-In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.shop`) of your project.
+In SAP Web IDE select the root folder `sample.shop` of your project.
 
 Open the Git pane by choosing the icon under the magnifying glass at the right of the screen. Confirm that `sample.shop` appears under **Repository** and then choose **Pull**.
 

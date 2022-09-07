@@ -1,9 +1,9 @@
 ---
-title: Subscribe to Document Information Extraction Trial UI
+title: Use Trial to Subscribe to Document Information Extraction Trial UI
 description: Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -24,16 +24,13 @@ After completing the prerequisite tutorial [Create Service Instance for Document
 
     !![DOX-UI](enter-trial-account.png)
 
-
 2. On the navigation side bar, click **Service Marketplace**.
 
     !![DOX-UI](access-service-marketplace.png)
 
-
 3. Search for **Document Information Extraction Trial UI** and click the tile.
 
     !![DOX-UI](tile.png)
-
 
 4. Click **Create**.
 
@@ -53,29 +50,17 @@ The subscription will now be created. Click on **View Subscription** to go to th
 
 [ACCORDION-BEGIN [Step 2: ](Assign role collection)]
 
-1. Go back to your global account page and choose the `trial` tile to access your subaccount.
+1. Under **Security**, click **Users** and then the **Actions** arrow.
 
-    !![DOX-UI](enter-trial-account.png)
+    !![DOX-UI](users.png)    
 
-2. Click **Trust Configuration**.
-
-    !![DOX-UI](trust-config.png)
-
-
-3. Click **Default identity provider**.
-
-    !![DOX-UI](default.png)
-
-
-4. Enter your email address and click **Show Assignments**.
-
-    !![DOX-UI](show-assigments.png)
-
-
-5. Click **Assign Role Collection**, choose **`Document_Information_Extraction_UI_Admin_User_trial`** to access all the features available in the UI application and click **Assign Role Collection**.
+2. Click **Assign Role Collection**.
 
     !![DOX-UI](role-collection.png)
 
+3. Choose **`Document_Information_Extraction_UI_Admin_User_trial`** to access all the features available in the UI application and click **Assign Role Collection**.
+
+    !![DOX-UI](assign-role-collection.png)
 
 You're now assigned to the **`Document_Information_Extraction_UI_Admin_User_trial`** role collection.
 
@@ -87,7 +72,7 @@ You're now assigned to the **`Document_Information_Extraction_UI_Admin_User_tria
 
 [ACCORDION-BEGIN [Step 3: ](Go to application)]
 
-Go back to the **Instances and Subscriptions** page, click on your subscription and then click **Go to Application** to open the app.
+Go back to **Instances and Subscriptions**, click the dots to open the menu and select **Go to Application** to open the app.
 
 !![DOX-UI](go-to-app.png)
 

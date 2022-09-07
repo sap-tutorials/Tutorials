@@ -5,8 +5,8 @@ title: Access Data from Google BigQuery in SAP HANA Cloud, SAP HANA Database
 description: Create a remote connection to Google BigQuery in SAP HANA Cloud, SAP HANA database to virtualize data.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

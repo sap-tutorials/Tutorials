@@ -3,8 +3,8 @@ title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -24,7 +24,7 @@ primary_tag: products>sap-hana-cloud
 
     ![open SQL console](open-sql-console.png)
 
-2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click the **...** button.  There are options to connect, disconnect, or change the connection.
+2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click the **...** icon.  There are options to connect, disconnect, or change the connection.
 
     ![Connected SQL console](connectedSQLConsole.png)  
 
@@ -45,41 +45,51 @@ primary_tag: products>sap-hana-cloud
 
     > The unique constraint violation error is expected and is used here to demonstrate how the results of SQL execution are shown.
 
-6. The **Messages** tab displays information about the executed queries as well as any errors.
+6. The results of a query can be downloaded and exported.
+
+      ![Download Table Results](DownloadResults.png)
+
+7. The **Messages** tab displays information about the executed queries as well as any errors.
 
     ![Messages Tab](MessagesTab.png)
 
-7. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
+    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
+
+8. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 
     ![History Tab](HistoryTab.png)
 
-8. Reload the page.  Notice that when the database explorer re-loads, the SQL console tab and the  statements it has last run are shown, minus contents of the result, messages, and history tab.  
+9. Reload the page.  Notice that when the SAP HANA database explorer re-loads, the SQL console tab and the  statements it has last run are shown, minus contents of the result, messages, and history tab.  
 
     ![After reloading](AfterReloading.png)
 
     This behavior can be set via the SQL console preferences which is shown in more detail in Step 5: SQL console preferences.
 
-9. Sometimes you need to execute a SQL statement that takes a long time to run--longer than you want to keep your browser open.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
+10. Sometimes you need to execute a SQL statement that takes a long time to run--longer than you want to keep your browser open.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
 
-10. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details button.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
+11. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details icon.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
 
     ![View Results](ViewResults.png)
 
-11. The SAP HANA database explorer provides the ability to run a query against multiple databases.
+12. The SAP HANA database explorer provides the ability to run a query against multiple databases.
 
     ![Run Against Multiple Databases](RunOnMultipleDatabases.png)
 
-12. The below dialog enables multiple databases to be selected.
+13. The below dialog enables multiple databases to be selected.
 
     ![Database Groups](DatabaseGroups.png)
 
-13. To view the results of a query run on multiple databases, open the Background Activities Monitor, select the query to view the result of, and then choose the Open Details button.
+14. To view the results of a query run on multiple databases, open the Background Activities Monitor, select the query to view the result of, and then choose the Open Details icon or Download icon.
 
     ![Multiple Databases Result](MultipleDatabasesResult.png)
 
-14. Returned results in HTML, XML, JSON, or binary can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
+    The Download icon provides the results in a JSON document.
+
+    ![Downloaded results](SQLResultsJSON.png)
+
+15. Returned results in HTML, XML, JSON, extended well-known binary formatted spatial data, or binary data can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
 
     ```SQL
     SELECT
@@ -95,9 +105,7 @@ primary_tag: products>sap-hana-cloud
 
     ![JSON Viewer](ViewJSON.png)
 
-15. The results of a query can be downloaded and exported.
-
-      ![Download Table Results](DownloadResults.png)
+    To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
 [DONE]
 [ACCORDION-END]
@@ -116,16 +124,17 @@ primary_tag: products>sap-hana-cloud
 
     |  Action     | Shortcut
     |  :------------- | :-------------
-    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Add Comment Block           | `Ctrl+Shift+/`
+    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Format Code    | `Ctrl+B`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
-    |  Close Window   | `Ctrl+W`
-    |  Run All | `F8`
-    |  Run Statement | `F9`
-    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
+    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Run All | `F8`
+    |  Run Statement | `F9`
+    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Text Completion | `Ctrl+Space` (requires two or more characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 
@@ -139,7 +148,7 @@ primary_tag: products>sap-hana-cloud
 
     To exit full screen, double-click the SQL console tab again.
 
-5. When the Run button is pressed with a portion of the statements selected, only the selected statements are run.  In the example below, only the SELECT statement was run.  
+5. When the Run icon is pressed with a portion of the statements selected, only the selected statements are run.  In the example below, only the SELECT statement was run.  
 
     ![run selected](runSelected.png)
 
@@ -270,7 +279,7 @@ primary_tag: products>sap-hana-cloud
 
 The statement library contains a mix of pre-populated system statements and user-saved statements.
 
-1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** button.
+1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** icon.
 
     ```SQL
     /*
@@ -302,7 +311,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     >Previously, some of the included system statements came from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  If you wish to add these, they can be downloaded from the SAP Note referenced above and added as user statements.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
 
-5. To run a statement, select one from the statement library and click the **Open in SQL Console** button.
+5. To run a statement, select one from the statement library and click the **Open in SQL Console** icon.
 
     ![Execute Statement](ExecuteStatement.png)
 
@@ -313,7 +322,8 @@ The statement library contains a mix of pre-populated system statements and user
     >Files can then be shared using a version control system such as git.
 
 6. User-defined statements can be edited. From the Statement library, select the desired statement to open it within the SQL console and make the desired changed. Select **Add to Statement Library** to overwrite the previous statement.
-![Update Statement](UpdateStatement.png)
+
+    ![Update Statement](UpdateStatement.png)
 
 
 Congratulations! You have now explored selected features of the SQL console.

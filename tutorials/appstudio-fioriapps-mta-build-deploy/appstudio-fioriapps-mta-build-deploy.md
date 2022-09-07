@@ -3,8 +3,8 @@ title: Build and Deploy Your SAP Fiori App to SAP Business Technology Platform
 description: Build and deploy your SAP Fiori MTA project to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, topic>sapui5, products>sap-btp-cloud-foundry-environment]
-primary_tag: products>sap-business-application-studio
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-fiori, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment]
+primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
@@ -35,7 +35,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
     <br><br>!![build mta](BAS-Build-1-.png)
 
-    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
+    >The build process creates a multi-target archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
 
     !![terminal mbt build results](BAS-Build-2-.png)
 
@@ -56,9 +56,17 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     !![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. When prompted, select the API endpoint, provide your credentials, organization, and space for your project.
+3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials, and click **Sign in**.
 
-    !![Logged in to CF](BAS-CF-Login-3-.png)
+    !![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
+
+4. Select the Cloud Foundry organization, Cloud Foundry space, and click **Apply**.
+
+    !![Cloud Foundry Login dialog](BAS-CF-Login-4-.png)
+
+    >**You have been logged in.** notification appears at the bottom-right of your screen.
+
+    >!![Logged in to CF](BAS-CF-Login-5-.png)
 
 [DONE]
 [ACCORDION-END]
@@ -100,12 +108,12 @@ Run the deployed app on SAP BTP. The steps below show you how to access your new
     ```
     !![pwd](BAS-Access-App-On-CF-3-.png)
 
-3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-dest-srv`.
+3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-destination-service`.
 
 4. Execute the following command in the terminal to get the details of the deployed application and its URL:
 
     ```Shell/Bash
-    cf html5-list -di FioriDemo-dest-srv -u -rt launchpad
+    cf html5-list -di FioriDemo-destination-service -u -rt launchpad
     ```
 
     !![details of deployed app on CF](BAS-Access-App-On-CF-4-.png)

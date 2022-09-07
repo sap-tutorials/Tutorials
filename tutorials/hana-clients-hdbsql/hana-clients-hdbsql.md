@@ -3,8 +3,8 @@ title: Create a User, Tables and Import Data Using SAP HANA HDBSQL
 description: Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>sql]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>sql]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -86,15 +86,16 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         REM Show the command help for the sapgenpse
         sapgenpse -h
         REM SECDIR environment variable is required when using the commoncrypto library
-        set SECUDIR=C:/SAP/hdbclient/
+        set SECUDIR=C:/SAP/hdbclient
         REM Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
         REM Press enter twice to not provide a pin
         sapgenpse gen_verify_pse -p "%SECUDIR%/sapcli.pse"
+        REM if the above command fails, try using the -log option for additional output.
         >```
 
         >```Shell (Windows)
         REM Add the certificate to the PSE
-        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt
         REM View the contents of the PSE
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
         REM Connect using the SAP commoncrypto library rather than OpenSSL.
@@ -239,7 +240,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables and import data)]
+[ACCORDION-BEGIN [Step 4: ](Create tables and insert data)]
 
 1. Exit HDBSQL by entering \q.
 
@@ -437,57 +438,96 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![result](select.png)
 
-For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
+    View the list of created objects.
+
+    ```SQL
+    \dt HOTEL.
+    \dp HOTEL.
+    ```
+
+     ![View the list of tables and procedures](list-tables-procs.png)
+
+    For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
 
 
-> ### Some Tips
+    > ### Some Tips
 
->Note that the identifiers such as table names are automatically upper cased unless they are within "".  
->
-```SQL
-SELECT * FROM HoTeL.RoOm;  --succeeds
-SELECT * FROM "HoTeL"."RoOm"; --fails
-SELECT * FROM "HOTEL"."ROOM"; --succeeds
-```
+    >Note that the identifiers such as table names are automatically upper cased unless they are within "".  
+    >
+    ```SQL
+    SELECT * FROM HoTeL.RoOm;  --succeeds
+    SELECT * FROM "HoTeL"."RoOm"; --fails
+    SELECT * FROM "HOTEL"."ROOM"; --succeeds
+    ```
 
->For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
-> ---
+    > ---
 
->Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
+    >Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
 
->```SQL
-DELETE FROM HOTEL.CITY;
-DROP TABLE HOTEL.CITY;
-DROP SCHEMA HOTEL CASCADE;
-DROP USER USER1 CASCADE;
-```
+    >```SQL
+    DELETE FROM HOTEL.CITY;
+    DROP TABLE HOTEL.CITY;
+    DROP SCHEMA HOTEL CASCADE;
+    DROP USER USER1 CASCADE;
+    >```
 
-> ---
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Interactive, non-interactive, substitution variables, and prepared statements)]
 
-> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
-> ```SQL
-> SELECT * FROM HOTEL.CUSTOMER; -- interactive
-> hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-> hdbsql -U USER1UserKey -I hotel.sql -- batch file
->```
+1. HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
-> ---
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER; -- interactive
+    hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    hdbsql -U USER1UserKey -I hotel.sql -- batch file
+    ```
 
-> [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
 
-> ```SQL (find_customers.sql)
-> select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
-> ```
+    Given the following file:
 
-> It could be called using:
+    ```SQL (find_customers.sql)
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
+    ```
 
-> ```Shell
-> hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
-> ```
+    It could be called using:
 
-> ![example of substitution parameters](subst.png)
+    ```Shell
+    hdbsql -A -U user1UserKey -V nameParam=J% -I find_customers.sql
+    ```
+
+    ![example of substitution parameters](subst.png)
+
+    It is also possible to define new variables and list the defined variables as shown below.
+
+    ```SQL
+    \vd titleParam Mr
+    \vl
+    SELECT * FROM HOTEL.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
+    ```
+
+    ![further example of substitution parameters](subst2.png)
+
+    See [SAP HANA HDBSQL Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) for details on the options to list and define substitution variables.
+
+3. As of version 2.13, HDBSQL will prompt for required parameters.  A few examples follow.
+
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?;
+    ```
+
+    ```SQL
+    CALL HOTEL.SHOW_RESERVATIONS(?, ?);
+    ```
+
+    ![Prompting for parameters](prepared.png)
+
+    In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase whereas, in the previous step, which used substitution variables, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
+
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 

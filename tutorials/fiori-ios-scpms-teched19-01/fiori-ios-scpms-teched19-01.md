@@ -4,8 +4,8 @@ description: Enable SAP Mobile Services, create a connection in the SAP BTP SDK 
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: products>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
@@ -135,7 +135,9 @@ After clicking **Finish**, the Assistant will generate an Xcode project, save it
 
     Click **Start**.
 
-    > If you're interested in the different on-boarding variants you can take a look at the design guidelines: [Fiori for iOS Design Guidelines](https://experience.sap.com/fiori-design-ios/article/onboarding/).
+    > If you're interested in the different on-boarding variants you can take a look at the design guidelines: 
+    > * [Fiori for iOS Design Guidelines - Single-user Onboarding](https://experience.sap.com/fiori-design-ios/article/onboarding-2/).
+    > * [Fiori for iOS Design Guidelines - Multi-user Onboarding](https://experience.sap.com/fiori-design-ios/article/multiuser-onboarding/)
 
     !![App Onboarding](fiori-ios-scpms-teched19-14.png)
 

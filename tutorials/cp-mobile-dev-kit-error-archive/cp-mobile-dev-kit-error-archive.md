@@ -2,8 +2,8 @@
 title: Handle Error Archive in an MDK App
 description: Create an MDK app to display errors occurred while uploading local changes and implement some logic on how to handle such errors and then let users to fix it from the app by providing correct values.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -21,13 +21,14 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
+
 ---
 
 You have built an MDK app with offline functionality. In offline store, you make a change to a local record and upload this change (from request queue) to backend but backend prevents this change to accept due to some business logic failure. This error is recorded in an Offline OData specific entity set named as `ErrorArchive`. This entity set has detailed information about the errors. It's now up-to developers how they handle such errors and then let users to fix it from the app by providing the correct values.
 
 >`ErrorArchive` is exposed to the application as an OData entity set and is accessible through the OData API in the same way that the application accesses any other entity sets from the offline store.
 
-!![MDK](img_1.png)
+!![MDK](img_1.gif)
 
  In this tutorial, you need to carry out the following tasks in order to understand how to display and handle such errors:
 
@@ -37,7 +38,7 @@ You have built an MDK app with offline functionality. In offline store, you make
 *  Create a business logic to find the affected entity
 *  Navigate to the affected record to handle the error
 
-> For this tutorial, you will use **Mobile Services sample backend** destination. You will modify a `PurchaseOrderHeaders` record by changing `SupplierId` field. Offline store saves this record in request queue database and when you sync it with backend, backend prevents updating this record due to business logic failure. This failure record will be listed in Error list page, from here, you can navigate to details page for more information. You will implement a logic to navigate from details page to the affected record.
+> For this tutorial, you will use **Mobile Services sample backend** destination. You will modify a `PurchaseOrderHeaders` record by changing `CurrencyCode` field. Offline store saves this record in request queue database and when you sync it with backend, backend prevents updating this record due to business logic failure. This failure record will be listed in Error list page, from here, you can navigate to details page for more information. You will implement a logic to navigate from details page to the affected record.
 
 ![MDK](img_1.gif)
 
@@ -51,20 +52,23 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img-1.3.png)    
+    !![MDK](img-1.3.png)  
+
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDK_ErrorArchive` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_ErrorArchive` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
@@ -87,11 +91,9 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.5.png)
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. Since we have Enable Offline set to Yes, the generated application will be offline enabled in the MDK Mobile client.
 
-    Since you will create an offline based app, hence **Enable Offline** option is selected.        
-
-6. In *Data Collections* step, unselect `Customers`, select `PurchaseOrderHeaders` and `PurchaseOrderItems`.
+6. In *Data Collections* step, unselect `Customers`, select `Suppliers`, `PurchaseOrderHeaders` and `PurchaseOrderItems`.
 
     !![MDK](img-1.6.png)
 
@@ -104,7 +106,7 @@ This step includes creating the mobile development kit project in the editor.
 
 [ACCORDION-BEGIN [Step 2: ](Create a new page to display Error list)]
 
-Generated project is offline enabled and includes two entity sets (`PurchaseOrderHeaders` and `PurchaseOrderItems`) on main page and these entities are fully CRUD enabled. You can create a new record and also modify an existing one.
+Generated project is offline enabled and includes three entity sets (`Suppliers`, `PurchaseOrderHeaders` and `PurchaseOrderItems`) on main page and these entities are fully CRUD enabled. You can create a new record and also modify an existing one.
 
 !![MDK](img-2.png)
 
@@ -126,11 +128,9 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 3. Next, add an **Object Table** control to display information like HTTP status code, HTTP method for the affected record.
 
-    In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img_2.3.gif)
-
-    >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
 4. In the **Properties** pane, select the previously added service from the **Service** drop down and then select `ErrorArchive` entity set from the dropdown. This way, the Object Table has been bound to `ErrorArchive` entity.
 
@@ -240,7 +240,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 6. Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
 
-    Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img_3.8.gif)
 
@@ -284,7 +284,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 12. Next, you can also display additional information like detailed error message, request body, request URL etc.
 
-    In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control on the page area.
+    In the Layout Editor, expand the **Controls** | **Static Container** group, drag and drop the **Static Key Value** control on the page area.
 
     !![MDK](img-3.13.gif)
 
@@ -296,7 +296,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 14. Next, you will add items to the container.
 
-    In the Layout Editor, expand the **Controls** | **Container Item** section, drag and drop the **Key Value Item** control in the **Static Key Value** control.
+    In the Layout Editor, expand the **Controls** | **Static Items** group, drag and drop the **Key Value Item** control in the **Static Key Value** control.
 
     !![MDK](img-3.14.gif)
 
@@ -484,7 +484,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
     !![MDK](img_6.1.png)
 
-2. On **Main page**, drag and drop the **Section Button** Container Item control onto the Page.
+2. On **Main page**, drag and drop the **Button** static Item control onto the Page.
 
     !![MDK](img_6.2.gif)
 
@@ -524,23 +524,19 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 8: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
-    !![MDK](img-8.1.png)
+!![MDK](img-8.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list.
+The On-boarding QR code is now displayed.
 
-    !![MDK](img-5.3.png)
+!![MDK](img-8.2.png)
 
-    The On-boarding QR code is now displayed.
-
-    !![MDK](img-8.2.png)
-
->Leave the Onboarding dialog box open for step 9.
+>Leave the Onboarding dialog box open for the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -554,29 +550,29 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.1.png)
 
-2. You will modify a `PURCHASEORDERHEADERS` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
+2. You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
 
-    Navigate to `PURCHASEORDERHEADERS` list, tap either one of the record.
+    Navigate to `PurchaseOrderHeaders` list, tap either one of the record.
 
     ![MDK](img_9.2.png)
 
     ![MDK](img_9.3.png)
 
-3. Tap edit icon. Make some changes to `SUPPLIERID` value and **SAVE** it.
+3. Tap edit icon. Make some changes to `CurrencyCode` value (update it to `EUROOO`) and tap the save icon.
 
     ![MDK](img_9.4.png)
 
-    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PURCHASEORDERHEADERS` list which means offline store has accepted this change.
+    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PurchaseOrderHeaders` list which means offline store has accepted this change.
 
-4. Navigate to `Main.page`, click **SYNC** to upload local changes from device to the backend and to download the latest changes from backend to the device.
+4. Navigate to `Main.page`, click **Sync** to upload local changes from device to the backend and to download the latest changes from backend to the device.
 
     ![MDK](img_9.5.png)
 
-5. Once you see Sync success message, navigate to **ERROR ARCHIVE** list.
+5. Once you see `Upload Successful` message, navigate to **Error Archive** list.
 
     There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
 
@@ -584,17 +580,17 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 6. Tapping any record navigates to **Error Details** page with more information about error.
 
-    ![MDK](img_9.7.png)
+    ![MDK](img_9.7.1.png)
 
-    Here in **ERROR MESSAGE** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
+    Here in **Error Message** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
 
 7. Its now up-to developers how to handle such errors and let users to modify record with correct values.
 
-    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **SYNC** it with backend.
+    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **Sync** it with backend.
 
     Tap **Edit Affected Entity** and modify record with correct values.
 
-    ![MDK](img_9.7.1.png)
+    ![MDK](img_9.7.png)
 
     ![MDK](img_9.8.png)
 
@@ -604,7 +600,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.9.png)
 
@@ -616,7 +612,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     ![MDK](img_9.11.png)
 
-3. Tap **Edit**. Make some changes to `SupplierId` value and **Save** it.
+3. Tap **Edit**. Make some changes to `CurrencyCode` value (update it to `EUROOO`) and **Save** it.
 
     ![MDK](img_9.12.png)
 
@@ -626,7 +622,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     ![MDK](img_9.13.png)
 
-5. Once you see Sync success message, navigate to **Error Archive** list.
+5. Once you see `Upload Successful` message, navigate to **Error Archive** list.
 
     There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
 
@@ -636,7 +632,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     Here in **Error Message** you will see `SQL Exception: Foreign key constraint violation occurred` and in **Request Body**, it shows the property that caused this failure.
 
-    ![MDK](img_9.15.png)
+    ![MDK](img_9.15.1.png)
 
 7. It's now up-to developers how to handle such errors and let users to modify record with correct values.
 
@@ -644,7 +640,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     Tap **Edit Affected Entity** and modify record with correct values.
 
-    ![MDK](img_9.15.1.png)
+    ![MDK](img_9.15.png)
 
     ![MDK](img_9.16.png)
 
@@ -654,9 +650,5 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully set up your app to handle Error Archive and you can continue with the remaining tutorials in this mission.
 
 ---

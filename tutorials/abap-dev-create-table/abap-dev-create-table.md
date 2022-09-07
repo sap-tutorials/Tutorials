@@ -2,8 +2,8 @@
 title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
 description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, software-product>sap-netweaver ]
 time: 75
 ---
 
@@ -12,7 +12,7 @@ time: 75
     - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2. On this instance, you have pulled the SAP ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition on Docker](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/). (The ABAP Flight Reference Scenario is included pre-installed on this server)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition in SAP Cloud Appliance Library (CAL)](https://cal.sap.com/subscription?sguid=7bd4548f-a95b-4ee9-910a-08c74b4f6c37)
-- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), version 3.16 or later
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 
 ## Details

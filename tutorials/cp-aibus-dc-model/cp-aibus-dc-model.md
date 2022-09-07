@@ -3,7 +3,7 @@ title: Train and Deploy a Machine Learning Model in Document Classification
 description: Find out how to train a machine learning model using the data that you uploaded to your Document Classification service instance.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -24,7 +24,7 @@ Based on the uploaded data, you will now train a machine learning model. The tra
 
 Click the first cell below the heading `Training` and click **Run**.
 
-In case more than 12 hours have passed between this and the previous tutorial, you may receive an output as in the image below, saying `401 Client Error: Unauthorized`. That means your access token has expired. Please go back to the previous [tutorial](cp-aibus-dc-upload) and repeat step 3 to retrieve a new access token.
+In case more than 12 hours have passed between this and the previous tutorial, you may receive an output as in the image below, saying `401 Client Error: Unauthorized`. That means your access token has expired. Please go back to the previous tutorial: [Upload Data to Document Classification](cp-aibus-dc-upload) and repeat step 3 to retrieve a new access token.
 
 ![Authorization Error](authorization-error.png)
 

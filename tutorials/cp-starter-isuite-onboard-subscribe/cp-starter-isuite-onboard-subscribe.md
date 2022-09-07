@@ -3,8 +3,8 @@ title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Integration Suite trial account.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -19,7 +19,7 @@ author_profile: https://github.com/Karunaharan
 -	How to provision and activate the capabilities
 
 ## SAP Integration Suite
-SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
+SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
 
 The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
@@ -30,7 +30,7 @@ This part of the series lets you experience few capabilities offered by SAP Inte
 ## The Use Case
 Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
 
-You use *Cloud Integration* to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
+You use *Cloud Integration* to design and deploy an integration flow. Then, you use *API Management* to expose the integration flow endpoint as an API.
 
   - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
@@ -44,7 +44,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 > - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
 
-> - You already have a SAP BTP account but new to SAP Integration Suite:
+> - You already have a SAP BTP trial account but new to SAP Integration Suite:
 
 >     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
           - **Option 1**:
@@ -94,19 +94,28 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
-4. Choose the default plan which is **trial** and then choose **Create**.
+4. Choose the default plan which is **trial** and then choose **Create**. You are subscribed to the service now.
 
     !![Create Subscription](3-4-Create_Subscription.png)
 
-5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+5. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
 
-    !![Go to Application](3-5-Go-to-Application.png)
+    !![Assign Roles](3-6-Assign-Roles.png)
+
+6. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+
+    !![Assign Role Collection](3-7-Assign-Role-Collection.png)
+
+7. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+
+    !![Assign Role Collection](3-8-Go-to-Application.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Provision the capabilities)]
->**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration or API Management services) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
+>**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration, or API Management) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 >**Navigational Steps**: Go to Service Marketplace, search for the service name and click `unsubscribe`.
 

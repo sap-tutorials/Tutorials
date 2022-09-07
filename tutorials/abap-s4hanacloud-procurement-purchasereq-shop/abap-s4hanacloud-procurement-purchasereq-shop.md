@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
 description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product-function>s-4hana-cloud-abap-environment
+tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -30,6 +30,8 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - How to create service definition & service binding
 - How to run SAP Fiori Elements Preview
 
+In this tutorial, wherever XXX appears, use a number (e.g. 000).
+
 ---
 [ACCORDION-BEGIN [Step 1: ](Logon to SAP S/4HANA Cloud ABAP Environment)]
 
@@ -48,6 +50,8 @@ In the online shop, customers can order various items. Once an item is ordered, 
   4. Click **Open Logon Page in Browser** to log in.
 
       ![logon](logon4.png)
+
+      **HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
   5. Click **Next >**.
 
@@ -197,7 +201,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![cds](cds4.png)
 
-  5. Replace your code with following:
+  5. Replace the code for your behavior `ZI_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'Data model for online shop'
@@ -236,7 +240,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![projection](projection3.png)
 
-  4. Replace your code with following:
+  4. Replace the code for your behavior `ZC_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'shop projection'
@@ -393,6 +397,37 @@ In the online shop, customers can order various items. Once an item is ordered, 
   5. In your **Local Types**, replace your code with following:
 
     ```ABAP
+    CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+
+      PROTECTED SECTION.
+
+        METHODS save_modified REDEFINITION.
+
+    ENDCLASS.
+
+    CLASS lsc_zbp_i_online_shop_xxx IMPLEMENTATION.
+
+      METHOD save_modified.
+        DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
+               ls_online_shop_as TYPE                   zshop_as_xxx.
+        IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
+          LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key).
+            <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
+          ENDLOOP.
+        ENDIF.
+
+
+        IF create-online_shop IS NOT INITIAL.
+          " Creates internal table with instance data
+          lt_online_shop_as = CORRESPONDING #( create-online_shop ).
+          lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
+
+          insert zshop_as_xxx FROM TABLE @lt_online_shop_as.
+        ENDIF.
+      ENDMETHOD.
+    ENDCLASS.
+
     CLASS lhc_zbp_i_online_shop_xxx  DEFINITION INHERITING FROM cl_abap_behavior_handler.
       PRIVATE SECTION.
 
@@ -667,6 +702,8 @@ You have 2 options to open the documentation inside ADT.
 
  1. Select `online_shop` in your service binding and click **Preview** to open SAP Fiori Elements preview.
 
+    ![preview](entity.png)
+
  2. Click **Create** to create a new entry.
 
      ![preview](create.png)
@@ -685,7 +722,11 @@ You have 2 options to open the documentation inside ADT.
 
 [ACCORDION-BEGIN [Step 13: ](Check purchase requisition)]
 
- 1. Copy the system URL without `-api`, paste it in a browser and **log in**.
+ 1. In the Project Explorer, select your system and right click on **Properties**.
+
+     ![preview](properties.png)
+
+ 1. Select **ABAP Development** and copy the system URL without `-api`, paste it in a browser and **log in**.
 
      ![preview](logonflp2.png)
 
@@ -721,7 +762,3 @@ You have 2 options to open the documentation inside ADT.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

@@ -1,9 +1,9 @@
 ---
 auto_validation: true
-title: Develop and Run SAP Fiori Application with Visual Studio Code
-description: Develop and run your SAP Fiori Application with Visual Studio Code.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+title: Create a SAP Fiori App in Visual Studio Code and Deploy it to SAP BTP, ABAP Environment
+description: Create a SAP Fiori Elements app for a RAP business object from SAP BTP, ABAP Environment in Visual Studio Code and deploy it to SAP BTP, ABAP Environment.
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -300,8 +300,3 @@ author_profile: https://github.com/mervey45
 ## More Information
 - [SAP Help Portal: Introduction](https://help.sap.com/viewer/454b7fb9aacd4e369e5be8f7e909d3ec/Latest/en-US/fd9e32d52c9e46e4ba77aba343656610.html)
 ---
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-trial-onboarding" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

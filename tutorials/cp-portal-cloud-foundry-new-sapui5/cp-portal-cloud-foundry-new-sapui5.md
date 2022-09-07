@@ -3,8 +3,8 @@ title: Add an SAPUI5 App to Your Launchpad Site
 description: Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -23,7 +23,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to you
 
  Click the Content Manager icon in the side panel to open the **Content Manager**.
 
->The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
+>The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
 
   ![Open Content Manager](1-open-content-manager.png)
 
@@ -106,7 +106,7 @@ This is described in the following steps.
 
 >Content assigned to the `Everyone` role is visible to all users.
 
-1. Select the **Everyone** role.
+1. Click the **Everyone** role.
 
     !![Select everyone role](10-everyone-role.png)
 

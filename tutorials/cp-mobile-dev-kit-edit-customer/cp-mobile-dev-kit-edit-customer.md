@@ -2,8 +2,8 @@
 title: Modify a Customer Record in an MDK App
 description: Allow editing of customer details in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -26,7 +26,6 @@ Regardless of whether your application is online or offline, you can allow users
 
 For online applications, the changes are saved to the backend immediately.
 
-
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
 In this step, you will create the _Edit Customer Detail_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
@@ -35,7 +34,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
     !![MDK](img_1.1.png)
 
-    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add multiple containers or action controls to this page. Under each container section, you can add various container items.
+    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add multiple containers or action controls to this page. Under each container section, you can add various controls.
 
     >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
@@ -49,7 +48,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
 4. Now, you will add the fields (like first name, last name, phone & email address) that will be editable by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section.
+    In the Layout Editor, expand the **Controls** group.
 
     Drag and drop a **Simple Property** onto the Page area.
 
@@ -69,10 +68,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
     !![MDK](img-1.6.png)
 
-    >Make sure, Format should be set as _Binding_.
-
-    >!![MDK](img_1.6.1.png)
-
 7. Select the second Simple Property control and provide the below information:
 
     | Property | Value |
@@ -84,7 +79,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     !![MDK](img-1.7.png)
 
 8. Select the third Simple Property control and provide the below information:
-
 
     | Property | Value |
     |----|----|
@@ -156,7 +150,7 @@ Now, you will add a button on the Edit Customer page and set it's `onPress` to `
 
     Double-click the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img-3.3.gif)
+    !![MDK](img-3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -190,7 +184,7 @@ You will add a button to the `Customers_Detail.page` called **Edit**. You will l
 
 1. In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-    !![MDK](img_5_1.gif)
+    !![MDK](img_5.1.1.png)
 
 2. Click the **link icon** to open the object browser for the **System Item** property.
 
@@ -315,7 +309,7 @@ First, define a failure message.
 
     In `Customers_Edit.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
-    !![MDK](img_6.14.png)
+    !![MDK](img_5.1.png)
 
     Click the **link** icon to open the object browser for the **System Item** property.
 
@@ -346,10 +340,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+    
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the application)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 
@@ -357,7 +355,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
+2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
 
     ![MDK](img_8.2.1.png)
     ![MDK](img_8.2.2.png)
@@ -388,7 +386,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-5. On Main page, tap **SYNC**, a successful message will be shown.
+5. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_8.5.png)
 
@@ -483,9 +481,5 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
 [DONE]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully modified a Customer Record and you are now all set to [define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 ---

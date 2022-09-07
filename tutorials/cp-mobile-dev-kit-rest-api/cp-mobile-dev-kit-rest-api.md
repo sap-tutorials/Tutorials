@@ -2,8 +2,8 @@
 title: Consume a REST API in an MDK App
 description: Create a fully functional multi-channel application consuming Petstore REST API.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -25,7 +25,6 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/8-Consume-rest-api-in-mdk-app) and start directly with step 7 or 17 in this tutorial but make sure you complete step 2&3.
 
 ---
-
 
 Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination and then easily bind a `RestServiceTarget` to an MDK control e.g., `ObjectTable`, `ContactCell`, `ObjectCollection` etc. This assumes the REST service returns JSON similar to how OData requests are returned.
 
@@ -59,11 +58,11 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
-2. On the home screen, select **Create new app**.
+2. On the home screen, select **Create new app** or navigate to **Mobile Applications** **&rarr;** **Native/MDK** **&rarr;** **New**.
 
     !![MDK](img-2.2.png)
 
-3. In **Basic Info** step, provide the required information and click **Next**.
+3. In the **Basic Info** step, provide the required information and click **Next**.
 
     | Field | Value |
     |----|----|
@@ -72,9 +71,15 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-2.3.png)
 
+    > If you are configuring this app in a trial account, make sure to select **License Type** as *lite*.
+
     >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the help documentation.
 
-4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
+4. In the **XSUAA Settings** step, continue with the default settings and click **Next** to navigate to further steps.
+
+    !![MDK](img-2.3.1.png)
+
+4. In the **Assign Features** step, choose **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
     !![MDK](img_2.4.png)
 
@@ -104,7 +109,9 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/4-Level-Up-with-the-Mobile-Development-Kit/8-Consume-rest-api-in-mdk-app/swagger_petstore.zip) and unzip it on your machine.
 
-2. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
+    !![MDK](img-2.8.0.png)
+
+2. Navigate to **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
 
     !![MDK](img-2.8.png)
 
@@ -120,20 +127,23 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-3.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-3.3.png)  
+
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
 
 4. In *Basic Information* step, provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Petstore` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Petstore` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-3.4.png)
 
@@ -230,7 +240,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 [ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
@@ -241,7 +251,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-6.2.gif)
+    !![MDK](img-6.2.png)
 
     You should see successful messages for both deployments.
 
@@ -256,9 +266,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code. (Select `com.sap.mdk.restapi` application from the list)
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-7.1.png)
 
@@ -266,7 +276,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the Pets list on the **Main** page.
+After you accept the app update, you will see the Pets list on the **Main** page.
 
 ![MDK](img_8.1.png)
 
@@ -276,9 +286,9 @@ Once you accept app update, you will see the Pets list on the **Main** page.
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code. (Select `com.sap.mdk.restapi` application from the list)
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-7.1.png)
 
@@ -287,7 +297,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the Pets list on the **Main** page.
+After you accept the app update, you will see the Pets list on the **Main** page.
 
 ![MDK](img-8.2.png)
 
@@ -370,7 +380,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
 4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
+    In the Layout Editor, expand the **Controls** group, drag and drop a **Simple Property** onto the Page area.
 
     >You can find more details about [available controls in Form Cell page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Container.schema.html).
 
@@ -577,10 +587,14 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
 
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Update the MDK app with new metadata)]
+[ACCORDION-BEGIN [Step 18: ](Update the app)]
 
 [OPTION BEGIN [Android]]
 
@@ -630,9 +644,5 @@ You have created a new record consuming REST API. Similarly, you can also modify
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully consumed the REST API in your MDK app and you can continue with the remaining tutorials in this mission.
 
 ---

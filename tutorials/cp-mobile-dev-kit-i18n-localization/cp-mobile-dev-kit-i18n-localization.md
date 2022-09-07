@@ -2,8 +2,8 @@
 title: Add Internationalization and Localization to an MDK App
 description: Localize the UI text strings and format the values according to device's or browser's or app's current locale.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -24,9 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Understand the Internationalization and Localization)]
-
 
 **Internationalization (i18n)** is the process of designing and developing your software or mobile application product so it can be adapted and localized to different cultures, regions, and languages.
 
@@ -48,20 +46,23 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-1.3.png)
+
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
 
 4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `List Detail` from the dropdown |
-    | `Your Project Name` | `MDK_i18n_l10n` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_i18n_l10n` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)        
 
@@ -82,7 +83,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.5.png)       
 
-6. In *Data Collections* step, select `Customers` and `SalesOrderHeaders`. Click **Finish** to complete the project creation.
+6. In *Data Collections* step, select `Customers` (if not selected by default) and `SalesOrderHeaders`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.6.png)
 
@@ -93,7 +94,7 @@ This step includes creating the mobile development kit project in the editor.
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -103,7 +104,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-3.2.gif)
+    !![MDK](img-3.2.png)
 
     You should see successful messages for both deployments.
 
@@ -118,29 +119,25 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
     !![MDK](img-4.1.png)
-
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
 
     The On-boarding QR code is now displayed.
 
     !![MDK](img-4.2.png)
 
-3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
+2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the `Main` page (with `LOGOUT` and `SYNC` options at bottom of the page) and `CUSTOMERS` and `SALESORDERHEADERS` entity sets to navigate to List-Detail page.
+    After you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
 
     ![MDK](img-5.1.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `CUSTOMERS`, `SALESORDERHEADERS`, `LOGOUT` and `SYNC`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
 
-4. Tap **SALESORDERHEADERS** to navigate to Sales order List.
+3. Tap `SalesOrderHeaders` to navigate to Sales order List.
 
     ![MDK](img-5.2.png)
 
@@ -148,31 +145,27 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and o-nboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
     !![MDK](img-4.1.png)
-
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
 
     The On-boarding QR code is now displayed.
 
     !![MDK](img-4.2.png)
 
-3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
+2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
+    After you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
 
     ![MDK](img-5.3.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
 
-4. Tap `SalesOrderHeaders` to navigate to Sales Order List. You will see that Title property has been styled.
+3. Tap `SalesOrderHeaders` to navigate to Sales Order List.
 
     ![MDK](img-5.4.png)
 
@@ -192,9 +185,9 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     !![MDK](img-5.7.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, and `Logout`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, and `Logout`) to their respective localized strings in the German language.
 
-2. Click `SalesOrderHeaders` to navigate to Sales Order List. You will see that Title property has been styled.
+2. Click `SalesOrderHeaders` to navigate to Sales Order List.
 
     !![MDK](img-5.8.png)
 
@@ -323,9 +316,19 @@ Let's start with Currency formatter:
 
 4. Select **i18n Objects** in the dropdown and then select **Currency** in the formatters dropdown.
 
-5.  Select **Euro Member Countries** for **Country Code**, click **Insert** to generate the expression, paste or type the `{GrossAmount}` for the currency value placeholder.
+5.  Select **Euro Member Countries** for **Country Code**, click **Insert** to generate the expression, **do not close the Object Browser window**.
 
     !![MDK](img-8.1.gif)
+
+    The generated expression looks like below:
+
+    ```JSON
+    $(C,,'EUR','',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
+    ```
+
+6. You will now bind the Currency value placeholder with the `GrossAmount` property of the `SalesOrderHeaders` entity. Put the cursor before the second comma (from left side). Choose **OData Objects** option from the dropdown, select the `GrossAmount` property under the `SalesOrderHeader` and click **Insert** to generate the new expression.
+
+    !![MDK](img-8.0.gif)
 
     The new expression looks like below:
 
@@ -333,7 +336,7 @@ Let's start with Currency formatter:
     $(C,{GrossAmount},'EUR','',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
     ```
 
-    Since there is already an OData property `CurrencyCode` part of `SalesOrderHeaders` entity, it would be best to use the value coming directly from the backend instead providing a constant value. So, replace the generated expression with below:
+    Since there is already an OData property `CurrencyCode` part of `SalesOrderHeaders` entity, it would be best to use the value coming directly from the backend instead providing a constant value. So, replace the 'EUR' with `{CurrencyCode}` so the final expression should look like below:
 
     ```JSON
     $(C,{GrossAmount},{CurrencyCode},'',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
@@ -341,21 +344,29 @@ Let's start with Currency formatter:
 
 7. Click **OK**.
 
-8. You will now format the Subhead property's value `{CreatedAt}` using `DateTime` formatter.
+8. You will now format the **Subhead** property's value `{CreatedAt}` using `DateTime` formatter.
 
     `Syntax: $(DT, <Value>, <Locale>, <Timezone>)`
 
-9. Click **link** icon for the **Title** property.
+9. Click **link** icon for the **Subhead** property.
 
 10. Cut or remove the default expression in the object browser, select **i18n Objects** in the dropdown, select `DateTime` in the formatters dropdown.
 
-11. Select **Medium** for **Display Format** and click **Insert** to generate the expression.
-
-12. Paste or type the `{CreatedAt}` for the date time value placeholder.
+11. Select **Medium** for **Display Format** and click **Insert** to generate the expression, **do not close the Object Browser window**.
 
     !![MDK](img-8.2.gif)
 
-    The new expression should look like below:
+    The generated expression should look like below:
+
+    ```JSON
+    $(DT,,'','',{format:'medium'})
+    ```
+
+12. You will now bind the `DateTime` value placeholder with the `CreatedAt` property of the `SalesOrderHeaders` entity. Put the cursor before the second comma (from left side). Choose **OData Objects** option from the dropdown, select the `CreatedAt` property under the `SalesOrderHeader` and click **Insert** to generate the new expression.
+
+    !![MDK](img-8.3.gif)
+
+    The new expression looks like below:
 
     ```JSON
     $(DT,{CreatedAt},'','',{format:'medium'})
@@ -373,10 +384,14 @@ Let's start with Currency formatter:
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
 
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Update the MDK app with new metadata)]
+[ACCORDION-BEGIN [Step 9: ](Update the app)]
 
 [OPTION BEGIN [Android]]
 
@@ -390,7 +405,7 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
     ![MDK](img-10.3.png)
 
-4. Tap **`KUNDENAUFTRÄGE`** to navigate to Sales order list page. You will notice the updated formatter values as per device's current locale and timezone.    
+4. Tap **`Kundenaufträge`** to navigate to Sales order list page. You will notice the updated formatter values as per device's current locale and timezone.    
 
     ![MDK](img-10.5.png)
 
@@ -414,7 +429,6 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
 [OPTION END]
 
-
 [OPTION BEGIN [Web]]
 
 1. Either click the highlighted button or refresh the web page to load the changes.
@@ -437,9 +451,5 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully added Internationalization and Localization to your MDK App and you can continue with the remaining tutorials in this mission.
 
 ---
