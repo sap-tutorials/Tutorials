@@ -102,7 +102,7 @@ On-board your repository.
 ```PYTHON
 # on-board new GitHub repository
 ai_core_client.repositories.create(
-    name = "john-aicore-pipelines",
+#    name = "john-aicore-pipelines",
     url = "https://github.com/john/aicore-pipelines",
     username = "john",
     password = "personalACCESSTokenOFJohn"
@@ -116,7 +116,7 @@ Check on-boarded repositories.
 response = ai_core_client.repositories.query()
 #
 for repository in response.resources:
-    print('Name:', repository.name)
+#    print('Name:', repository.name)
     print('URL:', repository.url)
     print('Status:', repository.status)
 ```
@@ -129,11 +129,9 @@ Use the following information as reference:
 
 1. **URL**: Paste the URL of your GitHub repository and add the suffix `/aicore-pipelines`.
 
-2. **Name**: An identifier of your choice, for local reference within SAP AI Core.
+2. **Username**: Your GitHub username.
 
-3. **Username**: Your GitHub username.
-
-4. **Password**: Paste your GitHub **Personal Access Token**, generated in the previous step.
+3. **Password**: Paste your GitHub **Personal Access Token**, generated in the previous step.
 
 You will see your GitHub onboarding completed in a few seconds. In the next steps you will learn how to enable auto syncing of workflows from GitHub.
 
