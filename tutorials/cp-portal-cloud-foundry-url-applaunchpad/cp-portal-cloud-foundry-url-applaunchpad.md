@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to create a URL app and add it to your site.
+  - How to create a URL app and add it to your site
 
 Use the **Content Manager** to add a URL app to your site.
 
@@ -44,7 +44,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
     !![App editor properties tab](3-app-editor-properties.png)
 
-3. Click the **NAVIGATION** tab to specify the intent of your app.
+3. Click the **NAVIGATION** tab and enter the intent of your app.
 
     > The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
 
