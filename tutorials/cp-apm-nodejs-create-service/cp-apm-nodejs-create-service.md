@@ -427,7 +427,7 @@ Instead of using in-memory, you can also use persistent databases.
 
 You can now see the generic handlers shipped with CAP in action.
 
-Create a file called `test.http` in the root of your project and copy the following OData queries in it. This file can be used with the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to make requests against your service. The generic handlers CAP provides sent the responses to your requests.
+In the root of your project, create a file called `test.http` and copy the following requests in it. This file can be used with the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to make requests against your service. The generic handlers CAP provides sent the responses to your requests.
 
 ```HTTP
 ###
