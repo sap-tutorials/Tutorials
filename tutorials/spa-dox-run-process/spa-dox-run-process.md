@@ -170,5 +170,4 @@ Till now, you have developed a Business Process where you will start with a form
 
 [VALIDATE_1]
 [ACCORDION-END]
-
 ---
