@@ -267,6 +267,4 @@ primary_tag: software-product>sap-process-automation
 [VALIDATE_1]
 [ACCORDION-END]
 
-
-
 ---
