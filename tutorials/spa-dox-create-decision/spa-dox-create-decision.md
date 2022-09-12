@@ -166,6 +166,5 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
 
 You have now defined who should approve the invoice, based on the company name. Next you will use the outcome of the business rule, the email address, as input for the approval.
 
-
 [DONE]
 [ACCORDION-END]

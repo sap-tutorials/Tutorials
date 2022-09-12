@@ -59,9 +59,9 @@ This needs to be automated since we are talking about multiple invoices which ar
 
    To trigger the process, you will create a form to provide the most relevant inputs.
 
-1. In the canvas, open **Select a Start Trigger**.
+1. In the canvas, select **+**, then **Forms** and finally **+ New Form**.
 
-    !![Select a Start Trigger](04.png)
+    !![New Form](04.png)
 
 2. Provide the following information and choose **Create**:
 
