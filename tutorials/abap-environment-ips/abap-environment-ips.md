@@ -35,7 +35,7 @@ Additional information:
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create User in Identity Authentication Service Tenant)]
-To create your development user's identity in your Identity Authentication service tenant, log on with your User Management Administrator to your Identity Authentication tenant's administration UI (URL ends with path `/admin`, for example https://rapworkshop.accounts.ondemand.com/admin).
+To create your development user's identity in your Identity Authentication service tenant, log on with your User Management Administrator to your Identity Authentication tenant's administration UI (URL ends with path `/admin`, for example `https://rapworkshop.accounts.ondemand.com/admin`).
 
 1. Navigate to **Users & Authorizations** > **User Management**.
 
@@ -100,7 +100,7 @@ Navigate to **Users & Authorizations** > **Administrators** choose the Administr
 [ACCORDION-BEGIN [Step 4: ](Configure Source in Identity Provisioning Service)]
 Identity provisioning requires to configure a so-called source system for user and user group data.
 
-1. Log on with your Identity Provisioning Manager user to your Identity Authentication service tenant's identity provisioning UI (URL ends with path `/ips`, for example https://rapworkshop.accounts.ondemand.com/ips).
+1. Log on with your Identity Provisioning Manager user to your Identity Authentication service tenant's identity provisioning UI (URL ends with path `/ips`, for example `https://rapworkshop.accounts.ondemand.com/ips`).
 
 2. Select the **Source Systems** tile.
 
