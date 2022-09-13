@@ -19,7 +19,7 @@ author_profile: https://github.com/karimmohraz
 - How to set up the Metaflow Python package for SAP AI Core
 - How to run a local test of your Metaflow pipeline.
 
-Discover how Metaflow assists you, with diagrams and visualisationm from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
+Discover how Metaflow assists you, with diagrams and visualisations from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
 
 ---
 
