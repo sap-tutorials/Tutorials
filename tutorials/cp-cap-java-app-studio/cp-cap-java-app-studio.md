@@ -89,7 +89,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
 
     - The project is named `products-service`.
-    - The `db` folder stores database-related artefacts.
+    - The `db` folder stores database-related artifacts.
     - The `srv` folder stores your Java application.
 
       !![project creation done](project-creation-done.png)
