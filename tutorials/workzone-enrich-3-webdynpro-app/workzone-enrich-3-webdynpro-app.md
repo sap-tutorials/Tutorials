@@ -57,7 +57,7 @@ The **Content Manager** opens with the **My Content** tab in focus.
 
     |  Field     | Value
     |  :------------- | :-------------
-    |  Title           | `Search POs`
+    |  Title           | `Search POs` If you're taking part in a workshop, please add your unique identifier to the app name like this: `<your unique identifier>_Search POs`.
     |  System          | Select the value `ES5`
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
