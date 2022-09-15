@@ -467,9 +467,11 @@ Content-Type: application/json;IEEE754Compatible=true
 
 ```
 
-Click on **Send Request** inside the `test.http` file, to execute requests against your service.
+Click on `Send Request` inside the `test.http` file, to execute requests against your service.
 
 <!-- border; size:540px -->![Send a request](send_request.png)
+
+> This `Send Request` button is provided by the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client). It appears for every single request. This is important for the following step, when you execute, for example, the `Order a Book` request.
 
 The REST client gives you the response of your service and you see immediately if the request was successful.
 
