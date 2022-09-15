@@ -3,7 +3,7 @@ title: Receive Alerts in Your On-Premise System Using Java Web Tomcat 8
 description: Configure a connection with an on-premise system to receive alert notifications locally.
 auto_validation: true
 primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform ]
+tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform, programming-tool>java ]
 author_name: Nikola Simeonov
 author_profile: https://github.com/nikolasimeonov77
 time: 50
