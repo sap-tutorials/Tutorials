@@ -5,8 +5,8 @@ title: Extend SAP S/4HANA Cloud on SAP BTP, Cloud Foundry Environment
 description: Extend SAP S/4HANA Cloud with an extension application running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, tutorial>license, products>sap-business-technology-platform, topic>cloud, products>sap-s-4hana-cloud]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-s-4hana-cloud]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 ---
 
 ## Prerequisites
