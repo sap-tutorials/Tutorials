@@ -17,7 +17,7 @@ primary_tag: software-product>sap-process-automation
 ### You will learn
   - How to add interactive forms in the process
   - How to design the form with layout and input fields using drag-and-drop approach
-  - How to configure the forms as the process steps
+  - How to configure the forms as the process steps 
 
 ---
 Tasks are a part of any business process. **SAP Process Automation** helps you to create forms that are made available to the business users in their inboxes to take relevant action.
