@@ -98,7 +98,7 @@ Now that you have designed the process with forms, let us define which process f
     | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-10. Save your work. 
+10. Save your work.
 
     !![Design Form](design-form.png)
 
