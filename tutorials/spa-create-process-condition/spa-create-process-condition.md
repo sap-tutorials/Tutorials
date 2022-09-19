@@ -125,7 +125,7 @@ Now that you have designed the process with forms, let us define which process f
 
 12. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
 
-    - Do not forget to **Save** the process once done.  
+    - Do not forget to **Save** the process once done.
 
     !![End](end-process.png)
 
