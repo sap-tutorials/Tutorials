@@ -125,6 +125,10 @@ The following steps are for illustrative purposes only and are not meant to be f
 
     ![Export Data Wizard](exportDataWizard2.png)
 
+    Once the wizard has finished, the exported CSV file can be seen in the data lake Files container.
+
+    ![exported CSV](export-to-dlf-result.png)
+
     The wizard makes use of the export into statement.  An example is shown below:
 
     ```SQL
@@ -132,7 +136,7 @@ The following steps are for illustrative purposes only and are not meant to be f
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
-        CREDENTIAL 'DBADMINCREDENTIAL'
+        CREDENTIAL 'DL_FILES_CREDENTIAL'
         COLUMN LIST IN FIRST ROW;
     ```
 
@@ -152,7 +156,7 @@ The following steps are for illustrative purposes only and are not meant to be f
 
 [ACCORDION-BEGIN [Step 3: ](Use data lake Files for export and import (optional))]
 
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database. Note that a licensed SAP HANA data lake instance (non trial / non free-tier) is needed for this step.
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  Note that this step requires a non trial / non free-tier SAP HANA data lake instance.
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
@@ -210,7 +214,7 @@ The following steps walk through the process of exporting to and importing data 
 
     --GRANT REFERENCES ON PSE HTTPS TO USER1;
 
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DBADMIN_DL_CREDENTIAL' TYPE 'X509' PSE HTTPS;
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES_CREDENTIAL' TYPE 'X509' PSE HTTPS;
     ```
 
 4. Export `HOTEL.MAINTENANCE` into the data lake Files container.
@@ -224,7 +228,7 @@ The following steps walk through the process of exporting to and importing data 
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
-        CREDENTIAL 'DBADMINCREDENTIAL'
+        CREDENTIAL 'DL_FILES_CREDENTIAL'
         COLUMN LIST IN FIRST ROW;
     ```
 
