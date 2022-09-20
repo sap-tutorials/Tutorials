@@ -313,7 +313,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 3.  Specify an install folder and install all the features.
 
-    ![GUI Installer](linux-gui-install.png)
+    ![GUI Installer](windows-gui-install.png)
 
     Console mode installer
 
@@ -406,18 +406,6 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     >```
 
     >![DBISQL connected nogui](dbisql-nogui.png)
-
-    >If `dbisql` fails to run with the `-nogui` flag, try running the following command to not register the HANA plugin.
-
-    >```Shell
-    dbisql -XUnRegister hana
-    >```
-
-    >The above command can be reverted with the below command.
-    >```Shell
-    dbisql -XRegisterPlugin hana
-    >```
-
 
 [DONE]
 [ACCORDION-END]

@@ -8,7 +8,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
- - You have completed the first two tutorials in this group.
+ - You have completed the first tutorial in this group.
 
 ## Details
 ### You will learn
@@ -16,7 +16,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
   - How to create and debug a Node.js application
   - How to use both the synchronous and asynchronous driver interfaces
 
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/learn).  
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn/).  
 
 ---
 
@@ -276,7 +276,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     ```
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-    Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/en/learn/javascript-asynchronous-programming-and-callbacks/) for additional details.
 
 [DONE]
 [ACCORDION-END]
@@ -379,7 +379,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
     ```
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/en/learn/understanding-javascript-promises/).
 
 [DONE]
 [ACCORDION-END]
