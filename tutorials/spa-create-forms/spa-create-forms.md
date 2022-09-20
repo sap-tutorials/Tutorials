@@ -17,7 +17,7 @@ primary_tag: software-product>sap-process-automation
 ### You will learn
   - How to add interactive forms in the process
   - How to design the form with layout and input fields using drag-and-drop approach
-  - How to configure the forms as the process steps
+  - How to configure the forms as the process steps 
 
 ---
 Tasks are a part of any business process. **SAP Process Automation** helps you to create forms that are made available to the business users in their inboxes to take relevant action.
@@ -36,7 +36,7 @@ First you will create a trigger form that will start the business process. For t
 
 1. Choose **New Form** in **Trigger Settings**.
 
-    !![Select Starting Node](unit3-00.png)
+    !![Choose New Form](ChooseNewForminTriggerSettings.png)
 
 2. In the pop-up for new form, do the following:
     - Enter the **Name** as **Order Processing Form**.
@@ -75,15 +75,11 @@ First you will create a trigger form that will start the business process. For t
 
     !![Design Form](design-form.png)
 
-4. Save the form using the **Save** button on the top-right corner of the screen.
+5. Save the form using the **Save** button on the top-right corner of the screen.
 
     Your trigger form is ready!
 
     !![Trigger Form](unit3-04.png)
-
-5. Add the **Order Processing Form** to start the process.
-
-    !![Add Form](add-form.png)
 
     Now you will design the process with more activities related to approval of the sales order.
 
@@ -253,7 +249,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     !![Duplicate Form](DuplicateForm.png)
 
-11. The duplicate artifact pop-up will appear.
+10. The duplicate artifact pop-up will appear.
 
     - !![Duplicate Artifact](DuplicateArtifact.png)
 
@@ -261,13 +257,13 @@ These notifications will appear in the inbox of the requester as a task.
 
     - !![Order Rejection Form](NameOrderRejectionNotification.png)
 
-12. The **Order Rejection Notification** form is automatically opened in the form builder.
+11. The **Order Rejection Notification** form is automatically opened in the form builder.
 
     The screen shown will be same as **Order Confirmation Notification**.
 
     - !![Order Rejection Form](DuplicatedForm.png)
 
-13. Change the order rejection form in the form builder to reflect the data for rejection case.
+12. Change the order rejection form in the form builder to reflect the data for rejection case.
 
     - Do not forget the **Save** the form once completed.
 
@@ -290,14 +286,14 @@ These notifications will appear in the inbox of the requester as a task.
 
     The remaining fields can be left as is.
 
-14. Go back to the process builder and add the order rejection notification form to the process.
+13. Go back to the process builder and add the order rejection notification form to the process.
 
     - Select **Approval Form** and Choose **+** option for the **Reject**
     - Choose **Forms** and select **Order Rejection Notification**
 
     - !![Add Order Rejection Notification](AddOrderRejectionNotification.png)
 
-15.	Configure the order rejection form.
+14.	Configure the order rejection form.
 
     - Configure the **General** section.
 
@@ -320,7 +316,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     !![03-026](unit3-35.png)
 
-16.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
+15.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
 
     !![03-026](unit3-36.png)
 

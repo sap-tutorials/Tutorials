@@ -51,7 +51,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Less than](less-than.png)
 
-5. Enter **100000** as the value and choose **Save**
+5. Enter **100000** as the value and choose **Apply**
 
     You have configured your **if** branch to: **if Order Amount is less than 100000**.
 
@@ -67,7 +67,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Delete branch](delete-branch.png)
 
-4. To create the new form, add the **New Form** from the **If-route**.
+8. To create the new form, add the **New Form** from the **If-route**.
 
     !![Process Content](unit5-03.png)
 
@@ -81,7 +81,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Process Content](unit5-04.png)
 
-5. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
+9. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
 
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
@@ -98,11 +98,11 @@ Now that you have designed the process with forms, let us define which process f
     | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-6. Save your work.
+10. Save your work.
 
     !![Design Form](design-form.png)
 
-7. Go back to the process builder and configure the auto approval form.
+11. Go back to the process builder and configure the auto approval form.
 
     - Configure the **General** section.
 
@@ -123,9 +123,9 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Inputs](inputs.png)
 
-8. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
+12. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
 
-    - Do not forget to **Save** the process once done.  
+    - Do not forget to **Save** the process once done.
 
     !![End](end-process.png)
 

@@ -45,7 +45,7 @@ To run the process you have to first release and then deploy the business proces
 
     > Deploy will take a couple of seconds/minutes depending upon how big your project is and how many different artefacts it has. Any errors during the deployment will be shown in the Design Console.
 
-2. Once the deployment is successful, you will see a changed status. You can also see all your deployed and/or released project versions from the project status list next to the project name.
+2. Once the deployment is successful, you will see a changed status. You can also see all your deployed and/or released project versions from the project status list next to the project name. 
 
     !![unit3-44](unit3-44.png)
 
