@@ -405,7 +405,7 @@ ID;locale;title;descr
 252;de;Eleonora;Eleonora ist eine Erzählung von Edgar Allan Poe. Sie wurde 1841 erstveröffentlicht. In ihr geht es um das Paradox der Treue in der Treulosigkeit.
 ```
 
-Deploy the localized data: `cds deploy --to sqlite`
+Deploy the localized data from the terminal: `cds deploy --to sqlite`
 
 Restart your application from the debug panel.
 
@@ -447,7 +447,7 @@ There are two profiles available out of the box: development and production. By 
 
 Let's switch from our SQLite to the SAP HANA Cloud database.
 
-1. Add SAP HANA configuration to your project: `cds add hana --for production`
+1. Add SAP HANA configuration to your project from the terminal: `cds add hana --for production`
 
     > ### What's going on?
     In the project template, you had the option to add SAP HANA configuration. We skipped that, as [CAP promotes a grow as you go paradigm](https://cap.cloud.sap/docs/get-started/grow-as-you-go), allowing you to add facets when you need them. This reduces complexity right from the start and just gets you going.
@@ -460,7 +460,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
     > ### What's going on?
     You've added the configuration to use SAP HANA Cloud under the `[production]` profile. Using the development profile, `db.kind=sql` evaluates to `sqlite`. This is a default when using configuration profiles, so the development profile is not mentioned here explicitly. You can also [set both configurations explicitly](https://cap.cloud.sap/docs/node.js/cds-env#profiles), if you wish to deviate from or enhance the defaults.
 
-1. Execute `npm install`.
+1. From the terminal execute `npm install`.
 
     This installs all dependencies from your `package.json`.
 
