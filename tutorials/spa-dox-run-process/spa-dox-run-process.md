@@ -15,7 +15,7 @@ primary_tag: software-product>sap-process-automation
 - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
 
 ## Details
-Till now ,you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this we need to decide, who would be the approver (so you need to enter your email). Then we need to build the approval form to review the submitted data and approve it for further processing.
+Till now, you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this you need to decide, who would be the approver (so you need to enter your email). Then you need to build the approval form to review the submitted data and approve it for further processing.
 
 ### You will learn
   - How to release, deploy and run the Process
@@ -170,5 +170,4 @@ Till now ,you have developed a Business Process where you will start with a form
 
 [VALIDATE_1]
 [ACCORDION-END]
-
 ---

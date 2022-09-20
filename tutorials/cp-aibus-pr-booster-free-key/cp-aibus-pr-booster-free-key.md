@@ -18,7 +18,7 @@ author_profile: https://github.com/Juliana-Morais
   - How to access your SAP BTP account
   - What are interactive guided boosters
   - How to use the **Set up account for Personalized Recommendation** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Personalized Recommendation
----
+
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your SAP BTP Account)]
 

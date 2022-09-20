@@ -59,7 +59,7 @@ Integration cards are UI elements which display concise pieces of information in
 
     | Description                                        | Value   
     | :-------------                                     | :-------------
-    | Project Name                                       | `products_by_vendor_card`
+    | Project Name                                       | `products_by_vendor_card` If you're taking part in a workshop, please add your unique identifier to the project name like this: `<your unique identifier>_products_by_vendor_card`.
     | Name Space                                         | `ns`
     | Select a Card Sample (dropdown menu)               | `Highlight Card`
     | Title                                              | `Products by Vendor Card`
