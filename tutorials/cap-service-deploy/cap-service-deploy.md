@@ -10,6 +10,9 @@ time: 30
 parser: v2
 ---
 
+# Deploy a CAP Business Service to SAP Business Technology Platform
+<!-- description --> This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform (BTP), Cloud Foundry environment using SAP HANA Cloud service.
+
 ## You will learn
   - How to deploy your CAP business service on SAP BTP and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details
 
