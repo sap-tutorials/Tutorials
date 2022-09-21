@@ -10,6 +10,9 @@ time: 50
 parser: v2
 ---
 
+# Create a CAP Business Service with Node.js Using Visual Studio Code
+<!-- description --> Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
+
 ## You will learn
   - How to develop a sample business service using CAP and `Node.js`
   - How to define a simple data model and a service that exposes the entities you created in your data model
