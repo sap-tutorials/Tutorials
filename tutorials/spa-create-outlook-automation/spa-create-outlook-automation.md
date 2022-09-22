@@ -1,8 +1,8 @@
 ---
 author_name: Ramakrishnan Raghuraman
 author_profile: https://github.com/r3ksk
-title: Build your first automation using Outlook SDK of SAP Process Automation
-description: In this tutorial, you will be developing basic automation using Outlook SDK of SAP Process Automation. In the end, by using the activities in this Outlook SDK, you will know how to search outlook inbox or a specific email folder and download any attachments found in the email context to a specific local folder.
+title: Build Your First Automation Using Outlook SDK of SAP Process Automation
+description: In this tutorial, you will be developing a basic automation using Outlook SDK of SAP Process Automation. In the end, by using the activities in Outlook SDK, you will know how to search outlook inbox or a specific email folder and download any attachments found in the email to a specific local folder.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
@@ -10,13 +10,15 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Details
-SAP Process Automation has native integration to several Microsoft Office products including Outlook, Excel SDK. In this Tutorial, you will explore how to use Outlook SDK to your automations.
+SAP Process Automation has native integration to several Microsoft Office products including Outlook and Excel SDK. In this Tutorial, you will explore how to use Outlook SDK to your automations.
 
 ## Prerequisites
 
 - Complete the tutorial: [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](spa-subscribe-booster)
 - Complete the tutorial: [Install and Set Up the Desktop Agent](spa-setup-desktop-agent)
-- Familiarity to create an automation using SAP Process Automation
+- Basic understanding of SAP Process Automation. You may review the below missions
+    - [Build Your First Business Process with SAP Process Automation](mission.sap-process-automation)
+    - [Boost your Business Process with Automation, Decision and Process Visibility](mission.sap-process-automation-boost)
 
 ### You will learn
 
@@ -27,7 +29,7 @@ SAP Process Automation has native integration to several Microsoft Office produc
 [ACCORDION-BEGIN [Step 1: ](About Outlook SDK in SAP Process Automation)]
 
 The Outlook SDK in SAP Process Automation, is a collection of activities allowing you to create automations using Microsoft Outlook.
-It comes with rich set of functionality. For ex,
+It comes with a rich set of functionality. For example,
 
 - Search an email
 - Read an email
@@ -40,27 +42,24 @@ It comes with rich set of functionality. For ex,
 
 [ACCORDION-BEGIN [Step 2: ](Create an Automation Project)]
 
-1.  Our example project will be called `Outlook Sample`. Feel free to name your project as per your convenience.
+1.  There are two ways to create an automation project from SAP Process Automation Lobby.
+      1.  You can click the shortcut **Create an automation**
+      2.  You can get started with a **Business Project** either through **Create a Process** or using the **Create** -> **Business Process** and include automation within that.
 
     !![Create an automation Project](01-CreateNewProject.png)
+    For this tutorial, use **Create an automation**  option.
 
-    There are two ways to create an automation project from SAP Process Automation Lobby.
-
-2.  You can click the shortcut **Create an automation**
-
-    or you can get started with a **Business Project** either through **Create a Process** or using the **Create** -> **Business Process** and include automation within that.
-
-    We will follow **Create an automation** approach for this tutorial. i.e indicated by number 1 in the below image.
+2.  Project used in this tutorial is called as `Outlook Sample`. Feel free to name your project as per your convenience.
 
     !![Name your project appropriately](02-CreateAutomationProject.png)
 
-3.  Subsequently it will ask you to select your desktop agent, At the time time of this tutorial creation, we took the screenshot based on  **Agent Version 0.24**. You can pick your active desktop agent version.
+3.  Subsequently it will ask you to select your desktop agent, At the time time of this tutorial creation, a screenshot was taken based on  **Agent Version 0.24**. You can pick your active, (preferably) latest desktop agent version.
 
     > By the time you follow these scripts, newer Desktop agent versions may have been introduced. so always kindly install the latest version of desktop components and select the latest version of agent in this step.
 
     !![Link to your active desktop agent version](03-SelectAgentVersion.png)
 
-4.  Subsequently, you will see a dialog box to create a new automation. You can give a name to your automation. In this example, we named it `searchInOutlook`. You can follow your own naming convention and name for your automation.
+4.  Subsequently, a dialog box is displayed to create a new automation. You can give a name to your automation. For example, you may use `searchInOutlook`. You can follow your own naming convention and name for your automation.
 
     !![Add an automation to your project](04-CreateNewAutomation.png)
 
@@ -74,13 +73,13 @@ It comes with rich set of functionality. For ex,
 
     !![Core SDK and Excel SDK are standard core dependencies added](06-CoreDependencies.png)
 
-6.  Once an empty project is created, we need to include Outlook SDK dependency to this project. Locate the settings wheel icon in your project
+6.  Once an empty project is created, you need to include Outlook SDK dependency to this project. Locate the settings wheel icon in your project
 
     !![Locate the settings Icon in your projects](07-SettingsIcon.png)
 
-7.  From the dependency section, locate Outlook SDK and include it as a dependency to your project. At the time of creation of this tutorial, we have used Outlook SDK `Version 1.24.58`
+7.  From the dependency section, locate Outlook SDK and include it as a dependency to your project. At the time of this tutorial creation, Outlook SDK `Version 1.24.58` was used.
 
-    > Again, by the time you follow these scripts, newer versions of Outlook SDK may have been introduced. so always kindly update Outlook SDK to the latest version in this step.
+    > Again, by the time you follow these scripts, newer versions of Outlook SDK may have been introduced. so always kindly update Outlook SDK to the latest version.
 
     !![Add Outlook SDK to your project](08-AddOutlookSDK.png)
 
@@ -89,7 +88,7 @@ It comes with rich set of functionality. For ex,
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Working with Outlook SDK)]
+[ACCORDION-BEGIN [Step 3: ](Search using Outlook SDK)]
 
 1.  From the `Tools` panel on the right side, search for the activity **Open Outlook Instance**
     !![Find Open Outlook Instance Activity](09-OpenOutlookInstance.png)
@@ -97,27 +96,30 @@ It comes with rich set of functionality. For ex,
 2.  Drag it onto your automation flow
     !![Drag Open Outlook Instance on to your automation](10-AddOpenOutlookInstance.png)
 
-3.  First we will attempt a simple folder search. so locate **Search Email** activity and add it to the flow
+3.  Your task will be to do a simple folder search. So locate **Search Email** activity and add it to the flow
     !![Add Search Email Activity to the automation](11-AddSearchEmailActivity.png)
 
 4.  Select the newly added activity and **Create Custom Data** as search criteria under `Parameters` section.
     !![Add a custom search criteria](12-SearchEmailCustomCriteria.png)
 
-5.  Provide a folder name and a `storeName` as per the input form. Here `storeName` refers to the email inbox, where you wanted the SDK to search. As some of you, may have additional mailbox configured within your outlook application, this field could be handy to search specific folder in your inbox. If you wanted to search the default inbox, you can leave the `storeName` empty.
+5.  Provide a folder name and a `storeName` as per the input form. Here `storeName` refers to the email inbox, where you wanted the SDK to search.
+    - `folderName` : it is optional input. You need to provide one if you wanted automation to search a specific outlook folder
+    - `storeName` : As some of you, may have additional mailbox configured within your outlook application, this field could be handy to search specific folder in your inbox. If you wanted to search the default inbox, you can leave the `storeName` empty.
 
-    | Name         | Value
-    | :------------| :---------------
-    | `folderName` | outlook
-    | `storeName`  | <your email id>
+
+    | Name         | Value                     | Example
+    | :------------| :------------------------ | :---------------------
+    | `folderName` | *Outlook sub folder name* | Invoices/ToCreate
+    | `storeName`  | *Email id*                | mymail@bestrunsap.com
 
     !![Give your search criteria](13-EnterCustomSearchCriteria.png)
 
-    > Review the option `SearchCriterionList`; You can include additional search criteria like emails with specific subject or from specific sender. You can refer to our documentation [page](https://help.sap.com/docs/IRPA/8e71b41b9ea043c8bccee01a10d6ba72/2ea6c87f0bef430f9aed40eb824576bc.html) for additional information
+    > Review the option `SearchCriterionList`. You can include additional search criteria like emails with specific subject or from specific sender. You can refer to the [documentation](https://help.sap.com/doc/e57d7b179db649e6b5f2d26d9894f9d9/Cloud/en-US/datatypes/emailSearchCriterion.html) for additional information
 
-6.  Add `GetEmailsinContext` activity to the flow. Our previous step creates a context which is what we are going to use in our next steps.
+6.  Add `GetEmailsinContext` activity to the flow. The previous step creates a context which is what you are going to use in the next steps.
     !![Add Get Email In Context Activity](14-AddGetEmailsInContext.png)
 
-7.  As this is our first automation using Outlook SDK, we can do a simple check to find out if there is a result in our search. For ex, We can find out how many emails are present in that outlook folder. For this we will add a **Log Message** activity
+7.  As this is your first automation using Outlook SDK, you can do a simple check to find out if there is a result in the search. For example, you can find out how many emails are present in that outlook folder. For this, add a **Log Message** activity
     !![Add Log Message](15-LogTotalEmailsInSearchResult.png)
 
 8.  If you wanted, you can include a custom message using the expression editor
@@ -132,8 +134,9 @@ It comes with rich set of functionality. For ex,
 11. Save the project, test run the project, you should see your expected result
     !![Test & Validate Result](19-SearchResultInTest.png)
 
-    > - Do review our Microsoft Outlook Best Practices from our help documentation [page](https://help.sap.com/docs/IRPA/8e71b41b9ea043c8bccee01a10d6ba72/5a48c81502db40b08e4aac866e04592a.html)
-    > - Also don't forget to review Outlook Email Best Practices Automation from our [SAP Process Automation Store](https://irpa.store.sap.com/#/package/a4c61c62-356e-4165-bdcb-bef08e236cf5)
+    > - Do review the below resources
+    >     - Microsoft Outlook Best Practices from the SAP Process Automation [documentation](https://help.sap.com/docs/IRPA/8e71b41b9ea043c8bccee01a10d6ba72/5a48c81502db40b08e4aac866e04592a.html)
+    >     - Outlook Email Best Practices Automation from the [SAP Process Automation Store](https://irpa.store.sap.com/#/package/a4c61c62-356e-4165-bdcb-bef08e236cf5)
 
 [VALIDATE_1]
 [ACCORDION-END]
