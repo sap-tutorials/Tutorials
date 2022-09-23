@@ -142,7 +142,7 @@ We now want to expose our Calculation View to the Cloud Application Programming 
     hana-cli inspectView -v V_INTERACTION -o cds
     ```
 
-    !![inspectView](inspect_view.png)
+    ![inspectView](inspect_view.png)
 
     With this command you are looking up the definition of the view but asking for the output (-o) in the CDS format.
 

@@ -73,7 +73,7 @@ Video tutorial version:
     ?$search=DE
     ```
 
-    !![Play with the OData Service](serach.png)
+    ![Play with the OData Service](serach.png)
 
 1. You can find out more about OData V4 at the [OData organization](https://www.odata.org/documentation/) and the [documentation for SAPUI5](https://ui5.sap.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).
 
