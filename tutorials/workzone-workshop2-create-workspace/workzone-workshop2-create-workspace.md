@@ -102,7 +102,10 @@ In this step, you'll add your deployed UI5 integration card to SAP Work Zone and
 
 Congratulations! You're done!
 
-If you would like to implement the same SAP Work Zone, using your own subaccount, you can follow this tutorial mission: [Create Your First Digital Workplace Using SAP Work Zone](mission.workzone-first.html).
+If you would like to implement the same SAP Work Zone, using your own subaccount, you can follow this tutorial mission: [Create Your First Digital Workplace Using SAP Work Zone](mission.workzone-first).
+
+[DONE]
+[ACCORDION-END]
 
 
 
