@@ -6,7 +6,7 @@ primary_tag: products>sap-business-technology-platform
 tags: [ tutorial>beginner, programming-tool>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 time: 5
 author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
