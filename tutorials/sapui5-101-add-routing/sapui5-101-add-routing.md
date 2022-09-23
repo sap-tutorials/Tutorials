@@ -4,7 +4,7 @@ description: Add new views to the SAPUI5 web application and declare them in the
 auto_validation: true
 primary_tag: programming-tool>sapui5
 author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
+author_profile: https://github.com/nicoschoenteich
 tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio  ]
 time: 20
 ---
