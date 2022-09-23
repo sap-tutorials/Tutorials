@@ -17,8 +17,7 @@ parser: v2
  - You are a member of the Cloud Foundry space where your SAP BTP ABAP Environment resides, and you have **Space Developer** role.
  - You have a user in your SAP BTP ABAP Environment with the following business catalogs: `SAP_CORE_BC_SEC` and `SAP_CORE_BC_COM`.
 
-## Details
-### You will learn
+## You will learn
 - How to integrate the Theme Designer with your SAP BTP ABAP Environment.
 - How to use the Theme Designer to create and maintain custom themes.
 - How to enable the usage of custom themes in your SAP BTP ABAP Environment.
