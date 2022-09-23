@@ -6,7 +6,7 @@ time: 10
 tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag:  products>sap-launchpad-service
 author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
