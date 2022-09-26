@@ -3,7 +3,7 @@ title: Debug Your SAPUI5 App
 description: Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-btp-cloud-foundry-environment, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, software-product>sap-btp--cloud-foundry-environment, tutorial>free-tier]
 primary_tag: programming-tool>sapui5
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich

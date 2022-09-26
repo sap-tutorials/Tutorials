@@ -3,7 +3,7 @@ title: Create an SAPUI5 App from the Command Line
 description: Create and test a newly created SAPUI5 app on you local machine with the editor of your choice.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-business-technology-platform, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: programming-tool>sapui5
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich

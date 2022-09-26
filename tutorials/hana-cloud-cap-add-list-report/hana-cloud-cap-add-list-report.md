@@ -4,7 +4,7 @@ description: Run the CAP app locally and add an SAP Fiori elements list report t
 time: 20
 auto_validation: true
 tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-business-application-studio, topic>user-interface,  software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-fiori
+primary_tag: software-product>sap-fiori
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
