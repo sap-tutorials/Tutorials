@@ -19,7 +19,7 @@ author_profile: https://github.com/karimmohraz
 - How to set up the Metaflow Python package for SAP AI Core
 - How to run a local test of your Metaflow pipeline.
 
-Discover how Metaflow assists you, with diagrams and visualisations from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
+Discover how Metaflow assists you, with diagrams and visualization from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
 
 ---
 
@@ -197,7 +197,6 @@ aws_secret_access_key = <YOUR_S3_ACCESS_KEY>
 
 > **INFORMATION** the Metaflow library for SAP AI Core uses AWS, however you may skip the installation of AWS CLI.
 
-[VALIDATE_1]
 [ACCORDION-END]
 
 
@@ -254,7 +253,6 @@ if __name__ == "__main__":
 
 > **INFORMATION** You may discover more snippets in the [official Metaflow tutorials.](https://docs.metaflow.org/getting-started/tutorials)
 
-[VALIDATE_1]
 [ACCORDION-END]
 
 
@@ -277,7 +275,7 @@ python hellometaflow.py run
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Save set up environment)]
+[ACCORDION-BEGIN [Step 8: ](Save set up environment)]
 
 
 [OPTION BEGIN [Python virtual environment]]
