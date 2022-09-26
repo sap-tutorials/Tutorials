@@ -2,7 +2,7 @@
 title: Create a Destination in the SAP BTP Cockpit
 description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-product>sap-business-technology-platform
 tags: [ tutorial>beginner, programming-tool>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 time: 5
 author_name: Nico Schoenteich
