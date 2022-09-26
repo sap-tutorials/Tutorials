@@ -9,7 +9,7 @@ parser: v2
 
 # Create Calculation View and Expose via CAP (SAP HANA Cloud)
 
-<!-- description -->Learn how to combine HANA native artifacts, like calculation views, with SAP Cloud Application Programming Model (CAP)
+<!-- description --> Learn how to combine HANA native artifacts, like calculation views, with SAP Cloud Application Programming Model (CAP)
 
 ## You will learn
 

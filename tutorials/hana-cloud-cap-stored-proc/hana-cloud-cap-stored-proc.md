@@ -9,7 +9,7 @@ parser: v2
 
 # Create HANA Stored Procedure and Expose as CAP Service Function (SAP HANA Cloud)
 
-<!-- description -->Further combine SAP HANA Cloud native artifacts with the SAP Cloud Application Programming Model (CAP), and expose SQLScript procedures as service functions.
+<!-- description --> Further combine SAP HANA Cloud native artifacts with the SAP Cloud Application Programming Model (CAP), and expose SQLScript procedures as service functions.
 
 ## You will learn
 
