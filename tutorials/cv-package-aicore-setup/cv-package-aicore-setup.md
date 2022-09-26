@@ -18,7 +18,7 @@ author_profile: https://github.com/kannankumar
 ## Prerequisites
   - You have completed the [Create Your First Machine Learning Project using SAP AI Core tutorial series](group.ai-core-get-started-basics)
   - You have [provisioned SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html)
-  - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html)
+  - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
   - You have [created Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
   - You have [registered your object store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
 
@@ -28,7 +28,7 @@ The package bundles capabilities of detectron2 (library for object detection and
 
 In this tutorial, you first create a Python virtual environment and install Python packages in the Python virtual environment. You then link the virtual environment to a Jupyter notebook so that you can run computer vision pipelines on SAP AI Core from a Jupyter notebook.
 
-After setup, you can train and serve an AI model for object detection. The aim of the model is to recognise objects (numbers) on electricity meter readings. See the related computer vision tutorials for training and serving an object detection model.
+After set up, you can train and serve an AI model for object detection. The aim of the model is to recognise objects (numbers) on electricity meter readings. See the related computer vision tutorials for training and serving an object detection model.
 
 
 
@@ -90,7 +90,7 @@ You can see the path of the Python executable in your virtual environment.
 The `ai-core-sdk` Python package allows us to interact with SAP AI Core. It also provides a command line interface to content packages like the computer vision package.
 
 Install the `SAP AI Core SDK` package by running the snippet below.
-> (The command `pip install <package_name>` downloads the package from [public python repository]((https://pypi.org/project/ai-core-sdk/).) and installs it in your virtual environment.)
+> (The command `pip install <package_name>` downloads the package from [public python repository](https://pypi.org/project/ai-core-sdk/). and installs it in your virtual environment.)
 
 ```BASH
 pip install "ai-core-sdk[aicore-content]"
@@ -372,8 +372,8 @@ with open(aic_service_key_path) as ask:
     aic_service_key = json.load(ask)
 
 # Creating an AI API client instance
-ai_api_client = AICoreV2Client(
-    base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2", # The present AI API version is 2
+ai_api_client = AIAPIV2Client(
+    base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2/lm", # The present AI API version is 2
     auth_url=  aic_service_key["url"] + "/oauth/token",
     client_id = aic_service_key['clientid'],
     client_secret = aic_service_key['clientsecret']

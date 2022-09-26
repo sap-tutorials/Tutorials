@@ -134,7 +134,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. We need to bind our project to a Database Connection and HDI container instance. Press the **bind** icon to being the process.
 
-    !![Bind Project](start_bind.png)
+    ![Bind Project](start_bind.png)
 
 1. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undeploy is quite helpful during the development process for the reasons described in this dialog)
 

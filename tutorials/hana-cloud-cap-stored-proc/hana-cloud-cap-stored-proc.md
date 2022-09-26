@@ -117,4 +117,4 @@ Video tutorial version:
 
     ![Test Service](sleep_true.png)
 
-You've now added an OData function to your service layer which in turn is implemented as an SAP HANA Stored Procedure  
+You've now added an OData function to your service layer which in turn is implemented as an SAP HANA Stored Procedure

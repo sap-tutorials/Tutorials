@@ -116,7 +116,7 @@ To consume the external service from our cloud deployed application, you will cr
     |--|--|
     | Name | cpapp-bupa
     | Type | HTTP
-    | URL  | http://{Virtual host}:{Virtual port}
+    | URL  | `http://{Virtual host}:{Virtual port}`
     | Proxy Type | On Premise
     | Authentication | `BasicAuthentication`
     | User | `CPAPP` (as defined in `Step 3: Create a technical user` [from this tutorial](btp-app-ext-service-odata-service))

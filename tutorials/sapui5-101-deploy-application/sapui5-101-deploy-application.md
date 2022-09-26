@@ -6,7 +6,7 @@ time: 25
 tags: [ tutorial>beginner, programming-tool>javascript, programming-tool>sapui5, programming-tool>html5, software-product>sap-business-technology-platform, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-btp--cloud-foundry-environment
 author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
@@ -29,7 +29,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
 2. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archives`.
 
-    !![buildSuccess](buildSuccess.png)
+    !![buildSuccess](buildsuccess.png)
 
 [DONE]
 [ACCORDION-END]
