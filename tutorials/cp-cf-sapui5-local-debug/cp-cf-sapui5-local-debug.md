@@ -5,7 +5,7 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-btp-cloud-foundry-environment, tutorial>free-tier]
 primary_tag: programming-tool>sapui5
-author_name: Nico Geburek
+author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
