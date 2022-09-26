@@ -5,7 +5,7 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori, programming-tool>odata, programming-tool>sapui5,   products>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
-author_name: Nico Geburek
+author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 

@@ -5,6 +5,8 @@ time: 30
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-hana, software-product-function>sap-cloud-application-programming-model, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites

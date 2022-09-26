@@ -5,6 +5,8 @@ time: 20
 auto_validation: true
 tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-business-application-studio, topic>user-interface,  software-product-function>sap-cloud-application-programming-model]
 primary_tag: products>sap-fiori
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
