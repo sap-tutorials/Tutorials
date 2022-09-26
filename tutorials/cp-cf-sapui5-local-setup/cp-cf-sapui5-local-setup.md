@@ -4,7 +4,9 @@ description: Prepare you local development environment to implement successful S
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-btp--cloud-foundry-environment, tutorial>free-tier]
-primary_tag: topic>sapui5
+primary_tag: programming-tool>sapui5
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
