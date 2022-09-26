@@ -1,8 +1,6 @@
 ---
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Create a CAP Business Service with Node.js Using Visual Studio Code
-description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
