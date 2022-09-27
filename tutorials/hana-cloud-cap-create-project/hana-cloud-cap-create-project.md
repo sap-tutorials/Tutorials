@@ -9,7 +9,7 @@ parser: v2
 
 # Create an SAP Cloud Application Programming Model Project for SAP HANA Cloud
 
-<!-- description -->Use the wizard for the SAP Cloud Application Programming Model to create a project in SAP Business Application Studio that will also support SAP HANA Cloud.
+<!-- description --> Use the wizard for the SAP Cloud Application Programming Model to create a project in SAP Business Application Studio that will also support SAP HANA Cloud.
 
 ## You will learn
 

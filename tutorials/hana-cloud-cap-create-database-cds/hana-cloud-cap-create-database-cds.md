@@ -10,7 +10,7 @@ parser: v2
 
 # Create Database Artifacts Using Core Data Services (CDS) for SAP HANA Cloud
 
-<!-- description -->Use SAP Cloud Application Programming Model (CAP) and Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts.
+<!-- description --> Use SAP Cloud Application Programming Model (CAP) and Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts.
 
 ## You will learn
 
