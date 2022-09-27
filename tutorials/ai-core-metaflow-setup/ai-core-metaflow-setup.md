@@ -197,6 +197,7 @@ aws_secret_access_key = <YOUR_S3_ACCESS_KEY>
 
 > **INFORMATION** the Metaflow library for SAP AI Core uses AWS, however you may skip the installation of AWS CLI.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -253,6 +254,7 @@ if __name__ == "__main__":
 
 > **INFORMATION** You may discover more snippets in the [official Metaflow tutorials.](https://docs.metaflow.org/getting-started/tutorials)
 
+[DONE]
 [ACCORDION-END]
 
 
