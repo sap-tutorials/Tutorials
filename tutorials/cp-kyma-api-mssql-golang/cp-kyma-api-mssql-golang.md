@@ -245,6 +245,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
