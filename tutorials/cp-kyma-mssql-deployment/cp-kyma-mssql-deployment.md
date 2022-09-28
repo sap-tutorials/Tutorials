@@ -163,10 +163,11 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
 Run the following commands from the `database-mssql` directory using your CLI.
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling istio:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
