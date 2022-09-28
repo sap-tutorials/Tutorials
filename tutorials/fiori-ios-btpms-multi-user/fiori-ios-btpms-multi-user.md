@@ -716,7 +716,7 @@ In the given scenario any pending changes done by a user should be uploaded befo
     ![iOS App Sign in screen](img_12_9.png)
 
 10. Click ![Add Users Icon](img_12_10_ico.png) to add a new user.
-    > Ensure all users being onboarded have access to the BTP account. You can configure this in the users section under security on your SAP BTP sub-account.
+    > Ensure all users being on-boarded have access to the BTP account. You can configure this in the users section under security on your SAP BTP sub-account.
     > ![Create User ](img_12_10_note.png)
 
 11. Follow the onboarding flow for the second user.

@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to reference the NativeScript Geolocation plugin from a rule
-  - How to add a NativeScript plugin to your branded MDK client
+  - How to reference the `NativeScript` Geolocation plugin from a rule
+  - How to add a `NativeScript` plugin to your branded MDK client
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
@@ -44,12 +44,14 @@ In this tutorial, you will use the existing `NativeScript` plugin nativescript-g
 
     !![MDK](img-1.3.png)
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Basic Information* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Geolocation` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Geolocation` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |  
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |      
@@ -122,7 +124,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 You will add this registered control in the `Main.page`.
 
-  1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
+  1. Click the `Main.page`, drag & drop **Static Key Value** container to the page area.
 
     !![MDK](img-3.1.gif)
 
@@ -189,7 +191,7 @@ In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. Yo
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services to use in the Mobile client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -311,7 +313,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial and run it in your device.
 
-2. Once you have accepted the app update, allow your app to access your location.
+2. After you have accepted the app update, allow your app to access your location.
 
     ![MDK](img_8.1.png)
 
@@ -325,7 +327,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
-2. Once you have accepted the app update, allow your app to access your location.
+2. After you have accepted the app update, allow your app to access your location.
 
     ![MDK](img_8.3.png)
 

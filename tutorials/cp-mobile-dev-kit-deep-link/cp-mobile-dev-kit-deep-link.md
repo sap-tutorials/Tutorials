@@ -46,12 +46,14 @@ If you are building a custom version of Mobile development kit client, there you
 
     !![MDK](img-1.3.png)  
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Basic Information* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDKDeepLink` |
+    | `Your Project Name` | Provide a name of your choice. `MDKDeepLink` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |    
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -149,7 +151,7 @@ In the MDK editor, you will first create a message to display a confirmation dia
 
 [ACCORDION-BEGIN [Step 3: ](Add buttons on main page to open other apps or web pages)]
 
-1. Next, on `Main.page`, drag and drop the **Section Button Table** Container control onto the Page.
+1. Next, on `Main.page`, drag and drop the **Button Table** Static Container control onto the Page.
 
     !![MDK](img_3.1.gif)
 
@@ -158,11 +160,11 @@ In the MDK editor, you will first create a message to display a confirmation dia
 
 2. Now, you will add items to this Container control.
 
-    Drag and drop the **Section Button** Container Item control onto the page.
+    Drag and drop the **Button** Static Item control onto the page.
 
     !![MDK](img_3.2.gif)
 
-3. Repeat the above step, and drag and drop one more such **Section Button** Container Item control.
+3. Repeat the above step, and drag and drop one more such **Button** Static Item control.
 
     !![MDK](img_3.3.png)
 
@@ -195,8 +197,7 @@ In the MDK editor, you will first create a message to display a confirmation dia
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
-
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services to use in the Mobile client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -225,11 +226,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-6.1.png)
 
@@ -238,12 +239,12 @@ The On-boarding QR code is now displayed.
 !![MDK](img-6.2.png)
 
 
->Leave the Onboarding dialog box open for step 7.
+>Leave the Onboarding dialog box open for the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 7: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
@@ -251,7 +252,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with the buttons you added in previous step 3.
+    After you accept app update, you will see the **Main** page with the buttons you added in previous step 3.
 
     ![MDK](img_7.1.png)
 
@@ -273,7 +274,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with the buttons you added in previous step 3.
+    After you accept app update, you will see the **Main** page with the buttons you added in previous step 3.
 
     !![MDK](img_7.7.png)
 

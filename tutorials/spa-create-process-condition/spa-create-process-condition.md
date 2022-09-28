@@ -9,17 +9,13 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process) and [Create and Configure Forms](spa-create-forms)
-
 ## Details
 ### You will learn
   - How to create and configure process condition
   - How to define different process flows for each conditional criteria
 
 ---
-**Process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
+A **process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
 In this unit, you will learn how to use process condition in a business process to get rid of unnecessary approvals when the process is routed for auto-approval or one-step-approval flow based on the sales order criteria.
 
@@ -51,7 +47,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Less than](less-than.png)
 
-5. Enter **100000** as the value and choose **Save**
+5. Enter **100000** as the value and choose **Apply**
 
     You have configured your **if** branch to: **if Order Amount is less than 100000**.
 

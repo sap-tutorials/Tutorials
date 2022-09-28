@@ -24,9 +24,9 @@ Business Entity Recognition is a customizable machine learning service, but you 
 - `sap_generic_entities`
 - `sap_invoice_header`
 
-See [Extracted Entities by Pre-trained Model](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html) and [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html).
+See [Extracted Entities by Pre-trained Model](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html) and [Free Tier Option Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html).
 
-This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, check out the tutorial group [Use Custom Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-custom).  
+This tutorial gives you an introduction to the service using the free tier option for Business Entity Recognition and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, check out the tutorial group [Use Custom Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-custom).  
 
 ---
 

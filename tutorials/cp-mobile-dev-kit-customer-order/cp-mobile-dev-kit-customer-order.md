@@ -32,7 +32,6 @@ To enhance your MDK app with customer order information, you need to carry out t
 
 [ACCORDION-BEGIN [Step 1: ](Create a new order list page)]
 
-
 This page will display customer orders list, you will add an **Object Table** control that is used to display information (like Sales order ID, order creation date, gross amount and life cycle status name) about an object.
 
 >You can find more details about [available controls in section page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
@@ -51,13 +50,11 @@ This page will display customer orders list, you will add an **Object Table** co
 
     !![MDK](img-1.3.png)
 
-4. Next, add an **Object Table** compound to display information like sales order ID, order creation date, gross amount and life cycle status name.
+4. Next, add an **Object Table** control to display information like sales order ID, order creation date, gross amount and life cycle status name.
 
-    In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img_1.4.gif)
-
-    >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
 5. In the **Properties** pane, provide the below information:
 
@@ -65,7 +62,7 @@ This page will display customer orders list, you will add an **Object Table** co
     |----|----|
     | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `QueryOptions`| `$top=5&$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc` |
 
     !![MDK](img-1.5.png)
 
@@ -130,17 +127,17 @@ This page will show related details for an order. In this page, you will add an 
 
     !![MDK](img-2.3.png)
 
-4. Next, you will add a **Static Key Value** container and its container item **Key Value Item** to display information like sales order id, life cycle status & date of order creation name.
+4. Next, you will add a **Static Key Value** container and its item **Key Value Item** to display information like sales order id, life cycle status & date of order creation name.
 
     >**Static Key Value** is a container that can display one or more key value pair items on a section page. In this container, you can include a Key Value Item, a simple key value cell that displays a label and a text pair. You can find more details [here](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/KeyValue.schema.html) about this container.
 
-    In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Static Container** section, drag and drop the **Static Key Value** control onto the page area.
 
-    !![MDK](img-2.4.gif)
+    !![MDK](img-2.4.png)
 
-5. Now, add key value item to this container. In the Layout Editor, expand the **Controls** | **Container Item** section, drag and drop the **Key Value Item** control onto the page area.
+5. Now, add key value item to this container. In the Layout Editor, expand the **Controls** | **Static Items** section, drag and drop the **Key Value Item** control onto the page area.
 
-    !![MDK](img_2.5.gif)
+    !![MDK](img_2.5.png)
 
     Provide the below information:
 
@@ -232,7 +229,7 @@ In `Customers_Orders.page`, select the Object Table, **click** the 3 dots icon u
 
 Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as the `OnPress` Action.
 
-!![MDK](img-4.gif)
+!![MDK](img-4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -269,7 +266,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
 1. You will add an **Object Table** compound to display top 5 orders information in the `Customers_Detail.page`.
 
-    In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img-6.1.gif)
 
@@ -395,10 +392,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-9.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test the application)]
+[ACCORDION-BEGIN [Step 10: ](Run the app)]
 
 [OPTION BEGIN [Android]]
 

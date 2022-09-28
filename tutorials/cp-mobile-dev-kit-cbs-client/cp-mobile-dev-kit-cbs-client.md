@@ -315,6 +315,8 @@ You can find more details about Cloud Build service in [help documentation](http
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
+    >For Android builds: The packaging format to use for the build, including APK (Android Package Kit, the default) or AAB (Android App Bundle). Since Google requires applications uploaded to the Google Play Store be built in the AAB format, select this option if that is your plan. To install an AAB binary without using Google Play Store, you must download the AAB and use Google's `bundletool` to extract an install-ready binary from the AAB and to install that binary. Refer to their documentation on `bundletool` for more details.
+
 6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
     !![MDK](img-3.5.5.png)
@@ -373,6 +375,9 @@ You can find more details about Cloud Build service in [help documentation](http
     !![MDK](img-3.5.png)
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
+    If the google-services.json is available in the uploaded ZIP file, you will see option _Show Contents_ to view the contents of the JSON file. If it is not the right file, click _Remove File_ and then you can upload a new google-services.json file to override it.
+
+    >For Android builds: The packaging format to use for the build, including APK (Android Package Kit, the default) or AAB (Android App Bundle). Since Google requires applications uploaded to the Google Play Store be built in the AAB format, select this option if that is your plan. To install an AAB binary without using Google Play Store, you must download the AAB and use Google's `bundletool` to extract an install-ready binary from the AAB and to install that binary. Refer to their documentation on `bundletool` for more details.
 
 6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 

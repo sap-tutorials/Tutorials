@@ -113,7 +113,9 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Choose **Save**.
 
-12. Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
+12. Choose **`RequestProductDetails`** and then the **Resources** tab.
+
+    Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     !![Resources Tab API Changes](014.png)
 

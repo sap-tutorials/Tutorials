@@ -34,11 +34,7 @@ For example:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Determine Kyma Cluster Domain)]
-In your Kyma dashboard, find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file or in the URL of the Kyma dashboard.
-
-For example:
-
-![image-20211214133533870](image-20211214133533870.png)
+Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
 
 
 [DONE]
@@ -340,7 +336,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 [ACCORDION-BEGIN [Step 10: ](Project Repository)]
 
 
-You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission%20-%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
 
 
 

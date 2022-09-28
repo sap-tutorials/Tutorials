@@ -240,7 +240,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables and import data)]
+[ACCORDION-BEGIN [Step 4: ](Create tables and insert data)]
 
 1. Exit HDBSQL by entering \q.
 
@@ -438,6 +438,15 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![result](select.png)
 
+    View the list of created objects.
+
+    ```SQL
+    \dt HOTEL.
+    \dp HOTEL.
+    ```
+
+     ![View the list of tables and procedures](list-tables-procs.png)
+
     For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
 
 
@@ -462,33 +471,63 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     DROP TABLE HOTEL.CITY;
     DROP SCHEMA HOTEL CASCADE;
     DROP USER USER1 CASCADE;
-    ```
-
-    > ---
-
-
-    > HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
-    > ```SQL
-    > SELECT * FROM HOTEL.CUSTOMER; -- interactive
-    > hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-    > hdbsql -U USER1UserKey -I hotel.sql -- batch file
     >```
 
-    > ---
+[DONE]
+[ACCORDION-END]
 
-    > [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+[ACCORDION-BEGIN [Step 5: ](Interactive, non-interactive, substitution variables, and prepared statements)]
 
-    > ```SQL (find_customers.sql)
-    > select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
-    > ```
+1. HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
-    > It could be called using:
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER; -- interactive
+    hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    hdbsql -U USER1UserKey -I hotel.sql -- batch file
+    ```
 
-    > ```Shell
-    > hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
-    > ```
+2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
 
-    > ![example of substitution parameters](subst.png)
+    Given the following file:
+
+    ```SQL (find_customers.sql)
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
+    ```
+
+    It could be called using:
+
+    ```Shell
+    hdbsql -A -U user1UserKey -V nameParam=J% -I find_customers.sql
+    ```
+
+    ![example of substitution parameters](subst.png)
+
+    It is also possible to define new variables and list the defined variables as shown below.
+
+    ```SQL
+    \vd titleParam Mr
+    \vl
+    SELECT * FROM HOTEL.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
+    ```
+
+    ![further example of substitution parameters](subst2.png)
+
+    See [SAP HANA HDBSQL Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) for details on the options to list and define substitution variables.
+
+3. As of version 2.13, HDBSQL will prompt for required parameters.  A few examples follow.
+
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?;
+    ```
+
+    ```SQL
+    CALL HOTEL.SHOW_RESERVATIONS(?, ?);
+    ```
+
+    ![Prompting for parameters](prepared.png)
+
+    In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase whereas, in the previous step, which used substitution variables, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
+
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 

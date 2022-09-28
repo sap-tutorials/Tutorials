@@ -12,7 +12,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - When starting with the result from the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
 
 ## Details
 ### You will learn
@@ -20,9 +19,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to handle expands to remote entities
  - How to add supplier information to the Risks UI
  - How to add value help to select a supplier
-
-
-To start with this tutorial use the result in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
 
 ---
 

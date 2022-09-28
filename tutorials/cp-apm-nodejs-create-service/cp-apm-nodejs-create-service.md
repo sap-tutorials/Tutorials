@@ -1,35 +1,38 @@
 ---
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Create a CAP Business Service with Node.js Using Visual Studio Code
-description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
+parser: v2
 ---
 
+# Create a CAP Business Service with Node.js Using Visual Studio Code
+<!-- description --> Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 
-## Prerequisites
-- You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
-- You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows) You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
-- You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
-- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
-
-## Details
-### You will learn
+## You will learn
   - How to develop a sample business service using CAP and `Node.js`
   - How to define a simple data model and a service that exposes the entities you created in your data model
   - How to run your service locally
   - How to deploy the data model to an `SQLite` database
   - How to add custom handlers to serve requests that aren't handled automatically
 
+## Prerequisites
+- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
+- (Windows only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) section of the CAP documentation.
+- You've installed an HTTP client, for example, [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
+
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up local development environment)]
+## Intro
 
 Before you start, make sure that you've completed the prerequisites.
+
+### Set up local development environment
 
 1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
@@ -51,41 +54,35 @@ Before you start, make sure that you've completed the prerequisites.
     cds
     ```
 
-    ![cds commands](cds_commands.png)
+    <!-- border; size:540px -->![cds commands](cds_commands.png)
 
     > This lists the available `cds` commands. For example, use `cds --version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
+### Install VS Code extension
 
 1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
 
 2. Choose **Install**.
 
-    !![extension_marketplace](VSCode_extension.png)
+    <!-- border; size:540px -->![extension_marketplace](VSCode_extension.png)
 
-    > Visual Studio Code opens the extensions details page.
+    > VS Code opens the extensions details page.
 
 3. In VS Code choose **Install** to enable the extension for SAP CDS Language Support.
 
-    ![extension_VSCode](VSCode_view_extension.png)
+    <!-- border; size:540px -->![extension_VSCode](VSCode_view_extension.png)
 
     > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
     > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Start project)]
+### Start project
 
 [OPTION BEGIN [Windows]]
 
-With your installed CDS command line tool, you can now create a new CAP-based project, in the form of a new directory with various things preconfigured.
+With your installed CDS command line tool, you can now create a new CAP-based project, in the form of a new directory with various things preconfigured, and run it.
 
 1. Open a command line window and run the following command in a folder of your choice to create the project:
 
@@ -95,9 +92,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. In Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
+2. In VS Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
-3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within VS Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -136,9 +133,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
+2. Open VS Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Terminal** to open a command line window within VS Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -166,11 +163,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
 [OPTION END]
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Define your first service)]
+### Define your first service
 
 After initializing the project, you should see the following empty folders:
 
@@ -178,9 +171,9 @@ After initializing the project, you should see the following empty folders:
 - `db`: for the database level schema model
 - `srv`: for the service definition layer
 
-  ![Folder structure](folder_structure.png)
+  <!-- border; size:540px -->![Folder structure](folder_structure.png)
 
-1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
+1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in VS Code and create a new file called `cat-service.cds`.
 
 2. Add the following code to the file `cat-service.cds`:
 
@@ -232,15 +225,11 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    !![application](application_local.png)
+    <!-- border; size:540px -->![application](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Provide mock data)]
+### Provide mock data
 
 Add service provider logic to return mock data.
 
@@ -279,15 +268,11 @@ Add service provider logic to return mock data.
 
     > You should see the mock data that you've added for the `Books` and `Authors` entities.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Add data model and adapt service definition)]
+### Add data model and adapt service definition
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called `data-model.cds`.
+1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `data-model.cds`.
 
 2. Add the following code to the file `data-model.cds`:
 
@@ -330,13 +315,9 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-[DONE]
+### Add initial data
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Add initial data)]
-
-In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
+In VS Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
 
 1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
 
@@ -391,11 +372,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     > You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add persistent database)]
+### Add persistent database
 
 Before you continue, make sure that you've completed the prerequisites and installed SQLite (for Windows users only).
 
@@ -447,42 +424,62 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - [ terminate with ^C ]
     ```
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Test generic handlers with Postman)]
+### Test generic handlers
 
 You can now see the generic handlers shipped with CAP in action.
 
-1. Open the Postman application.
+In the root of your project, create a file called `test.http` and copy the following requests in it. This file can be used with the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to make requests against your service. The generic handlers CAP provides sent the responses to your requests.
 
-    > You can use any other HTTP client than Postman.
+```HTTP
+###
+#
+# Browse Books
+#
+GET http://localhost:4004/catalog/Books?
+  # &$select=title,stock
+  # &$expand=currency
+  # &sap-language=de
+
+###
+#
+# Get Author wit ID 101
+#
+GET http://localhost:4004/catalog/Authors(101)
+
+###
+#
+# Update Author with ID 101
+#
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json
+
+{"ID": 101, "name": "Some Author"}
 
 
-2. Click on the following link and save the file to a folder of your choice: [postman.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
+###
+#
+# Order a Book
+#
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json;IEEE754Compatible=true
 
-3. In the Postman app, use the **Import** button in the toolbar:
+{"book_ID": 201, "amount": 5}
 
-    !![Postman import](postman-import.png)
 
-4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
+```
 
-    !![Postman import from file](postman-import-from-file.png)
+Click on `Send Request` inside the `test.http` file, to execute requests against your service.
 
-5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups. They should all return proper responses.
+<!-- border; size:540px -->![Send a request](send_request.png)
 
-    !![Test the request](postman-test-request.png)
+> This `Send Request` button is provided by the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client). It appears for every single request. This is important for the following step, when you execute, for example, the `Order a Book` request.
 
-    > With your current service implementation, you can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since you've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
+The REST client gives you the response of your service and you see immediately if the request was successful.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+### Add custom logic
 
-[ACCORDION-BEGIN [Step 10: ](Add custom logic)]
-
-1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with:
+1. In VS Code open the file `cat-service.js` and replace the existing code with:
 
     ```JavaScript
       module.exports = (srv) => {
@@ -513,24 +510,16 @@ You can now see the generic handlers shipped with CAP in action.
 
     > Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 
-2. In Postman, execute the `GET Books` request.
+2. In the `test.http` file, execute the `Browse Books` request.
 
     > Look at the stock of book `201`.
 
-    !![Test the request](postman-get-books.png)
+    <!-- border; size:540px -->![Test the request](get_stock.png)
 
-3. Execute one of the `POST Orders` requests.
+3. Execute the `Order a Book` request.
 
-    > This triggers the logic above and reduce the stock.
+    > This triggers the logic above and reduces the stock.
 
-4. Execute the `GET Books` request again.
+4. Execute the `Browse Books` request again.
 
-    > The stock of book `201` is lower than before.
-
-[DONE]
-
-[ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-apm-nodejs-create-service" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+    > The stock of book `201` is lower than before. In the response you also see, that overstocked books get a discount now.
