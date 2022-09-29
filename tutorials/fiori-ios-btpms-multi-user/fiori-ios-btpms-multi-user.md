@@ -2,7 +2,7 @@
 title: Enable Multi-User Mode for iOS Application
 description: Learn how to configure the assistant generated application to enable the multi-user mode (one device, multiple users with secure access).
 auto_validation: true
-time: 60
+time: 55
 tags: [ tutorial>intermediate, topic>mobile, products>sap-mobile-services, operating-system>ios, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-ios
 ---
