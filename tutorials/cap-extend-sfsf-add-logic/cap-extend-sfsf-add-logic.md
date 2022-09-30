@@ -196,7 +196,7 @@ In the **Terminal** type `cd ..` and press **Enter** to go back to the **project
 
 ![Figure 9 – Change back to project root](change-to-project.png)
 
->**NOTE**: newer versions of CDS have handed over to **SAP Cloud SDK** the creation of HTTP clients for making HTTP requests to external services, using the `@sap-cloud-sdk/http-client` node package. So, if you jump-started your CAP project, **before such CDS update**, that dependency might not have been included in your `package.json` file, and, thus, not installed when you ran `npm install`. Before testing the handler, please verify that you have `@sap-cloud-sdk/http-client` listed in the dependencies of your `package.json` and, if not, run: `npm install @sap-cloud-sdk/http-client`.
+>**IMPORTANT**: newer versions of CDS have handed over to **SAP Cloud SDK** the creation of HTTP clients for making HTTP requests to external services, using the `@sap-cloud-sdk/http-client` node package. So, if you jump-started your CAP project, **before such CDS update**, that dependency might not have been included in your `package.json` file, and, thus, not installed when you ran `npm install`. Before testing the handler, please verify that you have `@sap-cloud-sdk/http-client` listed in the dependencies of your `package.json` and, if not, run: `npm install @sap-cloud-sdk/http-client`.
 
 Once again type `cds watch` and press **Enter**. Then `CTRL+Click` on the `http://localhost:4004` link to launch the **application home page**.
 
