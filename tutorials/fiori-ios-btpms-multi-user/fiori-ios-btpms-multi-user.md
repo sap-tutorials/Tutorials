@@ -2,7 +2,7 @@
 title: Enable Multi-User Mode for iOS Application
 description: Learn how to configure the assistant generated application to enable the multi-user mode (one device, multiple users with secure access).
 auto_validation: true
-time: 55
+time: 60
 tags: [ tutorial>intermediate, topic>mobile, products>sap-mobile-services, operating-system>ios, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-ios
 ---
@@ -363,6 +363,7 @@ private func configureOData(using context: OnboardingContext, completionHandler:
 13. Open `ESPMContainerOfflineODataController.Swift`
 
 12. Update `configureOData` function to accept `OfflineODataParameters`.
+
 ```swift
 public func configureOData(sapURLSession: SAPURLSession, serviceRoot: URL, onboardingID: UUID, offlineParameters: OfflineODataParameters = OfflineODataParameters()) throws {
     offlineParameters.enableRepeatableRequests = true
@@ -397,6 +398,7 @@ public enum Error: Swift.Error {
   case syncFailed
 }
 ```
+
 3. Update `openOfflineStore` function to catch the sync error.
 
 ```swift
