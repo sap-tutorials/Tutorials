@@ -235,7 +235,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
     >You will need the `Kubeconfig` setup to perform these steps as detailed in [Install the Kubernetes Command Line Tool](cp-kyma-download-cli). Please also note that the `kubeconfig` will need to be downloaded and configured once it expires after eight hours.
 
-1. Start by creating the `dev` Namespace and enabling istio:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
@@ -243,6 +243,8 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     ```
 
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
 
