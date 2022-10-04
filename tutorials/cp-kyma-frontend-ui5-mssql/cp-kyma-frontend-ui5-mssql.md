@@ -119,7 +119,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `deployment.yaml`: defines the Deployment definition for the SAPUI5 application as well as a service used for communication. This definition references the `configmap.yaml` by name. It is used to overwrite the `webapp/config.json` of the application.
 
 
-1. Start by creating the `dev` Namespace and enabling istio:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
