@@ -128,6 +128,8 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
+
 2. Within the project, open the `k8s/configmap.yaml` file and adjust `API_URL` by replacing `<cluster domain>` to match the Kyma runtime cluster domain:
 
     ```
