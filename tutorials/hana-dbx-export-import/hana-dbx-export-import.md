@@ -366,7 +366,7 @@ The following steps walk through the process of exporting to and importing data 
     EXPORT INTO PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --EXPORT INTO PARQUET FILE 'gs://<service_account>:<private_key>@<bucket>/<object_id>' FROM HOTEL.MAINTENANCE;
+    --EXPORT INTO PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' FROM HOTEL.MAINTENANCE;
     EXPORT INTO PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEv...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' FROM HOTEL.MAINTENANCE;
     ```
 
@@ -394,7 +394,7 @@ The following steps walk through the process of exporting to and importing data 
     IMPORT FROM PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --IMPORT FROM PARQUET FILE 'gs://<service_account>:<private_key>@<bucket>/<object_id>' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
+    --IMPORT FROM PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     IMPORT FROM PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEvg...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 

@@ -494,7 +494,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-    Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/en/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    Notice that asynchronous method calls use callback functions.
 
 [DONE]
 [ACCORDION-END]
@@ -600,7 +600,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/en/learn/understanding-javascript-promises).
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 [DONE]
 [ACCORDION-END]
