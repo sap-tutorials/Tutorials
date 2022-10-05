@@ -9,17 +9,14 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process)
-
 ## Details
 ### You will learn
-  - How to add interactive forms in the process
+  - How to add interactive forms to the process
   - How to design the form with layout and input fields using drag-and-drop approach
-  - How to configure the forms as the process steps 
+  - How to configure the forms as the process steps
 
 ---
+
 Tasks are a part of any business process. **SAP Process Automation** helps you to create forms that are made available to the business users in their inboxes to take relevant action.
 
 These interactive forms can be created by dragging and dropping the text elements and input fields into the canvas. Once a form has been created, it can then be used as a process trigger to start the process or added as an approval step in the business process.
@@ -29,6 +26,8 @@ Let us now explore how these different forms are created. In the steps below, yo
 -	Start the approval process.
 - Send a task in the inbox of the business user for approval.
 - Notify the requester for approval or rejection.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Create a form to trigger a business process)]
 

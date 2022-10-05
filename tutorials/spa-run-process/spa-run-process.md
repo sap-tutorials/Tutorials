@@ -9,9 +9,6 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
-  - [Subscribe to SAP Process Automation using Booster in SAP BTP Free tier](spa-subscribe-booster)
-
 ## Details
 ### You will learn
   - How to release and deploy the process
@@ -20,9 +17,12 @@ primary_tag: software-product>sap-process-automation
   - How to access the tasks
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Release business process project)]
 
-To run the process you have to first release and then deploy the business process project. Releasing a project creates a version or snapshot of the changes and deploying the project makes it available in runtime to be consumed. You can only deploy a released version of the project, and at a given time there can be multiple deployed versions of the same project.
+To run the process you have to first release and then deploy the business process project. 
+
+Releasing a project creates a version or snapshot of the changes and deploying the project makes it available in runtime to be consumed. You can only deploy a released version of the project, and at a given time there can be multiple deployed versions of the same project.
 
 1. In the Process Builder, to release a project, choose the **Release** button on the top-right corner of the screen and provide a description.
 
@@ -45,7 +45,7 @@ To run the process you have to first release and then deploy the business proces
 
     > Deploy will take a couple of seconds/minutes depending upon how big your project is and how many different artefacts it has. Any errors during the deployment will be shown in the Design Console.
 
-2. Once the deployment is successful, you will see a changed status. You can also see all your deployed and/or released project versions from the project status list next to the project name. 
+2. Once the deployment is successful, you will see a changed status. You can also see all your deployed and/or released project versions from the project status list next to the project name.
 
     !![unit3-44](unit3-44.png)
 

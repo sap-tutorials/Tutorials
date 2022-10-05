@@ -36,7 +36,7 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
 [ACCORDION-BEGIN [Step 2: ](Apply resources to Kyma runtime)]
 
-1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, and then choose **Create**.
+1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, enable **Enable Sidecar Injection** and then choose **Create**.
 
     ![Add Namespace](add-ns.png)
 

@@ -9,17 +9,13 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process) and [Create and Configure Forms](spa-create-forms)
-
 ## Details
 ### You will learn
   - How to create and configure process condition
   - How to define different process flows for each conditional criteria
 
 ---
-**Process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
+A **process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
 In this unit, you will learn how to use process condition in a business process to get rid of unnecessary approvals when the process is routed for auto-approval or one-step-approval flow based on the sales order criteria.
 
@@ -67,7 +63,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Delete branch](delete-branch.png)
 
-8. To create the new form, add the **New Form** from the **If-route**.
+4. To create the new form, add the **New Form** from the **If-route**.
 
     !![Process Content](unit5-03.png)
 
@@ -81,7 +77,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Process Content](unit5-04.png)
 
-9. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
+5. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
 
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
@@ -98,11 +94,11 @@ Now that you have designed the process with forms, let us define which process f
     | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-10. Save your work.
+6. Save your work.
 
     !![Design Form](design-form.png)
 
-11. Go back to the process builder and configure the auto approval form.
+7. Go back to the process builder and configure the auto approval form.
 
     - Configure the **General** section.
 
@@ -123,9 +119,9 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Inputs](inputs.png)
 
-12. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
+8. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
 
-    - Do not forget to **Save** the process once done.
+    - Do not forget to **Save** the process once done.  
 
     !![End](end-process.png)
 
