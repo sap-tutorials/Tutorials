@@ -1,6 +1,6 @@
 ---
 title: Tour the SAP Community 2022
-description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership.
+description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership. 
 
 auto_validation: true
 time: 25  
