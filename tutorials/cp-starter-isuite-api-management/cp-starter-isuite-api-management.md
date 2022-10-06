@@ -102,7 +102,6 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Choose **Save**.
 
-
 10. Choose **`RequestProductDetails`** and then the **Resources** tab.
 
     Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
@@ -120,7 +119,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 [ACCORDION-BEGIN [Step 3: ](Copy credentials from service key)]
 
- In this step, you'll copy the client ID, client secret, and token URL from the service key that you generated in your SAP BTP account. Trial users see, [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe). Free tier account users, see [Set Up Integration Suite, Free Tier](btp-integration-suite-free-tier-setup)..
+ In this step, you'll copy the client ID, client secret, and token URL from the service key that you automatically generated in your SAP BTP account. See: [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
 1. In your SAP BTP subaccount, navigate to your service instance page. Choose **Services** > **Instances and Subscriptions**.
 
