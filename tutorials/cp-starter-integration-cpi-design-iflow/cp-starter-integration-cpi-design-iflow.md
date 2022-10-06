@@ -78,7 +78,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
 
 [ACCORDION-BEGIN [Step 3: ](Add JSON to XML converter)]
-Input to the integration flow is sent in JSON format. At a later point, we communicate to a web shop which is a OData service. We use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
+Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop which is a OData service. You use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
 
 1. From the palette (the grey bar on the top containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
