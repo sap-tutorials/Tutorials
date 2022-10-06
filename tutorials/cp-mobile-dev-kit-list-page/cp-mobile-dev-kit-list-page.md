@@ -52,11 +52,9 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     !![MDK](img_1.4.png)
 
-5. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
+5. In the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Contact Cell Table** control onto the Page area.
 
     !![MDK](img-1.5.gif)
-
-    >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
 6. In the Properties pane, provide the below information:
 
@@ -89,6 +87,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 10. In the **Activity Items** section of the Properties pane, click **Add** to add a new activity item.
 
     !![MDK](img-1.10.png)
+
 
 11. Expand the added item, click the 3 dots icon to open the Object browser to bind the `ActivityValue` to the `PhoneNumber` property of the Customer entity.
 
@@ -129,21 +128,21 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
 
 [ACCORDION-BEGIN [Step 3: ](Add a button to view customer list)]
 
-Now, that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
+Now, that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Button Table** control.
 
-1. In `Main.page`, drag and drop the **Section Button Table** container control onto the Page.
+1. In `Main.page`, expand the **Controls** | **Static Container** group, drag and drop the **Button Table** control onto the Page area.
 
     !![MDK](img-3.1.gif)
 
     >**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
 
-2. Expand the **Container Item** section of the Controls palette.
+2. Expand the **Static Items** section of the Controls palette.
 
-    Drag and drop a **Section Button** onto the Section Button Table container on the page.
+    Drag and drop a **Button** onto the Button Table container on the page.
 
     !![MDK](img_3.2.gif)
 
-    >Each container type in a Section Page can contain specific controls (container items).
+    >Each static container type in a Section Page can contain specific controls (static items).
 
     >You can find more details about [Container and Container Item](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
 
@@ -174,10 +173,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the application)]
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
 
 >Make sure you are choosing the right platform tab above.
 

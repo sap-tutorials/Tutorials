@@ -15,7 +15,7 @@ primary_tag: topic>sap-community
 - Tips and tricks for asking your question
 - What to do after you asked your question
 
-This tutorial is version number 06.2022.001
+This tutorial is version number 09.2022.001
 
 SAP Community wants to create a valuable store of knowledge and it is our goal to provide content to our members in the form of advice, support, and guidance. The creation of such a reliable place is amongst other factors heavily dependent on questions, how they are asked and answered -- and this is why you are here.
 

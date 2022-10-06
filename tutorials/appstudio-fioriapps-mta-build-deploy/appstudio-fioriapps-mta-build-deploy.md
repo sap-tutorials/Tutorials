@@ -35,7 +35,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
     <br><br>!![build mta](BAS-Build-1-.png)
 
-    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
+    >The build process creates a multi-target archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
 
     !![terminal mbt build results](BAS-Build-2-.png)
 
@@ -56,9 +56,17 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     !![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. When prompted, select the API endpoint, provide your credentials, organization, and space for your project.
+3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials, and click **Sign in**.
 
-    !![Logged in to CF](BAS-CF-Login-3-.png)
+    !![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
+
+4. Select the Cloud Foundry organization, Cloud Foundry space, and click **Apply**.
+
+    !![Cloud Foundry Login dialog](BAS-CF-Login-4-.png)
+
+    >**You have been logged in.** notification appears at the bottom-right of your screen.
+
+    >!![Logged in to CF](BAS-CF-Login-5-.png)
 
 [DONE]
 [ACCORDION-END]

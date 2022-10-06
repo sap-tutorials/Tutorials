@@ -4,17 +4,15 @@ description: Create a connection between SAP BTP, Cloud Foundry environment and 
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
-- You've created an account on the Gateway Demo System: [Create an Account on the Gateway Demo System](gateway-demo-signup). Note that when you create your account, make a note of the user name and password that you entered -- you'll be needing it in this tutorial.
+- You've created an account in SAP BTP and have subscribed to and configured the SAP Launchpad service.
 
->Note:<div>&nbsp;</div><div>
-- If you're using a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html).<div>&nbsp;</div><div>
-  - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
+
 
 ## Details
 ### You will learn
@@ -26,13 +24,17 @@ author_profile: https://github.com/LindsayBert
 
 [ACCORDION-BEGIN [Step 1: ](Open your subaccount)]
 
-1. Log on to SAP BTP and click **Go To Your Trial Account**.
+1. Log on to SAP BTP.
 
-    !![Log on to SAP Cloud Platform](1-enter-trial-account.png)
+2. Select your subaccount.
 
-2. Click on the **trial** tile to navigate to your trial subaccount in the SAP BTP cockpit. If you're using your own subaccount, you can select it instead.
+    !![Select subaccount](2-click-trial.png)
 
-    !![Click trial account](2-click-trial.png)
+> If you're using an SAP BTP Trial account, after you log in to SAP BTP, you would first need to click **Go To Your Trial Account**.  !![Enter trial account](1-enter-trial-account.png)
+
+
+
+
 
 [DONE]
 [ACCORDION-END]

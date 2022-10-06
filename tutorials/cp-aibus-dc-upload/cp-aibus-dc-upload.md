@@ -21,7 +21,7 @@ To try out Document Classification, the first step is to upload data that will b
 
 [ACCORDION-BEGIN [Step 1: ](Start JupyterLab)]
 
-To get started, make sure to have your local JupyterLab instance running.
+To get started, make sure to have your local `JupyterLab` instance running.
 
 [OPTION BEGIN [Windows]]
 
@@ -35,7 +35,7 @@ To start it, open a new Terminal or Command Prompt and enter `jupyter lab`. Then
 
 [OPTION END]
 
-In the JupyterLab interface, navigate into the folder where the notebook `train_and_evaluate_custom_model.ipynb` is located using the navigation pane on the left. Open the notebook by double-clicking it. The content of the notebook will now appear on the right. If you are not familiar with that, please review the previous [tutorial](cp-aibus-dc-setup).
+In the `JupyterLab` interface, navigate into the folder where the notebook `train_and_evaluate_custom_model.ipynb` is located using the navigation pane on the left. Open the notebook by double-clicking it. The content of the notebook will now appear on the right. If you are not familiar with that, please review the previous tutorial: [Set Up Jupyter Notebook and Client Library for Document Classification](cp-aibus-dc-setup).
 
 The first step is to install the client library and to clone the [repository](https://github.com/SAP/business-document-processing) so that you have the example dataset ready to use.
 
@@ -49,7 +49,7 @@ To do so, click the first cell indicated by its grey background. Once you clicke
 
 [ACCORDION-BEGIN [Step 2: ](Prepare environment configuration)]
 
-First, you make use of the service keys that were created in this [tutorial](cp-aibus-dc-prod-service-instance).
+First, you will use the service keys that you created in [Create Service Instance for Document Classification with Customer Account](cp-aibus-dc-prod-service-instance).
 
 Scroll down in your notebook and click the cell that is shown in the image below. You can now just copy in your service key in the corresponding area. Pay attention to the additional comments given in the notebook.
 

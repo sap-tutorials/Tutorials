@@ -19,10 +19,10 @@ time: 25
 
 SAP HANA cockpit provides modifying (POST) REST API endpoints. Unlike the GET endpoints, the POST endpoints create, delete, or change objects in the cockpit.
 
-There are ten cockpit POST API endpoints:
+There are fourteen cockpit POST API endpoints:
 
 1. *`SystemRegister`*: registers an SAP HANA resource in the cockpit
-2. *`ResourceUnregister`*: `unregisters` an SAP HANA resource that's already registered
+2. *`SystemUnregister`*: `unregisters` an SAP HANA resource that's already registered
 3. *`GroupCreate`*: creates a new resource group
 4. *`GroupDelete`*: deletes a resource group
 5. *`CockpitUserCreate`*: creates a new cockpit user
@@ -31,8 +31,12 @@ There are ten cockpit POST API endpoints:
 8. *`GroupResourceRemove`*: removes a resource from a group
 9. *`GroupUserAdd`*: adds a user to a group
 10. *`GroupUserRemove`*: removes a user from a group
+11. *`ResourceSecurityUpdate`*: enables, disables, enforces resource SSO
+12. *`ResourceUpdate`*: updates database name, description, owner name, owner email, and owner details
+13. *`TechnicalUserStore`*: updates database technical user name and password
+14. *`RemoteCredentialsSet`*: stores credentials for the database user connecting to the monitored database (as displayed in Database Directory, uses `cockpit-landscape-svc`)
 
-> Only two of the ten cockpit POST APIs will be further explained in the following steps. To know more about the cockpit POST APIs, click [here](https://help.sap.com/viewer/afa922439b204e9caf22c78b6b69e4f2/2.8.0.0/en-US/a8aa6fdd1557450ea76cb691d7799ab1.html) to navigate to the **SAP Help Portal**.
+> Only two of the fourteen cockpit POST APIs will be further explained in the following steps. To know more about the cockpit POST APIs, click [here](https://help.sap.com/docs/SAP_HANA_COCKPIT/afa922439b204e9caf22c78b6b69e4f2/a8aa6fdd1557450ea76cb691d7799ab1.html) to navigate to the **SAP Help Portal**.
 
 > The **sample code** for all the cockpit APIs (GET and POST ones) is posted in **_Step 5_**. The code is written in Python and you are welcome to copy and run it to examine how each API works.
 
@@ -250,6 +254,7 @@ print("SAP HANA Cockpit API Samples\n-------------------------------------------
 # Interactive part - Prompt the user to enter his/her own information
 HANA_HOST = input("Please enter the SAP HANA cockpit host name: ")
 HANA_PORT = input("Please enter the port number for the app cockpit-adminui-svc: ")
+LANDSCAPE_PORT = input("Please enter the port number for the app cockpit-landscape-svc: ")
 HANA_USER = input("Please enter the SAP HANA cockpit user name: ")
 HANA_PWD = input("Please enter the SAP HANA cockpit password: ")
 service_key = input("Please enter the name of the service key file (must be located in the current folder): ")
@@ -320,6 +325,20 @@ def list_group_resources_des(client, authorization, groupDesignation, prefix_URL
     group_resourceListResponse = client.get(targetURI, verify=False, params=PARAMS, headers=get_header(authorization))
     return group_resourceListResponse.json()
 
+# List all cockpit users in a specified group that are visible to the customer via group ID
+def list_group_users(client, authorization, groupId):
+    data = {'groupId': groupId}
+    targetURI = baseURL + '/group/GroupUsersGet?groupId=' + groupId
+
+    group_usersListResponse = client.get(targetURI, verify=False, headers=get_header(authorization))
+    return group_usersListResponse.json()
+
+# List all cockpit users that are visible to the customer
+def list_cockpit_users(client, authorization):
+    targetURI = baseURL + '/user/CockpitUsersGet'
+
+    cockpit_usersListResponse = client.get(targetURI, verify=False, headers=get_header(authorization))
+    return cockpit_usersListResponse.json()
 
 ## POST APIs
 # Add a resource via instance number
@@ -371,7 +390,7 @@ def add_resource_via_port(client, authorization, hostName, port, techUser, techU
 def delete_cockpit_resource(client, authorization, resid):
     data = {'resid': resid}
 
-    targetURI = baseURL + '/registration/ResourceUnregister'
+    targetURI = baseURL + '/registration/SystemUnregister'
     resourceDeleteResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
     return resourceDeleteResponse.text
 
@@ -442,7 +461,6 @@ def add_group_user(client, authorization, groupId, userId):
 
     targetURI = baseURL + '/group/GroupUserAdd'
     user_to_groupResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
-
     return user_to_groupResponse.json()
 
 # Remove a user from a group
@@ -454,6 +472,53 @@ def remove_group_user(client, authorization, groupId, userId):
     resourceRemoveResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
     return resourceRemoveResponse.text
 
+# Manage resource SSO
+def update_resource_security(client, authorization, enableSSO, enforceSSO, resid, trustAdminCredentials, trustAdminUser, encrypt, validateCertificate, hostNameInCertificate):
+    data = {'enableSSO': enableSSO,
+            'enforceSSO': enforceSSO,
+            'resid': resid,
+            'trustAdminCredentials': trustAdminCredentials,
+            'trustAdminUser': trustAdminUser,
+            'encrypt': encrypt,
+            'validateCertificate': validateCertificate,
+            'hostNameInCertificate': hostNameInCertificate}
+
+    targetURI = baseURL + '/resource/ResourceSecurityUpdate'
+    update_securityResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))  
+    return update_securityResponse.json()
+
+# Update database name, description, owner name, owner email, and owner details
+def update_resource(client, authorization, resourceId, resourceName, resourceDescription, resourceOwnerName, resourceOwnerEmail, resourceOwnerDetails):
+    data = {'resourceId': resourceId,
+            'resourceName': resourceName,
+            'resourceDescription': resourceDescription,
+            'resourceOwnerName': resourceOwnerName,
+            'resourceOwnerEmail': resourceOwnerEmail,
+            'resourceOwnerDetails': resourceOwnerDetails}
+
+    targetURI = baseURL + '/resource/ResourceUpdate'
+    update_resourceResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
+    return update_resourceResponse.json()
+
+# Update database technical user name and password
+def update_technical_user(client, authorization, resid, user, credentials):
+    data = {'resid': resid,
+            'user': user,
+            'credentials': credentials}
+
+    targetURI = baseURL + '/resource/TechnicalUserStore'
+    update_technical_userResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
+    return update_technical_userResponse.json()
+
+# Store credentials for database for the calling application user
+def set_remote_credentials(client, authorization, resid, user, credentials, prefix_URL):
+    data = {'resid': resid,
+            'user': user,
+            'credentials': credentials}
+
+    targetURI = prefix_URL + '/user/RemoteCredentialsSet'
+    set_remote_credentials_userResponse = client.post(targetURI, verify=False, json=data, headers=get_header(authorization))
+    return set_remote_credentials_userResponse.json()    
 
 # Print information in json style
 def printJSON(title, jsonObj):
@@ -486,13 +551,17 @@ def main(): # launch the interactive program
             7. GroupResourceAdd: adds a resource to a group\n\
             8. GroupResourceRemove: removes a resource from a group\n\
             9. GroupUserAdd: adds a user to a group\n\
-            10. GroupUserRemove: removes a user from a group.")
+            10. GroupUserRemove: removes a user from a group.\n\
+            11. ResourceSecurityUpdate: enables, disables, enforces resource SSO\n\
+            12. ResourceUpdate: updates database name, description, owner name, owner email, and owner details\n\
+            13. TechnicalUserStore: updates database technical user name and password\n\
+            14. RemoteCredentialsSet: stores credentials for the database user connecting to the monitored database (as displayed in Database Directory).")
             api = int(input("Please enter the number of the Cockpit API which you would like to call: "))
 
             if api == 1:
                 host = input("Please enter the host name of the SAP HANA resource: ")
                 tech_user = input("Please enter the name of the technical user: ")
-                tech_creds = input("Please enter the credentials for the corresponding technical user: ")
+                tech_creds = input("Please enter the password for the corresponding technical user: ")
                 encrypt_JDBC = input("Do you want to encrypt SAP start service connection (yes/no)? ")
                 validateServerCertificate = input("Do you want to validate the server certificate (yes/no)? ")
                 hostNameInCertificate = input("Please enter a hostname if you want to override the hostname in certificate (enter 'None' otherwise): ")
@@ -544,7 +613,7 @@ def main(): # launch the interactive program
                     result = "SUCCESS"
 
             elif api == 5:
-                user_name = input("Please enter the name of the cockpit user: ")
+                user_name = input("Please enter the user name of the cockpit user: ")
                 user_pwd = input("Please create a password for the cockpit user: ")
                 email = input("Please enter the email for the cockpit user: ")
                 admin_bool = input("Would you like to assign the Cockpit administrator role to this user (yes/no)? ")
@@ -569,7 +638,7 @@ def main(): # launch the interactive program
 
             elif api == 6:
                 user_id = input("Please enter the ID number of the cockpit user: ")
-                user_name = input("Please enter the name of the cockpit user: ")
+                user_name = input("Please enter the user name of the cockpit user: ")
                 while True:
                     delete_from_UAA = int(input("Please enter the number of one of the following options (1/2):\n\
                     1. Only remove cockpit access for this user.\n\
@@ -615,6 +684,75 @@ def main(): # launch the interactive program
                 if result == '':
                     result = "SUCCESS"
 
+            elif api == 11:
+                enable_sso = input("Do you want to enable SSO (yes/no)? ")
+                enforce_sso = input("Do you want to enforce SSO (yes/no)? ")
+                resource_id = input("Please enter the ID number of the SAP HANA resource: ")
+                admin_user = input("Please enter the user name of the database user with TRUST ADMIN Privilege: ")
+                admin_creds = input("Please enter the password for the corresponding database user: ")
+                encrypt = input("Do you want to encrypt SAP start service connection (yes/no)? ")
+                validateServerCertificate = input("Do you want to validate the server certificate (yes/no)? ")
+                hostNameInCertificate = input("Please enter a hostname if you want to override the hostname in certificate (enter 'None' otherwise): ")
+
+                if enable_sso == 'yes':
+                    enable_sso = True
+                else:
+                    enable_sso = False
+                if enforce_sso == 'yes':
+                    enforce_sso = True
+                else:
+                    enforce_sso = False
+                if encrypt == 'yes':
+                    encrypt = True
+                else:
+                    encrypt = False
+                if validateServerCertificate == 'yes':
+                    validateServerCertificate = True
+                else:
+                    validateServerCertificate = False
+                if hostNameInCertificate == 'None':
+                    hostNameInCertificate = ''
+
+                result = update_resource_security(client, authorization, enable_sso, enforce_sso, resource_id, admin_creds, admin_user, encrypt, validateServerCertificate, hostNameInCertificate)
+
+            elif api == 12:
+                resource_id = input("Please enter the ID number of the SAP HANA resource: ")
+                resource_name = input("Please enter the new resource name (enter 'None' to keep the same name): ")
+                resource_description = input("Please enter the new resource description (enter 'None' to set it blank): ")
+                resource_owner_name = input("Please enter the new resource owner name (enter 'None' to set it blank): ")
+                resource_owner_email = input("Please enter the new resource owner email (enter 'None' to set it blank): ")
+                resource_owner_details = input("Please enter the new resource ower details (enter 'None' to set it blank): ")
+
+                if resource_name == 'None':
+                    resource_name = ''
+                if resource_description == 'None':
+                   resource_description = ''
+                if resource_owner_name == 'None':
+                    resource_owner_name = ''
+                if resource_owner_email == 'None':
+                    resource_owner_email = ''
+                if resource_owner_details == 'None':
+                    resource_owner_details = ''
+
+                result = update_resource(client, authorization, resource_id, resource_name, resource_description, resource_owner_name, resource_owner_email, resource_owner_details)
+
+            elif api == 13:
+                resource_id = input("Please enter the ID number of the SAP HANA resource: ")
+                tech_user = input("Please enter the user name of the technical user: ")
+                tech_creds = input("Please enter the password for the corresponding technical user: ")
+
+                result = update_technical_user(client, authorization, resource_id, tech_user, tech_creds)
+
+            elif api == 14:
+                # need landscape port specifically for this endpoint
+                prefix_URL = 'https://' + HANA_HOST + ':' + LANDSCAPE_PORT
+
+                resource_id = input("Please enter the ID number of the SAP HANA resource: ")
+                app_user = input("Please enter the user name of the database application user: ")
+                app_creds = input("Please enter the password for the corresponding application user: ")
+
+                result = set_remote_credentials(client, authorization, resource_id, app_user, app_creds, prefix_URL)
+
             else:
                 print("Your input is invalid, please try again :)\n----------------------------------------------")
                 continue
@@ -627,7 +765,9 @@ def main(): # launch the interactive program
             print("The list of all GET APIs:\n\
             1. RegisteredResourcesGet: returns information about the resources registered in SAP HANA cockpit\n\
             2. GroupsForUserGet: returns information about the resource groups that are visible to you\n\
-            3. GroupResourcesGet: returns information about the resources in a specified group that is visible to you.")
+            3. GroupResourcesGet: returns information about the resources in a specified group that is visible to you\n\
+            4. GroupUsersGet: returns information about the cockpit users in SAP HANA cockpit Database Group\n\
+            5. CockpitUsersGet: returns information about cockpit users.")
             api = int(input("Please enter the number of the Cockpit API which you would like to call: "))
 
             if api == 1:
@@ -635,18 +775,16 @@ def main(): # launch the interactive program
                 printJSON("Registered Resources:\n", cockpit_resources)
 
             elif api == 2:
-              landscape_port = input("Please enter your port number for the app cockpit-landscape-svc: ")
-              # need this port specifically for this endpoint
-              prefix_URL = 'https://' + HANA_HOST + ':' + landscape_port
+              # need landscape port specifically for this endpoint
+              prefix_URL = 'https://' + HANA_HOST + ':' + LANDSCAPE_PORT
               cockpit_groups = list_cockpit_groups(client, authorization, prefix_URL)
               printJSON('Resource Groups:\n', cockpit_groups)
 
             elif api == 3:
                 while True:
                     method = input("What type of resource groups do you want to access (customized/automatic)? ")
-                    landscape_port = input("Please enter your port number for the app cockpit-landscape-svc: ")
-                    # need this port specifically for this endpoint
-                    prefix_URL = 'https://' + HANA_HOST + ':' + landscape_port
+                    # need landscape port specifically for this endpoint
+                    prefix_URL = 'https://' + HANA_HOST + ':' + LANDSCAPE_PORT
                     if method == 'customized':
                         group_id = input("Please enter the ID number of the resource group which you would like to access: ")
                         group_resources = list_group_resources_id(client, authorization, group_id, prefix_URL)
@@ -660,6 +798,16 @@ def main(): # launch the interactive program
                     else:
                         print("Failed to recognized your input. Please try again :)")
 
+            elif api == 4:
+                group_id = input("Please enter the ID number of the resource group which you would like to access: ")
+                group_users = list_group_users(client, authorization, group_id)
+                printJSON("Group users for this customized resource group:\n", group_users)
+
+            elif api == 5:
+                cockpit_users = list_cockpit_users(client, authorization)
+                printJSON("Cockpit users:\n", cockpit_users)
+
+
             else:
                 print("Your input is invalid, please try again :)")
                 continue
@@ -671,6 +819,7 @@ def main(): # launch the interactive program
 
         else: # customer entered some invalid input
             print("Your input is invalid, please try again :)\n----------------------------------------------")
+
 
 
 # launch the program

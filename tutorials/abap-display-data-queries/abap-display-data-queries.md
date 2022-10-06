@@ -20,7 +20,7 @@ author_profile: https://github.com/julieplummer20
 - How to display the content of tables and views using Data Preview
 - How to perform ad hoc SQL queries using SQL Console
 
-The tutorial starts from scratch, based on tables of the SAP NetWeaver Demo sample EPM Model. You can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/kmuuid2/d0a7f673-59da-2f10-6e8b-bc7fe5dd4d0f/The%20NetWeaver%20Enterprise%20Procurement%20Model%20-%20An%20Introduction.pdf), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
+The tutorial starts from scratch, based on tables of the SAP NetWeaver Demo sample EPM Model. You can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://pdfslide.net/documents/the-netweaver-enterprise-procurement-model-an-introduction.html?page=1), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
 
 ---
 

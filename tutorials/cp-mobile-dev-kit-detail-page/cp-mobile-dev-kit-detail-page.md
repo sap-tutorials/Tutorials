@@ -16,6 +16,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 To enhance your MDK app with customer details information, you need to carry out the following tasks:
 
 *  Create a new customer details page
@@ -45,7 +46,7 @@ This page will show related details for a customer. In this page, you will add a
 
 4. Next, you will add an **Object Header** container to display information like first name, last name, date of birth, email address & phone number.
 
-    In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Object Header** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Static Container** group, drag and drop the **Object Header** control onto the page area.
 
     !![MDK](img-1.4.gif)
 
@@ -55,7 +56,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Double click the `DateOfBirth` property of the Customer entity to set it as the binding expression and click **OK**.
 
-    !![MDK](img-1.5.gif)
+    !![MDK](img-1.5.png)
 
 6. Repeat the above steps binding below Properties:
 
@@ -92,7 +93,7 @@ This page will show related details for a customer. In this page, you will add a
 
     !![MDK](img-1.9.gif)
 
-10. Expand the **Container Item** section of the Controls palette and drag and drop a **Key Value Item** onto the **Static Key Value** container on the page.
+10. Expand the **Static Items** section of the Controls palette and drag and drop a **Key Value Item** onto the **Static Key Value** container on the page.
 
     !![MDK](img_1.10.gif)
 
@@ -102,7 +103,7 @@ This page will show related details for a customer. In this page, you will add a
 
 12. Select the **upper left** Key Value Item and set the `KeyName` to **Address**.
 
-    !![MDK](img-1.12.png)
+      !![MDK](img-1.12.png)
 
 
 13. For this tutorial, you will set the value as a combined binding of house number and street. You can find more details about [Target Path](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/property-binding/target-path.html).
@@ -133,7 +134,9 @@ This page will show related details for a customer. In this page, you will add a
 
 16. Repeat the process and set the **lower right** Key Value Item `KeyName` to **Country** and bind the value to the `Country` entity property.
 
-    >Be careful not to select _City_, _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
+    >Be careful not to select _City_, _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection.
+
+    The page design should look like as below screenshot.
 
     !![MDK](img-1.16.png)
 
@@ -189,10 +192,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the application)]
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 

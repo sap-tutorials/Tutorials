@@ -10,7 +10,8 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- You need an SAP BTP, ABAP environment license. If you have only a trial account, you can skip this tutorial.
+- This is the second tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
@@ -26,9 +27,6 @@ author_profile: https://github.com/mervey45
  - Modifying operations, such as standard operations and actions can be checked against unauthorized access during RAP runtime.
 
 For this purposes the generated business object is checking authorization object `S_TABU_NAM` with the CDS entity `ZI_ERRORCODE###` and activity `03` (read) / `02` (modify).
-
->**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
-
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Create IAM app)]
@@ -85,12 +83,6 @@ For this purposes the generated business object is checking authorization object
       ![Select display change documents](iam9.png)
 
  12. Save the IAM app. Further information on IAM apps can be found [here](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/032faaf4f9184484ba9295c81756e831.html).
-
-  - If you don't have a SAP BTP, ABAP environment license you can instead do the following:
-    - Delete the content of method `GET_GLOBAL_AUTHORIZATIONS` in the `Local types` section of class `ZBP_I_ERRORCODE###_S`. Afterwards activate the class
-    - Delete the generated `Access Control` objects
-    - Publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4`
-    - In this case you can skip the following steps to create a Business Catalog and assign it to a Business Role
 
 [DONE]
 [ACCORDION-END]

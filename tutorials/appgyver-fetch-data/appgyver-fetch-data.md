@@ -145,14 +145,26 @@ Now, click the **Set data variable** element and click **Currently bound to: obj
 
 ![Currently bound](currently_bound_option.png)
 
-Select **Output value of another node** and then choose the following:
+Now you must store the data you just retrieved to the data variable.
 
-- ***Select logic node***: Get record
-- ***Select node output***: Record
+>**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
-![Link text e.g., Destination screen](select_get_record.png)
+-  Select **Output value of another node** and then choose the following:
 
-Then click **Save** to save this logic.
+    - ***Select logic node***: Get record
+    - ***Select node output***: Record
+
+    ![Link text e.g., Destination screen](select_get_record.png)
+
+- Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
+
+    Select **Formula**, and then enter for the formula the following:
+
+    ```
+    outputs["Get record"].record
+    ```
+
+Then click **Save** to save this logic (no matter how you entered it).
 
 ![Save the logic](save_data_variable.png)
 

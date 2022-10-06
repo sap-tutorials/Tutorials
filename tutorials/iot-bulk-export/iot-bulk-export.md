@@ -2,15 +2,15 @@
 title: Export Time Series Data
 description: Export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
 auto_validation: true
-tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform, products>sap-hana-cloud]
+tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, software-product>sap-edge-services, software-product>sap-iot-services-for-sap-btp, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
 primary_tag: topic>internet-of-things
 time: 30
 ---
 
 ## Prerequisites
  - Your tenant is onboarded in or after SAP IoT 2010b release.
- - You created an application and a device model using the tutorial [Create Application and Device Model](iot-model-create).
- - You onboarded virtual device and enabled the device to send data using the tutorial [Onboard Virtual Devices and have them send Data Continuously](iot-onboard-device).
+ - You created an application and a device model.
+ - You have onboarded (virtual) devices and have enabled them to send data with timestamps over a period of several days or weeks.
    <ul> <li>For testing purpose, you can ingest data for a week so that you have a considerable amount of data for further analysis.</li></ul>
 
 ## Details
@@ -25,8 +25,6 @@ For data analytics or machine learning scenarios, there is a need to extract tim
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Initiate time series data export)]
-
->To learn how to call an API using Postman, see [Call SAP IoT APIs with Postman](iotae-api-postman).
 
 >For more information about the time series data export APIs, see [Export Time Series Data](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/2012b/en-US/48394008958d468c95d1e9bd85c73121.html) in SAP Help Portal.
 

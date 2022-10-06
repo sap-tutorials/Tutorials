@@ -3,8 +3,8 @@ title: Create a Portal Site
 description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, software-product>sap-cloud-portal-service, topic>cloud, software-product>sap-fiori ]
+primary_tag: software-product>sap-business-technology-platform
 author_name: Lindsay Bert
 ---
 
@@ -152,4 +152,7 @@ Now you have a Portal site called the `JobCore Portal` with 2 pages. Both pages 
 In the next tutorial you're going to add web content to the `Home` page.
 
 [DONE]
+
 [ACCORDION-END]
+
+---

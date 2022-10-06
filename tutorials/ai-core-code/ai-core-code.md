@@ -18,9 +18,7 @@ author_profile: https://github.com/dhrubpaul
 - How to use Docker images with SAP AI Core
 - How to check and debug execution logs for errors.
 
-All the required files and instructions are specified in the step for you to easily complete the tutorial.
-
-By the end of the tutorial you will have your AI code in form of a Docker image, connected to your AI workflow. You will also know how to use Docker images together with AI core and how to debug your code if the **Execution** goes to an unexpected state. This tutorial is a precursor to the set up of data pipelines and models generation.
+By the end of the tutorial you will have your AI code in form of a Docker image, connected to your AI workflow. You will also know how to use Docker images together with AI core and how to debug your code if the **Execution** goes to an unexpected state. This tutorial is a precursor to the set up of data pipelines and model generation.
 
 You may still complete this tutorial if you are not familiar with the Python programming language.
 
@@ -38,7 +36,7 @@ Click on the profile button (your profile name) and then select **Account Settin
 
 !![image](img/docker-1.png)
 
-Select **Security** from the navigation bar and then click **New Access Token**.
+Select **Security** from the navigation bar and click **New Access Token**.
 
 !![image](img/docker-2.png)
 
@@ -95,7 +93,7 @@ print(f"Test Data Score {test_r2_score}")
 
 Create another file `requirements.txt` in the same directory. Here you will mention which python libraries are required to execute your code.
 
-> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirement.txt`.
+> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirements.txt`.
 
 Paste the following snippet into `requirements.txt`.
 
@@ -112,7 +110,7 @@ The code builds a model using the [California Housing Dataset](https://scikit-le
 
 [ACCORDION-BEGIN [Step 4: ](Transform your AI code into a Docker image)]
 
-In the same directory, create a file named `Dockerfile` **(no extension to be added after the filename)**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content into the file:  *** tell them that they cannot change it***
+In the same directory, create a file named `Dockerfile` with **no extension**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content **exactly** as it is, into the file:
 
 ```TEXT
 # Specify which base layers (default dependencies) to use
@@ -136,7 +134,7 @@ RUN chgrp -R 65534 /app && \
 
 !![image](img/code-docker.png)
 
-You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial. ***customer must write exactly this***
+You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial.
 
 Open your terminal and navigate to your `hello-aicore-code` directory.  You will use the terminal to build your Docker image.
 
@@ -148,7 +146,7 @@ Copy and edit the following command to build your docker image. The command foll
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
-> **INFORMATION** In the command, `-t` indicates that there is a tag name, which is your choice of descriptive name, followed by a colon and custom version in any format, here `01`. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
+> **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
 
 The result of this command should be:
 
@@ -159,7 +157,7 @@ The result of this command should be:
 
 [ACCORDION-BEGIN [Step 5: ](Connect your local system to a Docker account)]
 
-Login to your Docker account from your terminal. This step is required only once, it will store you Docker account credentials in your local Docker Desktop.
+Login to your Docker account from your terminal. This is a one time step that stores your Docker account credentials in your local Docker Desktop.
 
 > **INFORMATION** If you are using your organization docker registry (hosting) please use the command in the format `docker login <URL_YOUR_ORGANIZATIONS_DOCKER_REGISTRY>`
 
@@ -167,7 +165,7 @@ Login to your Docker account from your terminal. This step is required only once
 docker login docker.io
 ```
 
-Copy and paste, your generated Docker Access Token to use as your password. For security reasons you will not see anything getting printed on the screen when you type or paste the password.
+Copy and paste your generated Docker Access Token to use as your password. For security reasons, your input will not be printed on the screen.
 
 !![image](img/docker-login.png)
 
@@ -188,15 +186,15 @@ docker push docker.io/<YOUR_USERNAME>/house-price:01
 
 [ACCORDION-BEGIN [Step 7: ](Store your Docker credentials in SAP AI Core as a Docker registry secret)]
 
-This step is required once. Storing the credentials enables SAP AI Core to pull (download) your Docker images from a **private** Docker repository. Use of a private Docker image prevents others from seeing your content.
+This step is required once. Storing Docker credentials enables SAP AI Core to pull (download) your Docker images from a **private** Docker repository. Use of a private Docker image prevents others from seeing your content.
 
 > **WARNING** SAP AI Core does not verify your docker credentials, please ensure that you are storing the correct credentials.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Select your SAP AI Core connection under **Workspaces** app.
+Select your SAP AI Core connection under the **Workspaces** app.
 
-Click **Docker Registry Secrets** in **AI Core Administration** app. Click **Add**.
+Click **Docker Registry Secrets** in the **AI Core Administration** app. Click **Add**.
 
 !![image](img/ail/1.png)
 
@@ -211,7 +209,7 @@ Enter your details in the dialog box.
 
 **BODY**
 
-Click on POST Create a secret. Paste and edit the snippet into the body of the request, using the information below as guides.
+Click on POST Create a secret. Paste and edit the snippet into the body of the request, using the information below as a guide.
 
 ```JSON
 {
@@ -228,7 +226,7 @@ Click on POST Create a secret. Paste and edit the snippet into the body of the r
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit the snippet into the body of the request, using the information below as guides.
+Paste and edit the snippet into the body of the request, using the information below as a guide.
 
 ```PYTHON
 response = ai_core_client.docker_registry_secrets.create(
@@ -246,7 +244,7 @@ print(response.__dict__)
 [OPTION END]
 
 1. **Name**: Enter `credstutorialrepo`. This is becomes an identifier for your Docker credentials within SAP AI Core. This value is your docker registry secret.
-2. **URL**: If you have used your organization's Docker registry then use its URL, otherwise, enter `docker.io`.
+2. **URL**: If you have used your organization's Docker registry then use its URL, otherwise, enter `https://index.docker.io`.
 3. **Username**: Your Docker username.
 4. **Access Token**: The access token generated previously, in the Docker account settings.
 
@@ -296,12 +294,12 @@ spec:
 
 ### Description of edits in your workflow.
 
-Observe what the changes difference between the `hello.yaml` (created in the prerequisite tutorial) and `code-pipeline.yaml`.
+Observe the difference between the `hello.yaml` (created in the prerequisite tutorial) and `code-pipeline.yaml`.
 
 !![image](img/file-exp.png)
 
 1. `imagePullSecrets`: A key that specifies which credentials will be used to access the Docker registry. The value `credstutorialrepo` specifies the Docker registry secret that you created previously to store Docker information in SAP AI Core.
-2. `image`: A key that specifies which code to use in workflow and which command (to run `main.py`) to execute within the Docker image.
+2. `image`: A key that specifies which code to use in the workflow and which commands to execute within the Docker image.
 
 [DONE]
 [ACCORDION-END]
@@ -312,11 +310,11 @@ Observe what the changes difference between the `hello.yaml` (created in the pre
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click though **Workspaces** >  **Applications** > **<your SAP AI Core connection>** in SAP AI Launchpad.
+Click **Workspaces** >  **Applications** > **your SAP AI Core connection** in SAP AI Launchpad.
 
 Navigate to your application. Check the status of your workflow. SAP AI Core will automatically sync this workflow, this can take up to three minutes.
 
-> **WARNING** If you don't see the YAML workflow file in your Applications, even after 5 minutes, it is possible that another user (with whom you have shared SAP AI Core instance) has used the same workflow name. Check that **each** of your workflows have unique executable ID, even if they are from separate users or GitHub repositories.
+> **WARNING** If you don't see the YAML workflow file in your Applications, even after 5 minutes, it is possible that another user of your SAP AI Core instance has used the same workflow name. Check that **each** of your workflows have unique executable ID, even if they are from separate users or GitHub repositories.
 
 !![image](img/ail/app-sync-1.png)
 
@@ -328,7 +326,7 @@ Under scenarios, you will also see a scenario named `Code (Tutorial)`.
 
 [OPTION BEGIN [Postman]]
 
-Click though **Collections** > GET Returns the `ArgoCD` application status.
+Click **Collections** > GET Returns the `ArgoCD` application status.
 
 !![image](img/postman/status.png)
 
@@ -345,7 +343,7 @@ Click though **Collections** > GET Returns the `ArgoCD` application status.
 ...
 ```
 
-List all available scenarios by clicking through **Collections** > **Scenarios** > GET get list of scenarios.
+List all available scenarios by clicking **Collections** > **Scenarios** > GET get list of scenarios.
 
 !![image](img/postman/listscenarios.png)
 
@@ -382,7 +380,7 @@ Your output should contain the following snippet:
 {'name': 'code-pipeline', 'kind': 'WorkflowTemplate', 'status': 'Synced', 'message': 'workflowtemplate.argoproj.io/code-pipeline configured'}
 ```
 
-Lis the executables for the scenario `learning-code`:
+List the executables for the scenario `learning-code`:
 
 ```PYTHON
 response = ai_core_client.executable.query(
@@ -438,14 +436,14 @@ Click **Create Execution**. You will be redirected to your execution details pag
 
 !![image](img/ail/run-1.png)
 
-Click **refresh icon**, after a while, the status will show as **DEAD**.
+Click the **refresh icon**.
 
 [OPTION END]
 
 
 [OPTION BEGIN [Postman]]
 
-Create configuration with the **BODY**:
+Create a configuration with the **BODY**:
 
 ```JSON
 {
@@ -455,7 +453,7 @@ Create configuration with the **BODY**:
 }
 ```
 
-**Example Response** The configuration ID differs every time you create one, and for all users.
+**Example Response**
 
 ```JSON
 {
@@ -463,6 +461,8 @@ Create configuration with the **BODY**:
     "message": "Configuration created"
 }
 ```
+
+>Note The configuration ID differs every time you create one, and for all users.
 
 Use your own configuration ID to start an execution with the **BODY**:
 
@@ -472,7 +472,7 @@ Use your own configuration ID to start an execution with the **BODY**:
 }
 ```
 
-**Example Response** The execution ID differs every time you create one, and for all users.
+**Example Response**
 
 ```JSON
 {
@@ -483,11 +483,12 @@ Use your own configuration ID to start an execution with the **BODY**:
 }
 ```
 
+>Note The configuration ID differs every time you create one, and for all users.
+
 Use your execution ID to get information on the status of your execution.
 
 !![image](img/postman/dead.png)
 
-After a while, the status will show as **DEAD**.
 
 [OPTION END]
 
@@ -507,11 +508,12 @@ response = ai_core_client.configuration.create(
 print(response.__dict__)
 ```
 
-**Example Response** The configuration ID differs every time you create one, and for all users.
+**Example Response**
 
 ```
 {'id': 'bd812e2c-5c71-406f-8562-a27609593de0', 'message': 'Configuration created'}
 ```
+>Note The configuration ID differs every time you create one, and for all users.
 
 Paste and edit the snippet below, using your configuration ID. Run it to start an execution.
 
@@ -524,8 +526,7 @@ response = ai_core_client.execution.create(
 response.__dict__
 ```
 
-**Example Response** The execution ID differs every time you create one, and for all users.
-
+**Example Response**
 ```
 {
     "id": "e9d69a2f9c525325",
@@ -534,6 +535,8 @@ response.__dict__
     "targetStatus": "COMPLETED"
 }
 ```
+
+>Note The configuration ID differs every time you create one, and for all users.
 
 Paste and edit the snippet below, using your execution ID. Run the code to get your execution status.
 
@@ -547,11 +550,10 @@ response = ai_core_client.execution.get(
 
 response.__dict__
 ```
-After a while, the status will show as **DEAD**.
 
 [OPTION END]
 
-Please don't panic when this execution goes from **UNKOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
+The execution will go from **UNKOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
 
 [DONE]
 [ACCORDION-END]
@@ -567,7 +569,7 @@ In the **Overview** tab in the **Status details** section, you will find the mos
 
 > **INFORMATION**: In the rare case that you observe the status: `Task currently un-schedulable due to lack of resource`, wait for a few minutes, it will automatically resolve itself and your execution will continue to run.
 
-Click **Logs** tab to see stack trace generated from your code.
+Click the **Logs** tab to see the stack trace generated from your code.
 
 !![image](img/ail/log.png)
 
@@ -586,7 +588,7 @@ Use your execution ID to get the logs from SAP AI Core. You should see a stack t
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-To query execution logs, paste and edit the snippet below, using your execution ID. You should see a stack trace of errors.
+To query the execution logs, paste and edit the snippet below, using your execution ID. You should see a stack trace of errors.
 
 ```PYTHON
 # get execution logs
@@ -640,14 +642,14 @@ Locate your workflow (YAML file) in GitHub. Click on the **Pencil Icon** to edit
 
 !![image](img/pipeline-update.png)
 
-Update your workflow, by adding the new `02` tag to the `ai.sap.com/version` and the Docker image name.
+Update your workflow by adding the new `02` tag to the `ai.sap.com/version` and the Docker image name.
 
 !![image](img/pipeline-update2.png)
 
 Click **Commit Changes** after editing.
 
 > ### Why update the version each time you make changes to your workflow?
-> The executable version is denoted by `ai.sap.com/version`. SAP AI Core syncs you workflows every three minutes and the version number is easy observable. You will easily see when your changes have synced. An alternative method of checking is to check that the latest **REVISION** number from GitHub is reflected in AI Core.
+> The executable version is denoted by `ai.sap.com/version`. SAP AI Core syncs you workflows every three minutes and the version number is easily observable. You can be confident that your changes have synced. An alternative method of checking is to check that the latest **REVISION** number from GitHub is reflected in AI Core.
 
 [DONE]
 [ACCORDION-END]
@@ -657,7 +659,7 @@ Click **Commit Changes** after editing.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Go to SAP AI Launchpad. Click through **ML Operations** > **Configuration**.
+Go to SAP AI Launchpad. Click **ML Operations** > **Configuration**.
 
 Look at the **Scenario** version in the configuration named `code-workflow-1`. If it shows `Version 2.0`, it has synced successfully, if not, please wait for ~ 3 minutes and refresh the page.
 

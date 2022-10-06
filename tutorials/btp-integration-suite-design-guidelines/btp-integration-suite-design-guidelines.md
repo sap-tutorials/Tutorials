@@ -1,4 +1,6 @@
 ---
+author_name: Annika Gonnermann
+author_profile: https://github.com/AnnikaGonnermann
 title: Getting Started with Integration Flow Design Guidelines - Timer-Initiated Scenario
 description: In Cloud Integration, copy and deploy a very simple out-of-the-box integration flow design guideline with a timer-initiated integration flow that writes an entry to the data store.
 auto_validation: true
@@ -41,9 +43,9 @@ In this tutorial, you are going to download the easiest integration scenario cur
 
 [ACCORDION-BEGIN [Step 1: ](Check out integration flow design guidelines for Cloud Integration)]
 
-After you've set up your Cloud Integration tenant (refer to the prerequisites of this tutorial for assistance), launch Cloud Integration by clicking on the respective tile. Now, you find yourself in the **Discover** tab of Cloud Integration. Here, you find all integration packages that are pre-delivered by SAP and its partners.
+After you've set up your Cloud Integration tenant (refer to the prerequisites of this tutorial for assistance), launch Cloud Integration by selecting the respective tile. Now, you find yourself in the **Discover** tab of Cloud Integration. Here, you find all integration packages that are pre-delivered by SAP and its partners.
 
-> Tip: *If your navigation bar is collapsed and you can only see icons, click on the sandwich icon the upper left corner next to the SAP logo to enlarge the navigation bar.*
+> Tip: *If your navigation bar is collapsed and you can only see icons, select the sandwich icon the upper left corner next to the SAP logo to enlarge the navigation bar.*
 
 1. In the search field, type in `integration flow design guidelines`. You will see a list of integration packages. For each design guideline, one or more reference integration flows are documented and packed together into so-called integration packages.
 
@@ -58,7 +60,7 @@ After you've set up your Cloud Integration tenant (refer to the prerequisites of
 
 Once you've found the integration package called **Learn the Basics**, copy it into your tenant.
 
-1. Click on your selected integration flow package.
+1. Select your integration flow package.
 
 2. Choose **Copy**.
 
@@ -76,7 +78,7 @@ After you've successfully copied your integration flow package, go to the **Desi
 
 1. In the package, you find yourself in the **Overview** tab. Switch to the **Artifacts** tab. You can now see all integration flows that are part of that integration package. There's usually more than one integration flow (artifact) packed into an integration package. The integration flow names follow the naming pattern 'Category-Guideline-extension'.
 
-2. Select the integration flow you're interested in by clicking on it. In our example, **Modeling Basics - Timer-Initiated Scenario**.
+2. Select the integration flow you're interested in. In our example, **Modeling Basics - Timer-Initiated Scenario**.
 
     !![Modeling Basics](btw-design-guidelines_modeling-basics.png)  
 
@@ -88,7 +90,7 @@ After you've successfully copied your integration flow package, go to the **Desi
 
       !![Integration Flow](btw-design-guidelines_design-space-edit2.png)
 
-    > Tip: *Click on the respective shapes, to view the parameters of the respective integration flow step. You might need to pull up the window from the bottom of your screen.*
+    > Tip: *Select the respective shapes, to view the parameters of the respective integration flow step. You might need to pull up the window from the bottom of your screen.*
 
     For integration flows, in general, you always have the following options:
 

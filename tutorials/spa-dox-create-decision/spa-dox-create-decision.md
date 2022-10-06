@@ -99,7 +99,7 @@ There are many ways to express a business rule, in this case you will create a d
 
     !![Next Step](16bis.png)
 
-5. Under **Data Types**, select **Determine Approver Output**
+5. Under **Data Types**, select **Determine Approver Output**.
 
     !![Determine Approver Output](17.png)
 
@@ -115,29 +115,23 @@ There are many ways to express a business rule, in this case you will create a d
 
     !![Create](20.png)
 
-5. Lets define the **Decision Table Settings**.
+9. You may edit the rule you just created by selecting the pencil icon.
 
-    !![Decision Table Settings](21.png)
+    !![Edit](21.png)
 
-8. The **Condition Expression** needs a label, maintain **Company Name**. This will be the label of the "If" column in the decision table.
-
-    The settings are done, **Condition Expressions**, **Label** as well as **Result** are defined. Choose **Apply**.
-
-    !![Company Name](22.png)
-
-9. Define the attributes for **Company Name** **`EXISTSIN['ABC Communication']`** and **eMail** **`<your SAP BTP user ID, e.g. diana.smith@mail.com>`**. You can also make use of the value help, by pressing the space bar before maintaining the expression in the first column.
+10. Define the attributes for **Determine Approver1 Input.SenderName** **`EXISTSIN['ABC Communication']`** and **eMail** **`<your SAP BTP user ID, e.g. diana.smith@mail.com>`**. You can also make use of the value help, by pressing the space bar before maintaining the expression in the first column.
 
     This means, if the company name in the invoice is "ABC Communication", then the approval request will be sent to you. Otherwise...follow the next step.
 
-    !![If Then](23.png)
+    !![If Then](22.png)
 
-10. In case the **Company Name** is defined as **`EXISTSIN['Telecommunications']`**, the approval request should be sent to **`'jane.doe@sap.com'`** or whatever recipient you might want to choose. Select the first row and **Add Row** to **Insert After**. Then maintain the row accordingly.
+12. In case the **Determine Approver1 Input.SenderName** is defined as **`EXISTSIN['Telecommunications']`**, the approval request should be sent to **`'jane.doe@sap.com'`** or whatever recipient you might want to choose. Select the first row and **Add Row** to **Insert After**. Then maintain the row accordingly.
 
-    !![Add Row](24.png)
+    !![Add Row](23.png)
 
-11. **Save** your work, your decision table is ready.
+13. **Save** your work, your decision table is ready.
 
-    !![Decision ready](25.png)
+    !![Decision ready](24.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -171,7 +165,6 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
     !![Decision Output](32.png)
 
 You have now defined who should approve the invoice, based on the company name. Next you will use the outcome of the business rule, the email address, as input for the approval.
-
 
 [DONE]
 [ACCORDION-END]
