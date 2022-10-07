@@ -16,7 +16,7 @@ author_profile: https://github.com/mervey45
     - You need to be a member at the used global account​
     - You need to be an organization manager at the used Cloud Foundry subaccount
     - You need to be a security administrator at the used Cloud Foundry Subaccount​
-    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance should be under same subaccount.
+    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance must be under same subaccount.
 
 
 
