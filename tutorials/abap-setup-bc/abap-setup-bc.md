@@ -2,7 +2,7 @@
 title: Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud
 description: Learn how to set up the SAP Business Connector to to connect an on-premise system prior to 1909 to cloud using WebSocket RFC.
 auto_validation: true
-time: 30
+time: 20
 tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
 ---
@@ -12,19 +12,11 @@ primary_tag: topic>abap-connectivity
 ### You will learn
 - to set up the SAP BC for WebSocket RFC from on-premise to cloud systems.
 
+**Download**
 
-To download and install the business connector, see the following information.
-
-The installer can be downloaded free of charge from the [SAP BC homepage](https://support.sap.com/sbc-download).
-
-(A one-time registration of the SAP customer ID is required.)
+The installer can be downloaded free of charge from the [SAP BC homepage](https://support.sap.com/sbc-download). (A one-time registration of the SAP customer ID is required.)
 
 An installation guide and other documentation can be downloaded from the [SAP BC details page](https://support.sap.com/en/product/connectors/bc/details.html).
-
-
-Installation and some basic setup like sizing can be done even by someone without prior SAP BC knowhow in less than an hour.
-In case of problems, SAP support tickets can be opened under component BC-MID-BUS.
-In this tutorial, you will learn how to set up the SAP Business Connector for WebSocket RFC calls from on-premise to Cloud systems.
 
 **If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.**
 
@@ -34,8 +26,10 @@ In this tutorial, you will learn how to set up the SAP Business Connector for We
 
 1. Go to the [SAP BC homepage](https://support.sap.com/sbc-download) and download the SAP BC server and developer version.
 2. Install the SAP BC by running the setup file in administrator mode. We recommend to access the setup file from the console.
-**When installing the developer version, make sure to also install the certificate toolkit.**
-3. Install the latest core fix and service release. You can find them on the download page of the SAP BC. Follow the instructions of the installation guides. You can find them in the ReadMe text file in the download folder.
+
+    **When installing the developer version, make sure to also install the Certificate Toolkit.**
+
+3. Install the latest core fix and service release. You can find them on the download page of the SAP BC. Follow the instructions of the installation guides. You can find them in the `ReadMe` text file in the download folder.
 
 
 [DONE]
@@ -43,7 +37,7 @@ In this tutorial, you will learn how to set up the SAP Business Connector for We
 
 [ACCORDION-BEGIN [Step 2: ](Set up the certificate directory)]
 
-1. Go to `config` folder in the directory where SAP BC Server is installed. For example `C:\sapbc481\Server\config`.
+1. Go to the `config` folder in the directory where SAP BC Server is installed. For example `C:\sapbc481\Server\config`.
 2. Create a new folder with the name `trusted`.
 3. Start SAP BC Server.
 4. Go to **Security > Certificates**.
@@ -66,8 +60,8 @@ In this tutorial, you will learn how to set up the SAP Business Connector for We
     - Optional: Enter a directory where the private key should be stored.
     - Under **Enter CSR file name**, enter `privkey.pem`.
     - Choose **Next** to generate the Certificate Signing Request.
-    - Have the request signed by a certificate authority.
-    - In the Certificate Toolkit, choose **Convert and Save Certificates for use with SAP Business Connector**.
+3. Have the request signed by a certificate authority.
+4. In the Certificate Toolkit, choose **Convert and Save Certificates for use with SAP Business Connector**.
     - Upload the CA's response and choose **Next**. Change the name of the CA's response to `cacert.der`
     - Certificate filename: `cert.der`
     - Choose **Next** to generate the certificate.
@@ -76,7 +70,9 @@ In this tutorial, you will learn how to set up the SAP Business Connector for We
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Update certificate directory)]
-1. Copy the private key, the CA's response, and the certificate to the `config` folder of the SAP BC server.
+Copy the private key, the CA's response, and the certificate to the `config` folder of the SAP BC server.
+
+
 
 [DONE]
 [ACCORDION-END]
@@ -87,6 +83,17 @@ In this tutorial, you will learn how to set up the SAP Business Connector for We
 [VALIDATE_1]
 
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Next Steps ](Set Up WebSocket RFC from On-Premise to Cloud)]
+
+[WebSocket RFC to Cloud Using SAP Business Connector](abap-websocket-rfc-bc)
+
+
+
+
+[DONE]
+[ACCORDION-END]
+
 
 
 
