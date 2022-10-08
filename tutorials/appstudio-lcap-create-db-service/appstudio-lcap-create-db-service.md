@@ -11,6 +11,7 @@ author_profile: https://github.com/raz-korn
 
 ## Prerequisites
  - You have access to your Application Development Lobby.
+ - If you are doing this as part of Devtoberfest 2022, you can create a trial account and set up SAP Business Application Studio according to [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html), create a low-code Dev Space, and launch the dev space. Finally, create a project.
 
 ## Details
 ### You will learn
