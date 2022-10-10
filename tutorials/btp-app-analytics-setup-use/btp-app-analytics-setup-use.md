@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Create an SAP Fiori Elements-Based Analytical UI for your CAP application
+title: Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
 description: This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
 keywords: cap
 auto_validation: true
