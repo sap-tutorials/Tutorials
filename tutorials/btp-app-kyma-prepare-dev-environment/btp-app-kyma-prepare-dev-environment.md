@@ -143,7 +143,6 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     ```
 >     In case you experience problems running the commands, check Step 2: `Command Line Interpreters` from [Set Up Local Development Using VS Code](btp-app-set-up-local-development) for more details on recommended CLIs.
 
-
 There are two additional steps for Windows users only:
 
     3. Go to `C:\ProgramData\chocolatey\bin`.
@@ -222,7 +221,6 @@ kubectl create secret docker-registry container-registry \
 There's a multitude of options to install helm. You can see the full list at [Installing Helm](https://helm.sh/docs/intro/install/). We have also listed some options:
 
 To install helm, run the following command:
-Run the following command:
 ```Shell/Bash
 brew install helm
 ```
@@ -345,7 +343,7 @@ To install Rancher Desktop:
 
     > You can find details about installation requirements and install/uninstall steps in [macOS](https://docs.rancherdesktop.io/getting-started/installation#macos).
 
-[VALIDATE_1]
+
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
@@ -361,7 +359,7 @@ To install Rancher Desktop:
 
     > You can find details about installation requirements and install/uninstall steps in [Windows](https://docs.rancherdesktop.io/getting-started/installation#windows).
 
-[VALIDATE_1]
+
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
@@ -370,8 +368,9 @@ To install Rancher Desktop:
 There are several different ways to install Rancher Desktop on Linux. You can find details about installation requirements and steps to install or uninstall steps in [Linux](https://docs.rancherdesktop.io/getting-started/installation#linux).
 
 
-[VALIDATE_1]
+
 [OPTION END]
 
+[VALIDATE_1]
 [ACCORDION-END]
 ---
