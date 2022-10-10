@@ -58,9 +58,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Roles and scopes)]
-A scope represents a single authorization to perform an action. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
+A scope represents a single authorization to perform an action. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could be a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
 
-Check the file `xs-security.json` that was created in your `cpapp` project. The file contains the configuration of the XSUAA (XS User Authentication and Authorization service). The CAP server takes the authorization parts `@(restrict ... )` from our service definition form and creates scopes and role templates from it. For example, it found the roles `RiskViewer` and `RiskManager` in the `srv/risk-service.cds` file:
+Check the file `xs-security.json` that was created in your `cpapp` project. The file contains the configuration of the XSUAA (SAP Authorization and Trust Management Service). The CAP server takes the authorization parts `@(restrict ... )` from our service definition form and creates scopes and role templates from it. For example, it found the roles `RiskViewer` and `RiskManager` in the `srv/risk-service.cds` file:
 
 ```JavaScript[4,8]
   entity Risks @(restrict : [

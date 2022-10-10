@@ -206,7 +206,7 @@ Troubleshooting: The Helm chart starts a job that deploys the database content a
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Check your database deployment)]
-Check you database deployment using:
+Check your database deployment using:
 
 ```Shell/Bash
 kubectl get jobs

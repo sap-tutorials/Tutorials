@@ -103,7 +103,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
     *.c-<xyz123>.sap.kyma.ondemand.com
     ```
 
-    where `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
+    >  `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
 
 2. Add the result without the leading `*.` in the `domain` property of your `chart/values.yaml` file. For example:
 

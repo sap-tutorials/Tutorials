@@ -91,9 +91,9 @@ The following services with their service plans and entitlements are required fo
 
 At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
 
+
+
 [VALIDATE_1]
-
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
