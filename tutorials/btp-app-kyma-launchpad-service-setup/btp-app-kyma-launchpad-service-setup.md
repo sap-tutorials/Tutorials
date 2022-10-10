@@ -153,7 +153,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Mitigations application)]
-1. Switch to the `app/mitigations` folder
+1. Switch to the `app/mitigations` folder:
 
     ```Shell/Bash
     cd ../../app/mitigations/
