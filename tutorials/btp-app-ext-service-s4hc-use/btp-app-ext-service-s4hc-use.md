@@ -186,7 +186,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
 
-    > In case you get an error `Forbidden`.
+    > In case you get an error `Forbidden`. 
 
     > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
 

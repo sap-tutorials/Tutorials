@@ -6,7 +6,7 @@ description: Learn how to add Authorization and Trust Management service to your
 keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
