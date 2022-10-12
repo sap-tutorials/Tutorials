@@ -17,6 +17,7 @@ parser: v2
 - how to customize the position object in SAP SuccessFactors
 - how to customize and trigger the position write back in SAP Cloud Integration
 
+
 ## Prerequisites
 * Have an SAP Analytics Cloud tenant available with Planning enabled and a user with admin rights for it
 * Have the content imported as described in [xP&A HXM Workforce Planning - Get to know the Operational Workforce Planning Content part of the xP&A Business Content Suite](xpa-sac-hxm-workforceplanning-gettoknow)
