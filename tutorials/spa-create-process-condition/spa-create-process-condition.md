@@ -72,7 +72,7 @@ Now that you have designed the process with forms, let us define which process f
 
     With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.    
 
-8.	Lets decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
+8.	Let's decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
 
     !![Delete branch](delete-branch.png)
 
