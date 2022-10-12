@@ -110,7 +110,7 @@ To do that, you must register your SAP SuccessFactors system in your global acco
 
 [ACCORDION-BEGIN [Step 3: ](Make SAP SuccessFactors accessible in your subaccount)]
 
-You need to configure the entitlements for the subaccount where the **task management sample application for SAP SuccessFactors solutions** will be deployed and assign the *api-access* service plan for the SAP SuccessFactors Extensibility service instance to the system you registered in the previous step.
+You need to configure the entitlements for the subaccount where the **task management sample application for SAP SuccessFactors solutions** will be deployed and assign the *api-access* and the *sso-configuration* service plans for the SAP SuccessFactors Extensibility service instance to the system you registered in the previous step.
 
 1. In the SAP BTP cockpit, navigate to your global account.
 
@@ -128,11 +128,9 @@ You need to configure the entitlements for the subaccount where the **task manag
 
     ![Choose **Add Service Plans**, and then select the **SAP SuccessFactors Extensibility** service.](screenshots.png/8-entitle-sfsf-ext.png)
 
-6. In the **Available Service Plans** area, select the system you have registered and the **api-access** service plan, and then choose **Add Service Plan**.
+6. In the **Available Service Plans** area, select the system you have registered. Then, select  **api-access** and **sso-configuration** service plans, and choose **Add 2 Service Plans**.
 
 7. Save the changes.
-
-    ![Select the system you have registered and the **api-access** service plan, and then choose **Add Service Plan**.](screenshots.png/9-entitle-sfsf-ext.png)
 
 [DONE]
 [ACCORDION-END]
@@ -433,7 +431,6 @@ See [Establish Trust Between SAP SuccessFactors and SAP BTP](https://help.sap.co
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 11: ](Configure the subaccount as a trusted service provider in SAP SuccessFactors)]
 
