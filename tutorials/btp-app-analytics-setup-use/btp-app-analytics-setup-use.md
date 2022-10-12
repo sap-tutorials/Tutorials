@@ -10,23 +10,19 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-
-
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - For this tutorial, you have two options:
     - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to check out the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
     - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
 
-
 ## Details
 ### You will learn
-
- - How to set up your application for analytics:
-    - Add new files to your project
-    - Generate UI with an SAP Fiori elements template
-    - Modify the UI with OData annotations
-    - Check the annotation files
+ - How to set up your application for analytics
+ - Add new files to your project
+ - Generate UI with an SAP Fiori elements template
+ - Modify the UI with OData annotations
+ - Check the annotation files
  - Visualize Risks in the analytics UI
  - Add your application to the launch page
 
