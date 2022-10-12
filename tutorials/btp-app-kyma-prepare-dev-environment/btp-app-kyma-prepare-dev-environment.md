@@ -7,7 +7,7 @@ keywords: cap
 auto_validation: true
 time: 20
 
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -185,7 +185,7 @@ kubectl create secret docker-registry container-registry \
 
 1. Copy the folder `scripts` from `templates/Kyma-Prepare-Dev-Environment` to your project root folder.
 
-1. Run the script to create the secret. In the root folder of your project, execute:
+2. Run the script to create the secret. In the root folder of your project, execute:
 
     ```Shell/Bash
     ./scripts/create-container-registry-secret.sh
@@ -197,13 +197,13 @@ kubectl create secret docker-registry container-registry \
     > * If you encounter any errors running this command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
 
 
-2. When prompted, provide the required details.
+3. When prompted, provide the required details.
 
     - `Docker Server`: Use the full qualified hostname for the docker server.
     - `User` and `Email` - provide your username and e-mail that you used to create your container registry.
     - `API Key` - as part of the authentication settings of your container registry, you should be able to generate an API key to provide here.
 
-3. Check if the secret was successfully created:
+4. Check if the secret was successfully created:
 
     ```
     kubectl get secret
