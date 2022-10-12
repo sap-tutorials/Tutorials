@@ -5,7 +5,7 @@ title: Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
 description: This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
 keywords: cap
 auto_validation: true
-time: 15
+time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
