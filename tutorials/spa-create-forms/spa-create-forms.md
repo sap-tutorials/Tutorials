@@ -135,14 +135,27 @@ You can create these different forms using the **Form Builder** embedded in the 
 
 5.	Go back to the process builder to map the process content with the form input fields, and select the **Approval Form** to configure the **General** information section.
 
-    - In the **Subject** box, enter **Review and approve order**.
-    - Then select **Order Number > Order Processing Form** from the Process Content.
-    - Enter **from**.
-    - Select **Customer Name > Order Processing Form** from the Process Content.
-    - Enter **company**.
-    - For **Users** in **Recipients**, select **Process Started By > Process Metadata** from the Process Content.
+    - In the **Subject** section,
+        - enter **Review and approve order**.
+        - Then select **Order Number > Order Processing Form** from the Process Content.
+        - enter **from**.
+        - select **Customer Name > Order Processing Form** from the Process Content.
+        - enter **company**.
 
-    !![03-027](unit3-13.png)
+        > The Subject configuration of the form will be shown when this task appears in the `MyInbox`.
+
+    - For **Users** in **Recipients** section,
+        - select **Process Started By > Process Metadata** from the Process Content.
+
+        > This form will appear as the task in the `MyInbox` of the given Recipients to take action.
+
+    - In **Due Date** section,
+        - select **Duration** as **type of due date**  
+        - enter **2 Days** as the duration
+
+        > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or Within 1 day if the task is supposed to be completed in 1 day etc.
+
+    !![03-027](unit3-13a.png)
 
 6.	Similarly, go to the **Inputs** tab and map the different input fields (which were marked as read-only in the approval form) by selecting the respective **Process Content** entry.
 
