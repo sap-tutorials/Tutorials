@@ -7,7 +7,7 @@ keywords: cap
 auto_validation: true
 time: 20
 
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -143,7 +143,6 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     ```
 >     In case you experience problems running the commands, check Step 2: `Command Line Interpreters` from [Set Up Local Development Using VS Code](btp-app-set-up-local-development) for more details on recommended CLIs.
 
-
 There are two additional steps for Windows users only:
 
     3. Go to `C:\ProgramData\chocolatey\bin`.
@@ -186,7 +185,7 @@ kubectl create secret docker-registry container-registry \
 
 1. Copy the folder `scripts` from `templates/Kyma-Prepare-Dev-Environment` to your project root folder.
 
-1. Run the script to create the secret. In the root folder of your project, execute:
+2. Run the script to create the secret. In the root folder of your project, execute:
 
     ```Shell/Bash
     ./scripts/create-container-registry-secret.sh
@@ -198,13 +197,13 @@ kubectl create secret docker-registry container-registry \
     > * If you encounter any errors running this command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
 
 
-2. When prompted, provide the required details.
+3. When prompted, provide the required details.
 
     - `Docker Server`: Use the full qualified hostname for the docker server.
     - `User` and `Email` - provide your username and e-mail that you used to create your container registry.
     - `API Key` - as part of the authentication settings of your container registry, you should be able to generate an API key to provide here.
 
-3. Check if the secret was successfully created:
+4. Check if the secret was successfully created:
 
     ```
     kubectl get secret
@@ -222,7 +221,6 @@ kubectl create secret docker-registry container-registry \
 There's a multitude of options to install helm. You can see the full list at [Installing Helm](https://helm.sh/docs/intro/install/). We have also listed some options:
 
 To install helm, run the following command:
-Run the following command:
 ```Shell/Bash
 brew install helm
 ```
@@ -345,7 +343,7 @@ To install Rancher Desktop:
 
     > You can find details about installation requirements and install/uninstall steps in [macOS](https://docs.rancherdesktop.io/getting-started/installation#macos).
 
-[VALIDATE_1]
+
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
@@ -361,7 +359,7 @@ To install Rancher Desktop:
 
     > You can find details about installation requirements and install/uninstall steps in [Windows](https://docs.rancherdesktop.io/getting-started/installation#windows).
 
-[VALIDATE_1]
+
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
@@ -370,8 +368,9 @@ To install Rancher Desktop:
 There are several different ways to install Rancher Desktop on Linux. You can find details about installation requirements and steps to install or uninstall steps in [Linux](https://docs.rancherdesktop.io/getting-started/installation#linux).
 
 
-[VALIDATE_1]
+
 [OPTION END]
 
+[VALIDATE_1]
 [ACCORDION-END]
 ---

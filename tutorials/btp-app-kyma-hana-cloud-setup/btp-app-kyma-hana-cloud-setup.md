@@ -6,7 +6,7 @@ description: Learn how to add SAP HANA client and configuration, create an HDI c
 keywords: cap
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -79,7 +79,7 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
 
     What happens here? The script completes several tasks:
 
-    - Creates an HDI container on your already existing SAP HANA Cloud service instance in your Cloud Foundry space. This is represented by a SAP HANA Cloud service instance with plan `hdi-shared`. If you use the name `cpapp` for your project, then this service should be called `cpapp-db`.
+    - Creates an HDI container on your already existing SAP HANA Cloud service instance in your Cloud Foundry space. This is represented by an SAP HANA Cloud service instance with plan `hdi-shared`. If you use the name `cpapp` for your project, then this service should be called `cpapp-db`.
     - Creates a service key (`cpapp-db-key` if your HDI container service is called `cpapp-bd`) on Cloud Foundry.
     - Creates a secret with the service key's credentials on your Kyma cluster.
 

@@ -229,7 +229,10 @@ The following steps will demonstrate how to create a JSON collection that can be
     ```SQL
     SELECT * FROM HOTEL.GUEST_NOTES;  --returns JSON
 
-    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabluar result
+    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabular result
+
+    WITH myJSON AS (SELECT GUEST_NOTES FROM HOTEL.GUEST_NOTES)
+        SELECT '[' || STRING_AGG(TO_NVARCHAR(GUEST_NOTES), ',') || ']' FROM myJSON;  --returns all the results as one JSON document
 
     WITH GN_VIEW AS (SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES) --joins a collection with a table
         SELECT DISTINCT GN_VIEW.REQUEST, C.FIRSTNAME, GN_VIEW.LAST_NAME, C.ADDRESS

@@ -3,8 +3,10 @@ title: Deploy Your Application with Access Control (SAP HANA Cloud)
 description: Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application before deploying it to SAP BTP.
 time: 30
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-hana, software-product-function>sap-cloud-application-programming-model, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>intermediate, software-product>sap-hana, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites

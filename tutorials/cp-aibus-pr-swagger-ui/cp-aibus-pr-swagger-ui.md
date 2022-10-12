@@ -1,6 +1,6 @@
 ---
-title: Get Recommendations Based on Users' Browsing History
-description: Use the Personalized Recommendation service to give visitors to your website highly personalized recommendations based on their browsing history.
+title: Get Next-Item Recommendations Based on Users' Browsing History
+description: Use the Personalized Recommendation service to give visitors to your website next-item recommendations based on their browsing history.
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
@@ -32,23 +32,23 @@ In the service key you created for Personalized Recommendation in the previous t
 
 1. To access the Personalized Recommendation Swagger UI, add **`/doc`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    !![PRS](png-files/service-key-details.png)
+    !![PRS](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    !![PRS](png-files/Swagger.png)
+    !![PRS](Swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
-    bearer <access_token>
+    Bearer <access_token>
     ```
 
-    !![PRS](png-files/Authorize.png)
+    !![PRS](Authorize.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    !![PRS](png-files/Authorize-close.png)
+    !![PRS](Authorize-close.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -62,7 +62,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 2. Click **Try it out**.
 
-    !![PRS](png-files/try-it-out.png)
+    !![PRS](try-it-out.png)
 
 3. Enter tenant name. It is required to enter a name of your choice for tenants. You can use, for example, `pr_tutorial`.
 
@@ -70,15 +70,15 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 5. Enter site name. Same as tenant name, but if you leave the field blank, it will be named automatically as **default**. You can use, for example, `pr_tutorial_site`.
 
-    !![PRS](png-files/tenant.png)
+    !![PRS](tenant.png)
 
 6. Set `serve_model` to `true` for automatic deployment of real-time model serving instance. To trigger the machine learning training, click **Execute**.
 
-    !![PRS](png-files\Set-serve-model.png)
+    !![PRS](Set-serve-model.png)
 
     You should receive a response like the following:
 
-    !![PRS](png-files\Pending-status.png)
+    !![PRS](Pending-status.png)
 
 [DONE]
 [ACCORDION-END]
@@ -94,15 +94,15 @@ Use the **GET /standard/rs/v1/tenants/{tenant}/jobs/latest** endpoint to check t
 
 3. Enter tenant name (`pr_tutorial`) and site name (`pr_tutorial_site`). Click **Execute**.
 
-!![PRS](png-files\Job-status-check.png)
+!![PRS](Job-status-check.png)
 
 You should receive a response like the following:
 
-!![PRS](png-files\Job-status-check-running.png)
+!![PRS](Job-status-check-running.png)
 
 After a few minutes, the training job status should change to `SUCCEEDED`.
 
-!![PRS](png-files\Job-status-check-succeeded.png)
+!![PRS](Job-status-check-succeeded.png)
 
 [DONE]
 [ACCORDION-END]
@@ -118,15 +118,15 @@ Use the **GET /standard/rs/v1/tenants/{tenant}/servings** endpoint to check the 
 
 3. Enter site name (`pr_tutorial_site`) and tenant name (`pr_tutorial`). Click **Execute**.
 
-!![PRS](png-files\Model-serving.png)
+!![PRS](Model-serving.png)
 
 You should receive a response like the following:
 
-!![PRS](png-files\Model-serving-pending.png)
+!![PRS](Model-serving-pending.png)
 
-After a few minutes, the training job status should change to `SUCCEEDED`.
+After a few minutes, the serving job status should change from `PENDING` to `SUCCEEDED`.
 
-!![PRS](png-files\Model-serving-succeeded.png)
+!![PRS](Model-serving-succeeded.png)
 
 [DONE]
 [ACCORDION-END]
@@ -134,7 +134,7 @@ After a few minutes, the training job status should change to `SUCCEEDED`.
 
 [ACCORDION-BEGIN [Step 5: ](Get recommendations)]
 
-There are four different choices of inference calls as you can see in [Inference Options](https://help.sap.com/docs/Personalized_Recommendation/2c2078b9efa84566ac19d44df9625c65/8da4bc50e07f43f497da30833f6aea5e.html). For this tutorial, we will use next-item recommendations.
+There are four different choices of inference calls as you can see in [Inference Options](https://help.sap.com/docs/Personalized_Recommendation/2c2078b9efa84566ac19d44df9625c65/8da4bc50e07f43f497da30833f6aea5e.html). For this tutorial, we will use [Next-Item Recommendations](https://help.sap.com/docs/Personalized_Recommendation/2c2078b9efa84566ac19d44df9625c65/e24aff359e6645d0b758d15143ec4ddc.html).
 
 Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** endpoint to get next-item recommendations.
 
@@ -154,11 +154,11 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** end
 
 4. Enter site name (`pr_tutorial_site`) and tenant name (`pr_tutorial`). Click **Execute**.
 
-!![PRS](png-files\Real-time-inference.png)
+!![PRS](Real-time-inference.png)
 
 You should receive a response like the following:
 
-!![PRS](png-files\Real-time-inference-response.png)
+!![PRS](Real-time-inference-response.png)
 
 The response shows a sequence of recommendations based on the user's past clickstreams. Since we included in the **payload** the `itemID` "2858" as our past clickstream, the model is able to recommend 10 other items related to the `itemID` "2858".  
 
