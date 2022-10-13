@@ -7,7 +7,7 @@ auto_validation: false
 time: 60
 keywords: xP&A, write back
 primary_tag: software-product>sap-analytics-cloud
-tags: [ tutorial>advanced, software-product>sap-successfactors-hxm-suite, software-product-function>sap-analytics-cloud-analytics-designer, software-product>sap-integration-suite]
+tags: [ tutorial>advanced, software-product>sap-successfactors-hxm-suite, software-product-function>sap-analytics-cloud\,-analytics-designer, software-product>sap-integration-suite]
 parser: v2
 ---
 
