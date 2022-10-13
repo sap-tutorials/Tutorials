@@ -3,11 +3,11 @@ title: xP&A HXM Workforce Planning - Get to know the Operational Workforce Plann
 description: This tutorial will provide you with an overview and run through of the content in order for you to get familiar with the standard workflow as well as the capabilities of the content.
 author_name: Rudolf Lindt
 author_profile: https://people.sap.com/rudolf.lindt
-auto_validation: true
+auto_validation: false
 keywords: xP&A, Get To Know, Overview, Workforce Planning
 time: 120
 primary_tag: software-product>sap-analytics-cloud
-tags: [ tutorial>beginner, software-product>sap-successfactors-hxm-suite, software-product-function>sap-analytics-cloud-analytics-designer]
+tags: [ tutorial>beginner, software-product>sap-successfactors-hxm-suite, software-product-function>sap-analytics-cloud\,-analytics-designer]
 parser: v2
 ---
 
