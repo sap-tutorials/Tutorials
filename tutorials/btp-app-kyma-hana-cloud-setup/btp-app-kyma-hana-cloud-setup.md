@@ -80,7 +80,7 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
     What happens here? The script completes several tasks:
 
     - Creates an HDI container on your already existing SAP HANA Cloud service instance in your Cloud Foundry space. This is represented by an SAP HANA Cloud service instance with plan `hdi-shared`. If you use the name `cpapp` for your project, then this service should be called `cpapp-db`.
-    - Creates a service key (`cpapp-db-key` if your HDI container service is called `cpapp-bd`) on Cloud Foundry.
+    - Creates a service key (`cpapp-db-key` if your HDI container service is called `cpapp-db`) on Cloud Foundry.
     - Creates a secret with the service key's credentials on your Kyma cluster.
 
 > If you get an error, make sure you've added all required entitlements to your subaccount as described in Step 3: `Create a Live Account` of [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp).
