@@ -2,8 +2,8 @@
 title: Create a Service Instance and Bind It to Your App
 description: Create an instance of the Application Logging service and bind it to your app, as a way to explore how services and apps are connected on the SAP BTP, Cloud Foundry runtime.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform ]
 time: 10
 ---
 
@@ -20,7 +20,7 @@ The [Application Logging](https://help.sap.com/viewer/ee8e8a203e024bbb8c8c2d03fc
 
 [ACCORDION-BEGIN [Step 1: ](Open service bindings for your app)]
 
-In the SAP BTP cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud BTP, Cloud Foundry runtime](https://developers.sap.com/tutorials/cp-cf-dev-02-deploy-app.html) tutorial.
+In the SAP BTP cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud BTP, Cloud Foundry runtime](cp-cf-dev-02-deploy-app) tutorial.
 
 Choose **Service Bindings** in the navigation area.
 
@@ -85,4 +85,3 @@ In the app, you can see the additional information about the service binding.
 [ACCORDION-END]
 
 ---
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-03-service-instance&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

@@ -198,7 +198,7 @@ To check whether your training already succeeded, you can use the **GET /trainin
 
 >**CAUTION:**
 
->In the trial and free tier versions of the service, only one training job with `SUCCEEDED` status is allowed. See [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html). Use the endpoint **DELETE /training/jobs/{`jobId`}** to delete a training job before its status changes to `SUCCEEDED`.
+>In the free tier version of the service, only one training job with `SUCCEEDED` status is allowed. See [Free Tier Option Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html). Use the endpoint **DELETE /training/jobs/{`jobId`}** to delete a training job before its status changes to `SUCCEEDED`.
 
 1. Click the endpoint name to expand it.
 

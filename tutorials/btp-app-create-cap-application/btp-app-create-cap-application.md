@@ -11,8 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
 
 ## Details
 ### You will learn
@@ -53,7 +52,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![VS Code](vscode.png)
 
-6. In VS Code choose **Terminal** **&rarr;** **New Terminal** from its menu.
+6. In VS Code choose **Terminal** &rarr; **New Terminal** from its menu.
 
     A new terminal opens in the lower right part of the VS Code screen.
 
@@ -91,13 +90,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add files to the project)]
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 
     !![Windows](codeandfinder.png)
 
-    Alternatively, you can open it as a second folder in your VS Code project: **File** **&rarr;** **Add Folder to Workspace...**.
+    Alternatively, you can open it as a second folder in your VS Code project: **File** &rarr; **Add Folder to Workspace...**.
 
 3. Copy the file `schema.cds` from `templates/create-cap-application/db` to the `db` folder of your app.
 
@@ -126,7 +125,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     ```
 
 
-    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. They key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
+    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. The key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
 
     Notice how the CAP server reacted to dropping the file. It now tells you that it has a model but there are no service definitions yet and, thus, it still can't serve anything. Next, you add a service definition.
 

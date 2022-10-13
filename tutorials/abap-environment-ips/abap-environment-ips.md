@@ -35,7 +35,7 @@ Additional information:
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create User in Identity Authentication Service Tenant)]
-To create your development user's identity in your Identity Authentication service tenant, log on with your User Management Administrator to your Identity Authentication tenant's administration UI (URL ends with path `/admin`, for example https://rapworkshop.accounts.ondemand.com/admin).
+To create your development user's identity in your Identity Authentication service tenant, log on with your User Management Administrator to your Identity Authentication tenant's administration UI (URL ends with path `/admin`, for example `https://rapworkshop.accounts.ondemand.com/admin`).
 
 1. Navigate to **Users & Authorizations** > **User Management**.
 
@@ -100,7 +100,7 @@ Navigate to **Users & Authorizations** > **Administrators** choose the Administr
 [ACCORDION-BEGIN [Step 4: ](Configure Source in Identity Provisioning Service)]
 Identity provisioning requires to configure a so-called source system for user and user group data.
 
-1. Log on with your Identity Provisioning Manager user to your Identity Authentication service tenant's identity provisioning UI (URL ends with path `/ips`, for example https://rapworkshop.accounts.ondemand.com/ips).
+1. Log on with your Identity Provisioning Manager user to your Identity Authentication service tenant's identity provisioning UI (URL ends with path `/ips`, for example `https://rapworkshop.accounts.ondemand.com/ips`).
 
 2. Select the **Source Systems** tile.
 
@@ -140,7 +140,7 @@ Identity provisioning requires to configure a so-called source system for user a
 
 7. **Save** your changes.
 
-8. Switch to the **Certificate** tab and **Download** the certificate for later usage.
+8. Switch to the **Outbound C...** (C... like Certificate) tab and **Download** the certificate for later usage.
 
     ![Download certificate of source system](ips_source_systems_download_cert.png)
 
@@ -216,13 +216,13 @@ In this example, the target systems is an ABAP system in SAP BTP.
     |  :------------- | :-------------
     |  **`Type`**           | **`HTTP`**
     |  **`ProxyType`**           | **`Internet`**
-    |  **`URL`**          | The URL of your ABAP environment
+    |  **`URL`**          | The API URL of your ABAP environment
     |  **`Authentication`** | **`ClientCertificateAuthentication`**
-    |  **`Identity Provisioning service.date.variable.format`**   | **`yyyy-MM-dd`**
+    |  **`Identity Provisioning ips.date.variable.format`**   | **`yyyy-MM-dd`**
 
 7. **Save** your changes.
 
-8. Switch to the **Certificate** tab and **Download** the certificate for later usage.
+8. Switch to the **Outbound C...** (C... like Certificate) tab and **Download** the certificate for later usage.
 
     ![Download certificate of target system](ips_target_systems_download_cert.png)
 

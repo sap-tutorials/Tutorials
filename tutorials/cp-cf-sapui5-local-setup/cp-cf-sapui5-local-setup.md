@@ -3,8 +3,10 @@ title: Get Ready for UI5-Development on Your Local Machine
 description: Prepare you local development environment to implement successful SAPUI5 projects.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-btp--cloud-foundry-environment, tutorial>free-tier]
-primary_tag: topic>sapui5
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, tutorial>free-tier]
+primary_tag: programming-tool>sapui5
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites

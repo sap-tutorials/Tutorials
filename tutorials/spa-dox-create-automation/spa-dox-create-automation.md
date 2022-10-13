@@ -11,6 +11,8 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete the tutorial of creating an [Invoice Approval Process](spa-dox-create-process)
+ - A Windows PC
+ - If you are using a MAC, please install a VDI
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
  - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
@@ -66,9 +68,9 @@ primary_tag: software-product>sap-process-automation
 
     |  Field Name     | Type
     |  :------------- | :-------------
-    |  `DocumentNumber`      | String
-    |  `GrossAmount`         | Number
-    |  `SenderName`   | String
+    |  `DocumentNumber`| String
+    |  `GrossAmount`   | Number
+    |  `SenderName`    | String
 
     !![23-png](23.png)
 
@@ -156,16 +158,16 @@ primary_tag: software-product>sap-process-automation
 
         In this scenario, you will read the Document Number, Gross Amount and Sender Name.
 
-      - Select the field  **174228**  in the document and map to the field `**documentNumber**`.
+      - Select the field  **174228**  in the document and map to the field `documentNumber`.
       - Choose **Apply**.
 
         !![16-png](16.png)
 
-      - Select the value **ABC Communication** in the document and map to the field `**senderName** `.
+      - Select the value **ABC Communication** in the document and map to the field `senderName`.
 
         !![17-png](17.png)
 
-      - Select the value **220** in the document and map to the field `**grossAmount** `.
+      - Select the value **220** in the document and map to the field `grossAmount`.
 
         !![18-png](18.png)
 
@@ -187,7 +189,7 @@ primary_tag: software-product>sap-process-automation
 
     - Maintain the parameters for the activity as shown below.
 
-      !![20-png](20.png)
+    !![20-png](20.png)
 
 2. You have already created the data type **Invoice** in Step 2. Now, you will create variable of the type **Invoice**.
 
@@ -195,7 +197,7 @@ primary_tag: software-product>sap-process-automation
 
       !![24-png](24.png)
 
-    - Drag and drop  the  data type **Invoice** into the automation flow and select **Create Custom   Data** in the parameter **value**.
+    - Drag and drop  the  data type **Invoice** into the automation flow and select **Create Custom Data** in the parameter **value**.
 
       !![25-png](25.png)
 
@@ -254,7 +256,7 @@ primary_tag: software-product>sap-process-automation
 
 1. Navigate to the process **Get Invoice Details** and select the automation **Extract Invoice Data**.
 
-2. Map the input parameter of the automation to the form parameter `FilePath`
+2. Map the input parameter of the automation to the form parameter `FilePath`.
 
     !![Mapping-Parameters](MappingParameters.png)
 
@@ -264,7 +266,5 @@ primary_tag: software-product>sap-process-automation
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
 
 ---

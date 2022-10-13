@@ -1,10 +1,10 @@
 ---
 title: Generate an SAP Fiori Elements Application based on a RAP-based Service
-description: Generate an SAP Fiori elements application of type List Report Object Page and add additional features.
+description: Generate an SAP Fiori elements application and add additional features like flexible column layout and initial loading using SAP Fiori tools.
 auto_validation: true
 time: 20
-tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-business-application-studio, products>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+tags: [software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-business-application-studio, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-fiori
 ---
 
 ## Prerequisites
@@ -46,6 +46,9 @@ Up to now you have used the preview mode within the ABAP Development Tools to ch
 
     !![Start the Dev Space](DevSpace_4.png)
 
+4. Open a new workspace: select menu option **File** > **Open Workspace...** and choose the workspace **projects**. It is displayed in the **Open Workspace** dialog. Confirm the dialog by choosing **Open**.
+
+    !![Choose in popup Open new workspace](DevSpace_5.png)
 
     >Note: If you see an error within the footer indicating that your organization and space in Cloud Foundry have not been set, please have a look at **Step 3: Set up organization and space** of the tutorial [Develop and Run SAP Fiori Application With SAP Business Application Studio](abap-environment-deploy-cf-production).
 
@@ -62,21 +65,21 @@ Using SAP Fiori tools, you will now create an SAP Fiori elements application bas
 
 1. Start the process by selecting the **View** > **Find Command...** menu option.
 
-    !![Select link "Create project from template"](CreateApp_1.png)
+    !![Select link "Create project from template"](CreateApp_1a.png)
 
 2. Find and select **`Fiori: Open Application Generator`**. You can start typing the first letters and choose the completed command from the proposal list.
 
-    !![Choose tile "SAP Fiori elements application"](CreateApp_2.png)
+    !![Choose tile "SAP Fiori elements application"](CreateApp_2a.png)
 
 3. On the **Floorplan Selection** page choose tile **List Report Object Page** and click **Next**.
 
-    !![Choose tile "List Report Object Page"](CreateApp_3.png)
+    !![Choose tile "List Report Object Page"](CreateApp_3a.png)
 
 4. Now the application has to be connected to the OData service that was created in the previous chapter  [Prepare the RAP service to be used for the application](fiori-tools-rap-prepare-service)
 
     Enter the parameters by selecting the according values from the drop-down lists provided. For the **Service** field choose your individual OData service **`ZUI_FE_TRAVEL_######_O4`**.
 
-    !![Select service related parameters](CreateApp_4.png)
+    !![Select service related parameters](CreateApp_4a.png)
 
     >Note: If you cannot find your system and service in the drop-down fields, please ensure that your organization and space in Cloud Foundry have been set. Have a look at **Step 3: Set up organization and space** of the tutorial [Develop and Run SAP Fiori Application With SAP Business Application Studio](abap-environment-deploy-cf-production).
 
@@ -85,20 +88,20 @@ Using SAP Fiori tools, you will now create an SAP Fiori elements application bas
 
 5. Choose the main entity **`Travel`** as shown in the screenshot.
 
-    !![Choose main entity set](CreateApp_5.png)
+    !![Choose main entity set](CreateApp_5a.png)
 
     Click **Next**.
 
 
 6. Maintain further application attributes as shown in the screenshot below.
 
-    !![Provide project attributes](CreateApp_6.png)
+    !![Provide project attributes](CreateApp_6a.png)
 
     Click **Finish** to complete the input of application parameters. The new SAP Fiori elements application is now generated using the service and the configurations you provided in this step.
 
     Once this process has finished you will see the welcome page again and a confirmation message.
 
-    !![Finish app generation](CreateApp_7.png)
+    !![Finish app generation](CreateApp_7a.png)
 
 
     &nbsp;
@@ -110,27 +113,19 @@ Using SAP Fiori tools, you will now create an SAP Fiori elements application bas
 
 [ACCORDION-BEGIN [Step 3: ](Start the application)]
 
-1. Open the generated application in a new workspace: select menu option **File** > **Open Workspace...** and choose your application. It is displayed in the **Open Workspace** dialog with name `travellist` which is the module name you entered as an application parameter.
+1. Before starting your application, ensure that it is open by checking the tree view on the left side of the SAP Business Application Studio window.
 
-    Select your application and confirm the dialog by choosing **Open**.
+    !![Review the generated artifacts](StartApp_2a.png)
 
-    !![Choose in popup Open new workspace](StartApp_1.png)
+    Switch to the Run Configurations view by pressing the arrow-button on the toolbar on the left side of the screen.
 
-    Your application is now opened within the tree-view on the left of the Business Application Studio.
+    !![Run Configuration](StartApp_3a.png)
 
-    !![Review the generated artifacts](StartApp_2.png)
+    There are three run configurations for you application. Start the first one named `Start travellist` by pressing the green arrow.
 
+    !![Start application](StartApp_4a.png)
 
-
-2. To start your application, you need to switch to the `Run Configurations` view by pressing the arrow-button on the left side toolbar.
-
-    !![Run Configuration](StartApp_3.png)
-
-    There are two run configurations for you application. Start the first one named `Start travellist` by pressing the green arrow.
-
-    !![Start application](StartApp_4.png)
-
-    If you will see some status messages in the console window and a popup-message telling you that the application will open in a new browser tab. Click the `Open` button to switch to the new browser tab.
+    You may see some status messages in the console window and a popup-message telling you that the application will open in a new browser tab. Click the `Open` button to switch to the new browser tab.
 
     !![Confirm new tab](StartApp_5.png)
 
@@ -153,13 +148,11 @@ With the flexible column layout you can have the list report and the object page
 
 1. In the SAP Business Application Studio open the context menu by right clicking on your `webapp` folder and select the menu entry **Show Page Map**.
 
-    !![Right-click on webapp folder](SetFCL_1.png)
+    !![Right-click on webapp folder](SetFCL_1a.png)
 
-2. In the left area of the page map you see the UI structure of your application listing the tiles of the list report and the object page. In the right area labeled **Global Page Settings** you can select the **Layout Settings**. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
+2. In the left area of the page map you see the UI structure of your application listing the tiles of the list report and the object page. In the right area you can see the page settings. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
 
-    When done, choose **Apply** and wait for the confirmation message.
-
-    !![The Page Map with page map and layout settings](SetFCL_2.png)
+    !![The Page Map with page map and layout settings](SetFCL_2a.png)
 
 3. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page.
 
@@ -181,15 +174,15 @@ As a last step of the tutorial you will activate the initial load feature that w
 
 2. In the UI structure of your application switch to edit mode of the **List Report** tile.
 
-    !![Configure Page icon on list report block](InitialLoad_1.png)
+    !![Configure Page icon on list report block](InitialLoad_1a.png)
 
-3. Now the structure of the list report is shown. Open the properties of the list report table.
+3. Now the structure of the list report is shown. Open the properties of the list report table by selecting the **Table** component.
 
-    !![Click on table in page editor](InitialLoad_2.png)
+    !![Click on table in page editor](InitialLoad_2a.png)
 
-4. In the list of **Properties for table** select the value **Enabled** for the property **Initial Load**. This setting is immediately active without the need of any confirmation.
+4. In the list of table properties select the value **Enabled** for the table property **Initial Load**. This setting is immediately active without the need of any confirmation.
 
-    !![Select true for initial load in drop down field](InitialLoad_3.png)
+    !![Select true for initial load in drop down field](InitialLoad_3a.png)
 
 5. Refresh your application and you will see that the data of the list report table is loaded immediately without choosing **Go**.
 

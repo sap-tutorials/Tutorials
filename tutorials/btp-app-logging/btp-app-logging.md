@@ -11,19 +11,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
  - [Assign a Role Collection to a User](btp-app-role-assignment)
 
 ## Details
@@ -32,9 +19,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to analyze logs using Kibana dashboard
  - How to enable Logging Service for your CAP application
  - How to test the Logging Service
-
-
-To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
 
 ---
 
@@ -65,7 +49,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -85,7 +69,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -230,13 +214,9 @@ The available fields are displayed on the left side of the screen. You can add f
 
 The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
-
-
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

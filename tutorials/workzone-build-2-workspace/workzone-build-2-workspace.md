@@ -57,9 +57,11 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
-3. Enter this name for your workspace: `Employee Innovation Hackathon`.
+3. Enter this name for your workspace: `Employee Innovation Hackathon`. If you're taking part in a workshop, please add your unique identifier to the workspace name like this: `<your unique identifier>_Employee Innovation Hackathon`.
 
     >**Tip:** Always use a name that would help users distinguish your workspace from others.
+
+
 
 4. Copy and paste this description for your workspace: `Get together and find the answers to your questions about the hackathon!`
 
@@ -98,13 +100,15 @@ Now, let's add content to the workspace.
 
 [ACCORDION-BEGIN [Step 4: ](Change the image in the workspace header)]
 
-When you create a new workspace the header has a dark and light blue background. You can replace this background with your own.
+When you create a new workspace, the header has a dark and light blue background. You can replace this background with your own.
 
-1. Hover over the background in the workspace header to expose the  **Upload cover photo** icon and click it.
+1. Hover over the background in the workspace header to expose the  **Edit cover photo** button and select **Upload Photo**.
 
     !![New cover photo](4-new-header-image.png)
 
-2. The **Edit Workspace** screen opens with the **Setup** tab in focus. Scroll down until you see **Cover Photo**, click **Choose File**, and add the following image: `worspace_header-image`. Click **Save**.
+2. Browse for the following image that you downloaded: `worspace_header-image`.
+
+3. Reposition your photo to display it as you want, and then click **Save**.
 
     !![Save cover image](5-save-cover-image.png)
 

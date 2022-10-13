@@ -3,8 +3,8 @@ title: Deploy MSSQL in the Kyma Runtime
 description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -163,12 +163,15 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
 Run the following commands from the `database-mssql` directory using your CLI.
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+    
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Apply the `PersistentVolumeClaim`:
 

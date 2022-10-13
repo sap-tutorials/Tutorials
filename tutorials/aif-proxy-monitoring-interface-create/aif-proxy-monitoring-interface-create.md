@@ -80,7 +80,7 @@ Next, you need to add an operation and a fault message type in the proxy editor.
 
 2. Right-click the operation and select **Set Request** > **Select Existing Message Type** from the context menu. In the upcoming **Restrict Value Range** dialog, remove all filters. Enter the message type **`SXIDAL_FBO_REQUEST_MT`** in the **ABAP Name** search filter, and the namespace **`http://sap.com/xi/XI/Demo/Airline`** in the **Namespace** search filter, then press **Enter**. In the search result, select the found entry, and select **Copy**.
 
-3. Right-click the operation and select **Add Fault** > **Select Existing Fault Message Type**. Similar to the message type search, remove all filters. Then search for the fault message type **`CX_SXIDAL_TECHNICAL _PROBLEMS`**.  
+3. Right-click the operation and select **Add Fault** > **Select Existing Fault Message Type**. Similar to the message type search, remove all filters. Then search for the fault message type **`CX_SXIDAL_TECHNICAL_PROBLEMS`**.  
 
 4. **Save** and activate the proxy.
 

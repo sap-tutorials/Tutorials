@@ -1,10 +1,10 @@
 ---
 title: Store Sensor Data in SAP HANA in SAP Data Intelligence, Trial Edition
 description: Use SAP HANA to store sensor data by using SAP Data Intelligence, Trial Edition.
-primary_tag: products>SAP-data-intelligence
+primary_tag: software-product>sap-data-intelligence
 auto_validation: true
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
-time: 45
+tags: [  tutorial>beginner, topic>big-data, software-product>sap-data-intelligence ]
+time: 30
 author_name: Roy Zhong
 author_profile: https://github.com/roy-zhong
 ---
@@ -119,7 +119,7 @@ You can notice that the output files are generated similar to the earlier tutori
     - Select `HANA_LOCALHOST`.
     - Click on `TRIALEDITION`.
     - Once you see the table `SENSORDATA`, click More Actions.
-    - Select **View Fact Sheets**.
+    - Click on **View Fact Sheet** icon
 
     ![View Fact Sheets](datahub-trial-v2-pipelines-part04-10.png)
 

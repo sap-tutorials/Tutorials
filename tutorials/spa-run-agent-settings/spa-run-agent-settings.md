@@ -20,6 +20,8 @@ Agent attributes allow you to sort agents  and make sure that a specific agent e
 
 ---
 
+Agent attributes allow you to sort agents registered within the same tenant and make sure that a specific agent executes the job of your choice.
+
 [ACCORDION-BEGIN [Step 1: ](Create an Agent Attribute in the Tenant)]
 
 Now that you have your project free of errors, ready to be released, you need to add an **Attribute** to your project. But first, you need to create an Agent Attribute.
@@ -36,6 +38,9 @@ To do so, please follow these steps:
 
 5. From the **Type** dropdown list, select **Predefined** if you wish to add values or else leave **Free** as **Type**.
 
+    > - **Free** – With this type of attribute, you won't be able to add any predefined value. Whenever you want to use this attribute, you will be able to parametrize the value of this attribute.
+    > - **Predefined** – With this type of attribute, you will be able to populate values for any specific attribute.
+
 6. In the **Values** field, you may enter any value you wish (i.e. employee ID).
 
 7. Choose **Create**.
@@ -47,7 +52,7 @@ To do so, please follow these steps:
 
 [ACCORDION-BEGIN [Step 2: ](Add the Attribute to your Agent)]
 
-1. Choose **Agent List** to verify that your Agent is idle or ready and connected in unattended mode then click on it.
+1. Choose **Agent List**, then search for your agent and verify that it is idle or ready and connected in unattended mode then click on it.
 
     !![Settings Agents List](01-Settings.png)
 
@@ -60,18 +65,6 @@ To do so, please follow these steps:
       - Choose **Confirm**
 
     !![Settings Add Attribute](01-Settings-agent-attributes-add.png)
-
-4. Choose **Agents Management** then **Add Agent**.
-
-5. Select your agent.
-
-6. Choose **Add agent**.
-
-    !![Settings Agents Management](01-Settings-Agent-Management-Add-Agent-selected.png)
-
-7. Your agent is now added and ready to run.
-
-    !![Settings Agent add](01-Settings-Agent-Management-Add-Agent-Added.png)
 
 [DONE]
 [ACCORDION-END]

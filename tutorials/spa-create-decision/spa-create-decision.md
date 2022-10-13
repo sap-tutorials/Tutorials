@@ -144,31 +144,9 @@ First add this newly created data object as the decision output:
 
     You can use the Settings option to easily define these If and Then header expressions with inline suggestions or free-flow typing.
 
-9. Lets define the **Decision Table Settings**. Choose **Settings**.
+9. In the newly created *Decision Table*, do the following to add values to condition and result columns:
 
-    !![Decision Table](08-decision-table.png).
-
-10. The **Condition Expressions** need labels, maintain **Shipping Country** for **Shipping Country** condition and **Order Amount** for **Order Amount** condition.
-
-    This will be what business users see when they are editing the decision rows.
-
-11. Choose **Apply** to configure the decision table with selected condition and result columns.
-
-    !![Decision Table Settings](decision-table-settings.png)
-
-    > You will notice *Access* column as the result properties. When you set access as *Hidden*, the respective column will not be seen during rule modelling or modifying decision table.
-
-    The settings are done, **Condition Expressions**, **Label** as well as **Result** are defined.  
-
-    This completes defining the decision table structure where a decision table is created with two header columns based on Sales Order fields and two result columns based on Approver, as defined in the decision table settings dialog:
-
-    !![02-019](02-019.png)
-
-    After setting the decision table structure – which defines the If and Then expressions – you will fill the decision table rows with values. The rule is then evaluated as: If Shipping Country = 'United Kingdom, India, Germany' then return Email = `someuser@domain.com` and `UserGroup` = `SO_APPROVER`.
-
-12. In the newly created *Decision Table*, do the following to add values to condition and result columns:
-
-13. For the **Shipping Country** (first column) you will now add the expression value using *rule expression language*.
+10. For the **Determine Approver Input.shippingCountry** (first column) you will now add the expression value using *rule expression language*.
     -  Choose the input text box.
     -  Copy and paste this expression in the input box: **EXISTSIN ['United Kingdom' , 'India' , 'Germany']**
 
@@ -192,11 +170,11 @@ First add this newly created data object as the decision output:
 
     > Remember that for all String type data object attributes, you must add a single quote (') before and after the text.
 
-14. Choose the input field of **Order Amount** column (second column of the decision table) and enter **<= 100000**.
+11. Choose the input field of **Order Amount** column (second column of the decision table) and enter **<= 100000**.
 
     !![02-022](02-022.png)
 
-15. Similarly, enter the following expressions for the respective result column (or **Then** section):
+12. Similarly, enter the following expressions for the respective result column (or **Then** section):
 
     | Result Column    | Expression
     |  :------------- | :-------------
@@ -211,14 +189,14 @@ First add this newly created data object as the decision output:
 
     So, for example, for all sales orders coming from India, Germany, or the United Kingdom (the defined shipping countries) which have a value smaller or equal than 100,000 – the first row will run. For all other sales orders, whose value is greater than 100000, the second row will return; and for any other combination that does not match the rows – an empty result will be returned.
 
-16. To add a new row to the decision table, do the following:
+13. To add a new row to the decision table, do the following:
     - Choose the check-box of the first row.
     - Choose **Add Row**.
     - From the dropdown options, select **Insert After**.
 
     !![02-024](02-024.png)    
 
-17. Similarly, enter the following values for the new row:
+14. Similarly, enter the following values for the new row:
 
     |  Condition Column    | Value
     |  :------------- | :-------------
@@ -230,7 +208,7 @@ First add this newly created data object as the decision output:
     |  `UserGroup`        | `SO_MGMNT`
     |  `Email`       | `your user email`|
 
-18. Choose **Save**.
+15. Choose **Save**.
 
     > Save will both save and activate the decision table. If there are any validation issues in the decision table, then Save will not happen and the errors will be shown in the **Design Console**
 

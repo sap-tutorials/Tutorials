@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Maintain Business Configuration App
-description: Learn how to maintain a business configuration app.
+title: Use Custom Business Configurations app
+description: Learn how to use the Custom Business Configurations app to maintain configurations.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
@@ -11,121 +11,108 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- This is the third tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
 ## Details
 ### You will learn  
-- How to maintain business configurations
+- How to use the Custom Business Configurations app to maintain configurations
 
 
-The [Maintain Business Configurations](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app serves as an entry point to the configuration objects provided by different applications or partners. You can use the app to adjust these configuration objects to change and influence the system behavior.
+The [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app serves as an entry point to the configuration objects provided by different applications or partners. You can use the app to adjust these configuration objects to change and influence the system behavior.
 
-The required business catalog is contained in business role template `SAP_BR_BPC_EXPERT (Configuration Expert - Business Process Configuration)`.
+The required business catalog is contained in business role template `SAP_BR_BPC_EXPERT (Configuration Expert - Business Process Configuration)`. Ensure the user responsible for maintaining the error codes has this role assigned.
 
 >**Hint:** The trial user in SAP BTP ABAP trial system already has the required catalog.
 
-> Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
-
 ---
-[ACCORDION-BEGIN [Step 1: ](Maintain business configurations)]
+[ACCORDION-BEGIN [Step 1: ](Custom Business Configurations)]
 
-  1. Right-click on your ABAP system and select **Properties**.
+  1. Start the Fiori Launchpad. You can start the Fiori Launchpad from ADT if you right-click on your ABAP system in the project explorer and select **Properties**, select **ABAP Development** and click on the system URL.
 
-     ![element](bc.png)
+  2. Logon with the user responsible for maintaining the error codes.
 
-  2. Select **ABAP Development**, copy the system URL and paste it in a browser of choice.
+  3. Select **Custom Business Configurations** tile.
 
-      ![package](bc2.png)
+      ![Start Custom Business Configurations app](m.png)
 
-  3. Log in to your ABAP system.
+  4. Select your business configuration.
 
-      ![package](bc3.png)
+      ![Select business configuration](m2.png)
 
-  4. Select **Maintain Business Configurations** tile.
+  5. Click **Edit**.
 
-      ![element](m.png)
+      ![Click edit](m3.png)
 
-  5. Select your business configuration.
+  6. Enter the following:
+     - Error Code: **`401`**
+     - Text: **`Unauthorized`**
 
-      ![element](m2.png)
-
-  6. Click **Edit**.
-
-      ![element](m3.png)
-
-  7. Enter following:
-     - Holiday I: `NEWYEAR`
-     - Text: New Year
-     - Month: 1
-     - Day: 1
-
-     ![element](m4.png)
+     ![Enter new row](m4.png)
 
      Click **Add Row**.
 
-  8. Click **Save**.
+  7. Click **Save**.
 
-     ![element](m5.png)
+     ![Click save](m5.png)
 
-  9. You get an error message. The transport request is missing. Click **Close**.
+  8. If you only have a trial account and performed the adjustments mentioned in the first tutorial, the save operation is successful and you can skip the rest of this tutorial and continue with the next one. If not, you get an error message that the transport request is missing. Click **Close**.
 
-      ![element](m6.png)
+      ![Error message](m6.png)
 
-10. Click on **Select Transport**.
+9. Click on **Select Transport**.
 
-    ![element](m7.png)
+    ![Click Select transport](m7.png)
 
-11. If you have a transport request, you can select it here and proceed with saving. If you don't have a transport request, then you need to create a new one first.
+10. If a Task of a modifiable Transport Request is assigned to your user, you can select the Transport Request and proceed with saving. If not you need to create a new one first.
 
-    ![element](m8.png)
+    ![Select transport](m8.png)
 
-12. To create a transport request select the [Export Customizing Transports](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) tile.
+11. To create a transport request, return to the Fiori Launchpad Home Page and select the [**Export Customizing Transports**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) tile.
 
-     ![element](m9.png)
+     ![Start Export Customizing Transports app](m9.png)
 
-13. Click **Create**.
+12. Click **Create**.
 
-     ![element](m10.png)
+     ![Create new transport request](m10.png)
 
-14. Create a transport request:
-    - Description: `Transport_###`
-    - Technical Type: Customizing Request
-
-    Click **Create**.
-
-15. If you get an error message that there is already a default transport request, click **Cancel** and go back and search for the default customizing request.
-
-    ![element](m12.png)
-
-16. Select the default transport request and create a new task for your user.
-
-    ![element](m13.png)
-
-17. Create new task:
-    - Description: `Task ###`
-    - Owner: `<your_user>`
-
-    ![element](m15.png)
+13. Create a transport request:
+    - Description: **`New Error Codes ###`**
+    - Technical Type: **`Customizing Request`**
 
     Click **Create**.
 
-18. Back in the `Maintain Business Configurations` app you can now select a transport request and save the data.
+14. If you get an error message that there is already a default transport request, click **Cancel** and go back and search for the default customizing request.
 
-    ![element](m16.png)
+    ![Search default customizing request](m12.png)
 
-19. Click **Save**. The data has been recorded on the transport request.
+15. Select the default transport request and create a new task for your user.
+
+    ![Select default request](m13.png)
+
+16. Create new task:
+    - Description: **`New Error Codes`**
+    - Owner: **`<User responsible for maintaining error codes>`**
+
+    ![Create new task](m15.png)
+
+    Click **Create**.
+
+17. Back in the **Custom Business Configurations** app click again on the **Select Transport** action. Use the input help to select a Transport Request and click **OK** and then click **Select Transport**. The selected Transport Request is now shown in the section **Transport**. If you miss a Transport Request, try to refresh the **Custom Business Configurations** app.
+
+    ![Select transport request in Custom Business Configurations app](m16.png)
+
+18. Click **Save**. The data has been recorded on the transport request.
+
+19. If you have activated `Log Changes` for the database table, you can navigate to the **Business Configuration Change Logs** by clicking on **Display Change Logs** in the **Custom Business Configurations** app.
 
 
-    If you don't have a SAP BTP, ABAP environment license you can disable the transport recording. Edit class `ZBP_I_HOLIDAY###_S`, section **Local Types**. Delete the content of the following methods:
-    - `LSC_ZI_HOLIDAY###_S→SAVE_MODIFIED`
-    - `LHC_ZI_HOLIDAY###→VALIDATERECORDCHANGES`
-    - `LHC_ZI_HOLIDAY###TEXT→VALIDATERECORDCHANGES`        
-    Activate the class afterwards.  
+    ![Business Configuration Change Logs app](m17.png)
+     
+>You can manage your customizing transports with the [**Export Customizing Transport**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) app
 
-    You can manage your customizing transports with the [Export Customizing Transport](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) app.
-    Business Configuration content can be recorded on both software components of type **Business Configuration** or **Development**. The former is recommended, see also [Business Configuration for SAP Cloud Platform ABAP Environment | SAP Blogs](https://blogs.sap.com/2019/12/20/business-configuration-for-sap-cloud-platform-abap-environment/).
-    The transport request must have the attribute `SAP_ATO_TRANSPORT_TYPE` set to `BC` and the attribute `SAP_CUS_TRANSPORT_CATEGORY` set to `DEFAULT_CUST` or `MANUAL_CUST`.
+>Business Configuration content can be recorded on both software components of type `Business Configuration` or `Development`. The former is recommended, see also [Business Configuration for SAP Cloud Platform ABAP Environment | SAP Blogs](https://blogs.sap.com/2019/12/20/business-configuration-for-sap-cloud-platform-abap-environment/). The transport request must have the attribute `SAP_ATO_TRANSPORT_TYPE` set to `BC` and the attribute `SAP_CUS_TRANSPORT_CATEGORY` set to `DEFAULT_CUST` or `MANUAL_CUST`.
 
 [DONE]
 [ACCORDION-END]

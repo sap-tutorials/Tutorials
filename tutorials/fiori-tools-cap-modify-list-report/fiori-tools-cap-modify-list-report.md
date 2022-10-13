@@ -183,27 +183,17 @@ After saving and refreshing the application, you will see the column added to th
 
 [ACCORDION-BEGIN [Step 4: ](Configure the application to load data automatically)]
 
-In this step you will learn how to configure the application to load data automatically when started without the need of pressing the Go button.
+In this step you will learn how to configure the application to load data automatically when started without needing to press the **Go** button.
 
-1. From the Application Information page, click on the **`ListReport`** page
+1. From the Application Information page, click on the **`ListReport`** page.  
 
-!![Annotation Cursor](t3-open-list-report-page.png)
+    !![Annotation Cursor](t3-open-list-report-page.png)
 
-    Now you see the structure of your application containing the list report and the object page.
-
-2. To configure the list report for automated loading click the pencil icon on the list report tile.
-
-    !![Annotation Cursor](t3-initial-load-configure-page-icon.PNG)
-
-    Select the **table** node on the tree-structure to show the properties of the table.
+2. The **Page Editor** will open. Select the **table** node on the tree-structure to show the properties of the table. Set **Initial Load**, which controls whether or not the table automatically loads, to `Enabled`.
 
     !![Annotation Cursor](t3-initial-load-table-properties.PNG)
 
-    Set the **Initial Load** property to **True**.
-
-    !![Annotation Cursor](t3-initial-load-table-properties-initial-load-true.PNG)
-
- 3. You just need to refresh your application and the data will be loaded automatically.
+3. You just need to refresh your application and the data will be loaded automatically.
 
 [DONE]
 

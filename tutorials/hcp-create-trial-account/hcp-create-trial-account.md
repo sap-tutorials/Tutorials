@@ -2,8 +2,8 @@
 title: Get a Free Account on SAP BTP Trial
 description: Sign up for a free trial account on SAP BTP.
 auto_validation: true
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 primary_tag: products>sap-business-technology-platform
 tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner ]
 time: 15
@@ -120,8 +120,3 @@ In the service marketplace you can find all services that are available on  **an
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-<br />
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=hcp-create-trial-account&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

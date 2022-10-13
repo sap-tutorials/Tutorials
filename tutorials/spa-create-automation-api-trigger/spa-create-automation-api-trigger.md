@@ -101,24 +101,39 @@ Your **API Key** is now created and ready to be used.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create service binding)]
-1.  Log in to your **SAP BTP Cockpit** and navigate to your Subaccount.
+[ACCORDION-BEGIN [Step 3: ](Create instance and service binding)]
+1.  Navigate to **SAP BTP Cockpit** subaccount > **Services** > **Instances and subscriptions**.
 
-2.  Create a new **Service Binding** by navigating to **Services** > **Instances and Subscriptions** > **Instances** > Click on your **SAP Process Automation Service** instance > Click **...** > **Create Service Binding**.
+2.  Choose **Create**.
 
-    !![Navigate to Service Bindings creation tab](Step3-1.png)
+    !![Navigate to instances and subscriptions](Step3-1.png)
 
-3.  Put the name as `myServiceBinding` and click **Create**.
+3.  For the new instance:
+    -  Select **SAP Process Automation** as **Service**.
+    -  Select **Standard Instance** plan from the **Plan** list.
+    -  Select **Other** as **Runtime Environment**.
+    -  Set **Instance Name** as **SPA-instance**.
+    -  Choose **Create**.
 
-    !![Name the service binding and create it](Step3-2.png)
+    !![Instance details](Step3-2.png)
 
-4.  Click **...** and then click **View** to view the Service Binding created.
+The instance is now added.
 
-    !![View Service Binding](Step3-3.png)
+4.  Create a new **Service Binding** by selecting your **SPA-instance** instance > Select **...** to expand > **Create Service Binding**.
 
-5.  Click **Form** and copy the **clientid**, **clientsecret** and **URL** under the `uaa` section. You will need it in the next steps.
+    !![Navigate to Service Bindings creation tab](Step3-3.png)
 
-    !![Note down information](Step3-4.png)
+5.  Put the name as `myServiceBinding` and click **Create**.
+
+    !![Name the service binding and create it](Step3-4.png)
+
+6.  Click **...** and then click **View** to view the Service Binding created.
+
+    !![View Service Binding](Step3-5.png)
+
+7.  Click **Form** and copy the `clientid`, `clientsecret` and **URL** under the `uaa` section. You will need it in the next steps.
+
+    !![Note down information](Step3-6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -197,8 +212,8 @@ Using **CONSUME API SERVICE** feature in **Conversational AI** bot we can make A
 
     !![CAI Developer token](Step6-1.png)
 
-2.  To get **Designtime API Token**:
-    - Click **Generate** besides **Designtime APIs**.
+2.  To get `Designtime API Token`:
+    - Click **Generate** besides `Designtime APIs`.
     - Select **Client Credentials** and click **Next**.
     - Note **Auth URL**, **Client ID** and **Client Secret** somewhere and save it.
     > Don't confuse these 3 information with those of the service binding's.
@@ -231,9 +246,9 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has started
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token** from step `6.1`
-    |  Auth URL       | **Designtime APIs** token **Auth URL** from step `6.2`
-    |  Client ID      | **Designtime APIs** token **Client ID** from step `6.2`
-    |  Client Secret  | **Designtime APIs** token **Client Secret** from step `6.2`
+    |  Auth URL       | `Designtime APIs` token **Auth URL** from step `6.2`
+    |  Client ID      | `Designtime APIs` token **Client ID** from step `6.2`
+    |  Client Secret  | `Designtime APIs` token **Client Secret** from step `6.2`
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
     |  Message content           | IRPA: Bot Started.
@@ -253,9 +268,9 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has finished successfully
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token** from step `6.1`
-    |  Auth URL       | **Designtime APIs** token **Auth URL** from step `6.2`
-    |  Client ID      | **Designtime APIs** token **Client ID** from step `6.2`
-    |  Client Secret  | **Designtime APIs** token **Client Secret** from step `6.2`
+    |  Auth URL       | `Designtime APIs` token **Auth URL** from step `6.2`
+    |  Client ID      | `Designtime APIs` token **Client ID** from step `6.2`
+    |  Client Secret  | `Designtime APIs` token **Client Secret** from step `6.2`
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
 
@@ -285,9 +300,9 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has failed
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token**
-    |  Auth URL       | **Designtime APIs** token **Auth URL**
-    |  Client ID      | **Designtime APIs** token **Client ID**
-    |  Client Secret  | **Designtime APIs** token **Client Secret**
+    |  Auth URL       | `Designtime APIs` token **Auth URL**
+    |  Client ID      | `Designtime APIs` token **Client ID**
+    |  Client Secret  | `Designtime APIs` token **Client Secret**
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
     |  Message content           | Automation failed with error: `${error.details}`
