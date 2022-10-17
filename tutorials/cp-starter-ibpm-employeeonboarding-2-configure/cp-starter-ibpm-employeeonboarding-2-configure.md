@@ -225,7 +225,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 [ACCORDION-BEGIN [Step 8: ](Add workflow to visibility scenario)]
 
-1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow from SAP Workflow Service** to add workflow to business scenario.
+1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow** to add workflow to business scenario.
 
     !![Add Workflow](addworkflow_1.png)
 
