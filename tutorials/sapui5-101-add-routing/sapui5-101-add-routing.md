@@ -88,23 +88,17 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
                 {
                   "name": "RouteView1",
                   "pattern": "RouteView1",
-                  "target": [
-                    "TargetView1"
-                  ]
+                  "target": "TargetView1"
                 },
                 {
                     "name": "home",
                     "pattern": "",
-                    "target": [
-                        "TargetList"
-                    ]
+                    "target": "TargetList"
                 },
                 {
                     "name": "detail",
                     "pattern": "product/{productId}",
-                    "target": [
-                        "TargetDetail"
-                    ]
+                    "target": "TargetDetail"
                 }
             ],
             "targets": {
