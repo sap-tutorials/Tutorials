@@ -6,7 +6,7 @@ description: Learn how to add a Helm chart to your project and configure contain
 keywords: cap
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -103,7 +103,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
     *.c-<xyz123>.sap.kyma.ondemand.com
     ```
 
-    where `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
+    >  `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
 
 2. Add the result without the leading `*.` in the `domain` property of your `chart/values.yaml` file. For example:
 

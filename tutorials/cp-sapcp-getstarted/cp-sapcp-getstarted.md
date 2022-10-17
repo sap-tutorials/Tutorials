@@ -78,7 +78,7 @@ Kyma: The same goes for Kyma: You use the btp CLI for all tasks on global accoun
     - macOS: `/usr/local/bin`
     - Windows: `C:/Users/<your-user>`
 4. Ensure that the directory with the btp executable is in your PATH.
-    - macOS: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+    - macOS and Linux: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default.
     - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
 5. Open a terminal and enter `btp`.
 

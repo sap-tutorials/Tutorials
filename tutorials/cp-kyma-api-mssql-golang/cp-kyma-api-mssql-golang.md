@@ -241,12 +241,15 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `configmap.yaml`: defines the name of the database, host, and port. The host value assumes that the service for the database is named `mssql` and is defined in the `dev` Namespace. Make sure to adjust this if you made any changes.
 - `deployment.yaml`: defines the deployment definition for the Go API, as well as a service used for communication. This definition references both the `secret.yaml`, which was defined in the previous tutorial and also included in this directory, and the `configmap.yaml` by name.  
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 

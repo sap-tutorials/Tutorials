@@ -18,10 +18,9 @@ parser: v2
 - You've finished the tutorial [Create a CAP Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
-- You've downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/)
+- You've downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/).
 - You've downloaded and installed the [MultiApps CF CLI plugin](https://github.com/cloudfoundry/multiapps-cli-plugin/blob/master/README.md).
-- You've to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application
-
+- You've to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
 ---
 
@@ -123,6 +122,8 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
 
     > This process takes some minutes. In this one step the archive is uploaded to Cloud Foundry, service instances are created, the applications are staged, and then deployed to their target runtimes.
+
+    > If your deployment fails during deploy of `my-bookshop-db-deployer`, make sure that your IP address is configured for connections to SAP HANA Cloud. Or allow connections to all IP addresses at your own risk. We recommend to revert that setting after you've completed the tutorial.
 
 3. In the deploy log, find the application URL of `my-bookshop`:
 

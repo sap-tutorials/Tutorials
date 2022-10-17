@@ -39,7 +39,7 @@ btp list accounts/subaccount
 btp target --subaccount <subaccount ID from your clipboard>
 ```
 
-Once the target is set to the subaccount, you no longer need to specify the subaccount ID with any command.
+Once the target is set to the subaccount, you no longer need to specify the subaccount ID with every command.
 
 [DONE]
 [ACCORDION-END]
@@ -52,9 +52,9 @@ btp list accounts/entitlements
 ```
 
 
-If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements:
+If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements, and that you do need the subaccount ID one last time in this case (luckily, it should still be in your clipboard):
 ```Shell/Bash
-btp assign accounts/entitlement --for-service kymaruntime --plan free --amount 1  
+btp assign accounts/entitlement --to-subaccount <subaccount ID from your clipboard> --for-service kymaruntime --plan free --amount 1  
 ```
 
 If you're not working in a free tier subaccount, see [Available Plans in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/befe01d5d8864e59bf847fa5a5f3d669.html).
@@ -80,7 +80,7 @@ btp create accounts/environment-instance --display-name my-environment-instance 
 
 A new Kubernetes cluster is set up, in which the Kyma runtime and all its components will run.
 
-To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance --subaccount <ID>` ‒ once Kyma appears with status `OK`, you can continue.
+To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance` ‒ once Kyma appears with status `OK`, you can continue.
 
 [DONE]
 [ACCORDION-END]
@@ -117,7 +117,7 @@ in PowerShell 7.x (Windows, Mac, Linux):
 curl https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<EnvironmentID> > <file-path>\kubeconfig.yaml
 ```
 
-in macOS:
+in macOS and Linux:
 ```Shell/Bash
 curl -o kubeconfig.yaml https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<ENVIRONMENT-ID>
 ```
@@ -149,7 +149,7 @@ Alternatively, add the path in system variables as follows:
 
 [OPTION END]
 
-[OPTION BEGIN [Mac]]
+[OPTION BEGIN [MacOS and Linux]]
 
 ```Shell/Bash
 export KUBECONFIG={KUBECONFIG_FILE_PATH}   

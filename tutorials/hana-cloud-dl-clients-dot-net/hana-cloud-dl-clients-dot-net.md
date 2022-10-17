@@ -2,7 +2,7 @@
 title: Connect to Data Lake Relational Engine Using the .NET Driver
 description: Create and debug a .NET application that connects to a data lake Relation Engine.
 auto_validation: true
-time: 15
+time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---

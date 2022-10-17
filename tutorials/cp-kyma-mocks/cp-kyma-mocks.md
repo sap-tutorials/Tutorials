@@ -36,32 +36,23 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
 [ACCORDION-BEGIN [Step 2: ](Apply resources to Kyma runtime)]
 
-1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, and then choose **Create**.
+1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, toggle **Enable Sidecar Injection** to the on state and then choose **Create**.
 
     ![Add Namespace](add-ns.png)
 
     > Namespaces separate objects inside a Kubernetes cluster. The concept is similar to folders in a file system. Each Kubernetes cluster has a `default` namespace to begin with. Choosing a different value for the namespace will require adjustments to the provided samples.
 
+    > Toggling **Enable Sidecar Injection** to the on state enables `Istio`, which is the service mesh implementation used by the Kyma runtime.
+
 2. Open the `dev` Namespace by choosing the tile, if it is not already open.
 
-3. Apply the Deployment of the mock application to the `dev` Namespace by choosing the menu option **Overview** if not already open. Within the **Overview** dialog, choose **Deploy a new workload -> Create Deployment**.
+3. Apply the Deployment of the mock application to the `dev` Namespace by choosing the menu option **Overview** if not already open. Within the **Overview** dialog, choose **Upload YAML**. Either copy the contents of the file `/xf-application-mocks/commerce-mock/deployment/k8s.yaml` into the window or use the option to upload it. 
 
-    ![Add Namespace](deploy-workload1.png)
+    ![Add Namespace](deploy-workload.png)
 
-4. Choose the tab **YAML**.  Copy the contents of the file `/xf-application-mocks/commerce-mock/deployment/k8s-deployment.yaml` into the Deployment pane over-writing the preexisting content.
+4. Notice that this file contains the resource definitions for the Deployment as well as the Service and the Persistent Volume Claim. Choose **Submit** to create the resources.
 
-5. Scroll farther down the **YAML** tab to view the Service pane. Enable the option **Expose a separate Service** and copy the contents of the file `/xf-application-mocks/commerce-mock/deployment/k8s-service.yaml` into the Service pane over-writing the preexisting content.  After copying the content of both the `k8s-deployment.yaml` and `k8s-service.yaml` into their corresponding panes choose **Create**. The service can also be created within the menu option **Discovery and Network -> Services**.
-
-    ![Add Deployment and Service](deploy-workload2.png)
-
-    > The new deployment and service is represented as a declarative YAML object which describes what you want to run inside your namespace.
-
-
-6. Choose the menu option **Storage -> Persistent Volume Claims** and then choose **Persistent Volume Claim**. Copy the contents of the file `/xf-application-mocks/commerce-mock/deployment/k8s-pvc.yaml` into the pane over-writing the preexisting content. After copying the contents of the `k8s-pvc.yaml` choose **Create**.
-
-    ![Add PVC](create-pvc.png)
-
-7. Create the `APIRule` of the mock application to the `dev` Namespace by choosing the menu option **Discovery and Network -> API Rules** and then choosing **Create API Rule**. Provide the name `commerce-mock`, choose the service `commerce-mock` and enter `commerce` for the **Subdomain**. Enable each of the **Methods** and choose **Create**.
+5. Create the `APIRule` of the mock application to the `dev` Namespace by choosing the menu option **Discovery and Network -> API Rules** and then choosing **Create API Rule**. Provide the name `commerce-mock`, choose the service `commerce-mock` and enter `commerce` for the **Subdomain**. Enable each of the **Methods** and choose **Create**.
 
     ![Add APRRule](apirule.png)
 

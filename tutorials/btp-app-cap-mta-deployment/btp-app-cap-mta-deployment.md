@@ -331,7 +331,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-> Delete your older `package-lock.json` to avoid errors due to use of older versions.
+> Delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
 
 1. Build the MTA module from your project root folder:
 

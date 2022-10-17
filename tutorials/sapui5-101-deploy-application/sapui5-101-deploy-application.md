@@ -14,8 +14,8 @@ author_profile: https://github.com/nicoschoenteich
 
 ## Details
 ### You will learn
-  - How to build a multi-target application (MTA)
-  - How to deploy a multi-target application to Cloud Foundry
+  - How to build a multi-target application (MTA).
+  - How to deploy a multi-target application to Cloud Foundry.
 
 ---
 

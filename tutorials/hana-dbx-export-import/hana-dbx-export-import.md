@@ -136,7 +136,7 @@ The following steps are for illustrative purposes only and are not meant to be f
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
-        CREDENTIAL 'DL_FILES_CREDENTIAL'
+        CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW;
     ```
 
@@ -177,9 +177,8 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
-    SELECT * FROM PSES;
 
-    SELECT * FROM CERTIFICATES;
+    SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
     --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
     MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
@@ -201,11 +200,11 @@ The following steps walk through the process of exporting to and importing data 
     PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
     YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
     CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----' COMMENT 'SAP_HC';
-    SELECT * FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
-
+    --DROP CERTIFICATE <CERTIFICATE_ID>;
+    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
     SELECT * FROM PSE_CERTIFICATES;
-    ALTER PSE HTTPS ADD CERTIFICATE CERTIFICATE_ID_FROM_SELECT_ABOVE;
-    SELECT * FROM PSE_CERTIFICATES;
+    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
 
     ALTER PSE HTTPS SET OWN CERTIFICATE
     'Contents from client.key
@@ -214,7 +213,7 @@ The following steps walk through the process of exporting to and importing data 
 
     --GRANT REFERENCES ON PSE HTTPS TO USER1;
 
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES_CREDENTIAL' TYPE 'X509' PSE HTTPS;
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
     ```
 
 4. Export `HOTEL.MAINTENANCE` into the data lake Files container.
@@ -228,7 +227,7 @@ The following steps walk through the process of exporting to and importing data 
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
-        CREDENTIAL 'DL_FILES_CREDENTIAL'
+        CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW;
     ```
 
@@ -298,21 +297,21 @@ The following steps walk through the process of exporting to and importing data 
 9. Execute the following SQL to store the private key and service account as a credential in the database.  
 
     ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'gcsImport' TYPE 'PASSWORD' USING 'user=<client_email>;password=<private_key>';
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD' USING 'user=<client_email>;password=<private_key>';
     SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'gcsImport' TYPE 'PASSWORD';
+    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD';
     ```
 
     ![Create Credential](createCredential.png)
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
-10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
+10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[35]
+    ```SQL[37]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
-    SELECT * FROM CERTIFICATES;
+    SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
@@ -342,10 +341,12 @@ The following steps walk through the process of exporting to and importing data 
     6u9AWpQKXCBfTkBdYiJ23//OYb2MI3jSNwLgjt7RETeJ9r/tSQdirpLsQBqvFAnZ
     0E6yove+7u7Y/9waLd64NnHi/Hm3lCXRSHNboTXns5lndcEZOitHTtNCjv0xyBZm
     2tIMPNuzjsmhDYAPexZ3FL//2wmUspO8IFgV6dtxQ/PeEMMA3KgqlbbC1j+Qa3bb
-    bP6MvPJwNQzcmRk13NfIRmPVNnGuV/u3gm3c
-    -----END CERTIFICATE-----' COMMENT 'GOOGLE_CERT';
+    bP6MvPJwNQzcmRk13NfIRmPVNnGuV/u3gm3c-----END CERTIFICATE-----' COMMENT 'GOOGLE_CERT';
+    --DROP CERTIFICATE <CERTIFICATE_ID>;
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GOOGLE_CERT';
-    ALTER PSE HTTPS ADD CERTIFICATE <SELECTED_CERTIFICATE_ID>;
+    SELECT * FROM PSE_CERTIFICATES;
+    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
     ```
 
@@ -361,11 +362,11 @@ The following steps walk through the process of exporting to and importing data 
 
     ```SQL
     --Uses the previously stored credential
-    --EXPORT INTO PARQUET FILE 'gs://<bucket>/<objectKey>' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'gcsImport';
-    EXPORT INTO PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'gcsImport';
+    --EXPORT INTO PARQUET FILE 'gs://<bucket>/<objectKey>' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
+    EXPORT INTO PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --EXPORT INTO PARQUET FILE 'gs://<service_account>:<private_key>@<bucket>/<object_id>' FROM HOTEL.MAINTENANCE;
+    --EXPORT INTO PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' FROM HOTEL.MAINTENANCE;
     EXPORT INTO PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEv...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' FROM HOTEL.MAINTENANCE;
     ```
 
@@ -389,11 +390,11 @@ The following steps walk through the process of exporting to and importing data 
 
     ```SQL
     --Uses the previously stored credential
-    --IMPORT FROM PARQUET FILE  'gs://<bucket>/<objectKey>' WITH CREDENTIAL 'gcsImport';
-    IMPORT FROM PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA CREDENTIAL 'gcsImport';
+    --IMPORT FROM PARQUET FILE  'gs://<bucket>/<objectKey>' WITH CREDENTIAL 'GoogleCloud';
+    IMPORT FROM PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --IMPORT FROM PARQUET FILE 'gs://<service_account>:<private_key>@<bucket>/<object_id>' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
+    --IMPORT FROM PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     IMPORT FROM PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEvg...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 
@@ -509,12 +510,12 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     ![Shared Access Signature](queryString.png)
 
-6. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE.  Replace the \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
+6. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE.  Replace the \<CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[24]
+    ```SQL[26]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
-    SELECT * FROM CERTIFICATES;
+    SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
     RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
     VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
@@ -534,8 +535,11 @@ The following steps walk through the process of using Microsoft Azure storage se
     Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
     ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
     R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
+    --DROP CERTIFICATE <CERTIFICATE_ID>;
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'Azure';
-    ALTER PSE HTTPS ADD CERTIFICATE <SELECTED_CERTIFICATE_ID>;
+    SELECT * FROM PSE_CERTIFICATES;
+    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
     ```
 
@@ -545,7 +549,18 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     ![Certificate](certificate.png)
 
-7. Start the export catalog wizard and export the maintenance table to the storage service.
+7. Create Credentials (Optional)
+
+    Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database.  
+
+    ```SQL
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account>;password=<SAS>';
+    SELECT * FROM CREDENTIALS;
+    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD';
+    ```
+
+
+8. Start the export catalog wizard and export the maintenance table to the storage service.
 
     The Azure Path is of the format:
 
@@ -571,13 +586,13 @@ The following steps walk through the process of using Microsoft Azure storage se
     EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
     ```
 
-8. Enter the SQL statement below to drop the table.  It will be added back in the next step.
+9. Enter the SQL statement below to drop the table.  It will be added back in the next step.
 
     ```SQL
     DROP TABLE HOTEL.MAINTENANCE;
     ```
 
-9. Import the table using the import catalog objects wizard.
+10. Import the table using the import catalog objects wizard.
 
     ![Import Azure](importAzure.png)
 
@@ -640,36 +655,37 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     ![Access Key](accessKey.png)
 
-5. In the SAP HANA database explorer, add the certificate used by AWS to the HANA Cloud PSE. Replace the \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
+5. In the SAP HANA database explorer, add the certificate used by AWS to the HANA Cloud PSE. Replace the \<CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    The certificate below is the [Baltimore `CyberTrust` Root certificate](https://www.digicert.com/kb/digicert-root-certificates.htm).
+    The certificate below is the Amazon Root CA 1 from [Amazon Trust Services](https://www.amazontrust.com/repository/).
 
     ```SQL[25]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
-    SELECT * FROM CERTIFICATES;
+    SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
-    MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
-    RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
-    VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
-    DTI1MDUxMjIzNTkwMFowWjELMAkGA1UEBhMCSUUxEjAQBgNVBAoTCUJhbHRpbW9y
-    ZTETMBEGA1UECxMKQ3liZXJUcnVzdDEiMCAGA1UEAxMZQmFsdGltb3JlIEN5YmVy
-    VHJ1c3QgUm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKMEuyKr
-    mD1X6CZymrV51Cni4eiVgLGw41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr
-    IZ3AQSsBUnuId9Mcj8e6uYi1agnnc+gRQKfRzMpijS3ljwumUNKoUMMo6vWrJYeK
-    mpYcqWe4PwzV9/lSEy/CG9VwcPCPwBLKBsua4dnKM3p31vjsufFoREJIE9LAwqSu
-    XmD+tqYF/LTdB1kC1FkYmGP1pWPgkAx9XbIGevOF6uvUA65ehD5f/xXtabz5OTZy
-    dc93Uk3zyZAsuT3lySNTPx8kmCFcB5kpvcY67Oduhjprl3RjM71oGDHweI12v/ye
-    jl0qhqdNkNwnGjkCAwEAAaNFMEMwHQYDVR0OBBYEFOWdWTCCR1jMrPoIVDaGezq1
-    BE3wMBIGA1UdEwEB/wQIMAYBAf8CAQMwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3
-    DQEBBQUAA4IBAQCFDF2O5G9RaEIFoN27TyclhAO992T9Ldcw46QQF+vaKSm2eT92
-    9hkTI7gQCvlYpNRhcL0EYWoSihfVCr3FvDB81ukMJY2GQE/szKN+OMY3EU/t3Wgx
-    jkzSswF07r51XgdIGn9w/xZchMB5hbgF/X++ZRGjD8ACtPhSNzkE1akxehi/oCr0
-    Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
-    ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
-    R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'S3';
+    MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
+    ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+    b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL
+    MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+    b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
+    ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
+    9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
+    IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
+    VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
+    93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
+    jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
+    AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
+    A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
+    U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
+    N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
+    o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
+    5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
+    rqXRfboQnoZsG4q5WTP468SQvvG5-----END CERTIFICATE-----' COMMENT 'S3';
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'S3';
-    ALTER PSE HTTPS ADD CERTIFICATE <SELECTED_CERTIFICATE_ID>;
+    SELECT * FROM PSE_CERTIFICATES;
+    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
     ```
 

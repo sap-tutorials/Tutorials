@@ -150,6 +150,8 @@ You completed [Configure Launchpad](spa-configure-launchpad) tutorial. You assig
 
     !![Tile](20.png)
 
+    > You can also see `MyInbox` and Process Workspace tiles added to the launchpad which can be used by the business users to access the tasks and monitor the processes respectively.
+
     You will be redirected to the **Order Approval Request Form**.
 
     !![Form](21.png)
