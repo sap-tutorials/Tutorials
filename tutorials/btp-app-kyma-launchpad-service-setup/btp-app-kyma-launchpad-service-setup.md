@@ -36,7 +36,7 @@ Navigation targets are required to navigate between applications, but also to st
 2. Add the external navigation target to the `sap.app` JSON object. You can add it right behind the `sourceTemplate` object:
 
 <!-- cpes-file app/risks/webapp/manifest.json:$["sap.app"].crossNavigation -->
-```JSON[8-20]
+```JSON[8-19]
 {
   ...
   "sap.app": {
@@ -65,10 +65,12 @@ Navigation targets are required to navigate between applications, but also to st
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
-Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
+1. Open the file `app/mitigations/webapp/manifest.json`.
+
+2. Add the external navigation target to the `sap.app` JSON object, but this time with `semanticObject` name `Mitigations`. You can add it right after the `dataSources` object:
 
 <!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
-```JSON[8-20]
+```JSON[8-19]
 {
   ...
   "sap.app": {
@@ -262,6 +264,14 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     ```Shell/Bash
     CONTAINER_REGISTRY=<your-container-registry>
     ```
+  
+    > Looking for `<your-container-registry>`?
+
+    > Value for `<your-container-registry>` is the same as the docker server URL and the path used for docker login. You can quickly check it by running the following command in your terminal:
+
+    > ```json
+    > cat ~/.docker/config.json
+    > ```
 
 2. Build docker image:
 
@@ -293,7 +303,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
     This adds three new sections `html5_apps_deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the Launchpad Service.
 
-2. Replace `<your-container-registry>` with your container registry in the `html5_apps_deployer` section of your `chart/values.yaml` file:
+2. Replace `<your-container-registry>` with your container registry URL in the `html5_apps_deployer` section of your `chart/values.yaml` file:
 
     ```YAML[5]
     html5_apps_deployer:
@@ -316,15 +326,18 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
         ...
     ```
 
-     You've already configured the same destination ([Add Deployment Config for HTML5 Applications](#add-deployment-config-for-html5-applications)) and cloud service ([Change Cloud Service](#change-cloud-service)) values for your SAP Fiori applications, so with this step the configurations are also reflected in the `values.yaml` file.
+     The `backendDestinations` configuration creates a destination with the name `cpapp-srv` that points to the URL for your CAP service `srv`.
+     With this step we're reflecting in the `values.yaml` file the configurations you already did for:
 
-     The backend destination configuration creates a destination with the name `cpapp-srv` pointing to the URL for your CAP service `srv`.
+     - Destination `cpapp-srv` for the Risks application, done in `Step 5: Add SAP Fiori elements Risks application`.
+     - Destination `cpapp-srv` for the Mitigations application, done in `Step 6: Add SAP Fiori elements Mitigations application`.
+     - Cloud service for both applications, done  `Step 7: Change Cloud Service`.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 11: ](Redeploy your application)]
-You can redeploy your application:
+Run the deploy command again:
 
 ```Shell/Bash
 helm upgrade cpapp ./chart --install

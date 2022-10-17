@@ -49,13 +49,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** &rarr; **Spaces**.
+4. Choose **Cloud Foundry** &rarr; **Spaces**.
 
-3. Choose your space.
+5. Choose your space.
 
-4. Choose on the application whose logs you want to access.
+6. Choose on the application whose logs you want to access.
 
-5. Choose **Logs**.
+7. Choose **Logs**.
 
     !![App Logs](cpapp-srv-logs.png)
 

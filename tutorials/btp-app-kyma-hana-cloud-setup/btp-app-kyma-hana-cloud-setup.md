@@ -69,7 +69,7 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
 1. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
 
     - Cloud Foundry: run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
-    - Kyma: you should be already logged in, if you've followed the instructions in Step 4: `Login to your Kyma cluster` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in Step 6: `Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment).
+    - Kyma: you should be already logged in, if you've followed the instructions in `Step 4: Login to your Kyma cluster` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in `Step 6: Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment).
 
 3. In the root folder of your project, execute:
 
@@ -83,7 +83,7 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
     - Creates a service key (`cpapp-db-key` if your HDI container service is called `cpapp-db`) on Cloud Foundry.
     - Creates a secret with the service key's credentials on your Kyma cluster.
 
-> If you get an error, make sure you've added all required entitlements to your subaccount as described in Step 3: `Create a Live Account` of [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp).
+> If you get an error, make sure you've added all required entitlements to your subaccount as described in `Step 3: Create a Live Account` of [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp).
 
 [VALIDATE_1]
 [ACCORDION-END]
