@@ -3,7 +3,7 @@ title: Create Rule Service and Ruleset
 description: Create and activate ruleset and rule service artefacts as part of Bonus Plan Percentage Calculation rules project.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-cloud-platform, software-product>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
