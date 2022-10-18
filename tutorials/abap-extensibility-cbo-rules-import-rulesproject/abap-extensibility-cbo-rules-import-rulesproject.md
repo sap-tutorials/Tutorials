@@ -3,7 +3,7 @@ title: Import Business Rules with Custom Business Object
 description: Use Business Rules Import option to import template rules project that will be used to create business rule models on custom business object.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
