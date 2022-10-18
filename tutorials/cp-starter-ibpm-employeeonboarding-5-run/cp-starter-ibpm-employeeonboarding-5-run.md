@@ -19,7 +19,7 @@ First, we will import sample events & data, process these events and view them i
 
 1. Download the events `Employee_OnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
-2. In the Workflow Management Fiori launchpad, click the **Event Acquisition** tile.
+2. In the Workflow Management Launchpad, click the **Event Acquisition** tile.
 
     >You got the workflow management application link in the last step of the set up tutorial. The link would be like:  
 
@@ -50,7 +50,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 2: ](Process the Employee Onboarding events)]
 
-1. In the Workflow Management Fiori Launchpad, click the **Monitor Visibility Scenarios** tile.
+1. In the Workflow Management Launchpad, click the **Monitor Visibility Scenarios** tile.
 
     ![Open Monitor Scenario1](monitorscenario.png)
 
@@ -67,7 +67,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 3: ](View the process visibility workspace)]
 
-1. In the Workflow Management Fiori launchpad, click the **Process Workspace** tile.
+1. In the Workflow Management Launchpad, click the **Process Workspace** tile.
 
     ![View Scenario1](viewscenario.png)
 
@@ -87,7 +87,7 @@ First, we will import sample events & data, process these events and view them i
 
 Now, you will run the workflow and see how the new events and data are automatically processed and shown in process workspace in real time.
 
-1. In the Workflow Management Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
+1. In the Workflow Management Launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
 
     ![Open Monitor Workflows](monitor-workflow.png)
 
@@ -101,7 +101,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     !![View Details of Instance](workflow-instance-1.png)
 
-5. Go back to the Workflow Management Fiori launchpad homepage. The **My Inbox** tile shows one open task.
+5. Go back to the Workflow Management Launchpad homepage. The **My Inbox** tile shows one open task.
 
     ![Open Task in My Inbox](open-task.png)
 
@@ -118,13 +118,13 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 5: ](View process visibility workspace)]
 
-1. In the Workflow Management Fiori launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
+1. In the Workflow Management Launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
     !![New Workflow Event Processed](processworkflowevents.png)
 
     > If *Schedule Job* in *ON* then the events are automatically processed at an interval of 5 minutes.
 
-2. Go back to Workflow Management Fiori launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
+2. Go back to Workflow Management Launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
 
     > You will notice that the **Open Instances** number has changed which means the workflow instance has been processed and its progress can be tracked from this process visibility workspace.
 
@@ -149,7 +149,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![Accept Equipment](accept-equipment.png)
 
-3. In the Workflow Management Fiori launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, select the **Status** option and choose the **Completed** status.
+3. In the Workflow Management Launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, select the **Status** option and choose the **Completed** status.
 
     ![View Completed Workflow Instance](instance-filter-1.png)
 
@@ -162,7 +162,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 7: ](View process visibility workspace for completed workflow)]
 
-1. In the Workflow Management Fiori launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
+1. In the Workflow Management Launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
 
     !![See Processed data](processeddata_2.png)
 
