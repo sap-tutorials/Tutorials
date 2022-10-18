@@ -3,7 +3,7 @@ title: Deploy  Rules Service to S/4HANA Cloud
 description: Deploy the business rules in S/4HANA cloud system after successfully activating all business rules models.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 

@@ -3,7 +3,7 @@ title: Create Decision Table based Rules
 description: Create decision table type business rules to calculate bonus percentage based on eligibility dates and assignment factor of bonus plan custom business object.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
