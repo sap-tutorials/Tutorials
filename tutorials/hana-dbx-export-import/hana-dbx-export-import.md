@@ -9,7 +9,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
 - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
-- Google Cloud or Microsoft Azure accounts will be needed for optional steps in this tutorial.
+- Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
 ## Details
@@ -65,11 +65,11 @@ The following steps will attempt to demonstrate an export and import of data fro
 
     Left-click on the download toolbar item.
 
-    ![Download](download.png)
+    ![Download](downloadBtn.png)
 
     Choose **Download**.
 
-    !![Download options](downloadOptions1.png)
+    ![Download options](downloadOptions1.png)
 
     >Note, there is a setting that controls the number of results displayed which may need to be adjusted for tables with larger results.
 
@@ -117,11 +117,9 @@ The following steps are for illustrative purposes only and are not meant to be f
 
     It can be used to export data to cloud storage providers such as SAP HANA Cloud, data lake Files, Amazon S3, Microsoft Azure, Google Cloud Storage, and Alibaba Cloud OSS.  
 
-    >Additionally, the SAP BTP offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  
-
     ![available cloud storage providers](available-cloud-storage-providers.png)
 
-    The screenshot below shows the data lake Files target being used and in the bottom left, you can see the result of the export, the maintenance.csv file in the HANA DL File Container.
+    The screenshot below shows the data lake Files being used as an export target.
 
     ![Export Data Wizard](exportDataWizard2.png)
 
@@ -133,7 +131,7 @@ The following steps are for illustrative purposes only and are not meant to be f
 
     ```SQL
     EXPORT INTO CSV FILE
-        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
@@ -177,8 +175,8 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
-
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
+
     --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
     MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
@@ -201,22 +199,41 @@ The following steps walk through the process of exporting to and importing data 
     YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
     CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----' COMMENT 'SAP_HC';
     --DROP CERTIFICATE <CERTIFICATE_ID>;
-    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
-    SELECT * FROM PSE_CERTIFICATES;
-    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
-    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
-
-    ALTER PSE HTTPS SET OWN CERTIFICATE
-    'Contents from client.key
-    Contents from client.crt
-    Contents from ca.crt'
-
-    --GRANT REFERENCES ON PSE HTTPS TO USER1;
-
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
     ```
 
-4. Export `HOTEL.MAINTENANCE` into the data lake Files container.
+    Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.
+
+    ```SQL
+    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC'; --CERTIFICATE_ID
+    ```
+
+    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>.
+
+    ```SQL
+    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
+    ```
+    Then, set the own certificate with the client private key, client certificate, and Root Certification Authority of the client certificate in plain text. Make sure you have completed steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
+    ```SQL
+    ALTER PSE HTTPS SET OWN CERTIFICATE
+    '<Contents from client.key>
+    <Contents from client.crt>
+    <Contents from ca.crt>'
+    --GRANT REFERENCES ON PSE HTTPS TO USER1;
+    SELECT * FROM PSE_CERTIFICATES;
+    ```
+
+    The above commands create a personal security environment (PSE), create a certificate, and add the certificate to the PSE.
+
+4.  Execute the following SQL to store a credential in the database for the user.
+
+
+    ```SQL
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
+    ```
+    You can now use the Database Credential to import/export data.
+
+5. Export the table `HOTEL.MAINTENANCE` into the data lake Files container.
 
     ![Export to data lake Files](export-data-lake-files.png)
 
@@ -224,26 +241,26 @@ The following steps walk through the process of exporting to and importing data 
 
     ```SQL
     EXPORT INTO CSV FILE
-        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
     FROM HOTEL.MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW;
     ```
 
-5. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
+6. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
 
     ```SQL
     DELETE FROM HOTEL.MAINTENANCE;
     ```
 
-6. Right-click on the maintenance table and choose **Import Data**.  
+7. Right-click on the maintenance table and choose **Import Data**.  
 
     ![Open Import Data Wizard](importDataWizard.png)
 
     From the Import data from drop down, select **Data Lake Files**.
 
-    ![Import form data lake Files](importDataWizardDataLakeFiles.png)
+    ![Import from data lake Files](importDataWizardDataLakeFiles.png)
 
     The wizard makes use of the import from statement.  An example is shown below:
 
@@ -294,7 +311,13 @@ The following steps walk through the process of exporting to and importing data 
 
     ![Remove line breaks](remove-line-breaks.png)
 
-9. Execute the following SQL to store the private key and service account as a credential in the database.  
+9. Create Credentials (Recommended)
+
+    You can view your service account email in the Service Accounts tab.
+
+    ![View Service Account](createCredentialServiceAccount.png)
+
+    Execute the following SQL to store the private key and service account as a credential in the database. Paste the service account email and private key as user and password.
 
     ```SQL
     CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD' USING 'user=<client_email>;password=<private_key>';
@@ -302,16 +325,17 @@ The following steps walk through the process of exporting to and importing data 
     --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD';
     ```
 
-    ![Create Credential](createCredential.png)
+    ![Create Credential](createCredentialGCP.png)
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
-10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<CERTIFICATE_ID> with the value returned from the previous select statement.
+10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the following commands to create a certificate.
 
-    ```SQL[37]
+    ```SQL
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
+
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
@@ -343,11 +367,21 @@ The following steps walk through the process of exporting to and importing data 
     2tIMPNuzjsmhDYAPexZ3FL//2wmUspO8IFgV6dtxQ/PeEMMA3KgqlbbC1j+Qa3bb
     bP6MvPJwNQzcmRk13NfIRmPVNnGuV/u3gm3c-----END CERTIFICATE-----' COMMENT 'GOOGLE_CERT';
     --DROP CERTIFICATE <CERTIFICATE_ID>;
-    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GOOGLE_CERT';
-    SELECT * FROM PSE_CERTIFICATES;
+    ```
+
+    Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.
+
+    ```SQL
+    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GOOGLE_CERT'; --CERTIFICATE_ID
+    ```
+
+    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+
+    ```SQL
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
     --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
+    SELECT * FROM PSE_CERTIFICATES;
     ```
 
     The above commands create a personal security environment (PSE), create a certificate, add the certificate to the PSE, and set the purpose to remote source.
@@ -506,13 +540,23 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     ![Key Settings](GenerateAPIKey2.png)
 
-    Copy the generated query string and paste it into a text editor.  This will be used in step 7.
+    Copy the generated query string and paste it into a text editor. This will be used in step 6.
 
     ![Shared Access Signature](queryString.png)
 
-6. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE.  Replace the \<CERTIFICATE_ID> with the value returned from the previous select statement.
+6. Create Credentials (Recommended)
 
-    ```SQL[26]
+    Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database. An example of <storage_account_name> is `danstestsa`.
+
+    ```SQL
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account_name>;password=<Blob_SAS_token>';
+    SELECT * FROM CREDENTIALS;
+    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD';
+    ```
+
+7. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE. Open your SQL console within SAP HANA database explorer, and run the following commands to create a certificate.
+
+    ```SQL
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
@@ -536,11 +580,19 @@ The following steps walk through the process of using Microsoft Azure storage se
     ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
     R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
     --DROP CERTIFICATE <CERTIFICATE_ID>;
+    ```
+    Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.
+
+    ```SQL
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'Azure';
-    SELECT * FROM PSE_CERTIFICATES;
+    ```
+    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+
+    ```SQL
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
     --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
+    SELECT * FROM PSE_CERTIFICATES;
     ```
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
@@ -548,16 +600,6 @@ The following steps walk through the process of using Microsoft Azure storage se
     The certificate string above is from the root certificate used for the Azure Portal.
 
     ![Certificate](certificate.png)
-
-7. Create Credentials (Optional)
-
-    Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database.  
-
-    ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account>;password=<SAS>';
-    SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD';
-    ```
 
 
 8. Start the export catalog wizard and export the maintenance table to the storage service.
@@ -571,6 +613,10 @@ The following steps walk through the process of using Microsoft Azure storage se
     `danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance`
 
     ![Export Data Wizard](exportAzureStorage.png)
+
+    Alternatively, you can use a Secret Key as a Credential (optional).
+
+    ![Secret Key Azure](secretKeyAzure.png)
 
     Pressing the Compose button shows the parsed Azure path.
 
@@ -649,17 +695,33 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     Finish creating the user.
 
-    !![Finish creating user](finishCreatingUser.png)
+    ![Finish creating user](finishCreatingUser.png)
 
     **Copy and Save** the ***Access key ID*** and ***Secret access key***, as it will be required in step 5.
 
     ![Access Key](accessKey.png)
 
-5. In the SAP HANA database explorer, add the certificate used by AWS to the HANA Cloud PSE. Replace the \<CERTIFICATE_ID> with the value returned from the previous select statement.
+5. Create Credentials (Recommended)
+
+    Execute the following SQL to store the access key and secret key as a credential in the database.  
+
+    ```SQL
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD' USING 'user=<access_key>;password=<secret_key>';
+    SELECT * FROM CREDENTIALS;
+    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD';
+    ```
+
+    Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+
+    ![Create Credential](createAWSCredential.png)
+
+    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
+
+6. In the SAP HANA database explorer, create the certificate used by AWS to the HANA Cloud PSE.
 
     The certificate below is the Amazon Root CA 1 from [Amazon Trust Services](https://www.amazontrust.com/repository/).
 
-    ```SQL[25]
+    ```SQL
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
@@ -682,7 +744,17 @@ The following steps walk through the process of AWS S3 storage service as a targ
     o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
     5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
     rqXRfboQnoZsG4q5WTP468SQvvG5-----END CERTIFICATE-----' COMMENT 'S3';
+    ```
+
+    Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.
+
+    ```SQL
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'S3';
+    ```
+
+    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+
+    ```SQL
     SELECT * FROM PSE_CERTIFICATES;
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
     --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
@@ -690,22 +762,6 @@ The following steps walk through the process of AWS S3 storage service as a targ
     ```
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
-
-6. Create Credentials (Optional)
-
-    Execute the following SQL to store the access key and secret key as a credential in the database.  
-
-    ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD' USING 'user=<access_key>;password=<secret_key>';
-    SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD';
-    ```
-
-    Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-
-    !![Create Credential](createAWSCredential.png)
-
-    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
 7. Start the export catalog wizard and export the maintenance table to the storage service.
 
@@ -721,9 +777,13 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     ![Export Data Wizard](exportAWSStorageWizard.png)
 
-    Pressing the Compose button shows the parsed AWS S3 path.
+    > Alternatively, you can use a Secret Key as a Credential (optional)
 
-    ![Compose](exportAWSCompose.png)
+    > ![Secret Key](exportAWSSecretKey.png)
+
+    > Pressing the Compose button shows the parsed AWS S3 path.
+
+    > ![Compose](exportAWSCompose.png)
 
     After the Export button is pressed, the results can be seen in the AWS S3 Console.
 
@@ -736,7 +796,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
     EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
     ```
 
-    Alternatively, the previously stored credentials can be used for export:
+    The previously stored credentials can be used for export using SQL:
 
     ```SQL
     --EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
