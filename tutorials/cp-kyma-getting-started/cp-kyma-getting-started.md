@@ -1,6 +1,7 @@
 ---
 title: Enable SAP BTP, Kyma Runtime
 description: The SAP Kyma runtime is a Kubernetes cluster which is comprised of a collection of projects united together to simplify the extension, and integration of software.
+time: 10
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\\, kyma-runtime
@@ -11,7 +12,7 @@ primary_tag: software-product>sap-btp\\, kyma-runtime
 
 ## Details
 ### You will learn
-  - How to enable the SAP BTP, Kyma runtime Free Tier.
+  - How to enable the SAP BTP, Kyma runtime using the SAP BTP cockpit (see [Set up a Kyma Cluster using the Command Line](btp-cli-setup-kyma-cluster) for the same procedure using the CLI)
 
 ---
 
@@ -25,7 +26,7 @@ primary_tag: software-product>sap-btp\\, kyma-runtime
 
     !![Kyma Free Tier](cp-kyma-getting-started-02.png)
 
-    In the background, a new Kubernetes cluster is being set up where the Kyma runtime and all its components will run on. This might take between 30-60 min.
+    In the background, a new Kubernetes cluster is being set up where the Kyma runtime and all its components will run on. This might take between 15-25 min.
 
     To continue with this tutorial, you need to wait until the enablement is finished. You can still use the SAP BTP Free Tier or close the window as the setup process will continue automatically.
 
