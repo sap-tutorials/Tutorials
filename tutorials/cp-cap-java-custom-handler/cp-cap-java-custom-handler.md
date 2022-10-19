@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Add a Custom Event Handler
 description: Write your first CAP Java Custom Event Handler.
 auto_validation: true

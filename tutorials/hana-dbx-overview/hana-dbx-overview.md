@@ -22,11 +22,19 @@ primary_tag: software-product>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for data lake Relational Engine connections, and as of March 14, support for data lake File Containers.  There is now also an [extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) for Visual Studio Code that offers a subset of functionality.  
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, creating remote sources, working with multi-model data such as graph, spatial and JSON collections, viewing trace files, and troubleshooting.  
+
+It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  The SAP HANA Cloud version offers support for data lake Relational Engine connections, and as of March 14 2022, support for the data lake Files container. 
 
 ![database explorer](dbx.png)
 
-> The SAP HANA Client install provides a text based tool named `hdbsql` that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients). The SAP HANA Cloud, data lake client provides a text based tool named `dbisql` that can be used to query a data lake. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+> The following tools also provide the ability to execute SQL queries.
+
+  * `hdbsql` is a text based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients). 
+  
+  * `dbisql` is a text based tool that can be used to query a data lake. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+
+  * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
@@ -42,11 +50,11 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
     ![opening the SAP HANA database explorer from the SAP HANA Cockpit](open-dbx-from-hana-cockpit.png)
 
-* From the Business Application Studio
+* From the Business Application Studio in a SAP HANA Native Application development space
 
     ![BAS SAP HANA Dev Space](BusinessAppStudio.png)
 
-    From the command palette or the SAP HANA Projects panel.
+    The command palette or the SAP HANA Projects panel can be used to open the SAP HANA database explorer.
 
     ![BAS Open SAP HANA Database Explorer](BusinessAppStudioOpenDBX.png)
 
@@ -60,13 +68,12 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 
 |  Version     | Notes |
 |  :------------- | :------------- |
-|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 05, which was released on June 26, 2020 |
-|  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.13, which was released in June 2021 |
-|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year |
+|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 06, which was released in December, 2021 |
+|  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.14, which was released in December 2021 |
+|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/docs/SAP_HANA_COCKPIT/a1199348948f4579b6bc3b7153999749/b30dd56165f3407e8fbce88aaf2c9b27.html) | What's new since the previous on-premise release.  New features are released approximately twice per year |
 |  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set |
-|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 05 Revision 54 and was released in June 2021 |
+|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 06 |
 |  [SAP HANA, express edition, release notes for SPS 06, revision 61](https://www.sap.com/documents/2022/05/aca852e1-2a7e-0010-bca6-c68f7e60039b.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.14 |
-|  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases |
 |  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 with quarterly new releases |
 |  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | New features are released as often as every two weeks. |
 |  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/doc/a91f884257684c59923ef33c3fa6cf18/hanacloud/en-US/38cc9f70125646e0bb62b83b83e67564.html?sel4=SAP%20HANA%20Database%20Explorer)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
@@ -87,7 +94,7 @@ The image below shows the SAP HANA database explorer running in an on-premise in
 
 ![latest available version for on-premise](dbx-on-premise-version.png)
 
-For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.13.X has been released, there will no longer be fixes made to  the 2.12.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
+For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.14.X has been released, there will no longer be fixes made to  the 2.13.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
 
 The SAP Software download links (requires an S-User ID to access) below are for the on-premise version of the SAP HANA Cockpit, the SAP Web IDE, and the SAP HANA database explorer.  These pages also contain links to release notes that describe fixes made to each release.
 
@@ -134,9 +141,9 @@ The instructions on how to setup a free SAP HANA Cloud trial or free tier within
 
 [ACCORDION-BEGIN [Step 4: ](Manage SAP HANA Cloud using a CLI (optional))]
 
-The Cloud Foundry Command Line Interface (CLI) provides users another option for managing their SAP HANA Cloud instances. The software can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases) and is available for Windows, Linux, and macOS operating systems. The following steps will demonstrate how to start and manage an SAP HANA Cloud instance using the CLI.
+The Cloud Foundry Command Line Interface (cf CLI) provides users another option for managing their SAP HANA Cloud instances. The software can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases) and is available for Windows, Linux, and macOS operating systems. The following steps will demonstrate how to start and manage an SAP HANA Cloud instance using the CLI.
 
-1. Complete the installation process by following the guide [Installing the CF CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+1. Complete the installation process by following the guide [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 
 2. Copy the API endpoint from your SAP HANA Cloud account. This information can be found on the Overview page of your SAP BTP Cockpit. The API endpoint is listed under the Cloud Foundry subheading. Save the API endpoint for use in the next step.
 
@@ -181,7 +188,13 @@ For more information on the operations available with the CLI, refer to the docu
 
 >![copy Configuration](hcc-copy-json.png)
 
+>---
 
+>Another tool that can be used to manage a SAP HANA Cloud instance is the SAP Automation Pilot.  It provides commands for working with an SAP HANA Cloud instances as well as Cloud Foundry applications.  The below is an example command used to stop an SAP HANA Cloud instance.  
+
+>![stop SAP HANA Cloud command](automation-pilot.png)
+
+>The Automation Pilot also provides a scheduler and integration with SAP Alert Notification Service.  For further details see [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot).
 
 [DONE]
 [ACCORDION-END]
@@ -204,7 +217,7 @@ It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP
 
 ---
 
-Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
+Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
 
 ---
 

@@ -5,8 +5,8 @@ auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>javascript, programming-tool>sapui5, programming-tool>html5, software-product>sap-business-technology-platform, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-btp--cloud-foundry-environment
-author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites
@@ -14,8 +14,8 @@ author_profile: https://github.com/nicogeburek
 
 ## Details
 ### You will learn
-  - How to build a multi-target application (MTA)
-  - How to deploy a multi-target application to Cloud Foundry
+  - How to build a multi-target application (MTA).
+  - How to deploy a multi-target application to Cloud Foundry.
 
 ---
 

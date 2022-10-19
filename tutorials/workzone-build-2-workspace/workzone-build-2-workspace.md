@@ -57,9 +57,11 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
-3. Enter this name for your workspace: `Employee Innovation Hackathon`.
+3. Enter this name for your workspace: `Employee Innovation Hackathon`. If you're taking part in a workshop, please add your unique identifier to the workspace name like this: `<your unique identifier>_Employee Innovation Hackathon`.
 
     >**Tip:** Always use a name that would help users distinguish your workspace from others.
+
+
 
 4. Copy and paste this description for your workspace: `Get together and find the answers to your questions about the hackathon!`
 

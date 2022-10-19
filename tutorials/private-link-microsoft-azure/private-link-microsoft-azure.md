@@ -1,6 +1,7 @@
 ---
-title: Connect SAP Private Link Service to Microsoft Azure Private Link Service
+author_name: Madeline Schaefer
 author_ profile: https://github.com/Madeline-Schaefer
+title: Connect SAP Private Link Service to Microsoft Azure Private Link Service
 description: Connect SAP Private Link service to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 auto_validation: true
 time: 10

@@ -135,7 +135,9 @@ After clicking **Finish**, the Assistant will generate an Xcode project, save it
 
     Click **Start**.
 
-    > If you're interested in the different on-boarding variants you can take a look at the design guidelines: [Fiori for iOS Design Guidelines](https://experience.sap.com/fiori-design-ios/article/onboarding/).
+    > If you're interested in the different on-boarding variants you can take a look at the design guidelines: 
+    > * [Fiori for iOS Design Guidelines - Single-user Onboarding](https://experience.sap.com/fiori-design-ios/article/onboarding-2/).
+    > * [Fiori for iOS Design Guidelines - Multi-user Onboarding](https://experience.sap.com/fiori-design-ios/article/multiuser-onboarding/)
 
     !![App Onboarding](fiori-ios-scpms-teched19-14.png)
 

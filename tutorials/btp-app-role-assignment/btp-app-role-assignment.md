@@ -11,19 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
+ - [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service)
 
 ## Details
 ### You will learn
@@ -39,7 +27,7 @@ To be able to access the application, your user needs to be assigned to a role c
 
 2. Go to the **Subaccount** where you have deployed your service and application.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Select `RiskManager-<your space>` in the list of role collections.
 
@@ -56,9 +44,9 @@ To be able to access the application, your user needs to be assigned to a role c
 Your user now appears in the list of the role collection's users.
 
 [VALIDATE_1]
-
-## Test it
-
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Test it)]
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
@@ -67,15 +55,17 @@ If not, probably you have signed in before adding the role collection to your us
 
 > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
-## Additional Information: Create a role collection manually
-
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 3: ]((Optional) Create a role collection manually)]
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
 1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount**.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Choose the ( &#x2B; ) icon to create a new role collection.
 
@@ -105,5 +95,6 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 7. Choose **Save**.
 
+[DONE]
 [ACCORDION-END]
 ---

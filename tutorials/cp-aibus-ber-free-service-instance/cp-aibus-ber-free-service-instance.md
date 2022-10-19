@@ -1,5 +1,5 @@
 ---
-title: Use the Free Tier Service Plan to Create a Service Instance for Business Entity Recognition
+title: Use Free Tier to Create a Service Instance for Business Entity Recognition
 description: Create a service instance and the associated service key for Business Entity Recognition using the free tier service plan.
 auto_validation: true
 time: 15

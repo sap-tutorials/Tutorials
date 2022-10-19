@@ -46,7 +46,7 @@ If these commands fail, ensure that the folder they are located in, is included 
 
 [ACCORDION-BEGIN [Step 2: ](The SAP HANA JDBC driver)]
 
-The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports multiple versions of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the [maven repository](https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc).
+The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports multiple versions of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the maven repository at https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc.
 
 ![maven](maven.png)
 
@@ -115,7 +115,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     public class JavaQuery {
         public static void main(String[] argv) {
             System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
-            System.out.println("Minimum supported Java version and SAP driver version number: " + com.sap.db.jdbc.Driver.getVersionInfo());
+            System.out.println("SAP driver details: " + com.sap.db.jdbc.Driver.getVersionInfo() + "\n");
             Connection connection = null;
             try {  
                 connection = DriverManager.getConnection(  

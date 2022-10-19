@@ -2,8 +2,10 @@
 title: Implement a Dashboard Application for Monitoring Java Apps
 description: Create an application that retrieves metrics for Java applications running in SAP BTP, Neo environment.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java ]
+author_name: Nikola Simeonov
+author_profile: https://github.com/nikolasimeonov77
 time: 30
 ---
 

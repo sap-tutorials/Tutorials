@@ -11,9 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
+ - For this tutorial, you have two options:
+    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
+    - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
+
 
 ## Details
 ### You will learn
@@ -21,9 +22,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to modify the UI with OData annotations
  - How to make header info editable
  - How to check the annotation files
-
-
-To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 ---
 
@@ -34,7 +32,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 

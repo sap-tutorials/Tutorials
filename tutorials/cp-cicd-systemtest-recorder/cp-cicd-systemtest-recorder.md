@@ -9,7 +9,7 @@ author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
 ---
 ## Note
-Please note that this step is deprecated and will be removed or replaced soon. Even though existing test will continue to work, we recomment that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme)
+Please note that UIVeri5 is deprecated and will be removed or replaced soon. Even though existing tests will continue to work, we recommend that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme).
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
 -	You have installed [Node JS](https://nodejs.org/en/) in version 8.0 or higher.

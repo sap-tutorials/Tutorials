@@ -5,6 +5,8 @@ auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Prerequisites
@@ -16,7 +18,7 @@ primary_tag: topic>machine-learning
   - How to access your SAP BTP account
   - What are interactive guided boosters
   - How to use the **Set up account for Personalized Recommendation** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Personalized Recommendation
----
+
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your SAP BTP Account)]
 
@@ -86,7 +88,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Personalized Recommendation**, you can alternatively follow the steps in [Use the Free Tier Service Plan to Create Service Instance for Personalized Recommendation](cp-aibus-pr-free-service-instance) to create the service instance and service key for Personalized Recommendation manually using the free tier service plan.
+>If you face any issue with the booster **Set up account for Personalized Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Personalized Recommendation](cp-aibus-pr-free-service-instance) to create the service instance and service key for Personalized Recommendation manually using the free tier service plan.
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

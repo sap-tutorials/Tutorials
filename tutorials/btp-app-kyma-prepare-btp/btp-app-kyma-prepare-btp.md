@@ -6,19 +6,15 @@ description: Learn how to prepare SAP BTP and Kyma for application deployment.
 keywords: cap
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - For this tutorial, you have two options:
+    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
+    - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
 
 ## Details
 ### You will learn
@@ -40,7 +36,7 @@ In general, you have a choice of the following options:
 > When running the tutorial with a trial account, please have in mind the following considerations:
 
 > * Choose host region `cf-us10` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
-> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
 **Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
@@ -51,7 +47,7 @@ In general, you have a choice of the following options:
 [ACCORDION-BEGIN [Step 2: ](Create a Trial account)]
 You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it in [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
-A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you. You will only need to enable Kyma as described.
+A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you. You'll only need to enable Kyma as described in the following steps.
 
 > In case you face a problem when creating a service instance or an application is missing for subscription later in the tutorial, please do the following:
 
@@ -63,7 +59,7 @@ A global account, a subaccount, a Cloud Foundry org, and space with some entitle
 > 5. Search for the missing Service Plans and add it with **Add <x> Service Plans**.
 > 6. Choose **Save**.
 
-Continue with the following step [Configure `Kyma` in your subaccount](#configure-kyma-in-your-subaccount).
+Continue with the following step 6 [Configure Kyma in your subaccount](#configure-kyma-in-your-subaccount).
 
 [DONE]
 [ACCORDION-END]
@@ -77,28 +73,32 @@ The following services with their service plans and entitlements are required fo
 
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
-| Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
+| Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | Step 6: Configure Kyma in your subaccount|
 | SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
 | SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
 | SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
 
 
-> The following services are utility services, no entitlement needed:
+> The following services are Utility Services, no entitlement needed:
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
 | SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)   |
 | SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)   |
 
+
+
+
+
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
-1. In SAP BTP cockpit enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer** in the left navigation pane.
 
-3. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** &rarr; **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
@@ -130,7 +130,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 
 4. Go through the Entitlements according to the table in the previous step **Create a Live Account** and add the required plans for each of them.
 
-5. Choose the + or - symbol to change the quota for the services according to the table in the previous step **Create a Live Account**.
+5. Choose the **+** or **-** symbol to change the quota for the services according to the table in the previous step **Create a Live Account**.
 
 6. Choose **Save**.
 
@@ -138,7 +138,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Configure Kyma in your subaccount)]
-This creates a Kyma instance in your subaccount that is a full-blown `kubernetes` cluster with Kyma on top.
+This creates a Kyma instance in your subaccount that is a full-blown Kubernetes cluster with Kyma on top.
 
 1. In your subaccount's **Overview** page, choose the **Kyma Environment** tab and choose **Enable Kyma**.
 
@@ -155,9 +155,9 @@ This creates a Kyma instance in your subaccount that is a full-blown `kubernetes
 
     > A CLI-friendly name is a short string (up to 32 characters) that contains only alphanumeric characters (A-Z, a-z, 0-9), periods, underscores, and hyphens. It can't contain white spaces.
 
-    > As mentioned, when you create an environment instance that enables an environment you want to use, the name is generated automatically for you. You can use that name or replace it with the name of your choice.
+    > As mentioned above, when you create an environment instance that enables an environment you want to use, the name is generated automatically for you. You can use that name or replace it with the name of your choice.
 
-3. The creation of the cluster takes some time. When done, you should see a **Console URL**, a **KubeconfigURL**, and the name of your cluster.
+3. The creation of the cluster takes some time. When done, you should see a `Console URL`, a `KubeconfigURL`, and the name of your cluster.
 
     !![Kyma Enabled](kyma_enabled.png)
 

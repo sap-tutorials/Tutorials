@@ -68,11 +68,11 @@ pip install --upgrade pip
 zypper install python3-pip
 >```
 
-The repository that contains Python packages is [PyPI](https://pypi.org/) and includes a package for the SAP HANA client for Python.
+The repository that contains Python packages is [`PyPI`](https://pypi.org/) and includes a package for the SAP HANA client for Python.
 
 ![hdbcli on PyPI](PyPI.png)  
 
-Run the following command to download and install the SAP HANA client for Python from PyPI:
+Run the following command to download and install the SAP HANA client for Python from `PyPI`:
 
 ```Shell
 pip install hdbcli

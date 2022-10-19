@@ -1,11 +1,11 @@
 ---
 title: Configure Eclipse with SAPUI5
 description: Install the Eclipse IDE and SAPUI5 library.
-primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>html5 ]
+primary_tag: programming-tool>sapui5
+tags: [  tutorial>beginner, programming-tool>html5 ]
 auto_validation: false
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 time: 10
 ---
 

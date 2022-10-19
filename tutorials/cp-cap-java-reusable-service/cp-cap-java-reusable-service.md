@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
 auto_validation: true
@@ -164,7 +164,7 @@ In case you need a persistent database between application runs you can use a fi
 
     ```HTTP
     ### Create Categories
-    
+
     POST http://localhost:8080/odata/v4/AdminService/Categories
     Content-Type: application/json
 

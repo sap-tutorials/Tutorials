@@ -5,6 +5,8 @@ time: 30
 auto_validation: true
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-launchpad-service, software-product>sap-fiori, programming-tool>html5, programming-tool>sapui5]
 primary_tag: software-product>sap-launchpad-service
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Prerequisites

@@ -11,15 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - You have an SAP BTP global account, a subaccount, and a Cloud Foundry space with the required entitlements to deploy the application.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - For this tutorial, you have two options:
+    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
+    - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
 
 ## Details
 ### You will learn
@@ -96,9 +91,9 @@ The following services with their service plans and entitlements are required fo
 
 At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
 
+
+
 [VALIDATE_1]
-
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
@@ -106,7 +101,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 
 2. Choose **Account Explorer** in the left navigation pane.
 
-3. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** &rarr; **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
@@ -230,9 +225,6 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     ```Shell/Bash
     cf login
     ```
-
-
-
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -275,9 +267,6 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     ```Shell/Bash
     cf login
     ```
-
-
-
 [OPTION END]
 
 

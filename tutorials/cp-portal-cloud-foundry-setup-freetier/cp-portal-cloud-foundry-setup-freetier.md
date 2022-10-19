@@ -10,13 +10,15 @@ author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisite
- Before you can follow this tutorial, you need to get a SAP BTP subaccount with a Free Tier Service plan. To obtain it, please follow: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
+ Before you can follow this tutorial, you need to first get a SAP BTP subaccount with a Free Tier Service plan. To obtain it, please follow: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
 
  When following the above tutorial, please use these values:
 
  - Step 8 - Create a subaccount: Choose `Europe (Frankfurt)` as the region and enter `JobCore EMEA` as the subaccount display name.
  - Step 9.5 - Assign entitlements for Cloud Foundry environment: Select `Launchpad Service`as the service and select the `Free` plan.
  - Step 11 - Create a space: Enter `dev`as the name of your space.
+
+>If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
 ## Details
@@ -85,7 +87,7 @@ Now that you've entitled your subaccount for the free plan, you will subscribe t
 
     !![Create subscription](9-create-subscription.png)
 
-      You'll get a popup with basic info about the subscription, showing that your plan is `free`.  Click **Create**.
+      You'll get a popup with basic information about the subscription, showing that your plan is `free`.  Click **Create**.
 
       !![Subscription details](10-subscription-details.png)
 

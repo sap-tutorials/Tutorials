@@ -11,17 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
+
 
 ## Details
 ### You will learn
@@ -29,9 +20,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to generate the MTA Deployment Descriptor (mta.yml)
  - How to add Authorization and Trust Management Service (XSUAA)
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
-
-
-To start with this tutorial use the result in the [`prepare-xsuaa`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/prepare-xsuaa) branch.
 
 ---
 
@@ -127,6 +115,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     cf login
     ```
 
+
+
+
 6. Check if the `multiapps` plugin is already installed:
 
     ```Shell/Bash
@@ -167,6 +158,8 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
+
+
 3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
@@ -180,6 +173,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     ```Shell/Bash
     cf login
     ```
+
+
+
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -335,7 +331,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-!!! Delete your older `package-lock.json` to avoid errors due to use of older versions.
+> Delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
 
 1. Build the MTA module from your project root folder:
 

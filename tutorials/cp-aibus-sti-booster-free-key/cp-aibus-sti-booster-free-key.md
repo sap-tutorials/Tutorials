@@ -90,7 +90,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Set Up a BTP Account for Tutorials](group.btp-setup) to manually create the service instance and service key for Service Ticket Intelligence using the free tier service plan.
+>If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Service Ticket Intelligence](cp-aibus-sti-free-service-instance) to manually create the service instance and service key for Service Ticket Intelligence using the free tier service plan.
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

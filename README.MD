@@ -1,5 +1,6 @@
 [![Circle CI](https://circleci.com/gh/SAPDocuments/Tutorials.svg?style=svg)](https://circleci.com/gh/SAPDocuments/Tutorials)
 [![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials?type=dev)
+[![REUSE status](https://api.reuse.software/badge/github.com/sap-tutorials/Tutorials)](https://api.reuse.software/info/github.com/sap-tutorials/Tutorials)
 
 # Tutorials for https://developers.sap.com
 Welcome to the Markdown tutorial catalog for tutorials you can find on the [SAP developer pages](https://developers.sap.com) here: <https://developers.sap.com/tutorial-navigator.html>.

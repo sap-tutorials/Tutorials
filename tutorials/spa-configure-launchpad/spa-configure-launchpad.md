@@ -181,6 +181,31 @@ Your launchpad is now ready to be created and designed with **Launchpad Editor**
 
     !![Select and add to my content](Step6-6.png)
 
+6.  Navigate to **Content Manager** > **My Content**.
+
+7.  Click **New** and select **Group**.
+
+    !![Add new Group](Step6-7.png)
+
+8.  Set **Title** to **SAP Process Automation**.
+
+9.  Assign **My Inbox** and **Process Workspace** to the group.
+
+10.  Hit **Save** and go back.
+
+    !![Add Assignments to group](Step6-8.png)
+
+11.  Click **Everyone** role to edit it.
+
+    !![Everyone Role from list](Step6-9.png)
+
+12.  Hit **Edit** to edit role.
+
+    !![Edit button](Step6-10.png)
+
+13.  Assign **My Inbox**, **Process Workspace**, **Visibility Scenario Dashboard** and **Visibility Scenario Instances** to **Everyone** role then click **Save**.
+
+    !![Assignments to Everyone Role](Step6-11.png)
 
 [DONE]
 [ACCORDION-END]

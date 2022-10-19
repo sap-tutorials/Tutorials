@@ -1,66 +1,82 @@
 ---
-title: Train Object Detection model with SAP Computer Vision Package
-description: Train Object Detection model with SAP Computer Vision package on SAP AI Core to read Electricty Meters automatically using AI
+title: Use Computer Vision Package to Train AI Model for Meter Reading
+description: Use computer vision package integrated with SAP AI Core, to train an AI model to read electricity meters.
 auto_validation: true
 time: 30
 tags: [ tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core, tutorial>license]
-primary_tag: topic>artificial-intelligence
+primary_tag: software-product>sap-ai-core
 author_name: Kannan Presanna Kumar
 author_profile: https://github.com/kannankumar
 ---
 
 ## Prerequisites
- - You have completed the tutorial [Setup SAP Computer Vision package and its dependencies](cv-package-aicore-setup)
- - You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html)
- - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
+ - You have completed the tutorial to [set up SAP Computer Vision package for SAP AI Core](cv-package-aicore-setup)
+ - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html)
+ - You have [created a Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
 
 
 ## Details
 
 ### You will learn
-  - How to use the Command Line Interface of AI Core SDK for Content Packages
-  - How to create Docker images using SAP Computer Vision package
-  - How to create Templates using SAP Computer Vision package.
-  - How to execute the training template on SAP AI Core
+  - How to use the command line interface of SAP AI Core SDK to explore a content package
+  - How to use the computer vision package to create boilerplate Docker images for object detection (number recognition)
+  - How to use the computer vision package to create templates for your model training pipeline on SAP AI Core
+
+
+
+### Pre-read
+
+The `ai-core-sdk` Python package comes with a command line interface to explore content packages (like the computer vision package). The computer vision package helps you generate pipelines for common computer vision tasks, such as:
+
+- object detection: detect multiple objects in an image. Example: bottles, chairs, pedestrians, numbers.
+- image classification: differentiate an image based on category. Example: nature vs city, cat vs dog.
+- image retrieval: search for similar images in a catalog of trained images. Example: similar apparel, similar plant.
+
+In this tutorial, your task is to use object detection for number recognition. You'll train your AI code on a dataset containing images of electricity meters. The numbers in these images become objects which the AI code will learn to detect in new images of meter readings.
+
+> Your business challenge might be different, and you should consider how to use the computer vision package for your data and expected outcomes.
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Explore Computer Vision content package from Command Line)]
-The `ai-core-sdk` you installed comes with a command line interface to discover content packages (like the Computer Vision package). You can use that to explore the contents of the CV package.
 
-To be able to use it, let's open a new Terminal and activate the `sap_cv_env` virtual environment you created previously.
+[ACCORDION-BEGIN [Step 1: ](Inspect content package)]
 
-```Shell
+Start your virtual environment created in the prerequisite tutorial. Paste and run the snippet.
+
+```BASH
 source sap_cv_env/bin/activate
 ```
-Then you can use the command line interface which can be called using the command `aicore-content`. The `list` subcommand lists all the content packages available in this environment:
-```Shell
+
+List the available content packages using the following snippet.
+
+> The `list` subcommand lists all content packages available in your environment.
+
+```BASH
 aicore-content list
 ```
 
-You should see list of content packages available like this:
+You should see `sap-cv` content packages in the output.
+
 !![image](img/aicore-cli-list-packages.png)
 
-Currently you only have the `sap-cv` content package installed.
+List contents within `sap-cv` using the snippet below.
 
-If you pass content package name (`sap-cv`) to `list` subcommand, it shows all the pipelines available.
-
-```Shell
+```BASH
 aicore-content list sap-cv
 ```
 
-You would see a list of pipelines relevant for Computer vision tasks here:
+You should see all available pipelines relevant for computer vision tasks, as well as their details.
+
 !![image](img/aicore-cli-list-workflows.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select a Pipeline to use)]
-You can also explore the available pipelines using the `ai-core-sdk` python package.
+[ACCORDION-BEGIN [Step 2: ](Inspect content package using Python)]
 
-To see the list of available content packages, run the following snippet in a new cell in Jupyter notebook:
+List available content packages using the following snippet in a new cell in a Jupyter notebook.
 
-```Python
+```PYTHON
 from ai_core_sdk.content import get_content_packages
 
 pkgs = get_content_packages()
@@ -68,46 +84,49 @@ pkgs = get_content_packages()
 for pkg in pkgs.values():
     print(pkg)
 ```
-Screenshot below shows how the snippet outputs `ContentPackage` objects available in the current environment:
+
 !![image](img/aicore-sdk-list-packages.png)
 
-To see a list of available pipelines in the `sap-cv` content package, run the following snippet in a new Jupyter cell:
+List available pipelines in the `sap-cv` content package.
 
-```Python
+```PYTHON
 sap_cv_pkg = pkgs['sap-cv']
 
 for workflow in sap_cv_pkg.workflows.values():
     print(workflow)
 ```
-Here it shows all the available `Workflow` objects with their `name` and `type` (either for Execution and Deployment).
+
+You should see available `Workflow` (pipeline) Python objects.
+
 !![image](img/aicore-sdk-list-workflows.png)
 
-> Details: The `Execution` workflows use `Metaflow` based python scripts and the `Deployment` workflows use a `YAML` configuration.
+You don't need to know the internal definition of these workflows but it's helpful to understand their purpose.
+  - `type` indicates the following:
+  -   - `ExecutionMetaflow`: generates workflows for training using Metaflow library
+  -   - `DeploymentYaml`: generates workflows for online inferencing server
 
-Now that you have explored the pipelines available in this content package, let's select a pipeline for our tutorial.
-You'll be using the `object-detection-train` pipeline to train a Object Detection model for Meter Reading.
+Select `object-detection-train` pipeline using the snippet.
 
-Run the following line of code in a new cell to use the `object-detection-train` pipeline:
-```Python
+```PYTHON
 workflow = sap_cv_pkg.workflows['object-detection-train']
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create user specific config)]
+[ACCORDION-BEGIN [Step 3: ](Create labels for template)]
 
-To allow `sap-cv` package to automatically generate docker image and templates for us, you need to maintain a configuration file. This configuration file contains details that would be used for creation of docker image and template in next steps.
+To generate a Docker image and templates, you need to pass values of labels to `sap-cv` generator. These values are used in creation of the pipelines.
 
-Copy this format below into a cell on Jupyter notebook and fill your details as explained below:
+Paste and edit the snippet in your Jupyter notebook using the following details.
 
-```Python
+```PYTHON
 workflow_config = {
-   'name': 'sap-cv-package-tutorial-obj-detection-train',
-   'image': '<YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1',
-   'labels': {
-       'scenarios.ai.sap.com/id': "sap-cv-package-tutorial",
-       'ai.sap.com/version': "0.0.1"
+   "name": "sap-cv-package-tutorial-obj-detection-train",
+   "image": "<YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1",
+   "labels": {
+       "scenarios.ai.sap.com/id": "sap-cv-package-tutorial",
+       "ai.sap.com/version": "0.0.1"
    },
    "annotations": {
        "scenarios.ai.sap.com/name": "SAP CV Package Tutorial",
@@ -117,102 +136,100 @@ workflow_config = {
 }
 ```
 
- - `name` : Name of workflow. Can be a string with alphanumeric characters and underscores.
-
- - `image`: The docker image you'll use for the tutorial. You can use Docker Hub URL like this `<YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1`.
-
- - `labels.scenarios.ai.sap.com/id` : Name of the Machine Leaning scenario. Can be any valid string. Should be unique on this AI Core instance.
-
- - `labels.ai.sap.com/version` : Scenario version. Can be any versioning (example: "0.0.1")
-
- - `annotations.scenarios.ai.sap.com/name` : Descriptive name of the scenario. Can have spaces
-
- - `imagePullSecret` : Secret used to access the docker repository. Should match with the registered secret name on AI Core
-
- - `objectStoreSecret` : Secret used to access the Object Store (either from BTP/S3). Should match with the registered object store secret name on AI Core.
-
-> Please add `-object-store-secret` to the name of your Object store secret when adding to the configuration file.
-
+| Labels | Description |
+| --- | --- |
+| `name` | Custom ID of workflow. Can be a string with alphanumeric characters and underscores.
+| `image` |The name to use in building Docker image. You must pass your username of [Docker registry](https://hub.docker.com) `<YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1`.
+| `labels.scenarios.ai.sap.com/id` | Custom ID of the machine learning scenario. Can be any valid string. Should be unique on your SAP AI Core instance.
+| `labels.ai.sap.com/version` | A descriptive scenario version in any format. Example: `0.0.1`.
+| `annotations.scenarios.ai.sap.com/name` | Descriptive name of your scenario. Example: `Detection of Digits`, `Detection of Cars in Traffic`
+| `imagePullSecret` | Secret containing credentials to access your Docker repository. Should match with the registered secret name on your SAP AI Core
+| `objectStoreSecret` | Secret containing credentials to access the object store (either from BTP/S3). Should match with the registered object store secret name on your SAP AI Core. **Please add the suffix `-object-store-secret` to the name of your object store secret when adding to label.**
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Docker Image)]
-Next you create the docker image that will be used as an execution environment for our Training.
+[ACCORDION-BEGIN [Step 4: ](Generate Docker image for training)]
 
-`sap-cv` content package automatically generates the Docker image required for the selected Workflow with the required dependencies included.
+The workflows (the variable `workflow` pointing to `object-detection-train` content) in computer vision package have a method `create-image` to build a Docker image using the template contained in computer vision package. The Docker image provides the runtime environment for the pipeline that you will create later in this tutorial.
 
-Run the below snippet in Jupyter notebook cell to create the docker image:
-```Python
+Paste and run the snippet. The variable `workflow_config` contains the key `image` which sets the name for the Docker image to be built.
+
+```PYTHON
 workflow.create_image(workflow_config, silent=True)
-print(f'!docker push {workflow_config["image"]}')
 ```
+
 !![image](img/docker-generate-image.png)
 
-This will build the required docker image for the workflow with the `image` tag specified in the workflow configuration in the previous step.
+Push your built Docker image to your Docker registry with below snippet. The `!` (exclamation) prefix executes command in your terminal from your Jupyter notebook.
 
-Now with the docker image build you need to push it to our docker repository so AI Core can fetch it during execution. You can run the command mentioned in the output above inside a new cell. Make sure to add a `!` before the command when running it in a Jupyter cell like this:
-```
+```PYTHON
 !docker push <YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1
 ```
+
 !![image](img/docker-push.png)
 
 
-> Alternative to using the python interface you can also build the docker using Command Line interface like this: `aicore-content create-image -p <CONTENT_PACKAGE> -w <WORKFLOW> <WORKFLOW_CONFIG.YAML>`
+> **INFORMATION** You may also generate the Docker image from content package using Command Line interface.
+>
+> ```BASH
+> aicore-content create-image -p <CONTENT_PACKAGE> -w <WORKFLOW> <WORKFLOW_CONFIG.YAML>
+> ```
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create AI Core Template)]
+[ACCORDION-BEGIN [Step 5: ](Generate training template)]
+
+The workflows have another method `create-template` to build a training pipeline with placeholders for datasets and hyper-parameters. This training pipeline internally references the Docker image you created previously. You are not required to modify/ update the AI code contained, but you can tweak hyper-parameters to achieve different model qualities, demonstrated later in the tutorial.
+
+Paste and edit the following snippet. Replace `<YOUR_GIT_REPO_PATH>` with the absolute path to the directory that contains the repository you've on-boarded to SAP AI Core. This repository syncs using Git Ops.
+
+ > In this tutorial, the workflow object points to the object-detection-train content.
 
 
-The `sap-cv` content package fetches the details from the workflow configuration (details of workflow, scenario, docker repo secrets, object store secrets, etc) and automatically generates a template for the selected workflow. You are using the `object-detection` workflow in this tutorial, so you generate an workflow for training an object detection model.
-
-```Python
-output_file = '<GitOps_Repo_Path>/sap-cv-package-tutorial-obj-detection-train.json'
-```
-Replace `<GitOps_Repo_Path>` with the absolute path to the directory that contains your repository on-boarded on AI Core. This repository syncs using Git Ops.
-
-Run the below snippet to create the workflow template:
-```python
+```PYTHON
+output_file = '<YOUR_GIT_REPO_PATH>/sap-cv-package-tutorial-obj-detection-train.json'
 workflow.create_template(workflow_config, output_file, silent=True)
 ```
 !![image](img/workflow-template-generate.png)
 
-You now need to commit and push this generated template to the Git repository on-boarded on AI Core.
 
-You can generate commands required for committing and pushing your template to git repo using the below snippet. Run the below snippet:
-```Python
+> **INFORMATION** You may also generate the training template from the content package using the command line interface.
+>
+> ```BASH
+> aicore-content create-template -p <CONTENT_PACKAGE> -w <WORKFLOW> <WORKFLOW_CONFIG.YAML> -o <OUTPUT_TEMPLATE_FILE.JSON
+> ```
+
+Now, commit and push this generated template to the Git repository that you have specified in SAP AI Core.
+
+You can use the following snippet for commands to push the template to GitHub. Paste and edit.
+
+```PYTHON
 import pathlib
 
 print(f'''Run in Terminal:
-cd <repository_path>
+cd <YOUR_GIT_REPO_PATH>
 git add <path_within_repo>/{pathlib.Path(output_file).name}
 git commit -m \'updated template {workflow_config["name"]}\'
 git push
 ''')
 ```
 
-Replace the parts of command within `< >` with specified paths inside the Git repo and run the commands one by one in a terminal.
-
-> Alternative to using the python interface you can also build the docker using Command Line interface like this: `aicore-content create-template -p <CONTENT_PACKAGE> -w <WORKFLOW> <WORKFLOW_CONFIG.YAML> -o <OUTPUT_TEMPLATE_FILE.JSON`
-
-
-
-> ### What's going on?
-Once the template is pushed into the Git repo, you need to wait for AI Core to sync with this repository. AI Core syncs with the on-boarded Git repositories at periodic intervals. Once the template is synced with AI Core you can execute the template to start training.
+After the template is pushed to the Git repository, you'll need to wait a few minutes for the template in the repo to sync with SAP AI Core. On-boarded Git repositories are regularly synced with SAP AI Core (~3 mins).
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Download data from public datasource)]
+[ACCORDION-BEGIN [Step 6: ](Download training data)]
 
-You will be using a dataset which contains images of electricity meters. The Machine Learning model will attempt to read the meters using Object Detection.
+You'll need to use a dataset, which contains images of electricity meters for this tutorial. The model will attempt to read the meters using object detection. Find more information about the dataset on [Gas-Meter Reading Datasets, Applied Recognition Technology Laboratory](http://artelab.dista.uninsubria.it/downloads/datasets/automatic_meter_reading/gas_meter_reading/gas_meter_reading.html)
 
-Run the below snippet in a Jupyter notebook cell to download the dataset.
-```Shell
+Run the following snippet to download the training dataset to your local system.
+
+```BASH
 ! [ -d "MeterDataset" ] && echo "skipping" || (wget -nc --no-check-certificate "http://artelab.dista.uninsubria.it/downloads/datasets/automatic_meter_reading/gas_meter_reading/gas_meter_reading.zip" && unzip -qq gas_meter_reading -d .)
 ```
 
@@ -222,13 +239,16 @@ Run the below snippet in a Jupyter notebook cell to download the dataset.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Upload Data to Object Store)]
+[ACCORDION-BEGIN [Step 7: ](Upload data to object store)]
 
-You need to upload the data to the on-boarded object store so AI Core can fetch it to run training.
 
-Add the path to object store bucket (eg-S3 bucket) where you want to upload the dataset to. This object store should be the same one whose secret you've used in previous tutorials.
+SAP AI Core fetches the training dataset from the object store (cloud), therefore you need to upload the data to the object store.
 
-```Python
+Upload the dataset to your AWS object store using the following snippet.
+
+> The object store should be the same as the one whose secret you've used in prerequisite tutorials.
+
+```PYTHON
 s3_target = "s3://<YOUR_S3_BUCKET>/meter-reading/Rough-Digit-Classification"
 # Example: s3://hcp-787c1894-e893-4c8edf-b406-440347f6b411/kannan/meter-reading/Rough-Digit-Classification
 
@@ -241,16 +261,21 @@ s3_target = "s3://<YOUR_S3_BUCKET>/meter-reading/Rough-Digit-Classification"
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Register dataset as artifact on AI core)]
+[ACCORDION-BEGIN [Step 8: ](Register dataset reference as artifact for SAP AI core)]
 
-Copy the snippet and update the values in `< >` with your own values as described below:
-
-- `ai_core_path` - Name of the dataset artifact to be created on AI Core. It follows the format: `ai://<object-store-secret-name>/<path-to-artifact>`.
-
-- `artifact_name` - Name of the artifact used for registering.
+Paste and edit the snippet. Replace `< >` with your values.
 
 
-```Python
+| Variable/ Parameter | Description |
+| --- | --- |
+| `ai_core_path` (`url`) | Path relative to `pathPrefix` of your object store secret created in SAP AI Core. Note the format: `ai://<object-store-secret-name>/<path-to-artifact>`.
+| `artifact_name` | Descriptive name for the artifact
+| `scenario_id` | Descriptive tag to identify that the purpose and value are the same as the one used in template creation
+| `kind` | Descriptive tag `DATASET` to identify purpose
+
+
+
+```PYTHON
 from ai_core_sdk.models import Artifact
 
 ai_core_path =  'ai://default/meter-reading/Rough-Digit-Classification'
@@ -269,58 +294,49 @@ except IndexError:
         kind=Artifact.Kind.DATASET,
         url=ai_core_path,
         description='Meter Reading Digits Dataset')
-
 ```
 
-The above snippet checks if an artifact of same name is already registered on AI Core.
-If it is already registered it will return it instead of recreating it. If the artifact does not exist it creates a new artifact.
-
+The previous snippet checks if an artifact of the same name has already registered in SAP AI Core.
+If it has already been registered, it will return the ID of the existing artifact. If the artifact does not exist, a new artifact is created.
 
 !![image](img/create-artifact.png)
-
-The following details are used for creation of the artifact:
-
- - `name`: artifact name used for recognizing it.
-
- - `scenario_id`: It is fetched from the workflow configuration you created previously
-
- - `kind`: specifies the type of the artifact. Here it is of type `DATASET`. Artifacts could also be of `MODEL` type as you will see later when you register our trained model as an artifact.
-
- - `uri`: refers to the path where the artifact should be registered. This path would be used in our training script
-
 
 [VALIDATE_6]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Set Parameters for the Template)]
+[ACCORDION-BEGIN [Step 9: ](Set hyperparameters for the template)]
 
-Run the below snippet in Jupyter notebook cell to create a `params` object with Parameter Bindings you'll be using later for creating our execution configuration.
-```Python
+Run the following snippet to create a `params` object with `Parameter Bindings`. You'll use the variable `params` to create the configuration for execution (training).
+
+```PYTHON
 from ai_core_sdk.models import ParameterBinding
 
 params = [
     ParameterBinding("baselr", "0.001"),
     ParameterBinding("earlystopping", "False"),
-    ParameterBinding("ntrainsteps", "5000"),
+    ParameterBinding("ntrainsteps", "100"), # increase to 5000 for more accurate results but takes longer time to train ~ 1 Hr.
     ParameterBinding("train", "0.8"),
     ParameterBinding("validation", "0.1"),
     ParameterBinding("test", "0.1")
 ]
 ```
-These are parameters that affect the training of our machine learning model for object detection.
+
+These parameters impact the training of the model for object detection.
+> Once you have a baseline model, you can tweak hyper-parameters here to test different model settings and improve the model.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create Configuration for Execution)]
+[ACCORDION-BEGIN [Step 10: ](Create configuration for training)]
 
-Run the below code snippet in a Jupyter notebook cell. You can leave all fields as is and only replace the `<config-name>` with any meaningful name for configuration.
-```Python
+Run the following snippet to check if a configuration of the same name already exists in SAP AI Core. If it exists, it will use the existing configuration.
+
+```PYTHON
 from ai_core_sdk.models import InputArtifactBinding
 
 config_name = 'tutorial-sapcv-meter-reading'
-# example config name 'sapcv-tutorial-meter-reading'
+# can customize, example config name 'sapcv-tutorial-meter-reading'
 
 try:
     configuration = [r for r in ai_api_client.configuration.query().resources if r.name == config_name][0]
@@ -331,45 +347,43 @@ except IndexError:
         name=config_name,
         scenario_id=workflow_config["labels"]["scenarios.ai.sap.com/id"],
         executable_id=workflow_config["name"],
-        input_artifact_bindings=[InputArtifactBinding('datain', artifact.id)],
-        parameter_bindings=params
+        input_artifact_bindings=[InputArtifactBinding('datain', artifact.id)], # dataset to use `datain` is placeholder name in the template
+        parameter_bindings=params # hyper-parameter values to use.
     )
 ```
 
-The above snippet checks if a configuration of the same name already exists in AI Core. If it exists, it will use the existing configuration.
 
 !![image](img/create-configuration.png)
 
-If it does not exist, it will create a new configuration using the following details:
+### Details of configuration variables
 
-- `name` : Name of configuration used to recognize it
-
-- `scenario_id`: Connect the configuration to the scenario id mentioned previously in our workflow configuration.
-
-- `executable_id`: Name of the workflow mentioned in workflow configuration.
-
-- `input_artifact_binding` - Binds the dataset artifact you created in previous tutorial and binds it as an Input Artifact for this workflow. [TODO: Explain succinctly]
-
-- `parameter_bindings` - Parameters for our Machine learning training you set in previous step.
+| Parameter | Description |
+| --- | --- |
+| `name` | Name of configuration |
+| `scenario_id` | Used to connect the configuration to the scenario ID mentioned previously in your workflow configuration |
+| `executable_id` | Name of the workflow mentioned in workflow configuration |
+| `input_artifact_binding` | Binds the dataset artifact you created (in the previous tutorial) to the placeholder for dataset in the template |
+| `parameter_bindings` | Parameters for the training you set in previous step |
 
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Create Execution)]
+[ACCORDION-BEGIN [Step 11: ](Start training)]
 
-Creating an execution is just a single line as shown below.
-It uses the configuration you created above.
+Start training by initiating the execution, using the following snippet.
 
-Run this line in a Jupyter notebook cell:
-```Python
-execution = ai_api_client.execution.create(configuration.id)
+```PYTHON
+execution = ai_api_client.execution.create(configuration.id) # configuration from previous step.
 ```
 
-Wait for the training to finish.
-You can use the below snippet to check if training has finished
-```python
+Wait for the training to finish. You may use the below snippet to check if training has finished.
+This snippet checks if the execution variable is present in notebook environment. If it is present it checks for the status of this execution.
+
+```PYTHON
+# Execute in interval of 5 mins
+#
 from ai_core_sdk.models import Status
 
 if 'execution' not in locals():
@@ -384,39 +398,41 @@ else:
     trained_model = None
     print('Training not finished!')
 ```
-This snippet checks if the execution variable is present in notebook environment. If it is present it checks for the status of this execution.
 
 !![image](img/create-execution.png)
 
-> **CAUTION:** Do not close this Jupyter Notebook, you'll continue here once the training is finished.
-You can open the SAP AI Launchpad to monitor the training execution in the next step. Come back to this notebook once the execution is in Completed state.
-
+> **CAUTION:** Do not close you Jupyter notebook. To make predictions, you need to use the same notebook in the follow-up tutorial. You can use SAP AI Launchpad to monitor your execution in the next step. Continue to use your notebook when the execution reaches `COMPLETED` state.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Monitor Training Execution)]
-Open up the **SAP AI Launchpad**, select the appropriate **Workspace** and **Resource Group** and navigate to the **Executions** tab.
+[ACCORDION-BEGIN [Step 12: ](Monitor execution)]
 
-You can see that a new execution is shown in the list with configuration you created. You can verify that the Current Status is either `PENDING` or `RUNNING`.
+Use  **SAP AI Launchpad**, and open the **Workspace** app.  Select your SAP AI Core Connection and **Resource Group**.
+
+Navigate to the **Executions** tab. You should see that a new execution is listed with the configuration you created.
+
+Confirm that the **Current Status** is either `PENDING` or `RUNNING`.
+
 !![image](img/execution-1-started.png)
 
-Navigate to the details of this execution. You can see further detailed information about the execution. It shows the entire pipeline with the name of the Executable, Artifact used and Configuration.
+Choose your execution and navigate to its details. You should see detailed information about your execution, showing the entire pipeline with the name of the executable, artifact used, and configuration.
+
 !![image](img/execution-2-started-process-flow.png)
 
 The `Logs` tab shows the logs from the executing pipeline.
+
 !![image](img/execution-3-started-pipelinelogs.png)
 
+After the model training has started, you can see the loss metrics of the computer vision model in the logs. The estimated time to completion for training appears under `eta`.
 
-Once the model training has started you can see the loss metrics of the Computer Vision model in the logs and also notice the estimated time to completion of training under `eta`.
 !![image](img/execution-4-running-pipelinelogs.png)
 
-
-Once training is completed, a trained model would show up under **Output Artifacts**. As part of the pipeline, this model would get stored in the object store. The template generated by SAP Computer Vision package handles all this behind the scenes for you.
+After model training is completed, a trained model appears under **Output Artifacts**. As part of the pipeline, this model is stored in the object store. The template generated by computer vision package handles all this behind the scenes for you.
 
 !![image](img/execution-5-completed.png)
 
-You can now rerun the previous cell. It would fetch the trained model from the output artifacts of the execution and now mention `Training Completed`.
+On your Jupyter notebook, re-run the previous cell to determine the execution status. This fetches the trained model from the output artifacts of the execution and output `Training Completed`.
 
 !![image](img/execution-6-training-finished.png)
 
@@ -424,26 +440,44 @@ You can now rerun the previous cell. It would fetch the trained model from the o
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Recap)]
+[ACCORDION-BEGIN [Step 13: ](Summary)]
 
-As a recap, in this tutorial, you have looked at creating Docker images and templates for our computer vision scenario.
-Docker images and templates need to be created for content onboarding on AI Core.
+As a recap, in this tutorial, you have looked at creating Docker images and templates for a computer vision scenario.
 
-**Cheat sheet:**  
+### Cheat sheet  
 
-Build docker image:  
+#### Workflow Configuration(Label)
 
-- **`Python`**: `workflow.create_image(workflow_config)`
+```JSON
+{
+   "name": "sap-cv-package-tutorial-obj-detection-train",
+   "image": "<YOUR_DOCKER_USERNAME>/sap-cv-package-object-detection-train:0.0.1",
+   "labels": {
+       "scenarios.ai.sap.com/id": "sap-cv-package-tutorial",
+       "ai.sap.com/version": "0.0.1"
+   },
+   "annotations": {
+       "scenarios.ai.sap.com/name": "SAP CV Package Tutorial",
+   },
+   "imagePullSecret": "<YOUR_DOCKER_SECRET>",
+   "objectStoreSecret": "default-object-store-secret"
+}
 
-- **`CLI`**: `ai-core-content create-image <workflow_config_file>`  
+```
 
-Create Templates:  
+#### Build Docker image:  
 
-- **`Python`**: `workflow.create_template(workflow_config, out_file)`  
+- Python: `workflow.create_image(workflow_config)`
 
-- **`CLI`**: `ai-core-content create-template workflow_config out_file`  
+- CLI: `ai-core-content create-image <workflow_config_file>`  
 
-Everything else is standard AI Core usage.
+#### Create Templates:  
+
+- Python: `workflow.create_template(workflow_config, out_file)`  
+
+- CLI: `ai-core-content create-template workflow_config out_file`  
+
+Everything else is regular SAP AI Core usage, that is, the other steps are similar to any other SAP AI Core tutorial.
 
 [DONE]
 [ACCORDION-END]

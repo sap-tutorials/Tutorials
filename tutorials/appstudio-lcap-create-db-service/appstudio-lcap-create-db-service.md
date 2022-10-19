@@ -11,6 +11,7 @@ author_profile: https://github.com/raz-korn
 
 ## Prerequisites
  - You have access to your Application Development Lobby.
+ - If you are doing this as part of Devtoberfest 2022, you can create a trial account and set up SAP Business Application Studio according to [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html), create a low-code Dev Space, and launch the dev space. Finally, create a project.
 
 ## Details
 ### You will learn
@@ -25,7 +26,7 @@ author_profile: https://github.com/raz-korn
 
 [ACCORDION-BEGIN [Step 1: ](Create a project)]
 
-1. Projects are created from the Application Development Lobby. You can access the Lobby using its bookmark (if you saved it) or from the SAP BTP cockpit: Select the subaccount you created using the [Set Up SAP Business Application Studio for Low-Code Development](appstudio-onboarding) tutorial, expand **Services**, click **Instances and Subscriptions**, and choose **SAP AppGyver**.
+1. Projects are created from the Application Development Lobby. You can access the Lobby using its bookmark (if you saved it) or from the SAP BTP cockpit: Select the subaccount you created using the [Set Up SAP Business Application Studio for Low-Code Development](appstudio-onboarding) tutorial, expand **Services**, click **Instances and Subscriptions**, and choose **`SAP AppGyver`**.
 
 2. Within the Application Development Lobby, click **Create** and select **Business Application**.
 
@@ -190,7 +191,7 @@ author_profile: https://github.com/raz-korn
     |:-----|:----------|:------|
     | A | Name | **Contractors** |
     | B | Namespace | **`CapitalExpendituresService`** (default) |
-    | C | Type | **`CapitalExpenditures.Contracotrs`** |
+    | C | Type | **`CapitalExpenditures.Contractors`** |
     | D | &lt;all properties> | Leave checked (default) |
     | E | contractor | Leave checked (default) |
     | F | name | Leave checked (default) |

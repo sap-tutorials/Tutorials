@@ -11,10 +11,6 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
- - Complete [Create an Automation to Extract Data](spa-create-automation)
- - Complete [Create a Decision](spa-create-decision)
- - Complete [Create Process Visibility Scenario](spa-create-process-visibility)
- - Complete [Configure Launchpad](spa-configure-launchpad)
 
 ## Details
 ### You will learn
@@ -135,22 +131,21 @@ SAP Process Automation provides different applications for monitoring and managi
 
 [ACCORDION-BEGIN [Step 5: ](Gain visibility into the business process)]
 
-You will need to configure your launchpad service. To do so, please [Configure your Launchpad](spa-configure-launchpad)
 
-1. Navigate to the URL of the launchpad you configured.
+1. From the deployed version of the business process project, click to open **Sales Order Visibility Scenario** artifact.
 
-2. Select **Process Workspace (Visibility Scenarios)**.
+    !![open](05_Open_Visibility_Scenario.png)
 
-    !![Process Workspace](01_ProcessWorkspace.png)
+2. In **General** section, click the **Copy** icon aside the **Dashboard Link**.
 
-3. **Search** for your visibility scenario and **select** it.
+    !![copy](05_Copy_Visibility_Link.png)
 
-    !![Search Select](02-Search-Select.png)
+3. Open the **Visibility Scenario Dashboard** by pasting the **Dashboard Link** in a browser window.
 
-4. The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile.
-You could even navigate into single instances.
+    The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile.
+    You could even navigate into single instances.
 
-    !![Browse Scenario](03_BrowseScenario.png)
+      !![Browse Scenario](03_BrowseScenario.png)
 
 [DONE]
 [ACCORDION-END]
