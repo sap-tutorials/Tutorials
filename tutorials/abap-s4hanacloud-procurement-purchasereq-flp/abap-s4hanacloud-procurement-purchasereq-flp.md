@@ -18,14 +18,10 @@ author_profile: https://github.com/mervey45
 
 ## Details
 ### You will learn  
-- How to assign role collections
-- How to create dev spaces
-- How to set up organization and space
-- How to create list report object pages
-- How to run SAP Fiori applications
-- How to deploy applications
-- How to check BSP library in Eclipse
-- How to create IAM apps and business catalogs
+- How to make use of IAM apps and business catalogs
+- How to create business roles
+- How to manage launchpad spaces and assign business role
+- How to assign and manage launchpad spaces
 
 ---
 
