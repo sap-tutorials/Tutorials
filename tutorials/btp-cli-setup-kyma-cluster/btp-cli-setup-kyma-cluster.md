@@ -1,5 +1,5 @@
 ---
-title: Set up a Kyma Cluster on the Command Line
+title: Set up a Kyma Cluster Using the Command Line
 description: You can use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.
 author_name: Anna Wenger
 time: 30
@@ -10,7 +10,7 @@ keywords: btp, btp cli, btpcli, command line, command line interface, command li
 
 ## Details
 ### You will learn
-  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit
+  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit (see [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) for the same procedure in the cockpit).
   - That the creation of the Kyma cluster takes about 15 - 25 minutes. It happens after step 3 in this tutorial, so you might want to plan in a coffee break before continuing with step 4.
 
 ## Prerequisites
@@ -171,18 +171,20 @@ kubectl get namespaces
 
 >You get a token which will also be valid for future sessions.
 
+To learn more about the Kyma environment and its functionality, see:
+
+- [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
+- [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
+- [kyma-project](https://kyma-project.io/docs/kyma/latest)
+- [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
+- [Cloud Native for Beginners - YouTube](https://youtube.com/playlist?list=PL6RpkC85SLQCwaJ54TAAHMvSl5wpVPrai)
+- [Mission: Develop a Full-Stack Application in the Kyma Runtime](mission.cp-kyma-full-stack)
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Assign Roles to users)]
 
-If you don't want to do all the work in your Kyma cluster by yourself, you can assign roles to other users.
-
-See [Assign Roles in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US&version=Cloud) for cockpit equivalent
-
-[DONE]
-[ACCORDION-END]
 
 
 
