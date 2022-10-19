@@ -12,28 +12,16 @@ author_profile: https://github.com/Karunaharan
 ## Prerequisites
  - You have provisioned your SAP Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
+
 ## Details
 ### You will learn
   - How to design and deploy an integration flow using the web-based integration flow designer
   - How to design an integration flow to fetch data from an online web shop that is available as an OData service
 
 
-[ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]
+  [ACCORDION-BEGIN [Step 1: ](Create an integration package and integration flow)]
 
-In the Integration Suite home page, choose the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
-
-In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
-This is where you will design your integration package and integration flow.
-
-  !![Access workspace](1-1-access-workspace.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-  [ACCORDION-BEGIN [Step 2: ](Create an integration package and integration flow)]
-
-1. Choose **Create** to create an integration package.
+1. Choose **Design** > **Integrations** > **Create** to create an integration package.
 
     >An integration flow should be associated with an integration package.
 
@@ -68,13 +56,12 @@ This is where you will design your integration package and integration flow.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connect sender channel with HTTPS adapter)]
+[ACCORDION-BEGIN [Step 2: ](Connect sender channel with HTTPS adapter)]
 In this step, you define your sender channel and sender adapter. In this case, we use a HTTPS sender adapter.
 
 1. Choose the **Sender** step. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start** step.
 
     !![Create the sender channel](4-1-connect-sender-channel.png)
-
 
 2. In the **Adapter Type** prompt, select the **HTTPS** adapter.
 
@@ -90,8 +77,8 @@ In this step, you define your sender channel and sender adapter. In this case, w
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add JSON to XML converter)]
-You add this converter because the input to the integration flow is sent in JSON format. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
+[ACCORDION-BEGIN [Step 3: ](Add JSON to XML converter)]
+Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop which is a OData service. You use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
 
 1. From the palette (the grey bar on the top containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
@@ -99,17 +86,18 @@ You add this converter because the input to the integration flow is sent in JSON
 
 2. Connect the converter to the message path by clicking on the message path.
 
+    !![Connect JSON to XML Converter to message path](5-2-connect-jsonxml-converter.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add and configure content modifier)]
+[ACCORDION-BEGIN [Step 4: ](Add and configure content modifier)]
 
 1. Choose **Message Transformers > Content Modifier** and add it to the message path, as you did for the **JSON to XML Converter**.
 
     !![Add Content Modifier](6-1-connect-content-modifier.png)
 
 2. In the property sheet, choose **Message Header > Add** to configure the **Content Modifier**. Enter the following parameters:
-
 
     |  Field Name     | Description
     |  :------------- | :-------------
@@ -119,13 +107,12 @@ You add this converter because the input to the integration flow is sent in JSON
     |  **Source Value**       | **`//productIdentifier`**
     |  **Data Type**    | **`java.lang.String`**
 
-
     !![Configure Content Modifier](6-2-configure-content-modifier.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add request reply step)]
+[ACCORDION-BEGIN [Step 5: ](Add request reply step)]
 
 From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path, similar to the previous steps.
 
@@ -137,7 +124,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Connect request reply to receiver)]
+[ACCORDION-BEGIN [Step 6: ](Connect request reply to receiver)]
 
 1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the editor. You do this to ensure that your integration flow is elegantly designed.
 
@@ -191,10 +178,10 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 Now you have configured the OData adapter to fetch the details of the product based on the product ID that you send as input while making the HTTP call.
 
-[VALIDATE_6]
+[VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Deploy the integration flow)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the integration flow)]
 
 1. Choose **Deploy** to deploy the integration flow. Choose **Yes** in the confirmation dialog for deployment. Upon deployment confirmation, choose the **Deployment Status** tab in the property sheet.
 
@@ -209,8 +196,3 @@ Later in the mission, you will use the endpoint of the deployed integration flow
 
 [DONE]
 [ACCORDION-END]
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-starter-integration-cpi-design-iflow" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

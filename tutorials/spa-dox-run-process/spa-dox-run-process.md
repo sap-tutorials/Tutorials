@@ -15,7 +15,7 @@ primary_tag: software-product>sap-process-automation
 - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
 
 ## Details
-Till now ,you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this we need to decide, who would be the approver (so you need to enter your email). Then we need to build the approval form to review the submitted data and approve it for further processing.
+Till now, you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this you need to decide, who would be the approver (so you need to enter your email). Then you need to build the approval form to review the submitted data and approve it for further processing.
 
 ### You will learn
   - How to release, deploy and run the Process
@@ -46,7 +46,7 @@ Till now ,you have developed a Business Process where you will start with a form
 
 4. The project released successfully and is ready to be deployed.
 
-    > If needed, you can refer to the [Documentation](https://help.sap.com/viewer/DRAFT/d668fd319a104511b515d574782b497f/Dev/en-US/5ec3714e12ce487da35c009505eaf3a5.html).
+    > If needed, you can refer to the [Documentation](https://help.sap.com/docs/PROCESS_AUTOMATION/a331c4ef0a9d48a89c779fd449c022e7/5ec3714e12ce487da35c009505eaf3a5.html?version=Cloud).
 
     !![Released](03_Released_first_version.png)
 
@@ -170,5 +170,4 @@ Till now ,you have developed a Business Process where you will start with a form
 
 [VALIDATE_1]
 [ACCORDION-END]
-
 ---

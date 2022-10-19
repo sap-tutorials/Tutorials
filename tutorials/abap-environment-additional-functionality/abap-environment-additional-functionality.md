@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Get to Know the Additional Functionality of Business Configuration
-description: Learn how to use the copy and paste functionality of Excel documents. Get to know how to create knowledge transfer documentation and make use of intent navigation.
+title: Get to know additional functionality of the Custom Business Configurations app
+description: Learn how to use the paste function to copy from Microsoft Excel documents. Get to know how to create business configuration documentation and make use of intent navigation.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
@@ -11,93 +11,87 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- This is the fourth tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
 ## Details
 ### You will learn  
-- How to use copy and paste functionality of Excel documents
-- How to create knowledge transfer document
+- How to use the paste function to copy from Microsoft Excel documents
+- How to create business configuration documentation
 - How to make use of intent navigation
-
->**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Use copy and paste functionality)]
 
-You can add multiple holidays with copy & paste from [Microsoft Excel](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
+You can add multiple error codes with copy & paste from [Microsoft Excel](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
 
-  1. Start the **Maintain Business Configurations** app.
+  1. Start the **Custom Business Configurations** app.
 
-      ![element](mc.png)
+      ![Start Custom Business Configurations app](mc.png)
 
   2. Select your business configuration.
 
-      ![package](mc2.png)
+      ![Select business configuration](m2.png)
 
   3. Click **Edit**.
 
   4. Select **Export as**.
 
-      ![element](excel2.png)
+      ![Export as](excel2.png)
 
   5. Export the current table content to spreadsheet:
-     - File Name: Holiday000s
-     - Format: `Microsoft Excel Workbook (*.xlsx)`
+     - File Name: **`ExcelCode###s`**
+     - Format: **`Microsoft Excel Workbook (*.xlsx)`**
 
-      ![element](excel3.png)
+      ![Export content to spreadsheet](excel3.png)
 
   6. Open the downloaded file and **Enable Editing**.
 
-  7. Add a new row with following data:
-    - Holiday ID: ENDYEAR
-    - Description: End of Year
-    - Month: 12
-    - Day: 31
+  7. Add two new rows with following data:
+    - Error Code: **`403`**, Description: **`Forbidden`**
+    - Error Code: **`404`**, Description: **`Not Found`**
 
-  8. Select the entire new row and copy it
+  8. Select both rows and copy
 
-  9. Back in the `Maintain Business Configurations` app, click **Paste**.
+  9. Back in the **Custom Business Configurations** app, click **Paste**.
 
-      ![element](excel6.png)
+      ![Paste new rows](excel6.png)
 
 10. If prompted, click on **Allow**.
 
-11. After pasting, you can see the new row. Select a transport and click on **Save**.
+11. After pasting, you can see the new rows. Select a transport and click on **Save**.
 
-      ![element](excel8.png)
+      ![Save new rows](excel8.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create knowledge transfer document)]
+[ACCORDION-BEGIN [Step 2: ](Create business configuration documentation)]
 
-You want to provide a detailed documentation of the business configuration to the user of the Maintain business configuration app.
+You want to provide a detailed documentation of the business configuration to the user of the **Custom Business Configurations** app.
 
-  1. Open your ABAP package in Eclipse, right-click on your business configuration maintenance object and select **New Knowledge Transfer Document**.
+  1. Open your ABAP package in ADT, right-click on your Business Configuration Maintenance Object and select **New Knowledge Transfer Document**.
 
-      ![element](knowledge.png)
+      ![Select New Knowledge Transfer Document](knowledge.png)
 
-  2. Create a new knowledge transfer document:
-    - Name: `ZHOLIDAY###`
-
-      ![package](knowledge2.png)
+  2. Create a new knowledge transfer document with Name **`ZERRORCODE###`**
 
   3. Finish the wizard.
 
   4. Write the documentation in markdown.
 
-      ![element](knowledge4.png)
+      ![Write documentation](knowledge4.png)
 
-  5. Activate your knowledge transfer document.
+  5. Activate your Knowledge Transfer Document.
 
-  6. Reload the maintain business configuration app. A new action will now will be visible on the top right corner. Click **Show Documentation**.
+  6. Reload the **Custom Business Configurations** app. A new action will now will be visible on the top right corner.
 
-      ![element](doc.png)
+      ![New action visible](doc.png)
 
-  7. Check the documentation in SAP Fiori.
+  7. Click **Show Documentation**.
 
-      ![element](knowledge6.png)
+      ![Show Documentation action](knowledge6.png)
 
 
 [DONE]
@@ -105,18 +99,17 @@ You want to provide a detailed documentation of the business configuration to th
 
 [ACCORDION-BEGIN [Step 3: ](Make use of intent navigation)]
 
-You want to navigate from your SAP Fiori app to the maintenance view of a business configuration maintenance object.
+You want to navigate from your SAP Fiori app to the maintenance view of a Business Configuration Maintenance Object.
 
-For this [intent navigation](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/76384d8e68e646d6ae5ce8977412cbb4.html#intent-navigation) you can use the parameter `TechnicalIdentifier` for the semantic object `BusinessConfiguration` with the action maintain.
+For this [intent navigation](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/76384d8e68e646d6ae5ce8977412cbb4.html#intent-navigation) you can use the parameter `TechnicalIdentifier` for the semantic object `BusinessConfiguration` with the action `maintain`.
 
-You can test this in the browser:
+- You can test this in the browser:
+    - `/ui#BusinessConfiguration-maintain` navigates to the List Report of the **Custom Business Configurations** app.
+    - `/ui#BusinessConfiguration-maintain?TechnicalIdentifier=ZERRORCODE###` directly navigates to the maintenance view of the Business Configuration Maintenance Object `ZERRORCODE###`
+- In your SAP Fiori app one option is to use [cross application navigation](https://sapui5.hana.ondemand.com/sdk/#/api/sap.ushell.services.CrossApplicationNavigation):
 
-`/ui#BusinessConfiguration-maintain` navigates to the List Report of the MBC app
-`/ui#BusinessConfiguration-maintain?TechnicalIdentifier=ZHOLIDAY###` directly navigates to the maintenance view of the business configuration maintenance object `ZHOLIDAY###`
-In your SAP Fiori app one option is to use [cross application navigation](https://sapui5.hana.ondemand.com/sdk/#/api/sap.ushell.services.CrossApplicationNavigation):
 
-
-```Unified Shell
+```JavaScript
 sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then(function (oService) {
     oService.toExternal({
         target: {
@@ -124,7 +117,7 @@ sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then(function
             action: "maintain"
         },
         params: {
-            TechnicalIdentifier: "ZHOLIDAY###"
+            TechnicalIdentifier: "ZERRORCODE###"
         }
     });
 });

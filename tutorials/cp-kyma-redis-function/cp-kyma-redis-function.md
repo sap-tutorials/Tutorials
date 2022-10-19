@@ -3,10 +3,9 @@ title: Use Redis in the Kyma Runtime to Store and Retrieve Data
 description: Deploy Redis and configure two serverless functions to cache and retrieve data from the Redis instance within the Kyma runtime.
 time: 30
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
-
 
 ## Prerequisites
   - [Provision Kyma](cp-kyma-getting-started)
@@ -76,9 +75,7 @@ In this step, you will deploy Redis into the Kyma runtime that were obtained in 
 
 1. In the `dev` namespace, choose the menu option **Overview**.
 
-2. Choose **Deploy a new workload > Create Deployment**. Choose the **YAML** tab and copy the contents of the file **`redis-function/k8s/redis.yaml`** over-writing the preexisting content found within the **Deployment** pane. Collapse the **Deployment** pane and enable the option **Expose a separate Service**. Copy the contents of the file **`redis-function/k8s/redis-service.yaml`** over-writing the preexisting content found within the **Service** section and then choose **Create**.
-
-    ![Deployment Status](./assets/redis-deployment.png)
+2. Choose **Upload YAML**. Upload or copy the contents of the file **`redis-function/k8s/redis.yaml`** and choose **Submit**. Perform the same procedure to upload the contents of the file **`redis-function/k8s/redis-service.yaml`**.
 
 3. Choose the menu option **Configuration > Secrets**. Choose **Create Secret** and choose the **YAML** tab. Copy the contents of the file **`redis-function/k8s/redis-secret.yaml`** over-writing the preexisting content found within the pane and then choose **Create**.
 

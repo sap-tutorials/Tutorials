@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - There are none, this is the very beginning.
+ - There are none, this is the very beginning
 
 ## Details
 ### You will learn
@@ -49,7 +49,7 @@ The tutorials cover a variety of topics and the tasks are bundled in step-by-ste
 [ACCORDION-BEGIN [Step 2: ](What is CAP)]
 CAP is a framework of languages, libraries, and tools for building enterprise-grade services and applications. It guides developers along a 'golden path' of proven best practices and a great wealth of out-of-the-box solutions to recurring tasks.
 
-CAP-based projects benefit from a primary focus on domain. Instead of delving into overly technical disciplines, we focus on accelerated development and safeguarding investments in a world of rapidly changing cloud technologies.
+CAP-based projects benefit from a primary focus on domain. Instead of delving into overly technical disciplines, CAP focuses on accelerated development and safeguarding investments in a world of rapidly changing cloud technologies.
 
 The CAP framework features a mix of proven and broadly adopted open-source and SAP technologies, as highlighted in the following figure.
 

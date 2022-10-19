@@ -2,7 +2,7 @@
 author_name: Céline Audin
 author_profile: https://github.com/celineaudinsap
 title: Run the Process with an Automation
-description: Run the Business Process with an Automation
+description: Run the business process with a full monitoring of the workflow instances and automation jobs
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
@@ -11,10 +11,6 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
- - Complete [Create an Automation to Extract Data](spa-create-automation)
- - Complete [Create a Decision](spa-create-decision)
- - Complete [Create Process Visibility Scenario](spa-create-process-visibility)
- - Complete [Configure Launchpad](spa-configure-launchpad)
 
 ## Details
 ### You will learn
@@ -24,7 +20,7 @@ primary_tag: software-product>sap-process-automation
   - How to gain visibility into the Business Process
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Release and deploy the Business process)]
+[ACCORDION-BEGIN [Step 1: ](Release and deploy the business process)]
 
 You must first release and then deploy the business process project in order to run the process.
 
@@ -36,7 +32,7 @@ You must first release and then deploy the business process project in order to 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Run the Business Process)]
+[ACCORDION-BEGIN [Step 2: ](Run the business process)]
 
 You will now run the process and learn how to monitor the process and work on the tasks. You have released and deployed the business process project.
 
@@ -67,7 +63,7 @@ You will now run the process and learn how to monitor the process and work on th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Work on the Tasks)]
+[ACCORDION-BEGIN [Step 3: ](Work on the tasks)]
 
 Tasks are requests for users to participate in an approval or review process. These tasks appear in the **My Inbox** application shipped with SAP Process Automation. Users can claim, approve, and/or reject the task from their inbox.
 
@@ -77,7 +73,7 @@ Tasks are requests for users to participate in an approval or review process. Th
 
 2. After opening the **My Inbox** application, you will see on the left-hand side all the tasks listed. Select the Approval Form, complete it and choose **Approve**.
 
-    !![My Inbox Actions](03_MyInbox_Actions.png)
+    !![My Inbox Actions](03-MyInbox-Actions.png)
 
     > The provided tasks and forms might look different than this screenshot, depending on your configurations.
 
@@ -85,12 +81,12 @@ Tasks are requests for users to participate in an approval or review process. Th
 
     Once you approve or reject the approval task, refresh the inbox again to get the final notification based on the action you took. Once you acknowledge the notification sent via the approval process, the process will be completed.
 
-    !![Confirmation Form](06_ConfirmationForm.png)
+    !![Confirmation Form](06-ConfirmationForm.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Monitor Process and Automation)]
+[ACCORDION-BEGIN [Step 4: ](Monitor process and automation)]
 
 Monitoring business processes is one of the key aspects of successful automation. Using monitoring capabilities, you can proactively and consistently monitor process performance, identify any issues in the process and take necessary actions to ensure business process continuity.
 
@@ -110,7 +106,7 @@ SAP Process Automation provides different applications for monitoring and managi
 
     > Observe the process instance information, which provides the context for the process. You can see actual process data flowing across different activities in the process, and the execution logs where you can trace how the entire process has been progressing. You can also see some basic runtime information for each activity such activity name, who started it, when was it completed etc.
 
-    !![Monitor](02_Process_and_Workflow.png)
+    !![Monitor](02-Process-and-Workflow.png)
 
 3. Go to **Automation Jobs** under **Monitor**.
 
@@ -128,29 +124,28 @@ SAP Process Automation provides different applications for monitoring and managi
 
     Notice the process instance progresses further to the approval step in the business process.
 
-    !![Monitor](05_Monitor_Process_and_Workflow.png)
+    !![Monitor](05-Monitor-Process-and-Workflow.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Gain Visibility into the Business Process )]
+[ACCORDION-BEGIN [Step 5: ](Gain visibility into the business process)]
 
-You will need to configure your launchpad service. To do so, please [Configure your Launchpad](spa-configure-launchpad)
 
-1. Navigate to the URL of the launchpad you configured.
+1. From the deployed version of the business process project, click to open **Sales Order Visibility Scenario** artifact.
 
-2. Select **Process Workspace (Visibility Scenarios)**.
+    !![open](05_Open_Visibility_Scenario.png)
 
-    !![Process Workspace](01_ProcessWorkspace.png)
+2. In **General** section, click the **Copy** icon aside the **Dashboard Link**.
 
-3. **Search** for your visibility scenario and **select** it.
+    !![copy](05_Copy_Visibility_Link.png)
 
-    !![Search Select](02_SearchSelect.png)
+3. Open the **Visibility Scenario Dashboard** by pasting the **Dashboard Link** in a browser window.
 
-4. The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile.
-You could even navigate into single instances.
+    The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile.
+    You could even navigate into single instances.
 
-    !![Browse Scenario](03_BrowseScenario.png)
+      !![Browse Scenario](03_BrowseScenario.png)
 
 [DONE]
 [ACCORDION-END]

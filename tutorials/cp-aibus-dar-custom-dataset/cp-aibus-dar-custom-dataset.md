@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 In this tutorial, you will use machine learning to classify your own data records and prepare a corresponding dataset schema. The steps that you have already learned in the previous tutorials will be once again needed to perform this tutorial. You will be given instructions, but if you need more details for each task, please review the respective tutorial.
 
-Please note that trial mode has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described [here](cp-aibus-dar-classify-delete) or just re-create the service instance in SAP BTP Trial as described below.
+Please note that the free tier option for Data Attribute Recommendation has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described in the tutorial: [Use Data Attribute Recommendation to Classify Records, Delete Model and Dataset](cp-aibus-dar-classify-delete). See also [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 ---
 

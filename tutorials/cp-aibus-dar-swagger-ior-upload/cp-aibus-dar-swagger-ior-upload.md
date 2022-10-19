@@ -24,7 +24,7 @@ To better understand the Invoice Object Recommendation business blueprint from t
 
 -	[Announcement: Invoice Object Recommendation becomes part of Data Attribute Recommendation – Technical Details (Part 2)](https://blogs.sap.com/2022/01/05/announcement-invoice-object-recommendation-becomes-part-of-data-attribute-recommendation-technical-details-part-2/).
 
-See also [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
+See also [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 ---
 

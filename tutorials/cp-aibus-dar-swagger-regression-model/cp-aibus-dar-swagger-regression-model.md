@@ -22,7 +22,7 @@ In the service key you created for Data Attribute Recommendation in the previous
 
 !![Service Key](png-files/service-key-details.png)
 
-For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a browser tab. The Swagger UI for the model manager allows you to train a machine learning model, to delete it, to deploy the model as well as to undeploy the model.
+For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a browser tab. The Swagger UI for the model manager allows you to train a machine learning model, to delete it, to deploy the model as well as to `undeploy` the model.
 
 >After finishing this tutorial, keep the Swagger UI for `mm` open to perform the clean up tasks in [Use the Regression Model Template to Predict Data Records](cp-aibus-dar-swagger-regression-predict).
 
@@ -82,7 +82,7 @@ To know when your training job has ended, you have to frequently check its statu
 
     !![Training Job Status Execute](png-files/job-status-execute.png)
 
-3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the production or trial environments. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
+3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the free tier environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
 
     !![Training Job Status Response](png-files/job-status-response.png)
 

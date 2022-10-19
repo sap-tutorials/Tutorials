@@ -3,8 +3,8 @@ title: Deploy the SAPUI5 Frontend in the Kyma Runtime
 description: Develop and deploy the SAPUI5 frontend app in the Kyma runtime.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -119,12 +119,16 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `deployment.yaml`: defines the Deployment definition for the SAPUI5 application as well as a service used for communication. This definition references the `configmap.yaml` by name. It is used to overwrite the `webapp/config.json` of the application.
 
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
+
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the project, open the `k8s/configmap.yaml` file and adjust `API_URL` by replacing `<cluster domain>` to match the Kyma runtime cluster domain:
 

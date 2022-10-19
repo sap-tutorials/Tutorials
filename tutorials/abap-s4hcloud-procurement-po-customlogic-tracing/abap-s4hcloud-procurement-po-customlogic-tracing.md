@@ -1,9 +1,9 @@
 ---
-title: Create a Custom Field using Key User Extensibility and Trace Parameters
-description: Create a Custom Field in S/4HANA Cloud ABAP Environment and check its parameters using the Custom Logic Tracing app
+title: Create Custom Logic Using Key User Extensibility and Perform Trace
+description: Create custom logic for an existing custom field in S/4HANA Cloud ABAP Environment, then check its parameters using the Custom Logic Tracing app
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -25,9 +25,10 @@ author_profile: https://github.com/julieplummer20
 
 ## Details
 ### You will learn
+- How to create custom logic for an existing custom field in the app **Custom Fields**
 - How to run a trace for the Fiori app **Create Purchase Order** in the app **Custom Logic Tracing**
-- How to check the output value in a custom field using **Custom Logic Tracing**
-- How to check the custom logic of this custom field in **Custom Fields**
+- How to check the output value of this custom field using **Custom Logic Tracing**
+- How to check the custom logic of this custom field, in **Custom Fields**
 
 Throughout this tutorial, the placeholder `###` or `000` is used. Always replace this with your initials or group number.
 
@@ -54,7 +55,9 @@ You can now see the Published Logic and Draft Logic, if they exist, relevant to 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add custom logic)]
-1. In the custom logic for the field **`yy1_zhdrprnt2_pdh`**, copy the following code.
+1. Comment out any existing code.
+
+2. In the custom logic for the field **`yy1_zhdrprnt2_pdh`**, copy the following code.
 This code will copy the content from a standard field, `purchaseorder-supplyingplant` into the custom field, **`yy1_zhdrprnt2_pdh`**, where `supplyingplant` is filled.
 
     ```ABAP
@@ -66,7 +69,7 @@ This code will copy the content from a standard field, `purchaseorder-supplyingp
 
     !![step2a-add-custom-logic](step2a-add-custom-logic.png)
 
-2. Save and publish your custom code.
+3. Save and publish your custom code.
 
 You are now ready to trace the effects of your custom code when a purchase order is created.
 

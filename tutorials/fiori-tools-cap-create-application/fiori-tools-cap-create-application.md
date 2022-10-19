@@ -25,19 +25,21 @@ primary_tag: software-product>sap-fiori
 
 3. Now you connect the application template with your OData service. The OData service you use for this example was already prepared during the previous tutorial:  [Prepare Your Development Environment](fiori-tools-cap-prepare-dev-env)
 
-    Select the data source for the project. Since you use the locally installed service, choose **Use a local CAP Node.js project** from the dropdown field **Data source**.
+    Select the data source for the project. Since you use the locally installed service, choose **Use a local CAP Project** from the dropdown field **Data source**.
 
     Navigate to and select the project folder location in the input field for your project folder path (as shown in the screenshot).
 
-    Choose the service name **`IncidentService`** from the dropdown field **OData service**.
+    Choose the service name **`IncidentService (Node.js)`** from the dropdown field **OData service**.
 
     When finished, click **Next**.
 
-    !![Select service related parameters](enter-service-parameters.png)
+    !![Select service related parameters](enter-service-parameters1.png)
 
 4. For your application you need to choose the main entity set from the OData service. Objects of this type will be displayed in the list report.
 
     In your application, start with `Incidents`. As your application will not have a sub-object page, you do not need a navigation entity.
+
+    Leave `Yes` selected for the prompt `Automatically add table columns to the list page and a section to the object page if none already exists?`.
 
     When finished, click **Next**.
 
