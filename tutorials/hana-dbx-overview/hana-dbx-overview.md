@@ -20,18 +20,18 @@ primary_tag: software-product>sap-hana-cloud
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
-[ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
+[ACCORDION-BEGIN [Step 1: ](SAP HANA database explorer overview)]
 
 The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, creating remote sources, working with multi-model data such as graph, spatial and JSON collections, viewing trace files, and troubleshooting.  
 
-It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  The SAP HANA Cloud version offers support for data lake Relational Engine connections, and as of March 14 2022, support for the data lake Files container. 
+It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  The SAP HANA Cloud version offers support for data lake Relational Engine connections, and as of March 14 2022, support for the data lake Files container.
 
 ![database explorer](dbx.png)
 
 > The following tools also provide the ability to execute SQL queries.
 
-  * `hdbsql` is a text based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients). 
-  
+  * `hdbsql` is a text based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+
   * `dbisql` is a text based tool that can be used to query a data lake. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
   * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
