@@ -207,7 +207,7 @@ The following steps walk through the process of exporting to and importing data 
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC'; --CERTIFICATE_ID
     ```
 
-    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>.
+    Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`.
 
     ```SQL
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
@@ -375,7 +375,7 @@ The following steps walk through the process of exporting to and importing data 
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GOOGLE_CERT'; --CERTIFICATE_ID
     ```
 
-    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+    Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`. Set the purpose to remote source.
 
     ```SQL
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
@@ -546,7 +546,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 6. Create Credentials (Recommended)
 
-    Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database. An example of <storage_account_name> is `danstestsa`.
+    Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database. An example of `<storage_account_name>` is `danstestsa`.
 
     ```SQL
     CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account_name>;password=<Blob_SAS_token>';
@@ -586,7 +586,7 @@ The following steps walk through the process of using Microsoft Azure storage se
     ```SQL
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'Azure';
     ```
-    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+    Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`. Set the purpose to remote source.
 
     ```SQL
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
@@ -752,7 +752,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'S3';
     ```
 
-    Add the certificate ID (ex: 123456) from the previous statement into <CERTIFICATE_ID>. Set the purpose to remote source.
+    Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`. Set the purpose to remote source.
 
     ```SQL
     SELECT * FROM PSE_CERTIFICATES;
