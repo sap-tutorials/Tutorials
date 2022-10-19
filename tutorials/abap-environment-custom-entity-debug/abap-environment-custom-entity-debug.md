@@ -11,8 +11,8 @@ author_profile: https://github.com/julieplummer20
 
 ##Prerequisites
 - You have done one of the following:
-    - **Tutorial**: [Test the Connection to the Remote System](abap-environment-test-rfc), step 10 - for steps 1-10 of this tutorial
-    - **Tutorial**: [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity)
+    - **Mission**: [Get Data from a Remote System Using a Custom Entity](mission.abap-env-connect-onpremise)
+    - Created a new ABAP class in SAP BTP, ABAP Environment
 
 ## Details
 ### You will learn
@@ -29,12 +29,109 @@ For more information, see:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Duplicate your class)]
+[ACCORDION-BEGIN [Step 1: ](Duplicate existing class or add code to new class)]
+If you have completed the mission:
 1. Select your class, `ZCL_OUTPUT_TEST_XXX` and choose **Duplicate** from the context menu.
 
     This is clearly not standard practice. However, you are working with the ABAP Debugger for the first time, and also adding some dummy code to your class.
 
 2. Enter a name, e.g. `ZCL_OUTPUT_TEST_DEBUG_XXX` and choose **Finish**.
+
+If you have not completed the mission:
+1. Open your new ABAP class and copy the following code into it:
+
+    ```ABAP
+    CLASS zjp_out_test DEFINITION
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
+
+      PUBLIC SECTION.
+         INTERFACES if_oo_adt_classrun.
+      PROTECTED SECTION.
+      PRIVATE SECTION.
+    ENDCLASS.
+
+
+
+    CLASS zjp_out_test IMPLEMENTATION.
+
+      METHOD if_oo_adt_classrun~main.
+
+
+        " ABAP source code for type definition for BAPI_EPM_PRODUCT_HEADER
+        " generated on: ...
+
+        TYPES : BEGIN OF ty_bapi_epm_product_header,
+                  productid     TYPE c LENGTH 10,
+                  typecode      TYPE c LENGTH 2,
+                  category      TYPE c LENGTH 40,
+                  name          TYPE c LENGTH 255,
+                  description   TYPE c LENGTH 255,
+                  supplierid    TYPE c LENGTH 10,
+                  suppliername  TYPE c LENGTH 80,
+                  taxtarifcode  TYPE int1,
+                  measureunit   TYPE c LENGTH 3,
+                  weightmeasure TYPE p LENGTH 7 DECIMALS 3,
+                  weightunit    TYPE c LENGTH 3,
+                  price         TYPE p LENGTH 12 DECIMALS 4,
+                  currencycode  TYPE c LENGTH 5,
+                  width         TYPE p LENGTH 7 DECIMALS 3,
+                  depth         TYPE p LENGTH 7 DECIMALS 3,
+                  height        TYPE p LENGTH 7 DECIMALS 3,
+                  dimunit       TYPE c LENGTH 3,
+                  productpicurl TYPE c LENGTH 255,
+                END OF ty_bapi_epm_product_header.
+
+        TRY.
+
+            DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
+              i_name = |ES5_RFC_XXX|
+              ).
+            DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+
+
+            "variables needed to call BAPI
+
+            DATA lt_product TYPE STANDARD TABLE OF  ty_bapi_epm_product_header.
+            DATA ls_product TYPE ty_bapi_epm_product_header.
+            DATA msg TYPE c LENGTH 255.
+
+            "Exception handling is mandatory to avoid dumps
+            CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
+              DESTINATION lv_rfc_dest_name
+              EXPORTING
+                 max_rows              = 25
+              TABLES
+                headerdata            = lt_product
+              EXCEPTIONS
+                system_failure        = 1 MESSAGE msg
+                communication_failure = 2 MESSAGE msg
+                OTHERS                = 3.
+
+            CASE sy-subrc.
+              WHEN 0.
+                LOOP AT lt_product INTO ls_product.
+                  out->write( ls_product-name && ls_product-price && ls_product-currencycode ).
+                ENDLOOP.
+              WHEN 1.
+                out->write( |EXCEPTION SYSTEM_FAILURE | && msg ).
+              WHEN 2.
+                out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
+              WHEN 3.
+                out->write( |EXCEPTION OTHERS| ).
+            ENDCASE.
+
+          CATCH cx_root INTO DATA(lx_root).
+            out->write(  lx_root->get_longtext( ) ).
+
+        ENDTRY.
+      ENDMETHOD.
+    ENDCLASS.
+
+    ```
+
+2. Format, save, and activate your class ( **`Ctrl+F1, Ctrl+S, Ctrl+F3`** ).
 
 [DONE]
 [ACCORDION-END]
