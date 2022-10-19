@@ -16,7 +16,7 @@ Agent attributes allow you to sort agents  and make sure that a specific agent e
 ### You will learn
   - How to create an Agent Attribute in the tenant.
   - How to add the attribute to your agent.
-  - How to add the attribute to your project.
+  - How to add the attribute to your project. 
 
 ---
 
@@ -94,7 +94,18 @@ To do so, please follow these steps:
 
 When you are running the process make sure to have the Desktop Agent in unattended mode.
 
-!![Agent in background](Agentbackground.png)
+1. Open the Desktop Agent 3 from the `systray`.
+
+    !![Release](04-open-agent.png)
+
+2. Select **Settings** in the Menu and choose **Mode Settings**.
+
+    !![Release](04-open-settings-mode.png)
+
+3. Set the Desktop Agent 3 to Unattended mode by selecting **Activate**.
+
+    !![Release](04-unattended-mode.png)
+
 
 [DONE]
 [ACCORDION-END]
