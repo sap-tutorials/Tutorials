@@ -5,12 +5,14 @@ title: Create a Python Application via Cloud Foundry Command Line Interface
 description: Create a simple Python application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product>sap-hana]
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product>sap-hana, software-product-function>sap-btp-cockpit]
 primary_tag: programming-tool>python
 ---
 
 ## Prerequisites
- - You have registered for a Cloud Foundry [trial account] (hcp-create-trial-account) on SAP Business Technology Platform.
+ - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html).
+ - You have created a subaccount and a space on Cloud Foundry Environment.
+ - You have created a service instance for [SAP HANA Cloud] (https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/f7febb16072b41f7ac90abf5ea1d4b86.html) with `hana-free` plan.
  - [Python] (https://www.python.org/downloads/) version 3.6.x or higher is installed locally. In this tutorial, we use Python **3.10.1**.
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
  - [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is installed locally.
@@ -36,16 +38,16 @@ This tutorial will guide you through creating and setting up a simple Python app
 
 [ACCORDION-BEGIN [Step 1: ](Log on to SAP BTP)]
 
-First, you need to connect to the SAP BTP, Cloud Foundry environment with your trial account. By default, a space `dev` is created for you. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud) -> **Regions for Trial Accounts**.
+First, you need to connect to the SAP BTP, Cloud Foundry environment with your enterprise (productive) subaccount. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud)
 
-In this tutorial, we use `eu10.hana.ondemand.com` as an example.
+In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 1. Open a command-line console.
 
-2. Set the Cloud Foundry API endpoint for your trial account. Execute (using your actual region URL):
+2. Set the Cloud Foundry API endpoint for your subaccount. Execute (using your actual region URL):
 
     ```Bash/Shell
-    cf api https://api.cf.eu10.hana.ondemand.com
+    cf api https://api.cf.eu20.hana.ondemand.com
     ```
 3. Log in to SAP BTP, Cloud Foundry environment:
 
@@ -53,10 +55,14 @@ In this tutorial, we use `eu10.hana.ondemand.com` as an example.
     cf login
     ```
 
-4. When prompted, enter your user credentials – the email and password you have used to register your SAP BTP trial account.
+4. When prompted, enter your user credentials – the email and password you have used to register your productive SAP BTP account.
 
 > **IMPORTANT**: If the authentication fails, even though you've entered correct credentials, try [logging in via single sign-on] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/e1009b4aa486462a8951c4d499ce6d4c.html?version=Cloud).
 
+
+#### RESULT
+
+Details about your personal SAP BTP subaccount are displayed (API endpoint, user, organization, space).
 
 [DONE]
 [ACCORDION-END]
@@ -76,7 +82,7 @@ You're going to create a simple Python application.
     applications:
     - name: myapp
       routes:
-        - route: python-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: ./
       memory: 128M
       buildpack: python_buildpack
@@ -85,9 +91,9 @@ You're going to create a simple Python application.
 
     The `manifest.yml` file represents the configuration describing your application and how it will be deployed to Cloud Foundry.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your `dev` space.   
+    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your space. If you do, use a different name and adjust the whole tutorial according to it.
 
-    > Also bear in mind that your application's technical name (in the route) must be **unique** in the whole Cloud Foundry landscape. We advice that you use your trial account ID to construct the technical name. In this tutorial, we use:  `python-1234567trial`
+    > Also bear in mind that your application's technical name (in the route) must be **unique** in the whole Cloud Foundry landscape. We advice that you use, for example, your subdomain name or part of your subaccount ID to construct the technical name. In this tutorial, we use:  `python-1234-aaaa-5678`
 
 
 
@@ -131,7 +137,7 @@ You're going to create a simple Python application.
 
 9.	Now open a browser window and enter the URL of the `myapp` application (see the route).
 
-    That is:  `https://python-1234567trial.cfapps.eu10.hana.ondemand.com`
+    That is:  `https://python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 #### RESULT
 
@@ -143,24 +149,28 @@ Your Python application is successfully deployed and running on the SAP BTP, Clo
 
 [ACCORDION-BEGIN [Step 3: ](Consume SAP BTP services)]
 
-Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cloud Foundry environment - and consume it in your application.
+You have created a service instance for SAP HANA Cloud (see **Prerequisites** at the beginning). Now you're going to make a connection to your SAP HANA database from SAP HANA Schemas & HDI Containers - a service that runs on the SAP BTP, Cloud Foundry environment - and consume this service in your application.
 
-1.	Create an instance of the SAP HANA service. To do that, execute the following command, which creates a `hanatrial` service instance named `pyhana` with plan `securestore`:
+1.	Create a `hana` service instance named `pyhana`. As a service plan, you can use `securestore` or `hdi-shared`. They both work for this scenario, so - whichever you prefer (or whichever is available in your subaccount). Execute one of the following commands, respectively:
 
     ```Bash/Shell
-    cf create-service hanatrial securestore pyhana
+    cf create-service hana securestore pyhana
     ```
 
-2.	Bind this service instance to the application.
-    <ol type="a">
-    <li> Add the `pyhana` service in the `manifest.yml` file so that its content looks like this:
+    or
+
+    ```Bash/Shell
+    cf create-service hana hdi-shared pyhana
+    ```
+
+2.	Bind this service instance to the application. Add `pyhana` in the `manifest.yml` file so that its content looks like this:
 
     ```YAML
     ---
     applications:
     - name: myapp
       routes:
-        - route: python-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: ./
       memory: 128M
       buildpack: python_buildpack
@@ -168,46 +178,17 @@ Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cl
       services:
       - pyhana
     ```
-      </li>
-    <li> To consume the service inside the application, you need to read the service settings and credentials from the application. To do that, use the `cfenv` Python module. Add two more lines to the `requirements.txt` file so that its content looks like this:
+
+3. To consume the service inside the application, you need to read the service settings and credentials from the application. To do that, use the `cfenv` Python module. Add two more lines to the `requirements.txt` file so that its content looks like this:
 
     ```TXT
     Flask==2.0.1
     cfenv==0.5.3
     hdbcli==2.9.23
     ```
-    </li>
-    <li> Modify the `server.py` file to include additional lines of code, which read the service information from the environment. Replace the initial content with the following one:
 
-    ```Python
-    import os
-    from flask import Flask
-    from cfenv import AppEnv
 
-    app = Flask(__name__)
-    env = AppEnv()
-
-    port = int(os.environ.get('PORT', 3000))
-    hana_service = 'hanatrial'
-    hana = env.get_service(label=hana_service)
-
-    @app.route('/')
-    def hello():
-        return "Hello World!"
-
-    if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=port)
-    ```
-</li>
-</ol>
-
-3. Restage the application to bind and connect the `pyhana` service  to it. Execute:
-
-    ```Bash/Shell
-    cf restage myapp
-    ```
-
-4.	Modify the `server.py` file again to execute a query with the `hdbcli` driver. Also, after being requested, the application will now return a SAP HANA-related result. Replace the current content with the following:
+4.	Modify the `server.py` file to include additional lines of code - for reading the service information from the environment, and for executing a query with the `hdbcli` driver. After being requested, the application will now return a SAP HANA-related result. Replace the current content with the following:
 
     ```Python
     import os
@@ -218,7 +199,7 @@ Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cl
     app = Flask(__name__)
     env = AppEnv()
 
-    hana_service = 'hanatrial'
+    hana_service = 'hana'
     hana = env.get_service(label=hana_service)
 
     port = int(os.environ.get('PORT', 3000))
@@ -254,7 +235,7 @@ Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cl
 
 6.	Refresh the URL of the `myapp` application (previously loaded in a browser window).
 
-    That is:   `https://python-1234567trial.cfapps.eu10.hana.ondemand.com`
+    That is:   `https://python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 #### RESULT
 
@@ -289,7 +270,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     applications:
     - name: myapp
       routes:
-        - route: python-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: ./
       memory: 128M
       buildpack: python_buildpack
@@ -303,7 +284,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 4.	To create a microservice (the application router), go to the `python-tutorial` folder and create a subfolder named  `web`.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your `dev` space!
+    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your space! If you do, use a different name and adjust the rest of the tutorial according to it.
 
 
 5.	Inside the `web` folder, create a subfolder `resources`. This folder will provide the business application's static resources.
@@ -322,7 +303,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     </html>
     ```
 
-    > This will be the `myapp` application start page.
+    This will be the `myapp` application start page.
 
 7.	In the `web` directory, execute:
 
@@ -346,12 +327,12 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     },
     ```
 
-10.	Now you need to add the `web` application to your project and bind the XSAUAA service name (`pyuaa`) to it. To do that, insert the following content **at the end** of your `manifest.yml` file.
+10.	Now you need to add the `web` application to your project and bind the XSUAA service instance (`pyuaa`) to it. To do that, insert the following content **at the end** of your `manifest.yml` file.
 
     ```YAML
     - name: web
       routes:
-        - route: web-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: web-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: web
       memory: 128M
       env:
@@ -359,15 +340,15 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
           [
             {
               "name":"myapp",
-              "url":"https://python-1234567trial.cfapps.eu10.hana.ondemand.com",
+              "url":"https://python-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com",
               "forwardAuthToken": true
             }
           ]
       services:
-        - pyuaa
+      - pyuaa
     ```
 
-    >   Here you can follow the same pattern for constructing the technical name of the `web` application - by using your trial account ID.
+    Here you can follow the same pattern for constructing the technical name of the `web` application - by using your subaccount ID.
 
 11.	In the `web` folder, create an `xs-app.json` file with the following content:
 
@@ -397,11 +378,11 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     >As of this point of the tutorial, the URL of the `web` application will be requested instead of the `myapp` URL. It will then forward the requests to the `myapp` application.
 
 
-13.	When the staging and deployment steps are complete, the `web` application should be successfully started and its details displayed in the command console.
+13.	When the staging and deployment steps are completed, the `web` application should be successfully started and its details displayed in the command console.
 
 14.	Open a new browser tab or window, and enter the URL of the `web` application.
 
-    That is:   `https://web-1234567trial.cfapps.eu10.hana.ondemand.com`
+    That is:   `https://web-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 15.	Enter the credentials for your SAP BTP user.
 
@@ -443,7 +424,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
     env = AppEnv()
 
     port = int(os.environ.get('PORT', 3000))
-    hana = env.get_service(label='hanatrial')
+    hana = env.get_service(label='hana')
     uaa_service = env.get_service(name='pyuaa').credentials
 
     @app.route('/')

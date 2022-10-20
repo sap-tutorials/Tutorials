@@ -1,31 +1,31 @@
 ---
-title: Connect SAP Private Link Service (Beta) to Microsoft Azure Private Link Service
-author_profile: https://github.com/AnnikaGonnermann
-description: Connect SAP Private Link service (Beta) to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
+author_name: Madeline Schaefer
+author_ profile: https://github.com/Madeline-Schaefer
+title: Connect SAP Private Link Service to Microsoft Azure Private Link Service
+description: Connect SAP Private Link service to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
+tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
 primary_tag: software-product-function>sap-private-link-service
 ---
 
 ## Prerequisites
- - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service (Beta) entitlement: [Set Up SAP Private Link service (Beta)](private-link-onboarding).
-  - You have created a Microsoft Azure Private Link Service in the Azure Portal. You only have to create the Load Balancer resources (pool and rules) and the private link service. The section "Create a private endpoint" can be skipped, as SAP Private Link service (Beta) will establish the connection for you. See [Create a Private Link service by using the Azure portal](https://docs.microsoft.com/en-us/azure/private-link/create-private-link-service-portal).
- - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
-
+- You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service entitlement: [Set Up SAP Private Link service ](private-link-onboarding).
+- You have created a Microsoft Azure Private Link Service in the Azure Portal. You only have to create the Load Balancer resources (pool and rules) and the private link service. The section "Create a private endpoint" can be skipped, as SAP Private Link service will establish the connection for you. See [Create a Private Link service by using the Azure portal](https://docs.microsoft.com/en-us/azure/private-link/create-private-link-service-portal).
+- You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
 ### You will learn
-  - How to create a SAP Private Link service (Beta) instance to connect to your Microsoft Azure Private Link Service using Cloud Foundry CLI
+  - How to create a SAP Private Link service instance to connect to your Microsoft Azure Private Link Service using Cloud Foundry CLI
   - How to bind the service instance to your application using Cloud Foundry CLI
 
- SAP Private Link service (Beta) establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
+ SAP Private Link service establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
-!![Overview of  Link service (Beta) functionality](private-endpoint.png)
+!![Overview of  Link service functionality](private-endpoint.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check offerings of  Link Service (Beta))]
+[ACCORDION-BEGIN [Step 1: ](Check offerings of  Link Service)]
 
 After you've logged in as described in [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli), access the **Service Marketplace** of SAP BTP. Open a command prompt on your computer and type in the following:
 
@@ -40,7 +40,7 @@ $ cf marketplace
 Getting all service offerings from marketplace in org ... / xy… trial as admin...
 
 offering      plans      description                                                                                                                                                    
-privatelink   standard    Link (Beta) service establishes a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
+privatelink   standard    Link service establishes a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
 ```
 
 Make sure you can see `privatelink` in the sample output.
@@ -158,7 +158,7 @@ updated:   <date>
 
 [ACCORDION-BEGIN [Step 7: ](Bind application to service instance)]
 
-Upon the creation of a binding between a CF application and a private link service instance,  Link service (Beta) creates a space-scoped [Cloud Foundry application security group](https://docs.cloudfoundry.org/concepts/asg.html) that enables network access to the IP address associated with the Private Endpoint.
+Upon the creation of a binding between a CF application and a private link service instance, Private Link service creates a space-scoped [Cloud Foundry application security group](https://docs.cloudfoundry.org/concepts/asg.html) that enables network access to the IP address associated with the Private Endpoint.
 
 To bind the service instance to your application, You need to know the name of your application and your service instance (in this example ```privatelink-test```). Then, execute the following command:
 

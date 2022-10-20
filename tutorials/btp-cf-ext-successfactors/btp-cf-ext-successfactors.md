@@ -3,8 +3,8 @@ title: Extend SAP SuccessFactors on SAP BTP, Cloud Foundry Environment
 description: Extend SAP SuccessFactors with the task management sample application for SAP SuccessFactors solutions running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, software-product-function>sap-btp-command-line-interface, software-product-function>sap-btp-cockpit, products>sap-successfactors-hxm-suite]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, software-product-function>sap-btp-command-line-interface, software-product-function>sap-btp-cockpit, software-product>sap-successfactors-hxm-suite]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 author_name: Ekaterina Mitova
 author_profile: https://github.com/ekaterina-mitova
 ---
@@ -12,13 +12,13 @@ author_profile: https://github.com/ekaterina-mitova
 
 ## Prerequisites
  - Tools:
-    - [JDK 8](https://www.oracle.com/java/technologies/javase/8all-relnotes.html) or later
+    - [JDK 8](https://www.oracle.com/java/technologies/javase/8all-relnotes.html) or later versions up to JDK 15
     - [Maven 3.0.x](http://maven.apache.org/docs/3.0.5/release-notes.html) or later
     - [Cloud Foundry Command Line Interface (cf CLI)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4ef907afb1254e8286882a2bdef0edf4.html?q=cf%20CLI)
     - [git](https://git-scm.com/download/)
  - On SAP BTP side:
-    - You have either an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) or a [trial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) global account in SAP BTP.
-    - You have an S-user or P-user (if you are using an enterprise global account), and a trial user (if you are using a trial account). See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
+    - You have a [global account](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d61c2819034b48e68145c45c36acba6e.html#loiod61c2819034b48e68145c45c36acba6e) in SAP BTP.
+    - You have an S-user or P-user. See [User and Member Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cc1c676b43904066abb2a4838cbd0c37.html?q=user).
     - You are an administrator of the global account where you want to register your SAP SuccessFactors system.
     - You have enabled the Cloud Foundry capabilities for your subaccount in SAP BTP.
  - On SAP SuccessFactors side:
@@ -52,32 +52,32 @@ Using this application, you can:
 
 To do that, you must register your SAP SuccessFactors system in your global account in SAP BTP. During this process, an integration token is created and then used by the SAP SuccessFactors system tenant administrator to configure the integration on the SAP SuccessFactors system side.
 
-1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape** > **Systems**.
+1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape**.
 
-2. In the **Systems** panel, choose **Register System**.
+2. In the **Systems** tab, choose **Add System**.
 
-    ![In the **Systems** panel, choose **Register System**.](screenshots.png/1-systems-view.png)
+    ![In the **Systems** panel, choose **Add System**.](screenshots.png/1-systems-view-new.png)
 
-3. In the **Register System** dialog box:
+3. In the **Add System** dialog box:
 
     - Enter a name for the system you want to register.
 
         > Use only printable ASCII characters.
 
-        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view.png)
+        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view-new.png)
 
     - In the **Type** dropdown list, select the system type.
 
-        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view.png)
+        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view-new.png)
 
-    - Choose **Register**.
+    - Choose **Add**.
     > SAP BTP generates an integration token that the tenant administrator of the extended SAP SuccessFactors system uses on the respective SAP SuccessFactors system side when configuring the integration between your SAP SuccessFactors system and the global account in SAP BTP.
 
-4. Copy the integration token. You need it for configuring the integration on the extended SAP SuccessFactors system side.
+4. To get a token to register this system with global account, choose **Get Token**. You need it for configuring the integration on the extended SAP SuccessFactors system side.
 
-5. Close the dialog box.
+5. Copy the registration token and close the dialog box.
 
-> The SAP SuccessFactors system appears in the list of registered systems. Its status is **Pending** because the registration process is not yet completed.
+> The SAP SuccessFactors system appears in the list of added systems. Its status is **Pending** because the registration process is not yet completed.
 
 [DONE]
 [ACCORDION-END]
@@ -94,15 +94,15 @@ To do that, you must register your SAP SuccessFactors system in your global acco
 
 3. Choose **Add**.
 
->The system appears in the integration list in the Multi-Cloud Environment screen area, and the status of the integration is displayed in the Integration Status column. To refresh the status of the process, choose the Check Status icon. Wait for the integration to finish.
+>The system appears in the integration list in the **Multi-Cloud Environment** screen area, and the status of the integration is displayed in the **Integration Status** column. To refresh the status of the process, choose the **Check Status** icon. Wait for the integration to finish.
 
-6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **Systems** page, check if the status of the SAP system has changed to **Registered**.
+6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **System Landscape** page, check if the status of the SAP system has changed to **Registered**.
 
-> If you are already on the **Systems** page, refresh the page to check if the status has changed.
+> If you are already on the **System Landscape** page, refresh the page to check if the status has changed.
 
 > You can register a system only once with the same name per global account.
 
-![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view.png)
+![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view-new.png)
 
 [DONE]
 [ACCORDION-END]
@@ -110,7 +110,7 @@ To do that, you must register your SAP SuccessFactors system in your global acco
 
 [ACCORDION-BEGIN [Step 3: ](Make SAP SuccessFactors accessible in your subaccount)]
 
-You need to configure the entitlements for the subaccount where the **task management sample application for SAP SuccessFactors solutions** will be deployed and assign the *api-access* service plan for the SAP SuccessFactors Extensibility service instance to the system you registered in the previous step.
+You need to configure the entitlements for the subaccount where the **task management sample application for SAP SuccessFactors solutions** will be deployed and assign the *api-access* and the *sso-configuration* service plans for the SAP SuccessFactors Extensibility service instance to the system you registered in the previous step.
 
 1. In the SAP BTP cockpit, navigate to your global account.
 
@@ -128,11 +128,9 @@ You need to configure the entitlements for the subaccount where the **task manag
 
     ![Choose **Add Service Plans**, and then select the **SAP SuccessFactors Extensibility** service.](screenshots.png/8-entitle-sfsf-ext.png)
 
-6. In the **Available Service Plans** area, select the system you have registered and the **api-access** service plan, and then choose **Add Service Plan**.
+6. In the **Available Service Plans** area, select the system you have registered. Then, select  **api-access** and **sso-configuration** service plans, and choose **Add 2 Service Plans**.
 
 7. Save the changes.
-
-    ![Select the system you have registered and the **api-access** service plan, and then choose **Add Service Plan**.](screenshots.png/9-entitle-sfsf-ext.png)
 
 [DONE]
 [ACCORDION-END]
@@ -434,44 +432,35 @@ See [Establish Trust Between SAP SuccessFactors and SAP BTP](https://help.sap.co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Register Assertion Consumer Service of subaccount in SAP SuccessFactors)]
+[ACCORDION-BEGIN [Step 11: ](Configure the subaccount as a trusted service provider in SAP SuccessFactors)]
 
-1. Download the service provider SAML metadata file from the SAP BTP cockpit.
+To configure the subaccount as a trusted service provider in SAP SuccessFactors, you have to create an **SAP SuccessFactors Extensibility** service instance using the **sso-configuration** service plan.
 
-    - Go to your subaccount and choose **Security** > **Trust Configuration**.
+1. In the SAP BTP cockpit, navigate to the subaccount in which you want to configure as a trusted service provider in SAP SuccessFactors.
 
-    - Choose **SAML Metadata** to download an XML file that contains the SAML 2.0 metadata describing SAP BTP as a service provider.
+2. In the navigation area, choose **Services** > **Service Marketplace**, and on the **Service Marketplace** screen, search for the **SAP SuccessFactors Extensibility** service.
 
-        ![Choose **SAML Metadata** to download an XML file that contains the SAML 2.0 metadata describing SAP BTP as a service provider.](screenshots.png/22-new-trust-config.png)
+3. In the **SAP SuccessFactors Extensibility** page, choose **Create**.
 
-    - Open the XML file in a text editor and copy the following values:
+4. In the **New Instance or Subscription** wizard:
 
-        - The value of the `Location` attribute of the `AssertionConsumerService` element with the HTTP-POST binding of the XML file: this is the value of the Assertion Consumer Service.
+  * In the **Service** dropdown list, ensure you have selected the **SAP SuccessFactors Extensibility** service.
+  * In the **Plan** dropdown list, select the **sso-configuration** service plan.
+  * In the **Runtime Environment** dropdown list, select **Other**.
+  * In the **Instance Name** field, enter a name for your instance, for example **sso-to-successfactors**. Choose **Next**.
+  * To configure the assertion consumer service of the subaccount, specify the system name in the JSON file:
+    `{"systemName": "my-sap-successfactors-system"}`
 
-            ![Copy the value of the `Location` attribute of the `AssertionConsumerService` element with the HTTP-POST binding of the XML file.](screenshots.png/23-acs.png)
 
-        - The value of the `Location` attribute of the `SingleLogoutService` element with the HTTP-POST binding of the XML file: this is the value of the logout URL.
+    For more information about the structure of the JSON file, see [Single Sign-On Configuration JSON File](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/5ec1e970eb0d417c969f1693da31388f.html).
 
-            ![Copy he value of the `Location` attribute of the `SingleLogoutService` element with the HTTP-POST binding of the XML file.](screenshots.png/24-acs.png)
+  * Choose **Next**.
 
-        - The value of the `EntityID` attribute of `EntityDescriptor` element of the XML file: this is the value of the Audience URL.
+  * Choose **Create**.
 
-            ![Copy the value of the `EntityID` attribute of `EntityDescriptor` element of the XML file.](screenshots.png/25-acs.png)
+You have an assertion consumer service for the subaccount created in SAP SuccessFactors and have the SSO between your subaccount in SAP BTP and your SAP SuccessFactors system.
 
-2. In Provisioning of SAP SuccessFactors, go to your company and choose **Service Provider Settings > Authorized SP Assertion Consumer Service Settings**.
-
-3. Choose **Add another Service Provider ACS** and fill in the following fields:
-
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  **Assertion Consumer Service**    | This is the value of the `Location` attribute of the `AssertionConsumerService` element with the HTTP-POST binding you copied in substep 1 in this step.
-    |  **Logout URL**                    | This is the value of the `Location` attribute of the `SingleLogoutService` element with the HTTP-POST binding you copied in substep 1 in this step.
-    |  **Audience URL**                  | This is the value of the `EntityID` attribute of `EntityDescriptor` element you copied in substep 1 in this step.
-    |  **Application Name**              | Select `SAP Business Technology Platform` from the dropdown menu.
-
-    ![Choose **Add another Service Provider ACS** and fill in the fields.](screenshots.png/26-acs.png)
-
-See [Register the Assertion Consumer Service of the Subaccount in SAP BTP in SAP SuccessFactors](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/de3a1b3d12fb449e9ff0a528db6ae4b4.html).
+See [Configure the Subaccount as a Trusted Service Provider in SAP SuccessFactors](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/9efe2a1d84c2458fb7b68d4df1bd13ee.html).
 
 [DONE]
 [ACCORDION-END]

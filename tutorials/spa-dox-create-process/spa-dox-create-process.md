@@ -10,7 +10,7 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - You have setup [SAP Process Automation in your SAP BTP Free Tier](spa-subscribe-booster)
+ - You will need either a trial account with the SAP Process Automation enabled (as described by this [blog](https://blogs.sap.com/2022/09/09/sap-process-automation-now-available-in-your-trail-account/)), or a regular account with the free-tier service plan for SAP Process Automation (as described in [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](https://developers.sap.com/tutorials/spa-subscribe-booster.html)).
 
 ## Details
 You work in the finance department of the company and need to regularly process incoming scanned invoices.
@@ -59,9 +59,9 @@ This needs to be automated since we are talking about multiple invoices which ar
 
    To trigger the process, you will create a form to provide the most relevant inputs.
 
-1. In the canvas, open **Select a Start Trigger**.
+1. In the canvas, select **+**, then **Forms** and finally **+ New Form**.
 
-    !![Select a Start Trigger](04.png)
+    !![New Form](04.png)
 
 2. Provide the following information and choose **Create**:
 

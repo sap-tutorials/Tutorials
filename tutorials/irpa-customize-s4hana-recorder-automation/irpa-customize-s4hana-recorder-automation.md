@@ -160,7 +160,7 @@ Setting up the automation is now complete.
 
 [ACCORDION-BEGIN [Step 5: ](Create Login application (Trial Account))]
 Refer to the following steps to create the Login application to use an **SAP S/4 HANA Cloud trial account**.
-
+ 
 In this scenario, you have to capture the login screens manually since the Trial account involves navigation of two login screens.
 
 ![Link text e.g., Destination screen](Series ofLogin.png)

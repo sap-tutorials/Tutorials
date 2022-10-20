@@ -9,7 +9,6 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Prerequisites
  - A Microsoft Windows or Linux computer.
- - An SAP HANA Cloud trial or free tier.
 
 ## Details
 ### You will learn
@@ -38,7 +37,6 @@ SAP HANA Cloud is composed of multiple components.
 
     >Note, that the data lake Files component is currently not available in trial accounts.
 
-For additional details see [How & When to Use the New SAP HANA Cloud Database Instances](https://saphanajourney.com/hana-cloud/resources/sap-hana-cloud-new-services-adaptive-server-enterprise-and-data-lake/).
 
 [DONE]
 [ACCORDION-END]
@@ -46,7 +44,7 @@ For additional details see [How & When to Use the New SAP HANA Cloud Database In
 
 [ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
 
->To complete the tutorials in this group, an SAP HANA Cloud, data lake instance is needed. There are two different free options including SAP HANA Cloud free tier and free trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
+>To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
 
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
@@ -267,6 +265,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     GRANT ROLE HOTEL TO USER1;
     ```
 
+    Select **Tables**, and set the schema filter to be **HOTEL** to limit the returned tables to be those that were just created in the HOTEL schema.
+
     ![DBX Create](sql-commands.png)
 
     Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
@@ -291,7 +291,12 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
         ![data lake client](data-lake-client-install.png)
 
-        >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
+        >If the install fails on Microsoft Windows, you may need to run the install as an administrator.  See also the following SAP Notes:
+        >
+        >* [3001764 - SAP IQ 16.x - `InvocationTargetException` Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001764)
+        >
+        >* [3001813 - SAP IQ 16.1 SP 04 Rev08 - 'Error Loading sylapij.dll' Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001813)
+
 
     * On Linux, extract the archive.
 
@@ -308,7 +313,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 3.  Specify an install folder and install all the features.
 
-    ![GUI Installer](linux-gui-install.png)
+    ![GUI Installer](windows-gui-install.png)
 
     Console mode installer
 
@@ -391,28 +396,16 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     >DBISQL can also be started without a GUI.
     >
     >```Shell (Windows)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
     > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
-    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
+    dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >![DBISQL connected nogui](dbisql-nogui.png)
-
-    >If `dbisql` fails to run with the `-nogui` flag, try running the following command to not register the HANA plugin.
-
-    >```Shell
-    dbisql -XUnRegister hana
-    >```
-
-    >The above command can be reverted with the below command.
-    >```Shell
-    dbisql -XRegisterPlugin hana
-    >```
-
 
 [DONE]
 [ACCORDION-END]
@@ -421,7 +414,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
 1. Execute the following insert statements to provide some sample data.
 
-    >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -hdl -c "uid..." sql.sql`.
+    >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -c "uid..." sql.sql`.
 
     ```SQL
     INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
@@ -550,8 +543,8 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 
     ![DBISQL in batch mode](dbisql-batch.png)

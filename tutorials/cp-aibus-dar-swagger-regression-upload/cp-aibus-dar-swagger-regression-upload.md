@@ -20,7 +20,7 @@ Business Use Case: Use the regression model template to predict the price of new
 
 The regression model template is a generic neural network for regression which seeks to minimize the mean squared error (MSE). This model template does not support multi-label dataset schemas. Use single-label dataset schemas only.
 
-To better understand the regression model template from the Data Attribute Recommendation service, take a look at the following blog post: [Solving regression use-cases with Data Attribute Recommendation](https://blogs.sap.com/2021/11/14/solving-regression-use-cases-with-data-attribute-recommendation/). See also [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
+To better understand the regression model template from the Data Attribute Recommendation service, take a look at the following blog post: [Solving regression use-cases with Data Attribute Recommendation](https://blogs.sap.com/2021/11/14/solving-regression-use-cases-with-data-attribute-recommendation/). See also [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 To create a machine learning model that predicts the price of new products you will first prepare the dataset schema and upload the training data to the service. In this tutorial, you will focus on the data preparation, uploading and defining the dataset schema. For that, you will use a public product dataset from Best Buy.
 

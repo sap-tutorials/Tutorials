@@ -127,7 +127,13 @@ Now you can create a development project within your new space. Follow these ste
 
     !![DB Information](ss-06-DB-information.png)
 
-9.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must login with your SAP BTP credentials in the next step. Insert your email address and your password. On the right corner of the password field, click on the ![Login](icon-login.png) icon to login.
+9.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to a Cloud Foundry environment in the SAP BTP subaccount, where SAP HANA database is deployed in the next step.
+
+    Check and update, if needed, the API URL to match the URL displayed in SAP BTP Cockpit for the Cloud Foundry environment you plan to use.
+
+    ![Cloud Foundry API URL](ss-06-CF-API-URL.png)
+
+    Insert your email address and your password. On the right corner of the password field, click on the ![Login](icon-login.png) icon to login.
 
 10.	Once the login is complete, your organization and space are automatically selected. If you are part of multiple organizations or spaces, you can adjust the preselected options via the drop-down menus.
 

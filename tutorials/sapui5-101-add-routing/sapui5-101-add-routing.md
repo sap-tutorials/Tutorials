@@ -3,10 +3,10 @@ title: Add Views and Define Routes to Access Them
 description: Add new views to the SAPUI5 web application and declare them in the manifest.
 auto_validation: true
 primary_tag: programming-tool>sapui5
-author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
-tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio  ]
+tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-application-studio  ]
 time: 20
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Details
@@ -26,7 +26,7 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
     !![newFile](./newView.png)
 
-2. The name already suggests that this view fill contain a [list](https://sapui5.hana.ondemand.com/#/topic/295e44b2d0144318bcb7bdd56bfa5189) of products. Add the following file content that defines the views and the list. Note the list already uses [data binding](https://sapui5.hana.ondemand.com/#/topic/68b9644a253741e8a4b9e4279a35c247) to show the product entities as list items.
+2. The name already suggests that this view will contain a [list](https://sapui5.hana.ondemand.com/#/topic/295e44b2d0144318bcb7bdd56bfa5189) of products. Add the following file content that defines the views and the list. Note the list already uses [data binding](https://sapui5.hana.ondemand.com/#/topic/68b9644a253741e8a4b9e4279a35c247) to show the product entities as list items.
 
     ```XML
     <mvc:View controllerName="sap.btp.sapui5.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
@@ -65,31 +65,15 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Convert View1 to a pure container)]
-
-The web app basically contains of the two views we created in the previous step. We want to switch from the list view to the detail view when the user clicks an item, and back to the list when the user clicks the "back" button. To implement this navigation, we need an `<App>` container that includes both view.
-
-**Edit** the original `webapp/view/View1.view.xml` view to define only this container.
-
-```XML[3,4]
-<mvc:View controllerName="sap.btp.sapui5.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<Shell id="View1">
-		<App id="app">
-		</App>
-	</Shell>
-</mvc:View>
-```
-
-
-[DONE]
-[ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add new targets and routes)]
 
 In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
-**Add** the new targets and routes to the existing `webapp/manifest.json` file.
+**Change** the pattern for the first route ("RouteView1") from `:?query:` to `RouteView1` (line 16) in the `webapp/manifest.json` file, so that we can define a new default route.
 
-```JSON[14-27,36-50]
+**Add** the new targets and routes to the `webapp/manifest.json` file.
+
+```JSON[16,21-34,43-57]
 {
     "_version": "1.12.0",
     "sap.app": {
@@ -104,18 +88,25 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
             ...
             "routes": [
                 {
+                  "name": "RouteView1",
+                  "pattern": "RouteView1",
+                  "target": [
+                    "TargetView1"
+                    ]
+                },
+                {
                     "name": "home",
                     "pattern": "",
                     "target": [
                         "TargetList"
-                    ]
+                        ]
                 },
                 {
                     "name": "detail",
                     "pattern": "product/{productId}",
                     "target": [
                         "TargetDetail"
-                    ]
+                        ]
                 }
             ],
             "targets": {

@@ -3,10 +3,10 @@ title: Improve User Experience of the List and Detail Page
 description: Display more detailed information for each list item and on the detail page.
 time: 15
 auto_validation: true
-primary_tag: topic>sapui5
+primary_tag: programming-tool>sapui5
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
-tags: [  tutorial>intermediate, topic>html5, topic>sapui5,  products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio ]
+tags: [  tutorial>intermediate, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio ]
 ---
 ## Details
 ### You will learn  
@@ -57,27 +57,27 @@ In this step, we will add a search field on the top of the list to make it searc
 
 1.	Open the `webapp/view/List.view.xml` file, and **change** the highlighted lines.
 
-	```XML[5-11,13-20]
+	```XML[3-19]
 	<mvc:View controllerName="sap.btp.sapui5.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 		<Page id="listPage" title="{i18n>ListTitle}" >
-	        <subHeader>
-				<Bar>
+			<subHeader>
+				<Bar id="_IDGenBar1">
 					<contentLeft>
-						<SearchField search="handleSearch"/>
+						<SearchField id="_IDGenSearchField1" search="handleSearch"/>
 					</contentLeft>
 				</Bar>
 			</subHeader>
 			<List id="list" items="{/Products}">
-				<ObjectListItem type="Navigation" press="handleListItemPress" title="{ProductName}" number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }" numberUnit="{i18n>Currency}">
+				<ObjectListItem id="_IDGenObjectListItem1" type="Navigation" press="handleListItemPress" title="{ProductName}" number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }" numberUnit="{i18n>Currency}">
 					<attributes>
-						<ObjectAttribute text="{QuantityPerUnit}"/>
+						<ObjectAttribute id="_IDGenObjectAttribute1" text="{QuantityPerUnit}"/>
 					</attributes>
 					<firstStatus>
-						<ObjectStatus  text="{= ${Discontinued} ? ${i18n>Discontinued} : ${i18n>Available} }"  state="{= ${Discontinued}? 'Error' : 'Success' }"/>
+						<ObjectStatus id="_IDGenObjectStatus1" text="{= ${Discontinued} ? ${i18n>Discontinued} : ${i18n>Available} }" state="{= ${Discontinued}? 'Error' : 'Success' }"/>
 					</firstStatus>
 				</ObjectListItem>
-	        </List>
-	    </Page>
+			</List>
+	  </Page>
 	</mvc:View>
 	```
 
@@ -130,34 +130,34 @@ Similarly to the previous step, this step will add additional controls to the ex
 
 1.	Open the `webapp/view/Detail.view.xml` file, and **replace** the highlighted lines.
 
-	```XML[5-22]
+	```XML[3-20]
 	<mvc:View controllerName="sap.btp.sapui5.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 		<Page id="detail" title="{i18n>DetailTitle}" showNavButton="true" navButtonPress="handleNavButtonPress" >
-			<ObjectHeader title="{ProductName}" number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }" numberUnit="{i18n>Currency}">
-				<statuses>
-					<ObjectStatus text="{= ${Discontinued} ? ${i18n>Discontinued} : ${i18n>Available} }" state="{= ${Discontinued} ? 'Error' : 'Success' }"/>
-					<ObjectStatus text="{= (${UnitsOnOrder} > 0) ?  ${i18n>Ordered} : ${i18n>NotOrdered} }" state="Success"/>
-				</statuses>
-				<attributes>
-					<ObjectAttribute text="Product #{ProductID}"/>
-					<ObjectAttribute text="Category #{CategoryID}"/>
-					<ObjectAttribute text="Supplier #{SupplierID}"/>
-				</attributes>
+			<ObjectHeader id="_IDGenObjectHeader1" title="{ProductName}" number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }" 	numberUnit="{i18n>Currency}">
+	        <statuses>
+	            <ObjectStatus id="_IDGenObjectStatus1" text="{= ${Discontinued} ? ${i18n>Discontinued} : ${i18n>Available} }" state="{= ${Discontinued} ? 'Error' : 'Success' }"/>
+	            <ObjectStatus id="_IDGenObjectStatus2" text="{= (${UnitsOnOrder} > 0) ?  ${i18n>Ordered} : ${i18n>NotOrdered} }" state="Success"/>
+	        </statuses>
+	        <attributes>
+	            <ObjectAttribute id="_IDGenObjectAttribute1" text="Product #{ProductID}"/>
+	            <ObjectAttribute id="_IDGenObjectAttribute2" text="Category #{CategoryID}"/>
+	            <ObjectAttribute id="_IDGenObjectAttribute3" text="Supplier #{SupplierID}"/>
+	        </attributes>
 			</ObjectHeader>
-			<footer>
-				<Bar>
-					<contentRight>
-						<Button text="{i18n>OrderButtonText}" type="Accept" icon="sap-icon://accept" press="handleOrder"/>
-					</contentRight>
-				</Bar>
-			</footer>
+	    <footer>
+	        <Bar id="_IDGenBar1">
+	            <contentRight>
+	                <Button id="_IDGenButton1" text="{i18n>OrderButtonText}" type="Accept" icon="sap-icon://accept" press="handleOrder"/>
+	            </contentRight>
+	        </Bar>
+	    </footer>
 		</Page>
 	</mvc:View>
 	```
 
 	2.	The previous snippet contains a button. Let's implement the logic to display a [MessageBox](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageBox) once this button has been pressed. **Add** a missing imports and the listener for the press event in the `webapp/controller/Detail.controller.js`.
 
-		```JavaScript[2,3,4,6,33-50]
+		```JavaScript[2,3,4,6,34-51]
 		sap.ui.define([
 	    "sap/ui/core/mvc/Controller",
 	    "sap/m/MessageBox",
@@ -222,9 +222,7 @@ Try to search for a word.
 
 ![Demo - Search field is displayed](./filter.gif)
 
-> With this, you completed the tutorial group. Congratulations!
-
-> You can follow steps 4 and 5 of [this tutorial](appstudio-sapui5-create) to deploy the application to SAP BTP, Cloud Foundry environment.
+> You can follow [this tutorial](sapui5-101-deploy-application) to deploy the application to SAP BTP, Cloud Foundry environment.
 
 
 [VALIDATE_1]

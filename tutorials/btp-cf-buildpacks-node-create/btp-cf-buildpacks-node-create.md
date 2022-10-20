@@ -10,7 +10,8 @@ primary_tag: programming-tool>node-js
 ---
 
 ## Prerequisites
- - You have registered for a Cloud Foundry [trial account] (hcp-create-trial-account) on SAP Business Technology Platform.
+ - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html).
+ - You have created a subaccount and a space on Cloud Foundry Environment.
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
  - [Node.js] (https://nodejs.org/en/about/releases/) and [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are installed locally.
  - You have installed an integrated development environment, for example [Visual Studio Code] (https://code.visualstudio.com/).
@@ -28,16 +29,16 @@ This tutorial will guide you through creating and setting up a simple Node.js ap
 
 [ACCORDION-BEGIN [Step 1: ](Log on to SAP BTP)]
 
-First, you need to connect to the SAP BTP, Cloud Foundry environment with your trial account. By default, a space `dev` is created for you. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud) -> **Regions for Trial Accounts**.
+First, you need to connect to the SAP BTP, Cloud Foundry environment with your productive subaccount. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud)
 
-In this tutorial, we use `eu10.hana.ondemand.com` as an example.
+In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 1. Open a command-line console.
 
-2. Set the Cloud Foundry API endpoint for your trial account. Execute (using your actual region URL):
+2. Set the Cloud Foundry API endpoint for your subaccount. Execute (using your actual region URL):
 
     ```Bash/Shell
-    cf api https://api.cf.eu10.hana.ondemand.com
+    cf api https://api.cf.eu20.hana.ondemand.com
     ```
 3. Log in to SAP BTP, Cloud Foundry environment:
 
@@ -45,10 +46,13 @@ In this tutorial, we use `eu10.hana.ondemand.com` as an example.
     cf login
     ```
 
-4. When prompted, enter your user credentials – the email and password you have used to register your SAP BTP trial account.
+4. When prompted, enter your user credentials – the email and password you have used to register your productive SAP BTP account.
 
 > **IMPORTANT**: If the authentication fails, even though you've entered correct credentials, try [logging in via single sign-on] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/e1009b4aa486462a8951c4d499ce6d4c.html?version=Cloud).
 
+#### RESULT
+
+Details about your personal SAP BTP subaccount are displayed (API endpoint, user, organization, space).
 
 [DONE]
 [ACCORDION-END]
@@ -68,7 +72,7 @@ You're going to create a simple Node.js application.
     applications:
     - name: myapp
       routes:
-        - route: node-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: myapp
       memory: 128M
       buildpack: nodejs_buildpack
@@ -76,9 +80,9 @@ You're going to create a simple Node.js application.
 
     The `manifest.yml` file represents the configuration describing your application and how it will be deployed to Cloud Foundry.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your `dev` space.   
+    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your space! If you do, use a different name and adjust the whole tutorial according to it.   
 
-    > Also bear in mind that your application's technical name (in the route) must be **unique** in the whole Cloud Foundry landscape. We advice that you use your trial account ID to construct the technical name. In this tutorial, we use:  `node-1234567trial`
+    > Also bear in mind that your application's technical name (in the route) must be **unique** in the whole Cloud Foundry landscape. We advice that you use, for example, your subdomain name or part of your subaccount ID to construct the technical name. In this tutorial, we use:  `node-1234-aaaa-5678`
 
 4. Inside `node-tutorial`, create a subfolder `myapp`.
 
@@ -98,7 +102,7 @@ You're going to create a simple Node.js application.
 
     This operation adds the `express` package as a dependency in the `package.json` file.
 
-    After the installation is complete, the content of `package.json` should look like this:
+    After the installation is completed, the content of `package.json` should look like this:
 
     ```JSON
     {
@@ -112,7 +116,7 @@ You're going to create a simple Node.js application.
       "author": "",
       "license": "ISC",
       "dependencies": {
-        "express": "^4.17.3"
+        "express": "^4.18.1"
       }
     }
     ```
@@ -134,7 +138,7 @@ You're going to create a simple Node.js application.
       "author": "",
       "license": "ISC",
       "dependencies": {
-        "express": "^4.17.3"
+        "express": "^4.18.1"
       }
     }
     ```
@@ -169,7 +173,7 @@ You're going to create a simple Node.js application.
 
 11.	Now open a browser window and enter the URL of the `myapp` application (see the route).
 
-    That is:  `https://node-1234567trial.cfapps.eu10.hana.ondemand.com`
+    That is:  `https://node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 #### RESULT
 
@@ -205,7 +209,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     applications:
     - name: myapp
       routes:
-        - route: node-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: myapp
       memory: 128M
       buildpack: nodejs_buildpack
@@ -217,7 +221,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 4.	Now you have to create a microservice (the application router). Go to the `node-tutorial` folder and create a subfolder `web`.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your `dev` space!
+    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your space! If you do, use a different name and adjust the rest of the tutorial according to it.
 
 5.	Inside the `web` folder, create a subfolder `resources`. This folder will provide the business application's static resources.
 
@@ -259,13 +263,13 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     },
     ```
 
-10.	Now you need to add the `web` application to your project and bind the XSAUAA service name (`nodeuaa`) to it. To do that, insert the following content **at the end** of your `manifest.yml` file.
+10.	Now you need to add the `web` application to your project and bind the XSUAA service instance (`nodeuaa`) to it. To do that, insert the following content **at the end** of your `manifest.yml` file.
 
 
     ```YAML
     - name: web
       routes:
-        - route: web-1234567trial.cfapps.eu10.hana.ondemand.com
+        - route: web-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com
       path: web
       memory: 128M
       env:
@@ -273,7 +277,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
           [
             {
               "name":"myapp",
-              "url":"https://node-1234567trial.cfapps.eu10.hana.ondemand.com",
+              "url":"https://node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com",
               "forwardAuthToken": true
             }
           ]
@@ -281,7 +285,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
       - nodeuaa
     ```
 
-    >Here you can follow the same pattern for constructing the technical name of the `web` application - by using your trial account ID.
+    Here you can follow the same pattern for constructing the technical name of the `web` application - by using your subaccount ID.
 
 11.	In the `web` folder, create an `xs-app.json` file with the following content:
 
@@ -353,7 +357,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 14.	Open a new browser tab or window, and enter the URL of the `web` application.
 
-    That is:   `https://web-1234567trial.cfapps.eu10.hana.ondemand.com`
+    That is:   `https://web-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 15.	Enter the credentials for your SAP BTP user.
 
@@ -573,7 +577,7 @@ To get permissions, you need to create a role collection containing the roles `V
 
 [ACCORDION-BEGIN [Step 5: ](Assigning Roles to a User in SAP BTP Cockpit)]
 
-1. Open the SAP BTP cockpit and go to your trial account.
+1. Open the SAP BTP cockpit and go to your subaccount.
 
 2. From the left-side menu, navigate to `Security` > `Role Collections`.
 
@@ -595,7 +599,7 @@ To get permissions, you need to create a role collection containing the roles `V
 
     > Now you need to apply these changes to the `myapp` application by redeploying it again.
 
-10. Go back to the command line, and in the `node-tutorial` directory, execute:
+10. Go back to the command line, and in the `node-tutorial` directory execute:
 
     ```Bash/Shell
     cf push

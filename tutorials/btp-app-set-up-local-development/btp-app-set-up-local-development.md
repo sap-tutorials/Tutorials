@@ -203,7 +203,7 @@ Download the package for macOS and perform the following steps as described [her
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
-2. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
+2. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 
     ![shell command](shell_command.png)
 
@@ -262,7 +262,7 @@ Now, the extension is installed in VS Code. If the extension is already installe
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 10: ](Install SAP Fiori tools Extension Pack)]
-SAP Fiori tools are a number of extensions for VS Code. They mainly support you in developing SAP Fiori elements apps. In this tutorial, we use the so-called SAP Fiori application generator to create an SAP Fiori elements app, you need this for the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements).
+SAP Fiori tools are a number of extensions for VS Code. They mainly support you in developing SAP Fiori elements apps. In this tutorial, you use the so-called SAP Fiori application generator to create an SAP Fiori elements app, you need this for the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements).
 
 > Additional Documentation:
 
@@ -284,7 +284,7 @@ You need to install the [**SAP Fiori tools - Extension Pack**](https://marketpla
 
 5. Restart VS Code after the installation.
 
-After a restart of VS Code, you can check for the tools by invoking **View** **&rarr;** **Extensions** and then scrolling through the list of **Enabled** extensions. They all start with **SAP Fiori tools**. If the extension is already installed and enabled in VS Code, it's updated automatically.
+After a restart of VS Code, you can check for the tools by invoking **View** &rarr; **Extensions** and then scrolling through the list of **Enabled** extensions. They all start with **SAP Fiori tools**. If the extension is already installed and enabled in VS Code, it's updated automatically.
 
 [VALIDATE_1]
 [ACCORDION-END]

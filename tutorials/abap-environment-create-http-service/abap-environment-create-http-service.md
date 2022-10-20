@@ -300,10 +300,10 @@ Your Communication Scenario appears.
 
 ## More Information
 
-- [SAP Help Portal: HTTP Communication](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/dee3a93a2b8d4018b3c4910f745b744f.html)
+- [SAP Help Portal: HTTP Communication](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/3884bc38209843ac900d92adb9c2a863.html)
 
 - [SAP Help Portal: Components of SAP Communication Technology - HTTP Service](https://help.sap.com/doc/saphelp_nwpi71/7.1/en-US/1f/93163f9959a808e10000000a114084/frameset.htm)
 
-- [SAP ABAP Keyword Documentation: Calling an HTTP Service](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abenicf_service_abexa.htm)
+- [SAP ABAP Keyword Documentation: Calling an HTTP Service](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm): Search for **ICF, Subject**
 
 ---

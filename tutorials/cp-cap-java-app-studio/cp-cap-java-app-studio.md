@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Set Up SAP Business Application Studio for CAP Java
 description: Set up the SAP Business Application Studio and create a first service implementation.
 auto_validation: true
@@ -15,20 +15,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-  - What the SAP Business Application Studio is
+  - What is SAP Business Application Studio
   - How to create a project skeleton for a CAP Java project
   - How to expose ports of the application in SAP Business Application Studio to the internet.
 
 First things first, you need to set up your development environment and check that everything is running smoothly.
 
-For this tutorial, we use the new SAP Business Application Studio as the development tool of choice. SAP Business Application Studio provides a web-based Visual Studio Code-like experience. So, it's like VS Code, but for your browser.
+For this tutorial, we use the SAP Business Application Studio as the development tool of choice. SAP Business Application Studio provides a web-based Visual Studio Code-like experience. So, it's like VS Code, but for your browser.
 
 > ### What's great about using SAP Business Application Studio?
 > You get an editor, useful extensions and all the tools required to develop CAP applications and full access to the terminal.
 
 To make sure that everything is set up correctly, this tutorial also includes how to build and run a simple Hello World application. The SAP Cloud Application Programming Model (CAP) supports both Java and Node.js development. But for this tutorial, we're using Java. The [CAP Java SDK](https://cap.cloud.sap/docs/java/) is able to tightly integrate with [Spring Boot](https://spring.io/projects/spring-boot), which provides numerous features out of the box. This means, Spring Boot will be your runtime container.
 
-For a general overview about CAP, you might also want to have a look at the official [CAP documentation](https://cap.cloud.sap/docs/resources/) and the [CAP Community](https://community.sap.com/topics/cloud-application-programming).
+For a general overview about CAP, you might also want to have a look at the official [CAP documentation](https://cap.cloud.sap/docs/) and the [CAP Community](https://community.sap.com/topics/cloud-application-programming).
 
 ---
 
@@ -36,7 +36,9 @@ For a general overview about CAP, you might also want to have a look at the offi
 
 Before you can start using SAP Business Application Studio, you need to create your developer space, where your project will run. Depending on the application you want to develop, you can create different types of dev spaces.
 
-For this tutorial, you'll create a dev space personalized for building services and applications with CAP.
+For this tutorial, you will create a dev space personalized for building services and applications with CAP.
+
+Before you begin, check the settings of your browser. You need to add domains `ondemand.com` and `cloud.sap.com` to the list of the exceptions to enable pop-ups and new tabs and disable the ad blocker extension if you use one.
 
 1. Go to the [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) on Trial.
 
@@ -50,7 +52,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     !![choose space name and type](select-app-type.png)
 
-    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you'll need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
+    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
     The creation of the dev space takes a few seconds.
 
 5. When it's ready, open your dev space by clicking on the name.
@@ -66,11 +68,9 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 1. Change the color theme to your preferences.
 
-    Go to **File** > **Settings** > **Color Theme** and choose an item from the list. We used **Dark (Visual Studio)**.
+    Go to **File** **&rarr;** **Preferences** **&rarr;** **Color Theme** and choose an item from the list. We used **Dark (Visual Studio)**.
 
-    !![color-theme](color-theme.png)
-
-2. From the main menu, choose **Terminal** > **New Terminal**.
+2. From the main menu, choose **Terminal** **&rarr;** **New Terminal**.
 
     !![open new terminal](new-terminal.png)
 
@@ -82,8 +82,8 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=1.17.0 \
-    -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
+      -DarchetypeVersion=RELEASE \
+      -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
@@ -94,7 +94,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
       !![project creation done](project-creation-done.png)
 
-5. From the main menu, choose **File** > **Open Workspace**.
+5. From the main menu, choose **File** **&rarr;** **Open Workspace**.
 
 6. Choose **products-service** and then **Open**.
 
@@ -114,13 +114,13 @@ CAP applications use [Core Data Services](https://cap.cloud.sap/docs/cds/) (CDS)
 - Data structures by using [entity definitions](https://cap.cloud.sap/docs/cds/cdl#entity-and-type-definitions)
 - How data structures are consumed by using [service definitions](https://cap.cloud.sap/docs/cds/cdl#services)
 
-In this step, you'll define a simple service, which also defines its own entity. In more complex applications, services usually expose projections on entities defined in the data model.
+In this step, you will define a simple service, which also defines its own entity. In more complex applications, services usually expose projections on entities defined in the data model.
 
 1. Right-click on the `srv` folder and choose **New File**.
 
     !![new file](new-file.png)
 
-2. Call it `admin-service.cds` and click **OK** to create the file.
+2. Call it `admin-service.cds` and choose **OK** to create the file.
 
 3. Add the following service definition to the file and make sure you **Save** the file (keyboard shortcut **CTRL+S**):
 
@@ -139,7 +139,7 @@ In this step, you'll define a simple service, which also defines its own entity.
 
 [ACCORDION-BEGIN [Step 4: ](Compile model definition)]
 
-1. From the main menu, open a terminal with **Terminal** > **New Terminal**.
+1. From the main menu, open a terminal with **Terminal** **&rarr;** **New Terminal**.
  You should be in the **products-service** project but in order to be sure run `pwd`.
 
     ```Shell/Bash
@@ -172,7 +172,7 @@ While creating the project skeleton, the application `Application.java` file was
 
     !![open Application.java class](application-class.png)
 
-    >If you use **CTRL+P** in SAP Business Application Studio, you open a search bar. Start typing `Application.java` to find and open the file.
+    > If you use **CTRL+P** in SAP Business Application Studio, you open a search bar. Start typing `Application.java` to find and open the file.
 
     As you can see, the file doesn't contain CAP-specific startup instructions. It's the typical boilerplate code found in every Spring Boot application. The initialization of the CAP Java runtime is done by Spring automatically, based on the dependencies defined in the `pom.xml`.
 
@@ -182,7 +182,7 @@ While creating the project skeleton, the application `Application.java` file was
     cd ~/projects/products-service
     ```
 
-3. Start the application:
+3. Start the application by running the following command in the terminal:
 
     ```Shell/Bash
     mvn clean spring-boot:run
@@ -192,13 +192,9 @@ While creating the project skeleton, the application `Application.java` file was
 
       !![expose and open notification appearing](expose-and-open.png)
 
-      If you have issues exposing the port or opening the application, take a look at the next step where alternative ways to expose the port and open the application are explained.
+4. Choose **Open New Tab**.
 
-4. Choose **Expose and Open**.
-
-5. Provide **app-port** as the unique description.
-
-6. Hit the **Enter** key to open the application in a new tab.
+5. The application start page will be opened in a new tab.
 
     !![service startpage](service-startpage.png)
 
@@ -207,13 +203,11 @@ While creating the project skeleton, the application `Application.java` file was
 
 [ACCORDION-BEGIN [Step 6: ](Manually open the application)]
 
-1. Make sure that your application is running. From the main menu, go to **View** > **Find Command** to open the command palette.
+1. Make sure that your application is running. From the main menu, go to **View** **&rarr;** **Find Command** to open the command palette.
 
     !![find command](find-command.png)
 
-2. Type **Ports: Expose** and select or enter `8080`. Provide `app-port` as the unique description. If you don't see port `8080` listed in the **Ports: Expose** view, use **View** > **Find Command** again and type **Ports: Preview** instead. Then click on the port `8080` to open the application.
-
-    !![expose or preview port](ports-expose-preview.png)
+2. Type **Port: Preview** and select or enter `8080`. There will be one application visible and you can open new tab for it.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -222,11 +216,11 @@ While creating the project skeleton, the application `Application.java` file was
 
 1. Choose **`$metadata`** from the welcome page to inspect the OData metadata that is automatically served by the CAP Java runtime.
 
-    !![metadata option](metadata-option.png)
+  !![metadata option](metadata-option.png)
 
-    > Alternatively add `/odata/v4/AdminService/$metadata` to your app URL. Your URL should be the same either way.
+> Alternatively add `/odata/v4/AdminService/$metadata` to your app URL. Your URL should be the same either way.
 
-In the next tutorial, you'll learn how to add custom logic. Specifically, so that your application can read and create Products.
+In the next tutorial, you will learn how to add custom logic. Specifically, so that your application can read and create Products.
 
 [DONE]
 [ACCORDION-END]
@@ -237,21 +231,19 @@ Sometimes it happens that your CAP Project can't be started. Does your log outpu
 
 !![application failed to start](application-failed-to-start.png)
 
-This means that your application is still running in another terminal. Check if you have multiple terminals opened.
+This means that your application is still running in another terminal. Check if you have multiple terminals opened or use **Ports: Preview** to check if you have another application running on same port.
 
 !![close terminal](close-terminal.png)
 
-1. Stop the application in the other terminal by using **CTRL+C** or
+1. Stop the application in the other terminal by using **`CTRL+C`** or ...
 
-2. Click on the **x** icon next to the terminal to close the terminal window and implicitly stop all inherited processes.
+2. Choose the **x** icon next to the terminal to close the terminal window and implicitly stop all inherited processes.
 
 !![icon to close terminal](icon-close-terminal.png)
 
-[DONE]
-[ACCORDION-END]
-
 Great Job! You have built your CAP Java application skeleton and are good to serve some data.
 
-
+[DONE]
+[ACCORDION-END]
 
 ---

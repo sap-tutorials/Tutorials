@@ -4,12 +4,12 @@ author_profile: https://github.com/beapasch
 title: Prepare an SAP Fiori App for Translation
 description: Prepare an app based on an SAP Fiori reference app and prepare it for translation with SAP Translation Hub.
 auto_validation: true
-primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5, tutorial>license ]
+primary_tag: software-product>sap-translation-hub
+tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5, tutorial>license ]
 time: 10
 ---
 ## Prerequisites  
-  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
+  - **IMPORTANT:** This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  
@@ -18,7 +18,7 @@ time: 10
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
-To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
+To go to the overview screen of the SAP BTP cockpit, choose your user ID at the top of the screen.
 
 ![Locate SAP Web IDE](sth-1.png)
 

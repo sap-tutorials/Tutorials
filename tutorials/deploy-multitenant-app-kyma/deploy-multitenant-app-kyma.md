@@ -38,11 +38,7 @@ For example:
 
 [ACCORDION-BEGIN [Step 2: ](Determine Kyma Cluster Domain)]
 
-In your Kyma dashboard, find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file or in the URL of the Kyma dashboard.
-
-For example:
-
-!![image-20211214133533870](image-20211214133533870.png)
+Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
 
 
 
