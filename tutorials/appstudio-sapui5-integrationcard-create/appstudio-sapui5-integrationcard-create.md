@@ -9,7 +9,7 @@ author name: Boris Dafov
 ---
 
 ## Prerequisites
-Note: If you are following this tutorial as part of a workshop, you can skip the prerequisites as this configuration was done for you.
+>If you are following this tutorial as part of a workshop, you can skip the prerequisites as this configuration was done for you.
 
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
@@ -29,7 +29,7 @@ Integration cards are UI elements which display concise pieces of information in
 
 [ACCORDION-BEGIN [Step 1: ](Check for Development Tools for SAP Work Zone extension)]
 
-Note: If you are following this tutorial as part of a workshop, please skip this step.
+>If you are following this tutorial as part of a workshop, please skip this step.
 
 1. In SAP Business Application Studio, stop the dev space if it is not already stopped.
 
@@ -60,7 +60,7 @@ Note: If you are following this tutorial as part of a workshop, please skip this
     !![Image depicting UI Integration Card template option](2-3.PNG)
 
 4. Fill-in the required project details. Use the **Highlight Card** template, which creates an Integration card of type List and select Finish.
-Note: If you are following this tutorial as part of a workshop, please give your card a unique name. Your card name should be `#uid_products_by_vendor_card`  where `#uid` is your unique identifier.
+>If you are following this tutorial as part of a workshop, please give your card a unique name. Your card name should be `#uid_products_by_vendor_card`  where `#uid` is your unique identifier.
 
     | Description                                        | Value   
     | :-------------                                     | :-------------
@@ -167,7 +167,7 @@ If you would like to deploy the card and see how it looks on SAP Work Zone, you 
 
 [ACCORDION-BEGIN [Step 4: ](Add manifest parameters)] Manifest parameters provide dynamic values for card attributes. They are replaced during manifest processing and can be used with the double-bracket syntax like: `{{parameters.city}}`. As an example, in this step you will add parameters to set the header (`title` and `subTitle`) properties and the number (`maxItems`) of displayed items in the content.
 
-Note: If you are following this tutorial as part of a workshop and run out of time, you can skip steps 4,5,6 and create a simpler card. You can later read the steps you missed.
+>If you are following this tutorial as part of a workshop and run out of time, you can skip steps 4,5,6 and create a simpler card. You can later read the steps you missed.
 
 1. To define parameters - add the following `parameters` subsection in the `manifest.json` in the `configuration` section (note the comma which divides the entries).
 
