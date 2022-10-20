@@ -31,7 +31,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     What happens here? Running `cds add xsuaa` does two things:
 
     - Adds the XSUAA service to the `package.json` file of your project
-    - Creates the XSUAA security configuration for your project
+    - Creates the XSUAA security configuration (that is, the file `xs-security.json`) for your project
 
 
 
