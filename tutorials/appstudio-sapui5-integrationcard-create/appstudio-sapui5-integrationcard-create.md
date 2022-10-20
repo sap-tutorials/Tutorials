@@ -9,10 +9,12 @@ author name: Boris Dafov
 ---
 
 ## Prerequisites
+Note: If you are following this tutorial as part of a workshop, you can skip the prerequisites as this configuration was done for you.
+
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
-- To deploy a UI5 Integration card in the SAP Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Work Zone service. Additionally, you have to configure a destination for SAP Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/viewer/7d3b9c7211ca4d7a9630b524205ee836/Cloud/en-US/b058b6314023480194b6dae513e4f035.html).
+- To deploy a UI5 Integration card in the SAP Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Work Zone service. Additionally, you have to configure a destination for SAP Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
 - **IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
@@ -26,6 +28,8 @@ Integration cards are UI elements which display concise pieces of information in
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check for Development Tools for SAP Work Zone extension)]
+
+Note: If you are following this tutorial as part of a workshop, please skip this step.
 
 1. In SAP Business Application Studio, stop the dev space if it is not already stopped.
 
@@ -56,6 +60,7 @@ Integration cards are UI elements which display concise pieces of information in
     !![Image depicting UI Integration Card template option](2-3.PNG)
 
 4. Fill-in the required project details. Use the **Highlight Card** template, which creates an Integration card of type List and select Finish.
+Note: If you are following this tutorial as part of a workshop, please give your card a unique name. Your card name should be `#uid_products_by_vendor_card`  where `#uid` is your unique identifier.
 
     | Description                                        | Value   
     | :-------------                                     | :-------------
@@ -161,6 +166,8 @@ If you would like to deploy the card and see how it looks on SAP Work Zone, you 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add manifest parameters)] Manifest parameters provide dynamic values for card attributes. They are replaced during manifest processing and can be used with the double-bracket syntax like: `{{parameters.city}}`. As an example, in this step you will add parameters to set the header (`title` and `subTitle`) properties and the number (`maxItems`) of displayed items in the content.
+
+Note: If you are following this tutorial as part of a workshop and run out of time, you can skip steps 4,5,6 and create a simpler card. You can later read the steps you missed.
 
 1. To define parameters - add the following `parameters` subsection in the `manifest.json` in the `configuration` section (note the comma which divides the entries).
 
