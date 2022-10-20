@@ -414,7 +414,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
             CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
             <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
           ENDLOOP.
-        ENDIF.
+        ENDIF. 
 
 
         IF create-online_shop IS NOT INITIAL.
