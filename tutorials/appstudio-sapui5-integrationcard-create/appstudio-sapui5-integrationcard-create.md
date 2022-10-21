@@ -18,6 +18,7 @@ author name: Boris Dafov
 >**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
+
 ## Details
 ### You will learn
 - How to create a card for SAP Work Zone using SAP Business Application Studio (BAS)

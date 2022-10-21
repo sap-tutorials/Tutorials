@@ -68,9 +68,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cds watch
     ```
 
-    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.`
+    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`
 
-    > If you get the error `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`, you can run the command:
+    > You can run the command:
 
     > ```bash
     > Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser

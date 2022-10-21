@@ -10,11 +10,14 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+
+
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
- - For this tutorial, you have two options:
-    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to check out the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
-    - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
+      - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
+
 
 ## Details
 ### You will learn
@@ -75,7 +78,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
     It extends the `RiskService` with a new `RisksAnalysis` entity that has a couple of date fields for data analysis.
 
-4. Run `cds watch` in the VS code terminal and open the link [http://localhost:4004/](http://localhost:4004/) in your browser.
+4. Run `cds watch` in the VS Code terminal and open the link [http://localhost:4004/](http://localhost:4004/) in your browser.
 
     You should be able to see the new `RisksAnalysis` entity among with the rest of the `risk` service entities under `Service Endpoints`.
 

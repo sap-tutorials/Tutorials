@@ -78,7 +78,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Instances and Subscriptions](instances_and_subscriptions.png)
 
-3. Choose **Provider Manager** on the left and refresh the `HTML5 Apps` entry there.
+3. Choose **Channel Manager** on the left and refresh the `HTML5 Apps` entry there.
 
     !![Refresh HTML5 Apps](refresh_html5_apps.png)
 

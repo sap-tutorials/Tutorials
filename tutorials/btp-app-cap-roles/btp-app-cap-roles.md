@@ -11,8 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - For this tutorial, you have two options:
-  - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
+ - Before you start with this tutorial, you have two options:
+  - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
     - Complete the previous tutorial [Use a Local Launch Page](btp-app-launchpage) with all its prerequisites.
 
 
