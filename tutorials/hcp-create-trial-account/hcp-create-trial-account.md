@@ -85,9 +85,6 @@ Click on **Log on** to log on to your verified account.
 
 You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on **Go To Your Trial Account** to navigate to your global account.
 
- !![enter trial account](enter-trial.png)
-
-
 > Bookmark the link for fast and quick access to the cockpit.  
 
 
