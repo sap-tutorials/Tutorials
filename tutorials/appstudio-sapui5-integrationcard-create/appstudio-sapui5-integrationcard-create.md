@@ -9,13 +9,13 @@ author name: Boris Dafov
 ---
 
 ## Prerequisites
->If you are following this tutorial as part of a workshop, you can skip the prerequisites as this configuration was done for you.
-
+- Please note that if you are following this tutorial as part of a workshop, you can skip these prerequisites.
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
 - To deploy a UI5 Integration card in the SAP Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Work Zone service. Additionally, you have to configure a destination for SAP Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
-- **IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
+
+>**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
 ## Details
