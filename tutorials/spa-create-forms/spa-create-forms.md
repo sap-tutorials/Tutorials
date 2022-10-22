@@ -9,17 +9,14 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process)
-
 ## Details
 ### You will learn
-  - How to add interactive forms in the process
+  - How to add interactive forms to the process
   - How to design the form with layout and input fields using drag-and-drop approach
-  - How to configure the forms as the process steps 
+  - How to configure the forms as the process steps
 
 ---
+
 Tasks are a part of any business process. **SAP Process Automation** helps you to create forms that are made available to the business users in their inboxes to take relevant action.
 
 These interactive forms can be created by dragging and dropping the text elements and input fields into the canvas. Once a form has been created, it can then be used as a process trigger to start the process or added as an approval step in the business process.
@@ -29,6 +26,8 @@ Let us now explore how these different forms are created. In the steps below, yo
 -	Start the approval process.
 - Send a task in the inbox of the business user for approval.
 - Notify the requester for approval or rejection.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Create a form to trigger a business process)]
 
@@ -136,14 +135,27 @@ You can create these different forms using the **Form Builder** embedded in the 
 
 5.	Go back to the process builder to map the process content with the form input fields, and select the **Approval Form** to configure the **General** information section.
 
-    - In the **Subject** box, enter **Review and approve order**.
-    - Then select **Order Number > Order Processing Form** from the Process Content.
-    - Enter **from**.
-    - Select **Customer Name > Order Processing Form** from the Process Content.
-    - Enter **company**.
-    - For **Users** in **Recipients**, select **Process Started By > Process Metadata** from the Process Content.
+    - In the **Subject** section,
+        - enter **Review and approve order**.
+        - Then select **Order Number > Order Processing Form** from the Process Content.
+        - enter **from**.
+        - select **Customer Name > Order Processing Form** from the Process Content.
+        - enter **company**.
 
-    !![03-027](unit3-13.png)
+        > The Subject configuration of the form will be shown when this task appears in the `MyInbox`.
+
+    - For **Users** in **Recipients** section,
+        - select **Process Started By > Process Metadata** from the Process Content.
+
+        > This form will appear as the task in the `MyInbox` of the given Recipients to take action.
+
+    - In **Due Date** section,
+        - select **Duration** as **type of due date**  
+        - enter **2 Days** as the duration
+
+        > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or Within 1 day if the task is supposed to be completed in 1 day etc.
+
+    !![03-027](unit3-13a.png)
 
 6.	Similarly, go to the **Inputs** tab and map the different input fields (which were marked as read-only in the approval form) by selecting the respective **Process Content** entry.
 
@@ -265,14 +277,12 @@ These notifications will appear in the inbox of the requester as a task.
 
 12. Change the order rejection form in the form builder to reflect the data for rejection case.
 
-    - Do not forget the **Save** the form once completed.
-
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
     | Headline 1 | Order Rejection
     | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:
 
-    - For the below **Input Field** enter the label and select the **Read Only** checkbox.
+    - For the below **Input Field** enter the label:
 
     | Form Fields| Field Settings with Label
     |  :------------- | :-------------
