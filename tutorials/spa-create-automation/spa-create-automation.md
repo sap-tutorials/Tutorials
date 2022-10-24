@@ -2,7 +2,7 @@
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
 title: Create an Automation to Extract Data
-description: Create an automation to extract order details from an excel file
+description: Create an automation to extract order details from an Excel file
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier ]
@@ -26,7 +26,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 
 [ACCORDION-BEGIN [Step 1: ](Create the Automation)]
 
- In this exercise, you will automate the process to read the *sales order* details from an Excel and select the specific sales order details based on the input from the submitted form. To design your automation, you will need an excel file filled with the sales orders data. You have the possibility to create it yourself using the following data:
+In this exercise, you will automate the process to read the *sales order* details from an Excel and select the specific sales order details based on the input from the submitted form. To design your automation, you will need an excel file filled with the sales orders data. You have the possibility to create it yourself using the following data:
 
 | Order Number| Order Amount | Order Date | Shipping Country         | Expected Delivery Date | Order Status
 |  :----------| :------------|:-----------| :------------------------|:-----------------------|:-----------
@@ -51,7 +51,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 2. A pop up will appear to configure the Desktop Agent version. Do the following in the pop up:
 
     - From the dropdown, select the version of the Desktop Agent installed on your machine. It would be displayed with suffix as **Registered**.
-    - Choose **Confirm** button.
+    - Choose the **Confirm** button.
 
     ![001](002.png)
 
@@ -59,7 +59,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 
     -  Under Name Field enter: **Get Order Details**,
     -  Under Description enter: **Automation for Order Process**,
-    -  Choose **Create** button.
+    -  Choose the **Create** button.
 
     > Identifier will be auto-filled.
 
@@ -74,7 +74,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 
 [ACCORDION-BEGIN [Step 2: ](Create Environment Variable)]
 
-Business projects usually need to use parameters and variable at runtime. These variables are usually saved in their runtime landscapes e.g., Dev, Test or Production environments. In this case, you will need to maintain an environment variable that will contain the file full path of the excel file used in the automation.
+Business projects usually need to use parameters and variable at runtime. These variables are usually saved in their runtime landscapes for example Dev, Test or Production environments. In this case, you will need to maintain an environment variable that will contain the file full path of the Excel file used in the automation.
 
 > Environment Variables allow you to reuse certain information for a given environment. You use environment variables to pass parameters to automations.
 
@@ -90,7 +90,7 @@ Business projects usually need to use parameters and variable at runtime. These 
 
     - Under Identifier enter: `OrderFilePath`,
     - Under Type select **String**,
-    - Choose **Create** button.
+    - Choose the **Create** button.
 
     ![001](007.png)
 
@@ -110,10 +110,10 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     ![001](009.png)
 
-    > Since excel is used in this automation, you have to open an excel instance. Open Excel Instance is a mandatory activity to use when using Excel. Once you open an Excel instance, you can use other Excel activities.
+    > Since Excel is used in this automation, you have to open an Excel instance. Open Excel Instance is a mandatory activity to use when using Excel. Once you open an Excel instance, you can use other Excel activities.
 
-2.  To open **Excel Instance**:
-    -  In Automation Details section on the right, search for the **Open Excel Instance** activity,
+2.  To open the **Excel Instance**:
+    -  In the Automation Details section on the right, search for the **Open Excel Instance** activity,
     -  **Drag and drop** the activity into the canvas.
 
     ![001](010.png)
@@ -127,7 +127,7 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     ![001](011.png)
 
-4. Select Excel Cloud Link, in the details on the right side, choose **Edit activity** button.
+4. Select Excel Cloud Link, in the details on the right side, choose the **Edit activity** button.
 
     ![001](012.png)
 
@@ -139,7 +139,7 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     > The Excel file is mapped automatically.
 
-6.  In the Workbook Path field enter the Environment Variable as `OrderFilePath` which was created above as the parameter value for **Workbook path**.
+6.  In the Workbook Path field enter the Environment Variable as `OrderFilePath`, which was created above as the parameter value for **Workbook path**.
 
     ![001](014.png)
 
@@ -147,9 +147,9 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     ![001](015.png)
 
-    > A pop up appears to create a data type. A **Sales Order** variable is needed to collect the data from the excel sheet columns. In this step, a variable is automatically created from the excel file columns.
+    > A pop up appears to create a data type. A **Sales Order** variable is needed to collect the data from the Excel sheet columns. In this step, a variable is automatically created from the Excel file columns.
 
-8. Under Name of the data type **Sales Order** and choose **Create** button.
+8. Under Name of the data type **Sales Order** and choose the **Create** button.
 
     !![001](016.png)
 
@@ -169,9 +169,9 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     !![001](020.png)
 
-    >Once Excel is no longer required, close the excel instance. Close Excel Instance activity closes an instance of Excel.
+    >Once Excel is no longer required, close the Excel instance. Close Excel Instance activity closes an instance of Excel.
 
-12. To close the opened instance of the excel file:
+12. To close the opened instance of the Excel file:
     - In the Automation Details search for the activity **Close Excel Instance**,
     -  Drag and drop the activity into the canvas.
 
@@ -230,7 +230,7 @@ Variables that are used, build your automation, and are data storage that have a
 
 [ACCORDION-BEGIN [Step 6: ](Looping through Excel Sheet and searching for the Order)]
 
-Now you will loop through each **Order** from the excel sheet, retrieve the order details for order number submitted in the **Order Processing Form**. **For Each** control allows you to go through a list of members provided as input to your automation, and execute an action for each member in that list.
+Now you will loop through each **Order** from the Excel sheet, retrieve the order details for order number submitted in the **Order Processing Form**. **For Each** control allows you to go through a list of members provided as input to your automation, and execute an action for each member in that list.
 
 This control has the following loop parameters:
 
@@ -263,7 +263,7 @@ This control has the following loop parameters:
 
 5.  A pop up window appears to enter the condition expression:
     - You can enter this expression manually or you can expand the **Variables** list and select the given variables to form the expression: `Step0.OrderNumber === Step5.currentMember.orderNumber`,
-    - Select **Save Expression** button.
+    - Select the **Save Expression** button.
 
     !![001](032.png)
 
@@ -283,7 +283,7 @@ This control has the following loop parameters:
 
     !![001](034.png)
 
-    > Once the order number is found in the excel, use the control **End Loop** to stop the loop.
+    > Once the order number is found in the Excel, use the control **End Loop** to stop the loop.
 
 8. To end loop:
     - Click on the canvas,
@@ -333,7 +333,7 @@ Apart from creating an output parameter, it is mandatory to pass the data throug
 
     !![001](040.png)
 
-7. Choose **Save** button.
+7. Choose the **Save** button.
 
 [DONE]
 [ACCORDION-END]
@@ -372,7 +372,7 @@ Apart from creating an output parameter, it is mandatory to pass the data throug
 
 [ACCORDION-BEGIN [Step 9: ](Simplify the Start Form)]
 
-After the design of the automation that retrieves the data form the excel file, simplify the start form by deleting the not needed fields.
+After the design of the automation that retrieves the data form the Excel file, simplify the start form by deleting the not needed fields.
 
 1. In the Order Processing Process tab:
     - Select 3 dots next to **Order Processing Form**,
