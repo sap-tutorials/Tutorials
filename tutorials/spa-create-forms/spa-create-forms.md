@@ -150,8 +150,8 @@ You can create these different forms using the **Form Builder** embedded in the 
         > This form will appear as the task in the `MyInbox` of the given Recipients to take action.
 
     - In **Due Date** section,
-        - select **Duration** as **type of due date**  
-        - enter **2 Days** as the duration
+        - select **Duration** as **type of due date**,
+        - enter **2 Days** as the duration.
 
         > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or within 1 day if the task is supposed to be completed in 1 day etc.
 
