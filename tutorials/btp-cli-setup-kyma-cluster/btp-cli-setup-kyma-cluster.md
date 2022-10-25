@@ -1,5 +1,5 @@
 ---
-title: Set up a Kyma Cluster on the Command Line
+title: Set up a Kyma Cluster Using the Command Line
 description: You can use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.
 author_name: Anna Wenger
 time: 30
@@ -10,7 +10,7 @@ keywords: btp, btp cli, btpcli, command line, command line interface, command li
 
 ## Details
 ### You will learn
-  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit
+  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit (see [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) for the same procedure in the cockpit).
   - That the creation of the Kyma cluster takes about 15 - 25 minutes. It happens after step 3 in this tutorial, so you might want to plan in a coffee break before continuing with step 4.
 
 ## Prerequisites
@@ -39,7 +39,7 @@ btp list accounts/subaccount
 btp target --subaccount <subaccount ID from your clipboard>
 ```
 
-Once the target is set to the subaccount, you no longer need to specify the subaccount ID with any command.
+Once the target is set to the subaccount, you no longer need to specify the subaccount ID with every command.
 
 [DONE]
 [ACCORDION-END]
@@ -52,9 +52,9 @@ btp list accounts/entitlements
 ```
 
 
-If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements:
+If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements, and that you do need the subaccount ID one last time in this case (luckily, it should still be in your clipboard):
 ```Shell/Bash
-btp assign accounts/entitlement --for-service kymaruntime --plan free --amount 1  
+btp assign accounts/entitlement --to-subaccount <subaccount ID from your clipboard> --for-service kymaruntime --plan free --amount 1  
 ```
 
 If you're not working in a free tier subaccount, see [Available Plans in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/befe01d5d8864e59bf847fa5a5f3d669.html).
@@ -80,7 +80,7 @@ btp create accounts/environment-instance --display-name my-environment-instance 
 
 A new Kubernetes cluster is set up, in which the Kyma runtime and all its components will run.
 
-To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance --subaccount <ID>` ‒ once Kyma appears with status `OK`, you can continue.
+To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance` ‒ once Kyma appears with status `OK`, you can continue.
 
 [DONE]
 [ACCORDION-END]
@@ -117,7 +117,7 @@ in PowerShell 7.x (Windows, Mac, Linux):
 curl https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<EnvironmentID> > <file-path>\kubeconfig.yaml
 ```
 
-in macOS:
+in macOS and Linux:
 ```Shell/Bash
 curl -o kubeconfig.yaml https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<ENVIRONMENT-ID>
 ```
@@ -149,7 +149,7 @@ Alternatively, add the path in system variables as follows:
 
 [OPTION END]
 
-[OPTION BEGIN [Mac]]
+[OPTION BEGIN [MacOS and Linux]]
 
 ```Shell/Bash
 export KUBECONFIG={KUBECONFIG_FILE_PATH}   
@@ -171,18 +171,20 @@ kubectl get namespaces
 
 >You get a token which will also be valid for future sessions.
 
+To learn more about the Kyma environment and its functionality, see:
+
+- [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
+- [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
+- [kyma-project](https://kyma-project.io/docs/kyma/latest)
+- [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
+- [Cloud Native for Beginners - YouTube](https://youtube.com/playlist?list=PL6RpkC85SLQCwaJ54TAAHMvSl5wpVPrai)
+- [Mission: Develop a Full-Stack Application in the Kyma Runtime](mission.cp-kyma-full-stack)
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Assign Roles to users)]
 
-If you don't want to do all the work in your Kyma cluster by yourself, you can assign roles to other users.
-
-See [Assign Roles in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US&version=Cloud) for cockpit equivalent
-
-[DONE]
-[ACCORDION-END]
 
 
 

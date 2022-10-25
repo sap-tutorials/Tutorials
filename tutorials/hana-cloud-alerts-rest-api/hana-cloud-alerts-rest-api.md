@@ -24,7 +24,7 @@ The REST API provides a simple and easy to consume method to enable access to al
 
 [ACCORDION-BEGIN [Step 1: ](Get started with the REST Client extension for Visual Studio Code)]
 
-There are multiple tools that enable making calls to a REST API such as Postman, browser extensions, libraries in programming languages such as [requests](https://realpython.com/api-integration-in-python/#rest-and-python-consuming-apis) in Python or [https](https://nodejs.dev/learn/making-http-requests-with-nodejs) in Node.js.  Feel free to use the tool of your choice.  This tutorial will be using the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code.
+There are multiple tools that enable making calls to a REST API such as Postman, browser extensions, libraries in programming languages such as [requests](https://realpython.com/api-integration-in-python/#rest-and-python-consuming-apis) in Python or [https](https://nodejs.org/api/https.html) in Node.js.  Feel free to use the tool of your choice.  This tutorial will be using the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code.
 
 1. If required, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -187,14 +187,14 @@ The following instructions will show a few examples of how to view the list of t
 
 4. Available alert rules can also be accessed with the REST API. Add the following content to `AlertsAndMetrics.http` above the `#Authorization REST API call` line.
 
-    ```
+    ```HTTP
     #A specific alert rule
     @alertRule = HDBDiskUsage
     ```
 
 5. Add the following calls to the bottom of the REST API calls section of the `AlertsAndMetrics.http` file after the last line with ###.
 
-    ```
+    ```HTTP
     #Get the list of alerts (rules) for a specific instance
     GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/rules
     Authorization: Bearer {{bearer}}

@@ -9,17 +9,13 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process) and [Create and Configure Forms](spa-create-forms)
-
 ## Details
 ### You will learn
   - How to create and configure process condition
   - How to define different process flows for each conditional criteria
 
 ---
-**Process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
+A **process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
 In this unit, you will learn how to use process condition in a business process to get rid of unnecessary approvals when the process is routed for auto-approval or one-step-approval flow based on the sales order criteria.
 
@@ -57,17 +53,30 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Value and save](value-save.png)
 
-6. Now, link your **Default** branch to **Approval Form**.
+6. Similarly, add one more condition
+    - Click **Add Group**
+    - In the group section,
+        - Select **Any** to make it **OR** conditional group
+        - Select **Shipping Country is equal to India** as the first condition
+        - Select **Shipping Country is equal to Germany** as the second condition
+
+    > You can expand the Summary section to see the how the process conditions are designed
+
+    - Finally, click **Apply** to add the condition to the business process
+
+    !![Add Group](unit5-05.png)
+
+7. Now, link your **Default** branch to **Approval Form**.
 
     !![Process Content](process-content.png)
 
     With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.    
 
-7.	Lets decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
+8.	Let's decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
 
     !![Delete branch](delete-branch.png)
 
-8. To create the new form, add the **New Form** from the **If-route**.
+9. To create the new form, add the **New Form** from the **If-route**.
 
     !![Process Content](unit5-03.png)
 
@@ -81,7 +90,7 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Process Content](unit5-04.png)
 
-9. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
+10. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
 
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
@@ -98,11 +107,11 @@ Now that you have designed the process with forms, let us define which process f
     | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-10. Save your work.
+11. Save your work.
 
     !![Design Form](design-form.png)
 
-11. Go back to the process builder and configure the auto approval form.
+12. Go back to the process builder and configure the auto approval form.
 
     - Configure the **General** section.
 
@@ -123,9 +132,9 @@ Now that you have designed the process with forms, let us define which process f
 
     !![Inputs](inputs.png)
 
-12. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
+13. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
 
-    - Do not forget to **Save** the process once done.
+    - Do not forget to **Save** the process once done.  
 
     !![End](end-process.png)
 

@@ -110,7 +110,7 @@ The code builds a model using the [California Housing Dataset](https://scikit-le
 
 [ACCORDION-BEGIN [Step 4: ](Transform your AI code into a Docker image)]
 
-In the same directory, create a file named `Dockerfile` with has **no extension**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content **exactly** as it is, into the file:
+In the same directory, create a file named `Dockerfile` with **no extension**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content **exactly** as it is, into the file:
 
 ```TEXT
 # Specify which base layers (default dependencies) to use
@@ -143,10 +143,12 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
-docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+docker buildx build –load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
+
+> **INFORMATION** The platform information relates to your operating system, for example `linux/amd64`.
 
 The result of this command should be:
 
@@ -198,9 +200,18 @@ Click **Docker Registry Secrets** in the **AI Core Administration** app. Click *
 
 !![image](img/ail/1.png)
 
-Enter your details in the dialog box.
+Name your secret, and paste and edit the snippet into the `Secret` field.
 
-!![image](img/ail/2.png)
+```JSON
+{
+    "data": {
+        ".dockerconfigjson": "{\"auths\":{\"YOUR_DOCKER_REGISTRY_URL\":{\"username\":\"YOUR_DOCKER_USERNAME\",\"password\":\"YOUR_DOCKER_ACCESS_TOKEN\"}}}"
+    },
+    "name": "credstutorialrepo"
+}
+```
+
+!![image](img/ail/DockerSecret.png)
 
 
 [OPTION END]

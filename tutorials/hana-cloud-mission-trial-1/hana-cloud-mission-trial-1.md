@@ -95,7 +95,7 @@ In this tutorial, you will first learn how to sign up for the free tier model or
 
 -	Trial database instances will be **stopped every day** at midnight in the time zone of the server location you selected. Each time you start working with your trial instance, you need to restart it first.
 
--	If you do not restart your instances within **60 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
+-	If you do not restart your instances within **30 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
 -	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **30GB of memory, 2vCPUs, and 120GB of storage**.
 

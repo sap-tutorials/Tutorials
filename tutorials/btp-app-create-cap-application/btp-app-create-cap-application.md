@@ -68,9 +68,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cds watch
     ```
 
-    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.`
+    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`
 
-    > If you get the error `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`, you can run the command:
+    > You can run the command:
 
     > ```bash
     > Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
@@ -125,7 +125,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     ```
 
 
-    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. They key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
+    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. The key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
 
     Notice how the CAP server reacted to dropping the file. It now tells you that it has a model but there are no service definitions yet and, thus, it still can't serve anything. Next, you add a service definition.
 

@@ -1,6 +1,6 @@
 ---
 title: Tour the SAP Community 2022
-description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership.
+description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership. 
 
 auto_validation: true
 time: 25  
@@ -82,7 +82,7 @@ To gain a better understanding of topic pages, watch this video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60gN_YRV2o0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Follow Activity:** **`Follow a tag`**
+**Follow Activity:** **`Follow a tag`** 
 
 As just mentioned, you can follow a tag from the topic page to get notified (via e-mail and/or SAP Community inbox) about new content (blog posts, questions and answers) posted with that tag. You will also view this content in your [Activity Stream](https://activities.sap.com/),
 

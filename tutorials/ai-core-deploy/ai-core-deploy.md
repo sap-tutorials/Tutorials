@@ -1,4 +1,4 @@
----
+kserve---
 title: Make Predictions for House Prices with SAP AI Core
 description: Deploy AI models and set up serving pipelines to scale prediction server.
 auto_validation: true
@@ -201,7 +201,7 @@ spec:
       - name: greetmessage # placeholder name
         type: string # required for every parameters
   template:
-    apiVersion: "serving.kubeflow.org/v1beta1"
+    apiVersion: "serving.kserve.org/v1beta1"
     metadata:
       annotations: |
         autoscaling.knative.dev/metric: concurrency   # condition when to scale
@@ -216,7 +216,7 @@ spec:
         minReplicas: 1
         maxReplicas: 5    # how much to scale
         containers:
-        - name: kfserving-container
+        - name: kserve-container
           image: "docker.io/<YOUR_DOCKER_USERNAME>/house-server:01"
           ports:
             - containerPort: 9001    # customizable port

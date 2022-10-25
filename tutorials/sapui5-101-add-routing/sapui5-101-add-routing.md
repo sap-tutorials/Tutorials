@@ -3,10 +3,10 @@ title: Add Views and Define Routes to Access Them
 description: Add new views to the SAPUI5 web application and declare them in the manifest.
 auto_validation: true
 primary_tag: programming-tool>sapui5
-author_name: Nico Geburek
-author_profile: https://github.com/nicogeburek
-tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio  ]
+tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-application-studio  ]
 time: 20
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 ## Details
@@ -69,9 +69,11 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
-**Add** the new targets and routes to the existing `webapp/manifest.json` file.
+**Change** the pattern for the first route ("RouteView1") from `:?query:` to `RouteView1` (line 16) in the `webapp/manifest.json` file, so that we can define a new default route.
 
-```JSON[21-34,43-57]
+**Add** the new targets and routes to the `webapp/manifest.json` file.
+
+```JSON[16,21-34,43-57]
 {
     "_version": "1.12.0",
     "sap.app": {
@@ -90,21 +92,21 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
                   "pattern": "RouteView1",
                   "target": [
                     "TargetView1"
-                  ]
+                    ]
                 },
                 {
                     "name": "home",
                     "pattern": "",
                     "target": [
                         "TargetList"
-                    ]
+                        ]
                 },
                 {
                     "name": "detail",
                     "pattern": "product/{productId}",
                     "target": [
                         "TargetDetail"
-                    ]
+                        ]
                 }
             ],
             "targets": {

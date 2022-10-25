@@ -49,7 +49,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to you
 
     !![Enter app properties](3-add-app-properties.png)
 
-    >When working in your own environment, it is better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
+    >When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
 3. Click the **NAVIGATION** tab to specify the intent of your app.
 

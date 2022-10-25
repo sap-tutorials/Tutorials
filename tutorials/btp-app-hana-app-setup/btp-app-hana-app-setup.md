@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add SAP HANA Support to Your Project
-description: This tutorial shows you how to set up the SAP HANA cloud service instance.
+description: This tutorial shows you how to set up the SAP HANA Cloud service instance.
 keywords: cap
 auto_validation: true
 time: 25
