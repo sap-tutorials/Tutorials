@@ -129,7 +129,7 @@ Once the installation steps of the SAP Robotic Process Automation setup wizard a
 
 1. After Step 3 completed. Open the **Download Page**. If the **Register Agent** is enabled, refresh the page.
 
-    !![Tenant data](agent3-037.png)
+    !![Tenant data](agent3-037.png) 
 
 2. Once the process is completed, open the **Desktop Agent 3** and confirm the tenant configuration.
 
