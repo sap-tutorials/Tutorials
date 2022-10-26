@@ -399,7 +399,7 @@ To produce and raise an event you need first to define your RAP Business Object 
 
 >For more information about how to create instance of SAP Event Mesh [link] (https://developers.sap.com/tutorials/cp-enterprisemessaging-instance-create.html)
 
-  1. Logon to your cloud system and navigate to **communication Arrangement**.
+  1. Log on to your cloud system and navigate to **communication Arrangement**.
 
     ![comm](8-1.png)
 
