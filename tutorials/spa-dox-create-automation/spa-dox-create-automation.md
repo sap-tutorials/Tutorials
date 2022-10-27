@@ -270,7 +270,7 @@ primary_tag: software-product>sap-process-automation
 
 1. Select Test button and enter the `Filepath` where the invoice document is stored locally on your machine.
 
-    !![Test](038.png)
+    !![Test](038.png)[Create an automation to extract Invoice Details](spa-dox-create-automation)
 
 2. The automation opens the Invoice Document, extracts data and prints the details i.e Document number, Gross amount and Sender name.
 
