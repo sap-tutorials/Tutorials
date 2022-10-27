@@ -10,7 +10,7 @@ primary_tag: products>sap-business-technology-platform
 ## Prerequisites
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region.
+- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup)
 
 
@@ -78,7 +78,7 @@ With the service instances and corresponding credentials that you set up (as des
 
 5. In the following screen, enter the information from the table below:
 
-    !![Data Upload Configure Environment3](Data Upload Configure Environment 3.png)
+    ![Data Upload Configure Environment 3](Data Upload Configure Environment 3.png)
 
 
 |  Field Name                                | Value
@@ -271,12 +271,12 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 
 ### Check uploaded regular sales price ###
 
-!![Data Access Service Base Price 1](Data Access Service Base Price 1.png)
+!![Data Access Service Base Price 1](Data Access Service Base Price 1_new.png)
 
 !![Data Access Service Base Price 1b](Data Access Service Base Price 1b.png)
 
 1. For **API Environment**, select your trial environment for the Data Access service.
-2. On the left-hand side, choose `BasePrices` to read the list of regular sales prices.
+2. On the left-hand side, choose `Regular Prices` to read the list of regular sales prices.
 3. Select **Try Out**.
 4. Choose **Execute**.
 5. Make sure you get the HTTP response **200**.

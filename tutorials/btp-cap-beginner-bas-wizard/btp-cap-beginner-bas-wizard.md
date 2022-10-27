@@ -59,7 +59,11 @@ In the previous step you've created an already runnable application. To demo tha
 
 > A run configuration is a collection of settings and files to run/debug your application.
 
-1. Select **Create Configuration**.
+1. Go to **Terminal > New Terminal** and from the terminal, execute `npm install`.
+
+   This installs all dependencies from your `package.json`.
+
+1. Go to the **Run Configurations** panel and select **Create Configuration**.
 
 1. Choose `bookshop - development profile (CAP)`.
 
@@ -71,11 +75,6 @@ In the previous step you've created an already runnable application. To demo tha
 
     !![Create run configuration.](add-run-conf.png)
 
-When your application is running, you need to expose a port from the environment the studio is running in.
-
-A convenient way of doing this is to have the studio prompt you to expose the port. Just confirm and give the port a name.
-
-!![Expose Port](expose_port.png)
 
 Open the URL and look at the application, including the sample data for the `Books` entity (select **Books**) that is being served. This is your first, full-fledged OData service created with CAP.
 

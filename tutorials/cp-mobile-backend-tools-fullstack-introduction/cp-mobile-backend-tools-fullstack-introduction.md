@@ -2,7 +2,7 @@
 title: Understand Full-Stack Development with Mobile Back-End Tools
 description: Understand how SAP Mobile Services Mobile Back-End Tools (MBT) can solve common mobile offline challenges.
 auto_validation: true
-time: 5
+time: 10
 tags: [ tutorial>beginner, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
 primary_tag: topic>mobile
 
@@ -71,7 +71,7 @@ Therefore, usually MBT's central starting point is the metadata file, respective
 
 On the one hand, MBT provides runnable tasks that generate a database persistence or persistence descriptor (SQL), reflecting the whole OData model. On the other hand, MBT can build a transparent OData service [based on existing database tables](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/existing-tables.html).
 
-Different database types are supported depending on the runtime. Following databases may e.g. be used with the tools in certain environments (Derby and H2 only for testing, please refer to documentation and/or Product Availability Matrix for official support statements):
+Different database types are supported depending on the runtime. Following databases may e.g. be used with the tools in certain environments (Derby and H2 only for testing, please refer to [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/service-generator.html#option-bind-db-typedb-name) and/or Product Availability Matrix for official support statements):
 
   - SAP ASE
 

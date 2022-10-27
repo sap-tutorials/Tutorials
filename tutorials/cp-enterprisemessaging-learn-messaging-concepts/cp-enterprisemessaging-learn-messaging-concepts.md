@@ -3,8 +3,8 @@ title: Learn about SAP Event Mesh
 description: Learn about SAP Event Mesh, central concepts, and the benefits of decoupled communication and capabilities supported.
 time: 10
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-business-technology-platform]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, programming-tool>node-js, programming-tool>java, software-product>technology-platform>sap-business-technology-platform]
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
@@ -25,8 +25,6 @@ primary_tag: products>sap-event-mesh
 **SAP Event Mesh** is a fully-managed service to connect applications, services, and systems so they can interact with each other through messages and events.
 
 It replaces traditional point-to-point communication by introducing a **central message broker**. While point-to-point communication is fine for sharing data between a limited number of senders and receivers, scalability can quickly become an issue. SAP Event Mesh solves this issue and ensures messages can be exchanged reliably between senders and multiple receivers at large scale.
-
-![SAP Event Mesh](01.png)
 
 In addition, through the introduction of a message broker, you **decouple communication between applications, services, and systems** so that messages can be sent asynchronously (non-blocking). **Asynchronous communication** improves performance and scalability since senders are not slowed down or blocked while they wait for individual receivers to be online to receive direct messages.
 

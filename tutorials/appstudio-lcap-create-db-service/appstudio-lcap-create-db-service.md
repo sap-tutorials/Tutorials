@@ -11,6 +11,7 @@ author_profile: https://github.com/raz-korn
 
 ## Prerequisites
  - You have access to your Application Development Lobby.
+ - If you are doing this as part of Devtoberfest 2022, you can create a trial account and set up SAP Business Application Studio according to [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html), create a low-code Dev Space, and launch the dev space. Finally, create a project.
 
 ## Details
 ### You will learn
@@ -25,7 +26,7 @@ author_profile: https://github.com/raz-korn
 
 [ACCORDION-BEGIN [Step 1: ](Create a project)]
 
-1. Projects are created from the Application Development Lobby. You can access the Lobby using its bookmark (if you saved it) or from the SAP BTP cockpit: Select the subaccount you created using the [Set Up SAP Business Application Studio for Low-Code Development](appstudio-onboarding) tutorial, expand **Services**, click **Instances and Subscriptions**, and choose **SAP AppGyver**.
+1. Projects are created from the Application Development Lobby. You can access the Lobby using its bookmark (if you saved it) or from the SAP BTP cockpit: Select the subaccount you created using the [Set Up SAP Business Application Studio for Low-Code Development](appstudio-onboarding) tutorial, expand **Services**, click **Instances and Subscriptions**, and choose **`SAP AppGyver`**.
 
 2. Within the Application Development Lobby, click **Create** and select **Business Application**.
 
@@ -36,6 +37,8 @@ author_profile: https://github.com/raz-korn
     !![launch bas lcap](BAS-Create-Project-2-.png)
 
 3. Wait for the homepage of SAP Business Application Studio for low-code development to load.
+
+    >Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
 
     >Loading SAP Business Application Studio for low-code development may take some time, especially if it's the first time in a day.
 
@@ -129,9 +132,11 @@ author_profile: https://github.com/raz-korn
 
 [ACCORDION-BEGIN [Step 3: ](Model your data: Relationship between entities)]
 
-1. Select the **`Capex`** entity, and choose the **Add Relationship** icon to add a relationship to the **Contractors** entity.
+1. Select the **`Capex`** entity, choose the **Add Relationship** icon, and select the **Contractors** entity to add a relationship to the **Contractors** entity.
 
     !![bas lcap add relationship](BAS-LCAP-Data-Model-14-.png)
+
+    !![bas lcap add relationship](BAS-LCAP-Data-Model-14-2-.png)
 
 2. Select the following, and choose **Create**.
 
@@ -186,7 +191,7 @@ author_profile: https://github.com/raz-korn
     |:-----|:----------|:------|
     | A | Name | **Contractors** |
     | B | Namespace | **`CapitalExpendituresService`** (default) |
-    | C | Type | **`CapitalExpenditures.Contracotrs`** |
+    | C | Type | **`CapitalExpenditures.Contractors`** |
     | D | &lt;all properties> | Leave checked (default) |
     | E | contractor | Leave checked (default) |
     | F | name | Leave checked (default) |
@@ -198,6 +203,8 @@ author_profile: https://github.com/raz-korn
     !![bas lcap service editor](BAS-LCAP-Service-6-.png)
 
 5. Select the **`Capex`** service (Which gets highlighted with a blue rectangle indication), and check the **Draft Editing** property.
+
+    >A draft is an interim version of a business entity that has not yet been explicitly saved as an active version. This allows users to be e.g. interrupted, and continue later on. For more information visit [SAP Fiori Design Guidelines - Draft Handling](https://experience.sap.com/fiori-design-web/draft-handling/).
 
     !![bas lcap draft editing](BAS-LCAP-Service-7-.png)
 
@@ -215,19 +222,19 @@ author_profile: https://github.com/raz-korn
 [ACCORDION-BEGIN [Step 4: ](Preview your data)]
 It is a common practice in software development to test run any change to an app as soon as possible. Prior to having the services defined, you were not able to test the app. Since now you have defined the services, you can test them.
 
-1. Choose the **Preview** option from the homepage.
+1. Choose the **Preview** option from the homepage, and select either **With Sample Data** or **With Live Data** option.
 
     !![bas lcap launch preview](BAS-LCAP-Preview-Service-1-.png)
 
-2. A new tab appears with the links which allow you to test the service definition, access data exposed by the service, and more.
+2. The project preview page appears in a new tab with the links which allow you to test the service definition, access data exposed by the service, and more.
 
     !![bas lcap launch preview](BAS-LCAP-Preview-Service-3-.png)
 
-3. Choose the **$metadata** to view the service's XML.
+3. Choose the **metadata** to view the service's XML.
 
     !![bas lcap launch preview](BAS-LCAP-Preview-Service-4-.png)
 
-4. Choose the browser's **Back** button, and select the **`Capex`** or the **Contractors** links to view the data from the respective service.
+4. Select the **`Capex`** or the **Contractors** **view as code** to view the data from the respective service.
 
     !![bas lcap launch preview](BAS-LCAP-Preview-Service-5-.png)
 
@@ -243,36 +250,35 @@ To test that the service works well, i.e. returns data when it is available in t
 
     !![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-1-.png)
 
-2. Choose **Create**, select **contractors**, and choose **Create**.
+2. Choose **Create**, select **Contractors**, and choose **Create**.
 
     !![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-2-.png)
 
-3. Add the sample data, e.g.
+3. In the sample data editor add 4 rows.
 
-    ```csv
-    CONTRACTOR;NAME
-    1;SAP
-    2;Backer Berlin
-    3;Pear Computing Services
-    4;C.R.T.U.
-    ```
+    !![bas lcap edit sample data](BAS-LCAP-Add-Sample-Data-3-.png)
+
+4. Update the sample data as follows:
 
     !![bas lcap edit sample data](BAS-LCAP-Add-Sample-Data-4-.png)
 
-4. Repeat steps 1 - 3 for the **`Capex`** data model. Add the following sample data:
+5. Access the **Home** tab, and click the **+** of the **Sample Data** tile.
 
-    ```csv
-    ID;DESCRIPTION;TOTAL_COST;CONTRACTOR_CONTRACTOR
-    7bef2fdf-9b31-4e24-994a-81bb2c28c828;Solar panel connectors;384;4
-    3e6ad791-d531-4547-b4ad-f546a3dcfe14;Laptop maintenance;12645;3
-    7e7e667e-f52b-4aaa-8d8c-823d1d69f5f3;Bicycles;1723;2
-    ```
+    !![bas lcap edit sample data](BAS-LCAP-Add-Sample-Data-4-2-.png)
 
-5. Access the **Home** tab. You can see that the sample data is added to the **Sample Data** tile.
+6. Choose **Create**, select **`Capex`**, and choose **Create**.
+
+    !![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-4-3-.png)
+
+7. In the sample data editor add 3 rows, and update the **DESCRIPTION** and **CONTRACTOR** columns as follows:
+
+    !![bas lcap edit sample data](BAS-LCAP-Add-Sample-Data-4-4-.png)
+
+8. Access the **Home** tab. You can see that the sample data is added to the **Sample Data** tile.
 
     !![bas lcap sample data](BAS-LCAP-Add-Sample-Data-5-.png)
 
-6. Go back to the browser tab with the links to the services, and click either the link of the **Contractors** service or the link of the **`Capex`** service. You can view the sample data you have added.
+9. Go back to the **project preview** browser tab, and click either the link of the **Contractors** service or the link of the **`Capex`** service. You can view the sample data you have added.
 
     !![bas lcap view sample data from service](BAS-LCAP-Add-Sample-Data-6-.png)
 

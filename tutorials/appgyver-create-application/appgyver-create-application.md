@@ -1,59 +1,61 @@
 ---
-title: Create an Application with SAP AppGyver
-description: Create an application with SAP AppGyver on SAP BTP. The application, created in a browser, can be used with the AppGyver Previewer App to scan physical barcodes on food packaging to display calorific information.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-appgyver
-author_name: Akseli Virtanen
-author_profile: https://github.com/akseliv
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
+parser: v2
 ---
 
+# Create an Application with SAP AppGyver
+<!-- description --> Create an application with SAP AppGyver on SAP BTP. The application, created in a browser, can be used with the AppGyver Previewer App to scan physical barcodes on food packaging to display calorific information.
+
+
 ## Prerequisites
-- Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
-- Previously followed the steps provided in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service)
- - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://apps.apple.com/fi/app/appgyver/id1485395192)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+- Either an SAP BTP version of SAP AppGyver, as described in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service) or the free community edition of SAP AppGyver, available at [AppGyver.com] (https://www.appgyver.com).
+ - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
-
-## Details
-### You will learn
+## You will learn
   - How to create a no-code project with SAP AppGyver
   - How to add and edit visual elements in the AppGyver Composer tool
 
-  In this mission you will learn how to create a no-code application using the SAP 'AppGyver' Composer tool on SAP BTP. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the 'AppGyver' Preview app (available through iTunes and Google Play store) and sign up for an account using the same email address that your SAP BTP account uses.
+## Intro
+In this mission you will learn how to create a no-code application using the SAP AppGyver Composer tool. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the SAP AppGyver Preview app (available through iTunes and Google Play store).
 
-  The application you'll create across the tutorials will read barcodes from food packaging and display information about the product using the Open Food Facts API:
+The application you'll create across the tutorials will read barcodes from food packaging and display information about the product using the Open Food Facts API:
 
 ![Diagram of scanning a food item from a mobile app](OpenFoodFactsDiagram.png)
 
-  The steps provided detail the process using an SAP BTP account within a desktop browser. It is also possible to replicate many of the steps using a free account from [AppGyver.com](http://www.appgyver.com).
+The steps provided detail the process using an SAP BTP account within a desktop browser. It is also possible to replicate many of the steps using a free account from [AppGyver.com](https://AppGyver.com).
 
-  All applications are created, edited, and managed within what we call a project, with one application created per project. Projects, and their related applications, are not automatically saved in this service, so care should be taken before closing a browser.
+All applications are created, edited, and managed within what we call a project, with one application created per project. Projects, and their related applications, are not automatically saved in this service, so care should be taken before closing a browser.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP AppGyver project)]
+### Create SAP AppGyver project
 
-Projects are created from the application development lobby. To access this lobby from the SAP BTP Cockpit, click **Services - Instances and Subscriptions** and then select **SAP AppGyver**.
+>If you are working with the free version, just click **Create New**, fill in a name, and click **Create**.
+>
+>![Create in free version](CreateFromFree.png) 
 
-![Access application development lobby](access_lobby.png)
+1. In BTP, SAP AppGyver projects are created from the application development lobby. To access this lobby from the SAP BTP Cockpit, click **Services - Instances and Subscriptions** and then select **SAP AppGyver**.
 
-Within the application development lobby, click **Create** and then select ***AppGyver Project***.
+    ![Access application development lobby](access_lobby.png)
 
-![Create AppGyver Project](Create_AppGyver_Project.png)
+2. Within the application development lobby, click **Create** and then select **AppGyver Project**.
 
-Enter a `Project name` and an optional description, then click **Create**.
+    ![Create AppGyver Project](Create_AppGyver_Project.png)
 
-![Create AppGyver Project](Projectname.png)
+3. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
 
-Your AppGyver application is created, with the AppGyver Composer Pro view displayed.
+    ![Create AppGyver Project](Projectname.png)
 
-For reference: Once created, projects can be accessed again at any time from your application development lobby.
+Your AppGyver application is created, with the AppGyver Composer Pro view displayed. Once created, projects can be accessed again at any time from your application development lobby.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand SAP AppGyver)]
+
+### Understand SAP AppGyver
 
 ![AppGyver Composer Pro](composerPro.png)
 
@@ -65,36 +67,29 @@ When working with AppGyver Composer Pro, the majority of your time will be spent
 - Integrate with external data resources
 - Bind data to your components to create dynamic views, and more
 
-For more detailed coverage of the features available in AppGyver's Composer Pro, view: [AppGyver Documentation](https://docs.appgyver.com/overview/introduction)
-
-[DONE]
-[ACCORDION-END]
+For more detailed coverage of the features available in AppGyver's Composer Pro, view the [AppGyver documentation](https://docs.appgyver.com/).
 
 
-[ACCORDION-BEGIN [Step 3: ](Edit app interface)]
+
+### Edit app interface
 
 You'll now start to create a basic layout for your application, starting with editing text.
 
-Click the existing **Headline** field and edit the text to read:
-
-- `Barcode Scanner`
+Click the existing **Headline** field and edit the text to read:  `Barcode Scanner`
 
 ![Edit UI Headline](EditHeadline.png)
 
-Click the **Paragraph** field and edit the text to read:
-
-- `Scan a barcode of a food product using your smartphone`
+Click the **Paragraph** field and edit the text to read: `Scan a barcode of a food product using your smartphone`
 
 ![Barcode Scanner](BarcodeScanner.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add scan button)]
 
-Next you'll need to add a Scan button which, when tapped, will open the camera device on your smartphone.
+### Add scan button
 
-To do this, locate the **Button** component (found under: Core – Forms) and drag and drop this underneath the paragraph field.
+Next, you'll need to add a Scan button which, when tapped, will open the camera device on your smartphone.
+
+To do this, locate the **Button** component (found under **Core > Forms**) and drag and drop this underneath the paragraph field.
 
 ![Adding a button](AddButton.png)
 
@@ -108,12 +103,11 @@ Click **Save**.
 
 The application is now saved in draft and available to preview using the AppGyver Preview app on your smartphone.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Preview app in AppGyver previewer)]
 
-Once downloaded to your smartphone, you can login to your AppGyver account on the SAP BTP within the app using a QR code.
+### Preview app in AppGyver previewer
+
+Once downloaded to your smartphone, you can log into your AppGyver account using a QR code.
 
 To scan the QR code, click **Launch**.
 
@@ -125,5 +119,3 @@ Then using your AppGyver Preview app login screen, scan the available QR code.
 
 The application refreshes and your project is available to view.
 
-[DONE]
-[ACCORDION-END]

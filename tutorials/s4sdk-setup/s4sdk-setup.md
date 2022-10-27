@@ -1,15 +1,15 @@
 ---
 title: Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
-description: Set up your system to create an SAP Cloud Platform application with the SAP Cloud SDK.
+description: Set up your system to create an SAP Business Technology Platform application with the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
+primary_tag: software-product>sap-cloud-sdk
 time: 10
 ---
 
 ## Details
 ### You will learn  
-In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
+In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Business Technology Platform application.
 
 For a complete overview, visit the [SAP Cloud SDK documentation](https://sap.github.io/cloud-sdk/).
 
@@ -25,17 +25,13 @@ To develop with the [SAP Cloud SDK for Java](https://sap.github.io/cloud-sdk/doc
 
 If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
 
-> Note: Java 11 is only available on SAP Cloud Platform: Cloud Foundry
+> Note: Java 11 is only available on SAP Business Technology Platform: Cloud Foundry
 
 [OPTION BEGIN [On Windows]]
 
 For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 
-1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by opening a console and issuing the following command:
-
-    ```shell
-    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-    ```
+1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by following the [Chocolatey installation guide](https://chocolatey.org/install).
 
 2. Install the Java Development Kit:
 
@@ -130,7 +126,7 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 </settings>
 ```
 
-After finishing these steps, you are ready to start the development of your SAP Cloud Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
+After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
 [DONE]
 

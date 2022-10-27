@@ -11,7 +11,7 @@ primary_tag: products>sap-business-technology-platform
 - You have completed the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region.
+- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
 
@@ -132,6 +132,7 @@ With this, you uploaded the regular sales price of **500 Euro** for the product 
 
 !![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
 !![Data Upload Regular Promotional Rule 1b](Data Upload Regular Promotional Rule 1b.png)
+
 
 1. For **API Environment**, select the trial environment you have created for the Data Upload service.
 2. On the left-hand side, choose **Upload promotions using OAuth2**.

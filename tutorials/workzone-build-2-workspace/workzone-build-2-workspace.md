@@ -29,7 +29,7 @@ In this tutorial, you're going to create a workspace where employees who joined 
 
 [ACCORDION-BEGIN [Step 1: ](Download images for your workspace)]
 
-First download these image files so that they're on your computer ready for you to add to your workspace pages:
+Before you start, download these image files so that they're on your computer ready for you to add to your workspace pages:
 
 - [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
 - [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
@@ -57,9 +57,11 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
-3. Enter this name for your workspace: `Employee Innovation Hackathon`.
+3. Enter this name for your workspace: `Employee Innovation Hackathon`. If you're taking part in a workshop, please add your unique identifier to the workspace name like this: `<your unique identifier>_Employee Innovation Hackathon`.
 
     >**Tip:** Always use a name that would help users distinguish your workspace from others.
+
+
 
 4. Copy and paste this description for your workspace: `Get together and find the answers to your questions about the hackathon!`
 
@@ -98,17 +100,18 @@ Now, let's add content to the workspace.
 
 [ACCORDION-BEGIN [Step 4: ](Change the image in the workspace header)]
 
-When you create a new workspace the header has a dark and light blue background. You can replace this background with your own.
+When you create a new workspace, the header has a dark and light blue background. You can replace this background with your own.
 
-1. Hover over the background in the workspace header to expose the  **Upload cover photo** icon and click it.
+1. Hover over the background in the workspace header to expose the  **Edit cover photo** button and select **Upload Photo**.
 
     !![New cover photo](4-new-header-image.png)
 
-2. The **Edit Workspace**  screen opens with the  **Setup** tab in focus. Scroll down until you see **Cover Photo**, click **Choose File**, and add the following image: `workspace_header_image`.
+2. Browse for the following image that you downloaded: `worspace_header-image`.
 
-4. Click **Save**.
+3. Reposition your photo to display it as you want, and then click **Save**.
 
-    !![Select image](5-select-cover-image.png)
+    !![Save cover image](5-save-cover-image.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -133,7 +136,7 @@ The **Overview** page is the home page of a workspace. You can add all types of 
 
 4. Close the **Page Designer Tips** page for now.
 
-5. Enter a title for the **Overview** page: `About the Hackathon`.
+5. Enter a title for the **Overview** page: `About the Hackathon`. Note that the name will only be visible on the workspace once you publish the workspace.
 
     !![Title of overview page](9-name-overview-page.png)
 
@@ -251,29 +254,43 @@ In this step, you'll add images to the second row.
     !![Add widget 4 times](21a-add-widgetx4.png)
 
 
-14. Click the **Edit widget** pencil icon at the top right of each of these image widgets and design as follows. When you're done click **OK** each time:
+14. Click the **Edit widget** pencil icon at the top right of the first image widget and design as follows. When you're done, click **OK**.
 
     |  :-------------     | :-------------                
-    | Caption             | First image: `Real Customer Challenges`<div>&nbsp;</div><div>Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Submission Criteria`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
+    | Caption             |`Real Customer Challenges`
+    | Caption Layout      |Overlay
+    | Background Opacity  |0%
+    | Caption Alignment   |Left
+
+15. In the same way, design the other 3 images as follows. When you're done click **OK** each time:
+
+    |  :-------------     | :-------------                
+    | Caption             | Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Submission Criteria`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
     | Link To        |Add this link to the **second** image widget that you named `Product Documentation`: <https://help.sap.com/viewer/product/WZ/Cloud/en-US> <div>&nbsp;</div><div> Once you've published your site you can click on this image to open the SAP Work Zone documentation product page.
     | Caption Layout        |All images: Overlay
     | Background Opacity    |All images: 0%
-    | Caption Alignment        |All images: Left
+    | Caption Alignment     |All images: Left
 
 
-15. Click outside of the row to see how your page looks so far:
+16. Click outside of the row to see how your page looks so far:
 
     !![First preview](22-first-preview.png)
 
-16. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30` pixels in the **Top** value box and click **Save**.
+17. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**. Click the edit row settings icon (cog wheel).
 
+
+    !![Edit row](22a-edit-row-setting.png)
+
+18. Under **Row Padding**, add the value `30` pixels in the **Top** value box and click **Save**.
+
+    !![Edit row pixels](22b-edit-pixels.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Design the third and last row of your workspace)]
 
-In this step, you'll add an **Action** widget and a **Forum** widget.
+In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed** widget.
 
 1. Click **+** at the bottom of the second row to add another row.
 
@@ -283,13 +300,17 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
 3. Under the **Productivity** section,  select the **Action** widget.
 
+    >Adding an **Action** widget enables workspace members to choose from a selection of commonly used action types. In this tutorial, we want the workspace members to ask questions or add ideas.
+
     !![Add an action widget](23-add-action-widget.png)
 
 4. Enter the **Widget Title**: `Add your Hackathon Questions & Ideas`.
 
-5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Use the scroller on the right to make sure you uncheck all the other options. Click **OK**.
+5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Use the scroller on the right to make sure you uncheck all the other action options. Click **OK** to add the widget to your overview page.
 
     !![Design actions widget](24-design-actions-widget.png)
+
+    Now let's create the **Forum** widget.
 
 6. Click the **+** next to the widget you just created to add another column.
 
@@ -301,11 +322,18 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
 8. Under the **Content & Documents** section, select the **Forum** widget.
 
+    > Adding a **Forum** widget enables a workspace member to view questions, ideas, and discussions submitted by their workspace members.
+
     !![Add a forum widget](26-add-forum-widget.png)
 
 9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
 
+    > On the overview page, only 2 of the questions, ideas or discussions from the forum will be displayed.  
+
     !![Design the forum widget](27-design-forum-widget.png)
+
+
+    Now let's add the **Feed** widget.
 
 10. In the same row, directly under the **Action** widget that you added, click **Add Widget**.
 
@@ -317,16 +345,64 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add feed display](27-add-feed-display.png)
 
-13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+    You've now added all three widgets.
+
+13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**.
+
+    !![Edit row settings](28-edit-row-settings.png)
+
+14. Under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+
+15. Click **Save Draft** to save a draft version of your overview page.
+
+    !![Save as draft](28-save-as-draft.png)
 
 
 [DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Add a forums tab and ask a question)]
+
+Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
+
+1. Click the **+** to add a page tab.
+
+    !![Add new page tab](28-add-new-page.png)
+
+2.  In the **Add New Page** screen, under the **Content** category, select **Forums** to add the **Forums** tab to your workspace. The forum page opens displaying all the different forum topics.
+
+    Now ask a question in the forum.
+
+3. Go back to your workspace overview page by clicking the Overview page (it's displayed as **Untitled** until you publish the workspace).
+
+    !![Go back to overview page](29-go-to-overview-page.png)
+
+4. Scroll down to your **Actions** widget that you added previously and click **Ask a question**.
+
+    !![Add new question](35-add-a-question.png)
+
+2. Add this question: `What time does the hackathon start?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
+
+    !![Add first questions](35-first-question.png)
+
+3. Go back to your workspace by using the breadcrumbs at the top.
+
+    !![Go back to Forums page](35a-go-back.png)
+
+You can see that your question has been added to your overview page as well as to your feed.
+
+!![View question](36-view-questions.png)
+
+
+[DONE]
+
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Publish your workspace)]
+[ACCORDION-BEGIN [Step 10: ](Publish and view your workspace)]
 
-  1. Click **Publish** to save the design of the page and to make your workspace visible to its members.
+  1. Make sure to **Publish** the design of the page and to make your workspace visible to its members. Without doing this, the page is only visible to you.
 
     !![Publish workspace](27a-publish.png)
 
@@ -338,53 +414,11 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add to feed](27d-add-to-feed.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](View your workspace at runtime and ask a question in the forum)]
-
-Next to the **Forum** widget, you'll see that there aren't any forum activities yet. Let's add a question to the forum.
-
-  !![View your workspace](27b-view-workspace.png)
-
-1. Click the **+** next to the **About the Hackathon** overview page.
-
-    !![Add new page tab](28-add-new-page.png)
-
-2.  In the **Add New Page** screen, under the **Content** category, select **Forums**.
-
-    !![Add Forums page](29-add-forums-page.png)
-
-3. Click the **Forums** tab.
-
-    !![Open forums tab](30-open-forums.png)
-
-4. Click **Questions**.
-
-    !![Click Questions](31-click-questions.png)
-
-5. Click **+ New Question**.
-
-    !![Add new question](34-add-new-question.png)
-
-6. Add this question: `What time does the hackathon start?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
-
-    !![Add first questions](35-first-question.png)
-
-7. Go back to your workspace by using the breadcrumbs at the top.
-
-    !![Go back to Forums page](35a-go-back.png)
-
-You can see that your question has been added to the **Forum** widget in your overview page:
-
-!![View question](36-view-questions.png)
-
-This is how your workspace looks:
+This is how your workspace looks - note the overview page name that you defined is now visible:
 
 !![Final workspace](37-final-workspace.png)
 
-
-
 [VALIDATE_7]
+
 
 [ACCORDION-END]Closing

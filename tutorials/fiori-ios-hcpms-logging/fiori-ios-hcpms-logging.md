@@ -2,8 +2,8 @@
 title: Logging and tracing in SAP Mobile Services for development and operations
 description: Logging and tracing overview in the SAP Mobile Services for development and operations Administration Cockpit.
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services]
 ---
 ## Prerequisites  
 

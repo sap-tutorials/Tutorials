@@ -5,8 +5,8 @@ title: Understand the Differences Between SAP HANA On-Premise and SAP HANA Cloud
 description: Learn about the main differences between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

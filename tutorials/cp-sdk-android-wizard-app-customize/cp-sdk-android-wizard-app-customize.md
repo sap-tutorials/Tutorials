@@ -3,9 +3,10 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Customize the Wizard Generated Application
 description: Customize a wizard-generated application and learn how to use Fiori object cells, search UI, and the collection view.
-primary_tag: products>sap-btp-sdk-for-android
+primary_tag: software-product>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+keywords: sdkforandroid
 time: 60
 ---
 
@@ -124,7 +125,7 @@ In this section, you will configure the object cell to display a product's name,
 
     ```Java
     if (entitySet.getEntityType() == ESPMContainerMetadata.EntityTypes.product) {
-        dataQuery.thenBy(Product.name, SortOrder.ASCENDING);
+        dataQuery.thenBy(Product.name, SortOrder.DESCENDING);
     }
     ```
 
@@ -134,7 +135,7 @@ In this section, you will configure the object cell to display a product's name,
     if (orderByProperty != null) {
         dataQuery = dataQuery.orderBy(orderByProperty, SortOrder.ASCENDING);
         if (entitySet.getEntityType() == ESPMContainerMetadata.EntityTypes.product) {
-            dataQuery.thenBy(Product.name, SortOrder.ASCENDING);
+            dataQuery.thenBy(Product.name, SortOrder.DESCENDING);
         }
     }
     ```
@@ -208,7 +209,7 @@ In this section, you will configure the object cell to display a product's name,
     orderByProperty?.let {
         dataQuery = dataQuery.orderBy(it, SortOrder.ASCENDING)
         if (entitySet.entityType == ESPMContainerMetadata.EntityTypes.product) {
-            dataQuery.thenBy(Product.name, SortOrder.ASCENDING)
+            dataQuery.thenBy(Product.name, SortOrder.DESCENDING)
         }
     }
     ```
@@ -344,6 +345,7 @@ In this section, you will update the screen's title, configure the object cell t
     viewHolder.objectCell.apply {
       headline = masterPropertyValue
       detailImage = null
+      setDetailImage(viewHolder, productCategoryEntity)
 
       (productCategoryEntity.getDataValue(ProductCategory.mainCategoryName))?.let {
         subheadline = it.toString()
@@ -813,7 +815,7 @@ First, we'll generate additional sales data in the sample OData service.
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/ic_add_circle_outline_black_24dp"
             app:tint="@color/colorWhite"
-            app:backgroundTint="@color/onboarding_blue_200"
+            app:backgroundTint="?attr/sap_fiori_color_s2"
             app:fabSize="normal" />
 
         <LinearLayout
@@ -824,12 +826,9 @@ First, we'll generate additional sales data in the sample OData service.
 
             <com.sap.cloud.mobile.fiori.object.CollectionView
                 app:layout_scrollFlags="scroll|enterAlways"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/collectionView"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_below="@id/toolbar"
                 android:background="@color/transparent"
                 tools:minHeight="200dp">
             </com.sap.cloud.mobile.fiori.object.CollectionView>
@@ -840,14 +839,11 @@ First, we'll generate additional sales data in the sample OData service.
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/item_list"
-                    android:name="com.company.collectionview.ItemListFragment"
-                    android:layout_width="@dimen/item_width"
+                    android:name="ItemListFragment"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:context="com.company.collectionview.ItemListActivity" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         </LinearLayout>
@@ -1120,7 +1116,7 @@ First, we'll generate additional sales data in the sample OData service.
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/ic_add_circle_outline_black_24dp"
             app:tint="@color/colorWhite"
-            app:backgroundTint="@color/onboarding_blue_200"
+            app:backgroundTint="?attr/sap_fiori_color_s2"
             app:fabSize="normal" />
 
         <LinearLayout
@@ -1131,12 +1127,9 @@ First, we'll generate additional sales data in the sample OData service.
 
             <com.sap.cloud.mobile.fiori.object.CollectionView
                 app:layout_scrollFlags="scroll|enterAlways"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/collectionView"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_below="@id/toolbar"
                 android:background="@color/transparent"
                 tools:minHeight="200dp">
             </com.sap.cloud.mobile.fiori.object.CollectionView>
@@ -1147,14 +1140,11 @@ First, we'll generate additional sales data in the sample OData service.
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/item_list"
-                    android:name="com.company.collectionview.ItemListFragment"
-                    android:layout_width="@dimen/item_width"
+                    android:name="ItemListFragment"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:context="com.company.collectionview.ItemListActivity" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         </LinearLayout>
@@ -1167,10 +1157,8 @@ First, we'll generate additional sales data in the sample OData service.
 6.  Add the following import libraries to the top of the document:
 
     ```Kotlin
-    import android.widget.ListView
-    import android.content.Intent
     import android.widget.LinearLayout
-    import com.sap.cloud.android.odata.espmcontainer.ESPMContainer
+    import androidx.fragment.app.FragmentActivity
     import com.sap.cloud.android.odata.espmcontainer.SalesOrderItem
     import com.sap.cloud.mobile.fiori.common.FioriItemClickListener
     import com.sap.cloud.mobile.fiori.`object`.AbstractEntityCell

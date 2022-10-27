@@ -5,8 +5,9 @@ title: Enable Multi-User Mode for Your Android Application
 description: Learn how to configure a wizard-generated application to enable the multi-user mode, available as part of the Flows component of the Android SDK.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp-sdk-for-android
+keywords: sdkforandroid
 ---
 
 ## Prerequisites
@@ -32,7 +33,9 @@ The Flows component of the SAP BTP SDK for Android provides the following functi
 
 - Handle user information and user data management.
 
-- To enable multi-user for an online application developed using Flows component, you only need need turn on `multipleUserMode` in `FlowContext` class.
+- To enable multi-user for an application developed using Flows component, you only need follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and check **Enable Multiple Users** for the **Multiple Users** on the **Project Features** tab. Or you can follow **Step 2** and **3** to enable multi-user mode for online and offline, respectively.
+
+  !![Enable multi-user mode](enable_multiuser_mode.png)
 
 The following cases are not supported in multi-user mode:
 
@@ -59,13 +62,9 @@ The following cases are not supported in multi-user mode:
     FlowContext flowContext = new FlowContextBuilder()
                 .setApplication(appConfig)
                 .setMultipleUserMode(true)
-                .setFlowStateListener(new WizardFlowStateListener(
-                        (SAPWizardApplication) context.getApplication()))
-                .build();
     ```
 
-    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded,  
-    this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
+    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
@@ -90,8 +89,6 @@ The following cases are not supported in multi-user mode:
                 FlowContextBuilder()
                     .setApplication(appConfig)
                     .setMultipleUserMode(true)
-                    .setFlowStateListener(WizardFlowStateListener(activity.application as SAPWizardApplication))
-                    .build()
     ```
 
     Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
@@ -170,7 +167,7 @@ The following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Java]]
 
-1.  In the offline multi-user mode scenario, when a user makes changes to the local offline store, the changes may not be uploaded to the server when the device is handed over to another user. After the new user clicks **SWTICH OR ADD USER** button to sign in or do onboarding, the pending changes will be uploaded to the server automatically.
+1.  In the offline multi-user mode scenario, when a user makes changes to the local offline store, the changes may not be uploaded to the server when the device is handed over to another user. After the new user clicks **Switch Or Add User** button to sign in or do onboarding, the pending changes will be uploaded to the server automatically.
 
 2.  If there is an error during synchronization, a screen will be displayed, notifying the user about the synchronization failure.
 

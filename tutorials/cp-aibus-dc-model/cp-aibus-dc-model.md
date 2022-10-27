@@ -24,7 +24,7 @@ Based on the uploaded data, you will now train a machine learning model. The tra
 
 Click the first cell below the heading `Training` and click **Run**.
 
-In case more than 12 hours have passed between this and the previous tutorial, you may receive an output as in the image below, saying `401 Client Error: Unauthorized`. That means your access token has expired. Please go back to the previous [tutorial](cp-aibus-dc-upload) and repeat step 3 to retrieve a new access token.
+In case more than 12 hours have passed between this and the previous tutorial, you may receive an output as in the image below, saying `401 Client Error: Unauthorized`. That means your access token has expired. Please go back to the previous tutorial: [Upload Data to Document Classification](cp-aibus-dc-upload) and repeat step 3 to retrieve a new access token.
 
 ![Authorization Error](authorization-error.png)
 

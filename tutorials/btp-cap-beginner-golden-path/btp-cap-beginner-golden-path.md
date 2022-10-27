@@ -75,7 +75,7 @@ Those requests all work, just using the generic handlers CAP provides. So the ne
 
 If you want to know more about custom handlers, our [Getting Started in a Nutshell](https://cap.cloud.sap/docs/get-started/in-a-nutshell#adding-custom-logic) is a good starting point.
 
-[VALIDATE_7]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Conceptual modeling with CAP)]
@@ -405,7 +405,7 @@ ID;locale;title;descr
 252;de;Eleonora;Eleonora ist eine Erzählung von Edgar Allan Poe. Sie wurde 1841 erstveröffentlicht. In ihr geht es um das Paradox der Treue in der Treulosigkeit.
 ```
 
-Deploy the localized data: `cds deploy --to sqlite`
+Deploy the localized data from the terminal: `cds deploy --to sqlite`
 
 Restart your application from the debug panel.
 
@@ -443,28 +443,34 @@ If you keep all your database related artifacts in the `db` folder, the build pr
 
 ### Use configuration profiles
 
-By default all tasks are performed for the development profile. This means with regard to our database, that we are targeting SQLite, to have results quickly. The production profile in the default case targets SAP HANA.
+There are two profiles available out of the box: development and production. By default all tasks are performed for the development profile. This means with regard to our database, that we are targeting SQLite, to have results quickly. The production profile in the default case targets SAP HANA. You can also create your custom profiles and configure them according to your needs.
 
 Let's switch from our SQLite to the SAP HANA Cloud database.
 
-1. Add SAP HANA configuration to your project: `cds add hana`
+1. Add SAP HANA configuration to your project from the terminal: `cds add hana --for production`
 
     > ### What's going on?
-    In the project template, you had the option to add SAP HANA configuration. We skipped that, as [CAP promotes a grow as you go paradigm](https://cap.cloud.sap/docs/get-started/grow-as-you-go), allowing you to add features when you need them. This reduces complexity right from the start and just gets you going.
+    In the project template, you had the option to add SAP HANA configuration. We skipped that, as [CAP promotes a grow as you go paradigm](https://cap.cloud.sap/docs/get-started/grow-as-you-go), allowing you to add facets when you need them. This reduces complexity right from the start and just gets you going.
 
 
     This creates everything you need to connect to your SAP HANA Cloud instance from the studio. It also adapts your project, so you can use the profiles that we will introduce in the next step. When you started to deploy to SQLite, the `cds.requires` section in your `package.json` was modified accordingly. See what's been added/changed now:
 
-    !![The configration that has been added or changed in the package.json file.](hdbtable_config.png)
+    !![The configuration that has been added or changed in the package.json file.](hdbtable_config.png)
 
     > ### What's going on?
-    The definition of `db.kind=sql` triggers another default when using configuration profiles. Using the production profile this evaluates to `hana` and using the development profile, this evaluates to `sqlite`. That way you've less complex configuration in your `package.json`. You can also [set both configurations explicitly](https://cap.cloud.sap/docs/node.js/cds-env#profiles), if you wish to deviate from or enhance the defaults.
+    You've added the configuration to use SAP HANA Cloud under the `[production]` profile. Using the development profile, `db.kind=sql` evaluates to `sqlite`. This is a default when using configuration profiles, so the development profile is not mentioned here explicitly. You can also [set both configurations explicitly](https://cap.cloud.sap/docs/node.js/cds-env#profiles), if you wish to deviate from or enhance the defaults.
+
+1. From the terminal execute `npm install`.
+
+    This installs all dependencies from your `package.json`.
 
 1. Press **F1** and type `login` to login to your Cloud Foundry space.
 
     !![The cloud foundry login wizard.](cf_login.png)
 
-1. Deploy to SAP HANA Cloud: `cds deploy --to hana`
+1. Deploy to SAP HANA Cloud: `cds deploy --to hana --bind --production`
+
+    Besides all necessary steps around the deployment, this also creates a service key and saves it into the `.cdsrc-private.json` file for [hybrid testing](https://cap.cloud.sap/docs/advanced/hybrid-testing).
 
 1. Create a run configuration for the _production_ profile and name it `bookshop-hybrid`.
 

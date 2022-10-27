@@ -1,9 +1,9 @@
 ---
 auto_validation: true
-title: Develop and Run SAP Fiori Application With SAP Business Application Studio
-description: Develop and run your SAP Fiori application with SAP Business Application Studio
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+title: Create a SAP Fiori App and Deploy it to SAP BTP, ABAP Environment
+description: Create a SAP Fiori app for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, ABAP Environment.
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -16,7 +16,7 @@ author_profile: https://github.com/mervey45
     - You need to be a member at the used global account​
     - You need to be an organization manager at the used Cloud Foundry subaccount
     - You need to be a security administrator at the used Cloud Foundry Subaccount​
-    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance should be under same subaccount.
+    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance must be under same subaccount.
 
 
 
@@ -430,7 +430,3 @@ author_profile: https://github.com/mervey45
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

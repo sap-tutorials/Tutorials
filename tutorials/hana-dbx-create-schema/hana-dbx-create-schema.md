@@ -39,7 +39,21 @@ The following steps will create sample objects for a hotel database using create
     CREATE USER USER2 PASSWORD Password2 no force_first_password_change SET USERGROUP DEFAULT;
     >```
 
-    For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
+    >---
+
+    >The following shows an example of creating a USERGROUP, assigning USER1 to the group, and querying the password policy of the user.
+
+    >```SQL
+    CREATE USERGROUP HOTEL_USER_GROUP SET PARAMETER 'minimal_password_length' = '8', 'force_first_password_change' = 'FALSE';
+    ALTER USER USER1 SET USERGROUP HOTEL_USER_GROUP;
+    SELECT * from "PUBLIC"."M_EFFECTIVE_PASSWORD_POLICY" where USER_NAME = 'USER1';
+    >```
+
+    >---
+
+    >It is recommended to not use the DBADMIN user for day to day operations in production environments.  Having specific users for specific tasks also will aid in auditing.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/HANA_CLOUD_DATABAS/f9c5015e72e04fffa14d7d4f7267d897/c511ddf1767947f0adfc9636148718d9.html).
+
+    For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html) and [CREATE USERGROUP Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9869125ea93548009820702f5bd897d8.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
 
 3. The list of users can be seen by executing the following statement:
 
@@ -146,8 +160,8 @@ The following steps will create sample objects for a hotel database using create
       PRIMARY KEY (
         "RESNO", "ARRIVAL"
       ),
-      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
-      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
+      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER,
+      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
     );
     CREATE COLUMN TABLE HOTEL.MAINTENANCE(
       mno INTEGER PRIMARY KEY,
@@ -162,7 +176,11 @@ The following steps will create sample objects for a hotel database using create
     >
     >![find tables in database browser](viewTables.png)
 
+    >---
 
+    >Should you wish to examine the SQL of a table, it can be viewed after selecting a table's context menu **Generate CREATE Statement**.
+
+    >![view the table's SQL](view-table-sql.png)
 
 2. Execute the following SQL statements to add data into the tables in the `HOTEL` schema.
 
@@ -271,8 +289,94 @@ The following steps will create sample objects for a hotel database using create
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Explore auto-commit)]
+Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
-[ACCORDION-BEGIN [Step 3: ](Create a partition)]
+
+The following steps will demonstrate these settings.
+
+1. Execute the following SQL statements.  By default, auto-commit is on.
+
+    ```SQL
+    CREATE COLUMN TABLE HOTEL.TEST1(
+      ID INTEGER PRIMARY KEY,
+      FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST1 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST1 VALUES (2, 'Sue');
+    INSERT INTO HOTEL.TEST1 VALUES (2, 'John');
+    ```
+
+    An error will occur and the table TEST1 will exist with two rows.  To undo the operation, the table can be deleted.  Notice that the table TEST1 appears in the catalog browser.
+
+    ![test1 result](auto-commit-test1.png)
+
+2. In the SQL Console, set auto-commit off.
+
+    ![turn auto-commit off](autocommit-off.png)
+
+3. Execute the following SQL statements.
+
+    ```SQL
+    CREATE COLUMN TABLE HOTEL.TEST2(
+    ID INTEGER PRIMARY KEY,
+        FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST2 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST2 VALUES (2, 'Sue');
+    INSERT INTO HOTEL.TEST2 VALUES (2, 'John');
+    ```
+
+    An error will occur and you can then decide to undo all the inserted rows from the table TEST1 by executing a `ROLLBACK;` or you have the option to keep the successfully inserted rows by executing a `COMMIT`.
+
+    ![auto-commit test3](auto-commit-test3.png)
+
+    Note that until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL Console or database connection.
+
+    Additional details can be found at [ROLLBACK Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20fcc453751910149557fc90fe781449.html) and [COMMIT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d39db97519101480e7f9b76f48c2c4.html).
+
+3. Execute the following SQL statements.
+
+    ```SQL
+    SET TRANSACTION AUTOCOMMIT DDL OFF;
+    CREATE COLUMN TABLE HOTEL.TEST3(
+      ID INTEGER PRIMARY KEY,
+      FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST3 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST3 VALUES (2, 'Sue');
+    SELECT * FROM HOTEL.TEST3;
+    INSERT INTO HOTEL.TEST3 VALUES (2, 'John');
+    ```
+
+    An error will occur and you can then decide to undo the inserted rows and the table creation by executing a `ROLLBACK;` or you have the option to keep the successfully created table and rows by executing a `COMMIT`.
+
+    Note that until a COMMIT is executed, the table will not appear from another SQL Console or in the catalog browser.
+
+    >The following query can be used to determine if AUTOCOMMIT DDL is enabled.  
+    >
+    ```SQL
+    SELECT 	key, value
+    FROM m_session_context
+    WHERE connection_id = current_connection
+    	AND key = 'DDL_AUTO_COMMIT';
+    ```
+
+    Additional details can be found at [SET TRANSACTION AUTOCOMMIT DDL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d538d11053bd4f3f847ec5ce817a3d4c.html).
+
+4. Ensure both settings are back to their default values before continuing.
+
+    ![autocommit on](autocommit-on.png)
+
+    ```SQL
+    SET TRANSACTION AUTOCOMMIT DDL ON;
+    ```
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create a partition)]
 
 Partitions can be created to divide the data in a large table into smaller parts.  
 
@@ -316,7 +420,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create views)]    
+[ACCORDION-BEGIN [Step 5: ](Create views)]    
 
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
@@ -377,9 +481,9 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create functions and stored procedures)]
+[ACCORDION-BEGIN [Step 6: ](Create functions and stored procedures)]
 
-1. User-created functions can be useful in saving a set of commands that return a value. They can also be used in other statements. Functions and procedures can also make use of control statements such as if else and loops.  
+1. User-defined functions and procedures can be used to save a set of SQL statements.  Functions are considered read-only in that they cannot make modifications to the data.  Stored procedures can modify the data through the use of DDL or DML statements.
 
     Execute the following SQL to create a function that calculates the average price of a specific room type.
 
@@ -397,6 +501,12 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     >
     > ![functions](function.png)
 
+    >---
+
+    >Should you wish to examine the SQL of a function, it can be viewed after selecting a functions's context menu **Open**.
+
+    >![view the functions's SQL](view-function-sql.png)
+
 2. An example of how to use the `Average_Price` function is shown below:
 
     ```SQL
@@ -407,7 +517,22 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     For additional details see [User-Defined Functions](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/765815cd7d214ed38c190dc2f570fe39.html).
 
-3. Stored procedures can be used to save SQL statements.  They can contain control statements and can have parameters.  The following stored procedure generates and inserts reservations into the `HOTEL.RESERVATION` table. In order to run, a parameter must be entered that identifies the number of reservations to insert.
+3. Functions such as the one above that return single defined values are know as scalar user defined functions.  Table user defined functions can return a tabular result set.  The following is an example of user defined function that returns results in a table format.
+
+    ```SQL
+    CREATE FUNCTION HOTEL.PAST_VISITS (CNO INT)
+    RETURNS TABLE (FIRSTNAME VARCHAR(20), NAME VARCHAR(40), HOTEL_NAME VARCHAR(50), ARRIVAL DATE, STAY_DURATION INT) LANGUAGE SQLSCRIPT AS
+    BEGIN
+        RETURN SELECT C.FIRSTNAME, C.NAME, H.NAME AS HOTEL_NAME, R.ARRIVAL, DAYS_BETWEEN(R.ARRIVAL, R.DEPARTURE) as STAY_DURATION
+            FROM HOTEL.HOTEL H, HOTEL.RESERVATION R, HOTEL.CUSTOMER C
+            WHERE C.CNO = R.CNO AND R.ARRIVAL <= CURRENT_DATE AND R.CNO = :CNO AND R.HNO= H.HNO
+            ORDER BY R.ARRIVAL DESC;
+    END;
+
+    SELECT * FROM "HOTEL"."PAST_VISITS"(1001);
+    ```
+
+4. Stored procedures can be used to save SQL statements.  They can contain control statements and can have parameters.  The following stored procedure generates and inserts reservations into the `HOTEL.RESERVATION` table. In order to run, a parameter must be entered that identifies the number of reservations to insert.
 
     ```SQL
     CREATE OR REPLACE PROCEDURE HOTEL.RESERVATION_GENERATOR(
@@ -468,7 +593,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     END;
     ```
 
-4. To run this procedure, execute the SQL statement below.
+5. To run this procedure, execute the SQL statement below.
 
     ```SQL
     CALL HOTEL.RESERVATION_GENERATOR(NUMTOGENERATE => 100);
@@ -492,7 +617,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     ```SQL
        SELECT current_date, current_time FROM dummy;  --be sure to schedule an event in the future
        CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2021 12 23 * 14 25 0' ENABLE PROCEDURE "HOTEL"."RESERVATION_GENERATOR" PARAMETERS numtogenerate=10;
-       SELECT * FROM M_SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
+       SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
     ```
 
 

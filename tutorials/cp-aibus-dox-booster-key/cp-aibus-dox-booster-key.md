@@ -1,5 +1,5 @@
 ---
-title: Set Up Account for Document Information Extraction and Get Service Key
+title: Use Trial to Set Up Account for Document Information Extraction and Get Service Key
 description: Get access to the service Swagger UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and the associated service key for Document Information Extraction.
 auto_validation: true
 time: 5

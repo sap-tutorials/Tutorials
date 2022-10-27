@@ -36,7 +36,7 @@ Developing an app with the SDK allows you to seamlessly integrate your mobile ap
 
 - Define app settings like passcode policies or certain timeout events
 
-For more information, visit the official [SAP Mobile Services](https://help.sap.com/viewer/product/SAP_CLOUD_PLATFORM_MOBILE_SERVICES/Cloud/en-US) website.
+For more information, visit the official [SAP Mobile Services](https://help.sap.com/viewer/product/SAP_MOBILE_SERVICES/Cloud/en-US) website.
 
 This tutorial series will not only show you how to get started with the SDK, SAP Mobile Services and the SAP BTP, Cloud Foundry runtime, but also will give you an introduction to the Mac Catalyst technology.
 

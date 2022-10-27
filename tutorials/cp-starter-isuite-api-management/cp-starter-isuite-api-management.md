@@ -10,7 +10,6 @@ author_profile: https://github.com/Karunaharan
 ---
 
 ## Prerequisites
- - You have provisioned your SAP Integration Suite tenant and activated **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs**. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
  - You have created and deployed an integration flow that reads product details using an OData connection. For more information, see [Design and Deploy Your First Integration Flow](cp-starter-integration-cpi-design-iflow).
 
 ## Details
@@ -31,7 +30,7 @@ After you have performed these steps, finally, you will call the API to fetch th
 [ACCORDION-BEGIN [Step 1: ](Get endpoint of the integration flow)]
 In this step, you copy the endpoint address of the integration flow.
 
-1. Go to the Cloud Integration Web UI and open your integration flow.
+1. Open your integration flow.
 
 2. In the **Deployment Status** tab of the property sheet, choose the URL.
 
@@ -49,19 +48,9 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 2: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your SAP BTP trial subaccount. Select **Instances and Subscriptions**. In the **Subscriptions**, section, find **Integration Suite** and select **Go to Application**.
+1. Choose **Design** > **APIs** > **Create** to create an API.
 
-    !![Access Isuite](2-1-AccesstoIsuite.png)
-
-2. On the Integration Suite welcome page, choose **Design, Develop and Manage APIs**.
-
-    !![API management](2-2-WelcomePageIsuite.png)
-
-3. On the home page, under **Quick Actions**, choose **API**.
-
-    !![Quick actions API](2-3-create-api.png)
-
-4. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
+2. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
 >**IMPORTANT** : Paste only the endpoint URL till **`/http/products`** Otherwise, the scenario will not run appropriately.
 
     |  Parameter    | Settings
@@ -75,33 +64,33 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Select **Create**.
 
-5. On the landing page, choose **Resources** tab and then **Add**.
+3. On the landing page, choose **Resources** tab and then **Add**.
 
     !![Add resources](2-5-create-api-resources.png)
 
-6. In field **Tag** enter **`Product Details`**, and in the field **Path Prefix** enter **`/details`**.  
+4. In field **Tag** enter **`Product Details`**, and in the field **Path Prefix** enter **`/details`**.  
 
     !![Add details](2-6-add-resources.png)
 
-7. Under **Operations**, delete all tabs except the **POST** tab and choose **OK**.
+5. Under **Operations**, delete all tabs except the **POST** tab and choose **OK**.
 
     !![Add operations](2-7-save-resources.png)
 
     The API Resource is displayed.
 
-8. Choose **Deploy** to create and activate the API Proxy for your integration flow.
+6. Choose **Deploy** to create and activate the API Proxy for your integration flow.
 
     !![Deploy](009.png)
 
-9. Choose the **POST** operation to display more details on the API. A default API definition in Open API specification format is also generated.
+7. Choose the **POST** operation to display more details on the API. A default API definition in Open API specification format is also generated.
 
-10. To update the generated API definition in Open API format, choose **Edit > Edit in API Designer**.
+8. To update the generated API definition in Open API format, choose **Edit > Edit in API Designer**.
 
     !![Edit API designer](010.png)
 
     The API designer is opened.
 
-11. In the editable section on the right part of the screen, make the following changes.
+9. In the editable section on the right part of the screen, make the following changes.
 
     Change **Payload** to **`productIdentifier`** and add a row as shown in the following screenshot.
 
@@ -113,11 +102,13 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Choose **Save**.
 
-12. Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
+10. Choose **`RequestProductDetails`** and then the **Resources** tab.
+
+    Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     !![Resources Tab API Changes](014.png)
 
-13. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
+11. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
 
     !![Error message](015.png)
 
@@ -128,13 +119,15 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 [ACCORDION-BEGIN [Step 3: ](Copy credentials from service key)]
 
- In this step, you'll copy the client ID, client secret, and token URL from the service key that you automatically generated using a booster in [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
+ In this step, you'll copy the client ID, client secret, and token URL from the service key that you automatically generated in your SAP BTP account. See: [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
-1. Navigate to your service instance page which you earlier opened at the end of [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe). You can access this from your subaccount. Choose **Services** > **Instances and Subscriptions**.
+1. In your SAP BTP subaccount, navigate to your service instance page. Choose **Services** > **Instances and Subscriptions**.
 
-2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration-flow**. Choose the key under the **Credentials** column to open the service key.
+2. Under the **Instances** section, look out for the service instance that was created. Choose the key under the **Credentials** column to open the service key.
 
       !![view key](3-2-key-view.png)
+
+      >**TIP**: In trial accounts, the default name that the booster provides for the service instance is **default-it-rt-integration-flow**. In free tier accounts, the instance name is user-defined.
 
 3. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
 
@@ -150,11 +143,9 @@ In this step, you assign a policy template to your API to specify authentication
 
 This grant type works in the following way: In a first call, the API client provides the values of **`clientid`** and **`clientsecret`** (from the service key generated in Step 1) to a token service (the URL of the token service is also contained in the service key definition). The token service provides an access token to the API client. In a subsequent call, the API client calls the integration flow endpoint providing the access token. If the access token is valid, the API client is authorized to call the integration flow.
 
-1. In the navigation area of API Portal, choose **View content packages**.
+1. Choose **Discover** > **APIs**.
 
-    !![Discover](016.png)
-
-2. Search for the package **Connect to SAP Business Technology Platform Services**. Choose the package.
+2. Search for the package **Connect to SAP Business Technology Platform Services** and select it.
 
     !![choose API](017.png)
 
@@ -166,11 +157,9 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Actions](019.png)
 
-5. After the success message is displayed, navigate to the **Develop** section.
+5. After the success message is displayed, navigate to the **Design** > **APIs**.
 
-    !![Develop API](020.png)
-
-6. Choose your API proxy.
+6. Choose the API that you created in the previous step.
 
     !![API Proxy](021.png)
 
@@ -234,7 +223,9 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Save](033_New.png)
 
-    In this step you have assigned a policy template.
+21. Confirm the deployment.
+
+    You have assigned a policy template now.
 
 [VALIDATE_4]
 [ACCORDION-END]
@@ -260,15 +251,17 @@ In this step you try out the API to get product details as a response from the r
     !![WebShop](037.png)
 
 
+### Congratulations!
+
+    You have successfully set up your Integration Suite tenant, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
+
+    This scenario showed you how to use Integration Suite, and in particular, its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
+
 [DONE]
 [ACCORDION-END]
 
 ---
 
-### Congratulations!
 
-You have successfully set up your Integration Suite trial, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
-
-This scenario showed you how to use Integration Suite, and in particular, its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
 
 ---

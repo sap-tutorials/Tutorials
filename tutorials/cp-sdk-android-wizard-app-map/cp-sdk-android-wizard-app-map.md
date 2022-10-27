@@ -5,8 +5,9 @@ title: Display Customer Locations Using a Fiori Map Control
 description: Further customize the generated app to display customer locations on a map and try out the features of the Fiori Map control, including the toolbar, map panel, clustering, and map annotation.
 auto_validation: true
 time: 90
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
-primary_tag: products>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp-sdk-for-android
+keywords: sdkforandroid
 ---
 
 ## Prerequisites
@@ -146,7 +147,7 @@ In this section, you will add code to place a marker on the map for each custome
 
 2.  Add the following class variable:
     ```Java
-    private HashMap<String, LatLng> locations = new HashMap<String, LatLng>();
+    private HashMap<String, LatLng> locations = new HashMap<>();
     ```
 
 3.  Add the following methods:
@@ -309,7 +310,7 @@ In this section, you will add code to place a marker on the map for each custome
                     .position(it)
                     .title(customer.firstName + " " + customer.lastName)
             )
-            customerMarker.tag = customer
+            customerMarker?.tag = customer
         }
     }
     ```
@@ -899,9 +900,10 @@ In this section, you will create a new activity that uses the Fiori Map control.
 18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
-    <activity android:name=".mdui.customers.CustomersFioriMapActivity"
-        android:theme="@style/FioriMap.NoActionBar">
-    </activity>
+    <activity
+        android:name=".mdui.customers.CustomersFioriMapActivity"
+        android:theme="@style/FioriMap.NoActionBar"
+        android:exported="false" />
     ```
 
 19.  Run the app.
@@ -1261,9 +1263,10 @@ In this section, you will create a new activity that uses the Fiori Map control.
 18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
-    <activity android:name=".mdui.customers.CustomersFioriMapActivity"
-        android:theme="@style/FioriMap.NoActionBar">
-    </activity>
+    <activity
+        android:name=".mdui.customers.CustomersFioriMapActivity"
+        android:theme="@style/FioriMap.NoActionBar"
+        android:exported="false" />
     ```
 
 19.  Run the app.
@@ -1613,13 +1616,12 @@ In this section you will implement the settings dialog to include a map type set
     <?xml version="1.0" encoding="utf-8"?>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -1738,13 +1740,12 @@ In this section you will implement the settings dialog to include a map type set
     <?xml version="1.0" encoding="utf-8"?>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -2140,7 +2141,7 @@ In this section you will customize the map markers based on the customer's count
             if (country.equals("MX")) {
                 color = (Color.parseColor("#FFA02B"));
             } else if (country.equals("CA")){
-                color =  Color.parseColor("#2E4A62");
+                color =  Color.parseColor("#0070F2");
             }
             customerMarker = new FioriMarkerOptions.Builder()
                     .tag(customer)
@@ -2183,7 +2184,7 @@ In this section you will customize the map markers based on the customer's count
             if (country == "MX") {
                 color = (Color.parseColor("#FFA02B"))
             } else if (country == "CA") {
-                color = Color.parseColor("#2E4A62")
+                color = Color.parseColor("#0070F2")
             }
             val customerMarker = FioriMarkerOptions.Builder()
                     .tag(customer)
@@ -2232,25 +2233,33 @@ In this section, an `EsriFioriMapView` will be used.
 
     ```Gradle
     maven {
-        url 'https://esri.bintray.com/arcgis'
+        url 'https://esri.jfrog.io/artifactory/arcgis'
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file and click **Sync Now**.
+3.  Add the following dependency to the app's `build.gradle` file.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  Add the following to the `android` block of the app's `build.gradle` file and click **Sync Now**.
 
-5.  Right-click and choose **`New > Activity > Empty Activity`**.
+    ```Gradle
+    packagingOptions {
+        exclude  'META-INF/DEPENDENCIES'
+    }
+    ```
 
-6.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
+5.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-7.  Click **Finish**.
+6.  Right-click and choose **`New > Activity > Empty Activity`**.
 
-8.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.java` with the following code:
+7.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
+
+8.  Click **Finish**.
+
+9.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.java` with the following code:
 
     ```Java
     package com.sap.wizapp.mdui.customers;
@@ -2298,9 +2307,9 @@ In this section, an `EsriFioriMapView` will be used.
 
     public class CustomersFioriEsriMapActivity extends AppCompatActivity  {
         private EsriFioriMapView mEsriFioriMapView;
-        private HashMap<String, LatLng> locations = new HashMap<String, LatLng>();  // Used for demo purposes to speed up the process of converting an address to lat, long
-        private HashMap<String, FioriMarkerOptions> markers = new HashMap<String, FioriMarkerOptions>();  // Used to associate an address with a marker for search
-        private ArrayList<String> addresses = new ArrayList<String>();  // Used to populate the list of addresses that are searchable
+        private final HashMap<String, LatLng> locations = new HashMap<>();  // Used for demo purposes to speed up the process of converting an address to lat, long
+        private final HashMap<String, FioriMarkerOptions> markers = new HashMap<>();  // Used to associate an address with a marker for search
+        private final ArrayList<String> addresses = new ArrayList<>();  // Used to populate the list of addresses that are searchable
 
         EsriMapActionProvider mActionProvider;
 
@@ -2344,7 +2353,7 @@ In this section, an `EsriFioriMapView` will be used.
             if (mFioriMapSearchView != null) {
                 SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
                 mFioriMapSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-                mFioriMapSearchView.setAdapter(new ArrayAdapter<String>(CustomersFioriEsriMapActivity.this, R.layout.search_auto_complete, R.id.search_auto_complete_text, addresses));
+                mFioriMapSearchView.setAdapter(new ArrayAdapter<>(CustomersFioriEsriMapActivity.this, R.layout.search_auto_complete, R.id.search_auto_complete_text, addresses));
                 mFioriMapSearchView.setThreshold(2);
                 mFioriMapSearchView.setOnItemClickListener((parent, view, position, id) -> {
                     mFioriMapSearchView.setQuery(parent.getItemAtPosition(position).toString(), false);
@@ -2436,16 +2445,14 @@ In this section, an `EsriFioriMapView` will be used.
                     addresses.add(customer.getCity() + ", " + customer.getCountry());
                 }
                 mActionProvider.doExtentsAction();
-            }, (RuntimeException re) -> {
-                Log.d("", "An error occurred during async query:  " + re.getMessage());
-            });
+            }, (RuntimeException re) -> Log.d("", "An error occurred during async query:  " + re.getMessage()));
         }
     }
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
+10.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
 
-10.  Replace its contents with the following code:
+11.  Replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -2468,25 +2475,26 @@ In this section, an `EsriFioriMapView` will be used.
     </FrameLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+12.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity.class`**.
+13.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity.class`**.
 
-13.  Replace `CustomersFioriMapActivity.class` with **`CustomersFioriEsriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
+14.  Replace `CustomersFioriMapActivity.class` with **`CustomersFioriEsriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+15.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
+16.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
 
-16.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
+17.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
-    <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/FioriMap.NoActionBar">
-    </activity>
+    <activity
+        android:name=".mdui.customers.CustomersFioriEsriMapActivity"
+        android:theme="@style/FioriMap.NoActionBar"
+        android:exported="false" />
     ```
 
-17.  Run the app.
+18.  Run the app.
 
     You should be able to see markers on the screen that represent customers displayed on an `Esri` map.
 
@@ -2507,25 +2515,33 @@ In this section, an `EsriFioriMapView` will be used.
 
     ```Gradle
     maven {
-        url 'https://esri.bintray.com/arcgis'
+        url 'https://esri.jfrog.io/artifactory/arcgis'
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file and click **Sync Now**.
+3.  Add the following dependency to the app's `build.gradle` file.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  Add the following to the `android` block of the app's `build.gradle` file and click **Sync Now**.
 
-5.  Right-click and choose **`New > Activity > Empty Activity`**.
+    ```Gradle
+    packagingOptions {
+        exclude  'META-INF/DEPENDENCIES'
+    }
+    ```
 
-6.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
+5.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-7.  Click **Finish**.
+6.  Right-click and choose **`New > Activity > Empty Activity`**.
 
-8.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.kt` with the following code:
+7.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
+
+8.  Click **Finish**.
+
+9.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.kt` with the following code:
 
     ```Kotlin
     package com.sap.wizapp.mdui.customers
@@ -2693,9 +2709,9 @@ In this section, an `EsriFioriMapView` will be used.
     }
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
+10.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
 
-10.  Replace its contents with the following code:
+11.  Replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -2718,25 +2734,26 @@ In this section, an `EsriFioriMapView` will be used.
     </FrameLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
+12.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity::class`**.
+13.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity::class`**.
 
-13.  Replace `CustomersFioriMapActivity::class` with **`CustomersFioriEsriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
+14.  Replace `CustomersFioriMapActivity::class` with **`CustomersFioriEsriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+15.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
+16.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
 
-16.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
+17.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
-    <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/FioriMap.NoActionBar">
-    </activity>
+    <activity
+        android:name=".mdui.customers.CustomersFioriEsriMapActivity"
+        android:theme="@style/FioriMap.NoActionBar"
+        android:exported="false" />
     ```
 
-17.  Run the app.
+18.  Run the app.
 
     You should be able to see markers on the screen that represent customers displayed on an `Esri` map.
 

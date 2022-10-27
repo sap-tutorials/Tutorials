@@ -5,8 +5,8 @@ title: Access Data from Amazon S3 in SAP HANA Cloud, SAP HANA Database
 description: Get an overview of the multi-source landscape that we have set up and learn how to import data from an Amazon S3 bucket to SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

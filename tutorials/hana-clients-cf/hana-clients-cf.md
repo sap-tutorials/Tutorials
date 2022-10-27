@@ -35,7 +35,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ![cf cli version](showVersion.png)  
 
 
-    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
+
+    >Note that if a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
 
     ```Shell
     xs -v

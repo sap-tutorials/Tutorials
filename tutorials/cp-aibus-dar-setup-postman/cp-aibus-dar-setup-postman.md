@@ -21,9 +21,9 @@ In the following tutorials Postman is used to communicate and interact with your
 
 Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
-If you have downloaded the Postman environment and collection sample files from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman), you can set this step to **Done** and proceed with Step 2.
+If you have downloaded the Postman environment and collection sample files from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Use Free Tier to Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-free-postman) or [Use Trial to Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman), you can set this step to **Done** and proceed with Step 2.
 
-Follow the steps below if you want to manually add, to the environment sample file, your service key details created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
+Follow the steps below if you want to manually add, to the environment sample file, your service key details created in [Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-free-key) or [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
 Use the [environment sample file](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Data_Attribute_Recommendation_Tutorial_Postman_Collection_Environment.json) for Data Attribute Recommendation available on GitHub and make a local copy.
 
@@ -78,7 +78,7 @@ To get started, use the [collection sample file](https://github.com/SAP-samples/
 
 **Import** the collection the same way as you did for the environment in Step 2. You can either make a local copy and upload the file or paste the text directly in the available text area.
 
-Here you can also use the collection sample file you downloaded from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman).
+Here you can also use the collection sample file you downloaded from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Use Free Tier to Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-free-postman) or [Use Trial to Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman).
 
 After you have imported the collection, it will appear on the left. As previously explained, collections are organized in folders and you find multiple requests in each folder.
 

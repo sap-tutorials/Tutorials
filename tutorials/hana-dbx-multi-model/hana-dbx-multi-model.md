@@ -16,6 +16,10 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a graph, a document store, and import spatial data.
   - How the SAP HANA database explorer can be used with multi-model data.
 
+A graph can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
+
+SAP HANA provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.
+
 This tutorial is meant to be an introduction to this topic.  For a deeper dive on the topics of graph and spatial, see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) and [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data).
 
 ---
@@ -23,6 +27,8 @@ This tutorial is meant to be an introduction to this topic.  For a deeper dive o
 [ACCORDION-BEGIN [Step 1: ](Create a graph workspace)]
 
 The following steps will create a graph workspace that can display the distance between hotels in a state.
+
+In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
 1. Create a vertex table that represents distances between hotels by executing the following in the SQL Console.
 
@@ -124,13 +130,13 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH better viewing](graph-viewer-wider.png)
 
-4. Apply a filter to vertices where `STATE` is NY and edges where `DIST_KM` is less than 100 using the graph viewer filter.  After specifying the filter, press the Add button and then apply it by pressing the Apply button.
+4. Apply a filter to vertices where `STATE` is NY.  After specifying the filter, press the Add button and then apply it by pressing the Apply button.
 
-    !![DISTANCEGRAPH vertex filter](vertex-filter.png)
+    ![DISTANCEGRAPH vertex filter](vertex-filter.png)
 
-    >Between filtering, the graph will reset.
+     Apply a filter to edges where `DIST_KM` is less than 100.
 
-    !![DISTANCEGRAPH edge filter](edge-filter.png)
+    ![DISTANCEGRAPH edge filter](edge-filter.png)
 
 5. Highlight the Long Island vertex using the graph viewer settings. The color used to highlight in the image below is #E5F5FC.
 
@@ -143,8 +149,8 @@ Additional graph examples include the [Greek Mythology Graph Example](https://he
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use graph algorithms in the database explorer)]
-A recent release of SAP HANA database explorer provides the ability to apply algorithms to the graph viewer. The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
+[ACCORDION-BEGIN [Step 3: ](Use graph algorithms in the SAP HANA database explorer)]
+The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
 The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
 
@@ -176,23 +182,27 @@ The following steps will walk through using the shortest path algorithm to deter
     INSERT INTO HOTEL.DISTANCES VALUES (40,21,20,4348);
     ```
 
-2. Navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path".
+2. After removing the previously applied filters, navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
 
-3. Set the following parameters from the image below and select Apply:
-    !![Graph Algorithms](graph-algorithms.png)
+    ![Graph Algorithms](graph-algorithms.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create, populate, and query a JSON collection (optional))]
 
+SAP HANA provides the ability to store and query JSON data.  This can be useful if the schema of the data is often changed or if you wish to join data in SQL queries that comes from both SQL tables and JSON data.
+
 The following steps will demonstrate how to create a JSON collection that can be used to collect notes about customers staying at a hotel.
 
->Note that the creation of a JSON collection is not supported in the SAP HANA Cloud trial.
+>Note that the creation of a JSON collection is not supported in the SAP HANA Cloud free tier or trial.
 
 1. Enable the JSON document store.  
 
-    For an SAP HANA Cloud database, in the creation wizard, enable the document store.  ![enable the document store](hc-document-store.png)
+    For an SAP HANA Cloud database, in the creation wizard, or for an existing instance, the Manage Configuration dialog, enable the document store.  
+
+    ![enable the document store](hc-document-store.png)
 
     For an on-premise server, add the document service as described at [Enable the SAP HANA JSON Document Store](https://help.sap.com/viewer/3e48dd3ad36e41efbdf534a89fdf278f/latest/en-US/28334f8e631c447598d2591305b28660.html).
 
@@ -212,12 +222,17 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
+    >JSON collections can also be populated using the import data wizard.  
+
 4. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
 
     ```SQL
     SELECT * FROM HOTEL.GUEST_NOTES;  --returns JSON
 
-    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabluar result
+    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabular result
+
+    WITH myJSON AS (SELECT GUEST_NOTES FROM HOTEL.GUEST_NOTES)
+        SELECT '[' || STRING_AGG(TO_NVARCHAR(GUEST_NOTES), ',') || ']' FROM myJSON;  --returns all the results as one JSON document
 
     WITH GN_VIEW AS (SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES) --joins a collection with a table
         SELECT DISTINCT GN_VIEW.REQUEST, C.FIRSTNAME, GN_VIEW.LAST_NAME, C.ADDRESS
@@ -238,9 +253,9 @@ The following steps will demonstrate how to create a JSON collection that can be
 
 [ACCORDION-BEGIN [Step 5: ](Import and view spatial data)]
 
-This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
+This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the hotel.
 
->The import option for `ESRI shapefiles` is available in the SAP HANA database explorer included with SAP HANA Cloud or in the SAP HANA database explorer SP 13.
+>The import option for a JSON file is available in the SAP HANA database explorer included with SAP HANA Cloud.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in and around Longview, Texas`**.
 
@@ -250,14 +265,15 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![results for Longview](search2.png)
 
-2. Choose to download the data as a `shapefile`.
+2. Choose to download the data as a `shapefile`.  The final sub-steps provides some details on how a `GeoJSON` file can be imported.
 
     ![download shapefile](download-shapefile.png)
 
 
-3. Start the import data wizard.
+3. To import a `shapefile`, start the import data wizard.
 
     ![Open import data wizard](open-import-data-wizard.png)
+
 
     Choose **Import ESRI Shapefiles** and select the `LongViewPOI.zip` file.
 
@@ -267,7 +283,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
-    ![Choose schema and reference system](importESRI2.png)
+    !![Choose schema and reference system](importESRI2.png)
+
+    >By default, the database server adds the following [spatial reference systems](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloudC/en-US/d23499bcd2951014ad38a3bd89faf03e.html) System View can be queried for available spatial reference systems.
 
 5. Rename the imported table as it was created using mixed case.
 
@@ -279,17 +297,75 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![view table editor](view-table-metadata.png)
 
-7. View the table data.
+7. Select 'Open Data' to view the raw data, and select 'View Data' on a the SHAPE column of a point of interest.
+
+    ![view data](view-data.png)
+
+    The selected location is shown on a map.
+
+    ![view data on a map](view-spatial-data-map.png)
+
+    >The Leaflet map is not shown in on-premise installs of the SAP HANA database explorer.
+
+8. Perform the below query.
 
     ```SQL
-    SELECT NAME, SHAPE.ST_ASWKT(), SHAPE FROM HOTEL.POI_LONGVIEW;
+    SELECT NAME, SHAPE.ST_AsWKT(), SHAPE FROM HOTEL.POI_LONGVIEW;
     ```
 
-    Notice that the location data can be formatted in a more readable format using the methods `ST_AsText` or `ST_AsEText` which in addition shows the SRID.
+    Notice that the location data can be formatted in a more readable format using the methods `ST_AsWKT` or `ST_AsEWT` which in addition shows the SRID.
 
     ![view the spatial data](long-point-data.png)
 
     Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html).
+
+9. Optionally follow the rest of the sub-steps to import a `GeoJSON` file as a JSON Collection.
+
+    After downloading the file, rename the file to have a `.json` file extension.
+
+    Remove the extra metadata at the beginning and end so that the file only contains a JSON document on each line.
+
+    Remove the commas at the end of each line.  In Microsoft VS Code, a regular expression search and replace for `\},\n` and replace it with `}\n`.
+
+    ![find and replace](find-replace.png)
+
+    To see the required formatting for importing JSON documents, see [SAP HANA Database JSON Document Store Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f2d68919a1ad437fac08cc7d1584ff56/d2ee307ee64145b1867fbd95b0f1ba88.html?version=2021_2_QRC).
+
+10. Upload the file to a cloud storage provider.
+
+    See [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import) for more information.
+
+11. Start the import data wizard.
+
+    ![Open import data wizard](open-import-data-wizard.png)
+
+    Choose **Import Data** and provide the credentials to the storage bucket containing the JSON file.
+
+12. Choose to import the JSON file into the schema **HOTEL** and name the collection **`POI_LONGVIEW_JSON`**.
+
+    ![import JSON](import-JSON.png)
+
+    Alternatively, a text-based import of the JSON file may be used:
+
+    ```SQL
+    CREATE COLLECTION HOTEL.POI_LONGVIEW_JSON;
+    IMPORT FROM JSON FILE 's3-us-east-1://dansawsbucket1/Points_of_Interest.json' INTO HOTEL.POI_LONGVIEW_JSON WITH FAIL ON INVALID DATA CREDENTIAL 'AWS';
+    ```
+
+    After the import completes and the catalog is refreshed, a new JSON collection will appear.
+
+    ![imported collection](import-json-success.png)
+
+13. The following SQL queries show a few examples of querying the imported JSON data including the last query which can be shown on the map viewer.
+
+    ```SQL
+    SELECT * FROM HOTEL.POI_LONGVIEW_JSON;  --JSON data format.  Can use the built-in viewer.
+    SELECT "properties".NAME, "properties".FCODE, "geometry" FROM HOTEL.POI_LONGVIEW_JSON;  --Can return data in column format.
+    SELECT "properties".NAME as NAME, "properties".FCODE as FCODE, JSON_VALUE("geometry", '$.coordinates[0]') as long, JSON_VALUE("geometry", '$.coordinates[1]') as lat FROM HOTEL.POI_LONGVIEW_JSON;
+    SELECT "properties".NAME, "properties".FCODE, ST_GeomFromGeoJSON("geometry", 4326)  FROM HOTEL.POI_LONGVIEW_JSON; --Can now be shown in the map viewer
+    ```
+
+    Additional details can be found at [JSON_VALUE Function](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9355cb9e45a149c1a6ddb2bd2392d864.html) and [ST_GeomFromGeoJSON](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/40771e89ed1641e88674b45adb2ef6a1.html).
 
 [DONE]
 [ACCORDION-END]
@@ -304,16 +380,35 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
         P.FCODE,
         P.ADDRESS,
         ROUND(H.LOCATION.ST_Distance(P.SHAPE, 'kilometer'), 2) as DISTANCE,
-        P.LINKED_URL
+        P.LINKED_URL,
+        P.SHAPE
     FROM HOTEL.HOTEL H, HOTEL.POI_LONGVIEW P
     WHERE
         H.HNO=26 /*Bella Cliente */ AND
         TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE
     ORDER BY DISTANCE ASC;
     ```
+
+    Each point can be viewed as shown below.
+
     ![Within 3 km](within-distance.png)
 
-    For additional details, see [ST_Point Type](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a29e653787c1014813b997510a8cc06.html), [ST_Distance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a182aa3787c101481f996e3d419c720.html), and [ST_WithinDistance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a1cc028787c1014b4afe2c72ff94316.html).
+    ![Ingram Park](ingram-park.png)
+
+    Alternatively, all the points can be shown together.
+
+    ```SQL
+    SELECT
+        ST_UnionAggr(P.SHAPE)
+    FROM HOTEL.HOTEL H, HOTEL.POI_LONGVIEW P
+    WHERE
+        H.HNO=26 /*Bella Cliente */ AND
+        TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE;
+    ```
+
+    ![Points of interest close by](poi-close-to-hotel.png)
+
+    For additional details, see [ST_Point Type](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a29e653787c1014813b997510a8cc06.html), [ST_Distance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a182aa3787c101481f996e3d419c720.html), [ST_WithinDistance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a1cc028787c1014b4afe2c72ff94316.html), and [ST_UnionAggr Method](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/601aa9fb93e241af96faafcb8f01b12e.html).
 
     To view all access methods for spatial data, see [SAP HANA Spatial Reference for SAP HANA Cloud - Accessing and Manipulating Spatial Data](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2d11d7787c1014ac3a8663250814c2.html).
 
@@ -323,6 +418,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >It should also be noted that when a used in a ST_POINT, x is longitude and y is latitude so the above point would be represented as `NEW ST_Point('POINT (-94.71832 32.50459)', 4326)`.
 
+Congratulations! You have explored a few of the multi-model features in SAP HANA and are now familiar with graph workspaces, JSON collections, and spatial data when using the SAP HANA database explorer.
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to create a training job using your Data Attribute Recommendation service instance
   - How to deploy a machine learning model using your Data Attribute Recommendation service instance
 
-To use the data uploaded in [Upload Data to Data Attribute Recommendation](cp-aibus-dar-upload-data), it is necessary to create a training job and deploy the resulting machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+To use the data uploaded in [Upload Data to Data Attribute Recommendation](cp-aibus-dar-upload-data), it is necessary to create a training job and deploy the resulting machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: After data preparation and upload, the next step is to train a model using historical data. In this tutorial, you will focus on model training using the training job concept. You will create a training job, check status, get model details, and also deploy the trained model at the end.   
 
@@ -48,7 +48,7 @@ For that, select the request `Get Job by id` within the folder `Train Job`. Clic
 
 In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained.
 
-The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the trial environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED`.
+The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the free tier environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED`.
 
 ![Get Training Job Response](get-job-responseR.png)
 

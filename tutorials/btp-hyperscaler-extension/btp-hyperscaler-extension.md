@@ -3,17 +3,17 @@ title: Consume SAP BTP Services from Any Hyperscaler
 description: Deploy an SAP Fiori application in any hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and use services from SAP BTP.
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-btp\, kyma-runtime]
+tags: [ tutorial>intermediate, products>products>sap-btp--cloud-foundry-environment\, kyma-runtime]
 primary_tag: products>sap-btp--cloud-foundry-environment
 ---
 
 ## Prerequisites
- - You have either an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) or a [trial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) global account in SAP BTP
+ - Get an Account on SAP BTP to Try Out Free Tier Service Plans [Get an Account on SAP BTP](btp-free-tier-account)
  - You have an [account on the SAP Gateway Demo System (ES5)](gateway-demo-signup) created
  - You have [connected SAP BTP to your SAP Gateway Demo System (ES5) account](cp-portal-cloud-foundry-gateway-connection)
  - [Install Docker](https://docs.docker.com/get-docker/) (or any other Container tool).
- - Create an account at (https://hub.docker.com/) (or any other Container Image Library).
- - You have installed the [Kubernetes Command Line Tool](cp-kyma-download-cli), follow steps 1 and 2 from this tutorial
+ - You have installed [hub](https://hub.docker.com/) (or any other Container Image Library).
+ - You have installed the [Kubernetes Command Line Tool](cp-kyma-download-cli).
  - You have installed Service Manager Control (SMCTL) CLI v1.10.1, see [Service Manager CLI Release Information published on non-SAP site](https://github.com/Peripli/service-manager-cli)
  - You have assigned the Subaccount Service Administrator role collection, see [Assign the Subaccount Service Administrator Collection](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/0735965d10b342a393b5a83924dba9b4.html)
  - You have the [Helm](https://github.com/helm/helm) package manager for Kubernetes v3.1.2 installed

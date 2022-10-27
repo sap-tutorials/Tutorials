@@ -5,11 +5,12 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
+keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
 ---
 
 ## Prerequisites
- - You have access to a trial account on SAP BTP
- - You are familiar with [the basic concepts of SAP BTP, Trial](cp-trial-quick-onboarding)
+ - You have access to a global account on SAP BTP that is on feature set B. See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
+ - You are familiar with [the basic concepts of SAP BTP](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/73beb06e127f4e47b849aa95344aabe1.html).
 
 ## Details
 ### You will learn
@@ -20,8 +21,6 @@ primary_tag: products>sap-business-technology-platform
   - How commands are structured
   - How to get help in the btp CLI
   - Where to find documentation
-
->With the release of the btp CLI client version 2.0 on March 25, 2021, the executable file name was changed from `sapcp` to `btp`. This change is reflected in all documentation, including this tutorial. If you still have a 1.X version of sapcp CLI, see [Migrating from sapcp to btp](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4f1fe8dd2739467cb7bcab63f918b8dc.html).
 
 ---
 
@@ -37,6 +36,8 @@ Here are some of the tasks you can use the btp CLI for:
 - Managing entitlements of global accounts and subaccounts
 - Managing users and their authorizations in global accounts and subaccounts
 - Subscribing to applications
+- Consuming services that are decoupled from the existing environments (referred to as "Other" environment in the Discovery Center), see [Consuming Services in Other Environments Using SAP Service Manager](https://help.sap.com/docs/SERVICEMANAGEMENT/09cc82baadc542a688176dce601398de/0714ac254e83492281d95e25548b388c.html)
+
 
 [DONE]
 [ACCORDION-END]
@@ -44,7 +45,7 @@ Here are some of the tasks you can use the btp CLI for:
 
 [ACCORDION-BEGIN [Step 2: ](For which global accounts can I use the btp CLI?)]
 
-SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.
+SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -52,10 +53,14 @@ Here you can read more about the [Cloud Management Tools Feature Set B Innovatio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](btp CLI and cf CLI - What's the difference?)]
+[ACCORDION-BEGIN [Step 3: ](btp CLI vs environment-specific CLIs)]
 
-You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **btp CLI** relates to the **cf CLI**:
-The btp CLI is the CLI for working with global accounts on SAP BTP. You use the btp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with btp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you use the cf CLI.
+Cloud Foundry: You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **btp CLI** relates to the **cf CLI**:
+The btp CLI is the CLI for working with global accounts on SAP BTP. You use the btp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with btp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing service instances and members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you need to use the cf CLI.
+
+Kyma: The same goes for Kyma: You use the btp CLI for all tasks on global account, directory, and subaccount level. The last step in the btp CLI is create a Kyma environment instance, aka a Kyma cluster. You then need to download the configuration file that you need to access your Kyma cluster. To work in the cluster and manage your Kyma service instances, you need the kubectl. See [Creating SAP BTP, Kyma runtime via the btp CLI](https://blogs.sap.com/2022/02/24/creating-sap-btp-kyma-runtime-via-the-sap-btp-cli/) and [Accessing a Kyma Instance Using kubectl](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/3e25944e491049b2aeec68c562a5ee48.html).
+
+"Other" Environments: SAP Service Manager allows you to consume services from any runtime environment directly from the subaccount. We refer to this as "other" environment. For this environment type "other", you can use the btp CLI to manage services, instances, plans, and the like, because these are managed on subaccount level. See [Working With Resources of SAP Service Manager Using the btp CLI](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/fe6a53bfe48e4831b2f5ae7f06d4f07d.html).
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -66,15 +71,20 @@ The btp CLI is the CLI for working with global accounts on SAP BTP. You use the 
 1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the btp CLI client for your operating system.
 2. Extract the client executable from the tar.gz archive as follows:
     - Linux: Use the terminal to extract the tar.gz archive with `tar -vxzf <tar.gz name>`
-    - macOS: Open the tar.gz file with a double click
+    - macOS: Open the tar.gz file with a double click.
     - Windows: Use PowerShell to extract the tar.gz archive with `tar -vxzf <tar.gz name>`. Alternatively, use an external tool to extract the executable file to your system.
-3. Run btp from within the extracted folder or ensure that it's in your PATH. In Windows, for example, you can open the folder and type `cmd` or `powershell` into the address bar. On macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+3. Copy the client executable from the unpacked folder to a directory of your choice. We recommend the following:
+    - Linux: `/usr/local/bin`
+    - macOS: `/usr/local/bin`
+    - Windows: `C:/Users/<your-user>`
+4. Ensure that the directory with the btp executable is in your PATH.
+    - macOS and Linux: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default.
+    - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
+5. Open a terminal and enter `btp`.
+
+The output should look similar to this screenshot:
 
 ![CLI info screen](sapcp.png)
-
-You get version and usage information, you learn where the configuration file is located, and you get useful tips how to log in and get help in the client.
-
->To use the examples provided here in PowerShell, you may want to configure an alias for btp.exe with `btp <path-to-folder-with-btp.exe>\btp`.
 
 [DONE]
 [ACCORDION-END]
@@ -139,17 +149,11 @@ Once you're logged into your global account, it should look similar to this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Understand the command syntax: usage)]
+[ACCORDION-BEGIN [Step 6: ](Understand the command syntax)]
 
 ![CLI command syntax](usage.png)
 
 Each command starts with the base call `btp`. The syntax of the command itself is very close to natural language: It starts with a verb, i.e. the *action*, followed by a *group/object* combination. So you build a command by combining `btp` with an action (let's say *list*) and a group/object combination (let's say *accounts/subaccount*):  `btp list accounts/subaccount`
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Understand the command syntax: options)]
 
 Additionally, **options** and **parameters** can be added to a command. As you've seen in the overview of all commands, there are the following options that you can add at the beginning of each command. For example, to use the verbose mode.
 
@@ -160,12 +164,6 @@ btp --verbose list accounts/subaccount
 ![CLI options](options.png)
 
 >To call help, you can always place `--help` at the end of a command, even if it's not complete. For example, `btp list --help`, `btp accounts --help`.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 8: ](Understand the command syntax: parameters)]
 
 **Parameters** are added to the end, after the group/object combination. A command can have one **positional parameter** as the first one, followed by other optional or mandatory parameters. The positional parameter is used without a key, all others have a key. The command help specifies the optionality of all parameters and describes what you can or have to add.
 
@@ -197,7 +195,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 - After initial login, the global account is targeted.
 
-- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
+- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `list accounts/subaccount` lists all subaccounts of the global account, even if a subaccount or a directory is targeted.
 
 - If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 

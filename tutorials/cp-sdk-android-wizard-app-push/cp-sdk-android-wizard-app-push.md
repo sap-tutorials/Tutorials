@@ -3,9 +3,10 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Send Notifications to Your Android Application
 description: Add foreground and background notifications to your application using Google Firebase.
-primary_tag: products>sap-btp-sdk-for-android
+primary_tag: software-product>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+keywords: sdkforandroid
 time: 20
 ---
 
@@ -103,7 +104,7 @@ Notice that the app shows the notification.
 
     >If the app was not running when the notification was tapped, due to a change made in the previous tutorial, you can view it by pressing **Back** and navigating from the **Categories** screen to the **Entity** list screen.
 
-Currently, the message is displayed in an `AlertDialog`.
+Currently, the message is displayed in a dialog with cancel action.
 
 You can add custom logic to the app to decide on the action to take, such as displaying the new Office Furniture category.
 

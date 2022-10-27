@@ -5,8 +5,8 @@ title: Use Smart Data Integration to Virtualise Data from On-Premise to the Clou
 description: Virtualize data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using Smart Data Integration (SDI) and the Data Provisioning Agent.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

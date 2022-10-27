@@ -29,9 +29,9 @@ go version
 ![go version](version.png)
 
 
-If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have version 1.8 - 1.16 installed.
+If Go is installed, then it will return the currently installed version, such as 1.16.  
 
->For further details on supported versions, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
+>For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
@@ -58,7 +58,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     If it is not installed, on Linux install the System GNU C compiler.  
 
-    On Windows download it from [Download MinGW](https://www.mingw-w64.org/downloads/) and run the installer.
+    On Windows, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **Mingw-builds**, select **Installation: Sourceforge** to run the installer.
 
     During the install, set the architecture option to `x86_64`.
 
@@ -91,7 +91,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Result of copying source](hana-client-in-go-src.png)
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  The GO111MODULE variable is required in GO version 1.16 and is described further at [New module changes in Go 1.16](https://blog.golang.org/go116-module-changes).  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  The GO111MODULE variable is required in GO versions >= 1.16 and is described further at [New module changes in Go 1.16](https://blog.golang.org/go116-module-changes).  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
 
     ```Shell (Windows)
     set CGO_LDFLAGS=c:\sap\hdbclient\libdbcapiHDB.dll

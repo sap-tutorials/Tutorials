@@ -1,6 +1,6 @@
 ---
 title: Access Remote Sources with SAP HANA Database Explorer
-description: Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake IQ databases using SAP HANA smart data access (SDA) and the Cloud Connector.
+description: Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake Relational Engine databases using SAP HANA smart data access (SDA) and the Cloud Connector.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana\,-express-edition, software-product>sap-connectivity-service]
@@ -16,7 +16,7 @@ primary_tag: software-product>sap-hana-cloud
   - How to use SAP HANA smart data access (SDA) to create connections (remote sources) to other databases
   - How to create virtual tables from a remote source
   - How to setup the Cloud Connector to enable a remote source from SAP HANA Cloud to an on-premise SAP HANA database
-  - Instances of SAP HANA, express edition, SAP HANA Cloud, SAP HANA database, and data lake IQ
+  - Instances of SAP HANA, express edition, SAP HANA Cloud, SAP HANA database, and data lake Relational Engine
 
 Remote sources are connections to other databases.  Virtual tables use a remote source to create a local table that points to data stored in another database.  Federated queries make use of virtual and non virtual tables.
 
@@ -28,7 +28,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >Note that the SAP HANA Cloud trial is limited to creating one SAP HANA database per trial account.
 
-The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud database to an SAP HANA Cloud, data lake IQ.  The example in step 3 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.    
+The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud database to an SAP HANA Cloud, data lake Relational Engine.  The example in step 3 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.    
 
 
 ---
@@ -83,7 +83,9 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC_TRIAL');
     ```  
 
-    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy > SQL Endpoint**.
+    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
+
+    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy SQL Endpoint**.
     >
     > ![Host and Port](host-and-port.png)
 
@@ -101,14 +103,14 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
     ![remote sources](remote-source.png)
 
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html).
-
 5. A virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.   This can be visualized as follows:
 
     ![on-premise to cloud remote connection](onprem-to-cloud-connection.png)
 
 
-    Open the SAP HANA database explorer from the SAP HANA, express edition.  If needed, create the HOTEL schema and a user who can access the schema.
+    Open the SAP HANA database explorer from the SAP HANA, express edition.  
+    
+    >If needed, create the HOTEL schema and a user who can access the schema.
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
@@ -135,6 +137,8 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ```SQL
     CREATE VIRTUAL TABLE HOTEL.VT_TOURIST_REVIEWS AT "REMOTE_HC_TRIAL"."HC_HDB_Trial"."HOTEL"."TOURIST_REVIEWS";
     ```
+    >
+    >Additional details can be found at [CREATE VIRTUAL TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d2a0406155f24a49aa6c549e0c428bd7.html).
 
 9. Open the virtual table `VT_TOURIST_REVIEWS` and notice that its type is virtual.
 
@@ -176,19 +180,19 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect from SAP HANA Cloud to SAP HANA Cloud, data lake IQ)]
+[ACCORDION-BEGIN [Step 2: ](Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine)]
 
-[SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/cloud/en-US) can be used to store large amounts of data that is not accessed frequently.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake IQ and access the table from the associated SAP HANA Cloud instance.
+[SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/cloud/en-US) can be used to store large amounts of data that is not accessed and updated as frequently as data in an SAP HANA database.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake Relational Engine and access the table from the associated SAP HANA database instance.
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
 
     ![add a SAP HANA Data Lake](add-data-lake.png)
 
-2. Open the database explorer connected to the data lake IQ.
+2. Open the database explorer with a connection to the data lake by choosing **Open in SAP HANA Database Explorer**.
 
     ![open database explorer](open-dbx-data-lake.png)
 
-3.  Execute the following SQL to create a table named `tourist_reviews` in the data lake IQ.
+3.  Execute the following SQL to create a table named `tourist_reviews` in the data lake Relational Engine.
 
     ```SQL
 
@@ -209,9 +213,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![create table data lake](create-table-data-lake.png)
 
-    For additional details consult [CREATE TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html).
+    For additional details consult [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html).
 
-4. In the SAP HANA database connection, create a remote source from the HANA database to the data lake IQ.  Be sure to replace the host and password values.
+4. In the SAP HANA database connection, create a remote source from the HANA database to the data lake Relational Engine.  Be sure to replace the host and password values.
 
     ```SQL
     CREATE REMOTE SOURCE HC_DL_Trial
@@ -228,17 +232,38 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![SAP HANA Data Lake Remote Source](remote-source-DL.png)
 
-6. Right-click on **`HC_DL_TRIAL`** and choose **Open**.  Create a virtual table in SAP HANA Cloud named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTEL** that maps to the newly created table in SAP HANA Cloud, data lake IQ.
+6. Right-click on **`HC_DL_TRIAL`** and choose **Open**.  Create a virtual table in SAP HANA Cloud named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTEL** that maps to the newly created table in SAP HANA Cloud, data lake Relational Engine.
 
-    ![virtual data lake table](virtual-table-data-lake.png)
+    ![virtual data lake table](virtual-table-data-lake-1.png)
 
     This can be visualized as follows:
 
     ![data lake and on-premise remote connection](dl-cloud-connection.png)
 
-7. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake IQ  table.
+    > Alternatively, the following SQL statement can be used to create the virtual table.  
+    >
+    ```SQL
+    CREATE VIRTUAL TABLE HOTEL.VT_DL_TOURIST_REVIEWS AT HC_DL_TRIAL.iqaas.HOTEL.TOURIST_REVIEWS;
+    ```
+    >
+    It is also possible to create the remote table and virtual table together in the same statement.
+    >
+    ```SQL
+    CREATE VIRTUAL TABLE HOTEL.VT_DL_TOURIST_REVIEWS (
+      REVIEW_ID INTEGER PRIMARY KEY,
+      REVIEW_DATE DATE NOT NULL,
+      DESTINATION_ID INTEGER,
+      DESTINATION_RATING INTEGER,
+      REVIEW VARCHAR(500) NOT NULL
+    ) AT HC_DL_TRIAL.iqaas.HOTEL.TOURIST_REVIEWS WITH REMOTE;
+    INSERT INTO HOTEL.VT_DL_TOURIST_REVIEWS VALUES(1, '2019-03-15', 1, 5, 'We had a great day swimming at the beach and exploring the beach front shops.  We will for sure be back next summer.');
+    INSERT INTO HOTEL.VT_DL_TOURIST_REVIEWS VALUES(2, '2019-02-02', 1, 4, 'We had an enjoyable meal.  The service and food was outstanding.  Would have liked to have slightly larger portions');
+    ```
+
+7. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake Relational Engine table.
 
     ```SQL
+    SELECT * FROM HOTEL.TOURIST_REVIEWS;
     SELECT * FROM HOTEL.VT_DL_TOURIST_REVIEWS;
     ```
 
@@ -253,7 +278,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     Notice that the remote data source is updateable.  Data stored in an SAP HANA Cloud, data lake is stored on disk, which has cost advantages compared to memory storage. SAP HANA Cloud, data lake can also be used to store large amounts of data.
 
-    > Note, another approach is to use container groups.  For additional details see [Data Lake IQ (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).  An example follows.
+    > Note, another approach is to use container groups.  For additional details see [Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).  An example follows.
     >
     ```SQL
     CALL SYSHDL.CREATE_CONTAINER('HOTEL_CONTAINER', 'DBADMIN');
@@ -361,7 +386,7 @@ The following commands were used to start the Cloud Connector.
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HANA_EXPRESS');
     ```  
 
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html) and [Create an SAP HANA On-Premise Remote Source](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/latest/en-US/20d299d2f5224e8590982e8ad97362a2.html).
+    Additional details can be found at [Create an SAP HANA On-Premise Remote Source](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/latest/en-US/20d299d2f5224e8590982e8ad97362a2.html).
 
 8. After executing the create remote source SQL statement, the result can be seen in the **Remote Sources** folder, as shown below.  You may need to press the refresh button.
 
@@ -381,7 +406,7 @@ The following commands were used to start the Cloud Connector.
 
 For further information, see [Data Replication and Data Virtualization](group.hana-cloud-extend-2-data-replication), [Access Data Across Your On-Premise and Cloud Data Sources](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=&eventid=2826629&sessionid=1&key=5B2F9AD591E22ABF731B366ABEFFB6B6&regTag=1812820&sourcepage=register), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
-Congratulations!  You have now used remote sources to access data running on a different SAP HANA instance and on a SAP HANA Cloud, data lake IQ.
+Congratulations!  You have now used remote sources to access data running on a different SAP HANA instance and on a SAP HANA Cloud, data lake Relational Engine.
 
 [VALIDATE_1]
 [ACCORDION-END]

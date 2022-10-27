@@ -2,8 +2,8 @@
 auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -138,10 +138,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [ACCORDION-BEGIN [Step 4: ](Enhance behavior implementation)]
   1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
 
-      ![Enhance behavior implementation](implementation4.png)
-
-
-  2. In your **global class** replace your code with following:
+    In your **global class** replace your code with following:
 
     ```ABAP
     CLASS zcl_bp_i_travel_m_xxx DEFINITION
@@ -157,11 +154,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```
 
-  3. Switch to **Local Types**.
+  2. Switch to **Local Types**.
 
       ![Enhance behavior implementation](implementation.png)
 
-  4. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
+  3. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -379,13 +376,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement determination)]
+[ACCORDION-BEGIN [Step 6: ](Implement action)]
 
-  1. Now you will implement a determination. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
-
-    >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
-    To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
-    Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
+  1. Now you will implement an action. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
 
     ```ABAP
       ********************************************************************************
@@ -445,7 +438,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement action)]
+[ACCORDION-BEGIN [Step 7: ](Implement determination)]
+
+  >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
+  To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
+  Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
+
   1. Implement method `CalculateTravelKey`:
 
     ```ABAP
@@ -791,5 +789,5 @@ You can [deploy your ABAP application with SAP Business Application Studio](abap
 
 [Implicit Returning Parameters](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/aceaf8453d4b4e628aa29aa7dfd7d948.html )
 
-[openSAP RAP](https://open.sap.com/courses/cp13 )
+[`openSAP` RAP](https://open.sap.com/courses/cp13 )
 ---

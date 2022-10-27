@@ -27,7 +27,7 @@ Mac Catalyst was introduced by Apple in 2019 during `WWDC`. Mac Catalyst allows 
 
 Mac Catalyst combined a lot of the common frameworks and make them available to run both on MacOS as well as iOS, e.g. Foundation.
 
-The big difference is that the underlying UI technologies remained separated on MacOS (`AppKit`) as well as on iOS (`UIKit`). What Mac Catalyst allows you to do is run `UIKit` on MacOS which allows your iPad ready app to run on Mac.
+The big difference is that the underlying UI technologies remained separated on MacOS (`AppKit`) as well as on iOS (`UIKit`). What Mac Catalyst allows you to do is run `UIKit` as well as `SwiftUI` on MacOS which allows your iPad ready app to run on Mac.
 
 > If you're interested in Mac Catalyst in more detail, please visit [Bring Your iPad App to Mac](https://developer.apple.com/mac-catalyst/)
 

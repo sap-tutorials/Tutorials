@@ -4,7 +4,7 @@ description: Develop a simple CAP Node.js application using SAP Business Applica
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-business-application-studio
+primary_tag: software-product>sap-business-application-studio
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
 ---
@@ -165,7 +165,12 @@ author_profile: https://github.com/Paolaufer
 
 [ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Add custom logic)]
 
-In the `srv` folder, create a new file called `cat-service.js`, and populate it with the following:
+1. In the `srv` folder, create a new file called `cat-service.js`.
+2. If asked if you want to allow the use of the ESLint library for validation, click **Allow**.
+
+  !![Allow ESLint](eslint.png)
+
+3. Populate the `cat-service.js` file with the following:
 
 ```JavaScript
 /**
@@ -199,7 +204,7 @@ You can also see the semantic structure of the application by expanding the CAP 
 
 [ACCORDION-BEGIN [Step 6: ](Test the application with local database)]
 
-You can explicitly deploy your application to a persistent local SQLite database, or you can run your application and it will implicitly use an in-memory database.
+You can explicitly deploy your application to a persistent local `SQLite` database, or you can run your application and it will implicitly use an in-memory database.
 
 This step describes how to run the application with an in-memory database.
 
@@ -239,11 +244,9 @@ You will first add all required dependencies, and the create and run a run confi
 5. Click the right green arrow on the right of the configuration name to run the application.
 
 
-6. When prompted, click **Expose and Open** for **port 4004**.
+6. When prompted, click **Open in New Tab**.
 
-    !![Expose and open](expose-and-open.png)
-
-      The port 4004 the application is running on is exposed to external access, in this case, to the browser.
+    The application opens in the browser.
 
 7. Press Enter to use the default description. The application opens in the browser and you can click to see the metadata and entities the service.
 
@@ -265,7 +268,8 @@ You will first add all required dependencies, and the create and run a run confi
 
     !![Stop the app](debug-processes.png)
 
-[VALIDATE_6]
+[DONE]
+
 [ACCORDION-END]
 
 ---

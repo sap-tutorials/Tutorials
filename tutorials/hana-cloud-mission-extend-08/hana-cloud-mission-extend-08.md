@@ -5,8 +5,8 @@ title: Use the Cloud Connector to Connect SAP HANA On-Premise to SAP HANA Cloud,
 description: Replicate data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using the cloud connector.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

@@ -11,7 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) to start.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+    - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
 ## Details
 ### You will learn
@@ -21,9 +24,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to connect to the sandbox service
  - How to delegate requests to external services
  - How to add the API key
-
-
-To start with this tutorial use the result in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 ---
 
@@ -52,7 +52,7 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
     !![API EDMX](edmxdownload.png)
 
-    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `templates/ext-service-add/srv/external`.
+    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `tutorial/templates/ext-service-add/srv/external`.
 
 
 
@@ -100,7 +100,7 @@ Additionally, the file will be registered as service definition in the `package.
 [ACCORDION-BEGIN [Step 3: ](Add mock data for Business Partner)]
 In this step, you add some mock data for the business partner service. This allows you to perform tests using the service without the need to connect to an actual remote service.
 
-1. Copy the folder `data` from `templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
+1. Copy the folder `data` from `tutorial/templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
 
     The folder contains a CSV file `API_BUSINESS_PARTNER-A_BusinessPartner.csv` with some business partner data.
 
@@ -114,7 +114,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     ```
     ...
-    > filling API_BUSINESS_PARTNER.A_BusinessPartner from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
+    > init from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
     ...
     [cds] - mocking API_BUSINESS_PARTNER { at: '/api-business-partner' }
     [cds] - serving RiskService { at: '/service/risk', impl: './srv/risk-service.js' }
@@ -182,9 +182,15 @@ In this step, you add some mock data for the business partner service. This allo
 [ACCORDION-BEGIN [Step 4: ](Connect to the sandbox service)]
 Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-use), you will learn how to connect the business partner service with a real SAP S/4HANA system. In this tutorial here, you use the sandbox system to try out your application with a real remote system.
 
+1. Install the node packages to mock the external services:
+
+    ```
+    npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/util
+    ```
+
 1. Open again the [**Business Partner (A2X)**](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) page on the **SAP API Business Hub**.
 
-2. Under **Overview** **&rarr;** **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
+2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
     !![Sandbox](sandbox.png)
 
@@ -204,7 +210,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 4. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -257,7 +263,7 @@ To solve this issue, you add some handler code to delegate the call from the `Su
 
 2. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -328,7 +334,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
 
 6. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 

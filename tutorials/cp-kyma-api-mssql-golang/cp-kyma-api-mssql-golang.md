@@ -3,8 +3,8 @@ title: Deploy a Go MSSQL API Endpoint in the Kyma Runtime
 description: Develop and deploy an MSSQL API endpoint written in Go to the Kyma runtime.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -241,11 +241,15 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `configmap.yaml`: defines the name of the database, host, and port. The host value assumes that the service for the database is named `mssql` and is defined in the `dev` Namespace. Make sure to adjust this if you made any changes.
 - `deployment.yaml`: defines the deployment definition for the Go API, as well as a service used for communication. This definition references both the `secret.yaml`, which was defined in the previous tutorial and also included in this directory, and the `configmap.yaml` by name.  
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 
@@ -274,10 +278,10 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     To find the reason for the **STATUS** `CreateContainerConfigError`, review the Pod definition:
 
     ```Shell/Bash
-    kubectl get pod api-mssql-go-c694bc847-tkthc -n dev -o yaml
+    kubectl describe pod api-mssql-go-c694bc847-tkthc -n dev
     ```
 
-    Find the `containerStatuses.state.waiting.message` property for the `api-mssql-go` image to determine the issue.
+    Within the Events of the pods you should find a message `Error: configmap "api-mssql-go" not found`.
 
 4. Apply the `ConfigMap`:
 
@@ -313,13 +317,15 @@ To access the API we can use the `APIRule` we created in the previous step.
 
 1. Open the Kyma runtime console
 
-2. Choose the `dev` Namespace.
+2. From the menu, choose **Namespaces**
 
-3. From the menu, choose **Discovery and Network > `APIRules`**.
+3. Choose the `dev` Namespace.
 
-4. Choose the **Host** entry for the **api-mssql-go** `APIRule` to open the application in the browser which will produce a **404** error. Append `/orders` to the end of the URL and refresh the page to successfully access the API. The URL should be similar to:
+4. From the menu, choose **Discovery and Network > `API Rules`**.
 
-    `https://api-mssql-go.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com/orders`
+5. Choose the **Host** entry for the **api-mssql-go** `APIRule` to open the application in the browser which will produce a **404** error. Append `/orders` to the end of the URL and refresh the page to successfully access the API. The URL should be similar to:
+
+    `https://api-mssql-go.<cluster>.kyma.ondemand.com/orders`
 
     >A tool such as `curl` can be used to test the various HTTP methods of the API.
 

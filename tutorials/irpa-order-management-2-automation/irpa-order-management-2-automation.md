@@ -182,19 +182,19 @@ Now that you checked the dependencies, you can create your automation.
 
 8. Choose **Open the Expression editor** to open the **Expression Editor**.  
 
-        !![expression editor icon](expression-editor-icon1.png)
+      !![expression editor icon](expression-editor-icon1.png)
 
-9. In the **Expression Editor**, enter this text:
+9. In the **Expression Editor**, enter this text below and click **Save Expression**:
 
-        ```Expression
-        Step7.index + 3` and click `Save Expression`.
-        ```
+    ```Expression
+    Step7.index + 3
+    ```
 
-        !![edit-expression](edit-expression.png)
+      !![edit-expression](edit-expression.png)
 
 10. Rename the **Output Parameters** as `myExcelRow`. The step will now look like this:
 
-        !![create-number-variable-final](create-number-variable-final.png)
+      !![create-number-variable-final](create-number-variable-final.png)
 
 11. Drag-and-drop **Set Values (Cells)** activity in the **For** loop below Create Number Variable activity.
 

@@ -52,6 +52,8 @@ Trace settings can also be configured using environment variables.
 
     The %p will be replaced with the process ID of the traced application. Including %p in the file name ensures that each process can write its own trace file.
 
+    >The next step provides an example of sending the trace output to `stdout` or `stderr`.  Another option for Node.js applications is to specify a callback to receive the trace output to using the `onTrace` method which is shown in the tutorial [Connect Using the SAP HANA Node.js Interface](hana-clients-node)
+
     Trace categories:  
 
     - SQL
@@ -93,16 +95,17 @@ Trace settings can also be configured using environment variables.
     Notice that the trace settings are shown at the top of the file.  
 
     ```
-    libSQLDBCHDB 2.7.17.1607722875
+    libSQLDBCHDB 2.12.13.1642791468
     SYSTEM: Microsoft Windows / X64
-    BUILD AT: 2020-12-21 18:56:04
+    BUILD AT: 2022-01-28 19:09:11
     BRANCH: unknown
-    APPLICATION: C:\SAP\hdbclient\hdbsql.exe
+    BUILD MODE: rel
+    APPLICATION: c:\SAP\hdbclient\hdbsql.exe
     HOST: W-R90XC65K
     OS USER: dan
-    CURRENT DIRECTORY: C:\Users\dan\HANAClientsTutorial
-    TRACE FILE NAME: c:\temp\traces\SQLDBC-35724.txt
-    PROCESS ID: 35724
+    CURRENT DIRECTORY: c:\SAP\hdbclient
+    TRACE FILE NAME: c:\temp\traces\SQLDBC-23380.txt
+    PROCESS ID: 23380
     TRACE FILE WRAP COUNT: 0
 
     ---
@@ -110,6 +113,8 @@ Trace settings can also be configured using environment variables.
 
     SQL Trace: Level DEBUG
     Distribution Trace: Level DEBUG
+
+    ---
     ```
 
     If the trace settings change while tracing is enabled, the Enabled Traces section will appear again in the trace file.  
@@ -188,7 +193,7 @@ The following are some additional options for tracing.
 
     ![Environment Variable Values](EnvironmentVariable.png)
 
-4.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
+4.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
     ```Shell
     hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"

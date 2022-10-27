@@ -51,24 +51,26 @@ If this is the first time SAP Cloud Connector is started, you will see the **Def
 
 2. To find the right information to enter into SAP Cloud Connector, access your SAP BTP trial in a second browser tab at <https://account.hanatrial.ondemand.com/trial/#/home/trial>.
 
-3. Click **Enter trial**, then click the **trial** tile.
+3. Click **Go To Your Trial Account**, then click the **trial** tile.
 
-    ![Trial subaccount](22-btp-goto-trial.png)
-
-
-4. You can find the required information to enter in the SAP Cloud Connector form on this Overview page. You can identify the region ID from the **API end point** on the Cloud Foundry Environment tab and find the subaccount ID on top of the page next to **ID:**.
-
-    Copy the subaccount ID.
-
-    ![BTP Cockpit Overview](5a-btp-cockpit-overview.png)
-
-5. Go back to the SAP Cloud Connector tab. In the form, click the selector icon and select the region of your trial account. The ID of the selected region should start with `cf`.
-
-    ![Selector icon](3-scc-selector.png)
-    ![Selection of regions](4-scc-selectregion.png)
+    ![Trial subaccount](22a-btp-go-to-trial.jpg)
 
 
-5. Paste the subaccount ID from the SAP BTP cockpit Overview page into the **Subaccount** field.
+4. You can find the required information to enter in the SAP Cloud Connector form on this Overview page. You can identify the region, the provider and  the subaccount ID in the **General** section.
+
+    Copy the region, e.g. US East (VA).
+
+    ![BTP Cockpit Overview](5b-btp-cockpit-overview.png)
+
+5. Go back to the SAP Cloud Connector tab. In the form, click the Select icon in the **Region** field.
+
+    ![Select icon](4a-scc-selectoricon.png)
+
+6. Paste the region of your trial account and select the right entry in the list. Make sure you select the right provider.
+
+    ![Select region](4b-scc-selectregion.png)
+
+5. Go back to the BTP Cockpit Overview page and copy the ``subaccount ID`` into the **Subaccount** field.
 6. Enter an easily identifiable display name, e.g. your SAP BTP trial's subdomain into **Display Name**.
 7. Enter the ``email address`` and ``password`` that you use to login to your SAP BTP trial into **Login E-Mail** and **Password**.
 8. If you have attached another SAP Cloud Connector to your SAP BTP trial account already, enter any unique **Location ID** here to distinguish this SAP Cloud Connector from the existing one. Otherwise, you can leave this field empty.
@@ -174,11 +176,11 @@ The design-time destination is used to fetch the federated content from the cont
 
 2. In the menu, navigate to **Connectivity** > **Destinations**.
 
-    ![Go to Destinations](23-btp-goto-destinations.png)
+    ![Go to Destinations](23a-btp-goto-destinations.png)
 
 3. Click **New Destination**.
 
-    ![Destination screen](24-btp-new-destination.png)
+    ![Destination screen](24a-btp-new-destination.png)
 
 
 4. Fill in the form:
@@ -200,13 +202,13 @@ The design-time destination is used to fetch the federated content from the cont
 
 
 
-    ![Design-time Destination](25b-btp-designtime-destination.png)
+    ![Design-time Destination](25a-btp-designtime-destination.jpg)
 
-6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial systems, as property name and value.
+6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial (CAL) systems, as property name and value.
 
 7. Click **Save**.
 
-![Additional property](25-2-btp-designtime-destination.png)
+![Additional property](25-2b-btp-designtime-destination.jpg)
 
 [DONE]
 [ACCORDION-END]
@@ -221,9 +223,9 @@ The runtime destination is used to launch federated applications at runtime.
 
 2. Change the **Name** of the new destination to **`s4hanart`**.
 
-3. Remove the part after the port from the **URL**.
+3. Change the **URL** to **`http://s4hana:44300`** .
 
-4. Enter the password ``Welcome1`` again.
+4. Enter the password again.
 
 5. Click **New Property** to add the following properties to your destination. You can **type in the property name, if it is not available in the dropdown list**.
 
@@ -231,12 +233,12 @@ The runtime destination is used to launch federated applications at runtime.
     |  :------------- | :-------------
     |  HTML5.DynamicDestination           | `true`
     |  sap-platform  | `ABAP` (type the property name)
-    |  sap-service    | A string that consists of the first two  characters 32 and the instance number of the ABAP application server, e.g. 3200 (type the property name)
+    |  sap-service    | A string that consists of the first two  characters 32 and the instance number of the ABAP application server, **3200** for your CAL system (type the property name)
     |  sap-sysid            | `<System ID of your SAP S/4HANA system>` - **S4H** for your CAL system (type the property name)
 
 6. Click **Save**.
 
-![Runtime Destination](27a-btp-runtime-destination.png)
+![Runtime Destination](27b-btp-runtime-destination.jpg)
 
 [VALIDATE_7]
 [ACCORDION-END]

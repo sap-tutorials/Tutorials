@@ -150,11 +150,11 @@ Next, you are going to add a section to your object page that shows the sales hi
 
 3. Add the annotation term `UI.LineItem` using **CMD/Ctrl + Space**. Press **Tab** to move your cursor to the line below `<Collection>`. Then, using **CMD/Ctrl + Space** again, add a column to the table (`Record "DataField"`).
 
-4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter an **`ID`** for this **`Path`**.
+4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter **`ID`** for this **`Path`**.
 
-    Press **Enter** to move your cursor to the next line and use **CMD/Ctrl + Space** to add a **Label** property.
+    Insert a new line after the end of `<PropertyValue Property="Value" Path="ID"/>`
 
-    Use **CMD/Ctrl + Space** again and select **String**. Enter **`Sales ID`** for the **String**.
+    Use **CMD/Ctrl + Space** to add a **Label** property. Enter **`Sales ID`** for the **String**.
 
 5. Now you are going to add another column.
 

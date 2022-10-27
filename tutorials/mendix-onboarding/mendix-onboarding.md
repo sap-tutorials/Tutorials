@@ -1,10 +1,10 @@
 ---
 title: Get Started with SAP Rapid Application Development by Mendix
 description: Set up your SAP Business Technology Platform (BTP) account so you can use SAP Rapid Application Development by Mendix to build applications to be deployed on SAP BTP.
-primary_tag: products>sap-rad-by-mendix
+primary_tag: software-product>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-rad-by-mendix  ]
+tags: [  tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-rad-by-mendix  ]
 time: 10
 ---
 
@@ -70,21 +70,23 @@ This opens the registration page.
 
 
 [ACCORDION-BEGIN [Step 3: ](Create a Mendix account)]
-Choose to **Sign in**.
+Choose to **Sign in** with SAP.
 
-!![Sign in](portal1.png)
+!![Sign in](Step3-sign-in.png)
 
-Choose to **sign in with SAP**.
 
-!![Sign in with SAP](mendixSigninWithSAP-New.png)
 
-Choose your SAP BTP region from the drop-down and click **Select region**.
+Choose your SAP BTP region from the drop-down and click **Select region**.  
 
-!![Select region](mendixSelectRegion-btp.png)
+!![Select region](Step3-region.png)
+
+Choose **Sign in with the default identity provider**.
+
+!![Select Identity Provider](Step3-IDprovider.png)
 
 This will redirect you to SAP BTP's login page. Enter your SAP BTP credentials and sign in.
 
-In the Application Authorization popup, choose **Authorize**.
+In the **Application Authorization** popup, choose **Authorize**.
 
 !![Authorize](mendixSAPAuthorize-New.png)
 
@@ -120,7 +122,7 @@ In the development portal home page, choose **Create App**.
 
 In the **App Templates** section, enter `SAP Fiori` to see the related templates.
 
-!![SAP templates](find-template.png)
+!![SAP templates](StartingPoint.png)
 
 Choose the **Blank App for SAP Fiori themed apps** template.
 
@@ -142,13 +144,15 @@ Select a region for SAP BTP and choose **Next**.
 
 Choose the Cloud Foundry environment to which you want to deploy.
 
-- Select **cfapps.YourRegion.hana.ondemand.com** for the domain. For example, `cfapps.eu10.hana.ondemand.com`.
+- Select **cfapps.YourRegion.hana.ondemand.com** for the domain.  For example, `cfapps.eu10.hana.ondemand.com`.
 
 -	Select **hanatrial-schema** for the database.
 
+- Select **Subscription** for the License Model.
+
 Choose **Create**.
 
-!![Choose Cloud Foundry environment](add-domain.png)
+!![Choose Cloud Foundry environment](CreateDev.png)
 
 The environment is created. To see it, go to **Environments**.
 
@@ -159,11 +163,9 @@ The environment is created. To see it, go to **Environments**.
 
 
 [ACCORDION-BEGIN [Step 5: ](Build your app)]
-To start working on your app, choose **Edit App**.
+To start working on your app, choose **Edit in Studio Pro**.
 
-Then choose **Edit in Mendix Studio Pro**.
-
-!![Build app](mendix-onboarding14-new.png)
+!![Build app](EditInMendixPro.png)
 
 You build apps using the Mendix Studio Pro, which is an application installed on your desktop. If you don't have the Mendix Studio Pro, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
 

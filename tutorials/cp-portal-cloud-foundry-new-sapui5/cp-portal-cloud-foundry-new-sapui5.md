@@ -3,8 +3,8 @@ title: Add an SAPUI5 App to Your Launchpad Site
 description: Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -23,7 +23,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to you
 
  Click the Content Manager icon in the side panel to open the **Content Manager**.
 
->The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
+>The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
 
   ![Open Content Manager](1-open-content-manager.png)
 
@@ -49,7 +49,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to you
 
     !![Enter app properties](3-add-app-properties.png)
 
-    >When working in your own environment, it is better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
+    >When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
 3. Click the **NAVIGATION** tab to specify the intent of your app.
 
@@ -106,7 +106,7 @@ This is described in the following steps.
 
 >Content assigned to the `Everyone` role is visible to all users.
 
-1. Select the **Everyone** role.
+1. Click the **Everyone** role.
 
     !![Select everyone role](10-everyone-role.png)
 

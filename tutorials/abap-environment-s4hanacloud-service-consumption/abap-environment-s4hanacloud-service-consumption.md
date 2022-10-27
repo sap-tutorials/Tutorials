@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create Service Consumption Model for Business Partner and Sales Order Item Cube
 description: Create Service Consumption Model for Business Partner and Sales Order Item Cube.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

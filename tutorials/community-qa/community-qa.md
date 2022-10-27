@@ -3,10 +3,9 @@ title: Ask and Answer Questions on SAP Community
 description: Get to know the Q&A section and learn how to ask great questions -- that get you the information you need and help the community at the same time.
 author_name: Lena Stodal
 author_profile: https://github.com/lenastodal
-
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [ tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
@@ -15,16 +14,12 @@ primary_tag: topic>sap-community
 - How to prepare your question
 - Tips and tricks for asking your question
 - What to do after you asked your question
- ---
 
-This tutorial is version number 01.2022.001
+This tutorial is version number 10.2022.001
 
 SAP Community wants to create a valuable store of knowledge and it is our goal to provide content to our members in the form of advice, support, and guidance. The creation of such a reliable place is amongst other factors heavily dependent on questions, how they are asked and answered -- and this is why you are here.
 
 In this tutorial, you will get to know the Q&A section, processes and guidelines. Ultimately, it will help you to prepare questions that draw more precise and helpful responses from our members and teach you how to easily gain - and share - knowledge in SAP Community. You will also earn the Q&A Savvy badge!
-
-
-## **Before asking your question**
 
 [ACCORDION-BEGIN [Step 1: ](Browse for questions in the SAP Community)]
 
@@ -36,7 +31,6 @@ SAP Community is a rich resource of information, containing years' worth of disc
 2. Alternatively, you can use the magnifying glass at the top right corner, which will show you all content that is available in the community with the search you typed in. Furthermore, you can filter for "Content Type" at the right-hand side of the page or filter by the respective tag you are interested in.
 
     ![Screenshot_homepage2](Screenshot_homepage2.png)
-
 
 [DONE]
 [ACCORDION-END]
@@ -56,11 +50,9 @@ You can also react to answers that were given by community members, for example 
 [VALIDATE_2]
 [ACCORDION-END]
 
-## **Asking your question**
+[ACCORDION-BEGIN [Step 3: ](Follow Rules of Engagement -- and be a good community citizen)]
 
 If searching doesn't yield the answer you need, then you'll want to ask a question yourself. The [Ask a Question](https://answers.sap.com/questions/ask.html) page includes several fields that you need to fill out before submitting, as well as some helpful advice for asking good questions.
-
-[ACCORDION-BEGIN [Step 3: ](Follow Rules of Engagement -- and be a good community citizen)]
 
 Before asking a question, you should familiarize yourself with the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement). The rules explain the etiquette that you should follow when interacting with other community members. They also outline which content is considered unacceptable.
 
@@ -81,8 +73,6 @@ You can learn more on the [About Tags](https://community.sap.com/resources/using
 
 [DONE]
 [ACCORDION-END]
-
-## **After asking your question**
 
 [ACCORDION-BEGIN [Step 5:](Regularly check your question)]
 There is an easy way to check on your question -- if you correctly adjusted your notifications on your profile, you will be automatically notified via e-mail and won't miss any reactions to your question.
@@ -152,10 +142,9 @@ After you accepted the answer, you will be given an individual code to enter int
 4. Enter the code (given by the moderator) in the question field below.
 
 [VALIDATE_7]
-[ACCORDION-END]
-
 
 **Thank you for taking part in our Q&A Tutorial! Stay tuned to receive your Q&A Savvy badge!**
+
 
 ### More Information
 
@@ -168,3 +157,5 @@ By taking [this tutorial](community-blogging), you'll discover how to prepare an
 **Maintain your SAP profile at [people.sap.com](https://people.sap.com/)**
 
 By taking [this tutorial](community-profile), you'll explore, set up, and manage the sections of your SAP profile ([people.sap.com](https://people.sap.com/)). You'll also earn the Profile Savvy badge.
+
+[ACCORDION-END]

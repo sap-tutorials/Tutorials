@@ -5,8 +5,8 @@ title: Remote Table Replication
 description: Use remote table replication after you have established a connection from an SAP HANA on-premise database to SAP HANA Cloud, SAP HANA database with the cloud connector.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -148,7 +148,7 @@ While this statement is being executed, in the background all data from the sour
 To refresh the virtual table to also include changes in data definitions, you need to execute this statement:
 
 ```SQL
-create virtual table <VIRTUALTABLENAME> refresh definition;
+alter virtual table <VIRTUALTABLENAME> refresh definition;
 ```
 If you now query the virtual table, you will see the updated definitions in this virtual table as well.
 

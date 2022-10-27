@@ -96,7 +96,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Table filter button](filterButton.png)
 
-    The following filter searches for hotels in California with a name containing `lo`.
+    The following filter searches for customer numbers `cno` less than or equal to 1005.
 
     ![Create And Apply Filters](CreateFilters.png)
 
@@ -133,7 +133,7 @@ We can see that reservations for suites only make up a small part of the overall
 
 [ACCORDION-BEGIN [Step 4: ](Additional features)]
 
-1. Right-click the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
+1. Right-click the tab of an open object such as CUSTOMER and choose  **Display In Database Browser** to reveal the object in the database browser.
 
     ![Display In Database Browser](DisplayInDatabaseBrowser.png)
 

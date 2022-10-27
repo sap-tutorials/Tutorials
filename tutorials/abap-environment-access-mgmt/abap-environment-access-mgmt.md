@@ -2,8 +2,8 @@
 auto_validation: true
 title: Maintain Business Roles and Access Restrictions in SAP BTP, ABAP Environment
 description: Create business roles and maintain access management in SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -11,7 +11,6 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
   - You need a SAP BTP, ABAP environment license.
-  - ADT version 2.96 or higher
 
 ## Details
 ### You will learn

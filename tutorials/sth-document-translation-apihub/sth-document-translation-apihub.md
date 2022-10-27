@@ -1,16 +1,16 @@
 ---
 title: Translate Documents with SAP API Business Hub
-description: Use your trial account to translate documents with SAP API Business Hub.
+description: Use your SAP BTP account to translate documents with SAP API Business Hub.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>sap-api-business-hub, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-translation-hub
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Business Technology Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) or you have your own SAP BTP Enterprise Account
-- You have created the credentials for Document Translation, as described in [Create Service Instance for Document Translation](sth-enable-document-translation)
-- You want to translate a document that is not larger than 10 MB because this is the limit for the SAP API Business Hub and contains less than 40.000 characters (document translation API restriction for synchronous API).
+- You have created a Free Tier account on SAP Business Technology Platform: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account) or you have your own SAP BTP Enterprise Account.
+- You have created the credentials for Document Translation, as described in [Create Service Instance for Document Translation](sth-enable-document-translation).
+- You want to translate a document that is not larger than 5 MB because this is the limit for the SAP API Business Hub and contains less than 40.000 characters (document translation API restriction for synchronous API).
 
 ## Details
 ### You will learn
@@ -57,7 +57,7 @@ Take a minute to explore both APIs.
 
 
 [ACCORDION-BEGIN [Step 5: ](Maintain the API environment)]
-The service offers a sandbox system out of the box, but the idea of this tutorial is to show, how to connect your SAP BTP trial or enterprise account to the SAP API Business Hub.
+The service offers a sandbox system out of the box, but the idea of this tutorial is to show, how to connect your SAP BTP free tier or enterprise account to the SAP API Business Hub.
 
 1. Select the **Try Out** button.
 

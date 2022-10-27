@@ -19,22 +19,22 @@ author_profile: https://github.com/Karunaharan
 -	How to provision and activate the capabilities
 
 ## SAP Integration Suite
-SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
+SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, Trading Partner Management, Integration Assessment, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
 
-The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
+The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/integration-suite/?region=all&tab=service_plan) service catalog.
 
-This part of the series lets you experience few capabilities offered by SAP Integration Suite. For the complete series, see [Request Product Details with an Integration Scenario](mission.cp-starter-integration-cpi).
+This part of the series lets you experience few capabilities offered by SAP Integration Suite. For the complete mission, see [Request Product Details with an Integration Scenario](mission.cp-starter-integration-cpi).
 
-> **IMPORTANT**: Trial accounts are not intended for productive usage or team development. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html). If you're using Integration Suite from a production account for your proof of concepts or real-time business cases, refer to the [product documentation](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/3dcf507f92f54597bc203600bf8f94c5.html) on SAP Help Portal for step-by-step explanation of the initial set up and further information.
+> **IMPORTANT**: Trial accounts are not intended for productive usage or team development. If you're using Integration Suite from a production account for your proof of concepts or real-time business cases, refer to the [product documentation](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/3dcf507f92f54597bc203600bf8f94c5.html) on SAP Help Portal for step-by-step explanation of the initial set up and further information.
 
 ## The Use Case
-Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
+Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use the SAP Integration Suite capabilities *Cloud Integration* and *API Management*.
 
 You use *Cloud Integration* to design and deploy an integration flow. Then, you use *API Management* to expose the integration flow endpoint as an API.
 
-  - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
+  - You define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
-  - Finally, you use API Management to call the API and get the product details in a response.
+  - Finally, you invoke the API and get the product details in a response.
 
   !![Use case](1-Set-up-integration-trial.png)
 
@@ -42,9 +42,9 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
 >**WHERE TO START**:
 
-> - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
+> - **Are you new to SAP BTP Trial?** - skip the rest of the note and continue with the tutorial.
 
-> - You already have a SAP BTP account but new to SAP Integration Suite:
+> - You already have a SAP BTP trial account but new to SAP Integration Suite:
 
 >     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
           - **Option 1**:
@@ -58,19 +58,11 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Choose the region that is closest to you. Choose **Create Account**.
-
-    !![Select region](2-3-Screenshot_AP21.png)
-
-3. Choose **Continue**.
-
-    !![Account Setup](2-4-continue.png)
-
-4. Navigate to the trial global account by choosing **Go To Your Trial Account**.
+2. Navigate to the trial global account by choosing **Go To Your Trial Account**.
 
     !![Trial global account](2-2-FoundationsCockpit_trial page.png)
 
-5. From your global account page, choose the **trial** tile to access your subaccount.
+3. From your global account page, choose the appropriate subaccount's tile to navigate.
 
     !![Access Trial account](2-5-access_trial_account.png)
 
@@ -94,34 +86,43 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
-4. Choose the default plan which is **trial** and then choose **Create**.
+4. Choose the default plan which is **trial** and then choose **Create**. You are subscribed to the service now.
 
     !![Create Subscription](3-4-Create_Subscription.png)
 
-5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+5. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
 
-    !![Go to Application](3-5-Go-to-Application.png)
+    !![Assign Roles](3-6-Assign-Roles.png)
+
+6. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+
+    !![Assign Role Collection](3-7-Assign-Role-Collection.png)
+
+7. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the Integration Suite home page.
+
+    !![Assign Role Collection](3-8-Go-to-Application.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Provision the capabilities)]
->**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration or API Management services) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
+>**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Cloud Integration, or API Management) if you have already subscribed to them in the same subaccount.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
->**Navigational Steps**: Go to Service Marketplace, search for the service name and click `unsubscribe`.
+>**Navigational Steps**: Go to **Instances and Subscriptions** and delete the subscriptions.
 
-1. In the Integration Suite Launchpad, choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
+
+1. In the Integration Suite home page, choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
 
     !![Integration suite launchpad](4-1-isuitenewlaunchpage.png)
 
-    For this tutorial, you must select the **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs click** capabilities.
-    Choose **Next**.
+    For this tutorial, you must select the **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs click** capabilities. Choose **Next**.
 
     !![Add Capabilities](4-1-Addcapapbilities.png)
 
     You do not have to select anything here. Choose **Next**.
 
-    !![Intermediate Step](4-1-intermidiate_step.png)
+    !![Intermediate Step](4-1-CPI_step.png)
 
     Select the **Enable API Business Hub Enterprise** checkbox. Choose **Next**.
 
@@ -134,15 +135,11 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
     The activation takes a while to complete.
-    >**IMPORTANT**: Before you proceed to **Step 4**, please wait for all the capabilities to be activated.
+    >**IMPORTANT**: Before you proceed, please wait for the capabilities to be activated.
 
-    !![Activation dialog](4-2-Activation_Dial.png)
+    !![Activation dialog](4-2-Activation.png)
 
-    >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
-
-    >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
-
-    >To access each capability's tile, you must first assign capability-specific roles which is explained in the next step.
+    >To access the features of each capability, you must first assign capability-specific roles which is explained in the next step.
 
 
 [DONE]
@@ -154,7 +151,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
  A **Booster** is a set of guided and interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. In this case, the Integration Suite booster will help you with assigning roles and creating service instances.
 
- A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration Runtime** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+ A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration Runtime** service) can be called from a remote component. In the context of Integration Suite, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
 1. Navigate to the overview page of your SAP BTP global account.
 
@@ -176,6 +173,8 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     !![Select Capabilities](5-5-Select-Capabilities.png)
 
+    >**IMPORTANT**: Make sure that you select only the capabilities that you activated in step 3.
+
 6. In the **Review** tab, check your selections and choose **Finish**. You can see that the booster is being processed.
 
     !![Booster Progress](5-6-Booster-Progress.png)
@@ -192,13 +191,9 @@ You can also manually do the role assignment and service instance creation witho
 
 [ACCORDION-BEGIN [Step 5: ](Verify the activated capabilities)]
 
-1. In the **Integration Suite Launchpad** application, choose **Manage Capabilities** tile.
+1. Refresh the Integration Suite home page to see capability-specific menu items being added to the left navigation.
 
-    !![Activated Capabilities](6-1-ManageCapab.png)
-
-2. Click on the URLs of the activated capabilities and verify if you can successfully access them.
-
-    !![Verify](6-2-Verifycapabilities.png)
+    !![Activated Capabilities](6-2-Verifycapabilities.png)
 
 [DONE]
 [ACCORDION-END]

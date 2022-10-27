@@ -2,8 +2,8 @@
 auto_validation: true
 title: Get to Know the ABAP RESTful Application Programming Model
 description: Learn how the ABAP RESTful Application Programming Model and the development flow are structured.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

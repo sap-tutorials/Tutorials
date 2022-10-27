@@ -11,9 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
+    - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
+
 
 ## Details
 ### You will learn
@@ -21,9 +22,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to modify the UI with OData annotations
  - How to make header info editable
  - How to check the annotation files
-
-
-To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 ---
 
@@ -34,7 +32,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
@@ -50,7 +48,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -91,11 +89,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
-3. On the launch page that now comes up, choose the **Risks** tile.
-
-    !![Index HTML Page](feapptile.png)
-
-    You can now see the application without any data.
+3. You can now see the application without any data.
 
     !![Index HTML Page](feappempty.png)
 
@@ -127,11 +121,15 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. Try and fill in data in the main group fields `Mitigation`, `Priority`, and `Impact` and choose **Create**.
+2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+
+    !![Add Mitigation](addmitigation.png)
+
+3. Try and fill in data in the main group fields `Priority` and `Impact` and choose **Create**.
 
     !![Fill Main Data](fillriskdata.png)
 
-3. The new risk is created but it has no title and it has no description.
+4. The new risk is created but it has no title and it has no description.
 
     !![No Title Risk](notitlerisk.png)
 

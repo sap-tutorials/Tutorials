@@ -329,7 +329,7 @@ Here is your completed **Home** page:
 
 Later, we'll add apps to the **Home** page.
 
->If you want to edit the **Home** page later, you'll notice that next time you open your work zone, a small wand appears on the right side. Click the wand to expand the page settings. Then click the edit (pencil) icon to open the Page Designer and make your changes to your **Home** page.
+>If you want to edit the **Home** page later, you'll notice that next time you open your work zone, an edit (pencil) icon appears on the right of your page. Click this icon to open the Page Designer and make your changes to your **Home** page.
   !![Expand settings](33-edit-home-page.png)
 
 

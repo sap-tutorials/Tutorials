@@ -3,7 +3,7 @@ title: Create Custom Logic Using Key User Extensibility and Perform Trace
 description: Create custom logic for an existing custom field in S/4HANA Cloud ABAP Environment, then check its parameters using the Custom Logic Tracing app
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -62,8 +62,6 @@ This code will copy the content from a standard field, `purchaseorder-supplyingp
 
     ```ABAP
     IF purchaseorder-supplyingplant is not initial.
-    purchaseorderchange-yy1_zhdrprnt2_pdh_000 = purchaseorder-supplyingplant.
-    endif.
 
     ```
 

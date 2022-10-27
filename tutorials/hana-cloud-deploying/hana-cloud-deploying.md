@@ -9,14 +9,15 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have an SAP Business Technology Platform free trial or free tier account: [Set Up an SAP BTP Account for Tutorials](group.btp-setup)
+- You have an SAP Business Technology Platform free trial or free tier account: [Set Up an SAP BTP Account for Tutorials](group.btp-setup)
 
 ## Details
 ### You will learn
-  - How to use the SAP BTP cockpit as a graphical tool to provision your SAP HANA Cloud instance
+- How to use the SAP BTP cockpit as a graphical tool to provision your free SAP HANA Cloud instance
 
 ### Get to know SAP HANA Cloud
-SAP HANA Cloud is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
+
+[SAP HANA Cloud](https://developers.sap.com/topics/hana.html) is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
 
 By combining in-memory storage with columnar store, data operations are performed faster than in a traditional database with a disk-based storage. SAP HANA is also `translytical`, which means that developers can perform both transactional and analytical operations from the same structure, in real time, and without creating additional copies of the data such as materialized views.
 
@@ -61,7 +62,5 @@ By combining in-memory storage with columnar store, data operations are performe
 
 [DONE]
 [ACCORDION-END]
-
-
 
 ---
