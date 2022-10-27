@@ -18,8 +18,8 @@ author_profile: https://github.com/julieplummer20
 - In SAP Fiori launchpad, you have the following authorizations:
     - **`SAP_BR_PURCHASER`** for the app **Create Purchase Order - Advanced**
     - **`SAP_BR_ADMINISTRATOR`** for **Custom Logic Tracing** and **Custom Logic**
-- You have created a custom field using Key User extensibility **`yy1_zhdrprnt2_pdh`**
-- In Custom Logic, you have created a `BAdI` implementation `YY1_FILLHEADERCUSTOMFIELDS` in the business context and `BAdI` definition **Modify Purchase Order Header (`MM_PUR_S4_PO_MODIFY_HEADER`)**
+- You have created a custom field using Key User extensibility **`yy1_zhdrprnt2_pdh_000`**
+- In Custom Logic, you have created a `BAdI` implementation `YY1_FILLHEADERCUSTOMFIELDS_000` in the business context and `BAdI` definition **Modify Purchase Order Header (`MM_PUR_S4_PO_MODIFY_HEADER`)**
 
 
 
@@ -39,7 +39,7 @@ Throughout this tutorial, the placeholder `###` or `000` is used. Always replace
 
     !![step1a-open-custom-fields](step1a-open-custom-fields.png)
 
-2. Change to the **Custom Logic** tab, search for the `BAdI` implementation **`YY1_FILLHEADERCUSTOMFIELD`**.
+2. Change to the **Custom Logic** tab, search for the `BAdI` implementation **`YY1_FILLHEADERCUSTOMFIELD_000`**.
 
     !![Link text e.g., Destination screen](step1b-custom-fields-tabs.png)
 
@@ -57,13 +57,11 @@ You can now see the Published Logic and Draft Logic, if they exist, relevant to 
 [ACCORDION-BEGIN [Step 2: ](Add custom logic)]
 1. Comment out any existing code.
 
-2. In the custom logic for the field **`yy1_zhdrprnt2_pdh`**, copy the following code.
-This code will copy the content from a standard field, `purchaseorder-supplyingplant` into the custom field, **`yy1_zhdrprnt2_pdh`**, where `supplyingplant` is filled.
+2. In the custom logic for the field **`yy1_zhdrprnt2_pdh_000`**, copy the following code.
+This code will copy the content from a standard field, `purchaseorder-supplyingplant` into the custom field, **`yy1_zhdrprnt2_pdh_000`**, where `supplyingplant` is filled.
 
     ```ABAP
     IF purchaseorder-supplyingplant is not initial.
-    purchaseorderchange-yy1_zhdrprnt2_pdh = purchaseorder-supplyingplant.
-    endif.
 
     ```
 
@@ -124,7 +122,7 @@ You are now ready to trace the effects of your custom code when a purchase order
     |  Group    | **001**
     |  Company code          | **1010**
 
-    > If you check the custom field **`YY1_ZHDRPRNT2_PDH`**, it is now filled with the same value as Supplying Plant, **1010**.
+    > If you check the custom field **`YY1_ZHDRPRNT2_PDH_000`**, it is now filled with the same value as Supplying Plant, **1010**.
 
     !![step2c-fill-org-data](step2c-fill-org-data.png)
 
@@ -156,13 +154,13 @@ You are now ready to trace the effects of your custom code when a purchase order
 
     !![step5a-finish-trace](step5a-finish-trace.png)
 
-2. Open the trace. In **Trace Hierarchy**, choose the last call of `BAdI` implementation `YY1_FILLHEADERCUSTOMFIELD`.
+2. Open the trace. In **Trace Hierarchy**, choose the last call of `BAdI` implementation `YY1_FILLHEADERCUSTOMFIELD_000`.
 (This is necessary because the `BAdI` implementation is called several times.)
 Then choose the parameter **Purchase Order**.
 
     !![step5b-choose-purchase-order](step5b-choose-purchase-order.png)
 
-3. Scroll right down to the field **`YY1_ZHDRPRNT2_PDH`**. Check that its value = **1010**.
+3. Scroll right down to the field **`YY1_ZHDRPRNT2_PDH_000`**. Check that its value = **1010**.
 
     !![step5c-choose-custom-field](step5c-choose-custom-field.png)
 
