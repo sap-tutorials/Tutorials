@@ -9,17 +9,14 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tu
 primary_tag: software-product>sap-process-automation
 ---
 
-## Prerequisites
- - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - Complete [Create a Business Process](spa-create-process)
-
 ## Details
 ### You will learn
-  - How to add interactive forms in the process
+  - How to add interactive forms to the process
   - How to design the form with layout and input fields using drag-and-drop approach
   - How to configure the forms as the process steps
 
 ---
+
 Tasks are a part of any business process. **SAP Process Automation** helps you to create forms that are made available to the business users in their inboxes to take relevant action.
 
 These interactive forms can be created by dragging and dropping the text elements and input fields into the canvas. Once a form has been created, it can then be used as a process trigger to start the process or added as an approval step in the business process.
@@ -30,13 +27,15 @@ Let us now explore how these different forms are created. In the steps below, yo
 - Send a task in the inbox of the business user for approval.
 - Notify the requester for approval or rejection.
 
+---
+
 [ACCORDION-BEGIN [Step 1: ](Create a form to trigger a business process)]
 
 First you will create a trigger form that will start the business process. For that, you have to open your process in the process builder and add a new form.
 
 1. Choose **New Form** in **Trigger Settings**.
 
-    !![Select Starting Node](unit3-00.png)
+    !![Choose New Form](ChooseNewForminTriggerSettings.png)
 
 2. In the pop-up for new form, do the following:
     - Enter the **Name** as **Order Processing Form**.
@@ -75,15 +74,11 @@ First you will create a trigger form that will start the business process. For t
 
     !![Design Form](design-form.png)
 
-4. Save the form using the **Save** button on the top-right corner of the screen.
+5. Save the form using the **Save** button on the top-right corner of the screen.
 
     Your trigger form is ready!
 
     !![Trigger Form](unit3-04.png)
-
-5. Add the **Order Processing Form** to start the process.
-
-    !![Add Form](add-form.png)
 
     Now you will design the process with more activities related to approval of the sales order.
 
@@ -140,14 +135,27 @@ You can create these different forms using the **Form Builder** embedded in the 
 
 5.	Go back to the process builder to map the process content with the form input fields, and select the **Approval Form** to configure the **General** information section.
 
-    - In the **Subject** box, enter **Review and approve order**.
-    - Then select **Order Number > Order Processing Form** from the Process Content.
-    - Enter **from**.
-    - Select **Customer Name > Order Processing Form** from the Process Content.
-    - Enter **company**.
-    - For **Users** in **Recipients**, select **Process Started By > Process Metadata** from the Process Content.
+    - In the **Subject** section,
+        - enter **Review and approve order**.
+        - Then select **Order Number > Order Processing Form** from the Process Content.
+        - enter **from**.
+        - select **Customer Name > Order Processing Form** from the Process Content.
+        - enter **company**.
 
-    !![03-027](unit3-13.png)
+        > The Subject configuration of the form will be shown when this task appears in the `MyInbox`.
+
+    - For **Users** in **Recipients** section,
+        - select **Process Started By > Process Metadata** from the Process Content.
+
+        > This form will appear as the task in the `MyInbox` of the given Recipients to take action.
+
+    - In **Due Date** section,
+        - select **Duration** as **type of due date**,
+        - enter **2 Days** as the duration.
+
+        > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or within 1 day if the task is supposed to be completed in 1 day etc.
+
+    !![03-027](unit3-13a.png)
 
 6.	Similarly, go to the **Inputs** tab and map the different input fields (which were marked as read-only in the approval form) by selecting the respective **Process Content** entry.
 
@@ -163,6 +171,12 @@ You can create these different forms using the **Form Builder** embedded in the 
     !![03-027](unit3-14.png)
 
 7. **Save** the process.
+
+    The process should look like the following.
+
+    !![Approval Form Added](ApprovalFormAdded.png)
+
+    Note that there is an error in the Approval Form, which will be addressed in the subsequent steps.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -233,44 +247,63 @@ These notifications will appear in the inbox of the requester as a task.
 
     > If copy is not available then create the form in the same way and modify the texts wherever relevant as shown below.
 
-8. Add the new form to the rejection route of the approval form.
+8. To add the new rejection form, you will use the **Duplicate** feature.
 
-    !![03-027](unit3-30.png)
+    **Duplicate** feature is used to copy artifacts within the Business Process whereas **Copy** feature is used to copy artifacts across the business processes.
 
-9. In the **Create Form** dialog box, do the following:
-    - Enter **Order Rejection Form** in the **Name** field.
-    - Enter **Notification form to inform that the sales order is rejected by the supplier** in the **Description** field.
-    - Choose **Create**.
+    Click on the **Overview**.
 
-    !![03-026](unit3-31a.png)
+    !![Click Overview](Click-Overview.png)
 
-10. Design the order rejection form in the form builder.
+9. In the **Overview** screen, do the following:
+    - Find **Order Confirmation Notification** under the **Artifacts** section and click on **...**.
+    - Choose **Duplicate**.
 
-    - Do not forget the **Save** the form once completed.
+    !![Duplicate Form](DuplicateForm.png)
+
+10. The duplicate artifact pop-up will appear.
+
+    - !![Duplicate Artifact](DuplicateArtifact.png)
+
+    Change the name to **Order Rejection Notification** and click **Duplicate**.
+
+    - !![Order Rejection Form](NameOrderRejectionNotification.png)
+
+11. The **Order Rejection Notification** form is automatically opened in the form builder.
+
+    The screen shown will be same as **Order Confirmation Notification**.
+
+    - !![Order Rejection Form](DuplicatedForm.png)
+
+12. Change the order rejection form in the form builder to reflect the data for rejection case.
 
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
     | Headline 1 | Order Rejection
     | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:
-    | Text Area  | Message from the supplier:
-    | Paragraph  | Your Sale's Order Details:
 
-    - For all below **Input Fields** enter the labels and select the **Read Only** checkbox.
+    - For the below **Input Field** enter the label:
 
     | Form Fields| Field Settings with Label
     |  :------------- | :-------------
-    | Text | Order Number
-    | Number | Order Amount
-    | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-    !![Order Rejection](order-rejection.png)
+    !![Order Rejection](ChangeOrderRejectionNotification.png)
 
     - Do not forget the **Save** the form once completed.
 
-    !![Save Order Rejection](save-order-rejection.png)
+    !![Save Order Rejection](OrderRejectionNotificationAfterSave.png)
 
-11.	Go back to the process builder and configure the order rejection form.
+    The remaining fields can be left as is.
+
+13. Go back to the process builder and add the order rejection notification form to the process.
+
+    - Select **Approval Form** and Choose **+** option for the **Reject**
+    - Choose **Forms** and select **Order Rejection Notification**
+
+    - !![Add Order Rejection Notification](AddOrderRejectionNotification.png)
+
+14.	Configure the order rejection form.
 
     - Configure the **General** section.
 
@@ -293,7 +326,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     !![03-026](unit3-35.png)
 
-12.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
+15.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
 
     !![03-026](unit3-36.png)
 

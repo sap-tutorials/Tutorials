@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - There are none, this is the very beginning.
+ - There are none, this is the very beginning
 
 ## Details
 ### You will learn

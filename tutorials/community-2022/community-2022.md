@@ -1,6 +1,6 @@
 ---
 title: Tour the SAP Community 2022
-description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership.
+description: Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership. 
 
 auto_validation: true
 time: 25  
@@ -37,14 +37,14 @@ Within this first step, you will be guided through the entry point of [SAP Commu
 
 In the following, you will get an overview of the SAP Community homepage.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EatnEDXjwpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EatnEDXjwpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Your Profile)]
 
-We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you'll miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
+We want you to be an integrated part of our community, so that you can contribute and connect with other members. In order to participate fully, you need to set your profile public (via your account privacy settings). If you don't, you will still be able to read SAP Community content, but you will miss out on engaging with others and on publishing content. Learn more under [Privacy - FAQ](https://community.sap.com/resources/privacy).
 
 1. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Account** feature)
 
@@ -82,7 +82,7 @@ To gain a better understanding of topic pages, watch this video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60gN_YRV2o0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Follow Activity:** **`Follow a tag`**
+**Follow Activity:** **`Follow a tag`** 
 
 As just mentioned, you can follow a tag from the topic page to get notified (via e-mail and/or SAP Community inbox) about new content (blog posts, questions and answers) posted with that tag. You will also view this content in your [Activity Stream](https://activities.sap.com/),
 

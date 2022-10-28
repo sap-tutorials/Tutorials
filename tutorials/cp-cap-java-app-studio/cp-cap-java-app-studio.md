@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Set Up SAP Business Application Studio for CAP Java
 description: Set up the SAP Business Application Studio and create a first service implementation.
 auto_validation: true
@@ -89,7 +89,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
 
     - The project is named `products-service`.
-    - The `db` folder stores database-related artefacts.
+    - The `db` folder stores database-related artifacts.
     - The `srv` folder stores your Java application.
 
       !![project creation done](project-creation-done.png)

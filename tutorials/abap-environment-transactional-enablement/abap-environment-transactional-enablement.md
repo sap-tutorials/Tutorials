@@ -90,7 +90,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create behavior implementation](behavex.png)
 
-  2. Provide the name **`Z_I_BOOKING_XXX`** and a description and click **Next**.
+  2. Provide a description and click **Next**.
 
       ![Create behavior implementation](behave2.png)
 

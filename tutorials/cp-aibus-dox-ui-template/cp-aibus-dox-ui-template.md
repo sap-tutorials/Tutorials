@@ -1,6 +1,6 @@
 ---
 title: Create Custom Template for Purchase Order Documents
-description: Create a custom template for your purchase order documents to extract information from similar documents using the Document Information Extraction service.
+description: Create a custom template for purchase order documents to extract information from similar documents using the Document Information Extraction service.
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]

@@ -3,7 +3,7 @@ title: Configure System in SAP Cloud Platform Business Rules
 description: Add and configure the system based on the SAP Cloud Platform destination in SAP Cloud Platform Business Rules in order to create and deploy rules.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 

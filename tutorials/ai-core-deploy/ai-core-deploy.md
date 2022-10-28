@@ -1,4 +1,4 @@
----
+kserve---
 title: Make Predictions for House Prices with SAP AI Core
 description: Deploy AI models and set up serving pipelines to scale prediction server.
 auto_validation: true
@@ -22,7 +22,7 @@ author_profile: https://github.com/dhrubpaul
 
 You will create a deployment server for AI models to use in online inferencing. It is possible to change the names of components mentioned in this tutorial, without breaking the functionality, unless stated explicitly.
 
-The deployment server demonstrated in this tutorial can only be used in the backend of your AI project. For security reasons, in your real set up you will not be able to directly make prediction call from your front end application to the deployment server, doing so will lead to an inevitable Cross-origin Resource Sharing (CORS) error. As a temporary resolution, please deploy another application between your front end application and this deployment server. This middle application should use the SAP AI Core SDK (python package) to make calls to the deployment server.
+The deployment server demonstrated in this tutorial can only be used in the backend of your AI project. For security reasons, in your real set up you will not be able to directly make prediction calls from your front end application to the deployment server. Doing so will lead to an inevitable Cross-origin Resource Sharing (CORS) error. As a temporary resolution, please deploy another application between your front end application and this deployment server. This middle application should use the SAP AI Core SDK (python package) to make calls to the deployment server.
 
 ---
 
@@ -101,15 +101,17 @@ if __name__ == "__main__":
 
 #### Understanding your code
 
-##### Where should you load your model from?
-- Your code reads file from folder `/mnt/models`. This folder path is hard-coded in SAP AI Core, and the path cannot be modified.
-- Later, you will dynamically place your model file in the path `/mnt/models`.
-- You may place multiple files inside `/mnt/models` as part of your model. These files may have multiple formats, such as `.py` or `.pickle`, however you should not-create sub-directories within the folder.
+Where should you load your model from?
 
-##### Which serving engine to use?
-- Your code uses Flask to create a server, however you may use another python library to create the server.
-- Your format for prediction REST call will depend on the implementation of this deployment server.
-- Your implementation endpoint `/v2/predict` to make predictions. You may modify endpoint name and format but each endpoint must have the prefix `/v<NUMBER>`. For example if you want to create endpoint to greet your server, then the endpoint implementation should be `/v2/greet` or `/v1/greet`
+- Your code reads files from folder `/mnt/models`. This folder path is hard-coded in SAP AI Core, and cannot be modified.
+- Later, you will dynamically place your model file in the path `/mnt/models`.
+- You may place multiple files inside `/mnt/models` as part of your model. These files may have multiple formats, such as `.py` or `.pickle`, however you should not-create sub-directories within it.
+
+Which serving engine to use?
+
+- Your code uses Flask to create a server, however you may use another python library if you would like to.
+- Your format for prediction REST calls will depend on the implementation of this deployment server.
+- You implement the endpoint `/v2/predict` to make predictions. You may modify the endpoint name and format, but each endpoint must have the prefix `/v<NUMBER>`. For example if you want to create endpoint to greet your server, then the endpoint implementation should be `/v2/greet` or `/v1/greet`
 
 Create file `requirements.txt` as shown below.
 
@@ -147,7 +149,7 @@ RUN chgrp -R nogroup /app && \
 ```
 
 
-Open your terminal and target your terminal location to `hello-aicore-server` folder, using the following code.
+Open your terminal and navigate to your `hello-aicore-server` folder, using the following code.
 
 ```BASH
 cd hello-aicore-server
@@ -155,11 +157,11 @@ cd hello-aicore-server
 
 Build your Docker image by adapting the following code.
 
-> The period `.` at the end of your command instructs Docker to find the `Dockerfile` in the current directory target by your terminal.
-
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-server:01 .
 ```
+
+> The period `.` at the end of your command instructs Docker to find the `Dockerfile` in the current directory target by your terminal.
 
 Upload your Docker image to your Docker repository, by adapting the following code.
 
@@ -173,9 +175,9 @@ docker push docker.io/<YOUR_DOCKER_USERNAME>/house-server:01
 
 [ACCORDION-BEGIN [Step 3: ](Create a serving executable)]
 
-Create an executable (YAML file) named `house-price-server.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked (auto synced) by your application of SAP AI Core.
+Create an executable (YAML file) named `house-price-server.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked synced to your application of SAP AI Core.
 
-> **IMPORTANT** The structure(schemas) of workflows and executables are different for both training and serving in SAP AI Core. For available options in the schema you must refer to the [official help guide of SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/8a1f91a18cf0473e8689789f1636675a.html?locale=en-US)
+> **IMPORTANT** The structure(schemas) of workflows and executables are different for both training and serving in SAP AI Core. For available options for the schemas you must refer to the [official help guide of SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/8a1f91a18cf0473e8689789f1636675a.html?locale=en-US)
 
 ```YAML
 apiVersion: ai.sap.com/v1alpha1
@@ -199,7 +201,7 @@ spec:
       - name: greetmessage # placeholder name
         type: string # required for every parameters
   template:
-    apiVersion: "serving.kubeflow.org/v1beta1"
+    apiVersion: "serving.kserve.org/v1beta1"
     metadata:
       annotations: |
         autoscaling.knative.dev/metric: concurrency   # condition when to scale
@@ -214,7 +216,7 @@ spec:
         minReplicas: 1
         maxReplicas: 5    # how much to scale
         containers:
-        - name: kfserving-container
+        - name: kserve-container
           image: "docker.io/<YOUR_DOCKER_USERNAME>/house-server:01"
           ports:
             - containerPort: 9001    # customizable port
@@ -234,11 +236,11 @@ spec:
 
 1. You use an input artifacts placeholder `housepricemodel` for your model.
 2. You use an input parameters placeholder `greetmessage` to pass any value in a string.
-3. You use the `starter` computing resource plan with `ai.sap.com/resourcePlan`. To start, using a non-GPU based resource plan for serving (like `starter`) is cost effective. Find out more about available resource plans in [the help guide](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
+3. You use the `starter` computing resource plan with `ai.sap.com/resourcePlan`. To start, using a non-GPU based resource plan for serving (like `starter`) is cost effective. Find out more about available resource plans in [the help portal](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
 4. You set the auto scaling of the server with the parameters: `minReplicas` and `maxReplicas`.
 5. You set the serving code to use through a Docker `image`, and the credentials to access it via `imagePullSecrets`. You must ensure that if you are using a public docker registry that has the file type `docker.io`, your secret points to the URL `https://index.docker.io`. You may delete and recreate the docker registry secret. This will not affect training templates running in parallel.
 6. You use the placeholder `env` to pass your `inputs` values as environment variables in your Docker image.
-7. You use the model placeholder value (reference to cloud storage) `STORAGE_URI` through the environment variables. The model files stored in your cloud storage (referenced by value of input artifacts placeholder) will be copied in path `/mnt/models` inside your Docker image.
+7. You use the model placeholder value (reference to cloud storage) `STORAGE_URI` through the environment variables. The model files stored in your cloud storage (referenced by the value of your input artifacts placeholder) will be copied to the path `/mnt/models` inside your Docker image.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -247,27 +249,28 @@ spec:
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click through **ML Operations > Configuration > Create**. Enter the following details as shown in the image below. Click **Next**.
+Click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
 !![configuration create](img/ail/config1.jpg)
 
-Enter `Hi AI Core Server` for `greetmessage`, which is specific to this executable, and allows you pass values to the placeholder of environment variables that you prepared earlier in your workflows. Click **Next**.
+Enter `Hi AI Core Server` in the `greetmessage` field and click **Next**.
 
 !![parameter value](img/ail/config2.jpg)
 
-Locate your model artifact (using the unique ID) in the **Available Artifacts** pane. Click the dropdown menu and the checkbox of `housepricemodel`. This is the name of the placeholder for the model in your serving executable. As a result the placeholder will now take the value of the artifact.
+Locate your model artifact in the **Available Artifacts** pane, by using the unique ID. Click the dropdown menu and click the checkbox of `housepricemodel`. This is the name of the placeholder for the model in your serving executable. As a result, the placeholder will now take the value of the artifact.
 
 !![model](img/ail/config3.jpg)
 
-Click **Review** and click **Create**.
+> Note This is specific to this executable, and allows you pass values to the placeholder of environment variables that you prepared earlier in your workflows.
+
+Click **Review** > **Create**.
 
 [OPTION END]
 
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-
-Paste and edit the code snippet. The key value pair for `housepricemodel` allows your to use the configuration to pass values to placeholders of artifacts that your prepared earlier in your workflows. You should locate your model artifact ID by listing all artifacts and using the relevant ID.
+Paste and edit the code snippet. The key value pair for `housepricemodel` allows your to use the configuration to pass values to placeholders of artifacts that you prepared earlier in your workflows. You should locate your model artifact ID by listing all artifacts and using the relevant ID.
 
 ```PYTHON
 from ai_api_client_sdk.models.parameter_binding import ParameterBinding
@@ -291,7 +294,7 @@ print(response.__dict__)
 
 [OPTION END]
 
->**IMPORTANT** An artifact is a reference to files stored in your cloud storage. Hence a single artifact can refer to location which may contain multiple files. In the case of artifact for a model, your artifact must not point to a directory which contains subdirectory. For example your artifact may point to `s3://my/storage/of/house/modelv2`, this `modelv2` must not contain sub-directories.
+>**IMPORTANT** An artifact is a reference to files stored in your cloud storage. A single artifact can refer to a location containing multiple files. For model artifacts, your artifact must not point to a directory which contains a subdirectory. For example, if your artifact points to `s3://my/storage/of/house/modelv2`, `modelv2` must not contain sub-directories.
 
 [DONE]
 [ACCORDION-END]
@@ -301,13 +304,13 @@ print(response.__dict__)
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click **Start Deployment** in the configuration details page. This will start a new deployment starter with the values specified in the configuration.
+Click **Start Deployment** in the configuration details page. This starts a new deployment with the values specified in the configuration.
 
 !![deploy](img/ail/deploy1.jpg)
 
-> **WARNING** While your deployment is initializing it may show the status that deployment id is not found.
+> **WARNING** While your deployment is initializing, it may show the status that the deployment ID is not found.
 
-On the **Logs** tab of your deployment, you will see the serving engine getting started.
+On the **Logs** tab of your deployment, you will see the serving engine start.
 
 !![deploy log](img/ail/deploy2.jpg)
 
@@ -341,14 +344,7 @@ Copy your deployment URL.
 
 !![URL](img/ail/predict-url.jpg)
 
-You must use a REST client to make prediction calls. If you are using the official API collection of SAP AI Core with Postman this may look like the following.
-
-> **IMPORTANT** You may need to duplicate an existing endpoint in the collection and modify according to setting mentioned below. If you get `RBAC: Access Denied` then check the following in the order mentioned.
->
-> - Authorization if bearer token is used
-> - Resource group set in header
-> - Endpoint being correct
-> - POST or GET method being used
+You must use a REST client to make prediction calls. If you are using the official API collection of SAP AI Core with Postman this may look like the following:
 
 **ENDPOINT**
 
@@ -360,7 +356,7 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 | --- | --- |
 | `AI-Resource-Group` | `default` |
 
-**BODY**
+**RESPONSE**
 
 ```JSON
 {
@@ -377,13 +373,19 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 
 !![predict](img/postman/predict1.jpg)
 
+> **IMPORTANT** You may need to duplicate an existing endpoint in the collection and modify it. If you get `RBAC: Access Denied` then check the following in the order mentioned.
+>
+> - **Authorization**: if a bearer token is used.
+> - The **Resource group** in the header.
+> - If the **Endpoint** is correct.
+> - The **POST** or **GET** method used.
 
 [OPTION END]
 
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-To query the deployment status, paste and edit the snippet below. You should use the deployment ID from previous step.
+To query the deployment status, paste and edit the snippet below. You should use the deployment ID from the previous step.
 
 ```PYTHON
 response = ai_core_client.deployment.get(
@@ -438,11 +440,11 @@ The prediction value is expressed in hundreds of thousands of dollars ($100,000)
 
 [ACCORDION-BEGIN [Step 7: ](Switch the deployed model)]
 
-Switching between deployed models helps you update the model used in your deployment server with improved models without affecting the deployment URL.
+Switching between deployed models means that you can update the model used in your deployment server, without affecting the deployment URL.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Create a new configuration. Click through **ML Operations > Configuration > Create**. Enter the following details as shown in the image below. Click **Next**.
+To create a new configuration, click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
 !![configuration create](img/ail/config21.jpg)
 
@@ -452,11 +454,9 @@ Select a different model in the **Input Artifact** step.
 
 Click **Review** and **Create**.
 
-Update your existing deployment with this newly created configuration. Click through **ML Operations > Deployment**.
+To update your existing deployment with this newly created configuration, click **ML Operations > Deployment**.
 
-Click on your deployment row in the table.
-
-Click **Update Button**.
+Click on your deployment row in the table, then click **Update**.
 
 !![deployment update](img/ail/dep_update1.jpg)
 
@@ -502,19 +502,18 @@ print(response.__dict__)
 
 [OPTION END]
 
-The **Current Status** of your deployment changes to **Unknown** while your new model is copied to the serving engine. After successful copy the deployment changes status to **Running** and ready to make new predictions.
+The **Current Status** of your deployment changes to **Unknown** while your new model is copied to the serving engine. After the deployment has been copied successfully, the status changes to **Running** and is ready to make new predictions.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Stop a deployment)]
 
-A running deployment incurs cost because it is allocated cloud resources. Stopping the deployment frees up the cloud resources. No charge is costed against a deployment of status **Stopped**.
-
+A running deployment incurs cost because it is allocated cloud resources. Stopping the deployment frees up these resources and therefore there is no charge for a deployment of status **Stopped**.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-On deployment details page, click **Stop**.
+On the deployment details page, click **Stop**.
 
 !![stop](img/ail/stop.jpg)
 
@@ -538,8 +537,7 @@ print(response.__dict__)
 
 [OPTION END]
 
-
->Note: You cannot restart a deployment. You must create a new deployment using the configuration used previously. Each deployment will have a different URL.
+>Note: You cannot restart a deployment. You must create a new deployment, reusing the configuration. Each deployment will have a different URL.
 
 [DONE]
 [ACCORDION-END]

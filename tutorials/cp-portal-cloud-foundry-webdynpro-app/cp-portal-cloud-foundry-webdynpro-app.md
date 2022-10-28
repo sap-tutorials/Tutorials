@@ -4,7 +4,7 @@ description: Add a classic SAP UI app (like those typically run by SAP customers
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -16,14 +16,14 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to expose a Web Dynpro ABAP backend application to your launchpad site.
+  - How to expose a Web Dynpro ABAP backend application to your launchpad site
 
 ---
 In this tutorial, you'll use the **Content Manager** in the SAP Launchpad service to add a Web Dynpro ABAP app to your launchpad site.
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 
-1. To get to the Content Manager, first click **Service Marketplace** in the left navigation panel of your subaccount and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
+1. To get to the Content Manager, click **Service Marketplace** in the left navigation panel of your subaccount and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
     ![Click subscriptions](1-find-launchpad.png)
 
 
@@ -49,7 +49,7 @@ In this tutorial, you'll use the **Content Manager** in the SAP Launchpad servic
     |  Field     | Value
     |  :------------- | :-------------
     |  Title           | `Search POs`
-    |  System          | Select the value `ES5`
+    |  System          | Select the value `ES5` - if you're taking part in a workshop, please use your unique destination: `<unique_id>_ES5`.
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
 
@@ -112,13 +112,13 @@ This is described in the following steps.
 3. Click the search box in the **Assignments** panel on the right, any available apps are shown in the list below.
 >If you have many apps, you can type some letters of your app name in the search bar, (for example, `se`) to search for the app.
 
-3. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role.
+4. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role. If you're taking part in a workshop, please use your unique app: `<unique_id>_Search POs`
 
     ![Assign app to role](12-assign-role.png)
 
     You'll see that the icon changes.
 
-4. Click **Save**.
+5. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
@@ -136,9 +136,9 @@ A group is a set of one or more apps displayed together in your site. Assigning 
 
 3. Name the group `Purchase Orders`.
 
-4. In the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
+4. In the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  If you're taking part in a workshop, please use your unique app: `<unique_id>_Search POs`
 
-5. In the list, click **+** to assign the `Search POs` app to your group.
+5. In the list, click **+** to assign the `Search POs` app to your group. If you're taking part in a workshop, please use your unique app: `<unique_id>_Search POs`
 
     ![Assign app to group](10-assign-to-group.png)
 

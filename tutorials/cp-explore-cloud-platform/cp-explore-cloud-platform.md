@@ -10,11 +10,11 @@ time: 10
 ---
 
 
-## Prerequisites  
+## Prerequisites
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
 ## Details
-### You will learn  
+### You will learn
   - What SAP BTP is
   - What SaaS, PaaS, and IaaS mean and how they work
   - What services are, and where to find them
@@ -24,7 +24,7 @@ time: 10
 
 **Welcome to the SAP BTP**
 
-SAP BTP is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP BTP is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.  
+SAP BTP is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP BTP is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.
 
 SAP BTP provides a large number of SAP software packages, or services, that deliver all the functionality of on-premise SAP applications, but in a cloud focused way.  It also provides a way for developers to customize those services, or build entirely new applications, to deliver custom applications personalized to your organization.
 
@@ -61,13 +61,13 @@ The three different service levels are:
 
 [ACCORDION-BEGIN [Step](SAP BTP service types)]
 
-SAP BTP provides both Platform as a Service (PaaS) and Software as a Service (SaaS).  
+SAP BTP provides both Platform as a Service (PaaS) and Software as a Service (SaaS).
 
-Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.  
+Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.
 
 We have a lot of SaaS solutions available in the SAP Cloud.  They include our core package, S/4HANA, as well as Workflow, Human Resources, and new products like Internet of Things.  There are many more in the list, so [take a look at a more complete list for details](https://www.sap.com/about/agreements/policies/cloud-platform.html).
 
-> **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.  
+> **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.
 >
 > SAP BTP also offers services, called "Platform Services", which provide additional functionality to custom code. These "Platform Services" do not run independently.  SAP refers to these as **Services**, especially in Cloud Foundry.  So when you see the name "Service" in later tutorials, this usually means "Platform Services".
 
@@ -98,7 +98,7 @@ The list of services and data centers is constantly updated, so please use the l
 
 There are four different PaaS environments in the SAP cloud.
 
-The first environment is called [SAP BTP, Neo environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/0f79436cf43a4785bb5b7ee9dac0c76a.html).  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP BTP on servers that SAP maintains and supports.
+The first environment is called [SAP BTP, Neo environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/0f79436cf43a4785bb5b7ee9dac0c76a.html).  It is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP BTP on servers that SAP maintains and supports.
 
 The second environment is  [SAP BTP, Cloud Foundry environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/9c7092c7b7ae4d49bc8ae35fdd0e0b18.html#loio9c7092c7b7ae4d49bc8ae35fdd0e0b18/).  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP BTP, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
 
@@ -109,7 +109,7 @@ The [SAP BTP, Kubernetes environment](https://help.sap.com/viewer/3504ec5ef16548
 
 Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).
 
-SAP offers a [free trial of SAP BTP](hcp-create-trial-account) for all environments.
+SAP offers [trial accounts for SAP BTP](hcp-create-trial-account), which are free of charge.
 
 
 

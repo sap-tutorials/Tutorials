@@ -67,7 +67,7 @@ for rg in response.resources:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload model files to AWS S3)]
+[ACCORDION-BEGIN [Step 2: ](Upload model files to AWS S3)]
 
 1. Install the AWS CLI client. [Download here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
@@ -155,6 +155,8 @@ print(response.__dict__)
 You should see the following response:
 
 !![img](img/acs/3.png)
+
+> Note that depending on your region, your  AWS endpoint syntax may differ from the example above. In the event of an error, try this step again with alternative syntax. For available syntaxes, please see the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html)
 
 [DONE]
 [ACCORDION-END]

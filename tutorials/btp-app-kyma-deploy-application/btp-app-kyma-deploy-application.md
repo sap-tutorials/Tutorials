@@ -1,30 +1,18 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Deploy Your Application to Kyma
-description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster, and troubleshoot it, if needed.
+title: Deploy Your CAP Application to Kyma
+description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your CAP app to your Kyma cluster, and troubleshoot it, if needed.
 keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
- - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
+ - You have created a DB secret as specified in `Step 3: Setup SAP HANA Cloud` in [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup).
 
 ## Details
 ### You will learn
@@ -37,10 +25,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add Authorization and Trust Management service (XSUAA))]
-The next step is to add the Authorization and Trust Management service to `values.yaml` to allow user login, authorization, and authentication checks. Open the `chart/values.yaml` file and add the following snippet:
+The next step is to add the Authorization and Trust Management service which will allow user login, authorization, and authentication checks. Add the following snippet to the `chart/values.yaml` file:
 
 
-```YAML[8-17]
+```YAML[8-16]
 srv:
   ...
 xsuaa:
@@ -70,20 +58,30 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Build docker images)]
-You need to set the environment variable for the container registry.
+Let's first set the environment variable for the container registry in your terminal. This will set a temporary environment variable for the current terminal session. At the same time, it will be easier to use the environment variable as a shorter alternative of the container registry URL when building and pushing the docker images later in the tutorial. Open a terminal and run the following command:
 
-1. Open a terminal and run the following command:
+```Shell/Bash
+CONTAINER_REGISTRY=<your-container-registry>
+```
 
-    ```Shell/Bash
-    CONTAINER_REGISTRY=<Container Registry>
-    ```
+> Looking for `<your-container-registry>`?
 
-2. Refer to [Configure Container Image](btp-app-#configure-container-image) for details on finding `<Container Registry>`.
+>     Value for `<your-container-registry>` is the same as the docker server URL and the path used for docker login. You can quickly check it by running the following command in your terminal:
+
+>     ```json
+>     cat ~/.docker/config.json
+>     ```
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](CAP build)]
+1. Remove `node_modules ` and `package-lock.json` from your project folder because they can cause errors later when building the CAP service:
+
+    ```Shell/Bash
+    rm -rf node_modules package-lock.json
+    ```
+
 1. Execute the following command in your project folder:
 
     ```Shell/Bash
@@ -98,9 +96,9 @@ You need to set the environment variable for the container registry.
     rm -rf gen/db/data
     ```
 
-> Although the app will work with the test data, usually test data should be removed before deployment.
+    > Although the app will work with the test data, usually test data should be removed before deployment.
 
->  Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in [Exclude CSV files from deployment](btp-app-#exclude-csv-files-from-deployment).
+    > Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in `Step 6: Exclude CSV files from deployment` of [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
 
 [DONE]
 [ACCORDION-END]
@@ -113,6 +111,7 @@ You need to set the environment variable for the container registry.
     --buildpack gcr.io/paketo-buildpacks/nodejs \
     --builder paketobuildpacks/builder:base
     ```
+
 
 2. You should get an output like:
 
@@ -167,6 +166,21 @@ Now that we've build the docker images, let's push them to the container registr
      helm upgrade cpapp ./chart --install
      ```
 
+    > In case you get an error message about the CPU limits, increase the values for CPU in the file `chart/values.yaml`.
+
+    > ```yaml hl_lines="5 9"
+    > global:
+    > ...
+    >     resources:
+    >         limits:
+    >             cpu: 100m
+    >             ephemeral-storage: 1G
+    >             memory: 500M
+    >         requests:
+    >             cpu: 100m
+    > ...
+    > ```
+
 2. Copy the app URL when done and paste it into a new browser window:
 
      ![CPAPP URL](cpappURL.png)
@@ -175,7 +189,7 @@ Now that we've build the docker images, let's push them to the container registr
 
      !![Deployed app](srv-cpapp-riskmanagement.png)
 
-     If the error message "no healthy upstream" is shown, wait a few seconds and try again.
+     If the error message `No healthy upstream.` is shown, wait a few seconds and try again.
 
 4. When you choose the **Mitigation** or **Risk** service entity, you will see an error message:
 
@@ -197,107 +211,135 @@ Now that we've build the docker images, let's push them to the container registr
      cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
      ```
 
-Troubleshooting: The Helm chart starts a job that deploys the database content and a deployment with the CAP service. After successful execution, the job is deleted. In case you encounter an error during the deployment process, follow the instructions to troubleshoot.
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 8: ](Troubleshooting)]
+The Helm chart starts a deployment with the CAP service and a job that deploys the database content. After successful execution, the job is deleted. In case you encounter an error during the deployment process, follow the instructions in the sections below to troubleshoot.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Check your database deployment)]
-Check you database deployment using:
+[ACCORDION-BEGIN [Step 9: ](Check your database deployment)]
+1. Run the following command to check your database deployment:
 
-```Shell/Bash
-kubectl get jobs
-```
+    ```Shell/Bash
+    kubectl get jobs
+    ```
 
-You should see an empty list of jobs that indicates that the deployment job was run successfully:
+    You should see an empty list of jobs. This indicates that the deployment job was run successfully because the Helm chart is configured to clean up jobs after completion:
 
-```
-NAME                       COMPLETIONS   DURATION   AGE
-```
+    ```
+    NAME                       COMPLETIONS   DURATION   AGE
+    ```
 
-The Helm chart is configured to clean up jobs after completion. If it fails or is still in progress, the job is displayed incomplete (completions `0/1`) like in this example:
+    If the job fails or if it's still in progress, the job is displayed as incomplete (completions `0/1`) like in this example:
 
-```
-NAME                 COMPLETIONS   DURATION   AGE
-cpapp-hana-deployer  0/1           3m7s       3m7s
-```
+    ```
+    NAME                 COMPLETIONS   DURATION   AGE
+    cpapp-hana-deployer  0/1           3m7s       3m7s
+    ```
 
-In such a case, you can check the deployer's logs. First, print the pods:
+2. In case the job is not completed, you can check the deployer's logs. Let's first print the pods:
 
-```Shell/Bash
-kubectl get pods
-```
+    ```Shell/Bash
+    kubectl get pods
+    ```
 
-You should see a list of pods that run on error because of failed deployment attempts:
+    You should see a list of pods that run on error because of failed deployment attempts:
 
-```
-NAME                           READY   STATUS    RESTARTS   AGE
-cpapp-hana-deployer-6s7fl      0/1     Error     0          6m16s
-cpapp-hana-deployer-n5fnq      0/1     Error     0          7m46s
-cpapp-hana-deployer-plfmh      0/1     Error     0          7m16s
-cpapp-hana-deployer-z2nxh      0/1     Error     0          8m8s
-cpapp-hana-deployer-zc9c2      0/1     Error     0          6m56s
-```
+    ```
+    NAME                           READY   STATUS    RESTARTS   AGE
+    cpapp-hana-deployer-6s7fl      0/1     Error     0          6m16s
+    cpapp-hana-deployer-n5fnq      0/1     Error     0          7m46s
+    cpapp-hana-deployer-plfmh      0/1     Error     0          7m16s
+    cpapp-hana-deployer-z2nxh      0/1     Error     0          8m8s
+    cpapp-hana-deployer-zc9c2      0/1     Error     0          6m56s
+    ```
 
-Just pick one of the pod names to receive its logs. For example:
+3. Pick one of the pods and check its logs. For example:
 
-```Shell/Bash
-kubectl logs cpapp-hana-deployer-6s7fl
-```
+    ```Shell/Bash
+    kubectl logs cpapp-hana-deployer-6s7fl
+    ```
 
-With the `describe` command you can inspect the state of the pod:
+    The logs will give you more details about the deployment including error code and description.
 
-```Shell/Bash
-kubectl describe pod cpapp-hana-deployer-6s7fl
-```
+4. With the `describe` command you can inspect the state of the pod even further:
 
-This is helpful if the pod couldn't be started.
+    ```Shell/Bash
+    kubectl describe pod cpapp-hana-deployer-6s7fl
+    ```
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 9: ](Check SAP HANA cloud trusted IP addresses)]
-A possible error cause is that your SAP HANA Cloud instance doesn't allow your Kyma's cluster IP address.
-
-You can check and adjust the settings for [the trusted source IP addresses](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html) in SAP HANA Cloud Central.
-
-You can get your clusters outbound IP address with the following command:
-
-```Shell/Bash
-kubectl run -it --rm --restart=Never --image alpine/curl nat-ip-probe --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "sidecar.istio.io/inject":"false" } } }' -- curl https://httpbin.org/ip
-```
-
-The command takes a few second to execute and will print a JSON object with an IP address.
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 10: ](Check your CAP service)]
-If the deployment was successful, you should see the running CAP service in the list of pods:
-
-```Shell/Bash
-kubectl get pods
-```
-
-```
-NAME                         READY   STATUS    RESTARTS   AGE
-cpapp-srv-84964965cd-5mwtm   2/2     Running   0          13m
-```
+    The `describe` command returns a handy list of the pod parameters including `Name`, `Namespace`, `Service Account`, `Status`, `IP`, `Containers`, and `Events` among others.
 
 You can use the `logs` and `describe` commands as described above to inspect the pods. You can find further information about debugging pods in the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/).
 
-Your service is made externally available using the `VirtualService` resource from `Istio`. You can check your externally exposed hostname:
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 10: ](Check SAP HANA cloud trusted IP addresses)]
+If you see the error `Connection failed (RTE:[89013] Socket closed by peer`, it's possible that your SAP HANA Cloud instance doesn't allow your Kyma cluster's IP address. You can find more info in [SAP HANA Database Connections](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html).
 
-```Shell/Bash
-kubectl get virtualservice
-```
+To specify trusted source IP addresses for your SAP HANA Cloud instance:
 
-It should look like this:
+1. Get your Kyma cluster's outbound IP address with the following command:
 
-```
-NAME              GATEWAYS                                         HOSTS                                                         AGE
-cpapp-srv-bsbj8   ["kyma-gateway.kyma-system.svc.cluster.local"]   ["srv-cpapp-risk-management.c-abc.stage.kyma.ondemand.com"]   2d15h
-```
+    ```Shell/Bash
+    kubectl run -it --rm --restart=Never --image alpine/curl nat-ip-probe --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "sidecar.istio.io/inject":"false" } } }' -- curl https://httpbin.org/ip
+    ```
+
+    The command creates a temporary container that runs a command to return your Kyma cluster's outbound IP address and then deletes the container. It takes a few seconds to execute and will print a JSON object with the IP address.
+
+5. Go to your Cloud Foundry space where you already have the SAP HANA Cloud service instance.
+
+6. Choose **SAP HANA Cloud** in the left-hand pane.
+
+7. Choose **Manage SAP HANA Cloud** in the upper right corner.
+
+8. Sign in with your SAP BTP Cockpit username and email. You should see your SAP HANA Cloud instance in the **SAP HANA Cloud Central** cockpit.
+
+9. Choose **Manage Configuration** from the **Actions** menu for your SAP HANA Cloud instance.
+
+    !![Manage HANA instance config](manage_HANA_config.png)
+
+9. Change the **Allowed Connections** selection to `Allow specific IP addresses and IP ranges (in addition to BTP)` and add your Kyma cluster's outbound IP address.
+
+    !![Add Kyma cluster IP](add_kyma_ip.png)
+
+10. Your SAP HANA Cloud instance will automatically restart when you save your changes. Once the instance is running, try to deploy your app again:
+
+    ```Shell/Bash
+    helm upgrade cpapp ./chart --install
+    ```
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 11: ](Check your CAP service)]
+1. If the deployment was successful, you should see the running CAP service in the list of pods:
+
+    ```Shell/Bash
+    kubectl get pods
+    ```
+
+    ```
+    NAME                         READY   STATUS    RESTARTS   AGE
+    cpapp-srv-84964965cd-5mwtm   2/2     Running   0          13m
+    ```
+
+2. Your service is made externally available using the `VirtualService` resource from `Istio`. You can check your externally exposed hostname:
+
+    ```Shell/Bash
+    kubectl get virtualservice
+    ```
+
+    It should look like this:
+
+    ```
+    NAME              GATEWAYS                                         HOSTS                                                         AGE
+    cpapp-srv-bsbj8   ["kyma-gateway.kyma-system.svc.cluster.local"]   ["srv-cpapp-risk-management.c-abc.stage.kyma.ondemand.com"]   2d15h
+    ```
 
 
 [VALIDATE_1]

@@ -12,6 +12,7 @@ primary_tag: topic>abap-connectivity
  - Access to an SAP S/4 HANA Cloud system
  - Latest version of SAP Business Connector including all updates installed. To download SAP Business Connector, go to the [download page](https://support.sap.com/sbc-download). For more information about the installation and other documentation, go to the [details page](https://support.sap.com/en/product/connectors/bc/details.html).
  - You've created a private key, signing certificate, and signed certificate as described in the [certificate toolkit guide](https://support.sap.com/content/dam/support/en_us/library/ssp/products/connectors/bc/SBC_CertificateToolkitGuide_481.pdf).
+ - We recommend completing the tutorial [Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud](abap-setup-bc).
 
 ## Details
 ### You will learn

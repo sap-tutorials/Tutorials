@@ -164,9 +164,9 @@ Select one or more filters on the left to filter the available Store projects by
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4:](Add the automation to the project launcher)]
+[ACCORDION-BEGIN [Step 4:](Execute the automation in attended mode)]
 
-Since the automation requires a human intervention, with a popup dialog, the automation has to be executed in attended mode. This means that the user must be present for the automation to run.
+Since the automation requires a human intervention, with a popup dialog, the automation has to be executed in **attended mode**. This means that the user must be present for the automation to run.
 
 You will trigger the automation using the project launcher.
 
@@ -201,6 +201,8 @@ In this tutorial, you will manually launch your automation from the agent by add
     !![Delete automations](28-delete-automations.png)
 
     On the **Project Launcher details** information right-hand side panel, you can see the automations available in your project.
+
+    >In order to execute the automation in attended mode you will need to add the automation to the project launcher
 
 7. In the **Project Launcher Details**, drag the automation **Get Processors Details** and drop it in the **Launch manually from the agent** section of the project launcher.
 
@@ -248,11 +250,11 @@ Now you may release and deploy it in attended mode. You need to select this trig
     !![Deployed Project](17-deployed-project.png)
 
     > You cannot edit released or deployed projects. To continue working on your project, you need to select the Editable option from the list of released versions.
-  
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6:](Execute bot in attended mode)]
+[ACCORDION-BEGIN [Step 6:](Set the agent in attended mode)]
 
 You need to create a matching agent attribute at this step. Please follow these steps to create an agent attribute in the tenant to add it to your agent and project: [Agent Management Settings to Execute the Process with an Automation](spa-run-agent-settings)
 
@@ -260,17 +262,11 @@ You need to create a matching agent attribute at this step. Please follow these 
 
     !![Projects](18-systray-projects.png)
 
-2. Your project is ready to be launched in attended mode. Choose **Start**.
+2. Set the agent in attended mode.
+
+    Now your project is ready to be launched in attended mode.
 
     !![Start Project](19-start-project.png)
-
-3. Now choose **Get Processors Details**.
-
-    !![Get Processors Details](20-get-processors-details.png)
-
-4. In the dialog popup window, enter **order 7991** as Order Reference.
-
-    !![Order 7991](21-order.png)
 
 [DONE]
 [ACCORDION-END]
@@ -298,6 +294,20 @@ You need to create a matching agent attribute at this step. Please follow these 
 6. The form has been successfully submitted.
 
     !![Form submitted](25-form-submitted.png)
+
+7. Go back to your Desktop Agent, choose your project and **Start**.
+
+    !![Start Project](19-start-project.png)
+
+8. Now choose **Get Processors Details**.
+
+    !![Get Processors Details](20-get-processors-details.png)
+
+9. In the dialog popup window, enter **order 7991** as Order Reference.
+
+    !![Order 7991](21-order.png)
+
+    The process has successfully ended.
 
 [DONE]
 [ACCORDION-END]

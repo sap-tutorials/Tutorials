@@ -64,7 +64,7 @@ The first step is to check if Python and pip are installed.
 
 [ACCORDION-BEGIN [Step 2: ](Install the sqlanydb Python driver)]
 
-The `sqlanydb` package is the python driver for the data lake Relational Engine and is available at [PyPI](https://pypi.org/project/sqlanydb/).
+The `sqlanydb` package is the python driver for the data lake Relational Engine and is available at [`PyPI`](https://pypi.org/project/sqlanydb/).
 
 1. Navigate to your Data Lake Client installation folder, and enter the following command to install `sqlanydb`.
 
@@ -147,13 +147,11 @@ For further information on the Python Driver, visit [Python and Database Access]
 
 [ACCORDION-BEGIN [Step 4: ](Install the Python ODBC bridge using pip and PyPI)]
 
-This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [PyPI](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
+This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [`PyPI`](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
 
 1. Ensure that you have created a connection to the data lake Relational Engine using ODBC as shown in step 1 or 2 of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
 
-
-
-2. The repository that contains Python packages is [PyPI](https://pypi.org/) and includes a package for the `pyodbc` driver.
+2. The repository that contains Python packages is [`PyPI`](https://pypi.org/) and includes a package for the `pyodbc` driver.
 
     ![pyodbc on PyPI](Pyodbc.png)  
 

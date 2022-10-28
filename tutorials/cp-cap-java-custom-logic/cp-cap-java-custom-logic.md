@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true

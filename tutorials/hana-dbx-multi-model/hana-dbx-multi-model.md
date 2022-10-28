@@ -130,13 +130,13 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH better viewing](graph-viewer-wider.png)
 
-4. Apply a filter to vertices where `STATE` is NY and edges where `DIST_KM` is less than 100 using the graph viewer filter.  After specifying the filter, press the Add button and then apply it by pressing the Apply button.
+4. Apply a filter to vertices where `STATE` is NY.  After specifying the filter, press the Add button and then apply it by pressing the Apply button.
 
-    !![DISTANCEGRAPH vertex filter](vertex-filter.png)
+    ![DISTANCEGRAPH vertex filter](vertex-filter.png)
 
-    >Between filtering, the graph will reset.
+     Apply a filter to edges where `DIST_KM` is less than 100.
 
-    !![DISTANCEGRAPH edge filter](edge-filter.png)
+    ![DISTANCEGRAPH edge filter](edge-filter.png)
 
 5. Highlight the Long Island vertex using the graph viewer settings. The color used to highlight in the image below is #E5F5FC.
 
@@ -182,11 +182,10 @@ The following steps will walk through using the shortest path algorithm to deter
     INSERT INTO HOTEL.DISTANCES VALUES (40,21,20,4348);
     ```
 
-2. Navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path".
+2. After removing the previously applied filters, navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
 
-3. Set the following parameters from the image below and select Apply:
+    ![Graph Algorithms](graph-algorithms.png)
 
-    !![Graph Algorithms](graph-algorithms.png)
 
 [DONE]
 [ACCORDION-END]
@@ -230,7 +229,10 @@ The following steps will demonstrate how to create a JSON collection that can be
     ```SQL
     SELECT * FROM HOTEL.GUEST_NOTES;  --returns JSON
 
-    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabluar result
+    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES; --returns tabular result
+
+    WITH myJSON AS (SELECT GUEST_NOTES FROM HOTEL.GUEST_NOTES)
+        SELECT '[' || STRING_AGG(TO_NVARCHAR(GUEST_NOTES), ',') || ']' FROM myJSON;  --returns all the results as one JSON document
 
     WITH GN_VIEW AS (SELECT FIRST_NAME, LAST_NAME, REQUEST FROM HOTEL.GUEST_NOTES) --joins a collection with a table
         SELECT DISTINCT GN_VIEW.REQUEST, C.FIRSTNAME, GN_VIEW.LAST_NAME, C.ADDRESS

@@ -50,6 +50,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 2. Open the folder `templates`.
 
+
 3. Copy the file `risk-analysis-service.cds` from `templates/analytics/srv` to the `srv` folder of your app.
 
     The content of the file looks like this:
@@ -84,7 +85,9 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
     !![RisksAnalysis Entity](entity_riskAnalysis.png)
 
+
 5. Copy the latest  `sap.ui.riskmanagement-Risks.csv` file from `templates/analytics/db/data` and replace the existing file in the `db/data` folder of your app.
+
 
     This `.csv` file has a large number of records for analytical purposes.
 
@@ -251,7 +254,9 @@ The application is now generated and in a few seconds you can see it in the `app
     }
     ```
 
+
 3. Copy the file `risks-analysis-service-ui.cds` from `templates/analytics/srv` to the `srv` folder of your app.
+
 
 [DONE]
 [ACCORDION-END]
@@ -524,4 +529,6 @@ The result of this tutorial can be found in the [`analytics`](https://github.com
 
 
 [ACCORDION-END]
+
 ---
+

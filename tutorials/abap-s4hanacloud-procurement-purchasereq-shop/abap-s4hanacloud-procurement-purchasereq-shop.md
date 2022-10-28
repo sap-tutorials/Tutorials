@@ -51,6 +51,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![logon](logon4.png)
 
+      **HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+
   5. Click **Next >**.
 
       ![logon](logon5.png)
@@ -302,6 +304,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     managed implementation in class zbp_i_online_shop_xxx unique;
 
     define behavior for ZI_ONLINE_SHOP_XXX alias Online_Shop
+    with additional save
     persistent table zonlineshop_xxx
     lock master
     authorization master ( instance )
@@ -383,9 +386,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
-    PUBLIC SECTION.
     class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
-    class-DATA cv_po_mapped TYPE RESPONSE FOR MAPPED I_PurchaseOrderTP_2.
     ENDCLASS.
 
     CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
@@ -407,13 +408,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       METHOD save_modified.
         DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
-               ls_online_shop_as TYPE                   zshop_as_xxx.
+              ls_online_shop_as TYPE                   zshop_as_xxx.
         IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
           LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
-            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key).
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key). 
             <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
           ENDLOOP.
-        ENDIF.
+        ENDIF. 
 
 
         IF create-online_shop IS NOT INITIAL.
@@ -453,13 +454,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     **  if a new laptop is ordered, trigger a new purschase requisition
         IF keys IS NOT INITIAL.
           MODIFY ENTITIES OF i_purchaserequisitiontp
-     ENTITY purchaserequisition
+    ENTITY purchaserequisition
         CREATE FIELDS ( purchaserequisitiontype )
         WITH VALUE #(  ( %cid                    = 'My%CID_1'
-                         purchaserequisitiontype = 'NB' ) )
+                        purchaserequisitiontype = 'NB' ) )
 
-       CREATE BY \_purchaserequisitionitem
-       FIELDS ( plant
+      CREATE BY \_purchaserequisitionitem
+      FIELDS ( plant
                 purchaserequisitionitemtext
                 accountassignmentcategory
                 requestedquantity
@@ -471,10 +472,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                 purchasingorganization
     *               MultipleAcctAssgmtDistribution
                     )
-       WITH VALUE #(
-                     (    %cid_ref = 'My%CID_1'
+      WITH VALUE #(
+                    (    %cid_ref = 'My%CID_1'
                           %target = VALUE #(
-                                           (  %cid                            = 'My%ItemCID_1'
+                                          (  %cid                            = 'My%ItemCID_1'
                                               plant                           = '1010'
                                               purchaserequisitionitemtext     = 'created from PAAS API XXX'
                                                 accountassignmentcategory     = 'U'
@@ -487,22 +488,22 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                                               purchasingorganization          = '1010'
 
                                               )
-                                           )
+                                          )
                       )
                     )
     ENTITY purchaserequisitionitem
 
     CREATE BY \_purchasereqnacctassgmt
         FIELDS ( CostCenter
-                 GLAccount
-                 Quantity
-                 BaseUnit )
+                GLAccount
+                Quantity
+                BaseUnit )
         WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
                           %target  = VALUE #( ( CostCenter   = 'JMW-COST'
                                                 GLAccount    = '0000400000' ) ) ) )
     CREATE BY \_purchasereqnitemtext
-       FIELDS ( plainlongtext )
-       WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
+      FIELDS ( plainlongtext )
+      WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
                           %target  = VALUE #( (
                                               textobjecttype = 'B01'
                                               language       = 'E'
@@ -528,18 +529,18 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     *update remainder for nodays-no delivery remainder after half the timeperiod b/w delivery and creation date/system date
     *fi
         MODIFY ENTITIES OF i_purchasinginforecordtp
-               ENTITY purchasinginforecord
-               UPDATE SET FIELDS WITH
-               VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
-                           Supplier                 = ls_data-supplier
-                           MaterialGroup            = ls_data-MaterialGroup
-                           SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
-                           NoDaysReminder1          = '12'
-                           PurchasingInfoRecordDesc = 'noDays remainder updated'
+              ENTITY purchasinginforecord
+              UPDATE SET FIELDS WITH
+              VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
+                          Supplier                 = ls_data-supplier
+                          MaterialGroup            = ls_data-MaterialGroup
+                          SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
+                          NoDaysReminder1          = '12'
+                          PurchasingInfoRecordDesc = 'noDays remainder updated'
                       ) )
-                 FAILED   DATA(ls_failed_update)
-                 REPORTED DATA(ls_reported_update)
-                 MAPPED   DATA(ls_mapped_update).
+                FAILED   DATA(ls_failed_update)
+                REPORTED DATA(ls_reported_update)
+                MAPPED   DATA(ls_mapped_update).
 
       ENDMETHOD.
 
@@ -550,7 +551,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     *      delete from zonlineshop_xxx UP TO 15 ROWS.
         SELECT MAX( order_id ) FROM zonlineshop_xxx INTO @DATA(max_order_id).
         READ ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-           ENTITY zi_online_shop_xxx
+          ENTITY zi_online_shop_xxx
             ALL FIELDS
               WITH CORRESPONDING #( keys )
               RESULT DATA(lt_online_shop_result)
@@ -568,10 +569,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           APPEND online_shop TO online_shops.
         ENDLOOP.
         MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-       ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
-       MAPPED   DATA(ls_mapped_modify)
-       FAILED   DATA(lt_failed_modify)
-       REPORTED DATA(lt_reported_modify).
+      ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
+      MAPPED   DATA(ls_mapped_modify)
+      FAILED   DATA(lt_failed_modify)
+      REPORTED DATA(lt_reported_modify).
 
     **create purchase requisition
 
