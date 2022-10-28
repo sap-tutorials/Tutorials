@@ -150,10 +150,10 @@ You can create these different forms using the **Form Builder** embedded in the 
         > This form will appear as the task in the `MyInbox` of the given Recipients to take action.
 
     - In **Due Date** section,
-        - select **Duration** as **type of due date**  
-        - enter **2 Days** as the duration
+        - select **Duration** as **type of due date**,
+        - enter **2 Days** as the duration.
 
-        > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or Within 1 day if the task is supposed to be completed in 1 day etc.
+        > As the task appears in the `MyInbox`, there will be duration information shown to the recipients like Overdue if the task was not completed in 2 days, or within 1 day if the task is supposed to be completed in 1 day etc.
 
     !![03-027](unit3-13a.png)
 
@@ -277,14 +277,12 @@ These notifications will appear in the inbox of the requester as a task.
 
 12. Change the order rejection form in the form builder to reflect the data for rejection case.
 
-    - Do not forget the **Save** the form once completed.
-
     | Form Fields | Field Settings with Label
     |  :------------- | :-------------
     | Headline 1 | Order Rejection
     | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:
 
-    - For the below **Input Field** enter the label and select the **Read Only** checkbox.
+    - For the below **Input Field** enter the label:
 
     | Form Fields| Field Settings with Label
     |  :------------- | :-------------
