@@ -38,7 +38,7 @@ SAP Fiori elements is a framework that comprises the most commonly used floor pl
 1. Speed up development by reducing the amount of front-end code needed to build SAP Fiori apps.
 2. Drive UX consistency and compliance with the latest SAP Fiori design guidelines.
 
-SAP Fiori elements for OData version 2 (V2) offers **Analytical list page (ALP)** as a separate floor plan for a unique way to analyze data step by step from different perspectives, to investigate a root cause through drill-down, and to act on transactional content. On the other hand, in SAP Fiori elements for OData V4, the **Analytical List Page (ALP)** is not a separate floor plan, but rather a "flavor" of the **List Report Object Page** floor plan. Hence, we can configure a **List Report Object Page** floor plan in such a way that it can serve as an "ALP flavor" report page.
+SAP Fiori elements for OData version 2 (V2) offers **Analytical list page (ALP)** as a separate floor plan for a unique way to analyze data step by step from different perspectives, to investigate a root cause through drill-down, and to act on transactional content. On the other hand, in SAP Fiori elements for OData V4, the **Analytical List Page (ALP)** is not a separate floor plan, but rather a "flavor" of the **List Report Object Page** floor plan. Hence, you can configure a **List Report Object Page** floor plan in such a way that it can serve as an "ALP flavor" report page.
 
 [DONE]
 [ACCORDION-END]
@@ -49,7 +49,6 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 1. Open the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
 2. Open the folder `templates`.
-
 
 3. Copy the file `risk-analysis-service.cds` from `templates/analytics/srv` to the `srv` folder of your app.
 
@@ -85,9 +84,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
     !![RisksAnalysis Entity](entity_riskAnalysis.png)
 
-
 5. Copy the latest  `sap.ui.riskmanagement-Risks.csv` file from `templates/analytics/db/data` and replace the existing file in the `db/data` folder of your app.
-
 
     This `.csv` file has a large number of records for analytical purposes.
 
@@ -107,7 +104,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
     > Why not use the Analytical List Page floor plan?
 
-    > Although we are using SAP Fiori elements for OData V4, you will notice that there is still a floor plan **Analytical List Page** in the previous screen. However, it is due to be removed from the Fiori Generator UI, so we are not going to use it for this tutorial.
+    > Although you are using SAP Fiori elements for OData V4, you will notice that there is still a floor plan **Analytical List Page** in the previous screen. However, it is due to be removed from the Fiori Generator UI, so you are not going to use it for this tutorial.
 
 3. Choose **Next**.
 
@@ -254,9 +251,7 @@ The application is now generated and in a few seconds you can see it in the `app
     }
     ```
 
-
 3. Copy the file `risks-analysis-service-ui.cds` from `templates/analytics/srv` to the `srv` folder of your app.
-
 
 [DONE]
 [ACCORDION-END]
@@ -477,7 +472,7 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 9: ](Add your app to the launch page)]
-Let us add the `Risk Analysis` application to the launch page where we already have the `Risks` and `Mitigations` apps.
+Let us add the `Risk Analysis` application to the launch page where you already have the `Risks` and `Mitigations` apps.
 
 1. Open the file `launchpage.html` in `app` folder of your application.
 
@@ -529,6 +524,4 @@ The result of this tutorial can be found in the [`analytics`](https://github.com
 
 
 [ACCORDION-END]
-
 ---
-
