@@ -7,7 +7,7 @@ parser: v2
 author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
-# Build an Integral SAP Integration Suite project and Consume it from a SAP AppGyver Custom App
+# Set Up Prerequisites for your SAP Integration Suite & SAP AppGyver Mission
 <!-- description --> This mission is intended for consultants/users who want to boost their integration skills, using SAP Integration Suite capabilities and SAP AppGyver to quickly develop a custom app that can consume SAP Integration Suite APIs.
 
 ## Prerequisites
