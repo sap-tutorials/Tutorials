@@ -150,7 +150,7 @@ After the data types are created, you will now configure the decision:
 
     !![002](017.png)
 
-    > A decision table is a tabular representation of the rule with If and Then header and row columns. If-header columns contain the expressions which are evaluated, and Then-header columns contain the result structure that will be returned after the decision is run.
+    > A decision table is a tabular representation of the rule with If and Then header and row columns. If-header columns contain the expressions, which are evaluated, and Then-header columns contain the result structure that will be returned after the decision is run.
 
 10. You will now configure the conditions. Under **Data Types**:
     - Choose **Sales Order**,
@@ -267,7 +267,7 @@ After you have created and configured the decision, next you have to map the inp
 
 2. **Save** the process.    
 
-    !![002](031.png) 
+    !![002](031.png)
 
     > You might see an error symbol on your decision. This is because the outbound connection from the decision is still dangling and not connected to any activity. You may connect it to the end activity.
 
