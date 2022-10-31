@@ -3,8 +3,8 @@ title: Create and Monitor a Space in SAP Data Warehouse Cloud
 description: In this tutorial, learn how to create and monitor a Space. This is where you and your team will work towards fulfilling your objective with SAP Data Warehouse Cloud.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
-primary_tag: products>sap-data-warehouse-cloud
+tags: [ tutorial>beginner, software-product>sap-data-warehouse-cloud]
+primary_tag: software-product>sap-data-warehouse-cloud
 ---
 
 ## Prerequisites
@@ -54,7 +54,7 @@ Space monitoring allows the administrator to keep an eye on their Space.
 
 Click your Space or click the monitoring button on the upper right side of your Space in Space Management to open the monitoring page.
 
-![Space Monitoring](T07 Monitoring.jpg)
+![Space Monitoring](T07-Monitoring.jpg)
 
 On the monitoring screen, you can perform the following features:
 
@@ -98,7 +98,7 @@ You have successfully added your team members as users into your Space.
 
 When a Space exceeds its quota, it will eventually get locked. You'll see it in Space Management. After you receive an alert that your Space is about to be locked, you should take immediate action to ensure that you can continue working in the Space.
 
-![Locked Space](T07 Locked.png)
+![Locked Space](T07-Locked.png)
 
 When the Space is locked, operations like uploading data, creating a new user, creating a new connection, new model, or Open SQL Schema, are not possible. Also any operations in the data or business builder using this particular Space are also not possible.
 
