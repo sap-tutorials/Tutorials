@@ -8,7 +8,7 @@ primary_tag: topic>abap-extensibility
 ---
 
 ## Prerequisites
-  - Custom Business Object must have been created. If not, then follow the tutorials [Create Custom Business Objects in S/4HANA Cloud](group.abap-extensibiliy-cbo-cce-ccl.html).
+  - Custom Business Object must have been created. If not, then follow the tutorials [Create Custom Business Objects in S/4HANA Cloud](group.abap-extensibiliy-cbo-cce-ccl).
   - You must have SAP Cloud Platform account.
 
 

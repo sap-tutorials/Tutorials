@@ -136,6 +136,7 @@ After the data types are created, you will now configure the decision:
 
 7. Then you will create the actual decision-making parts that make the decision in the process. Under Determine approver, select **Rules**.
 
+
     !![002](015.png)
 
 8. Select **Add Rule**.
