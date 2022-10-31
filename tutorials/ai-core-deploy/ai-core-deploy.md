@@ -180,11 +180,11 @@ Create an executable (YAML file) named `house-price-server.yaml` in your GitHub 
 > **IMPORTANT** The structure(schemas) of workflows and executables are different for both training and serving in SAP AI Core. For available options for the schemas you must refer to the [official help guide of SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/8a1f91a18cf0473e8689789f1636675a.html?locale=en-US)
 
 ```YAML
-apiVersion: ai.sap.com/v1alpha1
+aapiVersion: ai.sap.com/v1alpha1
 kind: ServingTemplate
 metadata:
   name: server-pipeline # executable ID, must be unique across your SAP AI Core instance, for example use `server-pipeline-yourname-1234`
-  annotations:  
+  annotations:
     scenarios.ai.sap.com/description: "Learning to predict house price"
     scenarios.ai.sap.com/name: "House Price (Tutorial)"
     executables.ai.sap.com/description: "Create online server to make live predictions"
@@ -201,7 +201,7 @@ spec:
       - name: greetmessage # placeholder name
         type: string # required for every parameters
   template:
-    apiVersion: "serving.kserve.org/v1beta1"
+    apiVersion: "serving.kserve.io/v1beta1"
     metadata:
       annotations: |
         autoscaling.knative.dev/metric: concurrency   # condition when to scale
