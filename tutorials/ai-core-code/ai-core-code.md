@@ -204,11 +204,7 @@ Name your secret, and paste and edit the snippet into the `Secret` field.
 
 ```JSON
 {
-    "data": {
-        ".dockerconfigjson": "{\"auths\":{\"YOUR_DOCKER_REGISTRY_URL\":{\"username\":\"YOUR_DOCKER_USERNAME\",\"password\":\"YOUR_DOCKER_ACCESS_TOKEN\"}}}"
-    },
-    "name": "credstutorialrepo"
-}
+        ".dockerconfigjson": "{\"auths\":{\"YOUR_DOCKER_REGISTRY_URL\":{\"username\":\"YOUR_DOCKER_USERNAME\",\"password\":\"YOUR_DOCKER_ACCESS_TOKEN\"}}}"    }
 ```
 
 !![image](img/ail/DockerSecret.png)
