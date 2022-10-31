@@ -444,16 +444,19 @@ aws s3 ls s3//<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 
 [ACCORDION-BEGIN [Step 8: ](Store an object store secret in SAP AI Core)]
 
+An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box.
+
+!![image](img/ail/OSS.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory. Create an object store secret by clicking **POST Create a secret** and using the header and body below.
+Create an object store secret by clicking **POST Create a secret** and using the header and body below.
 
 !![image](img/postman/s3.png)
 
@@ -494,7 +497,7 @@ An object store secret is required to store credentials to access your AWS S3 bu
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Edit and execute the following snippet to create object store secret in SAP AI Core. An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory.
+Edit and execute the following snippet to create object store secret in SAP AI Core.
 
 ```PYTHON
 # Create object Store secret
@@ -943,15 +946,18 @@ All of the contents within your `/app/model/` directory, as defined in your Dock
 
 [ACCORDION-BEGIN [Step 14: ](Create required object store secret `default` for model)]
 
+It is compulsory to create a object store secret named `default` within your resource group, for your executable to **generate models and store them in AWS S3**. After execution the model will be saved to `PATH_PREFIX_of_default/<execution_id>/housepricemodel` in your AWS S3. The `housepricemodel` is mentioned in the workflow in the previous step.
+
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box. Enter `default` for the secret name.
+
+!![image](img/ail/OSS.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-It is compulsory to create a object store secret named `default` within your resource group, for your executable to **generate models and store them in AWS S3**. After execution the model will be saved to `PATH_PREFIX_of_default/<execution_id>/housepricemodel` in your AWS S3. The `housepricemodel` is mentioned in the workflow in the previous step.
 
 > **TIP** You can create multiple object store secrets with different `name` keys within the same resource group. You can also patch to modify the values of an existing object store secret.
 
@@ -984,8 +990,6 @@ The value of the `name` key must be `default`. This should not be confused with 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
-
-It is compulsory to create a object store secret named `default` within your resource group, for your executable to **generate models and store them in AWS S3**. After execution the model will be saved to `PATH_PREFIX_of_default/<execution_id>/housepricemodel` in your AWS S3. The `housepricemodel` is mentioned in workflow/executable in previous step.
 
 > **TIP** You can create multiple object store secrets with different `name` keys within the same resource group. You can also patch to modify values of an existing object store secret.
 
