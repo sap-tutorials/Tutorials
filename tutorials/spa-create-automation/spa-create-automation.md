@@ -26,7 +26,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 
 [ACCORDION-BEGIN [Step 1: ](Create the Automation)]
 
-In this exercise, you will automate the process to read the *sales order* details from an Excel and select the specific sales order details based on the input from the submitted form. To design your automation, you will need an excel file filled with the sales orders data. You have the possibility to create it yourself using the following data:
+In this exercise, you will automate the process to read the *sales order* details from an Excel and select the specific sales order details based on the input from the submitted form. To design your automation, you will need an Excel file filled with the sales orders data. You have the possibility to create it yourself using the following data:
 
 | Order Number| Order Amount | Order Date | Shipping Country         | Expected Delivery Date | Order Status
 |  :----------| :------------|:-----------| :------------------------|:-----------------------|:-----------
