@@ -181,7 +181,7 @@ Your app is configured. Now you'll go to the SAP Work Zone **Applications** page
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View the app in the Applications page)]
+[ACCORDION-BEGIN [Step 6: ](View the app in the Applications page at runtime)]
 
 1. Click the **Work Zone Directory** icon in the side panel.
 
