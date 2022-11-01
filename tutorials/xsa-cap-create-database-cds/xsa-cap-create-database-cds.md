@@ -1,6 +1,5 @@
 ---
-title: SAP HANA Native, Create Database Artifacts Using Core Data Services (CDS)
-description: Use core data services to generate SAP HANA basic database artifacts.
+parser: v2
 auto_validation: true
 time: 15
 author_name: Thomas Jung
@@ -9,20 +8,24 @@ tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition
 primary_tag: products>sap-hana
 ---
 
+# SAP HANA Native, Create Database Artifacts Using Core Data Services (CDS)
+<!-- description --> Use core data services to generate SAP HANA basic database artifacts.
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created an application using the [Business Application wizard](xsa-cap-create-project).
 
-## Details
-### You will learn
+## You will learn
   - How to use core data services to create simple database entities
   - How to define database-agnostic artifacts in the persistence module
 
+## Intro
 The Cloud Application Programming model utilizes core data services to define artifacts in the database module. Because this model is meant to be database-agnostic -- i.e., work with any database -- it does not allow you to leverage features that are specific to SAP HANA. For this reason, you will create two tables that do not require any advanced data types.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create database entities)]
+### Create database entities
+
 
 In the `db` module, you will find a file called `data-model.cds`. Right-click on it and choose **Rename**.
 
@@ -76,10 +79,9 @@ entity Interactions_Items {
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Adapt service call)]
+### Adapt service call
+
 
 Locate the other `cds` file (this file may be called `cat-service.cds` or `my-service.cds`, depending on the IDE) in the `srv` folder and rename it.
 
@@ -136,11 +138,10 @@ Look into the console to see the progress. You can scroll up and see what has be
 
 ![Build database module](c1.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Explore the generated design-time artifacts)]
+### Explore the generated design-time artifacts
+
 
 If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
 
@@ -202,10 +203,9 @@ Scroll up to in the console to see what the build process has done.
 >
 > You can find a similar example and further context on Core Data and Services in [this explanatory video](https://www.youtube.com/watch?v=O0qSsbnx3u8&list=PLoc6uc3ML1JR38-V46qhmGIKG07nXwO6X&index=6)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check the Database Explorer)]
+### Check the Database Explorer
+
 
 You can now check the generated tables and views in the database explorer. Right-click on the database module and select **Open HDI Container**.
 
@@ -220,10 +220,9 @@ Note the name of the table matches the generated `hdbtable` artifacts. You will 
 > Unless a name is specified during deployment, HDI containers are automatically created with names relative to the project and user generating them. This allows developers to work on different versions of the same HDI container at the same time.
 > ![Build database module](8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Load data into your tables)]
+### Load data into your tables
+
 
 Download the [header file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Header.csv) and the [items file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Items.csv) into your local file system.
 
@@ -255,10 +254,9 @@ Repeat the process with the `Items.csv` file into the `Items` table.
 
 ![Import data](17.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check data loaded into the tables)]
+### Check data loaded into the tables
+
 
 You can now check the data loaded into the tables. Right-click on the `Items` table and click **Generate Select Statement**.
 
@@ -270,8 +268,7 @@ Add the following WHERE clause to the SELECT statement and execute it to complet
 where "LOGTEXT"  like '%happy%';
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

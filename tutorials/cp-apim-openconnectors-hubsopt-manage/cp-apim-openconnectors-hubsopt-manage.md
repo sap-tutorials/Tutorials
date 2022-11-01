@@ -1,21 +1,23 @@
 ---
-title: Manage Hubspot Instance using SAP API Management
-description: Discover and manage your Open Connectors instance to Hubspot in SAP API Management.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-api-management, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
 ---
 
+# Manage Hubspot Instance using SAP API Management
+<!-- description --> Discover and manage your Open Connectors instance to Hubspot in SAP API Management.
+
 ## Prerequisites
 - **Tutorials:** [Enable API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
 
-## Details
-### You will learn
+## You will learn
   - How to create provider of type Open Connectors
   - How to discover Open Connectors instance and create an API proxy
 
-[ACCORDION-BEGIN [Step 1: ](Create API provider)]
+### Create API provider
+
 
 1. Navigate to your API Management.
 
@@ -60,10 +62,9 @@ primary_tag: products>sap-api-management
 
     >If successful, the response code is **200** and you might see 404 error even if the system is up and running. Do not get confuse with it. Your system is up and running, you can proceed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Discover Open Connectors instance)]
+### Discover Open Connectors instance
+
 1. Navigate to **Develop** and click **Create**.
 
     ![Create Proxy](07-create-proxy.png)
@@ -76,10 +77,10 @@ primary_tag: products>sap-api-management
 
     >It should list all the connectors with instances.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create API proxy)]
+
+### Create API proxy
+
 
 1. Select `HubSpotCRM` connector.
 
@@ -93,10 +94,9 @@ primary_tag: products>sap-api-management
 
     ![Create Proxy](10-create-proxy.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and test from browser)]
+### Deploy and test from browser
+
 
 1. Click **Deploy** to deploy the proxy.
 
@@ -108,5 +108,3 @@ primary_tag: products>sap-api-management
 
     ![Try Out](12-Try-out.png)
 
-[DONE]
-[ACCORDION-END]

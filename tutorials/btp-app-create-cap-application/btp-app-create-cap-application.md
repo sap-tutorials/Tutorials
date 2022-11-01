@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Create a CAP-Based Application
-description: This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
 keywords: cap
 auto_validation: true
 time: 15
@@ -10,18 +9,21 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Create a CAP-Based Application
+<!-- description --> This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
+
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
 
-## Details
-### You will learn
+## You will learn
  - How to use the CAP's tooling `cds init` to create your project
  - How to use the CAP's tooling `cds watch` to launch your project
  - How to add files to your project
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
+### Create and initialize the project
+
 1. Open a command line window.
 
 2. Navigate to your tutorial root directory.
@@ -86,15 +88,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     The CAP server tells you that there is no model yet that it can serve. You add one in the next step.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---
-[ACCORDION-BEGIN [Step 2: ](Add files to the project)]
+### Add files to the project
+
 1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 
-    !![Windows](codeandfinder.png)
+    <!-- border -->![Windows](codeandfinder.png)
 
     Alternatively, you can open it as a second folder in your VS Code project: **File** &rarr; **Add Folder to Workspace...**.
 
@@ -151,7 +153,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 5. In your browser open the link <http://localhost:4004>.
 
-    !![Service](service.png)
+    <!-- border -->![Service](service.png)
 
     > You may have to stop the CAP server with <kbd>Ctrl</kbd> + <kbd>C</kbd> and restart it with the `cds watch` command.
 
@@ -188,13 +190,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 8. Revisit the `Risks` entity <http://localhost:4004/service/risk/Risks> in your browser. You now see the data exposed.
 
-    !![Service Data](servicedata.png)
+    <!-- border -->![Service Data](servicedata.png)
 
 
     > The Risks entity looks different?
 
     > When you revisit the **Risks** entity, you might see something like this instead of the nicely-formatted output above.
-    >     !![No JSON Viewer](no-json-viewer.png)
+    >     <!-- border -->![No JSON Viewer](no-json-viewer.png)
     > However, this doesn't mean you have made a mistake in the tutorial. Rather, this is the correct output without any formatting. If you'd like to see a formatted output in your browser, you can add a plugin to your browser. Here are a few exemplary JSON formatters for different browsers:
 
     > - [Chrome](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli)
@@ -208,9 +210,5 @@ And that's it. You now have a full blown OData service, which complies to the OD
 
 
 
-[DONE]
 The result of this tutorial can be found in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
-
-
-[ACCORDION-END]
 ---

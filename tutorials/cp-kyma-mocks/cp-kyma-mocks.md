@@ -1,25 +1,28 @@
 ---
-title: Deploy Commerce Mock Application in the Kyma Runtime
-description: Deploy and connect the Commerce mock application to the Kyma runtime.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
+# Deploy Commerce Mock Application in the Kyma Runtime
+<!-- description --> Deploy and connect the Commerce mock application to the Kyma runtime.
+
 ## Prerequisites
   - [GIT](https://git-scm.com/downloads) installed
 
-## Details
-### You will learn
+## You will learn
   - How to create a Namespace in the Kyma runtime
   - How to deploy the Kyma mock application, which includes a Kyma `APIRule` to expose the API to the Internet
 
+## Intro
 The Kyma mock application contains lightweight substitutes for SAP applications to ease the development and testing of extension and integration scenarios based on [`Varkes`](https://github.com/kyma-incubator/varkes). Together with SAP BTP, Kyma runtime, it allows for efficient implementation of application extensions without the need to access the real SAP applications during development.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. The Kyma mock applications can be found in the [xf-application-mocks](https://github.com/SAP-samples/xf-application-mocks) repository. Within the repo you can find each of the mock applications and their Deployment files within the respective folder. The process outlined in the tutorial is the same for each, but focuses on configuring the Commerce mock.
 
@@ -31,10 +34,9 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
     git clone https://github.com/SAP-samples/xf-application-mocks
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Apply resources to Kyma runtime)]
+### Apply resources to Kyma runtime
+
 
 1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, toggle **Enable Sidecar Injection** to the on state and then choose **Create**.
 
@@ -58,11 +60,10 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
     > Even API rules can be created by describing them within YAML files. You can find the YAML definition of the `APIRule` at `/xf-application-mocks/commerce-mock/deployment/kyma.yaml`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Open Commerce mock application)]
+### Open Commerce mock application
+
 
 1. Open the `APIRules` in the Kyma console within the `dev` Namespace by choosing the **Discovery and Network > `APIRules`** menu option.
 
@@ -72,10 +73,9 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
   ![Mock Application Step 3](mock-app.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a System)]
+### Create a System
+
 
 In this step, you will create a System in the SAP BTP which will be used to pair the mock application to the Kyma runtime. This step will be performed at the **Global** account level of your SAP BTP account.
 
@@ -92,10 +92,9 @@ In this step, you will create a System in the SAP BTP which will be used to pair
     ![Pairing Step 3](pair2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a Formation)]
+### Create a Formation
+
 
 In this step, you will create a Formation. A Formation is used to connect one or more Systems created in the SAP BTP to a runtime. This step will be performed at the **Global** account level of your SAP BTP account.
 
@@ -109,10 +108,10 @@ In this step, you will create a Formation. A Formation is used to connect one or
 
     ![Formation Step 3](formation2.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Pair an application)]
+
+### Pair an application
+
 
 The pairing process will establish a trust between the Commerce mock application and in this case the SAP Kyma runtime. Once the pairing is complete, the registration of APIs and business events can be performed. This process allow developers to utilize the APIs and business events with the authentication aspects handled automatically.
 
@@ -124,11 +123,10 @@ The pairing process will establish a trust between the Commerce mock application
 
     ![Pairing Step 5](pair4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Verify setup)]
+### Verify setup
+
 
 1. Navigate back to the Kyma home workspace by choosing **Back to Namespaces**.
 
@@ -140,10 +138,7 @@ The pairing process will establish a trust between the Commerce mock application
 
   ![Verify Step 1](verify1.png)
 
-[VALIDATE_2]
 
 **Congratulations!** You have successfully configured the Commerce mock application.
-
-[ACCORDION-END]
 
 ---

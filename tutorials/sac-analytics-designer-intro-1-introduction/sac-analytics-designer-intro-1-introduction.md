@@ -1,29 +1,32 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Introduction to SAP Analytics Cloud, Analytics Designer
-description: Get an overview of SAP Analytics Cloud Analytics Designer top capabilities and features
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product-function>sap-analytics-cloud\,-analytics-designer
 ---
+# Introduction to SAP Analytics Cloud, Analytics Designer
+<!-- description --> Get an overview of SAP Analytics Cloud Analytics Designer top capabilities and features
+
 <!--
 ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - What SAP Analytics Cloud Analytics Designer is
   - How Analytics Designer completes SAP Analytics Cloud
   - What the typical use cases for Analytics Designer are
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP Analytics Cloud Analytics Designer in a nutshell)]
+### SAP Analytics Cloud Analytics Designer in a nutshell
+
 
 Analytics Designer is a capability that you can use to build Analytical Applications within SAP Analytics Cloud. In Analytics Designer you can use scripting, extensions, `Odata`, and visual widgets to build Enterprise Dashboards, Planning Applications, and Predictive Applications. Analytics Designer leverages all the platform services already built into SAP Analytics Cloud such as, Data Connectivity, Data Preparation, Scheduling and Lifecycle Management to name a few. Analytics Designer also integrates with Business Intelligence, Augmented Analytics, and Enterprise Planning.
 
@@ -31,10 +34,9 @@ By using Analytics Designer to leverage all the existing services provided by SA
 
 ![Analytic Applications](1.1.2.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analytics Designer extends stories capabilities inside SAP Analytics Cloud)]
+### Analytics Designer extends stories capabilities inside SAP Analytics Cloud
+
 
 Analytics Designer sits on one analytics platform by bringing together Business Intelligence, Planning, and Predictive capabilities. Analytics Designer also has a dedicated development environment for Analytics Applications. Here you can customize your application by using capabilities such as scripting to do the integration and extension work. You can also enhance the user experience by adjusting widget behavior based on your user's expectations. With this feature you have the flexibility to enhance the user interface and cater your application to your user's needs.  
 
@@ -52,11 +54,10 @@ Some key features of Analytics Designer include the abilities to:
 
 - Deploy your Analytical Application through a mobile device or through integration with the SAP Analytics Cloud iOS mobile application
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Typical Use Cases of Analytics Designer)]
+### Typical Use Cases of Analytics Designer
+
 
 ### Generic Applications
 
@@ -86,13 +87,10 @@ Using this you can embed your applications into third-party web pages and exchan
 
 By creating templates or composites, you can develop reusable parts of an application which reduces change management in the future. This feature is currently not available and will be released soon with updates to SAP Analytics Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

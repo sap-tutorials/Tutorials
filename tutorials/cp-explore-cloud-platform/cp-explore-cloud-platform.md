@@ -1,6 +1,5 @@
 ---
-title: View the SAP BTP from 10,000 Meters
-description: Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
+parser: v2
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -10,11 +9,13 @@ time: 10
 ---
 
 
+# View the SAP BTP from 10,000 Meters
+<!-- description --> Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
+
 ## Prerequisites
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
-## Details
-### You will learn
+## You will learn
   - What SAP BTP is
   - What SaaS, PaaS, and IaaS mean and how they work
   - What services are, and where to find them
@@ -84,10 +85,10 @@ Finally, SAP also offers IaaS in the cloud.  We didn't mention this before, beca
 
 The SAP BTP is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
 
-!![Data center locations and types](map.png)
+<!-- border -->![Data center locations and types](map.png)
 
 This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices?provider=all&regions=all&showFilters=true).
-!![globe button](globe.png)
+<!-- border -->![globe button](globe.png)
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 

@@ -1,31 +1,34 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Introduction to SAP Analytics Cloud
-description: Get an overview of SAP Analytics Cloud's top capabilities and features
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
+# Introduction to SAP Analytics Cloud
+<!-- description --> Get an overview of SAP Analytics Cloud's top capabilities and features
+
 <!--
 ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - What SAP Analytics Cloud is
   - What the fundamentals are
   - What Smart features are and how they work
   - What the Enterprise Planning features are
   - What the other capabilities of SAP Analytics Cloud are
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is SAP Analytics Cloud?)]
+### What is SAP Analytics Cloud?
+
 
 SAP Analytics Cloud is a software as a service (SaaS) enterprise analytics solution that combines Business Intelligence, Augmented and Predictive Analytics, and Planning capabilities to help you understand your data to make smarter business decisions. Furthermore, you can ask, analyze, predict, plan, and report all in one end-to-end workflow.
 
@@ -45,10 +48,9 @@ SAP Analytics Cloud for Planning lets you analyze, predict, and plan in one appl
 
 > Planning features will be explained later in this tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](The Fundamentals)]
+### The Fundamentals
+
 
 ### Stories, Models, Data
 
@@ -72,10 +74,9 @@ Now you are ready to tell a story with your data. In an SAP Analytics Cloud stor
 
 ![Sample Story](Sample story.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Smart Features)]
+### Smart Features
+
 
 When analyzing data in a chart or table, you probably often have questions like, "Why did this value decrease?", "What is causing this variance?" or "What is influencing this metric?". To get the insights needed to answer these questions, you would typically have to spend hours performing manual data discovery. SAP Analytics Cloud augmented analytics helps by generating automated insights powered by artificial intelligence and machine learnings to help you find the answers you need. These augmented analytics capabilities are referred to as smart features, and they allow users to:
 
@@ -124,10 +125,9 @@ The Time Series Forecasting feature performs advanced statistical analysis to ge
 
 Smart Grouping allows you to visualize clusters of data on scatter plots and bubble charts by automatically grouping data points together based on similar properties. This feature helps you explore data points with the flexibility in defining the attributes to be considered, and tailor business decision to certain groups. Click [here](https://community.sap.com/topics/cloud-analytics/augmented-analytics) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Planning Features)]
+### Planning Features
+
 
 SAP Analytics Cloud Planning features help businesses set goals and strategic plans, analyze budgets, set allocations, compare budget, actuals, and forecasts, and crowdsource plans across departments.
 
@@ -149,10 +149,9 @@ SAP Analytics Cloud for planning provides tools for planning and analysis, colla
 
 Click [here](https://community.sap.com/topics/cloud-analytics/planning#introduction-to-sap-analytics-cloud-for-planning) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Core Applications and Features)]
+### Core Applications and Features
+
 
 #### Pre-built Business Content Packages for BI and Planning
 
@@ -206,12 +205,9 @@ A big advantage of Data Analyzer is that you can analyze the data directly witho
 
 SAP Analytics Cloud is available for mobile. With the SAP Analytics Cloud mobile app for iOS and Android devices, you have easy access to your analytics while on the go. Responsive story pages are optimized for mobile devices and automatically adjusts visualizations to fit any screen size to create a seamless transition from desktop to mobile. Click [here](https://help.sap.com/viewer/92a4a76cf6ae454cbf55b73df1cc2f3d/release/en-US/3b32b5ef8c2e49479cf45b50b8ff8a26.html?q=mobile) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

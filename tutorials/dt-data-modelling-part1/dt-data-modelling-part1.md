@@ -1,26 +1,27 @@
 ---
-title: Adding Analytic Privileges and the SAP HANA Modeler Perspective
-description: Understanding the various types of Information Views used in SAP HANA to create analytical reports.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
+# Adding Analytic Privileges and the SAP HANA Modeler Perspective
+<!-- description --> Understanding the various types of Information Views used in SAP HANA to create analytical reports.
+
 ## Prerequisites
  - **Proficiency:** Beginner
  - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. If not, refer to the lesson starting from [Creating and Removing Extended Storage](https://developers.sap.com/group.dt-get-started.html) to set up your extended storage.
 
-## Details
-### You will learn
+## You will learn
   - How to add the Analytic Privilege to users
   - The various types of information views available
   - How to open the SAP HANA Modeler perspective
-
-### Time to Complete
+## Time to Complete
  **15 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Adding an Analytic Privilege)]
+### Adding an Analytic Privilege
+
 
 We will be adding an analytic privilege to your TPCH user. This will give TPCH access to read all information views.
 
@@ -34,11 +35,9 @@ The window will open on the right. Navigate to the bottom, and select "**Analyti
 
 Once you add the privilege for the `TPCH` user, click the green execution arrow at the top right.
 
-[DONE]
 
-[ACCORDION-END]
+### Information Modelling and Calculation Views
 
-[ACCORDION-BEGIN [Step 2: ](Information Modelling and Calculation Views)]
 
 Information views, or information modeling, is used by SAP HANA to create meaningful reports and provide decision making for various scenarios using database tables. Information views can be categorized into 3 types:
 
@@ -67,11 +66,10 @@ These calculation views can be either graphical or scripted, depending on how th
 
 For simplicity, in the upcoming set of tutorials, we will only be developing in the graphical environment.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](SAP HANA Modeler Perspective)]
+### SAP HANA Modeler Perspective
+
 
 To open the SAP HANA Modeler perspective, click the **Open Perspective** icon located on the toolbar, show in the screenshot below.
 
@@ -80,6 +78,3 @@ To open the SAP HANA Modeler perspective, click the **Open Perspective** icon lo
 Select "**SAP HANA Modeler**" from the pop-up window, and click **OK**. The system will then open the Modeler perspective tab.
 ![Select SAP HANA Modeler Perspective](sap-hana-modeler.png)
 
-[DONE]
-
-[ACCORDION-END]

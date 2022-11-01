@@ -1,21 +1,23 @@
 ---
-title: Introduce Resilience to your Application
-description: Introduce resilience to your application using the SAP Cloud SDK.
+parser: v2
 auto_validation: true
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java  ]
 primary_tag: software-product>sap-cloud-sdk
 time: 15
 ---
 
-## Details
-### You will learn
+# Introduce Resilience to your Application
+<!-- description --> Introduce resilience to your application using the SAP Cloud SDK.
+
+## You will learn
   - Why you should care about resilience
   - How to make the call to the OData service resilient by using resilience decorators
   - How to write Tests for code decorated with the new resilience decorators
   - To deploy the application on the Business Technology Platform Cloud Foundry
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Resilience)]
+### Resilience
+
 
 Consider the following situation: you are developing a cloud application to provide a service to your customers. In order to keep your customers happy, you're of course interested in achieving the highest possible availability of your application.
 
@@ -31,10 +33,9 @@ So your multi-tenancy application is unavailable for more than two hours every m
 
 In order to avoid such scenarios, you need to equip applications with the ability to deal with failure. If an application can deal with failures, it is called **resilient**. So **resilience** is the means by which **availability** is achieved.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Resilience4j)]
+### Resilience4j
+
 
 The SAP Cloud SDK now builds upon the `Resilience4j` library in order to provide resilience for your cloud applications. In previous versions 2.x the `Hystrix` library was used, which has been in maintenance mode for some time now.
 
@@ -50,10 +51,9 @@ Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if
 
 If you want to gain a deeper understanding of the inner workings, checkout the [`Resilience4j` User Guide] (https://resilience4j.readme.io).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Make your OData call resilient)]
+### Make your OData call resilient
+
 
 Now that you know why resilience is important, it's finally time to introduce it into your application. In the last tutorial you created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, you have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
 
@@ -231,11 +231,10 @@ public class BusinessPartnerServlet extends HttpServlet {
 Thanks to your new `GetBusinessPartnersCommand`, you can now simply create a new command and execute it. As before, you'll get a list of business partners as result. But now you can be sure that your application will not stop working all-together if the OData service is temporarily unavailable for any tenant.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Write tests for the resilient command)]
+### Write tests for the resilient command
+
 
 There is one thing you need to address in order to properly test your code: you need to provide your tests with an ERP endpoint.
 
@@ -348,27 +347,19 @@ With `testWithFallback()` you added a test to test your resilience. The example 
 
 Simply run  `mvn clean install` as in the previous tutorials to test and build your application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy application to Cloud Foundry)]
+### Deploy application to Cloud Foundry
+
 
 Simply run `mvn clean install` as in the previous tutorials to test and build your application and then run `cf push` to deploy your updated application to Cloud Foundry!
 
 This wraps up the tutorial on making your sample application resilient using `Resilience4j` and the SAP Cloud SDK. Continue with the next tutorial [Step 6: Caching](https://blogs.sap.com/2017/07/12/step-6-with-sap-s4hana-cloud-sdk-caching/) and also explore other tutorial posts on topics like [security](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/)!
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
-[VALIDATE_2]
 
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Create a Portal Freestyle Site
-description: Create a freestyle site by adding pages and content to the site. You can determine the site's layout, theme, and other properties.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [   tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal  ]
@@ -8,19 +7,23 @@ time: 20
 ---
 
 
-## Details
-### You will learn  
+# Create a Portal Freestyle Site
+<!-- description --> Create a freestyle site by adding pages and content to the site. You can determine the site's layout, theme, and other properties.
+
+## You will learn  
   - How to create a site
   - How to add apps and pages to the site
   - How to set the page layout
   - How to add content to your site
   - How to publish the site
 
+## Intro
 You can build an intuitive and user-friendly portal freestyle sites by adding pages and apps to and determining the site's layout and look and feel. Edit the default content with your own and when all is in place, publish the site so that all the content is available for your end users.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Portal Admin Space)]
+### Access the Portal Admin Space
+
 
 1. From SAP Cloud Platform, click **Services** from the left panel to open the services available for your subaccount.
 
@@ -46,11 +49,9 @@ You can build an intuitive and user-friendly portal freestyle sites by adding pa
 
     The new site instance opens in the Site Designer in a new browser tab.
 
-[DONE]
 
-[ACCORDION-END]
+### Design your first Portal page
 
-[ACCORDION-BEGIN [Step 2: ](Design your first Portal page)]
 The site you have created is based on the **Basic Layout Set** site template. This template contains four pages that are based on the **Anchor Navigation**, **Header Footer**, **Starter Page**, and **Tall Header** page templates. In this step you will design the **Header Footer** page and add content to it.
 
 1. Select the **Header Footer** page.
@@ -147,12 +148,10 @@ The site you have created is based on the **Basic Layout Set** site template. Th
 
     ![View joined card](6c-view-joined-card.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define the page layout)]
+### Define the page layout
+
 
 1. Select the middle section again, and click on the **Edit section settings** icon.
 
@@ -190,11 +189,9 @@ The page structure is now ready. Verify that it looks like this:
 
 ![Final Page Layout](10-Final-page-layout.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add another new page with content
 
-[ACCORDION-BEGIN [Step 4: ](Add another new page with content)]
 
 1. At the bottom of the **Pages** panel on the left, click the + sign to add a new page.
 
@@ -250,11 +247,9 @@ The page structure is now ready. Verify that it looks like this:
 
 15.	**Save** your settings.
 
-[DONE]
 
-[ACCORDION-END]
+### Edit the site menu
 
-[ACCORDION-BEGIN [Step 5: ](Edit the site menu)]
 
 1.	In the **Pages** panel select the arrow next to the **Header Footer** page and select **Add to Menu**.
 
@@ -284,11 +279,9 @@ The page structure is now ready. Verify that it looks like this:
 
 8.	**Save** the changes to the menu.
 
-[DONE]
 
-[ACCORDION-END]
+### Preview and publish the site
 
-[ACCORDION-BEGIN [Step 6: ](Preview and publish the site)]
 
 1.	Click on site preview icon to open the page preview in a new tab.
 
@@ -307,9 +300,7 @@ The page structure is now ready. Verify that it looks like this:
     ![Our new freestyle site](21-new-site.png)
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 Congratulations! You have created a Portal freestyle site.
 

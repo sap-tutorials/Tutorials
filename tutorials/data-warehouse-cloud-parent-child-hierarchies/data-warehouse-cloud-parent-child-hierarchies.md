@@ -1,24 +1,26 @@
 ---
-title: Create Parent-Child Hierarchies in SAP Data Warehouse Cloud
-description: Create a parent-child hierarchy (PCH), a hierarchy in a standard dimension that contains a parent attribute.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create Parent-Child Hierarchies in SAP Data Warehouse Cloud
+<!-- description --> Create a parent-child hierarchy (PCH), a hierarchy in a standard dimension that contains a parent attribute.
+
 ## Prerequisites
  - You have [familiarized yourself with the SAP Data Warehouse Cloud overview and architecture](data-warehouse-cloud-2-interface).
  - You have imported your dataset into the data builder.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create a parent-child hierarchy in SAP Data Warehouse Cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is a parent-child hierarchy)]
+### What is a parent-child hierarchy
+
 
 A parent-child hierarchy (PCH) is a hierarchy in a standard dimension that contains a parent attribute. A parent attribute describes a self-referencing relationship, or self-join, within a dimension main table. In other words, child and parent tables are just normal database tables, but linked in a way that describes a special relationship: a parent-child relationship. This is used most often when one table's value refers to the value in another table (usually a primary key of another table).
 
@@ -35,10 +37,9 @@ A few constraints of a parent-child hierarchy include:
 •	If the imported data source contains hierarchy members with multiple parents, you can use surrogate keys in the data source to overcome this issue.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a parent-child hierarchy)]
+### Create a parent-child hierarchy
+
 
 1. In order to create a hierarchy within your dataset, you need to ensure that your uploaded CSV files have their datasets defined properly. Go into the **Data Builder**, and select your uploaded CSV file. Ensure that the data types of your target columns are of the right type.
 
@@ -54,11 +55,11 @@ A few constraints of a parent-child hierarchy include:
 
 4. Click on the + icon and select **Parent-child** hierarchy.
 
-    !![Add](T01 4.png)
+    <!-- border -->![Add](T01 4.png)
 
 5. You can now define the business name, technical name as well as the parent and child in your parent-child hierarchy. In this example, the parent column is given as the company, and the child column is given as the email address of the employee. Click on **Close** once done.
 
-    !![Define Names](T01 5.png)
+    <!-- border -->![Define Names](T01 5.png)
 
 6. As always, first save and then deploy your dataset. Your dataset is now ready to be combined with analytical datasets to produce a clear and concise visualisation with well defined hierarchies.
 
@@ -71,15 +72,13 @@ A few constraints of a parent-child hierarchy include:
 > Learn in the next tutorial [how to create a level-based hierarchy in SAP Data Warehouse Cloud.](data-warehouse-cloud-parent-child-hierarchies)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

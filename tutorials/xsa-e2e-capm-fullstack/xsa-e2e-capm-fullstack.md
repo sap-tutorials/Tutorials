@@ -1,6 +1,5 @@
 ---
-title: Create an application using SAP HANA and the Cloud Application Programming Model
-description: Use SAP Web IDE and the Cloud Application Business wizard
+parser: v2
 auto_validation:
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,18 +8,21 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editio
 primary_tag: products>sap-hana
 ---
 
+# Create an application using SAP HANA and the Cloud Application Programming Model
+<!-- description --> Use SAP Web IDE and the Cloud Application Business wizard
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - [Getting started with SAP HANA, XS Advanced Development](group.hana-xsa-get-started)
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple application based on the SAP Cloud Application Business wizard
   - You will be introduced to basics on cloud-native development and multi-target applications
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Project)]
+### Create a Project
+
 
 Right-click on workspace and choose `Project from Template`
 
@@ -42,10 +44,9 @@ Change the database version to **2.0 SPS02**
 
 ![New project](5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create database artifacts)]
+### Create database artifacts
+
 
 Expand the `db` folder and double-click on **`data-model.cds`** to expand it
 
@@ -80,11 +81,10 @@ For example:
 
 ![New project](7.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create services to expose data)]
+### Create services to expose data
+
 
 Navigate into the `srv` folder. Double-click on **`cat-service.cds`**.
 
@@ -120,10 +120,9 @@ service CatalogService {
 >  ![New project](10.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build the database module)]
+### Build the database module
+
 
 The `.cds` file in which you defined the entities for persistence was used to create files with extension `.hdbcds`. These files will be used by the deployment infrastructure to create physical objects, such as tables, in the database.
 
@@ -136,10 +135,9 @@ You can follow progress in the Console:
 ![Build database](build.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert data into the ingredients table)]
+### Insert data into the ingredients table
+
 
 Now that the database module has been built, you can explore the HDI container and the physical tables.
 
@@ -175,10 +173,9 @@ Press `F8` or use the **Run** button to insert the records
 ![Build database](15.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Insert data into the recipes table)]
+### Insert data into the recipes table
+
 
 Repeat the previous steps for the table `MY_APP_RECIPES` and use the following SQL statements to create data:
 
@@ -193,10 +190,10 @@ Change the select clause to count the number of records to complete the validati
 
 ![Build database](17.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Build and run the OData services)]
+
+### Build and run the OData services
+
 
 Go back to the code editor.
 
@@ -216,10 +213,10 @@ Once the application is running, click on the URL for the services.
 
 ![Run Java](21.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add a Web module)]
+
+### Add a Web module
+
 
 Right-click on your app and choose **HTML5 module**
 
@@ -241,10 +238,9 @@ Complete the data binding as follows and click **Finish**
 
 ![Run Java](26.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Run the application)]
+### Run the application
+
 
 Right-click on the web module and choose **Run as Web Application**
 
@@ -270,8 +266,7 @@ If prompted, enter your credentials:
 > ![Run Java](31.png)
 
 
-[VALIDATE_3]
-[ACCORDION-END]
+
 
 
 ---

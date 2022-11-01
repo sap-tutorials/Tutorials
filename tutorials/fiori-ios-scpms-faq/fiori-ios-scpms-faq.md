@@ -1,16 +1,16 @@
 ---
-title: SAP BTP SDK for iOS - FAQ
-description: Frequently Asked Questions on the  SAP BTP SDK for iOS
+parser: v2
 primary_tag: products>sap-business-technology-platform
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 
+# SAP BTP SDK for iOS - FAQ
+<!-- description --> Frequently Asked Questions on the  SAP BTP SDK for iOS
+
 ## Frequently Asked Questions
-
-### You will learn  
-
+## You will learn  
 The new SAP BTP SDK for iOS enables a vast community of designers, developers, partners and customers to more quickly build their own enterprise-class mobile apps with an intuitive, consumer-grade user experience, leveraging the Fiori for iOS design language. The goal is to accelerate development, easily reuse existing capabilities, and quickly tie in services of SAP's and Apple's respective platforms and devices.
 
 ---

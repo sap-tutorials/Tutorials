@@ -1,19 +1,21 @@
 ---
-title: Test Your Mobile SAP Screen Personas Flavor
-description: Run your Service Notification app on a mobile device
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-screen-personas, topic>mobile, software-product>sap-fiori]
 primary_tag: software-product>sap-screen-personas
 ---
 
+# Test Your Mobile SAP Screen Personas Flavor
+<!-- description --> Run your Service Notification app on a mobile device
+
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to access your SAP Screen Personas flavor on a mobile device
 
+## Intro
 The focus of this tutorial is on testing your adaptive flavor(s) on a mobile device. The screenshots used will feature a mobile phone, but the same process applies to a tablet.
 
 ---

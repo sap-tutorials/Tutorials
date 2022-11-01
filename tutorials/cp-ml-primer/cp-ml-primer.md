@@ -1,18 +1,19 @@
 ---
-title: Machine Learning Primer for the SAP Developer
+parser: v2
 author_name: Ed Herrmann
 author_profile: https://github.com/ewherrmann
-description: Build a simple machine learning text classification model to predict "Who said it, Star Wars or Elon Musk?"
 time: 60
 tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: topic>machine-learning
 ---
 
+# Machine Learning Primer for the SAP Developer
+<!-- description --> Build a simple machine learning text classification model to predict "Who said it, Star Wars or Elon Musk?"
+
 ## Prerequisites
  - General understanding of Python helpful, but not required
 
-## Details
-### You will learn
+## You will learn
   - How to use `Python`, `Jupyter Notebook`, `Numpy`, and `Pandas`
   - How to build a text classification model using `Scikit-Learn`
   - How to analyze model accuracy
@@ -20,7 +21,8 @@ primary_tag: topic>machine-learning
 ---
 
 ## Building Blocks
-[ACCORDION-BEGIN [Step 1: ](Launch Jupyter Notebook)]
+### Launch Jupyter Notebook
+
 >The development environment used here is Jupyter Notebook and steps are included to be able to run it on the cloud based service [Binder](https://mybinder.org/); however, you can also install and run it locally if desired. Local installation is out of the scope of this tutorial, but you can find more information at [jupyter.org](https://jupyter.org/)
 
 >For this tutorial, there are two different notebook files to choose from. Both are available on GitHub at <https://github.com/SAP-samples/cloud-ml-basic-intro>
@@ -47,10 +49,9 @@ Binder will timeout and disconnect if left idle for too long, so it is important
 You can also download your notebook `.ipynb` file and save it locally, which can be used on any Jupyter Notebook server later using menu option `File->Download as>Notebook`
 ![Download Notebook File](download-notebook.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Getting Familiar with Jupyter)]
+### Getting Familiar with Jupyter
+
 >You will find a lot of the tutorial information and steps both here and in your recently opened Jupyter notebook; feel free to follow along on either.
 
 Jupyter Notebook is one of the most popular development environments for data scientists. As the name implies, it's meant to be a notebook of sorts where you can quickly jot down ideas, experiment, and see results. It's not typically used for production; although, there are projects available that aim to make notebooks accessible in production environments.
@@ -85,10 +86,9 @@ A notebook contains individual cells which can be used either for an executable 
 `Cell->Current Outputs->Clear`
 - There are a few more code cells to play around with and execute in the notebook Jupyter section.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Install `NumPy` Package)]
+### Install `NumPy` Package
+
 A python package is a module that can be installed and used in your environment. Since we are running this tutorial in a Jupyter server in the cloud, some of the packages we will be using will need to be installed.
 
 Run notebook code to import `sys` package and install & import `numpy` package
@@ -97,10 +97,9 @@ import sys
 !{sys.executable} -m pip install numpy
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Using `NumPy`)]
+### Using `NumPy`
+
 `NumPy` is heavily used in python when dealing with data science and machine learning projects. It's a super efficient tool for creating and processing multi dimensional arrays.
 
 #### Simple Array
@@ -141,10 +140,9 @@ The output shows that you now have a 2 dimensional array containing both letters
 - `NumPy` has many powerful mathematical functions that can be performed on arrays
 - Find more info <https://numpy.org/doc/stable/user/quickstart.html#the-basics>
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Using `Pandas`)]
+### Using `Pandas`
+
 Pandas is like a small, in-memory date store that allows for processing data. Internally, it utilizes `numpy`, but adds some convenient query and data access. One very common usage is to import and export CSV files to and from a Pandas DataFrame.
 
 Install `Pandas` package by creating and running new code cell:
@@ -193,8 +191,6 @@ egeeks_df
 ![Pandas DataFrame Output](pandas-dataframe.png)
 0. Run and analyze the remaining cells in the notebook for the Pandas section to explore more DataFrame characteristics and capabilities.
 
-[DONE]
-[ACCORDION-END]
 
 ## Machine Learning
 Now that you are familiar with some of the basic tools, it's time to dive into machine learning. In the following steps, you will build a machine learning model that will predict if a line of text is more likely a quote from a `Star Wars` character or `Elon Musk`. May the force be with you.
@@ -204,17 +200,17 @@ Now that you are familiar with some of the basic tools, it's time to dive into m
 - The data files are located both in the GitHub repository and your local notebook.
 - To view available files within Jupyter, use menu option File->Open
 
-[ACCORDION-BEGIN [Step 6: ](Install Scikit-Learn)]
+### Install Scikit-Learn
+
 For this tutorial, you will use scikit-learn, a popular machine learning library for python.
 
 ```python
 !{sys.executable} -m pip install sklearn
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Prepare Musk Data)]
+### Prepare Musk Data
+
 The dataset used contains tweets from `Elon Musk`, but we will need to do some preprocessing to optimize the text for our model.
 
 0. Load data
@@ -248,10 +244,9 @@ print('Elon Tweets', len(elon_clean_df))
 elon_clean_df.head(20)
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Prepare Star Wars Data)]
+### Prepare Star Wars Data
+
 0. Load data from all three movies in the original trilogy
 ```python
 hope_df = pd.read_csv('SW_EpisodeIV.txt', delim_whitespace=True, names=["id","character","dialogue"], index_col="id", skiprows=[0,])
@@ -265,10 +260,9 @@ print('Total Star Wars movie lines: ', len(sw_df))
 sw_df.head(20)
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Combine Datasets)]
+### Combine Datasets
+
 0. Add column to each dataset to indicate the source
 ```python
 elon_clean_df['who said it'] = 'Elon Musk'
@@ -286,12 +280,11 @@ all_df.head(10).append(all_df.tail(10)) #show a preview
 
 ![Preview of preprocessed dataset](clean-dataset-preview.png)
 
-[DONE]
-[ACCORDION-END]
 
 >Many of the following steps use Scikit-Learn, a common python package for machine learning.
 
-[ACCORDION-BEGIN [Step 10: ](Vectorization - Fit / Train)]
+### Vectorization - Fit / Train
+
 Machines like numbers, not text. In order to perform machine learning on text documents, we first need to turn the text content into numerical feature vectors. There are many different methods and theories for vectorization and some options are better depending on the use case. For this tutorial, we will use TF-IDF (Term Frequency times Inverse Document Frequency). TF-IDF is a way of adjusting the importance or weight of individual terms in relation to all of the terms and frequencies of the entire dataset.
 
 For the context of this tutorial, the term *fit* is used interchangeably with the term *train*.
@@ -302,10 +295,9 @@ tfidf_vectorizer = TfidfVectorizer(stop_words="english")
 tfidf_vectorizer.fit(all_df['dialogue'])
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Shuffle and Split Data)]
+### Shuffle and Split Data
+
 It is important to hold back some data to test the model's accuracy.
 
 ```python
@@ -317,20 +309,18 @@ print("Test data:", len(all_df_test))
 all_df_test.head(20)
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Vectorization - Transform Training Data)]
+### Vectorization - Transform Training Data
+
 In the previous vectorization step, the `vectorizer` object was fit with the entire dataset to create a map of terms. Now you will transform each individual line of text from the training data into a vector for fitting the text classifier model.
 ```python
 dialogue_tfidf_train = tfidf_vectorizer.transform(all_df_train['dialogue'])
 dialogue_tfidf_train
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Train the Model)]
+### Train the Model
+
 Now that the training data has been vectorized, it's time to train/fit the model. The input for the following `fit` method is 2 `iterable` arrays, one for the vectorized representation of the text and the other for the target value of `Star Wars` or `Elon Musk`. It is expected that the arrays are the same size and order.
 ```python
 #train our classifier model
@@ -338,10 +328,9 @@ from sklearn.naive_bayes import MultinomialNB
 sw_elon_clf = MultinomialNB().fit(dialogue_tfidf_train, all_df_train['who said it'])
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Predict Test Data)]
+### Predict Test Data
+
 After the model has been trained, it can be used to predict the target values of other data.
 ```python
 #vectorize test data
@@ -355,10 +344,9 @@ all_df_test.head(20)
 You trained a machine learning model and generated predictions!
 ![Model Prediction Preview](model-prediction-preview.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Metrics)]
+### Metrics
+
 To measure accuracy, use the test predictions and analyze results.
 
 0. Measure accuracy by comparing target and predicted values
@@ -375,10 +363,9 @@ print(cm)
 Don't be alarmed if your accuracy doesn't match what you see below. Because of the difference of the split data, results will vary, but it should be fairly close.
 ![Model Performance Metrics](model-metrics.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Chart Confusion Matrix)]
+### Chart Confusion Matrix
+
 The confusion matrix shows our agreements and disagreements for both target values. To make it more clear, we can use `matplotlib` to generate a more user friendly version of the confusion matrix.
 
 0. Install `matplotlib` package
@@ -420,10 +407,9 @@ You should see a chart similar to this. If not, try to rerun code cell.
 - Bottom left: # of predictions where the actual value was Star Wars but the predicted value was Musk
 - Bottom right: # of predictions where both the actual and predicted value was Star Wars
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Build Pipeline)]
+### Build Pipeline
+
 Once the model is built, you will most likely want to use it to predict and classify future lines of dialogue. It's important that you preprocess and vectorize any future data the same way in which it was built before feeding it in for classification. Scikit-Learn provides the concept of pipelines that are objects that can store all the necessary steps to process data.
 
 0. Build pipeline
@@ -447,10 +433,9 @@ joblib.dump(sw_elon_clf_pipe, 'sw_elon_model.pkl')
 
 ![Prediction using pipeline](pipeline.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Ad Hoc Predictions)]
+### Ad Hoc Predictions
+
 Now that the pipeline has been built, use it to run some ad hoc predictions. Have fun with it!
 
 ```python
@@ -474,10 +459,9 @@ How did your model do?
 
 ![Adhoc Model Predictions](model-adhoc-predictions.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](BONUS: UI for Fun)]
+### BONUS: UI for Fun
+
 As a fun bonus, create a quick UI in Jupyter notebook that will allow you to input some text, hit enter, and show the prediction
 
 ```python
@@ -499,14 +483,10 @@ Type in some text and hit enter to see who was more likely to say it.
 
 ![Quick UI for showing predictions](bonus-prediction-ui.png)
 
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [STEP 20: ](The End: Congrats)]
 
 Wow, a fully functional, production like machine learning toy app! Hopefully you are now equipped with the necessary knowledge to begin your own adventure in Data Science and Machine Learning.
 
-[DONE]
-[ACCORDION-END]
 
 ---

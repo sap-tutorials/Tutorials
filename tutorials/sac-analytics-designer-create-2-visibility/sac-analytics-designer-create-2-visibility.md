@@ -1,28 +1,31 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Set the Visibility of Objects in Applications
-description: Display and hide objects at runtime
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product-function>sap-analytics-cloud\,-analytics-designer
 ---
 
+# Set the Visibility of Objects in Applications
+<!-- description --> Display and hide objects at runtime
+
 <!-- ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - How to display/hide objects at design time
   - How to display/hide objects at run time
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set Visible and Invisible Objects at Design Time)]
+### Set Visible and Invisible Objects at Design Time
+
 
 Go into the content network and select the **Samples** category
 
@@ -50,20 +53,18 @@ Make sure that the bar chart is NOT set to be visible at view time.
 
 ![2.2.2](2.2.2.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Images)]
+### Add Images
+
 
 Next, you will add images that will act as buttons to toggle between the table and chart. You will import the files, add them to the canvas, and rename them something more meaningful in the Outline panel.
 
 ![2.2.3](2.2.3.jpg)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add Scripting to the Buttons)]
+### Add Scripting to the Buttons
+
 
 Now you can add scripting to the images, which you can access from the context menu for the image or in the Outline panel. A new tab opens where you can build a script to define what happens when the `onClick` event is triggered for the image. You can get assistance by pressing Ctrl + Space, which brings up a list of objects and methods we can use to build our statements. As we type, the list is filtered to match our entries. In this example, you will start by adding a statement to set the chart as visible when the image is clicked. Select the chart object, add a period, open the content assistance again to select the `setVisible` function, set the Boolean return type to True, and end the statement with a semi-colon. Next, you will add another statement to set the table as invisible using the same syntax.
 
@@ -85,19 +86,17 @@ Now you will do the same thing in reverse for the Switch to Table image. Finally
 
 ![2.2.5](2.2.5.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Arrange Widgets)]
+### Arrange Widgets
+
 
 Now you can arrange the objects so they are layered on top of each other. Keep in mind that when objects are hidden under other objects on the canvas, they can still be selected in the Outline panel.
 
 ![2.2.6](2.2.6.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the Application)]
+### Run the Application
+
 
 Now save your changes and run the application. Initially, the Switch to Chart image and the table are visible.
 
@@ -107,13 +106,10 @@ If you click the image, these objects disappear and the Switch to Table image an
 
 ![2.2.8](2.2.8.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

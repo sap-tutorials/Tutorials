@@ -1,34 +1,38 @@
 ---
+parser: v2
 author_name: Philip Herzig
 author_profile: https://github.com/HerzigP
-title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
-description: Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: topic>java
 ---
 
+# Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
+<!-- description --> Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
+
 ## Prerequisites
  - [Introduce Resilience to Your Application](s4sdk-resilience)
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
-## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+
+## Intro
+> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
 >
 Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 
-### You will learn
+## You will learn
   - How to use custom field extensions from S/4HANA in the virtual data model for OData
   - How to join connected entities from the virtual data model in eager fashion
   - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get ready)]
+### Get ready
+
 
 To successfully go through this tutorial, you will use the following `GetBusinessPartnerCommand` for all three features to the business partner API. The call itself requests the first and last name from all business partners who are customers.
 
@@ -133,15 +137,14 @@ public class BusinessPartnerServlet extends HttpServlet {
 ```
 When you call this servlet on the server, you can see a result like this:
 
-!![Result](screenshot22.png)
+<!-- border -->![Result](screenshot22.png)
 
 If you have a similar result, you are ready to proceed with this tutorial.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Custom field extensibility)]
+### Custom field extensibility
+
 
 #### What is custom field extensibility?
 Oftentimes, businesses require to enhance the standard data model of the SAP S/4HANA system. Using tools of the so-called In-App Extensibility concept, key users are able to introduce additional fields to certain data structures. As an application provider, this mechanism can be also used to introduce new data fields which are relevant to your application extension.
@@ -214,7 +217,7 @@ The only two lines added to the initial example are:
 
 After deploying this again, you can now see that custom fields are correctly served:
 
-!![Test](screenshot33.png)
+<!-- border -->![Test](screenshot33.png)
 
 #### Working programmatically with extension fields
 Of course, extension fields cannot only be provided as part of GET requests to the API, but you can work programmatically with them. For example, on each object instance you can access which custom fields are defined and get their names leveraging the following methods:
@@ -225,7 +228,7 @@ Of course, extension fields cannot only be provided as part of GET requests to t
 
 ##### Example:
 
-!![Test](screenshot44.png)
+<!-- border -->![Test](screenshot44.png)
 
 In order to expose the clients of the application in a nicer representation, you write your own business partner entity called `MyBusinessPartner` that inherits from the provided `BusinessPartner` entity.
 
@@ -309,17 +312,16 @@ public class BusinessPartnerServlet extends HttpServlet {
 
 As a result, you can now expose our new `MyBusinessPartner` entity via our initial servlet which should lead to the following result:
 
-!![Test](screenshot555.png)
+<!-- border -->![Test](screenshot555.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Type-safe and eager expand)]
+### Type-safe and eager expand
+
 
 #### What is type-safe and eager expand?
 So far, you have been working with the `BusinessPartner` entity only. However, this is merely the root entity of a more complex data model. For example, each `BusinessPartner` can be associated with zero-to-many `BusinessPartnerAddresses` which again can be associated with zero-to-many `BusinessPartnerEMailAddresses`. Another popular association in an ERP context are header-item relationships such as an invoice header and invoice line items.
 
-!![Tree](screenshot66.png)
+<!-- border -->![Tree](screenshot66.png)
 
 One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In the case of your business partner, you could fetch the associated addresses with the following line of code:
 
@@ -399,7 +401,7 @@ public class GetBusinessPartnersCommand {
 
 Without further modifications, this will immediately yield the following serialization result to our client (hint: again assume to use the original `BusinessPartner` entity being serialized to the client, not the `MyBusinessPartner` entity)
 
-!![Test](screenshot77.png)
+<!-- border -->![Test](screenshot77.png)
 
 Readers who are familiar with the `OData` query language might wonder about the missing expand() syntax. In the `OData` query language, expand and select are two independent keywords.
 
@@ -425,11 +427,10 @@ Optional<List<BusinessPartnerAddress>> businessPartnerAddresses =
 
 This method returns an Optional of the return type signifying that the connected entity might be null as no lazy fetch is initiated. Therefore, this method guarantees to do no lazy fetch but cannot guarantee to return a value. As a consequence, this method also does not throw any `ODataException`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Dependency injection)]
+### Dependency injection
+
 
 #### What is dependency injection?
 With SAP Cloud SDK version 3.11.0, it has also introduced the possibility to use dependency injection with the virtual data model for OData and BAPI. In a nutshell, dependency injection is a major object-oriented inversion of control principle that allows to decouple the call direction from the initialization direction. This leads to less coupled dependencies which are easier to maintain, for example, if a dependency changes, the client does not need to be touched.
@@ -502,16 +503,13 @@ That's it. The only thing you really did is get rid of the `new DefaultBusinessP
 
 > **HINT:** When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
+
 
 In this tutorial, you learned how to leverage the latest capabilities of the Virtual Data Model for `OData` using the `SAP Cloud SDK`. This includes using custom fields from `SAP S/4HANA` within your logic, leveraging type-safe expand for GET requests and relying on dependency injection to supply the service implementations. This gives you even greater capabilities and lets you integrate with `SAP S/4HANA` even faster and easier.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 ---

@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
-description: This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
 keywords: cap
 auto_validation: true
 time: 25
@@ -12,6 +11,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
+# Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
+<!-- description --> This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
+
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - Before you start with this tutorial, you have two options:
@@ -19,8 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
       - Complete the group of tutorials [Create a CAP Application and SAP Fiori UI](group.btp-app-cap-create).
 
 
-## Details
-### You will learn
+## You will learn
  - How to set up your application for analytics
  - Add new files to your project
  - Generate UI with an SAP Fiori elements template
@@ -32,7 +33,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 SAP Fiori elements is a framework that comprises the most commonly used floor plans and is designed to:
 
 1. Speed up development by reducing the amount of front-end code needed to build SAP Fiori apps.
@@ -40,10 +42,9 @@ SAP Fiori elements is a framework that comprises the most commonly used floor pl
 
 SAP Fiori elements for OData version 2 (V2) offers **Analytical list page (ALP)** as a separate floor plan for a unique way to analyze data step by step from different perspectives, to investigate a root cause through drill-down, and to act on transactional content. On the other hand, in SAP Fiori elements for OData V4, the **Analytical List Page (ALP)** is not a separate floor plan, but rather a "flavor" of the **List Report Object Page** floor plan. Hence, you can configure a **List Report Object Page** floor plan in such a way that it can serve as an "ALP flavor" report page.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add new files to your project)]
+### Add new files to your project
+
 Create a new service for Analytics as given in [Create a CAP-Based Application](btp-app-create-cap-application) using the following details.
 
 1. Open the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
@@ -82,16 +83,15 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
     You should be able to see the new `RisksAnalysis` entity among with the rest of the `risk` service entities under `Service Endpoints`.
 
-    !![RisksAnalysis Entity](entity_riskAnalysis.png)
+    <!-- border -->![RisksAnalysis Entity](entity_riskAnalysis.png)
 
 5. Copy the latest  `sap.ui.riskmanagement-Risks.csv` file from `templates/analytics/db/data` and replace the existing file in the `db/data` folder of your app.
 
     This `.csv` file has a large number of records for analytical purposes.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Generate the UI with an SAP Fiori elements template)]
+### Generate the UI with an SAP Fiori elements template
+
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
@@ -138,15 +138,14 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 The application is now generated and in a few seconds you can see it in the `app` folder of your project. It contains a `risk-analysis` and a `webapp` folder with a `Component.js` file that is characteristic for an SAPUI5 app.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Check your application)]
+### Check your application
+
 1. If it is not still running from the previous tutorial, execute `cds watch` in a VS Code terminal and switch to <http://localhost:4004> in your browser.
 
     You can now see that the CAP server has discovered an HTML page in your `app` folder:
 
-       !![Index HTML Page](fea_app.png)
+       <!-- border -->![Index HTML Page](fea_app.png)
 
 2. Choose the link [http://localhost:4004/risk-analysis/webapp/index.html](http://localhost:4004/risk-analysis/webapp/index.html) for the HTML page.
 
@@ -155,14 +154,13 @@ The application is now generated and in a few seconds you can see it in the `app
       - **Username**: `risk.manager@tester.sap.com`
       - **Password**: `initial`
 
-    !![Login Empty App](login_empty_app.png)
+    <!-- border -->![Login Empty App](login_empty_app.png)
 
     You can now see the application without any data. The table is empty because the application is currently missing UI annotations. You add them in the next step.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Modify the UI with OData annotations)]
+### Modify the UI with OData annotations
+
 1. Open the `app/risk-analysis/webapp/manifest.json` file.
 
 2. Add the following lines to it:
@@ -253,10 +251,9 @@ The application is now generated and in a few seconds you can see it in the `app
 
 3. Copy the file `risks-analysis-service-ui.cds` from `templates/analytics/srv` to the `srv` folder of your app.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Check the annotations file)]
+### Check the annotations file
+
 Let us have a look at the `risks-analysis-service-ui.cds`.
 
 There are three major segments in the **List Report Object Page** (ALP flavor):
@@ -267,15 +264,14 @@ There are three major segments in the **List Report Object Page** (ALP flavor):
 
 The annotations file `risks-analysis-service-ui.cds` and the `app/risk-analysis/webapp/manifest.json` file are used to specify configurations for these artifacts.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Visual filters)]
+### Visual filters
+
 [OPTION BEGIN [Chart with data point]]
 
 The visual filter bar offers a unique way of filtering large datasets through visualizations. Currently SAP Fiori elements V4 supports Line and Bar charts for visual filters.
 
-!![Visual Filters](fea_visual_filters.png)
+<!-- border -->![Visual Filters](fea_visual_filters.png)
 
 A visual filter can be defined by specifying `CommonValueList` in the annotations file and `SelectionFields` in the manifest file.
 
@@ -326,7 +322,7 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
 The visual filter bar offers a unique way of filtering large datasets through visualizations. Currently SAP Fiori elements V4 supports Line and Bar charts for visual filters.
 
-!![Visual Filters](fea_visual_filters.png)
+<!-- border -->![Visual Filters](fea_visual_filters.png)
 
 A visual filter can be defined by specifying `CommonValueList` in the annotations file and `SelectionFields` in the manifest file.
 
@@ -360,7 +356,7 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
 The visual filter bar offers a unique way of filtering large datasets through visualizations. Currently SAP Fiori elements V4 supports Line and Bar charts for visual filters.
 
-!![Visual Filters](fea_visual_filters.png)
+<!-- border -->![Visual Filters](fea_visual_filters.png)
 
 A visual filter can be defined by specifying `CommonValueList` in the annotations file and `SelectionFields` in the manifest file.
 
@@ -398,7 +394,7 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
 The visual filter bar offers a unique way of filtering large datasets through visualizations. Currently SAP Fiori elements V4 supports Line and Bar charts for visual filters.
 
-!![Visual Filters](fea_visual_filters.png)
+<!-- border -->![Visual Filters](fea_visual_filters.png)
 
 A visual filter can be defined by specifying `CommonValueList` in the annotations file and `SelectionFields` in the manifest file.
 
@@ -453,10 +449,9 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 [OPTION END]
 
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Visualize risks in the analytics UI)]
+### Visualize risks in the analytics UI
+
 1. With `cds watch` running, open the app in your browser at <http://localhost:4004/risk-analysis/webapp/index.html>.
 
 2. Log in if needed.
@@ -466,12 +461,11 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
 3. You should be able to see the generated resultant visualization.
 
-    !![Dashboard](fea_result_page.png)
+    <!-- border -->![Dashboard](fea_result_page.png)
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add your app to the launch page)]
+### Add your app to the launch page
+
 Let us add the `Risk Analysis` application to the launch page where you already have the `Risks` and `Mitigations` apps.
 
 1. Open the file `launchpage.html` in `app` folder of your application.
@@ -516,12 +510,8 @@ Let us add the `Risk Analysis` application to the launch page where you already 
 
 5. You can now see the `Risk Analysis` app next to the `Mitigations` app.
 
-    !![Launchpage](fea_Launchpage.png)
+    <!-- border -->![Launchpage](fea_Launchpage.png)
 
 
-[VALIDATE_1]
 The result of this tutorial can be found in the [`analytics`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/analytics) branch.
-
-
-[ACCORDION-END]
 ---

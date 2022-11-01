@@ -1,11 +1,13 @@
 ---
-title: Code the Streaming Lite Custom Java Adapter
-description: Walk through the steps for coding the Streaming Lite Custom Java Adapter for Freezer Monitoring Lite.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 time: 15
 ---
+
+# Code the Streaming Lite Custom Java Adapter
+<!-- description --> Walk through the steps for coding the Streaming Lite Custom Java Adapter for Freezer Monitoring Lite.
 
 ## Prerequisites  
 - **Tutorial:** [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part2.html)
@@ -13,14 +15,16 @@ time: 15
 ## Next Steps
  - [Deploy and Test the Streaming Lite Custom Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part4.html)
 
-## Details
 
+
+## Intro
 The full source code for the Custom Java Adapter is available in the 'Appendix' section of this tutorial.
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Import Statements)]
+### Import Statements
+
 
 Add the following import statements required to create our custom Java Adapter, below our package `custom_java_adapter` line:
 
@@ -45,11 +49,9 @@ import com.sybase.esp.sdk.exception.EntityNotFoundException;
 import com.sybase.esp.sdk.exception.ServerErrorException;
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Declare Global Instance
 
-[ACCORDION-BEGIN [Step 2: ](Declare Global Instance)]
 
 We will need to use our `SDK` object throughout the code, and so we will add it inside of our `JavaAdapter` class:
 
@@ -58,11 +60,10 @@ We will need to use our `SDK` object throughout the code, and so we will add it 
 private static final SDK s_sdk = SDK.getInstance();
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Method 1: exec())]
+### Method 1: exec()
+
 
 We will now add a method inside our `JavaAdapter` class, before the `main()` method and after our `SDK` object. It will be called `exec()`, and is used to output the value printed by whatever command is given in input. This function is useful because various scripts can be executed to poll external hardware sensors on our `Raspberry Pi` (or other remote device).
 
@@ -79,11 +80,9 @@ InputStreamReader(p.getInputStream()));
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Declaring Adapter Variables
 
-[ACCORDION-BEGIN [Step 4: ](Declaring Adapter Variables)]
 
 We are ready to code the `main()` function, and the first thing to do is declare adapter variables.
 
@@ -136,11 +135,9 @@ The adapter variables can be split into two groups. The first group is used to c
       - **`Date val_readingDate`** is a timestamp. A value will be assigned to it later in the code, directly before it is used.
       - **`long val_id`** is our primary key, but will be auto-generated inside the streaming project. Although we still declare it, the value of `val_id` is arbitrary and will be overwritten once inside the streaming project. The reason we need it in our custom Java Adapter is because the entire row must be constructed before it is sent into Streaming Lite.
 
-[DONE]
 
-[ACCORDION-END]
+### Try/Catch
 
-[ACCORDION-BEGIN [Step 5: ](Try/Catch)]
 
 We will now start using `SDK` calls to connect with the project we want to write to. However, in order to do that, we must be aware of the errors our code might throw. Therefore, we will add a `try/catch` block in our `main()`.
 
@@ -157,11 +154,10 @@ try{
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](SDK Preparation Calls)]
+### SDK Preparation Calls
+
 
 Generally, all `SDK` calls (inside the `main()`) can be grouped into two sections. The first section prepares for writing to our project, and creates/connects the required `project`/`credentials`/`streams`/`writer` objects. The second section writes a single row into our project, and runs inside a loop. We will take a look at the first section now. All of this will be included inside of our try block.
 
@@ -215,11 +211,9 @@ Create the `RelativeRowWriter` object. The `RelativeRowWriter` object formats a 
 RelativeRowWriter row = message.getRelativeRowWriter();
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Set Up the Loop
 
-[ACCORDION-BEGIN [Step 7: ](Set Up the Loop)]
 
 After setting up all required objects, we will now be able to construct and send our row. This will be done inside a loop, governed by our `val_repeat` and `val_interval` variables. This loop runs inside our try block, and is what controls the quantity and frequency of data the custom Java Adapter sends. It will contain the second section of `SDK` calls.
 
@@ -252,11 +246,9 @@ The second if statement pauses execution using the `Thread.sleep()` function for
 
 The second section of `SDK` calls used to construct and send a row will be written in between these 2 if statements.
 
-[DONE]
 
-[ACCORDION-END]
+### SDK Row Writing Calls
 
-[ACCORDION-BEGIN [Step 8: ](SDK Row Writing Calls)]
 
 In this section we will start a row, and set its fields according to the schema of the stream we are sending it into. This is the part of the code that must be customized for each project that the custom Java Adapter is used with.
 
@@ -355,11 +347,9 @@ In this section we will start a row, and set its fields according to the schema 
     System.out.print("Message published successfully\n");
     ```
 
-[DONE]
 
-[ACCORDION-END]
+### Stopping the SDK
 
-[ACCORDION-BEGIN [Step 9: ](Stopping the SDK)]
 
 Now that we have completed coding everything inside the loop, as well as the `try/catch` block, we will need to stop the `SDK`, no matter how the program exits.
 
@@ -372,9 +362,6 @@ s_sdk.stop();
 
 Click the **Done** button below once you have completed this tutorial.
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix ](&nbsp;)]
 
@@ -506,8 +493,6 @@ public class JavaAdapter {
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
 
 ---

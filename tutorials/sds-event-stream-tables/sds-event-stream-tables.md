@@ -1,6 +1,5 @@
 ---
-title: Capture Streaming Output in the HANA Database
-description: Create a table in the HANA database to receive data from a streaming project.  Then connect an output stream to the HANA table.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -9,6 +8,9 @@ auto_validation: true
 time: 15
 ---
 
+# Capture Streaming Output in the HANA Database
+<!-- description --> Create a table in the HANA database to receive data from a streaming project.  Then connect an output stream to the HANA table.
+
 ## Prerequisites  
  - **Tutorials:** [Create a Streaming project with SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
@@ -16,13 +18,13 @@ time: 15
 ## Next Steps
  - [Run and Test a Streaming Project](https://developers.sap.com/tutorials/sds-run-test.html)
 
-## Details
-### You will learn  
+## You will learn  
 How to create a table in the HANA database to store events and how to connect an output stream in your project to the database table
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a HANA Database Schema to hold the tables for your project)]
+### Create a HANA Database Schema to hold the tables for your project
+
 
 First, you need to execute a SQL statement on HANA to create a database schema where you will store your event data. In the database schema, you will also create some tables that you will use later in this tutorial.
 
@@ -99,11 +101,10 @@ Check the HANA database catalog in the **SAP HANA Administration Console** to co
 
 The table **`MACHINE_REF`** should have 7 rows of data.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect the output stream to the database table)]
+### Connect the output stream to the database table
+
 Next, you are going to capture `DOOR_OPEN` and `DOOR_CLOSE` events in the `ACTIVITY_HIST` HANA database table to track the activity for each of your freezer units.  You already have a filter in your project that isolates the door events from all other events.  Now you just need to connect the output stream to the database table.  You do this by adding a HANA output adapter to your project.
 
 First, switch to the **SAP HANA Streaming Development** perspective.
@@ -143,11 +144,9 @@ Connect the adapter to the **`ACTIVITY_HIST`** stream by clicking the **`ACTIIVT
 
 ![connect adapter](connect-adapter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Compile and check for errors
 
-[ACCORDION-BEGIN [Step 3: ](Compile and check for errors)]
 
 In the **SAP HANA Streaming Development** perspective, click the **Compile Streaming Project (F7)** button shown below.
 
@@ -159,11 +158,9 @@ Check the **Problems** view to see if the project compiled without errors.
 
 If you can spot the compile error in the **Problems** view, go ahead and fix it.  Sometimes it's easier to find and fix an error in the CCL editor.  You can view the underlying CCL for the project by switching to the CCL editor (see the step below for details).
 
-[DONE]
 
-[ACCORDION-END]
+### Check your project in the CCL editor
 
-[ACCORDION-BEGIN [Step 4: ](Check your project in the CCL editor)]
 
 All streaming projects are defined in a variation of SQL called **CCL**.  So far you've been working entirely in the visual editor.  However, you can also create, edit, and view projects in the CCL editor.  
 
@@ -203,6 +200,3 @@ PROPERTIES
 	table = 'ACTIVITY_HIST' ;
 ```
 
-[DONE]
-
-[ACCORDION-END]

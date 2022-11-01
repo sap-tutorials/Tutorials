@@ -1,11 +1,13 @@
 ---
-title: Understand Polygons in SAP HANA Spatial
-description: A polygon is a spatial data type that defines a region of space
+parser: v2
 auto_validation: true
 time: 5
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+# Understand Polygons in SAP HANA Spatial
+<!-- description --> A polygon is a spatial data type that defines a region of space
+
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Understand Strings in SAP HANA Spatial](hana-spatial-intro2-string)
@@ -13,13 +15,13 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
 - [Understand Spatial Columns in SAP HANA Spatial](hana-spatial-intro4-columns)
 
-## Details
-### You will learn  
+## You will learn  
 You will continue learning basics of spatial processing now with __polygons__ (also known as __surfaces__) data types.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Instantiate a surface)]
+### Instantiate a surface
+
 Rings, from the previous tutorials, are still strings; i.e. they have length, but no surface. To construct the surface you use __polygons__. A polygon defines a region of space. A polygon is constructed from one exterior bounding ring that defines the outside of the region and zero or more interior rings, which define holes in the region.
 
 Open the SQL Editor of your choice (web or desktop based) connected to your SAP HANA database instance.
@@ -37,10 +39,9 @@ Below is an SVG modified to fill a geometry with a color using `fill="yellow"` t
 
 ![Polygon with 2 rings](spatial0301b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get a dimension)]
+### Get a dimension
+
 
 Now, execute the following query.
 
@@ -51,10 +52,9 @@ FROM "DUMMY";
 
 The `ST_Dimension()` method will return `2`. In the earlier point exercise the same method returned `0`, and in the strings exercise it returned `1`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get an area)]
+### Get an area
+
 
 Unlike a string, a polygon has a surface, and therefore has an area. Use the `ST_Area()` method to calculate it.
 
@@ -69,10 +69,9 @@ This statement calculates the area of right triangle (also known as 'right-angle
 
 ![Area of the polygon](spatial0302b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get a boundary)]
+### Get a boundary
+
 
 You can calculate the __boundary__ of a polygon using the `ST_Boundary()` method. This method is one of **Transformation Functions**, which take one geometry as an input, and produce another geometry as an output.
 
@@ -102,10 +101,9 @@ The result is an empty geometry.
 
 ![Empty boundary](spatial0304b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Get boundaries of a multi-segment line)]
+### Get boundaries of a multi-segment line
+
 
 Check the boundaries of a multi-segment line, where end points are not the same.
 
@@ -126,10 +124,9 @@ FROM "DUMMY";
 
 ![Empty boundary for points](spatial0306b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check if one geometry is within another)]
+### Check if one geometry is within another
+
 
 A typical requirement in spatial calculations is to find relationships between different geometries. For example, you may need to determine if one geometry is covered by another geometry; if some particular point of interest is within a city's boundaries, for instance.
 
@@ -144,10 +141,9 @@ Indeed the `point (1, 1)` is not within the ___interior___ of the polygon from a
 
 ![Within linestring polygon](spatial0307b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check if a point is within a given disk)]
+### Check if a point is within a given disk
+
 
 To check if a point is within a given [disk](https://en.wikipedia.org/wiki/Disk_%28mathematics%29) you use another transformation functions: `ST_Buffer()`. This method applied to a point defines the circle area of a particular distance from that point.
 
@@ -160,8 +156,7 @@ The point `(1, 1)` is in the circle with the center point of `(0, 0)` and the ra
 
 ![Circle distance](spatial0308b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

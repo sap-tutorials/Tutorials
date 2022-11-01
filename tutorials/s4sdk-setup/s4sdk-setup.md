@@ -1,22 +1,25 @@
 ---
-title: Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
-description: Set up your system to create an SAP Business Technology Platform application with the SAP Cloud SDK.
+parser: v2
 auto_validation: true
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 time: 10
 ---
 
-## Details
-### You will learn  
+# Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
+<!-- description --> Set up your system to create an SAP Business Technology Platform application with the SAP Cloud SDK.
+
+## You will learn  
 In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Business Technology Platform application.
 
+## Intro
 For a complete overview, visit the [SAP Cloud SDK documentation](https://sap.github.io/cloud-sdk/).
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare infrastructure)]
+### Prepare infrastructure
+
 
 To develop with the [SAP Cloud SDK for Java](https://sap.github.io/cloud-sdk/docs/java/overview-cloud-sdk-for-java) you will need to have two things installed:
 
@@ -87,21 +90,17 @@ javac -version
 mvn -version
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Install IDE
 
-[ACCORDION-BEGIN [Step 2: ](Install IDE)]
 
 To develop your first 'Hello World' application with SAP Cloud SDK, you can just use your command line and a simple text editor. However, for larger development projects you can work with the IDE of your choice.
 
 We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourEdition) or [`Eclipse`](https://www.eclipse.org/users/). Follow the installation instructions of corresponding tools to prepare your IDE. In case you use Eclipse, make sure to install the [`Maven plugin for Eclipse`](http://www.eclipse.org/m2e/).
 
-[DONE]
 
-[ACCORDION-END]
+### Troubleshoot with corporate proxies
 
-[ACCORDION-BEGIN [Step 3: ](Troubleshoot with corporate proxies)]
 
 Some of the steps in the upcoming tutorial blogs will fail if you sit behind a corporate proxy. If you cannot escape the proxy, you need to tell Maven where your proxy is located.
 To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
@@ -128,13 +127,8 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 
 After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 ---

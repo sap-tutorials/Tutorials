@@ -1,6 +1,5 @@
 ---
-title: Fundamentals of the SAP BTP, Cloud Foundry environment
-description: Discover the SAP BTP, Cloud Foundry environment, so you're ready to deploy and run applications with confidence.
+parser: v2
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -9,8 +8,10 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-btp--cloud-foundry-environm
 time: 15
 ---
 
-## Details
-### You will learn  
+# Fundamentals of the SAP BTP, Cloud Foundry environment
+<!-- description --> Discover the SAP BTP, Cloud Foundry environment, so you're ready to deploy and run applications with confidence.
+
+## You will learn  
   - What is Cloud Foundry
   - Details about the Platform as a Service (PaaS)
   - How Cloud Foundry assembles and runs your applications

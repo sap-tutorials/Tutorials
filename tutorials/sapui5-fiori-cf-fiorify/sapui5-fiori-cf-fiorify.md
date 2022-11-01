@@ -1,6 +1,5 @@
 ---
-title: Add Rich Enterprise Controls to the User Interface
-description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   software-product>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
@@ -10,8 +9,10 @@ author_profile: https://github.com/nicoschoenteich
 ---
 
 
-## Details
-### You will learn
+# Add Rich Enterprise Controls to the User Interface
+<!-- description --> Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
+
+## You will learn
   - How to use smart controls like the `SmartFilterBar`, `SmartList`, or the `ObjectPage`
   - Why smart controls can save you much boilerplate code
 
@@ -42,7 +43,7 @@ xmlns:mvc="sap.ui.core.mvc">
 
 Your page should now display product names and contain a smart header.
 
-!![smart list](smartlist.png)
+<!-- border -->![smart list](smartlist.png)
 
 > Did you notice that the list items display the category names, even though the selected entity set [Products](https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json) doesn't contain these values. You can still see it because the property `expandFields="Category"` was defined, which expands the `CategoryID` to a full, nested entity. There is nothing you need to do, expect to define the field names to expand. All magic happens behind the scenes in the OData protocol.
     Feel free to remove this property from the view to see how the displayed data changes.
@@ -60,7 +61,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 
 Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
 
-!![filter dialog](filters.png)
+<!-- border -->![filter dialog](filters.png)
 
 
 [VALIDATE_1]
@@ -69,7 +70,7 @@ Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
 
 **Click** on item **`Rhönbräu Klosterbier`** to navigate to the detail view. You'll upgrade this simple view to a full `ObjectPage` [control](https://sapui5.hana.ondemand.com/#/api/sap.uxap.ObjectPageSubSection) in the next steps.
 
-!![list item beer](klosterbier.png)
+<!-- border -->![list item beer](klosterbier.png)
 
 
 [DONE]
@@ -150,7 +151,7 @@ Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
     },
     ```
 
-    !![code 2](code2.png)
+    <!-- border -->![code 2](code2.png)
 
 5. **Mark the page as a favorite** via the button in the header of the page to make sure the event handlers work as expected.
 
@@ -308,7 +309,7 @@ You probably noticed empty fields that do not show data yet.
 
 3. The view should now look like displayed here.
 
-    !![object page](objectpage.png)
+    <!-- border -->![object page](objectpage.png)
 
 
 
@@ -409,7 +410,7 @@ In this step, you add hierarchy information to the `Shellbar` to enable fast nav
     ```
 
 Click on the name of the Fiori App to see the hierarchy menu in action.
-!![hierarchy](hierarchy.png)
+<!-- border -->![hierarchy](hierarchy.png)
 
 [DONE]
 [ACCORDION-END]

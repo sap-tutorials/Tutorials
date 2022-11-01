@@ -1,17 +1,18 @@
 ---
-title: Define Measures and Add Business Information to a View
-description: SAP Data Warehouse Cloud allows you to add business information to your data, making it easier for all users to make sense of the data. This is what we call the semantic layer. You can add business names to columns within tables, as well as semantic types to better identify the type of data in columns.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Define Measures and Add Business Information to a View
+<!-- description --> SAP Data Warehouse Cloud allows you to add business information to your data, making it easier for all users to make sense of the data. This is what we call the semantic layer. You can add business names to columns within tables, as well as semantic types to better identify the type of data in columns.
+
 ## Prerequisites
  - You have [graphically created your data model.](data-warehouse-cloud-7-graphicalview)
 
-## Details
-### You will learn
+## You will learn
   - What semantic information is
   - How to define measures
   - How to add business information
@@ -38,7 +39,8 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand semantic information)]
+### Understand semantic information
+
 
 Semantic information is simply a layer of information that is focused on providing a "translation" in business language to help all users understand each aspect of the data. Sometimes datasets can be hard to read for users who are not familiar with the way the data is structured, using a lot of abbreviations or acronyms. The semantic layer of SAP Data Warehouse Cloud can help you solve that issue by adding new column names, as well as defining the appropriate semantic type information for each column.
 
@@ -57,10 +59,9 @@ To be consumable as a model in SAP Analytics Cloud, your entity must be a view w
 - At least one measure identified (see [Measures](https://help.sap.com/viewer/c8a54ee704e94e15926551293243fd1d/cloud/en-US/33f7f291538a44a293a89f6f1cf1fa81.html)).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define measures)]
+### Define measures
+
 
 Now it's time to define measures in your data. If you need more information on what measures are, please see [this help guide](https://help.sap.com/viewer/c8a54ee704e94e15926551293243fd1d/cloud/en-US/33f7f291538a44a293a89f6f1cf1fa81.html?q=measures).
 
@@ -71,7 +72,7 @@ Now it's time to define measures in your data. If you need more information on w
 
 3.	Change the semantic usage of this to **Analytical Dataset** in the Model Properties tab on the right-side of the screen. This will allow you to change attributes into measures.
 
-    !![Semantic Type](T08-Picture2.png)
+    <!-- border -->![Semantic Type](T08-Picture2.png)
 
 
 > It is necessary to define some of our columns as measures in order to create charts and graphs in SAP Analytics Cloud.
@@ -87,38 +88,35 @@ Now it's time to define measures in your data. If you need more information on w
 > The system will not allow you to define dimensions as measures.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add business information)]
+### Add business information
+
 
 Next, add some more business information about the data model.
 
 1.	Open the Business Purpose panel under Attributes.
 2.	Here, fill in the description and purpose of this model, as well as the business contact person, responsible team and relevant tags.
 
-    !![Business Information](T08-Picture5.png)
+    <!-- border -->![Business Information](T08-Picture5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change business names for measures and attributes)]
+### Change business names for measures and attributes
+
 
 You can also change the business names of measures and attributes. This is particularly useful if some of your data columns have names that wouldn't be recognisable to your colleagues.
 
 1.	To do this, click on the pencil icon next to **Attributes**.
 
-    !![Business Names Icon](T08-Picture6.png)
+    <!-- border -->![Business Names Icon](T08-Picture6.png)
 
 2.	This takes you to an interface that allows you to type new names alongside the technical names. This doesn't change the name of our column in the data itself, it just adds a business name in addition to it. You also have the option to add spaces or change column names to lowercase.
 
     ![Business Names](T08-Picture7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Change the semantic type of measures and attributes)]
+### Change the semantic type of measures and attributes
+
 
 Another part of adjusting your semantic layer information is the opportunity to change the semantic type of your column. Semantic types identify that a column contains a value, a quantity, a date, geospatial or textual information, or another kind of semantic information.
 
@@ -131,10 +129,9 @@ This tells the system specifically what kind of data is in the column, and is ve
 > To add semantic types, you must set the semantic usage of your view or table to Dimension or Analytical Dataset.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Save and deploy)]
+### Save and deploy
+
 
 Once you are done adding your semantic information and types, don't forget to first save, and then deploy your view.
 
@@ -146,16 +143,15 @@ Once you are done adding your semantic information and types, don't forget to fi
 
     ![Deploy](T08-Picture10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Preview your Data)]
+### Preview your Data
+
 
 You have now successfully created, saved and deployed your analytical dataset.
 
 If you wish, you can preview your data model by clicking on the data preview icon next to your output node.
 
-!![Data Preview](T08-Picture11.png)
+<!-- border -->![Data Preview](T08-Picture11.png)
 
 The preview is limited to a maximum of 1,000 lines and, by default, to the first 20 columns in the table or view. You can also reorder, sort, or filter your columns according to your needs in the data preview section of the data builder.
 
@@ -164,7 +160,6 @@ Having successfully created a working data model, you can now help Best Run Bike
 Congratulations on finishing this mission and getting to know the basics of SAP Data Warehouse Cloud! To continue learning, please see the [other tutorials and missions available here](https://developers.sap.com/tutorial-navigator.html?tag=products:technology-platform/sap-data-warehouse-cloud).
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

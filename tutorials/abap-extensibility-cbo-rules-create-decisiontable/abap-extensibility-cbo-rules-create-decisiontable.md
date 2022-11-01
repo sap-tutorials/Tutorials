@@ -1,19 +1,21 @@
 ---
-title: Create Decision Table based Rules
-description: Create decision table type business rules to calculate bonus percentage based on eligibility dates and assignment factor of bonus plan custom business object.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
-## Details
-### You will learn
+# Create Decision Table based Rules
+<!-- description --> Create decision table type business rules to calculate bonus percentage based on eligibility dates and assignment factor of bonus plan custom business object.
+
+## You will learn
   - How to create decision table based business rules
 
 ---
 **Rule** entity is the technical representation of a simple business rule to be applied to a business case. It defines a business logic that, once evaluated against live data, leads to a decision. A rule includes one or more conditions, and outputs that triggered upon satisfaction of the condition or conditions. Rules can be adapted to the increasing complexity of business cases by combining any number of rules to a rule set.Rule can be of different type like decision table rule or text rule.
 
+## Intro
 **Rule Expression Language** is an expression language which enables to define condition and result values in decision table and text rule.
 
 ---
@@ -23,7 +25,8 @@ For more information, you can read the help documentation:
 
 [Rule Expression Language](https://help.sap.com/viewer/9d7cfeaba766433eaea8a29fdb8a688c/Cloud/en-US/0f73cd85e5f04e0ea77486109ee97964.html)
 
-[ACCORDION-BEGIN [Step 1: ](Create decision table)]
+### Create decision table
+
 
 1.	Switch to **Rules** tab.
 
@@ -49,10 +52,9 @@ For more information, you can read the help documentation:
 
     ![enter rule props](ruleprops2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure decision table settings)]
+### Configure decision table settings
+
 
 1.	Switch to **Decision Table** tab.
 
@@ -93,10 +95,9 @@ For more information, you can read the help documentation:
 
       ![view decision table](viewdecisiontable.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define conditions and result expressions)]
+### Define conditions and result expressions
+
 
 1. In the row, select the cell for each condition and use in-place rule authoring to enter the given values.
 
@@ -148,10 +149,10 @@ For more information, you can read the help documentation:
 
     ![all decision table rows](completeddt.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Activate decision table)]
+
+### Activate decision table
+
 
 Once you are done editing, click **Activate** to save and activate the decision table.
 
@@ -161,7 +162,5 @@ Once you are done editing, click **Activate** to save and activate the decision 
 
 ![activated decision table](activateddt.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

@@ -1,19 +1,20 @@
 ---
-title: Take a Tour of SAP BTP Trial
+parser: v2
 author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
-description: Get familiar with the SAP Business Technology Platform basics to make the most of your try-out experience.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
 primary_tag: software product>sap-business-technology-platform
 ---
 
+# Take a Tour of SAP BTP Trial
+<!-- description --> Get familiar with the SAP Business Technology Platform basics to make the most of your try-out experience.
+
 ## Prerequisites
  - You must have registered for a trial account on SAP Business Technology Platform. See: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) .
 
-## Details
-### You will learn
+## You will learn
   - What SAP Business Technology Platform (BTP) trial offers
   - About the relationship between global accounts, directories, and subaccounts
   - What entitlements and quotas are
@@ -101,7 +102,7 @@ A **global account** is the realization of a contract you made with SAP (be it e
 
 In your trial global account, a Cloud Foundry subaccount with an org and a space called `dev` is automatically created for you.
 
-!![Account Structure](AccountStructure.png)
+<!-- border -->![Account Structure](AccountStructure.png)
 
 If you want to get a deeper understanding of the account structure, have a look at the documentation on the [Account Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8ed4a705efa0431b910056c0acdbf377.html).
 
@@ -153,7 +154,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 To get an overview of the navigation in the cockpit, have a look at our guided tour: **Get Familiar with the Cockpit**. To start the guided tour, navigate to your global account scope and open SAP Companion.
 
-!![Start Guided Tour](guidedtour.png)
+<!-- border -->![Start Guided Tour](guidedtour.png)
 
 [DONE]
 [ACCORDION-END]

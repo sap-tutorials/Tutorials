@@ -1,17 +1,18 @@
 ---
-title: Further Readings on Custom Adapters
-description: Learn more about features of Custom Adapters like enabling guaranteed delivery, creating an output adapter and implementing schema discovery.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 time: 30
 ---
 
+# Further Readings on Custom Adapters
+<!-- description --> Learn more about features of Custom Adapters like enabling guaranteed delivery, creating an output adapter and implementing schema discovery.
+
 ## Prerequisites
  - [Test the Custom Java Toolkit Adapter](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part6.html)
 
-## Details
-### You will learn
+## You will learn
  - How to enable guaranteed delivery
  - How to implement schema discovery
  - How to create an output adapter

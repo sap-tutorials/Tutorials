@@ -1,15 +1,17 @@
 ---
-title: Predictive Analytics Using SQL Scripts
-description: This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use SQL scripts with the predictive analytics library.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
 
-## Details
-### You will learn  
+# Predictive Analytics Using SQL Scripts
+<!-- description --> This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use SQL scripts with the predictive analytics library.
+
+## You will learn  
   - How to use predictive analytics with a pre-written SQL script
 
+## Intro
 This tutorial describes one of many SAP HANA Academy Predictive Analysis Library tutorials. For more tutorials on using Predictive Analysis Library, see the [SAP HANA Academy YouTube Playlist](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g).
 
 
@@ -38,11 +40,10 @@ hdbcons -e hdbnameserver "mm gc -f"
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Copy the First SAP HANA Academy Script)]
+### Copy the First SAP HANA Academy Script
+
 
 Go to the [SAP HANA Academy GitHub](https://github.com/saphanaacademy) site. Click on the **PAL** repository. From there, navigate to **Code Snippets** -> **`PAL 110 Time Series - Auto ARIMA Model.sql`**.
 
@@ -55,11 +56,9 @@ Click on **Raw**.
 Use the keys _Ctrl_ + _a_ to select all, and _Ctrl_ + _c_ to copy the script.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Run the Model SQL Script
 
-[ACCORDION-BEGIN [Step 2: ](Run the Model SQL Script)]
 
 Open an SQL command line to your **tenant** database through your **new user**. Paste the script and click the Execute icon ![Execute](execute.png) to run the code. The **Result** page appears.
 
@@ -74,11 +73,9 @@ Open an SQL command line to your **tenant** database through your **new user**. 
 This builds the model used for predictive analysis.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Copy the Second SAP HANA Academy Script
 
-[ACCORDION-BEGIN [Step 3: ](Copy the Second SAP HANA Academy Script)]
 
 Go back to the [SAP HANA Academy GitHub](https://github.com/saphanaacademy) site. Click on the **PAL** repository. From there, navigate to **Code Snippets** -> **`PAL 111 Time Series - Auto ARIMA Predict.sql`**.
 
@@ -91,11 +88,9 @@ Click on **Raw**.
 Use the keys _Ctrl_ + _a_ to select all, and _Ctrl_ + _c_ to copy the code.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Run the Predict SQL Script
 
-[ACCORDION-BEGIN [Step 4: ](Run the Predict SQL Script)]
 
 Back in your command line, paste the script and click the **Execute** icon ![Execute](execute.png) to run the code. A new *Result* page appears. This creates a predictive analysis table from the model you created earlier.
 
@@ -105,11 +100,9 @@ Back in your command line, paste the script and click the **Execute** icon ![Exe
 ![Results Page](arima_predict_results_2.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### View the Results
 
-[ACCORDION-BEGIN [Step 5: ](View the Results)]
 
 To preview the data, go to your user login to your tenant database and cascade down to **Catalog** -> **`USER`** -> **Views**. Right-click on **`V_Results`** and click **Open Data Preview**.
 
@@ -120,15 +113,10 @@ From there, you can view the raw data or create charts under the *Analysis* tab.
 ![Data Preview](data_preview_2.png)
 
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Info: ](Script Information)]
 
 For more information about the scripts, watch the SAP HANA Academy videos [PAL: 110. Time Series - Auto ARIMA Model](https://www.youtube.com/watch?v=YpC6wATFTA8&index=132) and [PAL: 111. Time Series - Auto ARIMA Predict](https://www.youtube.com/watch?v=qiCuxj7yJmU).
 
 
-[DONE]
 
-[ACCORDION-END]

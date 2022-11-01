@@ -1,6 +1,5 @@
 ---
-title: Create Sales Order App with SAP RAD by Mendix
-description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
@@ -10,6 +9,9 @@ tags: [  tutorial>beginner, topic>cloud, programming-tool>odata, software-produc
 time: 20
 ---
 
+# Create Sales Order App with SAP RAD by Mendix
+<!-- description --> Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
+
 ## Prerequisites  
  - You are using a Windows desktop (or a Windows VM on a Mac).
  - You have access to an SAP BTP account. If not, you can open a trial account. See the [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) tutorial or the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
@@ -17,13 +19,13 @@ time: 20
  - You have completed the [Create an Account on the SAP Gateway Demo System](gateway-demo-signup) tutorial.
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to create an SAP blank application in SAP BTP Rapid Application Development.
 - How to create the application data model using the SAP OData Model Creator.
 - How to consume an OData service using the SAP OData Connector.
 - How to deploy the application to SAP Business Technology Platform (BTP).
 
+## Intro
 You can build business applications for the SAP BTP, Cloud Foundry environment using SAP BTP Rapid Application Development by Mendix, without needing to write code.
 
 This tutorial takes you through the basics of development in the Mendix Desktop Modeler and teaches you how to build a simple sales order application consuming the [`GWSAMPLE_BASIC service`](https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/7.51.4/en-US/59283fc4528f486b83b1a58a4f1063c0.html) from the SAP Gateway Demo System (ES5).
@@ -40,7 +42,8 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get SAP OData Connector)]
+### Get SAP OData Connector
+
 
 The [SAP OData Connector](https://appstore.home.mendix.com/link/app/74525/Mendix/SAP-OData-Connector) is available for download from the Mendix App Store.
 
@@ -49,10 +52,9 @@ For more information, see [How to Use App Store Content in the Modeler](https://
 
 ![Mendix App Store](mendix-salesorders1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create GWSAMPLE_BASIC service module)]
+### Create GWSAMPLE_BASIC service module
+
 
 The **SAP OData Model Creator** is a web site where your OData service metadata is transformed into a Mendix domain model that can be imported into your project.
 
@@ -91,11 +93,10 @@ To generate the service module, follow these steps:
 
     ![Domain Model Creator](mendix-salesorders3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import module in Mendix app)]
+### Import module in Mendix app
+
 
 Now you have a Mendix module ready to be imported into your project.
 
@@ -117,10 +118,10 @@ Now you have a Mendix module ready to be imported into your project.
 
     ![Generated Domain Model](mendix-salesorders33.png)
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create constants for ES5 credentials)]
+
+### Create constants for ES5 credentials
+
 
 Now that we have our domain model in place, it's time to implement the connectivity to the SAP Gateway Demo System (ES5).
 
@@ -142,10 +143,9 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
 
     ![Add Constant](mendix-salesorders9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add logic to get sales orders – authentication)]
+### Add logic to get sales orders – authentication
+
 
 Follow these steps to create the logic to get the sales orders.
 
@@ -177,10 +177,9 @@ Follow these steps to create the logic to get the sales orders.
 
 ![Add Basic Authentication](mendix-salesorders13.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
+### Add logic to get sales orders – request
+
 
 1. Add another activity to the microflow and select the **Get List** action from the SAP OData Connector.
 The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of sales orders.
@@ -216,10 +215,9 @@ The **Get List** action retrieves a list of entities described in the domain mod
 
 3. Click **OK** to close the dialog.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add logic to get sales orders – return value)]
+### Add logic to get sales orders – return value
+
 
 In the microflow, make the return value of the microflow a **`List`** of **`SalesOrders`** so you can call the microflow as a data source in a page.
 
@@ -242,10 +240,9 @@ In the microflow, make the return value of the microflow a **`List`** of **`Sale
 Your microflow should look like the following:
     ![Microflow](mendix-salesorders17.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a new master detail page)]
+### Create a new master detail page
+
 
 1. Right-click **`MyFirstModule`**, and choose to add a Page.
 
@@ -263,10 +260,9 @@ Your microflow should look like the following:
 
     ![Add New Page](mendix-salesorders17d.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Show sales orders in page – master)]
+### Show sales orders in page – master
+
 
 Now we will bind the Master section to the Sales Orders.
 
@@ -298,10 +294,9 @@ Now we will bind the Master section to the Sales Orders.
 
     ![List View Content Final](mendix-salesorders20.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Show sales orders in page – details)]
+### Show sales orders in page – details
+
 
 Now we're going to make some modifications in the Detail section of the page.
 
@@ -349,10 +344,9 @@ Now let's bind the Detail section and present some more Sales Order properties:
 
 14. Scroll up in the page, double-click the **Page Title** text and change it to **Sales Orders Application**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Configure Home Page)]
+### Configure Home Page
+
 
 Mendix apps work by showing pages to the user. You can define which page should be the Home page, i.e. the first page the user sees.
 
@@ -366,10 +360,9 @@ Mendix apps work by showing pages to the user. You can define which page should 
 
 4. Click **Select**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Run app)]
+### Run app
+
 
 Now that you've created the UI and business logic, you can run the app and have it connect with the SAP Gateway Demo System (ES5).
 
@@ -392,10 +385,9 @@ You will now see your Sales Orders Application in the browser, with live data co
 
   ![View App](mendix-salesorders30.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Run app in SAP BTP)]
+### Run app in SAP BTP
+
 
 The final step is to deploy the application to SAP BTP, Cloud Foundry environment, and run it from your space!
 The application will automatically bind to the Connectivity, XSUAA and PostgreSQL service instances.
@@ -410,8 +402,6 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 2. Once the application is deployed successfully, click on **View** to run it from SAP BTP.
 
-[DONE]
-[ACCORDION-END]
 
 ### Additional Information
 - Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).

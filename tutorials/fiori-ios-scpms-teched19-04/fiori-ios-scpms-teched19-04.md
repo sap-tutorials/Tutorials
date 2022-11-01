@@ -1,6 +1,5 @@
 ---
-title: Implement the Customer Detail
-description: Use the SAP BTP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,21 +8,22 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 15
 ---
 
-## Prerequisites
+# Implement the Customer Detail
+<!-- description --> Use the SAP BTP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to implement a Profile Header
 - How to implement a Chart View
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Fetch right customer from data service)]
+### Fetch right customer from data service
+
 
 In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP BTP SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
 
@@ -195,10 +195,9 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
     You're done for now, you will go into detail about how the Chart data is structured at a later point.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
+### Set up Table View and register needed cells
+
 
 In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP BTP SDK for iOS.
 
@@ -253,10 +252,9 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement Table View's data source)]
+### Implement Table View's data source
+
 
 If you remember from the previous tutorial, you have to implement a data source to populate the registered Table View Cells. This time you won't need an extension because the `CustomerDetailTableViewController` is a `UITableViewController`.
 
@@ -335,10 +333,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement the FUIChartViewDataSource and Delegate)]
+### Implement the FUIChartViewDataSource and Delegate
+
 
 In the last step, you've implemented the Table View's Data Source. The `FUIChartPlotTableViewCell` also has a Data Source and a Delegate to populate the chart with data. For that, you have to implement its data source and delegate, and you will use the extension pattern of Swift to do so.
 
@@ -412,10 +409,9 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement a Profile Header)]
+### Implement a Profile Header
+
 
 The customer has certain information your user might want to know, like the contact information, birthday and address. The SDK provides you with a great UI control for displaying such information: `FUIProfileHeader`.
 
@@ -519,10 +515,9 @@ override func viewDidLoad() {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run app on simulator)]
+### Run app on simulator
+
 
 You've done all the implementation needed for the Charts and Profile Header.
 
@@ -530,5 +525,4 @@ Run the app on your iOS Simulator to see the result of your work.
 
 ![Customer Detail](fiori-ios-scpms-teched19-01.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
+

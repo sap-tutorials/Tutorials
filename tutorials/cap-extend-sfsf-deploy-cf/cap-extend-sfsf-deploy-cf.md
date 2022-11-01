@@ -1,11 +1,13 @@
 ---
-title: Deploy the SAP SuccessFactors Extension to Cloud Foundry
-description: In this phase of the development you will deploy the finished extension to BTP Cloud Foundry environment.
+parser: v2
 auto_validation: true
 time: 8
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Deploy the SAP SuccessFactors Extension to Cloud Foundry
+<!-- description --> In this phase of the development you will deploy the finished extension to BTP Cloud Foundry environment.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -19,8 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Deploy the SAP SuccessFactors Extension Database to SAP HANA Cloud**](cap-extend-sfsf-deploy-hc)
  - Complete the tutorial: [**Develop the SAP Fiori Elements Application for the SAP SuccessFactors Extension**](cap-extend-sfsf-fiori-elements)
 
-## Details
-### You will learn
+## You will learn
   - How to **build the MTA archive**
   - How to **deploy the MTA archive** to Cloud Foundry
   - How to **assign a role collection** to a BTP business user
@@ -28,7 +29,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Build the MTA archive)]
+### Build the MTA archive
+
 
 Before you build the MTA Archive for deployment, do not forget to switch back the database from **in-memory `SQLite`** to **SAP HANA** (if not already). For that, just open the `package.json` file from the CAP service and set the `cds.requires.db.kind` parameter to `hana` like demonstrated below:
 
@@ -52,10 +54,9 @@ If the process is successful you'll notice that a file named `sfsf-projman_1.0.0
 
 ![Figure 5 – MTA Archive generated](mta-archive.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy the MTA Archive)]
+### Deploy the MTA Archive
+
 
 > **IMPORTANT NOTE**: before  you trigger the process to deploy the MTA archive to Cloud Foundry you **MUST** make sure you **comply with two requirements**:
 >
@@ -70,11 +71,10 @@ It's going to take a while until the deployment process finishes. When it does, 
 
 ![Figure 7 – Successful deployment](successful-deploy.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Assign Admin role to your business user)]
+### Assign Admin role to your business user
+
 
 Before you jump into testing the application, you must remember that it's meant for **project administrators**, meaning, users with the Admin role assigned. So, assign the role to your user in SAP BTP.
 
@@ -88,10 +88,9 @@ Click on the **Edit** button at the top-right corner, then, in the **Users** lis
 
 Now you are OK to test the application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the deployed application)]
+### Test the deployed application
+
 
 On the **left-hand pane**, (1) click on **HTML5 Applications** and locate your **Business Solution** (`sfsf-projman-<your subdomain>`). Then, (2) click on the link of the **Application Name**.
 
@@ -115,10 +114,8 @@ You can, now, test it at your will, in the same way you did using the **Fiori Pr
 
 Finally, the last step in the journey of this tutorial group is to add your application to a **user-driven launchpad** using **SAP BTP's Launchpad Service**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

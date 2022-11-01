@@ -1,6 +1,5 @@
 ---
-title: Add Navigation Manually to Integrate an SAPUI5 App Into a Launchpad Site
-description: Add navigation properties to your custom-developed SAPUI5 app so it can be integrated into your launchpad site in the SAP Launchpad service.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>sapui5, products>sap-business-application-studio, products>sap-business-technology-platform, products>sap-launchpad-service]
@@ -9,26 +8,29 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-## Details
-### You will learn
+# Add Navigation Manually to Integrate an SAPUI5 App Into a Launchpad Site
+<!-- description --> Add navigation properties to your custom-developed SAPUI5 app so it can be integrated into your launchpad site in the SAP Launchpad service.
+
+## You will learn
   - How to configure the navigation properties for your custom app
 
+## Intro
 Adding navigation properties to custom-developed apps is mandatory if you want to add them to a launchpad site. To add navigation properties to an app, edit its `manifest.json` file and add an intent to it. An intent is a unique combination of a semantic object and an action.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open manifest.json file)]
+### Open manifest.json file
+
 1. In your SAP Business Application Studio explorer, expand your app folder and then expand the `webapp` subfolder and select it.
 
 2. Click the `manifest.json` file to open it.
 
     ![Open manifest.json file](1-open-manifestjson.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add intent)]
+### Add intent
+
 Now you'll add the intent navigation parameters to the `sap.app` descriptor in the `manifest.json` file.
 
 1. Under the **sap.app** section of the `manifest.json` file, put your cursor on the line before the closing bracket of the `sap.app` section. In our example, we'll put it after the closing bracket of the `datasources` section.
@@ -70,10 +72,8 @@ Now you'll add the intent navigation parameters to the `sap.app` descriptor in t
 
 3. Click **File > Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+

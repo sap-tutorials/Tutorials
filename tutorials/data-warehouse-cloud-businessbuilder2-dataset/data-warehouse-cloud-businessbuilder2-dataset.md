@@ -1,20 +1,21 @@
 ---
+parser: v2
 author_name: Helena Nacinovic
 author_profile: https://github.com/helenanacinovic
-title: Create an Analytical Dataset in the Business Builder
-description: Create a new analytical dataset with measures and attributes in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create an Analytical Dataset in the Business Builder
+<!-- description --> Create a new analytical dataset with measures and attributes in the Business Builder of SAP Data Warehouse Cloud.
+
 ## Prerequisites
 - Understand the Business Builder in SAP Data Warehouse Cloud
 - Have at least one table or view with at least one measure created and deployed in the data layer of SAP Data Warehouse Cloud
 
-## Details
-### You will learn
+## You will learn
 - How to create a new analytical dataset
 - How to add existing measures to your dataset
 - How to add a new measure to your dataset
@@ -24,13 +25,15 @@ primary_tag: products>sap-data-warehouse-cloud
 
 
 
+## Intro
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LNT7ciCJnpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In this tutorial, you will see an example dataset that contains information about sales. Please keep in mind that any data that will be used in the Business Builder needs to first be connected to or imported into SAP Data Warehouse Cloud before you can start creating business objects with Business Builder.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new analytical dataset)]
+### Create a new analytical dataset
+
 
 1.	In SAP Data Warehouse Cloud, click on the **Business Builder** icon.
 
@@ -51,10 +54,9 @@ In this tutorial, you will see an example dataset that contains information abou
 7.	After you make your selection, click on **Create**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add existing measures)]
+### Add existing measures
+
 
 Now that your analytical dataset is created, it's time to populate it. Start with adding measures.
 
@@ -68,11 +70,10 @@ Now that your analytical dataset is created, it's time to populate it. Start wit
 
 Your existing measures are now available in the analytical dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add a new measure)]
+### Add a new measure
+
 
 1.	To add a new measure, click on the **New Measure** button.
 
@@ -115,10 +116,9 @@ Your existing measures are now available in the analytical dataset.
 Your new measure is now available in the analytical dataset.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add existing attributes)]
+### Add existing attributes
+
 
 Now it's time to add attributes to your analytical dataset.
 
@@ -133,10 +133,9 @@ Now it's time to add attributes to your analytical dataset.
 Your existing attributes are now available in the analytical dataset.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a new attribute)]
+### Add a new attribute
+
 
 1.	To add a new attribute, click on the **New Attribute** button.
 
@@ -159,10 +158,9 @@ Your existing attributes are now available in the analytical dataset.
 Your new attribute is now available in the analytical dataset
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Preview your dataset and adjust the perspective)]
+### Preview your dataset and adjust the perspective
+
 
 You are almost done creating a base analytical dataset. Before you move on to another task, it's important to preview your data and make sure you have the right dataset.
 Just click on the **Data Preview** link on the top right-hand corner of the screen.
@@ -178,15 +176,13 @@ Now you can see the preview, as well as adjust it by using the sidebar on the le
 > Learn in the next tutorial how to create a dimension in the Business Builder.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

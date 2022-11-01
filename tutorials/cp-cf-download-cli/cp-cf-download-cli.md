@@ -1,6 +1,5 @@
 ---
-title: Install the Cloud Foundry Command Line Interface (CLI)
-description: Download and install the CLI, which allows access via the command line.
+parser: v2
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -9,8 +8,10 @@ primary_tag: products>sap-btp--cloud-foundry-environment
 time: 15
 ---
 
-## Details
-### You will learn  
+# Install the Cloud Foundry Command Line Interface (CLI)
+<!-- description --> Download and install the CLI, which allows access via the command line.
+
+## You will learn  
  - How to download the Command Line Interface (CLI) package
  - How to install the CLI and connect it to Cloud Foundry
  - How to explore a few basic CLI commands
@@ -50,7 +51,7 @@ To test the CLI, type in the following:
 
 You should see a list of Cloud Foundry commands.
 
-!![Cloud Foundry list of Commands](cfhelp.png)
+<!-- border -->![Cloud Foundry list of Commands](cfhelp.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -71,15 +72,15 @@ You can also identify your API Endpoint using your Cloud Foundry account:
 
 First, navigate to the [SAP BTP cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
 
-!![entertrial](entertrial.png)
+<!-- border -->![entertrial](entertrial.png)
 
 Next, click on the subaccount.
 
-!![subaccount](subaccount.png)
+<!-- border -->![subaccount](subaccount.png)
 
 The **API Endpoint** is displayed on the left-hand side of the **Overview** page.
 
-!![endpoint](endpoint.png)
+<!-- border -->![endpoint](endpoint.png)
 
 [DONE]
 [ACCORDION-END]

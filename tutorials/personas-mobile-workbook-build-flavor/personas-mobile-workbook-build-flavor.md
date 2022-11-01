@@ -1,20 +1,22 @@
 ---
-title: Personalize Your SAP Screen Personas Flavor
-description: Simplify the main screen of IW51 and add barcode scanning functionality.
+parser: v2
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, products>sap-screen-personas, topic>mobile, products>sap-fiori]
 primary_tag: products>sap-screen-personas
 ---
 
+# Personalize Your SAP Screen Personas Flavor
+<!-- description --> Simplify the main screen of IW51 and add barcode scanning functionality.
+
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to further simplify screens in SAP Screen Personas
   - How to insert scripts into your SAP Screen Personas flavors
 
+## Intro
 The focus of this tutorial is on simplifying the main screen of transaction IW51 (Create Service Notification) so that it can be used on a tablet. Not only does this involve hiding unneeded fields, but also adding barcode scanning functionality to make it simpler for users to enter the relevant equipment number. By the end of this tutorial, you will have a completed mobile app for a tablet. The next tutorial will cover optimizing the app for tablet and mobile phone use by modifying the spacing and size of screen objects to best fit on each device.
 
 ---

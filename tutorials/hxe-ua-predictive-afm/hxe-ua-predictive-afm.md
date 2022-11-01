@@ -1,10 +1,12 @@
 ---
-title: Predictive Analytics Using Application Function Modeler
-description: This tutorial series will cover a pair of sample projects utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use a Application Function Modeler to access the predictive analytics library.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 20
 ---
+
+# Predictive Analytics Using Application Function Modeler
+<!-- description --> This tutorial series will cover a pair of sample projects utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use a Application Function Modeler to access the predictive analytics library.
 
 ## Prerequisites  
   - [Predictive Analytics Using SQL Script]
@@ -13,16 +15,17 @@ time: 20
 ## Next Steps
  - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)
 
-## Details
-### You will learn  
+## You will learn  
   - How to use the Predictive Analysis Library through SAP HANA Studio
 
+## Intro
 This tutorial creates the same models as the previous tutorial by only using template modules within SAP HANA Studio. For more tutorials on using Predictive Analysis Library, see the [SAP HANA Academy YouTube Playlist](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g).
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the SAP HANA Development Perspective)]
+### Open the SAP HANA Development Perspective
+
 
 In your SAP HANA Studio window, hover over __Window__ -> __Perspective__ -> __Open Perspective__. Select __SAP HANA Development__ if is available, otherwise, click __Other...__. From the drop down list, select __SAP HANA Development__.
 
@@ -31,11 +34,9 @@ In your SAP HANA Studio window, hover over __Window__ -> __Perspective__ -> __Op
 The *SAP HANA Development* perspective opens.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create a New Repository Workspace
 
-[ACCORDION-BEGIN [Step 2: ](Create a New Repository Workspace)]
 
 Through the _Repositories_ tab, right-click on your user login for your tenant database and select __Create Repository Workspace__.
 
@@ -50,12 +51,10 @@ Make sure your user login for your tenant database is selected. You may use your
 Click __Finish__ to create your new workspace.
 
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a New Repository Package)]
+### Create a New Repository Package
+
 
 Right-click on your new repository workspace and select __New__ -> __Repository Package__.
 
@@ -68,11 +67,9 @@ Give your package a name and click __Finish__ to create the package.
 ![Create Repository Package](create_repository_finish_3.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create a Flowgraph Model
 
-[ACCORDION-BEGIN [Step 4: ](Create a Flowgraph Model)]
 
 Right-click on your new package and select __New__ -> __Other...__.
 
@@ -96,11 +93,9 @@ Ensure that your new package is highlighted. Give your flowgraph a name. Ensure 
 Your new flowgraph opens.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Arrange the Flowgraph
 
-[ACCORDION-BEGIN [Step 5: ](Arrange the Flowgraph)]
 
 Under the _Predictive Analysis Library_ window, select __Time Series Analysis__, scroll down and drag and drop __Auto ARIMA__ onto your flowgraph.
 
@@ -127,11 +122,9 @@ Hover over the _AUTOARIMA_ block. Click and hold the _Connect_ icon ![Connect](c
 ![Arranged Flowgraph](flowgraph_arranged_3.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Adjust Model Properties
 
-[ACCORDION-BEGIN [Step 6: ](Adjust Model Properties)]
 
 To view the results you will need to change the _RESULT_ and _TEMPLATESINK_ properties. Hover over _RESULT_ under __AUTOARIMA__. Click the __Properties__ icon ![Properties](properties.png).
 
@@ -150,11 +143,9 @@ Under the _Properties_ window, add your user schema to _Authoring Schema_. Add a
 ![TEMPLATESINK Properties](templatesink_properties_additions_2.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create the Model
 
-[ACCORDION-BEGIN [Step 7: ](Create the Model)]
 
 Change the properties of the flowgraph. Right-click on the white space and select __Properties__.
 
@@ -172,9 +163,6 @@ Click the __Execute__ icon ![Execute](execute.png).
 > If you receive an error during this step, see the troubleshooting section below.
 
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Preview the Model)]
 
@@ -188,11 +176,10 @@ Return to the _SAP HANA Administration Console_ perspective. Under your user log
 You may notice that this data is identical to _Step 2: Run the Model SQL Script_ in the previous tutorial.
 
 
-[DONE]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Prepare the Model for Analysis)]
+### Prepare the Model for Analysis
+
 
 Return to your flowgraph.
 
@@ -207,11 +194,9 @@ Change the *PARAMS_2* by hovering over it and clicking the __Properties__ icon !
 ![Change PARAMS_2](params_2_intargs_2.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Prepare the New Flowgraph Blocks
 
-[ACCORDION-BEGIN [Step 9: ](Prepare the New Flowgraph Blocks)]
 
 Under the _General_ window, drag and drop another __Data Sink (Template Table)__ onto your flowgraph.
 
@@ -224,11 +209,9 @@ As before, change the _TEMPLATESINK_ properties. Hover over *TEMPLATESINK_2* and
 Click the __Activate__ icon ![Activate](activate.png). A new job will appear in your Job Log.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Preview the Data
 
-[ACCORDION-BEGIN [Step 10: ](Preview the Data)]
 
 Click the __Execute__ icon ![Execute](execute.png).
 
@@ -239,9 +222,6 @@ Go to the _Systems_ tab. Refresh your tenant database. Find the results table un
 You will notice that this data is identical to _Step 4: Run the Predict SQL Script_ in the previous tutorial.
 
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Troubleshooting: ](Unsupported encoding Cp 1252)]
 
@@ -266,9 +246,7 @@ Click __OK__.
 Click the __Activate__ icon ![Activate](activate.png) and continue with the tutorial.
 
 
-[DONE]
 
-[ACCORDION-END]
 
 #### Additional Information
 - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)

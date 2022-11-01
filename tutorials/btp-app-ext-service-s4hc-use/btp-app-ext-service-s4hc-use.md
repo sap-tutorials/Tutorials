@@ -1,26 +1,28 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
-description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
 keywords: cap
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+# Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
+<!-- description --> This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
+
 ## Prerequisites
  - [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register)
 
-## Details
-### You will learn
+## You will learn
  - How to prepare your CAP application
  - How to deploy your CAP application
  - How to test your CAP application with SAP S/4HANA Cloud connectivity
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to the business partner service on your SAP S/4HANA Cloud system)]
+### Connect to the business partner service on your SAP S/4HANA Cloud system
+
 Earlier in the tutorial you used a sandbox system to use the business partner service in your application. In this tutorial, you will connect to your SAP S/4HANA Cloud system.
 
 First, you create a service instance for the SAP S/4HANA Cloud Extensibility service with plan `api-access`. The SAP S/4HANA system provides pre-defined communication scenarios that contain one or multiple APIs. When creating the service instance, the communication scenario needs to be specified along with some configuration. Under the hood, a communication arrangement based on the given scenario is created in the SAP S/4HANA Cloud system.
@@ -146,10 +148,9 @@ First, you create a service instance for the SAP S/4HANA Cloud Extensibility ser
 
 > CAP documentation about [Consuming Services](https://cap.cloud.sap/docs/guides/consuming-services)
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Deploy your CAP application)]
+### Deploy your CAP application
+
 If you use the [SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform](btp-app-ci-cd-btp), you just need to push the commit to your **main** branch and wait for the deployment to be completed.
 
 Otherwise, deploy your application as described in the tutorial [Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
@@ -170,10 +171,9 @@ Otherwise, deploy your application as described in the tutorial [Multi-Target Ap
     cf deploy cpapp_1.0.0.mtar
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Test your CAP application with SAP S/4HANA Cloud connectivity)]
+### Test your CAP application with SAP S/4HANA Cloud connectivity
+
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote S/4HANA system.
 
 > Don't forget to perform the steps from the tutorial [Subscribe to the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
@@ -190,7 +190,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
 
-    > !![Forbidden](error_forbidden.png)
+    > <!-- border -->![Forbidden](error_forbidden.png)
 
     > Follow the instructions in [Assign a Role Collection to a User](btp-app-role-assignment) to do it.
 
@@ -200,23 +200,19 @@ When creating new entries in the **Risks** application, you should be able to us
 
 4. Choose **Create**.
 
-    !![Create Risk](create_risk.png)
+    <!-- border -->![Create Risk](create_risk.png)
 
 5. Fill in information for the new risk in the object page and choose **Create**.
 
-    !![Risk Object Page](risk_object_page.png)
+    <!-- border -->![Risk Object Page](risk_object_page.png)
 
     > You can leave the **Mitigation** field empty, since there's no available mitigations to choose from.
 
 6. Check if the new risk is visible.
 
-    !![RiskTitle](risk_title.png)
+    <!-- border -->![RiskTitle](risk_title.png)
 
 Congratulations! You have completed all tutorials.
 
-[VALIDATE_1]
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
-
-
-[ACCORDION-END]
 ---

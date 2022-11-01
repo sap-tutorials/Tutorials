@@ -1,22 +1,24 @@
 ---
-title: Build a Simple SAP Screen Personas Dashboard
-description: Simplify the initial screen of IW51 to begin creating a Service Notification application for desktop and mobile devices.
+parser: v2
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, products>sap-screen-personas]
 primary_tag: products>sap-screen-personas
 ---
 
+# Build a Simple SAP Screen Personas Dashboard
+<!-- description --> Simplify the initial screen of IW51 to begin creating a Service Notification application for desktop and mobile devices.
+
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to hide unneeded fields with SAP Screen Personas
   - How to modify the properties of an object on screen
   - How to insert additional objects into a screen
   - How to create a dashboard in SAP Screen Personas
 
+## Intro
 **SAP Screen Personas** is a software product, included with your existing ERP license, that allows you to personalize **SAP screens**, automate business processes, and run them on your phone, tablet, or desktop. It provides a simple drag and drop approach to modify most **SAP GUI** screens to improve usability and visual appeal.
 
 A screen or set of related screens personalized for an SAP user/role using SAP Screen Personas is called a **flavor**. By the end of this tutorial, you will have created a flavor for transaction IW51 (Create Service Notification) that will greatly simplify the creation of Service Notifications for your users on both desktop and mobile devices. This tutorial will focus on creating the initial screen: a dashboard that launches the main screen of IW51. The next tutorial will cover simplifying that screen and including additional functionality.

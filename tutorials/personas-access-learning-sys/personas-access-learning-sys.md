@@ -1,17 +1,19 @@
 ---
-title: Access the SAP Screen Personas Training System
-description: Create a user and log on to the training system provided by the SAP Screen Personas team.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-fiori, topic>user-interface, products>sap-s-4hana]
 primary_tag: products>sap-screen-personas
 ---
 
-## Details
-### You will learn
+# Access the SAP Screen Personas Training System
+<!-- description --> Create a user and log on to the training system provided by the SAP Screen Personas team.
+
+## You will learn
   - Where to create a user for the SAP Screen Personas training system
   - How to log on to the training system
 
+## Intro
 The SAP Screen Personas team provides a training system at no cost for the purpose of allowing learners to get hands-on time with the product. Users have access to the transactions required to execute the tutorials on this site. In order to provide the best possible learning experience and minimize the risk disruption to the system, **users do not have access to the Administration transaction or other administrative features.**
 
 >While the SAP Screen Personas team intends to allow around-the-clock access to the system, it cannot be guaranteed. Planned or unplanned downtime could occur at any time.

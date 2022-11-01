@@ -1,20 +1,22 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
 auto_validation: true
-title: Extend the Built-In OData Features with Custom Code
-description: Learn how to customize your OData service with event handlers.
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Details
-### You will learn
+# Extend the Built-In OData Features with Custom Code
+<!-- description --> Learn how to customize your OData service with event handlers.
+
+## You will learn
 - What custom event handlers are
 - Where and how to define a simple event handler
 - How to use a custom event handler to define an OData function import
 
+## Intro
 This tutorial assumes you've completed the tutorial [Extend your Simple Data Model with a Second Entity](odata-06-extend-odata-service). If you have done, you'll have an OData service `Northbreeze` with two related entities. All OData operations - create, read, update, delete and query - are supported out of the box.
 
 In this tutorial, you'll learn how to add custom behaviour, in the form of handlers, to make your OData service do what you want it to do, beyond the standard operation handling.
