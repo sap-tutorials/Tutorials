@@ -1,23 +1,25 @@
 ---
-title: Set Up Inbound OAuth Client Credentials Grant Authentication for API Clients with SAP-Generated Certificate
+parser: v2
 author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
-description: Learn how to set up inbound authentication for API clients calling the Cloud Integration OData API. The Cloud Integration OData API provides access to various Cloud Integration resources such as message processing logs, integration content, log files, etc.
 auto_validation: true
 time: 35
 tags: [ tutorial>intermediate, software-product>sap-integration-suite, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-integration-suite
 ---
 
+# Set Up Inbound OAuth Client Credentials Grant Authentication for API Clients with SAP-Generated Certificate
+<!-- description --> Learn how to set up inbound authentication for API clients calling the Cloud Integration OData API. The Cloud Integration OData API provides access to various Cloud Integration resources such as message processing logs, integration content, log files, etc.
+
 ## Prerequisites
 - You have created a trial account on SAP Business Technology Platform: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 - You have enabled Cloud Integration, capability of SAP Integration Suite, as described in [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
-## Details
-### You will learn
+## You will learn
 - The basics of OAuth authentication for Cloud Integration
 - How to configure the authentication workflow with a client certificate provided by SAP
 
+## Intro
 To authenticate an API client to call the Cloud Integration API, various authentication options are supported. For more information, see [OAuth with Client Credentials Grant for API Clients](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/20e26a837a8449c4b8b934b07f71cb76.html?locale=en-US) and [OData API](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/a617d6f37ddc43db8eeb1279662ed5c2.html?locale=en-US).
 
 This tutorial exemplifies a 2-step authentication process. In general, you have to configure both requests separately for your API client.
@@ -25,11 +27,12 @@ This tutorial exemplifies a 2-step authentication process. In general, you have 
 1.	In a first call, the API client retrieves an access token from the SAP Business Technology Platform (SAP BTP) token server. For this step, the API client provides a client certificate.
 2.	In a second call, the API client accesses to the Cloud Integration API resource and is authenticated based on the access token.
 
-    !![Overview Authentication Process](btp-integration-oauth-overview.png)
+    <!-- border -->![Overview Authentication Process](btp-integration-oauth-overview.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Familiarize yourself with Postman)]
+### Familiarize yourself with Postman
+
 
 In this tutorial, the application [Postman](https://www.postman.com/) (version v9.16.0) is used as API client. This Postman version provides a simplified user experience that allows you to configure the 2 requests described above in a single tab.
 
@@ -40,10 +43,9 @@ There are two options to create a client certificate for the first request (addr
 In the example scenario, the API client calls the Cloud Integration OData API to access message processing logs. To get more information on this API resource and the supported operations, see [SAP API Business Hub](https://api.sap.com/api/MessageProcessingLogs/overview).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define a Service Instance)]
+### Define a Service Instance
+
 
 Define a service instance. With a service instance, you define how to access a certain SAP BTP service. In the context of SAP Cloud Integration, a service instance is the definition of an OAuth client.
 
@@ -56,23 +58,22 @@ Define a service instance. With a service instance, you define how to access a c
     -  **Space**: Select the space that hosts your Cloud Integration application (for example, this is the **dev** space).
     -  **Instance Name**: Specify any name for the instance.
 
-      !![Service Instance Creation](btp-integration-service-instance.png)
+      <!-- border -->![Service Instance Creation](btp-integration-service-instance.png)
 
 4. In the parameters section, select **Form** and add the following information:
     - **Role**: Select `MonitoringDataRead` and keep the other default settings as is. You need this role to authorize the API client to access monitoring data through the OData API (see [Message Processing Logs](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/827a2d7e9c6f4866a1d6c0e647bcacd2.html?locale=en-US)). For a complete list of all operations and roles to access the available Cloud Integration resources, see [Tasks and Permissions](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/fda781c59e4b46a390ce5b409f60365e.html?locale=en-US).
     - **Grant-Type**: Select `Client Credentials`.
 
-    !![Service Instance Parameters](btp-integration-service-instance-parameters.png)
+    <!-- border -->![Service Instance Parameters](btp-integration-service-instance-parameters.png)
 
 5. Choose **Create**.
 
 > For further information on creating service instances and service keys, see: [Creating Service Instance and Service Key for Inbound Authentication](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/19af5e205fe14af6a4f8a9fd80d4dc92.html?locale=en-US).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define Service Key)]
+### Define Service Key
+
 
 You now define a service to go along to your service instance.
 
@@ -80,13 +81,13 @@ You now define a service to go along to your service instance.
 
 2. Click on **Create Service Key**.
 
-    !![Service Key Creation](btp-integration-service-key.png)
+    <!-- border -->![Service Key Creation](btp-integration-service-key.png)
 
 3. Specify a service key **Name**. To use an SAP-generated certificate for the step to retrieve the access token, select `Certificate` as **Key Type**. You can keep the default settings for **Validity** and **Key Size**.
 
 4. Next, to display the details of the service key, select **View**:
 
-    !![Service Key View](btp-integration-service-key-view.png)
+    <!-- border -->![Service Key View](btp-integration-service-key-view.png)
 
     A service key with an SAP-generated client certificate contains the following parts which you need for the configuration of your API client (Postman) in a later step. Each service key contains certain properties. You need the following parts for the configuration of your API client (Postman):
 
@@ -98,12 +99,11 @@ You now define a service to go along to your service instance.
 
     Example: This is how the JSON representation of the service key looks like when you open it in SAP BTP cockpit:
 
-    !![JSON File](btp-integration-JSON-file.png)
+    <!-- border -->![JSON File](btp-integration-JSON-file.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Prepare the Certificate and Key Content)]
+### Prepare the Certificate and Key Content
+
 
 Upload the public certificate (including chain, content of property **certificate** from service key) and the private key (content of property **key** from service key) to Postman.
 
@@ -113,40 +113,38 @@ Upload the public certificate (including chain, content of property **certificat
 
     > You can use Word to do the formatting the content by specifying the **Find and Replace** dialog in the following way (after doing that, copy the content into the text file):
 
-    !![Word Hint](btp-integration-word-find.png)
+    <!-- border -->![Word Hint](btp-integration-word-find.png)
 
     The correctly formatted content looks like this (beginning of the certificate content):
 
-    !![Certificate](btp-integration-certificate.png)
+    <!-- border -->![Certificate](btp-integration-certificate.png)
 
 3.	Save the text file as file with extension `.cer`, for example, `certificate.cer`.
 
 4.	Repeat the same steps for the **key** content. Start copying from `-----BEGIN RSA PRIVATE KEY-----\n` until `-----END RSA PRIVATE KEY-----\n` and store this as file with extension `.key`, for example `key.key`.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload Client Certificate and Key to the API Client)]
+### Upload Client Certificate and Key to the API Client
+
 You now need to configure Postman as API client.
 
 1.	To specify the certificates and keys to be used to call the token server (first request), go to the Postman Settings.
 
 2.	Select the **Certificates** tab and choose **Add certificates**.
 
-    !![Add Certificates](btp-integration-add-certificates.png)
+    <!-- border -->![Add Certificates](btp-integration-add-certificates.png)
 
 3.	Specify the following parameters:
       - **Host**: Add the URL of the `tokenurl` property (without the `https://` at the beginning and the `/oauth/token` at the end).
       - **CRT file**: Upload the `.cer` file.
       - **KEY file**: Upload the `.key` file.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Configure and Run the Requests to the API Resource and to the Token Server)]
+### Configure and Run the Requests to the API Resource and to the Token Server
+
 As described above, in general, you need to configure and run two separate requests for the API client: one request addressed at the token server to get the access token, and another request addressed at the Cloud Integration API to access the API resource. Using Postman, you can specify the settings for the first request as part of the second request in one screen. For more information, see [OAuth with Client Credentials Grant for API Clients](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/20e26a837a8449c4b8b934b07f71cb76.html?locale=en-US).
 
 1. Create a new GET request with the following URL (to get the message processing logs): `https://<Cloud Integration host>/api/v1/MessageProcessingLogs`
@@ -169,11 +167,10 @@ As described above, in general, you need to configure and run two separate reque
 
 4. To use the retrieved access token for the second request (to call the API resource), click **Proceed**. The request is shown with the access token.
 
-      !![Request](btp-integration-request.png)
+      <!-- border -->![Request](btp-integration-request.png)
 
 5. Click **Send**. The API resource is called, and the response sent back to Postman. The response contains the message processing logs of the tenant as an XML document.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

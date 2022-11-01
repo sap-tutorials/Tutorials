@@ -1,20 +1,22 @@
 ---
-title: Optimize Your SAP Screen Personas Flavor for Mobile
-description: Create differently sized versions of your SAP Screen Personas flavor for use on tablets and mobile phones.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-screen-personas, topic>mobile, products>sap-fiori]
 primary_tag: products>sap-screen-personas
 ---
 
+# Optimize Your SAP Screen Personas Flavor for Mobile
+<!-- description --> Create differently sized versions of your SAP Screen Personas flavor for use on tablets and mobile phones.
+
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
  - A flavor rendered with Slipstream Engine
 
-## Details
-### You will learn
+## You will learn
   - How to create adaptive versions of your flavor for use on different devices
 
+## Intro
 The focus of this tutorial is on making your Create Service Notification application available to users on different devices. You will take the flavor you built in the previous tutorial and optimize it for tablet and mobile phone screens. This involves using the **Adaptive Flavor** feature in SAP Screen Personas to rearrange the screen in order to provide the best possible experience for your users. You will resize and organize screen objects so that users do not have to scroll to input the required information on their device.
 
 By the end of this tutorial, you will have a group of flavors called an **adaptive stack**, which contains all of your differently sized flavor variations. SAP Screen Personas will then automatically select between these flavors, depending on your users' screen size, to provide the best possible user experience.

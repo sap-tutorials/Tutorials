@@ -1,19 +1,21 @@
 ---
-title: Get Started with Entity Manipulation Language (EML) in SAP BTP ABAP Environment
-description: Access RAP business objects using EML in SAP BTP ABAP Environment
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-btp--abap-environment]
 primary_tag: programming-tool>abap-development
 ---
 
+# Get Started with Entity Manipulation Language (EML) in SAP BTP ABAP Environment
+<!-- description --> Access RAP business objects using EML in SAP BTP ABAP Environment
+
 ## Prerequisites
  - **Tutorial mission**: [Develop an SAP Fiori App Using SAP BTP, ABAP Environment](mission.cp-starter-extensions-abap)
 
-## Details
-### You will learn
+## You will learn
   - How to access RAP business objects using Entity Manipulation Language (EML), part of ABAP. You can then use EML to read or modify business objects, or to implement behaviors for them.
 
+## Intro
 The Entity Manipulation Language (EML) is a part of the ABAP language that enables access to RAP business objects.
 
 Because the consumption of business objects via the OData protocol requires a Fiori UI or a web API, EML enables a type-safe access to business objects directly by using ABAP. EML interacts with business objects by triggering their operations for specified entities. An operation can only be triggered by EML if the operation is specified for the relevant entity in the behavior definition and if it implemented accordingly.
@@ -25,28 +27,28 @@ Throughout this tutorial, replace `XXX` with your initials or group number.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Watch video)]
+### Watch video
+
 Watch the following video from the openSAP course: Building Apps with the ABAP RESTful Application Programming Model: [Week 3, Unit 4: Understanding Entity Manipulation Language (EML)](https://open.sap.com/courses/cp13/items/1PQYUmWLxhSJ6jovoMOScA)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Answer question 1)]
-
-[VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Answer question 2)]
-
-[VALIDATE_2]
-[ACCORDION-END]
+### Answer question 1
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Complete exercise)]
+
+
+### Answer question 2
+
+
+
+
+
+
+### Complete exercise
+
 From the openSAP course, you need to complete the hands-on exercise for [Week 3, Unit 4: Understanding EML](https://github.com/SAP-samples/abap-platform-rap-opensap/blob/main/week3/unit4.md).
 However, since you have not completed the other weeks of the course, you cannot use the objects already created by course participants in previous weeks. Instead, use the objects you created in the mission [Develop an SAP Fiori App Using SAP BTP, ABAP Environment](mission.cp-starter-extensions-abap).
 
@@ -57,18 +59,17 @@ You must make the following adjustments:
 To check your code at any point, see step 4 below.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Answer question 3)]
+### Answer question 3
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check your code)]
+
+
+### Check your code
+
 Your code should look like this:
 
 ```ABAP
@@ -203,8 +204,6 @@ ENDCLASS.
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 ### More Information

@@ -1,6 +1,5 @@
 ---
-title: Debug Your SAPUI5 App with SAP Business Application Studio
-description: Learn how to run and test your web apps with the SAP Business Application Studio and Google Chrome DevTools.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio]
@@ -10,8 +9,10 @@ author_profile: https://github.com/cjbernal
 ---
 
 
-## Details
-### You will learn
+# Debug Your SAPUI5 App with SAP Business Application Studio
+<!-- description --> Learn how to run and test your web apps with the SAP Business Application Studio and Google Chrome DevTools.
+
+## You will learn
   - How to add breakpoints to your JavaScript code
   - How to log data to the console
   - How to use the Google Chrome DevTools
@@ -167,17 +168,17 @@ Running your application has several advantages over deploying it. Among others,
 
 1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click on the **▶️** icon of the first run configuration to add start the SAPUI5 app.
 
-    !![run](./run.png)
+    <!-- border -->![run](./run.png)
 
 
 2. Now the SAP Business Application Studio will start the app. When promoted, selected **Open** to make the local port accessible for debugging.
 
-    !![expose](./expose.png)
+    <!-- border -->![expose](./expose.png)
 
 
 3. A new tab should open that displays the following page.
 
-    !![running](./running.png)
+    <!-- border -->![running](./running.png)
 
 
 [DONE]

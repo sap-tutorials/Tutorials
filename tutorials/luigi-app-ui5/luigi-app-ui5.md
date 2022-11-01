@@ -1,20 +1,22 @@
 ---
-title: Build Luigi Micro-Frontend with UI5
-description: Create a micro-frontend with UI5 and connect it to the core React app using Luigi client.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>javascript]
 primary_tag: topic>user-interface
 ---
 
-## Details
-### You will learn
+# Build Luigi Micro-Frontend with UI5
+<!-- description --> Create a micro-frontend with UI5 and connect it to the core React app using Luigi client.
+
+## You will learn
   - How to create a Luigi view with UI5
   - How to import Luigi Client to your view
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Luigi to UI5 micro-frontend)]
+### Add Luigi to UI5 micro-frontend
+
 
 In this step, you will import Luigi Client to the UI5 micro-frontend so you can use `linkManager` and other API function in the next steps.
 
@@ -45,10 +47,9 @@ In this step, you will import Luigi Client to the UI5 micro-frontend so you can 
     ></script>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create "Order History" view)]
+### Create "Order History" view
+
 
 In this step, you will add a new navigation node in Luigi, then create the micro-frontend content using UI5.
 
@@ -127,10 +128,9 @@ In this step, you will add a new navigation node in Luigi, then create the micro
     });
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run UI5 app)]
+### Run UI5 app
+
 
 You can run the UI5 project to check if it's assembled correctly. Open a terminal/command prompt and navigate to `ui5-mf`, then execute:
 
@@ -141,5 +141,4 @@ npm start
 You should be able to access the app at `http://localhost:8080/index.html`. If you want to see the UI5 project in the context of the larger app, open a new terminal window, navigate to `react-core-mf` and run `npm start`. Refresh your browser to see the changes.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+

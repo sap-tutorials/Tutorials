@@ -1,25 +1,27 @@
 ---
-title: Create a Kyma service account
-description: Learn how to create a Kubernetes service account that you can leverage to interact with your Kyma cluster.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
+# Create a Kyma service account
+<!-- description --> Learn how to create a Kubernetes service account that you can leverage to interact with your Kyma cluster.
+
 ## Prerequisites
  - [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started)
  - [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
 
-## Details
-### You will learn
+## You will learn
   - What Kubernetes service accounts are used for
   - How to create a new service account
   - How to replace the [`kubeconfig`](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl/)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a namespace)]
+### Create a namespace
+
 
 The [`kubeconfig`](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl/) file that you are currently using is based on your [User Account](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#user-accounts-versus-service-accounts), which represents a user that has been logged in the Kyma dashboard when you downloaded the `kubeconfig`.
 
@@ -33,8 +35,6 @@ kubectl create namespace tutorial
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step : ](Create a service account)]
@@ -108,8 +108,6 @@ A service account alone won't do the job. You also need to define a Kubernetes `
     kubectl apply -f tutorial-sa.yaml -n tutorial
     ```
 
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Understand the structure of the configuration file)]
 
@@ -139,8 +137,6 @@ You can see that this file is moderately easy to read. [The configuration file](
 
 Go to the next step to learn how to fill this template with the proper values.
 
-[DONE]
-[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step : ](Create a new kubeconfig)]
@@ -256,8 +252,6 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Read the config map)]
 
@@ -267,8 +261,6 @@ kubectl get configmap -n tutorial tutorial-config-map -o jsonpath='{.data.out}'
 ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 ---

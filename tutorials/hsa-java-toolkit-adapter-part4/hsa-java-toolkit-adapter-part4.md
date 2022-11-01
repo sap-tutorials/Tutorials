@@ -1,10 +1,12 @@
 ---
-title: Editing Adapter Configuration Files
-description: Edit a set of adapter configuration files in order to make the custom adapter available to both the HANA Streaming Analytics server at run time and in HANA Studio at design time.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
+
+# Editing Adapter Configuration Files
+<!-- description --> Edit a set of adapter configuration files in order to make the custom adapter available to both the HANA Streaming Analytics server at run time and in HANA Studio at design time.
 
 ## Prerequisites
  - **Tutorial:** [Creating Custom Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part3.html)
@@ -12,18 +14,17 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ## Next Steps
  - [Where to Place the Custom Adapter Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part5.html)
 
-## Details
-### You will learn
+## You will learn
  - Locate which files to edit locally on HANA Studio and on the Streaming Server
  - How to edit the `modulesdefine` and `custommodulesdefine` `.xml` files
  - How to edit the `parametersdefine.xml` file
  - To transfer the files edited on the Streaming Server to the client where the HANA Studio is running
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
+## Intro
 > **IMPORTANT!** Since you're running a `multidb` SAP HANA environment, `$STREAMING_CUSTOM_ADAPTERS_HOME` will refer to <pre> `/hana/shared/`<b>`<SID>`</b>`/streaming/cluster/`<b>`<tenant db>`</b>`/adapters`</pre> assuming you have used the default location of `/hana` as the root directory for the installation.
 
  For this step, we will be adding our custom modules to the `modulesdefine.xml` file and `custommodulesdefine.xml` file, and adding parameter definitions from the `.cnxml` file to `parametersdefine.xsd`. The `modulesdefine.xml` file is located in the `$STREAMING_HOME/adapters/framework/config` directory, the `custommodulesdefine.xml` file is located in the `$STREAMING_CUSTOM_ADAPTERS_HOME/config `directory, and the `parametersdefine.xsd` is located in the `$STREAMING_CUSTOM_ADAPTERS_HOME/config` directory. We are not creating these files from scratch. The purpose of the `modulesdefine.xml` file is to define our custom modules (`Transporter` and `Formatter`) so HANA Streaming Analytics knows what they do and where they reside.
@@ -31,7 +32,8 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  The `parametersdefine.xsd` file simply defines what elements are valid in an `adapter_config.xml` file (adapter configuration file). Since we have used a custom element – `MqttInputTransporterParameters` – in our `adapter_config.xml` file, we must define it in `parametersdefine.xsd`.
 
 
-[ACCORDION-BEGIN [Step 1: ](Edit modulesdefine.xml and custommodulesdefine.xml)]
+### Edit modulesdefine.xml and custommodulesdefine.xml
+
 
 > The full source code for the `modulesdefine.xml` and `custommodulesdefine.xml` files are provided in the `Appendix` Section
 
@@ -111,11 +113,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit parametersdefine.xsd)]
+### Edit parametersdefine.xsd
+
 
 > The full source code for the `parametersdefine.xsd` file is provided in the `Appendix` Section
 
@@ -150,9 +151,6 @@ For the question below, select the correct answer, and click **Validate**.
         </xs:complexType>
       ```
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix ](&nbsp;)]
 
@@ -270,7 +268,5 @@ For the question below, select the correct answer, and click **Validate**.
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
 

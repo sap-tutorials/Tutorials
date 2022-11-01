@@ -1,24 +1,26 @@
 ---
-title: Understand Points in SAP HANA Spatial
-description: A point is a spatial data type for a 0-dimensional geometry representing a single location
+parser: v2
 auto_validation: true
 time: 10
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+# Understand Points in SAP HANA Spatial
+<!-- description --> A point is a spatial data type for a 0-dimensional geometry representing a single location
+
 ## Prerequisites
 - **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html)
 
 ## Next Steps
 - [Strings](hana-spatial-intro2-string)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn the basics of spatial processing starting with points, and use them to understand the types, constructors and methods defined by the SQL/MM standard implemented by a SAP HANA database.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Select a point in the 2D Euclidean space)]
+### Select a point in the 2D Euclidean space
+
 
 SAP HANA includes a spatial engine and supports spatial data types and methods for processing spatial data. **Spatial data** is data that describes the position, shape, and orientation of objects in a defined space.
 
@@ -47,10 +49,10 @@ Execute the query. Congratulations! You've just run your very first query using 
 
 ![Select a point](spatial0101b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change result format)]
+
+### Change result format
+
 
 The SAP HANA Database Explorer's SQL Console returns the value like `010100000000000000000000000000000000000000` as a result of the query execution. In some other SQL clients a question mark (`?`) can be returned.
 
@@ -68,10 +70,9 @@ Now the result of the query `POINT (0 0)` can be read and understood by a human.
 
 ![Select a point as WKT](spatial0102b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define a point in the constructor)]
+### Define a point in the constructor
+
 
 The WKT standard can also be used to define a point in the constructor. The following query
 
@@ -84,10 +85,9 @@ returns the same result as `NEW ST_POINT(0,0)`
 
 ![Select a point as WKT defined as WKT](spatial0103b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Try other spatial methods)]
+### Try other spatial methods
+
 
 There are more spatial methods that can be applied to `ST_POINT` objects. For now try two of them. Both will be **Access Functions** used to retrieve characteristics of spatial geometries.
 
@@ -109,8 +109,7 @@ FROM "DUMMY";
 
 ![Return dimension](spatial0105b.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ### Optional
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a29e653787c1014813b997510a8cc06.html)

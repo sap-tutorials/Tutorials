@@ -1,6 +1,5 @@
 ---
-title: Customize the Overview View Controller to Display Customers and Products
-description: Use the Swift programming language and the SAP BTP SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
+parser: v2
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
@@ -9,24 +8,26 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 15
 ---
 
-## Prerequisites
+# Customize the Overview View Controller to Display Customers and Products
+<!-- description --> Use the Swift programming language and the SAP BTP SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to implement a Fiori Object Table View Cell
 - How to implement Table View Section Headers and Footers
 - How to use the generated data service to load data from the OData service
 
+## Intro
 You will add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Implement loading of customer and product data)]
+### Implement loading of customer and product data
+
 
 In the previous tutorials you've built the foundation for implementing the logic behind the Overview View Controller. Before you can implement the data source and delegate logic for loading the Table View, you'll need to retrieve some data.
 
@@ -201,10 +202,9 @@ This is fairly simple thanks to the SAP BTP SDK for iOS and the generated model 
 
     Now every time our Overview View Controller gets loaded it will load the needed data from the OData Service.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
+### Set up Table View and register needed cells
+
 
 Now that the `OverviewViewController` is loading data, it's time to implement the population of Table View Cells. The first step is to register the desired types of cells for the Table View.
 
@@ -413,10 +413,9 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement Table View's data source and delegate)]
+### Implement Table View's data source and delegate
+
 
 In the previous step you registered the needed cells, set up the Table View and implemented the method stubs for the data source and delegate. You will implement these methods step-by-step so the table view is actually displaying data and reacting to user interaction.
 
@@ -768,10 +767,9 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the needed segue to the Customer Detail View Controller)]
+### Create the needed segue to the Customer Detail View Controller
+
 
 The Overview View Controller is almost implemented. The last thing missing is the navigation to the Customer Detail View Controller.
 
@@ -808,10 +806,9 @@ You will create a segue that goes from the Table View Cell that contains the cus
 
     Great! The segue is created in storyboard and have an identifier. In the next step, you will add code to provide information to the destination View Controller for the segue.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the prepare for segue method)]
+### Implement the prepare for segue method
+
 
 For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
 iOS provides a simple API to do that.
@@ -873,10 +870,9 @@ private let showCustomerDetailSegue = "showCustomerDetail"
 
     Continue to the next step to implement the perform segue call in the delegate method.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Call the perform segue method)]
+### Call the perform segue method
+
 
 To perform the navigation, locate the delegate method `tableView(_:didSelectRowAt:)` and implement the following line of code in there:
 
@@ -887,10 +883,9 @@ if indexPath.section == 0 { performSegue(withIdentifier: showCustomerDetailSegue
 
 The setup code for the destination View Controller is going to be performed each time the you call the `performSegue(withIdentifier:sender:)` method.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run app to see if navigation works)]
+### Run app to see if navigation works
+
 
 Go ahead and run your app now. Try out the navigation from a customer to the Detail View.
 
@@ -898,5 +893,4 @@ Overview View Controller             |  Customer Detail
 :-------------------------:|:-------------------------:
 ![App](fiori-ios-scpms-teched19-06.png)  |  ![App](fiori-ios-scpms-teched19-07.png)
 
-[VALIDATE_7]
-[ACCORDION-END]
+

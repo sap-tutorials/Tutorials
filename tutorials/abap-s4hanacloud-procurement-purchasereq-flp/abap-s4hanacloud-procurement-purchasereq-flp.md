@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Integrate List Report into Fiori Launchpad 
-description: Integrate your list report application into Fiori launchpad.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
@@ -9,15 +8,18 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Integrate List Report into Fiori Launchpad 
+<!-- description --> Integrate your list report application into Fiori launchpad.
+
 ## Prerequisites  
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 
+## Intro
 >**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to make use of IAM apps and business catalogs
 - How to create business roles
 - How to manage launchpad spaces and assign business role
@@ -25,7 +27,8 @@ author_profile: https://github.com/mervey45
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Make use of existing IAM App and business catalog)]
+### Make use of existing IAM App and business catalog
+
 
   1. Open ADT, select your package `Z_PURCHASE_REQ_XXX` and open your IAM App `ZSHOP_IAM_XXX`. Add the UI5 application ID to your IAM app and activate it.
 
@@ -44,10 +47,9 @@ author_profile: https://github.com/mervey45
       If you don't have created a business catalog yet, please create one and publish it locally.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create business role)]
+### Create business role
+
 
   1. Right-click on your **S/4HANA Cloud ABAP environment system** in the project explorer of ADT and select **Properties**. Click **ABAP Development** and copy the **system URL** without the **`-api`**.
 
@@ -102,11 +104,10 @@ author_profile: https://github.com/mervey45
 
        ![role8](role10.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Alternative 1: Manage launchpad spaces and assign business role)]
+### Alternative 1: Manage launchpad spaces and assign business role
+
 
 Option 1:
 
@@ -163,10 +164,9 @@ Option 1:
 
       ![transport](space11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 2: Assign and manage launchpad spaces)]
+### Alternative 2: Assign and manage launchpad spaces
+
 
 Option 2:
 
@@ -206,14 +206,12 @@ Option 2:
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

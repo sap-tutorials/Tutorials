@@ -1,10 +1,12 @@
 ---
-title: Creating Custom Adapter Configuration Files
-description: Create a .cnxml file and an Adapter Configuration File(.xml) for your Custom Adapter.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
+
+# Creating Custom Adapter Configuration Files
+<!-- description --> Create a .cnxml file and an Adapter Configuration File(.xml) for your Custom Adapter.
 
 ## Prerequisites
  - **Tutorial:** [Creating Custom Adapter Modules](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part2.html)
@@ -12,17 +14,16 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ## Next Steps
  - [Editing Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part4.html)
 
-## Details
-### You will learn
+## You will learn
  - How to create a `.cnxml` configuration file
  - How to create an Adapter Configuration File(`.xml`)
-
-### Time to Complete
+## Time to Complete
 **20 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a `.cnxml` configuration file)]
+### Create a `.cnxml` configuration file
+
 
 We will now be writing a configuration file that we will name `mqtt_input.cnxml`. This follows the loose naming convention of `<adapter>_<{input,output}>.cnxml`.
 
@@ -176,11 +177,10 @@ Close the `<Section>` and `<Adapter>` tags.
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an Adapter Configuration File(.xml))]
+### Create an Adapter Configuration File(.xml)
+
 
 In this step, we will write a file called `adapter_config.xml`, which will define the ordering of modules. For those interested in running a custom adapter in standalone mode, this configuration file will be the place to specify project, project security, server and parameter information. Since we will be running our adapter in managed mode, we will create a HANA Studio configuration file in the next section that will allow the user to specify these parameters.
 
@@ -383,9 +383,6 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
 >Full documentation on writing a Formatter module can be found in the section [Configuring a New Adapter](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.01/en-US/e789bb9c6f0f101490bef9e3c7dd5186.html).
 
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix ](&nbsp;)]
 
@@ -515,7 +512,5 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
 

@@ -1,6 +1,5 @@
 ---
-title: Create a Sample iOS App
-description: Create and examine your first Fiori for iOS app using the SAP BTP SDK Assistant for iOS connecting against a sample service.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
@@ -9,19 +8,22 @@ author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
+# Create a Sample iOS App
+<!-- description --> Create and examine your first Fiori for iOS app using the SAP BTP SDK Assistant for iOS connecting against a sample service.
+
 ## Prerequisites  
 - Completed the previous tutorial(s) in this group.
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Have downloaded Version 5.1.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)  
 
-## Details
-### You will learn  
+## You will learn  
   - How to create a Fiori for iOS app
   - What the SAP BTP SDK Assistant for iOS can generate.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Use SAP Mobile Services to create an Mobile Application configuration)]
+### Use SAP Mobile Services to create an Mobile Application configuration
+
 
 Using SAP Mobile Services (Mobile Services) allows you to manage your mobile apps. It also enables you to create mobile application configurations, not the real iOS app, to be later being consumed by the SAP BTP SDK Assistant for iOS (Assistant).
 
@@ -65,10 +67,9 @@ The mobile app configuration is now created.
 
 Your work is done in Mobile Services now. The following steps will describe how to use the Assistant to take that cloud app configuration to generate your first app.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use the SAP BTP SDK Assistant for iOS to create your first Xcode iOS project)]
+### Use the SAP BTP SDK Assistant for iOS to create your first Xcode iOS project
+
 
 On your MacBook, open the Assistant and click **Create New** to start the creation workflow.
 
@@ -127,10 +128,10 @@ Your Xcode project should automatically open up and you can run the app.
 
 ![Assistant](fiori-ios-scpms-create-sample-app-14.png)
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run the App Created by Assistant on an iOS Simulator )]
+
+### Run the App Created by Assistant on an iOS Simulator 
+
 
 In the Xcode Tool Bar, click **Set the active scheme**.
 
@@ -166,5 +167,3 @@ Explore the application created.
 
 You have successfully built an iOS application using the Assistant that seamlessly connects to SAP Mobile Services.
 
-[DONE]
-[ACCORDION-END]

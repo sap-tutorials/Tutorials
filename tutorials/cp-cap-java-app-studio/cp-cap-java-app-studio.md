@@ -1,24 +1,26 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Set Up SAP Business Application Studio for CAP Java
-description: Set up the SAP Business Application Studio and create a first service implementation.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Set Up SAP Business Application Studio for CAP Java
+<!-- description --> Set up the SAP Business Application Studio and create a first service implementation.
+
 ## Prerequisites
  - If you don't have a Cloud Foundry Trial Subaccount on [SAP Business Technology Platform (SAP BTP)](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
  - Basic knowledge of Spring Boot and Java (optional)
 
-## Details
-### You will learn
+## You will learn
   - What is SAP Business Application Studio
   - How to create a project skeleton for a CAP Java project
   - How to expose ports of the application in SAP Business Application Studio to the internet.
 
+## Intro
 First things first, you need to set up your development environment and check that everything is running smoothly.
 
 For this tutorial, we use the SAP Business Application Studio as the development tool of choice. SAP Business Application Studio provides a web-based Visual Studio Code-like experience. So, it's like VS Code, but for your browser.
@@ -32,7 +34,8 @@ For a general overview about CAP, you might also want to have a look at the offi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio and create your Dev Space)]
+### Open SAP Business Application Studio and create your Dev Space
+
 
 Before you can start using SAP Business Application Studio, you need to create your developer space, where your project will run. Depending on the application you want to develop, you can create different types of dev spaces.
 
@@ -44,27 +47,26 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
 
-    !![enter subaccount](enter-subaccount.png)
+    <!-- border -->![enter subaccount](enter-subaccount.png)
 
 3. On the welcome page choose **Create Dev Space**.
 
 4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
-    !![choose space name and type](select-app-type.png)
+    <!-- border -->![choose space name and type](select-app-type.png)
 
     By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
     The creation of the dev space takes a few seconds.
 
 5. When it's ready, open your dev space by clicking on the name.
 
-    !![open dev space](open-dev-space.png)
+    <!-- border -->![open dev space](open-dev-space.png)
 
     > Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) in the SAP Business Application Studio documentation for more details on how your development environment can be affected.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create application skeleton)]
+### Create application skeleton
+
 
 1. Change the color theme to your preferences.
 
@@ -72,11 +74,11 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 2. From the main menu, choose **Terminal** **&rarr;** **New Terminal**.
 
-    !![open new terminal](new-terminal.png)
+    <!-- border -->![open new terminal](new-terminal.png)
 
 3. A terminal window should now have been opened on the bottom of the window. From the terminal, run `cd projects` to go to the projects directory.
 
-    !![change into the projects directory](cd-projects.png)
+    <!-- border -->![change into the projects directory](cd-projects.png)
 
 4. Now, run:
 
@@ -92,22 +94,21 @@ Before you begin, check the settings of your browser. You need to add domains `o
     - The `db` folder stores database-related artifacts.
     - The `srv` folder stores your Java application.
 
-      !![project creation done](project-creation-done.png)
+      <!-- border -->![project creation done](project-creation-done.png)
 
 5. From the main menu, choose **File** **&rarr;** **Open Workspace**.
 
 6. Choose **products-service** and then **Open**.
 
-    !![open workspace](open-workspace.png)
+    <!-- border -->![open workspace](open-workspace.png)
 
     > If you see a notification asking if you want to synchronize the `Java classpath/configuration`, choose **Always**.
 
     > If you have any problem indication for any of the `pom.xml` files yet, don't worry; ignore them for now.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define a service)]
+### Define a service
+
 
 CAP applications use [Core Data Services](https://cap.cloud.sap/docs/cds/) (CDS) to describe:
 
@@ -118,7 +119,7 @@ In this step, you will define a simple service, which also defines its own entit
 
 1. Right-click on the `srv` folder and choose **New File**.
 
-    !![new file](new-file.png)
+    <!-- border -->![new file](new-file.png)
 
 2. Call it `admin-service.cds` and choose **OK** to create the file.
 
@@ -134,10 +135,9 @@ In this step, you will define a simple service, which also defines its own entit
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Compile model definition)]
+### Compile model definition
+
 
 1. From the main menu, open a terminal with **Terminal** **&rarr;** **New Terminal**.
  You should be in the **products-service** project but in order to be sure run `pwd`.
@@ -146,7 +146,7 @@ In this step, you will define a simple service, which also defines its own entit
     pwd
     ```
 
-    !![pwd output](pwd.png)
+    <!-- border -->![pwd output](pwd.png)
 
 2. Run the following command in the terminal to trigger the maven build process:
 
@@ -158,19 +158,18 @@ Running this for the first time in a fresh dev space might take a while, dependi
 
 After running this command, some files are generated and added to the `srv/src/main/resources/edmx` folder. This is the default path, where CAP Java runtime looks for the model definitions.
 
-!![check build output](build-success.png)
+<!-- border -->![check build output](build-success.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the application)]
+### Run the application
+
 
 While creating the project skeleton, the application `Application.java` file was created, which contains a `main` method. The `Application.java` is the startup class for the Spring Boot container.
 
 1. Look at the `Application.java` in the `com.sap.cap.productsservice` package (file path: `srv/src/main/java/com/sap/cap/productsservice`).
 
 
-    !![open Application.java class](application-class.png)
+    <!-- border -->![open Application.java class](application-class.png)
 
     > If you use **CTRL+P** in SAP Business Application Studio, you open a search bar. Start typing `Application.java` to find and open the file.
 
@@ -190,60 +189,56 @@ While creating the project skeleton, the application `Application.java` file was
 
       A notification message saying "A service is listening to port 8080" will appear in the bottom right.
 
-      !![expose and open notification appearing](expose-and-open.png)
+      <!-- border -->![expose and open notification appearing](expose-and-open.png)
 
 4. Choose **Open New Tab**.
 
 5. The application start page will be opened in a new tab.
 
-    !![service startpage](service-startpage.png)
+    <!-- border -->![service startpage](service-startpage.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Manually open the application)]
+### Manually open the application
+
 
 1. Make sure that your application is running. From the main menu, go to **View** **&rarr;** **Find Command** to open the command palette.
 
-    !![find command](find-command.png)
+    <!-- border -->![find command](find-command.png)
 
 2. Type **Port: Preview** and select or enter `8080`. There will be one application visible and you can open new tab for it.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Inspect OData metadata)]
+
+### Inspect OData metadata
+
 
 1. Choose **`$metadata`** from the welcome page to inspect the OData metadata that is automatically served by the CAP Java runtime.
 
-  !![metadata option](metadata-option.png)
+  <!-- border -->![metadata option](metadata-option.png)
 
 > Alternatively add `/odata/v4/AdminService/$metadata` to your app URL. Your URL should be the same either way.
 
 In the next tutorial, you will learn how to add custom logic. Specifically, so that your application can read and create Products.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Troubleshooting)]
+### Troubleshooting
+
 
 Sometimes it happens that your CAP Project can't be started. Does your log output look similar to this one?
 
-!![application failed to start](application-failed-to-start.png)
+<!-- border -->![application failed to start](application-failed-to-start.png)
 
 This means that your application is still running in another terminal. Check if you have multiple terminals opened or use **Ports: Preview** to check if you have another application running on same port.
 
-!![close terminal](close-terminal.png)
+<!-- border -->![close terminal](close-terminal.png)
 
 1. Stop the application in the other terminal by using **`CTRL+C`** or ...
 
 2. Choose the **x** icon next to the terminal to close the terminal window and implicitly stop all inherited processes.
 
-!![icon to close terminal](icon-close-terminal.png)
+<!-- border -->![icon to close terminal](icon-close-terminal.png)
 
 Great Job! You have built your CAP Java application skeleton and are good to serve some data.
 
-[DONE]
-[ACCORDION-END]
 
 ---

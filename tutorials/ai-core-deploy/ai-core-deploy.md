@@ -1,6 +1,5 @@
-kserve---
-title: Make Predictions for House Prices with SAP AI Core
-description: Deploy AI models and set up serving pipelines to scale prediction server.
+---
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-ai-core, topic>machine-learning]
@@ -9,24 +8,28 @@ author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
+# Make Predictions for House Prices with SAP AI Core
+<!-- description --> Deploy AI models and set up serving pipelines to scale prediction server.
+
 ## Prerequisites
  - You have connected code to the AI workflows of SAP AI Core using [this tutorial](ai-core-code).
  - You have trained a model using SAP AI Core, such as the house price predictor model in [this tutorial](ai-core-data), or your own model trained in your local system. If you trained your own local model, follow [this tutorial](ai-core-tensorflow-byod) to use it with SAP AI Core.
  - You know how to locate artifacts. This is explained in [this tutorial](ai-core-data).
 
-## Details
-### You will learn
+## You will learn
   - How to create deployment server an for AI model
   - How to set up scaling options for your deployment server
   - How to swap a deployed AI model with a different new model
 
+## Intro
 You will create a deployment server for AI models to use in online inferencing. It is possible to change the names of components mentioned in this tutorial, without breaking the functionality, unless stated explicitly.
 
 The deployment server demonstrated in this tutorial can only be used in the backend of your AI project. For security reasons, in your real set up you will not be able to directly make prediction calls from your front end application to the deployment server. Doing so will lead to an inevitable Cross-origin Resource Sharing (CORS) error. As a temporary resolution, please deploy another application between your front end application and this deployment server. This middle application should use the SAP AI Core SDK (python package) to make calls to the deployment server.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Write code for serving engine)]
+### Write code for serving engine
+
 
 Create a new directory in your local system named `hello-aicore-server`.
 
@@ -122,10 +125,10 @@ Flask==2.0.1
 gunicorn==20.1.0
 ```
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Bundle and publish code to cloud)]
+
+### Bundle and publish code to cloud
+
 
 Create a file called `Dockerfile` in the folder `hello-aicore-server` with the following contents. The `Dockerfile` contains instructions to package your code files as a single Docker image.
 
@@ -169,11 +172,10 @@ Upload your Docker image to your Docker repository, by adapting the following co
 docker push docker.io/<YOUR_DOCKER_USERNAME>/house-server:01
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a serving executable)]
+### Create a serving executable
+
 
 Create an executable (YAML file) named `house-price-server.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked synced to your application of SAP AI Core.
 
@@ -242,24 +244,24 @@ spec:
 6. You use the placeholder `env` to pass your `inputs` values as environment variables in your Docker image.
 7. You use the model placeholder value (reference to cloud storage) `STORAGE_URI` through the environment variables. The model files stored in your cloud storage (referenced by the value of your input artifacts placeholder) will be copied to the path `/mnt/models` inside your Docker image.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Select a model to deploy using a configuration)]
+
+### Select a model to deploy using a configuration
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
-!![configuration create](img/ail/config1.jpg)
+<!-- border -->![configuration create](img/ail/config1.jpg)
 
 Enter `Hi AI Core Server` in the `greetmessage` field and click **Next**.
 
-!![parameter value](img/ail/config2.jpg)
+<!-- border -->![parameter value](img/ail/config2.jpg)
 
 Locate your model artifact in the **Available Artifacts** pane, by using the unique ID. Click the dropdown menu and click the checkbox of `housepricemodel`. This is the name of the placeholder for the model in your serving executable. As a result, the placeholder will now take the value of the artifact.
 
-!![model](img/ail/config3.jpg)
+<!-- border -->![model](img/ail/config3.jpg)
 
 > Note This is specific to this executable, and allows you pass values to the placeholder of environment variables that you prepared earlier in your workflows.
 
@@ -296,23 +298,22 @@ print(response.__dict__)
 
 >**IMPORTANT** An artifact is a reference to files stored in your cloud storage. A single artifact can refer to a location containing multiple files. For model artifacts, your artifact must not point to a directory which contains a subdirectory. For example, if your artifact points to `s3://my/storage/of/house/modelv2`, `modelv2` must not contain sub-directories.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Start a deployment)]
+### Start a deployment
+
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click **Start Deployment** in the configuration details page. This starts a new deployment with the values specified in the configuration.
 
-!![deploy](img/ail/deploy1.jpg)
+<!-- border -->![deploy](img/ail/deploy1.jpg)
 
 > **WARNING** While your deployment is initializing, it may show the status that the deployment ID is not found.
 
 On the **Logs** tab of your deployment, you will see the serving engine start.
 
-!![deploy log](img/ail/deploy2.jpg)
+<!-- border -->![deploy log](img/ail/deploy2.jpg)
 
 [OPTION END]
 
@@ -332,17 +333,16 @@ print(response.__dict__)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Make a prediction)]
+### Make a prediction
+
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Copy your deployment URL.
 
-!![URL](img/ail/predict-url.jpg)
+<!-- border -->![URL](img/ail/predict-url.jpg)
 
 You must use a REST client to make prediction calls. If you are using the official API collection of SAP AI Core with Postman this may look like the following:
 
@@ -371,7 +371,7 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 }
 ```
 
-!![predict](img/postman/predict1.jpg)
+<!-- border -->![predict](img/postman/predict1.jpg)
 
 > **IMPORTANT** You may need to duplicate an existing endpoint in the collection and modify it. If you get `RBAC: Access Denied` then check the following in the order mentioned.
 >
@@ -398,7 +398,7 @@ print(response.__dict__)
 
 Copy the deployment URL. The deployment URL is generated only when the deployment state is **Running**.
 
-!![image](img/aics/deploy_url.png)
+<!-- border -->![image](img/aics/deploy_url.png)
 
 Paste and edit the snippet below to make a prediction.
 
@@ -429,16 +429,15 @@ response = requests.post(endpoint, headers=headers, json=test_input)
 print('Inference result:', response.json())
 ```
 
-!![prediction](img/aics/predict.png)
+<!-- border -->![prediction](img/aics/predict.png)
 
 [OPTION END]
 
 The prediction value is expressed in hundreds of thousands of dollars ($100,000) for [this specific use case](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Switch the deployed model)]
+### Switch the deployed model
+
 
 Switching between deployed models means that you can update the model used in your deployment server, without affecting the deployment URL.
 
@@ -446,11 +445,11 @@ Switching between deployed models means that you can update the model used in yo
 
 To create a new configuration, click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
-!![configuration create](img/ail/config21.jpg)
+<!-- border -->![configuration create](img/ail/config21.jpg)
 
 Select a different model in the **Input Artifact** step.
 
-!![configuration model](img/ail/config22.jpg)
+<!-- border -->![configuration model](img/ail/config22.jpg)
 
 Click **Review** and **Create**.
 
@@ -458,11 +457,11 @@ To update your existing deployment with this newly created configuration, click 
 
 Click on your deployment row in the table, then click **Update**.
 
-!![deployment update](img/ail/dep_update1.jpg)
+<!-- border -->![deployment update](img/ail/dep_update1.jpg)
 
 Select the configuration named `House Predictor Feb` and click **Update**.
 
-!![deployment update 2](img/ail/dep_update2.jpg)
+<!-- border -->![deployment update 2](img/ail/dep_update2.jpg)
 
 
 [OPTION END]
@@ -504,10 +503,9 @@ print(response.__dict__)
 
 The **Current Status** of your deployment changes to **Unknown** while your new model is copied to the serving engine. After the deployment has been copied successfully, the status changes to **Running** and is ready to make new predictions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Stop a deployment)]
+### Stop a deployment
+
 
 A running deployment incurs cost because it is allocated cloud resources. Stopping the deployment frees up these resources and therefore there is no charge for a deployment of status **Stopped**.
 
@@ -515,7 +513,7 @@ A running deployment incurs cost because it is allocated cloud resources. Stoppi
 
 On the deployment details page, click **Stop**.
 
-!![stop](img/ail/stop.jpg)
+<!-- border -->![stop](img/ail/stop.jpg)
 
 [OPTION END]
 
@@ -539,7 +537,5 @@ print(response.__dict__)
 
 >Note: You cannot restart a deployment. You must create a new deployment, reusing the configuration. Each deployment will have a different URL.
 
-[DONE]
-[ACCORDION-END]
 
 ---

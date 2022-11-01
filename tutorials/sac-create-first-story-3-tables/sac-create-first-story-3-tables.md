@@ -1,27 +1,30 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Visualize your Data with Tables
-description: Learn how to create tables with your data
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Visualize your Data with Tables
+<!-- description --> Learn how to create tables with your data
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to create a table
   - How to use thresholds in tables
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a New Page)]
+### Create a New Page
+
 
 To start, let's create a new responsive page.  
 
@@ -33,10 +36,9 @@ To start, let's create a new responsive page.
 
 ![Page Style Copy](Page Style Copy.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Table)]
+### Create a Table
+
 
 On this new responsive page, we will add a table to display **Customer Satisfaction**, **Number of Issues Reported**, and **Quantity Sold** for each manager in this new page.  
 
@@ -54,11 +56,10 @@ On this new responsive page, we will add a table to display **Customer Satisfact
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/77278faf3b3446b180d7ae9f5b873f94.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use Thresholds in Tables)]
+### Use Thresholds in Tables
+
 
 Thresholds can be added to tables to compare measures to a fixed range or to other measures. In this example, we'll add thresholds to alert the managers if the Number of Issues reported become too high.
 
@@ -98,10 +99,9 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 ![Sort 1](Sort 1 new.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Visualize Correlations with a Scatterplot)]
+### Visualize Correlations with a Scatterplot
+
 
 To visualize a relationship between Quantity Sold and the Number of Issues reported, let's create a scatter plot.
 
@@ -131,12 +131,9 @@ To visualize a relationship between Quantity Sold and the Number of Issues repor
 
 > It is best practice to save regularly. Before moving on, click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

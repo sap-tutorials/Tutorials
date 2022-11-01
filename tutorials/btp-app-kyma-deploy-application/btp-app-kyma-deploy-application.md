@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Deploy Your CAP Application to Kyma
-description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your CAP app to your Kyma cluster, and troubleshoot it, if needed.
 keywords: cap
 auto_validation: true
 time: 20
@@ -10,12 +9,14 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Deploy Your CAP Application to Kyma
+<!-- description --> Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your CAP app to your Kyma cluster, and troubleshoot it, if needed.
+
 ## Prerequisites
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
  - You have created a DB secret as specified in `Step 3: Setup SAP HANA Cloud` in [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup).
 
-## Details
-### You will learn
+## You will learn
  - How to add the Authorization and Trust Management service (XSUAA) to your project
  - How to build docker images for your CAP service and database deployer
  - How to push the docker images to your container registry
@@ -24,7 +25,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Authorization and Trust Management service (XSUAA))]
+### Add Authorization and Trust Management service (XSUAA)
+
 The next step is to add the Authorization and Trust Management service which will allow user login, authorization, and authentication checks. Add the following snippet to the `chart/values.yaml` file:
 
 
@@ -54,10 +56,9 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 
 > See section [Assigning Role Collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in SAP BTP documentation for more details.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Build docker images)]
+### Build docker images
+
 Let's first set the environment variable for the container registry in your terminal. This will set a temporary environment variable for the current terminal session. At the same time, it will be easier to use the environment variable as a shorter alternative of the container registry URL when building and pushing the docker images later in the tutorial. Open a terminal and run the following command:
 
 ```Shell/Bash
@@ -72,10 +73,9 @@ CONTAINER_REGISTRY=<your-container-registry>
 >     cat ~/.docker/config.json
 >     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](CAP build)]
+### CAP build
+
 1. Remove `node_modules ` and `package-lock.json` from your project folder because they can cause errors later when building the CAP service:
 
     ```Shell/Bash
@@ -100,10 +100,9 @@ CONTAINER_REGISTRY=<your-container-registry>
 
     > Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in `Step 6: Exclude CSV files from deployment` of [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Build CAP service)]
+### Build CAP service
+
 1. Run the following command:
 
     ```Shell/Bash
@@ -119,10 +118,9 @@ CONTAINER_REGISTRY=<your-container-registry>
     Successfully built image <Container Registry>/cpapp-srv
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Build database deployer)]
+### Build database deployer
+
 1. Run the following command:
 
     ```Shell/Bash
@@ -137,10 +135,9 @@ CONTAINER_REGISTRY=<your-container-registry>
     Successfully built image <Container Registry>/cpapp-hana-deployer
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Push docker images)]
+### Push docker images
+
 Now that we've build the docker images, let's push them to the container registry.
 
 1. Make sure you're logged in to your container registry:
@@ -156,10 +153,9 @@ Now that we've build the docker images, let's push them to the container registr
     docker push $CONTAINER_REGISTRY/cpapp-hana-deployer
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Deploy)]
+### Deploy
+
 1. Deploy your app:
 
      ```Shell/Bash
@@ -187,13 +183,13 @@ Now that we've build the docker images, let's push them to the container registr
 
 3. Now, you can access the CAP server:
 
-     !![Deployed app](srv-cpapp-riskmanagement.png)
+     <!-- border -->![Deployed app](srv-cpapp-riskmanagement.png)
 
      If the error message `No healthy upstream.` is shown, wait a few seconds and try again.
 
 4. When you choose the **Mitigation** or **Risk** service entity, you will see an error message:
 
-     !![CAP 401 error](cap_mta_403_error.png)
+     <!-- border -->![CAP 401 error](cap_mta_403_error.png)
 
 
      The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Fiori Launchpad. The Launchpad will trigger the authentication flow to provide the required token to access the service.
@@ -211,16 +207,14 @@ Now that we've build the docker images, let's push them to the container registr
      cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
      ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Troubleshooting)]
+### Troubleshooting
+
 The Helm chart starts a deployment with the CAP service and a job that deploys the database content. After successful execution, the job is deleted. In case you encounter an error during the deployment process, follow the instructions in the sections below to troubleshoot.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Check your database deployment)]
+### Check your database deployment
+
 1. Run the following command to check your database deployment:
 
     ```Shell/Bash
@@ -275,10 +269,9 @@ The Helm chart starts a deployment with the CAP service and a job that deploys t
 
 You can use the `logs` and `describe` commands as described above to inspect the pods. You can find further information about debugging pods in the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/).
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Check SAP HANA cloud trusted IP addresses)]
+### Check SAP HANA cloud trusted IP addresses
+
 If you see the error `Connection failed (RTE:[89013] Socket closed by peer`, it's possible that your SAP HANA Cloud instance doesn't allow your Kyma cluster's IP address. You can find more info in [SAP HANA Database Connections](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html).
 
 To specify trusted source IP addresses for your SAP HANA Cloud instance:
@@ -301,11 +294,11 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
 
 9. Choose **Manage Configuration** from the **Actions** menu for your SAP HANA Cloud instance.
 
-    !![Manage HANA instance config](manage_HANA_config.png)
+    <!-- border -->![Manage HANA instance config](manage_HANA_config.png)
 
 9. Change the **Allowed Connections** selection to `Allow specific IP addresses and IP ranges (in addition to BTP)` and add your Kyma cluster's outbound IP address.
 
-    !![Add Kyma cluster IP](add_kyma_ip.png)
+    <!-- border -->![Add Kyma cluster IP](add_kyma_ip.png)
 
 10. Your SAP HANA Cloud instance will automatically restart when you save your changes. Once the instance is running, try to deploy your app again:
 
@@ -313,10 +306,9 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
     helm upgrade cpapp ./chart --install
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Check your CAP service)]
+### Check your CAP service
+
 1. If the deployment was successful, you should see the running CAP service in the list of pods:
 
     ```Shell/Bash
@@ -342,6 +334,5 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
     ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

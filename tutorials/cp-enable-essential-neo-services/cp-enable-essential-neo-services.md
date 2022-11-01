@@ -1,21 +1,23 @@
 ---
-title: Enable Essential Neo Services
-description: Learn how to enable an essential service, like the Portal service, in the SAP Cloud Platform Neo data center that you can use later for additional tutorials.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, tutorial>license ]
 time: 5
 ---
 
+# Enable Essential Neo Services
+<!-- description --> Learn how to enable an essential service, like the Portal service, in the SAP Cloud Platform Neo data center that you can use later for additional tutorials.
+
 ## Prerequisites
  - Learn how to [sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free  SAP Cloud Platform trial.
 
-## Details
-### You will learn
+## You will learn
   - Where to find the services section and the associated categories
   - How to enable a new service for your development environment
 
-[ACCORDION-BEGIN [Step 1: ](Navigate to the services section)]
+### Navigate to the services section
+
 
 In the Neo environment, you enable services in the SAP Cloud Platform cockpit.  From the [SAP Cloud Platform Trial welcome page](https://account.hanatrial.ondemand.com/#/home/welcome) homepage select the Neo tile.
 
@@ -42,10 +44,9 @@ The term ***essential*** may mean different things to different developers, but 
 - Integration `OData` Provisioning
 - Mobile - Development & Operations, `std`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable a service)]
+### Enable a service
+
 
 Now let's enable one of the services listed above.
 
@@ -65,5 +66,4 @@ Now after a few moments, you should see the **Enabled** button has changed to gr
 
 ![enable service button green](enable-service-button-green.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+

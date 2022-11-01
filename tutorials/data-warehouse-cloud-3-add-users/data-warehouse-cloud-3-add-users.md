@@ -1,19 +1,20 @@
 ---
-title: Add Users and Assign Roles in SAP Data Warehouse Cloud
-description: Add new users and assign roles to them in SAP Data Warehouse Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Add Users and Assign Roles in SAP Data Warehouse Cloud
+<!-- description --> Add new users and assign roles to them in SAP Data Warehouse Cloud.
+
 ## Prerequisites
  - You have [signed up for the SAP Data Warehouse Cloud trial.](data-warehouse-cloud-1-begin-trial)
  - You have [familiarised yourself with the SAP Data Warehouse Cloud interface.](data-warehouse-cloud-2-interface)
 
 
-## Details
-### You will learn
+## You will learn
   - How to add users into your SAP Data Warehouse Cloud tenant
   - How to assign roles to users
   - How to edit users in bulk
@@ -24,7 +25,8 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Go to the security page)]
+### Go to the security page
+
 
 1.	To add users, first click on the security icon on the bottom left, and click on **Users**.
 
@@ -34,10 +36,9 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ![UsersPage](T03-Picture2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add users)]
+### Add users
+
 
 To start adding users, follow these steps:
 
@@ -51,10 +52,9 @@ To start adding users, follow these steps:
 
 ![Add Users](T03-Picture3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Assign roles)]
+### Assign roles
+
 
 The next step is to assign roles to your users. The following standard roles are available in SAP Data Warehouse Cloud.
 
@@ -87,10 +87,9 @@ Once you're done, don't forget to click on the save icon on the top right of you
 > You can only assign one system owner in your SAP Data Warehouse Cloud tenant.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit users in bulk)]
+### Edit users in bulk
+
 
 If you wish to add multiple users at once, you have the option to import from a CSV. Simply click on the **Import Users** icon on the top right and upload your CSV file. It is also possible to export multiple users into a CSV file by clicking on the Export Users icon.
 
@@ -100,12 +99,10 @@ If you wish to add multiple users at once, you have the option to import from a 
 
 > You have completed this tutorial and now know how to add users and assign them roles in SAP Data Warehouse Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

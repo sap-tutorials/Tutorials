@@ -1,6 +1,5 @@
 ---
-title: Test SAP API Business Hub APIs with curl
-description: Try out an SAP API locally on your machine.
+parser: v2
 primary_tag: products>sap-business-technology-platform
 auto_validation: true
 author_name: Prathibha GC
@@ -9,15 +8,18 @@ time: 20
 tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub ]
 ---
 
+# Test SAP API Business Hub APIs with curl
+<!-- description --> Try out an SAP API locally on your machine.
+
 ## Prerequisites
  - Make sure you have the command line tools curl and jq installed.
  - Windows instructions: [curl](https://chocolatey.org/packages/Curl) and [jq](https://chocolatey.org/packages/jq)
  - MacOS/Unix instructions: [jq](https://stedolan.github.io/jq/download/) (curl should already be available)
 
-## Details
-### You will learn
+## You will learn
 - How to use command line tools like curl and jq with REST / OData APIs locally.
 
+## Intro
 You have already discovered the SAP API Business Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
 
 ---

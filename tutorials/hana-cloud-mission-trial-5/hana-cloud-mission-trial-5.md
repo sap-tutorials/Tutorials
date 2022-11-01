@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Import Data into SAP HANA Cloud, SAP HANA Database
-description: Learn in this tutorial how to use the SAP HANA Database Explorer to import the sample data needed for this mission from a tar.gz file.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Import Data into SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn in this tutorial how to use the SAP HANA Database Explorer to import the sample data needed for this mission from a tar.gz file.
 
 ## Prerequisites
 - [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the [SAP HANA Cloud trial](hana-cloud-mission-trial-1).
@@ -15,10 +17,10 @@ primary_tag: products>sap-hana-cloud
 - If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
 
 
-## Details
-### You will learn
+## You will learn
 - How to import catalog objects from your local machine to your database using the SAP HANA Database Explorer
 
+## Intro
 >
 > ![Alex Banner](banner-alex.png)
 >
@@ -60,7 +62,8 @@ In this tutorial, you will learn how to import data to your SAP HANA database in
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the sample data set)]
+### Download the sample data set
+
 
 SAP provides a free data model focused on flight data for anyone to use. We're going to import this sample data and use it to help you complete the mission for Best Run Travel.
 
@@ -70,69 +73,66 @@ Note the location of the file.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the SAP HANA Database Explorer)]
+### Open the SAP HANA Database Explorer
+
 
 1.	Open SAP BTP cockpit or SAP HANA Cloud Central.
 
 2.	Click on your instance and select the option to **Open the SAP HANA Database Explorer**.
 
-    !![Open the SAP HANA Database Explorer](ss-01-open-SAP-HANA-database-explorer.png)
+    <!-- border -->![Open the SAP HANA Database Explorer](ss-01-open-SAP-HANA-database-explorer.png)
 
 3.	The SAP HANA Database Explorer will open in a new tab.
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import the data to your catalog)]
+### Import the data to your catalog
+
 
 1.	In the pane on the left, expand your database and right-click on **Catalog**.
 
 2.	Click on **Import Catalog Objects**.
 
-    !![DBX - import catalog objects](ss-02-dbx-import-catalog-objects.png)
+    <!-- border -->![DBX - import catalog objects](ss-02-dbx-import-catalog-objects.png)
 
 3.	Where it says **Local archive**, click on **Browse** and select the `SFLIGHT` file you previously downloaded to your local machine.
 
-    !![Browse](ss-03-browse.png)
+    <!-- border -->![Browse](ss-03-browse.png)
 
 4.	Wait until the archive is uploaded completely. You can see the status of the upload next to the **Browse** button.
 
-    !![DBX uploading archive](ss-04-dbx-uploading-archive.png)
+    <!-- border -->![DBX uploading archive](ss-04-dbx-uploading-archive.png)
 
 5.	Once the upload is completed, you will see a list of **Catalog Objects**. All of the objects will be automatically selected for import.
 
-    !![DBX catalog objects](ss-05-dbx-catalog-objects.png)
+    <!-- border -->![DBX catalog objects](ss-05-dbx-catalog-objects.png)
 
 6.	Keep all options as they are and then click on **Import**.
 
 7.	Once the import is completed, you will see a confirmation notification on the top right-hand side of the screen.
 
-    !![DBX import completed successfully](ss-06-dbx-import-completed-successfully.png)
+    <!-- border -->![DBX import completed successfully](ss-06-dbx-import-completed-successfully.png)
 
 > - Note that you can also import individual `.csv` files in a similar manner. Simply right click on Tables in your catalog and select **Import Data**.
 >
->     !![Import CSV1](ss-07-import-CSV1.png)
+>     <!-- border -->![Import CSV1](ss-07-import-CSV1.png)
 
 > - A wizard will guide you through the steps. You can select to add the data to an existing or new table and which schema the import should happen in.
 >
->     !![Import CSV2.png](ss-08-import-CSV2.png)
+>     <!-- border -->![Import CSV2.png](ss-08-import-CSV2.png)
 
 > - You will then be asked to specify the column mappings as well as how errors should be handled.
 >
->     !![Import CSV3.png](ss-09-import-CSV3.png)
+>     <!-- border -->![Import CSV3.png](ss-09-import-CSV3.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Preview the data)]
+### Preview the data
+
 
 Once the data is imported, you can take a look at it.
 
@@ -140,23 +140,23 @@ Click on **Tables** to view all your newly imported tables. Please note that you
 
 To make sure you can see your new tables, click on the **Choose Schema** button next to the schema name on the bottom left-hand side panel.
 
-!![view tables - change schema](ss-10-view-tables-change-schema.png)
+<!-- border -->![view tables - change schema](ss-10-view-tables-change-schema.png)
 
 Then select the schema `SFLIGHT`. You can uncheck the default `DBADMIN` schema to see only the `SFLIGHT` tables you just imported.
 
-!![Select Schema](ss-11-select-schema.png)
+<!-- border -->![Select Schema](ss-11-select-schema.png)
 
 Click **OK** and the list of available tables will be displayed on the same side panel.
 
-!![View Tables](ss-12-view-tables.png)
+<!-- border -->![View Tables](ss-12-view-tables.png)
 
 If you want to see the data inside any of your tables, you can right click on any of them and then click on **Open Data**.
 
-!![Open Data](ss-13-open-data.png)
+<!-- border -->![Open Data](ss-13-open-data.png)
 
 This will open the table on the main panel.
 
-!![Data Preview resized](ss-14-data-preview.png)
+<!-- border -->![Data Preview resized](ss-14-data-preview.png)
 
 Feel free to browse the dataset now to get an overview of the data available.
 
@@ -168,14 +168,12 @@ Learn in the next tutorial how to query the data.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

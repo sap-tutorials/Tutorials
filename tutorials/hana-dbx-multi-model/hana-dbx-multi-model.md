@@ -1,21 +1,23 @@
 ---
-title: Try Out Multi-Model Functionality with the SAP HANA Database Explorer
-description: Explore graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Try Out Multi-Model Functionality with the SAP HANA Database Explorer
+<!-- description --> Explore graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
+
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 - You have completed the first 3 tutorials in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to create a graph, a document store, and import spatial data.
   - How the SAP HANA database explorer can be used with multi-model data.
 
+## Intro
 A graph can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
 
 SAP HANA provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.
@@ -24,7 +26,8 @@ This tutorial is meant to be an introduction to this topic.  For a deeper dive o
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a graph workspace)]
+### Create a graph workspace
+
 
 The following steps will create a graph workspace that can display the distance between hotels in a state.
 
@@ -103,10 +106,9 @@ In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertice
 
 For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Reference](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore a graph using the graph viewer)]
+### Explore a graph using the graph viewer
+
 
 1. Open the graph viewer.
 
@@ -145,11 +147,10 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  Note that the company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not at this time support the display of homogeneous graphs.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use graph algorithms in the SAP HANA database explorer)]
+### Use graph algorithms in the SAP HANA database explorer
+
 The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
 The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
@@ -187,10 +188,9 @@ The following steps will walk through using the shortest path algorithm to deter
     ![Graph Algorithms](graph-algorithms.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create, populate, and query a JSON collection (optional))]
+### Create, populate, and query a JSON collection (optional)
+
 
 SAP HANA provides the ability to store and query JSON data.  This can be useful if the schema of the data is often changed or if you wish to join data in SQL queries that comes from both SQL tables and JSON data.
 
@@ -247,11 +247,10 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![Collection properties](collection-properties.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Import and view spatial data)]
+### Import and view spatial data
+
 
 This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the hotel.
 
@@ -283,7 +282,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
-    !![Choose schema and reference system](importESRI2.png)
+    <!-- border -->![Choose schema and reference system](importESRI2.png)
 
     >By default, the database server adds the following [spatial reference systems](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloudC/en-US/d23499bcd2951014ad38a3bd89faf03e.html) System View can be queried for available spatial reference systems.
 
@@ -367,10 +366,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Additional details can be found at [JSON_VALUE Function](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9355cb9e45a149c1a6ddb2bd2392d864.html) and [ST_GeomFromGeoJSON](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/40771e89ed1641e88674b45adb2ef6a1.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Use spatial functions in a query)]
+### Use spatial functions in a query
+
 
 1. The following statement shows the list of points of interest within 3 kilometers of the `Bella Cliente` hotel.
 
@@ -420,8 +418,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
 Congratulations! You have explored a few of the multi-model features in SAP HANA and are now familiar with graph workspaces, JSON collections, and spatial data when using the SAP HANA database explorer.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

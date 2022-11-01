@@ -1,6 +1,5 @@
 ---
-title: Create a Backup
-description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a backup for your database using HANA cockpit, HANA studio, or SQL.
+parser: v2
 auto_validation: true
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
@@ -10,6 +9,9 @@ time: 15
 ---
 
 
+# Create a Backup
+<!-- description --> Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a backup for your database using HANA cockpit, HANA studio, or SQL.
+
 ## Prerequisites
  - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
@@ -17,8 +19,7 @@ time: 15
 ## Next Steps
  - [Install and Configure ODBC](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html)
 
-## Details
-### You will learn
+## You will learn
   - How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line
 
 

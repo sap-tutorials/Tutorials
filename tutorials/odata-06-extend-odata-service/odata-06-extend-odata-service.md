@@ -1,20 +1,22 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
-title: Extend your Simple Data Model with a Second Entity
-description: Explore entity relationships and navigation properties by extending your simple OData service with further Core Data Services (CDS) definitions.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Details
-### You will learn
+# Extend your Simple Data Model with a Second Entity
+<!-- description --> Explore entity relationships and navigation properties by extending your simple OData service with further Core Data Services (CDS) definitions.
+
+## You will learn
 - How OData metadata navigation properties work
 - How to define relationships between entities in CDS
 - What those relationships look like in an OData context
 
+## Intro
 This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](odata-05-data-model-service). If you've done, you'll have a brand new OData service `Northbreeze` of your own to use. However, it's still rather simple, with just a single entity.
 
 In this tutorial, you'll first study the relationship between products and categories in the Northwind OData V4 service. Then, in your own service, you'll add a second entity at the `db/` layer and define a relation between it and the first entity. You'll then expose this second entity at the `srv/` layer and examine what this looks like from an OData metadata and operations perspective. Finally, you'll build a relationship between those two entities, add some data, and check that everything works as intended.

@@ -1,17 +1,18 @@
 ---
-title: SAP HANA 2.0, express edition Troubleshooting
-description: Troubleshoot common installation issues.
+parser: v2
 primary_tag: products>sap-hana\, express-edition
 tags: [  tutorial>beginner, tutorial>how-to, products>sap-hana\,-express-edition  ]
 ---
+# SAP HANA 2.0, express edition Troubleshooting
+<!-- description --> Troubleshoot common installation issues.
+
 ## Prerequisites  
 - **Setup:** You are following the instructions to install SAP HANA 2.0, express edition in the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://developers.sap.com/tutorials/hxe-ua-installing-binary.html) tutorial or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) tutorial.
 
 
 ## How-To Details
 Perform these steps to resolve issues when installing SAP HANA 2.0, express edition.
-
-### Time to Complete
+## Time to Complete
 **20 Min**.
 
 ---

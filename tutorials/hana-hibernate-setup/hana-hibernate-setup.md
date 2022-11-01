@@ -1,19 +1,19 @@
 ---
-title: Setup Hibernate for SAP HANA in your Eclipse project
-description: This tutorial shows the basic setup steps required for getting started with Hibernate on SAP HANA.
+parser: v2
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Setup Hibernate for SAP HANA in your Eclipse project
+<!-- description --> This tutorial shows the basic setup steps required for getting started with Hibernate on SAP HANA.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial you will learn how to use the Eclipse IDE to set up a Maven project that can be used to start developing applications using Hibernate and SAP HANA.
-
-### Time to Complete
+## Time to Complete
 **20 Min**
 
 [ACCORDION-BEGIN [Prerequisites: ](Software)]
@@ -26,10 +26,9 @@ You will also need an instance of **SAP HANA 2.0, express edition** (SPS02 revis
 
 To get your instance up and running, you can check the available options and get started on the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) product page.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Maven project In Eclipse)]
+### Create a new Maven project In Eclipse
+
 
 Open the ***Eclipse IDE***.
 
@@ -61,10 +60,9 @@ Your project is now created.
 
 ![Maven project](maven-project.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set the minimum Java version)]
+### Set the minimum Java version
+
 By default, the Eclipse Maven plugin will configure the project to use Java 1.5. Since this Java version is very old and lacks many features, we will set the Java version to Java 8.
 
 Open the **`pom.xml`** file and switch to the **Overview** tab.
@@ -96,10 +94,9 @@ The following dialog shows what will be updated. You don't need to change anythi
 
 Click on **OK**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Hibernate as a Maven dependency)]
+### Add Hibernate as a Maven dependency
+
 
 Open the **`pom.xml`** file and switch to the **Dependencies** tab.
 
@@ -121,10 +118,9 @@ Save the `pom.xml` file.
 
 The project should rebuild automatically.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Maven dependencies for Java 9 and higher)]
+### Add Maven dependencies for Java 9 and higher
+
 If you are using Java 9 or higher, you'll have to add the JAXB jars as explicit dependencies. Add the following dependencies just like the Hibernate dependency in the previous step:
 
 **JAXB API**
@@ -151,20 +147,18 @@ If you are using Java 9 or higher, you'll have to add the JAXB jars as explicit 
 - Artifact Id: `activation`
 - Version: `1.1.1`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add the HANA JDBC driver as a Maven dependency)]
+### Add the HANA JDBC driver as a Maven dependency
+
 The HANA JDBC driver can be added as another Maven dependency. Repeat the steps to add a Maven dependency with the following data:
 
 - Group Id: `com.sap.cloud.db.jdbc`
 - Artifact Id: `ngdbc`
 - Version: `2.3.48`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a persistence configuration)]
+### Create a persistence configuration
+
 
 Create a file named **`persistence.xml`** in **`tutorial/src/main/resources/META_INF`** using the ***File -> New -> File*** menu bar.
 
@@ -207,10 +201,9 @@ Don't forget to update the following property values to match your target SAP HA
 
 Save the `persistence.xml` file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test your setup)]
+### Test your setup
+
 
 Create a new **`TestSetup`** Java class in a package named **`com.sap.hana.hibernate.tutorial.setup`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
@@ -263,5 +256,4 @@ SUCCESS!
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

@@ -1,21 +1,23 @@
 ---
-title: Get Ready for Your SAP Data Warehouse Cloud Trial Mission
-description: Set up for the SAP Data Warehouse Cloud mission by signing up for a free SAP Data Warehouse Cloud trial.
+parser: v2
 auto_validation: true
 time: 7
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
-## Details
-### You will learn
+# Get Ready for Your SAP Data Warehouse Cloud Trial Mission
+<!-- description --> Set up for the SAP Data Warehouse Cloud mission by signing up for a free SAP Data Warehouse Cloud trial.
+
+## You will learn
   - How to sign up for trial
   - The goals of this mission
   - Where to find and how to use the toolkit for this mission
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Sign up for free trial)]
+### Sign up for free trial
+
 
 To sign up for a free trial of SAP Data Warehouse Cloud, go to this [link](https://www.sap.com/products/data-warehouse-cloud/trial.html), and click on **Start your free trial**.
 
@@ -25,20 +27,18 @@ To learn more about how the trial works, please visit the [FAQ section](https://
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get to know mission objective)]
+### Get to know mission objective
+
 
 In this mission, you'll see a business scenario to give you context as you explore SAP Data Warehouse Cloud. The example and dataset you'll use will be around a fictitious global bike supplier called Best Run Bikes. This company is looking to use sales data they have available to maximise their sales.
 
 Your mission today is to help Best Run Bikes to get a holistic view of their sales data by using the power of SAP Data Warehouse Cloud. You will get the sales data of Best Run Bikes and it is your mission to use the features of SAP Data Warehouse Cloud to help the bike suppliers make the best possible business decisions.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Download mission toolkit)]
+### Download mission toolkit
+
 
 The toolkit contains sample data you can import into your trial SAP Data Warehouse Cloud account. The toolkit consists of 4 sales data CSV tables related to Best Run Bikes. These are:
 
@@ -52,7 +52,6 @@ The toolkit contains sample data you can import into your trial SAP Data Warehou
 
 Download these files and save them in a folder on your local system. After that, you will be ready to get hands-on!
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

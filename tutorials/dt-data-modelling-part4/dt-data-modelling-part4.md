@@ -1,24 +1,25 @@
 ---
-title: Creating a Calculation View from the Union of In-Memory and Extended Tables
-description: How to use unions to create a calculation view
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
+# Creating a Calculation View from the Union of In-Memory and Extended Tables
+<!-- description --> How to use unions to create a calculation view
+
 ## Prerequisites
  - **Tutorials:** 'Information View Conversion' and 'Create Tables and Import Data'
 
-## Details
-### You will learn
+## You will learn
   - How to create a union between both in-memory and extended Tables
   - How to create a Calculation View
-
-### Time to Complete
+## Time to Complete
  **15 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Creating a Calculation View from the Union of In-Memory and Extended Tables)]
+### Creating a Calculation View from the Union of In-Memory and Extended Tables
+
 
 
  We will be creating a calculation view called `CA_UNION`, which will be a union between `ORDERS_CS` and `ORDERS_DT`. If these tables have not been set up, follow the instructions in the Prerequisites.
@@ -93,15 +94,11 @@ The aggregation defines how `O_TOTALPRICE` will be joined. Since there shouldn't
 
 We have now completed our calculation view, which created a union between both in-memory and extended tables.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Activate View)]
+### Activate View
+
 Navigate to `tutorial_All_Calc` in **Systems**. Under `tutorial_All_Calc` > Calculation Views, right click `CA_UNION` and click **Activate**.
 
 ![Activate Views](activate-views.png)
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,12 +1,14 @@
 ---
-title: Access SAP Work Zone from the SAP BTP Training Subaccount
-description: Access the SAP Work Zone training SAP BTP subaccount.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-work-zone]
 primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
 ---
+
+# Access SAP Work Zone from the SAP BTP Training Subaccount
+<!-- description --> Access the SAP Work Zone training SAP BTP subaccount.
 
 ## Prerequisites
 To follow the trainings, the instructor will give you the following:
@@ -15,11 +17,11 @@ To follow the trainings, the instructor will give you the following:
  - A user for the Identity Authorization service (IAS) used in this training. IAS is the authentication service that is used to access the training environment for SAP Work Zone and SAP Business Application Studio.
 
 
-## Details
-### You will learn
+## You will learn
   How to access SAP Work Zone
 
 
+## Intro
 In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutorial environment from a SAP BTP subaccount that has already been set up for you including a subscription to SAP Work Zone. Once you've accessed SAP Work Zone, in the next tutorial, you'll create a workspace and add content to it.
 
 >Please note that due to the high number of participants that register for SAP Work Zone workshops, we have provided a single subaccount for multiple users. Therefore, you will be using a shared subaccount with others. In order to allow the exercises to run smoothly for all, please don't edit the SAP Work Zone Home page as it's a shared asset.
@@ -28,7 +30,8 @@ In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutoria
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access SAP Work Zone)]
+### Access SAP Work Zone
+
 
 1. Open your browser and navigate to the subaccount in SAP BTP that you received from the instructor.
 
@@ -46,5 +49,4 @@ SAP Work Zone opens displaying the Home Page that has already been configured fo
 
 In the next tutorial, you'll create a workspace and add apps and other content to it.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

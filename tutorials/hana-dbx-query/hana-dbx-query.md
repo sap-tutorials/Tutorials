@@ -1,24 +1,26 @@
 ---
-title: Query with the SQL Console in SAP HANA Database Explorer
-description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Query with the SQL Console in SAP HANA Database Explorer
+<!-- description --> Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
+
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
  - You have completed the first 3 tutorials in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to run SQL queries using the SQL console and add filters to the results
   - How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Execute SQL)]
+### Execute SQL
+
 
 1. Select a connection and open the SQL console.
 
@@ -107,10 +109,9 @@ primary_tag: software-product>sap-hana-cloud
 
     To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Shortcuts)]
+### Shortcuts
+
 
 1. Keyboard shortcuts are available to provide alternate methods of completing frequently performed tasks. Right-click in the SQL console and choose **Keyboard Shortcuts**.
 
@@ -152,11 +153,10 @@ primary_tag: software-product>sap-hana-cloud
 
     ![run selected](runSelected.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Autocomplete)]
+### Autocomplete
+
 
 1. Once a statement is started, press `Ctrl+Space` to see a list of possible statements based on what you have typed.  
 
@@ -176,10 +176,9 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Code Completion Table](CodeCompletionTable.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Statement help panel)]
+### Statement help panel
+
 
 1. On the right-hand side of the SQL console, there is a statement help panel that provides more information about statement syntax, and any tables, functions, stored procedures, or SQL functions that have been referenced.
 
@@ -239,10 +238,9 @@ primary_tag: software-product>sap-hana-cloud
     >Left-click the name of the SQL function in the SQL Functions section to open the SAP help showing detailed information on the function.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](SQL console preferences)]
+### SQL console preferences
+
 
 1. Select **SQL Console** or **SQL Code Completion** from the Global Preferences to see the configurable preference settings for the SQL console.
 
@@ -272,10 +270,9 @@ primary_tag: software-product>sap-hana-cloud
 
   For additional details, consult [SQL Console Preferences](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/2f39e4fdd67545cf805b557357c5a7b3.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Statement library)]
+### Statement library
+
 
 The statement library contains a mix of pre-populated system statements and user-saved statements.
 
@@ -328,8 +325,7 @@ The statement library contains a mix of pre-populated system statements and user
 
 Congratulations! You have now explored selected features of the SQL console.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

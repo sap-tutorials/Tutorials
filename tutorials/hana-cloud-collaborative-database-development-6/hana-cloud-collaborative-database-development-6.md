@@ -1,22 +1,24 @@
 ---
-title: Enhance Your Project with Services, Synonyms and Grants
-description: Create a user-provided service, grant privileges to the service and create a synonym to allows users of the template project to access data.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Enhance Your Project with Services, Synonyms and Grants
+<!-- description --> Create a user-provided service, grant privileges to the service and create a synonym to allows users of the template project to access data.
+
 ## Prerequisites
 - Complete the [previous tutorial](hana-cloud-collaborative-database-development-5) of this tutorial group.
 
-## Details
-### You will learn
+## You will learn
 - How to create a user-provided service in SAP Business Application Studio
 - How to grant privileges using a user-provided service
 - How to create a synonym
 
 
+## Intro
 **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
 > To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
@@ -37,7 +39,8 @@ This tutorial will show you how to enhance your project with services, synonyms,
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a User-Provided Service in SAP Business Application Studio)]
+### Create a User-Provided Service in SAP Business Application Studio
+
 
 
 The user-provided service will be responsible for granting privileges to the project in the future.
@@ -50,13 +53,13 @@ The user-provided service will be responsible for granting privileges to the pro
 
 4.	Next, click on the **plus icon** for adding database connections.
 
-    !![Add database connection](ss-01-add-database-connection.png)
+    <!-- border -->![Add database connection](ss-01-add-database-connection.png)
 
 5.	The **Add Database Connections** window will open.
 
 6.	In the field **Select connection type**, select **Create a user-provided service instance** from the drop-down menu.
 
-    !![Create UPS instance](ss-02-create-UPS-instance.png)
+    <!-- border -->![Create UPS instance](ss-02-create-UPS-instance.png)
 
 7.	Enter the name of the service instance as `UPS_GENERIC`.
 
@@ -68,12 +71,11 @@ The user-provided service will be responsible for granting privileges to the pro
 
 11.	Click on **Add** to complete the creation of the user-provided service instance. You will see this addition in the SAP HANA PROJECTS panel.
 
-    !![UPS instance view](ss-03-UPS-instance-view.png)
+    <!-- border -->![UPS instance view](ss-03-UPS-instance-view.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Grant privileges using user-provided service)]
+### Grant privileges using user-provided service
+
 
 
 1.	Select the `src` folder from the explorer. Press the **F1** key or click on **View – Find Command** at the top of the screen to open a prompt. Enter HANA in the field and from the dropdown list of functionalities, choose **SAP HANA: Create SAP HANA Database Artifact**.
@@ -117,15 +119,14 @@ The user-provided service will be responsible for granting privileges to the pro
 
 8.	Click on the deploy icon for the file. You can do this either from the SAP HANA Projects panel or from the deploy icon on the top right corner of the file window.
 
-    !![Grants file deploy](ss-04-grants-file-deploy.png)
+    <!-- border -->![Grants file deploy](ss-04-grants-file-deploy.png)
 
 After successful deployment of the `generic.hdbgrants` file, object owner users and application users will be authorized to report on the data in the container.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a synonym)]
+### Create a synonym
+
 
 Next, you will create a synonym that allows users of the template project to access the inventory table even if they do not have it present in their own HDI container.
 
@@ -137,7 +138,7 @@ Next, you will create a synonym that allows users of the template project to acc
 
 4.	Click on **Click to Add** to add a new synonym.
 
-    !![Click to Add synonym](ss-05-click-to-add-synonym.png)
+    <!-- border -->![Click to Add synonym](ss-05-click-to-add-synonym.png)
 
 5.	Click on the new synonym created under the column Synonym Name and rename it as `SInventory`.
 
@@ -145,11 +146,11 @@ Next, you will create a synonym that allows users of the template project to acc
 
 7.	A new dialog **Find Data Sources** will open. Make sure to select `UPS_GENERIC` in the services filter.
 
-    !![Add services](ss-06-add-services.png)
+    <!-- border -->![Add services](ss-06-add-services.png)
 
 8.	Type `**` in the search bar to view the list of all objects available. Double-click on the object `INVENTORY` contained in the schema used in the first session of this workshop series.
 
-    !![Add object Inventory](ss-07-add-object-inventory.png)
+    <!-- border -->![Add object Inventory](ss-07-add-object-inventory.png)
 
 9.	Select the synonym `SInventory`.
 
@@ -157,12 +158,11 @@ Next, you will create a synonym that allows users of the template project to acc
 
 10.	Click on the **deploy icon** to deploy this synonym.
 
-    !![Deploy the synonym](ss-08-deploy-synonym.png)
+    <!-- border -->![Deploy the synonym](ss-08-deploy-synonym.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Verify the data present in the synonym)]
+### Verify the data present in the synonym
+
 
 
 1.	You can check if your synonym was successfully deployed to your database by opening your HDI container icon from the SAP HANA Projects panel.
@@ -181,14 +181,12 @@ And with that, your template project is already done and ready for collaborators
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

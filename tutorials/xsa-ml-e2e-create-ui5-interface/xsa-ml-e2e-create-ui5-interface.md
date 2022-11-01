@@ -1,23 +1,25 @@
 ---
-title: Create a SAPUI5 interface
-description: Create a SAPUI5 interface enhancing a Fiori Master-detail template
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, topic>odata, topic>sapui5, products>sap-hana ]
 time: 15
 ---
 
+# Create a SAPUI5 interface
+<!-- description --> Create a SAPUI5 interface enhancing a Fiori Master-detail template
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 
-## Details
-### You will learn  
+## You will learn  
   - How to create a user interface with a Fiori Master-Detail template
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a UI5 module)]
+### Create a UI5 module
+
 
 Create a new module using the `Fiori Master-Detail Module`
 
@@ -31,11 +33,9 @@ The wizard will present with options to bind the web interface to a data provide
 
 ![Name Fiori Module](3.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Map the OData fields with the user interface
 
-[ACCORDION-BEGIN [Step 2: ](Map the OData fields with the user interface)]
 
 You will first provide general information about the application:
 
@@ -49,12 +49,10 @@ Keep scrolling down and complete the binding for the items:
 
 ![Name Fiori Module](6_1.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Check dependencies)]
+### Check dependencies
+
 
 The web module depends on the Node.js module to fill the interface with data. This time, Web IDE has added the dependencies automatically in the `mta.yaml` file:
 
@@ -66,11 +64,10 @@ Locate the dependency in the **Code Editor**.
 
 Paste the entire web module definition, including its requirements and no resources. Then click on **Validate**
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Modify the dependencies)]
+### Modify the dependencies
+
 
 Open the `package.json` file in the web module.
 
@@ -82,11 +79,9 @@ And change the version of the  `@sap/approuter` module to `2.9.1` to match the v
 
 **Save** and **close** the file.
 
-[DONE]
 
-[ACCORDION-END]
+### Run the module
 
-[ACCORDION-BEGIN [Step 5: ](Run the module)]
 
 **Build** the entire project.
 
@@ -105,9 +100,7 @@ A new browser tab will open.
 
 Click on any Purchase Order and check the URL to respond to the question below.
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Sync to GitHub and check next steps)]
 
@@ -126,5 +119,3 @@ The application you have created can be enhanced to add more functionalities or 
 Visit **`developers.sap.com`** to check the tutorials on XS Advanced and to get your own instance of SAP HANA, express edition.
 
 
-[DONE]
-[ACCORDION-END]

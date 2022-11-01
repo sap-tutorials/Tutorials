@@ -1,28 +1,31 @@
 ---
-title: Use Redis in the Kyma Runtime to Store and Retrieve Data
-description: Deploy Redis and configure two serverless functions to cache and retrieve data from the Redis instance within the Kyma runtime.
+parser: v2
 time: 30
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
+# Use Redis in the Kyma Runtime to Store and Retrieve Data
+<!-- description --> Deploy Redis and configure two serverless functions to cache and retrieve data from the Redis instance within the Kyma runtime.
+
 ## Prerequisites
   - [Provision Kyma](cp-kyma-getting-started)
   - [Setup Mock Application](cp-kyma-mocks)
 
-## Details
-### You will learn
+## You will learn
   - How to deploy a microservice using the Kyma Console
   - How to deploy functions using the Kyma Console
   - How to create API Rules
   - How APIs and Events are used.
 
+## Intro
 This sample provides a Redis deployment and two serverless functions that interact with it. The function `cache-order` will be set to subscribe to an `order.created` event provided by the Commerce mock application. Once triggered, the function will perform an API call to the Commerce mock to obtain additional details regarding the order and then cache the information into Redis. The function `get-order`, exposed as an API, is used to then retrieve the order details from the Redis cache.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. Go to the [kyma-runtime-extension-samples](https://github.com/SAP-samples/kyma-runtime-extension-samples) repository. This repository contains a collection of Kyma sample applications which will be used during the tutorial.
 
@@ -34,10 +37,9 @@ This sample provides a Redis deployment and two serverless functions that intera
 git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy functions)]
+### Deploy functions
+
 
 In this step, you will deploy two functions into the Kyma runtime that were obtained in [Step 1](Clone the Git repository). These resources include:
 
@@ -52,19 +54,17 @@ In this step, you will deploy two functions into the Kyma runtime that were obta
 
 3. Repeat the steps to create the function `get-order` using the file **`redis-function/k8s/get-order-function.yaml`** .
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Expose a function)]
+### Expose a function
+
 
 1. To expose the `get-order` function as an API, choose the menu option **Discovery and Network > API Rules**. Choose **Create API Rule** and provide the value `get-order` for the **Name**, **Service** and **Subdomain**. Choose **Create**.
 
     ![Deploy Resources](./assets/get-order-apirule.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Deploy Redis)]
+### Deploy Redis
+
 
 In this step, you will deploy Redis into the Kyma runtime that were obtained in [Step 1](Clone the Git repository). These resources include:
 
@@ -83,10 +83,9 @@ In this step, you will deploy Redis into the Kyma runtime that were obtained in 
 
       ![Deployment Status](./assets/deployment-status.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add event subscription to function)]
+### Add event subscription to function
+
 
 In this step, you will configure the function `cache-order`, deployed in the previous step, to run when the **order.created** event is fired from the Commerce Mock application.
 
@@ -111,10 +110,9 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 
     ![Add Event](./assets/add-event.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Obtain the API URL for the function)]
+### Obtain the API URL for the function
+
 
 In this step, you will copy the URL to the commerce web services API which will be used by the function cache-order.
 
@@ -130,10 +128,9 @@ In this step, you will copy the URL to the commerce web services API which will 
 
     ![Bind Service](./assets/api-url.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Adjust function variable)]
+### Adjust function variable
+
 
 In this step, the URL copied in the previous step will be assigned to an environment variable of the function **cache-order**. This will allow the function to call the **`SAP Commerce Cloud - Commerce Webservices`** of the commerce mock application.
 
@@ -151,10 +148,10 @@ In this step, the URL copied in the previous step will be assigned to an environ
 
 5. Choosing **Save** will cause the function to be rebuilt and deployed. The **Status** field will indicate that the function is **Deploying** and will change to **Running** once this process completes.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test event consumption)]
+
+### Test event consumption
+
 
 With the configuration steps completed, you can now test the scenario to validate that it is working as intended.
 
@@ -177,10 +174,9 @@ With the configuration steps completed, you can now test the scenario to validat
 
     ![Test the Scenario](./assets/test-scenario-2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Review output in function logs)]
+### Review output in function logs
+
 
 In this step, we will view the logs outputted by the function to verify that the scenario is working.
 
@@ -196,10 +192,9 @@ In this step, we will view the logs outputted by the function to verify that the
 
     ![Function Log](./assets/function-log-event.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Get output from API rule function)]
+### Get output from API rule function
+
 
 In this step, we use the get-order function to perform a read request of the data cached in the Redis database.
 
@@ -219,10 +214,7 @@ In this step, we use the get-order function to perform a read request of the dat
 
     `{"orderCode":"1231231","Date":"Tue Nov 17 2020 19:28:42 GMT+0000 (Coordinated Universal Time)","Value":"100"}`
 
-[VALIDATE_2]
 
 **Congratulations!** You have successfully completed the mission.
-
-[ACCORDION-END]
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Understand the Cloud Foundry Application Lifecycle for Docker Applications
-description: Understand how Docker works with Cloud Foundry and how to push a Docker image
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
@@ -9,21 +8,24 @@ author_name: Beyhan Veli
 author_profile: https://github.com/beyhan
 ---
 
+# Understand the Cloud Foundry Application Lifecycle for Docker Applications
+<!-- description --> Understand how Docker works with Cloud Foundry and how to push a Docker image
+
 ## Prerequisites
  - **Tutorials** [Understand the Cloud Foundry Application Lifecycle for Buildpack Applications](cp-cf-understand-application-lifecycle)
  - You have installed Docker.
  - You have [Docker Hub](https://hub.docker.com/) account.
 
 
-## Details
-### You will learn
+## You will learn
   - The lifecycle of Docker based applications
   - How to push a Docker application
   - Considerations when re-pushing and re-staging Docker images
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Understand Docker based applications)]
+### Understand Docker based applications
+
 
 When you push an application to Cloud Foundry (`cf push`), it uses a [buildpack](https://docs.cloudfoundry.org/buildpacks/) by default. There is, however, another option to use a Docker image instead of a buildpack with Cloud Foundry as well. You can see the full application lifecycle documented at [How Apps are Staged](https://docs.cloudfoundry.org/concepts/how-applications-are-staged.html), but for the sake of brevity, just know that the lifecycle is mostly the same when running either a Docker container or buildpack based application. There are some special considerations when it comes to Docker based applications:
 
@@ -35,9 +37,7 @@ When you push an application to Cloud Foundry (`cf push`), it uses a [buildpack]
 
   4. Related to the above, buildpacks are generally maintained and updated by the Cloud Foundry community, but this is not the case for referenced Docker base images. Here you will need to keep track of security vulnerabilities and update the base images. If a base image is not maintained any more you will need to maintain your own base images. Moral of the story: don't take on more than you absolutely have to, but be certain you trust the source of all your base images and buildpacks.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2 ](Push a Docker based application)]
 
@@ -67,7 +67,7 @@ docker build -t <username>/cf-nodejs-app .
 
 You should see output similar to the following:
 
-!![Running docker build](docker-build.png)
+<!-- border -->![Running docker build](docker-build.png)
 
 Now that the image is built, you need to push it to a repository on `Dockerhub`. Running the following commands, a repository will be created for your user called `cf-nodejs-app` and your image will be uploaded to it:
 
@@ -76,7 +76,7 @@ docker login -u <docker-id>
 docker push <username>/cf-nodejs-app
 ```
 
-!![Pushing the Docker image](docker-push.png)
+<!-- border -->![Pushing the Docker image](docker-push.png)
 
 Finally, once the image has been uploaded, you can push the image to Cloud Foundry (you can replace the name `docker-nodejs` with whatever you want to name your application).
 
@@ -94,13 +94,11 @@ cf app docker-nodejs
 
 You should then see the `docker image` field with the name your Docker image next to it, similar to the output below.
 
-!![Link text e.g., Destination screen](docker-image.png)
+<!-- border -->![Link text e.g., Destination screen](docker-image.png)
 
 After running through this example, you can see that using a Docker image requires you to specify and configure things that you didn't have to be concerned with when using a buildpack. A buildpack handles most of this in the background for you.
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3 ](Why Docker image tags are relevant for your application)]
 
@@ -111,5 +109,3 @@ There are some special considerations when it comes to re-pushing, re-staging an
 
 > Always take care which image tags do you use for your productive apps and don't push image changes to those image tags because this will cause unexpected updates of your productive apps.
 
-[DONE]
-[ACCORDION-END]

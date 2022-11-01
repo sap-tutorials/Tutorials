@@ -1,6 +1,5 @@
 ---
-title: Get a Free Account on SAP BTP Trial
-description: Sign up for a free trial account on SAP BTP.
+parser: v2
 auto_validation: true
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
@@ -9,8 +8,10 @@ tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginne
 time: 15
 ---
 
-## Details
-### You will learn  
+# Get a Free Account on SAP BTP Trial
+<!-- description --> Sign up for a free trial account on SAP BTP.
+
+## You will learn  
   - How to register on the SAP website
   - How to start your SAP BTP Trial
   - How to navigate to your sub-account and space
@@ -26,7 +27,7 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 **If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
 
-!![log on dialog](option-logon.png)
+<!-- border -->![log on dialog](option-logon.png)
 
 If you don't need to register with sap.com, you can skip to Step 4. Make sure to make all steps as _DONE_ to get credit for completing this tutorial.
 
@@ -36,7 +37,7 @@ If you don't need to register with sap.com, you can skip to Step 4. Make sure to
 [ACCORDION-BEGIN [Step : ](Register at sap.com)]
 **If you don't have an account** you will see a **register dialog** on the left-hand side of the dialog. Fill in the required fields, and click **Submit**.
 
-!![register dialog](option-register.png)
+<!-- border -->![register dialog](option-register.png)
 
 
 You will see a message that an activation link has been sent to you.
@@ -48,7 +49,7 @@ You will see a message that an activation link has been sent to you.
 
 Check your emails to find the activation button **Click to activate your account**.
 
-!![log into SAP](log-into-sap.png)
+<!-- border -->![log into SAP](log-into-sap.png)
 
 You will see a success message after activating your account.
 
@@ -70,7 +71,7 @@ You will see an dialog to confirm the terms and condition for the SAP BTP Trial.
 
 1. You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
 
-    !![verification popover](verification.png)
+    <!-- border -->![verification popover](verification.png)
 
 2. Enter your phone number and click **New Code** to retrieve a code.
 
@@ -100,11 +101,11 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-    !![Dialog setting up space](trial-created.png)
+    <!-- border -->![Dialog setting up space](trial-created.png)
 
 4. This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
-    !![subaccount](sub-account.png)
+    <!-- border -->![subaccount](sub-account.png)
 
 [DONE]
 [ACCORDION-END]
@@ -113,7 +114,7 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 In the service marketplace you can find all services that are available on  **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
-!![Service Marketplace](marketplace.png)
+<!-- border -->![Service Marketplace](marketplace.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

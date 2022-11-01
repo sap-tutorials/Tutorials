@@ -1,11 +1,13 @@
 ---
-title: Add Planar Geometries to SAP HANA Database in SAP HANA Cloud
-description: Learn about what Spatial Reference Systems are and how to add planar geometries based on WGS84 geometries to a table in SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Add Planar Geometries to SAP HANA Database in SAP HANA Cloud
+<!-- description --> Learn about what Spatial Reference Systems are and how to add planar geometries based on WGS84 geometries to a table in SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - You have completed the tutorial [Explore Visualization Options for Spatial Data in SAP HANA Cloud](hana-cloud-smart-multi-model-1).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to add planar geometries
 - How to create a column using planar Spatial Reference System (SRS)
 - How to transform geometries from one spatial reference system to another
 
 
+## Intro
 In this tutorial, you will learn how to add planar geometries based on `WGS84` geometries. This includes three steps:
 
 -	Create Planar Spatial Reference System
@@ -28,7 +30,8 @@ In this tutorial, you will learn how to add planar geometries based on `WGS84` g
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Representing geometries in Spatial Reference Systems)]
+### Representing geometries in Spatial Reference Systems
+
 In our current dataset, we have a column of type [`ST_Geometry` (*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/7a1f0883787c101495ac9074d9bf3923.html) holding latitude and longitude values.
 We can view latitude and longitude as double values by selecting [`ST_X()` (*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/7a290e0d787c10149429b3677c80c5a5.html) and [`ST_Y()` (*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/7a295b1d787c1014b19cb803454504b4.html) from our geometry column.
 
@@ -49,10 +52,9 @@ Now that you know the basics, your first step in this exercise will be to create
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create planar Spatial Reference System with id 32630)]
+### Create planar Spatial Reference System with id 32630
+
 SAP HANA is already aware of more than 9000 spatial reference systems - including the spatial reference system defined by [EPSG](https://epsg.org/). A suitable projected spatial reference system for UK is the [SRS with id 32630](http://epsg.io/32630).
 
 Before, we can create our first column using this SRS, we need to install it on SAP HANA Cloud, SAP HANA database. Installation has to be done only the first time we are using this SRS. Since `32630` is part of EPSG and already known to SAP HANA Cloud, we can issue our [creation statement](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/9ebcad604e8d4c43a802d08cfdbe8ab2.html) referencing only the `id` of the SRS.
@@ -77,17 +79,16 @@ CREATE PREDEFINED SPATIAL REFERENCE SYSTEM IDENTIFIED BY 32630;
 SELECT * FROM ST_SPATIAL_REFERENCE_SYSTEMS WHERE SRS_ID = 32630;
 ```
 
-    !![DBX](ss-01-data-base-explorer.png)
+    <!-- border -->![DBX](ss-01-data-base-explorer.png)
 
 5. You should now see one record in the **Results** panel. Next, we will add a column to store geometric data in our tables.
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add column with geometry type)]
+### Add column with geometry type
+
 Before we can persist the geometry data with the now installed SRS, we need to create a column for storing this data. We will add a column to all our tables, name it `SHAPE` and specify the type to be `ST_Geometry` with the `SRS 32630`. We will enhance the existing tables by using the [ALTER TABLE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/LATEST/en-US/20d329a6751910149d5fdbc4800f92ff.html) statement. Paste these statements to your SQL console and execute them:
 
 ```SQL
@@ -104,10 +105,9 @@ Once that is done, you can check if the column has been added successfully by op
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Persist projected geometries)]
+### Persist projected geometries
+
 Next, you can fill the column `SHAPE` with geometries in `SRS 32630` by transforming the existing WGS84 geometries.
 
 You can transform geometries from one spatial reference system to another with the function [`ST_Transform`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/e2b1e876847a47de86140071ba487881.html).
@@ -131,15 +131,13 @@ You have now enhanced the existing data model by a planar projection of the WGS8
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

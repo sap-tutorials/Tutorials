@@ -1,6 +1,5 @@
 ---
-title: Visualize Data from the Northwind Service
-description: Learn how to visualize data with a VizFrame.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
@@ -9,13 +8,15 @@ author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
+# Visualize Data from the Northwind Service
+<!-- description --> Learn how to visualize data with a VizFrame.
+
 ## Prerequisites
 - You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
 - You have [added the Northwind Service as a data source and default model](sapui5-fiori-cf-display-data) to your application.
 - You have version 3.1.4 or higher of the [easy-ui5 generator](cp-cf-sapui5-local-setup) installed.
 
-## Details
-### You will learn
+## You will learn
   - How to use a sub-generator to add a new view
   - How to add a `VizFrame` to visualize data
   - How to manually navigate between SAPUI5 views

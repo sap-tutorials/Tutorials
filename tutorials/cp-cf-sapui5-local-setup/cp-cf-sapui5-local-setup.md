@@ -1,6 +1,5 @@
 ---
-title: Get Ready for UI5-Development on Your Local Machine
-description: Prepare you local development environment to implement successful SAPUI5 projects.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, tutorial>free-tier]
@@ -9,12 +8,14 @@ author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
+# Get Ready for UI5-Development on Your Local Machine
+<!-- description --> Prepare you local development environment to implement successful SAPUI5 projects.
+
 ## Prerequisites
  - [Install the latest Node.js LTS version (currently 16)](https://nodejs.org/en/download/)
  - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
-## Details
-### You will learn
+## You will learn
   - How to install the Yeoman scaffolding tool
   - How to install the easy-ui5 generator plugin for Yeoman
   - How the Multi-Target Application (MTA) build tool for Cloud Foundry works

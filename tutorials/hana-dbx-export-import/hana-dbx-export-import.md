@@ -1,23 +1,25 @@
 ---
-title: Export and Import Data and Schema with SAP HANA Database Explorer
-description: Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Export and Import Data and Schema with SAP HANA Database Explorer
+<!-- description --> Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
+
 ## Prerequisites
 - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 - Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
-## Details
-### You will learn
+## You will learn
 - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
 - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
 - How to use cloud storage providers as a target when exporting or importing
 
+## Intro
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema or catalog objects.  
 
 >A few differences between exporting and importing data and importing and exporting catalog objects are:  
@@ -30,7 +32,8 @@ The following steps will demonstrate a few ways to export and import data such a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Export and import data)]
+### Export and import data
+
 
 The following tables list the different options available in the SAP HANA database explorer to export and import data from a single table or view.
 
@@ -104,10 +107,9 @@ The following steps will attempt to demonstrate an export and import of data fro
     IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use cloud storage services for export and import (optional))]
+### Use cloud storage services for export and import (optional)
+
 
 The following steps are for illustrative purposes only and are not meant to be followed. Complete steps for working with cloud storage services are provided in steps 3, 4, 6, and 7.
 
@@ -149,10 +151,9 @@ The following steps are for illustrative purposes only and are not meant to be f
     IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use data lake Files for export and import (optional))]
+### Use data lake Files for export and import (optional)
+
 
 The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  Note that this step requires a non trial / non free-tier SAP HANA data lake instance.
 
@@ -268,10 +269,9 @@ The following steps walk through the process of exporting to and importing data 
     IMPORT FROM CSV FILE 'hdlfs://example-file-container.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com/directory/data.csv' INTO HOTEL.MAINTENANCE WITH CREDENTIAL 'myCredential'
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use Google Cloud Storage (GCS) for data exports and imports (optional))]
+### Use Google Cloud Storage (GCS) for data exports and imports (optional)
+
 
 The following steps walk through the process of exporting to and importing data from Google Cloud Storage service with a SAP HANA Cloud, SAP HANA database.
 
@@ -434,10 +434,9 @@ The following steps walk through the process of exporting to and importing data 
 
 For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Export and import schema or catalog objects)]
+### Export and import schema or catalog objects
+
 
 The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
@@ -510,11 +509,10 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Import succeeded](import_success.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Use Azure cloud storage for exports and imports of catalog objects (optional))]
+### Use Azure cloud storage for exports and imports of catalog objects (optional)
+
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog operation.
 
@@ -652,10 +650,9 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional))]
+### Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional)
+
 
 The following steps walk through the process of AWS S3 storage service as a target for an export catalog operation.
 
@@ -845,7 +842,6 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
 Congratulations! You have imported and exported data and catalog objects.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

@@ -1,31 +1,34 @@
 ---
+parser: v2
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
-title: Develop an SAPUI5 Application for SAP BTP on Cloud Foundry
-description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product>sap-fiori, tutorial>license ]
 primary_tag: software-product>sap-web-ide
 ---
 
+# Develop an SAPUI5 Application for SAP BTP on Cloud Foundry
+<!-- description --> Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP BTP, Cloud Foundry environment.
+
 ## Prerequisites
 - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a new SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
 - How to configure your Cloud Foundry settings in SAP Web IDE
 - How to build and deploy your application to Cloud Foundry
 
+## Intro
 Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
 
 We would like to invite you to switch to SAP Business Application Studio since it's better suited for developing applications for Cloud Foundry. SAP Business Application Studio has built-in productivity tools for the Cloud Foundry environment, such as command line and command palette dedicated tools. During development, SAP Business Application Studio saves you a lot of time since you can test run the app locally in the dev space without needing to go through a time consuming build and deploy.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new project)]
+### Create a new project
+
 
 1. In SAP Web IDE Full-Stack, right-click your workspace choose **New > Project from Template**.
 
@@ -54,10 +57,9 @@ A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module
 > You can alternatively choose the Multi-Target Application template which will create an MTA project structure and then add new modules to the project.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the layout editor)]
+### Open the layout editor
+
 
 Now you need to open the layout editor in SAP Web IDE to easily make a few changes.
 
@@ -67,11 +69,10 @@ Now you need to open the layout editor in SAP Web IDE to easily make a few chang
 
     ![Open layout editor](step2-right-click-view.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use the layout editor)]
+### Use the layout editor
+
 
 Now you will make some changes using the layout editor, with no need to do any coding.
 
@@ -91,10 +92,9 @@ Save your work by clicking either the **Save** or **Save All** icon located at t
 
 ![Save work](step3-save.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set Cloud Foundry preferences)]
+### Set Cloud Foundry preferences
+
 
 Now, before you can build and deploy your new application, check your Cloud Foundry preferences.
 
@@ -110,10 +110,9 @@ Now, before you can build and deploy your new application, check your Cloud Foun
 
 3. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test your new application)]
+### Test your new application
+
 Now you need  to run your new application to test it.
 
 But first, check the project settings to make sure that Cloud Foundry is enabled for your project.
@@ -138,10 +137,9 @@ But first, check the project settings to make sure that Cloud Foundry is enabled
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Build your application)]
+### Build your application
+
 
 Now you need to build your application.
 
@@ -154,10 +152,9 @@ The build process creates a multi-target archive (`MTAR`) file in your workspace
 ![MTAR file](step6-build-result.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy your application)]
+### Deploy your application
+
 
 Now, you need to deploy your application to SAP BTP, Cloud Foundry environment.
 
@@ -175,8 +172,6 @@ When the deployment process is complete, you should see the notification in the 
 
 ![Console](step7-console.png)
 
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ]( Get the URL to access your application)]
 Now you can access your deployed application in the SAP Business Technology Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
@@ -223,8 +218,6 @@ Now you can access your deployed application in the SAP Business Technology Plat
 
 You can use this URL in any browser to access your new application.
 
-[VALIDATE_8]
-[ACCORDION-END]
 
 
 

@@ -1,6 +1,5 @@
 ---
-title: Create a Destination in the SAP BTP Cockpit
-description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-business-technology-platform
 tags: [ tutorial>beginner, programming-tool>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
@@ -9,18 +8,21 @@ author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
+# Create a Destination in the SAP BTP Cockpit
+<!-- description --> Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
+
 ## Prerequisites
 - You have one of the following:
     - **SAP BTP free tier or free trial account:** You have [Set Up a BTP Account for Tutorials](group.btp-setup).
     - **SAP BTP enterprise account:** You have a subaccount for which you want to manage entitlements. If you need help setting up your subaccount, have a look at [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
 
-## Details
-### You will learn
+## You will learn
 - How to configure a basic destination
 - What some of the additional properties are for
 - How to specify the SAP Business Application Studio usage parameter for a generic OData service
 
+## Intro
 Destinations are key building blocks in SAP BTP, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
 A destination has a name, a URL, authentication details, and some other configuration details.
@@ -44,7 +46,7 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 Click on the tile of your Cloud Foundry subaccount.
 
-!![subaccount](./subaccount.png)
+<!-- border -->![subaccount](./subaccount.png)
 
 [DONE]
 [ACCORDION-END]
@@ -53,7 +55,7 @@ Click on the tile of your Cloud Foundry subaccount.
 
 Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form.
 
-!![destination](./destination.png)
+<!-- border -->![destination](./destination.png)
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +84,7 @@ Property Name     | Value
 
 When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
 
-!![new destination entered](./newdest.png)
+<!-- border -->![new destination entered](./newdest.png)
 
 
 [DONE]
@@ -92,7 +94,7 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
 
-!![check destination function](./checkDestination.png)
+<!-- border -->![check destination function](./checkDestination.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

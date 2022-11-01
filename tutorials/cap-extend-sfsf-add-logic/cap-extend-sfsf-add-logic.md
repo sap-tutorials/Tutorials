@@ -1,6 +1,5 @@
 ---
-title: Add Business Logic to the SAP SuccessFactors Extension
-description: In this phase of the development you will add the business logic of the extension.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
@@ -9,6 +8,9 @@ author_name: Alessandro Biagi
 author_profile: https://github.com/ale-biagi
 ---
 
+# Add Business Logic to the SAP SuccessFactors Extension
+<!-- description --> In this phase of the development you will add the business logic of the extension.
+
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
  - Complete the tutorial: [**Jump start the SAP SuccessFactors Extension CAP Project**](cap-extend-sfsf-jumpstart)
@@ -16,8 +18,7 @@ author_profile: https://github.com/ale-biagi
  - Complete the tutorial: [**Create the CDS Data Model for the SAP SuccessFactors Extension**](cap-extend-sfsf-data-model)
  - Complete the tutorial: [**Create the CAP Service for the SAP SuccessFactors Extension**](cap-extend-sfsf-create-service)
 
-## Details
-### You will learn
+## You will learn
   - How to **create the code file** of the **service module** to attach the service handlers
   - How to **write the service module code**
   - How to **organize your code** in the CAP project
@@ -26,7 +27,8 @@ author_profile: https://github.com/ale-biagi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the service module code file)]
+### Create the service module code file
+
 
 The **business logic** of the application is implemented via **custom service handlers** for the various operations executed on its entities (create, read, update, delete, etc.). Those handlers are defined in a **module** within a `JavasScript` file with the **same name** of the service but with the `.js` extension.
 
@@ -40,10 +42,9 @@ On the **dialog** name the file `projman-service.js` and click **OK**.
 
 ![Figure 2 – Set File Name](set-file-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the service module)]
+### Code the service module
+
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -70,10 +71,9 @@ Here you import the `@sap/cds` dependency and reference it as `cds`. Then, you i
 
 Finally, you make some **comments** as **placeholders** to mark where you will further put your code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Organize your code)]
+### Organize your code
+
 
 It is a best practice to have your code organized into **files** representing the nature of the code (i.e. **utility functions** should go into some `utils` file, **handlers** should go into some `handlers` file and so on). Those files represent your "code library", so it's appropriate to store them into some `lib` folder.
 
@@ -95,10 +95,9 @@ Type `touch lib/handlers.js` and press **Enter**.
 
 ![Figure 6 – Create handlers.js file](create-handlers.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Code the service handlers)]
+### Code the service handlers
+
 
 Now, you'll develop the required service handlers according to the business rules that have been defined in the [**group introduction and preparation**](cap-extend-sfsf-intro).
 
@@ -511,10 +510,9 @@ Then, you added the required handlers for the before and after events (OData ope
 
 The code logic is well explained in the comments details.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Attach the service handlers to the service module events)]
+### Attach the service handlers to the service module events
+
 
 Open the `srv/projman-service.js` file, then copy and paste the **following code** over (overwrite) the current content:
 
@@ -563,10 +561,8 @@ Here you just imported the handler functions from the `lib/handlers.js` file and
 
 And, with that, you completed the coding of the business logic for your application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

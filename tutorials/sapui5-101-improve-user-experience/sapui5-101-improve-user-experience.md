@@ -1,6 +1,5 @@
 ---
-title: Improve User Experience of the List and Detail Page
-description: Display more detailed information for each list item and on the detail page.
+parser: v2
 time: 15
 auto_validation: true
 primary_tag: programming-tool>sapui5
@@ -8,13 +7,16 @@ author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
 tags: [  tutorial>intermediate, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio ]
 ---
-## Details
-### You will learn  
+# Improve User Experience of the List and Detail Page
+<!-- description --> Display more detailed information for each list item and on the detail page.
+
+## You will learn  
 - About localized strings in SAPUI5
 - How to import new modules in a controller
 - How to improve the user experience of the list with a search field
 - Many new controls that come with SAPUI5
 
+## Intro
 So far, the web app is working, but it doesn't show much information yet. In order to improve our web app, you can display more detailed information for each list item and on the detail page.
 
 ---
