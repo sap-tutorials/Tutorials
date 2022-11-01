@@ -3,7 +3,7 @@ title: Consume a SAP Sales and Service Core API to create Sales Orders using SAP
 description: Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you’ll see how to configure and test your XSD schemas for the source and target messages.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, tutorial>license, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-sales-and-service-core, software-product>sap-c4c, software-product>sap-business-technology-platform, tutorial>free-tier ]
+tags: [ tutorial>advanced, tutorial>license, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez

@@ -3,7 +3,7 @@ title: Save, Filter and Get your needed data in your Integration Flow
 description: Boost your Integration Suite skills leveraging different tasks to store and filter messages travelling through your Integration Flow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-business-technology-platform  ]
+tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez

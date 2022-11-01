@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-sales-service-core, software-product>sap-business-technology-platform, software-product>sap-appgyver  ]
+tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-business-technology-platform, software-product>sap-appgyver  ]
 primary_tag: software-product>sap-appgyver
 parser: v2
 author_name: Mariajose Martinez

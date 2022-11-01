@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-api-management,  software-product>sap-business-technology-platform  ]
+tags: [ tutorial>advanced, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-api-management,  software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-api-management
 parser: v2
 author_name: Mariajose Martinez 
