@@ -85,7 +85,7 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 
       ![Create ABAP cloud project](cloud.png)
 
-  2. Select **Use Cloud Foundry Environment** and click **Next >**.
+  2. Select **SAP BTP ABAP Environment** > **Use a Service Key** and click **Next >**.
 
       ![Create ABAP cloud project](project2x.png)
 
@@ -96,7 +96,7 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 
       ![Create ABAP cloud project](projectx12.png)
 
-      Click **Next >**.
+      Click **Next >**. 
 
   4. Set your **service instance details**:                                                                                             
      - Organization: your organization
