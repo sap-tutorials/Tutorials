@@ -115,7 +115,8 @@ You will now enhance the program to output your user name and today's date. Chan
 `/` is simply the new line character. (See also [ABAP keyword documentation: WRITE](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abapwrite-.htm).)
 
 
-[ACCORDION-BEGIN [Step  9: ](Run the ABAP program)]
+### Run the ABAP program
+
 Again, choose **F8** to run your program. Your output should now look something like this:
 
 ![Image depicting step9-run-program-2](step9-run-program-2.png)

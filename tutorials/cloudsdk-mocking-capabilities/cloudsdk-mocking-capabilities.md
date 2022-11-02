@@ -353,14 +353,14 @@ As explained above, you should give favor to unit tests whenever possible to ens
 In addition, for mocking the S/4HANA APIs as explained above, you have to have a certain understanding of how the APIs behave, otherwise it would be hard to assert their behaviors. When you do not have any S/4HANA system yet, using the [API Business Hub Sandbox](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud) is recommended to understand the behavior to make better mocking assumptions.
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 You learned how to leverage the SAP Cloud SDK to mock S/4HANA calls during development to create fast running unit tests which require a data dependency to SAP S/4HANA.
 
 This way, you can start building and testing your S/4HANA extension on SCP already without having an SAP S/4HANA system. When you utilize an S/4HANA system for integration tests, you can make sure that you have much more unit tests than integration tests to maintain a fast, non-brittle test suite.
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 

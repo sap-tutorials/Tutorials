@@ -705,7 +705,7 @@ Afterwards you may pass the credentials file as follows when running tests. Make
 `mvn test -Dtest.credentials=/secure/local/path/credentials.yml`
 
 
-[ACCORDION-BEGIN [Appendix: ](Troubleshooting)]
+### Troubleshooting
 
 **Connecting to the `OData` service**
 
@@ -739,11 +739,11 @@ If you are behind a proxy and want to connect your app running locally with the 
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 

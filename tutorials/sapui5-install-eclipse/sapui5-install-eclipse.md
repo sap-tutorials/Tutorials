@@ -17,7 +17,7 @@ time: 10
 ---
 
 
-[ACCORDION-BEGIN [Step : ](Download Eclipse)]
+### Download Eclipse
 
 To make use of the UI Development ToolKit for HTML5 you first need to have a supported version of Eclipse installed on your computer. The Eclipse Mars or Luna version is recommended.
 
@@ -31,15 +31,11 @@ Choose the operating system that you will use to run Eclipse and choose the down
 
 Choose the preferred download site and start the download.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Unpack the archive)]
+### Unpack the archive
 
 Once the download has finished extract the archive to a local folder of your choice (e.g. `c:\dev\eclipse` for Windows users).
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Start the Eclipse IDE)]
+### Start the Eclipse IDE
 
 Click on the **eclipse** executable file to start the Eclipse IDE.
 
@@ -49,9 +45,7 @@ Or on Mac:
 
 ![Start Eclipse](start_eclipse_mac.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Choose workspace)]
+### Choose workspace
 
 Eclipse will first show you a **Workspace Launcher** dialog to choose your workspace.Confirm with **OK**.
 
@@ -59,9 +53,7 @@ Eclipse will first show you a **Workspace Launcher** dialog to choose your works
 
 ![Create Eclipse workspace](create_workspace.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Install the SAPUI5 library)]
+### Install the SAPUI5 library
 
 Now that you have installed Eclipse, you need to install the SAPUI5 Library. This is done following the standard approach of Eclipse to install plugins.
 
@@ -69,25 +61,19 @@ From the Eclipse menu, choose **Help > Install New Software...**.
 
 ![Start software install](install_new.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Paste URL)]
+### Paste URL
 
 Copy the URL `https://tools.hana.ondemand.com/<EclipseVersion>` and paste it in the **Work with** field and then press the **Enter** (or **Return**) key. You can find the most recent version of the tools [here](https://tools.hana.ondemand.com/#sapui5)
 
 ![Add update site](add_update_site.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Select UI Development ToolKit For HTML5)]
+### Select UI Development ToolKit For HTML5
 
 Select **UI Development Toolkit for HTML5** and click **Next**.
 
 ![select_ui5](ui5_select.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Accept license agreement and finish)]
+### Accept license agreement and finish
 
 On the **Install Details** page click **Next**.
 
@@ -99,17 +85,13 @@ Read and accept the license agreement and choose **Finish**. The installation wi
 
 >During the installation, if a **Security Warning** dialog box will appear stating that you are installing software which contains unsigned content. Confirm with **OK** to continue the installation.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Restart Eclipse)]
+### Restart Eclipse
 
 At the end of the installation, you will be asked to restart Eclipse. Confirm the dialog with **Yes** to restart Eclipse immediately.
 
 ![Restart Eclipse](restart_eclipse.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Verify installation)]
+### Verify installation
 
 1. After Eclipse restarts, make sure to check if the installation was successful by going on **About Eclipse**.
 
@@ -124,10 +106,6 @@ At the end of the installation, you will be asked to restart Eclipse. Confirm th
     ![Installed Eclipse](installed.png)
 
 Congratulations: You have now installed the SAPUI5 Library and are ready to start with your project using SAPUI5.
-
-
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 ### Related Information

@@ -39,7 +39,7 @@ When you push an application to Cloud Foundry (`cf push`), it uses a [buildpack]
 
 
 
-[ACCORDION-BEGIN [Step 2 ](Push a Docker based application)]
+### Push a Docker based application
 
 To see how Docker based applications work you will take the [cf-nodejs](https://github.com/SAP-archive/cf-sample-app-nodejs) application you deployed before and create a Docker image of it, which you will then deploy. To do this, the first thing you need to do is create a `Dockerfile` in the same directory as your application files. The path to the `Dockerfile` should be `<path-to-cf-sample-app-nodejs>/Dockerfile` Once the file is created, open the `Dockerfile` with your favorite editor, and add the following (lines beginning with `#` are comments explaining what the line below it does):
 
@@ -100,7 +100,7 @@ After running through this example, you can see that using a Docker image requir
 
 
 
-[ACCORDION-BEGIN [Step 3 ](Why Docker image tags are relevant for your application)]
+### Why Docker image tags are relevant for your application
 
 There are some special considerations when it comes to re-pushing, re-staging and restarting Docker applications. These operations will trigger a Docker pull when Cloud Foundry starts the application and depending on your Docker image configuration following can happen:
 

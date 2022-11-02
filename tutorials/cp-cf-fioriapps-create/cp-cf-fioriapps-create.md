@@ -173,7 +173,7 @@ When the deployment process is complete, you should see the notification in the 
 ![Console](step7-console.png)
 
 
-[ACCORDION-BEGIN [Step 8: ]( Get the URL to access your application)]
+### Get the URL to access your application
 Now you can access your deployed application in the SAP Business Technology Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
 1. From the **Tools** menu  click **SAP BTP Cockpit**.

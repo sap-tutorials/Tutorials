@@ -24,7 +24,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Build the project)]
+### Build the project
 
 Run the following command to package the project into one single archive. This archive contains the full source files (for debugging), as well as the bundled resources (for faster loading times).
 
@@ -32,10 +32,7 @@ Run the following command to package the project into one single archive. This a
 npm run build:mta
 ```
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Deploy the built archive)]
+### Deploy the built archive
 
 Next, deploy the generated archive and track the deployment progress in the terminal with the following command.
 
@@ -55,9 +52,7 @@ The great thing about deploying a single `.mtar` file is that the Cloud Foundry 
 |  `products_html5_repo_host` | `html5-apps-repo`  |  `app-host`
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Access the running web app)]
+### Access the running web app
 
 At the end of the deployment process log, you should see a line that looks similar to this one:
 ```[4]
@@ -74,9 +69,7 @@ With this URL, you are able to access the `flpSandbox.html`
 > You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Embed the application in the SAP Fiori Launchpad)]
+### Embed the application in the SAP Fiori Launchpad
 
 
 Now it's time to embed the app in a full SAP Fiori Launchpad environment:
@@ -124,9 +117,7 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save a custom filter variant)]
+### Save a custom filter variant
 
 1. Click on the **Products** to open your web application. Also note that you see your initials in the top-right user menu. This shows you that you have been signed in automatically via Single-Sign-On.
 
@@ -146,8 +137,5 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
 
 
-
-[VALIDATE_1]
-[ACCORDION-END]
 
 ---

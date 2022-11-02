@@ -25,7 +25,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](Introduction to Custom Adaptors)]
+### Introduction to Custom Adaptors
 
 This set of tutorials provides instructions on building a custom adapter for SAP HANA Streaming Analytics. We will be using the **SAP HANA Streaming Analytics Adapter Toolkit** to create a custom input adapter that receives `MQTT` messages via the `Mosquitto` broker.
 

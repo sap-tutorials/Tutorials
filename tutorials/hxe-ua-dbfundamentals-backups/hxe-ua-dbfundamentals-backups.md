@@ -25,7 +25,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Option 1: ](SAP HANA Cockpit)]
+### SAP HANA Cockpit
 
 > Note:
 > This option requires an SAP HANA, express edition Server + Applications installation.
@@ -54,11 +54,7 @@ time: 15
 
     ![Successful Backup](successful_backup.png)
 
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
+### SAP HANA Studio
 
 1. On SAP HANA Studio, log on to your SAP HANA, express edition installation.
 
@@ -80,12 +76,7 @@ time: 15
 
 5. Review your backup settings and click __Finish__ to begin creating your backup. Creating your backup will take a few minutes.
 
-[VALIDATE_2]
-
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Option 3: ](SQL and Command Line)]
+### SQL and Command Line
 
 1. In SAP HANA Studio or another connected SQL command line, create a backup user and grant it backup permissions.
 
@@ -168,6 +159,3 @@ time: 15
 
     A list of your backup files is displayed.
 
-[VALIDATE_3]
-
-[ACCORDION-END]

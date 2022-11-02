@@ -19,11 +19,9 @@ time: 5
 
 ---
 
-[ACCORDION-BEGIN [Video: ](How to debug XSJS and node.js scripts)]
+### How to debug XSJS and node.js scripts
 
 The following video demonstrates how to debug XSJS and Node.js in SAP Web IDE for SAP HANA.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4jnhhoPaJUc" frameborder="0" allowfullscreen></iframe>
 
-[DONE]
-[ACCORDION-END]

@@ -307,10 +307,10 @@ Visit `http://localhost:8080/hello` on your local machine to view the response o
 Now you have a strong basis for developing your own cloud application for `SAP Business Technology Platform Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 

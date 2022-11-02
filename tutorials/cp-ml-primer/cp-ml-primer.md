@@ -484,7 +484,7 @@ Type in some text and hit enter to see who was more likely to say it.
 ![Quick UI for showing predictions](bonus-prediction-ui.png)
 
 
-[ACCORDION-BEGIN [STEP 20: ](The End: Congrats)]
+### The End: Congrats
 
 Wow, a fully functional, production like machine learning toy app! Hopefully you are now equipped with the necessary knowledge to begin your own adventure in Data Science and Machine Learning.
 

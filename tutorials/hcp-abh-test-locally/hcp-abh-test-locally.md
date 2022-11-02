@@ -24,15 +24,13 @@ You have already discovered the SAP API Business Hub and accomplished testing an
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Navigate to the User Management API)]
+### Navigate to the User Management API
 
 Go to <https://api.sap.com> and navigate to the [Campaign](https://api.sap.com/api/campaign/overview) API.
 
 ![Campaign API](1.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Generate sample API call code)]
+### Generate sample API call code
 
 Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP API Business Hub provides you with starter code in a variety of languages and tools for each API.
 
@@ -52,9 +50,7 @@ Copy the highlighted curl code to the clipboard.
 ![copy the code](5.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Run sample API call code)]
+### Run sample API call code
 
 Paste the content of the clipboard in a terminal or command line window. Hit **Enter** to run the command. It may take a few seconds before data is seen on your screen.
 
@@ -70,16 +66,13 @@ The formatted output represents the results of a simple call to the Campaign Col
 
 ![Formatted output data](7.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Limit the number of results)]
+### Limit the number of results
 You can limit the number of results retrieved with the `$top` value provided in the *Parameter* section of the `GET/CampaignCollection` method. Switch back for a moment from the Code Snippet section to the Parameters section in the [Try Out](https://api.sap.com/api/campaign/tryout) area and modify the value of the `$top` parameter to request just 3 results.
 
 You can then switch back to the Code Snippet section, and copy the updated code from the Curl section to paste it into your terminal. When you execute the curl command, and pipe the output into jq again, you should see a nicely formatted list of three campaigns.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add multiple parameters to the API call)]
+### Add multiple parameters to the API call
+
 Besides the `$top` parameter, you can add multiple parameters to the [Query String](https://en.wikipedia.org/wiki/Query_string) of your API call.
 Now add in a second parameter for `$select`. You only want the `StatusText` and `Status` for the top 3 users. Use the same approach as before - switch to the Parameters section, specify the two values for the `$select` parameter using the drop down menu, then switch back to the Code Snippet section and copy the Curl content again. It should look something like this:
 
@@ -100,7 +93,3 @@ Paste the entire command into your terminal again. This time the output is vastl
 ![text editor with parameter added](9.png)
 
 You have now learnt how to use code snippets productively.
-
-
-[VALIDATE_5]
-[ACCORDION-END]

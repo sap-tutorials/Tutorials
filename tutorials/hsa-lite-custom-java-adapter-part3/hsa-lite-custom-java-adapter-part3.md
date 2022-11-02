@@ -363,7 +363,7 @@ s_sdk.stop();
 Click the **Done** button below once you have completed this tutorial.
 
 
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix
 
 Below is the source code for our Java Adapter, customized to write into Freezer Monitoring Lite. You will need to change the hostname variable `(val_host)` to match your remote device.
 

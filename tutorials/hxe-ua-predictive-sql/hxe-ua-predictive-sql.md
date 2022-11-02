@@ -17,7 +17,7 @@ This tutorial describes one of many SAP HANA Academy Predictive Analysis Library
 
 ---
 
-[ACCORDION-BEGIN [Prerequisite: ](Memory Cleanup (VM only))]
+### Memory Cleanup (VM only)
 
 Before running the script on your VM installation, you will need to clean up the memory processes.
 
@@ -114,7 +114,7 @@ From there, you can view the raw data or create charts under the *Analysis* tab.
 
 
 
-[ACCORDION-BEGIN [Info: ](Script Information)]
+### Script Information
 
 For more information about the scripts, watch the SAP HANA Academy videos [PAL: 110. Time Series - Auto ARIMA Model](https://www.youtube.com/watch?v=YpC6wATFTA8&index=132) and [PAL: 111. Time Series - Auto ARIMA Predict](https://www.youtube.com/watch?v=qiCuxj7yJmU).
 

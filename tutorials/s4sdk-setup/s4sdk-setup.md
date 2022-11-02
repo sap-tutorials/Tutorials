@@ -128,7 +128,7 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 ---

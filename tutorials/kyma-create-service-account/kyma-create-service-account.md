@@ -37,7 +37,7 @@ kubectl create namespace tutorial
 
 
 
-[ACCORDION-BEGIN [Step : ](Create a service account)]
+### Create a service account
 
 A service account alone won't do the job. You also need to define a Kubernetes `Role` or `ClusterRole` that contains all the desired permissions, which will be assigned to the service account using a `RoleBinding` or a `ClusterRoleBinding`. In this example a `ClusterRole` will be created which provides cluster wide access. A Role would be used if access to only a single namespace is desired. You need to create all three artifacts to use a service account via `kubectl`.
 
@@ -109,7 +109,7 @@ A service account alone won't do the job. You also need to define a Kubernetes `
     ```
 
 
-[ACCORDION-BEGIN [Step : ](Understand the structure of the configuration file)]
+### Understand the structure of the configuration file
 
 The `kubeconfig` file that we want to create must look similar to this:
 ```YAML
@@ -139,7 +139,7 @@ Go to the next step to learn how to fill this template with the proper values.
 
 
 
-[ACCORDION-BEGIN [Step : ](Create a new kubeconfig)]
+### Create a new kubeconfig
 
 Now that you understand how the `kubeconfig` file is structured, create a new one that leverages your just created service account.
 
@@ -253,7 +253,7 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 [OPTION END]
 
 
-[ACCORDION-BEGIN [Step : ](Read the config map)]
+### Read the config map
 
 Besides the service account, you also created `ConfigMap` in step 2. Let's try to read a value from this map to check if the new `kubeconfig` is working:
 ```Shell

@@ -20,7 +20,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Build the application)]
+### Build the application
 
 Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundry.
 
@@ -32,9 +32,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
     <!-- border -->![buildSuccess](buildSuccess.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Deploy the application)]
+### Deploy the application
 
 1. If you don't have the **Application Info** page open, you can open the Command Palette from menu **View > Find Commands**, type **Application Info**, and select **Fiori: Open Application Info**. Click on the **Deploy Application** tile to start deployment process
 
@@ -50,8 +48,6 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
 3. Follow the link in the console to open the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 ---

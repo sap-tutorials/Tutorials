@@ -16,7 +16,7 @@ In this tutorial you will learn how to use the Eclipse IDE to set up a Maven pro
 ## Time to Complete
 **20 Min**
 
-[ACCORDION-BEGIN [Prerequisites: ](Software)]
+### Software
 
 To complete this tutorial, you will need:
 

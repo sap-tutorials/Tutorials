@@ -19,7 +19,7 @@ In this tutorial you will learn how to create an application that reads data fro
 
 ---
 
-[ACCORDION-BEGIN [Prerequisites: ](Tutorials)]
+### Tutorials
 
 If you haven't done so, please complete the tutorial [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://developers.sap.com/tutorials/xsa-graphical-view.html). This tutorial builds on top of the calculation view created in that tutorial.
 
@@ -277,7 +277,7 @@ Found 10176 products from Europe
 
 
 
-[ACCORDION-BEGIN [Step 6 (optional): ](Set calculation view schema as default)]
+### Set calculation view schema as default
 
 For flexibility or maintainability reasons it might be preferable to not have the calculation view schema hard-coded on each entity.
 

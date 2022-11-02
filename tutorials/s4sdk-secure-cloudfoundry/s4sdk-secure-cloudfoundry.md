@@ -472,10 +472,10 @@ Secondly, you need to import the metadata into your IdP. In the following exampl
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 

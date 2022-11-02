@@ -102,7 +102,7 @@ Click on any Purchase Order and check the URL to respond to the question below.
 
 
 
-[ACCORDION-BEGIN [Optional: ](Sync to GitHub and check next steps)]
+### Sync to GitHub and check next steps
 
 If you want to take the code with you, remember you can **Stage All** and sync to GitHub.
 

@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add a new view)]
+### Add a new view
 
 Add a new view to your SAPUI5 application by using an `easy-ui5` sub-generator.
 
@@ -42,17 +42,13 @@ yo easy-ui5 project newview
 
 The routes are added to the `uimodule/webapp/manifest.json` file. The generator asks you whether you want to overwrite the `manifest.json` file, which is necessary in this case, so type `yes` when prompted.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Inspect the modifications)]
+### Inspect the modifications
 
 As you can see in the log, the generator created a new view with its corresponding controller. It also modified the `uimodule/webapp/manifest.json` by adding a new route as well as a new target. You can see the pattern for the new `Sales` route is `RouteSales`. This is the piece that we will later attach to the URL of our application to reach this view.
 
 ![screen shot of manifest with new route](manifest.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add the VizFrame)]
+### Add the VizFrame
 
 The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the data from the Northwind Service. **Remove** the entire content view and replace it with the below code.
 
@@ -132,17 +128,13 @@ This new code uses additional SAPUI5 libraries that are referenced at the top of
 
 You can read more about `VizFrame`s in the [SAPUI5 API Reference](https://sapui5.hana.ondemand.com/#/api/sap.viz.ui5.controls.VizFrame%23overview) and check out some samples in the [SAPUI5 Samples](https://sapui5.hana.ondemand.com/#/entity/sap.viz.ui5.controls.VizFrame). `VizFrame`s even have their own [documentation](https://sapui5.hana.ondemand.com/docs/vizdocs/index.html) that lists all available properties, events, bindings, and scales.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Navigate to the new view)]
+### Navigate to the new view
 
 In order to see the new view in your application in the browser, you have to navigate there manually using the pattern you already inspected in step 2. If your application is running in a Fiori Launchpad, attach `&/RouteSales` to the URL. If your application runs standalone, attach `#/RouteSales` to the URL. There is a difference between these two scenarios, because your application in the Fiori Launchpad already requires a hash (`#`) to navigate to it and there is only one hash allowed in a URL.
 
 ![screen shot of sales view in the browser](salesview.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Implement a popover)]
+### Implement a popover
 
 You might have noticed that you can hover over the single data points of the line chart and click them, but nothing happens yet. Insert the below `onAfterRendering` method into the `Sales.controller.js` to connect the `VizFrame` with the popover, which is already defined in the `uimodule/webapp/view/Sales.view.xml` (step 3).
 
@@ -167,8 +159,6 @@ After saving the file, your browser should automatically refresh the page. You c
 
 ![screen shot of popover](popover.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 ---

@@ -116,7 +116,7 @@ If you want to delete the `salesorder` queue, you can delete the queue using **d
 
 
 
-[ACCORDION-BEGIN [Step 4: ]( Manage queue subscriptions)]
+### Manage queue subscriptions
 >
 Service enables a sending application to publish messages and events to a topic. Applications must be subscribed to that topic, and be active when the message is sent. Topics do not retain messages.
 >
