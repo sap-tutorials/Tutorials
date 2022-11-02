@@ -18,7 +18,7 @@ author_profile: https://github.com/julieplummer20
 
 ## You will learn  
 - How to configure your ABAP development environment with ABAP Development Tools (ADT)
-- How to create your first ABAP project
+- How to create your very first ABAP project
 
 ---
 
