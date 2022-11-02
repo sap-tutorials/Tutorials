@@ -21,8 +21,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-
-[ACCORDION-BEGIN [Step : ](Scaffold a SAPUI5 project)]
+### Scaffold a SAPUI5 project
 
 Run the following command to trigger the creation of a new project.
 ```Terminal
@@ -51,7 +50,7 @@ Choose the following responses for the prompted parameters.
 The following installation of the project's dependencies might take a while.
 
 
-[ACCORDION-BEGIN [Step: ](Inspect the generated code)]
+### Inspect the generated code
 
 
 Let's have a look at the generated code. Go to the newly created directory and open the code with your favorite editor (here Visual Studio Code).
@@ -92,7 +91,7 @@ npm start
 
 > Hint: Put windows next to each other to benefit from the live-reload feature. This way, you will be able to see the changes in the website right when you do file modifications without having to switch to another window.
 
-[ACCORDION-BEGIN [Step : ](Modify the title)]
+### Modify the title
 
 **Open** the i18n file [`uimodule/webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
 ```TEXT [6,9,11]

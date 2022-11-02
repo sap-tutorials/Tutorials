@@ -185,7 +185,7 @@ Person johnDoe = query.uniqueResult();
 ```
 
 
-[ACCORDION-BEGIN [Optional: ](Hibernate References)]
+### Hibernate References
 
 More information about Hibernate can be found using the following links:
 

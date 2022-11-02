@@ -21,7 +21,7 @@ So far, the web app is working, but it doesn't show much information yet. In ord
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Localize strings)]
+### Localize strings
 
 [Localized strings](https://sapui5.netweaver.ondemand.com/sdk/#/topic/91f217c46f4d1014b6dd926db0e91070) are necessary to translate the application in various languages. You need to bind all exposed strings to the i18n model and avoid hard-coded strings so that the web app can be translated easily. This tutorial's views already come with bound strings, so you only need to add the properties file.
 
@@ -52,9 +52,7 @@ OrderDialogSuccessMsg=The product has been ordered
 > You can use [language codes](https://sapui5.netweaver.ondemand.com/sdk/#/topic/91f21f176f4d1014b6dd926db0e91070.html) to add more i18n files.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Improve the list view)]
+### Improve the list view
 In this step, we will add a search field on the top of the list to make it searchable and more appealing by using [custom list items](https://sapui5.hana.ondemand.com/#/api/sap.m.ObjectListItem). You will add a `<SearchField>` control to the initial page of the application. We'll add it as a child within the pages `subHeader` aggregation, which expects a `<Bar>` control.
 
 1.	Open the `webapp/view/List.view.xml` file, and **change** the highlighted lines.
@@ -125,9 +123,7 @@ In this step, we will add a search field on the top of the list to make it searc
     });
 	```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Improve the detail view)]
+### Improve the detail view
 Similarly to the previous step, this step will add additional controls to the existing page. Add an [`ObjectHeader`](https://sapui5.hana.ondemand.com/#/api/sap.m.ObjectHeader) and a footer to use the full width of the page for the content.
 
 1.	Open the `webapp/view/Detail.view.xml` file, and **replace** the highlighted lines.
@@ -215,9 +211,7 @@ Similarly to the previous step, this step will add additional controls to the ex
 	    });
 		```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test the search)]
+### Test the search
 Re-run your application.  You should see the search box at the top of the list, right below the words `Product Overview`.
 
 Try to search for a word.
@@ -226,8 +220,5 @@ Try to search for a word.
 
 > You can follow [this tutorial](sapui5-101-deploy-application) to deploy the application to SAP BTP, Cloud Foundry environment.
 
-
-[VALIDATE_1]
-[ACCORDION-END]
 
 ----

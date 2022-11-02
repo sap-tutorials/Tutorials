@@ -74,7 +74,7 @@ This allows you to find specific data easily and increases the usability of the 
 
 
 
-[ACCORDION-BEGIN [Step 4: ]( Understand join cardinalities)]
+### Understand join cardinalities
 
 The cardinality between two or more tables shows how the join relationships are between rows of one table and rows in a second table, that is, it describes how many entries of one table correspond to the entries of another table. **Join cardinalities** enables optimized database execution plans and performance. Please see here the types of join cardinalities that SAP Data Warehouse Cloud supports in the graphical view builder.
 

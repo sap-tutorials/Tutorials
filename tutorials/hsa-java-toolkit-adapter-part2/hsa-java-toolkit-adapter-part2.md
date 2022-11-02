@@ -215,7 +215,7 @@ For the question below, select all of the correct answers, and click **Validate*
 
 
 
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix
 
 `MqttTransporter.java`
 

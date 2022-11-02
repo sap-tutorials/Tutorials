@@ -19,7 +19,7 @@ author_profile: https://github.com/cjbernal
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add a message page)]
+### Add a message page
 
 Add a simple message page to let the users know you are still working on this app.
 
@@ -44,10 +44,7 @@ Replace the existing page in the file `webapp/view/View1.view.xml` with
 
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Change the log level)]
+### Change the log level
 
 Add the following line to the `webapp/index.html` file to change to log level.
 ```HTML [15]
@@ -84,9 +81,7 @@ Add the following line to the `webapp/index.html` file to change to log level.
 > The log level acts like a filter and hides all log messages below the defined severity.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Write a log message to the console)]
+### Write a log message to the console
 
 Import the logger to the file `webapp/controller/View1.controller.js` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 
@@ -119,10 +114,7 @@ sap.ui.define([
 > This `onBeforeRendering` method is called every time the view is rendered. E.g., before the renderer is called and the HTML is placed in the DOM-Tree. It can be used to perform clean-up-tasks before re-rendering.
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Add a breakpoint)]
+### Add a breakpoint
 
 Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of your app.
 ```JavaScript [21-23]
@@ -160,9 +152,7 @@ This `onAfterRendering` method is called every time the view is rendered after t
 > Don't worry if the SAP Business Application Studio complains about the "debugger" keyword. This warning is valid as breakpoints should not be shipped in production-ready code, but for the sake of learning, this is fine.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Run the web app)]
+### Run the web app
 
 Running your application has several advantages over deploying it. Among others, it's faster, doesn't require a "build" step and won't minify your JavaScript codebase.
 
@@ -181,9 +171,7 @@ Running your application has several advantages over deploying it. Among others,
     <!-- border -->![running](./running.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Stop at the breakpoint)]
+### Stop at the breakpoint
 Open the Chrome DevTools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by clicking **F12**. **Refresh the page** to run the script one more time.
 
 You should now see that the app reached the breakpoint (the dev tools automatically switched to the `Sources` tab).
@@ -192,9 +180,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 
 Run `console.log(message.replace("random", "Hello-World"))` in the console of the DevTools.
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Check the log message)]
+### Check the log message
 
 Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red.
@@ -202,9 +188,5 @@ Now you should see your error message printed in red.
 Can you spot the line in which you invoked the error message?
 
 ![testlog](./testlog.png)
-
-
-[DONE]
-[ACCORDION-END]
 
 ---

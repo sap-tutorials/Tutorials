@@ -100,7 +100,7 @@ In the box below, enter the string you have received in the `MQTT` message on HA
 
 
 
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix
 
 ```SQL
 

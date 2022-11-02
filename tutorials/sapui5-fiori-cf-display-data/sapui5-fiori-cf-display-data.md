@@ -21,7 +21,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add a new view)]
+### Add a new view
 
 
 Add a new view to display a list of products. For this, you can use another `easy-ui5` sub-generator.
@@ -41,7 +41,7 @@ yo easy-ui5 project newview
 
 The routes are added to the `uimodule/webapp/manifest.json` file. The generator asks you whether you want to override the `manifest.json` file. If prompted, accept this.
 
-[ACCORDION-BEGIN [Step : ](Inspect the modifications)]
+### Inspect the modifications
 
 As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
@@ -57,7 +57,7 @@ As you can see in the log, there are two new files and one modified file. As the
 ```
 <!-- border -->![product route](productroute.png)
 
-[ACCORDION-BEGIN [Step : ](Enable routing)]
+### Enable routing
 
 1. The `webapp/view/MainView.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
 
@@ -92,7 +92,7 @@ As you can see in the log, there are two new files and one modified file. As the
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
 
-[ACCORDION-BEGIN [Step : ](Add a data source)]
+### Add a data source
 
 To populate the list with items, bind a data source to the application. For this, there exists another sub-generator:
 
@@ -116,7 +116,7 @@ Again, please accept the modification of the manifest file.
 > The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.json` if you don't like it.
 
 
-[ACCORDION-BEGIN [Step : ](Redirect traffic to the data source)]
+### Redirect traffic to the data source
 
 1. All requests to the data source will be sent to `<webapp URL>/V2/Northwind/Northwind.svc/`.
 
@@ -169,7 +169,7 @@ Now you should see the Northwind products in the SAPUI5 list control:
 <!-- border -->![list](list.png)
 
 
-[ACCORDION-BEGIN [Step : ](Display more product information on a detail page)]
+### Display more product information on a detail page
 
 In this step, you will add a detail page that shows some additional information. Same as for the overview page, you'll use the sub-generator to create a new view.
 

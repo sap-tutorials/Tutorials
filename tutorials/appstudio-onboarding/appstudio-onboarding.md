@@ -26,7 +26,7 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
 ---
 
-[ACCORDION-BEGIN [Step: 1](Log into SAP BTP Trial)]
+### Log into SAP BTP Trial
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit.
 
@@ -34,10 +34,7 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
     <!-- border -->![BTPlegalterms](BTP-Terms-.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: 2](Launch SAP Business Application Studio)]
+### Launch SAP Business Application Studio
 
 1. Click **SAP Business Application Studio** to launch SAP Business Application Studio.
 
@@ -75,10 +72,7 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
     <br>
     >**PAY ATTENTION:** If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
+### Add SAP Business Application Studio subscription to subaccount
 
 Depending on when you created the SAP BTP Trial account, this subscription might already be added in the subaccount. If you are not subscribed to SAP Business Application Studio, follow this step to add the SAP Business Application Studio subscription to a subaccount.
 
@@ -128,10 +122,7 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     <!-- border -->![subscriptioninprogress](Cockpit-Subscription-in-Progress-.png)
 
-[VALIDATE_4]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: 4](Launch SAP Business Application Studio)]
+### Launch SAP Business Application Studio
 
 1. Click **Go to Application**.
 
@@ -169,9 +160,6 @@ Depending on when you created the SAP BTP Trial account, this subscription might
     >**Bookmark this page!**
 
     >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
-
-[DONE]
-[ACCORDION-END]
 
 ---
 

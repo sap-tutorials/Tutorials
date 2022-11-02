@@ -486,7 +486,7 @@ Your CDS entity appears in a new editor. We will fix the errors now.
 
 6. Change the `@AccessControl.authorizationCheck:` to **`#NOT_REQUIRED`**.
 
-[ACCORDION-BEGIN [Step 11: ](Specify hierarchy)]
+### Specify hierarchy
 
 1. Add the following to **`Z_I_BOOKING_XXX`**, using Auto-complete (`Ctrl+Space`).
 Then **Save**, but **DO NOT yet activate your entity**.

@@ -26,7 +26,7 @@ In this tutorial, you'll locate the SAP Web IDE and access it, all from your bro
 
 
 
-[ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
+### Log into SAP Cloud Platform
 
 1. Go to <https://account.hana.ondemand.com/#/home/welcome> and log in to your SAP BTP cockpit.
 
@@ -34,9 +34,7 @@ In this tutorial, you'll locate the SAP Web IDE and access it, all from your bro
 
     <!-- border -->![subaccount](subaccount.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Verify that the SAP Web IDE entitlement is in place)]
+### Verify that the SAP Web IDE entitlement is in place
 
 Select **Entitlements** on the left-hand menu to see all entitlements that are assigned to this subaccount. Locate the **`SAP Web IDE`** entitlement from this list.
 
@@ -44,9 +42,7 @@ Select **Entitlements** on the left-hand menu to see all entitlements that are a
 
 > In case you are missing the entitlement, please follow this tutorial to [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add).
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Subscribe to SAP Web IDE for HANA Development)]
+### Subscribe to SAP Web IDE for HANA Development
 
 1. Select **Subscriptions** on the left-hand menu in the SAP BTP cockpit to see all available subscriptions.
 
@@ -64,9 +60,7 @@ Select **Entitlements** on the left-hand menu to see all entitlements that are a
     ![disclaimer](./disclaimer.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Bookmark the page)]
+### Bookmark the page
 
 A new tab opens, and SAP Web IDE Full-Stack loads.
 
@@ -77,5 +71,3 @@ A new tab opens, and SAP Web IDE Full-Stack loads.
 
 Copy and paste the URL from your SAP Web IDE Full-Stack into the text box below.
 
-[VALIDATE_4]
-[ACCORDION-END]

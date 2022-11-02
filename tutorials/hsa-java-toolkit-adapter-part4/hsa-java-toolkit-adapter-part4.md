@@ -151,8 +151,7 @@ For the question below, select the correct answer, and click **Validate**.
         </xs:complexType>
       ```
 
-
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix 
 
 `modulesdefine.xml`
 

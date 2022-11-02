@@ -75,7 +75,7 @@ Your site is empty for now. In the following steps, you're going to add business
 The **HTML5 Apps** content provider should now expose any newly deployed app for integration.
 
 
-[ACCORDION-BEGIN [Step : ](Add your deployed SAPUI5 app to your content)]
+### Add your deployed SAPUI5 app to your content
 
 1. Click the Content Manager icon in the side panel to open the **Content Manager**. Click the **Content Explorer** tab to explore content from the available content providers and select the **HTML5 Apps** provider.
 
@@ -95,7 +95,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 
 
-[ACCORDION-BEGIN [Step : ](Create a group and assign the app to it)]
+### Create a group and assign the app to it
 
 In this step, you'll create a new group and assign the `List Report` app to it.
 
@@ -124,7 +124,7 @@ In this step, you'll create a new group and assign the `List Report` app to it.
 
 
 
-[ACCORDION-BEGIN [Step : ](Assign app to Everyone role)]
+### Assign app to Everyone role
 
 In this step, you'll assign the `List Report` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
@@ -141,7 +141,7 @@ In this step, you'll assign the `List Report` app to the `Everyone` role. This i
 6. Similar to in the last step, you should see that the app has been added to the role.
 
 
-[ACCORDION-BEGIN [Step : ](Test your site)]
+### Test your site
 
 1. Click the **Site Directory** icon to open the Site Directory and click **Go to site** on the site tile.
 
@@ -156,7 +156,7 @@ In this step, you'll assign the `List Report` app to the `Everyone` role. This i
 
     <!-- border -->![View app](13-fe-app.png)
 
-[ACCORDION-BEGIN [Step : ](Save a user-specific filter view)]
+### Save a user-specific filter view
 
 1. Display all available data items.
 

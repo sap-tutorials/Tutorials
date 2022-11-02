@@ -27,7 +27,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Option 1: ](Using SAP HANA Cockpit)]
+### Using SAP HANA Cockpit
 
 > Note:
 > This option requires a SAP HANA, express edition Server + Applications installation.
@@ -55,11 +55,7 @@ time: 15
     ![Successfully Created Tenant Database](success.png)
 
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Option 2: ](Using an SQL Command Line)]
+### Using an SQL Command Line
 
 Using SAP HANA studio or another connected SQL console, execute the following command to create a tenant database:
 
@@ -75,7 +71,3 @@ CREATE DATABASE TENANTDB SYSTEM USER PASSWORD Password1
 
 This creates the tenant database "TENANTDB" with the SYSTEM user password "`Password1`".
 
-
-[DONE]
-
-[ACCORDION-END]

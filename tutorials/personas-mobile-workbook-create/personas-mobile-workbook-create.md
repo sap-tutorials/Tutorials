@@ -25,15 +25,13 @@ A screen or set of related screens personalized for an SAP user/role using SAP S
 
 ---
 
-[ACCORDION-BEGIN [Step 1: Access IW51](Access IW51)]
+### Access IW51
 To begin, you must log on to your system and then navigate to IW51. Enter your credentials and then enter **`IW51`** into the transaction code field. Press **`Enter`**.
 
 ![Navigate to IW51](OK-Code-IW51.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: Create the flavor](Create the flavor)]
+### Create the flavor
 To create a flavor, open the flavor bar by clicking on the SAP Screen Personas icon that appears when you hover over the thin blue line at the top of the screen. This line indicates SAP Screen Personas is available to your user.
 
 ![SAP Screen Personas Icon](Personas.png)
@@ -52,11 +50,7 @@ This will open the **flavor editor**.
 
 ![SAP Screen Personas Flavor Editor](Flavor-Editor.png)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: Simplify the initial screen](Simplify the initial screen)]
+### Simplify the initial screen
 To begin simplifying the flavor, you will set a default value for the notification type. Double click the **Notification Type** field and enter **`S3`** into the **Data** field in the pop up window. Then click **Done** to set the value.
 
 ![Set Default Value](Set-Default-Value.png)
@@ -70,10 +64,7 @@ Your screen should then look like this:
 ![Hidden Objects](Hidden-Objects.png)
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: Create the dashboard](Create the dashboard)]
+### Create the dashboard
 
 Next, you will create buttons that will allow users to create a notification and log off of the system.
 
@@ -115,10 +106,7 @@ In order to make it easier for users to differentiate between the two buttons at
 
 ![Modify Button](Fill-Button.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: View the completed screen ](View the completed screen)]
+### View the completed screen
 
 You have now finished personalizing this initial screen. To view it as your end-user would, save and exit the **Flavor Editor** using the **Save** and **Exit** buttons at the top right corner of the screen.
 
@@ -128,8 +116,5 @@ You should now see the end product of this tutorial without the **Flavor Editor*
 
 ![Personalized Screen](Finished-Screen.png)
 
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 ---

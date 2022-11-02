@@ -29,7 +29,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](&nbsp;)]
+### Introduction
 
 The Custom Java Adapter will be executed on a remote device, and will send data into a Streaming Lite project running on that same device. It is up to the Custom Java Adapter to poll any available hardware sensors for values.
 
@@ -57,10 +57,6 @@ CREATE INPUT STREAM isFreezerTemperatureReading SCHEMA (
 ![CCL For Freezer Monitoring Lite](CCLForFreezerMonitoringLite.png)
 
 For the question below, select the correct answer, and click **Validate**.
-
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 ---
 

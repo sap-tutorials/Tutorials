@@ -19,7 +19,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Log into SAP BTP cockpit)]
+### Log into SAP BTP cockpit
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit.
 
@@ -27,9 +27,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
     <!-- border -->![accesstrial](accesstrial.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Switch to entitlements view)]
+### Switch to entitlements view
 
 1. **Select** the tile of the subaccount you want to add entitlements to.
 
@@ -39,9 +37,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
     <!-- border -->![openentitlements](openentitlements.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add SAP HANA Cloud services entitlement to the subaccount)]
+### Add SAP HANA Cloud services entitlement to the subaccount
 
 In this step we will add a new service plan to a subaccount. Depending on when you created the SAP BTP account, this entitlement might already be assigned to the subaccount.
 
@@ -62,9 +58,7 @@ In this step we will add a new service plan to a subaccount. Depending on when y
 > If you are not able to increase the quota of a given service plan, you might already consume this service plan in another subaccount. Please make sure to release the quota from other subaccounts, before reassigning it.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add more entitlements to subaccount)]
+### Add more entitlements to subaccount
 
 Congratulations, you just enabled the SAP HANA Cloud service in your subaccount. Depending on what you want to build, you might want to add one of more of the following service plans as well:
 
@@ -85,16 +79,11 @@ Congratulations, you just enabled the SAP HANA Cloud service in your subaccount.
 Follow the instructions from the previous step to add these new entitlements to your subaccount.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save the entitlements)]
+### Save the entitlements
 
 Confirm you selection with **Save**.
 
 <!-- border -->![save](save.png)
 
-
-[DONE]
-[ACCORDION-END]
 
 ---

@@ -19,7 +19,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Enrich the products page)]
+### Enrich the products page
 1. To import smart controls to the view, *add* new XML namespaces to the `uimodule/webapp/view/Products.view.xml` file.
 2. Replace <Page> in the same view with a page that contains the smart controls `smartFilterBar` and `smartList`
 
@@ -49,9 +49,7 @@ Your page should now display product names and contain a smart header.
     Feel free to remove this property from the view to see how the displayed data changes.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Use the smart filter bar)]
+### Use the smart filter bar
 
 You've already learned about the cool expand-feature of OData in the previous step. In this step, you'll learn about the complex filter operations OData supports out-of-the-box. For this, click on the **Filters** button. A dialog pops up, and you'll be able to define filters on all properties of the displayed entities. Select the grouped view and define a filter for the following criteria:
 
@@ -64,18 +62,14 @@ Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
 <!-- border -->![filter dialog](filters.png)
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Navigate to the detail view)]
+### Navigate to the detail view
 
 **Click** on item **`Rhönbräu Klosterbier`** to navigate to the detail view. You'll upgrade this simple view to a full `ObjectPage` [control](https://sapui5.hana.ondemand.com/#/api/sap.uxap.ObjectPageSubSection) in the next steps.
 
 <!-- border -->![list item beer](klosterbier.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Use an ObjectPage in the detail view)]
+### Use an ObjectPage in the detail view
 
 1. Similar to step 1, **include** new XML namespaces to the `uimodule/webapp/view/ProductDetail.view.xml` view to allow the usage of new controls.
 2. **Replace** the current page of the view with this smart `ObjectPage`.
@@ -116,9 +110,7 @@ Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
 
 > As of now, this page only consists of a header that leverages data binding to display data. Note the control `attrState` uses a special type of binding, the so-called [expression binding](https://sapui5.hana.ondemand.com/#/topic/daf6852a04b44d118963968a1239d2c0.html) to display "Yes" or "No" depending on the state of the boolean variable `discontinued`.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Enrich the detail view controller)]
+### Enrich the detail view controller
 
 
 1. The header of the view also contains two buttons. In the next sub-steps, you'll implement the event listener for these buttons. **Replace** the existing file header with this one to import another library during the controller-initialization in file `uimodule/webapp/controller/ProductDetail.controller.js`.
@@ -157,9 +149,7 @@ Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
 
 > Note that the icon is not supposed to do anything but being a toggle button (as there is no real controller logic associated with the control). It won't store the state in the data model.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add sections to ObjectPage)]
+### Add sections to ObjectPage
 
 The following snippet defines the content of the `ObjectPage`. It's mostly basic code, outstanding sections are another usage of expression binding for the link control `linkWebsite`, property binding to the navigation entities "Supplier" and "Category", and the  usage of a custom formatter for the image control `imageCategory`.
 
@@ -262,9 +252,7 @@ The following snippet defines the content of the `ObjectPage`. It's mostly basic
 ```
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Populate the empty fields)]
+### Populate the empty fields
 
 You probably noticed empty fields that do not show data yet.
 
@@ -313,9 +301,7 @@ You probably noticed empty fields that do not show data yet.
 
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add hierarchy information)]
+### Add hierarchy information
 
 
 In this step, you add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
@@ -412,6 +398,4 @@ In this step, you add hierarchy information to the `Shellbar` to enable fast nav
 Click on the name of the Fiori App to see the hierarchy menu in action.
 <!-- border -->![hierarchy](hierarchy.png)
 
-[DONE]
-[ACCORDION-END]
 ---

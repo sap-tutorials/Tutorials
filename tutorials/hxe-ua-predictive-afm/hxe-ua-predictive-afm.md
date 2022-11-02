@@ -164,7 +164,7 @@ Click the __Execute__ icon ![Execute](execute.png).
 
 
 
-[ACCORDION-BEGIN [Optional: ](Preview the Model)]
+### Preview the Model
 
 Return to the _SAP HANA Administration Console_ perspective. Under your user login to your tenant database, cascade down from __Catalog__ -> __User__ -> __Tables__. Right-click on **`Catalog_Object`** and click __Open Data Preview__.
 
@@ -223,7 +223,7 @@ You will notice that this data is identical to _Step 4: Run the Predict SQL Scri
 
 
 
-[ACCORDION-BEGIN [Troubleshooting: ](Unsupported encoding Cp 1252)]
+### Unsupported encoding Cp 1252
 
 When you _Activate_ your Auto ARIMA model, you may encounter this error:
 

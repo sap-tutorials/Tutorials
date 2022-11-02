@@ -21,7 +21,7 @@ The focus of this tutorial is on simplifying the main screen of transaction IW51
 
 ---
 
-[ACCORDION-BEGIN [Step 1: Open IW51](Open IW51)]
+### Open IW51
 In the previous tutorial, you created a new flavor that featured a simple dashboard for your users to access transaction IW51. You must now navigate to the main screen of the transaction to begin simplifying it. In order to do so, open your flavor and click the **Create Notification** button you created in the last tutorial.
 
 ![Create Notification Button](Create-Notification-Button.png)
@@ -33,10 +33,7 @@ You will then navigate to this screen:
 This will be the basis of your app. To simplify this screen, you will hide the fields, tab strips, and other objects not needed by your users.
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: Simplify the main screen](Simplify the main screen)]
+### Step 2: Simplify the main screen
 To begin, open the SAP Screen Personas **flavor editor**. The first step in simplifying this flavor is hiding the **Action Box** container on the right side of the screen. Select it and then click **Hide**.
 
 ![Hide Action Box](Hide-Action-Box.png)
@@ -91,11 +88,7 @@ At this point, your screen should only contain the fields required for your app.
 
 At this point, you are finished with hiding screen objects. You will now arrange the remaining objects so that they can more easily be used by someone on a tablet.
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: Arrange the Required Fields](Arrange the required fields)]
+### Arrange the required fields
 
 In order to make your app more user friendly, as well as more aesthetically pleasing, you will now tidy the screen by grouping the previously scattered fields together. To begin, select your the container with the **Sold-To** and contact information and move it to the left side of the screen. Using the control in the **Home** tab, ensure the container is still selected and give it the following coordinates: **`25pt`** down and **`10pt`** right.
 
@@ -133,10 +126,7 @@ You have now completed the bulk of the modifications for this flavor. It should 
 
 ![Final Positioning](Final-Positioning.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: Create Save and Cancel buttons](Create Save and Cancel buttons)]
+### Create Save and Cancel buttons
 To begin wrapping up this application, you will now add larger **Save** and **Cancel** buttons to your screen that are better suited for touch interaction.
 
 You will begin by creating a **Save** button. To do so, click on **Menu Items Button** in the **Insert** tab.
@@ -159,10 +149,7 @@ Give your new **Cancel** button the same dimensions as the **Save** button: **`1
 
 ![Cancel Button Positioning](Cancel-Button-Positioning.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: Create barcode scanning functionality](Create barcode scanning functionality)]
+### Create barcode scanning functionality
 
 With all of the required functionality on the screen, your next step will be to give your users additional functionality to simplify service notification creation even further. This next step will give them access to a barcode scanner so that they do not need to manually enter the equipment number. Once completed, your users will be able to press a button to open the scanner, use their device's camera to scan the barcode, and then a script will populate the **Equipment** field.
 >As this feature requires the use of a mobile device camera, it will not work when accessed on a desktop.
@@ -259,7 +246,4 @@ Now, delete the **`UNIQUE_ID`** placeholder in line 8 and replace it with your s
 
 Your initial application is now complete. In the next tutorial, you will optimize this flavor for use on tablets and mobile phones though the use of **Adaptive Flavors** -- an SAP Screen Personas feature that allows you to create differently sized variations on your flavors.
 
-[VALIDATE_1]
-
-[ACCORDION-END]
 ---

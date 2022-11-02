@@ -384,7 +384,7 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 >Full documentation on writing a Formatter module can be found in the section [Configuring a New Adapter](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.01/en-US/e789bb9c6f0f101490bef9e3c7dd5186.html).
 
 
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix
 
 `mqtt_input.cnxml`
 

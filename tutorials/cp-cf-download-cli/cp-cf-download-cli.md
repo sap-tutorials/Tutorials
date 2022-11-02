@@ -18,7 +18,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step](Download the Command Line interface)]
+### Download the Command Line interface
 
 Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  
 
@@ -30,10 +30,7 @@ Open the installer on your computer, and follow the installation instructions.
 
 > For more help with the CLI installation, look at the [Cloud Foundry CLI installation documentation](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Test the Cloud Foundry CLI)]
+### Test the Cloud Foundry CLI
 
 Open a command prompt on your computer.  
 
@@ -53,10 +50,7 @@ You should see a list of Cloud Foundry commands.
 
 <!-- border -->![Cloud Foundry list of Commands](cfhelp.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Determine your Cloud Foundry URL)]
+### Determine your Cloud Foundry URL
 
 First, find the correct API URL for your region.  Select the correct region from this table, and copy the URL.  You will use the URL in the next steps to connect to Cloud Foundry.  
 
@@ -82,10 +76,7 @@ The **API Endpoint** is displayed on the left-hand side of the **Overview** page
 
 <!-- border -->![endpoint](endpoint.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Log in using the CLI)]
+### Log in using the CLI
 
 Next, open a command line prompt on your computer.  In the command line screen, type in the following:
 
@@ -100,5 +91,3 @@ You are now set up to use the SAP BTP, Cloud Foundry environment.
 
 > For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
 
-[VALIDATE_2]
-[ACCORDION-END]

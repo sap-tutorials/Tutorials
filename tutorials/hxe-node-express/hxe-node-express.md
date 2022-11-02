@@ -107,7 +107,7 @@ The above command should produce results something like the below:
    <!-- border -->![Results](1.png)
 
 
-[ACCORDION-BEGIN [Step 3: Extend Application](Extend Simple Node.js Application to Run as a Web Application)]
+### Extend Simple Node.js Application to Run as a Web Application
 
 Modify this app to be a `WebApp`.
 

@@ -19,7 +19,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Log into the SAP website)]
+### Log into the SAP website
 
 Visit <https://www.sap.com> and click the **Log On** icon in the upper-right corner.
 
@@ -31,10 +31,7 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 If you don't need to register with sap.com, you can skip to Step 4. Make sure to make all steps as _DONE_ to get credit for completing this tutorial.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Register at sap.com)]
+### Register at sap.com
 **If you don't have an account** you will see a **register dialog** on the left-hand side of the dialog. Fill in the required fields, and click **Submit**.
 
 <!-- border -->![register dialog](option-register.png)
@@ -42,10 +39,7 @@ If you don't need to register with sap.com, you can skip to Step 4. Make sure to
 
 You will see a message that an activation link has been sent to you.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Activate your account)]
+### Activate your account
 
 Check your emails to find the activation button **Click to activate your account**.
 
@@ -53,21 +47,13 @@ Check your emails to find the activation button **Click to activate your account
 
 You will see a success message after activating your account.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Log on to SAP BTP Trial)]
+### Log on to SAP BTP Trial
 
 After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP BTP Trial</b></a> page and click **Log On**.
 
 You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
 
-[DONE]
-[ACCORDION-END]
-
-
-
-[ACCORDION-BEGIN [Step ](Verify your account)]
+### Verify your account
 
 1. You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
 
@@ -78,9 +64,7 @@ You will see an dialog to confirm the terms and condition for the SAP BTP Trial.
 3. Please enter this code as well and click **Continue** to verify your account. After the verification, you will be logged off automatically.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Access the welcome screen)]
+### Access the welcome screen
 
 Click on **Log on** to log on to your verified account.
 
@@ -89,9 +73,7 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 > Bookmark the link for fast and quick access to the cockpit.  
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Navigate to the subaccount)]
+### Navigate to the subaccount
 
 1. Here, you can now create a subaccount that lives in a geographic region. **Choose any region** from this list and click **Create Account** to trigger the provisioning process.
 
@@ -107,14 +89,9 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
     <!-- border -->![subaccount](sub-account.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Learn about the service marketplace)]
-
+### Learn about the service marketplace
 
 In the service marketplace you can find all services that are available on  **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
 <!-- border -->![Service Marketplace](marketplace.png)
 
-[VALIDATE_1]
-[ACCORDION-END]

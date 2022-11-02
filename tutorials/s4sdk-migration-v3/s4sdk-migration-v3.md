@@ -523,11 +523,11 @@ And with that the entire application is successfully migrated to a new version o
 Find out more about what's new and how to migrate your application by taking a look into the [release notes](https://help.sap.com/doc/6c02295dfa8f47cf9c08a19f2e172901/1.0/en-US/index.html#version-3.0.0-naming) and the [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/). If you like you can now deploy your newly migrated application locally or to Cloud Foundry. If you previously used the `ALLOW_MOCKED_AUTH_HEADER` variable for testing you may remove that, it was removed with 3.0. More information can again be found in the migration guide. You may also get the fully migrated source code of the sample application used here by checking out the [`sdk-v3-migration` branch of the repository](https://github.com/SAP/cloud-s4-sdk-book/tree/sdk-v3-migration).
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
 
 
-[ACCORDION-BEGIN [Appendix: ](Appendix)]
+### Appendix
 
 `GetAllBusinessPartnersCommand`:
 

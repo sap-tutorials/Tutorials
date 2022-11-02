@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Install Yeoman)]
+### Install Yeoman
 
 [Yeoman](http://yeoman.io) is an Open Source scaffolding tool for modern web-apps. It helps you to kickstart new projects, prescribing best practices and tools to help you stay productive.
 
@@ -32,9 +32,7 @@ Install the module globally:
 npm install -g yo
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Install the easy-ui5 generator)]
+### Install the easy-ui5 generator
 
 In order to use Yeoman to create SAPUI5 projects, we need to install a plugin (another `npm` module). Yeoman recognizes all plugins automatically on the basis of the `generator-` prefix of the module.
 
@@ -45,9 +43,7 @@ npm install -g generator-easy-ui5
 This plugin has also been published on [GitHub](https://github.com/SAP/generator-easy-ui5).
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Verify the installations)]
+### Verify the installations
 
 Use the following command to test whether the installation has been successful.
 
@@ -63,9 +59,7 @@ You should see the Easy Ui5 generator in the list of generators:
 This plugin has also been published on [GitHub](https://github.com/SAP/generator-easy-ui5).
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Install the MTA build tool)]
+### Install the MTA build tool
 
 Cloud-native applications are being ship as so called `mta` archives. The [Multi-target Application Archive Builder](https://github.com/SAP/cloud-mta-build-tool) is a standalone command-line tool that builds a deployment-ready multi-target application archive `.mtar` file. You can leverage `npm` to install this tool as well:
 
@@ -76,9 +70,7 @@ npm install -g mbt
 Run `mbt --help` to see all available commands.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Install Make)]
+### Install Make
 
 You might be able to skip this step. Usually, users of unix-based OS already have `make` preinstalled. Verify that `make` is installed with.
 ```
@@ -89,8 +81,5 @@ If you are using Windows and need to install `make` by following [these instruct
 ```
 choco install make
 ```
-
-[DONE]
-[ACCORDION-END]
 
 ---

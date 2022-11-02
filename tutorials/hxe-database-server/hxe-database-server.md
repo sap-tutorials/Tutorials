@@ -38,7 +38,7 @@ Not sure how much RAM you have?
 > ###  Not enough RAM or space on disk?
 If you do not have enough RAM, we would recommend SAP HANA Cloud trial which is a completely free, hosted and cloud managed solution. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
 
-[ACCORDION-BEGIN [Option 1: ](Virtual Machine on a Windows or Mac)]
+### Virtual Machine on a Windows or Mac
 
 ***This is the easiest option.***
 
@@ -48,7 +48,7 @@ See [Install SAP HANA 2.0, express edition on a Preconfigured Virtual Machine](g
 
 
 
-[ACCORDION-BEGIN [Option 2: ](Docker container on a Linux operating system)]
+### Docker container on a Linux operating system
 
 ***This option runs on Linux operating systems only.***
 
@@ -56,7 +56,7 @@ Follow these instructions to pull and run the Docker container in any of the sup
 
 
 
-[ACCORDION-BEGIN [Option 3: ](Manual installation using Binary Installer)]
+### Manual installation using Binary Installer
 
 ***This option requires a minimum level of expertise with Linux operating systems.***
 

@@ -33,34 +33,25 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Enter your BTP account)]
+### Enter your BTP account
 
 - For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
 - For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
 - For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Access your subaccount)]
+### Access your subaccount
 
 Click on the tile of your Cloud Foundry subaccount.
 
 <!-- border -->![subaccount](./subaccount.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Open the Destinations view)]
+### Open the Destinations view
 
 Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form.
 
 <!-- border -->![destination](./destination.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Create new destination)]
+### Create new destination
 Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**.
 
 Field Name     | Value
@@ -87,14 +78,9 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 <!-- border -->![new destination entered](./newdest.png)
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Check the connection)]
+### Check the connection
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
 
 <!-- border -->![check destination function](./checkDestination.png)
 
-[VALIDATE_1]
-[ACCORDION-END]

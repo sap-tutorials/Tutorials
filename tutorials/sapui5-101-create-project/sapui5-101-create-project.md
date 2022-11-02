@@ -20,7 +20,7 @@ time: 15
   - How to run the project in the SAP Business Application Studio
 
 ---
-[ACCORDION-BEGIN [Step : ](Open the Fiori dev space)]
+### Open the Fiori dev space
 
 
 **Start** a dev space of kind *SAP Fiori* and **open** it by clicking its name.
@@ -30,9 +30,7 @@ time: 15
 > Have a look at [this tutorial](appstudio-devspace-fiori-create) if you are unsure how to get here or how to create a dev space.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Connect to a Cloud Foundry endpoint)]
+### Connect to a Cloud Foundry endpoint
 
 Make sure you are connected to a Cloud Foundry endpoint to which you will deploy the SAPUI5 application later.
 
@@ -50,9 +48,7 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
     <!-- border -->![connectedEndpoint](./connectedEndpoint.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Create a new project)]
+### Create a new project
 
 SAP Fiori tools includes an Application Generator that provides a wizard-style approach for creating applications.
 
@@ -86,9 +82,7 @@ SAP Fiori tools includes an Application Generator that provides a wizard-style a
 
 >You can keep the Application Information page open as it will be needed later. In case you close it, you can open the Command Palette from menu **View** > **Find Commands**, type **`Application Info`**, and select **Fiori: Open Application Info**.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Run the web app)]
+### Run the web app
 
 Running your application has several advantages over deploying it. Among others, it's faster, doesn't require a "build" step and won't minify your JavaScript codebase.
 
@@ -107,10 +101,7 @@ Running your application has several advantages over deploying it. Among others,
     <!-- border -->![running](./running.png)
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Inspect the application network trace)]
+### Inspect the application network trace
 
 1. Now you should see your (blank) SAPUI application. Right-click on the web page, and choose **Inspect**
 
@@ -131,7 +122,5 @@ Running your application has several advantages over deploying it. Among others,
 
 Expand the nodes **`<edmx:Edmx>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 ---

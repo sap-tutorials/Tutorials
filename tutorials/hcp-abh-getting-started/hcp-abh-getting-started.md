@@ -22,18 +22,14 @@ Want to learn more about the new SAP API Business Hub? Not sure where to get sta
 
 ---
 
-[ACCORDION-BEGIN [Step: 1](Go to the SAP API Business Hub)]
+### Go to the SAP API Business Hub
 In your browser, open [SAP API Business Hub](https://api.sap.com/).
 
 <!-- border -->![SAP API Business Hub page](1.png)
 
 You can explore products, business processes, as well as different categories of assets, along with partner and featured content. Choose Explore for quick access to the various sections of the SAP API Business Hub.
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step : 2](Explore API content)]
+### Explore API content
 On the SAP API Business Hub homepage, choose **Categories**.
 
 <!-- border -->![SAP API Business Hub homepage API tile](2.png)
@@ -42,9 +38,7 @@ Choose APIs from the different categories available.
 
 <!-- border -->![SAP API Business Hub APIs section](2a.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : 3](Search for an API)]
+### Search for an API
 
 Different APIs, policy templates, and API packages are available under the API category. An API package contains one or more APIs. You can browse through different types of APIs such as REST, OData, and SOAP APIs.
 
@@ -59,11 +53,7 @@ For the purpose of this tutorial, we are going to choose the `SAP Cloud for Cust
 <!-- border -->![SAP Cloud for Customer Package Search](4a.png)
 
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step : ](Explore the API)]
+### Explore the API
 
 On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package. Select the Campaign API to explore it in detail.
 
@@ -81,10 +71,7 @@ The API can contain one or more endpoints which are organized into groups. On th
 
 Various HTTP methods of API are used to address the functionality of endpoints. While exploring the endpoints, you may wish to collapse the information by selecting the `GET` operation row. You can explore the available endpoints for the API to understand it in detail.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : 5](Test an API endpoint)]
+### Test an API endpoint
 
 The SAP API Business Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. Select Login at the top of the page.
 
@@ -117,7 +104,5 @@ The response section displays various entities fetched calling the `GET` method.
 
 Feel free to explore other endpoints in this Campaign API.
 
-[VALIDATE_4]
-[ACCORDION-END]
 
 Congratulations, you have just taken your first steps with the SAP API Business Hub and should now be able to navigate it and the content within, confidently.

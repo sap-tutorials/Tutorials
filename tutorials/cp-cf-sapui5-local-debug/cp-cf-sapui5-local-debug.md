@@ -18,7 +18,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add a message page)]
+### Add a message page
 
 Add a simple message page to let the users know you are still working on this app.
 
@@ -35,7 +35,7 @@ Replace the existing page in the file `webapp/view/MainView.view.xml` with
 
 
 
-[ACCORDION-BEGIN [Step : ](Write a log message to the console)]
+### Write a log message to the console
 
 Add this `onBeforeRendering` hook to the file `webapp/controller/MainView.controller.js` (before the `onInit` hook). This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
 ```JavaScript
@@ -70,7 +70,7 @@ onAfterRendering: function() {
 
 
 
-[ACCORDION-BEGIN [Step: ](Stop at the breakpoint)]
+### Stop at the breakpoint
 
 Test the changes  on your local machine.
 ```
@@ -83,7 +83,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 ![stopped](./stopped.png)
 
 
-[ACCORDION-BEGIN [Step : ](See the error log message)]
+### See the error log message
 
 Click **F8** to jump over the breakpoint and **switch** to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.

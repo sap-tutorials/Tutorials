@@ -19,7 +19,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add two new views)]
+### Add two new views
 
 In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
@@ -64,9 +64,7 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 ><!-- border -->![detailView](detailView.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add new targets and routes)]
+### Add new targets and routes
 
 In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
@@ -138,9 +136,7 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
 }
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add two new controllers)]
+### Add two new controllers
 
 This is the crucial step of this tutorial that ties everything together. Each view specifies its controller with the `controllerName` property in the first line. Controllers contain the business logic of web apps, bind models to views, and use the router to navigate between views.
 
@@ -208,9 +204,7 @@ You may see a prompt to enable `ESLint extension`, select **Do Not Allow** to pr
     ```
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test it)]
+### Test it
 
 If you already stopped the web app, restart the saved configuration. **Open** the running web app to see the changes.
 
@@ -219,8 +213,4 @@ You should be able to see a list of products and navigate to the detail pages (a
 
 <!-- border -->![demo](./navigation.gif)
 
-
-
-[VALIDATE_1]
-[ACCORDION-END]
 ---

@@ -145,5 +145,5 @@ By now you have successfully created a dataset, inspected the training data and 
 
 
 
-[ACCORDION-BEGIN [Step: 7](Test yourself)]
+### Test yourself
 

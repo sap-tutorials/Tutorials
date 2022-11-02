@@ -119,7 +119,7 @@ In the bottom right corner of the page, select Start or Stop.
 ![Start WSP](start_wsp.png)
 
 
-[ACCORDION-BEGIN [Optional: ](Appendix)]
+### Appendix
 
 The general properties section contains properties for `REST`, `SOAP`, and `WebSocket` connections:
 

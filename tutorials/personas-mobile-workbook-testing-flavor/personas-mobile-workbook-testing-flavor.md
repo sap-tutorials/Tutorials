@@ -20,7 +20,7 @@ The focus of this tutorial is on testing your adaptive flavor(s) on a mobile dev
 
 ---
 
-[ACCORDION-BEGIN [Step 1: Access your flavor on a mobile device](Access your flavor on a mobile device)]
+### Access your flavor on a mobile device
 
 On the desktop version of the training system, navigate to transaction **`IW51`** and open the **flavor bar**. Click on your flavor tile, select **Direct Access Link** and then click **Generate QR Code**.
 
@@ -34,11 +34,7 @@ Next, scan the QR code with your device and launch the resulting URL. You will b
 
 ![Scan Personas QR](Scan-Personas-QR.jpg)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 2: Test your flavor](Test your flavor)]
+### Test your flavor
 
 Enter your credentials and tap **Log On** to begin testing your flavor.
 
@@ -52,10 +48,7 @@ You should then seen the simplified screen for your mobile device. If you have b
 
 ![Simplified Screen](Simple-Screen.jpg)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: Optional: Test your barcode scanner](Optional: Test your barcode scanner)]
+### Optional: Test your barcode scanner
 
 If desired, you can also test the barcode scanner within you flavor. You will need to generate a QR code that represents a valid equipment number in your system. If you are using the training system provided by the SAP Screen Personas team, you can use the following **`210100019`**, **`210100024`**, or **`210100013`**.
 
@@ -73,5 +66,3 @@ Your **Functional Location** and **Equipment** fields should then automatically 
 
 Congratulations, you have a built a working mobile flavor with SAP Screen Personas!
 
-[VALIDATE_1]
-[ACCORDION-END]
