@@ -100,7 +100,6 @@ Some HDLFSCLI help documentation should appear if it is successfully installed a
 [OPTION END]
 
 
-
 ### Generate Certificates
 
 To connect the HDLFSCLI to a HANA Data Lake file container, a certificate will need to be generated to make a secure connection. Below are the steps required to create a self-signed certificate to get started using the HDLFSCLI. You will require an installation of OpenSSL. Use your preferred Linux package installer to install OpenSSL if it is not already installed. If you're using a Windows machine, then Windows Subsystem Linux will have OpenSSL installed. Alternatively, OpenSSL can be installed for Windows. OpenSSL for Windows can be downloaded from [Here](https://slproweb.com/products/Win32OpenSSL.html).  
@@ -136,7 +135,6 @@ To obtain the subject string of a certificate in the RFC2253 format used in HDL 
 **Note:** You will need this later when you configure authentication for HDL Files.
 
 `openssl x509 -in client.crt -nameopt RFC2253 -subject -noout`
-
 
 
 ### Update the SAP HANA Data Lake Trust Configuration
