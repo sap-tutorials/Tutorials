@@ -1,11 +1,13 @@
 ---
-title: Getting Started with Data Lake Files HDLFSCLI
-description: Learn how to setup the SAP HANA Data Lake file container command line interface and use the it to manage your data files.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
+
+# Getting Started with Data Lake Files HDLFSCLI
+<!-- description --> Learn how to setup the SAP HANA Data Lake file container command line interface and use the it to manage your data files.
 
 ## Prerequisites
  - A licensed SAP HANA Data Lake instance (non-trial / non-free tier)
@@ -13,14 +15,14 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
  - Basic understanding of the public key infrastructure (PKI)
  - [Download the sample TPCH Data](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/QRC_4_2021/en-US/6e1dd06335704f4c96d48279ca1ed555.html)
 
-## Details
-### You will learn
+## You will learn
   - How to install and use the SAP HANA Data Lake file container Command Line Interface (HDLFSCLI)
   - Use the HDLFSCLI to put, manage, and remove files from an [SAP HANA Data Lake File Container](https://help.sap.com/viewer/683a53aec4fc408783bbb2dd8e47afeb/alibabacloud/en-US/f4eae33ffb7a44f7af823ee6b70e3598.html)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the SAP HANA Data Lake Client)]
+### Download the SAP HANA Data Lake Client
+
 
 The HDLFSCLI is included in the HANA Data Lake Client download from the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800003274&V=MAINT&TA=ACTUAL/HANA%20CLOUD%20CLIENTS). The first step is to download and install the latest version of the HANA Data Lake client.
 
@@ -32,10 +34,9 @@ The latest HANA Data Lake Client package can by identified by the most recent re
 
 Once you've identified the correct package for your operating system, download it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install HDLFSCLI)]
+### Install HDLFSCLI
+
 [OPTION BEGIN [Linux]]
 Once the package is downloaded, extract the contents of the file using a terminal.
 
@@ -98,10 +99,10 @@ Some HDLFSCLI help documentation should appear if it is successfully installed a
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Generate Certificates)]
+
+### Generate Certificates
+
 To connect the HDLFSCLI to a HANA Data Lake file container, a certificate will need to be generated to make a secure connection. Below are the steps required to create a self-signed certificate to get started using the HDLFSCLI. You will require an installation of OpenSSL. Use your preferred Linux package installer to install OpenSSL if it is not already installed. If you're using a Windows machine, then Windows Subsystem Linux will have OpenSSL installed. Alternatively, OpenSSL can be installed for Windows. OpenSSL for Windows can be downloaded from [Here](https://slproweb.com/products/Win32OpenSSL.html).  
 
 Then, follow these steps to creating your self-signed certificate.
@@ -136,10 +137,10 @@ To obtain the subject string of a certificate in the RFC2253 format used in HDL 
 
 `openssl x509 -in client.crt -nameopt RFC2253 -subject -noout`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update the SAP HANA Data Lake Trust Configuration)]
+
+### Update the SAP HANA Data Lake Trust Configuration
+
 
 Navigate to the SAP HANA Cloud Central Cockpit and select "Manage File Container" on the HDL instance.
 
@@ -172,10 +173,9 @@ Now click save at the bottom of the page.
 
 ![Manage file container save button.](image-11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check that a Connection can be Established from the HDLFSCLI)]
+### Check that a Connection can be Established from the HDLFSCLI
+
 
 Next, we will verify that the configuration we did in Steps 5 & 6 work.
 
@@ -213,7 +213,6 @@ Copy the content of the **Client** field which is mentioned inside [ ] brackets 
 
 Now, re-verify the configuration. It should work.
 
-[VALIDATE_6]
-[ACCORDION-END]
+
 
 ---

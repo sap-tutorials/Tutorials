@@ -1,24 +1,26 @@
 ---
-title: Push Down a Spatial Workload to SAP HANA Database in SAP HANA Cloud
-description: Learn how to create SQL views using hexagonal clustering and QGIS and apply basic styling on a base map.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Push Down a Spatial Workload to SAP HANA Database in SAP HANA Cloud
+<!-- description --> Learn how to create SQL views using hexagonal clustering and QGIS and apply basic styling on a base map.
+
 ## Prerequisites
 - Ensure that your SAP HANA database instance within your SAP HANA Cloud trial account is **running** before you proceed.
 - You have completed the visualization of spatial dataset on a base map. If not, complete the tutorial [Visualize Spatial Dataset on SAP HANA database in SAP HANA Cloud](hana-cloud-trial-qgis-2).
 
 
-## Details
-### You will learn
+## You will learn
 - How to create an SQL view using hexagonal clustering
 - How to add an SQL view into QGIS
 - How to apply basic styling to the SQL view on base map
 
 
+## Intro
 This tutorial group will comprise of the following tasks:
 
 1. Install SAP HANA ODBC Driver
@@ -41,7 +43,8 @@ So, you need to open the SAP HANA Database Explorer, create an SQL View and cons
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a SQL view using hexagonal clustering)]
+### Create a SQL view using hexagonal clustering
+
 Follow the steps to create an SQL view doing a hexagonal clustering and counting the number of POI's (points of interest) per cluster:
 
 1. Go to the SAP BTP cockpit and navigate to your SAP HANA database instance in SAP HANA Cloud. You should see your created and running instance.
@@ -71,25 +74,23 @@ You can find more information on [Spatial Clustering](https://help.sap.com/viewe
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add SQL view into QGIS)]
+### Add SQL view into QGIS
+
 Follow the steps to bring the data into QGIS:
 
 1. Open **QGIS** and add a base map via double-click.
 
 2. Locate SQL view **`POI_DENSITY`** in the browser ( **`SAP HANA`** > **`hctrial`** > **`DBADMIN`** > **`POI_DENSITY`**) and double-click to add it to the map.
 
-    !![SQL View QGIS](ss-01-sql-view-qgis.png)
+    <!-- border -->![SQL View QGIS](ss-01-sql-view-qgis.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Apply basic styling to the map)]
+### Apply basic styling to the map
+
 1. Right-click the **`POI_DENSITY`** layer and choose **Properties**. Make sure to do this in the Layers tab rather than in the browser!
 
 2. In the following dialog, you can adapt the layer styling. Choose **`Symbology`** on the left side.
@@ -112,16 +113,15 @@ You should now see a heatmap-like visualization on your map. The hexagonal cells
 
 The heatmap-like visualization makes it easy to spot the major cities around the SAP Headquarter: Karlsruhe, Mannheim and Heidelberg.
 
-!![Style QGIS](ss-02-style-qgis.png)
+<!-- border -->![Style QGIS](ss-02-style-qgis.png)
 
 As a challenge, why don't you try to add some transparency to the hexagonal cells?
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Learn more about SAP HANA Spatial)]
+### Learn more about SAP HANA Spatial
+
 **Congratulations!** You have accomplished the setup of a playground for spatial analytics. If you would like to dive into more sophisticated scenarios, check out some material on **Spatial Data Science** and how to add the geospatial dimension to machine learning models.
 
 > A good starting point is this article on [Towards Data Science](https://towardsdatascience.com/the-impact-of-geospatial-features-on-machine-learning-3a71c99f080a?source=friends_link&sk=c38d7707eb88f853ffe19486e6aa3dd4). Note that this is a high-level overview. Blogs with more detailed instructions are linked in the article.
@@ -136,15 +136,13 @@ Read [this blog](https://blogs.sap.com/2020/02/12/the-four-advantages-of-arcgis-
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

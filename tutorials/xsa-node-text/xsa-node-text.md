@@ -1,11 +1,13 @@
 ---
-title: SAP HANA XS Advanced - Text Bundles within Node.js SAP HANA applications
-description: Working with text bundles in Node.js
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
+# SAP HANA XS Advanced - Text Bundles within Node.js SAP HANA applications
+<!-- description --> Working with text bundles in Node.js
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Proficiency:** Intermediate
@@ -14,17 +16,16 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ## Next Steps
 - [Web Sockets](https://developers.sap.com/tutorials/xsa-node-websockets.html)
 
-## Details
-### You will learn  
+## You will learn  
 Working with text bundles in Node.js
 
-
-### Time to Complete
+## Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a new route for a text bundle module)]
+### Add a new route for a text bundle module
+
 
 Add a new route for `/routes/textBundle` in `/router/index.js`
 
@@ -46,11 +47,9 @@ module.exports = (app, server) => {
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create text bundle script
 
-[ACCORDION-BEGIN [Step 2: ](Create text bundle script)]
 
 As you can guess from the code in the first step, you need a file called `textBundle.js` in your `routes` folder with the following code
 
@@ -97,11 +96,9 @@ module.exports = function() {
 
 ![textBundle](2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create text bundle
 
-[ACCORDION-BEGIN [Step 3: ](Create text bundle)]
 
 `i18n` stands for `internationalization`, the process and means to adapt text, unit of measures and other language-specific aspects of software to the different languages and their norms.  The code you added in the previous step is referring to a folder called `i18n` in the base directory, where the text bundles are. Create the folder and a file called `messages.properties` with the following content:
 
@@ -129,11 +126,9 @@ This is what the files should look like:
 
 ![Internationalization](4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Test the translations
 
-[ACCORDION-BEGIN [Step 4: ](Test the translations)]
 
 You can now run the `core_node` and `web` module. In the running tab, change the path to `/node/textBundle`:
 
@@ -151,6 +146,3 @@ Repeat the process raising Japanese `[ja]` to the top of the list and refresh th
 
 ![new language](17.png)
 
-[DONE]
-
-[ACCORDION-END]

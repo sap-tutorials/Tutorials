@@ -1,20 +1,22 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
-title: Extend your Simple Data Model with a Second Entity
-description: Explore entity relationships and navigation properties by extending your simple OData service with further Core Data Services (CDS) definitions.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Details
-### You will learn
+# Extend your Simple Data Model with a Second Entity
+<!-- description --> Explore entity relationships and navigation properties by extending your simple OData service with further Core Data Services (CDS) definitions.
+
+## You will learn
 - How OData metadata navigation properties work
 - How to define relationships between entities in CDS
 - What those relationships look like in an OData context
 
+## Intro
 This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](odata-05-data-model-service). If you've done, you'll have a brand new OData service `Northbreeze` of your own to use. However, it's still rather simple, with just a single entity.
 
 In this tutorial, you'll first study the relationship between products and categories in the Northwind OData V4 service. Then, in your own service, you'll add a second entity at the `db/` layer and define a relation between it and the first entity. You'll then expose this second entity at the `srv/` layer and examine what this looks like from an OData metadata and operations perspective. Finally, you'll build a relationship between those two entities, add some data, and check that everything works as intended.
@@ -23,7 +25,7 @@ Before you start, open up the workspace in the SAP Business Application Studio (
 
 ---
 
-[ACCORDION-BEGIN [Step N: ](Take a look at the Northwind Product / Category relationship)]
+### Take a look at the Northwind Product / Category relationship
 
 In the [previous tutorial in this group](odata-05-data-model-service), you added a cut down version of the `Product` entity type. If you examine [Northwind's metadata document](https://services.odata.org/V4/Northwind/Northwind.svc/$metadata), you should see that this entity type actually has relationships with three other entity types - look for the `NavigationProperty` elements in this extract from the metadata document (some of the `Property` elements have been omitted for brevity):
 
@@ -135,11 +137,7 @@ And this is an example of a request for product _and_ category information to be
 }
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step N: ](Take a look at the Northwind Category -> Product relationship)]
+### Take a look at the Northwind Category -> Product relationship
 
 To balance things out, let's take a brief look at the other entity type in this relationship - and that's the `Category` entity type. Here's what the definition looks like in the metadata document:
 
@@ -213,11 +211,7 @@ Staying with Northwind, let's look at the details for the seventh category next,
 }
 ```
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step N: ](Add a new Categories entity to your Northbreeze schema)]
+### Add a new Categories entity to your Northbreeze schema
 
 Now, it's time to build out your own OData service to reflect a similar relationship. As it's a cut down version of Northwind, and we want to concentrate here on the relationships rather than anything else, you'll only include the category ID, name, and description properties.
 
@@ -338,10 +332,7 @@ You should notice that `cds watch` restarts things - when that happens, re-reque
 
 So far so good, right? Well, let's see. Let's add some category data in the next step.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step N: ](Add data for the Categories entity)]
+### Add data for the Categories entity
 
 In the same way as in the [tutorial that precedes this](odata-05-data-model-service), you should now seed this entity with some data, using the same Comma-Separated Value (CSV) file-based technique as before.
 
@@ -363,10 +354,7 @@ Back at the CAP Welcome page (the root resource on the exposed port 4004), you c
 
 But there's something missing - there's no way to get from a product to a category, or from a category to a list of products.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step N: ](Define relationships in your schema)]
+### Define relationships in your schema
 
 While we can retrieve data for both entities, there's no connection yet between them. Let's address that in this step.
 
@@ -449,10 +437,7 @@ Our extended simple OData service's metadata is now what we want it to be, but t
 
 What do we need to do here? Well, take a closer look at the previous XML. The relationship is qualified by a referential constraint, that refers to a new property (which now also appears as a `Property` element within the `EntityType` definition). That property is `Category_CategoryID`. This has been generated by the managed association and is a clue for us as to what we need to do in the data to bring the actual relationships to life.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step N: ](Modify and extend the data for the Products entity)]
+### Modify and extend the data for the Products entity
 
 In fact, if you look at the `Products` entity set (follow the `Products` hyperlink from the CAP Welcome page), you'll see that this `Category_CategoryID` is indeed a new property, and there are currently no values for it in any of the entities:
 
@@ -545,11 +530,7 @@ Go back to the `Products` entity set in your service that you were looking at in
 
 That looks good!
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step N: ](Exercise the new relationships in your OData service)]
+### Exercise the new relationships in your OData service
 
 Let's use this final step to check if we can now explore the relationship between the two entities in our simple `Northbreeze` OData service. Why don't we use the same approach and set of requests from the first step in this tutorial?
 
@@ -611,5 +592,3 @@ As you can see, your simple OData service is looking great. With just a few line
 
 Congratulations!
 
-[DONE]
-[ACCORDION-END]

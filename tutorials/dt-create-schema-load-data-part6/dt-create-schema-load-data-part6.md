@@ -1,10 +1,12 @@
 ---
-title: Migrate Records in Related Tables Using Stored Procedure
-description: Using a stored procedure to migrate records in related tables as a single transaction.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Migrate Records in Related Tables Using Stored Procedure
+<!-- description --> Using a stored procedure to migrate records in related tables as a single transaction.
+
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](https://developers.sap.com/tutorials/dt-create-schema-load-data-part5.html)
@@ -12,17 +14,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://developers.sap.com/tutorials/dt-create-schema-load-data-part7.html)
 
-## Details
-### You will learn
+## You will learn
  - Creating a stored procedure to migrate records in related tables as a single transaction.
  - Calling a stored procedure.
-
-### Time to Complete
+## Time to Complete
 **10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare Data)]
+### Prepare Data
+
 In order to ensure that the migration script runs correctly, we will start by refreshing the data in the tables that will be used in this tutorial section. Run the script below to restore data. Replace "`<SID>`" with your system's System Id.
 
 ``` sql
@@ -48,11 +49,10 @@ Verify everything executed correctly.
 
 ![Restore Success](restore-success.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Migration Stored Procedure)]
+### Create Migration Stored Procedure
+
 In the last tutorial section [Selectively Move Data Between In-Memory and Extended Tables](https://developers.sap.com/tutorials/dt-create-schema-load-data-part5.html) we manually created a transaction that executed the "`INSERT`" and "`DELETE`" statements as an atomic operation to migrate the data between a single in-memory and a single extended table. We are now going to go a step further and use a stored procedure to execute the required statements to migrate data for 2 related tables as a single transaction. Using a stored procedure simplifies the process of migrating the data and also ensures that the full migration process of inserting and deleting is consistently executed.
 
 Now you will create a stored procedure to migrate data older than a year, from the in-memory tables over to the Dynamic Tiering tables. The `Migrate_Aged_Orders()` stored procedure migrates historical data from in-memory `ORDERS_CS` and `LINEITEM_CS` tables to the Dynamic Tiering tables `ORDERS_DT` and `LINEITEM_DT` respectively. Copy and paste the script below into a SQL console. Then press the Execute button to create the procedure and verify it executed correctly.
@@ -91,11 +91,9 @@ END;
 
 ![Create Success](create-success.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Call Migration Store Procedure
 
-[ACCORDION-BEGIN [Step 3: ](Call Migration Store Procedure)]
 Now that the store procedure is created. You can execute the stored procedure by calling it. Run the script below in a SQL console and make sure it executed correctly.
 
 ``` sql
@@ -124,6 +122,3 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![Verify Column Store](verify-cs.png)
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Call a Remote Function Module From SAP Business Technology Platform (BTP), ABAP Environment
-description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
@@ -8,6 +7,9 @@ primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
+
+# Call a Remote Function Module From SAP Business Technology Platform (BTP), ABAP Environment
+<!-- description --> Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account. If you want to explore some of the concepts of this mission on a trial account, using OData or SOAP rather than RFC, see the following workshop: [SAP BTP, ABAP Environment: Connectivity and Integration](https://github.com/SAP-samples/teched2020-DEV268).
@@ -19,12 +21,12 @@ author_profile: https://github.com/julieplummer20
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
 -	In this on-premise system, you have installed SAP Cloud Connector with Administrator rights. (In the above systems, this is pre-installed)
 
-## Details
-### You will learn
+## You will learn
   - How to open a secure tunnel connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to create a destination service instance with an RFC connection
   - How to test the connection using an ABAP handler class
 
+## Intro
 Throughout this tutorial, replace `XXX` or `JP` with your initials or group number.
 
 **The problem:**
@@ -50,7 +52,8 @@ There are two problems when setting up connectivity between the SAP BTP, ABAP En
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure SAP Cloud Connector)]
+### Configure SAP Cloud Connector
+
 First, you need to connect your ABAP on-premise system to a Cloud Foundry subaccount by means of SAP Cloud Connector.
 
 1. In your browser, log on to SAP Cloud Connector:
@@ -69,24 +72,23 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
     |  Password   |
     |  Location ID | Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. `XXX` for your initials or group number as here
 
-    !![step1a-cf-name-id-subac](step1a-cf-name-id-subac.png)
+    <!-- border -->![step1a-cf-name-id-subac](step1a-cf-name-id-subac.png)
 
 Your configuration should now look like this. Note down the **Location ID**, here **`XXX`**. You will need it later.
 
-  !![step1b-add-subaccount](step1b-add-subaccount.png)
-  !![step1c-cf-check-scc-xxx](step1c-cf-check-scc-xxx.png)
+  <!-- border -->![step1b-add-subaccount](step1b-add-subaccount.png)
+  <!-- border -->![step1c-cf-check-scc-xxx](step1c-cf-check-scc-xxx.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add On-Premise System)]
+### Add On-Premise System
+
 1. In the menu in the left pane, expand the subaccount and choose **Cloud To On-Premise > Access Control**.
 
-    !![Image depicting step2a-cf-add-onP-system](step2a-cf-add-onP-system.png)
+    <!-- border -->![Image depicting step2a-cf-add-onP-system](step2a-cf-add-onP-system.png)
 
 2. In the **Mapping Virtual to Internal System** pane, choose **Add (+)**.
 
-    !![step2b-cf-add-onP-system](step2b-cf-add-onP-system.png)
+    <!-- border -->![step2b-cf-add-onP-system](step2b-cf-add-onP-system.png)
 
 3. Enter the following values, and choose **Save**.
 
@@ -104,21 +106,20 @@ Your configuration should now look like this. Note down the **Location ID**, her
     |Description | Optional
     | Check Internal Host | Ticked
 
-    !![step2c-cf-map-system](step2c-cf-map-system.png)
+    <!-- border -->![step2c-cf-map-system](step2c-cf-map-system.png)
 
 The mapping should now look something like this. Check that the status = `Reachable`. If not, check that you chose the correct port, or whether an internal firewall is preventing communication:
 
 ![step2d-cf-mapped-to-virtual-system](step2d-cf-mapped-to-virtual-system.png)  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Specify remote function modules and BAPIs)]
+### Specify remote function modules and BAPIs
+
 Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resource you need, `RFC_SYSTEM_INFO`.
 
 1. Add the resource **`RFC_SYSTEM_INFO`** by choosing the **Protocol = RFC**, then choosing **+**.
 
-    !![step3a-cf-add-rfc-resource](step3a-cf-add-rfc-resource.png)
+    <!-- border -->![step3a-cf-add-rfc-resource](step3a-cf-add-rfc-resource.png)
 
 2. Enter the name of the RFC, e.g. **`RFC_SYSTEM_INFO`**. Alternatively, add **`RFC`** as a **Prefix**. Then choose **Save**
 
@@ -132,27 +133,25 @@ Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resour
 
     ![step3c-cf-resources-rfc](step3c-cf-resources-rfc.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check connectivity from SAP BTP cockpit)]
+### Check connectivity from SAP BTP cockpit
+
 In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
 
-!![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
+<!-- border -->![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
 
 > The location ID points to the correct SAP Cloud Connector (located in the on-Premise system); The virtual host points to the on-Premise connection mapped in SAP Cloud Connector.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create destination)]
+### Create destination
+
 You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
 1. In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
 
-    !![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
+    <!-- border -->![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
 
 2. Enter the following values:
 
@@ -174,24 +173,22 @@ You will now create a destination in the ABAP Environment. This must be created 
     |  `jco.client.client`| `<Your ABAP System client`, e.g. **001**
     | `jco.client.sysnr`  | `<Your ABAP System number>`, e.g. **00**
 
-    !![step5b-cf-destination-created](step5b-cf-destination-created.png)
+    <!-- border -->![step5b-cf-destination-created](step5b-cf-destination-created.png)
       .
-    !![step4b-cf-connection-successful](step4b-cf-connection-successful.png)
+    <!-- border -->![step4b-cf-connection-successful](step4b-cf-connection-successful.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create ABAP class for RFC connection)]
+### Create ABAP class for RFC connection
+
 1. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
 
 2. Enter a name and description. The name should be in the form `ZCL_...RFC_XXX`. Replace `XXX` with your group number or initials.
 
 3. Create or assign a transport request.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add interfaces statement; implement main method)]
+### Add interfaces statement; implement main method
+
 1. Implement the interface by adding this statement to the public section:
 
     `interfaces if_oo_adt_classrun.`
@@ -203,10 +200,9 @@ You will now create a destination in the ABAP Environment. This must be created 
     `METHOD IF_OO_ADT_CLASSRUN~MAIN.`
     `ENDMETHOD.`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create variables)]
+### Create variables
+
 Create the data types that specify your remote connection information, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial).
 
     ```ABAP
@@ -221,10 +217,9 @@ Create the data types that specify your remote connection information, replacing
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Call remote function from on-premise system)]
+### Call remote function from on-premise system
+
 ```ABAP
 CALL function 'RFC_SYSTEM_INFO'
 destination lv_destination
@@ -233,20 +228,18 @@ destination lv_destination
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Output result)]
+### Output result
+
 Output the result of the RFC call to the ABAP Console
 
 ```ABAP
 out->write( lv_result ).
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Wrap method in an exception)]
+### Wrap method in an exception
+
 Wrap the whole method in an exception using TRY...CATCH.
 
 ```ABAP
@@ -256,10 +249,9 @@ endtry.
 ```    
 ![Image depicting step15-try-catch](step15-try-catch.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Check your code)]
+### Check your code
+
 Your code should look roughly like this:
 
 ```ABAP
@@ -299,23 +291,21 @@ CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
 ENDCLASS.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test the class)]
+### Test the class
+
 1. Save and activate the class, using **`Ctrl+S, Ctrl+F3`**.
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Add error handling to the class for the RFC connection )]
+
+
+### Add error handling to the class for the RFC connection 
+
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
 
     ```ABAP
@@ -346,8 +336,6 @@ ENDCLASS.
 
     ![Image depicting step20-error-handling](step20-error-handling.png)
 
-[DONE]
-[ACCORDION-END]
 
 ## More Information
 This tutorial mission is based on a blog post series by Andre Fischer, which is well worth a look:

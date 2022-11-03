@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Enhance Behavior With Action and Validation
-description: Enhance behavior definition and implementation with action and validation.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
@@ -9,13 +8,15 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Enhance Behavior With Action and Validation
+<!-- description --> Enhance behavior definition and implementation with action and validation.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to enhance behavior definition
   - How to enhance behavior implementation
   - How to enhance behavior definition for projection view
@@ -24,11 +25,13 @@ author_profile: https://github.com/mervey45
   - How to implement action
 
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enhance behavior definition)]
+### Enhance behavior definition
+
   1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and replace your code with following:
 
     ```ABAP
@@ -81,10 +84,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 >**HINT:** `$self` means that the instance of the same type is returned on which the operation is performed – here a travel instance.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enhance behavior definition for projection view)]
+### Enhance behavior definition for projection view
+
   1. Switch to your behavior definition `ZC_TRAVEL_M_XXX` and replace your code with following:
 
     ```ABAP
@@ -109,10 +111,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      By using **actions** your are able to change the status of your booking status.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create implementation class)]
+### Create implementation class
+
   1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZCL_BP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zcl_bp_i_travel_m_xxx`** to create your implementation class.
 
       ![Create behavior implementation](implementationx.png)
@@ -132,10 +133,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     >**HINT:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enhance behavior implementation)]
+### Enhance behavior implementation
+
   1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
 
     In your **global class** replace your code with following:
@@ -277,10 +277,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     >- `%control` = Specifies which elements are requested by the consumer
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement more validation methods)]
+### Implement more validation methods
+
 
   1. In your `CLASS lhc_travel IMPLEMENTATION` add two more validation methods, `validate_customer` and `validate_dates`.
 
@@ -373,10 +372,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   2. Don't save and activate yet.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement action)]
+### Implement action
+
 
   1. Now you will implement an action. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
 
@@ -435,10 +433,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   2. Don't save and activate yet.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement determination)]
+### Implement determination
+
 
   >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
   To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
@@ -479,10 +476,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     >- Gets maximum travelID
     >- Sets new travelID by incrementing by 1
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check your code)]
+### Check your code
+
 
   1. Check your result. Your complete **local types** of your behavior implementation should look like this:
 
@@ -740,10 +736,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ![save and activate](activate.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Check result)]
+### Check result
+
 
   1. Now switch to your service binding and double click on `TravelProcessor`.
 
@@ -760,15 +755,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ![Enhance behavior definition for projection view](projection5.png)
 
       **Hint: If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.**
-
-[DONE]
-[ACCORDION-END]   
+   
 
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ## Next
 

@@ -1,11 +1,13 @@
 ---
-title: Change Data Structures Using HDBTABLE and HDBMIGRATIONTABLE Objects
-description: Change data structures by adding columns to a table using HDBTABLE and HDBMIGRATIONTABLE objects.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Change Data Structures Using HDBTABLE and HDBMIGRATIONTABLE Objects
+<!-- description --> Change data structures by adding columns to a table using HDBTABLE and HDBMIGRATIONTABLE objects.
 
 ## Prerequisites
  - You need to complete the [previous tutorial](hana-cloud-collaborative-database-development-1) about creating an SAP HANA Database project.
@@ -13,8 +15,7 @@ primary_tag: products>sap-hana-cloud
 
 
 
-## Details
-### You will learn
+## You will learn
   - How to change table definition in an `HDBTABLE` object
   - How to recreate the table using an `HDBMIGRATIONTABLE` object
   - How to change table definition in an `HDBMIGRATIONTABLE` object
@@ -23,6 +24,7 @@ primary_tag: products>sap-hana-cloud
 
   **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
+## Intro
 >To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
 
 1.	Get started to collaborate in SAP Business Application Studio
@@ -41,7 +43,8 @@ primary_tag: products>sap-hana-cloud
   This tutorial will show you how to change data structures using HDBTABLE and HDBMIGRATIONTABLE objects.
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change data structures using `HDBTABLE` and `HDBMIGRATIONTABLE` objects)]
+### Change data structures using `HDBTABLE` and `HDBMIGRATIONTABLE` objects
+
 
 Now that your table is created and the data is imported, we will change the structure of this table by adding two columns. You can then examine in the terminal how this type of object handles data structure changes, which we will compare to other table types later.
 
@@ -64,10 +67,9 @@ Now that your table is created and the data is imported, we will change the stru
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Verify the changes to the data structure using Database Explorer)]
+### Verify the changes to the data structure using Database Explorer
+
 
 1.	Once the table was successfully deployed, you can check if the data is still in the table by going back to the SAP HANA Database Explorer and refreshing the table.
 
@@ -85,11 +87,10 @@ You may also check the data in the table to verify that it contains the same dat
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Recreate the table using an HDBMIGRATIONTABLE object)]
+### Recreate the table using an HDBMIGRATIONTABLE object
+
 
 Now that you know how `HDBTABLE` objects handle data changes, you can use a different type of object to add two more rows to this table.
 
@@ -123,10 +124,9 @@ Now that you know how `HDBTABLE` objects handle data changes, you can use a diff
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change table definition in HDBMIGRATIONTABLE object)]
+### Change table definition in HDBMIGRATIONTABLE object
+
 
 The next step is to change the data structure of the table by adding two new columns. We will again duplicate our table change the previous version of this file to a `.txt` file that will not be deployed. Then, we will adjust the code of the `hdbmigration` object to define how to migrate from Version 1 of `hdbmigrationtable` to Version 2. For this, follow the next steps.
 
@@ -154,10 +154,9 @@ You can check the image given below.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert migration definition in HDBMIGRATIONTABLE object)]
+### Insert migration definition in HDBMIGRATIONTABLE object
+
 
 An `hdbmigrationtable` object also needs to have a block of code at the very end that defines all migration steps. The following code will do just that, so paste it below the closing parenthesis of the table definition.
 
@@ -190,13 +189,11 @@ And now you know how to manage changing data structures using `HDBTABLE` and `HD
 > You have successfully completed the third tutorial. In the next tutorial, you will prepare your project for collaboration by creating `HDBROLEs` and synchronizing your `SAP HANA Database Project` with Git.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+
 
 ---

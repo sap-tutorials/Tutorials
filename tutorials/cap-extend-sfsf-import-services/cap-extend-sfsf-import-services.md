@@ -1,18 +1,19 @@
 ---
-title: Import SAP SuccessFactors OData Services definitions
-description: In this phase of the extension development you will import the definition of the required OData services
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Import SAP SuccessFactors OData Services definitions
+<!-- description --> In this phase of the extension development you will import the definition of the required OData services
+
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
  - Complete the tutorial: [**Jump start the SAP SuccessFactors Extension CAP Project**](cap-extend-sfsf-jumpstart)
 
-## Details
-### You will learn
+## You will learn
   - How to import OData services definitions to a CAP project via **Entity Data Model XML (EDMX)** files
   - Understand how the EDMX is translated into the **Core Schema Notation (CSN)** (basically a JSON file) from the **CAP framework**
   - Understand the changes made to `package.json` by the import process
@@ -21,7 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Services Metadata)]
+### Get services metadata
+
 
 The first thing you need to do is to get the XML files (EDM XML – Entity Data Model XML – in short **EDMX**) which define the entities that compose the OData services to be consumed in the application. You can get such files from **SAP API Business Hub**.
 
@@ -41,10 +43,9 @@ The first thing you need to do is to get the XML files (EDM XML – Entity Data 
 
 5- Click on the **SAP logo** at the top left corner of the page to **return** to the **home page** and repeat the exact same procedure from **steps 2 to 4**, but now searching for the `PLTUserManagement` OData service to save the `PLTUserManagement.edmx` file to your local computer.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import files to the CAP project)]
+### Import files to the CAP project
+
 
 Now that you've got both EDMX files in our local computer, it's time to import them to your **CAP project** in order for CDS to generate the corresponding definitions using the so-called **Core Schema Notation** (CSN) which is described in **JSON format**.
 
@@ -62,10 +63,9 @@ Now that you've got both EDMX files in our local computer, it's time to import t
 
 4- Now you can **delete the EDMX files** from the `srv` folder. Just **right-click** each one and select **delete**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Checkout the Import Results)]
+### Checkout the import results
+
 
 Now, inspect what happened after executing those command lines. First, click on the `ECEmployeeProfile.csn` file in the `srv/external` folder:
 
@@ -95,14 +95,13 @@ In the `cds.requires` section you'll notice how CAP is referencing both services
 
 With that, you are simply setting the **destination name** and the **path** where the service is hosted within the destination URL.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Destination and XSUAA service instances)]
+### Create destination and XSUAA service instances
+
 
 In order to use that destination for testing your application during development, you need to **bind your project** to **two service instances** in BTP: one for the **destination service** and another for the **XSUAA service**. So, start by creating those service instances and a service key (credentials) for each one in BTP.
 
-In the **BTP cockpit** of your trial account, on the left-hand pane click on **Instances and Subscriptions** then on the **Create** button at the **top-right corner**.
+In the **BTP cockpit** of your trial account, on the left-hand pane (1) click on **Instances and Subscriptions** then (2) on the **Create** button at the **top-right corner**.
 
 ![Figure 12 – Instances and Subscriptions](instances-subscriprions.png)
 
@@ -110,7 +109,7 @@ Fill-in the **service instance information** like in the **screenshot below** an
 
 ![Figure 13 – Destination Service instance](destination-service.png)
 
-On **Instances and Subscriptions** click on the **Create** button at the top-right corner again.
+(1) On **Instances and Subscriptions** (2) click on the **Create** button at the top-right corner again.
 
 ![Figure 14 – Instances and Subscriptions](instances-subscriprions.png)
 
@@ -140,10 +139,9 @@ On the dialog, type `sfsf-xsuaa-sk` in the **Service Key Name** and click on **C
 
 Done! You have successfully created both service instances and their corresponding service keys. Now it's time to bind those service instances to your CAP project using their service keys.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Bind Destination and XSUAA service instances to the local CAP project)]
+### Bind destination and XSUAA service instances to the local CAP project
+
 
 To be able to use the service instances you created in the previous step during development, you need to bind them to the CAP Project. This is done by creating a file named `default-env.json`. In the file you define the so-called `VCAP_SERVICES` object, which is actually an **environment variable** that **holds all the binding information** of an application.
 
@@ -192,11 +190,11 @@ Whenever you **deploy** an application to **Cloud Foundry**, that variable is au
 }
 ```
 
-3- Back in the cockpit, click on the line corresponding to the `sfsf-dest` service instance, then on the **Service Keys** tab on the right, then on the **three dots** next to the service key and finally select **View**.
+3- Back in the cockpit, (1) click on the line corresponding to the `sfsf-dest` service instance, then (2) on the **Service Keys** tab on the right, then (3) on the **three dots** next to the service key and finally (4) select **View**.
 
 ![Figure 22 – View Service Key](view-sk.png)
 
-4- On the **dialog**, click on **Copy JSON** and then on **Close**.
+4- On the **dialog**, (1) click on **Copy JSON** and then (2) on **Close**.
 
 ![Figure 23 – Copy Service Key](copy-json.png)
 
@@ -208,10 +206,8 @@ Whenever you **deploy** an application to **Cloud Foundry**, that variable is au
 
 With that, you're done **binding** the project to the **destination** and **XSUAA** service instances.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Your Knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

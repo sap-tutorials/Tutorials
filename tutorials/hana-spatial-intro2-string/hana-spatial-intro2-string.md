@@ -1,11 +1,13 @@
 ---
-title: Understand Strings in SAP HANA Spatial
-description: A string ('a curve' in more general) is a spatial data type that connects points
+parser: v2
 auto_validation: true
 time: 5
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+# Understand Strings in SAP HANA Spatial
+<!-- description --> A string ('a curve' in more general) is a spatial data type that connects points
+
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Understand Points in SAP HANA Spatial](hana-spatial-intro1-point)
@@ -13,13 +15,13 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
 - [Understand Polygons in SAP HANA Spatial](hana-spatial-intro3-polygon)
 
-## Details
-### You will learn  
+## You will learn  
 You will continue learning the basics of spatial processing now with the __strings__ (also known as __curves__) data type.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new line)]
+### Create a new line
+
 
 Open the SQL editor of your choice (web or desktop based) connected to your SAP HANA database instance.
 
@@ -38,10 +40,9 @@ Execute the query. The `ST_Dimension()` method will return `1`. In the previous 
 
 ![String Dimension](spatial0201b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Calculate the length)]
+### Calculate the length
+
 
 Unlike a point, a line has length. Use the `ST_Length()` method to calculate it.
 
@@ -54,10 +55,9 @@ Obviously accordingly to the Pythagorean Theorem the result will be `5`. This pr
 
 ![3-4-5 Rule](spatial0202b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add more points)]
+### Add more points
+
 
 Strings are not just straight lines. The `ST_LineString` type is used to represent a multi-segment curve using straight line segments by adding more control points.
 
@@ -87,10 +87,9 @@ Opening the SVG code above in a viewer or in a web browser allows you to see a d
 
 ![SVG output](spatial0204b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a circular string)]
+### Create a circular string
+
 
 The `ST_CircularString` type of strings uses circular line segments (arcs) between control points.
 
@@ -116,10 +115,9 @@ A string that starts and ends at the same point is **closed**. Above is an examp
 
 Strings can also be characterized by whether they are simple or not. A **simple** means a string that does not cross itself. A **ring** is a simple, closed string. The geometry above is a ring, according to this definition in spatial processing.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check string characteristics)]
+### Check string characteristics
+
 
 All these characteristics can be tested and if needed used as **Spatial Predicates**. Spatial predicates are implemented as member functions that return `0` (false) or `1` (true).
 
@@ -147,10 +145,9 @@ SELECT 'isRing' AS "Feature", NEW ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)'
 
 ![not-Closed not-Simple not-Ring](spatial0209b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a circle)]
+### Create a circle
+
 
 A `CircularString` with three points can be a complete circle, if the start and end points are coincident. In this case, the intermediate point is the midpoint of the segment.
 
@@ -174,8 +171,7 @@ FROM "DUMMY";
 
 What is the result of the last SQL statement?
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

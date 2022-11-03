@@ -1,21 +1,23 @@
 ---
-title: Connect to HubSpot
-description: Connect to HubSpot (an example of a non-SAP third-party application) via CRM Hub.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-integration-suite
 ---
 
+# Connect to HubSpot
+<!-- description --> Connect to HubSpot (an example of a non-SAP third-party application) via CRM Hub.
+
 ## Prerequisites
 - You should have your test or sandbox tenant in `HubSpot(CRM)` or any other third-party application.
 
-## Details
-### You will learn
+## You will learn
   - How to get the integration or API key to access `HubSpot`
   - How to connect to a third-party application from Open Connectors
 
-[ACCORDION-BEGIN [Step 1: ](Get integration key to access HubSpot)]
+### Get integration key to access HubSpot
+
 
 1. Log on to your `HubSpot` [tenant](https://www.hubspot.com/) by providing your login credentials.
     - Click **Setting** and then click **Integrations**.
@@ -36,10 +38,9 @@ primary_tag: products>sap-integration-suite
 
     >If you have not created API Key already click on Create to create one that can be used to connect securely from Open Connectors
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect to third-party application)]
+### Connect to third-party application
+
 
 1. Enter your [SAP  trial](https://account.hanatrial.ondemand.com/).
 
@@ -110,5 +111,4 @@ primary_tag: products>sap-integration-suite
 
     ![Curl Command](14-Curl-command.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
+

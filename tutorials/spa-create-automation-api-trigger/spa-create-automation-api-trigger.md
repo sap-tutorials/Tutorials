@@ -1,147 +1,161 @@
 ---
+parser: v2
 author_name: Ilyes Yamoun
 author_profile: https://github.com/shielddz
-title: Integrate Chatbot with SAP Process Automation
-description: Integrate SAP Process Automation with SAP Conversational AI using API Triggers and Notifiers
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, software-product>sap-conversational-ai]
 primary_tag: software-product>sap-process-automation
 ---
 
+# Integrate Chatbot with SAP Process Automation
+<!-- description --> Integrate SAP Process Automation with SAP Conversational AI using API Triggers and Notifiers
+
 ## Prerequisites
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
  - [Agent Management Settings to Execute the Process with an Automation](spa-run-agent-settings)
  - [SAP Process Automation Application Capture](spa-create-automation-application-capture) Completed
 
-## Details
-### You will learn
+## You will learn
   - How to add API Trigger and Notifiers to an automation
   - How to send data from a chatbot and trigger an automation in *Unattended* mode
 
 ---
 
+## Intro
 In this tutorial you will retrieve the specific **Sales Order** details through a chatbot ( **SAP Conversational AI** ) that interacts with your **SAP Process Automation** project.
 
-[ACCORDION-BEGIN [Step 1: ](Release and deploy the project)]
+### Release and deploy the project
+
 
 1.  Open the project you created in [SAP Process Automation Application Capture](spa-create-automation-application-capture).
 
 2.  Add **Agent Attribute**. (Complete [Agent Management Settings](spa-run-agent-settings))
 
-    !![Agent Attribute](Step1-1.png)
+    <!-- border -->![Agent Attribute](Step1-1.png)
 
 3.  Release the project.
 
-    !![Release the project](Step1-2.png)
+    <!-- border -->![Release the project](Step1-2.png)
 
 4.  Deploy the project:
     - Click **Deploy**.
 
-    !![Deploy button](Step1-3.png)
+    <!-- border -->![Deploy button](Step1-3.png)
 
     - Select **Create a Trigger** and click **Next**.
 
-    !![Trigger creation](Step1-4.png)
+    <!-- border -->![Trigger creation](Step1-4.png)
 
     - Select **API** and click **Next**.
 
-    !![Trigger type selection](Step1-5.png)
+    <!-- border -->![Trigger type selection](Step1-5.png)
 
     - Select **Get Order Details From Application** automation and click **Next**.
 
-    !![Trigger automation selection](Step1-6.png)
+    <!-- border -->![Trigger automation selection](Step1-6.png)
 
     - Set **Name** to **Get Order Trigger** and click **Next**.
 
-    !![Trigger Name](Step1-7.png)
+    <!-- border -->![Trigger Name](Step1-7.png)
 
     - Click **Confirm** then hit **Deploy**.
 
-    !![Confirm and deploy project](Step1-8.png)
+    <!-- border -->![Confirm and deploy project](Step1-8.png)
 
 The project is now deployed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create API key)]
+### Create API key
+
 
 1.  Go to lobby landing page of **SAP Process Automation**.
 
-    !![Lobby Page](Step2-0.png)
+    <!-- border -->![Lobby Page](Step2-0.png)
 
 1.  Go to **Settings > API Keys**.
 
-    !![API Keys page](Step2-1.png)
+    <!-- border -->![API Keys page](Step2-1.png)
 
 2.  To create your API Key:
     - Click **Add API Key**.
 
-      !![Add API Key](Step2-2.png)
+      <!-- border -->![Add API Key](Step2-2.png)
 
     - Set **Name** to `myAPIKey` and click **Next**.
     - Select both options `trigger_read` and `trigger_execute` and click **Next**.
 
-      !![Select Scope](Step2-3.png)
+      <!-- border -->![Select Scope](Step2-3.png)
 
     - Click **Add**.
 
-      !![Add button](Step2-4.png)
+      <!-- border -->![Add button](Step2-4.png)
 
     - Click **Copy** and note down what was just copied to your clipboard.
 
-      !![Copy API key](Step2-5.png)
+      <!-- border -->![Copy API key](Step2-5.png)
 
     > It's important to save your API Key, since it can only be read once from the Setting.
 
 Your **API Key** is now created and ready to be used.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create service binding)]
-1.  Log in to your **SAP BTP Cockpit** and navigate to your Subaccount.
+### Create instance and service binding
 
-2.  Create a new **Service Binding** by navigating to **Services** > **Instances and Subscriptions** > **Instances** > Click on your **SAP Process Automation Service** instance > Click **...** > **Create Service Binding**.
+1.  Navigate to **SAP BTP Cockpit** subaccount > **Services** > **Instances and subscriptions**.
 
-    !![Navigate to Service Bindings creation tab](Step3-1.png)
+2.  Choose **Create**.
 
-3.  Put the name as `myServiceBinding` and click **Create**.
+    <!-- border -->![Navigate to instances and subscriptions](Step3-1.png)
 
-    !![Name the service binding and create it](Step3-2.png)
+3.  For the new instance:
+    -  Select **SAP Process Automation** as **Service**.
+    -  Select **Standard Instance** plan from the **Plan** list.
+    -  Select **Other** as **Runtime Environment**.
+    -  Set **Instance Name** as **SPA-instance**.
+    -  Choose **Create**.
 
-4.  Click **...** and then click **View** to view the Service Binding created.
+    <!-- border -->![Instance details](Step3-2.png)
 
-    !![View Service Binding](Step3-3.png)
+The instance is now added.
 
-5.  Click **Form** and copy the **clientid**, **clientsecret** and **URL** under the `uaa` section. You will need it in the next steps.
+4.  Create a new **Service Binding** by selecting your **SPA-instance** instance > Select **...** to expand > **Create Service Binding**.
 
-    !![Note down information](Step3-4.png)
+    <!-- border -->![Navigate to Service Bindings creation tab](Step3-3.png)
 
-[DONE]
-[ACCORDION-END]
+5.  Put the name as `myServiceBinding` and click **Create**.
 
-[ACCORDION-BEGIN [Step 4: ](Get API trigger URL)]
+    <!-- border -->![Name the service binding and create it](Step3-4.png)
+
+6.  Click **...** and then click **View** to view the Service Binding created.
+
+    <!-- border -->![View Service Binding](Step3-5.png)
+
+7.  Click **Form** and copy the `clientid`, `clientsecret` and **URL** under the `uaa` section. You will need it in the next steps.
+
+    <!-- border -->![Note down information](Step3-6.png)
+
+
+### Get API trigger URL
+
 
 1.  Navigate to **SAP Process Automation > Monitor > Manage > Automations**.
 2.  From the shown triggers:
     - Find your trigger (Created in Step **1.4** during deployment).
     - Click on **Actions** and select **Edit**.
 
-      !![Edit Trigger](Step4-1.png)
+      <!-- border -->![Edit Trigger](Step4-1.png)
 
     - Copy **URL** and **Payload**.
 
-    !![Copy Info](Step4-2.png)
+    <!-- border -->![Copy Info](Step4-2.png)
 
     > You can notice that the inputs of the automation are specified in the request body also called as the **Payload**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure CAI bot API call)]
+### Configure CAI bot API call
+
 A ready CAI bot is used here.
 This bot has a goal of emitting an API Call to **SAP Process Automation** using **API Trigger**, **API Key** and **Service Binding** we created previously.
 
@@ -149,7 +163,7 @@ Using **CONSUME API SERVICE** feature in **Conversational AI** bot we can make A
 
 1.  Set **URL** to the one saved in step **4**.
 
-    !![Set URL](Step5-1.png)
+    <!-- border -->![Set URL](Step5-1.png)
 
 2.  For **Authentication** tab:
   - Set **Authentication type** to **OAuth2 Authentication**.
@@ -157,13 +171,13 @@ Using **CONSUME API SERVICE** feature in **Conversational AI** bot we can make A
 
     > For Authorization URL add `/oauth/token` at the end of the URL.
 
-    !![Authentication tab](Step5-2.png)
+    <!-- border -->![Authentication tab](Step5-2.png)
 
 3.  For **Headers** tab:
     - Click **+ New Fields** to create a new field.
     - Set **Key** to `irpa-api-key` and **Value** to the one saved in step **2**.
 
-    !![Headers tab](Step5-3.png)
+    <!-- border -->![Headers tab](Step5-3.png)
 
 4.  For **Body** tab:
     - Select **Create a custom body**.
@@ -180,45 +194,44 @@ Using **CONSUME API SERVICE** feature in **Conversational AI** bot we can make A
     }
     ```
 
-    !![Body tab](Step5-4.png)
+    <!-- border -->![Body tab](Step5-4.png)
 
     > `memory.orderNumber.raw` is just a variable where an order number given by a user is stored.
 
 5.  Click **Save** to save your changes.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get CAI bot tokens)]
+
+### Get CAI bot tokens
+
 
 1.  To get **Bot Developer Token**:
     - Go to **Settings > Tokens**.
     - Note **Developer Token** somewhere and save it.
 
-    !![CAI Developer token](Step6-1.png)
+    <!-- border -->![CAI Developer token](Step6-1.png)
 
-2.  To get **Designtime API Token**:
-    - Click **Generate** besides **Designtime APIs**.
+2.  To get `Designtime API Token`:
+    - Click **Generate** besides `Designtime APIs`.
     - Select **Client Credentials** and click **Next**.
     - Note **Auth URL**, **Client ID** and **Client Secret** somewhere and save it.
     > Don't confuse these 3 information with those of the service binding's.
 
-    !![CAI Designtime API token](Step6-2.png)
+    <!-- border -->![CAI Designtime API token](Step6-2.png)
 
 We now have the proper tokens to create **Notifiers**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create notifiers)]
+### Create notifiers
+
 1.  Navigate to **SAP Process Automation > Monitor > Manage > Automations**.
 
-    !![Find Trigger](Step7-1.png)
+    <!-- border -->![Find Trigger](Step7-1.png)
 
 2.  Start **Notifier**:
     - Click ![More Options button](icon-three-dots.png) under **Actions** in the same row as your **Trigger**.
 
-    !![More options in screen](Step7-2-0.png)
+    <!-- border -->![More options in screen](Step7-2-0.png)
 
     - Select **Add Notifier**.
     - Select **CAI** and click **Next**.
@@ -231,9 +244,9 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has started
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token** from step `6.1`
-    |  Auth URL       | **Designtime APIs** token **Auth URL** from step `6.2`
-    |  Client ID      | **Designtime APIs** token **Client ID** from step `6.2`
-    |  Client Secret  | **Designtime APIs** token **Client Secret** from step `6.2`
+    |  Auth URL       | `Designtime APIs` token **Auth URL** from step `6.2`
+    |  Client ID      | `Designtime APIs` token **Client ID** from step `6.2`
+    |  Client Secret  | `Designtime APIs` token **Client Secret** from step `6.2`
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
     |  Message content           | IRPA: Bot Started.
@@ -253,9 +266,9 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has finished successfully
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token** from step `6.1`
-    |  Auth URL       | **Designtime APIs** token **Auth URL** from step `6.2`
-    |  Client ID      | **Designtime APIs** token **Client ID** from step `6.2`
-    |  Client Secret  | **Designtime APIs** token **Client Secret** from step `6.2`
+    |  Auth URL       | `Designtime APIs` token **Auth URL** from step `6.2`
+    |  Client ID      | `Designtime APIs` token **Client ID** from step `6.2`
+    |  Client Secret  | `Designtime APIs` token **Client Secret** from step `6.2`
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
 
@@ -270,7 +283,7 @@ We now have the proper tokens to create **Notifiers**.
     ```
     - Click **Create**.
 
-    !![Create Notifiers](Step7-2.png)
+    <!-- border -->![Create Notifiers](Step7-2.png)
 
 4.  Error **Notifier**:
     - Click ![More Options button](icon-three-dots.png) under **Actions** in the same row as your **Trigger**.
@@ -285,44 +298,44 @@ We now have the proper tokens to create **Notifiers**.
     |  Description    | Indicates that the automation has failed
     |  Conversation ID| ```${invocation_context.conversationId}```
     |  Token          | **Developer token**
-    |  Auth URL       | **Designtime APIs** token **Auth URL**
-    |  Client ID      | **Designtime APIs** token **Client ID**
-    |  Client Secret  | **Designtime APIs** token **Client Secret**
+    |  Auth URL       | `Designtime APIs` token **Auth URL**
+    |  Client ID      | `Designtime APIs` token **Client ID**
+    |  Client Secret  | `Designtime APIs` token **Client Secret**
     |  What do you want to do?   | **Send a message**
     |  Delay in second           | 0
     |  Message content           | Automation failed with error: `${error.details}`
 
     - Click **Create**.
 
-    !![Create Fail Notifiers](Step7-3.png)
+    <!-- border -->![Create Fail Notifiers](Step7-3.png)
 
 The three notifiers are now created.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test automation with CAI bot)]
+
+### Test automation with CAI bot
+
 1.  Open your SAP Conversational AI chatbot.
 
 2.  Click **Connect** tab.
 
 3.  Click on **SAP Conversational AI Web Client**.
 
-    !![SAP Conversational AI Web Client](step8-1.png)
+    <!-- border -->![SAP Conversational AI Web Client](step8-1.png)
 
 4.  Put **CAI with IRPA** in **Channel Name** and click **Create**.
 
-    !![Create Channel](step8-2.png)
+    <!-- border -->![Create Channel](step8-2.png)
 
 5.  Click on the **Web Client standalone link** to open the chatbot in browser.
 
 6.  The chatbot opens in a new window.
 
-    !![Open Chatbot in new Window](step8-3.png)
+    <!-- border -->![Open Chatbot in new Window](step8-3.png)
 
     > Make sure your **Desktop Agent** is in **Background (Unattended)** mode.
     >
-    > !![Put Agent in unattended mode](Step8-3-2.png)
+    > <!-- border -->![Put Agent in unattended mode](Step8-3-2.png)
 
 7.  To start my bot I type **Start my automation** according to what I set it up to respond to (Execute the API call) after asking for an order number.
 
@@ -335,7 +348,5 @@ The three notifiers are now created.
 
 ![Response From SPA](step8-4.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

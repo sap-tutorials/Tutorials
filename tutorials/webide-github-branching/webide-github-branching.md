@@ -1,34 +1,36 @@
 ---
-title: Work with Branches in GitHub and SAP Web IDE
-description: Create branches in GitHub, switch branches and update application in a different branch in SAP Web IDE.
+parser: v2
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 15
 ---
 
+# Work with Branches in GitHub and SAP Web IDE
+<!-- description --> Create branches in GitHub, switch branches and update application in a different branch in SAP Web IDE.
+
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 
 
-## Details
-### You will learn  
+## You will learn  
   - How your collaborators can create branches in GitHub
   - How to switch to the other branch in SAP Web IDE
   - How to make changes and commit the changes to the other branch
 
+## Intro
 >This tutorial is written from a **collaborator's** point of view.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform cockpit)]
+### Log into your SAP Cloud Platform cockpit
+
 
 Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log into your SAP Cloud Platform cockpit.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
+### Open SAP Web IDE
+
 
 To open SAP Web IDE, click the **Services** tab in the navigation bar, scroll down and click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
@@ -36,10 +38,9 @@ To open SAP Web IDE, click the **Services** tab in the navigation bar, scroll do
 
 Click **Go to Service**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a local branch)]
+### Create a local branch
+
 
 Create a branch to which you will make the changes, as follows.
 
@@ -61,10 +62,9 @@ The branch is created and the branch that you are working with is displayed in t
 
 >This creates a local branch, in SAP Web ID#E, but does not change the repository on GitHub.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a remote branch)]
+### Create a remote branch
+
 
 Right-click your project in the workspace, then select **Git > Create Remote Branch**.
 
@@ -72,10 +72,9 @@ Enter a name for the branch, like `m1`, and click **Create**.
 
 ![Create remote branch](CreateRemoteBranch.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Commit and push changes)]
+### Commit and push changes
+
 
 Since this branch is dedicated to milestone `m1,` which has 2 issues to be targeted, you will implement the changes for each of these in separate commits.
 
@@ -95,23 +94,19 @@ Click **Push** and select **Remote branch**, then select the `m1` branch to push
 ![Push to GitHub remote branch](p5_5c.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check branch on GitHub)]
+### Check branch on GitHub
+
 
 Now if you check the `m1` branch on the GitHub organization repository, you will see that the push has been completed and the changes are seen on GitHub.
 
 ![Push to GitHub remote branch is successful](p5_6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Commit and push additional changes)]
+### Commit and push additional changes
+
 
 Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
 
 
-[DONE]
-[ACCORDION-END]

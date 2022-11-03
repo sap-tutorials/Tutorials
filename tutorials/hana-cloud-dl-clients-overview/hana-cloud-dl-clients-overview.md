@@ -1,29 +1,32 @@
 ---
-title: SAP HANA Cloud, Data Lake Client Interfaces Overview
-description: Learn about the SAP HANA Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
+# SAP HANA Cloud, Data Lake Client Interfaces Overview
+<!-- description --> Learn about the SAP HANA Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+
 ## Prerequisites
  - A Microsoft Windows or Linux computer.
 
-## Details
-### You will learn
+## You will learn
   - Information about SAP HANA Cloud, data lake Relational Engine
   - How to install the data lake client
   - How to create sample tables, views, and procedures
   - How to connect using SAP HANA cockpit, SAP HANA database explorer and the Interactive SQL Client
 
+## Intro
 This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview of SAP HANA Cloud, data lake)]
+### Overview of SAP HANA Cloud, data lake
+
 
 SAP HANA Cloud is composed of multiple components.
 
@@ -38,11 +41,10 @@ SAP HANA Cloud is composed of multiple components.
     >Note, that the data lake Files component is currently not available in trial accounts.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
+### Create a data lake instance and connect to it
+
 
 >To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
 
@@ -95,10 +97,9 @@ There are multiple ways to create a data lake:
 
     >Note that the SAP HANA Cloud, HANA data lake trial or free tier instances are shut down overnight and will need to be restarted before working with them the next day.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP HANA cockpit)]
+### Open the SAP HANA cockpit
+
 
 1. Once the data lake has been created, use the actions menu (three dots) to open SAP HANA cockpit.  
 
@@ -114,10 +115,9 @@ There are multiple ways to create a data lake:
 
 2. The SAP HANA Cockpit can also be used to examine and configure users.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables, views, functions, and procedures with SAP HANA database explorer)]
+### Create tables, views, functions, and procedures with SAP HANA database explorer
+
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
@@ -275,10 +275,9 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
 For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Install the data lake client)]
+### Install the data lake client
+
 1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
     ![data lake software downloads](dl-software-downloads.png)
@@ -313,7 +312,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 3.  Specify an install folder and install all the features.
 
-    ![GUI Installer](linux-gui-install.png)
+    ![GUI Installer](windows-gui-install.png)
 
     Console mode installer
 
@@ -362,10 +361,9 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Connect with the Interactive SQL Client (DBISQL))]
+### Connect with the Interactive SQL Client (DBISQL)
+
 
 The data lake client install includes [Interactive SQL Client (DBISQL)](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/4abee782576b4bff9f1a1274d662f74b.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
@@ -407,22 +405,9 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
     >![DBISQL connected nogui](dbisql-nogui.png)
 
-    >If `dbisql` fails to run with the `-nogui` flag, try running the following command to not register the HANA plugin.
 
-    >```Shell
-    dbisql -XUnRegister hana
-    >```
+### Insert data with Interactive SQL Client (DBISQL)
 
-    >The above command can be reverted with the below command.
-    >```Shell
-    dbisql -XRegisterPlugin hana
-    >```
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Insert data with Interactive SQL Client (DBISQL))]
 
 1. Execute the following insert statements to provide some sample data.
 
@@ -565,8 +550,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
 Congratulations! You have created and connected to a data lake Relational Engine. In the following tutorials, the client interfaces will be used to connect from ODBC, JDBC and Node.js.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---
