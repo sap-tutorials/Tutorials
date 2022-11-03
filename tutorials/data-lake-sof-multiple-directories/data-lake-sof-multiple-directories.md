@@ -28,15 +28,15 @@ Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file cont
 If you have not yet provisioned an SAP HANA data lake, here is a great tutorial on how to do so!
 Please go through the entire tutorial on **Use SQL on Files to query data from a single file/directory**
 
-We will be using the Orders table as a reference.
+You will be using the Orders table as a reference.
 
 ---
 
 ### STEP 1: Create a SQL on Files remote table in Files service
 
-Note that the table definition will need to match the expected schema/data types of the columns in the structured file you are trying to query. Login to the SQL console as User1 or HDLADMIN and execute all the queries associated with this tutorial. I will be executing the queries through HDLADMIN.
+Note that the table definition will need to match the expected schema/data types of the columns in the structured file you are trying to query. Log in to the SQL console as User1 or HDLADMIN and execute all the queries associated with this tutorial. This tutorial will be demonstrated by executing the queries through HDLADMIN.
 
-Firstly, we create a SCHEMA in files service.
+Firstly, you create a SCHEMA in files service.
 
 ```SQL
 CREATE SCHEMA HDLADMIN_TPCH_SQLONFILES IN FILES_SERVICE;
@@ -65,7 +65,7 @@ O_COMMENT             varchar(79)
 For information about the parameter definitions and supported data types, see  [CREATE (Remote) TABLE Statement for Data Lake Relational Engine (HANA DB-Managed)](help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/24e694b566814ad285cb32fe3e5d3928.html?state=DRAFT&version=2022_1_QRC)
 
 
-Next, we create a virtual table. Notice in the SQL below where the remote servers name goes and where the reference to the table in the Files Service goes. Over here, we will be creating an ORDERS VIRTUAL TABLE  in HDLRE that points to the ORDERS table that we just created in SQL On Files service.
+Next, You will create a virtual table. Notice in the SQL below where the remote servers name goes and where the reference to the table in the Files Service goes. Over here, you will be creating an ORDERS VIRTUAL TABLE  in HDLRE that points to the ORDERS table that you just created in SQL On Files service.
 
 The EXISTING keyword is used in conjunction with CREATE TABLE and IN FILES SERVICE to indicate that a table exists remotely in SQL on Files and to import its metadata into the new virtual table. The remote table is now visible to users thanks to this syntax.
 
@@ -102,7 +102,7 @@ Another way to declare a data source with SQL on Files is using folder hierarchi
 
 
 This diagram represents the folder structure hierarchy of the ORDERS table, for years 2020 to 2022 for ORDERS table there will be yearly data and from 2023 onwards to 2025, the table will have monthly data as well.
-In this case, we will create the folder structure in such a way that for ORDERYEAR=2020, it will query the data for that particular year i.e. 2020. We can also query the data for a particular month from that year and that is when ORDERMONTH and ORDERYEAR parameters comes into role. `SELECT * FROM ORDERS WHERE ORDERYEAR=2023 AND ORDERMONTH=05;` to skip parsing any data files under all the other directories for better performance.
+In this case, you will create the folder structure in such a way that for ORDERYEAR=2020, it will query the data for that particular year i.e. 2020. You can also query the data for a particular month from that year and that is when ORDERMONTH and ORDERYEAR parameters comes into role. `SELECT * FROM ORDERS WHERE ORDERYEAR=2023 AND ORDERMONTH=05;` to skip parsing any data files under all the other directories for better performance.
 
 Make sure to note that data has been already loaded into the File Container. Here, I have used the **LOAD Statement** to load the data from an external entity (Amazon S3 bucket) with Scale factor 100. The scale factor measures the size of the input data. Below is the query to load the data into File container. This data will be loaded into the ORDERS Table which will be created in the HDLRE either by the HDLRE User that you might have created or by the HDLADMIN user.
 
