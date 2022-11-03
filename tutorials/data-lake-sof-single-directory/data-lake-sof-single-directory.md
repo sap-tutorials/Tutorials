@@ -1,11 +1,13 @@
 ---
-title: Use SOF to Query data from Single Directory
-description: It will teach you how to setup SQL on Files, optimize SQL on Files performance using a single folder directory.
+parser: v2
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
+
+# Use SOF to Query data from Single Directory
+<!-- description --> It will teach you how to setup SQL on Files, optimize SQL on Files performance using a single folder directory.
 
 ## Prerequisites
 - Have access to a licensed managed or standalone SAP HANA data lake.
@@ -15,8 +17,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 -	Already set up HDLFS Connection in Database Explorer.
 
 
-## Details
-### You will learn
+## You will learn
  -	How to define the database objects required to query structured data files.
  -	How to add a data source for a single data file and query the output of that file.
 
@@ -27,7 +28,8 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up SQL on File Basics)]
+### Set up SQL on File Basics
+
 
 To start off with this Tutorial, you will need to connect to a SQL console connected directly with your SAP HANA Data Lake Instance. This can be done easily by clicking on the **Actions** tab of your Data Lake Instance from the **BTP cockpit** or **Cloud Central** and selecting **Open in SAP HANA Database Explorer**. That way you will be connected to the SQL console connected directly with your SAP HANA Data Lake Instance.
 
@@ -53,10 +55,9 @@ Now, Open a new SQL console and you need to add a new Database Connection of the
 
 From Database Explorer, right-click on your Data Lake Instance and select **PROPERTIES**. Copy the entire field of **HOST** and hit OK. Now in the DBX, click on the **+** symbol in the DBX. And from the dropdown under **Database Type** select **Data Lake Relational Engine**.  Enter the copied value of Host now. Input the username as **`SOF_USER`** and Password as **Password1** and check the box to save the password.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Remote Server to Access SQL-on-Files)]
+### Create a Remote Server to Access SQL-on-Files
+
 
 Now, let us open a new SQL console window and connect it with the new user **`SOF_USER`** to our HANA Data Lake Instance and create a SQL on files Remote Server.
 
@@ -64,11 +65,10 @@ Now, let us open a new SQL console window and connect it with the new user **`SO
 CREATE REMOTE SERVER MY_REMOTE_SERVER CLASS 'FILES_SERVICE' READ ONLY VALUE 'ON';
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create SQL-on-Files Schema)]
+### Create SQL-on-Files Schema
+
 
 Next, we create a Schema in the Files Service. Creating a Schema adds a layer of security to who can access your SQL servers. A good schema design reduces database complexity and optimizes database query time.
 
@@ -99,11 +99,10 @@ CREATE TABLE TPCH_SOF.CUSTOMER (
 
 For information about the parameter definitions and supported data types, see [docs](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/24e694b566814ad285cb32fe3e5d3928.html?version=2022_1_QRC)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create Data Lake Virtual Table to Access SQL-on-Files)]
+### Create Data Lake Virtual Table to Access SQL-on-Files
+
 
 Next, We create a Virtual Table. Notice in the SQL below where the remote server name goes and where the reference to the table in the Files Service goes. Over here, we will be creating a CUSTOMER VIRTUAL TABLE in HDLRE that points to the CUSTOMER table that we just created in SQL On Files service.
 
@@ -128,11 +127,10 @@ CREATE EXISTING TABLE CUSTOMER(
 
 For the full syntax of clauses available to create an existing table, see [CREATE EXISTING TABLE Statement for Data Lake Relational Engine & SQL on Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/19b3964099384f178ad08f2d348232a9/8bfd6bbf659b4c9ea03236eb2767ec80.html?version=2022_1_QRC) OR [CREATE EXISTING TABLE Statement for Data Lake Relational Engine (HANA DB-Managed) & SQL on Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/569aa95237b54d28883feeceef487e21.html?version=2022_1_QRC)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload a file from HDLFS onto the Data Lake File container)]
+### Upload a file from HDLFS onto the Data Lake File container
+
 
 Make sure that you have everything setup with respect to HDLFSCLI. One can go through the tutorial for getting started with HDLFSCLI - [Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers](data-lake-file-containers-hdlfscli.).
 
@@ -160,10 +158,9 @@ Make sure you have already set up a HDLFS Connection in Database Explorer. It wi
 
 ![Setting Up HDLFS Connection In Database Explorer](image-3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add Data Source and Query the structured file)]
+### Add Data Source and Query the structured file
+
 
 Add a data source, this can be done multiple times with multiple files.
 
@@ -184,10 +181,9 @@ Note that the table name here will be the name of the EXISTING table (Virtual ta
 SELECT * FROM CUSTOMER;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Clean up or Remove SQL on Files Table)]
+### Clean up or Remove SQL on Files Table
+
 
 If you want to drop a data source for a SQL on Files table you can do so as well.
 
@@ -204,8 +200,7 @@ DROP TABLE TPCH_SOF.CUSTOMER IN FILES_SERVICE;
 DROP SCHEMA TPCH_SOF IN FILES_SERVICE;
 ```
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 
 
