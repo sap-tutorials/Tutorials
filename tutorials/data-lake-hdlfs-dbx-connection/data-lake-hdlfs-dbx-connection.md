@@ -15,11 +15,12 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
  - Basic understanding of the public key infrastructure (PKI).
  - Should have completed the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial.
 
+
 ## You will learn
   - How to setup a HANA Data Lake file container connection in the Database Explorer.
   - Use the HDLFSCLI to add, remove and manage data files into the File Container.
-
 ---
+
 
 ### Collect the Required Connection Details
 
@@ -39,15 +40,12 @@ The REST API Endpoint will be copied to the clipboard. It has a format like this
 Make sure that your REST API endpoint has **files** keyword in it.
 
 
-
 ### Generating Client Certificate & Client Key 
-
 
 
 You may already have these files available from configuring the Trust and Authorization in your HDLFS instance. If not, then you can regenerate them from the `ca.crt` that is configured in your HDLFS instance.  
 
 Follow the Step 3 and Step 4 from [Getting Started with Data Lake Files HDLFSCLI | Tutorials](data-lake-file-containers-hdlfscli) for SAP Developers exactly as it is.
-
 
 
 ### Adding the connection in Database Explorer
@@ -109,6 +107,3 @@ After this is done, go back to DBX and hit refresh and then click on your Data L
 The above screenshot shows that there is a target folder **`myPath`** in the File Container and the **Data** file at the bottom is the CSV file which we uploaded.
 Thus, our Data Lake File Container has been successfully configured and verified in DBX.
 
-
-
----
