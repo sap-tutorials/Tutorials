@@ -1,6 +1,4 @@
 ---
-title: Use SQL on Files to query data from multiple directory
-description: It will teach you how to setup SQL on Files, optimize SQL on Files performance using a folder and subfolder directory.
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, software-product>sap-hana]
@@ -9,6 +7,10 @@ author_name: Ronit Nagwekar
 author_profile: https://github.com/rnagweka
 parser: v2
 ---
+
+# Use SQL on Files to query data from multiple directory
+<!-- description --> It will teach you how to setup SQL on Files, optimize SQL on Files performance using a folder and subfolder directory.
+
 
 ## Prerequisites
 -	Have access to a licensed managed or standalone SAP HANA data lake.
