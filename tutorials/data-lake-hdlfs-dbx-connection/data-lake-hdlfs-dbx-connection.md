@@ -4,23 +4,24 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+author_name: Ronit Nagwekar
+author_profile: https://github.com/rnagweka
 ---
 
 # Setting Up HDLFS Connection In Database Explorer
 <!-- description --> Learn how to setup the SAP HANA Data Lake file store/container connection in the database explorer.
 
 ## Prerequisites
- - A licensed SAP HANA data lake instance (non-trial / non-free tier).
+ - A licensed SAP HANA data Lake instance (non-trial / non-free tier).
  - Access to SAP Software Center.
  - Basic understanding of the public key infrastructure (PKI).
  - Should have completed the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial.
 
-
 ## You will learn
   - How to setup a HANA Data Lake file container connection in the Database Explorer.
   - Use the HDLFSCLI to add, remove and manage data files into the File Container.
----
 
+---
 
 ### Collect the Required Connection Details
 
@@ -40,12 +41,15 @@ The REST API Endpoint will be copied to the clipboard. It has a format like this
 Make sure that your REST API endpoint has **files** keyword in it.
 
 
-### Generating Client Certificate & Client Key 
+
+### Generating Client Certificate & Client Key
+
 
 
 You may already have these files available from configuring the Trust and Authorization in your HDLFS instance. If not, then you can regenerate them from the `ca.crt` that is configured in your HDLFS instance.  
 
 Follow the Step 3 and Step 4 from [Getting Started with Data Lake Files HDLFSCLI | Tutorials](data-lake-file-containers-hdlfscli) for SAP Developers exactly as it is.
+
 
 
 ### Adding the connection in Database Explorer
@@ -77,13 +81,13 @@ Once you click on OK. A **Data Lake File Store/Container** connection would be v
 ### Verify the File container connection
 
 
-We need to verify whether we have added the right connection of File Container in DBX. We can do that by adding/uploading a file to the File container and checking it in the DBX.
+You need to verify whether you have added the right connection of File Container in DBX. You can do that by adding/uploading a file to the File container and checking it in the DBX.
 
 Upload a file using the following command in Windows OpenSSL.
 
 `hdlfscli -config <Your Config name> upload <Your Local Path>/TPCH <Target File Path>/TPCH`
 
-I will be uploading a data file into the File Container to demonstrate that we have verified the connection setup to be successful.
+Upload a Data File into the File Container to demonstrate that you have verified the connection setup to be successful.
 
 Let us try uploading the following **data.csv** file onto our Data Lake File Container.
 
@@ -104,6 +108,9 @@ After this is done, go back to DBX and hit refresh and then click on your Data L
 
 ![DBX Verification](image-9.png)
 
-The above screenshot shows that there is a target folder **`myPath`** in the File Container and the **Data** file at the bottom is the CSV file which we uploaded.
+The above screenshot shows that there is a target folder **`myPath`** in the File Container and the **Data** file at the bottom is the CSV file which you uploaded.
 Thus, our Data Lake File Container has been successfully configured and verified in DBX.
 
+
+
+---
