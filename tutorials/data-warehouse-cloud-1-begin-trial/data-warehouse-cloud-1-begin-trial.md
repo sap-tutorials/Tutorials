@@ -1,6 +1,6 @@
 ---
-title: Get Ready for Your SAP Data Warehouse Cloud Trial Mission
-description: Set up for the SAP Data Warehouse Cloud mission by signing up for a free SAP Data Warehouse Cloud trial.
+title: Get Ready for Your Guided Experience Trial with SAP Data Warehouse Cloud Mission
+description: Set up for the SAP Data Warehouse Cloud mission by signing up for a free SAP Guided Experience Trial with SAP Data Warehouse Cloud.
 auto_validation: true
 time: 7
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -15,13 +15,11 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Sign up for free trial)]
+[ACCORDION-BEGIN [Step 1: ](Get your guided experience trial system)]
 
-To sign up for a free trial of SAP Data Warehouse Cloud, go to this [link](https://www.sap.com/products/data-warehouse-cloud/trial.html), and click on **Start your free trial**.
+To sign up for a your guided experience trial system for SAP Data Warehouse Cloud, click on [Experience SAP Data Warehouse Cloud](https://www.sap.com/products/technology-platform/data-warehouse-cloud.html) to get started.
 
 Enter your details and confirm your e-mail address. You will then receive an email with more instructions and a link to sign into your SAP Data Warehouse Cloud trial! Your trial will be available for 30 days, so make sure to make the most of this time.
-
-To learn more about how the trial works, please visit the [FAQ section](https://www.sap.com/products/data-warehouse-cloud.html) of the product page.
 
 
 
