@@ -20,6 +20,9 @@ primary_tag: software-product>sap-process-automation
 ## You will learn
   - How to use Excel SDK of SAP Process Automation (SPA) to read and process data in an Excel
 
+## Intro
+  SAP Process Automation has native integration to several Microsoft Office products including Outlook, Excel SDK. In this Tutorial, you will explore how to use Excel SDK to your automations.
+
 ---
 
 ### About Excel SDK
