@@ -1,23 +1,26 @@
 ---
-title: Set Up Postman to Call Data Attribute Recommendation APIs
-description: Import Postman environment and collection JSON sample code files to call the Data Attribute Recommendation APIs.
+parser: v2
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
-## Details
-### You will learn
+# Set Up Postman to Call Data Attribute Recommendation APIs
+<!-- description --> Import Postman environment and collection JSON sample code files to call the Data Attribute Recommendation APIs.
+
+## You will learn
   - What Postman environments and collections are and how to use them
   - How to adjust the Postman environment for your service instance
   - How to import Postman environments and collections
 
+## Intro
 In the following tutorials Postman is used to communicate and interact with your Data Attribute Recommendation service instance. Postman is an API client you use to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add service key credentials to Postman environment)]
+### Add service key credentials to Postman environment
+
 
 Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
@@ -42,11 +45,10 @@ Insert the following values from your service key into the corresponding spaces 
 
 Now the Postman environment is ready to be used.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Import the Postman environment)]
+### Import the Postman environment
+
 
 **Open** Postman and click **Import** to open the import dialog.
 
@@ -66,11 +68,10 @@ Your new environment now shows up in the dropdown menu and can be selected.
 
 You have successfully imported the Postman environment for Data Attribute Recommendation.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import the Postman collection)]
+### Import the Postman collection
+
 
 Collections let you group requests together in folders. This helps with the organization of multiple requests. For more information, see [Postman Collections](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/).
 
@@ -86,21 +87,18 @@ After you have imported the collection, it will appear on the left. As previousl
 
 You have successfully imported the Postman collection for Data Attribute Recommendation.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Select the environment)]
+### Select the environment
+
 
 Finally, make sure to **select** your imported environment for Data Attribute Recommendation in the dropdown menu. Otherwise you would not be able to use the requests in the collection.
 
 ![Postman Environment Selection](postman-select-environment.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

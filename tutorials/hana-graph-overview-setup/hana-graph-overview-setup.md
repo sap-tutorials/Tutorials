@@ -1,25 +1,27 @@
 ---
-title: Create an SAP HANA Graph Workspace
-description: Get an overview of what SAP HANA Graph is, load some sample data, and create your first graph workspace based on that data.
+parser: v2
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
 primary_tag: products>sap-hana
 ---
 
+# Create an SAP HANA Graph Workspace
+<!-- description --> Get an overview of what SAP HANA Graph is, load some sample data, and create your first graph workspace based on that data.
+
 ## Prerequisites
  - SAP HANA Cloud, e.g. [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html), or
  - SAP HANA 2.0 SPS 04 or higher with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
  - Completed [SAP HANA Database Explorer Overview](hana-dbx-overview)
 
-## Details
-### You will learn
+## You will learn
   - What SAP HANA Graph is
   - How to create graph workspace using sample data
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP HANA Graph)]
+### SAP HANA Graph
+
 SAP HANA Graph is an integral part of SAP HANA core functionality. It expands the SAP HANA with native support for graph processing and allows you to execute typical graph operations on the data stored in an SAP HANA system.
 
 Graphs are a powerful abstraction that can be used to model different kinds of networks and linked data coming from many industries, such as logistics and transportation, utility networks, knowledge representation, text processing, and so on.
@@ -30,10 +32,9 @@ In SAP HANA, a graph is a set of vertices and a set of edges. Each edge connects
 
 For more please refer to [online documentation for SAP HANA Cloud](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/LATEST/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html) used in these exercises.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Exercise data)]
+### Exercise data
+
 
 You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.jpg) and the small-scale version can be found below.
 
@@ -53,11 +54,10 @@ Stations are connected by either lifts (to go up) or runs (to ski down). These c
 -	attribute `status` is either 'open' or 'close', reflecting if particular lift or run can be used. By default, all connections will be open.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create tables)]
+### Create tables
+
 
 Open SAP HANA Database Explorer's SQL Editor and connect to your database.
 
@@ -105,19 +105,17 @@ You should see two tables created in your schema.
 
 ![Created tables](20b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Review tables)]
+### Review tables
+
 
 Open review definitions of both tables.
 
 ![Review tables](30b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert data)]
+### Insert data
+
 
 Copy following code into your SQL Editor and execute it.
 
@@ -175,10 +173,9 @@ INSERT INTO "EDGES" VALUES (117, 2300, 'black', 12, 4, 'run', 'open') ;
 INSERT INTO "EDGES" VALUES (118, 200, 'blue', 6, 5, 'run', 'open') ;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Preview data)]
+### Preview data
+
 
 Switch to the tab with one of table definitions, and click on **Open Data**. Then repeat it for the second table too.
 
@@ -186,10 +183,9 @@ Switch to the tab with one of table definitions, and click on **Open Data**. The
 
 There should be 15 rows in the table `NODES` and 31 rows in the table `EDGES`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create a graph workspace)]
+### Create a graph workspace
+
 
 Copy following code into your SQL Editor and execute it.
 
@@ -206,10 +202,9 @@ CREATE GRAPH WORKSPACE "SKIING"
 ;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Check the workspace artifact)]
+### Check the workspace artifact
+
 
 Find just created `SKIING` workspace in the `Graph Workspaces` folder of your schema.
 
@@ -217,11 +212,11 @@ Click on it to open its definition.
 
 ![Graph workspace](50b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Open Graph Viewer)]
+
+### Open Graph Viewer
+
 
 Right click on `SKIING` graph workspace and pick **View Graph**.
 
@@ -231,10 +226,9 @@ The graph viewer will open and load the initial view of graph.
 
 ![Open Graph Viewer](60b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Customize a view of the graph)]
+### Customize a view of the graph
+
 
 Use **Preferences** to customize the view of the graph.
 
@@ -242,11 +236,10 @@ Use **Preferences** to customize the view of the graph.
 
 You should see labels of edges now.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Add more data)]
+### Add more data
+
 
 In reality these lifts starting from the ticket offices can be used as well to go down. So, let's add additional edges.
 
@@ -260,10 +253,9 @@ INSERT INTO "EDGES" VALUES (1070, 1223, '', 13, 14, 'lift', 'open') ;
 INSERT INTO "EDGES" VALUES (1071, 1151, '', 14, 15, 'lift', 'open') ;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Reset preview of the graph)]
+### Reset preview of the graph
+
 
 Go back to Graph Viewer and click on **Reset Graph**.
 
@@ -273,6 +265,4 @@ Go back to Graph Viewer and click on **Reset Graph**.
 
 You should see lift connections in both directions now.
 
-[DONE]
-[ACCORDION-END]
 ---

@@ -1,6 +1,5 @@
 ---
-title: Create and Run Unit Tests for a Fiori App
-description: Create and Run Unit Tests for your Fiori App Using ABAP Unit Tests.
+parser: v2
 auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
@@ -9,13 +8,15 @@ author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
+# Create and Run Unit Tests for a Fiori App
+<!-- description --> Create and Run Unit Tests for your Fiori App Using ABAP Unit Tests.
+
 ## Prerequisites
   - You have completed the group [Develop a Fiori App Using the ABAP RESTful Programming Model (Managed Scenario)](group.abap-env-restful-managed), tutorials 1-5
   - You understand Entity Manipulation Language (EML). For more information, see the section **More Information** below
   - You understand ABAP Unit Tests. For more information, see the section **More Information** below. Start with the SAP Community blog post, [Creating ABAP unit tests in eclipse and SE80](https://blogs.sap.com/2013/04/15/creating-abap-unit-tests-in-eclipse-and-se80/), ignoring section 6.
 
-## Details
-### You will learn
+## You will learn
   - How to create a test class using mock-up data and Entity Manipulation Language (EML)
   - How to run four tests on the CDS entity using this class:
     - Read an existing travel into the transactional buffer, since valid test data was inserted. (Data is then persisted to the database.)
@@ -24,13 +25,15 @@ author_profile: https://github.com/julieplummer20
     - Validate travel dates
 
 
+## Intro
 Many introductions to ABAP Unit focus on a traditional ABAP class, such as a calculator. In this tutorial, you will test the CDS entity you created in the group, `ZI_TRAVEL_M_000`.
 
 Throughout this tutorial, objects name include a suffix, such as `000`. Always replace this with your group number or initials.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create package and test class)]
+### Create package and test class
+
 1. In the Project Explorer, open the package and choose **New > ABAP Class** from the context menu.
 
 2. Enter the following:
@@ -40,15 +43,14 @@ Throughout this tutorial, objects name include a suffix, such as `000`. Always r
 
 4. Choose the transport request you just created, then choose **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create local test class)]
+### Create local test class
+
 1. Choose the **Test Classes** tab.
 
 2. Enter **Test**, then choose **Auto-complete (`Ctrl + Space`)**, then choose **`testClass...` > Shift+Enter**.
 
-    !![step2a-test-class-auto-complete](step2a-test-class-auto-complete.png)
+    <!-- border -->![step2a-test-class-auto-complete](step2a-test-class-auto-complete.png)
 
       The editor adds the template for the local test class.
 
@@ -64,11 +66,10 @@ It contains the following code.
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define mock-up data)]
+### Define mock-up data
+
 Before you start writing the test, set up mock-up data: In the **Private Section**, add the following code.
 &nbsp;
 
@@ -95,10 +96,9 @@ After that, you will fill them with (valid or invalid) values so that they provi
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Define mock-up methods)]
+### Define mock-up methods
+
 1. Similarly, define mock-up methods: Still in the **Private Section**, define the methods **`class_setup`** and **`class_teardown`** for the class; and **`setup`** and **`teardown`** for the methods. Ignore the error for now.
 
     ```ABAP
@@ -114,14 +114,13 @@ After that, you will fill them with (valid or invalid) values so that they provi
 
 2. Add the method implementations: Select any one of the three methods, then choose **Quick Assist (`Ctrl + 1`)**.
 
-    !![step3a-add-m-implementations](step3a-add-m-implementations.png)
+    <!-- border -->![step3a-add-m-implementations](step3a-add-m-implementations.png)
 
 3. Format, save, and activate ( **`Ctrl + Shift + F1, Ctrl + S, Ctrl + F3`** ). The error disappears.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement class_setup method)]
+### Implement class_setup method
+
 Copy the following code into the method implementation for the method **`class_setup`**.
 
 The code:
@@ -154,11 +153,10 @@ ENDMETHOD.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Implement setup method)]
+### Implement setup method
+
 Implement the **`setup`** method; add some values to the structures you created earlier.
 
     ```ABAP
@@ -201,11 +199,10 @@ Implement the **`setup`** method; add some values to the structures you created 
                                        overall_status = 'O' ).
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Implement teardown methods)]
+### Implement teardown methods
+
 1. Add the following code to  the `class_teardown` method.
 
     ```ABAP
@@ -225,14 +222,13 @@ Implement the **`setup`** method; add some values to the structures you created 
 
 `teardown` Clears the data in the test doubles for a given method, before the next method is executed.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create and implement test method `read_travel_ok`)]
+### Create and implement test method `read_travel_ok`
+
 1. In the class definition, add the method as follows. Add the implementation using **Quick Assist ( `Ctrl + 1` )**.
 
-    !![step8a-implement-read-travel-ok](step8a-implement-read-travel-ok.png)
+    <!-- border -->![step8a-implement-read-travel-ok](step8a-implement-read-travel-ok.png)
 
 2. Add the following code to the method implementation **`read_travel_ok`**. This code:
     - Fills one row of the internal table `read_table` with (valid) values; `TravelID = '110'`
@@ -276,11 +272,10 @@ Implement the **`setup`** method; add some values to the structures you created 
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Run unit test)]
+### Run unit test
+
 1. Place your cursor anywhere in the editor, and choose **`Ctrl + Shift + F9`**.
 
     The ABAP Unit Test view appears, showing your test class and test method:
@@ -301,10 +296,9 @@ Implement the **`setup`** method; add some values to the structures you created 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create test method `create_travel_ok`)]
+### Create test method `create_travel_ok`
+
 1. In the class definition, add the method **`create_travel_ok`** as follows. Add the implementation using **Quick Assist ( `Ctrl + 1` )**.
 
     ```ABAP
@@ -387,11 +381,10 @@ Implement the **`setup`** method; add some values to the structures you created 
 
 3. Format, save, and activate ( **`Ctrl + Shift + F1, Ctrl + S, Ctrl + F3`** ). See below for a complete code listing.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Add and implement other methods)]
+### Add and implement other methods
+
 1. In the class definition, add the following code. (Remember to change the period in line 30 to a comma.)
 
     ```ABAP
@@ -489,42 +482,39 @@ Implement the **`setup`** method; add some values to the structures you created 
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Optional: Open ABAP Debugger)]
+### Optional: Open ABAP Debugger
+
 You can check that the correct values have been passed to, for example, an internal table using the ABAP Debugger.
 
 1. In the method **`validate_dates_not_ok`**, set a breakpoint at line 242, `MODIFY ENTITIES OF zi_travel_m_000`, by selecting the line numbering and choosing **`Toggle breakpoint`** from the context menu (or by double-clicking the line number).
 
-    !![step12a-add-breakpoint](step12a-add-breakpoint.png)
+    <!-- border -->![step12a-add-breakpoint](step12a-add-breakpoint.png)
 
 2. Now run the unit tests again ( **`Ctrl+Shift+F10`** ). In the dialog,choose **Yes**. The Debugger perspective appears.
 
-    !![step12b-debugger-perspective](step12b-debugger-perspective.png)
+    <!-- border -->![step12b-debugger-perspective](step12b-debugger-perspective.png)
 
 3. Choose the **Variables** tab and step through the method (**`F5`**).
 
-    !![step12c-step-through](step12c-step-through.png)
+    <!-- border -->![step12c-step-through](step12c-step-through.png)
 
     For example, you can see the values in static attribute **`lt_create_date_not_ok`**, which are passed to **me**, the current instance of **`cds_test_environment`**.
 
-    !![step12d-variables-tab](step12d-variables-tab.png)
-    !![step12e-me](step12e-me.png)
+    <!-- border -->![step12d-variables-tab](step12d-variables-tab.png)
+    <!-- border -->![step12e-me](step12e-me.png)
 
 4. Choose **Terminate** from the tool bar, go back to the **ABAP** perspective, and remove the breakpoint.
 
 5. The **ABAP Unit** tab will report an error, because you terminated execution, but if you run the test again, the error will disappear.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ### More Information
 - SAP Community blog post: [Creating ABAP unit tests in eclipse and SE80](https://blogs.sap.com/2013/04/15/creating-abap-unit-tests-in-eclipse-and-se80/)

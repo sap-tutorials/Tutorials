@@ -1,6 +1,5 @@
 ---
-title: Implement Your First Screen in an iOS App
-description: Implement the first screen of your SAP BTP SDK for iOS app.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,22 +8,23 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool
 time: 60
 ---
 
-## Prerequisites
+# Implement Your First Screen in an iOS App
+<!-- description --> Implement the first screen of your SAP BTP SDK for iOS app.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
 - **SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to create your first iOS screen
 - How to retrieve data and display it on the screen
 - How to follow the SAP Fiori for iOS guidelines.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Replace generated UI with your own)]
+### Replace generated UI with your own
+
 
 The Human Interface Guidelines for SAP Fiori for iOS has certain screens defined that you can use as guidance on how you could structure a business app.
 
@@ -42,43 +42,43 @@ In the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup), you've learned how
 
     > The Interface Builder allows you to create complete app flows including the UI for each screen of those flows.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-1.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-1.png)
 
     For now go ahead and select all displayed View Controllers in the `Main.storyboard` and simply delete them.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-2.gif)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-2.gif)
 
 2. Next, click the **Object Library** and search for **`Table View Controller`**. Drag and drop the object on the canvas of the Interface Builder.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-3.gif)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-3.gif)
 
 3. Thinking ahead, you know that you want to have navigation to various screens from the overview screen. Using a Navigation Controller and embedding the just-created View Controller in it allows us to use the power of the Navigation Controller for navigation. The Navigation Controller handles the navigation stack for you, which is exactly what you want.
 
     Select the added View Controller and click **Editor > Embed In > Navigation Controller**. This will embed your View Controller in a Navigation Controller. You should see the Navigation Bar appear in the View Controller.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-4.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-4.png)
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-5.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-5.png)
 
 4. Almost every View Controller you're adding to the storyboard needs a **Cocoa Touch Class** representing the logic implementation of that View Controller.
 
     Control + click your project source in the **Project Navigator** on the left-hand side and select **New File**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6.png)
 
 5. Select the **Cocoa Touch Class** in the upcoming modal sheet, and click **Next**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-1.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-1.png)
 
     Make sure that your class is going to subclass of **`UITableViewController`** and change the name to **`OverviewTableViewController`**. Click **Next** and then **Create**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-2.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-2.png)
 
     Great! You've created your first Table View Controller Swift class, now you have to set this class as **Custom Class** in the **`Main.storyboard`** View Controller.
 
 6. Open the storyboard and select the created View Controller. On the right side, you can see the side bar. Click the **Identity Inspector** to set the custom class to **`OverviewTableViewController`** and hit return on your keyboard.
 
-    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-7.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-7.png)
 
     Notice the title of the Table View Controller on the left side changes accordingly to the entered custom class.
 
@@ -86,12 +86,11 @@ In the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup), you've learned how
 
     Select the **Navigation Controller** and open the **Attributes Inspector** to check the box next to **Is Initial View Controller**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-8.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change the Application UI Manager code to display the overview)]
+### Change the Application UI Manager code to display the overview
+
 
 In order to display the newly added overview screen right after the onboarding process is finished, you have to make some manual changes in the **`ApplicationUIManager.swift`** class. This class is mainly responsible for coordinating the UI flow for user onboarding all the way to the first screen after the onboarding process.
 
@@ -99,7 +98,7 @@ In order to display the newly added overview screen right after the onboarding p
 
     > **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `ApplicationUIManager` class with `Command + Shift + O`. Once you've opened the file, you can quickly jump to the `showApplicationScreen(completionHandler:)` function by using the **jump bar** at the top of the editor area pane.
 
-    !![Application UI Manager](fiori-ios-scpms-starter-mission-02-9.png)
+    <!-- border -->![Application UI Manager](fiori-ios-scpms-starter-mission-02-9.png)
 
     In the method you see an `if-else` statement initializing a Split View Controller, which is non-existing anymore because you have your Overview Table View Controller.
 
@@ -144,10 +143,9 @@ Great you did complete all necessary steps to replace the generated UI with your
 
 ![Overview Screen Basic](fiori-ios-scpms-starter-mission-02-10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement basic functionality of overview screen)]
+### Implement basic functionality of overview screen
+
 
 As you can see, the overview screen is a little bit more complicated then just simply displaying a Table View with some data. The overview screen contains the following UI controls:
 
@@ -162,7 +160,7 @@ As you can see, the overview screen is a little bit more complicated then just s
 
 If you look at the list of controls you might recognize that you're picking from not only SAP Fiori controls but also from Apple `UIKit` controls. Because all of the SAP Fiori controls are written natively in Swift and inherit of `UIKit` controls, you can pick and choose the controls you need.
 
-!![Control Inheritance Overview](fiori-ios-scpms-starter-mission-02-11.png)
+<!-- border -->![Control Inheritance Overview](fiori-ios-scpms-starter-mission-02-11.png)
 
 You will now implement some code to set up the `OverviewTableViewController` for displaying all the above mentioned controls, load data from the backend using the `SAPOData` framework, and perform navigation to the customer and product list.
 
@@ -293,10 +291,9 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement FUITableViewHeaderFooterView)]
+### Implement FUITableViewHeaderFooterView
+
 
 To finish building the screen's layout you are going to implement the dividers and the Header/Footer for the products and customers.
 
@@ -376,10 +373,9 @@ To finish building the screen's layout you are going to implement the dividers a
 
 ![Header Footer](fiori-ios-scpms-starter-mission-02-12.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Load customer and product data)]
+### Load customer and product data
+
 
 Before you continue implementing the Table View's data source and delegate methods, you go and implement the data loading methods.
 
@@ -547,10 +543,9 @@ Implement the following lines of code directly below the logger instance as clas
 
 6. Call the `loadData()` method as last statement in the `viewDidLoad()`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement cellForRowAt method)]
+### Implement cellForRowAt method
+
 
 Now that you can fetch the needed data sets, you can go ahead and finish implementing the `tableView(_:cellForRowAt:)` method.
 
@@ -627,11 +622,11 @@ Before you do this you have to take care of the product image lazy loading. You'
 
     Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
 
-    !![MS APIs](fiori-ios-scpms-starter-mission-02-00.png)
+    <!-- border -->![MS APIs](fiori-ios-scpms-starter-mission-02-00.png)
 
 6. The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL as you will need it in a second.
 
-    !![MS APIs](fiori-ios-scpms-starter-mission-02-00a.png)
+    <!-- border -->![MS APIs](fiori-ios-scpms-starter-mission-02-00a.png)
 
 7. Let's bring some life into our screen:
 
@@ -734,10 +729,10 @@ Before you do this you have to take care of the product image lazy loading. You'
 
 ![Overview screen no collection](fiori-ios-scpms-starter-mission-02-13.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement UICollectionViewDataSource)]
+
+### Implement UICollectionViewDataSource
+
 
 To complete the UI, you need to implement the `UICollectionViewDataSource` protocol.
 
@@ -778,10 +773,9 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 You are using a system image that can be found in the **SF Symbols** app. You can download the app for free from the Apple Developer website [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add KPI Header to Table View)]
+### Add KPI Header to Table View
+
 
 To make the overview screen complete, you're going to add an `FUIKPIHeader` to the table view.
 
@@ -879,5 +873,3 @@ You completed the overview screen. Run the app on iPhone or iPad to see the resu
 
 ![Overview Screen no Collection](fiori-ios-scpms-starter-mission-02-14.png)
 
-[DONE]
-[ACCORDION-END]

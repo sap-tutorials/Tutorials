@@ -15,12 +15,15 @@ primary_tag: software-product>sap-process-automation
 SAP Process Automation has native integration to several Microsoft Office products including Outlook and Excel SDK. In this Tutorial, you will explore how to use Outlook SDK to your automations.
 
 ## Prerequisites
+
 - [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](spa-subscribe-booster)
 - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
 - Basic understanding of SAP Process Automation. You may review the below missions
     - [Build Your First Business Process with SAP Process Automation](mission.sap-process-automation)
     - [Boost your Business Process with Automation, Decision and Process Visibility](mission.sap-process-automation-boost)
     
+
+
 ## You will learn
   - How to use Outlook SDK of SAP Process Automation to search the given email
 
@@ -136,3 +139,4 @@ It comes with a rich set of functionality. For example,
     > - Do review the below resources
     >     - Microsoft Outlook Best Practices from the SAP Process Automation [documentation](https://help.sap.com/docs/IRPA/8e71b41b9ea043c8bccee01a10d6ba72/5a48c81502db40b08e4aac866e04592a.html)
     >     - Outlook Email Best Practices Automation from the [SAP Process Automation Store](https://irpa.store.sap.com/#/package/a4c61c62-356e-4165-bdcb-bef08e236cf5)
+

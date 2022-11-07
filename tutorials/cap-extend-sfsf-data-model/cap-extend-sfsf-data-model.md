@@ -1,19 +1,20 @@
 ---
-title: Create the CDS Data Model for the SAP SuccessFactors Extension
-description: In this phase of the extension development you will create the extension data model, load initial test data and perform the first CAP service test.
+parser: v2
 auto_validation: true
 time: 11
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Create the CDS Data Model for the SAP SuccessFactors Extension
+<!-- description --> In this phase of the extension development you will create the extension data model, load initial test data and perform the first CAP service test.
+
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
  - Complete the tutorial: [**Jump start the SAP SuccessFactors Extension CAP Project**](cap-extend-sfsf-jumpstart)
  - Complete the tutorial: [**Import SAP SuccessFactors OData Services definitions**](cap-extend-sfsf-import-services)
 
-## Details
-### You will learn
+## You will learn
   - **Review** the extension data model
   - How to **create the CDS data model** in the CAP project
   - How to **populate the model** with **initial test data**
@@ -21,7 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Review the data model)]
+### Review the data model
+
 
 Before you move on with the coding, just quickly review the conceptual data model of your solution:
 
@@ -38,10 +40,9 @@ The logical model depicted in the diagram above has been conceived to comply wit
 
 Now, having that model in mind, you can make its definition into the CAP project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create CDS data model file)]
+### Create CDS data model file
+
 
 On the **left-hand pane** of **SAP Business Application Studio**, (1) select the `db` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
@@ -51,10 +52,9 @@ On the **dialog**, name the file `projman-model.cds` and click **OK**.
 
 ![Figure 3 – Set File Name](set-file-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Perform the model coding)]
+### Perform the model coding
+
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -130,10 +130,9 @@ Finally, you define each entity with its corresponding attributes and associatio
 
 You specify that the entities **Employee** (the "bridge" between SAP SuccessFactors users and your local model), **Role** and **Status** are "read-only" via the `@readonly` annotation. You also want those entities to be **automatically exposed in your CAP service** without having to explicitly do it in the service definition (the next step of the development), so you annotate them with the `@cds.autoexpose` annotation as well.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Load initial test data)]
+### Load initial test data
+
 
 Now, populate your data model with some initial test data. This can be done by creating some **files in CSV format** into a **subfolder** of the `db` folder named "**data**" with the specific naming convention of `<namespace>-<entity name>.csv`.
 
@@ -243,10 +242,9 @@ fcba3d35-013a-4ab6-9ab9-9fb938eff8a4;3ca47b3e-eff3-430e-9ae0-1937dd094212;3470cf
 0194b2b8-b9f7-4c6f-8677-18ae7fd627b7;b5c6bc42-6f95-4876-9658-13aaecb28008;d2696b36-3413-4522-a73b-f00560dc3fe5;Assign team to project;Look for the appropriate experts to work on project;2022-08-05;3
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Execute the first test)]
+### Execute the first test
+
 
 Now it has come the time to test the project as it is so far. You will start by installing the required project dependencies.
 
@@ -278,10 +276,8 @@ You might be wondering: "what about the Employee, Role and Status entities that 
 
 But don't worry! They will show up in this page as soon as you complete the next tutorial in this group.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

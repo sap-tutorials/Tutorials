@@ -1,6 +1,5 @@
 ---
-title: Maintain Platform Subaccounts and SAP Web IDE Permissions
-description: Create a subaccount in a SAP Cloud Platform global account and give permission to access SAP Web IDE to dedicated users.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
@@ -9,20 +8,22 @@ author_name: Ulrike Liebherr
 author_profile: https://github.com/Liebherr
 ---
 
+# Maintain Platform Subaccounts and SAP Web IDE Permissions
+<!-- description --> Create a subaccount in a SAP Cloud Platform global account and give permission to access SAP Web IDE to dedicated users.
+
 ## Prerequisites   
   - **Authorization:** Your user needs access to your **SAP Cloud Platform global account** in the Neo environment.
 
-## Details
-### You will learn
+## You will learn
 - How to create a subaccount
 - How to give users the permission to enter SAP Web IDE
-
-### Additional Information
+## Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter SAP Cloud Platform global account)]
+### Enter SAP Cloud Platform global account
+
 Enter SAP Cloud Platform and select your global account.
 
 ![Enter SAP Cloud Platform global account](sapcp2globalAccount.png)
@@ -33,10 +34,9 @@ One option is the **Subaccounts** point in the left hand side menu the other opt
 ![Enter SAP Cloud Platform global account's subaccounts](sapcp_globalAccountOverview2subaccounts.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create subaccount)]
+### Create subaccount
+
 Click **New Subaccount**.
 
 ![Press "New Subaccount" button](sapcp_newSubaccountButton.png)
@@ -57,18 +57,16 @@ Enter following data.
 
 ![Add display name to subaccount](sapcp_newSubaccountPopUp.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enter subaccount)]
+### Enter subaccount
+
 Now your new subaccount will be shown and you can enter it by clicking its tile.
 
 ![Click new subaccount's tile](sapcp_subaccountTile.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enable SAP Web IDE service in subaccount)]
+### Enable SAP Web IDE service in subaccount
+
 Go to **Services**, search for **SAP Web IDE** and select it.
 
 ![Search for SAP Web IDE](sapcp_WebIDE_tileNotEnabled.png)
@@ -77,18 +75,16 @@ Go to **Services**, search for **SAP Web IDE** and select it.
 
 ![Enable SAP Web IDE](sapcp_enableWebIDE.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enter Web IDE service's configuration)]
+### Enter Web IDE service's configuration
+
 Click **Configure Service** inside Web IDE service's overview.
 
 ![Configure Web IDE service](sapcp_configureWebIDE.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Grant user access to SAP Web IDE)]
+### Grant user access to SAP Web IDE
+
 To enable users to work with Web IDE you have to explicitly assign the `DiDeveloper` Role to each of them.
 
 1. Go to **Roles**
@@ -101,10 +97,8 @@ To enable users to work with Web IDE you have to explicitly assign the `DiDevelo
 
 With the next session the added user will have the permission to enter SAP Web IDE.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

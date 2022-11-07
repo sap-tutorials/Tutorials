@@ -1,6 +1,5 @@
 ---
-title: Add Multitenancy to a Node.js Application Secured by the SAP Authorization and Trust Management service (XSUAA)
-description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-business-technology-platform, programming-tool>node-js ]
@@ -10,21 +9,24 @@ author_profile: https://github.com/MichaelPShea
 ---
 
 
+# Add Multitenancy to a Node.js Application Secured by the SAP Authorization and Trust Management service (XSUAA)
+<!-- description --> Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
+
 ## Prerequisites
  - [Secure a Basic Node.js App with the SAP Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create)
  - You must have a second subaccount within the **same** trial account that you can use to subscribe to the application.
 
-## Details
-### You will learn
+## You will learn
   - How to add multitenancy to a secure Node.js application
   - How to provide the application to another subaccount with the SaaS Provisioning service
   - How to access a multitenant application from another subaccount
 
+## Intro
 The use case for this tutorial is that you've created a Node.js application in your subaccount that is secured by the XSUAA. You now want to make that application available to other subaccounts (tenants). You'll use the SaaS Provisioning service to make your application available to a consumer subaccount within your global trial account.
 
 See the following diagram to get an overview of the SaaS architecture.
 
-!![SaaS architecture](saas-architecture.png)
+<!-- border -->![SaaS architecture](saas-architecture.png)
 &nbsp;
 >**IMPORTANT:** This tutorial is using **specific values** instead of placeholders. **Please make sure to adapt those values** to your own values, that you used in the [previous tutorial](cp-cf-security-xsuaa-create).
 
@@ -54,7 +56,8 @@ The specific values that are used in this tutorial are:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable multitenancy in the security descriptor file)]
+### Enable multitenancy in the security descriptor file
+
 To enable multitenancy, you need to change the parameter `tenant-mode` in the `xs-security.json` file to make it available for multiple tenants.
 
 1. Go to the `product-list/security` folder.
@@ -84,10 +87,9 @@ To enable multitenancy, you need to change the parameter `tenant-mode` in the `x
 5. Save the file.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update the manifest)]
+### Update the manifest
+
 In this step you need to complete the following tasks:
 
 - Add a new routing pattern
@@ -170,11 +172,11 @@ applications:
 ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Implement the subscribe/unsubscribe endpoints)]
+
+### Implement the subscribe/unsubscribe endpoints
+
 To enable other subaccounts to subscribe to your application, you need to implement an endpoint for the SaaS registration manager to subscribe/unsubscribe.
 
 1. Go to the `myapp` folder.
@@ -217,11 +219,10 @@ To enable other subaccounts to subscribe to your application, you need to implem
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a SaaS configuration file)]
+### Create a SaaS configuration file
+
 To make your multitenant application endpoints available for subscription to consumer subaccounts, you must register the application in the Cloud Foundry environment via the SaaS Provisioning service.
 
 To register your application, you need a configuration file called `config.json`. In this file, you specify the subscription URL, the name and description of your application. The `xsappname` has to be the same as the `xsappname` in the `xs-security.json` file.
@@ -245,11 +246,10 @@ To register your application, you need a configuration file called `config.json`
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Delete the old XSUAA service instance)]
+### Delete the old XSUAA service instance
+
 When you change the tenant mode from `dedicated` to `shared` like you did in step 1, it's not enough to update the XSUAA service instance. You have to unbind and delete the old service instance first to recreate it later with the updated tenant mode settings.
 
 
@@ -268,11 +268,10 @@ cf unbind-service approuter xsuaa-service-tutorial
 cf delete-service xsuaa-service-tutorial
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service instances and redeploy your applications)]
+### Create service instances and redeploy your applications
+
 Create the new multitenant XSUAA service instance and the SaaS Provisioning service instance and redeploy your application.
 
 
@@ -295,14 +294,13 @@ cf create-service saas-registry application saas-registry-tutorial -c config.jso
 cf push
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create a route for a consumer subaccount)]
+### Create a route for a consumer subaccount
+
 Make your application reachable for consumer subaccounts by adding a new route in the Cloud Foundry CLI. The route is composed of the subdomain of the **subscribing** subaccount (see screenshot) and the `TENANT_HOST_PATTERN` of the application router that we defined in the `manifest.yml`. You have to create a new route for every subaccount (tenant) that subscribes to the application.
 
-!![subaccount subdomain](subdomain.png)
+<!-- border -->![subaccount subdomain](subdomain.png)
 
 1. Log in to the Cloud Foundry account where the application is deployed with the Cloud Foundry CLI.
 
@@ -312,12 +310,12 @@ cf map-route approuter cfapps.eu10.hana.ondemand.com --hostname consumer-tenant-
 ```
 
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Access the application with the consumer subaccount)]
+
+### Access the application with the consumer subaccount
+
 To access the application you need to subscribe to it. Follow these steps to subscribe to the SaaS application with the consumer subaccount and call the application URL.
 
 1. Open the [SAP BTP Trial](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome).
@@ -335,11 +333,10 @@ To access the application you need to subscribe to it. Follow these steps to sub
 You'll now see the application with the message `no data` because you have to assign the role collection to your user in the consumer subaccount.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Assign the role collection)]
+### Assign the role collection
+
 
 Assign your user the role collection `ProductListViewer` that contains the necessary role to view the products in the product list.
 
@@ -365,8 +362,6 @@ Assign your user the role collection `ProductListViewer` that contains the neces
 The application will now show you the products. If it's not working also consider to check with another browser or in private mode.
 
 
-[DONE]
-[ACCORDION-END]
 
 ---
 

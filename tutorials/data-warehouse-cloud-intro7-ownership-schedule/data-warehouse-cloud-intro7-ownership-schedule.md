@@ -1,24 +1,26 @@
 ---
-title: Change Ownership of Scheduled Remote Table Replications and Data Flows
-description: Change the ownership of a scheduled remote table replication or data flow in SAP Data Warehouse Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Change Ownership of Scheduled Remote Table Replications and Data Flows
+<!-- description --> Change the ownership of a scheduled remote table replication or data flow in SAP Data Warehouse Cloud.
+
 ## Prerequisites
  - You have [familiarised yourself with the SAP Data Warehouse Cloud interface.](data-warehouse-cloud-2-interface)
  - You have [given consent to let the job scheduling component of SAP Data Warehouse Cloud run scheduled tasks on your behalf.](data-warehouse-cloud-intro2-login-profilesettings)
  - You have [understood different roles](data-warehouse-cloud-3-add-users), and are assigned the DW Integrator role.
 
-## Details
-### You will learn
+## You will learn
   - How to take over ownership of another user's schedule
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Take over ownership of a schedule)]
+### Take over ownership of a schedule
+
 
 1. Go to the **Data Integration Monitor** and select your Space.
 
@@ -52,10 +54,9 @@ The **Owner** field now shows your user ID as the new owner of the schedule. The
 > With the DW Integrator role you can change the schedule and let the scheduling component run tasks on your behalf. For data flows, you need the DW Integrator role along with the DW Viewer or the DW Modeler role.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change ownership for a deleted user)]
+### Change ownership for a deleted user
+
 
 If a user leaves your organization or has been deleted from SAP Data Warehouse Cloud for any reason, and this user happens to be the owner of a job scheduled in your tenant, then you will need to change the ownership of this job schedule to another user. Job schedules are not assigned to any other user automatically and can't be executed successfully unless they are associated with an existing user.
 
@@ -69,13 +70,11 @@ Hence, it is important to change the ownership of a scheduled remote table repli
 > Learn in the next tutorial [how to create a database user in SAP Data Warehouse Cloud.](data-warehouse-cloud-intro8-create-databaseuser)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

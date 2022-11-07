@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
-description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a Custom RAP Business Object to Trigger Purchase Requisitions API
+<!-- description --> Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 
 In the online shop, customers can order various items. Once an item is ordered, a new purchase requisition is created via purchase requisitions API.
 
@@ -20,8 +22,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 - Business Catalog `SAP_PRC_BC_PURCHASER_PR` needs to be assign to your business user
 
-## Details
-### You will learn  
+## You will learn  
 - How to logon to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to create a database table
@@ -30,10 +31,12 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - How to create service definition & service binding
 - How to run SAP Fiori Elements Preview
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Logon to SAP S/4HANA Cloud ABAP Environment)]
+### Logon to SAP S/4HANA Cloud ABAP Environment
+
 
   1. Open Eclipse, select **File** > **New** > **Other**.
 
@@ -65,10 +68,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![logon](logon7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
+### Create ABAP package
+
 
   1.  Select **ZLOCAL** > **New** > **ABAP Package**.
 
@@ -90,10 +92,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
        Click **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create database table)]
+### Create database table
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -176,10 +177,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   12. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create CDS data model)]
+### Create CDS data model
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -218,10 +218,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
    6. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create projection view)]
+### Create projection view
+
 
   1. Right-click **Data Definitions** and select **New Data Definition**.
 
@@ -279,10 +278,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create behavior definition for CDS data model)]
+### Create behavior definition for CDS data model
+
 
   1. Right-click your data definition `ZI_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -325,10 +323,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create behavior definition for projection view)]
+### Create behavior definition for projection view
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -361,11 +358,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create behavior implementation)]
+### Create behavior implementation
+
 
   1. In your behavior definition **`ZI_ONLINE_SHOP_XXX`** set the cursor before the implementation class `zbp_i_online_shop_xxx` and click **CTRL + 1**. Double-click on **Create behavior implementation class `zbp_i_online_shop_xxx`** to create your implementation class.
 
@@ -595,10 +591,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Open documentation)]
+### Open documentation
+
 
 You have 2 options to open the documentation inside ADT.
 
@@ -628,10 +623,9 @@ You have 2 options to open the documentation inside ADT.
       ![service](docu5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create service definition)]
+### Create service definition
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Service Definition**.
 
@@ -661,11 +655,10 @@ You have 2 options to open the documentation inside ADT.
    5. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Create service binding)]
+### Create service binding
+
 
   1. Right-click your service binding `ZSD_SHOP_XXX` and select **New Service Binding**.
 
@@ -693,11 +686,10 @@ You have 2 options to open the documentation inside ADT.
 
       ![binding](binding5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Run SAP Fiori Elements preview)]
+### Run SAP Fiori Elements preview
+
 
  1. Select `online_shop` in your service binding and click **Preview** to open SAP Fiori Elements preview.
 
@@ -715,11 +707,10 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](create3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Check purchase requisition)]
+### Check purchase requisition
+
 
  1. In the Project Explorer, select your system and right click on **Properties**.
 
@@ -752,12 +743,10 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](purchase5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

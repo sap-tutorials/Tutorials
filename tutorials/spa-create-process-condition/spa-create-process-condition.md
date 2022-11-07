@@ -1,25 +1,28 @@
 ---
+parser: v2
 author_name: Archana Shukla
 author_profile: https://github.com/ArchanaShukla/
-title: Create a Process Condition
-description: Create a process condition to route the process based on business criteria
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-process-automation
 ---
 
-## Details
-### You will learn
+# Create a Process Condition
+<!-- description --> Create a process condition to route the process based on business criteria
+
+## You will learn
   - How to create and configure process condition
   - How to define different process flows for each conditional criteria
 
 ---
 A **process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
+## Intro
 In this unit, you will learn how to use process condition in a business process to get rid of unnecessary approvals when the process is routed for auto-approval or one-step-approval flow based on the sales order criteria.
 
-[ACCORDION-BEGIN [Step 1: ](Create and configure process condition)]
+### Create and configure process condition
+
 
 Now that you have designed the process with forms, let us define which process flow should run based on if/else condition criteria.  
 
@@ -29,29 +32,29 @@ Now that you have designed the process with forms, let us define which process f
     - Select **+** after the start form.
     - Choose **Controls > Condition**.
 
-    !![Process Condition](unit5-00.png)
+    <!-- border -->![Process Condition](unit5-00.png)
 
     This adds the condition to the process.
 
 2. To configure your condition, choose **Open Condition Editor**.
 
-    !![Configure Condition](configure-condition.png)
+    <!-- border -->![Configure Condition](configure-condition.png)
 
 3. Edit your branch condition by setting **Order Amount** from the process content.
 
-    !![Edit Branch Condition](edit-branch-condition.png)
+    <!-- border -->![Edit Branch Condition](edit-branch-condition.png)
 
     > Process content will contain list of attributes that have been defined in previous skills. For Example: in the screenshot, you can see attributes from the trigger form. You will use these process content to configure different skills during business process modelling.
 
 4. Select **is less than**.
 
-    !![Less than](less-than.png)
+    <!-- border -->![Less than](less-than.png)
 
 5. Enter **100000** as the value and choose **Apply**
 
     You have configured your **if** branch to: **if Order Amount is less than 100000**.
 
-    !![Value and save](value-save.png)
+    <!-- border -->![Value and save](value-save.png)
 
 6. Similarly, add one more condition
     - Click **Add Group**
@@ -64,21 +67,21 @@ Now that you have designed the process with forms, let us define which process f
 
     - Finally, click **Apply** to add the condition to the business process
 
-    !![Add Group](unit5-05.png)
+    <!-- border -->![Add Group](unit5-05.png)
 
 7. Now, link your **Default** branch to **Approval Form**.
 
-    !![Process Content](process-content.png)
+    <!-- border -->![Process Content](process-content.png)
 
     With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.    
 
 8.	Let's decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
 
-    !![Delete branch](delete-branch.png)
+    <!-- border -->![Delete branch](delete-branch.png)
 
 9. To create the new form, add the **New Form** from the **If-route**.
 
-    !![Process Content](unit5-03.png)
+    <!-- border -->![Process Content](unit5-03.png)
 
     In the pop-up for new form, do the following:
 
@@ -88,7 +91,7 @@ Now that you have designed the process with forms, let us define which process f
 
     > The form **Identifier** field is auto-filled.
 
-    !![Process Content](unit5-04.png)
+    <!-- border -->![Process Content](unit5-04.png)
 
 10. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
 
@@ -109,7 +112,7 @@ Now that you have designed the process with forms, let us define which process f
 
 11. Save your work.
 
-    !![Design Form](design-form.png)
+    <!-- border -->![Design Form](design-form.png)
 
 12. Go back to the process builder and configure the auto approval form.
 
@@ -120,7 +123,7 @@ Now that you have designed the process with forms, let us define which process f
     | Subject | Your order **Order Number > Order Processing Form** has been successfully received
     | Recipients | **Process Started By > Process Metadata**
 
-    !![General](general.png)
+    <!-- border -->![General](general.png)
 
     - Configure the **Inputs** section.
 
@@ -130,22 +133,20 @@ Now that you have designed the process with forms, let us define which process f
     | Order Amount | Order Amount > Order Processing Form
     | Expected Delivery Date | Expected Delivery Date > Order Processing Form
 
-    !![Inputs](inputs.png)
+    <!-- border -->![Inputs](inputs.png)
 
 13. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
 
     - Do not forget to **Save** the process once done.  
 
-    !![End](end-process.png)
+    <!-- border -->![End](end-process.png)
 
     This completes the process design with condition criteria that will decide what process flow is executed and whether there will be an auto-approval or a one-step approval route.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Validation)]
+### Validation
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

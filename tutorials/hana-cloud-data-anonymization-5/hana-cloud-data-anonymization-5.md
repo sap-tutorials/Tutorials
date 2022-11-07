@@ -1,11 +1,13 @@
 ---
-title: Create Anonymized Views Using Differential Privacy
-description: Create an anonymized view in SAP HANA Cloud using Differential Privacy to protect sensitive information.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Create Anonymized Views Using Differential Privacy
+<!-- description --> Create an anonymized view in SAP HANA Cloud using Differential Privacy to protect sensitive information.
 
 ## Prerequisites
 - It's recommended that you complete the [previous tutorial](hana-cloud-data-anonymization-4).
@@ -13,20 +15,21 @@ primary_tag: products>sap-hana-cloud
 - If you would like to run the sample scenario, you need a **running** instance of SAP HANA Cloud, SAP HANA database in trial or production.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create an anonymized view using differential privacy
 - How to view the results of anonymization
 - How to run an example scenario using differential privacy
 
 
+## Intro
 > ### **Disclaimer**
 >
 > In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to differential privacy)]
+### Introduction to differential privacy
+
 
 Now that you know the anonymization methods of K-Anonymity and L-Diversity, we will show you in this article how to apply a third method of anonymization.
 
@@ -46,10 +49,9 @@ For more technical information on how differential privacy is computed, you can 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an anonymized view using differential privacy)]
+### Create an anonymized view using differential privacy
+
 
 To use differential privacy on your data, follow these steps:
 
@@ -101,11 +103,10 @@ To create metadata that can be queried, the view then needs to be refreshed:
 REFRESH VIEW "[view_name]" ANONYMIZATION;
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](View the results of anonymization)]
+### View the results of anonymization
+
 
 
 1.	To show the results of the anonymization, you can use a `SELECT` statement:
@@ -124,10 +125,9 @@ select "[column1]", AVG("[sensitive_column]") from "[table_name]" group by "[col
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run an example scenario)]
+### Run an example scenario
+
 
 > To run this example, you must use the [sample data](https://github.com/SAP-samples/hana-cloud-learning/raw/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/DataAnonymization_SampleData.zip) provided in the prerequisites. You can check the [third tutorial](hana-cloud-data-anonymization-4) for instructions on how to upload the data into your database.
 
@@ -147,7 +147,7 @@ COLUMN "salary" PARAMETERS '{"is_sensitive":true, "epsilon" : 0.5, "sensitivity"
 
 This is how the data will look like:
 
-!![differential privacy example 1](ss-01-differential-privacy-example1.png)
+<!-- border -->![differential privacy example 1](ss-01-differential-privacy-example1.png)
 
 You can see below that comparative queries on the anonymized view `SALARYANON_DP` and the non-anonymized data (table `ANON_SAMPLE`) show similar results.
 
@@ -157,7 +157,7 @@ You can see below that comparative queries on the anonymized view `SALARYANON_DP
 select "start_year", AVG("salary") from "SALARYANON_DP" group by "start_year" order by "start_year";
 ```
 
-!![differential privacy example 2](ss-02-differential-privacy-example2.png)
+<!-- border -->![differential privacy example 2](ss-02-differential-privacy-example2.png)
 
 **Original data**
 
@@ -165,7 +165,7 @@ select "start_year", AVG("salary") from "SALARYANON_DP" group by "start_year" or
 select "start_year", AVG("salary") from "ANON_SAMPLE" group by "start_year" order by "start_year";
 ```
 
-!![differential privacy example 3](ss-03-differential-privacy-example3.png)
+<!-- border -->![differential privacy example 3](ss-03-differential-privacy-example3.png)
 
 > **Well done!**
 >
@@ -182,14 +182,12 @@ For more details on the parameters of differential privacy, you can read our [te
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

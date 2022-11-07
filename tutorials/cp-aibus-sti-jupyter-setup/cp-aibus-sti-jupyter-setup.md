@@ -1,6 +1,5 @@
 ---
-title: Set Up Jupyter Notebook for Service Ticket Intelligence
-description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
+parser: v2
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
@@ -9,16 +8,20 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Set Up Jupyter Notebook for Service Ticket Intelligence
+<!-- description --> Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
+
+## You will learn
   - How to install Python and Anaconda
   - How to set up a local Jupyter server to run Jupyter notebooks
 
+## Intro
 A Jupyter Notebook is used in the following tutorials to make the steps interactive and easy to follow. For more information on Jupyter Notebooks, see [Jupyter](https://jupyter.org/). The notebooks and datasets used for this tutorial mission are available in this [repository](https://github.com/SAP-samples/service-ticket-intelligence-jupyter-notebook).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Anaconda)]
+### Install Anaconda
+
 
 First, you need to install Anaconda. Anaconda is a platform that offers tools to process large datasets and is often used by data scientists. When installing Anaconda, the programming language Python is installed as well.
 
@@ -40,10 +43,9 @@ To verify the installation, open a new Terminal or Command Prompt. In the comman
 
 You have successfully installed Anaconda.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Clone the repository)]
+### Clone the repository
+
 
 All you will need throughout the tutorial is within this [repository](https://github.com/SAP-samples/service-ticket-intelligence-jupyter-notebook) on GitHub. It includes three Jupyter notebooks, one for each of the use cases of Service Ticket Intelligence, as well as some dataset that can be used. Now, you will clone this repository to your local computer.
 
@@ -69,10 +71,9 @@ git clone https://github.com/SAP-samples/service-ticket-intelligence-jupyter-not
 
 Once the repository is cloned, you receive an output as above, saying that it's done.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start Jupyter server)]
+### Start Jupyter server
+
 
 To use the Jupyter notebooks, you must have a local instance of the Jupyter server running.
 
@@ -87,10 +88,9 @@ Next, enter the command `jupyter notebook` to start the server.
 Once the server started, the Jupyter notebook automatically opens in the browser. In case it does not, you can use one of the URLs that appear in the command prompt.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add credentials)]
+### Add credentials
+
 
 Finally, you need to upload the service key file that you obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) or [Use Trial to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key).
 
@@ -110,10 +110,8 @@ Now, the file shows in the list of documents and folders. With that, you are don
 
 ![Upload](list.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

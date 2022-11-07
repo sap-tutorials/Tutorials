@@ -1,11 +1,13 @@
 ---
-title: Consume SAP BTP Services In SAP Kyma
-description: Build an Extension Application on Kyma using SAP BTP services.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Consume SAP BTP Services In SAP Kyma
+<!-- description --> Build an Extension Application on Kyma using SAP BTP services.
 
 ## Prerequisites
   - Get an Account on SAP BTP to Try Out Free Tier Service Plans.[Get an Account on SAP BTP](btp-free-tier-account)
@@ -18,8 +20,7 @@ primary_tag: software-product>sap-btp\\, kyma-runtime
   - You have an [account on the SAP Gateway Demo System (ES5)](gateway-demo-signup) created
   - You have [connected SAP BTP to your SAP Gateway Demo System (ES5) account](cp-portal-cloud-foundry-gateway-connection).
 
-## Details
-### You will learn
+## You will learn
   - How to consume SAP BTP services in sap Kyma-runtime
   - How to deploy applications into Kyma-runtime
   - How to use SAP BTP APIs, Service Manager and Service Operator to consume services from other environments
@@ -28,7 +29,8 @@ primary_tag: software-product>sap-btp\\, kyma-runtime
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the Kyma runtime kubeconfig)]
+### Download the Kyma runtime kubeconfig
+
 
 The `kubectl` tool relies on a configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained from both the BTP Cockpit and the Console UI.
 
@@ -61,10 +63,9 @@ To obtain the `kubeconfig` from the Console UI:
     ![kubeconfig](kubeconfig-ui.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set the KUBECONFIG environment variable)]
+### Set the KUBECONFIG environment variable
+
 
 To configure the access to your Kyma-runtime cluster, you have to set the `kubeconfig` environment variable to point to the location of the `kubeconfigfile` downloaded from your Kyma-runtime  cluster.
 
@@ -124,10 +125,9 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create service instances)]
+### Create service instances
+
 
    In the **`fioriapp`** sample application, the Destination and the SAP Authorization & Trust Management services will be consumed in Kyma-runtime. To use these SAP BTP services you have to create the respective service instances and service bindings. Use the `createservice.yaml` file which will create the `destination` service instance with plan `lite` and the `xsuaa` service instance with plan `application`.
 
@@ -186,10 +186,9 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 
     >To know more about consuming services using SAP BTP service operator [Working with SAP BTP Service Operator](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/0ccebd7cec24411dacd5ad17799534e0.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build and deploy app into kyma Cluster)]
+### Build and deploy app into kyma Cluster
+
 
 To build and deploy the **`fioriapp`** sample application in your cluster, you have to create a pod, which encapsulates the container and ensures that a specified quorum of running instances is fulfilled. To do that, use the `deployment.yaml`.
 
@@ -237,11 +236,9 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
     |-------|----|-------|--------|---------|
     |`fioriapp-##-##`| `2/2`|`Running`|`##`|`##`|
 
-[DONE]
 
-[ACCORDION-END]
+### Apply resources to Kyma runtime
 
-[ACCORDION-BEGIN [Step 5: ](Apply resources to Kyma runtime)]
 
    kind Service is an abstract way to expose an application running on a set of Pods as a network service. Now we have the Deployment of **`fioriapp`**, let's deploy the Kubernetes Service to allow other Kubernetes resources to communicate with your microservice.
    Create `APIRule` to defines the API endpoint which exposes the application to the Internet.
@@ -257,10 +254,8 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/kyma/service.yaml`.
 
 
-[DONE]
+### Run the deployed application
 
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 7: ](Run the deployed application)]
 
 To access the API we can use the `APIRule` we created in the previous step.
 
@@ -276,11 +271,10 @@ To access the API we can use the `APIRule` we created in the previous step.
 
     `https://fioriapp.<cluster>.kyma.ondemand.com`
 
-    !![finaloutput](finaloutput.png)
+    <!-- border -->![finaloutput](finaloutput.png)
 
 **Congratulations!** You have successfully completed the tutorial.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

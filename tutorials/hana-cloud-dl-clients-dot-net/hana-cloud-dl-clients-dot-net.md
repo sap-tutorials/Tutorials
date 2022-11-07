@@ -1,25 +1,28 @@
 ---
-title: Connect to Data Lake Relational Engine Using the .NET Driver
-description: Create and debug a .NET application that connects to a data lake Relation Engine.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
+# Connect to Data Lake Relational Engine Using the .NET Driver
+<!-- description --> Create and debug a .NET application that connects to a data lake Relation Engine.
+
 ## Prerequisites
  - You have completed the first tutorial in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to install the .NET SDK
   - How to create and debug a .NET application that queries a data lake Relational Engine
 
+## Intro
 [.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the .NET SDK)]
+### Install the .NET SDK
+
 
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
@@ -37,10 +40,9 @@ On Linux, follow the instructions for the appropriate Linux version such as [Ins
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a .NET application that queries a data lake Relational Engine)]
+### Create a .NET application that queries a data lake Relational Engine
+
 
 1.  Create a new console app with the below commands:
 
@@ -160,11 +162,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     ![Result of running the app](result.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Debug the application)]
+### Debug the application
+
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -193,7 +194,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

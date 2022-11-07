@@ -275,6 +275,7 @@ primary_tag: software-product>sap-process-automation
 ### Mapping of Parameters to the Automation and Process
 
 
+
 1. Navigate to the **Get Invoice Details** process. and select the automation **Extract Invoice Data**. Map the input parameter of the automation to the form parameter `FilePath`.
 
     <!-- border -->![Mapping](040.png)

@@ -1,28 +1,31 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Augment your Story with Smart Features
-description: Utilize Smart Insights and Smart Discovery to uncover valuable insights to drive smarter decision making
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Augment your Story with Smart Features
+<!-- description --> Utilize Smart Insights and Smart Discovery to uncover valuable insights to drive smarter decision making
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to enable Smart Insights
   - How to enable Smart Discovery
   - How to learn more from Smart Discovery
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Run a Smart Insight)]
+### Run a Smart Insight
+
 
 Let's run Smart Insights on the Gross Margin per Product Category chart to help us better understand the data within the chart.  
 
@@ -48,10 +51,9 @@ The Smart Insights panel will then appear on the right to display insights speci
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/c9eb30cc1e5b4c439cb871bf9612d2ac.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run a Smart Discovery)]
+### Run a Smart Discovery
+
 
 Smart Discovery analyzes your data by running a machine learning algorithm to help you explore your data in a specific context, to uncover new, or unknown relationships between columns within a dataset.
 
@@ -74,11 +76,10 @@ You will then be prompted to set your topic by choosing a Target and Entity.
 
 > Currently, you can't run Smart Discovery on more than one million cells. If this is a problem in your future endeavors, you can filter the data to reduce the number of cells included in your dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Analyze and Gain New Insights)]
+### Analyze and Gain New Insights
+
 
 Smart Discovery will then generate up to four new pages that will be added to your story:  
 
@@ -112,12 +113,9 @@ With an increased discount of $151,492.82 on our products, the model simulated t
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/2087d067329d477d96e44100c135e8e6.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

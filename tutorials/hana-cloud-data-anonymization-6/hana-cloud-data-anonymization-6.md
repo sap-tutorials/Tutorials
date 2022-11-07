@@ -1,23 +1,25 @@
 ---
-title: Monitor and Share Anonymized Data
-description: Monitor anonymization of data in the SAP HANA cockpit by accessing various anonymization KPIs.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Monitor and Share Anonymized Data
+<!-- description --> Monitor anonymization of data in the SAP HANA cockpit by accessing various anonymization KPIs.
+
 ## Prerequisites
 - It's recommended that you complete the [previous tutorial](hana-cloud-data-anonymization-5).
 - To access the anonymization KPI's and monitoring options in SAP HANA cockpit shown in this tutorial, you need to have created at least one anonymized views using [k-anonymity](hana-cloud-data-anonymization-3), [l-diversity](hana-cloud-data-anonymization-4) or [differential privacy](hana-cloud-data-anonymization-5). If you have not done so yet, you can revisit one of the previous tutorials.
 
-## Details
-### You will learn
+## You will learn
 - How to view all available anonymization views
 - How to explore various KPI's on anonymization in the SAP HANA cockpit
 - How to access anonymization reports in SAP HANA Database Explorer
 
 
+## Intro
 > ### **Disclaimer**
 >
 > In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
@@ -32,7 +34,8 @@ In this tutorial, you will find a detailed step-by-step guide on how to navigate
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](View all available anonymization views in SAP HANA cockpit)]
+### View all available anonymization views in SAP HANA cockpit
+
 
 Follow these steps to monitor and evaluate the anonymization used in your database:
 
@@ -44,7 +47,7 @@ Follow these steps to monitor and evaluate the anonymization used in your databa
 
 4.	Select **Open in SAP HANA Cockpit**. The SAP HANA cockpit will open in a new tab.
 
-    !![SCP open BTP Cockpit](ss-01-SCP-open-BTP-Cockpit.png)
+    <!-- border -->![SCP open BTP Cockpit](ss-01-SCP-open-BTP-Cockpit.png)
 
 5.	In the SAP HANA cockpit, navigate to the section All or Security and User Management.
 
@@ -52,64 +55,61 @@ Follow these steps to monitor and evaluate the anonymization used in your databa
 
 7.	Click on **View available anonymization views**.
 
-    !![HANA Cockpit 1](ss-02-HANA-Cockpit1.png)
+    <!-- border -->![HANA Cockpit 1](ss-02-HANA-Cockpit1.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the list of reports on anonymized views)]
+### Explore the list of reports on anonymized views
+
 
 1.	There, you can see all reports available for your database. Each anonymized view has a corresponding report that is represented in one of the rows.
 
-    !![HANA Cockpit 2 available reports](ss-03-HANA-Cockpit2-availablereports.png)
+    <!-- border -->![HANA Cockpit 2 available reports](ss-03-HANA-Cockpit2-availablereports.png)
 
 2.	If you click on a report, you can see the anonymization method and parameters you have specified.
 
 3.	For example, if you have used the anonymization method of k-anonymity, you will see this reflected at the top area. Below, in the Supporting KPI's area, you can see various KPI's that will tell you more about the effectiveness of your anonymized view.
 
-    !![HANA Cockpit 3 report k-anonymity](ss-04-HANA-Cockpit3-reportk-anonymity.png)
+    <!-- border -->![HANA Cockpit 3 report k-anonymity](ss-04-HANA-Cockpit3-reportk-anonymity.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Explore different elements in the report)]
+### Explore different elements in the report
+
 
 1.	**Supporting KPI's**
 
     You can click on each KPI to get detailed information on what they describe.
 
-    !![HANA Cockpit 4 report tooltip](ss-05-HANA-Cockpit4-report-tooltip.png)
+    <!-- border -->![HANA Cockpit 4 report tooltip](ss-05-HANA-Cockpit4-report-tooltip.png)
 
 2.	**Column Overview**
 
     Scrolling down, you can also find an overview of all columns in your anonymized view and what type you determined for them in the view.
 
-    !![HANA Cockpit 5 report columns](ss-06-HANA-Cockpit5-report-columns.png)
+    <!-- border -->![HANA Cockpit 5 report columns](ss-06-HANA-Cockpit5-report-columns.png)
 
 3.	**Hierarchies defined**
 
     For each quasi-identifier, you can also view the hierarchies defined. This works both for embedded hierarchies, as well as hierarchy functions.
 
-    !![HANA Cockpit 6 report hierarchies](ss-07-HANA-Cockpit6-report-hierarchies.png)
+    <!-- border -->![HANA Cockpit 6 report hierarchies](ss-07-HANA-Cockpit6-report-hierarchies.png)
 
 4.	**KPI's for differential privacy**
 
     If you use differential privacy in your anonymized view, the KPI's compiled in your report will vary.
 
-    !![HANA Cockpit 7 report differential privacy](ss-08-HANA-Cockpit7-report-diffpriv.gif)
+    <!-- border -->![HANA Cockpit 7 report differential privacy](ss-08-HANA-Cockpit7-report-diffpriv.gif)
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Access anonymization reports in SAP HANA Database Explorer)]
+### Access anonymization reports in SAP HANA Database Explorer
+
 
 To access the anonymization reports directly in the SAP HANA Database Explorer, you can use this statement:
 
@@ -135,10 +135,9 @@ There are four categories of KPI's you can use to evaluate your anonymization:
 You can learn more about the Anonymization KPI's in the [technical documentation here](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/LATEST/en-US/2401b013d82342f0af76c320a11d9f06.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Share anonymized views)]
+### Share anonymized views
+
 
 **Making anonymized data available to others**
 
@@ -154,7 +153,7 @@ Usually, in SAP Analytics Cloud, users can drill down into the data as far as th
 
 The following image shows how someone can drill down into the non-anonymized data and find out the information on specific individuals:
 
-!![SAC drilldown non-anonymized](ss-09-SAC-drilldown-non-anonymized.png)
+<!-- border -->![SAC drilldown non-anonymized](ss-09-SAC-drilldown-non-anonymized.png)
 
 > ### For Non-Anonymized Data
 >
@@ -167,7 +166,7 @@ When an anonymized view is shared via SAP Analytics Cloud, drilling down into ce
 
 The following image shows how anonymized data can prevent someone from finding out the information on specific individuals:
 
-!![SAC drilldown anonymized ](ss-10-SAC-drilldown-anonymized.png)
+<!-- border -->![SAC drilldown anonymized ](ss-10-SAC-drilldown-anonymized.png)
 
 > ### For Anonymized Data
 >
@@ -176,10 +175,9 @@ The following image shows how anonymized data can prevent someone from finding o
 >
 > You can refer the video in the introduction of this tutorial for details.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Recap all you have learned about data anonymization)]
+### Recap all you have learned about data anonymization
+
 
 That is all for this tutorial group. Let us recap what you have learned:
 
@@ -198,14 +196,12 @@ That is all for this tutorial group. Let us recap what you have learned:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

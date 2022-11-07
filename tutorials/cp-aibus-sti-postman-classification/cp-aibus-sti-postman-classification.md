@@ -1,6 +1,5 @@
 ---
-title: Use Service Ticket Intelligence and Postman to Classify Service Requests
-description: Train a machine learning model based on historical service requests in order to classify new requests.
+parser: v2
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
@@ -9,12 +8,15 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Use Service Ticket Intelligence and Postman to Classify Service Requests
+<!-- description --> Train a machine learning model based on historical service requests in order to classify new requests.
+
+## You will learn
   - How to authorize your client to communicate with your Service Ticket Intelligence service instance
   - How to upload training data and train a machine learning model to classify service requests
   - How to classify service requests into categories
 
+## Intro
 Service Ticket Intelligence provides machine learning functionalities to effectively deal with service requests. Thereby, the service offers two main functionalities:
 
   1. The service is able to analyze the unstructured information in service requests and classify the requests into categories.
@@ -25,7 +27,8 @@ Find more details on the Service Ticket Intelligence concepts [here](https://hel
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get an access token)]
+### Get an access token
+
 
 First, you need to retrieve an OAuth access token which will grant you access to the Service Ticket Intelligence APIs and allows you to communicate with your service instance. This access token is added to all your service instance requests.
 
@@ -43,11 +46,10 @@ If you send a request and receive a response, as in the image below, with a stat
 
 ![Unauthorized Response](unauthorized.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Upload training data)]
+### Upload training data
+
 
 Now, you can upload data that will be used to train a machine learning model. The training data contains historical service requests that the model can use to learn from. The dataset contains travel-related data and has the following three possible categories: `Complaint`, `Compliment` and `Request`.
 
@@ -59,11 +61,10 @@ The service now automatically creates a new model and sets its status to `NEW`. 
 
 ![Upload Training File Response](upload-training-file-response.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Train model)]
+### Train model
+
 
 Next, you can start training the model based on the data that was uploaded in the previous step.
 
@@ -79,11 +80,10 @@ The response of the request includes all the details of your model along with it
 
 ![Model Status](model-status-response.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Activate model)]
+### Activate model
+
 
 To actually classify new service requests using the trained machine learning model, it is necessary to activate (deploy) the model.
 
@@ -93,11 +93,11 @@ Select the request `Activate model` and click **Send**. This will start the acti
 
 Use the request `Get model status` from the previous step again to observe the process. Once the status of the model changes to `ACTIVE`, the model is ready and activated.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Classify requests)]
+
+### Classify requests
+
 
 Finally, the model can be used to classify requests.
 
@@ -113,9 +113,7 @@ Feel free to try different service request messages in the `Body` tab and find o
 
 You can also try out the other `POST /Classify` requests.
 
-!![Classify Requests](classify-requests2.png)
+<!-- border -->![Classify Requests](classify-requests2.png)
 
 You have now successfully used Service Ticket Intelligence to classify new service requests.
 
-[DONE]
-[ACCORDION-END]

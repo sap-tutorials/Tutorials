@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Add Business Logic to Your Application
-description: This tutorial shows you how to create an SAP Fiori Elements app on top of your previously created CAP application.
 keywords: cap
 auto_validation: true
 time: 5
@@ -10,19 +9,22 @@ tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-p
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Add Business Logic to Your Application
+<!-- description --> This tutorial shows you how to create an SAP Fiori Elements app on top of your previously created CAP application.
+
 ## Prerequisites
  - Before you start with this tutorial, you have two options:
      - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-ui-fiori-elements`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-fiori-elements) branch.
     - Complete the previous tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) with all its prerequisites.
 
-## Details
-### You will learn
+## You will learn
  - How to add custom code to your application
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add custom code)]
+### Add custom code
+
 In this tutorial, you add some custom code to the CAP application. Depending on the value of the property `impact`, the custom code changes the value of the property `criticality`. This property is used in OData annotations to control the color of some of the cells in the table of our work list page.
 
 1. Copy the file `risk-service.js` from `templates/cap-business-logic/srv` to the `srv` folder of your app.
@@ -31,12 +33,11 @@ In this tutorial, you add some custom code to the CAP application. Depending on 
 
     It now shows our work list with the columns `Priority` and `Impact` with color and an icon, depending on the amount in `Impact`.
 
-    !![Fiori Elements Work List](feappcriticality.png)
+    <!-- border -->![Fiori Elements Work List](feappcriticality.png)
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Explanation of the custom code)]
+### Explanation of the custom code
+
 <!-- cpes-file srv/risk-service.js -->
 ```JavaScript
 const cds = require('@sap/cds')
@@ -88,9 +89,5 @@ annotate RiskService.Risks with @(
 
 You can find more about the possible values of the `Criticality` annotation in section [UI Vocabulary](https://github.com/SAP/odata-vocabularies/blob/master/vocabularies/UI.md#CriticalityType). This, however, is just one of the many sections of the [OData annotation vocabularies for UI](https://github.com/SAP/odata-vocabularies/blob/master/vocabularies/UI.md) and [Common](https://github.com/SAP/odata-vocabularies/blob/master/vocabularies/Common.md) usage.
 
-[VALIDATE_1]
 The result of this tutorial can be found in the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
-
-
-[ACCORDION-END]
 ---

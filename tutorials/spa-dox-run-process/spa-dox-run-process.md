@@ -56,7 +56,6 @@ primary_tag: software-product>sap-process-automation
 
 ### Deploy the Released Process
 
-
     You can deploy Business Process projects from each released version of the project in the Process Builder or through the Lobby. Deploying the project makes it available for others to use it. Bare in mind that you can only deploy a released version of the project.
 
 1. From the released version of the Business Process project in the Process Builder, choose **Deploy**.
@@ -117,6 +116,7 @@ primary_tag: software-product>sap-process-automation
 5. The process is triggered. You can now work on the tasks and monitor the process.
 
     <!-- border -->![Run form successfully submitted](Run_inputs_2.png)
+
 
 
 ### Work on the Tasks

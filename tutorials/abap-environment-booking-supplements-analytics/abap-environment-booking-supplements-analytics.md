@@ -1,6 +1,5 @@
 ---
-title: Develop Queries Based on Booking Supplement and Consume on SAP Analytics Cloud
-description: Develop analytical queries based on booking supplements from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>advanced, programming-tool>abap-connectivity, products>sap-business-technology-platform, software-product>sap-analytics-cloud, tutorial>license]
@@ -8,6 +7,9 @@ primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
+
+# Develop Queries Based on Booking Supplement and Consume on SAP Analytics Cloud
+<!-- description --> Develop analytical queries based on booking supplements from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 
 ## Prerequisites
 - You need the standard developer authorization profile to create ABAP development objects.
@@ -18,26 +20,25 @@ author_profile: https://github.com/niloofar-flothkoetter
 - You can find an intermediate tutorial for SAP Analytics Cloud here <https://developers.sap.com/tutorials/abap-environment-analytics.html>.
 
 
-## Details
-### You will learn
+## You will learn
  - How to create an analytical query based on booking supplement as CDS View Entities
  - How to connect an ABAP System to SAP Analytics Cloud
  - How to consume analytical queries on SAP Analytics Cloud by creating models and stories
 
+## Intro
 Always replace `####` with your initials or group number.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Access) service protocol. In this Tutorial you will create a complete Analytical Data Model for Booking data. This consists out of dimensions for Carrier, Customer, Connection and Agency data, as well as an interface CDS view for Booking data which acts as a data source for the cube and query.
 These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
 
 ![overview](1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import templates for Analytical CDS views)]
+### Import templates for Analytical CDS views
+
 
 As a first task you will start to import templates that you will use in this tutorial to create Analytical CDS views such as dimension views, cubes and queries.
 
@@ -70,11 +71,10 @@ The templates already contain certain annotations that are mandatory for the abo
 
     ![apply](0140.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create dimension for Agency)]
+### Create dimension for Agency
+
 
 >Dimensions views are links to various master data, which are later used in reporting as further attributes (according to which different aggregations can be made) and thus make up the versatility of our Analytical Model.
 
@@ -116,11 +116,10 @@ The templates already contain certain annotations that are mandatory for the abo
       ![define view](1060.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Edit dimension view)]
+### Edit dimension view
+
 
   1. Now you need to edit the dimension view. Here you can use code completion to add the values for the annotations
 
@@ -215,10 +214,9 @@ The templates already contain certain annotations that are mandatory for the abo
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create dimension for Airport)]
+### Create dimension for Airport
+
 
   1. Right click **Data Definition** > **New Data Definition**. Enter following values and press **Next**:
 
@@ -277,10 +275,9 @@ The templates already contain certain annotations that are mandatory for the abo
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create dimension for Carrier)]
+### Create dimension for Carrier
+
   1. Right click **Data Definition** > **New Data Definition**. Enter following values and press **Next**:
 
     - **Name**: `ZRAP500_I_Carrier_####`
@@ -328,10 +325,9 @@ The templates already contain certain annotations that are mandatory for the abo
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create dimension for Booking)]
+### Create dimension for Booking
+
   1. Right click **Data Definition** > **New Data Definition**. Enter following values and press **Next**:
 
     - **Name**: `ZRAP500_I_Booking_####`
@@ -406,10 +402,9 @@ The templates already contain certain annotations that are mandatory for the abo
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create dimension for Connection)]
+### Create dimension for Connection
+
   1. Right click on the folder **Data Definitions** > **New** > **Data Definition**.    
   2. Enter the following values and press **Next**.
 
@@ -520,10 +515,9 @@ The templates already contain certain annotations that are mandatory for the abo
       }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create dimension for Customer)]
+### Create dimension for Customer
+
   1. Right click on the folder **Data Definitions** > **New** > **Data Definition**.    
   2. Enter the following values and press **Next**.
 
@@ -604,10 +598,9 @@ The templates already contain certain annotations that are mandatory for the abo
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create dimension for Supplement)]
+### Create dimension for Supplement
+
   1. Right click on the folder **Data Definitions** > **New** > **Data Definition**.    
   2. Enter the following values and press **Next**.
 
@@ -670,10 +663,9 @@ The templates already contain certain annotations that are mandatory for the abo
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create Supplement text view)]
+### Create Supplement text view
+
   1. Right click on the folder **Data Definitions** > **New** > **Data Definition**.    
   2. Enter the following values and press **Next**.
 
@@ -736,10 +728,9 @@ The templates already contain certain annotations that are mandatory for the abo
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Create Booking Supplement interface view)]
+### Create Booking Supplement interface view
+
 
   You need to create a helper interface view to expose the necessary elements from `/dmo/book_suppl` as well as from associated Travel and Booking views. The cube is based on this view.
 
@@ -818,10 +809,9 @@ The templates already contain certain annotations that are mandatory for the abo
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create Booking Supplement Cube)]
+### Create Booking Supplement Cube
+
 
 >The Cube is the analytical interface view that is ultimately used in the query and holds the model together. In addition to the facts and the measurable key figures (if necessary also calculations), it contains references to the dimensions.
 
@@ -1050,10 +1040,9 @@ The templates already contain certain annotations that are mandatory for the abo
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Create Booking Supplement Query)]
+### Create Booking Supplement Query
+
 
 Since a query belongs to the projection layer (formerly known as consumption layer) it must have a **C** in its name according to the naming convention used in the Virtual Data Model (VDM) used in SAP S/4HANA. To create a query, there is a mandatory header annotation: **@Analytics.query: true**
 
@@ -1231,10 +1220,9 @@ Again you can use a template that you have imported at the beginning of this tut
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Data preview)]
+### Data preview
+
 
   Similar to the SAP Fiori Elements preview which is offered for OData V2 UI and OData V4 UI service bindings there is now an Analytical Data Preview available. This can be used by the ABAP developer to test the implementation of an Analytical Query since the preview uses the InA protocol.
 
@@ -1255,10 +1243,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
      ![Data Preview](3345.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Access Controls)]
+### Access Controls
+
   You need to create an access control DCL0 for booking supplement query to block all unprivileged access (SQL queries return 0 rows).
   Use "Standard" DCL (aka DCL0) to make the protected CDS view return 0 results.
 
@@ -1299,12 +1286,11 @@ Again you can use a template that you have imported at the beginning of this tut
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 17: ](Create service definition)]
+### Create service definition
+
   You use a service definition to define which data is to be exposed as a business service, using one or more business service bindings.
 
   1. Right-click your created query and choose **New Service Definition**.
@@ -1326,10 +1312,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
     ![service definition](3215.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Create InA UI service binding)]
+### Create InA UI service binding
+
   The service binding is used to bind a service definition to a communication protocol and in our case, the protocol that enables web-based data access from ABAP systems is the Information Access (InA) protocol.
 
   1. Right click your newly created service definition and choose New Service Binding.
@@ -1353,10 +1338,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
     >The analytical query will be displayed with the external service name in SAP Analytics Cloud as the data source.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Create IAM App)]
+### Create IAM App
+
   1. Right-click your package, choose **New** > **Other ABAP Repository Object**.
 
       ![New](3230.png)
@@ -1395,10 +1379,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Create business catalog)]
+### Create business catalog
+
   1. Right-click your package, choose **New** > **Other ABAP Repository Object** and search for **Business Catalog**.
 
       ![business catalog](3280.png)
@@ -1425,11 +1408,10 @@ Again you can use a template that you have imported at the beginning of this tut
 
       ![publish](3300.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 21: ](Add business catalog to developer business role)]
+### Add business catalog to developer business role
+
   1. Login to the Fiori launchpad and open **Maintain Business Roles** App under **Identity and Access Management**.
 
       ![maintain business roles](step11-1.png)
@@ -1450,10 +1432,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
       ![save](3310.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 22: ](Create communication system and arrangement)]
+### Create communication system and arrangement
+
   1. Back to the main page of Fiori launchpad and open **Communication Systems** App under **Communication Management**.
 
       ![Communication Systems](step12-1.png)
@@ -1486,10 +1467,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
       ![Outbound](step12-8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 23: ](Connect the ABAP system to SAP Analytics Cloud)]
+### Connect the ABAP system to SAP Analytics Cloud
+
   1. Login to the SAP Analytics Cloud tenant.
 
       ![Login](step13-1.png)
@@ -1508,10 +1488,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
       ![result](3330.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 24: ](Create model)]
+### Create model
+
   Models transform your raw data into useful information that can then be used to create dynamic visualizations. Since you will use the unique feature Live Data Connection SAP Analytics cloud will create the model based on the analytical query that you have created and published in the previous exercise. Based on such a model you can perform online analysis without the need of data replication.
 
   1. Expand navigation bar, choose **Modeler** and Click **Live Data Model** .
@@ -1549,10 +1528,9 @@ Again you can use a template that you have imported at the beginning of this tut
 
       ![modeler](3385.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 25: ](Create Story)]
+### Create Story
+
 
 A story is a presentation-style document that uses various elements such as charts, images or tables to visualize your data.
 Adding a chart starts with picking a chart type. Then you select your model and add measures and dimension and start on working how the data is displayed. Here you will create a story including a chart, a table and a Donut chart.
@@ -1647,10 +1625,9 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 > You have used the preconfigured connection of the SAP Analytics Cloud instance to connect to the SAP BTP ABAP environment system where you have developed an Analytical Query. The data was retrieved using a Live Data Connection so that any change in the data was immediately reflected in the visualization of your query in SAP Analytics Cloud.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 25: ](More analytics charts and tables)]
+### More analytics charts and tables
+
   You can create more different and complicated analytics charts and tables with your query. Here there is some more examples.
 
   1. Click the chart icon in the task menu, click **Trend** and choose **Line**.
@@ -1675,11 +1652,9 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
       ![bubble](3510.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 26: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

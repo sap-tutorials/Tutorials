@@ -1,6 +1,5 @@
 ---
-title: Add a Deployed Fiori App to Your Launchpad Page
-description: Add the app that you deployed to your SAP Cloud Platform subaccount to your launchpad page.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
@@ -9,16 +8,19 @@ author_profile: https://github.com/LindsayBert
 time: 10
 ---
 
+# Add a Deployed Fiori App to Your Launchpad Page
+<!-- description --> Add the app that you deployed to your SAP Cloud Platform subaccount to your launchpad page.
+
 ## Prerequisites  
   - You've opened SAP Cloud Platform Portal and from the Site Directory, you've clicked on the tile of the `Supplier Portal` site that you created. For more information, see [Create a Portal freestyle site](cp-portal-freestyle-site-create-site).
   - You have deployed the `Product List` SAPUI5 app to your SAP Cloud Platform subaccount.
 
-## Details
-### You will learn  
+## You will learn  
  - How to configure the SAP Fiori (SAPUI5) app that you deployed to your SAP Cloud Platform subaccount and add it to your launchpad page.
 
 
-[ACCORDION-BEGIN [Step 1: ](Add your app to the Portal site)]
+### Add your app to the Portal site
+
 
 1. From the side navigation panel in your `Supplier Portal` site, click **Content Management** and select **Apps** to open the **Manage App Configuration** editor.
 
@@ -47,10 +49,9 @@ time: 10
 
 >You've configured the basic properties of the `Product List` app. You will see that the **Catalogs** tab is red – this is because you still need to assign this app to a catalog.   
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign your app to a catalog)]
+### Assign your app to a catalog
+
 
 1.	Click the **Catalogs** tab.
 
@@ -72,10 +73,9 @@ time: 10
 
 >You have assigned the `Product List` app to the `Everyone` catalog allowing all users who are authenticated to access this app.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define a tile for the app)]
+### Define a tile for the app
+
 
 You now want to create an app tile for your app so that users can click the app and open it.
 
@@ -101,10 +101,9 @@ You now want to create an app tile for your app so that users can click the app 
 
 8. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add the app to a group)]
+### Add the app to a group
+
 
 Now that you've created a tile for your `Product List` app you can add it to the group you created in the previous tutorial.
 
@@ -126,10 +125,9 @@ Now that you've created a tile for your `Product List` app you can add it to the
 
 >Your app has been added to the `Company Products` group which is part of your launchpad page.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Preview your app on the launchpad page)]
+### Preview your app on the launchpad page
+
 
 To see the Product List app in the Company Products group on your launchpad page, do the following.
 
@@ -147,8 +145,7 @@ This is what you'll see:
 
 >You have added a SAP Fiori (SAPUI5) app to a new group on your `Supplier Self Service` launchpad page. In the next tutorial you are going to add a SAP WEB DYNPRO ABAP app to another group on this launchpad page.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

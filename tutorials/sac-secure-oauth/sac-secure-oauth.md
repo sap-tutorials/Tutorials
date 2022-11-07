@@ -1,6 +1,5 @@
 ---
-title: Access Protected SAP Analytics Cloud Resources with OAuth Two-Legged Flow
-description: Develop a sample client application that embeds an SAP Analytics Cloud story and configure the OAuth two-legged flow to provide access to the API.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-analytics-cloud
 tags: [  tutorial>intermediate, topic>cloud, programming-tool>sapui5, topic>security, software-product>sap-analytics-cloud, software-product>sap-cloud-platform-connectivity  ]
@@ -9,17 +8,20 @@ author_name: Virat Tiwari
 author_profile: https://github.com/virattiwari7
 ---
 
+# Access Protected SAP Analytics Cloud Resources with OAuth Two-Legged Flow
+<!-- description --> Develop a sample client application that embeds an SAP Analytics Cloud story and configure the OAuth two-legged flow to provide access to the API.
+
 ## Prerequisites  
  - An administrator account on an SAP Analytics Cloud tenant
  - An administrator account in the SAP Cloud Identity Authentication service tenant
  - An administrator account on SAP Business Technology Platform
 
-## Details
 
-### You will learn  
+## You will learn  
 - How to configure secure access to SAP Analytics Cloud resources with a two-legged OAuth flow
 - The roles involved in the two- and three-legged OAuth flows
 
+## Intro
 SAP Analytics Cloud (SAC) leverages the OAuth 2.0 framework to provide secure access to its resources exposed via REST APIs, for example, story APIs. SAC provides support for both two-legged and three-legged OAuth flows.
 
 Both flows involve the following roles:
@@ -35,15 +37,13 @@ Both flows involve the following roles:
   - **Resource / Authorization Server: API**   
 
     The resource server hosts the protected user accounts.  The authorization server verifies the identity of the user and, then, issues access tokens to the application.
-
-#### Three-Legged versus Two-Legged OAuth 2.0 Flows####
+### Three-Legged versus Two-Legged OAuth 2.0 Flows####
 In the three-legged flow, all three roles are _actively_ involved. For example, the user must explicitly authorize the client application to access the resources that the user owns.
 
 In the two-legged flow, on the other hand, the user is not actively involved. Instead, the SAML bearer assertion token obtained during the login to the client application is exchanged with the SAP Analytic Cloud OAuth token behind the scenes.
 
 An important factor to consider when you choose between the three-legged and two-legged flows is the customer landscape. Typically, you find a central IDP in an enterprise landscape. The purpose of a central IDP within an enterprise is to manage Identity federation and provide an SSO experience to end users across different applications. With this landscape, you should implement the two-legged flow to ensure a seamless OEM experience.
-
-#### Overview of the Two-Legged Flow####
+### Overview of the Two-Legged Flow####
 The two-legged flow requires heavy configuration so before you start, review the following diagram and description for an overview of what you want to accomplish:
 ![OAuth Two-Legged Flow](OAuthTwoLeggedFlow.PNG)
 
@@ -61,7 +61,8 @@ The two-legged flow requires heavy configuration so before you start, review the
 </li><li>The web application requests the protected resource from SAP Analytics Cloud by presenting the access token. SAC validates the access token, and, if valid, serves the request. The access token is sent in the authorization request header field using bearer authentication scheme.</li></ol></li></ol>
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create a web application)]
+### Create a web application
+
 
 Start by creating a sample web application and deploying it in SAP Business Technology Platform.
 
@@ -83,12 +84,10 @@ Start by creating a sample web application and deploying it in SAP Business Tech
 
      ![War File Location](1-3BDeployAppupd.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Fetch the SAML bearer assertion token)]
+### Fetch the SAML bearer assertion token
+
 
 With the sample web application deployed, you can now configure authentication via an Identity Provider.
 
@@ -164,11 +163,9 @@ If the browser redirects you to the IDP to offer the login page to the user, the
 
 This concludes the first part (Fetch SAML Bearer Assertion Token) of setting up the OAuth two-legged flow.
 
-[DONE]
 
-[ACCORDION-END]
+### Exchange the assertion token with the OAuth token
 
-[ACCORDION-BEGIN [Step 3: ](Exchange the assertion token with the OAuth token)]
 
 The sample web application that you created needs to get the OAuth token to access the protected resources on SAP Analytics Cloud so the administrator should create an OAuth client on the SAP Analytics Cloud tenant.
 
@@ -279,9 +276,7 @@ Before you test the entire flow, remember to set the browser to accept cookies f
 
 ![Successful Results](MasterDetail.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 

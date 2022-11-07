@@ -1,11 +1,13 @@
 ---
-title: Convert Oracle-to-SAP HANA with Advanced SQL Migration Tool
-description: Convert an Oracle schema used by a custom application to SAP HANA using SAP Advanced SQL Migration tool
+parser: v2
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, programming-tool>sql, products>sap-Hana]
 primary_tag: programming-tool>sql
 ---
+
+# Convert Oracle-to-SAP HANA with Advanced SQL Migration Tool
+<!-- description --> Convert an Oracle schema used by a custom application to SAP HANA using SAP Advanced SQL Migration tool
 
 ## Prerequisites
  - Oracle DB instance (version >= 11), where a new user and SQL objects will be created with a script provided in the tutorial
@@ -14,19 +16,20 @@ primary_tag: programming-tool>sql
  - SAP Advanced SQL Migration tool installed and configured properly as indicated in the installation guide:  <https://dam.sap.com/mac/app/p/pdf/asset/preview/cLmo5vJ?ltr=a>
  - Java >= 1.8 installed in the host where the migration tool is executed
 
-## Details
-### You will learn
+## You will learn
 - Convert Oracle schema to SAP HANA
 
+## Intro
 The SAP Advanced SQL Migration tool is SAP's migration tool to migrate custom applications running on top of non-SAP databases into SAP databases.
 
-  !![Select Data Source](ad-sql-mig.png)
+  <!-- border -->![Select Data Source](ad-sql-mig.png)
 
 The tool can extract SQL data models (e.g., tables, views, indexes) and SQL objects containing SQL code (e.g., stored procedures, functions) via either accessing source database catalogs or using text files containing the object definitions (DDLS) and convert them to the chosen target SAP database.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Oracle user and application data model)]
+### Create Oracle user and application data model
+
 
 1. Download the script provided in the link below (`APPDEMO2.sql`) and copy it to a local folder (e.g. `c:\sql_scripts\APPDEMO2.sql`) in a host where you have the Oracle client installed and access to the Oracle instance:
 
@@ -38,10 +41,10 @@ The tool can extract SQL data models (e.g., tables, views, indexes) and SQL obje
 
     ![Select Data Source](sqlplus-output.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create project folder and project configuration)]
+
+### Create project folder and project configuration
+
 
 1. Create what will be the project folder, for example, `C:/tmp/Advanced_SQL_Mig_tutorial`.
 
@@ -121,11 +124,10 @@ The project folder is configured now, and a subfolder called `config` is created
 > Every migration tool command creates a log file located under subfolder called `reports` (the folder is created automatically if it doesn't exit).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Extract data model and SQL objects)]
+### Extract data model and SQL objects
+
 
 Data model and SQL objects extraction can be done either by connecting to the source database via the migration tool gateway or using text files with object definitions (DDLS). Section 1 is mandatory and you will go through the extraction via the migration tool gateway. Then section 2 is optional, do it if you want to see the extraction using a text file as well.
 
@@ -223,10 +225,10 @@ You are going to configure and start the gateway now.
     > Subfolder `extracted` is created under the project folder in the same way it was created for the `extract` command in section 1.
 
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Convert to SAP HANA)]
+
+### Convert to SAP HANA
+
 
 Once the source data model and SQL object are extracted, the next step is to run the conversion to the target database -- SAP HANA in this case. For that, you have to use the migration tool `convert` command with the following parameters:
 
@@ -254,10 +256,10 @@ When `convert` is executed, 2 new subfolders are created in the project folder: 
 
 ![Select Data Source](scripts-folder.png)
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run converted scripts)]
+
+### Run converted scripts
+
 
 After running the `convert` command two shell scripts called `run_ddl_scripts.sh` and `run_sql_scripts.sh.` have been created under `<project_folder>\scripts`, they are ready to be executed against SAP HANA. The former will create the data model (tables/views/indexes/synonyms …etc.) and the latter will create SQL objects like stored procedures, functions, views,...etc.
 
@@ -291,10 +293,10 @@ Below you see how they look like, this screen shot belongs to `run_ddl_scripts.s
 
 
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Oracle and SAP HANA behavior)]
+
+### Check Oracle and SAP HANA behavior
+
 
 Run some SQL stuff in Oracle to force a couple of errors and see how Oracle behaves, then run exactly the same in SAP HANA to confirm it is working similarly and showing the same behavior after the conversion.
 
@@ -441,5 +443,3 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     ![Select Data Source](hana-sql-3.png)
 
-[DONE]
-[ACCORDION-END]
