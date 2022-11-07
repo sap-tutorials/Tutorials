@@ -34,7 +34,7 @@ You will be using the Orders table as a reference.
 
 ---
 
-### STEP 1: Create a SQL on Files remote table in Files service
+### Create a SQL on Files remote table in Files service
 
 Note that the table definition will need to match the expected schema/data types of the columns in the structured file you are trying to query. Log in to the SQL console as User1 or HDLADMIN and execute all the queries associated with this tutorial. This tutorial will be demonstrated by executing the queries through HDLADMIN.
 
@@ -96,7 +96,7 @@ O_COMMENT			varchar(79) ,
 
 
 
-### STEP 2: Optimize SQL on Files Performance Using Folder Hierarchies
+### Optimize SQL on Files Performance Using Folder Hierarchies
 
 Another way to declare a data source with SQL on Files is using folder hierarchies. Folder hierarchies allow you to skip (or prune) files that do not need to be parsed in a query. Take a look at the following example.
 
@@ -140,7 +140,7 @@ Make sure you have added your File Container connection in DBX. If not, one can 
 
 
 
-### STEP 3: Add a Data source 	
+### Add a Data source 	
 
 Below you can see how this data source can be defined in SQL.
 
@@ -171,7 +171,7 @@ One could also refer the ALTER TABLE ADD DATASOURCE doc for any further referenc
 
 
 
-### STEP 4: Query the uploaded data
+### Query the uploaded data
 
 Now that you have created all the foundational database objects for querying our file, you can simply query the files as if it were a table.
 
@@ -192,7 +192,7 @@ SELECT * FROM HDLADMIN.ORDERS_SQLONFILES WHERE ORDERYEAR='2023' AND ORDERMONTH='
 <!-- border --> ![DBX output](image-6.png)
 
 
-### STEP 5: Clean up or Remove SQL on Files Table
+###  Clean up or Remove SQL on Files Table
 
 If you want to drop a data source for a SQL on Files table you can do so as well.
 
@@ -216,7 +216,7 @@ DROP SCHEMA HDLADMIN_TPCH_SQLONFILES IN FILES_SERVICE;
 
 
 
-### STEP 6: Command line script to cleanup the file container
+### Command line script to cleanup the file container
 
 Connect to OpenSSL. Make sure you are all set up with the HDLFSCI tutorial with generating the certificates. If not, please go through the tutorial - [Getting Started with Data Lake Files HDLFSCLI](developers.sap.com/tutorials/data-lake-file-containers-hdlfscli)
 
