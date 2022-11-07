@@ -4,6 +4,8 @@ auto_validation: true
 time: 40
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+author_name: Ronit Nagwekar
+author_profile: https://github.com/rnagweka
 ---
 
 # Use SOF to Query data from Single Directory
