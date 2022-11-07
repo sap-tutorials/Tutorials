@@ -12,7 +12,7 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](spa-subscribe-booster)
- - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
+ - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
 
 ## You will learn
   - How to capture an application with different screens

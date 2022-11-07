@@ -13,9 +13,7 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete the tutorial of creating an [Invoice Approval Process](spa-dox-create-process)
- - A Windows PC
- - If you are using a MAC, please install a VDI
- - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
+ - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
  - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
 ## You will learn
@@ -274,7 +272,8 @@ primary_tag: software-product>sap-process-automation
 3. Your automation is built successfully.
 
 
-### Mapping of Parameters to the Automation and Process 
+### Mapping of Parameters to the Automation and Process
+
 
 
 1. Navigate to the **Get Invoice Details** process. and select the automation **Extract Invoice Data**. Map the input parameter of the automation to the form parameter `FilePath`.

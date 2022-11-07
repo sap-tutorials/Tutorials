@@ -12,17 +12,19 @@ primary_tag: software-product>sap-process-automation
 <!-- description --> Create the project and the first form for the Invoice Approval Process
 
 ## Prerequisites
- - You will need either a trial account with the SAP Process Automation enabled (as described by this [blog](https://blogs.sap.com/2022/09/09/sap-process-automation-now-available-in-your-trail-account/)), or a regular account with the free-tier service plan for SAP Process Automation (as described in [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](https://developers.sap.com/tutorials/spa-subscribe-booster.html)).
+ - An [SAP BTP Free Trial account](https://blogs.sap.com/2022/09/09/sap-process-automation-now-available-in-your-trail-account/) with the enabled the SAP Process Automation **OR**,
+ - An [SAP BTP Free Tier Account](spa-subscribe-booster) with SAP Process Automation booster.
 
 
-## Intro
-You work in the finance department of the company and need to regularly process incoming scanned invoices.
-This is actually causing a lot of manual effort in order to extract the data out of the pdf or image, send to the approval of the manager before the data would be actually entered into the system.
-This needs to be automated since we are talking about multiple invoices which are coming every single day. Also we need to define the approval flow depending on the specific criteria (in this tutorial series, company is considered as criteria).
 ## You will learn
   - How to create a project and the related process
   - How to add a form to trigger this process
 
+## Intro
+  You work in the finance department of the company and need to regularly process incoming scanned invoices.
+  This is actually causing a lot of manual effort in order to extract the data out of the pdf or image, send to the approval of the manager before the data would be actually entered into the system.
+  This needs to be automated since we are talking about multiple invoices which are coming every single day. Also we need to define the approval flow depending on the specific criteria (in this tutorial series, company is considered as criteria).
+  
 ---
 
 ### Create a Business Process Project
@@ -34,7 +36,10 @@ This needs to be automated since we are talking about multiple invoices which ar
 
     <!-- border -->![Create Business Process Project](01.png)
 
-2. In the wizard enter the **Project Name** **`Invoice Approval`** and also a **Short Description**, then choose **Create**.
+2. In the wizard enter:
+    - under the **Project Name**: Invoice Approval,
+    - under the **Short Description**: The process to extract information from an invoice and get the needed approvals,
+    - choose **Create**.
 
     <!-- border -->![Define Business Process Project](02.png)
 
@@ -47,9 +52,12 @@ This needs to be automated since we are talking about multiple invoices which ar
 
 1. Within the newly created project **Invoice Approval**, select **Create** and then choose **Process**.
 
-    <!-- border -->![Create Process](03.png)
+    <!-- border -->![Create Process](003.png)
 
-2. Maintain the **Name** **`Get Invoice Details`** and also the **Description**. The identifier will be created automatically.
+2.  In the **Create Process** window enter:
+    - under the **Name**: Get Invoice Details,
+    - under the **Description**: Process to approve invoices.
+> The identifier will be created automatically.
 
     <!-- border -->![Maintain Process Name](03a.png)
 
@@ -62,50 +70,53 @@ This needs to be automated since we are talking about multiple invoices which ar
 
    To trigger the process, you will create a form to provide the most relevant inputs.
 
-1. In the canvas, select **+**, then **Forms** and finally **+ New Form**.
+1. In the canvas, select **+** in the Trigger, then **Forms** and **New Form**.
 
-    <!-- border -->![New Form](04.png)
+    <!-- border -->![New Form](004.png)
 
-2. Provide the following information and choose **Create**:
+2. In the **Create Form** window enter:
+    - in the **Name**: Invoice Request Form,
+    - in the **Description**: Form to start the process,
+    - choose **Create**.
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Name          | **`Invoice Request Form`**
-    |  Description    | **`Form to start the process`**
-
-    > Note: Identifier will be filled automatically.
+    > The Identifier will be filled automatically.
 
     <!-- border -->![Create Form Wizard](05.png)
 
-    In the form you have multiple layout and input elements.
+3. Open the form editor.
 
-3. Create a headline, drag and drop **Headline 1** into the canvas.
+    <!-- border -->![Open editor](005c.png)
 
-    <!-- border -->![Create Headline](06.png)
+4. In the form you have multiple Layout and Input elements.
 
-4. Give the headline a name: **`Invoice Request Form`** and add a **Paragraph**.
+    <!-- border -->![Elements](005b.png)
 
-    <!-- border -->![Headline Name](07.png)
+5. To add Layout or Inputs, drag and drop them or click on the element to enter them in the form.
 
-5. Maintain the paragraph: **`Please provide the following details to start the process`** and add a **Text** field.
+6. Add Layout elements:
 
-    <!-- border -->![Paragraph](08.png)
+    |  **Layout Type**  | **Name**
+    |  :------------- | :-------------
+    |    Headline 1   | Invoice Request Form |
+    |    Paragraph      |  Please provide the following details to start the process |
 
-6. Change the name of the **Text** field to **`Employee Name`** and select **Required** to indicate it is a mandatory field.
+    <!-- border -->![Add Layout](006.png)
 
-    <!-- border -->![Employee Name](09.png)
+7. Add Input elements:
 
-7. Add two additional fields with the following details. Once done, **Save** your work.
-
-    |  Input Field Type  | Name | Settings
+    |  **Input Field Type**  | **Name** | **Settings**
     |  :------------- | :------------- | :------------
-    |    Text       |**`File Path`**| **Required**
-    |      Date      |  **`Current Date`** | **Required**
+    |    Text       | Employee Name | Required
+    |    Text       | File Path | Required
+    |      Date     | Current Date | Required
 
-    <!-- border -->![Final Start Form](10.png)
+    > Required checkbox indicates, that it is a mandatory field.
 
+    <!-- border -->![Add Input](007.png)
 
+8. **Save** the Form.
 
+    <!-- border -->![Save](008.png)
 
 
 

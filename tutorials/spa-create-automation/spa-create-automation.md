@@ -14,7 +14,7 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
   - A windows machine
   - If you are using a MAC, please install a VDI
-  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
+  - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
   - Complete the mission: [Build Your First Business Process with SAP Process Automation](mission.sap-process-automation)
 
 ## You will learn
@@ -27,10 +27,7 @@ An Automation is a succession of steps to orchestrate multiple activities and ap
 
 ### Create the Automation
 
-
-
 In this exercise, you will automate the process to read the *sales order* details from an Excel and select the specific sales order details based on the input from the submitted form. To design your automation, you will need an Excel file filled with the sales orders data. You have the possibility to create it yourself using the following data:
-
 
 | Order Number| Order Amount | Order Date | Shipping Country         | Expected Delivery Date | Order Status
 |  :----------| :------------|:-----------| :------------------------|:-----------------------|:-----------

@@ -14,15 +14,15 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
 -  Complete creating the E2E process by creating  the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation), the [decision](spa-dox-create-decision) and [forms](spa-dox-forms)
 - [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
-- [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
 
 
-## Intro
-Till now, you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this you need to decide, who would be the approver (so you need to enter your email). Then you need to build the approval form to review the submitted data and approve it for further processing.
 ## You will learn
   - How to release, deploy and run the Process
   - How to work on the Tasks
   - How to monitor the Process
+
+## Intro
+  Till now, you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this you need to decide, who would be the approver (so you need to enter your email). Then you need to build the approval form to review the submitted data and approve it for further processing.
 
 ---
 
@@ -55,7 +55,6 @@ Till now, you have developed a Business Process where you will start with a form
 
 
 ### Deploy the Released Process
-
 
     You can deploy Business Process projects from each released version of the project in the Process Builder or through the Lobby. Deploying the project makes it available for others to use it. Bare in mind that you can only deploy a released version of the project.
 
@@ -119,8 +118,9 @@ Till now, you have developed a Business Process where you will start with a form
     <!-- border -->![Run form successfully submitted](Run_inputs_2.png)
 
 
+
 ### Work on the Tasks
-    
+
 
 1. Start in the **Lobby** and open the **My Inbox** application by selecting the button ![Inbox Icon](02_Inbox_Icon.png) at the top right corner.
 

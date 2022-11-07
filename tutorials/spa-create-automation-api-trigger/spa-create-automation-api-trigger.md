@@ -12,7 +12,7 @@ primary_tag: software-product>sap-process-automation
 <!-- description --> Integrate SAP Process Automation with SAP Conversational AI using API Triggers and Notifiers
 
 ## Prerequisites
- - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
+ - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
  - [Agent Management Settings to Execute the Process with an Automation](spa-run-agent-settings)
  - [SAP Process Automation Application Capture](spa-create-automation-application-capture) Completed
 
