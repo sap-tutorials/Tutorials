@@ -1,18 +1,19 @@
 ---
-title: Create a Hello World Multitarget Application
-description: This tutorial will help you create a module that describes a Java application, a resource that describes your database binding and additional metadata required for the deployment.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>java]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
+# Create a Hello World Multitarget Application
+<!-- description --> This tutorial will help you create a module that describes a Java application, a resource that describes your database binding and additional metadata required for the deployment.
+
 ## Prerequisites
  - You have created a Java application `.war file.`
  - You have an SAP BTP database configured in your subaccount and valid credentials.
 
-## Details
-### You will learn
+## You will learn
   - How to create a module that describes a Java application
   - How to create a resource that describes your database binding
   - How to create additional metadata required for the deployment
@@ -20,15 +21,14 @@ primary_tag: software-product>sap-business-technology-platform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Modeling the MTA deployment descriptor)]
+### Modeling the MTA deployment descriptor
+
 
 You define the entities that have to be deployed, namely modules and resources related to other modules, in the MTA deployment descriptor. This is a YAML file that defines the contract between you as a deployable artifact provider and the SAP BTP as a deployer tool. Initially, you have to describe the metadata required for the deployment.
 
 1. Create an empty text file and name it `mtad.yaml.`
 2. Using a text editor, enter the following data in the file:
-    >
-    > #### Note
->
+
 >Strictly adhere to the correct indentations when working with YAML files, and do not use the tabulator character.
 
     ``` YAML
@@ -86,14 +86,12 @@ You define the entities that have to be deployed, namely modules and resources r
 
     The information about your database ID and credentials are, however, subaccount-specific. To keep the `mtad.yaml` target platform independent, you have to create an MTA extension descriptor. This file is used in addition to your primary descriptor file, and contains data that is account-specific.
 
-    > #### Note
-    >
-    >Security-sensitive data, for example database credentials, should be always deployed using an MTA extension descriptor, so that this data is encrypted.
+>Security-sensitive data, for example database credentials, should be always deployed using an MTA extension descriptor, so that this data is encrypted.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the MTA extension descriptor)]
+
+### Create the MTA extension descriptor
+
 
 1. Create an empty text file and name it `dev.mtaext.`
 
@@ -128,11 +126,11 @@ The example above instructs the SAP BTP to:
 
     The MTA archive contains all entities that have to be deployed. It also contains a manifest file, which links the modules and resources described into the MTA deployment descriptor file using their location in the archive. Using this data, the SAP BTP deploys the Multitarget Application archive as a solution.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Packaging your Multitarget Application)]
+
+### Packaging your Multitarget Application
+
 
 1. Create an empty text file and name it `MANIFEST.MF`. Explicitly use upper-case letters.
 
@@ -153,20 +151,17 @@ The example above instructs the SAP BTP to:
     >
     >Make sure that the `MANIFEST.MF` is compliant to the JAR file specification.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create your Multitarget Application archive)]
+### Create your Multitarget Application archive
+
 
 MTA archives are compliant to the JAR file specification. This allows you to use commonly available tools for creating, modifying, and signing such archives. For the sake of the tutorial, we assume that you have a root directory named ***/*** where you place all the parts of the Multitarget Application before creating the archive.
 
 1. Create a folder called `META-INF` in the root directory.
 2. Place the `mtad.yaml` and the `MANIFEST.MF` files inside the `META-INF` directory.
 3. Place the `example.war` archive inside the root directory.
-    >
-    > #### Note
-    >
-    >The MTA extension descriptor file is deployed separately from the MTA archive.
+
+>The MTA extension descriptor file is deployed separately from the MTA archive.
 
     The root directory should now be structured as follows:
 
@@ -181,8 +176,6 @@ MTA archives are compliant to the JAR file specification. This allows you to use
 
 After you have created your Multitarget Application archive, you are ready to deploy it into the SAP BTP as a solution. To deploy the archive, proceed as described in [Deploy a Standard Solution](https://help.sap.com/docs/BTP/ea72206b834e4ace9cd834feed6c0e09/fea07defe09f44c09e03269705550335.html).
 
-[DONE]
-[ACCORDION-END]
 
 
 
