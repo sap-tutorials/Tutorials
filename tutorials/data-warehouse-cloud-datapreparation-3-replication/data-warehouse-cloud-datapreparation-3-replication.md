@@ -1,6 +1,5 @@
 ---
-title: Replicate Data into SAP Data Warehouse Cloud
-description: Replicate data in real time with the Data Integration Monitor of SAP Data Warehouse Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -9,13 +8,16 @@ primary_tag: products>sap-data-warehouse-cloud
 
 
 
-## Details
-### You will learn
+# Replicate Data into SAP Data Warehouse Cloud
+<!-- description --> Replicate data in real time with the Data Integration Monitor of SAP Data Warehouse Cloud.
+
+## You will learn
 - How to check the type of data access
 - How to create a real time data replication
 - How to schedule the data replication
 
 
+## Intro
 The **Remote Table Monitor** in the Data integration Monitor helps you to manage your access to data in SAP Data Warehouse Cloud. Get started with the user-friendly interface of the Data Integration Monitor and organize your data replication efficiently.
 
 In the video below, you can see a demo of data replication in SAP Data Warehouse Cloud. The steps in this tutorial will guide you through a similar process in detail.
@@ -23,7 +25,8 @@ In the video below, you can see a demo of data replication in SAP Data Warehouse
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KbyMqiqH-1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Data Integration Monitor)]
+### Access the Data Integration Monitor
+
 
 1.	In SAP Data Warehouse Cloud, click on the **Data Integration** icon on the left-side menu.
 
@@ -37,10 +40,9 @@ In the video below, you can see a demo of data replication in SAP Data Warehouse
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Replicate real-time data or take a snapshot)]
+### Replicate real-time data or take a snapshot
+
 
 In the example video above, you can see an example of `SalesOrders` table and `SalesOrderItems` table already existing on the system and the demo starts with a completely federated environment where all the data access is remote. The next steps will guide you to do live replication of data instead of a remote access.
 
@@ -61,11 +63,10 @@ In the example video above, you can see an example of `SalesOrders` table and `S
 8.	From the same dropdown menu in step 7 you can select load a snapshot replica to have a one-time data replication from remote tables.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Schedule data replication)]
+### Schedule data replication
+
 
 1.	Go to the **Data Integration Monitor** and from the tables listed, select the row of a table for which you wish to schedule data replication.
 
@@ -87,15 +88,13 @@ In the example video above, you can see an example of `SalesOrders` table and `S
 > Learn in the next tutorial learn about **View Persistency** in SAP Data Warehouse Cloud.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+
 
 
 

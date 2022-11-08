@@ -1,53 +1,55 @@
 ---
-title: Connect SAP Data Intelligence Cloud to SAP HANA Cloud
-description: Use the data you have in your SAP HANA database in SAP HANA Cloud, by connecting it with SAP Data Intelligence Cloud.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-data-intelligence]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Connect SAP Data Intelligence Cloud to SAP HANA Cloud
+<!-- description --> Use the data you have in your SAP HANA database in SAP HANA Cloud, by connecting it with SAP Data Intelligence Cloud.
+
 ## Prerequisites
 - Make sure you have a **running** SAP HANA database instance in SAP HANA Cloud.
 - You have access to SAP Data Intelligence Cloud.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a new connection in SAP Data Intelligence Cloud
 - How to explore various options for the connection
 - How to publish data from the database for use in SAP Data Intelligence Cloud
 
 
+## Intro
 If you are currently using SAP Data Intelligence Cloud and want to use the SAP HANA Cloud, SAP HANA database as a source, you can follow the steps in this tutorial to do so.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new connection in SAP Data Intelligence Cloud)]
+### Create a new connection in SAP Data Intelligence Cloud
+
 
 
 1.	Log in to SAP Data Intelligence Cloud.
 
 2.	On the Data Intelligence launchpad, select **Connection Management**.
 
-    !![Connection Management](ss-01-connection-management.png)
+    <!-- border -->![Connection Management](ss-01-connection-management.png)
 
 3.	Click on the plus icon to create a new connection.
 
-    !![Create Connection](ss-02-create-connection.png)
+    <!-- border -->![Create Connection](ss-02-create-connection.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select the connection type)]
+### Select the connection type
+
 
 
 Select the connection type as `HANA_DB`. This type of connection allows you to access tables and views on SAP HANA Cloud database.
 
-!![New Connection](ss-03-new-connection.png)
+<!-- border -->![New Connection](ss-03-new-connection.png)
 
 
 
@@ -55,10 +57,9 @@ In the section **Basic details** you need to create an ID, which acts as a uniqu
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Input database instance details)]
+### Input database instance details
+
 
 
 
@@ -68,10 +69,9 @@ In the section **Basic details** you need to create an ID, which acts as a uniqu
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Explore optional settings for the connection)]
+### Explore optional settings for the connection
+
 
 
 1.	If you want to hide certain schemas from other applications such as the browse and publication tasks in Metadata Explorer, then you can enter the names of these schemas under Blacklisted schemas.
@@ -82,10 +82,9 @@ In the section **Basic details** you need to create an ID, which acts as a uniqu
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test and complete connection)]
+### Test and complete connection
+
 
 
 1.	Now let's test if the connection is working correctly. On the right-hand corner, on the very bottom of the screen, click on **Test connection**.
@@ -95,10 +94,9 @@ In the section **Basic details** you need to create an ID, which acts as a uniqu
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Publish data for use with SAP Data Intelligence Cloud)]
+### Publish data for use with SAP Data Intelligence Cloud
+
 
 
 Now, if you want to start exploring the data you have access to with this new connection, one option is to use the Metadata Explorer within SAP Data Intelligence Cloud.
@@ -122,14 +120,12 @@ You have completed the third tutorial of this tutorial group. In the next tutori
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Upload Data to Document Classification
-description: Find out how to create datasets and upload data to your Document Classification service instance.
+parser: v2
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification, tutorial>license]
@@ -9,17 +8,21 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Upload Data to Document Classification
+<!-- description --> Find out how to create datasets and upload data to your Document Classification service instance.
+
+## You will learn
   - How to install the client library for Document Classification
   - How to generate an authentication token
   - How to create a dataset and upload data to your Document Classification service instance
 
+## Intro
 To try out Document Classification, the first step is to upload data that will be used to train a machine learning model. For more information, see [Document Classification](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start JupyterLab)]
+### Start JupyterLab
+
 
 To get started, make sure to have your local `JupyterLab` instance running.
 
@@ -43,11 +46,10 @@ To do so, click the first cell indicated by its grey background. Once you clicke
 
 >To run a cell, you can also use the shortcut Shift + Enter.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Prepare environment configuration)]
+### Prepare environment configuration
+
 
 First, you will use the service keys that you created in [Create Service Instance for Document Classification with Customer Account](cp-aibus-dc-prod-service-instance).
 
@@ -63,11 +65,10 @@ Next, click in the cell indicated in the image below. Here, enter a name for you
 
 Now these variables are set and are used throughout the notebook.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Retrieve an access token)]
+### Retrieve an access token
+
 
 In this step, the client library will be initialized which automatically creates an access token to use for communication with your service instance.
 
@@ -75,11 +76,10 @@ Scroll down in your notebook and click the next cell below the heading `Initiali
 
 ![Instantiate Client Library](instance-client-library.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a dataset)]
+### Create a dataset
+
 
 Now you have to create a dataset. A dataset holds the actual data that is used to train a machine learning model later on.
 
@@ -89,11 +89,10 @@ For that, scroll down in your notebook and click the first cell below the headin
 
 You can now upload data into your newly created dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload data)]
+### Upload data
+
 
 After you have created a dataset, the position automatically jumps into the next cell. This cell contains code that uploads all the documents from the dataset to the service.
 
@@ -119,11 +118,10 @@ The training documents are now uploaded. This may take a few minutes. Once done,
 
 The service splits the uploaded data internally, so that 80% of the documents are later used as training documents. The other share of documents is used for testing. This process is called `stratification`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Inspect dataset statistics)]
+### Inspect dataset statistics
+
 
 Instead of opening every document in your dataset, you can easily access the statistics and distribution of the dataset.
 
@@ -145,11 +143,7 @@ The chart shows the possible languages on the x-axis and the y-axis provides the
 
 By now you have successfully created a dataset, inspected the training data and uploaded it to the service.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step: 7](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]

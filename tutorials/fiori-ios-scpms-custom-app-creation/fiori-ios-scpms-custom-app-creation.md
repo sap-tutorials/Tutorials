@@ -1,19 +1,21 @@
 ---
-title: Create custom iOS app with SAP BTP SDK Assistant for iOS
-description: Create an Xcode project with SAP BTP SDK Assistant for iOS, remove all generated UI parts, and create a custom built UI instead.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
-## Prerequisites  
+# Create custom iOS app with SAP BTP SDK Assistant for iOS
+<!-- description --> Create an Xcode project with SAP BTP SDK Assistant for iOS, remove all generated UI parts, and create a custom built UI instead.
 
+## Prerequisites  
 - **Proficiency:** Intermediate
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 3.0 SP01
 
-## Details
 
+
+## Intro
 While the SAP BTP SDK Assistant for iOS provides a quick way of generating an Xcode project based on an OData service with a secure on-boarding flow, the generated storyboards and master-detail views are generally not what you want to end up with.
 
 In this tutorial, you will create an SAP Fiori for iOS app. You start with an Xcode project generated with the SAP BTP SDK Assistant for iOS, but instead of using the generated master-detail view, you will delete all generated views, view controllers and storyboards. Instead, you will create a custom UI.
@@ -24,21 +26,18 @@ The app will use the Sample ESPM OData service from SAP Mobile Services for deve
 
 > - have a trial account on SAP BTP. See [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) for more information.
 > - enabled SAP Mobile Services for development and operations. See [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup) for more information.
-
-### You will learn
-
+## You will learn
 - How to create an Xcode project with the SAP BTP SDK Assistant for iOS
 - How to alter the Xcode project by safely removing the generated UI components and storyboards in order to implement your own custom UI
 - To create a custom SAP Fiori for iOS user interface
 - To utilize the iOS `EventKit` framework to create iOS Reminders from within your app
-
-### Time to Complete
-
+## Time to Complete
 **30 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure SAP BTP SDK Assistant for iOS)]
+### Configure SAP BTP SDK Assistant for iOS
+
 
 > **Note**: If you have already configured the SAP BTP SDK Assistant for iOS, you can **skip this step** and proceed with "Step 2 - Run the SAP BTP SDK Assistant for iOS".
 
@@ -77,10 +76,9 @@ Click **Add** when finished. The account is now added to the SAP BTP SDK Assista
 
 Close the **Accounts** dialog.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run the SAP BTP SDK Assistant for iOS)]
+### Run the SAP BTP SDK Assistant for iOS
+
 
 > **Note**: If you went through "Step 1 - Configure SAP BTP SDK Assistant for iOS", the SAP BTP SDK Assistant for iOS is already running and you may continue to "Step 3 - Create an Xcode Project".
 
@@ -90,10 +88,9 @@ Double-click the **SAP BTP SDK Assistant for iOS** icon to start the application
 
 ![SAP BTP SDK Assistant for iOS](fiori-ios-scpms-custom-app-creation-06.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create an Xcode Project)]
+### Create an Xcode Project
+
 
 Click the **Plus** button on the top-right of the SAP BTP SDK Assistant for iOS. The first page of the Xcode Project generation wizard lets you define the **Project Properties**.
 
@@ -111,10 +108,9 @@ Enter the following details:
 
 Click **Next** to advance to the **Cloud Configuration** step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Cloud Configuration details)]
+### Cloud Configuration details
+
 
 In the **Cloud Configuration** page, select the **Sample** tab button. This will ensure your app will use the Sample ESPM OData service.
 
@@ -128,10 +124,9 @@ Make sure the **Sample Application Identifier** is set to:
 
 Click **Next** to advance to the **OData Services** step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](OData Services)]
+### OData Services
+
 
 In the **OData Services** page, the Sample OData service is now listed in the available destinations:
 
@@ -139,10 +134,9 @@ In the **OData Services** page, the Sample OData service is now listed in the av
 
 Click **Next** to advance to the **Optional Features** step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Optional Features)]
+### Optional Features
+
 
 In the **Optional Features** page, the options to generate a **Master-Detail Application**, enable **logging** and **log uploads**, and enable **remote notifications** are checked. Since you have chosen to use the Sample OData service, the options are disabled.
 
@@ -150,10 +144,9 @@ In the **Optional Features** page, the options to generate a **Master-Detail App
 
 Click **Finish** to complete the wizard.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Generating the Xcode project)]
+### Generating the Xcode project
+
 
 After you have clicked **Finish** in the previous step, the SAP BTP SDK Assistant for iOS now loads the Sample OData service's metadata. Based on this metadata, the OData proxy classes will be generated for the Xcode project, as well as the storyboards and view controllers for each entity set.
 
@@ -163,11 +156,9 @@ After you have clicked **Finish** in the previous step, the SAP BTP SDK Assistan
 
 > In that case, log on to your **SAP Mobile Services for development and operations** account at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SAP BTP SDK Assistant for iOS to add the new application configuration.
 
-[DONE]
 
-[ACCORDION-END]
+### Examine the generated Xcode Project
 
-[ACCORDION-BEGIN [Step 8: ](Examine the generated Xcode Project)]
 
 After the SAP BTP SDK Assistant for iOS has finished, **Xcode** will launch and open the just generated `ESPMReminders` project.
 
@@ -179,10 +170,9 @@ Folder `ESPMReminders/Onboarding` contains logic for the user on-boarding, authe
 
 Folder `Proxy Classes/public` contains the OData proxy classes generated from the Sample OData service. File `MyPrefixMyServiceClass.swift` acts as a data service provider to gain access to the OData entities. The remaining `MyPrefix<Entity>.swift` classes give access to the various properties of the OData entities.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Build and run the generated application)]
+### Build and run the generated application
+
 
 Click the **Run** button to build and run the generated application:
 
@@ -218,10 +208,9 @@ The app starts with an overview of the available **Collections** of the OData se
 
 ![Build and run](fiori-ios-scpms-custom-app-creation-19.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Examine the generated application)]
+### Examine the generated application
+
 
 If you now click on one the collections, you navigate to a **Master** list with all available entities. Clicking on one of the listed entities navigates you to a **Detail** page which lists all the properties for the selected entity.
 
@@ -229,10 +218,9 @@ While this is nice if you need a data browser for your OData service, it's not e
 
 Instead of start off with a list of all collections, we need a single list which loads all customers with their contact details. With a single tap, you should be able to call or email that customer, as well as add a reminder to contact him or her at a later time. This will be implemented in the final steps of this tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Remove the generated UI elements)]
+### Remove the generated UI elements
+
 
 In your Xcode project, open the `Main.storyboard` and remove every scene in it.
 
@@ -246,10 +234,9 @@ Your project should now resemble the following:
 
 ![Remove UI elements](fiori-ios-scpms-custom-app-creation-20.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add Navigation Controller)]
+### Add Navigation Controller
+
 
 Drag a **Navigation Controller** object from the **Object library** onto the `Main.storyboard` canvas.
 
@@ -279,10 +266,9 @@ Finally, select the **Root View Controller Navigation Item** and set its title t
 
 If you now would try to build and run the app, it will fail because of the removal of the generated UI elements. In the nest step, you will fix these errors.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Modify AppDelegate class)]
+### Modify AppDelegate class
+
 
 Open the file `AppDelegate.swift`.
 
@@ -326,10 +312,9 @@ If you now build and run the app, after logging in you should see the following 
 
 The app correctly displays the newly added **Customers** view. Unsurprisingly, no data is displayed yet since you haven't yet created a controller class for the table view, so the data model isn't yet bound to the UI. Also, you haven't yet specified the particular control which should be used to display the data.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Change Table Cell)]
+### Change Table Cell
+
 
 First, you will change the appearance of the standard table cell. By default, it is of type `UITableViewCell`. For the custom UI, you will change it to the SDK's SAP Fiori control `FUIContactCell`.
 
@@ -350,10 +335,9 @@ Switch to the **Attributes inspector** and set its **Identifier** to:
 
 ![Change Table Cell](fiori-ios-scpms-custom-app-creation-26.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Create Table View Controller)]
+### Create Table View Controller
+
 
 In the **Project navigator**, right-click the `ViewControllers` group and from the context menu, select **New File...**.
 
@@ -377,10 +361,9 @@ Click **Next**.
 
 In the next page, make sure the file is added to the `ViewControllers` group and click **Finish**. An empty `CustomerViewController.swift` class is now created.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Link Table View to Controller)]
+### Link Table View to Controller
+
 
 Open `Main.storyboard` and select the **Customers View Controller**. From the **Identity inspector**, set its **Custom Class** to the following:
 
@@ -394,10 +377,9 @@ Open `Main.storyboard` and select the **Customers View Controller**. From the **
 
 The **Customers View Controller** is now linked to the newly created `CustomerViewController.swift` class, which can now be implemented in the next steps.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Implement Table View Controller)]
+### Implement Table View Controller
+
 
 Open the file `CustomerViewController.swift`.
 
@@ -558,10 +540,9 @@ If you now build and run your app, it will now present the Sample OData service'
 
 However, there are still some things missing. In the final steps, you will add activity buttons for calling and emailing a customer, as well as adding an activity for creating a reminder.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Add Contact Cell Activities)]
+### Add Contact Cell Activities
+
 
 In the file `CustomerViewController.swift`, add the following private field:
 
@@ -619,10 +600,9 @@ If you would run this on a physical device, you should now be able to initiate a
 
 The logic for creating a reminder will be added in the final step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Create reminders)]
+### Create reminders
+
 
 To work with calendars and reminders, you need to implement the `EventKit`. Add the following import statement:
 
@@ -730,10 +710,9 @@ case FUIActivityItem.detail:
     self.createReminder(customer: customer)
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Build and run the app)]
+### Build and run the app
+
 
 If you now build and run the app, you will see the following pop-up:
 
@@ -747,7 +726,6 @@ If you now open the standard **Reminders** app on the device, your reminders are
 
 ![Build and run the app](fiori-ios-scpms-custom-app-creation-35.png)
 
-[VALIDATE_20]
-[ACCORDION-END]
+
 
 ---

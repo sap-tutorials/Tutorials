@@ -1,26 +1,28 @@
 ---
+parser: v2
 author_name: Shukla Archana
 author_profile: https://github.com/ArchanaShukla
-title: Create a Decision
-description: Create a decision to determine approvers who will be authorized to approve sales order based on complex rules
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-process-automation
 ---
 
+# Create a Decision
+<!-- description --> Create a decision to determine approvers who will be authorized to approve sales order based on complex rules
+
 ## Prerequisites
  - [Create an Automation to Extract Data](spa-create-automation)
 
-## Details
-### You will learn
+## You will learn
  - Create & configure decision in the process
  - Create & configure data types
  - Model decision tables with rules expressions
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a Decision to the Process)]
+### Add a Decision to the Process
+
 
 A **decision** consists of one or more policies. Each policy consists of a collection of rules. They are used to automate the decision-making parts of a business process. After you create a decision, define your business logic by adding rules to the policy. There are two types of rules:
 
@@ -37,7 +39,7 @@ In this section, you will create and configure a decision which will be used to 
     - Choose **+** of the **default conditional flow**,
     - Select **Decision** then **New Decision**.
 
-    !![002](001.png)
+    <!-- border -->![002](001.png)
 
 2. In the Create Decision window, do the following:
 
@@ -45,22 +47,21 @@ In this section, you will create and configure a decision which will be used to 
     -	In the Description field enter **Rule to identify the potential approvers for sales order**,
     -	Choose **Create** button.
 
-    !![002](002.png)
+    <!-- border -->![002](002.png)
 
 3. Now you have to model the decision. For that, choose the 3 dots next to **Determine Approver** decision, to open the menu and choose **Open Editor**.
 
-    !![002](003.png)
+    <!-- border -->![002](003.png)
 
 4. A decision editor opens. You can see the decision diagram on the left panel and configuration option for Input and Output on the right panel. Notice the default policy that is pre-created with the decision.
 
     > A Policy is a collection of rules to be executed in strict order, meaning that they will run in the order in which they are added to the policy, and only the results of the last rule execution will be given as the final output of the decision.  
 
-    !![002](004.png)
+    <!-- border -->![002](004.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Data Types)]
+### Create Data Types
+
 
 A data type describes the data structure that can be used as an input and/or output parameter in an automation, a decision or processes. Data types enable you to formalize the data used as input/output parameters for steps, activities, skills processes, scenarios, triggers, or notifiers. Data types facilitate the manipulation and validation of data.
 
@@ -70,37 +71,36 @@ Now, you have to map the Input and Output of the decision to the actual data obj
 
 1. Go back to the **Overview** tab, choose **Create** and select **Data Type**.
 
-    !![002](005.png)
+    <!-- border -->![002](005.png)
 
 2. In the Create Data Type window, do the following:
     - In the Name field enter **Approver**,
     - In the Description field enter **Approver details who will approve the order from supplier side**,
     - Choose **Create** button.   
 
-    !![002](006.png)
+    <!-- border -->![002](006.png)
 
 3. In the **Approver** data type screen, choose **New Field** to add a new attribute to the data object.
 
-    !![002](007.png)
+    <!-- border -->![002](007.png)
 
 4. In the Field Details section on the right, in the **Name** field enter **Email**. Keep the **Type** as **String**.
 
     > You can choose the **Type** dropdown list to see the different kind of data types that are supported like Number, Password, Date, Time, Boolean etc.
 
-    !![002](008.png)
+    <!-- border -->![002](008.png)
 
 5. Similarly, add another attribute `UserGroup` of **Type** **String** to the data type.
 
-    !![002](009.png)
+    <!-- border -->![002](009.png)
 
 6. **Save** changes.
 
-    !![002](010.png)
+    <!-- border -->![002](010.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Decision)]
+### Configure Decision
+
 
 After the data types are created, you will now configure the decision:
 - With Input and Output data types.
@@ -110,38 +110,38 @@ After the data types are created, you will now configure the decision:
 
 2. Go back to **Determine Approver** decision tab.
 
-    !![002](011.png)
+    <!-- border -->![002](011.png)
 
 3. In the  Determine Approver section:
     - select **Add Input Parameter** button,
     - select **Add Output Parameter** button.
 
-    !![002](012.png)
+    <!-- border -->![002](012.png)
 
 4. Configure Input Parameter:
     - In Name enter: **Sales Order**,
     - In Description enter: **Sales Order**,
     - In Type choose: **sales order**.
 
-    !![002](013.png)
+    <!-- border -->![002](013.png)
 
 5. Configure Output Parameter:
     - In Name enter: **Approver**,
     - In Description enter: **Sales Order Approver**,
     - In Type choose: **Approver**.
 
-    !![002](014.png)
+    <!-- border -->![002](014.png)
 
 6. **Save** changes.
 
 7. Then you will create the actual decision-making parts that make the decision in the process. Under Determine approver, select **Rules**.
 
 
-    !![002](015.png)
+    <!-- border -->![002](015.png)
 
 8. Select **Add Rule**.
 
-    !![002](016.png)
+    <!-- border -->![002](016.png)
 
 9. In the Create Rule window:
     - Under Rule Type select **Decision Table**,
@@ -149,7 +149,7 @@ After the data types are created, you will now configure the decision:
     - In the Rule Description enter **Rule to identify the potential approvers for sales order**,
     - Choose **Next Step** button.
 
-    !![002](017.png)
+    <!-- border -->![002](017.png)
 
     > A decision table is a tabular representation of the rule with If and Then header and row columns. If-header columns contain the expressions, which are evaluated, and Then-header columns contain the result structure that will be returned after the decision is run.
 
@@ -159,7 +159,7 @@ After the data types are created, you will now configure the decision:
     - Select **Order Amount**,
     - Choose **Next Step** button.
 
-    !![002](018.png)
+    <!-- border -->![002](018.png)
 
 11. Configure the output or result of the decision table. Under Data Type:
     - Choose **Approver**,
@@ -167,25 +167,25 @@ After the data types are created, you will now configure the decision:
     - Select **Email**,
     - Choose **Next Step** button.
 
-    !![002](019.png)
+    <!-- border -->![002](019.png)
 
 12. Review and choose **Create** button to create the rule.
 
-    !![002](020.png)
+    <!-- border -->![002](020.png)
 
     > You can use the Settings option to easily define these If and Then header expressions with inline suggestions or free-flow typing.
 
 13. In the newly created **Decision Table**, add values to condition and result columns.
 
-    !![002](021.png)
+    <!-- border -->![002](021.png)
 
 14. Click in the first field (first column)
 
-    !![002](022.png)
+    <!-- border -->![002](022.png)
 
 15. Type EXISTSIN, and choose **exists in** from Array Operators.
 
-    !![002](023.png)
+    <!-- border -->![002](023.png)
 
 16. Continue typing, and write this expression: **EXISTSIN ['United Kingdom' , 'India' , 'Germany']**. After you have finished, press Enter key or click outside the input field to confirm.
 
@@ -193,19 +193,19 @@ After the data types are created, you will now configure the decision:
 
     > For all *String* type of data object attribute, you have to mandatory add single-quote (') before and after the text.
 
-    !![002](024.png)
+    <!-- border -->![002](024.png)
 
     > Remember that for all String type data object attributes, you must add a single quote (') before and after the text.
 
 17. Choose the input field of **Order Amount** column (second column of the decision table) and enter **<= 100000**.
 
-    !![002](025.png)
+    <!-- border -->![002](025.png)
 
 18. Similarly, enter the following expressions for the respective result column (or **Then** section):
     - Under `UserGroup` enter: `SO_APPROVER`
     - Under Email enter: `your user email`
 
-    !![002](026.png)
+    <!-- border -->![002](026.png)
 
     User Group is a role collection or group created in the BTP cockpit or in your respective user management system. These groups have users who are responsible for certain jobs. The advantage of using groups is that you can add/remove users from these groups without the need to change the decision.
 
@@ -218,7 +218,7 @@ After the data types are created, you will now configure the decision:
     - Choose **Add Row**,
     - From the dropdown options, select **Insert After**.
 
-    !![002](027.png)
+    <!-- border -->![002](027.png)
 
 14. Similarly, enter the following values for the new row:
 
@@ -232,7 +232,7 @@ After the data types are created, you will now configure the decision:
     |  `UserGroup`        | `SO_MGMNT`
     |  `Email`       | `your user email`|
 
-    !![002](028.png)
+    <!-- border -->![002](028.png)
 
 15. Choose **Save** button.
 
@@ -240,10 +240,9 @@ After the data types are created, you will now configure the decision:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure Decision in Process Builder)]
+### Configure Decision in Process Builder
+
 
 After you have created and configured the decision, next you have to map the input fields of the decision with the actual process content fields from the process builder.
 
@@ -251,7 +250,7 @@ After you have created and configured the decision, next you have to map the inp
 
     > You might not see entries in the Input, please refer to [the Knowledge Base Article](https://launchpad.support.sap.com/#/notes/3207153) for the complete workaround.
 
-    !![002](029.png)
+    <!-- border -->![002](029.png)
 
 2. Map the following decision table input with the process content:
 
@@ -264,18 +263,18 @@ After you have created and configured the decision, next you have to map the inp
     | `orderStatus` | `selectedOrder` > `orderStatus`
     | `shippingCountry` | `selectedOrder` > `shippingCountry` |
 
-    !![002](030.png)
+    <!-- border -->![002](030.png)
 
 2. **Save** the process.    
 
-    !![002](031.png)
+    <!-- border -->![002](031.png)
 
     > You might see an error symbol on your decision. This is because the outbound connection from the decision is still dangling and not connected to any activity. You may connect it to the end activity.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Update the Process)]
+
+### Update the Process
+
 
 1. You will now adapt the business process one last time to fully automate your approver selection by matching the recipients of the approval form to the one returned from the decision table.
 
@@ -286,8 +285,6 @@ After you have created and configured the decision, next you have to map the inp
 
     >You can modify your selection as needed.
 
-    !![002](032.png)
+    <!-- border -->![002](032.png)
 
-[DONE]
-[ACCORDION-END]
 ---

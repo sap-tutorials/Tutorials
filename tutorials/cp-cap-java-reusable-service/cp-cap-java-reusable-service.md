@@ -1,16 +1,17 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Create a Reusable Service
-description: Create a service that will later on be reused in another CAP Java project.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Details
-### You will learn
+# Create a Reusable Service
+<!-- description --> Create a service that will later on be reused in another CAP Java project.
+
+## You will learn
   - How to write an entity definition
   - How to use some generic CAP artefacts like aspects and types
   - What associations and compositions are
@@ -22,7 +23,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define the domain model)]
+### Define the domain model
+
 
 In the previous tutorial, you defined a service, which defined its own entity. When modeling with CDS the best practice is to separate services from the domain model.
 
@@ -30,7 +32,7 @@ Therefore, you will now define the complete domain model that is used by the pro
 
 1. Go to your `db` folder and create a file called `schema.cds`.
 
-    !![schema cds file creation](schema-cds.png)
+    <!-- border -->![schema cds file creation](schema-cds.png)
 
 2. Add the following code to your newly created `schema.cds` file and make sure you **Save** the file:
 
@@ -55,10 +57,9 @@ Therefore, you will now define the complete domain model that is used by the pro
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand keywords)]
+### Understand keywords
+
 
 As you can see, the domain model defines two entities:
 
@@ -99,10 +100,9 @@ The [`managed`](https://cap.cloud.sap/docs/cds/common#aspect-managed) aspect add
 
 The [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) definition is a type. It defines an association to a `Currencies` entity. The [`Currencies`](https://cap.cloud.sap/docs/cds/common#entity-sapcommoncurrencies) entity is based on ISO 4217 and uses three-letter alpha codes as keys such as `EUR` or `USD` and provides the possibility to store the corresponding currency symbol such as `€` or `$`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get more information about @sap/cds/common)]
+### Get more information about @sap/cds/common
+
 
 Look at these explained keywords yourself and learn more about it.
 
@@ -110,16 +110,16 @@ Look at these explained keywords yourself and learn more about it.
 
 2. Hold **`CTRL`** and hover over a keyword, then move the hand cursor over the keyword. This opens up you a tiny overlay with the definition of this particular item.
 
-    !![overlay of definition](overlay-commons.png)
+    <!-- border -->![overlay of definition](overlay-commons.png)
 
 3. A right-click (or use **`F12`**) on the definition opens up the context menu. There you can find, for example, **Peek definition** to get a much bigger overlay.  Not only the definition of this particular item is displayed, you also have the ability to navigate through the whole source file of this definition without opening the file itself.
 
-    !![right-click to peek definition information](rightclick-peek.png)
+    <!-- border -->![right-click to peek definition information](rightclick-peek.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Rewrite the AdminService)]
+
+### Rewrite the AdminService
+
 
 In the first tutorial, you defined a simple service, called `AdminService`, which directly defined the entity `Products`. As you now have defined the `Products` entity in your domain model, the `AdminService` just needs to expose it. In addition, you defined the `Categories` entity, which should also be part of your service.
 
@@ -140,10 +140,9 @@ In this example you will use the most simple projection, which exposes the domai
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Use CAP's generic persistence handling)]
+### Use CAP's generic persistence handling
+
 
 The CAP Java SDK provides out-of-the-box capabilities to store and retrieve entities from a database. Therefore, no custom coding is required if entities are stored in the database. The entities defined in your `AdminService` will be automatically served via OData and you can just delete the `AdminService.java` file that was created earlier.
 
@@ -153,10 +152,9 @@ By default, the CAP Java SDK uses an in-memory H2 database. The content of this 
 
 In case you need a persistent database between application runs you can use a file-based `SQLite` database as described in section [Using Databases](https://cap.cloud.sap/docs/guides/databases) in the CAP documentation.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run and test your application)]
+### Run and test your application
+
 
 1. Stop your application if it is still running. Now restart your application by running `mvn spring-boot:run` in the terminal and open it in a new tab.
 
@@ -185,16 +183,15 @@ In case you need a persistent database between application runs you can use a fi
 
 5. Make sure to stop your application after testing it by using **`CTRL+C`**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set up for reuse)]
+### Set up for reuse
+
 
 In the following tutorial, the application will be reused by a bookstore application. The reuse of models can be achieved by publishing NPM modules with the models and defining dependencies to these NPM modules in other applications. There are a two steps we need to perform to prepare the `products-service` application for reuse.
 
 1. The name of the `products-service` reuse module, should be `@sap/capire-products`. Therefore, open the `package.json` file within the `~/projects/products-service` folder and change the value of `name` field from `products-service-cds` to `@sap/capire-products`. If you want to you can also provide a meaningful description in the `description` field.
 
-    !![adjust the package.json in the root folder of your project](package-json.png)
+    <!-- border -->![adjust the package.json in the root folder of your project](package-json.png)
 
 2. To make it easier to reuse the module, an `index.cds` file can be added to the `products-service`. This ensures a better decoupling from other applications. Create a new file `index.cds` in the `~/projects/products-service` folder and place the following content inside this file, making sure you **Save** the file:
 
@@ -207,6 +204,4 @@ Congratulations! You have successfully developed the products service applicatio
 
 In the next tutorial, you will build a bookstore application, reusing the products service application. You will later extend the bookstore application with custom business logic and deploy it to the cloud, using SAP HANA as the database.
 
-[DONE]
-[ACCORDION-END]
 ---

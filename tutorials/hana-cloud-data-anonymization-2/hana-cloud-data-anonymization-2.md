@@ -1,21 +1,23 @@
 ---
-title: Understand How Data Anonymization Works in SAP HANA Cloud, SAP HANA Database
-description: Learn how the anonymization workflow is designed to efficiently create and share anonymized views with data consumers and what anonymization methods are available in SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Understand How Data Anonymization Works in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn how the anonymization workflow is designed to efficiently create and share anonymized views with data consumers and what anonymization methods are available in SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
 - Completion of the [previous tutorial](hana-cloud-data-anonymization-1) is recommended.
 
-## Details
-### You will learn
+## You will learn
 - About the anonymization workflow
 - What the anonymization methods k-anonymity, l-diversity and differential privacy are used for
 
 
+## Intro
 > ### **Disclaimer**
 >
 > In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
@@ -25,7 +27,8 @@ In this article, you will learn how the anonymization workflow is designed to ef
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to the anonymization workflow)]
+### Introduction to the anonymization workflow
+
 
 As pointed out in the [previous tutorial](hana-cloud-data-anonymization-2), the process of creating anonymized views of data to securely share it with others must meet **two requirements**:
 
@@ -39,10 +42,9 @@ In this diagram, you can see in detail how the SAP HANA Cloud anonymization work
 Let us take a closer look at the diagram in the following steps to zoom in on how certain anonymization tasks look like.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the workflow 1: create an anonymized view )]
+### Understand the workflow 1: create an anonymized view 
+
 
 The first task we will zoom in on is that a **data consumer** requests access to data, e.g., for analysis:
 
@@ -60,11 +62,10 @@ The first task we will zoom in on is that a **data consumer** requests access to
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Understand the workflow 2: query an anonymized view )]
+### Understand the workflow 2: query an anonymized view 
+
 
 Now let's take a look at the steps involved to query an anonymized view so the data consumer may gain insights from the anonymized data:
 
@@ -78,10 +79,9 @@ Now let's take a look at the steps involved to query an anonymized view so the d
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand the workflow 3: monitor anonymization)]
+### Understand the workflow 3: monitor anonymization
+
 
 
 The anonymization workflow does not end there. To continuously monitor and improve the anonymization methods, the data protection officer can request anonymization reports that will return anonymization KPI's (Key Performance Indicators) that provide information to help monitor the effectiveness of the anonymization and adjust the parameters if needed.
@@ -94,10 +94,9 @@ This process ensures that data anonymization can be implemented in a practical, 
 
 Now you know the process for how anonymized views are computed and made accessible to data consumers. In the coming steps, you will get to know the methods of how the anonymization can be configured.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the problem of quasi-identifiers)]
+### Test the problem of quasi-identifiers
+
 
 
 > ### **IMPORTANT**
@@ -129,10 +128,9 @@ This query will likely result in many cases that would risk being re-identified.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Solve the problem of quasi-identifiers)]
+### Solve the problem of quasi-identifiers
+
 
 Instead of having to remove all the quasi-identifiers from the dataset that is shared, these **attributes can be either generalized to a broader range**, for example replacing the exact age by a category containing a range of years, or the **attributes can be hidden completely if no generalization is applicable**. For example, this could be the case if data is categorical and does not have many distinct categories.
 
@@ -147,10 +145,9 @@ You will learn more about how to create an anonymized view using K-Anonymity in 
 
 Now, let us have a quick look at a different approach to anonymizing data that targets the sensitive data directly.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Protect sensitive information 1: add L-Diversity)]
+### Protect sensitive information 1: add L-Diversity
+
 
 
 Another key goal of anonymization is to make sure that when someone who should not have access to sensitive information, cannot associate sensitive information to specific individuals when data is made available to them. The method of K-Anonymity can indirectly achieve this goal by hiding individuals in groups. But there could still be cases in which you need additional protection of sensitive information.
@@ -170,12 +167,11 @@ That is why K-Anonymity can be complemented by the method of **L-Diversity**.
 L-diversity will refine the groups in a way that e.g., `L=3` people have distinct values on their sensitive data attributes. By **increasing the diversity of sensitive data in a group of people with homogeneous quasi-identifiers**, the anonymization becomes much more powerful. With this method, the anonymization algorithm will form groups in a way that at least three individuals will have different salary values. This way, their sensitive information is protected.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Protect sensitive information 2: use Differential Privacy)]
+### Protect sensitive information 2: use Differential Privacy
+
 
 
 In the case that the **sensitive part of the data includes numerical values**, for example when tables contain salary data or data about people's financial assets, this sensitive data can be anonymized in an even stricter way.
@@ -199,14 +195,12 @@ Even complex machine learning models can still be applied to the data and delive
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

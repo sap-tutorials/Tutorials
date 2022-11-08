@@ -1,6 +1,5 @@
 ---
-title: Test the Business Rules API from SAP API Business Hub
-description: Use SAP API Business Hub to test and run the business rules API to see how business rules can be consumed from a custom application.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -9,19 +8,23 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 
+# Test the Business Rules API from SAP API Business Hub
+<!-- description --> Use SAP API Business Hub to test and run the business rules API to see how business rules can be consumed from a custom application.
+
 ## Prerequisites
  - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](group.cp-rules-first-project).
 
-## Details
-### You will learn
+## You will learn
   - How to use Business Rules APIs
   - How to test Business Rules project
 
+## Intro
 After a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
 
 Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
 
-[ACCORDION-BEGIN [Step 1: ](Log on to SAP API Business Hub)]
+### Log on to SAP API Business Hub
+
 
 1. Log on to [SAP API Business Hub](https://api.sap.com/)
 
@@ -39,10 +42,9 @@ Business Rules REST APIs are available on SAP API Business Hub which lets you ex
 
     ![Try out](testing4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Determine the service key parameters to configure environment)]
+### Determine the service key parameters to configure environment
+
 
 To try out the APIs, you need to configure your trial environment on SAP API Business Hub. The communication between a REST client (SAP API Business Hub in this case) and the service is achieved via a service instance. You can use the service keys to generate credentials to communicate with a service instance. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to configure the environment using the service key parameters or the client credentials.
 
@@ -69,10 +71,9 @@ To try out the APIs, you need to configure your trial environment on SAP API Bus
 
     ![service key parameters](service_param5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure the environment)]
+### Configure the environment
+
 
  Configure the environment using the service key parameters or the client credentials determined in step 2.
 
@@ -106,11 +107,10 @@ To try out the APIs, you need to configure your trial environment on SAP API Bus
     ![Configure environment](testing7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Invoke the rule services and observe the results in the API response)]
+### Invoke the rule services and observe the results in the API response
+
 
 1. Fetch the ID of the **`DetermineEquipmentRuleservice`** rule service from Manage Rule Projects application. This is a required parameter in the body JSON payload of the API.
 
@@ -176,6 +176,4 @@ To try out the APIs, you need to configure your trial environment on SAP API Bus
     You also try changing the rule logic or the JSON payload values to see different results.
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]

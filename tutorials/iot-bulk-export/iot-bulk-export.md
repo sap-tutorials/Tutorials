@@ -1,11 +1,13 @@
 ---
-title: Export Time Series Data
-description: Export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
+parser: v2
 auto_validation: true
 tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, software-product>sap-edge-services, software-product>sap-iot-services-for-sap-btp, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
 primary_tag: topic>internet-of-things
 time: 30
 ---
+
+# Export Time Series Data
+<!-- description --> Export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
 
 ## Prerequisites
  - Your tenant is onboarded in or after SAP IoT 2010b release.
@@ -13,18 +15,19 @@ time: 30
  - You have onboarded (virtual) devices and have enabled them to send data with timestamps over a period of several days or weeks.
    <ul> <li>For testing purpose, you can ingest data for a week so that you have a considerable amount of data for further analysis.</li></ul>
 
-## Details
-### You will learn
+## You will learn
   - How to initiate time series data export
   - How to download the `.csv` file
   - How to import data into a table using SAP HANA Database Explorer
   - How to execute SQL query on the time series data
 
+## Intro
 For data analytics or machine learning scenarios, there is a need to extract time series data for a longer duration spanning across multiple months or years.  You can export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Initiate time series data export)]
+### Initiate time series data export
+
 
 >For more information about the time series data export APIs, see [Export Time Series Data](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/2012b/en-US/48394008958d468c95d1e9bd85c73121.html) in SAP Help Portal.
 
@@ -87,11 +90,11 @@ The extracted file will be a `*.gz` file.
 
     The extracted files are `.csv` files. Each `.csv` file corresponds to the respective epoch days for which the data for the requested property set type is available.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Import data into SAP HANA database)]
+
+### Import data into SAP HANA database
+
 
 1. Create a database in your SAP HANA trial account following Step 1-3 in the tutorial [Choose an SAP HANA Database](hana-clients-choose-hana-instance).
 
@@ -99,23 +102,23 @@ The extracted file will be a `*.gz` file.
 
 2. In **SAP HANA Database Explorer**, right click the database name and select **Import Data** from the context menu.
 
-    !![Import data](iot-import-data.png)
+    <!-- border -->![Import data](iot-import-data.png)
 
     The **Import Data** wizard appears.
 
 3. Choose **Import Data** in the **IMPORT TYPE** tab.
 
-    !![Choose import data](iot-import-data-2.png)
+    <!-- border -->![Choose import data](iot-import-data-2.png)
 
 4. Click the **Step 2** button.
 
 5. Select the source of data from the **Import Data From** dropdown list.
 
-    !![Choose import data source](iot-import-data-3.png)
+    <!-- border -->![Choose import data source](iot-import-data-3.png)
 
     - In this tutorial, the source data is available in the local system. Hence, the next step is to navigate to the folder where the `*.csv` file is available.
 
-    !![Choose file to import data](iot-import-data-4.png)
+    <!-- border -->![Choose file to import data](iot-import-data-4.png)
 
 6. Click the **Step 3** button.
 
@@ -124,7 +127,7 @@ The extracted file will be a `*.gz` file.
     - Select the **Create a new table** option in the **IMPORT TARGET** tab.
     - Select **DBADMIN** for the **Schema** and enter a table name.
 
-     !![Choose schema and table name to import data](iot-import-data-5.png)
+     <!-- border -->![Choose schema and table name to import data](iot-import-data-5.png)
 
 8. Click the **Step 4** button.
 
@@ -133,33 +136,32 @@ The extracted file will be a `*.gz` file.
     - Use the arrow keys to include or exclude the columns in the database.
     - Define the data type and data length for the columns that will be included in the database table. The following image illustrates the column names included in the database and the data type chosen.
 
-      !![map column and table properties](iot-import-data-6.png)
+      <!-- border -->![map column and table properties](iot-import-data-6.png)
 
 10. Click the **Step 5** button.
 
 11. Choose the appropriate error handling option in the **ERROR HANDLING** tab.
 
-      !![map column and table properties](iot-import-data-7.png)
+      <!-- border -->![map column and table properties](iot-import-data-7.png)
 
 12. Click the **Review** button  to preview the import.
 
-      !![map column and table properties](iot-import-data-8.png)
+      <!-- border -->![map column and table properties](iot-import-data-8.png)
 
 13. Click the **Import Into Database** button. The data is imported into the specified table and the import status is displayed.
 
-      !![map column and table properties](iot-import-data-9.png)
+      <!-- border -->![map column and table properties](iot-import-data-9.png)
 
 14. You can now access the table and the data that is imported into the table.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Analyze data using SQL Query)]
+### Analyze data using SQL Query
+
 
 1. In **SAP HANA Database Explorer**, you can run SQL queries on data using **SQL Console**. Open the **SQL Console** using the icon.
 
-    !![open sql](iot-open-sql.png)
+    <!-- border -->![open sql](iot-open-sql.png)
 
     Following are the example SQL queries and the result data fetched:
 
@@ -169,7 +171,7 @@ The extracted file will be a `*.gz` file.
     Select * from SILO;
     ```
 
-    !![Select all rows](iot-select-all-rows.png)
+    <!-- border -->![Select all rows](iot-select-all-rows.png)
 
     **Example 2**: Select list of things and temperature from the table `SILO` where the temperature value is greater than 40
 
@@ -177,7 +179,7 @@ The extracted file will be a `*.gz` file.
     Select THING_ID, "temperature" from SILO where "temperature" > 40
     ```
 
-    !![Select list of things](iot-select-thing-temp-gt-40.png)
+    <!-- border -->![Select list of things](iot-select-thing-temp-gt-40.png)
 
     **Example 3**: Select list of things from the table `SILO` with maximum temperature value for every thing ID.
 
@@ -185,7 +187,7 @@ The extracted file will be a `*.gz` file.
     Select THING_ID,  Max("temperature") from SILO group by THING_ID
     ```
 
-    !![select maximum temperature](iot-select-max-temp.png)
+    <!-- border -->![select maximum temperature](iot-select-max-temp.png)
 
     **Example 4**: Select list of things from the table `SILO` along with their minimum timestamp value.
 
@@ -193,7 +195,7 @@ The extracted file will be a `*.gz` file.
     Select THING_ID, Min (ADD_SECONDS (TO_TIMESTAMP ('1970-01-01 00:00:00'), "_TIME" / 1000.0)) from SILO group by THING_ID
     ```
 
-    !![select minimum timestamp value](iot-select-min-timevalue.png)
+    <!-- border -->![select minimum timestamp value](iot-select-min-timevalue.png)
 
 2. In the left pane, expand **`GreenhouseDB`**, then **Catalog** and then choose **Tables**.
 
@@ -205,20 +207,20 @@ The extracted file will be a `*.gz` file.
 
 4. Click the **Open Data** button.
 
-    !![table name](iot-table-name.png)
+    <!-- border -->![table name](iot-table-name.png)
 
     The data stored in the table is displayed.
 
-    !![graphical representation](iot-table-data-analysis.png)
+    <!-- border -->![graphical representation](iot-table-data-analysis.png)
 
 5. In **SAP HANA Database Explorer**, you can use the **Analysis** tab to display the data in graphical representation. Click the **Analysis** tab.
 6. In the **Analysis** tab, drag and drop one or more fields into the **Label Axis** frame and **Value Axis** frame.
 
-    !![analysis tab](iot-table-sql.png)
+    <!-- border -->![analysis tab](iot-table-sql.png)
 
     For each field, you can change the function to be executed, such as minimum temperature value and sum of fill levels. Use the arrow-like button before the field name to change the function.
 
-    !![analysis tab fields](iot-analysis-function.png)
+    <!-- border -->![analysis tab fields](iot-analysis-function.png)
 
 7. Click the **SQL** icon to view the corresponding SQL query which looks as follows:
 
@@ -236,12 +238,9 @@ ORDER BY "THING_ID" ASC
     In the **SQL Query** window, you have an option to copy the query to the clipboard.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](More ways to download exported data)]
+### More ways to download exported data
+
 
 To explore more about downloading the exported data in different ways, you can go to the SAP blog [Downloading files from the Coldstore-Downloader app of SAP Internet of Things (SAP IoT)](https://blogs.sap.com/2021/01/27/downloading-files-from-the-coldstore-downloader-app-of-sap-internet-of-things-sap-iot./).
 
-[DONE]
-[ACCORDION-END]

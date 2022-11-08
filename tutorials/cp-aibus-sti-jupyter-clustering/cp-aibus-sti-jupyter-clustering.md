@@ -1,6 +1,5 @@
 ---
-title: Use Service Ticket Intelligence and Jupyter Notebook to generate Clusters and Keywords in Service Requests
-description: Train a machine learning model based on historical service requests in order to identify trends or patterns in new requests.
+parser: v2
 auto_validation: true
 time: 40
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
@@ -9,13 +8,16 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Use Service Ticket Intelligence and Jupyter Notebook to generate Clusters and Keywords in Service Requests
+<!-- description --> Train a machine learning model based on historical service requests in order to identify trends or patterns in new requests.
+
+## You will learn
   - How to analyze datasets and upload the training data
   - How to train a machine learning model to generate clusters and keywords in service requests
   - How to identify trends or patterns in new requests based on the clusters and keywords you generated
   - How to evaluate the performance of your machine learning model
 
+## Intro
 Service Ticket Intelligence provides machine learning functionalities to effectively deal with service requests. Thereby, the service offers three main functionalities:
 
 1. The service is able to analyze the unstructured information in service requests and classify the requests into categories.
@@ -28,7 +30,8 @@ This tutorial deals with clustering text in service requests. Find more details 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the Jupyter notebook)]
+### Open the Jupyter notebook
+
 
 First, start your local Jupyter server.
 
@@ -40,11 +43,10 @@ Next, click **Clustering_demo.ipynb** to open the notebook. You can recognize Ju
 
 ![Open Notebook](open-notebook.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](What is a Jupyter notebook)]
+### What is a Jupyter notebook
+
 
 Jupyter Notebooks are interactive playgrounds to code and are often used in data science to explore datasets.
 
@@ -60,21 +62,18 @@ A cell can be executed by clicking the play button at the top. If you execute co
 
 ![Executing Cells](executing-cells.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Run the tutorial)]
+### Run the tutorial
+
 
 As mentioned above, a notebook can also contain text. We made sure that there are sufficient explanations for every step in the notebook.
 
 Go through the notebook by executing the cells and reading the explanations that are given. Come back here to complete the tutorial and test your understanding.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

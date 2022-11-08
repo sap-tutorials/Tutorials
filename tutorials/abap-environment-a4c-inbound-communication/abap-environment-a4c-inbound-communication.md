@@ -1,6 +1,5 @@
 ---
-title: Create Communication Objects for a Remote OData Service
-description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP BTP, ABAP Environment.
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
@@ -8,6 +7,9 @@ primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
+
+# Create Communication Objects for a Remote OData Service
+<!-- description --> Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP BTP, ABAP Environment.
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
@@ -20,17 +22,17 @@ author_profile: https://github.com/julieplummer20
 - You have read [Developing a UI Service with Access to a Remote Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/f4969e551d3049c59715210cbeb4ef56.html) and its [Scenario Description](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/4f539da657fe427f868a95c0bc1b3cfa.html), since this mission is based on this tutorial series
 - Optional: You have installed the [Postman API Platform](https://www.getpostman.com/)
 
-## Details
-### You will learn
+## You will learn
 - In the **provisioning** system: How to expose a CDS view as an OData service using a **Service Binding**
 - How to wrap this OData service in an inbound communication scenario, so that it can be accessed from another instance of SAP BTP, ABAP environment
 - How to make the provisioning system available for connection from other ABAP systems
 - How to test your service URL in Postman (optional)
 - In the **client** system: How to create a new destination with an HTTP connection, pointing to the provisioning system
 
+## Intro
 This involves some overhead for one consumer; however, the advantage is that you can add several consumer systems, or users (for example, with different authentication) pointing to the same HTTP service, wrapped in the same Communication Scenario.
 
-!![step9-create-comm-artefacts-overview](step9-create-comm-artefacts-overview.png)
+<!-- border -->![step9-create-comm-artefacts-overview](step9-create-comm-artefacts-overview.png)
 
 .
 .
@@ -47,60 +49,59 @@ You need to:
 4. Build a new OData service in the client system, using a CDS custom entity and query implementation class
 5. Finally, display the remote data in Fiori Elements preview in your browser
 
-!![overview-cf-only](overview-cf-only.png)
+<!-- border -->![overview-cf-only](overview-cf-only.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create inbound Communication Scenario)]
+### Create inbound Communication Scenario
+
 1. In your **provisioning** system, select your package, then choose **New > Other Repository Object...** from the context menu.
 
-    !![step9a-new-other](step9a-new-other.png)
+    <!-- border -->![step9a-new-other](step9a-new-other.png)
 
 2. Add the filter **`scen`**, then choose **Communication Scenario**, then choose **Next**.
 
-    !![step1b-create-comm-scen-2011](step1b-create-comm-scen-2011.png)
+    <!-- border -->![step1b-create-comm-scen-2011](step1b-create-comm-scen-2011.png)
 
 3. Add a Name: **`Z_WRAP_TRAVEL_XXX`** and Description, **Inbound for Travel Remote Service**, choose a transport request, then choose **Finish**.
 
 Your Communication Scenario appears in a new editor.
 
-!![step1c-new-comm-scen-editor](step1c-new-comm-scen-editor.png)
+<!-- border -->![step1c-new-comm-scen-editor](step1c-new-comm-scen-editor.png)
 
 You can also see this scenario in the Project Explorer.
 
-!![step1d-comm-scen-in-adt-project-explorer](step1d-comm-scen-in-adt-project-explorer.png)
+<!-- border -->![step1d-comm-scen-in-adt-project-explorer](step1d-comm-scen-in-adt-project-explorer.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Point to OData service binding)]
+### Point to OData service binding
+
 1. On the **Inbound** tab, choose **Add...**.
 
-    !![step2a-add-http-service](step2a-add-http-service.png)
+    <!-- border -->![step2a-add-http-service](step2a-add-http-service.png)
 
 2. **IMPORTANT**: Choose **Browse**. You cannot simply enter the name. Then add a filter, such as **`Z_BIND_T`**, select your service - with the ending `IWSG`, then choose **Finish**.
 
-    !![step2b-browse-inbound-service](step2b-browse-inbound-service.png)
+    <!-- border -->![step2b-browse-inbound-service](step2b-browse-inbound-service.png)
 
 3. Your service appears. Choose **Publish Locally**.
 
-    !![step2c-publish-service-locally](step2c-publish-service-locally.png)
+    <!-- border -->![step2c-publish-service-locally](step2c-publish-service-locally.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Communication System)]
+### Create Communication System
+
 1. From the Dashboard Home screen, choose From **Communication Management > Communication Systems**.
 
-    !![step3a-comm-system-tile](step3a-comm-system-tile.png)
+    <!-- border -->![step3a-comm-system-tile](step3a-comm-system-tile.png)
 
 2. Choose **New**.
 
-    !![step3b-comm-system-new](step3b-comm-system-new.png)
+    <!-- border -->![step3b-comm-system-new](step3b-comm-system-new.png)
 
 3. Enter a System ID, **`ZTRAVEL_XXX`**, and accept the default (identical) System name, then choose **Create**.
 
-    !![step3c-comm-system-id-name](step3c-comm-system-id-name.png)
+    <!-- border -->![step3c-comm-system-id-name](step3c-comm-system-id-name.png)
 
 4. In **Technical Data**:
 
@@ -110,52 +111,50 @@ You can also see this scenario in the Project Explorer.
 
 - **Business System** = dummy
 
-    !![step3d-host-name](step3d-host-name.png)
+    <!-- border -->![step3d-host-name](step3d-host-name.png)
 
 5. Scroll down to **Users for Inbound Communication**, then create a new user by choosing the **+** icon.
 
-    !![step13a-create-comm-user](step13a-create-comm-user.png)
+    <!-- border -->![step13a-create-comm-user](step13a-create-comm-user.png)
 
 6. Choose **New User** and the **Authentication Method: User name and password**.
 
-    !![step3e-comm-user-name](step3e-comm-user-name.png)
+    <!-- border -->![step3e-comm-user-name](step3e-comm-user-name.png)
 
 7. Enter a name, **`Z_TRAVELPRO_XXX`**, and description, then choose **Propose password**, then choose **Create > OK > Save**. `XXX` is the name of the provisioning system, that is, this system. **IMPORTANT**: Save the proposed password to a text file, since you will need it later.
 
 8. Save your changes.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create inbound communication arrangement)]
+### Create inbound communication arrangement
+
 1. Open the dashboard for your system in a browser. You can find the URL for the dashboard by selecting your system (that is, ABAP Project in Project Explorer), then choosing **Properties > ABAP Development** from the context menu.
 
-    !![step11a-open-flp](step11a-open-flp.png)
+    <!-- border -->![step11a-open-flp](step11a-open-flp.png)
 
 2. From **Communication Management**, choose **Communication Arrangement**. Then choose **New**.
 
-    !![step11b-new](step11b-new.png)
+    <!-- border -->![step11b-new](step11b-new.png)
 
 3. Choose your scenario, **`Z_WRAP_TRAVEL_XXX`** from the drop-down list. Accept the default (identical) Arrangement name.
 
-    !![step3c-choose-scenario](step3c-choose-scenario.png)
+    <!-- border -->![step3c-choose-scenario](step3c-choose-scenario.png)
 
 4. From the dropdown list, choose your communication system **`ZTRAVEL_XXX`**
 
-    !![step4d-choose-comm-system](step4d-choose-comm-system.png)
+    <!-- border -->![step4d-choose-comm-system](step4d-choose-comm-system.png)
 
 5. Save your changes.
 
 Your Communication Arrangement should look roughly like this.
 The Service URL / Service Interface = < Base URL of provisioning system > + relative path of your Inbound Service, here `/sap/opu/odata/sap/Z_BIND_TRAVELS_XXX`.
 
-!![step64e-comm-arr-2011](step64e-comm-arr-2011.png)
+<!-- border -->![step64e-comm-arr-2011](step64e-comm-arr-2011.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional: Check service URL in Postman)]
+### Optional: Check service URL in Postman
+
 1. Open Postman. In the **Authorization** tab, enter your authorization credentials:
 
     - Type = Basic Auth.
@@ -166,18 +165,17 @@ The Service URL / Service Interface = < Base URL of provisioning system > + rela
 
 3. The response appears in the **Body** field, along with the status **200 OK**.
 
-    !![step7b-postman-response](step7b-postman-response.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![step7b-postman-response](step7b-postman-response.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Create destination in client system)]
+
+### Create destination in client system
+
 You will now open the client system and create a destination service instance there. This must be created at subaccount (not Space) level.
 
 1. In the **client** system, open the SAP BTP Cockpit of your Cloud Foundry subaccount and choose **Destinations**, then choose **New Destinations**.
 
-    !![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
+    <!-- border -->![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
 
 2. Enter the following values. Note the name, since you will be using it later:
 
@@ -192,19 +190,17 @@ You will now open the client system and create a destination service instance th
     | User | **`INBOUND_TRAVELPRO_XXX`** (i.e. from the communication system)
     | Password | The generated password you noted down
 
-    !![step8b-new-destination-settings](step8b-new-destination-settings.png)
+    <!-- border -->![step8b-new-destination-settings](step8b-new-destination-settings.png)
 
 3. Check the connection:
 
-    !![step8c-check-connection-sid](step8c-check-connection-sid.png)
+    <!-- border -->![step8c-check-connection-sid](step8c-check-connection-sid.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ### More Information
 [Postman: Video Tutorials](https://www.youtube.com/playlist?list=PLM-7VG-sgbtAgGq_pef5y_ruIUBPpUgNJ)

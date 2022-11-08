@@ -1,6 +1,5 @@
 ---
-title: Intermediate Table Variables
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,17 +7,20 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 
+# Intermediate Table Variables
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Parallel Processing and Parameters](xsa-sqlscript-parallel)
 
-## Details
-### You will learn  
+## You will learn  
 In this exercise you will modify the code of procedure `get_po_header_data` again to use a single tabular output. Existing queries will be reused based on intermediate table variables.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit Previous Procedure)]
+### Edit Previous Procedure
+
 
 Return to your procedure called `get_po_header_data`.
 
@@ -28,48 +30,43 @@ Delete the output parameters which you defined in the last section.
 
 ![Define output](2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define New Output Parameter)]
+### Define New Output Parameter
+
 
 Define a new output parameter as shown
 
 ![New output](3.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Rename Variables)]
+### Rename Variables
+
 
 Rename `EX_PO_CREATE_CNT` to `PO_CREATE_CNT`. Also rename `EX_PO_CHANGE_CNT` to `PO_CHANGE_CNT`
 
 ![change name](4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit SELECT Statements)]
+### Edit SELECT Statements
+
 
 Modify the two SELECT statements and add `AS EID` after the `EMPLOYEEID` field.
 
 ![modify select](5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add SELECT Statement)]
+### Add SELECT Statement
+
 
 Next, add another SELECT statement after the 2 previous SELECT statements as shown. This statement uses the previously defined table variables.
 
 ![add another select](6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Complete Code)]
+### Check Complete Code
+
 
 The completed code should be very similar to this.
 
@@ -115,19 +112,17 @@ END
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Save and Build)]
+### Save and Build
+
 
 Save the procedure.  Use what you have learned already and perform a build on your `hdb` module.
 
 ![save Procedure](7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run and View Results)]
+### Run and View Results
+
 
 Return to the Database Explorer page and use what you have learned and generate a new call statement for the procedure and run it.
 
@@ -136,5 +131,3 @@ The results are then shown.
 ![Results](10.png)
 
 
-[DONE]
-[ACCORDION-END]

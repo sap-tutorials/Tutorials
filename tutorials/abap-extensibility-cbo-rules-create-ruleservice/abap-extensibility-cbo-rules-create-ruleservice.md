@@ -1,17 +1,19 @@
 ---
-title: Create Rule Service and Ruleset
-description: Create and activate ruleset and rule service artefacts as part of Bonus Plan Percentage Calculation rules project.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
-## Details
-### You will learn
+# Create Rule Service and Ruleset
+<!-- description --> Create and activate ruleset and rule service artefacts as part of Bonus Plan Percentage Calculation rules project.
+
+## You will learn
   - How to create `rule service` which is the deployable entity of business rules
   - How to create `ruleset` to bundle rules with same output
 
+## Intro
 **`Rule Service`** is an interface or an end point that enables an application to invoke a decision logic. In an online transaction or workflow, rule service is invoked by passing any relevant input from an application to the rule service in a stateless manner.
 
 **`Ruleset`** is a logical collection of rules that helps you group business rules that govern a specific function. A `ruleset` links a rule or group of rules to a rule service.
@@ -23,7 +25,8 @@ For more information, you can read the help documentation:
 
 [`Ruleset`](https://help.sap.com/viewer/9d7cfeaba766433eaea8a29fdb8a688c/Cloud/en-US/06e5b6b31a04499d9fc11717fada03e6.html)
 
-[ACCORDION-BEGIN [Step 1: ](Create rule service)]
+### Create rule service
+
 
 1.	Switch to **Rule Services** tab in **Manage Rules Application**.
 
@@ -76,10 +79,9 @@ For more information, you can read the help documentation:
 
     ![switch to project](projectbreadcrumb.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ruleset)]
+### Create ruleset
+
 
 1.  Switch to **`Rulesets`** tab.
 
@@ -115,21 +117,19 @@ For more information, you can read the help documentation:
 
       ![activated rule service](activatedruleset.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_3]
-[ACCORDION-END]
+
+
+
+### Test yourself
+
+
+
 ---

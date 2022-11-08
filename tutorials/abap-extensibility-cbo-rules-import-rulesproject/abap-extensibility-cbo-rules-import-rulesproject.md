@@ -1,17 +1,19 @@
 ---
-title: Import Business Rules with Custom Business Object
-description: Use Business Rules Import option to import template rules project that will be used to create business rule models on custom business object.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
-## Details
-### You will learn
+# Import Business Rules with Custom Business Object
+<!-- description --> Use Business Rules Import option to import template rules project that will be used to create business rule models on custom business object.
+
+## You will learn
   - How to import template business rules project
   - How to import CDS views from backend S/4HANA cloud system
 
+## Intro
 **Data object** is the reusable entity of Enterprise Rules Model which is the vocabulary on which business rules are modelled.
 
 In this tutorial, a template business rules project is made available in GitHub. This project has the result data object already created. You will import the CDS view based on custom business object **Bonus Plan** from the S/4HANA cloud system.
@@ -23,16 +25,16 @@ For more information, you can read the help documentation:
 
 [Data Objects](https://help.sap.com/viewer/9d7cfeaba766433eaea8a29fdb8a688c/Cloud/en-US/579af46aa0aa42cea90207323959d3a7.html)
 
-[ACCORDION-BEGIN [Step 1: ](Download template)]
+### Download template
+
 
 1. **Download** the template business rules project zip from the [GitHub](https://github.com/SAP/cloud-businessrules-templates/blob/master/rulesprojects/BonusPlanCalculationRulesTemplate.zip).
 
     ![download template](downloadtemplate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import project)]
+### Import project
+
 
 1.  In **Manage Rules Application**, click the **Import** icon and select **Upload Project from File System option**.
 
@@ -53,10 +55,9 @@ For more information, you can read the help documentation:
 5.	Click the project to navigate into the details.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Modify project properties)]
+### Modify project properties
+
 
 1.	Click **Edit** to make changes to the default system.
 
@@ -72,10 +73,9 @@ For more information, you can read the help documentation:
 
     ![select system](selectsystem.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Activate data objects)]
+### Activate data objects
+
 
 1.	Switch to **Data Objects** tab for **Local Data Objects**.
 
@@ -97,10 +97,9 @@ For more information, you can read the help documentation:
 
     ![activated data object](activateddataobjects.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import CDS view)]
+### Import CDS view
+
 
 1. Click **Import > Managed System** to import the CDS views from S/4HANA cloud system.
 
@@ -137,19 +136,16 @@ For more information, you can read the help documentation:
 
     ![activated CDS view](activatedcds.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
-
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_2]
-[ACCORDION-END]
+
+
+### Test yourself
+
+
+
+
 
 ---

@@ -1,26 +1,27 @@
 ---
+parser: v2
 author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
-title: Getting Started with Integration Flow Design Guidelines - Timer-Initiated Scenario
-description: In Cloud Integration, copy and deploy a very simple out-of-the-box integration flow design guideline with a timer-initiated integration flow that writes an entry to the data store.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-integration-suite
 ---
 
+# Getting Started with Integration Flow Design Guidelines - Timer-Initiated Scenario
+<!-- description --> In Cloud Integration, copy and deploy a very simple out-of-the-box integration flow design guideline with a timer-initiated integration flow that writes an entry to the data store.
+
 ## Prerequisites
  - You have an account with SAP Business Technology Platform as described in [Set Up an SAP BTP Account for Tutorials](group.btp-setup).
  - You have enabled Cloud Integration, capability of SAP Integration Suite, as described in [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
-## Details
-### You will learn
+## You will learn
   - How to find existing out-of-the-box integration flow design guidelines for Cloud Integration, capability of SAP Integration Suite, and how to copy them into your tenant
   - How to deploy and work with integration flow design guidelines with minimal effort
-
-### Use Case
+## Use Case
 As an integration developer, you need to make sure that you design integration flows in a robust manner to safeguard your company's mission-critical business processes. To do so, you can leverage ready-made integration content as templates. The integration flow design guidelines offer best practices and ready-made content for you to start with your integration scenario. The integration flows are designed to meet the following requirements:
 
+## Intro
 - Each integration flow focuses on one dedicated guideline or pattern, giving you easy access to the topic at hand.
 - Each integration flow can be deployed and executed with minimum effort. That way, you can test each guideline or pattern on your own.
 - You can use each reference integration flow as a basis for creating more complex scenarios.
@@ -41,7 +42,8 @@ In this tutorial, you are going to download the easiest integration scenario cur
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check out integration flow design guidelines for Cloud Integration)]
+### Check out integration flow design guidelines for Cloud Integration
+
 
 After you've set up your Cloud Integration tenant (refer to the prerequisites of this tutorial for assistance), launch Cloud Integration by selecting the respective tile. Now, you find yourself in the **Discover** tab of Cloud Integration. Here, you find all integration packages that are pre-delivered by SAP and its partners.
 
@@ -51,12 +53,11 @@ After you've set up your Cloud Integration tenant (refer to the prerequisites of
 
 2. Scroll down till you find the integration package called **Learn the Basics**.
 
-    !![Discover Tab in Cloud Integration](btw-design-guidelines_design-space.png)
+    <!-- border -->![Discover Tab in Cloud Integration](btw-design-guidelines_design-space.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Copy an integration flow package)]
+### Copy an integration flow package
+
 
 Once you've found the integration package called **Learn the Basics**, copy it into your tenant.
 
@@ -64,15 +65,14 @@ Once you've found the integration package called **Learn the Basics**, copy it i
 
 2. Choose **Copy**.
 
-!![Copy Integration Package](btw-design-guidelines_design-space-copy.png)
+<!-- border -->![Copy Integration Package](btw-design-guidelines_design-space-copy.png)
 
 > Note: *Don't wait for a confirmation message, the copying was successful without notification.*
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure and deploy your integration flow)]
+### Configure and deploy your integration flow
+
 
 After you've successfully copied your integration flow package, go to the **Design** tab which you find in your left-hand navigation bar. You can now see a list of all existing integration packages on this tenant. Select your newly copied package by clicking on the title **Learn the Basics**.
 
@@ -80,7 +80,7 @@ After you've successfully copied your integration flow package, go to the **Desi
 
 2. Select the integration flow you're interested in. In our example, **Modeling Basics - Timer-Initiated Scenario**.
 
-    !![Modeling Basics](btw-design-guidelines_modeling-basics.png)  
+    <!-- border -->![Modeling Basics](btw-design-guidelines_modeling-basics.png)  
 
 3. You are now looking at the integration flow editor view. Here, your integration flow is displayed, showcasing all its components and steps. Your integration flow consists of three components:
 
@@ -88,7 +88,7 @@ After you've successfully copied your integration flow package, go to the **Desi
     - A message body **Define message body** that defines a hard-coded message body that reads `Hello World!`;
     - A write step called **Write data store entry** that takes the message body and writes it to the data store.
 
-      !![Integration Flow](btw-design-guidelines_design-space-edit2.png)
+      <!-- border -->![Integration Flow](btw-design-guidelines_design-space-edit2.png)
 
     > Tip: *Select the respective shapes, to view the parameters of the respective integration flow step. You might need to pull up the window from the bottom of your screen.*
 
@@ -105,11 +105,10 @@ After you've successfully copied your integration flow package, go to the **Desi
 
 3.  Choose **Deploy**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check integration flow deployment)]
+### Check integration flow deployment
+
 
 In this final step, check whether the data store entry "Hello world" has been written to the data store.
 
@@ -127,12 +126,11 @@ In this final step, check whether the data store entry "Hello world" has been wr
 
 6. Select **Download** to download a file containing the predefined message body.
 
-    !![Download Integration Flow](btw-design-guidelines_download.png)
+    <!-- border -->![Download Integration Flow](btw-design-guidelines_download.png)
 
 7. Open the file with the "Hello World" message.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---
 

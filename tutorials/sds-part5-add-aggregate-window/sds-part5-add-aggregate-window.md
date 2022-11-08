@@ -1,6 +1,5 @@
 ---
-title: Using an Aggregate Window in SAP HANA Smart Data Streaming
-description: Part 5 of 9. Add an aggregate window to hold data for pattern observation and trend monitoring.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
@@ -8,12 +7,14 @@ author_name: Bill Jiang
 author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
+# Using an Aggregate Window in SAP HANA Smart Data Streaming
+<!-- description --> Part 5 of 9. Add an aggregate window to hold data for pattern observation and trend monitoring.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://developers.sap.com/tutorials/sds-part4-hana-table-event-streaming.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to add aggregate window to hold multiple data entry and observe patterns
  - How to use time-based sliding event window to compute metrics and monitor trends
 
@@ -21,7 +22,8 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add an Aggregate Window)]    
+### Add an Aggregate Window
+    
 
 1. Click on **Aggregate** in the **Palette** and drop onto canvas.
 
@@ -47,11 +49,10 @@ time: 20
 
     ![select columns to copy](6-selectcolumnstocopy.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure the Aggregate Window)]
+### Configure the Aggregate Window
+
 
 1. Now we will create a window on the input to this aggregation. Expand the **Inputs** tab and right click on **`DEVICE_EVENTS`**.
 
@@ -95,11 +96,9 @@ time: 20
 
     ![name group filter](16-namegroupfilter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Edit Column Expressions
 
-[ACCORDION-BEGIN [Step 3: ](Edit Column Expressions)]
 
 1. Expand the **Column Expressions** tab to edit expressions.
 
@@ -125,6 +124,3 @@ time: 20
 
     ![average event value](22-avgeventvalue.png)
 
-[DONE]
-
-[ACCORDION-END]

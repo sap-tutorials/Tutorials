@@ -1,31 +1,33 @@
 ---
+parser: v2
 author_name: Céline Audin
 author_profile: https://github.com/celineaudinsap
-title: Acquire a Template Project from the Store
-description: Acquire Orders Management package from the SAP Process Automation store and reuse the package in the Application Development.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
+# Acquire a Template Project from the Store
+<!-- description --> Acquire Orders Management package from the SAP Process Automation store and reuse the package in the Application Development.
+
 ## Prerequisites
  - [Subscribe to SAP Process Automation Using Booster in SAP BTP Free Tier](spa-subscribe-booster)
 
-## Details
-### You will learn
+## You will learn
   - How to explore content in the SAP Process Automation Bot Store.
   - How to acquire the **Orders Management using UI5 application** package from SAP Process Automation's Store.
   - How to reuse a package from the Store in the Application Development.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Explore the store)]
+### Explore the store
+
 
 The Store offers predefined content for your automation. Packages are categorized by catalog which let you choose between Business Content, Learning Content and SAP Intelligent RPA SDK.
 
 1. Navigate to the store in your SPA Tenant.
 
-!![Navigate Store](01-NavigateStore.png)
+<!-- border -->![Navigate Store](01-NavigateStore.png)
 
 **Learning Content** offers learning packages to get started with the Application Development tool. These packages allow you to learn best practices by reusing the most common flows to design your first projects.
 
@@ -35,65 +37,64 @@ The Store offers predefined content for your automation. Packages are categorize
 
 Select one or more filters on the left to filter the available Store projects by Project Type (for example Live Process and Process Automation), Format Type (for example, Ready to use and Template), Catalog (for example, Business Content), Product (for example, SAP S/4HANA Cloud), Publisher, Line of Business, and Industry.
 
-!![Store View](02-StoreView.png)
+<!-- border -->![Store View](02-StoreView.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Acquire the Orders Management using SAPUI5 application package)]
+
+### Acquire the Orders Management using SAPUI5 application package
+
 
 1. You will acquire the package titled **Orders Management using UI5 application**. Set the following parameters: under **Catalog**, check **Learning Content**.
 
-    !![Learning Catalog](03-Learning.png)
+    <!-- border -->![Learning Catalog](03-Learning.png)
 
 2. In the search bar, type Orders Management, hit enter and choose **More Information**.
 
-    !![Orders Management](04-OrdersManagement.png)
+    <!-- border -->![Orders Management](04-OrdersManagement.png)
 
     This sample package presents a way to deal with Excel and a web application using the SAPUI5 framework. Each sample package comes with a description, documents about the sample, and artifacts.
 
-    !![Explore](05-Explore.png)
+    <!-- border -->![Explore](05-Explore.png)
 
 3. To add the package, you have two options:
 
     - From the **More Information** section, choose **Add** and select **Create from Template**.
 
-    !![Add Create Template](06-AddCreateTemplate.png)
+    <!-- border -->![Add Create Template](06-AddCreateTemplate.png)
 
     - From the project list, choose **Add** and select **Create from Template**.
 
-    !![Add Create Template](07-AddCreateTemplate2.png)
+    <!-- border -->![Add Create Template](07-AddCreateTemplate2.png)
 
     You will now create a Business Process Project from this template.
 
 5. Name the project **Orders Management Dev Tutorial** and choose **Create**.
 
-    !![Create Project](08-CreateProject.png)
+    <!-- border -->![Create Project](08-CreateProject.png)
 
 6. To see the newly created project, navigate back to **Lobby** from the top menu.
 
-    !![Created Project](09-CreatedProject.png)
+    <!-- border -->![Created Project](09-CreatedProject.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3:](Add an automation to the process)]
+### Add an automation to the process
+
 
 1. Choose the project. You will see all the artifacts that are part of the project. The project is **Editable** which means you can modify it.
 
 2. The project can now be edited in the **Application Development**.
 
-    !![Application Development](10-ApplicationDevelopment.png)
+    <!-- border -->![Application Development](10-ApplicationDevelopment.png)
 
     For instance, you can create a process artifact and add an automation to the Business Process.
 
 3. Select the +, choose **Create** and then **Process**.
 
-    !![Create Process](13-CreateProcess.png)
+    <!-- border -->![Create Process](13-CreateProcess.png)
 
 4. In the **Create Process** window, fill in the fields as shown in the screenshot:
 
-    !![Create Process Window](14-CreateProcessWindow.png)
+    <!-- border -->![Create Process Window](14-CreateProcessWindow.png)
 
     The **Application Development** with the just created process opens.
 
@@ -101,23 +102,23 @@ Select one or more filters on the left to filter the available Store projects by
 
     You have a list of all the automations available in the bot you just acquired. For this tutorial, you will use the **Get Processors Details** automation.
 
-    !![Add Automation](15-AddAutomation.png)
+    <!-- border -->![Add Automation](15-AddAutomation.png)
 
     Now your automation is successfully added to the process. You can further continue modifying your process to get rid of the errors by adding a trigger to the start event and filling in the missing mandatory inputs.
 
 6. Choose **Select a Start Trigger**, in **Trigger Settings**, select **+ New Form**.
 
-    !![Automation Added](16-AutomationAdded.png)
+    <!-- border -->![Automation Added](16-AutomationAdded.png)
 
 7. In the **Create Form** pop-up, choose **Order Processing Form** for **Name**.
 
 8. Choose **Create**.
 
-    !![Create Form](17-createForm.png)
+    <!-- border -->![Create Form](17-createForm.png)
 
 9. Double click on **Order Processing Form is submitted**.
 
-    !![Order Processing](18-orderProcessing.png)
+    <!-- border -->![Order Processing](18-orderProcessing.png)
 
     You will be navigated to the Order Processing Form.
 
@@ -125,7 +126,7 @@ Select one or more filters on the left to filter the available Store projects by
 
 11. Choose **Save**.
 
-    !![Order Processing Form](19-orderProcessing2.png)
+    <!-- border -->![Order Processing Form](19-orderProcessing2.png)
 
     You will now map the Inputs of the **Get Processors Details** automation.
 
@@ -133,13 +134,13 @@ Select one or more filters on the left to filter the available Store projects by
 
 12. Select the **Get Processors Details** automation. Choose `orderReference` input and select **Order Number > Order Processing Form**.
 
-    !![Input Mapping](20-InputMapping.png)
+    <!-- border -->![Input Mapping](20-InputMapping.png)
 
 13. Choose **Save**.
 
 14. You may now add forms, approvals, decisions, conditions, etc... to design your process based on your needs.
 
-    !![Process Final](21-process.png)
+    <!-- border -->![Process Final](21-process.png)
 
     Lets test the automation.
 
@@ -149,22 +150,21 @@ Select one or more filters on the left to filter the available Store projects by
 
 17. Select the test icon.
 
-    !![Test Automation](22-testAutomation.png)
+    <!-- border -->![Test Automation](22-testAutomation.png)
 
 18. In the **Test Automation** window, enter **order 7991** as `orderReference`. No need to fill the Environment Variables.
 
-    !![Test Automation2](23-testAuto2.png)
+    <!-- border -->![Test Automation2](23-testAuto2.png)
 
 19. This is the final result. To end the testing of the automation, you will have to select **OK**.
 
-    !![Test Automation3](24-testAuto3.png)
+    <!-- border -->![Test Automation3](24-testAuto3.png)
 
     Once you are done designing your process, you may release and deploy your project. Please make sure to run the project in attended mode as the automation **Get Processors Details** has a dialog that needs to be closed by the user and may put on hold the rest of the automation if the **OK** button is not clicked.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4:](Execute the automation in attended mode)]
+### Execute the automation in attended mode
+
 
 Since the automation requires a human intervention, with a popup dialog, the automation has to be executed in **attended mode**. This means that the user must be present for the automation to run.
 
@@ -182,23 +182,23 @@ In this tutorial, you will manually launch your automation from the agent by add
 
 3. Select the **Get Processors Details** automation.
 
-    !![Overview Automation](25-automation.png)
+    <!-- border -->![Overview Automation](25-automation.png)
 
 4. In the **Automation Details** panel, select **Info** and uncheck **Can only be started from another automation**.
 
 5. Choose **Save**.
 
-    !![Uncheck](26-uncheck.png)
+    <!-- border -->![Uncheck](26-uncheck.png)
 
 6. Now go back to the **Application Development** overview page, and select **p** which is the already created **Project Launcher**.
 
-    !![Project Launcher](27-project-launcher.png)
+    <!-- border -->![Project Launcher](27-project-launcher.png)
 
     The project launcher **p** editor opens in the main panel of the Application Development.
 
 7. Select the three automations that are in the **Launch manually from the agent** section and choose the delete icon.
 
-    !![Delete automations](28-delete-automations.png)
+    <!-- border -->![Delete automations](28-delete-automations.png)
 
     On the **Project Launcher details** information right-hand side panel, you can see the automations available in your project.
 
@@ -208,80 +208,77 @@ In this tutorial, you will manually launch your automation from the agent by add
 
 8. Choose **Save**.
 
-    !![Drag automation](29-drag-automation.png)
+    <!-- border -->![Drag automation](29-drag-automation.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5:](Release and deploy the business process project)]
+### Release and deploy the business process project
+
 
 Now you may release and deploy it in attended mode. You need to select this trigger type since the user needs to click on **OK**.
 
 1. Choose **Release** and again **Release**.
 
-    !![Release](11-Release.png)
+    <!-- border -->![Release](11-Release.png)
 
 2. Now your project is released and you can deploy it. You can choose **Deploy**.
 
-    !![Release](12-Deploy.png)
+    <!-- border -->![Release](12-Deploy.png)
 
     >Since this automation has to be executed in attended mode, you need to create a Trigger.
 
 3. Select **Create a Trigger** and then **Next**.
 
-    !![Deploy Project](13-deploy-project.png)
+    <!-- border -->![Deploy Project](13-deploy-project.png)
 
 4. Select **Attended** as a trigger type and **Next**.
 
-    !![Trigger type](14-trigger-type.png)
+    <!-- border -->![Trigger type](14-trigger-type.png)
 
 5. Enter the configuration details and choose **Next**.
 
-    !![Configure trigger](15-configure-trigger.png)
+    <!-- border -->![Configure trigger](15-configure-trigger.png)
 
 6. You may add an attribute, choose **Confirm** and then **Deploy**.
 
-    !![Advanced Settings](16-advanced-settings.png)
+    <!-- border -->![Advanced Settings](16-advanced-settings.png)
 
     To Deploy will take a couple of seconds/minutes depending upon how big your project is and how many different skills it has. Any errors during the deployment will be shown in the Design Console.
 
 7. The project deployed successfully and is now ready to be executed.
 
-    !![Deployed Project](17-deployed-project.png)
+    <!-- border -->![Deployed Project](17-deployed-project.png)
 
     > You cannot edit released or deployed projects. To continue working on your project, you need to select the Editable option from the list of released versions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6:](Set the agent in attended mode)]
+### Set the agent in attended mode
+
 
 You need to create a matching agent attribute at this step. Please follow these steps to create an agent attribute in the tenant to add it to your agent and project: [Agent Management Settings to Execute the Process with an Automation](spa-run-agent-settings)
 
 1. Go to your System Tray and choose **Projects**.
 
-    !![Projects](18-systray-projects.png)
+    <!-- border -->![Projects](18-systray-projects.png)
 
 2. Set the agent in attended mode.
 
     Now your project is ready to be launched in attended mode.
 
-    !![Start Project](19-start-project.png)
+    <!-- border -->![Start Project](19-start-project.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7:](Run the business process)]
+### Run the business process
+
 
 1. Navigate back to the **Application Development** overview page and select the **Order Processing** process.
 
     >Make sure you select the deployed version of the project.
 
-    !![Order 7991](22-order-processing.png)
+    <!-- border -->![Order 7991](22-order-processing.png)
 
 2. Select the **Order Processing Form** and copy the link.
 
-    !![Order Processing Form](23-order-processing-form.png)
+    <!-- border -->![Order Processing Form](23-order-processing-form.png)
 
 3. Paste the link in your browser.
 
@@ -289,26 +286,24 @@ You need to create a matching agent attribute at this step. Please follow these 
 
 5. Choose **Submit**.
 
-    !![Link](24-link-submit.png)
+    <!-- border -->![Link](24-link-submit.png)
 
 6. The form has been successfully submitted.
 
-    !![Form submitted](25-form-submitted.png)
+    <!-- border -->![Form submitted](25-form-submitted.png)
 
 7. Go back to your Desktop Agent, choose your project and **Start**.
 
-    !![Start Project](19-start-project.png)
+    <!-- border -->![Start Project](19-start-project.png)
 
 8. Now choose **Get Processors Details**.
 
-    !![Get Processors Details](20-get-processors-details.png)
+    <!-- border -->![Get Processors Details](20-get-processors-details.png)
 
 9. In the dialog popup window, enter **order 7991** as Order Reference.
 
-    !![Order 7991](21-order.png)
+    <!-- border -->![Order 7991](21-order.png)
 
     The process has successfully ended.
 
-[DONE]
-[ACCORDION-END]
 ---

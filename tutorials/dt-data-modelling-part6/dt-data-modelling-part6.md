@@ -1,22 +1,24 @@
 ---
-title: Seeing Calculation View Results
-description: Generating select statements for results and visualization
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 time: 15
 ---
 
+# Seeing Calculation View Results
+<!-- description --> Generating select statements for results and visualization
+
 ## Prerequisites
  - **Tutorials**: "Adding Our Union Calculation View into the Converted Data Model" and "Migrate Records in Related Tables Using Stored Procedure"
 
-## Details
-### You will learn
+## You will learn
   - How to generate a `SQL` Select Statement for a Calculation View
   - How to Visualize Queries
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Seeing Results)]
+### Seeing Results
+
 We will now generate a `SQL` select statement for our `AV_ORDERS` calculation view. It will be editted to query all rows between 6 months and 18 months ago. Since `ORDERS_CS` contains all data from the current year and `ORDERS_DT` contains all data older than a year, the result set will span both the in-memory table instance and the extended table instance.
 
 We will then visualize the plan, and show again that data is being queried from both in-memory and extended storage.
@@ -57,11 +59,9 @@ The results should look like the following image:
 
 ![Where Results](where-results.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Visualizing Queries
 
-[ACCORDION-BEGIN [Step 2: ](Visualizing Queries)]
 We can also visualize the query, by going back to the `SQL` tab, right clicking, and selecting **Visualize Plan** > **Execute**.
 
 ![Visualize Plan](visualize-plan-execute.png)
@@ -78,6 +78,4 @@ Double click one of the results, and it will zoom into the selected operator. As
 
 ![Remote Row Scan](extended-storage.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

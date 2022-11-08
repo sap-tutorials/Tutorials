@@ -1,6 +1,5 @@
 ---
-title: Create Handlebars Helper Card
-description: Enhance the visual representation of a card by implementing a logic.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
@@ -9,24 +8,27 @@ author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
-## Details
-### You will learn
+# Create Handlebars Helper Card
+<!-- description --> Enhance the visual representation of a card by implementing a logic.
+
+## You will learn
 - How to implement a logic in a card
 
+## Intro
 Handlebars helper help developer to use JavaScript logic in rendering of the card.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get familiar with real world use case)]
+### Get familiar with real world use case
+
 
 A Company wants managers to have a set of `KPIs` available on a mobile device. In order to simplify the card, sales order status is visualized with the traffic lights ( **Accepted** | Green, **Rejected** | Red and **New** | Yellow) and also if the gross amount is larger than 500 Euros then it is highlighted with Green yellow color.
 
 ![SAP Mobile Services - Opera](img_0.1.gif)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new card)]
+### Create a new card
+
 
 Make sure you have logged into the **SAP Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
@@ -49,10 +51,9 @@ Provide the required information:
 
 ![SAP Mobile Services - Opera](img_007.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Insert JSON keys into handlebars)]
+### Insert JSON keys into handlebars
+
 
 Click **Editor** to view the **HTML** which builds this card and to add handlebars classes.
 
@@ -103,10 +104,10 @@ return new Handlebars.SafeString( "<img src='red.png' style=' width: 24px; heigh
 
 >This Handlebars helper function will evaluate the `passedString` which is the `LifeCycleStatusName` JSON value. This function will insert an image depending on the status and return the related `HTML` snippet. If the Status is **C** (closed) than the function will not insert any image.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Upload assets to the card)]
+
+### Upload assets to the card
+
 
 Open below links and save images on local machine. These images will be used as assets for this tutorial.
 
@@ -134,10 +135,9 @@ Make sure you have all three images uploaded.
 
 ![SAP Mobile Services - Opera](img_024.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement logic for gross amount)]
+### Implement logic for gross amount
+
 
 Navigate to **Editor** tab and click **Handle...**.
 
@@ -180,10 +180,9 @@ As a result, the value above 500 is coloured green.
 
 Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Subscribe to the card)]
+### Subscribe to the card
+
 
 In the SAP Mobile Cards application, click **More** | **Subscriptions**.
 
@@ -207,5 +206,3 @@ Congratulations, you have successfully implemented handlebars helper in your car
 
 >These helpers are only called when the card is updating, this means, if there is no change in data the handlebar functions are not going to be called.
 
-[DONE]
-[ACCORDION-END]

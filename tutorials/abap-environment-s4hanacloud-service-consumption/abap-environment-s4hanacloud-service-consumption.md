@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Service Consumption Model for Business Partner and Sales Order Item Cube
-description: Create Service Consumption Model for Business Partner and Sales Order Item Cube.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 45
@@ -9,18 +8,21 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Service Consumption Model for Business Partner and Sales Order Item Cube
+<!-- description --> Create Service Consumption Model for Business Partner and Sales Order Item Cube.
+
 ## Prerequisites  
  - Create a developer user in a SAP BTP, ABAP Environment system.
  - Download the latest Eclipse and install ADT <https://tools.hana.ondemand.com/#abap>.
 
-## Details
-### You will learn  
+## You will learn  
   - How to create destination
   - How to create service consumption model for business partner and sales order item cube
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Copying the inbound service URL)]
+### Copying the inbound service URL
+
   1. Log in to SAP S/4HANA Cloud system as administrator and select **Communication Arrangement** in the **Communication Management** section.
 
       ![Copying the inbound service URL](administrator.png)
@@ -33,11 +35,10 @@ author_profile: https://github.com/mervey45
 
       ![Copying the inbound service URL](arrangement4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create destination with basic authentication)]
+### Create destination with basic authentication
+
   1. Log in to the [SAP BTP cockpit](https://account.hana.ondemand.com/) and navigate to your **subaccount**. Select **Destinations** under **Connectivity** and create a new destination.
 
       ![Create destination with basic authentication](cockpit.png)
@@ -60,10 +61,9 @@ author_profile: https://github.com/mervey45
 
       ![Create destination with basic authentication](connection.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Custom CDS View in SAP S/4HANA Cloud)]
+### Create Custom CDS View in SAP S/4HANA Cloud
+
   1. Log in to your SAP S/4HANA Cloud system, navigate to Extensibility and open the Custom CDS Views tile.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds.png)
@@ -136,10 +136,9 @@ author_profile: https://github.com/mervey45
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds15.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create custom communication scenarios)]
+### Create custom communication scenarios
+
   1. Navigate to **Extensibility** and select **Custom Communication Scenarios**.
 
       ![Create custom communication scenarios](extensibility.png)
@@ -169,10 +168,9 @@ author_profile: https://github.com/mervey45
       ![Create custom communication scenarios](publishx.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Download metadata for business partner)]
+### Download metadata for business partner
+
   1. Go to the SAP API Business Hub and select the OData service for business partner: (https://api.sap.com/api/API_BUSINESS_PARTNER/overview).
 
      Copy the production URL.
@@ -198,10 +196,9 @@ author_profile: https://github.com/mervey45
 
       ![Download metadata for business partner](edmx2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service consumption model for business partner)]
+### Create service consumption model for business partner
+
   1. Switch to Eclipse an create a package:
      - Name: `Z_Package_XXX`
      - Description: My Package
@@ -250,10 +247,9 @@ author_profile: https://github.com/mervey45
 
       ![Create service consumption model for business partner](consumption7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create service consumption model for sales order item)]
+### Create service consumption model for sales order item
+
   1. Open your SAP S/4HANA Cloud system and navigate to **Communication Management** and select **Communication Arrangements**.
 
       ![Create service consumption model for sales order item](com.png)
@@ -309,11 +305,9 @@ author_profile: https://github.com/mervey45
 
       ![Create service consumption model for sales order item](consumption21.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

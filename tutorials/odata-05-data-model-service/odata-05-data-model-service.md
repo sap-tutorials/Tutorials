@@ -1,23 +1,25 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
-title: Define a Simple Data Model and OData Service with CDS
-description: Use core data services (CDS) in the context of the SAP Cloud Application Programming Model (CAP) to quickly set up your own simple OData service.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [products>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
+# Define a Simple Data Model and OData Service with CDS
+<!-- description --> Use core data services (CDS) in the context of the SAP Cloud Application Programming Model (CAP) to quickly set up your own simple OData service.
+
 ## Prerequisites
  - **Tutorials:** [Create a Dev Space for Business Applications](appstudio-devspace-create)
 
-## Details
-### You will learn
+## You will learn
 - How to use CDS to model entities and services
 - How to seed your OData service with test data
 - What CAP can do for you in terms of generating and servicing an OData service
 
+## Intro
 [CDS](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html) powers a significant part of [CAP](https://cap.cloud.sap). CDS has many features, and in this tutorial you'll encounter a couple of fundamental ones - the ability to declaratively define your data model, concentrating on the domain at hand, and to then be able to expose parts (or all) of that model in a service. You'll also learn how much CAP can do for you with respect to creating full CRUD+Q\* OData services almost from nothing. It's hard to remember how difficult it was to do that before the advent of CAP.
 
 \*CRUD+Q is a common shorthand for referring to a fully formed OData service that sports Create, Read, Update, Delete, and Query operations.
@@ -29,7 +31,8 @@ The model and service you'll create is deliberately a very simple one, based on 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Remind yourself of the Northwind product data)]
+### Remind yourself of the Northwind product data
+
 
 In the tutorial [Learn about OData Fundamentals](odata-01-intro-origins), you familiarized yourself with some of the structure and content of the [Northwind OData service](https://services.odata.org/V4/Northwind/Northwind.svc/). In this tutorial, you'll create your own simple OData service based on information in the Products entity set, so now's a good time look at that product data.
 
@@ -105,11 +108,10 @@ To find the right balance between realism and efficiency (no-one wants to type i
 
 Further entities will be cut down versions of entities in the Northwind OData service too; this suggests that a cut down name for your OData service is appropriate too, so we'll go with `Northbreeze`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Start a new CAP project)]
+### Start a new CAP project
+
 
 To start creating your `Northbreeze` OData service, start by creating a new CAP project in your App Studio dev space using the "Start from Template" wizard available on the Welcome page (if you don't have the Welcome page open, you can recall it with menu path **Help** **&rarr;** **Welcome**).
 
@@ -151,11 +153,10 @@ While ultimately you'll have created an OData service, which is "flat", providin
 
 The OData service you'll be creating is simple and has a one-to-one mapping between schema and service; however, CAP's focus on and strong support for [domain modeling](https://cap.cloud.sap/docs/about/#domain-modeling) allows for flexible relationships to be constructed between these two layers, to fit your service consumption needs precisely.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define the schema layer)]
+### Define the schema layer
+
 
 The `db/` directory is where entities are defined, and relationships made. Think of it as the overall schema, independent of any intended consumption.
 
@@ -219,10 +220,9 @@ You have defined an entity, in a namespace, but not exposed it yet in a service 
 
 So, creating a service definition is next. You can leave the `cds watch` process running, and it will notice and react to anything you subsequently add or change.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Define the service layer)]
+### Define the service layer
+
 
 In this step, you'll create the simplest service definition exposing the entire `Products` entity (all three properties) in a service called `Main`.
 
@@ -286,13 +286,11 @@ Note also that:
 
 - In the root element (`Edmx`) there's a `Version` attribute that declares that the OData version is 4.0.
 
-[VALIDATE_4]
 
 Don't forget to leave the `cds watch` running, ready for the next step!
 
-[ACCORDION-END]
+### Add data
 
-[ACCORDION-BEGIN [Step 5: ](Add data)]
 
 You have got a fully functioning OData service, but it's not as exciting as it could be - there's no data in it yet! If you had selected the `Products` hyperlink on the welcome page in the previous step, you'd have seen something like this:
 
@@ -353,10 +351,9 @@ Jump back to the service (via the welcome page in the previous step) and reselec
 
 It's now time to finish this tutorial with a few OData operations.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Try some OData operations)]
+### Try some OData operations
+
 
 There's plenty to explore now you have some data in your simple OData service. Try your own queries, or experiment with some of these. Each time, manipulate the path info and query string as appropriate, based on the URL in your browser. Remember that for the purposes of this tutorial, the URL can be thought of as being made up of three parts. If we take an example OData URL from App Studio, it might look something like this:
 
@@ -414,5 +411,3 @@ At this point, you have exercised your OData service and tried out all five ODat
 
 Well done!
 
-[DONE]
-[ACCORDION-END]

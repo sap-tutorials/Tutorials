@@ -1,38 +1,36 @@
 ---
-title: Application logging and tracing
-description: Logging and tracing using the SAP BTP SDK for iOS.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-btp-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 ---
-## Prerequisites  
+# Application logging and tracing
+<!-- description --> Logging and tracing using the SAP BTP SDK for iOS.
 
+## Prerequisites  
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.0
 - **Tutorials:** [Push Notifications](fiori-ios-hcpms-push-notifications)
 
 ## Next Steps
-
 - [Logging and tracing in SAP Mobile Services for development and operations](fiori-ios-hcpms-logging)
 
-## Details
 
-### You will learn  
-
+## You will learn  
 In this tutorial, you will learn to use the logging functionality that is part of the SAP BTP SDK for iOS. You will also learn how to set logging settings in SAP Mobile Services for development and operations which will be reflected in your application.
-
-### Time to Complete
-
+## Time to Complete
 **15 Min**.
 
 ---
 
+## Intro
 The SAP BTP SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Mobile Services for development and operations, which can be mirrored in your application using the `SAPcpmsSettings` class.
 
 The actual logging is provided by the `Logger` class, which is part of the `SAPCommon` SDK module.
 
-[ACCORDION-BEGIN [Step 1: ](Referencing the Logger class)]
+### Referencing the Logger class
+
 
 To make a reference to the `Logger` class in the Swift class files you want to provide with logging capabilities, you call the `Logger`'s `shared` method:
 
@@ -55,11 +53,9 @@ class MyViewController: UIViewController {
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Set logging levels
 
-[ACCORDION-BEGIN [Step 2: ](Set logging levels)]
 
 You can define different logging levels, based on how and what you want to log.
 
@@ -90,11 +86,10 @@ self.someOperation {
 }
 ```
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Mobile Services for development and operations)]
+### Retrieve log settings from SAP Mobile Services for development and operations
+
 
 Instead of hard-coding logging levels and settings, you can also retrieve these from SAP Mobile Services for development and operations. Once you have defined logging settings for your application in SAP Mobile Services for development and operations, you can retrieve these settings (among other settings you may have specified) via:
 
@@ -106,6 +101,3 @@ let settings = SAPcpmsSettings(sapURLSession: urlSession, settingsParameters: se
 settings.load(for: .application)
 ```
 
-[DONE]
-
-[ACCORDION-END]

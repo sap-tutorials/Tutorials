@@ -1,6 +1,5 @@
 ---
-title: Installing the Optional Data Warehousing Foundation Package for SAP HANA, express edition (Native Linux Machine)
-description: Download the `Data Warehousing Foundation` package in the Download Manager.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,18 +7,21 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Installing the Optional Data Warehousing Foundation Package for SAP HANA, express edition (Native Linux Machine)
+<!-- description --> Download the `Data Warehousing Foundation` package in the Download Manager.
+
 <!-- loiocfbb826828fd4342a9ec06f90a5dd11a -->
 
 ## Prerequisites
  - **Tutorials:**  You have completed [Test the Installation](hxe-ua-test-binary)
 
-## Details
-### You will learn
+## You will learn
 You will learn how to download and install the `dwf.tgz` Data Warehousing Foundation package.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download dwf.tgz)]
+### Download dwf.tgz
+
 
 Download `dwf.tgz` using the built-in Download Manager. Enter the following command:
 
@@ -37,11 +39,9 @@ Download `dwf.tgz` using the built-in Download Manager. Enter the following comm
     ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### Navigate to the Downloads directory
 
-[ACCORDION-BEGIN [Step 2: ](Navigate to the Downloads directory)]
 
 Enter:
 
@@ -49,11 +49,9 @@ Enter:
 cd /usr/sap/HXE/home/Downloads
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### View the contents of the Downloads folder to confirm dwf.tgz exists
 
-[ACCORDION-BEGIN [Step 3: ](View the contents of the Downloads folder to confirm dwf.tgz exists)]
 
 Enter:
 
@@ -61,11 +59,9 @@ Enter:
 ls
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Extract the file
 
-[ACCORDION-BEGIN [Step 4: ](Extract the file)]
 
 Enter:
 
@@ -73,11 +69,9 @@ Enter:
 tar -xvzf dwf.tgz
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Navigate to the HANA_EXPRESS_20 directory
 
-[ACCORDION-BEGIN [Step 5: ](Navigate to the HANA_EXPRESS_20 directory)]
 
 Enter:
 
@@ -85,11 +79,9 @@ Enter:
 cd HANA_EXPRESS_20
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Run the installation script
 
-[ACCORDION-BEGIN [Step 6: ](Run the installation script)]
 
 As the <sid>`adm` user, run:
 
@@ -97,6 +89,3 @@ As the <sid>`adm` user, run:
 HANA_EXPRESS_20/install_dwf.sh
 ```
 
-[DONE]
-
-[ACCORDION-END]

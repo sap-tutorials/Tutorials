@@ -1,23 +1,25 @@
 ---
-title: Connect SAP Analytics Cloud to SAP Data Warehouse Cloud
-description: With SAP Data Warehouse Cloud and SAP Analytics Cloud together, you can handle complex analytics scenarios based on hybrid system architectures. Learn how to connect SAP Analytics Cloud to SAP Data Warehouse Cloud in this tutorial.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>intermediate, products>sap-analytics-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Connect SAP Analytics Cloud to SAP Data Warehouse Cloud
+<!-- description --> With SAP Data Warehouse Cloud and SAP Analytics Cloud together, you can handle complex analytics scenarios based on hybrid system architectures. Learn how to connect SAP Analytics Cloud to SAP Data Warehouse Cloud in this tutorial.
+
 ## Prerequisites
  - You have [signed up for a free SAP Data Warehouse Cloud Trial](data-warehouse-cloud-1-begin-trial) or are an existing SAP Data Warehouse Cloud customer.
  - You have access to an SAP Analytics Cloud tenant.
 
-## Details
-### You will learn
+## You will learn
   - How to connect SAP Analytics Cloud to SAP Data Warehouse Cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Ensure entities in SAP Data Warehouse Cloud are consumable)]
+### Ensure entities in SAP Data Warehouse Cloud are consumable
+
 
 In order to ensure the data entities and models created in your SAP Data Warehouse Cloud tenant are consumable by SAP Analytics Cloud, it is important to expose them for consumption.
 
@@ -29,10 +31,9 @@ If the entity was created in the business builder, the toggle shows up as a **Al
 
   ![Consumable](T05 6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Link SAP Data Warehouse Cloud and SAP Analytics Cloud tenants)]
+### Link SAP Data Warehouse Cloud and SAP Analytics Cloud tenants
+
 
 >Until now, SAP Data Warehouse Cloud delivered an embedded version of SAP Analytics Cloud with a five user license, but most of our customers either already had an existing SAP Analytics Cloud tenant or needed far more than the embedded 5 user license. Therefore, starting February 2021, customers that purchase SAP Data Warehouse Cloud will then become two separate tenants, one for SAP Data Warehouse Cloud and one for SAP Analytics Cloud.
 
@@ -57,13 +58,11 @@ When you link your tenants, you'll enable the product switch in the top right of
 > Learn in the next tutorial [how to create a database user in SAP Data Warehouse Cloud.](data-warehouse-cloud-intro8-create-databaseuser)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---
