@@ -61,7 +61,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
     |  Field     | Value
     |  :------------- | :-------------
-    |  Name           | `<your unique identifier>_ ES5`
+    |  Name           | `ES5` In workshops, use: `<your unique identifer>ES5`
     |  Type          | `HTTP`
     |  Description    | `SAP Gateway ES5`
     |  URL           | `https://sapes5.sapdevcenter.com`

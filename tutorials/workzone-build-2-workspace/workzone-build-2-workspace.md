@@ -24,9 +24,6 @@ author_profile: https://github.com/LindsayBert
 ## Intro
 In this tutorial, you're going to create a workspace where employees who joined the company hackathon challenge, can interact with other members of the workspace, ask questions, and find out all that they need to know.
 
->Note that SAP Work Zone is not available in a trial account.
-
----
 
 
 ### Download images for your workspace
@@ -59,7 +56,7 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
-3. Enter this name for your workspace: `Employee Innovation Hackathon`. If you're taking part in a workshop, please add your unique identifier to the workspace name like this: `<your unique identifier>_Employee Innovation Hackathon`.
+3. Enter this name for your workspace: `Employee Innovation Hackathon`. In workshops, use: `<your unique identifier>_Employee Innovation Hackathon`.
 
     >**Tip:** Always use a name that would help users distinguish your workspace from others.
 
@@ -135,7 +132,7 @@ The **Overview** page is the home page of a workspace. You can add all types of 
 
 4. Close the **Page Designer Tips** page for now.
 
-5. Enter a title for the **Overview** page: `About the Hackathon`. Note that the name will only be visible on the workspace once you publish the workspace.
+5. Enter a title for the **Overview** page: `About the Hackathon`.
 
     <!-- border -->![Title of overview page](9-name-overview-page.png)
 
@@ -360,7 +357,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
 
-1. Click the **+** to add a page tab.
+1. Click the **+** next to the **Untitled** overview page. The name you gave the overview page only displays once you publish the workspace.
 
     <!-- border -->![Add new page tab](28-add-new-page.png)
 
@@ -368,7 +365,7 @@ Apart from the **Forum** widget, you're going to add a dedicated **Forum** page 
 
     Now ask a question in the forum.
 
-3. Go back to your workspace overview page by clicking the Overview page (it's displayed as **Untitled** until you publish the workspace).
+3. Go back to your workspace overview page by clicking **Untitled** (temporary name of the overview page) next to the **Forum** page.
 
     <!-- border -->![Go back to overview page](29-go-to-overview-page.png)
 
