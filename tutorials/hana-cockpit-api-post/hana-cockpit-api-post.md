@@ -1,22 +1,24 @@
 ---
-title: Call SAP HANA Cockpit POST APIs
-description: Introduce all the available SAP HANA cockpit POST APIs and the method to use them.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-api-management, products>sap-hana ]
 time: 25
 ---
 
+# Call SAP HANA Cockpit POST APIs
+<!-- description --> Introduce all the available SAP HANA cockpit POST APIs and the method to use them.
+
 ## Prerequisites  
  - Install the Python programming language on the computer that will call the  endpoints
 
-## Details
-### You will learn  
+## You will learn  
   - What are the cockpit POST APIs that you can use
   - How to call a cockpit POST APIs
 
 ---
 
+## Intro
 SAP HANA cockpit provides modifying (POST) REST API endpoints. Unlike the GET endpoints, the POST endpoints create, delete, or change objects in the cockpit.
 
 There are fourteen cockpit POST API endpoints:
@@ -42,7 +44,8 @@ There are fourteen cockpit POST API endpoints:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Call the SystemRegister endpoint)]
+### Call the SystemRegister endpoint
+
 This endpoint registers an SAP HANA resource in the cockpit. You have two options to register a cockpit resource: either by using its instance number or its port number.
 
 **Option 1 - via instance number:**
@@ -132,11 +135,10 @@ Run the entire program (make sure to delete or comment out the calling statement
 }
 ```
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Call the ResourceUnregister endpoint)]
+### Call the ResourceUnregister endpoint
+
 This endpoint `unregisters` an SAP HANA resource. Copy the following code to your Python file.
 
 ```Python
@@ -162,11 +164,10 @@ Run the entire program (make sure to delete or comment out the calling statement
 SUCCESS
 ```
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Call the CockpitUserCreate endpoint)]
+### Call the CockpitUserCreate endpoint
+
 This endpoint creates a new cockpit user. To use this API, copy the following code to your Python file.
 
 ```Python
@@ -208,11 +209,10 @@ Run the entire program (make sure to delete or comment out the calling statement
 
 In the area below, copy your Python output, and then click **Validate**.
 
-[VALIDATE_3]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Call the CockpitUserDelete endpoint)]
+### Call the CockpitUserDelete endpoint
+
 This endpoint deletes an existing cockpit user. To use this API, copy the following code to your Python file.
 
 ```Python
@@ -237,11 +237,10 @@ Run the entire program (make sure to delete or comment out the calling statement
 {"result":true}
 ```
 
-[VALIDATE_4]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Appendix)]
+### Appendix
+
 Below is a **sample code** for all the Cockpit APIs (GET and POST ones). The code is written in Python. Feel free to copy and run it to examine how each API endpoint works.
 
 ```Python
@@ -828,8 +827,5 @@ main()
 print("Thank you for using this program. See you next time :)")
 ```
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

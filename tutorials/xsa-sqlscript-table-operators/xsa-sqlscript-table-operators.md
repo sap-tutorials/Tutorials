@@ -1,6 +1,5 @@
 ---
-title: Using Table Variable Operators
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,47 +7,48 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 10
 ---
 
+# Using Table Variable Operators
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Using Index Based Cell Access](xsa-sqlscript-usingindexbased)
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to update procedure to use Table Variable Operators to manipulate the immediate table variables
 
+## Intro
 In this tutorial, you will update the previous procedure to now use Table Variable Operators to manipulate the immediate table variables.  We can use table variable operators to perform DML like operations on table variables without having to invoke the SQL layer.  In this exercise, we will experiment with the INSERT, UPDATE, DELETE, and SEARCH operators.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Return to Previous Procedure)]
+### Return to Previous Procedure
+
 Return to the procedure called `build_products` in the procedure folder.
 
 ![procedure editor](1.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Remove Previous Code)]
+### Remove Previous Code
+
 Remove the code inside the body, between the BEGIN and END statements leaving only the two lines shown here.
 
 ![remove](2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enter Code for INSERT Operator)]
+### Enter Code for INSERT Operator
+
 Use the INSERT operator to copy all rows of `lt_products` into the output parameter called `ex_products`. Then use the INSERT operator to insert 3 new products into the output table.  Since you are specifying the actual index, it will insert your new rows at that index and push all existing rows down.
 
 ![insert](3.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Review Complete Code)]
+### Review Complete Code
+
 
 The complete code should look very similar to this.
 
@@ -75,19 +75,17 @@ END
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Save, Build, Run and Check Results)]
+### Save, Build, Run and Check Results
+
 
 Use what you have learned and Save your work, perform a Build on the module. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted.
 
 ![results](4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Enter Code for UPDATE Operator)]
+### Enter Code for UPDATE Operator
+
 
 Return to the procedure and further modify it.  Enter a DECLARE statement as shown. Also add a FOR loop to loop
 through the rows and update the price using the UDPATE operator
@@ -95,10 +93,9 @@ through the rows and update the price using the UDPATE operator
 ![update](5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Review Complete Code)]
+### Review Complete Code
+
 The complete code should look very similar to this.
 
 ```
@@ -128,28 +125,25 @@ BEGIN
 END
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Save, Build, Run and Check Results)]
+### Save, Build, Run and Check Results
+
 Use what you have learned and Save your work, perform a Build on the module. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted and now the prices have been increased.
 
 ![results](6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Enter Code for DELETE Operator)]
+### Enter Code for DELETE Operator
+
 Return to the procedure and further modify it.  Enter DECLARE statements as shown. Also add a FOR loop determine which lines to delete, and finally use the DELETE operator to delete the rows all at once.
 
 ![delete](7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Review Complete Code)]
+### Review Complete Code
+
 The complete code should look very similar to this.
 ```
 PROCEDURE "build_products" (
@@ -191,27 +185,24 @@ END
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Save, Build, Run and Check Results)]
+### Save, Build, Run and Check Results
+
 Use what you have learned and Save your work, perform a Build on the module. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed.
 
 ![results](8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Enter Code for SEARCH Operator)]
+### Enter Code for SEARCH Operator
+
 Return to the procedure and further modify it.  Enter code for a new output parameter. Also add the two lines of code for performing a SEARCH on the intermediate table variable.
 
 ![search](9.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Review Complete Code)]
+### Review Complete Code
+
 The complete code should look very similar to this.
 ```
 PROCEDURE "build_products" (
@@ -256,18 +247,15 @@ END
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 14: ](Save, Build, Run and Check Results)]
+### Save, Build, Run and Check Results
+
 Use what you have learned and Save your work, perform a Build on the module. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed in the first tab, and on the second results tab you should see the product id of the first row which category was equal to "PC".
 
 ![results](10.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

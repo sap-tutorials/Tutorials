@@ -1,6 +1,5 @@
 ---
-title: Adapt Your App to the Needs of a MacOS Application
-description: Embed your app flow in a Split View Controller for Mac Catalyst only, create a settings bundle to enable a preferences menu, and change the menu bar items to have a refresh menu ready to use.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,22 +8,23 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool
 time: 35
 ---
 
-## Prerequisites
+# Adapt Your App to the Needs of a MacOS Application
+<!-- description --> Embed your app flow in a Split View Controller for Mac Catalyst only, create a settings bundle to enable a preferences menu, and change the menu bar items to have a refresh menu ready to use.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
 - **SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to implement a Split View Controller to support a sidebar on MacOS
 - How to change the Menu Bar items
 - How to create a settings bundle to enable a preferences menu
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Implement a Split View)]
+### Implement a Split View
+
 
 In the last tutorial you made changes to your Xcode project settings to enable Mac Catalyst for your app project.
 This tutorial is about making some changes to the project to fit better on MacOS without changing the appearance on iPhone or iOS.
@@ -39,27 +39,27 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
 1. Open the `Main.storyboard` and select the **Navigation Controller**, open the **Attributes Inspector** to uncheck the **Is Initial View Controller**. This is necessary because the new main entry point is going to be the Split View Controller.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-1.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-1.png)
 
 2. Use the **Object Library** to search for **Split View Controller** and drag + drop it next to the navigation controller.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
 
 3. With that in place you can connect the Split View Controller with our current app flow. **Delete** the **View Controller Scene** of the Split View Controller in Storyboard first.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
 
     After deleting your storyboard should look like this now:
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-3-1.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-3-1.png)
 
 4. Drag the Navigation Controller of the app flow right next to the Split View Controller and create a storyboard segue between the **Split View Controller** and the **Navigation Controller**. As the segue type, select **secondary view controller** and safe.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-4.png)
 
 5. Make the Main Split View Controller the initial view controller for the app by selecting the View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
 
     Let's quickly go over what you did here. First you added a new Split View Controller which is a standard Apple UI control. Then you added our app flow to the Split View Controller through a **detail view controller** segue. This allows the Split View Controller to automatically manage your Split View lifecycle. You leave the Navigation Controller in as you want to maintain our regular app flow.
 
@@ -119,12 +119,11 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
     > In case you run into the issue "Apple Development Identity is Ambiguous. Multiple Certificates are found in your keychain for identity Apple Development", you can follow this blog post for resolution of the problem [Handling Ambiguous Apple Developer Identity](https://blogs.sap.com/2020/03/09/sdk-5.0-handling-ambiguous-apple-developer-identity/).
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement root view controller UI)]
+### Implement root view controller UI
+
 
 The Root View Controller represents the list you can see in the sidebar. This is a standard UI Table View Controller which allows you to have all the freedom you want to implement that.
 
@@ -132,11 +131,11 @@ You're going to display a list with three cells containing the navigation possib
 
 1. Create a new Table View Controller Cocoa Touch Class using the project navigator and make sure it inherits of `UITableViewController` and name it `SidebarTableViewController`.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-7a.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-7a.png)
 
 2. Open the `Main.storyboard` and set the `SidebarTableViewController` as **Custom Class** on the **`Root View Controller`**.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-7.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-7.png)
 
 3. Switch back to the `SidebarTableViewController.swift` file to implement the views logic.
 
@@ -221,12 +220,11 @@ You're going to display a list with three cells containing the navigation possib
 
 10. If you run the app now you should see the cell being displayed in the sidebar.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-8.png)
+    <!-- border -->![Split View Controller](fiori-ios-scpms-starter-mission-06-8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement root view controller logic)]
+### Implement root view controller logic
+
 
 In order to let the user have interactions with the list items you have to write some code.
 
@@ -277,15 +275,15 @@ In order to let the user have interactions with the list items you have to write
 
     Open the **`Main.storyboard`** and select the **Overview Table View Controller**. Open the **Identity Inspector** and set the **Identity** to `OverviewTableViewController`.
 
-    !![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
+    <!-- border -->![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
 
 4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
 
-    !![Menu Bar](fiori-ios-scpms-starter-mission-06-20a.png)
+    <!-- border -->![Menu Bar](fiori-ios-scpms-starter-mission-06-20a.png)
 
 5. Important is that you set an identity for the original **Navigation Controller**. In the `Main.storyboard`, select the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
 
-    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
+    <!-- border -->![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
@@ -298,12 +296,11 @@ In order to let the user have interactions with the list items you have to write
 
 7. Compile and run the app on **My Mac** and try your hard work.
 
-    !![Menu Bar](fiori-ios-scpms-starter-mission-06-14.png)
+    <!-- border -->![Menu Bar](fiori-ios-scpms-starter-mission-06-14.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change the menu bar)]
+### Change the menu bar
+
 
 You have our basic layout but now it would be interesting what else you could do to be more MacOS conform.
 As mentioned in the last tutorial Mac Catalyst gives you a Menu Bar for free, but how do you access the menu bar and make changes to it?
@@ -316,7 +313,7 @@ You can create an extension swift file containing an `AppDelegate` extension con
 
 1. Use the **Project Navigator** to create a **Swift** file and name it `AppDelegate+MenuBuilder`.
 
-    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-22.png)
+    <!-- border -->![Storyboard ID](fiori-ios-scpms-starter-mission-06-22.png)
 
 2. Open the `AppDelegate+MenuBuilder.swift` file and change the import statement from `Foundation` to `UIKit`:
 
@@ -362,14 +359,14 @@ You can create an extension swift file containing an `AppDelegate` extension con
 
 5. Run the app on **My Mac** scheme.
 
-    !![Menu Bar](fiori-ios-scpms-starter-mission-06-10.png)
+    <!-- border -->![Menu Bar](fiori-ios-scpms-starter-mission-06-10.png)
 
     Of course you can add all sorts of menu entries as long as they make sense being there. Usually you want to have more global tasks in there. If you're interested in more about the menu bar on `MacOS` visit the official documentation [Adding Menus and Shortcuts to the Menu Bar and User Interface](https://developer.apple.com/documentation/uikit/uicommand/adding_menus_and_shortcuts_to_the_menu_bar_and_user_interface).
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create settings bundle)]
+
+### Create settings bundle
+
 
 Every Mac user expects a preferences menu in the menu bar so you should provide, if available, settings via a settings bundle. The reason for this is that using a settings bundle will give you the preferences menu for free.
 
@@ -377,13 +374,13 @@ Here you're going to implement some settings with help of the settings bundle.
 
 1. Use the **Project Navigator** to open the context menu and click on **New File...**. In the search field of the upcoming dialog, search for **Settings**, select the **Settings Bundle** and click on **Next** and then **Create**.
 
-    !![Preferences](fiori-ios-scpms-starter-mission-06-11.png)
+    <!-- border -->![Preferences](fiori-ios-scpms-starter-mission-06-11.png)
 
     As a result you will get a brand new `settings.bundle` file in the project navigator.
 
 2. If you run the app now and open the app's preferences you should see the preferences screen displayed below.
 
-    !![Preferences](fiori-ios-scpms-starter-mission-06-12.png)
+    <!-- border -->![Preferences](fiori-ios-scpms-starter-mission-06-12.png)
 
 3. You can see that the `Root.plist` file contains all the settings for the displayed preferences. You can go and change the different preferences now.
 
@@ -391,16 +388,15 @@ Here you're going to implement some settings with help of the settings bundle.
 
     Leave **Item 1 (Text Field - Name)** as is and delete the remaining items.
 
-    !![Preferences](fiori-ios-scpms-starter-mission-06-16.png)
+    <!-- border -->![Preferences](fiori-ios-scpms-starter-mission-06-16.png)
 
 4. Run the app now and open the preferences you should see the title has changed and the other items are gone.
 
-    !![Preferences](fiori-ios-scpms-starter-mission-06-17.png)
+    <!-- border -->![Preferences](fiori-ios-scpms-starter-mission-06-17.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Change app title)]
+### Change app title
+
 
 Maybe you have noticed that the app's title is still `TutorialApp`, let's change this now.
 
@@ -408,13 +404,11 @@ Maybe you have noticed that the app's title is still `TutorialApp`, let's change
 
 2. Change the **Display Name** in the **Identity** section to `Sales Assistant`.
 
-    !![App Title](fiori-ios-scpms-starter-mission-06-18.png)
+    <!-- border -->![App Title](fiori-ios-scpms-starter-mission-06-18.png)
 
 3. Of course you might want to change the bundle identifier as well to match the display name or create the whole project with the correct name in the beginning. As you're extending the app created in the prerequisites, you just change the display name here.
 
-    !![App Title](fiori-ios-scpms-starter-mission-06-19.png)
+    <!-- border -->![App Title](fiori-ios-scpms-starter-mission-06-19.png)
 
     This is our finished app now. From here go ahead and look through different tutorials to maybe enhance this app more or go ahead and implement a detail screen for the products using the Human Interface Guideline of SAP Fiori for iOS.
 
-[DONE]
-[ACCORDION-END]

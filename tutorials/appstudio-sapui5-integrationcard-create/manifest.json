@@ -35,13 +35,13 @@
                                 "maxItems": {
                                     "value": 4
                               		  },
-                                "selectedSupplierID": { 
-                                    "value": 100000056, 
+                                "selectedSupplierID": {
+                                    "value": 100000056,
                                     "type": "integer",
                                     "label": "The default selected supplier"
-                                }       
+                                }
            		 	        },
-                            "filters": { 
+                            "filters": {
                                 "supplier": {
                                     "value": "{{parameters.selectedSupplierID}}",
                                     "type": "string",
@@ -73,7 +73,7 @@
                                 },
                                 "path": "/d/results"
                 },
-    
+
         "designtime": "dt/configuration",
 		"header": {
 			"title": "Products provided by {filters>/supplier/selectedItem/title} vendor ",

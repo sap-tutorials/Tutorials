@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Set Up Your CAP Application for Eventing
-description: This tutorial shows you how to configure your CAP service to listen for upcoming events and deploy it to the SAP BTP cockpit.
 keywords: cap
 auto_validation: true
 time: 40
@@ -11,36 +10,33 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 
+# Set Up Your CAP Application for Eventing
+<!-- description --> This tutorial shows you how to configure your CAP service to listen for upcoming events and deploy it to the SAP BTP cockpit.
+
 ## Prerequisites
- - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
- - [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register)
- - [Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application](btp-app-ext-service-s4hc-use)
- - When starting with the result from the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the content of the branch.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
+    - Complete the mission [Consume Remote Services from SAP S/4HANA Cloud Using CAP](mission.btp-consume-external-service-cap).
  - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
+    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform step 14–17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service).
  - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant.
-    - You must be an administrator of the SAP S/4HANA Cloud system.
-    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
+    - You have a dedicated SAP S/4HANA Cloud tenant
+    - You must be an administrator of the SAP S/4HANA Cloud system
+    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system
 
-
-## Details
-### You will learn
+## You will learn
  - How to configure your CAP application for eventing
  - How to locally test your changes
  - How to deploy your CAP application
 
-
-To start with this tutorial use the result in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure your CAP application for eventing)]
+### Configure your CAP application for eventing
+
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 CAP provides native support for emitting and receiving events. Hence, CAP applications can receive events for changes in remote systems. In CAP, the messaging follows a publish subscribe (pub/sub) model. Pub/sub means that sources publish messages and interested consumers can subscribe to receive them. This helps with scalability, decoupling of services, and robustness.
@@ -105,7 +101,7 @@ Using the Business Partner service that you added in `Step 1: Get the Business P
     * `"kind": "local-messaging"` Allows services running in the same process to send and receive messages locally. Other options for local testing are [`file` for services running in different processes](https://cap.cloud.sap/docs/guides/messaging/#1-use-file-based-messaging-in-development) and [connecting to an event mesh instance on BTP](https://cap.cloud.sap/docs/guides/messaging/event-mesh#run-tests-in-hybrid-setup).
     * In production you will use the [SAP Event Mesh service](https://help.sap.com/docs/SAP_EM?locale=en-US), hence the line `"kind": "enterprise-messaging-shared"`.
     * `"format": "cloudevents"` configures the format of the event data, which allows [CAP to fill in required fields](https://cap.cloud.sap/docs/guides/messaging/#cloudevents) behind the scenes.
-    * The `publishPrefix` is specified for all events emitted from the application (`$namespace/ce/`). This is not used in this application as we don't emit any events.
+    * The `publishPrefix` is specified for all events emitted from the application (`$namespace/ce/`). This is not used in this application as you don't emit any events.
     * `subscribePrefix` is specified to match all the Cloud Events sent to the subaccount. The `ce/` part in the expression `+/+/+/ce/` refers to the cloud events.
 
     > Namespace info for `subscribePrefix` and `publishPrefix`
@@ -118,10 +114,10 @@ Using the Business Partner service that you added in `Step 1: Get the Business P
     npm install @sap/xb-msg-amqp-v100
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---
-[ACCORDION-BEGIN [Step 2: ](Add a status field)]
+### Add a status field
+
 Currently, business partner (that is, supplier) data is stored only in the SAP S/4HANA Cloud system and it would be slow to call the Business Partner API every time you want to show the status. To keep it fast, you will add a `status` field to reflect the assessment status of the supplier and update the application logic with event handling to keep this value updated as it changes in the remote SAP S/4HANA Cloud system.
 
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
@@ -251,10 +247,9 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
     ...
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Test your changes locally)]
+### Test your changes locally
+
 So, you have added logic to create a new risk when an event for a newly created supplier is received. You have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
 
 Now simulate locally business partner creation and update, and see the results:
@@ -266,7 +261,7 @@ Now simulate locally business partner creation and update, and see the results:
       - **Username**: `risk.manager@tester.sap.com`
       - **Password**: `initial`
 
-      !![New Status Column](status_column.png)
+      <!-- border -->![New Status Column](status_column.png)
 
     > See tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) to learn more about authentication and role restrictions in CAP.
 
@@ -279,20 +274,20 @@ Now simulate locally business partner creation and update, and see the results:
     > Can't run the `curl` command?
 
     > * If you encounter any errors running the `curl` command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
-    > * If you still like to use a different command line interpreter, here is a useful tutorial on how to [Install cURL](iot-cf-install-curl).
+    > * If you still like to use a different command line interpreter, you can use cURL. For MacOS cURL should already be available, for Windows see the instructions on how to install [cURL](https://chocolatey.org/packages/Curl).
 
 
 4. Refresh the page and choose **Go** again. You will see a new risk in the table.
 
-    !![New Risk](new_risk.png)
+    <!-- border -->![New Risk](new_risk.png)
 
 5. Open the new risk's object page and change the value in the **Impact** field to 0.
 
-    !![New Risk Assess](new_risk_assess.png)
+    <!-- border -->![New Risk Assess](new_risk_assess.png)
 
 6. The status of the new risk is updated.
 
-    !![New Risk Assessed](new_risk_assessed.png)
+    <!-- border -->![New Risk Assessed](new_risk_assessed.png)
 
 7. With `cds watch` running, open another terminal and execute the following command to locally simulate a business partner update event:
 
@@ -302,14 +297,13 @@ Now simulate locally business partner creation and update, and see the results:
 
 8. Refresh the page and choose **Go**. The status of the new risk is updated again.
 
-    !![New Risk Update](new_risk_updated.png)
+    <!-- border -->![New Risk Update](new_risk_updated.png)
 
 The results of these steps can be found in the [eventing](https://github.tools.sap/CPES/CPAppDevelopment/tree/s4h/eventing) branch.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Deploy your CAP application)]
+### Deploy your CAP application
+
 The SAP Event Mesh service is the messaging service that helps applications running on the SAP BTP to send and receive events. To work with events from SAP S/4HANA Cloud, you need an instance of the messaging service, which will act as a client to the SAP Event Mesh service.
 
 1. Add the following lines to the `mta.yaml` file:
@@ -372,9 +366,5 @@ The SAP Event Mesh service is the messaging service that helps applications runn
 
     In the next tutorial, you will continue with connecting our CAP application to the SAP S/4HANA Cloud system.
 
-[DONE]
 The result of this tutorial can be found in the [`events-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/events-s4hc-use) branch.
-
-
-[ACCORDION-END]
 ---

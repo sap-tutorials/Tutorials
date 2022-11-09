@@ -1,6 +1,5 @@
 ---
-title: Use the Python SDK for Business Entity Recognition
-description: Use the Python SDK to access the pre-trained models of Business Entity Recognition.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
@@ -9,17 +8,21 @@ author_name: Nora von Thenen
 author_profile: https://github.com/noravth
 ---
 
-## Details
-### You will learn
+# Use the Python SDK for Business Entity Recognition
+<!-- description --> Use the Python SDK to access the pre-trained models of Business Entity Recognition.
+
+## You will learn
   - How to use your service instance of Business Entity Recognition for authentication
   - How to do a single inference using a pre-trained model
   - How to upload data and do a batch inference using a pre-trained model
 
+## Intro
 The repository, initial setup documentation and example code of the Python SDK can be found [here](https://github.com/SAP/business-entity-recognition-client-library). The pre-trained models and the entities you can extract can be found [here](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create service key)]
+### Create service key
+
 
 First, you need to make the service key of your service instance available to the Python SDK so that it can be used for authorization when communicating with your service instance. The service key will be saved in a file named `ber_service_key.json`.
 
@@ -41,11 +44,10 @@ Go ahead and open the newly created file in a simple text editor. Then, paste th
 
 Now you are all set to start using the service.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](List all pre-trained models)]
+### List all pre-trained models
+
 
 Open your preferred Python IDE in the same directory as you created the service key in and make sure your virtual environment from [Set Up the Python SDK for Business Entity Recommendation](cp-aibus-ber-python-sdk-setup) is activated. Create a new Python file and call it `list_models.py`.
 
@@ -91,7 +93,7 @@ pprint(my_ber_client.get_trained_model_versions(model_name).json())
 
 The above code first opens the file containing your service key and reads its values. It then creates an instance of the `BER_API_Client` using your service key.
 
-Afterwards it lists all models that exist in your subaccount. If you have not used this service before and have not done any retraining, only the four pre-trained models sap_address_entity, sap_email_business_entity, sap_generic_entities and sap_invoice_header should be listed.
+Afterwards it lists all models that exist in your subaccount. If you have not used this service before and have not done any retraining, only the four pre-trained models `sap_address_entity`, `sap_email_business_entity`, `sap_generic_entities` and `sap_invoice_header` should be listed.
 
 Finally, each model is listed with it's version, supported languages, and capabilities (i.e. entities to be extracted).
 
@@ -99,10 +101,9 @@ Now enter `python list_models.py` in your command line to run the file. The begi
 
 ![Training Output](list_models_output.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Post inference job)]
+### Post inference job
+
 
 Create a new Python file `post_inference.py` to post your first inference.
 
@@ -149,7 +150,7 @@ with open('inference_response.json', 'w') as f:
 
 As in the previous code snippet, the above code first opens the file containing your service key and reads its values. Then, it creates an instance of the `BER_API_Client` using your service key.
 
-Afterwards, it posts an inference job to the business entity recognition service specifying the sap_email_business_entity model and version 1 of that model.
+Afterwards, it posts an inference job to the business entity recognition service specifying the `sap_email_business_entity` model and version 1 of that model.
 If you want to use a different pre-trained model or one of your own models simply change the variables `model_name` and `model_version` to your preferred values.
 
 Finally it saves the response of your inference job to the `inference_response.json`.
@@ -160,10 +161,9 @@ Now enter `python post_inference.py` in your command line to run the file. Your 
 
 You posted your first inference successfully!
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Access the inference response)]
+### Access the inference response
+
 
 Now, you need to access the inference result by specifying the id of your inference job from the previous step.
 
@@ -211,11 +211,10 @@ Now enter `python get_inference.py` in your command line to run the file. If you
 
 In this case, with a confidence of over 90% the correct value was extracted from our example email. Now you have successfully run your first inference using a pre-trained model of the Business Entity Recognition Service.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Post a batch inference job)]
+### Post a batch inference job
+
 
 Posting a batch inference is almost the same as a single inference job. The only difference is that you need to first upload your dataset.
 
@@ -296,11 +295,10 @@ Now enter `python post_batch_inference.py` in your command line to run the file.
 
 You posted your first batch inference successfully!
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Access batch inference result)]
+### Access batch inference result
+
 
 Now, you need to access the batch inference result by specifying the id of your batch inference job from the previous step.
 
@@ -348,10 +346,9 @@ Now enter `python get_batch_inference.py` in your command line to run the file. 
 
 Now you have successfully run your first batch inference using a pre-trained model of the Business Entity Recognition Service.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Delete dataset)]
+### Delete dataset
+
 
 Now, you need to delete the dataset that you used during the batch inference job.
 
@@ -396,12 +393,10 @@ Now enter `python delete_datasets.py` in your command line to run the file. The 
 
 Now you have successfully deleted your dataset.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,11 +1,15 @@
 ---
-title: Add Business Logic to the SAP SuccessFactors Extension
-description: In this phase of the development you will add the business logic of the extension.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
+author_name: Alessandro Biagi
+author_profile: https://github.com/ale-biagi
 ---
+
+# Add Business Logic to the SAP SuccessFactors Extension
+<!-- description --> In this phase of the development you will add the business logic of the extension.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -14,8 +18,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Create the CDS Data Model for the SAP SuccessFactors Extension**](cap-extend-sfsf-data-model)
  - Complete the tutorial: [**Create the CAP Service for the SAP SuccessFactors Extension**](cap-extend-sfsf-create-service)
 
-## Details
-### You will learn
+## You will learn
   - How to **create the code file** of the **service module** to attach the service handlers
   - How to **write the service module code**
   - How to **organize your code** in the CAP project
@@ -24,7 +27,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the service module code file)]
+### Create the service module code file
+
 
 The **business logic** of the application is implemented via **custom service handlers** for the various operations executed on its entities (create, read, update, delete, etc.). Those handlers are defined in a **module** within a `JavasScript` file with the **same name** of the service but with the `.js` extension.
 
@@ -38,10 +42,9 @@ On the **dialog** name the file `projman-service.js` and click **OK**.
 
 ![Figure 2 – Set File Name](set-file-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the service module)]
+### Code the service module
+
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -68,10 +71,9 @@ Here you import the `@sap/cds` dependency and reference it as `cds`. Then, you i
 
 Finally, you make some **comments** as **placeholders** to mark where you will further put your code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Organize your code)]
+### Organize your code
+
 
 It is a best practice to have your code organized into **files** representing the nature of the code (i.e. **utility functions** should go into some `utils` file, **handlers** should go into some `handlers` file and so on). Those files represent your "code library", so it's appropriate to store them into some `lib` folder.
 
@@ -93,10 +95,9 @@ Type `touch lib/handlers.js` and press **Enter**.
 
 ![Figure 6 – Create handlers.js file](create-handlers.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Code the service handlers)]
+### Code the service handlers
+
 
 Now, you'll develop the required service handlers according to the business rules that have been defined in the [**group introduction and preparation**](cap-extend-sfsf-intro).
 
@@ -194,6 +195,8 @@ In the **Terminal** type `cd ..` and press **Enter** to go back to the **project
 
 ![Figure 9 – Change back to project root](change-to-project.png)
 
+>**IMPORTANT**: newer versions of CDS have handed over to **SAP Cloud SDK** the creation of HTTP clients for making HTTP requests to external services, using the `@sap-cloud-sdk/http-client` node package. So, if you jump-started your CAP project, **before such CDS update**, that dependency might not have been included in your `package.json` file, and, thus, not installed when you ran `npm install`. Before testing the handler, please verify that you have `@sap-cloud-sdk/http-client` listed in the dependencies of your `package.json` and, if not, run: `npm install @sap-cloud-sdk/http-client`.
+
 Once again type `cds watch` and press **Enter**. Then `CTRL+Click` on the `http://localhost:4004` link to launch the **application home page**.
 
 ![Figure 10 – Application home page](service-endpoints.png)
@@ -214,6 +217,7 @@ Open the `lib/hanlers.js` file, then copy and paste the **following code** over 
 
 ```JavasScript
 const cds = require('@sap/cds');
+const namespace = 'sfsf.projman.model.db.';
 
 let userService = null;
 let assService = null;
@@ -250,11 +254,11 @@ function removeColumnsFromOrderBy(query, columnNames) {
 
 // Helper for employee create execution
 async function executeCreateEmployee(req, userId) {
-    const employee = await cds.tx(req).run(SELECT.one.from('Employee').columns(['userId']).where({ userId: { '=': userId } }));
+    const employee = await cds.tx(req).run(SELECT.one.from(namespace + 'Employee').columns(['userId']).where({ userId: { '=': userId } }));
     if (!employee) {
         const sfsfUser = await userService.tx(req).run(SELECT.one.from('User').columns(['userId', 'username', 'defaultFullName', 'email', 'division', 'department', 'title']).where({ userId: { '=': userId } }));
         if (sfsfUser) {
-            await cds.tx(req).run(INSERT.into('Employee').entries(sfsfUser));
+            await cds.tx(req).run(INSERT.into(namespace + 'Employee').entries(sfsfUser));
         }
     }
 }
@@ -263,7 +267,7 @@ async function executeCreateEmployee(req, userId) {
 async function executeUpdateEmployee(req, entity, entityID, userId) {
     // Need to check whether column has changed
     const column = 'member_userId';
-    const query = SELECT.one.from(entity).columns([column]).where({ ID: { '=': entityID } });
+    const query = SELECT.one.from(namespace + entity).columns([column]).where({ ID: { '=': entityID } });
     const item = await cds.tx(req).run(query);
     if (item && item[column] != userId) {
         // Member has changed, then:
@@ -279,7 +283,7 @@ async function executeUpdateEmployee(req, entity, entityID, userId) {
 // Helper for assignment creation
 async function createAssignment(req, entity, entityID, userId) {
     const columns =  m => { m.member_userId`as userId`, m.parent(p => { p.name`as name`, p.description`as description`, p.startDate`as startDate`, p.endDate`as endDate` }), m.role(r => { r.name`as role` }) };
-    const item = await cds.tx(req).run(SELECT.one.from(entity).columns(columns).where({ ID: { '=': entityID } }));
+    const item = await cds.tx(req).run(SELECT.one.from(namespace + entity).columns(columns).where({ ID: { '=': entityID } }));
     if (item) {
         const assignment = {
             userId: userId,
@@ -291,7 +295,7 @@ async function createAssignment(req, entity, entityID, userId) {
         console.log(assignment);
         const element = await assService.tx(req).run(INSERT.into('Background_SpecialAssign').entries(assignment));
         if (element) {
-            await cds.tx(req).run(UPDATE.entity(entity).with({ hasAssignment: true }).where({ ID: entityID }));
+            await cds.tx(req).run(UPDATE.entity(namespace + entity).with({ hasAssignment: true }).where({ ID: entityID }));
         }
     }
     return req;
@@ -299,7 +303,7 @@ async function createAssignment(req, entity, entityID, userId) {
 
 // Helper for cascade deletion
 async function deepDelete(tx, ID, childEntity) {
-    return await tx.run(DELETE.from(childEntity).where({ parent_ID: { '=': ID } }));
+    return await tx.run(DELETE.from(namespace + childEntity).where({ parent_ID: { '=': ID } }));
 }
 
 /*** HANDLERS ***/
@@ -368,7 +372,7 @@ async function deleteChildren(req) {
             await deepDelete(cds.tx(req), req.data.ID, 'Activity');
             await deepDelete(cds.tx(req), req.data.ID, 'Member');
         } else {
-            const item = await cds.tx(req).run(SELECT.one.from(req.entity).columns(['parent_ID']).where({ ID: { '=': req.data.ID } }));
+            const item = await cds.tx(req).run(SELECT.one.from(namespace + req.entity).columns(['parent_ID']).where({ ID: { '=': req.data.ID } }));
             if (item) {
                 await deepDelete(cds.tx(req), item.parent_ID, 'Activity');
             }
@@ -383,8 +387,8 @@ async function deleteChildren(req) {
 async function deleteUnassignedEmployees(data, req) {
     try {
         // Build clean-up filter
-        const members = SELECT.distinct.from('Member').columns(['member_userId as userId']);
-        const unassigned = SELECT.distinct.from('Employee').columns(['userId']).where({ userId: { 'NOT IN': members } });
+        const members = SELECT.distinct.from(namespace + 'Member').columns(['member_userId as userId']);
+        const unassigned = SELECT.distinct.from(namespace + 'Employee').columns(['userId']).where({ userId: { 'NOT IN': members } });
 
         // Get the unassigned employees for deletion
         let deleted = await cds.tx(req).run(unassigned);
@@ -394,7 +398,7 @@ async function deleteUnassignedEmployees(data, req) {
 
         // Clean-up Employees
         for (var i = 0; i < deleted.length; i++) {
-            const clean_up = DELETE.from('Employee').where({ userId: { '=': deleted[i].userId } });
+            const clean_up = DELETE.from(namespace + 'Employee').where({ userId: { '=': deleted[i].userId } });
             await cds.tx(req).run(clean_up);
         }
         return data;
@@ -412,7 +416,7 @@ async function beforeSaveProject(req) {
             req.data.team.forEach(member => { users.push({ ID: member.ID, member_userId: member.member_userId }); });
 
             // Get current members
-            let members = await cds.tx(req).run(SELECT.from('Member').columns(['ID', 'member_userId']).where({ parent_ID: { '=': req.data.ID } }));
+            let members = await cds.tx(req).run(SELECT.from(namespace + 'Member').columns(['ID', 'member_userId']).where({ parent_ID: { '=': req.data.ID } }));
             if (members) {
                 // Make sure result is an array
                 members = (members.length === undefined) ? [members] : members;
@@ -425,7 +429,7 @@ async function beforeSaveProject(req) {
                 });
                 for (var i = 0; i < deleted.length; i++) {
                     // Delete members' activities
-                    await cds.tx(req).run(DELETE.from('Activity').where({ assignedTo_ID: { '=': deleted[i].ID } }));
+                    await cds.tx(req).run(DELETE.from(namespace + 'Activity').where({ assignedTo_ID: { '=': deleted[i].ID } }));
                     if (req.data.activities) {
                         let idx = 0;
                         do {
@@ -469,7 +473,7 @@ async function afterSaveProject(data, req) {
     try {
         if (data.team) {
             // Look for members with unassigned elementId
-            let unassigned = await cds.tx(req).run(SELECT.from('Member').columns(['ID', 'member_userId']).where({ parent_ID: { '=': data.ID }, and: { hasAssignment: { '=': false } } }));
+            let unassigned = await cds.tx(req).run(SELECT.from(namespace + 'Member').columns(['ID', 'member_userId']).where({ parent_ID: { '=': data.ID }, and: { hasAssignment: { '=': false } } }));
             if (unassigned) {
                 // Make sure result is an array
                 unassigned = (unassigned.length === undefined) ? [unassigned] : unassigned;
@@ -497,6 +501,7 @@ module.exports = {
     deleteUnassignedEmployees,
     beforeSaveProject,
     afterSaveProject
+}
 ```
 
 You just added three additional helpers: two for employee creation/update and one for the special assignment creation in SAP SuccessFactors.
@@ -505,10 +510,9 @@ Then, you added the required handlers for the before and after events (OData ope
 
 The code logic is well explained in the comments details.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Attach the service handlers to the service module events)]
+### Attach the service handlers to the service module events
+
 
 Open the `srv/projman-service.js` file, then copy and paste the **following code** over (overwrite) the current content:
 
@@ -557,10 +561,8 @@ Here you just imported the handler functions from the `lib/handlers.js` file and
 
 And, with that, you completed the coding of the business logic for your application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

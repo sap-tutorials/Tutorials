@@ -47,3 +47,4 @@ In addition, please don't edit the SAP Work Zone Home page as it's a shared asse
 SAP Work Zone opens displaying the Home Page that has already been configured for you.
 
 In the next tutorial, you'll create a workspace and add apps and other content to it.
+

@@ -1,6 +1,5 @@
 ---
-title: Configure Mobile Services in Assistant
-description: Enable SAP Mobile Services and create a connection in the SAP BTP SDK Assistant for iOS.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services]
@@ -9,21 +8,22 @@ author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
-## Prerequisites
+# Configure Mobile Services in Assistant
+<!-- description --> Enable SAP Mobile Services and create a connection in the SAP BTP SDK Assistant for iOS.
 
+## Prerequisites
 - Completed the previous tutorial(s) in this group.
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Have downloaded Version 5.1.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)  
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to create a connection in the SAP BTP SDK Assistant for iOS
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Mobile Services)]
+### Enable SAP Mobile Services
+
 
 The SAP BTP SDK for iOS is designed to work seamlessly with a set of services provided by the SAP BTP that are optimized for communication with mobile devices, known collectively as Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
@@ -31,10 +31,9 @@ The SAP BTP SDK for iOS is designed to work seamlessly with a set of services pr
 
 To enable the service, do the tutorial [Enable SAP Mobile Services](fiori-ios-hcpms-setup).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up your Mobile Services account in the Assistant)]
+### Set up your Mobile Services account in the Assistant
+
 
 The SAP BTP SDK for iOS includes an Assistant app for generating and managing iOS apps that use the Mobile Services. To get started with the Assistant, you'll need to configure it for your account. Part of this configuration can be imported automatically.
 
@@ -67,5 +66,4 @@ Click **Save** when finished. The account is now added to the SAP BTP SDK Assist
 
 Click **Back** to return to the main screen for the **SAP BTP SDK Assistant for iOS**.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

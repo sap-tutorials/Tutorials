@@ -1,25 +1,26 @@
 ---
-title: Create a Node.js module to expose OData services
-description: Create a Node.js module to implement backend logics and expose OData services
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>odata, products>sap-hana ]
 ---
 
+# Create a Node.js module to expose OData services
+<!-- description --> Create a Node.js module to implement backend logics and expose OData services
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 Create a Node.js module to expose data in an OData service.
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Node.js module)]
+### Create a Node.js module
+
 
 Create a Node.js module. Right-click on your project and select `New->Node.js Module`:
 
@@ -33,10 +34,9 @@ Add a description, check the `XSJS support` box and click on **Finish**
 
 ![Create a Node.js module](3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an OData file)]
+### Create an OData file
+
 
 You will now create an OData file to expose the contents of the artifacts you defined in your CDS module. This is not really Node.js development but the utilization of the runtime environment to expose OData. You can see real examples of Node.js development in the SHINE model later.
 
@@ -67,10 +67,9 @@ service {
 
 ![Build js module](10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add the dependency between the modules)]
+### Add the dependency between the modules
+
 
 You have a database module and now you also have a Node.js module. These modules could technically be executed separately, even deployed separately. However, the Node.js module needs data from the database module. You need to add this dependency in the file that keeps them all together, the `mta.yaml`.
 
@@ -88,11 +87,10 @@ Add both the HDI container and database modules to the `Requires` section of the
 
 **Save** the MTA file.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Test the service)]
+### Test the service
+
 
 **Run** the `js` module by right-clicking on the folder and selecting **Run as Node.js application**
 
@@ -110,5 +108,4 @@ Edit the URL to access the OData service, replace `index.xsjs` with `/xsodata/PO
 
 Add `?$format=json` to the end of the URL. Use the results to answer the question below.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

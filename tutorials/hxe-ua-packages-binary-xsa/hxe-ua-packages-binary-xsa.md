@@ -1,6 +1,5 @@
 ---
-title: Install Optional Packages
-description:   Once SAP HANA, express edition (server and applications) is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your system.  
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,22 +7,26 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 20
 ---
 
+# Install Optional Packages
+<!-- description -->   Once SAP HANA, express edition (server and applications) is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your system.  
+
 <!-- loio6bb4c7e861654519bb922e7e80a77a0b -->
 
 ## Prerequisites
  - **Tutorials:**  You have completed [Test the Installation](hxe-ua-test-binary) 
 
-## Details
-### You will learn
+## You will learn
  You will learn how to use the built-in command line Download Manager to install optional installation packages for your native Linux installation (with applications). 
 
 ---
 
+## Intro
 This tutorial assumes you already installed SAP HANA, express edition.
 
 Using the server's built-in command line Download Manager to download optional installation packages directly to your server is the fastest and easiest way to install optional packages, as it saves you from having to transfer files from your client machine to the server.
 
-[ACCORDION-BEGIN [Step 1: ](Choose optional installation packages)]
+### Choose optional installation packages
+
 
 Decide what optional installation packages you want to install.
 
@@ -38,11 +41,9 @@ Decide what optional installation packages you want to install.
 |Clients|Downloads client packages and the SAP HANA Machine Learning Python API.|
 |SAP HANA smart data integration|SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
 
-[DONE]
 
-[ACCORDION-END]
+### Locate the package-specific installation tutorials
 
-[ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials)]
 
 Optional installation packages have their own tutorials. Use this table to find the installation tutorial you're looking for:
 
@@ -57,8 +58,5 @@ Optional installation packages have their own tutorials. Use this table to find 
 |Clients| [Install the SAP HANA, express edition Clients](https://developers.sap.com/group.hxe-install-clients.html) |
 |SAP HANA smart data integration| [Install the Optional SAP HANA Smart Data Integration Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-sdi-binary.html) |
 
-[DONE]
-
-[ACCORDION-END]
 
 

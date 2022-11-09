@@ -1,11 +1,15 @@
 ---
-title: Implement a Dashboard Application for Monitoring Java Apps
-description: Create an application that retrieves metrics for Java applications running in SAP BTP, Neo environment.
+parser: v2
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java ]
+author_name: Nikola Simeonov
+author_profile: https://github.com/nikolasimeonov77
 time: 30
 ---
+
+# Implement a Dashboard Application for Monitoring Java Apps
+<!-- description --> Create an application that retrieves metrics for Java applications running in SAP BTP, Neo environment.
 
 <!-- loioe4aec18cf61747a7afd531a3cfef590c -->
 
@@ -16,10 +20,10 @@ time: 30
 - You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
   For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
 
-## Details
-### You will learn
+## You will learn
 - How to configure a custom application that retrieves metrics for Java applications running in the Neo environment.
 
+## Intro
 The application you create shows the states of the Java applications and can also show the state and metrics of the processes running on those applications.
 
 This tutorial uses a Java project published on GitHub. This project contains a dashboard application that requests the metrics of the following Java applications (running in SAP BTP, Neo environment):
@@ -37,24 +41,23 @@ To learn more about the whole scenario, read the [Dashboard Scenario blog post](
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the project)]
+### Download the project
+
 
 Download the `cloud-metrics-dashboard` project as a ZIP file from [https://github.com/SAP/cloud-metrics-dashboard](https://github.com/SAP/cloud-metrics-dashboard).
 
-[DONE]
 
-[ACCORDION-END]
+### Import into Eclipse
 
-[ACCORDION-BEGIN [Step 2: ](Import into Eclipse)]
 
 Extract the files into a local folder and import the folder in Eclipse as an existing Maven project.
 
 > You can also upload your project by copying the URL from GitHub and pasting it as a Git repository path or URI after you switch to the Git perspective. Remember to switch back to a Java perspective afterward.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update Configuration.java)]
+
+### Update Configuration.java
+
 
 In Eclipse, open the `Configuration.java` class and update the following information:
 
@@ -85,10 +88,10 @@ public void configure(){
 
 > The example shows only two applications, but you can create more and add them to the list.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test your scenario)]
+
+### Test your scenario
+
 
 1.   Start your Java applications.
 
@@ -104,15 +107,14 @@ public void configure(){
 
     -   Initially, the dashboard displays all the states of the Java applications.
 
-        !![loio8366cfa2e5264a289241d074dfafb980_LowRes](loio8366cfa2e5264a289241d074dfafb980_LowRes.png)
+        <!-- border -->![loio8366cfa2e5264a289241d074dfafb980_LowRes](loio8366cfa2e5264a289241d074dfafb980_LowRes.png)
 
     -   When you select an application, you can view the states of the application's processes.
 
     -   When you select a process, you can view the process's metrics.
 
-        !![loioc3b8419878a148578038cb2035d34eb5_LowRes](loioc3b8419878a148578038cb2035d34eb5_LowRes.png)
+        <!-- border -->![loioc3b8419878a148578038cb2035d34eb5_LowRes](loioc3b8419878a148578038cb2035d34eb5_LowRes.png)
 
         > An empty field in the *Thresholds* column signifies that the warning and critical values are set to zeros.
 
-[VALIDATE_3]
-[ACCORDION-END]
+

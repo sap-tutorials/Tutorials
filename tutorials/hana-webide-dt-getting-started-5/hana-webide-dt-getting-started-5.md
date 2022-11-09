@@ -1,10 +1,12 @@
 ---
-title: Migrate Records in Related Tables Using Stored Procedures
-description: Use a stored procedure to migrate records in related tables as a single transaction.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
 ---
+
+# Migrate Records in Related Tables Using Stored Procedures
+<!-- description --> Use a stored procedure to migrate records in related tables as a single transaction.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -13,17 +15,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [View Data Across Both In-Memory and dynamic tiering Tables Using a SQL View](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-6.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to create a stored procedure to migrate records in related tables as a single transaction.
  - How to call a stored procedure.
-
-### Time to Complete
+## Time to Complete
 **20 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare data)]
+### Prepare data
+
 In order to ensure that the migration script runs correctly, we will start by refreshing the data in the tables that will be used in this tutorial section. Run the script below to restore data. Replace "`<SID>`" with your system's System Id.
 
 ``` SQL
@@ -49,11 +50,9 @@ Verify everything executed correctly.
 
 ![Verify Script](assets/hana-webide-dt-getting-started-5-78cbae0a.jpg)
 
-[DONE]
 
-[ACCORDION-END]
+### Migrate data between tables
 
-[ACCORDION-BEGIN [Step 2: ](Migrate data between tables)]
 Observe the script below. This script copies records older than 2015-1-1 from the in-memory `LINEITEM_CS` table to the extended table `LINEITEM_DT` in dynamic tiering. Next, it will delete the moved records from the `LINEITEM_CS` table to free up storage space in-memory now that the data has been copied to dynamic tiering. The "WHERE" statement in the script is used to selectively choose data. In this script specifically, the "WHERE" statement is used to select data from the `LINEITEM_CS` table whose `L_SHIPDATE` is before January 1st, 2015.
 
 ```SQL
@@ -71,11 +70,9 @@ Copy and paste the script above into the SQL console. Press the Execute button t
 Take this scenario for example: we run the script which copies records prior to January 1st, 2015 from the CS table into the DT table. Then, someone adds a record before January 1st, 2015 into the CS table, after which the "DELETE" operation deletes all records from the CS table prior to January 1st, 2015.
 In this case, that added record is lost as it gets deleted before being moved into the DT table.   
 
-[DONE]
 
-[ACCORDION-END]
+### Auto-Commit and isolation levels
 
-[ACCORDION-BEGIN [Step 3: ](Auto-Commit and isolation levels)]
 The hazard of executing an "INSERT" and "DELETE" operation as separate transactions is outlined in the previous step. To combat this issue, we must take a look at commits and isolation.
 
 By default, SQL Console connections from HANA Web IDE to your HANA system are created with the Auto Commit option turned "On". The Auto Commit option automatically issues a commit after each statement that is executed against the server. We will use a stored procedure to execute two statements as a single atomic transaction.
@@ -84,11 +81,9 @@ Similarly, database isolation levels determine how the database server handles c
 
 Since the process of migrating data between in-memory and extended tables requires both an insert and a delete statement, we must create (and then call) a stored procedure using Web IDE to ensure consistency across multiple statements within a single transaction.
 
-[DONE]
 
-[ACCORDION-END]
+### Create a simple migration stored procedure
 
-[ACCORDION-BEGIN [Step 4: ](Create a simple migration stored procedure)]
 Now we will properly accomplish the previous task of migrating aged records from an in-memory table to a DT table. Since we already altered the LINEITEM tables, we must reset them for this task by using the script below (fill in your SID). Copy, paste, and execute the script, making sure it executes successfully.
 
 ```SQL
@@ -120,11 +115,9 @@ END;
 
 ![Procedure 1](assets/hana-webide-dt-getting-started-5-5afd2ada.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Call the migration stored procedure
 
-[ACCORDION-BEGIN [Step 5: ](Call the migration stored procedure)]
 Now that the store procedure is created, you can execute the stored procedure by calling it using the script below. Run the script below in a SQL console and make sure it executed correctly.
 
 ``` SQL
@@ -148,11 +141,9 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![See Removed Data](assets/hana-webide-dt-getting-started-5-b5d14d8c.jpg)
 
-[DONE]
 
-[ACCORDION-END]
+### Create a more complex migration stored procedure
 
-[ACCORDION-BEGIN [Step 6: ](Create a more complex migration stored procedure)]
 Now that we've created a simple procedure to accomplish the task of migrating aged data past a specified date, we will build on this by creating a more complex procedure.
 
 First, we must refresh the "ORDERS" and "LINEITEM" in-memory and DT tables using the script below. Replace "<SID>" with your system's System Id, run it and ensure it executes successfully.
@@ -212,11 +203,9 @@ The `INSERT` and `DELETE` statements are executed in a **specific order** to com
 
 ![Create Procedure 2](assets/hana-webide-dt-getting-started-5-c98f1481.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Call the more complex migration stored procedure
 
-[ACCORDION-BEGIN [Step 7: ](Call the more complex migration stored procedure)]
 Now that the store procedure is created. You can execute the stored procedure by calling it. Run the script below in a SQL console and make sure it executed correctly.
 
 ```SQL
@@ -244,8 +233,6 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 You can run the same tests on both the `ORDERS_CS` and `ORDERS_DT` tables.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 

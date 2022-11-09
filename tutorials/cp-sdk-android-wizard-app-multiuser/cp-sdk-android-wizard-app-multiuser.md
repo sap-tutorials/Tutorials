@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Haoyue Feng
 author_profile: https://github.com/Fenghaoyue
-title: Enable Multi-User Mode for Your Android Application
-description: Learn how to configure a wizard-generated application to enable the multi-user mode, available as part of the Flows component of the Android SDK.
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-business-technology-platform]
@@ -10,14 +9,16 @@ primary_tag: software-product>sap-btp-sdk-for-android
 keywords: sdkforandroid
 ---
 
+# Enable Multi-User Mode for Your Android Application
+<!-- description --> Learn how to configure a wizard-generated application to enable the multi-user mode, available as part of the Flows component of the Android SDK.
+
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
     - **SAP Mobile Services**
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 - You completed [Offline-Enable Your Android Application](cp-sdk-android-wizard-app-offline).
 
-## Details
-### You will learn
+## You will learn
   - How the Android SDK supports multi-user mode
   - How to enable multi-user mode for an online app
   - How to enable multi-user mode for an offline app
@@ -25,7 +26,8 @@ keywords: sdkforandroid
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 
 The Flows component of the SAP BTP SDK for Android provides the following functions to enable multi-user mode for your application:
 
@@ -35,7 +37,7 @@ The Flows component of the SAP BTP SDK for Android provides the following functi
 
 - To enable multi-user for an application developed using Flows component, you only need follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and check **Enable Multiple Users** for the **Multiple Users** on the **Project Features** tab. Or you can follow **Step 2** and **3** to enable multi-user mode for online and offline, respectively.
 
-  !![Enable multi-user mode](enable_multiuser_mode.png)
+  <!-- border -->![Enable multi-user mode](enable_multiuser_mode.png)
 
 The following cases are not supported in multi-user mode:
 
@@ -45,10 +47,10 @@ The following cases are not supported in multi-user mode:
 
 - `No passcode policy` is not supported. A default passcode policy will be used if the server has disabled it.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable multi-user mode for a wizard-generated online application)]
+
+### Enable multi-user mode for a wizard-generated online application
+
 
 [OPTION BEGIN [Java]]
 
@@ -68,11 +70,11 @@ The following cases are not supported in multi-user mode:
 
 4.  Re-run (quit first) the app and notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
-    !![Sign in screen](sign-in-screen.png)
+    <!-- border -->![Sign in screen](sign-in-screen.png)
 
     When the button is clicked, the user list is displayed. You can either select an existing user from the list or click the **ADD USER** icon at the right top of the screen. This will start the onboarding process for the new user.
 
-    !![User list screen](user-screen.png)
+    <!-- border -->![User list screen](user-screen.png)
 
 [OPTION END]
 
@@ -95,28 +97,27 @@ The following cases are not supported in multi-user mode:
 
 4.  Re-run (quit first) the app and notice that the onboarding process is same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the sign in screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
-    !![Sign in screen](sign-in-screen.png)
+    <!-- border -->![Sign in screen](sign-in-screen.png)
 
     When the button is clicked, the user list is displayed. You can either select an existing user from the list or click the **ADD USER** icon at the right top of the screen. This will start the onboarding process for the new user.
 
-    !![User list screen](user-screen.png)
+    <!-- border -->![User list screen](user-screen.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enable multi-user mode for a wizard-generated offline app)]
+### Enable multi-user mode for a wizard-generated offline app
+
 
 [OPTION BEGIN [Java]]
 
 1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
-    !![Cockpit app screen](cockpit-app.png)
+    <!-- border -->![Cockpit app screen](cockpit-app.png)
 
     Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option (remember to click **`Save`** to save the change):
 
-    !![Cockpit app setting screen](cockpit-app-setting.png)
+    <!-- border -->![Cockpit app setting screen](cockpit-app-setting.png)
 
 2.  Open the project you previously created using the SAP BTP SDK Wizard for Android.
 
@@ -126,7 +127,7 @@ The following cases are not supported in multi-user mode:
 
 5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`** to move to the `initializeOffline` method. Notice that for the **`OfflineODataParameters`** instance, the value of the **`setForceUploadOnUserSwitch`** parameter is set based on the value of `runtimeMultipleUserMode`. This value is retrieved from the **`UserSecureStoreDelegate.getInstance().getRuntimeMultipleUserModeAsync()`** API call.
 
-    !![Parameter setting Java](offline-para-java.png)
+    <!-- border -->![Parameter setting Java](offline-para-java.png)
 
 6.  Unlike the single-user mode scenario, the encryption key is not generated by the client code, but rather retrieved from the server by SDK. Client code can acquire the key using the **`UserSecureStoreDelegate.getInstance().getOfflineEncryptionKey()`** API call.
 
@@ -138,11 +139,11 @@ The following cases are not supported in multi-user mode:
 
 1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
-    !![Cockpit app screen](cockpit-app.png)
+    <!-- border -->![Cockpit app screen](cockpit-app.png)
 
     Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option (remember to click **`Save`** to save the change):
 
-    !![Cockpit app setting screen](cockpit-app-setting.png)
+    <!-- border -->![Cockpit app setting screen](cockpit-app-setting.png)
 
 2.  Open the project you previously created using the SAP BTP SDK Wizard for Android.
 
@@ -152,7 +153,7 @@ The following cases are not supported in multi-user mode:
 
 5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`** to move to the `initializeOffline` method. Notice that for the **`OfflineODataParameters`** instance, the value of the **`isForceUploadOnUserSwitch`** parameter is set based on the value of `runtimeMultipleUserMode`. This value is retrieved from the **`UserSecureStoreDelegate.getInstance().getRuntimeMultipleUserMode()!!`** API call.
 
-    !![Parameter setting Kotlin](offline-para-kotlin.png)
+    <!-- border -->![Parameter setting Kotlin](offline-para-kotlin.png)
 
 6.  Unlike the single-user mode scenario, the encryption key is not generated by the client code, but rather retrieved from the server by SDK. Client code can acquire the key using the **`UserSecureStoreDelegate.getInstance().getOfflineEncryptionKey()`** API call.
 
@@ -160,10 +161,9 @@ The following cases are not supported in multi-user mode:
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Handle offline pending changes when switching users)]
+### Handle offline pending changes when switching users
+
 
 [OPTION BEGIN [Java]]
 
@@ -173,17 +173,17 @@ The following cases are not supported in multi-user mode:
 
     If synchronization failed because there is no internet connection, a network error screen will be displayed.
 
-    !![Offline network error screen](offline-network-error.png)
+    <!-- border -->![Offline network error screen](offline-network-error.png)
 
     If synchronization failed due to a transaction issue, a transaction error screen will be displayed.
 
-    !![Offline transaction error screen](offline-transaction-error.png)
+    <!-- border -->![Offline transaction error screen](offline-transaction-error.png)
 
 3.  The SDK provides a UI component for the two screens and apps can reference the screens to provide error handling.
 
     Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes `com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen` and `com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`.
 
-    !![Layout XML file](main-activity-xml.png)
+    <!-- border -->![Layout XML file](main-activity-xml.png)
 
 4.  For the **Offline Network Error Screen**, the client code implements the logic for button click events.   
 
@@ -191,13 +191,13 @@ The following cases are not supported in multi-user mode:
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **Offline Network Error Screen** visible and provide your logic for the button click event.
 
-    !![Network error Java](main-activity-network-java.png)
+    <!-- border -->![Network error Java](main-activity-network-java.png)
 
 5.  For **Offline Transaction Issue Screen**, the client code needs to set the user information of previous user and implement the logic for button click events.
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **Offline Transaction Issue Screen** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoByIdAsync` method of the `UserSecureStoreDelegate` class to get the user information.
 
-    !![Transaction error Java](main-activity-transaction-java.png)
+    <!-- border -->![Transaction error Java](main-activity-transaction-java.png)
 
 [OPTION END]
 
@@ -209,17 +209,17 @@ The following cases are not supported in multi-user mode:
 
     If synchronization failed because there is no internet connection, a network error screen will be displayed.
 
-    !![Offline network error screen](offline-network-error.png)
+    <!-- border -->![Offline network error screen](offline-network-error.png)
 
     If synchronization failed due to a transaction issue, a transaction error screen will be displayed.
 
-    !![Offline transaction error screen](offline-transaction-error.png)
+    <!-- border -->![Offline transaction error screen](offline-transaction-error.png)
 
 3.  The SDK provides a UI component for the two screens and apps can reference the screens to provide error handling.
 
     Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes `com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen` and `com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`.
 
-    !![Layout XML file](main-activity-xml.png)
+    <!-- border -->![Layout XML file](main-activity-xml.png)
 
 4.  For the **Offline Network Error Screen**, the client code implements the logic for button click events.   
 
@@ -227,20 +227,19 @@ The following cases are not supported in multi-user mode:
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **Offline Network Error Screen** visible and provide your logic for the button click event.
 
-    !![Network error Kotlin](main-activity-network-kt.png)
+    <!-- border -->![Network error Kotlin](main-activity-network-kt.png)
 
 5.  For **Offline Transaction Issue Screen**, the client code needs to set the user information of previous user and implement the logic for button click events.
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **Offline Transaction Issue Screen** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoById` method of the `UserSecureStoreDelegate` class to get the user information.
 
-    !![Transaction error Kotlin](main-activity-transaction-kt.png)
+    <!-- border -->![Transaction error Kotlin](main-activity-transaction-kt.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](APIs to help customize a multi-user mode app)]
+### APIs to help customize a multi-user mode app
+
 
 [OPTION BEGIN [Java]]
 
@@ -274,7 +273,7 @@ The following cases are not supported in multi-user mode:
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. Examine the code and notice that it does some clean and reset work:
 
-    !![Encryption key ready method](offline-encryption-key-ready-java.png)
+    <!-- border -->![Encryption key ready method](offline-encryption-key-ready-java.png)
 
     You can provide your own logic in this callback.
 
@@ -312,7 +311,7 @@ The following cases are not supported in multi-user mode:
 
     On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. Examine the code and notice that it does some clean and reset work:
 
-    !![Encryption key ready method](offline-encryption-key-ready-kotlin.png)
+    <!-- border -->![Encryption key ready method](offline-encryption-key-ready-kotlin.png)
 
     You can provide your own logic in this callback.
 
@@ -320,7 +319,5 @@ The following cases are not supported in multi-user mode:
 
 Congratulations! You have learned how to enable multi-user mode for your android applications!
 
-[DONE]
-[ACCORDION-END]
 
 ---

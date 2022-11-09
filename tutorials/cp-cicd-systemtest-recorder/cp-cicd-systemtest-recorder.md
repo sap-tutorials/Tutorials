@@ -1,6 +1,5 @@
 ---
-title: Add Automated System Tests with the SAPUI5 Test Recorder to Your CI/CD Pipeline
-description: Use the SAPUI5 Test Recorder to create system tests with UIVeri5 against the user interface of an SAPUI5/SAP Fiori application. Add the tests to a continuous integration and delivery pipeline to run them automatically.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, topic>cloud, topic>sapui5, software-product>sap-fiori]
@@ -8,8 +7,11 @@ primary_tag: software-product>sap-business-technology-platform
 author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
 ---
+# Add Automated System Tests with the SAPUI5 Test Recorder to Your CI/CD Pipeline
+<!-- description --> Use the SAPUI5 Test Recorder to create system tests with UIVeri5 against the user interface of an SAPUI5/SAP Fiori application. Add the tests to a continuous integration and delivery pipeline to run them automatically.
+
 ## Note
-Please note that this step is deprecated and will be removed or replaced soon. Even though existing test will continue to work, we recomment that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme)
+Please note that UIVeri5 is deprecated and will be removed or replaced soon. Even though existing tests will continue to work, we recommend that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme).
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
 -	You have installed [Node JS](https://nodejs.org/en/) in version 8.0 or higher.
@@ -26,16 +28,14 @@ Please note that this step is deprecated and will be removed or replaced soon. E
 -	You have a [Jenkins](https://jenkins.io/) instance that is preconfigured for using project "Piper". See [Configuration](https://sap.github.io/jenkins-library/configuration/).
 -	You have an account and a repository in [GitHub](https://github.com/).
 
-## Details
-### You will learn
+## You will learn
 - How to create system tests with UIVeri5 using the UI5 Test Recorder
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
-
-### What Is This Tutorial About?
-
+## What Is This Tutorial About?
 In this tutorial, you'll create and run automated system tests with UIVeri5 against a simple shopping app for electronic devices. Your test application has basic functions such as a product catalog sorted by categories, a search option, and an *add to cart* function.
 
+## Intro
 The tutorial consists of three main stages:
 
 ![Main Stages of Tutorial](tutorial-steps.png)
@@ -45,9 +45,7 @@ The tutorial consists of three main stages:
 2. Create and run system tests with UIVeri5 to check the home screen of your application, its product search, and the navigation to a product.
 
 3. Automate your system tests by integrating them into a CI/CD pipeline.
-
-### About System Tests with UIVeri5
-
+## About System Tests with UIVeri5
 UIVeri5 is an SAP open-source JavaScript testing framework for SAPUI5 applications. It drives a real browser for your deployed app and simulates authentic user scenarios. System tests check both front-end and back-end and make sure that all pieces of an application work well together.
 
 The following graphic shows the positioning of system tests with UIVeri5 compared to other testing methods and tools. The arrow shape illustrates the granularity of the methods: Compared to unit, component, or integration tests, system tests examine less details and focus on crucial workflows, instead.
@@ -58,21 +56,15 @@ The following graphic shows the positioning of system tests with UIVeri5 compare
 
 >- [UIVeri5: More Stable System Tests for UI5 Applications](https://blogs.sap.com/2019/01/28/uiveri5-more-stable-system-tests-for-ui5-applications/)
 >- [UIVeri5 for E2E testing of UI5 apps](https://blogs.sap.com/2019/01/29/uiveri5-for-e2e-testing-of-ui5-apps/)
-
-### About the SAPUI5 Test Recorder
-
+## About the SAPUI5 Test Recorder
 The SAPUI5 Test Recorder is a tool that helps you create integration and system tests. You can use it in any SAPUI5 application to inspect its user interface, view the control properties, and get code snippets for OPA5 and UIVeri5 tests. As of version 1.74, it is part of the SAPUI5 framework.
 
 > For more information about the SAPUI5 Test Recorder, see [Test Recorder](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d).
-
-### About the Yeoman Generator for UIVeri5
-
+## About the Yeoman Generator for UIVeri5
 Yeoman is a popular open-source command-line tool to create a scaffolding for either a complete project or parts of it. As of version 2.3.0., the UIVeri5 Yeoman generator is a sub-generator of the project `generator-easy-ui5`. It helps you kickstart your test suite and quickly write new tests with your own action and assertion logic for scenarios that are relevant for your use case.
 
 >For more information, see [Yeoman generators for OPA5 and UIVeri5](https://blogs.sap.com/2020/11/30/yeoman-generators-for-opa5-and-uiveri5/).
-
-### About CI/CD with Project "Piper"
-
+## About CI/CD with Project "Piper"
 Project "Piper" is one of SAP's solutions for continuous integration and delivery. It provides pre-configured Jenkins pipelines, which you can use in your own Jenkins master infrastructure and adapt according your needs. Project "Piper" consists of two different parts:
 
 - A [shared library](https://sap.github.io/jenkins-library/), which contains the description of steps, scenarios, and utilities that are required to use Jenkins pipelines
@@ -84,7 +76,8 @@ Project "Piper" is one of SAP's solutions for continuous integration and deliver
 > - [SAP Solutions for Continuous Integration and Delivery](https://help.sap.com/viewer/8cacec64ed854b2a88e9a0973e0f97a2/Cloud/en-US/e9fa320181124fa9808d4446a1bf69dd.html)
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up your test project)]
+### Set up your test project
+
 
 In Visual Studio Code, set up your UIVeri5 test project.
 
@@ -157,10 +150,9 @@ In Visual Studio Code, set up your UIVeri5 test project.
 
     ![Terminal Response: Successful](status-passed.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Walk through the test scenario)]
+### Walk through the test scenario
+
 
 Manually, familiarize yourself with your test scenario before starting to code it. Later, you'll automate the following steps so that they are automatically executed during your system tests.
 
@@ -172,25 +164,24 @@ Manually, familiarize yourself with your test scenario before starting to code i
 
 2.    Check how many product categories are shown in the **Product Catalog**:
 
-      !![Product Categories in the Product Catalog](shopping-app.png)
+      <!-- border -->![Product Categories in the Product Catalog](shopping-app.png)
 
 3. In the **Product Catalog**, search for **`Watch`** and check if the displayed results match your request:
 
-    !![Comparison between Search Term and Search Result](search-results.png)
+    <!-- border -->![Comparison between Search Term and Search Result](search-results.png)
 
 4. Choose **Flat Watch HD32** and check if the product appears in the detailed view:
 
-    !![Detail View of Flat Watch HD32](detailed-view.png)
+    <!-- border -->![Detail View of Flat Watch HD32](detailed-view.png)
 
 5. Check if at the bottom right of the detailed view, there is an **Add to Cart** button:
 
-    !![Add to Cart Button](cart-button.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![Add to Cart Button](cart-button.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Test the home screen)]
+
+### Test the home screen
+
 
 Implement a test that checks if in the product catalog on the home screen of your application, all categories are shown. To verify this, the expected number of product categories are compared with the displayed ones.
 
@@ -234,13 +225,13 @@ Implement a test that checks if in the product catalog on the home screen of you
 
 6. In your sample application, right-click the first entry of the Categories list and choose **Highlight**. As a result, the Test Recorder highlights the entry to indicate its activity:
 
-    !![Highlighting of First Category](highlight-category.png)
+    <!-- border -->![Highlighting of First Category](highlight-category.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect **UIVeri5** is selected.
 
-    !![Code Snippet for List Item](snippet-category.png)
+    <!-- border -->![Code Snippet for List Item](snippet-category.png)
 
 7. Copy this code snippet into the assertions section of your `home.js` page object.
 
@@ -270,10 +261,9 @@ Implement a test that checks if in the product catalog on the home screen of you
 
     ![Status: Passed](status-passed.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the product search)]
+### Test the product search
+
 
 Implement a test that checks if when you search for a product, the search results are displayed accordingly. To verify this, the entered search term is compared with the search result.
 
@@ -313,13 +303,13 @@ Implement a test that checks if when you search for a product, the search result
 
 7. In your sample application, right-click the search field and choose **Enter Text**. As a result, the Test Recorder highlights the search field to indicate its activity:
 
-    !![Highlighted Search Field](highlight-search-field.png)
+    <!-- border -->![Highlighted Search Field](highlight-search-field.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    !![Code Snippet for Search Field](snippet-search-field.png)
+    <!-- border -->![Code Snippet for Search Field](snippet-search-field.png)
 
 8. Copy this code snippet into the `actions` section of your `home.js` page object.
 
@@ -335,13 +325,13 @@ Implement a test that checks if when you search for a product, the search result
 
 12. Right-click the first product in the filtered catalog and choose **Highlight**. As a result, the Test Recorder highlights the list entry to indicate its activity:
 
-    !![Highlighted List Entry](highlight-product.png)
+    <!-- border -->![Highlighted List Entry](highlight-product.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    !![Code Snippet for List Entry](snippet-product.png)
+    <!-- border -->![Code Snippet for List Entry](snippet-product.png)
 
 13. Copy this code snippet into the `assertions` section of your `home.js`.
 
@@ -369,10 +359,9 @@ Implement a test that checks if when you search for a product, the search result
 
     ![Status: Passed](status-passed.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the navigation to a product)]
+### Test the navigation to a product
+
 
 Check if the following two statements are true:
 
@@ -423,13 +412,13 @@ Check if the following two statements are true:
 
 9. In your sample application, right-click the title of the first search result and choose **Press**. As a result, the Test Recorder highlights the title to indicate its activity:
 
-    !![Highlighted Title](highlight-title.png)
+    <!-- border -->![Highlighted Title](highlight-title.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    !![Code Snippet for Title](snippet-title.png)
+    <!-- border -->![Code Snippet for Title](snippet-title.png)
 
 10. Copy this code snippet into the `actions` section of your `home.js`.
 
@@ -471,13 +460,13 @@ Check if the following two statements are true:
 
 14. In the Shopping Cart application in Google Chrome, right-click the header of the detail view and choose **Highlight**. As a result, the Test Recorder highlights the header to indicate its activity:
 
-    !![Highlighted Header](highlight-header.png)
+    <!-- border -->![Highlighted Header](highlight-header.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     >Please make sure that the dialect UIVeri5 is selected.
 
-    !![Code Snippet for Header](snippet-header.png)
+    <!-- border -->![Code Snippet for Header](snippet-header.png)
 
 15. Copy this code snippet into the `assertions` section of your `product.js`.
 
@@ -495,13 +484,13 @@ Check if the following two statements are true:
 
 18. In the Shopping Cart application in Google Chrome, right-click the **Add to Cart** button and choose **Highlight**. As a result, the Test Recorder highlights the button to indicate its activity:
 
-    !![Highlighted Button](highlight-button.png)
+    <!-- border -->![Highlighted Button](highlight-button.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    !![Code Snippet for Button](snippet-button.png)
+    <!-- border -->![Code Snippet for Button](snippet-button.png)
 
 19. Copy this code snippet into the `assertions` section of your `product.js`.
 
@@ -523,10 +512,10 @@ Check if the following two statements are true:
 
     ![Status: Passed](status-passed.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Integrate your system tests into a CI/CD pipeline)]
+
+### Integrate your system tests into a CI/CD pipeline
+
 
 Automate your system tests by integrating them into a CI/CD pipeline.
 
@@ -558,7 +547,7 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
     Make sure that your script looks as follows and choose **Save**:
 
-    !![Screenshot Pipeline Skeleton in Jenkins](pipeline-script.png)
+    <!-- border -->![Screenshot Pipeline Skeleton in Jenkins](pipeline-script.png)
 
 7. To run your newly created pipeline, choose **Build Now**.
 
@@ -568,7 +557,7 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 9. To check the log for failures due to syntax issues, choose **Console Output**. Make sure that the (empty) pipeline has run successfully:
 
-    !![Console Output in Jenkins: Successful](console-output.png)
+    <!-- border -->![Console Output in Jenkins: Successful](console-output.png)
 
     Next, implement a pipeline stage for your system tests with UIVeri5.
 
@@ -619,20 +608,17 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 15. Choose **#2** to view the results of your second pipeline run. Make sure that it has run successfully:
 
-    !![Console Output in Jenkins: Successful](console-output.png)
+    <!-- border -->![Console Output in Jenkins: Successful](console-output.png)
 
 16. From the sidebar, choose **UIVeri5 Test Report**.
 
     Here, you get an overview of all test results together with screenshots from their execution:
 
-    !![UIVeri5 Test Report](test-report-2.png)
+    <!-- border -->![UIVeri5 Test Report](test-report-2.png)
 
-[DONE]
 
 **Congratulations!**
 
  You have successfully created different system tests with UIVeri5 and integrated them into a continuous integration and delivery pipeline.
-
-[ACCORDION-END]
 
 ---

@@ -173,3 +173,4 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 You'll see your app is displayed as a tile in the group you assigned it to:
 
   <!-- border -->![View group with app](18-view-groupwithapp.png)
+

@@ -1,6 +1,5 @@
 ---
-title: Create a Workspace with Apps and Content
-description: Create a workspace and add apps and other content to it.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-work-zone]
@@ -8,22 +7,26 @@ primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
 ---
 
+# Create a Workspace with Apps and Content
+<!-- description --> Create a workspace and add apps and other content to it.
+
 ## Prerequisites
  You have accessed SAP Work Zone.
 
 
-## Details
-### You will learn
+## You will learn
   - How to add a workspace to SAP Work Zone
   - How to connect to the SAP Gateway system and add a Web Dynpro app to your workspace
   - How to create a UI5 integration card that consumes data from the SAP Gateway demo system
   - How to integrate the UI5 integration card to SAP Work Zone
 
+## Intro
 In this tutorial we'll provide links to existing tutorials that you need to follow. Please note that in each step, there may be instructions for you to carry out.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a workspace to SAP Work Zone)]
+### Add a workspace to SAP Work Zone
+
 
 In this step, you're going to create a workspace where employees who joined the company hackathon challenge, can interact with other members of the workspace, ask questions, and find out all that they need to know.
 
@@ -31,18 +34,16 @@ In this step, you're going to create a workspace where employees who joined the 
 
 2. In step 2.3, give the workspace a unique name by adding your User ID as a prefix to the name: For example: `<User ID>_Employee Innovation Hackathon`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an account on the SAP Gateway Demo System)]
+### Create an account on the SAP Gateway Demo System
+
 
 For step-by-step guidance how to do this, follow this tutorial: [Create an account on the SAP Gateway Demo System](gateway-demo-signup).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Connect SAP BTP to your Gateway Demo System account)]
+### Connect SAP BTP to your Gateway Demo System account
+
 
 In this step you'll create a connection between SAP BTP, Cloud Foundry environment and the SAP Gateway Demo System (ES5).
 
@@ -52,10 +53,9 @@ In this step you'll create a connection between SAP BTP, Cloud Foundry environme
 
 3. In step 2.3 give the destination a unique name. For example: `<User ID>_ES5`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add a Web Dynpro ABAP app to your SAP Work Zone)]
+### Add a Web Dynpro ABAP app to your SAP Work Zone
+
 
 In this step, you're going to add one of SAP's classic applications, a Web Dynpro ABAP app, to your work zone using the Content Manager. SAP's classic applications typically run on the backend of a data center.
 
@@ -63,10 +63,10 @@ In this step, you're going to add one of SAP's classic applications, a Web Dynpr
 
 2. In step 2.2, give your app a unique name by adding your User ID as a prefix to the name: For example, `<User ID>_Search POs`.
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a dev space for SAP Fiori apps)]
+
+### Create a dev space for SAP Fiori apps
+
 
 1. For step-by-step guidance how to do this, follow this tutorial: [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
 
@@ -74,10 +74,9 @@ In this step, you're going to add one of SAP's classic applications, a Web Dynpr
 
 3. Use your IAS user and password to log in to SAP Business Application Studio.  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a UI5 integration card that consumes data from the SAP Gateway Demo System)]
+### Create a UI5 integration card that consumes data from the SAP Gateway Demo System
+
 
 In this step, you'll create a UI5 integration card in SAP Work Zone to display data from the backend SAP Gateway Demo System.
 
@@ -89,10 +88,9 @@ In this step, you'll create a UI5 integration card in SAP Work Zone to display d
 
     > Note: if you run out of time, please skip steps 4, 5, and 6 and create a more simple card. You can later read the steps you missed.  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Integrate your UI5 integration card to SAP Work Zone)]
+### Integrate your UI5 integration card to SAP Work Zone
+
 
 In this step, you'll add your deployed UI5 integration card to SAP Work Zone and add it to the SAP Work Zone workspace.
 
@@ -102,7 +100,8 @@ In this step, you'll add your deployed UI5 integration card to SAP Work Zone and
 
 Congratulations! You're done!
 
-If you would like to implement the same SAP Work Zone, using your own subaccount, you can follow this tutorial mission: [Create Your First Digital Workplace Using SAP Work Zone](mission.workzone-first.html).
+If you would like to implement the same SAP Work Zone, using your own subaccount, you can follow this tutorial mission: [Create Your First Digital Workplace Using SAP Work Zone](mission.workzone-first).
+
 
 
 

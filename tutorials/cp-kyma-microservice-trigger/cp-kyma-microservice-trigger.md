@@ -1,26 +1,29 @@
 ---
-title: Trigger a Microservice with an Event
-description: Trigger a microservice to run when an event is published into the Kyma runtime.
+parser: v2
 time: 20
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
+# Trigger a Microservice with an Event
+<!-- description --> Trigger a microservice to run when an event is published into the Kyma runtime.
+
 ## Prerequisites
  - [`kubectl` configured to KUBECONFIG downloaded from the Kyma runtime](cp-kyma-download-cli)
  - [Deploy a Go MSSQL API Endpoint in the Kyma Runtime](cp-kyma-api-mssql-golang) tutorial completed
  - [Deploy the Commerce Mock Application in the Kyma Runtime](cp-kyma-mocks) tutorial completed
 
-## Details
-### You will learn
+## You will learn
   - How to trigger a microservice with an event
 
+## Intro
 This tutorial relies on the Commerce mock application to publish events into the Kyma runtime. After binding the Commerce mock application to the `dev` Namespace, we will create a service instance of the SAP Commerce Cloud - Events. The service instance will allow for any microservice or lambda function within the `dev` Namespace to subscribe to these events by defining an event subscription. The subscription pairs an event source, the Commerce mock application, and the event type, **order.created**, to a subscriber which in this case will be the Go MSSQL API microservice.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. Copy the repository URL.
 
@@ -34,10 +37,9 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the sample)]
+### Explore the sample
+
 
 1. Open the `api-mssql-go` directory in your desired editor.
 
@@ -54,11 +56,10 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Apply an event subscription)]
+### Apply an event subscription
+
 
 In this step you will define an event subscription which is used to create a subscriber of an event. This will allow you to specify that your **api-mssql-go** API application, by referencing its service, should receive the payload of the **order.created** event.
 
@@ -87,10 +88,10 @@ In this step you will define an event subscription which is used to create a sub
       ready: true
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test scenario)]
+
+### Test scenario
+
 
 With the configuration steps completed, you can now test the scenario to validate that it is working as intended.
 
@@ -120,6 +121,5 @@ With the configuration steps completed, you can now test the scenario to validat
 
     ![Test the Scenario](test-scenario-3.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 ---
