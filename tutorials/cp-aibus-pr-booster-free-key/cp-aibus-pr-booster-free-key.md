@@ -90,7 +90,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 >If you face any issue with the booster **Set up account for Personalized Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Personalized Recommendation](cp-aibus-pr-free-service-instance) to create the service instance and service key for Personalized Recommendation manually using the free tier service plan.
 
-Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+Next step is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
 
 
