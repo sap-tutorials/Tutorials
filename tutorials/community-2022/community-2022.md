@@ -7,7 +7,7 @@ primary_tag: topic>sap-community
 author_name: Lena Stodal
 author_profile: https://github.com/lenastodal
 ---
-## Tour the SAP Community 2022
+# Tour the SAP Community 2022
 <!-- description --> Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership.
 
 ## Prerequisites
