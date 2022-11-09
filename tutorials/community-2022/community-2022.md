@@ -1,5 +1,4 @@
 ---
-
 parser: v2
 auto_validation: true
 time: 25  
@@ -8,9 +7,8 @@ primary_tag: topic>sap-community
 author_name: Lena Stodal
 author_profile: https://github.com/lenastodal
 ---
-
-# Tour the SAP Community 2022
-<!-- description --> Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership. 
+## Tour the SAP Community 2022
+<!-- description --> Explore the various features of SAP Community, get to know the new Groups, and discover how to get the most out of your membership.
 
 ## Prerequisites
  - Please ensure that you have an SAP user account and profile. (If you don't, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker)).
@@ -85,7 +83,7 @@ To gain a better understanding of topic pages, watch this video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60gN_YRV2o0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Follow Activity:** **`Follow a tag`** 
+**Follow Activity:** **`Follow a tag`**
 
 As just mentioned, you can follow a tag from the topic page to get notified (via e-mail and/or SAP Community inbox) about new content (blog posts, questions and answers) posted with that tag. You will also view this content in your [Activity Stream](https://activities.sap.com/),
 
@@ -219,4 +217,3 @@ Related to the previous step: For events that you are either organising, volunte
 Congratulations for receiving your new **Tour the SAP Community 2022** badge!
 
 ![community-tour-2022](community-tour-2022.png)
-
