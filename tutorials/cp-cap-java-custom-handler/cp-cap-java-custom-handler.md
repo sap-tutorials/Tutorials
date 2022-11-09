@@ -1,28 +1,31 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Add a Custom Event Handler
-description: Write your first CAP Java Custom Event Handler.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Details
-### You will learn
+# Add a Custom Event Handler
+<!-- description --> Write your first CAP Java Custom Event Handler.
+
+## You will learn
   - How to write a custom event handler for CAP Java
   - Which event handler classes and methods are available
 
+## Intro
 In the following tutorials, you will learn that the CAP Java runtime can handle all CRUD events (create, read, update, and delete) triggered by OData requests out of the box. For now, we'll show you how to do this manually, so that you can see how to write a custom event handler to extend the event handling process.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Java class for custom event handler)]
+### Create Java class for custom event handler
+
 
 1. Create the Java package, by creating a new folder called `handlers` under `srv/src/main/java/com/sap/cap/productsservice`.
 
-    !![package for Custom Event Handlers](handler-package.png)
+    <!-- border -->![package for Custom Event Handlers](handler-package.png)
 
 2. Create the Java class file `AdminService.java` in the created `handlers` folder, with the following content and make sure you **Save** the file:
 
@@ -76,18 +79,17 @@ The event handler uses the following APIs, which are available for service provi
 * The annotation `@ServiceName` specifies the default service name all event handler methods apply to. Here this is `AdminService`, as this was also the name when defining the service in the CDS model.
 * Event handler methods get an event-specific event context parameter, which provides access to the input parameters of the event and the ability to set the result. For example, let's look at the `CdsCreateEventContext context` parameter. The event we're extending is the `CREATE` event. The type of the context variable is specific to this extended `CREATE` event. The `onCreate` method returns `void`, as the result is set by running: `context.setResult(…)`.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Stop the application)]
+
+### Stop the application
+
 
 Stop your application if it's still running by using **`CTRL+C`** in the terminal.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Restart the application)]
+### Restart the application
+
 
 1. Restart the application by running the following command in the terminal:
 
@@ -97,16 +99,15 @@ Stop your application if it's still running by using **`CTRL+C`** in the termina
 
 2. Choose **Open in New Tab** when prompted.
 
-    !![open application in new tab message](open-in-new-tab.png)
+    <!-- border -->![open application in new tab message](open-in-new-tab.png)
 
     A new Browser tab should be opened with your application.
 
-    !![application opened](application-opened.png)
+    <!-- border -->![application opened](application-opened.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Insert data through HTTP request)]
+### Insert data through HTTP request
+
 
 Try to insert some data into the running application. For example, by using the HTTP request plugin bundled in SAP Business Application Studio.
 
@@ -127,22 +128,21 @@ Try to insert some data into the running application. For example, by using the 
 
 3. Choose **Send Request** above the request in the file. You will see the result on the right side of the window.
 
-    !![response is displayed on the right](request-and-response.png)
+    <!-- border -->![response is displayed on the right](request-and-response.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Read data using the Products entity page)]
+### Read data using the Products entity page
+
 
 1. To read the data again, open the welcome page of the application.
 
 2. Choose **Products** from the app welcome page or add `/odata/v4/AdminService/Products` to the app URL.
 
-  !![link on welcome page](products-link.png)
+  <!-- border -->![link on welcome page](products-link.png)
 
 You should see something like this:
 
-  !![records for Products entity](products-data.png)
+  <!-- border -->![records for Products entity](products-data.png)
 
 This is the record you have inserted in the previous step through the HTTP request.
 
@@ -152,7 +152,5 @@ Great Job! You have successfully added custom logic to handle specific requests.
 
 In addition, you will use an actual database as the persistence and see some of the features the CAP Java SDK provides out of the box, without a single line of custom coding.
 
-[DONE]
-[ACCORDION-END]
 
 ---
