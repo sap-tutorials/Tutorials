@@ -1,28 +1,31 @@
 ---
-title: Connect to SAP HANA with a Secure Connection from Python
-description: Configure a cryptographic library provider to enable a secure connection to SAP HANA from a Python app.
+parser: v2
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, products>sap-HANA]
 primary_tag: products>sap-cloud-platform--sap-HANA-service
 ---
 
+# Connect to SAP HANA with a Secure Connection from Python
+<!-- description --> Configure a cryptographic library provider to enable a secure connection to SAP HANA from a Python app.
+
 ## Prerequisites
 - Install required clients through the [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/latest/en-US).
 - An SAP HANA instance
 - Python 3 installed
 
-## Details
-### You will learn
+## You will learn
   - How to securely connect to SAP HANA using `mscrypto` on Windows
   - How to securely connect to SAP HANA using OpenSSL on Mac or Linux
   - How to securely connect to SAP HANA using the SAP Common Crypto Library on Windows, Mac, or Linux
 
+## Intro
 If you have not used the SAP HANA client for Python, check out the [Connect to SAP HANA Using Python](hana-python-basic-connection) tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Find connection parameters to SAP HANA)]
+### Find connection parameters to SAP HANA
+
 
 The following information is needed to connect to SAP HANA:
 
@@ -44,10 +47,10 @@ If you are using [SAP HANA, express edition](https://help.sap.com/viewer/product
 ![HANA Express](HXE_Server_Details.png)
 
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test connection parameters without validating the server certificate)]
+
+### Test connection parameters without validating the server certificate
+
 
 Before proceeding, test out the connection parameters.  Knowing that these parameters are correct can make debugging in the coming steps much easier.
 
@@ -111,10 +114,9 @@ Version = 2.00.040.00.1554459575
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set up certificate validation)]
+### Set up certificate validation
+
 With the `sslValidateCertificate` parameter set to True, the SAP HANA client attempts to validate the server's certificate when connecting.  To do so, the client needs to have access to the root certificate of the certificate authority that signed the server's certificate.  
 
 If it is not already set to True, change the `sslValidateCertificate` parameter True.
@@ -226,11 +228,9 @@ sslCryptoProvider='openssl'
 
 [OPTION END]
 
-[DONE]
 
-[ACCORDION-END]
+### Use the SAP Common Crypto Library (optional) 
 
-[ACCORDION-BEGIN [Step 4: ](Use the SAP Common Crypto Library (optional) )]
 
 The SAP Common Crypto Library provides another library that can be used to securely connect to HANA.  Additionally, it is required for LDAP authentication or client-side encryption.  This tutorial serves as a general overview for using this library.  See also [Configuring the Client for Client-Side Encryption and LDAP](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.04/en-US/34712c46d7104a2d91ed2f10c66bbc9e.html).
 
@@ -354,8 +354,5 @@ python pythonQuery.py
 
 You have now connected securely to HANA using multiple cryptographic providers.  
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

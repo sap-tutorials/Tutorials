@@ -1,24 +1,26 @@
 ---
-title: Create a Basic Node.js Application with Express Generator
-description: Create a Node.js application skeleton with Express Generator and add some snippets into the backend as a basic application.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>node-js]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Create a Basic Node.js Application with Express Generator
+<!-- description --> Create a Node.js application skeleton with Express Generator and add some snippets into the backend as a basic application.
+
 ## Prerequisites
 - You have installed [Node.js](https://nodejs.org/en/download/).
 - You have a Kyma runtime environment on SAP Business Technology Platform (BTP). If not, please follow this tutorial: [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started).
 
-## Details
-### You will learn
+## You will learn
 - How to create a Node.js application skeleton with Node.js Express generator
 - How to develop a particular endpoint to respond to client requests
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Node.js Application Skeleton)]
+### Create Node.js Application Skeleton
+
 
 You can use the application generator tool [Node.js Express generator](https://expressjs.com/en/starter/generator.html) to quickly create a Node.js application skeleton.
 
@@ -82,11 +84,10 @@ The generated app has the following directory structure:
 7 directories, 9 files
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add Code Snippets into Node.js Application)]
+### Add Code Snippets into Node.js Application
+
 
 Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).
 
@@ -105,7 +106,7 @@ Where:
 - `PATH` is a path on the server.
 - `HANDLER` is the function executed when the route is matched.
 
-Add basic logic into the default get endpoint with the following code snippets:
+Add basic logic into the default get endpoint. To make the necessary changes you should navigate to `kyma-multitenant-node/routes/index.js` and add the logic with the following code snippets:
 
 ```javascript
 /**
@@ -133,18 +134,16 @@ router.get("/", function(req, res, next) {
 
 >  For more details on how to develop Express web application, please visit the official website: [Express](https://expressjs.com/)
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Project Repository)]
 
 
-You can find the final Node.js project from [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+### Project Repository
 
 
 
-[DONE]
-[ACCORDION-END]
+You can find the final Node.js project from [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission%20-%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+
+
+
 
 
 ---

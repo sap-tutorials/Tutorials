@@ -1,26 +1,29 @@
 ---
-title: Connect Using the SAP HANA Node.js Interface
-description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Connect Using the SAP HANA Node.js Interface
+<!-- description --> Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
+
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to install Node.js and the SAP HANA client Node.js driver
   - How to create a Node.js application that queries a SAP HANA database
   - How to use both the synchronous and asynchronous driver interfaces
 
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/learn).  
+## Intro
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn).  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js)]
+### Install Node.js
+
 
 Ensure you have Node.js installed and check its version. Enter the following command:
 
@@ -52,10 +55,9 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 >docker run -it --name=nodealpine node:alpine /bin/bash
 >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install SAP HANA client for Node.js from NPM)]
+### Install SAP HANA client for Node.js from NPM
+
 
 Node.js packages are available using [NPM](https://www.npmjs.com/), which is the standard package manager for Node.js.  
 
@@ -167,10 +169,9 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 >```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a synchronous Node.js application that queries SAP HANA)]
+### Create a synchronous Node.js application that queries SAP HANA
+
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -247,50 +248,155 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     connection.disconnect();
     ```  
 
-4. Run the app.  
+3. Run the app.  
 
     ```Shell
     node nodeQuery.js
     ```
-![Running nodeQuery.js](Node-query.png)
 
-Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
+    ![Running nodeQuery.js](Node-query.png)
 
-Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
+    Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
 
->To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
+    Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
->```Shell (Microsoft Windows)
->set DEBUG=*
-node nodeQuery.js
->```  
+    >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
->```Shell (Linux or Mac)
-export DEBUG=*
-node nodeQuery.js
->```    
+    >```Shell (Microsoft Windows)
+    >set DEBUG=*
+    >node nodeQuery.js
+    >```  
 
-> ![debug output](debug-flag.png)
+    >```Shell (Linux or Mac)
+    >export DEBUG=*
+    >node nodeQuery.js
+    >```    
 
-> The value of the environment variable DEBUG can be seen and removed with the commands below.
+    > ![debug output](debug-flag.png)
 
->```Shell (Microsoft Windows)
->set DEBUG
->set DEBUG=
->set DEBUG
->```  
+    > The value of the environment variable DEBUG can be seen and removed with the commands below.
 
->```Shell (Linux or Mac)
->printenv | grep DEBUG
->unset DEBUG
->printenv | grep DEBUG
->```
+    >```Shell (Microsoft Windows)
+    >set DEBUG
+    >set DEBUG=
+    >set DEBUG
+    >```  
+
+    >```Shell (Linux or Mac)
+    >printenv | grep DEBUG
+    >unset DEBUG
+    >printenv | grep DEBUG
+    >```
 
 
-[DONE]
-[ACCORDION-END]
+### Create a synchronous app that uses a connection pool
 
-[ACCORDION-BEGIN [Step 4: ](Create an asynchronous app that uses callbacks)]
+
+Connection pooling can improve performance when making multiple, brief connections to the SAP HANA database.  The following sample makes two connections one after another without using a connection pool and then using a connection pool.  It demonstrates how the time taken to make a connection with a connection retrieved from a pool is significantly shorter.
+
+1. Open a file named `nodeQueryConnectionPool.js` in an editor.
+
+    ```Shell (Microsoft Windows)
+    notepad nodeQueryConnectionPool.js
+    ```
+
+    Substitute `pico` below for your preferred text editor.  
+
+    ```Shell (Linux or Mac)
+    pico nodeQueryConnectionPool.js
+    ```
+
+2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+
+    ```JavaScript
+    'use strict';
+    const { PerformanceObserver, performance } = require('perf_hooks');
+    var util = require('util');
+    var hana = require('@sap/hana-client');
+
+    var connOptions = {
+        //Option 1, retrieve the connection parameters from the hdbuserstore
+        serverNode: '@USER1UserKey'  //host, port, uid, and pwd retrieved from hdbuserstore
+
+        //Option 2, specify the connection parameters
+        //serverNode: 'host:port',
+        //UID: 'USER1',
+        //PWD: 'Password1',
+    };
+
+    var poolProperties = {
+        poolCapacity: 10,  //max # of connections in the pool waiting to be used
+        maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
+        pingCheck: false,
+        maxPooledIdleTime: 3600, //1 hour (in seconds)
+    }
+
+    var pool = null;
+
+    queryTable(false, "1st Run");
+    queryTable(false, "2nd Run");
+    queryTable(true, "1st Run");
+    //console.log(pool.clear());
+    queryTable(true, "2nd Run");
+    console.log("Connections in use :" + pool.getInUseCount());
+    console.log("Connections in the pool :" + pool.getPooledCount());
+
+    //Creates two connections either using connection pooling or not
+    //Displays timing information
+    function queryTable(usePool, run) {
+        var t0 = performance.now()
+        var connection = null;
+        if (!usePool) {
+            connection = hana.createConnection();
+            connection.connect(connOptions);
+            var t1 = performance.now();
+        }
+        else {
+            var t0 = performance.now();
+            if (pool === null) {
+                pool = hana.createPool(connOptions, poolProperties); //create a connection pool
+            }
+
+            connection = pool.getConnection(); //get a connection from the pool
+            var t1 = performance.now();
+        }
+
+        var t2 = performance.now();
+        var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+        var result = connection.exec(sql);
+        var t3 = performance.now();
+
+        var t4 = performance.now();
+        //console.log(util.inspect(result, { colors: false }));
+        var t5 = performance.now();
+
+        var t6 = performance.now();
+        connection.disconnect(); //returns connection to the pool
+        var t7 = performance.now();
+
+        console.log("Connection Pool Enabled: " + usePool + " " + run);
+        console.log("=====================================");
+        console.log("Connection time in ms: " +  (t1 - t0));
+        console.log("Query time in ms        " +  (t3 - t2));
+        console.log("Display time in ms:     " +  (t5 - t4));
+        console.log("Disconnect time in ms:   " +  (t7 - t6));
+        console.log("Total time in ms:      " +  (t7 - t0) + "\n");
+    }
+    ```
+
+3. Run the app.  
+
+    ```Shell
+    node nodeQueryConnectionPool.js
+    ```
+
+    ![Running nodeQueryConnectionPool.js](NnodeQueryConnectionPool.png)
+
+    See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.13 release and documented in the 2.14 release.  This new API provides a more direct way to interact with the connection pool.
+
+
+### Create an asynchronous app that uses callbacks
+
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -384,14 +490,14 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     ```Shell
     node nodeQueryCallback.js
     ```
-![Running nodeQueryCallback.js](Node-query-callback.png)
 
-Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-[DONE]
-[ACCORDION-END]
+    Notice that asynchronous method calls use callback functions.
 
-[ACCORDION-BEGIN [Step 5: ](Create an asynchronous app that uses promises)]
+
+### Create an asynchronous app that uses promises
+
 The Node.js driver for the SAP HANA client added support for promises in the 2.11 release.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -489,15 +595,15 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     ```Shell
     node nodeQueryPromise.js
     ```
-![Running nodeQueryPromise.js](Node-query-promise.png)
 
-The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
+    ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-[DONE]
-[ACCORDION-END]
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 
-[ACCORDION-BEGIN [Step 6: ](Debug the application)]
+
+### Debug the application
+
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
@@ -520,8 +626,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP HANA database.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

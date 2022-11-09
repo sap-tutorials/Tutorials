@@ -1,22 +1,24 @@
 ---
+parser: v2
 author_name: Helena Nacinovic
 author_profile: https://github.com/helenanacinovic
-title: Business Builder in SAP Data Warehouse Cloud
-description: Learn about the business modeling capabilities of the Business Builder in SAP Data Warehouse Cloud, including what you can use it for, who should use it, and some of the prerequisites.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
-## Details
-### You will learn
+# Business Builder in SAP Data Warehouse Cloud
+<!-- description --> Learn about the business modeling capabilities of the Business Builder in SAP Data Warehouse Cloud, including what you can use it for, who should use it, and some of the prerequisites.
+
+## You will learn
 - What is the Business Layer in SAP Data Warehouse Cloud
 - What type of objects you can create with the Business Builder
 - When you should use the Business Builder instead of the Data Builder
 - An end-to-end example
 
 
+## Intro
 The Business Builder helps you instantly model your organizational data in business terms. With it, you can create business entities and relationships with an easy to understand structure, making business users more independent from IT.
 
 In practice, it allows business users to collaborate and create data models in SAP Data Warehouse Cloud based on a semantic view of the organization's data. Once all the data is setup and made available by IT in SAP Data Warehouse Cloud, then it's easy to give permissions to the right people, enabling you to get your data ready to provide business insights.
@@ -24,7 +26,8 @@ In practice, it allows business users to collaborate and create data models in S
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the business layer)]
+### Get to know the business layer
+
 
 In SAP Data Warehouse Cloud, you can work on your data in two different layers:
 
@@ -40,10 +43,9 @@ When it comes to using the Business Builder for modeling data, it allows you to:
 -	Collaborate with other business users by sharing models in the Repository Explorer
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Objects you can create with Business Builder)]
+### Objects you can create with Business Builder
+
 
 To create your business scenarios with the Business Builder, here are the objects you can create:
 
@@ -78,11 +80,10 @@ An authorization scenario is a way to restrict access to parts of the data withi
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Choose the right tool for you)]
+### Choose the right tool for you
+
 
 As you get to know SAP Data Warehouse Cloud better, you might wonder which of the builders is the best one for your needs: the Data Builder or the Business Builder.
 
@@ -94,10 +95,9 @@ One important thing to keep in mind is: everything is that is created in the Bus
 
 The strength of SAP Data Warehouse Cloud is in bringing together different parts of the organization to connect, prepare, model, and then create business entities for visualization. That means collaborating with colleagues who have different skills to enable business analysts to come into the Business Builder and start modeling data based on concrete business questions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Watch an end-to-end example)]
+### Watch an end-to-end example
+
 
 In this video, you can see a simple, but complete example of data modeling with SAP Data Warehouse Cloud. You can then see how the modeling workflow starts in the data layer, and then can be finished in the business layer.
 
@@ -110,15 +110,13 @@ In this video, you can see a simple, but complete example of data modeling with 
 > Learn in the next tutorial how to create your first analytical dataset.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

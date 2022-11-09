@@ -1,10 +1,12 @@
 ---
-title: Create Extended Storage
-description: Create extended storage for Dynamic Tiering.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Create Extended Storage
+<!-- description --> Create extended storage for Dynamic Tiering.
+
 ## Prerequisites
  - **Proficiency:** Beginner
  - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
@@ -14,18 +16,17 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)
 
-## Details
-### You will learn
+## You will learn
  - Connecting to a SAP HANA system.
  - Verifying the status of SAP HANA dynamic tiering.
  - Create extended storage for the Dynamic Tiering host.
-
-### Time to Complete
+## Time to Complete
 **10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to a SAP HANA System)]
+### Connect to a SAP HANA System
+
 Open SAP HANA Studio. In the **SAP HANA Administration Console** perspective, right click in the white space within the **Systems** view on the left. Next select the **Add System...** menu item to execute it. You can also press **S**.
 
 ![Add System](add-system.png)
@@ -38,11 +39,9 @@ Enter "`SYSTEM`" as the **User Name** and enter your **Password**. Click the **S
 
 ![Credentials](credentials.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Verify Extended Storage Status
 
-[ACCORDION-BEGIN [Step 2: ](Verify Extended Storage Status)]
 In the **System** view on the left side, double click on your system (format: `<SID> (SYSTEM)`) to open up the "Overview" tab.
 
 ![Open Overview](open-overview.png)
@@ -56,11 +55,10 @@ In the **Overview** tab and under **General Information**, check the status of *
 
 ![Check Dynamic Tiering](check-dynamic-tiering.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Extended Storage)]
+### Create Extended Storage
+
 Right click on your system (format: `<SID> (SYSTEM)`) located under the **Systems** view. Then select **Open SQL Console** to open a connected SQL console.
 
 ![Open SQL Console](open-sql-console.png)
@@ -77,13 +75,8 @@ Click the Execute button to run the SQL script and create the extended storage `
 
 ![Run](run.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Additional Information
 
-[ACCORDION-BEGIN [Step 4: ](Additional Information)]
 The "CREATE EXTENDED STORAGE" statement creates the warm store and the required `dbspaces`. A `dbspace` is a logical name for a container of files used to store the Dynamic Tiering table data and related objects. `Dbspaces` are specialized to manage specific types of data. Types of `dbspaces` used by Dynamic Tiering include `ES_SYSTEM`, `ES_USER`, `ES_DELTA` etc. Creating the extended storage `dbspace` is a prerequisite to creating extended tables.
 
-[DONE]
-
-[ACCORDION-END]

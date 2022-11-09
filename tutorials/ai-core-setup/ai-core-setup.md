@@ -1,6 +1,5 @@
 ---
-title: Set Up Tools to Connect With and Operate SAP AI Core
-description: Use SAP AI Launchpad, Postman or python to connect with SAP AI Core.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
@@ -9,21 +8,23 @@ author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
+# Set Up Tools to Connect With and Operate SAP AI Core
+<!-- description --> Use SAP AI Launchpad, Postman or python to connect with SAP AI Core.
+
 ## Prerequisites
 - You have created an SAP AI Core instance.
 
-## Details
-### You will learn
+## You will learn
 - How to create a connection between SAP AI Core and your tool of choice (SAP AI Launchpad, Postman, python)
 - How to look explore the tools for SAP AI Core
 
-All the required files and instructions are specified in each step, for you to easily complete the tutorial.
-
-If you are want to learn to use SAP AI Core with python, select the tab for **SAP AI Core SDK** or **AI API client SDK**.
+## Intro
+If you want to use SAP AI Core with python, select the tab for **SAP AI Core SDK** or **AI API client SDK**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get your SAP AI Core keys)]
+### Get your SAP AI Core keys
+
 
 Using your SAP Business Technology Platform (BTP), to generate keys for the SAP AI Core instance, using [Provision SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/38c4599432d74c1d94e70f7c955a717d.html)
 
@@ -43,19 +44,18 @@ The following is a set of keys for **example reference only**. Please generate k
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get tools to connect to SAP AI Core)]
+### Get tools to connect to SAP AI Core
+
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Subscribe SAP AI Launchpad on your SAP BTP Cockpit. Also add **SAP AI Launchpad** to **Entitlements** of your subaccount.
+Subscribe to SAP AI Launchpad on your SAP BTP Cockpit, and add **SAP AI Launchpad** to the **Entitlements** of your subaccount.
 
 Access the app through your SAP BTP Cockpit.
 
-!![image](img/ail/launch.png)
+<!-- border -->![image](img/ail/launch.png)
 
 [OPTION END]
 
@@ -70,21 +70,21 @@ Access the app through your SAP BTP Cockpit.
 
 [Download](https://www.python.org/downloads/) python 3.
 
-Start the installer with following settings.
+Start the installer with the following settings.
 
-!![image](img/pyinstall.png)
+<!-- border -->![image](img/pyinstall.png)
 
 The command line tool `pip` is the python package installer, it will be installed automatically with python.
 
-Use `pip` to install SAP AI Core SDK.
+Use `pip` to install the SAP AI Core SDK.
 
 ```BASH
 pip install ai-core-sdk
 ```
 
-!![image](img/aics/pip-install.png)
+<!-- border -->![image](img/aics/pip-install.png)
 
-Use `pip` to install Jupyter. Jupyter is used to execute python code pieces in the form of reusable cells.
+Use `pip` to install Jupyter Notebook. Jupyter is used to execute python code pieces in the form of reusable cells.
 
 ```BASH
 pip install notebook
@@ -94,15 +94,15 @@ pip install notebook
 
 [OPTION BEGIN [AI API client SDK]]
 
-Command line tool `pip` is the python package installer, it will be installed automatically with python.
+The command line tool `pip` is the python package installer, it will be installed automatically with python.
 
-Use `pip` to install AI API client SDK.
+Use `pip` to install the AI API client SDK.
 
 ```BASH
 pip install ai-api-client-sdk
 ```
 
-Use `pip` to install Jupyter. Jupyter is used to execute python code pieces in the form of reusable cells.
+Use `pip` to install Jupyter Notebook. Jupyter is used to execute python code pieces in the form of reusable cells.
 
 ```BASH
 pip install notebook
@@ -110,22 +110,21 @@ pip install notebook
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set up tools for usage with SAP AI Core)]
+### Set up tools for usage with SAP AI Core
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click on the **Workspaces** app. Click **Add** to create connection to SAP AI Core instance.
+Click on the **Workspaces** app. Click **Add** to create connection to your SAP AI Core instance.
 
-!![image](img/ail/add.png)
+<!-- border -->![image](img/ail/add.png)
 
-Enter the name of the connection `my-ai-core`. Fill other details from you SAP AI Core service key as marked in the image.
+Enter the name `my-ai-core` for the connection . Fill other details from your SAP AI Core service key as marked in the image.
 
 > **INFORMATION** If you find that a connection already exists in your SAP AI Launchpad then you may add your connection under a different name. You may add any number of connections to SAP AI Core instances in your SAP AI Launchpad (this may not be case if you are using Free Tier).
 
-!![image](img/ail/key.png)
+<!-- border -->![image](img/ail/key.png)
 
 
 [OPTION END]
@@ -136,15 +135,15 @@ Visit [SAP API Business Hub](https://api.sap.com/api/AI_CORE_API/overview) and s
 
 Click on the **Download** icon next to the JSON. This downloads a file `AI_CORE_API.json` which has the available API endpoint of SAP AI Core.
 
-!![image](img/postman/json.png)
+<!-- border -->![image](img/postman/json.png)
 
 On the Postman app, click **Import** and open the downloaded JSON file.
 
-!![image](img/postman/import.png)
+<!-- border -->![image](img/postman/import.png)
 
-Click **Upload files** and open `AI_CORE_API.json` file. Next click **Show advanced settings**. Set the following settings.
+Click **Upload files** and open `AI_CORE_API.json` file. Next, click **Show advanced settings**. Set the following settings:
 
-!![image](img/postman/setting.png)
+<!-- border -->![image](img/postman/setting.png)
 
 | Setting | Value
 | --- | --- |
@@ -152,19 +151,19 @@ Click **Upload files** and open `AI_CORE_API.json` file. Next click **Show advan
 |Response parameter generation | Schema
 |Disable optional parameters | ON
 
-Let other settings be unchanged and click **Import**.
+Leave other settings unchanged and click **Import**.
 
 You now have your copy of the official API collections of SAP AI Core named `AI Core`.
 
-!![image](img/postman/collection.png)
+<!-- border -->![image](img/postman/collection.png)
 
-Click on the collection `AI Core`, this shows you the setting page for the whole collections.
+Click on the collection `AI Core`, this shows you the settings page for the whole collections.
 
-!![image](img/postman/auth.png)
+<!-- border -->![image](img/postman/auth.png)
 
-Under the **Authorization** tab. Scroll to **Configure New Token**. Edit the settings, using the example and instructions below as a guide.
+Under the **Authorization** tab, scroll to **Configure New Token**. Edit the settings, using the example and instructions below as a guide.
 
-!![image](img/postman/token.png)
+<!-- border -->![image](img/postman/token.png)
 
 1. Type any descriptive name for **Token Name**.
 2. Set **Grant Type** to `Client Credentials`.
@@ -177,9 +176,11 @@ This process saves your credentials to make the repetitive task of token generat
 
 Click on the **Variables** tab. Fill the settings as mentioned below.
 
-!![image](img/postman/baseurl.png)
+<!-- border -->![image](img/postman/baseurl.png)
 
-1. Remove values from the **Initial Value** column to avoid confusion. Set the value from your `AI_API_URL` for the variable `baseUrl`. Note that you have to set part of your `AI_API_URL` (from SAP AI Core Keys) for the value `region` (in Postman), for this you can put any part, there are no specific constraint. **But please ensure you add the suffix `/v2` at the end of you `baseUrl`** as shown in the screenshot.
+1. Remove the values from the **Initial Value** column to avoid confusion. Set the value from your `AI_API_URL` for the variable `baseUrl`.
+
+>Note that you have to set part of your `AI_API_URL` (from SAP AI Core Keys) for the value `region` (in Postman), for this you can put any part, there are no specific constraint. **But please ensure you add the suffix `/v2` at the end of you `baseUrl`** as shown in the screenshot.
 
 2. Click **Save**.
 
@@ -187,7 +188,7 @@ Click on the **Variables** tab. Fill the settings as mentioned below.
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Start your Jupyter notebook. This will start Jupyter session in the browser.
+Start your Jupyter notebook. This will start a Jupyter session in the browser.
 
 ```BASH
 jupyter notebook
@@ -199,19 +200,19 @@ Create a python notebook.
 
 Create a new cell.
 
-!![image](img/cell.png)
+<!-- border -->![image](img/cell.png)
 
 Run the cell.
 
-!![image](img/cell_run.png)
+<!-- border -->![image](img/cell_run.png)
 
-Use this notebook in the tutorial to try out python commands for yourself. Please explore yourself how to save, rename and create new cells in the notebook.
+Use this notebook in the tutorial to try out python commands for yourself. Please explore how to save, rename and create new cells in the notebook.
 
 [OPTION END]
 
 [OPTION BEGIN [AI API client SDK]]
 
-Start your Jupyter notebook. This will start Jupyter session in the browser.
+Start your Jupyter notebook. This will start a Jupyter session in the browser.
 
 ```BASH
 jupyter notebook
@@ -223,56 +224,55 @@ Create a python notebook.
 
 Create a new cell.
 
-!![image](img/cell.png)
+<!-- border -->![image](img/cell.png)
 
 Run the cell.
 
-!![image](img/cell_run.png)
+<!-- border -->![image](img/cell_run.png)
 
-Use this notebook in the tutorial to try out python commands for yourself. Please explore yourself how to save, rename and create new cells in the notebook.
+Use this notebook in the tutorial to try out python commands for yourself. Please explore how to save, rename and create new cells in the notebook.
 
 [OPTION END]
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Connect with SAP AI Core)]
+### Connect with SAP AI Core
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click on `my-ai-core` (card) under **Workspaces** app. You will observe the connection name on the header. Also the you can find new apps on the side navigation bar, like **SAP AI Core Administration** and **ML Operations**.
+Click on `my-ai-core` under the **Workspaces** app. You will observe the connection name on the header. You can find new apps on the side navigation bar, like **SAP AI Core Administration** and **ML Operations**.
 
-!![image](img/ail/connection.png)
+<!-- border -->![image](img/ail/connection.png)
 
 Select `default` from the **Resource Groups** Pane. Again this selection is updated in the header.
 
-!![image](img/ail/connection2.png)
+<!-- border -->![image](img/ail/connection2.png)
 
 [OPTION END]
 
 
 [OPTION BEGIN [Postman]]
 
-Click on the collection **AI Core**. Navigate to **Authorization** tab and scroll below. Click **Get New Access Token**.
+Click on the collection **AI Core**. Navigate to the **Authorization** tab and scroll below. Click **Get New Access Token**.
 
-> **IMPORTANT**: If you face error in this step, please check previous steps and ensure you added the suffix `/oauth/token` for **Access Token URL**.
+> **IMPORTANT**: If you face error in this step, please check previous steps and ensure you added the suffix `/oauth/token` to the **Access Token URL**.
 
-!![image](img/postman/generate.png)
+<!-- border -->![image](img/postman/generate.png)
 
 Follow the guided steps in  the dialog box that appears.
 
-!![image](img/postman/auth-2.png)
+<!-- border -->![image](img/postman/auth-2.png)
 
-Click **Use Token** at the end.
+Click **Use Token**.
 
-!![image](img/postman/auth-3.png)
+<!-- border -->![image](img/postman/auth-3.png)
 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Edit the command with your SAP AI Core credentials. Please add the suffixes to the values of `base_url` and `auth_url` as shown in the below. Execute the following command.
+Edit the command with your SAP AI Core credentials. Please add the suffixes to the values of `base_url` and `auth_url` as shown in the code snippet below. Execute the command.
 
 ```PYTHON
 # Load Library
@@ -287,14 +287,14 @@ ai_core_client = AICoreV2Client(
 )
 ```
 
-!![image](img/aics/prefix.png)
+<!-- border -->![image](img/aics/prefix.png)
 
 
 [OPTION END]
 
 [OPTION BEGIN [AI API client SDK]]
 
-Edit the command with your SAP AI Core credentials. Please add the suffixes to the values of `base_url` and `auth_url` as shown in the below. Execute the following command.
+Edit the command with your SAP AI Core credentials. Please add the suffixes to the values of `base_url` and `auth_url` as shown in the code snippet below. Execute the command.
 
 ```PYTHON
 # Load library
@@ -309,29 +309,28 @@ ai_api_client = AIAPIV2Client(
 )
 ```
 
-!![image](img/apisdk/connection.png)
+<!-- border -->![image](img/apisdk/connection.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Perform an action in SAP AI Core)]
+### Perform an action in SAP AI Core
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click on **Scenarios** in the **ML Operations** app. Scenarios refers to use cases. You may not have any scenario listed. You will learn how to add workflows (AI pipelines) to SAP AI Core in other tutorials, which can then be used to create scenarios.
+Click on **Scenarios** in the **ML Operations** app. The term Scenario refers to a use case. You may not have any scenario listed. You will learn how to add workflows (AI pipelines) to SAP AI Core in future tutorials, which can then be used to create scenarios.
 
-!![image](img/ail/scn.png)
+<!-- border -->![image](img/ail/scn.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-List all the resource groups. You must find a resource group named **default** in the response.
+List all the resource groups. Check that there is a resource group named **default** in the response.
 
-!![image](img/postman/rg.png)
+<!-- border -->![image](img/postman/rg.png)
 
 ### Troubleshooting
 
@@ -344,20 +343,20 @@ If you receive the error: `RBAC: Access Denied`:
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Execute the command below to list the GitHub repositories connected to your SAP AI Core. If the response prints `error stack trace` then verify that you used correct set of keys and added the suffixes mentioned the previous step, when setting the connection.
+Execute the command below to list the GitHub repositories connected to your SAP AI Core. If the response prints `error stack trace`, verify that you used the correct set of keys and added the suffixes mentioned the previous step, when setting the connection.
 
 ```PYTHON
 response = ai_core_client.repositories.query()
 print(response.count)
 ```
 
-!![image](img/aics/test.png)
+<!-- border -->![image](img/aics/test.png)
 
 
 [OPTION END]
 
 [OPTION BEGIN [AI API client SDK]]
-Execute the command below to list the GitHub repositories connected to your SAP AI Core. If the response prints `error stack trace` then verify that you used correct set of keys and added the suffixes mentioned the previous step, when setting the connection.
+Execute the command below to list the GitHub repositories connected to your SAP AI Core. If the response prints `error stack trace`, verify that you used the correct set of keys and added the suffixes mentioned the previous step, when setting the connection.
 
 ```PYTHON
 ai_api_client.rest_client.get(
@@ -365,14 +364,13 @@ ai_api_client.rest_client.get(
 )
 ```
 
-!![image](img/apisdk/test.png)
+<!-- border -->![image](img/apisdk/test.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Discover tool specific nuances)]
+### Discover tool specific nuances
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
@@ -380,7 +378,7 @@ If you are don't have apps (like **SAP AI Core Administration** and **ML Operati
 
 If you have assigned the roles and the sections are still not visible then please clear your browser cache and relaunch.
 
-> **INFORMATION**: If **new role collections** are introduced in any new releases of SAP AI Launchpad, then none of the existing users will be auto-assigned these newly introduced role collections. The administrator of your SAP BTP Cockpit must ensure that correct users are assigned roles. New role collections and other feature releases can be found in [Release Notes for SAP AI Launchpad](https://help.sap.com/doc/43b304f99a8145809c78f292bfc0bc58/Cloud/en-US/98bf747111574187a7c76f8ced51cfeb.html?sel1=SAP%20AI%20Launchpad).
+> **INFORMATION**: **New role collections** introduced in new releases of SAP AI Launchpad are not auto-assigned to existing users. The administrator of your SAP BTP Cockpit must ensure that the  correct users are assigned new roles. New role collections and other feature releases can be found in [Release Notes for SAP AI Launchpad](https://help.sap.com/doc/43b304f99a8145809c78f292bfc0bc58/Cloud/en-US/98bf747111574187a7c76f8ced51cfeb.html?sel1=SAP%20AI%20Launchpad).
 
 [OPTION END]
 
@@ -389,13 +387,13 @@ If you have assigned the roles and the sections are still not visible then pleas
 
 You added the suffix `/v2` in your `baseUrl`, because the current SAP AI Core endpoint version is `v2`. You will find all the related information in the SAP API Business Hub.
 
-!![image](img/postman/produrl.png)
+<!-- border -->![image](img/postman/produrl.png)
 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Compare the previous step between SAP AI Core SDK and AI API client SDK. Whilst both are python packages offered to control SAP AI Core, AI API client SDK can also control other AI runtimes which implement AI API. Therefore the AI API client SDK lacks native function support for operations specific to SAP AI Core, like GitHub repository connection control.
+Compare the previous step between SAP AI Core SDK and AI API client SDK. Whilst both are python packages offered to control SAP AI Core, the AI API client SDK can also control other AI runtimes which implement the AI API. Therefore the AI API client SDK lacks native function support for operations specific to SAP AI Core, like GitHub repository connection control.
 
 [OPTION END]
 
@@ -437,21 +435,16 @@ Visit [SAP API Business Hub](https://api.sap.com/api/AI_CORE_API/resource) to fi
 
 [OPTION END]
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Find help provisions for your interface, and the SAP AI Core help page)]
 
-[OPTION BEGIN [SAP AI Launchpad]]
-
-[OPTION END]
+### Find help provisions for your interface, and the SAP AI Core help page
 
 
 [OPTION BEGIN [Postman]]
 
 If Postman is unable to decipher the schema of the JSON file that you downloaded, you will require the following information, which is stored, for your reference, at [API Business Hub of SAP AI Core](https://api.sap.com/api/AI_CORE_API/resource).
 
-!![image](img/postman/hub2.png)
+<!-- border -->![image](img/postman/hub2.png)
 
 1. Click on any of the endpoints you would like to know information on, for example, click on **Artifact**.
 
@@ -466,42 +459,41 @@ If Postman is unable to decipher the schema of the JSON file that you downloaded
 1. Use python's `dir` function to list contained modules and functions.
 
 ```PYTHON
-print(dir(ai_api_client))
+print(dir(ai_core_client))
 ```
 
-!![image](img/aics/dir.png)
+<!-- border -->![image](img/aics/dir.png)
 
-2. Use python's `help` function on a listed (by `dir`) module or function to get a `docstring`, which documents what the function does and what parameters it requires.
+2. Use python's `help` function on a listed module or function to get a `docstring`, which documents what the function does and what parameters it requires.
 
 ```PYTHON
-help(ai_api_client.scenario.query)
+help(ai_core_client.scenario.query)
 ```
 
-!![image](img/aics/help.png)
+<!-- border -->![image](img/aics/help.png)
 
 [OPTION END]
 
 [OPTION BEGIN [AI API client SDK]]
 
-Use python's built-in `dir` function to list contained modules and functions.
+1. Use python's `dir` function to list contained modules and functions.
 
 ```PYTHON
 print(dir(ai_api_client))
 ```
 
-!![image](img/apisdk/dir.png)
+<!-- border -->![image](img/apisdk/dir.png)
 
-Then use python's built-in `help` function on those (listed by `dir`) modules or functions to get `docstring` which documents what a function does and what parameters are required to perform that.
+2. Use python's `help` function on a listed module or function to get a `docstring`, which documents what the function does and what parameters it requires.
 
 ```PYTHON
 help(ai_api_client.scenario.query)
 ```
 
-!![image](img/apisdk/help.png)
+<!-- border -->![image](img/apisdk/help.png)
 
 [OPTION END]
 
-For support, look at [Troubleshooting Guide for SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/3da90ba77bcb401496028d8bd6e819dd.html?locale=en-US). If this does not help resolve your issue, please raise a ticket.
+For support, look at the [Troubleshooting Guide for SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/3da90ba77bcb401496028d8bd6e819dd.html?locale=en-US). If this does not help resolve your issue, please raise a ticket.
 
-[VALIDATE_7]
-[ACCORDION-END]
+

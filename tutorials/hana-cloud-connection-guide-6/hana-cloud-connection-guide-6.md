@@ -1,11 +1,13 @@
 ---
-title: Connect SAP S/4HANA as Data Source to SAP HANA Cloud
-description: Connect your SAP S/4HANA as a data source to SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-s-4hana]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Connect SAP S/4HANA as Data Source to SAP HANA Cloud
+<!-- description --> Connect your SAP S/4HANA as a data source to SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - A **running** instance of SAP HANA database in SAP HANA Cloud.
@@ -13,8 +15,7 @@ primary_tag: products>sap-hana-cloud
 - The connection to the IP address of the agent host system in the SAP HANA Cloud, SAP HANA database instance is allowed.
 
 
-## Details
-### You will learn
+## You will learn
 - To prepare SAP S/4HANA system for connection
 - To install the Data Provisioning Adapter (DPA)
 - To configure the Data Provisioning Agent
@@ -22,6 +23,7 @@ primary_tag: products>sap-hana-cloud
 - To connect SAP S/4HANA as a remote source to SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 In this article, you will see the detailed steps to connect an SAP S/4HANA system as a data source to SAP HANA Cloud, SAP HANA database. This will then allow you to access, transform and analyze data coming from SAP S/4HANA with all the power of SAP HANA Cloud - and you can choose if you prefer to replicate or virtualise this data.
 
 These are the overall steps needed to create the connection:
@@ -33,11 +35,12 @@ These are the overall steps needed to create the connection:
 5.	Register the adapter
 6.	Connect SAP S/4HANA to SAP HANA Cloud
 
-!![Connection Diagram](ss-01-connection-diagram.png)
+<!-- border -->![Connection Diagram](ss-01-connection-diagram.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Communication User in SAP S/4HANA)]
+### Create a Communication User in SAP S/4HANA
+
 
 Before you create the connection, you need to set up a communication scenario to allow CDS views to be accessed using SAP HANA Cloud, SAP HANA database. There are three main steps to complete this set up. This is the first step. You can also get more information in our [technical documentation](https://help.sap.com/viewer/0f69f8fb28ac4bf48d2b57b9637e81fa/LATEST/en-US/4a006b43551d4cb5aed6399c0ace6b98.html).
 
@@ -51,10 +54,9 @@ Before you create the connection, you need to set up a communication scenario to
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Communication System in SAP S/4HANA)]
+### Create a Communication System in SAP S/4HANA
+
 
 1.	Search for and open the **Communication System** app in SAP S/4HANA.
 
@@ -66,11 +68,10 @@ Before you create the connection, you need to set up a communication scenario to
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a Communication Arrangement)]
+### Create a Communication Arrangement
+
 
 1.	Search for and open the **Communication Arrangement** app in SAP S/4HANA.
 
@@ -91,10 +92,9 @@ Before you create the connection, you need to set up a communication scenario to
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install the Data Provisioning Agent)]
+### Install the Data Provisioning Agent
+
 
 > ### Prerequisites
 >
@@ -124,10 +124,9 @@ Then follow these steps:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure the Data Provisioning Agent to connect to the database)]
+### Configure the Data Provisioning Agent to connect to the database
+
 
 1.	Start the command prompt on your system and type the following command:
 
@@ -146,7 +145,7 @@ agentcli.bat –configAgent
 
 4.	Select **SAP HANA Connection**.
 
-    !![Start command line config tool](ss-02-start-command-line-config-tool.png)
+    <!-- border -->![Start command line config tool](ss-02-start-command-line-config-tool.png)
 
 5.	Next, select **Connect to SAP HANA Cloud via JDBC** and specify true to use an encrypted connection over JDBC.
 
@@ -162,10 +161,9 @@ agentcli.bat –configAgent
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Register the Data Provisioning Agent with SAP HANA Cloud)]
+### Register the Data Provisioning Agent with SAP HANA Cloud
+
 
 1.	On your command prompt interface, now run the command:
 
@@ -181,10 +179,9 @@ agentcli.bat –configAgent
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Register the adapter)]
+### Register the adapter
+
 
 1.	Now it's time to register the adapter by selecting option 8, which is **Adapter Registration**.
 
@@ -198,10 +195,9 @@ Your adapter is now registered, and you can continue to SAP HANA Database Explor
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Connect SAP S/4HANA to SAP HANA Cloud as a remote source)]
+### Connect SAP S/4HANA to SAP HANA Cloud as a remote source
+
 
 1.	Launch the **SAP HANA Database Explorer** from SAP HANA Cloud Central.
 
@@ -233,14 +229,12 @@ And that is it for this connection. You will then be able to use the communicati
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

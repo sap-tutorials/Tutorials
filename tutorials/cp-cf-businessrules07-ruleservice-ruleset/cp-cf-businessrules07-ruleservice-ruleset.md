@@ -1,24 +1,27 @@
 ---
-title: Create Rule Services and Rulesets
-description: Create a rule service interface for an application to invoke the decision logic by associating the rule to a ruleset of the rule service.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>business-rules
 ---
 
-## Details
-### You will learn
+# Create Rule Services and Rulesets
+<!-- description --> Create a rule service interface for an application to invoke the decision logic by associating the rule to a ruleset of the rule service.
+
+## You will learn
   - How to create a rule service as an interface
   - How to create a rule set and associate rules to a rule service
 
+## Intro
 A rule service is an interface or an end point that enables an application to invoke a decision logic. A rule set is a collection of rules related to a scenario, for example, assigning equipment to an employee in this tutorial. A rule set can be linked to a rule service so that the set of rules in the rule set gets executed when the rule service is deployed.
 
 In this tutorial, we will create the rule services and rule sets required to deploy the decision logic.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create rule services)]
+### Create rule services
+
 
 1. Navigate to the **Rule Service** tab, then choose + to create a new rule service.
 
@@ -69,10 +72,9 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
     ![List of rule services](create_rule_service5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create rulesets)]
+### Create rulesets
+
 
 1. Navigate to the **`Ruleset`** tab, then choose +.
 
@@ -112,6 +114,4 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
     ![List of rulesets](create_ruleset6.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Create Workflow (part 3), Build a Task Workflow in SAP Data Intelligence, Trial Edition
-description: Build a task Workflow to combines both tasks which you created during the previous tutorials into a process which you execute at once by using SAP Data Intelligence, trial edition.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-data-intelligence
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
@@ -9,15 +8,19 @@ author_name: Roy Zhong
 author_profile: https://github.com/roy-zhong
 ---
 
-## Details
-### You will learn  
+# Create Workflow (part 3), Build a Task Workflow in SAP Data Intelligence, Trial Edition
+<!-- description --> Build a task Workflow to combines both tasks which you created during the previous tutorials into a process which you execute at once by using SAP Data Intelligence, trial edition.
+
+## You will learn  
   - How to build a task workflow to combine graph using the **Pipeline** operator
 
+## Intro
 Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create workflow)]
+### Create workflow
+
 
 
 1. Log on as the `system` user in the `default` tenant
@@ -33,21 +36,19 @@ Please note here in this tutorial GCP refers to Google Cloud platform and AWS re
     - Connect the `output` out port of the first **Pipeline** operator to the `input` in port of the second **Pipeline** operator.
     - Connect the `output` out port of the second **Pipeline** operator to the `stop` in port of the **Workflow Terminator** operator.
 
-    !![Workflow example](./datahub-trial-v2-workflow-part03_01.png)
+    <!-- border -->![Workflow example](./datahub-trial-v2-workflow-part03_01.png)
 
 6. Configure operator.  
     - Right click on the first **Pipeline** operator and go to **Open Configuration**.
     - Under the parameter **Graph name** select the graph that you have created in the tutorial **Create Workflow (part 1), Enrich data with Data Transform**. In this case, you have named it as  `mytest.workflow1`.
 u
-    !![Pipeline configuration](./config_pipeline.png)
+    <!-- border -->![Pipeline configuration](./config_pipeline.png)
 
 7. Similarly, for the second **Pipeline** operator, select the graph that you have created in the tutorial **Create Workflow (part 2), Aggregate data with Data Transform** under the parameter **Graph Name**. In this case, you have named it as `mytest.workflow2`. Also increase the parameter Retry interval from 20 to 200 for both the **Pipelines**.
 
-[DONE]
 
-[ACCORDION-END]
+### Execute workflow
 
-[ACCORDION-BEGIN [Step 2: ](Execute workflow)]
 
 1. Once done, save the graph. In this case, you have named it as as name `mytest.workflow3` and description `Workflow 3`.
 
@@ -55,7 +56,7 @@ u
 
 3. The execution status is displayed in the bottom part of the screen and it changes from **Running** to **Completed** once the execution completes.
 
-    !![View result](./datahub-trial-v2-workflow-part03_02.png)
+    <!-- border -->![View result](./datahub-trial-v2-workflow-part03_02.png)
 
 You have now executed the **Workflow 3** but you will notice in the above screenshot that, **Workflow 3** calls the linked pipeline, **Workflow 1**. Once the execution of **Workflow 1** completes, it starts the execution of **Workflow 2**.
 
@@ -67,6 +68,4 @@ You have now executed the **Workflow 3** but you will notice in the above screen
   ![Dead graphs](deadGraphs.png)
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]

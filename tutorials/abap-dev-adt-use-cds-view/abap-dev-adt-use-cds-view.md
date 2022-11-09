@@ -1,27 +1,30 @@
 ---
-title: Display a CDS View Using ALV with IDA
-description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
+parser: v2
 auto_validation: true
 primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 15
 
 ---
+# Display a CDS View Using ALV with IDA
+<!-- description --> Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
+
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 - **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 - **Tutorial**: [Create and Run an ABAP Program](abap-create-basic-app)
 
-## Details
-### You will learn  
+## You will learn  
 - How to consume the CDS view in the SAP List Viewer with Integrated Data Access (ALV with IDA).
 - Optional: How to improve the appearance of your SAP List Viewer using a data element and CAST statement.
 
+## Intro
 ALV with IDA lets you display views and tables that contain very large quantities of data.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the ABAP program)]
+### Open the ABAP program
+
 Open the ABAP program you created in the previous tutorial, [Create and Run an ABAP Program](abap-create-basic-app).
 
  - Either choose **Programs > `Z_INVOICE_ITEMS_EURO`**:
@@ -32,10 +35,9 @@ Open the ABAP program you created in the previous tutorial, [Create and Run an A
 
     ![Image depicting step-1-ctrl-shift-a](step-1-ctrl-shift-a.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Duplicate the ABAP program)]
+### Duplicate the ABAP program
+
 
 1. Select the program and choose **Duplicate** from the context menu.
 
@@ -48,10 +50,9 @@ Open the ABAP program you created in the previous tutorial, [Create and Run an A
 3. Assign or create a transport request and choose **Finish**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add ALV grid to method implementation)]
+### Add ALV grid to method implementation
+
 
 You will now replace the implementation of the RUN method with a new implementation:
 
@@ -76,10 +77,9 @@ The invoice items are displayed in ALV with IDA. (Ignore the Generic Node Key fi
 
 ![Image depicting step3b-alv-ida](step3b-alv-ida.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set the tooltip information with an annotation)]
+### Set the tooltip information with an annotation
+
 
 Try to display the tooltip information for the Paid column by positioning the cursor on the column heading.
 Notice that, in our case, the information is either missing or incorrect (depending on your version).
@@ -98,10 +98,9 @@ We will change this information in the CDS view using an annotation. For more in
 
     ![Image depicting step-5-mouse-over-paid](step-5-mouse-over-paid.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional: Create a data element)]
+### Optional: Create a data element
+
 You have created a tooltip for the column "Paid" but there is now no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to a data element - `zso_invoice_payment_status` - by using a CAST statement.
 
 If you have already created a data element in the tutorial [Create a data element](abap-dev-adt-create-data-element), then use this and go to step 5. If not, you will receive an error. Proceed as follows:
@@ -120,10 +119,9 @@ If you have already created a data element in the tutorial [Create a data elemen
 
     ![Image depicting step-5-data-element](step-5-data-element.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Optional: Add a CAST statement)]
+### Optional: Add a CAST statement
+
 
   1. Now add the CAST statement. (Ignore the error):
 
@@ -144,10 +142,9 @@ If you have already created a data element in the tutorial [Create a data elemen
 
 > Note: You can open the online help for the CAST statement by positioning the cursor on the cast keyword and choosing `F1`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check the code and execute the program)]
+### Check the code and execute the program
+
 
 Your program code should look like this:
 
@@ -225,10 +222,8 @@ Execute `ZCDS_INVOICE_ITEMS_EURO` again by choosing **Execute (F8)**.
 
 The tooltip information for the Paid column has been changed:
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

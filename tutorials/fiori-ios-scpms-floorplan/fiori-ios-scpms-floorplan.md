@@ -1,6 +1,5 @@
 ---
-title: Create a List Report Floorplan
-description: Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-btp-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
@@ -8,21 +7,22 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 60
 ---
 
-## Prerequisites
+# Create a List Report Floorplan
+<!-- description --> Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 
+## Prerequisites
 - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to use the `SAPFiori` UI controls to build a List Report Floorplan
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Make the Generated App Your Own)]
+### Make the Generated App Your Own
+
 
 In this example, you build upon the Tutorial app created using the **Sample OData** service. If you examine the service's metadata you can see entity **Supplier** has a one-to-many relationship with **Products**:
 
@@ -99,10 +99,9 @@ Set the created class as **Custom Class** in the storyboard for the added `UITab
 
 ![Change UI](fiori-ios-scpms-floorplan-06.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Fetch All Available Suppliers From the Sample Service)]
+### Fetch All Available Suppliers From the Sample Service
+
 
 Now that you have the first `UITableViewController` setup you will add code to load and display suppliers in a `UITableView`.
 
@@ -224,10 +223,9 @@ override func viewDidLoad() {
 
 Congratulations, your app is fetching data now.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement the Table View to display a supplier list)]
+### Implement the Table View to display a supplier list
+
 
 Using the `UITableViewController` makes it easy for a developer to display data in a list.
 
@@ -290,10 +288,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 You could run the app now and should see a list of suppliers getting loaded and displayed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add an FUIActivityControl to your FUIContactCell)]
+### Add an FUIActivityControl to your FUIContactCell
+
 
 Using the `FUIContactCell` allows us to use an `FUIActivityControl` inside of the cell to let the user contact a supplier. The [`FUIActivityControl`](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/Classes/FUIContactCell.html) documentation explains the control and its variations in more detail.
 
@@ -361,10 +358,9 @@ Tapping on one of the `FUIActivityItem` will result in an alert dialogue showing
 
 ![Supplier List](fiori-ios-scpms-floorplan-08.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the Navigation Between the Supplier List and the Product List)]
+### Implement the Navigation Between the Supplier List and the Product List
+
 
 In this step, you will implement a second `UITableViewController` displaying all products a supplier provides.
 For this, you will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
@@ -438,10 +434,9 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
 
 You can now navigate back and forth between the `SupplierTableViewController` and the `SupplierProductsTableViewController`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement the loading and displaying of supplier-specific products)]
+### Implement the loading and displaying of supplier-specific products
+
 
 This view is similar to the `SupplierTableViewController` but instead of fetching all products, you will fetch supplier-specific products. To achieve that, you again can utilise the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
 
@@ -700,10 +695,9 @@ Run the app and navigate to the `SupplierProductsTableViewController`.
 
 ![Supplier Product List](fiori-ios-scpms-floorplan-13.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement the FUISearchBar to search for certain products in the list)]
+### Implement the FUISearchBar to search for certain products in the list
+
 
 Wouldn't it be cool to also have a `FUISearchBar` which is inheriting from `UISearchBar`? - Of course, it would be, so let's implement that.
 
@@ -846,5 +840,4 @@ If you compile and run the app now you should see that you can search for produc
 
 ![Searchbar Runtime](fiori-ios-scpms-floorplan-15.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
+

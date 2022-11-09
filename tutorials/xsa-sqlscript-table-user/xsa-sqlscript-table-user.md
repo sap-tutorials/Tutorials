@@ -1,26 +1,29 @@
 ---
-title: Creating Table User Defined Functions
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
+# Creating Table User Defined Functions
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating Scalar User Defined Functions](xsa-sqlscript-scalar)
 
-## Details
-### You will learn
+## You will learn
 - How to transform a procedure to a table function.
 
+## Intro
 There are application and scenarios where you need a table function instead of procedure to leverage the advantage of direct selects on the output, for example, filtering, sorting and grouping. In the following exercise, we show you how you can easily transform a procedure to a table function.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create New Function)]
+### Create New Function
+
 
 Return to the **functions** folder, and right click and choose **New**, then **Function**.
 
@@ -35,10 +38,9 @@ Return to the **functions** folder, and right click and choose **New**, then **F
 ![SQL editor](3.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Modify Parameters)]
+### Modify Parameters
+
 
 Add the input parameter called `IM_FDATE` as well as the RETURN Table parameter as shown. Please note the scalar input parameter we will used later on for filtering.
 
@@ -57,29 +59,26 @@ END;
 ```
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Insert Code)]
+### Insert Code
+
 
 Copy the logic from the procedure `get_po_header_data` into the body of the function.  Make sure to only copy the code between the BEGIN and END statements
 
 ![logic statements](5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit WHERE Clauses)]
+### Edit WHERE Clauses
+
 
 Add to the WHERE clauses in the first two SELECT statements for filtering by month. Month is captured from the input parameter `im_fdate`.
 
 ![where clause](6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Change Variable Name)]
+### Change Variable Name
+
 
 In the third SELECT statement, change the name of the intermediate table variable to `EMP_PO_COMBINED_CNT` to match the variable name to the semantics of the query
 
@@ -91,29 +90,26 @@ Also add the `EMPLOYEEID` column to the field list.
 ![Add employeid](8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Remove LIMIT Clause)]
+### Remove LIMIT Clause
+
 
 Remove the LIMIT clause at the end.
 
 ![LIMIT](9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a RETURN SELECT)]
+### Add a RETURN SELECT
+
 
 Finally, add a RETURN SELECT statement at the end to mark the to be returned result set of the function.
 
 ![RETURN select](10.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Check Complete Code)]
+### Check Complete Code
+
 
 The completed code should be very similar to this.
 
@@ -160,10 +156,9 @@ END;
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Save and Build)]
+### Save and Build
+
 
 Click **Save**
 
@@ -174,10 +169,9 @@ Use what you have learned already and perform a build on your `hdb` module.
 ![DBX](13.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Enter Input Parameter)]
+### Enter Input Parameter
+
 
 Return to the Database Explorer page. Select the Functions folder.  Righ-click on the `get_po_counts` function and choose Generate SELECT statement.
 
@@ -190,5 +184,3 @@ SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
 ```
 ![Results](17.png)
 
-[DONE]
-[ACCORDION-END]

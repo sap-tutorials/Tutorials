@@ -1,25 +1,25 @@
 ---
-title: Create an Application Definition for a Mobile App
-description: Create an application definition that enables you to manage the application.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, products>sap-business-technology-platform, topic>mobile, products>sap-mobile-services ]
 time: 15
 ---
-## Prerequisites  
+# Create an Application Definition for a Mobile App
+<!-- description --> Create an application definition that enables you to manage the application.
 
+## Prerequisites  
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.0
 - **Tutorials:** [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to set up a mobile application so you can manage the application, the connections to the back-end data source, and other application-specific settings
 
 ---
 
+## Intro
 The SAP Mobile Services for development and operations provides various mobile-centric services, such as authentication, device registration, logging and proxying of back-end services. All these services are app specific. This allows having several that are set up using different settings.
 
 Technically it would be possible to skip this step and access an OData services directly, but leveraging the SAP Mobile Services for development and operations has several advantages:
@@ -32,16 +32,16 @@ Technically it would be possible to skip this step and access an OData services 
 
 This tutorial described how you can configure a mobile app in SAP Mobile Services for development and operations.
 
-[ACCORDION-BEGIN [Step 1: ](Make sure mobile services are enabled in your account)]
+### Make sure mobile services are enabled in your account
+
 
 Got to the SAP BTP cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, enable it by clicking on it an pressing the **Enable** button.
 
 ![Enable Mobile Services](image-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Go to the Mobile Services cockpit and bookmark it)]
+### Go to the Mobile Services cockpit and bookmark it
+
 
 After you clicked on the `Development & Operations` tile in the services list, you will see a link called **Go to Service**. Follow this link to go to the mobile services cockpit.
 
@@ -49,10 +49,9 @@ As it is likely that you need to return to this cockpit after you have created t
 
 ![Mobile Services Cockpit](image-2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the application definition)]
+### Create the application definition
+
 
 Log on to your **SAP Mobile Services for development and operations** cockpit, and navigate to **Mobile Applications > Native/Hybrid**. Click the **New** button, and in the dialog, add the following information:
 
@@ -64,10 +63,9 @@ Log on to your **SAP Mobile Services for development and operations** cockpit, a
 
 ![Applications details](image-4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Initial application definition created)]
+### Initial application definition created
+
 
 After entering the application details press the **Save** button to save the new application. You now see the application definition details:
 
@@ -75,10 +73,9 @@ After entering the application details press the **Save** button to save the new
 
 Take a note of the **Incomplete Configuration** message next to the **Connectivity** feature. This will be solved in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Sample Back End Feature)]
+### Add Sample Back End Feature
+
 
 When the application is saved, you will be able to define more application configuration details. For this tutorial series, you will use a sample OData service included in SAP Mobile Services for development and operations.
 
@@ -94,10 +91,10 @@ The Sample Back End is now added:
 
 As you can see from the **Entity Sets** drop-down, the sample service contains quite a few entities. You may click the **Generate sample sales orders** and **Generate sample purchase orders** a couple of times to generate dummy data for these entities.
 
-[VALIDATE_5]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Examine application definition)]
+
+### Examine application definition
+
 
 Click on the application name **Demo** in the breadcrumb at the top of the page:
 
@@ -109,5 +106,3 @@ Click on the **Connectivity** row, and you will notice the OData endpoint for th
 
 ![One application in Mobile Services Cockpit](image-10.png)
 
-[DONE]
-[ACCORDION-END]

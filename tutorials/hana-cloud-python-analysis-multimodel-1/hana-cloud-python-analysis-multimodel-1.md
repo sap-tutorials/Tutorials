@@ -1,24 +1,26 @@
 ---
-title: Connect SAP HANA Database in SAP HANA Cloud to Python
-description: Learn to set up a connection between SAP HANA database in SAP HANA Cloud and Jupyter Notebook.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>advanced, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-graph, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Connect SAP HANA Database in SAP HANA Cloud to Python
+<!-- description --> Learn to set up a connection between SAP HANA database in SAP HANA Cloud and Jupyter Notebook.
+
 ## Prerequisites
 - Access to SAP HANA Cloud, either with a [free trial account](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) or with a production account.
 - [Provision an SAP HANA Cloud, SAP HANA database instance](hana-cloud-mission-trial-2) and ensure that it's **running**.
 
-## Details
-### You will learn
+## You will learn
 - What the hana-ml library is
 - What an SAP HANA data-frame is
 - How to set up your Jupyter Notebook connection for an SAP HANA database in SAP HANA Cloud
 - What a connection context is
 
 
+## Intro
 This tutorial is part of a tutorial group, in which you will learn how to use the new enhanced features of hana-ml library that support the multi-model capabilities of SAP HANA Cloud, SAP HANA database. This tutorial group will focus on creation, visualization, and analysis of a Graph Workspace in the database using sample data based on Wellington's storm water network.
 
 The goal is to introduce you to various algorithms in the hana-ml library that can help to visualize and analyze the data in the form of graphs.
@@ -34,7 +36,8 @@ In this tutorial, you will create a connection between your database instance an
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to hana-ml library)]
+### Introduction to hana-ml library
+
 The hana-ml package allows you to create an SAP HANA data-frame, as well as create a connection to your database instance. The SAP HANA data-frame  represents a database query as a data-frame. This package enables Python users to access the data-frame, build various machine learning models and run graph algorithms using the data directly from the database.
 
 The Python machine learning client (hana-ml) for SAP HANA Cloud consists of four main parts:
@@ -53,14 +56,13 @@ This tutorial will focus on exploring the integration of multi-modal capabilitie
 
 A figure of this architecture is shown below:
 
-!![hana-ml-architecture](ss-01-hana-ml-architecture.png)
+<!-- border -->![hana-ml-architecture](ss-01-hana-ml-architecture.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](What is an SAP HANA data-frame?)]
+### What is an SAP HANA data-frame?
+
 [SAP HANA data-frame](https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/2021_01_QRC/en-US/hana_ml.html#sap-hana-dataframe) provides a way to interact with the data stored in the database without transferring any of the physical data. The hana-ml library makes use of the data-frame as the input for training and scoring purposes.
 
 The data-frame in essence holds a SQL statement, providing users with a Python interface similar to the popular Pandas data-frame that allows to view and modify data. **To use an SAP HANA data-frame, you need to initially create a connection to SAP HANA database in  SAP HANA Cloud**. Then you can use the methods provided in the library to create the `dataframe`. This `dataframe` is only available while the connection to the database is open and is inaccessible once the connection is closed.
@@ -75,11 +77,10 @@ pandas_df = hana_df.collect()
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Set up your Python environment)]
+### Set up your Python environment
+
 
 1. You need a Python environment that is operational, for example, Jupyter Notebook or JupyterLab. This tutorial will be using a **Jupyter Notebook environment**. You can find the appropriate installation files for your system from this [link](https://jupyter.org/install).
 
@@ -91,14 +92,13 @@ pandas_df = hana_df.collect()
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create login data of database instance in Jupyter Notebook)]
+### Create login data of database instance in Jupyter Notebook
+
 
 1. To start, copy your database instance URL into a text file from the SAP BTP cockpit as shown below:
 
-    !![Instance URL](ss-02-instance-url.png)
+    <!-- border -->![Instance URL](ss-02-instance-url.png)
 
     > Instance URL is the SQL Endpoint
 
@@ -125,10 +125,9 @@ pandas_df = hana_df.collect()
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Import libraries for connecting to database)]
+### Import libraries for connecting to database
+
 
 Next, there are some libraries that need to be imported to run the notebook. To do that, you need to create a new cell and add the following content into it:
 
@@ -143,10 +142,9 @@ from hana_ml.dataframe import ConnectionContext
  
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Establish connection to the database)]
+### Establish connection to the database
+
 To establish the connection, you need to create a **connection context** that represents the physical connection to your database instance. This connection context is used to let the hana-ml library know which database instance to connect to. The `ConnectionContext` is part of the hana-ml library.
 
 
@@ -165,21 +163,19 @@ print(cc.get_current_schema())
 
 When you execute the cell, you will get a result as seen in the image shown below.
 
-!![Connection context](ss-03-connection-context.png)
+<!-- border -->![Connection context](ss-03-connection-context.png)
 
 You can easily identify your **SAP HANA version** and **schema name** from the above result. **Verify these details to confirm a successful connection**.
 
 > You have completed the first tutorial of this tutorial group. Learn in the next tutorial how to visualize a Graph Workspace using Kepler.gl
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

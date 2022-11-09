@@ -1,22 +1,24 @@
 ---
-title: Connect Tableau to SAP Data Warehouse Cloud
-description: In this tutorial, you will learn how to connect your SAP Data Warehouse Cloud tenant to Tableau.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>intermediate, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Connect Tableau to SAP Data Warehouse Cloud
+<!-- description --> In this tutorial, you will learn how to connect your SAP Data Warehouse Cloud tenant to Tableau.
+
 ## Prerequisites
   - You have [installed an SAP HANA ODBC Driver](data-warehouse-cloud-bi4-install-odbc)
   - You have [created a database user](data-warehouse-cloud-intro8-create-databaseuser)
 
-## Details
-### You will learn
+## You will learn
   - How to connect Tableau to SAP Data Warehouse Cloud
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Add your IP address to IP allowlist)]
+### Add your IP address to IP allowlist
+
 
 To allow an external BI client in your local network to connect to the database of SAP Data Warehouse Cloud, you need to add the external (public) IPv4 address of the client to an allowlist.
 
@@ -24,10 +26,9 @@ To do so, navigate to the **Configuration** screen on the bottom left of your SA
 
   ![IP Allowlist](T05 7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Ensure entities in SAP Data Warehouse Cloud are consumable)]
+### Ensure entities in SAP Data Warehouse Cloud are consumable
+
 
 In order to ensure the data entities and models created in your SAP Data Warehouse Cloud tenant are consumable by the BI tool of your choice, it is important to expose them for consumption.
 If the entity was created in the data builder, simply click on the entity and set the **Expose for Consumption** toggle to **ON** as below.
@@ -38,10 +39,9 @@ If the entity was created in the business builder, the toggle shows up as a **Al
 
   ![Public Data Access](T05 6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connect Tableau to SAP Data Warehouse Cloud)]
+### Connect Tableau to SAP Data Warehouse Cloud
+
 
 The next step to connecting Tableau to SAP Data Warehouse Cloud is connecting to the SAP server from Tableau. Open Tableau and navigate to the **Connect to Server** screen, where you can select SAP HANA.
 
@@ -63,12 +63,10 @@ Sign in once done, and you have now connected Tableau to your SAP Data Warehouse
 > Learn in the next tutorial [how to connect Microsoft Excel to SAP Data Warehouse Cloud.](data-warehouse-cloud-bi6-connect-excel)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

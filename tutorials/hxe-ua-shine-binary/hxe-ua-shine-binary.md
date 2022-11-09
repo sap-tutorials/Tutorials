@@ -1,6 +1,5 @@
 ---
-title: Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition (Native Linux Machine)
-description: SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,20 +7,24 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition (Native Linux Machine)
+<!-- description --> SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
+
 <!-- loio5a9927fcad7c436d9fb8a36062acc1b8 -->
 
 ## Prerequisites
  - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
 
-## Details
-### You will learn
+## You will learn
 You will learn how to download, install, and configure the `shine.tgz` SAP HANA Interactive Education package.
 
 ---
 
+## Intro
 SHINE is provided as an optional component for SAP HANA, express edition. Download the SHINE installation file, `shine.tgz`, from the SAP HANA, express edition Download Manager. This download includes installation files for installing SHINE on XSC and XSA.
 
-[ACCORDION-BEGIN [Step 1: ](Download `shine.tgz`)]
+### Download `shine.tgz`
+
 
 Use the Download Manager to download SHINE, `shine.tgz`.
 
@@ -41,11 +44,9 @@ Enter the following command:
 -   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer shine.tgz`
 -   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer shine.tgz`
 
-[DONE]
 
-[ACCORDION-END]
+### Extract `shine.tgz`
 
-[ACCORDION-BEGIN [Step 2: ](Extract `shine.tgz`)]
 
 Extract `shine.tgz`:
 
@@ -53,11 +54,9 @@ Extract `shine.tgz`:
 tar -xvzf shine.tgz
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Install SHINE for XSC
 
-[ACCORDION-BEGIN [Step 3: ](Install SHINE for XSC)]
 
 Installation files for SHINE for `XSC` are located at:
 
@@ -90,11 +89,9 @@ To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide]
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Install SHINE for XSA
 
-[ACCORDION-BEGIN [Step 4: ](Install SHINE for XSA)]
 
 Installation files for SHINE for `XSA` are located at:
 
@@ -108,6 +105,3 @@ To install SHINE for XSA, run the following as <sid>`adm`:
 <extracted_path>/HANA_EXPRESS_20/install_shine.sh
 ```
 
-[DONE]
-
-[ACCORDION-END]

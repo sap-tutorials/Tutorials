@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Haoyue Feng
 author_profile: https://github.com/Fenghaoyue
-title: Create Your Own Flow
-description: Learn how to create your own flow with the framework provided by the Flows component of SAP BTP SDK for Android.
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, operating-system>android, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-android
 ---
+
+# Create Your Own Flow
+<!-- description --> Learn how to create your own flow with the framework provided by the Flows component of SAP BTP SDK for Android.
 
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
@@ -17,11 +19,11 @@ primary_tag: products>sap-btp-sdk-for-android
 - You completed [Handle Passcode with the Flows Component](cp-sdk-android-flows-passcode).
 - You completed [Restore and Reset Applications Using the Flows Component](cp-sdk-android-flows-restore).
 
-## Details
-### You will learn
+## You will learn
   - How to write a flow step
   - How to write your own flow
 
+## Intro
 Besides the pre-defined flows described in the previous tutorials, the Flows Component also provides a framework for client code to create its own flow. Typically a flow consists of several flow steps and also may include other flows as sub-flows. The Flows framework provides flexible ways for client code to create a customized flow:
 
 - The client code can create its own flow steps and then create a flow with the combination of the steps.
@@ -30,7 +32,8 @@ Besides the pre-defined flows described in the previous tutorials, the Flows Com
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Write your own flow step)]
+### Write your own flow step
+
 
 [OPTION BEGIN [Java]]
 
@@ -181,10 +184,9 @@ Besides the pre-defined flows described in the previous tutorials, the Flows Com
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Write your own flow)]
+### Write your own flow
+
 
 Your own flow class must extend the **`com.sap.cloud.mobile.flowv2.core.Flow`** class, and override some of the methods defined in it.
 
@@ -464,7 +466,6 @@ Your own flow class must extend the **`com.sap.cloud.mobile.flowv2.core.Flow`** 
 
 Congratulations! You now have learned how to create your own flow using the Flows component!
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

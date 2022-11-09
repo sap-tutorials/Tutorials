@@ -1,19 +1,21 @@
 ---
-title: Install an ODBC Driver for Third-Party BI Client Access
-description: Installing an ODBC Driver is the first step towards fully utilizing SAP Data Warehouse Cloud across multiple third-party BI clients and tools. Find out how in this tutorial.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Install an ODBC Driver for Third-Party BI Client Access
+<!-- description --> Installing an ODBC Driver is the first step towards fully utilizing SAP Data Warehouse Cloud across multiple third-party BI clients and tools. Find out how in this tutorial.
+
 ## Prerequisites
  - You have [created a database user](data-warehouse-cloud-intro8-create-databaseuser)
 
-## Details
-### You will learn
+## You will learn
   - How to install an ODBC driver for third party BI client access
 
+## Intro
 It is extremely important to use the 64-bit or 32-bit of the based on the version of the third-party BI tool you aim to use. (For example, MS Excel 32-bit requires the connection be installed in ODBC Manager 32-bit)
 
 This tutorial covers installing an ODBC driver in both Windows and macOS. For Windows, continue to Step 1, and for macOS, skip to Step 4.
@@ -21,16 +23,16 @@ This tutorial covers installing an ODBC driver in both Windows and macOS. For Wi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the ODBC driver on Windows)]
+### Install the ODBC driver on Windows
+
 
 Every Windows system comes pre-installed with an ODBC Manager, as shown below. Based on the version of the 3rd party BI tool you aim to use, determine whether you will use ODBC Manager 32-bit or 64-bit for the installation.
 
   ![ODBC Manager](T04 1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download and install the SAP HANA database server)]
+### Download and install the SAP HANA database server
+
 
 1.	First, install the corresponding driver to connect to the HANA database of SAP Data Warehouse Cloud. To find your driver, navigate to the [HANA developer tools website.](https://tools.eu1.hana.ondemand.com/#hanatools)
 
@@ -48,11 +50,10 @@ Every Windows system comes pre-installed with an ODBC Manager, as shown below. B
 
 You have now successfully installed an ODBC Driver in your system.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Install the user/system data source)]
+### Install the user/system data source
+
 
 Using the database user you have created as a pre-requisite, you can now create a user / system data source with the ODBC driver you have just installed in your system.
 
@@ -73,10 +74,9 @@ You have now successfully created an ODBC data source in your Windows system, an
   ![Installed](T04 8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install the ODBC driver on macOS)]
+### Install the ODBC driver on macOS
+
 
 macOS requires that you initially install an ODBC manager. ODBC managers for macOS can be found on a variety of websites including odbcmanager.net, and iODBC.org. In this example, we use iODBC.org.
 
@@ -88,10 +88,9 @@ macOS requires that you initially install an ODBC manager. ODBC managers for mac
 
     ![Complete Installation](T04 10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Install bridge between ODBC manager and HANA driver)]
+### Install bridge between ODBC manager and HANA driver
+
 
 There exists no native macOS HANA driver, which means you need to install a bridge between the ODBC manager to the HANA driver. You can use [Open Link](https://www.openlinksw.com/), [Actual Tech](https://www.actualtech.com/) or any similar third-party program for the same. In this example, we use Open Link.
 
@@ -120,10 +119,9 @@ There exists no native macOS HANA driver, which means you need to install a brid
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Install the ODBC driver)]
+### Install the ODBC driver
+
 
 1.	Navigate to the [HANA developer tools website](https://tools.eu1.hana.ondemand.com/#hanatools), and under the **HANA** tab, download the **JDBC SAP HANA Client**.
 
@@ -161,12 +159,10 @@ You can now fully leverage the flexibility of SAP Data Warehouse Cloud and conne
 > Learn in the next tutorial [how to connect Tableau to SAP Data Warehouse Cloud.](data-warehouse-cloud-bi5-connect-tableau)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

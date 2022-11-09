@@ -1,11 +1,13 @@
 ---
-title: Prepare to Develop the SAP SuccessFactors Extension
-description: Business scenario and preparation steps to develop the SAP SuccessFactors extension.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Prepare to Develop the SAP SuccessFactors Extension
+<!-- description --> Business scenario and preparation steps to develop the SAP SuccessFactors extension.
 
 ## Prerequisites
  - Get an **SAP Business Technology Platform** trial account following **[this tutorial](hcp-create-trial-account)**
@@ -14,8 +16,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Setup the **SAP Launchpad Service** in your trial account following **[this tutorial](cp-portal-cloud-foundry-getting-started)**
  - Have access to an **SAP SuccessFactors tenant** with **admin credentials** (unfortunately there's no trial for that one, so make sure you're granted such access by other means)
 
-## Details
-### You will learn
+## You will learn
   - The **business scenario** proposed to build an **SAP SuccessFactors extension**
   - The extension **architecture**
   - The extension **data model**
@@ -23,7 +24,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Business Scenario)]
+### Understand the business scenario
+
 You will build a simple **project management** application on top of **SAP SuccessFactors** following these business rules:
 
 1. Each project is composed by members (team) and activities;
@@ -33,10 +35,9 @@ You will build a simple **project management** application on top of **SAP Succe
 5. Projects and activities have one status each (i.e. not started, in progress, overdue, completed etc.);
 6. And last, but not least, whenever a team member is assigned to a project, a special assignment is registered to the employee background to signal that such employee has participated in the project, acting in a specific role, as part of the employee's professional experience.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the Application Architecture)]
+### Understand the application architecture
+
 Here's a diagram representing the overall architecture for the application:
 
 ![Figure 1 – Application Architecture](architecture.png)
@@ -45,12 +46,11 @@ The solution is a standalone application that will read the basic employee (SF u
 
 The application data model will be stored in an **SAP HANA Cloud** database.
 
-In this tutorial group, the application will be deployed on **Cloud Foundry**, although it could be also deployed to the **Kyma Runtime** as depicted in the architecture.
+In this tutorial group, the application will be deployed on **Cloud Foundry**, although it could be also deployed to the **`Kyma` Runtime** as depicted in the architecture.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Data Model)]
+### Understand the data model
+
 Here's a diagram representing the data model for the application:
 
 ![Figure 2 – Data Model Diagram](data-model.png)
@@ -63,10 +63,9 @@ The User entity from SAP SuccessFactors has been chosen because it's completely 
 
 In the same way, there's no direct association between the projects and the background assignments, but it's added to the diagram just to have a complete conceptual representation of the model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Perform Initial Preparation)]
+### Perform initial preparation
+
 From the **global account** page on SAP BTP cockpit, click on the **trial** subaccount
 
 ![Figure 3 – SAP BTP trial access](trial.png)
@@ -103,10 +102,8 @@ You should receive the **following message**:
 
 Click on **Close**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Understanding)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
