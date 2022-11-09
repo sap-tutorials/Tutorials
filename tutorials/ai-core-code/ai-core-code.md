@@ -264,7 +264,7 @@ This step requires the GitHub folder that you synced in [this tutorial](https://
 
 <!-- border -->![image](img/file-new.png)
 
-Paste the following snippet into your YAML file. Edit the highlighted lines, using the comments and your own Docker image information. Click **Commit Changes**.
+Paste the following snippet into your YAML file. Edit the highlighted lines, using the comments and your own Docker image information. Click **Commit Changes**. The code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/step-8-code-pipeline.yaml)
 
 ```YAML[4, 15, 25]
 apiVersion: argoproj.io/v1alpha1
@@ -638,7 +638,7 @@ docker upload docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
 ### Update your AI workflow
 
 
-Locate your workflow (YAML file) in GitHub. Click on the **Pencil Icon** to edit your workflow.
+Locate your workflow (YAML file) in GitHub. Click on the **Pencil Icon** to edit your workflow. The original code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/step-8-code-pipeline.yaml)
 
 <!-- border -->![image](img/pipeline-update.png)
 
