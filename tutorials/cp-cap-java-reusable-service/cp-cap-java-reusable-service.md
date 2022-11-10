@@ -101,7 +101,8 @@ The [`managed`](https://cap.cloud.sap/docs/cds/common#aspect-managed) aspect add
 The [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) definition is a type. It defines an association to a `Currencies` entity. The [`Currencies`](https://cap.cloud.sap/docs/cds/common#entity-sapcommoncurrencies) entity is based on ISO 4217 and uses three-letter alpha codes as keys such as `EUR` or `USD` and provides the possibility to store the corresponding currency symbol such as `€` or `$`.
 
 
-### Get more information about @sap/cds/common
+
+### Get more information about `@sap/cds/common`
 
 
 Look at these explained keywords yourself and learn more about it.
@@ -118,7 +119,8 @@ Look at these explained keywords yourself and learn more about it.
 
 
 
-### Rewrite the AdminService
+
+### Rewrite the `AdminService`
 
 
 In the first tutorial, you defined a simple service, called `AdminService`, which directly defined the entity `Products`. As you now have defined the `Products` entity in your domain model, the `AdminService` just needs to expose it. In addition, you defined the `Categories` entity, which should also be part of your service.
