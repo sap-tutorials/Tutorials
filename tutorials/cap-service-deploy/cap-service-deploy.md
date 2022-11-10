@@ -53,7 +53,13 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     Learn more about those steps in the [Deploy to Cloud Foundry](https://cap.cloud.sap/docs/guides/deployment/to-cf#prepare-for-production) guide in the CAP documentation.
 
-3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
+3. Update your dependencies, as with the previous command you added some dependencies to your `package.json`.
+
+    ```Shell/Bash
+    npm update --package-lock-only
+    ```
+
+4. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
     ```JSON
     "cds": {

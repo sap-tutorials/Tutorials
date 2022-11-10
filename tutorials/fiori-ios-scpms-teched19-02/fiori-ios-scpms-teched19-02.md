@@ -1,6 +1,5 @@
 ---
-title: Change the Generated UI to Make the App Your Own
-description: Use Xcode to change the generated UI and add your own views to the app.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,20 +8,21 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 25
 ---
 
-## Prerequisites
+# Change the Generated UI to Make the App Your Own
+<!-- description --> Use Xcode to change the generated UI and add your own views to the app.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0 or newer
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to change the Assistant generated UI with your own using Xcode and storyboards
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Replace generated UI with your own)]
+### Replace generated UI with your own
+
 
 The Human Interface Guidelines for SAP Fiori for iOS has certain screens defined that you can use as guidance on how you could structure a business app.
 
@@ -36,43 +36,43 @@ In the last tutorial, you've learned how to create an Xcode project using the SA
 
     > The Interface Builder allows you to create complete app flows including the UI for each screen of those flows.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-teched19-01.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-teched19-01.png)
 
     For now go ahead and select all displayed View Controllers in the `Main.storyboard` and simply delete them.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-teched19-02.gif)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-teched19-02.gif)
 
 2. Next, click the **Object Library** and search for **`Table View Controller`**. Drag and drop the object on the canvas of the Interface Builder.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-teched19-03.gif)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-teched19-03.gif)
 
 3. Thinking ahead, you know that you want to have navigation to various screens from the overview screen. Using a Navigation Controller and embedding the just-created View Controller in it allows us to use the power of the Navigation Controller for navigation. The Navigation Controller handles the navigation stack for you, which is exactly what you want.
 
     Select the added View Controller and click **Editor > Embed In > Navigation Controller**. This will embed your View Controller in a Navigation Controller. You should see the Navigation Bar appear in the View Controller.
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-teched19-04.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-teched19-04.png)
 
-    !![Xcode Main Storyboard](fiori-ios-scpms-teched19-05.png)
+    <!-- border -->![Xcode Main Storyboard](fiori-ios-scpms-teched19-05.png)
 
 4. Almost every View Controller you're adding to the storyboard needs a **Cocoa Touch Class** representing the logic implementation of that View Controller.
 
     Control + click your project source in the **Project Navigator** on the left-hand side and select **New File**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-teched19-06.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-teched19-06.png)
 
 5. Select the **Cocoa Touch Class** in the upcoming modal sheet, and click **Next**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-teched19-07.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-teched19-07.png)
 
     Make sure that your class is going to subclass of **`UITableViewController`** and change the name to **`OverviewTableViewController`**. Click **Next** and then **Create**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-teched19-08.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-teched19-08.png)
 
     Great! You've created your first Table View Controller Swift class, now you have to set this class as **Custom Class** in the **`Main.storyboard`** View Controller.
 
 6. Open the storyboard and select the created View Controller. On the right side, you can see the side bar. Click the **Identity Inspector** to set the custom class to **`OverviewTableViewController`** and hit return on your keyboard.
 
-    !![Xcode Overview Class](fiori-ios-scpms-teched19-09.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-teched19-09.png)
 
     Notice the title of the Table View Controller on the left side changes accordingly to the entered custom class.
 
@@ -80,12 +80,11 @@ In the last tutorial, you've learned how to create an Xcode project using the SA
 
     Select the **Navigation Controller** and open the **Attributes Inspector** to check the box next to **Is Initial View Controller**.
 
-    !![Xcode Overview Class](fiori-ios-scpms-teched19-10.png)
+    <!-- border -->![Xcode Overview Class](fiori-ios-scpms-teched19-10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change the Application UI Manager code to display the overview)]
+### Change the Application UI Manager code to display the overview
+
 
 In order to display the newly added overview screen right after the onboarding process is finished, you have to make some manual changes in the **`ApplicationUIManager.swift`** class. This class is mainly responsible for coordinating the UI flow for user onboarding all the way to the first screen after the onboarding process.
 
@@ -93,7 +92,7 @@ In order to display the newly added overview screen right after the onboarding p
 
     > **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `ApplicationUIManager` class with `Command + Shift + O`. Once you've opened the file, you can quickly jump to the `showApplicationScreen(completionHandler:)` function by using the **jump bar** at the top of the editor area pane.
 
-    !![Application UI Manager](fiori-ios-scpms-teched19-11.png)
+    <!-- border -->![Application UI Manager](fiori-ios-scpms-teched19-11.png)
 
     In the method you see an `if-else` statement initializing a Split View Controller, which is non-existing anymore because you have your Overview Table View Controller.
 
@@ -138,5 +137,4 @@ Great you did all necessary steps to replace the generated UI with your own. Go 
 
 ![Overview Screen Basic](fiori-ios-scpms-teched19-12.png)
 
-[VALIDATE_3]
-[ACCORDION-END]
+

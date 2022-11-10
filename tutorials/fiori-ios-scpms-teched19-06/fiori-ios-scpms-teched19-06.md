@@ -1,6 +1,5 @@
 ---
-title: Implement Action Sheet and Image Picker
-description: Implement an Action Sheet and Popover (for regular size class on iPad) to pick an image from Photo Library or Camera; the Image will later be fed to the Core ML Image Classification Model.
+parser: v2
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
@@ -9,21 +8,22 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 15
 ---
 
-## Prerequisites  
+# Implement Action Sheet and Image Picker
+<!-- description --> Implement an Action Sheet and Popover (for regular size class on iPad) to pick an image from Photo Library or Camera; the Image will later be fed to the Core ML Image Classification Model.
 
+## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0 or newer
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to implement and Action Sheet and make sure it will automatically be replaced with a Popover when running on regular size class on iPad
 - How to implement an Image Picker using Camera or Photo Library
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a Bar Button Item to Overview View Controller)]
+### Add a Bar Button Item to Overview View Controller
+
 
 In order for the user to pick an image for the classification you will implement a Bar Button Item bringing up an Action Sheet or a Popover when running on Regular mode on iPad.
 
@@ -57,10 +57,9 @@ In order for the user to pick an image for the classification you will implement
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement a UIImagePickerController)]
+### Implement a UIImagePickerController
+
 
 1. Open the class `OverviewTableViewController.swift`. Add two properties for holding the `UIImagePickerController` and the picked image.
 
@@ -147,10 +146,9 @@ In order for the user to pick an image for the classification you will implement
 
     Continue to the next step to implement a segue to a new Table View Controller. The compile errors will then go away.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create segue and Product Classification Table View Controller)]
+### Create segue and Product Classification Table View Controller
+
 
 1. Select the `SalesAssistant` group in the **Project Navigator** and create a new `UITableViewController` with the name `ProductClassificationTableViewController`.
 
@@ -240,10 +238,9 @@ In order for the user to pick an image for the classification you will implement
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement action for Bar Button Item)]
+### Implement action for Bar Button Item
+
 
 When the user taps on the Bar Button Item it should show an Action Sheet or a Popover when running on Regular mode on the iPad. For that you will implement that code in the `didPressActionListButton(_:)` method. Before doing that you will add one more line of code to the `viewDidLoad(_:)` to make sure the Bar Button Item shows an Icon instead of just the word **Item**.
 
@@ -311,10 +308,9 @@ When the user taps on the Bar Button Item it should show an Action Sheet or a Po
 
     All the needed code is now implemented for the user to choose a picture from the Photo Library or if running on an actual device take a picture with the device's camera.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add permissions to Info.plist file)]
+### Add permissions to Info.plist file
+
 
 Because iOS is a privacy focused operation system, you have to ask the user for permission to access both camera and photo library within your app. Those permissions are maintained in the Info.plist file.
 
@@ -327,10 +323,9 @@ Open the Info.plist and add the following two information properties to it by cl
 
 That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission to perform this action.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add back navigation)]
+### Add back navigation
+
 
 Right now the user has no possibility to navigate back from the Product Classification Table View Controller.
 
@@ -354,10 +349,9 @@ Right now the user has no possibility to navigate back from the Product Classifi
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run app to see results of your work)]
+### Run app to see results of your work
+
 
 You have implemented all necessary steps to choose or take a picture using an Action Sheet or Popover, make the needed navigations and passing on the selected image. Now it is time to test if your code works.
 
@@ -365,5 +359,4 @@ Run the app and click on the Bar Button Item in the Overview View Controller.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-12.png)
 
-[VALIDATE_7]
-[ACCORDION-END]
+

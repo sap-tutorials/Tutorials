@@ -1,6 +1,5 @@
 ---
-title: Use Your Own Data to Train a Machine Learning Model and Get Recommendations Based on Users' Browsing History
-description: Use the Personalized Recommendation service to train your own machine learning model to give visitors to your website highly personalized recommendations based on their browsing history.
+parser: v2
 auto_validation: true
 time: 30
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
@@ -9,18 +8,22 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Use Your Own Data to Train a Machine Learning Model and Get Recommendations Based on Users' Browsing History
+<!-- description --> Use the Personalized Recommendation service to train your own machine learning model to give visitors to your website highly personalized recommendations based on their browsing history.
+
+## You will learn
   - How to call and test the Personalized Recommendation service
   - How to access and use Swagger UI (User Interface)
   - How to submit a training job and trigger model serving
   - How to get recommendations based on users' browsing history
 
+## Intro
 In this tutorial, you will use your own dataset to train a machine learning model to get next-item recommendations.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
+### Authorize Swagger UI
+
 
 You will use Swagger UI, via any web browser, to call the Personalized Recommendation service APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
@@ -28,11 +31,11 @@ In the service key you created for Personalized Recommendation in the previous t
 
 1. To access the Personalized Recommendation Swagger UI, add **`/doc`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    !![PRS](png-files/service-key-details.png)
+    <!-- border -->![PRS](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    !![PRS](png-files/Swagger.png)
+    <!-- border -->![PRS](png-files/Swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
@@ -40,17 +43,16 @@ In the service key you created for Personalized Recommendation in the previous t
     bearer <access_token>
     ```
 
-    !![PRS](png-files/Authorize.png)
+    <!-- border -->![PRS](png-files/Authorize.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    !![PRS](png-files/Authorize-close.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![PRS](png-files/Authorize-close.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Prepare dataset)]
+
+### Prepare dataset
+
 
 The training endpoint can only receive an input in the form of a ZIP file. The ZIP file should contain two files: the `Clickstream file` and the `Item Catalogue file`. Here's an overview of these files:
 
@@ -132,11 +134,11 @@ The item catalogue is a JSON file with the following structure:
 
 Click on [data](https://help.sap.com/doc/72f40f2a9a664f458cc8643c9d754645/SHIP/en-US/) to download a sample item catalogue file for your reference.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Train your own machine learning model)]
+
+### Train your own machine learning model
+
 
 Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to upload data and trigger the machine learning model training job.
 
@@ -144,7 +146,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 2. Click **Try it out**.
 
-    !![PRS](png-files\Training-section.png)
+    <!-- border -->![PRS](png-filesTraining-section.png)
 
 3.  Enter tenant name. You must enter a name for the tenants, so please input a name of your choice.
 
@@ -152,11 +154,11 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 5.  Enter site name. A site name is also required, but if you leave this field blank, it is automatically filled with "default".
 
-    !![PRS](png-files\Actions-required.png)
+    <!-- border -->![PRS](png-filesActions-required.png)
 
 6.  Set `serve_model` to `true`. Make this setting to automatically deploy the real-time model serving instance.
 
-    !![PRS](png-files\Set-serve-model.png)
+    <!-- border -->![PRS](png-filesSet-serve-model.png)
 
 7.  Click the **Execute** button. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 2 trainings per month*. When you call the third training API, you get a 403 response stating that you have exceeded your quota for the month.
 
@@ -164,17 +166,16 @@ After you trigger the training, there are two possible outcomes:
 
 - Still ongoing, where the status is "PENDING", and code 200.
 
-    !![PRS](png-files\Pending-status.png)
+    <!-- border -->![PRS](png-filesPending-status.png)
 
 - Conflict, where the trigger clashed with the ongoing training from the previous trigger. The status is "Previously submitted job still in progress", and the code is 409.
 
-    !![PRS](png-files\Conflict-error.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![PRS](png-filesConflict-error.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Get training job status)]
+
+### Get training job status
+
 
 Use the **GET /standard/rs/v1/tenants/{tenant}/jobs/latest** endpoint to check the status of the ongoing training job.
 
@@ -184,27 +185,26 @@ Use the **GET /standard/rs/v1/tenants/{tenant}/jobs/latest** endpoint to check t
 
 3. Enter tenant name and site name (must be exactly the same as in the previous step). Click **Execute**.
 
-!![PRS](png-files\Latest-path.png)
+<!-- border -->![PRS](png-filesLatest-path.png)
 
 There are three possible outcomes:
 
 - Job is still ongoing, with the status "SUBMITTED" and code 200. Please wait for around 5–10 minutes before rechecking the progress.
 
-    !![PRS](png-files\Submitted-status.png)
+    <!-- border -->![PRS](png-filesSubmitted-status.png)
 
 - The job is completed, with the status "SUCCEEDED" and code 200. You can now proceed to the next step.
 
-    !![PRS](png-files\Succeeded-status.png)
+    <!-- border -->![PRS](png-filesSucceeded-status.png)
 
 - The job fails, with status "FAILED" and code 200. Please retrigger the training and make sure that you have entered all information correctly.
 
-    !![PRS](png-files\Failed-status.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![PRS](png-filesFailed-status.png)
 
 
-[ACCORDION-BEGIN [Step 5: ](Make inference call)]
+
+### Make inference call
+
 
 There are four different choices of inference calls as you can see in [Inference Options](https://help.sap.com/docs/Personalized_Recommendation/2c2078b9efa84566ac19d44df9625c65/8da4bc50e07f43f497da30833f6aea5e.html). For this tutorial, we will use next-item recommendations.
 
@@ -212,7 +212,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** end
 
 1. Click the endpoint name to expand it.
 
-    !![PRS](png-files\Inference-section.png)
+    <!-- border -->![PRS](png-filesInference-section.png)
 
 2. Click **Try it out**.
 
@@ -246,21 +246,19 @@ You can expect the following responses:
 
 - The model is able to understand the request and successfully return a set of recommendations. This returns a 200 code, stating the recommended items with their respective confidence scores.
 
-    !![PRS](png-files\Successfully-return.png)
+    <!-- border -->![PRS](png-filesSuccessfully-return.png)
 
 - The user entered an incorrect payload. This returns a 400 code, stating that the model doesn't understand the payload request.
 
-    !![PRS](png-files\Incorrect-payload.png)
+    <!-- border -->![PRS](png-filesIncorrect-payload.png)
 
 - Forbidden. The user has exceeded their inference quota for the month. A short message is displayed with code 403. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 1000 inference requests per month*.
 
-    !![PRS](png-files\Forbidden.png)
+    <!-- border -->![PRS](png-filesForbidden.png)
 
 - The training process has not finished yet. This returns a 404 code, stating that no model instances were found.
 
-    !![PRS](png-files\Not-finished-yet.png)
+    <!-- border -->![PRS](png-filesNot-finished-yet.png)
 
 You have now successfully used the Personalized Recommendation service and your own dataset to train a machine learning model and get recommendations based on users' browsing history and/or item description.
 
-[DONE]
-[ACCORDION-END]

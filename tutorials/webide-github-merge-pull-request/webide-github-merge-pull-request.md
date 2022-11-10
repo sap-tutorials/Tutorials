@@ -1,30 +1,31 @@
 ---
-title: Merge Branches into Master Branch in GitHub using Pull Requests
-description: Merge a feature branch back into the master branch in GitHub, and fetch the updates in SAP Web IDE.
+parser: v2
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 10
 ---
 
+# Merge Branches into Master Branch in GitHub using Pull Requests
+<!-- description --> Merge a feature branch back into the master branch in GitHub, and fetch the updates in SAP Web IDE.
+
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to create and send pull requests so that the changes in branches will be merged into the master branch
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Open branch on GitHub)]
+### Open branch on GitHub
+
 Open the Organization repository on GitHub and switch to the branch that you want to merge into master.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create pull request)]
+### Create pull request
+
 Click **New Pull Request** to create a pull request.
 
 ![Create pull request](p6_2.png)  
@@ -33,11 +34,10 @@ Enter brief details about the pull request and click **Create pull request**. Yo
 
 ![Open pull request](p6_3.png)  
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Merge pull request)]
+### Merge pull request
+
 To accept the pull request, click the **Pull Requests** tab to see a summary of pending pull requests. If you are happy with the changes, click **Merge Pull request** to accept the pull request and perform the merge. You can add in a comment if you want.
 
 ![Merge pull request](p6_4.png)  
@@ -56,11 +56,10 @@ Issues are automatically closed as well and the milestone is complete.
 
 ![Milestone complete](p6_7.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Fetch changes in SAP Web IDE)]
+### Fetch changes in SAP Web IDE
+
 
 Ensure your workspace in SAP Web IDE has fetched these latest changes.
 
@@ -77,5 +76,3 @@ Ensure your workspace in SAP Web IDE has fetched these latest changes.
     ![Switch to master](p6_8c.png)
 
 
-[DONE]
-[ACCORDION-END]

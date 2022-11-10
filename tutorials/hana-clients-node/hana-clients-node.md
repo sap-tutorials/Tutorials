@@ -1,26 +1,29 @@
 ---
-title: Connect Using the SAP HANA Node.js Interface
-description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Connect Using the SAP HANA Node.js Interface
+<!-- description --> Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
+
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to install Node.js and the SAP HANA client Node.js driver
   - How to create a Node.js application that queries a SAP HANA database
   - How to use both the synchronous and asynchronous driver interfaces
 
+## Intro
 Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn).  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js)]
+### Install Node.js
+
 
 Ensure you have Node.js installed and check its version. Enter the following command:
 
@@ -52,10 +55,9 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 >docker run -it --name=nodealpine node:alpine /bin/bash
 >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install SAP HANA client for Node.js from NPM)]
+### Install SAP HANA client for Node.js from NPM
+
 
 Node.js packages are available using [NPM](https://www.npmjs.com/), which is the standard package manager for Node.js.  
 
@@ -167,10 +169,9 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 >```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a synchronous Node.js application that queries SAP HANA)]
+### Create a synchronous Node.js application that queries SAP HANA
+
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -287,10 +288,9 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     >printenv | grep DEBUG
     >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a synchronous app that uses a connection pool)]
+### Create a synchronous app that uses a connection pool
+
 
 Connection pooling can improve performance when making multiple, brief connections to the SAP HANA database.  The following sample makes two connections one after another without using a connection pool and then using a connection pool.  It demonstrates how the time taken to make a connection with a connection retrieved from a pool is significantly shorter.
 
@@ -394,10 +394,9 @@ Connection pooling can improve performance when making multiple, brief connectio
 
     See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.13 release and documented in the 2.14 release.  This new API provides a more direct way to interact with the connection pool.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create an asynchronous app that uses callbacks)]
+### Create an asynchronous app that uses callbacks
+
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -496,10 +495,9 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
     Notice that asynchronous method calls use callback functions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create an asynchronous app that uses promises)]
+### Create an asynchronous app that uses promises
+
 The Node.js driver for the SAP HANA client added support for promises in the 2.11 release.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -602,11 +600,10 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 
     The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Debug the application)]
+### Debug the application
+
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
@@ -629,8 +626,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP HANA database.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

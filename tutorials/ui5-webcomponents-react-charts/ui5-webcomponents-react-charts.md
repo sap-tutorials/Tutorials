@@ -1,6 +1,5 @@
 ---
-title: Integrate Charts and Conditional Rendering
-description: Display data in charts using UI5 Web Components for React.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-fiori]
@@ -9,17 +8,21 @@ author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
 
-## Details
-### You will learn
+# Integrate Charts and Conditional Rendering
+<!-- description --> Display data in charts using UI5 Web Components for React.
+
+## You will learn
 -  How to install and import charts
 -  Learn about charts in UI5 web components
 -  How to add dynamic rendering
 
+## Intro
 UI5 Web Components for React also comes with a chart library. In this tutorial, you will integrate two chart types and add data to them. Also you will learn how to conditionally render components, and how React handles updates to the DOM and single components.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install module and import charts)]
+### Install module and import charts
+
 1. Install the chart library of UI5 Web Components for React.
 
     ```Shell
@@ -32,10 +35,9 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add charts to Card component)]
+### Add charts to Card component
+
 1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` prop with an empty array as value.
 
     ```JavaScript / JSX
@@ -184,11 +186,10 @@ export function MyApp() {
 }
 ```  
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add conditional rendering)]
+### Add conditional rendering
+
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
 1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
@@ -370,10 +371,10 @@ export function MyApp() {
 }
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update a component in React - Loading Indicator)]
+
+### Update a component in React - Loading Indicator
+
 One of the main advantages of React is how UI updates are handled. React will only re-render the component if the state of the component has changed. So it will not update the whole UI, but only the component that is affected by changes.
 
 1. In order to demonstrate this behavior, add a new `state` (right after the definition of the previous state).
@@ -426,10 +427,10 @@ This updates the component every time you switch between charts and simulates a 
 
 As you can see, only the component affected by the `state` is updated, and the rest stays the same. If you're working with data, you most probably will need a loading indicator. All UI5 web components that are able to display data have a `loading` prop and therefore also a loading indicator.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add dynamic header and text)]
+
+### Add dynamic header and text
+
 To make your `Card` look cleaner and to give the user the information that the header is clickable, you can add some logic to your component.
 
 1. Add a dynamic content `Text`
@@ -486,6 +487,4 @@ To make your `Card` look cleaner and to give the user the information that the h
     </Card>
     ```
 
-[DONE]
-[ACCORDION-END]
 ---

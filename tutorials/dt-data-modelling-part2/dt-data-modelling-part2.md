@@ -1,29 +1,31 @@
 ---
-title: Importing Required Calculation Views
-description: Conversion and importation of calculation views for Dynamic Tiering
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
+# Importing Required Calculation Views
+<!-- description --> Conversion and importation of calculation views for Dynamic Tiering
+
 ## Prerequisites
  - **Tutorials:** [Adding Analytic Privileges and the SAP HANA Modeler Perspective]
  - **Files:** Download the Data Files zip: `https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip` and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
-## Details
+
+## Intro
 Extended Tables in Dynamic Tiering can only be used in information models that consist solely of calculation views. If you have an existing data model that is built from the three classical HANA information view types (attribute views, analytic views and calculation views), you will have to convert the data models to a representation that consists only of calculation views.
 
 SAP HANA studio offers a migration wizard for this task. We will guide you through this process.
-
-### You will learn
+## You will learn
   - How to import information views to SAP HANA Studio
   - How to activate your imported views
-
-### Time to Complete
+## Time to Complete
  **10 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Importing Required Views)]
+### Importing Required Views
+
 
 We will need to import some pre-defined views. Click **File** in the top-right corner, and then **Import**.
 
@@ -54,11 +56,9 @@ Open it up, and you should be able to see the attribute, analytic, and calculati
 
 ![Views Imported](imported-views.PNG)
 
-[DONE]
 
-[ACCORDION-END]
+### Activate Imported Views
 
-[ACCORDION-BEGIN [Step 2: ](Activate Imported Views)]
 These newly imported views will have grey icons in the bottom-right corner, which means they are not yet active. We will need to activate them. However, before we do that, we will need to open up a SQL console and run the following command:
 
 ```sql
@@ -81,6 +81,4 @@ When activated, the grey diamond, in the bottom right corner, beside each view w
 
 ![Before and after activation views](pre-activation.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

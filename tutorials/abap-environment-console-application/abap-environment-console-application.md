@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Your First ABAP Console Application
-description: Create an ABAP package and an ABAP class in the SAP BTP, ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
 time: 5
@@ -9,8 +8,10 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-## Prerequisites  
+# Create Your First ABAP Console Application
+<!-- description --> Create an ABAP package and an ABAP class in the SAP BTP, ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
 
+## Prerequisites  
 **For ABAP license:**
 -	You have set up your ABAP environment as described in [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
 - You have a user in the ABAP Environment [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
@@ -19,13 +20,13 @@ author_profile: https://github.com/mervey45
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding).
 - You have downloaded the ABAP Development Tools (ADT). SAP recommends the latest version of ADT, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
 
-## Details
-### You will learn
+## You will learn
   - How to create an ABAP cloud project in ADT
   - How to create an ABAP package
   - How to create an ABAP class
   - How to execute the application console
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`) or your initials.
 
 For more information, see:
@@ -33,7 +34,8 @@ For more information, see:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the ABAP Development Tools (ADT) )]
+### Open the ABAP Development Tools (ADT) 
+
 Open the ADT and change to the ABAP perspective, using the menu.
 
  ![adt-abap-menu](adt-abap-menu.png)
@@ -46,10 +48,9 @@ Or select the icon.
 
  ![adt-abap-icon](adt-abap-icon.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an ABAP Cloud project)]
+### Create an ABAP Cloud project
+
 1. In the ADT, select the menu path **File** > **New** > **Other**.
 
     ![Create an ABAP Cloud project in ADT](other.png)
@@ -94,12 +95,11 @@ Or select the icon.
 
     Click **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 3: ](Create ABAP package)]
+### Create ABAP package
+
   1. Right-click on the `ZLOCAL` and select **New** > **ABAP Package** from the context menu.
 
       ![Add ABAP package](package.png)
@@ -119,10 +119,9 @@ Or select the icon.
 
      The ABAP package is now created.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create new ABAP class)]
+### Create new ABAP class
+
   1. Add a new ABAP class to your package.
 
       ![Add new ABAP class](class.png)
@@ -143,10 +142,9 @@ Or select the icon.
 
       ![Select transport request](emptyclass.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement Interface)]
+### Implement Interface
+
   1. In the class definition, specify the interface `IF_OO_ADT_CLASSRUN` in the public section as shown on the screenshot. Now go to the class implementation and provide the implementation of the method `IF_OO_ADT_CLASSRUN~MAIN`. As shown on the screenshot, it should output the text Hello World! using the code line below
 `out->write('Hello World!').`
 
@@ -173,10 +171,9 @@ Or select the icon.
 
       ![Implement an Interface](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Execute ABAP application)]
+### Execute ABAP application
+
   1. Right-click your class and select **Run As** > **ABAP Application (Console)** or select your class and press **`F9`**.
 
       ![Execute ABAP application](console.png)
@@ -185,11 +182,11 @@ Or select the icon.
 
       ![Execute ABAP application](result.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
+
 Write only the write statement with following information: Hello SAP Cloud Platform ABAP Environment!
 
 [VALIDATE_1]
 [ACCORDION-END] 
+

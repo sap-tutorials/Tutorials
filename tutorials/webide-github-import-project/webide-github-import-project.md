@@ -1,31 +1,32 @@
 ---
-title: Create a Project in SAP Web IDE and Push into GitHub
-description: Create a project in SAP Web IDE and push it into GitHub to support collaborative development using GitHub and SAP Web IDE.
+parser: v2
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 15
 ---
 
 
+# Create a Project in SAP Web IDE and Push into GitHub
+<!-- description --> Create a project in SAP Web IDE and push it into GitHub to support collaborative development using GitHub and SAP Web IDE.
+
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to import an existing SAP Web IDE project into your previously created GitHub repository
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform cockpit)]
+### Log into your SAP Cloud Platform cockpit
+
 
 Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log into your SAP Cloud Platform cockpit.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
+### Open SAP Web IDE
+
 
 1. Click **Neo Trial**, and then open the **Services** tab.
 
@@ -37,10 +38,9 @@ Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondeman
 
     ![Open SAP Web IDE](p3_3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open your project)]
+### Open your project
+
 
 Open a project in SAP Web IDE. Either:
 
@@ -48,19 +48,17 @@ Open a project in SAP Web IDE. Either:
   - Import an existing project (`.zip` file).
   - Create a new one by going to **File > New > Project from Template**, and then use, for example, the **SAPUI Application** template.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Initialize local repository)]
+### Initialize local repository
+
 
 Right-click on your project folder and click **Git > Initialize Local Repository**.
 
 ![Create local Git repository](p3_5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set the remote repository)]
+### Set the remote repository
+
 
 You need to connect the local Git repository in SAP Web IDE with your repository on GitHub.
 
@@ -82,19 +80,17 @@ This automatically executes a fetch from the remote repository, and you can view
 
 ![Set remote](setRemoteFetch.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Verify Git repository)]
+### Verify Git repository
+
 
 Your project is now initialized with a Git repository and linked to the GitHub platform. You can open the Git pane on the right sidebar to verify this.
 
 ![Git repository initialized](p3_7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Stage and commit files)]
+### Stage and commit files
+
 
 Commit the project files to the local Git repository by doing the following:
 
@@ -106,28 +102,25 @@ Commit the project files to the local Git repository by doing the following:
 
 ![Git changes committed](p3_8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Pull from GitHub)]
+### Pull from GitHub
+
 
 To synchronize the GitHub repository and local repository changes, click **Pull**. Enter your GitHub credentials.
 
 ![Pull GitHub changes](p3_9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](View downloaded README)]
+### View downloaded README
+
 
 Once the pull is complete, you'll notice the `README.md` file that was created on GitHub is now available in the SAP Web IDE project workspace.
 
 ![Pull complete](p3_10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Push your local changes to GitHub)]
+### Push your local changes to GitHub
+
 
 Click **Push** and select **Remote Branch**
 
@@ -143,12 +136,9 @@ Once the push is complete, you will see a notification message on the top-right 
 
 ![Push completed](p3_11d.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Check published changes)]
+### Check published changes
+
 
 Go to your organization on GitHub and you will notice that the changes are now published.
 
-[DONE]
-[ACCORDION-END]

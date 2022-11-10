@@ -1,22 +1,23 @@
 ---
-title: Prepare to build a translytical application with Hibernate
-description: Set up the code, the Google Cloud Platform project, and the data for building translytical applications with Hibernate on SAP HANA.
+parser: v2
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
 time: 30
 ---
 
-## Details
-### You will learn  
+# Prepare to build a translytical application with Hibernate
+<!-- description --> Set up the code, the Google Cloud Platform project, and the data for building translytical applications with Hibernate on SAP HANA.
+
+## You will learn  
   - How to set up the Google Cloud Platform project
   - Where to get the application code
   - How to prepare the required external data
 
-
-### Prerequisites
+## Prerequisites
 You'll need the following software installed before setting up the project:
 
+## Intro
 - A Git client. If you don't have on installed you can download one at [https://git-scm.com/downloads](https://git-scm.com/downloads)
 - Apache Maven, available at [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi), version 3.5 or higher
 - A Google Cloud account
@@ -27,7 +28,8 @@ You'll need the following software installed before setting up the project:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check out the application code)]
+### Check out the application code
+
 The application code is available on [GitHub](https://github.com/SAP/hxe-hibernate-google-app-engine).
 
 Clone it to your local machine using a Git client and switch to the branch `tutorial`.
@@ -36,12 +38,10 @@ Clone it to your local machine using a Git client and switch to the branch `tuto
 git clone --branch tutorial https://github.com/SAP/hxe-hibernate-google-app-engine.git
 ```
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Set up the code editor)]
+### Set up the code editor
+
 You can import the project as a Maven project into Eclipse.
 
 Open the Eclipse IDE.
@@ -58,11 +58,9 @@ You should now see the project in the Eclipse project explorer.
 
 ![Eclipse project explorer](eclipse-project-explorer.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Set up the Google Maps JavaScript API
 
-[ACCORDION-BEGIN [Step 3: ](Set up the Google Maps JavaScript API)]
 
 In the [Google Cloud Platform Console](https://console.cloud.google.com), browse to **APIs & Services > Library**.
 
@@ -96,11 +94,9 @@ When you're finished entering the referrers, click **Save**.
 
 ![Restrict the API key](restrict-api-key.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Set up the Google App Engine
 
-[ACCORDION-BEGIN [Step 4: ](Set up the Google App Engine)]
 If you haven't done so yet, you need to set up the Google App Engine for you project. To do this, navigate to **App Engine > Dashboard** in the [Google Cloud Platform Console](https://console.cloud.google.com).
 
 ![App Engine dashboard](app-engine-dashboard.png)
@@ -115,11 +111,9 @@ Then click **Next** and wait for the setup to complete.
 
 ![App Engine location](app-engine-location.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Prepare the data
 
-[ACCORDION-BEGIN [Step 5: ](Prepare the data)]
 Download the [CSV version](https://data.sfgov.org/api/views/tmnf-yvry/rows.csv?accessType=DOWNLOAD) of the [San Francisco Police Department Incidents data set](https://data.sfgov.org/api/views/tmnf-yvry/) and the [CSV version](https://data.sfgov.org/api/views/3mea-di5p/rows.csv?accessType=DOWNLOAD) of the [San Francisco Addresses data set](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Addresses-Enterprise-Addressing-System/3mea-di5p) and place them into the `src/main/resources/csv` directory as `incidents.csv` and `addresses.csv`, respectively.
 
 Create two ZIP archives named `incidents.zip` and `addresses.zip`, respectively, each containing the corresponding CSV file and make sure to have the zip tool split the archives into parts no larger than 30 megabytes. Otherwise the resulting files can't be uploaded to the Google App Engine.
@@ -138,11 +132,9 @@ src/main/resources/csv
 \- PLACE_CSV_FILES_HERE
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Update the application build descriptor
 
-[ACCORDION-BEGIN [Step 6: ](Update the application build descriptor)]
 Open the file `pom.xml` in the project's root directory and update the build properties to match your settings.
 
 ```xml
@@ -201,12 +193,10 @@ After the adjustment the properties should look something like this:
 
 Save the `pom.xml` file.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Update the application configuration)]
+### Update the application configuration
+
 
 Open the file `application.properties` in the directory `src/main/resources`.
 
@@ -237,11 +227,9 @@ csv.addresses.file.location=/csv/addresses.zip
 
 Save the `application.properties` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Deploy the application
 
-[ACCORDION-BEGIN [Step 8: ](Deploy the application)]
 Now the application is ready to be deployed to the Google App Engine. To do this, you can use the Google App Engine Maven plugin.
 
 In a console, run the following command from the root directory of the project.
@@ -258,6 +246,4 @@ After the deployment has succeeded you can navigate to `https://<your project ID
 
 ![Web UI](web-ui.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

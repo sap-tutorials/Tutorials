@@ -1,6 +1,5 @@
 ---
-title: Configure a Space to Develop on a Tenant Database (XS Advanced)
-description: Assign a tenant database to a space.
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 auto_validation: true
@@ -9,24 +8,27 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 15
 ---
 
-## Prerequisites  
+# Configure a Space to Develop on a Tenant Database (XS Advanced)
+<!-- description --> Assign a tenant database to a space.
 
+## Prerequisites  
  - **Proficiency:** Beginner
  - You have access to SAP HANA on premise or SAP HANA Express -- This tutorial will not work with HANA Cloud
  - SAP HANA, express edition already comes with a tenant database called `HXE`. If you are using **a different deployment**, you can create a tenant database following [this guide](hxe-ua-dbfundamentals-tenantdb)
  - SAP HANA, express edition already comes with a development space. If you want to create a separate one or are using another deployment, you can create a space as explained on [this tutorial](xsa-setup-new-space).
  - You have the proper administration rights
 
-## Details
-### You will learn  
+## You will learn  
 This tutorial will show you how to assign a tenant database to a space using the SAP HANA Service Broker in the Administration Cockpit.
 
+## Intro
 > **Note:** SAP HANA, express edition, comes with a default first tenant called `HXE` and an XS Advanced space called `development`.
 > If you are already using the development space, make sure you re-create the database services to point at the tenant database.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Option 1: Using the command line)]
+### Option 1: Using the command line
+
 
 Log in to the XS Advanced CLI as `XSA_ADMIN`. Use command `xs-admin-login` from the prompt in the virtual machine as `hxeadm`
 
@@ -52,12 +54,10 @@ xs map-tenant-database -o HANAExpress -s development HXE
 
 ###Mark the rest of the steps as done and complete the validation in step 5.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Option 2: Log in to the XS Advanced Administration)]
+### Option 2: Log in to the XS Advanced Administration
+
 
 **Do NOT perform these steps if you performed option 1**.
 
@@ -75,11 +75,9 @@ Click on the button to open and log in to the XSA Cockpit
 
 You need a user with administration rights, such as `XSA_ADMIN`. Log in to the Administration tool with it
 
-[DONE]
 
-[ACCORDION-END]
+### Enable the tenant DB
 
-[ACCORDION-BEGIN [Step 3: ](Enable the tenant DB)]
 
 Click on **Enable**
 
@@ -93,12 +91,10 @@ You will be prompted for the credentials to the tenant database
 
 ![Tenant database credentials](enabled.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Assign the tenant to the space)]
+### Assign the tenant to the space
+
 
 Click **Map**
 
@@ -112,12 +108,10 @@ Select the space you want to map to the tenant database and click on **Map**
 
 You can now use the space mapped to a tenant database in your Multi Target Applications.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Validation)]
+### Validation
+
 
 What do you see under `Mapped spaces` for the tenant you have just mapped in the XS Advanced Cockpit (default, `https://hxehost:51036/cockpit#/xsa/logicalDatabases` )
 
-[VALIDATE_1]
-[ACCORDION-END]
+

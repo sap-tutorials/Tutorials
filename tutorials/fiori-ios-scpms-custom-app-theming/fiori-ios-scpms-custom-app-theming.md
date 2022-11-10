@@ -1,33 +1,32 @@
 ---
-title: Customize theme and on-boarding of iOS app
-description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
-## Prerequisites  
+# Customize theme and on-boarding of iOS app
+<!-- description --> Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
 
+## Prerequisites  
 - **Proficiency:** Intermediate
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.0
 
-## Details
 
+
+## Intro
 In this tutorial, you will apply a custom theme to your iOS app (generated with the SAP BTP SDK Assistant for iOS) using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP BTP SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Mobile Services for development and operations.
-
-### You will learn  
-
+## You will learn  
 - How to create and load a `NUI` stylesheet to apply a custom theme to your app
 - How to change your app's on-boarding behavior by changing the configuration in SAP Mobile Services for development and operations
-
-### Time to Complete
-
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a NUI stylesheet)]
+### Create a NUI stylesheet
+
 
 `NUI` uses CSS-like stylesheets with extension `.nss`. In this tutorial step, you will create a `*.nss` file.
 
@@ -47,10 +46,9 @@ In the next screen, provide the following details:
 
 Make sure it is saved in the `ESPMReminders` group and click **Create**. The new `CustomTheme.nss` file is now created in the root of your project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add styles to the stylesheet)]
+### Add styles to the stylesheet
+
 
 The styles in the stylesheet can be applied to both standard iOS components such as `UINavigationBar`, `UITableView` etc. as well as SAP Fiori for iOS components.
 
@@ -96,10 +94,9 @@ This adds a light-green tint to the standard iOS navigation bar as well as a dar
 
 The standard SAP Fiori `subheadline` font style (member of the SDK's `SAPFiori FDLFontStyle` enum) is also changed to green, as is the on-boarding's application title and primary action button.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Load stylesheet)]
+### Load stylesheet
+
 
 In order for your app to apply the custom styles, you need to tell your app to use the custom stylesheet.
 
@@ -111,10 +108,9 @@ NUISettings.initWithStylesheet(name: "CustomTheme")
 
 This tells your app to use `NUI` with your custom stylesheet `CustomTheme.nss`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build and run the app)]
+### Build and run the app
+
 
 First, remove the app from your device, so you will go through the onboarding again.
 
@@ -136,10 +132,9 @@ And, unsurprisingly, the custom UI you have created earlier follows the same the
 
 > For more on `NUI`, see [NUI readme](https://github.com/tombenner/nui/)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Modify on-boarding behavior)]
+### Modify on-boarding behavior
+
 
 By default, the on-boarding flow provides you with a means to authenticate against SAP Mobile Services for development and operations, provides Touch ID functionality and passcode functionality.
 
@@ -169,10 +164,9 @@ Set the following properties:
 
 Click **Save** when done.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Build and run the application)]
+### Build and run the application
+
 
 First, remove the app from your device, so you will go through the onboarding again.
 
@@ -196,7 +190,6 @@ Add a different character, and now the **Next** button is enabled:
 
 ![Build and run the application](fiori-ios-scpms-custom-app-theming-09.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
+
 
 ---

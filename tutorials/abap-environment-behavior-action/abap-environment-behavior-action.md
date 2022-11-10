@@ -114,7 +114,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ### Create implementation class
 
+
   1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZBP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zbp_i_travel_m_xxx`** to create your implementation class.
+
 
       ![Create behavior implementation](implementationx.png)
 

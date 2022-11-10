@@ -1,6 +1,5 @@
 ---
-title: Build a Customer List
-description: Build an entity list using SAP BTP SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,39 +8,39 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool
 time: 25
 ---
 
-## Prerequisites
+# Build a Customer List
+<!-- description --> Build an entity list using SAP BTP SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
 - **SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to reuse View Controller code
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a customer list)]
+### Create a customer list
+
 
 Because you already implemented a similar screen, the Product List, you can copy most of the code from the `ProductsTableViewController.swift` class.
 
 1. Before you do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
 
-    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
+    <!-- border -->![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
 
 2. Use the project navigator to create a new Table View Controller Cocoa Touch Class  **`TutorialApp > New File ... > Cocoa Touch Class`**. Name the class **`CustomersTableViewController`**.
 
-    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2a.png)
+    <!-- border -->![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2a.png)
 
 3. Open the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `CustomersTableViewController`.
 
-    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2.png)
+    <!-- border -->![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement the customer list)]
+### Implement the customer list
+
 
 1. Next you're going to simply copy the `ProductsTableViewController.swift` code into a new class `CustomersTableViewController.swift`.
 
@@ -300,25 +299,24 @@ Because you already implemented a similar screen, the Product List, you can copy
 
     Also, the `loadProductImages()` method is not necessary anymore so you deleted that.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create storyboard segue for the customer list)]
+
+### Create storyboard segue for the customer list
+
 
 1. Open the `Main.storyboard`, there select the `OverviewTableViewController` and **`control + drag`** to the `CustomersTableViewController`.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-3.gif)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-3.gif)
 
 2. If you look closely, you can see that the `CustomersTableViewController` has a Navigation Item now allowing your user to navigate back to the Overview Screen.
 
     Select the segue in Interface Builder and click on the **Attributes Inspector**. As identifier enter `showCustomersList` and hit return.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-4.png)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement the prepare for segue method)]
+### Implement the prepare for segue method
+
 
 For the customer list it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
@@ -383,7 +381,5 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 4. If you run the app now you can navigate between Overview Screen and Customer List Screen.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-5.gif)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-5.gif)
 
-[DONE]
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Integrate Your App into Your Portal Site (Cloud Foundry)
-description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide]
@@ -9,16 +8,18 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert 
 ---
 
+# Integrate Your App into Your Portal Site (Cloud Foundry)
+<!-- description --> Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
+
 ## Prerequisites
  You've created a SAP HTML5 module in SAP Web IDE and deployed it to your SAP Cloud Platform subaccount.
  For more information about how to create the app, see the tutorial: [Develop Your First SAP Fiori App for Use in a Portal Site on SAP Cloud Platform on Cloud Foundry](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-create-app.html).
 
-
-### You will learn
-
+## You will learn
   - How to consume your own developed apps in a Portal site
   - How to add the app to the `Launchpad` page in your Portal site.
 
+## Intro
 The `Launchpad` page in your `JobCore Portal` site already contains a URL app. In this tutorial, you're going to add the SAP Fiori app that you created in SAP Web IDE to a different group in the launchpad of your Portal site.  
 
 To consume apps that you created in the Portal, you first need to configure a destination to your developed content.
@@ -26,7 +27,8 @@ To consume apps that you created in the Portal, you first need to configure a de
 The entry point for your developed content is the App Router URL of the MTA file that you developed. So first you'll find the URL of the App Router of your deployed MTA file and then you'll add a destination to this App Router.
 
 
-[ACCORDION-BEGIN [Step 1: ](Find App Router URL of deployed MTA file)]
+### Find App Router URL of deployed MTA file
+
 
 1. Open your subaccount and click **Spaces** in the left navigation panel.
 
@@ -46,11 +48,10 @@ The entry point for your developed content is the App Router URL of the MTA file
 
 Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Platform.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create destination to SAPUI5 app)]
+### Create destination to SAPUI5 app
+
 
 1. Open your trial or other subaccount, and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
 
@@ -84,10 +85,9 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the Content Manager of your Portal site)]
+### Open the Content Manager of your Portal site
+
 
 1. In the side navigation panel of your trial account or subaccount, click **Subscriptions** and enter `Portal` in the search bar. Then click the **Portal** tile and **Go to Application**. The Site Manager opens with the Site Directory in focus.
 
@@ -98,11 +98,10 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
     ![Edit Portal](10-open-content-manager.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add your app to the site)]
+### Add your app to the site
+
 
 1. In the Content Manager, click **+ New** > **App**.
 
@@ -157,10 +156,9 @@ You can now integrate this app with your Portal site and add it to the `Launchpa
 To make the app visible in the `Launchpad`, you need to assign it to a group. You also need to assign the app to a role.
 This is exactly what you're going to do in the next two steps.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Assign your app to a group)]
+### Assign your app to a group
+
 
 In this step you're going to create a new group and you'll assign the `Candidates` app to it.
 
@@ -177,10 +175,9 @@ In this step you're going to create a new group and you'll assign the `Candidate
     ![Assign group](18-assign-app-to-group.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Assign your app to the Everyone role)]
+### Assign your app to the Everyone role
+
 
  In this step, you'll assign the `Candidates` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
@@ -197,10 +194,9 @@ In this step you're going to create a new group and you'll assign the `Candidate
   ![Save role](20-assign-app-to-role.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Review your site)]
+### Review your site
+
 
 1. Click the **Sites** icon to open the Site Directory.
 
@@ -220,5 +216,4 @@ You have successfully created a great looking Portal site with apps that you can
 
 This is just the start -- you can continue to add more apps to your Portal site.
 
-[VALIDATE_7]
-[ACCORDION-END]
+

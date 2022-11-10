@@ -1,6 +1,5 @@
 ---
-title: Build a Product List
-description: Build an entity list using SAP BTP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,21 +8,22 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool
 time: 35
 ---
 
-## Prerequisites
+# Build a Product List
+<!-- description --> Build an entity list using SAP BTP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
 - **SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to use storyboard segues to navigate between screens
 - How to prepare a segue to set the title of the destination screen of each navigation
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the product list screen)]
+### Create the product list screen
+
 
 The Overview screen allows the user to navigate to a list of products or customers using the `FUITableViewHeaderFooterView`. Both lists are implemented almost exactly the same.
 
@@ -31,32 +31,31 @@ In this tutorial, you will implement the product list first, a `FUISearchBar` to
 
 1. Open the **`Main.storyboard`** and use the **Object Library** like before to drag a new Table View Controller to the storyboard right next to the Overview Table View Controller.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-1.png)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-1.png)
 
 2. Create a new **Cocoa Touch Class** using the Project Navigator **`TutorialApp > New File ... > Cocoa Touch Class`** . Make sure the new class is inheriting from `UITableViewController` and give it the name `ProductsTableViewController`.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-2.png)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-2.png)
 
 3. Go back to the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `ProductsTableViewController`.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-3.png)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-3.png)
 
     To enable the user to navigate between screens and passing data between view controllers you can use Storyboard Segues to you advantage. Segues can be created in Interface Builder and are accessible in the View Controllers class through the override `prepareForSegue(for:sender:)` method.
 
 4. You should be still in the `Main.storyboard`, there select the `OverviewTableViewController` and **`control + drag`** to the `ProductsTableViewController`.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-4.gif)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-4.gif)
 
     If you look closely, you can see that the `ProductsTableViewController` has a Navigation Item now allowing your user to navigate back to the Overview Screen. You get the back navigation out of the box because you've embedded the `OverviewTableViewController` in a Navigation Controller. The arrow between the View Controllers indicates a segue, for you to be able to distinguish multiple segues from each other they, like the Table View Cells, need an identifier.
 
 5. Select the segue in Interface Builder and click on the **Attributes Inspector**. As identifier enter `showProductsList` and hit return.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-5.png)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement a prepare for segue method)]
+### Implement a prepare for segue method
+
 
 For the product list, it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
@@ -113,12 +112,11 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 4. If you run the app now you can navigate between Overview Screen and Product List Screen.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-6.gif)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-6.gif)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement a product list)]
+### Implement a product list
+
 
 The Product List is a Table View Controller which means the structure is similar to the Overview Table View Controller with the difference that you won't use any `FUITableViewHeaderFooterView`.
 
@@ -357,10 +355,9 @@ The Product List is a Table View Controller which means the structure is similar
 
     ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement a search bar)]
+### Implement a search bar
+
 
 The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. You're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
 
@@ -547,7 +544,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 11. Run the app now and you should be able to search for products.
 
-    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
+    <!-- border -->![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
 
-[VALIDATE_4]
-[ACCORDION-END]
+

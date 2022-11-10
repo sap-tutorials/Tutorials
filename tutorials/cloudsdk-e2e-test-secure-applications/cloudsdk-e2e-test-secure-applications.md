@@ -1,33 +1,37 @@
 ---
+parser: v2
 author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
-title: End to End Test for Secure Applications
-description: Learn how to write end-to-end tests for secured applications based on the SAP Cloud SDK.
 auto_validation: true
 time: 5
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: products>sap-cloud-sdk
 ---
 
+# End to End Test for Secure Applications
+<!-- description --> Learn how to write end-to-end tests for secured applications based on the SAP Cloud SDK.
+
 ## Prerequisites
 This tutorial assumes you already completed the tutorial [End-to-End Tests for SAP Cloud SDK Projects](cloudsdk-e2e-test) and understood the concepts explained in the tutorial [Secure your application](s4sdk-secure-cloudfoundry).
 
 
-## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+
+## Intro
+> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
 >
-### You will learn
+## You will learn
 - How to extend the [End to End Test for SAP Cloud SDK projects](cloudsdk-e2e-test) to deal with authentication
 - How to run these end-to-end tests locally
 - How to configure the pipeline to inject credentials into the tests
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add authentication to end-to-end tests)]
+### Add authentication to end-to-end tests
+
 
 As preparation please secure your application from the tutorial [End-to-End Tests for SAP Cloud SDK Projects](cloudsdk-e2e-test) as explained in [Secure your application](s4sdk-secure-cloudfoundry).
 
@@ -114,10 +118,9 @@ module.exports = {
 
 >In global, you define user and pass. `${e2e_username}` means that the value is taken from the environment variable `e2e_username`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run end-to-end tests locally)]
+### Run end-to-end tests locally
+
 
 To run the tests locally you can use the same command as used in [End-to-End Tests for SAP Cloud SDK Projects](cloudsdk-e2e-test). However, in SAP Cloud Platform Cloud Foundry the application URL `launchUrl` should point to the `app-router`. In the Neo environment, it should point to the `application` because the user is redirected to the login form automatically.
 
@@ -132,12 +135,11 @@ npm run ci-e2e -- --launchUrl=https://path/to/your/running/app-router
 
 >Your password is stored in the history of your terminal. We recommend using a technical user for the E2E tests.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run E2E tests in the pipeline)]
+### Run E2E tests in the pipeline
 
-!![S4SDK Pipeline](e2epipeline.png)
+
+<!-- border -->![S4SDK Pipeline](e2epipeline.png)
 
 To run the tests in our pipeline you have to adapt the `.pipeline/config.yml`. In [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd) you learned that this file configures the behavior of the pipeline.
 In the tutorial [End-to-End Tests for SAP Cloud SDK Projects](cloudsdk-e2e-test) we already have setup the stage `Acceptance`. To inject the credentials for the login, please make sure that the credentials referenced by `e2e-test-user-cf` contain the username and password required during the login.
@@ -157,10 +159,10 @@ stages:
         credentialsId: 'deployment-cf'
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Questions and troubleshooting)]
+
+### Questions and troubleshooting
+
 
 Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `sap-cloud-sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 
@@ -169,7 +171,5 @@ For an overview of SAP Cloud SDK related questions, go to <https://stackoverflow
 You think that you found a bug in one of our Continuous Delivery artifacts? Feel free to open an issue in our GitHub repository on <https://github.com/SAP/jenkins-library/issues>.
 
 
-[DONE]
-[ACCORDION-END]
 
 ---

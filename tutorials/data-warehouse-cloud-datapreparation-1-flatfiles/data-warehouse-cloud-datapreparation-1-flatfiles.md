@@ -1,6 +1,5 @@
 ---
-title: Upload Flat Files and Wrangle Your Data
-description: Upload flat files, such as CSV files, in SAP Data Warehouse Cloud and then transform the data using the Data Builder.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -8,18 +7,22 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 
-## Details
-### You will learn
+# Upload Flat Files and Wrangle Your Data
+<!-- description --> Upload flat files, such as CSV files, in SAP Data Warehouse Cloud and then transform the data using the Data Builder.
+
+## You will learn
 - How to upload flat files in the Data Builder of SAP Data Warehouse Cloud
 - How to make the best of the Data Builder capabilities during a file upload process
 - How to transform the data for data consistency and integrity
 
 
+## Intro
 Data Wrangling is the process used to clean and convert data from one format and structure to another. The goal is to make the data as accurate and convenient for consumption as possible. After all, it is easier to gain more insight from complex and large amounts of data if it is accurate and actionable. Data Wrangling reduces the time you need to collect and organize unruly data to make it usable for the business.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Upload a CSV file)]
+### Upload a CSV file
+
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/6XStDvm7CaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -27,7 +30,7 @@ In the video above, you can see an example of how to upload a flat file in `csv`
 
 1.	In the SAP Data Warehouse Cloud welcome page, click on **Data Builder** on the menu on the left-hand side.
 
-    !![DWC](New_DWC.png)
+    <!-- border -->![DWC](New_DWC.png)
 
 2.	Choose the space in which you would like to upload and transform the data.
 
@@ -35,20 +38,19 @@ In the video above, you can see an example of how to upload a flat file in `csv`
 
 4.	Select **Import a CSV file**.
 
-    !![Import CSV](T01 - Picture1.png)
+    <!-- border -->![Import CSV](T01 - Picture1.png)
 
 5.	Find the source file on your local computer and upload. The file must be in CSV format.
 
 6.	Choose the delimiter in the same **Upload file** pop-up dialog.
 
-    !![Upload file](T01 - Picture2.png)
+    <!-- border -->![Upload file](T01 - Picture2.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Work on your new data using the Data Builder)]
+### Work on your new data using the Data Builder
+
 
 Once you upload a CSV file, you will be automatically redirected to a data transformation canvas where you will see a preview of your CSV data.
 
@@ -69,11 +71,10 @@ You can see in the video in the beginning of this tutorial that columns such as 
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Transform your CSV file)]
+### Transform your CSV file
+
 
 You can apply some of the basic transformation to your data set. Suppose you want to filter the data records for a particular year from the available dates of last 50 years. You can easily achieve by transforming data to match only the records from a particular year.
 
@@ -105,15 +106,13 @@ You can again preview the file to see the reflected changes.
 > Learn in the next tutorial how to integrate and monitor your data in SAP Data Warehouse Cloud.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

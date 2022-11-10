@@ -1,19 +1,19 @@
 ---
-title: Implement Logic for a Custom Business Object
-description: Control your custom business object application with ABAP logic
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 time: 20
 ---
 
+# Implement Logic for a Custom Business Object
+<!-- description --> Control your custom business object application with ABAP logic
+
 ## Prerequisites  
 - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to enable logic implementation for a custom business object
 - How to implement changing custom business object database
 - How to implement checking a custom business object before save
@@ -21,6 +21,7 @@ time: 20
 - How to implement informing the end user about save
 - How to ease development and test already while doing it
 
+## Intro
 At the end your application will set some data automatically and reject a save with an error message for the causing inconsistencies.
 
 **Our Example**
@@ -28,12 +29,12 @@ At the end your application will set some data automatically and reject a save w
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 
 In the first parts a Manager wants to define business objects **Bonus Plan** for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
-
-### Additional Information
+## Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Make key field Read-Only)]
+### Make key field Read-Only
+
 As there was no backend implementation to set the mandatory key field **`ID`** so far, we were forced to set it from the UI to be able to save instances. Now, as we will implement the logic to set the ID in backend and nowhere else, we will set that key field to Read-Only for the UI.
 
 1. Open the business object **Bonus Plan** in Custom Business Objects application
@@ -46,10 +47,9 @@ As there was no backend implementation to set the mandatory key field **`ID`** s
 
     ![Check Read-Only box](CBO_checkReadOnly.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable logic implementation)]
+### Enable logic implementation
+
 
 1. Switch to **General Information** section.
 
@@ -63,10 +63,9 @@ Now you are enabled to implement **Determination** logic which is called **after
 Only in Determination logic you are able to change custom business object data.
 Validation logic is intended to check the business object, decide whether a save can be performed and provide the end user a message with helpful information like successful save or the reason for which a save had to be rejected.  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start logic implementation)]
+### Start logic implementation
+
 For **published** Custom Business Objects **without a Draft version** you can implement logic.
 
 1. Switch to **Logic** section.
@@ -81,10 +80,9 @@ An editable copy of the published version appears left to it. With the **Draft V
 
 ![View Draft and/or Published Version of logic](CBO_AfterModifyDraftOrPublishedVersion.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement After Modification: fix values)]
+### Implement After Modification: fix values
+
 Implement After Modification event with following fix value functionality:
 
 - Set the key field `ID` if still initial.
@@ -124,10 +122,9 @@ Implement After Modification event with following fix value functionality:
     ENDIF.
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement After Modification: consistency check)]
+### Implement After Modification: consistency check
+
 In dependence on following checks, set the `isconsistent` property.
 
 - Check that `ValidityStartDate` and `ValidityEndDate` are set and that `ValidityStartDate` is earlier in time than `ValidityEndDate`.
@@ -154,10 +151,9 @@ ENDIF.
 * consistency check END
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the logic during development)]
+### Test the logic during development
+
 
 On top of the coding you can maintain runtime data for the current node structure which represents the data before running the test functionality. This data can also be saved as variant for later usages.
 
@@ -193,10 +189,9 @@ On top of the coding you can maintain runtime data for the current node structur
 
 4. **Publish** the After Modification Logic.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement Before Save)]
+### Implement Before Save
+
 1. Being in After Modification logic you can get to Before Save Logic this way:
 
     - Go Back in application
@@ -278,10 +273,9 @@ On top of the coding you can maintain runtime data for the current node structur
 
 3. **Publish** the Before Save Logic
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test via the UI)]
+### Test via the UI
+
 Once ensured that both logic implementations were successfully published you can start testing the Application like an end user via the UI.
 
 1. **Open** the Bonus Plan application
@@ -292,11 +286,9 @@ Once ensured that both logic implementations were successfully published you can
 6. **Enter** value `20` into field **High Bonus Percentage**
 7. **Save** the Bonus Plan. Now it will not be rejected.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

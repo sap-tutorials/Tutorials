@@ -1,6 +1,5 @@
 ---
-title: Create a Cached OData Service for Improved Offline OData
-description: Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+parser: v2
 auto_validation: true
 primary_tag: topic>mobile
 tags: [ tutorial>intermediate, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
@@ -9,6 +8,9 @@ author_name: Manuel Stampp
 author_profile: https://github.com/manuel-stampp
 ---
 
+# Create a Cached OData Service for Improved Offline OData
+<!-- description --> Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+
 ## Prerequisites
  - [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata)
  - [Create an Account on the SAP Gateway Demo System](gateway-demo-signup)
@@ -16,8 +18,7 @@ author_profile: https://github.com/manuel-stampp
  - Basic understanding of XML format and OData metadata/[Common Schema Definition Language (CSDL)](https://www.odata.org/documentation/odata-version-3-0/common-schema-definition-language-csdl/)
  - [Access SAP Mobile Services](fiori-ios-hcpms-setup)
 
-## Details
-### You will learn
+## You will learn
   - How to create custom XML annotations to generate an OData service without actual coding
   - Usage of MBT entity handlers for refresh
   - Usage of MBT OData cache databases
@@ -25,7 +26,8 @@ author_profile: https://github.com/manuel-stampp
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create or upload the data model and prepare environment)]
+### Create or upload the data model and prepare environment
+
 
 1. To create a cached service with MBT, you can either upload an existing metadata file or you can use the graphical tools in SAP Business Application Studio to start from scratch.
 
@@ -158,10 +160,9 @@ author_profile: https://github.com/manuel-stampp
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Annotate your entities for data load from source system)]
+### Annotate your entities for data load from source system
+
 
 1. Open your `metadata.csdl.xml` with **right-click** &rarr; **Open With** &rarr; **Code Editor**
 
@@ -300,10 +301,9 @@ author_profile: https://github.com/manuel-stampp
 
     >**Hint:** If no custom logic or mapping is required, the annotation `Cache.ODataBackend` can be used to [replicate/cache an OData service](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/cache-databases.html#odata-back-end-systems) without having to map all the entity handlers manually and can save a lot of effort for such cases.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Client-Filter and Client-Registration entities to customise a download query)]
+### Add Client-Filter and Client-Registration entities to customise a download query
+
 
 1. Within your Schema, add the following two additional entity types.
 
@@ -569,10 +569,10 @@ For reference please double check with the following CSDL file content.
 
 
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Examine and test your OData service)]
+
+### Examine and test your OData service
+
 
 1. If not noted down previously, find the application route (URL) assigned to the app router in the space of SAP Business Technology Platform Cockpit and click it
 
@@ -590,10 +590,9 @@ For reference please double check with the following CSDL file content.
 
 ---
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Reference your OData service in SAP Mobile Services)]
+### Reference your OData service in SAP Mobile Services
+
 
 1. Log in to SAP Mobile Services Cockpit, e.g. [mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com](https://mobile-service-cockpit-web-preview.cfapps.eu10.hana.ondemand.com/), depending on your landscape provider and region.
 
@@ -643,5 +642,4 @@ For reference please double check with the following CSDL file content.
 
 **Congratulations!** You have successfully created an OData Cache-Database with MBT, linked it to SAP Mobile Services and are now ready for client development.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

@@ -1,24 +1,26 @@
 ---
-title: Connect SAP Business Warehouse to SAP HANA Cloud
-description: Use the data you have in your SAP Business Warehouse (BW) system by connecting it with SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Connect SAP Business Warehouse to SAP HANA Cloud
+<!-- description --> Use the data you have in your SAP Business Warehouse (BW) system by connecting it with SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
 - Make sure you have a **running** SAP HANA database instance in SAP HANA Cloud.
 - You must have a **running** SAP BW on SAP HANA or SAP BW/4HANA system.
 
 
-## Details
-### You will learn
+## You will learn
 - How to configure the Data Provisioning Agent for connecting SAP Business Warehouse with SAP HANA Cloud, SAP HANA database
 - How to register the Data Provisioning Adapter with SAP HANA Cloud, SAP HANA database
 - How to connect SAP Business Warehouse with SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 If your company currently uses SAP Business Warehouse (BW) and you would like to connect it as a source to SAP HANA Cloud, SAP HANA database, you can follow the steps in this tutorial to do so. This will then allow you to use your SAP BW system.
 
 You can use the ABAP Adapter to extract the data from the SAP BW. To do so, you will need to install and configure the Data Provisioning Agent.
@@ -26,7 +28,8 @@ You can use the ABAP Adapter to extract the data from the SAP BW. To do so, you 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the Data Provisioning Agent)]
+### Install the Data Provisioning Agent
+
 
 > ### Prerequisites
 >
@@ -44,7 +47,7 @@ On the website [SAP Software Download Center](https://support.sap.com/en/my-supp
 
 3.	Then right click on **hdbsetup.exe** and choose **Run as administrator**.
 
-    !![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-data-provisioning-agent.png)
+    <!-- border -->![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-data-provisioning-agent.png)
 
 4.	Choose **Install new SAP HANA Data Provisioning Agent** and specify the installation path.
 
@@ -52,16 +55,15 @@ On the website [SAP Software Download Center](https://support.sap.com/en/my-supp
 
 6.	Next, specify the username (`<domain>\<username>`) and password to use for the agent service. The user that runs the agent service must have read and write access to the installation directory so configuration files can be updated.
 
-    !![Services running](ss-02-services-running.png)
+    <!-- border -->![Services running](ss-02-services-running.png)
 
 7.	To check if you agent is running, type **services** on the windows search bar and select **Run as Administrator**.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure Data Provisioning Agent for connection )]
+### Configure Data Provisioning Agent for connection 
+
 
 > ### Prerequisites
 >
@@ -85,13 +87,13 @@ set DPA_INSTANCE=C:\usr\sap\dataprovagent
 agentcli.bat –configAgent
 ```
 
-    !![Start command line config tool](ss-03-start-command-line-config-tool.png)
+    <!-- border -->![Start command line config tool](ss-03-start-command-line-config-tool.png)
 
 4.	Select **SAP HANA Connection**.
 
 5.	Next, select **Connect to SAP HANA Cloud via JDBC** and specify true to use an encrypted connection over JDBC.
 
-    !![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
+    <!-- border -->![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
 
 6.	Then specify the **host name** and **port** for the SAP HANA Cloud instance.
 
@@ -103,11 +105,10 @@ agentcli.bat –configAgent
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Register data provisioning adapter with SAP HANA Cloud)]
+### Register data provisioning adapter with SAP HANA Cloud
+
 
 > ### Prerequisites
 >
@@ -120,31 +121,30 @@ agentcli.bat –configAgent
 
 3.	Select **Display Adapters** to view the list of available adapters. Then note the ABAP Adapter name and go back.
 
-    !![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
+    <!-- border -->![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
 
 4.	Next select **Register Adapter** and type in the adapter name as `ABAPAdapter`.
 
-    !![Register Adapter](ss-06-register-adapter.png)
+    <!-- border -->![Register Adapter](ss-06-register-adapter.png)
 
 The selected adapter has been registered with SAP HANA and can be selected when creating a remote source.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Connect to SAP BW on SAP HANA Cloud)]
+### Connect to SAP BW on SAP HANA Cloud
+
 
 
 1.	Launch the SAP HANA Database Explorer.
 
 2.	Expand Catalog under your database and right click on **Remote Sources**. Select **Add Remote Source**.
 
-    !![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
+    <!-- border -->![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
 
 3.	Under Adapter Name select the `ABAPAdapter` that you registered above.
 
-    !![Add Remote Source](ss-08-add-remote-source.png)
+    <!-- border -->![Add Remote Source](ss-08-add-remote-source.png)
 
 4.	Then enter the **Application Server**, **Client**, and **Instance number** of your SAP BW on SAP HANA or SAP BW/4HANA system.
 
@@ -157,14 +157,12 @@ You have completed the third tutorial of this tutorial group. In the next tutori
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---
