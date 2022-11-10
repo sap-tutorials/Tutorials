@@ -24,7 +24,8 @@ To follow the trainings, the instructor will give you the following:
 In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutorial environment from a SAP BTP subaccount that has already been set up for you including a subscription to SAP Work Zone. Once you've accessed SAP Work Zone, in the next tutorial, you'll create a workspace and add content to it.
 
 >This workshop is conducted on a shared environment. Therefore we will be asking you to enter unique IDs in some of the steps. We have specified in each of the tutorials of this mission when to enter your unique ID. For example, `<your unique identifier>_<name of entity>`.
-In addition, please don't edit the SAP Work Zone Home page as it's a shared asset.      
+
+ In addition, please don't edit the SAP Work Zone Home page as it's a shared asset.      
 
 
 ---
@@ -47,4 +48,3 @@ In addition, please don't edit the SAP Work Zone Home page as it's a shared asse
 SAP Work Zone opens displaying the Home Page that has already been configured for you.
 
 In the next tutorial, you'll create a workspace and add apps and other content to it.
-
