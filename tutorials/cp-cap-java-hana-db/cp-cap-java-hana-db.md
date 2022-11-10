@@ -59,6 +59,7 @@ First you need to create and initialize an SAP HANA database schema in SAP BTP. 
 
 
 
+
 ### Provision an Instance of SAP HANA Cloud
 
 
@@ -83,7 +84,6 @@ Add an additional Maven dependency to your project. The dependency brings the ab
         <artifactId>cds-feature-hana</artifactId>
     </dependency>
     ```
-
 
 ### Deploy database artefacts to SAP HANA
 
@@ -117,6 +117,7 @@ Add an additional Maven dependency to your project. The dependency brings the ab
     > As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
 
     > In addition, the command initialized the database schemas inside the SAP HANA HDI container.
+
 
 
 

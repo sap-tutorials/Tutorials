@@ -101,7 +101,7 @@ Stop your application if it's still running by using **`CTRL+C`** in the termina
 
     <!-- border -->![open application in new tab message](open-in-new-tab.png)
 
-    A new Browser tab should be opened with your application.
+    A new Browser tab is opened with your application.
 
     <!-- border -->![application opened](application-opened.png)
 

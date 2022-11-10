@@ -14,7 +14,6 @@ author_name: Lindsay Bert
 To follow the trainings, the instructor will give you the following:
  - A URL to a SAP BTP subaccount used for this training.
  - A user name and password for the SAP Business Technology Platform account used in this training.
- - A user for the Identity Authorization service (IAS) used in this training. IAS is the authentication service that is used to access the training environment for SAP Work Zone and SAP Business Application Studio.
 
 
 ## You will learn
@@ -24,9 +23,9 @@ To follow the trainings, the instructor will give you the following:
 ## Intro
 In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutorial environment from a SAP BTP subaccount that has already been set up for you including a subscription to SAP Work Zone. Once you've accessed SAP Work Zone, in the next tutorial, you'll create a workspace and add content to it.
 
->Please note that due to the high number of participants that register for SAP Work Zone workshops, we have provided a single subaccount for multiple users. Therefore, you will be using a shared subaccount with others. In order to allow the exercises to run smoothly for all, please don't edit the SAP Work Zone Home page as it's a shared asset.
+>This workshop is conducted on a shared environment. Therefore we will be asking you to enter unique IDs in some of the steps. We have specified in each of the tutorials of this mission when to enter your unique ID. For example, `<your unique identifier>_<name of entity>`.
+In addition, please don't edit the SAP Work Zone Home page as it's a shared asset.      
 
->Important: To work on this shared environment, you'll need to use a unique identifier for some entity names. This is important so that you can identify your entities. We have specified in each of the tutorials of this mission when this is relevant. For example, we will tell you to add your unique identifier like this: `<your unique identifier>_<name of entity>`.
 
 ---
 
@@ -35,7 +34,7 @@ In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutoria
 
 1. Open your browser and navigate to the subaccount in SAP BTP that you received from the instructor.
 
-2. Click **Instances and Subscriptions** in the left navigation panel.
+2. Click **Services** and then **Instances and Subscriptions** in the left navigation panel.
 
     ![Instances & Subscriptions](1-instances and subscriptions.png)
 
@@ -48,5 +47,4 @@ In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutoria
 SAP Work Zone opens displaying the Home Page that has already been configured for you.
 
 In the next tutorial, you'll create a workspace and add apps and other content to it.
-
 

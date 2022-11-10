@@ -59,8 +59,8 @@ The **Content Manager** opens with the **My Content** tab in focus.
 
     |  Field     | Value
     |  :------------- | :-------------
-    |  Title           | `Search POs` If you're taking part in a workshop, please add your unique identifier to the app name like this: `<your unique identifier>_Search POs`.
-    |  System          | Select the value `ES5`
+    |  Title           | `Search POs` In a workshop, use: `<your unique identifier>_Search POs`.
+    |  System          | Select the value `ES5`. In a workshop use: `<your unique identifier>_ES5`.
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
 
@@ -173,6 +173,4 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 You'll see your app is displayed as a tile in the group you assigned it to:
 
   <!-- border -->![View group with app](18-view-groupwithapp.png)
-
-
 

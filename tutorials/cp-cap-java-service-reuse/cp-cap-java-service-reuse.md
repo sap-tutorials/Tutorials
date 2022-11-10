@@ -45,9 +45,9 @@ From the products service that you created in the previous tutorial, we just wan
     -DgroupId=com.sap.cap -DartifactId=bookstore
     ```
 
-4. To open the bookstore project in a new workspace go to **File** **&rarr;** **Open Workspace**.
+4. To open the bookstore project in a new workspace go to **File** **&rarr;** **Open Folder**.
 
-5. Choose **bookstore** from the project list and then **Open**.
+5. Choose **bookstore** from the project list and then **OK**.
 
     <!-- border -->![open the bookstore application](open-bookstore.png)
 
