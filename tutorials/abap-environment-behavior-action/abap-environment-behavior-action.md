@@ -82,7 +82,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate.png)
 
->**HINT:** `$self` means that the instance of the same type is returned on which the operation is performed – here a travel instance.
+>**Hint:** `$self` means that the instance of the same type is returned on which the operation is performed – here a travel instance.
 
 
 ### Enhance behavior definition for projection view
@@ -133,7 +133,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ![Create behavior implementation](implementation3.png)
 
 
-    >**HINT:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
+    >**Hint:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
 
 
 ### Enhance behavior implementation
@@ -248,7 +248,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDCLASS.
     ```
 
-    >**HINT:** The code does the following:
+    >**Hint:** The code does the following:
 
     >- Read data for the travel instance from the transactional buffer.
 
@@ -435,7 +435,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ### Implement determination
 
 
-  >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
+  >**Hint:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
   To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
   Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
 
@@ -468,7 +468,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDMETHOD.
     ```
 
-    >**HINT:** The code:
+    >**Hint:** The code:
     >- Checks if TravelID is already filled
     >- Removes lines where TravelID is already filled
     >- Gets maximum travelID
