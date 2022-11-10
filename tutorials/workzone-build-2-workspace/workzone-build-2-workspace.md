@@ -29,7 +29,7 @@ In this tutorial, you're going to create a workspace where employees who joined 
 ### Download images for your workspace
 
 
-Before you start, download these image files so that they're on your computer ready for you to add to your workspace pages:
+Before you start, download these image files so that they're on your computer ready for you to add to your workpage for the workspace that you will create.
 
 - [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
 - [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
@@ -44,7 +44,7 @@ Before you start, download these image files so that they're on your computer re
 ### Create a workspace
 
 
-Workspaces are the building blocks of SAP Work Zone. You can add pages, content such as widgets, apps, forums and more, and you can invite other members to join.
+Workspaces are the building blocks of SAP Work Zone. You can add all kinds of content to it and you can invite other users to join as members.
 
 1. In your work zone, click **Workspaces** in the top-level menu, and then click **New Workspace**.
 
@@ -54,7 +54,7 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     <!-- border -->![Select template](2-select-template.png)
 
-    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
+    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
 3. Enter this name for your workspace: `Employee Innovation Hackathon`. In workshops, use: `<your unique identifier>_Employee Innovation Hackathon`.
 
@@ -113,16 +113,16 @@ When you create a new workspace, the header has a dark and light blue background
 
 
 
-### Create an Overview page for your workspace
+### Create a workpage for your workspace
 
 
-The **Overview** page is the home page of a workspace. You can add all types of different content to it - its common to add content which describes the purpose of the workspace and to feature important content.
+In this step, you'll add a workpage to your workspace - it will describe the purpose of the workspace and will feature relevant content.
 
 1. Click **+** to add a page tab.
 
     <!-- border -->![Add page tab](6-add-page-tab.png)
 
-2. From the **Add New Page** screen, select the **Overview** tile.
+2. From the **Add New Page** screen, select the **Workpage** tile.
 
     <!-- border -->![Add overview page](7-select-overview-page.png)
 
@@ -130,25 +130,24 @@ The **Overview** page is the home page of a workspace. You can add all types of 
 
     <!-- border -->![Select layout](8-select-layout.png)
 
-4. Close the **Page Designer Tips** page for now.
 
-5. Enter a title for the **Overview** page: `About the Hackathon`.
+5. Enter a title for the workpage: `About the Hackathon`.
 
     <!-- border -->![Title of overview page](9-name-overview-page.png)
 
 
 
 
-### Design the first row of the overview page
+### Design the first row of your workpage
 
 
-In this step, you'll add two text widgets next to each other in the first row of the page.
+In this step, you'll add two text widgets next to each other in the first row of the workpage.
 
 1. Click **Add Widget** in the first row to open the widget gallery.
 
     <!-- border -->![Add widget](10-add-widget1.png)
 
-2. Under **Standard Tools**, select the **Text** widget.
+2. Select the **Text** widget.
 
     <!-- border -->![Add text widget](11-select-text-widget.png)
 
@@ -174,13 +173,13 @@ In this step, you'll add two text widgets next to each other in the first row of
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-7. Click outside of the widget row to see how your page looks so far. This is what your first row looks like:
+7. This is what your first row looks like:
 
     <!-- border -->![Preview of row 1](13a-preview-row1.png)
 
 
 
-### Design the second row of the overview page
+### Design the second row of your workpage
 
 
 In this step, you'll add images to the second row.
@@ -193,7 +192,7 @@ In this step, you'll add images to the second row.
 
     <!-- border -->![Add widget to row 2](15-add-widget-row2.png)
 
-3. Under **Standard Tools**, select the **Image** widget.
+3. Select the **Image** widget.
 
     <!-- border -->![Add image widget](16-add-image-widget.png)
 
@@ -201,7 +200,7 @@ In this step, you'll add images to the second row.
 
     ![Empty image widget](16a-empty-image-widget.png)
 
-5. Click the pencil icon in the top right of the image to edit the image.
+5. Click the cog icon in the top right of the image to edit the image.
 
     <!-- border -->![Open image settings](17-open-settings.png)
 
@@ -212,7 +211,7 @@ In this step, you'll add images to the second row.
     | Caption Layout      | Inline
     | Caption Alignment   | Left
 
-7. Click **OK**.
+7. Click **Save**.
 
     <!-- border -->![Define widget settings](18-define-widget-settings.png)
 
@@ -222,11 +221,11 @@ In this step, you'll add images to the second row.
 
 9. Click **Add Widget** in the new column, select the **Image** widget, and then click the link in the widget to add this image that you saved on your computer: `workspace_row2_image2`.
 
-10. On the top right of the widget that you've just added, click the pencil icon.
+10. On the top right of the widget that you've just added, click the cog icon to edit your image.
 
     <!-- border -->![Open settings for second image widget](20-define-settings-image2.png)
 
-11.  Design the second **Image** widget as follows and then click **OK**:
+11.  Design the second **Image** widget as follows and then click **Save**:
 
     |  :-------------     | :-------------
     | Caption             | `Michael Hill, ML Expert`
@@ -248,7 +247,7 @@ In this step, you'll add images to the second row.
     <!-- border -->![Add widget 4 times](21a-add-widgetx4.png)
 
 
-14. Click the **Edit widget** pencil icon at the top right of the first image widget and design as follows. When you're done, click **OK**.
+14. Click the cog icon at the top right of the first image widget and design as follows. When you're done, click **Save**.
 
     |  :-------------     | :-------------                
     | Caption             |`Real Customer Challenges`
@@ -256,7 +255,7 @@ In this step, you'll add images to the second row.
     | Background Opacity  |0%
     | Caption Alignment   |Left
 
-15. In the same way, design the other 3 images as follows. When you're done click **OK** each time:
+15. In the same way, design the other 3 images as follows. When you're done click **Save** each time:
 
     |  :-------------     | :-------------                
     | Caption             | Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Submission Criteria`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
@@ -266,16 +265,16 @@ In this step, you'll add images to the second row.
     | Caption Alignment     |All images: Left
 
 
-16. Click outside of the row to see how your page looks so far:
+16. See how your workpage looks so far:
 
     <!-- border -->![First preview](22-first-preview.png)
 
-17. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**. Click the edit row settings icon (cog wheel).
+17. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, and click the cog icon to edit the row.
 
 
-    <!-- border -->![Edit row](22a-edit-row-setting.png)
+    <!-- border -->![Edit row](22a-edit-row-settings.png)
 
-18. Under **Row Padding**, add the value `30` pixels in the **Top** value box and click **Save**.
+18. Under **Padding Top**, add the value `30` pixels and click **Save**.
 
     <!-- border -->![Edit row pixels](22b-edit-pixels.png)
 
@@ -291,7 +290,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 2. Click **Add Widget**.
 
-3. Under the **Productivity** section,  select the **Action** widget.
+3. Select the **Action** widget.
 
     >Adding an **Action** widget enables workspace members to choose from a selection of commonly used action types. In this tutorial, we want the workspace members to ask questions or add ideas.
 
@@ -299,7 +298,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 4. Enter the **Widget Title**: `Add your Hackathon Questions & Ideas`.
 
-5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Use the scroller on the right to make sure you uncheck all the other action options. Click **OK** to add the widget to your overview page.
+5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your overview page.
 
     <!-- border -->![Design actions widget](24-design-actions-widget.png)
 
@@ -313,7 +312,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Add a widget to 2nd column](25a-add-widget.png)
 
-8. Under the **Content & Documents** section, select the **Forum** widget.
+8. Select the **Forum** widget.
 
     > Adding a **Forum** widget enables a workspace member to view questions, ideas, and discussions submitted by their workspace members.
 
@@ -332,11 +331,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Add another widget](27-add-another-widget.png)
 
-11. Scroll down the widget gallery and under the **Productivity** section, select the **Feed** widget.
-
-12. In the **Feed Widget** settings screen, change **Maximum Items to Display** to `2` and click **OK**.
-
-    <!-- border -->![Add feed display](27-add-feed-display.png)
+11. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
 
     You've now added all three widgets.
 
@@ -357,15 +352,15 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
 
-1. Click the **+** next to the **Untitled** overview page. The name you gave the overview page only displays once you publish the workspace.
+1. Click the **+** next to the **About the Hackathon** workpage.
 
     <!-- border -->![Add new page tab](28-add-new-page.png)
 
-2.  In the **Add New Page** screen, under the **Content** category, select **Forums** to add the **Forums** tab to your workspace. The forum page opens displaying all the different forum topics.
+2.  In the **Add New Page** screen, under the **Content** category, select **Forums** to add the **Forums**  page tab to your workspace. The forum page tab opens a screen displaying all the different forum topics.
 
     Now ask a question in the forum.
 
-3. Go back to your workspace overview page by clicking **Untitled** (temporary name of the overview page) next to the **Forum** page.
+3. Go back to your workpage by clicking the **About the Hackathon** workpage.
 
     <!-- border -->![Go back to overview page](29-go-to-overview-page.png)
 
@@ -391,7 +386,7 @@ You can see that your question has been added to your overview page as well as t
 ### Publish and view your workspace
 
 
-  1. Make sure to **Publish** the design of the page and to make your workspace visible to its members. Without doing this, the page is only visible to you.
+  1. Now **Publish** the workpage to make your workspace visible to its members. Without doing this, the workpage is only visible to you.
 
     <!-- border -->![Publish workspace](27a-publish.png)
 
@@ -403,7 +398,7 @@ You can see that your question has been added to your overview page as well as t
 
     <!-- border -->![Add to feed](27d-add-to-feed.png)
 
-This is how your workspace looks - note the overview page name that you defined is now visible:
+This is how your workspace looks:
 
 <!-- border -->![Final workspace](37-final-workspace.png)
 
