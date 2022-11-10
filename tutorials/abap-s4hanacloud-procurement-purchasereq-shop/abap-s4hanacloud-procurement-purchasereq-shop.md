@@ -381,18 +381,18 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   4. In your **Global Class**, replace your code with following:
 
     ```ABAP
-    CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
-    class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
-    ENDCLASS.
+        CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
+        class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
+        ENDCLASS.
 
-    CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
-    ENDCLASS.
-    ```
+        CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
+        ENDCLASS.
+        ```
 
-  5. In your **Local Types**, replace your code with following:
+      5. In your **Local Types**, replace your code with following:
 
-    ```ABAP
-    CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+        ```ABAP
+        CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
       PROTECTED SECTION.
 
@@ -410,7 +410,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
             CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key). 
             <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
           ENDLOOP.
-        ENDIF. 
+        ENDIF.
 
 
         IF create-online_shop IS NOT INITIAL.
@@ -418,7 +418,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           lt_online_shop_as = CORRESPONDING #( create-online_shop ).
           lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
 
-          insert zshop_as_xxx FROM TABLE @lt_online_shop_as.
+          INSERT zshop_as_xxx FROM TABLE @lt_online_shop_as.
         ENDIF.
       ENDMETHOD.
     ENDCLASS.
@@ -437,6 +437,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
         METHODS calculate_order_id FOR DETERMINE ON MODIFY
           IMPORTING keys FOR online_shop~calculate_order_id.
+        METHODS set_inforecord FOR MODIFY
+          IMPORTING keys FOR ACTION online_shop~set_inforecord.
 
 
     ENDCLASS.
@@ -494,21 +496,26 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                 GLAccount
                 Quantity
                 BaseUnit )
-        WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
-                          %target  = VALUE #( ( CostCenter   = 'JMW-COST'
-                                                GLAccount    = '0000400000' ) ) ) )
-    CREATE BY \_purchasereqnitemtext
-      FIELDS ( plainlongtext )
-      WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
-                          %target  = VALUE #( (
-                                              textobjecttype = 'B01'
-                                              language       = 'E'
-                                              plainlongtext  = 'item text created from PAAS API XXX'
-                                            ) (
-                                              textobjecttype = 'B02'
-                                              language       = 'E'
-                                              plainlongtext  = 'item2 text created from PAAS API XXX'
-                                            ) )
+            WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
+                                  %target  = VALUE #( ( %cid = 'MyTargetCID_1'
+                                                        CostCenter   = 'JMW-COST'
+                                                        GLAccount    = '0000400000' ) ) ) )
+            CREATE BY \_purchasereqnitemtext
+              FIELDS ( plainlongtext )
+              WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
+                                  %target  = VALUE #( (
+                                                      %cid = 'MyTargetCID_2'
+                                                      textobjecttype = 'B01'
+                                                      language       = 'E'
+                                                      plainlongtext  = 'item text created from PAAS API XXX'
+                                                    ) (
+                                                      %cid = 'MyTargetCID_3'
+                                                      textobjecttype = 'B02'
+                                                      language       = 'E'
+                                                      plainlongtext  = 'item2 text created from PAAS API XXX'
+                                                    ) )
+
+
                   )   )
               REPORTED DATA(ls_pr_reported)
               MAPPED DATA(ls_pr_mapped)
@@ -583,6 +590,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ENDMETHOD.
     *
+      METHOD set_inforecord.
+      ENDMETHOD.
+
     ENDCLASS.
     ```
 
