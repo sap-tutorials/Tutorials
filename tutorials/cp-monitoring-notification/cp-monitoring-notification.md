@@ -1,6 +1,5 @@
 ---
-title: Implement a Notification Application for Monitoring Java Apps
-description: Create an application that notifies you of critical metrics via e-mail or SMS, using SAP Monitoring service.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-business-technology-platform
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java ]
@@ -8,6 +7,9 @@ author_name: Nikola Simeonov
 author_profile: https://github.com/nikolasimeonov77
 time: 30
 ---
+
+# Implement a Notification Application for Monitoring Java Apps
+<!-- description --> Create an application that notifies you of critical metrics via e-mail or SMS, using SAP Monitoring service.
 
 <!-- loio9c74305e78fa4d8181ba13cbde55d5cf -->
 
@@ -18,11 +20,11 @@ time: 30
 - You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
   For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
 
-## Details
-### You will learn
+## You will learn
 - How to configure a custom application to notify you of critical metrics of Java applications via e-mail or SMS.
 - How to use the custom application to take self-healing actions by restarting the specified Java applications running in the Neo environment.
 
+## Intro
 In this tutorial, you implement a notification application that requests the metrics of the following Java applications (running in SAP BTP, Neo environment):
 
 -   `app1` located in `a1` subaccount and `Europe (Rot/Germany)` region
@@ -41,24 +43,23 @@ To learn more about the whole scenario, read the [Notification Scenario blog pos
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the project)]
+### Download the project
+
 
 Download the `cloud-metricswatcher` project as a ZIP file from [https://github.com/SAP/cloud-metricswatcher](https://github.com/SAP/cloud-metricswatcher).
 
-[DONE]
 
-[ACCORDION-END]
+### Import into Eclipse
 
-[ACCORDION-BEGIN [Step 2: ](Import into Eclipse)]
 
 Extract the files into a local folder and import the folder in Eclipse as an existing Maven project.
 
 > You can also upload your project by copying the URL from GitHub and pasting it as a Git repository path or URI after you switch to the Git perspective. Remember to switch back to a Java perspective afterward.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update Demo.java)]
+
+### Update Demo.java
+
 
 Open the `Demo.java` class and update the following information:
 
@@ -88,10 +89,10 @@ String account2 = "a2";
 String application2 = "app2";
 ```
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update `Mailsender.java`)]
+
+### Update `Mailsender.java`
+
 
 Open the `Mailsender.java` class and update your e-mail account settings.
 
@@ -113,10 +114,10 @@ public static void sendEmail(String to, String subject, String body) throws Addr
 }
 ```
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test your scenario)]
+
+### Test your scenario
+
 
 1.   Open the SAP BTP cockpit and find your Java applications.
 
@@ -144,5 +145,4 @@ public static void sendEmail(String to, String subject, String body) throws Addr
 
 You can check the status of your Java applications in the SAP BTP cockpit.
 
-[VALIDATE_4]
-[ACCORDION-END]
+

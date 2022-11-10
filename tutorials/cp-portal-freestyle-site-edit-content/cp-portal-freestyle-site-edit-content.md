@@ -1,38 +1,37 @@
 ---
-title: Edit Web Content in your Portal Freestyle Site
-description: Edit the web content of your Portal freestyle site in the Web Content Editor tool.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [ tutorial>beginner,  topic>cloud, products>sap-cloud-platform-portal ]
 ---
 
+# Edit Web Content in your Portal Freestyle Site
+<!-- description --> Edit the web content of your Portal freestyle site in the Web Content Editor tool.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
 
-## Details
-Portal freestyle sites consist of web content that is maintained and edited in a dedicated tool called the Web Content Editor. The web content is edited by the administrator or by a person who has been assigned the role of web content editor.
 
-### You will learn  
+## Intro
+Portal freestyle sites consist of web content that is maintained and edited in a dedicated tool called the Web Content Editor. The web content is edited by the administrator or by a person who has been assigned the role of web content editor.
+## You will learn  
   - How to access the Web Content Editor tool
   - How to edit the web content
   - How to publish the changes you made to the web content
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Access the Web Content Editor tool)]
+### Access the Web Content Editor tool
+
 In the Supplier Portal site, navigate to **Services and Tools** and select the Web Content Editor tool.
 
 ![Open Web Content Editor](0-open-tool.png)
 
 >Note that Administrators can also send you the URL to access the Web Content Editor tool.
 
-[DONE]
 
+### Edit the web content
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Edit the web content)]
 
 1. In the left panel, under the **Header Footer** page, select the **Video** web content entry.
 
@@ -89,12 +88,9 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 
    15.	Click **Save** and use the back button again.
 
-[DONE]
 
+### Publish the changes to your web content
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Publish the changes to your web content)]
 
 1. In the page view of the Web Content Editor, click **Publish** on the right side of the menu bar.
 
@@ -108,9 +104,7 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 
 3. Click **Publish**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 In the next tutorial, you will create your own theme in the UI Theme Designer, and then use the Theme Manager to assign it to your site.
 

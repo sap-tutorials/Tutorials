@@ -1,19 +1,20 @@
 ---
-title: Consume SOAP Web Services in SAP Cloud Application Programming Model (CAP)
-description: This tutorial explains how to consume legacy SOAP Web Services in a SAP Cloud Application Programming Model (CAP) backend service application.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>advanced, programming-tool>node-js]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Consume SOAP Web Services in SAP Cloud Application Programming Model (CAP)
+<!-- description --> This tutorial explains how to consume legacy SOAP Web Services in a SAP Cloud Application Programming Model (CAP) backend service application.
+
 ## Prerequisites
  - Get an **SAP Business Technology Platform** trial account following **[this tutorial](hcp-create-trial-account)**
  - Setup **SAP Business Application Studio** in your trial account following **[this tutorial](appstudio-onboarding)**
  - Have access to an **SAP S/4HANA Cloud tenant** with a **communication user** with access to **communication scenario** `SAP_COM_0193` or `SAP_COM_0093`, via some **communication arrangement** (unfortunately S/4HANA Cloud trial tenants **do not** provide it, so make sure you're granted such access by other means)
 
-## Details
-### You will learn
+## You will learn
   - Understand the **business problem**
   - Understand the **application architecture**
   - How to **get prepared for development**
@@ -24,11 +25,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to develop a **reusable module** to **create SOAP clients**
   - How to develop the **CAP service code** to **achieve the application's objective**
 
+## Intro
 > **IMPORTANT NOTE**: this tutorial is intended for developers who have previous experience in developing CAP applications which consume either OData or REST APIs using SAP Business Application Studio and SAP BTP destinations, as well as handling communication scenarios and communication arrangements in S/4HANA Cloud.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Unserstand the business problem)]
+### Unserstand the business problem
+
 
 You may have realized that most modern cloud applications are built to interact with other external solutions via OData and/or REST APIs (and you may have already done it yourself in several opportunities). But, there are some solutions that still do not offer 100% of services as OData or REST, providing some interfaces via SOAP web services – this is the case, for example, of S/4HANA Cloud which exposes a variety of OData services but, for same cases, still sticks with SOAP web services.
 
@@ -38,10 +41,9 @@ SOAP, or Simple Object Access Protocol (not to be confused with SOA), is a proto
 
 As previously mentioned almost all the latest web and mobile technologies offer native (or close to) support for handling REST Web APIs, but little is said about SOAP connections. The purpose of this tutorial is precisely to help those who need to deal with Node.js CAP applications on the client and SOAP on the server.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the application architecture)]
+### Understand the application architecture
+
 
 You are going to build a simple CAP application that reads **Business Users** from **S/4HANA Cloud** (which are exposed exclusively via a SOAP web service).
 
@@ -49,20 +51,18 @@ You can view the application architecture bellow:
 
 ![Figure 1 –  Application Architecture](architecture.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get prepared for development)]
+### Get prepared for development
+
 
 Before you move forward with the instructions, first get prepared for development by completing the following two basic steps:
 
 1. Set up a destination to your S/4HANA Cloud system using a **communication user** (NOT a **business user**). You can name your destination **S4HC** just to be compatible with the further instructions in the tutorial. If you have trouble creating your destination just follow [**this tutorial**](abap-extensibility-cbo-rules-create-destination) on SAP Developers.
 2. Jump start a new CAP project in **SAP Business Application Studio**: after opening your dev space, open a new terminal window, move to the "**projects**" directory and initialize a new **blank project** with `cds init business-users`. Open the newly created project in a workspace to get ready for development.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download the web service definition)]
+### Download the web service definition
+
 
 The first thing you need to do is to get the web service definition which is described in **WSDL** (Web Services Description Language).
 
@@ -98,10 +98,9 @@ Now, go to your CAP project in Business Application Studio and create a folder n
 
 This definition will be used later upon creation of the web service client.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the reference to the web service host)]
+### Create the reference to the web service host
+
 
 The next step is to reference the web service in the project's `package,json` file. So, open it up and insert the following code snippet right **before the last curly bracket**:
 
@@ -134,10 +133,9 @@ Therefore, you still need to replace such placeholder with the actual S/4HANA Cl
 
 Now, the project is fully set up to communicate with the web service via the application code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Bind the destination and XSUAA services)]
+### Bind the destination and XSUAA services
+
 
 Before moving on to binding the services to your project, make sure to **login to Cloud Foundry** either via the BAS command palette (View > Find Command) or command line interface (CLI) in the terminal.
 
@@ -166,10 +164,9 @@ Now, you need to (1) rename that file to `default-env.json` and (2) transform it
 
 ![Figure 12 – Rename .env and adjust to JSON format](rename-file.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Install dependencies)]
+### Install dependencies
+
 
 To facilitate the creation of SOAP clients and avoid to much effort preparing a SOAP envelope in XML format to invoke the web service's methods via HTTP request, you can use a pre-built Node.js SOAP client manager from the "**soap**" package available on `npm` (in Java there's already native support for SOAP web services in frameworks such as Spring).
 
@@ -189,10 +186,9 @@ And, finally, to install the other dependencies from the original jump-started `
 
 And with that, you are now fully ready to start the development!
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a module to handle SOAP clients)]
+### Create a module to handle SOAP clients
+
 
 In a productive scenario, you usually would have more than one web service being manipulated throughout the application code, so it's convenient to create a module with a function that facilitates the creation and handling of SOAP clients and can be largely reused.
 
@@ -244,10 +240,9 @@ module.exports = {
 
 The code is quite simple: the `getSoapService` function receives the **service name** (defined in `package.json`) and the **WSDL file location** with the service description, then fetches the destination data from BTP and uses it to get the **service endpoint** and create an HTTP client, which is then passed to the `createClientAsync` function from the soap package, that returns a promise to get the actual SOAP client later in the application code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create a handler to read business users)]
+### Create a handler to read business users
+
 
 Now, you must create a handler function which will invoke the web service method that returns the business users from S/4HANA Cloud as response.
 
@@ -324,10 +319,9 @@ module.exports = {
 
 Upon module loading, a promise to the service is created by the `getSoapService` function, which is, then, used in the `readBusinessUser` handler to get the actual SOAP client for the `UserRead` service referenced in `package.json`. The `QueryBusinessUserIn` method of the service is invoked asynchronously, passing a few required parameters (basically filters and query processing definitions), and the response is finally formatted into the expected CAP service response.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create the CAP service definition)]
+### Create the CAP service definition
+
 
 Now that you have the complete business logic of the application, you can create the CAP service definition to expose the data fetched from S4/HANA Cloud via a service entity and attach the handler function to its READ event.
 
@@ -354,10 +348,9 @@ service BusinessUsers @(path : '/bussiness-users') {
 
 Here you are just exposing a non-persistent entity named `BusinessUser` containing only some relevant fields to be fetched from S/4HANA Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Attach the handler function to the READ event)]
+### Attach the handler function to the READ event
+
 
 The last step is to attach the handler function to the READ event of the `BusinessUser` entity, so the CAP service can be called to retrieve the business users data from S/4HANA Cloud and return it to the client as an OData v4 response.
 
@@ -387,10 +380,9 @@ module.exports = cds.service.impl(async function () {
 
 As you can see, the `readBusinessUser` handler is attached to the **ON READ** event of the `BusinessUser` entity.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test the application)]
+### Test the application
+
 
 Finally, you are all set! So, test the application by running `cds watch` and, then, `CTRL+Click` on the `http://localhost:4004` link to open-up the CAP service home page in a new tab:
 
@@ -402,10 +394,8 @@ Now, click on the `BusinessUser` entity link and, after some seconds, you should
 
 And that's it! A fully working CAP service consuming a SOAP web service from S/4HANA Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

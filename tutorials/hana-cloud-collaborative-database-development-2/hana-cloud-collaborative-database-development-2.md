@@ -1,19 +1,20 @@
 ---
-title: Import Data into a Table in SAP HANA Database Project
-description: Create a table in SAP HANA Database Project and import sample data into the table.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Import Data into a Table in SAP HANA Database Project
+<!-- description --> Create a table in SAP HANA Database Project and import sample data into the table.
+
 ## Prerequisites
  - You need to complete the [previous tutorial](hana-cloud-collaborative-database-development-1) about creating an SAP HANA Database project.
  - [Provision an instance](hana-cloud-mission-trial-2) of SAP HANA Cloud, SAP HANA database and make sure it is **running**.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an `HDBTABLE` object
   - How to add the column definitions to a table
   - How to import data into a table
@@ -22,6 +23,7 @@ primary_tag: products>sap-hana-cloud
 
   **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
+## Intro
 >To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
 
 1.	Get started to collaborate in SAP Business Application Studio
@@ -40,17 +42,18 @@ primary_tag: products>sap-hana-cloud
 This tutorial will show you how to import data into a table in your SAP HANA Database Project.
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an HDBTABLE Object)]
+### Create an HDBTABLE Object
+
 
 Now you can create the first object in your project: an `HDBTABLE` that will store the sample data used in this tutorial. After you have opened your dev space in SAP Business Application Studio, click to select the project you created in the [previous tutorial](hana-cloud-collaborative-database-development-1).
 
   1.	In the explorer panel on the left side, expand the folders under your Project **WS3_1**. Click on the `src` folder.
 
-      !![SRC Folder](ss_01_src_folder.png)
+      <!-- border -->![SRC Folder](ss_01_src_folder.png)
 
   2.	To create a new SAP HANA Database Artifact, you can press the **F1 key** or click on **View – Find Command** at the top of the screen to open a search prompt. Enter **HANA** in the field and from the dropdown list of functionalities, choose **SAP HANA: Create SAP HANA Database Artifact**.
 
-      !![Search Prompt](ss_02_search_prompt.png)
+      <!-- border -->![Search Prompt](ss_02_search_prompt.png)
 
   3.	In the window for creating a new SAP HANA Database Artifact, click on the   folder icon in the first field (Choose path where you want to create the artifact). Navigate to your project, the `src` folder, and then click on **Open**.
 
@@ -63,10 +66,9 @@ Now you can create the first object in your project: an `HDBTABLE` that will sto
   7.	A new file `inventory.hdbtable` can be seen under the `src` folder in the **EXPLORER** panel.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the column definitions to the table)]
+### Add the column definitions to the table
+
 
 1.	Click on the `inventory.hdbtable` file to open the file window. You can see that the file only contains the code `column table "inventory" ()`. Remove the default code in this file and paste the code below in it to add the column definitions to this new table.
 
@@ -115,29 +117,27 @@ Now you can create the first object in your project: an `HDBTABLE` that will sto
 3.	Click on the ![Deploy](icon-deploy.png) deploy icon next to the `inventory.hdbtable` to deploy the table to your **HDI container**. You can check in the terminal if the table was successfully deployed. Alternately, you can also deploy by clicking on the deploy icon on the project level (WS3_1/db).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](View the changes to the table in Database Explorer)]
+### View the changes to the table in Database Explorer
+
 
 1.	In the SAP HANA Project panel, click on the ![Container](icon-container.png)  HDI container icon. The **SAP HANA Database Explorer** will open in a new tab.
 
-    !![Project HDI Icon](ss_04_project_HDI_icon.png)
+    <!-- border -->![Project HDI Icon](ss_04_project_HDI_icon.png)
 
 2.	In the catalog of the **HDI container connection**, click on **Tables**. If you cannot see the `INVENTORY` table, right-click on **Tables** and select **Refresh**.
 
 3.	Click on the `INVENTORY` table to view the list of all the columns you have just defined.
 
-    !![Inventory Table](ss_05_inventory_table.png)
+    <!-- border -->![Inventory Table](ss_05_inventory_table.png)
 
 If you click on **Open Data**, you can see that the table does not contain any data yet. Let's change that!
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add data to the Inventory table)]
+### Add data to the Inventory table
+
 
 1.	To download the sample data from the GitHub repository, [click here](https://github.com/SAP-samples/hana-cloud-learning/raw/main/Workshop:%20Collaborative%20Development/Sample%20Data.zip). Select the `Download` option for the `Sample Data.zip` file under the folder location `SAP-samples/ hana-cloud-learning/ Workshop: Collaborative Development`.
 
@@ -145,7 +145,7 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 3.	Go back to the SAP HANA Database Explorer, right-click on the **INVENTORY** table and select **Import Data**.
 
-    !![Import Data](ss_06_import_data.png)
+    <!-- border -->![Import Data](ss_06_import_data.png)
 
 4.	A wizard opens where you can select **Import Data** as **IMPORT TYPE**. Click on **Step 2**.
 
@@ -159,16 +159,15 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 9.	After reviewing the Import Summary, click **Import into Database**. Wait until the Import Status shows the **Import complete** notification.
 
-    !![Import into Database](ss_07_import_into_database.png)
+    <!-- border -->![Import into Database](ss_07_import_into_database.png)
 
 10.	To verify the data import, click on `INVENTORY` table from the left side panel. Select **Open Data** to view the data added into the table.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Generate graphical views of data using SAP HANA Database Explorer)]
+### Generate graphical views of data using SAP HANA Database Explorer
+
 
 1.	Now that your data is imported successfully, you can preview it using the Analysis functions of the SAP HANA Database Explorer.
 
@@ -176,7 +175,7 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 3.	For example, you can drag **PRODUCT** from the list of Available Columns to the **Value Axis** and **REGIONDESCRIPTION** to the **Label Axis** to see how products are distributed over regions.
 
-    !![Data analysis graph](ss_08_data_analysis_graph.png)
+    <!-- border -->![Data analysis graph](ss_08_data_analysis_graph.png)
 
 4.	You can select different graphical options provided in a main toolbar at the top or access the corresponding SQL code to these graphical views.
 
@@ -184,14 +183,12 @@ If you click on **Open Data**, you can see that the table does not contain any d
 > You have successfully completed the second tutorial. In the next tutorial, you will change data structures by adding columns to a table using `HDBTABLE` and `HDBMIGRATIONTABLE` objects.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+
 
 ---

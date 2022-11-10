@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Maintain Business Roles and Access Restrictions in SAP BTP, ABAP Environment
-description: Create business roles and maintain access management in SAP BTP, ABAP environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 10
@@ -9,22 +8,26 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Maintain Business Roles and Access Restrictions in SAP BTP, ABAP Environment
+<!-- description --> Create business roles and maintain access management in SAP BTP, ABAP environment.
+
 ## Prerequisites  
   - You need a SAP BTP, ABAP environment license.
 
-## Details
-### You will learn
+## You will learn
   - How to create business roles
   - How to add business catalogs
   - How to add business users
   - How to maintain access management
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create business role)]
+### Create business role
+
 1. Logon to your ABAP system.
 
       ![Create authorization field](role.png)
@@ -45,10 +48,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create authorization field](role4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add business catalog)]
+### Add business catalog
+
 1. Click **General Role Details** and **Edit**.
 
       ![Create authorization object](catalog.png)
@@ -61,10 +63,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
        ![Create authorization object](catalog3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add business user)]
+### Add business user
+
   1. Select **Assigned Business Users** and click **Add**.
 
       ![Create Access Control](user.png)
@@ -73,10 +74,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create Access Control](user2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Maintain access management)]
+### Maintain access management
+
   1. Select your user and click **Maintain Restrictions**.
       ![Edit authorization default values](restrictions.png)
 
@@ -90,10 +90,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -9,7 +9,7 @@ parser: v2
 
 # Add User Authentication to Your Application (SAP HANA Cloud)
 
-<!-- description -->Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application.
+<!-- description --> Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application.
 
 ## You will learn
 

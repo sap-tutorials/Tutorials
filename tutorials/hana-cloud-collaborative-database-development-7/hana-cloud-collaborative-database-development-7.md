@@ -1,23 +1,25 @@
 ---
-title: Collaborate on an SAP HANA Database Project Template
-description: Create a simple calculation view in a cloned template project using the sample data present in the original project.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Collaborate on an SAP HANA Database Project Template
+<!-- description --> Create a simple calculation view in a cloned template project using the sample data present in the original project.
+
 ## Prerequisites
 - Complete the [previous tutorial](hana-cloud-collaborative-database-development-6) of this tutorial group.
 
-## Details
-### You will learn
+## You will learn
 - How to invite a collaborator to your git repository
 - How to clone a template project from git
 - How to create a calculation view
 - How to preview the data in a calculation view
 
 
+## Intro
 **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
 > To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
@@ -48,7 +50,8 @@ This tutorial will show you how to collaborate on your SAP HANA Database Project
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Synchronize the project with git)]
+### Synchronize the project with git
+
 
 For Project Owners:
 
@@ -66,10 +69,9 @@ For Project Owners:
 
 7.	You can verify the synchronization by checking your GitHub repository `WS3_3`. You should now see all the objects you created in the `src` folder there, for example, the synonyms and `hdbgrants` files.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Invite a collaborator to your git repository)]
+### Invite a collaborator to your git repository
+
 
 **For Project Owners**:
 
@@ -77,17 +79,17 @@ For Project Owners:
 
 2.	Select the **Settings** option from the horizontal menu bar at the top.
 
-    !![GitHub Settings](ss-01-github-settings.png)
+    <!-- border -->![GitHub Settings](ss-01-github-settings.png)
 
 3.	Select **Manage access** from the panel on the left side of the screen.
 
-    !![GitHub Manage Access](ss-02-github-manage-access.png)
+    <!-- border -->![GitHub Manage Access](ss-02-github-manage-access.png)
 
 4.	You might to need to sign in again with your GitHub credentials before you can continue.
 
 5.	Click on **Invite a collaborator** in the Manage access section.
 
-    !![Invite Collaborator](ss-03-invite-collaborator.png)
+    <!-- border -->![Invite Collaborator](ss-03-invite-collaborator.png)
 
 6.	In the new dialogue box that appears, search for the GitHub username of your collaborator. Select the name and click on Add <username> to this repository.
 
@@ -95,11 +97,10 @@ For Project Owners:
 > Your collaborator will now receive an invitation to collaborate on your project. Ideally, it is recommended that you to first fork your repository and only grant your collaborator the permission to work on the fork, thereby preventing any unwanted changes to your main project repository. The procedure used in this workshop is only for ease of illustration.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Clone the template project from git )]
+### Clone the template project from git 
+
 
 For template users:
 
@@ -107,20 +108,20 @@ For template users:
 
 1.	As a collaborator, you need to accept the invitation to work on the template project. To do this, go to your GitHub account and check the notifications for the invitation. Click on **Accept invitation**.
 
-    !![Accept invite collaborator](ss-04-accept-invite-collaborator.png)
+    <!-- border -->![Accept invite collaborator](ss-04-accept-invite-collaborator.png)
 
     Now, you have access to the WS3_3 project folders in GitHub.
 
 2.	To clone from the project repository, you need the HTTPS connection link. In the repository, click on the green **Code** button at the top right and the **clipboard** icon next to the HTTPS URL.
 
-    !![Copy HTTPS](ss-05-copy-HTTPS.png)
+    <!-- border -->![Copy HTTPS](ss-05-copy-HTTPS.png)
 
 3.	Go to your SAP Business Application Studio environment and open the **Welcome** page.
     >To view the welcome window, click on Help at the top navigation bar and select Welcome.
 
 4.	Click on **Clone from Git**.
 
-    !![Clone from Git](ss-06-clone-from-git.png)
+    <!-- border -->![Clone from Git](ss-06-clone-from-git.png)
 
 5.	A prompt will open at the top center of the screen. Paste the HTTPS URL you just copied from GitHub into the dialogue box and press **Enter**.
 
@@ -130,14 +131,13 @@ For template users:
 
 8.	You will receive a notification at the bottom right corner of the screen asking how you want to open the cloned repository. Click **Open**.
 
-    !![Select open](ss-07-select-open.png)
+    <!-- border -->![Select open](ss-07-select-open.png)
 
 Now, you can see all the folders present in project `WS3_3` from the GitHub repository in your file explorer in this new project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy the template project to an HDI container)]
+### Deploy the template project to an HDI container
+
 
 **For template users**:
 
@@ -147,7 +147,7 @@ Next, you will create your own HDI container in the database containing the proj
 
 1.	Click on the **bind icon** from the SAP HANA Projects panel.
 
-    !![Bind icon](ss-08-bind-icon.png)
+    <!-- border -->![Bind icon](ss-08-bind-icon.png)
 
 2.	Press **Enter** to confirm your Cloud Foundry Endpoint in the dialogue box that appears on the horizontal menu bar.
 
@@ -157,19 +157,19 @@ Next, you will create your own HDI container in the database containing the proj
 
 5.	Next, select **Create a new service instance**.
 
-    !![Create a new service instance](ss-09-create-new-service-instance.png)
+    <!-- border -->![Create a new service instance](ss-09-create-new-service-instance.png)
 
 6.	Press **Enter** to confirm the new service instance name provided by default.
 
 7.	Once the creation of the HDI container is complete, click on the **bind icon** for `cross-container-service-1`.
 
-    !![Cross-Container Service](ss-10-cross-container-service.png)
+    <!-- border -->![Cross-Container Service](ss-10-cross-container-service.png)
 
     This will bind your project to the previously created `UPS_GENERIC` service.
 
 8.	Select **Bind to the** `UPS_GENERIC` **service** as the binding option in the dialogue box.
 
-    !![Bind to UPS_GENERIC service](ss-11-bind-to-UPSGENERIC-service.png)
+    <!-- border -->![Bind to UPS_GENERIC service](ss-11-bind-to-UPSGENERIC-service.png)
 
 9.	Once the binding is complete, deploy the project to your HDI container. Click on the **deploy icon** for the project `WS3_3` in the SAP HANA PROJECTS panel.
 
@@ -177,10 +177,9 @@ And with that, you are ready to use the template project and access the data. In
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a simple calculation view)]
+### Create a simple calculation view
+
 
 **For template users**:
 
@@ -203,12 +202,11 @@ Your goal is to create a calculation view on the inventory data that visualizes 
 
 8.	The database version should be HANA Cloud, by default, click on **Create**.
 
-    !![Create a Calculation view](ss-12-create-calc-view.png)
+    <!-- border -->![Create a Calculation view](ss-12-create-calc-view.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add a data source to the calculation view)]
+### Add a data source to the calculation view
+
 
 **For template users**:
 
@@ -218,34 +216,33 @@ The first step in the calculation view graphical editor is to add a data source 
 
 2.	Drag and drop a **Projection node** from the vertical tool bar into the calculation view window.
 
-    !![Projection node](ss-13-projection-node.png)
+    <!-- border -->![Projection node](ss-13-projection-node.png)
 
     > To see the labels of different nodes available in the calculation view graphical editor, you can expand the side-bar menu by clicking on the arrows at the top left corner of the editor.
 
 3.	Click on the **plus icon** to **Add Data Sources**.
 
-    !![Add Data Sources](ss-14-add-data-sources.png)
+    <!-- border -->![Add Data Sources](ss-14-add-data-sources.png)
 
 4.	In the dialogue that opens, type `**` in the search bar to view all the objects available. Select the synonym `SInventory` from the list and click on **Finish**.
 
-    !![Add Synonym](ss-15-add-synonym.png)
+    <!-- border -->![Add Synonym](ss-15-add-synonym.png)
 
 5.	Double-click on the **Projection** node to configure it.
 
-    !![Projection window](ss-16-projection-window.png)
+    <!-- border -->![Projection window](ss-16-projection-window.png)
 
 6.	In the tab **Mapping**, you can now select the columns from the **Data Sources** that you want in the **Output Columns**. Clicking on a column on the left will map it to the output on the right.
 
-    !![Add columns to Output](ss-17-add-columns-to-output.png)
+    <!-- border -->![Add columns to Output](ss-17-add-columns-to-output.png)
 
 7.	In this example, you select the columns `PRODUCT`, `PRODUCTDESCRIPTION`, `DESTINATIONCOUNTRY`, `TARGETSTOCKQTY` and `ONHANDSTOCK`.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a calculated column to the Projection node)]
+### Add a calculated column to the Projection node
+
 
 **For template users**:
 
@@ -255,13 +252,13 @@ To calculate what products' stock values are below a target stock value, we will
 
 2.	Click on the **plus icon** at the top right to add a calculated column.
 
-    !![Add calculated column](ss-18-add-calculated-column.png)
+    <!-- border -->![Add calculated column](ss-18-add-calculated-column.png)
 
 3.	Once the calculated column is generated, click on the arrow `>` icon to take you the **General properties**.
 
 4.	You can now rename the calculated column as `Stockbelowtarget`.
 
-    !![Rename calculated column](ss-19-rename-calculated-column.png)
+    <!-- border -->![Rename calculated column](ss-19-rename-calculated-column.png)
 
 5.	Select the Data Type as `INTEGER`.
 
@@ -269,7 +266,7 @@ To calculate what products' stock values are below a target stock value, we will
 
 7.	Click on **Expression Editor**.
 
-    !![Expression editor](ss-20-expression-editor.png)
+    <!-- border -->![Expression editor](ss-20-expression-editor.png)
 
 8.	From the **Elements** section on the left, select the column `TARGETSTOCKQTY` with a double-click. Then enter `>` and select the column `ONHANDSTOCK` from the left.
 
@@ -279,37 +276,35 @@ To calculate what products' stock values are below a target stock value, we will
 "TARGETSTOCKQTY" > "ONHANDSTOCK"
 ```
 
-!![Expression](ss-21-expression.png)
+<!-- border -->![Expression](ss-21-expression.png)
 
 Now the calculated column is created and you can close the Projection node window.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure Aggregation node)]
+### Configure Aggregation node
+
 
 **For template users**:
 
 1.	Connect the **Projection node** with **Aggregation node** by dragging the arrow icon from the Projection node to the Aggregation node above.
 
-    !![Connect nodes icon](ss-22-connect-nodes-icon.png)
+    <!-- border -->![Connect nodes icon](ss-22-connect-nodes-icon.png)
 
 2.	Double-click on the Aggregation node to configure it.
 
-    !![Aggregation node window](ss-23-aggregation-node-window.png)
+    <!-- border -->![Aggregation node window](ss-23-aggregation-node-window.png)
 
 3.	In the tab **Mapping**, select the columns from the **Data Sources** that you want in the **Output Columns**. Map all the columns present in the Presentation node to Output Columns. Double-clicking on the top level on the left `Projection_1` will map all columns to the output.
 
-    !![Add columns to Output](ss-24-add-columns-to-output.png)
+    <!-- border -->![Add columns to Output](ss-24-add-columns-to-output.png)
 
 4.	Close the Aggregation node window.
 
 And with that, the view is complete. Finally, we will deploy it to the database and preview the results.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy the view and preview the data)]
+### Deploy the view and preview the data
+
 
 **For template users:**
 
@@ -317,7 +312,7 @@ And with that, the view is complete. Finally, we will deploy it to the database 
 
 2.	Right-click on the **Aggregation node** and select **Data Preview** to analyze the data.
 
-    !![Data Preview](ss-25-data-preview.png)
+    <!-- border -->![Data Preview](ss-25-data-preview.png)
 
     > You may also open the view and preview the data in the SAP HANA Database Explorer.
 
@@ -325,15 +320,15 @@ And with that, the view is complete. Finally, we will deploy it to the database 
 
 4.	From the list of **Attributes** on the left, drag and drop the columns `DESTINATIONCOUNTRY` and `PRODUCTDESCRIPTION` to the **Label Axis**.
 
-    !![Analysis Label Axis](ss-26-analysis-label-axis.png)
+    <!-- border -->![Analysis Label Axis](ss-26-analysis-label-axis.png)
 
 5.	From the list of Measures, drag and drop the calculated column `Stockbelowtarget` to the **Value Axis**.
 
-    !![Analysis Value Axis](ss-27-analysis-value-axis.png)
+    <!-- border -->![Analysis Value Axis](ss-27-analysis-value-axis.png)
 
 6.	Using the menu bar for graphs, select the option for **Heat Map** to view what products have stock values below their target value in different countries.
 
-    !![Select Heat Map](ss-28-select-heat-map.png)
+    <!-- border -->![Select Heat Map](ss-28-select-heat-map.png)
 
 And this concludes the data analysis in the calculation view.
 
@@ -347,14 +342,12 @@ This example shows you how the template project created by the project owner can
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

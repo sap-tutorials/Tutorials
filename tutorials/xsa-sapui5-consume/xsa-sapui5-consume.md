@@ -1,24 +1,26 @@
 ---
-title: Consume an OData Service with Create Option
-description: Consume an OData Service with Create Option
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
+# Consume an OData Service with Create Option
+<!-- description --> Consume an OData Service with Create Option
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Use OData Metadata to dynamically create the columns](https://developers.sap.com/tutorials/xsa-sapui5-metadata.html)
 
-## Details
-### You will learn  
+## You will learn  
   - How to consume an OData service with create option
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Copy previous code)]
+### Copy previous code
+
 
 You will begin by making a copy of the previous exercise.
 
@@ -32,21 +34,17 @@ In the copy folder dialog, give the new Name as `odataCRUD`.
 
 ![copy folder](3.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Edit `manifest,json`
 
-[ACCORDION-BEGIN [Step 2: ](Edit `manifest,json`)]
 
 Go into the `manifest.json` file and switch the service to the existing `user.xsodata` service. Also adjust the name of the `datasource` in the model configuration:
 
 ![Adjust manifest](4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Adjust the XML view
 
-[ACCORDION-BEGIN [Step 3: ](Adjust the XML view)]
 
 Use the following code to replace the existing code for your XML view:
 
@@ -120,11 +118,9 @@ Use the following code to replace the existing code for your XML view:
 </mvc:View>
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Add controller logic
 
-[ACCORDION-BEGIN [Step 4: ](Add controller logic)]
 
 Event handlers are within the controller file for your view. You can delete the implementation of the functions `onInit` and `onErrorCall`, as you will implement new logic:
 
@@ -198,11 +194,9 @@ Finally, delete the error handling function as we will use the reusable function
 ```
 ![Add error.js](16.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Save and test
 
-[ACCORDION-BEGIN [Step 5: ](Save and test)]
 
 Run the `web` module. When the new tab opens, adjust the URL to include the `/odataCRUD` path:
 
@@ -216,6 +210,3 @@ Try both creating a new record and editing existing records. Also try creating a
 
 ![exception](15a.png)
 
-[DONE]
-
-[ACCORDION-END]

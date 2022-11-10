@@ -18,10 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Intro
 In the previous tutorial, you have built the data model and exposed the services of your bookstore application. In this tutorial, you will extend the bookstore with custom code to calculate the `total` and `netAmount` elements of the `Orders` and `OrderItems` entity. In addition, when creating an order the available stock of a book will be checked and decreased.
 
----
 
 ### Define custom handler for `OrdersService`
-
 
 In one of the previous tutorials, you have already seen how to register a [custom event handler](https://cap.cloud.sap/docs/java/provisioning-api) to handle `READ` or `CREATE` events of an entity. You used the `@On` annotation, which replaces the default handling of an event that is provided by the CAP Java runtime.
 
@@ -55,7 +53,9 @@ public class OrdersService implements EventHandler {
 
 <!-- border -->![OrdersService class overview](ordersservice-class.png)
 
+
 > If you see validation errors in your editor, open the context menu on your `pom.xml` and select **Update Project**. That regenerates the classes and makes them available.
+
 
 ### Decrease stock when posting order
 
@@ -275,7 +275,6 @@ If your `OrdersService.java` file still shows some errors right-click on the `po
 
 
 ### Calculate `netAmount` of order item
-
 
 Next, let's add a method to the `OrdersService` Java class to calculate the `netAmount` element of the `OrderItems` entity.
 

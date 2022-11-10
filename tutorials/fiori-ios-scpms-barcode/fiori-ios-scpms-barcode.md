@@ -1,25 +1,27 @@
 ---
-title: Use the Barcode Scanner API
-description: Implement a small search logic which will look for the correct products depending on the barcode the app scans.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 25
 ---
 
+# Use the Barcode Scanner API
+<!-- description --> Implement a small search logic which will look for the correct products depending on the barcode the app scans.
+
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0
 - [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 
-## Details
-### You will learn  
+## You will learn  
   - How to add a `FUISearchBar` and implement item searching on an `UITableViewController`
   - How to add the `FUIBarcodeScanner` to the `FUISearchBar` and search in a `UITableViewController` with the scan result of the `FUIBarcodeScanner`.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Replace the generated app UI with your own)]
+### Replace the generated app UI with your own
+
 
 > This tutorial uses the generated app out of the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup) tutorial group.
 
@@ -83,10 +85,9 @@ If you run the app now, you should see a screen with an empty `UITableView`.
 
 > The screen will be visible after you completed the Onboarding flow.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Load products from the OData Service)]
+### Load products from the OData Service
+
 
 The base View Controller is created and set as initial screen after the Onboarding flow. It is time to populate the table view with data from the backend.
 Please open the `ProductTableViewController.swift` class and add the following import statements to it:
@@ -184,10 +185,9 @@ Now implement the following lines of code right below the `updateTableView()` me
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3:](Populate the UITableView with data)]
+### Populate the UITableView with data
+
 
 Good news we successfully loaded the products in the app and we can now display those using the `FUIObjectTableViewCell`. In the `viewDidLoad(:)` method add the following lines:
 
@@ -231,10 +231,9 @@ If you run the app now you should see a loading indicator showing up and as soon
 
 ![populatetable](fiori-ios-scpms-barcode-8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add the FUISearchBar & FUIBarcodeScanner to the ProductTableViewController)]
+### Add the FUISearchBar & FUIBarcodeScanner to the ProductTableViewController
+
 
 Having a list of items is great but wouldn't it be even better if we could search for certain items in the list? To achieve that we're going to implement the `FUISearchBar` including the `FUIBarcodeScanner` feature to the table view.
 
@@ -291,10 +290,9 @@ If you run the app on the simulator now, you should see a search bar appearing o
 
 ![searchbar](fiori-ios-scpms-barcode-9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the search result handling and update of the UITableViewController)]
+### Implement the search result handling and update of the UITableViewController
+
 
 At the moment the search bar doesn't do much, so let's go ahead and implement the search logic.
 
@@ -369,10 +367,9 @@ Run the app in simulator now and you should be possible to search for certain pr
 
 ![searchlogic](fiori-ios-scpms-barcode-10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Ask for permission to use the Camera)]
+### Ask for permission to use the Camera
+
 
 Great! We have the `FUISearchBar` up and running with actual search logic and table view updating. We also enabled the `FUIBarcodeScanner` for the search bar but there is a bit more to do to actually use the barcode scanner.
 
@@ -386,10 +383,9 @@ The user will be asked for permission to use the camera inside the app on the fi
 
 ![searchlogic](fiori-ios-scpms-barcode-11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Embed the ProductTableViewController in a UINavigationController)]
+### Embed the ProductTableViewController in a UINavigationController
+
 
 The integrated scanning function in the `FUISearchBar` is great but what if you want to use the `FUIBarcodeScanner` in a more flexible way. Fortunately the SDK provides an API to work with the `FUIBarcodeScanViewController` in an easy way.
 
@@ -421,10 +417,9 @@ appViewController = productTableViewController
 
 This will make sure the `UINavigationController` gets initialized and set as first View Controller after the onboarding flow.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement the FUIBarcodeScanViewController for more flexible use)]
+### Implement the FUIBarcodeScanViewController for more flexible use
+
 
 Now let's implement our camera Bar Button Item. Go to the `Main.storyboard` and select the `ProductTableViewController`. Now find the Bar Button Item in the Object Library and add it to the Navigation Item into the Right Bar Button Items.
 
@@ -479,10 +474,9 @@ If you run the app on your iPhone or iPad and tap on the camera icon or the Barc
 
 ![barcode](fiori-ios-scpms-barcode-17.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Handle the Scan Result)]
+### Handle the Scan Result
+
 
 The Barcode Scanner works now in both ways, one with the Camera Bar Button Item and two with the Barcode Icon in the `FUISearchBar`. We already took care of the search logic, so let's implement the `FUIBarcodeScanViewControllerDelegate` method.
 
@@ -505,5 +499,4 @@ Barcode             |  QR Code
 ![barcode](fiori-ios-scpms-barcode-19.png)  |  ![qrcode](fiori-ios-scpms-barcode-18.png)
 
 
-[VALIDATE_9]
-[ACCORDION-END]
+

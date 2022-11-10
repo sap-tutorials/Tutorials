@@ -1,6 +1,5 @@
 ---
-title: Start SAP HANA, express edition Server
-description: Once you've downloaded the server + applications SAP HANA 2.0, express edition Virtual Machine package and set the keyboard and time zone, log in and change the default passwords to secure your system.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,20 +7,24 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Start SAP HANA, express edition Server
+<!-- description --> Once you've downloaded the server + applications SAP HANA 2.0, express edition Virtual Machine package and set the keyboard and time zone, log in and change the default passwords to secure your system.
+
 <!-- loio6b3090fbfef64012a05475a833a7e77a -->
 
 ## Prerequisites
  - **Tutorials:** You have completed [Set Keyboard and Time Zone](hxe-ua-keyboard-vm)
 
-## Details
-### You will learn
+## You will learn
 You'll learn how to start the server. At the end of this tutorial you'll have a running and configured SYSTEMDB database, and a running and configured tenant database. You'll be ready to test your installation, test XSA, and install optional components.
 
 ---
 
+## Intro
 This is an on-premise installation tutorial. Other installation methods are available. See [https://developers.sap.com/topics/hana.resources.html#details](https://developers.sap.com/topics/hana.resources.html#details).
 
-[ACCORDION-BEGIN [Step 1: ](Note the VM IP address)]
+### Note the VM IP address
+
 
 The IP address of the VM is displayed on the login screen. Make a note of the IP address, since you'll need it in future steps.
 
@@ -32,11 +35,9 @@ The IP address of the VM is displayed on the login screen. Make a note of the IP
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Repair `VMWare` bridge networking
 
-[ACCORDION-BEGIN [Step 2: ]((Optional) Repair `VMWare` bridge networking)]
 
 ![HXE_Bridge_Network_Troubleshooting_1_0](HXE_Bridge_Network_Troubleshooting_1_0.png)
 
@@ -59,11 +60,9 @@ If you are using a `VMWare` product, and if the IP address still doesn't show af
 8.  Restart your host machine.
 9.  Restart SAP HANA, express edition and go back to step 1.
 
-[DONE]
 
-[ACCORDION-END]
+### Log in
 
-[ACCORDION-BEGIN [Step 3: ](Log in)]
 
 At the *`hxehost` login* prompt, enter `hxeadm`.
 
@@ -85,11 +84,9 @@ When prompted for *(current) UNIX password*, enter the temporary password again:
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Enter new password
 
-[ACCORDION-BEGIN [Step 4: ](Enter new password)]
 
 When prompted for *New password*, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.
 
@@ -107,41 +104,33 @@ When prompted for *New password*, enter a strong password with at least 8 charac
 
 Strong password example: `E15342GcbaFd`. Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
 
-[DONE]
 
-[ACCORDION-END]
+### Retype new password
 
-[ACCORDION-BEGIN [Step 5: ](Retype new password)]
 
 When prompted to *Retype new password*, enter your strong password again.
 
 ![HXE_Login3_7](HXE_Login3_7.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Enter new HANA database master password
 
-[ACCORDION-BEGIN [Step 6: ](Enter new HANA database master password)]
 
 When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 4, or a new password. If you are entering a new password, see the password rules in step 4.
 
 Entering the HANA database master password changes the SYSTEM user password. If you are installing the `server + applications virtual machine`, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
 
-[DONE]
 
-[ACCORDION-END]
+### Confirm HANA database master password
 
-[ACCORDION-BEGIN [Step 7: ](Confirm HANA database master password)]
 
 When prompted to *Confirm "HANA database master password"*, enter the strong password again.
 
 ![HXE_login_7_2](HXE_login_7_2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Enter proxy settings
 
-[ACCORDION-BEGIN [Step 8: ](Enter proxy settings)]
 
 When prompted *Do you need to use the proxy server to access the internet?* enter Y or N.
 
@@ -150,21 +139,17 @@ When prompted *Do you need to use the proxy server to access the internet?* ente
 -   If `Y`, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
 -   Make sure the Non Proxy Host list includes `localhost`, `hxehost`, and `hxehost.localdomain`.
 
-[DONE]
 
-[ACCORDION-END]
+### Wait for XSA configuration
 
-[ACCORDION-BEGIN [Step 9: ](Wait for XSA configuration)]
 
 Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to *Wait for XSA configuration to finish*, enter *Y* if you want to wait.
 
 Enter *N* if you want XSA to configure in the background after server configuration completes.
 
-[DONE]
 
-[ACCORDION-END]
+### Complete the installation
 
-[ACCORDION-BEGIN [Step 10: ](Complete the installation)]
 
 When prompted to *Proceed with configuration?* enter `Y`.
 
@@ -183,6 +168,3 @@ SAP HANA 2.0, express edition is now running.
 >
 >
 
-[DONE]
-
-[ACCORDION-END]

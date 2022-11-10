@@ -1,25 +1,27 @@
 ---
-title: Define the Password Lifetime for a Database User
-description: Define a password lifetime for database users to help better meet your security needs for SAP Data Warehouse Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Define the Password Lifetime for a Database User
+<!-- description --> Define a password lifetime for database users to help better meet your security needs for SAP Data Warehouse Cloud.
+
 ## Prerequisites
  - You have [understood different roles](data-warehouse-cloud-3-add-users), and are assigned the DW Administrator role.
  - You have [created a database user in your Space.](data-warehouse-cloud-intro8-create-databaseuser)
 
 
-## Details
-### You will learn
+## You will learn
   - How to define a password lifetime policy in your tenant
   - How to apply password lifetime policy for your database users
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define a global password policy)]
+### Define a global password policy
+
 
 SAP Data Warehouse Cloud allows you to connect to 3rd-party ETL and BI tools by using database users. Each user has its own set of credentials, including passwords. To help you better meet your security needs, we have introduced an option to manage password lifetime for database users. This feature allows you to:
 
@@ -40,10 +42,9 @@ Here, you can enter the number of days for which the initial password or any pas
 If a user has not logged on using the initial password within the given period of time, the user will be deactivated until their password is reset.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Apply password policy to database user)]
+### Apply password policy to database user
+
 
 You can apply the policy  when creating a new database user by selecting **Enable Password Policy** as shown below.
 
@@ -57,12 +58,10 @@ For an existing user, simply select the database user and mark the checkbox. You
 
 > Learn in the next tutorial [how to connect your Space to an SAP HANA Cloud, data lake in SAP Data Warehouse Cloud.](data-warehouse-cloud-intro10-connectspace-datalake)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

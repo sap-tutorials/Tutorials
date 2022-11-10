@@ -1,25 +1,28 @@
 ---
-title: Use Data Attribute Recommendation to Classify Records, Delete Model and Dataset
-description: Classify data records you uploaded to Data Attribute Recommendation using your machine learning model.
+parser: v2
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation ]
 primary_tag: topic>machine-learning
 ---
 
-## Details
-### You will learn
+# Use Data Attribute Recommendation to Classify Records, Delete Model and Dataset
+<!-- description --> Classify data records you uploaded to Data Attribute Recommendation using your machine learning model.
+
+## You will learn
   - How to classify records using your Data Attribute Recommendation machine learning model
   - How to undeploy and delete your model
   - How to delete datasets and dataset schemas
 
+## Intro
 Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: After you upload data and train a machine learning model using Data Attribute Recommendation, you will be able to classify the product data. In this tutorial, you will focus on product data classification, including options to undeploy the model, delete dataset and dataset schemas.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Classify records)]
+### Classify records
+
 
 To classify records, you need to send an inference request to your model.
 
@@ -39,11 +42,10 @@ In the response, you find the predictions of the model. This includes the values
 
 You have successfully classified records using your machine learning model.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Undeploy your model)]
+### Undeploy your model
+
 
 Now that you have learned the whole process about how to use Data Attribute Recommendation, it's time to clean up.
 
@@ -57,11 +59,10 @@ There is no actual content in the response. Instead you can tell by the http-sta
 
 You have successfully undeployed your model, but the model is not yet deleted. Instead it is not in production which means that you cannot make inference requests. You can deploy it again at any time.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Delete your model)]
+### Delete your model
+
 
 Once undeployed, you can delete the model.
 
@@ -71,11 +72,10 @@ For that, expand the subfolder `Delete Trained Model` and select the request `De
 
 As explained in the previous step, you can tell by the `http-status` whether the operation was successful. If the status is `204 No Content`, the model is successfully deleted.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Delete your training job)]
+### Delete your training job
+
 
 Now that the model is deleted, you can delete the training job that created the model.
 
@@ -85,11 +85,10 @@ Select the request `Delete previously trained Job` and click **Send** to delete 
 
 Again, the operation was successful if you receive the status `204 No Content`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Delete your dataset)]
+### Delete your dataset
+
 
 To clear the uploaded data, you can now delete the dataset as the associated training job is already deleted.
 
@@ -99,11 +98,10 @@ Expand the subfolder `Delete Data` and select the request `Delete previously cre
 
 If you receive the status `204 No Content`, you have successfully deleted the dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Delete your dataset schema)]
+### Delete your dataset schema
+
 
 If you do not need your dataset schema anymore, you can delete it as well.
 
@@ -113,11 +111,9 @@ Select the request `Delete previously created Dataset Schema` and click **Send**
 
 If you receive the status `204 No Content`, you have successfully deleted the dataset schema.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7:](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

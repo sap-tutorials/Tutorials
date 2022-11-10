@@ -1,27 +1,29 @@
 ---
-title: Monitor a Standalone Data Lake in SAP HANA Cloud
-description: Learn to use monitoring views for a standalone data lake in SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Monitor a Standalone Data Lake in SAP HANA Cloud
+<!-- description --> Learn to use monitoring views for a standalone data lake in SAP HANA Cloud.
+
 ## Prerequisites
 - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
 - Make sure your data lake instance is running before you start.
 
-## Details
-### You will learn
+## You will learn
   - How to use the monitoring views to monitor the health of your data lake instances
   - How monitoring views help to troubleshoot performance issues.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to monitoring views)]
+### Introduction to monitoring views
+
 On the **SAP HANA Cloud Central** wizard, you can see all data lake instances you've provisioned, as well as their respective status. This is your most basic monitoring tool, since you can see some basic information about each instance, as well as their storage size and compute capabilities here. This is also where you can scale your data lake instances from SAP HANA Cloud Central.
 
-!![SAP HANA Cloud Central](ss-01-cloud-central.png)
+<!-- border -->![SAP HANA Cloud Central](ss-01-cloud-central.png)
 
 If you need more detailed information about your data lake, you can use monitoring views. **Monitoring views** are predefined queries and stored procedures that consolidate system health and performance metrics into a standard SQL interface. These views can be used to monitor system health before problems develop, and to identify the root causes if performance problems occur.
 
@@ -37,10 +39,9 @@ This will allow the specified user to access monitoring views.
 
 Let's see in detail the procedures to access different monitoring views.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore workload monitoring using SAP HANA Database Explorer)]
+### Explore workload monitoring using SAP HANA Database Explorer
+
 Using **SAP HANA Database Explorer** connected to your data lake, you can display a menu with list of all available Data Lake, IQ monitoring views. This can be done by running the command in the SQL Console:
 
 ```SQL
@@ -48,7 +49,7 @@ SELECT * FROM IQMONVIEWS
 ```
 
 
-!![IQMONVIEWS](ss-02-iqmonviews.png)
+<!-- border -->![IQMONVIEWS](ss-02-iqmonviews.png)
 
 Among this list procedures, **`iqmonSystemOverview`** can help you see different metrics and get an overview of the system. The metrics include **`ActiveConnections`** and **`UserCPUTime`**. Additionally, you can monitor the changes in the metrics over time. This procedure can be run by using the command:
 
@@ -56,15 +57,14 @@ Among this list procedures, **`iqmonSystemOverview`** can help you see different
 SELECT * FROM iqmonSystemOverview
 ```
 
-!![iqmonSystemOverview](ss-03-iqmonSystemOverview.png)
+<!-- border -->![iqmonSystemOverview](ss-03-iqmonSystemOverview.png)
 
 The data lake offers tools for collecting and analyzing statistics about a defined workload. You can quickly determine which database objects are being referenced by queries and should be kept. Unused tables, columns or indexes can be dropped to reduce usage of space, improve DML   performance, and decrease backup time.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Determine space consumption of data lake instance)]
+### Determine space consumption of data lake instance
+
 Space consumption can be monitored and assessed to determine the ideal storage size for your instance. The **`TotalSize`** metric can be used to view the allocation of storage space for every individual space. Run the following command in the SQL Console using Database Explorer to display information on each space within your instance:
 
 ```SQL
@@ -72,7 +72,7 @@ SELECT DBSpaceName, DBSpaceType, Writable, Online, Usage, TotalSize, Reserve, Nu
 
 ```
 
-!![DBSPACE](ss-04-dbspace.png)
+<!-- border -->![DBSPACE](ss-04-dbspace.png)
 
 Run the following command to view the temporary space in use:
 
@@ -81,24 +81,22 @@ SELECT * FROM sp_iqwho()
 
 ```
 
-!![IQWHO](ss-05-iqwho.png)
+<!-- border -->![IQWHO](ss-05-iqwho.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Manage insufficient memory issue)]
+### Manage insufficient memory issue
+
 If you see an issue of insufficient memory during your monitoring of the system, you can increase the available memory. The memory is allocated as a fixed ratio to `vCPUs`, which is set up when instances are created. By increasing the `vCPU` size, you can increase the available memory. To do so, go to the SAP HANA Cloud Central and edit the existing instance.
 
 Similarly, you can go to the SAP HANA Cloud Central when the remaining storage space is no longer enough. Edit the existing instance to increase the storage capacity. **However, keep in mind that the storage capacity of the system can only be increased; it cannot be decreased.**
 
-!![Memory Storage](ss-06-memory-storage.png)
+<!-- border -->![Memory Storage](ss-06-memory-storage.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Differentiate between sp_iqsysmon and monitoring views )]
+### Differentiate between sp_iqsysmon and monitoring views 
+
 The monitoring views and **`sp_iqsysmon`** are intended for very different reporting timescales. The **`sp_iqsysmon`** is a system stored procedure that allows you to define the time interval for monitoring using **Start** and **Stop** parameters. Data lake, IQ continuously monitors performance and displays the latest performance data on the monitoring views. Rather than monitoring over a defined period, monitoring views start gathering performance metrics at server startup and reports the current state of the system.
 >For example, you can monitor your system at a 30-second time interval for two hours using **`sp_iqsysmon`**. On the other hand, monitoring views provide a current snapshot of system heath and performance metrics.
 
@@ -111,11 +109,9 @@ Use these examples as a starting point for your own diagnostic use cases.
 
 >In this tutorial, you have learned about monitoring your data lake. There are a wide variety of options to view historical and current data. You are now equipped with the procedures to monitor and diagnose basic problems you may encounter within your system. In the next tutorial, you will see how to back up and recover the data in your standalone data lake.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_4]
-[ACCORDION-END]
+
+
 ---

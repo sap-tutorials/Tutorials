@@ -1,6 +1,5 @@
 ---
-title: Implement Image Classification Using a Trained Core ML Model and Vision Framework
-description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification, then use the classification result to fetch products of a certain product category from the sample data service.
+parser: v2
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
@@ -9,29 +8,29 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 25
 ---
 
-## Prerequisites
+# Implement Image Classification Using a Trained Core ML Model and Vision Framework
+<!-- description --> Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification, then use the classification result to fetch products of a certain product category from the sample data service.
 
+## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to import a trained Core ML model into Xcode
 - How to use the Vision framework to process an Image and feed it to the classification model
 - How to take the classification result and fetch products for the classified product category
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Core ML model)]
+### Understand the Core ML model
+
 
 For this tutorial you will import the `ProductImageClassifier.mlmodel` Core ML model into your Xcode project. The goal for this tutorial is to later feed an image of a MacBook as well as an image of an office chair to the model. The Core ML model should classify those two images the correct way and your app will load similar products from the data service and display them in a Table View.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import Core ML model)]
+### Import Core ML model
+
 
 In order to use the `ProductImageClassifier.mlmodel` Core ML model you have to add it to your Xcode project.
 
@@ -41,10 +40,9 @@ Go into the folder you've saved your model and **drag & drop** that model into t
 
 The model will now be referenced in your Xcode app project and can be initialized within the app code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set up Product Classification Table View Controller for data loading)]
+### Set up Product Classification Table View Controller for data loading
+
 
 The Product Classification Table View Controller is supposed to display products of the classified product category. You have implemented similar code before so this should look familiar to you.
 
@@ -123,10 +121,9 @@ override func viewDidLoad() {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Classify the input image)]
+### Classify the input image
+
 
 To classify an image, you can use the **Vision** framework to prepare the image for classification.
 
@@ -327,10 +324,9 @@ That's all you need to do to classify an image with Vision and a pre-trained Cor
 
 Continue with the tutorial to implement the displaying of products in the Table View.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the Table Views Data Source methods)]
+### Implement the Table Views Data Source methods
+
 
 To display the products, you will implement the data source methods directly in the class like you have done before.
 
@@ -354,11 +350,11 @@ Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to r
 
 Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
 
-!![MS APIs](fiori-ios-scpms-teched19-03.png)
+<!-- border -->![MS APIs](fiori-ios-scpms-teched19-03.png)
 
 The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL as you will need it in a second.
 
-!![MS APIs](fiori-ios-scpms-teched19-04.png)
+<!-- border -->![MS APIs](fiori-ios-scpms-teched19-04.png)
 
 Next implement the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
@@ -456,10 +452,9 @@ private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UI
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run app and classify some products)]
+### Run app and classify some products
+
 
 Let's classify some images!
 
@@ -493,5 +488,4 @@ Tap on **Done** to go back to the Overview Table View Controller.
 
 Congratulations! You've successfully used a pre-trained Core ML model and Vision to classify product images.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

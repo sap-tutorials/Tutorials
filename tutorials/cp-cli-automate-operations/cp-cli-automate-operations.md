@@ -1,6 +1,5 @@
 ---
-title: Automate Account Operations with the Command Line Interface (CLI)
-description: Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
+parser: v2
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 creator_name: Benjamin Buehner
@@ -11,18 +10,21 @@ tags: [tutorial>intermediate, software-product-function>sap-btp-cockpit, softwar
 primary_tag: software-product>sap-business-technology-platform
 ---
 
+# Automate Account Operations with the Command Line Interface (CLI)
+<!-- description --> Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
+
 ## Prerequisites
 -	You have an account on SAP BTP. You can check out steps 1-7 of the tutorial on how to [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account) (we will automate the rest in this tutorial here). 
 -	You have the Cloud Foundry CLI, as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 - You have a UNIX-like environment.
 
-## Details
 
-### You will learn  
+## You will learn  
 - How to use a script to automate account admin processes
 
 ---
 
+## Intro
 With the introduction of cloud management tools feature set B to SAP BTP, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP BTP.
 
 The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
@@ -30,9 +32,7 @@ The REST APIs are offered for each administrative operation available in t
 If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (btp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
 
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
-
-### About this tutorial
-
+## About this tutorial
 In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
 Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
@@ -72,20 +72,19 @@ Through this tutorial, we hope we can help you to unleash the power of CLI scrip
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download and install the client)]
+### Download and install the client
+
 To get started with the SAP BTP command line interface (btp CLI), please follow [this tutorial](cp-sapcp-getstarted).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the script file)]
+### Download the script file
+
 Download the automation script file from GitHub: <https://github.com/SAP-samples/cp-cli-automate-operations>
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Change the declarations)]
+### Change the declarations
+
 In this step, you need to open the script file in your favorite text editor and enter the values in each placeholder according to your account and the names and custom properties of the directories and subaccounts that you want to create.
 
 These lines declare global variables that will be used in the script. 
@@ -109,11 +108,9 @@ The delay of 15 seconds will allow asynchronous processes to finish.
 >![The name of the subdomain](subdomain_name2.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Understand the script
 
-[ACCORDION-BEGIN [Step 4: ](Understand the script)]
 Let's take a closer look at the script we've provided to understand it better.
 
 This tells the script to stop executing in case of errors:
@@ -406,20 +403,19 @@ main "$@"
 ```
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the script)]
+
+### Run the script
+
 
 Now, save your changes and change the file extension to `.sh`.
 
 Open your terminal in the location in which you saved it, then execute it using the following command: `bash <filename>.sh`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](See the results)]
+### See the results
+
 
 Once the script has finished executing, open your SAP BTP cockpit and locate the new directory, subaccounts, entitlements, org, space, and the instance of the SAP HANA Cloud service. 
 
@@ -427,41 +423,40 @@ Here's what you should find.
 
 The **Subaccounts** page contains the three new subaccounts:
 
-!![Subaccounts](subaccounts2.png)
+<!-- border -->![Subaccounts](subaccounts2.png)
 
 The title view in the **Directories** page shows the new directory:
 
-!![Directory](directories2.png)
+<!-- border -->![Directory](directories2.png)
 
 The tree view in the **Directories** page shows your global, the new directory, and the new subaccounts under the new directory:
 
-!![Directories and subaccounts](directoriesAndSubaccounts2.png)
+<!-- border -->![Directories and subaccounts](directoriesAndSubaccounts2.png)
 
 In the **Entitlements** > **Entity Assignments** page, the Alert Notification and SAP HANA Cloud services are assigned to the new directory:
 
-!![Entity assignments](entityAssignments2.png)
+<!-- border -->![Entity assignments](entityAssignments2.png)
 
 In the **Services** > **Service Instances** page, the Cloud Foundry environment has been enabled and an instance of the SAP HANA Cloud service has been created in the Cloud Foundry org:
 
-!![Service instance](instance2.png)
+<!-- border -->![Service instance](instance2.png)
 
 That was pretty fast, right?
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself – 1)]
+
+### Test yourself – 1
+
 
 Try two more questions:
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself – 2)]
 
-[VALIDATE_5]
-[ACCORDION-END]
+### Test yourself – 2
+
+
+
 
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Use Computer Vision Package to Serve AI Model for Meter Reading
-description: Deploy an object detection model in SAP AI Core for number recognition of meter readings.
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core, tutorial>license]
@@ -9,8 +8,10 @@ author_name: Kannan Presanna Kumar
 author_profile: https://github.com/kannankumar
 ---
 
-## Details
-### You will learn
+# Use Computer Vision Package to Serve AI Model for Meter Reading
+<!-- description --> Deploy an object detection model in SAP AI Core for number recognition of meter readings.
+
+## You will learn
 - How to generate serving templates for a computer vision package
 - How to generate and deploy an online inferencing server using a computer vision package
 - How to consume endpoints for online inferencing
@@ -19,11 +20,13 @@ author_profile: https://github.com/kannankumar
  - You have trained an AI model for object detection using the [set up tutorial](cv-package-aicore-train-object-detection)
  - You are using the Jupyter notebook from the [set up tutorial](cv-package-aicore-train-object-detection)
 
+## Intro
 **IMPORTANT** You must have successfully created an execution using the [prerequisite tutorial](cv-package-aicore-train-object-detection). You"ll need the value of the variable `trained_model` to complete this tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get reference content for serving template and Docker image)]
+### Get reference content for serving template and Docker image
+
 
 The computer vision package (`sap-cv`) provides reference `model-serving` workflow, for creating a serving template and creating a Docker image for the deployment server. The reference content is used like a boilerplate, and helps accelerate creation of your serving template and server.
 
@@ -34,11 +37,10 @@ workflow = sap_cv_pkg.workflows['model-serving']
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create labels for serving template)]
+### Create labels for serving template
+
 
 Paste and edit the snippet to store the serving template labels in JSON format. You must use your own Docker username for `image`.
 
@@ -59,10 +61,9 @@ workflow_config = {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Generate Docker image for serving)]
+### Generate Docker image for serving
+
 
 The reference workflow contains a `create_image` function. This function builds a Docker image using the serving template code contained in the computer vision package.
 
@@ -74,7 +75,7 @@ Paste and run the snippet.
 workflow.create_image(workflow_config, silent=True)
 ```
 
-!![image](img/serving-docker-create-image.png)
+<!-- border -->![image](img/serving-docker-create-image.png)
 
 Paste the snippet. You should see your Docker image in your system's local memory.
 
@@ -82,13 +83,12 @@ Paste the snippet. You should see your Docker image in your system's local memor
 docker images
 ```
 
-!![image](img/docker-image-ls.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![image](img/docker-image-ls.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Upload Docker image to cloud)]
+
+### Upload Docker image to cloud
+
 
 Upload your Docker image to the cloud Docker repository. SAP AI Core will download the image from the cloud repository and run the deployment.
 
@@ -97,15 +97,14 @@ Paste and edit the snippet. The exclamation prefix `!` executes the command in y
 ```PYTHON
 !docker push <YOUR_DOCKER_USERNAME>/sap_cv_obj_detection:0.0.1
 ```
-!![image](img/serving-docker-pushing.png)
+<!-- border -->![image](img/serving-docker-pushing.png)
 
 It may take a few minutes for the Docker registry to upload your code. After completion, you'll see a `Pushed` message in the output.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Generate model serving template)]
+### Generate model serving template
+
 
 The reference content contains a `create_template` function. This function builds a template using the serving template code contained in the computer vision package.
 
@@ -146,16 +145,15 @@ spec:
 
 ```
 
-!![image](img/demo-serving-template-edit-1.png)
+<!-- border -->![image](img/demo-serving-template-edit-1.png)
 
-!![image](img/demo-serving-template-edit-2.png)
-
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![image](img/demo-serving-template-edit-2.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Sync new serving template with SAP AI Core)]
+
+
+### Sync new serving template with SAP AI Core
+
 
 Save the new serving template to the GitHub repository, in the folder tracked by **Application** of SAP AI Core.
 
@@ -178,10 +176,9 @@ git push
 Once the template is pushed into the Git repo, you need to wait for AI Core to sync with this repository. AI Core syncs with the on-boarded Git repositories at periodic intervals. Once the template is synced with AI Core you can execute the serving template to start model training.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Get model ID for trained model)]
+### Get model ID for trained model
+
 
 Paste and run the snippet to check the trained model.
 
@@ -194,10 +191,9 @@ else:
     serving_config_name = f'demo-object-detection-meter-reading-serving-{trained_model.id[:6]}'
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create configuration for the deployment)]
+### Create configuration for the deployment
+
 
 Paste and run the snippet.
 
@@ -224,7 +220,7 @@ except IndexError:
 
 The snippet checks your SAP AI Core instance for a configuration with the same name as variable `serving_config_name` (initialized in the previous step). A new configuration is only created if the name doesn't already exist.
 
-!![image](img/deployment-config-created.png)
+<!-- border -->![image](img/deployment-config-created.png)
 
 The remaining configuration data is retrieved from your serving template YAML file. The following table summarizes the values.
 
@@ -235,10 +231,9 @@ The remaining configuration data is retrieved from your serving template YAML fi
 | `input_artifact_bindings` | to select the trained models as an input to the template code, the Docker image |
 | `parameter` | (value not from the YAML file) parameters to be used during inference |
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Start deployment)]
+### Start deployment
+
 
 Paste and run the snippet.
 
@@ -269,28 +264,28 @@ else:
     print('Deployment not Ready!')
 ```
 
-!![image](img/deployment-not-ready.png)
+<!-- border -->![image](img/deployment-not-ready.png)
 
 The snippet checks the status of the deployment. It also fetches the `Deployment URL` and the Rest Client (`deployment_client`) using it. You can use `deployment_client` to send inference requests to the deployed model.
 
 If required, wait a few minutes and execute the snippet again. The expected output is `Deployment Ready`.
 
-!![image](img/deployment-ready.png)
+<!-- border -->![image](img/deployment-ready.png)
 
 > You can also use the **ML Operations** app in **SAP AI Launchpad** to check the status of your deployment. When ready, the deployment's **Current Status** changes to `RUNNING`.
 
-!![image](img/deployment-running-launchpad.png)
+<!-- border -->![image](img/deployment-running-launchpad.png)
 
 You'll find the deployment URL in the deployment details. The other components used in this deployment (workflow, input artifacts, configuration) can be found in the **Process Flow** pane.
 
-!![image](img/deployment-url-launchpad.png)
-
-[VALIDATE_5]
-[ACCORDION-END]
+<!-- border -->![image](img/deployment-url-launchpad.png)
 
 
 
-[ACCORDION-BEGIN [Step 10: ](Check status endpoint of inference server)]
+
+
+### Check status endpoint of inference server
+
 
 Check the status of your deployment using the `/v1/status` endpoint. This endpoint is provided as a standard part of the Docker image generated for model serving.
 
@@ -300,14 +295,13 @@ status = deployment_client.get(status_path)
 print(json.dumps(status, indent=4))
 ```
 
-!![image](img/deployment-status.png)
+<!-- border -->![image](img/deployment-status.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Detect meter reading from test image)]
+### Detect meter reading from test image
+
 
 Paste the snippet to display a test image.
 
@@ -328,7 +322,7 @@ img, img_str = decode_image_path(img_path)
 plt.imshow(img[:,:,::-1])
 ```
 
-!![image](img/prediction-input-image.png)
+<!-- border -->![image](img/prediction-input-image.png)
 
 
 Determine the meter reading from the test image using the `/models/model:predict` endpoint.
@@ -340,15 +334,14 @@ predict = deployment_client.post(predict_path, body={'images': img_str})
 print(json.dumps(predict, indent=4))
 ```
 
-!![image](img/prediction-result.png)
+<!-- border -->![image](img/prediction-result.png)
 
-!![image](img/prediction-scores.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![image](img/prediction-scores.png)
 
 
-[ACCORDION-BEGIN [Step 12: ](Visualize detected meter reading)]
+
+### Visualize detected meter reading
+
 
 Display the predicted bounding box for your image using the following snippet.
 
@@ -378,13 +371,12 @@ vis = Visualizer(img_rgb=img[:,:,::-1], metadata=Metadata())
 vis.draw_instance_predictions(inst).fig
 ```
 
-!![image](img/prediction-visualized.png)
+<!-- border -->![image](img/prediction-visualized.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Stop deployment server)]
+### Stop deployment server
+
 
 After you have tried determining meter readings for multiple examples, it's a good idea to stop the deployment (this saves resources).
 
@@ -396,9 +388,7 @@ print(response.__dict__)
 
 You can also stop a deployment using the **ML Operations** app in **SAP AI Launchpad**. In the deployment's details screen, choose **Stop**.
 
-!![image](img/deployment-stopped.png)
+<!-- border -->![image](img/deployment-stopped.png)
 
 
-[DONE]
-[ACCORDION-END]
 ---

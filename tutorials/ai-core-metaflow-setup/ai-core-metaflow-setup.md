@@ -1,6 +1,5 @@
 ---
-title: Set Up the Metaflow Library for SAP AI Core
-description: Explore different ways of logging metrics during training. Compare generated models.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
@@ -9,21 +8,25 @@ author_name: Karim Mohraz
 author_profile: https://github.com/karimmohraz
 ---
 
+# Set Up the Metaflow Library for SAP AI Core
+<!-- description --> Explore different ways of logging metrics during training. Compare generated models.
+
 ## Prerequisites
 - You have Docker Desktop installed.
 - You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#).
 
-## Details
-### You will learn
+## You will learn
 - How to create a sandbox Python or Docker environment.
 - How to set up the Metaflow Python package for SAP AI Core
 - How to run a local test of your Metaflow pipeline.
 
-Discover how Metaflow assists you, with diagrams and visualisations from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
+## Intro
+Discover how Metaflow assists you, with diagrams and visualization from production to deployment. For more information, see the [the Metaflow documentation.](https://docs.metaflow.org/introduction/why-metaflow)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up your system, and Python)]
+### Set up your system, and Python
+
 
 
 [OPTION BEGIN [Linux & MacOS]]
@@ -74,11 +77,11 @@ The command option description:
 You should now use this Docker container as the sandbox environment to complete the tutorial.
 
 
-!![Preview of Docker environment](img/env-docker.png)
+<!-- border -->![Preview of Docker environment](img/env-docker.png)
 
 > **INFORMATION** If you are developing with Visual Studio Code (VS Code), you may connect to your VS Code to this sandbox environment using following VS Code extensions: [Remote Explorer Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) and [Docker Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 >
-> !![Preview of VS Code](img/env-vscode2.gif)
+> <!-- border -->![Preview of VS Code](img/env-vscode2.gif)
 
 
 [OPTION END]
@@ -118,18 +121,17 @@ The command option description:
 You should now use this Docker container as the sandbox environment to complete the tutorial.
 
 
-!![Preview of Docker environment](img/env-docker.png)
+<!-- border -->![Preview of Docker environment](img/env-docker.png)
 > **INFORMATION** If you are developing with Visual Studio Code (VS Code), you may connect to your VS Code to this sandbox environment using following VS Code extensions: [Remote Explorer Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) and [Docker Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 >
-> !![Preview of VS Code](img/env-vscode2.gif)
+> <!-- border -->![Preview of VS Code](img/env-vscode2.gif)
 
 [OPTION END]
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set environment variables)]
+### Set environment variables
+
 
 Set your environment variables.
 
@@ -141,10 +143,9 @@ export USERNAME=tutorialuser
 export HOME=/root
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Install Metaflow package)]
+### Install Metaflow package
+
 
 Install the Metaflow package.
 
@@ -152,11 +153,10 @@ Install the Metaflow package.
 pip install sap-ai-core-metaflow
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Configure Metaflow)]
+### Configure Metaflow
+
 
 Create a configuration file for Metaflow. Metaflow uses settings from configurations to store snippets of pipeline in your AWS S3 storage.
 
@@ -175,10 +175,9 @@ Edit the following snippet and the paste in the `config.json` file, created abov
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure AWS)]
+### Configure AWS
+
 
 Create a credentials file for your AWS S3 Object Store. The file is used by the Metaflow package access your AWS S3 store.
 
@@ -197,11 +196,10 @@ aws_secret_access_key = <YOUR_S3_ACCESS_KEY>
 
 > **INFORMATION** the Metaflow library for SAP AI Core uses AWS, however you may skip the installation of AWS CLI.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Metaflow HelloWorld)]
+### Metaflow HelloWorld
+
 
 Create a file `hellometaflow.py` with following contents.
 
@@ -254,11 +252,10 @@ if __name__ == "__main__":
 
 > **INFORMATION** You may discover more snippets in the [official Metaflow tutorials.](https://docs.metaflow.org/getting-started/tutorials)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Run Metaflow pipeline locally)]
+### Run Metaflow pipeline locally
+
 
 Inspect the steps of the Metaflow pipeline `hellometaflow.py` using following snippet.
 
@@ -272,12 +269,12 @@ Run this snippet locally.
 python hellometaflow.py run
 ```
 
-!![metaflow](img/hello-metaflow.png)
+<!-- border -->![metaflow](img/hello-metaflow.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Save set up environment)]
+
+### Save set up environment
+
 
 
 [OPTION BEGIN [Python virtual environment]]
@@ -309,7 +306,7 @@ docker commit <CONTAINER_ID> tutorial_metaflow:0.1
 
 You may now close the Docker Container, by using the `exit` command inside your Docker container.
 
-!![image](img/env-docker-save.png)
+<!-- border -->![image](img/env-docker-save.png)
 
 To pick up where you left off, use the following snippet. Ensure you are using the tag `:01` with which you saved the changes.
 
@@ -319,5 +316,3 @@ docker run -it -v //var/run/docker.sock:/var/run/docker.sock tutorial_metaflow:0
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]

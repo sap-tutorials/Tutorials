@@ -101,6 +101,7 @@ The [`managed`](https://cap.cloud.sap/docs/cds/common#aspect-managed) aspect add
 The [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) definition is a type. It defines an association to a `Currencies` entity. The [`Currencies`](https://cap.cloud.sap/docs/cds/common#entity-sapcommoncurrencies) entity is based on ISO 4217 and uses three-letter alpha codes as keys such as `EUR` or `USD` and provides the possibility to store the corresponding currency symbol such as `€` or `$`.
 
 
+
 ### Get more information about `@sap/cds/common`
 
 
@@ -115,6 +116,7 @@ Look at these explained keywords yourself and learn more about it.
 3. A right-click (or use **`F12`**) on the definition opens up the context menu. There you can find, for example, **Peek definition** to get a much bigger overlay.  Not only the definition of this particular item is displayed, you also have the ability to navigate through the whole source file of this definition without opening the file itself.
 
     <!-- border -->![right-click to peek definition information](rightclick-peek.png)
+
 
 
 

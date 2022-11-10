@@ -1,17 +1,18 @@
 ---
-title: Jump start the SAP SuccessFactors Extension CAP Project
-description: First step to start developing the SAP SuccessFactors extension
+parser: v2
 auto_validation: true
 time: 6
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Jump start the SAP SuccessFactors Extension CAP Project
+<!-- description --> First step to start developing the SAP SuccessFactors extension
+
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
 
-## Details
-### You will learn
+## You will learn
   - How to access **SAP Business Application Studio**
   - How to login to **Cloud Foundry**
   - How to create your **CAP project** using `cds init`
@@ -19,7 +20,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access SAP Business Application Studio)]
+### Access SAP Business Application Studio
+
 You are going to start the journey by accessing the selected IDE for development (in this case, **SAP Business Application Studio**). To proceed with these instructions you must have first completed the prerequisites detailed in the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro).
 
 Access your trial subaccount
@@ -42,10 +44,9 @@ On the right, under **Subscriptions**, click on the **small icon** next to the *
 
  ![Figure 5 – Go into Dev Space](go-into-dev-space.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Login to Cloud Foundry)]
+### Login to Cloud Foundry
+
 Before starting the development, you need to make sure to be properly logged in to the **Cloud Foundry environment** on your BTP subaccount.
 
 From the **top menu**, click on **View** and select **Find Command…**
@@ -80,10 +81,9 @@ Click on the **small notifications icon** in the bottom right corner to view the
 
 ![Figure 13 – Confirm successful login](confirm-login.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the CAP project)]
+### Create the CAP project
+
 Now it's time to create the CAP Project and understand it's structure.
 
 From the **top menu**, click on **Terminal** and select **New Terminal**
@@ -108,10 +108,9 @@ In the **dialog**, (1) select the `sfsf-projman` folder under projects (2) and t
 
 ![Figure 18 – Set Workspace](set-workspace.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand the project structure)]
+### Understand the project structure
+
 SAP Business Application Studio will restart and, after a few seconds, you should see the **following structure** at the bottom of the left-hand side pane:
 
 ![Figure 19 – Project Structure](project-structure.png)
@@ -125,10 +124,8 @@ You can see that, under the project folder, `cds` has created three folders: `ap
 - `package.json` – this file holds **project specific settings** following the common **node.js standard**.
 - `README.md` – is used for **project documentation**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

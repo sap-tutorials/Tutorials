@@ -1,26 +1,28 @@
 ---
-title: Learn about SAP Event Mesh
-description: Learn about SAP Event Mesh, central concepts, and the benefits of decoupled communication and capabilities supported.
+parser: v2
 time: 10
 auto_validation: true
 tags: [ tutorial>beginner, programming-tool>node-js, programming-tool>java, software-product>technology-platform>sap-business-technology-platform]
 primary_tag: software-product>sap-event-mesh
 ---
 
+# Learn about SAP Event Mesh
+<!-- description --> Learn about SAP Event Mesh, central concepts, and the benefits of decoupled communication and capabilities supported.
+
 ## Prerequisites
 - [Start Developing on SAP Business Technology Platform](mission.scp-1-start-developing)
 
 ---
 
-## Details
-### You will learn
+## You will learn
   - What the SAP Event Mesh service is
   - What you can do with SAP Event Mesh
   - Messaging protocols and libraries
   - Basic messaging concepts
 
 
-[ACCORDION-BEGIN [Step 1: ](What is the SAP Event Mesh service?)]
+### What is the SAP Event Mesh service?
+
 
 **SAP Event Mesh** is a fully-managed service to connect applications, services, and systems so they can interact with each other through messages and events.
 
@@ -34,10 +36,10 @@ Since SAP Event Mesh is responsible for message delivery, senders do not need to
 
 - **Receiving applications** can subscribe to messages of business importance and ensure to receive all relevant updates and can consume these messages at their own pace.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use cases)]
+
+### Use cases
+
 
 What can you do with SAP Event Mesh?
 
@@ -60,10 +62,10 @@ Which features and characteristics of SAP Event Mesh do the use cases build on?
 - Transport, manage, and consume **events** in the cloud
 - Ensure seamless **integration** based on standards
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Protocols and libraries)]
+
+### Protocols and libraries
+
 
 SAP Event Mesh supports standard messaging protocols to connect applications, services, and systems across hybrid landscapes.
 
@@ -76,10 +78,10 @@ SAP Event Mesh supports standard messaging protocols to connect applications, se
 You can use the AMQP 1.0 over WebSocket libraries and MQTT 3.1.1. over WebSocket libraries for node.js. SAP Event Mesh also supports protocol-agnostic libraries that can be used at application configuration level for Java and Node.js.
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Messaging concepts)]
+
+### Messaging concepts
+
 
 SAP Event Mesh supports central messaging concepts:
 
@@ -113,7 +115,6 @@ You can create multiple message clients that can be distinguished by a set of cr
 
 The namespace is a unique prefix that defines all the queues or topics that have been created in the context of a particular message client. When you manage queues or topics in SAP Event Mesh,  the namespace allows message clients to identify the queues or topics for communication.
 
-[VALIDATE_4]
-[ACCORDION-END]
+
 
 ---

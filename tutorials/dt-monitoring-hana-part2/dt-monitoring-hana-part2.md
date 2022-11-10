@@ -1,10 +1,12 @@
 ---
-title: Creating and Removing Extended Storage
-description: Creating and removing Extended Storage using SAP HANA Studio and SAP HANA Cockpit
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+
+# Creating and Removing Extended Storage
+<!-- description --> Creating and removing Extended Storage using SAP HANA Studio and SAP HANA Cockpit
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -15,17 +17,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - **Proficiency:** Beginner
  - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://developers.sap.com/tutorials/dt-monitoring-hana-part3.html)
 
-## Details
-### You will learn  
+## You will learn  
  - Creating Extended Storage using SAP HANA Studio, SAP HANA Cockpit
  - Removing Extended Storage using SAP HANA Studio, SAP HANA Cockpit
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Creating Extended Storage)]
+### Creating Extended Storage
+
 The first step after you have installed Dynamic Tiering system on your SAP HANA is to create an extended storage `dbspace`. After installation you have the `esserver` running but the extended storage is not created yet.
 
 As discussed in [Create Extended Storage](https://developers.sap.com/tutorials/dt-create-schema-load-data-part1.html), you can create the extended storage in SAP HANA Studio using a SQL console by executing the following:
@@ -47,11 +48,10 @@ The "Delta" store option is also available here. If you want a delta enabled sto
 
 >Note: If you have created the extended storage without delta enabled, you will not be able to create delta enabled extended tables. You will need to drop and re-add the extended storage with the delta option switched "ON".
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Removing Extended Storage)]
+### Removing Extended Storage
+
 
 To remove extended storage in SAP HANA Studio, simply execute the following in a SQL console:
 
@@ -81,6 +81,3 @@ Once you click on "**Delete**", you should see the following show up. The "Restr
 
 ![Restrict and Cascade Option](restrict-cascade-es-cockpit.png)
 
-[DONE]
-
-[ACCORDION-END]
