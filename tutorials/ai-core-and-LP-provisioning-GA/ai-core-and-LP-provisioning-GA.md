@@ -9,7 +9,7 @@ author_profile: https://github.com/dhrubpaul
 ---
 
 # Use Boosters for Free Tier Use of SAP AI Core and SAP AI Launchpad
-
+<!-- description --> Use Boosters to set up Free Tier for SAP AI Core and SAP AI Launchpad.
 ## Prerequisites
 - A BTP global account
 
