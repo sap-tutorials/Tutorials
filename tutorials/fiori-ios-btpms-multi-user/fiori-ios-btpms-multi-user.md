@@ -1,36 +1,37 @@
 ---
-title: Enable Multi-User Mode for iOS Application
-description: Learn how to configure the assistant generated application to enable the multi-user mode (one device, multiple users with secure access).
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, topic>mobile, products>sap-mobile-services, operating-system>ios, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-ios
 ---
 
+# Enable Multi-User Mode for iOS Application
+<!-- description --> Learn how to configure the assistant generated application to enable the multi-user mode (one device, multiple users with secure access).
+
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
     - **SAP Mobile Services**
 - You have [created your first application with SAP BTP SDK for iOS](group.ios-sdk-setup).
 
-## Details
-### You will learn
+## You will learn
 - How to create a native iOS application that supports multiple users on the same device
 - How to modify the SAP BTP SDK for iOS assistant generated application
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](The real world use case)]
+### The real world use case
+
 An air carrier organisation uses an iOS application built using SAP BTP SDK for iOS to keep a track of an aircraft's vital information (Fuel Level, Tyre Pressure, etc.) before each flight. The application must support offline use-case to comply with the network regulations at the airport. Since the airline has flights departing round the clock, it deploys ground staff in three 8-hour shifts. To maximise efficiency, the organisation wants ground staff to share mobile devices.
 
 The ground staff members want a solution that is reliable even in the absence of network. They also aren't keen on logging out and logging in every time a shift ends, as they believe this could lead to erroneous data.
 
 In this tutorial, you will learn how to enhance your [SAP BTP SDK for iOS Assistant](https://developers.sap.com/trials-downloads.html?search=SAP+BTP+SDK+for+iOS) generated application to create an offline enabled application that supports multiple users.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable multi-user mode in mobile services cockpit)]
+### Enable multi-user mode in mobile services cockpit
+
 
 1. In your mobile services account, click Mobile Applications &rarr; Native/Hybrid &rarr; **<Your Mobile Application configuration>**.
 
@@ -48,10 +49,10 @@ In this tutorial, you will learn how to enhance your [SAP BTP SDK for iOS Assist
 
     > You must enable this checkbox if you are building an offline capable multi-user application.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure trust)]
+
+### Configure trust
+
 
 In the given scenario any pending changes done by a user should be uploaded before another user signs in. Thus, you must configure trust to enable upload of pending changes from previous users of mobile applications.
 
@@ -89,10 +90,9 @@ In the given scenario any pending changes done by a user should be uploaded befo
 
     ![Rename & Save Step](img_3_8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure app parameters)]
+### Configure app parameters
+
 
 1. In Xcode, Open **`AppParameters.plist`**.
 
@@ -106,10 +106,9 @@ In the given scenario any pending changes done by a user should be uploaded befo
 
       ![AppParameters.plist Xcode View](img_4_2.png)  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Modify AppDelegate for multi-user onboarding flow and get multi-user callbacks)]
+### Modify AppDelegate for multi-user onboarding flow and get multi-user callbacks
+
 
 1. Open AppDelegate.swift
 
@@ -170,10 +169,9 @@ extension AppDelegate: UserEventObserving {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Modify OnboardingFlowProvider and ODataOnboardingStep for reset passcode scenario)]
+### Modify OnboardingFlowProvider and ODataOnboardingStep for reset passcode scenario
+
 
 
 1. Open `OnboardingFlowProvider.swift` file.
@@ -222,10 +220,9 @@ public func resetPasscode(context: OnboardingContext, completionHandler: @escapi
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Configure OData for offline scenarios)]
+### Configure OData for offline scenarios
+
 
 ## Step7: Configure OData for offline scenarios
 
@@ -381,10 +378,9 @@ public func configureOData(sapURLSession: SAPURLSession, serviceRoot: URL, onboa
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Handle offline OData sync failure)]
+### Handle offline OData sync failure
+
 
 
 1. Open `ESPMContainerOfflineODataController.Swift`
@@ -433,10 +429,9 @@ public enum Error: Swift.Error {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Multi-user error handling)]
+### Multi-user error handling
+
 
 ## Step9: Multi-user error handling
 
@@ -587,11 +582,10 @@ private func restoreFailed(with error: Error, controller: OnboardingControlling,
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Build and run the application)]
+### Build and run the application
+
 
 1. In the menu bar, click Product &rarr; **Build**.
 
@@ -604,10 +598,9 @@ private func restoreFailed(with error: Error, controller: OnboardingControlling,
     ![Xcode Run](img_11_2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Onboard multiple users)]
+### Onboard multiple users
+
 
 1. Click **Start**.
 
@@ -673,10 +666,10 @@ private func restoreFailed(with error: Error, controller: OnboardingControlling,
 
     ![iOS App User passcode](img_12_15.png)
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Try offline scenarios)]
+
+### Try offline scenarios
+
 
 1. Sign into User A's account.
 
@@ -704,8 +697,6 @@ In this step you've seen how the changes done by User A are not lost even when t
 
 Congratulations on completing the tutorial!
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

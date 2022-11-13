@@ -1,25 +1,26 @@
 ---
-title: Setup your SAP HANA, express edition, instance
-description: Setup your SAP HANA, express edition, instance with XS Advanced applications
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Setup your SAP HANA, express edition, instance
+<!-- description --> Setup your SAP HANA, express edition, instance with XS Advanced applications
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 You will import and setup a virtual machine with SAP HANA, express edition. **Please note** that this virtual machine will be deleted by the next participant.
-
-### Time to Complete
+## Time to Complete
 **25 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open VMWare Workstation Player)]
+### Open VMWare Workstation Player
+
 
 Open `VMWare Workstation Player`:
 
@@ -59,11 +60,10 @@ Which are some of the tabs you see next to **Overview** (more than one option ap
 
 Choose the right tabs and click on **Validate**
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](While you are waiting: What is SAP HANA, express edition?)]
+### While you are waiting: What is SAP HANA, express edition?
+
 
 SAP HANA, express edition, is a streamlined version of the SAP HANA development platform. It is designed to run in constrained environments, such as a laptop. For this same reason, some of the features that become irrelevant in these environments, such as high-availability or connectivity to SAP Solution Manager, were removed from the platform.
 
@@ -76,11 +76,10 @@ The version you will be using today includes the XS Advanced applications. Howev
 SAP HANA, express edition, can be downloaded for free and can also be executed in different cloud providers such as Google Cloud Platform, Amazon Web Services and MS Azure. **The license allows you to use the platform for free for productive use up to 32 GB of RAM.** You can upgrade the license to use more if needed.
 
 
-[VALIDATE_3]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start Setup)]
+### Start Setup
+
 
 Once the Virtual Machine is imported, you can start using it. Click on **Play virtual machine**:
 
@@ -106,11 +105,10 @@ You will be asked to confirm if you want to continue setup. Choose `Y`.
 
 The database server and XS Advanced applications will now start. You can continue with the next step while the setup makes progress.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Setup the hosts file)]
+### Setup the hosts file
+
 
 After a minute or two, you will see your IP address. **Take note of it**:
 
@@ -144,11 +142,10 @@ Enter `ping hxehost`. Copy the first **three lines from the response** into the 
 
 ![Command prompt](ping.png)
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Log in as XSA_DEV and get the Web IDE URL)]
+### Log in as XSA_DEV and get the Web IDE URL
+
 
 Once the database and XS Advanced Applications have started, you will see the following success message:
 
@@ -175,5 +172,3 @@ You will see the status of the Web IDE application. Once it is shown as **`1/1`*
 
 You can see the URL for Web IDE is `https://hxehost:53075`.
 
-[DONE]
-[ACCORDION-END]

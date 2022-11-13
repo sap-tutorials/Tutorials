@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Undeploy Your CAP Application from Kyma
-description: This tutorial shows you how to undeploy your CAP application from Kyma.
 keywords: cap
 auto_validation: true
 time: 5
@@ -10,18 +9,21 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Undeploy Your CAP Application from Kyma
+<!-- description --> This tutorial shows you how to undeploy your CAP application from Kyma.
+
 ## Prerequisites
  - [Assign a Role Collection to a User](btp-app-kyma-role-assignment)
 
 
-## Details
-### You will learn
+## You will learn
  - How to undeploy your CAP application from Kyma
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Undeploy your CAP application from Kyma)]
+### Undeploy your CAP application from Kyma
+
 1. Uninstall the CAP application:
 
     ```Shell/Bash
@@ -46,6 +48,5 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     kubectl delete namespace  risk-management
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

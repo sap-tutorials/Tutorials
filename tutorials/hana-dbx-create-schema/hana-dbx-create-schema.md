@@ -420,7 +420,6 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 ### Create views
 
-
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
     ```SQL
@@ -621,3 +620,4 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  
+

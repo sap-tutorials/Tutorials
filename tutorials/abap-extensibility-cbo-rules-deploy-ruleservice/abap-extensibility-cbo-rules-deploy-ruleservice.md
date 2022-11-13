@@ -1,11 +1,13 @@
 ---
-title: Deploy  Rules Service to S/4HANA Cloud
-description: Deploy the business rules in S/4HANA cloud system after successfully activating all business rules models.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
+
+# Deploy  Rules Service to S/4HANA Cloud
+<!-- description --> Deploy the business rules in S/4HANA cloud system after successfully activating all business rules models.
 
 ## Prerequisites
   - You must have S/4HANA Cloud account with 1811 or higher release.
@@ -13,10 +15,10 @@ primary_tag: topic>abap-extensibility
   - You must have configured the system in SAP Cloud Platform Business Rules.
   - User must have **`RuleSuperUser`** role assigned to SAP Cloud Platform Business Rules Runtime.
 
-## Details
-### You will learn
+## You will learn
   - How to manage and deploy business rules in S/4HANA
 
+## Intro
 **SAP Cloud Platform Business Rules** encapsulates high change decision logic from application logic. It enables centralised decision management across the Intelligent Enterprise Suite with central authoring, repository, governance and life cycle management capabilities. The idea is to centrally author and manage business rules and directly deploy them to different systems like SAP S/4HANA, SAP HANA etc.
 
 In this tutorial, you will learn how to deploy the business rules directly in S/4HANA cloud system.
@@ -26,7 +28,8 @@ For more information, you can read the help documentation:
 
 [Deploy Rules](https://help.sap.com/viewer/9d7cfeaba766433eaea8a29fdb8a688c/Cloud/en-US/0d449b981aad4e19b978d59acaf3f3af.html)
 
-[ACCORDION-BEGIN [Step 1: ](Check system property)]
+### Check system property
+
 
 1. Go to the **Details** tab of the business rules project.
 
@@ -36,10 +39,9 @@ For more information, you can read the help documentation:
 
     ![check project](checkproject.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Check active status of rule models)]
+### Check active status of rule models
+
 
 1. All business rule models i.e. rule services, rules, rule sets and data objects, must be in `Active` state.
 
@@ -59,10 +61,9 @@ For more information, you can read the help documentation:
 
     ![check rulesets](checkrulesets.png)    
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy rule service)]
+### Deploy rule service
+
 
 1. Once all the rule models are activated, switch to **Rule Services** tab.
 
@@ -82,16 +83,14 @@ For more information, you can read the help documentation:
 
     ![deploy ruleservice](deployrule3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-[VALIDATE_2]
-[ACCORDION-END]
+
+### Test yourself
+
+
+
 ---

@@ -247,12 +247,12 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![Collection properties](collection-properties.png)
 
+
     Click on the glasses icon to view the JSON text itself.
 
     ![JSON text](json-text.png)
 
 ### Import and view spatial data
-
 
 This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 

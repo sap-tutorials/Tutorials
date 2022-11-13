@@ -1,17 +1,18 @@
 ---
-title: Create a Graphical View in SAP Data Warehouse Cloud
-description: With SAP Data Warehouse Cloud, you can use a graphical interface to create data views. You can drag and drop sources, join them as appropriate, add other operators to transform your data, and specify measures and other aspects of your output structure in the output node.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create a Graphical View in SAP Data Warehouse Cloud
+<!-- description --> With SAP Data Warehouse Cloud, you can use a graphical interface to create data views. You can drag and drop sources, join them as appropriate, add other operators to transform your data, and specify measures and other aspects of your output structure in the output node.
+
 ## Prerequisites
  - You have [imported your dataset into your Space.](data-warehouse-cloud-5-import-dataset)
 
-## Details
-### You will learn
+## You will learn
   - What graphical views are
   - How to create a graphical view
   - How to rename columns in your graphical view
@@ -37,7 +38,8 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the graphical views)]
+### Get to know the graphical views
+
 
 In SAP Data Warehouse Cloud, you can use the graphical view builder to easily create data views. This allows you to work intuitively without having to be familiar with SQL statements.
 
@@ -48,10 +50,9 @@ In the graphical view builder, you have many resources to model your data, combi
 >
 If you are comfortable writing SQL code or want to use SQL Script to create your view, you can use the SQL View editor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a graphical view)]
+### Create a graphical view
+
 
 1.	Go to the **Data Builder** and click on the **New Graphical View** button.
 
@@ -76,31 +77,30 @@ If you are comfortable writing SQL code or want to use SQL Script to create your
 
 7.	Now drag in the `BusinessPartners` table. We'll go ahead and join it to the `SalesOrders` table. The column `Partner ID` from each table will join automatically, but if you want to double check, look at the join properties panel.
 
-    !![PartnerID](T07-Picture7.png)
+    <!-- border -->![PartnerID](T07-Picture7.png)
 
 
 8.	If an alert has popped up on the Join 2 node, click on the join and make sure the `PartnerID` column from both tables is connected.
 
 9.	Next, join the `Addresses` table to your `BusinessPartners` table. These `AddressID` will automatically be mapped based on the association in the entity relationship model.
 
-    !![Addresses Table](T07-Picture8.png)
+    <!-- border -->![Addresses Table](T07-Picture8.png)
 
 
 
 
 Now you've joined all the tables for this mission.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Rename and restore columns)]
+### Rename and restore columns
+
 
 With the graphical view in place, rename some columns to help others understand better what the data is about. Rename the `Grossamount` column from the `SalesOrders` table and from the `SalesOrderItems` table so you can tell them apart.
 
 1.	To do this, click on the projection one node immediately on the right-side of the output node.
 
-    !![Projection Node](T07-Picture10.png)
+    <!-- border -->![Projection Node](T07-Picture10.png)
 
 2.	Search for the `GrossAmount` column in the projection properties panel.
 
@@ -108,7 +108,7 @@ With the graphical view in place, rename some columns to help others understand 
 
 3.	If one of the columns is greyed out, this means the column has been automatically removed. Click on the dots next to it and select **Restore column**.
 
-    !![Restore Column](T07-Picture12.png)
+    <!-- border -->![Restore Column](T07-Picture12.png)
 
 4.	Next, click on the column name. On the canvas, you will see a highlight that shows you exactly where the column originates from.
 
@@ -121,10 +121,9 @@ With the graphical view in place, rename some columns to help others understand 
 
     ![Renamed Columns](T07-Picture16.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save and deploy)]
+### Save and deploy
+
 
 You have successfully created your graphical view. It is now extremely important to first save, and then deploy your view. When you save an object, it is stored in the SAP Data Warehouse Cloud repository, which contains the design-time definitions of all your objects. When you deploy an object, you are creating a run-time version for use in the SAP Data Warehouse Cloud database.
 
@@ -136,7 +135,6 @@ Once done, click on the deploy icon next to the save icon to deploy your model.
 
 ![Deploy](T07-Picture15.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

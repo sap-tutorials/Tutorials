@@ -1,6 +1,5 @@
 ---
-title: Using Index Based Cell Access
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -9,18 +8,22 @@ time: 10
 
 ---
 
+# Using Index Based Cell Access
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 
-## Details
-### You will learn  
+## You will learn  
 - How to use index-based cell access to manipulate table data.
 
+## Intro
 Using index-based cell access to manipulate table data is faster than using cursors or arrays.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a New Procedure)]
+### Create a New Procedure
+
 
 Use what you have learned and create a new procedure called `build_products` in the procedure folder.
 
@@ -30,21 +33,18 @@ Define an output parameters as show here.
 
 ![output parameter](2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Insert Into Table
 
-[ACCORDION-BEGIN [Step 2: ](Insert Into Table)]
 
 Using index based cell access, insert rows into an intermediate table variable as shown here.
 
 ![insert](3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Check Complete Code)]
+### Check Complete Code
+
 
 The completed code should look like the following.
 ```
@@ -78,35 +78,30 @@ BEGIN
 END
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Save and Build)]
+### Save and Build
+
 
 Click **Save**.  Use what you have learned already and perform a build on your `hdb` module.
 
 ![save](5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Run Call Statement Again)]
+### Run Call Statement Again
+
 
 Return to the Database Explorer page and generate and run the CALL statement.
 
 ![HRTT](6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Check the Results)]
+### Check the Results
+
 
 Check the results.
 
 ![results](7.png)
 
-[DONE]
-[ACCORDION-END]

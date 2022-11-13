@@ -1,6 +1,5 @@
 ---
-title: Call an External API in SAP ABAP Environment
-description: Point to an external API SAP BTP Environment and display its output in the console.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
@@ -9,13 +8,15 @@ author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
+# Call an External API in SAP ABAP Environment
+<!-- description --> Point to an external API SAP BTP Environment and display its output in the console.
+
 ## Prerequisites  
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 - You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
 - **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 
-## Details
-### You will learn  
+## You will learn  
   - How to create a new destination in SAP Cloud cockpit
   - How to call an external API from inside an ABAP class by pointing to this destination
 
@@ -24,18 +25,20 @@ You will create a new destination service instance, specifying the URL for an ex
 You will then create a class that calls the API and displays the output from it in the console.
 This enables you to avoid hard-coding the URL of the external API in your ABAP class.
 
+## Intro
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
-[ACCORDION-BEGIN [Step 1: ](Create destination service)]
+### Create destination service
+
 You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
 1. In the SAP Cloud Platform cockpit of your Cloud Foundry subaccount, navigate to your subaccount.
 
-  !![step1a-subaccount](step1a-subaccount.png)
+  <!-- border -->![step1a-subaccount](step1a-subaccount.png)
 
 2. Choose **Destinations**, then choose **New Destinations**.
 
-    !![step1a-cf-cockpit-new-destination](step1a-cf-cockpit-new-destination.png)
+    <!-- border -->![step1a-cf-cockpit-new-destination](step1a-cf-cockpit-new-destination.png)
 
 2. Enter the following values and choose **Save**:
 
@@ -48,18 +51,17 @@ You will now create a destination in the ABAP Environment. This must be created 
     |  Proxy Type   | Internet
     |  Authentication | `NoAuthentication`
 
-    !![step2b-destination-streetmap](step2b-destination-streetmap.png)
+    <!-- border -->![step2b-destination-streetmap](step2b-destination-streetmap.png)
 
 3. Choose **Check Connection**. You should get the following response.
 
-  !![step1c-check-connection-200](step1c-check-connection-200.png)
+  <!-- border -->![step1c-check-connection-200](step1c-check-connection-200.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create new package)]
+### Create new package
+
 1. In ABAP Development Tools (ADT), select the ABAP Cloud Project and choose **New > ABAP Package**.
 
 2. Enter the following and choose **Next**:
@@ -71,12 +73,11 @@ You will now create a destination in the ABAP Environment. This must be created 
 
 3. Choose **Create new transport request**, enter a description, such as "External API", then choose **Finish**.
 
-    !![step1c-new-transport-request](step1c-new-transport-request.png)
+    <!-- border -->![step1c-new-transport-request](step1c-new-transport-request.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create ABAP class)]
+### Create ABAP class
+
 Now, you will create an ABAP class that will call your destination, and which you can run in the console.
 
 1. In the ABAP Development Tools `(ADT)`, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
@@ -95,11 +96,9 @@ The class is displayed in a new editor.
 
 ![Image depicting step-4d-class-editor](step-4d-class-editor.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add INTERFACES statement
 
-[ACCORDION-BEGIN [Step 4: ](Add INTERFACES statement)]
 Add the following `interfaces` statement to the public section:
 
 ```ABAP
@@ -109,11 +108,9 @@ PRIVATE SECTION.
 ```
 This enables you to run the class in the console.
 
-[DONE]
 
-[ACCORDION-END]
+### Copy code
 
-[ACCORDION-BEGIN [Step 5: ](Copy code)]
 To be able to access the external service, you must:
 - maintain a cloud destination for the remote system
 - create an HTTP client
@@ -143,31 +140,24 @@ METHOD if_oo_adt_classrun~main.
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Check, save, and activate
 
-[ACCORDION-BEGIN [Step 6: ](Check, save, and activate)]
 1. Check your syntax (`Ctrl+F2`).
 2. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
 
-[DONE]
 
-[ACCORDION-END]
+### Run class in ABAP Console
 
-[ACCORDION-BEGIN [Step 7: ](Run class in ABAP Console)]
 Run your class in the console (`F9`).
 
 The output should look something like this:
 .
 ![Image depicting step-9-console](step-9-console.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+

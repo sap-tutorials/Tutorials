@@ -82,6 +82,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 |  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/whats-new/2495b34492334456a49084831c2bea4e?Category=SAP%20HANA%20Database%20Explorer&locale=en-US)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
 
 
+
 ### Version information
 
 The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version if applicable, in a later release.  Features are also enabled based on the database being connected to.  For example, the ability to import and export from cloud storage providers is a feature of an SAP HANA Cloud database.
@@ -150,7 +151,11 @@ The software can be downloaded from the [Cloud Foundry Foundation](https://githu
 
 2. Copy the API endpoint from your SAP HANA Cloud account. This information can be found on the Overview page of your SAP BTP Cockpit. The API endpoint is listed under the Cloud Foundry subheading. Save the API endpoint for use in the next step.
 
+
     ![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
+
+    <!-- border -->![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
+
 
 3. In your terminal, type the following command. Replace the API endpoint with the one you copied from the previous step:
 
@@ -251,6 +256,7 @@ Let's take a look at how we can start an instance using the BTP CLI.
     ![Start Instance](update-service.png)
 
 
+
 ### SAP HANA, express edition
 
 
@@ -272,4 +278,4 @@ It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP
 
 Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
 
----
+

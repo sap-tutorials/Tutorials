@@ -1,11 +1,13 @@
 ---
-title: Prepare the SAP SuccessFactors Extension UI with CDS Annotations
-description: In this phase of the development you will add CDS annotations to the CAP service for further usage by the Fiori Elements UI.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Prepare the SAP SuccessFactors Extension UI with CDS Annotations
+<!-- description --> In this phase of the development you will add CDS annotations to the CAP service for further usage by the Fiori Elements UI.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -15,8 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Create the CAP Service for the SAP SuccessFactors Extension**](cap-extend-sfsf-create-service)
  - Complete the tutorial: [**Add Business Logic to the SAP SuccessFactors Extension**](cap-extend-sfsf-add-logic)
 
-## Details
-### You will learn
+## You will learn
   - How to **create the annotations file**
   - How to **code the CDS annotations** into the file
   - Understand the **value help** annotations
@@ -26,7 +27,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the annotations file)]
+### Create the annotations file
+
 
 It is a best practice to maintain the UI annotations in a separate file referencing your CAP service. So, go ahead and create that file.
 
@@ -38,10 +40,9 @@ On the **dialog** name the file `projman-service-ui.cds` and click **OK**.
 
 ![Figure 2 – Set File Name](set-file-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the CDS annotations)]
+### Code the CDS annotations
+
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -636,10 +637,9 @@ annotate service.Status @(Capabilities : {
 });
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the value help annotations)]
+### Understand the value help annotations
+
 
 The code from the previous step contains all required CDS annotations to make the UI look and behave like expected by the business rules defined in the [**group introduction and preparation**](cap-extend-sfsf-intro).
 
@@ -659,10 +659,9 @@ Notice that the **collection path** for the **first value help** is `SFSF_User`,
 
 Therefore, to filter the records in the second value help so only members of the current project are displayed, you set the `Common.ValueListParameterIn` parameter from the `ValueList` annotation to the activity's `parent_ID` which is actually the current project being edited.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the application UI)]
+### Test the application UI
+
 
 Finally, it's come the time to test everything that you have done so far! For that, you can rely on the nice **Fiori Preview** feature that's available during development.
 
@@ -714,10 +713,9 @@ Click on the **Save** button in the bottom-right corner to **save the project** 
 
 ![Figure 11 – Project saved with New Team Member](project-saved.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check operation result on SAP SuccessFactors)]
+### Check operation result on SAP SuccessFactors
+
 
 You'll now check what happened on the **SAP SuccessFactors side** after this operation.
 
@@ -735,10 +733,9 @@ Now, search for the Special Assignments block from the profile to verify whether
 
 ![Figure 14 – Special Assignment in SAP SuccessFactors](special-assignment.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Execute other tests)]
+### Execute other tests
+
 
 The **test sequence** you've executed is the **most important** in the context of extending the SAP SuccessFactors solution with **data flowing in both directions**: from and to SAP SuccessFactors.
 
@@ -756,10 +753,8 @@ Here is a list of other tests that you can execute on your own to make sure the 
 
 If all those tests are successful, then you can say your application is working pretty fine according to the defined business rules.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

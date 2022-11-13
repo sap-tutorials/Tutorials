@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a SAP Fiori App and Deploy it to SAP BTP, Cloud Foundry environment
-description: Create a SAP Fiori app using SAP-managed app router for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, Cloud Foundry environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a SAP Fiori App and Deploy it to SAP BTP, Cloud Foundry environment
+<!-- description --> Create a SAP Fiori app using SAP-managed app router for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, Cloud Foundry environment.
 
 ## Prerequisites  
 - **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -19,8 +21,7 @@ author_profile: https://github.com/mervey45
 
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to create MTA projects
 - How to create SAP Fiori applications
 - How to run applications
@@ -32,7 +33,8 @@ author_profile: https://github.com/mervey45
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
+### Open SAP Business Application Studio
+
 
   1. Log in to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -47,10 +49,9 @@ author_profile: https://github.com/mervey45
       ![SAP Business Application Studio](basnew.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create dev space)]
+### Create dev space
+
 
   1. Create a new dev space:
        - Name: **`Managed_App_Router`**
@@ -72,10 +73,9 @@ author_profile: https://github.com/mervey45
 
       ![dev](bas44.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create MTA project)]
+### Create MTA project
+
 
   1. Select **View** > **Find Command**.
 
@@ -99,10 +99,9 @@ author_profile: https://github.com/mervey45
       ![MTA project](mta4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Login to Cloud Foundry)]
+### Login to Cloud Foundry
+
 
   1.  Select **View** > **Find Command**.
 
@@ -138,10 +137,9 @@ author_profile: https://github.com/mervey45
 
       ![login](cf8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create SAP Fiori application​)]
+### Create SAP Fiori application​
+
 
   1. Select **View** > **Find Command**.
 
@@ -207,20 +205,18 @@ author_profile: https://github.com/mervey45
       ![Fiori application](fiori8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Check result)]
+### Check result
+
 
 Check your result
 
   ![result](result.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run application)]
+### Run application
+
 
 1. Right-click your SAP Fiori Application `ztravel_app_xxx` and select **Open in Terminal**.
 
@@ -239,10 +235,9 @@ Check your result
     ![run](run4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Build MTA project​)]
+### Build MTA project​
+
 
   1. Right-click your  `mta.yaml`file inside your SAP Fiori Application `ztravel_app_xxx` and select **Build MTA Project**.
 
@@ -254,11 +249,10 @@ Check your result
 
     >**HINT:** You can also create the `mta_archives` by right-click on the **project** > **open terminal**, and **check** where the `mta_archive` is present, and then run the command `npm run build`. The `mta_archives` file will then get generated.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Deploy MTA archive file​)]
+### Deploy MTA archive file​
+
 
   1. Right-click your  `ztravel_app_xxx_0.0.1.mtar`file inside your `mta_archives` folder and select **Deploy MTA Archive**.
 
@@ -272,11 +266,10 @@ Check your result
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Check deployment result)]
+### Check deployment result
+
 
   1. Go back to SAP BTP trial cockpit, select **HTML5 Applications** on the left menu and select your application **`ztravelappxxx`**.
 
@@ -291,10 +284,9 @@ Check your result
 
       ![deployment](deployment3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Open SAP Launchpad Service)]
+### Open SAP Launchpad Service
+
 
   1. Go back to SAP BTP trial cockpit, select **Service Marketplace** on the left menu, search for **Launchpad Service** and select **Go to Application**.
 
@@ -316,10 +308,8 @@ Check your result
       ![service](service5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

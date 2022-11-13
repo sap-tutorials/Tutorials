@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Create Users and Manage Roles and Privileges
-description: Learn how to create users and assign roles and privileges in SAP HANA Cloud, SAP HANA database using SAP HANA Cockpit or SQL statements.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Create Users and Manage Roles and Privileges
+<!-- description --> Learn how to create users and assign roles and privileges in SAP HANA Cloud, SAP HANA database using SAP HANA Cockpit or SQL statements.
 
 ## Prerequisites
 - [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
@@ -15,13 +17,13 @@ primary_tag: products>sap-hana-cloud
 - If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
 
 
-## Details
-### You will learn
+## You will learn
 - The basics about the role-based security model in SAP HANA Cloud, SAP HANA database
 - How to create users in SAP HANA cockpit
 - How to assign roles in SAP HANA cockpit
 - How to create users, and assign roles and privileges using SQL statements in SAP HANA Database Explorer
 
+## Intro
 >
 > ![Alex Banner](banner-alex.png)
 >
@@ -54,7 +56,8 @@ In this tutorial, you will learn how to create users and assign roles and privil
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand roles and privileges)]
+### Understand roles and privileges
+
 
 SAP HANA Cloud, SAP HANA database defines user permissions and privileges using a **role-based security model**.
 
@@ -74,10 +77,9 @@ Ownership of a table is not sufficient to load the table with data. The user mus
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create users and roles and manage privileges)]
+### Create users and roles and manage privileges
+
 
 Before you add users to an instance, you should create user roles that fit your needs. You can leverage some of the default user roles, edit them, or create completely customized ones.
 
@@ -95,27 +97,27 @@ In this step, you can find instructions on both of these options. Click on **SAP
 
 2.	In SAP HANA cockpit, select the **Security** menu item on the top left-hand side of the screen.
 
-    !![HANA cockpit overview security menu](ss-01-HANA-cockpit-overview-security-menu.png)
+    <!-- border -->![HANA cockpit overview security menu](ss-01-HANA-cockpit-overview-security-menu.png)
 
 3.	Next, under User & Role Management, click on **Role Management** to get started.
 
-    !![HANA cockpit Role Management](ss-02-HANA-cockpit-role-management.png)
+    <!-- border -->![HANA cockpit Role Management](ss-02-HANA-cockpit-role-management.png)
 
 4.	On this screen, you can see a list of all existing user roles on the left-hand side of the screen. If you click on one of them, you will see the details of this role on the right-hand side of the screen. Clicking on one of the roles allows you to edit them, for example, you can assign System, Object and Analytic Privileges and more.
 
-    !![HANA cockpit Role Management submenu](ss-03-HANA-cockpit-role-mgmt-submenu.jpg)
+    <!-- border -->![HANA cockpit Role Management submenu](ss-03-HANA-cockpit-role-mgmt-submenu.jpg)
 
 5.	To create a new user role, however, click on the **plus icon** on the top left-hand side of the screen.
 
-    !![Plus icon](ss-04-plus-icon.png)
+    <!-- border -->![Plus icon](ss-04-plus-icon.png)
 
 6.	This opens the role creation wizard on the right-hand side of the screen. After specifying your new role, click on **Create** at the bottom right corner of the screen.
 
-    !![HANA cockpit security create role](ss-05-HANA-cockpit-security-create-role.png)
+    <!-- border -->![HANA cockpit security create role](ss-05-HANA-cockpit-security-create-role.png)
 
 7.	Now that you created the role, it's time to assign privileges to it. Click on **Edit** at the top right corner when viewing your new role. You have a few options here. First, you can add some of the existing roles into this one, combining the privileges into one single role.
 
-    !![HANA cockpit security add privileges](ss-06-HANA-cockpit-security-add-privileges.jpg)
+    <!-- border -->![HANA cockpit security add privileges](ss-06-HANA-cockpit-security-add-privileges.jpg)
 
 8.	Next, you can select individual privileges, be it system, object, or analytic privileges. For more technical details on creating roles and deciding on privileges, please see our [technical documentation here](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/LATEST/en-US/dec8d273bb571014b4c2b771d3e0f166.html).
 
@@ -131,7 +133,7 @@ In this step, you can find instructions on both of these options. Click on **SAP
 
 13.	This screen works just like the previous one, so click on the **plus icon** to add a new user.
 
-    !![HANA cockpit security user mgmt](ss-07-HANA-cockpit-security-usermgmt.jpg)
+    <!-- border -->![HANA cockpit security user mgmt](ss-07-HANA-cockpit-security-usermgmt.jpg)
 
 14.	Next, you can choose between creating a user or creating a restricted user. To know more about what that means, please [click here](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/b3db382e906646849e227156bd4e0c6e.html).
 
@@ -196,15 +198,13 @@ Learn in the next tutorial how to import sample data to your SAP HANA Cloud, SAP
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

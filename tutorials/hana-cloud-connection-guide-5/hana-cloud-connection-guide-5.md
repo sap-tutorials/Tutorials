@@ -1,24 +1,26 @@
 ---
-title: Connect SAP ERP Central Component to SAP HANA Cloud
-description: Connect your SAP ERP Central Component (ECC) to SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Connect SAP ERP Central Component to SAP HANA Cloud
+<!-- description --> Connect your SAP ERP Central Component (ECC) to SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
 - Make sure you have a **running** SAP HANA database instance in SAP HANA Cloud.
 - You have access to SAP ERP Central Component (ECC)
 
 
-## Details
-### You will learn
+## You will learn
 - How to configure the Data Provisioning Agent for connecting SAP ERP Central Component with SAP HANA Cloud, SAP HANA database
 - How to register the Data Provisioning Adapter with SAP HANA Cloud, SAP HANA database
 - How to connect SAP ERP Central Component with SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 SAP HANA Cloud, SAP HANA database offers a wide range of connection options and one of the main advantages of using it is the ability to access your data from multiple sources from one single source. If you are currently using an SAP ERP Central Component (ECC) system within your company, you can connect this system to SAP HANA Cloud, SAP HANA database and consume data coming from SAP ECC within SAP HANA Cloud.
 
 You can virtualise the data that lives in SAP ERP from SAP HANA Cloud, SAP HANA database and then use these virtual objects in data models, as part of hybrid queries, and also make any subset of this data available to analytical tools, such as SAP Analytics Cloud.
@@ -28,7 +30,8 @@ Let's look at the details on how to create the connection.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the Data Provisioning Agent )]
+### Install the Data Provisioning Agent 
+
 
 > ### Prerequisites
 >
@@ -46,7 +49,7 @@ On the SAP Software Download Center, the installation package is in the followin
 
 3.	Then right click on **hdbsetup.exe** and choose **Run as administrator**.
 
-    !![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-Data-Provisioning-Agent.png)
+    <!-- border -->![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-Data-Provisioning-Agent.png)
 
 4.	Choose **Install new SAP HANA Data Provisioning Agent** and specify the installation path.
 
@@ -54,16 +57,15 @@ On the SAP Software Download Center, the installation package is in the followin
 
 6.	Next, specify the username (`<domain>\<username>`) and password to use for the agent service. The user that runs the agent service must have read and write access to the installation directory so configuration files can be updated.
 
-    !![Services running](ss-02-services-running.png)
+    <!-- border -->![Services running](ss-02-services-running.png)
 
 7.	To check if you agent is running, type services on the windows search bar and select **Run as Administrator**.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure the Data Provisioning Agent for connecting to SAP HANA Cloud )]
+### Configure the Data Provisioning Agent for connecting to SAP HANA Cloud 
+
 
 
 > ### Prerequisites
@@ -86,7 +88,7 @@ set DPA_INSTANCE=C:\usr\sap\dataprovagent
     ```Shell/Bash
 agentcli.bat –configAgent
 ```
-    !![Start command line config tool](ss-03-start-command-line-config-tool.png)
+    <!-- border -->![Start command line config tool](ss-03-start-command-line-config-tool.png)
 
 5.	Select **SAP HANA Connection**.
 
@@ -100,14 +102,13 @@ agentcli.bat –configAgent
 
 10.	Then the credentials for the SAP HANA User for Agent Messaging. Also specify whether to create a new SAP HANA User for Agent Messaging.
 
-    !![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
+    <!-- border -->![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Register the Data provisioning adapter with SAP HANA Cloud )]
+### Register the Data provisioning adapter with SAP HANA Cloud 
+
 
 > ### Prerequisites
 >
@@ -119,33 +120,32 @@ agentcli.bat –configAgent
 
 3.	Select **Display adapter** to view the list of available adapters. Then note the ABAP Adapter name and go back.
 
-    !![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
+    <!-- border -->![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
 
 
 4.	Next select **Register Adapters** and type in the adapter name as `ABAPAdapter`.
 
-    !![Register Adapter](ss-06-register-adapter.png)
+    <!-- border -->![Register Adapter](ss-06-register-adapter.png)
 
 The selected adapter has been registered with SAP HANA and can be selected when creating a remote source.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a remote source on the database)]
+### Create a remote source on the database
+
 
 
 1.	Launch the **SAP HANA Database Explorer**.
 
 2.	Expand **Catalog** under your database and right click on **Remote Sources**. Select **Add Remote Source**.
 
-    !![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
+    <!-- border -->![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
 
 
 3.	Under **Adapter Name** select the `ABAPAdapter` that you registered above.
 
-    !![Add Remote Source](ss-08-add-remote-source.png)
+    <!-- border -->![Add Remote Source](ss-08-add-remote-source.png)
 
 4.	Then enter the **Application Server**, **Client**, and **Instance number** of your SAP ERP system.
 
@@ -156,10 +156,9 @@ Now you've successfully added a new remote source and established a connection t
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create virtual tables in the database)]
+### Create virtual tables in the database
+
 
 You can test this connection by creating virtual tables in SAP HANA Cloud, SAP HANA database that point to your SAP ERP system.
 
@@ -203,14 +202,12 @@ You have completed the fifth tutorial of this tutorial group. In the next tutori
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

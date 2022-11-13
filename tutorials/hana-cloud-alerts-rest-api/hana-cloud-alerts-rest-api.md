@@ -217,11 +217,11 @@ The following instructions will show a few examples of how to view the list of t
 
     ![Result of request to return the HDBDiskUsage alert rule](disk_usage_alert_rule.png)
 
+
     For additional details on the alerts REST API, see [APIs for Alerts](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/81d5c960888741cc8875ab225c540f0a.html) and [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/6f75804854254aa59f0faf399688f467.html).  
 
 
 ### Access database metrics
-
 
 The following instructions will show a few examples of how to view metrics through a REST API in SAP HANA Cloud, SAP HANA database.
 

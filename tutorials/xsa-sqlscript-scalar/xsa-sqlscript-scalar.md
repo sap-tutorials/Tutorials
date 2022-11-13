@@ -1,6 +1,5 @@
 ---
-title: Create Scalar User Defined Functions
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,18 +7,21 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 
+# Create Scalar User Defined Functions
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+
 ## Prerequisites
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud. 
 - **Tutorials:**  [Intermediate Table Variables](xsa-sqlscript-table-var)
 
-## Details
-### You will learn  
+## You will learn  
 - How to create a scalar UDF for generating a full name from the last, first and middle name of the employee
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create New Function)]
+### Create New Function
+
 
 Create a new folder called `functions` under the `src` folder by right clicking on the `src` folder and choosing **New**, then **Folder**.
 
@@ -33,10 +35,9 @@ Enter the name of the file as `get_full_name` and click **Create**.
 
 ![create](2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit the Function and Save)]
+### Edit the Function and Save
+
 
 The editor will open with a small code snippet inserted
 
@@ -72,10 +73,9 @@ Click **Save**
 ![save](6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Edit Procedure)]
+### Edit Procedure
+
 
 Return to your procedure called `get_po_header_data` and modify it. Start by renaming the `LOGINNAME` column of the output table to `FULLNAME`. Also change the output length to 256. This is needed to match later on which the anticipated output structure.
 
@@ -128,14 +128,11 @@ EX_TOP_3_EMP_PO_COMBINED_CNT =
 END
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save, Build and Check Results)]
+### Save, Build and Check Results
+
 
 Click **Save**. Use what you have learned already and perform a build on your `hdb` module. Then return to the Database Explorer and generate a new CALL statement and run it. Notice the `FULLNAME` column, it shows the results of the scalar `UDF` logic.
 
 ![Results](13.png)
 
-[DONE]
-[ACCORDION-END]

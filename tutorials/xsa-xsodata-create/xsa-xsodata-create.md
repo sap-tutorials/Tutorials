@@ -1,6 +1,5 @@
 ---
-title: SAP HANA XS Advanced, Creating an OData Service with Create Operation and XSJS Exit
-description: Creating an the basic database artifacts, an OData Service with Create Operation and XSJS Exit to insert data into Entities
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -8,18 +7,21 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 time: 15
 ---
 
+# SAP HANA XS Advanced, Creating an OData Service with Create Operation and XSJS Exit
+<!-- description --> Creating an the basic database artifacts, an OData Service with Create Operation and XSJS Exit to insert data into Entities
+
 ## Prerequisites  
   - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
   - **Tutorials:** [Creating an OData Service with an Entity Relationship](https://developers.sap.com/tutorials/xsa-xsodata-entity.html)
 
-## Details
-### You will learn  
+## You will learn  
   - Now to expand your code to include an XSJS exit
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create User entity and DB artifacts)]
+### Create User entity and DB artifacts
+
 
 You will first create the entities that will be modified by the XSJS exit in your OData service. The exit will create a new User in the User table.
 
@@ -42,12 +44,10 @@ COLUMN TABLE "UserData.User" (
 ```
 
 **Save and Build the `src` folder**.
+  
 
-[DONE]
+### Create the first XSJS library
 
-[ACCORDION-END]  
-
-[ACCORDION-BEGIN [Step 2: ](Create the first XSJS library)]
 
 In the `core_xsjs/lib/xsjs` folder create the file `usersCreateMethod.xsjslib`. This is a server-side JavaScript library. This will be the exit code that performs the validation before the insert of the new record. Here is the code for this file.
 
@@ -102,13 +102,11 @@ function usersCreate(param) {
 	}
 }
 ```
-
-[DONE]
-
-[ACCORDION-END]  
+  
 
 
-[ACCORDION-BEGIN [Step 3: ](Create new OData service)]
+### Create new OData service
+
 
 Create another OData service named `user.xsodata` in `core_xsjs/lib/xsodata` for `User.Details`. You will link the **Create** operation to the `usersCreate` function on the server-side JavaScript library you have just created.
 
@@ -122,14 +120,12 @@ service {
 
 And it should look like this:
 ![New service](2.png)
-
-[DONE]
-
-[ACCORDION-END]  
+  
 
 
 
-[ACCORDION-BEGIN [Step 4: ](Create the second XSJS library)]
+### Create the second XSJS library
+
 
 Create another file in the `core_xsjs/lib/xsjs` folder named `session.xsjslib`. This is just a reusable library that will help use convert `XSJS` record sets to JSON. Here is the code for this file.
 
@@ -368,17 +364,12 @@ function recordSetToJSON(rs, rsName) {
 	return JSON.parse("{\"" + rsName + "\" : [" + table + "]}");
 }
 ```
+  
 
-[DONE]
+### Save and run
 
-[ACCORDION-END]  
-
-[ACCORDION-BEGIN [Step 5: ](Save and run)]
 
 Save and run the Node.js and then run the web module. Change the URL to `/xsodata/user.xsodata` to see if the service is available.
 
 ![Results](4.png) Unfortunately its much more complicated to test Create/Update/Delete methods from the browser as they utilize other HTTP verbs. Browse into the next steps in the XS Advanced tutorials [Consume an OData Service with Create Option](xsa-sapui5-consume) for SAPUI5 interfaces to employ these services.
-
-[DONE]
-
-[ACCORDION-END]  
+  

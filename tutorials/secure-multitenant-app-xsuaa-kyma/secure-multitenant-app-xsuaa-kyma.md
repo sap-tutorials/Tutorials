@@ -1,17 +1,18 @@
 ---
-title: Secure a Multitenant Application with the Authorization and Trust Management Service (XSUAA)
-description: Bind your multitenant application and the approuter application to the xsuaa service instance in the Kyma Runtime, which acts as an OAuth 2.0 client to your application.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Secure a Multitenant Application with the Authorization and Trust Management Service (XSUAA)
+<!-- description --> Bind your multitenant application and the approuter application to the xsuaa service instance in the Kyma Runtime, which acts as an OAuth 2.0 client to your application.
+
 ## Prerequisites
 - You have finished the tutorial [Create and Configure the Approuter Application for a Multitenant Application](create-configure-approuter-multitenant-application)
 
-## Details
-### You will learn
+## You will learn
 - How to create XSUAA instance for multitenancy in the Kyma runtime
 - How to consume XSUAA instance credential from applications
 - How to implement authentication and authorization logic in Node.js applications
@@ -20,7 +21,8 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know SAP Authorization and Trust Management Service)]
+### Get to know SAP Authorization and Trust Management Service
+
 
 Each multitenant application has to deploy its own application router, and the application router handles requests of all tenants to the application. The application router is able to determine the tenant identifier out of the URL and then forwards the authentication request to the tenant User Account and Authentication (UAA) service and the related identity zone.
 
@@ -29,10 +31,9 @@ To use a multitenant application router, you must have a shared UAA service: [SA
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create XSUAA Instance and Credential with ServiceInstance and ServiceBinding)]
+### Create XSUAA Instance and Credential with ServiceInstance and ServiceBinding
+
 
 In Kubernetes, you can create and bind to a service instance using the Service Catalog. Create a new deployment file `k8s-deployment-services.yaml` to define objects for XSUAA instance and binding:
 
@@ -80,11 +81,10 @@ spec:
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access Instance Credential from Approuter and Backend Application)]
+### Access Instance Credential from Approuter and Backend Application
+
 
 SAP's [approuter](https://www.npmjs.com/package/@sap/approuter) uses [`@sap/xsenv` package](https://www.npmjs.com/package/@sap/xsenv) internally to parse and load service keys and secrets bound to the application, this makes the process to load secrets easy.
 
@@ -137,10 +137,9 @@ Now, mount the Secret just generated to the pods of both approuter and node appl
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Authentication and Authorization Logic into Backend Application)]
+### Add Authentication and Authorization Logic into Backend Application
+
 
 **1.** Add libraries for enabling authentication in the `kyma-multitenant-node/app.js` file:
 
@@ -182,10 +181,9 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable Authentication for Approuter Application)]
+### Enable Authentication for Approuter Application
+
 
 Update the `xs-app.json` file:
 
@@ -203,10 +201,9 @@ Update the `xs-app.json` file:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure TENANT_HOST_PATTERN to Determine Identity Zone for Authentication)]
+### Configure TENANT_HOST_PATTERN to Determine Identity Zone for Authentication
+
 
 
 The application router must determine the tenant-specific subdomain for the UAA that in turn determines the identity zone, used for authentication. This determination is done by using a regular expression defined in the environment variable **`TENANT_HOST_PATTERN`**.
@@ -240,7 +237,6 @@ data:
 ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

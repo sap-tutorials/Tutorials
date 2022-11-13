@@ -1,19 +1,20 @@
 ---
-title: Take a Tour of SAP BTP Trial
+parser: v2
 author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
-description: Get familiar with the SAP Business Technology Platform basics to make the most of your try-out experience.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
 primary_tag: software product>sap-business-technology-platform
 ---
 
+# Take a Tour of SAP BTP Trial
+<!-- description --> Get familiar with the SAP Business Technology Platform basics to make the most of your try-out experience.
+
 ## Prerequisites
  - You must have registered for a trial account on SAP Business Technology Platform. See: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) .
 
-## Details
-### You will learn
+## You will learn
   - What SAP Business Technology Platform (BTP) trial offers
   - About the relationship between global accounts, directories, and subaccounts
   - What entitlements and quotas are
@@ -23,7 +24,7 @@ primary_tag: software product>sap-business-technology-platform
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Welcome to SAP BTP Trial)]
+### Welcome to SAP BTP Trial
 
 So, you've signed up for SAP BTP trial but are not quite sure where to start? This tutorial is here to help!
 
@@ -37,10 +38,7 @@ All trial accounts are already using cloud management tools feature set B. See: 
 
 If you ever want to delete your trial account, you can navigate to the **Subaccounts** page in the global account scope and select **Delete Trial**.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Environments)]
+### Environments
 
 SAP BTP currently offers these [environments](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/15547f7e7ecd47ee9fa052b0e18c7b0a.html) for trial accounts: Cloud Foundry, ABAP, and Kyma.
 
@@ -67,10 +65,7 @@ The ABAP environment is based on the latest ABAP platform cloud release that is 
 ### Kyma
 Kyma environment is a runtime you can use to build cloud-native Kubernetes-based extensions by using microservices and serverless functions. The offered functionality ensures smooth consumption of SAP and non-SAP applications, running workloads in a highly scalable environment, and building event-based and API-based extensions. To enable Kyma trial, log in to your SAP BTP trial home, create a subaccount, add entitlements, and select **Enable Kyma** in the **Overview** section of your subaccount.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Entitlements)]
+### Entitlements
 You should understand the difference between entitlements and quota, because you'll encounter these two terms quite often.
 
 - **Entitlements** are your right to provision and consume a resource. They refer to what you're entitled to use (for example, which services and service plans).
@@ -84,10 +79,7 @@ For more information on entitlements, you can always consult documentation on [E
 
 If you run into problems regarding entitlements and quotas, you can check out the [Guided Answers](https://gad5158842f.us2.hana.ondemand.com/dtp/viewer/#/tree/2065/actions/27066?version=current).
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Account Model)]
+### Account Model
 
 Now that you know what to expect from your trial account, let's learn about how things are structured in SAP BTP.
 
@@ -101,14 +93,11 @@ A **global account** is the realization of a contract you made with SAP (be it e
 
 In your trial global account, a Cloud Foundry subaccount with an org and a space called `dev` is automatically created for you.
 
-!![Account Structure](AccountStructure.png)
+<!-- border -->![Account Structure](AccountStructure.png)
 
 If you want to get a deeper understanding of the account structure, have a look at the documentation on the [Account Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8ed4a705efa0431b910056c0acdbf377.html).
 
-[VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step: ](Navigate in the cockpit)]
+### Navigate in the cockpit
 You can access your trial account cockpit at [https://cockpit.hanatrial.ondemand.com/trial/](https://cockpit.hanatrial.ondemand.com/trial/).
 
 
@@ -153,12 +142,9 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 To get an overview of the navigation in the cockpit, have a look at our guided tour: **Get Familiar with the Cockpit**. To start the guided tour, navigate to your global account scope and open SAP Companion.
 
-!![Start Guided Tour](guidedtour.png)
+<!-- border -->![Start Guided Tour](guidedtour.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Get to know the SAP BTP command line interface (btp CLI))]
+### Get to know the SAP BTP command line interface (btp CLI)
 The SAP BTP command line interface (btp CLI) is **an alternative to the cockpit**, for users who prefer working on the command line rather than GUIs. It consists of a client and a server. The client needs to be installed on your computer (make sure you update it regularly!) and it interacts with SAP BTP through a server. You connect to this CLI server at login.
 
 The base call to enter on the command line is `btp`.
@@ -171,9 +157,6 @@ Here are some of the tasks you can use the CLI for:
 - Subscribing to applications
 
 To find out more about the btp CLI, you can have a look at this tutorial: [Get Started with the SAP BTP command line interface (btp CLI)](cp-sapcp-getstarted).
-
-[DONE]
-[ACCORDION-END]
 
 
 ---
