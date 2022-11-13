@@ -21,11 +21,11 @@ author_name: Lindsay Bert
 
 
 ## Intro
-To add business apps to SAP Work Zone, you configure them in a tool called the **Content Manager**, located in the Work Zone Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your work zone - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu of SAP Work Zone and displays the business apps that the user has permissions to launch.
+To add business apps to SAP Work Zone, you configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your site - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu of SAP Work Zone and displays the business apps that the user has permissions to launch.
 
 ---
 
-In this tutorial you're going to add one of SAP's classic applications, a Web Dynpro ABAP app, to your work zone using the **Content Manager**. SAP's classic applications typically run on the backend of a data center.
+In this tutorial you're going to add one of SAP's classic applications, a Web Dynpro ABAP app, to your site using the **Content Manager**. SAP's classic applications typically run on the backend of a data center.
 
 ### Open the Content Manager
 
@@ -75,7 +75,7 @@ The **Content Manager** opens with the **My Content** tab in focus.
 
     <!-- border -->![Add navigation properties](6-navigation-properties.png)
 
-4. In the **VISUALIZATION** tab, enter these values:
+4. In the **VISUALIZATION** tab, enter these values and then click **Save**.
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -83,8 +83,6 @@ The **Content Manager** opens with the **My Content** tab in focus.
     |  Icon          | Click the browse icon, type `activity-2`. You'll see two icons. Click the first one and then click **OK**.
 
     <!-- border -->![Add visualization properties](7-visualization-properties.png)
-
-5. Click **Save**
 
 
 
@@ -120,7 +118,7 @@ To view the app in runtime, you must assign the app to a role. You also need to 
 
 3. Click the search box in the **Assignments** panel on the right, any available apps are shown in the list below.
 
-4. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role. You'll see that the icon changes.
+4. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role. You'll see that the icon changes to an **X**.
 
 5. Then click **Save**.
 
@@ -146,7 +144,7 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 
 5. In the list, click **+** to assign the `Search POs` app to your group.
 
-    You'll see that the icon changes.
+    You'll see that the icon changes to an **X**.
 
 6. Click **Save**.
 
@@ -158,19 +156,18 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 ### View the app in the Applications page
 
 
-1. Click the **Work Zone Directory** icon in the side panel.
+1. Click the **Site Directory** icon in the side panel.
 
     <!-- border -->![Open Work Zone directory](15-open-workzone-directory.png)
 
-2. Click the **Open work zone** icon.
+2. Click the **Open site** icon.
 
     <!-- border -->![Open work zone](16-open-workzone.png)
 
-3. In the top-level menu of your work zone, click **Applications**.
+3. In the top-level menu of your site, click **Applications**.
 
     <!-- border -->![Open Applications page](17-open-applications-page.png)
 
 You'll see your app is displayed as a tile in the group you assigned it to:
 
   <!-- border -->![View group with app](18-view-groupwithapp.png)
-
