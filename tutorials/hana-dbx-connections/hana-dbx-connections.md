@@ -119,7 +119,7 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
     >SELECT ISOLATION_LEVEL FROM PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
-    >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4e2e8382f8484edba31b8b633005e937.html).
+    >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4e2e8382f8484edba31b8b633005e937.html) and the [SET Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20fd82b675191014b22c8af08d0b319c.html).
 
 
 ### Add a data lake Relational Engine database
