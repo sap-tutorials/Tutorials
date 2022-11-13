@@ -46,7 +46,7 @@ Before you start, download these image files so that they're on your computer re
 
 Workspaces are the building blocks of SAP Work Zone. You can add all kinds of content to it and you can invite other users to join as members.
 
-1. In your work zone, click **Workspaces** in the top-level menu, and then click **New Workspace**.
+1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**.
 
     <!-- border -->![Create workspace](1-create-new-workspace.png)
 
@@ -138,12 +138,12 @@ In this step, you'll add a workpage to your workspace - it will describe the pur
 
 
 
-### Design the first row of your workpage
+### Design the first section of your workpage
 
 
-In this step, you'll add two text widgets next to each other in the first row of the workpage.
+In this step, you'll add two text widgets next to each other in the first section of the workpage.
 
-1. Click **Add Widget** in the first row to open the widget gallery.
+1. Click **Add Widget** in the first section to open the widget gallery.
 
     <!-- border -->![Add widget](10-add-widget1.png)
 
@@ -173,22 +173,22 @@ In this step, you'll add two text widgets next to each other in the first row of
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-7. This is what your first row looks like:
+7. This is what your first section looks like:
 
     <!-- border -->![Preview of row 1](13a-preview-row1.png)
 
 
 
-### Design the second row of your workpage
+### Design the second section of your workpage
 
 
-In this step, you'll add images to the second row.
+In this step, you'll add images to the second section.
 
-1. Click the **+** under the first row to add a new row.
+1. Click the **+** under the first section to add a new section.
 
     <!-- border -->![Add a second row](14-add-second-row.png)
 
-2. In the second row, click **Add Widget**.
+2. In the second section, click **Add Widget**.
 
     <!-- border -->![Add widget to row 2](15-add-widget-row2.png)
 
@@ -200,7 +200,7 @@ In this step, you'll add images to the second row.
 
     ![Empty image widget](16a-empty-image-widget.png)
 
-5. Click the cog icon in the top right of the image to edit the image.
+5. Click the cog icon in the top right of the image to edit the image widget.
 
     <!-- border -->![Open image settings](17-open-settings.png)
 
@@ -221,16 +221,18 @@ In this step, you'll add images to the second row.
 
 9. Click **Add Widget** in the new column, select the **Image** widget, and then click the link in the widget to add this image that you saved on your computer: `workspace_row2_image2`.
 
-10. On the top right of the widget that you've just added, click the cog icon to edit your image.
+10. On the top right of the widget that you've just added, click the cog icon to edit your image widget.
 
     <!-- border -->![Open settings for second image widget](20-define-settings-image2.png)
 
-11.  Design the second **Image** widget as follows and then click **Save**:
+11.  Design the second **Image** widget as follows and then click **Save**.
 
     |  :-------------     | :-------------
     | Caption             | `Michael Hill, ML Expert`
     | Caption Layout      | Inline
     | Caption Alignment   | Left
+
+    If your 2 images aren't aligned, use the divider between them to drag the images until they are aligned.
 
 12. Click **+** next to the second image widget to open a third column.
 
@@ -269,22 +271,21 @@ In this step, you'll add images to the second row.
 
     <!-- border -->![First preview](22-first-preview.png)
 
-17. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, and click the cog icon to edit the row.
+17. To increase the spacing between this section and the first section, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
-
-    <!-- border -->![Edit row](22a-edit-row-settings.png)
+    ![Edit section settings](22a-edit-row-settings.png)
 
 18. Under **Padding Top**, add the value `30` pixels and click **Save**.
 
     <!-- border -->![Edit row pixels](22b-edit-pixels.png)
 
 
-### Design the third and last row of your workspace
+### Design the third and last section of your workspace
 
 
 In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed** widget.
 
-1. Click **+** at the bottom of the second row to add another row.
+1. Click **+** at the bottom of the second section to add another section.
 
     <!-- border -->![Add the third row](22a-add-third-row.png)
 
@@ -327,7 +328,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     Now let's add the **Feed** widget.
 
-10. In the same row, directly under the **Action** widget that you added, click **Add Widget**.
+10.  Directly under the **Action** widget that you added, click **Add Widget**.
 
     <!-- border -->![Add another widget](27-add-another-widget.png)
 
@@ -335,13 +336,13 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     You've now added all three widgets.
 
-13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**.
+13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right.
 
     <!-- border -->![Edit row settings](28-edit-row-settings.png)
 
-14. Under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+14. Under **Padding Top**, add the value `30`pixels and click **Save**.
 
-15. Click **Save Draft** to save a draft version of your overview page.
+15. Click **Save Draft** to save a draft version of your workpage.
 
     <!-- border -->![Save as draft](28-save-as-draft.png)
 
@@ -376,7 +377,7 @@ Apart from the **Forum** widget, you're going to add a dedicated **Forum** page 
 
     <!-- border -->![Go back to Forums page](35a-go-back.png)
 
-You can see that your question has been added to your overview page as well as to your feed.
+You can see that your question has been added to your workpage as well as to your feed.
 
 <!-- border -->![View question](36-view-questions.png)
 
@@ -386,7 +387,7 @@ You can see that your question has been added to your overview page as well as t
 ### Publish and view your workspace
 
 
-  1. Now **Publish** the workpage to make your workspace visible to its members. Without doing this, the workpage is only visible to you.
+  1. Now **Publish** the workpage to make it visible to members of the workspace. Without doing this, the workpage is only visible to you.
 
     <!-- border -->![Publish workspace](27a-publish.png)
 
