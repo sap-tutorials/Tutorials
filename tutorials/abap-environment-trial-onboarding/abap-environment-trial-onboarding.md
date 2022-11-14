@@ -12,7 +12,7 @@ author_profile: https://github.com/mervey45
 <!-- description --> Create a trial user and ABAP cloud project with SAP BTP ABAP environment.
 
 ## Prerequisites
-- You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
+- You have read the blog post [It’s Trial Time for ABAP in SAP Business Technology Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
 - You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - You have a **subaccount and dev space US East (VA) as region**
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
@@ -94,9 +94,11 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 
       ![Create ABAP cloud project](skey.png)
 
-  4. Click **Open Logon Page in Browser**.
+  4. Click **Open Logon Page in Browser**. 
 
       ![Create ABAP cloud project](project44.png)
+
+        >Hint: If you are already logged on in the default browser with a user which you do not want to use for this project, then use the **Copy Logon URL to Clipboard** option and paste the URL in a browser started in private or  incognito mode or a non defaultet browser.
 
   5. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
 
