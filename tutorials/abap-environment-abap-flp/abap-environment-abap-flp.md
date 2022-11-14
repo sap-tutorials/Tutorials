@@ -26,12 +26,10 @@ author_profile: https://github.com/mervey45
 
 ## Intro
 Integrate your list report application into ABAP Fiori launchpad by making use of IAM apps and business catalogs. Create business roles, spaces and pages.
-
-Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
-
+Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system. 
+ 
 ---
 ### Make use of existing IAM App and business catalog
-
 
   1. Open ADT, select your package `ZTRAVEL_APP_XXX` and open your IAM App `ZTRAVEL_IAM_XXX`. Add the UI5 application ID to your IAM app and publish it.
 
