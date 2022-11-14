@@ -39,7 +39,7 @@ In this section, you will create and configure a decision which will be used to 
     - Choose **+** of the **default conditional flow**,
     - Select **Decision** then **New Decision**.
 
-    <!-- border -->![002](001.png)
+    <!-- border -->![001](001.png)
 
 2. In the Create Decision window, do the following:
 
@@ -103,6 +103,7 @@ Now, you have to map the Input and Output of the decision to the actual data obj
 
 
 After the data types are created, you will now configure the decision:
+
 - With Input and Output data types.
 - Create decision table rule to the business policy.
 
@@ -119,15 +120,15 @@ After the data types are created, you will now configure the decision:
     <!-- border -->![002](012.png)
 
 4. Configure Input Parameter:
-    - In Name enter: **Sales Order**,
-    - In Description enter: **Sales Order**,
-    - In Type choose: **sales order**.
+    - In Name enter: **Sales Order Input**,
+    - In Description enter: **business rules input**,
+    - In Type choose: **Sales Order**.
 
     <!-- border -->![002](013.png)
 
 5. Configure Output Parameter:
-    - In Name enter: **Approver**,
-    - In Description enter: **Sales Order Approver**,
+    - In Name enter: **Approver Output**,
+    - In Description enter: **business rules output**,
     - In Type choose: **Approver**.
 
     <!-- border -->![002](014.png)
@@ -135,7 +136,6 @@ After the data types are created, you will now configure the decision:
 6. **Save** changes.
 
 7. Then you will create the actual decision-making parts that make the decision in the process. Under Determine approver, select **Rules**.
-
 
     <!-- border -->![002](015.png)
 
@@ -154,9 +154,9 @@ After the data types are created, you will now configure the decision:
     > A decision table is a tabular representation of the rule with If and Then header and row columns. If-header columns contain the expressions, which are evaluated, and Then-header columns contain the result structure that will be returned after the decision is run.
 
 10. You will now configure the conditions. Under **Data Types**:
-    - Choose **Sales Order**,
-    - Select **Shipping Country**,
-    - Select **Order Amount**,
+    - Choose **Sales Order Input**,
+    - Select **`shippingCountry`**,
+    - Select **`orderAmount`**,
     - Choose **Next Step** button.
 
     <!-- border -->![002](018.png)
@@ -202,8 +202,9 @@ After the data types are created, you will now configure the decision:
     <!-- border -->![002](025.png)
 
 18. Similarly, enter the following expressions for the respective result column (or **Then** section):
-    - Under `UserGroup` enter: `SO_APPROVER`
-    - Under Email enter: `your user email`
+    - Under `UserGroup` enter: `'SO_APPROVER'`
+    - Under Email enter: `'your user email'`
+    > Do not forget to put single-quote (') for string type values
 
     <!-- border -->![002](026.png)
 
@@ -224,20 +225,19 @@ After the data types are created, you will now configure the decision:
 
     |  Condition Column    | Value
     |  :------------- | :-------------
-    |  Shipping Country        |
+    |  Shipping Country    |    |
     | Order Amount         |>100000 |
 
     |  Action Column   | Value
     |  :------------- | :-------------
-    |  `UserGroup`        | `SO_MGMNT`
-    |  `Email`       | `your user email`|
+    |  `UserGroup`        | `'SO_MGMNT'`
+    |  `Email`       | `'your user email'`|
 
     <!-- border -->![002](028.png)
 
 15. Choose **Save** button.
 
     > Save will both save and activate the decision table. If there are any validation issues in the decision table, then Save will not happen and the errors will be shown in the **Design Console**
-
 
 
 
@@ -274,7 +274,6 @@ After you have created and configured the decision, next you have to map the inp
 
 
 ### Update the Process
-
 
 1. You will now adapt the business process one last time to fully automate your approver selection by matching the recipients of the approval form to the one returned from the decision table.
 

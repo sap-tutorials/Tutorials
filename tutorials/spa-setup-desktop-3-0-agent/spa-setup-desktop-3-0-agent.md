@@ -1,11 +1,13 @@
+
 ---
-parser: v2
 author_name: Paulina Bujnicka
 author_profile: https://github.com/pbujnicka
+keywords: tutorial
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-process-automation
+parser: v2
 ---
 
 # Install and Set Up the Desktop Agent 3
@@ -17,6 +19,7 @@ The Desktop Agent 3 is a component of SAP Process Automation that is installed l
 ## Prerequisites
  - A Windows PC
  - If you are using a MAC, please install a VDI
+
 ## You will learn
   - How to install the Desktop Agent 3
   - How to register a tenant in the Desktop Agent 3
@@ -48,6 +51,8 @@ The setup program is provided in the form of an industry standard Windows MSI in
 
     <!-- border -->![Add new user](agent3-023.png)
 
+    > Please make sure you assign the `ProcessAutomationAdmin` role when you subscribe to SAP Build Process Automation in your BTP account. If you do not do so you will not be able to add a user.
+
 4. Set the name of the user and choose **Add user**.
 
     <!-- border -->![Set username](agent3-024.png)
@@ -64,7 +69,7 @@ The setup program is provided in the form of an industry standard Windows MSI in
 
     <!-- border -->![Generate a new key](agent3-028.png)
 
-8. Go back to the SAP Application Development, and select the **Change Settings** button.
+8. Go back to the SAP Application Development, and select the **Enter Secret ID** button.
 
     <!-- border -->![Change settings](agent3-029a.png)
 
@@ -72,7 +77,7 @@ The setup program is provided in the form of an industry standard Windows MSI in
 
     <!-- border -->![Set the secret id](agent3-030.png)
 
-10. Activate the latest version: click the 3 dots and select **Activate**. Then click the **Go to Download Page** button.
+10. Choose the **Go to Download Page** button.
 
     <!-- border -->![Set the secret id](agent3-032.png)
 
@@ -127,7 +132,7 @@ Once the installation steps of the SAP Robotic Process Automation setup wizard a
 
 1. After Step 3 completed. Open the **Download Page**. If the **Register Agent** is enabled, refresh the page.
 
-    <!-- border -->![Tenant data](agent3-037.png) 
+    <!-- border -->![Tenant data](agent3-037.png)
 
 2. Once the process is completed, open the **Desktop Agent 3** and confirm the tenant configuration.
 

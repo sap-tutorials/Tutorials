@@ -23,13 +23,19 @@ primary_tag: software-product>sap-process-automation
 
 ### Release and deploy the business process
 
+Before releasing and deploying your business process, please make sure you have completed the required [Agent Management settings to execute the process with an automation](spa-run-agent-settings).
 
-You must first release and then deploy the business process project in order to run the process.
+Once you have taken care of the agent management settings, you can release and deploy the business process project to run the process.
 
   <!-- border -->![Release](00_Release.png)
 
   <!-- border -->![Deploy](00_Deploy.png)
 
+1. While deploying, the `OrderFilePath` data type should be the path to the excel workbook saved on your machine.
+
+2. Choose **Confirm** and then **Deploy**.
+
+  <!-- border -->![OrderFilePath](00_OrderFilePath.png)
 
 
 ### Run the business process
@@ -141,8 +147,7 @@ SAP Process Automation provides different applications for monitoring and managi
 
 3. Open the **Visibility Scenario Dashboard** by pasting the **Dashboard Link** in a browser window.
 
-    The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile.
-    You could even navigate into single instances.
+    The dashboard is there. The performance indicators are filling up, depending on the time it has taken, there might be different results. Please now feel free to explore the details and discover what is included in each tile. You could even navigate into single instances.
 
       <!-- border -->![Browse Scenario](03_BrowseScenario.png)
 
