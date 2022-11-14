@@ -61,7 +61,9 @@ The setup program is provided in the form of an industry standard Windows MSI in
 
     <!-- border -->![Create user](agent3-025.png)
 
-6. To generate a new Secret ID, choose **Generate** and then select **OK**. **Note the full username as it will be needed later.**
+6. To generate a new Secret ID, choose **Generate** and then select **OK**.
+
+    > Note the full username as it will be needed later.
 
     <!-- border -->![Generate a new key](agent3-026.png)
 
