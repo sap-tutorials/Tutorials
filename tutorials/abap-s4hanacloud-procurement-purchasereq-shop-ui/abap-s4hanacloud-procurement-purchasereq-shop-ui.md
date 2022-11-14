@@ -19,10 +19,6 @@ author_profile: https://github.com/mervey45
 - Business Catalog `SAP_CORE_BC_COM` must be assigned to business user
 - The user must have the same email address as the user from trial
 
-## Intro
->**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
-
-
 ## You will learn  
 - How to assign role collections
 - How to create dev spaces
@@ -32,6 +28,9 @@ author_profile: https://github.com/mervey45
 - How to deploy applications
 - How to check BSP library in Eclipse
 - How to create IAM apps and business catalogs
+
+## Intro
+>**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
 ---
 ### Assign role collection to user

@@ -18,15 +18,14 @@ author_profile: https://github.com/mervey45
 - You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
 - You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.
 
-## Intro
-Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
-
-
 ## You will learn  
 - How to make use of IAM App and business catalog
 - How to create business roles
 - How to pin business catalogs
 - How to create spaces and pages
+
+## Intro
+Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
 
 ---
 ### Make use of existing IAM App and business catalog
