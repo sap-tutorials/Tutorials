@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-fiori, software-product>sap-launchpad-service]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>cloud, software-product>sap-fiori, software-product>sap-launchpad-service]
 primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
@@ -12,18 +12,17 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> To get started with building a launchpad site in the SAP Launchpad service, you must perform the required onboarding steps.
 
 ## Prerequisites
-  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://account.hanatrial.ondemand.com/trial/#/home/trial). For a more detailed explanation, see this tutorial: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/israel/products/business-technology-platform/trial.html). Scroll down and click **Get trial now**.
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
-
-
-## Intro
-Note that you can also do this tutorial using a SAP BTP free plan option. To do this, please follow this tutorial: [Set Up SAP Launchpad Service Using the Free Tier Model for SAP BTP](cp-portal-cloud-foundry-setup-freetier).
 
 
 ## You will learn
   - How to subscribe to the SAP Launchpad service
   - How to assign yourself to the `Launchpad_Admin` role so that you can create and manage sites in the SAP Launchpad service
   - How to access the SAP Launchpad service
+
+## Intro
+  Note that you can also do this tutorial using a SAP BTP free plan option. To do this, please follow this tutorial: [Set Up SAP Launchpad Service Using the Free Tier Model for SAP BTP](cp-portal-cloud-foundry-setup-freetier).
 
 In this group of tutorials our goal is to create a launchpad site using the SAP Launchpad service. But before we can do this, there are some steps you'll need to do in the SAP BTP cockpit.
 
@@ -64,7 +63,7 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
     >If you aren't able to find the **Launchpad Service** tile, or if you can't access it, you may be using an older trial account. You can easily add it to your account via the **Entitlements** area. Click **Configure Entitlements** and then **Add Service Plans**. Then search for `launchpad`, check the standard (applications) plan, and click **Add 1 Service Plan**. Don't forget to save in the next screen.
 
 
-    The Launchpad Service page opens with the **Overview** tab in focus as well as the **Applications Plans** tab.
+    The Launchpad Service page opens with 3 tabs that include information about the service as well as the two different plans.
 
 6.  Under the **Applications Plans** tab, click the Actions icon (...) and select **Create** to create a new subscription.
 
@@ -140,6 +139,3 @@ You are now ready to access the SAP Launchpad service.
    The SAP Launchpad service opens with the Site Directory in focus. This is where you'll create and manage your launchpad sites.
 
   ![Open Site Directory](17-open-site-directory.png)
-
-
-
