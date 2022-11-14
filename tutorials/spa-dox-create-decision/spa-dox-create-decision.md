@@ -173,7 +173,7 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
     > Please refer to [the Knowledge Base Article](https://launchpad.support.sap.com/#/notes/3207153) for the complete workaround.
 
 2. Define the Inputs:
-    - Select `DocumentNumber` : map with `DocumentNumber` from **Invoice Details**,
+    - Select `DocumentNumber`: map with `DocumentNumber` from **Invoice Details**,
     - Select `GrossAmount`: map with `GrossAmount` from **Invoice Details**,
     - Select `SenderName`: map with `SenderName` from **Invoice Details**.
 

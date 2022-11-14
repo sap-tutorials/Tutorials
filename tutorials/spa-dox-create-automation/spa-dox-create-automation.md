@@ -66,7 +66,7 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](006.png)
 
-3.  In the Data Type **Invoice** and add new fields as following.
+3.  In the Data Type **Invoice** add new fields as following:
 
     |  Field Name     | Type
     |  :------------- | :-------------
@@ -132,7 +132,7 @@ primary_tag: software-product>sap-process-automation
 4. Under **Choose Schema**:
     - Choose **Create New**,
     - Enter the **Name** of the schema,
-    - Choose the Header fields that you would extract the data from the Invoice document. In this scenario you would select `documentNumber`, `grossAmount`, `senderName`,
+    - Choose the Header fields that you would extract the data from the Invoice document. In this scenario you would select `documentNumber`, `grossAmount`, `senderName`.
     - Choose **Add**.
 
     <!-- border -->![Automation](016.png)
@@ -195,7 +195,7 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](027.png)
 
-3. Drag and drop the activity **Extract Data (Template)** to the automation flow.
+3. Drag and drop the activity **Extract Data (Template)** into the automation flow.
 
     <!-- border -->![Automation](028.png)
 
@@ -258,12 +258,22 @@ primary_tag: software-product>sap-process-automation
 2. **Save** the automation.
 
 
+### Mapping of Parameters to the Automation and Process
+
+
+1. Navigate to the **Get Invoice Details** process and select the automation **Extract Invoice Data**. Map the input parameter of the automation to the form parameter `FilePath`.
+
+    <!-- border -->![Mapping](040.png)
+
+2. Select **Save**.
+
+
 ### Test the Automation
 
 
 1. Select Test button and enter the `Filepath` where the invoice document is stored locally on your machine.
 
-    <!-- border -->![Test](038.png)[Create an automation to extract Invoice Details](spa-dox-create-automation)
+    <!-- border -->![Test](038.png)
 
 2. The automation opens the Invoice Document, extracts data and prints the details i.e Document number, Gross amount and Sender name.
 
@@ -271,18 +281,7 @@ primary_tag: software-product>sap-process-automation
 
 3. Your automation is built successfully.
 
-
-### Mapping of Parameters to the Automation and Process
-
-
-
-1. Navigate to the **Get Invoice Details** process. and select the automation **Extract Invoice Data**. Map the input parameter of the automation to the form parameter `FilePath`.
-
-    <!-- border -->![Mapping](040.png)
-
-2. Select **Save**.
-
-3. Once this tutorial is completed, the process looks as following.
+4. Once this tutorial is completed, the process looks as following.
 
     <!-- border -->![Mapping](041.png)
 
