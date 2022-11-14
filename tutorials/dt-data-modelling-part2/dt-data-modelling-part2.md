@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, programming-tool>sql ]
 ---
 
 # Importing Required Calculation Views
@@ -13,8 +13,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
  - **Files:** Download the Data Files zip: `https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip` and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 
-## Intro
-Extended Tables in Dynamic Tiering can only be used in information models that consist solely of calculation views. If you have an existing data model that is built from the three classical HANA information view types (attribute views, analytic views and calculation views), you will have to convert the data models to a representation that consists only of calculation views.
+
 
 SAP HANA studio offers a migration wizard for this task. We will guide you through this process.
 ## You will learn
@@ -23,7 +22,10 @@ SAP HANA studio offers a migration wizard for this task. We will guide you throu
 ## Time to Complete
  **10 Min**
 
+## Intro
+Extended Tables in Dynamic Tiering can only be used in information models that consist solely of calculation views. If you have an existing data model that is built from the three classical HANA information view types (attribute views, analytic views and calculation views), you will have to convert the data models to a representation that consists only of calculation views.
  ---
+
 ### Importing Required Views
 
 
@@ -80,5 +82,3 @@ On the next screen, ensure that all views to be activated are present in the rig
 When activated, the grey diamond, in the bottom right corner, beside each view will disappear.
 
 ![Before and after activation views](pre-activation.png)
-
-
