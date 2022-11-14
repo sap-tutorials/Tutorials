@@ -25,6 +25,8 @@ author_profile: https://github.com/mervey45
 - How to create spaces and pages
 
 ## Intro
+Integrate your list report application into ABAP Fiori launchpad by making use of IAM apps and business catalogs. Create business roles, spaces and pages.
+
 Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
 
 ---
