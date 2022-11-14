@@ -66,7 +66,7 @@ You will now add a decision to the flow of your process. With this you are able 
     <!-- border -->![Create new Data Type](007.png)
 
 7. In the new pop-up window:
-    - Define the Name: **Approver Output**,
+    - Define the Name: **Approver**,
     - Add a Description: **Including the approvers email address**,
     - Choose **Create**.
 
@@ -87,7 +87,7 @@ You will now add a decision to the flow of your process. With this you are able 
     <!-- border -->![Save new data type](011.png)
 
 11. Go back to your Decision **Determine Approver**. Add an **Output Parameter**:
-    - Name: **Approver**,
+    - Name: **Approver Output**,
     - Description: **Invoice Approver**,
     - Select Type: the newly created data type **Approver**,
     - **Save** your work.
