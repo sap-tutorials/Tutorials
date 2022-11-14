@@ -299,7 +299,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 4. Enter the **Widget Title**: `Add your Hackathon Questions & Ideas`.
 
-5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your overview page.
+5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your workpage.
 
     <!-- border -->![Design actions widget](24-design-actions-widget.png)
 
@@ -319,9 +319,9 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **Save**.
 
-    > On the overview page, only 2 of the questions, ideas or discussions from the forum will be displayed.  
+    > On the workpage, only 2 of the questions, ideas or discussions from the forum will be displayed.  
 
     <!-- border -->![Design the forum widget](27-design-forum-widget.png)
 
@@ -336,7 +336,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     You've now added all three widgets.
 
-13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right.
+13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
     <!-- border -->![Edit row settings](28-edit-row-settings.png)
 
@@ -353,7 +353,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
 
-1. Click the **+** next to the **About the Hackathon** workpage.
+1. Click the **+** icon.
 
     <!-- border -->![Add new page tab](28-add-new-page.png)
 
