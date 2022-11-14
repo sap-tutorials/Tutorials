@@ -100,8 +100,6 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 
         >Hint: If you are already logged on in the default browser with a user which you do not want to use for this project, then use the **Copy Logon URL to Clipboard** option and paste the URL in a browser started in private or  incognito mode or a non defaultet browser.
 
-
-
   5. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
 
      Go back to ADT.
