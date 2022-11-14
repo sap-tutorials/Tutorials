@@ -17,7 +17,7 @@ author_profile: https://github.com/dhrubpaul
 - How to access your SAP BTP global account
 - How to use boosters to get started with SAP AI Core and SAP AI Launchpad
 
-## Info
+## Intro
 #### About SAP AI Core and SAP AI Launchpad
 SAP AI Core and SAP AI Launchpad are services which you can link to your BTP global account. SAP AI Core offers a powerful AI runtime which is natively integrated with SAP AI Launchpad. The launchpad offers an easy-to-use interface to manage AI workflow administration, processes, and tasks.
 
