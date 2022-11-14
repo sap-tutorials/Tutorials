@@ -91,6 +91,7 @@ This step involves adding a process to the visibility scenario we created.
     <!-- border -->![Select Process](Step3-2.png)
 
     > This will lead to the visibility scenario configuration screen, where these can be viewed and controlled:
+
     > 1. All the events that could potentially occur during the process execution
     > 2. The context data which is the attributes selected before (Step **1.3**)
 
