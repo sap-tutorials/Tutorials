@@ -1,3 +1,4 @@
+
 ---
 author_name: Paulina Bujnicka
 author_profile: https://github.com/pbujnicka
@@ -49,6 +50,8 @@ The setup program is provided in the form of an industry standard Windows MSI in
 3. Select **Add user** button.
 
     <!-- border -->![Add new user](agent3-023.png)
+
+    > Please make sure you assign the `ProcessAutomationAdmin` role when you subscribe to SAP Build Process Automation in your BTP account. If you do not do so you will not be able to add a user.
 
 4. Set the name of the user and choose **Add user**.
 
