@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>provisioning, software-product>sap-ai-core ]
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>provisioning, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
