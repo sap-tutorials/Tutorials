@@ -19,11 +19,14 @@ SAP HANA studio offers a migration wizard for this task. We will guide you throu
 ## You will learn
   - How to import information views to SAP HANA Studio
   - How to activate your imported views
-## Time to Complete
- **10 Min**
 
 ## Intro
 Extended Tables in Dynamic Tiering can only be used in information models that consist solely of calculation views. If you have an existing data model that is built from the three classical HANA information view types (attribute views, analytic views and calculation views), you will have to convert the data models to a representation that consists only of calculation views.
+
+## Time to Complete
+ **10 Min**
+
+
  ---
 
 ### Importing Required Views
