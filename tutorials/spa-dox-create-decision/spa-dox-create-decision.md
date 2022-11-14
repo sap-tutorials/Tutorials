@@ -14,15 +14,14 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
  - You have [created the process](spa-dox-create-process), the form to trigger the process and the [automation](spa-dox-create-automation) to extract the invoice data
 
-
-
 ## You will learn
   - How to create a decision
   - How to make use of data types and how to create them
   - How to maintain a decision table and include it in the process flow
 
 ## Intro
-  With a Decision you can include several policies, guidelines, business rules and so on into your process flow.
+   With a Decision you can include several policies, guidelines, business rules and so on into your process flow.
+
 ---
 
 ### Add a decision and create a data type
@@ -47,8 +46,10 @@ You will now add a decision to the flow of your process. With this you are able 
 
     <!-- border -->![Open Editor](003.png)
 
-4. You see a **Decision Diagram** showing the flow of the data within the Decision, and also the **Input and Output parameters**. Add an input parameter with:
-    - Name to **Invoice**,
+4. You see a **Decision Diagram** showing the flow of the data within the Decision, and also the **Input and Output parameters**.
+
+5. Add an input parameter with:
+    - Name to **Invoice Parameter**,
     - Description to **Invoice Details**,
     - Type to **Invoice**.
 
@@ -86,23 +87,24 @@ You will now add a decision to the flow of your process. With this you are able 
     <!-- border -->![Save new data type](011.png)
 
 11. Go back to your Decision **Determine Approver**. Add an **Output Parameter**:
-    - Name: **Approver**,
+    - Name: **Approver Output**,
     - Description: **Invoice Approver**,
     - Select Type: the newly created data type **Approver**,
     - **Save** your work.
 
     <!-- border -->![Select new data type](012.png)
 
-12. Open the **Rules** tab.
-
-    <!-- border -->![Open Rules tab](013.png)
-
+12. **Save** your work.
 
 
 ### Create a decision table
 
 
 There are many ways to express a business rule, in this case you will create a decision table to determine the approver of the invoice based on certain criteria.
+
+1. Open the **Rules** tab.
+
+    <!-- border -->![Open Rules tab](013.png)
 
 1. Choose **Add Rule**.
 
@@ -139,7 +141,7 @@ There are many ways to express a business rule, in this case you will create a d
 
 7. Define the attributes:
     - for **Invoice.SenderName**: `EXISTSIN['ABC Communication']`
-    - for **eMail**: `<your SAP BTP user ID>`, e.g. `<diana.smith@mail.com>`.
+    - for **eMail**: `<'your SAP BTP user ID'>`, e.g. `<'diana.smith@mail.com'>`.
 
     You can also make use of the value help, by pressing the space bar before maintaining the expression in the first column.
 
@@ -171,7 +173,7 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
     > Please refer to [the Knowledge Base Article](https://launchpad.support.sap.com/#/notes/3207153) for the complete workaround.
 
 2. Define the Inputs:
-    - Select `DocumentNumber` : map with `DocumentNumber` from **Invoice Details**,
+    - Select `DocumentNumber`: map with `DocumentNumber` from **Invoice Details**,
     - Select `GrossAmount`: map with `GrossAmount` from **Invoice Details**,
     - Select `SenderName`: map with `SenderName` from **Invoice Details**.
 
