@@ -1,6 +1,5 @@
 ---
-title: Add Views and Define Routes to Access Them
-description: Add new views to the SAPUI5 web application and declare them in the manifest.
+parser: v2
 auto_validation: true
 primary_tag: programming-tool>sapui5
 tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-application-studio  ]
@@ -9,8 +8,10 @@ author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
-## Details
-### You will learn  
+# Add Views and Define Routes to Access Them
+<!-- description --> Add new views to the SAPUI5 web application and declare them in the manifest.
+
+## You will learn  
 - How to add additional views
 - How to use data binding
 - How to define routes and targets
@@ -18,13 +19,13 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add two new views)]
+### Add two new views
 
 In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 1. Add a new view with a right-click on the `view` folder and select **New File**. Name this file `List.view.xml`.
 
-    !![newFile](./newView.png)
+    <!-- border -->![newFile](./newView.png)
 
 2. The name already suggests that this view will contain a [list](https://sapui5.hana.ondemand.com/#/topic/295e44b2d0144318bcb7bdd56bfa5189) of products. Add the following file content that defines the views and the list. Note the list already uses [data binding](https://sapui5.hana.ondemand.com/#/topic/68b9644a253741e8a4b9e4279a35c247) to show the product entities as list items.
 
@@ -60,12 +61,10 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 > Hint: You don't need to rely on the code editor to edit the views. Right-click on any view and select **Open with | Layout Editor** to access the [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) layout editor:
 
->!![detailView](detailView.png)
+><!-- border -->![detailView](detailView.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add new targets and routes)]
+### Add new targets and routes
 
 In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
@@ -137,9 +136,7 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
 }
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add two new controllers)]
+### Add two new controllers
 
 This is the crucial step of this tutorial that ties everything together. Each view specifies its controller with the `controllerName` property in the first line. Controllers contain the business logic of web apps, bind models to views, and use the router to navigate between views.
 
@@ -207,19 +204,13 @@ You may see a prompt to enable `ESLint extension`, select **Do Not Allow** to pr
     ```
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test it)]
+### Test it
 
 If you already stopped the web app, restart the saved configuration. **Open** the running web app to see the changes.
 
 You should be able to see a list of products and navigate to the detail pages (and back to the list page).
 
 
-!![demo](./navigation.gif)
+<!-- border -->![demo](./navigation.gif)
 
-
-
-[VALIDATE_1]
-[ACCORDION-END]
 ---

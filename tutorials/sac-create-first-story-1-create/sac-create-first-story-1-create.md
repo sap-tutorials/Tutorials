@@ -1,21 +1,22 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Create Your First Story
-description: Create your first story and import a dataset
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Create Your First Story
+<!-- description --> Create your first story and import a dataset
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
  - Download this [sample dataset](https://d.dam.sap.com/a/fAJmXck?rc=10) that details the products, sales, and Geo codes for a fashion retail store.
  - Please use the latest version of Google Chrome or Microsoft Edge to access your SAP Analytics Cloud
 
-## Details
-### You will learn
+## You will learn
   - How to create a story
   - How to import and add data to a story
   - How to Geo enrich and create hierarchies in a dataset
@@ -30,7 +31,8 @@ primary_tag: software-product>sap-analytics-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Story)]
+### Create a Story
+
 **Stories** represent the dashboard and reporting features of SAP Analytics Cloud and provide you with a way to bring data and visualizations together to tell the story of your business.
 
 You can create a story with a template or from scratch. With a template, the theme, branding, layout, and object placeholders are already in the story to help you build your story faster. When building from scratch, you can choose to begin blank with a Responsive page, Canvas page, Grid page, or from a Smart Discovery. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/f0cc6e14392e4b18b0f1bcaab839cc2d.html) to learn more.
@@ -47,10 +49,9 @@ We will focus on creating a responsive story page.
 
 The Optimized Design Experience improves performance within SAP Analytics Cloud stories and enables content within an SAP Analytics Cloud story to load faster, but not all features and story options will be available in the Optimized Design Experience features. A new tutorial will be created in the future for Optimized Designed Experience stories.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import Data)]
+### Import Data
+
 
 The first step to creating a story is to import data.
 
@@ -72,10 +73,9 @@ Users may choose to import data from a file, acquire data from a source/connecti
 
 > By default, importing data directly into a story will embed the data and model into the story. The model will not appear in the folder list for use with other stories unless you explicitly select Convert to Public Dataset in the Data > Grid View. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/c5d2b331c2234806ace715024e521e64.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Wrangle and Model your Data)]
+### Wrangle and Model your Data
+
 
 Once your data is successfully imported, you are shown a summary of the imported data and then brought to the wrangling and modeling view, where you can further enhance your data and define your model.
 
@@ -103,10 +103,9 @@ To change a measure to a dimension:
 
 Now that they are dimensions, we can Geo enrich them. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/b396a6eb42e3491aac1791e2d10de68f.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Geo Enrich your Data)]
+### Geo Enrich your Data
+
 
 Geo enriching is the process of turning raw coordinate data into identifiable geographies so that SAP Analytics Cloud can visualize the data in a Geo map.
 
@@ -134,10 +133,9 @@ Lastly, let's enrich our Regions, Countries, and Cities by Area Name.
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/c52a875d319b4cd1890a52f6286f96bc.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Hierarchies)]
+### Create Hierarchies
+
 
 Let's now create a product hierarchy to enable drill-down.
 
@@ -155,15 +153,12 @@ SAP Analytics Cloud then recognizes this hierarchy and allows you to drill up an
 
 > It is best practice to save regularly. Before moving on, click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 ---

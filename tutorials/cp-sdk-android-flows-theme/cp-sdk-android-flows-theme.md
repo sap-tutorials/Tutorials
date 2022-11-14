@@ -1,23 +1,25 @@
 ---
+parser: v2
 author_name: Haoyue Feng
 author_profile: https://github.com/Fenghaoyue
-title: Customize the Styles and Themes
-description: Learn how to customize the styles and themes for the UI screens in Flows component of SAP BTP SDK for Android.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-android
 ---
 
+# Customize the Styles and Themes
+<!-- description --> Learn how to customize the styles and themes for the UI screens in Flows component of SAP BTP SDK for Android.
+
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
     - **SAP Mobile Services**
 - You completed [Get Familiar with the Flows Component by a Wizard Generated Application](cp-sdk-android-flows-wizard).
 
-## Details
-### You will learn
+## You will learn
   - How to customize the look and feel for the UI screens of Flows component
 
+## Intro
 An enterprise mobile application usually has its own branding theme, and therefore requires the onboarding screens inside the Flows components to have the same look and feel as the other business screens in the app. SAP BTP SDK for Android version 3.4 provides the enhancement for customizing themes and styles for onboarding UI screens. With this enhancement, it's easier for client code to do following customizations:
 
 - Define the logo image, as well as its height and width.
@@ -28,7 +30,8 @@ An enterprise mobile application usually has its own branding theme, and therefo
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Examine the UI styles in a wizard-generated application)]
+### Examine the UI styles in a wizard-generated application
+
 
 1.  Open the project you previously created using the SAP BTP SDK Wizard for Android.
 
@@ -36,10 +39,9 @@ An enterprise mobile application usually has its own branding theme, and therefo
 
 3.  Press **`Shift`** twice and type **`colors.xml`** to open the `colors.xml` file. The default colors for the wizard-generated app are defined in this file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define your own styles)]
+### Define your own styles
+
 
 1.  Define your logo. To change the logo image at the top of each onboarding screen , define the following style in the `styles.xml` file.
 
@@ -152,10 +154,9 @@ An enterprise mobile application usually has its own branding theme, and therefo
     <color name="sap_ui_field_active_border_color">@color/colorPrimaryDark</color>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Integrate with the Flows component)]
+### Integrate with the Flows component
+
 
 [OPTION BEGIN [Java]]
 
@@ -180,7 +181,7 @@ An enterprise mobile application usually has its own branding theme, and therefo
 
 2.  After applying the customized theme and style, the look and feel of the wizard-generated app are changed accordingly.
 
-    !![Customized Theme](red-theme.png)
+    <!-- border -->![Customized Theme](red-theme.png)
 
 [OPTION END]
 
@@ -204,14 +205,13 @@ An enterprise mobile application usually has its own branding theme, and therefo
 
 2.  After applying the customized theme and style, the look and feel of the wizard-generated app are changed accordingly.
 
-    !![Customized Theme](red-theme.png)
+    <!-- border -->![Customized Theme](red-theme.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Customize the UI screens without the predefined flows)]
+### Customize the UI screens without the predefined flows
+
 
 Client code may use its own screens in onboarding process or implement customized flows instead of predefined flows, and want to apply themes to the activities or the fragments.
 
@@ -292,6 +292,5 @@ Client code may use its own screens in onboarding process or implement customize
 
 Congratulations! You now have learned how to customize the styles and themes for the UI screens of Flows component!
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

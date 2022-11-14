@@ -1,27 +1,28 @@
 ---
-title: Create Multi-Store Tables
-description: Learn about multi-store tables, partition types, and create a multi-store table
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
 ---
 
+# Create Multi-Store Tables
+<!-- description --> Learn about multi-store tables, partition types, and create a multi-store table
+
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-6.html)
 
-## Details
-### You will learn  
+## You will learn  
  - What a multi-store table is
  - Types of partitions used in HANA multi-store tables and which is right for you
  - How to create multi-store tables
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What are multi-store tables?)]
+### What are multi-store tables?
+
 Multi-store tables are a type of SAP HANA column tables which can have partitions in the in-memory DEFAULT COLUMN STORAGE as well as other partitions in dynamic tiering EXTENDED STORAGE.
 
 Multi-store data management allows for administration tasks to be carried out more freely including:
@@ -32,11 +33,9 @@ Multi-store data management allows for administration tasks to be carried out mo
 
 One function of multi-store tables is data aging which allows you to "age out" older data using dynamic tiering. Every multi-store table contains at least two partitions: one of which is in the in-memory DEFAULT STORAGE and the other is in disk based EXTENDED STORAGE. This allows you to still access and update older data without managing two separate systems for current or older data and is cost effective as well. There may be some older data that isn't frequently used and so the "cold" data is moved into extended storage and the "hot" new and frequently used data remains in-memory.
 
-[DONE]
 
-[ACCORDION-END]
+### Create a partitioned multi-store table
 
-[ACCORDION-BEGIN [Step 2: ](Create a partitioned multi-store table)]
 The types of partitioning include: range partitioning, hash-range and range-range partitioning, and time-selection partitioning.
 
 In this module we will create a multi-store table that uses single level Range partitioning. With single level range partitioning, at least one range partition must be in the DEFAULT STORAGE and one range partition in extended storage. Only range partitions are supported when it comes to single-level partitioning. The diagram below shows the ranges that will be defined.
@@ -105,12 +104,10 @@ Make sure you see newly created "`LINEITEM_MS`" table as seen below.
 
 > Multi-store tables are not classified as type `EXTENDED`.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import data into a multi-store table)]
+### Import data into a multi-store table
+
 To import data into the newly created table, execute the following in the SQL Console. Verify it gets executed successfully.
 
 ``` SQL
@@ -124,11 +121,9 @@ Confirm the table has been filled with data after executing by right clicking on
 
 ![7.5](assets/hana-webide-dt-getting-started-7-02f80547.jpg)
 
-[DONE]
 
-[ACCORDION-END]
+### View multi-store partitions
 
-[ACCORDION-BEGIN [Step 4: ](View multi-store partitions)]
 There are several database administration views available to provide information for partitioned tables, including multi-store tables. Some of the information available includes:
 
 - What partitions exist for a given table
@@ -166,8 +161,6 @@ SELECT * FROM M_ES_TABLES where TABLE_NAME = 'LINEITEM_MS' AND SCHEMA_NAME = 'TP
 
 Notice that only 1 partition is shown in EXTENDED STORAGE and that it has a `PART_ID` of -1. The `PART_ID` is -1 because although logically, the dynamic tiering portion has multiple partitions within it, physically the dynamic tiering portion is stored as a single partition. Since the data for the "`LINEITEM_MS`" partitions in EXTENDED STORAGE are in a single physical partition, we can't tell how much data is in each logical partition. However, we can see from the "`TABLE_SIZE`" column that data has been stored in EXTENDED STORAGE for the "`LINEITEM_MS`" table.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

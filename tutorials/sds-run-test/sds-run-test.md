@@ -1,6 +1,5 @@
 ---
-title: Run and Test a Streaming project
-description: Run your streaming project on the streaming analytics server. Use the test tools in HANA studio to send events to the input stream and view the output. Confirm that data is being captured in the HANA database.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,6 +7,9 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 auto_validation: true
 time: 10
 ---
+# Run and Test a Streaming project
+<!-- description --> Run your streaming project on the streaming analytics server. Use the test tools in HANA studio to send events to the input stream and view the output. Confirm that data is being captured in the HANA database.
+
 ## Prerequisites  
  - **Tutorials:** [Capture Streaming Output in the HANA Database](https://developers.sap.com/tutorials/sds-event-stream-tables.html)
 
@@ -15,14 +17,14 @@ time: 10
 **Tutorial:** [Join an Event Stream to a HANA Table](https://developers.sap.com/tutorials/sds-stream-table-join.html)
 
 
-## Details
-### You will learn  
+## You will learn  
  - How to run a streaming project
  - How to use some of the streaming test tools in studio. Specifically:  how to view the output from streams and how to use the manual input tool to generate an input event
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Run the Project)]
+### Run the Project
+
 
 Go to the **SAP HANA Streaming Development** perspective.
 
@@ -34,11 +36,9 @@ You are switched into the **SAP HANA Streaming Run-Test** perspective if the pro
 
 > If you get an error message saying that the project didn't start, first check for compile errors.  If it's compiling without errors but still won't start, see the Streaming Analytics Troubleshooting Guide on the SAP Help Portal.
 
-[DONE]
 
-[ACCORDION-END]
+### Open streams in the Stream View
 
-[ACCORDION-BEGIN [Step 2: ](Open streams in the Stream View)]
 
 In the **Server View**, double-click on **`MACHINEDATA`** to open it in the **Stream View**.
 
@@ -50,11 +50,9 @@ Open the `ACTIVITY_HIST` stream in the **Stream View** as well.
 
 ![open all tables](3-openalltables.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Use the manual input tool to generate input events
 
-[ACCORDION-BEGIN [Step 3: ](Use the manual input tool to generate input events)]
 
 In the **Manual Input** tab (the lower left tile in the default perspective layout), click the **Select Stream** button to connect the manual input tool to your `freezer_monitor` project, as shown below.
 
@@ -80,6 +78,4 @@ View your event in the **Stream View** tabs. Keep in mind that all input events 
 
 You can also view the `ACTIVITY_HIST` table in the HANA database to see that any events that appear in the `ACTIVITY_HIST` stream get recorded in the connected database table.
 
-[VALIDATE_3]
 
-[ACCORDION-END]

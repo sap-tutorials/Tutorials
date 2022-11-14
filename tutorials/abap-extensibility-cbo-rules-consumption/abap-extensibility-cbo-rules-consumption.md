@@ -1,25 +1,27 @@
 ---
-title: Implement Business Rules Logic in Custom Business Object
-description: Modify the business rules logic in custom business object to invoke the business rules for bonus percentage calculation of custom business object.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>abap-extensibility, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
+# Implement Business Rules Logic in Custom Business Object
+<!-- description --> Modify the business rules logic in custom business object to invoke the business rules for bonus percentage calculation of custom business object.
+
 ## Prerequisites
   - S/4HANA Cloud system must be of release 1811 or higher.
   - Custom Business Object must already be created in S/4HANA Cloud.
   - Business rules must be created in SAP Cloud Platform and deployed in S/4HANA cloud.
 
-## Details
-### You will learn
+## You will learn
   - How to extend custom business object to integrate business rules logic
   - Run the custom business object to see the change in the values based on business rules execution
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open custom business object)]
+### Open custom business object
+
 
 1. Open the `Bonus Plan` custom business object in S/4HANA cloud system.
 
@@ -29,10 +31,10 @@ primary_tag: topic>abap-extensibility
 
     ![modify custom business object](modifycbo.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Integrate rules logic in custom business object)]
+
+### Integrate rules logic in custom business object
+
 
 4. Copy this code appropriately after `consistency check` block.
 
@@ -93,10 +95,9 @@ primary_tag: topic>abap-extensibility
 
     ![publish custom business object](publishcbo.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test business rules logic)]
+### Test business rules logic
+
 
 1. Switch back to the **General Information** tab of custom business object.
 
@@ -112,7 +113,6 @@ primary_tag: topic>abap-extensibility
 
     ![run custom business object](editruncbo.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ---

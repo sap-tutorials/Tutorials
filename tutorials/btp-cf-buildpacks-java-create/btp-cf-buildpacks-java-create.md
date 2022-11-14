@@ -1,14 +1,16 @@
 ---
+parser: v2
 author_name: Gergana Tsakova
 author_profile: https://github.com/Joysie
-title: Create a Java Application via Cloud Foundry Command Line Interface
-description: Create a simple Java application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product-function>sap-btp-cockpit]
 primary_tag: programming-tool>java
 ---
 
+
+# Create a Java Application via Cloud Foundry Command Line Interface
+<!-- description --> Create a simple Java application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 
 ## Prerequisites
  - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html)
@@ -20,18 +22,19 @@ primary_tag: programming-tool>java
  - You have downloaded and installed [Eclipse IDE for Enterprise Java and Web Developers] (https://www.eclipse.org/downloads/packages/)
 
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple "Hello World" application in Java
   - How to run authentication checks via XSUAA service
   - How to run authorization checks by setting XSUAA scopes
 
 
+## Intro
 This tutorial will guide you through creating and setting up a simple Node.js application by using cf CLI. You will start by building and deploying a web application that returns simple data – a **Hello World!** message, and then invoking this app through another one - a web microservice (application router).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log on to SAP BTP)]
+### Log on to SAP BTP
+
 
 First, you need to connect to the SAP BTP, Cloud Foundry environment with your productive subaccount. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud)
 
@@ -58,12 +61,11 @@ In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 Details about your personal SAP BTP subaccount are displayed (API endpoint, user, organization, space).
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 1: ](Create a Java Project)]
+### Create a Java Project
+
 
 Before creating an application, you need a Java project. For this tutorial, you can easily create one by using Spring Boot.
 
@@ -99,14 +101,13 @@ Before creating an application, you need a Java project. For this tutorial, you 
 
 You have successfully created a basic Java project.
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
 
-[ACCORDION-BEGIN [Step 1: ](Complete your Java Project)]
+### Complete your Java Project
+
 
 For this part, you need to configure your `HelloWorld` application, add an extra class, and a `manifest.yml`  file.
 
@@ -199,13 +200,13 @@ For this part, you need to configure your `HelloWorld` application, add an extra
 
 Your Java project is complete and your application is ready to be deployed.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Deploy your Java application)]
+
+### Deploy your Java application
+
 
 You are in the Eclipse IDE.
 
@@ -244,11 +245,10 @@ Your Java application is successfully deployed and running on the SAP BTP, Cloud
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Run an Authentication Check)]
+### Run an Authentication Check
+
 
 Authentication in the SAP BTP, Cloud Foundry environment is provided by the Authorization and Trust Management (XSUAA) service. In this example, OAuth 2.0 is used as the authentication mechanism. The simplest way to add authentication is to use the Node.js `@sap/approuter` package. To do that, a separate Node.js micro-service will be created, acting as an entry point for the application.
 
@@ -444,10 +444,10 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run an Authorization Check)]
+
+### Run an Authorization Check
+
 
 Authorization in the SAP BTP, Cloud Foundry environment is also provided by the XSUAA service. In the previous example, the `@sap/approuter` package was added to provide a central entry point for the business application and to enable authentication. Now to extend the example, authorization will be added.
 
@@ -618,10 +618,10 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
 - If you try to access it through the app router, it results in a `403 Forbidden` response due to missing permissions. To get these permissions, you need to create a role collection containing the role `Viewer` and assign this role to your user. You can do this only from the SAP BTP cockpit.
 
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Assigning Roles to a User in SAP BTP Cockpit)]
+
+### Assigning Roles to a User in SAP BTP Cockpit
+
 
 1. Open the SAP BTP cockpit and go to your subaccount.
 
@@ -659,6 +659,5 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
 
 When you try to access again the `helloworld` application through the app router, it will successfully display the **Hello World!** message.
 
-[VALIDATE_5]
-[ACCORDION-END]
+
 ---

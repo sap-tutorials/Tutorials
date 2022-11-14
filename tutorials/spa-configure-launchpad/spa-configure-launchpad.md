@@ -1,88 +1,88 @@
 ---
+parser: v2
 author_name: Ilyes Yamoun
 author_profile: https://github.com/shielddz
-title: Configure Launchpad
-description: Configure launchpad for visibility scenario
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
+# Configure Launchpad
+<!-- description --> Configure launchpad for visibility scenario
+
 ## Prerequisites
  - [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
  - Space in BTP Cockpit subaccount created
 
-## Details
-### You will learn
+## You will learn
   - How to configure launchpad in **SAP BTP Cockpit** to gain visibility in your dashboard
 
 ---
 In this tutorial, you will configure everything needed for the creation of a launchpad dashboard in **SAP BTP Cockpit** to gain visibility of your processes.
 
-[ACCORDION-BEGIN [Step 1: ](Add entitlement)]
+### Add entitlement
+
 1.  Navigate to **SAP BTP Cockpit** subaccount > **Entitlements**.
 
-    !![navigate to entitlements](Step1-1.png)
+    <!-- border -->![navigate to entitlements](Step1-1.png)
 
 2.  Search **Launchpad Service** in the search bar.
     > If it is already added, skip to the next step of this tutorial.
 
-    !![search launchpad service](Step1-2.png)
+    <!-- border -->![search launchpad service](Step1-2.png)
 
 3.  Choose **Add Service Plans**.
 
-    !![add service plans button](Step1-3.png)
+    <!-- border -->![add service plans button](Step1-3.png)
 
 4.  Search **Launchpad Service**:
     - Select **Launchpad Service** from the options shown.
     - Select **standard (Application)**.
     - Choose **Add 1 Service Plan**.
 
-    !![Add service plan](Step1-4.png)
+    <!-- border -->![Add service plan](Step1-4.png)
 
 5.  Choose **Save**.
 
-    !![save changes](Step1-5.png)
+    <!-- border -->![save changes](Step1-5.png)
 
 **Launchpad Service** entitlement has now been added.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new subscription)]
+### Create a new subscription
+
 1.  Navigate to **SAP BTP Cockpit** subaccount > **Services** > **Instances and subscriptions**.
 
 2.  Choose **Create**.
 
-    !![navigate to instances and subscriptions](Step2-1.png)
+    <!-- border -->![navigate to instances and subscriptions](Step2-1.png)
 
 3.  For the new subscription:
     -  Select **Launchpad Service** as a **Service**.
     -  Select your plan from the **Plan** list.
     -  Choose **Create**.
-    !![Subscription details](Step2-2.png)
+    <!-- border -->![Subscription details](Step2-2.png)
 
 The subscription is now added.
 
-!![Result Subscription](Step2-3.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![Result Subscription](Step2-3.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Assign roles to users)]
+
+### Assign roles to users
+
 1.  Navigate to **SAP BTP Cockpit** subaccount > **Security** > **Users**.
 
-    !![navigate to Users](Step3-1.png)
+    <!-- border -->![navigate to Users](Step3-1.png)
 
 2.  Select the user to whom you will give the roles then on **Enter Full-Screen Mode** .
 
-    !![Select user](Step3-2.png)
+    <!-- border -->![Select user](Step3-2.png)
 
 3.  Choose **Assign Role Collection**.
 
-    !![Assign Role Collection button](Step3-3.png)
+    <!-- border -->![Assign Role Collection button](Step3-3.png)
 
 4.  Select **Launchpad Admin** and **Launchpad External User** then choose **Assign Role Collection**.
 
@@ -92,21 +92,21 @@ The subscription is now added.
     >
     > Note: Launchpad Admin shouldn't be given to all users for security purposes.
 
-    !![Select Roles](Step3-4.png)
+    <!-- border -->![Select Roles](Step3-4.png)
 
 The roles are now assigned.
 
-!![Result assignation](Step3-5.png)
+<!-- border -->![Result assignation](Step3-5.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create SAP process automation instance)]
+
+### Create SAP process automation instance
+
 1.  Navigate to **SAP BTP Cockpit** subaccount > **Services** > **Instances and subscriptions**.
 
 2.  Choose **Create**.
 
-    !![navigate to instances and subscriptions](Step2-1.png)
+    <!-- border -->![navigate to instances and subscriptions](Step2-1.png)
 
 3.  For the new instance:
     -  Select **SAP Process Automation** as a **Service**.
@@ -116,19 +116,19 @@ The roles are now assigned.
     -  Set **Instance Name** as **SPA-instance**.
     -  Choose **Create**.
 
-    !![Instance details](Step4-2.png)
+    <!-- border -->![Instance details](Step4-2.png)
 
 The instance is now added.
 
-!![Result instance](Step4-3.png)
+<!-- border -->![Result instance](Step4-3.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a new destination)]
+
+### Create a new destination
+
 1.  Navigate to **SAP BTP Cockpit** subaccount > **Connectivity** > **Destinations**.
 
-    !![navigate to Destinations](Step5-1.png)
+    <!-- border -->![navigate to Destinations](Step5-1.png)
 
 2.  To create a new destination:
     -  Choose **New Destination**.
@@ -137,35 +137,34 @@ The instance is now added.
     -  Set **Name** to **spa-launchpad**.
     -  Choose **Next**.
 
-    !![create a new destination](Step5-2.png)
+    <!-- border -->![create a new destination](Step5-2.png)
 
 3.  Choose **Save**.
 
-    !![Save destination](Step5-3.png)
+    <!-- border -->![Save destination](Step5-3.png)
 
 The new destination is now created.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open launchpad editor)]
+### Open launchpad editor
+
 1.  Navigate back to **SAP BTP Cockpit** subaccount > **Services** > **Instances and Subscriptions**.
 
 2.  Choose **Go to Application** on **Launchpad Service** in **Applications** tab.
 
-    !![navigate to Instances and Subscriptions](Step6-1.png)
+    <!-- border -->![navigate to Instances and Subscriptions](Step6-1.png)
 
 Your launchpad is now ready to be created and designed with **Launchpad Editor**.
 
-!![Launchpad Editor](Step6-2.png)
+<!-- border -->![Launchpad Editor](Step6-2.png)
 
 1.  Click **Provider Manager**.
 
-    !![Provider manager](Step6-3.png)
+    <!-- border -->![Provider manager](Step6-3.png)
 
 2.  Click **Update Content**.
 
-    !![Update Content](Step6-4.png)
+    <!-- border -->![Update Content](Step6-4.png)
 
     > The content updates and the status changes to Activated.
 
@@ -175,17 +174,17 @@ Your launchpad is now ready to be created and designed with **Launchpad Editor**
 
 4.  Select **HTML5 Apps**.
 
-    !![Content manager > content Explorer > HTML5 Apps](Step6-5.png)
+    <!-- border -->![Content manager > content Explorer > HTML5 Apps](Step6-5.png)
 
 5.  Select all items and click **+ Add to My Content**.
 
-    !![Select and add to my content](Step6-6.png)
+    <!-- border -->![Select and add to my content](Step6-6.png)
 
 6.  Navigate to **Content Manager** > **My Content**.
 
 7.  Click **New** and select **Group**.
 
-    !![Add new Group](Step6-7.png)
+    <!-- border -->![Add new Group](Step6-7.png)
 
 8.  Set **Title** to **SAP Process Automation**.
 
@@ -193,21 +192,19 @@ Your launchpad is now ready to be created and designed with **Launchpad Editor**
 
 10.  Hit **Save** and go back.
 
-    !![Add Assignments to group](Step6-8.png)
+    <!-- border -->![Add Assignments to group](Step6-8.png)
 
 11.  Click **Everyone** role to edit it.
 
-    !![Everyone Role from list](Step6-9.png)
+    <!-- border -->![Everyone Role from list](Step6-9.png)
 
 12.  Hit **Edit** to edit role.
 
-    !![Edit button](Step6-10.png)
+    <!-- border -->![Edit button](Step6-10.png)
 
 13.  Assign **My Inbox**, **Process Workspace**, **Visibility Scenario Dashboard** and **Visibility Scenario Instances** to **Everyone** role then click **Save**.
 
-    !![Assignments to Everyone Role](Step6-11.png)
+    <!-- border -->![Assignments to Everyone Role](Step6-11.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

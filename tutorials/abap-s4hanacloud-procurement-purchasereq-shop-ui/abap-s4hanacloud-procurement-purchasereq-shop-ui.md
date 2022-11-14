@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a SAP Fiori App and Deploy it to SAP S/4HANA Cloud, ABAP Environment
-description: Create a SAP Fiori app for a RAP business object in SAP Business Application Studio and deploy it to SAP S/4HANA Cloud, ABAP Environment.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a SAP Fiori App and Deploy it to SAP S/4HANA Cloud, ABAP Environment
+<!-- description --> Create a SAP Fiori app for a RAP business object in SAP Business Application Studio and deploy it to SAP S/4HANA Cloud, ABAP Environment.
 
 ## Prerequisites  
 - **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
@@ -17,11 +19,11 @@ author_profile: https://github.com/mervey45
 - Business Catalog `SAP_CORE_BC_COM` must be assigned to business user
 - The user must have the same email address as the user from trial
 
+## Intro
 >**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to assign role collections
 - How to create dev spaces
 - How to set up organization and space
@@ -32,7 +34,8 @@ author_profile: https://github.com/mervey45
 - How to create IAM apps and business catalogs
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
+### Assign role collection to user
+
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -71,10 +74,9 @@ author_profile: https://github.com/mervey45
       You are now able to develop on SAP Business Application Studio.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure destination)]
+### Configure destination
+
 
   1. Select your subaccount **trial**.
 
@@ -91,7 +93,7 @@ author_profile: https://github.com/mervey45
     |  Name           | **`System_XXX_SAML_ASSERTION`**
     |  Type           | **`HTTP`**
     |  Description    | **`SAML Assertion Destination to SAP S/4HANA ABAP Environment system_xxx`**
-    |  URL          | In the SAP S/4HANA Cloud tenant, navigate to the **Communication Systems** app and copy the **Host Name** from **Own System** = `Yes`<div>!![Own System Host Name in Communication Systems App](s4hc-cs-own-system-host-name.png)</div> and paste it with prefix `https://` for example `https://my12345-api.s4hana.ondemand.com.`
+    |  URL          | In the SAP S/4HANA Cloud tenant, navigate to the **Communication Systems** app and copy the **Host Name** from **Own System** = `Yes`<div><!-- border -->![Own System Host Name in Communication Systems App](s4hc-cs-own-system-host-name.png)</div> and paste it with prefix `https://` for example `https://my12345-api.s4hana.ondemand.com.`
     |  Proxy Type   | **`Internet`**
     |  Authentication | **`SAMLAssertion`**
     |  Audience   | Enter the URL of your system and remove `-api`, for example `https://my12345.s4hana.ondemand.com`.
@@ -117,11 +119,10 @@ author_profile: https://github.com/mervey45
 
     ![assign role collection](trust.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create communication system)]
+### Create communication system
+
 
   1.  Select your system and right-click **Properties**.
 
@@ -167,11 +168,10 @@ author_profile: https://github.com/mervey45
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create dev space)]
+### Create dev space
+
 
   1.  Select **trial**.
 
@@ -201,10 +201,9 @@ author_profile: https://github.com/mervey45
 
       ![dev](studio5.png)
 
-[DONE]
-[ACCORDION-END]
 
-  [ACCORDION-BEGIN [Step 5: ](Open workspace)]
+  ### Open workspace
+
 
   1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
      Select **Open Folder** to set your workspace.
@@ -216,10 +215,9 @@ author_profile: https://github.com/mervey45
       ![organization](studio7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create list report object page)]
+### Create list report object page
+
 
   1. Select **View** > **Find Command**.
 
@@ -269,12 +267,12 @@ author_profile: https://github.com/mervey45
        - Transport Request: `<your_transport_request>`
        - Deployment description: `z_onlineshop_xxx`
 
-      !![app](list4.png)
+      <!-- border -->![app](list4.png)
 
       Click **Next >**.
 
     >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`Z_PURCHASE_REQ_XXX`** and open it. Open your transport organizer to see your transport request. The transport request of the superior folder needs to be chosen. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
-        !![app](transportrequest.png)
+        <!-- border -->![app](transportrequest.png)
 
   8. Configure Fiori Launchpad:
 
@@ -282,17 +280,16 @@ author_profile: https://github.com/mervey45
        - Action: display
        - Title: Online Shop XXX
 
-      !![app](list5.png)
+      <!-- border -->![app](list5.png)
 
       Click **Finish**.
 
   9. Now all files have been generated.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run SAP Fiori application for data preview)]
+### Run SAP Fiori application for data preview
+
 
   1. Press the run button on the left side and select the **`Start z_onlineshop_xxx`** run button to start your SAP Fiori application.
 
@@ -308,10 +305,9 @@ author_profile: https://github.com/mervey45
 
      ![run](list8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Deploy your application)]
+### Deploy your application
+
 
 1. Click **Files**, right-click your project and select **Open in Terminal**.
 
@@ -323,20 +319,18 @@ author_profile: https://github.com/mervey45
 
     When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
+### Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse
+
 
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`Z_PURCHASE_REQ_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `Z_PURCHASE_REQ_XXX` by pressing `F5`.
 
     ![library](bsp.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Create IAM App and business catalog)]
+### Create IAM App and business catalog
+
 
   1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
@@ -416,11 +410,10 @@ author_profile: https://github.com/mervey45
        ![catalog](catalog7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Run SAP Fiori application)]
+### Run SAP Fiori application
+
 
   1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`z_onlineshop_xxx`** and select **Open in Terminal**.
 
@@ -444,11 +437,9 @@ author_profile: https://github.com/mervey45
 
       ![url](list8.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

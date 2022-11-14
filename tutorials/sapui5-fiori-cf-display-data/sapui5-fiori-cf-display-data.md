@@ -1,6 +1,5 @@
 ---
-title: Display Data from the Northwind Service
-description: Learn how to add new views, to display more data, and how to navigate between them.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
@@ -9,18 +8,20 @@ author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
+# Display Data from the Northwind Service
+<!-- description --> Learn how to add new views, to display more data, and how to navigate between them.
+
 ## Prerequisites
 - You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
 
-## Details
-### You will learn
+## You will learn
   - How to use a sub-generator to add an OData model to the SAPUI5 application
   - How to navigate between SAPUI5 views
   - How to configure UI5 tooling tasks
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add a new view)]
+### Add a new view
 
 
 Add a new view to display a list of products. For this, you can use another `easy-ui5` sub-generator.
@@ -40,9 +41,7 @@ yo easy-ui5 project newview
 
 The routes are added to the `uimodule/webapp/manifest.json` file. The generator asks you whether you want to override the `manifest.json` file. If prompted, accept this.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Inspect the modifications)]
+### Inspect the modifications
 
 As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
@@ -56,11 +55,9 @@ As you can see in the log, there are two new files and one modified file. As the
   ]
 },
 ```
-!![product route](productroute.png)
+<!-- border -->![product route](productroute.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Enable routing)]
+### Enable routing
 
 1. The `webapp/view/MainView.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
 
@@ -73,7 +70,7 @@ As you can see in the log, there are two new files and one modified file. As the
     </mvc:View>
     ```
 
-    !![mainview](mainview.png)
+    <!-- border -->![mainview](mainview.png)
 
 2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
@@ -95,9 +92,7 @@ As you can see in the log, there are two new files and one modified file. As the
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add a data source)]
+### Add a data source
 
 To populate the list with items, bind a data source to the application. For this, there exists another sub-generator:
 
@@ -121,9 +116,7 @@ Again, please accept the modification of the manifest file.
 > The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.json` if you don't like it.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Redirect traffic to the data source)]
+### Redirect traffic to the data source
 
 1. All requests to the data source will be sent to `<webapp URL>/V2/Northwind/Northwind.svc/`.
 
@@ -173,12 +166,10 @@ npm start
 
 Now you should see the Northwind products in the SAPUI5 list control:
 
-!![list](list.png)
+<!-- border -->![list](list.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Display more product information on a detail page)]
+### Display more product information on a detail page
 
 In this step, you will add a detail page that shows some additional information. Same as for the overview page, you'll use the sub-generator to create a new view.
 
@@ -212,7 +203,7 @@ In this step, you will add a detail page that shows some additional information.
     <StandardListItem type="Navigation" press="handleListItemPress" title="{ProductName}" />
     ```
 
-    !![standard list item](listitem.png)
+    <!-- border -->![standard list item](listitem.png)
 
 4. Add navigation logic to the `uimodule/webapp/controller/Products.controller.js` to handle the press event.
 
@@ -235,14 +226,13 @@ In this step, you will add a detail page that shows some additional information.
     });
     ```
 
-    !![handle press](handlepress.png)
+    <!-- border -->![handle press](handlepress.png)
 
 5. **Click** on any list item. This should trigger a navigation to a new page.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 6: ](Add UI elements to the empty detail page)]
+### Add UI elements to the empty detail page
+
 
 
 1. Add controller logic to `uimodule/webapp/controller/ProductDetail.controller.js` to parse selected product from the routing arguments and to bind the product to the view.
@@ -299,10 +289,8 @@ In this step, you will add a detail page that shows some additional information.
 
 3. Once you saved the view, the web app should update automatically and display a view similar to this this one.
 
-!![detail view](detail.png)
+<!-- border -->![detail view](detail.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

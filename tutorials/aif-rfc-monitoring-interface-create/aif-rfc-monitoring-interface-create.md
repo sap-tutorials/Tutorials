@@ -1,28 +1,31 @@
 ---
-title: Create a Simple RFC Interface
-description: Create a simple RFC interface to enable monitoring messages exchanged via Remote Function Call (RFC).
+parser: v2
 auto_validation: false
 time: 30
 tags: [ tutorial>beginner, software-product>sap-s-4hana, tutorial>license]
 primary_tag: software-product>sap-application-interface-framework
 ---
 
+# Create a Simple RFC Interface
+<!-- description --> Create a simple RFC interface to enable monitoring messages exchanged via Remote Function Call (RFC).
+
 ## Prerequisites
   - You've set up SAP Application Interface Framework
   - SAP S/4HANA 1909 or later
   - You've set up background RFC (Background Remote Function Call) and created an RFC-enabled function module (see [bgRFC Configuration](https://help.sap.com/docs/ABAP_PLATFORM_NEW/753088fc00704d0a80e7fbd6803c8adb/489709f255493987e10000000a421937.html) on SAP Help Portal)
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple RFC interface
   - How to set up monitoring of an RFC interface in SAP Application Interface Framework
 
 
+## Intro
 In this tutorial, you'll learn how to create a simple RFC interface that enables you to monitor messages that you exchange via Remote Function Call (RFC).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create package and function group)]
+### Create package and function group
+
 
 >If you've completed other tutorials for SAP Application Interface Framework, you might already have created a package and a function group. In this case, you can skip this step.
 
@@ -37,10 +40,9 @@ Create a package that serves as the destination for your newly created objects.
 
 You have successfully created a new package named `ZDEMO` and a new function group named `ZDEMO`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create message class)]
+### Create message class
+
 
 In preparation for the next step, in which you create a function module and a message in case of an application error, you need to create a new message class and a message.
 
@@ -50,15 +52,14 @@ In preparation for the next step, in which you create a function module and a me
 
 3. Add a new message with number `000` and message short text `Error in creating a flight booking`.
 
-    !![Create Message Class](message-class-create.png)
+    <!-- border -->![Create Message Class](message-class-create.png)
 
 4. **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create function module)]
+### Create function module
+
 
 Run the **Function Builder** (transaction code `SE37`) and create a new remote-enabled function module `ZBAPI_FLBOOKING_CREATEFROMDATA` as a wrapper of the standard demo function module `BAPI_FLBOOKING_CREATEFROMDATA`.
 
@@ -66,7 +67,7 @@ Run the **Function Builder** (transaction code `SE37`) and create a new remote-e
 2. On the upcoming dialog, enter the previously created function group `ZDEMO` and maintain a short text. Click **Save**.
 3. In the **Attributes** tab, select the `Remote-Enabled Module` flag.
 
-    !![Remote-enabled Function Module](function-module-attributes.png)
+    <!-- border -->![Remote-enabled Function Module](function-module-attributes.png)
 
 4. Switch to tab **Import**, and enter the following import parameters:
 
@@ -118,10 +119,9 @@ Switch to tab **Source code**, and maintain the source code by copying and pasti
 
 **Save** and **activate** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create DDIC structure)]
+### Create DDIC structure
+
 
 Run the **ABAP Dictionary** (transaction code `SE11`), and create a new structure `ZDEMO_RFC_FLBOOKING_CREATE` corresponding to the signature of your function module. The DDIC structure needs to contain one component for each parameter of your function module.
 
@@ -145,14 +145,13 @@ Run the **ABAP Dictionary** (transaction code `SE11`), and create a new structur
     | `EXTENSION_IN`  | Types     | `BAPIPAREXTAB`
     | `RETURN`        | Types     | `BAPIRET2_T`
 
-    !![Create Structure](structure-components.png)
+    <!-- border -->![Create Structure](structure-components.png)
 
 5. **Save** and **activate** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create namespace)]
+### Create namespace
+
 
 As interfaces in SAP Application Interface Framework are grouped using namespaces, you must create a namespace.
 
@@ -164,12 +163,11 @@ Select **New Entries** and enter the following name and description for your new
 | :----------- | :---------
 | **`DEMO_3`** | **`Namespace for AIF RFC tutorials`**
 
-  !![Create namespace](customizing-namespace-create.png)
+  <!-- border -->![Create namespace](customizing-namespace-create.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create interface)]
+### Create interface
+
 
 1. While still in **Customizing** (transaction code `/n/AIF/CUST`), navigate to **Interface Development** > **Define Interfaces**.
 
@@ -189,10 +187,9 @@ Select **New Entries** and enter the following name and description for your new
 4. **Save** your changes.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Specify interface engines)]
+### Specify interface engines
+
 
 Next, you have to select the engines that should be used to handle the messages that are processed.
 
@@ -213,10 +210,9 @@ Next, you have to select the engines that should be used to handle the messages 
 
 5. **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Define RFC settings)]
+### Define RFC settings
+
 
 Next, you need to assign the RFC function module to the interface.
 
@@ -234,14 +230,13 @@ Next, you need to assign the RFC function module to the interface.
     | Use temporary message store | Selected
 
 
-    !![Define RFC Settings](customizing-rfc-settings.png)
+    <!-- border -->![Define RFC Settings](customizing-rfc-settings.png)
 
 3. **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create interface-specific single index table)]
+### Create interface-specific single index table
+
 
 It's recommended to implement an interface-specific single index table to ensure full flexibility, especially if you expect a high load of messages or if you plan to define key fields for your interface (now or later).
 
@@ -257,15 +252,14 @@ It's recommended to implement an interface-specific single index table to ensure
 
 5. Select both flags **Display Root Field** and **Display description**.
 
-    !![Define Interface-Specific Features](customizing-interface-specific-features.png)
+    <!-- border -->![Define Interface-Specific Features](customizing-interface-specific-features.png)
 
 6. **Save** your changes.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create recipient for interface)]
+### Create recipient for interface
+
 
 If you want to monitor the newly created interface in the Interface Monitor of the Message Dashboard app, you require a recipient for the interface.
 
@@ -273,15 +267,14 @@ If you want to monitor the newly created interface in the Interface Monitor of t
 
 2. In the menu on the left, navigate to **Define Recipients** by double-clicking it. Choose **New Entries**, enter the name **`ZRFC_TEST_RECIPIENT`** for your new recipient, and add a meaningful description.
 
-    !![Define Recipients](customizing-recipients-define.png)
+    <!-- border -->![Define Recipients](customizing-recipients-define.png)
 
 3. **Save** your changes.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Assign recipient to interface)]
+### Assign recipient to interface
+
 
 To be able to see any data in the Interface Monitor or the Message Dashboard, a recipient must be assigned to the interface they want to monitor.
 
@@ -289,44 +282,41 @@ To be able to see any data in the Interface Monitor or the Message Dashboard, a 
 
 2. In the menu on the left, double-click **Assign Recipients Without Key Fields** and create a new entry. Enter or select the namespace and the recipient you created before.
 
-    !![Assign Recipients Without Key Fields](customizing-recipients-assign.png)
+    <!-- border -->![Assign Recipients Without Key Fields](customizing-recipients-assign.png)
 
 3. **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Assign users to recipient)]
+### Assign users to recipient
+
 
 Now the users in charge of monitoring the RFC must be assigned to the recipient.
 
 Run transaction `/AIF/MYRECIPIENTS` and create a new entry. Select the namespace **`DEMO_3`** and recipient `ZRFC_TEST_RECIPIENT` you created in the steps before. Check the boxes for **Overview** and **Technical User**.
 
-  !![Assign User to Recipient](user-assign.png)
+  <!-- border -->![Assign User to Recipient](user-assign.png)
 
 **Save** the new entry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create test data)]
+### Create test data
+
 
 Before you can create flight bookings, you need to generate test data.
 
 Run transaction `BC_DATA_GEN`, select the standard data record, and execute the report.
 
-  !![Create Data for Flight Data Model](create-test-data-report.png)
+  <!-- border -->![Create Data for Flight Data Model](create-test-data-report.png)
 
 Open the **Data Browser** (transaction code `SE16`), select the table **SFLIGHTS**, and choose **Execute**. The generated flight data entries are displayed.
 
 >If you run the requests in step 16 **Send sample request**, select existing flights from this table. Ensure that the flight date is in the future, or your requests will fail.
 
-  !![Generated Flight Data Entries](create-test-data-entries.png)
+  <!-- border -->![Generated Flight Data Entries](create-test-data-entries.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Create inbound destination)]
+### Create inbound destination
+
 
 Create a new inbound destination for your bgRFC configuration.
 
@@ -336,12 +326,11 @@ Create a new inbound destination for your bgRFC configuration.
 4. Enter a new **Queue Prefix** `AIF_` and click **Add**.
 5. **Save** your changes.
 
-  	!![Create Inbound Destination](bgrfc-inbound-destination-create.png)
+  	<!-- border -->![Create Inbound Destination](bgrfc-inbound-destination-create.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Create test report)]
+### Create test report
+
 
 Now you have to create a new program to call your function module via bgRFC.
 
@@ -400,25 +389,23 @@ Now you have to create a new program to call your function module via bgRFC.
 
 **Save** and **activate** your changes.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 16: ](Send sample request)]
+### Send sample request
+
 
 To send in a sample request, you have to run the previously created program and call the RFC interface via bgRFC.
 
 Run program **`ZDEMO_FLBOOK_VIA_BGRFC`**. In the selection screen, enter existing flight data from table `SFLIGHTS` in the input parameters of your program, and select **Execute**.
 
-  !![Run Report](report-run.png)
+  <!-- border -->![Run Report](report-run.png)
 
 You have successfully sent in a sample request via bgRFC that you can monitor in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Monitor RFC interface)]
+### Monitor RFC interface
+
 
 Finally, you should test your settings and verify that the RFC monitoring is working as planned.
 
@@ -426,24 +413,22 @@ If you're using SAP GUI, check the results of your test in the **Interface Monit
 
 >If you don't see the new interface, check that your user is correctly assigned to the recipient as described in step **Assign users to recipient**.
 
-  !![Monitoring in Interface Monitor](monitoring-interface-monitor.png)
+  <!-- border -->![Monitoring in Interface Monitor](monitoring-interface-monitor.png)
 
 Select the summary line for your interface. You're forwarded to **Monitoring and Error Handling**, which shows your selected test message(s).
 
-  !![Monitoring in Error Handling](monitoring-error-handling.png)
+  <!-- border -->![Monitoring in Error Handling](monitoring-error-handling.png)
 
 Alternatively, if you've set up Message Monitoring in the SAP Fiori launchpad, you can check the test results there. See [How to configure the SAP Fiori Apps for SAP Application Interface Framework](https://blogs.sap.com/2021/11/04/how-to-configure-the-sap-fiori-apps-for-sap-application-interface-framework/).
 
-  !![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
+  <!-- border -->![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
 
 Congratulations! You've created a simple RFC interface and set up monitoring for it in SAP Application Interface Framework.  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

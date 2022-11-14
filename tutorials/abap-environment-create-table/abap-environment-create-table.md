@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a Simple Database Table for ABAP Environment
-description: Create a database table in SAP BTP, ABAP Environment and prefill it with data.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
@@ -9,27 +8,30 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create a Simple Database Table for ABAP Environment
+<!-- description --> Create a database table in SAP BTP, ABAP Environment and prefill it with data.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or license.
 
-## Details
-### You will learn
+## You will learn
 - How to create a database table
 - How to `prefill` your database table with data
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
+### Open Eclipse
+
 Open Eclipse, and select **New** > **ABAP Package**.
 
 ![Open Eclipse](package.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
+### Create ABAP package
+
   1. Maintain following information in the appearing dialog and  click **Next**.
 
       - Name: **`Z_Booking_XXX`**
@@ -45,18 +47,16 @@ Open Eclipse, and select **New** > **ABAP Package**.
 
       ![Create ABAP package](package4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open ABAP repository object)]
+### Open ABAP repository object
+
 Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
 
 ![Open ABAP repository object](object.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create database table)]
+### Create database table
+
   1. Search for **database table**, select the appropriate entry and click **Next**.
 
       ![Create database table](db.png)
@@ -75,10 +75,9 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Check code](empty.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Define database table)]
+### Define database table
+
   1. Define the table columns (client, booking, `customername`, `numberofpassengers`, …). Specify client and booking as key fields, and the field `currencycode` as currency key for cost as displayed below. The table annotations (beginning with @) remain unchanged. For that, you can copy the database table definition provided below.
 
     ```ABAP
@@ -107,10 +106,9 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Define database table](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create ABAP class)]
+### Create ABAP class
+
   1. Create a class in order to `prefill` our created database table. Right-click on your package and navigate to **New** > **ABAP Class** in the appearing context menu.
 
       ![Create ABAP class](class.png)
@@ -126,10 +124,9 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Create ABAP class](classnew2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Replace source code)]
+### Replace source code
+
   1. Replace the source code of your class with the one provided below:
 
     ```ABAP
@@ -168,7 +165,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     *   check the result
         SELECT * FROM ztbooking_xxx INTO TABLE @it_bookings.
         out->write( sy-dbcnt ).
-        out->write( 'data inserted successfully!').
+        out->write( 'data inserted successfully!' ).
 
       ENDMETHOD.
 
@@ -179,10 +176,9 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Replace source code](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run ABAP application)]
+### Run ABAP application
+
   1. Run your class as an ABAP application (console) or press **F9**.
 
       ![Run ABAP application](application.png)
@@ -199,10 +195,8 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Check inserted data](result.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

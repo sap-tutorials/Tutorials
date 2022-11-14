@@ -1,6 +1,5 @@
 ---
-title: Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
-description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+parser: v2
 auto_validation: true
 time: 25
 tags: [tutorial>intermediate, programming-tool>node-js, software-product>sap-business-technology-platform ]
@@ -9,23 +8,24 @@ author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
 ---
 
+# Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
+<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
 
-## Details
-### You will learn
+## You will learn
   - How to secure a basic Node.js application with user authentication
   - How to secure a certain part of your application with user authorization
   - How to assign authorizations (in the form of a role collection) to a user
 
+## Intro
 The goal of this tutorial is to secure and deploy a product list application with authentication and authorization, so only authenticated users with the correct authorizations are able to see the products within the application. Users without the necessary authorizations are able to log in to the application, but do not see the products.
 
 The base for this tutorial is a Node.js application that uses the express framework and SAPUI5 to display a list of products (see screenshot).
 
-!![ui5 product list application](product-list-app.png)
-
-#### XSUAA and the Application Router
-
+<!-- border -->![ui5 product list application](product-list-app.png)
+### XSUAA and the Application Router
 To secure this product list application, two components are used. One is called the XSUAA service and the other one is called application router. The application router is used in combination with the XSUAA service to authenticate a user and route the user to the secured application.
 
 The XSUAA plays the role of an OAuth authorization service whereas the application router plays the role of an OAuth client. Furthermore, the application router works as a central entry point to the application. For more information, check the links at the end of this tutorial.
@@ -33,7 +33,8 @@ The XSUAA plays the role of an OAuth authorization service whereas the applicati
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the application files)]
+### Prepare the application files
+
 
 #### Prepare the index.js file
 To prevent a direct call to your application without authentication, it is necessary to add some code to your application. In our example, you use the Node.js passport authentication middleware and configure it with the XSUAA JWT strategy.
@@ -94,10 +95,9 @@ Since there are now more modules used beside the express module, you have to add
 6. Save the file.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare the application security descriptor)]
+### Prepare the application security descriptor
+
 To use the XSUAA service, a file named `xs-security.json` is necessary. The file can define properties of the XSUAA service instance as well as different roles and authorizations. In this example the file contains a role template and a role collection with a **Product List Viewer** role, that enables the user later to view the products.
 
 6. Add a folder named `security` to your `product-list` folder.
@@ -144,11 +144,11 @@ To use the XSUAA service, a file named `xs-security.json` is necessary. The file
 > To learn more about the `xs-security.json` file, check the links at the end of this tutorial.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Prepare the approuter files)]
+
+### Prepare the approuter files
+
 The approuter will enable you to create a secure route to your application.
 
 
@@ -189,11 +189,10 @@ The approuter will enable you to create a secure route to your application.
 11. Save the file.
 > To learn more about the `xs-app.json` file, check the links at the end of this tutorial.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Move static content to the application router)]
+### Move static content to the application router
+
 For performance reasons it is better to put the images of the application into a static resources folder with the application router.
 
 1. Navigate to the `approuter` folder.
@@ -228,11 +227,10 @@ product-list
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Update the manifest file)]
+### Update the manifest file
+
 In the manifest file you have to define a hostname for your application and add a destination. The manifest file is used to bind the XSUAA service instance to your application.
 
 > The steps show incrementally what parameters and values have to be added. To avoid indentation errors, you can just copy the whole code at the end.
@@ -341,11 +339,10 @@ applications:
       ]
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Update the index.html file)]
+### Update the index.html file
+
 Because your are calling the product list over the approuter with `/products` you need to make a small change within the `index.html` file.
 
 1. Navigate to the `product-list/myapp/static` folder.
@@ -356,11 +353,10 @@ var productsUrl = "/products/products"; //  contains path mapping which is spec
 ```
 3. Save the file.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create the XSUAA service instance)]
+### Create the XSUAA service instance
+
 Before you can deploy your application, you need to create the service instance for the XSUAA.
 
 1. Log in to your Cloud Foundry account with the Cloud Foundry CLI.
@@ -376,11 +372,10 @@ cf create-service xsuaa application xsuaa-service-tutorial -c security/xs-securi
 cf push
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Call your application from its secure route)]
+### Call your application from its secure route
+
 
 Your application has two routes that are defined in the `manifest.yml`. The direct route to the application should return an error message saying `unauthorized` (because you don't have a valid JWT yet). The secure route through the approuter redirects to a login screen. After logging in, the application opens but shows the message `no data`. To see the product data, you need to assign your user the role collection with the necessary authorizations.
 
@@ -400,10 +395,9 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Assign the role collection)]
+### Assign the role collection
+
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
@@ -430,8 +424,6 @@ Assign your user the role collection that contains the necessary role to view th
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 ### Troubleshooting

@@ -1,6 +1,5 @@
 ---
-title: Machine Requirements
-description: Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: software-product>sap-hana\,-express-edition
@@ -8,23 +7,26 @@ tags: [ tutorial>beginner, software-product>sap-hana\,-express-edition ]
 time: 5
 ---
 
+# Machine Requirements
+<!-- description --> Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
+
 <!-- loioc3807913b0a340a99822bf0d97a01da6 -->
 
 ## Prerequisites
-
-## Details
-### You will learn
+## You will learn
 Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
 
 ---
 
+## Intro
 > Note:  
 > Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
 >
 > To get started developing with SAP HANA XS Advanced see [Get Started with XS Advanced Development](mission.xsa-get-started).
 >
 
-[ACCORDION-BEGIN [Step 1: ](Ensure that your system meets the hardware requirements.)]
+### Ensure that your system meets the hardware requirements.
+
 
 Check if your system has the required hardware to successfully install and run SAP HANA 2.0, express edition.
 
@@ -34,11 +36,9 @@ Check if your system has the required hardware to successfully install and run S
 |HDD|120 GB HDD recommended|
 |Cores|2 cores (4 recommended)|
 
-[DONE]
 
-[ACCORDION-END]
+### Ensure that your system meets the software requirements.
 
-[ACCORDION-BEGIN [Step 2: ](Ensure that your system meets the software requirements.)]
 
 Check if your system has the required software to successfully install and run SAP HANA 2.0, express edition.
 
@@ -70,6 +70,3 @@ Check if your system has the required software to successfully install and run S
     >
 
 
-[DONE]
-
-[ACCORDION-END]

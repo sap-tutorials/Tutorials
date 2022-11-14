@@ -1,10 +1,12 @@
 ---
-title: View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View
-description: Create and use a SQL view to query data from both in-memory and dynamic tiering tables.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
 ---
+
+# View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View
+<!-- description --> Create and use a SQL view to query data from both in-memory and dynamic tiering tables.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -13,18 +15,17 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana-dyna
 ## Next Steps
  - **Tutorials:** [Multi-Store Tables](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-7.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to view the combined data set for data partitioned between an in-memory and a dynamic tiering table instance.
  - How to create and use a SQL view.
  - How to query against a SQL view with conditions.
-
-### Time to Complete
+## Time to Complete
 **5 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Query from both in-memory and dynamic tiering tables)]
+### Query from both in-memory and dynamic tiering tables
+
 There are cases where you only need to access data either from the in-memory table instance (`ORDERS_CS`) or from the dynamic tiering table instance (`ORDERS_DT`). However you will also likely have use cases where you need to query the full data set across both table instances, which can be done with a union.
 Run the script below in a SQL Console to query data from both in-memory and dynamic tiering tables using a `UNION`.
 
@@ -37,11 +38,9 @@ SELECT * FROM "TPCH"."ORDERS_DT"
 
 ![Union Query](assets/hana-webide-dt-getting-started-7-864f21b2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create and query against a SQL view
 
-[ACCORDION-BEGIN [Step 2: ](Create and query against a SQL view)]
 Alternatively you can create an SQL view to query data from multiple tables and simplify the process. Run the script below to create a SQL view. Verify it ran successfully.
 
 ```SQL
@@ -64,7 +63,5 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
 
 ![Select View](assets/hana-webide-dt-getting-started-7-31c6f818.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
