@@ -22,8 +22,7 @@ primary_tag: software-product>sap-process-automation
 ## Intro
 There are different requirements and business situations when a form is needed in a business process. You have already created a form to start the process. Most often you probably need a form to maintain some input data or to approve or reject a request or even to send out some notifications. The two latter ones are your focus now.
 
-
---
+---
 
 ### Create New Approval Form
 
@@ -40,7 +39,7 @@ There are different requirements and business situations when a form is needed i
 
     <!-- border -->![Open Editor](03.png)
 
-4. Now you are in the Form's Editor, where you can define the layout and input fields. First add via drag and drop a new **Headline 1** to the canvas.   Provide this headline **`Invoice Approval`**.
+4. Now you are in the Form's Editor, where you can define the layout and input fields. First add via drag and drop a new **Headline 1** into the canvas.   Provide this headline **`Invoice Approval`**.
 
     <!-- border -->![Add Headline](04.png)
 
@@ -128,7 +127,7 @@ There are different requirements and business situations when a form is needed i
 
     <!-- border -->![Invoice Approval Notification Form](20.png)
 
-5. Go back to the process select **Invoice Approval Notification Form** to maintain the information in **General** tab.
+5. Go back to the process, select **Invoice Approval Notification Form** to maintain the information in **General** tab.
 
     <!-- border -->![Approval Notification General](21.png)
 
