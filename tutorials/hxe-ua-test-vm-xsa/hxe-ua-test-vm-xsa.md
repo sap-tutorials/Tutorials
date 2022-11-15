@@ -1,6 +1,5 @@
 ---
-title: Test SAP HANA, express edition
-description: Test your XSA, SAP Web IDE, Cockpit, and XSC installations.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,23 +7,27 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
 
+# Test SAP HANA, express edition
+<!-- description --> Test your XSA, SAP Web IDE, Cockpit, and XSC installations.
+
 <!-- loio0377017816dc46b09db7b2e13bfabc0a -->
 
 ## Prerequisites
  - **Tutorials:** You have completed [Edit the Hosts File](https://developers.sap.com/tutorials/hxe-ua-hosts.html)
 
-## Details
-### You will learn
+## You will learn
 You'll learn how to connect to the server from applications, and check if the applications installed correctly.
 
 ---
 
+## Intro
 > Note:
 > Make sure you edited your `/etc/hosts` file before starting this procedure.
 >
 >
 
-[ACCORDION-BEGIN [Step 1: ](Test XSA)]
+### Test XSA
+
 
 1.   In your VM, log in to XSA services:
 
@@ -36,11 +39,9 @@ You'll learn how to connect to the server from applications, and check if the ap
 
     You specified this password when you were prompted for the HANA database master password earlier in [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm-xsa).
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Turn on XSA messaging
 
-[ACCORDION-BEGIN [Step 2: ]((Optional) Turn on XSA messaging)]
 
 If you want the XSA messaging service, issue these commands to start the messaging service applications:
 
@@ -51,11 +52,9 @@ xs start messaging-service-broker
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Test SAP Web IDE
 
-[ACCORDION-BEGIN [Step 3: ](Test SAP Web IDE)]
 
 1.   Display the status and URL for the application `webide`. Enter:
 
@@ -90,11 +89,9 @@ xs start messaging-service-broker
 
     If you are prompted to change your password, follow the instructions.
 
-[DONE]
 
-[ACCORDION-END]
+### Test Cockpit
 
-[ACCORDION-BEGIN [Step 4: ](Test Cockpit)]
 
 1.   Go back to your VM. Enter:
 
@@ -140,11 +137,9 @@ xs start messaging-service-broker
 
     Cockpit displays:![hxe_cockpit_splash_7](hxe_cockpit_splash_7.png)
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Test XSC
 
-[ACCORDION-BEGIN [Step 5: ]((Optional) Test XSC)]
 
 Check that the XSEngine is running. From your host OS (not the VM guest) open a browser and enter:
 
@@ -174,17 +169,12 @@ You recorded the IP address earlier in [Start SAP HANA, express edition Server](
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Next steps
 
-[ACCORDION-BEGIN [Step 6: ](Next steps)]
 
 -   **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js and Python](https://developers.sap.com/mission.hana-cloud-clients.html).
 
 -   **Learn XS Advanced basics**: Explore the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA. This tutorial includes a step for mapping the tenant database to the development space. See [SAP HANA XS Advanced, explore the basic tools](xsa-explore-basics).
 
 
-[DONE]
-
-[ACCORDION-END]

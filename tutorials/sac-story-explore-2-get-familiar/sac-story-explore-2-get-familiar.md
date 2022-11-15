@@ -1,26 +1,29 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Get Familiar with the Story Interface
-description: Get familiar with SAP Analytics Cloud's story interface and learn how to interact with a story
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Get Familiar with the Story Interface
+<!-- description --> Get familiar with SAP Analytics Cloud's story interface and learn how to interact with a story
+
 ## Prerequisites
 - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to use the features in the toolbar
   - How to navigate the pages of a story
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Toolbar)]
+### Understand the Toolbar
+
 Let's first look at the toolbar. In the toolbar, you can save a copy, share with other users, add filters, navigate pages, toggle between View and Edit modes, and more.
 
 ![Toolbar](Toolbar resized.png)
@@ -40,10 +43,9 @@ Let's first look at the toolbar. In the toolbar, you can save a copy, share with
 
 >![File Access](File Access resized.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the Pages of a Story)]
+### Explore the Pages of a Story
+
 
 To start, let's explore the options for Page Navigation. As seen below, the default mode lets you navigate the story pages through a drop-down menu.
 
@@ -71,15 +73,12 @@ This page gives an overview of the performance for each sales manager.  The bar 
 
 ![Sales Manager Overview](Sales Manager Overview.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 ---

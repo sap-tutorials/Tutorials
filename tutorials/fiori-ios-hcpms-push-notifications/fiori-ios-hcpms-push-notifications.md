@@ -1,11 +1,13 @@
 ---
-title: Enable the Push Notification service for your iOS app
-description: Use the SAP Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
+
+# Enable the Push Notification service for your iOS app
+<!-- description --> Use the SAP Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
@@ -13,12 +15,12 @@ time: 35
 - [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Apple ID:** A paid Apple developer account is required
 
-## Details
-### You will learn  
+## You will learn  
 - How to setup your Xcode project and SAP Mobile Services to send/receive notifications.
 
 ---
 
+## Intro
 You can use the Apple push notification Service to propagate information from the backend to the device. In this tutorial you use the native iOS push services to enable APNS for your iOS app. To enable your app for push notifications, you need to carry out the following tasks:
 
 *  Create an App ID (automated)
@@ -31,7 +33,8 @@ You can use the Apple push notification Service to propagate information from th
 
 > In order to implement push notifications, a paid Apple developer account is required. Students or other developers with a personal Apple ID for their team will not be able to use push notifications, because they won't have access to the Developer Portal to generate the required certificate.
 
-[ACCORDION-BEGIN [Step 1: ](Use Xcode to create an App ID and Provisioning Profile)]
+### Use Xcode to create an App ID and Provisioning Profile
+
 
 The App ID is used to identify your app and ensures the Apple push notification Servers will properly send push notifications to your app. The Provisioning Profile will be used to sign your app later on.
 
@@ -60,10 +63,9 @@ We make sure everything is set up correctly.
 
     Our App Project is now configured.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the Certificate Signing Request file)]
+### Create the Certificate Signing Request file
+
 
 In order to use the **Apple Push Notification service**, we need to create a **CSR file**.
 
@@ -79,10 +81,9 @@ In order to use the **Apple Push Notification service**, we need to create a **C
 
     The certificate is now saved to you hard drive and added to your Keychain as well as a public and private.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create .CER file in your Apple Developer Account)]
+### Create .CER file in your Apple Developer Account
+
 
 1. Go to your [Apple Developer Account](https://developer.apple.com) and click on **Certificates, IDs & Profiles**.
 
@@ -126,10 +127,9 @@ In order to use the **Apple Push Notification service**, we need to create a **C
 
     ![CER creation](fiori-ios-hcpms-push-notifications-11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install the .CER file and create the .p12 file)]
+### Install the .CER file and create the .p12 file
+
 
 In order to configure the `APNS` on **SAP Mobile Services** we need to install the `.CER` file and create the needed `.p12` file.
 
@@ -151,10 +151,9 @@ In order to configure the `APNS` on **SAP Mobile Services** we need to install t
 
     > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Mobile Services.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add the Mobile Push Notification feature to your app)]
+### Add the Mobile Push Notification feature to your app
+
 
 The Assistant automatically generates the necessary code for receiving and handling push notifications in your app but how do you actually send a notification to your users? - Using the **Mobile Push Notification** feature available on SAP Mobile Services.
 
@@ -184,10 +183,9 @@ The Assistant automatically generates the necessary code for receiving and handl
 
     ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15d.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add a new Service Key to the Mobile Push Notification feature)]
+### Add a new Service Key to the Mobile Push Notification feature
+
 
 1. In Mobile Service click on **Service Keys** and click on the **+** to create a new key for your application.
 
@@ -210,10 +208,9 @@ The Assistant automatically generates the necessary code for receiving and handl
 
 5. Click on **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Examine your application's Push Notifications code)]
+### Examine your application's Push Notifications code
+
 
 1. The generated code will have all push notifications code in the `AppDelegate.swift` file.
     Open the `AppDelegate.swift` file to inspect the notifications code.
@@ -299,10 +296,10 @@ The Assistant automatically generates the necessary code for receiving and handl
 
     ```
 
-[VALIDATE_7]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Send push notifications to your phone)]
+
+### Send push notifications to your phone
+
 
 It is time now to send the first push notification from the **SAP Mobile Services** push notification feature.
 
@@ -331,10 +328,9 @@ It is time now to send the first push notification from the **SAP Mobile Service
 
     > If you happen to have an Apple Watch, and have it configured to display push notifications received on your iPhone, the push notification you have sent via Mobile Services will also be displayed on your Apple Watch.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Quick Look on the Advanced Option for Sending Push Notifications)]
+### Quick Look on the Advanced Option for Sending Push Notifications
+
 
 When you send a push notification over Mobile Services you can send it in a **General** way and in an **Advanced** one.
 
@@ -344,5 +340,3 @@ You can set icons, sound, change the title as well as the body message you want 
 
 Congratulations you successfully setup your app, Mobile Services and send/received a push notification.
 
-[DONE]
-[ACCORDION-END]

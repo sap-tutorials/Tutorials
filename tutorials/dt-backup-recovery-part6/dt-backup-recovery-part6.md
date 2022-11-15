@@ -1,27 +1,28 @@
 ---
-title: Creating and Recovering Delta Backups
-description: Delta backups are a feature in SAP HANA to optimize recoveries and backups.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
 
+# Creating and Recovering Delta Backups
+<!-- description --> Delta backups are a feature in SAP HANA to optimize recoveries and backups.
+
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials** [Creating Database Backups](https://www.sap.com/) and [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/)
 
-## Details
-### You will learn
+## You will learn
 - How delta backups are different than a full backup
 - The difference between differential backup and incremental backup
 - How to perform a delta backup
 - How to perform recoveries with delta backups
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 Delta backups is a feature in SAP HANA to perform backup and recoveries quicker, reducing the need for frequent full backups. Rather than completing a full backup of a system, delta backups enables you to optimize your backup strategy by only capturing the data changed since the last full backup or delta backup - meaning less log backups are read for a recovery. Delta backups can only be created if a full data backup, that is delta backup-enabled, has been performed.
 
 There are **two types** of delta backups:
@@ -30,11 +31,9 @@ There are **two types** of delta backups:
 
 ![Delta Backups](delta-backup.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Creating Delta Backups
 
-[ACCORDION-BEGIN [Step 2: ](Creating Delta Backups)]
 
 Ensure you have chosen an user that has the authorizations described in the tutorial [Initializing Database Backup and Recovery](https://www.sap.com/) before creating the backup.
 
@@ -64,11 +63,10 @@ After the backup is complete, the execution summary will show.
 
 ![Execution Summary](completed-delta-backups.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Performing Recoveries)]
+### Performing Recoveries
+
 
 Recoveries are performed the same as a normal recovery, as seen in [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/), with the additional step of enabling the delta backup option.
 
@@ -105,6 +103,3 @@ The recovery is now complete.
 
 ![Recovery summary](recovery-summary.png)
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,32 +1,35 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Open the SAP Analytics Cloud Story
-description: Learn how to navigate and explore the different visualizations of a story
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Open the SAP Analytics Cloud Story
+<!-- description --> Learn how to navigate and explore the different visualizations of a story
+
 ## Prerequisites
  - You have completed the Get to know SAP Analytics Cloud Group of Tutorials (Link Later)
  - You have access to an SAP Analytics Cloud account
  - Please use the latest version of Chrome or Edge to access your Sap Analytics Cloud
 
-## Details
-### You will learn
+## You will learn
   - How to navigate files and folders within SAP Analytics Cloud
   - Where to find the "Sample – Revenue Analysis" story provided to all users
   - What the components of a story are
 
+## Intro
 Welcome back and congratulations on learning the different capabilities offered in SAP Analytics Cloud and setting up your trial account. For this set of tutorials, you should follow along step by step with your own SAP Analytics Cloud tenant.
 
 Let's get started and explore SAP Analytics Cloud stories.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Browse through your Files and Folders)]
+### Browse through your Files and Folders
+
 Before you open your first story, let's look at the navigation path through files and folders that lead you to the story. To start, expand the navigation panel on the left and click on **Files**.
 
 <!-- ![Files](Files.png) -->
@@ -57,10 +60,9 @@ Last feature to note here are the Search options available for finding content.
   1. The **search** icon located on the Shell Bar is used for content across the whole SAP Analytics Cloud product. The Shell Bar is always visible at the top, making it easy for you to search while in a story.
   2. The **search bar** below the Shell Bar allows you to find content within any of the folders or subfolders of **My Files**. For example, use this and search for "Sample – Revenue Analysis" to find the sample story.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open and Explore the Sample Story)]
+### Open and Explore the Sample Story
+
 Now that you understand the files and folders system, open the **"Sample - Revenue Analysis"** Sample Story within the **Samples** folder or search for it using the Search bar.
 
 Let's quickly revisit what stories are and why they're important. Stories are much like an analytics dashboard or report that allow stakeholders to analyze, report, and plan with the historical data of a business. Furthermore, it provides instant access and augmented analysis for monitoring and measuring business performance and metrics.
@@ -76,13 +78,10 @@ This Story shows the "data story" of a beverage business called "The Best Run Ju
 |3                | **Input Control Filters**            | Allows you to focus in on data segments.  Slide the Date Range filter to select your dates for analysis and the filter checkboxes helps you be precise in your analysis.
 |4                |  **Bar Charts**                      | Visualizes values across a Series of data.  As an example, the first chart on the left shows Gross Margin % by the Product and Location dimensions. They're easy to understand and interact with by drilling down, sorting, or analyzing with Smart Insights.  We'll use these together in the later tutorials.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 ---

@@ -1,23 +1,28 @@
 ---
-title: Use the SDK for Data Attribute Recommendation
-description: Use the Python SDK to train machine learning models and run inference requests.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Use the SDK for Data Attribute Recommendation
+<!-- description --> Use the Python SDK to train machine learning models and run inference requests.
+
+## You will learn
   - How to authenticate with your service instance of Data Attribute Recommendation
   - How to upload data and train a machine learning model
   - How to make inference requests
 
+## Intro
 The repository and initial setup documentation of the SDK can be found [here](https://github.com/SAP/data-attribute-recommendation-python-sdk). A complete documentation, including API reference, can be found [here](https://data-attribute-recommendation-python-sdk.readthedocs.io/en/latest/index.html). You can use this tutorial as the first point of contact with the SDK. Make sure to check the documentation since you can use the SDK to do much more than what is covered here.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Obtain the dataset)]
+### Obtain the dataset
+
 
 First, you need to download the dataset used in this tutorial. The dataset can be found in this [repository](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample) and includes data from the retail company Best Buy.
 
@@ -44,10 +49,9 @@ Enter `head -n2 bestBuy.csv` to take a look at the first two lines of the datase
 
 The first line of the output represents the head of the dataset, for example, the column names. The dataset contains product information, including a description, a price and three levels of categories the product belongs to. The other lines are actual rows in the dataset, representing a product.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Provide service key)]
+### Provide service key
+
 
 Next up, you need to make the service key of your service instance available to the SDK so that it can authorize when communicating with your service instance. The service key will be saved in a file named `dar_service_key.json`.
 
@@ -63,17 +67,16 @@ Enter `touch dar_service_key.json` to create an empty JSON file.
 
 [OPTION END]
 
-Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
+Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-free-key) or [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
 
 ![Service Key](service-key.png)
 
 Now you are all set to start using the service.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload data and train model)]
+### Upload data and train model
+
 
 The first step is to upload data and to train a machine learning model based on that data afterwards. Using the SDK, you can combine both steps.
 
@@ -171,7 +174,7 @@ The execution of the code might take a while but you can easily follow the proce
 
   4.  The data from the Best Buy dataset gets uploaded into the dataset container.
 
-  5.  Once the training data is uploaded, it is validated by the service whether the data is in the right format and fulfills the requirements. See [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html) for all requirements.
+  5.  Once the training data is uploaded, it is validated by the service whether the data is in the right format and fulfills the requirements. See all requirements [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html).
 
   6.  If the validation is successful, a training job is triggered. During this, a machine learning model is trained based on the uploaded data. As explained above, which parts of the data serve as input and output for the training is determined by the dataset schema. The training may take about 10 minutes so a little patience is needed here.
 
@@ -179,14 +182,13 @@ The execution of the code might take a while but you can easily follow the proce
 
 Now you have successfully uploaded the training data and trained a machine learning model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy model)]
+### Deploy model
+
 
 Next, the machine learning model must be deployed. That means, the model becomes available for productive usage and can serve inference requests, for example, to make predictions.
 
-Please note that deploying models can occur costs if you are not using the trial account. See [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/c03b561eea1744c9b9892b416037b99a.html) for the limits in trial and [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/1e093326a2764c298759fcb92c5b0500.html) for the pricing in productive accounts.
+Please note that deploying models can incur costs. See [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html) and [Metering and Pricing](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e093326a2764c298759fcb92c5b0500.html).
 
 [OPTION BEGIN [Windows]]
 
@@ -262,10 +264,9 @@ You can observe the current status of the deployment in the outputs:
 
 Your machine learning model is now deployed and ready to make predictions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Make inference requests)]
+### Make inference requests
+
 
 Now, the model can be used to make predictions. To do so, you need to provide the inputs (features) which include the `manufacturer`, `description` and `price` of the product. The model will then predict three levels of categories.
 
@@ -358,11 +359,10 @@ Please note that a high probability does not necessarily mean that the predicted
 
 Now you have successfully run through the whole process of uploading data, training a machine learning model and using the model to make predictions.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](List all models)]
+### List all models
+
 
 It is worth to know how to list all the models you currently have, especially if you want to work with multiple models.
 
@@ -428,11 +428,10 @@ This outputs the details of all the available models:
 
 You can use the output to further manage your models, for example deleting a deployment as described in the next step.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Delete deployment)]
+### Delete deployment
+
 
 Finally, it is important to know how to delete a deployment, especially in productive accounts as unused deployments still incur costs.
 
@@ -480,7 +479,7 @@ mm_client = ModelManagerClient.construct_from_credentials(
 mm_client.ensure_model_is_undeployed(MODEL_NAME)
 ```
 
-The above code will make sure that the specified model is undeployed. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
+The above code will make sure that the specified model is `undeployed`. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
 
 Now go back into the command prompt and run `python undeploy_model.py` to run the code.
 
@@ -490,13 +489,11 @@ From the output you can tell which actions have been taken. In case a deployment
 
 You are now familiar with the basics of the SDK and how to use the Data Attribute Recommendation service. Please have a look at the [documentation](https://data-attribute-recommendation-python-sdk.readthedocs.io/en/latest/index.html) if you want to dive deeper into the possibilities of the SDK.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

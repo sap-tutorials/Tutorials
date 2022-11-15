@@ -67,8 +67,6 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
     <!-- border -->![Dev Space Starting](BAS-Dev-Space-Starting-.png)
 
-
-
 ### Open the SAP Fiori dev space
 
 

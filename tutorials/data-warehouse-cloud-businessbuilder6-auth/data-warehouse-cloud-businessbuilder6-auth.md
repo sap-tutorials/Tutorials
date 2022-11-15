@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Helena Nacinovic
 author_profile: https://github.com/helenanacinovic
-title: Create an Authorization Scenario in the Business Builder
-description: Create authorization scenarios in the Business Builder of SAP Data Warehouse Cloud to control who can access your business models.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
+
+# Create an Authorization Scenario in the Business Builder
+<!-- description --> Create authorization scenarios in the Business Builder of SAP Data Warehouse Cloud to control who can access your business models.
 
 ## Prerequisites
 - Understand the Business Builder in SAP Data Warehouse Cloud
@@ -15,12 +17,12 @@ primary_tag: products>sap-data-warehouse-cloud
 - Have at least one analytical dataset, dimension, or fact model created with the Business Builder
 - Have at least one data access control created
 
-## Details
-### You will learn
+## You will learn
 - What are data access controls in SAP Data Warehouse Cloud
 - How to create a new authorization scenario
 - How to apply an authorization scenario to a business entity
 
+## Intro
 Every authorization scenario requires at least one data access control, which you can create in the Data Access Control area of SAP Data Warehouse Cloud. To understand what data access controls are and how to create them, please see our [technical documentation](https://help.sap.com/viewer/c8a54ee704e94e15926551293243fd1d/cloud/en-US/a032e51c730147c7a1fcac125b4cfe14.html).
 
 Authorization scenarios can be created for any business entities created with the Business Builder, as well as consumption models.
@@ -29,7 +31,8 @@ To learn more about authorization scenarios, please see our [technical documenta
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new authorization scenario)]
+### Create a new authorization scenario
+
 
 In the Business Builder of SAP Data Warehouse, start by following these steps:
 
@@ -41,10 +44,9 @@ In the Business Builder of SAP Data Warehouse, start by following these steps:
 Your new authorization scenario is created.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add data restrictions to the authorization scenario)]
+### Add data restrictions to the authorization scenario
+
 
 Now that you have an authorization scenario, please note that, on the top right corner of the screen, you can see an orange warning icon.
 
@@ -67,11 +69,10 @@ To correct that, you need to add data restrictions. This is how you can do it:
 > Learn more about it in our [technical documentation](https://help.sap.com/viewer/c8a54ee704e94e15926551293243fd1d/cloud/en-US/167c05c673dc4715baba8d5d305abb1e.html).
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Apply an authorization scenario to a business entity)]
+### Apply an authorization scenario to a business entity
+
 
 You can use your authorization scenario to limit access to any business entity created in the Business Builder. It's pretty simple:
 
@@ -89,12 +90,9 @@ Your authorization scenario is now limiting access to the business entity.
 
 > Learn in the next tutorial how to collaborate using the Repository Explorer.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_6]
 
-[ACCORDION-END]
+
 ---

@@ -79,7 +79,6 @@ The flow consists of the following parts:
 
 ### Open the project's folder
 
-
 1. In the left side bar, select **Hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
@@ -98,9 +97,7 @@ The flow consists of the following parts:
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
-
 ### Generate an app based on SAPUI5 Application template
-
 
 1. In the **Get Started** tab click **Start from template**.
 

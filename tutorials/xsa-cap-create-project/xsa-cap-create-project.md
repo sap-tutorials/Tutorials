@@ -1,6 +1,5 @@
 ---
-title: SAP HANA Native, Create a SAP Cloud Application Programming Model project
-description: Use the wizard for the SAP Cloud Application Programming Model to create a project for SAP HANA.
+parser: v2
 auto_validation: true
 time: 15
 author_name: Thomas Jung
@@ -9,22 +8,26 @@ tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition
 primary_tag: products>sap-hana
 ---
 
+# SAP HANA Native, Create a SAP Cloud Application Programming Model project
+<!-- description --> Use the wizard for the SAP Cloud Application Programming Model to create a project for SAP HANA.
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have logged into SAP Web IDE for SAP HANA. To find out more about SAP Web IDE and other tools in you SAP HANA, express edition instance, [refer to this tutorial](xsa-explore-basics). To learn more about SAP Web IDE Full-stack for HANA development [refer to this tutorial](hana-trial-advanced-analytics).
  - If you are planning on continuing the series in SAP HANA, express edition, it is recommended to [map the development space to the tenant database](xsa-tenant-db-space) **before starting development**.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an application with the wizard for the Cloud Application Programming model
   - How to use the local Git repository for development/testing purposes
 
+## Intro
 The images in this tutorial are based on SAP HANA, express edition SPS04.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new project)]
+### Create a new project
+
 
 Log into SAP Web IDE.
 
@@ -51,10 +54,9 @@ Choose `Node.js` as the service module and click **Finish**
 
 ![New CAP model project](4_4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the generated artifacts)]
+### Explore the generated artifacts
+
 
 The wizard has generated a Multi-target Application with two modules: a database module and a service module. Expand them to familiarize yourself with the basic folder structure.
 
@@ -69,11 +71,10 @@ This file is the deployment descriptor and it is the glue that keeps all the mic
 > This file is very sensitive to indentation and does not allow for tabs.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Initialize local Git repository)]
+### Initialize local Git repository
+
 
 You will use the local Git repository for basic version management.
 
@@ -89,10 +90,9 @@ After a few seconds, you will see a success message in the top-right corner. Use
 
 ![Initialize Git](8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Perform your first commit)]
+### Perform your first commit
+
 
 Each time you commit to the local or remote repository, you create a version. This will allow you to revert and compare any changes.
 **It is recommended that you perform commits at the end of each tutorial.**
@@ -106,7 +106,6 @@ Add a commit message and click **Commit**:
 
 Click the console icon and look at the messages to complete the validation below.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

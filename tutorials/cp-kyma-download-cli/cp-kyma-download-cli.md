@@ -1,26 +1,29 @@
 ---
-title: Install the Kubernetes Command Line Tool
-description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP BTP, Kyma runtime via the command line.
+parser: v2
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Install the Kubernetes Command Line Tool
+<!-- description --> Download and install kubectl - the Kubernetes command line tool which allows access to the SAP BTP, Kyma runtime via the command line.
 
 ## Prerequisites
  - **Tutorials:** [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started)
 
-## Details
-### You will learn  
+## You will learn  
   - How to download `kubectl` - the Kubernetes command line tool
   - How to install `kubectl` and connect it to a Kyma runtime
   - How to explore a few basic `kubectl` commands
 
+## Intro
 The Kyma runtime is a Kubernetes cluster. To manage resources and configurations from the command line, the tool `kubectl` can be used. This tutorial provides the steps to configure the tool to access the Kyma runtime. In subsequent tutorials you will learn various commands provided by `kubectl`.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download and install kubectl)]
+### Download and install kubectl
+
 
 1. Download the latest `kubectl` command line tool from the Kubernetes website. Use the following URL:  
 
@@ -28,10 +31,9 @@ The Kyma runtime is a Kubernetes cluster. To manage resources and configurations
 
 2. On the Kubernetes website, follow the instructions listed for your operating system, for example: [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-macos).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download and install kubectl oidc-login)]
+### Download and install kubectl oidc-login
+
 
 The use of the `kubectl` command line tool requires an authenticated user to perform any tasks on the Kyma runtime. The Kyma runtime is configured to use `OpenID` Connect (OIDC) authentication and requires the installation of the plugin `kubectl oidc-login` to perform the authentication.    
 
@@ -41,10 +43,9 @@ The use of the `kubectl` command line tool requires an authenticated user to per
 
     > The kubectl oidc-login runs on port 8000, in case of issues please make sure the port is not occupied.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test the kubectl installation)]
+### Test the kubectl installation
+
 
 1. Open a command prompt on your computer.
 
@@ -66,10 +67,10 @@ This should return a list of version properties, for example:
 Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:31:32Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"darwin/amd64"}
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download the Kyma runtime kubeconfig)]
+
+### Download the Kyma runtime kubeconfig
+
 
 The `kubectl` tool relies on a configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained from both the BTP Cockpit and the Console UI.
 
@@ -101,10 +102,9 @@ To obtain the `kubeconfig` from the Console UI:
 
     ![kubeconfig](kubeconfig-ui.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set the KUBECONFIG environment variable)]
+### Set the KUBECONFIG environment variable
+
 
 1. Open a command line prompt on your computer. In the command line screen, type in the following:
 
@@ -146,7 +146,6 @@ Replace the `<KUBECONFIG_FILE_PATH>` section with the file path, including the f
 
 > For more information on `kubectl`, visit the Kubernetes [overview](https://kubernetes.io/docs/reference/kubectl/overview/) and [kubectl-commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) websites.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ---

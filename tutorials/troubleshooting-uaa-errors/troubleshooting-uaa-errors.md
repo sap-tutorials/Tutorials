@@ -1,17 +1,20 @@
 ---
-title: Troubleshooting UAA Errors
-description: Troubleshooting authentication error message when using XS Advanced client to log in to  SAP HANA
+parser: v2
 primary_tag: products>sap-hana
 tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, topic>security, products>sap-hana, products>sap-hana\,-express-edition , products>sap-cloud-platform ]
 time: 20
 ---
 
 
+# Troubleshooting UAA Errors
+<!-- description --> Troubleshooting authentication error message when using XS Advanced client to log in to  SAP HANA
+
 ## Prerequisites  
  - **Systems used:** SAP HANA SPS12, SAP HANA, express edition
 
 
-## Details
+
+## Intro
 When attempting to log in to the XS Advanced engine from the XS Advanced Client, the following error occurs:
 
 ```
@@ -29,7 +32,8 @@ There seem to be plenty of root causes for this issue, involving different compo
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Make sure UAA is up)]
+### Make sure UAA is up
+
 Discard the obvious first and make sure the service is running.
 
 Open the SAP HANA Cockpit and scroll to the SAP HANA Database administration:
@@ -42,17 +46,15 @@ Manage Services:
 
 Find `xsuaaserver` in the list.
 
-[ACCORDION-END]
 
+### Ensure all components are up to date, including the XSA Client
 
-[ACCORDION-BEGIN [Step 2: ](Ensure all components are up to date, including the XSA Client)]
 
 Not having the latest version of the XSA Client can also be the cause for the `uaa-security is not up` error. You can find the latest version of SAP Web IDE and XSA Client from the [marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=N&FUNCTIONBAR=Y&EVENT=TREE&TMPL=INTRO_SWDC_SP_INMEMORY&V=MAINT&REFERER=CATALOG-PATCHES&ROUTENAME=products/By%20Category%20-%20SAP%20In-Memory%20).
 
-[ACCORDION-END]
 
+### Make sure the proper access is granted to the user you are logging in with
 
-[ACCORDION-BEGIN [Step 3: ](Make sure the proper access is granted to the user you are logging in with)]
 
 Lack of proper access will lead to even more notable errors, such as an `XSA not authorized` error.  As of SPS12, Patch 1, you will need to assign the right role collections to the user you are connecting with
 
@@ -84,9 +86,8 @@ You can find more details here: <https://blogs.sap.com/2016/08/16/sap-web-ide-fo
 
 Alternatively, you can test these steps by copying the preconfigured user into a new one, applying the proper role collections and enabling the access to the space with command `xs set-space-role`.
 
-[ACCORDION-END]
+### Check the right ports are open
 
-[ACCORDION-BEGIN [Step 4: ](Check the right ports are open)]
 
 If you look at the message thrown by the client, you will find that although you explicitly call port 30030 in the `API_URL` parameter, the error message returns port 30032.  Not having the right ports open would mean more errors when trying to connect to other sites, as login requests will go through the UAA.
 
@@ -111,9 +112,6 @@ This means we need to make sure communications into those ports are free of bloc
 
 </ol>
 
-[ACCORDION-END]
+### Check the Hostname
 
-[ACCORDION-BEGIN [Step 5: ](Check the Hostname)]
 If you recently performed an upgrade, **make sure the hostname and Fully Qualified Domain Name (FQDN) are still correct**. The file /etc/hosts in the operating system of the HANA instance contains this information
-
-[ACCORDION-END]

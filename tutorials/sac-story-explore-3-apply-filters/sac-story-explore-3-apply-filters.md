@@ -1,28 +1,31 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Apply Filters to the Story
-description: Analyze the charts in your Stories with filters
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Apply Filters to the Story
+<!-- description --> Analyze the charts in your Stories with filters
+
 ## Prerequisites
 - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to filter charts
   - How to filter your story with Input Control page filters
   - How to create story-wide filters with a story filter
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Applying Filters to your Story)]
+### Applying Filters to your Story
+
 
 Filters help you focus your analysis, investigate specific data segments and dive deeper into selected data points.  In SAP Analytics Cloud stories, there are three different filter options:
 
@@ -34,10 +37,9 @@ Filters help you focus your analysis, investigate specific data segments and div
 
 In this tutorial, you will learn more about each of these filters and how to use them with your story.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Filter Data in Charts)]
+### Filter Data in Charts
+
 
 With chart filters, you can exclude non-relevant data points or filter data points to focus a chart on a specific set of data. Chart filters apply only to the data displayed in that chart. There are different ways to filter charts:
 
@@ -69,11 +71,10 @@ To remove these filters, open the **Builder** tab in the Designer panel and remo
 
 ![Remove Polygon Filter](Remove Polygon Filter.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Filter your Page with Input Controls)]
+### Filter your Page with Input Controls
+
 
 Input Control filters allow users to interact with stories and control the data displayed on the page. On the Summary page of this sample story, the Input Controls enables you to filter the entire page by the **Date**, **Product**, and **Location** dimensions.  
 
@@ -81,10 +82,9 @@ Input Control filters allow users to interact with stories and control the data 
 
 Select the **California** location and notice how the charts change to display only the data for California.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Filter your entire story with Story Filters)]
+### Filter your entire story with Story Filters
+
 
 Story Filters allow you to apply filters for all charts and tables in a Story based on the same model. Unlike Input Controls that need to be pre-defined in the story, story filters can be added to the story at any time for any dimension or measure.
 
@@ -111,14 +111,11 @@ Click **OK** and see how the results in the Story has changed. To remove this fi
 
 ![Remove Filter](Remove Filter.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
 primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
@@ -9,30 +8,33 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create and Expose Core Data Services Based on a Database Table
+<!-- description --> Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
+
 ## Prerequisites  
 - SAP BTP, ABAP Environment user
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
-## Details
-### You will learn
+## You will learn
 - How to create a database table
 - How to create Core Data Services
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
+### Open Eclipse
+
 Select to your ABAP package created in tutorial **Create Simple Database Table for ABAP Environment** and create a Core Data Services (CDS) data definition.
 Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > **Other Repository Object**.
 
 ![Open Eclipse](object.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create data definition)]
+### Create data definition
+
   1. Search for **data definition**, select it and click **Next**.
 
       ![Create data definition](definition.png)
@@ -49,10 +51,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create data definition](view.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Specify SQL view)]
+### Specify SQL view
+
   1. Specify the `sql view name` in the view definition as **`ZV_BOOKING_XXX`**.
 
       ![Specify SQL view](cds.png)
@@ -98,10 +99,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Specify SQL view](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add UI annotation)]
+### Add UI annotation
+
   1. Go back to the data definition and used the **`@UI`** annotations to add the UI-specific semantics. Add following UI annotation in front of your data definition.
 
       ![Add UI annotation](ui.png)
@@ -214,27 +214,25 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Add UI annotation](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create service definition)]
+### Create service definition
+
   1. Right-click on your data definition **`ZI_BOOKING_XXX`** and select **New Service Definition**
 
       ![Create service definition](servicedef.png)
 
-  2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
+  2. Create a service definition and call it **`ZI_BOOKING_XXX`**.
 
-      ![Create service definition](service2.png)
-
+      ![Create service definition](sbinding.png)
+ 
   3. Click **Finish** to complete your transport request.
 
-      ![Create service definition](transport2.png)
+      ![Create service definition](sbinding2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Expose entities)]
+### Expose entities
+
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
     ```ABAP
@@ -250,11 +248,10 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Expose entities](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create service binding)]
+### Create service binding
+
   1. Right-click on your service definition **`Z_I_BOOKING_XXX`** and select **New Service Binding**.
 
       ![Create service binding](servicebinding.png)
@@ -269,10 +266,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create service binding](binding3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Publish service binding)]
+### Publish service binding
+
 
 1. **Activate** your service binding.
 
@@ -282,11 +278,10 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Open SAP Fiori elements view](publish.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Open SAP Fiori elements view)]
+### Open SAP Fiori elements view
+
 
   1. In your service binding, check your result. Select **`to_Country`** and click **Preview**.
 
@@ -305,10 +300,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
       ![Select filter](fiorix2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
+
 Write following UI annotation as a header Information:
 
 - `typeName`: `Test`
@@ -317,5 +311,4 @@ Write following UI annotation as a header Information:
   - `type`: `#STANDARD`
   - `value`: `testyourself`
 
-[VALIDATE_1]
-[ACCORDION-END]
+

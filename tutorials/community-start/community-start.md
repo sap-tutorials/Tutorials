@@ -1,6 +1,5 @@
 ---
-title: Tour the SAP Community
-description: Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
+parser: v2
 auto_validation: true
 time: 25  
 tags: [  tutorial>beginner, topic>sap-community  ]
@@ -9,20 +8,26 @@ author_name: Lena Stodal
 author_profile: https://github.com/lenastodal
 ---
 
+# Tour the SAP Community
+<!-- description --> Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
+
 ## Prerequisites
  - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker).
  - Go to [SAP Community](https://community.sap.com) and log in before starting the tutorial.
 
-## Details
-### You will learn
+## You will learn
   - About key settings in your SAP profile
   - How to follow tags, content, and people
   - About the Rules of Engagement
   - About questions and blog posts
 
+## Intro
+Please note that since July 1st, we have an updated version of the Tour the SAP Community tutorial that is replacing this version. The new version for 2022 will help you to refresh your knowledge about various SAP Community features and will teach you about new areas and offerings. With the completion of the new tutorial, you will receive the Tour the SAP Community 2022 badge! Have a look at our new [Tour the SAP Community 2022](community-2022) tutorial!
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set your profile to public)]
+### Set your profile to public
+
 
 In order to participate fully in the SAP Community, you need to set your account privacy settings to opt in to display your profile publicly. If you don't, you will still be able to read SAP Community content, but you won't be able to ask questions, write blog posts, or engage in any other way in the community. To learn more, please see our [Privacy - FAQ](https://community.sap.com/resources/privacy) page.
 
@@ -32,14 +37,14 @@ In order to participate fully in the SAP Community, you need to set your account
 
 2. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Profile** feature), select **Privacy** (found under **Account & Settings** on the left-hand side), and make sure that **I want my profile to be visible to public** is switched to **`Allow`**.
 
-    !![account_settings](account_settings.png)
+    <!-- border -->![account_settings](account_settings.png)
 
 3. Click **View Your Public Profile**.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Upload a profile photo)]
+
+### Upload a profile photo
+
 
 Replacing your placeholder avatar image with a profile picture humanizes you and helps you connect better with other SAP Community members. If you choose to participate in the community, your photo will appear as an avatar on your posts, drawing readers to and into your content.
 
@@ -51,21 +56,20 @@ Replacing your placeholder avatar image with a profile picture humanizes you and
 
 4. Follow the instructions and upload a profile photo.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set your communications preferences)]
+### Set your communications preferences
+
 
 Email notifications can let you know when something happens related to your published questions or blog posts. They can also update you about content that interests you.
 
-!![communications](communications.png)
+<!-- border -->![communications](communications.png)
 
 Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right), select **Communications** (found under **Account & Settings**), and choose which email notifications you would like to receive.
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Follow tags, content, and people)]
+
+### Follow tags, content, and people
+
 
 Once you have set your profile to public, you can follow a person or a tag, as well as a specific question or blog post.
 
@@ -107,10 +111,9 @@ In order for your blogging permissions to change from **Subscriber** to **Contri
 
 2.	Click the **Follow** button (on the left-hand side).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Review the Rules of Engagement - Part 1)]
+### Review the Rules of Engagement - Part 1
+
 
 Understanding the [SAP Community Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
 
@@ -120,10 +123,10 @@ There are two sections of the Rules of Engagement: **Participation Etiquette** a
 
 2. Answer the following question:
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Review the Rules of Engagement - Part 2)]
+
+### Review the Rules of Engagement - Part 2
+
 
 Understanding the [SAP Community Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or  blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
 
@@ -133,10 +136,10 @@ There are two sections of the Rules of Engagement: **Participation Etiquette** a
 
 2. Answer the following question:
 
-[VALIDATE_5]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Learn how to post a question)]
+
+### Learn how to post a question
+
 
 By learning how to post a question correctly, you ensure that other users can help you in a timely manner. For example, if you post a very brief question with no details other than the title and a partial sentence in the body, then users may not know how to help you.
 
@@ -146,10 +149,10 @@ By learning how to post a question correctly, you ensure that other users can he
 
 3. Answer the following question:
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Learn about language options)]
+
+### Learn about language options
+
 
 English is the official language of SAP Community, but it's possible to ask questions and publish blog posts in other languages. If you speak one of these languages, you may wish to post (or respond to) content in this language.
 
@@ -159,10 +162,10 @@ English is the official language of SAP Community, but it's possible to ask ques
 
 3. Answer the following question:
 
-[VALIDATE_7]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Understand blogger levels)]
+
+### Understand blogger levels
+
 
 To become a blogger in the SAP Community, you must follow a process that will help familiarize you with our culture and rules -- and ensure quality content for our members.
 
@@ -172,10 +175,10 @@ To become a blogger in the SAP Community, you must follow a process that will he
 
 3. Answer the following question:
 
-[VALIDATE_8]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Learn how to publish a blog post)]
+
+### Learn how to publish a blog post
+
 
 The more you know about writing a blog post in the community, the faster your first blog post will be processed.
 
@@ -187,10 +190,10 @@ The more you know about writing a blog post in the community, the faster your fi
 
 3. Answer the following question:
 
-[VALIDATE_9]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Check blogging permissions)]
+
+### Check blogging permissions
+
 
 Completing this tutorial will grant you the ability to write blog posts (if you don't already have these permissions in SAP Community). Simply log out and log back into your SAP user account to see the changes in your blogging permissions.
 
@@ -202,6 +205,4 @@ Completing this tutorial will grant you the ability to write blog posts (if you 
 
 If your blogging permissions haven't changed, please make sure that you completed all of the actions listed in Step 4 above -- you must perform all four actions during the step; clicking **Done** is not enough -- then complete Step 11 again. If you are still unable to write a blog post (after confirming that you have completed all of the actions in Step 4 at least once during your session, as well as Step 11 afterwards), please contact <a href="mailto:community@sap.com">community@sap.com</a>.
 
-[DONE]
-[ACCORDION-END]
 ---

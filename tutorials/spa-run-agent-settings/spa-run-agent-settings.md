@@ -1,26 +1,31 @@
 ---
-title:  Agent Management Settings to Execute the Process with an Automation
-description: Create an agent attribute in the tenant to add it to your agent and project
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
+#  Agent Management Settings to Execute the Process with an Automation
+<!-- description --> Create an agent attribute in the tenant to add it to your agent and project
+
 ## Prerequisites
  - Access to a [SAP BTP tenant with SAP Process Automation](spa-subscribe-booster)
 
-## Details
-Agent attributes allow you to sort agents  and make sure that a specific agent executes the job of your choice.
 
-### You will learn
+## Intro
+Agent attributes allow you to sort agents  and make sure that a specific agent executes the job of your choice.
+## You will learn
   - How to create an Agent Attribute in the tenant.
   - How to add the attribute to your agent.
-  - How to add the attribute to your project.
+  - How to add the attribute to your project. 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an Agent Attribute in the Tenant)]
+Agent attributes allow you to sort agents registered within the same tenant and make sure that a specific agent executes the job of your choice.
+
+### Create an Agent Attribute in the Tenant
+
 
 Now that you have your project free of errors, ready to be released, you need to add an **Attribute** to your project. But first, you need to create an Agent Attribute.
 
@@ -36,20 +41,22 @@ To do so, please follow these steps:
 
 5. From the **Type** dropdown list, select **Predefined** if you wish to add values or else leave **Free** as **Type**.
 
+    > - **Free** – With this type of attribute, you won't be able to add any predefined value. Whenever you want to use this attribute, you will be able to parametrize the value of this attribute.
+    > - **Predefined** – With this type of attribute, you will be able to populate values for any specific attribute.
+
 6. In the **Values** field, you may enter any value you wish (i.e. employee ID).
 
 7. Choose **Create**.
 
-    !![Create Agent Attribute](01-Settings-create-agent-attribute.png)  
+    <!-- border -->![Create Agent Attribute](01-Settings-create-agent-attribute.png)  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the Attribute to your Agent)]
+### Add the Attribute to your Agent
 
-1. Choose **Agent List** to verify that your Agent is idle or ready and connected in unattended mode then click on it.
 
-    !![Settings Agents List](01-Settings.png)
+1. Choose **Agent List**, then search for your agent and verify that it is idle or ready and connected in unattended mode then click on it.
+
+    <!-- border -->![Settings Agents List](01-Settings.png)
 
 2. Choose **Manage Attributes**.
 
@@ -59,24 +66,11 @@ To do so, please follow these steps:
       - Enter the value you selected previously in the **Values** field and press **ENTER**
       - Choose **Confirm**
 
-    !![Settings Add Attribute](01-Settings-agent-attributes-add.png)
+    <!-- border -->![Settings Add Attribute](01-Settings-agent-attributes-add.png)
 
-4. Choose **Agents Management** then **Add Agent**.
 
-5. Select your agent.
+### Add the Attribute to your Project
 
-6. Choose **Add agent**.
-
-    !![Settings Agents Management](01-Settings-Agent-Management-Add-Agent-selected.png)
-
-7. Your agent is now added and ready to run.
-
-    !![Settings Agent add](01-Settings-Agent-Management-Add-Agent-Added.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Add the Attribute to your Project)]
 
 1. Navigate back to your project in the Process Builder.
 
@@ -92,19 +86,28 @@ To do so, please follow these steps:
 
 7. Choose **Close**.   
 
-      !![Release](00-adding-attribute-value.png)
+      <!-- border -->![Release](00-adding-attribute-value.png)
 
-[VALIDATE_1]
-[ACCORDION-END]      
+      
 
-[ACCORDION-BEGIN [Step 4: ](Desktop Agent in Unattended Mode)]
+### Desktop Agent in Unattended Mode
+
 
 When you are running the process make sure to have the Desktop Agent in unattended mode.
 
-!![Agent in background](Agentbackground.png)
+1. Open the Desktop Agent 3 from the `systray`.
 
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![Release](04-open-agent.png)
+
+2. Select **Settings** in the Menu and choose **Mode Settings**.
+
+    <!-- border -->![Release](04-open-settings-mode.png)
+
+3. Set the Desktop Agent 3 to Unattended mode by selecting **Activate**.
+
+    <!-- border -->![Release](04-unattended-mode.png)
+
+
 
 
 

@@ -1,21 +1,20 @@
 ---
-title: Localize an iOS App with SAP Translation Hub
-description: Take an iOS app generated with the SAP BTP SDK Assistant for iOS and make it multilingual with SAP Translation Hub.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
-## Prerequisites  
+# Localize an iOS App with SAP Translation Hub
+<!-- description --> Take an iOS app generated with the SAP BTP SDK Assistant for iOS and make it multilingual with SAP Translation Hub.
 
+## Prerequisites  
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
 - **SAP BTP SDK for iOS:** Version 3.0 SP01
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to enable SAP Translation Hub in your SAP BTP trial account
 - How to add your SAP Translation Hub account into the SAP BTP SDK Assistant for iOS
 - How to create multilingual capabilities to your Xcode project using the SAP BTP SDK Assistant for iOS
@@ -25,7 +24,8 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Translation Hub)]
+### Enable SAP Translation Hub
+
 
 Log on to your SAP BTP account at [https://account.hanatrial.ondemand.com/cockpit/](https://account.hanatrial.ondemand.com/), log in and choose Neo Trial as landscape.
 
@@ -51,10 +51,9 @@ The **SAP Translation Hub** web interface will open in a new tab:
 
 Leave the SAP Translation Hub web interface open for now, as we will need it later.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable SAP Translation Hub in the SAP BTP SDK Assistant for iOS)]
+### Enable SAP Translation Hub in the SAP BTP SDK Assistant for iOS
+
 
 Open the **SAP BTP SDK Assistant for iOS**. Click the **Manage Accounts** option in the lower-left corner:
 
@@ -85,10 +84,9 @@ Click **Save** when done. The account is now added to the SAP BTP SDK Assistant 
 
 Go back to the main screen by clicking **Back**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add translations)]
+### Add translations
+
 
 If you don't have an application for the translation you can simple create one by adding a sample app in the **SAP BTP SDK Assistant for iOS**.
 
@@ -120,10 +118,9 @@ On the **Manage Screen** click on **Translate** under the **Add Translation** pa
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-08.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add translation to your project)]
+### Add translation to your project
+
 
 Now we will go through the translation flow to add localization to our app.
 
@@ -143,10 +140,9 @@ You will see now the created Translation Hub project. Select it and click on **F
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-10b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Examine the updated Xcode project)]
+### Examine the updated Xcode project
+
 
 Open the Xcode project for your app. Notice the added `InfoPlist.strings` and `Localizable.strings` files for the languages you have selected for translation:
 
@@ -156,10 +152,9 @@ If you run the app now, and change the simulators language to one of the languag
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-11a.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Modify the generated translations)]
+### Modify the generated translations
+
 
 Go back to your cloud account and make sure you're on the Neo landscape.
 
@@ -173,20 +168,18 @@ Click on the **Translations** tab. On this page, an overview of the original tex
 
 Here you can correct any translations that may be incorrect, and click the **Save Project** button once done.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Re-import the modified translations)]
+### Re-import the modified translations
+
 
 If you changed some of the translations in the **SAP Translation Hub** you have to run the translation out of the **SAP BTP SDK Assistant for iOS** again.
 To do so go back to the **All Projects**, select the project for localization and click on **Translate**.
 
 After finishing up the process the service should have updated the localized Strings in your Xcode project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Localize the app name)]
+### Localize the app name
+
 
 If you go back to Xcode you will see `"CFBundleName" = "$(PRODUCT_NAME)";` in the `InfoPlist.strings` file. This will help choose the correct translation of your app's name. It is necessary to translate the app's name manually, so we need to add translations for that.
 
@@ -203,7 +196,6 @@ If you run the app now you should see the value you entered:
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-13b.png)
 
-[VALIDATE_8]
-[ACCORDION-END]
+
 
 ---

@@ -1,13 +1,15 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Visualize your Data with Charts
-description: Learn how to visualize data through charts, create custom calculations, and query with Search to Insight
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
+
+# Visualize your Data with Charts
+<!-- description --> Learn how to visualize data through charts, create custom calculations, and query with Search to Insight
 
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
@@ -15,23 +17,24 @@ primary_tag: software-product>sap-analytics-cloud
 
  <!-- (https://github.com/andrewliu-SAP/Datasheet-for-Developer-Tutorial/blob/main/Best_Run_Logo.png) for our dashboard -->
 
-## Details
-### You will learn
+## You will learn
   - How to create Bar and Line graphs
   - How to create a Custom Calculated measure
   - How to create Numeric Point charts with Search to Insight
 
+## Intro
 In SAP Analytics Cloud, you can create charts with the Story Explorer, directly in the story, or with Search to Insight. We'll go through each, starting with Story Explorer.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Explore and Visualize Data)]
+### Explore and Visualize Data
+
 
 We ended the last tutorial with a completed data model; now, we will begin exploring and visualizing the data.
 
 **1.** Switch to **Data Exploration** mode by clicking the icon shown below
 
-![Data Exploration](Data Exploration.png)
+![Data Exploration](Data Exploration 2.png)
 
 This opens the Story Explorer and lets you explore the data to understand the available measures, dimensions, and values. In the Story Explorer, you see a faceted view of your data in the top pane along with a visualization area in the lower pane. When you select measures and dimensions in the upper pane, the visualization in the lower pane updates in real-time. Once you are happy with your results, you can copy the visualization to your Story.
 
@@ -81,12 +84,11 @@ Let's try another chart, gross margin by product category, but with a filter on 
 
 **15.**	Click the **Copy** icon and select **Copy to Page 1**
 
-![Gross Margin per Product Category rename and copy](Gross Margin per Product Category rename and copy.png)
+![Gross Margin per Product Category rename and copy](Gross Margin per Product Category rename and copy 2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Charts to the Story)]
+### Add Charts to the Story
+
 
 Let's add another visualization to the story showing the Gross Margin for the past 3 years. However, we'll be creating this chart directly in the story through the Builder tab in the Designer panel. With the Builder tab, the chart dynamically updates depending on the measures and dimensions you select.
 
@@ -122,10 +124,9 @@ Let's now create a Line Chart showing Sales Revenue and Quantity Sold over time.
 
 > It is best practice to save regularly. Before moving on, click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Reorganize Lanes and Resize Charts)]
+### Reorganize Lanes and Resize Charts
+
 
 Let's organize our dashboard layout to make room for more visualizations.  We want to create a top lane for Numeric Point charts and a left lane for page filters.  
 
@@ -143,10 +144,9 @@ Let's organize our dashboard layout to make room for more visualizations.  We wa
 
 ![Resize lane and charts](Resize lane and charts.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Query with Search to Insight)]
+### Query with Search to Insight
+
 
 Search to Insight brings conversational AI to SAP Analytics Cloud, allowing you to create a story by asking questions in natural language. When you query for data, Search to Insight automatically recognizes the dimensions and measures in your query and searches through available metadata for the answer to visualize the results for you.  
 
@@ -216,10 +216,9 @@ Now, let's create two more Numeric Point Charts by duplicating the first chart t
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/e1b4914ffbc8438eb1aefccf70362d39.html) to learn more. In the next step, we will create a Calculated Measure for the last Numeric Point chart.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a Custom Calculated Measure)]
+### Create a Custom Calculated Measure
+
 
 Now let's show the average sales per manager in our last Numeric Point chart. However, we don't have that measure, so we'll need to create a Calculated Measure.  
 
@@ -245,10 +244,9 @@ Now let's show the average sales per manager in our last Numeric Point chart. Ho
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/5089d7effccf45878ad0ed5a038d5ecc.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add an Image)]
+### Add an Image
+
 
 Let's finish this tutorial by adding a company logo to the dashboard.  
 
@@ -268,15 +266,12 @@ Let's finish this tutorial by adding a company logo to the dashboard.
 
 Your dashboard should now look like this.
 
-![Dashboard update](Dashboard update.png)
+![Dashboard update](Dashboard update 2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

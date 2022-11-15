@@ -1,11 +1,13 @@
 ---
-title: Embed an SAP Analytics Cloud Story in a Simple Web App
-description: Create a simple Node.js web application that manages OAuth authorization and embed an SAP Analytics Cloud story into it.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>node-js, topic>security, tutorial>license  ]
 primary_tag: products>sap-analytics-cloud
 ---
+
+# Embed an SAP Analytics Cloud Story in a Simple Web App
+<!-- description --> Create a simple Node.js web application that manages OAuth authorization and embed an SAP Analytics Cloud story into it.
 
 ## Prerequisites
  - A user with story read permission on an SAP Analytics Cloud system
@@ -14,8 +16,7 @@ primary_tag: products>sap-analytics-cloud
  - Node.js installed on your local computer
  - A Google Chrome or a Microsoft Edge browser
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple web application hosted on your local computer
   - How to use OAuth to authorize your app to access your protected SAP Analytics Cloud data
   - How to embed an SAP Analytics Cloud story
@@ -43,7 +44,8 @@ primary_tag: products>sap-analytics-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the SAP Analytics Cloud system)]
+### Prepare the SAP Analytics Cloud system
+
 You need to prepare SAP Analytics Cloud to enable the app to read the protected story data and to embed the story. This requires a user with Admin or BI Admin role.
 
 1.	To enable the embedding  of SAP Analytics Cloud into an `<iframe>`, check the instructions in the corresponding chapter of the [URL API documentation](https://help.sap.com/viewer/a4406994704e4af5a8559a640b496468/release/en-US/9e147121f2254300b308c21b968a77f2.html). You enable this by adding the domain of the app to the list of **Trusted Origins** of the SAP Analytics Cloud system, which is **`localhost`** for this tutorial. Since **`localhost`** in not a valid name for this field, you need to set the flag **`Allow all origins`**.
@@ -74,10 +76,9 @@ You need to prepare SAP Analytics Cloud to enable the app to read the protected 
 
   If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/cfb3204772034009bcff19f6c753c619.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the web application)]
+### Create the web application
+
 After performing the preparatory steps, you can now create the app.
 
 1.	Download the sample code from the following Git repository and place it into a directory of your choice.
@@ -167,12 +168,11 @@ After performing the preparatory steps, you can now create the app.
 
     If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/878a785ea23a412199a9bbd1bda78482.html).
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 3: ](Start the web application)]
+### Start the web application
+
 Now you can start the application.
 
 1.	Start the server with your CLI tool from the root directory of our application. Start the server with the command `node server.js`.
@@ -300,9 +300,7 @@ Now you can start the application.
 
     ![Link text e.g., Destination screen](Final-Page.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 

@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Consume the External Service in the UI of Your Application
-description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
 keywords: cap
 auto_validation: true
 time: 15
@@ -10,23 +9,22 @@ tags: [tutorial>intermediate, software-product-function>sap-cloud-application-pr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Consume the External Service in the UI of Your Application
+<!-- description --> This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
+
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - When starting with the result from the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
 
-## Details
-### You will learn
+## You will learn
  - How to add supplier to `Risks` entity
  - How to handle expands to remote entities
  - How to add supplier information to the Risks UI
  - How to add value help to select a supplier
 
-
-To start with this tutorial use the result in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Supplier to Risks entity)]
+### Add Supplier to Risks entity
+
 1. Open `db/schema.cds` and add the supplier to the `Risks` entity using an association to the `Suppliers` entity:
 
     ```[9-9]
@@ -48,7 +46,7 @@ To start with this tutorial use the result in the [`ext-service-add-consumption`
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -56,16 +54,16 @@ To start with this tutorial use the result in the [`ext-service-add-consumption`
 
     You can see the new field `supplier_ID` filled from the updated mock data file:
 
-    !![Risks Service with Supplier ID](risks_service_supplier.png)
+    <!-- border -->![Risks Service with Supplier ID](risks_service_supplier.png)
 
 5. Try to show additional supplier information as well by expanding the `supplier` association: [http://localhost:4004/service/risk/Risks?$top=11&$expand=supplier](http://localhost:4004/service/risk/Risks?$top=11&$expand=supplier).
 
     You can see that this is not possible, although the property `&$expand=supplier` is part of the URL above. The reason for this is you now have a mixture of local and remote entities. Such requests can be sent by a UI to access supplier data for a risk. The code introduced in the previous tutorial doesn't help here. You need to implement additional code for it.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---
-[ACCORDION-BEGIN [Step 2: ](Handle expands to remote entities)]
+### Handle expands to remote entities
+
 Add the following code to your `srv/risk-service.js` file to handle the expands for supplier data of `Risks`:
 
 ```JavaScript[11-49]
@@ -131,10 +129,9 @@ All the required suppliers are read with one request from `API_BUSINESS_PARTNER`
 
 
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add supplier information to the Risks UI)]
+### Add supplier information to the Risks UI
+
 Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 1. Open the `srv/risks-service-ui.cds` file.
@@ -194,7 +191,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 5. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -206,14 +203,13 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
     You see now the name of the supplier and its blocked status.
 
-    !![Supplier fields](supplier_fields.png)
+    <!-- border -->![Supplier fields](supplier_fields.png)
 
     In business terms, suppliers can receive status **Supplier Blocked** in case of high risks associated with them. When a supplier is blocked, it cannot be used in any purchasing requests.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Add value help to select a supplier)]
+### Add value help to select a supplier
+
 The last thing you add is the value help to select a supplier from the remote system.
 
 1. Open the `srv/risks-service-ui.cds` file.
@@ -254,7 +250,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -270,11 +266,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
     You can select another value for the **Supplier** from the value list.
 
-    !![Supplier Value List](supplier_value_list.png)
+    <!-- border -->![Supplier Value List](supplier_value_list.png)
 
-[DONE]
 The result of this tutorial can be found in the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch.
-
-
-[ACCORDION-END]
 ---

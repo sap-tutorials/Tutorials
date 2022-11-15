@@ -1,25 +1,28 @@
 ---
-title: Connect to Data Lake Relational Engine Using the ODBC Driver
-description: Configure a data source to connect to the previously created data lake Relational Engine and then use the data source in unixODBC, Microsoft Excel and DBeaver.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
+# Connect to Data Lake Relational Engine Using the ODBC Driver
+<!-- description --> Configure a data source to connect to the previously created data lake Relational Engine and then use the data source in unixODBC, Microsoft Excel and DBeaver.
+
 ## Prerequisites
  - You have completed the first tutorial in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to create an ODBC data source for a data lake Relational Engine connection
   - How to use the configured data source with other applications
 
+## Intro
 [Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) (ODBC) provides an [API](https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver15) for accessing databases. Database vendors provide ODBC drivers for their database products. An application written to the ODBC standard can be ported to other databases that also provide an ODBC interface.  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure a data source using Microsoft Windows ODBC Data Source Administrator)]
+### Configure a data source using Microsoft Windows ODBC Data Source Administrator
+
 
 The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
 
@@ -41,7 +44,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 5. Select **SAP IQ** and click **Finish**.
 
-    !![New data source](Create-new-data-source-1.png)
+    <!-- border -->![New data source](Create-new-data-source-1.png)
 
 6. Configure the data source.
 
@@ -50,14 +53,6 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
     Connect using USER1. The host and port values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the copy SQL endpoint option.
 
     ![specify the credentials, host and port](data-source2.png)  
-
-    Optional: On the advanced tab, enter the following parameters.
-
-    ```Parameters
-    ENC=TLS(tls_type=rsa;direct=yes)
-    ```
-
-    ![specify the credentials, host and port](data-source3.png)  
 
 7. Verify the connection by clicking on **Test Connection**.
 
@@ -71,10 +66,9 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure a data source on Linux with unixODBC)]
+### Configure a data source on Linux with unixODBC
+
 
 1. On SUSE Linux, unixODBC can be installed using Zypper or YaST.
 
@@ -134,10 +128,9 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     isql -v HC_DL_Trial USER1 Password1 -m6
     >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use data lake data source from Microsoft Excel)]
+### Use a data lake data source from Microsoft Excel
+
 
 An application that supports ODBC can now make use of the created data source. One example on Windows is Microsoft Excel.  
 
@@ -167,10 +160,9 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
     > Note, if an error occurs that mentions, you do not have permission to select from SYSINDEX, a newer version of the driver may be needed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Browse data lake Relational Engine using DBeaver with ODBC)]
+### Browse data lake Relational Engine using DBeaver with ODBC
+
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine ODBC driver.  
 
@@ -208,7 +200,6 @@ For further information on programming an application to use the ODBC client dri
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA Cloud, data lake Relational Engine database and used that data source from Microsoft Excel and `DBeaver`.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

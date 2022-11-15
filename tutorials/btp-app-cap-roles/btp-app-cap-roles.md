@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Implement Roles and Authorization Checks In CAP
-description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 keywords: cap
 auto_validation: true
 time: 10
@@ -10,48 +9,24 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - You need to install [passport](http://www.passportjs.org/)
+# Implement Roles and Authorization Checks In CAP
+<!-- description --> This tutorial shows you how to enable authentication and authorization for your CAP application.
 
-## Details
-### You will learn
- - How to enable authentication support
+## Prerequisites
+ - Before you start with this tutorial, you have two options:
+  - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
+    - Complete the previous tutorial [Use a Local Launch Page](btp-app-launchpage) with all its prerequisites.
+
+
+## You will learn
  - How to add role restrictions to entities
  - How to add a local user for testing
  - How to access the application with a user and password
 
-
-To start with this tutorial use the result in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
-To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js.
+### Adding CAP role restrictions to entities
 
-> Additional Documentation:
-
->    [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked)
-
-1. Navigate to your project folder.
-
-2. Install the `passport` module.
-
-    ```Shell/Bash
-    npm install passport
-    ```
-
-
-[VALIDATE_1]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 2: ](Adding CAP role restrictions to entities)]
 1. Open the file `srv/risk-service.cds`.
 
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
@@ -88,10 +63,9 @@ service RiskService {
 
 With this change, a user with the role `RiskViewer` can view risks and mitigations, and a user with role `RiskManager` can view and change risks and mitigations.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add Users for local testing)]
+### Add Users for local testing
+
 Since the authorization checks have been added to the CAP model, they apply not only when deployed to the cloud but also for local testing. Therefore, we need a way to log in to the application locally.
 
 CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we use the `.cdsrc.json` file to add the users.
@@ -129,10 +103,9 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 
     The user is defined by their `ID`, which happens to be the email address here, but it could also be a user ID. The user has an `email`, a `password` parameter, and a `roles` parameter. Keep in mind that the CAP roles and the Cloud Foundry roles and scopes are not the same thing.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Access the Risks application with password)]
+### Access the Risks application with password
+
 When accessing the `Risks` service in your browser, you get a basic auth popup now, asking for your user and password. You can use the two users to log in and see that it works.
 
 1. With `cds watch` running, go to <http://localhost:4004/launchpage.html>.
@@ -143,21 +116,13 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 4. Enter **Password**: `initial`.
 
-!![Sign In Risk Application](role_risks_management.png)
+<!-- border -->![Sign In Risk Application](role_risks_management.png)
 
   You can now access the `Risks` application.
 
-!![Access Risk Application](risks_management_application.png)
+<!-- border -->![Access Risk Application](risks_management_application.png)
 
 > Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the login data in your browser. For Google Chrome, restart your browser (complete shutdown and restart) by entering `chrome://restart` in the address line.
 
-
-
-[DONE]
 The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-[ACCORDION-END]
 ---

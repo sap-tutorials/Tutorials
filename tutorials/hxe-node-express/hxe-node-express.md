@@ -1,6 +1,5 @@
 ---
-title: Deploy a Node.js Application for SAP HANA
-description: Deploy a sample Node.js application which connects to SAP HANA, express edition or SAP HANA Cloud.
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -8,20 +7,23 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana, products>sap-hana\,-
 time: 30
 ---
 
+# Deploy a Node.js Application for SAP HANA
+<!-- description --> Deploy a sample Node.js application which connects to SAP HANA, express edition or SAP HANA Cloud.
+
 ## Prerequisites and Assumptions
  - User knows how to install packages and develop using Node.js
  - Setup: `HANA, express edition` or `SAP HANA Cloud` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-database-server). For instructions on starting `SAP HANA Cloud` trial see the [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB` or in `SAP HANA Cloud`.
  - **Tutorials:** [Setup Node.js to connect to SAP HANA](hxe-nodejs-setup)
 
-## Details
-### You will learn  
+## You will learn  
 This tutorial will guide you through the process to deploy a sample Node.js application  which connects to SAP HANA, express edition or SAP HANA Cloud.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare Environment for Node.js)]
+### Prepare Environment for Node.js
+
 
 Install support package for `Node.js` and Express:
 
@@ -31,11 +33,9 @@ Install the Node.js package called `express-generator` globally:
 npm install -g express-generator
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Develop Simple Node.js Application
 
-[ACCORDION-BEGIN [Step 2: ](Develop Simple Node.js Application)]
 
 Create a simple standalone `node.js` app:
 
@@ -104,13 +104,10 @@ node hxeapp.js
 
 The above command should produce results something like the below:
 
-   !![Results](1.png)
+   <!-- border -->![Results](1.png)
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: Extend Application](Extend Simple Node.js Application to Run as a Web Application)]
+### Extend Simple Node.js Application to Run as a Web Application
 
 Modify this app to be a `WebApp`.
 
@@ -234,9 +231,7 @@ npm start
    Open a new browser and access `http://localhost:3000/`
    Notice that the browser displays information like what was displayed in earlier output.
 
-[DONE]
 
-[ACCORDION-END]
 
 ---
 ### Additional Information
