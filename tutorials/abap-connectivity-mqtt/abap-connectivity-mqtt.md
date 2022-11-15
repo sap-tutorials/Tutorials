@@ -1,27 +1,30 @@
 ---
-title: Publish and Receive MQTT Messages
-description: Publish and receive MQTT messages in ABAP using the ABAP MQTT Client.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>intermediate, topic>abap-development, topic>internet-of-things ]
 time: 20
 ---
 
+# Publish and Receive MQTT Messages
+<!-- description --> Publish and receive MQTT messages in ABAP using the ABAP MQTT Client.
+
 ## Prerequisites
 - [Create an ABAP project in Eclipse](abap-create-project)
 - The ABAP MQTT Client is available on **ABAP Platform 1809** and above.
 - You are using **ABAP Development Tools**.
 
-## Details
-### You will learn
+## You will learn
   - How to publish an MQTT message in ABAP
   - How to receive MQTT messages in ABAP
 
+## Intro
 In this tutorial, you will create a simple ABAP class that can publish and receive messages using the MQTT protocol.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new ABAP class)]
+### Create a new ABAP class
+
 Create a new ABAP class called `ZCL_TUTORIAL_MQTT` and implement the interface `IF_MQTT_EVENT_HANDLER` by adding the snippet to the `PUBLIC SECTION` of your class:
 
 ```ABAP
@@ -31,11 +34,10 @@ Next, add the 6 unimplemented abstract methods by clicking the light bulb to the
 
 ![Add 6 unimplemented methods](lightBulb.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create the MQTT Client and connect to the broker)]
+### Create the MQTT Client and connect to the broker
+
 Now you need to create a new MQTT Client and connect to your MQTT message broker. For the example shown in this tutorial, you can use a public broker hosted by [HiveMQ](http://www.hivemq.com/) or any other broker of your choice. In a more serious project, please use a different broker.
 
 You'll handle all of this in the constructor. First add this method definition to the `PUBLIC SECTION` of your class:
@@ -73,10 +75,9 @@ METHOD constructor.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement the PUBLISH method)]
+### Implement the PUBLISH method
+
 Create a new method to publish messages. First, add this method definition to the `PUBLIC SECTION` of your class.
 
 ```ABAP
@@ -109,10 +110,9 @@ ENDMETHOD.
 
 >The Quality of Service (QoS) specifies if the message is sent once without the receiver acknowledging it (at most once), sent multiple times until the receiver acknowledges receiving it (at least once) or if the two parties should engage in a two-level handshake to ensure exactly one copy of the message is received (exactly once).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Publish an MQTT message)]
+### Publish an MQTT message
+
 Add the interface `IF_OO_ADT__CLASSRUN` to your class by copying the following code to the `PUBLIC SECTION` of your class:
 
 ```ABAP
@@ -145,10 +145,9 @@ You can use the [HiveMQ Websocket Client](http://www.hivemq.com/demos/websocket-
 3. In the popup window, enter `abaptopic/tutorial/test` or the topic you decided to use.
 4. Finally, click the "Subscribe" button.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the ON_MESSAGE method)]
+### Implement the ON_MESSAGE method
+
 Whenever your event handler receives a message, you want to log it to the console. To do so, save the `OUT` object passed to you by the `IF_OO_ADT_CLASSRUN~MAIN` method as a local object. Add the following line of code to the `PRIVATE SECTION` of your class definition.
 
 ```ABAP
@@ -182,10 +181,9 @@ METHOD if_mqtt_event_handler~on_message.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Subscribe to an MQTT topic)]
+### Subscribe to an MQTT topic
+
 After you have implemented the `ON_MESSAGE` method, you can subscribe to a topic to receive messages from the broker. To do so, create a new MQTT topic filter. Specify the topic you want to subscribe to and the Quality of Service of your choice.
 
 
@@ -217,10 +215,9 @@ METHOD subscribe.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test your program)]
+### Test your program
+
 Add the following snippet to the `IF_OO_ADT__CLASSRUN~MAIN` method you have implemented earlier.
 
 ```ABAP
@@ -235,10 +232,10 @@ If you want to test your application further you can use the [HiveMQ Websocket C
 
 Paste your ABAP Development Tools Console output below to validate that you completed the tutorial.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Unsubscribe and disconnect (optional))]
+
+### Unsubscribe and disconnect (optional)
+
 Instead of leaving the connection open, you can also unsubscribe from a topic and terminate your connection to the broker.
 
 Add this method definition to the `PUBLIC SECTION` of your class.
@@ -272,5 +269,3 @@ You can now call the `TERMINATE` method from your `IF_OO_ADT__CLASSRUN~MAIN` met
 lo_mqtt_class->terminate( ).
 ```
 
-[DONE]
-[ACCORDION-END]

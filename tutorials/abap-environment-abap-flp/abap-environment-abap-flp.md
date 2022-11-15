@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Integrate List Report into ABAP Fiori Launchpad
-description: Integrate your list report application into ABAP Fiori launchpad.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Integrate List Report into ABAP Fiori Launchpad
+<!-- description --> Integrate your list report application into ABAP Fiori launchpad.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment license.
@@ -16,18 +18,18 @@ author_profile: https://github.com/mervey45
 - You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
 - You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.
 
-Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
-
-
-## Details
-### You will learn  
+## You will learn  
 - How to make use of IAM App and business catalog
 - How to create business roles
 - How to pin business catalogs
 - How to create spaces and pages
 
+## Intro
+Integrate your list report application into ABAP Fiori launchpad by making use of IAM apps and business catalogs. Create business roles, spaces and pages.
+Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system. 
+ 
 ---
-[ACCORDION-BEGIN [Step 1: ](Make use of existing IAM App and business catalog)]
+### Make use of existing IAM App and business catalog
 
   1. Open ADT, select your package `ZTRAVEL_APP_XXX` and open your IAM App `ZTRAVEL_IAM_XXX`. Add the UI5 application ID to your IAM app and publish it.
 
@@ -42,10 +44,9 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
       If you don't have created a business catalog yet, please create one and publish it locally.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create business role)]
+### Create business role
+
 
   1.  Right-click on your **ABAP system** in the project explorer of ADT and select **Properties**. Click **ABAP Development** and copy the **system URL**.
 
@@ -100,10 +101,9 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
 
        ![role8](role8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create transport request or use default transport request)]
+### Create transport request or use default transport request
+
 
   1.  Log in to your system and select the **Export Customizing Transports** tile.
 
@@ -156,10 +156,9 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
       ![transport](task4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 1: Manage launchpad spaces and assign business role)]
+### Alternative 1: Manage launchpad spaces and assign business role
+
 
 Option 1:
 
@@ -224,10 +223,9 @@ Option 1:
 
       ![transport](businessrole8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 2: Assign and manage launchpad spaces)]
+### Alternative 2: Assign and manage launchpad spaces
+
 
 Option 2:
 
@@ -275,10 +273,9 @@ Option 2:
 
       ![transport](brole9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Execute transport task (Optional))]
+### Execute transport task (Optional)
+
 
 If you want to execute your transport task, do following:
 
@@ -310,12 +307,10 @@ If you want to execute your transport task, do following:
 
       ![transport](brole16.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

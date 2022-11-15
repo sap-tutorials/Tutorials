@@ -1,24 +1,25 @@
 ---
-title: Play with the SAP HANA database on Google Kubernetes cluster
-description: Deploy SAP HANA and a web SQL client on Google Kubernetes Engine
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Play with the SAP HANA database on Google Kubernetes cluster
+<!-- description --> Deploy SAP HANA and a web SQL client on Google Kubernetes Engine
+
 ## Prerequisites  
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 - How to deploy SAP HANA, express edition on Google Kubernetes Engine
 - How to connect to the database and perform advanced analytics
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create and configure a new Kubernetes cluster)]
+### Create and configure a new Kubernetes cluster
+
 Use the credentials provided by one of the experts at the booth at Google Next '18 to log into the [Google Cloud Platform console](https://console.cloud.google.com).
 
 ![Create a new project](project.png)
@@ -41,10 +42,9 @@ Set the CPU to 2 and memory to 13. Choose **Ubuntu** as the operating system and
 
 Scroll down and click **Create**.
 
-[ACCORDION-END]
 
+### Connect to your cluster
 
-[ACCORDION-BEGIN [Step 2: ](Connect to your cluster)]
 
 The setup will take some time. Meanwhile, here is some information about what is SAP HANA, express edition to make waiting easier.
 
@@ -62,9 +62,8 @@ This will open a `gcloud` console with a command ready to connect to the cluster
 
 ![Connect to cluster](connect3.png)
 
-[ACCORDION-END]
+### Create the deployment configuration files
 
-[ACCORDION-BEGIN [Step 3: ](Create the deployment configuration files)]
 
 Go back to the `gcloud` console for your cluster.
 
@@ -240,9 +239,8 @@ spec:
 
 The file will be automatically saved to your home directory (`/home/YOUR_GOOGLE_ID`).
 
-[ACCORDION-END]
+### Deploy a HANA Express Docker container on your Docker pod
 
-[ACCORDION-BEGIN [Step 4: ](Deploy a HANA Express Docker container on your Docker pod)]
 
 Use the following command to deploy the image on your pods and check deployment:
 
@@ -284,12 +282,10 @@ alter database HXE add 'docstore';
 
 Use `quit` to exit the SQL command line and `exit`
 
-![SQL command](2.png)  
+![SQL command](2.png)
 
+### Check your external IP address to connect to SAP HANA, express edition
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Check your external IP address to connect to SAP HANA, express edition)]
 
 Get the external IP addresses from the SQLPAD service
 
@@ -319,9 +315,8 @@ Click on **New connection** and fill the details as below
 
 ![Container services](newc.png)
 
-[ACCORDION-END]
+### Play with SQL and earn a prize
 
-[ACCORDION-BEGIN [Step 6: ](Play with SQL and earn a prize)]
 
 Click **New Query**
 
@@ -374,5 +369,3 @@ inner join quote_analysis on doc_store.quote_id = <<Fill in with the ID of the l
 
 **Congratulations!**
 You have completed this tutorial. Visit **`developers.sap.com`** to get your free deployment of SAP HANA, express edition and learn from hundreds of available tutorials.
-
-[ACCORDION-END]

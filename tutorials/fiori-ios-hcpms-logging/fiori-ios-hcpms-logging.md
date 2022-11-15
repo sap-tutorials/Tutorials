@@ -1,36 +1,34 @@
 ---
-title: Logging and tracing in SAP Mobile Services for development and operations
-description: Logging and tracing overview in the SAP Mobile Services for development and operations Administration Cockpit.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-btp-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services]
 ---
-## Prerequisites  
+# Logging and tracing in SAP Mobile Services for development and operations
+<!-- description --> Logging and tracing overview in the SAP Mobile Services for development and operations Administration Cockpit.
 
+## Prerequisites  
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.0
 - **Tutorials:** [Application logging and tracing](fiori-ios-hcpms-application-logging)
 
 ## Next Steps
-
 - [Manage usage statistics on SAP Mobile Services for development and operations](fiori-ios-hcpms-reporting)
 
-## Details
 
-### You will learn  
-
+## You will learn  
 In this tutorial, you will learn to use the logging functionality and configurations available in SAP Mobile Services for development and operations. You will also learn how to set logging levels, enable application traces, and view logs and traces.
-
-### Time to Complete
-
+## Time to Complete
 **15 Min**.
 
 ---
 
+## Intro
 SAP Mobile Services for development and operations provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components. Logs and traces are automatically synchronized with the server when an application is launched or switched to foreground or background on the client.
 
-[ACCORDION-BEGIN [Step 1: ](Examine the SAP Mobile Services for development and operations log settings)]
+### Examine the SAP Mobile Services for development and operations log settings
+
 
 Go to your [SAP BTP Cockpit](https://account.hanatrial.ondemand.com) and log on. Navigate to **Logs > Log Settings**
 
@@ -44,10 +42,9 @@ In the bottom part, you can specify the logging purge periods:
 
 ![SAP BTP SDK Assistant for iOS](fiori-ios-hcpms-logging-02.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change application log settings)]
+### Change application log settings
+
 
 For our application, set the following logging levels and application traces:
 
@@ -64,10 +61,10 @@ By default, the log viewer displays logs and traces occurred in the last 60 minu
 
 ![SAP BTP SDK Assistant for iOS](fiori-ios-hcpms-logging-03.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Examine changed log details)]
+
+### Examine changed log details
+
 
 Since the application you created earlier should have run without errors, there should be no log entries for your application visible.
 
@@ -75,5 +72,3 @@ Now you have lowered the logging levels, try run your iOS application again, and
 
 ![SAP BTP SDK Assistant for iOS](fiori-ios-hcpms-logging-04.png)
 
-[DONE]
-[ACCORDION-END]

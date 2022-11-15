@@ -1,32 +1,32 @@
 ---
-title: Data Visualisation with SAP BTP SDK for iOS
-description: Build an iOS app with the SAP BTP SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualize entity values of an OData service.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
-## Prerequisites  
+# Data Visualisation with SAP BTP SDK for iOS
+<!-- description --> Build an iOS app with the SAP BTP SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualize entity values of an OData service.
 
+## Prerequisites  
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.1
 - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
 ## How-To Details
-
 As of version 2.1, the SAP BTP SDK for iOS now incorporates a **Chart Floor plan** for data visualisation.
 
+## Intro
 In this tutorial, you will use the Sample OData service to visualize stock item quantities using a bar chart.
 
 ![How-To Details](fiori-ios-scpms-dataviz-14.png)
-
-### Time to Complete
-
+## Time to Complete
 **20 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Xcode project with SAP BTP SDK Assistant for iOS)]
+### Create Xcode project with SAP BTP SDK Assistant for iOS
+
 
 On your local machine, navigate to your `./<SAP BTP SDK for iOS>` folder. Double-click the **SAP BTP SDK Assistant for iOS** icon to start the application.
 
@@ -70,10 +70,9 @@ After the SAP BTP SDK Assistant for iOS has finished, **Xcode** will launch and 
 
 ![Create Xcode project with SAP BTP SDK Assistant for iOS](fiori-ios-scpms-dataviz-05.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test the generated Xcode project)]
+### Test the generated Xcode project
+
 
 In Xcode, assign the appropriate development account to the project's **Team** property in the **General > Signing** panel, and then build and run the app in the simulator.
 
@@ -97,10 +96,9 @@ Click **Agree**, and the single entity collection is now shown:
 
 ![Test the generated Xcode project](fiori-ios-scpms-dataviz-13.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create View Controller)]
+### Create View Controller
+
 
 In the **Project navigator**, navigate to the `DataViz > ViewControllers > MyPrefixStock` folder. Right-click this folder, and from the context menu, select **New File...**
 
@@ -114,10 +112,9 @@ Click **Next** to continue. In the next page, save the file as `StockChart`
 
 Click **Create** to finalize the wizard. The new file will now open.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement View Controller)]
+### Implement View Controller
+
 
 First, add the necessary import statements:
 
@@ -209,10 +206,9 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
 
 This will give an error, stating the class has no member `renderChart`. This method will be implemented in the next step
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement display of chart)]
+### Implement display of chart
+
 
 Add the following 3 methods:
 
@@ -273,10 +269,9 @@ The third method is called from the previous two methods, and will display a sum
 
 You will also see a couple of other errors. This is because the class needs a couple of delegates which aren't referenced yet. This will be corrected in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add delegates)]
+### Add delegates
+
 
 Add the following two extensions:
 
@@ -347,10 +342,10 @@ The first delegate is called when an item on the cart is clicked.
 
 The second delegate populates the chart with the OData entities values (see the mapped values in `chartCategoryTitles()` and `chartData()` methods).
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Modify viewDidLoad method)]
+
+### Modify viewDidLoad method
+
 
 Add the following method calls in the `viewDidLoad()` method:
 
@@ -359,10 +354,9 @@ initChart()
 updateChartView()
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Bind the View Controller to the View)]
+### Bind the View Controller to the View
+
 
 The final step is to bind the view controller to a view.
 
@@ -391,10 +385,9 @@ case .myPrefixStock:
     masterViewController.navigationItem.title = "Stock"
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Run the application)]
+### Run the application
+
 
 Build and run the application.
 
@@ -406,7 +399,5 @@ Select one of the chart items. It should now display the summary info at the top
 
 ![Run the application](fiori-ios-scpms-dataviz-15.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

@@ -1,19 +1,20 @@
 ---
-title: Create a Global ABAP Class
-description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
+parser: v2
 auto_validation: true
 primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 45  
 
 ---
+# Create a Global ABAP Class
+<!-- description --> You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
+
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 - **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 - You have generated the data for the relevant database table by running the transaction **`SEPM_DG`**.
 
-## Details
-### You will learn  
+## You will learn  
 - How to create a global class that retrieves data from the back end
 - How to use an internal table
 - How to use an ABAP structure as a type for the returning parameter
@@ -21,7 +22,8 @@ time: 45
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your ABAP program and remove the WRITE statement)]
+### Open your ABAP program and remove the WRITE statement
+
 
 1. First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](abap-create-basic-app).
 
@@ -32,10 +34,9 @@ time: 45
 
     ![Image depicting step2-delete-write](step2-delete-write.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an instance of a new global class)]
+### Create an instance of a new global class
+
 Now you will create the an object with the type of a new global class, for retrieving backend data.
 
 1.	In the `run` method, create an instance of class `zcl_invoice_retrieval` using the **`new`** operator:
@@ -61,19 +62,17 @@ A new editor will be opened showing the class you have created, `ZCL_INVOICE_RET
 > Since release 7.40, ABAP permits inline declarations. For more information, see the links at the end of this tutorial.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Check the syntax)]
+### Check the syntax
+
 
 If necessary, go back to your program and trigger the syntax check using the keyboard shortcut `Ctrl+F2`.
 
 The syntax error should no longer occur.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a method to get the database records)]
+### Create a method to get the database records
+
 
 To read the records from the database, you need to call a method `get_items_from_db`.
 This method does not yet exist so we will create it with a Quick Assist as follows:
@@ -100,10 +99,9 @@ In the class `ZCL_INVOICE_RETRIEVAL`, the Quick Assist creates:
 
   ![Image depicting step6c-empty-method](step6c-empty-method.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add the method implementation)]
+### Add the method implementation
+
 In a previous tutorial ([Display database content and run SQL queries](abap-display-data-queries)), you generated a `SELECT` statement using the SQL console. The advantage of using the SQL console is that you can reduce errors by defining clauses - like `JOIN, WHERE, or ORDER BY` - simply by using the Data Preview. The SQL Console automatically generates the correct SELECT statement for you.
 
 You will now use this generated `SELECT` statement in your class to retrieve the data from the database.
@@ -140,10 +138,9 @@ SELECT
 
 The statement `UP TO 100 ROWS` will cause an error. Delete it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Format your code)]
+### Format your code
+
 
 Now you can format (that is, "pretty-print") the source code.
 
@@ -157,10 +154,9 @@ Now you can format (that is, "pretty-print") the source code.
 
     ![Image depicting step9a-pretty-print-2](step9a-pretty-print-2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Declare the local variable explicitly)]
+### Declare the local variable explicitly
+
 In a previous tutorial ([Create a structure](abap-dev-adt-create-new-structure)), you created an ABAP Data Dictionary structure. Now, you will use this structure.
 
 First, we will declare an internal table, `lt_result` explicitly. Then we will define the type of the returning parameter for your method `get_items_from_db`.
@@ -191,10 +187,9 @@ It also replaces `INTO TABLE @DATA(lt_result)` with `INTO TABLE @lt_result`.
 The `@` character is simply an escape character to comply with the new Open SQL syntax. For more information, see:
   - [7.4 Release News - Inline Declaration I](http://abapmentor.expertise-team.com/post/7-4-release-news-inline-declaration-i.aspx)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Replace `helper_type` with a Dictionary structure)]
+### Replace `helper_type` with a Dictionary structure
+
 In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](abap-dev-adt-create-new-structure)).
 
 Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL`:
@@ -208,10 +203,9 @@ Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL`:
     ![Image depicting step13a-remove-helper-type](step13a-remove-helper-type.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Declare the local variable as a returning parameter)]
+### Declare the local variable as a returning parameter
+
 Your method still does not return any data. Therefore, you will use another Quick Assist to convert your local variable as a returning parameter - so that you can access the result from your program.
 
 1.	To do so place the cursor on the variable `lt_result` and get the Quick Assist by entering **Ctrl+1**.
@@ -226,24 +220,21 @@ Note that the returning parameter was added to the method and an additional tabl
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Save and activate your class)]
+### Save and activate your class
+
 Save ( **Ctrl+S** ) and Activate ( **Ctrl+F3** ) your class.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Use the returning parameter in the program)]
+### Use the returning parameter in the program
+
 Now, in your program, declare an inline declared variable, `data(invoice_items)`, to receive the result of the returning parameter `invoices->get_items_from_db( )` as follows:
 
 ![Image depicting step11a-add-instance-method](step11a-add-instance-method.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Generating the ALV Grid)]
+### Generating the ALV Grid
+
 Finally, you can display the invoice items as a SAP List Viewer - or "`ALV Grid`" - using the class `cl_salv_table`.
 
 In your program, `ZSO_INVOICE_ITEMS_EURO`:
@@ -256,10 +247,9 @@ In your program, `ZSO_INVOICE_ITEMS_EURO`:
 
 >If you prefer to insert the full signature by default, you can change the behavior of the code completion in the Preferences. Select Window in the menu and click on Preferences. In the Preferences Dialog enter code completion in the filter field or open the following path ABAP Development > Editors > Source Code Editors > Code Completion. In the Code Completion settings, you can activate a checkbox to Always insert full signature on completion.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Adapt the ALV Grid factory method)]
+### Adapt the ALV Grid factory method
+
 In the method call that you have generated:
 
 1.	Remove the commented exporting parameters `list_display, r_container, and container_name` using the shortcut **Ctrl+D**
@@ -281,10 +271,9 @@ cl_salv_table=>factory(
        alv_table->display(  ).
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Check your code)]
+### Check your code
+
 Your program code should now look like this:
 
 ```ABAP
@@ -381,29 +370,26 @@ ENDCLASS.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Save and activate the program)]
+### Save and activate the program
+
 
 Activate your program by clicking the activation icon in the toolbar or using the keyboard shortcut **Ctrl+F3**.
 Now run the program. You should get a SAP List Viewer roughly like this:
 
 ![Image depicting step23-display-in-alv-grid](step23-display-in-alv-grid.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 17: ](Test yourself)]
+### Test yourself
+
 Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` - similar to `get_items_from_db` above. Do not define any new types.
 
 Do not indent your code.
 
 Enter your code in the box below and choose **Submit Answer**.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ###More information  
 - [Old and new ABAP syntax – overview sheet](https://blogs.sap.com/2016/03/02/old-and-new-abap-syntax-overview-sheet/)

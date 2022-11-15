@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Aneta Peteva
 author_profile: https://github.com/Peteva
-title: Extend SAP S/4HANA Cloud on SAP BTP, Cloud Foundry Environment
-description: Extend SAP S/4HANA Cloud with an extension application running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product>sap-btp--cloud-foundry-environment
 ---
+
+# Extend SAP S/4HANA Cloud on SAP BTP, Cloud Foundry Environment
+<!-- description --> Extend SAP S/4HANA Cloud with an extension application running on SAP BTP, Cloud Foundry environment using automated integration configuration.
 
 ## Prerequisites
  - Tools:
@@ -27,10 +29,10 @@ primary_tag: software-product>sap-btp--cloud-foundry-environment
         - `SAP_BR_BPC_EXPERT` to be able to maintain the event topics in the SAP S/4HANA Cloud tenant.
     You can check whether your user has the required roles via the Maintain Business Users application in your SAP S/4HANA Cloud tenant. See [Maintain Business Roles](https://help.sap.com/viewer/55a7cb346519450cb9e6d21c1ecd6ec1/2102.500/en-US/8980ad05330b4585ab96a8e09cef4688.html).
 
-## Details
-### You will learn
+## You will learn
 - How to extend the functionality of your SAP S/4HANA Cloud system to manage business partners
 
+## Intro
 You can extend the functionality of your SAP S/4HANA Cloud system with an extension application deployed in a subaccount in SAP Business Technology Platform (SAP BTP) and at the same time fully integrated in your SAP S/4HANA Cloud system.
 
 In this tutorial, you use the **business partner sample application for SAP S/4HANA Cloud** is to learn some best practices when building SAP S/4HANA Cloud extension applications on SAP BTP. We recommend to use this sample application only as a proof of concept and a starting point for implementing extensions.
@@ -47,7 +49,8 @@ Using this application, you can:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect SAP S/4HANA Cloud to SAP BTP)]
+### Connect SAP S/4HANA Cloud to SAP BTP
+
 
 To do that, you must register your SAP S/4HANA Cloud system in your global account in SAP BTP. During this process, an integration token is created and then used by the SAP S/4HANA Cloud system tenant administrator to configure the integration on the SAP S/4HANA Cloud system side.
 
@@ -79,10 +82,9 @@ To do that, you must register your SAP S/4HANA Cloud system in your global accou
 
     > The SAP S/4HANA Cloud system appears in the list of added systems. Its status is **Pending** because the registration process is not yet completed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Trigger registration in SAP S/4HANA Cloud tenant)]
+### Trigger registration in SAP S/4HANA Cloud tenant
+
 
 1. Log on to the SAP S/4HANA Cloud tenant, go to the **Home** > **Communication Management** tab page, and then choose the **Maintain Extensions on SAP BTP** tile.
 
@@ -108,11 +110,10 @@ To do that, you must register your SAP S/4HANA Cloud system in your global accou
 
     ![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view-new.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Make SAP S/4HANA Cloud system accessible in your subaccount)]
+### Make SAP S/4HANA Cloud system accessible in your subaccount
+
 
 You need to configure the entitlements for the subaccount where the **business partner sample application for SAP S/4HANA Cloud** will be deployed and assign the *api-access* service plan for the SAP S/4HANA Cloud Extensibility service instance to the system you registered in the previous step.
 
@@ -138,10 +139,9 @@ You need to configure the entitlements for the subaccount where the **business p
 
 7. Save the changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure entitlements for SAP BTP, Cloud Foundry runtime)]
+### Configure entitlements for SAP BTP, Cloud Foundry runtime
+
 
 1. Make sure you are logged on to SAP BTP cockpit as a Cloud Foundry administrator.
 
@@ -161,10 +161,9 @@ You need to configure the entitlements for the subaccount where the **business p
 
 5. On the **Entity Assignments** screen, choose **+** on the **SAP S/4HANA Cloud Extensibility** service row to add at least 1 quota to the subaccount, and then choose **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Clone sample application from GitHub)]
+### Clone sample application from GitHub
+
 
 1. Clone the GitHub repository:
 
@@ -204,10 +203,9 @@ You need to configure the entitlements for the subaccount where the **business p
     mvn clean install
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create Destination service instance)]
+### Create Destination service instance
+
 
 To connect the **business partner sample application for SAP S/4HANA Cloud** to your SAP S/4HANA Cloud tenant, you use a destination. For that, you first need to create a Destination service instance using the *lite* service plan.
 
@@ -261,10 +259,9 @@ To connect the **business partner sample application for SAP S/4HANA Cloud** to 
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create SAP S/4HANA Cloud Extensibility service instance)]
+### Create SAP S/4HANA Cloud Extensibility service instance
+
 
 To consume the SAP S/4HANA Cloud APIs, you create an SAP S/4HANA Cloud Extensibility service instance using the *api-access* service plan.
 
@@ -324,10 +321,9 @@ During the service instance creation, an HTTP destination on a subaccount level 
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create SAP Authorization & Trust Management service instance)]
+### Create SAP Authorization & Trust Management service instance
+
 
 To configure the **business partner sample application for SAP S/4HANA Cloud** authentication, you create an Authorization and Trust management service instance with **application** service plan.
 
@@ -337,7 +333,7 @@ To configure the **business partner sample application for SAP S/4HANA Cloud** a
 
 2. From the **Authorization & Trust Management** service tile, choose **Create** and follow the steps in the wizard to create the service instance.
 
-    !![From the **Authorization & Trust Management** service tile, choose **Create**.](screenshots.png/16-xsuaa-instance.png)
+    <!-- border -->![From the **Authorization & Trust Management** service tile, choose **Create**.](screenshots.png/16-xsuaa-instance.png)
 
 3. On the **Basic Info** step:
 
@@ -349,11 +345,11 @@ To configure the **business partner sample application for SAP S/4HANA Cloud** a
 
     - In the **Instance Name** field, enter **`xsuaa`**.
 
-    !![Select **application** service plan](screenshots.png/17-xsuaa-instance.png)
+    <!-- border -->![Select **application** service plan](screenshots.png/17-xsuaa-instance.png)
 
 4. On the **Parameters** step, upload the `xsuaa.json` file located in the root folder of the `s4hana-cloud-ext-business-partner` project.
 
-    !![Upload `xsuaa.json` file](screenshots.png/18-xsuaa-instance.png)
+    <!-- border -->![Upload `xsuaa.json` file](screenshots.png/18-xsuaa-instance.png)
 
 [OPTION END]
 
@@ -381,10 +377,9 @@ To configure the **business partner sample application for SAP S/4HANA Cloud** a
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy and run sample application)]
+### Deploy and run sample application
+
 
  You use Cloud Foundry Command Line Interface (cf CLI) to deploy and run the **business partner sample application for SAP S/4HANA Cloud**.
 
@@ -410,10 +405,9 @@ To configure the **business partner sample application for SAP S/4HANA Cloud** a
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test sample application)]
+### Test sample application
+
 
 1. In the SAP BTP cockpit, navigate to **<your_Cloud Foundry_space>** > **Applications**, and then choose the **approuter-business-partners** link to go to the **Overview** page for the application.
 
@@ -422,7 +416,6 @@ To configure the **business partner sample application for SAP S/4HANA Cloud** a
 3. The **Business Partner Center** page opens in your browser and a list of business partners is displayed.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

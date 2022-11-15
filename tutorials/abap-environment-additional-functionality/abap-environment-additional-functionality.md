@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Get to know additional functionality of the Custom Business Configurations app
-description: Learn how to use the paste function to copy from Microsoft Excel documents. Get to know how to create business configuration documentation and make use of intent navigation.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
@@ -9,20 +8,23 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Get to know additional functionality of the Custom Business Configurations app
+<!-- description --> Learn how to use the paste function to copy from Microsoft Excel documents. Get to know how to create business configuration documentation and make use of intent navigation.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - This is the fourth tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to use the paste function to copy from Microsoft Excel documents
 - How to create business configuration documentation
 - How to make use of intent navigation
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Use copy and paste functionality)]
+### Use copy and paste functionality
+
 
 You can add multiple error codes with copy & paste from [Microsoft Excel](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
 
@@ -64,10 +66,9 @@ You can add multiple error codes with copy & paste from [Microsoft Excel](https:
 
       ![Save new rows](excel8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create business configuration documentation)]
+### Create business configuration documentation
+
 
 You want to provide a detailed documentation of the business configuration to the user of the **Custom Business Configurations** app.
 
@@ -94,10 +95,9 @@ You want to provide a detailed documentation of the business configuration to th
       ![Show Documentation action](knowledge6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Make use of intent navigation)]
+### Make use of intent navigation
+
 
 You want to navigate from your SAP Fiori app to the maintenance view of a Business Configuration Maintenance Object.
 
@@ -123,11 +123,9 @@ sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then(function
 });
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

@@ -1,11 +1,13 @@
 ---
-title: Create Graph Workspace Visualization in SAP HANA Cloud, SAP HANA Database
-description: Learn to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>advanced, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Create Graph Workspace Visualization in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl.
 
 ## Prerequisites
 - You have established a [connection to SAP HANA Cloud, SAP HANA database using Python](hana-cloud-python-analysis-multimodel-2).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - You require access to the [Wellington's Storm water Network data](https://github.com/SAP-samples/hana-graph-examples/tree/main/NOTEBOOKS/WELLINGTON_STORMWATER/datasets) (sample data).
 
 
-## Details
-### You will learn
+## You will learn
 - About some graph functions that are available in the hana-ml library
 - How to create a Graph Workspace using Wellington's Storm water Network data
 - How to visualize the graph with Kepler.gl
 
 
+## Intro
 In this tutorial, you will create a Graph Workspace based on imported vertices and edges. You will use the Wellington's Storm water Network data stored as a graph to create a visualization in Kepler.gl.
 
 > The following terms are used in specific contexts:
@@ -31,7 +33,8 @@ In this tutorial, you will create a Graph Workspace based on imported vertices a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is a Graph Workspace?)]
+### What is a Graph Workspace?
+
 A Graph is a **data model** used to represent networks – social networks, supply chains, power grids etc.
 A graph is a set of vertices and edges in SAP HANA Cloud, SAP HANA database. **Each edge has a direction and connects two vertices**. One vertex is denoted as the source and the other as the target. You can have any number of edges connecting the same two vertices. Vertices and edges can have an arbitrary number of attributes. **An attribute consists of a name that is associated with a data type and a value**.
 
@@ -41,10 +44,9 @@ A graph workspace is a **catalog object that defines a graph in terms of tables 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Overview of graph functions in hana-ml library)]
+### Overview of graph functions in hana-ml library
+
 
 The hana-ml library offers different functions to create a graph:
 
@@ -56,11 +58,10 @@ The hana-ml library offers different functions to create a graph:
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](What is hana_ml.dataframe module?)]
+### What is hana_ml.dataframe module?
+
 
 A `hana_ml.dataframe` module represents a **database query as a data-frame** which is conceptually similar to a Pandas data-frame. Thus, it seamlessly fits into the tool set familiar to a data scientist. The SAP HANA data-frame is designed to not bring data back from the database unless explicitly requested, also known as lazy evaluation. That means all operations such as column filter, where clauses, etc. are performed on the query level.
 
@@ -71,10 +72,9 @@ In this tutorial, the data-frame's geospatial support becomes handy. You will se
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Store sample data in the database using Pandas)]
+### Store sample data in the database using Pandas
+
 
 In this tutorial, you create the graph based on CSV data and therefore use Pandas to import the data.
 
@@ -110,10 +110,9 @@ You use the `create_dataframe_from_pandas()` function of the hana-ml library to 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the graph in the database)]
+### Create the graph in the database
+
 
 In a new cell execute the following code to create the graph in SAP HANA Cloud, SAP HANA database:
 
@@ -135,14 +134,13 @@ You can check whether the graph was created using the `discover_graph_workspaces
 
 To display only the graph you require, you can use the help of the below image:
 
-!![Discover Graph output](ss-01-output.png)
+<!-- border -->![Discover Graph output](ss-01-output.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Display object representation of graph in Python)]
+### Display object representation of graph in Python
+
 
 > **This step is optional**. Continue with this step if you want to learn how to display object representation of a graph, else skip this step.
 You can easily create an object representation of your graph in Python just by its name. Create a new cell with the following content:
@@ -160,10 +158,9 @@ When you print a graph using `g_storm`, you get **technical information about th
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Visualize the graph using Kepler.gl)]
+### Visualize the graph using Kepler.gl
+
 
 Kepler.gl is a popular framework to **visualize geospatial data**. You will use it here to display the graph data you're working with. Check [this link](https://docs.kepler.gl/docs/keplergl-jupyter#install) to know how to install Kepler.gl.
 
@@ -191,22 +188,20 @@ The calculated column (`GJ`) does not persist along with the database. It's life
 
 Now your notebook should look like this:
 
-!![Notebook Graph P1](ss-02-notebook-graph-part1.png)
+<!-- border -->![Notebook Graph P1](ss-02-notebook-graph-part1.png)
 
-!![Notebook Graph P2](ss-03-notebook-graph-part2.png)
+<!-- border -->![Notebook Graph P2](ss-03-notebook-graph-part2.png)
 
 > In this tutorial, you have learned how to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl. In the next tutorial, you will see the how to analyze a Graph Workspace using various algorithms in the hana-ml library.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

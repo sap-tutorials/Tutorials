@@ -1,6 +1,5 @@
 ---
-title: Configure SAP HANA service smart data integration for SAP BTP with the SAP HANA service for SAP BTP
-description: Configure the data provisioning agent and create a remote source.
+parser: v2
 auto_validation: true
 time: 25
 author_name: Thomas Jung
@@ -8,6 +7,9 @@ author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
+
+# Configure SAP HANA service smart data integration for SAP BTP with the SAP HANA service for SAP BTP
+<!-- description --> Configure the data provisioning agent and create a remote source.
 
 ## Prerequisites
 - You have a productive account in SAP Integration Suite and SAP Extension Suite, a subaccount in SAP Business Technology Platform, Cloud Foundry environment and a space.
@@ -17,17 +19,18 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - You have administration rights in your local computer.
 
 
-## Details
-### You will learn
+## You will learn
 - How to start and register the data provisioning agent with SAP HANA service for SAP BTP in a local computer
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA service for SAP BTP using the Database Explorer
 
+## Intro
 >**This tutorial cannot be completed with a trial account.**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to database with Database Cockpit)]
+### Connect to database with Database Cockpit
+
 
 Navigate into the space in which you are developing in your subaccount.
 
@@ -63,12 +66,11 @@ The Database Explorer will automatically open a SQL console connected to your da
 ![Access cockpit](7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent)]
+### Download and install the Data Provisioning Agent
+
 
 Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
@@ -100,11 +102,10 @@ Review the options and click **Install**
 Wait until installation finishes and you get confirmation that **Installation finished successfully**
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Register the agent)]
+### Register the agent
+
 
 You will use the command-line tool to configure the data provisioning agent to connect to your SAP HANA instance using a secure JDBC connection.
 
@@ -207,10 +208,9 @@ Finally, register an adapter using option 8.
 
 Use `FileAdapter` when prompted. Use **Quit** to exit the configuration agent.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure an access token)]
+### Configure an access token
+
 
 From a command prompt, use the following command to set an access token.
 
@@ -228,10 +228,9 @@ Set a token and make a note of it. This example uses **`HANAToken`**
 
 Press **Enter** and quit the configuration tool.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Prepare a file for upload)]
+### Prepare a file for upload
+
 
 Download [this sample file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-connect-sdi/salarydata.csv) into the default workspace.
 
@@ -263,10 +262,9 @@ COLUMN=T-Level;NVARCHAR(256);
 ```
 Save the configuration file in the same directory.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a Remote Source)]
+### Create a Remote Source
+
 
 Go back to the Database Explorer. You will see the adapter under `Catalog -> Data Provisioning Agents`
 
@@ -300,8 +298,7 @@ Check the remote objects to make sure configuration has been successful and to c
 
 ![Configure client](31.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

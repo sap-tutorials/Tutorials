@@ -1,18 +1,19 @@
 ---
-title: Troubleshoot SQL with SAP HANA Database Explorer
-description: Explore the available tools to help diagnose and debug SQL or SQLScript.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition ]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Troubleshoot SQL with SAP HANA Database Explorer
+<!-- description --> Explore the available tools to help diagnose and debug SQL or SQLScript.
+
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud, HANA database trial or the SAP HANA, express edition that includes the SAP HANA database explorer
  - You have completed the first 3 tutorials in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to debug SQLScript
   - How to use code coverage and SQLScript code analysis
   - About the tools available to assist in performance analysis (explain plan, SQL Analyzer)
@@ -20,7 +21,8 @@ primary_tag: software-product>sap-hana-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Debugger)]
+### Debugger
+
 The debugger can be used to help find issues in procedures, functions, or anonymous blocks.  The steps below demonstrate how to use the debugger to debug a procedure.
 
 1. To start a debugging session, navigate to the procedure `RESERVATION_GENERATOR`, right-click, and select **Open For Debugging**.
@@ -70,10 +72,9 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code coverage)]
+### Code coverage
+
 The code coverage tool shows statements that have been run.  This can be helpful when used in conjunction with a set of tests, as it can show the amount of statements that the tests have covered.
 
 1. Right-click the procedure `RESERVATION_GENERATOR` and choose **Generate CALL Statement**.
@@ -96,10 +97,9 @@ The code coverage tool shows statements that have been run.  This can be helpful
 
     ![Hit and not hit statements](codeCoverageVisual.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](SQLScript analysis)]
+### SQLScript analysis
+
 The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/latest/en-US/f7e1c7fbce6f4db49e29d7cc58b78384.html) can be used to identify patterns indicating problems in code quality, security, or performance.  Follow the steps below to try it out.
 
 1. Create a new procedure to generate fictitious hotel reservations. The procedure accepts a number of reservations to generate and a room type.
@@ -190,10 +190,9 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![Analyze procedure](AnalyzeSQLScriptCode2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Explain plan)]
+### Explain plan
+
 Explain plan provides a compiled plan in tabular form without executing it.  This can be useful in analyzing certain situations when it is hard to reproduce issues without causing the issue.
 
 1. Run the following SQL and enter the date 2020-12-24 when prompted.  
@@ -224,10 +223,9 @@ For further details see the links below.
 [Explain Plan](https://help.sap.com/viewer/9de0171a6027400bb3b9bee385222eff/latest/en-US/ee5e2ac159f14cc897c8b3a5f39a38b5.html)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](SQL Analyzer)]
+### SQL Analyzer
+
 The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code or as an additional extension (SAP Performance Tools) in the SAP Business Application Studio.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.  A previous version of the SQL Analyzer is also included in the on-premise SAP HANA database explorer, the on-premise SAP HANA cockpit as well as SAP HANA studio.  
 
 1. Run the following SQL.
@@ -283,11 +281,10 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 ---
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](SQL trace)]
+### SQL trace
+
 A SQL trace can be helpful when debugging a problem or in identifying SQL statements that a particular application is using.  The following steps demonstrate an example of enabling a SQL trace and then viewing the resulting trace file by using the SAP HANA database explorer.
 
 1. The database overview presents general information about a database.  Right-click a database and choose **Show Overview**.
@@ -363,10 +360,9 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
 >For additional details, consult the [Traces](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide, SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Expensive statements trace)]
+### Expensive statements trace
+
 It can be important to examine SQL statements that consume large amounts of time, CPU or memory.  The following steps demonstrates how to enable an expensive statements trace.
 
 1. The following SQL will enable tracing of expensive statements, set the threshold values, run some statements that will exceed the thresholds, and then disable expensive statement tracing.
@@ -410,10 +406,9 @@ It can be important to examine SQL statements that consume large amounts of time
     > ```
     > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Viewing trace files with SQL)]    
+### Viewing trace files with SQL
+    
 The SAP HANA database provides a set of monitoring views enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
 
 1. Information about the available trace files and content from individual trace files can be queried.
@@ -441,10 +436,9 @@ The SAP HANA database provides a set of monitoring views enabling access to the 
     >Notice above that the modification section can be used to set the begin and end time.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Data lake Relational Engine diagnostic files)]    
+### Data lake Relational Engine diagnostic files
+    
 
 A data lake Relational engine can contain log files, query plans, and audit files.
 
@@ -505,8 +499,7 @@ A data lake Relational engine can contain log files, query plans, and audit file
 
 Congratulations! You have now explored many of the available tools in the SAP HANA database explorer that help to debug and diagnose.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

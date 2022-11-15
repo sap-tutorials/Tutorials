@@ -161,7 +161,7 @@ The data variables are now configured for your application.
 
     Click **Save** to save this logic (no matter how you entered it).
 
-!   [Save the logic](save_data_variable.png)
+    ![Save the logic](save_data_variable.png)
 
 6. Click **Save** (upper right) to save your draft application.
 

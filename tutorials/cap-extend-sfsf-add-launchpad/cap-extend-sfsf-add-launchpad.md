@@ -1,11 +1,13 @@
 ---
-title: Add the SAP SuccessFactors Extension to the Launchpad
-description: In this last phase of the development journey you will finally add your deployed extension to an SAP Fiori Launchpad on BTP.
+parser: v2
 auto_validation: true
 time: 7
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Add the SAP SuccessFactors Extension to the Launchpad
+<!-- description --> In this last phase of the development journey you will finally add your deployed extension to an SAP Fiori Launchpad on BTP.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -20,8 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Develop the SAP Fiori Elements Application for the SAP SuccessFactors Extension**](cap-extend-sfsf-fiori-elements)
  - Complete the tutorial: [**Deploy the SAP SuccessFactors Extension to Cloud Foundry**](cap-extend-sfsf-deploy-cf)
 
-## Details
-### You will learn
+## You will learn
   - How to **access the Launchpad Service Site Manager**
   - How to **prepare the business content** for the Launchpad Site
   - How to **assign the application** to the **business content** and **launchpad roles**
@@ -30,7 +31,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the launchpad service site manager)]
+### Access the launchpad service site manager
+
 
 In the **SAP BTP cockpit**, on the **left-hand pane** expand the **Services** menu and (1) click on **Instances and Subscriptions**. On the right side, locate the **Launchpad Service** under **Subscriptions** and (2) click on the **Go to Application** icon next to it.
 
@@ -42,10 +44,9 @@ The **Site Manager UI** will open-up in a new browser tab. So, the first thing y
 
 ![Figure 2 – Refresh content from the HTML5 apps repository](refresh-content.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare the business content - application, group and catalog)]
+### Prepare the business content - application, group and catalog
+
 
 To learn about the **concepts** managed by the **SAP Launchpad Service**, please refer to the official documentation in [**this link**](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/3f619a13ca2a4a59a14bec8507c3fb69.html).
 
@@ -73,10 +74,9 @@ Type **SuccessFactors Extensions** as **Title** and **SuccessFactors Extensions 
 
 ![Figure 8 – SuccessFactors Extensions Group Information](group-info.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Assign the application to everyone)]
+### Assign the application to everyone
+
 
 Go back to the **Content Manager** home page and click on the **Everyone** role in the list.
 
@@ -86,10 +86,9 @@ Click on the **Edit** button at the top-right and then (1) on the **Assign Items
 
 ![Figure 10 – Assign the Manage Projects app to the Everyone Role](assign-app.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the launchpad site)]
+### Create the launchpad site
+
 
 (1) Click on the **Site Directory** option and then (2) on the **Create Site** button.
 
@@ -99,10 +98,9 @@ Name the site **BTP Extensions** and click on the **Create** button.
 
 ![Figure 12 – Site Name](site-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the site and application)]
+### Test the site and application
+
 
 Click on the link below the **URL** field to **launch the site**, which will open-up in a new browser tab.
 
@@ -128,15 +126,14 @@ You can, now, test it at your will, in the same way you did using the **Fiori Pr
 
 And this is the **final step** to **Extend SAP SuccessFactors on SAP BTP with CAP**!
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Stretch yourself)]
+
+
+### Stretch yourself
+
 
 **Congratulations**! After having gone through and completed the tutorials in this group you should have successfully **Extended SAP SuccessFactors on SAP BTP with CAP** with a **simple project management application**!
 
@@ -151,5 +148,3 @@ Here's a list of suggestions for enhancements:
 - Implement restrictions such as: users can only view/manage projects that have been created by themselves, only employees who report to the project creator can be assigned as team members, etc.
 - And so on, and so forth… the sky's the limit!
 
-[DONE]
-[ACCORDION-END]

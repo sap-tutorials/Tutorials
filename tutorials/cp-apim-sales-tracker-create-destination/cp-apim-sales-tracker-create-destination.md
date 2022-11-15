@@ -1,31 +1,31 @@
 ---
-title: Create Destination for SAP API Management Service
-description: Create a  destination on your trial account to connect API Management and Mobile services.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, products>sap-api-management, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
 ---
 
-## Prerequisites
+# Create Destination for SAP API Management Service
+<!-- description --> Create a  destination on your trial account to connect API Management and Mobile services.
 
-## Details
-### You will learn
+## Prerequisites
+## You will learn
   - How to create destination on trial account
   - How to connect API Management and Mobile services
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
+### Log into SAP Cloud Platform
+
 
 Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ) and navigate to Neo Trial account.
 
 ![Open Trial](15-CP-cockpit.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create destination)]
+### Create destination
+
 
 1. Under the side menu select **Connectivity** and then select **Destinations**.
 
@@ -56,6 +56,4 @@ Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ) a
     `WebIDEEnabled` |**`true`**
     `WebIDEUsage` |**`api_mgmt_proxy`**
 
-[VALIDATE_2]
 
-[ACCORDION-END]

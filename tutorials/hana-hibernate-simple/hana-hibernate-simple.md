@@ -1,22 +1,23 @@
 ---
-title: Create a simple application using Hibernate on SAP HANA
-description: This tutorial shows how to create a simple application using Hibernate on SAP HANA to interact with the database.
+parser: v2
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Create a simple application using Hibernate on SAP HANA
+<!-- description --> This tutorial shows how to create a simple application using Hibernate on SAP HANA to interact with the database.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial you will learn how to create a simple object-oriented data model in Java and use Hibernate to read and write data from and to a SAP HANA database instance.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Define the model)]
+### Define the model
+
 
 In this tutorial you will model a small software project portal where developers can create projects, upload code, and create software releases.
 
@@ -34,10 +35,9 @@ As defined by the model three Java classes representing the entities will be cre
 
 As the identity of a version entity will be defined by a composite value (i.e. the project to which it belongs and the version string), we will need an additional class named `VersionPK` to represent it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the Version Key Entity)]
+### Create the Version Key Entity
+
 
 As the identity of a version entity is defined by a composite value (i.e. the project to which it belongs and the version string), we will need an additional class named `VersionPK` to represent it.
 
@@ -73,10 +73,9 @@ private static final long serialVersionUID = 1L;
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the Version Entity)]
+### Create the Version Entity
+
 
 This class defines three attributes:
 
@@ -125,10 +124,9 @@ Save the class file.
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the Developer Entity)]
+### Create the Developer Entity
+
 
 The class defines four attributes:
 
@@ -176,10 +174,9 @@ Save the class file.
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the Project Entity)]
+### Create the Project Entity
+
 
 The class defines four attributes:
 
@@ -246,10 +243,9 @@ Save the class file.
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your entities)]
+### Test your entities
+
 
 Now let's test our created entities with the following:
 
@@ -444,5 +440,4 @@ Hibernate:
 
 This output shows the SQL statements that were generated to insert the values into the database and to read the project from the database again.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

@@ -1,11 +1,13 @@
 ---
-title: Visualize a Voronoi Cell Using a Scalable Vector Graphic
-description: Learn how you can visualize edges and use Voronoi cells to check parameters in an area in your spatial data in SAP HANA Cloud, HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Visualize a Voronoi Cell Using a Scalable Vector Graphic
+<!-- description --> Learn how you can visualize edges and use Voronoi cells to check parameters in an area in your spatial data in SAP HANA Cloud, HANA database.
 
 ## Prerequisites
 - You have completed the tutorial [Identify Relevant Networks in Spatial Data](hana-cloud-smart-multi-model-4).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to use filters to identify relevant areas of interest
 - How to create a Scalable Vector Graphic (SVG) to visualize the area of interest
 - How to use **`Voronoi`** cells to determine a suitable cycleway based on a criterion
 
 
+## Intro
 After you have identified a relevant area based on your starting and target locations, you will learn in this tutorial how you can check for certain parameters in that area. In this scenario, your plan is to go to the bar by bike. So, next you will check the suitability of the network for bike rides. You will learn how to visualize certain edges based on filter queries and how to use `Voronoi` cells. This includes three steps:
 
 -	Identify cycleways within the area of interest
@@ -29,7 +31,8 @@ After you have identified a relevant area based on your starting and target loca
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Identify cycleways within the area of interest)]
+### Identify cycleways within the area of interest
+
 Your first step is to select edges with the property `highway` = `cycleway` in the previously identified area. In addition to the filter `highway` = `cycleway`, you need to check if both associated vertices are within the scope of our area of interest. If only one connected vertex is within the scope of your circle, this would mean that you would leave the area of interest by passing this edge (i.e. street). To avoid doing so, execute this statement:
 
 ```SQL
@@ -44,10 +47,9 @@ In the results, you will see all cycleways that fit the parameters in this query
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Scalable Vector Graphic to visualize cycleways)]
+### Create a Scalable Vector Graphic to visualize cycleways
+
 Next, you need to aggregate the cycleways found in the previous query, create a vector graphic (SVC) to then display the structure of the cycleways in the area. You will construct a query that does all these steps in one execution.
 
 One of the output formats for geometries in SAP HANA Cloud is [**Scalable Vector Graphic (SVG)**](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The appropriate function for generating an SVG representation of a geometry is called [`ST_AsSVG`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/ef447b3e0a964cd5bbe82074f4225f84.html). You can handover optional parameters for custom styling of the SVG.
@@ -60,7 +62,7 @@ Before creating the query, you need to make an adjustment in the SAP HANA Databa
 
 3. You can set the value to **0**, which will be automatically converted to the highest possible value.
 
-    !![byte limit](ss-01-byte-limit.png)
+    <!-- border -->![byte limit](ss-01-byte-limit.png)
 
 4. Now that this setting has been adjusted, you can start with your query. To perform a spatial union operation and construct one geometry out of the result set of the above query, use the function [`ST_UnionAggr`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/601aa9fb93e241af96faafcb8f01b12e.html). The following query creates the SVG as a CLOB:
 
@@ -76,15 +78,14 @@ WHERE u.IN_SCOPE = 1 AND v.IN_SCOPE = 1 AND le."highway" = 'cycleway';
 
     You can find our SVG file here: [Link](https://github.com/SAP-samples/teched2020-DAT260/blob/main/exercises/ex4/images/cycle_ways.svg).
 
-    !![SVG](ss-02-svg.png)
+    <!-- border -->![SVG](ss-02-svg.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use `Voronoi` cells to determine a suitable cycleway)]
+### Use `Voronoi` cells to determine a suitable cycleway
+
 To evaluate how suitable the area is for bike riding, let's say you want to find bicycle repair stations and their catchment area next. To do that, you will **select all bicycle repair stations and determine their catchment area using a [`Voronoi`(*)](https://en.wikipedia.org/wiki/Voronoi_diagram) cell**.
 
 You can easily find all stations since the field **amenity** carries the value **`bicycle_repair_station`** for such POI's. You can access this information using a select statement with a WHERE filter:
@@ -108,7 +109,7 @@ WHERE "amenity" LIKE 'bicycle_repair_station';
 
 Here you can see the resulting `Voronoi` cells on the map:
 
-!![Voronoi](ss-03-voronoi.png)
+<!-- border -->![Voronoi](ss-03-voronoi.png)
 
 And now you know how you can check areas for certain attributes by visualizing certain edges based on a filter and using `Voronoi` cells. To determine the suitability of the area for bike rides, you have visualized the coverage with cycle ways as well as bicycle repair stations.
 
@@ -116,14 +117,12 @@ And now you know how you can check areas for certain attributes by visualizing c
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

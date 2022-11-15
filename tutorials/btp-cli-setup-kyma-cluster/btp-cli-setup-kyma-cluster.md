@@ -1,6 +1,5 @@
 ---
-title: Set up a Kyma Cluster on the Command Line
-description: You can use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.
+parser: v2
 author_name: Anna Wenger
 time: 30
 tags: [tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product-function>sap-btp-command-line-interface]
@@ -8,9 +7,11 @@ primary_tag: software-product>sap-business-technology-platform
 keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
 ---
 
-## Details
-### You will learn
-  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit
+# Set up a Kyma Cluster Using the Command Line
+<!-- description --> You can use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.
+
+## You will learn
+  - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit (see [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) for the same procedure in the cockpit).
   - That the creation of the Kyma cluster takes about 15 - 25 minutes. It happens after step 3 in this tutorial, so you might want to plan in a coffee break before continuing with step 4.
 
 ## Prerequisites
@@ -21,7 +22,8 @@ keywords: btp, btp cli, btpcli, command line, command line interface, command li
 - You have a global account and a subaccount on SAP BTP with admin rights. See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
 
 
-[ACCORDION-BEGIN [Step 1: ](Log in with th btp CLI)]
+### Log in with th btp CLI
+
 1. Log in to your global account. We recommend using:
 ```Shell/Bash
 btp login --sso
@@ -39,12 +41,11 @@ btp list accounts/subaccount
 btp target --subaccount <subaccount ID from your clipboard>
 ```
 
-Once the target is set to the subaccount, you no longer need to specify the subaccount ID with any command.
+Once the target is set to the subaccount, you no longer need to specify the subaccount ID with every command.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Ensure that Kyma is entitled to your subaccount)]
+### Ensure that Kyma is entitled to your subaccount
+
 
 To check if Kyma is already entitled to your subaccount, use the following command:
 ```Shell/Bash
@@ -52,9 +53,9 @@ btp list accounts/entitlements
 ```
 
 
-If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements:
+If you don't have a Kyma entitlement yet, run the following command – note that you need to have admin rights in the global account for managing entitlements, and that you do need the subaccount ID one last time in this case (luckily, it should still be in your clipboard):
 ```Shell/Bash
-btp assign accounts/entitlement --for-service kymaruntime --plan free --amount 1  
+btp assign accounts/entitlement --to-subaccount <subaccount ID from your clipboard> --for-service kymaruntime --plan free --amount 1  
 ```
 
 If you're not working in a free tier subaccount, see [Available Plans in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/befe01d5d8864e59bf847fa5a5f3d669.html).
@@ -62,11 +63,10 @@ If you're not working in a free tier subaccount, see [Available Plans in the Kym
 >You can append `--help` to the end of complete or incomplete commands. For example, `btp accounts/subaccounts --help` can help you to find the correct command to get details about a subaccount.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create Kyma Environment Instance)]
+### Create Kyma Environment Instance
+
 To create a Kyma environment instance (the Kyma cluster), you need to pass a .json file as a parameter that contains attributes of the Kyma cluster.
 
 >If you're using a different plan, you might need a different region. See the Subaccount Regions section in [Regions for the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/557ec3adc3174ed4914ec9d6d13487cf.html)
@@ -80,12 +80,11 @@ btp create accounts/environment-instance --display-name my-environment-instance 
 
 A new Kubernetes cluster is set up, in which the Kyma runtime and all its components will run.
 
-To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance --subaccount <ID>` ‒ once Kyma appears with status `OK`, you can continue.
+To continue with this tutorial, the Kyma cluster needs to be created, but this happens in the background and may take 15‒30 minutes. You can check the status with `btp list accounts/environment-instance` ‒ once Kyma appears with status `OK`, you can continue.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get kubeconfig.yaml)]
+### Get kubeconfig.yaml
+
 Once you've created the environment instance, you need to get its configuration file: the `kubeconfig.yaml`, because `kubectl` relies on the `kubeconfig.yaml` to configure access to the Kyma cluster.
 
 To do so, retrieve the `environment id` and the `KubeconfigURL` from the newly created environment instance. Note that downloading the kubeconfig.yaml may succeed even if the cluster creation has not succeeded yet. But in this case, the content would be unusable. So make sure that the Kyma environment instance is in status OK after the previous step.
@@ -117,16 +116,15 @@ in PowerShell 7.x (Windows, Mac, Linux):
 curl https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<EnvironmentID> > <file-path>\kubeconfig.yaml
 ```
 
-in macOS:
+in macOS and Linux:
 ```Shell/Bash
 curl -o kubeconfig.yaml https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/<ENVIRONMENT-ID>
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Provide kubeconfig.yaml to Kyma)]
+### Provide kubeconfig.yaml to Kyma
+
 For your convenience, expose the `kubeconfig` as an environment variable or add the location of kubeconfig.yaml to your path in the system variables. The environment variable is session-based, whereas the path is saved permanently.
 
 To only use a session-based environment variable, enter:
@@ -149,7 +147,7 @@ Alternatively, add the path in system variables as follows:
 
 [OPTION END]
 
-[OPTION BEGIN [Mac]]
+[OPTION BEGIN [MacOS and Linux]]
 
 ```Shell/Bash
 export KUBECONFIG={KUBECONFIG_FILE_PATH}   
@@ -157,11 +155,10 @@ export KUBECONFIG={KUBECONFIG_FILE_PATH}
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Check if you can access your cluster)]
+### Check if you can access your cluster
+
 If you've created the cluster, you're automatically assigned the cluster-admin role. This role gives you unrestricted access to configure your cluster. For example, you can assign roles to other users.
 
 To check if you can access your cluster, run:
@@ -171,18 +168,18 @@ kubectl get namespaces
 
 >You get a token which will also be valid for future sessions.
 
-[DONE]
-[ACCORDION-END]
+To learn more about the Kyma environment and its functionality, see:
+
+- [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
+- [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
+- [kyma-project](https://kyma-project.io/docs/kyma/latest)
+- [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
+- [Cloud Native for Beginners - YouTube](https://youtube.com/playlist?list=PL6RpkC85SLQCwaJ54TAAHMvSl5wpVPrai)
+- [Mission: Develop a Full-Stack Application in the Kyma Runtime](mission.cp-kyma-full-stack)
 
 
-[ACCORDION-BEGIN [Step 6: ](Assign Roles to users)]
 
-If you don't want to do all the work in your Kyma cluster by yourself, you can assign roles to other users.
 
-See [Assign Roles in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US&version=Cloud) for cockpit equivalent
-
-[DONE]
-[ACCORDION-END]
 
 
 

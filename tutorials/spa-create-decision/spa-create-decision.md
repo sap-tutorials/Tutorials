@@ -103,6 +103,7 @@ Now, you have to map the Input and Output of the decision to the actual data obj
 
 
 After the data types are created, you will now configure the decision:
+
 - With Input and Output data types.
 - Create decision table rule to the business policy.
 

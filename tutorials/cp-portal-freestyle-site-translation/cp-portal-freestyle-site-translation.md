@@ -1,28 +1,31 @@
 ---
-title: Translate Your SAP Cloud Platform Portal Freestyle Site
-description: Translate the content of your Portal Freestyle site into any of the supported languages.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [   tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 time: 15
 ---
 
+# Translate Your SAP Cloud Platform Portal Freestyle Site
+<!-- description --> Translate the content of your Portal Freestyle site into any of the supported languages.
+
 ## Prerequisites  
  - You've opened your SAP Cloud Platform subaccount.
  - You've opened the `Portal Service` and navigated to the Site Directory where your `Supplier Portal` site that you created is located. For more information, see [Create a Portal freestyle site](http://developers.sap.com/group.cp-portal-freestyle-site.html).
 
-## Details
+
+## Intro
 To translate the content of your Portal freestyle site, the overall process is as follows. You download the string files of your content into a zip file and send it to a translator (or you can access the **Translation Hub** service and do it yourself). Once the files are translated, you import the translated zip files back into your Portal site and enable the translated languages so that end users can select the language that they want to work in.
 In this tutorial, we will show you how to do this.
 
 >Note that these steps are carried out using the Supplier Portal site that you created in a previous tutorial.  However you can do these steps on any Portal site that you've created.
-
-### You will learn  
+## You will learn  
  - How to download your site content for translation
  - How to translate the content yourself in the SAP Translation Hub (optional)
  - How to import and upload the translated content
 
-[ACCORDION-BEGIN [Step 1: ](Download files for translation)]
+### Download files for translation
+
 In this step, you will download the content of the `Supplier Portal` site into a ZIP file.
 
 >The files are downloaded into your `Downloads` folder.  For convenience sake, in your `Downloads` folder, you may want to create a new folder called `TRANSLATIONS` and store your files there so that they are easy to find when you need to upload them again.
@@ -85,10 +88,9 @@ Your files are now ready for translation.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare translated property files for upload)]
+### Prepare translated property files for upload
+
 
 >This step is relevant only if you've sent your content files to a translator (in other words, you are not using the `SAP Translation Hub` to translate your site content).
 
@@ -110,10 +112,9 @@ When you're done, this is how the files should look in your `master_Language_<da
 >Note that you have 3 files for each - one with the German translation `<siteId>_de.properties`, one with the French translation  `<siteId>_fr.properties`, and the original one that is already there and has not changed.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP Translation Hub)]
+### Open the SAP Translation Hub
+
 
 To do this step, you need to go back to the SAP Cloud Platform cockpit where you can access the **SAP Translation Hub** service.
 
@@ -137,11 +138,10 @@ Let's start.
 
 >The **SAP Translation Hub** user interface opens in a new browser tab.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create your translation projects)]
+### Create your translation projects
+
 
 In this step, you are going to create translation projects for the `.properties` files that you downloaded.
 
@@ -216,10 +216,9 @@ Let's start.
 > You are now ready to upload your translated files to your Portal site. To do this, you need to go back to the Portal Site Designer and open the `Supplier Portal` site.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Upload translated content)]
+### Upload translated content
+
 
 In this step you will upload the translated files. Either the files that you received from your translator or those that you translated above in the **SAP Translation Hub**.
 
@@ -245,10 +244,9 @@ In this step you will upload the translated files. Either the files that you rec
 
     ![Enable languages](23_enable_languages.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View Your Translated Site)]
+### View Your Translated Site
+
 
 Now you are going to publish the `Supplier Portal` with all your changes. Since you have uploaded the translated content in `French` and `German`, and since you have activated the `French` and `German` languages, end users will be able to select these languages in their `Supplier Portal` site.
 
@@ -286,9 +284,7 @@ Let's check this out.
 
 Congratulations! You have translated your Portal freestyle site and end users can now view the content of your site in French and German.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 

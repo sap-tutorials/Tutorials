@@ -1,6 +1,5 @@
 ---
-title: Access Your Launchpad Site with SAP Mobile Start
-description: Access your SAP Launchpad service Site from your mobile device with the native SAP Mobile Start app.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-launchpad-service, software-product>sap-business-technology-platform, topic>mobile]
@@ -9,11 +8,14 @@ primary_tag: software-product>sap-launchpad-service
 ---
 
 
-## Details
-### You will learn
+# Access Your Launchpad Site with SAP Mobile Start
+<!-- description --> Access your SAP Launchpad service Site from your mobile device with the native SAP Mobile Start app.
+
+## You will learn
   - How to connect the SAP Mobile Start native app with your SAP Launchpad service site
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Mobile Start in Site Settings)]
+### Enable SAP Mobile Start in Site Settings
+
 
 
 1.  In the Site Manager - Site Directory click the settings icon on your Site's tile to open the Site Settings.
@@ -26,10 +28,9 @@ primary_tag: software-product>sap-launchpad-service
 
 3.  Click **Save** & get back to Site Directory
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access QR-Codes in the User Settings)]
+### Access QR-Codes in the User Settings
+
 
 1.  Open your Site via the **Go to site** icon on your Site's tile.
 
@@ -54,18 +55,16 @@ primary_tag: software-product>sap-launchpad-service
     (In the future it's planned to offer an option to have SAP Mobile Start deployed via MDM. With that, a specific site can be preconfigured and no QR-Code registration is needed.)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Install SAP Mobile Start on your mobile device)]
+### Install SAP Mobile Start on your mobile device
+
 
 Use the Install QR-Code from Step 2 to install SAP Mobile Start on your Mobile Device. Alternatively, you can search for SAP Mobile Start in the respective App Stores.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Onboard SAP Mobile Start)]
+### Onboard SAP Mobile Start
+
 
 1.	Open the SAP Mobile Start app on your mobile device, press the **Scan** button and make sure to allow camera access.
 
@@ -87,10 +86,9 @@ Use the Install QR-Code from Step 2 to install SAP Mobile Start on your Mobile D
     After completing the onboarding process, you will be directed to the initial **Start** screen.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Try the App)]
+### Try the App
+
 
     ![SAP Mobile Start Screens](mobile-start-navigation.PNG)
 
@@ -106,6 +104,5 @@ Use the Install QR-Code from Step 2 to install SAP Mobile Start on your Mobile D
 
 6.  If you want to learn more about SAP Mobile Start & it's setup you can visit the [community page](https://community.sap.com/topics/mobile-experience/start).
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

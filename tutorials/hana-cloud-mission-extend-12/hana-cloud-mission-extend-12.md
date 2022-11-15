@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Virtualize Data from a Managed SAP HANA Cloud, Data Lake to an SAP HANA Cloud, SAP HANA Database
-description: Virtualize data in SAP HANA Cloud, SAP HANA database from different SAP HANA Cloud, data lake instances.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud\,-data-lake]
@@ -10,18 +9,21 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 
+# Virtualize Data from a Managed SAP HANA Cloud, Data Lake to an SAP HANA Cloud, SAP HANA Database
+<!-- description --> Virtualize data in SAP HANA Cloud, SAP HANA database from different SAP HANA Cloud, data lake instances.
+
 ## Prerequisites
 - Two **running** SAP HANA Cloud, SAP HANA database instances in a production environment, one having a managed data lake.
 - Completion of the [previous tutorial in this group](hana-cloud-mission-extend-11) is recommended.
 - Since this tutorial requires two SAP HANA Cloud, SAP HANA database instances, you need to have a productive environment of SAP HANA Cloud, SAP HANA database as trial only allows to have one instance.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a remote source in SAP HANA Cloud, SAP HANA database to a managed data lake
 - How to virtualise data from a managed data lake to SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 In this tutorial, you will learn how you can connect an SAP HANA Cloud, SAP HANA database instance to multiple different data lakes. When you provision an SAP HANA Cloud, SAP HANA database instance, you can provision a managed data lake as well.
 
 If you have multiple SAP HANA database and data lakes instances, you can easily virtualise data from one data lake to another or to another SAP HANA database instance. Let's say for example, you have two SAP HANA database instances each with a managed data lake in SAP HANA Cloud. If you now want to virtualise data from one data lake to an SAP HANA database instance that is not its managed data lake, you can connect to it via its associated SAP HANA database instance. Through that SAP HANA database instance, the data lake will then be connected.
@@ -35,7 +37,8 @@ The following steps will show you how to connect an SAP HANA Cloud, SAP HANA dat
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Obtain the certificate string)]
+### Obtain the certificate string
+
 
 As with other remote sources, connecting to an SAP HANA Cloud, data lake requires a certificate to be stored in your PSE. In this step, you will obtain the certificate you need.
 
@@ -54,10 +57,9 @@ curl -O https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 5.	After the file has been downloaded, you can access it with a text editor such as `Microsoft Notepad` or `Apple TextEdit`. Copy the certificate string to your clipboard.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the certificate to your PSE)]
+### Add the certificate to your PSE
+
 
 
 1.	Now, in the **SAP HANA Database Explorer** that is connected to your SAP HANA database instance, open a **SQL console**.
@@ -93,11 +95,10 @@ SET PSE SSL PURPOSE REMOTE SOURCE;
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a remote source)]
+### Create a remote source
+
 
 
 To now create a remote source, copy and paste the following statement into your console and replace the parts <in brackets> with your specific information (see instructions below the code).
@@ -122,10 +123,9 @@ Now, when you click on **remote sources** in your catalog, you should see the ot
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a virtual table)]
+### Create a virtual table
+
 
 
 1.	Click on the new remote source you created in the bottom left panel.
@@ -153,14 +153,12 @@ To learn more about SAP HANA Cloud, data lake, you can refer to [this mission](m
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

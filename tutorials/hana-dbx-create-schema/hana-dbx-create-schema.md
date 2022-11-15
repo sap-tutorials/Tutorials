@@ -1,25 +1,28 @@
 ---
-title: Create Database Objects with SAP HANA Database Explorer
-description: Create and populate a sample schema that includes tables, views, functions and procedures using the SQL console.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Create Database Objects with SAP HANA Database Explorer
+<!-- description --> Create and populate a sample schema that includes tables, views, functions and procedures using the SQL console.
+
 ## Prerequisites
   - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 
-## Details
-### You will learn
+## You will learn
   - How to create tables and import data using insert statements
   - How to create views, functions, and stored procedures
 
+## Intro
 The following steps will create sample objects for a hotel database using create and insert statements.  The next tutorial will demonstrate some of the ways these objects can be exported or imported.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a user and schema)]
+### Create a user and schema
+
 
 1. In the SAP HANA database explorer, select the previously created SAP HANA Cockpit or SAP HANA database and open a SQL console.  Do not use the HDI container.
 
@@ -117,10 +120,9 @@ The following steps will create sample objects for a hotel database using create
 
     ![roles management](roles-cockpit.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create and populate tables)]
+### Create and populate tables
+
 1. Create tables that represent a basic hotel administration system by running the SQL statements below:
 
     ```SQL
@@ -201,7 +203,7 @@ The following steps will create sample objects for a hotel database using create
     INSERT INTO HOTEL.HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029', NEW ST_POINT('POINT(-118.295017 34.086975)', 4326));
     INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326));
     INSERT INTO HOTEL.HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401', NEW ST_POINT('POINT(-74.416135 39.361078)', 4326));
-    INSERT INTO HOTEL.HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601', NEW ST_POINT('POINT(-94.724051 32.514183)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(26, 'Delta', '110 Erb St. W', 'Waterloo', 'ON', 'N2L0C6', NEW ST_POINT('POINT(-80.528404 43.463327)', 4326));
 
     INSERT INTO HOTEL.ROOM VALUES(10, 'single', 20, 135.00);
     INSERT INTO HOTEL.ROOM VALUES(10, 'double', 45, 200.00);
@@ -286,10 +288,9 @@ The following steps will create sample objects for a hotel database using create
 
     >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Explore auto-commit)]
+### Explore auto-commit
+
 Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
 
@@ -373,10 +374,9 @@ The following steps will demonstrate these settings.
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a partition)]
+### Create a partition
+
 
 Partitions can be created to divide the data in a large table into smaller parts.  
 
@@ -417,10 +417,8 @@ For further information see [Reduce the Memory Footprint Using Page-Loadable Col
 Another option for data that is accessed less frequently is the SAP HANA Data Lake.  Additional information on when to use Native Store Extensions and Data Lake can be found at [Introduction to SAP HANA Cloud - Storage Options](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/7a27607b08ba46d5b253365e703b1c1a.html#loio7a27607b08ba46d5b253365e703b1c1a__section_storage_options).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create views)]    
+### Create views
 
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
@@ -478,10 +476,9 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     For additional details see [CREATE VIEW Statement (Data Definition)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5fa9b75191014a33eee92692f1702.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create functions and stored procedures)]
+### Create functions and stored procedures
+
 
 1. User-defined functions and procedures can be used to save a set of SQL statements.  Functions are considered read-only in that they cannot make modifications to the data.  Stored procedures can modify the data through the use of DDL or DML statements.
 
@@ -624,5 +621,3 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  
 
-[VALIDATE_1]
-[ACCORDION-END]
