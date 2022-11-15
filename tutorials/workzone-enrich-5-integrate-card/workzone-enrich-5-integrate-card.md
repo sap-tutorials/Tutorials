@@ -37,17 +37,17 @@ You've already deployed a UI5 integration card. Now in this tutorial, you'll ena
 
 3. Scroll down to view the **Uploaded Cards** section.
 
-    >Note: if you don't see your deployed card, you may need to refresh the browser.
+    >If you don't see your deployed card, you may need to refresh the browser.
 
-4. Click the slider button to enable the card and make it available for users who can then add it to Work Zone pages.
+4. Click the slider button to enable the card.
 
     <!-- border -->![Enable card](3-enable-card.png)
 
-The card is now enabled and can be added to your workspace.
+The card is now enabled and can be added to the workpage in your workspace.
 
->In this step you select your own card with your unique identifier `<your unique identifier>_Products by Vendor Card`.
+>In this step, for workshops, use your unique identifier `<your unique identifier>_Products by Vendor Card`.
 
->Note: you can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
+>You can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
 
 
 ### Configure the card settings
@@ -59,7 +59,7 @@ Before you add the card to your workspace, let's configure one of the settings o
 
     <!-- border -->![Click Configure](3a-click-configure.png)
 
-2. Under **General Settings**, change the **Maximum Items** to 2 and click **Save Changes**.
+2. Under **General Settings**, change the **Maximum Items** to 2 and select the destination. If you're in a workshop, you can select the destination that you created:  `<your unique ID_ES5`>. Then click **Save changes**.
 
     <!-- border -->![Change setting](3b-change-setting.png)
 
@@ -98,14 +98,12 @@ In the next step you'll add the card to your workspace.
 
     <!-- border -->![Add the card](8-select-card.png)
 
-6. Click **Add**.
+7. In the **Add Widget** screen, click **Save**.
 
     <!-- border -->![Add card](9-add-card.png)
 
-The card you created was added to your workspace.
+The card you created was added to the workpage of your workspace.
 
-
->Note: you can also add UI integration cards to a SAP Work Zone Home page.
 
 Now let's add a title for the card.
 
@@ -118,7 +116,7 @@ Now let's add a title for the card.
 
     <!-- border -->![Add another widget](10-add-another-widget.png)
 
-2. Under **Standard Tools**, select the **Text** widget.
+2. Select the **Text** widget.
 
 3. Design the **Text** widget as follows:
 
