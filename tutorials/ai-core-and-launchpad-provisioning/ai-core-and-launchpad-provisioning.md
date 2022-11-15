@@ -56,7 +56,7 @@ To set entitlements, expand the SAP AI Core entry and select the `free` plan, an
 
 Review the details and click `Create Account`.
 
-<!-- border -->![Review details and create](img/reviewandcreatecore.png)
+<!-- border -->![Review details and create](img/reviewandcreate.png)
 
 ### Run the booster for SAP AI Core
 
@@ -102,7 +102,7 @@ Follow the same provisioning steps as before, but select `SAP AI Launchpad` when
 
 Review the details and click `Create`.
 
-<!-- border -->![Review and create](img/reviewandcreatelp.png)
+<!-- border -->![Review and create](img/reviewandcreate.png)
 ### Run the booster for SAP AI Launchpad
 
 Choose `Boosters` from the navigation pane, and then choose the booster for `SAP AI Launchpad` from the selection. 
