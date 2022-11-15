@@ -234,7 +234,7 @@ The layout editor allows users to easily make changes in the app using a visual 
 
 4. The **Select editor** dialog is opened at the top center of the SAP Business Application Studio window. Select the **Layout Editor** entry.
 
-    <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
+    <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-2-.png)
 
     >To have the Layout Editor option available after opening the workspace or folder, you may need to wait a bit for the Layout Editor extension to be loaded.
 
