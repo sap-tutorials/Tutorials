@@ -196,9 +196,9 @@ To add the new rejection form, you will use the **Duplicate** feature.
 9. Go back to the process builder and add the invoice rejection notification form to the process.
 
        - Select **Invoice Approval Form** and Choose **+** option for the **Reject**
-       - Choose **Forms** and select **Invoice Rejection Notification**
+       - Choose **Forms** and select **Invoice Reject Notification Form**
 
-       - <!-- border -->![Add Invoice Rejection Notification](AddInvoiceRejectionNotification.png)
+       <!-- border -->![Add Invoice Rejection Notification](AddInvoiceRejectionNotification.png)
 
 10. Select **Invoice Reject Notification Form** to maintain the information in **General** tab.
 
