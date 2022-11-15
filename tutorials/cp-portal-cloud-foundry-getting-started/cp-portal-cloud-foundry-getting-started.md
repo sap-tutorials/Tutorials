@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>cloud, software-product>sap-fiori, software-product>sap-launchpad-service]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-fiori, software-product>sap-launchpad-service]
 primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
