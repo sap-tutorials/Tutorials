@@ -37,7 +37,7 @@ You've already deployed a UI5 integration card. Now in this tutorial, you'll ena
 
 3. Scroll down to view the **Uploaded Cards** section.
 
-    >Note: if you don't see your deployed card, you may need to refresh the browser.
+    >If you don't see your deployed card, you may need to refresh the browser.
 
 4. Click the slider button to enable the card.
 
@@ -47,7 +47,7 @@ The card is now enabled and can be added to the workpage in your workspace.
 
 >In this step, for workshops, use your unique identifier `<your unique identifier>_Products by Vendor Card`.
 
->Note: you can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
+>You can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
 
 
 ### Configure the card settings
