@@ -80,11 +80,11 @@ There are different requirements and business situations when a form is needed i
 
     <!-- border -->![Add process content](11.png)
 
-13. In the Decision you have defined the approver of the invoice. The output of the decision has been an email address. Now add from the process content within **determine Approver Output** the **eMail** in the **Recipients** as **Users**. This means only the selected approver will get this approval in the inbox.
+13. In the Decision you have defined the approver of the invoice. The output of the decision has been an email address. Now add from the process content within **`Approver_Output`** the **eMail** in the **Recipients** as **Users**. This means only the selected approver will get this approval in the inbox.
 
     <!-- border -->![Approval user](12.png)
 
-14. Switch to the **Inputs** tab and within **Employee Name** choose **Select Item**. The process content will be opened again.
+14. Switch to the **Inputs** tab and within **Employee Name** choose **Select Item**. The process content will open again.
 
     <!-- border -->![Approval Form inputs](14.png)
 
@@ -175,7 +175,7 @@ To add the new rejection form, you will use the **Duplicate** feature.
 
 5. The **`Invoice Reject Notification Form`** is automatically opened in the form builder.
 
-    The screen shown will be same as **`Invoice Approval Notification Form`**.
+    The screen shown will be the same as **`Invoice Approval Notification Form`**.
 
     <!-- border -->![Invoice Rejection Form](DuplicatedForm.png)
 
