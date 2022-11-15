@@ -43,7 +43,7 @@ The flow consists of the following parts:
 ### Create new Multi-target Application project
 
 
-1. In the left side bar, select **Hamburger icon | View | Find Command** to open the **command palette**.
+1. In the left side bar, select **Hamburger icon | View | Command Palette...** to open the **command palette**.
 
     <!-- border -->![open command palette](BAS-Create-MTA-1-.png)
 
@@ -80,13 +80,11 @@ The flow consists of the following parts:
 ### Open the project's folder
 
 
-Your workspace is an entity containing your project's settings, debug configurations, and task configurations. In SAP Business Application Studio, a workspace is created for you as part of the Project Creation wizard. You can choose to create a new workspace or for each project, or you can set up a multi-root environment. You can find out more about **Workspaces** in the SAP Business Application Studio [documentation](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/0919ce1ca4a342628e49c0f5e9c8cdcf.html).
-
 1. In the left side bar, select **Hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
 
-2. The **Open folder** dialog is opened at the center of the SAP Business Application Studio window. Type **projects** and select the projects entry.
+2. The **Open Folder** dialog is opened at the center of the SAP Business Application Studio window. Select the **projects** entry.
 
     <!-- border -->![open folder dialog](BAS-Open-Workspace-1_1-.png)
 
@@ -96,7 +94,7 @@ Your workspace is an entity containing your project's settings, debug configurat
 
 4. SAP Business Application Studio reloads with the `FioriDemo` project open in its workspace. In the Explorer view you can see the `FioriDemo` project, its folder structure, and files.
 
-    >The status bar color changes to blue, indicating that a workspace is open.
+    >The status bar color changes to blue, indicating that a workspace or folder is open.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
@@ -108,7 +106,7 @@ Your workspace is an entity containing your project's settings, debug configurat
 
     <!-- border -->![launch generate app](BAS-Generate-App-1-1-.png)
 
-    >If the Get Started Page does not appear, select **Help** in the menu bar and then select **Get Started**.
+    >If the **Get Started** Page does not appear, in the left side bar, select **Hamburger icon | Help | Get Started**.
 
     ><!-- border -->![Welcome Page from help menu](BAS-Welcome-Page-from-Help-Menu-.png)
 
@@ -166,7 +164,7 @@ Your workspace is an entity containing your project's settings, debug configurat
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Please choose the target | **Cloud Foundry** (default) |
-    | B | Destination name | **ES5 - https: //sapes5.sapdevcenter.com** (default) |
+    | B | Destination name | **ES5 - https: //sapes5.sapdevcenter.com** |
 
     <!-- border -->![deployment configuration](BAS-Generate-App-7-1-.png)
 
@@ -234,25 +232,25 @@ The layout editor allows users to easily make changes in the app using a visual 
 
      <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
 
-3. Choose **Open With > Layout Editor**.
+4. The **Select editor** dialog is opened at the top center of the SAP Business Application Studio window. Select the **Layout Editor** entry.
 
     <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
 
-    >To have the Layout Editor option available after opening the workspace, you may need to wait a bit for the Layout Editor extension to be loaded.
+    >To have the Layout Editor option available after opening the workspace or folder, you may need to wait a bit for the Layout Editor extension to be loaded.
 
-4. The **Suppliers** view is opened in the **Layout Editor**.
+5. The **Suppliers** view is opened in the **Layout Editor**.
 
     <!-- border -->![open layout editor](BAS-Open-Layout-Editor-2-.png)
 
-5. Open the `Suppliers.view.xml` file with the text editor and see how modifications in the Layout Editor are manifested in the text editor. It is not mandatory to open both editors for development. You can do the development work using either of the editors or both. In this tutorial you'll have both editors open for demo purposes.
+6. Open the `Suppliers.view.xml` file with the text editor and see how modifications in the Layout Editor are manifested in the text editor. It is not mandatory to open both editors for development. You can do the development work using either of the editors or both. In this tutorial you'll have both editors open for demo purposes.
 
     <!-- border -->![Open code editor](BAS-Open-Code-Editor-1-.png)
 
-6. The **Suppliers** view is opened in the text editor in a tab next to the **Layout Editor**.
+7. The **Suppliers** view is opened in the text editor in a tab next to the **Layout Editor**.
 
     <!-- border -->![open code editor](BAS-Open-Code-Editor-2-.png)
 
-7. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
+8. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
 
     <!-- border -->![drag-drop editor](BAS-Drag-Drop-Code-Editor-1-.png)
 
