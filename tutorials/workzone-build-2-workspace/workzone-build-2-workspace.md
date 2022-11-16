@@ -344,7 +344,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Publish](28-publish.png)
 
-16. In the pop, leave the **Show in Feed Updates** selected and click **Publish**.
+16. In the popup, leave the **Show in Feed Updates** selected and click **Publish**.
 
     <!-- border -->![Publish again](28a-publish-again.png)
 
