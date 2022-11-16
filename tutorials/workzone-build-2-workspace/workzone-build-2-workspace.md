@@ -8,13 +8,13 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add a Workspace to SAP Work Zone
+# Add a Workspace to SAP Build Work Zone, advanced edition
 <!-- description --> Create a workspace and add content to it that you can share with other members of your workspace.
 
 ## Prerequisites
-- You have an environment set up and you can access your SAP Work Zone.
+- You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
 &nbsp;
-**Note that SAP Work Zone is not available in a trial account.**
+**Note that it is not available in a trial account.**
 
 
 ## You will learn
@@ -173,10 +173,6 @@ In this step, you'll add two text widgets next to each other in the first sectio
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-7. This is what your first section looks like:
-
-    <!-- border -->![Preview of row 1](13a-preview-row1.png)
-
 
 
 ### Design the second section of your workpage
@@ -278,7 +274,7 @@ In this step, you'll add images to the second section.
     <!-- border -->![Edit row pixels](22b-edit-pixels.png)
 
 
-### Design the third and last section of your workspace
+### Design the third section of your workspace
 
 
 In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed** widget.
