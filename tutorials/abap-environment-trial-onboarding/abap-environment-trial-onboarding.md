@@ -63,7 +63,7 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
 5. Now the service instance and service key will be created for the ABAP trial user. The service key can be found inside the service instance.
 
-    ![Select ABAP Trial](boosters3.png) 
+    ![Select ABAP Trial](boosters3.png)
 
 6. The booster is now executed successfully. Download your service key for later use.
 
@@ -71,7 +71,7 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
 
 
-### Open ABAP Development Tools 
+### Open ABAP Development Tools
 
 
 Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap-install-adt) the Eclipse installation instruction.
@@ -94,11 +94,11 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 
       ![Create ABAP cloud project](skey.png)
 
-  4. Click **Open Logon Page in Browser**. 
+  4. Click **Open Logon Page in Browser**.
 
       ![Create ABAP cloud project](project44.png)
 
-       >**Hint:** If you are already logged on in the default browser with a user which you do not want to use for this project, then use the **Copy Logon URL to Clipboard** option and paste the URL in a browser started in private or incognito mode or a non defaulted browser.
+    >**Hint:** If you are already logged on in the default browser with a user which you do not want to use for this project, then use the **Copy Logon URL to Clipboard** option and paste the URL in a browser started in private or incognito mode or a non defaulted browser.
 
   5. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
 

@@ -118,22 +118,22 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Replace your code with following:
 
-      ```ABAP
-      @EndUserText.label : 'Shop to purchase electronics'
-      @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
-      @AbapCatalog.tableCategory : #TRANSPARENT
-      @AbapCatalog.deliveryClass : #A
-      @AbapCatalog.dataMaintenance : #RESTRICTED
-      define table zonlineshop_xxx {
-        key client     : abap.clnt not null;
-        key order_uuid : sysuuid_x16 not null;
-        order_id       : abap.char(10) not null;
-        ordereditem    : abap.char(10) not null;
-        deliverydate   : abap.dats;
-        creationdate   : abap.dats;
+    ```ABAP
+    @EndUserText.label : 'Shop to purchase electronics'
+    @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+    @AbapCatalog.tableCategory : #TRANSPARENT
+    @AbapCatalog.deliveryClass : #A
+    @AbapCatalog.dataMaintenance : #RESTRICTED
+    define table zonlineshop_xxx {
+      key client     : abap.clnt not null;
+      key order_uuid : sysuuid_x16 not null;
+      order_id       : abap.char(10) not null;
+      ordereditem    : abap.char(10) not null;
+      deliverydate   : abap.dats;
+      creationdate   : abap.dats;
 
-      }
-      ```
+    }
+    ```
 
    6. Save and activate.
 
@@ -159,21 +159,21 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   11. Replace your code with following:
 
-      ```ABAP
-      @EndUserText.label : 'Database table for additional save'
-      @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
-      @AbapCatalog.tableCategory : #TRANSPARENT
-      @AbapCatalog.deliveryClass : #A
-      @AbapCatalog.dataMaintenance : #RESTRICTED
-      define table zshop_as_xxx {
-        key client     : abap.clnt not null;
-        key order_uuid : sysuuid_x16 not null;
-        purchasereqn   : abap.string(256);
-        purinforecord  : abap.string(256);
-        purorder       : abap.string(256);
+    ```ABAP
+    @EndUserText.label : 'Database table for additional save'
+    @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+    @AbapCatalog.tableCategory : #TRANSPARENT
+    @AbapCatalog.deliveryClass : #A
+    @AbapCatalog.dataMaintenance : #RESTRICTED
+    define table zshop_as_xxx {
+      key client     : abap.clnt not null;
+      key order_uuid : sysuuid_x16 not null;
+      purchasereqn   : abap.string(256);
+      purinforecord  : abap.string(256);
+      purorder       : abap.string(256);
 
-      }
-      ```
+    }
+    ```
 
   12. Save and activate.
 
@@ -203,17 +203,17 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Replace the code for your behavior `ZI_ONLINE_SHOP_XXX` with following:
 
-      ```ABAP
-      @EndUserText.label: 'Data model for online shop'
-      @AccessControl.authorizationCheck: #CHECK
-      define root view entity ZI_ONLINE_SHOP_XXX as select from zonlineshop_xxx {
-        key order_uuid as Order_Uuid,
-        order_id as Order_Id,
-        ordereditem as Ordereditem,
-        deliverydate as Deliverydate,
-        creationdate as Creationdate  
-      }
-      ```
+    ```ABAP
+    @EndUserText.label: 'Data model for online shop'
+    @AccessControl.authorizationCheck: #CHECK
+    define root view entity ZI_ONLINE_SHOP_XXX as select from zonlineshop_xxx {
+      key order_uuid as Order_Uuid,
+      order_id as Order_Id,
+      ordereditem as Ordereditem,
+      deliverydate as Deliverydate,
+      creationdate as Creationdate  
+    }
+    ```
 
    6. Save and activate.
 
@@ -241,40 +241,40 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   4. Replace the code for your behavior `ZC_ONLINE_SHOP_XXX` with following:
 
-      ```ABAP
-      @EndUserText.label: 'shop projection'
-      @AccessControl.authorizationCheck: #CHECK
-      @Search.searchable: true
-      @UI: { headerInfo: { typeName: 'Online Shop',
-                          typeNamePlural: 'Online Shop',
-                          title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
+    ```ABAP
+    @EndUserText.label: 'shop projection'
+    @AccessControl.authorizationCheck: #CHECK
+    @Search.searchable: true
+    @UI: { headerInfo: { typeName: 'Online Shop',
+                        typeNamePlural: 'Online Shop',
+                        title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
 
-            presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
-                                                  direction: #DESC }] }] }
-      define root view entity ZC_ONLINE_SHOP_XXX
-        as projection on ZI_ONLINE_SHOP_XXX
-      {
-            @UI.facet: [          { id:                  'Orders',
-                                        purpose:         #STANDARD,
-                                        type:            #IDENTIFICATION_REFERENCE,
-                                        label:           'Order',
-                                        position:        10 }      ]
-        key Order_Uuid,
-            @UI: { lineItem:       [ { position: 10,label: 'order id', importance: #HIGH } ],
-                    identification: [ { position: 10, label: 'order id' } ] }
-            @Search.defaultSearchElement: true
-            Order_Id,
-            @UI: { lineItem:       [ { position: 20,label: 'Ordered item', importance: #HIGH } ],
-                    identification: [ { position: 20, label: 'Ordered item' } ] }
-            @Search.defaultSearchElement: true
-            Ordereditem,
-            Deliverydate       as Deliverydate,
-            @UI: { lineItem:       [ { position: 50,label: 'Creation date', importance: #HIGH },
-                                    { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
-                  identification: [ { position: 50, label: 'Creation date' } ] }
-            Creationdate       as Creationdate
-      }
-      ```
+          presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
+                                                direction: #DESC }] }] }
+    define root view entity ZC_ONLINE_SHOP_XXX
+      as projection on ZI_ONLINE_SHOP_XXX
+    {
+          @UI.facet: [          { id:                  'Orders',
+                                      purpose:         #STANDARD,
+                                      type:            #IDENTIFICATION_REFERENCE,
+                                      label:           'Order',
+                                      position:        10 }      ]
+      key Order_Uuid,
+          @UI: { lineItem:       [ { position: 10,label: 'order id', importance: #HIGH } ],
+                  identification: [ { position: 10, label: 'order id' } ] }
+          @Search.defaultSearchElement: true
+          Order_Id,
+          @UI: { lineItem:       [ { position: 20,label: 'Ordered item', importance: #HIGH } ],
+                  identification: [ { position: 20, label: 'Ordered item' } ] }
+          @Search.defaultSearchElement: true
+          Ordereditem,
+          Deliverydate       as Deliverydate,
+          @UI: { lineItem:       [ { position: 50,label: 'Creation date', importance: #HIGH },
+                                  { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
+                identification: [ { position: 50, label: 'Creation date' } ] }
+          Creationdate       as Creationdate
+    }
+    ```
 
    5. Save and activate.
 
@@ -298,28 +298,28 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   4. Replace your code with following:
 
-      ```ABAP
-      managed implementation in class zbp_i_online_shop_xxx unique;
+    ```ABAP
+    managed implementation in class zbp_i_online_shop_xxx unique;
 
-      define behavior for ZI_ONLINE_SHOP_XXX alias Online_Shop
-      with additional save
-      persistent table zonlineshop_xxx
-      lock master
-      authorization master ( instance )
-      //etag master <field_name>
-      {
-        field ( numbering : managed, readonly ) order_Uuid;
-        field ( mandatory ) Ordereditem;
-        field ( readonly ) Creationdate, order_id;
-        determination calculate_order_id on modify { create; }
-        internal action create_pr;
-        internal action set_inforecord;
-        internal action update_inforecord;
-        create;
-        update;
-        delete;
-      }
-      ```
+    define behavior for ZI_ONLINE_SHOP_XXX alias Online_Shop
+    with additional save
+    persistent table zonlineshop_xxx
+    lock master
+    authorization master ( instance )
+    //etag master <field_name>
+    {
+      field ( numbering : managed, readonly ) order_Uuid;
+      field ( mandatory ) Ordereditem;
+      field ( readonly ) Creationdate, order_id;
+      determination calculate_order_id on modify { create; }
+      internal action create_pr;
+      internal action set_inforecord;
+      internal action update_inforecord;
+      create;
+      update;
+      delete;
+    }
+    ```
 
    5. Save and activate.
 
@@ -343,18 +343,18 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   4. Replace your code with following:
 
-      ```ABAP
-      projection;
-      //strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+    ```ABAP
+    projection;
+    //strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
 
-      define behavior for ZC_ONLINE_SHOP_XXX //alias <alias_name>
-      {
-        use create;
-        use update;
-        use delete;
+    define behavior for ZC_ONLINE_SHOP_XXX //alias <alias_name>
+    {
+      use create;
+      use update;
+      use delete;
 
-      }
-      ```
+    }
+    ```
 
    5. Save and activate.
 
@@ -380,218 +380,218 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   4. In your **Global Class**, replace your code with following:
 
-      ```ABAP
-      CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
-      class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
-      ENDCLASS.
+    ```ABAP
+    CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
+    class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
+    ENDCLASS.
 
-      CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
-      ENDCLASS.
-      ```
+    CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
+    ENDCLASS.
+    ```
 
   5. In your **Local Types**, replace your code with following:
 
-      ```ABAP
-      CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+    ```ABAP
+    CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
-        PROTECTED SECTION.
+      PROTECTED SECTION.
 
-          METHODS save_modified REDEFINITION.
+        METHODS save_modified REDEFINITION.
 
-      ENDCLASS.
+    ENDCLASS.
 
-      CLASS lsc_zbp_i_online_shop_xxx IMPLEMENTATION.
+    CLASS lsc_zbp_i_online_shop_xxx IMPLEMENTATION.
 
-        METHOD save_modified.
-          DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
-                ls_online_shop_as TYPE                   zshop_as_xxx.
-          IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
-            LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
-              CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
-              <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
-            ENDLOOP.
-          ENDIF.
-
-
-          IF create-online_shop IS NOT INITIAL.
-            " Creates internal table with instance data
-            lt_online_shop_as = CORRESPONDING #( create-online_shop ).
-            lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
-
-            insert zshop_as_xxx FROM TABLE @lt_online_shop_as.
-          ENDIF.
-        ENDMETHOD.
-      ENDCLASS.
-
-      CLASS lhc_zbp_i_online_shop_xxx  DEFINITION INHERITING FROM cl_abap_behavior_handler.
-        PRIVATE SECTION.
-
-          METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
-            IMPORTING keys REQUEST requested_authorizations FOR  online_shop RESULT result.
-
-          METHODS create_pr FOR MODIFY
-            IMPORTING keys FOR ACTION online_shop~create_pr.
-
-          METHODS update_inforecord FOR MODIFY
-            IMPORTING keys FOR ACTION online_shop~update_inforecord.
-
-          METHODS calculate_order_id FOR DETERMINE ON MODIFY
-            IMPORTING keys FOR online_shop~calculate_order_id.
-
-
-      ENDCLASS.
-
-      CLASS lhc_zbp_i_online_shop_xxx  IMPLEMENTATION.
-
-        METHOD get_instance_authorizations.
-        ENDMETHOD.
-
-        METHOD create_pr.
-      **  if a new laptop is ordered, trigger a new purschase requisition
-          IF keys IS NOT INITIAL.
-            MODIFY ENTITIES OF i_purchaserequisitiontp
-      ENTITY purchaserequisition
-          CREATE FIELDS ( purchaserequisitiontype )
-          WITH VALUE #(  ( %cid                    = 'My%CID_1'
-                          purchaserequisitiontype = 'NB' ) )
-
-        CREATE BY \_purchaserequisitionitem
-        FIELDS ( plant
-                  purchaserequisitionitemtext
-                  accountassignmentcategory
-                  requestedquantity
-                  baseunit
-                  purchaserequisitionprice
-                  purreqnitemcurrency
-                  materialgroup
-                  purchasinggroup
-                  purchasingorganization
-      *               MultipleAcctAssgmtDistribution
-                      )
-        WITH VALUE #(
-                      (    %cid_ref = 'My%CID_1'
-                            %target = VALUE #(
-                                            (  %cid                            = 'My%ItemCID_1'
-                                                plant                           = '1010'
-                                                purchaserequisitionitemtext     = 'created from PAAS API XXX'
-                                                  accountassignmentcategory     = 'U'
-                                                requestedquantity               = '8.00'
-                                                baseunit                        = 'EA'
-                                                purchaserequisitionprice        = '10.00'
-                                                purreqnitemcurrency             = 'EUR'
-                                                materialgroup                   = 'A001'
-                                                purchasinggroup                 = '001'
-                                                purchasingorganization          = '1010'
-
-                                                )
-                                            )
-                        )
-                      )
-      ENTITY purchaserequisitionitem
-
-      CREATE BY \_purchasereqnacctassgmt
-          FIELDS ( CostCenter
-                  GLAccount
-                  Quantity
-                  BaseUnit )
-          WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
-                            %target  = VALUE #( ( %cid = 'MyTargetCID_1'
-                                                  CostCenter   = 'JMW-COST'
-                                                  GLAccount    = '0000400000' ) ) ) )
-      CREATE BY \_purchasereqnitemtext
-        FIELDS ( plainlongtext )
-        WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
-                            %target  = VALUE #( (
-                                                %cid = 'MyTargetCID_2'
-                                                textobjecttype = 'B01'
-                                                language       = 'E'
-                                                plainlongtext  = 'item text created from PAAS API XXX'
-                                              ) (
-                                                %cid = 'MyTargetCID_3'
-                                                textobjecttype = 'B02'
-                                                language       = 'E'
-                                                plainlongtext  = 'item2 text created from PAAS API XXX'
-                                              ) )
-                    )   )
-                REPORTED DATA(ls_pr_reported)
-                MAPPED DATA(ls_pr_mapped)
-                FAILED DATA(ls_pr_failed).
-            zbp_i_online_shop_xxx=>cv_pr_mapped = ls_pr_mapped.
-
-          ENDIF.
-        ENDMETHOD.
-
-
-        METHOD update_inforecord.
-          SELECT SINGLE * FROM i_purchasinginforecordtp  WHERE PurchasingInfoRecord = '5500000219' INTO @DATA(ls_data).
-      *           update an existing info record
-      *update remainder for nodays-no delivery remainder after half the timeperiod b/w delivery and creation date/system date
-      *fi
-          MODIFY ENTITIES OF i_purchasinginforecordtp
-                ENTITY purchasinginforecord
-                UPDATE SET FIELDS WITH
-                VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
-                            Supplier                 = ls_data-supplier
-                            MaterialGroup            = ls_data-MaterialGroup
-                            SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
-                            NoDaysReminder1          = '12'
-                            PurchasingInfoRecordDesc = 'noDays remainder updated'
-                        ) )
-                  FAILED   DATA(ls_failed_update)
-                  REPORTED DATA(ls_reported_update)
-                  MAPPED   DATA(ls_mapped_update).
-
-        ENDMETHOD.
-
-        METHOD calculate_order_id.
-          DATA:
-            online_shops TYPE TABLE FOR UPDATE zi_online_shop_xxx,
-            online_shop  TYPE STRUCTURE FOR UPDATE zi_online_shop_xxx.
-      *      delete from zonlineshop_xxx UP TO 15 ROWS.
-          SELECT MAX( order_id ) FROM zonlineshop_xxx INTO @DATA(max_order_id).
-          READ ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-            ENTITY zi_online_shop_xxx
-              ALL FIELDS
-                WITH CORRESPONDING #( keys )
-                RESULT DATA(lt_online_shop_result)
-            FAILED    DATA(lt_failed)
-            REPORTED  DATA(lt_reported).
-          DATA(today) = cl_abap_context_info=>get_system_date( ).
-
-          LOOP AT lt_online_shop_result INTO DATA(online_shop_read).
-            max_order_id += 1.
-
-            online_shop               = CORRESPONDING #( online_shop_read ).
-            online_shop-order_id      = max_order_id.
-            online_shop-Creationdate  = today.
-            online_shop-Deliverydate  = today + 10.
-            APPEND online_shop TO online_shops.
+      METHOD save_modified.
+        DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
+              ls_online_shop_as TYPE                   zshop_as_xxx.
+        IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
+          LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
+            <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
           ENDLOOP.
+        ENDIF.
+
+
+        IF create-online_shop IS NOT INITIAL.
+          " Creates internal table with instance data
+          lt_online_shop_as = CORRESPONDING #( create-online_shop ).
+          lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
+
+          INSERT zshop_as_xxx FROM TABLE @lt_online_shop_as.
+        ENDIF.
+      ENDMETHOD.
+    ENDCLASS.
+
+    CLASS lhc_zbp_i_online_shop_xxx  DEFINITION INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
+
+        METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+          IMPORTING keys REQUEST requested_authorizations FOR  online_shop RESULT result.
+
+        METHODS create_pr FOR MODIFY
+          IMPORTING keys FOR ACTION online_shop~create_pr.
+
+        METHODS update_inforecord FOR MODIFY
+          IMPORTING keys FOR ACTION online_shop~update_inforecord.
+
+        METHODS calculate_order_id FOR DETERMINE ON MODIFY
+          IMPORTING keys FOR online_shop~calculate_order_id.
+
+
+    ENDCLASS.
+
+    CLASS lhc_zbp_i_online_shop_xxx  IMPLEMENTATION.
+
+      METHOD get_instance_authorizations.
+      ENDMETHOD.
+
+      METHOD create_pr.
+    **  if a new laptop is ordered, trigger a new purchase requisition
+        IF keys IS NOT INITIAL.
+          MODIFY ENTITIES OF i_purchaserequisitiontp
+    ENTITY purchaserequisition
+        CREATE FIELDS ( purchaserequisitiontype )
+        WITH VALUE #(  ( %cid                    = 'My%CID_1'
+                        purchaserequisitiontype = 'NB' ) )
+
+      CREATE BY \_purchaserequisitionitem
+      FIELDS ( plant
+                purchaserequisitionitemtext
+                accountassignmentcategory
+                requestedquantity
+                baseunit
+                purchaserequisitionprice
+                purreqnitemcurrency
+                materialgroup
+                purchasinggroup
+                purchasingorganization
+    *               MultipleAcctAssgmtDistribution
+                    )
+      WITH VALUE #(
+                    (    %cid_ref = 'My%CID_1'
+                          %target = VALUE #(
+                                          (  %cid                            = 'My%ItemCID_1'
+                                              plant                           = '1010'
+                                              purchaserequisitionitemtext     = 'created from PAAS API XXX'
+                                                accountassignmentcategory     = 'U'
+                                              requestedquantity               = '8.00'
+                                              baseunit                        = 'EA'
+                                              purchaserequisitionprice        = '10.00'
+                                              purreqnitemcurrency             = 'EUR'
+                                              materialgroup                   = 'A001'
+                                              purchasinggroup                 = '001'
+                                              purchasingorganization          = '1010'
+
+                                              )
+                                          )
+                      )
+                    )
+    ENTITY purchaserequisitionitem
+
+    CREATE BY \_purchasereqnacctassgmt
+        FIELDS ( CostCenter
+                GLAccount
+                Quantity
+                BaseUnit )
+        WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
+                          %target  = VALUE #( ( %cid = 'MyTargetCID_1'
+                                                CostCenter   = 'JMW-COST'
+                                                GLAccount    = '0000400000' ) ) ) )
+    CREATE BY \_purchasereqnitemtext
+      FIELDS ( plainlongtext )
+      WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
+                          %target  = VALUE #( (
+                                              %cid = 'MyTargetCID_2'
+                                              textobjecttype = 'B01'
+                                              language       = 'E'
+                                              plainlongtext  = 'item text created from PAAS API XXX'
+                                            ) (
+                                              %cid = 'MyTargetCID_3'
+                                              textobjecttype = 'B02'
+                                              language       = 'E'
+                                              plainlongtext  = 'item2 text created from PAAS API XXX'
+                                            ) )
+                  )   )
+              REPORTED DATA(ls_pr_reported)
+              MAPPED DATA(ls_pr_mapped)
+              FAILED DATA(ls_pr_failed).
+          zbp_i_online_shop_xxx=>cv_pr_mapped = ls_pr_mapped.
+
+        ENDIF.
+      ENDMETHOD.
+
+
+      METHOD update_inforecord.
+        SELECT SINGLE * FROM i_purchasinginforecordtp  WHERE PurchasingInfoRecord = '5500000219' INTO @DATA(ls_data).
+    *           update an existing info record
+    *update remainder for nodays-no delivery remainder after half the timeperiod b/w delivery and creation date/system date
+    *fi
+        MODIFY ENTITIES OF i_purchasinginforecordtp
+              ENTITY purchasinginforecord
+              UPDATE SET FIELDS WITH
+              VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
+                          Supplier                 = ls_data-supplier
+                          MaterialGroup            = ls_data-MaterialGroup
+                          SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
+                          NoDaysReminder1          = '12'
+                          PurchasingInfoRecordDesc = 'noDays remainder updated'
+                      ) )
+                FAILED   DATA(ls_failed_update)
+                REPORTED DATA(ls_reported_update)
+                MAPPED   DATA(ls_mapped_update).
+
+      ENDMETHOD.
+
+      METHOD calculate_order_id.
+        DATA:
+          online_shops TYPE TABLE FOR UPDATE zi_online_shop_xxx,
+          online_shop  TYPE STRUCTURE FOR UPDATE zi_online_shop_xxx.
+    *      delete from zonlineshop_xxx UP TO 15 ROWS.
+        SELECT MAX( order_id ) FROM zonlineshop_xxx INTO @DATA(max_order_id).
+        READ ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
+          ENTITY zi_online_shop_xxx
+            ALL FIELDS
+              WITH CORRESPONDING #( keys )
+              RESULT DATA(lt_online_shop_result)
+          FAILED    DATA(lt_failed)
+          REPORTED  DATA(lt_reported).
+        DATA(today) = cl_abap_context_info=>get_system_date( ).
+
+        LOOP AT lt_online_shop_result INTO DATA(online_shop_read).
+          max_order_id += 1.
+
+          online_shop               = CORRESPONDING #( online_shop_read ).
+          online_shop-order_id      = max_order_id.
+          online_shop-Creationdate  = today.
+          online_shop-Deliverydate  = today + 10.
+          APPEND online_shop TO online_shops.
+        ENDLOOP.
+        MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
+      ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
+      MAPPED   DATA(ls_mapped_modify)
+      FAILED   DATA(lt_failed_modify)
+      REPORTED DATA(lt_reported_modify).
+
+    **create purchase requisition
+
+    * if a new laptop is ordered, trigger a new purchase requisition
+        IF lt_failed_modify IS INITIAL.
           MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-        ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
-        MAPPED   DATA(ls_mapped_modify)
-        FAILED   DATA(lt_failed_modify)
-        REPORTED DATA(lt_reported_modify).
-
-      **create purchase requisition
-
-      * if a new laptop is ordered, trigger a new purschase requisition
-          IF lt_failed_modify IS INITIAL.
-            MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-            ENTITY Online_Shop EXECUTE create_pr FROM CORRESPONDING #( keys )
-            FAILED DATA(lt_pr_failed)
-            REPORTED DATA(lt_pr_reported).
-          ENDIF.
+          ENTITY Online_Shop EXECUTE create_pr FROM CORRESPONDING #( keys )
+          FAILED DATA(lt_pr_failed)
+          REPORTED DATA(lt_pr_reported).
+        ENDIF.
 
 
-        ENDMETHOD.
-      *
-      ENDCLASS.
-      ```
+      ENDMETHOD.
+    *
+    ENDCLASS.
+    ```
 
    5. Save and activate.
 
-      >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
+    >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
 
 
@@ -648,12 +648,12 @@ You have 2 options to open the documentation inside ADT.
 
   4. Replace your code with following:
 
-      ```ABAP
-      @EndUserText.label: 'Service definition for online shop'
-      define service ZSD_SHOP_XXX {
-        expose ZC_ONLINE_SHOP_XXX as online_shop;
-      }
-      ```
+    ```ABAP
+    @EndUserText.label: 'Service definition for online shop'
+    define service ZSD_SHOP_XXX {
+      expose ZC_ONLINE_SHOP_XXX as online_shop;
+    }
+    ```
 
    5. Save and activate.
 
