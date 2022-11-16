@@ -78,7 +78,7 @@ In the next step you'll add the card to your workspace.
     <!-- border -->![Access workspace](4-select-workspace.png)
 
 
-2. Click the pencil icon on the right side of the screen to open the Page Designer.
+2. Click the pencil icon on the right side of the screen to open the page designer.
 
     <!-- border -->![Open in edit mode](5-open-page-designer.png)
 
