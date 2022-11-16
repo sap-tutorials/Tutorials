@@ -8,7 +8,7 @@ author_name: Lindsay Bert
 ---
 
 # Access SAP Work Zone from the SAP BTP Training Subaccount
-<!-- description --> Access the SAP Work Zone training SAP BTP subaccount.
+<!-- description --> Access the SAP Work Zone, advanced edition from the SAP BTP subaccount.
 
 ## Prerequisites
 To follow the trainings, the instructor will give you the following:
@@ -45,7 +45,7 @@ This means, SAP Work Zone was recently renamed to `SAP Build Work Zone, advanced
 
     ![Open work zone](2-open-work-zone.png)
 
-4. Enter your IAS log on credentials that were given to you by the instructor.
+4. Enter your log on credentials that were given to you by the instructor.
 
 SAP Work Zone opens displaying the Home Page that has already been configured for you.
 
