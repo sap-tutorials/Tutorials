@@ -66,7 +66,6 @@ First, we will import sample events & data, process these events and view them i
 
 ### View the process visibility workspace
 
-
 1. In the Workflow Management Launchpad, click the **Process Workspace** tile.
 
     ![View Scenario1](viewscenario.png)
@@ -115,7 +114,6 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 ### View process visibility workspace
 
-
 1. In the Workflow Management Launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
     <!-- border -->![New Workflow Event Processed](processworkflowevents.png)
@@ -155,9 +153,7 @@ Now, you will run the workflow and see how the new events and data are automatic
     ![View Details Completed Instance](completed-instance2.png)
 
 
-
 ### View process visibility workspace for completed workflow
-
 
 1. In the Workflow Management Launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
 

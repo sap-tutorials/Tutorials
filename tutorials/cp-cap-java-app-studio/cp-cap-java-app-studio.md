@@ -96,9 +96,9 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
       <!-- border -->![project creation done](project-creation-done.png)
 
-5. From the main menu, choose **File** **&rarr;** **Open Workspace**.
+5. From the main menu, choose **File** **&rarr;** **Open Folder**.
 
-6. Choose **products-service** and then **Open**.
+6. Choose **projects &rarr; products-service** and then **OK**.
 
     <!-- border -->![open workspace](open-workspace.png)
 

@@ -165,7 +165,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     *   check the result
         SELECT * FROM ztbooking_xxx INTO TABLE @it_bookings.
         out->write( sy-dbcnt ).
-        out->write( 'data inserted successfully!').
+        out->write( 'data inserted successfully!' ).
 
       ENDMETHOD.
 

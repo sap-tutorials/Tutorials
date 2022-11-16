@@ -17,15 +17,15 @@ author name: Boris Dafov
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
 - To deploy a UI5 Integration card in the SAP Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Work Zone service. Additionally, you have to configure a destination for SAP Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
 
-## Intro
->**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
+>**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
 ## You will learn
 - How to create a card for SAP Work Zone using SAP Business Application Studio (BAS)
 - What the main elements of the Integration card are and understand their roles
 
+## Intro
 Integration cards are UI elements which display concise pieces of information in a limited-space container. Cards are small previews of application content, and each card represents a specific topic, task, or perspective. As a card developer, you only need to configure a descriptor (`manifest.json` file) and as a result you get fully functional and reusable card.
 
 ---
@@ -301,7 +301,7 @@ To learn more, see the [Filters](https://sapui5.hana.ondemand.com/test-resources
 
 1. Select the `dt/configuration.js` file (in the Explorer view on the left).
 
-    <!-- border -->![Image depicting the configuration.js file in the file menu](7-1.PNG)
+    <!-- border -->![Image depicting the configuration.js file in the file menu](6-1.PNG)
 
 2. Replace the content with the code below:
 
@@ -333,24 +333,23 @@ sap.ui.define(["sap/ui/integration/Designtime"], function (
 
 The `dt/configuration.js` now looks like:
 
-<!-- border -->![Image depicting the configuration.js file content](7-2.PNG)
+<!-- border -->![Image depicting the configuration.js file content](6-2.PNG)
 
 
 
 ### Deploy card
 
+1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Work Zone**  option from the dropdown menu.
 
-1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Work Zone** option from the dropdown menu.
-
-    <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Work Zone option ](6-1.PNG)
+    <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Work Zone option ](7-1.PNG)
 
 2. Select the target SAP Work Zone destination.
 
-    <!-- border -->![Image depicting Select the target Work Zone destination option](6-2.PNG)
+    <!-- border -->![Image depicting Select the target Work Zone destination option](7-2.PNG)
 
 3. In the right-bottom corner, confirm to **Continue** and wait to see the successful message.
 
-    <!-- border -->![Image depicting the Continue button to proceed with card deployment](6-3.PNG)
+    <!-- border -->![Image depicting the Continue button to proceed with card deployment](7-3.PNG)
 
 Now the basic UI5 card deployment is done!
 

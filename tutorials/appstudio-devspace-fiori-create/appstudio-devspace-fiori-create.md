@@ -35,13 +35,16 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
     >2. In a trial account, launch the SAP BTP trial landing page, and choose **SAP Business Application Studio**.
     ><!-- border -->![launch sap business application studio](BTP-Access-AppStudio-.png)
 
-    >3. In a productive account (as well as a trial account), access SAP BTP cockpit, navigate to the subaccount with SAP Business Application Studio subscription, click **Subscriptions and Instances**, and click **SAP Business Application Studio**.
+    >3. In a productive account (as well as a trial account), access SAP BTP cockpit, navigate to the subaccount with SAP Business Application Studio subscription, click **Instances and Subscriptions**, and click **SAP Business Application Studio**.
     ><!-- border -->![launch bas from cockpit](Cockpit-Go-to-Application-.png)
 
+    <br>
+    >You might be asked to accept the privacy statement. Check the box and click OK.
 
-2. Choose **Create Dev Space** in the welcome page or dev space manager.
 
-    >Welcome page for SAP Business Application Studio:
+2. Choose **Create Dev Space** in the landing page or dev space manager.
+
+    >Landing page for SAP Business Application Studio:
 
     ><!-- border -->![sap business application studio welcome](BAS-Welcome-.png)
 
@@ -64,8 +67,6 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
     <!-- border -->![Dev Space Starting](BAS-Dev-Space-Starting-.png)
 
-
-
 ### Open the SAP Fiori dev space
 
 
@@ -73,14 +74,18 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
     <!-- border -->![Open Dev Space](BAS-Open-Dev-Space-.png)
 
+    >You might be asked to accept the privacy statement. Check the box and click OK.
 
-2. The SAP Fiori dev space opens and the **Welcome** tab appears.
 
-    <!-- border -->![Open Dev Space](BAS-Welcome-Tab-.png)
+2. The SAP Fiori dev space opens and the **Get Started** tab appears.
+
+    <!-- border -->![Open Dev Space](BAS-Get-Started-Tab-.png)
 
     >You may be prompted to accept the legal terms.
 
-    >The purple color of the status bar indicates that there is no open workspace.
+    >The purple color of the status bar indicates that there is no open workspace or folder.
+
+    >Wait until "We have finished installing all tools and templates" notification appears at the bottom right of the screen.
 
 
 
