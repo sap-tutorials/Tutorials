@@ -40,7 +40,7 @@ To find out more about free tier service plans, visit the [SAP Discovery Center]
 ### Provision SAP AI Core in your global account
 Go to the BTP Control Center and select your global account. Click `+`. 
 
-<!-- border -->![Access the Control Centre](img/btpcontrolcentre.png)
+<!-- border -->![Access the Control Centre](img/btpcontrolcentrecore.png)
 
 Enter the name of your global account in the dialog box. Select SAP AI Core as your service, and click `Next`.
 
@@ -94,8 +94,9 @@ Once your keys have been created, you can view or download them at any time by l
 
 > **Note:** SAP AI Launchpad is optional, but is the recommended interface for use with SAP AI Core.
 
-Follow the same provisioning steps as before, but select `SAP AI Launchpad` when you select the service and set the entitlements.
+Edit your account and follow the same provisioning steps as before, but select `SAP AI Launchpad` when you select the service and set the entitlements.
 
+<!-- border -->![Access the Control Centre](img/btpcontrolcentrelp.png)
 <!-- border -->![SAP AI Launchpad account information](img/accountinfolp.png)
 <!-- border -->![Assign SAP AI Launchpad as a service](img/assignserviceslp.png)
 <!-- border -->![Set SAP AI Launchpad as entitlement](img/setentitlementslp.png)
