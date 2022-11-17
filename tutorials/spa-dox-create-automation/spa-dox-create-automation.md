@@ -5,7 +5,7 @@ author_profile: https://github.com/chaitanya-priya-puvvada
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate , software-product>sap-business-technology-platform , tutorial>free-tier]
-primary_tag: software-product>sap-process-automation
+primary_tag: software-product>build
 ---
 
 # Create an Automation to Extract Invoice Details
@@ -22,7 +22,7 @@ primary_tag: software-product>sap-process-automation
 
 ---
 
-### Create Automation
+### Create automation
 
 
 1. In the process **Get Invoice Details**:
@@ -52,7 +52,7 @@ primary_tag: software-product>sap-process-automation
     <!-- border -->![Automation](004.png)
 
 
-### Create Data Types
+### Create data types
 
 
 1. Go to the **Overview** Tab. Choose the **Create** button. Create an artifact of the type **Data Type**.
@@ -81,7 +81,7 @@ primary_tag: software-product>sap-process-automation
     <!-- border -->![Automation](008.png)
 
 
-### Create Input and Output Parameters
+### Create input and output parameters
 
 
     Input and output parameters allow you to exchange data in the workflow of your automation between activities, screens, and scripts.
@@ -110,7 +110,7 @@ primary_tag: software-product>sap-process-automation
 3. Choose **Save**.    
 
 
-### Create Document Template
+### Create document template
 
 
 1. Go the **Overview** Tab. Choose **Create** and **Document Template**.
@@ -145,7 +145,7 @@ primary_tag: software-product>sap-process-automation
 
 
 
-### Annotate and Activate the Document Template
+### Annotate and activate the document template
 
 
 1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAP BTP Cockpit. Otherwise, add the role manually. You would get an error if you do not have DOX roles.
@@ -182,7 +182,7 @@ primary_tag: software-product>sap-process-automation
     <!-- border -->![Automation](025.png)
 
 
-### Build the Automation
+### Build the automation
 
 
 1. Navigate back to Application Development and select **Extract Invoice Data** automation tab.
@@ -248,7 +248,7 @@ primary_tag: software-product>sap-process-automation
 
 
 
-### Passing the Parameters Outside the Automation
+### Passing the parameters outside the automation
 
 
 1. Select the **End**. Pass the variable `myInvoiceData` to the output parameter `InvoiceDetails`, which you have created in Step 2.
@@ -258,7 +258,7 @@ primary_tag: software-product>sap-process-automation
 2. **Save** the automation.
 
 
-### Mapping of Parameters to the Automation and Process
+### Mapping of parameters to the automation and process
 
 
 1. Navigate to the **Get Invoice Details** process and select the automation **Extract Invoice Data**. Map the input parameter of the automation to the form parameter `FilePath`.
@@ -268,7 +268,7 @@ primary_tag: software-product>sap-process-automation
 2. Select **Save**.
 
 
-### Test the Automation
+### Test the automation
 
 
 1. Select Test button and enter the `Filepath` where the invoice document is stored locally on your machine.
