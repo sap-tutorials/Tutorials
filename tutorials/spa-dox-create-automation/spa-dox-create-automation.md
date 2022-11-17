@@ -8,11 +8,11 @@ tags: [ tutorial>intermediate , software-product>sap-business-technology-platfor
 primary_tag: software-product>sap-process-automation
 ---
 
-# Create an automation to extract Invoice Details
+# Create an Automation to Extract Invoice Details
 <!-- description --> Extract invoice document using Document Extraction Template to send the invoice details to the process
 
 ## Prerequisites
- - Complete the tutorial of creating an [Invoice Approval Process](spa-dox-create-process)
+ - Complete the tutorial on creating an [Invoice Approval Process](spa-dox-create-process)
  - [Install and Setup the Desktop Agent](spa-setup-desktop-3-0-agent)
  - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
@@ -148,7 +148,7 @@ primary_tag: software-product>sap-process-automation
 ### Annotate and Activate the Document Template
 
 
-1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAP BTP Cockpit. Otherwise, add the role manually. You would get an error as , if you do not have DOX roles.
+1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAP BTP Cockpit. Otherwise, add the role manually. You would get an error if you do not have DOX roles.
 
     <!-- border -->![Automation](018.png)
 
@@ -189,7 +189,7 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](026.png)
 
-2. Extract data template. In Automation Details, under Tools, in search field, type **Extract data**.
+2. In Automation Details, under Tools, in search field, search for **Extract data (Template)** activity.
 
     > You can extract data with Document Information Extraction using the chosen document template and given PDF file.
 
@@ -199,14 +199,14 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](028.png)
 
-4. Select the activity. Maintain the parameters for the activity as following:
+4. Select the activity. Maintain the parameters for the activity as follows:
     - Under Document Schema: select your Schema
     - Under Document Template: select your Template
     - Under `documentPath`: choose `FilePath`
 
     <!-- border -->![Automation](029.png)
 
-5. You have already created the data type **Invoice** in Step 2. Now, you will create variable of the type **Invoice**.
+5. You have already created the data type **Invoice** in Step 2. Now, you will create a variable of type **Invoice**.
 
 6. Click on the canvas. Search for the datatype **Invoice**, located under the **Data Types** section.
 
@@ -226,7 +226,7 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](033.png)
 
-10. Rename the output parameter to `myinvoiceData`.
+10. Rename the output parameter to `myInvoiceData`.
 
 11. The final input and output parameters of **Create Invoice Variable** looks as below.
 
@@ -240,7 +240,7 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Automation](035.png)
 
-14. Select **Log Message** activity. In Input Parameters under message add `myinvoiceData` value.
+14. Select **Log Message** activity. In Input Parameters under message add `myInvoiceData` value.
 
     <!-- border -->![Automation](036.png)
 
@@ -251,7 +251,7 @@ primary_tag: software-product>sap-process-automation
 ### Passing the Parameters Outside the Automation
 
 
-1. Select the **End**. Pass the variable `myinvoiceData` to the output parameter `InvoiceDetails`, which you have created in Step 2.
+1. Select the **End**. Pass the variable `myInvoiceData` to the output parameter `InvoiceDetails`, which you have created in Step 2.
 
     <!-- border -->![Automation](037.png)
 
@@ -281,7 +281,7 @@ primary_tag: software-product>sap-process-automation
 
 3. Your automation is built successfully.
 
-4. Once this tutorial is completed, the process looks as following.
+4. Once this tutorial is completed, the process will look like this:
 
     <!-- border -->![Mapping](041.png)
 
