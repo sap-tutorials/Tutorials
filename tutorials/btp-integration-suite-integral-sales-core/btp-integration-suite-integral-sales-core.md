@@ -1,6 +1,6 @@
 ---
 title: Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration
-description: Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you’ll see how to configure and test your XSD schemas for the source and target messages.
+description: Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you'll see how to configure and test your XSD schemas for the source and target messages.
 auto_validation: true
 time: 30
 tags: [ tutorial>advanced, tutorial>license, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-business-technology-platform, tutorial>free-tier ]
@@ -10,7 +10,7 @@ author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
 # Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration
-<!-- description --> Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you’ll see how to configure and test your XSD schemas for the source and target messages.
+<!-- description --> Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you'  ll see how to configure and test your XSD schemas for the source and target messages.
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ To create the credentials, follow the same steps used to create the Open Connect
 
     ![Setting up the C4C request call](setup_c4c_call.png)
 
-2. Go to the Processing tab. Search in the Resource Path fpr `CustomerOrderCollection` and download the XSD schema (this will be your XSD schema for your target message).
+2. Go to the Processing tab. Search in the Resource Path for `CustomerOrderCollection` and download the XSD schema (this will be your XSD schema for your target message).
 
     ![Setting up the C4C request call](setup_c4c_call2.png)
 

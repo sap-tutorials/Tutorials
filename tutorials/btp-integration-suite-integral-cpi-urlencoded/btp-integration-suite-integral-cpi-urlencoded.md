@@ -33,9 +33,9 @@ To continue from the previous tutorial where you configured a SAP Sales and Serv
 
 1. Add a Content Modifier task and in the Exchange Property tab, add a new property:
     * Action: Create
-    * Name: salesOrderId
-    * Source Type: XPath
-    * Source Value: /CustomerOrderCollection/CustomerOrder/ID
+    * Name: `salesOrderId`
+    * Source Type: `XPath`
+    * Source Value: `/CustomerOrderCollection/CustomerOrder/ID`
     * Data Type: java.lang.String
 
     Like this:
@@ -162,9 +162,9 @@ As you can see, you don't need to add the headers here or the body, as you will 
 
     ![SMS](sms.png)
 
-Great! you’ve successfully have learned how to send SMS in Cloud Integration consuming a Twilio API.
+Great! you've successfully have learned how to send SMS in Cloud Integration consuming a Twilio API.
 
-Now it’s time add security policies to the API endpoint using SAP API Management. Check this next tutorial: [Configure SAP API Management policies to avoid CORS issues and generate an API Key](btp-integration-suite-integral-api-management).
+Now it's time add security policies to the API endpoint using SAP API Management. Check this next tutorial: [Configure SAP API Management policies to avoid CORS issues and generate an API Key](btp-integration-suite-integral-api-management).
 
 ### Check your knowledge
 

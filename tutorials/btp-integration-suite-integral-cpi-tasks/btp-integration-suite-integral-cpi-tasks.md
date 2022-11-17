@@ -47,7 +47,7 @@ author_profile: https://github.com/mariajosesap
 
 5. Add a "Filter" task. This is needed to only send the payment data to stripe. 
 
-6. Add this Xpath Expression in the Processing Tab: `/AppGyverSalesOrder/paymentData` and select `Nodelist` as the Valuetype. It is needed to select Nodelist as there is a list in the main payload: 
+6. Add this `Xpath` Expression in the Processing Tab: `/AppGyverSalesOrder/paymentData` and select `Nodelist` as the `Valuetype`. It is needed to select `Nodelist` as there is a list in the main payload: 
 
     <!-- cpes-file db/schema.cds -->
     ```JSON
@@ -80,7 +80,7 @@ author_profile: https://github.com/mariajosesap
 
     ![Filter Task](filter_task.png)
 
-7. Add a XML to JSON converter. Stripe needs a JSON object to create the payment transaction. Make sure you select UTF-8 as the JSON Output Encoding, and check the box "Suppress JSON Root Element", this is important to be able to enter the data inside the XPath Expression without the "parent" root:
+7. Add a XML to JSON converter. Stripe needs a JSON object to create the payment transaction. Make sure you select UTF-8 as the JSON Output Encoding, and check the box "Suppress JSON Root Element", this is important to be able to enter the data inside the `XPath` Expression without the "parent" root:
 
     ![XML to JSON Converter](xml_to_json.png)
 
@@ -97,7 +97,7 @@ author_profile: https://github.com/mariajosesap
 
 ### Add a Get Task
 
-1. Add a Get task to retrieve the initial payload. You have to put the same name and entry ID as you did in the Write task. Check the “Delete On Completion” box, to delete the stored message when the iFlow transaction is completed.
+1. Add a Get task to retrieve the initial payload. You have to put the same name and entry ID as you did in the Write task. Check the "Delete On Completion" box, to delete the stored message when the Integration Flow transaction is completed.
 
     ![Get Task](get_task.png)
 

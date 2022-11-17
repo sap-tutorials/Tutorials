@@ -79,7 +79,7 @@ author_profile: https://github.com/mariajosesap
 
     ![Test response](test_response.png)
 
-7. If you check on your Stripe developers account, you can see the amount and description "Ta dá!! Integration scenario is set up":
+7. If you check on your Stripe developers account, you can see the amount and description "Ta da!! Integration scenario is set up":
 
     ![Test Stripe charge](test_stripe.png)
 
@@ -103,9 +103,9 @@ author_profile: https://github.com/mariajosesap
 
 Remember you're following this previous exercise of a custom application developed in SAP AppGyver (as mentioned in the prerequisites first tutorial). The differences are:
 
-1. Add one field to the QR code (ProductID) for the purpose of the integration exercise and update the variables you've already created in the SAP AppGyver app. Of course, in reality you would want to add as many Product fields as necessary to execute the Sales Order transaction.
+1. Add one field to the QR code `ProductID` for the purpose of the integration exercise and update the variables you've already created in the SAP AppGyver app. Of course, in reality you would want to add as many Product fields as necessary to execute the Sales Order transaction.
 
-2. Add an additional Button (to trigger the API call) and an WebView component (to see the Stripe's payment confirmation with the receipt url).
+2. Add an additional Button (to trigger the API call) and an `WebView` component (to see the Stripe's payment confirmation with the `receipt url`).
 
 ### Create a page variable with a new JSON Object
 
@@ -235,7 +235,7 @@ Just to summarize, you've integrated solutions and services from:
 
 To create a Sales Order in SAP Sales and Service Core, after a the payment transaction using Stripe is successful, and then sending a SMS with the Order Id confirmation.
 
-Hope you’ve enjoyed this exercise!
+Hope you've enjoyed this exercise!
 
 ### Check your knowledge
 

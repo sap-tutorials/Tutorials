@@ -67,7 +67,7 @@ author_profile: https://github.com/mariajosesap
 
 ### Start building your Integration Flow
 
-1. Click on your Integration Flow to start designin it. Then, click on Edit and change the Sender name. Type "AppGyver" as the application sending the call request to this IFlow, in the Sender box.
+1. Click on your Integration Flow to start designing it. Then, click on Edit and change the Sender name. Type "AppGyver" as the application sending the call request to this IFlow, in the Sender box.
 
 2. In the connection tab, add a path to the "address" and uncheck the CSRF box, you are not going to enable it for this Integration flow (IFlow).
 
