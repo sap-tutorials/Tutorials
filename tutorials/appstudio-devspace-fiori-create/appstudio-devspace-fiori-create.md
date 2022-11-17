@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp-cloud-foundry-environment]
-primary_tag: products>sap-business-application-studio
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, software-product>sap-business-technology-platform, software-product>sap-btp-cloud-foundry-environment]
+primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
@@ -66,6 +66,8 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
     >The dev space is in status **STARTING**. Wait until it is in status **RUNNING**. This might take a couple of minutes.
 
     <!-- border -->![Dev Space Starting](BAS-Dev-Space-Starting-.png)
+
+
 
 ### Open the SAP Fiori dev space
 
