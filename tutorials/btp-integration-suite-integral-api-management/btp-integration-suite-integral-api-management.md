@@ -8,7 +8,7 @@ author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
 # Configure SAP API Management policies to avoid CORS issues and generate an API Key
-<!-- description --> Learn how to set up API Management policies to avoid CORS issues when calling the API endpoint from SAP Build Apps (formerly SAP AppGyver), also you'll learn how to apply security policies to enable the API consumption via an API Key.
+<!-- description --> Learn how to set up API Management policies to avoid CORS issues when calling the API endpoint from SAP Build Apps (formerly SAP AppGyver), also you will learn how to apply security policies to enable the API consumption via an API Key.
 
 ## Prerequisites
 
