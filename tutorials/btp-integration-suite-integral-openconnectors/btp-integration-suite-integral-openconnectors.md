@@ -15,7 +15,7 @@ author_profile: https://github.com/mariajosesap
  - You have a SAP BTP account or trial account with access to the SAP Integration Suite.
  - You have a Stripe account or trial account.
  - You have a Postman account.
- - You have completed the previous tutorial [Build an Integral SAP Integration Suite project and Consume it from a SAP AppGyver Custom App](btp-integration-suite-integral-project).
+ - You have completed the previous tutorial [Build an Integral SAP Integration Suite project and Consume it from a SAP Build Apps Custom App](btp-integration-suite-integral-project).
 
 ## You will learn
 

@@ -10,7 +10,6 @@ author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
 # Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration
-<!-- description --> Learn how to create a Message Mapping artifact to correctly pass the needed payload to SAP Sales and Service Core (formerly SAP C4C) to create the saler order. Plus you'  ll see how to configure and test your XSD schemas for the source and target messages.
 
 ## Prerequisites
 
@@ -35,7 +34,7 @@ Once you have your SAP Sales and Service Core tenant (formerly SAP Cloud for Cus
 
     ![API Business Hub](api_business_hub.png)
 
-    >Note: In order to call the SAP Sales and Service Core API to create a Sales Order in your Integration Flow, a Message Mapping will be needed to map the XML of the incoming payload to the needed structure in SAP Sales and Service Core. This will be cover in a later step.
+    >In order to call the SAP Sales and Service Core API to create a Sales Order in your Integration Flow, a Message Mapping will be needed to map the XML of the incoming payload to the needed structure in SAP Sales and Service Core. This will be cover in a later step.
 
 4. Go back to your Integration Flow and add a Request Reply task.
 
@@ -107,7 +106,7 @@ To create the credentials, follow the same steps used to create the Open Connect
 
     ![Message Mapping View](mapping_message_1.png)
 
-    The source message is going to be the payload coming from the AppGyver (which you have not created yet here), but in other words it's the payload from the application that you are going to send to the Cloud Integration Flow.
+    The source message is going to be the payload coming from the SAP Build Apps application (which you have not created yet here), but in other words it's the payload from the application that you are going to send to the Cloud Integration Flow.
 
     The Target Message is the XSD schema you created in the previous step while configuring the `CustomerOrderCollection` Post rules, with the fields you selected (mainly `ProductID`, `BuyerID`, quantity, etc.).
 
@@ -224,11 +223,13 @@ To create the credentials, follow the same steps used to create the Open Connect
     </xsd:schema>
     ```
 
-    Note: Remember that when you are setting the possible values for each XSD element, using minOccurs and maxOccurs, you need to make it consistent with the Message Mapping artifact messages' structures. You'll be able to see them in the source and target message's structure, and these are the definitions:
+    ```
+    Remember that when you are setting the possible values for each XSD element, using minOccurs and maxOccurs, you need to make it consistent with the Message Mapping artifact messages' structures. You'll be able to see them in the source and target message's structure, and these are the definitions:
 
     - 1..1 -> needs and allows only one value.
     - 0..1 -> doesn't need a value but if there is, it would be only one.
     - 0..* -> it can go from no value to multiple values.
+    ```
 
 ### Test your XML structure with the needed XSD source schema.
 

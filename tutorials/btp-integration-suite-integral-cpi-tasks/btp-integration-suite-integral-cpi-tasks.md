@@ -24,13 +24,13 @@ author_profile: https://github.com/mariajosesap
 
 ### Add Converters, Write and Filter Tasks
 
-1. As SAP Cloud Integration works with XML and the expected payload from Open Connector/Stripe is in JSON, you need to add a JSON to XML converter in order to store the initial payload from AppGyver in CPI and retrieve it when the payment transaction is successfully done.
+1. As SAP Cloud Integration works with XML and the expected payload from Open Connector/Stripe is in JSON, you need to add a JSON to XML converter in order to store the initial payload from SAP Build Apps in CPI and retrieve it when the payment transaction is successfully done.
 
 2. Uncheck the "Add XML Root Element" box. You'll use the payload with the root as it comes.
 
     ![Adding the JSON to XML Converter](json_to_xml.png)
 
-3. Add a Write task to store the initial payload you are going to send from AppGyver. Select it from the cube "Persistence" and "Data Store Operations".
+3. Add a Write task to store the initial payload you are going to send from SAP Build Apps. Select it from the cube "Persistence" and "Data Store Operations".
 
     ![Write Task](write_task.png)
 
