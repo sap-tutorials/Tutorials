@@ -8,7 +8,7 @@ author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
 # Set Up Prerequisites for your SAP Integration Suite & SAP Build Apps Mission
-<!-- description --> This mission is intended for consultants/users who want to boost their integration skills, using SAP Integration Suite capabilities and SAP Build Apps (formerly SAP AppGyver) to quickly develop a custom app that can consume SAP Integration Suite APIs.
+<!-- description --> This mission is intended for consultants/users who want to boost their integration skills, using SAP Integration Suite capabilities and SAP Build Apps (formerly SAP AppGyver) to quickly develop a custom app that can consume SAP Integration Suite APIs. 
 
 ## Prerequisites
 
