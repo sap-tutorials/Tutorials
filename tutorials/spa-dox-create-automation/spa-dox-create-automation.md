@@ -4,8 +4,8 @@ author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate , software-product>sap-business-technology-platform , tutorial>free-tier]
-primary_tag: software-product>sap-build
+tags: [ tutorial>intermediate , software-product>sap-business-technology-platform , software-product>sap-build , tutorial>free-tier]
+primary_tag: software-product>sap-process-automation
 ---
 
 # Create an Automation to Extract Invoice Details
