@@ -39,7 +39,7 @@ time: 30
 
     The **Products** screen makes a data request to display the available products. Notice that it succeeds without a working network connection. The data request is fulfilled from the offline store that was previously created and populated on the device. Tap the **Accessories** item to display the detail screen.
 
-    <!-- border -->![Select the second product](select_second_product.png)
+    <!-- border -->![Select the first product](select_first_product.png)
 
 5.  On the detail screen, tap the edit toolbar icon.
 
@@ -211,7 +211,7 @@ When syncing changes made while offline, conflicts can occur. One example might 
     <!-- border -->![Sync Error](sync_error.png)
 
 
-### Display ErrorArchive details
+### Display `ErrorArchive` details
 
 
 In this section we will create an **Error Information** screen that displays the details from the `ErrorArchive`.
@@ -250,15 +250,14 @@ In this section we will create an **Error Information** screen that displays the
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="@color/colorWhite" />
+                app:titleTextColor="@color/colorBlack" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -597,15 +596,14 @@ In this section we will create an **Error Information** screen that displays the
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="@color/colorWhite" />
+                app:titleTextColor="@color/colorBlack" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -799,7 +797,6 @@ In this section we will create an **Error Information** screen that displays the
             return super.onOptionsItemSelected(item)
         }
     }
-
     ```
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
