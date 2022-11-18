@@ -36,6 +36,7 @@ time: 15
     Note that the following method contains two LOGGER statements:
 
     ```Java
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
@@ -128,13 +129,13 @@ The SDK libraries also log output based on the app's log level.
 
     <!-- border -->![Log upload succeeded](log_uploaded.png)
 
-2.  In the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Log Upload**.
+2.  In the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.us10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Log Upload**.
 
     <!-- border -->![Mobile Applications > Native/Hybrid > com.sap.wizapp > Mobile Client Log Upload](select_and_download_log.png)
 
-3.  Select the **Logs** tab and you will see the log you just uploaded in the list (only the **Error** level can be viewed here). If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
+3.  Select the **Error Logs** tab and you will see the log you just uploaded in the **Error** level list. If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
 
-    <!-- border -->![View log](view_log.png)
+    <!-- border -->![View error log](view_error_log.png)
 
 4.  You can inspect the log details in the browser by clicking on its table entry. The following screenshot contains the details of the first log.
 

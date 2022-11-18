@@ -27,7 +27,7 @@ time: 20
 ### Configure Mobile Services for push notifications
 
 
-1. Go to [SAP Mobile Services Cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), select the **com.sap.wizapp** application.
+1. Go to [SAP Mobile Services Cockpit](https://mobile-service-cockpit-web.cfapps.us10.hana.ondemand.com/), select the **com.sap.wizapp** application.
 
     <!-- border -->![Application page in CF cockpit](cf-trial-application-page.png)
 

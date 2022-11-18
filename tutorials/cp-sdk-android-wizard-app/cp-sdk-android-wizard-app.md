@@ -13,11 +13,11 @@ time: 30
 <!-- description --> Use the Android Studio-integrated SAP BTP SDK Wizard for Android to create a mobile app and configure it to make use of SAP Mobile Services features.
 
 ## Prerequisites
-- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services. (To just complete this tutorial mission (except tutorial 7 about translation hub), it's sufficient to simply [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).)
     - **Mobile Services**
 - Make sure you can [Access SAP Mobile Services](fiori-ios-hcpms-setup).
-- Installed [Android Studio 2020.3.1](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 4.0.x of the SAP BTP SDK for Android.
+- Installed [Android Studio 2021.1.1](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 5.0.x of the SAP BTP SDK for Android.
 - Created a Google account.
 
 ## You will learn
@@ -50,7 +50,7 @@ time: 30
     | Password | **`Password for your account`** |
     | Save Account Information | **`Check this so that you do not have to re-enter account information on subsequent runs of the wizard`** |
 
-4.  Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.
+4.  Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.us10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.
 
     <!-- border -->![Admin API and UI URL](admin-url.png)
 
