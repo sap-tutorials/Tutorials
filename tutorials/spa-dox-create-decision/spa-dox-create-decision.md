@@ -4,7 +4,7 @@ author_name: Stephan Schluchter
 author_profile: https://github.com/SchluchterStephan
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform ,tutorial>free-tier]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform , software-product>sap-build , tutorial>free-tier]
 primary_tag: software-product>sap-build
 ---
 
@@ -172,7 +172,7 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
     - Select `GrossAmount`: map with `GrossAmount` from **Invoice Details**,
     - Select `SenderName`: map with `SenderName` from **Invoice Details**.
 
-    The input mapping is done. 
+    The input mapping is done.
 
     <!-- border -->![Invoice Details](031.png)
 
