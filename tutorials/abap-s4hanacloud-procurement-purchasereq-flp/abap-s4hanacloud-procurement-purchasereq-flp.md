@@ -8,7 +8,7 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-# Integrate List Report into Fiori Launchpad 
+# Integrate List Report into Fiori Launchpad
 <!-- description --> Integrate your list report application into Fiori launchpad.
 
 ## Prerequisites  
@@ -24,6 +24,8 @@ author_profile: https://github.com/mervey45
 - How to create business roles
 - How to manage launchpad spaces and assign business role
 - How to assign and manage launchpad spaces
+- You need to [enable spaces layout](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/64a5e1675ce7413791a654d2228a90be.html?locale=en-US&state=TEST&version=2208.502) in SAP Fiori launchpad to see the app tiles, that are added to spaces or pages.
+
 
 ---
 
@@ -39,7 +41,7 @@ author_profile: https://github.com/mervey45
   2. **Publish** your IAM App.
 
      ![iamapp](iamapp2.png)
-  
+
   3. Make use of your business catalog `ZSHOP_BC_XXX`.
 
      ![businesscatalog](businesscatalog.png)
@@ -71,7 +73,7 @@ author_profile: https://github.com/mervey45
       - Business Role ID: `BR_Z_SHOP_XXX`
       - Business Role Description: Business role for online shop
 
-       ![role3](role3.png)
+       ![role3](role33.png)
 
       Click **Create**.
 
@@ -127,7 +129,7 @@ Option 1:
        - Page description: Page for online shop
        - Page title: Online Shop XXX
 
-      ![transport](space3.png)
+      ![transport](brole45.png)
 
       Click **Create**.
 
@@ -135,34 +137,67 @@ Option 1:
 
       ![transport](space4.png)
 
-  6. Go back to the homepage.
+  5. Go back to the homepage.
 
       ![transport](space5.png)
 
-  7. Select the **Maintain Business Roles** tile.
+  6. Select the **Maintain Business Roles** tile.
 
       ![transport](space6.png)
 
-  8. Search for your business role **`BR_Z_SHOP_XXX`** and select it.
+  7. Search for your business role **`BR_Z_SHOP_XXX`** and select it.
 
       ![transport](space7.png)
 
-  9. Click **Edit** and select **Assigned Launchpad Spaces**.
+  8. Click **Edit** and select **Assigned Launchpad Spaces**.
 
       ![transport](space8.png)
 
- 10. Click **Add**.
+  9. Click **Add**.
 
       ![transport](space9.png)
 
- 11. Select **Use Existing Space**, select your space `Z_Online_Shop_XXX` and click **Assign Space**.
+ 10. Select **Use Existing Space**, select your space `Z_Online_Shop_XXX` and click **Assign Space**.
 
-      ![transport](space10.png)
+      ![transport](space100.png)
 
 
  12. Check your result and click **Save**.
 
       ![transport](space11.png)
+
+ 13. Open the Mange Launchpad Pages tile.
+
+      ![transport](managespaces.png)
+
+ 14. Select your page `Z_Online_Shop_XXX`.
+
+      ![transport](managespaces2.png)
+
+ 15. Click **Edit**.    
+
+      ![transport](managespaces3.png)
+
+ 16. Add a description to your section tile, select your business catalog and click **Add**.
+
+      ![transport](managespaces4.png)
+
+ 17. Save your changes.
+
+      ![transport](managespaces5.png)
+
+ 18. Check your result.
+
+      ![transport](managespaces6.png)
+
+ 19. Click **Page Preview**.
+
+      ![transport](managespaces7.png)
+
+ 20. Check the result in the preview.
+
+      ![transport](managespaces8.png)
+
 
 
 ### Alternative 2: Assign and manage launchpad spaces
@@ -172,31 +207,28 @@ Option 2:
 
   1. Select the **Maintain Business Roles** tile.
 
-       ![transport](brole.png)
+      ![transport](brole.png)
 
   2. Search and select your business role.
 
-        ![transport](brolenew.png)
+      ![transport](brolenew.png)
 
   3. Click **Edit** and select **Assigned Launchpad Spaces**.
 
-       ![transport](brole2.png)
+      ![transport](brole2.png)
 
   4. Click **Add**.
 
       ![transport](brole3.png)
 
-  5. Select **Create New Space**.
+  5. Select **Create New Space**. Add Launchpad Space:
+      - Assign Space to Business Role: Create New Space
+      - Space ID: `Z_TRAVEL_APP_XXX`
+      - Space description: Space for travel app
+      - Space title: Travel App XXX
+      - Check **Create Page from Business Catalogs and Groups**.
 
-     Add Launchpad Space:
-       - Assign Space to Business Role: Create New Space
-       - Space ID: `Z_TRAVEL_APP_XXX`
-       - Space description: Space for travel app
-       - Space title: Travel App XXX
-
-      Check **Create Page from Business Catalogs and Groups**.
-
-       ![transport](brole4.png)
+     ![transport](brole44.png)
 
       Click **Create and Assign Space**.
 
@@ -204,6 +236,37 @@ Option 2:
 
        ![transport](brole5.png)
 
+  8. Open the Mange Launchpad Pages tile.
+
+      ![transport](managespaces.png)
+
+  9. Select your page `Z_Online_Shop_XXX`.
+
+      ![transport](managespaces2.png)
+
+ 10. Click **Edit**.    
+
+      ![transport](managespaces3.png)
+
+ 11. Add a description to your section tile, select your business catalog and click **Add**.
+
+      ![transport](managespaces4.png)
+
+ 12. Save your changes.
+
+      ![transport](managespaces5.png)
+
+ 13. Check your result.
+
+      ![transport](managespaces6.png)
+
+ 14. Click **Page Preview**.      
+
+      ![transport](managespaces7.png)
+
+ 15. Check the result in the preview.
+
+      ![transport](managespaces8.png)
 
 
 

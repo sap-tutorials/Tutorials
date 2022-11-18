@@ -7,25 +7,25 @@ primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
 ---
 
-# Add a Web Dynpro ABAP App to your SAP Work Zone
-<!-- description --> Add a classic SAP application (like those typically run by SAP customers on the data center backends), to your SAP Work Zone.
+# Add a Web Dynpro ABAP App to your SAP Build Work Zone, advanced edition
+<!-- description --> Add a classic SAP application (like those typically run by SAP customers on the data center backends), to your SAP Build Work Zone, advanced edition.
 
 ## Prerequisites
  - You have created a destination in SAP BTP cockpit to the SAP Gateway Demo System.
- - You have an environment set up and you can access your SAP Work Zone.
- - You have opened SAP Work Zone.
+ - You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
+ - You have opened SAP Build Work Zone, advanced edition.
 
 ## You will learn
-  - How to expose a Web Dynpro ABAP backend application in SAP Work Zone.
+  - How to add a Web Dynpro ABAP backend application to your workpage.
   -
 
 
 ## Intro
-To add business apps to SAP Work Zone, you configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your site - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu of SAP Work Zone and displays the business apps that the user has permissions to launch.
+To add business apps to SAP Build Work Zone, advanced edition, you configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your site - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu and displays the business apps that the user has permissions to launch.
 
 ---
 
-In this tutorial you're going to add one of SAP's classic applications, a Web Dynpro ABAP app, to your site using the **Content Manager**. SAP's classic applications typically run on the backend of a data center.
+In this tutorial, you're going to add one of SAP's classic applications, a Web Dynpro ABAP app, to your site using the **Content Manager**. SAP's classic applications typically run on the backend of a data center.
 
 ### Open the Content Manager
 
@@ -99,7 +99,7 @@ You can see your Web Dynpro ABAP app in the list:
 
   <!-- border -->![View app in list](9-view-app.png)
 
-To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your work zone. This is described in the following steps.
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your site. This is described in the following steps.
 
 
 
@@ -130,7 +130,7 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 ### Assign the app to a group
 
 
->A group is a set of one or more apps displayed together in the **Applications** page of your work zone. Assigning apps to groups, makes them visible to users.
+>A group is a set of one or more apps displayed together in the **Applications** page of your site. Assigning apps to groups, makes them visible to users.
 
 1. Click the icon in the side panel to navigate back to the **Content Manager**.
 
@@ -150,10 +150,10 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 
     <!-- border -->![Assign app to group](14-assign-app-to-group.png)
 
-    Now that the app is configured, it is automatically added to the **Applications** page in SAP Work Zone. You can also add it to your home page or to any workspace overview page.
+    Now that the app is configured, it is automatically added to the **Applications** screen in your site. You can also add it to one of your workpages.
 
 
-### View the app in the Applications page
+### View the app in the Applications screen
 
 
 1. Click the **Site Directory** icon in the side panel.

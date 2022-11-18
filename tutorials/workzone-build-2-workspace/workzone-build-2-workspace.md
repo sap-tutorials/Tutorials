@@ -8,13 +8,13 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add a Workspace to SAP Work Zone
+# Add a Workspace to SAP Build Work Zone, advanced edition
 <!-- description --> Create a workspace and add content to it that you can share with other members of your workspace.
 
 ## Prerequisites
-- You have an environment set up and you can access your SAP Work Zone.
+- You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
 &nbsp;
-**Note that SAP Work Zone is not available in a trial account.**
+**Note that it is not available in a trial account.**
 
 
 ## You will learn
@@ -173,10 +173,6 @@ In this step, you'll add two text widgets next to each other in the first sectio
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-7. This is what your first section looks like:
-
-    <!-- border -->![Preview of row 1](13a-preview-row1.png)
-
 
 
 ### Design the second section of your workpage
@@ -232,8 +228,6 @@ In this step, you'll add images to the second section.
     | Caption Layout      | Inline
     | Caption Alignment   | Left
 
-    If your 2 images aren't aligned, use the divider between them to drag the images until they are aligned.
-
 12. Click **+** next to the second image widget to open a third column.
 
     <!-- border -->![Add another column](21-add-another-column.png)
@@ -267,7 +261,7 @@ In this step, you'll add images to the second section.
     | Caption Alignment     |All images: Left
 
 
-16. See how your workpage looks so far:
+16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the text headings above the images.
 
     <!-- border -->![First preview](22-first-preview.png)
 
@@ -280,7 +274,7 @@ In this step, you'll add images to the second section.
     <!-- border -->![Edit row pixels](22b-edit-pixels.png)
 
 
-### Design the third and last section of your workspace
+### Design the third section of your workspace
 
 
 In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed** widget.
@@ -299,7 +293,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 4. Enter the **Widget Title**: `Add your Hackathon Questions & Ideas`.
 
-5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your overview page.
+5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your workpage.
 
     <!-- border -->![Design actions widget](24-design-actions-widget.png)
 
@@ -319,33 +313,42 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **Save**.
 
-    > On the overview page, only 2 of the questions, ideas or discussions from the forum will be displayed.  
+    > On the workpage, only 2 of the questions, ideas or discussions from the forum will be displayed.  
 
     <!-- border -->![Design the forum widget](27-design-forum-widget.png)
 
 
     Now let's add the **Feed** widget.
 
-10.  Directly under the **Action** widget that you added, click **Add Widget**.
+10.  Add another section.
 
-    <!-- border -->![Add another widget](27-add-another-widget.png)
+    <!-- border -->![Add another section](27-add-another-widget.png)
 
-11. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
+11. Click **Add Widget**
+
+      <!-- border -->![Add another section](27a-add-widget.png)
+
+12. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
 
     You've now added all three widgets.
 
-13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right.
+13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
     <!-- border -->![Edit row settings](28-edit-row-settings.png)
 
 14. Under **Padding Top**, add the value `30`pixels and click **Save**.
 
-15. Click **Save Draft** to save a draft version of your workpage.
+15. Now **Publish** the workpage to make it visible to members of the workspace. Without doing this, the workpage is only visible to you.
 
-    <!-- border -->![Save as draft](28-save-as-draft.png)
+    <!-- border -->![Publish](28-publish.png)
 
+16. In the popup, leave the **Show in Feed Updates** selected and click **Publish**.
+
+    <!-- border -->![Publish again](28a-publish-again.png)
+
+    > By leaving the **Show in Feed Updates** checked, all workspace members will be informed of your changes. In the future, if the changes you make to your workspace aren't significant, you can uncheck this option.
 
 
 ### Add a forums tab and ask a question
@@ -353,13 +356,13 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
 
-1. Click the **+** next to the **About the Hackathon** workpage.
+1. Click the **+** icon.
 
     <!-- border -->![Add new page tab](28-add-new-page.png)
 
 2.  In the **Add New Page** screen, under the **Content** category, select **Forums** to add the **Forums**  page tab to your workspace. The forum page tab opens a screen displaying all the different forum topics.
 
-    Now ask a question in the forum.
+    In the next steps, we ask a question in the forum.
 
 3. Go back to your workpage by clicking the **About the Hackathon** workpage.
 
@@ -384,20 +387,8 @@ You can see that your question has been added to your workpage as well as to you
 
 
 
-### Publish and view your workspace
+### View your workspace
 
-
-  1. Now **Publish** the workpage to make it visible to members of the workspace. Without doing this, the workpage is only visible to you.
-
-    <!-- border -->![Publish workspace](27a-publish.png)
-
-    >You can also save as a draft and check your page before you are ready to publish.
-
-  2. In the popup, leave the option checked to **Show in Feed Updates** and then click **Publish**.
-
-    > By leaving the **Show in Feed Updates** checked, all workspace members will be informed of your changes. In the future, if the changes you make to your workspace aren't significant, you can uncheck this option.
-
-    <!-- border -->![Add to feed](27d-add-to-feed.png)
 
 This is how your workspace looks:
 

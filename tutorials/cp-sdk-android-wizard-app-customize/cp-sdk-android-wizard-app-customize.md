@@ -67,7 +67,9 @@ In this section, you will configure the object cell to display a product's name,
     DataValue dataValue = productEntity.getDataValue(Product.name);
     ```
 
-3.  At the end of the `populateObjectCell` method, find the lines that set the `subheadline`, `footnote`, and `icon`, as shown below.
+3.  Replace `viewHolder.objectCell.setDetailImage(null);` with `viewHolder.objectCell.setUseCutOut(false);`.
+
+4.  At the end of the `populateObjectCell` method, find the lines that set the `subheadline`, `footnote`, and `icon`, as shown below.
 
     ```Java
     viewHolder.objectCell.setSubheadline("Subheadline goes here");
@@ -81,7 +83,7 @@ In this section, you will configure the object cell to display a product's name,
     viewHolder.objectCell.setIcon("!", 2);
     ```
 
-4.  Replace these lines with the following code, which will display category, description, and price.
+5.  Replace these lines with the following code, which will display category, description, and price.
 
     ```Java
     dataValue = productEntity.getDataValue(Product.category);
@@ -101,9 +103,9 @@ In this section, you will configure the object cell to display a product's name,
     }
     ```
 
-5.  On Windows press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`** and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method.
+6.  On Windows press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method.
 
-6.  After the `if (recyclerView == null)` line, paste the following code, which adds a divider between product items.
+7.  After the `if (recyclerView == null)` line, paste the following code, which adds a divider between product items.
 
     ```Java
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(currentActivity);
@@ -118,15 +120,19 @@ In this section, you will configure the object cell to display a product's name,
 
     <!-- border -->![Add unambiguous imports on the fly](auto-import-java.png)
 
-7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`** and type **`Repository`**, to open `Repository.java`.
+8.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`setDetailImage`** to move to the `setDetailImage` method.
 
-8.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`** and type **`initialRead`**, to move to the `initialRead` method.
+9.  Comment out the `.transition(DrawableTransitionOptions.withCrossFade())` lines.
 
-9.  Below the line that calls the **`orderBy`** method of **`dataQuery`**, add the following to specify that the sort order be by category and then by name for products.
+10.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`Repository`** to open `Repository.java`.
+
+11.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initialRead`** to move to the `initialRead` method.
+
+12.  Below the line that calls the **`orderBy`** method of **`dataQuery`**, add the following to specify that the sort order be by category and then by name for products.
 
     ```Java
     if (entitySet.getEntityType() == ESPMContainerMetadata.EntityTypes.product) {
-        dataQuery.thenBy(Product.name, SortOrder.DESCENDING);
+        dataQuery.thenBy(Product.name, SortOrder.ASCENDING);
     }
     ```
 
@@ -136,12 +142,12 @@ In this section, you will configure the object cell to display a product's name,
     if (orderByProperty != null) {
         dataQuery = dataQuery.orderBy(orderByProperty, SortOrder.ASCENDING);
         if (entitySet.getEntityType() == ESPMContainerMetadata.EntityTypes.product) {
-            dataQuery.thenBy(Product.name, SortOrder.DESCENDING);
+            dataQuery.thenBy(Product.name, SortOrder.ASCENDING);
         }
     }
     ```
 
-10.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
+13.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
 
     <!-- border -->![Nicely formatted product list](reformatted-product-list.png)
 
@@ -162,7 +168,7 @@ In this section, you will configure the object cell to display a product's name,
     ```Kotlin
     viewHolder.objectCell.apply {
       headline = masterPropertyValue
-      detailImage = null
+      setUserCutOut(false)
 
       (productEntity.getDataValue(Product.category))?.let {
         subheadline = it.toString()
@@ -179,7 +185,7 @@ In this section, you will configure the object cell to display a product's name,
     }
     ```
 
-4.  On Windows press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`** and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method.
+4.  On Windows press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method.
 
 5.  Replace `(currentActivity.findViewById<RecyclerView>(R.id.item_list))?.let` block with the following code, which adds a divider between product items.
 
@@ -200,22 +206,26 @@ In this section, you will configure the object cell to display a product's name,
 
     <!-- border -->![Add unambiguous imports on the fly](auto-import-kotlin.png)
 
-6.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`Repository`**, to open `Repository.kt`.
+6.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`setDetailImage`** to move to the `setDetailImage` method.
 
-7.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initialRead`**, to move to the `initialRead` method.
+7.  Comment out the `.transition(DrawableTransitionOptions.withCrossFade())` lines.
 
-8.  Replace `if (orderByProperty != null)` block with the following code to specify that the sort order be by category and then by name for products.
+8.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`Repository`** to open `Repository.kt`.
+
+9.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initialRead`** to move to the `initialRead` method.
+
+10.  Replace `if (orderByProperty != null)` block with the following code to specify that the sort order be by category and then by name for products.
 
     ```Kotlin
     orderByProperty?.let {
         dataQuery = dataQuery.orderBy(it, SortOrder.ASCENDING)
         if (entitySet.entityType == ESPMContainerMetadata.EntityTypes.product) {
-            dataQuery.thenBy(Product.name, SortOrder.DESCENDING)
+            dataQuery.thenBy(Product.name, SortOrder.ASCENDING)
         }
     }
     ```
 
-9.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
+11.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
 
     <!-- border -->![Nicely formatted product list](reformatted-product-list.png)
 
@@ -224,7 +234,7 @@ In this section, you will configure the object cell to display a product's name,
 
 
 
-### Customize the ProductCategories screen
+### Customize the `ProductCategories` screen
 
 
 Examine the **`ProductCategories`** screen.
@@ -245,7 +255,7 @@ In this section, you will update the screen's title, configure the object cell t
 
 3.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.java`.
 
-4.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method, find the `currentActivity.setTitle(activityTitle)` line.
+4.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method, find the `currentActivity.setTitle(activityTitle)` line.
 
 5.  On Windows, press **`Ctrl+/`**, or, on a Mac, press **`command+/`**, to comment out the line.
 
@@ -315,7 +325,7 @@ In this section, you will update the screen's title, configure the object cell t
 
 3.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.kt`.
 
-4.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method, find the `currentActivity.setTitle(activityTitle)` line.
+4.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method, find the `currentActivity.title = activityTitle` line.
 
 5.  On Windows, press **`Ctrl+/`**, or, on a Mac, press **`command+/`**, to comment out the line.
 
@@ -395,7 +405,7 @@ In this section, you will modify the app to initially show the **Product Categor
 
 5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.java`.
 
-6.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method.
+6.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method.
 
 7.  Find the following code:
 
@@ -482,7 +492,7 @@ In this section, you will modify the app to initially show the **Product Categor
 
 5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.kt`.
 
-6.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`**, to move to the `onViewStateRestored` method.
+6.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onViewStateRestored`** to move to the `onViewStateRestored` method.
 
 7.  Replace the `(currentActivity.findViewById<FloatingActionButton>(R.id.fab))?.let` block with the following code:
 
@@ -536,7 +546,7 @@ In this section, you will modify the app to initially show the **Product Categor
 
 
 
-### Add category filtering with a FioriSearchView
+### Add category filtering with a `FioriSearchView`
 
 
 In this section you will add a search field to `ProductCategoriesListActivity`, enabling a user to filter the results displayed on the product category screen.
@@ -555,7 +565,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
         android:viewportWidth="24"
         android:viewportHeight="24">
         <path
-            android:fillColor="#FFF"
+            android:fillColor="#000"
             android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
     </vector>
     ```
@@ -668,7 +678,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
         android:viewportWidth="24"
         android:viewportHeight="24">
         <path
-            android:fillColor="#FFF"
+            android:fillColor="#000"
             android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
     </vector>
     ```
@@ -774,7 +784,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 >Further information on the Fiori search UI can be found at [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/search-2/) and [Fiori Search User Interface](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/fiori-search-ui.html).
 
 
-### Add a Top Products section with a CollectionView
+### Add a Top Products section with a `CollectionView`
 
 
 In this section, you will add a Top Products section to the **Products** screen, which displays the products that have the most sales, as shown below.
@@ -785,7 +795,7 @@ First, we'll generate additional sales data in the sample OData service.
 
 [OPTION BEGIN [Java]]
 
-1.  In [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
+1.  In [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.us10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
 
     <!-- border -->![Sample OData feature on Mobile Services](sample-odata-feature.png)
 
@@ -1086,7 +1096,7 @@ First, we'll generate additional sales data in the sample OData service.
 
 [OPTION BEGIN [Kotlin]]
 
-1.  In [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
+1.  In [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.us10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
 
     <!-- border -->![Sample OData feature on Mobile Services](sample-odata-feature.png)
 
@@ -1114,7 +1124,7 @@ First, we'll generate additional sales data in the sample OData service.
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/ic_add_circle_outline_black_24dp"
             app:tint="@color/colorWhite"
-            app:backgroundTint="?attr/sap_fiori_color_s2"
+            app:backgroundTint="?attr/sap_fiori_color_accent_7"
             app:fabSize="normal" />
 
         <LinearLayout
@@ -1205,7 +1215,6 @@ First, we'll generate additional sales data in the sample OData service.
         }
         return temp
     }
-
     ```
 
 12.  Add the following methods to the class:
@@ -1376,7 +1385,6 @@ First, we'll generate additional sales data in the sample OData service.
           } ?: LOGGER.debug("CollectionView: sales query list is null")
       }, { re: RuntimeException -> LOGGER.debug("CollectionView: An error occurred during async sales query: ${re.message}")})
     }
-
     ```
 
 17.  Run the app and notice that the **Products** screen now has a component at the top of the screen that allows horizontal scrolling to view the top products. Tap a product to see more details. Alternatively, tap **SEE ALL** to see all the products.
