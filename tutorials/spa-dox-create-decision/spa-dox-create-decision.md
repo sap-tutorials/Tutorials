@@ -4,7 +4,7 @@ author_name: Stephan Schluchter
 author_profile: https://github.com/SchluchterStephan
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform , software-product>sap-build , tutorial>free-tier]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform , tutorial>free-tier]
 primary_tag:  software-product>sap-process-automation
 ---
 
