@@ -3,7 +3,7 @@ title: Save, Filter and Get your needed data in your Integration Flow
 description: Boost your Integration Suite skills leveraging different tasks to store and filter messages travelling through your Integration Flow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-business-technology-platform  ]
+tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez
@@ -24,13 +24,13 @@ author_profile: https://github.com/mariajosesap
 
 ### Add Converters, Write and Filter Tasks
 
-1. As SAP Cloud Integration works with XML and the expected payload from Open Connector/Stripe is in JSON, you need to add a JSON to XML converter in order to store the initial payload from AppGyver in CPI and retrieve it when the payment transaction is successfully done.
+1. As SAP Cloud Integration works with XML and the expected payload from Open Connector/Stripe is in JSON, you need to add a JSON to XML converter in order to store the initial payload from SAP Build Apps in CPI and retrieve it when the payment transaction is successfully done.
 
 2. Uncheck the "Add XML Root Element" box. You'll use the payload with the root as it comes.
 
     ![Adding the JSON to XML Converter](json_to_xml.png)
 
-3. Add a Write task to store the initial payload you are going to send from AppGyver. Select it from the cube "Persistence" and "Data Store Operations".
+3. Add a Write task to store the initial payload you are going to send from SAP Build Apps. Select it from the cube "Persistence" and "Data Store Operations".
 
     ![Write Task](write_task.png)
 
@@ -47,7 +47,7 @@ author_profile: https://github.com/mariajosesap
 
 5. Add a "Filter" task. This is needed to only send the payment data to stripe. 
 
-6. Add this Xpath Expression in the Processing Tab: `/AppGyverSalesOrder/paymentData` and select `Nodelist` as the Valuetype. It is needed to select Nodelist as there is a list in the main payload: 
+6. Add this `Xpath` Expression in the Processing Tab: `/AppGyverSalesOrder/paymentData` and select `Nodelist` as the `Valuetype`. It is needed to select `Nodelist` as there is a list in the main payload: 
 
     <!-- cpes-file db/schema.cds -->
     ```JSON
@@ -80,7 +80,7 @@ author_profile: https://github.com/mariajosesap
 
     ![Filter Task](filter_task.png)
 
-7. Add a XML to JSON converter. Stripe needs a JSON object to create the payment transaction. Make sure you select UTF-8 as the JSON Output Encoding, and check the box "Suppress JSON Root Element", this is important to be able to enter the data inside the XPath Expression without the "parent" root:
+7. Add a XML to JSON converter. Stripe needs a JSON object to create the payment transaction. Make sure you select UTF-8 as the JSON Output Encoding, and check the box "Suppress JSON Root Element", this is important to be able to enter the data inside the `XPath` Expression without the "parent" root:
 
     ![XML to JSON Converter](xml_to_json.png)
 
@@ -97,7 +97,7 @@ author_profile: https://github.com/mariajosesap
 
 ### Add a Get Task
 
-1. Add a Get task to retrieve the initial payload. You have to put the same name and entry ID as you did in the Write task. Check the “Delete On Completion” box, to delete the stored message when the iFlow transaction is completed.
+1. Add a Get task to retrieve the initial payload. You have to put the same name and entry ID as you did in the Write task. Check the "Delete On Completion" box, to delete the stored message when the Integration Flow transaction is completed.
 
     ![Get Task](get_task.png)
 

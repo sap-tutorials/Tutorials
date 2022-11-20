@@ -1,31 +1,31 @@
 ---
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-sales-service-core, software-product>sap-business-technology-platform, software-product>sap-appgyver  ]
+tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-business-technology-platform, software-product>sap-appgyver,software-product>build ]
 primary_tag: software-product>sap-appgyver
 parser: v2
 author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
-# Integrate SAP AppGyver with SAP Integration Suite
-<!-- description --> how to test request calls in SAP AppGyver to a SAP Integration Suite API and how to set up the needed schema for sending payloads.
+# Integrate SAP Build Apps with SAP Integration Suite
+<!-- description --> how to test request calls in SAP Build Apps (formerly SAP AppGyver) to a SAP Integration Suite API and how to set up the needed schema for sending payloads.
 
 ## Prerequisites
 
  - You have a SAP BTP account or trial account with access to the SAP Integration Suite.
- - You have a SAP AppGyver account or trial account.
+ - You have a SAP Build Apps account or trial account.
  - You have completed the previous tutorial [Configure SAP API Management policies to avoid CORS issues and generate an API Key](btp-integration-suite-integral-api-management).
 
 
 ## You will learn
 
-  - How to test request calls in SAP AppGyver to a SAP Integration Suite API.
+  - How to test request calls in SAP Build Apps to a SAP Integration Suite API.
   - How to set up the needed schema for sending payloads.
-  - How to retrieve data from a request call's response.
+  - How to retrieve data from a request call's response. 
 
-### Add the API Endpoint in SAP AppGyver
+### Add the API Endpoint in SAP Build Apps
 
-1. Go to your SAP AppGyver custom app, click on `Data` on the menu and Add a Data Resource and select `REST API direct integration`. Remember that for this exercise, it is needed to create first a custom mobile application from this [blog post](https://blogs.sap.com/2022/05/08/get-data-from-a-json-object-by-scanning-a-qr-code-with-sap-appgyver/).
+1. Go to your SAP Build Apps custom app, click on `Data` on the menu and Add a Data Resource and select `REST API direct integration`. Remember that for this exercise, it is needed to create first a custom mobile application from this [blog post](https://blogs.sap.com/2022/05/08/get-data-from-a-json-object-by-scanning-a-qr-code-with-sap-appgyver/).
 
     ![Creating a new API connection](adding_api_appgyver.png)
 
@@ -63,7 +63,7 @@ author_profile: https://github.com/mariajosesap
     }
     }
     ```
-    So to "translate it" into the custom schema in SAP AppGyver, you'll need to add these properties manually, as shown in the following image:
+    So to "translate it" into the custom schema in SAP Build Apps, you'll need to add these properties manually, as shown in the following image:
 
     ![Adding the schema propertis for Payloads to be sent](adding_schema_properties.png)
 
@@ -79,13 +79,13 @@ author_profile: https://github.com/mariajosesap
 
     ![Test response](test_response.png)
 
-7. If you check on your Stripe developers account, you can see the amount and description "Ta dá!! Integration scenario is set up":
+7. If you check on your Stripe developers account, you can see the amount and description "Ta da!! Integration scenario is set up":
 
     ![Test Stripe charge](test_stripe.png)
 
 ### Create a variable from the request call's response
 
-1. Click on Set Schema From Response to let AppGyver know you want to create a variable for getting the receipt URL.
+1. Click on Set Schema From Response to let Build Apps know you want to create a variable for getting the receipt URL.
 
     ![Set schema from response](set_schema_response.png)
 
@@ -101,11 +101,11 @@ author_profile: https://github.com/mariajosesap
 
 ### Update your variables to send the Payload
 
-Remember you're following this previous exercise of a custom application developed in SAP AppGyver (as mentioned in the prerequisites first tutorial). The differences are:
+Remember you're following this previous exercise of a custom application developed in SAP Build Apps (as mentioned in the prerequisites first tutorial). The differences are:
 
-1. Add one field to the QR code (ProductID) for the purpose of the integration exercise and update the variables you've already created in the SAP AppGyver app. Of course, in reality you would want to add as many Product fields as necessary to execute the Sales Order transaction.
+1. Add one field to the QR code `ProductID` for the purpose of the integration exercise and update the variables you've already created in the SAP Build Apps app. Of course, in reality you would want to add as many Product fields as necessary to execute the Sales Order transaction.
 
-2. Add an additional Button (to trigger the API call) and an WebView component (to see the Stripe's payment confirmation with the receipt url).
+2. Add an additional Button (to trigger the API call) and an `WebView` component (to see the Stripe's payment confirmation with the `receipt url`).
 
 ### Create a page variable with a new JSON Object
 
@@ -123,7 +123,7 @@ Remember you're following this previous exercise of a custom application develop
 
     ![Create a page variable](save_generated_qrcode.png)
 
-2. Go back to your SAP AppGyver custom app, and click on `View – Variables`, go to Page Variables and update them by adding `ProductID` as a new property of the parsed Json object:
+2. Go back to your SAP Build Apps custom app, and click on `View – Variables`, go to Page Variables and update them by adding `ProductID` as a new property of the parsed Json object:
 
     ![Add Product ID into your page variable](add_productid.png)
 
@@ -154,7 +154,7 @@ Remember you're following this previous exercise of a custom application develop
 4. Select the button and click on the bottom-right "Show logic for BUTTON" and add a `Create Record` logic component.
 
     - In the Resource name: select the Data Resource Id you created before `IntegrationSuite_API_CORS`
-    - For the Records properties: here you'll see the custom schema we created before for requesting POST calls from SAP AppGyver.
+    - For the Records properties: here you'll see the custom schema we created before for requesting POST calls from SAP Build Apps.
 
         ![Create Record Logic](create_record.png)
 
@@ -166,7 +166,7 @@ Remember you're following this previous exercise of a custom application develop
 
     ![Save Create Record](create_record_productid_saved.png)
 
-    If you want, you can create as may variables as you want to make the exercise more dynamic. As I mentioned before, for the purpose of the integration exercise I'm using only `ProductID`. You'll see your payload structured in AppGyver, like this:
+    If you want, you can create as may variables as you want to make the exercise more dynamic. As I mentioned before, for the purpose of the integration exercise I'm using only `ProductID`. You'll see your payload structured in Build Apps, like this:
 
     ![Data Binding](binding_create_record.png)
 
@@ -206,7 +206,7 @@ Now it's time to test the app and the whole integration.
 
 ### Test the whole integration scenario
 
-1. Grab your phone and enter your SAP AppGyver mobile app. Link it to your account as explained in the original exercise. Read the generated QR code:
+1. Grab your phone and enter your SAP Build Apps mobile app. Link it to your account as explained in the original exercise. Read the generated QR code:
 
     ![Product QR Code](generated_qrcode.png)
 
@@ -218,7 +218,7 @@ Now it's time to test the app and the whole integration.
 
     ![SAP Sales and Service Core test](c4c_test.png)
 
-Congratulations! You've successfully created an end-to-end integration scenario leveraging low-code/no-code capabilities from the SAP Integration Suite and SAP AppGyver, for integrating SAP and third-party solutions.
+Congratulations! You've successfully created an end-to-end integration scenario leveraging low-code/no-code capabilities from the SAP Integration Suite and SAP Build Apps, for integrating SAP and third-party solutions.
 
 ### Review the conclusions
 
@@ -231,11 +231,11 @@ Just to summarize, you've integrated solutions and services from:
     - SAP Open Connectors
     - SAP API Management
     - SAP Cloud Integration
-- SAP AppGyver
+- SAP Build Apps (formerly SAP AppGyver)
 
 To create a Sales Order in SAP Sales and Service Core, after a the payment transaction using Stripe is successful, and then sending a SMS with the Order Id confirmation.
 
-Hope you’ve enjoyed this exercise!
+Hope you've enjoyed this exercise!
 
 ### Check your knowledge
 

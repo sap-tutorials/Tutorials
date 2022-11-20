@@ -82,7 +82,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate.png)
 
->**Hint:** `$self` means that the instance of the same type is returned on which the operation is performed – here a travel instance.
+>**HINT:** `$self` means that the instance of the same type is returned on which the operation is performed – here a travel instance.
 
 
 ### Enhance behavior definition for projection view
@@ -114,9 +114,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ### Create implementation class
 
-
   1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZBP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zbp_i_travel_m_xxx`** to create your implementation class.
-
 
       ![Create behavior implementation](implementationx.png)
 
@@ -132,8 +130,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior implementation](implementation3.png)
 
-
-    >**Hint:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
+    >**HINT:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
 
 
 ### Enhance behavior implementation
@@ -248,7 +245,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDCLASS.
     ```
 
-    >**Hint:** The code does the following:
+    >**HINT:** The code does the following:
 
     >- Read data for the travel instance from the transactional buffer.
 
@@ -377,48 +374,48 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   1. Now you will implement an action. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
 
     ```ABAP
-      ********************************************************************************
-      *
-      * Implements travel action (in our case: for setting travel overall_status to completed)
-      *
-      ********************************************************************************
-        METHOD set_status_completed.
+    ********************************************************************************
+    *
+    * Implements travel action (in our case: for setting travel overall_status to completed)
+    *
+    ********************************************************************************
+    METHOD set_status_completed.
 
-          " Modify in local mode: BO-related updates that are not relevant for authorization checks
-          MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-                 ENTITY travel
-                    UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
-                                                           overall_status = 'A' " Accepted
-                                                           %control-overall_status = if_abap_behv=>mk-on ) )
-                 FAILED   failed
-                 REPORTED reported.
+      " Modify in local mode: BO-related updates that are not relevant for authorization checks
+      MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+             ENTITY travel
+                UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
+                                                       overall_status = 'A' " Accepted
+                                                       %control-overall_status = if_abap_behv=>mk-on ) )
+             FAILED   failed
+             REPORTED reported.
 
-          " Read changed data for action result
-          READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-               ENTITY travel
-               FROM VALUE #( FOR key IN keys (  mykey = key-mykey
-                                                %control = VALUE #(
-                                                  agency_id       = if_abap_behv=>mk-on
-                                                  customer_id     = if_abap_behv=>mk-on
-                                                  begin_date      = if_abap_behv=>mk-on
-                                                  end_date        = if_abap_behv=>mk-on
-                                                  booking_fee     = if_abap_behv=>mk-on
-                                                  total_price     = if_abap_behv=>mk-on
-                                                  currency_code   = if_abap_behv=>mk-on
-                                                  overall_status  = if_abap_behv=>mk-on
-                                                  description     = if_abap_behv=>mk-on
-                                                  created_by      = if_abap_behv=>mk-on
-                                                  created_at      = if_abap_behv=>mk-on
-                                                  last_changed_by = if_abap_behv=>mk-on
-                                                  last_changed_at = if_abap_behv=>mk-on
-                                                ) ) )
-               RESULT DATA(lt_travel).
+      " Read changed data for action result
+      READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+           ENTITY travel
+           FROM VALUE #( FOR key IN keys (  mykey = key-mykey
+                                            %control = VALUE #(
+                                              agency_id       = if_abap_behv=>mk-on
+                                              customer_id     = if_abap_behv=>mk-on
+                                              begin_date      = if_abap_behv=>mk-on
+                                              end_date        = if_abap_behv=>mk-on
+                                              booking_fee     = if_abap_behv=>mk-on
+                                              total_price     = if_abap_behv=>mk-on
+                                              currency_code   = if_abap_behv=>mk-on
+                                              overall_status  = if_abap_behv=>mk-on
+                                              description     = if_abap_behv=>mk-on
+                                              created_by      = if_abap_behv=>mk-on
+                                              created_at      = if_abap_behv=>mk-on
+                                              last_changed_by = if_abap_behv=>mk-on
+                                              last_changed_at = if_abap_behv=>mk-on
+                                            ) ) )
+           RESULT DATA(lt_travel).
 
-          result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
-                                                      %param    = travel
-                                                    ) ).
+      result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
+                                                  %param    = travel
+                                                ) ).
 
-        ENDMETHOD.
+    ENDMETHOD.
     ```
 
     >**NOTE:**
@@ -435,7 +432,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ### Implement determination
 
 
-  >**Hint:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
+  >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
   To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
   Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
 
@@ -468,7 +465,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDMETHOD.
     ```
 
-    >**Hint:** The code:
+    >**HINT:** The code:
     >- Checks if TravelID is already filled
     >- Removes lines where TravelID is already filled
     >- Gets maximum travelID
@@ -748,16 +745,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Enhance behavior definition for projection view](projection5.png)
 
-      >**Hint: If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.**
-   
-
+    >**Hint:** If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.
 
 ### Test yourself
 
+---
 
-
-
-## Next
+### Next
 
 You can [deploy your ABAP application with SAP Business Application Studio](abap-environment-deploy-cf-production). Follow therefore the tutorial.
 
@@ -776,5 +770,4 @@ You can [deploy your ABAP application with SAP Business Application Studio](abap
 
 [Implicit Returning Parameters](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/aceaf8453d4b4e628aa29aa7dfd7d948.html )
 
-[`openSAP` RAP](https://open.sap.com/courses/cp13 )
----
+[RAP course: `openSAP`](https://open.sap.com/courses/cp13 )

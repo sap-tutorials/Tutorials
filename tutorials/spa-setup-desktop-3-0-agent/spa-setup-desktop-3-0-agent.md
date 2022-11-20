@@ -14,8 +14,6 @@ parser: v2
 <!-- description --> Install and Set Up the Desktop Agent 3 to run your automations
 
 
-The Desktop Agent 3 is a component of SAP Process Automation that is installed locally on user desktops. It executes automation projects that launch and run applications of various kinds, read information from screens, enter data, click options, and process data.
-
 ## Prerequisites
  - A Windows PC
  - If you are using a MAC, please install a VDI
@@ -23,6 +21,9 @@ The Desktop Agent 3 is a component of SAP Process Automation that is installed l
 ## You will learn
   - How to install the Desktop Agent 3
   - How to register a tenant in the Desktop Agent 3
+
+## Intro
+The Desktop Agent 3 is a component of SAP Process Automation that is installed locally on user desktops. It executes automation projects that launch and run applications of various kinds, read information from screens, enter data, click options, and process data.
 
 ---
 

@@ -68,7 +68,7 @@ The following cases are not supported in multi-user mode:
 
     Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
-4.  Re-run (quit first) the app and notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
+4.  Reset (or re-install) the app and do the onboarding again. Notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **Switch or add user** button at the bottom of the screen.
 
     <!-- border -->![Sign in screen](sign-in-screen.png)
 
@@ -95,7 +95,7 @@ The following cases are not supported in multi-user mode:
 
     Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
-4.  Re-run (quit first) the app and notice that the onboarding process is same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the sign in screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
+4.  Re-run (quit first) the app and notice that the onboarding process is same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the sign in screen appears. In multi-user mode, there is a **Switch or add user** button at the bottom of the screen.
 
     <!-- border -->![Sign in screen](sign-in-screen.png)
 
@@ -111,7 +111,7 @@ The following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Java]]
 
-1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
+1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the **SAP Mobile Services cockpit** and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
     <!-- border -->![Cockpit app screen](cockpit-app.png)
 
@@ -137,7 +137,7 @@ The following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Kotlin]]
 
-1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
+1.  For an offline application, you have to enable the **Allow Upload of Pending Changes from Previous User** option on the server side first. Go to the **SAP Mobile Services cockpit** and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
     <!-- border -->![Cockpit app screen](cockpit-app.png)
 
