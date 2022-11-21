@@ -9,7 +9,6 @@ parser: v2
 author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
-# Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration
 
 ## Prerequisites
 

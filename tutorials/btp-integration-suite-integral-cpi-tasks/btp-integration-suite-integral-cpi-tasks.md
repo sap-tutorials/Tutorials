@@ -9,8 +9,6 @@ parser: v2
 author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
-# Save, Filter and Get your needed data in your Integration Flow
-<!-- description --> Boost your Integration Suite skills leveraging different tasks to store, get and filter messages travelling through your Integration Flow for executing other operations.
 
 ## Prerequisites
 
