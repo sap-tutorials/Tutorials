@@ -14,7 +14,7 @@ author_profile: https://github.com/mariajosesap
 ## Prerequisites
 
  - You have a SAP BTP account or trial account with access to the SAP Integration Suite.
- - You have completed the previous tutorial [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-service-core).
+ - You have completed the previous tutorial [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-core).
  - You have a Twilio account or trial account. In the Twilio documentation, you'll see 3 needed URL encoded parameters to be sent to trigger the API call, which are:
 
     - From <Twilio sender's phone number>
