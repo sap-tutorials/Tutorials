@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, software-product>sap-business-technology-platform, software-product>sap-btp-cloud-foundry-environment]
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
