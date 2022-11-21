@@ -109,7 +109,7 @@ author_profile: https://github.com/mariajosesap
 
 Now, you have successfully retrieve the initial payload using Write and Get task, plus learnt how to filter data using Filter task and `XPath` expressions.
 
-Following the Tutorial Series, you now need to configure the SAP Sales and Service Core API consumption to create Sales Orders. For this step, check out the next tutorial: [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-service-core).
+Following the Tutorial Series, you now need to configure the SAP Sales and Service Core API consumption to create Sales Orders. For this step, check out the next tutorial: [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-core).
 
 ### Check your knowledge
 
