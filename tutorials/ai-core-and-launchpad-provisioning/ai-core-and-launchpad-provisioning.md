@@ -39,7 +39,7 @@ To find out more about free tier service plans, visit the [SAP Discovery Center]
 
 ### Provision SAP AI Core in your global account
 
-Open the SAP BTP cockpit and access your global account.
+<!-- border -->![Access the Control Centre](img/btpcontrolcentrecore.png)
 
 <!-- border -->![BTP Cockpit](img/btpcockpit.png)
 
@@ -62,18 +62,18 @@ Save your new entitlement.
 
 ### Run the booster for SAP AI Core
 
-Choose `Boosters` from the navigation pane. Find and choose the booster for `SAP AI Core` from the selection. 
+Choose `Boosters` from the navigation pane. Find and choose the booster for `SAP AI Core` from the selection.
 
 <!-- border -->![Locate the SAP AI Core booster](img/boostercore.png)
 
-The booster tile contains information about SAP AI Core.  Click `Start` when you are ready. 
+The booster tile contains information about SAP AI Core.  Click `Start` when you are ready.
 
 When you start a booster, a wizard opens up which guides you through the required steps.
 
 <!-- border -->![Start the booster](img/coreboosterstart.png)
 ### View your instances and create your keys
 
-In the subaccount section of SAP BTP Cockpit, choose `Services` from the left navigation menu and `Instances and subscriptions` from the page. 
+In the subaccount section of SAP BTP Cockpit, choose `Services` from the left navigation menu and `Instances and subscriptions` from the page.
 
 <!-- border -->![View instances and subscriptions](img/instancesandsubscriptions.png)
 
@@ -101,7 +101,7 @@ Configure your entitlement as before, but select `SAP AI Launchpad`.
 <!-- border -->![SAP AI Launchpad account information](img/lpentitlement.png)
 ### Run the booster for SAP AI Launchpad
 
-Choose `Boosters` from the navigation pane, and then choose the booster for `SAP AI Launchpad` from the selection. 
+Choose `Boosters` from the navigation pane, and then choose the booster for `SAP AI Launchpad` from the selection.
 
 <!-- border -->![Locate the booster for SAP AI Launchpad](img/boosterailp.png)
 
