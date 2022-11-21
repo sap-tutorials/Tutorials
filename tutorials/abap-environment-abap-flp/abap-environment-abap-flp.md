@@ -20,14 +20,14 @@ author_profile: https://github.com/mervey45
 - You need to have business catalog `SAP_CORE_BC_BCT_TRN_MNG_PC` and `SAP_CORE_BC_BCT_TRN_REL_PC` assigned to your user to see the app.
 - You need to [enable spaces layout](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/64a5e1675ce7413791a654d2228a90be.html?locale=en-US&state=TEST&version=2208.502) in SAP Fiori launchpad to see the app tiles, that are added to spaces or pages.
 
-## Intro
-Learn how to integrate your list report application into ABAP Fiori launchpad.
-
 ## You will learn  
-- How to make use of IAM App and business catalog
+- How to make use of IAM App and business catalogs
 - How to create business roles
 - How to pin business catalogs
 - How to create spaces and pages
+
+## Intro
+Learn how to integrate your list report application into ABAP Fiori launchpad.
 
 ---
 ### Make use of existing IAM App and business catalog
