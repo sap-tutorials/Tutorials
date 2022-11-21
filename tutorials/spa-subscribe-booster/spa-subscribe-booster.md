@@ -17,8 +17,10 @@ primary_tag: software-product>sap-process-automation
 ## You will learn
   - How to activate SAP Process Automation in SAP BTP Free Tier
 
----
+## Intro
 SAP Process Automation in the SAP Business Technology Platform combines the capabilities of SAP Workflow Management and SAP Intelligent RPA in an easy-to-use, no-code AI-powered experience. It increases organizations' capacity to drive process automation by empowering business experts to become citizen developers. Leveraging the power of no-code, citizen developers can build, adapt, improve, and innovate business processes with minimum assistance from scarce IT resources.
+
+---
 
 ### Creation of SAP BTP Free Tier Account
 

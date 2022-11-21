@@ -45,35 +45,59 @@ In this section you will create a new activity to display a map.
 
 4.  Click **Finish**.
 
-5.  In the **`google_maps_api.xml`**, on line 7 correct the package name at the end of the line to be **`com.sap.wizapp`** only.
+5.  In the `AndroidManifest.xml` file, copy the URL on line 18.
 
-6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an **API Key** and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
+6.  Paste the URL into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an **API Key**.
 
-7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+7.  Open the `local.properties` file in your project-level directory and then add the following code. Replace `YOUR_API_KEY` with your API key.
+    ```
+    MAPS_API_KEY=YOUR_API_KEY
+    ```
 
-8.  On Windows, press **`Ctrl+F`**, or, on a Mac press **`command+F`**, and search for **`CustomersActivity.class`**.
+8.  In your `AndroidManifest.xml` file, go to `com.google.android.geo.API_KEY` and update the `android:value` attribute as follows:
+    ```XML
+    <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="${MAPS_API_KEY}" />
+    ```
 
-9.  Replace `CustomersActivity.class` with **`CustomersMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with a map on it.
+9.  Press **`Shift`** twice, and type **`build.gradle`** to open the project's `build.gradle` file.
 
-10.  On Windows press **`Ctrl+N`** or on a Mac press **`command+O`**, and type **`CustomersMapActivity`** to open `CustomersMapActivity.java`.
+10.  Update the version of `com.android.tools.build:gradle` in the `dependencies` block from 4.0.0 to 7.0.0.
 
-11.  Add the following import if it doesn't automatically add itself:
+11.  Press **`Shift`** twice, and type **`gradle-wrapper.properties`** to open the `gradle-wrapper.properties` file.
+
+12. Upgrade the version of `gradle` in `distributionUrl` from 6.1.1 to 7.0.2.
+
+13. Press **`Shift`** twice and type **`gradle.properties`** to open the `gradle.properties` file.
+
+14. Remove the `android.jetifier.blacklist=bcprov-jdk15on` line and click **`Sync Now`** to sync the `gradle` file.
+
+15.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+
+16.  On Windows, press **`Ctrl+F`**, or, on a Mac press **`command+F`**, and search for **`CustomersActivity.class`**.
+
+17.  Replace `CustomersActivity.class` with **`CustomersMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity that includes a map.
+
+18.  On Windows press **`Ctrl+N`** or on a Mac press **`command+O`**, and type **`CustomersMapActivity`** to open `CustomersMapActivity.java`.
+
+19.  Add the following import if it doesn't automatically add itself:
 
     ```Java
     import com.sap.wizapp.R;
     ```
 
-12.  Find the following import:
+20.  Find the following import:
     ```Java
     import com.sap.wizapp.mdui.customers.databinding.ActivityCustomersMapBinding;
     ```
 
-13.  Change it to the following import:
+21.  Change it to the following import:
     ```Java
     import com.sap.wizapp.databinding.ActivityCustomersMapBinding;
     ```
 
-14.  Run the app. Select **Customers**.
+22.  Run the app. Select **Customers**.
 
     <!-- border -->![Entities screen](tap-on-customers.png)
 
@@ -99,34 +123,58 @@ In this section you will create a new activity to display a map.
 
 4.  Click **Finish**.
 
-5.  In the **`google_maps_api.xml`**, on line 7 correct the package name at the end of the line to be **`com.sap.wizapp`** only.
+5.  In the `AndroidManifest.xml` file, copy the URL on line 18.
 
-6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android.  Follow the instructions to get an API key and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
+6.  Paste the URL into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an **API Key**.
 
-7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
+7.  Open the `local.properties` file in your project-level directory and then add the following code. Replace `YOUR_API_KEY` with your API key.
+    ```
+    MAPS_API_KEY=YOUR_API_KEY
+    ```
 
-8.  On Windows, press **`Ctrl+F`**, or, on a Mac press **`command+F`**, and search for **`CustomersActivity::class`**.
+8.  In your `AndroidManifest.xml` file, go to `com.google.android.geo.API_KEY` and update the `android:value` attribute as follows:
+    ```XML
+    <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="${MAPS_API_KEY}" />
+    ```
 
-9.  Replace `CustomersActivity::class` with **`CustomersMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with a map on it.
+9.  Press **`Shift`** twice, and type **`build.gradle`** to open the project's `build.gradle` file.
 
-10.  On Windows press **`Ctrl+N`** or on a Mac press **`command+O`**, and type **`CustomersMapActivity`** to open `CustomersMapActivity.kt`.
+10.  Update the version of `com.android.tools.build:gradle` in the `dependencies` block from 4.0.0 to 7.0.0.
 
-11.  Add the following import if it doesn't automatically add itself:
+11.  Press **`Shift`** twice, and type **`gradle-wrapper.properties`** to open the `gradle-wrapper.properties` file.
+
+12. Upgrade the version of `gradle` in `distributionUrl` from 6.1.1 to 7.0.2.
+
+13. Press **`Shift`** twice and type **`gradle.properties`** to open the `gradle.properties` file.
+
+14. Remove the `android.jetifier.blacklist=bcprov-jdk15on` line and click **`Sync Now`** to sync the `gradle` file.
+
+15.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
+
+16.  On Windows, press **`Ctrl+F`**, or, on a Mac press **`command+F`**, and search for **`CustomersActivity::class`**.
+
+17.  Replace `CustomersActivity::class` with **`CustomersMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity that includes a map.
+
+18.  On Windows press **`Ctrl+N`** or on a Mac press **`command+O`**, and type **`CustomersMapActivity`** to open `CustomersMapActivity.kt`.
+
+19.  Add the following import if it doesn't automatically add itself:
     ```Kotlin
     import com.sap.wizapp.R
     ```
 
-12.  Find the following import:
+20.  Find the following import:
     ```Kotlin
     import com.sap.wizapp.mdui.customers.databinding.ActivityCustomersMapBinding
     ```
 
-13.  Change it to the following import:
+21.  Change it to the following import:
     ```Kotlin
     import com.sap.wizapp.databinding.ActivityCustomersMapBinding
     ```
 
-14.  Run the app. Select **Customers**.
+22.  Run the app. Select **Customers**.
 
     <!-- border -->![Entities screen](tap-on-customers.png)
 
@@ -139,7 +187,7 @@ In this section you will create a new activity to display a map.
 [OPTION END]
 
 
-### Populate the map with customer locations 
+### Populate the map with customer locations
 
 In this section, you will add code to place a marker on the map for each customer.
 
@@ -554,7 +602,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </style>
     ```
 
-3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+3.  Add the following dependency in the app module's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -599,7 +647,6 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     </LinearLayout>
     ```
-
 
 6.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
@@ -711,6 +758,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
             // Setup toolbar buttons and add to the view.
             SettingsButton settingsButton = new SettingsButton(mGoogleFioriMapView.getToolbar().getContext());
             LegendButton legendButton = new LegendButton(mGoogleFioriMapView.getToolbar().getContext());
+            legendButton.setEnabled(true);
             LocationButton locationButton = new LocationButton(mGoogleFioriMapView.getToolbar().getContext());
             ZoomExtentButton extentButton = new ZoomExtentButton(mGoogleFioriMapView.getToolbar().getContext());
             ImageButton[] buttons = {settingsButton, legendButton, locationButton, extentButton};
@@ -941,7 +989,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </style>
     ```
 
-3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+3.  Add the following dependency in the app module's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -1082,6 +1130,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
             // Setup toolbar buttons and add to the view.
             val settingsButton = SettingsButton(mGoogleFioriMapView.toolbar.context)
             val legendButton = LegendButton(mGoogleFioriMapView.toolbar.context)
+            legendButton.isEnabled = true
             val locationButton = LocationButton(mGoogleFioriMapView.toolbar.context)
             val extentButton = ZoomExtentButton(mGoogleFioriMapView.toolbar.context)
             val buttons = arrayOf<ImageButton>(settingsButton, legendButton, locationButton, extentButton)
@@ -1412,7 +1461,6 @@ In this section, the bottom panel will be populated with details of the selected
             }
         }
     }
-
     ```
 
 4.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and search for **`onMapCreated`**.
@@ -1941,7 +1989,7 @@ In this section, you will test the three different types of annotations.
 
     <!-- border -->![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, restart it, and try the button again.)
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, try google **Maps** app first, then restart the app, and try the button again.)
 
     <!-- border -->![Zoom into current location](current-location-effect.png)
 
@@ -1954,7 +2002,7 @@ In this section, you will test the three different types of annotations.
     <!-- border -->![Edit annotations panel](edit-annotations.png)
 
 12.  To add the current location as a point:
-    -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
+    -	Tap on the **ADD POINT** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         <!-- border -->![Add point button in panel](add-point.png)
 
@@ -2064,7 +2112,7 @@ In this section, you will test the three different types of annotations.
 9.  Select the saved point and tap **SET LOCATION** to set the default location.
     <!-- border -->![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, restart it, and try the button again.)
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, try google **Maps** app first, then restart the app, and try the button again.)
 
     <!-- border -->![Zoom into current location](current-location-effect.png)
 
@@ -2077,7 +2125,7 @@ In this section, you will test the three different types of annotations.
     <!-- border -->![Edit annotations panel](edit-annotations.png)
 
 12.  To add the current location as a point:
-    -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
+    -	Tap on the **ADD POINT** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         <!-- border -->![Add point button in panel](add-point.png)
 
@@ -2215,7 +2263,7 @@ Congratulations. You have created an activity that makes use of the Fiori map co
 
 
 
-### Esri map
+### `Esri` map
 
 
 In this section, an `EsriFioriMapView` will be used.
@@ -2237,13 +2285,13 @@ In this section, an `EsriFioriMapView` will be used.
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file.
+3.  Add the following dependency to the app module's `build.gradle` file.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  Add the following to the `android` block of the app's `build.gradle` file and click **Sync Now**.
+4.  Add the following to the `android` block of the app module's `build.gradle` file and click **Sync Now**.
 
     ```Gradle
     packagingOptions {
@@ -2339,6 +2387,7 @@ In this section, an `EsriFioriMapView` will be used.
             // Setup toolbar buttons and add to the view.
             SettingsButton settingsButton = new SettingsButton(mEsriFioriMapView.getToolbar().getContext());
             LegendButton legendButton = new LegendButton(mEsriFioriMapView.getToolbar().getContext());
+            legendButton.setEnabled(true);
             LocationButton locationButton = new LocationButton(mEsriFioriMapView.getToolbar().getContext());
             ZoomExtentButton extentButton = new ZoomExtentButton(mEsriFioriMapView.getToolbar().getContext());
             ImageButton[] buttons = {settingsButton, legendButton, locationButton, extentButton};
@@ -2519,13 +2568,13 @@ In this section, an `EsriFioriMapView` will be used.
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file.
+3.  Add the following dependency to the app module's `build.gradle` file.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  Add the following to the `android` block of the app's `build.gradle` file and click **Sync Now**.
+4.  Add the following to the `android` block of the app module's `build.gradle` file and click **Sync Now**.
 
     ```Gradle
     packagingOptions {
@@ -2611,6 +2660,7 @@ In this section, an `EsriFioriMapView` will be used.
             // Setup toolbar buttons and add to the view.
             val settingsButton = SettingsButton(mEsriFioriMapView.toolbar.context)
             val legendButton = LegendButton(mEsriFioriMapView.toolbar.context)
+            legendButton.isEnabled = true
             val locationButton = LocationButton(mEsriFioriMapView.toolbar.context)
             val extentButton = ZoomExtentButton(mEsriFioriMapView.toolbar.context)
             val buttons = arrayOf<ImageButton>(settingsButton, legendButton, locationButton, extentButton)

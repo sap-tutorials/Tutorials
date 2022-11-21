@@ -14,18 +14,15 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
  - Created the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation) and also the [decision](spa-dox-create-decision) to come to this point in the process
 
+## You will learn
+   - How to leverage the result of the Decision in an approval form
+   - How to create an approval form
+   - How to create forms to notify process participants
 
 ## Intro
-There are different requirements and business situations when a form is needed in a business process. You have already created a form to start the process.
-Most often you probably need a form to maintain some input data or to approve or reject a request or even to send out some notifications.
-The two latter ones are your focus now.
+There are different requirements and business situations when a form is needed in a business process. You have already created a form to start the process. Most often you probably need a form to maintain some input data or to approve or reject a request or even to send out some notifications. The two latter ones are your focus now.
 
-## You will learn
-  - How to leverage the result of the Decision in an approval form
-  - How to create an approval form
-  - How to create forms to notify process participants
-
---
+---
 
 ### Create New Approval Form
 
@@ -34,7 +31,7 @@ The two latter ones are your focus now.
 
     <!-- border -->![New Approval Form](01.png)
 
-2. Maintain the **Name** **`Invoice Approval Process`** and also the **Description** **`Form to approve the invoice`**. Choose **Create**. The **Identifier** is created automatically.
+2. Maintain the **Name** **`Invoice Approval Form`** and also the **Description** **`Form to approve the invoice`**. Choose **Create**. The **Identifier** is created automatically.
 
     <!-- border -->![Maintain approval form name](02.png)
 
@@ -42,7 +39,7 @@ The two latter ones are your focus now.
 
     <!-- border -->![Open Editor](03.png)
 
-4. Now you are in the Form's Editor, where you can define the layout and input fields. First add via drag and drop a new **Headline 1** to the canvas.   Provide this headline **`Invoice Approval`**.
+4. Now you are in the Form's Editor, where you can define the layout and input fields. First add via drag and drop a new **Headline 1** into the canvas.   Provide this headline **`Invoice Approval`**.
 
     <!-- border -->![Add Headline](04.png)
 
@@ -78,16 +75,15 @@ The two latter ones are your focus now.
 
     <!-- border -->![Select Item](10.png)
 
-12. Enter the text **`Please approve the invoice`** and add the process content **Document Number**. You will find this underneath **Invoice Details**.
-This combines plain text with process-related information and serves as an unique identifier for the end user.
+12. Enter the text **`Please approve the invoice`** and add the process content **Document Number**. You will find this underneath **Invoice Details**. This combines plain text with process-related information and serves as an unique identifier for the end user.
 
     <!-- border -->![Add process content](11.png)
 
-13. In the Decision you have defined the approver of the invoice. The output of the decision has been an email address. Now add from the process content within **determine Approver Output** the **eMail** in the **Recipients** as **Users**. Now only the selected approver will get this approval in the inbox.
+13. In the Decision you have defined the approver of the invoice. The output of the decision has been an email address. Now add from the process content within **`Approver_Output`** the **eMail** in the **Recipients** as **Users**. This means only the selected approver will get this approval in the inbox.
 
     <!-- border -->![Approval user](12.png)
 
-14. Switch to the **Inputs** tab and within **Employee Name** choose **Select Item**. The process content will be opened again.
+14. Switch to the **Inputs** tab and within **Employee Name** choose **Select Item**. The process content will open again.
 
     <!-- border -->![Approval Form inputs](14.png)
 
@@ -109,6 +105,7 @@ This combines plain text with process-related information and serves as an uniqu
 
     <!-- border -->![Check Approval Form inputs](16.png)
 
+17. **Save** your work.
 
 
 ### Create Approval Notification Form
@@ -130,11 +127,13 @@ This combines plain text with process-related information and serves as an uniqu
 
     <!-- border -->![Invoice Approval Notification Form](20.png)
 
-5. Go back to the process select **Invoice Approval Notification Form** to maintain the information in **General** tab.
+5. Go back to the process, select **Invoice Approval Notification Form** to maintain the information in **General** tab.
 
     <!-- border -->![Approval Notification General](21.png)
 
-6. Maintain **Subject** and select for the **Users** in this case **Process Started By** from the process content.
+6. Maintain **Subject**, choose **Select Item** and type **`Approved Invoice:`** and add the process content **Document Number**.
+
+7. Select for the **Users** in this case **Process Started By** from the process content.
 
     <!-- border -->![Approval Notification General Entries](22.png)
 
@@ -145,43 +144,80 @@ This combines plain text with process-related information and serves as an uniqu
 8. **Save** your work.
 
 
-
 ### Create Rejection Notification Form
 
+With this you completed designing and configuring the notification form. You can copy the same form to create another form to send a rejection notification to the requester.
 
-1. Select **+** of the **Reject** control flow from the **Invoice Approval Form**. Select **Forms > New Form**.
+> If copy is not available then create the form in the same way and modify the texts wherever relevant as shown below.
 
-    <!-- border -->![New Rejection Notification form](24.png)
+To add the new rejection form, you will use the **Duplicate** feature.
 
-2. Maintain the **Name** **`Invoice Reject Notification Form`** and also the **Description** **`Form to inform about the rejected invoice`** and choose **Create**. As always, the **Identifier** has been created automatically.
+**Duplicate** feature is used to copy artifacts within the Business Process whereas **Copy** feature is used to copy artifacts across the business processes.
 
-    <!-- border -->![Maintain Rejection Notification form](25.png)
+1. Click on the **Overview**.
 
-3. In the newly created **Invoice Reject Notification Form**, choose the three dots and select **Open Editor**.
+    <!-- border -->![Click Overview](Click-Overview.png)
 
-    <!-- border -->![Open Editor Rejection Notification form](26.png)
+2. In the **Overview** screen, do the following:
+    - Find **Invoice Approval Notification Form** under the **Artifacts** section and click on **...**.
+    - Choose **Duplicate**.
 
-4. In the form, add a headline **`Invoice Rejection`**, a paragraph **`Your invoice has been rejected.`** and again also a text field **`Invoice Number`** and select here **Read Only**. **Save** your work.
+    <!-- border -->![Duplicate Form](DuplicateForm.png)
+
+3. The duplicate artifact pop-up will appear.
+
+    <!-- border -->![Duplicate Artifact](DuplicateArtifact.png)
+
+4. Change the name to **`Invoice Reject Notification Form`** and click **Duplicate**.
+
+    <!-- border -->![Invoice Rejection Form](NameInvoiceRejectNotification.png)
+
+5. The **`Invoice Reject Notification Form`** is automatically opened in the form builder.
+
+    The screen shown will be the same as **`Invoice Approval Notification Form`**.
+
+    <!-- border -->![Invoice Rejection Form](DuplicatedForm.png)
+
+6. Change the invoice rejection form in the form builder to reflect the data for rejection case.
+
+7. Change the **Description** to **`Form to inform about the rejected invoice`** and the following fields to:
+
+    | Form Fields | Field Settings with Label
+    |  :------------- | :-------------
+    | Headline 1 | Invoice Rejection
+    | Paragraph  | Your invoice has been rejected
+
+
+8. Keep the text field **`Invoice Number`** and **Save** your work.
 
     <!-- border -->![Invoice Reject Notification Form](27.png)
 
-5. Go back to the process, select **Invoice Reject Notification Form** to maintain the information in **General** tab.
+9. Go back to the process builder and add the invoice rejection notification form to the process.
+
+       - Select **Invoice Approval Form** and Choose **+** option for the **Reject**
+       - Choose **Forms** and select **Invoice Reject Notification Form**
+
+       <!-- border -->![Add Invoice Rejection Notification](AddInvoiceRejectionNotification.png)
+
+10. Select **Invoice Reject Notification Form** to maintain the information in **General** tab.
 
     <!-- border -->![Reject Notification General](28.png)
 
-6. Maintain **Subject** and select for the **Users** in this case **Process Started By** from the process content.
+11. Maintain **Subject**, choose **Select Item** and type **`Rejected Invoice:`** and add the process content **Document Number**.
+
+12. Select for the **Users** in this case **Process Started By** from the process content.
 
     <!-- border -->![Reject Notification General Entries](29.png)
 
-7. Select **Inputs** tab and assign the **Invoice Number** from the process content here.
+13. Select **Inputs** tab and assign the **Invoice Number** from the process content here.
 
     <!-- border -->![Reject Notification Input](30.png)
 
-8. Add an end event, choose the **+** of the control flow from the **Invoice Reject Notification Form** and select **Controls > End**.
+14. Add an end event, choose the **+** of the control flow from the **Invoice Reject Notification Form** and select **Controls > End**.
 
     <!-- border -->![End event](31.png)
 
-9. Your process is ready to be released, deployed and executed. **Save** your work.
+15. Your process is ready to be released, deployed and executed. **Save** your work.
 
     <!-- border -->![Final process](32.png)
 

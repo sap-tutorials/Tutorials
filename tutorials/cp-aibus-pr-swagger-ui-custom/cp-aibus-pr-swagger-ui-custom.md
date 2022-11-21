@@ -31,11 +31,11 @@ In the service key you created for Personalized Recommendation in the previous t
 
 1. To access the Personalized Recommendation Swagger UI, add **`/doc`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    <!-- border -->![PRS](png-files/service-key-details.png)
+    <!-- border -->![PRS](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![PRS](png-files/Swagger.png)
+    <!-- border -->![PRS](Swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
@@ -43,11 +43,11 @@ In the service key you created for Personalized Recommendation in the previous t
     bearer <access_token>
     ```
 
-    <!-- border -->![PRS](png-files/Authorize.png)
+    <!-- border -->![PRS](Authorize.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    <!-- border -->![PRS](png-files/Authorize-close.png)
+    <!-- border -->![PRS](Authorize-close.png)
 
 
 
@@ -146,7 +146,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 2. Click **Try it out**.
 
-    <!-- border -->![PRS](png-filesTraining-section.png)
+    <!-- border -->![PRS](Training-section.png)
 
 3.  Enter tenant name. You must enter a name for the tenants, so please input a name of your choice.
 
@@ -154,11 +154,11 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 5.  Enter site name. A site name is also required, but if you leave this field blank, it is automatically filled with "default".
 
-    <!-- border -->![PRS](png-filesActions-required.png)
+    <!-- border -->![PRS](Actions-required.png)
 
 6.  Set `serve_model` to `true`. Make this setting to automatically deploy the real-time model serving instance.
 
-    <!-- border -->![PRS](png-filesSet-serve-model.png)
+    <!-- border -->![PRS](Set-serve-model.png)
 
 7.  Click the **Execute** button. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 2 trainings per month*. When you call the third training API, you get a 403 response stating that you have exceeded your quota for the month.
 
@@ -166,11 +166,11 @@ After you trigger the training, there are two possible outcomes:
 
 - Still ongoing, where the status is "PENDING", and code 200.
 
-    <!-- border -->![PRS](png-filesPending-status.png)
+    <!-- border -->![PRS](Pending-status.png)
 
 - Conflict, where the trigger clashed with the ongoing training from the previous trigger. The status is "Previously submitted job still in progress", and the code is 409.
 
-    <!-- border -->![PRS](png-filesConflict-error.png)
+    <!-- border -->![PRS](Conflict-error.png)
 
 
 
@@ -185,21 +185,21 @@ Use the **GET /standard/rs/v1/tenants/{tenant}/jobs/latest** endpoint to check t
 
 3. Enter tenant name and site name (must be exactly the same as in the previous step). Click **Execute**.
 
-<!-- border -->![PRS](png-filesLatest-path.png)
+<!-- border -->![PRS](Latest-path.png)
 
 There are three possible outcomes:
 
 - Job is still ongoing, with the status "SUBMITTED" and code 200. Please wait for around 5–10 minutes before rechecking the progress.
 
-    <!-- border -->![PRS](png-filesSubmitted-status.png)
+    <!-- border -->![PRS](Submitted-status.png)
 
 - The job is completed, with the status "SUCCEEDED" and code 200. You can now proceed to the next step.
 
-    <!-- border -->![PRS](png-filesSucceeded-status.png)
+    <!-- border -->![PRS](Succeeded-status.png)
 
 - The job fails, with status "FAILED" and code 200. Please retrigger the training and make sure that you have entered all information correctly.
 
-    <!-- border -->![PRS](png-filesFailed-status.png)
+    <!-- border -->![PRS](Failed-status.png)
 
 
 
@@ -212,7 +212,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** end
 
 1. Click the endpoint name to expand it.
 
-    <!-- border -->![PRS](png-filesInference-section.png)
+    <!-- border -->![PRS](Inference-section.png)
 
 2. Click **Try it out**.
 
@@ -246,19 +246,18 @@ You can expect the following responses:
 
 - The model is able to understand the request and successfully return a set of recommendations. This returns a 200 code, stating the recommended items with their respective confidence scores.
 
-    <!-- border -->![PRS](png-filesSuccessfully-return.png)
+    <!-- border -->![PRS](Successfully-return.png)
 
 - The user entered an incorrect payload. This returns a 400 code, stating that the model doesn't understand the payload request.
 
-    <!-- border -->![PRS](png-filesIncorrect-payload.png)
+    <!-- border -->![PRS](Incorrect-payload.png)
 
 - Forbidden. The user has exceeded their inference quota for the month. A short message is displayed with code 403. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 1000 inference requests per month*.
 
-    <!-- border -->![PRS](png-filesForbidden.png)
+    <!-- border -->![PRS](Forbidden.png)
 
 - The training process has not finished yet. This returns a 404 code, stating that no model instances were found.
 
-    <!-- border -->![PRS](png-filesNot-finished-yet.png)
+    <!-- border -->![PRS](Not-finished-yet.png)
 
 You have now successfully used the Personalized Recommendation service and your own dataset to train a machine learning model and get recommendations based on users' browsing history and/or item description.
-

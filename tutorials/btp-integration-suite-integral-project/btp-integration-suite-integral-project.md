@@ -1,14 +1,14 @@
 ---
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, tutorial>license, topic>mobile, software-product>sap-integration-suite, software-product>cloud-integration, software-product>open-connectors, software-product>api-management, software-product>sap-appgyver, software-product>sap-business-technology-platform, tutorial>free-tier ]
+tags: [ tutorial>advanced, tutorial>license, topic>mobile, software-product>sap-integration-suite, software-product>cloud-integration, software-product>open-connectors, software-product>api-management, software-product>sap-appgyver, software-product>build, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez
 author_profile: https://github.com/mariajosesap
 ---
-# Set Up Prerequisites for your SAP Integration Suite & SAP AppGyver Mission
-<!-- description --> This mission is intended for consultants/users who want to boost their integration skills, using SAP Integration Suite capabilities and SAP AppGyver to quickly develop a custom app that can consume SAP Integration Suite APIs.
+# Set Up Prerequisites for your SAP Integration Suite & SAP Build Apps Mission
+<!-- description --> This mission is intended for consultants/users who want to boost their integration skills, using SAP Integration Suite capabilities and SAP Build Apps (formerly SAP AppGyver) to quickly develop a custom app that can consume SAP Integration Suite APIs. 
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ author_profile: https://github.com/mariajosesap
   - How to generate a Sales Order consuming an OData service from a SAP Sales and Service Core (formerly SAP Cloud for Customer or C4C) environment
   - How to set up SMS as notification after the sales order is successfully created, using a Twilio API
   - How to apply API Management Policies to SAP Cloud Integration to avoid CORS issues and to securely trigger calls to the API with an API Key without having to expose the SAP BTP / Integration Suite credentials
-  - How to integrate it with SAP AppGyver, by enabling in the Data Connection the API Key to call the Cloud Integration Flow from SAP AppGyver
+  - How to integrate it with SAP Build Apps, by enabling in the Data Connection the API Key to call the Cloud Integration Flow from SAP Build Apps
 
 ## Intro
 
@@ -80,9 +80,9 @@ If you don't have a Twilio developers account, create a trial one [here](https:/
 
     ![Twilio](twilio.png)
 
-### Create an AppGyver account and application
+### Create an Build Apps account and application
 
-1. If you don't have a SAP AppGyver account, create a trial one [here](https://www.appgyver.com/) or enroll to the Free-Tier trial model [here](https://www.sap.com/products/technology-platform/trial.html)
+1. If you don't have a SAP Build Apps account, create a trial one [here](https://www.appgyver.com/) or enroll to the Free-Tier trial model [here](https://www.sap.com/products/technology-platform/trial.html)
 
 2. Create a custom app, follow this [blog post](https://blogs.sap.com/2022/05/08/get-data-from-a-json-object-by-scanning-a-qr-code-with-sap-appgyver/) to create an app that reads a QR code to get data from it.
 

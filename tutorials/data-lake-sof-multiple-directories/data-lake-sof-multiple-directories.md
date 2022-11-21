@@ -14,7 +14,7 @@ parser: v2
 
 ## Prerequisites
 -	Have access to a licensed managed or standalone SAP HANA data lake.
--	Installation of the HDLFSCLI. See tutorial Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers.
+-	Installation of the HDLFSCLI. See tutorial [Getting Started with Data Lake Files HDLFSCLI](developers.sap.com/tutorials/data-lake-file-containers-hdlfscli)
 -	Load some structured data files inside of a SAP HANA data lake File Container.
 -	Already set up HDLFS Connection in Database Explorer - Setting Up HDLFS Connection In Database Explorer.
 
@@ -28,7 +28,7 @@ parser: v2
 
 Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file container can be done using SQL on Files. Below you will find all of the steps required to start using SQL on Files.
 If you have not yet provisioned an SAP HANA data lake, here is a great tutorial on how to do so!
-Please go through the entire tutorial on **Use SQL on Files to query data from a single file/directory**
+Please go through the entire tutorial on [Use SOF to Query data from Single Directory](developers.sap.com/tutorials/data-lake-sof-single-directory)
 
 You will be using the Orders table as a reference.
 

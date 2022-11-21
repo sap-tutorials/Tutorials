@@ -20,15 +20,15 @@ author_profile: https://github.com/LindsayBert
  - Step 9.5 - Assign entitlements for Cloud Foundry environment: Select `Launchpad Service`as the service and select the `Free` plan.
  - Step 11 - Create a space: Enter `dev`as the name of your space.
 
-## Intro
->If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
-
 
 ## You will learn
   - How to manage entitlements for the Launchpad service
   - How to subscribe to the launchpad service
   - How to assign the `Launchpad_Admin` role to your user
   - How to access the Launchpad service
+
+## Intro
+  >If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
  The free tier service plan enables you to easily upgrade to paid service plans without losing prior work.
 

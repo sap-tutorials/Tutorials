@@ -28,7 +28,6 @@ primary_tag: software-product>sap-process-automation
 
 ### Release Business Process Project
 
-
    Before you run the process, ensure that the process is saved and that there are no errors showing in the Design Console.
    To run the process, you must first release and then deploy the Business Process project. Releasing a project creates a version or snapshot of the changes.
 
@@ -44,17 +43,17 @@ primary_tag: software-product>sap-process-automation
 
     <!-- border -->![Release new](02_Release_second_version.png)
 
-    > ## What's going on?
     > Every time you release, a new version will be created. Versions are incremented automatically based on how you want to store the changes in the repository (that is as major or minor updates or as a patch). Versions use an x.y.z format where x is a major version number, y is minor, and z is the patch number. For instance, if you are releasing your process project for the first time, then the version will start with 1.0.0. The next time you release there will be options to choose from – that is, if the new version is a major, minor, or patch update; version numbers will be automatically updated.
 
 4. The project released successfully and is ready to be deployed.
 
-    > If needed, you can refer to the [Documentation](https://help.sap.com/docs/PROCESS_AUTOMATION/a331c4ef0a9d48a89c779fd449c022e7/5ec3714e12ce487da35c009505eaf3a5.html?version=Cloud).
+    > If needed, you can refer to the [Documentation](https://help.sap.com/docs/PROCESS_AUTOMATION/a331c4ef0a9d48a89c779fd449c022e7/bcb638ecb98d4e1db8267ecccd8ffdf3.html?version=Cloud).
 
     <!-- border -->![Released](03_Released_first_version.png)
 
 
 ### Deploy the Released Process
+
 
     You can deploy Business Process projects from each released version of the project in the Process Builder or through the Lobby. Deploying the project makes it available for others to use it. Bare in mind that you can only deploy a released version of the project.
 
@@ -64,7 +63,6 @@ primary_tag: software-product>sap-process-automation
 
 2. In this case there are no **Variables** to set.
 
-    > ## What's going on?
     > Variables allow you to reuse certain information for a given Business Process project deployment. You use variables to pass parameters to automations. You can create variables in the Process Builder for which you can later set values when deploying the Business Process project.
 
 3. Choose **Confirm**.
@@ -116,7 +114,6 @@ primary_tag: software-product>sap-process-automation
 5. The process is triggered. You can now work on the tasks and monitor the process.
 
     <!-- border -->![Run form successfully submitted](Run_inputs_2.png)
-
 
 
 ### Work on the Tasks

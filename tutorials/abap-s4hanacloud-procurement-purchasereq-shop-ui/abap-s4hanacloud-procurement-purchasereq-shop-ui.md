@@ -332,7 +332,7 @@ author_profile: https://github.com/mervey45
 ### Create IAM App and business catalog
 
 
-  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`Z_PURCHASE_REQ_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam0.png)
 
@@ -368,7 +368,7 @@ author_profile: https://github.com/mervey45
 
       ![iam](activate.png)
 
-  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`Z_PURCHASE_REQ_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](iam0.png)
 
@@ -440,6 +440,3 @@ author_profile: https://github.com/mervey45
 
 
 ### Test yourself
-
-
-
