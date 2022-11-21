@@ -6,24 +6,25 @@ author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
+parser: v2
 ---
 
 # Access a Classic Schema from SAP Web IDE Full-Stack
+
 <!-- description --> Access data in a plain or replicated schema from an HDI container.
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have access to the database and SAP BTP cockpit.
- - You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
- - Optionally, you have created a remote source [as explained in this tutorial](haas-dm-connect-sdi).
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have access to the database and SAP BTP cockpit.
+- You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
+- Optionally, you have created a remote source [as explained in this tutorial](haas-dm-connect-sdi).
 
 ## You will learn
-  - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a database in SAP HANA service for SAP BTP
-  - How to grant permissions to the technical users in your HDI container to access the database
+
+- How to create a plain schema, with a table and user to simulate a replicated schema
+- How to create a user-provided service to access a database in SAP HANA service for SAP BTP
+- How to grant permissions to the technical users in your HDI container to access the database
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
@@ -31,10 +32,13 @@ For more information on this process and additional syntax options, refer to the
 
 If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](xsa-create-user-provided-anonymous-service).
 
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
+
 ---
 
 ### Create a plain schema
-
 
 Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see your instance of the SAP HANA database.
 
@@ -50,7 +54,7 @@ You will create a SQL role and assign it to the user `PLUSR` with the permission
 CREATE SCHEMA "PLAIN";
 CREATE USER PLUSR PASSWORD "HanaRocks01" NO FORCE_FIRST_PASSWORD_CHANGE ;
 
-CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
+CREATE ROW TABLE "PLAIN"."REGIONS" (REGION NVARCHAR(5), DESCRIPTION NVARCHAR(100) );
 
 CREATE ROLE CCROLE;
 grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE with grant option;
@@ -80,9 +84,7 @@ Use the green play button or press **`F8`** to execute the statement.
 >&nbsp;
 > ![schema](dbx.png)
 
-
 ### Load data
-
 
 Download [this CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/haas-dm-access-cross-container-schema/plain.csv) into your local computer.
 
@@ -116,10 +118,7 @@ You should see the wizard has imported 4 records
 
 Right-click on the table and choose **Open Data** to see the records loaded into the table.
 
-
-
 ### Create a user-provided service
-
 
 You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your Multi-Target Application.
 
@@ -156,9 +155,7 @@ Call the service **`CC_ACCESS`** and use the code below in **Credentials**
 
 Press **Save**.
 
-
 ### Configure the service for access
-
 
 You will now add the user-provided service as a dependency and configure it as part of a database module. You will also set the original HDI container as the default service for database artifacts.
 
@@ -217,9 +214,7 @@ If you switch to the **Code Editor** for the `mta.yaml` file, it should look sim
 
 ![MTA yaml](19.png)
 
-
 ### Grant permissions to the technical users
-
 
 You will now create an artifact that grants access to the two technical users of your HDI container. These are not real users, but technical ones.
 
@@ -250,11 +245,7 @@ And use the following code in it:
 
 **Save the file**.
 
-
-
-
 ### OPTIONAL -  Grant access to a remote source
-
 
 **This step works only if** you have created a remote source to access a text file [using SAP HANA service smart data integration for SAP BTP in this tutorial](haas-dm-connect-sdi), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA service for SAP BTP.
 
@@ -266,7 +257,6 @@ grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REM
 ```
 
 ![Grant roles](grant2.png)
-
 
 > Alternatively, you can grant the same permissions to the user in the user-provided service, `PLUSR`, and create a separate grants file with them or a new role.
 > Here is an example for that `.hdbgrants` file
@@ -292,10 +282,7 @@ grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REM
 
 ![Grant roles](build.png)
 
-
-
 ### Create synonyms
-
 
 You can now create a synonym to access the table in the plain schema. Create a new file in `db\src\data`
 
@@ -321,9 +308,7 @@ Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`
 
 ![Create synonym](25.png)
 
-
 ### Create a view
-
 
 You can now use the table in the classic schema with other objects created in your HDI container.  In `data`, create a new database artifact
 
@@ -354,10 +339,7 @@ Right-click on the view and choose **Open Data**. Paste the generated SQL statem
 
 ![Create synonym](33.png)
 
-
-
 ### Troubleshooting insufficient privileges
-
 
 **Error**: Insufficient privilege: Detailed info for this error can be found with `guid` <GUID>
 
@@ -370,7 +352,5 @@ You can see what is missing by executing the following statement in a SQL consol
 This procedure will show the session user name, the technical user (HDI object owner) executing the statement, the privilege (e.g., `SELECT`) and some flags starting with `IS_MISSING`. A `TRUE` value under one of those flags indicates missing authorizations.
 
 Make sure the user in the user provided service has permissions for `SELECT` and `SELECT METADATA` with grant option.
-
-
 
 ---
