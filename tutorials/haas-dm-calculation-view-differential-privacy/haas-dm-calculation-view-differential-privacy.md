@@ -1,11 +1,11 @@
 ---
 parser: v2
-auto_validation: true
+auto_validation: true 
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, software-product>sap-hana, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
 
 # Create a Calculation View with Differential Privacy in SAP Web IDE

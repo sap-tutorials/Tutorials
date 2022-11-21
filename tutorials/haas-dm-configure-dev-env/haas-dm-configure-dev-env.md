@@ -4,27 +4,30 @@ auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
+tags: [tutorial>beginner, products>sap-hana, software-product>sap-hana-service-for-sap-btp, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
 # Configure the SAP Web IDE Development Environment for SAP HANA service for SAP BTP
+
 <!-- description --> Configure SAP Web IDE for Full Stack, which you will use to create a multi-target application based on the SAP Cloud Application Programming Model.
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have a paid account in SAP BTP
- - You have created an instance of the SAP HANA service for SAP BTP
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have a paid account in SAP BTP
+- You have created an instance of the SAP HANA service for SAP BTP
 
 ## You will learn
-  - How to access SAP Web IDE for Full Stack
-  - How to create a project and configure credentials to perform a deployment in the SAP BTP, Cloud Foundry environment
+
+- How to access SAP Web IDE for Full Stack
+- How to create a project and configure credentials to perform a deployment in the SAP BTP, Cloud Foundry environment
 
 SAP Web IDE Full Stack is currently available in SAP BTP, Neo environment. You will be entering the service from the SAP BTP, Neo environment subaccount, creating a project and configuring credentials to perform a deployment in the SAP BTP, Cloud Foundry environment.
 
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
 ### Navigate to the SAP BTP, Neo environment subaccount
