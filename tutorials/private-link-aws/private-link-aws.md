@@ -12,9 +12,9 @@ primary_tag: software-product-function>sap-btp-cockpit
 <!-- description --> Connect SAP Private Link service to AWS Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 
 ## Prerequisites
- - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service entitlement: [Set Up SAP Private Link Service](developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/private-link-onboarding).
+ - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service entitlement: [Set Up SAP Private Link Service on Amazon Web Services (Beta)](private-link-service-onboarding-aws).
  - You have created an AWS Private Link Service in the Amazon VPC Console. [Create a service powered by AWS Private Link](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html).
- - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](developers.sap.com/tutorials/cp-cf-download-cli).
+ - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## You will learn
   - How to create an SAP Private Link service instance to connect to your AWS Private Link Service using Cloud Foundry CLI.
