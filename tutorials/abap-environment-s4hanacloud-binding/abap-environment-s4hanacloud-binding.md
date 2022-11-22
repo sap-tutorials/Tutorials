@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Service Binding for Bonus Plan Scenario with SAP BTP, ABAP Environment
-description: Create service binding for bonus plan scenario with SAP BTP, ABAP Environment based on SAP S/4HANA Cloud data.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 45
@@ -9,18 +8,21 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Service Binding for Bonus Plan Scenario with SAP BTP, ABAP Environment
+<!-- description --> Create service binding for bonus plan scenario with SAP BTP, ABAP Environment based on SAP S/4HANA Cloud data.
+
 ## Prerequisites  
  - Create a developer user in a SAP BTP, ABAP Environment system.
  - Communication arrangement for scenario `SAP_COM_0027` is created in your SAP BTP, ABAP Environment system
 
-## Details
-### You will learn  
+## You will learn  
   - How to create a bonus plan scenario with S/4HANA Cloud and SAP BTP, ABAP Environment
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create database table for bonus calculation)]
+### Create database table for bonus calculation
+
   1. Open Eclipse, select your package and click **File** > **New** > **Other…**
 
       ![Create database table for bonus calculation](other.png)
@@ -91,10 +93,9 @@ author_profile: https://github.com/mervey45
       }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create database table for release status)]
+### Create database table for release status
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create database table for release status](other.png)
@@ -131,10 +132,9 @@ author_profile: https://github.com/mervey45
       }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create data definition for employee service)]
+### Create data definition for employee service
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create data definition for employee service](other.png)
@@ -211,10 +211,9 @@ author_profile: https://github.com/mervey45
       Save and activate.
       NOTE: First you will get an error message, but this will disappear later on.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create data definition for bonus calculation)]
+### Create data definition for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create data definition for bonus calculation](other.png)
@@ -376,10 +375,9 @@ author_profile: https://github.com/mervey45
     ```
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create data definition for release status)]
+### Create data definition for release status
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create data definition for release status](other.png)
@@ -427,11 +425,10 @@ author_profile: https://github.com/mervey45
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create behavior definition for bonus calculation)]
+### Create behavior definition for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create behavior definition for bonus calculation](other.png)
@@ -467,10 +464,9 @@ author_profile: https://github.com/mervey45
     ```
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create lock object for bonus calculation)]
+### Create lock object for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create lock object for bonus calculation](other.png)
@@ -495,10 +491,9 @@ author_profile: https://github.com/mervey45
 
       ![Create lock object for bonus calculation](lock4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create message class for bonus calculation)]
+### Create message class for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create message class for bonus calculation](other.png)
@@ -524,11 +519,10 @@ author_profile: https://github.com/mervey45
       ![Create message class for bonus calculation](message4.png)
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create employee class)]
+### Create employee class
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create bonus calculation class](other.png)
@@ -729,10 +723,9 @@ author_profile: https://github.com/mervey45
       ENDCLASS.
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create bonus calculation class)]
+### Create bonus calculation class
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create bonus calculation class](other.png)
@@ -1450,10 +1443,9 @@ author_profile: https://github.com/mervey45
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create bonus plan class)]
+### Create bonus plan class
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create bonus plan class](other.png)
@@ -1532,10 +1524,9 @@ author_profile: https://github.com/mervey45
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Create service definition for bonus calculation)]
+### Create service definition for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create service definition for bonus calculation](other.png)
@@ -1573,11 +1564,10 @@ author_profile: https://github.com/mervey45
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Create service binding for bonus calculation)]
+### Create service binding for bonus calculation
+
   1. Select your package and click **File** > **New** > **Other…**
 
       ![Create service binding for bonus calculation](other.png)
@@ -1608,11 +1598,9 @@ author_profile: https://github.com/mervey45
 
       ![Create service binding for bonus calculation](test.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

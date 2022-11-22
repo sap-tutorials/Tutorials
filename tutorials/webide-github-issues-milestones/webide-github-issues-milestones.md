@@ -1,20 +1,22 @@
 ---
-title: Create Issues and Assign to Collaborators
-description: Create issues and milestones, and assign issues to collaborators to support collaborative development using GitHub and SAP Web IDE.
+parser: v2
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 time: 10
 ---
 
-## Details
-### You will learn  
+# Create Issues and Assign to Collaborators
+<!-- description --> Create issues and milestones, and assign issues to collaborators to support collaborative development using GitHub and SAP Web IDE.
+
+## You will learn  
   - How to create issues
   - How to assign issues and tasks to collaborators
   - How to set milestones for delivery
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new issue in GitHub)]
+### Create new issue in GitHub
+
 
 Go to your GitHub organization repository.
 
@@ -22,10 +24,9 @@ Click on the **Issues** tab, and then click on **New Issue** to create a new iss
 
 ![GitHub issues](p4_2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Fill in issue details)]
+### Fill in issue details
+
 
 Enter the details about the change required.
 
@@ -45,19 +46,17 @@ You can set milestones for specific issues. Milestones are how similar issues an
 
 Click **Submit new issue**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add comments to issue)]
+### Add comments to issue
+
 
 Once the issue is created, you can add comments, discuss it, and even add an emoji to express your interest in the issue.
 
 ![Issue created](p4_4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign deadlines for milestones)]
+### Assign deadlines for milestones
+
 
 You can assign deadlines for milestones.
 
@@ -79,5 +78,3 @@ Similarly, you can create new milestones, update existing ones, and check for st
 
 ![Milestones status](p4_6.png)
 
-[DONE]
-[ACCORDION-END]

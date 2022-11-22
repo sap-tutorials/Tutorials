@@ -1,28 +1,30 @@
 ---
-title: Integrate Your SAPUI5 App into Your Launchpad Site
-description: Add an SAPUI5 app to a launchpad site in the SAP Launchpad service.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service, products>sap-fiori, programming-tool>html5, programming-tool>sapui5]
-primary_tag: products>sap-launchpad-service
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
+
+# Integrate Your SAPUI5 App into Your Launchpad Site
+<!-- description --> Add an SAPUI5 app to a launchpad site in the SAP Launchpad service.
 
 ## Prerequisites
  - You've already created the `JobCore` launchpad site.
  - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment.
 
 
-## Details
-### You will learn
+## You will learn
   - How to add a deployed, custom-developed, SAPUI5 app to your launchpad site
 
 ---
 Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your launchpad site.
 
 
-[ACCORDION-BEGIN [Step 1: ](Fetch updated content using the Provider Manager)]
+### Fetch updated content using the Provider Manager
+
 
 1. In the side navigation panel of your subaccount, click **Instances and Subscriptions** and then next to the Launchpad Service, click the **Go to Application** icon next to it.
 
@@ -36,7 +38,7 @@ Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to 
 
     >The **HTML5 Apps** content provider is created automatically. Any app that you deploy to SAP BTP is automatically added as content to this provider.
 
-    !![Select the HTML5 Provider](3-HTML5-provider.png)
+    <!-- border -->![Select the HTML5 Provider](3-HTML5-provider.png)
 
 4. Click the **Fetch updated content** icon.
 
@@ -44,14 +46,13 @@ Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to 
 
 The **HTML5 Apps** content provider should now expose any newly deployed app for integration.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add your deployed SAPUI5 app to your content)]
+### Add your deployed SAPUI5 app to your content
+
 
 1. Click the Content Manager icon in the side panel to open the **Content Manager**.
 
-    !![Open Content Editor](1-open-content-editor.png)
+    <!-- border -->![Open Content Editor](1-open-content-editor.png)
 
     >The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
 
@@ -65,7 +66,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 4. You'll see that your `Suppliers` app that you've just created in SAP Business Application Studio, already exists in this provider. Select it and click **+ Add to My Content**.
 
-    !![Add app to My Content](4-add-app-my-content.png)
+    <!-- border -->![Add app to My Content](4-add-app-my-content.png)
 
 5. Click the **My Content** tab.
 
@@ -73,11 +74,10 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
     Note that your `Suppliers` app is in the list of content items.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create group and assign app to it)]
+### Create group and assign app to it
+
 
 In this step, you'll create a new group and assign the `Suppliers` app to it.
 
@@ -105,10 +105,9 @@ In this step, you'll create a new group and assign the `Suppliers` app to it.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign app to Everyone role)]
+### Assign app to Everyone role
+
 
 In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
@@ -130,10 +129,9 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 
 6. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Review your site)]
+### Review your site
+
 
 1. Click the **Site Directory** icon to open the Site Directory.
 
@@ -152,5 +150,4 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 
     ![View app](13-suppliers-app.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
+

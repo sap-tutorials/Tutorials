@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Push Your ABAP Source Code from SAP BTP, ABAP Environment to a GitHub Repository using abapGit
-description: Push Your ABAP Source Code from a SAP BTP, ABAP environment instance to a GitHub repository using the ADT plugin for abapGit.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
 time: 10
@@ -9,18 +8,21 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Push Your ABAP Source Code from SAP BTP, ABAP Environment to a GitHub Repository using abapGit
+<!-- description --> Push Your ABAP Source Code from a SAP BTP, ABAP environment instance to a GitHub repository using the ADT plugin for abapGit.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have installed [`abapGit`](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/2002380aeda84875a5fae4adc66b3fdb.html ).
 
-## Details
-### You will learn  
+## You will learn  
 - How to create or adapt source code in ABAP instance
 - How to open `abapGit` repositories
 - How to stage and commit ABAP development objects
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create or adapt source code in ABAP instance)]
+### Create or adapt source code in ABAP instance
+
 
   1.  Open **ABAP Development Tools** and logon to your ABAP system.
 
@@ -49,10 +51,9 @@ author_profile: https://github.com/mervey45
      **Save and activate**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open abapGit repositories)]
+### Open abapGit repositories
+
 
   1. Log in to your **GitHub repository**, select your **folder**, click **Code** and copy the HTTP link for later use.
 
@@ -83,10 +84,9 @@ author_profile: https://github.com/mervey45
 
       Click **Next >** and **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Stage and commit ABAP development objects)]
+### Stage and commit ABAP development objects
+
 
   1. Right-click on your package **`TESTABAPGIT`** and click **Stage and Push**.
 
@@ -118,11 +118,9 @@ author_profile: https://github.com/mervey45
 
     The staged objects are transferred to your repository.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

@@ -1,24 +1,26 @@
 ---
-title: Implement Subscription Callbacks for a Multitenant Application
-description: Implement the Subscribe/Unsubscribe callbacks of the SAP SaaS Provisioning Service (saas-registry) and use the information provided in the subscription/unsubscription event for your Multitenant Application in the Kyma Runtime.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Implement Subscription Callbacks for a Multitenant Application
+<!-- description --> Implement the Subscribe/Unsubscribe callbacks of the SAP SaaS Provisioning Service (saas-registry) and use the information provided in the subscription/unsubscription event for your Multitenant Application in the Kyma Runtime.
+
 ## Prerequisites
 - You have finished the tutorial [Secure a Multitenant Application with the Authorization and Trust Management Service (XSUAA)](secure-multitenant-app-xsuaa-kyma)
 
-## Details
-### You will learn
+## You will learn
 - How to implement the Subscribe/Unsubscribe callbacks for the SAP SaaS Provisioning Service
 - How to automatically create `APIRule` for tenant-specific URL in the Kyma runtime
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to Subscription Callbacks)]
+### Introduction to Subscription Callbacks
+
 
 
 To perform internal tenant onboarding activities, you must implement the `subscription` and `unsubscription` callbacks of the SAP Software-as-a-Service Provisioning service (saas-registry) and use the information provided in the subscription event. You can also implement the `getDependencies` callback to obtain the dependencies of any SAP reuse services by your application. For more details, please read SAP Help Portal: [Develop the Multitenant Application](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/ff540477f5404e3da2a8ce23dcee602a.html?locale=en-US&q=TENANT_HOST_PATTERN).
@@ -76,10 +78,9 @@ Payload of subscription PUT and DELETE methods:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement Subscription Callbacks)]
+### Implement Subscription Callbacks
+
 
 A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through `APIRule`, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJS](https://github.com/kubernetes-client/javascript).
 
@@ -187,11 +188,10 @@ router.delete('/callback/v1.0/tenants/*', async function(req, res) {
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define Logic for APIRule Creation)]
+### Define Logic for APIRule Creation
+
 
 **1.** Add constant values and variables in the `kyma-multitenant-node/routes/index.js`, replace <namespace> with your own namespace name:
 
@@ -276,10 +276,9 @@ function createApiRule(svcName, svcPort, host, clusterName) {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Grant Role to Pod)]
+### Grant Role to Pod
+
 
 To automatically create `APIRule` from a pod, proper `RoleBinding` should be granted. Add a `RoleBinding` in the `k8s-deployment-backend.yaml` with the following content, replace <namespace> with your own namespace name:
 
@@ -300,8 +299,7 @@ roleRef:
 ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

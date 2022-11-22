@@ -1,25 +1,28 @@
 ---
-title: Use Data Attribute Recommendation With Your Own Dataset
-description: Classify your own data records in Data Attribute Recommendation using a custom dataset schema.
+parser: v2
 auto_validation: true
 time: 30  
 tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
-## Details
-### You will learn
+# Use Data Attribute Recommendation With Your Own Dataset
+<!-- description --> Classify your own data records in Data Attribute Recommendation using a custom dataset schema.
+
+## You will learn
   - How to define a custom dataset schema
   - How to prepare your data for upload
   - How to classify your own data records using your Data Attribute Recommendation machine learning model
 
+## Intro
 In this tutorial, you will use machine learning to classify your own data records and prepare a corresponding dataset schema. The steps that you have already learned in the previous tutorials will be once again needed to perform this tutorial. You will be given instructions, but if you need more details for each task, please review the respective tutorial.
 
 Please note that the free tier option for Data Attribute Recommendation has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described in the tutorial: [Use Data Attribute Recommendation to Classify Records, Delete Model and Dataset](cp-aibus-dar-classify-delete). See also [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare your data)]
+### Prepare your data
+
 
 In order to use your own dataset, you need to define a dataset schema that fits your dataset.
 
@@ -81,11 +84,11 @@ Last but not least, you have to make sure that your dataset meets the [prerequis
 
 You can use this [dataset](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) as a reference.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create new dataset schema)]
+
+### Create new dataset schema
+
 
 Now that you have done the preparation, you can create a new dataset based on your dataset schema. Please refer to this [tutorial](cp-aibus-dar-upload-data) for more details.
 
@@ -97,21 +100,19 @@ To create the dataset schema, expand the folder `Upload Data` and select the req
 
 You have now successfully created a dataset schema.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create new dataset)]
+### Create new dataset
+
 
 After you have created a dataset schema, you can go now ahead and create a dataset. Select the request `Create new Dataset` in the folder `Upload Data` and send the request to create the dataset.
 
 You have now successfully created a dataset based on previously defined dataset schema.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Upload your data)]
+### Upload your data
+
 
 Now, you can upload data to your dataset. Keep in mind that your data has to meet the requirements in order to be used. Please review this [tutorial](cp-aibus-dar-upload-data) for more details.
 
@@ -127,11 +128,10 @@ As you already know, the status of the dataset now changes to `VALIDATING` while
 
 Make sure to check the status of the dataset and the validation process by using the request `Get Dataset by id`. If the status changes to `SUCCEEDED`, your data is valid and you can move on with the next steps. If the status changes to `INVALID_DATA`, please review the requirements that your dataset has to meet. In this case, the response of the request will contain a tip why validation has failed.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create training job and deploy your model)]
+### Create training job and deploy your model
+
 
 You can now go ahead and create a training job to train a machine learning model based on your data. Please see this [tutorial](cp-aibus-dar-model) for more details.
 
@@ -147,11 +147,10 @@ The status of the deployment is `PENDING` after the start of the deployment. It 
 >
 > You have created a virtual container on SAP BTP that is awake and has the trained instance of the machine learning model uploaded into the memory and ready to serve inference (prediction) requests.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Classify records)]
+### Classify records
+
 
 Now you can finally classify your own data records. For more details, review this [tutorial](cp-aibus-dar-classify-delete).
 
@@ -194,5 +193,3 @@ In the response, you find the values that the model predicted. This includes the
 >
 > You have successfully classified your own data records using the model that you have trained with your own custom data.
 
-[DONE]
-[ACCORDION-END]

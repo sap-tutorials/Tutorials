@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a SAP Fiori App and Deploy it to SAP BTP, ABAP Environment
-description: Create a SAP Fiori app for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, ABAP Environment.
 primary_tag: software-product>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a SAP Fiori App and Deploy it to SAP BTP, ABAP Environment
+<!-- description --> Create a SAP Fiori app for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, ABAP Environment.
 
 ## Prerequisites  
 - **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -16,12 +18,11 @@ author_profile: https://github.com/mervey45
     - You need to be a member at the used global account​
     - You need to be an organization manager at the used Cloud Foundry subaccount
     - You need to be a security administrator at the used Cloud Foundry Subaccount​
-    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance should be under same subaccount.
+    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance must be under same subaccount.
 
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to assign role collections
 - How to create dev spaces
 - How to set up organization and space
@@ -33,7 +34,8 @@ author_profile: https://github.com/mervey45
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP Business Application Studio instance)]
+### Create SAP Business Application Studio instance
+
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -59,10 +61,9 @@ author_profile: https://github.com/mervey45
 
       ![dev](basx3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign role collection to user)]
+### Assign role collection to user
+
 
   1. Select **trial**.
 
@@ -81,10 +82,9 @@ author_profile: https://github.com/mervey45
       ![assign role collection](user4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create dev space)]
+### Create dev space
+
 
   1.  On the left menu scroll to the top and select **Instances and Subscriptions** and open SAP Business Application Studio.
 
@@ -106,10 +106,9 @@ author_profile: https://github.com/mervey45
 
       ![dev](studio5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set up organization and space)]
+### Set up organization and space
+
 
   1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
      Select **Open Folder** to set your workspace.
@@ -151,10 +150,9 @@ author_profile: https://github.com/mervey45
 
      ![organization](neumm.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create list report object page)]
+### Create list report object page
+
 
   1. Select **View** > **Find Command**.
 
@@ -208,7 +206,7 @@ author_profile: https://github.com/mervey45
        - Transport Request: `<your_transport_request>`
        - Deployment description: deployment xxx
 
-      !![app](neu14.png)
+      <!-- border -->![app](neu14.png)
 
       Click **Next >**.
 
@@ -221,18 +219,17 @@ author_profile: https://github.com/mervey45
        - Action: display
        - Title: Travel App XXX
 
-      !![app](neu15.png)
+      <!-- border -->![app](neu15.png)
 
       Click **Finish**.
 
   9. Now all files have been generated.
 
-      !![app](new4.png)
+      <!-- border -->![app](new4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run SAP Fiori application for data preview)]
+### Run SAP Fiori application for data preview
+
 
   1. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
 
@@ -248,10 +245,9 @@ author_profile: https://github.com/mervey45
 
      ![run](studio31.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy your application)]
+### Deploy your application
+
 
 1. Click **Files**, right-click your project and select **Open in Terminal**.
 
@@ -301,20 +297,18 @@ author_profile: https://github.com/mervey45
 >      The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
+### Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse
+
 
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `ZTRAVEL_APP_XXX` by pressing `F5`.
 
     ![library](library.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create IAM App and business catalog)]
+### Create IAM App and business catalog
+
 
   1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
@@ -391,11 +385,10 @@ author_profile: https://github.com/mervey45
        ![catalog](catalog8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Run SAP Fiori application)]
+### Run SAP Fiori application
+
 
   1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
@@ -422,11 +415,9 @@ author_profile: https://github.com/mervey45
 
       ![url](url6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

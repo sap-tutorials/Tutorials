@@ -1,6 +1,5 @@
 ---
-title: Ingest Live Data into your House Price Predictor with SAP AI Core
-description: Build data pipelines and reuse code to train and generate models on different datasets.
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
@@ -9,26 +8,30 @@ author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
+# Ingest Live Data into your House Price Predictor with SAP AI Core
+<!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
+
 ## Prerequisites
 - You have knowledge on connecting code to AI workflows of SAP AI Core.
-- You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#)
+- You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#).
 
-## Details
-### You will learn
+## You will learn
 - How to create placeholders for datasets in your code and associated AI workflow.
 - How to register datasets stored in AWS S3 to SAP AI Core.
 - How to use datasets with placeholders.
 - How to generate models and store them in AWS S3 for later use.
 
+## Intro
 By the end of the tutorial you will have two models trained on two different datasets of house price data. It is possible to change the names of components and file paths mentioned in this tutorial, without breaking the functionality, unless stated explicitly.
 
->**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you set up at least on other tool, either Postman or Python (SAP AI Core SDK) because two steps of this tutorial cannot be performed with SAP AI Launchpad.
+>**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Modify AI code)]
+### Modify AI code
 
-Create a new directory named `hello-aicore-data`.
+
+Create a new directory named `hello-aicore-data`. The code is different from [previous tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#) as it reads the data from folder (volumes, virtual storage spaces). The content of these volumes is dynamically loaded during execution of workflows.
 
 Create a file named `main.py`, and paste the following snippet there:
 
@@ -70,11 +73,13 @@ pickle.dump(clf, open(MODEL_PATH, 'wb'))
 
 ### Understanding your code
 
-Your code reads the data file `train.csv` from the location `/app/data`. This dataset file `train.csv` you will arrange for this file to be there, later in this tutorial. It also reads the variable (hyper-parameter) `DT_MAX_DEPTH` from the environment variables later. When generated, your model will be stored in the location `/app/model/` . You will also learn how to transport this code from SAP AI Core to your own cloud storage.
+Your code reads the data file `train.csv` from the location `/app/data`, which will be prepared in a later step. It also reads the variable (hyper-parameter) `DT_MAX_DEPTH` from the environment variables later. When generated, your model will be stored in the location `/app/model/` . You will also learn how to transport this code from SAP AI Core to your own cloud storage.
 
-!![image](img/code-main.png)
+> **Recommendation**: Although the dataset file `train.csv` is not present, it will be dynamically copied during execution to the volume mentioned in `(/app/data)`. Its recommended to pass the filename `(train.csv)` through the environment variable to your code so that if your dataset filename changes, you can dynamically set the dataset file.
 
-Create file `requirements.txt` as shown below. Here, if you don't specify a particular version like `pandas` then the latest version of the package will be fetched automatically.
+<!-- border -->![image](img/code-main.png)
+
+Create file `requirements.txt` as shown below. Here, if you don't specify a particular version, as shown for `pandas`, then the latest version of the package will be fetched automatically.
 
 ```TEXT
 sklearn==0.0
@@ -108,9 +113,9 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-!![image](img/code-docker.png)
+<!-- border -->![image](img/code-docker.png)
 
-> **IMPORTANT** Your `Dockerfile` creates empty folders to store your datasets and models (example above `/app/data` and `/app/model/` ). Contents from cloud storage will be copied to and from these folders later. If you place any contents in these folders during time of Docker image building, then the contents will be overwritten.
+> **IMPORTANT** Your `Dockerfile` creates empty folders to store your datasets and models (`/app/data` and `/app/model/` in the example above). Contents from cloud storage will be copied to and from these folders later. Any contents in these folders will be overwritten by the Docker image build.
 
 Build and upload your Docker image to Docker repository, using the following code in the terminal.
 
@@ -119,12 +124,11 @@ docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:03 .
 docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:03
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create placeholders for datasets in workflows)]
+### Create placeholders for datasets in workflows
 
-Create a pipeline (YAML file) named `house-price-train.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked (auto synced) by your application of SAP AI Core.
+
+Create a pipeline (YAML file) named `house-price-train.yaml` in your GitHub repository. Use the existing GitHub path which is already synced by your application of SAP AI Core.
 
 ```YAML
 apiVersion: argoproj.io/v1alpha1
@@ -159,29 +163,33 @@ spec:
       command: ["/bin/sh", "-c"]
       env:
         - name: DT_MAX_DEPTH # name of the environment variable inside Docker container
-          value: 3 # will make it as variable later
+          value: "3" # will make it as variable later
       args:
         - "python /app/src/main.py"
 ```
 
-### Understanding your workflow.
+### Understanding changes in your workflow
 
-!![image](img/pipeline.png)
+This change to your workflow creates a placeholder through which you can specify a data path (volume) to the container (Docker image in execution).
+
+<!-- border -->![image](img/pipeline.png)
 
 1. A placeholder named `housedataset` is created.
 2. You specify the **kind of artifact** that the placeholder can accept. **Artifact** is covered in details later in this tutorial.
 3. You use a placeholder to specify the **path that you created in your Dockerfile**, which is where you will copy files to your Docker image.
 
-[DONE]
-[ACCORDION-END]
+#### Why do we need to create placeholders?
+SAP AI Core only uses your workflows as an interface, so is unaware of the volume/ attachments specified in your Docker image. Your data path is specified in your Dockerfile and has a placeholder in your workflow and data is then expected by the Docker image.
 
-[ACCORDION-BEGIN [Step 3: ](Create placeholders for hyperparameter)]
+
+### Create placeholders for hyperparameters
+
 
 In your workflow, you have used the variable `DT_MAX_DEPTH` to incorporate a static value from the corresponding environment variable. Let's make this a variable in the workflow.
 
-!![image](img/workflow-env.png)
+<!-- border -->![image](img/workflow-env.png)
 
-Replace the contents of above AI workflow with this snippet.
+Replace the contents of the above AI workflow with this snippet.
 
 ```YAML[35,36]
 apiVersion: argoproj.io/v1alpha1
@@ -210,6 +218,7 @@ spec:
     - - name: mypredictor
         template: mycodeblock1
   - name: mycodeblock1
+    # Add your resource plan here. The annotation should follow metadata > labels > ai.sap.com/resourcePlan: <plan>
     inputs:
       artifacts:  # placeholder for cloud storage attachements
         - name: housedataset # a name for the placeholder
@@ -224,22 +233,43 @@ spec:
         - "python /app/src/main.py"
 ```
 
-Following are the new important lines in the workflows.
+The following shows the new important lines in the workflows.
 
-!![image](img/pipeline2.png)
+<!-- border -->![image](img/pipeline2.png)
 
-##Understanding these changes
+####Understanding these changes
 
-1. A placeholder named `DT_MAX_DEPTH` is created locally in the workflow. Specifying it under `arguments > parameters` means that it accepts inputs of type: `type`.
-2. You create an input to your Docker image. This is an `env` (Environment) variable named `DT_MAX_DEPTH`, and feed it the value from `workflow.parameters.DT_MAX_DEPTH` (the local name from previous point).
+1. A placeholder named `DT_MAX_DEPTH` is created locally in the workflow. It accepts number content of input type: `string`. The input is then type cast to an integer elsewhere in your code, so it must be a string containing integers. For example: ```"4"``` is acceptable because it is a string containing content that can can be type cast to and integer.
+2. You create an input `env` (Environment) variable to your Docker image, named `DT_MAX_DEPTH`. The value of this variable is fed in from `workflow.parameters.DT_MAX_DEPTH`,the local name from previous point.
 
 Commit the changes in the GitHub.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Observe your scenario and placeholder)]
+### Set resource plan
+
+
+Add the following snippet in your workflow to specify resource plan. The resource plan helps specify computing resource required to run your Docker image. The computing resources includes GPU, RAM and Processor. If not mentioned the resource plan defaults to `starter` which is the entry level [resource plan](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
+
+
+```BASH[6-8]
+spec:
+    ...
+    templates:
+    ...
+    - name: mycodeblock1
+      metadata:
+        labels:
+            ai.sap.com/resourcePlan: starter
+    ...
+```
+
+**INFORMATION**: You can always verify computing resource allocated using the following command `echo $(lscpu)` within your Docker image. The command is the the shell script command of Linux to print system configuration.
+
+
+
+### Observe your scenario and placeholder
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
@@ -247,13 +277,13 @@ You will observe a scenario named **House Price (Tutorial)** In the **ML Operati
 
 Click on the **Executables** tab. You will find your executable `training`.
 
-!![image](img/ail/workflow-scn.png)
+<!-- border -->![image](img/ail/workflow-scn.png)
 
 > **INFORMATION** If multiple executables/workflows (YAML files) have the same annotation values for their scenarios, they the are grouped under same scenario in SAP AI Core.
 
-Click on the executable `training` to it in more detail. The placeholders that you created in your AI workflow will appear here.
+Click on the executable `training` to view it in more detail. The placeholders that you created in your AI workflow will appear here.
 
-!![image](img/ail/placeholder.png)
+<!-- border -->![image](img/ail/placeholder.png)
 
 [OPTION END]
 
@@ -335,61 +365,58 @@ labels : None
 
 [OPTION END]
 
-Observe the `inputArtifacts` and `parameters`. The value of the `name` variable in each, represents the placeholder names which were specified earlier in the process. You are required use these names later when creating your **configuration**.
+Observe the value of the `name` variable in both `inputArtifacts` and `parameters`. These represent the placeholder names which were specified earlier in the process. You are required use these names later when creating your **configuration**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create cloud storage for datasets and models)]
-
-### Why use cloud storage?
-SAP AI Core only provides your ephemeral (short-lived) storage, while training or inferencing a model.  Amazon Web Services (AWS) S3 Object store is the cloud storage used by SAP AI Core for storing datasets and models. They can be stored over a longer time period, and can be transferred to and from SAP AI Core during training or online inferencing.
+### Create cloud storage for datasets and models
+## Why use cloud storage?
+SAP AI Core only provides your ephemeral (short-lived) storage, while training or inferencing a model.  Amazon Web Services (AWS) S3 Object store is the cloud storage used by SAP AI Core for storing datasets and models. Here, they can be stored over a longer time period, and can be transferred to and from SAP AI Core during training or online inferencing.
 
 You need to create AWS S3 object store, using one of the following links:
 
-- If you are a BTP user, create your storage through the [SAP Business Technology Platform](https://help.sap.com/docs/ObjectStore/2ee77ef7ea4648f9ab2c54ee3aef0a29/4236b942f67349d5a583773162d99660.html). Note that while BTP offers alternative storage solutions, SAP AI Core uses AWS S3 exclusively.
+- If you are a BTP user, create your storage through the [SAP Business Technology Platform](https://help.sap.com/docs/ObjectStore/2ee77ef7ea4648f9ab2c54ee3aef0a29/4236b942f67349d5a583773162d99660.html). While BTP offers alternative storage solutions, this tutorial uses AWS S3.
 - If you are not a BTP user, go directly through [AWS site](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Categories=categories%23storage&trk=e31669e1-2406-4016-9dc4-feb8ed89019b&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-BI|Brand|Desktop|SU|Storage|S3|IN|EN|Text&s_kwcid=AL!4422!10!71880729042342!71881173212098&ef_id=77e85e62d00a1077e8c33c3e3fbff9e2:G:s&s_kwcid=AL!4422!10!71880729042342!71881173212098&awsf.Free%20Tier%20Types=*all)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Connect local system to AWS S3)]
+### Connect local system to AWS S3
+
 
 Download and Install the [AWS Command Line Interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Open your terminal and execute the following line of code.
+To configure settings for your CWS CLI, open your terminal and run:
 
 ```BASH
 aws configure
 ```
 
-!![image](img/aws-configure.png)
+<!-- border -->![image](img/aws-configure.png)
 
-Enter your AWS credentials. Note that the appearance of the screen will not change as you type. You can leave the `Default output format` entry as blank (press enter).
+Enter your AWS credentials. Note that the appearance of the screen will not change as you type. You can leave the `Default output format` entry as blank. Press **enter** to submit your credentials.
 
-[DONE]
-[ACCORDION-END]
+Your credentials are stored in your system and used by the AWS CLI to interact with AWS. Fore more information, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
-[ACCORDION-BEGIN [Step 7: ](Upload datasets to AWS S3)]
+
+### Upload datasets to AWS S3
+
 
  Download the `train.csv` [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-data/train.csv). You need to right click, and save the page as `train.csv`.
 
-!![image](img/download.png)
+<!-- border -->![image](img/download.png)
 
-!![image](img/save.png)
+<!-- border -->![image](img/save.png)
 
 > **INFORMATION** The data used is from `Scikit Learn`. The source of the data is [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html).
 
-To upload the datasets to you AWS S3 Storage, paste and edit the following command in the terminal:
+To upload the datasets to your AWS S3 Storage, paste and edit the following command in the terminal:
 
 ```BASH
 aws s3 cp train.csv s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/data/jan/train.csv
 ```
 
-!![image](img/aws-upload.png)
+<!-- border -->![image](img/aws-upload.png)
 
-This uploaded the data to a folder called `jan`. Upload it one more time in another folder `feb`, by changing your command as shown:
+This command uploaded the data to a folder called `jan`. Upload it one more time in another folder called `feb`, by changing your command as shown:
 
 ```BASH
 aws s3 cp train.csv s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/data/feb/train.csv
@@ -397,30 +424,34 @@ aws s3 cp train.csv s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/data
 
 You now know how to upload and use multiple datasets with SAP AI Core.
 
-List your files in you AWS S3 bucket by editing the following command:
+List your files in your AWS S3 bucket by editing the following command:
 
 ```BASH
 aws s3 ls s3//<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 ```
-> **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a files called train, which is of type: comma separated value.
+> **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a file called train, which is of type: comma separated value.
 
-!![image](img/aws-upload2.png)
+<!-- border -->![image](img/aws-upload2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Store an object store secret in SAP AI Core)]
+### Store an object store secret in SAP AI Core
 
+
+An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box.
+
+<!-- border -->![image](img/ail/OSS.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-Edit and execute the following snippet to create object store secret in SAP AI Core. An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory.
+Create an object store secret by clicking **POST Create a secret** and using the header and body below.
+
+<!-- border -->![image](img/postman/s3.png)
 
 **HEADER**
 
@@ -454,14 +485,12 @@ Edit and execute the following snippet to create object store secret in SAP AI C
 }
 ```
 
-!![image](img/postman/s3.png)
-
 [OPTION END]
 
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Edit and execute the following snippet to create object store secret in SAP AI Core. An object store secret is required to store credentials to access your AWS S3 buckets, and limit access to a particular directory.
+Edit and execute the following snippet to create object store secret in SAP AI Core.
 
 ```PYTHON
 # Create object Store secret
@@ -483,22 +512,22 @@ print(response.__dict__)
 
 [OPTION END]
 
-> ### Why not put complete path to train.csv as `pathPrefix`?
-> You might have noticed that previously you uploaded data to `example-dataset/house-price-toy/data/jan/train.csv` but here in object store secret the `pathPrefix` is you set the value till `example-dataset/house-price-toy` . This is because the use of `pathPrefix` is to restrict access to particular directory of your cloud storage.
+- The Resource Group must be `default`
+- The `Name` field is your choice of identifier for your secret within SAP AI Core. 
+- Entries to the other fields are found in your AWS account.
+
+> ### Why not put a complete path to train.csv as `pathPrefix`?
+> You might have noticed that previously you uploaded data to `example-dataset/house-price-toy/data/jan/train.csv` but here in object store secret the `pathPrefix` is you set the value `example-dataset/house-price-toy`. This is because the use of `pathPrefix` is to restrict access to particular directory of your cloud storage.
 >
->But why not mentioning complete path in `pathPrefix`? This is because in that case all the files (even from sub-directories) will be copied from your AWS S3 to SAP AI Core. This might not be the useful when in cases where you have multiple datasets from different periods and only one of them is used (to train) at a time. Hence another level of abstraction called **Artifacts** is introduced which extends on the value of `pathPrefix` to complete path. This same use case is demonstrated in this tutorial.
+>Why define a complete path instead of using the `pathPrefix`? Using a root path only would mean that all files and subdirectories in the path would be copied from your AWS S3 to SAP AI Core. This might not be useful where you have multiple datasets only one of them is in use. Extending the `pathPrefix` to a complete path allows the user to specify specific artifacts.
 
-With object store secret created you can now reference any sub-folders to `pathPrefix` using artifacts for datasets or model.
+With your object store secret created, you can now reference any sub-folders to `pathPrefix` containing artifacts such as datasets or models.
 
-> **INFORMATION** You may create any number of object store secrets each with unique `name`. All pointing to same or different object stores.
-
-[DONE]
-[ACCORDION-END]
+> **INFORMATION** You may create any number of object store secrets each with unique `name`. They can point to the same or different object stores.
 
 
-[ACCORDION-BEGIN [Step 9: ](Create artifact to specify folder of dataset)]
 
-Execute the following snippet to create artifact for first `train.csv` that we uploaded to `jan` folder.
+### Create artifact to specify folder of dataset
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
@@ -508,6 +537,10 @@ Execute the following snippet to create artifact for first `train.csv` that we u
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
+
+Create an artifact for the `train.csv` file that we uploaded to the `jan` folder, by clicking **POST Register artifact** and using the body underneath.
+
+<!-- border -->![image](img/postman/artifact.png)
 
 **BODY**
 
@@ -527,9 +560,7 @@ Execute the following snippet to create artifact for first `train.csv` that we u
 }
 ```
 
-!![image](img/postman/artifact.png)
-
-The `id` returned in the response is the unique identifier of your artifact - not its name. In the next step you will explore how to find the ID.
+The `id` returned in the response is the unique identifier of your artifact - not its name.
 
 Create another artifact in the same way, for the `feb` folder. Refer to the snippet below for guidance on the changes required.
 
@@ -552,6 +583,8 @@ Create another artifact in the same way, for the `feb` folder. Refer to the snip
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
+
+Execute the following snippet to create artifact for first `train.csv` that we uploaded to `jan` folder.
 
 ```PYTHON
 # Create Artifact
@@ -594,37 +627,36 @@ print(response.__dict__)
 
 [OPTION END]
 
-You have learnt to add more data artifacts, allowing you to ingest more data over time.
+You have learnt to add data artifacts, allowing you to ingest more data over time.
 
 ### Important points to notice
 
-1. Notice the `url` used in above snippet is `ai://mys3/data/jan`, here `mys3` is the object store secret name you created previously. Hence the path translates as `ai://<PATH_PREFIX_OF_mys3>/data/jan` which is the directory your dataset file is located.
-2. You are not mentioning any particular file like `train.csv` located in the directory pointed by `url`, which gives you advantage that you can store multiple files in a AWS S3 directory (for example `train.csv`, `tokenization.json` and other files of any format) and register the directory containing all as a single artifact.
-3. All the files present in path referenced by artifact will be copied from your S3 storage will be copied to your SAP AI Core instance during training or inferencing. This includes subfolders (not in case of `Kind = MODEL`).
+1. Notice the `url` used in above snippet is `ai://mys3/data/jan`, here `mys3` is the object store secret name that you created previously. Hence the path translates as `ai://<PATH_PREFIX_OF_mys3>/data/jan` which is the directory that your dataset file is located in.
+2. The `url` points to a directory, not a file, which gives you advantage that you can store multiple files in an AWS S3 directory and register the directory containing all files as a single artifact.
+3. All the files present in the path referenced by artifact will be copied from your S3 storage to your SAP AI Core instance during training or inferencing. This includes subfolders, apart from where `Kind = MODEL`.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Locate artifacts)]
+### Locate artifacts
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Navigate to your data set by clicking through **Workspaces** > **default** >**ML Operations** > **Datasets**.
+Navigate to your data set by clicking **Workspaces** > **default** > **ML Operations** > **Datasets**.
 
 
 
-!![image](img/ail/dataset.png)
+<!-- border -->![image](img/ail/dataset.png)
 
 [OPTION END]
 
 
 [OPTION BEGIN [Postman]]
 
-Get a list of your artifacts.
+Get a list of your artifacts by clicking **GET Get list of artifacts**.
 
-!![image](img/postman/locate-artifact.png)
+<!-- border -->![image](img/postman/locate-artifact.png)
 
 [OPTION END]
 
@@ -685,28 +717,27 @@ modified_at : 2022-04-18 12:31:34
 
 > **INFORMATION** Artifacts appear in the `default` resource group and the **Datasets** menu, because you had registered artifacts with `resource_group = default` and `Kind = Dataset` in Step 9.
 
-Copy the artifact ID of the January dataset. You will use this value in the placeholders of your workflows, to create your execution. The **ID** of artifacts allows SAP AI Core to ingest data into workflows.
+Copy the artifact ID of the January dataset. You will use this value in the placeholders of your workflows to create your execution. The **ID** of artifacts allows SAP AI Core to ingest data into workflows.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Use artifacts with workflows using configuration)]
+### Use artifacts with workflows using a configuration
+
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click through **ML Operations** > **Configuration** > **Create**. Enter the following details as shown in the image below. Click **Next**.
+Click **ML Operations** > **Configuration** > **Create**. Enter the following details and click **Next**.
 
-!![image](img/ail/config-1.png)
+<!-- border -->![image](img/ail/config-1.png)
 
-The field for `DT_MAX_DEPTH` allows you to use the configuration to pass values to placeholders of hyper-parameters that you prepared earlier in your workflows. In this case, type `3`. Click **Next**.
+The field for `DT_MAX_DEPTH` allows you to use the configuration to pass values to placeholders of hyper-parameters that you prepared earlier in your workflows. In this case, type `3` and click **Next**.
 
-!![image](img/ail/config-2.png)
+<!-- border -->![image](img/ail/config-2.png)
 
 Locate your artifact (using the unique **ID**) in the **Available Artifacts** pane. Click the dropdown menu and the checkbox of `housedataset`. This is named of the placeholder for dataset in your workflow. As a result, the placeholder will now take the value of the artifact.
 
-!![image](img/ail/config-3.png)
+<!-- border -->![image](img/ail/config-3.png)
 
 Click **Review** and click **Create**.
 
@@ -716,7 +747,8 @@ You will redirected to the details page of the newly created configuration.
 
 [OPTION BEGIN [Postman]]
 
-Use the artifact ID of the `jan` dataset and the placeholder names to create a configuration, based on the code snippet. The key value pair for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of hyper-parameters that your prepared earlier in your workflows. In this case, type `3`.
+Use the artifact ID of the `jan` dataset and the placeholder names to create a configuration, based on the code snippet. The key value pair for `DT_MAX_DEPTH` allows you to use the configuration to pass values to placeholders of the hyper-parameters that your prepared earlier in your workflows. In this case, type `"3"`.
+
 **BODY**
 
 ```JSON
@@ -749,7 +781,7 @@ Use the artifact ID of the `jan` dataset and the placeholder names to create a c
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit the code snippet. The key value pair for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of hyper-parameters that your prepared earlier in your workflows. In this case, type `3`. You should locate your `jan` dataset artifact ID by listing all artifacts and use the relevant ID.
+Paste and edit the code snippet. The key value pair for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of the hyper-parameters that your prepared earlier in your workflows. In this case, type `"3"`. You should locate your `jan` dataset artifact ID by listing all artifacts and using the relevant ID.
 
 ```PYTHON
 from ai_api_client_sdk.models.parameter_binding import ParameterBinding
@@ -770,45 +802,43 @@ response = ai_core_client.configuration.create(
 print(response.__dict__)
 ```
 
-!![image](img/aics/config.png)
+<!-- border -->![image](img/aics/config.png)
 
 ### Important points
 
 1. You bind the artifact in the section `inputArtifactBindings`, where `key` denotes the placeholder name from your workflow and `artifactId` is the unique ID of the artifact that you registered. In later steps, you will bind the `feb` dataset's artifact ID, to learn how the same workflow can be used with multiple datasets.
 
-2. You provide the value to hyper-parameters using the section `parameterBindings`, where the `key` denotes the placeholder and the value is the string. Your code converts this value to an integer type before utilizing it.
+2. You provide the value to hyper-parameters using the section `parameterBindings`, where the `key` denotes the placeholder and the value is a string. Your code converts this value to an integer type before utilizing it.
 
 [OPTION END]
 
 This is how you bind values to placeholders to your workflows.
 
 
+### Run you workflow using execution
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Run you workflow using execution)]
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click **Create Execution** in the configuration details page. This will start a new execution with the values specified in the configuration. On the **Logs** tab of your execution, you will see that the data from AWS S3 has been incorporated into SAP AI Core.
 
-!![image](img/ail/execute-1.png)
+<!-- border -->![image](img/ail/execute-1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-Use configuration ID from previous step to create and launch a new execution.
+Use the configuration ID from previous step to create and launch a new execution.
 
 Query the execution logs. The logs will show that the data from AWS S3 has been incorporated into SAP AI Core.
-!![image](img/postman/s3-download.png)
+
+<!-- border -->![image](img/postman/s3-download.png)
 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Use configuration ID from previous step to create and launch a new execution.
+Use the configuration ID from the previous step to create and launch a new execution.
 
 ```PYTHON
 response = ai_core_client.execution.create(
@@ -837,11 +867,10 @@ for log in response.data.result:
 
 Until now you have ingested data and specified variables in SAP AI Core. To save your model to use later, you need to extract the model to cloud storage. We will complete this in the next step.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Set model pipeline in workflow)]
+### Set model pipeline in workflow
+
 
 In your GitHub repository, edit the workflow `house-price-train.yaml` and replace the contents with the below snippet. Make sure to add your Docker credentials and artifact details to the relevant fields.
 
@@ -897,30 +926,31 @@ spec:
 
 ### Description of changes
 
-!![image](img/code-model.png)
+<!-- border -->![image](img/code-model.png)
 
-You added a new `outputs` section, where you specify files and their directories, which are created during execution, and will be uploaded to AWS S3 and automatically registered as artifacts in SAP AI Core. You also added a line in the `annotations` section, which specified the `kind` of artifact that would be generated. In this case, a model.
+You added a new `outputs` section, where you specified files and their directories, which are created during the execution, and will be uploaded to AWS S3 and automatically registered as artifacts in SAP AI Core. You also added a line in the `annotations` section, which specified the `kind` of artifact that would be generated. In this case, a model.
 
-Again, all of the contents within your `/app/model/` directory (from your Docker image after execution) will be uploaded to AWS S3. This implies you may generate multiple files of any format after training, for example `class_labels.npy`, `model.h5`, `classifier.pkl` or `tokens.json`.
-
-[DONE]
-[ACCORDION-END]
+All of the contents within your `/app/model/` directory, as defined in your Docker image, will be uploaded to AWS S3. This implies you may generate multiple files of any format after training, for example `class_labels.npy`, `model.h5`, `classifier.pkl` or `tokens.json`.
 
 
-[ACCORDION-BEGIN [Step 14: ](Create required object store secret `default` for model)]
 
-It is compulsory to create a object store secret named `default` within your resource group, for your executable to **generate models and store them in AWS S3**. After execution the model will be saved to `PATH_PREFIX_of_default/<execution_id>/housepricemodel` in your AWS S3. The `housepricemodel` is mentioned in workflow/executable in previous step.
+### Create required object store secret `default` for model
 
-> **TIP** You can create multiple object store secrets with different `name` keys within the same resource group. You can also patch to modify values of an existing object store secret.
 
+It is compulsory to create a object store secret named `default` within your resource group, for your executable to **generate models and store them in AWS S3**. After execution the model will be saved to `PATH_PREFIX_of_default/<execution_id>/housepricemodel` in your AWS S3. The `housepricemodel` is mentioned in the workflow in the previous step.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box. Enter `default` for the secret name.
+
+<!-- border -->![image](img/ail/OSS.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
+
+
+> **TIP** You can create multiple object store secrets with different `name` keys within the same resource group. You can also patch to modify the values of an existing object store secret.
 
 **HEADER**
 
@@ -946,18 +976,21 @@ Paste and edit the following snippet:
     "pathPrefix": "example-dataset/house-price-toy/model"
 }
 ```
-Here, the name must be `default`. This should not be confused with the resource group name, which is also `default`. These are unrelated.
+The value of the `name` key must be `default`. This should not be confused with the resource group name, which is also `default`. These are unrelated.
+
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
+
+> **TIP** You can create multiple object store secrets with different `name` keys within the same resource group. You can also patch to modify values of an existing object store secret.
 
 Paste and edit the following snippet:
 
 ```PYTHON
 # Create object Store secret for placing models to S3
 response = ai_core_client.object_store_secrets.create(
-    name = "default", # name must be `default`, please DONT correlate with resource group name (which is also default here), these are not related.
-    path_prefix = "example-dataset/house-price-toy/model", # ensure path prefix is targeted to where you want your models subdirectory to be located
+    name = "default", # name must be `default`
+    path_prefix = "example-dataset/house-price-toy/model", # ensure path prefix is targeted to your models subdirectory
     type = "S3",
     data = { # Dictionary of credentials of AWS
         "AWS_ACCESS_KEY_ID": "<YOUR_AWS_ID>",
@@ -971,36 +1004,37 @@ response = ai_core_client.object_store_secrets.create(
 print(response.__dict__)
 ```
 
+The value of the `name` key must be `default`. This should not be confused with the resource group name, which is also `default`. These are unrelated.
+
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Create another configuration with new data)]
+### Create another configuration with new data
 
-This time, let's train the model with the February's artifact (the `feb` dataset) and with a different hyper-parameter value.
+
+This time, train the model with the `feb` dataset and with a different hyper-parameter value.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-On your SAP AI Launchpad, click through **ML Operations** > **Configuration** > **Create**.
+On your SAP AI Launchpad, click **ML Operations** > **Configuration** > **Create**.
 
-Enter a configuration name and select your other details. Note that you updated the version of workflow above and hence select here.
+Enter a configuration name and select your other details. Select your updated the version of workflow here.
 
-!![image](img/ail/config-f-1.png)
+<!-- border -->![image](img/ail/config-f-1.png)
 
-Type `5` for `DT_MAX_DEPTH` field. Click **Next**.
+Type `5` for the `DT_MAX_DEPTH` field and click **Next**.
 
-Attach the `feb` artifact that you had registered.
+Attach the `feb` artifact that you have registered.
 
-!![image](img/ail/config-f-2.png)
+<!-- border -->![image](img/ail/config-f-2.png)
 
-Click **Review** and click **Create**.
+Click **Review** > **Create**.
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and using the relevant ID.
+Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and then using the relevant ID.
 
 **BODY**
 
@@ -1029,7 +1063,7 @@ Paste and edit the snippet below. You should locate your `feb` dataset artifact 
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and use the relevant ID.
+Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and then using the relevant ID.
 
 ```PYTHON
 from ai_api_client_sdk.models.parameter_binding import ParameterBinding
@@ -1052,10 +1086,9 @@ print(response.__dict__)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Create execution)]
+### Create another execution
+
 
 Use your new configuration to create an execution.
 
@@ -1063,11 +1096,11 @@ Use your new configuration to create an execution.
 
 Click **Create Execution** in the configuration details page.
 
-!![image](img/ail/output.png)
+<!-- border -->![image](img/ail/output.png)
 
 To see the details of your new model, click the model card, and then on **execution** in the **Process Flow**. The information is also available through **ML Operations** > **Models**.
 
-!![image](img/ail/output2.png)
+<!-- border -->![image](img/ail/output2.png)
 
 [OPTION END]
 
@@ -1075,7 +1108,7 @@ To see the details of your new model, click the model card, and then on **execut
 
 List the execution status.
 
-!![image](img/postman/model.png)
+<!-- border -->![image](img/postman/model.png)
 
 [OPTION END]
 
@@ -1099,7 +1132,7 @@ for key, value in response.__dict__.items():
         print(f"{key} : {value}")
 ```
 
-!![image](img/aics/model.png)
+<!-- border -->![image](img/aics/model.png)
 
 [OPTION END]
 
@@ -1107,10 +1140,9 @@ When your execution shows status **COMPLETED**, you will see that a new model ar
 
 Generating and associating metrics (model quality) will covered in a separate tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Locate your model in AWS S3)]
+### Locate your model in AWS S3
+
 
 List your new files by pasting and editing the following snippet in your terminal.
 
@@ -1118,9 +1150,8 @@ List your new files by pasting and editing the following snippet in your termina
 aws s3 ls s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/model/<YOUR_EXECUTION_ID>/housepricemodel
 ```
 
-You are listing the files in the path `example-dataset/house-price-toy/model/` because you is the value you set earlier for the `pathPrefix` variable, for your object store secret named `default`.
+You are listing the files in the path `example-dataset/house-price-toy/model/` because this is the value you set earlier for the `pathPrefix` variable, for your object store secret named `default`.
 
-!![image](img/aws-model.png)
+<!-- border -->![image](img/aws-model.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+

@@ -1,6 +1,5 @@
 ---
-title: Connect to the SAP HANA Cockpit
-description: Open your application from the dashboard and connect to the SAP HANA cockpit.
+parser: v2
 auto_validation: true
 time: 10
 author_name: Thomas Jung
@@ -9,22 +8,26 @@ tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-h
 primary_tag: products>sap-hana
 ---
 
+# Connect to the SAP HANA Cockpit
+<!-- description --> Open your application from the dashboard and connect to the SAP HANA cockpit.
+
 ## Prerequisites
  - You have created an instance of the SAP HANA service for SAP BTP in SAP BTP, Cloud Foundry environment
 
 
-## Details
-### You will learn
+## You will learn
   - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
   - How to connect to the SAP HANA cockpit for performing administrative tasks in the physical database
 
+## Intro
 The SAP HANA cockpit is useful because it provides graphical tools to monitor resources and the overall health of your database.
 
 >**This tutorial cannot be completed with a trial account.**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Ensure that the instance is created)]
+### Ensure that the instance is created
+
 
 Navigate back to the **SAP BTP cockpit** to check on the progress status of your instance.
 
@@ -44,10 +47,9 @@ Ensure that you see ***Created*** under **Last Operation** for the HDB instance.
 
 ![New project from template](4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access the SAP HANA service for SAP BTP dashboard)]
+### Access the SAP HANA service for SAP BTP dashboard
+
 
 Click on the **Open Dashboard** icon ![New project from template](5.png) under **Actions**.
 
@@ -63,11 +65,10 @@ The SAP HANA service for SAP BTP dashboard will open. Notice that you can see th
 
 ![New project from template](sap hana service dashboard.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access the SAP HANA cockpit)]
+### Access the SAP HANA cockpit
+
 
 Access the **SAP HANA cockpit** using the button located at the top right corner.
 
@@ -97,7 +98,6 @@ Execute the following statement to complete the validation below.
 
 ![HaaS SQL Console](12.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

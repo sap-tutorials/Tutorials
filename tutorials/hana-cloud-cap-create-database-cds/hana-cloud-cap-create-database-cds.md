@@ -10,7 +10,7 @@ parser: v2
 
 # Create Database Artifacts Using Core Data Services (CDS) for SAP HANA Cloud
 
-<!-- description -->Use SAP Cloud Application Programming Model (CAP) and Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts.
+<!-- description --> Use SAP Cloud Application Programming Model (CAP) and Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts.
 
 ## You will learn
 
@@ -134,7 +134,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. We need to bind our project to a Database Connection and HDI container instance. Press the **bind** icon to being the process.
 
-    !![Bind Project](start_bind.png)
+    ![Bind Project](start_bind.png)
 
 1. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undeploy is quite helpful during the development process for the reasons described in this dialog)
 

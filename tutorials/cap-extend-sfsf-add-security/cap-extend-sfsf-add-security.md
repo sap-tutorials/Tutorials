@@ -1,11 +1,13 @@
 ---
-title: Add Security to the SAP SuccessFactors Extension
-description: In this phase of the development you will add authentication and authorization to the extension.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Add Security to the SAP SuccessFactors Extension
+<!-- description --> In this phase of the development you will add authentication and authorization to the extension.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -16,8 +18,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Add Business Logic to the SAP SuccessFactors Extension**](cap-extend-sfsf-add-logic)
  - Complete the tutorial: [**Prepare the SAP SuccessFactors Extension UI with CDS Annotations**](cap-extend-sfsf-ui-annotations)
 
-## Details
-### You will learn
+## You will learn
   - How to **require user authentication** in your CAP service
   - How to **define authorization** to access the service entities
   - How to **setup the XSUAA service instance** for future deployment
@@ -25,7 +26,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set service to require authentication)]
+### Set service to require authentication
+
 
 So far, you have been working on a local project which only developers would have access to. Therefore, it's OK to leave your service "unprotected" as it's not yet publicly available. But, as soon as you deploy it to the cloud, it will be available to anyone who knows the service endpoint (which is not quite difficult).
 
@@ -43,10 +45,9 @@ As you are still in development you can provide whatever information you like an
 
 ![Figure 3 – Data retrieved after sign in](sfsf-users.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set authorization for service entities access)]
+### Set authorization for service entities access
+
 
 But, in an **administrative scenario** like this one, just **being an authenticated user is not enough**. It's appropriate that, additionally, the authenticated user must be granted some **administrative role** (i.e. an **Admin** role).
 
@@ -81,10 +82,9 @@ To learn more about **authentication** and **authorization** in CAP, you can ref
 - [Authentication](https://cap.cloud.sap/docs/node.js/authentication)
 - [Authorization and Access Control](https://cap.cloud.sap/docs/guides/authorization)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Setup XSUAA)]
+### Setup XSUAA
+
 
 OK, so far you have defined a simple authorization schema to secure all service entities and verified that it's working as expected. But, in production, security will be handled by the **User Account and Authentication** (UAA) mechanism of Cloud Foundry which, in **SAP BTP**, is implemented by the **XSUAA service**.
 
@@ -116,10 +116,9 @@ But roles are not directly assigned to the application's users. The assignment i
 
 After deployment, you just need to assign it to the user who should be granted such authorization.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add required dependencies)]
+### Add required dependencies
+
 
 Now, you just need to add four dependencies to the CAP service for it to properly handle security and other related stuff – such as the user JSON Web Token (JWT) – during runtime. Those are:
 
@@ -139,12 +138,10 @@ When the commands complete, your `package.json` file should like the screenshot 
 
 ![Figure 11 – Installed dependencies](additional-deps.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
+### Check your knowledge
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

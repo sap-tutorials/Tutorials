@@ -1,30 +1,36 @@
 ---
-title: SAP HANA service for SAP BTP explore Operational Reporting for SAP ERP Central Component using test data
-description: Clone and deploy the Calculation Views for SAP ERP Central Component Operational Reporting and import test data to consume from SAP Analytics Cloud
+parser: v2
 time: 40
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
 
+# SAP HANA service for SAP BTP explore Operational Reporting for SAP ERP Central Component using test data
+
+<!-- description --> Clone and deploy the Calculation Views for SAP ERP Central Component Operational Reporting and import test data to consume from SAP Analytics Cloud
+
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have a productive instance of the [SAP HANA service for SAP BTP on SAP BTP, Cloud Foundry environment](group.hana-service-setup) **or** have signed up for a [SAP BTP trial account](hcp-create-trial-account) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
- - You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
 
->**This tutorial cannot currently be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have a productive instance of the [SAP HANA service for SAP BTP on SAP BTP, Cloud Foundry environment](group.hana-service-setup) **or** have signed up for a [SAP BTP trial account](hcp-create-trial-account) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
+- You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
 
-## Details
-### You will learn
-  - How to import and deploy the template calculation views into SAP HANA using SAP Web IDE
-  - How to remove the pre-built artifacts for Smart Data Integration to explore the templates using the test data
+## You will learn
+
+- How to import and deploy the template calculation views into SAP HANA using SAP Web IDE
+- How to remove the pre-built artifacts for Smart Data Integration to explore the templates using the test data
 
 **If you would like to deploy the SAP HANA Operational Reporting Templates for  SAP ERP Central Component (ECC) including the artifacts to integrate with an SAP ERP Central Component system, refer to the [instructions in the repository](https://github.com/SAP-samples/hana-xsa-live-reporting/blob/master/README.md)**
 
+## Intro
+
+>**This tutorial cannot currently be completed with a trial account.**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone repository)]
+### Clone repository
+
 
 Right-click on the workspace in SAP Web IDE and choose `Git -> Clone Repository`
 
@@ -48,10 +54,9 @@ https://github.com/SAP-samples/hana-xsa-live-reporting
 > If you get an error, stating version `2.0.2.0 (installed) is incompatible with 2.0.40.0` in the SAP BTP trial account, change the plugin version in the hidden file `.hdiconfig`
 > ![Clone repo](4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Remove data replication artifacts)]
+### Remove data replication artifacts
+
 
 This repository includes virtual tables and `flowgraphs` to replicate data from an SAP ECC system. You will use the sample data instead.
 
@@ -65,11 +70,10 @@ Remove the folder `db/cfg_CONFIGURE_ME`
 
 > ![Delete replication](6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Build and preview the calculation views)]
+### Build and preview the calculation views
+
 
 Right-click on the `db` folder and choose **Build**.
 
@@ -83,10 +87,9 @@ After successful deployment, you can preview the data in each of the models. For
 
 > ![Build module](9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install Information Access)]
+### Install Information Access
+
 
 If you are using a productive instance of the SAP HANA service for SAP BTP, you can use the Information Access (`InA`) protocol to connect with SAP Analytics Cloud or other reporting tools using the HTTP protocol for live connections.
 
@@ -98,7 +101,5 @@ Use these [instructions to deploy the XS Advanced HANA Analytics Adapter](https:
 
 Once connected you can continue by creating reports in SAC to consume the Calculation Views deployed in earlier steps.
 
-[DONE]
-[ACCORDION-END]
 
 ---

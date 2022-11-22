@@ -1,6 +1,5 @@
 ---
-title: Install the SAP HANA Python Client API for Machine Learning Algorithms
-description: Install the SAP HANA Python Client API for machine learning algorithms.
+parser: v2
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -8,18 +7,21 @@ tags: [ tutorial>intermediate, products>sap-hana\,-express-edition ]
 time: 5
 ---
 
+# Install the SAP HANA Python Client API for Machine Learning Algorithms
+<!-- description --> Install the SAP HANA Python Client API for machine learning algorithms.
+
 <!-- loiof3365096bb2440fcafdb30e9f51877f1 -->
 
 ## Prerequisites
 Ensure that you have Python 2.7 or 3.6 installed.
 
+## Intro
 You have downloaded, extracted, and installed one of the SAP HANA HDB clients. See [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html).
 
 You have also installed the Python driver that comes with the clients. See [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
 
 
-## Details
-### You will learn
+## You will learn
 You will learn how to install the SAP HANA Python Client API for Machine Learning Algorithms.
 
 ---
@@ -33,7 +35,8 @@ SAP HANA provides a python client API for working with machine learning algorith
 
 To install the Python Client API for ML on a client machine, do the following:
 
-[ACCORDION-BEGIN [Step 1: ](Install the Python Client API for ML.)]
+### Install the Python Client API for ML.
+
 
 For the location you extracted the SAP HANA HDB client files, run:
 
@@ -74,11 +77,9 @@ This command installs the `hana_ml` package containing the following modules and
 -   `hana_ml.ml_exceptions`
 
 
-[DONE]
 
-[ACCORDION-END]
+### Test your installation.
 
-[ACCORDION-BEGIN [Step 2: ](Test your installation.)]
 
 To test that Python Client API for ML was installed successfully, run:
 
@@ -95,6 +96,3 @@ pip list
 
 You will receive a list of various Python packages that are installed on your system. If you see `hana-ml` and the appropriate version, the Python Client API for ML was installed.
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Get an Understanding of CoreML
-description: Understand what CoreML is and how it works.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,21 +8,22 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-
 time: 5
 ---
 
-## Prerequisites  
+# Get an Understanding of CoreML
+<!-- description --> Understand what CoreML is and how it works.
 
+## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
 - **SAP BTP SDK for iOS:** Version 6.0 or newer
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - What Core ML is
 - Why it is great for mobile apps
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to machine learning)]
+### Introduction to machine learning
+
 
 Machine Learning got more and more popularity over the last view years. With help of Machine Learning, Software Developers can achieve great things for all sorts of use cases. You can use it for predictions, combined with Internet of Things you can use it in Manufacturing and other industrial areas, research groups use it in the medical field or it's used by the Game Industry. Whatever the use case might be, the question you might have is "How can I use it in a mobile context?". This tutorial will go a little bit into the details of how you can use Machine Learning on an iOS device.
 
@@ -35,10 +35,9 @@ Machine Learning is simple the use of data to give answers to questions you have
 
 Those are just examples and the possibilities are endless. In the next step, you will get an introduction to Core ML, Apple's own Machine Learning framework.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](What is Core ML)]
+### What is Core ML
+
 
 When it comes to Machine Learning, Apple established a Framework called Core ML back in 2017 for performing predictions and inference using pre-trained machine learning models. The beauty about Core ML is, that it is on-device which means even if your device is offline, your Machine Learning model will still be able to fulfill it's job.
 
@@ -58,5 +57,4 @@ Using Apple's Vision framework and NLP (Natural Language Processing) API togethe
 
 Using NLP allows your app to understand text written and printed using features like detecting names and language identification. If you have used the Concur app on your mobile device and scanned a receipt using the OCR feature you get a great example on how you can utilize this great technology.
 
-[VALIDATE_2]
-[ACCORDION-END]
+

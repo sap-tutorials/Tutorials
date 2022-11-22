@@ -1,6 +1,5 @@
 ---
-title: Integrate and Monitor Data with SAP Data Warehouse Cloud
-description: Get started with Data Integration Monitor, which allows you to monitor the frequency and status of data loads for each table within a Space.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -8,13 +7,16 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 
-## Details
-### You will learn
+# Integrate and Monitor Data with SAP Data Warehouse Cloud
+<!-- description --> Get started with Data Integration Monitor, which allows you to monitor the frequency and status of data loads for each table within a Space.
+
+## You will learn
 - How to access the Data Integration Monitor
 - How to use the Data Integration Monitor dashboard
 - The types of monitoring you can do with the Data Integration Monitor
 
 
+## Intro
 The Data Integration Monitor helps you to monitor and manage table replication from sources outside of SAP Data Warehouse Cloud, showing you the frequency of data refresh. It makes it easy to see how many tables you have, how much space they are using, and which actions were recently performed on them. It allows you also to replicate data, create persistent views, analyse remote connections, and get details of these actions.
 
 > CSV files uploaded directly to SAP Data Warehouse Cloud are not monitored.
@@ -24,22 +26,22 @@ In the video below, you can see an overview of Data Integration Monitor in SAP D
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qUNxdLDIXnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Data Integration Monitor)]
+### Access the Data Integration Monitor
+
 
 1.	In SAP Data Warehouse Cloud, click on the **Data Integration** icon on the left- side menu.
 
-    !![DIM](DIM.png)
+    <!-- border -->![DIM](DIM.png)
 
 2.	Choose your Space and you see the **Remote Table Monitor** dashboard.
 
-    !![RTM](T02 - Dashboard.png)
+    <!-- border -->![RTM](T02 - Dashboard.png)
 
 Here you can see an overview of all remote tables that currently exist in this Space.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use the Data Integration Monitor dashboard)]
+### Use the Data Integration Monitor dashboard
+
 
 The Data Integration Monitor works like a dashboard, allowing you to drill down to details about the use of storage within a Space, particularly detailing how many tables are stored in the Space, and giving other details about these tables.
 
@@ -56,20 +58,19 @@ You will get an overview of the remote tables within the Space you have selected
 
 You can change the way the list is sorted or filter it to find more easily the information you are looking for by clicking on the sort icon next to the table column. As an example, you can find the tables that are consuming more space by filtering the list.
 
-  !![sort](sort.png)
+  <!-- border -->![sort](sort.png)
 
 From this main list, you can drill down further by clicking on the drill down icon on the right of the dashboard. This can help you understand how often a table is loaded and what is the status of each time the table was loaded, that is, each time the data within this table was refreshed.
 
-  !![Drill down](T02 - drilldown.png)
+  <!-- border -->![Drill down](T02 - drilldown.png)
 
 You will also be able to go directly from here into the table editing feature of the Data Builder. Click on the open in editor option on the top right to do so.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Types of monitoring you can do in the dashboard)]
+### Types of monitoring you can do in the dashboard
+
 
 These are the types of monitoring you can do with the Data Integration Monitor dashboard:
 
@@ -108,15 +109,13 @@ The Remote Query Monitor is where you check and analyse how the communication is
 > Learn more about the Remote Table Monitor in SAP Data Warehouse Cloud in the next tutorial.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 
 

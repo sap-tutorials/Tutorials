@@ -1,13 +1,15 @@
 ---
-title: Use Pre-Trained Tensorflow Models with a GPU in SAP AI Core
-description: Bring a pre-trained text classifier Tensorflow model to SAP AI Core, and write a workflow which will enable GPU deployment of this model, for movie review classification.
+parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+tags: [ tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
+
+# Use Pre-Trained Tensorflow Models with a GPU in SAP AI Core
+<!-- description --> Bring a pre-trained text classifier Tensorflow model to SAP AI Core, and write a workflow which will enable GPU deployment of this model, for movie review classification.
 
 ## Prerequisites
 - You have [set up an Enterprise SAP BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and set up entitlements and service instances for **SAP AI Core**.
@@ -15,16 +17,15 @@ author_profile: https://github.com/dhrubpaul
 - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
 
 
-## Details
-### You will learn
+## You will learn
 - How to sync pre-trained model to SAP AI Core
 - How to write a pipeline and necessary docker code to enable GPU deployment.
 - How to deploy an AI model and use it for online inferencing.
 
 ## Pre-read
-
  All the required files are available for download in the specified step, so that you can easily complete the tutorial.
 
+## Intro
 This tutorial demonstrates a use-case in which you have trained an ML model on your local computer and would like to deploy this model to production with SAP AI Core.
 
 The model used in this example uses a pre-trained embedding layer of [`GloVe`](https://nlp.stanford.edu/projects/glove/) followed by custom stack of neural network layers for fine tuning. Please find the following tutorials used as reference for the same.
@@ -44,7 +45,8 @@ Please complete the prerequisites before you get started.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create workspace (resource group))]
+### Create workspace (resource group)
+
 
 Create a **resource group** with ID `tf-demo`. You may use any existing resource group or even create multiple resource groups with different IDs.
 
@@ -61,13 +63,12 @@ for rg in response.resources:
     print(rg.resource_group_id)
 ```
 
-!![img](img/acs/1.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![img](img/acs/1.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Upload model files to AWS S3)]
+
+### Upload model files to AWS S3
+
 
 1. Install the AWS CLI client. [Download here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
@@ -79,7 +80,7 @@ for rg in response.resources:
     aws configure
     ```
 
-    !![img](img/aws-configure.png)
+    <!-- border -->![img](img/aws-configure.png)
 
 3. Download and save the following model files in your local system.
 
@@ -94,7 +95,7 @@ for rg in response.resources:
 
     After download, your directory should look like the following:
 
-    !![img](img/model-save.png)
+    <!-- border -->![img](img/model-save.png)
 
 5. Upload all model files to your AWS S3 bucket. Edit and run the following commands.
 
@@ -106,7 +107,7 @@ for rg in response.resources:
 
     ```
 
-    !![img](img/model-upload.png)
+    <!-- border -->![img](img/model-upload.png)
 
 
 6. Verify your AWS S3 files upload.
@@ -118,14 +119,13 @@ for rg in response.resources:
 
     It should look like the following:
 
-    !![img](img/model-ls.png)
+    <!-- border -->![img](img/model-ls.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Connect AWS S3 to SAP AI Core)]
+### Connect AWS S3 to SAP AI Core
+
 
 Create an **object store secret** to connect your AWS S3 bucket to SAP AI Core. You can create multiple object store secrets.
 
@@ -154,14 +154,13 @@ print(response.__dict__)
 
 You should see the following response:
 
-!![img](img/acs/3.png)
+<!-- border -->![img](img/acs/3.png)
 
 > Note that depending on your region, your  AWS endpoint syntax may differ from the example above. In the event of an error, try this step again with alternative syntax. For available syntaxes, please see the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Register model as artifact)]
+### Register model as artifact
+
 
 An **artifact** is a reference to your model files located in AWS S3.
 
@@ -187,14 +186,13 @@ print(response.__dict__)
 ```
 You should see the following response:
 
-!![img](img/acs/4.png)
+<!-- border -->![img](img/acs/4.png)
 
 > Important: Make a note of the ID. This ID uniquely identifies your artifact.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set up serving code)]
+### Set up serving code
+
 
 Download and save each of the following files to your local computer. These are the code files that you will upload as a docker image and use later for deployment in SAP AI Core.
 
@@ -207,7 +205,7 @@ Download and save each of the following files to your local computer. These are 
 
 After download your local directory should look like following:
 
-!![img](img/docker-files.png)
+<!-- border -->![img](img/docker-files.png)
 
 A few important parts of the code are discussed here, which will help your understanding.
 
@@ -217,7 +215,7 @@ A few important parts of the code are discussed here, which will help your under
     FROM tensorflow/tensorflow:latest-gpu
     ```
 
-    !![img](img/enable-gpu-1.png)
+    <!-- border -->![img](img/enable-gpu-1.png)
 
 - To verify GPU availability, your code must contain the following lines. The output will appear in the logs of SAP AI Core during deployment.
 ```
@@ -226,7 +224,7 @@ import logging
 logging.info(f"Num GPUs Available: {len(tf.config.list_physical_devices('GPU'))}")
 ```
 
-    !![img](img/enable-gpu-2.png)
+    <!-- border -->![img](img/enable-gpu-2.png)
 
 Follow the steps to upload the files downloaded in step two as a docker image.
 
@@ -239,7 +237,7 @@ Follow the steps to upload the files downloaded in step two as a docker image.
 
     Type your password, it may not be visible but continue to type and press the `Enter` key.
 
-    !![img](img/docker-login.png)
+    <!-- border -->![img](img/docker-login.png)
 
 2. Navigate to your downloaded files location and build docker the image using the code files that you downloaded.
 
@@ -252,7 +250,7 @@ Follow the steps to upload the files downloaded in step two as a docker image.
     > **WARNING** The build process will require approximately 3 GBs of storage space.
 
 
-    !![img](img/docker-build.png)
+    <!-- border -->![img](img/docker-build.png)
 
 3. Upload your docker image to the docker cloud.
 
@@ -260,13 +258,12 @@ Follow the steps to upload the files downloaded in step two as a docker image.
     docker push <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/movie-review-clf-serve:0.0.1  
     ```
 
-    !![img](img/docker-push.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![img](img/docker-push.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Create workflow to serve your model)]
+
+### Create workflow to serve your model
+
 
 Save the following executable file in your local system:
 
@@ -276,7 +273,7 @@ Save the following executable file in your local system:
 
 In the executable, ensure the following.
 
-!![img](img/acs/6_0.png)
+<!-- border -->![img](img/acs/6_0.png)
 
 1. Ensure that your `resourcePlan` is set to `infer.s`. This will enable the GPU node in deployment. Find all the available resource plans0 [here](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/57f4f19d9b3b46208ee1d72017d0eab6.html).
 
@@ -286,10 +283,9 @@ In the executable, ensure the following.
 
 Save your executable.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Sync workflow with SAP AI Core)]
+### Sync workflow with SAP AI Core
+
 
 You will create a folder in your GitHub repository connected SAP AI Core, where you will store the workflow (executable). You will then register this folder as an **Application** in SAP AI Core to enable syncing of the workflow as an executable.
 
@@ -297,7 +293,7 @@ You will create a folder in your GitHub repository connected SAP AI Core, where 
 
 1. Create a folder named `tutorial-tf-text-clf` in your GitHub repository connected to SAP AI Core. Place the following workflows inside it:
 
-    !![img](img/acs/6_1.png)
+    <!-- border -->![img](img/acs/6_1.png)
 
 2. Edit and execute the code below to create an **Application** and sync the folder `tutorial-tf-text-clf`.
 
@@ -313,7 +309,7 @@ You will create a folder in your GitHub repository connected SAP AI Core, where 
     ```
 You should then see:
 
-    !![img](img/acs/6_2.png)
+    <!-- border -->![img](img/acs/6_2.png)
 
 3. Verify your workflow sync status, using the following code:
 
@@ -326,25 +322,24 @@ You should then see:
     ```
 You should then see:
 
-    !![img](img/acs/6_3.png)
+    <!-- border -->![img](img/acs/6_3.png)
 
 After you workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create configuration for deployment)]
+### Create configuration for deployment
+
 
 Here are the important pieces of your configuration:
 
 - The `scenario_id` should contain the same value as in your executable.
 
-    !![img](img/acs/8_1.png)
+    <!-- border -->![img](img/acs/8_1.png)
 
 - The `executable_id` is the `name` key of your executable.
 
-    !![img](img/acs/8_2.png)
+    <!-- border -->![img](img/acs/8_2.png)
 
 - The `artifact_id` uses the value that was generated after you registered model files as artifacts.
 
@@ -368,15 +363,14 @@ print(response.__dict__)
 ```
 You should then see:
 
-!![img](img/acs/8_3.png)
+<!-- border -->![img](img/acs/8_3.png)
 
 >Important: Note down the ID generated. This is your unique configuration identification.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Start deployment)]
+### Start deployment
+
 
 Replace the `configuration_id` field value with the ID from the previous step.  Execute the code.
 
@@ -388,15 +382,14 @@ response = ai_core_client.deployment.create(
 print(response.__dict__)
 ```
 You should then see:
-!![img](img/acs/9_1.png)
+<!-- border -->![img](img/acs/9_1.png)
 
 >Important: Note the unique ID generated of your deployment. You may create multiple deployments using the same configuration ID, each of which will have s unique endpoint.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Check deployment status)]
+### Check deployment status
+
 
 Replace with the `deployment_id` field value with the ID from previous step and execute your code.
 
@@ -416,13 +409,12 @@ print(response.__dict__)
 
 You should then see:
 
-!![img](img/acs/10_1.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![img](img/acs/10_1.png)
 
 
-[ACCORDION-BEGIN [Step 11: ](Make a prediction)]
+
+### Make a prediction
+
 
 Replace the `deployment_id` field value with your deployment ID and execute the code.
 
@@ -447,19 +439,18 @@ print(prediction)
 
 You should then see something like:
 
-!![img](img/acs/11_1.png)
+<!-- border -->![img](img/acs/11_1.png)
 
 Your prediction will be either a `positive` or `negative` along with a confidence value between 0 and 1. This prediction return structure is dependent of the code in docker the image. You can change this as per your requirement.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Verify GPU availability)]
+### Verify GPU availability
+
 
 In the preceding steps, you saw that your docker code has the following lines, which will log the number of GPUs that the `Tensorflow` package recognizes during deployment.
 
-!![img](img/enable-gpu-2.png)
+<!-- border -->![img](img/enable-gpu-2.png)
 
 Now query the deployment logs to view its output. Replace with the `deployment_id` field value with your own ID, and execute.
 
@@ -476,14 +467,13 @@ for log in response.data.result:
 
 The output will contain the log message on the number of GPUs available.
 
-!![img](img/acs/12_1.png)
+<!-- border -->![img](img/acs/12_1.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Stop deployment)]
+### Stop deployment
+
 
 A running deployment incurs costs.
 
@@ -503,7 +493,6 @@ print(response.__dict__)
 
 You should then see:
 
-!![img](img/acs/13.png)
+<!-- border -->![img](img/acs/13.png)
 
-[VALIDATE_7]
-[ACCORDION-END]
+

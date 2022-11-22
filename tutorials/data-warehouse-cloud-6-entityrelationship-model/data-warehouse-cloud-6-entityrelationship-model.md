@@ -1,17 +1,18 @@
 ---
-title: Create an Entity Relationship Model in SAP Data Warehouse Cloud
-description: An entity-relationship model (or E/R model) describes interrelated things of interest in a specific domain of knowledge. You can use an E/R model to better understand a subset of the entities in your space, and to communicate this information to other stakeholders.
+parser: v2
 auto_validation: true
 time: 12
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create an Entity Relationship Model in SAP Data Warehouse Cloud
+<!-- description --> An entity-relationship model (or E/R model) describes interrelated things of interest in a specific domain of knowledge. You can use an E/R model to better understand a subset of the entities in your space, and to communicate this information to other stakeholders.
+
 ## Prerequisites
  - You have [imported your dataset into your Space.](data-warehouse-cloud-5-import-dataset)
 
-## Details
-### You will learn
+## You will learn
   - Overview of E/R Models
   - How to create an E/R Model
   - How to associate data columns
@@ -36,7 +37,8 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the basics of E/R models)]
+### Understand the basics of E/R models
+
 
 An E/R model provides a diagram for organising your data entities (tables and views) in relation to one another. You can:
 
@@ -52,10 +54,9 @@ The work that you do in an E/R model benefits all the users in your Space as the
 
 A data model is a way to organise the data and define the relationship between the data elements you have, to give it a structure. This structure must be aligned with your team's needs to generate reports and queries.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an E/R model)]
+### Create an E/R model
+
 
 1.	Go to the Data Builder and click on the **New Entity-Relationship Model** button.
 
@@ -69,11 +70,10 @@ A data model is a way to organise the data and define the relationship between t
 
 5.	With the data tables now in your modelling interface, you are now ready to create the relevant associations and deploy your E/R model.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Associate data columns)]
+### Associate data columns
+
 
 After including the `SalesOrder` table and the `SalesOrderItems` tables from your Best Run Bikes dataset into the model, they must now be associated to each other.
 
@@ -100,10 +100,9 @@ After including the `SalesOrder` table and the `SalesOrderItems` tables from you
 
     ![AddressID Association](T06-Picture7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save and deploy)]
+### Save and deploy
+
 
 You've now joined all the tables we will be using in this model. Type a name into the **Model Properties** panel and click on **Save**. And once that's completed, you can click on the deploy icon.
 
@@ -114,7 +113,6 @@ You've now joined all the tables we will be using in this model. Type a name int
 
 You have now created associations between the tables by creating an Entity-Relationship model. You can now use this model to create Graphical or SQL views and model your data accordingly.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

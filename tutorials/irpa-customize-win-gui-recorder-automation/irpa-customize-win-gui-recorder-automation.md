@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Ilyes Yamoun
 author_profile: https://github.com/shielddz
-title: Customize automation generated through Recorder
-description: Customize Sales Orders Creation (SAP Win GUI) Bot which is generated using Recorder
 keywords: RPA
 auto_validation: true
 time: 20
@@ -10,18 +9,21 @@ tags: [ tutorial>beginner, software-product>sap-cloud-sdk]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
+# Customize automation generated through Recorder
+<!-- description --> Customize Sales Orders Creation (SAP Win GUI) Bot which is generated using Recorder
+
 ## Prerequisites
   - [Create automation using Recorder](irpa-win-gui-recorder)
 
-## Details
-### You will learn
+## You will learn
   - How to customize a **Recorder** generated Automation
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Customize Application)]
+### Customize Application
+
 Open the Cloud Studio project where you recorded the application using Recorder.
 
-!![Generated automation](step2-resultant-automation.png)
+<!-- border -->![Generated automation](step2-resultant-automation.png)
 
 1.  Select the **Sales order Recorder** application in the Cloud Studio project.
 2.  Select the screen containing the order details.
@@ -29,26 +31,26 @@ Open the Cloud Studio project where you recorded the application using Recorder.
 4.  Rename the material field.
 5.  Select **Remove** the **Id** **Criteria**.
 6.  Select **Name** to add it as a **Criteria**.
-7.  Select **Is a collection** !![Is a Collection icon](step2-is-a-collection-icon.PNG).
+7.  Select **Is a collection** <!-- border -->![Is a Collection icon](step2-is-a-collection-icon.PNG).
 
     > **Is a collection** is used to declare a field as a column containing multiple fields rather than just one field.
 
 8. Repeat the steps 3-7 for the remaining two fields ( *Order Quantity Field* and *Storage location Field* ).
 
-    !![Modify application fields](step2-application-modification.png)
+    <!-- border -->![Modify application fields](step2-application-modification.png)
 
 The application now recognizes *Material*, *Order Quantity* and *Storage Location* as columns and not as fields.
 
-  !![Resultant Fields](step2-result.png)
+  <!-- border -->![Resultant Fields](step2-result.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Customize Automation)]
+
+### Customize Automation
+
 
 1. Create an Excel file with the order details.
 
-    !![Excel File](step3-excel-file.png)
+    <!-- border -->![Excel File](step3-excel-file.png)
 
     > This data is used to create the **Sales order** in SAP ERP. Change this data according to your **SAP ERP** system.
 
@@ -70,7 +72,7 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     -  Browse and select the Excel file.
 
-    !![Configure ECL](step3-excel-cloud-link-configure.png)
+    <!-- border -->![Configure ECL](step3-excel-cloud-link-configure.png)
 
     The file is loaded to the activity.
 
@@ -78,13 +80,13 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     -  Select **+ From Excel Data** to create the Order details **Data Type**.
 
-    !![Configure ECL PART2](step3-excel-cloud-link-configure2.png)
+    <!-- border -->![Configure ECL PART2](step3-excel-cloud-link-configure2.png)
 
     A pop-up window opens.
 
     - Set a name and a description for the **Data Type**.
 
-    !![Order Data Type](step3-order-data-type.png)
+    <!-- border -->![Order Data Type](step3-order-data-type.png)
 
     - To add all the rows from the Excel file, you require adding a **For each** activity.
 
@@ -94,7 +96,7 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     In the automation, go to the **Create Standard Order: Overview** *screen* and add a **For each** activity just above the fields that need to be included in the repetitive process ( *Material*, *Order Quantity* and *Storage Location* ).
 
-    !![For each Activity](step3-for-each-activity.png)
+    <!-- border -->![For each Activity](step3-for-each-activity.png)
 
     Drag and drop the three **Set Element - X** activities inside the **For each** activity.
 
@@ -104,7 +106,7 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     > **returned Values** references the data returned from the **Excel Cloud link** activity.
 
-    !![Setup For each Activity](step3-setup-for-each-activity.png)
+    <!-- border -->![Setup For each Activity](step3-setup-for-each-activity.png)
 
     Map the excel data of the current row to the corresponding field.
 
@@ -114,7 +116,7 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
         > **current Member** references the excel row used in the iteration of the **For each** loop.
 
-        !![Set material Value](step3-set-element-material.png)
+        <!-- border -->![Set material Value](step3-set-element-material.png)
 
     -  Select **Open the target Editor**.
 
@@ -124,7 +126,7 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     -  Select confirm.
 
-        !![Set Target index](step3-set-element-material-2.png)
+        <!-- border -->![Set Target index](step3-set-element-material-2.png)
 
     Some fields are stored as numbers in excel (such as **Order Quantity** and **Storage Location**). Convert them to strings (succession of characters).
 
@@ -132,13 +134,13 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     -  Select **Open expression editor**.
 
-        !![Set orderQuantity](step3-set-order-quantity.png)
+        <!-- border -->![Set orderQuantity](step3-set-order-quantity.png)
 
     -   Enter **Step27.currentMember.orderQuantity.toString()**.
 
     > *Step27* references the **For each** **activity**.
 
-      !![Set orderQuantity Value](step3-set-order-quantity-value.png)
+      <!-- border -->![Set orderQuantity Value](step3-set-order-quantity-value.png)
 
     -  Select **Open the target Editor**.
 
@@ -150,12 +152,12 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
         > Repeat the same steps for **Storage Location** field as for the **Order Quantity** field in the previous steps.
 
-        !![Set orderQuantity Value](step3-set-order-quantity-2.png)
+        <!-- border -->![Set orderQuantity Value](step3-set-order-quantity-2.png)
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Environment Variables)]
+
+### Create Environment Variables
+
 
 **Environment variables** allow you to reuse certain information for a given environment.
 
@@ -169,7 +171,7 @@ Create two **environment variables** (Password and Excel file path).
 
 3.  Select **Create**.
 
-    !![Create Environment Variable 1](step4-create-env-var-1.png)
+    <!-- border -->![Create Environment Variable 1](step4-create-env-var-1.png)
 
 4.  Fill in the *password* **environment variable**'s **Identifier**, **Description** (optional) and **Type** then Select **Create**.
 
@@ -186,21 +188,21 @@ Create two **environment variables** (Password and Excel file path).
 
     The two **environment variables** are created.
 
-    !![Create Environment Variable 2](step4-create-env-var-result.png)
+    <!-- border -->![Create Environment Variable 2](step4-create-env-var-result.png)
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use Environment Variables in Automation)]
+
+### Use Environment Variables in Automation
+
 To use the created **environment variables** in the automation go to the activities corresponding them.
 
 1.  Select **Set Element** of password activity in the automation.
 
 2.  Search and select the *password* **environment variable**.
 
-    > **Environment Variables** have the letter **E** on the left side to distinguish them. !![Distinguish Environment Variables](step4-E.png)
+    > **Environment Variables** have the letter **E** on the left side to distinguish them. <!-- border -->![Distinguish Environment Variables](step4-E.png)
 
-    !![Use password Environment Variable](step4-password-variable.png)
+    <!-- border -->![Use password Environment Variable](step4-password-variable.png)
 
 3.  Select the **Excel Cloud Link** activity in the **automation**.
 
@@ -208,18 +210,17 @@ To use the created **environment variables** in the automation go to the activit
 
 5.  Search and select the *excel_ file_ path* **environment variable**.
 
-    !![Use excel_ file_ path Environment Variable](step4-file-variable.png)
+    <!-- border -->![Use excel_ file_ path Environment Variable](step4-file-variable.png)
 
     Both of the **environment variables** were assigned to their correct value fields.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test your Automation)]
+### Test your Automation
+
 
 Choose **Test** and you will be prompted to put in values for the **environment variables**.
 
-!![Test Application](step4-test-prompt.png)
+<!-- border -->![Test Application](step4-test-prompt.png)
 
 The process operates as follows:
 
@@ -235,6 +236,4 @@ The process operates as follows:
 
 6.  The Sales order is created successfully with data in the Excel.
 
-[DONE]
-[ACCORDION-END]
 ---
