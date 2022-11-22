@@ -36,13 +36,13 @@ Your mission today is to help Best Run Bikes to get a holistic view of their sal
 
 The toolkit contains sample data you can import into your trial SAP Data Warehouse Cloud account. The toolkit consists of 4 sales data CSV tables related to Best Run Bikes. These are:
 
-•	[Sales Orders](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrders.csv)
+•	[Sales Orders](SalesOrders.csv)
 
-•	[Sales Order Items](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrderItems.csv)
+•	[Sales Order Items](SalesOrderItems.csv)
 
-•	[Addresses](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/Addresses.csv)
+•	[Addresses](Addresses.csv)
 
-•	[Business Partners](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/BusinessPartners.csv)
+•	[Business Partners](BusinessPartners.csv)
 
 Download these files and save them in a folder on your local system. After that, you will be ready to get hands-on!
 
