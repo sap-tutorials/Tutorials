@@ -8,11 +8,11 @@ author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Display Fetched Data in Your AppGyver Application
-<!-- description --> Display data fetched from a public API, such as product names and calorific information, in your AppGyver application.
+# Display Fetched Data in Your SAP Build Application
+<!-- description --> Display data fetched from a public API, such as product names and calorific information, in your SAP Build application.
 
 ## You will learn
-  - How to display data fetched from a public API within an AppGyver application
+  - How to display data fetched from a public API within an SAP Build application
 
 In the previous tutorial, you learned how to configure your application to read specific information from an API once a barcode has been scanned. Now, in this final tutorial for this mission, you will learn how to display the fetched information on your application interface.
 
@@ -46,7 +46,7 @@ For this example, we will show you how to display the Product Name and Energy-kc
 
     ![Click to bind paragraph](bind_paragraph.png)
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
+    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
     - Select **Data and Variables**.
 
@@ -82,7 +82,7 @@ We'll now add the calorific information to your app, using the same steps provid
 
     ![Click to bind paragraph](bind_secondpara.png)
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
+    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
     - Select **Data and Variables**.
 
@@ -138,7 +138,7 @@ Now click **Save** (for the app, upper right).
 
 ![Save application](save_application.png)
 
-Your draft application is now complete, allowing you to scan a food item and then read the product name and calorific information per 100g. To do this, open your **AppGyver Preview** app and test the scan feature.
+Your draft application is now complete, allowing you to scan a food item and then read the product name and calorific information per 100g. To do this, open your Preview app and test the scan feature.
 
 In this example, we are scanning some confectionery:
 
