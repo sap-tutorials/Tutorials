@@ -26,8 +26,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
->**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with**
-[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
+>**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with** [ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
 
 ### Define CDS-based travel data model
 
