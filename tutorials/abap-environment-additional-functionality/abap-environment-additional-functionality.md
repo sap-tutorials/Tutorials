@@ -44,7 +44,7 @@ You can add multiple error codes with copy & paste from a [spreadsheet applicati
 
   5. Export the current table content to spreadsheet:
      - File Name: **`ErrorCode###s`**
-     - Format: **`Spreadsheet (*.xlsx)`**
+     - Format: **`Spreadsheet`**
      - Split cells with multiple values: **`true`**
 
   6. Open the downloaded file and **Enable Editing**.
