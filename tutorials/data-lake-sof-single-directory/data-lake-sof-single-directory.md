@@ -14,7 +14,7 @@ author_profile: https://github.com/rnagweka
 ## Prerequisites
 - Have access to a licensed managed or standalone SAP HANA data lake.
 -	Installation of the HDLFSCLI. See tutorial. [Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers](data-lake-file-containers-hdlfscli).
--	Have some structured data files inside of a [SAP HANA data lake File Container](https://help.sap.com/docs/HANA_CLOUD_ALIBABA_CLOUD/683a53aec4fc408783bbb2dd8e47afeb/f4eae33ffb7a44f7af823ee6b70e3598.).
+-	Have some structured data files inside of a [SAP HANA data lake File Container](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a89a80f984f21015b2b2c84d2498d36d/6e1dd06335704f4c96d48279ca1ed555.html?version=2021_4_QRC).
 -	Have some data with you, which will be uploaded onto the SAP HANA data lake File container.
 -	Already set up HDLFS Connection in Database Explorer.
 
@@ -26,7 +26,7 @@ author_profile: https://github.com/rnagweka
 
  Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file container can be done using SQL on Files. Below you will find all of the steps required to start using SQL on Files.
 
- If you have not yet provisioned an SAP HANA data lake, [here](hana-cloud-hdl-getting-started-1.) is a great tutorial on how to do so!
+ If you have not yet provisioned an SAP HANA data lake, [here](hana-cloud-hdl-getting-started-1) is a great tutorial on how to do so!
 
 ---
 
@@ -134,7 +134,7 @@ For the full syntax of clauses available to create an existing table, see [CREAT
 ### Upload a file from HDLFS onto the Data Lake File container
 
 
-Make sure that you have everything setup with respect to HDLFSCLI. One can go through the tutorial for getting started with HDLFSCLI - [Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers](data-lake-file-containers-hdlfscli.).
+Make sure that you have everything setup with respect to HDLFSCLI. One can go through the tutorial for getting started with HDLFSCLI - [Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers](data-lake-file-containers-hdlfscli).
 
 Use the below command to upload a local file onto the Data Lake -
 
@@ -156,7 +156,7 @@ Verify that the files has been uploaded.
 
 ![Verify Files](image-2.png)
 
-Make sure you have already set up a HDLFS Connection in Database Explorer. It will look something like below. To get to know how to setup a HDLFS Connection In Database Explorer go through the tutorial – [Setting Up HDLFS Connection In Database Explorer](data-lake-hdlfs-dbx-connection.).
+Make sure you have already set up a HDLFS Connection in Database Explorer. It will look something like below. To get to know how to setup a HDLFS Connection In Database Explorer go through the tutorial – [Setting Up HDLFS Connection In Database Explorer](data-lake-hdlfs-dbx-connection).
 
 ![Setting Up HDLFS Connection In Database Explorer](image-3.png)
 
@@ -168,7 +168,7 @@ Add a data source, this can be done multiple times with multiple files.
 
 Note that in this step the file path can lead to an exact file or it can lead to a directory. If it leads to a directory, SQL on Files will try to parse all the data files in that directory. To ensure that there are no parse errors, make sure that all the files in the directory match the schema of the table the data source it is being added to.
 
-One could also refer the ALTER TABLE ADD DATASOURCE doc for any further reference -[ ALTER (Remote) TABLE ADD DATASOURCE Statement for Data Lake Relational Engine (HANA DB-Managed) and SQL on Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/e6e7243b09c34d48adf387e96f43c014.html?q=ADD%20DATASOURCE)
+One could also refer the ALTER TABLE ADD DATASOURCE doc for any further reference -[ALTER (Remote) TABLE ADD DATASOURCE Statement for Data Lake Relational Engine (HANA DB-Managed) and SQL on Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/e6e7243b09c34d48adf387e96f43c014.html?q=ADD%20DATASOURCE)
 
 
 ```SQL

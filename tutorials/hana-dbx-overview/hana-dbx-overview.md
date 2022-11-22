@@ -79,7 +79,8 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 |  [SAP HANA, express edition, release notes for SPS 06, revision 61](https://www.sap.com/documents/2022/05/aca852e1-2a7e-0010-bca6-c68f7e60039b.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.14 |
 |  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 with quarterly new releases |
 |  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | New features are released as often as every two weeks. |
-|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/doc/a91f884257684c59923ef33c3fa6cf18/hanacloud/en-US/38cc9f70125646e0bb62b83b83e67564.html?sel4=SAP%20HANA%20Database%20Explorer)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
+|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/whats-new/2495b34492334456a49084831c2bea4e?Category=SAP%20HANA%20Database%20Explorer&locale=en-US)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
+
 
 
 ### Version information
@@ -138,16 +139,23 @@ The instructions on how to setup a free SAP HANA Cloud trial or free tier within
   * <https://help.sap.com/viewer/product/BTP/Cloud/en-US>
 
 
-### Manage SAP HANA Cloud using a CLI (optional)
+### Manage SAP HANA Cloud using the Cloud Foundry CLI (optional)
 
+The Cloud Foundry Command Line Interface (cf CLI) provides users another option for managing their SAP HANA Cloud instances that are provisioned in Cloud Foundry spaces.
 
-The Cloud Foundry Command Line Interface (cf CLI) provides users another option for managing their SAP HANA Cloud instances. The software can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases) and is available for Windows, Linux, and macOS operating systems. The following steps will demonstrate how to start and manage an SAP HANA Cloud instance using the CLI.
+![environment is cloud foundry](ProvisionedInCloudFoundry.png)
+
+The software can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases) and is available for Windows, Linux, and macOS operating systems. The following steps will demonstrate how to start and manage an SAP HANA Cloud instance using the CLI.
 
 1. Complete the installation process by following the guide [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 
 2. Copy the API endpoint from your SAP HANA Cloud account. This information can be found on the Overview page of your SAP BTP Cockpit. The API endpoint is listed under the Cloud Foundry subheading. Save the API endpoint for use in the next step.
 
+
+    ![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
+
     <!-- border -->![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
+
 
 3. In your terminal, type the following command. Replace the API endpoint with the one you copied from the previous step:
 
@@ -182,7 +190,7 @@ The Cloud Foundry Command Line Interface (cf CLI) provides users another option 
     ```
     <!-- border -->![starting a SAP HANA Cloud database](cf-start.png)
 
-For more information on the operations available with the CLI, refer to the documentation [Using the Cloud Foundry CLI with SAP HANA Cloud](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).  
+For more information on the operations available with the Cloud Foundry CLI, refer to the documentation [Using the Cloud Foundry CLI with SAP HANA Cloud](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).  
 
 >Note that SAP HANA Cloud Central provides an option in the actions menu to copy the JSON configuration of a running instance.  This can be used with the `cf create-service` command perhaps to create multiple instances of a database configured in the same way.
 
@@ -195,6 +203,58 @@ For more information on the operations available with the CLI, refer to the docu
 >![stop SAP HANA Cloud command](automation-pilot.png)
 
 >The Automation Pilot also provides a scheduler and integration with SAP Alert Notification Service.  For further details see [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot).
+
+
+### Manage SAP HANA Cloud using the BTP CLI (optional)
+
+For SAP HANA Cloud instances provisioned created using the multi-environment tooling which provisions instances into the subaccount, the Business Technology Platform Command Line Interface (BTP CLI) can also be used for management.
+
+![environment is cloud foundry](ProvisionedInSubAccount.png)
+
+The BTP CLI provides the ability to manage an instance from the command line.  For information on installation, setup, and operations available with the BTP CLI, refer to the documentation [Account Administration Using the SAP BTP Command Line Interface (btp CLI)](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/7c6df2db6332419ea7a862191525377c.html).
+
+Let's take a look at how we can start an instance using the BTP CLI.
+
+1. Download the latest version of the BTP CLI from [SAP Development Tools](https://tools.hana.ondemand.com/#cloud-cpcli). Follow the steps to extract the client executable from the tar.gz archive depending on your operating system.:
+    - Linux: Use the terminal to extract the tar.gz archive with `tar -vxzf <tar.gz name>`
+    - macOS: Open the `tar.gz` file with a double click
+    - Windows: Extract the tar.gz archive with `tar -vxzf <tar.gz name>`
+
+    Then add it to your PATH, open a new terminal, and run `btp`.
+
+2. Once installation is successful, login using the BTP CLI.  You can find your global account subdomain in the BTP Cockpit.
+
+    ![Global Subdomain](global-subdomain.png)
+
+    ```Shell
+    btp login
+    ```
+
+    ![login](btp-login.png)
+
+    >Make sure that the region (such as eu10) in the CLI server URL matches the region of your SAP BTP Cockpit URL.
+
+    >---
+
+    >If you have single sign-on configured, you can use the --sso option.
+
+
+3. Set your target subaccount where the desired instance is located.
+
+    ```Shell
+    btp target --subaccount <subaccount id>
+    ```
+
+    ![Global Subdomain](sub-id.png)
+
+4. You can start an instance by using the same `start.json` file used in the previous step on the Cloud Foundry CLI.  Be sure to provide the correct file path to the JSON file.
+
+    ```Shell
+    btp update services/instance --name <instance name> --parameters start.json
+    ```
+
+    ![Start Instance](update-service.png)
+
 
 
 ### SAP HANA, express edition
@@ -217,7 +277,5 @@ It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP
 ---
 
 Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
-
----
 
 

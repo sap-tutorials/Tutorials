@@ -218,8 +218,10 @@ The following instructions will show a few examples of how to view the list of t
     ![Result of request to return the HDBDiskUsage alert rule](disk_usage_alert_rule.png)
 
 
-### Access database metrics
+    For additional details on the alerts REST API, see [APIs for Alerts](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/81d5c960888741cc8875ab225c540f0a.html) and [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/6f75804854254aa59f0faf399688f467.html).  
 
+
+### Access database metrics
 
 The following instructions will show a few examples of how to view metrics through a REST API in SAP HANA Cloud, SAP HANA database.
 
@@ -282,8 +284,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     >Metrics can also be accessed via SQL queries.  For additional details see [`M_LOAD_HISTORY_SERVICE` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/261022b7e22b4de9b04f931b78c4c6b4.html).  Note that when accessing metrics via SQL queries, the database must be accessible as the data is stored in the tenant database.  When accessing metrics via the REST API, the metrics data is stored outside of the tenant database.
 
-
-For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html).  
+    For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html) and [Overview of Available Metrics](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/46e370ced3ef4d2bbd0ec2337df5f565.html).
 
 
 Congratulations! You have now seen how to use a REST API to access alerts and metrics from an SAP HANA Cloud, SAP HANA database.

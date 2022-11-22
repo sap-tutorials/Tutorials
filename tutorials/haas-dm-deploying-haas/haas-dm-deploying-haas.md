@@ -4,29 +4,31 @@ auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
+tags: [tutorial>beginner, products>sap-hana, software-product>sap-hana-service-for-sap-btp, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
 # Deploy SAP HANA service for SAP BTP
+
 <!-- description --> Create an instance of the SAP HANA service for SAP BTP.
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have a productive account with entitlement to the SAP HANA service for SAP BTP in SAP BTP, Cloud Foundry environment
- - You have [downloaded and configured the Command Line Interface](cp-cf-download-cli)
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have a productive account with entitlement to the SAP HANA service for SAP BTP in SAP BTP, Cloud Foundry environment
+- You have [downloaded and configured the Command Line Interface](cp-cf-download-cli)
 
 ## You will learn
-  - How to use the SAP BTP cockpit as a graphical tool to provision your instance
-  - How to use the Command Line Interface (CLI) for Cloud Foundry to check the creation progress of your instance
 
+- How to use the SAP BTP cockpit as a graphical tool to provision your instance
+- How to use the Command Line Interface (CLI) for Cloud Foundry to check the creation progress of your instance
+
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
 ### Access the Cloud Foundry account
-
 
 Open Google Chrome and navigate to the [SAP BTP cockpit](https://account.hana.ondemand.com/). Click **Log On**.
 

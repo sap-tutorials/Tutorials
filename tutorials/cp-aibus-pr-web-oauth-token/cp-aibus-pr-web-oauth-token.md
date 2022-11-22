@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use the Free Tier Service Plan to Set Up Account for Personalized Recommendation and Get Service Key](cp-aibus-pr-booster-free-key).
 
-<!-- border -->![PR Token](png-files/service-key-details.png)
+<!-- border -->![PR Token](service-key-details.png)
 
 
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values highlighted in the image
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![PR Token](png-files/web-browser.png)
+<!-- border -->![PR Token](web-browser.png)
 
 You should receive a response like the following:
 
@@ -54,4 +54,3 @@ You should receive a response like the following:
 Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
 
 You have successfully generated your OAuth access token for the Personalized Recommendation service and you are now all set to: [Get recommendations based on users' browsing history and/or item description](cp-aibus-pr-swagger-ui).
-

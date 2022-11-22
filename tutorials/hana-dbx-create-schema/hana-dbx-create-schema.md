@@ -203,7 +203,7 @@ The following steps will create sample objects for a hotel database using create
     INSERT INTO HOTEL.HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029', NEW ST_POINT('POINT(-118.295017 34.086975)', 4326));
     INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326));
     INSERT INTO HOTEL.HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401', NEW ST_POINT('POINT(-74.416135 39.361078)', 4326));
-    INSERT INTO HOTEL.HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601', NEW ST_POINT('POINT(-94.724051 32.514183)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(26, 'Delta', '110 Erb St. W', 'Waterloo', 'ON', 'N2L0C6', NEW ST_POINT('POINT(-80.528404 43.463327)', 4326));
 
     INSERT INTO HOTEL.ROOM VALUES(10, 'single', 20, 135.00);
     INSERT INTO HOTEL.ROOM VALUES(10, 'double', 45, 200.00);
@@ -419,7 +419,6 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 
 ### Create views
-    
 
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
@@ -621,5 +620,4 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  
-
 

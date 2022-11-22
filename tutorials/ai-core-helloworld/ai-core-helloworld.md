@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-launchpad
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -158,7 +158,7 @@ Type `LearningScenarios/hello_pipeline.yaml` into the **Name your file** field. 
 
 <!-- border -->![image](img/name2.png)
 
-Now copy and paste the following snippet to the editor.
+Now copy and paste the following snippet to the editor. The code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_02_quick_start_for_your_first_ai_project_using_ai_core/hello_pipeline.yaml).
 
 ```YAML
 apiVersion: argoproj.io/v1alpha1
