@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Enable Logging Service for Your Application
-description: This tutorial shows you how to enable Logging Service for your application.
 keywords: cap
 auto_validation: true
 time: 15
@@ -10,36 +9,23 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Enable Logging Service for Your Application
+<!-- description --> This tutorial shows you how to enable Logging Service for your application.
+
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
  - [Assign a Role Collection to a User](btp-app-role-assignment)
 
-## Details
-### You will learn
+## You will learn
  - How to access logs from command line window and SAP BTP cockpit
  - How to analyze logs using Kibana dashboard
  - How to enable Logging Service for your CAP application
  - How to test the Logging Service
 
-
-To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access logs from command line window)]
-1. Display recent logs.
+### Access logs from command line window
+
+1. Display recent logs. 
 
     ```Shell/Bash
     cf logs --recent <appname>
@@ -53,39 +39,38 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
 > Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---
-[ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
+### Access logs from SAP BTP cockpit
+
 1. In [SAP BTP Cockpit](https://account.hana.ondemand.com/) enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
 3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
 
-    !![Choose Subaccount](choose_subaccount.png)
+    <!-- border -->![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+4. Choose **Cloud Foundry** &rarr; **Spaces**.
 
-3. Choose your space.
+5. Choose your space.
 
-4. Choose on the application whose logs you want to access.
+6. Choose on the application whose logs you want to access.
 
-5. Choose **Logs**.
+7. Choose **Logs**.
 
-    !![App Logs](cpapp-srv-logs.png)
+    <!-- border -->![App Logs](cpapp-srv-logs.png)
 
     > Only the recent logs are displayed.
 
 
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
+### Analyze logs using Kibana dashboard
+
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -99,10 +84,9 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
     > Although the **Open Kibana Dashboard** link is placed on the logs view of a particular application, it will give you access to the logs of all spaces where you have the required permission.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Enable Logging Service)]
+### Enable Logging Service
+
 [OPTION BEGIN [Trial]]
 
 Logs are only kept for a short period and won't be visible in Kibana without the Logging Service. By binding the Logging Service to your application, logs will be kept for longer and will be available for further analysis via Kibana.
@@ -202,10 +186,9 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 [OPTION END]
 
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Test it)]
+### Test it
+
 1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
     ```Shell/Bash
@@ -215,7 +198,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 2. Open Kibana after successful deployment. Your org should now be visible in the Kibana dashboard.
 
-    !![Kibana: Filter Org](kibana_filter_org.png)
+    <!-- border -->![Kibana: Filter Org](kibana_filter_org.png)
 
 3. Choose the ( &#x2B; ) icon to filter for it.
 
@@ -223,20 +206,12 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 5. You should see your newly applied applications.
 
-    !![Kibana: Components](kibana_components.png)
+    <!-- border -->![Kibana: Components](kibana_components.png)
 
 You can also browse all logs using the **Discover** button (compass icon) on the left navigation bar.
 The available fields are displayed on the left side of the screen. You can add fields to the message display or quickly filter for any of the top values.
 
 The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
-
-
-[DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-[ACCORDION-END]
 ---

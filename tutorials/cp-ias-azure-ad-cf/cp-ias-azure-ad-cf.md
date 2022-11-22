@@ -1,6 +1,5 @@
 ---
-title: Register SAP BTP, Cloud Foundry Subaccount in Identity Authentication Service
-description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Identity Services - Identity Authentication and an SAP BTP, Cloud Foundry subaccount.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>identity-authentication]
@@ -10,19 +9,22 @@ author_profile: https://github.com/ValAta
 
 ---
 
+# Register SAP BTP, Cloud Foundry Subaccount in Identity Authentication Service
+<!-- description --> Establish trust between a SAML 2.0 identity provider in SAP Cloud Identity Services - Identity Authentication and an SAP BTP, Cloud Foundry subaccount.
+
 ## Prerequisites
  - You have a Free Trial Account on SAP Business Technology Platform. See [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
  - You have a tenant of Identity Authentication service. See [Tenant Model and Licensing](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/93160ebd2dcb40e98aadcbb9a970f2b9.html).
  - You have an Azure Active Directory (Azure AD) account. See [Sign Up for Microsoft Azure](https://azure.microsoft.com/en-us/resources/videos/sign-up-for-microsoft-azure/)
 
-## Details
-### You will learn
+## You will learn
   - How to establish trust between your SAP BTP, Cloud Foundry subaccount and the Identity Authentication service
   - How to configure users for single sign-on  usage
  
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into Identity Authentication service)]
+### Log into Identity Authentication service
+
 
 > This step is optional if you have already downloaded the metadata file in the previous tutorial.
 
@@ -32,10 +34,9 @@ The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
 >Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information, have a look at [SAP Cloud Identity Services - Identity Authentication](https://discovery-center.cloud.sap/serviceCatalog/identity-authentication) in the SAP Discovery Center.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download service tenant metadata)]
+### Download service tenant metadata
+
 
 > This step is optional if you have already downloaded the metadata file in the previous tutorial.
 
@@ -47,10 +48,9 @@ Go to the **Tenant Settings** in the administration console for Identity Authent
 
 ![Download the metadata file](download-ias-metadata.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add trust configuration)]
+### Add trust configuration
+
 
 1. Navigate to your SAP BTP, Cloud Foundry subaccount. Therefore, go to the [SAP BTP cockpit](https://hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -80,19 +80,17 @@ You should now see an additional trust configuration.
 
 ![create new trust configuration](additional-idp.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download SAP BTP SAML metadata)]
+### Download SAP BTP SAML metadata
+
 
 Download the **SAML Metadata** file of your subaccount.
 
 ![click on download SAML Metadata](download-saml-metadata.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create new SAML service provider)]
+### Create new SAML service provider
+
 
 1. Go back to the administration console for Identity Authentication service through your particular URL.
 
@@ -108,10 +106,9 @@ Download the **SAML Metadata** file of your subaccount.
 
 > Users see this name in the login screen when the authentication is requested by the UAA service. Seeing the name, they know which application they currently access after authentication.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Upload subaccount metadata file)]
+### Upload subaccount metadata file
+
 
 1. Choose **SAML 2.0 Configuration** in the recently created application.
 
@@ -121,10 +118,9 @@ Download the **SAML Metadata** file of your subaccount.
 
 ![Upload SAML metadata file](saml2-config.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Configure default name ID format)]
+### Configure default name ID format
+
 
 1. Choose **Default Name ID Format** in the list of configurations.
 
@@ -134,10 +130,9 @@ Download the **SAML Metadata** file of your subaccount.
 
 ![Upload SAML metadata file](default-name-id.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Upload subaccount metadata file)]
+### Upload subaccount metadata file
+
 
 Choose **Assertion Attributes** in the list of configurations.
 
@@ -147,10 +142,9 @@ Use **+Add** and enter **Groups** (case-sensitive) as assertion attribute name f
 
 ![group assertion attribute](group-assertion.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Log into subaccount with Azure AD user)]
+### Log into subaccount with Azure AD user
+
 
 1. Open a new browser window and replace the **<subdomain>** and **region** placeholder with the information you have noted down in Step 3.
 
@@ -182,16 +176,15 @@ Use **+Add** and enter **Groups** (case-sensitive) as assertion attribute name f
 
     Continue by clicking **Users** (so far the application has no users assigned, accordingly **None Selected** should appear). Search for either your name or the email address you want to continue working with.
 
-    !![search for your user](add-user-application.png)
+    <!-- border -->![search for your user](add-user-application.png)
 
     By hitting the result tile, you select the user, which should appear under `Selected members` panel. Finish your user assignment with clicks on **Select** and **Assign**.
 
-    !![finish assignment](assign-user.png)
+    <!-- border -->![finish assignment](assign-user.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test your configuration)]
+### Test your configuration
+
 
 Check if your user assignment was successful. Open a new browser window again and enter the UAA tenant URL again:
 
@@ -207,8 +200,7 @@ You should not see any particular application, because you did not access a CF a
 
 >`https://<subdomain>.authentication.<region>.hana.ondemand.com/config?action=who&details=true`
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 Congratulations!
 

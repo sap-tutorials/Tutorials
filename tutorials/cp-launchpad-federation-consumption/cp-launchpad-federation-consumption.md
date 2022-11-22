@@ -1,18 +1,19 @@
 ---
-title: Add Federated SAP S/4HANA Roles to Your Launchpad Site
-description: Create a content provider for your SAP S/4HANA system in the SAP Launchpad service provider manager and add the exposed roles to the My Content area and to the SAP Launchpad site, so that end users can access the federated apps and groups.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity]
 primary_tag: software-product>sap-launchpad-service
 ---
 
+# Add Federated SAP S/4HANA Roles to Your Launchpad Site
+<!-- description --> Create a content provider for your SAP S/4HANA system in the SAP Launchpad service provider manager and add the exposed roles to the My Content area and to the SAP Launchpad site, so that end users can access the federated apps and groups.
+
 ## Prerequisites
  - You have set up SAP Cloud Connector and runtime and design time destinations for your SAP S/4HANA system.
  - You exposed roles in your SAP S/4HANA system.
 
-## Details
-### You will learn
+## You will learn
   - How to create a new content provider
   - How to add federated content to the My Content area
   - How to make federated roles available in your SAP Launchpad site
@@ -20,7 +21,8 @@ primary_tag: software-product>sap-launchpad-service
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Content Provider)]
+### Create a new Content Provider
+
 
 In a first step, you will add the SAP S/4HANA system as a content provider.
 
@@ -60,14 +62,13 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
 
     ![Provider created](4b-provider-created.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add roles to My Content)]
+### Add roles to My Content
+
 
 1. Click the **Content Manager** icon to manually assign content from your SAP S/4HANA system to ``My Content``, so you can add it to a site.
 
-    !![Content Manager Icon](5a-go-to-content-manager.png)
+    <!-- border -->![Content Manager Icon](5a-go-to-content-manager.png)
 
 2. On top of the page, click **Content Explorer** to access content coming from content providers.
 
@@ -89,11 +90,10 @@ You see that both roles have been added.
 
 ![Roles Added](9-roles-added.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Check roles in My Content)]
+### Check roles in My Content
+
 
 1. On top of the page, click **My Content**.
 
@@ -107,10 +107,9 @@ You can see that there are 84 apps available in this role. In the next step, you
 
 ![Role Accounts Payable Accountant](12-ap-role-content.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign roles to site)]
+### Assign roles to site
+
 
 To make the apps that come with the two federated roles available in your site, you need to assign the roles to the site.
 
@@ -144,10 +143,9 @@ To make the apps that come with the two federated roles available in your site, 
 
     ![Back to Site Directory](18-back-to-site-directory.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Assign roles to your user)]
+### Assign roles to your user
+
 
 Apps are only displayed to users with the corresponding roles assigned. You assign those roles as role collections to users in the SAP BTP cockpit.
 
@@ -173,10 +171,9 @@ Apps are only displayed to users with the corresponding roles assigned. You assi
 
 Now you are done in SAP BTP cockpit.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Access the federated content)]
+### Access the federated content
+
 
 1. Go back to the Site Directory to launch your ``JobCore`` site.
 
@@ -196,13 +193,15 @@ Now you are done in SAP BTP cockpit.
 
     ![App Manage outgoing checks](29-manage-checks.png)
 
-5. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
+5. Click the SAP icon to go back to the launchpad homepage.
+
+
+6. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
 
     ![Maintain business partner](30-maintain-business-partner.png)
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 
 ---

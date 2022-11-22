@@ -1,11 +1,13 @@
 ---
-title: Create a Calculated Column in SAP Data Warehouse Cloud
-description: Learn how to add a calculated column to a view and get familiar with writing formulas using functions in the Data Builder of SAP Data Warehouse Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
+
+# Create a Calculated Column in SAP Data Warehouse Cloud
+<!-- description --> Learn how to add a calculated column to a view and get familiar with writing formulas using functions in the Data Builder of SAP Data Warehouse Cloud.
 
 ## Prerequisites
 - You have your SAP Data Warehouse Cloud tenant, or you have signed up for a [trial account](https://www.sap.com/products/data-warehouse-cloud/trial.html)
@@ -13,31 +15,32 @@ primary_tag: products>sap-data-warehouse-cloud
 - Understand [Core Data Services Query Language (CQL)](https://cap.cloud.sap/docs/cds/cql)
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a new calculated column in the Data Builder
 - How to write formulas for a new calculated column
 - How to preview a newly added calculated column
 - How to create a calculated expression using CQL
 
 
+## Intro
 You can kick start this tutorial by checking out our tutorial on [**Model Data with a Graphical View**](data-warehouse-cloud-graphical1-model) to understand the basic data modeling in SAP Data Warehouse Cloud.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new calculated column)]
+### Create a new calculated column
+
 
 1.	Go to the **Data Builder** in the menu of left-hand side of the SAP Data Warehouse Cloud welcome page and select the Space in which you have your view.
 
-    !![DWC](T01 - New_DWC.png)
+    <!-- border -->![DWC](T01 - New_DWC.png)
 
 2. Then, click on **New Graphical View**.
 
-	  !![Graphical View](View.png)
+	  <!-- border -->![Graphical View](View.png)
 
 3. This is your canvas to start modeling. Use the left side panel to select your data source. You can either use the data already in the **Repository** of this Space or select from the **Sources** connected to this Space. You can also select an already existing view from the tables and view lists populated at the end of Step 1 to directly arrive at the modeling canvas.
 
-    !![Canvas](T01 - canvas.png)    
+    <!-- border -->![Canvas](T01 - canvas.png)    
 > To add data to your new view, select either one table or view, click on it, and drag it to the canvas in the middle of the screen. You can now drag and drop other tables or views on top of the one that is already in the canvas.
 >
 > As you drag the first table or view, you will see a pop-up listing **Union and Join**. Once you have your first join, notice that the canvas rearranges itself to show a Join node and a Projection node.
@@ -46,22 +49,21 @@ You can kick start this tutorial by checking out our tutorial on [**Model Data w
 
 4. In the example below, you can see the tables `SalesOrder` and `SalesOrderItems` joined.
 
-    !![Join](Join.png)
+    <!-- border -->![Join](Join.png)
 
 5. To add a new calculated column, just click on the `fx` icon next to the output, a projection, or a join node.
-!![Calculated Col](FX.png)
+<!-- border -->![Calculated Col](FX.png)
 
 6. Then, In the **Calculated Elements Properties** sidebar on the right, click on the plus icon.
 
-    !![Icon](Plus.png)
+    <!-- border -->![Icon](Plus.png)
 
 You have added a new calculated column. Next, we will look at how to set up the calculation that will show data in this column.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Write formulas for a new calculated column )]
+### Write formulas for a new calculated column 
+
 
 Now it is time to add technical and business name for the column and write a formula in the expression box as a logic which defines the column.
 
@@ -70,15 +72,15 @@ Now it is time to add technical and business name for the column and write a for
 
 3. In the example below, you can see a formula which calculates the difference between `Createdat` from the `SalesOrder` table and `Delivery Date` from the `SalesOrderItems` table to get a `Delivery_Time_in_Days` calculated column.
 
-	   !![Expressionon](Exp.png)
+	   <!-- border -->![Expressionon](Exp.png)
 
 4. You can see the available functions by clicking on the **All Functions** dropdown. In this example, you can use the `Datetime` function which will give you the required difference.
 
-	   !![Func](Func.png)
+	   <!-- border -->![Func](Func.png)
 
 5. After selecting the function you wish to use, scroll down to select the appropriate method under it, in this case you can select `DAYS_BETWEEN` since the new calculated column is to get the difference between dates in days.
 
-    !![Days Between](DB.png)
+    <!-- border -->![Days Between](DB.png)
 
 6. Finally, you can go to the **Columns** section next to the **All Functions** option to select the two required columns for the expression. In this example, `Createdat` from `SalesOrder` and `Delivery_Date` from `SalesOrderItems` tables respectively.
 
@@ -95,35 +97,33 @@ Below are the examples of common methods used under different functions availabl
 - `UPPER and LOWER` – Transforming a string into upper or lower characters to harmonize columns. For example, `UPPER (header)`.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Preview new calculated column)]
+### Preview new calculated column
+
 
 To preview the data after adding a new calculated column, follow these steps:
 
 1.	In the `CalculatedElementsProperties` sidebar, click on **Columns**.
 
-    !![Columns](Col.png)
+    <!-- border -->![Columns](Col.png)
 
 2.	In the modeling canvas, click on the view icon.
 
-    !![Data](Preview.png)
+    <!-- border -->![Data](Preview.png)
 
 3.	You can now see, for example the new calculated column `Delivery_Time_in_Days` added in Step 2.
 
-    !![DID](DID.png)
+    <!-- border -->![DID](DID.png)
 
 You can also go through the video below which will guide you through the same process of creating a calculated column and previewing the result including advanced examples of functions and formulas.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YHF-WZ56rxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write a calculated expression)]
+### Write a calculated expression
+
 
 In the video below, you can see an example of calculated expression in **Data Builder** in SAP Data Warehouse Cloud. The steps in this tutorial will guide you through the same process.
 
@@ -131,7 +131,7 @@ In the video below, you can see an example of calculated expression in **Data Bu
 
 Once you have arrived at the `CalculatedElementsProperties` sidebar and chose to create a new calculated column in the Data Builder, you will see the fields to enter Business name and Technical name followed by Expression box, Functions, Columns and the Operators that you can use in SAP Data Warehouse Cloud.
 
-  !![Fields](Fields.png)
+  <!-- border -->![Fields](Fields.png)
 
 1. Now it is time to use the code editor in Data Builder and write a calculated expression as a logic which defines the new calculated column.
 
@@ -150,14 +150,13 @@ CASE WHEN NETAMOUNT > 1000 THEN 'GOOD' ELSE 'BAD' END
 
 
 
-[VALIDATE_6]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 
+### Test yourself
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
+
+
 
 ---

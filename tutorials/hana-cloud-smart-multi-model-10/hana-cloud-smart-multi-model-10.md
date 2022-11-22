@@ -1,11 +1,13 @@
 ---
-title: Calculate Isochrones and Closeness Centrality
-description: Learn how to use Shortest Paths One-To-All (SPOA) and Breadth First Search (BFS) functions, which allow you to calculate isochrones and closeness centrality.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Calculate Isochrones and Closeness Centrality
+<!-- description --> Learn how to use Shortest Paths One-To-All (SPOA) and Breadth First Search (BFS) functions, which allow you to calculate isochrones and closeness centrality.
 
 ## Prerequisites
 - You have already created a Graph Workspace using the tutorial [First steps with the SAP HANA Graph Engine](hana-cloud-smart-multi-model-7).
@@ -13,12 +15,12 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to use Shortest Path One-to-All (SPOA) function to calculate minimum distance
 - How to use Breadth First Search (BFS) function to implement Closeness Centrality
 
 
+## Intro
 In this tutorial, you will explore two more fundamental functions: **Shortest Path One-to-All (SPOA)** and **Breadth First Search (BFS)**. The first one does the obvious - given a start vertex, it calculates the distance/cost to every other vertex in the graph. SPOA can be used to calculate [**`Isochrones`** (*)](https://wiki.openstreetmap.org/wiki/Isochrone), i.e. areas with the same drive time distance. While [BFS](https://en.wikipedia.org/wiki/Breadth-first_search) is a fundamental building block for many graph algorithms, including [**Closeness Centrality**](https://en.wikipedia.org/wiki/Closeness_centrality) - one of the multiple standard centrality algorithms to identify the importance of a vertex in a network.
 
 This tutorial consists of two steps:
@@ -29,7 +31,8 @@ This tutorial consists of two steps:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Calculate minimum distance using SPOA function)]
+### Calculate minimum distance using SPOA function
+
 The `Shortest_Path_One_To_All` function is like the `Shortest_Path` that you have used in the previous tutorials. As the name suggests, it calculates the minimum distances/costs from a start vertex to all other vertices in the network. The result is not a single `WeigthedPath`, but a Graph which contains edges of shortest paths only. The **vertices of the output Graph have an attribute `CALCULATED_COST` which indicates the minimum distance/cost required to reach the vertex**.
 
 The SPOA statement is constructed like this:
@@ -114,7 +117,7 @@ SELECT * FROM "F_SPOA_VERTICES"(1433737988, 240, 'HEXAGON') ORDER BY "CALCULATED
 
 5. Using a GIS application like [`Esri ArcGIS Pro`(*)](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview) or [`QGIS`(*)](https://qgis.org/en/site/about/index.html), the HEXAGON result can be **color-coded** by the average `CALCULATED_COST`, resulting in a map visualization like below. Areas with the same color can be reached with the same drive time - so called `isochrones`.
 
-    !![ISOCHRONE Color](ss-01-isochrone-color.png)
+    <!-- border -->![ISOCHRONE Color](ss-01-isochrone-color.png)
 
 6. Let's say you next want to do business with cyclists in London. Your goal is to open a new bike repair shop. To find the right location for your shop, you could look at the existing repair stations and their reach. Maybe you can **find white spots on the map where there is not a lot of competition**.
 
@@ -134,17 +137,16 @@ SELECT * FROM "F_SPOA_VERTICES_MULTI"(' "amenity" = ''bicycle_repair_station'' '
 
 The result is a set of `CONVEXHULL` polygons which indicate "**good repair shop coverage**".
 
-!![ISOCHRONE Blue](ss-02-isochrone-blue.png)
+<!-- border -->![ISOCHRONE Blue](ss-02-isochrone-blue.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement closeness centrality using BFS function)]
+### Implement closeness centrality using BFS function
+
 For this step, you will use a different network, the London Tube network. It is a simple dataset in which the **tube stations represent vertices**, the **sequence of stations along a tube line are the edges**.
 
-!![TUBE LINE](ss-03-tube-lines.png)
+<!-- border -->![TUBE LINE](ss-03-tube-lines.png)
 
 1. First, select the tables and then create a **GRAPH workspace** with these statements:
 
@@ -272,7 +274,7 @@ SELECT *
 
     Using a GIS application for advanced visualization, you see the tube stations, where the **blue ones are most important/central to the network**.
 
-    !![Closeness Centrality](ss-04-closeness-centrality.png)
+    <!-- border -->![Closeness Centrality](ss-04-closeness-centrality.png)
 
 > In this tutorial, you got to know more about complex procedures and functions that offer you helpful visualization approaches for your spatial data.
 
@@ -288,15 +290,13 @@ Related content:
 -	[SAP HANA Graph Reference Guide](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/LATEST/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

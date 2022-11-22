@@ -1,19 +1,20 @@
 ---
-title: Deploy MSSQL in the Kyma Runtime
-description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
+parser: v2
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Deploy MSSQL in the Kyma Runtime
+<!-- description --> Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 
 ## Prerequisites
  - [Docker](https://www.docker.com/) installed with a valid public account
  - [`kubectl` configured to KUBECONFIG downloaded from the Kyma runtime](cp-kyma-download-cli)
  - [GIT](https://git-scm.com/downloads) installed
 
-## Details
-### You will learn
+## You will learn
   - How to configure and build a MSSQL database Docker image
   - How to create a Namespace in the Kyma runtime
   - How to deploy the MSSQL database Docker image to the Kyma runtime which includes:
@@ -21,11 +22,13 @@ primary_tag: products>sap-btp\\, kyma-runtime
     - A Kubernetes `PersistentVolumeClaim` for the storage of the database data
     - A Kubernetes Service used to expose the database to other Kubernetes resources
 
+## Intro
 In this tutorial, you configure a database named `DemoDB` which contains one `Orders` table populated with two rows of sample data.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. Go to the [kyma-runtime-extension-samples](https://github.com/SAP-samples/kyma-runtime-extension-samples) repository. This repository contains a collection of Kyma sample applications which will be used during the tutorial.
 
@@ -37,10 +40,9 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
     git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the sample)]
+### Explore the sample
+
 
 1. Open the `database-mssql` directory in your desired editor.
 
@@ -54,11 +56,10 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
 
 5. Within the `k8s` folder you can find the resource definitions that will be used to deploy the sample to the Kyma runtime. This includes the `deployment.yaml` which specifies the microservice definition of the MSSQL database and also a service definition which exposes the microservice to other resources within the cluster. The `pvc.yaml` specifies a persistent volume claim which is used to request a storage location for the data of the database.  The `secret.yaml` contains the database user and password.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Build the Docker image)]
+### Build the Docker image
+
 
 A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. In this step, you will build a `mssql` image according to the Dockerfile definition contained in the docker folder. Make sure to run the following commands from the `database-mssql` directory using your CLI, and also replace the value of `<your-docker-id>` with your Docker account ID.
 
@@ -74,10 +75,9 @@ A Docker container image is a lightweight, standalone, executable package of sof
     docker push <your-docker-id>/mssql
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use the Docker image locally)]
+### Use the Docker image locally
+
 
 Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
@@ -150,10 +150,9 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     docker images
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Apply resources to the Kyma runtime)]
+### Apply resources to the Kyma runtime
+
 
 You can find the resource definitions in the `k8s` folder. If you performed any changes in the database configuration, these files may also need to be updated. The folder contains the following files:
 
@@ -163,12 +162,15 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
 Run the following commands from the `database-mssql` directory using your CLI.
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+    
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Apply the `PersistentVolumeClaim`:
 
@@ -201,10 +203,10 @@ Run the following commands from the `database-mssql` directory using your CLI.
     mssql-6df65c689d-qdj4r        2/2     Running   0          93s
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Locally access the MSSQL Deployment)]
+
+### Locally access the MSSQL Deployment
+
 
 Kubernetes provides a port-forward functionality that allows you to connect to resources running in the Kyma runtime locally. This can be useful for development and debugging tasks. Make sure to adjust the name of the Pod in the following commands to match your own.
 
@@ -237,10 +239,10 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 
 4. To end the process, use `CTRL+C`.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Directly access the MSSQL Deployment)]
+
+### Directly access the MSSQL Deployment
+
 
 Similarly to how the Docker image can be accessed locally, you can perform the same on the Deployment running in the Kyma runtime. Make sure to adjust the name of the Pod in the following commands to match your own.
 
@@ -270,7 +272,5 @@ Similarly to how the Docker image can be accessed locally, you can perform the s
 
 4. The commands performed in [Step 4: ](Use the Docker image locally) to query the database can now be used in the same fashion.
 
-[DONE]
-[ACCORDION-END]
 
 ---

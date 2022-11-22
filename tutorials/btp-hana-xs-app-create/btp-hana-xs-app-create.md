@@ -1,6 +1,5 @@
 ---
-title: Create an SAP HANA XS Classic Hello World Application Using SAP HANA Studio
-description: Create and test a simple SAP HANA XS classic application that displays the "Hello World" message.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>Cloud, software-product>sap-business-technology-platform, tutorial>license]
@@ -9,19 +8,22 @@ author_name: Sylvia Hördt
 author_profile: https://github.com/sapsy
 ---
 
+# Create an SAP HANA XS Classic Hello World Application Using SAP HANA Studio
+<!-- description --> Create and test a simple SAP HANA XS classic application that displays the "Hello World" message.
+
 ## Prerequisites
  - You have a subaccount in the SAP BTP, Neo environment.
  - You're assigned the Administrator role for the subaccount.
  - Make sure the SAP HANA tenant database you want to use is deployed in your subaccount before you begin with this tutorial. For more information, see [Install Database Systems](https://help.sap.com/viewer/d4790b2de2f4429db6f3dff54e4d7b3a/Cloud/en-US/1261e6b87e174c05b774ea38fa3c8c51.html).
  - You've installed the tools as described in [Install SAP HANA Tools for Eclipse](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/b0e351ada628458cb8906f55bcac4755.html) to follow the steps described in this tutorial.
 
-## Details
-### You will learn
+## You will learn
   - How to create and test a simple SAP HANA XS classic application using an SAP HANA tenant database system (MDC)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a database user)]
+### Create a database user
+
 
 Create a new database user in the SAP HANA cockpit and assign the user the required permissions for working with the SAP HANA Web-based Development Workbench.
 
@@ -91,10 +93,9 @@ You'll perform all subsequent activities with this new user.
 
         > Therefore, choose the **Logout** button before you continue to work with the SAP HANA Web-based Development Workbench, where you need to log on again with the new database user.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add a repository workspace)]
+### Add a repository workspace
+
 
 **Prerequisites**
 
@@ -137,11 +138,10 @@ In the **Repositories** view, you see your workspace, which enables you to brows
 
 At the same time, a folder will be added to your file system to hold all your development files.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add an XS application project)]
+### Add an XS application project
+
 
 After you set up a development environment for the chosen SAP HANA system, you can add a project to contain all the development objects you want to create as part of the application-development process.
 
@@ -167,10 +167,9 @@ The **Project Explorer** view in the **SAP HANA Development** perspective in Ecl
 
 The system information in brackets to the right of the project node name in the **Project Explorer** view indicates that the project has been shared. Shared projects are regularly synchronized with the repository hosted on the SAP HANA system you're connected to.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write server-side JavaScript)]
+### Write server-side JavaScript
+
 
 SAP HANA Extended Application Services (SAP HANA XS) supports server-side application programming in JavaScript. In this step, you add some simple JavaScript code that generates a page which displays the words `Hello, World!`.
 
@@ -207,10 +206,9 @@ SAP HANA Extended Application Services (SAP HANA XS) supports server-side applic
 
   The activate operation publishes your work and creates the corresponding catalog objects. You can now test it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test your application)]
+### Test your application
+
 
 Check if your application is working and if the `Hello, World!` message is displayed.
 
@@ -248,10 +246,9 @@ The following text should be displayed:
 
 **`Hello, World !`**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Retrieve data from SAP HANA)]
+### Retrieve data from SAP HANA
+
 
 To extract data from the database, you use your JavaScript code to open a connection to the database and then prepare and run an SQL statement. The results are added to the **`Hello, World !`** response. You use the following SQL statement to extract data from the database:
 
@@ -289,10 +286,10 @@ The SQL statement returns one row with one field called **DUMMY**, whose value i
 
 4.  Open the context menu of the `MyFirstSourceFile.xsjs` file and choose **Team** > **Activate All**.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test your application again)]
+
+### Test your application again
+
 
 Check if your application is retrieving data from your SAP HANA database.
 
@@ -330,11 +327,9 @@ The following text should be displayed:
 
 `Hello, World!This is the reponse from my SQL: X`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+
 ---

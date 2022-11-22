@@ -1,6 +1,5 @@
 ---
-title: Use the Image Classifier API on SAP BTP
-description: Connect to an Image Classifier API with the help of the SAP BTP SDK Assistant for iOS and SAP API Business Hub
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,23 +8,24 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 time: 30
 ---
 
-## Prerequisites  
+# Use the Image Classifier API on SAP BTP
+<!-- description --> Connect to an Image Classifier API with the help of the SAP BTP SDK Assistant for iOS and SAP API Business Hub
 
+## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
 - **SAP BTP SDK for iOS:** Version 3.0 SP01
 - [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 - [Set Up the SAP BTP SDK for iOS](fiori-ios-hcpms-install-sdk)
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - How to connect to the correct API through the Assistant
 - How access the Image Classifier API to identify images
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Xcode project)]
+### Create a new Xcode project
+
 
 For this tutorial we will create a Xcode project from scratch via Xcode and connect to the API manually. Please go ahead and create a new Xcode Project with the following configuration:
 
@@ -79,10 +79,9 @@ A typical **200** response from the API would look like this:
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Export the needed SAP Frameworks to your Xcode project)]
+### Export the needed SAP Frameworks to your Xcode project
+
 
 You can implement the API without the SAP BTP SDK for iOS but in this tutorial we will use it. So please open your **SAP BTP SDK Assistant for iOS** and select **SAP BTP SDK Assistant for iOS** in the navigation bar on top. Now select **Export Frameworks..** and choose the corresponding folder where your project is located. You might want to create a **Frameworks** folder to export them.
 
@@ -111,10 +110,9 @@ In the project settings you can see that those frameworks have been added to you
 
 ![framneworks](fiori-ios-scpms-image-classifier-10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a Table View to your app)]
+### Add a Table View to your app
+
 
 It's about time to build some UI for the user to classify images over the provided API.
 We're going to add an `UINavigationController` and a `UITableViewController` to the `Main.storyboard`. Please open the `Main.storyboard`, delete the existing view and add a `UITableViewController` from the **Object Library**.
@@ -133,10 +131,9 @@ Go back to the `Main.storyboard` and select the added `UITableViewController`. C
 
 ![viewcontroller](fiori-ios-scpms-image-classifier-14.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add an Image picker)]
+### Add an Image picker
+
 
 We want to enable the user to take a picture or choose one from his Photo library. We will add a **Flexible Space Bar Button Item** to the bottom of the view.
 
@@ -160,10 +157,9 @@ Last step would be mark the `UINavigationController` as **Initial View Controlle
 
 ![viewcontroller](fiori-ios-scpms-image-classifier-16a.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add access to the Camera and Photo Library)]
+### Add access to the Camera and Photo Library
+
 
 In order for the user to have access to the camera and Photos library, you have to ask for permission via the `info.plist` file.
 
@@ -175,10 +171,9 @@ Your `info.plist` file should look like this now
 
 ![viewcontroller](fiori-ios-scpms-image-classifier-18.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Change the class delegates and add import statements)]
+### Change the class delegates and add import statements
+
 
 First open the `ImageClassifierTableViewController` class and add the following import statements:
 
@@ -216,10 +211,9 @@ At last, add the following lines of code to the `viewDidLoad(:)`:
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement logic to use the FUIObjectTableViewCell to display the classifiers result)]
+### Implement logic to use the FUIObjectTableViewCell to display the classifiers result
+
 
 Before we go and implement the logic for calling the classifier's API, we will implement the Table View logic. First we want to register a `FUIObjectTableViewCell` at our Table View. Go to the `viewDidLoad(:)` and add the following lines of code:
 
@@ -265,10 +259,9 @@ With that we make sure the cell is registered on the table view and the rows wil
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement logic to use the Camera and Photo Library)]
+### Implement logic to use the Camera and Photo Library
+
 
 You remember we created those `IBActions` all the way in the beginning, now you're going to implement those to actual show the camera and the Photo Library.
 
@@ -321,10 +314,9 @@ Also replace the code of the `didTapCamera(_ : UIBarButtonItem)`:
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add a UIImage extension to resize images)]
+### Add a UIImage extension to resize images
+
 
 We want to make some resizing to the images, so we implement some logic for that:
 
@@ -349,10 +341,9 @@ If you now build run the app on the simulator, your app should look like this:
 
 > You won't be able to use the camera on simulator, run it on a physical iOS device to use the camera.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Connect to the SAP Leonardo Image Classification API)]
+### Connect to the SAP Leonardo Image Classification API
+
 
 Now everything is ready to take pictures or pick one from the Photo Library. Let's implement the logic for connecting to the API and get the photo classified.
 
@@ -452,10 +443,9 @@ private func createBody(_ boundary: String, data: Data?, mimeType: String, filen
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Implement UIImagePickerControllerDelegate)]
+### Implement UIImagePickerControllerDelegate
+
 
 Everything is ready to use now, there is one piece missing which is the implementation of the `UIImagePickerControllerDelegate`. Please add another extension to the `ImageClassifierTableViewController` which is implementing the `UIImagePickerControllerDelegate` protocol.
 
@@ -481,10 +471,9 @@ extension ImageClassifierTableViewController: UIImagePickerControllerDelegate {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Run the app and classify some images)]
+### Run the app and classify some images
+
 
 Run the app on your physical device to take a picture. In the following screenshots you can see I take a picture of an iPad and it get's classified the correct way.
 
@@ -492,5 +481,4 @@ Scan             |  Result
 :-------------------------:|:-------------------------:
 ![app](fiori-ios-scpms-image-classifier-20.png)  |  ![app](fiori-ios-scpms-image-classifier-21.png)
 
-[VALIDATE_11]
-[ACCORDION-END]
+

@@ -1,6 +1,5 @@
 ---
-title: Create a Simple OData Service with Mobile Back-End Tools
-description: Create and deploy a simple OData Service with SAP Mobile Services, mobile back-end tools (MBT) using the CSDL graphical modeler.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
@@ -9,23 +8,27 @@ author_name: Manuel Stampp
 author_profile: https://github.com/manuel-stampp
 ---
 
+# Create a Simple OData Service with Mobile Back-End Tools
+<!-- description --> Create and deploy a simple OData Service with SAP Mobile Services, mobile back-end tools (MBT) using the CSDL graphical modeler.
+
 ## Prerequisites
   - [Get Ready to Develop on SAP Business Technology Platform](group.scp-1-get-ready)
   - [Setup your Business Application Studio environment for Mobile](cp-mobile-bas-setup)
 
-## Details
-### You will learn
+## You will learn
   - How to use graphical editor to create your OData model
   - How to deploy an OData service with SAP Mobile Services, mobile back-end tools
   - How to create an app router and configure login
 
+## Intro
 The mobile back-end tools is a set of tools that enable a developer to model an OData service and generate a Java EE web application to implement the OData service, along with automatic creation of the necessary database tables within a pre-existing database schema.
 
 In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData service publicly available on the SAP Gateway Demo system (ES5), using the MBT graphical modeler in SAP Business Application Studio. In further tutorials you can therefore extend, connect and build an app on top of it.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create metadata file in SAP Business Application Studio)]
+### Create metadata file in SAP Business Application Studio
+
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
@@ -62,10 +65,9 @@ In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData se
 
 The command creates a blank metadata file for you that you can now open and edit with the graphical editor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add entities to the OData service)]
+### Add entities to the OData service
+
 
 > In the end of this step, the full content of the CSDL file is linked, so you **do not have to build all the properties**. Nevertheless you are encouraged to create a complex type, the entities, some properties and especially the association yourself in Graphical Modeler.
 
@@ -214,11 +216,10 @@ The command creates a blank metadata file for you that you can now open and edit
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Generate and run the service)]
+### Generate and run the service
+
 
 1. Select **View** &rarr; **Find Command** (or press **Shift + CTRL/CMD + P**).
 
@@ -281,10 +282,9 @@ The command creates a blank metadata file for you that you can now open and edit
 
 >In case you struggle on generating the service, you might find the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/generating.html) helpful.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure authentication and app router)]
+### Configure authentication and app router
+
 
 If the service shall be accessible independently and authentication is required, an Authorization and Trust Management Service (XSUAA) service binding as well as an app router will be required for your OData service. If you are looking for more details of this service, you might want to go through [Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create) tutorial and its references, already covering the same for another application type.
 
@@ -440,8 +440,7 @@ If the service shall be accessible independently and authentication is required,
 
     Wait for the deployment to be finished. MTA deployment may take a while, especially when it is initially deployed.
 
-[VALIDATE_4]
-[ACCORDION-END]
+
 
 ---
 

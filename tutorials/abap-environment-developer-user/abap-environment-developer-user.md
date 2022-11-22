@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a Developer User in SAP BTP ABAP Environment
-description: Create a developer user with the developer role in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development,  products>sap-business-technology-platform, tutorial>license ]
 time: 10
@@ -9,30 +8,34 @@ author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
+# Create a Developer User in SAP BTP ABAP Environment
+<!-- description --> Create a developer user with the developer role in SAP Business Technology Platform ABAP Environment.
+
 ## Prerequisites  
 - You must have an administrator user.
 
-## Details
-### You will learn
+## You will learn
 - How to create an employee user
 - How to assign business roles to an employee user
-
-### Time to Complete
+## Time to Complete
 **10 Min**.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 
 To be connected to your system in ADT, expose an ABAP service and consume this service to create a Fiori Application, you will need to have a Developer User with developer role.
 
 ![Overview](Picture21.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Log in to SAP Fiori Launchpad as administrator)]
+### Log in to SAP Fiori Launchpad as administrator
+
+
+If you do not have already an existing ADT project, you need to find the URL to the launchpad in the BTP cockpit. For more information see the [link] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/11e765e8af6d476f99ce014b3f02bd64.html). Otherwise you can use the existing project to find out the launchpad link as follows:
+
  1. Open Eclipse and do right click on your system and navigate to **Properties**.
 
     ![Open Eclipse](Picture17.png)
@@ -52,27 +55,24 @@ To be connected to your system in ADT, expose an ABAP service and consume this s
 
     ![Login to SAP Fiori Launchpad](Picture19.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Navigate to Maintain Employees application)]
+### Navigate to Maintain Employees application
+
 Navigate to **Maintain Employees** application.
 
 ![Maintain Employees](Picture2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a new employee)]
+### Create a new employee
+
 Create a new employee by clicking **New**
 
 ![Create a new employee](Picture3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enter user data)]
+### Enter user data
+
   1. Enter user data and a valid Email address .
       - Employee ID: `DEVELOPER_XXX`
       - Last Name: `DEVELOPER_XXX`
@@ -82,20 +82,18 @@ Create a new employee by clicking **New**
 
       ![Enter user data](Picture4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create business user)]
+### Create business user
+
   1. Select the newly created entry in the employee list.
 
   2. Press **Create Business User**.
 
       ![Create business user](Picture5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add business roles)]
+### Add business roles
+
   1. Press **Add** Business Roles.
 
       ![Add business Roles](Picture6.png)
@@ -108,12 +106,10 @@ Create a new employee by clicking **New**
 
       ![save](Picture8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
+
 In which application on your SAP Fiori launchpad can you create developer user as an administrator?
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

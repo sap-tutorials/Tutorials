@@ -1,20 +1,22 @@
 ---
-title: Add Localization to Luigi UI5 Micro-Frontend
-description: Enable your micro-frontend to be displayed in multiple languages using the Luigi localization features.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>javascript]
 primary_tag: topic>user-interface
 ---
 
-## Details
-### You will learn
+# Add Localization to Luigi UI5 Micro-Frontend
+<!-- description --> Enable your micro-frontend to be displayed in multiple languages using the Luigi localization features.
+
+## You will learn
   - How to add localization to your UI5 micro-frontend
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Update current language with Luigi Client)]
+### Update current language with Luigi Client
+
 
 In this step, you will add a function to get the current language from Luigi Client and then update it, so that the language of the UI5 micro-frontend can be changed accordingly.
 
@@ -50,10 +52,9 @@ In this step, you will add a function to get the current language from Luigi Cli
     });
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add files with multi-language content)]
+### Add files with multi-language content
+
 
 In this step, you will create files with the text that is to be changed within the UI5 micro-frontend.
 
@@ -71,10 +72,9 @@ In this step, you will create files with the text that is to be changed within t
     Quantity = Quantity
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add default language to index.html)]
+### Add default language to index.html
+
 
 1. Edit the `ui5-mf/uimodule/webapp/index.html` file by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
 
@@ -95,10 +95,9 @@ In this step, you will create files with the text that is to be changed within t
     ></script>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Provide translation in UI5)]
+### Provide translation in UI5
+
 
 This step involves the standard process in UI5 for providing translation.
 
@@ -108,10 +107,9 @@ This step involves the standard process in UI5 for providing translation.
     <ObjectAttribute text="{i18n>Quantity}: {orderQuantity}" />
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run completed app)]
+### Run completed app
+
 
 Now, your app should be complete and you can run it locally to see if everything works. First, open a terminal/command prompt window and navigate to your project folder.
 
@@ -143,8 +141,7 @@ Now, your app should be complete and you can run it locally to see if everything
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

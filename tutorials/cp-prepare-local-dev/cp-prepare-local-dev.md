@@ -1,6 +1,5 @@
 ---
-title: Prepare the Local Development Environment
-description: Install essential runtimes and tools for local development.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, topic>node-js ]
@@ -9,14 +8,17 @@ time: 20
 
 
 
-## Details
-### You will learn  
+# Prepare the Local Development Environment
+<!-- description --> Install essential runtimes and tools for local development.
+
+## You will learn  
   - How to install Node.js and npm (Node Package Manager) as a runtime
   - How to install essential tools like git and Cloud MTA Build Tool (`mbt`)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the Node.js runtime)]
+### Install the Node.js runtime
+
 
 >Node.js is a server-side runtime environment built on Chrome's V8 JavaScript engine. It provides an event-driven, non-blocking (asynchronous) I/O and cross-platform runtime environment. It enables you to build scalable server-side applications using JavaScript and is open-source.
 >&nbsp;
@@ -67,9 +69,9 @@ brew install nodejs
 
 [OPTION END]
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 2: ](Verify your installation)]
+
+### Verify your installation
+
 
 To verify if the installation was successful, check the `npm` and `node.js` version. Open the command line and print for the installed version.
 
@@ -78,9 +80,8 @@ node -v
 npm -v
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Install the cloud MTA build tool)]
+### Install the cloud MTA build tool
+
 
 This tool will create so-called `.mtar` archives, which are deployable packages that contain your entire project. The tool itself is an OS-dependent binary, but you can leverage [npm](https://www.npmjs.com/package/mbt) to install the right version for your OS and append it to the Path variable. Run the following command to install this tool:
 
@@ -106,9 +107,8 @@ npm install -g mbt
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Install git)]
+### Install git
+
 
 Another tool that you will use often is git. It will allow you to copy (aka clone) existing code project from compatible pages such as <https://github.com>.
 
@@ -136,8 +136,6 @@ brew install git
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

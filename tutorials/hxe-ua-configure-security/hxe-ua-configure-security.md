@@ -1,31 +1,31 @@
 ---
-title: Configure SAP HANA 2.0, express edition Security
-description: Your SAP HANA, express edition installation has several preconfigured security settings. Before using SAP HANA, express edition, complete these security tasks.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 time: 5
 ---
 
+# Configure SAP HANA 2.0, express edition Security
+<!-- description --> Your SAP HANA, express edition installation has several preconfigured security settings. Before using SAP HANA, express edition, complete these security tasks.
+
 ## Prerequisites  
 - [Start Using SAP HANA 2.0, express edition](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)
 
-## Details
-### You will learn  
+## You will learn  
   - How to perform security tasks to ensure that your security settings are not known outside your organization
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](The SAP HANA, express-edition license)]
+### The SAP HANA, express-edition license
+
 
 Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Change the SSFS Master Keys and Root Keys
 
-[ACCORDION-BEGIN [Step 2: ](Change the SSFS Master Keys and Root Keys)]
 
 Every user who downloads SAP HANA, express edition receives the same default encryption settings. Use the **`change_key.sh`** utility to change encryption automatically.
 
@@ -38,11 +38,9 @@ The **`change_key.sh`** utility:
 - Changes the encryption root keys. The script generates new keys, backs them up, and activates them.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Run the script
 
-[ACCORDION-BEGIN [Step 3: ](Run the script)]
 
 Follow this procedure to run the script:
 
@@ -52,11 +50,9 @@ At the command prompt, type:
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### Input details
 
-[ACCORDION-BEGIN [Step 3: ](Input details)]
 
 The script prompts you for:
 
@@ -68,42 +64,34 @@ Root key backup password            | Enter a strong password. The root key back
 Root key directory                  | A directory to store the root key backup password securely. Choose a non-temporary directory. For example `/usr/sap/HXE/HDB90`.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Enter Y when prompted
 
-[ACCORDION-BEGIN [Step 4: ](Enter Y when prompted)]
 
 Enter **Y** when prompted. The script runs. Wait for the `hxehost:hxeadm>` prompt to return (approximately 30 seconds).
 
 New data will now be encrypted with the new keys.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Deactivate the SYSTEM user
 
-[ACCORDION-BEGIN [Step 5: ](Deactivate the SYSTEM user)]
 
 SYSTEM is the database `superuser` and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Log in as the hxeadmS user
 
-[ACCORDION-BEGIN [Step 6: ](Log in as the hxeadmS user)]
 
 In a terminal, log in as the `hxeadm` user:
 
 `sudo su -l hxeadm`
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create a new admin user
 
-[ACCORDION-BEGIN [Step 7: ](Create a new admin user)]
 
 Create a new admin user with the USER ADMIN system privilege:
 
@@ -114,11 +102,9 @@ Create a new admin user with the USER ADMIN system privilege:
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### Deactivate the SYSTEM user
 
-[ACCORDION-BEGIN [Step 8: ](Deactivate the SYSTEM user)]
 
 Use the new admin user to deactivate the SYSTEM user:
 
@@ -127,6 +113,3 @@ Use the new admin user to deactivate the SYSTEM user:
 ```
 
 
-[DONE]
-
-[ACCORDION-END]

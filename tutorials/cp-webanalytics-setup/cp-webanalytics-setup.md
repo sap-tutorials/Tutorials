@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
-primary_tag: products>sap-web-analytics
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---
@@ -17,7 +17,11 @@ author_profile: https://github.com/Vikramkulkarni01
   - Create a customer admin who can set up SAP Web Analytics
 
 ## Prerequisites  
-[Get a Free tier Account on SAP BTP](hcp-create-trial-account)
+1. [Get a Free tier Account on SAP BTP](hcp-create-trial-account)
+2. [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements): Assign the service plan for "service". You can select the service plan called **Free** here to test out the service without any costs.
+3. [Create a Service Instance in SAP BTP](btp-cockpit-instances): Create a service instance for " Service Name" to able to complete the following tutorial.
+
+
 
 ## Intro
 SAP Web Analytics is a software as a service (SaaS) offering on the SAP Business Technology Platform (BTP).
@@ -34,9 +38,8 @@ For example, create a space named "E-commerce" to which you register your shoppi
 
 
 ### Open the SAP BTP Cockpit
-
-
 In the **Home page** of SAP BTP cockpit, select your **Global Account**.
+
 
 
 ### Create a subaccount
@@ -70,10 +73,7 @@ Skip this step if you already have a trial subaccount.
 
     <!-- border -->![Entitlements](Step_3.png)
 
-
-
 ### Subscribe to SAP Web Analytics
-
 
 1. Open your subaccount.
 2. In the left pane, select **Service Marketplace**.
@@ -87,14 +87,9 @@ Skip this step if you already have a trial subaccount.
 
 6. Choose **View Subscription**. You'll see that you are now subscribed.
     <!-- border -->![View Subscription](Step6.png)
-
     <!-- border -->![Subscribed in Green](Step6.1_Subscribed.png)
 
-
-
-
 ### Create customer admin role
-
 
 1. Select your subaccount to navigate back to subaccount overview page.
 2. In the left pane, select **Security** and then **Role Collections**.

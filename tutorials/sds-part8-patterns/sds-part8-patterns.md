@@ -1,6 +1,5 @@
 ---
-title: Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming
-description: Part 8 of 9. Define and watch for patterns in events. Use CCL Editor.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
@@ -9,8 +8,10 @@ author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
 
-## Details
-### You will learn  
+# Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming
+<!-- description --> Part 8 of 9. Define and watch for patterns in events. Use CCL Editor.
+
+## You will learn  
  - Defining a pattern to watch for.
  - Defining contents of the event to produce when a pattern has been detected.
  - Using the CCL Editor to modify the project.
@@ -18,7 +19,8 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a pattern element)]    
+### Add a pattern element
+    
 
 1. Click **SAP HANA Streaming Development** to switch to the perspective.
 
@@ -36,11 +38,9 @@ time: 15
 
     ![rename](event-patterns/4-rename.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Edit column expressions
 
-[ACCORDION-BEGIN [Step 2: ](Edit column expressions)]
 
 1. Click on Switch to Text button to switch to CCL Editor. You can also press **F6**.
 
@@ -97,11 +97,9 @@ time: 15
 
     ![change to visual](event-patterns/15-changetovisual.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add a pattern to match
 
-[ACCORDION-BEGIN [Step 3: ](Add a pattern to match)]
 
 1. Click Add Pattern icon shown below to define the pattern to watch for.
 
@@ -126,6 +124,4 @@ time: 15
 
     ![compile](event-patterns/20-compile.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
