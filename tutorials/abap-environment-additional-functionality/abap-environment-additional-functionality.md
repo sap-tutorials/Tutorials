@@ -9,7 +9,7 @@ author_profile: https://github.com/mervey45
 ---
 
 # Get to know additional functionality of the Custom Business Configurations app
-<!-- description --> Learn how to use the paste function to copy from Microsoft Excel documents. Get to know how to create business configuration documentation and make use of intent navigation.
+<!-- description --> Learn how to copy and paste data from spreadsheet applications. Get to know how to create business configuration documentation and make use of intent navigation.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -18,15 +18,15 @@ author_profile: https://github.com/mervey45
 
 
 ## You will learn  
-- How to use the paste function to copy from Microsoft Excel documents
+- How to copy and paste data from spreadsheet applications
 - How to create business configuration documentation
 - How to make use of intent navigation
 
 ---
-### Use copy and paste functionality
+### Copy and paste data from spreadsheet applications
 
 
-You can add multiple error codes with copy & paste from [Microsoft Excel](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
+You can add multiple error codes with copy & paste from a [spreadsheet application](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
 
   1. Start the **Custom Business Configurations** app.
 
@@ -40,13 +40,12 @@ You can add multiple error codes with copy & paste from [Microsoft Excel](https:
 
   4. Select **Export as**.
 
-      ![Export as](excel2.png)
+      ![Export as](spread2.png)
 
   5. Export the current table content to spreadsheet:
-     - File Name: **`ExcelCode###s`**
-     - Format: **`Microsoft Excel Workbook (*.xlsx)`**
-
-      ![Export content to spreadsheet](excel3.png)
+     - File Name: **`ErrorCode###s`**
+     - Format: **`Spreadsheet (*.xlsx)`**
+     - Split cells with multiple values: **`true`**
 
   6. Open the downloaded file and **Enable Editing**.
 
@@ -58,13 +57,13 @@ You can add multiple error codes with copy & paste from [Microsoft Excel](https:
 
   9. Back in the **Custom Business Configurations** app, click **Paste**.
 
-      ![Paste new rows](excel6.png)
+      ![Paste new rows](spread6.png)
 
 10. If prompted, click on **Allow**.
 
 11. After pasting, you can see the new rows. Select a transport and click on **Save**.
 
-      ![Save new rows](excel8.png)
+      ![Save new rows](spread8.png)
 
 
 ### Create business configuration documentation
