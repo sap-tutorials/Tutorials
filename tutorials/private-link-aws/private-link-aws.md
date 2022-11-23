@@ -103,7 +103,7 @@ Under "message", you can see the current status. Please renew the command after 
 Showing status of last operation:
 
 status:     create in progress
-message:    Connection from VPC Endpoint ID 'vpce-047f057f38a2e27e1' not yet approved at VPC Endpoint Service 'com.amazonaws.vpc.us-east-1.vpce-svc-0d727708b69ad6738'. Waiting for approval.
+message:    Connection from VPC Endpoint ID 'vpce-047f057f38a2e27e1' not yet approved to service 'com.amazonaws.vpc.us-east-1.vpce-svc-0d727708b69ad6738'. Waiting for approval.
 ```
 
 > Execute this command again, if there's no change in the current status. If you receive an error message, go back to the previous steps.
@@ -148,7 +148,7 @@ To check the current status of the newly created service instance, you need the 
 ```Shell/Bash
   status:     create succeeded
 
-  message:    Connection from VPC Endpoint ID 'vpce-047f057f38a2e27e1' to VPC Endpoint Service 'com.amazonaws.vpce.us-east-1.vpce-svc-0d727708b69ad6738' is established.
+  message:    Connection from VPC Endpoint ID 'vpce-047f057f38a2e27e1' to service 'com.amazonaws.vpce.us-east-1.vpce-svc-0d727708b69ad6738' is established.
   started:    <date>
   updated:    <date>
 ```
