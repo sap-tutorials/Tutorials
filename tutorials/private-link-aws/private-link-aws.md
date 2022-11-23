@@ -9,19 +9,19 @@ primary_tag: software-product-function>sap-btp-cockpit
 ---
 
 # Connect SAP Private Link Service to AWS Private Link Service
-<!-- description --> Connect SAP Private Link service to AWS Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
+<!-- description --> Connect SAP Private Link Service to AWS Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 
 ## Prerequisites
- - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service entitlement: [Set Up SAP Private Link Service on Amazon Web Services (Beta)](private-link-service-onboarding-aws).
+ - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link Service entitlement: [Set Up SAP Private Link Service on Amazon Web Services (Beta)](private-link-service-onboarding-aws).
  - You have created an AWS Private Link Service in the Amazon VPC Console. [Create a service powered by AWS Private Link](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html).
  - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## You will learn
-  - How to create an SAP Private Link service instance to connect to your AWS Private Link Service using Cloud Foundry CLI.
+  - How to create an SAP Private Link Service instance to connect to your AWS Private Link Service using Cloud Foundry CLI.
   - How to bind the service instance to your application using Cloud Foundry CLI.
 
 ## Intro
-SAP Private Link service establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
+SAP Private Link Service establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
 <!-- border -->![Overview of  Link service functionality](private-endpoint.png)
 
@@ -130,7 +130,7 @@ Return to the AWS VPC console:
 
 You should now receive a success message that the approval is pending.
 
->**Security Info**: In a scenario in which the person that approves the endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids.
+>**Security Info**: In a scenario in which the person that approves the endpoint connection wasn't the one that created the Private Link Service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids.
 
 
 
@@ -158,7 +158,7 @@ To check the current status of the newly created service instance, you need the 
 ### Bind application to service instance
 
 
-Upon the creation of a binding between a CF application and a private link service instance, SAP Private Link service creates a space-scoped [Cloud Foundry application security group](https://docs.cloudfoundry.org/concepts/asg.html) hat enables network access to the IP address associated with the private endpoint.
+Upon the creation of a binding between a CF application and a Private Link Service instance, SAP Private Link Service creates a space-scoped [Cloud Foundry application security group](https://docs.cloudfoundry.org/concepts/asg.html) hat enables network access to the IP address associated with the private endpoint.
 
 To bind the service instance to your application, you need to know the name of your application and your service instance (in this example `privatelink-test`). Then, execute the following command:
 
@@ -201,5 +201,9 @@ After the creation of your service binding, your application receives the inform
 ---
 
 Congratulations! You have successfully completed the tutorial.
+
+[DONE]
+[ACCORDION-END]
+
 
 ---
