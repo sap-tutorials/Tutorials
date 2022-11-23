@@ -1,37 +1,36 @@
 ---
-title: Authenticate once and share data between multiple application
-description: Use the Onboarding flow to authenticate once and share data between multiple business applications built with SAP BTP SDK for iOS.
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
-## Prerequisites  
+# Authenticate once and share data between multiple application
+<!-- description --> Use the Onboarding flow to authenticate once and share data between multiple business applications built with SAP BTP SDK for iOS.
 
+## Prerequisites  
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.1
 - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
-## Details
 
-### You will learn  
-
+## You will learn  
 As of version 2.1, the SAP BTP SDK for iOS now incorporates the possibility to provide a shared logon experience for multiple applications. In addition, data can be shared between applications using the SDK's `KeychainStoreManager`.
 
+## Intro
 In this tutorial, you will create two applications. The first app will be used to store data from the secure store, and the second app will retrieve the data stored by the first app. In addition, you will also experience the shared logon mechanism.
 
 > Please note the apps created in this tutorial are meant show the basic principles of setting up a shared store between multiple apps. In productive code, you normally should not hard-code the cipher and password in the `AppDelegate.swift` file, but use a more secure way of handling these. However, for the brevity of the tutorial and easier understanding of what is happening, this choice was made.
 
 > Also, if you are working on the trial instance of SAP BTP, make sure you have a maximum of 3 application definitions defined in SAP Mobile Services for development and operations. Since the trial allows a maximum of 5 native mobile applications, you should have a maximum of 3 application definitions defined. If you have 4 or more applications defined, log on to your SAP Mobile Services for development and operations cockpit first, and export & delete any unused applications.
-
-### Time to Complete
-
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create 'SharedOne' Xcode project with SAP BTP SDK Assistant for iOS)]
+### Create 'SharedOne' Xcode project with SAP BTP SDK Assistant for iOS
+
 
 On your local machine, navigate to your `./<SAP BTP SDK for iOS>` folder. Double-click the **SAP BTP SDK Assistant for iOS** icon to start the application.
 
@@ -73,10 +72,9 @@ After you have clicked **Finish** in the previous step, the SAP BTP SDK Assistan
 
 After the SAP BTP SDK Assistant for iOS has finished, **Xcode** will launch and open the just generated `SharedOne` project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable App Groups entitlement)]
+### Enable App Groups entitlement
+
 
 In Xcode, open the `SharedOne` project settings, and switch to the **Capabilities** tab. Scroll down to the **App Groups** capability, and set the switch next to it to **On**.
 
@@ -88,10 +86,9 @@ Click the **Plus** button below it, and provide the following **App Group** ID:
 
 ![Create Xcode project with SAP BTP SDK Assistant for iOS](fiori-ios-scpms-shared-keystore-05.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Modify Onboarding flow)]
+### Modify Onboarding flow
+
 
 Open file `SharedOne > Onboarding > OnboardingManager.swift` and locate method `configuredStoreManagerStep()`
 
@@ -122,17 +119,15 @@ With this code, the following is happening:
  4. When using a shared store, you don't want an error thrown when a store is created which is already been created by a different app. To bypass this behavior of the step, flag `runRestoreIfStoreExists` should be set to true.
  5. In order to share the same store ID, the step's `storeID` is set to a hard-coded `uuid` value.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create 'SharedTwo' Xcode project with SAP BTP SDK Assistant for iOS)]
+### Create 'SharedTwo' Xcode project with SAP BTP SDK Assistant for iOS
+
 
 Repeat steps 1-3, but now, everywhere it says `SharedOne`, enter or use `SharedTwo` instead.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Store data in 'SharedOne' app)]
+### Store data in 'SharedOne' app
+
 
 Open the Xcode project for the first app `SharedOne`, and open `AppDelegate.swift` file.
 
@@ -167,17 +162,15 @@ Next, locate method `application(_:didFinishLaunchingWithOptions:)` and just abo
 storeData()
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run 'SharedOne' app)]
+### Run 'SharedOne' app
+
 
 If you now build and run the app `SharedOne`, after you have logged in and accepted the EULA, the app should run with the Collections view displaying the available OData entities, just like it normally would. However, since method `storeData()` has been called, an entry with key `myKey` is now added to the shared store.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Read data in 'SharedTwo' app)]
+### Read data in 'SharedTwo' app
+
 
 Switch to the Xcode project for the second app `SharedTwo`, and open `AppDelegate.swift` file.
 
@@ -224,23 +217,20 @@ Finally, just above the bottom return statement, add:
 retrieveData()
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run 'SharedTwo' app)]
+### Run 'SharedTwo' app
+
 
 If you now build and run the app `SharedTwo`, after you have logged in and accepted the EULA, the app should run with the Collections view displaying the available OData entities, just like it normally would. However, since method `retrieveData()` has been called, the entry with key `myKey` which was stored from `SharedOne` is now retrieved to the shared store and its content printed to the console:
 
 ![Create Xcode project with SAP BTP SDK Assistant for iOS](fiori-ios-scpms-shared-keystore-06.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test the shared logon experience)]
+### Test the shared logon experience
+
 
 Now close both running apps, and open one of them again. You now notice you don't need to logon to both apps anymore, since the credentials are stored in the shared key store.
 
-[VALIDATE_9]
-[ACCORDION-END]
+
 
 ---

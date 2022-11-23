@@ -1,6 +1,5 @@
 ---
-title: Generate Alerts Using a Derived Window in SAP HANA Streaming Analytics
-description: Create and use a derived window to analyze events, filter data, and generate alerts.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,18 +7,21 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 auto_validation: true
 time: 20
 ---
+# Generate Alerts Using a Derived Window in SAP HANA Streaming Analytics
+<!-- description --> Create and use a derived window to analyze events, filter data, and generate alerts.
+
 ## Prerequisites
  - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://developers.sap.com/tutorials/sds-event-stream-moving-average.html)
 
 ## Next Steps
 - **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://developers.sap.com/tutorials/sds-event-stream-playback.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to use a derived window to apply a filter to watch for events that should generate an alert
 
 ---
 
+## Intro
 In this tutorial, you will add and configure a derived stream that will watch for events that need to generate an alert - by applying a filter.
 
 However, rather than just using the standard **Filter** element, you will use the **Derived Window** element from the **Palette** since it gives you more flexibility. With this, you can apply the filter and also change the structure of the output event.
@@ -44,37 +46,33 @@ WHERE AVG_TEMP.AVG_TEMP > AVG_TEMP.MAX_TEMP ;
 
 ```
 
-[ACCORDION-BEGIN [Step 1: ](Add a derived window to generate alerts)]
+### Add a derived window to generate alerts
+
 
 Click on **Derived Window** in the **Palette** and drop it onto the canvas.
 
 ![1-dropderivedwindow](1-dropderivedwindow.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Connect the new window to the event stream
 
-[ACCORDION-BEGIN [Step 2: ](Connect the new window to the event stream)]
 
 Add a connector from **`AVG_TEMP`** to the new window.
 
 ![add connector](2-addconnector.png)
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Change the window name)]
+### Change the window name
+
 
 Change the new window name to `ALARM_TEMP`, then press **Enter**.
 
 ![rename to alarm temp](3-renametoalarmtemp.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add columns to the window
 
-[ACCORDION-BEGIN [Step 4: ](Add columns to the window)]
 
 Click the **Add Column Expression** ( **f(x)** ) option shown below.
 
@@ -94,11 +92,9 @@ Select the **Add Column Expression** ( **f(x)** ) option, then **Column Expressi
 
 Repeat this step to add a second column.
 
-[DONE]
 
-[ACCORDION-END]
+### Edit the column names and expressions
 
-[ACCORDION-BEGIN [Step 5: ](Edit the column names and expressions)]
 
 Rename the first new column to `ALARM_TYPE`, then press **Enter**.
 
@@ -122,11 +118,9 @@ Enter `'Machine not maintaining temperature'` in the expression edit box for the
 
 ![rename second expression](12-renamesecondexp.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add a filter expression
 
-[ACCORDION-BEGIN [Step 6: ](Add a filter expression)]
 
 Now click the **Add Query Clause** button.
 
@@ -146,11 +140,9 @@ Change the filter expression to: `AVG_TEMP.AVG_TEMP > AVG_TEMP.MAX_TEMP`. Use **
 
 ![filter expression](16-filterexp.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Compile and check for errors
 
-[ACCORDION-BEGIN [Step 7: ](Compile and check for errors)]
 
 Click the **Compile Streaming Project (F7)** button to check for errors.
 
@@ -158,6 +150,3 @@ Click the **Compile Streaming Project (F7)** button to check for errors.
 
 > Note: You will get a compiler warning about the lack of a retention policy on the aggregate stream.  You can ignore this warning. The reason for the warning is that windows default to KEEP ALL. If you explicitly state KEEP ALL, then the compiler accepts that you meant it. If you omit an explicit KEEP policy, the compiler warns you in case it's not what you intended. Here, this is an aggregation where you are grouping by Machine ID - and you do indeed want to keep the aggregate value for every machine ID.
 
-[DONE]
-
-[ACCORDION-END]

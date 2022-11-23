@@ -1,6 +1,5 @@
 ---
-title: Pre-Installation Tasks
-description: The virtual machine (VM) installation method is the simplest SAP HANA 2.0, express edition on-premise installation method for compatible Windows, OS X, and Linux laptops. Perform these pre-installation tasks first, before you register.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,23 +7,27 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 5
 ---
 
+# Pre-Installation Tasks
+<!-- description --> The virtual machine (VM) installation method is the simplest SAP HANA 2.0, express edition on-premise installation method for compatible Windows, OS X, and Linux laptops. Perform these pre-installation tasks first, before you register.
+
 <!-- loio6d73440459d4476c8f21bb852d7f36a4 -->
 
 ## Prerequisites
  - **Tutorials:**  Open the Install SAP HANA 2.0, express edition on a preconfigured virtual machine tutorial group or the Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced) tutorial group.
 
-## Details
-### You will learn
+## You will learn
 You'll decide whether the virtual machine installation method is best for you, you'll learn the hardware and software requirements, and you'll install a hypervisor.
 
 ---
 
+## Intro
 > Note:
 > Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
 >
 >
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Virtual Machine installation method)]
+### Understand the Virtual Machine installation method
+
 
 The SAP HANA 2.0, express edition VM image is platform-independent. You can install it to a Windows, OS X, or Linux machine, provided your laptop meets the storage and memory prerequisites. Choose the VM installation method if you want the simplest `on-premise` installation experience.
 
@@ -52,11 +55,9 @@ You can download two different installation packages depending on your requireme
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Note changes from version 1.0
 
-[ACCORDION-BEGIN [Step 2: ](Note changes from version 1.0)]
 
 If you're familiar with the older 1.0 SPS 12 version, note this important change:
 
@@ -65,11 +66,9 @@ If you're familiar with the older 1.0 SPS 12 version, note this important change
 
 See the [release notes](https://developers.sap.com/topics/hana.resources.html#releaseNotes) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
 
-[DONE]
 
-[ACCORDION-END]
+### Ensure your laptop meets the software requirements
 
-[ACCORDION-BEGIN [Step 3: ](Ensure your laptop meets the software requirements)]
 
 Check if your laptop has the recommended software to successfully install and run the SAP HANA 2.0, express edition VM package.
 
@@ -82,11 +81,9 @@ Check if your laptop has the recommended software to successfully install and ru
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Ensure your laptop meets the hardware requirements
 
-[ACCORDION-BEGIN [Step 4: ](Ensure your laptop meets the hardware requirements)]
 
 Check if your laptop has the recommended software to successfully install and run the SAP HANA 2.0, express edition VM package.
 
@@ -105,11 +102,9 @@ Go to [Determine If Your Processor Supports Intel Virtualization Technology](htt
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Install a hypervisor
 
-[ACCORDION-BEGIN [Step 5: ](Install a hypervisor)]
 
 Hypervisors are software products used for creating and running virtual machines. Install a supported hypervisor on your laptop if you don't have one already. SAP HANA 2.0, express edition has been tested on these hypervisors:
 
@@ -128,16 +123,11 @@ Example installation procedure for `VMware Workstation Player 12.x`:
 3.  Register `VMware Workstation Player` when prompted, and follow the setup instructions.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Go to the next tutorial
 
-[ACCORDION-BEGIN [Step 6: ](Go to the next tutorial)]
 
 1.   If you don't have the parent tutorial group open already, click the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine* tile or the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)* tile at the bottom of this tutorial.
 
 2.   Click the next tutorial in the sequence
 
-[DONE]
-
-[ACCORDION-END]

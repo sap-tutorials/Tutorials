@@ -1,33 +1,35 @@
 ---
+parser: v2
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Subscribe to SAP Intelligent RPA Service in SAP BTP
-description: Subscribe to SAP Intelligent RPA on SAP Business Technology Platform so that you can build an automation to automate repeated tasks.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
+# Subscribe to SAP Intelligent RPA Service in SAP BTP
+<!-- description --> Subscribe to SAP Intelligent RPA on SAP Business Technology Platform so that you can build an automation to automate repeated tasks.
+
 ## Prerequisites
 - You have [Set Up an SAP BTP Account for Tutorials](group.btp-setup) on trial.
 
-## Details
-### You will learn
+## You will learn
   - How to subscribe to the SAP Intelligent RPA Service
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Run the SAP Intelligent RPA booster)]
+### Run the SAP Intelligent RPA booster
+
 1. In the navigation area of the SAP BTP Cockpit, choose **Boosters** and search for **SAP Intelligent RPA**
 
-    !![Booster screen](Step1-Search_RPA_Booster.png)
+    <!-- border -->![Booster screen](Step1-Search_RPA_Booster.png)
 
 2. Select the SAP Intelligent RPA Booster to open the **Overview** page.
 
 3. Choose **Start**.
 
-    !![Start Booster](Step2-StartBooster.png)
+    <!-- border -->![Start Booster](Step2-StartBooster.png)
 
     > SAP Intelligent RPA has 3 components:
 
@@ -51,15 +53,14 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
     You're now in your SAP BTP subaccount.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open SAP Intelligent RPA service)]
+### Open SAP Intelligent RPA service
+
 1. Choose **Instances and Subscriptions**.
 
 2. Locate your **SAP Intelligent RPA** subscription and choose it to open SAP Intelligent RPA Cloud Factory.
 
-    !![Instances and Subscriptions](Step5-Instances_Subscriptions.png)
+    <!-- border -->![Instances and Subscriptions](Step5-Instances_Subscriptions.png)
 
     A new tab will open with access to the SAP Intelligent RPA Cloud Factory.
 
@@ -67,10 +68,9 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 You can now use this new trial account to discover all functionalities provided by SAP Intelligent RPA.
 
-!![New trial](Step6-CloudFactory.png)
+<!-- border -->![New trial](Step6-CloudFactory.png)
 
 > **IMPORTANT:** This URL will be used as a tenant when you set up your SAP Intelligent RPA On-Premise Component **Desktop Agent**, and the URL will be used in subsequent tutorials. Please save it.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

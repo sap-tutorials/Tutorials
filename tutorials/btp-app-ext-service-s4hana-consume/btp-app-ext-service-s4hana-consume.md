@@ -1,26 +1,28 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Add Services and Consume an External Service from SAP S/4HANA
-description: This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
 keywords: cap
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+# Add Services and Consume an External Service from SAP S/4HANA
+<!-- description --> This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
+
 ## Prerequisites
  - [Configure Systems in Cloud Connector](btp-app-ext-service-cloud-connector)
 
-## Details
-### You will learn
+## You will learn
  - How to prepare your CAP application
  - How to deploy your CAP application
  - How to test your CAP application with SAP S/4HANA connectivity
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add the Connectivity service)]
+### Add the Connectivity service
+
 In this tutorial, you do the final steps to use the external service in the CAP application on SAP BTP. You create an on-premise destination with your technical user's name and password. By binding the Connectivity and the Destination services to your CAP service, it can access the service using the destination.
 
 Add the following lines to your `mta.yaml` file:
@@ -60,10 +62,9 @@ resources:
     service-plan: lite
 ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Bind the Connectivity and Destination services to your CAP service)]
+### Bind the Connectivity and Destination services to your CAP service
+
 Add the following lines to the `cpapp-srv` module in your `mta.yaml` file:
 
 <!-- snippet mta.yaml modules: cpapp-srv -->
@@ -92,10 +93,10 @@ modules:
 The Destination service lets you find the destination information that is required to access a remote service or system from your Cloud Foundry application.
 To consume the external service from our cloud deployed application, you will create a Destination and a Destination Service.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---
-[ACCORDION-BEGIN [Step 3: ](Create a Destination in SAP BTP cockpit)]
+### Create a Destination in SAP BTP cockpit
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -104,11 +105,11 @@ To consume the external service from our cloud deployed application, you will cr
 
 4. Choose **Connectivity** &rarr; **Destinations**.
 
-    !![Destinations](destinations.png)
+    <!-- border -->![Destinations](destinations.png)
 
 5. Choose **New Destination**.
 
-    !![New Destination](new_destination.png)
+    <!-- border -->![New Destination](new_destination.png)
 
 6. Configure the following settings:
 
@@ -124,14 +125,13 @@ To consume the external service from our cloud deployed application, you will cr
 
     > Replace `{Virtual host}` and `{Virtual port}` in the URL with the values that you defined in `Step 3: Add system mapping` [from this tutorial](btp-app-ext-service-cloud-connector).
 
-    !![Configure Settings](configure_settings.png)
+    <!-- border -->![Configure Settings](configure_settings.png)
 
 7. Choose **Save**.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Set Destination)]
+### Set Destination
+
 To set the destination for `API_BUSINESS_PARTNER` service, add the following lines for productive profile to your `package.json` file:
 
 ```JSON[5-10]
@@ -148,10 +148,9 @@ To set the destination for `API_BUSINESS_PARTNER` service, add the following lin
         }
 ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Deploy your CAP application)]
+### Deploy your CAP application
+
 If you use the [SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform](btp-app-ci-cd-btp), you just need to push the commit to your **main** branch and wait for the deployment to be completed.
 
 Otherwise, deploy your application as [Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
@@ -172,10 +171,9 @@ Otherwise, deploy your application as [Multi-Target Application (MTA)](btp-app-c
     cf deploy cpapp_1.0.0.mtar
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Test your CAP application with SAP S/4HANA connectivity)]
+### Test your CAP application with SAP S/4HANA connectivity
+
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote SAP S/4HANA system.
 
 > Don't forget to perform the steps from the tutorial [Subscribe to the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
@@ -194,21 +192,17 @@ When creating new entries in the **Risks** application, you should be able to us
 
 4. Choose **Create**.
 
-    !![Create Risk](create_risk.png)
+    <!-- border -->![Create Risk](create_risk.png)
 
 5. Open the value help for the **Supplier** field.
 
-    !![Risk Object Page](risk_object_page.png)
+    <!-- border -->![Risk Object Page](risk_object_page.png)
 
 6. You should see a list of suppliers.
 
-    !![RiskTitle](suppliers-list.png)
+    <!-- border -->![RiskTitle](suppliers-list.png)
 
 Congratulations! You have completed all tutorials.
 
-[DONE]
 The result of this tutorial can be found in the [`ext-service-s4hana-consume`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hana-consume) branch.
-
-
-[ACCORDION-END]
 ---

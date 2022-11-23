@@ -1,26 +1,29 @@
 ---
-title: Connect Using the SAP HANA ODBC Driver
-description: Connect to SAP HANA using an ODBC data source.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Connect Using the SAP HANA ODBC Driver
+<!-- description --> Connect to SAP HANA using an ODBC data source.
+
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create and test an SAP HANA ODBC data source
   - How to use an ODBC data source in an application
 
+## Intro
 [Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) (ODBC) provides an [API](https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver15) for accessing databases.  Database vendors provide ODBC drivers for their database products.  An application written to the ODBC standard can be ported to other databases that also provide an ODBC interface.  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure a data source using Microsoft Windows ODBC Data Source Administrator)]
+### Configure a data source using Microsoft Windows ODBC Data Source Administrator
+
 
 The ODBC Data Source Administrator lists the installed ODBC drivers and the configured data sources.  
 
@@ -69,10 +72,9 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/66a4169b84b2466892e1af9781049836.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure a data source on Linux or Mac with unixODBC)]
+### Configure a data source on Linux or Mac with unixODBC
+
 The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) can be used to configure and test a data source on Linux or Mac.  
 
 1. On SUSE Linux, the YaST installer can be used to install unixODBC.
@@ -134,11 +136,10 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Use a SAP HANA data source from another program)]
+### Use a SAP HANA data source from another program
+
 
 An application that supports ODBC can now make use of the created data source.  One example on Windows is Microsoft Excel.  
 
@@ -180,8 +181,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA database and used that data source from Microsoft Excel.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

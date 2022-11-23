@@ -1,29 +1,32 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Apply Filters to your Story
-description: Learn how to apply filters and linked analysis to narrow the scope of your analysis
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Apply Filters to your Story
+<!-- description --> Learn how to apply filters and linked analysis to narrow the scope of your analysis
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to apply filters to a table
   - How to create date specific filters
   - How to use linked analysis
   - How to create an input control filter
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Apply Filters to a Table)]
+### Apply Filters to a Table
+
 
 In a table, you can filter cells to focus on a specific set of data or exclude non-relevant cells. First, let's select specific Sales Managers in the table by using **Filter**.
 
@@ -43,10 +46,9 @@ Next, let's filter out a specific Manager's sales from the "Sales Managers" char
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/6148ecb399634050aa6ae75e258dcc80.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Date Specific Filter)]
+### Create a Date Specific Filter
+
 
 Let's create a date specific filter to exclude 2019 from the Gross Margin per Date chart.  
 
@@ -76,11 +78,10 @@ The chart will then reload and only show the data from 2020 and 2021.
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/5af47a52777e4f5d97f4a3b4c21921d0.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enhance functionality with Linked Analysis)]
+### Enhance functionality with Linked Analysis
+
 
 Linked Analysis is dynamic feature that allows drilling through hierarchical data or creating filters that simultaneously update multiple charts in your story.
 
@@ -108,10 +109,9 @@ With this linked analysis created, filtering on **Asia** will simultaneously upd
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/c74d35c4218f49778d1a3a0e64dad715.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create an Input Control Filter)]
+### Create an Input Control Filter
+
 
 Input Control filters allow users to dynamically control the data displayed on the page. On each page, we've dedicated the left lane for these filters.
 
@@ -141,13 +141,10 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 > It is best practice to save regularly. Before moving on, click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

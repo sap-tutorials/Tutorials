@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Helena Nacinovic
 author_profile: https://github.com/helenanacinovic
-title: Create a Fact Model in the Business Builder
-description: Group analytical datasets and dimensions into fact models in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
+
+# Create a Fact Model in the Business Builder
+<!-- description --> Group analytical datasets and dimensions into fact models in the Business Builder of SAP Data Warehouse Cloud.
 
 ## Prerequisites
 - Understand the Business Builder in SAP Data Warehouse Cloud
@@ -15,13 +17,13 @@ primary_tag: products>sap-data-warehouse-cloud
 - Have at least one analytical dataset and at least one dimension created with the Business Builder
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a new fact model
 - How to add a second fact source or dimension
 - How to add a new business entity
 
 
+## Intro
 Fact models in the Business Builder of SAP Data Warehouse Cloud help you group analytical datasets and dimensions, so that it is easier to create a complete consumption model, and then visualize the data in SAP Analytics Cloud or equivalent.
 
 > It is not mandatory to create a fact model before creating a consumption model, but it can help you avoid re-work. For example, if you have 10 different analytical datasets that need to be used in several different consumption models, you can group them in a fact model, and then simply re-use this in every consumption model needed.
@@ -29,7 +31,8 @@ Fact models in the Business Builder of SAP Data Warehouse Cloud help you group a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new fact model)]
+### Create a new fact model
+
 
 In the Business Builder of SAP Data Warehouse, start with following these steps:
 
@@ -50,10 +53,9 @@ In the Business Builder of SAP Data Warehouse, start with following these steps:
 Your new fact model is created.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add a second fact source or a dimension source to your fact model)]
+### Add a second fact source or a dimension source to your fact model
+
 
 If you wish to add a previously created dimension to your fact model, it's very simple:
 
@@ -72,11 +74,10 @@ If you wish to add a previously created dimension to your fact model, it's very 
 > <iframe width="560" height="315" src="https://www.youtube.com/embed/5x0Hq2kQgAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add to or create new business entities in your fact model)]
+### Add to or create new business entities in your fact model
+
 
 Just as you can do in the analytical datasets and dimensions, you can add existing measures, attributes and more to your new fact model. You can also create new business entities from the main fact model screen, if needed.
 
@@ -88,14 +89,12 @@ You can also filter and refine your fact model as you wish. To learn more about 
 
 > Learn in the next tutorial how to create a consumption model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_6]
-[ACCORDION-END]
+
+
 
 ---

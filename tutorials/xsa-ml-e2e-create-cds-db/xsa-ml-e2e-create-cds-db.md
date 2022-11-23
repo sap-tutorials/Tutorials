@@ -1,25 +1,26 @@
 ---
-title: Create a Database Module
-description: Create database objects and CDS views
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana ]
 ---
 
+# Create a Database Module
+<!-- description --> Create database objects and CDS views
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 You will create a database module with Core Data Services artifacts.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a database module)]
+### Create a database module
+
 
 Back to your project, right click on your project and then click on `New->SAP HANA Database Module`:
 
@@ -33,10 +34,9 @@ Remove the namespace, add a name to the schema, click on **Build module after cr
 
 ![create db](3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a CDS artifact)]
+### Create a CDS artifact
+
 
 You will now use Core Data Services to create a table. You will then use other entities to combine the data.
 
@@ -57,12 +57,11 @@ Call it `PO`
 ![create folder](7.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 3: ](Create your Entities using the CDS graphical editor)]
+### Create your Entities using the CDS graphical editor
+
 
 You can now explore the graphical Core Data Services editor briefly.
 
@@ -100,10 +99,10 @@ Copy the definition of the entity (blurred out below) and click on **Validate**:
 
 ![validate CDS definition](14.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Load data into your entity)]
+
+### Load data into your entity
+
 
 You will now add data into your new entity. **Build** the db module first:
 
@@ -166,6 +165,4 @@ Add the following contents to it:
 **Save and build** the `db` module.  Wait until the build finished to answer the following question.
 
 
-[VALIDATE_2]
 
-[ACCORDION-END]

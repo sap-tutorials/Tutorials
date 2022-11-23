@@ -1,6 +1,5 @@
 ---
-title: Installing SAP HANA HDB Client (Linux)
-description: Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation.
+parser: v2
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -8,17 +7,20 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
 
+# Installing SAP HANA HDB Client (Linux)
+<!-- description --> Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation.
+
 <!-- loio14767ea1c8174336aa72126a82d8551b -->
 
 ## Prerequisites
  - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](https://developers.sap.com/tutorials/hxe-ua-test-binary.html)
 
-## Details
-### You will learn
+## You will learn
 How to install the SAP HANA client on a Linux machine, using either a graphical user interface or a command line.
 
 ---
 
+## Intro
 The `server machine` in these instructions refers to the laptop on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on the same machine or VM.
 
 The clients let you access SAP HANA 2.0, express edition, from your client machine. This is the Reduced SAP Client package.
@@ -40,7 +42,8 @@ The clients included with the SAP HANA HDB client software package are:
 
 To install the SAP HANA HDB client on a Windows machine, use either a graphical user interface or a command line.
 
-[ACCORDION-BEGIN [Step 1: ](Download the client package)]
+### Download the client package
+
 
 Install the Download Manager to your client machine and download the client package.
 
@@ -74,11 +77,9 @@ Install the Download Manager to your client machine and download the client pack
     -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
-[DONE]
 
-[ACCORDION-END]
+### Install the SAP HANA HDB client
 
-[ACCORDION-BEGIN [Step 2: ](Install the SAP HANA HDB client)]
 
 To install the SAP HANA client on a Linux machine, do the following:
 
@@ -106,30 +107,24 @@ To install the SAP HANA client on a Linux machine, do the following:
     Follow the instructions on the screen to install the SAP HANA client.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Log the installation
 
-[ACCORDION-BEGIN [Step 3: ](Log the installation)]
 
 The system automatically logs the SAP HANA HDB client installation. The log files are stored at `/var/temp/hdb_client_<time_stamp>` for Linux.
 
-[DONE]
 
-[ACCORDION-END]
+### Connect to SAP HANA, express edition
 
-[ACCORDION-BEGIN [Step 4: ](Connect to SAP HANA, express edition)]
 
 Connect to a SAP HANA 2.0, express edition system using either JDBC or Python:
 
 [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Uninstall the SAP HANA HDB client
 
-[ACCORDION-BEGIN [Step 5: ](Uninstall the SAP HANA HDB client)]
 
 Each installation has its own uninstallation tool. Use the `hdbuninst` command to uninstall the client software from your command prompt.
 
@@ -139,6 +134,3 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
-[DONE]
-
-[ACCORDION-END]

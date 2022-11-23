@@ -1,21 +1,22 @@
 ---
+parser: v2
 author_name: Ilyes YAMOUN
 author_profile: https://github.com/shielddz
-title: Integrate the chatbot with the SAP Intelligent RPA
-description: Setup end-to-end integration between the SAP Conversational AI and the SAP Intelligent RPA. Information provided in a chatbot is used to run an automation in the background and update the user within the chatbot with different statuses.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-intelligent-robotic-process-automation, software-product>sap-conversational-AI]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
+# Integrate the chatbot with the SAP Intelligent RPA
+<!-- description --> Setup end-to-end integration between the SAP Conversational AI and the SAP Intelligent RPA. Information provided in a chatbot is used to run an automation in the background and update the user within the chatbot with different statuses.
+
 ## Prerequisites
   - Complete the Group [Automate a Procurement Business Process Using SAP Intelligent RPA](group.intelligent-rpa-order-management)
   - Understand the basics of creating a Chatbot using the SAP Conversational AI
   - You must be the Subaccount Administrator to be able to create the Service Key
 
-## Details
-### You will learn
+## You will learn
   - Step-by-step integration to send data from a chatbot and trigger an automation in the background
   - Receive the information back within the chatbot from the automation
   - Basic troubleshooting scenarios
@@ -23,50 +24,51 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 ---
 
+## Intro
 The following diagram shows the step-by-step information required to perform the integration between the SAP Conversational AI and the SAP Intelligent RPA.
 
-!![CAI IRPA Integration Flow](CAI-IRPA-Integration-Flow.png)
+<!-- border -->![CAI IRPA Integration Flow](CAI-IRPA-Integration-Flow.png)
 
 
-[ACCORDION-BEGIN [Step 1: ](Release the Package)]
+### Release the Package
+
 
 1.  Open the project created in group Automate a Procurement Business Process Using SAP Intelligent RPA.
 
 2.  Go to the **Overview** tab and click **Generate Package**.
 
-    !![overview](step1-0.png)
+    <!-- border -->![overview](step1-0.png)
 
 3.  From the pop up, check the **Name** and **Version Number** and click **Generate Package**.
 
-    !![generate-package](step1-1.png)
+    <!-- border -->![generate-package](step1-1.png)
 
 4.  Navigate to the **Packages** tab in the Cloud Factory to view the generated package. Search for the **Orders Management** package.
 
 5.  Click the drop-down. From the line-item generated, click **...** and then click **Release** to release the package.
 
-    !![release package](step1-2.png)
+    <!-- border -->![release package](step1-2.png)
 
 6.  In the **Release Package** pop-up, click **Release**. The package will be in **Released** status.
 
-    !![release package confirmation](step1-3.png)
+    <!-- border -->![release package confirmation](step1-3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the Trigger and the API Key)]
+### Create the Trigger and the API Key
+
 This step involves creating a trigger of type API and an API Key in your environment. A trigger of type API opens a dedicated endpoint that allows an external application to start the execution of an automation or scenario in a specified deployed package via an HTTP POST call. As such, an API trigger is always attached to one automation or scenario in one deployed package. A deployed package is bound to an environment, which means that using an API trigger will guarantee job execution on one of the agents in the environment of the deployed package.
 
 1.  Click **...** against the released version and then click **Create Trigger**.
 
-    !![Create trigger](step2-1.png)
+    <!-- border -->![Create trigger](step2-1.png)
 
 2.  In the **Create Trigger** pop-up, select an environment and click **Next**.
 
-    !![create trigger step1](step2-2.png)
+    <!-- border -->![create trigger step1](step2-2.png)
 
 3.  In **Step 2 Deploy**, package will be deployed automatically and in **Step 3 Set Environment Variables**, the variables will be set, if any. In **Step 4 Select a trigger type**, select the radio button **API** and click **Next**.
 
-    !![Trigger Type API](step2-3.png)
+    <!-- border -->![Trigger Type API](step2-3.png)
 
     The **Create API trigger** pop-up is displayed.
 
@@ -80,59 +82,58 @@ This step involves creating a trigger of type API and an API Key in your environ
     |  Priority   | Medium
     |  Job Expiration | 60 Minutes
 
-    !![create API trigger](step2-4.png)
+    <!-- border -->![create API trigger](step2-4.png)
 
     Click **Create**. The **API trigger information** pop-up is generated.
 
 5.  In the **API trigger information** pop-up, click **Copy** and paste it in a notepad. Click **Close**. The newly generated trigger is visible in your Environment.
 
-    !![API URL generated](step2-5.png)
+    <!-- border -->![API URL generated](step2-5.png)
 
 6.  Click **API Keys** in your Environment and then click **Add API Key**. The **Generate New API Key** pop-up is displayed. In the **Generate New API Key** pop-up, input the **Name** as `myAPIKey` and click **Next**.
 
-    !![Create API Key](step2-6.png)
+    <!-- border -->![Create API Key](step2-6.png)
 
 7.  Activate `environment_read`, `trigger_read` and `trigger_execute` and click **Next**.
 
-    !![Runtime options](step2-7.png)
+    <!-- border -->![Runtime options](step2-7.png)
 
 8.  Review your API Key and click **Add**.
 
 9.  Click **Copy** and make sure to note down the key since you will not be able to view it again.
 
-    !![API key](step2-8.png)
+    <!-- border -->![API key](step2-8.png)
 
 The API trigger and the API Key are created successfully.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Service Key in the SAP BTP)]
+
+### Create a Service Key in the SAP BTP
+
 This step involves creating a Service Key to access the SAP Intelligent RPA APIs. You will need the administrator rights of your global account in the SAP BTP Cockpit.
 
 1.  Log in to your **SAP BTP Cockpit** and navigate to your Subaccount.
 
 2.  Create a new **Service Key** by navigating to **Services** > **Instances and Subscriptions** > **Instances** > select your IRPA instance > **Service Keys** > **Create**.
 
-    !![Navigate to Service Keys creation tab](step3-1.png)
+    <!-- border -->![Navigate to Service Keys creation tab](step3-1.png)
 
 3.  Put the name as `myServiceKey` and click **Create**.
 
-    !![Name the service key and create it](step3-2.png)
+    <!-- border -->![Name the service key and create it](step3-2.png)
 
 4.  Click **...** and then click **View** to view the Service Key.
 
-    !![View Service key](step3-3.png)
+    <!-- border -->![View Service key](step3-3.png)
 
 5.  Click **Form** and copy the **clientid**, **clientsecret** and **URL**. You will need it in the next steps.
 
-    !![Note down information](step3-4.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![Note down information](step3-4.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Fork and Configure the SAP Conversational AI)]
+
+### Fork and Configure the SAP Conversational AI
+
 In this step, you will create a chatbot in the SAP Conversational AI and fork intents to use it's expressions in your chatbot.
 Further, you will configure the chatbot to integrate with the SAP Intelligent RPA.
 
@@ -153,7 +154,7 @@ Further, you will configure the chatbot to integrate with the SAP Intelligent RP
 
 3.  Fork the intent `getorders`.
 
-    !![Fork intent](step4-1.png)
+    <!-- border -->![Fork intent](step4-1.png)
 
 4.  The forked intent is now displayed in your list of intents. Click the newly created intent `getorders` to check the list of expressions.
 
@@ -166,28 +167,27 @@ Further, you will configure the chatbot to integrate with the SAP Intelligent RP
     |  Name           | `api_call`
     |  Type           | **Business**
 
-    !![Add Skill](step4-2.png)
+    <!-- border -->![Add Skill](step4-2.png)
 
 7.  Go to the skill `api_call` and open the **Triggers** tab.
 
 8.  Add **If** statement. **If** `@getorders` and click **Save**.
 
-    !![Skill Trigger](step4-3.png)
+    <!-- border -->![Skill Trigger](step4-3.png)
 
-    !![Skill Trigger2](step4-4.png)
+    <!-- border -->![Skill Trigger2](step4-4.png)
 
 9.  Open the **Actions** tab and click **New Action Group**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Configure API Service in CAI)]
+### Configure API Service in CAI
+
 
 1.  Click **Connect External Service** and then click **CONSUME API SERVICE**.
 
-    !![Connect to API](step5-1.png)
+    <!-- border -->![Connect to API](step5-1.png)
 
 2.  In the API Service Configuration, paste the **URL** you copied in **`Step 2.5`**.
 
@@ -201,11 +201,11 @@ Further, you will configure the chatbot to integrate with the SAP Intelligent RP
     |  Client secret          | **clientsecret** copied in **`Step 3.5`**
     |  Authorization URL    | **URL** copied in **`Step 3.5`** appended with suffix `/oauth/token`
 
-    !![URL and OAuth setup](step5-2.png)
+    <!-- border -->![URL and OAuth setup](step5-2.png)
 
 4.  Next, go to the **Headers** tab and click **New Fields**.
 
-    !![New Field in Headers](step5-3.png)
+    <!-- border -->![New Field in Headers](step5-3.png)
 
 5.  Input the following header information:
 
@@ -214,7 +214,7 @@ Further, you will configure the chatbot to integrate with the SAP Intelligent RP
     |  Key           | **irpa-api-key**
     |  Value           | API Key copied from **`Step 2.9`**
 
-    !![irpa-api-key](step5-4.png)
+    <!-- border -->![irpa-api-key](step5-4.png)
 
 6.  Now, go to the **Body** tab and write the following JSON body.
 
@@ -230,61 +230,59 @@ Further, you will configure the chatbot to integrate with the SAP Intelligent RP
 
 7.  Click **Save** to save changes.
 
-    !![Body and Save](step5-5.png)
+    <!-- border -->![Body and Save](step5-5.png)
 
 Now, the chatbot is ready to connect via API Service Call.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Generate Token)]
+### Generate Token
+
 
 You must generate **Designtime APIs** token in **SAP CAI** to be able to authenticate the APIs successfully.
 
-1.  Within the chatbot, click **Settings** !![settings](step6-1.png) and then click **Tokens**.
+1.  Within the chatbot, click **Settings** <!-- border -->![settings](step6-1.png) and then click **Tokens**.
 
-    !![Go to Token page](step6-2.png)
+    <!-- border -->![Go to Token page](step6-2.png)
 
 2.  Copy the **Developer token** under **Bot token** and paste it in a notepad.
 
-    !![Developer token](step6-3.png)
+    <!-- border -->![Developer token](step6-3.png)
 
 3.  Click **Generate** to generate a **Designtime API** token.
 
-    !![generate token](step6-4.png)
+    <!-- border -->![generate token](step6-4.png)
 
 4.  Select **Client Credentials** radio button and click **Next**.
 
-    !![Designtime token](step6-5.png)
+    <!-- border -->![Designtime token](step6-5.png)
 
 5.  Note down **Auth URL**, **Client ID** and **Client Secret** from the generated token. These credentials are valid for 12 hours only.
 
-    !![Designtime token](step6-6.png)
+    <!-- border -->![Designtime token](step6-6.png)
 
 The **Developer token** and **Designtime APIs** token information will be used in the next step to create **Notifiers**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Add Trigger Notifiers)]
+### Add Trigger Notifiers
+
 In this step, you will create Notifiers.
 
 >You will create three **Notifiers** for notifying **Start**, **Success** and **Failure** status while sending message to chatbot in CAI. The **Start** notifier will notify that the automation started. The **Success** notifier will notify that the automation ended successfully and results are downloaded in Excel with **Orders** and their **Status**. In case the automation fails, then the **Failure** notifier will send the message to chatbot with error details.
 
 1.  Open your **SAP Intelligent RPA Factory** and navigate to **Environments**. Go to your environment.
 
-    !![Open Environment](step7-1.png)
+    <!-- border -->![Open Environment](step7-1.png)
 
-2.  From the trigger `API_CAI_Call` which you created in `Step 2.5`, click **More options** !![more options](step7-2.png) and click **Add Notifier**.
+2.  From the trigger `API_CAI_Call` which you created in `Step 2.5`, click **More options** <!-- border -->![more options](step7-2.png) and click **Add Notifier**.
 
-    !![Add notifier](step7-3.png)
+    <!-- border -->![Add notifier](step7-3.png)
 
 3.  Select **CAI** radio button and click **Next**.
 
-    !![Select CAI](step7-4.png)
+    <!-- border -->![Select CAI](step7-4.png)
 
 4.  In the **Create CAI Notifier** pop-up, fill in the following details and click **Create**:
 
@@ -302,7 +300,7 @@ In this step, you will create Notifiers.
     |  Delay in second           | 0
     |  Message content           | Hello from IRPA bot! Automation started.
 
-    !![Fill notifier details](step7-5.png)
+    <!-- border -->![Fill notifier details](step7-5.png)
 
     > Make sure the Conversation ID variable `conversationId` is the same as defined in Step 5.6. In case, the chatbot's `conversation_id` is passed in a different variable in Step 5.6 then, use the same  variable in the Notifier. If the variables do not match, then the integration will fail because the Notifier will not be able to send the message to incorrect chatbot's conversation ID.
 
@@ -337,17 +335,16 @@ In this step, you will create Notifiers.
     |  Delay in second           | 0
     |  Message content           | Automation failed with error: `${error.details}`
 
-    !![success notifier](step7-6.png)
+    <!-- border -->![success notifier](step7-6.png)
 
-    !![failure notifier](step7-7.png)
+    <!-- border -->![failure notifier](step7-7.png)
 
 You have successfully created the Notifiers.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Connect and Test Your Chatbot)]
+### Connect and Test Your Chatbot
+
 This step involves the creation of an **SAP Conversational AI Web Client** in your CAI chatbot.
 
 1.  Open your SAP Conversational AI chatbot.
@@ -356,11 +353,11 @@ This step involves the creation of an **SAP Conversational AI Web Client** in yo
 
 3.  Click on **SAP Conversational AI Web Client**.
 
-    !![SAP Conversational AI Web Client](step8-1.png)
+    <!-- border -->![SAP Conversational AI Web Client](step8-1.png)
 
 4.  Put **CAI with IRPA** in **Channel Name** and click **Create**.
 
-    !![Create Channel](step8-2.png)
+    <!-- border -->![Create Channel](step8-2.png)
 
 5.  Click on the **Web Client standalone link** to open the chatbot in browser.
 
@@ -370,14 +367,13 @@ This step involves the creation of an **SAP Conversational AI Web Client** in yo
 
     If the execution is successful, the chatbot displays the following output:
 
-    !![Success Execution - CHAT](step8-3.png)
+    <!-- border -->![Success Execution - CHAT](step8-3.png)
 
     Otherwise, if the execution fails, the chatbot displays the following error details:
 
-    !![Failed Execution - CHAT](step8-4.png)
+    <!-- border -->![Failed Execution - CHAT](step8-4.png)
 
 7.  Check the automation job status in **Cloud Factory** > **Monitoring** > **Jobs**. Look out for your job and click on it to view details. This step is helpful to know about the error details of a failed integration.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 ---

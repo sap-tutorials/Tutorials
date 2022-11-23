@@ -1,6 +1,5 @@
 ---
-title: Create an Analytical Dashboard via UI5 Web Components for React
-description: Create an analytical dashboard with different components using UI5 Web Components for React.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-fiori]
@@ -9,17 +8,21 @@ author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
 
-## Details
-### You will learn
+# Create an Analytical Dashboard via UI5 Web Components for React
+<!-- description --> Create an analytical dashboard with different components using UI5 Web Components for React.
+
+## You will learn
 -  How to use the `ShellBar` component
 -  How to use the `AnalyticalTable` component
 -  How to style components
 
+## Intro
 So far, you have built your first `Card` component. Now to take things further, it's time to build something bigger. In this step, you will learn how different components work together by building an analytical dashboard.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add necessary imports)]
+### Add necessary imports
+
 To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.jsx`.
 
 ```JavaScript / JSX
@@ -45,10 +48,9 @@ import {
 } from "@ui5/webcomponents-react";
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add a ShellBar)]
+### Add a ShellBar
+
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
@@ -267,9 +269,8 @@ export function MyApp() {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Add a List)]
+### Add a List
+
 
 1. To wrap the `List` add a `Card` (right after the first one).
 
@@ -385,9 +386,8 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 ![List](03_list.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Add an AnalyticalTable)]
+### Add an AnalyticalTable
+
 
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
 
@@ -467,9 +467,8 @@ Now the components inside the card fit (we'll arrange the cards themselves later
       visibleRows={5}/>
     ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 5: ](Dashboard layout)]
+### Dashboard layout
+
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 
@@ -528,7 +527,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
 Your component should now look like this:
 
-!![Dashboard](05_dashboard.png)
+<!-- border -->![Dashboard](05_dashboard.png)
 
 ```JavaScript / JSX
 import React, { useState } from "react";
@@ -765,7 +764,6 @@ export function MyApp() {
 ```
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

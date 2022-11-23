@@ -1,6 +1,5 @@
 ---
-title: Create a Portal Site
-description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-cloud-portal-service, topic>cloud, software-product>sap-fiori ]
@@ -8,20 +7,24 @@ primary_tag: software-product>sap-business-technology-platform
 author_name: Lindsay Bert
 ---
 
+# Create a Portal Site
+<!-- description --> Create a Portal site with a launchpad and other pages that will contain apps and web content.
+
 ## Prerequisites
 You have subscribed to the Portal service.
 
-
-### You will learn
+## You will learn
   - How to create a Portal site
   - How to add a page to your site and make it the home page
   - How to create a site menu
 
+## Intro
 In this group of tutorials our goal is to create an attractive Portal site for a recruiting company called `JobCore Recruiting`. The site will include apps and web content. The site will contain two pages: a launchpad page and another page. Both pages will be displayed in the site menu.
 
 Let's get started!
 
-[ACCORDION-BEGIN [Step 1: ](Create a site)]
+### Create a site
+
 
 When you access the Portal service, the Site Directory is in focus. From here you will create your new Portal site.
 
@@ -52,12 +55,11 @@ In the next step, you are going to add a second page to your Portal site.
 ![View Site Tile](8_view_site_tile.png)
 
 
-[VALIDATE_6]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add a page to the site)]
+
+### Add a page to the site
+
 
 
 1. Click **+** at the bottom of the  **Pages** panel of the Site Manager.
@@ -74,12 +76,10 @@ In the next step, you are going to add a second page to your Portal site.
 
 Now we have a page called `JobCore` and we have the default `Launchpad` page that you can see in the **Pages** panel. Let's add them both to the site menu.   
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Design the site menu)]
+### Design the site menu
+
 
 
 1. Click the **Menu** tab to open the **Site Menu** editor.
@@ -131,12 +131,11 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
 >Note that both the `Launchpad` and `Home` pages appear in the site menu structure.
 
-[VALIDATE_7]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Set the site's home page)]
+
+### Set the site's home page
+
 
 
 1. Click the **Pages** tab to go back to the page editor.
@@ -151,8 +150,5 @@ Now you have a Portal site called the `JobCore Portal` with 2 pages. Both pages 
 
 In the next tutorial you're going to add web content to the `Home` page.
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

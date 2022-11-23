@@ -1,33 +1,34 @@
 ---
-title: Set Up and Review Audit Logs in SAP Data Warehouse
-description: Perform audit logging to monitor and record selected actions performed in SAP Data Warehouse Cloud, providing you with visibility on who did what and when.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Set Up and Review Audit Logs in SAP Data Warehouse
+<!-- description --> Perform audit logging to monitor and record selected actions performed in SAP Data Warehouse Cloud, providing you with visibility on who did what and when.
+
 ## Prerequisites
   - You have [familiarised yourself with the SAP Data Warehouse Cloud interface.](data-warehouse-cloud-2-interface)
 
-## Details
-### You will learn
+## You will learn
   - About audit logging of customer-owned data within Spaces
   - How to view audit logs
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Understand audit logs in SAP Data Warehouse Cloud)]
+### Understand audit logs in SAP Data Warehouse Cloud
+
 
 Audit logs are a simple way to monitor and record selected actions performed in SAP Data Warehouse Cloud.
 
 You can set up the change log and the read access log independently of each other. Both logs are implemented using the same mechanism, so the following steps applies
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable audit logging for spaces)]
+### Enable audit logging for spaces
+
 
 > If you choose to enable audit logs, be aware that they can consume a large amount of storage in your SAP Data Warehouse Cloud tenant.
 
@@ -43,10 +44,9 @@ To enable audit logs for specific Spaces in SAP Data Warehouse Cloud:
 
 > If auditing has been enabled, entries of all SAP Data Warehouse Cloud related objects are saved in an SAP HANA Cloud, SAP HANA database audit log. These logs don't include the objects of the database access schemas, like open SQL schemas, for example.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enable audit logging for individual database schemas)]
+### Enable audit logging for individual database schemas
+
 
 To enable audit logs for individual database schemas in SAP Data Warehouse Cloud:
 
@@ -71,10 +71,9 @@ To enable audit logs for individual database schemas in SAP Data Warehouse Cloud
 >`DWC_DPP_<Space name>_READ`
 `DWC_DPP_<Space name>_CHANGE`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View auditing logs)]
+### View auditing logs
+
 
 1. Go to Configuration on the bottom right of your screen, and navigate to the **Audit** tab.
 
@@ -94,12 +93,10 @@ The audit logs of the database analysis user are saved separately in the `ANALYS
 
 > Learn in the next tutorial how to [change ownership of scheduled remote table replications and data flows.](data-warehouse-cloud-intro7-ownership-schedule)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

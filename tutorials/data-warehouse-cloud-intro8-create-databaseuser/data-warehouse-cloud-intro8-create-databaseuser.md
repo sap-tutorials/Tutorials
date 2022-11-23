@@ -1,33 +1,34 @@
 ---
-title: Create a Database User in SAP Data Warehouse Cloud
-description: Create a database user, that is, a technical user that can connect the underlying SAP HANA Cloud database to third-party SQL clients and allow data to get in or out via JDBC/ODBC.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create a Database User in SAP Data Warehouse Cloud
+<!-- description --> Create a database user, that is, a technical user that can connect the underlying SAP HANA Cloud database to third-party SQL clients and allow data to get in or out via JDBC/ODBC.
+
 ## Prerequisites
   - You have [familiarised yourself with the SAP Data Warehouse Cloud interface.](data-warehouse-cloud-2-interface)
   - You have [understood different roles](data-warehouse-cloud-3-add-users), and are assigned the DW Administrator role.
 
-## Details
-### You will learn
+## You will learn
   - Who a database user is
   - How to create a database user
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand who database users are)]
+### Understand who database users are
+
 
 Database users are technical users that can connect the underlying SAP HANA Cloud, SAP HANA database to third-party SQL clients and allow data to be received or sent out via JDBC/ODBC. In SAP Data Warehouse Cloud, an open SQL schema is always created when you create a database user. This open SQL schema grants the database user read privileges to the underlying database. Depending on your needs, different privileges can be set for different schemas.
 
 Every user who wants to work with the underlying SAP HANA Cloud, SAP HANA database must have a database user. But be careful, since database users that have more than read access can make significant changes to the data flowing into SAP Data Warehouse
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a database user)]
+### Create a database user
+
 
 When you create a database user, you also configure which privileges the user is granted.
 
@@ -99,14 +100,12 @@ Follow the below steps in order to create a database user:
 
 > You have completed this tutorial. Now you know how to create a database user in SAP Data Warehouse Cloud.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

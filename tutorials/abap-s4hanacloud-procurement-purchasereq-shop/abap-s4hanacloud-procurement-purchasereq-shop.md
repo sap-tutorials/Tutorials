@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
-description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a Custom RAP Business Object to Trigger Purchase Requisitions API
+<!-- description --> Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 
 In the online shop, customers can order various items. Once an item is ordered, a new purchase requisition is created via purchase requisitions API.
 
@@ -18,10 +20,10 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
-- Business Catalog `SAP_PRC_BC_PURCHASER_PR` needs to be assign to your business user
+- Business Catalog `SAP_BR_PURCHASER` needs to be assign to your business user
+- Use Starter Development Tenant in S/4HANA Cloud for the tutorial to have necessary sample data in place. See [3-System Landscape and Transport Management](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e022623ec1fc4d61abb398e411670200.html?state=DRAFT&version=2208.503).
 
-## Details
-### You will learn  
+## You will learn  
 - How to logon to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to create a database table
@@ -30,10 +32,12 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - How to create service definition & service binding
 - How to run SAP Fiori Elements Preview
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Logon to SAP S/4HANA Cloud ABAP Environment)]
+### Logon to SAP S/4HANA Cloud ABAP Environment
+
 
   1. Open Eclipse, select **File** > **New** > **Other**.
 
@@ -65,10 +69,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![logon](logon7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
+### Create ABAP package
+
 
   1.  Select **ZLOCAL** > **New** > **ABAP Package**.
 
@@ -90,10 +93,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
        Click **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create database table)]
+### Create database table
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -176,10 +178,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   12. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create CDS data model)]
+### Create CDS data model
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -207,21 +208,20 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     @EndUserText.label: 'Data model for online shop'
     @AccessControl.authorizationCheck: #CHECK
     define root view entity ZI_ONLINE_SHOP_XXX as select from zonlineshop_xxx {
-       key order_uuid as Order_Uuid,
-       order_id as Order_Id,
-       ordereditem as Ordereditem,
-       deliverydate as Deliverydate,
-       creationdate as Creationdate  
+      key order_uuid as Order_Uuid,
+      order_id as Order_Id,
+      ordereditem as Ordereditem,
+      deliverydate as Deliverydate,
+      creationdate as Creationdate  
     }
     ```
 
    6. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create projection view)]
+### Create projection view
+
 
   1. Right-click **Data Definitions** and select **New Data Definition**.
 
@@ -247,22 +247,22 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     @AccessControl.authorizationCheck: #CHECK
     @Search.searchable: true
     @UI: { headerInfo: { typeName: 'Online Shop',
-                         typeNamePlural: 'Online Shop',
-                         title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
+                        typeNamePlural: 'Online Shop',
+                        title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
 
-           presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
-                                                 direction: #DESC }] }] }
+          presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
+                                                direction: #DESC }] }] }
     define root view entity ZC_ONLINE_SHOP_XXX
       as projection on ZI_ONLINE_SHOP_XXX
     {
           @UI.facet: [          { id:                  'Orders',
-                                       purpose:         #STANDARD,
-                                       type:            #IDENTIFICATION_REFERENCE,
-                                       label:           'Order',
-                                       position:        10 }      ]
+                                      purpose:         #STANDARD,
+                                      type:            #IDENTIFICATION_REFERENCE,
+                                      label:           'Order',
+                                      position:        10 }      ]
       key Order_Uuid,
           @UI: { lineItem:       [ { position: 10,label: 'order id', importance: #HIGH } ],
-                   identification: [ { position: 10, label: 'order id' } ] }
+                  identification: [ { position: 10, label: 'order id' } ] }
           @Search.defaultSearchElement: true
           Order_Id,
           @UI: { lineItem:       [ { position: 20,label: 'Ordered item', importance: #HIGH } ],
@@ -271,18 +271,17 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           Ordereditem,
           Deliverydate       as Deliverydate,
           @UI: { lineItem:       [ { position: 50,label: 'Creation date', importance: #HIGH },
-                                   { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
-                 identification: [ { position: 50, label: 'Creation date' } ] }
+                                  { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
+                identification: [ { position: 50, label: 'Creation date' } ] }
           Creationdate       as Creationdate
     }
     ```
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create behavior definition for CDS data model)]
+### Create behavior definition for CDS data model
+
 
   1. Right-click your data definition `ZI_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -325,10 +324,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create behavior definition for projection view)]
+### Create behavior definition for projection view
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -361,15 +359,14 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create behavior implementation)]
+### Create behavior implementation
+
 
   1. In your behavior definition **`ZI_ONLINE_SHOP_XXX`** set the cursor before the implementation class `zbp_i_online_shop_xxx` and click **CTRL + 1**. Double-click on **Create behavior implementation class `zbp_i_online_shop_xxx`** to create your implementation class.
 
-    ![implementation](implementation.png)
+     ![implementation](implementation.png)
 
 
   2. Create new implementation class:
@@ -411,10 +408,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
               ls_online_shop_as TYPE                   zshop_as_xxx.
         IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
           LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
-            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key). 
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
             <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
           ENDLOOP.
-        ENDIF. 
+        ENDIF.
 
 
         IF create-online_shop IS NOT INITIAL.
@@ -422,7 +419,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           lt_online_shop_as = CORRESPONDING #( create-online_shop ).
           lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
 
-          insert zshop_as_xxx FROM TABLE @lt_online_shop_as.
+          INSERT zshop_as_xxx FROM TABLE @lt_online_shop_as.
         ENDIF.
       ENDMETHOD.
     ENDCLASS.
@@ -451,7 +448,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ENDMETHOD.
 
       METHOD create_pr.
-    **  if a new laptop is ordered, trigger a new purschase requisition
+    **  if a new laptop is ordered, trigger a new purchase requisition
         IF keys IS NOT INITIAL.
           MODIFY ENTITIES OF i_purchaserequisitiontp
     ENTITY purchaserequisition
@@ -499,16 +496,19 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                 Quantity
                 BaseUnit )
         WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
-                          %target  = VALUE #( ( CostCenter   = 'JMW-COST'
+                          %target  = VALUE #( ( %cid = 'MyTargetCID_1'
+                                                CostCenter   = 'JMW-COST'
                                                 GLAccount    = '0000400000' ) ) ) )
     CREATE BY \_purchasereqnitemtext
       FIELDS ( plainlongtext )
       WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
                           %target  = VALUE #( (
+                                              %cid = 'MyTargetCID_2'
                                               textobjecttype = 'B01'
                                               language       = 'E'
                                               plainlongtext  = 'item text created from PAAS API XXX'
                                             ) (
+                                              %cid = 'MyTargetCID_3'
                                               textobjecttype = 'B02'
                                               language       = 'E'
                                               plainlongtext  = 'item2 text created from PAAS API XXX'
@@ -576,7 +576,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     **create purchase requisition
 
-    * if a new laptop is ordered, trigger a new purschase requisition
+    * if a new laptop is ordered, trigger a new purchase requisition
         IF lt_failed_modify IS INITIAL.
           MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
           ENTITY Online_Shop EXECUTE create_pr FROM CORRESPONDING #( keys )
@@ -595,10 +595,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Open documentation)]
+### Open documentation
+
 
 You have 2 options to open the documentation inside ADT.
 
@@ -613,25 +612,24 @@ You have 2 options to open the documentation inside ADT.
 >  3. Now you are able to read the documentation.
       ![service](docu3.png)
 
->     >**HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
-      ![service](docuhint.png)
+>   **HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
+>       ![service](docuhint.png)
 
->     >You can also switch to different layers inside the Element Info.
-      ![service](docugif.gif)
+>    You can also switch to different layers inside the Element Info.
+>       ![service](docugif.gif)
 
 > **Option 2**:
 
 > 1. Go back to tab `i_purchaserequisitiontp`. You are now able to see the behavior definition folder of the released object `i_purchaserequisitiontp`  in the project explorer. Now navigate to the documentation `i_purchaserequisitiontp` and open it.
       ![service](docu4.png)
->>**HINT**: You can also check the API State of released object and see its visibility by selecting the properties.
+>**HINT**: You can also check the API State of released object and see its visibility by selecting the properties.
 > 2. Now you can see the documentation.
       ![service](docu5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create service definition)]
+### Create service definition
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Service Definition**.
 
@@ -661,11 +659,10 @@ You have 2 options to open the documentation inside ADT.
    5. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Create service binding)]
+### Create service binding
+
 
   1. Right-click your service binding `ZSD_SHOP_XXX` and select **New Service Binding**.
 
@@ -693,11 +690,10 @@ You have 2 options to open the documentation inside ADT.
 
       ![binding](binding5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Run SAP Fiori Elements preview)]
+### Run SAP Fiori Elements preview
+
 
  1. Select `online_shop` in your service binding and click **Preview** to open SAP Fiori Elements preview.
 
@@ -707,19 +703,22 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](create.png)
 
- 3. Enter an id and date, click **Create**.
+ 3. Enter an id and click **Create**.
 
-     ![preview](create2.png)
+     ![preview](o.png)
 
- 4. Check your result
+ 4. Click **Create** again. And click **Close**
 
-     ![preview](create3.png)
+     ![preview](wizard3.png)
 
-[DONE]
-[ACCORDION-END]
+ 4. Check your result.
+
+     ![preview](o2.png)
 
 
-[ACCORDION-BEGIN [Step 13: ](Check purchase requisition)]
+
+### Check purchase requisition
+
 
  1. In the Project Explorer, select your system and right click on **Properties**.
 
@@ -752,12 +751,7 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](purchase5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
-
-[VALIDATE_1]
-[ACCORDION-END]
+### Test yourself

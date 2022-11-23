@@ -1,6 +1,5 @@
 ---
-title: Build an Augmented Reality Experience app with FioriAR
-description: Using modern technologies becomes more and more crucial for the success of native business apps as the requirements of professional users are more extensive. Utilizing Augmented Reality on powerful mobile devices in order to bring more value to business apps was never so easy. The SAP BTP SDK for iOS Development Team released a whole set of open-source projects for your consumption, one of these is the `FioriAR` package helping you to quickly build AR experiences using the newest version of `ARKit` by Apple. In this tutorial you will learn how to leverage the `FioriAR` Swift package to build you first AR experience in no time, you will use the provided APIs and SwiftUI Views to enable users to create their own AR Scenes and publish them to SAP Mobile Services in order to be managed there.
+parser: v2
 auto_validation: true
 time: 30
 author_name: Kevin Muessig
@@ -8,6 +7,9 @@ author_profile: https://twitter.com/KevinMuessig
 primary_tag: software-product>sap-btp-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 ---
+
+# Build an Augmented Reality Experience app with FioriAR
+<!-- description --> Using modern technologies becomes more and more crucial for the success of native business apps as the requirements of professional users are more extensive. Utilizing Augmented Reality on powerful mobile devices in order to bring more value to business apps was never so easy. The SAP BTP SDK for iOS Development Team released a whole set of open-source projects for your consumption, one of these is the `FioriAR` package helping you to quickly build AR experiences using the newest version of `ARKit` by Apple. In this tutorial you will learn how to leverage the `FioriAR` Swift package to build you first AR experience in no time, you will use the provided APIs and SwiftUI Views to enable users to create their own AR Scenes and publish them to SAP Mobile Services in order to be managed there.
 
 ## Prerequisites
  - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
@@ -17,54 +19,54 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, software-product
  - **Optional: Group:** [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
  - **Optional: SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to add the `FioriAR` Swift package to your Xcode project using the Swift Package Manager
   - How to use the `FioriAR` APIs and SwiftUI screens to build an AR Scene Authoring View and AR Scene Display View
 
+## Intro
 This tutorial is based on SwiftUI and will only reference to the use of `FioriAR` within a `UIKit` based app, hence the above mentioned prerequisites of setting up the SAP BTP SDK for iOS and downloading the SAP BTP SDK for iOS Assistant is optional. You can install the SDK and the assistant if you want to implement the app with `UIKit`.
 
 The project can be found in the SAP Samples on GitHub: [Mobile Augmented Reality GitHub](https://github.com/SAP-samples/mobile-augmented-reality)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a New SwiftUI Xcode Project)]
+### Create a New SwiftUI Xcode Project
+
 > Before you start following the first step, notice that if you want to go the `UIKit` based approach, go and follow the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup) tutorials in order to generate an app using the SAP BTP SDK for iOS Assistant. The first step is solely for the `SwiftUI` based approach!
 
 In this step you will use the Xcode Project creation flow to create a SwiftUI based app project.
 
 1. Open up your instance of Xcode, here using Xcode Version 13.2.1 (13C100).
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-01.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-01.png)
 
 2. Create a new **App** project.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-02.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-02.png)
 
 3. Give the app project a name and make sure you've selected **SwiftUI** as the **Interface**. You can choose the name freely.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-03.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-03.png)
 
 4. Create the project in a directory of your choice.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-04.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-04.png)
 
 5. After you've created the project you should see the project opening up.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-05.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-05.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the FioriAR Swift Package to the Project)]
+### Add the FioriAR Swift Package to the Project
+
 The [`FioriAR` GitHub Repository](https://github.com/SAP/cloud-sdk-ios-fiori-ar) package is open-source and available to you in the `SAP-Samples` on GitHub. You can not only consume the package through the Swift Package Manager but also contribute to the project yourself by forking the repository. For more information on contribution check the [Contributing guide](https://github.com/SAP/cloud-sdk-ios-fiori-ar/blob/main/CONTRIBUTING.md).
 
 You will use the Swift Package Manager within Xcode to pull and embed the `FioriAR` package.
 
 1. In your Xcode project, open the **Add Swift package...** menu item under **File** in the **Menu Bar**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-06.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-06.png)
 
 2. Use the **Search Field** to paste in the GitHub repository address **(1)**:
 
@@ -74,33 +76,32 @@ You will use the Swift Package Manager within Xcode to pull and embed the `Fiori
 
 3. The Swift package should show up **(2)**, make sure to change the **Dependency Rule** to **Up to Next Major Version (3)** in order to use the latest release.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-07.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-07.png)
 
 4. Click on **Add Package**. This will start the fetching of the Swift package.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-08.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-08.png)
 
 5. After the fetching progress has finished, select the **`FioriAR`** package product and click on **Add Package**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-09.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-09.png)
 
 You can choose between two options when embedding the `FioriAR` Swift package to your project. The one you have select for this tutorial will also fetch and embed all of `FioriAR's` package dependencies for you including the SAP BTP SDK for iOS packages. If you choose the **`FioriAR-requiresToEmbedXCFrameworks`**, you need to embed the SAP BTP SDK for iOS packages yourself using the SAP BTP SDK for iOS Assistant.
 
 If you click on **Package Dependencies** in the project file, you can see that the `FioriAR` Swift package got added to your project. If you look on the left-hand side you can see the dependencies of the `FioriAR` package.
 
-!![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-10.png)
+<!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement the Needed Data Models)]
+### Implement the Needed Data Models
+
 The way the `FioriAR` package and it's APIs work is through providing a generic `ARCard` model conforming to the `CardItemModel` protocol. The `CardItemModel` protocol is there to be implemented by a model to represent an AR annotation card.
 
 **So what is an AR annotation card?**
 
 AR annotation cards are UI elements being rendered in an AR Scene on your iOS mobile devices. These UI elements are provided by the `FioriAR` package to make your life easier and take the burden away to create these yourself with Reality Composer and other 2D/3D modeling tools.
 
-!![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-11.png)
+<!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-11.png)
 
 1. Create a new **Group** in the Project Navigator. Name it **Models**.
 
@@ -110,7 +111,7 @@ AR annotation cards are UI elements being rendered in an AR Scene on your iOS mo
     - `StringIdentifyingCardItem`
     - `ARScene`
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-12.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-12.png)
 
 The tutorial will go into detail on what these files will individually take responsibility of.
 
@@ -169,10 +170,9 @@ Usually, model implementations in Swift and SwiftUI are done using `structs`. Th
 
 8. Safe both Swift files.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement the ARScene Model)]
+### Implement the ARScene Model
+
 
 Each time, the user creates a new AR Scene it gets an ID assign automatically after it has been published to SAP Mobile Services. In a productive environment you want to have the AR Scene as an Entity in your Database holding the Scene information. You should make sure to have an relationship between the Scene entity and some other entity it refers to. Imagine an `ARScene` might be displayed in case a user wants to see how a product from a product catalogue might look like. The user wants to place an augmented version of the product on a table. In that case your AR Scene entity as an 1-1 relationship to the Product entity. And there might be many cases where this is true for other entities.
 
@@ -199,10 +199,9 @@ In this tutorial you will use the `ARScene` model to store, the ID which is gett
     var id: Int
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add the Provided Util Files)]
+### Add the Provided Util Files
+
 This tutorial uses a number of `utils` used to do different type of tasks for your app. The `util` Swift files are provided in this tutorial:
 
 1. Download the Swift Util files:
@@ -234,50 +233,48 @@ This tutorial uses a number of `utils` used to do different type of tasks for yo
 
 > NOTE: Make sure that the above mentioned files are added correctly to your project and are included in the build target.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a Mobile App Configuration)]
+### Create a Mobile App Configuration
+
 
 In the last step you learned about the different types of `utils` being used in this tutorial. One of the `util` files is the `AuthenticationParams` holding static information about the authentication parameters used to establish an OAuth challenge against SAP Mobile Services. These parameters are provided through SAP Mobile Services and can be simply copied and pasted into the `AuthenticationParams` enum.
 
 1. Open SAP Mobile Services.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-13.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-13.png)
 
 2. Navigate to **Mobile Applications** and **Native/Hybrid**.
 
 3. Click on **New** to create a new mobile app definition.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-14.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-14.png)
 
 4. Enter an **ID** and **Name**. Click on **Next**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-15.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-15.png)
 
 5. Assign the **Mobile Augmented Reality** feature. Click on **Finish**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-16.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-16.png)
 
   The creation process might take a minute.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add the Authentication Parameters to the Project)]
+### Add the Authentication Parameters to the Project
+
 If the creation was successful you can access the mobile app definition to retrieve the OAuth information you need for the app implementation.
 
 1. Open the created mobile app definition.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-17.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-17.png)
 
 2. Navigate to **Security**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-18.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-18.png)
 
     In the Security tab you have all information needed to copy them in the `AuthenticationParams`.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-19.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-19.png)
 
 3. Copy the following fields to the matching enum cases within `AuthenticationParams`:
 
@@ -295,10 +292,9 @@ If the creation was successful you can access the mobile app definition to retri
 
 4. Save the `AuthenticationParams`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a View for Displaying the SceneAuthoringView)]
+### Create a View for Displaying the SceneAuthoringView
+
 The Scene Authoring View is a SwiftUI view provided by the `FioriAR` package and it is there for the user to create AR Annotation cards and add them to a AR Scene. This is usually done through an app called Reality Composer provided by Apple. If you want to enable your users to create such scenes directly from within your app or make it possible for you to create scenes without using Reality Composer the `FioriAR` package got you covered.
 
 If you look at the initializer of the `SceneAuthoringView(_ title:, serviceURL:, sapURLSession:)`, it expects a String title for the `NavigationBar`, a service URL which is the SAP Mobile Services API endpoint and the same as the redirect URL, and a `SAPURLSession` in order to establish the connection.
@@ -438,10 +434,9 @@ In order to create the `SceneAuthoringView` within a `UIKit` based project you c
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Make the SAPURLSession available throughout the app)]
+### Make the SAPURLSession available throughout the app
+
 There is no instance of the `SAPURLSession` being created within the app, for the connection to SAP Mobile Services this needs to be created. Because it is nice to have one centralized session available to the whole app, a good approach can be to initialize the session in the `AppDelegate`. In SwiftUI there is no `AppDelegate` available from the get go but you can add one, SwiftUI knows how to handle it. Where you would usually implement the `AppDelegate` would be the `App.swift` file.
 
 1. Open the `FioriARSceneExampleApp.swift` file.
@@ -475,10 +470,9 @@ If you look closer, you can see that in the `application(_ didFinishWithOptions:
 
 The `SAPURLSession` is being initialized using the extension util you have added to the project. This creates an OAuth session for you which can be used within your app because the session being static.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add Navigation to the ARSceneAuthoringContentView)]
+### Add Navigation to the ARSceneAuthoringContentView
+
 At the moment the `ARSceneAuthoringContentView` is not being called onto the navigation stack. You need to make the view reachable within your app. A good place to do this is from the `ContentView` as it is already hooked into the navigation flow of the app, to be precise, it is the initial view being displayed by any SwiftUI app.
 
 1. Open the `ContentView.swift` file.
@@ -506,10 +500,9 @@ At the moment the `ARSceneAuthoringContentView` is not being called onto the nav
 
 4. Compile and run the app on your physical iOS device and try out the navigation flow.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Inspect Created Augmented Reality Scenes on SAP Mobile Services)]
+### Inspect Created Augmented Reality Scenes on SAP Mobile Services
+
 As previously mentioned the AR scenes the user creates are being published to SAP Mobile Services. On SAP Mobile Services these scenes can be edited or you can create additional localizations if needed.
 
 > Important to know is that if you're using 1SAP BTP Trial version1, your SAP Mobile Services instance will get stopped over night and you need to restart it before using your app.
@@ -518,21 +511,21 @@ As previously mentioned the AR scenes the user creates are being published to SA
 
     1.1 Create a new AR Card and fill out the form fields.
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-01.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-01.png)
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-02.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-02.png)
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-03.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-03.png)
 
     1.2 Add an image anchor. Download the [QR Code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/qrImage.png) code included but you can use anything you want as an image anchor e.g. a gaming controller.
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-04.png)            
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-04.png)            
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-05.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-05.png)
 
     1.3 Tap on **Go to AR Scene**.
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-06.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-06.png)
 
     1.4 Scan the image anchor, and add your AR Card anchor. With pinching you can in-/decrease the size of the anchor.
 
@@ -542,7 +535,7 @@ As previously mentioned the AR scenes the user creates are being published to SA
 
 2. Publish it to SAP Mobile Services using the **Publish** button on the `SceneAuthoringView`.
 
-    !![App Run AR](fiori-ios-btp-fioriar-ar-ios-07.png)
+    <!-- border -->![App Run AR](fiori-ios-btp-fioriar-ar-ios-07.png)
 
 3. Open SAP Mobile Services.
 
@@ -550,18 +543,18 @@ As previously mentioned the AR scenes the user creates are being published to SA
 
 5. Open the **Mobile Augmented Reality** feature.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-20.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-20.png)
 
 6. You should see your published AR scene there. Click on **Details**.
 
-    !![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-21.png)
+    <!-- border -->![New SwiftUI Xcode Project](fiori-ios-btp-fioriar-21.png)
 
   You can see all information added to the scene through the `SceneAuthoringView`.
 
-[VALIDATE_11]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Implement the ARSceneListContentView)]
+
+### Implement the ARSceneListContentView
+
 To further enhance the app, you will implement additional views to display the created scenes per session and display a selected scene as well.
 
 > NOTE: There is no API provided to fetch all created AR scenes from SAP Mobile Services because it is recommended to store the scene information within a database on your backend.
@@ -612,10 +605,9 @@ To further enhance the app, you will implement additional views to display the c
 
 6. Save the file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Implement the ARSceneContentView)]
+### Implement the ARSceneContentView
+
 
 The `ARSceneContentView` is the actual view displaying the AR scene. To do so, the `FioriAR` package provides you a view taking care of this. To load the AR scene, using the static `SAPURLSession` is being used to connect against SAP Mobile Services.
 
@@ -679,10 +671,9 @@ The `ARSceneContentView` is the actual view displaying the AR scene. To do so, t
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Add the ARSceneListContentView to the Navigation Flow)]
+### Add the ARSceneListContentView to the Navigation Flow
+
 
 1. Open the `ContentView`.
 
@@ -696,10 +687,9 @@ The `ARSceneContentView` is the actual view displaying the AR scene. To do so, t
 
 3. Save the project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Display a created AR Scene)]
+### Display a created AR Scene
+
 In case you've killed your app in-between steps your `UserDefaults` are probably gone which means you need to create another scene.
 
 You can check if there are available scenes by navigating to the `ARSceneContentView`. If there are none, create one.
@@ -710,10 +700,9 @@ The scene gets loaded from SAP Mobile Service into your app.
 
 Congratulations, you've successfully implemented an AR ready app.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Add Additional Code in Order to View local Reality Files)]
+### Add Additional Code in Order to View local Reality Files
+
 What you have learned in this tutorial is to use the `FioriAR` Swift package to create and display AR scenes and communicate with the AR service of SAP Mobile Services.
 
 What you might be interested in, is the implementation for locally stored AR scenes in form of a Reality File. The project you have as a result of this tutorial is suitable to be extended with that functionality. If you're interested in going a step further and implement that feature, go to the **SAP TechEd YouTube channel** and watch the **Developer Keynote** section where this is explained or read the available blog post. Of course all of this is documented in the GitHub repository above mentioned and there is even a sample app available for you to test.
@@ -725,7 +714,5 @@ What you might be interested in, is the implementation for locally stored AR sce
 - [SAP TechEd Developer Keynote](https://youtu.be/OmEx598qAI8?t=894)
 - [Building modern business `ARKit` ready iOS apps with `FioriAR`](https://blogs.sap.com/2021/07/19/building-modern-business-arkit-ready-ios-apps-with-sap-fiori-for-ios-arkit/)
 
-[DONE]
-[ACCORDION-END]
 
 ---

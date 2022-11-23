@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Set Up SAP HANA Cloud for Kyma
-description: Learn how to add SAP HANA client and configuration, create an HDI container for an SAP HANA Cloud instance on Cloud Foundry, and create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
 keywords: cap
 auto_validation: true
 time: 5
@@ -10,28 +9,30 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Set Up SAP HANA Cloud for Kyma
+<!-- description --> Learn how to add SAP HANA client and configuration, create an HDI container for an SAP HANA Cloud instance on Cloud Foundry, and create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
+
 ## Prerequisites
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
  - You have a SAP HANA Cloud service instance on Cloud Foundry in your SAP BTP subaccount. You can follow instructions in **Step 3 Create an SAP HANA Cloud service instance** of [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) to create one if you haven't already.
  - If you'd like to use an existing SAP HANA Cloud service instance from a different SAP BTP subaccount, follow the steps in **Step 2 Use an existing SAP HANA Cloud service instance** of  [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) to map the HANA Cloud instance to your Cloud Foundry space.
 
 
-## Details
-### You will learn
+## You will learn
  - How to create an HDI container for an SAP HANA Cloud service instance on Cloud Foundry and create credentials for the SAP HANA cloud service instance in your Kyma cluster.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. Hence, in this tutorial, you will set up an SAP HANA Cloud service instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the SAP HANA Cloud service instance in your Kyma cluster.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add SAP HANA client and configuration to your project)]
+### Add SAP HANA client and configuration to your project
+
 1. Add SAP HANA support to your project by running:
 
     ```Shell/Bash
@@ -62,10 +63,9 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Set Up SAP HANA Cloud)]
+### Set Up SAP HANA Cloud
+
 1. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
 
     - Cloud Foundry: run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
@@ -85,6 +85,5 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. 
 
 > If you get an error, make sure you've added all required entitlements to your subaccount as described in `Step 3: Create a Live Account` of [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp).
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

@@ -32,10 +32,11 @@ author_profile: https://github.com/julieplummer20
 - How to check the custom logic of this custom field, in **Custom Fields**
 
 ## Intro
+
 >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [Developer Extensibility: Connect to the ABAP System](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US).
 
-Throughout this tutorial, the placeholder `###` or `000` is used. Always replace this with your initials or group number.
 
+Throughout this tutorial, the placeholder `###` or `000` is used. Always replace this with your initials or group number.
 ---
 
 ### Apply custom logic

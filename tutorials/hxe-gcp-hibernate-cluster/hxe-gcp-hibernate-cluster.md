@@ -1,22 +1,23 @@
 ---
-title: Add spatial clustering with Hibernate
-description: Make use of the SAP HANA geospatial clustering capabilities.
+parser: v2
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
 time: 20
 ---
 
+# Add spatial clustering with Hibernate
+<!-- description --> Make use of the SAP HANA geospatial clustering capabilities.
+
 ## Prerequisites  
 - **Tutorials:** [Full-text search queries with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-text-search.html)
 
-## Details
-### You will learn  
+## You will learn  
   - How to use spatial clustering to find incident clusters.
-
-### Motivation
+## Motivation
 [Spatial clustering](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/ebb0955d1b6e4d4baf47263fca55e081.html) can be used to group points (locations) that are somehow related according to some criteria.
 
+## Intro
 There are several [cluster algorithms](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/a6d01f373d1b47f98e7814606d24d704.html) available in SAP HANA.
 
 The algorithm that is most suitable for the police incidents data set is [DBSCAN](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/bd5972d6dda346f8b5c0d0615353c24d.html). The DBSCAN algorithm finds arbitrary clusters of points by grouping points that are at most a distance epsilon apart. Such a group of points is considered a cluster if the group is made of at least a configurable minimum number of points. All points that are not part of a cluster are considered to be noise.
@@ -25,7 +26,8 @@ One interesting use-case for clustering in the police incidents data set is to f
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Implement the spatial clustering)]
+### Implement the spatial clustering
+
 Open the file `IncidentClusterRepository.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/repositories`.
 
 The `findClusters` method needs to be implemented to perform the clustering per category in the database.
@@ -106,12 +108,10 @@ public List<IncidentCluster> findClusters(Point<G2D> location, Distance distance
 
 Save the `IncidentClusterRepository.java` file.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable the cluster tab on the web UI)]
+### Enable the cluster tab on the web UI
+
 To make the clustering accessible in the web UI, the corresponding navigation tab needs to be enabled.
 
 Open the file `selectPanel.html` from the directory `src/main/resources/templates`.
@@ -220,11 +220,9 @@ Remove the comment tags around the last navigation item.
 
 Save the `selectPanel.html` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Deploy the application
 
-[ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 With the cluster changes in place we can now deploy the application again to the cloud.
 
 In a console run the following command from the root directory of the project
@@ -243,8 +241,6 @@ Click on the **Cluster** tab and then click the **Submit** button to see the inc
 
 If you hover over the circle in the center of a cluster you can see some statistics about the cluster, such as the cluster category and the number of incidents in the cluster.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

@@ -1,22 +1,24 @@
 ---
-title: Transformation methods
-description: Transformation methods transform a geometry into some other geometry
+parser: v2
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 
+# Transformation methods
+<!-- description --> Transformation methods transform a geometry into some other geometry
+
 ## Prerequisites
  - **Tutorial:** [Computation methods](hana-spatial-methods-compute)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn about a number of methods to transform geometries into other geometries.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Boundary)]
+### Boundary
+
 The `ST_Boundary` method returns the boundary of a geometry. Boundary depends on a geometry type and its characteristics.
 
 A point has no boundary and returns the empty geometry. An empty geometry returns `null`.
@@ -106,10 +108,9 @@ WHERE "SHAPE".ST_GeometryType() = 'ST_Polygon'
 ORDER BY 1 ASC;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Envelope)]
+### Envelope
+
 
 `ST_Envelope()` method returns the bounding rectangle for a geometry. This method cannot be used with geometries in a round-Earth spatial reference system.
 
@@ -158,10 +159,9 @@ Combine returned SVG outputs into one and modify drawing parameters to display i
 
 ![Boundaries visualizations](trans80.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Convex hull)]
+### Convex hull
+
 
 `ST_ConvexHull` method returns the convex hull of the geometry value.
 
@@ -217,10 +217,9 @@ For polygons:
 
 ![Convex hull for polygons](trans110.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Buffer)]
+### Buffer
+
 `ST_Buffer` method returns the geometry that represents all points whose distance from any point of an input geometry is less than or equal to a specified distance.
 
 ```sql
@@ -266,8 +265,7 @@ WHERE "SHAPEID" IN (3, 7, 11)
 
 ![Buffer SVG for different geometry types](trans130.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a13f280787c10148dc893063dfed1c4.html).

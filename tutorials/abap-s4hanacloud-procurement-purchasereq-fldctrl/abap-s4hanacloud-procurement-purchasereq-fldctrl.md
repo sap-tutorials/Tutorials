@@ -9,8 +9,10 @@ author_profile: https://github.com/julieplummer20
 
 ---
 
+
 # Implement a Field Control Using a Business Add-in (`BAdI`)
 <!-- description --> Hide Prices for a Specified User Using a Business Add-in (`BAdI`) for a Purchase Requisition
+
 
 ## Prerequisites
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
@@ -118,9 +120,8 @@ To help you create your own enhancements, example classes are provided (2).
 SAP Help Portal: [Adaptation of App Behavior](https://help.sap.com/viewer/0e602d466b99490187fcbb30d1dc897c/2202.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
 
 
-
-
 ### Create enhancement implementation
+
 
 Next, you need a container within the enhancement spot for your `BADI` implementations. This is known as an enhancement implementation.
 

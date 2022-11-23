@@ -1,11 +1,13 @@
 ---
-title: Configure Your SAP S/4HANA System for Content Federation
-description: Configure the allow list to enable SAP S/4HANA applications to be run in an iFrame in an SAP Launchpad site and set an SAP Fiori launchpad parameter for the exposure of classic apps.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, software-product>sap-fiori, topic>abap-connectivity, software-product>sap-business-technology-platform, software-product>sap-s/4hana]
 primary_tag: software-product>sap-launchpad-service
 ---
+
+# Configure Your SAP S/4HANA System for Content Federation
+<!-- description --> Configure the allow list to enable SAP S/4HANA applications to be run in an iFrame in an SAP Launchpad site and set an SAP Fiori launchpad parameter for the exposure of classic apps.
 
 ## Prerequisites
 - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
@@ -20,11 +22,11 @@ Please keep in mind that the trial is only free for 30 days, so only request the
 
 
 
-## Details
-### You will learn
+## You will learn
   - How to set up the allow list to enable your SAP BTP trial to access the SAP S/4HANA system
   - How to set the SAP Fiori launchpad parameter `EXPOSURE_SYSTEM_ALIASES_MODE` in the SAP S/4HANA Customizing.
 
+## Intro
 In this group of tutorials, you will integrate SAP Fiori launchpad content from an SAP S/4HANA system to the SAP Launchpad service on SAP BTP using content federation. With this functionality, SAP enables SAP S/4HANA (and other products) to serve as content providers by exposing their business content and role structures to the central Launchpad, which makes the day-to-day operation and maintenance by the content administrator much more efficient.
 
 You will learn how to combine federated content from SAP S/4HANA with apps from other sources like custom apps running on SAP BTP or SAP Business Suite applications in one launchpad site.
@@ -32,7 +34,8 @@ You will learn how to combine federated content from SAP S/4HANA with apps from 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Login to your SAP S/4HANA system)]
+### Login to your SAP S/4HANA system
+
 
 
 1. If you are using your own instance of the SAP S/4HANA 2020 or 2021, Fully Activated Appliance solution in SAP Cloud Appliance Library, click **Connect**.
@@ -54,10 +57,9 @@ You will learn how to combine federated content from SAP S/4HANA with apps from 
 
     ![Login](2-login-s4h.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open UCON cockpit)]
+### Open UCON cockpit
+
 
 Since the SAP S/4HANA apps are integrated into the SAP Launchpad service using iFrames, you need to configure an allowlist to protect your system against clickjacking attacks. The allowlist service is an ABAP-wide service to implement protections. You can manage such allowlist scenarios with the Unified Connectivity Framework (UCON Framework) to optimize the protection of your RFC and HTTP(S) communication against unauthorized access.
 
@@ -70,10 +72,9 @@ Start the transaction ``uconcockpit``.
 ![Launch uconcockpit](3-launch-uconcockpit.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Activate clickjacking protection)]
+### Activate clickjacking protection
+
 
 1. In the drop-down list, select **HTTP Whitelist Scenario**.
 
@@ -96,10 +97,9 @@ You now see the **Clickjacking Framing Protection** entry in the table. It is cu
 
 ![Result clickjacking](7-result-clickjacking.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open SAP Fiori launchpad client-specific settings)]
+### Open SAP Fiori launchpad client-specific settings
+
 
 The parameter ``EXPOSURE_SYSTEM_ALIASES_MODE`` defines how to handle system aliases during content exposure. In an embedded deployment of the SAP Fiori front-end server, all apps run on the same server. Therefore, system aliases can be cleared during exposure. In a hub deployment in contrast, they might come from different back-end systems and each back-end system may have several aliases. Therefore, you need to map these aliases to the runtime destinations manually after creating the content provider in the last tutorial of this group. See the [documentation](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/021bc1192cbd455d898542dcf584440e.html) for details.
 
@@ -121,10 +121,9 @@ This parameter must only be set in an embedded scenario where the SAP Fiori fron
 
     ![Change Settings](10-change-FLP-settings.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set customizing parameter EXPOSURE_SYSTEM_ALIASES_MODE)]
+### Set customizing parameter EXPOSURE_SYSTEM_ALIASES_MODE
+
 
 5. Click **New Entries** to create one new entry.
 
@@ -168,10 +167,9 @@ Now you made all settings required in the SAP S/4HANA trial system.
 
 ![Customizing result](17-customizing-result.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check activation status of cdm3 service)]
+### Check activation status of cdm3 service
+
 
 If you work in your own SAP S/4HANA test system or just want to make sure all prerequisites for content exposure are met, you might check if the  service ``/sap/bc/ui2/cdm3`` is activated in the SAP S/4HANA system. This is the case in the preconfigured SAP S/4HANA trial.
 
@@ -187,11 +185,10 @@ If you work in your own SAP S/4HANA test system or just want to make sure all pr
     ![CDM3 service](18-cdm3-active.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Check exposing user)]
+### Check exposing user
+
 
 You also need to make sure that the user which does the content exposure has the right role and that the page cache is turned on for them. This is also already the case for user ``bpinst``.
 
@@ -209,8 +206,7 @@ You also need to make sure that the user which does the content exposure has the
 
 > This parameter is only used for test purposes to identify caching issues. It should not be available in productive systems anyhow, as it can slow down the loading process significantly.
 
-[VALIDATE_6]
-[ACCORDION-END]
+
 
 
 

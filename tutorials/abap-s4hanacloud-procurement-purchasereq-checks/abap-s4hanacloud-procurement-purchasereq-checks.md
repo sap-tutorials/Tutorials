@@ -23,6 +23,7 @@ author_profile: https://github.com/julieplummer20
 - How to log on to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to find relevant existing `BAdI` enhancement spots for your line of business, in this case **Materials-Management-Purchasing**
+
 - How to implement a `BAdI` that checks for the field quantity and delivery date during creation of purchase requisition item
 
 
@@ -30,8 +31,10 @@ author_profile: https://github.com/julieplummer20
 ## Intro
 >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [Developer Extensibility: Connect to the ABAP System](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US).
 
+
 A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications with out modifying the original code.
 
+## Intro
 In the Fiori App Manage Purchase Requisitions – Professional, there is one released enhancement spot **`MM_PUR_S4_PR`**.
 At this spot, there are multiple enhancement definitions.
 
@@ -54,6 +57,7 @@ The application will look roughly like this:
 
 <!-- border -->![step0-app-overview](step0-app-overview.png)
 &nbsp;
+
 
 <!-- border -->![step0-app-w-badi](step0-app-w-badi.png)
 
@@ -138,6 +142,8 @@ To help you create your own enhancements, example classes are provided (2).
 
 
 
+
+
 ### Create enhancement implementation
 
 Now that you have identified the correct enhancement spot, you need a container within this enhancement spot for your `BAdI` implementations. This is known as an enhancement implementation.
@@ -161,11 +167,13 @@ Your `BAdI` enhancement implementation appears in a new editor. It implements th
 
 <!-- border -->![step3c-BAdi-enh-impl-editor](step3c-BAdi-enh-impl-editor.png)
 
+
 > A complete searchable table of available `BAdIs` and the Fiori apps to which they pertain is available here:
 SAP Help Portal: [Adaptation of App Behavior](https://help.sap.com/viewer/0e602d466b99490187fcbb30d1dc897c/2202.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
 
 
-[ACCORDION-BEGIN [Step 5: ](Add `BAdI` definition and implementation)]
+### Add `BAdI` definition and implementation
+
 1. Choose **Add `BAdI` implementation**.
 
     <!-- border -->![step4a-badi-enh-implem-add](step4a-badi-enh-implem-add.png)

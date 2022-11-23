@@ -1,24 +1,26 @@
 ---
-title: Explore Visualization Options for Spatial Data in SAP HANA Cloud
-description: Get an overview about the exercises in this tutorial group and prepare your SAP HANA Cloud, SAP HANA database. You will also learn about the different options for visualization of spatial data in SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Explore Visualization Options for Spatial Data in SAP HANA Cloud
+<!-- description --> Get an overview about the exercises in this tutorial group and prepare your SAP HANA Cloud, SAP HANA database. You will also learn about the different options for visualization of spatial data in SAP HANA Cloud.
+
 ## Prerequisites
 - A basic understanding of SQL is helpful.
 - An [SAP HANA Cloud trial account](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html).
 - A **running** instance of SAP HANA Cloud, SAP HANA database.
 
-## Details
-### You will learn
+## You will learn
 - How to prepare your SAP HANA database instance in SAP HANA Cloud
 - How to import the sample spatial data to your database instance
 - About options which you have, to visualize spatial data
 
 
+## Intro
 In this tutorial group, you will get to know the multi-model data processing capabilities of SAP HANA database in SAP HANA Cloud. You will get your hands on this feature with your own (trial).This tutorial group consists of ten hands-on tutorials that illustrate the possibilities of this feature.
 
 These tutorials are designed to give you insights into spatial and graph processing with SAP HANA Cloud, SAP HANA database. You will use sample data to experiment with SAP HANA Cloud and experience the advantages of the multi-model engine.
@@ -37,7 +39,8 @@ If you are new to spatial and graph modeling and processing, you can have a look
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 For the exercises in this tutorial, a basic understanding of SQL is helpful. To get the most out of the content, we advise to take some time to read and understand the SQL statements and procedures - not just copy/paste and execute. Some of the concepts explained can be re-used in many different scenarios.
 
 You need to set up your own environment to run the exercises. By following the instructions in this section, you will have everything that you need for the exercises presented in the next articles.
@@ -52,10 +55,9 @@ These are the requirements to follow along:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare your database in SAP HANA Cloud)]
+### Prepare your database in SAP HANA Cloud
+
 1. Sign-up for the SAP HANA Cloud trial. If you already have a trial account with SAP Cloud Platform, check your trial entitlements to add SAP HANA Cloud.
 
 2. [Provision an SAP HANA Cloud, SAP HANA database in trial](hana-cloud-mission-trial-2).
@@ -67,11 +69,10 @@ These are the requirements to follow along:
 5. From BTP cockpit or SAP HANA Cloud Central, open your trial instance in the SAP HANA Database Explorer and log in with this user's credentials.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import the sample data to your instance)]
+### Import the sample data to your instance
+
 We have prepared sample data from OpenStreetMap that we will use throughout the following tutorials. This includes **street network** and point of interest ( **POI** ) data from the London area. The sample data was prepared using the [`osmnx python package`(*)](https://github.com/gboeing/osmnx) and loaded into SAP HANA Cloud, SAP HANA database using the [Python Machine Learning Client for SAP HANA](https://pypi.org/project/hana-ml/).
 
 You can find the sample data in a public GitHub repository: [SAP-samples/teched2020-DAT260](https://github.com/SAP-samples/teched2020-DAT260)
@@ -84,18 +85,17 @@ The data for the exercises is packaged as an SAP HANA database export. The expor
 
 3. Right-click on the **Catalog** and select **Import Catalog Objects** to start the wizard.
 
-    !![import_catalog_objects](ss-01-import-catalog-objects.png)
+    <!-- border -->![import_catalog_objects](ss-01-import-catalog-objects.png)
 
 4. You can keep all the default settings in the **Import Catalog Objects** wizard and click **Import**.
 
-    !![Import Catalog Objects Wizard](ss-02-import-catalog-objects-wizard.png)
+    <!-- border -->![Import Catalog Objects Wizard](ss-02-import-catalog-objects-wizard.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Explore the contents of sample data)]
+### Explore the contents of sample data
+
 After import, you will find five tables in the schema DAT260. There is `LONDON_POI` which contains 90k points of interest in the London area. This includes pubs and bike repair shops. The street network data is in `LONDON_EDGES`, which represents the actual 1.5 million street segments, and `LONDON_VERTICES`, which describes the 800,000 road junctions. Finally, there are two tables containing data of the London Tube system - `LONDON_TUBE_STATIONS` and `LONDON_TUBE_CONNECTIONS`.
 
 
@@ -105,29 +105,28 @@ The most important tables will be `LONDON_POI`, `LONDON_EDGES` and `LONDON_VERTI
 
     The Table `LONDON_POI` contains points of interest. Other than the naming suggests these POI's can also be represented by polygon (e.g. the ground view of a house). There are different categories of POI's. A POI may be a park bench as well as a hospital or school. The field amenity can be used to filter the type of POI.
 
-    !![POI Table](ss-03-sample-table-first.png)
+    <!-- border -->![POI Table](ss-03-sample-table-first.png)
 
 2. **Edge Data (Table `LONDON_EDGES`)**
 
     The Table `LONDON_EDGES` contains street (or path) segments. If you understand the streets and pathways as a network or graph, you may consider a street the edge of a graph. Intersections between streets would then be vertices (nodes) in this graph.
 
-    !![Edge Table](ss-04-sample-table-second.png)
+    <!-- border -->![Edge Table](ss-04-sample-table-second.png)
 
 3. **Vertex Data (Table `LONDON_VERTICES`)**
 
     The Table `LONDON_VERTICES` contains all the vertices, that can be inferred from the street network in table `LONDON_EDGES`. So, each vertex is essentially a point where at least two street segments come together.
 
-    !![Vertex Table](ss-05-sample-table-third.png)
+    <!-- border -->![Vertex Table](ss-05-sample-table-third.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Different ways to create spatial visualizations)]
+### Different ways to create spatial visualizations
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 >
->!![Tab Options](TabOptions-Screenshot.png)
+><!-- border -->![Tab Options](TabOptions-Screenshot.png)
 
 Especially when working with Spatial data it can be extremely valuable to visualize the results - ideally on a map. Without proper visualization, you will just receive geometries described by latitude/longitude pairs, which is hard to interpret.
 
@@ -149,7 +148,7 @@ DBeaver.io is an open source database client with support for SAP HANA Cloud. Th
 Refer to this [blog post](https://blogs.sap.com/2020/01/08/good-things-come-together-dbeaver-sap-hana-spatial-beer/) on how to set up the connection to your system.
 The example query above will simply return the results while showing a map preview of the geometries.
 
-!![dbeaver_preview](ss-06-dbeaver-preview.png)
+<!-- border -->![dbeaver_preview](ss-06-dbeaver-preview.png)
 
 [OPTION END]
 [OPTION BEGIN [GeoJson.io]]
@@ -178,7 +177,7 @@ The resulting `GeoJSON` can be copy and pasted into the web form:
 
 You can then see the visualization of this point on a map:
 
-!![geojson_io](ss-07-geojson.png)
+<!-- border -->![geojson_io](ss-07-geojson.png)
 
 
 [OPTION END]
@@ -201,14 +200,12 @@ SET SCHEMA DAT260;
 > You are ready to start with the first exercise in the next tutorial. There, you will learn how to add Planar Geometries Based on the tables you have imported.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

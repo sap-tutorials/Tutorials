@@ -1,6 +1,5 @@
 ---
-title: View the SAP BTP from 10,000 Meters
-description: Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
+parser: v2
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -10,17 +9,19 @@ time: 10
 ---
 
 
+# View the SAP BTP from 10,000 Meters
+<!-- description --> Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
+
 ## Prerequisites
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
-## Details
-### You will learn
+## You will learn
   - What SAP BTP is
   - What SaaS, PaaS, and IaaS mean and how they work
   - What services are, and where to find them
   - What the different environments of SAP BTP are
 
-[ACCORDION-BEGIN [Step](Introduction to SAP BTP)]
+### Introduction to SAP BTP
 
 **Welcome to the SAP BTP**
 
@@ -32,10 +33,7 @@ SAP BTP is also constantly evolving.  SAP continuously updates the services we p
 
 Let's start with an overview of the different types of "as a Service" that SAP BTP provides.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](What does "as a Service" mean?)]
+### What does "as a Service" mean?
 
 A term that is widely used in Cloud computing is "*Something* as a Service".  Services, in this case, mean anything provided in the cloud for the organization.  So, the important part of the term is the first word - the *Something*.
 
@@ -56,10 +54,7 @@ The three different service levels are:
 | SaaS | Software as a Service | The cloud provides the hardware, the operating system, and the software.  The client uses the software directly, with no changes or customized to suit their business needs. |
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](SAP BTP service types)]
+### SAP BTP service types
 
 SAP BTP provides both Platform as a Service (PaaS) and Software as a Service (SaaS).
 
@@ -77,24 +72,18 @@ SAP also offers Platform as a Service (PaaS).  Developers can write code in almo
 
 Finally, SAP also offers IaaS in the cloud.  We didn't mention this before, because it is not used very often.  But, if the organization needs the flexibility to run a very specific operating system and software configuration, we have data centers that can support that as part of the SAP cloud.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](SAP BTP data centers)]
+### SAP BTP data centers
 
 The SAP BTP is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
 
-!![Data center locations and types](map.png)
+<!-- border -->![Data center locations and types](map.png)
 
 This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices?provider=all&regions=all&showFilters=true).
-!![globe button](globe.png)
+<!-- border -->![globe button](globe.png)
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Neo, ABAP, Cloud Foundry, and Kubernetes)]
+### Neo, ABAP, Cloud Foundry, and Kubernetes
 
 There are four different PaaS environments in the SAP cloud.
 
@@ -115,9 +104,6 @@ SAP offers [trial accounts for SAP BTP](hcp-create-trial-account), which are fre
 
 That's it!  That is the 10,000 meter overview of SAP BTP.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
 
-
-[DONE]
-[ACCORDION-END]
 
 
 

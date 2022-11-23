@@ -1,6 +1,5 @@
 ---
-title: Create a Theme for Your Portal Freestyle Site
-description: Create and customize a theme and then import it into your Portal freestyle site.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
@@ -8,17 +7,21 @@ time: 15
 ---
 
 
-## Details
-### You will learn  
+# Create a Theme for Your Portal Freestyle Site
+<!-- description --> Create and customize a theme and then import it into your Portal freestyle site.
+
+## You will learn  
   - How to create a theme
   - How to customize the theme
   - How to publish the theme
 
+## Intro
 A default theme, provided by SAP, is assigned to each Portal site. You can create a custom theme in the UI Theme Designer, and then use the Theme Manager to import it so that you can assign this theme to the site, or make it available for user selection.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Save the site URL)]
+### Save the site URL
+
 
 >You will be needing the site URL later on and so we'll start off by finding it and saving it.
 
@@ -35,13 +38,11 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 4. Save this link - you'll be needing it later.
 
 
-[DONE]
-
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Access the UI theme designer tool)]
+### Access the UI theme designer tool
+
 
 1. From the side panel of your Supplier Portal site, select **Services and Tools**.
 
@@ -50,11 +51,9 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
     ![Open UI Theme Designer](1-launch-theme-designer.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create a theme
 
-[ACCORDION-BEGIN [Step 3: ](Create a theme)]
 
 1. Click **Create a New Theme**.
 
@@ -77,11 +76,9 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 >A new theme named **`velotics`** is created as a copy of the SAP Belize theme with the custom properties that you entered.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Customize the theme
 
-[ACCORDION-BEGIN [Step 4: ](Customize the theme)]
 To design and modify the theme, you need to first define a Target Page that will serve as a canvas upon which you can perform these changes. You will then use the quick theming mode to easily change color scheme, background image, or logo.
 
 1. Enter the **Link to Application**. This is the runtime URL of your site that you copied previously in Step 1.
@@ -112,11 +109,9 @@ To design and modify the theme, you need to first define a Target Page that will
 
 >To apply the new theme to your Portal site, you will need to publish it from the UI Theme Designer and then apply it to your site from the Portal Theme Manager.
 
-[DONE]
 
-[ACCORDION-END]
+### Publish the theme
 
-[ACCORDION-BEGIN [Step 5: ](Publish the theme)]
 
 1. In the UI Theme Designer top level menu select **Theme** and then **Save & Publish**.
 
@@ -130,12 +125,9 @@ To design and modify the theme, you need to first define a Target Page that will
 
 >Publishing the theme might take several moments.
 
-[DONE]
 
+  ### Apply the theme to your site
 
-  [ACCORDION-END]
-
-  [ACCORDION-BEGIN [Step 6: ](Apply the theme to your site)]
 
 1. Go back to the Site Designer of your site.
 
@@ -167,7 +159,4 @@ To design and modify the theme, you need to first define a Target Page that will
 
     ![Branded Site](13-branded-site.png)
 
-[VALIDATE_1]
 
-
-  [ACCORDION-END]
