@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform; free-tier]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -13,7 +13,6 @@ primary_tag: software-product>sap-business-technology-platform
 To activate your consumption-based SAP BTP global account with free tier service plans, you need:
   - an **e-mail address**
   - and a **credit card** for authentication and eventually later for billing purposes.
-
   **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
 
@@ -82,10 +81,7 @@ If you've created a new account, you are now asked to add personal details.
 2. Next, fill out the address form and provide the following details: **Country**, **Name**, **Address**, **City**, **State**, and **Postal Code**. This information is necessary for billing purposes for when you upgrade your account from free tier service plans to paid service plans.
 
 
-
 ### Configure solution
-
-
 
 The following page offers to configure your solution. Select:
 
