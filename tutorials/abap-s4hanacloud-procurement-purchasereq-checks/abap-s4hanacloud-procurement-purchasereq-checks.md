@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
-primary_tag: programming-tool>abap-development
+tags: [ tutorial>intermediate, programming-tool>abap-development]
+primary_tag: software-product-function>s-4hana-cloud-abap-environment
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
@@ -13,7 +13,6 @@ author_profile: https://github.com/julieplummer20
 <!-- description --> Define and implement a developer extension (`BAdI`), which performs checks during creation of a purchase requisition item.
 
 ## Prerequisites
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
 - You have installed [SAP ABAP Development Tools (ADT), latest version](https://tools.hana.ondemand.com/#abap), and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in particular. If not, see the **More Information** section at the end of this tutorial
@@ -24,18 +23,23 @@ author_profile: https://github.com/julieplummer20
 - How to log on to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to find relevant existing `BAdI` enhancement spots for your line of business, in this case **Materials-Management-Purchasing**
-- How to implement checks for the field quantity and delivery date during creation of purchase requisition item
-## Defining and implementing the enhancement: Overview
-A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications with out modifying the original code.
+- How to implement a `BAdI` that checks for the field quantity and delivery date during creation of purchase requisition item
+
+
 
 ## Intro
+>The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [Developer Extensibility: Connect to the ABAP System](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US).
+
+A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications with out modifying the original code.
+
 In the Fiori App Manage Purchase Requisitions – Professional, there is one released enhancement spot **`MM_PUR_S4_PR`**.
+
 At this spot, there are multiple enhancement definitions.
 
 In this case, the `BAdI` is implemented in the SAP Fiori app as follows:
+    1. At the `BAdI` definition **`MM_PUR_S4_PR_CHECK`**, you create a container/class.
+    2. You then create a method (i.e. implementation) within this class.
 
-1. At the `BAdI` definition **`MM_PUR_S4_PR_CHECK`**, you create a container/class.
-2. You then create a method (i.e. implementation) within this class.
 Thus it becomes a `BAdI` implementation for this `BAdI` definition.
 
 
@@ -50,7 +54,7 @@ Thus it becomes a `BAdI` implementation for this `BAdI` definition.
 The application will look roughly like this:
 
 <!-- border -->![step0-app-overview](step0-app-overview.png)
-.
+&nbsp;
 
 <!-- border -->![step0-app-w-badi](step0-app-w-badi.png)
 
@@ -99,7 +103,7 @@ First, create a package for your development objects.
     <!-- border -->![step1a-package-new](step1a-package-new.png)
 
 2. Enter the following.
-    - **`Zxx_MM_PUR_S4_BADI`**
+    - **`Z###_MM_PUR_S4_BADI`**
     - **`BADIs` for MM Purchasing**
 
 3. Choose **Add to favorite packages**, then choose **Next**
@@ -133,10 +137,6 @@ To help you create your own enhancements, example classes are provided (2).
 
 <!-- border -->![step2d-enhancement-spot-editor](step2d-enhancement-spot-editor.png)    
 
-You can also call up the example class documentation by selecting the `BAdI` and choosing **ABAP Element Info**.
-
-<!-- border -->![step3d-open-docu](step3d-open-docu.png)
-
 
 
 ### Create enhancement implementation
@@ -149,7 +149,7 @@ Now that you have identified the correct enhancement spot, you need a container 
 
 2. Filter by `BAdI`, choose **`BAdI` Enhancement Implementation**, then choose **Next**.
 
-3. Add the following and choose **Next**.
+3. Enter the following and choose **Next**.
     - Name: **`Zxx_BADI_CHECK_PURCH_REQ`**
     - Description: **Check date and quantity in Purchase Requisition**
     - Enhancement Spot: **`MM_PUR_S4_PR`**
@@ -162,10 +162,12 @@ Your `BAdI` enhancement implementation appears in a new editor. It implements th
 
 <!-- border -->![step3c-BAdi-enh-impl-editor](step3c-BAdi-enh-impl-editor.png)
 
+> A complete searchable table of available `BAdIs` and the Fiori apps to which they pertain is available here:
+SAP Help Portal: [Adaptation of App Behavior](https://help.sap.com/viewer/0e602d466b99490187fcbb30d1dc897c/2202.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
 
-### Add `BAdI` Implementation
 
-1. Choose **Add `BAdI`**.
+[ACCORDION-BEGIN [Step 5: ](Add `BAdI` definition and implementation)]
+1. Choose **Add `BAdI` implementation**.
 
     <!-- border -->![step4a-badi-enh-implem-add](step4a-badi-enh-implem-add.png)
 
@@ -235,7 +237,7 @@ The error will disappear.
 
 2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ) your code.
 
-Check that yours is the implementation that will be called:
+3. Check that yours is the implementation that will be called:
 
 <!-- border -->![step5d-impl-called](step5d-impl-called.png)
 
@@ -244,7 +246,7 @@ Check that yours is the implementation that will be called:
 
 Now test that the checks are performed in the app.
 
-1. In SAP Fiori launchpad, open the app **Process Purchase Requisitions (Professional)**.
+1. In SAP Fiori launchpad, open the app **Manage Purchase Requisitions (Professional)**.
 
     <!-- border -->![step7a-app-open](step7a-app-open.png)
 
@@ -285,10 +287,10 @@ Your new order appears in the Overview List.
 
 ---
 
-### More Information
+### More information
 - Start here: SAP blog post: [How to Extend SAP Standard Using ADT](https://blogs.sap.com/2020/08/05/how-to-extend-sap-standard-using-adt/)
 - SAP Help Portal: [Working with Business Add-Ins (`BAdIs`)](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/04a1d9415efd4e4fbc58534c99c3a0d3.html)
-- SAP Help Portal: Sourcing and Procurement: [Adaptation of App Behavior (Overview and List of Available `BAdIs`)](https://help.sap.com/viewer/DRAFT/0e602d466b99490187fcbb30d1dc897c/2111.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
+- SAP Help Portal: Sourcing and Procurement: [Adaptation of App Behavior (Overview and List of Available `BAdIs`)](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0e602d466b99490187fcbb30d1dc897c/259a396e6bdb4d08b130049880a3920f.html?locale=en-US)
 
 
 ---
