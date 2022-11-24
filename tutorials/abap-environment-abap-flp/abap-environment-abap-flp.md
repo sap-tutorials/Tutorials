@@ -14,19 +14,20 @@ author_profile: https://github.com/mervey45
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment license.
 - You have created the [Travel App Group](group.abap-env-restful-managed) in a licensed system.
-- You need to have following business role assigned for your business user `SAP_BR_DEVELOPER`.
+- You need to have following business role assigned for your business user `SAP_BR_DEVELOPER` and `SAP_BR_BPC_EXPERT`.
 - You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
 - You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.
-
-## Intro
-Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
-
+- You need to have business catalog `SAP_CORE_BC_BCT_TRN_MNG_PC` and `SAP_CORE_BC_BCT_TRN_REL_PC` assigned to your user to see the app.
+- You need to [enable spaces layout](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/64a5e1675ce7413791a654d2228a90be.html?locale=en-US&state=TEST&version=2208.502) in SAP Fiori launchpad to see the app tiles, that are added to spaces or pages.
 
 ## You will learn  
-- How to make use of IAM App and business catalog
+- How to make use of IAM App and business catalogs
 - How to create business roles
 - How to pin business catalogs
 - How to create spaces and pages
+
+## Intro
+Learn how to integrate your list report application into ABAP Fiori launchpad.
 
 ---
 ### Make use of existing IAM App and business catalog
@@ -225,6 +226,7 @@ Option 1:
       ![transport](businessrole8.png)
 
 
+
 ### Alternative 2: Assign and manage launchpad spaces
 
 
@@ -275,10 +277,9 @@ Option 2:
       ![transport](brole9.png)
 
 
-### Execute transport task (Optional)
+### Release transport task (Optional)
 
-
-If you want to execute your transport task, do following:
+If you want to release your transport task, do following:
 
 1. Select the **Export Customizing Transports** tile.
 
@@ -308,6 +309,26 @@ If you want to execute your transport task, do following:
 
       ![transport](brole16.png)
 
+
+### Release transport request (Optional)
+
+If you want to release your transport task, do following:
+
+1. Select the **Export Customizing Transports** tile.
+
+       ![transport](brole10.png)
+
+  2. Click **Go**.
+
+       ![transport](brole11.png)
+
+  3. Select your transport request.
+
+      ![transport](brole12.png)
+
+  4. Select your transport request and select execute. For testing select simulate.
+
+      ![transport](brole16.png)
 
 ### Test yourself
 

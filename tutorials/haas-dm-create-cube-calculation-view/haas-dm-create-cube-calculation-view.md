@@ -4,27 +4,30 @@ auto_validation: true
 time: 10
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, topic>cloud, products>sap-analytics-cloud, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license ]
+tags: [ tutorial>beginner, products>sap-hana, software-product>sap-hana-service-for-sap-btp, tutorial>license ]
 primary_tag: products>sap-hana
 ---
 
 # Create a Calculation View of type Cube in SAP HANA service for SAP BTP
+
 <!-- description --> Use SAP Web IDE Full Stack to create a calculation view to expose to SAP Analytics Cloud
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have created an anonymized view as explained [in this tutorial](haas-dm-calculation-view-differential-privacy)
- - You have created and loaded data in the `PERFORMANCE` table as explained [in this tutorial](haas-dm-create-db-mta)
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have created an anonymized view as explained [in this tutorial](haas-dm-calculation-view-differential-privacy)
+- You have created and loaded data in the `PERFORMANCE` table as explained [in this tutorial](haas-dm-create-db-mta)
 
 ## You will learn
-  - How to create a calculation view in SAP Web IDE Full Stack
-  - How to join data from another calculation view
+
+- How to create a calculation view in SAP Web IDE Full Stack
+- How to join data from another calculation view
 
 This calculation view will be consumed in a report in SAP Analytics Cloud
 
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
 ### Create a Calculation View

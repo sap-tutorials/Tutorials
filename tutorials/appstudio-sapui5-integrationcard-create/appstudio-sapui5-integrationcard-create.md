@@ -21,6 +21,10 @@ author name: Boris Dafov
 >**IMPORTANT:** SAP Build Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
+
+>**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
+
+
 ## You will learn
 - How to create a card for SAP Build Work Zone using SAP Business Application Studio (BAS)
 - What the main elements of the Integration card are and understand their roles
@@ -28,7 +32,6 @@ author name: Boris Dafov
 ## Intro
 Integration cards are UI elements which display concise pieces of information in a limited-space container. Cards are small previews of application content, and each card represents a specific topic, task, or perspective. As a card developer, you only need to configure a descriptor (`manifest.json` file) and as a result you get fully functional and reusable card.
 
----
 
 ### Check for Development Tools for SAP Build Work Zone extension
 
@@ -339,6 +342,7 @@ The `dt/configuration.js` now looks like:
 
 ### Deploy card
 
+
 1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Build Work Zone**  option from the dropdown menu.
 
     <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Build Work Zone option ](7-1.PNG)
@@ -359,4 +363,3 @@ Now the basic UI5 card deployment is done!
 To learn more about the Integration cards and their functionalities, see the [Card Explorer](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html) page.
 
 
----

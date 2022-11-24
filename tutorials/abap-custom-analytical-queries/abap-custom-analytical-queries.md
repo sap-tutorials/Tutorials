@@ -14,13 +14,13 @@ author_profile: https://github.com/mervey45
 ## Prerequisites  
 The Business user requires the role `SAP_BR_ANALYTICS_SPECIALIST` to access the Query Designer. The according business catalog is `SAP_CA_BC_ANA_AQD`.
 
+## You will learn  
+In this tutorial you will learn how to setup Custom Analytical Queries for use. This section deals with creating, deleting and modifying queries. The creation of Restricted Measures will take part in this example.
 
 ## Intro
 **Custom Analytical Queries** is a tool used for reporting and analysis.
 Raw data from business documents are getting converted into a meaningful grid.
 By using Custom Analytical Queries you do not need to understand the technical details.
-## You will learn  
-In this tutorial you will learn how to setup Custom Analytical Queries for use. This section deals with creating, deleting and modifying queries. The creation of Restricted Measures will take part in this example.
 
 ---
 

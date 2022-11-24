@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment, software-product>sap-s-4hana-cloud]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-btp--abap-environment]
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -32,6 +32,10 @@ author_profile: https://github.com/julieplummer20
 - How to check the custom logic of this custom field, in **Custom Fields**
 
 ## Intro
+
+>The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [Developer Extensibility: Connect to the ABAP System](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US).
+
+
 Throughout this tutorial, the placeholder `###` or `000` is used. Always replace this with your initials or group number.
 ---
 
@@ -63,6 +67,8 @@ This code will copy the content from a standard field, `purchaseorder-supplyingp
 
     ```ABAP
     IF purchaseorder-supplyingplant is not initial.
+    purchaseorderchange-yy1_zhdrprnt2_pdh_000 = purchaseorder-supplyingplant.
+    endif.
 
     ```
 
