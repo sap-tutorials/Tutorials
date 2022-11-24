@@ -2,7 +2,9 @@
 parser: v2
 auto_validation: true
 time: 15
+
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform; tutorial>free-tier ]
+
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -80,7 +82,6 @@ If you've created a new account, you are now asked to add personal details.
 
 
 ### Configure solution
-
 
 The following page offers to configure your solution. Select:
 
