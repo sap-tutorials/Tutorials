@@ -32,16 +32,14 @@ Now, create the **Simple Transformation**, which converts the XML data to ABAP d
 
 1. In the Project Explorer, select your package (from the previous tutorial) and choose **New > Other ABAP Repository Object > Transformations > Transformation**, then choose **Next**.
 
-    <!-- border -->
-    ![step6a-transformation-new](step6a-transformation-new.png)
+    <!-- border -->![step6a-transformation-new](step6a-transformation-new.png)
 
 2. Enter the following:
     Name: **`Z_OVERPASS_XML_ST_000`**
     Description: **Transform Overpass Map Data: XML-ABAP**
     Template: Simple transformation
 
-    <!-- border -->
-    ![step6b-transformation-name-etc](step6b-transformation-name-etc.png)
+    <!-- border -->![step6b-transformation-name-etc](step6b-transformation-name-etc.png)
 
 3. Choose your transport request and choose **Finish**.
     A skeleton transformation appears in a new editor.
@@ -77,9 +75,7 @@ Now, create the **Simple Transformation**, which converts the XML data to ABAP d
     </tt:template>
 
     ```
-    <!-- border -->
-    ![step6c-transformation-code](step6c-transformation-code.png)
-
+    <!-- border -->![step6c-transformation-code](step6c-transformation-code.png)
 
 5. Check your syntax (`Ctrl+F2`).
 
@@ -92,23 +88,20 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 1. Select your package and choose **New > ABAP Class** from the context menu.
 
-    <!-- border -->
-    ![step7a-create-class](step7a-create-class.png)
+    <!-- border -->![step7a-create-class](step7a-create-class.png)
 
 2. Enter the following for your class and choose Next. Remember to change `000` to your group number.
     - Name: **`ZCL_OVERPASS_XML_000`**
     - Description: Get map data using Overpass + XML
     - Interfaces: **`IF_OO_ADT_CLASSRUN`** (using **Add...**)
 
-    <!-- border -->
-    ![step7b-name-class](step7b-name-class.png)
+    <!-- border -->![step7b-name-class](step7b-name-class.png)
 
 3. Choose or create a transport request, then choose Finish.
 
 The skeleton class is displayed in a new editor.
 
-<!-- border -->
-![step7c-class-editor](step7c-class-editor.png)
+<!-- border -->![step7c-class-editor](step7c-class-editor.png)
 
 
 ### Add INTERFACES statement
@@ -234,8 +227,7 @@ To be able to access the external service, you must:
 
 Run your class in the console (`F9`). The output should look something like this:
 &nbsp;
-<!-- border -->
-![step10a-output](step10a-output.png)
+<!-- border -->![step10a-output](step10a-output.png)
 
 
 ### Test yourself

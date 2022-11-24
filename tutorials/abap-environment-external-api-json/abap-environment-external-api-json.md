@@ -38,12 +38,10 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
     - Add to favorite packages = Yes
     - Package type = **Development**
 
-    <!-- border -->
-    ![step1a-create-package](step1a-create-package.png)
+    <!-- border -->![step1a-create-package](step1a-create-package.png)
 
 3. Choose **Create new transport request**, enter a description, such as **Get data from API Overpass**, then choose **Finish**.
-    <!-- border -->
-    ![step1c-new-transport-request](step1c-new-transport-request.png)
+    <!-- border -->![step1c-new-transport-request](step1c-new-transport-request.png)
 
 
 ### Create outbound service
@@ -55,8 +53,7 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
     - Description: **Get data from Overpass map service**
     - Service type: **HTTP Service**
 
-    <!-- border -->
-    ![step2a-new-outbound-service](step2a-new-outbound-service.png)
+    <!-- border -->![step2a-new-outbound-service](step2a-new-outbound-service.png)
 
 3. Choose the transport request you just created, then choose **Finish**.
 
@@ -64,8 +61,7 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 
 4. Enter the **Default Path Prefix** **`/api/interpreter`**.
 
-    <!-- border -->
-    ![step2b-outbound-service-default-path-prefix](step2b-outbound-service-default-path-prefix.png)
+    <!-- border -->![step2b-outbound-service-default-path-prefix](step2b-outbound-service-default-path-prefix.png)
 
 5. Choose **Save (`Ctrl + S`)**.
 
@@ -75,8 +71,7 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 
 1. Again, choose **New > Other Repository Object** from the context menu; then enter **Communication Scenario**.
 
-    <!-- border -->
-    ![step3a-create-comm-scenario](step3a-create-comm-scenario.png)
+    <!-- border -->![step3a-create-comm-scenario](step3a-create-comm-scenario.png)
 
 2. Enter the following and choose **Next**.
 
@@ -87,24 +82,20 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 
     The communication scenario appears.
 
-    <!-- border -->
-    ![step3b-new-comm-scen](step3b-new-comm-scen.png)
+    <!-- border -->![step3b-new-comm-scen](step3b-new-comm-scen.png)
 
 5. On the **Outbound** tab, ensure that all four authentication methods are ticked.
 
 6. Add your outbound service, by choosing **Add...**.
 
-    <!-- border -->
-    ![step3c-add-ob](step3c-add-ob.png)
+    <!-- border -->![step3c-add-ob](step3c-add-ob.png)
 
 7. Choose **Browse**, choose your outbound service, **`Z_API_OVERPASS_OB_000`**, then choose **Finish**.
 The suffix **REST** has added to the outbound service name automatically.
 
-    <!-- border -->
-    ![step3d-add-ob-service-to-comm-scen](step3d-add-ob-service-to-comm-scen.png)
+    <!-- border -->![step3d-add-ob-service-to-comm-scen](step3d-add-ob-service-to-comm-scen.png)
 
-    <!-- border -->
-    ![step3e-comm-scen-editor](step3e-comm-scen-editor.png)
+    <!-- border -->![step3e-comm-scen-editor](step3e-comm-scen-editor.png)
 
 8. Finally, **Save** your communication scenario, then choose **Publish Locally**.
 
@@ -117,35 +108,28 @@ This artifact specifies the URL of the API (minus the HTTP(S) protocol) and port
 
 1. In the Fiori Launchpad home page, choose **Communication System**, then choose **New**.
 
-    <!-- border -->
-    ![step4a-comm-system](step4a-comm-system.png)
+    <!-- border -->![step4a-comm-system](step4a-comm-system.png)
     &nbsp;
-    <!-- border -->
-    ![step4b-new-comm-system](step4b-new-comm-system.png)
+    <!-- border -->![step4b-new-comm-system](step4b-new-comm-system.png)
 
 2. Enter the following and choose **Create**.
 
     - System ID: **`Z_OVERPASS_000_CSYS`**
     - System Name: **`Z_OVERPASS_000_CSYS`**
 
-    <!-- border -->
-    ![step4b-new-comm-system-dialog](step4b-new-comm-system-dialog.png)
+    <!-- border -->![step4b-new-comm-system-dialog](step4b-new-comm-system-dialog.png)
 
 3. Enter host name: \overpass-api.de
 
 4. Under **Users for Outbound Communication**, enter the option **None**.
 
-    <!-- border -->
-    ![step4c-outbound-user-authent](step4c-outbound-user-authent.png)
+    <!-- border -->![step4c-outbound-user-authent](step4c-outbound-user-authent.png)
     &nbsp;
-    <!-- border -->
-    ![step4c-outbound-user-password-none](step4c-outbound-user-password-none.png)
+    <!-- border -->![step4c-outbound-user-password-none](step4c-outbound-user-password-none.png)
     &nbsp;
-    <!-- border -->
-    ![step4d-outbound-user-authent-none](step4d-outbound-user-authent-none.png)
+    <!-- border -->![step4d-outbound-user-authent-none](step4d-outbound-user-authent-none.png)
     &nbsp;
-    <!-- border -->
-    ![step4e-users-ob-none](step4e-users-ob-none.png)
+    <!-- border -->![step4e-users-ob-none](step4e-users-ob-none.png)
 
 5. Leave the other default settings as they are and choose **Save**.
 
@@ -156,33 +140,26 @@ This next artifact specifies the communication scenario and communication system
 
 1. Go back to the Fiori Launchpad home page and choose **Communication Arrangement**, then choose **New**.
 
-    <!-- border -->
-    ![step5a-new-comm-arr](step5a-new-comm-arr.png)
+    <!-- border -->![step5a-new-comm-arr](step5a-new-comm-arr.png)
 
 2. Browse to, then select your **Communication Scenario**, **`Z_API_OVERPASS_CSCEN_000`** (created in ADT). The **Communication Arrangement** name is filled automatically.
 
-    <!-- border -->
-    ![step5c-select-comm-scen](step5c-select-comm-scen.png)
+    <!-- border -->![step5c-select-comm-scen](step5c-select-comm-scen.png)
     &nbsp;
-    <!-- border -->
-    ![step5b-comm-arr-name-etc](step5b-comm-arr-name-etc.png)
+    <!-- border -->![step5b-comm-arr-name-etc](step5b-comm-arr-name-etc.png)
 
 3. In the main editor, select the Communication System, **`Z_OVERPASS_000_CSYS`**.
     The **Service URL**, port etc are filled automatically.
 
-    <!-- border -->
-    ![step5e-comm-arr-comm-sys](step5e-comm-arr-comm-sys.png)
+    <!-- border -->![step5e-comm-arr-comm-sys](step5e-comm-arr-comm-sys.png)
     &nbsp;
-    <!-- border -->
-    ![step5f-comm-arr-defaults-filled](step5f-comm-arr-defaults-filled.png)
+    <!-- border -->![step5f-comm-arr-defaults-filled](step5f-comm-arr-defaults-filled.png)
 
 You can now check the connection.
 
-<!-- border -->
-![step5d-check-connection](step5d-check-connection.png)
+<!-- border -->![step5d-check-connection](step5d-check-connection.png)
 &nbsp;
-<!-- border -->
-![step5g-ping-successful](step5g-ping-successful.png)
+<!-- border -->![step5g-ping-successful](step5g-ping-successful.png)
 
 ### Create ABAP class
 
@@ -191,30 +168,25 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 1. In the ABAP Development Tools `(ADT)`, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
 
-    <!-- border -->
-    ![step4a-create-class](step4a-create-class.png)
+    <!-- border -->![step4a-create-class](step4a-create-class.png)
 
 2. Enter a name and description for your class. **Remember to change `000` to your group number**.
     - Name: **`zcl_api_overpass_json_000`**
     - Description: **Get map data using Overpass + JSON**
 
-    <!-- border -->
-    ![step4b-class-name](step4b-class-name.png)
+    <!-- border -->![step4b-class-name](step4b-class-name.png)
 
 3. Add the interface **`IF_OO_ADT_CLASSRUN`** by choosing **Add...**.
 
-    <!-- border -->
-    ![step4c-add-interface](step4c-add-interface.png)
+    <!-- border -->![step4c-add-interface](step4c-add-interface.png)
     &nbsp;
-    <!-- border -->
-    ![step4e-class-plus-interface](step4e-class-plus-interface.png)
+    <!-- border -->![step4e-class-plus-interface](step4e-class-plus-interface.png)
 
 4. Choose or create a transport request, then choose **Finish**.
 
 The class is displayed in a new editor.
 
-<!-- border -->
-![step4d-class-editor](step4d-class-editor.png)
+<!-- border -->![step4d-class-editor](step4d-class-editor.png)
 
 ### Copy code
 
@@ -323,8 +295,7 @@ Run your class in the console (`F9`).
 
 The output should look something like this:
 &nbsp;
-<!-- border -->
-![step9a-output](step9a-output.png)
+<!-- border -->![step9a-output](step9a-output.png)
 
 ### Test yourself
 
