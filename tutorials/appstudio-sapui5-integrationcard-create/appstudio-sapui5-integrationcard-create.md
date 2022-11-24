@@ -8,21 +8,21 @@ author name: Boris Dafov
 ---
 
 # Create a UI5 Integration Card that Consumes Data from the SAP Gateway Demo System
-<!-- description --> Create a UI5 integration card in SAP Work Zone to display data from the backend SAP Gateway Demo System.
+<!-- description --> Create a UI5 integration card in SAP Build Work Zone to display data from the backend SAP Gateway Demo System.
 
 ## Prerequisites
 - Please note that if you are following this tutorial as part of a workshop, you can skip these prerequisites.
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
-- To deploy a UI5 Integration card in the SAP Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Work Zone service. Additionally, you have to configure a destination for SAP Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
+- To deploy a UI5 Integration card in the SAP Build Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone service. Additionally, you have to configure a destination for SAP Build Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
 
 
->**IMPORTANT:** SAP Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
+>**IMPORTANT:** SAP Build Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
 ## You will learn
-- How to create a card for SAP Work Zone using SAP Business Application Studio (BAS)
+- How to create a card for SAP Build Work Zone using SAP Business Application Studio (BAS)
 - What the main elements of the Integration card are and understand their roles
 
 ## Intro
@@ -30,7 +30,7 @@ Integration cards are UI elements which display concise pieces of information in
 
 ---
 
-### Check for Development Tools for SAP Work Zone extension
+### Check for Development Tools for SAP Build Work Zone extension
 
 
 >If you are following this tutorial as part of a workshop, please skip this step.
@@ -41,9 +41,9 @@ Integration cards are UI elements which display concise pieces of information in
 
     <!-- border -->![Image depicting SAP Business Application Studio with configured dev spaces – click on Edit button](1-2.PNG)
 
-3. Ensure that the **Development Tools for SAP Work Zone** extension is checked and save the changes.
+3. Ensure that the **Development Tools for SAP Build Work Zone** extension is checked and save the changes.
 
-    <!-- border -->![Image depicting SAP BAS with Development Tools for SAP Work Zone extension selected](1-3.PNG)
+    <!-- border -->![Image depicting SAP BAS with Development Tools for SAP Build Work Zone extension selected](1-3.PNG)
 
 
 
@@ -162,7 +162,7 @@ To learn more, see the [Destinations](https://sapui5.hana.ondemand.com/test-reso
 
 <!-- border -->![Image depicting the application showing dynamic data](3-4.PNG)
 
-If you would like to deploy the card and see how it looks on SAP Work Zone, you can skip to Step 6 and deploy it. In the next steps you add card capabilities that can make your card more interactive.
+If you would like to deploy the card and see how it looks on SAP Build Work Zone, you can skip to Step 6 and deploy it. In the next steps you add card capabilities that can make your card more interactive.
 
 
 ### Add manifest parameters
@@ -296,7 +296,7 @@ The application displays the products from the selected vendor:
 To learn more, see the [Filters](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/filters) section in the Card Explorer.
 
 
-### Configure card parameters that are displayed in SAP Work Zone
+### Configure card parameters that are displayed in SAP Build Work Zone
 
 
 1. Select the `dt/configuration.js` file (in the Explorer view on the left).
@@ -339,13 +339,13 @@ The `dt/configuration.js` now looks like:
 
 ### Deploy card
 
-1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Work Zone**  option from the dropdown menu.
+1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Build Work Zone**  option from the dropdown menu.
 
-    <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Work Zone option ](7-1.PNG)
+    <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Build Work Zone option ](7-1.PNG)
 
-2. Select the target SAP Work Zone destination.
+2. Select the target SAP Build Work Zone destination.
 
-    <!-- border -->![Image depicting Select the target Work Zone destination option](7-2.PNG)
+    <!-- border -->![Image depicting Select the target SAP Build Work Zone destination option](7-2.PNG)
 
 3. In the right-bottom corner, confirm to **Continue** and wait to see the successful message.
 
