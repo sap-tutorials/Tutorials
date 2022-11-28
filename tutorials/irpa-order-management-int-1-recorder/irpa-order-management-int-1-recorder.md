@@ -348,7 +348,7 @@ Now, you define the Shipping Address in a different way, as a collection of mult
     In the Element Information section, you can see that everything is added in the **Table Row**, and the **TD** is also marked as a two-dimensional array.
 
 
-    <!-- border -->![Multidimension](images019_MultiDimension.png)
+    <!-- border -->![Multidimension](images/019_MultiDimension.png)
 
 15. Click **Save** to save your automation.
 
