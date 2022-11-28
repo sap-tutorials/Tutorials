@@ -21,6 +21,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
+
 ### Scaffold a SAPUI5 project
 
 Run the following command to trigger the creation of a new project.
@@ -37,11 +38,13 @@ Choose the following responses for the prompted parameters.
 |  What do you want to do?          | **`Create a new OpenUI5/SAPUI5 project [app]`**
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
+|  Do you want to enable the SAP Fiori elements flexible programming model?    | **`No`**
 |  On which platform would you like to host the application | **`SAP Launchpad service`**
 |  Which view type do you want to use? | **`XML`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
 |  Would you like to add JavaScript code assist libraries to the project?    | **`Yes`**
+|  Would you like to initialize a local git repository for the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
 
