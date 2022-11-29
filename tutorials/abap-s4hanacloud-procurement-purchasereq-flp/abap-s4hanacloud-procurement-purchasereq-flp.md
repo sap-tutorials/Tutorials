@@ -268,9 +268,9 @@ Option 2:
       ![transport](managespaces8.png)
 
 
-### Export Software Collection (Optional)
+### Export software collection (optional)
 
-If you want to transport your software collection to your production system, follow the steps below.
+If you want to transport your software collection to your production system, follow the steps below. 
 
   1. Open the **Export Software Collection** tile.
 
