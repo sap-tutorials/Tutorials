@@ -14,7 +14,7 @@ author_profile: https://github.com/LindsayBert
 ## Prerequisites
 - You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
 &nbsp;
-**Note that it is not available in a trial account.**
+**Note that SAP Build Work Zone, advanced edition is not available in a trial account.**
 
 
 ## You will learn
@@ -44,7 +44,7 @@ Before you start, download these image files so that they're on your computer re
 ### Create a workspace
 
 
-Workspaces are the building blocks of SAP Work Zone. You can add all kinds of content to it and you can invite other users to join as members.
+Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You can add all kinds of content to it and you can invite other users to join as members.
 
 1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**.
 
@@ -79,7 +79,7 @@ Your workspace is created.
 ### Configure your workspace notifications
 
 
-When you create your workspace, you are prompted to define the frequency of email notifications.
+When you create your workspace, you may be prompted to define the frequency of email notifications.
 
 1. Select **Daily** to get any updates to the workspace every day.
 
@@ -103,7 +103,7 @@ When you create a new workspace, the header has a dark and light blue background
 
     <!-- border -->![New cover photo](4-new-header-image.png)
 
-2. Browse for the following image that you downloaded: `worspace_header-image`.
+2. Browse for the following image that you downloaded: `workspace_header-image`.
 
 3. Reposition your photo to display it as you want, and then click **Save**.
 
@@ -116,7 +116,7 @@ When you create a new workspace, the header has a dark and light blue background
 ### Create a workpage for your workspace
 
 
-In this step, you'll add a workpage to your workspace - it will describe the purpose of the workspace and will feature relevant content.
+In this step, you'll add a workpage to your workspace - this workpage will describe the purpose of the workspace and will feature relevant content.
 
 1. Click **+** to add a page tab.
 
