@@ -44,7 +44,7 @@ As a consequence, all HTML Elements in the subtree where this style was applied 
 
 A full list of all supported CSS Variables can be found in the [`ThemingParameters`](https://github.com/SAP/ui5-webcomponents-react/blob/master/packages/base/src/styling/ThemingParameters.ts).
 
-> #### Warning!
+> **Warning:**
 Overriding the value of CSS variables changes it for all themes and therefore can cause inconsistencies.
 
 
