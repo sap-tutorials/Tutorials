@@ -7,7 +7,7 @@ primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
 ---
 
-#  you 
+#  Integrate a UI5 Integration Card to Your SAP Build Work Zone, advanced edition
 <!-- description --> Add a custom UI5 integration card to your workpage in a workspace.
 
 ## Prerequisites
