@@ -34,7 +34,7 @@ For more information, see:
 
 ---
 
-### Open the ABAP Development Tools (ADT) 
+### Open the ABAP Development Tools (ADT)
 
 Open the ADT and change to the ABAP perspective, using the menu.
 
@@ -184,9 +184,3 @@ Or select the icon.
 
 
 ### Test yourself
-
-Write only the write statement with following information: Hello SAP Cloud Platform ABAP Environment!
-
-[VALIDATE_1]
-[ACCORDION-END] 
-
