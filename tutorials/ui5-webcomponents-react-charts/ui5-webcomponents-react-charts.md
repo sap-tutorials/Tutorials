@@ -26,7 +26,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 1. Install the chart library of UI5 Web Components for React.
 
     ```Shell
-     npm install @ui5/webcomponents-react-charts --save
+     npm install @ui5/webcomponents-react-charts
     ```
 
 2. Then, import `LineChart` and `BarChart` into `MyApp.jsx`.
@@ -254,29 +254,31 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
     ```
 
-    And the `avatar` prop, which receives an `Icon` as value, to the `Card` component:
+    Icons can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
+
+    ```JavaScript / JSX
+    import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
+    ```
+
+    The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `horizontal-bar-chart` import:
+
+    ```JavaScript / JSX
+    import barChartIcon from '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
+    ```
+
+    Then, add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
+
     ```JavaScript / JSX
     <CardHeader
       ...
-      avatar={<Icon name="line-chart" />}
+      avatar={<Icon name={lineChart} />}
     />
     ```
 
-    To reduce bundle size, `Icons` need to be imported manually. As we used a `line-chart` add this to your imports.
-
-    ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/line-chart.js';
-    ```
-
-    The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `bar-chart` import:
-    ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
-    ```
-
-    Then change the `name` prop of the `Icon` to the following:
+    And finally, change the `name` prop of the `Icon` to the following:
     ```JavaScript / JSX
     <CardHeader
-       avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
+       avatar={ <Icon name={ toggleCharts === "lineChart" ? lineChartIcon : barChartIcon } /> }
        ...
      />
     ```
@@ -293,38 +295,38 @@ import React, { useState } from "react";
 import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/line-chart.js";
-import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 
 const dataset = [
   {
     month: "January",
-    data: 65
+    data: 65,
   },
   {
     month: "February",
-    data: 59
+    data: 59,
   },
   {
     month: "March",
-    data: 80
+    data: 80,
   },
   {
     month: "April",
-    data: 81
+    data: 81,
   },
   {
     month: "May",
-    data: 56
+    data: 56,
   },
   {
     month: "June",
-    data: 55
+    data: 55,
   },
   {
     month: "July",
-    data: 40
-  }
+    data: 40,
+  },
 ];
 
 export function MyApp() {
@@ -338,17 +340,23 @@ export function MyApp() {
   };
   return (
     <div>
-    <Card
-      header={
-        <CardHeader
-          titleText="Card"
-          interactive
-          onClick={handleHeaderClick}
-          avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
-        />
-      }
-      style={{ width: "300px" }}
-    >
+      <Card
+        header={
+          <CardHeader
+            titleText="Card"
+            interactive
+            onClick={handleHeaderClick}
+            avatar={
+              <Icon
+                name={
+                  toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
+                }
+              />
+            }
+          />
+        }
+        style={{ width: "300px" }}
+      >
         <Text style={spacing.sapUiContentPadding}>
           This is the content area of the Card
         </Text>
@@ -458,9 +466,7 @@ To make your `Card` look cleaner and to give the user the information that the h
           avatar={
             <Icon
               name={
-                toggleCharts === "lineChart"
-                  ? "line-chart"
-                  : "horizontal-bar-chart"
+                toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
               }
             />
           }
@@ -479,7 +485,7 @@ To make your `Card` look cleaner and to give the user the information that the h
       ) : (
         <BarChart
           dimensions={[{ accessor: "month" }]}
-          measures={[{ accessor: "data" }]}
+          measures={[{ accessor: "data", label: "Stock Price" }]}
           dataset={dataset}
           loading={loading}
         />
