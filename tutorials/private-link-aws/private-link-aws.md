@@ -13,11 +13,12 @@ primary_tag: software-product-function>sap-btp-cockpit
 
 ## Prerequisites
  - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link Service entitlement: [Set Up SAP Private Link Service on Amazon Web Services (Beta)](private-link-service-onboarding-aws).
- - You have created an AWS Private Link Service in the Amazon VPC Console. [Create a service powered by AWS Private Link](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html).
+ - You have created an AWS Endpoint Service in the Amazon VPC Console. [Create a service powered by AWS Private Link](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html).
+ When creating the Endpoint Service, make sure you allowlist the SAP BTP CF AWS Account IDs as described in [Only allow requests from SAP BTP CF's AWS account](https://help.sap.com/docs/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/e0455888a6e44eb2bda8b8edb13dc55a.html?locale=en-US&version=CLOUD)
  - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## You will learn
-  - How to create an SAP Private Link Service instance to connect to your AWS Private Link Service using Cloud Foundry CLI.
+  - How to create an SAP Private Link instance to connect to your AWS Private Link Service using Cloud Foundry CLI.
   - How to bind the service instance to your application using Cloud Foundry CLI.
 
 ## Intro
