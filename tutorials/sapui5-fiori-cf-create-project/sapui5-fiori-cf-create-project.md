@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
-primary_tag:  products>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+primary_tag:  software-product>sap-launchpad-service
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
@@ -21,6 +21,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ---
 
+
 ### Scaffold a SAPUI5 project
 
 Run the following command to trigger the creation of a new project.
@@ -37,11 +38,13 @@ Choose the following responses for the prompted parameters.
 |  What do you want to do?          | **`Create a new OpenUI5/SAPUI5 project [app]`**
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
+|  Do you want to enable the SAP Fiori elements flexible programming model?    | **`No`**
 |  On which platform would you like to host the application | **`SAP Launchpad service`**
 |  Which view type do you want to use? | **`XML`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
 |  Would you like to add JavaScript code assist libraries to the project?    | **`Yes`**
+|  Would you like to initialize a local git repository for the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
 

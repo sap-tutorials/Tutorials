@@ -62,7 +62,7 @@ author_profile: https://github.com/mariajosesap
             <AssignTo createNew="false" type="response">response</AssignTo>
     </AssignMessage>
     ```
-    >Notice that you're already adding `apikey" as a header in the policy.
+    >Notice that you're already adding `apikey` as a header in the policy.
 
     You should look it like this:
 

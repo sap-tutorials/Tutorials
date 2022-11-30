@@ -192,7 +192,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Run Application Router](run_app_router.png)
 
-1. Open the application router in a new tab. Click on the `Interactions_Header`. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.
+1. Open the application router in a new tab (the new service instance running on port 5000). Click on the `Interactions_Header`. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.
 
     ![CAP Service successful](cap_successful.png)
 
