@@ -271,7 +271,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     ```JavaScript / JSX
     <CardHeader
       ...
-      avatar={<Icon name={lineChart} />}
+      avatar={<Icon name={lineChartIcon} />}
     />
     ```
 
