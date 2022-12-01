@@ -5,6 +5,7 @@ time: 30
 tags: [tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product-function>sap-btp-command-line-interface]
 primary_tag: software-product>sap-business-technology-platform
 keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
+auto_validation: false
 ---
 
 # Set up a Kyma Cluster Using the Command Line
@@ -179,8 +180,3 @@ To learn more about the Kyma environment and its functionality, see:
 
 
 
-
-
-
-
----
