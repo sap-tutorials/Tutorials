@@ -258,15 +258,12 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 
     ```JavaScript / JSX
     import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
-    ```
-
-    The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `horizontal-bar-chart` import:
-
-    ```JavaScript / JSX
     import barChartIcon from '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
     ```
 
-    Then, add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
+    The `Icons` should also be conditionally rendered. Luckily, this is easy:
+
+    Add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
 
     ```JavaScript / JSX
     <CardHeader
@@ -275,7 +272,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     />
     ```
 
-    And finally, change the `name` prop of the `Icon` to the following:
+    Then, change the `name` prop of the `Icon` to the following:
     ```JavaScript / JSX
     <CardHeader
        avatar={ <Icon name={ toggleCharts === "lineChart" ? lineChartIcon : barChartIcon } /> }
@@ -283,7 +280,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
      />
     ```
 
-    Now the `Card` also changes the `Icon` by clicking on the header.
+    Here we go! Now the `Card` also changes the `Icon` by clicking on the header.
 
     ![LineChart](02_bothCharts.png)
 
