@@ -1,6 +1,5 @@
 ---
-title: Create a Moving Average on an Event Stream Using an Aggregation Window
-description: Add an aggregate window to create a moving average on the event data, smoothing out the raw data.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,6 +7,9 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 auto_validation: true
 time: 20
 ---
+# Create a Moving Average on an Event Stream Using an Aggregation Window
+<!-- description --> Add an aggregate window to create a moving average on the event data, smoothing out the raw data.
+
 ## Prerequisites
  - **Tutorials:** [Join an Event Stream to a HANA Table](https://developers.sap.com/tutorials/sds-stream-table-join.html)
 
@@ -15,18 +17,19 @@ time: 20
 - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-event-stream-alerts.html)
 
 
-## Details
-### You will learn  
+## You will learn  
  - How to add an aggregate window to hold multiple data entry and observe patterns
  - How to use a time-based sliding event window to compute metrics and monitor trends
 
 ---
 Unlike streams, which are stateless, windows are like tables that hold information from one event to the next. Here you will add an aggregate window that is keyed by **`MACHINEID`**, which will hold a set of aggregate values for each machine.
 
+## Intro
 If you don't want to use the visual editor, then you can skip to step 8 to view the CCL and copy it into your project.
 
 
-[ACCORDION-BEGIN [Step 1: ](Add an Aggregate Window to the Project)]
+### Add an Aggregate Window to the Project
+
 
 
 Click on **Aggregate** in the **Streams and Windows** drawer of the **Palette** and then click on the canvas to add it to your project.
@@ -37,22 +40,18 @@ Rename the stream to `AVG_TEMP` by clicking on the aggregate symbol, then press 
 
 ![rename](2-rename.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Connect the Aggregate Window to the Event Stream
 
-[ACCORDION-BEGIN [Step 2: ](Connect the Aggregate Window to the Event Stream)]
 
 Select the **Connector** tool in the **Palette** and click on **`DEVICE_EVENTS`** first, then on **`AVG_TEMP`** to connect them.
 
 ![connector](3-connector.png)
 
-[VALIDATE_2]
 
 
-[ACCORDION-END]
+### Add columns to the window
 
-[ACCORDION-BEGIN [Step 3: ](Add columns to the window)]
 
 Click the **Add Column Expression** ( **f(x)** ) button shown below.
 
@@ -66,11 +65,9 @@ Select every option by clicking **Select All** or pressing **Alt+s**. Uncheck **
 
 ![select columns to copy](6-selectcolumnstocopy.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Set a retention policy on the input
 
-[ACCORDION-BEGIN [Step 4: ](Set a retention policy on the input)]
 
 Now you will set a retention policy on the input to this aggregation. This determines the set of events you are aggregating over. In this case, you'll define it by time.
 
@@ -82,11 +79,9 @@ Click **Time** and enter `30 seconds` in the entry box. Click **OK**.
 
 ![policy edit](9-policyedit.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Edit the GROUP BY clause
 
-[ACCORDION-BEGIN [Step 5: ](Edit the GROUP BY clause)]
 
 To define the **GROUP BY** clause, expand the **Group By** compartment in the **`AVG_TEMP`** element by clicking on **+**.
 
@@ -98,11 +93,9 @@ Select the entry **`DEVICE_EVENTS.MACHINEID`**, then click **Add >>** and **OK**
 
 ![group criteria](12-groupcriteria.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add a GROUP FILTER
 
-[ACCORDION-BEGIN [Step 6: ](Add a GROUP FILTER)]
 
 Now you need to add a GROUP filter, since we only want to aggregate temperature readings. This will filter out the Door open/close events and the Power on/off events before you aggregate.
 
@@ -122,11 +115,9 @@ Enter `DEVICE_EVENTS.EVENT_NAME='TEMP'` as the filter expression in the text fie
 
 ![name group filter](16-namegroupfilter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Edit the Column Expressions
 
-[ACCORDION-BEGIN [Step 7: ](Edit the Column Expressions)]
 
 Expand the **Column Expressions** compartment to edit expressions.
 
@@ -150,11 +141,9 @@ You are now going to edit this expression to compute an average. Also, since the
 
 ![average event value](22-avgeventvalue.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Check your work
 
-[ACCORDION-BEGIN [Step 8: ](Check your work)]
 
 At this point you can compile the project to check for errors. If you switch to the CCL editor ( **F6** or click the **Switch to Text** button in the Eclipse toolbar), your code should look like this:
 
@@ -178,6 +167,3 @@ GROUP BY DEVICE_EVENTS.MACHINEID ;
 
 ```
 
-[DONE]
-
-[ACCORDION-END]

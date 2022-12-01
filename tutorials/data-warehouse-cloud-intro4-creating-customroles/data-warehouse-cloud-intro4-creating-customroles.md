@@ -1,62 +1,61 @@
 ---
-title: Create Custom User Roles in SAP Data Warehouse Cloud
-description: In SAP Data Warehouse Cloud, create custom user roles that fit your organization's needs.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
 
+# Create Custom User Roles in SAP Data Warehouse Cloud
+<!-- description --> In SAP Data Warehouse Cloud, create custom user roles that fit your organization's needs.
+
 ## Prerequisites
  - You have [familiarised yourself with the SAP Data Warehouse Cloud interface.](data-warehouse-cloud-2-interface)
  - You have the DW Administrator role assigned to you in your SAP Data Warehouse Cloud tenant.
 
-## Details
-### You will learn
+## You will learn
   - How to create custom roles
   - Overview of privileges
   - What each permission means
   - How this works in a practical example
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Understand privileges and roles)]
+### Understand privileges and roles
+
 
 A role represents the main tasks that a user performs in SAP Data Warehouse Cloud. Each role has a set of privilege types and are assigned different permissions like **Create**, **Read**, **Update**, **Delete** or **Manage** and **Share**. The privilege types represent areas of the application like the **Space Management** or the **Business Builder** and the files or objects created in those areas.
 
 Each role has a set of privilege types and are assigned different permissions. These settings are configured in the **Privilege** page.
 
-!![Privilege Page](T04 3.png)
+<!-- border -->![Privilege Page](T04 3.png)
 
 The standard application roles provide a set of privilege types that are appropriate for each particular job role.
 
 For example, the **DW Administrator** role includes the **Create**, **Read**, **Update**, **Delete** and **Manage** permissions for the privilege type **Spaces**, while the **SAP Data Warehouse Cloud Viewer** has no permissions selected on this permission type. Instead the user has the **Read** permission for **Space Files**, meaning this user won't be able to assign users or connections, but they would be able to view the tables and views in the Spaces they have been assigned to.
 
-!![Example](T04 4.png)
+<!-- border -->![Example](T04 4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand privileges types)]
+### Understand privileges types
+
 
 A privilege type represents a task or an area in SAP Data Warehouse Cloud and is assigned to a specific role. The actions that can be performed in the area are determined by the permissions assigned to a privilege type.
 
 The following [link](https://help.sap.com/viewer/9f804b8efa8043539289f42f372c4862/cloud/en-US/862b88eed50244049d41361ba3290456.html?q=Data%20Warehouse%20Cloud%20Privileges%20and%20Permissions) lists the SAP Data Warehouse Cloud privilege types and the available permissions. Please note, that some of the privileges that are not restricted to an SAP Data Warehouse Cloud license (for example, Users and Roles) can be found in the **Other Privileges and Permissions** table. These object types and privileges depend on your license type and might, therefore, not be relevant or available to you.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand permissions)]
+### Understand permissions
+
 
 Permissions allow the user to perform certain actions such read, write or delete on privilege types. The type of action depends on the privilege type that permission have been assigned to.
 
 For example, the **Read** permission allows opening and viewing an item and it's content, whereas the **Delete** permission allows deletion of the item. The full list of all the permissions and it's meaning can be found in the [linked table here](https://help.sap.com/viewer/9f804b8efa8043539289f42f372c4862/cloud/en-US/862b88eed50244049d41361ba3290456.html?q=Data%20Warehouse%20Cloud%20Privileges%20and%20Permissions#loio1c4bf1ee5cdf4333807b22568ce0d874).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a custom role)]
+### Create a custom role
+
 
 Creating a custom role and assigning them to users in SAP Data Warehouse Cloud is a simple procedure. As an administrator, you can custom define roles that fit your organization's needs. To create a custom user role, simply follow the procedure below.
 
@@ -87,10 +86,9 @@ Creating a custom role and assigning them to users in SAP Data Warehouse Cloud i
     > You can't delete or save changes to the predefined standard roles.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Learn from an example)]
+### Learn from an example
+
 
 A user with **DW Viewer**, for example, cannot see the **Space Management** area including the Spaces. They can only read the files of the Space that they have been assigned to (Space files) and read the data belonging to their Space in the **Data Builder**. They can only see the connections, but not edit them. They cannot see the member section or the individual members of their Space (user and team). A user with **DW Administrator** on the other hand would have almost all permissions of all areas.
 
@@ -105,13 +103,11 @@ You can learn in detail about different privileges and permissions in SAP Data W
 
 > Learn in the next tutorial how to [create and monitor Spaces in SAP Data Warehouse Cloud.](data-warehouse-cloud-4-spaces)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

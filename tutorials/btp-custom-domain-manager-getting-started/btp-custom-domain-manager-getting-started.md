@@ -1,28 +1,30 @@
 ---
+parser: v2
 author_name: Prasita Sankar
 author_profile: https://github.com/
-title: Get Started with the Custom Domain Manager
-description: Use the Custom Domain Manager to create and manage custom domains in the SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>sapui5]
 primary_tag: software-product>sap-btp--cloud-foundry-environment
 ---
 
+# Get Started with the Custom Domain Manager
+<!-- description --> Use the Custom Domain Manager to create and manage custom domains in the SAP BTP, Cloud Foundry environment.
+
 ## Prerequisites
 - You have [Entitled the Custom Domain Manager to your subaccount](btp-cockpit-entitlements). Follow the instructions to make sure that the **Custom Domain Manager** is entitled to your subaccount.
 - You have subscribed to the **Custom Domain Manager** by using the SAP BTP cockpit. See [Initial Setup](https://help.sap.com/viewer/6f35a23466ee4df0b19085c9c52f9c29/Cloud/en-US/1deab96e7aec447fbf8b683ba91a42e0.html).
 - You have acquired the domain names to be used by your applications. Have a look at the [Prerequisites](https://help.sap.com/viewer/6f35a23466ee4df0b19085c9c52f9c29/Cloud/en-US/b791984a063a48169b9e0b9af802f67e.html).
 
-## Details
-### You will learn
+## You will learn
 - What is the Custom Domain Manager
 - How to configure custom domains
 - Where to find documentation
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is the Custom Domain Manager?)]
+### What is the Custom Domain Manager?
+
 
 The SAP Custom Domain service lets you configure your own custom domain to publicly expose your application, instead of using the default subdomain. You can use the Custom Domain Manager to create and manage custom domains in the SAP BTP, Cloud Foundry environment.
 
@@ -32,10 +34,9 @@ Ensure that you have the `CustomDomainAdmin` or `CustomDomainViewer` roles to ma
 
 Learn more about roles and permissions in the [Cloud Foundry environment documentation](https://docs.cloudfoundry.org/concepts/roles.html#roles).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Obtain custom domain certificate)]
+### Obtain custom domain certificate
+
 
 To make sure that your domain is trusted by way of activated server certificates and that all application data is protected, you must set up secure TLS/SSL communication. Then, make your application reachable via your custom domain and route traffic to it.
 
@@ -44,11 +45,10 @@ The following graphic illustrates the process of obtaining a custom domain certi
 ![Custom domain configuration process](btp-cd-config.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Manage reserved and custom domains)]
+### Manage reserved and custom domains
+
 
 To make your applications reachable and secure under your own domain, use the Custom Domain Manager to create and manage your reserved and custom domains. A reserved domain is a domain name that you can reserve inside a number of Cloud Foundry landscapes.
 
@@ -82,10 +82,10 @@ To make your applications reachable and secure under your own domain, use the Cu
 
 The custom domains are created and displayed in a list, along with their corresponding landscape and status.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Manage SaaS routes)]
+
+### Manage SaaS routes
+
 
 The next step is to select your existing SaaS subscriptions and create custom routes for them, in addition to their standard routes.
 
@@ -125,10 +125,9 @@ Now, you can map the application to your custom domain.
 
 The custom routes are created and displayed in a list.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Manage TLS configurations)]
+### Manage TLS configurations
+
 
 Now, create new TLS configurations that can be used for one or multiple server certificate activations.
 
@@ -154,10 +153,10 @@ Now, create new TLS configurations that can be used for one or multiple server c
 
     The list of trusted certificates added are displayed and as long as they aren't in use yet, can be viewed again or deleted by using the **Show** or **Delete** icons, respectively. Certificates that are in use can only be viewed, not deleted.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Manage server certificates)]
+
+### Manage server certificates
+
 
 Create a new server certificate and a certificate signing request (CSR) to obtain a certificate for your custom domains from a trusted certificate authority (CA).
 
@@ -212,23 +211,20 @@ Create a new server certificate and a certificate signing request (CSR) to obtai
 The list of server certificates created are displayed and as long as they are active, cannot be deleted. Inactive certificates can be deleted by using the **Delete** button.
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test the custom domain)]
+
+### Test the custom domain
+
 
 To test your custom domain and make sure it's reachable and secured by a certificate, open your application under its custom domain in a browser.
 
 The address has the following scheme: `https://<Application Hostname>.<Custom Domain>`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Certificate lifecycle management)]
+### Certificate lifecycle management
+
 
 To make sure that a secure connection to your applications is maintained, use a certificate lifecycle management tool to monitor your certificates. You won't receive a warning from SAP BTP or the Custom Domain service if one of your certificates is about to expire.
 
 For more information, refer to the [Custom Domain Manager documentation.](https://help.sap.com/viewer/6f35a23466ee4df0b19085c9c52f9c29/Cloud/en-US/4f4c3ff62fd2413089dce8a973620167.html)
 
-[DONE]
-[ACCORDION-END]

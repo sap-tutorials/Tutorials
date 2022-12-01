@@ -1,22 +1,24 @@
 ---
-title: Apply Filters to an SAP Analytics Cloud Story
-description: Apply or change filter parameters of an embedded SAP Analytics Cloud story
+parser: v2
 auto_validation: true
 time: 10
 tags: [  tutorial>beginner, topic>node-js, topic>security, tutorial>license]
 primary_tag: products>sap-analytics-cloud
 ---
 
+# Apply Filters to an SAP Analytics Cloud Story
+<!-- description --> Apply or change filter parameters of an embedded SAP Analytics Cloud story
+
 ## Prerequisites
 - 	You have created the web app, as described in the tutorial [Embed an SAP Analytics Cloud Story in a Simple Web App](sac-embed-story), and you have embedded an SAP Analytics Cloud story.  
 - 	You have added display parameters, as described in the tutorial [Modify the Way an Embedded Story is Displayed](sac-embed-story-display-parameters), and you have embedded an SAP Analytics Cloud story.
 
-## Details
-### You will learn
+## You will learn
 - How to set a filter for a specific model of an embedded SAP Analytics Cloud story
 - How to gather necessary IDs and values for filter definition
 - How to make use of the SAP Analytics Cloud URL API to request all stories including their models from a tenant
 
+## Intro
 In the previous tutorial, [Modify the Way an Embedded Story is Displayed](sac-embed-story-display-parameters), you have learned how to use the SAP Analytics Cloud URL API to change the look and feel of an embedded story. This is just a small part from that what the SAC Rest-based APIs can deliver in terms of functional scope. For analytical purposes, it is often necessary to look at the results for a particular period of time or calculate results for a particular group of people. These are some of the reasons why filters are required. In SAP Analytics Cloud the filter parameters can be added to the story URL as additional query parameters. This enables you to adjust even further the story you want to embed.
 
 The following parameters are available:
@@ -34,7 +36,8 @@ You can find a detailed description of the parameters in the [API documentation]
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enhance the web application)]
+### Enhance the web application
+
 
 Like in the previous tutorial [Modify the Way Story is Displayed](sac-embed-story-display-parameters) you extend the web app by UI elements that dynamically set the filter parameters of the URL in the code. You can easily see the effect of the change in the story that is rendered in the `<iframe>`.
 
@@ -415,10 +418,9 @@ The sample story `Sample - Revenue Analysis` is available in every SAC tenant. I
 
 - `https://<TENANT_URL>/sap/fpa/ui/bo/ + sStory + mode + "&pageBar=" + pageBar +  "&lang=" + lang + "&f01Model="  + sModel + "&f01Dim=" + sDimension + "&f01Val=" + sValue + "&f01Op=" + sOperator`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Gather filter information)]
+### Gather filter information
+
 To apply a filter to a model of a story, you need to set the following parameters that can be applied to a story model. To identify a model, you also need the package name is, e.g. `sap.epm:BestRunJuice_SampleModel`. In this example `sap.epm` is the package and `BestRunJuice_SampleModel` the name of the model. Setting a filter also requires the dimension ID, the filter operator and the filter value ID. The model name together with the package name can be determined by using the following API: `https://<TENANT_URL>/api/v1/stories?include=models`. The result of this call is a JSON object that lists for your tenant all stories, their models and other meta data. The metadata for our sample story looks as follows:
 
 ```JSON
@@ -466,11 +468,10 @@ Starting from where we left in the filter dialog, we click on the dimension we w
 
 ![Filter_Value_ID](filter_value_id.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start the web application)]
+### Start the web application
+
 
 Now you can start the enhanced web application. If you need support for starting the app, you can go back to step 3 of the tutorial [Embed an SAP Analytics Cloud Story in a Simple Web App](sac-embed-story).
 
@@ -493,7 +494,5 @@ After applying the new filter, as defined by your filter parameters, you find a 
 
 ![Enhanced_Web_App_Appl_Fltr](applied_filter_web_app.png)
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 ---

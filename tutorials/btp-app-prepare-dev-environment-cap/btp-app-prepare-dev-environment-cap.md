@@ -31,7 +31,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Editors)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-This tutorial contains all the installations steps that you would have to get started. It's likely that you have some of the software already installed, so you can just skip those steps.
+This tutorial contains all the installation steps that you would have to do to get started. It's likely that you have some of the software already installed, so you can just skip those steps.
 
 You can choose the editor to develop your CAP application. If you want to exactly go along with the following tutorials, we recommend using VS Code as an editor.
 

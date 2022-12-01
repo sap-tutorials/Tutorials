@@ -1,12 +1,14 @@
 ---
-title: SAP HANA XS Advanced, Creating a Node.js Module
-description: Creating a Node.js Module and implementing XSJS and XSODATA
+parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
+# SAP HANA XS Advanced, Creating a Node.js Module
+<!-- description --> Creating a Node.js Module and implementing XSJS and XSODATA
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** beginner
@@ -15,16 +17,15 @@ tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-
 ## Next Steps
  - [Create a simple OData service](https://developers.sap.com/tutorials/xsa-xsodata.html)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn how to build the XSJS and XSODATA services used to expose your data model to the user interface. Although XS Advanced runs on Node.js, SAP has added modules to Node.js to provide XSJS and XSODATA backward compatibility. Therefore you can use the same programming model and much of the same APIs from the Extended Application Services, classic model even within this new environment.
-
-### Time to Complete
+## Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Node.js module)]
+### Create a Node.js module
+
 Like the previous exercises, you will start by creating a new module.  `New->Node.js Module`
 
 ![New Module](1.png)
@@ -74,11 +75,10 @@ The complete section for the web module should now look like this:
 
 ![MTA module updated](val1.png)
 
-[VALIDATE_1]
+  
 
-[ACCORDION-END]  
+### Configure Routes
 
-[ACCORDION-BEGIN [Step 2: ](Configure Routes)]
 
 You can now add rules for redirecting certain requests to the web module into other modules in this project.
 
@@ -104,12 +104,10 @@ This is where you are configuring that any file request with the extension `.xsj
 This is what the section should like:
 
 ![MTA module updated](routes.png)
+  
 
-[DONE]
+### Enable authentication in your service
 
-[ACCORDION-END]  
-
-[ACCORDION-BEGIN [Step 3: ](Enable authentication in your service)]
 
 Return to the `core_xsjs` folder that you created in this exercise. Like the other applications, this one also starts with a `package.json` file. Different this time is the fact that the startup script is not an SAP provided central node application, but one that you have created via the module creation wizard. To avoid the "make: g++: Command not found" or "node-gyp exited with code: 1" on the latest versions of XSA; please update the node version from 8.x to 10.x in the package.json. Also update the @sap/xsjs-test package to at least "^3.1.2". For more details on this compatibility situation, see service note: <https://launchpad.support.sap.com/#/notes/2905261>
 
@@ -122,10 +120,9 @@ This `server.js` is the Node.js `bootstrap` for XSJS compatibility mode. It uses
 
 Remember to **Save.**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create an OData service)]
+### Create an OData service
+
 
 In the lib folder, **create a sub-folder** called `xsodata`.
 
@@ -152,10 +149,9 @@ service {
 
 ![New file](odata.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create an XSJS service)]
+### Create an XSJS service
+
 In the lib folder, **create a sub-folder** called `xsjs` and a file named `hdb.xsjs`.  
 
 ![New file](new2.png)
@@ -193,12 +189,10 @@ $.response.status = $.net.http.OK;
 Create a second file named `csrf.xsjs`.  This is an empty file which you can use to request a `CSRF` token for update/insert/delete operations.
 
 ![Empty file](4.png)
+  
 
-[DONE]
+### Execute the xsjs module
 
-[ACCORDION-END]  
-
-[ACCORDION-BEGIN [Step 5: ](Execute the xsjs module)]
 
 **Run** the `core_xsjs` module. It will first build the module so it will take a little longer than usual.
 
@@ -231,6 +225,4 @@ Go back into SAP Web IDE for SAP HANA and click the URL for the Node.js service
 
 Paste the result into the validation below. If you get a validation error, you might want to review step 3.
 
-[VALIDATE_2]
-
-[ACCORDION-END]  
+  

@@ -1,30 +1,33 @@
 ---
-title: Create a Simple IDoc Interface
-description: Create a simple IDoc interface to enable monitoring IDocs with SAP Application Interface Framework.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-s-4hana, tutorial>license]
 primary_tag: products>sap-application-interface-framework
 ---
 
+# Create a Simple IDoc Interface
+<!-- description --> Create a simple IDoc interface to enable monitoring IDocs with SAP Application Interface Framework.
+
 ## Prerequisites
  - You have set up SAP Application Interface Framework
  - SAP S/4HANA 1709 or later, SAP Application Interface Framework 4.0
  - Optionally: You have a working IDoc communication in place
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple IDoc interface
   - How to use the IDoc Structure Generator
   - How to set up IDoc monitoring in SAP Application Interface Framework
 
+## Intro
 In this tutorial, you'll learn how to create a simple IDoc interface that enables you to set up IDoc monitoring. In this process, you'll use the IDoc Structure Generator to create interfaces to display and process IDocs.
 
 > If you don't have a working IDoc scenario in place, the first three steps show you how to set up the IDoc communication with the IDoc message type `FLCUSTOMER_CREATEFROMDATA`. Otherwise, you can skip the first three steps and set up the customizing based on your existing IDoc communication.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create RFC destination)]
+### Create RFC destination
+
 
 Open your system. Go to **Configuration of RFC Connections** (transaction `SM59`) and choose **Create**.
 
@@ -36,10 +39,9 @@ Switch to the **Logon & Security** tab. Maintain **Language** and **Client** and
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create port)]
+### Create port
+
 Go to **Ports in IDoc processing** (transaction `WE21`), select the **Transactional RFC** node and choose **Create** to create a new port.
 
 In the upcoming dialog, choose `Generate port name` and then **Continue**.
@@ -50,10 +52,9 @@ Maintain a description and in the field **RFC destination**, enter the destinati
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create partner profile)]
+### Create partner profile
+
 
 Go to **Partner profiles** (transaction `WE20`) and choose **Create**.
 
@@ -69,10 +70,9 @@ In the **Inbound** table, choose **Create inbound parameter**. In the upcoming s
 
 Navigate back to the partner profile and **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create namespace)]
+### Create namespace
+
 The **IDoc Structure Generator** is a report that generates most of the required customizing settings for SAP Application Interface Framework. To be able to use it correctly, you require a namespace.
 
 Open your system. Go to **Customizing** for SAP Application Interface Framework (transaction `/n/AIF/CUST`) and navigate to **Interface Development** > **Define Namespace**.  
@@ -87,10 +87,9 @@ Select **New Entries** and enter the following name and description for your new
 
 Press **Enter** to confirm your entry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create package)]
+### Create package
+
 For the next steps, you need to create a package that serves as the destination for your newly created objects.
 
 Go to the **Object Navigator** (transaction `SE80`). From the drop-down menu, select **Package**, enter the name **`ZDEMO`**, and press **Enter** or select **Display or Create Object**. Confirm the dialogue window, enter a meaningful short description for your new package, and select **Confirm**. If prompted, enter a workbench request and confirm again.
@@ -99,10 +98,9 @@ Go to the **Object Navigator** (transaction `SE80`). From the drop-down menu, se
 
 You have successfully created a new package named `ZDEMO`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Generate DDIC structure and interface)]
+### Generate DDIC structure and interface
+
 Internally, SAP Application Interface Framework works with DDIC structures, but IDoc Basic Types are not available as DDIC structures. However, the IDoc Structure Generator can create the required DDIC structure for a specific basic type and extension combination.
 
 Open the **IDoc Structure Generator** (transaction `/n/AIF/IDOC_GEN`) and enter the following general information about the IDoc you want to monitor:
@@ -148,10 +146,9 @@ When you've entered all the details, press **F8** or select **Execute**. The IDo
 
 ![IDoc Structure Generator - Display Logs](idoc-struc-gen-display-logs.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create interface-specific single index table)]
+### Create interface-specific single index table
+
 
 It's recommended to implement an interface-specific single index table to ensure full flexibility, especially if you expect a high load of messages or if you plan to define key fields for your interface (now or later).
 
@@ -173,10 +170,9 @@ Select **New Entries** to create a new entry in **Define Interface-Specific Feat
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create recipient for interface)]
+### Create recipient for interface
+
 If you want to monitor the newly created interface in the Interface Monitor of the Message Dashboard app, a recipient for the interface is required.
 
 Go to **Customizing** (transaction `/AIF/CUST`) and navigate to **SAP Application Interface Framework** > **Error Handling** > **Define Namespace-Specific Features**. Enter or select your namespace **`DEMO_1`** and select **Continue**.
@@ -187,10 +183,9 @@ In the menu on the left, navigate to **Define Recipients** by double-clicking it
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Assign recipient to interface)]
+### Assign recipient to interface
+
 
 To be able to see any data in the Interface Monitor or the Message Dashboard, a recipient must be assigned to the interface you want to monitor.  
 
@@ -204,10 +199,9 @@ In the menu on the left, double-click **Assign Recipients Without Key Fields** a
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Assign users to recipient)]
+### Assign users to recipient
+
 
 Now the users in charge of monitoring the IDoc must be assigned to the recipient.
 
@@ -221,10 +215,9 @@ Create a new entry and select the namespace and recipient you created in the ste
 
 **Save** the new entry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test IDoc interface)]
+### Test IDoc interface
+
 
 After the setup is complete, test your settings and verify that the IDoc monitoring is working as planned.
 
@@ -270,11 +263,9 @@ After the setup is complete, test your settings and verify that the IDoc monitor
 
 Congratulations! You've created and tested a simple IDoc interface for monitoring in SAP Application Interface Framework.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself )]
+### Test yourself 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

@@ -1,10 +1,12 @@
 ---
-title: Creating Database Backups
-description: Creating Backups using HANA Studio's backup editor and SQL console.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
+
+# Creating Database Backups
+<!-- description --> Creating Backups using HANA Studio's backup editor and SQL console.
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -14,17 +16,16 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 ## Next Steps
  - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/)
 
-## Details
-### You will learn
+## You will learn
 - How to backup the System and Tenant Databases
 - Different types of backups available
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Backing Up the Tenant Database)]
+### Backing Up the Tenant Database
+
 
 In a Multi-Tenant Database system, a Tenant database is backed up through its System database.
 
@@ -67,11 +68,10 @@ Once the backup completes, a "**Backup Execution Summary**" screen will be displ
 
 ![Backup Execution Summary](backup-execution-summary.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Creating Backups Using the BACKUP SQL Statement)]
+### Creating Backups Using the BACKUP SQL Statement
+
 The second way to backup data is through a SQL statement. Run the following in `SystemDB's` SQL console:
 
 ```SQL
@@ -79,6 +79,3 @@ BACKUP DATA USING FILE <'<file_prefix>')
 ```
 > Note: the `<file_prefix>` refers to the Backup Prefix that will be used. This command will use the default file path specified in the Configuration, as seen in the previous tutorial.
 
-[DONE]
-
-[ACCORDION-END]

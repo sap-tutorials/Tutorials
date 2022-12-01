@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Add SAP BTP ABAP environment App to Portal Site
-description: Add your SAP BTP ABAP environment app to portal site
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
 time: 25
@@ -9,12 +8,14 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Add SAP BTP ABAP environment App to Portal Site
+<!-- description --> Add your SAP BTP ABAP environment app to portal site
+
 ## Prerequisites  
 - **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You completed [Develop a Fiori App](group.abap-env-restful-managed) group
 
-## Details
-### You will learn  
+## You will learn  
 - How to configure destinations
 - How to run launchpad service
 - How to create launchpad service
@@ -24,7 +25,8 @@ author_profile: https://github.com/mervey45
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Configure destination)]
+### Configure destination
+
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -54,10 +56,9 @@ author_profile: https://github.com/mervey45
 
      Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run launchpad service)]
+### Run launchpad service
+
 
   1.  In your trial subaccount select **Service Marketplace** and search for **Launchpad Service**, select it and click **Create**.
 
@@ -85,10 +86,9 @@ author_profile: https://github.com/mervey45
 
       ![Run launchpad service](service2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create launchpad site)]
+### Create launchpad site
+
 
   1. Click **Create Site**.
 
@@ -167,10 +167,9 @@ author_profile: https://github.com/mervey45
 
       Click on the search field, select **Travel App XXX** as an app, click **Save** and return.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign role collection)]
+### Assign role collection
+
 
   1. Switch to SAP BTP trial cockpit. Navigate to your trial subaccount, select Users and select your own user.
 
@@ -183,12 +182,11 @@ author_profile: https://github.com/mervey45
   3. Search `Travel_App_XXX`, select it and click **Assign Role Collection**.
 
       ![Create launchpad site](service19.png)
-
-[DONE]
-[ACCORDION-END]    
+    
 
 
-[ACCORDION-BEGIN [Step 5: ](Run launchpad site)]
+### Run launchpad site
+
 
   1. Switch to Site Manager, select the settings of your launchpad site.
 
@@ -209,11 +207,9 @@ author_profile: https://github.com/mervey45
   5. Check your result.
 
       ![Create launchpad site](service25.png)
+  
 
-[DONE]
-[ACCORDION-END]  
+### Test yourself
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
-[VALIDATE_1]
-[ACCORDION-END]
+

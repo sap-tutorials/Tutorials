@@ -1,35 +1,34 @@
 ---
-title: Download Stylesheet from SAP BTP to your iOS App
-description: Upload a stylesheet to SAP Mobile Services for development and operations and download it to your app during the onboarding flow
+parser: v2
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services]
 ---
 
-## Prerequisites  
+# Download Stylesheet from SAP BTP to your iOS App
+<!-- description --> Upload a stylesheet to SAP Mobile Services for development and operations and download it to your app during the onboarding flow
 
+## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
 - **SAP BTP SDK for iOS:** Version 2.2
 
-## Details
 
-### You will learn  
-
+## You will learn  
 In tutorial Customize theme and on-boarding of iOS app you created a custom [`NUI`](https://github.com/tombenner/nui) stylesheet which was then included in the app's project. The biggest drawback to this approach is that for every style change, you need to rebuild and deploy your app.
 
+## Intro
 Since version 2.2 of the SAP BTP SDK for iOS, you can now upload stylesheets to SAP Mobile Services for development and operations, and during the onboarding flow, your app will then download the latest changes. In this tutorial, you will create a stylesheet and upload it to SAP Mobile Services for development and operations. You will then modify the app's onboarding flow so it will download and apply the stylesheet.
 
 For this tutorial, you can use any iOS app you have previously created with the SAP BTP SDK Assistant for iOS.
-
-### Time to Complete
-
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a NUI stylesheet)]
+### Create a NUI stylesheet
+
 
 Create a file named `CustomTheme.nss`. There are various ways to create a file on macOS, but the simplest is to open a terminal, and type the following:
 
@@ -65,10 +64,9 @@ fdlFUIWelcomeScreen_headlineLabel {
 
 Save the file when done, and close the text editor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Upload the stylesheet)]
+### Upload the stylesheet
+
 
 Log on to SAP Mobile Services for development and operations cockpit at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**:
 
@@ -94,10 +92,9 @@ Click **OK** when done. The uploaded stylesheet is now listed:
 
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-04.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement the stylesheet download steps)]
+### Implement the stylesheet download steps
+
 
 Open your app's `Onboarding/OnboardingManager.swift` file. In class `OnboardingManager`, just above the `delegate` field, add the following private fields:
 
@@ -159,16 +156,14 @@ and add the following right after the `applyDuringRestore` step:
 NUIStyleSheetApplyStep(fileURL: nssResourceURL!)
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build and run the app)]
+### Build and run the app
+
 
 Build and run the app. After you have logged on, you'll notice the app now uses the stylesheet you uploaded to SAP BTP:
 
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-05.png)
 
-[VALIDATE_4]
-[ACCORDION-END]
+
 
 ---

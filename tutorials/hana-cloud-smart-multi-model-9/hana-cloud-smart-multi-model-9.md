@@ -1,11 +1,13 @@
 ---
-title: Use a Cost Function to Calculate Shortest Path
-description: Learn how to use a more complex cost function to calculate shortest paths and how to wrap this procedure into a table function to compare different paths.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Use a Cost Function to Calculate Shortest Path
+<!-- description --> Learn how to use a more complex cost function to calculate shortest paths and how to wrap this procedure into a table function to compare different paths.
 
 ## Prerequisites
 - You have already created a Graph Workspace using the tutorial [First steps with the SAP HANA Graph Engine](hana-cloud-smart-multi-model-7).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to calculate shortest path based on a cost function
 - How to use insert a condition in the cost function
 - How to wrap a GRAPH procedure in a table function
 
 
+## Intro
 In the previous tutorial, you used hop distance to calculate a shortest path. Now you will use a more meaningful cost function: you derive the time it takes to traverse a street segment.
 
 The `EDGES` table contains a `length` and `maxspeed` column. `maxspeed` is a string column with values like '30 mph'. For this tutorial you first need to create a new numeric column `SPEED_MPH` and extract the number part of `maxspeed` into this column. Your next step will be to re-write the procedure to take the expression "**`length`/`SPEED_MPH`**" as cost function.
@@ -34,7 +36,8 @@ This tutorial consists of four steps:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate a column for maximum speed information)]
+### Generate a column for maximum speed information
+
 First, you need to add an integer column to the `LONDON_BIKE_EDGES` table. Extract the number part of `maxspeed` by executing this statement:
 
 ```SQL
@@ -49,14 +52,13 @@ UPDATE "LONDON_EDGES" SET "SPEED_MPH" = 30 WHERE "SPEED_MPH" IS NULL;
 
 In the **Result** panel you can see the distribution of the `SPEED_MPH` column after updating with default values.
 
-!![SPEED](ss-01-speed.png)
+<!-- border -->![SPEED](ss-01-speed.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Calculate shortest path to minimize the time spent)]
+### Calculate shortest path to minimize the time spent
+
 Just like in the [previous tutorial](hana-cloud-smart-multi-model-8), you need to define a **table type** and a **procedure**. This time, use "**`length`/`SPEED_MPH`**" as cost function. Syntactically, the cost function is a lambda function like this:
 
 ```
@@ -103,19 +105,18 @@ Next, **call the procedure** by executing this statement:
 CALL "GS_SPOO_WEIGHTED"(1433737988, 1794145673, 'ANY', ?, ?, ?);
 ```
 
-!![SPOO WEIGHTED](ss-02-weighted.png)
+<!-- border -->![SPOO WEIGHTED](ss-02-weighted.png)
 
 If you visualize the procedure on a map, it should look like this:
 
-!![SPOO WEIGHTED MAP COMBI](ss-03-weighted-map-combi.png)
+<!-- border -->![SPOO WEIGHTED MAP COMBI](ss-03-weighted-map-combi.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Find pubs and bike lanes)]
+### Find pubs and bike lanes
+
 Finding the fastest route is easy. Let's find two more interesting paths. First, you need to find paths suitable for bikes. You can do so by **boosting** street segments which are "**cycleways**".
 
 Note that in most cases you cannot take cycleways only. The path algorithm will choose cycleways unless they are 10x longer than a normal road.
@@ -154,7 +155,7 @@ SELECT "PUBINESS", COUNT(*) AS C FROM "LONDON_EDGES" GROUP BY "PUBINESS" ORDER B
 
 4. This is what the results should look like:
 
-    !![PUBINESS DISTRIBUTION](ss-04-pubiness-distr.png)
+    <!-- border -->![PUBINESS DISTRIBUTION](ss-04-pubiness-distr.png)
 
     Now, you can use the new measure as part of the cost function for path finding with mode "**pub**".
 
@@ -236,10 +237,9 @@ CALL "GS_SPOO_MULTI_MODE"(1433737988, 1794145673, 'ANY', 'bike', ?, ?, ?);
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Wrap a GRAPH procedure in a table function)]
+### Wrap a GRAPH procedure in a table function
+
 The procedure above returns more than one output - the path's length, weight, and a table with the edges. Sometimes it is convenient to wrap a GRAPH procedure in a table function, returning only the tabular output. Table functions are called via SELECT and are a convenient way to post-process graph results - you can use the full power of SQL on your graph results. This is how you do it:
 
 1. First, as in the previous examples, create the **TABLE TYPE**:
@@ -286,21 +286,19 @@ SELECT "ID", "SHAPE" FROM "F_SPOO_EDGES"(1433737988, 1794145673, 'ANY', 'bike');
 
 5. Visualizing this comparison should look like this:
 
-    !![TWO PATHS](ss-05-two-paths.png)
+    <!-- border -->![TWO PATHS](ss-05-two-paths.png)
 
 You now have used two more cost functions for path finding. You have wrapped the GRAPH procedure into a table function which can be called in a SQL SELECT statement. This is a nice way of mixing graph and relational processing.
 
 > In the next tutorial, learn how to calculate `isochrones` and closeness centrality.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

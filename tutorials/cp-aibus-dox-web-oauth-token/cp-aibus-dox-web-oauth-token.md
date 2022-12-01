@@ -1,29 +1,31 @@
 ---
-title: Get OAuth Access Token for Document Information Extraction via Web Browser
-description: Retrieve your OAuth access token, which will grant you access to the service APIs.
+parser: v2
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-ai-business-services, software-product>sap-business-technology-platform, software-product>document-information-extraction, topic>artificial-intelligence]
 primary_tag: topic>machine-learning
 ---
 
-## Details
-### You will learn
+# Get OAuth Access Token for Document Information Extraction via Web Browser
+<!-- description --> Retrieve your OAuth access token, which will grant you access to the service APIs.
+
+## You will learn
   - How to use your service key values to get an OAuth access token via any web browser
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
+### Get OAuth access token details
+
 
 To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
 
-!![DOX Service Key](service-key-details.png)
-
-[VALIDATE_1]
-[ACCORDION-END]
+<!-- border -->![DOX Service Key](service-key-details.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
+
+
+### Get OAuth access token
+
 
 1. Add **`/oauth/token?grant_type=client_credentials`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
 
@@ -33,7 +35,7 @@ To get your OAuth access token you will need the values highlighted in the image
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-!![DOX TOKEN](web-browser.png)
+<!-- border -->![DOX TOKEN](web-browser.png)
 
 You should receive a response like the following:
 
@@ -51,5 +53,3 @@ Once the token has been generated, make sure to copy and save it locally for eas
 
 You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui).
 
-[DONE]
-[ACCORDION-END]

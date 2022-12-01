@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
-title: Use Usage Reporting in Your Android Application
-description: See how the Usage Reporting feature can help provide information on how your app is being used.
 auto_validation: true
 time: 30
 tags: [  tutorial>beginner, operating-system>android, topic>mobile, programming-tool>odata, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
@@ -10,11 +9,13 @@ primary_tag: software-product>sap-btp-sdk-for-android
 keywords: sdkforandroid
 ---
 
+# Use Usage Reporting in Your Android Application
+<!-- description --> See how the Usage Reporting feature can help provide information on how your app is being used.
+
 ## Prerequisites
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
-## Details
-### You will learn
+## You will learn
 - How the Usage Reporting feature works
 - How to customize the consent screen
 - How to further instrument the Wizard app
@@ -22,11 +23,12 @@ keywords: sdkforandroid
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Manual upload of usage data)]
+### Manual upload of usage data
+
 
 As shown in the tutorial, [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app), ensure that **Enable Usage Reporting** is checked when creating the app.
 
-!![Enable Usage when Creating App](creating_with_usage.png)
+<!-- border -->![Enable Usage when Creating App](creating_with_usage.png)
 
 When the app is first installed, a consent screen will automatically be shown to users.
 
@@ -34,54 +36,51 @@ The app must first receive permission to collect usage information from the user
 
 1. Tap **ALLOW** to allow the app to record how the app is being used.
 
-    !![Consent Screen](consent.png)
+    <!-- border -->![Consent Screen](consent.png)
 
     If **DENY** was selected, the user's choice can later be changed in the app's **Settings** screen.
 
-    !![Usage in Settings](accept_usage_tracking.png)
+    <!-- border -->![Usage in Settings](accept_usage_tracking.png)
 
     Once you try to enable **Consent to Usage Collection**, the consent screen will be displayed again to confirm your choice.
 
 2. From the **Settings** screen, tap **Upload Usage Data**.
 
-    !![Click Upload Usage](upload_usage_button.png)
+    <!-- border -->![Click Upload Usage](upload_usage_button.png)
 
-    The upload will fail with a HTTP 403 error if usage was not enabled in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/).
+    The **Consent to Usage Collection** will be disabled and cannot be enabled if usage was not enabled in the **Mobile Services cockpit**.
 
-    !![Upload Failed](403error.png)
+3. To review this policy setting, in the **Mobile Services cockpit**, access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
 
-3. To review this policy setting, in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
-
-    !![Access Mobile Client Usage and User Feedback](mobile_client_usage_and_user_feedback.png)
+    <!-- border -->![Access Mobile Client Usage and User Feedback](mobile_client_usage_and_user_feedback.png)
 
     The **Client Usage Configuration** specifies whether uploads of usage data are allowed and the time interval between automatic usage report uploads.
 
     The preset value for **Upload Report After** is 0 (usage reports will not be uploaded automatically), which we will use in the implementation of automatically uploading usage reports to the server. Finally, click **Save** to save any changes.
 
-    !![Enable Usage in Client Policies](enable_usage.png)
+    <!-- border -->![Enable Usage in Client Policies](enable_usage.png)
 
 4. If an empty usage report notification is shown when **Upload Usage Data** is selected, navigate away from the app by going to your phone's **Home** screen and re-entering the app. Then try uploading the usage report again. Placing the app in the background will complete or end the current usage session. Partial sessions can not be uploaded.
 
-    !![Empty Usage Report Upload Attempt](empty_usage_report.png)
+    <!-- border -->![Empty Usage Report Upload Attempt](empty_usage_report.png)
 
     If **Upload Usage Data** was successful, then a Toast message should pop up informing you that the usage information has been uploaded to the server.
 
-    !![Successful Usage Upload](successful_upload.png)
+    <!-- border -->![Successful Usage Upload](successful_upload.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Examine uploaded usage data)]
+### Examine uploaded usage data
+
 
 1. To view the application usage report, go to your management cockpit under **Analytics** > **User Data**.
 
-    !![View usage report](view_usage_report.png)
+    <!-- border -->![View usage report](view_usage_report.png)
 
     Different charts become available when you select between **Sessions**, **Demographics**, and **Behavior** in the drop-down (green) box. The mark in the yellow box controls whether to display filters that are in the red box right below.
 
-2. To download the usage report, go to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
+2. To download the usage report, go to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
 
-    !![Download Usage From Management Cockpit](download_usage.png)
+    <!-- border -->![Download Usage From Management Cockpit](download_usage.png)
 
 3. Open the downloaded `clientUsage_uploads.csv`. The file contains usage entries from the app that record different actions, such as button taps and timers.
 
@@ -105,21 +104,21 @@ The app must first receive permission to collect usage information from the user
 
     In the following example, there are three different Android devices with varying software versions.
 
-    !![CSV Information on Device Specifications](device_info.png)
+    <!-- border -->![CSV Information on Device Specifications](device_info.png)
 
     In the next example, the timer recorded how long the user kept the application active on their device before exiting for five different sessions. Recording how long users spend in the application is a typical measurement. You can also specify other processes to time, such as application startup, data requests, or the time taken to open an offline store.
 
-    !![CSV Information on Session Times](session_time_info.png)
+    <!-- border -->![CSV Information on Session Times](session_time_info.png)
 
     A session is typically defined as how long the app has been open for in the foreground, but different records within the application can also be modified to act as sessions.
 
-4. There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Settings Exchange** > **User Registrations**.
+4. There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) by navigating to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Settings Exchange** > **User Registrations**.
 
-    !![User Registrations](user_registrations.png)
+    <!-- border -->![User Registrations](user_registrations.png)
 
     In the following example the same user registered on two different devices and ran three user sessions.
 
-    !![Session Descriptive Information](session_description_info.png)
+    <!-- border -->![Session Descriptive Information](session_description_info.png)
 
 When the application is initially launched, the report will contain entries that describe the device screen, memory and networking capabilities in a condensed form in four columns, marking the end of a session.
 
@@ -130,13 +129,13 @@ When the application is initially launched, the report will contain entries that
 | `device`            | Reiterates the screen resolution (`I_SCREEN` and `I_VIEW`), device platform (`I_ELEMENT`), and specifies the device language (`I_ACTION`)
 | `memory`            | Device RAM (`I_SCREEN`), internal storage (`I_VIEW`), and available space on the SD card (`I_ELEMENT`)
 
-!![Device Information in First Entries](first_entries.png)
+<!-- border -->![Device Information in First Entries](first_entries.png)
 
 The app also records a few of the screens that user opens, and more usage reporting statements can be added in the code to track other specific screens.
 
 In the example below, the user navigated to the **Entity List** screen, accessed the categories at positions 6 and 1, then entered the **Settings** screen.
 
-!![Recording screens that users enter](navigating_screens_csv.png)
+<!-- border -->![Recording screens that users enter](navigating_screens_csv.png)
 
 [OPTION BEGIN [Java]]
 
@@ -162,10 +161,10 @@ SDKInitializer.getService(UsageService::class)?.eventBehaviorViewDisplayed(Entit
 
 [OPTION END]
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add further usage instrumentation)]
+
+### Add further usage instrumentation
+
 
 The Usage feature can be used to instrument an app to track things that might provide insight into a user's behaviors.
 
@@ -214,33 +213,33 @@ The following steps record how often users start adding or updating products but
 
 7. Generate usage information by accessing **Products**.
 
-    !![Access Products](test_usage1.png)
+    <!-- border -->![Access Products](test_usage1.png)
 
 8. Tap the floating **Add** button to create a product.
 
-    !![Create a New Product Item](test_usage2.png)
+    <!-- border -->![Create a New Product Item](test_usage2.png)
 
 9. Press the **Back** button to exit the page without saving.
 
-    !![Press Back Button](test_usage3.png)
+    <!-- border -->![Press Back Button](test_usage3.png)
 
 10. Repeat these steps two more times to generate multiple entries for the usage report.
 
 11. Select an existing product and tap its **Edit** button.
 
-    !![Edit Product](edit_product.png)
+    <!-- border -->![Edit Product](edit_product.png)
 
 12. Then immediately tap the **check mark** button to save the information.
 
-    !![Save Product](save_product.png)
+    <!-- border -->![Save Product](save_product.png)
 
 13. End the usage session by placing the app in the background. Navigate back into the app.
 
 14. Upload the usage by going to **Settings** and tap on **Upload Usage Data**.
 
-15. After downloading the `clientUsage_uploads.csv` file from the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createOrEditProductClicked`.
+15. After downloading the `clientUsage_uploads.csv` file from the **Mobile Services cockpit**, you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createOrEditProductClicked`.
 
-    !![New Entries in the Client Upload csv](new_client_upload_example.png)
+    <!-- border -->![New Entries in the Client Upload csv](new_client_upload_example.png)
 
 16.  In four empty cells that are not in the `R` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
 
@@ -256,7 +255,7 @@ The following steps record how often users start adding or updating products but
 
     In the example, the user tried to create a product four times, but cancelled three times.
 
-    !![Counting Product Creation and Cancellations with Excel Formulas](excel_formulas.png)
+    <!-- border -->![Counting Product Creation and Cancellations with Excel Formulas](excel_formulas.png)
 
 [OPTION END]
 
@@ -295,25 +294,25 @@ The following steps record how often users start adding or updating products but
 
 7. Generate usage information by accessing **Products**.
 
-    !![Access Products](test_usage1.png)
+    <!-- border -->![Access Products](test_usage1.png)
 
 8. Tap the floating **Add** button to create a product.
 
-    !![Create a New Product Item](test_usage2.png)
+    <!-- border -->![Create a New Product Item](test_usage2.png)
 
 9. Press the **Back** button to exit the page without saving.
 
-    !![Press Back Button](test_usage3.png)
+    <!-- border -->![Press Back Button](test_usage3.png)
 
 10. Repeat these steps two more times to generate multiple entries for the usage report.
 
 11. Select an existing product and tap its **Edit** button.
 
-    !![Edit Product](edit_product.png)
+    <!-- border -->![Edit Product](edit_product.png)
 
 12. Then immediately tap the **check mark** button to save the information.
 
-    !![Save Product](save_product.png)
+    <!-- border -->![Save Product](save_product.png)
 
 13. End the usage session by placing the app in the background. Navigate back into the app.
 
@@ -321,7 +320,7 @@ The following steps record how often users start adding or updating products but
 
 15. After downloading the `clientUsage_uploads.csv` file from the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createOrEditProductClicked`.
 
-    !![New Entries in the Client Upload csv](new_client_upload_example.png)
+    <!-- border -->![New Entries in the Client Upload csv](new_client_upload_example.png)
 
 16.  In four empty cells that are not in the `R` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
 
@@ -337,14 +336,13 @@ The following steps record how often users start adding or updating products but
 
     In the example, the user tried to create a product four times, but cancelled three times.
 
-    !![Counting Product Creation and Cancellations with Excel Formulas](excel_formulas.png)
+    <!-- border -->![Counting Product Creation and Cancellations with Excel Formulas](excel_formulas.png)
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Auto-upload of usage data)]
+### Auto-upload of usage data
+
 
 Mobile Services provides a **Client Usage Configuration** under **Mobile Client Usage and User Feedback** specifying whether uploads to Mobile Services are allowed and how often they should occur. The following instructions demonstrate how to modify the app to read and store the configuration (same as the concept of the following `policy`) and upload the usage data to Mobile Services using the specified interval.
 
@@ -352,7 +350,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
 1. Input the number of days after which a report should automatically be uploaded and click **Save**. For the purposes of this tutorial, use the value **`1`** to simplify testing later on.
 
-    !![Set Auto Upload of Usage Report](automatic_upload.png)
+    <!-- border -->![Set Auto Upload of Usage Report](automatic_upload.png)
 
 2.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.java`.
 
@@ -438,11 +436,11 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Set time automatically** to **off**.
 
 11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 
-    !![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
+    <!-- border -->![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
 [OPTION END]
 
@@ -450,7 +448,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
 1. Input the number of days after which a report should automatically be uploaded and click **Save**. For the purposes of this tutorial, use the value **`1`** to simplify testing later on.
 
-    !![Set Auto Upload of Usage Report](automatic_upload.png)
+    <!-- border -->![Set Auto Upload of Usage Report](automatic_upload.png)
 
 2.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.kt`.
 
@@ -531,11 +529,11 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Set time automatically** to **off**.
 
 11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 
-    !![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
+    <!-- border -->![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
 [OPTION END]
 
@@ -543,7 +541,5 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
 Congratulations! You have learned how the usage feature can provide insights into how a deployed application is being used!
 
-[DONE]
-[ACCORDION-END]
 
 ---
