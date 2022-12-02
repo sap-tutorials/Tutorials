@@ -12,15 +12,18 @@ primary_tag: products>sap-hana
 <!-- description --> Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio.
 
 ## Prerequisites
+
 - You have access to SAP HANA Cloud.
 - You have created an SAP HANA Database Project [as explained in this tutorial](hana-cloud-create-db-project).
 
 ## You will learn
-  - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a database in SAP HANA Cloud
-  - How to grant permissions to the technical users in your HDI container to access the database
+
+- How to create a plain schema, with a table and user to simulate a replicated schema
+- How to create a user-provided service to access a database in SAP HANA Cloud
+- How to grant permissions to the technical users in your HDI container to access the database
 
 ## Intro
+
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
 For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/a260b05631a24a759bba932aa6d81b64.html).
@@ -34,7 +37,6 @@ A video version of this tutorial is also available:
 ---
 
 ### Create a plain schema
-
 
 1. Return to the SAP BTP cockpit and the HANA Cloud Management screen. Choose **Open SAP HANA Database Explorer** from the **Actions** column.
 
@@ -77,10 +79,7 @@ A video version of this tutorial is also available:
 >
 > But ultimately these are both just schemas within the same HANA Cloud Database instance. We can communicate between the HDI Container Schema and the classic Schema using synonyms.
 
-
-
 ### Load data
-
 
 1. Download this CSV file `https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-cloud-access-cross-container-schema/plain.csv` into your local computer.
 
@@ -124,14 +123,11 @@ A video version of this tutorial is also available:
 
     <!-- border -->![DB Explorer](10_2.png)
 
-
-
 ### Create a user-provided service
-
 
 You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your HANA DB Project in the Business Application Studio.
 
-1.  Return to the SAP Business Application Studio and the project which you created in previous tutorials in this group. Open a new Terminal
+1. Return to the SAP Business Application Studio and the project which you created in previous tutorials in this group. Open a new Terminal
 
     <!-- border -->![user provided service](11_2.png)
 
@@ -155,9 +151,7 @@ You now have a schema with a table and data in it. You have also created a user 
 
     <!-- border -->![user provided service](13.png)
 
-
 ### Grant permissions to technical users
-
 
 You will now create an artifact that grants access to the two technical users of your HDI container. These are not real users, but technical ones.
 
@@ -184,13 +178,7 @@ You will now create an artifact that grants access to the two technical users of
     }
     ```
 
-4. **Save the file**.
-
-
-
-
 ### Create synonyms
-
 
 1. You can now create a synonym to access the table in the plain schema. Create a new file in `db\src\data`
 
@@ -204,15 +192,11 @@ You will now create an artifact that grants access to the two technical users of
 
     <!-- border -->![Create synonym](22.png)
 
-
 4. **Deploy** the entire **db** module.
 
     <!-- border -->![Create synonym](25.png)
 
-
-
 ### Create a view
-
 
 1. You can now use the table in the classic schema with other objects created in your HDI container.  In `data` folder, create a new database artifact
 
@@ -231,7 +215,7 @@ You will now create an artifact that grants access to the two technical users of
     	from REGIONS
     ```
 
-4. **Save and Deploy**.
+4. **Deploy**.
 
 5. Return to the Database Explorer and your HDI Container.
 
@@ -241,10 +225,7 @@ You will now create an artifact that grants access to the two technical users of
 
     <!-- border -->![Create synonym](33.png)
 
-
-
 ### Troubleshooting insufficient privileges
-
 
 **Error**: Insufficient privilege: Detailed info for this error can be found with `guid` <GUID>
 
@@ -257,6 +238,5 @@ You can see what is missing by executing the following statement in a SQL consol
 This procedure will show the session user name, the technical user (HDI object owner) executing the statement, the privilege (e.g., `SELECT`) and some flags starting with `IS_MISSING`. A `TRUE` value under one of those flags indicates missing authorizations.
 
 Make sure the user in the user provided service has permissions for `SELECT` and `SELECT METADATA` with grant option.
-
 
 ---
