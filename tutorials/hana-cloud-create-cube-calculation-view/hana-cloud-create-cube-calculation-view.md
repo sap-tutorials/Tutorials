@@ -12,14 +12,17 @@ primary_tag: products>sap-hana
 <!-- description --> Use SAP Business Application Studio to create a calculation view.
 
 ## Prerequisites
+
 - You have created an anonymized view as explained [in this tutorial](hana-cloud-calculation-view-differential-privacy).
 - You have created and loaded data in the `PERFORMANCE` table as explained [in this tutorial](hana-cloud-create-db-project).
 
 ## You will learn
+
 - How to create a calculation view in SAP Business Application Studio
 - How to join data from another calculation view
 
 ## Intro
+
 A video version of this tutorial is also available:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fwwPcYZb-jQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -27,7 +30,6 @@ A video version of this tutorial is also available:
 ---
 
 ### Create a Calculation View
-
 
 1. Create a new **Calculation View** via the **SAP HANA: Create SAP HANA Database Artifact** command pallet entry.
 
@@ -37,9 +39,7 @@ A video version of this tutorial is also available:
 
     <!-- border -->![New calculation view](2.png)
 
-
 ### Join the calculation view and the table
-
 
 1. Drop a `join` node into the modeling space
 
@@ -57,10 +57,7 @@ A video version of this tutorial is also available:
 
     <!-- border -->![New calculation view](6.png)
 
-
-
 ### Configure the join
-
 
 1. Double-click on the join node. A panel will open on the right.
 
@@ -80,9 +77,7 @@ A video version of this tutorial is also available:
 
     <!-- border -->![New calculation view](1.gif)
 
-
 ### Configure semantics
-
 
 1. Click on the **Aggregation** node and double-click on the join parent to add all the columns to the output
 
@@ -92,11 +87,9 @@ A video version of this tutorial is also available:
 
     <!-- border -->![New calculation view](11.png)
 
-
 ### Build and test
 
-
-1. **Save** and **Deploy**
+1. **Deploy**
 
     <!-- border -->![New calculation view](13.png)
 
@@ -109,7 +102,5 @@ A video version of this tutorial is also available:
     <!-- border -->![New calculation view](15.png)
 
 4. Go into the **Analysis** tab. Drag the `T-LEVEL` attribute into the label axis and the `Evaluation Rating` into the values axis.
-
-
 
 ---
