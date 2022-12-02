@@ -323,7 +323,7 @@ export function MyApp() {
 
     First, create two `CustomListItem`s below the completed items.
 
-      ```JavaScript / JSX
+    ```JavaScript / JSX
     <CustomListItem></CustomListItem>
     <CustomListItem></CustomListItem>
     ```
