@@ -27,7 +27,7 @@ The REST API provides a simple and easy to consume method to enable access to al
 ### Get started with the REST Client extension for Visual Studio Code
 
 
-There are multiple tools that enable making calls to a REST API such as Postman, browser extensions, libraries in programming languages such as [requests](https://realpython.com/api-integration-in-python/#rest-and-python-consuming-apis) in Python or [https](https://nodejs.org/api/https.html) in Node.js.  Feel free to use the tool of your choice.  This tutorial will be using the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code.  Feel free to skip to the next step if you are already familiar with the REST Client.
+There are multiple tools that enable making calls to a REST API such as Postman, browser extensions, libraries in programming languages such as [requests](https://realpython.com/api-integration-in-python/#rest-and-python-consuming-apis) in Python or [https](https://nodejs.org/api/https.html) in Node.js.  Feel free to use the tool of your choice.  This tutorial will be using the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code.
 
 1. If required, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
