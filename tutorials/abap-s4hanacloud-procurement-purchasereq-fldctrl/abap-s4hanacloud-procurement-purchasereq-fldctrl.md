@@ -2,15 +2,17 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
-primary_tag: programming-tool>abap-development
+tags: [ tutorial>intermediate, programming-tool>abap-development]
+primary_tag: software-product-function>s-4hana-cloud-abap-environment
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
+
 ---
 
-# Implement a Field Control Using a Business Add-in (BAdI) 
-<!-- description --> Hide Prices for a Specified User Using a Business Add-in (BAdI) for a Purchase Requisition
+# Implement a Field Control Using a Business Add-in (`BAdI`)
+<!-- description --> Hide Prices for a Specified User Using a Business Add-in (`BAdI`) for a Purchase Requisition
 
 ## Prerequisites
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
 - You have installed [SAP ABAP Development Tools (ADT), latest version](https://tools.hana.ondemand.com/#abap), and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in particular. If not, see the **More Information** section at the end of this tutorial
@@ -20,10 +22,13 @@ primary_tag: programming-tool>abap-development
 - How to create an ABAP package
 - How to find relevant existing `BAdI` enhancement spots for your line of business, in this case **Materials-Management-Purchasing**
 - How to hide a field, **Price**, by changing the status of a field control
-## Overview: Defining and implementing the enhancement
-A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications without modifying the original code.
+
 
 ## Intro
+>The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [Developer Extensibility: Connect to the ABAP System](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US).
+
+A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications without modifying the original code.
+
 In this case, the `BAdI` is implemented in the SAP Fiori app as follows:
 
 1. Use an existing enhancement spot **`MM_PUR_S4_PR_FLDCNTRL_SIMPLE`**, with an existing `BADI` definition **`MM_PUR_S4_PR_FLDCNTRL_SIMPLE`**
@@ -108,6 +113,9 @@ The `BAdI` enhancement spot appears in a new editor, showing you the available `
 To help you create your own enhancements, example classes are provided (2).
 
 <!-- border -->![step2d-enhancement-spot-editor](step2d-enhancement-spot-editor.png)
+
+> A complete searchable table of available `BAdIs` and the Fiori apps to which they pertain is available here:
+SAP Help Portal: [Adaptation of App Behavior](https://help.sap.com/viewer/0e602d466b99490187fcbb30d1dc897c/2202.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
 
 
 
@@ -248,9 +256,10 @@ Check that yours is the implementation that will be called:
 
 ---
 
-### More Information
+### More information
 - Start here: SAP blog post: [How to Extend SAP Standard Using ADT](https://blogs.sap.com/2020/08/05/how-to-extend-sap-standard-using-adt/)
 - SAP Help Portal: [Working with Business Add-Ins (`BAdIs`)](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/04a1d9415efd4e4fbc58534c99c3a0d3.html)
+- SAP Help Portal: Sourcing and Procurement: [Adaptation of App Behavior (Overview and List of Available `BAdIs`)](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0e602d466b99490187fcbb30d1dc897c/259a396e6bdb4d08b130049880a3920f.html?locale=en-US)
 
 
 ---

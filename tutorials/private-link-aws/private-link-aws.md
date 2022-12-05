@@ -21,6 +21,7 @@ primary_tag: software-product-function>sap-btp-cockpit
   - How to create an SAP Private Link instance to connect to your AWS Private Link Service using Cloud Foundry CLI
   - How to bind the service instance to your application using Cloud Foundry CLI
 
+
 ## Intro
 SAP Private Link Service establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
@@ -158,8 +159,8 @@ To check the current status of the newly created service instance, you need the 
 
 ### Bind application to service instance
 
-
 Upon the creation of a binding between a CF application and a Private Link Service instance, SAP Private Link Service creates a space-scoped [Cloud Foundry application security group](https://docs.cloudfoundry.org/concepts/asg.html) that enables network access to the IP address associated with the private endpoint.
+
 
 To bind the service instance to your application, you need to know the name of your application and your service instance (in this example `privatelink-test`). Then, execute the following command:
 
@@ -203,4 +204,4 @@ After the creation of your service binding, your application receives the inform
 
 Congratulations! You have successfully completed the tutorial.
 
----
+

@@ -2,7 +2,9 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
+
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform; tutorial>free-tier ]
+
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -13,13 +15,10 @@ primary_tag: software-product>sap-business-technology-platform
 To activate your consumption-based SAP BTP global account with free tier service plans, you need:
   - an **e-mail address**
   - and a **credit card** for authentication and eventually later for billing purposes.
-
   **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
-
 
 ## How does free tier work?
 The global account you will create in this tutorial gives you access to a productive environment with both free and paid plans. If you activate **free tier** plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however. For more information, see [Enterprise Accounts](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/171511cc425c4e079d0684936486eee6.html?locale=en-US&version=Cloud) and [Using Free Service Plans](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/524e1081d8dc4b0f9d055a6bec383ec3.html?locale=en-US&version=Cloud).
-
 
 ## You will learn
   - How to start your SAP journey
@@ -82,10 +81,7 @@ If you've created a new account, you are now asked to add personal details.
 2. Next, fill out the address form and provide the following details: **Country**, **Name**, **Address**, **City**, **State**, and **Postal Code**. This information is necessary for billing purposes for when you upgrade your account from free tier service plans to paid service plans.
 
 
-
 ### Configure solution
-
-
 
 The following page offers to configure your solution. Select:
 
