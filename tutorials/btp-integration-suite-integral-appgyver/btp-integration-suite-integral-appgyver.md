@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-business-technology-platform, software-product>sap-appgyver,software-product>build ]
+tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-business-technology-platform, software-product>sap-appgyver,software-product>sap-build ]
 primary_tag: software-product>sap-appgyver
 parser: v2
 author_name: Mariajose Martinez
@@ -21,7 +21,7 @@ author_profile: https://github.com/mariajosesap
 
   - How to test request calls in SAP Build Apps to a SAP Integration Suite API.
   - How to set up the needed schema for sending payloads.
-  - How to retrieve data from a request call's response. 
+  - How to retrieve data from a request call's response.
 
 ### Add the API Endpoint in SAP Build Apps
 
