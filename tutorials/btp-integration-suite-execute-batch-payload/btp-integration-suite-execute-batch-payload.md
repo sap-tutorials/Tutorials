@@ -372,6 +372,6 @@ This proves the Atomic mode functionality as the database table is not updated. 
 
 This shows that the database table has been appended with the new records, proving the Non-Atomic mode operation.
 
-
+Congratulations! You've learned how to use Batch Mode functionality. Now, you can try to implement the desired type of Batch Mode in your business requirements.  
 
 ---
