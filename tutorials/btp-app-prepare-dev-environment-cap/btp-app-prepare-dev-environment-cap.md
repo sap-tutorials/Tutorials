@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Prepare Your Development Environment for CAP
 description: This tutorial shows you how to get started using VS Code as an editor create a directory for development, and start from an example branch.
 keywords: cap
