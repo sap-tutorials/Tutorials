@@ -9,7 +9,7 @@ author_profile: https://github.com/nicoschoenteich
 ---
 
 # Add a List Report Interface to the CAP App (SAP HANA Cloud)
-<!-- description --> Run the CAP app locally and add an SAP Fiori elements list report to display the data
+<!-- description --> Run the CAP app locally and add an SAP Fiori elements list report to display the data.
 
 ## Prerequisites
  - This tutorial is designed for SAP HANA Cloud. It is not intended for SAP HANA on-premise or SAP HANA, express edition.
@@ -26,7 +26,7 @@ author_profile: https://github.com/nicoschoenteich
 ### Start the development server
 
 
-1. Open the **Run Configuration** panel from the left-hand toolbar and click the **+** button to trigger the prompts.
+1. Open the **Run Configurations** panel from the left-hand toolbar and click the **+** button to trigger the prompts.
 
     <!-- border -->![add_run_config](01_add_run_config.png)
 
@@ -46,13 +46,13 @@ author_profile: https://github.com/nicoschoenteich
 
     <!-- border -->![run_config_connected](05_run_config_connected.png)
 
-6. Click on the green **play** button of the run configuration. This will switch the view to the debug panel, and scripts will be executed. A few moments later, a message will pop up and suggest exposing a new port. Accept this suggestion by selecting **Open in New Tab**.
+6. Click on the green **play** button of the run configuration. This will switch the view to the debug panel and scripts will be executed. A few moments later, a message will pop up and suggest exposing a new port. Accept this suggestion by selecting **Open in New Tab**.
 
     <!-- border -->![run_config_expose](06_run_config_expose.png)
 
-    If you accidentally close this dialog, you can always open the running services via **Menu > View > Command Palette** and then choosing **Ports: Preview** and select the running service from the list.
+    If you accidentally close this dialog, you can always open the running services via **Menu > View > Command Palette** and then choose **Ports: Preview** and select the running service from the list.
 
-7. A new browser tab should now open, and you'll see the list of entities you exposed.
+7. A new browser tab should now open and you'll see the list of entities you exposed.
 
     <!-- border -->![Welcome Page](07_welcome.png)
 
@@ -64,11 +64,11 @@ author_profile: https://github.com/nicoschoenteich
 ### Test the services
 
 
-1. Choose the `$metadata` option from the *Welcome page*, and you can see a technical description of the service.
+1. Choose the `$metadata` option from the *Welcome page* to see a technical description of the service.
 
     <!-- border -->![metadata document](09_metadata.png)
 
-2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click **`Interactions_Items`**. Add the following to the URL:
+2. You can use different methods in the OData V4 services you have created. Go back to the welcome page for the service and click **`Interactions_Items`**. Add the following to the URL:
 
     ```URL
     ?$search=DE
@@ -76,7 +76,7 @@ author_profile: https://github.com/nicoschoenteich
 
     <!-- border -->![Play with the OData Service](10_search.png)
 
-3. You can find out more about OData V4 at the [OData organization](https://www.odata.org/documentation/) and the [documentation for SAPUI5](https://sapui5.hana.ondemand.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).    
+3. You can find out more about OData V4 in the [OData organization](https://www.odata.org/documentation/) and the [SAPUI5 documentation](https://sapui5.hana.ondemand.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).
 
 
 ### Add a managed approuter
@@ -92,7 +92,7 @@ The managed approuter will make it easy for us to access web applications (such 
 
     <!-- border -->![approuter_config](12_approuter_config.png)
 
-3. Choose the application runtime type of **Managed Approuter**, chose **`hana.app`** as the name of the business solution, and confirm that you want to **add a UI**. Then press **Next** to complete the wizard.
+3. Choose the application runtime type **Managed Approuter**, choose **`hana.app`** as the name of the business solution, and confirm that you want to **add a UI**. Then press **Next** to complete the wizard.
 
     <!-- border -->![approuter_param](13_approuter_param.png)        
 
@@ -104,7 +104,7 @@ The managed approuter will make it easy for us to access web applications (such 
 ### Add the Fiori elements list report
 
 
-Now that the managed approuter is part of this project, it's time to add the web application. To be more precise, an SAP Fiori elements app that implements the [List Report Floorplan](https://experience.sap.com/fiori-design-web/list-report-floorplan-sap-fiori-element/) .  We will use the built-in wizard to generate the UI.
+Now that the managed approuter is part of this project, it's time to add the web application. To be more precise, an SAP Fiori elements app that implements the [List Report Floorplan](https://experience.sap.com/fiori-design-web/list-report-floorplan-sap-fiori-element/). We will use the built-in wizard to generate the UI.
 
 1. This wizard can also be triggered via a **right-click** on the `mta.yaml` file and then select **Create MTA Modules from Template** once again.
 
@@ -118,7 +118,7 @@ Now that the managed approuter is part of this project, it's time to add the web
 
     <!-- border -->![fe_list_report](17_fe_list_report.png)
 
-4. This Fiori app shall retrieve its data from the **Local CAP Project**. Provide the path to this project so that you can select the **`CatalogService`** you defined in a previous step.
+4. This Fiori app shall retrieve its data from the **Local CAP Project**. Provide the path to this project so that you can select the **`CatalogService`** you defined earlier.
 
     <!-- border -->![fe_link_cap](18_fe_link_cap.png)    
 
@@ -141,7 +141,7 @@ Now that the managed approuter is part of this project, it's time to add the web
 
     <!-- border -->![fe_deploy_config](21_fe_deploy_config.png)
 
-8. Last but not least, enter the launchpad configuration. This information is needed for the navigation from the Launchpad to your Fiori app. Once you provided all the data from the screenshot, hit **Finish** to add the new files to the project.
+8. Last but not least, enter the launchpad configuration. This information is needed for the navigation from the Launchpad to your Fiori app. Once you provided all the data from the screenshot, click **Finish** to add the new files to the project.
 
     <!-- border -->![fe_launchpad](22_fe_launchpad.png)
 
@@ -149,9 +149,9 @@ Now that the managed approuter is part of this project, it's time to add the web
 ### Restart the development server
 
 
-So we added the Fiori resources now, but they are not yet visible in the running development server. This is expected as we started the process *before* the files were created.
+We added the Fiori resources now, but they are not yet visible in the running development server. This is expected as we started the process *before* the files were created.
 
-1. Go to the **Debug** view and hit the **restart** button.
+1. Go to the **Debug** view and click the **restart** button.
 
     <!-- border -->![restart_run](23_restart_run.png)
 
@@ -177,7 +177,7 @@ It's time to use the Fiori application!
 
 Congratulations! You have created a complete SAP Fiori elements application.
 
-Now is an excellent time to commit your application to the local or remote Git.
+Now is an excellent time to commit your application to the local or remote Git repository.
 
 
 ---
