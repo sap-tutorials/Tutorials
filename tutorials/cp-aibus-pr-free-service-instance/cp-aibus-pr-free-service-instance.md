@@ -8,7 +8,7 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Free Tier to Create a Service Instance for Personalized Recommendation 
+# Use Free Tier to Create a Service Instance for Personalized Recommendation
 <!-- description --> Create a service instance and the associated service key for Personalized Recommendation using the free tier service plan.
 
 ## Prerequisites
@@ -128,5 +128,3 @@ You have successfully created a service key for your service instance. You can n
 <!-- border -->![View Service Key](view-service-key.png)
 
 You will need the service key values in the next tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token).
-
-
