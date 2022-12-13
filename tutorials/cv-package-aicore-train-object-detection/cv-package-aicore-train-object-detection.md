@@ -181,13 +181,13 @@ Push your built Docker image to your Docker registry with below snippet. The `!`
 
 The workflows have another method `create-template` to build a training pipeline with placeholders for datasets and hyper-parameters. This training pipeline internally references the Docker image you created previously. You are not required to modify/ update the AI code contained, but you can tweak hyper-parameters to achieve different model qualities, demonstrated later in the tutorial.
 
-Paste and edit the following snippet. Replace `<YOUR_GIT_REPO_PATH>` with the absolute path to the directory that contains the repository you've on-boarded to SAP AI Core. This repository syncs using Git Ops.
+Pase and edit the following snippet. Replace `<YOUR_GIT_Repo_PATH>` with the absolute path to the directory that contains the repository you've on-boarded to SAP AI Core. This repository syncs using Git Ops.
 
  > In this tutorial, the workflow object points to the object-detection-train content.
 
 
 ```PYTHON
-output_file = '<YOUR_GIT_REPO_PATH>/sap-cv-package-tutorial-obj-detection-train.json'
+output_file = '<YOUR_GIT_Repo_PATH>/sap-cv-package-tutorial-obj-detection-train.json'
 workflow.create_template(workflow_config, output_file, silent=True)
 ```
 <!-- border -->![image](img/workflow-template-generate.png)
@@ -207,21 +207,21 @@ You can use the following snippet for commands to push the template to GitHub. P
 import pathlib
 
 print(f'''Run in Terminal:
-cd <YOUR_GIT_REPO_PATH>
+cd <YOUR_GIT_Repo_PATH>
 git add <path_within_repo>/{pathlib.Path(output_file).name}
 git commit -m \'updated template {workflow_config["name"]}\'
 git push
 ''')
 ```
 
-After the template is pushed to the Git repository, you'll need to wait a few minutes for the template in the repo to sync with SAP AI Core. On-boarded Git repositories are regularly synced with SAP AI Core (~3 mins).
+After the template is pushed to the Git repo, you'll need to wait a few minutes for the template in the repo to sync with SAP AI Core. On-boarded Git repositories are regularly synced with SAP AI Core (~3 mins).
 
 
 
 ### Download training data
 
 
-You'll need to use a dataset, which contains images of electricity meters for this tutorial. The model will attempt to read the meters using object detection. Find more information about the dataset on [Gas-Meter Reading Datasets, Applied Recognition Technology Laboratory](http://artelab.dista.uninsubria.it/downloads/datasets/automatic_meter_reading/gas_meter_reading/gas_meter_reading.html)
+You'll need to use a dataset which contains images of electricity meters for this tutorial. The model will attempt to read the meters using object detection. Find more information about the dataset on [Gas-Meter Reading Datasets, Applied Recognition Technology Laboratory](http://artelab.dista.uninsubria.it/downloads/datasets/automatic_meter_reading/gas_meter_reading/gas_meter_reading.html)
 
 Run the following snippet to download the training dataset to your local system.
 
@@ -353,7 +353,7 @@ except IndexError:
 | Parameter | Description |
 | --- | --- |
 | `name` | Name of configuration |
-| `scenario_id` | Used to connect the configuration to the scenario ID mentioned previously in your workflow configuration |
+| `scenario_id` | Used to connect the configuration to the scenario ID mentioned previously in our workflow configuration |
 | `executable_id` | Name of the workflow mentioned in workflow configuration |
 | `input_artifact_binding` | Binds the dataset artifact you created (in the previous tutorial) to the placeholder for dataset in the template |
 | `parameter_bindings` | Parameters for the training you set in previous step |
