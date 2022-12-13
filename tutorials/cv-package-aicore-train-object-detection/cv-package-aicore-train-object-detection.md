@@ -181,7 +181,7 @@ Push your built Docker image to your Docker registry with below snippet. The `!`
 
 The workflows have another method `create-template` to build a training pipeline with placeholders for datasets and hyper-parameters. This training pipeline internally references the Docker image you created previously. You are not required to modify/ update the AI code contained, but you can tweak hyper-parameters to achieve different model qualities, demonstrated later in the tutorial.
 
-Pase and edit the following snippet. Replace `<YOUR_GIT_Repo_PATH>` with the absolute path to the directory that contains the repository you've on-boarded to SAP AI Core. This repository syncs using Git Ops.
+Paste and edit the following snippet. Replace `<YOUR_GIT_Repo_PATH>` with the absolute path to the directory that contains the repository you've on-boarded to SAP AI Core. This repository syncs using Git Ops.
 
  > In this tutorial, the workflow object points to the object-detection-train content.
 
