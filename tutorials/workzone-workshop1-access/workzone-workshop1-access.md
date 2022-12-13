@@ -17,13 +17,13 @@ To follow the trainings, the instructor will give you the following:
 
 
 ## You will learn
-  How to access SAP Work Zone
+  How to access SAP Build Work Zone, advanced edition
 
 
 ## Intro
-In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutorial environment from a SAP BTP subaccount that has already been set up for you including a subscription to SAP Work Zone. Once you've accessed SAP Work Zone, in the next tutorial, you'll create a workspace and add content to it.
+In this workshop tutorial mission, you'll be accessing the SAP Build Work Zone, advanced edition tutorial environment from a SAP BTP subaccount that has already been set up for you, including a subscription to SAP Build Work Zone, advanced edition service. Once you've accessed the service, in the next tutorial, you'll create a workspace in your site and add content to it.
 
->This workshop is conducted on a shared environment. Therefore we will be asking you to enter unique IDs in some of the steps. We have specified in each of the tutorials of this mission when to enter your unique ID. For example, `<your unique identifier>_<name of entity>`. In addition, please don't edit the SAP Work Zone Home page as it's a shared asset.  
+>This workshop is conducted on a shared environment. Therefore we will be asking you to enter unique IDs in some of the steps. We have specified in each of the tutorials of this mission when to enter your unique ID. For example, `<your unique identifier>_<name of entity>`. In addition, please don't edit the **Home** page as it's a shared asset.  
 
 >Please note that SAP Launchpad service and SAP Work Zone come together under the SAP Build Work Zone brand, with two editions: standard edition (formerly SAP Launchpad service) and advanced edition (formerly SAP Work Zone).
  This means, SAP Work Zone was recently renamed to `SAP Build Work Zone, advanced edition`.
@@ -32,7 +32,7 @@ In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutoria
 
 ---
 
-### Access SAP Work Zone
+### Access SAP Build Work Zone, advanced edition
 
 
 1. Open your browser and navigate to the subaccount in SAP BTP that you received from the instructor.
@@ -47,6 +47,6 @@ In this workshop tutorial mission, you'll be accessing the SAP Work Zone tutoria
 
 4. Enter your log on credentials that were given to you by the instructor.
 
-SAP Work Zone opens displaying the Home Page that has already been configured for you.
+Your SAP Build Work Zone, advanced edition site opens displaying the **Home** page that has already been configured for you.
 
 In the next tutorial, you'll create a workspace and add apps and other content to it.

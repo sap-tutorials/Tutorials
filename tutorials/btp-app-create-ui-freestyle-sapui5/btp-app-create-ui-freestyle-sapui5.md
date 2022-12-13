@@ -1,16 +1,14 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Create a UI Using Freestyle SAPUI5
+description: This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
 keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
-
-# Create a UI Using Freestyle SAPUI5
-<!-- description --> This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
 
 ## Prerequisites
  - Before you start with this tutorial, you have two options:
@@ -19,14 +17,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
-## You will learn
+## Details
+### You will learn
  - How to create a Freestyle SAPUI5 app on top of your CAP application
  - How to start the application
 
 ---
 
-### SAP Fiori elements application vs. freestyle UI5 application
-
+[ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
 What is the difference to an SAP Fiori elements based application that you have already built in the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
 An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
@@ -35,10 +33,10 @@ A freestyle UI5 application, on the other hand, lives mainly in your own project
 
 Fortunately, you have also got a choice of several templates that get your application kick started for freestyle UI5. They copy the initial code into your project and any change necessary for the app can be done manually by you in the code.
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Creating the application
-
+[ACCORDION-BEGIN [Step 2: ](Creating the application)]
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
 
@@ -79,9 +77,10 @@ Fortunately, you have also got a choice of several templates that get your appli
 
     ![Project Names Miti](SAPUI5freestyle_appgen.png)
 
+[DONE]
+[ACCORDION-END]
 ---
-### Starting the application
-
+[ACCORDION-BEGIN [Step 3: ](Starting the application)]
 1. Make sure `cds watch` is still running in the project root folder:
 
     ```Shell/Bash
@@ -92,11 +91,11 @@ Fortunately, you have also got a choice of several templates that get your appli
 
     You now see a new HTML page.
 
-    <!-- border -->![UI5 App](freestylelaunch.png)
+    !![UI5 App](freestylelaunch.png)
 
 3. Choose the `/mitigations/webapp/index.html` entry.
 
-    <!-- border -->![UI5 App IDs](freestyleguidids.png)
+    !![UI5 App IDs](freestyleguidids.png)
 
     As a result, you can see a list but you can only see the IDs of the mitigations both in the list view and on the detail page. This is because the freestyle template only got the information from you that the `Object Collection ID` is the `ID` property of the `mitigations` service. You now need to add additional SAPUI5 controls that are bound to additional properties of the `mitigations` service.
 
@@ -179,11 +178,15 @@ Fortunately, you have also got a choice of several templates that get your appli
 
     You can now see the new content in the work list ...
 
-    <!-- border -->![SAPUI5 App List](freestyleui5list.png)
+    !![SAPUI5 App List](freestyleui5list.png)
 
     ... as well as in the detail object page.
 
-    <!-- border -->![SAPUI5 App Object](freestyleui5object.png)
+    !![SAPUI5 App Object](freestyleui5object.png)
 
+[DONE]
 The result of this tutorial can be found in the [`create-ui-freestyle-sapui5`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-freestyle-sapui5) branch.
+
+
+[ACCORDION-END]
 ---

@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Enable Logging Service for Your Application
+description: This tutorial shows you how to enable Logging Service for your application.
 keywords: cap
 auto_validation: true
 time: 15
@@ -9,13 +10,11 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Enable Logging Service for Your Application
-<!-- description --> This tutorial shows you how to enable Logging Service for your application.
-
 ## Prerequisites
  - [Assign a Role Collection to a User](btp-app-role-assignment)
 
-## You will learn
+## Details
+### You will learn
  - How to access logs from command line window and SAP BTP cockpit
  - How to analyze logs using Kibana dashboard
  - How to enable Logging Service for your CAP application
@@ -23,9 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-### Access logs from command line window
-
-1. Display recent logs. 
+[ACCORDION-BEGIN [Step 1: ](Access logs from command line window)]
+1. Display recent logs.
 
     ```Shell/Bash
     cf logs --recent <appname>
@@ -39,17 +37,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 > Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Access logs from SAP BTP cockpit
-
+[ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
 1. In [SAP BTP Cockpit](https://account.hana.ondemand.com/) enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
 3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
 
-    <!-- border -->![Choose Subaccount](choose_subaccount.png)
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** &rarr; **Spaces**.
 
@@ -59,15 +57,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 7. Choose **Logs**.
 
-    <!-- border -->![App Logs](cpapp-srv-logs.png)
+    !![App Logs](cpapp-srv-logs.png)
 
     > Only the recent logs are displayed.
 
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Analyze logs using Kibana dashboard
-
+[ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
 2. Choose **Cloud Foundry** &rarr; **Spaces**.
@@ -84,9 +83,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     > Although the **Open Kibana Dashboard** link is placed on the logs view of a particular application, it will give you access to the logs of all spaces where you have the required permission.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Enable Logging Service
-
+[ACCORDION-BEGIN [Step 4: ](Enable Logging Service)]
 [OPTION BEGIN [Trial]]
 
 Logs are only kept for a short period and won't be visible in Kibana without the Logging Service. By binding the Logging Service to your application, logs will be kept for longer and will be available for further analysis via Kibana.
@@ -186,9 +186,10 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Test it
-
+[ACCORDION-BEGIN [Step 5: ](Test it)]
 1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
     ```Shell/Bash
@@ -198,7 +199,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 2. Open Kibana after successful deployment. Your org should now be visible in the Kibana dashboard.
 
-    <!-- border -->![Kibana: Filter Org](kibana_filter_org.png)
+    !![Kibana: Filter Org](kibana_filter_org.png)
 
 3. Choose the ( &#x2B; ) icon to filter for it.
 
@@ -206,12 +207,16 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 5. You should see your newly applied applications.
 
-    <!-- border -->![Kibana: Components](kibana_components.png)
+    !![Kibana: Components](kibana_components.png)
 
 You can also browse all logs using the **Discover** button (compass icon) on the left navigation bar.
 The available fields are displayed on the left side of the screen. You can add fields to the message display or quickly filter for any of the top values.
 
 The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
+[DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+
+
+[ACCORDION-END]
 ---
