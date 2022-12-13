@@ -17,8 +17,8 @@ author_profile: https://github.com/kannankumar
 - How to consume endpoints for online inferencing
 
 ## Prerequisites
- - You have trained an AI model for object detection using the [set up tutorial](cv-package-aicore-train-object-detection)
- - You are using the Jupyter notebook from the [set up tutorial](cv-package-aicore-train-object-detection)
+ - You have trained an AI model for object detection using the [set up tutorial](cv-package-aicore-train-object-detection).
+ - You are using the Jupyter notebook from the [set up tutorial](cv-package-aicore-train-object-detection).
 
 ## Intro
 **IMPORTANT** You must have successfully created an execution using the [prerequisite tutorial](cv-package-aicore-train-object-detection). You"ll need the value of the variable `trained_model` to complete this tutorial.
