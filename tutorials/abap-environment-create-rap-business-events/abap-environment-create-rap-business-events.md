@@ -24,9 +24,9 @@ author_profile: https://github.com/niloofar-flothkoetter
 >Always replace `####` with your initials or group number.
 
 The ABAP RESTful Application Programming Model (RAP) now supports the native consumption and exposure of business events. For exposure, an event can be defined and raised in a RAP business object or in the behavior extension and then published via Event Bindings.
----
 
-[ACCORDION-BEGIN [Step 1: ](Create database table)]
+
+### Create database table
 
 To produce and raise an event you need first to define your RAP Business Object which produce the event. For this, you will create a simple online shop application. The event will be sent whenever a new order is created.
 
@@ -68,13 +68,7 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![database](2-4.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 2: ](Create CDS data model and projection view)]
-=======
 ### Create CDS data model and projection view
-
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
-
 
   1. Right-click on your package and create a data definition
 
@@ -109,7 +103,7 @@ To produce and raise an event you need first to define your RAP Business Object 
 
     ![def](2-8.png)
 
-  5.  after choosing a transport request click **Next** and choose **Define Projection View**
+  5. After choosing a transport request click **Next** and choose **Define Projection View**
 
     ![def](2-9.png)
 
@@ -167,12 +161,7 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![projection](2-11.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 3: ](Create behavior definition for CDS data model)]
-=======
 ### Create behavior definition for CDS data model
-
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   1. Right-click on your data definition `ZI_ONLINE_SHOP_####` and select **New Behavior Definition**.
 
@@ -207,7 +196,7 @@ To produce and raise an event you need first to define your RAP Business Object 
       event ItemIsOrdered parameter ZD_ItemOrdered_####;
     ```
 
-    your behavior definition will be looking like this:
+    Your behavior definition will be looking like this:
 
     ![parameter](2-18.png)
 
@@ -233,12 +222,7 @@ To produce and raise an event you need first to define your RAP Business Object 
     Now create the implementation class in the next step.
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 4: ](Create behavior implementation class)]
-=======
 ### Create behavior implementation class
-
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   1. In your behavior definition `ZI_ONLINE_SHOP_####` set the cursor before the implementation class `ZCL_online_shop_####` and click **CTRL + 1**. Double-click on **Create behavior implementation class** `ZCL_online_shop_####` to create your implementation class.
 
@@ -309,10 +293,6 @@ To produce and raise an event you need first to define your RAP Business Object 
 
 ### Create behavior definition for projection view
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 5: ](Create behavior definition for projection view)]
-=======
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   1. Right-click on your data definition `ZC_ONLINE_SHOP_####` and select **New Behavior Definition**.
 
@@ -323,12 +303,8 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![behavior](5-2.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 6: ](Create service definition and service binding)]
-=======
 ### Create service definition and service binding
 
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   At last, you need to define the service definition and the service binding. Then your application will be ready to use.
 
@@ -341,7 +317,7 @@ To produce and raise an event you need first to define your RAP Business Object 
 
     ![def](6-2.png)
 
-    click **Next** and after choosing a transport request click **Finish**.
+    Click **Next** and after choosing a transport request click **Finish**.
 
   2. Here you can expose your data definition `zc_online_shop_####`
 
@@ -364,12 +340,8 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![binding](6-6.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 7: ](Create an Event Binding for the Business Event)]
-=======
 ### Create an Event Binding for the Business Event
 
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   Now create the event binding for your newly created business event. This event binding is needed to map an event to a RAP entity event.
 
@@ -404,12 +376,8 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![type](7-5.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 8: ](Create a communication arrangement)]
-=======
 ### Create a communication arrangement
 
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
   After an event is raised, it should arrive at the Event Mesh to be consumed later. The connection between the system and the SAP Event Mesh is achieved through a channel. For this, you need to create a communication arrangement in your cloud system with `sap_com_0092` scenario which is built for an event enablement and also an event mesh instance's service key.
 
   One requirement is that you have an existing SAP Event Mesh service instance of the default plan. You can create an instance of SAP Event Mesh provided that you already subscribe to the event mesh service.
@@ -451,12 +419,8 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![details](8-10.png)
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 9: ](Assign the event to an outbound channel)]
-=======
 ### Assign the event to an outbound channel
 
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   1. Search for **Enterprise Event Enablement** App and open it.
 
@@ -496,7 +460,7 @@ To produce and raise an event you need first to define your RAP Business Object 
 
     ![event](9-9.png)
 
-  6. open the message client, navigate to **Queues** and click **Create Queue**.
+  6. Open the message client, navigate to **Queues** and click **Create Queue**.
 
     ![queue](9-10.png)
 
@@ -517,13 +481,8 @@ To produce and raise an event you need first to define your RAP Business Object 
     ![subs](9-15.png)
 
 
-
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 10: ](Create a Message in Application)]
-=======
 ### Create a Message in Application
 
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
 
   1. Open ADT and open your SAP BTP ABAP environment system.
 
@@ -556,13 +515,4 @@ To produce and raise an event you need first to define your RAP Business Object 
 
 
 
-<<<<<<< HEAD
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
-=======
 ### Test yourself
-
-
->>>>>>> 57132fd555e117fed69416e90f90c84abb4c56b4
-
-
----
