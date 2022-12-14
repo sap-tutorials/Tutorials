@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-work-zone]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone]
+primary_tag: software-product>sap-build-work-zone
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
