@@ -3,25 +3,26 @@ parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-cloud, products>sap-business-application-studio]   
-time: 15
+tags: [  tutorial>intermediate, programming-tool>sql, products>sap-hana, products>sap-hana-cloud, products>sap-business-application-studio]   
+time: 15 
 ---
 
-# Create Stored Procedures 
+# Create Stored Procedures
 <!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 
-## Prerequisites  
+## Prerequisites
+
 - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
 - You have created a BTP, SAP HANA Cloud instance. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
 - You have setup SAP Business Application Studio for development: [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
 
-## You will learn  
+## You will learn
+
 - How to create a small procedure `get_po_header_data` with two implicit SELECT queries
 
 ---
 
 ### Import Tables & Data
-
 
 1. If you have not done so yet, create a new HANA Database Project in the SAP Business Application Studio. For more information about how to do this, complete step 1 from the [Create an SAP HANA Database Project](hana-cloud-create-db-project) tutorial.
 
@@ -51,9 +52,7 @@ time: 15
 
     <!-- border -->![Tables](1_6.png)
 
-
 ### Create New Procedure
-
 
 1. Right click on the `src` folder and choose **New Folder**.
 
@@ -63,13 +62,13 @@ time: 15
 
     <!-- border -->![Create Folder](2_2.png)
 
-3. Click **View** then  **Find Command..**.
+3. Click **View** then  **Command Pallette**.
 
     <!-- border -->![Find Command](2_3.png)
 
 4. Enter `hana` as the search term, then click on **SAP HANA: Create SAP HANA Database Artifact**
 
-    <!-- border -->![HANA Archifact](2_4.png)
+    <!-- border -->![HANA Artifact](2_4.png)
 
 5. Click the **Browse** icon.
 
@@ -97,7 +96,6 @@ time: 15
 
 
 ### Add Code and Deploy
-
 
 1. Between the BEGIN and END statements, insert the SELECT statements as shown.  These are implicit select statements whose results sets are passed to the caller.  
 
@@ -145,18 +143,11 @@ time: 15
 
     ```
 
-3. Save the procedure.
-
-    <!-- border -->![Save](3_1.png)
-
-4. Once again, click **Deploy**.
+3. Once again, click **Deploy**.
 
     <!-- border -->![Save](3_2.png)
 
-
-
 ### Run Procedure and Check Results
-
 
 1. Switch over to the Database Explorer page and click on the `Procedures` folder. Right-click on the procedure and choose **Generate Call Statement**.
 
@@ -173,4 +164,3 @@ time: 15
 4. Note the execution time on the **Messages** tab.
 
     <!-- border -->![Execution time](4_4.png)
-

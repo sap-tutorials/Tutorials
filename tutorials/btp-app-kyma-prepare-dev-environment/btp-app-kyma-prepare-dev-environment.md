@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Prepare Your Kyma Development Environment
+description: This tutorial shows you how to install tools used in this tutorial, log in to your Kyma cluster, create a namespace for your app, and create a container registry secret.
 keywords: cap
 auto_validation: true
 time: 20
@@ -10,9 +11,6 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Prepare Your Kyma Development Environment
-<!-- description --> This tutorial shows you how to install tools used in this tutorial, log in to your Kyma cluster, create a namespace for your app, and create a container registry secret.
-
 ## Prerequisites
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - For Windows, you'll need Chocolatey. This is a package manager that will speed up and ease installation of the tools in this tutorial. See how to install Chocolatey in [Setup/Install](https://docs.chocolatey.org/en-us/choco/setup).
@@ -20,15 +18,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
+## Details
 
-## You will learn
+### You will learn
  - How to prepare your Kyma development environment
 
 
 ---
 
-### Verify your @sap/cds and @sap/cds-dk versions
-
+[ACCORDION-BEGIN [Step 1: ](Verify your @sap/cds and @sap/cds-dk versions)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed.
@@ -44,9 +42,10 @@ To upgrade, run the following commands in your project directory:
 - `npm install @sap/cds@>=6`
 - `npm install -g @sap/cds-dk@>=6`
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install kubectl
-
+[ACCORDION-BEGIN [Step 2: ](Install kubectl)]
 [OPTION BEGIN [macOS]]
 
 1. To install kubectl, run the following command:
@@ -84,9 +83,10 @@ Follow the instructions for your preferred way of installing kubectl at [Install
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install kubelogin
-
+[ACCORDION-BEGIN [Step 3: ](Install kubelogin)]
 [OPTION BEGIN [macOS]]
 
 To install `kubelogin`, run the following command:
@@ -116,16 +116,17 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Log in to your Kyma cluster
-
+[ACCORDION-BEGIN [Step 4: ](Log in to your Kyma cluster)]
 1. Choose `KubeconfigURL` under the **Kyma Environment** tab in your subaccount.
 
-    <!-- border -->![Kubeconfig URL](kubeconfigURL.png)
+    !![Kubeconfig URL](kubeconfigURL.png)
 
     A file `kubeconfig.yaml` is downloaded.
 
-    <!-- border -->![Kubeconfig yaml](kubeconfig_yaml.png)
+    !![Kubeconfig yaml](kubeconfig_yaml.png)
 
 2. Copy the `kubeconfig.yaml` file to the `~/.kube/` directory and rename it to `config`. Replace or rename any existing file with the same name.
 
@@ -150,9 +151,10 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 
     4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create a namespace for your app
-
+[ACCORDION-BEGIN [Step 5: ](Create a namespace for your app)]
 1. Run the following command to create a namespace `risk-management`:
 
     ```Shell/Bash
@@ -167,9 +169,10 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
     ```
    You should get a message `Context "shoot--kyma--X-XXXXXXX" modified.`
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create container registry secret
-
+[ACCORDION-BEGIN [Step 6: ](Create container registry secret)]
 You need the container registry secret to access docker container images in your registry from your Kyma cluster.
 
 Kubernetes has a special type of secret for container registries and its `kubectl` command line supports it with the required options:
@@ -221,10 +224,10 @@ kubectl create secret docker-registry container-registry \
     ![New Secret](new_secret.png)
 
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Install helm
-
+[ACCORDION-BEGIN [Step 7: ](Install helm)]
 [OPTION BEGIN [macOS]]
 
 There's a multitude of options to install helm. You can see the full list at [Installing Helm](https://helm.sh/docs/intro/install/). We have also listed some options:
@@ -254,9 +257,10 @@ You should see something like `version.BuildInfo{Version:"v3.8.0", GitCommit:"d1
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install Paketo (pack)
-
+[ACCORDION-BEGIN [Step 8: ](Install Paketo (pack))]
 [OPTION BEGIN [macOS]]
 
 Pack lets you build container images, which are collaboratively maintained making it easier to maintain and update.
@@ -301,12 +305,13 @@ Follow the instructions to install the [pack CLI](https://buildpacks.io/docs/too
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Building containerized applications
-
+[ACCORDION-BEGIN [Step 9: ](Install a container management app)]
 [OPTION BEGIN [Docker Desktop]]
 
-Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. We provide two examples below - Docker Desktop and Rancher Desktop. You can pick one of them or any other app suitable for the purpose. 
+Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to manage (build, push, pull, and run) container images on your desktop and a docker-compatible command line interface. We provide two examples below - Docker Desktop and Rancher Desktop. You can pick one of them or any other app suitable for the purpose.
 
 
 * **macOS**: Download the installer from [Install Docker Desktop on Mac](https://docs.docker.com/desktop/mac/install/) and follow the instructions to install and set up Docker Desktop.
@@ -316,35 +321,36 @@ Kyma runs on containers. Hence, for this tutorial, you'll need an application th
 [OPTION END]
 [OPTION BEGIN [Rancher Desktop]]
 
-Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. We provide two examples below - Docker Desktop and Rancher Desktop. You can pick one of them or any other app suitable for the purpose. 
+Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to manage (build, push, pull, and run) container images on your desktop and a docker-compatible command line interface. We provide two examples below - Docker Desktop and Rancher Desktop. You can pick one of them or any other app suitable for the purpose.
 
 
 * **macOS**:
 
     1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
     2. Download the Rancher Desktop installer for macOS.
-    
+
         > The macOS installer is called `Rancher.Desktop-<version.architecture>.dmg`. Here's an example with the current latest version: `Rancher.Desktop-1.2.1.x86_64.dmg`.
 
     3. Run the installer. When the installation is complete, drag the Rancher Desktop icon to the **Applications** folder.
-    
+
         > You can find details about installation requirements and install/uninstall steps in [macOS](https://docs.rancherdesktop.io/getting-started/installation#macos).
 
 * **Windows**:
 
     1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
     2. Download the Rancher Desktop installer for Windows.
-    
+
         > The Windows installer is called `Rancher.Desktop.Setup.<version>.exe`. Here's an example with the current latest version: `Rancher.Desktop.Setup.1.2.1.exe`.
 
     3. Run the installer. When the installation is complete, choose **Finish**.
-    
-        > You can find details about installation requirements and install/uninstall steps in [Windows](https://docs.rancherdesktop.io/getting-started/installation#windows).
 
+        > You can find details about installation requirements and install/uninstall steps in [Windows](https://docs.rancherdesktop.io/getting-started/installation#windows).
 
 * **Linux**: There are several different ways to install Rancher Desktop on Linux. You can find details about installation requirements and steps to install or uninstall steps in [Linux](https://docs.rancherdesktop.io/getting-started/installation#linux).
 
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---

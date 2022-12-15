@@ -2,17 +2,17 @@
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
+primary_tag: software-product>sap-build-apps--enterprise-edition
 author_name: Daniel Wrolewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Connect Your AppGyver Application to a Public API
+# Connect Your SAP Build Application to a Public API
 <!-- description --> Connect your application to a public API and then test that it's pulling the right information.
 
 ## You will learn
-  - How to add and configure data resources in your AppGyver application
+  - How to add and configure data resources in your SAP Build application
   - How to call a public API by scanning a barcode
 
 In the previous tutorial, you configured your application to open a device camera once the scan button had been tapped. This currently reads the barcode and returns only the barcode number, which on it's own is just a reference with no further information. 
@@ -23,7 +23,7 @@ To improve this, you need to configure a data source connected to that informati
 
 ### Add data resources
 
-Open your draft application in the AppGyver Composer account1.
+Open your draft application in the Composer account.
 
 1. Click your **Scan** button, and then click **Data**.
 

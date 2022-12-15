@@ -12,7 +12,6 @@ author_profile: https://github.com/mervey45
 <!-- description --> Create a SAP Fiori app for a RAP business object in SAP Business Application Studio and deploy it to SAP S/4HANA Cloud, ABAP Environment.
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 - **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -331,7 +330,7 @@ author_profile: https://github.com/mervey45
 ### Create IAM App and business catalog
 
 
-  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`Z_PURCHASE_REQ_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam0.png)
 
@@ -367,7 +366,7 @@ author_profile: https://github.com/mervey45
 
       ![iam](activate.png)
 
-  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`Z_PURCHASE_REQ_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](iam0.png)
 
@@ -439,6 +438,3 @@ author_profile: https://github.com/mervey45
 
 
 ### Test yourself
-
-
-

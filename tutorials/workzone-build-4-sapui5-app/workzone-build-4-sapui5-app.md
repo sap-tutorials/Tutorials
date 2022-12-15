@@ -16,8 +16,6 @@ author_profile: https://github.com/LindsayBert
  - A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service has already been setup for you. Note that it is not available in a trial account
  - You've already designed the **Home** workpage where you'll add this app   
 
-
-
 ## You will learn
   - How to add an SAPUI5 app to a workpage in your site
 
@@ -36,7 +34,6 @@ Once configured, the app appears as a tile in the **Applications** page of your 
     <!-- border -->![Open the admin console](1-open-admin-console.png)
 
     >This option is only available to SAP Build Work Zone, advanced edition administrators.
-
 
 2. Go to the **External Integrations** section, expand it, and click **Business Content**.
 

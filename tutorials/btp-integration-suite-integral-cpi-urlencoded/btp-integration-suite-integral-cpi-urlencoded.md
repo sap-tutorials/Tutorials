@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 10
-tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-business-technology-platform  ]
+tags: [ tutorial>intermediate, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez
@@ -14,7 +14,7 @@ author_profile: https://github.com/mariajosesap
 ## Prerequisites
 
  - You have a SAP BTP account or trial account with access to the SAP Integration Suite.
- - You have completed the previous tutorial [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-service-core).
+ - You have completed the previous tutorial [Consume a SAP Sales and Service Core API to create Sales Orders using SAP Cloud Integration](btp-integration-suite-integral-sales-core).
  - You have a Twilio account or trial account. In the Twilio documentation, you'll see 3 needed URL encoded parameters to be sent to trigger the API call, which are:
 
     - From <Twilio sender's phone number>
@@ -33,9 +33,9 @@ To continue from the previous tutorial where you configured a SAP Sales and Serv
 
 1. Add a Content Modifier task and in the Exchange Property tab, add a new property:
     * Action: Create
-    * Name: salesOrderId
-    * Source Type: XPath
-    * Source Value: /CustomerOrderCollection/CustomerOrder/ID
+    * Name: `salesOrderId`
+    * Source Type: `XPath`
+    * Source Value: `/CustomerOrderCollection/CustomerOrder/ID`
     * Data Type: java.lang.String
 
     Like this:
@@ -162,9 +162,9 @@ As you can see, you don't need to add the headers here or the body, as you will 
 
     ![SMS](sms.png)
 
-Great! you’ve successfully have learned how to send SMS in Cloud Integration consuming a Twilio API.
+Great! you've successfully have learned how to send SMS in Cloud Integration consuming a Twilio API.
 
-Now it’s time add security policies to the API endpoint using SAP API Management. Check this next tutorial: [Configure SAP API Management policies to avoid CORS issues and generate an API Key](btp-integration-suite-integral-api-management).
+Now it's time add security policies to the API endpoint using SAP API Management. Check this next tutorial: [Configure SAP API Management policies to avoid CORS issues and generate an API Key](btp-integration-suite-integral-api-management).
 
 ### Check your knowledge
 

@@ -16,7 +16,6 @@ You have an environment set up and you can access your SAP Build Work Zone, adva
 &nbsp;
 >**SAP Build Work Zone, advanced edition is not available in a trial account.**
 
-
 ## You will learn
   - How to create a new workspace
   - How to add content to it and design the layout

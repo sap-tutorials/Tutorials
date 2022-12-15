@@ -30,19 +30,19 @@ Enter your details and confirm your e-mail address. You will then receive an ema
 
 In this mission, you'll see a business scenario to give you context as you explore SAP Data Warehouse Cloud. The example and dataset you'll use will be around a fictitious global bike supplier called Best Run Bikes. This company is looking to use sales data they have available to maximise their sales.
 
-Your mission today is to help Best Run Bikes to get a holistic view of their sales data by using the power of SAP Data Warehouse Cloud. You will get the sales data of Best Run Bikes and it is your mission to use the features of SAP Data Warehouse Cloud to help the bike suppliers make the best possible business decisions.
+Your mission today is to help Best Run Bikes to get a holistic view of their sales data by using the power of SAP Data Warehouse Cloud. You will get the sales data of Best Run Bikes and it is your mission to use the features of SAP Data Warehouse Cloud to help the bike suppliers make the best possible business decisions. 
 
 ### Download mission toolkit
 
 The toolkit contains sample data you can import into your trial SAP Data Warehouse Cloud account. The toolkit consists of 4 sales data CSV tables related to Best Run Bikes. These are:
 
-•	[Sales Orders](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrders.csv)
+•	[Sales Orders](SalesOrders.csv)
 
-•	[Sales Order Items](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrderItems.csv)
+•	[Sales Order Items](SalesOrderItems.csv)
 
-•	[Addresses](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/data-warehouse-cloud-1-begin-trial/Addresses.csv)
+•	[Addresses](Addresses.csv)
 
-•	[Business Partners](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/data-warehouse-cloud-1-begin-trial/BusinessPartners.csv)
+•	[Business Partners](BusinessPartners.csv)
 
 Download these files and save them in a folder on your local system. After that, you will be ready to get hands-on!
 

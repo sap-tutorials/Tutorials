@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
+tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -369,9 +369,7 @@ Observe the value of the `name` variable in both `inputArtifacts` and `parameter
 
 
 ### Create cloud storage for datasets and models
-
-
-### Why use cloud storage?
+## Why use cloud storage?
 SAP AI Core only provides your ephemeral (short-lived) storage, while training or inferencing a model.  Amazon Web Services (AWS) S3 Object store is the cloud storage used by SAP AI Core for storing datasets and models. Here, they can be stored over a longer time period, and can be transferred to and from SAP AI Core during training or online inferencing.
 
 You need to create AWS S3 object store, using one of the following links:
@@ -513,6 +511,10 @@ print(response.__dict__)
 ```
 
 [OPTION END]
+
+- The Resource Group must be `default`
+- The `Name` field is your choice of identifier for your secret within SAP AI Core. 
+- Entries to the other fields are found in your AWS account.
 
 > ### Why not put a complete path to train.csv as `pathPrefix`?
 > You might have noticed that previously you uploaded data to `example-dataset/house-price-toy/data/jan/train.csv` but here in object store secret the `pathPrefix` is you set the value `example-dataset/house-price-toy`. This is because the use of `pathPrefix` is to restrict access to particular directory of your cloud storage.

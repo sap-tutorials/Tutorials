@@ -48,11 +48,9 @@ The app must first receive permission to collect usage information from the user
 
     <!-- border -->![Click Upload Usage](upload_usage_button.png)
 
-    The upload will fail with a HTTP 403 error if usage was not enabled in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/).
+    The **Consent to Usage Collection** will be disabled and cannot be enabled if usage was not enabled in the **Mobile Services cockpit**.
 
-    <!-- border -->![Upload Failed](403error.png)
-
-3. To review this policy setting, in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
+3. To review this policy setting, in the **Mobile Services cockpit**, access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
 
     <!-- border -->![Access Mobile Client Usage and User Feedback](mobile_client_usage_and_user_feedback.png)
 
@@ -80,7 +78,7 @@ The app must first receive permission to collect usage information from the user
 
     Different charts become available when you select between **Sessions**, **Demographics**, and **Behavior** in the drop-down (green) box. The mark in the yellow box controls whether to display filters that are in the red box right below.
 
-2. To download the usage report, go to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
+2. To download the usage report, go to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
 
     <!-- border -->![Download Usage From Management Cockpit](download_usage.png)
 
@@ -114,7 +112,7 @@ The app must first receive permission to collect usage information from the user
 
     A session is typically defined as how long the app has been open for in the foreground, but different records within the application can also be modified to act as sessions.
 
-4. There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Settings Exchange** > **User Registrations**.
+4. There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) by navigating to **Mobile Applications** > **Native/MDK** > **com.sap.wizapp** > **Mobile Settings Exchange** > **User Registrations**.
 
     <!-- border -->![User Registrations](user_registrations.png)
 
@@ -239,7 +237,7 @@ The following steps record how often users start adding or updating products but
 
 14. Upload the usage by going to **Settings** and tap on **Upload Usage Data**.
 
-15. After downloading the `clientUsage_uploads.csv` file from the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createOrEditProductClicked`.
+15. After downloading the `clientUsage_uploads.csv` file from the **Mobile Services cockpit**, you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createOrEditProductClicked`.
 
     <!-- border -->![New Entries in the Client Upload csv](new_client_upload_example.png)
 
@@ -438,7 +436,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Set time automatically** to **off**.
 
 11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 
@@ -531,7 +529,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Set time automatically** to **off**.
 
 11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 

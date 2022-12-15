@@ -17,10 +17,10 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
-- Business Catalog `SAP_PRC_BC_PURCHASER_PR` needs to be assign to your business user
+- Business Catalog `SAP_BR_PURCHASER` needs to be assign to your business user
+- Use Starter Development Tenant in S/4HANA Cloud for the tutorial to have necessary sample data in place. See [3-System Landscape and Transport Management](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e022623ec1fc4d61abb398e411670200.html?state=DRAFT&version=2208.503).
 
 ## You will learn  
 - How to logon to SAP S/4HANA Cloud ABAP Environment
@@ -610,7 +610,7 @@ You have 2 options to open the documentation inside ADT.
       ![service](docu2.png)
 >  3. Now you are able to read the documentation.
       ![service](docu3.png)
-      
+
 >   **HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
 >       ![service](docuhint.png)
 
@@ -710,7 +710,7 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](wizard3.png)
 
- 4. Check your result. 
+ 4. Check your result.
 
      ![preview](o2.png)
 
@@ -754,6 +754,3 @@ You have 2 options to open the documentation inside ADT.
 
 
 ### Test yourself
-
-
-

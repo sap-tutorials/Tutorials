@@ -1,14 +1,14 @@
 ---
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-api-management,  software-product>sap-business-technology-platform  ]
+tags: [ tutorial>advanced, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>sap-api-management,  software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-api-management
 parser: v2
 author_name: Mariajose Martinez 
 author_profile: https://github.com/mariajosesap
 ---
 # Configure SAP API Management policies to avoid CORS issues and generate an API Key
-<!-- description --> Learn how to set up API Management policies to avoid CORS issues when calling the API endpoint from SAP AppGyver, also you'll learn how to apply security policies to enable the API consumption via an API Key.
+<!-- description --> Learn how to set up API Management policies to avoid CORS issues when calling the API endpoint from SAP Build Apps (formerly SAP AppGyver), also you will learn how to apply security policies to enable the API consumption via an API Key.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ author_profile: https://github.com/mariajosesap
 
 4. Now, go to Policies (if it doesn't show up in the top-right of your screen, click on the 3 dots).
 
-    Here you'll add the required policies to avoid CORS issues while calling this API from SAP AppGyver and configure the API Key policy later on.
+    Here you'll add the required policies to avoid CORS issues while calling this API from SAP Build Apps and configure the API Key policy later on.
 
 5. On the Edit Mode, start adding the Policies as followed:
 
@@ -51,7 +51,7 @@ author_profile: https://github.com/mariajosesap
     <AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
             <Add>
                 <Headers>
-                <!-- Set up this header, however if you come across to this error: " 'Access-Control-Allow-Origin' header contains multiple values, but only one is allowed when executing the test on AppGyver ", then remove it and try it again: <Header name="Access-Control-Allow-Origin">*</Header> -->
+                <!-- Set up this header, however if you come across to this error: " 'Access-Control-Allow-Origin' header contains multiple values, but only one is allowed when executing the test on Build Apps ", then remove it and try it again: <Header name="Access-Control-Allow-Origin">*</Header> -->
                     <Header name="Access-Control-Allow-Headers">set-cookie, origin, accept, maxdataserviceversion, x-csrf-token, authorization, dataserviceversion, accept-language, x-http-method, content-type, X-Requested-With, apikey</Header>
                     <Header name="Access-Control-Max-Age">3628800</Header>
                     <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
@@ -62,7 +62,7 @@ author_profile: https://github.com/mariajosesap
             <AssignTo createNew="false" type="response">response</AssignTo>
     </AssignMessage>
     ```
-    >Note: notice that you're already adding "apikey" as a header in the policy.
+    >Notice that you're already adding `apikey` as a header in the policy.
 
     You should look it like this:
 
@@ -72,7 +72,7 @@ author_profile: https://github.com/mariajosesap
 
     ![Preflight Condition String](preflight.png)
 
-    This is all you need to avoid CORS issues when calling our API from SAP AppGyver.
+    This is all you need to avoid CORS issues when calling our API from SAP Build Apps.
 
 ### Create a Key Value Map for your SAP Cloud Integration Credentials
 
@@ -203,7 +203,7 @@ Now you've successfully created policies to avoid CORS issues and enable an API 
 
 ### Add additional tasks into your Integration Flow
 
-Right now, as following the whole exercises, the IFlow is returning us the SMS message sent by consuming the Twilio API. But for the purpose of the exercise with SAP AppGyver, you're going to use as the return message, mainly the receipt URL when the payment transaction is successfully done with Stripe. For this, you need to save this message in the IFlow and retrieve it at the end of the IFlow.
+Right now, as following the whole exercises, the IFlow is returning us the SMS message sent by consuming the Twilio API. But for the purpose of the exercise with SAP Build Apps, you're going to use as the return message, mainly the receipt URL when the payment transaction is successfully done with Stripe. For this, you need to save this message in the IFlow and retrieve it at the end of the IFlow.
 
 Remember the previous tutorial about "Set up Write, Filter and Get Tasks in the Integration Flow…" for filtering the payment data and later calling the SAP C4C OData service? well, you are going to do the same, but in this case to retrieve the receipt URL from the Stripe request response.
 
@@ -217,7 +217,7 @@ Remember the previous tutorial about "Set up Write, Filter and Get Tasks in the 
 
     Save and deploy your IFlow.
 
-Now, it's time to set up the integration with SAP AppGyver. Check out the next and final tutorial of this series: [Integrate SAP AppGyver with SAP Integration Suite](btp-integration-suite-integral-appgyver).
+Now, it's time to set up the integration with SAP Build Apps. Check out the next and final tutorial of this series: [Integrate SAP Build Apps with SAP Integration Suite](btp-integration-suite-integral-appgyver).
 
 ### Check your knowledge
 
