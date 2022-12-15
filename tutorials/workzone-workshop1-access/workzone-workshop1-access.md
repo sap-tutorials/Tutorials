@@ -12,8 +12,8 @@ author_name: Lindsay Bert
 
 ## Prerequisites
 To follow the trainings, the instructor will give you the following:
- - A URL to a SAP BTP subaccount used for this training.
- - A user name and password for the SAP Business Technology Platform account used in this training.
+ - A URL to a SAP BTP subaccount used for this training
+ - A user name and password for the SAP Business Technology Platform account used in this training
 
 
 ## You will learn

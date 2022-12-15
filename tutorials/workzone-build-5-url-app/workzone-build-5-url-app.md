@@ -12,8 +12,8 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a URL app and add it to your workpage in an SAP Build Work Zone, advanced edition site.
 
 ## Prerequisites
-- A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service has already been setup for you. Note that SAP Build Work Zone, advanced edition is not available in a trial account.
-- You've already designed the **Home** page where you'll add this app.   
+- A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service has already been setup for you. Note that SAP Build Work Zone, advanced edition is not available in a trial account
+- You've already designed the **Home** page where you'll add this app  
 
 
 
