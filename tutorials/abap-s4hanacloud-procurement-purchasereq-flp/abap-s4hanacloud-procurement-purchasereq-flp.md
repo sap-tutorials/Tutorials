@@ -8,10 +8,10 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-# Integrate List Report into Fiori Launchpad
-<!-- description --> Integrate your list report application into Fiori launchpad.
-
-## Prerequisites  
+# Integrate List Report Into SAP Fiori Launchpad
+<!-- description --> Integrate your list report application into SAP Fiori launchpad.
+ 
+## Prerequisites   
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 - You need to have following business role assigned for your business user `SAP_BR_DEVELOPER` and `SAP_BR_BPC_EXPERT`.
@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
 - You need to have business catalog `SAP_CORE_BC_BCT_TRN_MNG_PC` and `SAP_CORE_BC_BCT_TRN_REL_PC` assigned to your user to see the app.
 - You need to [enable spaces layout](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/64a5e1675ce7413791a654d2228a90be.html?locale=en-US&state=TEST&version=2208.502) in SAP Fiori launchpad to see the app tiles, that are added to spaces or pages.
 
-
+ 
 ## You will learn  
 - How to make use of IAM apps and business catalogs
 - How to create business roles
@@ -302,8 +302,5 @@ If you want to transport your software collection to your production system, fol
 
 
 ### Test yourself
-
-
-
-
+ 
 ---
