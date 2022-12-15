@@ -10,7 +10,7 @@ author_profile: https://github.com/mervey45
 
 # Integrate List Report Into SAP Fiori Launchpad
 <!-- description --> Integrate your list report application into SAP Fiori launchpad.
- 
+
 ## Prerequisites  
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
@@ -270,7 +270,7 @@ Option 2:
 
 ### Export software collection (optional)
 
-If you want to transport your software collection to your production system, follow the steps below. 
+If you want to transport your software collection to your production system, follow the steps below.
 
   1. Open the **Export Software Collection** tile.
 
@@ -302,5 +302,5 @@ If you want to transport your software collection to your production system, fol
 
 
 ### Test yourself
- 
+
 ---
