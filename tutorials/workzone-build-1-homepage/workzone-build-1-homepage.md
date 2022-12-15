@@ -14,7 +14,8 @@ author_profile: https://github.com/LindsayBert
 ## Prerequisites
 A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service, has already been setup for you.
 &nbsp;
-**Note that SAP Build Work Zone, advanced edition is not available in a trial account.**
+
+>**SAP Build Work Zone, advanced edition is not available in a trial account.**
 
 ## You will learn
   - How to open SAP Build Work Zone, advanced edition
@@ -28,7 +29,7 @@ The **Home** page is the landing page when you first open your site. It is the f
 
 In this tutorial, you'll be designing a **Home** page. You'll add sections and columns to configure its layout and also add widgets with static content to it. In later tutorials, you'll add apps to this page.
 
->Note that you can design any workpage the same way.
+>You can design any workpage the same way.
 
 ---
 
@@ -102,7 +103,7 @@ You can use the Page Designer to add, move, resize, align, configure widgets, an
 
 The Page Designer is now active and you can use it to design your **Home** page.
 
-> Note that the **Home** page can also be designed and managed from the **Administration Console** – a tool where all administration tasks are performed for SAP Build Work Zone, advanced edition. You can get to the Administration Console, by following these steps:
+>The **Home** page can also be designed and managed from the **Administration Console** – a tool where all administration tasks are performed for SAP Build Work Zone, advanced edition. You can get to the Administration Console, by following these steps:
 >
 >1. Under your avatar at the top right of the screen, open the dropdown menu, and click **Administration Console**.
 >2. From the **Administration Console**, expand the **Area & Workspace Configuration** menu item and click **Home Page**.
