@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-work-zone]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone]
+primary_tag: software-product>sap-build-work-zone
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -12,10 +12,9 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a workspace and add content to it that you can share with other members of your workspace.
 
 ## Prerequisites
-- You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
+You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
 &nbsp;
-**Note that SAP Build Work Zone, advanced edition is not available in a trial account.**
-
+>**SAP Build Work Zone, advanced edition is not available in a trial account.**
 
 ## You will learn
   - How to create a new workspace
