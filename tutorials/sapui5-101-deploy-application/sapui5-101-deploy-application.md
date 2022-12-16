@@ -15,7 +15,7 @@ author_profile: https://github.com/nicoschoenteich
 - You have previously [created a SAPUI5 based project in the SAP Business Application Studio](sapui5-101-create-project).
 
 ## You will learn
-  - How to build a multi-target application (MTA). 
+  - How to build a multi-target application (MTA).
   - How to deploy a multi-target application to Cloud Foundry.
 
 ---
@@ -30,7 +30,7 @@ Build (aka package) the project to an `.mtar` archive to deploy it to Cloud Foun
 
 2. Once the build is finished, you can see a message in the log. You can now find the generated `.mtar` archive in the project tree in the `mta_archives` directory.
 
-    <!-- border -->![buildSuccess](buildSuccess.png)
+    <!-- border -->![buildSuccess](./buildSuccess.png)
 
 ### Deploy the application
 
