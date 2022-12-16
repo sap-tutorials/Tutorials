@@ -15,7 +15,7 @@ author_profile: https://github.com/nicoschoenteich
 - You have previously [created a SAPUI5 based project in the SAP Business Application Studio](sapui5-101-create-project).
 
 ## You will learn
-  - How to build a multi-target application (MTA).
+  - How to build a multi-target application (MTA). 
   - How to deploy a multi-target application to Cloud Foundry.
 
 ---
