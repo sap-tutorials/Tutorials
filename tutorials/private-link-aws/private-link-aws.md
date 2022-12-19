@@ -48,6 +48,7 @@ cf marketplace
 Make sure you can see `privatelink` in the sample output.
 
 
+
 ### Get service name for AWS Endpoint Service
 
 
@@ -61,7 +62,7 @@ To create and enable a private link, you need to define the connection to the se
 
 <!-- border -->![Service Name](Fervice-name-from-details.png)
 
-
+[VALIDATE_1]
 
 
 ### Create private link
