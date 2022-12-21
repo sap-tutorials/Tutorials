@@ -333,10 +333,11 @@ List all the resource groups. Check that there is a resource group named **defau
 
 >**Troubleshooting (Optional)**
 
-If you receive the error: `RBAC: Access Denied`:
+>If you receive the error: `RBAC: Access Denied`:
 
-1. Click on the collection named **AI Core**, click the **Authorization** tab, and check whether a token is being used or not. It might be that you generated a token but forgot to click **Use Token** in the process.
-2. Click the **Variables** tab and check if the value for `baseUrl` matches the value of `AI_API_URL` and you have the suffix `/v2` at the end.
+>1. Click on the collection named **AI Core**, click the **Authorization** tab, and check whether a token is being used or not. It might be that you generated a token but forgot to click **Use Token** in the process.
+
+>2. Click the **Variables** tab and check if the value for `baseUrl` matches the value of `AI_API_URL` and you have the suffix `/v2` at the end.
 
 [OPTION END]
 
