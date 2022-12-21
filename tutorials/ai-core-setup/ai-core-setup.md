@@ -317,7 +317,6 @@ ai_api_client = AIAPIV2Client(
 
 ### Perform an action in SAP AI Core
 
-
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click on **Scenarios** in the **ML Operations** app. The term Scenario refers to a use case. You may not have any scenario listed. You will learn how to add workflows (AI pipelines) to SAP AI Core in future tutorials, which can then be used to create scenarios.
@@ -332,7 +331,7 @@ List all the resource groups. Check that there is a resource group named **defau
 
 <!-- border -->![image](img/postman/rg.png)
 
-# Troubleshooting
+**Troubleshooting (Optional)**
 
 If you receive the error: `RBAC: Access Denied`:
 
