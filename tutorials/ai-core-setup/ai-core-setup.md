@@ -331,7 +331,7 @@ List all the resource groups. Check that there is a resource group named **defau
 
 <!-- border -->![image](img/postman/rg.png)
 
-**Troubleshooting (Optional)**
+>**Troubleshooting (Optional)**
 
 If you receive the error: `RBAC: Access Denied`:
 
