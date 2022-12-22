@@ -52,11 +52,11 @@ author_profile: https://github.com/niloofar-flothkoetter
 
     ![latest build](github4.png)
 
-  2. Open your on-premise system of your choice and create a new program like **`ZABAPGIT`** via SE38 and paste the saved content into it. Activate and execute the program.
+  2. Open your on-premise system of your choice and create a new program like **`ZABAPGIT_STANDALONE`** via SE38 and paste the saved content into it. Activate and execute the program.
 
     ![create](abapgit16.png)
 
-  3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT** program and press **Execute**.
+  3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT_STANDALONE** program and press **Execute**. 
 
       ![search program](abapgit1.png)
 
@@ -65,7 +65,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 >You can find all installation information under <https://github.com/abapGit/abapGit> > **Documentation/Guides**.
 
-> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
+> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get issues during import.
 
 
 ### Push ABAP source from on-premise to Git repository
@@ -75,7 +75,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![clone](abapgit3.png)
 
-  2. Go to transaction `ZABAPGIT` and press the **New Online**.
+  2. Go to transaction `ZABAPGIT_STANDALONE` and press the **New Online**.
 
       ![add online](abapgit4.png)
 
