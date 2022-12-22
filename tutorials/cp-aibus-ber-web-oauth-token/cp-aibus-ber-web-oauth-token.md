@@ -1,31 +1,33 @@
 ---
-title: Get OAuth Access Token for Business Entity Recognition via Web Browser
-description: Retrieve your OAuth access token, which will grant you access to the service APIs.
+parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Get OAuth Access Token for Business Entity Recognition via Web Browser
+<!-- description --> Retrieve your OAuth access token, which will grant you access to the service APIs.
+
+## You will learn
   - How to use your service key values to get an OAuth access token via any web browser
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
-
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Create Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance).
-
-!![BER Service Keys](png-files/service-key-details.png)
-
-[VALIDATE_1]
-[ACCORDION-END]
+### Get OAuth access token details
 
 
-[ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
+To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Use Free Tier to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-free-key) or [Use Trial to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-key).
+
+<!-- border -->![BER Service Keys](png-files/service-key-details.png)
+
+
+
+
+### Get OAuth access token
+
 
 1. Add **`/oauth/token?grant_type=client_credentials`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
 
@@ -35,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-!![BER TOKEN](png-files/web-browser.png)
+<!-- border -->![BER TOKEN](png-files/web-browser.png)
 
 You should receive a response like the following:
 
@@ -44,12 +46,12 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource ner-trial!b49985.default",
-    "jti": "ab76a0adefbc4ddda6da2e5f382862d1"
+    "scope": "<< granted access >>",
+    "jti": "<< unique identifier >>"
 }
 ```
 
+Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
+
 You have successfully generated your OAuth access token for the Business Entity Recognition service and you are now all set to [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui), and [Create Dataset and Upload Training Data](cp-aibus-ber-custom-data) followed by [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
-[DONE]
-[ACCORDION-END]

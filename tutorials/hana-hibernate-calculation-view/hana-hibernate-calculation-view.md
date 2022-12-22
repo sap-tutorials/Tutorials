@@ -1,34 +1,33 @@
 ---
-title: Create an app consuming calculation view using Hibernate on SAP HANA
-description: Create an application that uses Hibernate on SAP HANA to read data from a calculation view.
+parser: v2
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Create an app consuming calculation view using Hibernate on SAP HANA
+<!-- description --> Create an application that uses Hibernate on SAP HANA to read data from a calculation view.
+
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** [Get started with Hibernate on SAP HANA, express edition](https://developers.sap.com/group.hana-hibernate-getting-started.html) & [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://developers.sap.com/tutorials/xsa-graphical-view.html)
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial you will learn how to create an application that reads data from a calculation view using Hibernate on SAP HANA for the mapping of the results into Java objects.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Prerequisites: ](Tutorials)]
+### Tutorials
 
 If you haven't done so, please complete the tutorial [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://developers.sap.com/tutorials/xsa-graphical-view.html). This tutorial builds on top of the calculation view created in that tutorial.
 
 This tutorial builds upon the other tutorials in the tutorial group [Get started with Hibernate on SAP HANA, express edition](https://developers.sap.com/group.hana-hibernate-getting-started.html). Please complete these tutorials before starting this one.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Grant SQL access to the calculation view)]
+### Grant SQL access to the calculation view
+
 
 To be able to use the calculation view from Hibernate, the Hibernate connection user must be given the `SELECT` privilege on the calculation view's database schema.
 
@@ -48,10 +47,9 @@ GRANT "HANA_2_SPS1_HDI_DB_1::access_role" TO "<Hibernate user>"
 
 Replace **`<Hibernate user>`** with your actual Hibernate connection user. If your physical schema name is not **`HANA_2_SPS1_HDI_DB_1`** replace this with your actual schema name as well.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update project configuration)]
+### Update project configuration
+
 
 Since the calculation view isn't a table that can be managed by Hibernate, Hibernate must be configured to not create the schema on startup. This can be done by setting the value of the property `hibernate.hbm2ddl.auto` to `none`.
 
@@ -92,10 +90,9 @@ Don't forget to update the following property values to match your target SAP HA
 
 Save the `persistence.xml` file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create entity for calculation view)]
+### Create entity for calculation view
+
 
 In order for Hibernate to be able to run queries against the calculation view and to map the data from the calculation view to Java objects, a Java Persistence API (JPA) entity for the calculation view has to be created. The calculation view's output columns will be mapped as the fields of the entity.
 
@@ -160,10 +157,9 @@ Now, generate the ***Getters*** and ***Setters*** for all the attributes using t
 
 Save the class file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run simple query on calculation view)]
+### Run simple query on calculation view
+
 
 Using the entity created in the previous step, we can now run queries against the calculation view.
 
@@ -215,10 +211,9 @@ You should see the following output log in your console:
 Found 22472 products
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run Geo Spatial query on the calculation view)]
+### Run Geo Spatial query on the calculation view
+
 
 It's also possible to run more complex queries against a calculation view, for example, geospatial queries leveraging the SAP HANA geospatial engine.
 
@@ -280,10 +275,9 @@ You should see the following output log in your console:
 Found 10176 products from Europe
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6 (optional): ](Set calculation view schema as default)]
+
+### Set calculation view schema as default
 
 For flexibility or maintainability reasons it might be preferable to not have the calculation view schema hard-coded on each entity.
 
@@ -342,7 +336,5 @@ public class CdProduct {
 
 The application will now run all queries including the queries against the calculation view with the container schema as the default schema.
 
-[DONE]
-[ACCORDION-END]
 
 ---

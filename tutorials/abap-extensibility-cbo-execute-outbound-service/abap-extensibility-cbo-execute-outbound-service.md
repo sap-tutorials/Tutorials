@@ -1,11 +1,13 @@
 ---
-title: Execute an Outbound Service from Custom Business Object Logic
-description: Call an external service of SAP API Business Hub from inside the logic implementation of a custom business object.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>intermediate, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 time: 15
 ---
+
+# Execute an Outbound Service from Custom Business Object Logic
+<!-- description --> Call an external service of SAP API Business Hub from inside the logic implementation of a custom business object.
 
 ## Prerequisites  
 **Authorizations:** Your user needs
@@ -14,19 +16,19 @@ time: 15
 **Example Objects:** Existence of custom business object `Bonus Entitlement` as described in this [tutorial](https://blogs.sap.com/2017/02/20/part-iv-associated-business-objects-bonus-entitlement-with-plan-sales-order/) (Blog)
 **Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html)
 
-## Details
-### You will learn
+## You will learn
 - How to get needed service data from SAP API Business Hub Sandbox
 - How to configure outbound service connection in SAP S/4HANA Cloud system
 - How to call and process an outbound service in custom business object logic
 
+## Intro
 The example application of `Bonus Entitlement` will be enhanced by a feedback functionality. The manager's feedback will be translated automatically into English by calling the externally available service **Machine Translation API** of SAP.
 > Be aware that the example is done with SAP API Business Hub Sandbox system only. This shall only give an idea on how it works and cannot be used productively.
-
-### Additional Information
+## Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1805
 ---
-[ACCORDION-BEGIN [Step 1: ](Excursus: Try out the service in SAP API Business Hub)]
+### Excursus: Try out the service in SAP API Business Hub
+
 To get to know the Machine Translation API service first, you can try it out in SAP API Business Hub.
 
 1. Go to [Machine Translation API on SAP API Business Hub](https://api.sap.com/api/translation_api/resource)
@@ -63,10 +65,9 @@ To get to know the Machine Translation API service first, you can try it out in 
 
     The response to the service call will appear below.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get service end point and API Key)]
+### Get service end point and API Key
+
 To configure the connection to the system and the outbound scenario you
 will need the service's end point.
 
@@ -88,10 +89,9 @@ In order to authenticate during service call later you'll need an API Key of SAP
 
 3. Paste the application key into a text editor for later usage.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Communication System for Sandbox)]
+### Create Communication System for Sandbox
+
 In order to allow communication with the SAP API Business Hub Sandbox you have to create a communication system for it in your SAP S/4HANA System.
 
 1. Enter your SAP S/4HANA system's Fiori Launchpad.
@@ -125,10 +125,9 @@ In order to allow communication with the SAP API Business Hub Sandbox you have t
 
 9. Press **Save** to finish the communication system creation.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create custom communication scenario for external service)]
+### Create custom communication scenario for external service
+
 Define the external service as an available Communication Scenario.
 
 1. Go to **Home** of your SAP S/4HANA system's Fiori Launchpad.
@@ -152,10 +151,9 @@ Define the external service as an available Communication Scenario.
 
     The details UI for the scenario opens.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create outbound service in scenario)]
+### Create outbound service in scenario
+
 Set the service path as outbound service.
 
 1. Being in the object page of the custom communication scenario, switch to the **Outbound Service** section
@@ -181,10 +179,9 @@ A pop up opens
 
 4. Press **Publish** to finish the custom communication scenario creation.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create communication arrangement for external service)]
+### Create communication arrangement for external service
+
 Create a Communication Arrangement to link the scenario with the communication system.
 
 1. Go to **Home** of your SAP S/4HANA system's Fiori Launchpad.
@@ -216,10 +213,9 @@ Create a Communication Arrangement to link the scenario with the communication s
 
 5. **Save** the Arrangement.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Extend custom business object with feedback fields)]
+### Extend custom business object with feedback fields
+
 Add fields to persists feedback at the custom business object `Bonus Entitlement`.
 
 1. Go to **Home** of your SAP S/4HANA system's Fiori Launchpad.
@@ -246,10 +242,9 @@ Add fields to persists feedback at the custom business object `Bonus Entitlement
 
 7. **Publish** the business object.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Open custom business object logic)]
+### Open custom business object logic
+
 Now as the business object has just been published, the logic can be enhanced by the translation functionality. ABAP for key users was enhanced by the classes `CL_BLE_HTTP_CLIENT`, `CL_BLE_HTTP_REQUEST` and `CX_BLE_HTTP_EXCEPTION` to enable you to work with HTTP requests.
 
 1. Switch to **Logic** section.
@@ -260,10 +255,9 @@ Now as the business object has just been published, the logic can be enhanced by
 
     ![Enter After Modification logic](CBO_go2AfterModify.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Code HTTP client creation)]
+### Code HTTP client creation
+
 
 1. In the already existing coding go to the end but before this snippet
 
@@ -292,10 +286,9 @@ Now as the business object has just been published, the logic can be enhanced by
     ).
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Code request body string)]
+### Code request body string
+
 Implement the creation of the Request Body.
 As the aim is to translate every other language than english into english, the target language is set to english. The source language and the to be translated feedback are gotten from the corresponding fields of the custom business object.
 The request body in JSON format looks this way.
@@ -322,10 +315,9 @@ DATA lv_request_body TYPE string.
 CONCATENATE '{"sourceLanguage": "' bonus_entitlement-feedbackslanguage '","targetLanguages": ["en"],"units": [{"value": "' bonus_entitlement-feedback '"}]}' INTO lv_request_body.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Code service request creation)]
+### Code service request creation
+
 Create the service request and set several properties
 
 ```abap
@@ -346,10 +338,9 @@ EXPORTING
     ).
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Code request sending and response processing)]
+### Code request sending and response processing
+
 
 1. Implement sending the request by the use of the before created HTTP client and receive the response.
 
@@ -407,10 +398,9 @@ EXPORTING
 ```
 5. Publish the After Modification logic.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test the application)]
+### Test the application
+
 1. Go to **Home** of your SAP S/4HANA system's Fiori Launchpad.
 
     ![Fiori Home Button](FioriHomeButton.png)
@@ -428,13 +418,11 @@ EXPORTING
 
 5. **Save** the Bonus Entitlement. The translation will get filled.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

@@ -1,29 +1,32 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Start a Discussion, Comment and Share your Story
-description: Explore the collaboration features of SAP Analytics Cloud
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Start a Discussion, Comment and Share your Story
+<!-- description --> Explore the collaboration features of SAP Analytics Cloud
+
 ## Prerequisites
 - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to create bookmarks
   - How to start a discussion
   - How to use comments
   - How to share your story
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Bookmark the State of the Story)]
+### Bookmark the State of the Story
+
 
 You can bookmark the state of a story to include the current selections in story filters, input controls, prompts, explorer views, and variances so that you don't need to make these selections repeatedly each time you open the story.
 
@@ -39,10 +42,9 @@ To open a saved bookmark, click **Tools** > **Bookmark** > **Open Saved Bookmark
 
 ![bookmark 3](Bookmark 3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Collaborate with Discussions)]
+### Collaborate with Discussions
+
 
 Discussions are useful for communicating and collaborating across teams on analytics. To start a discussion, click on the collaboration icon on the top right corner of the SAP Analytics Cloud **Shell Bar**.
 
@@ -54,11 +56,10 @@ From there, you simply need to invite participants to the discussion. Some more 
 
 ![discussion 2](Discussion 2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Communicate with Comments)]
+### Communicate with Comments
+
 
 Another feature used for collaboration in SAP Analytics Cloud are comments. They are useful for giving feedback and communicating on specific areas of your stories such as data points. To insert a comment, right click within an area of a chart. Then click **+ Add** > **Comment**. It can also be accessed through the **Chart Action Menu**.
 
@@ -66,10 +67,9 @@ Another feature used for collaboration in SAP Analytics Cloud are comments. They
 
 Your team members will then get notified via email of your comment and vice versa. This way, you're always notified of recent comments and replies from others.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Share your Story)]
+### Share your Story
+
 
 The ability to share content with others is an important collaborative feature of SAP Analytics Cloud.
 
@@ -91,12 +91,9 @@ As you share content, it is best practice to share your content with the appropr
 
 > All features above require a full account (non-trial account) for SAP Analytics Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

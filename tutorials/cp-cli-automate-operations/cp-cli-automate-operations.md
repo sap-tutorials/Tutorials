@@ -1,14 +1,30 @@
 ---
-title: Automate Account Operations with the Command Line Interface (CLI)
-description: Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
+parser: v2
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
+creator_name: Benjamin Buehner
+creator_profile: https://github.com/BeSAP
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-business-technology-platform, software-product-function>sap-btp-cockpit, software-product-function>sap-btp-command-line-interface]
-primary_tag: products>sap-business-technology-platform
+tags: [tutorial>intermediate, software-product-function>sap-btp-cockpit, software-product-function>sap-btp-command-line-interface]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
+# Automate Account Operations with the Command Line Interface (CLI)
+<!-- description --> Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
+
+## Prerequisites
+-	You have an account on SAP BTP. You can check out steps 1-7 of the tutorial on how to [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account) (we will automate the rest in this tutorial here). 
+-	You have the Cloud Foundry CLI, as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+- You have a UNIX-like environment.
+
+
+## You will learn  
+- How to use a script to automate account admin processes
+
+---
+
+## Intro
 With the introduction of cloud management tools feature set B to SAP BTP, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP BTP.
 
 The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
@@ -16,9 +32,7 @@ The REST APIs are offered for each administrative operation available in t
 If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (btp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
 
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
-
-### About this tutorial
-
+## About this tutorial
 In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
 Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
@@ -38,7 +52,7 @@ For this example, you can download an automation script that we've prepared in a
 
 The script will do the following: 
 
-1.  Log in to your global account on  SAP BTP. 
+1.  Log in to your global account on SAP BTP. 
 
 2.  Create a new directory in your account model. 
 
@@ -52,39 +66,32 @@ The script will do the following: 
 
 7.  Create a space in the Cloud Foundry org of one of the subaccounts.
 
-8.  Create an instance of the SAP HANA Cloud (`hana`) service in the space.
+8.  Create an instance of the SAP HANA Cloud (`hana-free`) service in the space.
 
 Through this tutorial, we hope we can help you to unleash the power of CLI script-based automation for your account admin processes on SAP BTP.
 
-## Prerequisites
--	You have a trial account on SAP BTP. For a trial account, see [Get a Free Account on SAP BTP Trail](hcp-create-trial-account).
--	You have the Cloud Foundry CLI, as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
-- You have a UNIX-like environment.
-
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download and install the client)]
+### Download and install the client
+
 To get started with the SAP BTP command line interface (btp CLI), please follow [this tutorial](cp-sapcp-getstarted).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the script file)]
+### Download the script file
+
 Download the automation script file from GitHub: <https://github.com/SAP-samples/cp-cli-automate-operations>
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Change the declarations)]
-In this step, you need to open the script file in your favorite text editor and enter the values in each placeholder according to your trial account and the names and custom properties of the directories and subaccounts that you want to create.
+### Change the declarations
+
+In this step, you need to open the script file in your favorite text editor and enter the values in each placeholder according to your account and the names and custom properties of the directories and subaccounts that you want to create.
 
 These lines declare global variables that will be used in the script. 
 
 ```Bash
-declare region="<enter your trial region, e.g., eu10, us10, ap21>"
-declare global_account_subdomain="<enter your trial global account subdomain, see below where it is located>"
+declare region="<enter your region, e.g., eu10, us10, ap21>"
+declare global_account_subdomain="<enter your global account subdomain, see below where it is located>"
 declare directory_name="<enter a name for the directory of the new project, e.g., Project X>"
 declare directory_description="<enter a description for the directory of the new project, e.g., Directory for project X of partner Y>"
 declare contact_person="<enter the email address of your partner company´s contact person>"
@@ -101,11 +108,9 @@ The delay of 15 seconds will allow asynchronous processes to finish.
 >![The name of the subdomain](subdomain_name2.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Understand the script
 
-[ACCORDION-BEGIN [Step 4: ](Understand the script)]
 Let's take a closer look at the script we've provided to understand it better.
 
 This tells the script to stop executing in case of errors:
@@ -149,7 +154,7 @@ login_btp() {
 >Two-factor authentication is only relevant for Password grant type authorization.
 
 
-The following function creates a new directory in your trial global account, with the name and description that you provided in Step 3.
+The following function creates a new directory in your global account, with the name and description that you provided in Step 3.
 
 In addition, it sets the directory features, admin, and custom properties. 
 There are two custom properties here: 
@@ -187,8 +192,8 @@ The following function assigns the service and plan it receives as input, as an 
 
 In the `main` function of the script, we'll use the following function to assign two service entitlements to your directory:  
 
--	SAP Alert Notification service (`standard`)
--	SAP HANA Cloud (`hana`)
+-	SAP Alert Notification service (`free`)
+-	SAP HANA Cloud (`hana-free`)
 
 Since `distribute` and `auto-assign` are specified, every subaccount that is created in or moved to the directory will automatically be assigned these entitlements as well (as long as the directory has remaining quota for these services). 
 
@@ -263,7 +268,7 @@ create_cf_environment() {
       --subaccount "$subaccount_id" \
       --environment cloudfoundry \
       --service cloudfoundry \
-      --plan standard \
+      --plan free \
       --parameters "{\"instance_name\":\"$display_name\"}"
 
 }
@@ -342,8 +347,8 @@ main() {
   log "Directory creation initiated, ID is $directory_id"
 
   # Add two service entitlements that child subaccounts will get
-  assign_distributed_entitlement "$directory_id" alert-notification standard
-  assign_distributed_entitlement "$directory_id" hana-cloud-trial hana
+  assign_distributed_entitlement "$directory_id" alert-notification free
+  assign_distributed_entitlement "$directory_id" hana-cloud hana-free
 
   # Create the dev, test, prod subaccounts in the directory
   log Initiating creation of subaccounts ...
@@ -371,9 +376,9 @@ main() {
   # Create new space and target it
   create_new_space "$org" "$space"
 
-  # Create SAP HANA Cloud trial service instance in targeted space
-  echo Creating SAP HANA Cloud trial service ...
-  cf create-service hana-cloud-trial hana hana_instance \
+  # Create SAP HANA Cloud service instance in targeted space
+  echo Creating SAP HANA Cloud service ...
+  cf create-service hana-cloud hana-free hana_instance \
     -c '
       {
         "data": {
@@ -398,62 +403,60 @@ main "$@"
 ```
 
 
-[VALIDATE_3]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the script)]
+
+### Run the script
+
 
 Now, save your changes and change the file extension to `.sh`.
 
 Open your terminal in the location in which you saved it, then execute it using the following command: `bash <filename>.sh`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](See the results)]
+### See the results
 
-Once the script has finished executing, open your SAP BTP Trial cockpit and locate the new directory, subaccounts, entitlements, org, space, and the instance of the SAP HANA Cloud service. 
+
+Once the script has finished executing, open your SAP BTP cockpit and locate the new directory, subaccounts, entitlements, org, space, and the instance of the SAP HANA Cloud service. 
 
 Here's what you should find.
 
 The **Subaccounts** page contains the three new subaccounts:
 
-!![Subaccounts](subaccounts2.png)
+<!-- border -->![Subaccounts](subaccounts2.png)
 
 The title view in the **Directories** page shows the new directory:
 
-!![Directory](directories2.png)
+<!-- border -->![Directory](directories2.png)
 
 The tree view in the **Directories** page shows your global, the new directory, and the new subaccounts under the new directory:
 
-!![Directories and subaccounts](directoriesAndSubaccounts2.png)
+<!-- border -->![Directories and subaccounts](directoriesAndSubaccounts2.png)
 
 In the **Entitlements** > **Entity Assignments** page, the Alert Notification and SAP HANA Cloud services are assigned to the new directory:
 
-!![Entity assignments](entityAssignments2.png)
+<!-- border -->![Entity assignments](entityAssignments2.png)
 
 In the **Services** > **Service Instances** page, the Cloud Foundry environment has been enabled and an instance of the SAP HANA Cloud service has been created in the Cloud Foundry org:
 
-!![Service instance](instance2.png)
+<!-- border -->![Service instance](instance2.png)
 
 That was pretty fast, right?
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself – 1)]
+
+### Test yourself – 1
+
 
 Try two more questions:
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself – 2)]
 
-[VALIDATE_5]
-[ACCORDION-END]
+### Test yourself – 2
+
+
+
 
 
 ---

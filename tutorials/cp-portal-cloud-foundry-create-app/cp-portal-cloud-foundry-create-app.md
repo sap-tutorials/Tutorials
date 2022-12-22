@@ -1,6 +1,5 @@
 ---
-title: Develop an SAPUI5 App for a Portal Site (Cloud Foundry)
-description: Create an app module in SAP Web IDE and set up its navigation so that it can be used in a Portal site.
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
@@ -9,40 +8,42 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
+# Develop an SAPUI5 App for a Portal Site (Cloud Foundry)
+<!-- description --> Create an app module in SAP Web IDE and set up its navigation so that it can be used in a Portal site.
+
 ## Prerequisites
  If you are using your own account and not a trial account, then do the following:
     - Set up your Cloud Foundry environment for development by following the instructions in the tutorial: [Prepare the SAP Cloud Platform Cloud Foundry Environment for Developement (non-trial account)](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-prepare-dev.html)
     - Since we'll be using SAP Web IDE for development in your production account, you should access SAP Web IDE on SAP Cloud Platform on the Neo environment.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an SAPUI5 app module in SAP Web IDE
   - How to configure the navigation properties of this app so that it can be launched from the launchpad module that you will create later.
 
+## Intro
 When developing apps in the Cloud Foundry environment, you create a Multi-Target Application (MTA) file in SAP Web IDE. Each SAP Fiori app is developed as an SAPUI5 module of the MTA.
 
 In this tutorial, you will create an MTA with one SAPUI5 module as well as a launchpad module.
 
 
-[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
+### Launch SAP Web IDE
+
 
 Select SAP Web IDE from your trial environment.
 
 ![Launch SAP Web IDE](0_open_webide.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an MTA project with an SAPUI5 module)]
+### Create an MTA project with an SAPUI5 module
+
 
 To do this step, follow this [tutorial](cp-cf-fioriapps-create). You need to ONLY do steps 1-5 (inclusive).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure navigation for the UI module)]
+### Configure navigation for the UI module
+
 
 You've created your MTA project with an SAPUI5 app module called `FioriDemo` in step 1 and now you'll configure its navigation target. These navigation settings will enable your `FioriDemo` app to be launched from the launchpad module that you'll create in the next tutorial.
 
@@ -82,5 +83,4 @@ Configure the navigation settings as follows:
 
 Now you can add your app to a launchpad module. We will do this in the next tutorial.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

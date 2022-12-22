@@ -1,27 +1,30 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
-title: Apply a Theme and Next Steps
-description: Apply a customized theme to your story and learn about the next steps to take in your journey of learning SAP Analytics Cloud
+parser: v2
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Apply a Theme and Next Steps
+<!-- description --> Apply a customized theme to your story and learn about the next steps to take in your journey of learning SAP Analytics Cloud
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to apply a theme and adjust styling options
   - Where to learn more about SAP Analytics Cloud
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Apply a Theme and Adjust Styling Options)]
+### Apply a Theme and Adjust Styling Options
+
 
 In Preferences, you can apply default page properties such as page background to both responsive and canvas pages. Furthermore, you can customize the font, color, and color palettes of story tiles such as charts, tables, shapes, input controls, and others.
 
@@ -67,10 +70,9 @@ Let's apply a custom color palette to our story that is based on our corporate c
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/d1ab3f5e52284e149da16a0aff691fbc.html) to learn more.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Format and Style Items)]
+### Format and Style Items
+
 
 Let's further customize our story styling by making the top lane black with white text within as well as applying a grey gradient to our left lane.
 
@@ -123,11 +125,10 @@ Your dashboard should now look like this:
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/a17d1b4103fb45d79199710310afb65a.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Update Titles and Dynamic Texts)]
+### Update Titles and Dynamic Texts
+
 
 Let's create a dynamic text that automatically updates the text based on the source input control or filter.
 
@@ -157,7 +158,7 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 ![Update Titles](Update Titles 2.png)
 
-**31.**	In the Sales Summary page, update the left lane title to "Page Filters"  
+**31.**	In the Sales Manager Overview page, update the left lane title to "Page Filters"  
 
 **32.**	Select **Remove** in the **Chart Action Menu** of the empty text object
 
@@ -165,10 +166,9 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 > It is best practice to save regularly. Before moving on, click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Next Steps)]
+### Next Steps
+
 
 Congratulations on completing the last group of tutorials! You have now learned the capabilities offered in SAP Analytics Cloud and created an entire dashboard. With this knowledge, you can now interact with and create dashboards on your own.
 
@@ -181,12 +181,9 @@ Here are a few resources to learn more about SAP Analytics Cloud:
 
 We wish you all the best in your journey of learning, using, and creating in SAP Analytics Cloud!
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

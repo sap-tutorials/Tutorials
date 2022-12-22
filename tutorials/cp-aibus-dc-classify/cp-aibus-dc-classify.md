@@ -1,6 +1,5 @@
 ---
-title: Classify Documents with Document Classification
-description: Find out how to classify the documents you uploaded to Document Classification using your machine learning model.
+parser: v2
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification, tutorial>license]
@@ -9,16 +8,20 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Classify Documents with Document Classification
+<!-- description --> Find out how to classify the documents you uploaded to Document Classification using your machine learning model.
+
+## You will learn
   - How to classify documents using your Document Classification machine learning model
   - How to evaluate the performance of your model
 
+## Intro
 Based on your deployed machine learning model you can now classify documents. For more information, see [Document Classification](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Classify documents)]
+### Classify documents
+
 
 As your machine learning model is now deployed it can be used to classify documents.
 
@@ -30,11 +33,10 @@ Once the classification is done, the result for every tested document is printed
 
 ![Classification Results](classification-results.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Display the classification and ground truth)]
+### Display the classification and ground truth
+
 
 To actually compare the predictions with the true value, you can print out the ground truth (true value) in addition to the predictions made by the service. In this case, the ground truth is the actual language of the document.
 
@@ -44,11 +46,10 @@ Click the next cell and click **Run**. This prints out the ground truth and the 
 
 In the example above, the ground truth for the language is `German`. The service predicted `German` with a probability of 0.85 and it was able to eliminate `English` and `Other` completely. The service only confused it with `Both` (German and English language) but only with a very small probability. In other words, the service made a very accurate prediction here.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Measure performance in a confusion matrix)]
+### Measure performance in a confusion matrix
+
 
 Another tool to measure the overall performance of the model is the confusion matrix. The matrix shows how many documents were wrongly classified, for example, how many documents were confused into a wrong class by the service.
 
@@ -66,11 +67,9 @@ Nevertheless, this is a great result and it is also reflected in the great accur
 
 You have now successfully classified documents and evaluated the performance of your machine learning model. Feel free to modify this notebook to classify your own documents or to use a different dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

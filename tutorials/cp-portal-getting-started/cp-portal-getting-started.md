@@ -1,24 +1,26 @@
 ---
-title: Prepare the Portal Environment for Creating Sites (Neo)
-description: Prepare your environment so you can create Portal freestyle sites.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 time: 10
 ---
 
+# Prepare the Portal Environment for Creating Sites (Neo)
+<!-- description --> Prepare your environment so you can create Portal freestyle sites.
+
 ## Prerequisites  
  - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account).
 
-## Details
-### You will learn  
+## You will learn  
   - How to open SAP Cloud Platform cockpit
   - How to open your trial subaccount
   - How to enable the SAP Cloud Platform Portal service
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
+### Open SAP Cloud Platform cockpit
+
 
 1. Go to [SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
@@ -28,10 +30,9 @@ time: 10
 
     ![User name and password](2-user-name-and-password.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open your trial subaccount)]
+### Open your trial subaccount
+
 
 1. Select **Neo Trial**.
 
@@ -41,10 +42,9 @@ time: 10
 
     ![Open trial account](4-open-trial-account.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enable SAP Cloud Platform Portal)]
+### Enable SAP Cloud Platform Portal
+
 
 1. In the SAP Cloud Platform cockpit, click **Services** in the left panel to open the list of services available in your SAP Cloud Platform subaccount.
 
@@ -58,11 +58,10 @@ time: 10
 
     ![Portal Overview Page](1-portal-overview-page.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-  [ACCORDION-BEGIN [Step 4: ](Download resources)]
+  ### Download resources
+
 
 We have provided a set of images for your site, for example, a site logo.
 
@@ -74,8 +73,5 @@ Download the following resources for use in your Portal site (right-click the li
   - [`Testimonial1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial1.jpg)
   - [`Testimonial2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial2.jpg)
 
-[DONE]
-
-[ACCORDION-END]
 
 You have now set up your SAP Cloud Platform subaccount and you are ready to create your site in our next tutorial.

@@ -1,6 +1,5 @@
 ---
-title: Get Familiar with SAP BTP SDK for iOS
-description: Get introduced to the SAP BTP SDK for iOS, SAP Mobile Services, and the power of the SDK.
+parser: v2
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -9,22 +8,23 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool
 time: 15
 ---
 
-## Prerequisites
+# Get Familiar with SAP BTP SDK for iOS
+<!-- description --> Get introduced to the SAP BTP SDK for iOS, SAP Mobile Services, and the power of the SDK.
 
+## Prerequisites
 - **Group:** [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
 - **SAP BTP SDK for iOS:** Version 7.0 or higher
 
-## Details
 
-### You will learn  
-
+## You will learn  
 - A basic understanding of the SAP BTP SDK for iOS, SAP Mobile Services
 - How to create an app fast
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is SAP BTP SDK for iOS?)]
+### What is SAP BTP SDK for iOS?
+
 
 The SAP BTP SDK for iOS is an SDK built to give you the best in place business ready native SDK for iOS development. The idea is to give a set of tools to developers to build native business apps that not only run smooth on the iOS platform but also give a business like user experience.
 
@@ -42,14 +42,13 @@ This tutorial series will not only show you how to get started with the SDK, SAP
 
 > The full project as a reference, you can find [here](https://github.com/SAP-samples/cloud-sdk-ios-maccatalyst-mission-project).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Frameworks available to you)]
+### Frameworks available to you
+
 
 The way the SAP BTP SDK for iOS is structured is that you have full flexibility using the included frameworks.
 
-!![Key Frameworks](fiori-ios-scpms-starter-mission-01-0.png)
+<!-- border -->![Key Frameworks](fiori-ios-scpms-starter-mission-01-0.png)
 
 |  Framework                          | Description
 |  :---------------------------       | :-------------
@@ -62,10 +61,9 @@ The way the SAP BTP SDK for iOS is structured is that you have full flexibility 
 
 In this tutorial mission you, will use most of these frameworks to build your first app.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Tools for building apps)]
+### Tools for building apps
+
 
 With the SAP BTP SDK for iOS, SAP provides you with three tools to build business-ready apps.
 
@@ -79,11 +77,10 @@ When downloading the SAP BTP SDK for iOS, it will come packaged in the SAP BTP S
 
 In the Assistant, you can define a set of features you want to use as well as different options for UI generation.
 
-!![Assistant](fiori-ios-scpms-starter-mission-01-1.png)
+<!-- border -->![Assistant](fiori-ios-scpms-starter-mission-01-1.png)
 
 The main benefit of the Assistant is that it generates your complete model and data service layer in your app based on the metadata document of your OData service. This leaves you far more time focusing on the user experience of your app.
 
-!![Development Time](fiori-ios-scpms-starter-mission-01-2.gif)
+<!-- border -->![Development Time](fiori-ios-scpms-starter-mission-01-2.gif)
 
-[VALIDATE_3]
-[ACCORDION-END]
+

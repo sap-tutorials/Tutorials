@@ -1,11 +1,13 @@
 ---
-title: Generate a RAP Business Service With The Wizard
-description: Generate a RAP business service in SAP BTP ABAP Environment using the ABAP Repository Objects Wizard
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-btp--abap-environment]
 primary_tag: programming-tool>abap-development
 ---
+
+# Generate a RAP Business Service With The Wizard
+<!-- description --> Generate a RAP business service in SAP BTP ABAP Environment using the ABAP Repository Objects Wizard
 
 ## Prerequisites
 - You have done one of the following:
@@ -13,43 +15,42 @@ primary_tag: programming-tool>abap-development
     - You have bought a licensed version of SAP BTP ABAP Environment
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 
-## Details
-### You will learn
+## You will learn
   - How to generate the artifacts you need to create a RAP business service. (RAP is the ABAP RESTful Application Programming Model)
   - You can then implement your business logic much more quickly than if you had to create each artifact by hand
 
+## Intro
 Throughout this tutorial, object names may include a suffix or group number, such as `####`. Always replace this with your own group number or initials.
-
 For more information, see the links at the end of this tutorial.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create package)]
+### Create package
+
 1. Create a new package for this tutorial, by choosing **New > ABAP Package**.
 
-    !![step1a-new-package](step1a-new-package.png)
+    <!-- border -->![step1a-new-package](step1a-new-package.png)
 
 2. Enter the following then follow the wizard, choosing a **new** transport request:
     - Name: **`ZRAP_TRAVEL_####`**
     - Description: **Travel data generated**
     - Request description: **Travel service RAP Generator**
 
-    !![step1a-create-package](step1a-create-package.png)
-    !![step1b-new-tr](step1b-new-tr.png)
+    <!-- border -->![step1a-create-package](step1a-create-package.png)
+    <!-- border -->![step1b-new-tr](step1b-new-tr.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create database table)]
+### Create database table
+
 1. Choose your package, then choose **New > Other Repository Object** from the context menu.
 
-    !![step2a-choose-other](step2a-choose-other.png)
+    <!-- border -->![step2a-choose-other](step2a-choose-other.png)
 
 2. Choose **Database Table** then **Next**.
 
-    !![step2b-choose-table](step2b-choose-table.png)
+    <!-- border -->![step2b-choose-table](step2b-choose-table.png)
 
 3. Enter the following, then choose **Next**.
     - Name: **`zrap_travel_####`**
@@ -90,7 +91,7 @@ For more information, see the links at the end of this tutorial.
 
 8. Optional: Check your table by clicking in the editor and choosing **Open With > Data Preview**.
 
-    !![step2c-data-preview](step2c-data-preview.png)
+    <!-- border -->![step2c-data-preview](step2c-data-preview.png)
 
     > You must include a key field `client` with the type `abap.clnt`.
 
@@ -113,14 +114,13 @@ For more information, see the links at the end of this tutorial.
 
 For more information, see the SAP Help Portal: [ABAP RESTful Application Programming Model: RAP Reuse Data Elements](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/84bd58e2b9354be4a7a1c91cb687815c.html)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Generate objects from table)]
+### Generate objects from table
+
 1. Select your table and choose **Generate ABAP Repository objects...** from the context menu.
 
-    !![step3a-choose-rap-gen](step3a-choose-rap-gen.png)
+    <!-- border -->![step3a-choose-rap-gen](step3a-choose-rap-gen.png)
 
 2. Enter the following and choose **Next**.
 
@@ -132,7 +132,7 @@ For more information, see the SAP Help Portal: [ABAP RESTful Application Program
     - Data definition name: **`ZI_TRAVEL_####X`**
     - Alias name: **Travel**
 
-    !![step3b-enter-data-def](step3b-enter-data-def.png)
+    <!-- border -->![step3b-enter-data-def](step3b-enter-data-def.png)
 
 4. Enter the following information for each artifact, then choose **Next**:
 
@@ -153,33 +153,32 @@ For more information, see the SAP Help Portal: [ABAP RESTful Application Program
 
 5. The system displays a list of objects that will be generated. Choose **Next**
 
-    !![step3c-preview-gen-output](step3c-preview-gen-output.png)
+    <!-- border -->![step3c-preview-gen-output](step3c-preview-gen-output.png)
 
 6. Choose the transport request, then choose **Finish**.
 
 The artifacts are generated. You can now see them in the **Project Explorer**.
 
-!![step3d-artifacts-in-project-explorer](step3d-artifacts-in-project-explorer.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![step3d-artifacts-in-project-explorer](step3d-artifacts-in-project-explorer.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Test your business service)]
+
+### Test your business service
+
 1. The service binding appears automatically in a new editor.
 
-    !![step4a-service-binding-unpublished](step4a-service-binding-unpublished.png)
+    <!-- border -->![step4a-service-binding-unpublished](step4a-service-binding-unpublished.png)
 
 2. Publish the service binding.
 
-    !![step4a-activate](step4a-activate.png)
+    <!-- border -->![step4a-activate](step4a-activate.png)
     .
-    !![step4c-sb-publish](step4c-sb-publish.png)
+    <!-- border -->![step4c-sb-publish](step4c-sb-publish.png)
 
 
 3. You now have a fully-fledged business service for which a Fiori app (based on the Fiori Elements List Reporting template) can be generated. Test this in the Fiori Elements preview, by choosing the **Travel** entity set from the service binding, then choosing **Preview**.
 
-    !![step4d-sb-preview](step4d-sb-preview.png)
+    <!-- border -->![step4d-sb-preview](step4d-sb-preview.png)
 
 The service appears in the Fiori Elements preview.
 
@@ -189,15 +188,13 @@ You can create a new **Travel** - but of course there is no value help or valida
 
 > IMPORTANT: If you later add a new CDS view entity to the compositional structure of the data model, make sure that you also extend the behavior definition for the new BO entities. Otherwise your business service will show errors.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ### More information

@@ -1,6 +1,5 @@
 ---
-title: SAP HANA XS Advanced - Web Sockets within Node.js SAP HANA applications
-description: Using web sockets with Node.js and SAP HANA
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -8,19 +7,22 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 time: 15
 ---
 
+# SAP HANA XS Advanced - Web Sockets within Node.js SAP HANA applications
+<!-- description --> Using web sockets with Node.js and SAP HANA
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Text Bundles](https://developers.sap.com/tutorials/xsa-node-text.html)
 
-## Details
-### You will learn  
+## You will learn  
 This section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients.
 
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Require new module)]
+### Require new module
+
 
 Add an express route handler for this `chatServer` module and pass the server variable in as well.  
 
@@ -42,11 +44,9 @@ module.exports = (app, server) => {
 };
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Add route handler
 
-[ACCORDION-BEGIN [Step 2: ](Add route handler)]
 
 Create a file called `chatServer.js` inside your `routes` folder with the following code:
 
@@ -113,11 +113,9 @@ module.exports = function (server) {
 
 >Note: You can find more information on the `WebSockets` module and how it works the their [GitHub repository](https://github.com/websockets/ws)
 
-[DONE]
 
-[ACCORDION-END]
+### Create a UI5 interface
 
-[ACCORDION-BEGIN [Step 3: ](Create a UI5 interface)]
 
 The file structure for this interface will be simple as it is not the focus for this tutorial. Create a folder called `exerciseChat` in your web module, in `resources`:
 
@@ -487,11 +485,9 @@ Finally create a file named `manifest.json` in the `exerciseChat` folder. This i
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Build and Run
 
-[ACCORDION-BEGIN [Step 4: ](Build and Run)]
 
 This is what the file structure for the web module should look like.
 
@@ -501,11 +497,9 @@ Run the `core_node` module first and then run the `web` module. Remember to chan
 
 ![web module](4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Test the Chat
 
-[ACCORDION-BEGIN [Step 5: ](Test the Chat)]
 
 Open a second web browser with the same URL. You can test the chat by chatting with yourself:
 
@@ -513,6 +507,3 @@ Open a second web browser with the same URL. You can test the chat by chatting w
 
 All messages are being pushed out into all listeners. You can open a third chat window to test this.
 
-[DONE]
-
-[ACCORDION-END]

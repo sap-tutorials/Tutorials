@@ -1,23 +1,26 @@
 ---
-title: Use Machine Learning to Extract Information from Documents with Swagger UI
-description: Get machine learning model predictions for the documents you upload to Document Information Extraction.
+parser: v2
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
-## Details
-### You will learn
+# Use Machine Learning to Extract Information from Documents with Swagger UI
+<!-- description --> Get machine learning model predictions for the documents you upload to Document Information Extraction.
+
+## You will learn
   - How to call and test Document Information Extraction
   - How to access and use Swagger UI (User Interface)
   - How to extract information from files with Document Information Extraction
 
+## Intro
 The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
+### Authorize Swagger UI
+
 
 You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
@@ -25,11 +28,11 @@ In the service key you created for Document Information Extraction in the previo
 
 1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
 
-    !![DOX](png-files/service-key-details.png)
+    <!-- border -->![DOX](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    !![DOX](png-files/swagger0.png)
+    <!-- border -->![DOX](png-files/swagger0.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
@@ -37,37 +40,36 @@ In the service key you created for Document Information Extraction in the previo
     Bearer <access_token>
     ```
 
-    !![DOX](png-files/Authorize.png)
+    <!-- border -->![DOX](png-files/Authorize.png)
 
 4. Click **Authorize**, and then click **Close**.
 
-    !![DOX](png-files/Authorize2.png)
-
-[VALIDATE_1]
-[ACCORDION-END]
+    <!-- border -->![DOX](png-files/Authorize2.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](See list of document fields you can extract)]
+
+
+### See list of document fields you can extract
+
 
 Use the **GET /capabilities** endpoint to see the list of document fields and enrichment data for each document type you can process with Document Information Extraction.
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
-!![DOX](png-files/capabilities.png)
+<!-- border -->![DOX](png-files/capabilities.png)
 
-!![DOX](png-files/capabilities2.png)
+<!-- border -->![DOX](png-files/capabilities2.png)
 
 You should receive a response like the following:
 
-!![DOX](png-files/capabilitiesResponse.png)
+<!-- border -->![DOX](png-files/capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get client)]
+### Get client
+
 
 When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
@@ -81,17 +83,16 @@ Trial users can only create one client. To see your list of clients:
 
 4. Click **Execute**.
 
-!![DOX](png-files/listClient.png)
+<!-- border -->![DOX](png-files/listClient.png)
 
 You should receive a response like the following:
 
-!![DOX](png-files/listClientResponse.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![DOX](png-files/listClientResponse.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Delete client)]
+
+### Delete client
+
 
 Use the **DELETE /clients** endpoint to delete the `default` client.
 
@@ -103,17 +104,16 @@ Use the **DELETE /clients** endpoint to delete the `default` client.
 
 4. Click **Execute**.
 
-!![DOX](png-files/deleteClient.png)
+<!-- border -->![DOX](png-files/deleteClient.png)
 
 You should receive a response like the following:
 
-!![DOX](png-files/deleteClientResponse.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![DOX](png-files/deleteClientResponse.png)
 
 
-[ACCORDION-BEGIN [Step 5: ](Create client)]
+
+### Create client
+
 
 Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
 
@@ -125,11 +125,11 @@ Use the **POST /clients** endpoint to create your own client. The **`clientId`**
 
 4. Click **Execute**.
 
-!![DOX](png-files/createClient.png)
+<!-- border -->![DOX](png-files/createClient.png)
 
 You should receive a response like the following:
 
-!![DOX](png-files/createClientResponse.png)
+<!-- border -->![DOX](png-files/createClientResponse.png)
 
 You can repeat step 3 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
@@ -145,11 +145,10 @@ You can repeat step 3 to see the **`clientId`** and **`clientName`** of the clie
 >- Maximum 10 created enrichment `dataIds`
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Upload document)]
+### Upload document
+
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
@@ -220,19 +219,18 @@ Do the following:
 
 5. Click **Execute**.
 
-!![DOX](png-files/testInvoice.png)
+<!-- border -->![DOX](png-files/testInvoice.png)
 
 After you have clicked **Execute**, you should receive a response like the following:
 
-!![DOX](png-files/testInvoiceResult.png)
+<!-- border -->![DOX](png-files/testInvoiceResult.png)
 
 Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](See extracted fields)]
+### See extracted fields
+
 
 You can now use the **GET /document/jobs/{`id`}** endpoint to receive the prediction.
 
@@ -246,11 +244,11 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 5. Click **Execute**.
 
-!![DOX](png-files/getResults.png)
+<!-- border -->![DOX](png-files/getResults.png)
 
 You should receive a response like the following:
 
-!![DOX](png-files/getResultsResponse.png)
+<!-- border -->![DOX](png-files/getResultsResponse.png)
 
 In the response, you will find some general information about the document you uploaded. In `headerFields`, such as `documentDate` and `taxAmount`, and in `lineItems`, such as `description` and `quantity`, you will find the prediction for the extracted fields.
 
@@ -264,5 +262,3 @@ You can repeat step 4 and delete the client you created in step 5.
 
 Congratulations, you have completed this tutorial.
 
-[DONE]
-[ACCORDION-END]

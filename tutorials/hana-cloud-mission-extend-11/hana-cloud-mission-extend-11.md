@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Access Data from Google BigQuery in SAP HANA Cloud, SAP HANA Database
-description: Create a remote connection to Google BigQuery in SAP HANA Cloud, SAP HANA database to virtualize data.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Access Data from Google BigQuery in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Create a remote connection to Google BigQuery in SAP HANA Cloud, SAP HANA database to virtualize data.
 
 ## Prerequisites
 - A **running** SAP HANA Cloud, SAP HANA database instance in a trial or production environment.
@@ -15,12 +17,12 @@ primary_tag: software-product>sap-hana-cloud
 - Completion of the [previous tutorial in this group](hana-cloud-mission-extend-10) is recommended.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a remote source in SAP HANA Cloud, SAP HANA database to Google BigQuery
 - How to virtualise data from Google BigQuery to SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 In this tutorial, you will learn how to add another non-SAP cloud data source to your multi-source data landscape in SAP HANA Cloud, SAP HANA database. If you have data in Google BigQuery, you can create a remote source connection after some initial preparations in Google BigQuery and then access it in SAP HANA Cloud, SAP HANA database via a virtual table.
 
 In addition to the instructions below, you may also watch this video to follow along:
@@ -29,22 +31,23 @@ In addition to the instructions below, you may also watch this video to follow a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare in Google BigQuery)]
+### Prepare in Google BigQuery
+
 
 
 1.	Open the Google Cloud Platform and sign in with your account. You need to have an existing service account with a project and a dataset containing at least one table for the steps in this tutorial.
 2.	In Google BigQuery, go to **IAM & Admin** and click on **IAM**.
 
-    !![GBQ_IAM](ss-01-GBQ-IAM.png)
+    <!-- border -->![GBQ_IAM](ss-01-GBQ-IAM.png)
 
 3.	Create a **Member** or use an existing one and assign either the `BigQuery Admin` role to this member or the roles `BigQuery Data Viewer` and `Big Query User`.
 4.	Go to **service accounts** and click on the three dots under **Actions** in the row of the service account you want to use. Then click on **Create Key**.
 
-    !![GBQ service accounts](ss-02-GBQ-serviceaccounts.png)
+    <!-- border -->![GBQ service accounts](ss-02-GBQ-serviceaccounts.png)
 
 5.	A dialogue will open where you need to specify the key type. Select **JSON** and click on **Create**.
 
-    !![GBQ create key](ss-03-GBQ-createkey.png)
+    <!-- border -->![GBQ create key](ss-03-GBQ-createkey.png)
 
 6.	Open the file that is created (e.g. using Visual Studio Code or a simple text editor). There you will see all the information of the project and client including the credential information you will need in the next steps to create the connection.
 7.	Copy this information from the `JSON` file:
@@ -52,10 +55,9 @@ In addition to the instructions below, you may also watch this video to follow a
     -	`private_key`
     -	`client_email`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add a Google BigQuery certificate to your PSE)]
+### Add a Google BigQuery certificate to your PSE
+
 
 > ### Regarding the SQL code
 >
@@ -65,7 +67,7 @@ In addition to the instructions below, you may also watch this video to follow a
 2.	Set the schema you want to work in.
 3.	Open <https://www.google.com> and copy the **Global Sign root certificate** to a text editor.
 
-    !![GBQ Certificate](ss-04-GBQ-certificate.png)
+    <!-- border -->![GBQ Certificate](ss-04-GBQ-certificate.png)
 
 4.	Create a certificate store, also called PSE (personal security environment), if you have not done so already.
 
@@ -102,11 +104,10 @@ SET PSE SSL PURPOSE REMOTE SOURCE;
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a remote source)]
+### Create a remote source
+
 
 
 1.	To now create a remote source to Google BigQuery, insert the information from the JSON file you downloaded from the Google BigQuery service account (i.e. client-email and private key) into the next SQL statement. In this example, we will name the remote source `BIGQUERY`.
@@ -126,10 +127,9 @@ WITH CREDENTIAL TYPE 'OAUTH' USING 'user=<INSERT CLIENT EMAIL>;password=-----BEG
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a virtual table)]
+### Create a virtual table
+
 
 
 1.	To create a virtual table, you can use the statement below. Make sure to insert the name of the virtual table you want to create followed by the name of the remote source (`BIGQUERY` in this example) as well as the information from the source side in Google BigQuery:
@@ -144,7 +144,7 @@ create virtual table <TARGET_VIRTUAL_TABLE> at "<REMOTE_SOURCE_NAME>"."<GBQ_PROJ
 
 2.	Your virtual table is now created, as you can see under tables in your catalog.
 
-    !![DBX VT](ss-05-DBX-virtual-table.png)
+    <!-- border -->![DBX VT](ss-05-DBX-virtual-table.png)
 
 3.	To check, if the virtual table is working, you can use this statement:
 
@@ -166,14 +166,12 @@ Remember, that if you want to query the data in Google BigQuery, all columns inc
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---
