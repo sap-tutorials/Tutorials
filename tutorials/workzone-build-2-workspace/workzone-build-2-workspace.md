@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a workspace and add content to it that you can share with other members of your workspace.
 
 ## Prerequisites
-You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
+You have an environment set up and you can access your SAP Build Work Zone, advanced edition
 &nbsp;
 >**SAP Build Work Zone, advanced edition is not available in a trial account.**
 
