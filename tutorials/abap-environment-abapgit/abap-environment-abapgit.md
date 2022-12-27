@@ -56,7 +56,8 @@ author_profile: https://github.com/niloofar-flothkoetter
 
     ![create](abapgit16.png)
 
-  3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT** or **ZABAPGIT_STANDALONE** program and press **Execute**.
+  3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT_STANDALONE** program and press **Execute**. 
+
 
       ![search program](abapgit1.png)
 
@@ -65,7 +66,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 >You can find all installation information under <https://github.com/abapGit/abapGit> > **Documentation/Guides**.
 
-> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
+> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get issues during import.
 
 
 ### Push ABAP source from on-premise to Git repository
