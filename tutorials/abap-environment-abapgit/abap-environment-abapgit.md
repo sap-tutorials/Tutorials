@@ -58,6 +58,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
   3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT_STANDALONE** program and press **Execute**. 
 
+
       ![search program](abapgit1.png)
 
   4. Now `abapGit` is installed and opened.
