@@ -34,7 +34,7 @@ author_profile: https://github.com/mervey45
 
 ---
 
-### Create SAP Business Application Studio instance
+### Assign role collection to user
 
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
@@ -44,30 +44,6 @@ author_profile: https://github.com/mervey45
   2. Select your subaccount **trial**.
 
       ![assign role collection](bas2.png)
-
-  3. Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
-
-      ![dev](basx.png)
-
-  4. Click **Create**.
-
-      ![dev](bas.png)
-
-  5. Select the default entry and click **Create**.
-
-      ![dev](basxx.png)
-
-  6. Click **View Subscription**.
-
-      ![dev](basx3.png)
-
-
-### Assign role collection to user
-
-
-  1. Select **trial**.
-
-      ![assign role collection](trial3.png)
 
   2. Now you are in the trial overview page. Click **Users** and select your user.
 
