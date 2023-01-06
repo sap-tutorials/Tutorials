@@ -403,6 +403,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
