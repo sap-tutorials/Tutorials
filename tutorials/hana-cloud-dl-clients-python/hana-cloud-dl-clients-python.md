@@ -37,7 +37,7 @@ The first step is to check if Python and pip are installed.
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
-    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
+    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
 
     ![python-install](python-install.png)
 
@@ -260,6 +260,8 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
     Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)  
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries a data lake Relational Engine database.
 

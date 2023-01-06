@@ -63,6 +63,8 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
 
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
+    >The HOMEPATH environment variable should resolve to your user in your users folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
+
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\java
     cd %HOMEPATH%\DataLakeClientsTutorial\java
@@ -99,7 +101,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
                 try {
                     System.out.println("Connection to data lake Relational Engine successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -213,6 +215,8 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
     ```
 
     ![query in DBeaver](dbeaver-select.png)
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database and used the driver in `DBeaver`.
 
