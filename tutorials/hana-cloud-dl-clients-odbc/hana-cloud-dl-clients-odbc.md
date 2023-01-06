@@ -58,11 +58,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![test connection](data-source4.png)  
 
-    > Note that if the test fails, try pressing the OK button to save the data source, then try the test again.
+    >If the test fails, try pressing the OK button to save the data source, then try the test again.
 
 8. Press OK to save the data source.  
 
-    > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
+    >The saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
 
@@ -166,7 +166,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine ODBC driver.  
 
->Note that the ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
+>ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
 
 The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
 

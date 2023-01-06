@@ -99,7 +99,7 @@ There are multiple ways to create a data lake:
 
     ![data lake running](data-lake-running.png)
 
-    >Note that the SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
+    >**Important:** SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
 
 ### Open the SAP HANA cockpit
@@ -290,7 +290,7 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
 
-    > Note that the identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5e4ad6a84f21015ab0c854d2822461a.html).
+    > Identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5e4ad6a84f21015ab0c854d2822461a.html).
 
 For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
@@ -357,7 +357,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     pico ~/.bash_profile
     ```
 
-    >Note that this tutorial uses notepad and `pico` as default text editors, but any text editor will do.
+    >This tutorial uses notepad and `pico` as default text editors, but any text editor will do.
     >`Pico` can be installed on SUSE Linux with
 
     >```Shell (Linux SUSE)
@@ -398,7 +398,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
     ![Connection type](dbisql-connection-type.png)
 
-    > Note that the Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
+    >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
 3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
@@ -418,7 +418,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.xxxx-xxxx.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
-    > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
+    >In a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
     dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
@@ -528,7 +528,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
     Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/7ca3f60902f3473296cb309533d89210.html) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
-    > Note that autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
+    >Autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
     >
     ```SQL
     begin
@@ -543,6 +543,10 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     INSERT INTO HOTEL.ROOM VALUES(11, 'quad', 5, 275.00);
     set temporary option auto_commit= 'on';
     ```
+    >
+    >Autocommit can also be set via the connection settings dialog.
+    >
+    >![autocommit setting](autocommit.png)
 
 2. Notice that pressing ctrl-space brings up auto complete (GUI mode only).
 
