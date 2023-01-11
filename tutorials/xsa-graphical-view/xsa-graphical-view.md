@@ -17,7 +17,7 @@ time: 15
 ## You will learn  
 - How to create a calculation view with a Dimension data type
 - How to perform the basic modelling operations, such as projections and joins
-- This tutorial is also available [as a video](https://www.youtube.com/watch?v=HEiyR7clkrQ)
+- This tutorial is also available [as a video](https://www.youtube.com/watch?v=9MsviYMw5yA)
 
 ---
 
@@ -43,7 +43,8 @@ Use the following code in the file
 **Save** and close the file.
 
 If you do not see the file, go to `View-> Show hidden files`.
-
+
+
 
 ### Create a calculation view
 

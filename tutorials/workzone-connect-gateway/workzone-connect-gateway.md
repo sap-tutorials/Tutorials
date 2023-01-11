@@ -17,7 +17,7 @@ author_profile: https://github.com/LindsayBert
 
 
 ## You will learn
-  - How to create a destination between SAP BTP and the SAP Gateway Demo System account
+  - How to create a destination between SAP BTP and the SAP Gateway Demo System account  
 
 
 ---
@@ -30,7 +30,7 @@ author_profile: https://github.com/LindsayBert
 
 2. Select your subaccount.
 
-    <!-- border -->![Select subaccount](2-click-trial.png)
+    <!-- border -->![Select subaccount](1-click-subaccount.png)
 
 > If you're using an SAP BTP Trial account, after you log in to SAP BTP, you would first need to click **Go To Your Trial Account**.  <!-- border -->![Enter trial account](1-enter-trial-account.png)
 
@@ -47,7 +47,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 1.  In the left navigation panel, click **Destinations** under **Connectivity**.
 
-    <!-- border -->![Open destinations](3-open-destinations.png)
+    <!-- border -->![Open destinations](3-open-destinations.png)  
 
 2. Click **New Destination**.
 

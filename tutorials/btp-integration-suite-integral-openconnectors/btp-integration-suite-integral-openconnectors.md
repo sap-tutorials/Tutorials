@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>sap-cloud-integration, software-product>sap-open-connectors, software-product>sap-business-technology-platform  ]
+tags: [ tutorial>beginner, tutorial>free-tier, software-product>sap-integration-suite, software-product>cloud-integration, software-product>open-connectors, software-product>sap-business-technology-platform  ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez
@@ -15,7 +15,7 @@ author_profile: https://github.com/mariajosesap
  - You have a SAP BTP account or trial account with access to the SAP Integration Suite.
  - You have a Stripe account or trial account.
  - You have a Postman account.
- - You have completed the previous tutorial [Build an Integral SAP Integration Suite project and Consume it from a SAP AppGyver Custom App](btp-integration-suite-integral-project).
+ - You have completed the previous tutorial [Build an Integral SAP Integration Suite project and Consume it from a SAP Build Apps Custom App](btp-integration-suite-integral-project).
 
 ## You will learn
 
@@ -67,7 +67,7 @@ author_profile: https://github.com/mariajosesap
 
 ### Start building your Integration Flow
 
-1. Click on your Integration Flow to start designin it. Then, click on Edit and change the Sender name. Type "AppGyver" as the application sending the call request to this IFlow, in the Sender box.
+1. Click on your Integration Flow to start designing it. Then, click on Edit and change the Sender name. Type "AppGyver" as the application sending the call request to this IFlow, in the Sender box.
 
 2. In the connection tab, add a path to the "address" and uncheck the CSRF box, you are not going to enable it for this Integration flow (IFlow).
 

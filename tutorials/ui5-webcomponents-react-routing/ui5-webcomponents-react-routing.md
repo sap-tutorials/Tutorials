@@ -42,12 +42,12 @@ export function Detail() {
 
 1. Install `react-router-dom`.
 
-    [React Router](https://reacttraining.com/react-router/web/guides/quick-start) is a collection of navigational components that compose declaratively with your application.
+    [React Router](https://reactrouter.com) is a collection of navigational components that compose declaratively with your application.
 
     Execute the following line in the terminal in your root location of the project.
 
     ```Shell
-    npm install react-router-dom --save
+    npm install react-router-dom
     ```
 
 2. Import `HashRouter` in `src/App.js`.
@@ -60,13 +60,9 @@ export function Detail() {
 
     ```JavaScript / JSX
     <HashRouter>
-      <ThemeProvider>
         <MyApp />
-      </ThemeProvider>
     </HashRouter>
     ```
-
-    > You can replace your `div` with the `HashRouter` as the `HashRouter` also functions as container.
 
 ### Create Home component
 
@@ -92,7 +88,7 @@ export function Detail() {
     ```JavaScript / JSX
     import React from "react";
     import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-    import "@ui5/webcomponents-icons/dist/add.js";
+    import addIcon from "@ui5/webcomponents-icons/dist/add.js";
 
     export function MyApp() {
       return (
@@ -106,11 +102,12 @@ export function Detail() {
             }
             primaryTitle="My App"
           >
-            <ShellBarItem icon="add" text="Add" />
+            <ShellBarItem icon={addIcon} text="Add" />
           </ShellBar>
         </div>
       );
     }
+
     ```
 
     And `Home.jsx` like this:
@@ -121,6 +118,7 @@ export function Detail() {
       AnalyticalTable,
       Card,
       CardHeader,
+      CustomListItem,
       FlexBox,
       FlexBoxDirection,
       FlexBoxJustifyContent,
@@ -130,46 +128,44 @@ export function Detail() {
       ProgressIndicator,
       StandardListItem,
       Text,
-      Title,
-      TitleLevel,
-      ValueState
+      ValueState,
     } from "@ui5/webcomponents-react";
-    import { spacing } from "@ui5/webcomponents-react-base";
+    import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-    import "@ui5/webcomponents-icons/dist/line-chart.js";
-    import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-    import "@ui5/webcomponents-icons/dist/list.js";
-    import "@ui5/webcomponents-icons/dist/table-view.js";
+    import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+    import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+    import listIcon from "@ui5/webcomponents-icons/dist/list.js";
+    import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
 
     const dataset = [
       {
         month: "January",
-        data: 65
+        data: 65,
       },
       {
         month: "February",
-        data: 59
+        data: 59,
       },
       {
         month: "March",
-        data: 80
+        data: 80,
       },
       {
         month: "April",
-        data: 81
+        data: 81,
       },
       {
         month: "May",
-        data: 56
+        data: 56,
       },
       {
         month: "June",
-        data: 55
+        data: 55,
       },
       {
         month: "July",
-        data: 40
-      }
+        data: 40,
+      },
     ];
 
     const tableData = new Array(500).fill(null).map((_, index) => {
@@ -178,37 +174,33 @@ export function Detail() {
         age: Math.floor(Math.random() * 100),
         friend: {
           name: `friend.Name${index}`,
-          age: Math.floor(Math.random() * 100)
-        }
+          age: Math.floor(Math.random() * 100),
+        },
       };
     });
 
     const tableColumns = [
       {
         Header: "Name",
-        accessor: "name" // String-based value accessors!
+        accessor: "name", // String-based value accessors!
       },
       {
         Header: "Age",
-        accessor: "age"
+        accessor: "age",
       },
       {
         Header: "Friend Name",
-        accessor: "friend.name"
+        accessor: "friend.name",
       },
       {
         Header: "Friend Age",
-        accessor: "friend.age"
-      }
+        accessor: "friend.age",
+      },
     ];
 
     export function Home() {
       const [toggleCharts, setToggleCharts] = useState("lineChart");
       const [loading, setLoading] = useState(false);
-      const contentTitle =
-        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-      const switchToChart =
-        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
       const handleHeaderClick = () => {
         if (toggleCharts === "lineChart") {
           setLoading(true);
@@ -224,8 +216,12 @@ export function Detail() {
           }, 2000);
         }
       };
+      const contentTitle =
+        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+      const switchToChart =
+        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
       return (
-        <div>
+        <>
           <FlexBox
             justifyContent={FlexBoxJustifyContent.Center}
             wrap={FlexBoxWrap.Wrap}
@@ -241,9 +237,7 @@ export function Detail() {
                   avatar={
                     <Icon
                       name={
-                        toggleCharts === "lineChart"
-                          ? "line-chart"
-                          : "horizontal-bar-chart"
+                        toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
                       }
                     />
                   }
@@ -262,7 +256,7 @@ export function Detail() {
               ) : (
                 <BarChart
                   dimensions={[{ accessor: "month" }]}
-                  measures={[{ accessor: "data" }]}
+                  measures={[{ accessor: "data", label: "Stock Price" }]}
                   dataset={dataset}
                   loading={loading}
                 />
@@ -273,7 +267,7 @@ export function Detail() {
                 <CardHeader
                   titleText="Progress"
                   subtitleText="List"
-                  avatar={<Icon name="list" />}
+                  avatar={<Icon name={listIcon} />}
                 />
               }
               style={{ width: "300px", ...spacing.sapUiContentPadding }}
@@ -291,33 +285,61 @@ export function Detail() {
                 >
                   Activity 2
                 </StandardListItem>
-                <StandardListItem
-                  additionalText="in progress"
-                  additionalTextState={ValueState.Warning}
-                  style={{ height: "80px" }}
-                >
-                  <FlexBox direction={FlexBoxDirection.Column}>
-                    <Title level={TitleLevel.H5}>Activity 3</Title>
-                    <ProgressIndicator value={89} valueState={ValueState.Success} />
+                <CustomListItem>
+                  <FlexBox
+                    direction={FlexBoxDirection.Column}
+                    style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                  >
+                    <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                      <Text
+                        style={{ fontSize: ThemingParameters.sapFontLargeSize }}
+                      >
+                        Activity 3
+                      </Text>
+                      <Text
+                        style={{ color: ThemingParameters.sapCriticalTextColor }}
+                      >
+                        in progress
+                      </Text>
+                    </FlexBox>
+                    <ProgressIndicator
+                      value={89}
+                      valueState={ValueState.Success}
+                      style={{ ...spacing.sapUiTinyMarginTop }}
+                    />
                   </FlexBox>
-                </StandardListItem>
-                <StandardListItem
-                  additionalText="in progress"
-                  additionalTextState={ValueState.Warning}
-                  style={{ height: "80px" }}
-                >
-                  <FlexBox direction={FlexBoxDirection.Column}>
-                    <Title level={TitleLevel.H5}>Activity 4</Title>
-                    <ProgressIndicator value={5} valueState={ValueState.Error} />
+                </CustomListItem>
+                <CustomListItem>
+                  <FlexBox
+                    direction={FlexBoxDirection.Column}
+                    style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                  >
+                    <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                      <Text
+                        style={{ fontSize: ThemingParameters.sapFontLargeSize }}
+                      >
+                        Activity 4
+                      </Text>
+                      <Text
+                        style={{ color: ThemingParameters.sapCriticalTextColor }}
+                      >
+                        in progress
+                      </Text>
+                    </FlexBox>
+                    <ProgressIndicator
+                      value={5}
+                      valueState={ValueState.Error}
+                      style={{ ...spacing.sapUiTinyMarginTop }}
+                    />
                   </FlexBox>
-                </StandardListItem>
+                </CustomListItem>
               </List>
             </Card>
             <Card
               header={
                 <CardHeader
                   titleText="AnalyticalTable"
-                  avatar={<Icon name="table-view" />}
+                  avatar={<Icon name={tableViewIcon} />}
                 />
               }
               style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
@@ -329,7 +351,7 @@ export function Detail() {
               />
             </Card>
           </FlexBox>
-        </div>
+        </>
       );
     }
     ```
@@ -359,7 +381,7 @@ export function Detail() {
           }
           primaryTitle="My App"
         >
-          <ShellBarItem icon="add" text="Add" />
+          <ShellBarItem icon={addIcon} text="Add" />
         </ShellBar>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -391,7 +413,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
         <CardHeader
           titleText="Progress"
           subtitleText="List"
-          avatar={<Icon name="list" />}
+          avatar={<Icon name={listIcon} />}
           interactive
           onClick={handleProgressHeaderClick}
         />
@@ -447,9 +469,8 @@ If needed, you can compare your files with the following code references:
 ```JavaScript / JSX
 import React from "react";
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-import "@ui5/webcomponents-icons/dist/add.js";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import addIcon from "@ui5/webcomponents-icons/dist/add.js";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
 
@@ -470,7 +491,7 @@ export function MyApp() {
         primaryTitle="My App"
         onLogoClick={handleLogoClick}
       >
-        <ShellBarItem icon="add" text="Add" />
+        <ShellBarItem icon={addIcon} text="Add" />
       </ShellBar>
       <Routes>
         <Route path="/home" element={<Home />} />
@@ -486,11 +507,11 @@ export function MyApp() {
 
 ```JavaScript / JSX
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   AnalyticalTable,
   Card,
   CardHeader,
+  CustomListItem,
   FlexBox,
   FlexBoxDirection,
   FlexBoxJustifyContent,
@@ -500,46 +521,45 @@ import {
   ProgressIndicator,
   StandardListItem,
   Text,
-  Title,
-  TitleLevel,
-  ValueState
+  ValueState,
 } from "@ui5/webcomponents-react";
-import { spacing } from "@ui5/webcomponents-react-base";
+import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/line-chart.js";
-import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/list.js";
-import "@ui5/webcomponents-icons/dist/table-view.js";
+import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import listIcon from "@ui5/webcomponents-icons/dist/list.js";
+import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+import { useNavigate } from "react-router-dom";
 
 const dataset = [
   {
     month: "January",
-    data: 65
+    data: 65,
   },
   {
     month: "February",
-    data: 59
+    data: 59,
   },
   {
     month: "March",
-    data: 80
+    data: 80,
   },
   {
     month: "April",
-    data: 81
+    data: 81,
   },
   {
     month: "May",
-    data: 56
+    data: 56,
   },
   {
     month: "June",
-    data: 55
+    data: 55,
   },
   {
     month: "July",
-    data: 40
-  }
+    data: 40,
+  },
 ];
 
 const tableData = new Array(500).fill(null).map((_, index) => {
@@ -548,41 +568,34 @@ const tableData = new Array(500).fill(null).map((_, index) => {
     age: Math.floor(Math.random() * 100),
     friend: {
       name: `friend.Name${index}`,
-      age: Math.floor(Math.random() * 100)
-    }
+      age: Math.floor(Math.random() * 100),
+    },
   };
 });
 
 const tableColumns = [
   {
     Header: "Name",
-    accessor: "name" // String-based value accessors!
+    accessor: "name", // String-based value accessors!
   },
   {
     Header: "Age",
-    accessor: "age"
+    accessor: "age",
   },
   {
     Header: "Friend Name",
-    accessor: "friend.name"
+    accessor: "friend.name",
   },
   {
     Header: "Friend Age",
-    accessor: "friend.age"
-  }
+    accessor: "friend.age",
+  },
 ];
 
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const handleProgressHeaderClick = () => {
-    navigate("/detail");
-  };
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -598,8 +611,15 @@ export function Home() {
       }, 2000);
     }
   };
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+  const handleProgressHeaderClick = () => {
+    navigate("/detail");
+  };
   return (
-    <div>
+    <>
       <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap}
@@ -615,9 +635,7 @@ export function Home() {
               avatar={
                 <Icon
                   name={
-                    toggleCharts === "lineChart"
-                      ? "line-chart"
-                      : "horizontal-bar-chart"
+                    toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
                   }
                 />
               }
@@ -636,7 +654,7 @@ export function Home() {
           ) : (
             <BarChart
               dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
               dataset={dataset}
               loading={loading}
             />
@@ -647,7 +665,7 @@ export function Home() {
             <CardHeader
               titleText="Progress"
               subtitleText="List"
-              avatar={<Icon name="list" />}
+              avatar={<Icon name={listIcon} />}
               interactive
               onClick={handleProgressHeaderClick}
             />
@@ -667,33 +685,61 @@ export function Home() {
             >
               Activity 2
             </StandardListItem>
-            <StandardListItem
-              additionalText="in progress"
-              additionalTextState={ValueState.Warning}
-              style={{ height: "80px" }}
-            >
-              <FlexBox direction={FlexBoxDirection.Column}>
-                <Title level={TitleLevel.H5}>Activity 3</Title>
-                <ProgressIndicator value={89} valueState={ValueState.Success} />
+            <CustomListItem>
+              <FlexBox
+                direction={FlexBoxDirection.Column}
+                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+              >
+                <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                  <Text
+                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
+                  >
+                    Activity 3
+                  </Text>
+                  <Text
+                    style={{ color: ThemingParameters.sapCriticalTextColor }}
+                  >
+                    in progress
+                  </Text>
+                </FlexBox>
+                <ProgressIndicator
+                  value={89}
+                  valueState={ValueState.Success}
+                  style={{ ...spacing.sapUiTinyMarginTop }}
+                />
               </FlexBox>
-            </StandardListItem>
-            <StandardListItem
-              additionalText="in progress"
-              additionalTextState={ValueState.Warning}
-              style={{ height: "80px" }}
-            >
-              <FlexBox direction={FlexBoxDirection.Column}>
-                <Title level={TitleLevel.H5}>Activity 4</Title>
-                <ProgressIndicator value={5} valueState={ValueState.Error} />
+            </CustomListItem>
+            <CustomListItem>
+              <FlexBox
+                direction={FlexBoxDirection.Column}
+                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+              >
+                <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                  <Text
+                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
+                  >
+                    Activity 4
+                  </Text>
+                  <Text
+                    style={{ color: ThemingParameters.sapCriticalTextColor }}
+                  >
+                    in progress
+                  </Text>
+                </FlexBox>
+                <ProgressIndicator
+                  value={5}
+                  valueState={ValueState.Error}
+                  style={{ ...spacing.sapUiTinyMarginTop }}
+                />
               </FlexBox>
-            </StandardListItem>
+            </CustomListItem>
           </List>
         </Card>
         <Card
           header={
             <CardHeader
               titleText="AnalyticalTable"
-              avatar={<Icon name="table-view" />}
+              avatar={<Icon name={tableViewIcon} />}
             />
           }
           style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
@@ -705,7 +751,7 @@ export function Home() {
           />
         </Card>
       </FlexBox>
-    </div>
+    </>
   );
 }
 ```

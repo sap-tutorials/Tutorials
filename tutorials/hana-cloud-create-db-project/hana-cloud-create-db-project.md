@@ -12,16 +12,19 @@ primary_tag: products>sap-hana
 <!-- description --> Create an SAP Business Application Studio HANA database project.
 
 ## Prerequisites
+
 - You have created a BTP, SAP HANA Cloud instance -- see [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
 - You are logged into SAP Business Application Studio and it's configured [Configure the Development Environment](hana-cloud-configure-dev-env).
 
 ## You will learn
+
 - How to create a multi-target application with a database module via SAP HANA database project in the SAP Business Application Studio
 - How to create a columnar table using declarative SQL
 - How to load data for testing into a columnar table from a CSV file
 - How to access the Database Explorer to browse your tables, data and use SQL statements
 
 ## Intro
+
 A video version of this tutorial is also available:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O0x7Jt6yre0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -29,7 +32,6 @@ A video version of this tutorial is also available:
 ---
 
 ### Create a new project from template
-
 
 1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
 
@@ -59,13 +61,11 @@ A video version of this tutorial is also available:
 
     <!-- border -->![New project from template](5_3.png)
 
-8. Upon completion of the project generation, you will see a message. Press the **Open in New  Workspace** button in this success message to open the new project in the IDE.
+8. Upon completion of the project generation, you will see a message and the new project is opened in the workspace of the Business Application Studio.
 
-    <!-- border -->![New project from template](5_4.png)               
-
+    <!-- border -->![New project from template](5_4.png)
 
 ### Create database artifacts
-
 
 This project will combine artifacts from an HDI container and a classic, replicated schema.
 
@@ -73,7 +73,7 @@ You will first create a table to hold data from performance evaluations received
 
 These are sample records that will be stored in this table:
 
-    <!-- border -->![New DB artifact](9.png)
+<!-- border -->![New DB artifact](9.png)
 
 1. Right-click on the `src` folder, choose `New File`
 
@@ -101,20 +101,13 @@ These are sample records that will be stored in this table:
     COMMENT 'Performance evaluation record'
     ```
 
-4.  **Save** the file.
-
-    <!-- border -->![New DB artifact](8.png)
-
 > **What is going on?**
 > &nbsp;
 > You have created a database module and a design time artifact representing a table. When this module is deployed, SAP Business Application Studio will automatically create the runtime object (a physical table) in the schema associated to the HDI container.
 > &nbsp;
 > This approach allows you to modify the structure of the table without worrying about underlying adaptation operations.
 
-
-
 ### Create a text index
-
 
 The table you have just defined will have a large text field with comments from the employees. You want to enable an index to enhance text search.
 
@@ -122,7 +115,7 @@ The table you have just defined will have a large text field with comments from 
 
     <!-- border -->![New DB artifact](10_1.png)
 
-    <!-- border -->![New DB artifact](10_2.png)    
+    <!-- border -->![New DB artifact](10_2.png)
 
 2. Use the following name
 
@@ -134,7 +127,6 @@ The table you have just defined will have a large text field with comments from 
 
     <!-- border -->![New DB artifact](11.png)
 
-
 3. Paste the following code into it:
 
     ```sql
@@ -142,11 +134,7 @@ The table you have just defined will have a large text field with comments from 
     on "PERFORMANCE"("FEEDBACK_COMMENT")
     ```
 
-4. **Save** the file.
-
-
 ### Deploy the database module
-
 
 1. Expand the **SAP HANA PROJECTS** View
 
@@ -175,7 +163,6 @@ The table you have just defined will have a large text field with comments from 
 
 
 ### Add data from a local file
-
 
 For testing and development purposes, you can use a local file to load data into an HDI container.
 
@@ -207,7 +194,7 @@ For testing and development purposes, you can use a local file to load data into
     }		
     ```
 
-3. Download this `csv` file -- `https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/hana-cloud-create-db-project/performance.csv` into your computer. Upload it into the **loads** folder using the **Upload Files** option
+3. Download this `csv` file -- `https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/hana-cloud-create-db-project/performance.csv` into your computer. Upload it into the **loads** folder using the **Upload** option
 
     <!-- border -->![Data load](20.png)
 
@@ -215,10 +202,7 @@ For testing and development purposes, you can use a local file to load data into
 
     <!-- border -->![Data load](21.png)
 
-
-
 ### Check the data
-
 
 1. Press the **Open HDI Container** icon
 

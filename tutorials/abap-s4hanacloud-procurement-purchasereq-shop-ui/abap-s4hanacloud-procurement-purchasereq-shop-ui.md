@@ -12,16 +12,11 @@ author_profile: https://github.com/mervey45
 <!-- description --> Create a SAP Fiori app for a RAP business object in SAP Business Application Studio and deploy it to SAP S/4HANA Cloud, ABAP Environment.
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 - **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - Business Catalog `SAP_CORE_BC_COM` must be assigned to business user
 - The user must have the same email address as the user from trial
-
-## Intro
->**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
-
 
 ## You will learn  
 - How to assign role collections
@@ -32,6 +27,9 @@ author_profile: https://github.com/mervey45
 - How to deploy applications
 - How to check BSP library in Eclipse
 - How to create IAM apps and business catalogs
+
+## Intro
+>**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
 ---
 ### Assign role collection to user
@@ -332,7 +330,7 @@ author_profile: https://github.com/mervey45
 ### Create IAM App and business catalog
 
 
-  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`Z_PURCHASE_REQ_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam0.png)
 
@@ -368,7 +366,7 @@ author_profile: https://github.com/mervey45
 
       ![iam](activate.png)
 
-  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`Z_PURCHASE_REQ_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](iam0.png)
 
@@ -440,6 +438,3 @@ author_profile: https://github.com/mervey45
 
 
 ### Test yourself
-
-
-

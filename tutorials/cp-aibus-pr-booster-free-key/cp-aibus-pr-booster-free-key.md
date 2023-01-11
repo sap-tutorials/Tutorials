@@ -123,4 +123,3 @@ Do the following to access your service instance and service key, without having
     <!-- border -->![Service Key](service-key.png)
 
 Congratulations, you have completed this tutorial.
-
