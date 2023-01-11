@@ -1,6 +1,5 @@
 ---
-title: Add a Web Dynpro ABAP App to Your Launchpad Page
-description: Add an existing Web Dynpro ABAP backend app to your freestyle Portal site.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
@@ -9,17 +8,21 @@ author_profile: https://github.com/LindsayBert
 time: 10
 ---
 
-## Details
-### You will learn  
+# Add a Web Dynpro ABAP App to Your Launchpad Page
+<!-- description --> Add an existing Web Dynpro ABAP backend app to your freestyle Portal site.
+
+## You will learn  
   - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Portal site
 
 
+## Intro
 SAP customers who run classic SAP UI applications on their data center backend can transition to the SAP Cloud Platform and continue using these applications.
  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure a Web Dynpro app in your site)]
+### Configure a Web Dynpro app in your site
+
 
 1. Open the `Supplier Portal` freestyle site for editing in the Site Designer
 
@@ -91,10 +94,9 @@ SAP customers who run classic SAP UI applications on their data center backend c
 
 >At this stage you can already launch the app. In the next step, you'll set up an external access point so that the app is available externally.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up an external access portal landscape)]
+### Set up an external access portal landscape
+
 
 1. From the left side panel, click the cog icon to open the **Site Settings** editor.
 
@@ -116,11 +118,10 @@ SAP customers who run classic SAP UI applications on their data center backend c
 
     ![System Settings](12-system-settings.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Preview the latest changes)]
+### Preview the latest changes
+
 
 1. In the Supplier Portal site designer top level menu, click the **Preview** icon.
 
@@ -138,5 +139,4 @@ SAP customers who run classic SAP UI applications on their data center backend c
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+

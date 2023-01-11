@@ -1,21 +1,24 @@
 ---
-title: Set Up SAP Data Intelligence, Trial Edition
-description: Create a solution instance of SAP Data Intelligence 3.0, Trial Edition.
+parser: v2
 auto_validation: true
-primary_tag: products>sap-data-intelligence
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+primary_tag: software-product>sap-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, software-product>sap-data-intelligence ]
 time: 240
 ---
 
-## Details
-### You will learn  
+# Set Up SAP Data Intelligence, Trial Edition
+<!-- description --> Create a solution instance of SAP Data Intelligence 3.0, Trial Edition.
+
+## You will learn  
 - How to create a solution instance of SAP Data Intelligence, Trial Edition
 
+## Intro
 SAP Data Intelligence, Trial Edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Cloud Providers that you choose from Google Cloud platform (GCP), Amazon Web Services (AWS) or Microsoft Azure (or simply Azure).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure your cloud account)]
+### Configure your cloud account
+
 Running SAP Data Intelligence, Trial Edition requires you to have your own administrator access to one of the following (alphabetically):
 
 * an Amazon Web Services account,
@@ -56,32 +59,27 @@ For Google Cloud Platform create a corresponding Google Cloud Platform project. 
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Link project to SAP Cloud Appliance Library)]
+### Link project to SAP Cloud Appliance Library
+
 Link your cloud providers to SAP Cloud Appliance Library. This step is described in the SAP Cloud Appliance Library [documentation](https://calstatic.hana.ondemand.com/res/docEN/042bb15ad2324c3c9b7974dbde389640.html).
 
 Open the SAP Cloud Appliance Library in your web browser using the following link: <https://cal.sap.com>.
 
-If you are a first-time user of SAP Cloud Appliance Library, familiarize yourself with its basic concepts and how to work with the user interface by reading the [documentation](https://lkgstatic.hana.ondemand.com/res/~1522937040047~/docEN/6381cffb595143db8d4d7314afa0ae65.html).
+If you are a first-time user of SAP Cloud Appliance Library, familiarize yourself with its basic concepts and how to work with the user interface by reading the [documentation](https://calstatic.hana.ondemand.com/res/docEN/729e7cfaa8c84423b89ba81b0a7ff974.html).
 
-[DONE]
 
-[ACCORDION-END]
+### Create solution instance
 
-[ACCORDION-BEGIN [Step 3: ](Create solution instance)]
 Next, you can create a solution instance of SAP Data Intelligence, Trial Edition in SAP Cloud Appliance Library.
 
 The necessary steps to do so are described in the [Getting Started with SAP Data Intelligence, Trial Edition] (https://caldocs.hana.ondemand.com/caldocs/help/a318f6b5-aa5a-4dfb-893e-1aac356ca5f8_Getting_Started_Guide_v37.pdf) guide (chapter 2.3).
 
 The creation of the solution instance can take up to **between 3 to 4 hours** and depends on a cloud provider and a region.
 
-[DONE]
 
-[ACCORDION-END]
+### Connect to SAP Data Intelligence Launchpad
 
-[ACCORDION-BEGIN [Step 4: ](Connect to SAP Data Intelligence Launchpad)]
 After the solution instance is up and running, you can connect to it.
 
 To access the SAP Data Intelligence Launchpad follow the corresponding chapter from [Getting Started with SAP Data Intelligence, Trial Edition] (https://caldocs.hana.ondemand.com/caldocs/help/a318f6b5-aa5a-4dfb-893e-1aac356ca5f8_Getting_Started_Guide_v37.pdf) guide:
@@ -94,7 +92,7 @@ To access the SAP Data Intelligence Launchpad follow the corresponding chapter f
 
 Once the logon screen is displayed enter corresponding values and press **Login**.
 
-!![Logon](login.png)
+<!-- border -->![Logon](login.png)
 
 |-|-|
 |Tenant|`default`|
@@ -107,8 +105,6 @@ The **Application Launchpad** page is displayed.
 
 In the SAP Data Intelligence Launchpad, find and open the link **Modeler**. Copy the URL from the webpage address bar and paste it in the frame below, then click on **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

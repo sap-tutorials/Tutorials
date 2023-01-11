@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a SAP Fiori App in Visual Studio Code and Deploy it to SAP BTP, ABAP Environment
-description: Create a SAP Fiori Elements app for a RAP business object from SAP BTP, ABAP Environment in Visual Studio Code and deploy it to SAP BTP, ABAP Environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a SAP Fiori App in Visual Studio Code and Deploy it to SAP BTP, ABAP Environment
+<!-- description --> Create a SAP Fiori Elements app for a RAP business object from SAP BTP, ABAP Environment in Visual Studio Code and deploy it to SAP BTP, ABAP Environment.
 
 ## Prerequisites
   - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -19,29 +21,30 @@ author_profile: https://github.com/mervey45
   - Installation of [Extensions](https://help.sap.com/viewer/454b7fb9aacd4e369e5be8f7e909d3ec/Latest/en-US/61383cac9de24b75a4e2b8c9d11e8af0.html)
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to create an SAP Fiori application
   - How to run an SAP Fiori application
   - How to deploy an SAP Fiori application
 
+## Intro
 >**HINT**: If you are not able to see the **Fiori Application Generator**, please install the generator again by opening the terminal and adding following: npm `install -g yo`.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP Fiori application)]
+### Create SAP Fiori application
+
 
 1. Open Visual Studio Code and select **View** > **Command Palette**.
 
-    !![app](app.png)
+    <!-- border -->![app](app.png)
 
 2. Search **Fiori: Open Application Generator** and select it.
 
-    !![app](app2.png)
+    <!-- border -->![app](app2.png)
 
 3. Select **SAP Fiori elements** as application type, **List Report Object Page** as `floorplan` and click **Next >**.
 
-    !![app](app3.png)
+    <!-- border -->![app](app3.png)
 
 4. Select **Data Source** and **Service**:
 
@@ -53,7 +56,7 @@ author_profile: https://github.com/mervey45
     - System name: `<your_system_name>`
     - Service: `<your_service_definition>`
 
-    !![app](app5.png)
+    <!-- border -->![app](app5.png)
 
       Click **Next >**.
 
@@ -61,7 +64,7 @@ author_profile: https://github.com/mervey45
 
 5. Select **`TravelProcessor`** and click **Next >**.
 
-    !![app](app6.png)
+    <!-- border -->![app](app6.png)
 
 6. Add project attributes:
 
@@ -71,7 +74,7 @@ author_profile: https://github.com/mervey45
     - Add deployment configuration: Yes
     - Add FLP configuration: Yes
 
-    !![app](app7.png)
+    <!-- border -->![app](app7.png)
 
     Click **Next >**.
 
@@ -85,7 +88,7 @@ author_profile: https://github.com/mervey45
      - Transport Request: `<your_transport_request>`
      - Deployment description: deployment xxx
 
-    !![app](app9.png)
+    <!-- border -->![app](app9.png)
 
     Click **Next >**.
 
@@ -99,19 +102,18 @@ author_profile: https://github.com/mervey45
      - Action: display
      - Title: Travel App XXX
 
-    !![app](app10.png)
+    <!-- border -->![app](app10.png)
 
     Click **Finish**.
 
 9. Now all files have been generated.
 
-    !![app](app8.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![app](app8.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Start SAP Fiori application)]
+
+### Start SAP Fiori application
+
 
 1. Right-click **`ztravel_app_xxx`** and select **Open in Integrated Terminal**.
 
@@ -125,11 +127,10 @@ author_profile: https://github.com/mervey45
 
     ![start](start3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Deploy SAP Fiori application)]
+### Deploy SAP Fiori application
+
 
 1. Open your terminal and enter `npm run deploy`. When prompted, check deployment configuration and press **y**.
 
@@ -179,21 +180,19 @@ author_profile: https://github.com/mervey45
 >    Your `yaml` file should be written after entering all information.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
+### Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse
+
 
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `ZTRAVEL_APP_XXX` by pressing `F5`.
 
     ![library](library.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create IAM App and business catalog)]
+### Create IAM App and business catalog
+
 
   1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
@@ -270,10 +269,9 @@ author_profile: https://github.com/mervey45
        ![catalog](catalog8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run SAP Fiori application)]
+### Run SAP Fiori application
+
 
  1. Switch to Visual Studio Code and open the integrated terminal. Enter `npm run deploy`. When prompted, check deployment configuration and press **y**.
 
@@ -287,21 +285,14 @@ author_profile: https://github.com/mervey45
 
       ![deploy](deploy8.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ## More Information
 - [SAP Help Portal: Introduction](https://help.sap.com/viewer/454b7fb9aacd4e369e5be8f7e909d3ec/Latest/en-US/fd9e32d52c9e46e4ba77aba343656610.html)
 ---
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-trial-onboarding" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

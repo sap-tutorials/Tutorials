@@ -1,26 +1,27 @@
 ---
-title: Disable SAP HANA System Replication
-description: Disable system replication.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
+
+# Disable SAP HANA System Replication
+<!-- description --> Disable system replication.
 
 ## Prerequisites
  - **Proficiency:** Advanced
  - **Tutorials** Performing a Fail-back
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
-## Details
-### You will learn
+## You will learn
 - How to disable system replication with SAP HANA Studio
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Disabling System Replication)]
+### Disabling System Replication
+
 
 You can disable SAP HANA system replication for an SAP HANA system by first `unregistering` the secondary system and then disabling system replication on the primary system.
 
@@ -58,10 +59,8 @@ Leave the **Ignore secondary system** unchecked, which will remove all secondary
 
 System Replication has now been disabled.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

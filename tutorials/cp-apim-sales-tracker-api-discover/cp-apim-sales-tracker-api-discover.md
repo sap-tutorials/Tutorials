@@ -1,22 +1,23 @@
 ---
-title: Discover Sales Order API from S/4HANA Cloud System
-description: Discover the Sales Order API from S/4HANA Cloud system.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate,  products>sap-business-technology-platform]
 primary_tag: products>sap-integration-suite
 ---
 
-## Prerequisites
+# Discover Sales Order API from S/4HANA Cloud System
+<!-- description --> Discover the Sales Order API from S/4HANA Cloud system.
 
-## Details
-### You will learn
+## Prerequisites
+## You will learn
   - How to discover APIs from SAP API Business Hub
   - How to create API proxy
   - How to tryout APIs in API Management
   - How to get the API key
 
-[ACCORDION-BEGIN [Step 1: ](Discover S/4HANA APIs in API portal)]
+### Discover S/4HANA APIs in API portal
+
 
 1. From trial cockpit, click **Access API Portal** link to launch API portal.
 
@@ -35,10 +36,9 @@ primary_tag: products>sap-integration-suite
 
     ![Navigate Artifacts](04-artifacts-tab.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create API proxy)]
+### Create API proxy
+
 
 1. Click the Search Bar and type **sales order** to search for sales order API.
 
@@ -66,11 +66,10 @@ primary_tag: products>sap-integration-suite
 
     ![Resources Tab](09-Resources.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Try out APIs)]
+### Try out APIs
+
 
 1. Expand the open API specification definition to see additional documentation and **Try out** feature which can help developers get started on the API more quickly.
 
@@ -89,10 +88,9 @@ primary_tag: products>sap-integration-suite
 
     >The Verify API Key policy lets you enforce verification of API keys at runtime, letting only apps with approved API keys access your APIs. This policy ensures that API keys are valid, have not been revoked, and are approved to consume the specific resources associated with your API products.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get API Key)]
+### Get API Key
+
 
 1. Go to [SAP API Business Hub](https://api.sap.com), to get your API Key.
 
@@ -118,9 +116,7 @@ primary_tag: products>sap-integration-suite
 
     ![Copy API Key](17-copy-api-key.png)
 
-[VALIDATE_4]
 
-[ACCORDION-END]
 
 
 ---

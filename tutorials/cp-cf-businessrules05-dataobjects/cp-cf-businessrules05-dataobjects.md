@@ -1,6 +1,5 @@
 ---
-title: Create Data Objects and Configure Value Help for a Data Object
-description: Create data objects that hold employee and equipment details, and create value help for a data object attribute.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -9,8 +8,10 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 
-## Details
-### You will learn
+# Create Data Objects and Configure Value Help for a Data Object
+<!-- description --> Create data objects that hold employee and equipment details, and create value help for a data object attribute.
+
+## You will learn
   - How to create data objects for a scenario
   - How to configure the value help for a data object
 
@@ -20,7 +21,8 @@ author_profile: https://github.com/VandanaVasudevan
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create data objects)]
+### Create data objects
+
 
 1. Choose **`Data Objects`** > **`Local Data Objects`**.
 
@@ -145,10 +147,9 @@ author_profile: https://github.com/VandanaVasudevan
 
     ![List of data objects](create_do9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure value help for an attribute of Employee data object)]
+### Configure value help for an attribute of Employee data object
+
 
 1. Choose **Employee** data object.
 
@@ -204,6 +205,4 @@ author_profile: https://github.com/VandanaVasudevan
     ![Breadcrumb navigation](create_value_help10.png)
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]

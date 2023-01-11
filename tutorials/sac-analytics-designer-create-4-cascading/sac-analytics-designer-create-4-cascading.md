@@ -1,30 +1,33 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Set Up Cascading Filters in Applications
-description: Use dropdown widgets to implement cascading filters
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product-function>sap-analytics-cloud\,-analytics-designer
 ---
 
+# Set Up Cascading Filters in Applications
+<!-- description --> Use dropdown widgets to implement cascading filters
+
 <!-- ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - How to create cascading filters
   - How to use the `getHierarchy() / setHierarchy()` API
   - How to use a global variable script
   - How to use widget events
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Dropdown Widgets)]
+### Add Dropdown Widgets
+
 
 You can set up combinations of dropdown, radio button, and checkbox group widgets to work together in our apps as cascading filters, meaning that the user's selection in the one widget determines the available options in another.
 
@@ -45,10 +48,9 @@ For the dimension dropdown, we will add four dimensions: `Location`, `Product`, 
 
 ![2.4.3](2.4.3.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Script Variable)]
+### Add Script Variable
+
 
 Now you will add a script variable, which is a global variable that can be used in multiple locations in the app.
 
@@ -56,11 +58,10 @@ This script variable will let us access the dimension selected from the dropdown
 
 ![2.4.5](2.4.5.jpg)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add a Script to the Hierarchy Dropdown)]
+### Add a Script to the Hierarchy Dropdown
+
 
 Now we will define what happens when a value is selected from the cascading filters. We will start with the Hierarchy dropdown. A new tab opens where we can build a script to define what happens when the function is called.
 
@@ -91,10 +92,9 @@ Chart.getDataSource().setHierarchy(CurrentDimension, sel);
 
 ![2.4.7](2.4.7.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add a Script to the Dimension Dropdown)]
+### Add a Script to the Dimension Dropdown
+
 
 Now, you will edit the script for the Dimension dropdown. Here, you will declare a variable and use it to store the selected dimension from the dropdown, remove all the dimensions from the table and chart, and replace them with the selected dimension. Then, get all the hierarchies that are available for that selected dimension and remove any hierarchies in the Hierarchy dropdown.
 
@@ -168,10 +168,9 @@ Chart.getDataSource().setHierarchy(CurrentDimension, '@FlatHierarchy');
 
 ![2.4.9.2](2.4.9.2.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a Script to the "OnInitialization" Event)]
+### Add a Script to the "OnInitialization" Event
+
 
 Finally, you will define what happens when the application is first run through the `onInitialization` event of the canvas itself. Load all the available hierarchies of the dimensions and set flat presentation as the default.
 
@@ -211,10 +210,9 @@ Chart.getDataSource().setHierarchy(CurrentDimension, '@FlatHierarchy');
 
 ![2.4.10.2](2.4.10.2.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the Application)]
+### Run the Application
+
 
 Now we will save our changes and run the application.
 
@@ -232,12 +230,9 @@ If we switch to the chart, we can see that the selected dimension and hierarchy 
 
 ![2.4.14](2.4.14.jpg)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

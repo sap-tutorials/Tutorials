@@ -1,11 +1,13 @@
 ---
-title: Initializing Database Backup and Recovery
-description: Setting up backup and recovery for Dynamic Tiering.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 time: 10
 ---
+
+# Initializing Database Backup and Recovery
+<!-- description --> Setting up backup and recovery for Dynamic Tiering.
 
 ## Prerequisites
  - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
@@ -15,15 +17,15 @@ time: 10
 ## Next Steps
  - **Tutorials** [Creating Database Backups](https://www.sap.com/)
 
-## Details
-### You will learn
+## You will learn
   - Capabilities of SAP HANA Cockpit related to SAP HANA Dynamic Tiering
   - Checking the `Esserver` Status to see if Dynamic Tiering is active
   - Checking Coordinator Types to see if extended storage is running and created
 
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 The overall HANA system including Dynamic Tiering is a single database system which consists of both in-memory and on-disk data stores. In order to ensure data consistency across the entire database, HANA manages the backup and recovery of both the in-memory and on-disk Dynamic Tiering data stores through a single coordinated process. This means that both in-memory data and Dynamic Tiering data are always backed up and restored together.
 
 - Backup and recovery with Dynamic Tiering configured works the same way as in regular HANA scale-out
@@ -37,11 +39,9 @@ The overall HANA system including Dynamic Tiering is a single database system wh
 
 In this set of tutorials, we will be backing up and recovering one of our Tenant databases, `PM1`.
 
-[DONE]
 
-[ACCORDION-END]
+### Initializing Backup Parameters
 
-[ACCORDION-BEGIN [Step 2: ](Initializing Backup Parameters)]
 The Dynamic Tiering data and log backup directory locations are the same as the core HANA data and log backup locations.
 
 To view the currently configured directory paths for the HANA and Dynamic Tiering backups, navigate to the "**Configuration**" tab in the HANA Administration Console, go to "**`global.ini`**" > "**persistence**". These locations identify where the backups will be created. You can modify these locations if desired. Ensure the locations and paths are correct. Set the parameters for `log_mode` and `enable_auto_log_backup` as you like, under the persistence drop-down. The highlighted text shows where the Dynamic Tiering data and log backups are created.
@@ -50,12 +50,11 @@ To view the currently configured directory paths for the HANA and Dynamic Tierin
 
 > Note: The configuration parameters can be set at the Tenant level and System level, however the configurations in Tenant and System will be the same regardless of where the configuration parameters are set. In this tutorial, we set the configuration parameters at the Tenant level.
 
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Backup Permissions)]
+
+### Backup Permissions
+
 You will need to assign the TPCH user the required roles and permissions to create a backup. If you need a quick refresh on how to assign permissions, refer to [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html). Under the **System Privilege** tab, grant the following permissions to access the backup editor and to execute backup properly:
 
   - `BACKUP ADMIN`
@@ -65,6 +64,3 @@ You will need to assign the TPCH user the required roles and permissions to crea
 
 Click the deploy button near the top right or the F8 key on your keyboard to execute the changes.
 
-[DONE]
-
-[ACCORDION-END]

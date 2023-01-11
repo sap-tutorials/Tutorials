@@ -1,11 +1,13 @@
 ---
-title: Set Up Local Configuration in SOAMANAGER
-description: Learn how to set up local configuration in ABAP Web services to create the runtime configuration for multiple proxy entities.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
 ---
+
+# Set Up Local Configuration in SOAMANAGER
+<!-- description --> Learn how to set up local configuration in ABAP Web services to create the runtime configuration for multiple proxy entities.
 
 ## Prerequisites
 - Basic knowledge about Web services and SOAMANAGER
@@ -16,18 +18,19 @@ primary_tag: topic>abap-connectivity
     - **Important:** The service consumer must not already be used by another local configuration.
 
 
-## Details
-### You will learn
+## You will learn
   - What local configuration is
   - How to set up local configuration in SOAMANAGER
 
+## Intro
 In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
 
 In this case, system A acts as consumer and system B as provider.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is local configuration)]
+### What is local configuration
+
 Local configuration is a technique to automatically create the runtime configuration of multiple proxy entities by defining a so-called integration scenario once in both systems.
 
 In general, endpoints and logical ports often rely on the same settings, such as security settings. Creating single configurations manually for these entities is therefore repetitive and time-consuming. The local configuration acts as a mass configuration tool. A profile describes the common configuration settings of the endpoints.
@@ -40,10 +43,9 @@ In older releases or documentation, local configuration is often called smart co
 
 ![Local Configuration](lc11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Required entities)]
+### Required entities
+
 Local configuration in SAP NetWeaver is based on the following entities:
 
 - Profile
@@ -53,11 +55,10 @@ Local configuration in SAP NetWeaver is based on the following entities:
 
 In this tutorial, you are going to create these entities step by step.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a profile)]
+### Create a profile
+
 In a profile, a certain set of parameters is included which is then used for configuration of end points for service definitions and logical ports for consumer proxies.
 
 1. Run transaction SOAMANAGER in system A.
@@ -72,11 +73,10 @@ In a profile, a certain set of parameters is included which is then used for con
 7. Choose **Finish**.
 8. Activate the profile by choosing **Yes** in the pop-up window.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create User account)]
+### Create User account
+
 A user account stores credentials. These are then used to store them in the corresponding logical port. When the endpoint is called via the logical port of the consumer proxy, these stored credentials are used.
 
 1. On tab **Service Administration**, choose **Logon Data Management**.
@@ -89,11 +89,10 @@ A user account stores credentials. These are then used to store them in the corr
 5. Choose **Finish**.
 6. Activate the logon data by choosing **Yes** in the pop-up window.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create a Provider System)]
+### Create a Provider System
+
 A provider system describes the parameters and access to a system that contains the service definitions. In a provider system, a profile/version is referenced. The profile is then used during configuration to create parameters for the logical port.
 
 1. On tab **Technical Administration**, choose **Provider Systems**.
@@ -117,15 +116,15 @@ A provider system describes the parameters and access to a system that contains 
 
     - Copy the highlighted part to /sap/bc/:
 
-        !![System URL](lc1.png)
+        <!-- border -->![System URL](lc1.png)
 
     - Go back to the SOAMANAGER of system A. Add the part from /sap/bc of the placeholder URL to the part you have copied in step 4. Add the corresponding client of system B.
 
-        !![Access URL for WSIL](lc2.png)
+        <!-- border -->![Access URL for WSIL](lc2.png)
 
     - In this example, this results in:
 
-        !![WSIL URL](lc8.png)
+        <!-- border -->![WSIL URL](lc8.png)
 
 6. Enter the credentials of a user in system B with permission to display the WSIL.
 
@@ -133,7 +132,7 @@ A provider system describes the parameters and access to a system that contains 
 
 8. Your settings should look like this:
 
-    !![Services Registry settingsL](lc9.png)
+    <!-- border -->![Services Registry settingsL](lc9.png)
 
 9. Choose **Next
 
@@ -142,10 +141,9 @@ A provider system describes the parameters and access to a system that contains 
 11. Activate the system by choosing **Yes** in the pop-up window.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create profile and provider system in System B)]
+### Create profile and provider system in System B
+
 In system B, Repeat step 3 with the same settings as in system A, and 5 with the provider system settings below. Do not repeat step 4.
 
 **In order to ensure that the consumer proxy configuration (logical port) can work with a service definition configuration (end-point), create the profile with exactly the same settings and name as in the provider.**
@@ -157,10 +155,9 @@ Use the following provider system settings:
 - Profile Name: **`MYPROFILE_XXX.`**
 - Access URL for WSIL: Use the same WSIL URL as in step 5 (see step 5 **Enter access URL for WSIL**).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create business scenario in System B)]
+### Create business scenario in System B
+
 In system B, the service definitions are assigned to profiles which result in end points for the service definitions after configuration. The profile information is used during configuration to enrich the end points with the required parameter settings.
 
 1. On tab **Service Administration**, choose **Local Integration Scenario Configuration**.
@@ -175,16 +172,15 @@ In system B, the service definitions are assigned to profiles which result in en
 
 5. Choose **Assign Profiles**, choose your profile from the list, and click **Assign Profiles**.
 
-    !![Assign profile in consumer](lc5.png)
+    <!-- border -->![Assign profile in consumer](lc5.png)
 
 6. Skip step **Service Groups**.
 7. Go to step **Logon Data Assignment** and choose **Finish**.
 8. Activate the integration scenario by choosing **Yes** in the pop-up window.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create business scenario in System A)]
+### Create business scenario in System A
+
 In a business scenario, the setup is prepared for the logical ports and endpoints.
 
 On consumer side, it is specified which consumer proxies need to be configured for which provider systems (or business applications). With this information, the logical ports for the consumer proxies are created. As in the system connection, the profile is also assigned. This information is also used to create the logical ports.
@@ -207,21 +203,20 @@ On consumer side, it is specified which consumer proxies need to be configured f
 
 8. Choose your provider system from the list and click **Assign to Service Group**.
 
-    !![Service Group Assignment](lc3.png)
+    <!-- border -->![Service Group Assignment](lc3.png)
 
 9. Choose **Next**.
 
 10. In the step **Logon Data Assignment**, choose your logon data from the list.
 
-    !![Logon Data](lc4.png)
+    <!-- border -->![Logon Data](lc4.png)
 
 11. Choose **Finish**.
 12. Activate the integration scenario by choosing **Yes** in the pop-up window.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Process pending tasks)]
+### Process pending tasks
+
 To apply your profiles and business scenarios, you have to process the pending tasks in both systems. Start with the system that contains the service definition. In this case, start with system B and then proceed with system A.
 
 1. On tab **Service Administration**, choose **Pending Tasks**.
@@ -231,21 +226,20 @@ To apply your profiles and business scenarios, you have to process the pending t
     - If **Process List** is greyed out, choose **Rebuild List** and afterward **Process List**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test your service)]
+### Test your service
+
 1. In the SOAMANAGER of system A, go to tab **Service Administration** and choose **Web Service Configuration**.
 
 2. Search for your consumer proxy. It is named like the service definition with the prefix `CO_`. You can also search for your service definition and choose the consumer proxy from the search results. In this case, it is `CO_SRT_TEST_PROVIDER`.
 
-    !![Consumer proxy](lc6.png)
+    <!-- border -->![Consumer proxy](lc6.png)
 
 3. Click on the consumer proxy.
 
 4. Copy the name of the logical port. In the column **Creation Type**, you can see that the logical port is created based on your profile.
 
-    !![Logical port of consumer proxy](lc7.png)
+    <!-- border -->![Logical port of consumer proxy](lc7.png)
 
 5. Logon to system A in SAP GUI.
 
@@ -261,14 +255,12 @@ To apply your profiles and business scenarios, you have to process the pending t
 
 11. Choose **Execute** (F8). The response opens. In this case, the result should look like this:
 
-    !![Logical port of consumer proxy](lc10.png)
+    <!-- border -->![Logical port of consumer proxy](lc10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

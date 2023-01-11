@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Create an SAP Fiori Elements-Based UI
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
 keywords: cap
@@ -11,9 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
+    - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
+
 
 ## Details
 ### You will learn
@@ -21,9 +22,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to modify the UI with OData annotations
  - How to make header info editable
  - How to check the annotation files
-
-
-To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 ---
 
@@ -34,7 +32,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
@@ -50,7 +48,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -91,11 +89,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
-3. On the launch page that now comes up, choose the **Risks** tile.
-
-    !![Index HTML Page](feapptile.png)
-
-    You can now see the application without any data.
+3. You can now see the application without any data.
 
     !![Index HTML Page](feappempty.png)
 

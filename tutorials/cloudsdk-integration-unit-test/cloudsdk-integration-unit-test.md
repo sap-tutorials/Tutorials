@@ -1,32 +1,36 @@
 ---
+parser: v2
 author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
-title: Integration and Unit Tests for SAP Cloud SDK Projects
-description: Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: products>sap-cloud-sdk
 ---
 
+# Integration and Unit Tests for SAP Cloud SDK Projects
+<!-- description --> Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
+
 ## Prerequisites
 This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", e.g. because you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
 
-## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+
+## Intro
+> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
 
-### You will learn
+## You will learn
   - How to write backend unit tests with JUnit
   - How to write integration tests with Arquillian or SpringRunner
   - How to write frontend unit tests with Jasmine and Karma
   - How to run these tests in an automated build pipeline
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Test Pyramid)]
+### Test Pyramid
+
 In general, there are multiple kinds of tests differentiating mainly in the granularity of testing. They all have their advantages and disadvantages. A common visualization is the testing pyramid. Based on the costs of the tests it visualizes that you should have much more unit tests than integration tests than E2E (End-To-End) tests. The costs for creating, running and maintaining increase while you move the pyramid up.
 
 ![Testing Pyramid](testing-pyramid.png)
@@ -36,26 +40,23 @@ Although they have a reduced complexity, they still have medium costs. They stil
 
 Unit tests have the smallest granularity. They can be defined directly on the programming level, e.g., calling methods of your java classes. Dependencies to other modules or systems may be mocked to ensure that they run very quickly and only test the portion under consideration. These tests are usually very cheap. You should use them to verify that your software modules, such as classes, behave as expected.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Unit-tests backend)]
+### Unit-tests backend
+
 For the modules of your backend services we suggest writing [JUnit](https://github.com/junit-team/junit4/wiki/Getting-started) tests. Please place your unit tests inside `application/src/test`. Unit tests should be very light weight. They should test the modules, e.g. a class, in a isolated manner. Other depended modules or even calls to external destinations, such as an ERP system, may be mocked. For mocking, the SAP Cloud SDK provides mocking facilities with the class `MockUtil`. Furthermore, we recommend using mocking frameworks, such as Mockito or PowerMock.
 
 Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Integration tests backend)]
+### Integration tests backend
+
 
 In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Mocking basics)]
+### Mocking basics
+
 In this tutorial, we want to focus on the mocking facilities provided by the SAP Cloud SDK. When you execute the integration tests locally, they run in a different environment than later on in the SAP Cloud Platform. Therefore, many services, such as the destination service, are not available, as the SAP Cloud Platform provides a much richer environment in terms of services and runtime libraries than the local test environment.
 
 This target environment has to be, partially, replicated in the local environment where the mocking facilities allow to test your business application without relying on the provided services locally. Since the SAP Cloud SDK already comes with abstractions for these services, it also offers to mock them in a local environment.
@@ -186,10 +187,9 @@ systems:
     uri: "http://path/to/destination/"
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Mock ERP destination)]
+### Mock ERP destination
+
 Mocking an ERP system uses the same mechanism. However, in addition you also have to provide a `systemId` and a `clientId` in addition to providing the systems as above. You can use either `SapClient.EMPTY` if the default client of a host is fine, or you use the convenience method ErpSystem.builder() that does not require a `clientId`.
 
 ```Java
@@ -217,10 +217,9 @@ erp:
       sapClient: "SAPCLINET-NUMBER"
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Unit-tests frontend)]
+### Unit-tests frontend
+
 In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the JavaScript frontend code written in SAP UI5.
 
 The example you downloaded as a prerequisite of this tutorial contains a service class which loads the business partners from from the backend. It is located at `webapp/service/businesspartners.js`:
@@ -416,12 +415,11 @@ It should run the tests and shows the results in the terminal:
 In an delivery pipeline everything is usually executed without a user interface. Thus, opening a normal browser would not work. However, most browsers also offer a headless mode. The browser is started without a user interface.
 >You can run the script also with a headless browser: `npm run ci-frontend-unit-test -- --headless`.
 
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Run tests in the General Purpose Pipeline of project "Piper")]
+
+### Run tests in the General Purpose Pipeline of project "Piper"
+
 
 Please setup a continuous delivery pipeline for this project as learned in  [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 
@@ -467,11 +465,10 @@ The resulting pipeline should look like as shown in the following screenshot.
 
 ![Pipeline](pipeline.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Troubleshoot and questions)]
+### Troubleshoot and questions
+
 
 Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `sap-cloud-sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 
@@ -479,8 +476,5 @@ For an overview of SAP Cloud SDK related questions, go to <https://stackoverflow
 
 You think that you found a bug in one of our Continuous Delivery artifacts? Feel free to open an issue in our GitHub repository on <https://github.com/SAP/jenkins-library/issues>.
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

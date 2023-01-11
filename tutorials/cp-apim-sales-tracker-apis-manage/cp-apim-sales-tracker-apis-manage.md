@@ -1,22 +1,23 @@
 ---
-title: Manage APIs with Policies
-description: Manage API proxy against unauthorized access by passing the API key retrieved from SAP API Business Hub.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-api-management, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
 ---
 
-## Prerequisites
+# Manage APIs with Policies
+<!-- description --> Manage API proxy against unauthorized access by passing the API key retrieved from SAP API Business Hub.
 
-## Details
-### You will learn
+## Prerequisites
+## You will learn
   - How to pass the API key retrieved from SAP API Business Hub
   - How to limit the number of fields returned by S/4HANA
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Navigate to policy editor)]
+### Navigate to policy editor
+
 
 1. From the left-hand navigation bar, select **Develop** and search for the **`API_SALES_ORDER_SRV`**.
 
@@ -33,11 +34,10 @@ primary_tag: products>sap-api-management
 
     >Also there are Conditional Flows which are created if required.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Apply Assign Message policy)]
+### Apply Assign Message policy
+
 
 1. Click  Edit button in the policy editor.
 
@@ -84,11 +84,10 @@ primary_tag: products>sap-api-management
 
 8. Save your changes.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Set limit)]
+### Set limit
+
 
 1. Click conditional flow **`A_SalesOrder`** under **`ProxyEndpoint`** flow  and click **""+""** next to **Assign Message** policy.
 
@@ -136,8 +135,6 @@ primary_tag: products>sap-api-management
     ![Result S/4HANAL](14-result-sales-order.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 

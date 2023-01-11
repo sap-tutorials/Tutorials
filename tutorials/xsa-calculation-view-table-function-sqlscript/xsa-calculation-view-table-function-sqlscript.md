@@ -1,6 +1,5 @@
 ---
-title: XS Advanced, Use SQLScript in Calculation Views
-description: Create a Table Function and wrap it in a Graphical Calculation View
+parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,23 +8,27 @@ tags: [  tutorial>advanced, topic>big-data, products>sap-hana, products>sap-hana
 time: 25
 ---
 
+# XS Advanced, Use SQLScript in Calculation Views
+<!-- description --> Create a Table Function and wrap it in a Graphical Calculation View
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - [Getting started with SAP HANA, XS Advanced Development](https://developers.sap.com/group.hana-xsa-get-started.html)
  - [Import sample data from the SHINE model](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
 
-## Details
-### You will learn  
+## You will learn  
   - How to implement more complex logics using SQLScript in Table Functions
   - How to incorporate Table Functions in Graphical Calculation views
   - Create a replacement to the former Scripted Views in previous versions of SAP HANA
   - Apply the `DENSE_RANK` function, to establish the ranking of a row relative to a partition of a dataset
 
+## Intro
 This tutorial assumes general knowledge of the modeling tool has been acquired through completion of the [beginner and intermediate tutorials about calculation views](https://developers.sap.com/group.hana-xsa-calculation-view-modeling.html).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a function)]
+### Create a function
+
 
 In your `db/src` folder, create a new folder called `functions`.
 
@@ -93,11 +96,9 @@ SELECT   company_name, region, sales, orders, sales_rank, order_rank from(
 
 > For more information about `DENSE_RANK()` and other function modules, visit the [SAP HANA and System Views Reference](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.03/en-US/1a116cbd04a942e498ffef3a37b47461.html)
 
-[DONE]
 
-[ACCORDION-END]
+### Test the function
 
-[ACCORDION-BEGIN [Step 3: ](Test the function)]
 
 You can test the function using the SQL console. Go into the database explorer and locate the function within your HDI container. Right-click on it and choose **Generate Select Statement**.
 
@@ -105,11 +106,11 @@ You can test the function using the SQL console. Go into the database explorer a
 
 Use dates from `2014-12-01` to `2014-12-05` and region `EMEA` as parameters to complete the validation below. How many orders were sold by the company ranking number 1 in sales?
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a Calculation View)]
+
+### Create a Calculation View
+
 
 In the `src/models` folder, create a Calculation View of type dimension
 
@@ -123,10 +124,9 @@ In the projection node, add all the columns to the output
 
 ![Calculation View](8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Map parameters)]
+### Map parameters
+
 
 Go to the parameters tab and click on **manage parameter mapping**
 
@@ -144,10 +144,9 @@ Choose the `Auto Map` button to automatically map the parameters to the columns 
 > - Cube with star Join: Join fact data with dimension type calculation view. For example, join transactional data containing prices and discounts (facts) with data that helps to organize those facts, such as master data (customers, product categories) or time dimensions (quarters, years).
 > - Dimension: No measures, no aggregations and no exposure to BI tools.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the Calculation View)]
+### Test the Calculation View
+
 
 Right-click on the calculation view and choose **data preview**. Fill the parameters as follows and click **Run**
 
@@ -155,7 +154,6 @@ Right-click on the calculation view and choose **data preview**. Fill the parame
 
 The results are displayed and the rank functionality becomes obvious. Copy and paste the SQL statement in the validation below to complete it:
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ---

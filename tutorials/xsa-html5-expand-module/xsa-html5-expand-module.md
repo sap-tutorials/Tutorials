@@ -1,6 +1,5 @@
 ---
-title: SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module
-description: Use SAPUI5 as a micro-service to display data from an OData service
+parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -8,21 +7,23 @@ primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 ---
 
+# SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module
+<!-- description --> Use SAPUI5 as a micro-service to display data from an OData service
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
  - Create a Node.js module to expose an OData service (https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
-## Details
-### You will learn  
+## You will learn  
 How to perform a very simple addition to the default HTML5 module to consume the OData service by binding a model. This is a very simple example that will be later expanded to incorporate better practices and is only intended to demonstrate a basic test consumption of a data model and the basic troubleshooting tools.
-
-### Time to Complete  
+## Time to Complete  
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Remove the default scripts)]
+### Remove the default scripts
+
 
 Open the file `index.html` under resources. You will find the default code creates a button that fades away when pressed
 
@@ -32,11 +33,9 @@ Remove the logic for the button
 
 ![Default code](2.gif)
 
-[DONE]
 
-[ACCORDION-END]
+### Bind the OData model to a table
 
-[ACCORDION-BEGIN [Step 2: ](Bind the OData model to a table)]
 
 In [this previous tutorial](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html), you created an XSJS compatible Node.js module to expose an OData V2 service that provides data from your database module. Consuming that model using SAP UI5 is simplified thanks to the concept of binding.
 
@@ -68,10 +67,10 @@ Save and run the HTML5 module. You should get an error. Press `F12` in your brow
 
 ![Error for validation](12.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add missing libraries)]
+
+### Add missing libraries
+
 
 You can see the available libraries in the `Sources` tab in the panel. Notice the resources that are loaded:
 
@@ -93,11 +92,9 @@ Add `sap.ui.table` to the `index.html` file as a required library.
 
 ![UI5](network.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add the SAPUI5 service as a dependency
 
-[ACCORDION-BEGIN [Step 4: ](Add the SAPUI5 service as a dependency)]
 
 Just like with the UAA service, you want to bind the instance you have created to your Multi-Target Application. Open the `MTA.yaml` file and click **add a new resource** called `ui5`.
 
@@ -115,10 +112,9 @@ Use `org.cloudfoundry.managed-service` as the type and the following key-value p
 
 ![New UI5](9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Adjust the AppRouter replacement)]
+### Adjust the AppRouter replacement
+
 
 Open the file `xs-app.json` and add the following code at the end of the route declarations
 
@@ -149,10 +145,9 @@ You will need to add a comma before adding the new route with the replacement va
 >  ![VCAP_SERVICES](env.png)
 > You can find more information about the AppRouter in the [SAP Help portal](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Call the micro-service in your HTML file)]
+### Call the micro-service in your HTML file
+
 
 Open the `index.html` file and replace the remote URL with the variable `{{{sapui5_sb.url}}}`.  
 
@@ -166,8 +161,7 @@ Right-click on the site and use the `view source` option to see the replacement:
 
 Press `CTRL + SHIT + ALT + S` and wait for the diagnostics window.
 
-[VALIDATE_3]
-[ACCORDION-END]
+
 
 
 

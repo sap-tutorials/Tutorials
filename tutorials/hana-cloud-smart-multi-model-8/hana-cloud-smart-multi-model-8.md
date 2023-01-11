@@ -1,11 +1,13 @@
 ---
-title: Calculate Shortest Path Using a GRAPH Procedure
-description: Learn how to use a GRAPH Procedure to calculate shortest paths on the Street Network.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Calculate Shortest Path Using a GRAPH Procedure
+<!-- description --> Learn how to use a GRAPH Procedure to calculate shortest paths on the Street Network.
 
 ## Prerequisites
 - You have already created a Graph Workspace using the tutorial [First steps with the SAP HANA Graph Engine](hana-cloud-smart-multi-model-7).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to define the required Table Type for the database procedure
 - How to create a GRAPH procedure for shortest path calculation
 - How to use anonymous blocks approach for shortest path calculation
 
 
+## Intro
 Once you have defined a Graph Workspace, you can run [`openCypher`(*)](https://www.opencypher.org/) queries for [pattern matching](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/LATEST/en-US/4c3ee700e7a8458baed3f1141d9380f3.html) workload or create GRAPH procedures for network analysis. In this tutorial you will learn how to create a database procedure that uses the built-in function to calculate a shortest path between two vertices. This includes three steps:
 
 -	Define the required Table Type for database procedure
@@ -29,7 +31,8 @@ Once you have defined a Graph Workspace, you can run [`openCypher`(*)](https://w
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define the required Table Type for database procedure)]
+### Define the required Table Type for database procedure
+
 If you are familiar with SAP HANA database procedures using `SQLScript`, you already know how to handle table-like results. A clean way to do this is defining and using **TABLE TYPES**. The same approach is valid for GRAPH procedures. Our `TABLE TYPE TT_SPOO_EDGES` describes the structure of the path result. It includes the `ID` of the edge and the `ORDER` in which the edges are traversed.
 
 First you need to create a `TABLE TYPE` that describes the output table of the procedure, containing `ID`, `SOURCE`, `TARGET`, `EDGE_ORDER` (BIGINT), and `length` (DOUBLE). Execute this statement:
@@ -41,10 +44,9 @@ CREATE TYPE "TT_SPOO_EDGES" AS TABLE (
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a GRAPH procedure for shortest path calculation)]
+### Create a GRAPH procedure for shortest path calculation
+
 The GRAPH procedure has a similar structure to a `SQLScript` procedure:
 
 -	The header describes input and output variables, followed by the actual code.
@@ -101,13 +103,12 @@ The result is a set of edges/street segments that make up the path. The `EDGE_OR
 
 You can see the results here:
 
-!![Result](ss-01-result.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![Result](ss-01-result.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Run a GRAPH code using anonymous blocks)]
+
+### Run a GRAPH code using anonymous blocks
+
 Sometimes it is more convenient to generate and execute the GRAPH code dynamically without creating a procedure in the database. This approach is called **"anonymous blocks"**. The code below is basically the same as in the procedure above, but this time it is executed in a **DO - BEGIN - END** block.
 
 ```SQL
@@ -131,14 +132,12 @@ You now have created a GRAPH procedure which calculates a hop distance shortest 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Configure SAP HANA Smart Data Streaming Server Connection
-description: Part 1 of 9. Configure SAP HANA streaming connection and add SAP HANA data service in SAP HANA Studio.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
@@ -8,13 +7,15 @@ author_name: Bill Jiang
 author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
+# Configure SAP HANA Smart Data Streaming Server Connection
+<!-- description --> Part 1 of 9. Configure SAP HANA streaming connection and add SAP HANA data service in SAP HANA Studio.
+
 ## Prerequisites  
  - **System:** You must have an SAP HANA SPS10 system or higher with smart data streaming installed that you can connect to and use.
  - **Integrated Development Environment:** You must have SAP HANA Studio 2 installed with the streaming plug-in installed and configured.
  - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as "SYSTEM".
 
-## Details
-### You will learn
+## You will learn
  - Connecting to a SAP HANA system.
  - Setting up the SAP HANA Streaming Development and Run perspective.
  - Connecting to a streaming server in SAP HANA Studio.
@@ -23,7 +24,8 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to a SAP HANA System)]    
+### Connect to a SAP HANA System
+    
 
 1. Open HANA Studio. In the **SAP HANA Administration Console** perspective, right click in the white space within the **Systems** view. Next select the **Add System...** menu item to execute it. You can also press **s**.
 
@@ -46,11 +48,9 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Click Finish](connect-to-hana-system-5-click-finish.png)
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Open Streaming Perspective)]    
+### Open Streaming Perspective
+    
 
 1. Go to **Windows** > **Perspective** > **Open Perspective** and click the **Other...** menu item to execute it. You can also press **o**.
 
@@ -66,11 +66,10 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Select Streaming Run-Test](open-perspective-4-hana-run-test.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Server Connection in SAP HANA Streaming Development Perspective)]    
+### Create Server Connection in SAP HANA Streaming Development Perspective
+    
 
 1. Go to the **SAP HANA Streaming Run-Test** perspective.
 
@@ -107,11 +106,9 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Default Server](add-streaming-server-8-default-server.png)
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Configure HANA Data Service)]    
+### Configure HANA Data Service
+    
 
 1. Click **SAP HANA Streaming Development** tab to open this perspective.
 
@@ -145,6 +142,3 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Discover Schema](configure-data-service-8-discover-schema.png)
 
-[DONE]
-
-[ACCORDION-END]

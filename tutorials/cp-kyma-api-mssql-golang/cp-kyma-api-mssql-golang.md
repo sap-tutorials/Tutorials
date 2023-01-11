@@ -1,11 +1,13 @@
 ---
-title: Deploy a Go MSSQL API Endpoint in the Kyma Runtime
-description: Develop and deploy an MSSQL API endpoint written in Go to the Kyma runtime.
+parser: v2
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Deploy a Go MSSQL API Endpoint in the Kyma Runtime
+<!-- description --> Develop and deploy an MSSQL API endpoint written in Go to the Kyma runtime.
 
 ## Prerequisites
   - [Docker](https://www.docker.com/)
@@ -14,12 +16,12 @@ primary_tag: products>sap-btp\\, kyma-runtime
   - [kubectl configured to KUBECONFIG downloaded from the Kyma runtime](cp-kyma-download-cli)
   - [Deploying MSSQL in the Kyma Runtime](cp-kyma-mssql-deployment) tutorial completed
 
-## Details
-### You will learn
+## You will learn
   - How to configure and build a Go Docker image
   - How to create a development Namespace in the Kyma runtime
   - How to deploy the Go Docker image to the Kyma runtime
 
+## Intro
 This tutorial expects that the tutorial [Deploying MSSQL in the Kyma Runtime](cp-kyma-mssql-deployment) has been completed and relies on the database running either locally or within the Kyma runtime. If you run the database in the Kyma runtime, make sure to use the `port-forward` feature presented in the tutorial to expose the database to your local environment.
 
 Deploying the image includes:
@@ -32,7 +34,8 @@ Deploying the image includes:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. Copy the repository URL.
 
@@ -44,10 +47,9 @@ Deploying the image includes:
 git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the sample)]
+### Explore the sample
+
 
 1. Open the `api-mssql-go` directory in your desired editor.
 
@@ -71,11 +73,10 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 7. Within the root you can find `go.mod` and `go.sum` files that are used to manage the dependencies the application uses.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Run the application locally)]
+### Run the application locally
+
 
 Run the following commands from the `api-mssql-go` directory using your CLI.
 
@@ -131,10 +132,9 @@ set MYAPP_port=1433
     curl --data "{\"order_id\":\"10000003\",\"description\":\"test from curl\"}" http://localhost:8000/orders
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build the Docker image)]
+### Build the Docker image
+
 
 Run the following commands from the `api-mssql-go` directory within your CLI.
 
@@ -152,10 +152,9 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     docker push <your-docker-id>/api-mssql-go
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Use the Docker image locally)]
+### Use the Docker image locally
+
 
 Run the following commands from the `api-mssql-go` directory within your CLI.
 
@@ -230,10 +229,9 @@ The command is expecting that the database is available at `localhost:1433` on t
     docker rm api-mssql-go
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Apply resources to Kyma runtime)]
+### Apply resources to Kyma runtime
+
 
 You can find the resource definitions in the `k8s` folder. If you performed any changes in the configuration, these files may also need to be updated. The folder contains the following files that are relevant to this tutorial:
 
@@ -241,12 +239,15 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `configmap.yaml`: defines the name of the database, host, and port. The host value assumes that the service for the database is named `mssql` and is defined in the `dev` Namespace. Make sure to adjust this if you made any changes.
 - `deployment.yaml`: defines the deployment definition for the Go API, as well as a service used for communication. This definition references both the `secret.yaml`, which was defined in the previous tutorial and also included in this directory, and the `configmap.yaml` by name.  
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 
@@ -305,10 +306,10 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl -n dev apply -f ./k8s/apirule.yaml
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Open the API endpoint)]
+
+### Open the API endpoint
+
 
 To access the API we can use the `APIRule` we created in the previous step.
 
@@ -327,7 +328,6 @@ To access the API we can use the `APIRule` we created in the previous step.
     >A tool such as `curl` can be used to test the various HTTP methods of the API.
 
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ---

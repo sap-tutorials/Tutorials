@@ -1,20 +1,22 @@
 ---
-title: Add Web Content to Your Portal Site and Set the Layout
-description: Design your Portal site by adding widgets with meaningful content.
+parser: v2
 auto_validation: true
 time: 25
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
+# Add Web Content to Your Portal Site and Set the Layout
+<!-- description --> Design your Portal site by adding widgets with meaningful content.
+
 ## Prerequisites
 The `JobCore` Portal site is open in the Pages editor displaying the `JobCore` and `Launchpad` pages.
 
-## Details
-### You will learn
+## You will learn
   - How to add web content to a page in your Portal site
   - How to design the layout of your page and its content
 
+## Intro
 By now, you should have created the `JobCore Portal` site with a `Home` page and a `Launchpad` page that are both part of the site menu.
 
 In this tutorial, we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
@@ -23,7 +25,8 @@ Let's add meaningful content to your `Home` page.
 
 > NOTE: if your time is limited, you need only do Steps 2 and 6. The other steps show you additional capabilities but take longer.
 
-[ACCORDION-BEGIN [Step 1: ](Download resources)]
+### Download resources
+
 
 Before you start, first download the following images that you will add to your page. To download them, right-click the links and choose **Save link as** and save them on your computer.
 
@@ -46,11 +49,10 @@ Before you start, first download the following images that you will add to your 
   - [`Staying_Connected.jpg`](Resources/Staying_Connected.jpg)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add widgets to the page)]
+### Add widgets to the page
+
 
 1. Click the `JobCore` page from the **Pages** panel in the Pages editor.
 
@@ -100,10 +102,9 @@ Before you start, first download the following images that you will add to your 
 
 You have a page full of widgets that still have their default content. So now let's replace the default content with more meaningful content.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add your own content to the site)]
+### Add your own content to the site
+
 
 1. Click the `Headline Carousel` widget from the **Header** section to expose the widget and section editing icons.
 
@@ -290,11 +291,10 @@ You have a page full of widgets that still have their default content. So now le
 
 You've replaced all the default content in the widgets with your own. Let's arrange the widgets on the page.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Design the sections of your page)]
+### Design the sections of your page
+
 
 In this step, you'll arrange the widgets in the different sections of the page and configure the visual settings of the sections (like minimum height).
 
@@ -368,10 +368,9 @@ In this step, you'll arrange the widgets in the different sections of the page a
 
 You've now designed your Portal page by arranging the widgets in their page sections. In the next step you'll change the dimensions of the actual widget so that they are visually aligned and displayed effectively on your page.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure the layout of the widgets)]
+### Configure the layout of the widgets
+
 
 In this step, you are going to change the widget settings of the following widgets:
 
@@ -416,11 +415,10 @@ In this step, you are going to change the widget settings of the following widge
     |  Alignment          | Center
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Review your site)]
+### Review your site
+
 
 Now that your page is ready, you may want to take a look at how your users will see the site so far. Click the **Go to site** icon at the top right of the screen.
 
@@ -432,9 +430,7 @@ And this is what you'll see:
 
 Congratulations!  You've created a very attractive `Home` page. In our next tutorial, we're going to add a URL app to our `Launchpad` page.   
 
-[VALIDATE_7]
 
-[ACCORDION-END]
 
 
 

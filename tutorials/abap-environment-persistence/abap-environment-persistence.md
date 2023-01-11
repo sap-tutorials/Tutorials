@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Table Persistence and Generate Data
-description: Create table persistence and generate data for it.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
@@ -9,22 +8,26 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Table Persistence and Generate Data
+<!-- description --> Create table persistence and generate data for it.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 - You have done the [theoretical ABAP RESTful Application Programming Model tutorial](abap-environment-restful-programming-model).
 
-## Details
-### You will learn  
+## You will learn  
   - How to create an ABAP package
   - How to create a database table
   - How to create an ABAP class to generate data
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
+### Create ABAP package
+
   1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP BTP ABAP Environment Trial User](abap-environment-trial-onboarding).
 
      Right-click on `ZLOCAL` and select **New > ABAP Package**.
@@ -54,10 +57,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ![Create ABAP package](packagefav.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create database table)]
+### Create database table
+
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
 
       ![Create database table](table.png)
@@ -116,10 +118,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Now the dictionary tables are defined. The dictionary tables are the basis of our travel booking data model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create ABAP class)]
+### Create ABAP class
+
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **ABAP Class**.
 
       ![Create ABAP class](class.png)
@@ -190,15 +191,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP class](class41.png)
 
-[DONE]  
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-persistence" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
