@@ -1,8 +1,6 @@
 ---
 author_name: Christian Savchev
-author_profile: https://github.com/christiansavchev  
-title: Create an Action of a Type Email
-description: Learn how to create an action of a type email
+author_profile: https://github.com/christiansavchev
 keywords: tutorial
 auto_validation: true
 time: 10
@@ -15,10 +13,10 @@ parser: v2
 <!-- description --> Learn how to create an action of a type email.
 
 ## Prerequisites
-- You have activated Alert Notification in a trial account as described in [Set Up SAP Alert Notification service for SAP BTP for Initial Use](set-up-alert-notification).
+- You have activated Alert Notification in a trial account as described in [Set Up SAP Alert Notification service for SAP BTP for Initial Use](set-up-alert-notification)
 
 ## You will learn
-- How to create an action of a type email, so that you can receive notifications to a given email. 
+- How to create an action of a type email, so that you can receive notifications to a given email
     > If you want to receive notifications to other delivery channels, see the SAP Cloud Platform Alert Notification documentation at [Managing Actions](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/8a7e092eebc74b3ea01d506265e8c8f8.html).
 
 ## Intro
@@ -41,7 +39,7 @@ parser: v2
 
     ![Name](4-Name.png)
 
-5. In the **Email Address** field, enter the destination email to which the notification must be sent and optionally provide a custom template for customizing your notification email. Then click on the **Create** button.
+5. In the **Email Address** field, enter the destination email address to which the notification must be sent and optionally provide a custom template for customizing your notification email. Then click on the **Create** button.
 
     ![Advanced](5-Advanced.png)
 
