@@ -17,9 +17,11 @@ parser: v2
 
 ## You will learn
 - How to create an action of a type email, so that you can receive notifications to a given email
-    > If you want to receive notifications to other delivery channels, see the SAP Cloud Platform Alert Notification documentation at [Managing Actions](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/8a7e092eebc74b3ea01d506265e8c8f8.html).
+    
 
 ## Intro
+
+> If you want to receive notifications to other delivery channels, see the SAP Cloud Platform Alert Notification documentation at [Managing Actions](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/8a7e092eebc74b3ea01d506265e8c8f8.html).
 
 ### Create an action of a type email.
 
