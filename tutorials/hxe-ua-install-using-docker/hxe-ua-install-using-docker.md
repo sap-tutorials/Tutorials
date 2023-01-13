@@ -419,10 +419,11 @@ Follow the prompts to complete the server update.
 
 ### Docker Run Usage: (-Help Command)
 
+
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.054.00.20210603.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.XXX.XX.XXXXXXXX.X -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
