@@ -31,7 +31,7 @@ parser: v2
 
     ![CreateAnAction](2-CreateAnAction.png)
 
-3. In the **Actions** dialog box, choose the prefered email action type and then click on the **Next** button.
+3. In the **Actions** dialog box, choose the preferred email action type and then click on the **Next** button.
 
     ![DialogBox](3-DialogBox.png)
 
