@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 40
-tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
+tags: [ software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, softrware-product>sap-business-technology-platform]
 primary_tag: products>sap-fiori
 ---
 
