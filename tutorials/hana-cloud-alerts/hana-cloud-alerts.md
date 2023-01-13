@@ -1,21 +1,23 @@
 ---
-title: Alerts in SAP HANA Database and Data Lake
-description: Learn how to configure and view alerts in SAP HANA Cloud and how the SAP BTP Alert Notification Service can be used to send alerts to other channels.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Alerts in SAP HANA Database and Data Lake
+<!-- description --> Learn how to configure and view alerts in SAP HANA Cloud and how the SAP BTP Alert Notification Service can be used to send alerts to other channels.
+
 ## Prerequisites
  - Access to a SAP HANA Cloud trial or production instance.
 
-## Details
-### You will learn
+## You will learn
   - An overview of alerts
   - How to configure, trigger, and access alerts
   - How to use the SAP BTP Alert Notification Service (ANS) to be notified of alerts
 
+## Intro
 Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake Relational Engine is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
@@ -24,7 +26,8 @@ Alternatively, alert details can be pushed to several configured channels such a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Examine SAP HANA Cloud, HANA Database alert definitions)]
+### Examine SAP HANA Cloud, HANA Database alert definitions
+
 
 In this step, the SAP HANA cockpit will be used to examine three alert definitions.
 
@@ -82,10 +85,9 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
   For additional details, consult [How Alerts are Generated](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/8eca57e7e82e4b788246b6d9db020937.html) and
   the topic [Alerts](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/cloud/en-US/923f1c8f200b44708e7ee68876d5fe2b.html) in the document SAP HANA Cloud Database Administration with SAP HANA Cockpit.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Trigger alerts in a SAP HANA database)]
+### Trigger alerts in a SAP HANA database
+
 
 The following instructions demonstrate a few examples of triggering alerts in a SAP HANA database.      
 > Ensure these actions are performed on a non-production system such as a trial account or only use the test alert.
@@ -158,10 +160,9 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 
     ![monitoring with refresh on](cockpit-monitoring.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](View SAP HANA database alerts using the alerts app)]
+### View SAP HANA database alerts using the alerts app
+
 The following instructions will show how to view a triggered SAP HANA database alert in the alerts app in the SAP HANA cockpit.
 
 1. After the long-running statement completes, open the alerts app to view the triggered alerts.  
@@ -197,10 +198,9 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     >Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Trigger an alert in SAP HANA Cloud data lake)]
+### Trigger an alert in SAP HANA Cloud data lake
+
 The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in after the user account has been locked because an incorrect password was provided too many times.     
 
 1. In a SAP HANA database explorer that is connected to a data lake, execute the following SQL to create a login policy and a new user.
@@ -240,11 +240,10 @@ The following instructions show one example of triggering the [data lake locked 
 
     The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Set up email notification when an alert occurs)]
+### Set up email notification when an alert occurs
+
 The Business Technology Platform (BTP) includes a service called the Alert Notification Service (ANS) that provides a common way for other services or applications running in the BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to ANS when an alert is triggered.  
 
 ![BTP with HC and ANS](btp-hc-ans.png)
@@ -303,11 +302,11 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     See also [Managing Actions](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/8a7e092eebc74b3ea01d506265e8c8f8.html) for details on other available action types.
 
-9. Provide a **Name** and then scroll to the additional properties section.
+9. Provide a **Name** and then scroll to the **Advanced Action Properties** section.
 
     ![email action details](create-action-email-details.png)
 
-    In the **Additional Properties** section, provide values for **Email Address**, **Subject Template** and **Payload Template**.
+    In the **Advanced Action Properties** section, provide values for **Email Address**, **Subject Template** and **Payload Template**.
 
     ![advanced action details](create-action-email-details-advanced.png)
 
@@ -393,10 +392,9 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     ![data lake locked user](locked-user-email.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up notification with a Microsoft Teams channel)]
+### Set up notification with a Microsoft Teams channel
+
 
 This step will briefly show an example of how to receive a notification in Microsoft Teams.
 
@@ -437,10 +435,9 @@ This step will briefly show an example of how to receive a notification in Micro
     ![notification in teams](teams-notification.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set up notification with a Slack channel)]
+### Set up notification with a Slack channel
+
 
 This step will briefly show an example of how to receive a notification in Slack.
 
@@ -516,7 +513,6 @@ This step will briefly show an example of how to receive a notification in Slack
 
 Congratulations! You have now configured alerts, triggered and viewed them via the SAP HANA cockpit and received them via email, Microsoft Teams, and Slack using the Alert Notification Service.  
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

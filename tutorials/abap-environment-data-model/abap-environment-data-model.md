@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Define and Expose a CDS-Based Travel Data Model
-description: Define CDS-based data model and create projection view.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 20
@@ -9,25 +8,28 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Define and Expose a CDS-Based Travel Data Model
+<!-- description --> Define CDS-based data model and create projection view.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
-## Details
-### You will learn   
+## You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
   - How to create service binding
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
->**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with**
-[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
+>**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with** [ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
 
-[ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
+### Define CDS-based travel data model
+
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
 
       ![Define CDS based travel data model](model.png)
@@ -103,10 +105,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Your CDS view for travel booking is defined now. You can use and manipulate data that is persisted in your database.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create projection view for travel)]
+### Create projection view for travel
+
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
 
       ![Create projection view for travel](projection.png)
@@ -224,10 +225,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      The **projection** is created and includes UI annotations. The projection is the subset of the fields of the travel data model, which are relevant for the travel booking application.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create service definition)]
+### Create service definition
+
   1. Right-click on your data definition `ZC_TRAVEL_M_XXX` and select **New Service Definition**.
 
       ![Create service definition](definition.png)
@@ -266,10 +266,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      With the **service definition** you are able to define which data is exposed as a business service in your travel booking application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service binding)]
+### Create service binding
+
   1. Right-click on your service definition `ZUI_C_TRAVEL_M_XXX` and select **New Service Binding**.
 
       ![Create service binding](binding.png)
@@ -297,14 +296,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      The **service binding** allows you to bind the service definition to an ODATA protocol. Therefore you are able to see the travel booking application on the UI.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---
 

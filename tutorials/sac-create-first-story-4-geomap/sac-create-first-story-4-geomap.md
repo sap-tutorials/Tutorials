@@ -1,27 +1,30 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Visualize your Data with Geo Maps
-description: Learn how to create, interact with, and filter through a Geo Map
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Visualize your Data with Geo Maps
+<!-- description --> Learn how to create, interact with, and filter through a Geo Map
+
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to create a Geo map
   - How to interact with and filter a Geo map
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Rename the Pages)]
+### Rename the Pages
+
 
 First, let's rename the two pages we've made so far.  
 
@@ -35,10 +38,9 @@ First, let's rename the two pages we've made so far.
 
 ![Rename 2](Rename 2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Geo Map)]
+### Create a Geo Map
+
 
 A Geo map allows users to overlay multiple layers of business data on a Geo map with detailed geographic information to perform analyses on geographic data. Let's create one.
 
@@ -70,11 +72,10 @@ A Geo map allows users to overlay multiple layers of business data on a Geo map 
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/6ade40e98e9c4f11ab3ad28d345ab54f.html) to learn more.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Interact with the Geo Map)]
+### Interact with the Geo Map
+
 
 The chosen `Choropleth` layer is useful for comparing and analyzing data from across locations. Furthermore, the drill layer allows you to drill up and down between a Country, its State, and the Cities within the State.
 
@@ -102,13 +103,10 @@ Before we move on, your dashboard should now look like this:
 
 ![Dashboard Update](dashboard update 2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

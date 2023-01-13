@@ -1,6 +1,5 @@
 ---
-title: Create an SAP HANA Tenant Database and an SAP HANA XS Classic Application
-description: Create and bind an SAP HANA tenant database to an SAP HANA XS classic application.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>Cloud, software-product>sap-business-technology-platform, tutorial>license]
@@ -9,22 +8,26 @@ author_name: Sylvia Hördt
 author_profile: https://github.com/sapsy
 ---
 
+# Create an SAP HANA Tenant Database and an SAP HANA XS Classic Application
+<!-- description --> Create and bind an SAP HANA tenant database to an SAP HANA XS classic application.
+
 ## Prerequisites
  - You have a subaccount in the SAP BTP, Neo environment.
  - You're assigned the Administrator role for the subaccount.
  - You've installed an SAP HANA tenant database system (MDC). See [Install Database Systems](https://help.sap.com/viewer/d4790b2de2f4429db6f3dff54e4d7b3a/Cloud/en-US/1261e6b87e174c05b774ea38fa3c8c51.html).
 
-## Details
-### You will learn
+## You will learn
 - How to create and bind an SAP HANA tenant database to an SAP HANA XS classic application using the SAP BTP cockpit, the SAP HANA cockpit, and the SAP HANA Web-Based Development Workbench
 
+## Intro
 To perform the different steps in this tutorial, you use different tools. You first create a tenant database, and then create the XS classic application on the database.
 
 ![Overview](intro-flow.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a database)]
+### Create a database
+
 
 In your subaccount in the SAP BTP cockpit, you create a database on an SAP HANA tenant database system.
 
@@ -53,10 +56,9 @@ In your subaccount in the SAP BTP cockpit, you create a database on an SAP HANA 
 
 7.  (Optional) To view the details of the new database, choose **Overview** in the navigation area and select the database in the list. Verify that the status **STARTED** is displayed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a database user)]
+### Create a database user
+
 
 Create a new database user in the SAP HANA cockpit and assign the user the required permissions for working with the SAP HANA Web-based Development Workbench.
 
@@ -130,11 +132,11 @@ You'll perform all subsequent activities with this new user.
 
     > Therefore, choose the **Logout** button before you continue to work with the SAP HANA Web-based Development Workbench, where you need to log on again with the new database user.
 
-[VALIDATE_7]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create and deploy an SAP HANA XS classic application)]
+
+### Create and deploy an SAP HANA XS classic application
+
 
 Create an SAP HANA XS classic Hello World program using the SAP HANA Web-based Development Workbench.
 
@@ -167,7 +169,5 @@ Create an SAP HANA XS classic Hello World program using the SAP HANA Web-based D
 
     `Hello World from User <Your User>.`
 
-[DONE]
-[ACCORDION-END]
 
 ---

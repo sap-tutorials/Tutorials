@@ -1,19 +1,20 @@
 ---
-title: Create an Anonymized View Using K-Anonymity
-description: Create anonymized views in SAP HANA Cloud, SAP HANA database using k-anonymity to avoid identification of individuals based on quasi-identifiers.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Create an Anonymized View Using K-Anonymity
+<!-- description --> Create anonymized views in SAP HANA Cloud, SAP HANA database using k-anonymity to avoid identification of individuals based on quasi-identifiers.
+
 ## Prerequisites
 - It's recommended that you complete the [previous tutorial](hana-cloud-data-anonymization-2).
 - You can download the [sample CSV file](https://github.com/SAP-samples/hana-cloud-learning/raw/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/DataAnonymization_SampleData.zip) to run the example scenario. Make sure to [upload it into your database](hana-cloud-mission-trial-5) before running the queries given in the example.
 - If you would like to run the sample scenario, you need a **running** instance of SAP HANA Cloud, SAP HANA database in trial or production.
 
-## Details
-### You will learn
+## You will learn
 - How to define your anonymization strategy
 - How to define generalization hierarchies for quasi-identifiers
 - How to create an anonymized view using embedded hierarchies
@@ -21,6 +22,7 @@ primary_tag: products>sap-hana-cloud
 - How to verify the results of anonymization
 
 
+## Intro
 > ### **Disclaimer**
 >
 >In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
@@ -32,7 +34,8 @@ In this tutorial, we will provide you with detailed step-by-step instructions ho
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define the anonymization strategy)]
+### Define the anonymization strategy
+
 
 Before you can start creating an anonymized view with K-Anonymity, you need to define the strategy of your anonymization. This includes two key aspects: The type of data in your dataset and the generalization hierarchies you want to apply.
 
@@ -48,10 +51,9 @@ Please note, that depending on your situation, data that is considered as quasi-
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define generalization hierarchies)]
+### Define generalization hierarchies
+
 
 **Generalization hierarchies**
 
@@ -73,11 +75,10 @@ You can read more about generalization hierarchies in the [technical documentati
 
 Now that you have prepared the structure of your data, we will show you in the next step how you can create an anonymized view.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create an anonymized view using embedded hierarchies)]
+### Create an anonymized view using embedded hierarchies
+
 
 
 1.	Open the **SAP HANA Database Explorer** that is connected to your SAP HANA Cloud, SAP HANA database instance.
@@ -147,10 +148,9 @@ Once you have filled in all information in this statement, you can run it to cre
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View the results of anonymization)]
+### View the results of anonymization
+
 
 
 1.	To trigger the actual calculation of the required anonymization steps, the view then needs to be refreshed:
@@ -190,24 +190,23 @@ ORDER by "Count" ASC;
 
 If you open the **Explain Plan** of your anonymization view, you can examine the query. You will find the `ANONYMIZED_VIEW` operator and the original table your view refers to. This confirms that the anonymization happens on a database level while the original data stays untouched, and the anonymized view always contains the latest data.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run an example scenario with sample data)]
+### Run an example scenario with sample data
+
 
 > The SQL codes used in this tutorial are available to you in a GitHub repository. You can find them [here](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/Tutorial%203_Create%20an%20Anonymized%20View%20using%20K-Anonymity.sql).
 
 1. To run this example, you must first download the [sample data](https://github.com/SAP-samples/hana-cloud-learning/raw/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/DataAnonymization_SampleData.zip). Now, right-click on **Tables** from the **Catalog** of your database and choose **Import Catalog Objects** as shown below.
 
-    !![import catalog](ss-05-import-catalog.png)
+    <!-- border -->![import catalog](ss-05-import-catalog.png)
 
 2. Click the **Browse** option for Local Archive and select the downloaded sample data. Click on **Import**. Make sure to change the schema name if necessary.
 
-    !![import catalog complete](ss-06-import-catalog-complete.png)
+    <!-- border -->![import catalog complete](ss-06-import-catalog-complete.png)
 
 3. You can see the overview of the sample data columns by selecting the **Tables** option and choosing the appropriate schema that was used while importing the data.
 
-    !![Table Overview](ss-07-table-overview.png)
+    <!-- border -->![Table Overview](ss-07-table-overview.png)
 
 4. To understand the need for anonymization, run the SQL query on the sample data as given below:
 
@@ -218,7 +217,7 @@ GROUP BY "start_year", "gender", "zipcode", "salary" ORDER by "Count" ASC;
 
 From the result, you can see that there are many unique combinations of quasi-identifiers (where `Count` value =1) that can lead to the disclosure of sensitive information (`salary` amount) of the concerned people. Hence, data anonymization is required to share this sample data without risking data privacy.
 
-!![need for anonymization](ss-08-need-for-anonymization.png)
+<!-- border -->![need for anonymization](ss-08-need-for-anonymization.png)
 
 
 Next, as a solution to the above requirement you will create an anonymization view using this sample data.
@@ -227,10 +226,9 @@ Next, as a solution to the above requirement you will create an anonymization vi
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create an anonymization view with the sample data)]
+### Create an anonymization view with the sample data
+
 
 Here is an example of how a complete statement could look like for an anonymized view that contains three quasi-identifying columns, start year, zip code and gender as well as the sensitive salary data, in which `K=8` individuals should be indistinguishable:
 
@@ -253,22 +251,21 @@ Run the above code in SQL Console after setting the right schema. There are a fe
 
 This anonymized view will result in this data:
 
-!![anonymity_example_1](ss-09-k-anonymity-example1.png)
+<!-- border -->![anonymity_example_1](ss-09-k-anonymity-example1.png)
 
 > Use the help of instructions in Step 4 to examine the anonymization view. Make sure to refresh the view before trying to query it.
 
 You can see that the algorithm only anonymized the start year column while the other columns stay untouched. To check how many people are indistinguishable this way, you can query the count of unique combinations as shown below:
 
-!![k-anonymity_example2](ss-10-k-anonymity-example2.png)
+<!-- border -->![k-anonymity_example2](ss-10-k-anonymity-example2.png)
 
 As you can see, the anonymization was successful, there are much more individuals in each group than `K=8`. That means we could have included more quasi-identifiers in this anonymized view and still get accurate results with high privacy.
 
 Now you know how to create **embedded hierarchies**. This method is simple to use but the more values, generalization levels and categories a column contains, the longer this statement becomes and the more time-consuming and prone to errors when maintaining duplicate data. To save time, you can also create hierarchy functions. You will learn more about them in the next step of this tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Get to know hierarchy functions)]
+### Get to know hierarchy functions
+
 
 Instead of manually specifying the generalization levels for each individual value, you can create hierarchy functions that can then be included in the `CREATE` statement of the anonymized view.
 
@@ -281,10 +278,9 @@ You can create various kinds of functions:
 
 In the next steps, you will be introduced to two examples from the above list that you can adjust to your needs.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a hierarchy function that shortens numbers from right to left)]
+### Create a hierarchy function that shortens numbers from right to left
+
 
 This function defines rules specifying how many characters the values of a column containing `zipcode` values should be generalized in the anonymized view:
 
@@ -320,15 +316,14 @@ COLUMN "zipcode" PARAMETERS '{"is_quasi_identifier":true,"hierarchy":{"schema":"
 
 You can try using this function with the sample data to create a view that looks like this:
 
-!![zip code Hierarchy function](ss-11-zipcode-hierarchy-function.png)
+<!-- border -->![zip code Hierarchy function](ss-11-zipcode-hierarchy-function.png)
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create a hierarchy function that groups values to ranges)]
+### Create a hierarchy function that groups values to ranges
+
 
 This function defines rules that values of a `start_year` column should be generalized to year categories of 5 years on level 1 and 10 years on level 2:
 
@@ -398,15 +393,14 @@ COLUMN "zipcode" PARAMETERS '{"is_quasi_identifier":true,"hierarchy":{"embedded"
 
 You can try using this function with the sample data to create a view that looks like this:
 
-!![Start year Hierarchy function](ss-12-startyear-hierarchy-function.png)
+<!-- border -->![Start year Hierarchy function](ss-12-startyear-hierarchy-function.png)
 
 
 For more examples of hierarchy functions, you can read the detailed [technical documentation here](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/LATEST/en-US/d1badcd2b5c84547bc470da2e08c035e.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Explore other customization options for k-anonymity)]
+### Explore other customization options for k-anonymity
+
 
 There are many more specifications you can make to fit the anonymization method exactly to your needs. For example, you can specify…
 
@@ -424,14 +418,12 @@ For more details on the parameters of K-Anonymity, you can read our [technical d
 > Learn in the next article how to add an additional layer of protection to sensitive data in your dataset, by extending it by the method of L-Diversity.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

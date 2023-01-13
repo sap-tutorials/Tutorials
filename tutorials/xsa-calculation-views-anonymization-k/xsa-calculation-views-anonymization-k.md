@@ -1,6 +1,5 @@
 ---
-title: Create a Calculation View with K-anonymity (XS Advanced)
-description: Anonymize data to protect privacy.
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: topic>big-data
@@ -8,25 +7,28 @@ tags: [  tutorial>intermediate, topic>big-data, products>sap-hana, products>sap-
 time: 20
 ---
 
+# Create a Calculation View with K-anonymity (XS Advanced)
+<!-- description --> Anonymize data to protect privacy.
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 
-## Details
-### You will learn  
-
+## You will learn  
  - How to create a Calculation View using an `anonymization` node
  - Use `k-anonymity` to hide data that can identify individuals by comparing other identifying information. See the [SAP Help for more information](https://help.sap.com/viewer/e8e6c8142e60469bb401de5fdb6f7c00/latest/en-US/205f52e73c4a422e91fb9a0fbd5f3ec6.html)
  - How to create a calculation view
  - Use artifacts to import data from text file
 
 
+## Intro
 ***GitHub repository available***
 
  This project can be cloned from this repository: [https://github.com/SAP/hana-xsa-calculation-view-anonymity](https://github.com/SAP/hana-xsa-calculation-view-anonymity)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
+### Check pre-requisites
+
 
 ### Map a space to your tenant
 Make sure your project is using a space that is mapped to a tenant. Here is how to [how to map it to a tenant database](xsa-tenant-db-space).
@@ -53,11 +55,9 @@ Use command `xs ds` to delete the HDI container and deploy it again once the spa
 
 > Note: An indication of using the system database after completing the SQL statement in the previous prerequisite is an error stating `column store error search table error No ScriptServer available` or similar.
 
-[DONE]
 
-[ACCORDION-END]
+### Log in to SAP Web IDE for SAP HANA and create a project
 
-[ACCORDION-BEGIN [Step 2: ](Log in to SAP Web IDE for SAP HANA and create a project)]
 
 Right-click **Workspace** and choose **New > Project from template**.
 
@@ -77,11 +77,9 @@ Make sure you are using the space that is mapped to the tenant database. Also yo
 
 Click **Finish** to create your project.
 
-[DONE]
 
-[ACCORDION-END]
+### Create a table
 
-[ACCORDION-BEGIN [Step 3: ](Create a table)]
 
 In the `db/src` folder, create a folder called `data` and a file called `jobs.hdbtable`. Use the following code for the table:
 
@@ -98,10 +96,9 @@ COLUMN TABLE JOBS (
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert data into your tables)]
+### Insert data into your tables
+
 
 In the data folder, create a file called `data.csv` with the following content:
 
@@ -158,10 +155,9 @@ Create another file called `load.hdbtabledata` and add the following contents in
 **Save** all of the files and **Build** the `db` module.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a Calculation View)]
+### Create a Calculation View
+
 
 Create folder called `models` under `src` and a calculation view of type cube called `K_ANONYMITY`
 
@@ -208,11 +204,10 @@ Click **Back**. Connect the `JOBS` node to the aggregation node.
 >&nbsp;
 > In this example, there are single combinations of job roles in specific countries. In other words, if the other fields were sensitive information such as the salary and somebody knew who filled in the spreadsheet, they could deduce an individual's salary because of the unique combination of job role and country.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Configure semantics and test)]
+### Configure semantics and test
+
 
 Click on the aggregation node and add all of the columns to the output.
 
@@ -226,8 +221,5 @@ Once finished, right-click and choose the data preview. Choose `Raw Data` to com
 
 Sort the column `CURRENT TENURE` descending. What is the value of the first Origin Country?
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

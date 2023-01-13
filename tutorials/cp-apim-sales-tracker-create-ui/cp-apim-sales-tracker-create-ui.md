@@ -1,23 +1,23 @@
 ---
-title: Use Mobile Services to Create UI
-description: Create a new mobile card by pointing to the proxy endpoint created in SAP API Management.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>advanced, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
 ---
 
+# Use Mobile Services to Create UI
+<!-- description --> Create a new mobile card by pointing to the proxy endpoint created in SAP API Management.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
+## You will learn
   - How to create a new mobile card
   - How to give the query and collection query URL pointing to the proxy endpoint created in SAP API Management
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new mobile card)]
+### Create a new mobile card
+
 
 1. Open Mobile Services [Cockpit](https://account.hanatrial.ondemand.com ).
 
@@ -201,20 +201,18 @@ primary_tag: products>sap-api-management
 
 14. Click **Save**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Emulate Mobile App)]
+### Emulate Mobile App
+
 
 1. On the main page click the **Emulator** tab, click **Load/Refresh**.
 
     ![Emulator](07-Emulator.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Scan QR code)]
+### Scan QR code
+
 
 1. On the main page click the **APIs** tab.
 
@@ -222,10 +220,9 @@ primary_tag: products>sap-api-management
 
 2.	Scan the QR code for your device to register Mobile Cards to your app.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get the mobile card on your device)]
+### Get the mobile card on your device
+
 
 1. Log in to the app using your `<P#>`
 
@@ -237,5 +234,3 @@ primary_tag: products>sap-api-management
 
     ![Mobile Sales Order](12-sales-order-mobile.png)
 
-[DONE]
-[ACCORDION-END]

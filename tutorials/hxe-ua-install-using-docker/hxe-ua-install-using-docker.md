@@ -416,7 +416,6 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
-
 ### -Help Command
 
 

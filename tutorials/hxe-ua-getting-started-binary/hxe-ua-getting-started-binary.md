@@ -1,29 +1,32 @@
 ---
-title: Machine Requirements
-description: Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
-primary_tag: products>sap-hana\,-express-edition
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana\,-express-edition
+tags: [ tutorial>beginner, software-product>sap-hana\,-express-edition ]
 time: 5
 ---
+
+# Machine Requirements
+<!-- description --> Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
 
 <!-- loioc3807913b0a340a99822bf0d97a01da6 -->
 
 ## Prerequisites
-
-## Details
-### You will learn
+## You will learn
 Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
 
 ---
 
-> Note:
+## Intro
+> Note:  
 > Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
-> 
-> 
+>
+> To get started developing with SAP HANA XS Advanced see [Get Started with XS Advanced Development](mission.xsa-get-started).
+>
 
-[ACCORDION-BEGIN [Step 1: ](Ensure that your system meets the hardware requirements.)]
+### Ensure that your system meets the hardware requirements.
+
 
 Check if your system has the required hardware to successfully install and run SAP HANA 2.0, express edition.
 
@@ -33,11 +36,9 @@ Check if your system has the required hardware to successfully install and run S
 |HDD|120 GB HDD recommended|
 |Cores|2 cores (4 recommended)|
 
-[DONE]
 
-[ACCORDION-END]
+### Ensure that your system meets the software requirements.
 
-[ACCORDION-BEGIN [Step 2: ](Ensure that your system meets the software requirements.)]
 
 Check if your system has the required software to successfully install and run SAP HANA 2.0, express edition.
 
@@ -49,28 +50,23 @@ Check if your system has the required software to successfully install and run S
 
         > Note:
         > To install on SLES for SAP 12.1, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
-        > 
-        > 
+        >
+        >
 
     -   Red Hat Enterprise Linux for SAP Applications 7.2, 7.3 (SPS 02 Rev 21 or higher), 7.4 (SPS 02 Rev 23 or higher)
     -   Red Hat Enterprise Linux for SAP Applications for Power 7.3 (SPS 02 Rev 21 or higher), 7.4 (SPS 02 Rev 23 or higher)
 
         > Note:
         > To install on RHEL for SAP, first install the `compat-sap-c++-6` package using the following command: `yum install compat-sap-c++-6`.
-        > 
-        > 
+        >
+        >
 
     > Note:
     > The following components are not available on IBM Power Systems:
-    > 
+    >
     > -   SAP Enterprise Architecture Designer
     > -   SAP HANA streaming analytics
     > -   SAP HANA External Machine Learning AFL
-    > 
-
-
-[DONE]
-
-[ACCORDION-END]
+    >
 
 

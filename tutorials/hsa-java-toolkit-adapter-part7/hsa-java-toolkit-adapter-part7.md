@@ -1,17 +1,18 @@
 ---
-title: Further Readings on Custom Adapters
-description: Learn more about features of Custom Adapters like enabling guaranteed delivery, creating an output adapter and implementing schema discovery.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 time: 30
 ---
 
+# Further Readings on Custom Adapters
+<!-- description --> Learn more about features of Custom Adapters like enabling guaranteed delivery, creating an output adapter and implementing schema discovery.
+
 ## Prerequisites
  - [Test the Custom Java Toolkit Adapter](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part6.html)
 
-## Details
-### You will learn
+## You will learn
  - How to enable guaranteed delivery
  - How to implement schema discovery
  - How to create an output adapter
@@ -22,14 +23,11 @@ time: 30
 
 ---
 
-[ACCORDION-BEGIN [Enable Guaranteed delivery](&nbsp;)]
+### Enable Guaranteed delivery
 
 This is done in the custom transporter module. SAP documentation regarding the process can be found in section [Enabling Guaranteed Delivery for an Input Transporter](https://help.sap.com/doc/saphelp_esp_51sp10_adapt/5.1.10/en-US/e7/924c076f0f10149b76975e225dfdf7/frameset.htm).
 
-[DONE]
-
-[ACCORDION-END]
-[ACCORDION-BEGIN [Implement Schema Discovery](&nbsp;)]
+### Implement Schema Discovery
 
   1. Add the following two commands to your `.cnxml` file:
     ```html
@@ -49,11 +47,7 @@ This is done in the custom transporter module. SAP documentation regarding the p
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Create an Output Adapter](&nbsp;)]
+### Create an Output Adapter
 
 If you have followed this tutorial to create an input adapter, only minor changes will have to be applied to convert it into an output adapter.
 
@@ -118,10 +112,7 @@ If you have followed this tutorial to create an input adapter, only minor change
 
       This project assumes the adapter is an input adapter, you will need to make a new project. However, doing so is outside the scope of this tutorial.
 
-[DONE]
-
-[ACCORDION-END]
-[ACCORDION-BEGIN [Create Stream Based Transporter and Formatter Modules](&nbsp;)]
+### Create Stream Based Transporter and Formatter Modules
 
   1. Transporter
 
@@ -196,11 +187,7 @@ Documentation regarding custom Formatter modules can be found in section [Buildi
 
 See the `$STREAMING_HOME/adapters/framework/examples/src` directory for source code for sample modules
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Pre-Defined Transporter and Formatter Modules](&nbsp;)]
+### Pre-Defined Transporter and Formatter Modules
 
 If your transporter or formatter modules don't require very complex implementation, they may already be provided with your Streaming Analytics installation.
 
@@ -208,11 +195,7 @@ You can find a listing of the predefined Formatter modules in section [Formatter
 
 You can find a listing of the predefined Transporter modules in section [Transporters Currently Available from SAP](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.02/en-US/e785c1236f0f1014bd14db27ffcf687b.html) as well as their location.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Start and Stop an Adapter in Standalone Mode](&nbsp;)]
+### Start and Stop an Adapter in Standalone Mode
 
   1. Comment out the `ATTACH INPUT ADAPTER` statement in the `ccl` code provided in the Appendix of this tutorial. The `ccl` should simply be as follows:
 
@@ -236,11 +219,7 @@ You can find a listing of the predefined Transporter modules in section [Transpo
 
   5. The adapter will use the `<EspProject>` element properties set in your `adapter_config.xml` file to connect to the project in studio and will use the `<MQTTInputTransporterParameters>` element properties as arguments.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Debug a Custom Adapter](&nbsp;)]
+### Debug a Custom Adapter
 
 There are two main ways to debug custom adapters:
 
@@ -272,7 +251,4 @@ There are two main ways to debug custom adapters:
 
 Click the **Done** button below once you have completed this tutorial.
 
-[DONE]
-
-[ACCORDION-END]
 

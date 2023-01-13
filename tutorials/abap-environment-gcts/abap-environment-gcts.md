@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Transport a Software Component Between two Systems
-description: Create and import a new software component into an SAP Business Technology Platform ABAP Environment instance, add ABAP sources and export it to a new SAP BTP ABAP Environment instance.
 primary_tag: products>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 15
@@ -9,14 +8,16 @@ author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
+# Transport a Software Component Between two Systems
+<!-- description --> Create and import a new software component into an SAP Business Technology Platform ABAP Environment instance, add ABAP sources and export it to a new SAP BTP ABAP Environment instance.
+
 ## Prerequisites  
  - You need developer user in two SAP BTP ABAP Environment systems under one global account.
  - Add the lifecycle management - Software Components business catalog (ID: `SAP_A4C_BC_MSCL_PC`) to your business role
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
  - Read following blog post about [Software Lifecycle Management for SAP BTP ABAP Environment](https://blogs.sap.com/2019/11/13/software-lifecycle-management-for-sap-cloud-platform-abap-environment/).
 
-## Details
-### You will learn  
+## You will learn  
   - How to create and import a new software component into a SAP BTP ABAP Environment instance
   - How to add ABAP sources and export software component
   - How to import software component into a new SAP BTP ABAP Environment instance
@@ -24,7 +25,8 @@ author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create software component via SAP Fiori launchpad)]
+### Create software component via SAP Fiori launchpad
+
   1. Login to your first system Fiori launchpad as administrator and open **Manage Software Components** application.
 
       ![manage SC](SC1.png)
@@ -54,11 +56,10 @@ author_profile: https://github.com/niloofar-flothkoetter
       ![recent actions](step1-6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add ABAP sources and export component)]
+### Add ABAP sources and export component
+
 
   1. Open Eclipse and connect with your developer user to your first ABAP system. Right-click **Favorite Packages** and select **Add Package**.
 
@@ -127,10 +128,9 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![release tasks](release3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update or import software component again)]
+### Update or import software component again
+
   1. Open **Manage Software Components** app on your second systems Fiori launchpad.
 
       ![manage SC](SC1.png)
@@ -151,19 +151,16 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![recent actions](step1-6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check the imported software component)]
+### Check the imported software component
+
   1. Open Eclipse and connect with your developer user to your second ABAP system and add your imported software component to your **Favorite Packages**. Check if all objects are imported.
 
       ![add to favorites](eclipsenew.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

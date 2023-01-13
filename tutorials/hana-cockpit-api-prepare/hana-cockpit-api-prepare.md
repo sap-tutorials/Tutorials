@@ -1,24 +1,26 @@
 ---
-title: Get Ready to Use the SAP HANA Cockpit REST API
-description: Prepare all the necessary steps to call SAP HANA cockpit REST API endpoints.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-api-management, products>sap-hana ]
 time: 15
 ---
 
+# Get Ready to Use the SAP HANA Cockpit REST API
+<!-- description --> Prepare all the necessary steps to call SAP HANA cockpit REST API endpoints.
+
 ## Prerequisites  
  - Install the Python programming language on the computer that will call the REST endpoints
 
-## Details
-### You will learn
+## You will learn
   - How to obtain a service key for authentication and authorization
   - How to obtain your SAP HANA cockpit host name and appropriate port numbers
   - How to set up the required Python packages and functions to call the SAP HANA cockpit REST endpoints
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log in to the cockpit host's XSA)]
+### Log in to the cockpit host's XSA
+
 You will first need to log in to the cockpit machine, for example using **PuTTY** with your host and port number.
 
 ![open_PuTTY](open_putty.png)
@@ -36,11 +38,9 @@ The expected output should be similar to the following image:
 
 **Note:** if you installed the cockpit's persistence on an existing SAP HANA system, make sure you use the correct organization and space names by running the command `xs login -o <org_name> -s <space_name>`.
 
-[DONE]
 
-[ACCORDION-END]
+### Generate the service key
 
-[ACCORDION-BEGIN [Step 2: ](Generate the service key)]
 The service key that you need for authentication and authorization uses is a block of JavaScript Object Notation (JSON) code; you store it in a file that your application can load and use.
 
 Run the following command to generate a service key, replacing `<tool-name>` with a name of your choice:
@@ -48,11 +48,9 @@ Run the following command to generate a service key, replacing `<tool-name>` wit
 xs create-service-key cockpit-uaa <tool-name>-cockpit-uaa
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Store the service key
 
-[ACCORDION-BEGIN [Step 3: ](Store the service key)]
 Store your generated service key in a `.json` file by entering the command:
 ```
 xs service-key cockpit-uaa <tool-name>-cockpit-uaa > <tool-name>-service-key.json
@@ -99,11 +97,10 @@ Change it to look similar to this form:
 
 Press **`Esc`** and then type `:wq` to save and exit the editing mode. Copy/move your service key file to the computer that will run the API endpoints.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Obtain the necessary port number)]
+### Obtain the necessary port number
+
 To call an API endpoint, you will need to know your port number for the app `cockpit-adminui-svc`.
 Issue the following command:
 ```
@@ -119,11 +116,9 @@ The output should look similar to this and your port number for `cockpit-adminui
 xs apps | grep cockpit-landscape-svc
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Obtain an OAuth Token
 
-[ACCORDION-BEGIN [Step 5: ](Obtain an OAuth Token)]
 OAuth tokens are granted to cockpit users, so you must identify a cockpit user you can employ to run the cockpit APIs. In order to obtain an OAuth token, you will use the service key that you just created.
 
 Create a new file on your Python IDE. Make sure that it is saved in the same folder as the service key file that you just created.
@@ -171,8 +166,5 @@ authorization = get_oauth_token(client, 'demo-service-key.json')
 
 You are now ready to use the SAP HANA cockpit API REST endpoints.
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

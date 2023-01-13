@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Consume SOAP Based Web Services with SAP BTP, ABAP Environment
-description: Consume SOAP based web services with SAP BTP, ABAP environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
@@ -9,11 +8,13 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Consume SOAP Based Web Services with SAP BTP, ABAP Environment
+<!-- description --> Consume SOAP based web services with SAP BTP, ABAP environment.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 
-## Details
-### You will learn  
+## You will learn  
 - How to save WSDL files
 - How to create ABAP package
 - How to create service consumption models
@@ -21,7 +22,8 @@ author_profile: https://github.com/mervey45
 - How to consume SOAP based web services
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Save WSDL file)]
+### Save WSDL file
+
 
   1. Save following code snippet as `EPM_Product_SOAP.WSDL`. This WSDL file will be used in the next steps.
 
@@ -196,10 +198,9 @@ author_profile: https://github.com/mervey45
     </wsdl:definitions>
     ```     
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
+### Create ABAP package
+
 
   1.  Open Eclipse, logon to your trial account and right-click **`ZLOCAL`**, select **New** > **ABAP Package**.
 
@@ -220,10 +221,9 @@ author_profile: https://github.com/mervey45
 
       HINT: Everything should be created in the same package.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create service consumption model)]
+### Create service consumption model
+
 
   1. Add your package `ZSC_SOAP_XXX` to **Favorite Packages** .
 
@@ -273,10 +273,9 @@ author_profile: https://github.com/mervey45
       ![model](model6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Consume web service)]
+### Consume web service
+
 
 This step shows a simple example of a web service consumption.
 
@@ -403,20 +402,14 @@ This step shows a simple example of a web service consumption.
 
     ![class](class6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ## More Information
 - [SAP Help Portal: Consuming a Web Service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8b6723b265d54c13866fbade4a7a087b.html)
 
 ---
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
