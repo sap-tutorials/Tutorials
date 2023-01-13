@@ -417,7 +417,7 @@ sudo ./hxe_upgrade.sh
 Follow the prompts to complete the server update.
 
 
-### Docker Run Usage: (-Help Command)
+### -Help Command
 
 
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
