@@ -85,9 +85,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
-
-12. Select an **Identity Provider**.
+11. In the **Users** section, enter your user and select an **Identity Provider**.
 
     !![Users](CICD_edit_users.png)
 
@@ -141,9 +139,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
-
-12. Select an **Identity Provider**.
+11. In the **Users** section, enter your user and select an **Identity Provider**.
 
     !![Users](CICD_edit_users.png)
 
@@ -259,7 +255,9 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 13. Leave the execution of the **Additional Unit Tests** switched off.
 
-14. Leave **Acceptance Stage** switched off.
+14. Leave **Acceptance** switched off.
+
+15. Leave **SonarQube Scan** under **Compliance** switched off.
 
 14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Space** step on.
 
@@ -269,7 +267,9 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     !![Cockpit](CP_API_Endpoint.png)
 
-17. For `Credentials`, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used **`cfdeploy`**.
+17. For **Deploy Type**, choose `standard`.
+
+17. For **Credentials**, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used `cfdeploy`.
 
     > Use a technical user instead of your personal credentials.
 
@@ -365,7 +365,7 @@ You have to trigger your job manually the first time after creation.
 
     !![Job](CICD_running_job.png)
 
-    > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built.
+    > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built. You can also add a time trigger for your job under section **Timed Triggers**.
 
 2. Wait until the job has finished and verify that the build tile is marked as successful.
 

@@ -40,7 +40,7 @@ In the current implementation, the applications are launched without a launch pa
 
     !![Launch Page](launchpage2apps.png)
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Check the launchpage.html file)]
@@ -72,13 +72,13 @@ Let's have a look at the `launchpage.html` file and the configuration in there. 
     </script>
 ```
 
-There are two applications in the launch page with URLs that point to the respective apps. There are other properties configured here like the title and description. Similarly, another application can be added to the launch page by adding an entry here.
-
 > Why name it `launchpage.html` instead of `index.html`?
 
 > You are using the name `launchpage.html` because `cds watch` by default looks for an `index.html` file in the `app` folder. If `cds watch` finds such a file, it replaces the default page that also contains the links to the services with the `index.html` in the folder. While this makes sense in many cases, for development purposes we stick to the index page of CDS and give a different name to our index file.
 
-[DONE]
+There are two applications in the launch page with URLs that point to the respective apps. There are other properties configured here like the title and description. Similarly, another application can be added to the launch page by adding an entry here.
+
+[VALIDATE_1]
 The result of this tutorial can be found in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
 
 
