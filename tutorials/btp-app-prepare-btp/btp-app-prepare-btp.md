@@ -27,7 +27,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-You need an SAP BTP account to deploy the services and applications.
+You need an SAP BTP account to deploy the services and applications. 
+
 In general, you have a choice of the following options:
 
 **Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial get automatically assigned to your trial account.
@@ -56,9 +57,9 @@ Continue with **Step 8: Check and assign entitlements** below.
 [ACCORDION-BEGIN [Step 3: ](Create a Live Account)]
 If you choose to create an account on Live, you have to select a number of services that you need to subscribe to, for example, an SAP HANA database. For each service, there are so-called `entitlements`, which are basically the service plans and the number of units that you want from each service. When you create an account, you need to provide these also.
 
+
+
 [VALIDATE_1]
-
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
