@@ -257,7 +257,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 14. Leave **Acceptance** switched off.
 
-15. Leave **SonarQube Scan** under **Compliance** switched off.
+15. Leave **`SonarQube` Scan** under **Compliance** switched off.
 
 14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Space** step on.
 
