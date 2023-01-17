@@ -54,7 +54,7 @@ import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
-> Again, you can try it out on the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-shellbar--generated-default-story).
+> Again, you can try it out in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/docs/layouts-floorplans-shellbar--default-story).
 
 1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
 
