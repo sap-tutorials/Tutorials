@@ -132,7 +132,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));

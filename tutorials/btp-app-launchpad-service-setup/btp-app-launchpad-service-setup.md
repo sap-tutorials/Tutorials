@@ -120,7 +120,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-destination -->
-```YAML[2-9]
+```YAML[3-9]
 resources:
    ...
  - name: cpapp-destination
@@ -143,7 +143,7 @@ The service configuration option `HTML5Runtime_enabled: true` is required to mak
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-html5-repo-host -->
-```YAML[2-7]
+```YAML[3-7]
 resources:
    ...
  - name: cpapp-html5-repo-host

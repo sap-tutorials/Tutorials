@@ -35,6 +35,8 @@ The first step is to check if Python and pip are installed.
     ```
     If Python is installed, the command will return a value such as Python 3.10.3.
 
+    >In some Linux distributions, python refers to Python 2 and python refers to Python 3.  As Python 2 is obsolete this isn't always the case and python may refer to Python 3.
+
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
     On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
@@ -195,7 +197,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     import pyodbc
 
     #Initialize your connection
-    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL_Trial')
+    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL')
 
     #If no errors, print connected
     print('connected')

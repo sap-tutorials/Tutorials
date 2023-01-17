@@ -96,10 +96,10 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 4. Configure the values of `driver` and `host` so that they conform with your setup.
 
     ```.odbc.ini
-    [HC_DL_Trial]
-    driver=/home/dan/dlclient/IQ-17_1/lib64/libdbodbc17.so
+    [HC_DL]
+    driver=/home/dan/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
     encryption=TLS(trusted_certificates=*;direct=yes)
-    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443
+    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
     integrated=NO
     log=/tmp/hdlclientlog.txt
     ```
@@ -107,8 +107,8 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL_Trial" -nogui
-    isql -v HC_DL_Trial USER1 Password1
+    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
+    isql -v HC_DL USER1 Password1
     ```
 
     DBISQL
@@ -125,7 +125,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     > The column width when displaying results in isql can be set using the -m parameter.  
     > ```Shell (Linux)
-    isql -v HC_DL_Trial USER1 Password1 -m6
+    isql -v HC_DL USER1 Password1 -m6
     >```
 
 
