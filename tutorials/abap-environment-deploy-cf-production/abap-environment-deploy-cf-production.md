@@ -168,7 +168,7 @@ author_profile: https://github.com/mervey45
 
       ![object](s15.png)
 
-     >**HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
   7. Configure deployment:
        - Target: ABAP
@@ -182,7 +182,7 @@ author_profile: https://github.com/mervey45
 
       Click **Next >**.
 
-     >**HINT:** If you want to copy your transport request, please do following: Open Eclipse, search your package `ZTRAVEL_APP_XXX` and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your transport request underneath the Modifiable folder.
+     **HINT:** If you want to copy your transport request, please do following: Open Eclipse, search your package `ZTRAVEL_APP_XXX` and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your transport request underneath the Modifiable folder.
      ![app](deploy3.png)
 
 
