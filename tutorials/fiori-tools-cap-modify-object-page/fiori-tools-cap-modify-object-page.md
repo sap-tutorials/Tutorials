@@ -3,7 +3,7 @@ parser: v2
 auto_validation: true
 time: 40
 tags: [ software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, softrware-product>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+primary_tag: software-product>sap-fiori
 ---
 
 # Extend the Object Page by Adding More Functionality
