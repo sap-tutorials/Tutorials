@@ -38,10 +38,6 @@ Learn more about the approach on **Data Protection and Privacy** from the [techn
 
 SAP HANA Cloud, SAP HANA database helps solve this issue by offering not only powerful and versatile data management options but also enabling organizations to have simple access to methods of data anonymization that allow for easy and secure sharing of data with anyone in the organization so the data can be analyzed.
 
-Learn more about **SAP HANA data anonymization** from [here](https://www.sap.com/cmp/dg/crm-xt17-ddm-data-anony/index.html).
-
-
-
 
 ### Types of data in a dataset
 

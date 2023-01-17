@@ -170,6 +170,7 @@ author_profile: https://github.com/mervey45
 
      **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
+
   7. Configure deployment:
        - Target: ABAP
        - Destination: `<your_abap_system_url>`

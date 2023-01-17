@@ -60,7 +60,7 @@ Create a file called `tests.http` in the root of your project and copy the follo
 GET http://localhost:4004/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
-  # &sap-language=de
+  # &sap-locale=de
 
 ```
 
@@ -407,14 +407,14 @@ Deploy the localized data from the terminal: `cds deploy --to sqlite`
 
 Restart your application from the debug panel.
 
-Open the `tests.http` file and uncomment the `sap-language` part of the GET request on the `catalog` service:
+Open the `tests.http` file and uncomment the `sap-locale` part of the GET request on the `catalog` service:
 
 ```HTTP
 # Browse Books as any user
 GET http://localhost:4004/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
-  &sap-language=de
+  &sap-locale=de
 ```
 
 Execute the request and see the localized data for title and description:

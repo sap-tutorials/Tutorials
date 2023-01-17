@@ -29,7 +29,7 @@ First you need to import the components you want to use.
 
 You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react). Take your time to play around a little, change some `props` and take a look at the coding.
 
-1. For the sake of keeping the coding as short as possible, this tutorial will only use direct imports. Start with importing a `Card` component into your `MyApp.jsx` file (right below the existing import statement).
+1. Start with importing a `Card` component into your `MyApp.jsx` file (right below the existing import statement).
 
     ```JavaScript / JSX
     import { Card } from "@ui5/webcomponents-react";
@@ -93,7 +93,7 @@ The heading area of the `Card` component is empty, this is because it didn't rec
     import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
     ```
 
-    And replace the inner `div` with the `Text` component.
+    And wrap the text within the `Text` component.
 
     ```JavaScript / JSX
     <div>
@@ -204,6 +204,7 @@ And your application like this:
       const handleHeaderClick = () => {
         alert("Header clicked");
     };
+    ...
     ```
 
 The file now looks like this:
