@@ -57,7 +57,18 @@ To launch apps in the SAP Build Work Zone, standard edition, the service must kn
 
    ![Destination configuration](1.png)
 
- 3. Configure destinations and add additional properties as shown in the screenshot below. For example 'sap-login-group', message server and instance number, 'sap-snc-name', can be found in SAP Logon.
+ 3. Configure destinations and add additional properties as shown in the screenshot below.
+ For example:
+-	**`sap-login-group`**
+
+-	**`message server`**
+
+-	**`instance number`**
+
+- **`sap-snc-name`**
+
+You can copy that information from SAP Logon.
+
 
    ![Destination configuration](2.png)
 
