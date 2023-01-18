@@ -28,7 +28,7 @@ SAP Intelligent RPA production account users can continue with the other SAP Int
 
 ### Run the SAP Intelligent RPA booster
 
-1. In the navigation area of the SAP BTP Cockpit, choose **Boosters** and search for **SAP Intelligent RPA**
+1. In the navigation area of the SAP BTP Cockpit, choose **Boosters** and search for **SAP Intelligent RPA**.
 
     <!-- border -->![Booster screen](Step1-Search_RPA_Booster.png)
 
