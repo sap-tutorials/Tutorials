@@ -22,7 +22,7 @@ SAP Intelligent RPA production account users can continue with the other SAP Int
 
 
 ## You will learn
-  - How to subscribe to the SAP Intelligent RPA Service
+- How to subscribe to the SAP Intelligent RPA Service
 
 ---
 
