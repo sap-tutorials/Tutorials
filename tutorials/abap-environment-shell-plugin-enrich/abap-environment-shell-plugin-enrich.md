@@ -25,15 +25,25 @@ In this tutorial you will continue working on the shell plug-in you created in t
 
 1. Access ABAP Developer Tool in Eclipse, connect to your SAP BTP ABAP Environment, and open the package you created as part of the previous tutorial.
 
-2. Right click on the package and select **New** > **Other ABAP Repository Object**.  ![Create data definition](create_data_definition_1.png)  
+2. Right click on the package and select **New** > **Other ABAP Repository Object**.
 
-3. In the search bar, search for **Data Definition** and click on it.  ![Create data definition - create](create_data_definition_2.png)
+    ![Create data definition](create_data_definition_1.png)  
 
-4. Enter a **Name** and a **Description**. Click on **Next**.  ![Create data definition - create 2](create_data_definition_3_new.png)
+3. In the search bar, search for **Data Definition** and click on it.
 
-5. Select the transport request you created in the previous tutorial, and click on **Next**.  ![Create data definition - transport request](create_transport_request_new.png)
+    ![Create data definition - create](create_data_definition_2.png)
 
-6. Mark the option **Use the selected template** and select the template **Define Root View Entity** then click on **Finish**.  ![Create data definition - template](create_data_definition_5.png)
+4. Enter a **Name** and a **Description**. Click on **Next**.
+
+    ![Create data definition - create 2](create_data_definition_3_new.png)
+
+5. Select the transport request you created in the previous tutorial, and click on **Next**.
+
+    ![Create data definition - transport request](create_transport_request_new.png)
+
+6. Mark the option **Use the selected template** and select the template **Define Root View Entity** then click on **Finish**.
+
+    ![Create data definition - template](create_data_definition_5.png)
 
 7. The Data Definition is initialized with a pre-filled code based on your chosen template. Adjust it as follows:
 ``` ABAP
@@ -52,12 +62,16 @@ define root view entity Z_C_BusinessUserRole_XXX as select from I_IAMBusinessUse
 where _BusinessUserRole.UserID = $session.user
 ```
 
-8. Save your Data Definition and activate it using the **Activate** icon.  ![Activate](activate_icon.png)
+8. Save your Data Definition and activate it using the **Activate** icon.
+
+    ![Activate](activate_icon.png)
 
 ### Create a Business User Data Definition
 Now you need to create a second Data Definition, which will take the User ID exposed by the Data Definition you created in the previous step, and will expose the data related to that User ID, such as name and email address.
 
-1. As in the previous step, right click on the package and select **New** > **Other ABAP Repository Object**. In the search bar, search for **Data Definition** and click on it. Enter a **Name** and a **Description**. Click on **Next**. ![Create data definition - Business User](create_data_definition_7_new.png)
+1. As in the previous step, right click on the package and select **New** > **Other ABAP Repository Object**. In the search bar, search for **Data Definition** and click on it. Enter a **Name** and a **Description**. Click on **Next**.
+
+    ![Create data definition - Business User](create_data_definition_7_new.png)
 
 2. Select your transport request and click on **Next**. Mark the option **Use the selected template** and select the template **Define Root View Entity** then click on **Finish**.
 
@@ -83,12 +97,16 @@ define root view entity Z_C_BusinessUser_XXX as select from I_BusinessUserBasic
 where UserID = $session.user
 ```
 
-4. Save your Data Definition and activate it using the **Activate** icon.  ![Activate -2](activate_icon.png)
+4. Save your Data Definition and activate it using the **Activate** icon.
+
+    ![Activate -2](activate_icon.png)
 
 ### Create a Service Definition
 In order to expose the data from the two previous Data Definitions you need to create a Service Definition.
 
-1. Right click on the package and select **New** > **Other ABAP Repository Object**. In the search bar, search for **Service Definition** and click on it. Enter a **Name** and a **Description**. Click on **Next**.  ![Create service definition](create_service_definition_1_new.png)
+1. Right click on the package and select **New** > **Other ABAP Repository Object**. In the search bar, search for **Service Definition** and click on it. Enter a **Name** and a **Description**. Click on **Next**.
+
+    ![Create service definition](create_service_definition_1_new.png)
 
 2. Select your transport request and click on **Next**. Mark the option **Use the selected template** and select the template **Define Service** then click on **Finish**.
 
@@ -101,45 +119,75 @@ define service ZUI_BUSINESSUSER_XXX {
 }
 ```
 
-4. Save your Service Definition and activate it using the **Activate** icon.  ![Activate - 2](activate_icon.png)
+4. Save your Service Definition and activate it using the **Activate** icon.
+
+    ![Activate - 2](activate_icon.png)
 
 ### Create a Service Binding
 Your Service Definition will be consumed by your SAP Fiori Application via the use of a Service Binding.
 
-1. In your project explorer, right click on your Service Definition and select **New Service Binding**.   ![Create service binding](create_service_binding_1_new.png)
+1. In your project explorer, right click on your Service Definition and select **New Service Binding**.
 
-2. Enter a **Name** and a **Description**. In the **Binding Type** dropdown menu, select the option **OData V4 - UI** and click on **Next**.  ![Create service binding - name and description](create_service_binding_2_new.png)
+    ![Create service binding](create_service_binding_1_new.png)
+
+2. Enter a **Name** and a **Description**. In the **Binding Type** dropdown menu, select the option **OData V4 - UI** and click on **Next**.
+
+    ![Create service binding - name and description](create_service_binding_2_new.png)
 >It is good practice to include the type of Service Binding in the Service Binding name, e.g.: adding the suffix `V_O4` to the name of Service Bindings of type OData Service V4.
 
 3. Select your transport request and click on **Finish**.
 
-4. Save your Service Binding and activate it using the **Activate** icon. ![Activate - 3](activate_icon.png)
+4. Save your Service Binding and activate it using the **Activate** icon.
 
-5. In the newly created Service Binding, click on the **Publish** button.  ![Create service binding - publish](create_service_binding_3_new.png)
+    ![Activate - 3](activate_icon.png)
+
+5. In the newly created Service Binding, click on the **Publish** button.
+
+    ![Create service binding - publish](create_service_binding_3_new.png)
 >Publishing a Service Binding can take up to a few minutes. Once the Service Binding is successfully published, the **Local Service Endpoint** parameter will change to **Published**.
 
-6. You can now preview your Service Binding: click on the Service URL link.  ![Create service binding - preview](create_service_binding_4.png)
+6. You can now preview your Service Binding: click on the Service URL link.
 
-7. A new window will open up in your browser. In the URL of the browser window, Replace the last part `?sap-client=100` with `BusinessUser('Me')` and press Enter. Your personal user information will be displayed.  ![Create service binding - URL](create_service_binding_6.png)
+    ![Create service binding - preview](create_service_binding_4.png)
+
+7. A new window will open up in your browser. In the URL of the browser window, Replace the last part `?sap-client=100` with `BusinessUser('Me')` and press Enter. Your personal user information will be displayed.
+
+    ![Create service binding - URL](create_service_binding_6.png)
 
 ### Add the OData Service to your SAPUI5 Project
 Now that you have created an OData Service which exposes user-related information, you need to add it to your SAPUI5 project in Business Application Studio, to enhance your shell plug-in.
 
-1. In Business Application Studio, open the folder of your project and navigate to the **`webapp`** folder. Right click on the **`manifest.json`** file and select **Open Service Manager**.   ![Open Service manager](open_service_manager.png)
+1. In Business Application Studio, open the folder of your project and navigate to the **`webapp`** folder. Right click on the **`manifest.json`** file and select **Open Service Manager**.
 
-2. This will open an overview of the services used in your project. Click on the bin icon to delete the previous service.  ![Service overview](service_overview.png)
+    ![Open Service manager](open_service_manager.png)
 
-3. To add a new OData Service, click on **Add Service**.  ![Add new service](add_new_service_1.png)
+2. This will open an overview of the services used in your project. Click on the bin icon to delete the previous service.
 
-4. Select the **Destination** option. In the **Destination** dropdown menu, select the destination pointing to your SAP BTP ABAP Environment. In the **Provide Service** section, select **Fetch** and from the **Select a service** dropdown menu, select your Service Binding. Click on **Add**.  ![Add new service - parameters](add_new_service_2_new.png)
+    ![Service overview](service_overview.png)
 
-5. Open the **`manifest.json`** file: you can see that the OData Service has been added automatically under `"dataSources"` configuration.  ![Add new service - manifest.json](manifest_json_new_service_new.png)
+3. To add a new OData Service, click on **Add Service**.
 
-6. Open the **`manifest.json`** file. In the configuration `sap.ui5` > `dependencies` > `libs`, remove the following parameters:  `"sap.f": {}`, `"sap.suite.ui.generic.template": {}`, `"sap.ui.comp": {}`, `"sap.ui.generic.app": {}` and `"sap.ui.table": {}`. Add the parameter `"sap.ui.layout": {}` after `"sap.ushell": {}`. The configuration should look like this:   ![Modify manifest.json file](modify_json_parameters.png)
+    ![Add new service](add_new_service_1.png)
 
-7. In your workspace, go to your project folder and make a right click. Select **Open in Integrated Terminal**. This will open a new terminal window. Input the command `npx @sap-ux/create add mockserver-config` and press enter.  ![Create mockserver](install_dependency_new.png)
+4. Select the **Destination** option. In the **Destination** dropdown menu, select the destination pointing to your SAP BTP ABAP Environment. In the **Provide Service** section, select **Fetch** and from the **Select a service** dropdown menu, select your Service Binding. Click on **Add**.
 
-8. A new dependency will be addedd in the **`package.json`** file, in the configuration `"ui5"` > `"dependencies"`:  ![Modify package.json file - 2](modify_package_json_parameters_2.png)
+    ![Add new service - parameters](add_new_service_2_new.png)
+
+5. Open the **`manifest.json`** file: you can see that the OData Service has been added automatically under `"dataSources"` configuration.
+
+    ![Add new service - manifest.json](manifest_json_new_service_new.png)
+
+6. Open the **`manifest.json`** file. In the configuration `sap.ui5` > `dependencies` > `libs`, remove the following parameters:  `"sap.f": {}`, `"sap.suite.ui.generic.template": {}`, `"sap.ui.comp": {}`, `"sap.ui.generic.app": {}` and `"sap.ui.table": {}`. Add the parameter `"sap.ui.layout": {}` after `"sap.ushell": {}`. The configuration should look like this:
+
+    ![Modify manifest.json file](modify_json_parameters.png)
+
+7. In your workspace, go to your project folder and make a right click. Select **Open in Integrated Terminal**. This will open a new terminal window. Input the command `npx @sap-ux/create add mockserver-config` and press enter.
+
+    ![Create mockserver](install_dependency_new.png)
+
+8. A new dependency will be addedd in the **`package.json`** file, in the configuration `"ui5"` > `"dependencies"`:
+
+    ![Modify package.json file - 2](modify_package_json_parameters_2.png)
 
 ### Adjust your SAPUI5 Project
 Your SAPUI5 Application can now consume user-related information via the OData Service you created. You now need to specify how you want this information to be consumed and displayed in your application. You will first modify the **`i18n.properties`** file, which defines which text is displayed for each of your user-related data. You will then create a View of type Fragment in your project, to define the layout with which the user-related information will be displayed. And finally, you will add this Fragment View to the content of your application.
@@ -174,9 +222,13 @@ labelBusinessRole=Business Role
 labelBusinessRoleName=Name
 ```
 
-2. Via the OData Service you created in a previous step, you can consume Business User details associated with the current Business User. You now need to define how these data will be displayed. To do this, you need to create a form, and specify its layout and contents. In your project, go to the empty folder **`webapp`** > **`view`**. Right click on the folder and select **New File**.  ![Create new view file](create_view_file_1.png)
+2. Via the OData Service you created in a previous step, you can consume Business User details associated with the current Business User. You now need to define how these data will be displayed. To do this, you need to create a form, and specify its layout and contents. In your project, go to the empty folder **`webapp`** > **`view`**. Right click on the folder and select **New File**.
 
-3. Input a **Name** for your new View file, and make sure it ends with `.fragment.xml` to create a View of type Fragment . Click on **OK**. ![Create new view file - name](create_view_file_2.png)
+    ![Create new view file](create_view_file_1.png)
+
+3. Input a **Name** for your new View file, and make sure it ends with `.fragment.xml` to create a View of type Fragment . Click on **OK**.
+
+    ![Create new view file - name](create_view_file_2.png)
 
 4. Open the newly created Fragment View file, and input the following code:
 ``` XML
@@ -326,22 +378,34 @@ sap.ui.define([
 ### Preview your SAPUI5 Application
 Your enhanced SAPUI5 Application can be previewed before it is deployed. Using the preview functionality is good practice before deploying an application, to make sure that the UI looks as intended and the application's functionalities work as desired.
 
-1. Right click on your project folder and select **Preview Application**.  ![Preview application](Preview_app_1_new.png)
+1. Right click on your project folder and select **Preview Application**.
 
-2. Select **start fiori-run**. This will prompt a new terminal window which will run the **start fiori-run** command. This can take up to a few seconds. Once it is done, a preview of your application will open up in a new browser window.  ![Preview application - start fiori run](Preview_app_2_new.png)
+    ![Preview application](Preview_app_1_new.png)
 
-3. In the preview of your application, click on the user icon in the top-right corner and open the **Settings**. Your shell plug-in is listed in the user's settings dialog. User-related information is displayed according to the layout you defined using the Fragment View.  ![Application preview - settings](Preview_app_3.png)  ![Application preview - shell plug-in](Preview_app_4.png)
+2. Select **start fiori-run**. This will prompt a new terminal window which will run the **start fiori-run** command. This can take up to a few seconds. Once it is done, a preview of your application will open up in a new browser window.
+
+    ![Preview application - start fiori run](Preview_app_2_new.png)
+
+3. In the preview of your application, click on the user icon in the top-right corner and open the **Settings**. Your shell plug-in is listed in the user's settings dialog. User-related information is displayed according to the layout you defined using the Fragment View.
+
+    ![Application preview - settings](Preview_app_3.png)
+    
+    ![Application preview - shell plug-in](Preview_app_4.png)
 
 ### Deploy your Enhanced Shell Plug-in
 You can now re-deploy your SAPUI5 Application with an enhanced shell plug-in to your SAP BTP ABAP Environment.
 
-1. In Business Application Studio, right click on the project folder and select **Open in Integrated Terminal**. This will open a new terminal window.  ![Open terminal window](open_terminal.png)
+1. In Business Application Studio, right click on the project folder and select **Open in Integrated Terminal**. This will open a new terminal window.
+
+    ![Open terminal window](open_terminal.png)
 
 2. In the terminal window, run the command: `npm run deploy`. The deployment process will begin. You will be prompted to confirm the deployment by typing `Y`. Once the SAPUI5 Application is successfully deployed to your SAP BTP ABAP Environment, the terminal will return the status:
 `Deployment Successful`.
 >The deployment process can take up to a few minutes.
 
 ### Test your Shell Plug-in
-After a successful deployment, your shell plug-in will be updated in the system. Login to your SAP BTP ABAP Environment with a Business User with the necessary Business Role (see previous tutorial in this series). Open your application by clicking on the application tile. The plug-in can be accessed via the user settings dialog. The plug-in returns data related to your Business User and a list of Business Roles that are assigned to your Business User.  ![Final plugin](final_plugin.png)
+After a successful deployment, your shell plug-in will be updated in the system. Login to your SAP BTP ABAP Environment with a Business User with the necessary Business Role (see previous tutorial in this series). Open your application by clicking on the application tile. The plug-in can be accessed via the user settings dialog. The plug-in returns data related to your Business User and a list of Business Roles that are assigned to your Business User.
+
+![Final plugin](final_plugin.png)
 
 ### Test Yourself
