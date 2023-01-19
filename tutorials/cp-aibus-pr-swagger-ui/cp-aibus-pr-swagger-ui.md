@@ -1,13 +1,11 @@
 ---
-author_name: Juliana Morais
-author_profile: https://github.com/Juliana-Morais
-title: Get Recommendations Based on Users' Browsing History
-description: Use the Personalized Recommendation service to give visitors to your website recommendations based on their browsing history.
+parser: v2
 auto_validation: true
 time: 40
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
-parser: v2
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Get Recommendations Based on Users' Browsing History
