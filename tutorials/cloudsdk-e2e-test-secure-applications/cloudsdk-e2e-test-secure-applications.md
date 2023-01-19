@@ -14,7 +14,7 @@ primary_tag: products>sap-cloud-sdk
 ## Prerequisites
 This tutorial assumes you already completed the tutorial [End-to-End Tests for SAP Cloud SDK Projects](cloudsdk-e2e-test) and understood the concepts explained in the tutorial [Secure your application](s4sdk-secure-cloudfoundry).
 
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
