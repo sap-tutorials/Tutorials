@@ -12,7 +12,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 # Subscribe to SAP Intelligent RPA Service in SAP BTP
 <!-- description --> Subscribe to SAP Intelligent RPA on SAP Business Technology Platform so that you can build an automation to automate repeated tasks.
 
-> **IMPORTANT:** Note: [The SAP BTP trial offering will no longer be available as of January 31st, 2023](https://blogs.sap.com/2023/01/09/trial-accounts-retirement-of-sap-intelligent-rpa-end-of-january-2023-and-the-move-forward/). Please move to an SAP Free Tier account and subscribe to SAP Process Automation.
+> **IMPORTANT:** [The SAP BTP trial offering will no longer be available as of January 31st, 2023](https://blogs.sap.com/2023/01/09/trial-accounts-retirement-of-sap-intelligent-rpa-end-of-january-2023-and-the-move-forward/). Please move to an SAP Free Tier account and subscribe to SAP Process Automation.
 Refer to the tutorial on [How to create a BTP Free tier account and subscribe to SAP Build Process Automation](https://developers.sap.com/tutorials/spa-subscribe-booster.html).
 Most of the content remains relevant after moving to SAP Build Process Automation, with broad feature parity and only a few changes.
 SAP Intelligent RPA production account users can continue with the other SAP Intelligent RPA developer tutorials without any further changes.
