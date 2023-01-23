@@ -25,7 +25,7 @@ In this tutorial you will continue working on the shell plug-in you created in t
 
 1. Access ABAP Developer Tool in Eclipse, connect to your SAP BTP ABAP Environment, and open the package you created as part of the previous tutorial.
 
-2. Right click on the package and select **New** > **Other ABAP Repository Object**.
+2. Right click on the package and select **New** > **Other ABAP Repository Object**:
 
     ![Create data definition](create_data_definition_1.png)  
 

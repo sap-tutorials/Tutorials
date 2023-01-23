@@ -34,7 +34,7 @@ The shell plug-in will be deployed to the local `ZLOCAL` software component in y
 
 1. Access ABAP Developer Tool in Eclipse and connect to your SAP BTP ABAP Environment.
 
-2. Right click on your SAP BTP ABAP Environment and click on **New** > **ABAP Package**.
+2. Right click on your SAP BTP ABAP Environment and click on **New** > **ABAP Package**:
 
     ![Create new package](create_new_package.png)
 
