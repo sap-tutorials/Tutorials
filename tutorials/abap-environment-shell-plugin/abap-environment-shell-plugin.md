@@ -4,7 +4,7 @@ description: Learn how to develop and deploy a custom shell plug-in to your SAP 
 keywords: tutorial
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-products>sap-business-application-studio]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Arianna Musso Barcucci
 author_profile: https://github.com/AriannaMussoBarcucci

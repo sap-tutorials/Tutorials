@@ -4,7 +4,7 @@ description: Learn how to enrich your shell plug-in with the use of OData Servic
 keywords: tutorial
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-products>sap-business-application-studio]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Arianna Musso Barcucci
 author_profile: https://github.com/AriannaMussoBarcucci
@@ -399,7 +399,7 @@ You can now re-deploy your SAPUI5 Application with an enhanced shell plug-in to 
 
     ![Open terminal window](open_terminal.png)
 
-2. In the terminal window, run the command: `npm run deploy`. The deployment process will begin. You will then be prompted to confirm the deployment by typing `Y`. Once the SAPUI5 Application is successfully deployed to your SAP BTP ABAP Environment, the terminal will return the status:
+2. In the terminal window, run the command: `npm run deploy`. The deployment process will begin. You will be prompted to confirm the deployment by typing `Y`. Once the SAPUI5 Application is successfully deployed to your SAP BTP ABAP Environment, the terminal will return the status:
 `Deployment Successful`.
 >The deployment process can take up to a few minutes.
 
