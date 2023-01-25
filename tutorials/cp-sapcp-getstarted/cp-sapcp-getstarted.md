@@ -111,7 +111,7 @@ You can call up help in the client on different levels, from an introductory hel
 
 Now let's log in: 
 
-The **CLI server URL** (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login - just accept it with ENTER. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. This server is the back-end of the CLI that routes all requests to the platform services.
+The **CLI server URL** (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login - just accept it with ENTER. This server routes client requests to the platform services. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. 
 
 You have two options for login:
 
@@ -127,7 +127,7 @@ For login on the command-line, use:
 btp login
 ```
 
-If you have enabled Two-Factor-Authentication, you need to append the token to your passcode. 
+If you have enabled Two-Factor-Authentication, you need to append the token to your password. 
 
 Once you're authenticated, you will automatically be logged in to your global account. If you have access to more than one global account, the CLI will display a list of global accounts  from which you can select one. 
 
@@ -176,7 +176,7 @@ This will display the children and let you navigate up and down the account hier
 For directly setting a new target, use:
 
 ```Bash
-btp target [--subaccount <ID> | --directory <ID> --global-account <SUBDOMAN>] 
+btp target [--subaccount <ID> | --directory <ID> | --global-account <SUBDOMAN>] 
 ```
 
 The targeting mechanism works according to the hierarchy of entities in the global account:
@@ -198,7 +198,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 We recommend to enable command autocompletion so you won't have to remember or keep looking up individual commands. Command autocompletion saves you keystrokes when entering command actions, group-object combinations, and their parameters. Autocompletion is supported for  Bash, PowerShell, and Zsh.
 
 ```Bash
-btp enable autocomplete <shell>
+btp enable autocomplete <SHELL>
 ```
 Enter a partial command action, group-object combination, or parameter, and then press the Tab key. The command line either automatically completes your command or, when there's more than one option available, it displays a list of suggested command actions/options/parameters. When a suggestion list is displayed, use the Tab or arrow keys to move through the list and press Enter to make a selection.
 
