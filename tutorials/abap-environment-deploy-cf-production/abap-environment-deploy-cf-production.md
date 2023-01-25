@@ -34,7 +34,7 @@ author_profile: https://github.com/mervey45
 
 ---
 
-### Create SAP Business Application Studio instance
+### Assign role collection to user
 
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
@@ -44,30 +44,6 @@ author_profile: https://github.com/mervey45
   2. Select your subaccount **trial**.
 
       ![assign role collection](bas2.png)
-
-  3. Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
-
-      ![dev](basx.png)
-
-  4. Click **Create**.
-
-      ![dev](bas.png)
-
-  5. Select the default entry and click **Create**.
-
-      ![dev](basxx.png)
-
-  6. Click **View Subscription**.
-
-      ![dev](basx3.png)
-
-
-### Assign role collection to user
-
-
-  1. Select **trial**.
-
-      ![assign role collection](trial3.png)
 
   2. Now you are in the trial overview page. Click **Users** and select your user.
 
@@ -86,7 +62,7 @@ author_profile: https://github.com/mervey45
 ### Create dev space
 
 
-  1.  On the left menu scroll to the top and select **Instances and Subscriptions** and open SAP Business Application Studio.
+  1. On the left menu scroll to the top and select **Instances and Subscriptions** and open SAP Business Application Studio.
 
       ![dev](instance.png)
 
@@ -111,68 +87,66 @@ author_profile: https://github.com/mervey45
 
 
   1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
-     Select **Open Folder** to set your workspace.
+     Select the menu on the left side and click **Open Folder** to set your workspace.
 
       ![organization](studio6.png)
 
-  2. Select **projects** and click **Open**.
+  2. Select **`/home/user/projects/`** and click **OK**.
 
       ![organization](studio7.png)
 
-  3. Select **View > Find Command**.
+  3. Switch to SAP BTP Trial and select your trial subaccount.
 
-      ![organization](neuyy.png)
+      ![organization](api.png)
 
-  4. Search for **CF: Login to Cloud Foundry** and select it.
+  4. Copy your **Cloud Foundry Environment API endpoint** for later use.      
 
-      ![organization](neu2.png)
+      ![organization](api2.png)
 
-  5. Select your API endpoint and press enter.
+  5. Switch to **SAP Business Application Studio**, select the menu on the left side and click **View > Command Palette**.
 
-      ![organization](neu3.png)
+      ![organization](s8.png)
 
-  6. Enter the same e-mail address you set in your trial instance and press enter.
-      ![organization](neu4.png)
+  6. Search for **CF: Login to Cloud Foundry** and select it.
 
-  7. Enter your password and press enter.
+      ![organization](s9.png)
 
-      ![organization](neu5.png)
+  7. Paste your Cloud Foundry API endpoint, enter your credentials and click **Sign in**.
 
-  8. Select your global account and press enter.
+      ![organization](s10.png)
 
-      ![organization](neu6.png)
+  8. Now you can see, that you are logged in. Set now your cloud foundry target:
 
-  9. Select dev as your space and press enter.
+     - Cloud Foundry Organization: `<your_global_account>`
+     - Cloud Foundry Space: dev
 
-      ![organization](neu7.png)
+      ![organization](s11.png)
 
-  10. Check your result. Now your organization and space have been set.
-
-     ![organization](neumm.png)
+      Click **Apply**.
 
 
 ### Create list report object page
 
 
-  1. Select **View** > **Find Command**.
+  1. Select the menu on the left side and click **View > Command Palette**.
 
-    ![object](view.png)
+      ![object](s8.png)
 
-  2. Select **Fiori: Open Application Generator**.  
+  2. Search for **Fiori: Open Application Generator** and select it.
 
-    ![object](neu9.png)
+      ![object](sg.png)
 
-  3. Select **List Report Object Page** and click **Next >**.
+  3. Select **List Report Page** and click **Next >**.
 
-    ![object](neu10.png)
+      ![object](s12.png)
 
   4. Configure data source, system and service:
-     - Data source: **Connect to an SAP System**
+     - Data source: **Connect to a System**
      - System: **`ABAP Environment on SAP Business Technology Platform`**
      - ABAP Environment: **`default_abap-trial`**
-     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - OData v2`**
+     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - OData V2`**
 
-     ![object](neu11.png)
+     ![object](s13.png)
 
      Click **Next >**.
 
@@ -180,7 +154,7 @@ author_profile: https://github.com/mervey45
 
   5. Select your main entity **`TravelProcessor`** and click **Next >**.
 
-    ![object](neu12.png)
+      ![object](s14.png)
 
   6. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
@@ -192,110 +166,70 @@ author_profile: https://github.com/mervey45
 
      Click **Next >**.
 
-    ![object](neu13.png)
+      ![object](s15.png)
 
-    **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+
 
   7. Configure deployment:
-
        - Target: ABAP
-       - Is this an SAP Business Technology Platform system? Yes
-       - Target System URL: `<your_abap_system_url>`
-       - Name: `ztravel_app_xxx`
+       - Destination: `<your_abap_system_url>`
+       - `SAPUI5` ABAP Repository: `ztravel_app_xxx`
        - Package: `ztravel_app_xxx`
+       - How do you want to enter Transport Request? Manually
        - Transport Request: `<your_transport_request>`
-       - Deployment description: deployment xxx
 
-      <!-- border -->![app](neu14.png)
+      ![app](s16.png)
 
       Click **Next >**.
 
-    >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
-    >      ![deploy](deploy3.png)
+     **HINT:** If you want to copy your transport request, please do following: Open Eclipse, search your package `ZTRAVEL_APP_XXX` and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your transport request underneath the Modifiable folder.
+     ![app](deploy3.png)
 
-  8. Configure Fiori Launchpad:
 
-       - Semantic Object: `ztravel_app_xxx`
+
+  8. Configure SAP Fiori launchpad:
+       - Semantic object: `ztravel_app_xxx`
        - Action: display
        - Title: Travel App XXX
 
-      <!-- border -->![app](neu15.png)
+      ![app](s17.png)
 
       Click **Finish**.
-
-  9. Now all files have been generated.
-
-      <!-- border -->![app](new4.png)
 
 
 ### Run SAP Fiori application for data preview
 
 
-  1. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
+  1. Select the menu on the left side, right-click your project `ztravel_app_xxx` and select **Open in Integrated Terminal**.
 
-      ![run](studio24.png)
+      ![run](s18.png)
 
-      **HINT**: An alternative to run the application is to open the terminal and enter: `npm start`.
+  2. Type `npm start` and press **Enter**.
 
-  2. Your default browser will open. Click **Go** to see your result.
+      ![run](s19.png)
 
-      ![run](studio30.png)
+  3. The preview opens. Click **Go**.
 
-  3. Check your result.
+     ![run](s20.png)
 
-     ![run](studio31.png)
+  4. Now check your result.
+
+     ![run](s21.png)
 
 
 ### Deploy your application
 
 
-1. Click **Files**, right-click your project and select **Open in Terminal**.
+1. Select the menu on the left side, right-click your project `ztravel_app_xxx` and select **Open in Integrated Terminal**.
 
-    ![deploy](neuxx.png)
+    ![deploy](s18.png)
 
 2. Enter **`npm run deploy`** to deploy your application. When prompted, check deployment configuration and press y. Open the URL at the end of the deployment log in browser to preview the application.
 
-    ![deploy](deploy5.png)
+    ![deploy](s22.png)
 
     When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
-
->**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can do following steps:**
-> 1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
-
->![deploy](deploy.png)
-
->  2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
-
->     Add following information:
-
->       - Semantic Object: **`ztravel_app_xxx`**
-       - Action: display
-       - Title: Travel App XXX
-       - Subtitle (optional): press enter
-
->       ![deploy](deploy2.png)
-
-> 3.  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
-
->      ![deploy](deploy3.png)
-
->  4. Go back to SAP Business Application Studio and open the terminal again. To add `deploy config` details, enter **`npx fiori add deploy-config`**.
-
->     Add following information:
-
->      - Please choose the target: ABAP
-      - Is this an SAP Business Technology Platform system?: Y
-      - Destination: press enter for default
-      - Is this an S/4 Cloud system? N
-      - Name: press enter for default
-      - Package: **`ztravel_app_xxx`**
-      - Transport Request: **`<your_transport_request>`**
-      - Deployment description: `deployment xxx`
-
->      ![deploy](deploy4.png)
-
->      The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
-
 
 
 ### Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse
@@ -303,7 +237,7 @@ author_profile: https://github.com/mervey45
 
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `ZTRAVEL_APP_XXX` by pressing `F5`.
 
-    ![library](library.png)
+     ![library](library.png)
 
 
 
@@ -390,18 +324,18 @@ author_profile: https://github.com/mervey45
 ### Run SAP Fiori application
 
 
-  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Select the menu on the left side, right-click your project `ztravel_app_xxx` and select **Open in Integrated Terminal**.
 
-    ![url](url.png)
+      ![deploy](s18.png)
 
 
   2. Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
-      ![url](url2.png)
+      ![url](s22.png)
 
   3. Press **`CTRL and click the following link`** to open the URL in a browser.
 
-      ![url](url3.png)
+      ![url](s23.png)
 
   4. Log in to ABAP Trial.
 
@@ -418,6 +352,3 @@ author_profile: https://github.com/mervey45
 
 
 ### Test yourself
-
-
-

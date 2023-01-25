@@ -54,7 +54,7 @@ import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
-> Again, you can try it out on the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-shellbar--generated-default-story).
+> Again, you can try it out in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/docs/layouts-floorplans-shellbar--default-story).
 
 1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
 
@@ -270,7 +270,7 @@ export function MyApp() {
 }
 ```
 
-### Add a List
+### Add a `List`
 
 
 1. To wrap the `List` add a `Card` (right after the first one).
@@ -333,70 +333,70 @@ export function MyApp() {
     To show the progress, add the `ProgressIndicator` as child of the items, with the following props:
 
     - `value`: The value, which indicates the progress
-    - `valueState`: The value-state (color) of the indicator  
+    - `valueState`: The value-state (color) of the indicator
 
-  ```JavaScript / JSX
-  <CustomListItem>
-    <ProgressIndicator value={89} valueState={ValueState.Success} />
-  </CustomListItem>
-  <CustomListItem>
-    <ProgressIndicator value={5} valueState={ValueState.Error} />
-  </CustomListItem>
-  ```
+    ```JavaScript / JSX
+    <CustomListItem>
+      <ProgressIndicator value={89} valueState={ValueState.Success} />
+    </CustomListItem>
+    <CustomListItem>
+      <ProgressIndicator value={5} valueState={ValueState.Error} />
+    </CustomListItem>
+    ```
 
 7. The indicators are displayed as part of the list item, but the title and status of the activities is still missing.
 For this, add two `Text` components above the indicator:
 
-  ```JavaScript / JSX
-  <CustomListItem>
-    <Text>Activity 3</Text>
-    <Text>in progress</Text>
-    <ProgressIndicator value={89} valueState={ValueState.Success} />
-  </CustomListItem>
-  ```
+    ```JavaScript / JSX
+    <CustomListItem>
+      <Text>Activity 3</Text>
+      <Text>in progress</Text>
+      <ProgressIndicator value={89} valueState={ValueState.Success} />
+    </CustomListItem>
+    ```
 
 8. All necessary information are now available in each item, but the formatting looks terrible. Let's fix that by using a flex box:
 
-  ```JavaScript / JSX
-  <CustomListItem>
-    <FlexBox direction={FlexBoxDirection.Column}>
-      <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-        <Text>Activity 3</Text>
-        <Text>in progress</Text>
+    ```JavaScript / JSX
+    <CustomListItem>
+      <FlexBox direction={FlexBoxDirection.Column}>
+        <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+          <Text>Activity 3</Text>
+          <Text>in progress</Text>
+        </FlexBox>
+        <ProgressIndicator value={89} valueState={ValueState.Success} />
       </FlexBox>
-      <ProgressIndicator value={89} valueState={ValueState.Success} />
-    </FlexBox>
-  </CustomListItem>
-  ```
+    </CustomListItem>
+    ```
 
-  > The `FlexBox` implements most of the [`CSS Flexbox`](https://www.w3schools.com/css/css3_flexbox.asp) behavior without being forced to actually use CSS or other styling methods.
+    > The `FlexBox` implements most of the [`CSS Flexbox`](https://www.w3schools.com/css/css3_flexbox.asp) behavior without being forced to actually use CSS or other styling methods.
 
 9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this as well, pass the `style` prop, to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html):
 
-  ```JavaScript / JSX
-  <CustomListItem>
-    <FlexBox
-      direction={FlexBoxDirection.Column}
-      style={{ width: "100%", ...spacing.sapUiContentPadding }}
-    >
-      <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-        <Text style={{ fontSize: ThemingParameters.sapFontLargeSize }}>
-          Activity 3
-        </Text>
-        <Text style={{ color: ThemingParameters.sapCriticalTextColor }}>
-          in progress
-        </Text>
+    ```JavaScript / JSX
+    <CustomListItem>
+      <FlexBox
+        direction={FlexBoxDirection.Column}
+        style={{ width: "100%", ...spacing.sapUiContentPadding }}
+      >
+        <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+          <Text style={{ fontSize: ThemingParameters.sapFontLargeSize }}>
+            Activity 3
+          </Text>
+          <Text style={{ color: ThemingParameters.sapCriticalTextColor }}>
+            in progress
+          </Text>
+        </FlexBox>
+        <ProgressIndicator
+          value={89}
+          valueState={ValueState.Success}
+          style={{ ...spacing.sapUiTinyMarginTop }}
+        />
       </FlexBox>
-      <ProgressIndicator
-        value={89}
-        valueState={ValueState.Success}
-        style={{ ...spacing.sapUiTinyMarginTop }}
-      />
-    </FlexBox>
-  </CustomListItem>
-  ```
+    </CustomListItem>
+    ```
 
-  > The `ThemingParameters` used for the color of the status text, contain all available theme dependent styles of UI5 Web Components for React. You will find out more about this in [Tutorial 6](ui5-webcomponents-react-styling)
+    > The `ThemingParameters` used for the color of the status text, contain all available theme dependent styles of UI5 Web Components for React. You will find out more about this in [Tutorial 6](ui5-webcomponents-react-styling)
 
 10. Finally, apply the same layout and styles to the content of the second `CustomListItem`.
 

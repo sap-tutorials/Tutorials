@@ -14,6 +14,7 @@ primary_tag: software-product-function>sap-private-link-service
 ## Prerequisites
 - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link service entitlement: [Set Up SAP Private Link service ](private-link-onboarding).
 - You have created a Microsoft Azure Private Link Service in the Azure Portal. You only have to create the Load Balancer resources (pool and rules) and the private link service. The section "Create a private endpoint" can be skipped, as SAP Private Link service will establish the connection for you. See [Create a Private Link service by using the Azure portal](https://docs.microsoft.com/en-us/azure/private-link/create-private-link-service-portal).
+When creating the Azure Private Link service, make sure you allowlist the SAP BTP CF Subscription IDs as described in [Only allow requests from SAP BTP CF's Azure subscription](https://help.sap.com/docs/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/844bca7a51f04a15be865b9a6c1867b0.html?locale=en-US&version=CLOUD).
 - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## You will learn
@@ -27,7 +28,7 @@ primary_tag: software-product-function>sap-private-link-service
 
 ---
 
-### Check offerings of  Link Service
+### Check offerings of Private Link service
 
 
 After you've logged in as described in [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli), access the **Service Marketplace** of SAP BTP. Open a command prompt on your computer and type in the following:

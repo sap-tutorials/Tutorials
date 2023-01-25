@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-work-zone]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone]
+primary_tag: software-product>sap-build-work-zone
 author_name: Lindsay Bert
 ---
 
@@ -12,8 +12,8 @@ author_name: Lindsay Bert
 
 ## Prerequisites
 To follow the trainings, the instructor will give you the following:
- - A URL to a SAP BTP subaccount used for this training.
- - A user name and password for the SAP Business Technology Platform account used in this training.
+ - A URL to a SAP BTP subaccount used for this training
+ - A user name and password for the SAP Business Technology Platform account used in this training
 
 
 ## You will learn

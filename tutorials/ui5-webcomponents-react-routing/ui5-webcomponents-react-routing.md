@@ -42,7 +42,7 @@ export function Detail() {
 
 1. Install `react-router-dom`.
 
-    [React Router](https://reacttraining.com/react-router/web/guides/quick-start) is a collection of navigational components that compose declaratively with your application.
+    [React Router](https://reactrouter.com) is a collection of navigational components that compose declaratively with your application.
 
     Execute the following line in the terminal in your root location of the project.
 

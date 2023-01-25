@@ -11,6 +11,9 @@ author_profile: https://github.com/Juliana-Morais
 # Use Your Own Data to Train a Machine Learning Model and Get Recommendations Based on Users' Browsing History
 <!-- description --> Use the Personalized Recommendation service to train your own machine learning model to give visitors to your website highly personalized recommendations based on their browsing history.
 
+## Prerequisites
+- You have completed the tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token)
+
 ## You will learn
   - How to call and test the Personalized Recommendation service
   - How to access and use Swagger UI (User Interface)

@@ -2,19 +2,20 @@
 parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, topic>java, products>sap-btp--cloud-foundry-environment, tutorial>license]
-primary_tag: topic>java
+tags: [ tutorial>intermediate, programming-tool>java, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+primary_tag: programming-tool>java
+author_name: Abhinav Singh
+author_profile: https://github.com/singhabhi1999
 ---
 
 # Create Multi-Cloud Application Consuming Object Store Service
-<!-- description --> Create a Java application that can work with different Object Stores like AWS S3, GCS and deploy the application on SAP Business Technology Platform.
+<!-- description --> Create a Java application that can work with different Object Stores like Swift, AWS S3, GCS and deploy the application on SAP Cloud Platform.
 
 ## Prerequisites
  - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
  - [Maven 3.3+](https://maven.apache.org/download.cgi)
  - [Eclipse](https://www.eclipse.org/downloads/)
- - [Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
- - SAP Business Technology Platform account
+ - [SAP Cloud Platform Global account](https://help.sap.com/viewer/e275296cbb1e4d5886fa38a2a2c78c06/Cloud/en-US/667f34ba9222450491c2b848cd17e189.html)
  - [Provision Object Store Service](https://discovery-center.cloud.sap/#/serviceCatalog/object-store-service)
  - Basic knowledge of spring
  - Basic knowledge of Cloud Foundry

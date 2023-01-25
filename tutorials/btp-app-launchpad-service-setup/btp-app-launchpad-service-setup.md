@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Prepare SAP Launchpad Service Setup
+description: This tutorial shows you how to add the SAP Launchpad application.
 keywords: cap
 auto_validation: true
 time: 20
@@ -9,26 +10,24 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Prepare SAP Launchpad Service Setup
-<!-- description --> This tutorial shows you how to add the SAP Launchpad application.
-
 ## Prerequisites
  - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
 
-## You will learn
+## Details
+### You will learn
  - How to add Navigation Targets
  - How to add SAP Cloud Service
  - How to add the Destination Service and destinations
 
 ---
 
-### Add navigation targets
-
+[ACCORDION-BEGIN [Step 1: ](Add navigation targets)]
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Launchpad service. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add navigation target for Risks UI
-
+[ACCORDION-BEGIN [Step 2: ](Add navigation target for Risks UI)]
 1. Open the file `app/risks/webapp/manifest.json`.
 
 2. Add the external navigation target to the `sap.app` JSON object. You can add it right behind the `sourceTemplate` object:
@@ -59,10 +58,10 @@ Navigation targets are required to navigate between applications, but also to st
 }
 ```
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Add navigation target for Mitigations UI
-
+[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
 Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
 
 <!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
@@ -91,9 +90,10 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 }
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAP Cloud service
-
+[ACCORDION-BEGIN [Step 4: ](Add SAP Cloud service)]
 Add your SAP Cloud service at the end of `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files:
 
 <!-- cpes-file app/risks/webapp/manifest.json:$["sap.cloud"] -->
@@ -113,13 +113,14 @@ Add your SAP Cloud service at the end of `app/risks/webapp/manifest.json` and `a
 
 The name of your SAP Cloud service (`cpapp` in this case) should be unique within an SAP BTP region. It is used to identify the resources that belong to one UI in the SAP Launchpad service.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add the SAP Destination service
-
+[ACCORDION-BEGIN [Step 5: ](Add the SAP Destination service)]
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-destination -->
-```YAML[2-9]
+```YAML[3-9]
 resources:
    ...
  - name: cpapp-destination
@@ -135,13 +136,14 @@ The SAP Destination service stores URLs and credentials (so called "destinations
 
 The service configuration option `HTML5Runtime_enabled: true` is required to make the destinations available to the SAP Launchpad service.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAP HTML5 Application Repository service
-
+[ACCORDION-BEGIN [Step 6: ](Add SAP HTML5 Application Repository service)]
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-html5-repo-host -->
-```YAML[2-7]
+```YAML[3-7]
 resources:
    ...
  - name: cpapp-html5-repo-host
@@ -153,9 +155,10 @@ resources:
 
 The SAP HTML5 Application Repository service stores static UI files. In the deployment, the SAP Fiori UI applications are uploaded to this service and the SAP Launchpad service serves the UIs from there.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add destinations
-
+[ACCORDION-BEGIN [Step 7: ](Add destinations)]
 You add three destinations for the SAP Destination service that are used by the SAP Launchpad service:
 
 1. `cpapp-app-srv` - The destination to the CAP service. It is required by your UIs running in SAP Launchpad service to access your service.
@@ -222,9 +225,10 @@ modules:
  # -------------------- SIDECAR MODULE ------------------------
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install required UI tools and MTA
-
+[ACCORDION-BEGIN [Step 8: ](Install required UI tools and MTA)]
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module in the root folder of your project:
 
     ```Shell/Bash
@@ -243,9 +247,10 @@ modules:
     npm install --global mta
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAP Fiori Elements Risks application
-
+[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -264,9 +269,10 @@ modules:
 
 4. Enter `cpapp-app-srv` for the destination name.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAPUI5 freestyle Mitigations application
-
+[ACCORDION-BEGIN [Step 10: ](Add SAPUI5 freestyle Mitigations application)]
 Repeat the procedure from the previous step for the `app/mitigation` folder.
 
 1. Switch to `app/mitigations` folder:
@@ -285,9 +291,10 @@ Repeat the procedure from the previous step for the `app/mitigation` folder.
 
 3. Enter `cpapp-app-srv` for the destination name again.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Check the results in mta.yaml
-
+[ACCORDION-BEGIN [Step 11: ](Check the results in mta.yaml)]
 The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fiori application. Each build result is a ZIP file that contains optimized UI resources and a ZIP file `manifest-bundle.zip` with the `manifest.json` and the `i18n` files. The latter is required by the SAP Launchpad service.
 
 1. Check the `risks` application module `nsrisks`:
@@ -354,9 +361,10 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
           target-path: resources/
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add UI build files to .gitignore
-
+[ACCORDION-BEGIN [Step 12: ](Add UI build files to .gitignore)]
 The SAP Fiori build files do not need to be stored in GitHub. You can add it to your `.gitignore` file:
 
 ```Shell/Bash
@@ -369,9 +377,10 @@ app/*/package-lock.json
 
 > `.gitignore` files are excluded by default from the file types shown in the VS Code workspace. In VS Code, go to **File** (for macOS: **Code**) &rarr; **Preferences** &rarr; **Settings**, search for `fileexclude`, and delete the setting for `.gitignore` files under the **Workspace** tab.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Re-build and re-deploy the .mtar file
-
+[ACCORDION-BEGIN [Step 13: ](Re-build and re-deploy the .mtar file)]
 1. Build your project with the MTA Build Tool (MBT) in the root folder of your project:
 
     ```Shell/Bash
@@ -392,4 +401,6 @@ app/*/package-lock.json
 
 3. Go to [SAP BTP Cockpit](https://account.hana.ondemand.com/) to check the deployed content.
 
+[DONE]
+[ACCORDION-END]
 ---
