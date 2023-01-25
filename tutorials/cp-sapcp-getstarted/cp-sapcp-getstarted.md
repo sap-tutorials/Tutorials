@@ -129,7 +129,7 @@ btp login
 
 If you have enabled Two-Factor-Authentication, you need to append the token to your passcode. 
 
-Once you're authenticated, you will automatically be logged on to your global account. If you have access to more than one global account, the CLI will display a list of global accounts  from which you can select one. 
+Once you're authenticated, you will automatically be logged in to your global account. If you have access to more than one global account, the CLI will display a list of global accounts  from which you can select one. 
 
 When you're logged in, it should look similar to this:
 
