@@ -185,7 +185,7 @@ Now that you have created an OData Service which exposes user-related informatio
 
     ![Create mockserver](install_dependency_new.png)
 
-8. A new dependency will be addedd in the **`package.json`** file, in the configuration `"ui5"` > `"dependencies"`:
+8. A new dependency will be added in the **`package.json`** file, in the configuration `"ui5"` > `"dependencies"`:
 
     ![Modify package.json file - 2](modify_package_json_parameters_2.png)
 
