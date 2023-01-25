@@ -27,7 +27,6 @@ keywords: btp, btp cli, btpcli, command line, command line interface, command li
 
 ### What is the btp CLI?
 
-
 The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server (https://cpcli.cf.eu10.hana.ondemand.com) when you log on to your global account through the btp CLI.
 
 The base call to enter on the command line is `btp`.
@@ -45,7 +44,6 @@ Here are some of the tasks you can use the btp CLI for:
 
 ### For which global accounts can I use the btp CLI?
 
-
 SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
@@ -53,7 +51,6 @@ Here you can read more about the [Cloud Management Tools Feature Set B Innovatio
 
 
 ### btp CLI vs environment-specific CLIs
-
 
 Cloud Foundry: You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **btp CLI** relates to the **cf CLI**:
 The btp CLI is the CLI for working with global accounts on SAP BTP. You use the btp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with btp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing service instances and members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you need to use the cf CLI.
@@ -66,7 +63,6 @@ Kyma: The same goes for Kyma: You use the btp CLI for all tasks on global accoun
 
 
 ### Download and install the btp CLI client
-
 
 1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the btp CLI client for your operating system.
 2. Extract the client executable from the tar.gz archive as follows:
@@ -89,7 +85,6 @@ The output should look similar to this screenshot:
 
 
 ### Display help
-
 
 Now type in the following to get syntax instructions and examples help calls:
 
@@ -114,39 +109,33 @@ You can call up help in the client on different levels, from an introductory hel
 
 ### Log in to your global account
 
+Now let's log in: 
 
-Now let's log in. To do so, you need the CLI server URL (https://cpcli.cf.eu10.hana.ondemand.com) and the subdomain of your global account:
-
-The **CLI server URL** is proposed at login - just accept it with ENTER. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. This server is the back-end of the CLI that routes all requests to the platform services.
-
-   ![CLI server URL](server-url.png)
-
-You can find the **global account subdomain** in the cockpit:
-
-  ![Subdomain of the global account in the cockpit](subdomain-ga.png)
+The **CLI server URL** (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login - just accept it with ENTER. This server routes client requests to the platform services. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. 
 
 You have two options for login:
 
-For login on the command-line, enter:
-
-```Bash
-btp login
-```
-For login with single sign-on through a browser, enter:
+We recommend to login with single sign-on through a browser. To do this, use:
 
 ```Bash
 btp login --sso
 ```
 
-Once you're logged into your global account, it should look similar to this:
+For login on the command-line, use:
+
+```Bash
+btp login
+```
+
+If you have enabled Two-Factor-Authentication, you need to append the token to your password. 
+
+Once you're authenticated, you will automatically be logged in to your global account. If you have access to more than one global account, the CLI will display a list of global accounts  from which you can select one. 
+
+When you're logged in, it should look similar to this:
 
 ![CLI Login](sapcplogin.png)
 
-> If you get an error about your btp CLI client being "too new" and not supported by the server, please return to Step 4 of this tutorial and download an earlier version of the CLI, to either match the server version stated, or one version below. For example, if the server version is stated as 2.9.0 and you have version 2.10.0 of the btp CLI, you can download version 2.8.0 of the btp CLI and then continue with this tutorial. [This issue](https://github.com/SAP-samples/devtoberfest-2021/issues/53) may contain further information that you might find useful.
-
-
 ### Understand the command syntax
-
 
 ![CLI command syntax](usage.png)
 
@@ -175,21 +164,24 @@ btp assign security/role-collection "Global Account Administrator" --to-user exa
 
 ### Understand the context you've targeted 
 
+Your first login takes you into a global account. Now, all commands are executed on global account level, unless you specify a different context. Remember you can manage the global account and its directories and subaccounts with the btp CLI. So if you want to change the context in which commands are executed to a directory or a subaccount, you can do so using the target command. There are two different ways of using this command: 
 
-Your first login takes you into the global account whose subdomain you've entered at login. Now, all commands are executed on global account level, unless you specify a different context. Remember you can manage the global account and its directories and subaccounts with the btp CLI. So if you want to change the context in which commands are executed to a directory or a subaccount, you can do so using the target command:
+For an easy, interactive selection of the new target, use: 
 
 ```Bash
-btp target --subaccount <my-subaccount-ID>
+btp target
 ```
-OR
+This will display the children and let you navigate up and down the account hierarchy. 
+
+For directly setting a new target, use:
 
 ```Bash
-btp target --directory <my-directory-ID>
+btp target [--subaccount <ID> | --directory <ID> | --global-account <SUBDOMAN>] 
 ```
 
 The targeting mechanism works according to the hierarchy of entities in the global account:
 
-- After initial login, the global account is targeted.
+- After initial login, a global account is targeted.
 
 - If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `list accounts/subaccount` lists all subaccounts of the global account, even if a subaccount or a directory is targeted.
 
@@ -197,7 +189,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 >To find out your current target, use `btp --info`.
 
->To set the target back to the global account, use `btp target -ga`.
+>To set the target back to the current global account, use `btp target -ga`.
 
 
 ### Enable command autocompletion
@@ -206,7 +198,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 We recommend to enable command autocompletion so you won't have to remember or keep looking up individual commands. Command autocompletion saves you keystrokes when entering command actions, group-object combinations, and their parameters. Autocompletion is supported for  Bash, PowerShell, and Zsh.
 
 ```Bash
-btp enable autocomplete <shell>
+btp enable autocomplete <SHELL>
 ```
 Enter a partial command action, group-object combination, or parameter, and then press the Tab key. The command line either automatically completes your command or, when there's more than one option available, it displays a list of suggested command actions/options/parameters. When a suggestion list is displayed, use the Tab or arrow keys to move through the list and press Enter to make a selection.
 
