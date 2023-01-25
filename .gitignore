@@ -48,4 +48,4 @@ Thumbs.db
 rules.vr
 
 # VSCode specific files
-.code-workspace
+*.code-workspace
