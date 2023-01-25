@@ -1,28 +1,30 @@
 ---
-title: Create an ABAP Managed Database Procedure (AMDP) and Analyze Its Performance
-description: Create an AMDP and analyze its runtime performance along with the performance of the executed SQL statements, using the AMDP Profiler in ABAP Development Tools (ADT).
+parser: v2
 auto_validation: true
 time: 45
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>intermediate, software-product>sap-netweaver-7.5, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
+tags: [  tutorial>intermediate, software-product>sap-netweaver, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
 ---
 
+# Create an ABAP Managed Database Procedure (AMDP) and Analyze Its Performance
+<!-- description --> Create an AMDP and analyze its runtime performance along with the performance of the executed SQL statements, using the AMDP Profiler in ABAP Development Tools (ADT).
+
 ## Prerequisites
 - You have one of the following:
     - You have a sub-account with the entitlement SAP Business Technology Platform (BTP) ABAP environment. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html). You have also created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
       - You have a valid instance of SAP S/4HANA on-premise edition, version 1909 or higher. For a free Cloud Appliance Library (CAL) version, of SAP S/4HANA 1909, see [SAP S/4HANA Fully-Activated Cloud Appliance](https://blogs.sap.com/2019/04/23/sap-s4hana-fully-activated-appliance-demo-guides/)
-- You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap) or higher
+- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 - You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an ABAP class containing an ABAP Managed Database Procedure (`AMDP`)
   - How to run the ABAP Profiler on this class
 
+## Intro
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
 You should be familiar with ABAP Managed Database Procedures (AMDP). Briefly, AMDP allows you to optimize your ABAP code (for ABAP on SAP HANA) by calling HANA database procedures from a global ABAP class.
@@ -30,7 +32,8 @@ For more details, see [ABAP Managed Database Procedures (AMDP): Short introducto
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an ABAP package)]
+### Create an ABAP package
+
 1. Select your project. From the context menu, choose **New > ABAP Package**.
 
     ![Image depicting step2-package](step2-package.png)
@@ -41,10 +44,9 @@ For more details, see [ABAP Managed Database Procedures (AMDP): Short introducto
 
 3. Create or assign a transport request and choose **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an ABAP class)]
+### Create an ABAP class
+
 1. Again, from the context menu  of your package, choose **New > ABAP Class**.
 
 2. Enter a name and description, then choose **Next**.
@@ -53,10 +55,9 @@ For more details, see [ABAP Managed Database Procedures (AMDP): Short introducto
 
 3. Assign the transport request and choose **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add two interfaces)]
+### Add two interfaces
+
 Add two interfaces by adding this code to the public section. Ignore the warning for now.
 
 - **`if_amdp_marker_hdb`** defines the class as an AMDP class, allowing you to implement AMDP methods - that is, ABAP methods that call a SAP HANA database procedure from within a global ABAP class.
@@ -69,10 +70,9 @@ if_oo_adt_classrun.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create structures and table types)]
+### Create structures and table types
+
 Add these structures and types to the public section, just after the interface definitions.
 Note the data elements that you imported earlier.
 
@@ -100,10 +100,9 @@ TYPES:
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add method definitions)]
+### Add method definitions
+
 Add these two method definitions to your code. Ignore the errors for now.
 
 ```ABAP
@@ -125,10 +124,9 @@ METHODS:
 ```
 Both of these are AMDP methods.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement get_flights)]
+### Implement get_flights
+
 1. In the class definition, select any one of the methods and choose **Add 3 unimplemented methods**. All three (empty) implementations will appear in the class implementation.
 
     ![Image depicting step7-implement-3-methods](step7-implement-3-methods.png)
@@ -208,10 +206,9 @@ Both of these are AMDP methods.
     ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement the method convert_currency)]
+### Implement the method convert_currency
+
 Similarly, implement the `convert_currency` method.
 
 ```ABAP
@@ -248,10 +245,9 @@ ENDMETHOD.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement the method `main` of the interface if_oo_adt_classrun)]
+### Implement the method `main` of the interface if_oo_adt_classrun
+
 Finally, implement the `main` method of the interface `if_oo_adt_classrun`. This will allow you to output your results to the ABAP Console.
 
 1. Call the method `get_flights` from the current instance of the class:
@@ -296,10 +292,9 @@ ENDMETHOD.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Check your code)]
+### Check your code
+
 Your code should look like this.
 
 ```ABAP
@@ -426,10 +421,9 @@ ENDCLASS.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Format, save, activate, and test your code)]
+### Format, save, activate, and test your code
+
 1. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**.
 
 2. Test your class by running it the ABAP Console ( **`F9`** ).
@@ -438,10 +432,9 @@ ENDCLASS.
 
   ![Image depicting step11-console](step11-console.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Set the Run configuration to ABAP Console)]
+### Set the Run configuration to ABAP Console
+
 You will run your class again in the ABAP Console. First, however, you will specify that the AMDP trace is to be enabled this time.
 
 1. From the context menu of the editor, choose **Profile As > ABAP Application (Console)**.
@@ -454,10 +447,9 @@ You will run your class again in the ABAP Console. First, however, you will spec
 
 The class will run again, outputting the same data to the Console and also creating an ABAP Trace.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Open the AMDP tab)]
+### Open the AMDP tab
+
 Now, you will examine the ABAP Trace you have created.
 
 1. Open the **ABAP Traces** view, by choosing it from  **Quick Access**.
@@ -480,13 +472,11 @@ The **Trace Results** view appears. The **ABAP Managed Database Procedures** tab
 
 > For more details, see: [SAP Note 2874907 - Display Elapsed Time Values in AMDP Profiler](https://launchpad.support.sap.com/#/notes/2874907)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ### More Information
 

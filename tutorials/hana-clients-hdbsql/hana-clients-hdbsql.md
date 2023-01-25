@@ -1,25 +1,28 @@
 ---
-title: Create a User, Tables and Import Data Using SAP HANA HDBSQL
-description: Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Create a User, Tables and Import Data Using SAP HANA HDBSQL
+<!-- description --> Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
+
 ## Prerequisites
  - You have completed the first 2 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to connect to SAP HANA from a client machine using HDBSQL
   - How to create a user, schema, tables and import data
 
+## Intro
 HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another more user-friendly option to execute SQL operations is the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of a HANA Cloud instance or a server + applications SAP HANA, express edition install.  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to SAP HANA using hdbsql)]
+### Connect to SAP HANA using hdbsql
+
 
 This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
@@ -149,10 +152,9 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
     ![Connect to HXE](Connect-to-host-server.png)  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create user and schema)]
+### Create user and schema
+
 
 This step creates a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
 
@@ -200,10 +202,9 @@ For further information on SQL to create a user or schema, see [CREATE USER Stat
 [Grant Statement(Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), and  [Privileges](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/fb0f9b103d6940f28f3479b533c351e9.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3:](Store connection details in secure user store (hdbuserstore))]
+### Store connection details in secure user store (hdbuserstore)
+
 
 Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [SAP HANA User Store](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/708e5fe0e44a4764a1b6b5ea549b88f4.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
 
@@ -237,10 +238,9 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 [Using Stored Connection Information](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/708e5fe0e44a4764a1b6b5ea549b88f4.html) contains details on how an application can use a `hdbuserstore` key.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables and import data)]
+### Create tables and insert data
+
 
 1. Exit HDBSQL by entering \q.
 
@@ -438,62 +438,99 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![result](select.png)
 
-For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
+    View the list of created objects.
+
+    ```SQL
+    \dt HOTEL.
+    \dp HOTEL.
+    ```
+
+     ![View the list of tables and procedures](list-tables-procs.png)
+
+    For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
 
 
-> ### Some Tips
+    > ### Some Tips
 
->Note that the identifiers such as table names are automatically upper cased unless they are within "".  
->
-```SQL
-SELECT * FROM HoTeL.RoOm;  --succeeds
-SELECT * FROM "HoTeL"."RoOm"; --fails
-SELECT * FROM "HOTEL"."ROOM"; --succeeds
-```
+    >Note that the identifiers such as table names are automatically upper cased unless they are within "".  
+    >
+    ```SQL
+    SELECT * FROM HoTeL.RoOm;  --succeeds
+    SELECT * FROM "HoTeL"."RoOm"; --fails
+    SELECT * FROM "HOTEL"."ROOM"; --succeeds
+    ```
 
->For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
-> ---
+    > ---
 
->Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
+    >Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
 
->```SQL
-DELETE FROM HOTEL.CITY;
-DROP TABLE HOTEL.CITY;
-DROP SCHEMA HOTEL CASCADE;
-DROP USER USER1 CASCADE;
-```
-
-> ---
+    >```SQL
+    DELETE FROM HOTEL.CITY;
+    DROP TABLE HOTEL.CITY;
+    DROP SCHEMA HOTEL CASCADE;
+    DROP USER USER1 CASCADE;
+    >```
 
 
-> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
-> ```SQL
-> SELECT * FROM HOTEL.CUSTOMER; -- interactive
-> hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-> hdbsql -U USER1UserKey -I hotel.sql -- batch file
->```
+### Interactive, non-interactive, substitution variables, and prepared statements
 
-> ---
 
-> [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+1. HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
-> ```SQL (find_customers.sql)
-> select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
-> ```
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER; -- interactive
+    hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    hdbsql -U USER1UserKey -I hotel.sql -- batch file
+    ```
 
-> It could be called using:
+2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
 
-> ```Shell
-> hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
-> ```
+    Given the following file:
 
-> ![example of substitution parameters](subst.png)
+    ```SQL (find_customers.sql)
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
+    ```
+
+    It could be called using:
+
+    ```Shell
+    hdbsql -A -U user1UserKey -V nameParam=J% -I find_customers.sql
+    ```
+
+    ![example of substitution parameters](subst.png)
+
+    It is also possible to define new variables and list the defined variables as shown below.
+
+    ```SQL
+    \vd titleParam Mr
+    \vl
+    SELECT * FROM HOTEL.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
+    ```
+
+    ![further example of substitution parameters](subst2.png)
+
+    See [SAP HANA HDBSQL Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) for details on the options to list and define substitution variables.
+
+3. As of version 2.13, HDBSQL will prompt for required parameters.  A few examples follow.
+
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?;
+    ```
+
+    ```SQL
+    CALL HOTEL.SHOW_RESERVATIONS(?, ?);
+    ```
+
+    ![Prompting for parameters](prepared.png)
+
+    In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase whereas, in the previous step, which used substitution variables, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
+
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

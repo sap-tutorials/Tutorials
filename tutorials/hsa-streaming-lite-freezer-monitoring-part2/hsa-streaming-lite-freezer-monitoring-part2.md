@@ -1,10 +1,12 @@
 ---
-title: Install Streaming Lite and Setup Freezer Lite
-description: Learn how to install and configure Streaming Lite on Raspberry Pi 2. 
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 ---
+
+# Install Streaming Lite and Setup Freezer Lite
+<!-- description --> Learn how to install and configure Streaming Lite on Raspberry Pi 2. 
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -13,17 +15,16 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ## Next Steps
    - [Build and Deploy Streaming Lite Project](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to download Streaming Lite for `Raspberry Pi 2`
  - How to configure the environment variable `STREAMING_HOME` on `Raspberry Pi 2`
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Streaming Lite)]
+### Install Streaming Lite
+
 
   1. Download
 
@@ -43,11 +44,9 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
     tar xvf streaming_lite_1.0.100.00_linuxarm32.tar
     ```
 
-[DONE]
 
-[ACCORDION-END]
+### Configure Raspberry Pi
 
-[ACCORDION-BEGIN [Step 2: ](Configure Raspberry Pi)]
 
   1. SSH to our `Raspberry Pi` using `PuTTY`.
 
@@ -77,9 +76,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---
 

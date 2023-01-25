@@ -1,6 +1,5 @@
 ---
-title: Intermediate Table Variables
-description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,44 +7,47 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-
 time: 15
 ---
 
+# Intermediate Table Variables 
+<!-- description --> Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:** [Parallel Processing and Parameters](hana-cloud-sqlscript-parallel)
 
-## Details
-### You will learn  
+## You will learn  
 In this exercise you will modify the code of procedure `get_po_header_data` again to use a single tabular output. Existing queries will be reused based on intermediate table variables.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
+### Edit previous procedure
+
 
 1. Return to your procedure called `get_po_header_data`.
 
-    !![Existing Procedure](1_1.png)
+    <!-- border -->![Existing Procedure](1_1.png)
 
 2. Delete the output parameters which you defined in the last section.
 
-    !![Define output](1_2.png)
+    <!-- border -->![Define output](1_2.png)
 
 
 3. Define a new output parameter as shown
 
-    !![New output](1_3.png)
+    <!-- border -->![New output](1_3.png)
 
 
 4. Rename `EX_PO_CREATE_CNT` to `PO_CREATE_CNT`. Also rename `EX_PO_CHANGE_CNT` to `PO_CHANGE_CNT`
 
-    !![change name](1_4.png)
+    <!-- border -->![change name](1_4.png)
 
 
 5. Modify the two SELECT statements and add `AS EID` after the `CREADEDBY` and `MODIFIEDBY` fields.
 
-    !![modify select](1_5.png)
+    <!-- border -->![modify select](1_5.png)
 
 6. Next, add another SELECT statement after the 2 previous SELECT statements as shown. This statement uses the previously defined table variables.
 
-    !![add another select](1_6.png)
+    <!-- border -->![add another select](1_6.png)
 
 7. The completed code should be very similar to this.
 
@@ -91,23 +93,20 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Save, deploy, run and check results)]
+### Save, deploy, run and check results
+
 
 1. Save the procedure.
 
-    !![save Procedure](2_1.png)
+    <!-- border -->![save Procedure](2_1.png)
 
 2. Perform a **Deploy**.
 
-    !![deploy](2_2.png)
+    <!-- border -->![deploy](2_2.png)
 
 3. Return to the Database Explorer page and use what you have learned and generate a new call statement for the procedure and run it. The results are then shown.
 
-    !![Results](2_3.png)
+    <!-- border -->![Results](2_3.png)
 
 
-[DONE]
-[ACCORDION-END]

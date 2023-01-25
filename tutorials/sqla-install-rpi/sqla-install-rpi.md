@@ -1,9 +1,11 @@
 ---
-title: Install SAP SQL Anywhere on Raspberry Pi
-description: How to install SAP SQL Anywhere on Raspberry Pi board
+parser: v2
 primary_tag: products>data-management>sap-sql-anywhere
 tags: [  tutorial>how-to, tutorial>beginner, topic>internet-of-things, topic>sql, products>data-management>sap-sql-anywhere ]
 ---
+# Install SAP SQL Anywhere on Raspberry Pi
+<!-- description --> How to install SAP SQL Anywhere on Raspberry Pi board
+
 ## Prerequisites  
 - Raspberry Pi installed with Raspbian operating system (other Linux distributions and other ARMv6 and ARMv7 devices may work as well, but some commands may be different)
 - Internet connection from Raspberry Pi
@@ -11,13 +13,13 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>internet-of-things, topic>sql
 
 ## How-To Details
 This How-To tutorial focuses on version 17 of the SAP SQL Anywhere Developer Edition and Raspberry Pi 3 Model B. Other Linux distributions and other ARMv6 and ARMv7 devices should work as well, but some commands may be different.
-
-### Time to Complete
+## Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare your Raspberry Pi board)]
+### Prepare your Raspberry Pi board
+
 Before running this installation guide you should check that your Raspberry Pi software is up to date with the latest patches. You can follow steps below, or do it in your favorite way.
 
 First download package lists from the repositories and get information on the newest versions of packages and their dependencies.
@@ -34,19 +36,15 @@ sudo apt full-upgrade
 
 It can take even up to one hour to finish the previous command depending on the number of packages to be upgraded.
 
+### Register for SAP SQL Anywhere Developer Edition
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Register for SAP SQL Anywhere Developer Edition)]
 Register for the SAP SQL Anywhere Developer Edition: <https://www.sap.com/cmp/td/sap-sql-anywhere-developer-edition-free-trial.html>
 
 Once you have received confirmation e-mail, check its content for links to download software packages for different versions, links to documentation and a link to user forums.
 
 
-[ACCORDION-END]
+### Download the software
 
-
-[ACCORDION-BEGIN [Step 3: ](Download the software)]
 Copy the link to SAP SQL Anywhere 17 `Linux for ARM` software from the registration form on the web or the registration confirmation e-mail.
 ![Copy the link](sqla01_01b.png)
 
@@ -59,10 +57,8 @@ tar -xvf sqla17developerlinuxarm.tar.gz
 ls sqlany17/
 ```
 
+### Run the setup script
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Run the setup script)]
 Go to installation directory and run the `setup` script to create the new installation of the SAP SQL Anywhere.
 ```sh
 cd sqlany17/
@@ -102,10 +98,8 @@ found in the samples directory of the install. For example, run:
   source "/opt/sqlanywhere17/samples/sample_config32.sh"
 ```
 
+### Check the installed software
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Check the installed software)]
 The SQL Anywhere executable and libraries are not added to the `PATH` and `LD_LIBRARY_PATH` environment variables automatically. You can add this to the current shell's environment by sourcing the configuration files as mentioned in the previous step before running the database version check.
 
 ```sh
@@ -115,16 +109,11 @@ dbsrv17 -v
 
 ![Check the db version](sqla01_02.png)
 
-
-[ACCORDION-END]
-
 ---
 
 ### Optional
 
 
-[ACCORDION-BEGIN [Step 6: ](Check SAP SQL Anywhere documentation)]
+### Check SAP SQL Anywhere documentation
+
 Check complete documentation: <https://help.sap.com/viewer/product/SAP_SQL_Anywhere/>
-
-
-[ACCORDION-END]

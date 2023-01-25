@@ -1,6 +1,5 @@
 ---
-title: Create a Streaming Project in SAP HANA Smart Data Streaming
-description: Part 2 of 9. Create a SAP HANA Smart Data Streaming (SDS) project in SAP HANA Studio with streaming plug-in and visual editor.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
@@ -8,18 +7,21 @@ author_name: Bill Jiang
 author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
+# Create a Streaming Project in SAP HANA Smart Data Streaming
+<!-- description --> Part 2 of 9. Create a SAP HANA Smart Data Streaming (SDS) project in SAP HANA Studio with streaming plug-in and visual editor.
+
 ## Prerequisites  
  - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](https://developers.sap.com/tutorials/sds-part1-configure-streaming-server.html)
 
-## Details
-### You will learn  
+## You will learn  
  - Creating a new streaming project: a project contains one or more input streams/windows and then directs the flow of data through continuous queries and/or custom operators, publishing output events via adapters.
  - Defining an input stream to receive incoming events: All incoming events enter a project via an input stream or input window. The schema of the input stream (or window) defines the fields that events on that stream will (or may) contain.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a New Streaming Project)]    
+### Create a New Streaming Project
+    
 
 1. Click the **File** menu. You can also press **Alt+f**. Then click the **New** > **Project...**. You can also press **r**.
 
@@ -37,11 +39,9 @@ time: 20
 
     ![Click Finish](create-a-new-project/4-click-finish.png)
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Create the Required SAP HANA Tables)]    
+### Create the Required SAP HANA Tables
+    
 
 1. Go to **SAP HANA Administration Console** perspective, then **Systems** view. Right click the system you are working with.
 
@@ -121,11 +121,10 @@ time: 20
 
     ![check content](create-tables/7-check-content.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create an Input Stream)]    
+### Create an Input Stream
+    
 
 1. When you created the project, it created an input stream called "NEWSTREAM" by default.
 
@@ -167,6 +166,3 @@ time: 20
 
     ![drag stream](new-stream/10-drag-stream.png)
 
-[DONE]
-
-[ACCORDION-END]

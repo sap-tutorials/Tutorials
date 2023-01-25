@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Use Smart Data Integration to Virtualise Data from On-Premise to the Cloud
-description: Virtualize data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using Smart Data Integration (SDI) and the Data Provisioning Agent.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
+
+# Use Smart Data Integration to Virtualise Data from On-Premise to the Cloud
+<!-- description --> Virtualize data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using Smart Data Integration (SDI) and the Data Provisioning Agent.
 
 ## Prerequisites
 -	A **running** instance of SAP HANA Cloud, SAP HANA database.
@@ -17,13 +19,13 @@ primary_tag: products>sap-hana-cloud
 -	Lastly, you need to install the Data Provisioning Agent, which you can [download here](https://tools.hana.ondemand.com/#cloudintegration).
 
 
-## Details
-### You will learn
+## You will learn
 - How to set up and configure the Data Provisioning Agent
 - How to create a remote source to an SAP HANA Cloud, SAP HANA database instance in your SAP HANA on-premise system using Smart Data Integration
 - How to then virtualise data from an SAP HANA on-premise database to SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 If you want to virtualise and replicate data from an SAP HANA on-premise database to SAP HANA Cloud, SAP HANA database, Smart Data Integration (SDI) is the best method to use.
 
 ![Infographic SDI](ss-01-infographic-SDI.png)
@@ -37,7 +39,8 @@ In this tutorial, you will learn step by step how to virtualise and replicate da
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up the Data Provisioning Agent)]
+### Set up the Data Provisioning Agent
+
 
 Before you can virtualise data from SAP HANA on-premise to an SAP HANA Cloud, SAP HANA database, you need to set up the Data Provisioning Agent (DPA), which will allow data to be securely transmitted from the on-premise system.
 
@@ -49,7 +52,7 @@ You have two options to complete this step:
 
 > Select the option you prefer by clicking on "Video" or "Written instructions" below this step title.
 >
-> !![Tab Option](TabOption.gif)
+> <!-- border -->![Tab Option](TabOption.gif)
 
 [OPTION BEGIN [Video]]
 
@@ -114,10 +117,9 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Establish a remote source connection)]
+### Establish a remote source connection
+
 
 1.	In the **SAP HANA Database Explorer** connected to your SAP HANA Cloud, SAP HANA database instance, right-click on **Remote Sources** in the Catalog of your database and select **Add Remote Source**.
 
@@ -129,7 +131,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 5.	Type in the **Port Number**. For the SAP HANA Express Edition, the default Port Number is `39015`.
 
-    !![DBX Remote Source 1](ss-02-DBX-remotesource1.png)
+    <!-- border -->![DBX Remote Source 1](ss-02-DBX-remotesource1.png)
 
 7.	Scroll down to the section **Connection Security** and `enable` the SSL connection.  
 
@@ -139,22 +141,21 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 10.	Click on **Create** to finish this step.
 
-    !![DBX Remote Source 2](ss-03-DBX-remotesource2.png)
+    <!-- border -->![DBX Remote Source 2](ss-03-DBX-remotesource2.png)
 
 11.	Now, when you click on **Remote Sources** in your catalog, the remote source should appear at the bottom left panel.
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a virtual table)]
+### Create a virtual table
+
 
 1.	Double-click on the remote source to load it.
 
-    !![DBX Remote Source 3](ss-04-DBX-remotesource3.png)
+    <!-- border -->![DBX Remote Source 3](ss-04-DBX-remotesource3.png)
 
 2.	In the dialogue that opens, you can see all the metadata of the remote source based on the authorization of the user you specified.
 
@@ -162,7 +163,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 4.	There, check the box in the row of the table you want to virtualise data from and then click **Create Virtual Object(s)** in the top right corner.
 
-    !![DBX Remote Source Test Table](ss-05-DBX-remotesource-test-table.png)
+    <!-- border -->![DBX Remote Source Test Table](ss-05-DBX-remotesource-test-table.png)
 
 5.	A new dialogue will open asking for the **Object Name** and **Schema**. To indicate the virtual table, we recommend you prefix the object name with **`VT_`** (`VT_SOURCE_TABLE`).
 
@@ -176,7 +177,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 10.	Click on **Open Data** in the top right corner, and your data will be queried from the remote source you have connected to your SAP HANA Cloud, SAP HANA database instance. This data is now successfully virtualised in your SAP HANA Cloud, SAP HANA database instance without needing extra storage space.
 
-    !![DBX Remote Source VT Test Table](ss-06-DBX-remotesource-VT-testtable.png)
+    <!-- border -->![DBX Remote Source VT Test Table](ss-06-DBX-remotesource-VT-testtable.png)
 
 To continue to learn more about SDI connections, you can take a look at the documentation on what components to install, deploy and configure SDI [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/LATEST/en-US/3407f4bc6dc2457f92b5353545505ed5.html).
 
@@ -188,14 +189,12 @@ To continue to learn more about SDI connections, you can take a look at the docu
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

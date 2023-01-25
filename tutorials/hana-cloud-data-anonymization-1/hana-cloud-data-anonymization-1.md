@@ -1,21 +1,21 @@
 ---
-title: Understand Why Data Anonymization is Important
-description: Learn how SAP HANA data anonymization can help your organization keep its data protected and private with SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Understand Why Data Anonymization is Important
+<!-- description --> Learn how SAP HANA data anonymization can help your organization keep its data protected and private with SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
+## You will learn
 - About the need for data anonymization
 - About the goals of data anonymization
 - About the importance of anonymized views
 
+## Intro
 > ### **Disclaimer**
 >
 >In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
@@ -23,7 +23,8 @@ primary_tag: products>sap-hana-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Need for data anonymization)]
+### Need for data anonymization
+
 
 The security of your organization's data is one of our primary concerns at SAP. Therefore, SAP HANA Cloud, SAP HANA database brings the proven comprehensive SAP HANA security framework to the cloud:
 
@@ -37,14 +38,9 @@ Learn more about the approach on **Data Protection and Privacy** from the [techn
 
 SAP HANA Cloud, SAP HANA database helps solve this issue by offering not only powerful and versatile data management options but also enabling organizations to have simple access to methods of data anonymization that allow for easy and secure sharing of data with anyone in the organization so the data can be analyzed.
 
-Learn more about **SAP HANA data anonymization** from [here](https://www.sap.com/cmp/dg/crm-xt17-ddm-data-anony/index.html).
 
+### Types of data in a dataset
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Types of data in a dataset)]
 
 But why bother using advanced data anonymization methods? Is it not enough to simply delete or hide those parts of a dataset that refer to the person, like names?
 
@@ -64,11 +60,10 @@ This becomes clear when looking at the different types of data that can be in a 
 This shows that even when identifiers were to be removed from a table, individuals could still be identified based on their quasi-identifiers.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Goals of anonymization)]
+### Goals of anonymization
+
 
 Based on the different types of data that need attention, **two key goals of data anonymization** become clear:
 
@@ -78,10 +73,9 @@ Based on the different types of data that need attention, **two key goals of dat
 With the **anonymization methods** in SAP HANA Cloud, SAP HANA database you can achieve both the goals.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Importance of anonymized views)]
+### Importance of anonymized views
+
 
 
 Data needs to be shared inside (and outside) an organization to be useful. The people monitoring and managing data receive frequent requests from data consumers for access to subsets of data. So, the process of preparing data to securely share it with others must be practical and time-efficient while keeping the integrity of the original data and delivering accurate results.
@@ -102,14 +96,12 @@ To meet these requirements, SAP HANA Cloud, SAP HANA database uses **anonymized 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

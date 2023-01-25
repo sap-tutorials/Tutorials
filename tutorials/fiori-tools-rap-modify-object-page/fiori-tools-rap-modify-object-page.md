@@ -1,30 +1,32 @@
 ---
-title: Refine the Object Page with Annotations
-description: Display data in fields and tables on the object page using annotations.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori-tools]
 primary_tag: products>sap-fiori
 ---
 
+# Refine the Object Page with Annotations
+<!-- description --> Display data in fields and tables on the object page using annotations.
+
 ## Prerequisites
 - You have prepared your OData service as described in the previous tutorial [Prepare the RAP service](fiori-tools-rap-prepare-service).
 - You have finished the previous tutorial [Refine the List Report with Annotations](fiori-tools-rap-modify-list-report).
 
 
-## Details
-### You will learn
+## You will learn
   - How to add a title and a subtitle to the object page header
   - How to add key data to the object page header
   - How to add a section and use field groups to structure data
   - How to add a table
   - How to include pictures in a table
 
+## Intro
 >Whenever your unique suffix for creating objects is needed, the object names within this tutorial are named with suffix "######". For the screenshots the suffix "000100" was used.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add title and subtitle to object page header)]
+### Add title and subtitle to object page header
+
 
 Clicking on any item of the list report will show the object page for this item. The object page currently shows only some standard buttons and does not contain any further fields or actions.
  In this step you will add annotations to show a title and a subtitle in the object page header.
@@ -53,14 +55,13 @@ Clicking on any item of the list report will show the object page for this item.
 
 2. Refresh the app preview. You will see an object page containing a title and a subtitle in the header and an empty content section.
 
-    !![App object page title](t3-app-object-page-title.png)
+    <!-- border -->![App object page title](t3-app-object-page-title.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add data points to object page header)]
+### Add data points to object page header
+
 
 In this step you will add some key information to the object page header using data points.
 
@@ -116,13 +117,12 @@ In this step you will add some key information to the object page header using d
 
 3. Refresh the app preview. The two new data points show up in the object page header. The labels are taken from property `title`, the color of **Status** from property `criticality` of the `datapoint` annotations .
 
-    !![App Data Points](t3-app-data-points.png)
+    <!-- border -->![App Data Points](t3-app-data-points.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add new section with title)]
+### Add new section with title
+
 
 In this step you will add a section to the content area of the object page. The section will contain a form with three data fields.
 
@@ -189,13 +189,12 @@ In this step you will add a section to the content area of the object page. The 
 
 3. Refresh the app preview. The new form **General** is shown in section **General Information** containing the three fields.
 
-    !![App section GeneralInfo](t3-app-section-General-Information.png)
+    <!-- border -->![App section GeneralInfo](t3-app-section-General-Information.png)
 
-[VALIDATE_3]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add 2 field groups to section)]
+### Add 2 field groups to section
+
 
 A field group contains one or more data fields inside a UI container. In this step you define two field groups in the section **General Information**.
 
@@ -263,14 +262,13 @@ A field group contains one or more data fields inside a UI container. In this st
 
 3. Refresh the app preview. There are two additional field groups showing price and date information.
 
-    !![App field Groups](t3-app-field-groups.png)
+    <!-- border -->![App field Groups](t3-app-field-groups.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Show Bookings Table in new section)]
+### Show Bookings Table in new section
+
 
 In this step you will add a new section that contains a table with booking information. This requires access to another entity `Booking` via an association and an additional metadata extensions file.
 
@@ -299,7 +297,7 @@ In this step you will add a new section that contains a table with booking infor
 
 2. In the project explorer open the folder `Data Definitions`, right-click on projection view `ZC_FE_BOOKING_######` and create a new metadata extensions file from the context menu. Enter **`ZC_FE_BOOKING_######`** as name and **`Metadata Extension for Booking view`** as description.
 
-    !![add Metadata Extension for Booking](t3-booking-metadata-extension-popup.png)
+    <!-- border -->![add Metadata Extension for Booking](t3-booking-metadata-extension-popup.png)
 
     Choose **Next** and then **Finish**.
 
@@ -338,7 +336,7 @@ In this step you will add a new section that contains a table with booking infor
 
 4. Refresh the app preview. The booking table is now displayed in the new **Bookings** section of the object page.
 
-    !![App booking table](t3-app-booking-table.png)
+    <!-- border -->![App booking table](t3-app-booking-table.png)
 
 
 5. Instead of showing IDs for the fields Customer ID and Airline ID, one would preferably show descriptions or names.
@@ -366,13 +364,12 @@ In this step you will add a new section that contains a table with booking infor
 
 6. Refresh the app preview. The booking table is now displayed in the new **Bookings** section of the object page with descriptions for **Customer** and **Airline**.
 
-    !![App booking table](t3-app-booking-table-descriptions.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![App booking table](t3-app-booking-table-descriptions.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Add airline pictures in Bookings table)]
+
+### Add airline pictures in Bookings table
+
 In this step you will add the airline logo in a new column at the beginning of the booking table.
 
 1. To achieve this, open the metadata extensions file `ZC_FE_BOOKING_######` and add the following code lines to the annotation structure.
@@ -388,10 +385,8 @@ In this step you will add the airline logo in a new column at the beginning of t
 
 2. Refresh the app preview. The booking table is now displayed with the airline logo in the first column.
 
-    !![App airline logos](t3-app-booking-airline-logos.png)
+    <!-- border -->![App airline logos](t3-app-booking-airline-logos.png)
 
-[VALIDATE_6]
 
-[ACCORDION-END]
 
 ---

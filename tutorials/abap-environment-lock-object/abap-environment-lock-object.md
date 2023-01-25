@@ -1,32 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Data Model and Lock Object in SAP BTP, ABAP Environment
-description: Create data model and lock object in SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+ 
+# Create Data Model and Lock Object in SAP BTP, ABAP Environment
+<!-- description --> Create data model and lock object in SAP BTP, ABAP environment.
 
 ## Prerequisites  
   - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to create an ABAP package
   - How to create a domain
   - How to create a table
   - How to create a data definition
   - How to create a lock object
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
+### Create ABAP package
+
 1. Go to ADT and right-click on **`ZLOCAL`**, select the menu path **New** > **ABAP Package**.
 
     ![Create ABAP package](package.png)
@@ -48,12 +51,11 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Setup connection settings](package4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Add package)]
+### Add package
+
   1. Right-click on **Favorite Packages** and select **Add Package...**
 
       ![Add ABAP package](add.png)
@@ -62,10 +64,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create ABAP package](add2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create domain)]
+### Create domain
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create domain](domain.png)
@@ -95,10 +96,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create domain](domain5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create data element)]
+### Create data element
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create data element](element.png)
@@ -127,10 +127,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create data element](element5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create database table)]
+### Create database table
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create table](table.png)
@@ -175,10 +174,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create data definition)]
+### Create data definition
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create table](definition.png)
@@ -246,10 +244,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create lock object)]
+### Create lock object
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create lock object](lock.png)
@@ -277,11 +274,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create lock object](lock5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

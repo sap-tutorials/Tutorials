@@ -1,17 +1,18 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Configure and Run a Predefined SAP Continuous Integration and Delivery (CI/CD) Pipeline
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 keywords: cap
 auto_validation: true
-time: 15
+time: 30
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have created a GitHub repository as described in step **Create a GitHub repository for your project** in the tutorial [Create a Directory for Development](btp-app-create-directory)
+ - You have created your GitHub repository as described in **Step 14 Create a GitHub repository for your project** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - You have cloned your GitHub repository to your `cpapp` folder as described in **Step 15 Clone your GitHub repository** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
  - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e)
 
@@ -25,6 +26,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 [SAP Continuous Integration and Delivery (CI/CD)](https://help.sap.com/viewer/product/CONTINUOUS_DELIVERY/Cloud/en-US) is a service on SAP BTP, which lets you configure and run predefined continuous integration and delivery pipelines. It connects with your Git SCM repository and builds, tests, and deploys your code changes. In its user interface, you can easily monitor the status of your builds and detect errors as soon as possible, which helps you prevent integration problems before completing your development.
 
 SAP Continuous Integration and Delivery has a ready-to-use pipeline for CAP, that is applicable to multi-target application (MTA) and Node.js based projects. It does not require you to host your own Jenkins instance and it provides an easy, UI-guided way to configure your pipelines.
@@ -44,9 +47,9 @@ For more information on how to configure and run predefined pipelines for your o
     > When running the tutorial with a trial account, please have in mind the following considerations:
 
     > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
-    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -82,9 +85,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
-
-12. Select an **Identity Provider**.
+11. In the **Users** section, enter your user and select an **Identity Provider**.
 
     !![Users](CICD_edit_users.png)
 
@@ -102,7 +103,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -138,9 +139,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
-
-12. Select an **Identity Provider**.
+11. In the **Users** section, enter your user and select an **Identity Provider**.
 
     !![Users](CICD_edit_users.png)
 
@@ -178,7 +177,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 1. Navigate to the **Credentials** tab in SAP Continuous Integration and Delivery.
 
-2. Choose **+** to create credentials.
+2. Choose ( &#x2B; ) to create credentials.
 
     !![Credentials](CICD_credentials.png)
 
@@ -218,7 +217,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Configure a CI/CD job)]
-1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose **+** to create a new job.
+1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose ( &#x2B; ) to create a new job.
 
     !![Jobs](CICD_jobs.png)
 
@@ -246,6 +245,8 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 10. For **Build Tool**, leave **`mta`** as preselected.
 
+11. For **Build Tool Version**, select the latest version.
+
 11. Leave the execution of the **Maven Static Code Checks** step switched off.
 
 12. Leave the execution of the **Lint Check** step switched off.
@@ -254,7 +255,9 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 13. Leave the execution of the **Additional Unit Tests** switched off.
 
-14. Leave **Acceptance Stage** switched off.
+14. Leave **Acceptance** switched off.
+
+15. Leave **`SonarQube` Scan** under **Compliance** switched off.
 
 14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Space** step on.
 
@@ -264,7 +267,9 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     !![Cockpit](CP_API_Endpoint.png)
 
-17. For `Credentials`, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used **`cfdeploy`**.
+17. For **Deploy Type**, choose `standard`.
+
+17. For **Credentials**, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used `cfdeploy`.
 
     > Use a technical user instead of your personal credentials.
 
@@ -360,7 +365,7 @@ You have to trigger your job manually the first time after creation.
 
     !![Job](CICD_running_job.png)
 
-    > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built.
+    > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built. You can also add a time trigger for your job under section **Timed Triggers**.
 
 2. Wait until the job has finished and verify that the build tile is marked as successful.
 
@@ -372,7 +377,7 @@ You have to trigger your job manually the first time after creation.
 
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 
-3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
+3. Navigate to your space in the SAP BTP cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
 
     !![Applications](CICD_cpapp_applications.png)
 
@@ -389,10 +394,5 @@ You have now successfully created a CI/CD pipeline and deployed your application
 > In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
 [VALIDATE_1]
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ci-cd-btp" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

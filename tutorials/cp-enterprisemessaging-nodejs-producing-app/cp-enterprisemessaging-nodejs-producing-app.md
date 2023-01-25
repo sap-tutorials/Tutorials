@@ -1,19 +1,21 @@
 ---
-title: Create an Application for Producing Messages
-description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Event Mesh Queue.
+parser: v2
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, programming-tool>node-js, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
 
 
-## Details
-### You will learn
+# Create an Application for Producing Messages
+<!-- description --> Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Event Mesh Queue.
+
+## You will learn
   - How to create a basic messaging client application for sending messages to a queue
   - How to deploy this application to the SAP Business Technology Platform and test it
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js)]
+### Install Node.js
+
 
 1. Install Node.js and configure it locally.
 
@@ -31,10 +33,9 @@ primary_tag: products>sap-event-mesh
 
 Now create these files following the descriptions below into the created directory.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create manifest.yml file)]
+### Create manifest.yml file
+
 
 Use the following code to create a  `manifest.yml` file that binds your application to the messaging service.
 
@@ -72,10 +73,9 @@ applications:
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create package.json file)]
+### Create package.json file
+
 
 Create a `package.json` file to list the packages your project depends on and to specify versions of a package that your project can use. This makes your build reproducible, and therefore easier to share with other developers.
 
@@ -99,11 +99,10 @@ Create a `package.json` file to list the packages your project depends on and to
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create producer.js file)]
+### Create producer.js file
+
 
 Use the following code to create a `producer.js` file. This file holds the actual application. Find descriptions of what it does as comments in the coding.
 
@@ -199,10 +198,9 @@ client.connect();
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy application)]
+### Deploy application
+
 
 1.	Go to <filepath directory to manifest.yml> and enter `npm install` to download potentially missing Node.js modules.
 
@@ -210,10 +208,9 @@ client.connect();
 
 Your application gets deployed to the cloud and is started.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your application)]
+### Test your application
+
 
 Once the application is started up, you can test your message producer. There are several options for this:
 
@@ -223,5 +220,4 @@ Once the application is started up, you can test your message producer. There ar
 
 - Alternatively you could use Postman to consume the messages.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

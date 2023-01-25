@@ -1,19 +1,21 @@
 ---
-title: Consume SAP BTP Services from Any Hyperscaler
-description: Deploy an SAP Fiori application in any hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and use services from SAP BTP.
+parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-btp\, kyma-runtime]
+tags: [ tutorial>intermediate, products>products>sap-btp--cloud-foundry-environment\, kyma-runtime]
 primary_tag: products>sap-btp--cloud-foundry-environment
 ---
 
+# Consume SAP BTP Services from Any Hyperscaler
+<!-- description --> Deploy an SAP Fiori application in any hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and use services from SAP BTP.
+
 ## Prerequisites
- - You have either an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) or a [trial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) global account in SAP BTP
+ - Get an Account on SAP BTP to Try Out Free Tier Service Plans [Get an Account on SAP BTP](btp-free-tier-account)
  - You have an [account on the SAP Gateway Demo System (ES5)](gateway-demo-signup) created
  - You have [connected SAP BTP to your SAP Gateway Demo System (ES5) account](cp-portal-cloud-foundry-gateway-connection)
  - [Install Docker](https://docs.docker.com/get-docker/) (or any other Container tool).
- - Create an account at (https://hub.docker.com/) (or any other Container Image Library).
- - You have installed the [Kubernetes Command Line Tool](cp-kyma-download-cli), follow steps 1 and 2 from this tutorial
+ - You have installed [hub](https://hub.docker.com/) (or any other Container Image Library).
+ - You have installed the [Kubernetes Command Line Tool](cp-kyma-download-cli).
  - You have installed Service Manager Control (SMCTL) CLI v1.10.1, see [Service Manager CLI Release Information published on non-SAP site](https://github.com/Peripli/service-manager-cli)
  - You have assigned the Subaccount Service Administrator role collection, see [Assign the Subaccount Service Administrator Collection](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/0735965d10b342a393b5a83924dba9b4.html)
  - You have the [Helm](https://github.com/helm/helm) package manager for Kubernetes v3.1.2 installed
@@ -24,18 +26,19 @@ primary_tag: products>sap-btp--cloud-foundry-environment
      - [Alibaba Cloud](https://www.alibabacloud.com/help/doc-detail/86798.htm)
 
 
-## Details
-### You will learn
+## You will learn
 - How to consume SAP BTP services running from other environments
 - How to use SAP BTP APIs, Service Manager and Service Operator to consume services from other environments
 
+## Intro
 Deploy an SAP Fiori Application in any a hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and still take advantage of the services provided by SAP Business Technology Platform (SAP BTP).
 
 In this tutorial, you use the **`fioriapp`** sample application to learn some best practices of setting up your Kubernetes cluster to communicate with SAP BTP so you can learn how to consume SAP BTP services from any hyperscaler.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set KUBECONFIG environment variable)]
+### Set KUBECONFIG environment variable
+
 To configure the access to your Kubernetes cluster, you have to set the KUBECONFIG environment variable to point to the location where the KUBECONFIG file you have downloaded from your Kubernetes cluster. To do that, open a command line prompt on your computer and type in the following command:
 
 >Replace `<KUBECONFIG_FILE_PATH>` with the file path of the KUBECONFIG file you have downloaded, including the file name and extension.
@@ -74,9 +77,8 @@ This should return a context from the `kubeconfig` file.
 |-------|----|-------|--------|---------|
 |*      | `####`|`####`|`####-token`| |
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 2: ](Install cert-manager)]
+### Install cert-manager
+
 
 Cert-manager is used to set up the certificates needed for internal communication between the Kubernetes API server and the deployment of the SAP BTP service operator in your cluster. For more information about `cert-manager`, see [cert-manager documentation](https://cert-manager.io/docs/).
 
@@ -86,11 +88,10 @@ Open a command line prompt on your computer and type in the following command:
 kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Set up SAP BTP service operator)]
+### Set up SAP BTP service operator
+
 
 Consume services from a global account and a subaccount in SAP BTP.
 
@@ -102,13 +103,13 @@ SAP BTP service operator allows you to provision and manage service instances an
 
 2. Choose your global account and then in the **Account Explorer** page, choose the tile of your subaccount.
 
-      !![subaccount](screenshots/subaccount.png)
+      <!-- border -->![subaccount](screenshots/subaccount.png)
 
 3. Choose **Services** > **Service Marketplace**, and in the **Service Marketplace** page, choose the **Service Manager** service tile.
 
 4. From the **Service Manager** page, choose **Create** and follow the steps in the wizard to create a service instance.
 
-     !![servicemarketplace](screenshots/servicemarketplace.png)
+     <!-- border -->![servicemarketplace](screenshots/servicemarketplace.png)
 
 5. On the **Basic Info** step:
 
@@ -125,27 +126,27 @@ SAP BTP service operator allows you to provision and manage service instances an
 
 6. Choose **Create**.
 
-      !![instancecreationfinal](screenshots/instancecreationfinal.png)
+      <!-- border -->![instancecreationfinal](screenshots/instancecreationfinal.png)
 
 7. Choose **View Instance**
 
-     !![clickviewinstance](screenshots/clickviewinstance.png)
+     <!-- border -->![clickviewinstance](screenshots/clickviewinstance.png)
 
 8. To create a binding for the **`btpserviceoperator`** service instance, choose **Create**.
 
-     !![bindingcreation](screenshots/bindingcreation.png)
+     <!-- border -->![bindingcreation](screenshots/bindingcreation.png)
 
 9. In the **Binding Name** field enter **`operatorbinding`** and choose **Create**.
 
-     !![clickonbinding](screenshots/clickonbinding.png)
+     <!-- border -->![clickonbinding](screenshots/clickonbinding.png)
 
 10. Choose **View Credentials**.
 
-     !![bindingcredentials](screenshots/bindingcredentials.png)
+     <!-- border -->![bindingcredentials](screenshots/bindingcredentials.png)
 
 11. Copy the credential information by choosing **Download** or **Copy JSON**.
 
-    !![bindinginfo](screenshots/bindinginfo.png)
+    <!-- border -->![bindinginfo](screenshots/bindinginfo.png)
 
     This is an example of the binding object created with the default credentials type:
 
@@ -212,11 +213,10 @@ This should return the status of sap-btp-operator configuration.
 |`sap-btp-operator-##`| `2/2`|`Running`|`##`|`##`|
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Verify cross consumable services from SAP Business Technology Platform (SAP BTP))]
+### Verify cross consumable services from SAP Business Technology Platform (SAP BTP)
+
 
 
  [OPTION BEGIN [BTP cockpit]]
@@ -227,14 +227,14 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
  2. Choose your global account and then in the **Account Explorer** page, choose the tile of your subaccount.
 
-       !![subaccount](screenshots/subaccount.png)
+       <!-- border -->![subaccount](screenshots/subaccount.png)
 
  3. Choose **Services** > **Service Marketplace**, and in the **Service Marketplace** page, choose the **Authorization and Trust Management Service** service tile.
 
  4. From the **Authorization and Trust Management Service** page, verify the cross consumable service plan
     from `xsuaa` service instance.Based on the environment specified in the respective plan is supported for cross consumable.
 
-      !![ccservicexsuaa](screenshots/ccservicexsuaa.png)
+      <!-- border -->![ccservicexsuaa](screenshots/ccservicexsuaa.png)
 
     >If you can't see this service plan or service instance , you need to entitle your subaccount to use the respective service and service plan. For more information about how to entitle a service to a subaccount, see: [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
 
@@ -276,12 +276,11 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
  [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service instances)]
+### Create service instances
+
 
    In the **`fioriapp`** sample application, the Destination and the SAP Authorization & Trust Management services will be consumed using the SAP BTP service operator. To use these SAP BTP services you have to create the respective service instances and service bindings. Use the `createservice.yaml` which will create the `destination` service instance with plan `lite` and the `xsuaa` service instance with plan `application`.
 
@@ -305,7 +304,7 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
    *application* by running the below command.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/createservice.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/createservice.yaml
     ```
     > The create service file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/createservice.yaml`.
 
@@ -323,11 +322,10 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
     >To know more about consuming services using SAP BTP service operator [Working with SAP BTP Service Operator](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/0ccebd7cec24411dacd5ad17799534e0.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Build and deploy app into Kubernetes Cluster)]
+### Build and deploy app into Kubernetes Cluster
+
 
 To build and deploy the **`fioriapp`** sample application in your cluster, you have to create a pod, which encapsulates the container and ensures that a specified quorum of running instances is fulfilled. To do that, use the `deployment.yaml`.
 
@@ -352,7 +350,7 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 4. Execute the below command to deploy the application into hyperscaler.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/deployment.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/deployment.yaml
     ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/deployment.yaml`.
 
@@ -368,10 +366,9 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
     |-------|----|-------|--------|---------|
     |`fioriapp-##-##`| `1/1`|`Running`|`##`|`##`|
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the deployed application)]
+### Run the deployed application
+
 
   [OPTION BEGIN [Using Load Balancer]]
 
@@ -380,7 +377,7 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 1. Execute the below command to deploy the application into hyperscaler.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
     ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml`.
 
@@ -390,13 +387,13 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
     ```Shell/Bash
     kubectl get services -n sapfiori
     ```
-    !![loadbalancer](screenshots/loadbalancer.png)
+    <!-- border -->![loadbalancer](screenshots/loadbalancer.png)
 
 4. Copy the load balancer IP and add the port "5000" run in a browser.
 
     Application should return the list of business partners
 
-    !![finaloutput](screenshots/finaloutput.png)
+    <!-- border -->![finaloutput](screenshots/finaloutput.png)
 
   [OPTION END]
 
@@ -426,12 +423,10 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
     Application should return the list of business partners
 
-    !![finaloutput](screenshots/finaloutput.png)
+    <!-- border -->![finaloutput](screenshots/finaloutput.png)
 
   [OPTION END]
 
 **Congratulations!** You have successfully completed the tutorial.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

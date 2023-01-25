@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 keywords: cap
@@ -11,17 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
+
 
 ## Details
 ### You will learn
@@ -29,9 +20,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to generate the MTA Deployment Descriptor (mta.yml)
  - How to add Authorization and Trust Management Service (XSUAA)
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
-
-
-To start with this tutorial use the result in the [`prepare-xsuaa`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/prepare-xsuaa) branch.
 
 ---
 
@@ -70,7 +58,6 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 [ACCORDION-BEGIN [Step 2: ]((For Windows) Install make tool)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-
 The `make` tool is required by the `mbt` tool. Linux and macOS are already shipped with `make`. For Windows you can download it from the GNU Make site:
 
 1. Go to <http://gnuwin32.sourceforge.net/packages/make.htm>.
@@ -80,7 +67,7 @@ The `make` tool is required by the `mbt` tool. Linux and macOS are already shipp
 5. Choose **Environment Variables...**.
 6. Choose your `Path` environment variable under *User Variables for `<your_user_name>`* and choose **Edit**.
 7. Choose **Browse** and navigate to *GNU make* (usually `C:\Program Files (x86)\GnuWin32\bin`).
-8. Click **OK** to add *GNU make* to your `Path` environment variable.
+8. Choose **OK** to add *GNU make* to your `Path` environment variable.
 9. Restart VS Code to make the change effective.
 
 [DONE]
@@ -92,11 +79,11 @@ The `make` tool is required by the `mbt` tool. Linux and macOS are already shipp
 The [MultiApps plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/blob/master/README.md) is required to deploy an MTA archive. It needs to be available in your Cloud Foundry landscape's Cloud Foundry plugin repository. Therefore, you need to log on to your Cloud Foundry landscape.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -121,7 +108,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -129,7 +116,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -150,12 +137,12 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 The [MultiApps plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/blob/master/README.md) is required to deploy an MTA archive. It needs to be available in your Cloud Foundry landscape's Cloud Foundry plugin repository. Therefore, you need to log on to your Cloud Foundry landscape.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -180,7 +167,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -188,7 +175,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -212,7 +199,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js 16 is sufficient for this tutorial.
+> Node.js v16 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -273,10 +260,15 @@ In one of the first steps creating the CAP application, you have added two CSV f
 
 >  This can cause the deletion of all files of the affected database table with a change of a data file, even if the data file for the affected table has been removed before. SAP HANA remembers all data files that have ever been deployed to the table and might restore it. Only data files that contain data, which are defined by the application developer and can't be changed by the application should be delivered in this way. Delivering files for tables with customer data already caused data loss in productive scenarios! See section [Providing Initial Data](https://cap.cloud.sap/docs/guides/databases#providing-initial-data) in the CAP documentation for more details.
 
-To avoid any loss of data, you change the MTA build parameters to remove all the `CSV` files and the `hdbtabledata` that is generated by the CAP server out of the `CSV` files. Add the following line to the `mta.yaml` file:
+You change the MTA build parameters to:
+
+- install all the dependencies with production profiles.
+- remove all the DB data (`CSV` files and the `hdbtabledata`) that is generated by the CAP server out of the `CSV` files.
+
+Add the following line to the `mta.yaml` file:
 
 <!-- snippet mta.yaml build-parameters -->
-```YAML[7-7]
+```YAML[5,7]
 build-parameters:
   before-all:
    - builder: custom
@@ -290,10 +282,16 @@ build-parameters:
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 7: ](Add Authorization and Trust Management service (XSUAA))]
-The next step is to add the Authorization and Trust Management service to `mta.yaml` to allow user login, authorization, and authentication checks.
+The next step is to add the Authorization and Trust Management service to `mta.yaml` to allow user login, authorization, and authentication checks. Update the name and resource as shown.
 
 <!-- snippet mta.yaml resources: cpapp-uaa -->
-```YAML[8-8,12-21]
+```YAML[6,9,16-27]
+modules:
+      - name: cpapp-srv
+      ...
+      requires:
+        - name: cpapp-db
+        - name: cpapp-uaa
 resources:
    ...
  - name: cpapp-uaa
@@ -338,6 +336,8 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
+> `NPM` uses a file called `package-lock.json` to remember which actual version of package was installed and later installs these exact versions and ignores any updates in minor releases not explicitly specified in the `package.json` file. Maintaining this is important for production applications for consistency. For the purposes of this tutorial use the latest versions of the packages. To ensure this, delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
+
 1. Build the MTA module from your project root folder:
 
     ```Shell/Bash

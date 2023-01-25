@@ -1,19 +1,20 @@
 ---
+parser: v2
 auto_validation: true
-title: Install ABAP Development Tools (ADT) and abapGit Plugin
-description: Install ABAP Development Tools (ADT) and abapGit plugin for ADT.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 
-## Details
-### You will learn
+# Install ABAP Development Tools (ADT) and abapGit Plugin
+<!-- description --> Install ABAP Development Tools (ADT) and abapGit plugin for ADT.
+
+## You will learn
 - How to install ADT
-- How to install abapGit plugin
+- How to install `abapGit` plugin
 
 ## Prerequisites
 - Operating System:
@@ -27,7 +28,8 @@ author_profile: https://github.com/mervey45
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install ABAP Development Tools (ADT))]
+### Install ABAP Development Tools (ADT)
+
 
   1. Open the [Eclipse download page](https://www.eclipse.org/downloads/packages/) to download the corresponding Eclipse version.
 
@@ -109,20 +111,19 @@ author_profile: https://github.com/mervey45
       ![eclipse](eclipse18.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install abapGit plugin)]
+### Install abapGit plugin
+
 
 >**HINT:** Step 2 is only mandatory for cloud users.
 
-To transfer your ABAP development objects from on-premise SAP systems to an SAP BTP, ABAP Environment instance, you can use the abapGit plugin.
+To transfer your ABAP development objects from on-premise SAP systems to an SAP BTP, ABAP Environment instance, you can use the `abapGit` plugin.
 
   1.  Open **Eclipse** and select **Help** > **Install New Software**.
 
       ![plugin](eclipse11.png).
 
-  2. Enter the abapGit URL **`https://eclipse.abapgit.org/updatesite/`** in the **Work with** section, press enter,  select **abapGit for ABAP Development Tools (ADT)** and click **Next >**.
+  2. Enter the `abapGit` URL **`https://eclipse.abapgit.org/updatesite/`** in the **Work with** section, press enter,  select **`abapGit` for ABAP Development Tools (ADT)** and click **Next >**.
 
       ![plugin](plugin2.png)
 
@@ -142,22 +143,16 @@ To transfer your ABAP development objects from on-premise SAP systems to an SAP 
 
       ![eclipse](plugin7.png)
 
-  7. Now abapGit for ADT is installed.
+  7. Now `abapGit` for ADT is installed.
 
       ![eclipse](plugin8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 >**HINT:** Following this tutorial you will be able to update the latest version of Eclipse and ADT when new releases are available.
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

@@ -1,11 +1,13 @@
 ---
+parser: v2
 auto_validation: true
-title: Use Checkout Functionality of Branches to Switch Between Different Versions of Code
-description: Use the checkout functionality of branches to switch between different versions of your code with SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 20
 ---
+
+# Use Checkout Functionality of Branches to Switch Between Different Versions of Code
+<!-- description --> Use the checkout functionality of branches to switch between different versions of your code with SAP BTP, ABAP environment.
 
 ## Prerequisites  
   - SAP BTP, ABAP environment user
@@ -13,20 +15,21 @@ time: 20
   - Administrator role assigned to user
   - You have finished following tutorial:  [Create Branches with SAP BTP, ABAP Environment](abap-environment-branch).
 
-## Details
-### You will learn
+## You will learn
   - How to checkout feature branch
   - How to change your coding
   - How to transport changes
   - How to checkout master branch
   - How to test changes
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Checkout feature branch)]
+### Checkout feature branch
+
 1. Logon to your ABAP system in your SAP Fiori launchpad and open **Manage Software Components** application.
 
     ![Checkout feature branch](checkout.png)
@@ -53,11 +56,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Checkout feature branch](checkout6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Change your coding)]
+### Change your coding
+
 1. Switch to your **ABAP Development Tools (ADT)**, logon to your **ABAP system**, right-click on your created ABAP class **`Z_CL_XXX`** and select **Refresh or Press `F5`** to refresh your ABAP class.
 
     ![Change your coding](change.png)
@@ -94,10 +96,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ![Change your coding](change3.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Transport changes)]
+### Transport changes
+
   1. Select the transport organizer in your menu and refresh your workbench to transport your changes.
 
       ![Transport change](transport.png)
@@ -119,11 +120,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       ![Transport change](transport5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Checkout master branch)]
+### Checkout master branch
+
 1. Switch to your software component **`Z_SWCT_XXX`** in **Manage Software Component**. Select your **master branch** and click **Checkout**.
 
     ![Checkout master branch](master.png)
@@ -145,10 +145,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ![Checkout master branch](master5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test changes)]
+### Test changes
+
   1. Switch to ADT and open your ABAP class **`Z_CL_XXX`**. As you can see, you are still on the feature version.
 
       ![Create new branch](test.png)
@@ -162,10 +161,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       ![Create new branch](test3.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

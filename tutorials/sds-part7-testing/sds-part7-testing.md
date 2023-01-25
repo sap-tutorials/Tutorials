@@ -1,6 +1,5 @@
 ---
-title: Run and Test a Project in SAP HANA Smart Data Streaming
-description: Part 7 of 9. Run and test the streaming project using Stream View, Manual Input, and Event Tracer tools.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
@@ -8,11 +7,13 @@ author_name: Bill Jiang
 author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
+# Run and Test a Project in SAP HANA Smart Data Streaming
+<!-- description --> Part 7 of 9. Run and test the streaming project using Stream View, Manual Input, and Event Tracer tools.
+
 ## Prerequisites  
 - **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv) file, which will be use later for playback during testing.
 
-## Details
-### You will learn  
+## You will learn  
 - Running the project that you built in the previous exercises.
 - Using the Playback tool to simulate a live source and stream in data from a file at a controlled rate.
 - Using the Stream Viewer to view the output from each stream/window in your project.
@@ -22,7 +23,8 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Running the project)]
+### Running the project
+
 
 In the next steps you will run the project, play some data and view the results.
 
@@ -30,11 +32,9 @@ Go to **SAP HANA Streaming Development** perspective. Click the drop down arrow 
 
 ![run the project](runandplay/1-runtheproject.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open the streams
 
-[ACCORDION-BEGIN [Step 2: ](Open the streams)]
 
 Double-click on **`MACHINEDATA`** to open it in the **Stream View**.
 
@@ -46,11 +46,9 @@ Now double-click on each of the other streams/windows to open them in the **Stre
 
 ![open all tables](runandplay/3-openalltables.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Use the playback tool
 
-[ACCORDION-BEGIN [Step 3: ](Use the playback tool)]
 
 Click the **Playback** tab.
 
@@ -80,11 +78,9 @@ Click each viewer tab to view the output from each stream/window.
 
 ![switch tabs](runandplay/10-switchtabs.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Using manual input and the event tracer tools
 
-[ACCORDION-BEGIN [Step 4: ](Using manual input and the event tracer tools)]
 
 In the next eight steps you will use manual input and event tracer tools.
 
@@ -120,6 +116,4 @@ Find the entry that you submitted through Manual Input.
 
 ![find the event](manualinput/8-findtheevent.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

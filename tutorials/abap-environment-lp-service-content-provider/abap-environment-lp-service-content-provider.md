@@ -94,7 +94,7 @@ primary_tag: software-product>sap-btp--abap-environment
 
 4. Choose `Expose to SAP Launchpad Service`.
 
-    <!-- border -->![Expose to the SAP Launchpad Service](8-expose-to-launchpad-service.png)
+    <!-- border -->![Expose to the SAP Launchpad Service](8-expose-to-launchpad-service-old.png)
 
 > The content related to the exposed business role, such as groups, catalogs, pages, or spaces, can be consumed by the SAP Build Work Zone, standard edition as soon as the job, which you have configured in the previous step, has run successfully.
 

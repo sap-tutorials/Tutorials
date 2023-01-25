@@ -1,20 +1,21 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Create a CAP Project with SAP Business Application Studio
-description: Quickly create an OData service by creating a CAP project in SAP Business Application Studio.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-application-studio, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
+# Create a CAP Project with SAP Business Application Studio
+<!-- description --> Quickly create an OData service by creating a CAP project in SAP Business Application Studio.
+
 ## Prerequisites
 - You've access to the SAP Business Application Studio in a trial account on SAP BTP, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
 - You've created a Full Stack Cloud Application dev space in the SAP Business Application Studio.
 
-## Details
-### You will learn
+## You will learn
   - How to create a project in the SAP Business Application Studio using the project wizard.
   - How to use the run configurations.
   - How to expose a port for your application.
@@ -23,16 +24,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
+### Open SAP Business Application Studio
+
 
 As mentioned in the prerequisites of this tutorial, we assume that you've already set up your SAP Business Application Studio and created the needed dev space.
 
 If the dev space is not running, you need to start it and enter the SAP Business Application Studio.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create project)]
+### Create project
+
 
 The project wizard helps you create a CAP project.
 
@@ -50,41 +51,40 @@ You've just created a **runnable** CAP project. Nothing more is needed, it just 
 
 >If you want to work on your project with others or be able to share your project for any other reason, [initialize your project as a Git project](https://github.com/git-guides/git-init). For an introduction to Git have a look at the [tutorials based on SAP Web IDE](group.webide-github), which is the predecessor of SAP Business Application Studio. It explains the basics nicely.
 
-[VALIDATE_7]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run project)]
+
+### Run project
+
 
 In the previous step you've created an already runnable application. To demo that it's runnable and to see what's already available, create a run configuration and run the project.
 
 > A run configuration is a collection of settings and files to run/debug your application.
 
-1. Select **Create Configuration**.
+1. Go to **Terminal > New Terminal** and from the terminal, execute `npm install`.
+
+   This installs all dependencies from your `package.json`.
+
+1. Go to the **Run Configurations** panel and select **Create Configuration**.
 
 1. Choose `bookshop - development profile (CAP)`.
 
-    !![Create run configuration.](complete-run-conf.png)
+    <!-- border -->![Create run configuration.](complete-run-conf.png)
 
 1. Name your run configuration `Run bookshop-local`.
 
 1. Choose **Run Module** on `Run bookshop-local`.
 
-    !![Create run configuration.](add-run-conf.png)
+    <!-- border -->![Create run configuration.](add-run-conf.png)
 
-When your application is running, you need to expose a port from the environment the studio is running in.
-
-A convenient way of doing this is to have the studio prompt you to expose the port. Just confirm and give the port a name.
-
-!![Expose Port](expose_port.png)
 
 Open the URL and look at the application, including the sample data for the `Books` entity (select **Books**) that is being served. This is your first, full-fledged OData service created with CAP.
 
 >The path (`/catalog`) your service is served on, is derived from the name of the service. [Learn here, how to override the default.](https://cap.cloud.sap/docs/cds/cdl#service-definitions)
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enhance project)]
+
+### Enhance project
+
 
 Now, let's start to enhance your project, to have a good basis for the upcoming tutorials.
 
@@ -116,23 +116,23 @@ As books are written by authors you want to add that relationship to your model.
 
 Open the context menu on `db/data-model.cds` and select **Open With > CDS Graphical Modeler**.
 
-!![The graphical modeler, showing the authors and the books entity.](graph-modeler-1.png)
+<!-- border -->![The graphical modeler, showing the authors and the books entity.](graph-modeler-1.png)
 
 Select the **Books** entity and add a relationship.
 
-!![Selected books entity in the graphical modeler and a pointer to the **Add relationship** icon.](graph-modeler-2.png)
+<!-- border -->![Selected books entity in the graphical modeler and a pointer to the **Add relationship** icon.](graph-modeler-2.png)
 
 Use `author` as property name and select `my.bookshop.Authors` as target entity.
 
-!![The **New Relationship** screen to define the association to-one, the property name, and the target entity type.](graph-modeler-3.png)
+<!-- border -->![The **New Relationship** screen to define the association to-one, the property name, and the target entity type.](graph-modeler-3.png)
 
 Remember to save the file and see the visualization of your modelled association.
 
-!![The graphical modeler showing the authors and books entity and a visual representation of their relationship.](graph-modeler-4.png)
+<!-- border -->![The graphical modeler showing the authors and books entity and a visual representation of their relationship.](graph-modeler-4.png)
 
 As stated before, you could've done it in the code editor as well. So have a look in the code editor what has been changed.
 
-!![The CDS code to model an association.](assoc_in_code.png)
+<!-- border -->![The CDS code to model an association.](assoc_in_code.png)
 
 You need a second OData service. This additional service is meant for administrators, so that an administrator can see and edit all books and all authors. Here's how you do it.
 
@@ -148,10 +148,9 @@ service AdminService @(requires:'admin') {
 ```
 > Here you expose the `Authors` entity. The `Authors` entity is part of your domain model (`data-model.cds`) but isn't exposed through the `CatalogService` (`cat-service.cds`). Whereas the `Books` entity is exposed in both services.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Use databases)]
+### Use databases
+
 
 Until now you used the in-memory database automatically when you ran the application. It reflects all changes you do to your data model and sample data on the fly. But it also means data is reset to the initial `.csv` content with every restart.
 
@@ -169,16 +168,16 @@ Open a terminal by going to **Terminal > New Terminal**.
 
 1. Restart your application in debug mode by going to **View > Debug**.
 
-    !![The Debug panel with a pointer to the restart button.](restart-debug-panel.png)
+    <!-- border -->![The Debug panel with a pointer to the restart button.](restart-debug-panel.png)
 
 1. Refresh the browser tab of your application and navigate to the `Books` entity in the `CatalogService`.
 
 The data you see is now served from the file `sqlite.db` and is located in the root of your folder. The next step includes a proof that the file-based persistence is used.
 
-[VALIDATE_8]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add sample data)]
+
+### Add sample data
+
 
 To have some sample data for the data model you've just created, create the following files and copy `csv` content over.
 
@@ -212,7 +211,7 @@ To have some sample data for the data model you've just created, create the foll
 
 1. Go to the debug panel with **View > Debug** and restart the app.
 
-    !![The Debug panel with a pointer to the restart button.](restart-debug-panel.png)
+    <!-- border -->![The Debug panel with a pointer to the restart button.](restart-debug-panel.png)
 
     >There is a convenient shortcut that removes the need to restart the app with every change: Execute `cds watch` in the terminal. Call `cds help watch` in the terminal for more information.
 
@@ -220,7 +219,7 @@ To have some sample data for the data model you've just created, create the foll
 
 1. Select `Books` and see that the newly changed model and its sample data is served as part of your `CatalogService` service.
 
-    !![The sample data returned by the locally running service.](app-books-with-sample.png)
+    <!-- border -->![The sample data returned by the locally running service.](app-books-with-sample.png)
 
     > The JSON displayed here, is formatted by a browser extension.
 
@@ -228,8 +227,7 @@ To have some sample data for the data model you've just created, create the foll
 
 You're set up with a basic CAP project showing some important features that make the CAP model so valuable. And you got in touch on some of the nice SAP Business Application Studio features. The next tutorial of this series gives you more details and encourages you to play around with those CAP and studio features.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

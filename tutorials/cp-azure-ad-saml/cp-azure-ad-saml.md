@@ -1,25 +1,28 @@
 ---
-title: Integrate Microsoft Azure AD with SAP BTP, Cloud Foundry environment
-description: Configure Microsoft Azure AD as the Identity Provider of your SAP BTP, Cloud Foundry environment subaccount.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
+# Integrate Microsoft Azure AD with SAP BTP, Cloud Foundry environment
+<!-- description --> Configure Microsoft Azure AD as the Identity Provider of your SAP BTP, Cloud Foundry environment subaccount.
+
 ## Prerequisites
  - You have an SAP BTP, Cloud Foundry environment subscription or a trial account, and you are a security administrator of it (meaning that you can see the **Security** menu in the SAP BTP cockpit).
  - You have an Microsoft Azure subscription or a free account.
 
-## Details
-### You will learn
+## You will learn
   - How to set up Microsoft Azure AD as one of your Identity Providers (IdP) for SAP BTP, Cloud Foundry environment applications
 
+## Intro
 You will enable trust between SAP Business Technology Platform, Cloud Foundry environment subaccount and your Microsoft Azure AD. As a result, your Microsoft Azure AD can serve as a primary IdP or alternative IdP to communicate later with the UAA services of the SAP BTP, Cloud Foundry environment.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Identify tenant name and region from your SAP BTP, Cloud Foundry environment subaccount)]
+### Identify tenant name and region from your SAP BTP, Cloud Foundry environment subaccount
+
 
 You have to replace some variables in provided URLs throughout the tutorial like a **`tenant_name`** or **`region`**.
 
@@ -31,21 +34,19 @@ Navigate to your SAP BTP, Cloud Foundry environment subaccount in the [SAP BTP c
 
 ![tenant and region replacement](tenant-region-replacement.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download UAA metadata file for your SAP BTP, Cloud Foundry environment subaccount)]
+### Download UAA metadata file for your SAP BTP, Cloud Foundry environment subaccount
+
 
 1. To download the metadata file of your SAP BTP, Cloud Foundry environment subaccount, navigate to the **Trust Configuration** section in your SAP BTP cockpit.
 
 2. Click on **SAML Metadata** to download the corresponding SAML metadata file.
 
-    !![download saml metadata](download-saml-metadata.png)
+    <!-- border -->![download saml metadata](download-saml-metadata.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Cloud Foundry as enterprise application on Microsoft Azure)]
+### Add Cloud Foundry as enterprise application on Microsoft Azure
+
 
 Go to the [Microsoft Azure Portal](https://portal.azure.com/) and navigate to **Azure Active Directory** and to the sub menu **Enterprise applications**.
 
@@ -72,10 +73,9 @@ A new view to update your **Basic SAML Configuration** should appear. Provide a 
 
 >Your UAA tenant URL has the following pattern: `https://<tenant_name>.authentication.<region>.hana.ondemand.com`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enable provisioning of Group Assertions)]
+### Enable provisioning of Group Assertions
+
 
 Before you configure user attributes and claims as part of SAML assertions, you are going to make the `Groups` attribute visible to the application. The `Groups` attribute is necessary on SAP BTP, Cloud Foundry environment to match with Role Collections and, therefore, grant authorizations to users in business applications. Microsoft Azure AD does not provide the user groups claim by default.
 
@@ -112,11 +112,10 @@ Finally, download the Federation Metadata XML from Microsoft Azure. This file co
 
 ![federation medata file download](federation-metadata.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add Azure AD as Identity Provider in the SAP BTP, Cloud Foundry environment account)]
+### Add Azure AD as Identity Provider in the SAP BTP, Cloud Foundry environment account
+
 
 Access your SAP BTP, Cloud Foundry environment account (as in Step 1) and go to **Security > Trust Configuration**. Choose **New Trust Configuration** and import the metadata file downloaded from Microsoft Azure.
 
@@ -127,10 +126,9 @@ The **Link Text** is the text that will be displayed in the logon page of the UA
 
 ![link text trust configuration](link-text-trust.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add users to enterprise application in Microsoft Azure AD)]
+### Add users to enterprise application in Microsoft Azure AD
+
 
 Open a new browser window and enter the UAA tenant URL again:
 
@@ -158,10 +156,9 @@ By hitting the result tile you select the user and should appear under `Selected
 
 ![finish assignment](assign-user.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your configuration)]
+### Test your configuration
+
 
 Check if your user assignment was successful. Open a new browser window again and enter the UAA tenant URL again:
 
@@ -177,8 +174,7 @@ You should not see any particular application, because you did not access a CF a
 
 >`https://<tenant_name>.authentication.<region>.hana.ondemand.com/config?action=who&details=true`
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 Congratulation! You have configured Azure AD as the SAML Identity Provider for your SAP BTP, Cloud Foundry environment applications.
 

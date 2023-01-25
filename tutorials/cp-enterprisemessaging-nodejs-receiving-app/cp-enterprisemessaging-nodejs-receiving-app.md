@@ -1,21 +1,22 @@
 ---
-title: Create an Application for Receiving Messages
-description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Event Mesh Queue.
+parser: v2
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, programming-tool>node-js, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
 
-## Prerequisites
+# Create an Application for Receiving Messages
+<!-- description --> Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Event Mesh Queue.
 
-## Details
-### You will learn
+## Prerequisites
+## You will learn
   - How to create a basic messaging client application for receiving messages from a queue using SAP Event Mesh.
   - How to deploy this application to SAP Business Technology Platform
   - How to perform a quick test that your application works
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js and create directory)]
+### Install Node.js and create directory
+
 
 1. Install Node.js and configure it locally.
 
@@ -34,10 +35,9 @@ primary_tag: products>sap-event-mesh
 
 Now create these files following the descriptions below into the created directory.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create manifest.yml file)]
+### Create manifest.yml file
+
 
 Use the following code to create a `manifest.yml` file that binds your application to the messaging service.
 
@@ -70,10 +70,9 @@ applications:
             }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create package.json file)]
+### Create package.json file
+
 
 Create a 'package.json' file to list the packages your project depends on
 and to specify versions for each package that your project can use. This
@@ -98,11 +97,10 @@ makes your build reproducible, and therefore easier to share with other develope
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create consumer.js file)]
+### Create consumer.js file
+
 
 Use the following code to create a `consumer.js` file. This file holds the actual application. Find descriptions of what it does as comments in the coding.
 
@@ -191,24 +189,21 @@ As a result, the application listens for messages and once it receives a message
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy receiving application)]
+### Deploy receiving application
+
 
 1.	Go to <filepath directory to manifest.yml> and enter `npm install` to download missing node.js modules.
 2.	To deploy the sending application to your Cloud Foundry space enter `cf push`.
 
 Your application gets deployed to the cloud and is started up.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your application)]
+### Test your application
+
 
 Once the application is started up, you can test your message consumer. To do this you send messages via the REST Gateway of SAP Event Mesh using Postman as described in the earlier tutorial.
 
 Alternatively you can skip this step, continue with the next tutorial, create the message producer app and use it for sending messages.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

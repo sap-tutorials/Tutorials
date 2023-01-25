@@ -1,32 +1,38 @@
 ---
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
-title: Create and Deep Insert with the Virtual Data Model for OData
-description: Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
+parser: v2
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: products>sap-cloud-sdk
 ---
 
+# Create and Deep Insert with the Virtual Data Model for OData
+<!-- description --> Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
+
 ## Prerequisites
  - [Introduce Resilience to Your Application](s4sdk-resilience)
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
  - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
-## Details
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
 
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
-
-### You will learn
+## You will learn
   - How to build up a complex data structure using the virtual data model
   - How to write deeply nested data to SAP S/4HANA in a single call
   - How to write unit and integration tests for deep insertion
 
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Motivation)]
+### Motivation
+
 Deep Insert is already part of the [OData specification, version2](https://www.odata.org/documentation/odata-version-2-0/operations/) without this explicit name. Although not supported yet, the [OData specification, version4](http://docs.oasis-open.org/odata/odata/v4.0/os/part1-protocol/odata-v4.0-os-part1-protocol.html#_Toc372793718) is much more explicit on the semantics.
 
 Citing from the spec, Deep Insert is defined as:
@@ -39,10 +45,9 @@ Citing from the spec, Deep Insert is defined as:
 
 This means deep insert is an atomic operation that is either successful or fails for all entities. Furthermore, it is for insert-only operations, that is, the OData spec does not foresee any deep update operation yet. To be fair, it is part of the [4.01 working draft spec](https://issues.oasis-open.org/browse/ODATA-666), but the tutorials haven't covered any provider implementations yet, in particular as S/4HANA APIs are based on OData V2.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Write the application code)]
+### Write the application code
+
 
 To get started, you first of all create a new class called `StoreBusinessPartnerCommand`. It will serve as a single place to build the commands we want to execute. If you did our previous tutorials the following code might look familiar.
 
@@ -96,7 +101,7 @@ Within the run() method, i.e., whenever the command is executed, it calls the `b
 >
 > The structure you are interested in is presented below. The root entity will be the business partner which is connected to zero-to-many `BusinessPartnerRoles` and `BusinessPartnerAddresses` which is again connected to zero-to-many `EMailAddresses`:
 
-!![DataModel-4](DataModel-4.png)
+<!-- border -->![DataModel-4](DataModel-4.png)
 
 For this purpose, you are creating a new simple servlet that exposes a POST method to our clients.
 
@@ -230,12 +235,11 @@ To run it on a localhost, run the following:
 
 Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID, which was enriched by S/4HANA.
 
-!![screenshot](screenshot.png)
+<!-- border -->![screenshot](screenshot.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Write a unit test)]
+### Write a unit test
+
 As learned in [Develop an S/4HANA Extension Without a S/4HANA System](cloudsdk-mocking-capabilities) you can utilize mocking to test the functionality without an S/4HANA system to achieve code coverage, fast running tests and better testable code.
 
 For this purpose, you are creating the following test class, which checks the basic assumptions of our API as well as the failure case.
@@ -332,10 +336,9 @@ public class GetBusinessPartnerMockedTest {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write an integration test)]
+### Write an integration test
+
 Just the unit test might not be sufficient when you want to test the real integration with S/4HANA. Therefore, you would also like to leverage an integration test as used in previous tutorials.
 
 The file needs to be put under your `<projectroot>/integration-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
@@ -411,13 +414,11 @@ In addition, you are using a system alias which is stored inside the `<projectro
 
 Both tests together give us a code coverage of 91%:
 
-!![screenshot2](screenshot2.png)
+<!-- border -->![screenshot2](screenshot2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
+
 In this tutorial you learned how to leverage the deep insert functionality of the S/4HANA Cloud SDK to easily insert deeply nested data to SAP S/4HANA in a single call. Besides the pure functionality, you also learned how to implement unit and integration tests for this functionality.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
