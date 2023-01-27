@@ -20,7 +20,7 @@ primary_tag: topic>abap-connectivity
  - Latest version of ABAP Development Tools (ADT) installed with a project for each system.
 
 
-- In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
+> In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
 
 ---
 
@@ -29,7 +29,7 @@ primary_tag: topic>abap-connectivity
 
 The following tutorial describes how to establish a connection between an on-premise ABAP system and a cloud-based ABAP system.
 
-**If the on-premise ABAP System is an S/4HANA older than version 1909, the underlying ABAP platform can't perform WebSocket RFC calls. The SAP Business Connector is required in this case. See [WebSocket RFC to Cloud Using SAP Business Connector](https://developers.sap.com/tutorials/abap-websocket-rfc-bc.html) for more information.**
+> If the on-premise ABAP System is an S/4HANA older than version 1909, the underlying ABAP platform can't perform WebSocket RFC calls. The SAP Business Connector is required in this case. See [WebSocket RFC to Cloud Using SAP Business Connector](https://developers.sap.com/tutorials/abap-websocket-rfc-bc.html) for more information.
 
 ### Setting up the provider system
 
@@ -188,7 +188,7 @@ The connection test returns a ping result.
 4. Save and activate the class.
 5. Choose **Run > Run AS > ABAP Application (Console)**.
 
-**You can use also a service consumption model for the RFC call. See [Generating Proxies for Remote Function Call (RFC)](https://help.sap.com/docs/ABAP_PLATFORM_NEW/c238d694b825421f940829321ffa326a/32812d950d3848359ce391dae477f201.html?version=LATEST) and [Enable RFC Communication in Your ABAP Code](https://help.sap.com/docs/ABAP_PLATFORM_NEW/b5670aaaa2364a29935f40b16499972d/bbbd14283e984d6aa7b05062f197ef5b.html?version=LATEST). You can download the required service metadata file from the communication arrangement in SAP Fiori launchpad.**
+> You can use also a service consumption model for the RFC call. See [Generating Proxies for Remote Function Call (RFC)](https://help.sap.com/docs/ABAP_PLATFORM_NEW/c238d694b825421f940829321ffa326a/32812d950d3848359ce391dae477f201.html?version=LATEST) and [Enable RFC Communication in Your ABAP Code](https://help.sap.com/docs/ABAP_PLATFORM_NEW/b5670aaaa2364a29935f40b16499972d/bbbd14283e984d6aa7b05062f197ef5b.html?version=LATEST). You can download the required service metadata file from the communication arrangement in SAP Fiori launchpad.
 
 ### Result
 
