@@ -6,7 +6,7 @@ tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
 ---
 # WebSocket RFC to Cloud
-<!-- description --> Learn how to establish a WebSocket RFC connection from an on-premise to a cloud system..
+<!-- description --> Learn how to establish a WebSocket RFC connection from an on-premise to a cloud system.
 
 ## You will learn
 - how to connect an on-premise system to cloud using WebSocket RFC.
@@ -15,7 +15,7 @@ primary_tag: topic>abap-connectivity
 
 ## Prerequisites
  - Access to an SAP S/4HANA system of at least version 1909
- - Access to an SAP S/4HANA Cloud system
+ - Access to the ABAP environment in a cloud system
  - Access to the communication management apps in SAP Fiori launchpad.
  - Latest version of ABAP Development Tools (ADT) installed with a project for each system.
 
