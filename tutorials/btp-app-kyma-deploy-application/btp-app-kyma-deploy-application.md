@@ -112,6 +112,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
     --buildpack gcr.io/paketo-buildpacks/nodejs \
     --builder paketobuildpacks/builder:base
+    --env BP_NODE_RUN_SCRIPTS=""
     ```
 
 
@@ -131,6 +132,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
         --buildpack gcr.io/paketo-buildpacks/nodejs \
         --builder paketobuildpacks/builder:base
+        --env BP_NODE_RUN_SCRIPTS=""
     ```
 
 2. You should get an output like:
@@ -336,7 +338,7 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
     cpapp-srv-84964965cd-5mwtm   2/2     Running   0          13m
     ```
 
-2. Your service is made externally available using the `VirtualService` resource from Istio. You can check your externally exposed hostname:
+2. Your service is made externally available using the `VirtualService` resource from `Istio`. You can check your externally exposed hostname:
 
     ```Shell/Bash
     kubectl get virtualservice

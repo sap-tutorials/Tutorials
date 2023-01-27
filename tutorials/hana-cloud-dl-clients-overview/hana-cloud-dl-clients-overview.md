@@ -324,14 +324,14 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
-        Run `setup.bin` which will start either the GUI installer or text based installer.
+        Run `setup.bin` which will start either the GUI installer or text based installer.  To use the text based installer, add -i console.
 
         ```Shell (Linux)
         cd ebf*
         ./setup.bin
         ```
 
-3.  Specify an install folder and install all the features.
+3.  Specify an install folder such as C:\sap\DLClient or /home/dan/sap/dlclient and install all the features.
 
     ![GUI Installer](windows-gui-install.png)
 
@@ -532,8 +532,8 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     >
     ```SQL
     begin
-    INSERT INTO HOTEL.ROOM VALUES(11, 'single', 13, 135.00);
-    INSERT INTO HOTEL.ROOM VALUES(11, 'double', 15, 175.00);
+    INSERT INTO HOTEL.ROOM VALUES(11, 'garden view', 13, 190.00);
+    INSERT INTO HOTEL.ROOM VALUES(11, 'connecting room', 15, 175.00);
     end;
     ```
     >
