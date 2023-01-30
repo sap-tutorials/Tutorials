@@ -196,4 +196,3 @@ You have sent a string (`Hello world!`) to the RFM in the provider system. The s
 
 ### Test yourself
 
-[VALIDATE_9]
