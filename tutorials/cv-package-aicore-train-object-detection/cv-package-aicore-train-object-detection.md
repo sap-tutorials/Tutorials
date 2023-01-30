@@ -411,7 +411,7 @@ This is a useful way of comparing the different configuration used and their cor
 
 In the **ChartView**, you can visualize these metrics as charts. To create a chart, Click on **Create Chart**.
 
-<!-- border -->![image](img/click-create-char.png)
+<!-- border -->![image](img/click-create-chart.png)
 
 Enter a name for your chart and an optional description. Select **Metrics to Steps**. In the field for "Metrics", select **mAP/allClasses** and for "Steps of Time" select **Steps** as shown below.
 
