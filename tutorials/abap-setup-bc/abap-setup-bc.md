@@ -1,6 +1,5 @@
 ---
-title: Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud
-description: Learn how to set up the SAP Business Connector to to connect an on-premise system prior to 1909 to cloud using WebSocket RFC.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, topic>abap-development]
@@ -8,34 +7,37 @@ primary_tag: topic>abap-connectivity
 ---
 
 
-## Details
-### You will learn
+# Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud
+<!-- description --> Learn how to set up the SAP Business Connector to to connect an on-premise system prior to 1909 to cloud using WebSocket RFC.
+
+## You will learn
 - to set up the SAP BC for WebSocket RFC from on-premise to cloud systems.
 
+## Intro
 **Download**
 
 The installer can be downloaded free of charge from the [SAP BC homepage](https://support.sap.com/sbc-download). (A one-time registration of the SAP customer ID is required.)
 
 An installation guide and other documentation can be downloaded from the [SAP BC details page](https://support.sap.com/en/product/connectors/bc/details.html).
 
-**If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.**
+> If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download SAP Business Connector)]
+### Download SAP Business Connector
+
 
 1. Go to the [SAP BC homepage](https://support.sap.com/sbc-download) and download the SAP BC server and developer version.
 2. Install the SAP BC by running the setup file in administrator mode. We recommend to access the setup file from the console.
 
-    **When installing the developer version, make sure to also install the Certificate Toolkit.**
+    > When installing the developer version, make sure to also install the Certificate Toolkit.
 
 3. Install the latest core fix and service release. You can find them on the download page of the SAP BC. Follow the instructions of the installation guides. You can find them in the `ReadMe` text file in the download folder.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the certificate directory)]
+### Set up the certificate directory
+
 
 1. Go to the `config` folder in the directory where SAP BC Server is installed. For example `C:\sapbc481\Server\config`.
 2. Create a new folder with the name `trusted`.
@@ -46,11 +48,10 @@ An installation guide and other documentation can be downloaded from the [SAP BC
 6. Under **Trusted Certificates**, enter `config/trusted` in field **CA Certificate Directory**.
 7. Choose **Save Changes**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Generate certificates)]
+### Generate certificates
+
 
 1. Start the Certificate Toolkit. You can find it in the SAP BC Developer directory. Here, go to `certkit/bin/ssltoolkit.bat`.
 2. Select **Generate a Private Key** and choose **Next**.
@@ -66,33 +67,20 @@ An installation guide and other documentation can be downloaded from the [SAP BC
     - Certificate filename: `cert.der`
     - Choose **Next** to generate the certificate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update certificate directory)]
+### Update certificate directory
+
 Copy the private key, the CA's response, and the certificate to the `config` folder of the SAP BC server.
 
+### Test yourself
 
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
-
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Next Steps ](Set Up WebSocket RFC from On-Premise to Cloud)]
+### Set Up WebSocket RFC from On-Premise to Cloud
 
 [WebSocket RFC to Cloud Using SAP Business Connector](abap-websocket-rfc-bc)
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
