@@ -336,7 +336,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-> `NPM` uses a file called `package-lock.json` to remember which actual version of package was installed and later installs these exact versions and ignores any updates in minor releases not explicitly specified in the `package.json` file. Maintaining this is important for production applications for consistency. For the purposes of this tutorial use the latest versions of the packages. To ensure this, delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
+> `NPM` uses a file called `package-lock.json` to remember which actual version of package was installed and later installs these exact versions and ignores any updates in minor releases not explicitly specified in the `package.json` file. Maintaining this is important for production applications for consistency. For the purposes of this tutorial, use the latest versions of the packages. To ensure this, delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
 
 1. Build the MTA module from your project root folder:
 
