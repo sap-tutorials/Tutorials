@@ -13,7 +13,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 
-- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial cannot be completed on a trial account 
 - You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
 - **Tutorial**: [Set up SAP BTP ABAP Environment and Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 - You have assigned the following to your business user: **`SAP_BR_DEVELOPER`**
@@ -27,11 +27,12 @@ author_profile: https://github.com/julieplummer20
 - How to query the service
 - How to parse the information in an ABAP class using either JSON and SAP's XCO Library or using XML and a simple transformation
 - How to create an executable class and display the output in the ABAP console
+
 This tutorial enables you to work with data from an external RESTful API in your ABAP applications.
 
-This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
-
 Throughout this tutorial, object names include the suffix `000`. Always replace this with your group number or initials.
+
+> This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
 
 ---
 
@@ -46,11 +47,13 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
     - Add to favorite packages = Yes
     - Package type = **Development**
 
-    <!-- border -->![step1a-create-package](step1a-create-package.png)
+    <!-- border -->
+    ![step1a-create-package](step1a-create-package.png)
 
 3. Choose **Create new transport request**, enter a description, such as **Get data from API Overpass**, then choose **Finish**.
-    </br>
-    <!-- border -->![step1c-new-transport-request](step1c-new-transport-request.png)
+
+    <!-- border -->
+    ![step1c-new-transport-request](step1c-new-transport-request.png)
 
 
 ### Create outbound service
@@ -62,7 +65,8 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
     - Description: **Get data from Overpass map service**
     - Service type: **HTTP Service**
 
-    <!-- border -->![step2a-new-outbound-service](step2a-new-outbound-service.png)
+    <!-- border -->
+    ![step2a-new-outbound-service](step2a-new-outbound-service.png)
 
 3. Choose the transport request you just created, then choose **Finish**.
 
@@ -70,7 +74,8 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 
 4. Enter the **Default Path Prefix** **`/api/interpreter`**.
 
-    <!-- border -->![step2b-outbound-service-default-path-prefix](step2b-outbound-service-default-path-prefix.png)
+    <!-- border -->
+    ![step2b-outbound-service-default-path-prefix](step2b-outbound-service-default-path-prefix.png)
 
 5. Choose **Save (`Ctrl + S`)**.
 
@@ -79,14 +84,16 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 
 1. Again, choose **New > Other Repository Object** from the context menu; then enter **Communication Scenario**.
 
-    <!-- border -->![step3a-create-comm-scenario](step3a-create-comm-scenario.png)
+    <!-- border -->
+    ![step3a-create-comm-scenario](step3a-create-comm-scenario.png)
 
 2. Enter the following and choose **Next**.
 
     - Name: **`Z_API_OVERPASS_CSCEN_000`**
     - Description: **Communication Scenario: Get data from Overpass map service**
 
-      <!-- border -->![step3c-comm-scen-adt-name-etc](step3c-comm-scen-adt-name-etc.png)
+      <!-- border -->
+      ![step3c-comm-scen-adt-name-etc](step3c-comm-scen-adt-name-etc.png)
 
 3. Choose the transport request you just created, then choose **Finish**.
 
@@ -95,20 +102,25 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
     - Communication Scenario Type: **Customer Managed**
     - Allowed Instances: **One instance per client**
 
-    <!-- border -->![step3d-comm-scen-new-editor](step3d-comm-scen-new-editor.png)
+      <!-- border -->
+      ![step3d-comm-scen-new-editor](step3d-comm-scen-new-editor.png)
 
 4. On the **Outbound** tab, ensure that the authentication method **Unauthenticated** ticked.
 
 5. Add your outbound service, by choosing **Add...**.
 
-    <!-- border -->![step3c-add-ob](step3c-add-ob.png)
+    <!-- border -->
+    ![step3c-add-ob](step3c-add-ob.png)
 
 6. Choose **Browse**, choose your outbound service, **`Z_API_OVERPASS_OB_000`**, then choose **Finish**.
-The suffix **REST** has added to the outbound service name automatically.
+  
+    The suffix **REST** has added to the outbound service name automatically.
 
-  <!-- border -->![step3d-add-ob-service-to-comm-scen](step3d-add-ob-service-to-comm-scen.png)
-  </br>
-  <!-- border -->![step3e-comm-scen-editor](step3e-comm-scen-editor.png)
+    <!-- border -->
+    ![step3d-add-ob-service-to-comm-scen](step3d-add-ob-service-to-comm-scen.png)
+
+    <!-- border -->
+    ![step3e-comm-scen-editor](step3e-comm-scen-editor.png)
 
 7. Finally, **Save** your communication scenario, then choose **Publish Locally**.
 
@@ -119,26 +131,32 @@ Now, you need to create the necessary communication artifacts in Fiori Launchpad
 
 1. In the Fiori Launchpad home page, choose **Communication System**, then choose **New**.
 
-    <!-- border -->![step4a-comm-system](step4a-comm-system.png)
-    </br>
-    <!-- border -->![step4b-new-comm-system](step4b-new-comm-system.png)
+    <!-- border -->
+    ![step4a-comm-system](step4a-comm-system.png)
+
+    <!-- border -->
+    ![step4b-new-comm-system](step4b-new-comm-system.png)
 
 2. Enter the following and choose **Create**.
 
     - System ID: **`Z_OVERPASS_000_CSYS`**
     - System Name: **`Z_OVERPASS_000_CSYS`**
 
-    <!-- border -->![step4b-new-comm-system-dialog](step4b-new-comm-system-dialog.png)
+    <!-- border -->
+    ![step4b-new-comm-system-dialog](step4b-new-comm-system-dialog.png)
 
 3. Enter host name: `overpass-api.de`
 
 4. Under **Users for Outbound Communication**, enter the option **None**.
 
-    <!-- border -->![step4c-outbound-user-authent](step4c-outbound-user-authent.png)
-    </br>
-    <!-- border -->![step4c-outbound-user-password-none](step4c-outbound-user-password-none.png)
-    </br>
-    <!-- border -->![step4e-users-ob-none](step4e-users-ob-none.png)
+    <!-- border -->
+    ![step4c-outbound-user-authent](step4c-outbound-user-authent.png)
+    
+    <!-- border -->
+    ![step4c-outbound-user-password-none](step4c-outbound-user-password-none.png)
+    
+    <!-- border -->
+    ![step4e-users-ob-none](step4e-users-ob-none.png)
 
 5. Leave the other default settings as they are and choose **Save**.
 
@@ -149,27 +167,34 @@ A communication arrangement establishes a specific communication route by combin
 
 1. Go back to the Fiori Launchpad home page and choose **Communication Arrangement**, then choose **New**.
 
-    <!-- border -->![step5a-new-comm-arr](step5a-new-comm-arr.png)
+    <!-- border -->
+    ![step5a-new-comm-arr](step5a-new-comm-arr.png)
 
 2. Browse to, then select your **Communication Scenario**, **`Z_API_OVERPASS_CSCEN_000`** (created in ADT). The **Communication Arrangement** name is filled automatically.
 
-    <!-- border -->![step5c-select-comm-scen](step5c-select-comm-scen.png)
+    <!-- border -->
+    ![step5c-select-comm-scen](step5c-select-comm-scen.png)
     </br>
-    <!-- border -->![step5b-comm-arr-name-etc](step5b-comm-arr-name-etc.png)
+    <!-- border -->
+    ![step5b-comm-arr-name-etc](step5b-comm-arr-name-etc.png)
 
 3. In the main editor, select the Communication System, **`Z_OVERPASS_000_CSYS`**.
     The **Service URL**, port etc are filled automatically.
 
-    <!-- border -->![step5e-comm-arr-comm-sys](step5e-comm-arr-comm-sys.png)
+    <!-- border -->
+    ![step5e-comm-arr-comm-sys](step5e-comm-arr-comm-sys.png)
     </br>
-    <!-- border -->![step5f-comm-arr-defaults-filled](step5f-comm-arr-defaults-filled.png)
+    <!-- border -->
+    ![step5f-comm-arr-defaults-filled](step5f-comm-arr-defaults-filled.png)
 
 4. Choose **Save**.
     You can now check the connection.
 
-    <!-- border -->![step5d-check-connection](step5d-check-connection.png)
+    <!-- border -->
+    ![step5d-check-connection](step5d-check-connection.png)
     </br>
-    <!-- border -->![step5g-ping-successful](step5g-ping-successful.png)
+    <!-- border -->
+    ![step5g-ping-successful](step5g-ping-successful.png)
 
 
 ### Create transformation (XML only)
@@ -180,14 +205,16 @@ Now, create the **Simple Transformation**, which converts the XML data to ABAP d
 
 1. In the Project Explorer, select your package (from the previous tutorial) and choose **New > Other ABAP Repository Object > Transformations > Transformation**, then choose **Next**.
 
-    <!-- border -->![step6a-transformation-new](step6a-transformation-new.png)
+    <!-- border -->
+    ![step6a-transformation-new](step6a-transformation-new.png)
 
 2. Enter the following:
     - Name: **`Z_OVERPASS_XML_ST_000`**
     - Description: **Transform Overpass Map Data: XML-ABAP**
     - Template: **Simple transformation**
 
-    <!-- border -->![step6b-transformation-name-etc](step6b-transformation-name-etc.png)
+    <!-- border -->
+    ![step6b-transformation-name-etc](step6b-transformation-name-etc.png)
 
 3. Choose your transport request and choose **Finish**.
     A skeleton transformation appears in a new editor.
@@ -223,7 +250,8 @@ Now, create the **Simple Transformation**, which converts the XML data to ABAP d
     </tt:template>
 
     ```
-    <!-- border -->![step6c-transformation-code](step6c-transformation-code.png)
+    <!-- border -->
+    ![step6c-transformation-code](step6c-transformation-code.png)
 
 5. Check your syntax (`Ctrl+F2`).
 
@@ -233,10 +261,10 @@ Now, create the **Simple Transformation**, which converts the XML data to ABAP d
 
 
 [OPTION BEGIN [JSON]]
-If you are using JSON, skip this step.
-Instead of an ABAP transformation, you use the XCO Library.
+> If you are using JSON, skip this step, since, instead of an ABAP transformation, you use the XCO Library.
 
 [OPTION END]
+
 
 ### Create ABAP class
 
@@ -244,33 +272,40 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 1. Select your package and choose **New > ABAP Class** from the context menu.
 
-    <!-- border -->![step7a-create-class](step7a-create-class.png)
+    <!-- border -->
+    ![step7a-create-class](step7a-create-class.png)
 
 2. Enter the following for your class and choose Next. Remember to change `000` to your group number.
     - Name: **`ZCL_OVERPASS_XML_000`**
     - Description: **Get map data using Overpass + XML**
     - Interfaces: **`IF_OO_ADT_CLASSRUN`** (using **Add...**)
 
-    <!-- border -->![step7b-name-class](step7b-name-class.png)
+    <!-- border -->
+    ![step7b-name-class](step7b-name-class.png)
 
 3. Choose or create a transport request, then choose Finish.
 
 The skeleton class is displayed in a new editor.
 
-<!-- border -->![step7c-class-editor](step7c-class-editor.png)
+<!-- border -->
+![step7c-class-editor](step7c-class-editor.png)
 
 
-### Copy code
+### Implement method
 
 [OPTION BEGIN [XML]]
 
-To be able to access the external service, you must:
+To be able to access the external service, you will:
 
-- Create an HTTP client that points to your communication scenario and service id
-- Configure and send an HTTP request. You configure the request using `lo_request->set_query( )` including specifying whether the response should be XML or JSON
-- Convert the response to ABAP structures
-- Output the response in the ABAP console
-- Catch any potential exceptions that may be thrown.
+1. Create an HTTP client that points to your communication scenario and service id
+
+2. Configure and send an HTTP request. You configure the request using `lo_request->set_query( )` including specifying whether the response should be XML or JSON
+
+3. Convert the response to ABAP structures
+
+4. Output the response in the ABAP console
+
+5. Catch any potential exceptions that may be thrown.
 
 A sample of the raw XML output is available here:
 [OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/abap-environment-external-api/OverpassRawOutputXML.txt)
@@ -373,11 +408,15 @@ Implement the method **`if_oo_adt_classrun~main`** by inserting the following co
 
 To be able to access the external service, you must:
 
-- Create an HTTP client that points to your communication scenario and service id
-- Configure and send an HTTP request. You configure the request using `lo_request->set_query( )` including specifying whether the response should be XML or JSON
-- Convert the response to ABAP structures
-- Output the response in the ABAP console
-- Catch any potential exceptions that may be thrown.
+1. Create an HTTP client that points to your communication scenario and service id
+
+2. Configure and send an HTTP request. You configure the request using `lo_request->set_query( )` including specifying whether the response should be XML or JSON
+
+3. Convert the response to ABAP structures
+
+4. Output the response in the ABAP console
+
+5. Catch any potential exceptions that may be thrown.
 
 A sample of the raw JSON output is available here:
 [OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/abap-environment-external-api/OverpassRawOutputJSON.txt)
@@ -479,14 +518,14 @@ Implement the method **`if_oo_adt_classrun~main`** by inserting the following co
 
 ### Run class in ABAP Console
 
-Run your class in the console (`F9`). The output should look something like this (XML).
-</br>
-</br>
-<!-- border -->![step10a-output-xml](step10a-output-xml.png)
+Run your class in the console (`F9`). The output should look something like this.
 
-</br>
-</br>
-<!-- border -->![step9a-output-json](step9a-output-json.png)
+<!-- border -->
+![step10a-output-xml](step10a-output-xml.png)
+
+
+<!-- border -->
+![step9a-output-json](step9a-output-json.png)
 
 
 
