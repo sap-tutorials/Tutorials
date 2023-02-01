@@ -1,22 +1,25 @@
 ---
-title: Add Rich Enterprise Controls to the User Interface
-description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
+parser: v2
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier ]
-primary_tag: products>sap-fiori
+tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   software-product>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
+primary_tag: software-product>sap-fiori
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 ---
 
 
-## Details
-### You will learn
+# Add Rich Enterprise Controls to the User Interface
+<!-- description --> Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
+
+## You will learn
   - How to use smart controls like the `SmartFilterBar`, `SmartList`, or the `ObjectPage`
   - Why smart controls can save you much boilerplate code
 
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Enrich the products page)]
+### Enrich the products page
 1. To import smart controls to the view, *add* new XML namespaces to the `uimodule/webapp/view/Products.view.xml` file.
 2. Replace <Page> in the same view with a page that contains the smart controls `smartFilterBar` and `smartList`
 
@@ -40,37 +43,33 @@ xmlns:mvc="sap.ui.core.mvc">
 
 Your page should now display product names and contain a smart header.
 
-!![smart list](smartlist.png)
+<!-- border -->![smart list](smartlist.png)
 
-> Did you notice that the list items display the category names, even though the selected entity set [Products](https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json) doesn't contain these values. We can still see it because we defined the property `expandFields="Category"` which expands the `CategoryID` to a full, nested entity. There is nothing we need to do, expect to define the field names to expand. All magic happens behind the scenes in the OData protocol.
+> Did you notice that the list items display the category names, even though the selected entity set [Products](https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json) doesn't contain these values. You can still see it because the property `expandFields="Category"` was defined, which expands the `CategoryID` to a full, nested entity. There is nothing you need to do, expect to define the field names to expand. All magic happens behind the scenes in the OData protocol.
     Feel free to remove this property from the view to see how the displayed data changes.
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Use the smart filter bar)]
+### Use the smart filter bar
 
-You've already learned about the cool expand-feature of OData in the previous step. In this step, you'll learn about the complex filter operations OData supports out-of-the-box. For this, click on the **Filters** button. A dialog pops up, and you'll be able to define filters on all properties of the displayed entities. Define a filter for the following criteria:
+You've already learned about the cool expand-feature of OData in the previous step. In this step, you'll learn about the complex filter operations OData supports out-of-the-box. For this, click on the **Filters** button. A dialog pops up, and you'll be able to define filters on all properties of the displayed entities. Select the grouped view and define a filter for the following criteria:
 
 * The `ProductID` shall be larger than 3
 * The `ProductID` shall also be less than 8
 * The name of the category should be "Beverages"
 
-!![filter dialog](filters.png)
+Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
+
+<!-- border -->![filter dialog](filters.png)
 
 
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Navigate to the detail view)]
+### Navigate to the detail view
 
 **Click** on item **`Rhönbräu Klosterbier`** to navigate to the detail view. You'll upgrade this simple view to a full `ObjectPage` [control](https://sapui5.hana.ondemand.com/#/api/sap.uxap.ObjectPageSubSection) in the next steps.
 
-!![list item beer](klosterbier.png)
+<!-- border -->![list item beer](klosterbier.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Use an ObjectPage in the detail view)]
+### Use an ObjectPage in the detail view
 
 1. Similar to step 1, **include** new XML namespaces to the `uimodule/webapp/view/ProductDetail.view.xml` view to allow the usage of new controls.
 2. **Replace** the current page of the view with this smart `ObjectPage`.
@@ -111,9 +110,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 
 > As of now, this page only consists of a header that leverages data binding to display data. Note the control `attrState` uses a special type of binding, the so-called [expression binding](https://sapui5.hana.ondemand.com/#/topic/daf6852a04b44d118963968a1239d2c0.html) to display "Yes" or "No" depending on the state of the boolean variable `discontinued`.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Enrich the detail view controller)]
+### Enrich the detail view controller
 
 
 1. The header of the view also contains two buttons. In the next sub-steps, you'll implement the event listener for these buttons. **Replace** the existing file header with this one to import another library during the controller-initialization in file `uimodule/webapp/controller/ProductDetail.controller.js`.
@@ -146,15 +143,13 @@ You've already learned about the cool expand-feature of OData in the previous st
     },
     ```
 
-    !![code 2](code2.png)
+    <!-- border -->![code 2](code2.png)
 
 5. **Mark the page as a favorite** via the button in the header of the page to make sure the event handlers work as expected.
 
 > Note that the icon is not supposed to do anything but being a toggle button (as there is no real controller logic associated with the control). It won't store the state in the data model.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add sections to ObjectPage)]
+### Add sections to ObjectPage
 
 The following snippet defines the content of the `ObjectPage`. It's mostly basic code, outstanding sections are another usage of expression binding for the link control `linkWebsite`, property binding to the navigation entities "Supplier" and "Category", and the  usage of a custom formatter for the image control `imageCategory`.
 
@@ -257,9 +252,7 @@ The following snippet defines the content of the `ObjectPage`. It's mostly basic
 ```
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Populate the empty fields)]
+### Populate the empty fields
 
 You probably noticed empty fields that do not show data yet.
 
@@ -288,7 +281,7 @@ You probably noticed empty fields that do not show data yet.
     },
     ```
 
-2. Now the only "picture" field should be the empty one. The field is still empty, as we need to add a custom formatter, to deal with a [quirk of the Northwind image encoding](https://blogs.sap.com/2017/02/08/displaying-images-in-sapui5-received-from-the-northwind-odata-service/).
+2. Now only the "picture" field should be the empty one. The field is still empty, as you need to add a custom formatter, to deal with a [quirk of the Northwind image encoding](https://blogs.sap.com/2017/02/08/displaying-images-in-sapui5-received-from-the-northwind-odata-service/).
 
     **Add** this formatter after the `markAsFav` method to complete the controller.
 
@@ -304,20 +297,19 @@ You probably noticed empty fields that do not show data yet.
 
 3. The view should now look like displayed here.
 
-    !![object page](objectpage.png)
+    <!-- border -->![object page](objectpage.png)
 
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add hierarchy information)]
+### Add hierarchy information
 
 
-In this step, we add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
+In this step, you add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
 
-1. Add a method to the `uimodule/webapp/controller/BaseController.js` which we'll use to interface the hierarchy feature of the `Shellbar`. Note that we use a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) to store the history. Add this method after the `onNavBack` method.
+1. Add a method to the `uimodule/webapp/controller/BaseController.js` which you will use to interface the hierarchy feature of the `Shellbar`. Note that a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) is being used to store the history. Add this method after the `onNavBack` method.
 
     ```JavaScript
+    ,
     addHistoryEntry: (function() {
       let aHistoryEntries = [];
 
@@ -337,12 +329,12 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
           });
         }
       };
-    })(),
+    })()
     ```
 
     > Note that this implementation is used to display the history instead of the hierarchy of pages.
 
-2. In the previous sub-step we used the `ShellUIService` which is not loaded by default. Change this in the `uimodule/webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
+2. In the previous sub-step you used the `ShellUIService` which is not loaded by default. Change this in the `uimodule/webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
 
     ```JSON[6-14]
     {
@@ -404,8 +396,6 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
     ```
 
 Click on the name of the Fiori App to see the hierarchy menu in action.
-!![hierarchy](hierarchy.png)
+<!-- border -->![hierarchy](hierarchy.png)
 
-[DONE]
-[ACCORDION-END]
 ---

@@ -1,11 +1,13 @@
 ---
-title: Connect to OData Service on Cloud Foundry Using SAP Cloud SDK
-description: Create a basic Java project to call OData services using the SAP Cloud SDK on Cloud Foundry.
+parser: v2
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, topic>java, topic>odata ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, software-product>sap-cloud-platform-connectivity, software-product>sap-s-4hana, topic>cloud, programming-tool>java, programming-tool>odata ]
+primary_tag: software-product>sap-cloud-sdk
 time: 20
 ---
+
+# Connect to OData Service on Cloud Foundry Using SAP Cloud SDK
+<!-- description --> Create a basic Java project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 
 ## Prerequisites  
 In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the business partner service introduced here with any other API published on the SAP API Business Hub.
@@ -13,16 +15,18 @@ In order to follow this tutorial successfully, you need a working and reachable 
 If you do not have an S/4HANA system available, you may use a public service, such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
 &nbsp;
 This tutorial requires access to an SAP ERP system or, as a fallback, a mock server providing the [Business Partner OData V2](https://api.sap.com/api/API_BUSINESS_PARTNER/resource) service.
+&nbsp;
+Alternatively, you can also use the Sandbox service provided by the [API Business Hub](https://api.sap.com/api/API_BUSINESS_PARTNER/tryout).
 
-## Details
-### You will learn
-In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Cloud Foundry`, and write an integration test.
+## You will learn
+In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Business Technology Platform` (BTP) based on `Cloud Foundry`, and write an integration test.
 
+## Intro
 If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
 
-Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Cloud Foundry`. For `SAP Cloud Platform Cloud Foundry`, the following `S/4HANA` connection capabilities exist.
+Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Cloud Foundry`. For `SAP Business Technology Platform Cloud Foundry`, the following `S/4HANA` connection capabilities exist.
 
-|  | `SAP Cloud Platform, Cloud Foundry`
+|  | `SAP Business Technology Platform, Cloud Foundry`
 :-------------- | :-------------
 S/4HANA on-premise |	Information will be provided in the [extended tutorial series](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/)
 S/4HANA Cloud | Direct Connection with `BASIC Auth` (Technical User, see below)
@@ -32,7 +36,8 @@ Note that your application code is not dependent on the platform you are using. 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up mock server or get access to Business Hub sandbox (optional))]
+### Set up mock server or get access to Business Hub sandbox (optional)
+
 
 >If you have access to an SAP S/4HANA Cloud system with a technical user, you can skip this part.
 
@@ -40,26 +45,27 @@ In order to make a call to an `OData` service, there needs to be a service to ca
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on the [Business Partner OData V2 API reference](https://api.sap.com/api/API_BUSINESS_PARTNER/resource) and find you API key under "Show API Key". You will use your API key later in this tutorial.
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on the [Business Partner OData V2 API reference](https://api.sap.com/api/API_BUSINESS_PARTNER/tryout) and find you API key under "Show API Key". You will use your API key later in this tutorial. The sandbox service URL can be found in _Try Out > Code Snippet > Java > URL (in the code)_:
 
-[DONE]
-[ACCORDION-END]
+>Make sure to use **only** the part before `/sap/opu/odata/...`.
+
+![Sandbox URL](business-partner-sandbox-url.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Virtual Data Model)]
+
+### Virtual Data Model
+
 
 This section explains the concepts of the S/4HANA Virtual Data Model. If you would like to first implement the S/4HANA integration, jump ahead to [the next section](https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/#WriteBusinessPartnerServlet) and revisit the content of this section later.
 
-The data stored in an S/4HANA system is inherently complexly structured and therefore difficult to query manually. Therefore, HANA introduced a Virtual Data Model (VDM) that aims to abstract from this complexity and provide data in a semantically meaningful and easy to consume way. The preferred way to consume data from an S/4HANA system is via the OData protocol. While BAPIs are also supported for compatibility reasons, OData should always be your first choice. You can find a list of all the available OData endpoints for S/4HANA Cloud systems in [SAP's API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS).
+The data stored in an S/4HANA system is inherently complexly structured and therefore difficult to query manually. Therefore, HANA introduced a Virtual Data Model (VDM) that aims to abstract from this complexity and provide data in a semantically meaningful and easy to consume way. The preferred way to consume data from an S/4HANA system is via the OData protocol. While BAPIs are also supported for compatibility reasons, OData should always be your first choice. You can find a list of all the available OData endpoints for S/4HANA Cloud systems in [SAP's API Business Hub](https://api.sap.com) ([OData V2](https://api.sap.com/products/SAPS4HANACloud/apis/ODATA), [OData V4](https://api.sap.com/products/SAPS4HANACloud/apis/ODATAV4)).
 
-The SAP Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS). This means that its compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
+The SAP Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com). This means that its compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
 
 
-[DONE]
 
-[ACCORDION-END]
+### The manual way to OData
 
-[ACCORDION-BEGIN [Step 3: ](The manual way to OData)]
 
 Let's take a look at typical code you could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, a list of business partners is retrieved from an S/4HANA system:
 
@@ -87,11 +93,9 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 - Then, when you want to select specific attributes from the `BusinessPartner` entity type with the `select()` function, you need to know how these fields are named. But since they are only represented as strings in this code, you need to look at the metadata to find out how they're called. The same also applies for functions like `order()` and `filter()`. And of course using strings as parameters is prone to spelling errors that your IDE most likely won't be able to catch for you.
 - Finally, you need to define a class such as `MyBusinessPartnerType` with specific annotations that represents the properties and their types of the result. For this you again need to know a lot of details about the OData service.
 
-[DONE]
 
-[ACCORDION-END]
+### Virtual Data Model: The new way to OData
 
-[ACCORDION-BEGIN [Step 4: ](Virtual Data Model: The new way to OData)]
 
 Now that you have seen some of the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
@@ -131,11 +135,9 @@ The VDM supports retrieving entities by key and retrieving lists of entities alo
 
 For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder` still is the go to approach for consumption.
 
-[DONE]
 
-[ACCORDION-END]
+### Write the BusinessPartnerServlet
 
-[ACCORDION-BEGIN [Step 5: ](Write the BusinessPartnerServlet)]
 
 The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, in this example, you will retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
@@ -233,21 +235,71 @@ The `executeRequest` method of the VDM returns the query result as a `navigatabl
 
 Any `ODataException` thrown by the OData call is caught and logged, before returning an error response.
 
-[DONE]
 
-[ACCORDION-END]
+### Deploy the Project
 
-[ACCORDION-BEGIN [Step 6: ](Deploy the Project)]
 
-Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform Cloud Foundry*.
+Depending on your chosen archetype and the BTP setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform Cloud Foundry*.
 
 **Provide Destinations for your Application**
 
-In order for your application to run you need to provide it with information about your S/4HANA system. Your `BusinessPartnerService` needs an URL. Depending on the system you would like to use, you might need to define an authentication method as well. This information is provided in the form of a destination which we retrieve (in a multi-tenant environment) by transparently accessing the destination service of SAP Cloud Platform. This is done by retrieving the destination via the `DestinationAccessor` by name, in your case `MyErpSystem`. There are multiple ways to create such a destination. For now you will provide it to our application by creating an environment variable that holds the information. You will create such a variable now both for a local deployment and a deployment on SCP Cloud Foundry.
+In order for your application to run you need to provide it with information about your S/4HANA system. Your `BusinessPartnerService` needs an URL. Depending on the system you would like to use, you might need to define an authentication method as well. This information is provided in the form of a destination which is retrieved (in a multi-tenant environment) by transparently accessing the destination service of the BTP. This is done by retrieving the destination via the `DestinationAccessor` by name, in your case `MyErpSystem`. There are multiple ways to create such a destination. For now you will provide it to your application by creating an environment variable that holds the information. You will create such a variable now both for a local deployment and a deployment on the SAP BTP Cloud Foundry.
 
 **Run on a Local Server**
 
-[OPTION BEGIN [Windows]]
+[OPTION BEGIN [Windows (PowerShell)]]
+
+As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
+
+```Shell
+$env:destinations='[{name: "MyErpSystem", url: "https://URL"}]'
+```
+
+**Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
+If you would like to connect to such a service, use the following snippet instead:
+```Shell
+$env:destinations='[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]'
+```
+Please change the values URL, USER and PASSWORD accordingly.
+
+You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
+
+```Shell
+echo $env:destinations
+```
+
+_Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
+
+Be aware that the variable is only available in your current terminal session. If you are having trouble setting the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
+
+```Shell
+cd /path/to/firstapp
+mvn clean install
+mvn tomee:run -pl application
+```
+
+Visit `http://localhost:8080/businesspartners` to see your new feature in action. It should look similar to this web page:
+
+![list of businesspartners from ERP](post-4-businesspartners-result.png)
+
+**Connecting to SAP S/4HANA from SAP BTP Cloud Foundry**
+
+On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
+
+Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
+
+
+```Shell
+cf set-env firstapp destinations '[{name: "MyErpSystem", url: "https://URL"}]'
+```
+
+Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below). Be aware that depending on your command line interface (for example, on Windows command prompt), you may need to use double quotes instead of single quotes and escape the double quotes.
+
+Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service. You can now push the application to CF and test it if you like.
+
+[OPTION END]
+
+[OPTION BEGIN [Windows (CMD)]]
 
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
@@ -270,7 +322,7 @@ set destinations
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
 
-Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
+Be aware that the variable is only available in your current terminal session. If you are having trouble setting the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
 
 ```Shell
 cd /path/to/firstapp
@@ -282,9 +334,9 @@ Visit `http://localhost:8080/businesspartners` to see your new feature in action
 
 ![list of businesspartners from ERP](post-4-businesspartners-result.png)
 
-**Connecting to SAP S/4HANA from SAP Cloud Platform Cloud Foundry**
+**Connecting to SAP S/4HANA from SAP BTP Cloud Foundry**
 
-On SCP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
+On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 
@@ -335,9 +387,9 @@ Visit `http://localhost:8080/businesspartners` to see your new feature in action
 
 ![list of businesspartners from ERP](post-4-businesspartners-result.png)
 
-**Connecting to SAP S/4HANA from SAP Cloud Platform Cloud Foundry**
+**Connecting to SAP S/4HANA from SAP BTP Cloud Foundry**
 
-On SCP Cloud Foundry, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
+On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the SAP BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 
@@ -351,7 +403,7 @@ Whenever this environment variable is set, the SAP Cloud SDK will use it to dete
 
 [OPTION END]
 
-**Using the Destination Service on SAP Cloud Platform Cloud Foundry**
+**Using the Destination Service on SAP BTP Cloud Foundry**
 
 For the recommended approach of using the destination service to configure the connection to your SAP S/4HANA system, proceed as follows. If you have just set the destination variable on Cloud Foundry please remove it again as described above.
 
@@ -394,7 +446,7 @@ With this, the setup is complete and you can re-deploy the application. However,
 
 **Configure Destinations**
 
-Customers of your application can use the Cloud Platform cockpit to configure destinations. You can use the cockpit to define your destination as well.
+Customers of your application can use the BTP cockpit to configure destinations. You can use the cockpit to define your destination as well.
 
 1. Navigate to the Cloud Foundry subaccount within your global account that you have used before to deploy the application (see Step 3). In case of a trial account, the subaccount will be called trial by default.
 2. In the menu on the left, expand Connectivity and select **Destinations**.
@@ -411,7 +463,7 @@ Afterwards, the destination should look as follows.
 
 ![Cloud Foundry destination](cf-destination.png)
 
-Please note that the above settings represent the setup for a connection to SAP S/4HANA Cloud via a technical user (communication user). Depending on your setup and requirements, you may want to use a different `ProxyType` (`OnPremise` when using the Cloud Connector) or a different means of authentication. If you want to learn more about authorizing user access in a productive environment, please find [Secure Your Application on SAP Cloud Platform Cloud Foundry](s4sdk-secure-cloudfoundry).
+Please note that the above settings represent the setup for a connection to SAP S/4HANA Cloud via a technical user (communication user). Depending on your setup and requirements, you may want to use a different `ProxyType` (`OnPremise` when using the Cloud Connector) or a different means of authentication. If you want to learn more about authorizing user access in a productive environment, please find [Secure Your Application on SAP Business Technology Platform Cloud Foundry](s4sdk-secure-cloudfoundry).
 
 
 **Deploy to Cloud Foundry**
@@ -432,11 +484,9 @@ If you change the destinations afterwards, you need to at least [restart (or res
 cf restart firstapp
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Integration test for BusinessPartnerServlet
 
-[ACCORDION-BEGIN [Step 7: ](Integration test for BusinessPartnerServlet)]
 
 To construct an extensible integration test for the newly created `BusinessPartnerServlet`, the following items will be prepared:
 
@@ -466,11 +516,9 @@ First, let's adjust the Maven pom file of the `integrations-tests` sub-module by
 
 _Hint: Do not forget to reload your maven project in order to include the newly added dependencies._
 
-[DONE]
 
-[ACCORDION-END]
+### Test class
 
-[ACCORDION-BEGIN [Step 8: ](Test class)]
 
 Navigate to the integration-tests project and create a new class:
 
@@ -553,11 +601,9 @@ What you see here in the actual `testService` method, is the usage of `RestAssur
 
 Make sure to replace the URL in line 52 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
-[DONE]
 
-[ACCORDION-END]
+### Create JSON Schema for servlet response validation
 
-[ACCORDION-BEGIN [Step 9: ](Create JSON Schema for servlet response validation)]
 
 Inside the `integration-tests` project, create a new resource file
 
@@ -580,15 +626,13 @@ Inside the `integration-tests` project, create a new resource file
 
 As you can see, the properties `BusinessPartner` and `LastName` will be marked as requirement for every entry of the expected business partner list. The JSON validator would break the test if any of the items was missing a required value.
 
-[DONE]
 
-[ACCORDION-END]
+### Systems.json and credentials (optional)
 
-[ACCORDION-BEGIN [Step 10: ](Systems.json and credentials (optional))]
 
 >If you are testing your application using either the SAP API Business Hub sandbox service or the mock server (deployed locally or on SAP Cloud Foundry), you should skip this step.
 
-If you run your application on SAP Cloud Platform, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, you need a way to supply your tests with an ERP destination.
+If you run your application on SAP BTP, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, you need a way to supply your tests with an ERP destination.
 
 Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This class allows you to mock the ERP destinations you'd typically find on `CloudFoundry`. To provide `MockUtil` with the necessary information, you'll need to add a `systems.json` or `systems.yml` file to your test resources directory. `MockUtil` will read these files and provide your tests with the ERP destinations accordingly. Adapt the URL as before.
 
@@ -660,11 +704,8 @@ Afterwards you may pass the credentials file as follows when running tests. Make
 
 `mvn test -Dtest.credentials=/secure/local/path/credentials.yml`
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Appendix: ](Troubleshooting)]
+### Troubleshooting
 
 **Connecting to the `OData` service**
 
@@ -676,7 +717,7 @@ In case you are trying to connect to an OData service endpoint on a server witho
 
 `[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD", trustAll: "true"}]`
 
-- If you are using the destination service on Cloud Foundry, add a new additional property to your destination in the Cloud Platform cockpit. Enter `TrustAll` into the first input (dropdown) field and `TRUE` into the second field.
+- If you are using the destination service on Cloud Foundry, add a new additional property to your destination in the BTP cockpit. Enter `TrustAll` into the first input (dropdown) field and `TRUE` into the second field.
 
 If you are still facing problems when connecting to the OData service, try the following to get more insights into what is happening and what can be logged:
 
@@ -696,20 +737,14 @@ If you are still facing problems when connecting to the OData service, try the f
 If you are behind a proxy and want to connect your app running locally with the Cloud Foundry archetype to an SAP S/4HANA system in your network, you can supply your proxy information as part of the destinations environment variable (see [Javadoc](https://help.sap.com/http.svc/rc/fe7d14ff3c3043aca2920cb72d725492/1.0/en-US/index.html?com/sap/cloud/sdk/cloudplatform/connectivity/AbstractDestinationFacade.html)):
 `[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"},{key: "proxyHost", value: "my-proxy.com"},{key: "proxyPort", value: "8080"}]}]`
 
-[DONE]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 ---

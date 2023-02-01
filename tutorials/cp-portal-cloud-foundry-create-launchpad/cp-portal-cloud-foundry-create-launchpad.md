@@ -1,6 +1,5 @@
 ---
-title: Expose Your App to the Portal Service (Cloud Foundry)
-description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>html5, topic>sapui5, products>sap-fiori, products>sap-web-ide, products>sap-cloud-platform-launchpad]
@@ -9,19 +8,23 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-## Details
-### You will learn
+# Expose Your App to the Portal Service (Cloud Foundry)
+<!-- description --> Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
+
+## You will learn
   - How to enable the SAP Fiori Launchpad Site extension, allowing you to add a launchpad module to your MTA project
   - How to add the launchpad module to your MTA project
   - How to configure the launchpad module
   - How to add your SAP Fiori app to the launchpad and make it available to add to a Portal site
 
+## Intro
 In this tutorial, you're going to configure a launchpad module and add it to your MTA project. You will then build and deploy your project, which now includes the launchpad module together with your SAP HTML5 module, into your Cloud Foundry space.
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Add the launchpad module to your multi-target application project)]
+### Add the launchpad module to your multi-target application project
+
 
 1. Navigate to the **Development** area in SAP Web IDE and right-click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
 
@@ -37,11 +40,10 @@ You can see that the `Launchpad` module is now part of your `MTA` project:
 
   ![View Launchpad module](10_view_launchpad_module.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Configure the launchpad content)]
+### Configure the launchpad content
+
 
 Any app that you want to expose to the Portal service, should be added to the launchpad module. To add apps to the launchpad module, you should edit its `CommonDataModel.json` file.
 
@@ -73,12 +75,11 @@ In this step you are going to do just that.
 
     ![View launchpad editor](15_view_launchpad_editor.png)
 
-[VALIDATE_7]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Build and deploy your project)]
+
+### Build and deploy your project
+
 
 Build and deploy the `MTA` project with these modules thus exposing your app to the Portal service.
 
@@ -103,12 +104,11 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
       `<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com`
       where `<id>` is your ID number.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 4: ](Access the runtime launchpad module)]
+### Access the runtime launchpad module
+
 
 Now let's see how the app is displayed in the runtime launchpad module.
 
@@ -124,5 +124,3 @@ Now let's see how the app is displayed in the runtime launchpad module.
 
 Now you are ready to add your app to the **Launchpad** page in your Portal site.
 
-[DONE]
-[ACCORDION-END]

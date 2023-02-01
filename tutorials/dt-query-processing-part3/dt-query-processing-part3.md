@@ -1,10 +1,12 @@
 ---
-title: Table Statistics and its Effect on Query Plans
-description: Create table statistics. Analyze impact of statistics on query plans.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Table Statistics and its Effect on Query Plans
+<!-- description --> Create table statistics. Analyze impact of statistics on query plans.
+
 ## Prerequisites
  - **Proficiency:** Intermediate
  - **Tutorials:** [Compare Prepared and Executed Plan](https://developers.sap.com/tutorials/dt-query-processing-part2.html)
@@ -12,19 +14,19 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [Detailed Query Plan and Indexes](https://developers.sap.com/tutorials/dt-query-processing-part4.html)
 
-## Details
-### You will learn
+## You will learn
  - Creating table statistics.
  - Analyzing the effect of table statistics on query plans.
-
-### Time to Complete
+## Time to Complete
 **20 Min**.
 
 ---
 
+## Intro
 SAP HANA and Dynamic Tiering relies on statistics in order to help the optimizer choose the most effective access plan. Creating statistics is particularly important for queries involving Dynamic Tiering as they help SAP HANA determine when it is appropriate to use optimizations like `joinRelocation` or `SemiJoin` rules. These query operators help SAP HANA and Dynamic Tiering minimize the volume of data (# of rows & column values) transferred between the core SAP HANA and Dynamic Tiering nodes.
 
-[ACCORDION-BEGIN [Step 1: ](Create Prepared and Executed Query Plans)]
+### Create Prepared and Executed Query Plans
+
 During this tutorial we will be creating statistics for the `TPCH.PART_DT` table. In order to see the effect of creating statistics, we first want to generate and save the Prepared and Executed plans for a query on the `TPCH.PART_DT` table before the statistics get created. Use the following script to create the Prepared and Executed Plans:
 
 ``` sql
@@ -81,11 +83,9 @@ To open a saved plan, click on **File** > **Open File...** and then browse to wh
 
 ![Open Plan](open-prepared-plan.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create Statistics and Opening Prepared and Executed Query Plans After Running Statistics
 
-[ACCORDION-BEGIN [Step 2: ](Create Statistics and Opening Prepared and Executed Query Plans After Running Statistics)]
 Now that we have captured the Prepared and Executed query plans showing how the query is handled without having created statistics, we are ready to go ahead and create the statistics for the `TPCH.PART_DT` table to see if we can improve the query plans. To create the statistics, go to the **SAP HANA Administration Console** and open a new SQL console.
 
 ![SQL Console](sql-console.png)
@@ -102,11 +102,9 @@ Open another set of Prepared and Executed Query Plans after running statistics f
 
 Left click on one of the tabs and drag them down slightly in order to display two tabs side by side.
 
-[DONE]
 
-[ACCORDION-END]
+### Analyze the Impact of Statistics on Prepared Plans
 
-[ACCORDION-BEGIN [Step 3: ](Analyze the Impact of Statistics on Prepared Plans)]
 Put the Prepared Plan generated before creating the statistics  on the left side of the screen and the Prepared Plan generated after creating the statistics on the right side of the screen in order to compare them.
 
 ![Compare Prepared Plans](compare-estimate.png)
@@ -117,11 +115,10 @@ One of the major benefits to creating statistics is that the optimizer receives 
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Analyze the Impact of Statistics on Executed Plans)]
+### Analyze the Impact of Statistics on Executed Plans
+
 Put the Executed Plan generated before creating the statistics on the left side of the screen and the Executed Plan generated after creating the statistics on the right side of the screen in order to compare them.
 
 ![Compare Executed Plans](compare-executed.png)
@@ -132,6 +129,3 @@ Looking at the output in this example, you will notice that both the estimated #
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
-[DONE]
-
-[ACCORDION-END]

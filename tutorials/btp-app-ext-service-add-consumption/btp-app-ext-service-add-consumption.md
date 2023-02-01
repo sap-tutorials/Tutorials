@@ -1,16 +1,20 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
+keywords: cap
 auto_validation: true
 time: 20
-tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management]
+tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) to start.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+    - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
 ## Details
 ### You will learn
@@ -20,9 +24,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to connect to the sandbox service
  - How to delegate requests to external services
  - How to add the API key
-
-
-To start with this tutorial use the result in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
 
 ---
 
@@ -45,13 +46,13 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
     !![API Details](api_details.png)
 
-8.  Choose the download button for `EDMX` option in the Value column. Log on to SAP API Business Hub if you have to.
+8.  Choose the download button for `EDMX` option in the **Value** column. Log on to SAP API Business Hub if you have to.
 
     If you are using Google Chrome as a browser, you now see the downloaded EDMX file in the footer bar:
 
     !![API EDMX](edmxdownload.png)
 
-    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `templates/cap/ext-service-add/srv/external`.
+    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `tutorial/templates/ext-service-add/srv/external`.
 
 
 
@@ -99,7 +100,7 @@ Additionally, the file will be registered as service definition in the `package.
 [ACCORDION-BEGIN [Step 3: ](Add mock data for Business Partner)]
 In this step, you add some mock data for the business partner service. This allows you to perform tests using the service without the need to connect to an actual remote service.
 
-1. Copy the folder `data` from `templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
+1. Copy the folder `data` from `tutorial/templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
 
     The folder contains a CSV file `API_BUSINESS_PARTNER-A_BusinessPartner.csv` with some business partner data.
 
@@ -113,7 +114,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     ```
     ...
-    > filling API_BUSINESS_PARTNER.A_BusinessPartner from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
+    > init from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
     ...
     [cds] - mocking API_BUSINESS_PARTNER { at: '/api-business-partner' }
     [cds] - serving RiskService { at: '/service/risk', impl: './srv/risk-service.js' }
@@ -130,33 +131,39 @@ In this step, you add some mock data for the business partner service. This allo
     !![API Business Partner service](api-business-partner-service.png)
 
 
-    For this application, you need only a few fields from the `A_BusinessPartner` entity. To do this, you create a projection on the external service. Since in this example, you're only interested in the business partners that are suppliers, you use the name `Suppliers` for your projection.
+    For this application, you need only a few fields from the `A_BusinessPartner` entity. To do this, you create a projection on the external service. Since in this example, you are only interested in the business partners that are suppliers, you use the name `Suppliers` for your projection.
 
 5. Open the `db/schema.cds` file and add the following entity at the end of the file:
 
     ```Swift
-    // using an external service from
     using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER';
 
-    entity Suppliers as projection on bupa.A_BusinessPartner {
-      key BusinessPartner as ID,
-      BusinessPartnerFullName as fullName,
-      BusinessPartnerIsBlocked as isBlocked,
+        entity Suppliers as projection on bupa.A_BusinessPartner {
+            key BusinessPartner as ID,
+            BusinessPartnerFullName as fullName,
+            BusinessPartnerIsBlocked as isBlocked,
     }
     ```
 
-    In the projection, the fields are also given more appealing names. It is much easier to work with your own projection and by this you also avoid requesting data that you're not interested in.
+    In the projection, the fields are also given more appealing names. It is much easier to work with your own projection and by this you also avoid requesting data that you are not interested in.
 
 6. Expose supplier information through your service by adding the following lines to your `srv/risk-service.cds` file:
 
-    ```Swift
-    @readonly
-    entity Suppliers @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer', 'RiskManager' ]
-                }
-            ]) as projection on my.Suppliers;
+    ```Swift[7-13]
+    service RiskService {
+        entity Risks @(restrict : [
+        ...
+              ]) as projection on my.Risks;
+          annotate Risks with @odata.draft.enabled;
+        ...
+        @readonly
+        entity Suppliers @(restrict : [
+                  {
+                      grant : [ 'READ' ],
+                      to : [ 'RiskViewer', 'RiskManager' ]
+                  }
+              ]) as projection on my.Suppliers;
+    }
     ```
 
     The service is limited to read accesses using `@readonly` and the read permission is given to the roles `RiskViewer` and `RiskManager`.
@@ -175,9 +182,15 @@ In this step, you add some mock data for the business partner service. This allo
 [ACCORDION-BEGIN [Step 4: ](Connect to the sandbox service)]
 Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-use), you will learn how to connect the business partner service with a real SAP S/4HANA system. In this tutorial here, you use the sandbox system to try out your application with a real remote system.
 
+1. Install the node packages to mock the external services:
+
+    ```
+    npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/util
+    ```
+
 1. Open again the [**Business Partner (A2X)**](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) page on the **SAP API Business Hub**.
 
-2. Under **Overview** **&rarr;** **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
+2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
     !![Sandbox](sandbox.png)
 
@@ -197,7 +210,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 4. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -250,7 +263,7 @@ To solve this issue, you add some handler code to delegate the call from the `Su
 
 2. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -321,7 +334,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
 
 6. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -332,7 +345,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
     !![Business Partner Data](bpartners_data.png)
 
 [VALIDATE_1]
-The result of this tutorial can be found in the [`ext-service-add`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add) branch.
+The result of this tutorial can be found in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
 
 
 [ACCORDION-END]

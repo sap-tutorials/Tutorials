@@ -1,41 +1,44 @@
 ---
-title: Anonymous Blocks
-description: Leverage SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-cloud, products>sap-business-application-studio]  
 time: 15
 ---
+# Anonymous Blocks 
+<!-- description --> Leverage SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:** [Creating SQLScript User Defined Libraries](hana-cloud-sqlscript-libraries)
 
-## Details
-### You will learn  
+## You will learn  
 - How to invoke SQLScript logic without a persistent logic container  
 
+## Intro
 In this exercise, we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Anonymous Block )]
+### Create Anonymous Block 
+
 
 1. From the Database Explorer page, open a new SQL Console, by right-clicking on the container, and choosing **Open SQL Console**.
 
-    !![SQL console](1_1.png)
+    <!-- border -->![SQL console](1_1.png)
 
 2. To have an anonymous block you need a do begin … end.  Enter the this code in the SQL tab.
 
-    !![SQL tab](1_2.png)
+    <!-- border -->![SQL tab](1_2.png)
 
 3. Copy the logic from the procedure `get_po_header_data` into the body.  Make sure to only copy the code between the BEGIN and END statements
 
-    !![logic](1_3.png)
+    <!-- border -->![logic](1_3.png)
 
 4. Copy the signature from the procedure `get_po_header_data` into the signature part of the anonymous block. Ensure the parameter is assigned to a query parameter placeholder (?) as shown.
 
-    !![sql code](1_4.png)
+    <!-- border -->![sql code](1_4.png)
 
 5. The completed code should look very similar to this.
 
@@ -75,17 +78,13 @@ In this exercise, we will show you how you can invoke SQLScript logic without th
     end;
     ```
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Run and Check Results)]
+### Run and Check Results
+
 
 1. Click **Run**.  You will notice that the SQLScript code is executed and results are shown.  Again, there is no procedure or function created here, just the SQLScript being executed by the engine.
 
-    !![SQL executed](2_1.png)
+    <!-- border -->![SQL executed](2_1.png)
 
 
-[DONE]
-[ACCORDION-END]

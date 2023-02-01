@@ -1,27 +1,27 @@
 ---
-title: Connect to GitHub and create an MTA application
-description: Access SAP web IDE for SAP HANA and create an MTA application from a GitHub repository
-auto_validation: true
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Connect to GitHub and create an MTA application
+<!-- description --> Access SAP web IDE for SAP HANA and create an MTA application from a GitHub repository
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 Create a Multi Target Project by cloning a repository from GitHub.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a GitHub Repository)]
+### Create a GitHub Repository
+
 
 [Log in or create an account in Git Hub](https://github.com/). Create a new repository:
 
@@ -35,10 +35,9 @@ Once created, click on the **Clone or download** and **copy the URL** so you hav
 
 ![Create a New repo](3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect to SAP Web IDE for SAP HANA)]
+### Connect to SAP Web IDE for SAP HANA
+
 
 Open a new **incognito browser** on the web browser and enter the following address `https://hxehost:53075`. If you get a security warning because the certificate is self-signed, click on **Proceed to `hxehost`**:
 
@@ -66,11 +65,10 @@ You should see a single project in your workspace:
 
 ![Project in workspace](cloned.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Set the space)]
+### Set the space
+
 
 You need to set the space for your cloned project.
 
@@ -82,10 +80,9 @@ Go into the Space and select `development`. Click on **Save**:
 
 ![Project in workspace](13.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Sync your application)]
+### Sync your application
+
 
 Open the GitHub pane using the button on the right side bar:
 
@@ -109,6 +106,3 @@ Finally, open the `mta.yaml` file that has been created automatically. Copy the 
 
 ![Validate](Code.png)
 
-[VALIDATE_1]
-
-[ACCORDION-END]

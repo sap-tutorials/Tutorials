@@ -1,32 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Add Transactional Behavior to Your Core Data Services
-description: Create a behavior implementation in SAP BTP, ABAP Environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner,  programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Add Transactional Behavior to Your Core Data Services
+<!-- description --> Create a behavior implementation in SAP BTP, ABAP Environment.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
-## Details
-### You will learn
+## You will learn
 - How to define a behavior implementation
 
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 >For the **unmanaged implementation** type, the application developer must implement essential components of the REST contract manually. For the **managed scenario**, all required standard operations (create, update, delete) must only be specified in the behavior definition to obtain a ready-to-run business object.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
+### Open Eclipse
+
+  1. Go to your ABAP package `Z_BOOKING_XXX` and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`.
 
       ![Open Eclipse](eclipse.png)
@@ -37,10 +40,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Open Eclipse](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create behavior definition)]
+### Create behavior definition
+
   1. Right-click on your data definition `ZI_BOOKING_XXX` and select **New Behavior Definition**.
 
       ![Create behavior definition](behaviordef.png)
@@ -57,54 +59,53 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create behavior definition](unmanaged.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement behavior definition)]
+### Implement behavior definition
+
   1. Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `ETag` handling. Replace the following coding:
 
     ```ABAP
-    unmanaged implementation in class z_i_booking_xxx unique;
+    unmanaged implementation in class zbp_i_booking_xxx unique;
+    //strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
 
-    define behavior for ZI_Booking_xxx alias booking
+    define behavior for ZI_BOOKING_XXX alias booking
+    //late numbering
     lock master
+    authorization master ( instance )
     etag master LastChangedAt
     {
       create;
       update;
       delete;
     }
-
     ```
   2. Save and activate.
 
       ![Implement behavior definition](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create behavior implementation)]
-  1. Right-click on your behavior definition and select **New Behavior Implementation**.
+### Create behavior implementation
 
-      ![Create behavior implementation](behavior.png)
+  1. In your behavior definition **`ZI_Booking_XXX`**, set the cursor before **`z_i_booking_xxx`** and press **CTRL + 1**. Select **`Create behavior implementation class z_i_booking_xxx`**.
 
-  2. Provide the name **`Z_I_BOOKING_XXX`** and a description and click **Next**.
+      ![Create behavior implementation](behavex.png)
 
-      ![Create behavior implementation](class.png)
+  2. Provide a description and click **Next**.
+
+      ![Create behavior implementation](behave2.png)
 
   3. Provide a transport request if required and click **Finish**.
 
-      ![Create behavior implementation](transport.png)
+      ![Create behavior implementation](behave3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement behavior class)]
+### Implement behavior class
 
-  1. Replace your code in local types with following:
+
+  1. In your implementation class `ZBP_I_BOOKING_XXX`, replace your code in local types with following:
 
     ```ABAP
-    CLASS lcl_buffer DEFINITION.
+    CLASS lhc_buffer DEFINITION.
     * 1) define the data buffer
       PUBLIC SECTION.
 
@@ -142,15 +143,15 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
             ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
           ENDIF.
 
-          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING field-symbol(<ls_buffer>).
+          READ TABLE lhc_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING field-symbol(<ls_buffer>).
           IF sy-subrc = 0.
             IF <ls_buffer>-flag = 'C'.
-              DELETE TABLE lcl_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
+              DELETE TABLE lhc_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
             ELSE.
               <ls_buffer>-flag = 'D'.
             ENDIF.
           ELSE.
-            INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
+            INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lhc_buffer=>mt_buffer.
           ENDIF.
         ENDLOOP.
 
@@ -165,7 +166,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
           ls_create-%data-booking = lv_max_booking.
           GET TIME STAMP FIELD DATA(zv_tsl).
           ls_create-%data-lastchangedat = zv_tsl.
-          INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
+          INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lhc_buffer=>mt_buffer.
 
           IF ls_create-%cid IS NOT INITIAL.
             INSERT VALUE #( %cid = ls_create-%cid  booking = ls_create-booking ) INTO TABLE mapped-booking.
@@ -179,11 +180,11 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
               ls_update-booking = mapped-booking[ %cid = ls_update-%cid_ref ]-booking.
             ENDIF.
 
-            READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING <ls_buffer>.
+            READ TABLE lhc_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING <ls_buffer>.
             IF sy-subrc <> 0.
 
               SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
-              INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
+              INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lhc_buffer=>mt_buffer ASSIGNING <ls_buffer>.
             ENDIF.
 
             IF ls_update-%control-customername IS NOT INITIAL..
@@ -207,7 +208,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       METHOD read.
         LOOP AT it_booking_key INTO DATA(ls_booking_key).
           " check if it is in buffer (and not deleted).
-          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
+          READ TABLE lhc_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
           IF sy-subrc = 0 AND ls_booking-flag <> 'U'.
             INSERT CORRESPONDING #( ls_booking-data ) INTO TABLE et_booking.
           ELSE.
@@ -224,6 +225,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       METHOD lock.
        "provide the appropriate lock handling if required
       ENDMETHOD.
+
+      METHOD get_instance_authorizations.
+      ENDMETHOD.
+
     ENDCLASS.
 
 
@@ -239,15 +244,15 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       METHOD save.
         DATA lt_data TYPE STANDARD TABLE OF ztbooking_xxx.
 
-        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'C' ) (  row-data ) ).
+        lt_data = VALUE #(  FOR row IN lhc_buffer=>mt_buffer WHERE  ( flag = 'C' ) (  row-data ) ).
         IF lt_data IS NOT INITIAL.
           INSERT ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
-        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'U' ) (  row-data ) ).
+        lt_data = VALUE #(  FOR row IN lhc_buffer=>mt_buffer WHERE  ( flag = 'U' ) (  row-data ) ).
         IF lt_data IS NOT INITIAL.
           UPDATE ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
-        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'D' ) (  row-data ) ).
+        lt_data = VALUE #(  FOR row IN lhc_buffer=>mt_buffer WHERE  ( flag = 'D' ) (  row-data ) ).
         IF lt_data IS NOT INITIAL.
           DELETE ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
@@ -266,18 +271,16 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Open SAP Fiori elements view](saveandactivate.png)
 
-  3. Go back to your service binding **`Z_I_BOOKING_XXX`** and open the preview for SAP Fiori elements app on the right side.
+  3. Go back to your service binding **`ZI_BOOKING_XXX`** and open the preview for SAP Fiori elements app on the right side.
 
       ![Open SAP Fiori elements view](fiori.png)
 
   4. Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
 
-      ![Check result](result.png)
+      ![Check result](result2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

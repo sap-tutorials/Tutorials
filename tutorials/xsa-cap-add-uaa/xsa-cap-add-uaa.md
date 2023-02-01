@@ -1,6 +1,5 @@
 ---
-title: HANA Native, Add User Authentication to Your Application
-description: Define security and enable user authentication and authorization.
+parser: v2
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -8,21 +7,25 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
+# HANA Native, Add User Authentication to Your Application
+<!-- description --> Define security and enable user authentication and authorization.
+
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have [created a user interface](xsa-cap-create-ui).
  - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition).
 
-## Details
-### You will learn
+## You will learn
   - How to create an instance of the User Authentication and Authorization service
   - How to incorporate security into the routing endpoint of your application
 
+## Intro
 This tutorial can be completed in SAP HANA, express edition SPS04 or higher.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define the security model for your application)]
+### Define the security model for your application
+
 
 You will first define the different roles a user could have when using your application. As the developer of the application, you will define the roles. Then, an administrator would create the roles and assign them to the different users. In this tutorial, it is assumed you are the administrator of your instance so you will be performing this task, too.
 
@@ -92,10 +95,9 @@ Paste the following content into the file and save it
 
 ![Save xs-security file](2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an instance of the UAA service)]
+### Create an instance of the UAA service
+
 
 
 The User Authentication and Authorization service is a backing service. You will create an instance of it and attach it to your application so that a user needs to authenticate before accessing it through your web module.
@@ -110,11 +112,10 @@ Navigate to the Resource Manager in the Web IDE and delete the resource instance
 >&nbsp;
 >
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add UAA as a resource)]
+### Add UAA as a resource
+
 
 You now need to declare the instance of the UAA service as a dependency in the deployment descriptor. During the deployment process, this will tell the platform that the instance is needed for some of the micro-services to run. It will also bind the service to the application.
 
@@ -196,10 +197,9 @@ Remember to **Save**.
 >       path: xs-security.json
 > ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Modify routing)]
+### Modify routing
+
 
 The web module will be the entry endpoint to the service modules, which in turn expose access to the database.
 
@@ -231,16 +231,13 @@ As a reminder of what you modified in the [previous tutorial](xsa-cap-create-ui)
 > Some more information about how routing works can be found in [this blog post](https://blogs.sap.com/2018/02/16/xs-advanced-for-not-so-dummies-routing/).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the application)]
+### Test the application
+
 
 Before adding authentication, when you [created the CDS services and user interface](xsa-cap-create-ui), you could access the web module without authentication. Run the web module again and use the URL in a different browsing mode (e.g., incognito) or a different browser in which you are not logged in.
 
 ![Approuter call](18.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

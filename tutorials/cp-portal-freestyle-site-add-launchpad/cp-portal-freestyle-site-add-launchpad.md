@@ -1,6 +1,5 @@
 ---
-title: Add a Fiori Launchpad Page to Your Portal Freestyle Site
-description: Add an SAP Fiori launchpad page to your Portal site and add apps to it.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
@@ -9,12 +8,15 @@ author_profile: https://github.com/LindsayBert
 time: 10
 ---
 
-## Details
-### You will learn  
+# Add a Fiori Launchpad Page to Your Portal Freestyle Site
+<!-- description --> Add an SAP Fiori launchpad page to your Portal site and add apps to it.
+
+## You will learn  
  - How to add a SAP Fiori launchpad page to your freestyle site.
 
 
-[ACCORDION-BEGIN [Step 1: ](Add a SAP Fiori launchpad page)]
+### Add a SAP Fiori launchpad page
+
 
 In this tutorial you're going to create a launchpad page in your Portal freestyle site and then later you'll add apps to it.
 
@@ -44,10 +46,9 @@ In this tutorial you're going to create a launchpad page in your Portal freestyl
 
 The `Supplier Self Service` page is added to the list of pages.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create new group for launchpad tiles)]
+### Create new group for launchpad tiles
+
 
 In this step you will create a new tile group. Tile groups logically aggregate tiles in the SAP Fiori launchpad page.
 
@@ -77,11 +78,10 @@ In this step you will create a new tile group. Tile groups logically aggregate t
 
     ![New group is created](10-save-group.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add your page to the Portal site menu)]
+### Add your page to the Portal site menu
+
 
 In this step you will add the SAP Fiori launchpad page (named **Supplier Self Service**) to the Portal's navigation menu.
 
@@ -97,10 +97,9 @@ In this step you will add the SAP Fiori launchpad page (named **Supplier Self Se
 
     > The **Menu Editor** is opened with a new menu entry named **Supplier Self Service** added at the bottom of the menu list. The new entry points to the newly created page.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Publish your site)]
+### Publish your site
+
 
 In this step we will publish the site so that you can see how the new launchpad page is displayed in the Portal site menu.
 
@@ -116,8 +115,7 @@ In this step we will publish the site so that you can see how the new launchpad 
 
     ![Display launchpad page](15-display-page.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

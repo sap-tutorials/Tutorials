@@ -1,20 +1,21 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Authorization Model and App in SAP BTP, ABAP Environment
-description: Create IAM Apps, services and catalogs for authorization model in the SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Authorization Model and App in SAP BTP, ABAP Environment
+<!-- description --> Create IAM Apps, services and catalogs for authorization model in the SAP BTP, ABAP environment.
+
 ## Prerequisites  
   - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to create authorization fields
   - How to create access controls
   - How to edit authorization default values
@@ -23,12 +24,14 @@ author_profile: https://github.com/mervey45
   - How to create business catalogs
   - How to create restriction types
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create authorization field)]
+### Create authorization field
+
 1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create authorization field](field.png)
@@ -55,11 +58,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create authorization field](field5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create authorization object)]
+### Create authorization object
+
 1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create authorization object](object.png)
@@ -87,10 +89,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create access control)]
+### Create access control
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](access.png)
@@ -131,10 +132,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ```
     Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enhance behavior)]
+### Enhance behavior
+
 Switch to your behavior implementation, click `CTRL + F` and search for method validate. Edit following as your validate method.
 ```ABAP
      METHOD validate.
@@ -147,10 +147,9 @@ Switch to your behavior implementation, click `CTRL + F` and search for method v
 
 Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Edit authorization default values)]
+### Edit authorization default values
+
   1. Select your service binding`Z_I_ROOM_BND_XXX` and click **Default Authorization Values**.
 
       ![Edit authorization default values](default.png)
@@ -162,10 +161,9 @@ Save and activate.
       Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create IAM app & add service)]
+### Create IAM app & add service
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](app.png)
@@ -207,17 +205,16 @@ Save and activate.
 
       ![Create Access Control](app8.png)
 
-  9. Select following activity:
+  9. Select following activity. Therefore select `Z_LOCAOXXX` first and then type your instances and then the activity.
 
       ![Create Access Control](app14.png)
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create restriction field and restriction type)]
+### Create restriction field and restriction type
+
   1. Right-click on your package **`Z_ROOM_XXX`** and select **New** > **Other ABAP Repository Object**.
 
     ![Create restriction field and restriction type](restriction6.png)
@@ -269,12 +266,11 @@ Save and activate.
     Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Create business catalog & add IAM app)]
+### Create business catalog & add IAM app
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](catalog.png)
@@ -319,19 +315,16 @@ Save and activate.
 
       ![Create Access Control](catalog9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create restriction type)]
+### Create restriction type
+
 
 Open your business catalog **`Z_ROOM_BC_XXX`**, add **`Z_LOC_RT_XXX`** as a restriction type, select write and click **Publish Locally**.
 
 ![Create restriction type](restriction.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,94 +1,115 @@
 ---
-title: Add Localization to Luigi UI5 Micro-Frontend
-description: Enable your micro-frontend to be displayed in multiple languages using the Luigi localization features.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>javascript]
 primary_tag: topic>user-interface
 ---
 
-## Details
-### You will learn
+# Add Localization to Luigi UI5 Micro-Frontend
+<!-- description --> Enable your micro-frontend to be displayed in multiple languages using the Luigi localization features.
+
+## You will learn
   - How to add localization to your UI5 micro-frontend
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Get current language with Luigi Client)]
+### Update current language with Luigi Client
+
 
 In this step, you will add a function to get the current language from Luigi Client and then update it, so that the language of the UI5 micro-frontend can be changed accordingly.
 
-Go to the `Order.controller.js` file and add this below `onInit: function (Controller) {`:
+ 1. Open the `ui5-mf/uimodule/webapp/controller/MainView.controller.js` and replace its content with the code below:
 
-```JavaScript
-const updateCurrentLanguage = () => {
-  const currentLanguage = LuigiClient.uxManager().getCurrentLocale();
-  sap.ui.getCore().getConfiguration().setLanguage(currentLanguage);
-}
+    ```js
+    sap.ui.define(["luigi/ui5/controller/BaseController"], function (Controller) {
+        "use strict";
 
-LuigiClient.addInitListener(updateCurrentLanguage);
-```
+        return Controller.extend("luigi.ui5.controller.MainView", {
+            onInit: function (Controller) {
+                const oModel = new sap.ui.model.json.JSONModel();
 
-[DONE]
-[ACCORDION-END]
+                oModel.loadData("../model/products.json");
+                this.getView().setModel(oModel);
+                //THIS HAS BEEN ADDED - TO UPDATE THE CURRENT LANGUAGE
+                const updateCurrentLanguage = () => {
+                    const currentLanguage = LuigiClient.uxManager().getCurrentLocale();
+                    sap.ui.getCore().getConfiguration().setLanguage(currentLanguage);
+                }
+                //THIS HAS BEEN ADDED - LISTENER FOR LANGUAGE CHANGES
+                LuigiClient.addInitListener(updateCurrentLanguage);
+            },
 
-[ACCORDION-BEGIN [Step 2: ](Add files with multi-language content)]
+            onListItemPress: function (oEvent) {
+                const id = oEvent.getSource().getBindingContext().getProperty("id");
+                // GETTING TRANSLATED TITLE TEXT FOR THE MODAL TITLE
+                const title = this.getView().getModel("i18n").getResourceBundle().getText("ModalText");
+
+                LuigiClient.linkManager().openAsModal('/home/products/' + id, { title: title, size: 'm' });
+            }
+        });
+    });
+    ```
+
+
+### Add files with multi-language content
+
 
 In this step, you will create files with the text that is to be changed within the UI5 micro-frontend.
 
-1. Create a folder called ​`i18n`​ under the ​`uimodule/webapp`​ folder.  Inside it, create a file called `i18n_de_DE.properties` with the following content:
+1. Find the folder ​`i18n`​ under the ​`uimodule/webapp`​.  Inside it, create a file called `i18n_de_DE.properties` with the following content:
 
-    ```
-    Quantity = Menge
+    ```json
+    ModalText = Produkt Details
+    Quantity = Anzahl
     ```
 
 2. Create another file called `i18n_en_US.properties` with the following content:
 
-    ```
+    ```json
+    ModalText = Product Details
     Quantity = Quantity
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add default language to index.html)]
+### Add default language to index.html
 
-Edit the  `ui5-mf/uimodule/webapp/index.html` file  by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
 
-```HTML
- data-sap-ui-language='en-US'
-```
+1. Edit the `ui5-mf/uimodule/webapp/index.html` file by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
 
-[DONE]
-[ACCORDION-END]
+    ```HTML
+    <script
+        id="sap-ui-bootstrap"
+        src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-language='en-US'
+        data-sap-ui-resourceroots='{
+                "luigi.ui5": "./"
+            }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="allow"
+        data-sap-ui-preload=""
+    ></script>
+    ```
 
-[ACCORDION-BEGIN [Step 4: ](Provide translation in UI5)]
+
+### Provide translation in UI5
+
 
 This step involves the standard process in UI5 for providing translation.
 
-1. Edit the `ui5-mf/uimodule/webapp/manifest.json` file by adding a `model` object into the `sap.ui5` object:
-
-    ```JSON
-    "models": {
-        "i18n": {
-          "type": "sap.ui.model.resource.ResourceModel",
-          "settings": {
-            "bundleName": "luigi.ui5.i18n.i18n"
-          }
-        }
-      },
-    ```
-
-2. Edit the ​`ui5-mf/uimodule/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
+1. Edit the ​`ui5-mf/uimodule/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
 
     ```XML
     <ObjectAttribute text="{i18n>Quantity}: {orderQuantity}" />
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run completed app)]
+### Run completed app
+
 
 Now, your app should be complete and you can run it locally to see if everything works. First, open a terminal/command prompt window and navigate to your project folder.
 
@@ -120,8 +141,7 @@ Now, your app should be complete and you can run it locally to see if everything
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 

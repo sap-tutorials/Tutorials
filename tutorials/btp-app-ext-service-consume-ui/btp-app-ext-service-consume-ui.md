@@ -1,11 +1,12 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Consume the External Service in the UI of Your Application
 description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-api-management]
+tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-api-management]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -18,9 +19,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to handle expands to remote entities
  - How to add supplier information to the Risks UI
  - How to add value help to select a supplier
-
-
-To start with this tutorial use the result in the [`ext-service-add`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add) branch.
 
 ---
 
@@ -42,11 +40,11 @@ To start with this tutorial use the result in the [`ext-service-add`](https://gi
 
     This managed association adds a property `supplier_ID` to the `Risks` entity under the hood, so that the key and the ID field of the supplier can be stored.
 
-2. Copy the file `templates/ext-service-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
+2. Copy the file `tutorial/templates/ext-service-consume-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -66,7 +64,7 @@ To start with this tutorial use the result in the [`ext-service-add`](https://gi
 [ACCORDION-BEGIN [Step 2: ](Handle expands to remote entities)]
 Add the following code to your `srv/risk-service.js` file to handle the expands for supplier data of `Risks`:
 
-```JavaScript[11-46]
+```JavaScript[11-49]
     this.after('READ', 'Risks', risksData => {
         const risks = Array.isArray(risksData) ? risksData : [risksData];
         risks.forEach(risk => {
@@ -79,6 +77,7 @@ Add the following code to your `srv/risk-service.js` file to handle the expands 
     });
     // Risks?$expand=supplier
     this.on("READ", 'Risks', async (req, next) => {
+        if (!req.query.SELECT.columns) return next();
         const expandIndex = req.query.SELECT.columns.findIndex(
             ({ expand, ref }) => expand && ref[0] === "supplier"
         );
@@ -88,10 +87,12 @@ Add the following code to your `srv/risk-service.js` file to handle the expands 
         req.query.SELECT.columns.splice(expandIndex, 1);
 
         // Make sure supplier_ID will be returned
-        if (!req.query.SELECT.columns.find(
-                column => column.ref.find((ref) => ref == "supplier_ID"))
-        )
-        req.query.SELECT.columns.push({ ref: ["supplier_ID"] });
+        if (!req.query.SELECT.columns.indexOf('*') >= 0 &&
+            !req.query.SELECT.columns.find(
+                column => column.ref && column.ref.find((ref) => ref == "supplier_ID"))
+        ) {
+            req.query.SELECT.columns.push({ ref: ["supplier_ID"] });
+        }
 
         const risks = await next();
 
@@ -132,7 +133,7 @@ All the required suppliers are read with one request from `API_BUSINESS_PARTNER`
 [ACCORDION-BEGIN [Step 3: ](Add supplier information to the Risks UI)]
 Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
-1. Open the `srv/risks-service-ui.cds` file in the `cpapp` folder.
+1. Open the `srv/risks-service-ui.cds` file.
 
 2. Add the `supplier` annotations:
 
@@ -189,7 +190,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 5. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -211,7 +212,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 [ACCORDION-BEGIN [Step 4: ](Add value help to select a supplier)]
 The last thing you add is the value help to select a supplier from the remote system.
 
-1. Open the `srv/risks-service-ui.cds` file in the `cpapp` folder.
+1. Open the `srv/risks-service-ui.cds` file.
 
 2. Add the following annotations to the end of the file:
 
@@ -249,7 +250,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -268,7 +269,7 @@ The last thing you add is the value help to select a supplier from the remote sy
     !![Supplier Value List](supplier_value_list.png)
 
 [DONE]
-The result of this tutorial can be found in the [`ext-service-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-ui) branch.
+The result of this tutorial can be found in the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch.
 
 
 [ACCORDION-END]

@@ -1,29 +1,32 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Behavior Definition for Managed Scenario
-description: Create behavior definition and implementation for managed scenario.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Behavior Definition for Managed Scenario
+<!-- description --> Create behavior definition and implementation for managed scenario.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
-- You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
-## Details
-### You will learn  
+## You will learn  
   - How to create behavior definition
   - How to create behavior implementation
   - How to create behavior definition for projection view
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create behavior definition)]
+### Create behavior definition
+
   1. Right-click on your data definition `ZI_TRAVEL_M_XXX` and select **New Behavior Definition**. 
 
       ![Create behavior definition](definition.png)
@@ -41,7 +44,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   4. Replace your code with following.
 
     ```ABAP
-    managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
+    managed implementation in class zbp_i_travel_m_xxx unique;
 
     define behavior for ZI_TRAVEL_M_XXX alias Travel
     persistent table ztravel_xxx
@@ -77,10 +80,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create behavior definition for projection view)]
+### Create behavior definition for projection view
+
   1. Right-click on your data definition `ZC_TRAVEL_M_XXX` and select **New Behavior Definition**.
 
       ![Create behavior definition for projection view](projection.png)
@@ -113,12 +115,17 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate.png)
 
-  6. Now switch to your service binding and double click on `TravelProcessor`.
+  6. Now switch to your service binding and activate your service binding again.
+
+     ![Create behavior definition for projection view](activate2.png)
+
+  7. Double-click on `TravelProcessor` to start your preview.
 
       ![Create behavior definition for projection view](projection4.png)
 
   7. **Refresh** your browser and check your result.
 
+    >**HINT**: If you don't see the create and delete buttons, then please unpublish your service binding, activate and publish it again.
      The create and delete button appears on the UI because of the managed scenario.
      You can create and edit travel bookings or you' re able to delete existing ones.
 
@@ -126,11 +133,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition for projection view](projection5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

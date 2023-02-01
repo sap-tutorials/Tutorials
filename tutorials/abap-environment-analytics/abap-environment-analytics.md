@@ -1,13 +1,15 @@
 ---
-title: Develop and Consume Queries on SAP Analytics Cloud
-description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
+parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-btp--abap-environment
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-analytics-cloud, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
+
+# Develop and Consume Queries on SAP Analytics Cloud
+<!-- description --> Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
@@ -17,26 +19,25 @@ author_profile: https://github.com/niloofar-flothkoetter
  - Requires Customer or Partner License.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an analytical query as CDS View Entities
   - How to connect an ABAP System to SAP Analytics Cloud
   - How to consume analytical queries on SAP Analytics Cloud by creating models and stories
 
+## Intro
 Always replace `####` with your initials or group number.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Access) service protocol. In this Tutorial you will create a complete Analytical Data Model for Booking data. This consists out of dimensions for Carrier, Customer, Connection and Agency data, as well as an interface CDS view for Booking data which acts as a data source for the cube and query.
 These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
 
 ![overview](1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import templates for Analytical CDS views)]
+### Import templates for Analytical CDS views
+
 
 As a first task you will start to import templates that you will use in this tutorial to create Analytical CDS views such as dimension views, cubes and queries.
 
@@ -69,10 +70,9 @@ The templates already contain certain annotations that are mandatory for the abo
 
     ![apply](0140.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the first dimension for Carrier)]
+### Create the first dimension for Carrier
+
 
 >Dimensions views are links to various master data, which are later used in reporting as further attributes (according to which different aggregations can be made) and thus make up the versatility of our Analytical Model.
 
@@ -121,11 +121,10 @@ You will start to create a dimension view that contains the different Airlines /
       ![define view](1060.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Edit dimension view)]
+### Edit dimension view
+
 
   1. Now you need to edit the dimension view. Here you can use code completion to add the values for the annotations
 
@@ -186,10 +185,9 @@ You will start to create a dimension view that contains the different Airlines /
     |  @ObjectModel.text.element: ['Name'] | Using this annotation you define that the attribute **Name**, contains the text element for a given CarrierId. |  
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create three additional dimensions)]
+### Create three additional dimensions
+
 
   ***Customer Dimension***
 
@@ -406,10 +404,9 @@ You will start to create a dimension view that contains the different Airlines /
       }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Booking interface view)]
+### Booking interface view
+
 You now have to create an interface view that serves as a data source for the Cube.
 
   1. Right click on the folder **Data Definitions** and choose **New** > **New Data Definition** from the context menu.
@@ -476,10 +473,9 @@ You now have to create an interface view that serves as a data source for the Cu
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create cube)]
+### Create cube
+
 >The Cube is the analytical interface view that is ultimately used in the query and "holds together" the model. In addition to the facts and the measurable key figures (if necessary also calculations), it contains references to the dimensions.
 
 
@@ -636,10 +632,9 @@ This annotation is part of the template **Define a View Entity for a Cube** that
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement query as CDS view entity)]
+### Implement query as CDS view entity
+
 
 Since a query belongs to the projection layer (formerly known as consumption layer) it must have a **C** in its name according to the naming convention used in the Virtual Data Model (VDM) used in SAP S/4HANA. To create a query, there is a mandatory header annotation: **@Analytics.query: true**
 
@@ -735,10 +730,9 @@ Again you can use a template that you have imported at the beginning of this tut
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Data preview)]
+### Data preview
+
 
 Similar to the SAP Fiori Elements preview which is offered for OData V2 UI and OData V4 UI service bindings there is now an Analytical Data Preview available. This can be used by the ABAP developer to test the implementation of an Analytical Query since the preview uses the InA protocol.
 
@@ -758,10 +752,9 @@ Now that you have created the query it is possible to use a data preview to test
    ![Data Preview](1159.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create service definition)]
+### Create service definition
+
   You use a service definition to define which data is to be exposed as a business service, using one or more business service bindings.
 
   1. Right-click your created query in step 6 and choose **New Service Definition**.
@@ -781,10 +774,9 @@ Now that you have created the query it is possible to use a data preview to test
   4. Select the template **Define Service** and press **Finish**.
   5. After the query is exposed as a service it must be activated by pressing **Ctrl+F3**
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create InA UI service binding)]
+### Create InA UI service binding
+
   The service binding is used to bind a service definition to a communication protocol and in our case, the protocol that enables web-based data access from ABAP systems is the Information Access (InA) protocol.
 
   1. Right click your newly created service definition and choose New Service Binding.
@@ -808,10 +800,9 @@ Now that you have created the query it is possible to use a data preview to test
 
     >The analytical query will be displayed with the external service name in SAP Analytics Cloud as the data source.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Create IAM App)]
+### Create IAM App
+
   1. Right-click your package, choose **New** > **Other ABAP Repository Object**.
 
       ![New](step9-1.png)
@@ -846,10 +837,9 @@ Now that you have created the query it is possible to use a data preview to test
     ![publish locally](1213.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create business catalog)]
+### Create business catalog
+
   1. Right-click **Cloud Identity and Access Management** in your package, choose **New** > **Business Catalog**.
 
       ![business catalog](step10-1.png)
@@ -872,10 +862,9 @@ Now that you have created the query it is possible to use a data preview to test
 
       ![publish](step10-7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Add business catalog to developer business role)]
+### Add business catalog to developer business role
+
   1. Login to the Fiori launchpad and open **Maintain Business Roles** App under **Identity and Access Management**.
 
       ![maintain business roles](step11-1.png)
@@ -897,10 +886,9 @@ Now that you have created the query it is possible to use a data preview to test
       ![save](step11-5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Create communication system and arrangement)]
+### Create communication system and arrangement
+
   1. Back to the main page of Fiori launchpad and open **Communication Systems** App under **Communication Management**.
 
       ![Communication Systems](step12-1.png)
@@ -933,10 +921,9 @@ Now that you have created the query it is possible to use a data preview to test
 
       ![Outbound](step12-8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Connect the ABAP system to SAP Analytics Cloud)]
+### Connect the ABAP system to SAP Analytics Cloud
+
   1. Login to the SAP Analytics Cloud tenant.
 
       ![Login](step13-1.png)
@@ -955,10 +942,9 @@ Now that you have created the query it is possible to use a data preview to test
 
       ![result](step13-5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Create model)]
+### Create model
+
 Models transform your raw data into useful information that can then be used to create dynamic visualizations. Since you will use the unique feature Live Data Connection SAP Analytics cloud will create the model based on the analytical query that you have created and published in the previous exercise. Based on such a model you can perform online analysis without the need of data replication.
 
 1. Expand navigation bar.
@@ -1002,10 +988,9 @@ Models transform your raw data into useful information that can then be used to 
 
     ![modeler](2110.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Create Story)]
+### Create Story
+
 
 A story is a presentation-style document that uses various elements such as charts, images or tables to visualize your data.
 Adding a chart starts with picking a chart type. Then you select your model and add measures and dimension and start on working how the data is displayed. Here you will create a story including a chart, a table and a Donut chart.
@@ -1094,10 +1079,9 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
 > You have used the preconfigured connection of the SAP Analytics Cloud instance to connect to the SAP BTP ABAP environment system where you have developed an Analytical Query. The data was retrieved using a Live Data Connection so that any change in the data was immediately reflected in the visualization of your query in SAP Analytics Cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](More analytics charts and tables)]
+### More analytics charts and tables
+
   You can create more different and complicated analytics charts and tables with your query. Here there is some more examples.
 
   1. Click the chart icon in the task menu, click **Correlation** and choose **Scatter plot**.
@@ -1120,11 +1104,9 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
       ![save](3540.png)
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 20: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

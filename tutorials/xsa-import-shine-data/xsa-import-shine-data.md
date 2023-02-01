@@ -1,6 +1,5 @@
 ---
-title: Import Tables and Large Datasets (XS Advanced)
-description: Import SHINE sample tables and data using SAP Web IDE for SAP HANA.
+parser: v2
 primary_tag: products>sap-hana
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,26 +8,29 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 time: 5
 ---
 
+# Import Tables and Large Datasets (XS Advanced)
+<!-- description --> Import SHINE sample tables and data using SAP Web IDE for SAP HANA.
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Tutorials:** [Create an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
-## Details
-### You will learn  
+## You will learn  
 This tutorial will guide you through the process of downloading sample data and database artifacts and importing it into SAP HANA using SAP Web IDE for SAP HANA.
 
+## Intro
 If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html](xsa-ml-e2e-access-shine)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the archive)]
+### Download the archive
+
 
 Download the file `data.zip` from our public [GitHub repository](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex2/core-db/data.zip).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import Archive)]
+### Import Archive
+
 
 Import the archive into the data folder. This will probably be `src\data`. Right-click on the folder and choose `Import->From File System`:
 
@@ -42,11 +44,10 @@ Import the archive into the data folder. This will probably be `src\data`. Right
 
 ![Confirm](3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Purge duplicates and Build)]
+### Purge duplicates and Build
+
 
 Delete the files  `header.csv`,  `item.csv` and `load.hdbtabledata` (if available) to avoid conflicts during build:
 
@@ -62,10 +63,9 @@ Also delete the `SFlight` folder (if available).
 
 ![Build](5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check the imported entities in the Database Explorer)]
+### Check the imported entities in the Database Explorer
+
 
 The Database Explorer allows you to see the database artifacts you create in the different HDI containers.
 
@@ -83,8 +83,7 @@ You can now navigate the tables and check their content. Click on **Open Data** 
 
 ![HRTT](12.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

@@ -1,33 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Define and Expose a CDS-Based Travel Data Model
-description: Define CDS-based data model and create projection view.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Define and Expose a CDS-Based Travel Data Model
+<!-- description --> Define CDS-based data model and create projection view.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
-- You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
-## Details
-### You will learn   
+## You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
   - How to create service binding
 
+## Intro
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
 
->**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with**
-[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
+>**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with** [ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
+ 
+### Define CDS-based travel data model
 
-[ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
 
       ![Define CDS based travel data model](model.png)
@@ -43,18 +45,18 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Define CDS based travel data model](model3.png)
+      ![Define CDS based travel data model](sc.png)
 
   4. Click **Finish** to use your transport request.
 
       ![Define CDS based travel data model](model4.png)
 
 
-  5. Replace your code with following:
+  5. Add associations, fields, UI semantics and the `root` node to your data definition. Therefore replace your code with following:
 
     ```ABAP
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
-    @EndUserText.label: 'Travel data - XXX'
+    @EndUserText.label: 'Travel data XXX'
+    @AccessControl.authorizationCheck: #CHECK
     define root view entity ZI_TRAVEL_M_XXX
 
       as select from ztravel_xxx as Travel
@@ -65,6 +67,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       association [0..1] to I_Currency      as _Currency on $projection.currency_code = _Currency.Currency
 
     {
+
       key mykey,
           travel_id,
           agency_id,
@@ -93,7 +96,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           _Agency,
           _Customer,
           _Currency
-    }  
+    }
     ```
 
   6. Save and activate.
@@ -102,10 +105,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Your CDS view for travel booking is defined now. You can use and manipulate data that is persisted in your database.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create projection view for travel)]
+### Create projection view for travel
+
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
 
       ![Create projection view for travel](projection.png)
@@ -121,7 +123,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Create projection view for travel](projection3.png)
+      ![Create projection view for travel](sc2.png)
 
   4. Click **Finish** to use your transport request.
 
@@ -223,10 +225,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      The **projection** is created and includes UI annotations. The projection is the subset of the fields of the travel data model, which are relevant for the travel booking application.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create service definition)]
+### Create service definition
+
   1. Right-click on your data definition `ZC_TRAVEL_M_XXX` and select **New Service Definition**.
 
       ![Create service definition](definition.png)
@@ -238,7 +239,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Create service definition](definition2.png)
+      ![Create service definition](sc3.png)
 
   3. Click **Finish** to use your transport request.
 
@@ -265,10 +266,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      With the **service definition** you are able to define which data is exposed as a business service in your travel booking application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service binding)]
+### Create service binding
+
   1. Right-click on your service definition `ZUI_C_TRAVEL_M_XXX` and select **New Service Binding**.
 
       ![Create service binding](binding.png)
@@ -296,14 +296,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      The **service binding** allows you to bind the service definition to an ODATA protocol. Therefore you are able to see the travel booking application on the UI.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---
 

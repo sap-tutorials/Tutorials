@@ -1,11 +1,13 @@
 ---
-title: Explore the ABAP Repository
-description: Open an ABAP package containing ABAP development objects and find out more about them.
+parser: v2
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
 time: 15
 ---
+
+# Explore the ABAP Repository
+<!-- description --> Open an ABAP package containing ABAP development objects and find out more about them.
 
 ## Prerequisites  
  - You have a running ABAP application server (AS). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html)
@@ -13,13 +15,13 @@ time: 15
  - **Tutorial (Recommended)**: [Exploring the ABAP Dictionary](abap-dev-learn-ddic)
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to find development objects in the ABAP Repository
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a package to Favorites)]
+### Add a package to Favorites
+
 You will start by opening a package with various ABAP Repository object types.
 
 1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
@@ -38,11 +40,9 @@ The package is added to your favorites:
 
 ![Image depicting step1c-package-added](step1c-package-added.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Expand the package
 
-[ACCORDION-BEGIN [Step 2: ](Expand the package)]
 Expand the package SABAPDEMOS again by choosing the arrow, then expanding the Source Code Library folder:
 
 ![Image depicting step2-expand-package](step2-expand-package.png)
@@ -55,17 +55,15 @@ You will see a list of folders of objects in alphabetical order. For the moment 
 
 You will now explore how these concepts fit together.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Expand the programs folder)]
+### Expand the programs folder
+
 1. Expand the **Programs** folder, scroll down and choose (double-click) the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
     ![Image depicting step3-expand-programs](step3-expand-programs.png)
 
-2. Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
+2. Alternatively, choose **Open development object (`Ctrl+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
     ![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
     .
@@ -96,11 +94,9 @@ In the Outline, you can see that the program contains a local class, **Demo**, w
 Without a processing block such as this, the program would not do anything. Also note, if you are completely new to ABAP, but experienced in other languages, that every ABAP statement ends with a period (.).
 For more information, see [ABAP Keyword Documentation: START-OF-SELECTION](https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/abapstart-of-selection.htm).
 
-[DONE]
 
-[ACCORDION-END]
+### Run your program
 
-[ACCORDION-BEGIN [Step 4: ](Run your program)]
 Now run your program by choosing **Run (`F8`)** from the toolbar (ignore the other options for now):
 
 ![Image depicting step4-run-program](step4-run-program.png)
@@ -115,11 +111,9 @@ The console displays 10 rows of the table in a new tab:
 
 Close the console.
 
-[DONE]
 
-[ACCORDION-END]
+### Open a global class
 
-[ACCORDION-BEGIN [Step 5: ](Open a global class)]
 You will now explore ABAP global classes:
 
 1. Back in the main text editor for the program, scroll down till you find the class **`CL_DEMO_INPUT`**.
@@ -130,11 +124,9 @@ You will now explore ABAP global classes:
 
     ![Image depicting step5b-global-class](step5b-global-class.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Find the class in the Project Explorer
 
-[ACCORDION-BEGIN [Step 6: ](Find the class in the Project Explorer)]
 If you looked in the Project Explorer for the class **`CL_DEMO_INPUT`**, you will not find it in the package **`SABAPDEMOS`**. If you look in the Properties tab, you will see that **`CL_DEMO_INPUT`** belongs to another package. You can display it in the hierarchy by right-clicking in the text editor and choosing **Show In > Project Explorer**:
 
 ![Image depicting step6-show-in-proj-explorer](step6-show-in-proj-explorer.png)
@@ -143,11 +135,9 @@ The class appears in its package, **`SABAP_DEMOS_INPUT`**:
 
 ![Image depicting step6b-class-in-package](step6b-class-in-package.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open a function module
 
-[ACCORDION-BEGIN [Step 7: ](Open a function module)]
 Finally you will look at **function modules**.
 
 Function modules are managed in function groups and provide two main benefits:
@@ -183,13 +173,11 @@ The output should look roughly like this.
 ![Image depicting step7c-test-fm-output](step7c-test-fm-output.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 And that's it. You should now be familiar with the most important ABAP Repository objects and the relationship between them.
 You can now work through the tutorial mission [Get Started with ABAP Development](mission.abap-dev-get-started).

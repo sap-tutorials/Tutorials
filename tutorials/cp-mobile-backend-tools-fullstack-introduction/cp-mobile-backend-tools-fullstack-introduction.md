@@ -1,19 +1,20 @@
 ---
-title: Understand Full-Stack Development with Mobile Back-End Tools
-description: Understand how SAP Mobile Services Mobile Back-End Tools (MBT) can solve common mobile offline challenges.
+parser: v2
 auto_validation: true
-time: 5
+time: 10
 tags: [ tutorial>beginner, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
 primary_tag: topic>mobile
 
 ---
 
 
+# Understand Full-Stack Development with Mobile Back-End Tools
+<!-- description --> Understand how SAP Mobile Services Mobile Back-End Tools (MBT) can solve common mobile offline challenges.
+
 ## Prerequisites
  - It might be helpful to know the [Basic concepts of OData protocol](odata-01-intro-origins) for better understanding of the topic.
 
-## Details
-### You will learn
+## You will learn
   - Why you might want to use Mobile Back-End Tools
   - What is the relation between OData and the database
   - Why you might want to cache data for a mobile use case
@@ -21,7 +22,8 @@ primary_tag: topic>mobile
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to Mobile Back-End Tools)]
+### Introduction to Mobile Back-End Tools
+
 
 In essence, MBT is a set of tools that allow you to generate a full featured OData web service without writing a line of code. The tools are designed to transparently convert OData models into a persistence and offer transparent OData functionality including delta calculations out of the box.
 
@@ -31,10 +33,10 @@ Therefore they offer (optional) features, e.g. targeting integration (as a cache
 
 MBT is available as a [Marketplace extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.vsc-extension-mbt) for Visual Studio Code or as part of SAP Business Application Studio in the preset for *"SAP Mobile Application"*.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](What you will build)]
+
+### What you will build
+
 
 This tutorial and it's mission will give you an introduction to possible usage of Mobile Back-end Tools [Cache Databases](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/cache-databases.html). It is intended to give a simplified scenario with technical introduction of the technology while keeping requirements also available to trial users.
 
@@ -60,10 +62,9 @@ The following diagram depicts an exemplary architecture for an MBT-based service
 >In this tutorial's mission, the target system is connected as a publicly available HTTP destination. In a real-world scenario, you might connect your system in a similar way if it is a cloud system or via SAP Cloud Connector if it is an on premise system.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Role of CSDL and database)]
+### Role of CSDL and database
+
 
 OData's declarative way of defining the model as well as operations works in a way that allows a mapping between OData operations and operations on an actual database.
 
@@ -71,7 +72,7 @@ Therefore, usually MBT's central starting point is the metadata file, respective
 
 On the one hand, MBT provides runnable tasks that generate a database persistence or persistence descriptor (SQL), reflecting the whole OData model. On the other hand, MBT can build a transparent OData service [based on existing database tables](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/existing-tables.html).
 
-Different database types are supported depending on the runtime. Following databases may e.g. be used with the tools in certain environments (Derby and H2 only for testing, please refer to documentation and/or Product Availability Matrix for official support statements):
+Different database types are supported depending on the runtime. Following databases may e.g. be used with the tools in certain environments (Derby and H2 only for testing, please refer to [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/service-generator.html#option-bind-db-typedb-name) and/or Product Availability Matrix for official support statements):
 
   - SAP ASE
 
@@ -89,10 +90,9 @@ Different database types are supported depending on the runtime. Following datab
 
   - SAP SQL Anywhere
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Benefit of caching mobile app data)]
+### Benefit of caching mobile app data
+
 
 Most of the applications built in an enterprise environment are not a stand-alone use case but must be integrated into existing ecosystems, data and business processes. Therefore, MBT offers to link and map operations on your OData service to operations on another interface.
 
@@ -100,19 +100,17 @@ Typically, when developing a new Mobile App, you have to choose a technology as 
 
 This may come in handy if you want to build a service on top of legacy interfaces, if you want to decrease load on the referenced system or if you want to add more efficient delta capabilities for better user experience of your client apps without modifying the back-end interface.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Benefit of client registrations)]
+### Benefit of client registrations
+
 
 In MBT, [Client Registrations](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html), beyond the user identity, reflect one specific offline data store. This identification allows precise change determination beyond timestamp-based calculation, especially in combination with client filters.
 
 A client registration requires the service to contain an entity on which an offline store registers with a `uuid`. This ID must be sent with any upcoming user request in the HTTP-header `Client-Instance-ID`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](What is a Client Filter?)]
+### What is a Client Filter?
+
 
 Many use cases shall allow the user to select what data can be downloaded into the client database.
 
@@ -124,8 +122,6 @@ Example:
 
   - A sales representative working in one specific area on a specific day could upload a filter to only retrieve customer data with sales orders for customers in that specific area within the last two years.
 
-[DONE]
-[ACCORDION-END]
 
 ---
 

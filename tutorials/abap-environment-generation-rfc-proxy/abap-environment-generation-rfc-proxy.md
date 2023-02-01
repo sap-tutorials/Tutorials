@@ -1,29 +1,32 @@
 ---
+parser: v2
 auto_validation: true
-title: Generate RFC Proxy Classes
-description: Create a service consumption model to generate proxies for a remote function call (RFC).
 time: 30
-tags: [ tutorial>beginner, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
+# Generate RFC Proxy Classes
+<!-- description --> Create a service consumption model to generate proxies for a remote function call (RFC).
+
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
  - You need a SAP Cloud Connector account, connected with the subaccount. See <https://developers.sap.com/tutorials/abap-env-rfc.html> for more details.
 
-## Details
-### You will learn
+## You will learn
   - How to download service metadata files for the remote function call
   - How to create a service consumption model using metadata file
   - How to generate proxies for remote function call (RFC)
 
+## Intro
 Always replace `XXX` with your initials or group number.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download metadata files from aco_proxy)]
+### Download metadata files from aco_proxy
+
   1. Logon to your on-premise system.
 
       ![Logon](19.png)
@@ -45,10 +48,9 @@ Always replace `XXX` with your initials or group number.
 If you have a new system, you will be able to download multiple files, but if not, download all files one after the other and save them for later use.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create service consumption model - RFC_SYSTEM_INFO)]
+### Create service consumption model - RFC_SYSTEM_INFO
+
   1. Open ADT and login to your ABAP System.
   If you do not have a package, create a new one.
 
@@ -83,11 +85,10 @@ If you have a new system, you will be able to download multiple files, but if no
     ![Service Consumption5](6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create class for remote function call - RFC_SYSTEM_INFO)]
+### Create class for remote function call - RFC_SYSTEM_INFO
+
   1. Right click your package  and create a new Class in your Package and use **Add** to add `IF_OO_ADT_CLASSRUN` interface.
 
     Click **Next**.
@@ -120,10 +121,9 @@ If you have a new system, you will be able to download multiple files, but if no
   5. Activate both classes, auto-generated and created by your own. Press **F9** to run the class and check results in the console.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service consumption model - RFC_READ_TABLE)]
+### Create service consumption model - RFC_READ_TABLE
+
 Right-click **Service Consumption Models** in ADT and create a new service consumption model with the other stored metadata file `RFC_READ_TABLE` in your local system.
 
   >See Step 2 for details.
@@ -135,10 +135,9 @@ Right-click **Service Consumption Models** in ADT and create a new service consu
 ![service Consumption3](12.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create class for remote function call - RFC_READ_TABLE)]
+### Create class for remote function call - RFC_READ_TABLE
+
   1. Right-click your package and create a new class and copy the code sample from your created service consumption models into `if_oo_adt_classrun~main` method.
 
     >See Step 3 for details.
@@ -231,11 +230,9 @@ ENDCLASS.
     ![console](16.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

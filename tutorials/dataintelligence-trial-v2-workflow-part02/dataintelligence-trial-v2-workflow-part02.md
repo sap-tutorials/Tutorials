@@ -1,6 +1,5 @@
 ---
-title: Create Workflow (part 2), Aggregate Data With Data Transform in SAP Data Intelligence, Trial Edition
-description: Build a pipeline to aggregate device data using SAP Data Intelligence, trial edition.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-data-intelligence
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
@@ -9,18 +8,22 @@ author_name: Roy Zhong
 author_profile: https://github.com/roy-zhong
 ---
 
-## Details
-### You will learn  
+# Create Workflow (part 2), Aggregate Data With Data Transform in SAP Data Intelligence, Trial Edition
+<!-- description --> Build a pipeline to aggregate device data using SAP Data Intelligence, trial edition.
+
+## You will learn  
 - Build more complicated Data Transform
 - Aggregate file on certain condition
 - Minimum/Maximum data on certain condition
 - Store the result of the aggregation in a cloud file
 
+## Intro
 Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add data transform and trigger)]
+### Add data transform and trigger
+
 
 You are logged as a `system` user to a `default` tenant and are at the **Application Launchpad** page.
 
@@ -34,18 +37,16 @@ You are logged as a `system` user to a `default` tenant and are at the **Applica
 
 4. Now connect the `output` port of the **`Workflow Trigger`** to the `input` port of the **Spark Data Transform** operator.
 
-    !![Add Operators and connect them](./datahub-trial-v2-workflow-part02-5.png)
+    <!-- border -->![Add Operators and connect them](./datahub-trial-v2-workflow-part02-5.png)
 
 5. Double click on the **Spark Data Transform** operator and it will open the **Editor**. Here you have to model your workflow task by creating data sources and targets along with transformation operators.
 
-[DONE]
 
-[ACCORDION-END]
+### Create data sources
 
-[ACCORDION-BEGIN [Step 2: ](Create data sources)]
 1. From the **Nodes** menu on the left, drag and drop a **Data Source** to the editor. As this is a **Spark Data Transform** task, only **Nodes** can be added to the task.
 
-    !![Data Source1](./datahub-trial-v2-workflow-part02-6.png)
+    <!-- border -->![Data Source1](./datahub-trial-v2-workflow-part02-6.png)
 
 2. Double click on the **Data Source** and open the **Data Source Editor**. Here you have to configure the details for the particular data source.
 
@@ -55,7 +56,7 @@ You are logged as a `system` user to a `default` tenant and are at the **Applica
 
 4. As **Source** choose the `Events.parquet` file. As soon as the file is selected, file configuration parameters will be auto-proposed.
 
-    !![Select Event File](./datahub-trial-v2-workflow-part02-7.png)
+    <!-- border -->![Select Event File](./datahub-trial-v2-workflow-part02-7.png)
 
 5. Using the **Back** button at the left top corner, navigate back to the **Spark Data Transform** editor page.
 
@@ -69,23 +70,21 @@ You are logged as a `system` user to a `default` tenant and are at the **Applica
 
     You have created this in the previous tutorial **Create Workflow (part 1), Enrich data with Data Transform**.
 
-    !![Using csv file](./datahub-trial-v2-workflow-part02-8.png)
+    <!-- border -->![Using csv file](./datahub-trial-v2-workflow-part02-8.png)
 
 10. Change **Source** to **`/CSV/EnrichedDevices/part*.csv`** and keep others unchanged.
 
-    !![Using csv file](./using_wildcard.png)
+    <!-- border -->![Using csv file](./using_wildcard.png)
 
     >Since every time the workflow 1 will generate a new file, you can use wildcard to match file name.
 
 11. Navigate back to the **Spark Data Transform** editor page.
 
-    !![Back to Data Transform](./datahub-trial-v2-workflow-part02-9.png)
+    <!-- border -->![Back to Data Transform](./datahub-trial-v2-workflow-part02-9.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Join and aggregate data sources
 
-[ACCORDION-BEGIN [Step 3: ](Join and aggregate data sources)]
 
 In this step you are going to join and aggregate the two data sources you have created and then configure the operators.
 
@@ -162,11 +161,9 @@ In this step you are going to join and aggregate the two data sources you have c
 
 15. Navigate back to the **Spark Data Transform** editor page.
 
-[DONE]
 
-[ACCORDION-END]
+### Create data target
 
-[ACCORDION-BEGIN [Step 4: ](Create data target)]
 
 You now have to provide a destination for the results of the **Aggregation** operation. This is achieved by specifying a target.
 
@@ -190,15 +187,13 @@ You now have to provide a destination for the results of the **Aggregation** ope
     | `Escape Character`               | `"`                                                                 |
     | `Includes Header`              | `Yes`                                                                |
 
-    !![Config data target](./datahub-trial-v2-workflow-part02-19.png)
+    <!-- border -->![Config data target](./datahub-trial-v2-workflow-part02-19.png)
 
 3. Navigate back twice and open the pipeline where you have a **Workflow Trigger** connected to a **Spark Data Transform**.
 
-[DONE]
 
-[ACCORDION-END]
+### Add a terminator and execute data transform task
 
-[ACCORDION-BEGIN [Step 5: ](Add a terminator and execute data transform task)]
 
 1. From the **Operators** tab in the left side menu, drag and drop a **Workflow Terminator** to the pipeline.
 
@@ -212,11 +207,9 @@ You now have to provide a destination for the results of the **Aggregation** ope
 
     ![Run Graph](./datahub-trial-v2-workflow-part02-20.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Check result
 
-[ACCORDION-BEGIN [Step 6: ](Check result)]
 Now check the result of the Data Transform task.
 
 1. Double click the **Spark Data Transform** operator.
@@ -229,9 +222,7 @@ Now check the result of the Data Transform task.
 
 You will notice that the table has records per country for events humidity and temperature with minimum as well as maximum values for both the events.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 ---

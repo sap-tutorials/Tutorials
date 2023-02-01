@@ -1,6 +1,5 @@
 ---
-title: Deploy a Node.js Application for SAP HANA
-description: Deploy a sample Node.js application which connects to SAP HANA, express edition or SAP HANA Cloud trial.
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -8,29 +7,25 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana, products>sap-hana\,-
 time: 30
 ---
 
+# Deploy a Node.js Application for SAP HANA
+<!-- description --> Deploy a sample Node.js application which connects to SAP HANA, express edition or SAP HANA Cloud.
+
 ## Prerequisites and Assumptions
  - User knows how to install packages and develop using Node.js
  - Setup: `HANA, express edition` or `SAP HANA Cloud` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-database-server). For instructions on starting `SAP HANA Cloud` trial see the [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB` or in `SAP HANA Cloud`.
  - **Tutorials:** [Setup Node.js to connect to SAP HANA](hxe-nodejs-setup)
 
-## Details
-### You will learn  
+## You will learn  
 This tutorial will guide you through the process to deploy a sample Node.js application  which connects to SAP HANA, express edition or SAP HANA Cloud.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare Environment for Node.js)]
+### Prepare Environment for Node.js
 
-Find the right package to download from [Node.js Foundation](https://nodejs.org/en/download/).
-
-Look for correctly platform download that matches your development environment.
 
 Install support package for `Node.js` and Express:
-
-Follow the prompts and install `Node.js`. The installation downloads to the default location.
-In case you need to change the installation location from the defaults, make sure to update the PATH variable.
 
 Install the Node.js package called `express-generator` globally:
 
@@ -38,11 +33,9 @@ Install the Node.js package called `express-generator` globally:
 npm install -g express-generator
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Develop Simple Node.js Application
 
-[ACCORDION-BEGIN [Step 2: ](Develop Simple Node.js Application)]
 
 Create a simple standalone `node.js` app:
 
@@ -67,16 +60,16 @@ node hxeapp.js
 Access the HANA content from this Node application.  First install HANA database driver to Node. Ignore any warnings that it may produce.
 
 ```shell
-npm install @sap/hdbext
+npm install sap-hdbext-promisfied
 ```
 
-Create a Node application that allows you to access SAP HANA, express edition data.
+Create a Node application that allows you to access SAP HANA, express edition or HANA Cloud data.
 
 Open the `hxeapps.js` file and add the following content:
 
 ```JavaScript
 // Reference HANA driver in the Node app and update the connection details
-let hdbext = require('@sap/hdbext')
+let dbClass = require('sap-hdbext-promisfied')
 
 // Modify the host IP and password based on your system information
 let hanaConfig = {
@@ -87,20 +80,18 @@ let hanaConfig = {
     user: `<SYSTEM|DBADMIN>`,
     password: '<HANA SYSTEM or DBADMIN user password>'
 }
-// select from a sample table
-let sql = "select * from m_database"
 
 // Execute the query and output the results
-// Note: this code doesn't handle any errors (e.g. connection failures etc.,)
-hdbext.createConnection(hanaConfig, function (error, client) {
-    if (error) {
-        return console.error(error);
-    }
-
-    client.exec(sql, function (error, rows) {
+async function intro() {
+    try {
+        let db = new dbClass(await dbClass.createConnection(hanaConfig))
+        let rows = await db.execSQL("select * from m_database")
         console.log('Results:', rows)
-    })
-})
+    } catch (error) {
+        return console.error(error)
+    }
+}
+intro()
 ```
 
 Replace the `<HANA hostname>` with the IP address or host name of your HANA Express or HANA Cloud database server. Replace `user` with `SYSTEM` if targeting HANA Express or `DBADMIN` if targeting HANA Cloud.  Replace `HANA Port` with the SQL port for your HANA system. Replace the `<HANA SYSTEM or DBADMIN user password>` with your database system user password. Then save changes.
@@ -112,13 +103,11 @@ node hxeapp.js
 ```
 
 The above command should produce results something like the below:
-![Results](1.png)
 
-[DONE]
+   <!-- border -->![Results](1.png)
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: Extend Application](Extend Simple Node.js Application to Run as a Web Application)]
+### Extend Simple Node.js Application to Run as a Web Application
 
 Modify this app to be a `WebApp`.
 
@@ -143,7 +132,7 @@ Modify `package.json` to include `@sap/hdbext` driver.
 Edit `package.json` and add below line in the dependencies section.
 
 ```json
-"@sap/hdbext": "latest"
+"sap-hdbext-promisfied": "latest"
 ```
 
 After the edits, your `package.json` file would looks something like:
@@ -156,13 +145,13 @@ After the edits, your `package.json` file would looks something like:
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@sap/hdbext": "latest",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "sap-hdbext-promisfied": "latest"
   }
 }
 ```
@@ -195,9 +184,9 @@ index.js  users.js
 Modify the `index.js` file to include the following code snippet:
 
 ```JavaScript
-var express = require('express');
-var hdbext = require('@sap/hdbext')
-var router = express.Router();
+var express = require('express')
+let dbClass = require('sap-hdbext-promisfied')
+var router = express.Router()
 var hanaConfig = {
   host: '<HANA hostname>',
   port: `<HANA Port>`,
@@ -206,22 +195,19 @@ var hanaConfig = {
   user: `<SYSTEM|DBADMIN>`,
   password: '<HANA SYSTEM or DBADMIN user password>'
 }
-var sql = "select * from m_database"
+
 /* GET home page. */
-router.get('/', function (req, res, next) {
-
-  hdbext.createConnection(hanaConfig, function (error, client) {
-    if (error) {
-      return console.error(error);
-    }
-
-    client.exec(sql, function (error, rows) {
-      res.render('index', { title: 'Sample Node.js on HANA ', datarow: rows });
-    })
-  })
-});
-
-module.exports = router;
+router.get('/', async function (req, res, next) {
+  try {
+    let db = new dbClass(await dbClass.createConnection(hanaConfig))
+    let rows = await db.execSQL("select * from m_database")
+    res.render('index', { title: 'Sample Node.js on HANA ', datarow: rows })
+  } catch (error) {
+    res.send(error.toString()).status(500)
+    return console.error(error)
+  }
+})
+module.exports = router
 ```
 Replace the `<HANA hostname>` with the IP address or host name of your SAP HANA, express edition or SAP HANA Cloud database server. Replace `user` with `SYSTEM` if targeting HANA Express or `DBADMIN` if targeting SAP HANA Cloud.  Replace `HANA Port` with the SQL port for your SAP HANA system. Replace the `<HANA SYSTEM or DBADMIN user password>` with your database system user password. Then save changes.
 
@@ -245,9 +231,7 @@ npm start
    Open a new browser and access `http://localhost:3000/`
    Notice that the browser displays information like what was displayed in earlier output.
 
-[DONE]
 
-[ACCORDION-END]
 
 ---
 ### Additional Information

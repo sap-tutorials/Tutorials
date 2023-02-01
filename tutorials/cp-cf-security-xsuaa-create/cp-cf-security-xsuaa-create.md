@@ -1,32 +1,31 @@
 ---
-title: Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
-description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+parser: v2
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform ]
+tags: [tutorial>intermediate, programming-tool>node-js, software-product>sap-business-technology-platform ]
 primary_tag: topic>security
 author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
 ---
 
+# Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
+<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
-  - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
-## Details
-### You will learn
+## You will learn
   - How to secure a basic Node.js application with user authentication
   - How to secure a certain part of your application with user authorization
   - How to assign authorizations (in the form of a role collection) to a user
 
+## Intro
 The goal of this tutorial is to secure and deploy a product list application with authentication and authorization, so only authenticated users with the correct authorizations are able to see the products within the application. Users without the necessary authorizations are able to log in to the application, but do not see the products.
 
 The base for this tutorial is a Node.js application that uses the express framework and SAPUI5 to display a list of products (see screenshot).
 
-!![ui5 product list application](product-list-app.png)
-
-#### XSUAA and the Application Router
-
+<!-- border -->![ui5 product list application](product-list-app.png)
+### XSUAA and the Application Router
 To secure this product list application, two components are used. One is called the XSUAA service and the other one is called application router. The application router is used in combination with the XSUAA service to authenticate a user and route the user to the secured application.
 
 The XSUAA plays the role of an OAuth authorization service whereas the application router plays the role of an OAuth client. Furthermore, the application router works as a central entry point to the application. For more information, check the links at the end of this tutorial.
@@ -34,7 +33,8 @@ The XSUAA plays the role of an OAuth authorization service whereas the applicati
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the application files)]
+### Prepare the application files
+
 
 #### Prepare the index.js file
 To prevent a direct call to your application without authentication, it is necessary to add some code to your application. In our example, you use the Node.js passport authentication middleware and configure it with the XSUAA JWT strategy.
@@ -80,11 +80,6 @@ To prevent a direct call to your application without authentication, it is neces
 #### Prepare the package.json file
 Since there are now more modules used beside the express module, you have to add the relevant dependencies to your `package.json` file. In this case the dependencies for the modules `passport`, `@sap/xsenv` and `@sap/xssec` have to be added.
 
-> If you want to use SAP modules locally, you need to add the npm configuration:
-```bash
-npm config set @sap:registry https://npm.sap.com
-```
-
 4. Open the `package.json` file.
 
 5. Add the following dependencies:
@@ -100,10 +95,9 @@ npm config set @sap:registry https://npm.sap.com
 6. Save the file.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare the application security descriptor)]
+### Prepare the application security descriptor
+
 To use the XSUAA service, a file named `xs-security.json` is necessary. The file can define properties of the XSUAA service instance as well as different roles and authorizations. In this example the file contains a role template and a role collection with a **Product List Viewer** role, that enables the user later to view the products.
 
 6. Add a folder named `security` to your `product-list` folder.
@@ -150,11 +144,11 @@ To use the XSUAA service, a file named `xs-security.json` is necessary. The file
 > To learn more about the `xs-security.json` file, check the links at the end of this tutorial.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Prepare the approuter files)]
+
+### Prepare the approuter files
+
 The approuter will enable you to create a secure route to your application.
 
 
@@ -195,11 +189,10 @@ The approuter will enable you to create a secure route to your application.
 11. Save the file.
 > To learn more about the `xs-app.json` file, check the links at the end of this tutorial.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Move static content to the application router)]
+### Move static content to the application router
+
 For performance reasons it is better to put the images of the application into a static resources folder with the application router.
 
 1. Navigate to the `approuter` folder.
@@ -234,11 +227,10 @@ product-list
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Update the manifest file)]
+### Update the manifest file
+
 In the manifest file you have to define a hostname for your application and add a destination. The manifest file is used to bind the XSUAA service instance to your application.
 
 > The steps show incrementally what parameters and values have to be added. To avoid indentation errors, you can just copy the whole code at the end.
@@ -347,11 +339,10 @@ applications:
       ]
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Update the index.html file)]
+### Update the index.html file
+
 Because your are calling the product list over the approuter with `/products` you need to make a small change within the `index.html` file.
 
 1. Navigate to the `product-list/myapp/static` folder.
@@ -362,11 +353,10 @@ var productsUrl = "/products/products"; //  contains path mapping which is spec
 ```
 3. Save the file.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create the XSUAA service instance)]
+### Create the XSUAA service instance
+
 Before you can deploy your application, you need to create the service instance for the XSUAA.
 
 1. Log in to your Cloud Foundry account with the Cloud Foundry CLI.
@@ -382,11 +372,10 @@ cf create-service xsuaa application xsuaa-service-tutorial -c security/xs-securi
 cf push
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Call your application from its secure route)]
+### Call your application from its secure route
+
 
 Your application has two routes that are defined in the `manifest.yml`. The direct route to the application should return an error message saying `unauthorized` (because you don't have a valid JWT yet). The secure route through the approuter redirects to a login screen. After logging in, the application opens but shows the message `no data`. To see the product data, you need to assign your user the role collection with the necessary authorizations.
 
@@ -406,10 +395,9 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Assign the role collection)]
+### Assign the role collection
+
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
@@ -436,8 +424,6 @@ Assign your user the role collection that contains the necessary role to view th
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
 ### Troubleshooting
@@ -448,7 +434,7 @@ To resolve this error, please edit the `manifest.yml` file and change the `route
 
 ### Resources
 - [Info on the xs-app.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html)
-- [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/150b04d647cd4b42835411c1787a8b11.html?q=security%20descriptor)
-- [Access Management in the Cloud Foundry Environment](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/28eb34a6eda740a395ff6b0496f3bffb.html)
+- [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html)
+- [Access Management in the Cloud Foundry Environment](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/649961f8d4ad463daca33b3a20deba4c.html)
 
 ---

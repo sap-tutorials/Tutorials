@@ -1,11 +1,13 @@
 ---
-title: Deploy the SAPUI5 Frontend in the Kyma Runtime
-description: Develop and deploy the SAPUI5 frontend app in the Kyma runtime.
+parser: v2
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Deploy the SAPUI5 Frontend in the Kyma Runtime
+<!-- description --> Develop and deploy the SAPUI5 frontend app in the Kyma runtime.
 
 ## Prerequisites
   - [Docker](https://www.docker.com/) installed with a valid public account
@@ -16,12 +18,12 @@ primary_tag: products>sap-btp\\, kyma-runtime
   - [Deploying a Go MSSQL API Endpoint in the Kyma Runtime](cp-kyma-api-mssql-golang) tutorial completed
 
 
-## Details
-### You will learn
+## You will learn
   - How to configure and build SAPUI5 Docker image
   - How to create a development Namespace in the Kyma runtime
   - How to deploy the SAPUI5 Docker image to the Kyma runtime
 
+## Intro
 This tutorial expects that the [Deploy a Go MSSQL API Endpoint in the Kyma Runtime](cp-kyma-api-mssql-golang) tutorial has been completed and relies on the database running within the Kyma runtime.
 
 Deploying the SAPUI5 Docker image to the Kyma runtime includes:
@@ -33,7 +35,8 @@ Deploying the SAPUI5 Docker image to the Kyma runtime includes:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 1. Copy the repository URL.
 
@@ -45,10 +48,9 @@ Deploying the SAPUI5 Docker image to the Kyma runtime includes:
 git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the sample)]
+### Explore the sample
+
 
 1. Open the `frontend-ui5-mssql` directory in your desired editor.
 
@@ -60,11 +62,10 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 5. Within the `k8s` directory you can find the Kubernetes/Kyma resources you will apply to your Kyma runtime.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Run application locally)]
+### Run application locally
+
 
 1. Within the `frontend-ui5-mssql` directory, run the following command using your CLI to install the application dependencies:
 
@@ -76,7 +77,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
     ```Text/Javascript
     {
-      "API_URL": "https://api-mssql-go.*******.kyma.shoot.live.k8s-hana.ondemand.com"
+      "API_URL": "https://api-mssql-go.*******.kyma.ondemand.com"
     }
     ```
 
@@ -87,10 +88,9 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```
     > Pressing `control-c` will stop the running application.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build Docker image)]
+### Build Docker image
+
 
 > Run the following commands from the `frontend-ui5-mssql` directory using your CLI. Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
@@ -107,10 +107,9 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Apply resources to Kyma runtime)]
+### Apply resources to Kyma runtime
+
 
 You can find the resource definitions in the `k8s` folder. If you performed any changes in the configuration, these files may also need to be updated. The folder contains the following files that are relevant to this tutorial:
 
@@ -119,11 +118,16 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 - `deployment.yaml`: defines the Deployment definition for the SAPUI5 application as well as a service used for communication. This definition references the `configmap.yaml` by name. It is used to overwrite the `webapp/config.json` of the application.
 
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
+
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the project, open the `k8s/configmap.yaml` file and adjust `API_URL` by replacing `<cluster domain>` to match the Kyma runtime cluster domain:
 
@@ -137,7 +141,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     data:
       config.json: |-
         {
-          "API_URL": "https://api-mssql-go.*******.kyma.shoot.live.k8s-hana.ondemand.com"
+          "API_URL": "https://api-mssql-go.*******.kyma.ondemand.com"
         }
     ```
 
@@ -159,22 +163,23 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl -n dev apply -f ./k8s/apirule.yaml
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open the UI application)]
+
+### Open the UI application
+
 
 To access the application we can use the `APIRule` we created in the previous step.
 
-1. Open the Kyma runtime console
+1. Open the Kyma runtime console.
 
-2. Choose the `dev` Namespace.
+2. From the menu, choose **Namespaces**.
 
-3. From the menu, choose **Discovery and Network > `APIRules`**.
+3. Choose the `dev` Namespace.
 
-4. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
-`https://fe-ui5-mssql.*******.kyma.shoot.live.k8s-hana.ondemand.com`
+4. From the menu, choose **Discovery and Network > `API Rules`**.
 
-[VALIDATE_2]
-[ACCORDION-END]
+5. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
+`https://fe-ui5-mssql.*******.kyma.ondemand.com`
+
+
 ---

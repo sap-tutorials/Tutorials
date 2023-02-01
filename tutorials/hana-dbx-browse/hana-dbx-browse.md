@@ -1,24 +1,26 @@
 ---
-title: Browse Schema with the Database Browser in SAP HANA Database Explorer
-description: See how the database browser can be used to explore and examine objects in an SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
+
+# Browse Schema with the Database Browser in SAP HANA Database Explorer
+<!-- description --> See how the database browser can be used to explore and examine objects in an SAP HANA database.
 
 ## Prerequisites
 - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 - You have completed the first 3 tutorials in this group
 
-## Details
-### You will learn
+## You will learn
   - How a schema filter can be used in the database browser
   - How to explore and examine objects in an SAP HANA database
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Schemas)]
+### Schemas
+
 
 1. Many objects within an SAP HANA database belong to a schema.  A schema allows objects, like tables, views, functions, and stored procedures, to be grouped together.  The current schema in the SQL console is shown at the top of the SQL console.  
 
@@ -50,10 +52,9 @@ primary_tag: products>sap-hana-cloud
 
     The schema filter persists between reloads of the SAP HANA database explorer.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Table editor)]
+### Table editor
+
 
 1. Right-click **Tables** in the catalog tree and choose **Show Tables**.  
 
@@ -96,7 +97,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Table filter button](filterButton.png)
 
-    The following filter searches for hotels in California with a name containing `lo`.
+    The following filter searches for customer numbers `cno` less than or equal to 1005.
 
     ![Create And Apply Filters](CreateFilters.png)
 
@@ -105,10 +106,9 @@ primary_tag: products>sap-hana-cloud
     ![SQL Query](SQLQuery.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Analysis)]
+### Analysis
+
 An analysis view is provided to help get quick insights into the data of a table.
 
 1. Right-click on the ROOM table and choose **Open Data**.
@@ -127,13 +127,12 @@ An analysis view is provided to help get quick insights into the data of a table
 
 We can see that reservations for suites only make up a small part of the overall bookings but account for the largest share of the total revenue.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Additional features)]
+### Additional features
 
-1. Right-click the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
+
+1. Right-click the tab of an open object such as CUSTOMER and choose  **Display In Database Browser** to reveal the object in the database browser.
 
     ![Display In Database Browser](DisplayInDatabaseBrowser.png)
 
@@ -167,5 +166,4 @@ We can see that reservations for suites only make up a small part of the overall
 
 Congratulations! You have now used the database browser to view details of objects within an SAP HANA database and have become familiar with some of the features it provides.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

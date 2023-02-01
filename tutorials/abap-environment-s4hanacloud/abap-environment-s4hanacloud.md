@@ -1,19 +1,20 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Communication System to Connect to SAP BTP, ABAP Environment.
-description: Create a communication system on S/4HANA Cloud to connect to SAP BTP, ABAP Environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-business-technology-platform,tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 45
 author_name: Merve Temel
 ---
+
+# Create Communication System to Connect to SAP BTP, ABAP Environment.
+<!-- description --> Create a communication system on S/4HANA Cloud to connect to SAP BTP, ABAP Environment.
 
 ## Prerequisites  
  - Create a developer user in a SAP BTP, ABAP Environment system.
  - Download the [latest Eclipse version and install ABAP Development Tools (ADT)](https://tools.hana.ondemand.com/#abap).
 
-## Details
-### You will learn  
+## You will learn  
   - How to download trust certificate for SAP S/4HANA Cloud connection
   - How to create business roles
   - How to create communication arrangement in SAP S/4HANA Cloud
@@ -23,7 +24,8 @@ author_name: Merve Temel
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download trust)]
+### Download trust
+
   1. Open [SAP BTP cockpit](https://account.hana.ondemand.com/) and select your global account.
 
       ![Download trust](login2.png)
@@ -44,11 +46,10 @@ author_name: Merve Temel
 
       ![Download trust](trust4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create role for communication management in SAP S/4HANA Cloud)]
+### Create role for communication management in SAP S/4HANA Cloud
+
 
   1. Open SAP S/4HANA Cloud system as an administrator.
 
@@ -78,10 +79,9 @@ author_name: Merve Temel
 
       ![Create role for communication management](flp8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create communication arrangement in SAP S/4HANA Cloud)]
+### Create communication arrangement in SAP S/4HANA Cloud
+
 
   1. Go to **Communication Management** and select the **Communication Arrangements** tile.
 
@@ -110,10 +110,9 @@ author_name: Merve Temel
 
       ![Create role for communication management](flp18.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Copy URL)]
+### Copy URL
+
 
    1. Open [SAP BTP cockpit](https://account.hana.ondemand.com/), navigate to your **subaccount**. On the left menu select **Instances and Subscriptions** under **Services**. Click **Instances**, select your ABAP instance and **click** on it. Now scroll to **Service Keys** on the right side, select the menu and click **View**.
 
@@ -123,10 +122,9 @@ author_name: Merve Temel
 
     ![Create communication system](adt2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create communication system)]
+### Create communication system
+
 
   1. Switch to your SAP S/4HANA Cloud system, open your communication system, paste the URL as your host name. Enter `DUMMY` as logical system and business system. Don' t click save yet.
 
@@ -138,10 +136,9 @@ author_name: Merve Temel
 
       ![Create communication system](hostname.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create inbound and outbound communication user)]
+### Create inbound and outbound communication user
+
   1. Choose **`+`** in the inbound communication area to add a new communication user for inbound communication in SAP S/4HANA Cloud.
 
       ![Create inbound and outbound communication user](flp20.png)
@@ -171,12 +168,10 @@ author_name: Merve Temel
 
       ![Create inbound and outbound communication user](flp26.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

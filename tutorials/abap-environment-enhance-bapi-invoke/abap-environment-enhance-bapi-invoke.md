@@ -1,34 +1,37 @@
 ---
-title: Enhance the Handler Class With Filtering
-description: Add filtering by three values - product ID, supplier name, or category
+parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
+
+# Enhance the Handler Class With Filtering
+<!-- description --> Add filtering by three values - product ID, supplier name, or category
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
-- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
+- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
 
-## Details
-### You will learn
+## You will learn
   - How to filter by product `id`, supplier name, or product category
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Duplicate your class)]
+### Duplicate your class
+
 1. Select the class from the previous tutorial, [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity), and choose **Duplicate...** from the context menu.
 
 2. Enter a name for your duplicate class, **`ZCL_PRODUCT_W_FILTER_XXX`**, and choose **Finish**.
 
 The duplicate class appears in a new editor.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Define variables)]
+### Define variables
+
 1. First, you will define the range tables. These tables will be filled with the filter value(s) the user enters - for example, all suppliers beginning with "**T**". Each range table contains four columns: **Sign** (i.e. include or exclude), **Operation** (e.g. "Equals" or "Contains"), **Low** (either the first value in a range, or a single value), **High** (in ranges, the highest value; otherwise empty).
 
     For more information on range tables, see:
@@ -52,10 +55,9 @@ The duplicate class appears in a new editor.
 		DATA lv_select_string TYPE string.
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define filter variable)]
+### Define filter variable
+
 1. Define the variable that contains the filter value(s).
 
 2. Wrap it in a `TRY ... CATCH` block.
@@ -76,22 +78,20 @@ The duplicate class appears in a new editor.
 		  ENDTRY.
 	```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a table for the selected columns)]
+### Create a table for the selected columns
+
 Get the names of the selected columns and store them in a table, **`lt_fields`**.
 
 ```ABAP
 DATA(lt_fields)  = io_request->get_requested_elements( ).
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Specify which columns are to be retrieved)]
+### Specify which columns are to be retrieved
+
 If the user has specified that only some columns should be displayed, then store these column names in a string.
 Otherwise, retrieve all columns in the table from the database.
 
@@ -105,10 +105,9 @@ Otherwise, retrieve all columns in the table from the database.
 	ENDIF.
 	```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Pass the user's filter values for `productid` to the ranges table)]
+### Pass the user's filter values for `productid` to the ranges table
+
 If the user has specified a filter for `productid`, then fill the ranges table with the user-specified values
 
 ```ABAP
@@ -124,10 +123,9 @@ IF sy-subrc EQ 0.
 ENDIF.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Repeat for Supplier Name or Category)]
+### Repeat for Supplier Name or Category
+
 Do the same for any filter for `Category` or `Supplier Name`.
 
 ```ABAP
@@ -150,10 +148,9 @@ IF sy-subrc EQ 0.
 ENDIF.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add the parameters to the BAPI call)]
+### Add the parameters to the BAPI call
+
 Add the table parameters for these ranges tables to the `BAPI` call.
 
 ```ABAP
@@ -170,10 +167,9 @@ selparamcategories    = lt_filter_ranges_category.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Specify this new class in your custom entity)]
+### Specify this new class in your custom entity
+
 1. Open your custom entity, **`ZCE_PRODUCT_XXX`**.
 
 2. Change the following annotation to point to the new class:
@@ -184,10 +180,9 @@ selparamcategories    = lt_filter_ranges_category.
 
 3. **Save and activate ( `Ctrl+S, Ctrl+F3` )** the custom entity.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Save, activate, and test your class)]
+### Save, activate, and test your class
+
 1. **Save and activate ( `Ctrl+S, Ctrl+F3` )** the class.
 
 2. Open your service binding, **`Z_BIND_PRODUCT_TEST_XXX`** , then choose **Preview...**.
@@ -196,14 +191,12 @@ selparamcategories    = lt_filter_ranges_category.
 
 The filtered list appears.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

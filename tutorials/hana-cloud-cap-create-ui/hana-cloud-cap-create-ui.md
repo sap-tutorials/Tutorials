@@ -1,243 +1,172 @@
 ---
-title: Create a User Interface with CAP (SAP HANA Cloud)
-description: Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
 primary_tag: products>sap-hana-cloud
+parser: v2
 ---
+
+# Create a User Interface with CAP (SAP HANA Cloud)
+
+<!-- description --> Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
+
+## You will learn
+
+- How to create an SAP Fiori freestyle web interface
+- How to configure the `approuter`
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
- - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
 
+- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
+- You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
 
-## Details
-### You will learn
- - How to create an SAP Fiori freestyle web interface
- - How to configure the `approuter`
+## Video Version
 
-Video tutorial version: </br>
+Video tutorial version:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
----
 
-[ACCORDION-BEGIN [Step 1: ](Run the services)]
+### Run the services
 
 1. From the previous tutorial we have a `.env` file in the `/db` folder. This file contains the connection details to the SAP HANA Cloud instance and it was created when we performed the **bind** operation from the SAP HANA Projects view.
 
-    !![.env file](env_file.png)
+    ![.env file](env_file.png)
 
-2. We can use this same configuration information to start the CAP service layer and connect it to SAP HANA as well. But this will require copying the file contents to a slightly different format and changing the file name to `default-env.json`.  We can do this using the `hana-cli` developer utility. Open a Terminal window and change to the `/db` folder.
+1. We can use this same configuration information from Cloud Foundry to start the CAP service layer and connect it to SAP HANA as well. Use the command `cds bind -2 MyHANAApp-dev:SharedDevKey` to tell CAP to bind to this same HANA Cloud HDI service instance that we bound to earlier in the SAP HANA Projects view.
 
-    !![Terminal and change to db](terminal_cd.png)
+    ![cds bind to db service](cds_bind.png)
 
-3. Issue the command `hana-cli copy2DefaultEnv`. This will create the file named `default-env.json` which already contains the connection information to your HANA database.
+1. Run the command `npm install` to install any Node.js dependent modules needed by the Cloud Application Programming Model.
 
-    !![hana-cli copy2DefaultEnv](copy2defaultenv.png)
+    ![npm install](npm_install.png)
 
-4. Move the `default-env.json` file from the `/db` folder to the root folder of your project.
+1. Now issue the command `cds watch --profile hybrid`. This will start the CAP service locally and use the binding configuration to connect to our remote HANA database instance. Once started you will see a dialog with a button that says **Open in New Tab**. Press this button to test the CAP service in a new browser tab.
 
-    !![Move default-env.json](copy_file.png)
+    ![npm start](npm_start.png)
 
-5. You can return to the terminal window and change back to the root `cd ..`.  Run the command `npm install` to install any Node.js dependent modules needed by the Cloud Application Programming Model.
+    If you accidentally close this dialog, you can always open the running services via **View > Command Pallette** and then choosing **Ports: Preview** and choosing the running service from the list
 
-    !![npm install](npm_install.png)
+1. You should see the list of entities you exposed.
 
-6. Now issue the command `npm start`. This will start the CAP service. Once started you will see a dialog with a button that says **Open in New Tab**. Press this button to test the CAP service in a new browser tab.
+    ![Welcome Page](welcome.png)
 
-    !![npm start](npm_start.png)
+1. You can click on the entities to see the values in a JSON format being served from the SAP HANA Cloud database.
 
-    If you accidentally close this dialog, you can always open the running services via **View > Find Command** and then choosing **Ports: Preview** and choosing the running service from the list
+    ![Service Test](service_test_json.png)
 
-7. You should see the list of entities you exposed.
-
-    !![Welcome Page](welcome.png)
-
-8. You can click on the entities to see the values in a JSON format being served from the SAP HANA Cloud database.    
-
-    !![Service Test](service_test_json.png)                 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Test the services)]
+### Test the services
 
 1. Choose the `$metadata` option from the Welcome page and you can see a technical description of the service
 
-    !![metadata document](metadata.png)
+    ![metadata document](metadata.png)
 
-2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Add the following to the URL:
+1. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Different versions of the Cloud Application Programming Model preview page do different things at this point. Some add a $top limit to the generated URL for `Interactions_Items` automatically. Other and perhaps newer versions do not.  Have a look at the end of the URL when it opens. If it ends in `?$top=11` then add the following to the URL:
 
     ```URL
     &$search=DE
     ```
 
-    !![Play with the OData Service](serach.png)
+    Otherwise add the following to the URL:
 
-3. You can find out more about OData V4 at the [OData organization](https://www.odata.org/documentation/) and the [documentation for SAPUI5](https://sapui5.hana.ondemand.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).    
+    ```URL
+    ?$search=DE
+    ```
 
-[DONE]
-[ACCORDION-END]
+    ![Play with the OData Service](serach.png)
 
+1. You can find out more about OData V4 at the [OData organization](https://www.odata.org/documentation/) and the [documentation for SAPUI5](https://ui5.sap.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).
 
-[ACCORDION-BEGIN [Step 3: ](Configure routing)]
+### Configure routing
 
-You will now create an application router module. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
+You will now create an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
 
-1. Right-click on the mta.yaml file within your project and choose **Create MTA Module from Template**.
+1. Open another Terminal instance (so that the watch command can continue to run in the other instance). Issue the command `cds add approuter`.
 
-    !![Create MTA Module](create_module.png)
+    ![Create MTA Module](create_module.png)
 
-2. This will start a wizard to add the module to your project. Choose the Module Template type of **Approuter Configuration** and then press **Start**.
+1. This will complete the wizard and generate a folder named `app` in the root of your project.
 
-    !![Module Template](module_template.png)
+    ![New folder for App Router](new_folder_app_router.png)
 
-3. Choose the application runtime type of **Standalone Approuter**. Choose to add authentication and that you plan to add a UI. Press **Next**.
+1. Since the web module will be receiving the requests and routing them into the proper processing backend services, such as the OData service you have just tested, it will also be responsible for enforcing authentication.
 
-    !![Approuter Configuration](approuter_configuration.png)        
+    These routing logic is done by an application called `approuter`. You can see the Node.js module being called as the starting script for the web module as defined in the file `package.json`.
 
-4. This will complete the wizard and generate a folder named `myhanaapp-approuter` in the root of your project.
+    ![package.json for app router](app_router_package_json.png)
 
-    !![New folder for App Router](new_folder_app_router.png)
+1. We need to install the approuter dependency now as well.  From the terminal change to the `app` folder and issue the command `npm install`
 
-5. But to better test this content within CAP at design time we want to rename this folder to **app**, but we already have an **app** folder.  Therefore delete this existing **app** folder and then rename `myhanaapp-approuter` to **app**
+    ![app router npm install](app_router_npm_install.png)
 
-    !![Rename Folder to app](rename_folder.png)
+1. The `approuter` will scan the file `xs-app.json` to route patterns in the request to the right destinations. The xs-app.json that was generated by the wizard is ready to use real security settings, but our project isn't that far along yet.  Therefore, let's change the configuration to temporarily disable the security checks.
 
-6. We need to make the same change in the mta.yaml file since it keeps track of all the module and folder names in your project. Open the mta.yaml file for editing and perform a find and replace for the value `myhanaapp-approuter` and change it **app**.
-
-    !![Edit mta.yaml](edit_mta_yaml.png)
-
-7. Since the web module will be receiving the requests and routing them into the proper processing backend services, such as the OData service you have just tested, it will also be responsible for enforcing authentication.
-
-    These routing logics are done by an application called `approuter`. You can see the Node.js module being called as the starting script for the web module as defined in the file `package.json`.     
-
-    !![package.json for app router](app_router_package_json.png)
-
-8. The `approuter` will scan the file `xs-app.json` to route patterns in the request to the right destinations.
-
-    Replace the content of `xs-app.json` with the following content          
+    Replace the content of `xs-app.json` with the following content
 
     ```json
     {
-      "authenticationMethod": "none",
-      "routes": [{
-		      "source": "/catalog/(.*)",
-		        "destination": "srv-api",
-		          "csrfProtection": true
-	    }]
+    "authenticationMethod": "none",
+    "routes": [
+        {
+        "source": "^/app/(.*)$",
+        "target": "$1",
+        "localDir": ".",
+        "cacheControl": "no-cache, no-store, must-revalidate"
+        },
+        {
+        "source": "^/(.*)$",
+        "target": "$1",
+        "destination": "srv-api",
+        "csrfProtection": true
+        }
+    ]
     }
     ```
 
-    **Save** the changes.
+    ![xs-app.json](xsapp_json.png)
 
-    !![xs-app.json](xsapp_json.png)
+1. Among other information, this configuration is declaring that requests containing the pattern `^/(.*)$` are routed to a destination called `srv-api`. This destination was defined by the wizard in the `mta.yaml` file and points the service layer of our CAP application.
 
-9. Among other information, this configuration is declaring that requests containing the pattern `/catalog/(.*)` are routed to a destination called `srv-api`. This destination was defined by the wizard in the `mta.yaml` file.   
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Edit the deployment descriptor)]
-
-When an application is deployed, the `mta.yaml` file is used to establish the dependencies between the modules and resources. During this binding process, environment variables such as the name of the destinations are set.
-
-1. Open the `mta.yaml` file using the dedicated MTA Editor.
-
-    !![Open MTA Editor](mta_editor.png)
-
-2. You will notice the `myHANAAPP-srv` module provides a variable called `srv-url`. This variable is taking the value of the default URL provided at runtime.
-
-    !![Provides srv-url](provides_url.png)
-
-3. Click on the **app** module. You will establish its dependency with the `myHANAAPP-srv` module and declare the destination. The name of the destination here needs to match the name you used in `xs-app.json` in the previous step.    
-
-    !![Switch to app module](app_selection.png)
-
-4. Add a new **Requires** entry for the **app** module.
-
-    !![Add Requires](add_requires.png)    
-
-5. Choose `srv-api` under **Requires** in the dropdown.
-
-    !![Choose srv-api](choose_srv_api.png)
-
-6. Enter **`destinations`** under **Group**   
-
-    !![destinations](destinations.png)
-
-7. Fill in the properties with the following key-value pairs ...
-
-    | **Key**       | **Value**           
-    | ------------- |:-------------:|
-    | name      | `srv-api`
-    | `url`      | `~{srv-url} `     
-    | `forwardAuthToken` | true      |
-
-    ... as follows:
-
-    !![Properties](properties.png)
-
-8. **Save** the changes in the deployment descriptor file.       
-
-9. **OPTIONAL**: If you would want to make these changes without the form based mta.yaml editor, here is also the section as it could be inserted via the text editor:
-
-    !![mta.yaml editor add srv-api](mta_yaml_srv_api.png)
-
-> For more information and examples about the `approuter`, refer to this [section in the help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Create a Fiori freestyle web interface)]
+### Create a Fiori freestyle web interface
 
 We want to create a Fiori freestyle UI for our CAP service.  We will use the wizards to generate most of the UI.
 
-1. From the top menu select **View -> Find Command**. Then type `fiori` into the search box. Select **Fiori Open Application Generator**.
+1. From the top menu select **View -> Command Pallette**. Then type `fiori` into the search box. Select **Fiori Open Application Generator**.
 
-    !![Fiori Application Generator](fiori_app_gen.png)
+    ![Fiori Application Generator](fiori_app_gen.png)
 
-2. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
+1. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
 
-    !![Fiori Application Type](application_type.png)
+    ![Fiori Application Type](application_type.png)
 
-3. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
+1. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
 
-    !![Data Source and Service Selection](data_source.png)
+    ![Data Source and Service Selection](data_source.png)
 
-4. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
+1. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
 
-    !![Entity Selection](entity_selection.png)
+    ![Entity Selection](entity_selection.png)
 
-5. In the Project Attributes screen, match to the values shown in the following screenshot and press **Finish**
+1. In the Project Attributes screen, match to the values shown in the following screenshot and press **Finish**
 
-    !![Project Attributes](project_attributes.png)
+    ![Project Attributes](project_attributes.png)
 
-6. The wizard will generate a new folder named `interaction_items` in the root of the project.  We want to drag that folder into the **app** folder.
+1. The new project structure and content should look like This
 
-    !![Move to app folder](move_to_app.png)
+    ![New Project Structure](new_structure.png)
 
-7. The new project structure and content should look like This
+1. From the terminal you should still have your `cds watch --profile hybrid` still running (if not restart it). This command watches for changes so your application is already to test with the new UI. Open the browser tab where you were testing it previously.
 
-    !![New Project Structure](new_structure.png)
+1. The CAP test page now has a link to the newly generated application.
 
-8. From the terminal you can stop your running CAP service with `CTRL+C`. Then run the service again with `npm start` to pickup the new content we added to the project.   
+    ![CAP Test Page Link](cap_test_ui.png)
 
-9. The CAP test page now has a link to the newly generated application.
+1. Clicking that link will launch the generated Fiori free style UI for the CAP service.
 
-    !![CAP Test Page Link](cap_test_ui.png)
+    ![Test UI](test_ui.png)
 
-10. Clicking that link will launch the generated Fiori free style UI for the CAP service.
-
-    !![Test UI](test_ui.png)                        
+1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
 
 Congratulations! You have created your first, full application.
 
 Now it is a good time to commit your application into the local or remote Git.
-
-[DONE]
-[ACCORDION-END]
-
----

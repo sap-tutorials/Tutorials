@@ -1,10 +1,12 @@
 ---
-title: Detailed Query Plan and Indexes
-description: Generate and access a detailed html query plan. Create indexes on columns.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Detailed Query Plan and Indexes
+<!-- description --> Generate and access a detailed html query plan. Create indexes on columns.
+
 ## Prerequisites
  - **Proficiency:** Intermediate
  - **Tutorials:** [Table Statistics and its Effect on Query Plans](https://developers.sap.com/tutorials/dt-query-processing-part3.html)
@@ -12,18 +14,17 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:**
 
-## Details
-### You will learn
+## You will learn
  - Accessing a more detailed HTML query plan through SAP HANA Studio.
  - Creating indexes on table columns to improve query performance.
  - Analyzing the impact of indexes on query plans.
-
-### Time to Complete
+## Time to Complete
 **20 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enabling the Generation of a Query Plan)]
+### Enabling the Generation of a Query Plan
+
 In addition to the graphical query plan available through the `PlanViz` perspective, you can access an even more detailed query plan for the Dynamic Tiering portion of the query. In order to do this we will need to turn on a debug level of tracing.
 
 In SAP HANA Studio, go to **SAP HANA Administration Console**. In the **Systems** tab on the left, double click on the system you are working with.
@@ -46,11 +47,10 @@ You should now be able to see the field **`fedtrace`** under **INDEXSERVER**. Al
 
 ![Change fedtrace](fedtrace.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Generate and Open a Detailed Plan by Running a Query)]
+### Generate and Open a Detailed Plan by Running a Query
+
 In **SAP HANA Administration Console**, open a new SQL console.
 
 ![SQL Console](sql-console.png)
@@ -100,11 +100,9 @@ The highlighted index in the query plan below is the Fast Projection (FP) index.
 
 ![Fast Projection index](fp-index.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Creating an Index
 
-[ACCORDION-BEGIN [Step 3: ](Creating an Index)]
 Go to **SAP HANA Administration Console** and open a new SQL console.
 
 Copy and paste the script into the console. Then run the script to create a new index.
@@ -119,6 +117,3 @@ As you can see, after creating the index, if we run the query again and view the
 
 ![High Group Index](high-group-index.png)
 
-[DONE]
-
-[ACCORDION-END]

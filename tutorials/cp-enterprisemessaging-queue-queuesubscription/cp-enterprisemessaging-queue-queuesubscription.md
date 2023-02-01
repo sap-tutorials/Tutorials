@@ -1,24 +1,28 @@
 ---
-title: Create Queues and Queue Subscriptions for SAP Event Mesh
-description: Navigate and explore the SAP Event Mesh management dashboard to implement messaging concepts like queues and queue subscriptions.
+parser: v2
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, topic>cloud, tutorial>license, software-product>technology-platform>sap-business-technology-platform]
+primary_tag: software-product>sap-event-mesh
 ---
+# Create Queues and Queue Subscriptions for SAP Event Mesh
+<!-- description --> Navigate and explore the SAP Event Mesh management dashboard to implement messaging concepts like queues and queue subscriptions.
+
 ## Prerequisites
 - An instance of SAP Event Mesh has already been created
+- User has been assigned with role collection "Enterprise Messaging Developer" [Assign Roles to Users](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/637d331010e54a2999e2f023d2de1130.html)
 
-## Details
-### You will learn
+## You will learn
   - How to manage queues, topics and queue subscriptions using the SAP Event Mesh management dashboard.
 
+## Intro
 Queues and queue subscriptions are the core of asynchronous messaging. Messages are retained in queues until they are consumed by subscribing applications.
 
 The SAP Event Mesh management dashboard for the default service plan is provided as a multitenant business application. Subscription can be set up only by administrators of the global account.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Subscribe to Event Mesh)]
+### Subscribe to Event Mesh
+
 You need to subscribe to SAP Event Mesh in order to access its management dashboard.
 
 To subscribe to SAP Event Mesh
@@ -29,33 +33,39 @@ To subscribe to SAP Event Mesh
 4. Choose *Event Mesh* and *standard* plan.
 5. Choose *Create*.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open management dashboard)]
+### Open management dashboard
 
-1. Open the SAP BTP Cockpit.
 
-2. Click on the **Subscriptions** menu.
+**For default Plan :**
 
-3. Subscribe to SAP Event Mesh.
+  1. Open the SAP BTP Cockpit.
 
-4. Click on **Go to Application**.
+  2. Click on the **Subscriptions** menu.
+
+  3. Subscribe to SAP Event Mesh.
+
+  4. Click on **Go to Application**.
 
     ![Service Instance](LandingPage-MgmtDashboard.png)
 
     It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
-5. Select the message client.
-6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
+  5. Select the message client.
+  6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
     ![Management Dashboard Message Client Overview](em-overview.PNG)
 
-[DONE]
-[ACCORDION-END]
+**For dev Plan :**
 
-  [ACCORDION-BEGIN [Step 3: ](Manage queue)]
+  You need to click on **View Dashboard** to open the dashboard to manage queue or queue subscription as shown in the below screen.
+
+  ![Service Instance](instance-dashboard-devplan.png)
+
+
+  ### Manage queue
+
 
 On the Management Dashboard, you can create a queue to work with SAP Event Mesh.
 
@@ -104,11 +114,9 @@ If you want to delete the `salesorder` queue, you can delete the queue using **d
 >**CAUTION:** Deleting a queue also deletes any associated queue subscriptions and any messages that are in the queue.
 
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ]( Manage queue subscriptions)]
+### Manage queue subscriptions
 >
 Service enables a sending application to publish messages and events to a topic. Applications must be subscribed to that topic, and be active when the message is sent. Topics do not retain messages.
 >
@@ -136,8 +144,6 @@ Below screen displays how to create a topic and once a topic is created how is i
 
 You can delete a topic using the **delete** icon.
 
-[VALIDATE_3]
 
-[ACCORDION-END]
 
 ---

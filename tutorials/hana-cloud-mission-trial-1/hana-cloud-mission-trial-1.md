@@ -1,24 +1,24 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Start Using an SAP HANA Cloud Trial in SAP BTP Cockpit
-description: Learn how to get a trial of SAP HANA Cloud or how to add it to an existing trial of SAP Business Technology Platform.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-btp-cockpit]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-btp-cockpit]
+primary_tag: software-product>sap-hana-cloud
 ---
 
+# Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit
+<!-- description --> Learn how to get started with the free tier model or trial of SAP HANA Cloud or how to add it to an existing account on SAP Business Technology Platform.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
-- How to sign up for an SAP HANA Cloud trial
-- How to add SAP HANA Cloud to an existing SAP BTP trial
+## You will learn
+- How to sign up for SAP HANA Cloud free tier model or trial
+- How to add SAP HANA Cloud to an existing SAP BTP trial account
 - How the SAP BTP cockpit is structured and where to find SAP HANA Cloud in it
 
 
+## Intro
 This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database.
 
 
@@ -36,7 +36,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
 
-1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Start using an SAP HANA Cloud trial in SAP BTP Cockpit**.
+1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Start using SAP HANA Cloud free tier model or trial in SAP BTP Cockpit**.
 
 2.	Provision an instance of SAP HANA Cloud, SAP HANA database
 
@@ -54,7 +54,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 9.	Grant access to Calculation Views
 
-In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
+In this tutorial, you will first learn how to sign up for the free tier model or trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
 
 > If you have a **production environment** of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this mission.
 >
@@ -68,7 +68,24 @@ In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cl
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the SAP HANA Cloud trial)]
+### Get to know the SAP HANA Cloud free tier model
+
+
+-	Customers and partners with an existing CPEA or Pay-As-You-Go contract can start using the free tier model for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
+
+-	With the free tier model for SAP BTP you start with a productive account right away. The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  In order to use the HANA Cloud free tier model, you will need to have the SAP HANA Cloud service entitlement available in your subaccount.  To provision a free tier instance, the free tier service plans must be enabled in your subaccount entitlement.  If you plan to upgrade your instance to a paid tier, the paid tier service plans must also be enabled.  No charges will occur if you are only making use of the free tier service plans.  However, if you decide to upgrade to a paid tier service plan, applicable charges will occur once the instance has been upgraded.   
+
+-	For the SAP HANA Cloud free tier model, simply choose the Free Tier license type when provisioning your instances as shown below.  
+
+    ![license options](licenses.png)
+
+-	In comparison, SAP BTP trial allows you to build full applications in a test environment to learn and explore of the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
+
+-	SAP HANA Cloud services are available for both free tier model and trial – customers and partners can choose the option based on their preferences.  Note that this learning journey contains details for both options.     
+
+
+### Get to know the SAP HANA Cloud trial
+
 
 -	You can use your free trial account to test the components **SAP HANA Cloud, SAP HANA database** and **SAP HANA Cloud, data lake**.
 
@@ -78,7 +95,7 @@ In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cl
 
 -	Trial database instances will be **stopped every day** at midnight in the time zone of the server location you selected. Each time you start working with your trial instance, you need to restart it first.
 
--	If you do not restart your instances within **60 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
+-	If you do not restart your instances within **30 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
 -	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **30GB of memory, 2vCPUs, and 120GB of storage**.
 
@@ -86,10 +103,9 @@ In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cl
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Sign up for the free trial)]
+### Sign up for the free trial
+
 
 In this step, you can learn how to sign up for the free trial of SAP HANA Cloud. There are two options indicated by the two tabs in this step.
 
@@ -99,23 +115,23 @@ In this step, you can learn how to sign up for the free trial of SAP HANA Cloud.
 
 Click on the option that applies to you.
 
-!![Gif options](LT01_01_00 option tab narrow.gif)
+<!-- border -->![Gif options](LT01_01_00 option tab narrow.gif)
 
 [OPTION BEGIN [Sign up for the SAP HANA Cloud trial]]
 
 1.	Click on [this link](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) to get to the sign-up page. Don't forget to come back here after you signed up. Once you received your confirmation email, you can continue with this mission.
 
-    !![Screenshot Trial signup1](ss-01-trial-Signup1.png)
+    <!-- border -->![Screenshot Trial signup1](ss-01-trial-Signup1.png)
 
 2.	Click on **Start your free trial now** and enter your sign-up information.
 
-    !![Screenshot Trial signup2](ss-02-Trial-Signup2.png)
+    <!-- border -->![Screenshot Trial signup2](ss-02-Trial-Signup2.png)
 
 3.	Once you click submit, you will be asked to verify your email address. Check your email inbox and click on the link provided.
 
 4.	You will then receive a confirmation email with a link to access your trial. Click on the button that says **Access your trial** and make sure to bookmark this page for easy access later.
 
-    !![Screenshot Trial signup3](ss-03-Trial-Signup3.png)
+    <!-- border -->![Screenshot Trial signup3](ss-03-Trial-Signup3.png)
 
 Congratulations, you have successfully signed up for the SAP HANA Cloud trial. Your trial is immediately ready to be used.
 
@@ -126,7 +142,7 @@ Congratulations, you have successfully signed up for the SAP HANA Cloud trial. Y
 
 2.	Then click on **Entitlements** on the left-hand side menu.
 
-    !![BTP Entitlements](ss-04-BTP-entitlements.png)
+    <!-- border -->![BTP Entitlements](ss-04-BTP-entitlements.png)
 
 3.	Make sure you have entitlements for the services (and service plans) listed here:
 
@@ -140,15 +156,15 @@ Congratulations, you have successfully signed up for the SAP HANA Cloud trial. Y
 
 4.	If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen. Here you can see all the services associated to your trial account.
 
-    !![BTP Configure Entitlements](ss-05-BTP-configure-entitlements.png)
+    <!-- border -->![BTP Configure Entitlements](ss-05-BTP-configure-entitlements.png)
 
 5.	Click on **Add Service Plans** in the same area of the screen.
 
-    !![BTP add service plan](ss-06-BTP-add-service-plan.png)
+    <!-- border -->![BTP add service plan](ss-06-BTP-add-service-plan.png)
 
 6.	In the pop-up that opens, type `HANA` in the search box to see all relevant entitlements.
 
-    !![BTP select entitlements](ss-07-BTP-select-entitlements.png)
+    <!-- border -->![BTP select entitlements](ss-07-BTP-select-entitlements.png)
 
 7.	Select the missing entitlements by checking the boxes.
 
@@ -156,21 +172,20 @@ Congratulations, you have successfully signed up for the SAP HANA Cloud trial. Y
 
 9.	On the top right-hand side of the screen, make sure to click on **Save**.
 
-    !![BTP entitlements save](ss-08-BTP-cockpit-trial-entitlement-save.png)
+    <!-- border -->![BTP entitlements save](ss-08-BTP-cockpit-trial-entitlement-save.png)
 
 Congratulations, you have added the SAP HANA Cloud entitlement to your existing trial account on SAP BTP! You can immediately create your trial instance of SAP HANA Cloud and start your journey.
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get to know SAP BTP cockpit)]
+### Get to know SAP BTP cockpit
+
 
 SAP BTP cockpit is a web-based interface used to manage SAP cloud applications, such as SAP HANA Cloud. This is where you can manage your SAP Business Technology Platform account and users as well as create new instances whenever necessary.  
 
-!![Screenshot Trial home page](ss-09-trial-home-page.png)
+<!-- border -->![Screenshot Trial home page](ss-09-trial-home-page.png)
 
 When you first access your trial account, you will see the **Trial Home Page**.
 
@@ -180,24 +195,23 @@ This is where you can enter your account but also find helpful resources to get 
 
 -	Take the virtual tour once you start your trial for the first time.
 
-    !![Screenshot Trial home page Tour](ss-10-trial-home-page-tour.png)
+    <!-- border -->![Screenshot Trial home page Tour](ss-10-trial-home-page-tour.png)
 
 -	Use the **Help** button at the top right-hand corner of the screen once you are logged in.
 
 -	Consult our [documentation material here](https://help.sap.com/viewer/product/BTP/LATEST/en-US)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand Accounts, Subaccounts, and Spaces)]
+### Understand Accounts, Subaccounts, and Spaces
+
 
 Your account on SAP Business Technology Platform is called a **global account**. As the administrator, you will have full control of your global account and be able to create subaccounts, spaces, and instances. Subaccounts are a smaller part of your global account. Under subaccounts are spaces, in which your instances are located.
 
-!![BTP Global Account](ss-11-BTP-global-account.png)
+<!-- border -->![BTP Global Account](ss-11-BTP-global-account.png)
 
 Below you can see a simplified diagram of a global account in SAP BTP cockpit with different subaccounts and spaces that each contain SAP HANA database and data lake instances. Of course, once you use SAP HANA Cloud, you will most likely have many more databases, spaces, subaccounts and maybe even global accounts. These levels will then help you keep everything neat and organized.
 
-!![BTP Illustration](ss-12-BTP-illustration.png)
+<!-- border -->![BTP Illustration](ss-12-BTP-illustration.png)
 
 > **Global Account**: Your account on BTP Platform is called a global account. As the administrator, you will have full control of your global account and be able to create subaccounts, spaces, and instances.
 >
@@ -216,14 +230,12 @@ You have completed the first tutorial of this mission! Learn in the next tutoria
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

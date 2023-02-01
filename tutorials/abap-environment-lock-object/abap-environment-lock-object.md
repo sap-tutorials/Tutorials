@@ -1,30 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Data Model and Lock Object in SAP BTP, ABAP Environment
-description: Create data model and lock object in SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 15
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
+ 
+# Create Data Model and Lock Object in SAP BTP, ABAP Environment
+<!-- description --> Create data model and lock object in SAP BTP, ABAP environment.
 
 ## Prerequisites  
   - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to create an ABAP package
   - How to create a domain
   - How to create a table
   - How to create a data definition
   - How to create a lock object
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
+### Create ABAP package
+
 1. Go to ADT and right-click on **`ZLOCAL`**, select the menu path **New** > **ABAP Package**.
 
     ![Create ABAP package](package.png)
@@ -46,12 +51,11 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Setup connection settings](package4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Add package)]
+### Add package
+
   1. Right-click on **Favorite Packages** and select **Add Package...**
 
       ![Add ABAP package](add.png)
@@ -60,10 +64,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create ABAP package](add2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create domain)]
+### Create domain
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create domain](domain.png)
@@ -93,10 +96,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create domain](domain5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create data element)]
+### Create data element
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create data element](element.png)
@@ -125,10 +127,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create data element](element5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create database table)]
+### Create database table
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create table](table.png)
@@ -173,10 +174,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create data definition)]
+### Create data definition
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create table](definition.png)
@@ -185,7 +185,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create table](definition2.png)
 
-  3.  Create your database table:
+  3.  Create your data definition:
      - Name: **`Z_I_ROOM_XXX`**
      - Description: **`Room XXX`**
 
@@ -200,54 +200,53 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
   5. Create your data definition with following coding:
 
     ```ABAP
-      @AbapCatalog.sqlViewName: 'Z_M_ROOM_XXX'
-      @AbapCatalog.compiler.compareFilter: true
-      @AbapCatalog.preserveKey: true
-      @AccessControl.authorizationCheck: #CHECK
-      @EndUserText.label: 'Room XXX'
-      @Search.searchable
-      @UI.headerInfo: { typeName: 'Room', typeNamePlural: 'Rooms' , title : { value: 'ID' } }
-      define root view Z_I_ROOM_XXX as select from zroom_xxx as room
-      association [0..1] to I_BusinessUser as _SAPSysAdminDataChangeUser on _SAPSysAdminDataChangeUser.UserID = room.lastchangedbyuser
-      {
-      @UI.facet: [ { type: #COLLECTION, position: 1, id: 'ROOM', label: 'Room'  }, { type: #IDENTIFICATION_REFERENCE, position: 1, parentId: 'ROOM', label: 'General Information'}]
-      @EndUserText: { label: 'ID' }
-      @Search: { defaultSearchElement: true }
-      @UI: { lineItem: [{ position: 1 }], identification: [{ position: 1 }] }
-      key room.id,
-      @EndUserText: { label: 'Seats' }
-      @UI: { lineItem: [{ position: 3 }], identification: [{ position: 2 }] }
-      room.seats,
-      @EndUserText: { label: 'Location' }
-      @UI: { lineItem: [{ position: 4 }], identification: [{ position: 3 }] }
-      room.location,
-      @EndUserText: { label: 'Has Beamer' }
-      @UI: { lineItem: [{ position: 5 }], identification: [{ position: 4 }] }
-      room.hasbeamer,
-      @EndUserText: { label: 'Has Video' }
-      @UI: { lineItem: [{ position: 7 }], identification: [{ position: 5 }] }
-      room.hasvideo,
-      @EndUserText: { label: 'User Rating' }
-      @UI: { lineItem: [{ position: 8 }], identification: [{ position: 6 }] }
-      userrating,
-      @EndUserText: { label: 'Last Changed On' }
-      @UI: { identification: [{ position: 7 }] }
-      room.lastchangeddatetime,
-      @EndUserText: { label: 'Last Changed By' }
-      @UI: { identification: [{ position: 8 }], textArrangement: #TEXT_ONLY }
-      room.lastchangedbyuser,
-      @UI.hidden: true
-      _SAPSysAdminDataChangeUser  
-      }
+    @AbapCatalog.sqlViewName: 'Z_M_ROOM_XXX'
+    @AbapCatalog.compiler.compareFilter: true
+    @AbapCatalog.preserveKey: true
+    @AccessControl.authorizationCheck: #CHECK
+    @EndUserText.label: 'Room XXX'
+    @Search.searchable
+    @UI.headerInfo: { typeName: 'Room', typeNamePlural: 'Rooms' , title : { value: 'ID' } }
+    define root view Z_I_ROOM_XXX as select from zroom_xxx as room
+    association [0..1] to I_BusinessUserBasic as _SAPSysAdminDataChangeUser on _SAPSysAdminDataChangeUser.UserID = room.lastchangedbyuser
+    {
+    @UI.facet: [ { type: #COLLECTION, position: 1, id: 'ROOM', label: 'Room'  }, { type: #IDENTIFICATION_REFERENCE, position: 1, parentId: 'ROOM', label: 'General Information'}]
+    @EndUserText: { label: 'ID' }
+    @Search: { defaultSearchElement: true }
+    @UI: { lineItem: [{ position: 1 }], identification: [{ position: 1 }] }
+    key room.id,
+    @EndUserText: { label: 'Seats' }
+    @UI: { lineItem: [{ position: 3 }], identification: [{ position: 2 }] }
+    room.seats,
+    @EndUserText: { label: 'Location' }
+    @UI: { lineItem: [{ position: 4 }], identification: [{ position: 3 }] }
+    room.location,
+    @EndUserText: { label: 'Has Beamer' }
+    @UI: { lineItem: [{ position: 5 }], identification: [{ position: 4 }] }
+    room.hasbeamer,
+    @EndUserText: { label: 'Has Video' }
+    @UI: { lineItem: [{ position: 7 }], identification: [{ position: 5 }] }
+    room.hasvideo,
+    @EndUserText: { label: 'User Rating' }
+    @UI: { lineItem: [{ position: 8 }], identification: [{ position: 6 }] }
+    userrating,
+    @EndUserText: { label: 'Last Changed On' }
+    @UI: { identification: [{ position: 7 }] }
+    room.lastchangeddatetime,
+    @EndUserText: { label: 'Last Changed By' }
+    @UI: { identification: [{ position: 8 }], textArrangement: #TEXT_ONLY }
+    room.lastchangedbyuser,
+    @UI.hidden: true
+    _SAPSysAdminDataChangeUser  
+    }
     ```
 
       Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create lock object)]
+### Create lock object
+
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**
 
       ![Create lock object](lock.png)
@@ -275,11 +274,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create lock object](lock5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

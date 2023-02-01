@@ -1,11 +1,13 @@
 ---
-title: Identify Relevant Networks in Spatial Data
-description: Learn how to identify a relevant area in your spatial data in SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Identify Relevant Networks in Spatial Data
+<!-- description --> Learn how to identify a relevant area in your spatial data in SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - You have completed the tutorial [Determine the Distance to a Target POI](hana-cloud-smart-multi-model-4).
@@ -13,16 +15,16 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is running before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to identify a sub-network that represents only the area relevant to your route
 - How to create a circle to identify a relevant area in your spatial data
 - How to flag nodes of the transportation network located in a circle
 
-
+ 
 In this tutorial, you will learn how to identify a relevant area in your spatial data.
 Now that you know the distance from your location to the target destination you want to go to, your next task is to find a route in the transportation network. Instead of finding the path while considering the whole transportation network, it is more useful to first select a meaningful sub-network that represents only the area of the network relevant to your route.
 
+## Intro
 We will show you how to do that in these two steps:
 
 -	Create a Circle for the Relevant Area
@@ -31,14 +33,15 @@ We will show you how to do that in these two steps:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a circle for the relevant area)]
+### Create a circle for the relevant area
+
 First, you need to construct a circle to identify the relevant area for the transportation network. The circle should have a minimal size and should contain origin and destination with a buffer of 500 meters around it. To illustrate how the query is being built we will use step-by-step queries with sub-SELECT statements.
 
 Note, that generally, the center point of the smallest circle, which includes two points, is the center point of their direct connection line.
 
 You can see in this image the circle you will create:
 
-!![transportation area](ss-01-transportation-area.png)
+<!-- border -->![transportation area](ss-01-transportation-area.png)
 
 1. First, select the two points from the previous tutorials using this statement:
 
@@ -96,10 +99,9 @@ FROM LONDON_POI
 WHERE "osmid" = 6274057185;
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add flags for all nodes in a circle)]
+### Add flags for all nodes in a circle
+
 Next, you need to flag all nodes of the transportation network located in the circle, by setting `in_scope`= true.
 
 1. First, we need to enhance the existing vertex table by column `in_scope`.
@@ -137,7 +139,7 @@ WHEN MATCHED THEN UPDATE SET lv.IN_SCOPE = CIRCLE.AREA.ST_Intersects(SHAPE);
 SELECT SHAPE FROM LONDON_VERTICES WHERE IN_SCOPE = 1;
     ```
 
-    !![relevant nodes](ss-02-relevant-nodes.png)
+    <!-- border -->![relevant nodes](ss-02-relevant-nodes.png)
 
 By creating a circle in your relevant area and flagging nodes in this circle, you have successfully identified a sub-network for transportation, which you will consider for finding your path through London in the following exercises.
 
@@ -145,15 +147,13 @@ By creating a circle in your relevant area and flagging nodes in this circle, yo
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

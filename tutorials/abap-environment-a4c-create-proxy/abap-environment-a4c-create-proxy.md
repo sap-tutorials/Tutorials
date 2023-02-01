@@ -1,23 +1,25 @@
 ---
-title: Create a Remote Client Proxy
-description: In the SAP Business Technology Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
+parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
+# Create a Remote Client Proxy
+<!-- description --> In the SAP Business Technology Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
+
 ##Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account  
 
-## Details
-### You will learn
+## You will learn
   - How to create an HTTP client in an ABAP class
   - How to instantiate a client proxy in this class
   - How to handle errors by creating an exception class and message class
 
+## Intro
 To retrieve data from a remote service, you must:
 
 1. Connect to the provisioning system
@@ -30,7 +32,8 @@ Therefore, this tutorial will only cover in detail those aspects that are differ
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create auxiliary class)]
+### Create auxiliary class
+
 First, you create the class that instantiates the client proxy.
 
 1. In ADT, open your package **`Z_A4C_TO_A4C_XXX`** and choose **New > Class**.
@@ -41,11 +44,10 @@ First, you create the class that instantiates the client proxy.
 
 3. Choose the transport request, then choose **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Copy code)]
+### Copy code
+
 Copy the following code.
 
 ```ABAP
@@ -111,10 +113,9 @@ ENDCLASS.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Adapt code)]
+### Adapt code
+
 1. Specify your provisioning system as the destination, by replacing the defaults:
     - **`i_name`** = name of destination in SAP BTP cockpit, where URL = base URL of provisioning system
 
@@ -123,7 +124,7 @@ ENDCLASS.
 
     ```
 
-      !![step8b-new-destination-settings](step8b-new-destination-settings.png)    
+      <!-- border -->![step8b-new-destination-settings](step8b-new-destination-settings.png)    
 
 2. Specify your service definition and the relative path of your inbound service, by replacing the defaults:
 
@@ -140,19 +141,18 @@ ENDCLASS.
 
     ```
 
-    !![step3a-abap-artifacts](step3a-abap-artifacts.png)
-    !![step3b-relative-path-inbound-service](step3b-relative-path-inbound-service.png)
+    <!-- border -->![step3a-abap-artifacts](step3a-abap-artifacts.png)
+    <!-- border -->![step3b-relative-path-inbound-service](step3b-relative-path-inbound-service.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create message class)]
+### Create message class
+
 1. Select your package and choose **New > Other ABAP Repository Object** from the context menu.
 
 2. Enter the filter text **message** and choose **ABAP > ... Message Class**, then choose **Next**.
 
-    !![step4a-message-class-wizard](step4a-message-class-wizard.png)
+    <!-- border -->![step4a-message-class-wizard](step4a-message-class-wizard.png)
 
 3. Enter a name, **`ZCM_TRAVELS_XXX`**, and description, then choose **Next**. Your message class should have the prefix **`ZCM`**.
 
@@ -160,15 +160,14 @@ ENDCLASS.
 
 The new message class appears in a new editor.
 
-!![step4b-new-message-class](step4b-new-message-class.png)
+<!-- border -->![step4b-new-message-class](step4b-new-message-class.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add messages)]
+### Add messages
+
 In your code, there are five `CATCH` statements. Enter a number and short text for each one. Enter the five numbers using the **Create** icon.
 
-!![step5-create-message-icon](step5-create-message-icon.png)
+<!-- border -->![step5-create-message-icon](step5-create-message-icon.png)
 
 |  Number | Short Text
 |  :------| :-------------
@@ -180,10 +179,9 @@ In your code, there are five `CATCH` statements. Enter a number and short text f
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create exception class)]
+### Create exception class
+
 You will now handle exceptions that may be raised if, for example, your code points at the wrong HTTP destination.
 To do this, you need to create an exception class, which **catches** the exception and a message class, which contains all the appropriate messages.
 
@@ -198,17 +196,16 @@ In this case, your exception class must inherit from the superclass **`CX_RAP_QU
 
 The new exception class appears with some pre-defined code in a new editor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define constants)]
+### Define constants
+
 For each exception, the exception class defines one or more **constant** structures, which specifies the message class, message number, and attributes. (There should be four attributes for each constant structure, whether or not they are used.)
 
 Define these using a code template:
 
 1. In the private section of your exception class, type **`textID`**, then trigger code completion using **`Ctrl+Space`**, then choose **`textIdExceptionClass...`**
 
-    !![step7a-code-complete-textid](step1a-code-complete-textid.png)
+    <!-- border -->![step7a-code-complete-textid](step1a-code-complete-textid.png)
 
 2. Replace the default texts:
     - `begin of <ExceptionClass>` = **`begin of destination_provider_fail`**
@@ -244,10 +241,9 @@ Define these using a code template:
     |  004    | `remote_access_fail`
     |  005    | `gateway_fail`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Handle exceptions)]
+### Handle exceptions
+
 1. Add a **`RAISING`** clause to the method **`get_client_proxy`**, pointing to your exception class.
 
     The addition RAISING is used to declare one or more class-based exceptions that can be propagated from the method to the caller.
@@ -319,10 +315,9 @@ Define these using a code template:
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Check code for proxy class)]
+### Check code for proxy class
+
 The code for your proxy class should look like this:
 
 ```ABAP
@@ -418,10 +413,9 @@ ENDCLASS.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Check code for exception class)]
+### Check code for exception class
+
 The code for your exception class should look like this:
 
 ```ABAP
@@ -515,14 +509,12 @@ ENDCLASS.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
+
 Create a `CONSTANT` structure named **`agency_unknown`** for an exception class, specifying the message class **`/DMO/CM_FLIGHTS`**, message number **`010`**, and four attributes. The first attribute should have the value **`MV_AGENCY_ID`**. Enter your code in the space below and choose **Submit Answer**.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### More Information
 For more information on ABAP class-based exceptions, see:

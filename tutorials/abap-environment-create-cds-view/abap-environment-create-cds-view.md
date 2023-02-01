@@ -1,36 +1,40 @@
 ---
+parser: v2
 auto_validation: true
-title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
+
+# Create and Expose Core Data Services Based on a Database Table
+<!-- description --> Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
 
 ## Prerequisites  
 - SAP BTP, ABAP Environment user
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
-## Details
-### You will learn
+## You will learn
 - How to create a database table
 - How to create Core Data Services
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
+### Open Eclipse
+
 Select to your ABAP package created in tutorial **Create Simple Database Table for ABAP Environment** and create a Core Data Services (CDS) data definition.
 Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > **Other Repository Object**.
 
 ![Open Eclipse](object.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create data definition)]
+### Create data definition
+
   1. Search for **data definition**, select it and click **Next**.
 
       ![Create data definition](definition.png)
@@ -47,10 +51,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create data definition](view.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Specify SQL view)]
+### Specify SQL view
+
   1. Specify the `sql view name` in the view definition as **`ZV_BOOKING_XXX`**.
 
       ![Specify SQL view](cds.png)
@@ -96,10 +99,9 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Specify SQL view](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add UI annotation)]
+### Add UI annotation
+
   1. Go back to the data definition and used the **`@UI`** annotations to add the UI-specific semantics. Add following UI annotation in front of your data definition.
 
       ![Add UI annotation](ui.png)
@@ -212,47 +214,44 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Add UI annotation](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create service definition)]
+### Create service definition
+
   1. Right-click on your data definition **`ZI_BOOKING_XXX`** and select **New Service Definition**
 
       ![Create service definition](servicedef.png)
 
-  2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
+  2. Create a service definition and call it **`ZI_BOOKING_XXX`**.
 
-      ![Create service definition](service2.png)
-
+      ![Create service definition](sbinding.png)
+ 
   3. Click **Finish** to complete your transport request.
 
-      ![Create service definition](transport2.png)
+      ![Create service definition](sbinding2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Expose entities)]
+### Expose entities
+
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
     ```ABAP
-      @EndUserText.label: 'Service Definition for Booking'
+    @EndUserText.label: 'Service Definition for Booking'
 
-      define service Z_I_Booking_XXX {
-      expose ZI_Booking_XXX as Booking;
-      expose I_Country  as Country;
-      }
+    define service ZI_Booking_XXX {
+    expose ZI_Booking_XXX as Booking;
+    expose I_Country  as Country;
+    }
     ```
 
   2. Save and activate your service definition.
 
       ![Expose entities](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create service binding)]
+### Create service binding
+
   1. Right-click on your service definition **`Z_I_BOOKING_XXX`** and select **New Service Binding**.
 
       ![Create service binding](servicebinding.png)
@@ -267,63 +266,43 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create service binding](binding3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Activate your service binding)]
-Click **Activate** to publish your service binding.
+### Publish service binding
 
-![Publish locally](activate.png)
 
-[DONE]
-[ACCORDION-END]
+1. **Activate** your service binding.
 
-[ACCORDION-BEGIN [Step 9: ](Check your metadata)]
-  1. Click on the Service URL to see your result.
+    ![Publish locally](activate2.png)
 
-      ![Check your metadata](serviceurl.png)
+2. Click **Publish**.
 
-  2. Sign in with your communication user and password.
+      ![Open SAP Fiori elements view](publish.png)
 
-      ![Check your metadata](system.png)
 
-  3. Check your result:
 
-      ![Check your metadata](metadata.png)
+### Open SAP Fiori elements view
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Open SAP Fiori elements view)]
-  1. Go back to your service binding **`Z_I_BOOKING_XXX`**
-   Open the preview for SAP Fiori elements app on the right side with double-clicking or right click.
+  1. In your service binding, check your result. Select **`to_Country`** and click **Preview**.
 
-      ![Open SAP Fiori elements view](preview.png)
+      ![Open SAP Fiori elements view](preview2.png)
 
   2. Login with your username and password.
 
       ![Login](fiori2.png)
 
-  3. To set some filter click on settings icon.
+  3. Click on **GO**.
 
-      ![Settings](fiori3.png)
+      ![Settings](fiorix.png)
 
-  4. Select fields that shall be displayed or select all and click on **OK**.
+  4.  Check your result.
 
-      ![Select filter](fiori4.png)
+      ![Select filter](fiorix2.png)
 
-  5. Click on **GO**.
 
-      ![GO button](fiori5.png)
 
-  6. Check your result:
+### Test yourself
 
-      ![Open SAP Fiori elements view](fiori6.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
 Write following UI annotation as a header Information:
 
 - `typeName`: `Test`
@@ -332,5 +311,4 @@ Write following UI annotation as a header Information:
   - `type`: `#STANDARD`
   - `value`: `testyourself`
 
-[VALIDATE_1]
-[ACCORDION-END]
+

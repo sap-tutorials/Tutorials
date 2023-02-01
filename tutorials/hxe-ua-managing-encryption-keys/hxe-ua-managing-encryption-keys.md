@@ -1,25 +1,28 @@
 ---
-title: Managing Encryption Keys
-description: This tutorial will cover how to change the encryption keys to your SAP HANA, express edition installation.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
+
+# Managing Encryption Keys
+<!-- description --> This tutorial will cover how to change the encryption keys to your SAP HANA, express edition installation.
 
 ## Prerequisites  
   - [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) **or**
  [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html)
 
 
-## Details
-### You will learn  
+## You will learn  
   - How to change the encryption keys to your SAP HANA, express edition installation to make it more secure
 
+## Intro
 SAP HANA, express edition shares the same encryption keys across installations. For security purposes, generate new encryption keys for your SAP HANA, express edition installation.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check if Encryption Keys have Reset)]
+### Check if Encryption Keys have Reset
+
 
 Open your SAP HANA Studio and connect to your database as the SYSTEM user. Open an SQL console and run the following:
 
@@ -35,11 +38,9 @@ You receive four results pages. The first page will give you the reset count to 
 The next three result pages should not contain any entries. If one of these pages has an entry, you may want to contact your HANA administrator before proceeding as you will lose access to the files listed.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Copy the SAP HANA Academy code
 
-[ACCORDION-BEGIN [Step 2: ](Copy the SAP HANA Academy code)]
 
 Using your preferred web browser, go to the [SAP HANA Academy GitHub](https://github.com/saphanaacademy) page and enter the HXE repository. Click the `SSFS` folder and select `changeSSFSMasterKeys.sh`. Click **Raw**.
 
@@ -48,11 +49,9 @@ Using your preferred web browser, go to the [SAP HANA Academy GitHub](https://gi
 Press **Ctrl + a** to select all, and then **Ctrl + c** to copy the code.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Create the changeSSFSMasterKeys.sh File
 
-[ACCORDION-BEGIN [Step 3: ](Create the changeSSFSMasterKeys.sh File)]
 
 Log into your SAP HANA, express edition installation using a your preferred command prompt. Log in as `hxeadm`. In the `/usr/sap/HXE/home` directory, create the `changeSSFSMasterKey.sh` file.
 
@@ -71,11 +70,9 @@ vi changeSSFSMasterKeys.sh
 In the editor, paste the code from the SAP HANA Academy page. Press `Esc` to exit then `:wq` to write and quit the editor.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Change the Permissions of changeSSFSMasterKeys.sh
 
-[ACCORDION-BEGIN [Step 4: ](Change the Permissions of changeSSFSMasterKeys.sh)]
 
 Give `changeSSFSMasterKeys.sh` execute permissions.
 
@@ -84,11 +81,9 @@ chmod u+x changeSSFSMasterKeys.sh
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### Run the Script
 
-[ACCORDION-BEGIN [Step 5: ](Run the Script)]
 
 Execute the `changeSSFSMasterKeys.sh` script.
 
@@ -99,11 +94,9 @@ Execute the `changeSSFSMasterKeys.sh` script.
 Follow the on-screen prompts to reset your encryption keys. This process will take some time.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Check if Encryption Was Successful
 
-[ACCORDION-BEGIN [Step 6: ](Check if Encryption Was Successful)]
 
 Return to SAP HANA Studio and run this part of the previous SQL command:
 
@@ -114,6 +107,3 @@ SELECT * FROM SYS.M_SECURESTORE;
 The `RESET_COUNT` for the `KEY_TYPE` `DPAPI` will increase by 1.
 
 
-[DONE]
-
-[ACCORDION-END]

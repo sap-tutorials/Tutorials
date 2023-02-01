@@ -1,33 +1,36 @@
 ---
-title: Apply Transactional Promotion with SAP Omnichannel Promotion Pricing
-description: Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a transactional promotion rule on top of the regular sales price.
+parser: v2
 auto_validation: true
 time: 10
 tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
+# Apply a Transactional Promotion with SAP Omnichannel Promotion Pricing
+<!-- description --> Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a transactional promotion rule on top of the regular sales price.
+
 ## Prerequisites
 - You have completed the tutorials [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario) and [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
+- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
 
 
-## Details
-### You will learn
+## You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP
 - How to upload a **promotional rule with a discount on transaction level** with the help of the SAP API Business Hub
 - How to execute a calculation request to determine the effective sales price that includes the discount on transaction level
 
->This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, go to the upper right corner and disable the **New SAP API Business Hub** option.
+## Intro
+>This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
   ![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the business scenario)]
+### Get to know the business scenario
+
 
 * Business goal: You are a household equipment vendor and you want to celebrate the 25th anniversary of your **Heidelberg** store (business unit ID: `FC01`). For this, you have created the following promotion: **Spend 800 Euro and get 25% off.**
 * Your promotion is valid from **May 1st, 2021 until May 7th, 2021**.
@@ -36,10 +39,10 @@ primary_tag: products>sap-business-technology-platform
 * You call the Calculation service with the shopping cart information (store, products, date, time).
 * The Calculation service calculates the effective sales price by applying the transactional promotional rule
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-<!-- [ACCORDION-BEGIN [Step 2: ](Set up SAP Omnichannel Promotion Pricing)]
+
+<!-- ### Set up SAP Omnichannel Promotion Pricing
+
 
 To use the SAP Omnichannel Promotion Pricing trial, you need to:
 
@@ -49,27 +52,24 @@ To use the SAP Omnichannel Promotion Pricing trial, you need to:
 4. Create Service Keys
 
 For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
-
-[DONE]
-[ACCORDION-END] -->
+ -->
 
 
-[ACCORDION-BEGIN [Step 2: ](Create environments in SAP API Business Hub)]
+### Create environments in SAP API Business Hub
+
 
 In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP API Business Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-[DONE]
 
-[ACCORDION-END]
+### Upload promotional rule
 
-[ACCORDION-BEGIN [Step 3: ](Upload promotional rule)]
 
 You can now upload the promotional rule for the transactional discount with the Data Upload service.
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
-!![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
-!![Data Upload Regular Promotional Rule 1b](Data Upload Regular Promotional Rule 1b.png)
+<!-- border -->![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
+<!-- border -->![Data Upload Regular Promotional Rule 1b](Data Upload Regular Promotional Rule 1b.png)
 
 
 1. For **API Environment**, select the trial environment you have created for the Data Upload service.
@@ -172,18 +172,16 @@ With this, you uploaded the promotional rule "Spend 800 Euro and get 25% off" (p
 
 >In this tutorial, you only upload the promotional rule for the transactional discount. You have already uploaded the regular sales price of **500 Euro** for the product **coffee machine** (material number: `COFFEE_MACHINE`, unit of measure: `PCE`) with the validity period **May 1st, 2021 to December 31st, 2021** in step 3 of the previous tutorial [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check uploaded master data)]
+### Check uploaded master data
+
 
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Calculate the effective sales price)]
+### Calculate the effective sales price
+
 
 You can now calculate the effective sales price based on the data you have uploaded.
 
@@ -193,8 +191,8 @@ You can now calculate the effective sales price based on the data you have uploa
 
 Let's see if this is the case:
 
-!![Calculation 1](Calculation 2.png)
-!![Calculation 2](Calculation 2b.png)
+<!-- border -->![Calculation 1](Calculation 2.png)
+<!-- border -->![Calculation 2](Calculation 2b.png)
 
 
 1. Navigate to the [Calculation service on the SAP API Business Hub](https://api.sap.com/api/PriceCalculation/resource).
@@ -236,8 +234,7 @@ Let's see if this is the case:
 
 Make sure you get the HTTP response **200**.
 
-[VALIDATE_3]
-[ACCORDION-END]
+
 
 ### Additional Information
 

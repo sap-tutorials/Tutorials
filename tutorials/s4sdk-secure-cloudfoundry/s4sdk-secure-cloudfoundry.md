@@ -1,24 +1,26 @@
 ---
-title: Secure Your Application on SAP Cloud Platform Cloud Foundry
-description: Protect your Java-based Hello World microservice with authenticated and authorized users.
+parser: v2
 auto_validation: true
 time: 50
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>java ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, programming-tool>java ]
+primary_tag: software-product>sap-cloud-sdk
 ---
+
+# Secure Your Application on SAP Business Technology Platform Cloud Foundry
+<!-- description --> Protect your Java-based Hello World microservice with authenticated and authorized users.
 
 ## Prerequisites
  - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application).
 
-## Details
-### You will learn
+## You will learn
   - How to set up and configure the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
   - How to protect your Java microservice so that it only accepts requests based on a valid JSON Web Token (JWT) that is received from the App Router
   - Assign roles and scopes to your application users and let your backend deal with authorization information
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Concepts)]
+### Concepts
+
 
 Before diving deeper into the real setup of the architecture, let's quickly review the architecture this tutorial intends to go for.
 
@@ -33,7 +35,7 @@ On the other hand, the App Router is mainly responsible for managing authenticat
 
 The JWT is passed by the App Router to the underlying microservices so that they are freed up from this task. At the same time, these microservices can only be accessed with a valid JWT, hence, are protected from unauthenticated traffic.
 
-The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
+The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service requires a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
 
 ![Provisioning view with XSUAA binding](Figure2-1.png)
 
@@ -41,10 +43,9 @@ The JWT contains a signature that needs to be verifiable by every microservice t
 
 With these basics in mind, let's create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the App Router)]
+### Set up the App Router
+
 
 You will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, you will first set up the necessary structure.
 
@@ -114,7 +115,7 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
 
 ### Understanding the AppRouter's `manifest.yml`
 
-On Cloud Foundry every sub-account is assigned exactly one subdomain which is associated to exactly one tenant. In a multi-tenant scenario the app router needs to know which tenant to forward to the XSUAA service. This is achieved by including the subdomain in the host, from which the app router will extract it. That is where the `TENANT_HOST_PATTERN` comes into play. It is a variable that declares the pattern how tenants in the URL are identified and handled. For this tutorial we expect the host to conform to `approuter-<subdomain>`. If you desire different URL patterns, you need to change the `route` and `TENANT_HOST_PATTERN` accordingly.
+On Cloud Foundry every sub-account is assigned exactly one subdomain which is associated to exactly one tenant. In a multi-tenant scenario the app router needs to know which tenant to forward to the XSUAA service. This is achieved by including the subdomain in the host, from which the app router will extract it. That is where the `TENANT_HOST_PATTERN` comes into play. It is a variable that declares the pattern how tenants in the URL are identified and handled. This tutorial expects the host to conform to `approuter-<subdomain>`. If you desire different URL patterns, you need to change the `route` and `TENANT_HOST_PATTERN` accordingly.
 
 Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. This tutorial series assumes that you want to build multi-tenant applications, as it is aimed towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the `xs-security.json` security descriptor may declare `"tenant-mode": "dedicated"` (see step 5 below).
 
@@ -126,13 +127,13 @@ Last but not least the `services` section declares to bind your own XSUAA servic
 
 ### Bind the XSUAA Service
 
-Now you need to create a service binding to the XSUAA service. As a prerequisite you require an `xs-security.json` (security descriptor) file that contains a declaration about authorization scopes you intend to use in your application. For example, simply declare a `DISPLAY` scope that will be used later on to authorize your users. In addition, a so-called role template called `Viewer` that references our `DISPLAY` scope is declared.
+Now you need to create a service binding to the XSUAA service. As a prerequisite you require an `xs-security.json` (security descriptor) file that contains a declaration about authorization scopes you intend to use in your application. For example, simply declare a `DISPLAY` scope that will be used later on to authorize your users. In addition, a so-called role template called `Viewer` that references your `DISPLAY` scope is declared.
 
 Put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
->**_Note_**: The `xsappname` has to be unique within the entire XSUAA instance. We suggest you follow the same pattern of `<app-name>-<subdomain>`.
+>The `xsappname` has to be unique within the entire XSUAA instance. We suggest you follow the same pattern of `<app-name>-<subdomain>`.
 
->**_Note_**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
+>As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
 `<destLocation>/xs-security.json`:
 
@@ -149,7 +150,7 @@ Put this file to `<destLocation>/xs-security.json`. For a more detailed explanat
   "role-templates": [
     {
       "name": "Viewer",
-      "description": "Required to view things in our solution",
+      "description": "Required to view things in your solution",
       "scope-references"     : [
         "$XSAPPNAME.Display"
       ]
@@ -188,11 +189,10 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 
 ![helloworld](Figure6-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, you need to protect your java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+### Protect your backend microservice
+
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, you need to protect your java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that you have configured previously using the `xs-security.json` file.
 
 [OPTION BEGIN [TomEE]]
 
@@ -235,7 +235,7 @@ Additionally make sure that the following `security-constraint` block is contain
 
 That way all endpoints of your application can be accessed by users with any of the role names specified in the `security-role` tags.
 
-To specifically secure your endpoints by requiring a specific role you now only need to add an annotation to your endpoint. For our `BusinessPartnerServlet` this looks like this:
+To specifically secure your endpoints by requiring a specific role you now only need to add an annotation to your endpoint. For your `BusinessPartnerServlet` this looks like this:
 
 ```Java
 @ServletSecurity(@HttpConstraint(rolesAllowed = { "Display" }))
@@ -345,32 +345,31 @@ cf push
 
 If you now call the `/businesspartners` endpoint of your application you will see a [`401` Unauthorized](https://httpstatuses.com/401) status code, as you were not authorized by the App Router. Calling the `/businesspartners` endpoint via your App Router on the other hand will give you a [`403` Forbidden](https://httpstatuses.com/403) status code meaning that you do not have the necessary authorization to see this page. This is to be expected, as you secured the endpoint with the annotation above without assigning the requested role `Display` to your user. You will fix this in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign users to scopes)]
+### Assign users to scopes
 
-To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the SCP cockpit.
+
+To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the BTP cockpit.
 
 1. First, go to your account on Cloud Foundry and find the **Role Collections** menu under the **Security** module.
 
-2. Second, create a new role collection which you can give an arbitrary name. For example, you might call the role collection **Business Partner Manager**. ![Creating a Role Collection](Figure8-2.png)
+2. Second, create a new role collection which you can give an arbitrary name. For example, you might call the role collection **Business Partner Manager**.
+
+![Creating a Role Collection](Figure8-2.png)
 
 3. Afterwards, select the role collection **Business Partner Manager**, select **Edit**, and add a new role. From the menu, select your application and the corresponding role template and role. Finish up the process by adding the newly created role and saving the **Business Partner Manager** role collection.
+
 ![Creating a Role](Figure8-3.png)
 
-4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. To do this, select the trust configuration from the security menu and select the **Default identity provider** from the list.
+4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. To do this, select **Users** from the security menu and select the user that should receive the permissions from the list.
 
-5. In the opening dialog, enter your user ID as e-mail into the user field and click **Show Assignments** followed by **Add Assignments**.
-
-6. Select the **Business Partner Manager** role collection from the menu to assign it to your user. ![Add User Assignment](Figure8-4.png)
+5. On the right hand side, under the **Role Collections** headline, select **Assign Role Collection** and choose the **Business Partner Manager** collection. Confirm the selection by clicking on the **Assign Role Collection** button.
 
 Afterwards you have the `Display` OAuth scope assigned to your user, which allows you to access the secured endpoints again.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and test the application)]
+### Deploy and test the application
+
 Now you are ready to build and deploy the application to try all your changes with:
 
 ```Bash
@@ -388,10 +387,9 @@ However, you should still be able to access your application using the App Route
 
 ![Hello World Endpoint](Figure9-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Remove CSRF token protection from backing service)]
+### Remove CSRF token protection from backing service
+
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, you should remove it. For this remove the following lines from your `web.xml`:
 ```XML
 <filter>
@@ -404,24 +402,22 @@ If you have previously exposed the backing service directly to the end user, you
 </filter-mapping>
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Understanding Roles, Role Collections and Scopes)]
+### Understanding Roles, Role Collections and Scopes
+
 The following picture explains how the various concepts are related to each other.
 
 ![Roles, Scopes and Users](Figure9-3.png)
 
-Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
+Gray Box: As a BTP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
 
-Orange Box: As an SCP tenant administrator of the business application (customer), you can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
+Orange Box: As an BTP tenant administrator of the business application (customer), you can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
 Green Box: As an administrator of the users (customer), you can assign the role collection to the final user using the SAML attribute `Groups`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Troubleshoot JSON Web Tokens)]
+### Troubleshoot JSON Web Tokens
+
 Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
 
 ```Java
@@ -446,20 +442,18 @@ public class JwtDebugServlet extends HttpServlet {
 Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You should never use this with any productive JWT as these tokens are shared on a public website. Fallback to local solutions.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Troubleshoot OAuth scopes from XSUAA)]
+### Troubleshoot OAuth scopes from XSUAA
+
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
 `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Set up your own identity provider)]
-So far, we have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. The following paragraphs quickly explain how the XSUAA service can delegate requests to such an external IdPs.
+### Set up your own identity provider
+
+So far, you have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. The following paragraphs quickly explain how the XSUAA service can delegate requests to such an external IdPs.
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
 
@@ -471,23 +465,17 @@ Secondly, you need to import the metadata into your IdP. In the following exampl
 
 2. Import the SP's metadata and click **Save**.
 
-3. Back in the SCP account cockpit you need to add the IdP's metadata in the same manner.
+3. Back in the BTP account cockpit you need to add the IdP's metadata in the same manner.
 
 4. Click **New Trust Configuration** and add the metadata from the IdP and click **Save**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_2]
 
-[ACCORDION-END]

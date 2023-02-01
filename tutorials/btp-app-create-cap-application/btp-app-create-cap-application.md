@@ -1,17 +1,17 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Create a CAP-Based Application
 description: This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
-1. Open a terminal.
+1. Open a command line window.
 
 2. Navigate to your tutorial root directory.
 
@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cd <tutorial root directory>
     ```
 
-3. Switch to your tutorial app directory.
+3. Switch to your project root folder.
 
     ```Shell/Bash
     cd cpapp
@@ -52,7 +52,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![VS Code](vscode.png)
 
-6. In VS Code choose **Terminal** **&rarr;** **New Terminal** from its menu.
+6. In VS Code choose **Terminal** &rarr; **New Terminal** from its menu.
 
     A new terminal opens in the lower right part of the VS Code screen.
 
@@ -68,9 +68,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cds watch
     ```
 
-    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.`
+    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`
 
-    > If you get the error `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`, you can run the command:
+    > You can run the command:
 
     > ```bash
     > Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
@@ -90,15 +90,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add files to the project)]
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 
     !![Windows](codeandfinder.png)
 
-    Alternatively, you can open it as a second folder in your VS Code project: **File** **&rarr;** **Add Folder to Workspace...**.
+    Alternatively, you can open it as a second folder in your VS Code project: **File** &rarr; **Add Folder to Workspace...**.
 
-3. Copy the file `schema.cds` from `templates/cap/create-service/db` to the `db` folder of your app.
+3. Copy the file `schema.cds` from `templates/create-cap-application/db` to the `db` folder of your app.
 
     This is the code:
 
@@ -125,11 +125,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     ```
 
 
-    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. They key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
+    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. The key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
 
     Notice how the CAP server reacted to dropping the file. It now tells you that it has a model but there are no service definitions yet and, thus, it still can't serve anything. Next, you add a service definition.
 
-4. Copy the file `risk-service.cds` from `templates/cap/create-service/srv` to the `srv` folder of your app.
+4. Copy the file `risk-service.cds` from `templates/create-cap-application/srv` to the `srv` folder of your app.
 
     The content of the file looks like this:
 
@@ -153,7 +153,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Service](service.png)
 
-    > You may have to stop the CAP server with **Ctrl** + **C** and restart it with the `cds watch` command.
+    > You may have to stop the CAP server with <kbd>Ctrl</kbd> + <kbd>C</kbd> and restart it with the `cds watch` command.
 
 6. Choose the `$metadata` link.
 
@@ -170,7 +170,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     So, there's no data yet. This is because so far, your model doesn't contain any data. You add some now.
 
-7. Copy the folder `data` from `templates/cap/create-service/db` to the `db` folder of your app. If VS Code asks you whether to copy the folder, confirm.
+7. Copy the folder `data` from `templates/create-cap-application/db` to the `db` folder of your app. If VS Code asks you whether to copy the folder, confirm.
 
     You have now added two comma-separated value (CSV) files that contain local data for both the `Risks` and the `Mitigations` entities. A quick look into the `sap.ui.riskmanagement-Risks.csv` (the name consists of your namespace and the name of your database entity from the `schema.cds` file) file shows data like this:
 
@@ -184,11 +184,22 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     As always, the CAP server has noticed the change.
 
-    > You may have to stop the CAP server with **Ctrl** + **C** and restart it with the `cds watch` command.
+    > You may have to stop the CAP server with <kbd>Ctrl</kbd> + <kbd>C</kbd> and restart it with the `cds watch` command.
 
 8. Revisit the `Risks` entity <http://localhost:4004/service/risk/Risks> in your browser. You now see the data exposed.
 
     !![Service Data](servicedata.png)
+
+
+    > The Risks entity looks different?
+
+    > When you revisit the **Risks** entity, you might see something like this instead of the nicely-formatted output above.
+    >     !![No JSON Viewer](no-json-viewer.png)
+    > However, this doesn't mean you have made a mistake in the tutorial. Rather, this is the correct output without any formatting. If you'd like to see a formatted output in your browser, you can add a plugin to your browser. Here are a few exemplary JSON formatters for different browsers:
+
+    > - [Chrome](https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
+    > - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/jsonview/kmpfgkgaimakokfhgdahhiaaiidiphco)
+    > - [Safari](https://apps.apple.com/us/app/json-peep-for-safari/id1458969831?mt=12)
 
 And that's it. You now have a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
@@ -197,7 +208,7 @@ And that's it. You now have a full blown OData service, which complies to the OD
 
 
 [DONE]
-The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+The result of this tutorial can be found in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 
 [ACCORDION-END]

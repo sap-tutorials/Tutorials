@@ -1,6 +1,5 @@
 ---
-title: Use Table Variable Operators
-description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,27 +7,31 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-
 time: 10
 ---
 
+# Use Table Variable Operators 
+<!-- description --> Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:** [Using Index Based Cell Access](hana-cloud-sqlscript-usingindexbased)
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to update procedure to use Table Variable Operators to manipulate the immediate table variables
 
+## Intro
 In this tutorial, you will update the previous procedure to now use Table Variable Operators to manipulate the immediate table variables.  We can use table variable operators to perform DML like operations on table variables without having to invoke the SQL layer.  In this exercise, we will experiment with the INSERT, UPDATE, DELETE, and SEARCH operators.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Use INSERT operator)]
+### Use INSERT operator
+
 1. Return to the procedure called `build_products` in the procedure folder.
 
-    !![procedure editor](1_1.png)
+    <!-- border -->![procedure editor](1_1.png)
 
 2. Remove the code inside the body, between the BEGIN and END statements leaving only the two lines shown here.
 
-    !![remove](1_2.png)
+    <!-- border -->![remove](1_2.png)
 
 3. After the SELECT statement, Use the INSERT operator to copy all rows of `lt_products` into the output parameter called `ex_products`. Then use the INSERT operator to insert 3 new products into the output table.  Since you are specifying the actual index, it will insert your new rows at that index and push all existing rows down.
 ```SQLCRIPT
@@ -64,12 +67,11 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 5. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted.
 
-    !![results](1_3.png)
+    <!-- border -->![results](1_3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use UPDATE operator)]
+### Use UPDATE operator
+
 
 1. Return to the procedure and further modify it.  Enter another DECLARE statement for `lv_index`.
 
@@ -115,12 +117,11 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted and now the prices have been increased.
 
-    !![results](2_1.png)
+    <!-- border -->![results](2_1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use DELETE operator)]
+### Use DELETE operator
+
 1. Return to the procedure and further modify it.  Enter two new DECLARE statements.
 
 	```SQLCRIPT
@@ -181,12 +182,11 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed.
 
-    !![results](3_1.png)
+    <!-- border -->![results](3_1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use SEARCH operator)]
+### Use SEARCH operator
+
 1. Return to the procedure and further modify it.  Enter code for a new output parameter.
 
 	```SQLCRIPT
@@ -244,11 +244,9 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 	```
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed in the first tab, and on the second results tab you should see the product id of the first row which category was equal to "PC".
 
-    !![results](4_1.png)
+    <!-- border -->![results](4_1.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

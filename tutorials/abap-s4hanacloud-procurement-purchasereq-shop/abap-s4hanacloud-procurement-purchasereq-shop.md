@@ -1,13 +1,15 @@
 ---
+parser: v2
 auto_validation: true
-title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
-description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product-function>s-4hana-cloud-abap-environment
+tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
+
+# Create a Custom RAP Business Object to Trigger Purchase Requisitions API
+<!-- description --> Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 
 In the online shop, customers can order various items. Once an item is ordered, a new purchase requisition is created via purchase requisitions API.
 
@@ -15,13 +17,12 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
-- Business Catalog `SAP_PRC_BC_PURCHASER_PR` needs to be assign to your business user
+- Business Catalog `SAP_BR_PURCHASER` needs to be assign to your business user
+- Use Starter Development Tenant in S/4HANA Cloud for the tutorial to have necessary sample data in place. See [3-System Landscape and Transport Management](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e022623ec1fc4d61abb398e411670200.html?state=DRAFT&version=2208.503).
 
-## Details
-### You will learn  
+## You will learn  
 - How to logon to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to create a database table
@@ -30,8 +31,12 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - How to create service definition & service binding
 - How to run SAP Fiori Elements Preview
 
+## Intro
+In this tutorial, wherever XXX appears, use a number (e.g. 000).
+
 ---
-[ACCORDION-BEGIN [Step 1: ](Logon to SAP S/4HANA Cloud ABAP Environment)]
+### Logon to SAP S/4HANA Cloud ABAP Environment
+
 
   1. Open Eclipse, select **File** > **New** > **Other**.
 
@@ -49,6 +54,8 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![logon](logon4.png)
 
+      **HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+
   5. Click **Next >**.
 
       ![logon](logon5.png)
@@ -61,10 +68,9 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![logon](logon7.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
+### Create ABAP package
+
 
   1.  Select **ZLOCAL** > **New** > **ABAP Package**.
 
@@ -86,10 +92,9 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
        Click **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create database table)]
+### Create database table
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -172,10 +177,9 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
   12. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create CDS data model)]
+### Create CDS data model
+
 
   1. Right-click your package `Z_PURCHASE_REQ_XXX` and select **New** > **Other ABAP Repository Object**.
 
@@ -197,27 +201,26 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![cds](cds4.png)
 
-  5. Replace your code with following:
+  5. Replace the code for your behavior `ZI_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'Data model for online shop'
     @AccessControl.authorizationCheck: #CHECK
     define root view entity ZI_ONLINE_SHOP_XXX as select from zonlineshop_xxx {
-       key order_uuid as Order_Uuid,
-       order_id as Order_Id,
-       ordereditem as Ordereditem,
-       deliverydate as Deliverydate,
-       creationdate as Creationdate  
+      key order_uuid as Order_Uuid,
+      order_id as Order_Id,
+      ordereditem as Ordereditem,
+      deliverydate as Deliverydate,
+      creationdate as Creationdate  
     }
     ```
 
    6. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create projection view)]
+### Create projection view
+
 
   1. Right-click **Data Definitions** and select **New Data Definition**.
 
@@ -236,29 +239,29 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
       ![projection](projection3.png)
 
-  4. Replace your code with following:
+  4. Replace the code for your behavior `ZC_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'shop projection'
     @AccessControl.authorizationCheck: #CHECK
     @Search.searchable: true
     @UI: { headerInfo: { typeName: 'Online Shop',
-                         typeNamePlural: 'Online Shop',
-                         title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
+                        typeNamePlural: 'Online Shop',
+                        title: { type: #STANDARD, label: 'Online Shop', value: 'order_id' } },
 
-           presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
-                                                 direction: #DESC }] }] }
+          presentationVariant: [{ sortOrder: [{ by: 'Creationdate',
+                                                direction: #DESC }] }] }
     define root view entity ZC_ONLINE_SHOP_XXX
       as projection on ZI_ONLINE_SHOP_XXX
     {
           @UI.facet: [          { id:                  'Orders',
-                                       purpose:         #STANDARD,
-                                       type:            #IDENTIFICATION_REFERENCE,
-                                       label:           'Order',
-                                       position:        10 }      ]
+                                      purpose:         #STANDARD,
+                                      type:            #IDENTIFICATION_REFERENCE,
+                                      label:           'Order',
+                                      position:        10 }      ]
       key Order_Uuid,
           @UI: { lineItem:       [ { position: 10,label: 'order id', importance: #HIGH } ],
-                   identification: [ { position: 10, label: 'order id' } ] }
+                  identification: [ { position: 10, label: 'order id' } ] }
           @Search.defaultSearchElement: true
           Order_Id,
           @UI: { lineItem:       [ { position: 20,label: 'Ordered item', importance: #HIGH } ],
@@ -267,18 +270,17 @@ In the online shop, customers can order various items. Once an item is ordered, 
           Ordereditem,
           Deliverydate       as Deliverydate,
           @UI: { lineItem:       [ { position: 50,label: 'Creation date', importance: #HIGH },
-                                   { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
-                 identification: [ { position: 50, label: 'Creation date' } ] }
+                                  { type: #FOR_ACTION, dataAction: 'update_inforecord', label: 'Update IR' } ],
+                identification: [ { position: 50, label: 'Creation date' } ] }
           Creationdate       as Creationdate
     }
     ```
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create behavior definition for CDS data model)]
+### Create behavior definition for CDS data model
+
 
   1. Right-click your data definition `ZI_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -300,6 +302,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
     managed implementation in class zbp_i_online_shop_xxx unique;
 
     define behavior for ZI_ONLINE_SHOP_XXX alias Online_Shop
+    with additional save
     persistent table zonlineshop_xxx
     lock master
     authorization master ( instance )
@@ -320,10 +323,9 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create behavior definition for projection view)]
+### Create behavior definition for projection view
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Behavior Definition**.
 
@@ -356,15 +358,14 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
    5. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create behavior implementation)]
+### Create behavior implementation
+
 
   1. In your behavior definition **`ZI_ONLINE_SHOP_XXX`** set the cursor before the implementation class `zbp_i_online_shop_xxx` and click **CTRL + 1**. Double-click on **Create behavior implementation class `zbp_i_online_shop_xxx`** to create your implementation class.
 
-    ![implementation](implementation.png)
+     ![implementation](implementation.png)
 
 
   2. Create new implementation class:
@@ -381,9 +382,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
     ```ABAP
     CLASS zbp_i_online_shop_xxx DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_online_shop_xxx.
-    PUBLIC SECTION.
     class-DATA cv_pr_mapped TYPE RESPONSE FOR MAPPED i_purchaserequisitiontp.
-    class-DATA cv_po_mapped TYPE RESPONSE FOR MAPPED I_PurchaseOrderTP_2.
     ENDCLASS.
 
     CLASS zbp_i_online_shop_xxx IMPLEMENTATION.
@@ -393,6 +392,37 @@ In the online shop, customers can order various items. Once an item is ordered, 
   5. In your **Local Types**, replace your code with following:
 
     ```ABAP
+    CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+
+      PROTECTED SECTION.
+
+        METHODS save_modified REDEFINITION.
+
+    ENDCLASS.
+
+    CLASS lsc_zbp_i_online_shop_xxx IMPLEMENTATION.
+
+      METHOD save_modified.
+        DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
+              ls_online_shop_as TYPE                   zshop_as_xxx.
+        IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
+          LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%pid TO DATA(ls_pr_key).
+            <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
+          ENDLOOP.
+        ENDIF.
+
+
+        IF create-online_shop IS NOT INITIAL.
+          " Creates internal table with instance data
+          lt_online_shop_as = CORRESPONDING #( create-online_shop ).
+          lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
+
+          INSERT zshop_as_xxx FROM TABLE @lt_online_shop_as.
+        ENDIF.
+      ENDMETHOD.
+    ENDCLASS.
+
     CLASS lhc_zbp_i_online_shop_xxx  DEFINITION INHERITING FROM cl_abap_behavior_handler.
       PRIVATE SECTION.
 
@@ -417,16 +447,16 @@ In the online shop, customers can order various items. Once an item is ordered, 
       ENDMETHOD.
 
       METHOD create_pr.
-    **  if a new laptop is ordered, trigger a new purschase requisition
+    **  if a new laptop is ordered, trigger a new purchase requisition
         IF keys IS NOT INITIAL.
           MODIFY ENTITIES OF i_purchaserequisitiontp
-     ENTITY purchaserequisition
+    ENTITY purchaserequisition
         CREATE FIELDS ( purchaserequisitiontype )
         WITH VALUE #(  ( %cid                    = 'My%CID_1'
-                         purchaserequisitiontype = 'NB' ) )
+                        purchaserequisitiontype = 'NB' ) )
 
-       CREATE BY \_purchaserequisitionitem
-       FIELDS ( plant
+      CREATE BY \_purchaserequisitionitem
+      FIELDS ( plant
                 purchaserequisitionitemtext
                 accountassignmentcategory
                 requestedquantity
@@ -438,10 +468,10 @@ In the online shop, customers can order various items. Once an item is ordered, 
                 purchasingorganization
     *               MultipleAcctAssgmtDistribution
                     )
-       WITH VALUE #(
-                     (    %cid_ref = 'My%CID_1'
+      WITH VALUE #(
+                    (    %cid_ref = 'My%CID_1'
                           %target = VALUE #(
-                                           (  %cid                            = 'My%ItemCID_1'
+                                          (  %cid                            = 'My%ItemCID_1'
                                               plant                           = '1010'
                                               purchaserequisitionitemtext     = 'created from PAAS API XXX'
                                                 accountassignmentcategory     = 'U'
@@ -454,27 +484,30 @@ In the online shop, customers can order various items. Once an item is ordered, 
                                               purchasingorganization          = '1010'
 
                                               )
-                                           )
+                                          )
                       )
                     )
     ENTITY purchaserequisitionitem
 
     CREATE BY \_purchasereqnacctassgmt
         FIELDS ( CostCenter
-                 GLAccount
-                 Quantity
-                 BaseUnit )
+                GLAccount
+                Quantity
+                BaseUnit )
         WITH VALUE #( (   %cid_ref = 'My%ItemCID_1'
-                          %target  = VALUE #( ( CostCenter   = 'JMW-COST'
+                          %target  = VALUE #( ( %cid = 'MyTargetCID_1'
+                                                CostCenter   = 'JMW-COST'
                                                 GLAccount    = '0000400000' ) ) ) )
     CREATE BY \_purchasereqnitemtext
-       FIELDS ( plainlongtext )
-       WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
+      FIELDS ( plainlongtext )
+      WITH VALUE #(  (   %cid_ref = 'My%ItemCID_1'
                           %target  = VALUE #( (
+                                              %cid = 'MyTargetCID_2'
                                               textobjecttype = 'B01'
                                               language       = 'E'
                                               plainlongtext  = 'item text created from PAAS API XXX'
                                             ) (
+                                              %cid = 'MyTargetCID_3'
                                               textobjecttype = 'B02'
                                               language       = 'E'
                                               plainlongtext  = 'item2 text created from PAAS API XXX'
@@ -495,18 +528,18 @@ In the online shop, customers can order various items. Once an item is ordered, 
     *update remainder for nodays-no delivery remainder after half the timeperiod b/w delivery and creation date/system date
     *fi
         MODIFY ENTITIES OF i_purchasinginforecordtp
-               ENTITY purchasinginforecord
-               UPDATE SET FIELDS WITH
-               VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
-                           Supplier                 = ls_data-supplier
-                           MaterialGroup            = ls_data-MaterialGroup
-                           SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
-                           NoDaysReminder1          = '12'
-                           PurchasingInfoRecordDesc = 'noDays remainder updated'
+              ENTITY purchasinginforecord
+              UPDATE SET FIELDS WITH
+              VALUE #( ( %key-PurchasingInfoRecord = '5500000219'
+                          Supplier                 = ls_data-supplier
+                          MaterialGroup            = ls_data-MaterialGroup
+                          SupplierMaterialGroup    = ls_data-SupplierMaterialGroup
+                          NoDaysReminder1          = '12'
+                          PurchasingInfoRecordDesc = 'noDays remainder updated'
                       ) )
-                 FAILED   DATA(ls_failed_update)
-                 REPORTED DATA(ls_reported_update)
-                 MAPPED   DATA(ls_mapped_update).
+                FAILED   DATA(ls_failed_update)
+                REPORTED DATA(ls_reported_update)
+                MAPPED   DATA(ls_mapped_update).
 
       ENDMETHOD.
 
@@ -517,7 +550,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
     *      delete from zonlineshop_xxx UP TO 15 ROWS.
         SELECT MAX( order_id ) FROM zonlineshop_xxx INTO @DATA(max_order_id).
         READ ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-           ENTITY zi_online_shop_xxx
+          ENTITY zi_online_shop_xxx
             ALL FIELDS
               WITH CORRESPONDING #( keys )
               RESULT DATA(lt_online_shop_result)
@@ -535,14 +568,14 @@ In the online shop, customers can order various items. Once an item is ordered, 
           APPEND online_shop TO online_shops.
         ENDLOOP.
         MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
-       ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
-       MAPPED   DATA(ls_mapped_modify)
-       FAILED   DATA(lt_failed_modify)
-       REPORTED DATA(lt_reported_modify).
+      ENTITY zi_online_shop_xxx UPDATE SET FIELDS WITH online_shops
+      MAPPED   DATA(ls_mapped_modify)
+      FAILED   DATA(lt_failed_modify)
+      REPORTED DATA(lt_reported_modify).
 
     **create purchase requisition
 
-    * if a new laptop is ordered, trigger a new purschase requisition
+    * if a new laptop is ordered, trigger a new purchase requisition
         IF lt_failed_modify IS INITIAL.
           MODIFY ENTITIES OF zi_online_shop_xxx IN LOCAL MODE
           ENTITY Online_Shop EXECUTE create_pr FROM CORRESPONDING #( keys )
@@ -561,10 +594,9 @@ In the online shop, customers can order various items. Once an item is ordered, 
     >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Open documentation)]
+### Open documentation
+
 
 You have 2 options to open the documentation inside ADT.
 
@@ -579,25 +611,24 @@ You have 2 options to open the documentation inside ADT.
 >  3. Now you are able to read the documentation.
       ![service](docu3.png)
 
->     >**HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
-      ![service](docuhint.png)
+>   **HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
+>       ![service](docuhint.png)
 
->     >You can also switch to different layers inside the Element Info.
-      ![service](docugif.gif)
+>    You can also switch to different layers inside the Element Info.
+>       ![service](docugif.gif)
 
 > **Option 2**:
 
 > 1. Go back to tab `i_purchaserequisitiontp`. You are now able to see the behavior definition folder of the released object `i_purchaserequisitiontp`  in the project explorer. Now navigate to the documentation `i_purchaserequisitiontp` and open it.
       ![service](docu4.png)
->>**HINT**: You can also check the API State of released object and see its visibility by selecting the properties.
+>**HINT**: You can also check the API State of released object and see its visibility by selecting the properties.
 > 2. Now you can see the documentation.
       ![service](docu5.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create service definition)]
+### Create service definition
+
 
   1. Right-click your projection view `ZC_ONLINE_SHOP_XXX` and select **New Service Definition**.
 
@@ -627,11 +658,10 @@ You have 2 options to open the documentation inside ADT.
    5. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Create service binding)]
+### Create service binding
+
 
   1. Right-click your service binding `ZSD_SHOP_XXX` and select **New Service Binding**.
 
@@ -659,33 +689,41 @@ You have 2 options to open the documentation inside ADT.
 
       ![binding](binding5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Run SAP Fiori Elements preview)]
+### Run SAP Fiori Elements preview
+
 
  1. Select `online_shop` in your service binding and click **Preview** to open SAP Fiori Elements preview.
+
+    ![preview](entity.png)
 
  2. Click **Create** to create a new entry.
 
      ![preview](create.png)
 
- 3. Enter an id and date, click **Create**.
+ 3. Enter an id and click **Create**.
 
-     ![preview](create2.png)
+     ![preview](o.png)
 
- 4. Check your result
+ 4. Click **Create** again. And click **Close**
 
-     ![preview](create3.png)
+     ![preview](wizard3.png)
 
-[DONE]
-[ACCORDION-END]
+ 4. Check your result.
+
+     ![preview](o2.png)
 
 
-[ACCORDION-BEGIN [Step 13: ](Check purchase requisition)]
 
- 1. Copy the system URL without `-api`, paste it in a browser and **log in**.
+### Check purchase requisition
+
+
+ 1. In the Project Explorer, select your system and right click on **Properties**.
+
+     ![preview](properties.png)
+
+ 1. Select **ABAP Development** and copy the system URL without `-api`, paste it in a browser and **log in**.
 
      ![preview](logonflp2.png)
 
@@ -712,16 +750,7 @@ You have 2 options to open the documentation inside ADT.
 
      ![preview](purchase5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
-
-[VALIDATE_1]
-[ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+### Test yourself

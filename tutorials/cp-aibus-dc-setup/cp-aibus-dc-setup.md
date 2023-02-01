@@ -1,26 +1,29 @@
 ---
-title: Set Up Jupyter Notebook and Client Library for Document Classification
-description: Set up a local JupyterLab instance as well as the Jupyter Notebook and the client library for Document Classification.
+parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Set Up Jupyter Notebook and Client Library for Document Classification
+<!-- description --> Set up a local JupyterLab instance as well as the Jupyter Notebook and the client library for Document Classification.
+
+## You will learn
   - How to install Python and Anaconda
   - How to set up a local JupyterLab instance
 
+## Intro
 In order to give you a head start, a client library for the Document Classification service is available. The library already has all necessary operations implemented and ready to use, like, for example, `Creating a Dataset` and `Training a Model`. The client library can be found [here](https://github.com/SAP/business-document-processing).
 
 Additionally, a Jupyter Notebook is used in the following tutorials to make the steps interactive and easy to follow. For more information on Jupyter Notebooks, see [Jupyter](https://jupyter.org/). The notebook that was created for this tutorial mission is also available in the client library repository.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Anaconda)]
+### Install Anaconda
+
 
 First, you need to install Anaconda. Anaconda is a platform that offers tools to process large datasets and is often used by data scientists. When installing Anaconda, the programming language Python is installed as well.
 
@@ -44,11 +47,10 @@ To verify the installation, open a new Terminal or Command Prompt. In the comman
 
 You have successfully installed Anaconda.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Start a JupyterLab server)]
+### Start a JupyterLab server
+
 
 As mentioned before, you now need to execute the other commands of the [script](https://github.com/SAP/business-document-processing/blob/main/examples/document_classification_examples/install_jupyterlab.sh).
 
@@ -70,11 +72,10 @@ Once the installation is done, enter `jupyter lab` to start JupyterLab. Once you
 
 You have successfully installed a local instance of JupyterLab and you are now able to work with Jupyter Notebooks.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Open the Jupyter Notebook)]
+### Open the Jupyter Notebook
+
 
 As everything is installed now, you can open the Jupyter Notebook that is used in the following tutorials. Therefore, you are going to clone the [repository](https://github.com/SAP/business-document-processing) that includes the notebook and the example dataset.
 
@@ -100,11 +101,10 @@ Now navigate into the folder `document-classification-client` > `examples` using
 
 ![Open Notebook](open-notebook.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](What is a Jupyter Notebook)]
+### What is a Jupyter Notebook
+
 
 Jupyter Notebooks are interactive playgrounds to code and are often used in data science to explore datasets.
 
@@ -114,11 +114,9 @@ Throughout this tutorial mission, you walk through the notebook and explore the 
 
 ![Notebook Structure](notebook-structure.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,34 +1,36 @@
 ---
-title: Creating Table User Defined Functions
-description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-cloud, products>sap-business-application-studio]  
 time: 15
 ---
+# Creating Table User Defined Functions 
+<!-- description --> Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:** [Creating Scalar User Defined Functions](hana-cloud-sqlscript-scalar)
 
-## Details
-### You will learn
+## You will learn
 - How to transform a procedure to a table function.
 
+## Intro
 There are application and scenarios where you need a table function instead of procedure to leverage the advantage of direct selects on the output, for example, filtering, sorting and grouping. In the following exercise, we show you how you can easily transform a procedure to a table function.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new function)]
+### Create new function
+
 
 1. Use what you have learned and return to the `functions` folder and create a new function called `get_po_counts` using the **SAP HANA: Create Database Artifact** command.
 
-    !![New Function](1_1.png)
+    <!-- border -->![New Function](1_1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enter table function code)]
+### Enter table function code
+
 
 1. Add the input parameter called `IM_FDATE` as well as the RETURN Table parameter as shown. Please note the scalar input parameter we will used later on for filtering.
 
@@ -50,30 +52,30 @@ There are application and scenarios where you need a table function instead of p
 
 2. Copy the logic from the procedure `get_po_header_data` into the body of the function.  Make sure to only copy the code between the BEGIN and END statements
 
-    !![logic statements](2_1.png)
+    <!-- border -->![logic statements](2_1.png)
 
 
 3. Add to the WHERE clauses in the first two SELECT statements for filtering by month. Month is captured from the input parameter `im_fdate`.
 
-    !![where clause](2_2.png)
+    <!-- border -->![where clause](2_2.png)
 
 4. In the third SELECT statement, change the name of the intermediate table variable to `EMP_PO_COMBINED_CNT` to match the variable name to the semantics of the query
 
-    !![select statement](2_3.png)
+    <!-- border -->![select statement](2_3.png)
 
 5. Also add the `EMAIL` column to the field list.
 
-    !![Add email](2_4.png)
+    <!-- border -->![Add email](2_4.png)
 
 
 6. Remove the LIMIT clause at the end.
 
-    !![LIMIT](2_5.png)
+    <!-- border -->![LIMIT](2_5.png)
 
 
 7. Finally, add a RETURN SELECT statement at the end to mark the to be returned result set of the function.
 
-    !![RETURN select](2_6.png)
+    <!-- border -->![RETURN select](2_6.png)
 
 
 8. The completed code should be very similar to this.
@@ -122,29 +124,26 @@ There are application and scenarios where you need a table function instead of p
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save, deploy, check results)]
+### Save, deploy, check results
+
 
 1. **Save** the function.
 
-    !![Save](3_1.png)
+    <!-- border -->![Save](3_1.png)
 
 2. Perform a **Deploy**
 
-    !![DBX](3_2.png)
+    <!-- border -->![DBX](3_2.png)
 
 3. Return to the Database Explorer page. Select the Functions folder.  Right-click on the `get_po_counts` function and choose Generate SELECT statement.
 
-    !![SQL Tab](3_3.png)
+    <!-- border -->![SQL Tab](3_3.png)
 
 4. A new SQL tab will be opened with a SELECT statement. Enter the date `18.12.2014` as the input parameter and add  LIMIT 3 at the end of it. Click **Run**.
 
     ```SQLCRIPT
     SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
     ```
-    !![Results](3_4.png)
+    <!-- border -->![Results](3_4.png)
 
-[DONE]
-[ACCORDION-END]

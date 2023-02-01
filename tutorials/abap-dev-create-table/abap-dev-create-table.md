@@ -1,29 +1,31 @@
 ---
-title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
-description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data.
+parser: v2
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, software-product>sap-netweaver ]
 time: 75
 ---
+
+# Create an ABAP Database Table and Relevant ABAP Dictionary Objects
+<!-- description --> Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data.
 
 ## Prerequisites  
 - You have done one of the following:
     - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2. On this instance, you have pulled the SAP ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition on Docker](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/). (The ABAP Flight Reference Scenario is included pre-installed on this server)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition in SAP Cloud Appliance Library (CAL)](https://cal.sap.com/subscription?sguid=7bd4548f-a95b-4ee9-910a-08c74b4f6c37)
-- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), version 3.16 or later
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 
-## Details
 
-### You will learn  
+## You will learn  
 - How to create a table in ABAP, representing a table in your database
 - How to create a reusable **domain**, which provides technical attributes for data elements
 - How to create an elementary data type, or **data element**
 - How to add an input check to a field. You can use this, for example, to check that the user is working in the correct client
 - How to fill the table with three rows of test data
 
+## Intro
 Tables are defined independently of the database in the ABAP Dictionary. When you activate the table in the Data Dictionary, the table is created in the underlying database.
 
 The table in this tutorial will store bank account details for customers. The table will have the following columns (or **fields**):
@@ -41,29 +43,29 @@ The table in this tutorial will store bank account details for customers. The ta
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create table)]
+### Create table
+
 Create a table in your package:
 
 1. Select (right-click) the package and choose **New > Other ABAP Repository Object** from the context menu:
 
-    !![Image depicting step1-new-repo-object](step1-new-repo-object.png)
+    <!-- border -->![Image depicting step1-new-repo-object](step1-new-repo-object.png)
 
 2. Enter the filter text **Table > Database table**, then choose **Next**.
 
 3. Enter a name such as `ZACCOUNTS_XXX` - always replacing `XXX` with your initials - and a description, then choose **Next**.
 
-    !![step1b-table-name](step1b-table-name.png)
+    <!-- border -->![step1b-table-name](step1b-table-name.png)
 
 4. Accept the proposed transport request and choose Finish.
 
 The code for the table appears in a new editor. Ignore the annotations at the top for now.
 
-!![Image depicting step1d-table-editor](step1d-table-editor.png)
+<!-- border -->![Image depicting step1d-table-editor](step1d-table-editor.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand table fields)]
+### Understand table fields
+
 In the next step, you will define the table fields. First you need to understand your options:
 
 **Built-in ABAP types and new types**
@@ -76,7 +78,7 @@ There are 3 ways to create a field for a database table:
 
   - Create a **new data element**: If you want to reuse the benefits of data elements - i.e. semantic attributes such as reuse of translatable column headers or a check table, but a suitable one does not exist yet.
 
-    !![overview-domain-dtel](overview-domain-dtel.png)
+    <!-- border -->![overview-domain-dtel](overview-domain-dtel.png)
 
 In this tutorial, you will create one domain and one data element. For the other fields, you will use a built-in type or existing data element.
 
@@ -91,10 +93,9 @@ Tables can be cross-client or client-specific. Each client is a self-contained u
 
 The field is also specified as `not null x`. This means that the field cannot be left blank. In this case, `abap.clnt` is automatically filled with the value of the current client (such as 001).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add field account number using primitive type)]
+### Add field account number using primitive type
+
 Now you will add the field **`account_number`**, based on a primitive type.
 
 1. Enter the following (including the period), then choose **Code completion (Ctrl+Space)**:
@@ -103,15 +104,14 @@ Now you will add the field **`account_number`**, based on a primitive type.
       key account_number : abap.
     ```
 
-    !![step3a-create-accnum-field](step3a-create-accnum-field.png)
+    <!-- border -->![step3a-create-accnum-field](step3a-create-accnum-field.png)
 
 2. From the dropdown list, choose `numc(len)` and specify `len` as 8. Also, specify this key field as not null:
   `key account_number : abap.numc(8) not null;`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add field city using existing data element)]
+### Add field city using existing data element
+
 Add a field based on a built-in domain.
 
 1. In the editor, enter the name for your field, followed by a colon:  **city:**. Ignore the error for now.
@@ -125,21 +125,20 @@ Add a field based on a built-in domain.
 
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create domain)]
+### Create domain
+
 1. From your package, select **Dictionary**, then choose **New > Domain** from the context menu.
 
-    !![step4a-new-domain](step4a-new-domain.png)
+    <!-- border -->![step4a-new-domain](step4a-new-domain.png)
 
 2. Enter following, then choose **Next**.
     - Name: **`Z_CHAR_32`**
     - Description: **Character Domain of Length 32**,
 
 
-    !![step5b-domain-name](step5b-domain-name.png)
+    <!-- border -->![step5b-domain-name](step5b-domain-name.png)
 
 3. Accept the default transport request and choose **Finish**.
 
@@ -147,45 +146,42 @@ Add a field based on a built-in domain.
     - Data Type: **`CHAR`**
     - Length: **32**
 
-    !![step5c-domain-attributes](step5c-domain-attributes.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![step5c-domain-attributes](step5c-domain-attributes.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Add field bank using new data element)]
+
+### Add field bank using new data element
+
 Now add the field **`bank`**, based on a new data element, `z_bank_name_xxx`. You will get an error, which you will also fix in this step.
 
 1. Select the new data element and choose **Get Quick Fix (Ctrl+1)**. From the list, choose **Create data element …** :
 
-    !![step5a-quick-fix-new-dtel](step5a-quick-fix-new-dtel.png)
+    <!-- border -->![step5a-quick-fix-new-dtel](step5a-quick-fix-new-dtel.png)
 
 2. The Create data element wizard appears. Enter a name and description and choose **Next**:
 
-    !![step6a-new-dtel](step6a-new-dtel.png)
+    <!-- border -->![step6a-new-dtel](step6a-new-dtel.png)
 
 3. Accept the default transport request and choose **Finish**:
 
 4. You want your data element to have a character type. Enter the type name of your domain, by entering `Z_CHAR` and choosing **Auto-complete (`Ctrl+Space`)**:
 
-    !![step6c-dtel-w-domain](step6c-dtel-w-domain.png)
+    <!-- border -->![step6c-dtel-w-domain](step6c-dtel-w-domain.png)
 
 5. Now enter the field labels and lengths:
 
-    !![step6d-field-labels](step6d-field-labels.png)
+    <!-- border -->![step6d-field-labels](step6d-field-labels.png)
 
 6. Save and activate the data element (`Ctrl+S, Ctrl+F3`).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Remove error)]
+### Remove error
+
 Go back to your table, **`ZACCOUNTS_XXX`**. Run a syntax check  with **`Ctrl+F2`**. The error should disappear.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add all other fields)]
+### Add all other fields
+
 
   1. Now add other fields, so your code looks as follows. The field `Balance` will cause an error. Ignore this for now.
 
@@ -206,10 +202,9 @@ Go back to your table, **`ZACCOUNTS_XXX`**. Run a syntax check  with **`Ctrl+F2`
 
   2. Then choose Save (`Ctrl+S`) but **do not** activate your table yet.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Fix error)]
+### Fix error
+
 You will now fix the error caused by the field `Balance`:
 
 1. Place your cursor on the error symbol (it will change from an arrow to a pointing finger). Then click on it:
@@ -218,15 +213,14 @@ You will now fix the error caused by the field `Balance`:
 
 2. The quick fix proposal appears. Choose (double-click on) the proposal **Assign currency code reference to field currency**
 
-    !![Image depicting step8b-assign-curr-code](step8b-assign-curr-code.png)
+    <!-- border -->![Image depicting step8b-assign-curr-code](step8b-assign-curr-code.png)
   The error message disappears.
 
 3. Save your changes (`Ctrl+S`), but again, do not activate the table yet.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Change technical settings)]
+### Change technical settings
+
 Before you activate the table, change the technical settings at the top as follows (or copy the code at the end of this step):
 
 1. The label is derived from the description you entered; leave this.
@@ -253,16 +247,14 @@ Before you activate the table, change the technical settings at the top as follo
 @AbapCatalog.dataMaintenance : #ALLOWED
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Save and activate)]
+### Save and activate
+
 Save (`Ctrl+S`) and activate (`F3`) your table.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add check table)]
+### Add check table
+
 Now you will add a check table for the field `bank_customer_id`. This checks the value of `bank_customer_id` against the field `customer_id` of the table `/dmo/customer`, using a foreign key relationship.
 
   1. Add the foreign key pointing to table `/dmo/customer`, where your field `bank_customer_id` points to the check table field `customer_id` :
@@ -285,10 +277,9 @@ bank_customer_id : /dmo/customer_id not null
     where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Save, activate, and check table code)]
+### Save, activate, and check table code
+
 Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look like this:
 
 ```ABAP
@@ -319,15 +310,14 @@ define table ZACCOUNTS_XXX {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Fill table: Create class)]
+
+
+### Fill table: Create class
+
 Finally, you will fill the table with three rows of test data:
 
 1. First create the ABAP Class, by selecting your package and choosing **New > ABAP Class** from the context menu:
@@ -336,17 +326,16 @@ Finally, you will fill the table with three rows of test data:
 
 2. Enter a name **`ZCL_FILL_ACCOUNTS_XXX`** and description for your class (replacing `XXX` with your group number or initials).
 
-    !![step15b-name-class](step15b-name-class.png)
+    <!-- border -->![step15b-name-class](step15b-name-class.png)
 
 3. Assign a transport request and choose **Finish**.
 
 The class appears in a new editor.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 16: ](Add interface)]
+### Add interface
+
 1. Add the following interface to your class:
 
     ```ABAP
@@ -358,13 +347,12 @@ The class appears in a new editor.
 
 2. Add the implementation for the **`main`** method of this interface by selecting the interface name and choosing **Add implementation...** from the context menu.
 
-    !![step6a-add-intf](step6a-add-intf.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![step6a-add-intf](step6a-add-intf.png)
 
 
-[ACCORDION-BEGIN [Step 17: ](Copy code)]
+
+### Copy code
+
 1. Add the following code to the method implementation:
 
     ```ABAP
@@ -394,25 +382,22 @@ The class appears in a new editor.
 
 2. Save and activate ( **`Ctrl+S, Ctrl+F3`** ) your code.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 18: ](Check your table in Data Preview)]
+### Check your table in Data Preview
+
 Select your table from the Project Explorer and choose **Open With > Data Preview** from the context menu (**F8**).
 
-!![step17a-data-preview](step17a-data-preview.png)
+<!-- border -->![step17a-data-preview](step17a-data-preview.png)
 
 Your table should look like this:
 
-!![step17b-data-preview-2](step17b-data-preview-2.png)
+<!-- border -->![step17b-data-preview-2](step17b-data-preview-2.png)
 
 You can also right click on the table and choose **Copy All Rows as ABAP Value Statement** from the context menu. You can then paste it into other code.
 
-!![step17c-copy-all-rows](step17c-copy-all-rows.png)
+<!-- border -->![step17c-copy-all-rows](step17c-copy-all-rows.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 

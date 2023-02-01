@@ -1,11 +1,13 @@
 ---
-title: Understand Spatial Columns in SAP HANA Spatial
-description: Using columns to store and process spatial data in tables
+parser: v2
 auto_validation: true
 time: 10
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+# Understand Spatial Columns in SAP HANA Spatial
+<!-- description --> Using columns to store and process spatial data in tables
+
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Understand Polygons in SAP HANA Spatial](hana-spatial-intro3-polygon)
@@ -13,13 +15,13 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
 - [Spatial Z and M coordinates](hana-spatial-intro5-z-m-coordinates)
 
-## Details
-### You will learn  
+## You will learn  
 In previous tutorials you learned how to create spatial objects and run selected methods to perform some calculations using them. Now it's time to learn how to store, retrieve and process spatial data in SAP HANA tables. In addition, you will learn about the Spatial type hierarchy.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Review spatial types)]
+### Review spatial types
+
 
 The following spatial types can be used in column tables in SAP HANA:
 
@@ -42,10 +44,9 @@ Object-oriented properties of spatial data types:
 - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where an `ST_Geometry` parameter is required.
 - A column or variable of type `ST_Geometry` can store spatial values of any type.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a table and load sample data)]
+### Create a table and load sample data
+
 
 For the purpose of this tutorial, create a schema `TUTORIAL_GEO` or use any other schema in your instance, where you have privileges for creating tables.
 
@@ -98,10 +99,9 @@ FROM "TUTORIAL_GEO"."SPATIALSHAPES";
 
 ![Dataset select](spatial0402b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Geospatial data validation)]
+### Geospatial data validation
+
 
 Consider the following example.
 
@@ -149,10 +149,9 @@ Remove these test records from the table as they won't be needed in further exer
 DELETE FROM "TUTORIAL_GEO"."SPATIALSHAPES" WHERE "SHAPEID" > 15;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Aggregate shapes from a spatial column using union)]
+### Aggregate shapes from a spatial column using union
+
 
 When you need to combine multiple shapes into one you can use different set operations and aggregation methods.
 
@@ -179,10 +178,9 @@ Also note that spatial predicates were used in the query above to select only ge
 1. Query the union aggregation of polygons from the table.
 2. Query the union aggregation of boundaries of polygons from the table.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Additional aggregation methods)]
+### Additional aggregation methods
+
 
 Two other important **aggregate methods** are:
 
@@ -213,8 +211,7 @@ And the result of `ST_EnvelopeAggr()`:
 
 ![result of ST_EnvelopeAggr()](spatial0407.jpg)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - Example: [Calculating number π by throwing darts](https://blogs.sap.com/2016/12/14/calculating-number-%cf%80-by-throwing-darts-digitally-in-sap-hana/)

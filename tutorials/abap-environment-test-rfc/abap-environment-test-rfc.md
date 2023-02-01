@@ -1,23 +1,25 @@
 ---
-title: Test the Connection to the Remote System
-description: Test your connection by calling a BAPI via RFC.
+parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
+
+# Test the Connection to the Remote System
+<!-- description --> Test your connection by calling a BAPI via RFC.
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 - **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work
 
-## Details
-### You will learn
+## You will learn
   - How to call a BAPI using RFC in an ABAP class
   - How to test this class by outputting the data to the ABAP Console
 
+## Intro
 The class:
 
 1. Connects to the backend system, here an ERP System.
@@ -29,7 +31,8 @@ In future, we hope to provide a helper class that generates the appropriate DDL 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an ABAP class)]
+### Create an ABAP class
+
 1. As before, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
 
 2. Enter a name and description for your class, e.g. `ZCL_OUTPUT_TEST_XXX` and choose Next. **Remember to change `XXX` to your group number**.
@@ -38,10 +41,9 @@ In future, we hope to provide a helper class that generates the appropriate DDL 
 
 The class is displayed in a new editor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add an INTERFACES statement)]
+### Add an INTERFACES statement
+
 Add the following `interfaces` statement to the public section:
 
 ```ABAP
@@ -52,11 +54,10 @@ PRIVATE SECTION.
 This enables you to run the class in the console.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define the type for the local table variable)]
+### Define the type for the local table variable
+
 First you need to define the table type for the local table that will be filled with the data:
 
 ```ABAP
@@ -84,10 +85,9 @@ TYPES : BEGIN OF ty_bapi_epm_product_header,
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a TRY...CATCH block)]
+### Create a TRY...CATCH block
+
 Since you are trying to connect to a remote system, you need to catch any exceptions that occur.
 
 
@@ -105,10 +105,9 @@ ENDTRY.
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set up the connection)]
+### Set up the connection
+
 Define the connection, replacing `XXX` in both `i_name` and `i_service_instance_name`.
 
 ```ABAP
@@ -122,10 +121,9 @@ DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Define some variables)]
+### Define some variables
+
 Define the variables for the local internal table and structure for the data; and a character-type variable for messages:
 
 ```ABAP
@@ -137,10 +135,9 @@ DATA msg TYPE c LENGTH 255.
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Call the BAPI)]
+### Call the BAPI
+
 Finally, call the remote BAPI. The exception handling is mandatory to avoid serious system errors:
 
 ```ABAP
@@ -159,10 +156,9 @@ CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add the exception handling statements)]
+### Add the exception handling statements
+
 Handle any exceptions that occur using a CASE statement.
 
 ```ABAP
@@ -182,16 +178,14 @@ ENDCASE.
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Save and activate the class)]
+### Save and activate the class
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Check your code)]
+
+### Check your code
+
 
 ```ABAP
 
@@ -286,24 +280,22 @@ ENDCLASS.
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test the class in the ABAP Console)]
+### Test the class in the ABAP Console
+
 Test the class in the ABAP Console by choosing **`F9`**.
 Your output should look like this:
 
 ![Image depicting test-rfc-console](test-rfc-console.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Troubleshooting the SAP Cloud Connector)]
+
+
+### Troubleshooting the SAP Cloud Connector
+
 Note: If your on-premise system is down, or you have made an error configuring the connectivity, you will get a misleading message
 
 ```
@@ -323,8 +315,6 @@ Check the following :
 - Destination Service Communication Arrangement `SAP_COM_0276` is configured
 - Communication Arrangement `SAP_COM_0200` is configured
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

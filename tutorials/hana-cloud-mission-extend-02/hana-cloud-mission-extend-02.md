@@ -1,23 +1,23 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Security and Backups in SAP HANA Cloud, SAP HANA Database
-description: Learn about the security and backup features of SAP HANA Cloud, SAP HANA database that are similar to SAP HANA on-premise.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
+# Security and Backups in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn about the security and backup features of SAP HANA Cloud, SAP HANA database that are similar to SAP HANA on-premise.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
+## You will learn
 - What security features SAP HANA Cloud, SAP HANA database offers
 - What solutions are available in terms of backups
 
 
+## Intro
 The security of your organization's data is a big concern at SAP. This is why we pre-configure every SAP HANA Cloud, SAP HANA database instance to a secure standard. In this way, you can rely on the proven comprehensive **SAP HANA security framework**, now also in the cloud. You get complete control over who accesses your data and you can make full use of your data through advanced solutions like anonymization.
 
 ![Illustration Security circle](ss-01-illustration-security-circle-only.png)
@@ -27,7 +27,8 @@ This tutorial serves as a broad introduction with links to all important documen
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access Security)]
+### Access Security
+
 Make use of the **user and role management capabilities** in SAP HANA Cloud, SAP HANA database. By giving you the ability to limit access and permissions at a granular level, you can make sure the right people have access to the right data and actions.
 
 You can also take advantage of SAP HANA Cloud, SAP HANA database's authentication mechanisms to verify the identity of database users.
@@ -36,10 +37,9 @@ Find out more in the [Authentication overview of our technical documentation](ht
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Encryption, Data Masking and Auditing)]
+### Encryption, Data Masking and Auditing
+
 In SAP HANA Cloud, SAP HANA database, we support a broad range of **encryption** capabilities, including data-at-rest encryption, which is configured by default, and communication encryption.
 By using **data masking**, you can protect sensitive data and reduce the information exposed while still being able to do analytics on whole data sets.
 
@@ -51,11 +51,10 @@ Find out more about auditing in our [technical documentation](https://help.sap.c
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Data Anonymization)]
+### Data Anonymization
+
 
 There are different methods you can apply to truly anonymize data, but the goal is the same: to provide anonymized views of the data that fulfill these criteria:
 
@@ -73,10 +72,9 @@ To get an idea how data anonymization works in SAP HANA Cloud, SAP HANA database
 We take security in SAP HANA Cloud, SAP HANA database seriously. Our mission is to make your journey on the cloud safe and productive.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Backups)]
+### Backups
+
 
 To ensure maximum business continuity even in cases of emergency, SAP backs up your SAP HANA Cloud, SAP HANA database instances continually so you can recover data speedily if you need to. The recovery point objective (RPO) is no more than 15 minutes. Daily backups are only created while a database is online and up to 15 backups are stored.
 
@@ -110,15 +108,14 @@ In this video tutorial, you'll see the Database Backups card and the Backup Cata
 
 Additionally, during provisioning an instance, you can select if you want to create **replicas** of your instance to increase your system availability. These replicas are exact duplicates of your instance that will be managed in the background and automatically synchronized. In case of issues, you can take over a replica of your instance to ensure minimal interruption.
 
-!![HCC Step2 replicas cropped](ss-02-trial-HCC-Step-2-parameters.png)
+<!-- border -->![HCC Step2 replicas cropped](ss-02-trial-HCC-Step-2-parameters.png)
 
 To read more about increasing system availability, you can take a look at this technical documentation.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Recover a backup)]
+### Recover a backup
+
 
 **Recovering a backup**
 
@@ -130,11 +127,11 @@ To recover a backup, you can use the self-service recovery option in SAP HANA Cl
 
 3.	Select the option **Start Recovery**.
 
-    !![Start Recovery](ss-03-start-recovery.png)
+    <!-- border -->![Start Recovery](ss-03-start-recovery.png)
 
 4.	In the wizard that opens, select a Point in Time in the past via calendar. Note that the time will be displayed in UTC and Local Time.
 
-    !![Start Recovery 2](ss-04-start-recovery-2.png)
+    <!-- border -->![Start Recovery 2](ss-04-start-recovery-2.png)
 
 > **Well done!**
 >
@@ -143,14 +140,12 @@ To recover a backup, you can use the self-service recovery option in SAP HANA Cl
 > Learn in the next tutorial how to monitor your SAP HANA Cloud, SAP HANA database using SAP HANA cockpit - also very similarly to SAP HANA on-premise.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Installing XS CLI Client
-description: Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation. The clients let you access SAP HANA 2.0, express edition from your client machine.
+parser: v2
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -8,29 +7,30 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
 
+# Installing XS CLI Client
+<!-- description --> Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation. The clients let you access SAP HANA 2.0, express edition from your client machine.
+
 <!-- loioa0fb36b2aebf4b6fbda0564d5e8e58c5 -->
 
 ## Prerequisites
-
-## Details
-### You will learn
+## You will learn
 How to install the XS advanced client-tools bundle.
 
 ---
 
+## Intro
 The `server machine` in these instructions refers to the machine on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on the same machine or VM.
 
-[ACCORDION-BEGIN [Step 1: ](XS CLI client info.)]
+### XS CLI client info.
+
 
 The XS advanced `client-tools` bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
 
 You can use the XS command line client to perform a wide variety of developer- and administrator-related tasks. For example, in the role of a developer, you can use the XS CLI to connect to the XS Advanced runtime installed on the server machine, log on as a specific user, and deploy and manage your applications.
 
-[DONE]
 
-[ACCORDION-END]
+### Download the client package.
 
-[ACCORDION-BEGIN [Step 2: ](Download the client package.)]
 
 Install the Download Manager to your client machine and download the client package.
 
@@ -86,11 +86,9 @@ These files are extracted:
 -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
-[DONE]
 
-[ACCORDION-END]
+### Install the XS CLI client.
 
-[ACCORDION-BEGIN [Step 3: ](Install the XS CLI client.)]
 
 Use a compression utility to extract the file you downloaded for your platform:
 
@@ -109,11 +107,9 @@ The system creates this folder:
 xs.onpremise.runtime.client_<version>
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Add the bin folder to the PATH environment variable.
 
-[ACCORDION-BEGIN [Step 4: ](Add the bin folder to the PATH environment variable.)]
 
 -   (Windows) In the Environment Variables dialog:
 
@@ -129,11 +125,9 @@ xs.onpremise.runtime.client_<version>
 -   (Power PC) Run `export PATH=$PATH:/<extracted_filepath>/bin`
 
 
-[DONE]
 
-[ACCORDION-END]
+### Verify XS Advanced runtime is installed.
 
-[ACCORDION-BEGIN [Step 5: ](Verify XS Advanced runtime is installed.)]
 
 Enter the following URL into your Web browser:
 
@@ -149,11 +143,9 @@ https://my.hana.server:39030/v2/info
 
 The response displayed in the Web browser is a JSON string with details that indicate whether there was a successful connection to the XSA controller. The connection must exists before you can connect from within the API command.
 
-[DONE]
 
-[ACCORDION-END]
+### Confirm XS Advanced is Available
 
-[ACCORDION-BEGIN [Step 6: ](Confirm XS Advanced is Available)]
 
 On your client machine, open a command window and run the following.
 
@@ -166,11 +158,9 @@ On Linux, run these as `<sid>adm`.
 
 You see the `Client Version` in the output. If not, you cannot connect to XS Advanced runtime on SAP HANA to deploy your XS Advanced applications.
 
-[DONE]
 
-[ACCORDION-END]
+### Connect to XS Advanced controller.
 
-[ACCORDION-BEGIN [Step 7: ](Connect to XS Advanced controller.)]
 
 Specify the URL of the API end point on the SAP HANA server you want to connect to:
 
@@ -183,11 +173,9 @@ xs api https://<hostname>:3<instance_number>30
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Add SSL certificate to connect to the server.
 
-[ACCORDION-BEGIN [Step 8: ](Add SSL certificate to connect to the server.)]
 
 Open a command session on the server machine or open a PuTTY session to the server machine. From the command prompt, log in as `sudo` and go to the certificate `default.root.crt.pem`, which is typically located here:
 
@@ -234,11 +222,9 @@ xs login -u XSA_ADMIN -p "<password>"
 >
 >
 
-[DONE]
 
-[ACCORDION-END]
+### Test the XS Advanced connection.
 
-[ACCORDION-BEGIN [Step 9: ](Test the XS Advanced connection.)]
 
 To test your connection to XS Advanced by running the following command on the SAP HANA 2.0, express edition server:
 
@@ -246,6 +232,3 @@ To test your connection to XS Advanced by running the following command on the S
 xs apps
 ```
 
-[DONE]
-
-[ACCORDION-END]
