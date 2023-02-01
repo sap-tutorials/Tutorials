@@ -26,7 +26,7 @@ In this tutorial, you will learn how to apply styling to the UI5 Web Components.
 
 You can change the appearance of the UI5 Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp).
 Per default, the Fiori 3 theme parameters are injected as CSS Variables into the `<head>`.
-For example, if you want to change the color of all texts that use the `--sapTile_TitleTextColor` variable, you can create an additional `style` tag with the following content:
+For example, if you want to change the color of all texts that use the `--sapTile_TitleTextColor` variable, you can create an additional `style` tag in the `head` of your application:
 
 Open the `index.html` file inside your `public` folder and add the following content inside the `<head>` element:
 
