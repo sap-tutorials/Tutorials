@@ -133,8 +133,8 @@ If you want to add a custom component to your app, but still want to use the sty
 
 ### Conclusion
 
-In this Tutorial Mission, you learned the basics on how to create a Single Page Application in React, with routing, styling and general behavior of components and modern React APIs.
-If you have questions about components, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/SAP/ui5-webcomponents-react), where you can file [issues](https://github.com/SAP/ui5-webcomponents-react/issues/new/choose) or start or participate in [discussions](https://github.com/SAP/ui5-webcomponents-react/discussions).
+In this tutorial mission, you learned the basics of how to build a single page application using UI5 Web Components for React, with routing, styling, and general component behavior and modern React APIs.
+If you have questions about UI5 Web Components for React, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/SAP/ui5-webcomponents-react), where you can file [issues](https://github.com/SAP/ui5-webcomponents-react/issues/new/choose) or participate in [discussions](https://github.com/SAP/ui5-webcomponents-react/discussions).
 
 If you enjoyed this tutorial, you can help us out a lot by starring our repo and become one of our wonderful [stargazers](https://github.com/SAP/ui5-webcomponents-react/stargazers)!
 
