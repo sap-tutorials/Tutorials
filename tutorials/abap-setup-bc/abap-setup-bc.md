@@ -74,7 +74,7 @@ Copy the private key, the CA's response, and the certificate to the `config` fol
 
 ### Test yourself
 
-### Set Up WebSocket RFC from On-Premise to Cloud
+### Set up WebSocket RFC from on-premise to cloud
 
 [WebSocket RFC to Cloud Using SAP Business Connector](abap-websocket-rfc-bc)
 
