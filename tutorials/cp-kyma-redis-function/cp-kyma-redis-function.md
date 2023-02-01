@@ -3,7 +3,7 @@ parser: v2
 time: 30
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-btp\\, kyma-runtime
+primary_tag: software-product>sap-btp--kyma-runtime
 ---
 
 # Use Redis in the Kyma Runtime to Store and Retrieve Data
@@ -48,7 +48,7 @@ In this step, you will deploy two functions into the Kyma runtime that were obta
 
 1. In the `dev` namespace, choose the menu option **Overview**.
 
-2. Choose **Deploy a new workload > Create Function**. Choose the **YAML** tab and copy the contents of the file **`redis-function/k8s/cache-order-function.yaml`** over-writing the preexisting content and then choose **Create**.
+2. Choose **Overview > Upload YAML**, copy the contents of the file **`redis-function/k8s/cache-order-function.yaml`** and then choose **Submit**.
 
     ![Deploy Resources](./assets/cache-order-create.png)
 
@@ -58,7 +58,7 @@ In this step, you will deploy two functions into the Kyma runtime that were obta
 ### Expose a function
 
 
-1. To expose the `get-order` function as an API, choose the menu option **Discovery and Network > API Rules**. Choose **Create API Rule** and provide the value `get-order` for the **Name**, **Service** and **Subdomain**. Choose **Create**.
+1. To expose the `get-order` function as an API, choose the menu option **Discovery and Network > API Rules**. Choose **Create API Rule** and provide the value `get-order` for the **Name**, **Service Name** and **Host**. Choose **Create**.
 
     ![Deploy Resources](./assets/get-order-apirule.png)
 
@@ -93,22 +93,19 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 
 2. Choose the function **cache-order**.
 
-    ![Cache Order](./assets/open-function-co.png)
+3. Choose the **Configuration** tab and then choose **Create Subscription**.
 
-3. Choose the tab **Configuration**.
+    [Cache Order](./assets/open-function-co.png)
 
-    ![Cache Order](./assets/function-config-co.png)
-
-4. In the **Configuration** scroll down and choose **Create Subscription**.
-
-5. Use the following values as shown in the screenshot and then choose **Create**
+4. In the **Create Subscription** dialog use the following values as shown in the screenshot and then choose **Create**
 
     - **Name:** order-created
+    - **Service**: cache-order
     - **Application name:** mp-commerce-mock
     - **Event name:** order.created
     - **Event version:** v1
 
-    ![Add Event](./assets/add-event.png)
+    [Add Event](./assets/add-event.png)
 
 
 ### Obtain the API URL for the function
@@ -116,7 +113,7 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 
 In this step, you will copy the URL to the commerce web services API which will be used by the function cache-order.
 
-1. Choose the menu option **Back to Namespaces** to go back to the Kyma home workspace.
+1. Choose the menu option **Back to Cluster Details** to go back to the Kyma home workspace.
 
 2. In the Kyma home workspace, choose **Integration > Applications**.
 
@@ -134,19 +131,19 @@ In this step, you will copy the URL to the commerce web services API which will 
 
 In this step, the URL copied in the previous step will be assigned to an environment variable of the function **cache-order**. This will allow the function to call the **`SAP Commerce Cloud - Commerce Webservices`** of the commerce mock application.
 
-1. 1. In the Kyma home workspace, choose **Namespace**.
+1. In the Kyma home workspace, choose **Namespace**.
 
 2. Choose the `dev` namespace and choose **Workloads > Functions**.
 
 3. Choose the function **cache-order** to open it.
 
-4. On the tab `Code` Scroll down to the **Environment Variables** and choose the open to edit the value **`CENTRAL_GATEWAY_URL`**.
+4. Choose the **Edit** option and scroll down to the **Environment Variables** and find the **Environment Variable** with the **Variable Name** `CENTRAL_GATEWAY_URL`
 
-5. Paste the value copied in the previous step into the **Value** field and choose **Save**.
+5. Paste the value copied in the previous step into the **Value** field making sure that the value beings with `**http://central-application...**` and choose **Update**.
 
     ![Environment Variable](./assets/env-var.png)
 
-5. Choosing **Save** will cause the function to be rebuilt and deployed. The **Status** field will indicate that the function is **Deploying** and will change to **Running** once this process completes.
+5. Choosing **Update** will cause the function to be rebuilt and deployed. The **Status** field will indicate that the function is **Deploying** and will change to **Running** once this process completes.
 
 
 
@@ -184,11 +181,15 @@ In this step, we will view the logs outputted by the function to verify that the
 
 2. Choose the function **cache-order**.
 
-3. Scroll to the bottom of the pane to find the option **View Logs**.
+3. Scroll to the bottom of the pane to find the option **Replicas of the Function** and choose the value found in the table. The name will not match what is shown in the screenshot.
 
-4. If necessary search for the value `orderCode`.
+4. Under **Containers** choose **View Logs** for the container **function**.
 
-5. The output should be similar to:
+    ![Function Logs Location](./assets/function-log-location.png)
+
+5. If necessary search for the value `orderCode`.
+
+6. The output should be similar to:
 
     ![Function Log](./assets/function-log-event.png)
 
@@ -203,8 +204,6 @@ In this step, we use the get-order function to perform a read request of the dat
 2. Choose the **Host** entry for the **get-order** `APIRule` to open the application in the browser. When first opened you will received the message
 
     `{"error":"No orderCode received!"}`
-
-    ![APIRule Get Order](./assets/apirule-get-order.png)
 
 3. Append the value `?orderCode=12331231` to the URL where the value is the same as used when sending the event, for example
 

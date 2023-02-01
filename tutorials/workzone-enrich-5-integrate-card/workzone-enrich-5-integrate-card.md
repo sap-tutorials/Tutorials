@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-work-zone, topic>sapui5]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone, topic>sapui5]
+primary_tag: software-product>sap-build-work-zone
 author_name: Lindsay Bert
 ---
 
@@ -11,10 +11,10 @@ author_name: Lindsay Bert
 <!-- description --> Add a custom UI5 integration card to your workpage in a workspace.
 
 ## Prerequisites
- - You have deployed a UI5 integration card.
+ - You have deployed a UI5 integration card
 
 ## You will learn
-  -  How to make a deployed UI5 integration card available in SAP Build Work Zone, advanced edition and add it to your workpage.
+  -  How to make a deployed UI5 integration card available in SAP Build Work Zone, advanced edition and add it to your workpage
 
 ## Intro
 You've already deployed a UI5 integration card. Now in this tutorial, you'll enable it to make it available in your site and later add it to your workpage in a workspace.

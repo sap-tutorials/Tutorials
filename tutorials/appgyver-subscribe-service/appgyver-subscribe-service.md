@@ -16,15 +16,15 @@ parser: v2
 - How to open SAP Build Apps
 
 ## Intro
-The Low-Code / No-Code service on SAP BTP is available with a subscription booster. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. For more information about SAP BTP boosters, view: [Boosters] (https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=btp%20booster)
+The Low-Code / No-Code service on SAP BTP is available with a subscription booster. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. For more information about SAP BTP boosters, view: [Boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=btp%20booster)
 
 >Alternatively, you could use SAP AppGyver's free Community Edition, if you do not need any SAP BTP specific features. The community edition is available here: [AppGyver.com] (https://www.appgyver.com)
 
 ### Create account and install SAP Build Apps
 
-Follow the =instructions found in the following video.
+Follow the instructions found in the following video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Iu3oiRl1zh4" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5lCAotjfWWo" frameborder="0" allowfullscreen></iframe>
 
 More information is available from Bea Pasch's blog [SAP Build Apps Free Tier Individual Access](https://blogs.sap.com/2022/11/25/sap-build-apps-free-tier-individual-access/).
 

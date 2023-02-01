@@ -52,7 +52,7 @@ You now need to configure which information is taken from the Open Food Facts AP
 
 1. To configure this, click **Get Record (Get)**.
 
-2. In the ***Relative path*** field enter: `/product/{barcode}.json`
+2. In the ***Relative path*** field enter: `/product/{barcode}`
 
     ![Configure relative path field](Configure_path.png)
 
@@ -66,7 +66,7 @@ You now need to configure which information is taken from the Open Food Facts AP
     | **Description** | Resource ID to retrieve |
     | **Is encoded** | Enabled |
     | **Is static** | Disabled |
-    | **Is optional** | Enabled |
+    | **Is optional** | Disabled |
 
     ![URL placeholder configuration](URL_placeholder.png)
 

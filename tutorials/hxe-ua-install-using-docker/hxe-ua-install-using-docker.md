@@ -93,7 +93,7 @@ Go to  [https://hub.docker.com/r/saplabs/hanaexpress](https://hub.docker.com/r/s
 Copy the Docker pull address. Here's an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpress:2.00.054.00.20210603.1
+sudo docker pull saplabs/hanaexpress
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -416,13 +416,13 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
-
 ### -Help Command
+
 
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.054.00.20210603.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.XXX.XX.XXXXXXXX.X -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
