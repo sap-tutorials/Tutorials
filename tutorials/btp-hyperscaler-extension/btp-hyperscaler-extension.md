@@ -23,7 +23,7 @@ primary_tag: products>sap-btp--cloud-foundry-environment
      - [Google Cloud Platform ](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#kubeconfig)
      - [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
      - [Azure](https://docs.microsoft.com/bs-latn-ba/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)
-     - [Alibaba Cloud](https://www.alibabacloud.com/help/doc-detail/86798.htm)
+     - [Alibaba Cloud](https://in.alibabacloud.com/)
 
 
 ## You will learn
@@ -428,5 +428,3 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
   [OPTION END]
 
 **Congratulations!** You have successfully completed the tutorial.
-
-
