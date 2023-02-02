@@ -8,7 +8,7 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add a Web Dynpro ABAP App to Your Launchpad Site
+# Add a Web Dynpro ABAP App to Your SAP Build Work Zone, standard edition Site
 <!-- description --> Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to your site.
 
 ## Prerequisites
