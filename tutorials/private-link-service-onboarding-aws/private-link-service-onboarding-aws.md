@@ -79,7 +79,7 @@ Once Cloud Foundry runtime has been enabled, you get the information on your API
 
 > Before you proceed, make sure that **Cloud Foundry runtime** has been assigned adequate quota. If you have not done so already, go back to Step 2 and define the quota accordingly for Cloud Foundry runtime.
 
-Congratulations! You have successfully completed the onboarding of SAP Private Link service. Continue with [Connect SAP Private Link Service to AWS Private Link Service](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/private-link-aws.html).
+Congratulations! You have successfully completed the onboarding of SAP Private Link service. Continue with [Connect SAP Private Link Service to AWS Private Link Service](https://developers.sap.com/tutorials/private-link-aws.html).
 
 [DONE]
 [ACCORDION-END]
