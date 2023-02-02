@@ -2,24 +2,24 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-build-work-zone--standard-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add an SAPUI5 App to Your Launchpad Site
-<!-- description --> Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
+# Add an SAPUI5 App to Your Site
+<!-- description --> Add an existing SAPUI5 app to a site in the SAP Build Work Zone, standard edition.
 
 ## Prerequisites
- - You've already created the `JobCore` site.  
+ - You've already created the `JobCore` site
 
 
 ## You will learn
-  - How to add an existing SAPUI5 app to your launchpad site
+  - How to add an existing SAPUI5 app to your site
 
 ## Intro
-In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your launchpad site.
+In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your site.
 
 ### Open Content Manager
 
@@ -172,6 +172,4 @@ This is described in the following steps.
 
 4. Click the `New Orders` tile to launch the app. You can click on the different items in the opened app on the left to view their details.
 
-You've successfully added an app to your launchpad site. In the next tutorial, you'll add another app.
-
-
+You've successfully added an app to your site. In the next tutorial, you'll add another app.
