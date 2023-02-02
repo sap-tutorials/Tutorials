@@ -1,1 +1,0 @@
-Longer tutorial - includes creating more Extensibility artifacts

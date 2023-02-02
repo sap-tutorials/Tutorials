@@ -10,7 +10,8 @@ author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
-## Prerequisites
+
+## Prerequisites 
 - You have a license for SAP S/4HANA Cloud; have a developer user in this system and have created an ABAP Cloud Project <!--LINK TO TUT OR SIMILAR -->
 - You have installed [SAP ABAP Development Tools (ADT), latest version](https://tools.hana.ondemand.com/#abap), and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it<!--LINK TO TUT OR SIMILAR-->
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in `ADT` in particular. If not,  work through the **Tutorial**: [Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition]
@@ -59,7 +60,7 @@ Throughout this tutorial, objects name include a suffix, such as **`###`**. Alwa
 Your `BAdI` implementation appears in a new editor.
 
 <!-- border -->
-![step1c-badi-impl-editor.png](step1c-badi-impl-editor.png)
+![step1c-badi-impl-editor](step1c-badi-impl-editor.png)
 
 Ignore the error. You will fix this in the next step.
 
@@ -178,7 +179,7 @@ You will now execute the app while the trace is active.
 
 2. Choose **Edit**.
 
-3. Trigger the `BAdI` by changing the quantity to a value greater than 10, eg 20; notice the error message ID, **`BAdI`**.
+3. Trigger the `BAdI` by changing the quantity to a value greater than 10, e.g. 20; notice the error message ID, **`BAdI`**.
 
     <!-- border -->   
     ![step5c-error](step5c-error.png)
@@ -200,7 +201,8 @@ You will now execute the app while the trace is active.
 You can now edit this class in ADT.
 
 <!-- border -->
-![step6c-class-in-adt.png](step6c-class-in-adt.png)
+![step6c-class-in-adt](step6c-class-in-adt.png)
+
 
 ### Open ABAP Debugger
 
@@ -261,10 +263,10 @@ The Debugger has stopped where the **`ORDEREDQUANTITY`** = 9.
 ![step8c-condition-9](step8c-condition-9.png)
 
 
-### Set watchpoint
-Once a watchpoint is set, the Debugger stops as soon as the value of a watched variable has changed. Furthermore, you can specify conditions for watchpoints. 
+### Set `watchpoint`
+Once a `watchpoint` is set, the Debugger stops as soon as the value of a watched variable has changed. Furthermore, you can specify conditions for `watchpoints.`
 
-> You can only set a watchpoint for a variable **during** a running ABAP debug session.
+> You can only set a `watchpoint` for a variable **during** a running ABAP debug session.
 
 1. In the class **`ZIC_PR_ITEM`**, position the cursor on the relevant field.
 
@@ -274,12 +276,12 @@ Once a watchpoint is set, the Debugger stops as soon as the value of a watched v
     <!-- border -->
     ![step9b-watchpoint-created](step9b-watchpoint-created.png)
 
-2. To set a condition for the watchpoint: open the **Breakpoints** view in the **Debugger** perspective, select the watchpoint, and enter a condition.
+2. To set a condition for the `watchpoint`: open the **Breakpoints** view in the **Debugger** perspective, select the `watchpoint`, then enter a condition.
 
     <!-- border -->
     ![step9c-set-watchpoint-condition](step9c-set-watchpoint-condition.png)
 
-The ABAP Debugger stops as soon as the value of the variable is changed after a debug step **and** the specified condition for the watchpoint is fulfilled.    
+The ABAP Debugger stops as soon as the value of the variable is changed after a debug step **and** the specified condition for the `watchpoint` is fulfilled.   
 
 
 ### Test yourself
