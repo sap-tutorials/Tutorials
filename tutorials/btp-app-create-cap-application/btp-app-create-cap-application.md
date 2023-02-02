@@ -197,9 +197,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     >     !![No JSON Viewer](no-json-viewer.png)
     > However, this doesn't mean you have made a mistake in the tutorial. Rather, this is the correct output without any formatting. If you'd like to see a formatted output in your browser, you can add a plugin to your browser. Here are a few exemplary JSON formatters for different browsers:
 
-    > - [Chrome](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli)
+    > - [Chrome](https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
     > - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/jsonview/kmpfgkgaimakokfhgdahhiaaiidiphco)
-    > - [Firefox](https://addons.mozilla.org/bg/firefox/addon/json-formatter/)
     > - [Safari](https://apps.apple.com/us/app/json-peep-for-safari/id1458969831?mt=12)
 
 And that's it. You now have a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.

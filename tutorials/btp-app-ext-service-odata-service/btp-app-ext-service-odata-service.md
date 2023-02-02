@@ -29,6 +29,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to consume external services step by step using SAP S/4HANA. To get an overview about what is CAP, see [Introduction to Consuming Remote Services using CAP](btp-app-ext-service-intro) for more details.
 
 [DONE]

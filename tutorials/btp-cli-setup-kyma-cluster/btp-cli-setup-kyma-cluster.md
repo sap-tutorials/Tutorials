@@ -5,11 +5,10 @@ time: 30
 tags: [tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product-function>sap-btp-command-line-interface]
 primary_tag: software-product>sap-business-technology-platform
 keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
-auto_validation: false
 ---
 
-# Set up a Kyma Cluster Using the Command Line
-<!-- description --> You can use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.
+# Enable SAP BTP, Kyma Runtime Using the Command Line
+<!-- description --> Enabling SAP BTP, Kyma Runtime means creating a Kyma environment instance, i.e. a Kyma cluster. You can then use the Kyma cluster to build applications and extensions to SAP and third-party solutions, manage roles, have your Kubernetes objects backed up, and view metrics and logs.   
 
 ## You will learn
   - How to set up a Kyma cluster in a subaccount on SAP BTP, without using the SAP BTP cockpit (see [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) for the same procedure in the cockpit).
@@ -180,3 +179,8 @@ To learn more about the Kyma environment and its functionality, see:
 
 
 
+
+
+
+
+---

@@ -191,7 +191,6 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
     > ```
 
 
-[VALIDATE_1]
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -263,9 +262,9 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
     > ```
 
 
-[VALIDATE_1]
 [OPTION END]
 
+[VALIDATE_1]
 The result of this tutorial can be found in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
 
