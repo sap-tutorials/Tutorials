@@ -1,5 +1,5 @@
 ---
-author_name:Manju Shankar
+author_name: Manju Shankar
 author_profile: https://github.com/manjuX
 title: Introduction to Application Development Using CAP and Node.js
 description: Learn about SAP Cloud Application Programming Model (CAP) and application development on SAP BTP.
@@ -22,6 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to develop and deploy [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap/) applications on [SAP BTP](cp-explore-cloud-platform) using different tools and services step by step.
 
 The tutorials are suitable for new or experienced developers on SAP BTP. The purpose of these tutorials is to help application developers to get a quick start on development, provide best practices, solve common issues, use common services, identify areas that need to be improved, and have an end-to-end scenario for validation. In the tutorials, you get to know, step by step, the development process on SAP BTP.

@@ -23,16 +23,16 @@ author_profile: https://github.com/LindsayBert
 Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your launchpad site.
 
 
-### Fetch updated content using the Provider Manager
+### Fetch updated content using the Channel Manager
 
 
 1. In the side navigation panel of your subaccount, click **Instances and Subscriptions** and then next to the Launchpad Service, click the **Go to Application** icon next to it.
 
     ![Open launchpad service](000-open-launchpad-service.png)
 
-2. Click the **Provider Manager** icon to view any available content providers.
+2. Click the **Channel Manager** icon to view any available content providers.
 
-    ![Open Provider Manager](0-open-provider-manager.png)
+    ![Open Channel Manager](0-open-provider-manager.png)
 
 3. Select the **HTML5 Apps** content provider.
 

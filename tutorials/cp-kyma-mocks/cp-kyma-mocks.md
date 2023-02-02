@@ -3,7 +3,7 @@ parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-btp\\, kyma-runtime
+primary_tag: software-product>sap-btp--kyma-runtime
 ---
 
 # Deploy Commerce Mock Application in the Kyma Runtime
@@ -38,13 +38,13 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 ### Apply resources to Kyma runtime
 
 
-1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Provide the name `dev`, toggle **Enable Sidecar Injection** to the on state and then choose **Create**.
+1. Open the Kyma console and create the `dev` Namespace by choosing the menu option **Namespaces** and then choosing the option **Create Namespace**. Choose the tab `YAML`, provide the name `dev`, set the label `istio-injection` to `enabled` and then choose **Create**.
 
     ![Add Namespace](add-ns.png)
 
     > Namespaces separate objects inside a Kubernetes cluster. The concept is similar to folders in a file system. Each Kubernetes cluster has a `default` namespace to begin with. Choosing a different value for the namespace will require adjustments to the provided samples.
 
-    > Toggling **Enable Sidecar Injection** to the on state enables `Istio`, which is the service mesh implementation used by the Kyma runtime.
+    > Setting **istio-injection** to the on enabled state activates `Istio`, which is the service mesh implementation used by the Kyma runtime.
 
 2. Open the `dev` Namespace by choosing the tile, if it is not already open.
 
@@ -54,7 +54,8 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
 4. Notice that this file contains the resource definitions for the Deployment as well as the Service and the Persistent Volume Claim. Choose **Submit** to create the resources.
 
-5. Create the `APIRule` of the mock application to the `dev` Namespace by choosing the menu option **Discovery and Network -> API Rules** and then choosing **Create API Rule**. Provide the name `commerce-mock`, choose the service `commerce-mock` and enter `commerce` for the **Subdomain**. Enable each of the **Methods** and choose **Create**.
+
+5. Create the `APIRule` of the mock application to the `dev` Namespace by choosing the menu option **Discovery and Network > `API Rules`** and then choosing **Create API Rule**. Provide the **Name** `commerce-mock`, choose the **Service Name** `commerce-mock` and enter `commerce` for the **Host**. Choose **Create** to create the `APIRule`.
 
     ![Add APRRule](apirule.png)
 
