@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform\, kyma-runtime]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-btp--kyma-runtime]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
