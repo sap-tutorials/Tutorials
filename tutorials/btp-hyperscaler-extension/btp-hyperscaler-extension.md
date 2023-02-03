@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>products>sap-btp--cloud-foundry-environment\, kyma-runtime]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform\, kyma-runtime]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 # Consume SAP BTP Services from Any Hyperscaler
