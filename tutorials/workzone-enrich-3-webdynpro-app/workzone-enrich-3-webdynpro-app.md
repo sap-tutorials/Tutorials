@@ -13,7 +13,7 @@ author_name: Lindsay Bert
 ## Prerequisites
  - You have created a destination in SAP BTP cockpit to the SAP Gateway Demo System
  - You have an environment set up and you can access your SAP Build Work Zone, advanced edition
- - You have opened SAP Build Work Zone, advanced edition
+ - You have opened SAP Build Work Zone, advanced edition 
 
 ## You will learn
   - How to add a Web Dynpro ABAP backend application to your workpage
