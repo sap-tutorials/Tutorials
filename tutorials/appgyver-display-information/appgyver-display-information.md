@@ -2,7 +2,7 @@
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
+primary_tag: software-product>sap-build-apps--enterprise-edition
 author_name: Daniel Wrolewski
 author_profile: https://github.com/thecodester
 parser: v2
@@ -44,7 +44,7 @@ For this example, we will show you how to display the Product Name and Energy-kc
 
 1. To display the product name, click your **Paragraph** component and then click **Currently bound to: Static text**.
 
-    ![Click to bind paragraph](bind_paragraph.png)
+    ![Click to bind parag\appgyver-display-informationkraph](bind_paragraph.png)
 
     >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
@@ -143,6 +143,10 @@ Your draft application is now complete, allowing you to scan a food item and the
 In this example, we are scanning some confectionery:
 
 ![Scan](Scan.png)
+
+Here's the barcode:
+
+![Barcode](barcode.gif)
 
 With the app returning the product name and the calorific information:
 

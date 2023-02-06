@@ -2,19 +2,19 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-work-zone, topic>sapui5]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition, topic>sapui5]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
 ---
 
-# Integrate a UI5 Integration Card to Your SAP Build Work Zone, advanced edition
-<!-- description --> Add a custom UI5 integration card to your workpage.
+#  Integrate a UI5 Integration Card to Your SAP Build Work Zone, advanced edition
+<!-- description --> Add a custom UI5 integration card to your workpage in a workspace.
 
 ## Prerequisites
- - You have deployed a UI5 integration card.
+ - You have deployed a UI5 integration card
 
 ## You will learn
-  -  How to make a deployed UI5 integration card available in SAP Build Work Zone, advanced edition and add it to your workpage.
+  -  How to make a deployed UI5 integration card available in SAP Build Work Zone, advanced edition and add it to your workpage
 
 ## Intro
 You've already deployed a UI5 integration card. Now in this tutorial, you'll enable it to make it available in your site and later add it to your workpage in a workspace.
@@ -66,11 +66,11 @@ Before you add the card to your workspace, let's configure one of the settings o
     > On the **Configure** screen, when you click the **More settings** icon there are more settings that you can configure for the end user.
     <!-- border -->![More settings](14-more-settings.png)
 
-In the next step you'll add the card to your workspace.
+In the next step you'll add the card to your workpage in your workspace.
 
 
 
-### Add your UI5 integration card to your workspace
+### Add your UI5 integration card to your workpage in your workspace
 
 
 1. Click the **Workspaces** menu and select `Employee Innovation Hackathon` to navigate to your workspace.
@@ -125,13 +125,13 @@ Now let's add a title for the card.
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-4. Click outside of the widget row to see how your page looks so far.
+4. Click outside of the widget section to see how your workpage looks so far.
 
 5. Select the text widget you just added, and drag it above the card widget that you added before.
 
     <!-- border -->![Drag widget](11-drag-widget.png)
 
-6. Click **Publish** to publish your workspace.
+6. Click **Publish** to publish your workpage.
 
     <!-- border -->![Publish workspace](12-publish.png)
 

@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, tutorial>license, topic>mobile, software-product>sap-integration-suite, software-product>cloud-integration, software-product>open-connectors, software-product>api-management, software-product>sap-appgyver, software-product>build, software-product>sap-business-technology-platform, tutorial>free-tier ]
+tags: [ tutorial>advanced, tutorial>license, topic>mobile, software-product>sap-integration-suite, software-product>cloud-integration, software-product>open-connectors, software-product>api-management, software-product>sap-build, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-integration-suite
 parser: v2
 author_name: Mariajose Martinez

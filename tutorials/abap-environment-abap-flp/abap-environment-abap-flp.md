@@ -107,7 +107,7 @@ Learn how to integrate your list report application into ABAP Fiori launchpad.
 ### Create transport request or use default transport request
 
 
-  1.  Log in to your system and select the **Export Customizing Transports** tile.
+  1. Log in to your system and select the **Export Customizing Transports** tile.
 
      ![transport](transport.png)
 
@@ -189,27 +189,27 @@ Option 1:
 
       ![transport](space4.png)
 
-  6. Select **Transports** to check your transport request and click **Save**.
+  5. Select **Transports** to check your transport request and click **Save**.
 
       ![transport](space5.png)
 
-  7. Go back to the SAP Fiori homepage and select the **Maintain Business Roles** tile.
+  6. Go back to the SAP Fiori homepage and select the **Maintain Business Roles** tile.
 
       ![transport](businessrole.png)
 
-  8. Search for your business role **`BR_Z_TRAVEL_XXX`** and select it.
+  7. Search for your business role **`BR_Z_TRAVEL_XXX`** and select it.
 
       ![transport](businessrole2.png)
 
-  9. Click **Edit** and select **Assigned Launchpad Spaces**.
+  8. Click **Edit** and select **Assigned Launchpad Spaces**.
 
       ![transport](businessrole3.png)
 
- 10. Click **Add**.
+  9. Click **Add**.
 
       ![transport](businessrole4.png)
 
- 11. Select **Use Existing Space** and select your space.
+ 10. Select **Use Existing Space** and select your space.
 
       ![transport](businessrole5.png)
 
@@ -225,6 +225,41 @@ Option 1:
 
       ![transport](businessrole8.png)
 
+ 14. Open the Manage Launchpad Pages tile.
+
+      ![transport](managespaces.png)
+
+ 15. Select your page `Z_TRAVEL_APP_XXX`.
+
+      ![page](page.png)
+
+ 16. Select **Page Content** and click **Edit**.    
+
+      ![page](page2.png)
+
+ 17. Add a description to your section tile, select your business catalog and click **Add** and **Save**.
+
+      ![page](page3.png)
+
+ 18. Check your result. Click **Page Preview**.
+
+      ![page](page4.png)
+
+ 19. Check the result in the preview.
+
+      ![page](page5.png)
+
+ 20. Select your user and **Settings**.
+
+      ![page](page6.png)
+
+ 21. Select **Spaces and Pages** and check **Use Spaces**.
+
+      ![page](page7.png)
+
+ 22. Select **Travel App XXX** to see your application.
+
+       ![page](page8.png)
 
 
 ### Alternative 2: Assign and manage launchpad spaces
@@ -276,6 +311,42 @@ Option 2:
 
       ![transport](brole9.png)
 
+ 10. Open the Manage Launchpad Pages tile.
+
+      ![transport](managespaces.png)
+
+ 11. Select your page `Z_TRAVEL_APP_XXX`.
+
+      ![page](page.png)
+
+ 12. Select **Page Content** and click **Edit**.    
+
+      ![page](page2.png)
+
+ 12. Add a description to your section tile, select your business catalog and click **Add** and **Save**.
+
+      ![page](page3.png)
+
+ 13. Check your result. Click **Page Preview**.
+
+      ![page](page4.png)
+
+ 14. Check the result in the preview.
+
+      ![page](page5.png)
+
+ 15. Select your user and **Settings**.
+
+      ![page](page6.png)
+
+ 16. Select **Spaces and Pages** and check **Use Spaces**.
+
+      ![page](page7.png)
+
+ 17. Select **Travel App XXX** to see your application.
+
+       ![page](page8.png)
+
 
 ### Release transport task (Optional)
 
@@ -326,9 +397,13 @@ If you want to release your transport task, do following:
 
       ![transport](brole12.png)
 
-  4. Select your transport request and select execute. For testing select simulate.
+  4. Select your transport task and select execute. For testing select simulate.
 
       ![transport](brole16.png)
+
+  5. Go back to your transport request, select it and click **Release > Execute** to transport it.
+
+      ![transport](release.png)
 
 ### Test yourself
 

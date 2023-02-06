@@ -17,7 +17,6 @@ In the online shop, customers can order various items. Once an item is ordered, 
 
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 - Business Catalog `SAP_BR_PURCHASER` needs to be assign to your business user

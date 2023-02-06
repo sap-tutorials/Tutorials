@@ -2,13 +2,13 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
-primary_tag:  products>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+primary_tag:  software-product>sap-build-work-zone--standard-edition
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
-# Create a Fiori Launchpad App
+# Create an App for SAP Build Work Zone, standard edition
 <!-- description --> After you set up the environment, use the generator to bootstrap a new SAPUI5 project. Learn about the main components of this basic project and the tools that support it.
 
 ## Prerequisites
@@ -20,6 +20,7 @@ author_profile: https://github.com/nicoschoenteich
 
 
 ---
+
 
 ### Scaffold a SAPUI5 project
 
@@ -37,11 +38,13 @@ Choose the following responses for the prompted parameters.
 |  What do you want to do?          | **`Create a new OpenUI5/SAPUI5 project [app]`**
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
+|  Do you want to enable the SAP Fiori elements flexible programming model?    | **`No`**
 |  On which platform would you like to host the application | **`SAP Launchpad service`**
 |  Which view type do you want to use? | **`XML`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
 |  Would you like to add JavaScript code assist libraries to the project?    | **`Yes`**
+|  Would you like to initialize a local git repository for the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
 
@@ -84,7 +87,7 @@ Start the web server locally via the command line.
 npm start
 ```
 
-**Click** on the only tile you see in the SAP Fiori Launchpad to start the SAPUI5 application.
+**Click** on the only tile you see in the SAP Build Work Zone site to start the SAPUI5 application.
 
 <!-- border -->![local](./local.png)
 

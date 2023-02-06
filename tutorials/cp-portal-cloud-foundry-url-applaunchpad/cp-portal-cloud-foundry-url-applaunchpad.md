@@ -2,15 +2,15 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service ]
-primary_tag: software-product>sap-launchpad-service
+tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--standard-edition ]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 
-# Add a URL App to Your Launchpad Site
-<!-- description --> Create a URL app and add it to your launchpad site.
+# Add a URL App to Your Site
+<!-- description --> Create a URL app and add it to your site.
 
 ## You will learn
   - How to create a URL app and add it to your site
@@ -93,7 +93,7 @@ In the **Content Manager**, you can see your app in the list.
 <!-- border -->![Content manager with app](6-content-manager-with-app.png)
 
 
-To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in your launchpad site.
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in your site.
 
 This is described in the following steps.
 
@@ -125,7 +125,7 @@ This is described in the following steps.
 
 
 
->A group is a set of one or more apps displayed together in a launchpad site. Assigning apps to groups, makes them visible to users.
+>A group is a set of one or more apps displayed together in a site. Assigning apps to groups, makes them visible to users.
 
 1. Open the **Content Manager** and click **+ New** and select **Group** from the list.
 
@@ -159,7 +159,7 @@ You'll see that your new app is displayed in the `SAP` group.
 
 You can now launch your application by clicking the **Innovation at SAP** tile.
 
-Congratulations you've created a launchpad site with two apps!
+Congratulations you've created a site with two apps!
 
 
 

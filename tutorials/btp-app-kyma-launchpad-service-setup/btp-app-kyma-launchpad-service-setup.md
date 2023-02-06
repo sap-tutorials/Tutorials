@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Prepare SAP Launchpad Service Setup
+description: Learn how to prepare your UI applications, add deployment configuration for HTML5 applications to your project, and configure your Helm chart for HTML5 application deployment.
 keywords: cap
 auto_validation: true
 time: 35
@@ -9,13 +10,11 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Prepare SAP Launchpad Service Setup
-<!-- description --> Learn how to prepare your UI applications, add deployment configuration for HTML5 applications to your project, and configure your Helm chart for HTML5 application deployment.
-
 ## Prerequisites
  - [Deploy Your CAP Application to Kyma](btp-app-kyma-deploy-application)
 
-## You will learn
+## Details
+### You will learn
  - How to add navigation targets and prepare your UI applications
  - How to build and push the docker image for HTML5 application deployer
  - How to configure your Helm chart for HTML5 application deployment
@@ -23,15 +22,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-### Prepare UI Applications
-
+[ACCORDION-BEGIN [Step 1: ](Prepare UI Applications)]
 In this tutorial, you will use the SAP Launchpad service to access your CAP service and its UI. Additionally, the SAP Launchpad service provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Launchpad service. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add navigation target for Risks UI
-
+[ACCORDION-BEGIN [Step 2: ](Add navigation target for Risks UI)]
 1. Open the file `app/risks/webapp/manifest.json`.
 
 2. Add the external navigation target to the `sap.app` JSON object. You can add it right behind the `sourceTemplate` object:
@@ -62,9 +61,10 @@ Navigation targets are required to navigate between applications, but also to st
 }
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add navigation target for Mitigations UI
-
+[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
 1. Open the file `app/mitigations/webapp/manifest.json`.
 
 2. Add the external navigation target to the `sap.app` JSON object, but this time with `semanticObject` name `Mitigations`. You can add it right after the `dataSources` object:
@@ -95,9 +95,10 @@ Navigation targets are required to navigate between applications, but also to st
 }
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install required UI tools
-
+[ACCORDION-BEGIN [Step 4: ](Install required UI tools)]
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module in the root folder of your project:
 
     ```Shell/Bash
@@ -110,9 +111,10 @@ Navigation targets are required to navigate between applications, but also to st
     npm install --global @sap/generator-fiori
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAP Fiori elements Risks application
-
+[ACCORDION-BEGIN [Step 5: ](Add SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -149,9 +151,10 @@ Navigation targets are required to navigate between applications, but also to st
 > 4. Save and close the file.
 > 5. The `fiori add deploy-config cf` command should run without errors now.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add SAP Fiori elements Mitigations application
-
+[ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Mitigations application)]
 1. Switch to the `app/mitigations` folder:
 
     ```Shell/Bash
@@ -169,9 +172,10 @@ Navigation targets are required to navigate between applications, but also to st
     - ```Destination name ()```: **`cpapp-srv`**
     - ```Add application to managed application router? (Y/n)```: **`y`**
 
+[DONE]
+[ACCORDION-END]
 ---
-### Change cloud service
-
+[ACCORDION-BEGIN [Step 7: ](Change cloud service)]
 The `fiori` command automatically sets some value to the SAP Cloud service property in both  `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files. Change the `sap.cloud.service` property in `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json`:
 
 ```JSON[3]
@@ -181,9 +185,10 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 }
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create package.json and build script for app deployer
-
+[ACCORDION-BEGIN [Step 8: ](Create package.json and build script for app deployer)]
 1. Create a file `app/package.json` for the HTML5 application deployer application and add the following code to it:
 
     ```JSON
@@ -250,15 +255,16 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     rm -rf {app,app/risks,app/mitigations}/{node_modules,package-lock.json}
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Build HTML5 application deployer image
-
+[ACCORDION-BEGIN [Step 9: ](Build HTML5 application deployer image)]
 1. Set container registry environment variable:
 
     ```Shell/Bash
     CONTAINER_REGISTRY=<your-container-registry>
     ```
-  
+
     > Looking for `<your-container-registry>`?
 
     > Value for `<your-container-registry>` is the same as the docker server URL and the path used for docker login. You can quickly check it by running the following command in your terminal:
@@ -285,13 +291,14 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     docker push $CONTAINER_REGISTRY/cpapp-html5-deployer
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Configure Helm chart for HTML5 application deployment
-
+[ACCORDION-BEGIN [Step 10: ](Configure Helm chart for HTML5 application deployment)]
 1. Add the HTML5 Application Deployer to your Helm chart:
 
     ```
-    cds add helm:html5_apps_deployer
+    cds add html5-repo
     ```
 
     This adds three new sections `html5_apps_deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the Launchpad Service.
@@ -326,9 +333,10 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
      - Destination `cpapp-srv` for the Mitigations application, done in `Step 6: Add SAP Fiori elements Mitigations application`.
      - Cloud service for both applications, done  `Step 7: Change Cloud Service`.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Redeploy your application
-
+[ACCORDION-BEGIN [Step 11: ](Redeploy your application)]
 Run the deploy command again:
 
 ```Shell/Bash
@@ -336,5 +344,6 @@ helm upgrade cpapp ./chart --install
 ```
 
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---

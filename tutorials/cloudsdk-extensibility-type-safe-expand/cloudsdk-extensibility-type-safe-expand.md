@@ -1,11 +1,11 @@
 ---
 parser: v2
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: topic>java
+primary_tag: programming-tool>java
 ---
 
 # Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
@@ -17,18 +17,20 @@ primary_tag: topic>java
 
 
 
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
->
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+ > **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
+ > This tutorial is not actively maintained and might be partially outdated.
+ > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+ > We will provide a link to the updated version of this tutorial as soon as we release it.
+
 
 ## You will learn
   - How to use custom field extensions from S/4HANA in the virtual data model for OData
   - How to join connected entities from the virtual data model in eager fashion
   - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
+
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+
 ---
 
 ### Get ready

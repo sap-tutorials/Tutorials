@@ -2,33 +2,34 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-work-zone]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Design SAP Work Zone's Home Page
+# Design a Home page in SAP Build Work Zone, advanced edition
 <!-- description --> Open the Home page, add content to it, and change the overall layout.
 
 ## Prerequisites
-A subaccount in SAP BTP that includes a subscription to the SAP Work Zone service has already been setup for you.
+ - A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service, has already been setup for you.
 &nbsp;
-**Note that SAP Work Zone is not available in a trial account.**
+
+>**SAP Build Work Zone, advanced edition is not available in a trial account.**
 
 ## You will learn
-  - How to open SAP Work Zone
-  - How to design a SAP Work Zone **Home** page
+  - How to open SAP Build Work Zone, advanced edition
+  - How to design a **Home** page
 
 
 ## Intro
-In this group of tutorials you'll learn how to build a digital workplace solution using SAP Work Zone.
+In this group of tutorials you'll learn how to build a digital workplace solution using SAP Build Work Zone, advanced edition.
 
-The **Home** page is the landing page when you first open SAP Work Zone. It is the first menu item in the top navigation bar.
+The **Home** page is the landing page when you first open your site. It is the first menu item in the top navigation bar.
 
-In this tutorial, you'll be designing a SAP Work Zone **Home** page. You'll add rows and columns to configure its layout and also add widgets with static content to it. In later tutorials, you'll add apps and cards to this page.
+In this tutorial, you'll be designing a **Home** page. You'll add sections and columns to configure its layout and also add widgets with static content to it. In later tutorials, you'll add apps to this page.
 
->Note that you can also design the overview page of a workspace the same way.
+>You can design any workpage the same way.
 
 ---
 
@@ -45,7 +46,7 @@ First download these image files so that they're on your computer ready for you 
 
 
 
-### Access SAP Work Zone
+### Access SAP Build Work Zone, advanced edition
 
 
 
@@ -55,18 +56,18 @@ First download these image files so that they're on your computer ready for you 
 
     <!-- border -->![Click Instances & Subscriptions](1-click-instances-subscriptions.png)
 
-3. Under the **Subscriptions** tab, click **SAP Work Zone**.
+3. Under the **Subscriptions** tab, click **SAP Build Work Zone, advanced edition**.
 
     <!-- border -->![Open SAP Work Zone](2-open-work-zone.png)
 
 4. Enter your log on credentials.
 
-    When you open SAP Work Zone, you'll see the runtime of the company's work zone with the **Home** page in focus. By default, SAP Work Zone is preconfigured with a shell with different content and features. You can configure SAP Work Zone and add your own content.
+    When you open your site, you'll see the **Home** page in focus. By default, your SAP Build Work Zone, advanced edition site is preconfigured with a shell with different content and features. You can configure your own site and add content to it.
 
     <!-- border -->![Open work zone](3-default-home-page.png)
 
 
->SAP Work Zone includes the following menu items:<div>&nbsp;</div><div> **Home** - displays information that is relevant to everyone in the company who has access to the work zone.<div>&nbsp;</div><div> **My Workspace** - a personal workspace. All users of SAP Work Zone can create their own workspace. This workspace can be used as a favorite page for frequently used content and applications.<div>&nbsp;</div><div> **Applications** - provides access to all business apps that the logged on user can access and that are configured for display.<div>&nbsp;</div><div> **Workspaces** - a central place for you to create workspaces. These workspaces can become available to any group of company users and to external users.<div>&nbsp;</div><div> **Tools** - provides access to different tools like company knowledge base, calendar, and more.
+>SAP Build Work Zone, advanced edition includes the following menu items:<div>&nbsp;</div><div> **Home** - displays information that is relevant to everyone in the company who has access to the site.<div>&nbsp;</div><div> **My Workspace** - a personal workspace. All users can create their own workspace. This workspace can be used as a favorite page for frequently used content and applications.<div>&nbsp;</div><div> **Applications** - provides access to all business apps that the logged on user can access and that are configured for display.<div>&nbsp;</div><div> **Workspaces** - a central place for you to create workspaces. These workspaces can become available to any group of company users and to external users.<div>&nbsp;</div><div> **Tools** - provides access to different tools like company knowledge base, calendar, and more.
 
 >&nbsp;
 
@@ -79,9 +80,9 @@ In the next steps, you'll learn how to design the **Home** page of the company `
 ### Open the Page Designer of the Home page
 
 
-The Page Designer tool is used to edit the **Home** page and also to edit overview pages of any workspace in SAP Work Zone. In this step, you'll access the page designer for the **Home** page.
+The Page Designer tool is used to edit the **Home** page and also to edit any other workpages in your site.
 
-You can use the Page Designer to add, move, resize, align, configure widgets, and modify the overall layout of your page. As you design a page, your work is automatically saved so that you don't lose your changes prior to publishing or saving as a draft.
+You can use the Page Designer to add, move, resize, align, configure widgets, and modify the overall layout of your page. As you design a workpage, your work is automatically saved so that you don't lose your changes prior to publishing or saving as a draft.
 
 1. With the **Home** page in focus, select the **Switch page view** icon on the left side of the screen.
 
@@ -99,11 +100,10 @@ You can use the Page Designer to add, move, resize, align, configure widgets, an
 
     <!-- border -->![Name the page tab](7-name-page-tab.png)
 
-5. This opens the **Page Designer Tips** screen. You can close it for now.
 
 The Page Designer is now active and you can use it to design your **Home** page.
 
-> Note that the **Home** page can also be designed and managed from the **Administration Console** – a tool where all administration tasks are performed for SAP Work Zone. You can get to the Administration Console, by following these steps:
+>The **Home** page can also be designed and managed from the **Administration Console** – a tool where all administration tasks are performed for SAP Build Work Zone, advanced edition. You can get to the Administration Console, by following these steps:
 >
 >1. Under your avatar at the top right of the screen, open the dropdown menu, and click **Administration Console**.
 >2. From the **Administration Console**, expand the **Area & Workspace Configuration** menu item and click **Home Page**.
@@ -210,7 +210,7 @@ Let's start designing the **Home** page.
 
 
 
-### Design the page's third row 
+### Design the page's third row
 
 
 1. Click **+** at the bottom of the 2nd row to add a new row.

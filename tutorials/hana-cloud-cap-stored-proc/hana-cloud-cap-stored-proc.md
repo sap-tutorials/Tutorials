@@ -50,7 +50,7 @@ Video tutorial version:
     END
     ```
 
-1. Save.  Deploy the to the database again using the SAP HANA Projects view.
+1. Deploy the to the database again using the SAP HANA Projects view.
 
     ![Deploy](deploy.png)
 

@@ -38,8 +38,8 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
-
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+ 
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     <!-- border -->![Trial global account](trial_home.png)
 
