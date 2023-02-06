@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   software-product>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
+tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   software-product>sap-build-work-zone--standard-edition, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
 primary_tag: software-product>sap-fiori
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
@@ -251,7 +251,6 @@ The following snippet defines the content of the `ObjectPage`. It's mostly basic
 </mvc:View>
 ```
 
-
 ### Populate the empty fields
 
 You probably noticed empty fields that do not show data yet.
@@ -298,8 +297,6 @@ You probably noticed empty fields that do not show data yet.
 3. The view should now look like displayed here.
 
     <!-- border -->![object page](objectpage.png)
-
-
 
 ### Add hierarchy information
 

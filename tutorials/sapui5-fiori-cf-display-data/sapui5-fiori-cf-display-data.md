@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-build-work-zone--standard-edition, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: programming-tool>odata
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
@@ -35,19 +35,19 @@ Newer versions of the easy-ui5 generator create projects that contain two views 
 
 **Replace** the current content of the `Products.view.xml` with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
-```XML [4-10]
-<mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
-  xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
-  <Page id="Products" title="Available Products">
-    <content>
-      <List items="{/Products}">
-        <StandardListItem type="Active" title="{ProductName}" />
-      </List>
-    </content>
-  </Page>
-</mvc:View>
-```
+    ```XML [4-10]
+    <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
+      xmlns="sap.m"
+      xmlns:mvc="sap.ui.core.mvc">
+      <Page id="Products" title="Available Products">
+        <content>
+          <List items="{/Products}">
+            <StandardListItem type="Active" title="{ProductName}" />
+          </List>
+        </content>
+      </Page>
+    </mvc:View>
+    ```
 
 You'll immediately be able to see that the `App.view.xml` embeds the `Products.view.xml` and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
