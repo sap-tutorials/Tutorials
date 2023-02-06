@@ -115,7 +115,7 @@ For this purposes the generated business object is checking authorization object
 ### Assign Business Catalog to Business Role and maintain restrictions
 
 
-  1. To [create a Business Role](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8ffb880eafec4078a1e5051227cb64b1.html) and assign it to your user, start the Fiori Launchpad. Or right-click on your ABAP system and select **Properties**.
+  1. To [create a Business Role](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8ffb880eafec4078a1e5051227cb64b1.html) and assign it to your user, start the SAP Build Work Zone. Or right-click on your ABAP system and select **Properties**.
 
       ![Select properties](fiori.png)
 
