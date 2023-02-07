@@ -1,8 +1,6 @@
 ---
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
-title: Setup Azure Bucket With AI Core
-description: In this tutorial we will be walking through the steps on how to Set up azure bucket (Azure Blob Storage) with SAP AI Core
 keywords: Azure Bucket setup
 auto_validation: true
 time: 10
@@ -10,7 +8,7 @@ tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning
 primary_tag: software-product>sap-ai-core
 parser: v2
 ---
-# Setup Azure DataBucket With AI Core
+# Setup Azure Data Bucket with AI Core
 <!-- description -->Set up azure bucket (Azure Blob Storage) with SAP AI Core.
 
 ## Prerequisites
@@ -24,16 +22,16 @@ parser: v2
 - Setup Azure data buckets for use with AI Core.
 
 ## What is azure data store ?
+Azure Data Store refers to a collection of data storage solutions offered by Microsoft Azure, including Azure Cosmos DB, Azure Blob storage, Azure Data Lake Storage, Azure Queue storage, and Azure Table storage. These solutions provide scalable, highly available, and secure data storage options for a variety of use cases, such as big data analytics, NoSQL databases, content delivery, and message queuing.
+
 
 >**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you should set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
 
 
 ### System Setup
-For Detailed docs reffer : [AI Core Setup](https://developers.sap.com/tutorials/ai-core-setup.html)
-TODO establish the setup prerequisites for SAP AI Core 
+For Detailed docs refer : [AI Core Setup](https://developers.sap.com/tutorials/ai-core-setup.html)
 
-
-- Downloading postman config
+- Downloading config for Postman
 
 Go to [AI core API](https://api.sap.com/api/AI_CORE_API/overview) and download the JSON File.
 
