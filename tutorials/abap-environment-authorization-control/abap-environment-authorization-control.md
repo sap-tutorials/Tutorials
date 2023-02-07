@@ -29,6 +29,7 @@ author_profile: https://github.com/mervey45
  - Modifying operations, such as standard operations and actions can be checked against unauthorized access during RAP runtime.
 
 For this purposes the generated business object is checking authorization object `S_TABU_NAM` with the CDS entity `ZI_ERRORCODE###` and activity `03` (read) / `02` (modify).
+
 ---
 ### Create IAM app
 
