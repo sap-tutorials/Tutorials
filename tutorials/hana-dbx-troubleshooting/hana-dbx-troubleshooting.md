@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition ]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition ]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -33,14 +33,14 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Attach Options](DebuggerAttachOptions.png)
 
-    >Note that anonymous blocks can also be debugged if the **Stop at execution start** option is checked.  An example of an anonymous block is shown below.
+    >Anonymous blocks can also be debugged if the **Stop at execution start** option is checked.  An example of an anonymous block is shown below.
 
     >
     ```SQL
     DO BEGIN
         USING SQLSCRIPT_PRINT AS PRTLIB;
         DECLARE count INT := 0;
-        SQLQUERY = SELECT count(*) C from HOTEL.MAINTENANCE;
+        SQLQUERY = SELECT count(*) C from MAINTENANCE;
         SELECT C INTO count from :SQLQUERY;
         PRTLIB:PRINT_LINE(CONCAT('Entries in the maintenance table is: ', count));
     END
@@ -62,7 +62,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Suspended](DebuggerSuspended.png)
 
-    The current values of any variables used can be examined.  It is possible to modify the value of certain local and global variables types by clicking the edit button highlighted above.
+    The current values of any variables used can be examined.  It is possible to modify the value of certain local and global variables by clicking the edit button highlighted above.
 
     ![Debugger Variables](DebuggerVariables.png)
 
@@ -75,7 +75,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
 ### Code coverage
 
-The code coverage tool shows statements that have been run.  This can be helpful when used in conjunction with a set of tests, as it can show the amount of statements that the tests have covered.
+The code coverage tool shows statements that have been run.  This can be helpful when used in conjunction with a set of tests, as it can show the statements that the tests have covered.
 
 1. Right-click the procedure `RESERVATION_GENERATOR` and choose **Generate CALL Statement**.
 
@@ -105,7 +105,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 1. Create a new procedure to generate fictitious hotel reservations. The procedure accepts a number of reservations to generate and a room type.
 
     ```SQL
-    CREATE OR REPLACE PROCEDURE HOTEL.RESERVATION_GENERATOR2(
+    CREATE OR REPLACE PROCEDURE RESERVATION_GENERATOR2(
     		IN numToGenerate INTEGER,
     		IN rmType STRING
     	)
@@ -151,7 +151,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
     		departDateString := '''' || TO_VARCHAR( departDate, 'YYYY-MM-DD' ) || '''';
 
             -- Reservations Columns: RNO, CNO, HNO, Type, Arrival, Departure
-    		stmt := 'INSERT INTO HOTEL.RESERVATION (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
+    		stmt := 'INSERT INTO RESERVATION (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
         PRTLIB:PRINT_LINE(stmt);
         EXEC(stmt);
     		val := val + 1;
@@ -163,7 +163,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 2. Try it out.
 
     ```SQL
-    CALL "HOTEL"."RESERVATION_GENERATOR2"(NUMTOGENERATE => 3,RMTYPE => '''suite''');
+    CALL "RESERVATION_GENERATOR2"(NUMTOGENERATE => 3,RMTYPE => '''suite''');
     ```
 
     ![call resvation_generator2](generateSuite.png)
@@ -184,6 +184,8 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
     * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
+    >The above changes can be made in the SQL Console.  The Create Statement tab is read only.
+
 6. Right-click the procedure and choose **Analyze SQLScript Code**.
 
     Notice that only one warning remains
@@ -195,14 +197,15 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
 Explain plan provides a compiled plan in tabular form without executing it.  This can be useful in analyzing certain situations when it is hard to reproduce issues without causing the issue.
 
-1. Run the following SQL and enter the date 2020-12-24 when prompted.  
+1. Choose **Analyze | Explain Plan** to see the compiled plan without executing the statement.  Enter the date 2020-12-24 when prompted.  
 
     ```SQL
     SELECT
-      R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
-    FROM HOTEL.RESERVATION R
-    	LEFT JOIN HOTEL.HOTEL H ON H.HNO = R.HNO
-    	LEFT JOIN HOTEL.CUSTOMER CUS ON CUS.CNO = R.CNO
+      R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
+      CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
+    FROM RESERVATION R
+    	LEFT JOIN HOTEL H ON H.HNO = R.HNO
+    	LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
     	WHERE ARRIVAL = ?
     ORDER BY H.NAME, R.ARRIVAL DESC
     WITH HINT (IGNORE_PLAN_CACHE);
@@ -210,11 +213,11 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
 
     > Notice that a hint is provided which indicates that if a query plan is found in the cache, it should be ignored.
 
-    ![Reservations by Hotel](explainPlanSQL.png)
+    ![Selecting explain plan](explainPlan.png)
 
-2. Choose **Analyze | Explain Plan** to see the complied plan without executing the statement.  
+2. The result is shown below.  
 
-    ![Explain Plan](explainPlan.png)
+    ![Explain plan Results](explainPlanResults.png)
 
 For further details see the links below.
 
@@ -231,15 +234,26 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 1. Run the following SQL.
 
     ```SQL
-    SELECT HOTEL_NAME, COUNT(*) AS "NUMBER OF RESERVATIONS" FROM HOTEL.RESERVATION_VIEW GROUP BY HOTEL_NAME ORDER BY HOTEL_NAME;
+    SELECT
+    R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
+    CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
+    FROM RESERVATION R
+        LEFT JOIN HOTEL H ON H.HNO = R.HNO
+        LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
+        WHERE ARRIVAL = '2020-12-24'
+    ORDER BY H.NAME, R.ARRIVAL DESC;
     ```
 
-    ![Reservations by Hotel](explainPlanSQL.png)
+    ![Reservations by Hotel](reservationsByHotel.png)
 
 2. If using SAP HANA Cloud, HANA database, choose **Analyze | Generate SQL Analyzer Plan File**.  
 
     ![Generate PLV](generatePLV.png)
 
+    ![Save Plan File](SavePlanFile.png)
+
+    ![Download Plan](downloadPlan.png)
+    
     Once the file has been saved it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
 
     * In Visual Studio Code:
@@ -267,7 +281,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![Analyze SQL](SQLAnalyzer0.png)  
 
-4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the time it took to compile and execute the SQL statement, the peak memory, the result record count, and accessed tables.
+4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the peak memory, the result record count, and accessed tables.
 
     ![SQL Analyzer](SQLAnalyzerNew.png)
 
@@ -297,12 +311,12 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
 2. To determine the SQL requests that were executed in order to populate the various fields of the overview (e.g. memory used), enable a SQL trace by running the SQL statements below in a SQL console.
 
-    ```SQL SAP HANA Cloud, HANA database
-    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'on', ('sqltrace', 'application') = 'sap_xsac_hrtt', ('sqltrace', 'user') = 'DBAdmin' WITH RECONFIGURE;
-    ```
-
-    ```SQL SAP HANA on-premise
-    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'on', ('sqltrace', 'tracefile') = 'database_overview', ('sqltrace', 'application') = 'sap_xsac_hrtt', ('sqltrace', 'user') = 'SYSTEM' WITH RECONFIGURE;
+    ```SQL
+    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
+        SET ('sqltrace', 'trace') = 'on', 
+        ('sqltrace', 'application') = 'SAP_HANARuntimeTools_HRA', 
+        ('sqltrace', 'user') = 'USER1' 
+        WITH RECONFIGURE;
     ```
 
     >Additional details can be found in the [Configuration Parameter Reference](https://help.sap.com/viewer/138dcf7d779543608917a2307a6115f2/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html#loio514ab38a2e574c85a70ebba80ff16d99__configHC_id_30).
@@ -325,10 +339,11 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 4. Turn off the SQL trace as tracing can have an effect on performance and takes up storage space.
 
     ```SQL
-    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'off' WITH RECONFIGURE;
+    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
+        SET ('sqltrace', 'trace') = 'off' WITH RECONFIGURE;
     ```
 
-    >Note that when using the SAP HANA database explorer running in SAP HANA on-premise or HANA as a Service, it is possible to configure traces using a graphical interface.
+    >When using the SAP HANA database explorer running in SAP HANA on-premise or HANA as a Service, it is possible to configure traces using a graphical interface.
     >
     >![Trace configuration menu](traceConfiguration.png)
     >
@@ -372,7 +387,7 @@ It can be important to examine SQL statements that consume large amounts of time
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_memory') = '41943040' WITH RECONFIGURE;   -- 40 MB
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_duration') = '3000000' WITH RECONFIGURE;  -- 3 sec
 
-    CALL HOTEL.RESERVATION_GENERATOR(1000);  --consumes more than 40 MB of memory
+    CALL RESERVATION_GENERATOR(1000);  --consumes more than 40 MB of memory
 
     DO BEGIN
       -- Wait for a few seconds
@@ -399,11 +414,12 @@ It can be important to examine SQL statements that consume large amounts of time
 
     > For SAP HANA on-premise databases, the peak memory used option requires the configuration parameters `enable_tracking` and `memory_tracking` to be enabled.
     >
-    > ```SQL
+    >```SQL
     SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE KEY = 'memory_tracking' OR KEY = 'enable_tracking';
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
-    > ```
+    ```
+
     > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
 
 
@@ -460,10 +476,11 @@ A data lake Relational engine can contain log files, query plans, and audit file
 3. Query plans can be enabled, configured, and viewed.
 
     ```SQL
+    SET SCHEMA HOTEL;
     SET TEMPORARY OPTION Query_Plan_As_HTML = 'ON';
     SET TEMPORARY OPTION QUERY_DETAIL = 'ON';
     SET TEMPORARY OPTION QUERY_TIMING  = 'ON';
-    SELECT * FROM HOTEL.TOURIST_REVIEWS WHERE DESTINATION_RATING = 5;
+    SELECT * FROM TOURIST_REVIEWS WHERE DESTINATION_RATING = 5;
     SET TEMPORARY OPTION QUERY_DETAIL = 'OFF';
     SET TEMPORARY OPTION QUERY_TIMING  = 'OFF';
     SET TEMPORARY OPTION Query_Plan_As_HTML = 'OFF';
@@ -497,13 +514,9 @@ A data lake Relational engine can contain log files, query plans, and audit file
 
     For additional methods such as using the HDLFSCLI to access logs, see [View your SAP HANA Cloud, data lake Diagnostic Files and Audit Logs](data-lake-customer-facing-diagnostic-files).
 
+### Knowledge check
+
 Congratulations! You have now explored many of the available tools in the SAP HANA database explorer that help to debug and diagnose.
-
-
-
-
-
-
 
 
 ---
