@@ -4,7 +4,7 @@ description: Learn how to enrich your shell plug-in with the use of OData Servic
 keywords: tutorial
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Arianna Musso Barcucci
 author_profile: https://github.com/AriannaMussoBarcucci
@@ -13,6 +13,8 @@ parser: v2
 
 ## Prerequisites
  - You have successfully completed the tutorial [Implement Custom Shell Plug-in in the SAP BTP ABAP Environment](abap-environment-shell-plugin)
+
+>This tutorial was written for SAP BTP ABAP Environment. However, you should be able to use it in SAP S/4HANA Cloud Environment in the same way.
 
 ## You will learn
   - How to create an OData Service to expose user-related information using the ABAP Developer Tool in Eclipse.

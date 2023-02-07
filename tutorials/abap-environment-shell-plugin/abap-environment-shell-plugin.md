@@ -4,7 +4,7 @@ description: Learn how to develop and deploy a custom shell plug-in to your SAP 
 keywords: tutorial
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio]
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-application-studio, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Arianna Musso Barcucci
 author_profile: https://github.com/AriannaMussoBarcucci
@@ -19,6 +19,8 @@ parser: v2
  - You are a member of the Cloud Foundry space where your SAP BTP ABAP Environment resides, and you have **Space Developer** role.
  - You have a user in your SAP BTP ABAP Environment with the following roles: `SAP_BR_ADMINISTRATOR` and `SAP_BR_DEVELOPER`.
  - You are connected to your SAP BTP ABAP Environment in the ABAP Development Tool (ADT) in Eclipse.
+
+>This tutorial was written for SAP BTP ABAP Environment. However, you should be able to use it in SAP S/4HANA Cloud Environment in the same way.
 
 ## You will learn
 - How to create a custom shell plug-in.
