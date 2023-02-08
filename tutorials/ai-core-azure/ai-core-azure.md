@@ -13,7 +13,7 @@ parser: v2
 
 ## Prerequisites
 - An existing Azure account with Admin access to create and use Azure Data store.
--TODO establish the setup prerequisites for SAP AI Core 
+- TODO establish the setup prerequisites for SAP AI Core 
 ![image](img/azure-dashboard.png)
 
 >**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you should set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
@@ -25,6 +25,7 @@ parser: v2
 
  ## Intro
 **What is Azure Data Store?**
+
 Azure Data Store refers to a collection of data storage solutions offered by Microsoft Azure, including Azure Cosmos DB, Azure Blob Storage, Azure Data Lake Storage, Azure Queue Storage, and Azure Table Storage. These solutions provide scalable, highly available, and secure data storage options for a variety of use cases, such as big data analytics, NoSQL databases, content delivery, and message queuing.
 
 
