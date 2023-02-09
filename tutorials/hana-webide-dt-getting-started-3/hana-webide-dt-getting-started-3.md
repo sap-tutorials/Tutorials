@@ -1,10 +1,12 @@
 ---
-title: Create Tables and Import Data
-description: Create in-memory column store and dynamic tiering tables. Import data into both types of tables.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
 ---
+
+# Create Tables and Import Data
+<!-- description --> Create in-memory column store and dynamic tiering tables. Import data into both types of tables.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -14,17 +16,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
   - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-4.html)
 
-## Details
-### You will learn  
+## You will learn  
 * How to create HANA in-memory column store and dynamic tiering extended store tables.
 * How to load data into the in-memory and extended tables.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create tables)]
+### Create tables
+
 This tutorial is a continuation of previous tutorials. It assumes you have created a `TPCH` user with the correct permissions, and logged into the database using this user. On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.1](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
@@ -283,29 +284,24 @@ You should see the tables we created in the new window. The dynamic tiering tabl
 
 ![3.6](assets/hana-webide-dt-getting-started-3-04ed7a63.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Script explanation)]
+### Script explanation
+
 The key syntax difference when creating a dynamic tiering table is the addition of the `USING EXTENDED STORAGE` clause to the `CREATE TABLE` statement as seen in the picture below. You may also notice that it did not explicitly state that the dynamic tiering tables should be `COLUMN` tables. All dynamic tiering tables are stored as columnar tables, so the use of `CREATE COLUMN TABLE` vs `CREATE TABLE` is optional.
 
 ![3.7](assets/hana-webide-dt-getting-started-3-59e87a80.jpg)
 
-[DONE]
 
-[ACCORDION-END]
+### Download data files and copy to HANA directory
 
-[ACCORDION-BEGIN [Step 3: ](Download data files and copy to HANA directory)]
 One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system.
 
 Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These `CSV` data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA dynamic tiering host. `<SID>` is your system's System ID. This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
-[DONE]
 
-[ACCORDION-END]
+### Import data into tables
 
-[ACCORDION-BEGIN [Step 4: ](Import data into tables)]
 On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.8](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
@@ -383,7 +379,4 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/PartSupp.csv'
 
 ![3.12](assets/hana-webide-dt-getting-started-3-b6fdd40d.png)
 
-[DONE]
-
-[ACCORDION-END]
 

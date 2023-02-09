@@ -1,30 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Purchase Order and Purchase Contract
-description: Create a purchase contract via EML, then create a new purchase order with reference to the newly created purchase contract.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
-tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development]
+tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development, programming-tool>abap-extensibility]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 
+# Create Purchase Order and Purchase Contract
+<!-- description --> Create a purchase contract via EML, then create a new purchase order with reference to the newly created purchase contract.
+
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
 
-
-## Details
-### You will learn  
+## You will learn  
 - How to create a purchase contract
 - How to create a purchase order
 - How to run ABAP classes
 
+
+## Intro
+>**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
+### Create ABAP package
+
 
   1.  Logon to Eclipse. Select **ZLOCAL** > **New** > **ABAP Package**.
 
@@ -46,10 +51,9 @@ author_profile: https://github.com/mervey45
 
        Click **Finish**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create purchase contract via EML)]
+### Create purchase contract via EML
+
 
   1. Right-click your ABAP class `Z_CL_CREATE_PR_XXX` and select **New** > **ABAP Class**.
 
@@ -252,10 +256,9 @@ author_profile: https://github.com/mervey45
     ![contract](result.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create purchase order with reference to the purchase contract via EML)]
+### Create purchase order with reference to the purchase contract via EML
+
 
   1. Right-click your package `Z_PURCHASE_CONTRACT_XXX` and select **New** > **ABAP Class**.
 
@@ -495,13 +498,8 @@ author_profile: https://github.com/mervey45
   5. Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
-
-[VALIDATE_1]
-[ACCORDION-END]
+### Test yourself

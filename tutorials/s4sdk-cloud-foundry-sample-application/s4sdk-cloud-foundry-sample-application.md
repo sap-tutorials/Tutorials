@@ -1,6 +1,5 @@
 ---
-title: Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
-description: Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
+parser: v2
 auto_validation: true
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
@@ -8,12 +7,16 @@ time: 20
 ---
 
 
-### You will learn  
+# Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
+<!-- description --> Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
+
+## You will learn  
 This tutorial will cover your first steps when developing applications for SAP Business Technology Platform (BTP) Cloud Foundry using SAP Cloud SDK. You will create an account for SAP BTP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SAP BTP Cloud Foundry.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup for Cloud Foundry)]
+### Setup for Cloud Foundry
+
 
 In order to deploy applications to `SAP Business Technology Platform Cloud Foundry`, you need to create a free trial account.
 You can create your account by following [this tutorial](hcp-create-trial-account).
@@ -50,10 +53,9 @@ The CLI will ask you for your mail and your password. After entering these, you 
 
 **Note**: The CF CLI stores the information locally in a `~/.cf/config.json` file. Further authentication relies on a JWT that expires after some time, so you don't have to login every time you want to push your app to the cloud.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Generate project from archetype)]
+### Generate project from archetype
+
 
 To generate your first project from the Maven archetype, run the following command:
 
@@ -86,10 +88,9 @@ After providing these values, Maven will generate your project from the archetyp
 
 **Note**: Here you have created an application which is based on the [`TomEE runtime`](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [`Spring Boot`](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. This tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the project structure and its artifacts)]
+### Understand the project structure and its artifacts
+
 
 Now you can open your favorite IDE and import the project as `Maven Project`. After importing the project into your IDE, the project structure should look like this:
 
@@ -191,10 +192,9 @@ This separation of test modules makes it possible to just run unit tests and int
 
 During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven sub-module. That way the runnable application itself can be later shipped without tests and their dependency.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](HelloWorldServlet)]
+### HelloWorldServlet
+
 
 Now that you understand the structure of the project, let's take a closer look at the `HelloWorldServlet`.
 
@@ -219,10 +219,9 @@ The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint t
 
 > The application code runs seamlessly in `SAP Business Technology Platform Neo` as well as `SAP Business Technology Platform Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deployment)]
+### Deployment
+
 
 In order to deploy the application, you first need to assemble your project into a deployable artifact – a `.war` file. Open your command line and change into the `firstapp` directory, the root directory of your project and run the following command:
 
@@ -307,17 +306,11 @@ Visit `http://localhost:8080/hello` on your local machine to view the response o
 
 Now you have a strong basis for developing your own cloud application for `SAP Business Technology Platform Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_2]
 
-[ACCORDION-END]

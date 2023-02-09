@@ -1,11 +1,13 @@
 ---
-title: Analyze Graph Workspace in SAP HANA Cloud, SAP HANA Database
-description: Learn to use algorithms to analyze and process a Graph Workspace in SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>advanced, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Analyze Graph Workspace in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn to use algorithms to analyze and process a Graph Workspace in SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - You have established a [connection to SAP HANA Cloud, SAP HANA database using Python](hana-cloud-python-analysis-multimodel-1).
@@ -13,12 +15,12 @@ primary_tag: products>sap-hana-cloud
 - You have completed the tutorial [Create Graph Workspace Visualization in database using Kepler.gl](hana-cloud-python-analysis-multimodel-2).
 
 
-## Details
-### You will learn
+## You will learn
 - How to analyze and process your graph using algorithms
 - How to create visualization for sub-graphs of components in a Graph Workspace
 - How to perform dependency analysis using a graph
 
+## Intro
 The hana-ml library provides functionalities to analyze and process the graph. In this tutorial, you will learn about algorithms that can help you create sub-graphs of components in a Graph Workspace. Through a dependency analysis of a sample problem, you can also learn about a few special algorithms that assist analysis and visualization of graphs.
 
 > The following terms are used in specific contexts:
@@ -30,21 +32,21 @@ The hana-ml library provides functionalities to analyze and process the graph. I
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Find the information visualized in the graph)]
+### Find the information visualized in the graph
+
 
 Execute `g_storm.describe()` in a new cell of your Jupyter Notebook. This gives you statistical information about the graph like the node's degree, number of triangles, density, etc.
 
 In this example, let's focus on `IS_CONNECTED`, which indicates that you don't have one connected graph, but multiple independent ones.
 
-!![statistical Node Information](ss-01-gstorm-describe.png)
+<!-- border -->![statistical Node Information](ss-01-gstorm-describe.png)
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analyze and process your graph using Algorithms)]
+### Analyze and process your graph using Algorithms
+
 
 The hana-ml library provides algorithms that can be executed on the graph like the shortest path, neighbors, topological sort or weakly connected components. You can find them in the `hana_ml.graph.algorithms` package. The execution pattern for these algorithms is always the same as given below:
 
@@ -56,11 +58,10 @@ Every algorithm is implemented in a separate Python class which you can instanti
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Store components of the graph in the database)]
+### Store components of the graph in the database
+
 
 In this case, you will use the `WeaklyConnectedComponents` algorithm to evaluate which connected components you have.
 
@@ -75,7 +76,7 @@ wcc = hga.WeaklyConnectedComponents(graph=g_storm).execute()
 
 print(f'There are {wcc.components_count} components in the Graph.')
 ```
-!![Total components](ss-02-total-components.png)
+<!-- border -->![Total components](ss-02-total-components.png)
 
 The result here indicates that you have **8332 independent components in the graph**. Let's have a closer look at the algorithm as it also exposes other details about these components.
 
@@ -92,7 +93,7 @@ Since these components exist as Pandas `dataframe` (every object that materializ
 
 Notice the two components- number **25** and number **5**. They look interesting.
 
-!![Two components](ss-03-two-components.png)
+<!-- border -->![Two components](ss-03-two-components.png)
 
 The algorithm `wcc.vertices` provides a data-frame that maps each vertex to the component it belongs to. So far, you only have the information about the components of a vertex and therefore can't visualize a graph without the missing edges. So, let's store the components to the database and use the `subgraph()` method for the visualization.
 
@@ -111,12 +112,11 @@ hdf_wcc = create_dataframe_from_pandas(
 
 Now, you have uploaded the algorithm results to your database.
 
-!![Upload results](ss-04-upload-results.png)
+<!-- border -->![Upload results](ss-04-upload-results.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create visualization for subgraphs of components)]
+### Create visualization for subgraphs of components
+
 
 You will visualize the **two biggest components in the graph** - number **25** and number **5**, to gain further insights. The Graph object provides a method to create sub-graphs based on filter criteria on vertices or edges. Let's run the following in a new cell:
 
@@ -139,7 +139,7 @@ g_storm_comp2 = g_storm.subgraph(
     force = True
 )
 ```
-!![Separate graphs](ss-05-separate-graphs.png)
+<!-- border -->![Separate graphs](ss-05-separate-graphs.png)
 
 Since you have two complete graphs now, you can visualize them like you did before:
 
@@ -156,16 +156,15 @@ map
 
 After completion, your notebook should look like this:
 
-!![Visualize two graphs](ss-06-graph-visualize.png)
+<!-- border -->![Visualize two graphs](ss-06-graph-visualize.png)
 
 In the next step, you learn how to evaluate which sections of the water network could be the causal factor of a problem reported on a specific access point (i.e. vertex). In that step you will get to know the algorithms `Neighbors`, `NeighborsSubgraphs` and `ShortestPath`.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Dependency analysis: Collect information about a reported problem )]
+### Dependency analysis: Collect information about a reported problem 
+
 
 Let's assume somebody reported a **problem with the node `WCC_SW002719`**. Suppose there is a reduced flow rate which might indicate a broken pipe somewhere else. You will want to analyze the scenario further.
 
@@ -179,13 +178,12 @@ start_vertex = g_storm_comp2.vertices_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 start_vertex
 ```
-!![Load Vertex](ss-07-load-vertex.png)
+<!-- border -->![Load Vertex](ss-07-load-vertex.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Dependency analysis: Display the nearest vertices to the problem vertex)]
+### Dependency analysis: Display the nearest vertices to the problem vertex
+
 
 Let's use the `Neighbors` algorithm to find all neighbors to the problem vertex.
 To display the 5 closest vertices:
@@ -199,7 +197,7 @@ neighbors = hga.Neighbors(graph=g_storm_comp2).execute(
 
 neighbors.vertices.head(5)
 ```
-!![Neighbors algorithm](ss-08-neighbours.png)
+<!-- border -->![Neighbors algorithm](ss-08-neighbours.png)
 
 If you want to display the vertices on the map, you need one additional step. Here, the vertices data-frame can only return vertex IDs. So, you must read the additional columns you need for visualizing separately from the database. To do so, you can use the `filter()` method of the HANA data-frame:
 
@@ -213,7 +211,7 @@ pdf_storm_comp2_neighbors = g_storm_comp2.vertices_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 ```
 
-!![Separate Visualization](ss-09-separate-visualize.png)
+<!-- border -->![Separate Visualization](ss-09-separate-visualize.png)
 
 With that, you query and materialize all positions of all the vertices which are 5 hops away from the start vertex. Visualizing follows the well-known pattern:
 
@@ -226,14 +224,13 @@ map
 
 The final view of the Notebook should look like this:
 
-!![Vertex Visualization](ss-10-vertex-visualization.png)
+<!-- border -->![Vertex Visualization](ss-10-vertex-visualization.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Visualize a subgraph to find the dependent factors of the problem)]
+### Visualize a subgraph to find the dependent factors of the problem
+
 
 The image in the last step only reveals the vertices directly surrounding the start vertex. However, when you want to find out what the dependent factors of your reported problem is, you **need to know where to start looking and how these vertices are connected**.
 
@@ -253,7 +250,7 @@ g_neighbors_downstream = hga.NeighborsSubgraph(graph=g_storm_comp2).execute(
     lower_bound=0, upper_bound=10000)
 ```
 
-!![Upstream and Downstream](ss-11-upstream-downstream.png)
+<!-- border -->![Upstream and Downstream](ss-11-upstream-downstream.png)
 
 You can see from the above code that you will get only the source and target IDs without the additional information, for example, `g_neighbors_downstream.edges.head(5)`. Therefore, you've got to load the spatial information of the edges in the same way you did in the above sections.
 
@@ -271,7 +268,7 @@ pdf_storm_comp2_neighbors_downstream_edges = g_storm_comp2.edges_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 ```
 
-!![Load Spatial Information](ss-12-load-spatial-info.png)
+<!-- border -->![Load Spatial Information](ss-12-load-spatial-info.png)
 
 With that information you can visualize it again:
 
@@ -283,16 +280,15 @@ map.add_data(pdf_storm_comp2_neighbors_downstream_edges, 'Downstream')
 map
 ```
 
-!![Upstream Downstream Visualization](ss-13-up-down-visualize.png)
+<!-- border -->![Upstream Downstream Visualization](ss-13-up-down-visualize.png)
 
 Now you understand which vertices are upstream of your problem. Moving on, the next question is- **In which order should you check the incoming vertices to find the one which is the dependent factor?** You will use another algorithm in the next step to solve this question.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete the dependency analysis )]
+### Complete the dependency analysis 
+
 
 The algorithm `ShortestPathsOneToAll` creates a **list of the shortest paths from one vertex to all the other vertices in the graph**.
 
@@ -302,7 +298,7 @@ spoa = hga.ShortestPathsOneToAll(graph=g_storm_comp2).execute(source=start_verte
 spoa.vertices.sort_values('DISTANCE')
 ```
 
-!![Shortest Upstream Vertices](ss-14-upstream-only-shortest.png)
+<!-- border -->![Shortest Upstream Vertices](ss-14-upstream-only-shortest.png)
 
 By having `direction`= `INCOMING` you specify that you're **only interested in the upstream (i.e. incoming) vertices**. By having `weight`=`LENGTH_M` you **specify what information (i.e. column) is used to calculate the** `DISTANCE`. In this case, you are taking the length of a segment while if let unspecified, the algorithm takes the number of hops.
 
@@ -318,14 +314,12 @@ Related content:
 -	[SAP HANA Graph Reference Guide](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/LATEST/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

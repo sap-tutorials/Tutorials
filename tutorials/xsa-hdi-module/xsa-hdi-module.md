@@ -1,6 +1,5 @@
 ---
-title: SAP HANA XS Advanced, Creating an HDI Module
-description: Create your first HDI module for database content within your XSA application
+parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -8,6 +7,9 @@ primary_tag: products>sap-hana
 tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
 ---
+
+# SAP HANA XS Advanced, Creating an HDI Module
+<!-- description --> Create your first HDI module for database content within your XSA application
 
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
@@ -18,23 +20,23 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
  - [SAP HANA XS Advanced - Create a Node.js module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 
-## Details
-### You will learn  
+## You will learn  
 You will now create the HTML5 module to add basic web based content to your XSA application.
 
-
-### Time to Complete
+## Time to Complete
 **25 Min**.
 
 ---
 
+## Intro
 The goal of HDI is to manage database artifacts from design time objects but in a way that allows multiple copies/versions of the same core objects to be used on the same HANA database at the same time.
 
 HDI introduces the concept of the container as an abstraction of the Schema. The container in turn dynamically generates the Schema, a container-specific Database User who owns all objects and a password for that database user. XS Advanced based services then only need access to the container and never need to know the actual Schema, technical user, or password. All of that information is stored within the container definition.
 
 SAP HANA Deployment Infrastructure was introduced with SPS11 and is thoroughly explained here: [SAP HANA SPS 11: New Developer Features; HDI](https://blogs.sap.com/2015/12/08/sap-hana-sps-11-new-developer-features-hdi/)
 
-[ACCORDION-BEGIN [Step 1: ](Create HDB Module)]
+### Create HDB Module
+
 
 Begin by selecting your project and then choosing `New -> SAP HANA Database Module`
 
@@ -57,11 +59,9 @@ You will be able to see some of the additional files that the module creation wi
 
 ![Show hidden files](6.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create Table
 
-[ACCORDION-BEGIN [Step 2: ](Create Table)]
 
 
 The `db/src` folder is where your actual database development objects belong. There are two configuration files in the root of this folder.
@@ -160,10 +160,9 @@ WITH READ ONLY STRUCTURED PRIVILEGE CHECK
 ```
 Save the artifact after entering this code.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Build the Objects in the Database)]
+### Build the Objects in the Database
+
 
 We are now ready to **Build**. Right click the `db` folder and the **Build** button. This process technically executes a `node.js` application which will call over to HANA and deploy these database artifacts into their container.
 
@@ -173,12 +172,10 @@ The log should say that the Build of your project has completed successfully:
 
 ![Build Project - Console](9_2.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check the Database Explorer)]
+### Check the Database Explorer
+
 
 It is now time to check what you have created so far. Open the Database Explorer from the `Tools -> Database Explorer` menu or using the middle icon in the left side bar.  
 
@@ -194,11 +191,10 @@ Right-click on the Header table and use the generated SQL statement in the valid
 
 ![SELECT statement from DB explorer](SELECT.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create and Upload Data)]
+### Create and Upload Data
+
 
 There are several ways to load data into your tables in SAP HANA. You will use an artifact that allows you to upload a file into your directory in SAP Web IDE for SAP HANA and load the data into a table or tables according to the configuration. This is handy for initial loads or small configuration tables.
 
@@ -327,11 +323,9 @@ Skim through the contents of the file you have just created and you will see the
 
 ![Build ](data.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Check data in the database explorer
 
-[ACCORDION-BEGIN [Step 7: ](Check data in the database explorer)]
 
 Go back to the database explorer and look for your tables again. This time, use the **Open Data** option to see the data:
 
@@ -345,5 +339,4 @@ FROM "PurchaseOrder.Item";
 
 What was the total gross amount?
 
-[VALIDATE_2]
-[ACCORDION-END]
+

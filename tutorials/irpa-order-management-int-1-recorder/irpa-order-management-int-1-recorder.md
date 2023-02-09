@@ -1,26 +1,28 @@
 ---
+parser: v2
 author_name: David Stepanov
 author_profile: https://github.com/divadvo/
-title: Capture Orders Management SAP UI5 application using Recorder
-description: Use the recorder for SAPUI5 to capture  Order Management application(Orders and Product details)
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
+# Capture Orders Management SAP UI5 application using Recorder
+<!-- description --> Use the recorder for SAPUI5 to capture  Order Management application(Orders and Product details)
+
 ## Prerequisites
 - You have subscribed to the RPA service: [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
 - You have installed the on-premise components: [SAP Intelligent RPA On-premise Installation](irpa-setup-2-onpremise-installation)
 
-## Details
-### You will learn
+## You will learn
   - How to use the recorder for SAPUI5 to prepare screens for automation
   - How to use **Multi Dimensional Collection**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Project)]
+### Create Project
+
 
 Create a new project for this specific automation.
 
@@ -28,20 +30,19 @@ Create a new project for this specific automation.
 
 2.  Select **New Project**.
 
-    !![007_CreateProject](images/007_CreateProject.png)
+    <!-- border -->![007_CreateProject](images/007_CreateProject.png)
 
 3.  Type **Order Management** in the **Project name** field and click **Create**.
 
-    !![008_NameProject](images/008_NameProject.png)
+    <!-- border -->![008_NameProject](images/008_NameProject.png)
 
 4.  The project will automatically open in the Cloud Studio.
 
-    !![009_NewProjectHome](images/009_NewProjectHome.png)
+    <!-- border -->![009_NewProjectHome](images/009_NewProjectHome.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Screen Recording)]
+### Screen Recording
+
 
 Next, you define the application which will be used in your automation.
 
@@ -55,27 +56,27 @@ You will use these screens and elements in the automation later.
 
 2.  In the Cloud Studio, click the **Create** button and then select the **Application** artifact from the artifact menu.
 
-    !![010_CreateApplication](images/010_CreateApplication.png)
+    <!-- border -->![010_CreateApplication](images/010_CreateApplication.png)
 
 3.  Select the screen named **Browse Orders**. This is your SAPUI5 application.
 
-    !![011_SelectApplication](images/011_SelectApplication.png)
+    <!-- border -->![011_SelectApplication](images/011_SelectApplication.png)
 
     > **NOTE**: If the SAPUI5 application (step 1 - Create application) is not opened in a separate window, open it and click on the refresh icon to get the currently opened windows.
 
-    !![012_SelectApplication](images/012_SelectApplication.png)
+    <!-- border -->![012_SelectApplication](images/012_SelectApplication.png)
 
 4.  Click the **Record** button.
 
-    !![013_UI5_record](images/013_UI5_record.png)
+    <!-- border -->![013_UI5_record](images/013_UI5_record.png)
 
 5. The **Browse Orders** application opens and the recording controls appear.
 
-    !![014_UI5_start](images/014_UI5_start.png)
+    <!-- border -->![014_UI5_start](images/014_UI5_start.png)
 
     > **NOTE**: If the window with recording controls is not fully visible, click and hold on the drag section (refer to the following screenshot) and move the window. Release the left mouse button to finish.
 
-    !![015_UI5_recorder_window](images/015_UI5_recorder_window.png)
+    <!-- border -->![015_UI5_recorder_window](images/015_UI5_recorder_window.png)
 
 ### Record Application
 
@@ -83,47 +84,47 @@ Now, you record your first step.
 
 1.  Click the **Record** button. Recording starts and your first screen is captured as shown in the following screenshot.
 
-    !![016_UI5_first](images/016_UI5_first.png)
+    <!-- border -->![016_UI5_first](images/016_UI5_first.png)
 
 2.  Click on the search box in the SAPUI5 application window, type **Bottom-** and click the **Search** button. **Order 2686** appears and the new step is displayed in the recorder window as shown in the following screenshot.
 
-    !![017_UI5_second](images/017_UI5_second.png)
+    <!-- border -->![017_UI5_second](images/017_UI5_second.png)
 
 3.  Now, click the **New screen capture** button.
 
-    !![018_UI5_recorder_window_capture_button](images/018_UI5_recorder_window_capture_button.png)
+    <!-- border -->![018_UI5_recorder_window_capture_button](images/018_UI5_recorder_window_capture_button.png)
 
     You will see a second line is added to the recording steps.
 
-    !![019_UI5_recorder](images/019_UI5_recorder.png)
+    <!-- border -->![019_UI5_recorder](images/019_UI5_recorder.png)
 
 4.  Choose **Order 2686**.
 
-    !![020_UI5_step](images/020_UI5_step.png)
+    <!-- border -->![020_UI5_step](images/020_UI5_step.png)
 
     After the click, your screen must look like the following screenshot:
 
-    !![021_UI5_result](images/021_UI5_result.png)
+    <!-- border -->![021_UI5_result](images/021_UI5_result.png)
 
 5. Click again the **New screen capture** button.
 
-    !![022_UI5_recorder_window_capture_button](images/022_UI5_recorder_window_capture_button.png)
+    <!-- border -->![022_UI5_recorder_window_capture_button](images/022_UI5_recorder_window_capture_button.png)
 
     Your screen must look like the following screenshot:
 
-    !![023_UI5_result](images/023_UI5_result.png)
+    <!-- border -->![023_UI5_result](images/023_UI5_result.png)
 
 6.  Click the **Stop** button.
 
-    !![024_UI5_step](images/024_UI5_step.png)
+    <!-- border -->![024_UI5_step](images/024_UI5_step.png)
 
 7.  Click the **Export** button in the screen recorder window to finish the capturing activity.
 
-    !![025_UI5_step](images/025_UI5_step.png)
+    <!-- border -->![025_UI5_step](images/025_UI5_step.png)
 
     Wait until the recording is saved. The Cloud Studio opens with the new automation.
 
-    !![026_UI5_result](images/026_UI5_result.png)
+    <!-- border -->![026_UI5_result](images/026_UI5_result.png)
 
 ### Test Application
 
@@ -131,24 +132,23 @@ Now, you can test the automation. This step is optional however it is highly rec
 
 1.  Close the SAPUI5 application (in a separate window) and click the **Test** button.
 
-    !![027_UI5_test](images/027_UI5_test.png)
+    <!-- border -->![027_UI5_test](images/027_UI5_test.png)
 
 2.  Choose your environment and click the **Test** button.
 
-    !![028_UI5_start_test](images/028_UI5_start_test.png)
+    <!-- border -->![028_UI5_start_test](images/028_UI5_start_test.png)
 
 3.  Wait until the package is generated and all **SDK**s are downloaded. You will see that the SAPUI5 application opens in a separate window, all steps are executed and the window gets closed. Test results are shown on the screen.
 
-    !![029_UI5_test_result](images/029_UI5_test_result.png)
+    <!-- border -->![029_UI5_test_result](images/029_UI5_test_result.png)
 
 4.  Click the **Timeline** button to hide the test timeline panel.
 
-    !![030_UI5_hide_test](images/030_UI5_hide_test.png)
+    <!-- border -->![030_UI5_hide_test](images/030_UI5_hide_test.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Adjust First Screen)]
+### Adjust First Screen
+
 
 By using the recorder, you already captured three screens that you will use in your automation. Now, you define various elements on those screens. You will use these screens and elements in the automation later.
 
@@ -158,16 +158,15 @@ You do not have anything to declare for your first screen because the screen rec
 
 2.  Select **Capture 1** element and change the name to **Order List Screen** then press enter.
 
-    !![031_capture_1](images/031_capture_1.png)
+    <!-- border -->![031_capture_1](images/031_capture_1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Adjust Second Screen)]
+### Adjust Second Screen
+
 
 You rename the second screen from **Capture 2** to **Search Result Screen**.
 
-!![032_capture_2](images/032_capture_2.png)
+<!-- border -->![032_capture_2](images/032_capture_2.png)
 
 Next, you rename elements on the second screen.
 
@@ -177,16 +176,15 @@ Next, you rename elements on the second screen.
 
 4.  Rename the element to **Order Found**.
 
-    !![033_SelectResultItem](images/033_SelectResultItem.png)
+    <!-- border -->![033_SelectResultItem](images/033_SelectResultItem.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Adjust Third Screen)]
+### Adjust Third Screen
+
 
 Rename the last screen from **Capture 3** to **Order Details Screen**.
 
-!![034_capture_3](images/034_capture_3.png)
+<!-- border -->![034_capture_3](images/034_capture_3.png)
 
 Now, you need to define some new element of the third screen that you will use in your automation to get the data from the screen.
 
@@ -200,7 +198,7 @@ Now, you need to define some new element of the third screen that you will use i
 
 4.  Don't choose **Declare Element** yet.
 
-    !![035_SelectOrder](images/035_SelectOrder.png)
+    <!-- border -->![035_SelectOrder](images/035_SelectOrder.png)
 
     As you previously did, you are going to adjust the criteria.
 
@@ -212,11 +210,11 @@ Now, you need to define some new element of the third screen that you will use i
 
 8.  Click **Apply**.
 
-    !![036_AdjustOrderCriteria](images/036_AdjustOrderCriteria.png)
+    <!-- border -->![036_AdjustOrderCriteria](images/036_AdjustOrderCriteria.png)
 
 9.  Click **Declare Element**.
 
-    !![037_AdjustOrderCriteria-Declare](images/037_AdjustOrderCriteria-Declare.png)
+    <!-- border -->![037_AdjustOrderCriteria-Declare](images/037_AdjustOrderCriteria-Declare.png)
 
 ### Price
 
@@ -226,37 +224,36 @@ Now, you need to define some new element of the third screen that you will use i
 
 3.  Remove the **Text** criteria.
 
-    !![038_PriceDeleteTextCriteria](images/038_PriceDeleteTextCriteria.png)
+    <!-- border -->![038_PriceDeleteTextCriteria](images/038_PriceDeleteTextCriteria.png)
 
 4.  Add the **ID** of the element as criteria instead. This will uniquely identify the price.
 
-    !![039_SelectIdPrice](images/039_SelectIdPrice.png)
+    <!-- border -->![039_SelectIdPrice](images/039_SelectIdPrice.png)
 
 5.  Rename the element to **Price**.
 
 6.  Make sure the correct **id** criterion is selected and click **Declare Element**.
 
-    !![040_RenamePrice](images/040_RenamePrice.png)
+    <!-- border -->![040_RenamePrice](images/040_RenamePrice.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Define Shipping Address on Third Screen)]
+### Define Shipping Address on Third Screen
+
 
 Now, you define the Shipping Address in a different way, as a collection of multiple elements.
 
 1.  Choose the **Name** under shipping address in the preview.
 
-    !![041_SelectAddress](images/041_SelectAddress.png)
+    <!-- border -->![041_SelectAddress](images/041_SelectAddress.png)
 
 2.  Remove the **Text** criteria.
 
-    !![042_RemoveAddressCriteria](images/042_RemoveAddressCriteria.png)
+    <!-- border -->![042_RemoveAddressCriteria](images/042_RemoveAddressCriteria.png)
 
 3.  Select **class** as element.
 
-    !![043_AddressPickClass](images/043_AddressPickClass.png)
+    <!-- border -->![043_AddressPickClass](images/043_AddressPickClass.png)
 
     With the SAP Intelligent RPA you can also see the underlying technical document structure of the page. You use this to select more precisely the element you would like to define.
 
@@ -264,38 +261,37 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 5.  Choose the **Name** element of the Shipping Address. Select the **DIV** (the container), instead of the **SPAN**. This way, you will be able to connect it to the other elements of the address.
 
-    !![044_OpenTree](images/044_OpenTree.png)
+    <!-- border -->![044_OpenTree](images/044_OpenTree.png)
 
 6.  **DIV** is selected. Now, remove the **Text** criteria as it is too specific.
 
-    !![045_PickDivAbove](images/045_PickDivAbove.png)
+    <!-- border -->![045_PickDivAbove](images/045_PickDivAbove.png)
 
 7.  Add the **class** criteria instead.
 
-    !![046_AddClassToRestrict](images/046_AddClassToRestrict.png)
+    <!-- border -->![046_AddClassToRestrict](images/046_AddClassToRestrict.png)
 
 8.  Class is selected. Set the name to **Shipping Address**.
 
 9.  Click **Declare Element**.
 
-    !![047_RenameShipping](images/047_RenameShipping.png)
+    <!-- border -->![047_RenameShipping](images/047_RenameShipping.png)
 
     The element cannot be uniquely identified because multiple elements fulfil the same criteria. The SAP Intelligent RPA shows this in the warning status message in the **Declared Elements** section.
 
 10. Create a collection of these multiple elements, by clicking the **Is a collection** button under **Declared Elements**, while **Shipping Address** is selected.
 
-    !![048_ShippingAsCollection](images/048_ShippingAsCollection.png)
+    <!-- border -->![048_ShippingAsCollection](images/048_ShippingAsCollection.png)
 
     As a result, a collection is defined and the element is uniquely identified. The technical page structure shows that multiple elements are part of this collection (0, 1, 2, 3, 4).
 
-    !![049_ShippingResult](images/049_ShippingResult.png)
+    <!-- border -->![049_ShippingResult](images/049_ShippingResult.png)
 
 11. Don't forget to save the progress by choosing the **Save** button on the top right.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define Product Details(Line items) on Third Screen)]
+### Define Product Details(Line items) on Third Screen
+
 
 >The automation displays product details, that is product name, unit price, quantity, and total amount of purchase order. You use **multiple collection** feature and retrieve the data.
 
@@ -305,7 +301,7 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 3. Rename the declared element to **Table Row**.
 
-    !![050](images/050bis.png)
+    <!-- border -->![050](images/050bis.png)
 
 4.  Since **TR** is a collection, make it as a collection by clicking on the three dots.
 
@@ -313,13 +309,13 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 6.  Click **Declare Element**.
 
-    !![051](images/051bis.png)
+    <!-- border -->![051](images/051bis.png)
 
 7.  Now, you see the **Table Row** element is added to the list of declared elements.
 
-    !![052](images/052bis.png)
+    <!-- border -->![052](images/052bis.png)
 
-    !![053](images/053bis.png)    
+    <!-- border -->![053](images/053bis.png)    
 
     You need to retrieve that table data now, which is a cell.
 
@@ -327,7 +323,7 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 10. Remove **Text** and add class as a recognition criterion.
 
-    !![054](images/054bis.png)
+    <!-- border -->![054](images/054bis.png)
 
     Since **TD** is also a collection, it must be set as a collection.
 
@@ -337,22 +333,22 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 12. Click **Declare Element**.
 
-    !![055](images/055bis.png)
+    <!-- border -->![055](images/055bis.png)
 
     You can see the one-dimension array added as of now. Since it is a collection, the **Table Data** is also a collection.
 
-    !![056](images/056bis.png)
+    <!-- border -->![056](images/056bis.png)
 
 13. Click on the three dots on **Table Row**, to recognize the Table Data as two-dimensional.
 
 14. Click **Add to criteria**.
 
-    !![057](images/057bis.png)
+    <!-- border -->![057](images/057bis.png)
 
     In the Element Information section, you can see that everything is added in the **Table Row**, and the **TD** is also marked as a two-dimensional array.
 
 
-    !![Multidimension](images\019_MultiDimension.png)
+    <!-- border -->![Multidimension](images/019_MultiDimension.png)
 
 15. Click **Save** to save your automation.
 
@@ -360,8 +356,7 @@ Now, you define the Shipping Address in a different way, as a collection of mult
 
 Nice! You have completed the capturing of the application and can now start creating the actual automation. You can also continue with the second part of this tutorial: [Support multi-level collection in an Order Management automation](irpa-order-management-int-2-automation)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

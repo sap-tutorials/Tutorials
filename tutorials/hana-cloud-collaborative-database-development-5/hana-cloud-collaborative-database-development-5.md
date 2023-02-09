@@ -1,23 +1,25 @@
 ---
-title: Generate Users and Roles for Assigning Privileges
-description: Generate users and roles in SAP HANA Database Explore, to assign the necessary privileges for collaborating on a template project.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Generate Users and Roles for Assigning Privileges
+<!-- description --> Generate users and roles in SAP HANA Database Explore, to assign the necessary privileges for collaborating on a template project.
+
 ## Prerequisites
 - Complete the [previous tutorial](hana-cloud-collaborative-database-development-4) of this tutorial group. You should already have created the INVENTORY table, imported the sample data and created the two HDBROLES.
 
-## Details
-### You will learn
+## You will learn
 - How to use Git account token to establish remote connection with your project
 - How to generate roles for object owner and application user
 - How to grant roles to a new user with `ADMIN` option
 
 
 
+## Intro
 **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
 > To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
@@ -38,7 +40,8 @@ This tutorial will show you how to generate users and roles for assigning privil
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 
 In the last 4 tutorials of this group, you will focus on how to collaborate on a project within a team. The main goal is to show you how to create a template project in SAP Business Application Studio, that your colleagues can re-use and modify without having to prepare services and synonyms each time they wish to collaborate on the project. These tutorials  will also illustrate to you the advantage of collaborating through a template project using a sample scenario.
 
@@ -50,10 +53,9 @@ In the last tutorial, you will see how a collaborator can work with the template
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an empty Git project)]
+### Create an empty Git project
+
 
 1.	First, we will create an empty git project that will be used for the template project created in SAP Business Application Studio.
 
@@ -73,14 +75,13 @@ In the last tutorial, you will see how a collaborator can work with the template
 
 9.	Now, you will be taken to a **Quick setup** page for your new repository. Copy the HTTPS connection link for the repository to a safe location. This is required to set up the connection with your SAP Business Application Studio project.
 
-    !![HTTPS for GitHub repo](ss-02-HTTPS-for-github-repo.png)
+    <!-- border -->![HTTPS for GitHub repo](ss-02-HTTPS-for-github-repo.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create an empty SAP Business Application Studio project)]
+### Create an empty SAP Business Application Studio project
+
 
 
 Next, you will create an SAP Business Application Studio project. For that, you need a running dev space with the SAP HANA Native Application configuration.
@@ -117,10 +118,9 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 13.	Click on **Finish**. It might take a few minutes to complete the process.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Commit all the changes required)]
+### Commit all the changes required
+
 
 1.	Your project should automatically open in a new workspace. If it does not, open the project in a new workspace or click on the project name `WS3_3` on the **Welcome** screen.
 
@@ -128,33 +128,32 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 3.	Next, click on the **plus icon** to add a local git repository.
 
-    !![Add repo to GitHub](ss-03-add-repo-to-github.png)
+    <!-- border -->![Add repo to GitHub](ss-03-add-repo-to-github.png)
 
 4.	In the **Source Control** panel, you can see a list of changes made when the empty project `WS3_3` was created. Click on the **plus icon** to stage these changes.
 
-    !![Stage all changes](ss-04-stage-all-changes.png)
+    <!-- border -->![Stage all changes](ss-04-stage-all-changes.png)
 
 5.	Enter a commit message in the Message box (for example: Initial commit).
 
 6.	Click on **tick mark icon** above to commit the changes.
 
-    !![Commit all changes](ss-05-commit-all-changes.png)
+    <!-- border -->![Commit all changes](ss-05-commit-all-changes.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enter Git account token to complete remote connection)]
+### Enter Git account token to complete remote connection
+
 
 1.	Next, click on the **three dots** icon at the same navigation area.
 
 2.	Select **Remote** and then **Add Remote**. This will add the remote connection to your GitHub repository
 
-    !![Add remote](ss-06-add-remote.png)
+    <!-- border -->![Add remote](ss-06-add-remote.png)
 
 3.	A prompt asking to provide repository URL appears on the top center of the screen. Paste the GitHub HTTPS connection link that you obtained from GitHub after creating your new repository `WS3_3` into the prompt. Press **Enter**.
 
-    !![Add repo URL](ss-07-add-repo-URL.png)
+    <!-- border -->![Add repo URL](ss-07-add-repo-URL.png)
 
 4.	Now, enter the remote name `main`. Press **Enter**.
 
@@ -164,29 +163,27 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 7.	Finally, it is recommended that you select to save your credentials for this session only. You can also select No in the notification box asking for periodically running git fetch, as shown below.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Synchronize the project with the GitHub repository)]
+### Synchronize the project with the GitHub repository
+
 
 
 1.	Go to the **Source Control** panel and click on the **three dots** icon. Select **Pull, Push** and then the **Push to…** option.
 
-    !![Push to main](ss-08-push-to-main.png)
+    <!-- border -->![Push to main](ss-08-push-to-main.png)
 
 2.	A prompt asking for a remote to publish the master branch appears on the top center of the screen. Select the remote connection main that you have just created.
 
-    !![Publish branch to main](ss-09-publish-branch-to-main.png)
+    <!-- border -->![Publish branch to main](ss-09-publish-branch-to-main.png)
 
 3.	You can verify the synchronization by checking your GitHub repository WS3_3. You should now see the folders and objects from your SAP Business Application Studio project there, for example, the `db` folder and `mta.yaml` file.
 
-    !![Synchronized folders](ss-10-synchronized-folders.png)
+    <!-- border -->![Synchronized folders](ss-10-synchronized-folders.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Generate roles for Object Owner and Application User)]
+### Generate roles for Object Owner and Application User
+
 
 
 As the last two steps, you will create two generic roles and database users. Then, you will grant these roles to the newly created user with option `ADMIN` so that the newly created user can grant these roles to your project users. Additional privileges that are assigned to these roles are automatically assigned to the project users once the roles have been granted to the project users.
@@ -195,7 +192,7 @@ As the last two steps, you will create two generic roles and database users. The
 
 2.	In the SAP HANA Database Explorer, right-click on your HDI container connection from the left-side panel and select **Open SQL Console**.
 
-    !![Open SQL console](ss-11-open-SQL-console.png)
+    <!-- border -->![Open SQL console](ss-11-open-SQL-console.png)
 
     > It is necessary to use the DBADMIN user connected to the instance since you require the DBADMIN user privileges to create and assign the roles.
 
@@ -222,13 +219,12 @@ select role_schema_name,* from roles where role_name='inventory';
 
     Note the schema name as it is needed for the next statement.
 
-    !![Role schema name](ss-12-role-schema-name.png)
+    <!-- border -->![Role schema name](ss-12-role-schema-name.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Grant roles to the UPS_GRANTOR user)]
+### Grant roles to the UPS_GRANTOR user
+
 
 
 1.	Here, you will assign the two roles you have created in the fourth tutorial ("`inventory_with_grant#`" and "`inventory_without_grant`") to the two new roles you have just created. Copy and paste the following code in the SQL Console and make sure the schema name ("`WS3_1_HDI_DB_1`") matches the schema name you have just checked with the previous statement. Run the statement to grant roles to the object owner and application user.
@@ -256,14 +252,12 @@ grant  "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
 > You have successfully completed the fifth tutorial. In the next tutorial, you will see how to enhance the project with services, synonyms and grants.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

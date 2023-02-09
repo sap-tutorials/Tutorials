@@ -1,24 +1,26 @@
 ---
-title: Send and Receive Test SAP Event Mesh
-description: Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
+parser: v2
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
 primary_tag: software-product>sap-event-mesh
 ---
 
+# Send and Receive Test SAP Event Mesh
+<!-- description --> Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
+
 ## Prerequisites
   - [Postman](https://www.getpostman.com/), API Development environment Tool is available to publish & receive message from queue using REST Protocol
 
 
-## Details
-### You will learn
+## You will learn
   - Send and Receive message to and from a queue using Postman, a REST-based tool
   - **IMPORTANT:** It is really important to understand the concept of Service Key of an SAP Event Mesh instance. Check out **Step 2** of [Create Instance of SAP Event Mesh Service](cp-enterprisemessaging-instance-create).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure postman)]
+### Configure postman
+
 
 1. Open the Postman.
 
@@ -55,10 +57,9 @@ In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropd
 
 Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Send message to the queue)]    
+### Send message to the queue
+    
 
 Open a new tab in the Postman.
 
@@ -85,10 +86,9 @@ Open a new tab in the Postman.
 
   5. Select the **POST** option in **Postman** and click on the **Send** button. If sending message is successful, you shall get a status as `204 No Content`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Receive message from queue)]    
+### Receive message from queue
+    
 
 Open a new tab in the Postman.
 
@@ -112,9 +112,7 @@ Open a new tab in the Postman.
 
   5. Select the **POST** option in **Postman** and click on the **Send** button. If sending message is successful, you shall get a status as `200 OK`. And in the body tab you can view the message.
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Install SAP HANA 2.0, express edition
-description: Extract the installation files and set up your SAP HANA 2.0, express edition installation.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
@@ -8,17 +7,19 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 60
 ---
 
+# Install SAP HANA 2.0, express edition
+<!-- description --> Extract the installation files and set up your SAP HANA 2.0, express edition installation.
+
 <!-- loioe0727cd528264b0eade79b20cc9321d1 -->
 
 ## Prerequisites
-
-## Details
-### You will learn
+## You will learn
 You will learn how to extract and configure the binary image of SAP HANA 2.0, express edition on your Linux server. You downloaded the Server-only installer file in the previous tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Extract the installation files.)]
+### Extract the installation files.
+
 
 You downloaded the installation files in the previous tutorial.
 
@@ -66,11 +67,9 @@ tar -xvzf <download_path>/apl.tgz
 > 
 > 
 
-[DONE]
 
-[ACCORDION-END]
+### Start the installation.
 
-[ACCORDION-BEGIN [Step 2: ](Start the installation.)]
 
 Navigate to the directory where you extracted the files and run `./setup_hxe.sh` as the root user:
 
@@ -97,8 +96,5 @@ Follow the prompts to configure your installation.
 > 
 > 
 
-[DONE]
-
-[ACCORDION-END]
 
 

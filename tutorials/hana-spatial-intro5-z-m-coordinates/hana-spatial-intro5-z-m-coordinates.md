@@ -1,11 +1,15 @@
 ---
-title: Understand Z and M coordinates in SAP HANA Spatial
-description: Geometries can optionally have Z (3rd dimension) and M (measure) values associated with each point in addition to X and Y coordinates
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 10
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+
+# Understand Z and M coordinates in SAP HANA Spatial
+<!-- description --> Geometries can optionally have Z (3rd dimension) and M (measure) values associated with each point in addition to X and Y coordinates
 
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -15,13 +19,13 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
  - [Understand Spatial Reference Systems in SAP HANA Spatial](hana-spatial-intro6-srs)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn the basics of multidimensional coordinate systems that introduce Z (3rd dimension) and M (measure) coordinates to geometries' points.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introducing Z and M coordinates)]
+### Introducing Z and M coordinates
+
 All geometries have at least two coordinate dimensions: the X and Y defining 2D coordinates of each point. For geographic spatial reference systems, these are the latitude and longitude of a point.
 
 Geometries can optionally have Z and / or M values associated with each point in the geometry. The **Z** value introduces the third dimension coordinate. The Z value usually is used to indicate the height, or elevation.
@@ -37,10 +41,9 @@ The following dimension types are supported by SAP HANA:
 
 >Important to note that these Z and M coordinate values can be used to store additional information, but are not considered when computing spatial relations or set operations.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Optional coordinates in geometries' constructors)]
+### Optional coordinates in geometries' constructors
+
 In Well-known text (WKT) standard geometries with 3D and / or measure value are designated by "Z" and / or "M" after the geometry type. Below are examples for points.
 
 A point with the third dimension Z of the value 2:
@@ -67,11 +70,10 @@ SELECT NEW ST_GeometryCollection('GeometryCollection Z(LineString Z(5 10 20, 10 
 FROM "DUMMY";
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Storing and retrieving spatial data with Z and M)]
+### Storing and retrieving spatial data with Z and M
+
 What is important to understand is that Z and M do not change the geometry's dimensionality. The result of each statement below will still be `0` for `ST_Point` objects.
 ```sql
 SELECT NEW ST_Point('POINT Z(0 0 2)').ST_Dimension() AS "Dimensions" FROM "DUMMY";
@@ -112,10 +114,9 @@ FROM "DUMMY";
 -- Result is 0
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Processing spatial data with Z and M)]
+### Processing spatial data with Z and M
+
 As mentioned above these additional coordinate Z and M values are used to store and retrieve additional information, but are not considered during spatial computations or set operations.
 
 For example the result of the line string calculation from one of the previous tutorials will still be `5`, and not `13` if Z value of the string's end point is `12`. As a fun fact: `(5, 12, 13)` is another example of the [Pythagorean triple](https://en.wikipedia.org/wiki/Pythagorean_triple), same as `(3, 4, 5)`.
@@ -145,8 +146,7 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() FROM DUMMY;
 -- Result is 2 (coordinates dimensions of an output polygon)
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/fe2e0c2e8f51455db165479d54f8890c.html)

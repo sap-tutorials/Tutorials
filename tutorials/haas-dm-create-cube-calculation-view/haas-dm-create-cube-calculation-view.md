@@ -1,41 +1,46 @@
 ---
-title: Create a Calculation View of type Cube in SAP HANA service for SAP BTP
-description: Use SAP Web IDE Full Stack to create a calculation view to expose to SAP Analytics Cloud
+parser: v2
 auto_validation: true
 time: 10
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, topic>cloud, products>sap-analytics-cloud, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license ]
+tags: [ tutorial>beginner, products>sap-hana, software-product>sap-hana-service-for-sap-btp, tutorial>license ]
 primary_tag: products>sap-hana
 ---
 
+# Create a Calculation View of type Cube in SAP HANA service for SAP BTP
+
+<!-- description --> Use SAP Web IDE Full Stack to create a calculation view to expose to SAP Analytics Cloud
+
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have created an anonymized view as explained [in this tutorial](haas-dm-calculation-view-differential-privacy)
- - You have created and loaded data in the `PERFORMANCE` table as explained [in this tutorial](haas-dm-create-db-mta)
 
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have created an anonymized view as explained [in this tutorial](haas-dm-calculation-view-differential-privacy)
+- You have created and loaded data in the `PERFORMANCE` table as explained [in this tutorial](haas-dm-create-db-mta)
 
-## Details
-### You will learn
-  - How to create a calculation view in SAP Web IDE Full Stack
-  - How to join data from another calculation view
+## You will learn
+
+- How to create a calculation view in SAP Web IDE Full Stack
+- How to join data from another calculation view
 
 This calculation view will be consumed in a report in SAP Analytics Cloud
 
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Calculation View)]
+### Create a Calculation View
+
 
 In the models folder, create a calculation view called `PERFORMANCE_SALARIES`
 
 ![New calculation view](2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Join the calculation view and the table)]
+### Join the calculation view and the table
+
 
 Drop a `join` node into the modelling space
 
@@ -53,11 +58,10 @@ Click on the ![plus sign](plus.png) sign again and add the table `PERFORMANCE`. 
 
 ![New calculation view](6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure the join)]
+### Configure the join
+
 
 Double-click on the join node. A panel will open on the right.
 
@@ -77,10 +81,9 @@ Connect the join node with the aggregation node using the ![arrow](arrow.png)
 
 ![New calculation view](1.gif)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure semantics)]
+### Configure semantics
+
 
 Click on the **aggregation** node and double-click on the join parent to add all the columns to the output
 
@@ -91,10 +94,9 @@ Go into the **Semantics** node and change the `START_YEAR` and `ID` to attribute
 ![New calculation view](11.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Build and test)]
+### Build and test
+
 
 Right-click on the calculation view and select **Build selected files**
 
@@ -107,7 +109,6 @@ Once the build is successful, right-click on the view and select **Data preview*
 Go into the **Analysis** tab. Drag the `T-LEVEL` attribute into the label axis and the `Evaluation Rating` into the values axis.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

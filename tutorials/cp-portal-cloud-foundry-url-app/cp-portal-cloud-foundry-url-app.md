@@ -1,6 +1,5 @@
 ---
-title: Add a URL App to Your Portal Site
-description: Create a URL app and add it to the launchpad page on your Portal site.
+parser: v2
 auto_validation: true
 time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
@@ -9,23 +8,26 @@ author_name: Lindsay Bert
 ---
 
 
-## Details
-### You will learn
+# Add a URL App to Your Portal Site
+<!-- description --> Create a URL app and add it to the launchpad page on your Portal site.
+
+## You will learn
   - How to create a URL app and add it to your site
 
+## Intro
 In this tutorial you'll add a URL app to your Portal site.
 
-[ACCORDION-BEGIN [Step 1: ](Go to the Content Manager)]
+### Go to the Content Manager
+
 
 
 1. Click the **Content Manager** icon in the left panel of the Site Manager.
 
     ![Content manager icon](1-content-manager-icon.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create and configure new app)]
+### Create and configure new app
+
 
 
 Click **New** and select **App** from the list.
@@ -78,10 +80,9 @@ You have now configured the URL app and in the next step you will go back to the
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](View the app that you created)]
+### View the app that you created
+
 Click the Content Manager icon in the left side panel of the App editor to navigate to the top level of your configured content.
 
 ![Go to content manager icon](6-go-to-content-manager-icon.png)
@@ -95,10 +96,9 @@ For end users to view the app in runtime, you must assign the app to a role. Any
 
 This is described in the following steps.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign the app to the Everyone role)]
+### Assign the app to the Everyone role
+
 
 In this step, you'll assign the **Everyone** role to your app.
 
@@ -118,10 +118,9 @@ In this step, you'll assign the **Everyone** role to your app.
 
 5. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a group and assign the app to it)]
+### Create a group and assign the app to it
+
 
 In this step, you'll create a new group and assign your app to it.
 
@@ -139,12 +138,11 @@ In this step, you'll create a new group and assign your app to it.
 
 4. Click **Save**.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 7: ](Review the site)]
+### Review the site
+
 
 1. Click the Site Directory icon in the left panel.
 
@@ -162,8 +160,7 @@ You can now launch your application by clicking the **Innovation at SAP** tile.
 
 Congratulations you've created a Portal site and added two apps to it!
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 
 
