@@ -24,7 +24,7 @@ author_profile: https://github.com/julieplummer20
 - You have assigned the role **`SAP_BR_DEVELOPER`** in both systems; you will need it to create communication artifacts
 
   
- ## You will learn 
+## You will learn 
   
   - How to create a secure RFC connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to test the connection using an ABAP handler class
@@ -287,28 +287,21 @@ For more information, see [Set Up SAP BTP, ABAP Environment and create Your Firs
 
 3. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
 
-3. Enter a name and description. The name should be in the form `ZCL_...RFC_000`. Replace `000` with your group number or initials.
+3. 2. Enter the following for your class, then choose **Next**. 
+    - Name: **`ZCL_SYSTEM_INFO_RFC_000`**
+    - Description for your class, e.g. **Test RFC BTP to on-premise** 
+    - Interface: **`if_oo_adt_classrun`**. *This enables you to run the class in the console.*
+
+Replace `000` with your group number or initials.
 
 4. Create or assign a transport request.
 
 
-### Add interfaces statement; implement main method
-
-1. Implement the interface by adding this statement to the public section:
-
-    `interfaces if_oo_adt_classrun.`
-
-    This allows you to test your class by displaying the output in the ABAP Console.
-
-2. In the implementation section, add the METHOD and ENDMETHOD statements:
-
-    `METHOD IF_OO_ADT_CLASSRUN~MAIN.`
-    `ENDMETHOD.`
-
-
 ### Create variables
 
-Create the data types that specify your remote connection information, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial).
+In the method **`if_oo_adt_classrun~main`**, create the data types that specify your remote connection information
+
+<!-- REVISE THIS, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial). -->
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
@@ -353,8 +346,8 @@ Wrap the whole method in an exception using TRY...CATCH.
 catch cx_root into data(lx_root).
   out->write( lx_root->get_text( ) ).
 endtry.
+
 ```    
-![Image depicting step15-try-catch](step15-try-catch.png)
 
 
 ### Check your code
@@ -399,6 +392,7 @@ CLASS ZCL_A4C_RFC_ IMPLEMENTATION.
   ENDMETHOD.
 
 ENDCLASS.
+
 ```
 
 
@@ -441,9 +435,6 @@ ENDCLASS.
     ENDCASE.
 
     ```
-
-    <!-- border -->
-    ![step20-error-handling](step20-error-handling.png)
 
 
 ## More Information

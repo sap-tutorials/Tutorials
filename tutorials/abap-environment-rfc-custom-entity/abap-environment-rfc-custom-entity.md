@@ -8,7 +8,7 @@ author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
-# Get Data from a Remote System Using a Custom Entity
+# Call a Remote Function Module (RFC) and Get Data Using a Custom Entity
 <!-- description --> Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 
 ## Prerequisites
@@ -42,33 +42,23 @@ First, you create the class that implements the data retrieval logic.
 
     ![Image depicting step1-new-class](step1-new-class.png)
 
-2. Enter a name and description:
-    - `zcl_product_via_rfc_xxx`
-    - Read product data via `RFC`
+2. Enter the following, then choose **Next**:
+    - Name: **`zcl_product_via_rfc_000`**
+    - Description: Read product data via `RFC`
+    - Interfaces: **`interfaces if_rap_query_provider`**
 
 3. Choose the transport request, then choose **Finish**.
 
+> The signature of the method `IF_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method. Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled. Later in this tutorial, you will implement the SELECT method of the interface.
 
 
-### Add the interfaces statement
 
-The signature of the method `IF_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method. Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled.
-
-1. Implement the interface by adding this statement to the public section:
-
-    `interfaces if_rap_query_provider.`
-
-2. Choose **Quick Fix (`Ctrl+1`)**, then choose **Add implementation for SELECT...**.
-
-Later in this tutorial, you will implement the SELECT method of the interface.
-
-
-### Create a custom entity (CDS View) 
+### Create a custom entity (CDS View)
 
 1. Now choose **New >  Other... > Core Data Services > Data Definition**.
 
 2. Enter a name and description:
-    - `zce_product_xxx`
+    - `zce_product_000`
     - Read product data via `RFC`
 
 3. Choose the transport request, then choose **Next**. Do **not** choose **Finish**, yet!
@@ -84,7 +74,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 
 ```CDS
 
-@ObjectModel.query.implementedBy: 'ABAP:ZCL_PRODUCT_VIA_RFC_XXX'
+@ObjectModel.query.implementedBy: 'ABAP:ZCL_PRODUCT_VIA_RFC_000'
 
 ```
 
@@ -96,7 +86,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
     ```CDS
 
 
-    define root custom entity zce_product_xxx
+    define root custom entity zce_product_000
     with parameters parameter_name : parameter_type {
      key key_element_name : key_element_type;
      element_name : element_type;
@@ -125,7 +115,7 @@ For more information on the UI Annotations used here, see
 
     ```CDS
 
-    define root custom entity zce_product_xxx
+    define root custom entity zce_product_000
     {
 
           @UI.facet     : [
@@ -201,7 +191,7 @@ Go back to the class.
 
     ```ABAP
 
-    DATA lt_product TYPE STANDARD TABLE OF zce_product_xxx.
+    DATA lt_product TYPE STANDARD TABLE OF zce_product_000.
 
     ```
 
@@ -216,7 +206,9 @@ Go back to the class.
 
 ### Define the connection to the on-premise system
 
-If your are working in the full version of ABAP Environment: Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
+If you are working in the trial version, omit this step.
+
+If you are working in the full version of ABAP Environment: Define the connection as follows, replacing `000` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
 
 **IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
 
@@ -225,11 +217,14 @@ If your are working in the full version of ABAP Environment: Define the connecti
     IF lv_abap_trial = abap_false.
 
       TRY.
-        DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                                    i_name                  = 'ES5_RFC_XXX'
-                                     ).
+      DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
+                              comm_scenario          = Z_OUTBOUND_RFC_000_CS     " Communication scenario
+                              service_id             = Z_OUTBOUND_HANA_000       " Outbound service
+                              comm_system_id         = Z_OUTBOUND_HANA_CS_000    " Communication system
 
-        DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+                             ).
+
+        DATA(lv_destination) = lo_destination->get_destination_name( ).
 
       CATCH cx_rfc_dest_provider_error INTO DATA(lx_dest).
       ENDTRY.
@@ -237,9 +232,6 @@ If your are working in the full version of ABAP Environment: Define the connecti
     ENDIF.
 
     ```
-If you are working in the trial version, omit this step.
-
-
 
 
 ### Call the remote BAPI or insert the mock data
@@ -278,7 +270,7 @@ If you are working in the trial version, omit this step.
 
     ELSE.                      
      CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
-       DESTINATION lv_rfc_dest_name
+       DESTINATION lv_destination
        EXPORTING
          max_rows   = lv_maxrows
        TABLES
@@ -323,15 +315,12 @@ Wrap the whole data retrieval logic call in a second `TRY. ..CATCH...ENDTRY` blo
 
     ```
 
-![Image depicting step10-try-catch](step10-try-catch.png)
-
 
 ### Check the code for your class
 
-
 ```ABAP
 
-CLASS `zcl_product_via_rfc_xxx` DEFINITION
+CLASS `zcl_product_via_rfc_000` DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -342,10 +331,10 @@ CLASS `zcl_product_via_rfc_xxx` DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
+CLASS `zcl_product_via_rfc_000` IMPLEMENTATION.
   METHOD if_rap_query_provider~select.
 
-    DATA lt_product TYPE STANDARD TABLE OF  ZCE_PRODUCT_XXX .
+    DATA lt_product TYPE STANDARD TABLE OF  ZCE_PRODUCT_000 .
 
     "In the trial version we cannot call RFC function module in backend systems
     DATA(lv_abap_trial) = abap_true.
@@ -353,11 +342,11 @@ CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
     "Set RFC destination
     TRY.
 
-      data(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-            i_name = 'ES5_RFC_XXX'
+      data(lo_destination) = cl_rfc_destination_provider=>create_by_cloud_destination(
+            i_name = 'ES5_RFC_000'
             ).
 
-      DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name(  ).
+      DATA(lv_destination) = lo_destination->get_destination_name(  ).
 
 
         "Check if data is requested
@@ -381,7 +370,7 @@ CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
                 ELSE.
                   "Call BAPI
                   CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
-                       DESTINATION lv_rfc_dest_name
+                       DESTINATION lv_destination
                        EXPORTING
                          max_rows   = lv_maxrows
                        TABLES
@@ -414,20 +403,22 @@ You use a **Service Definition** to define which data is to be exposed (with the
 
 You then use the **Service Binding** to bind a service definition to a client-server communication protocol such as OData. This allows you to provide several bindings for the same definition, e.g. to expose the service to a UI, and to an `A2X` provider.
 
+<!-- 
 For more information, see:
 
 - Business Service Definition in ADT Help.
 
 - Business Service Binding in ADT Help.
+ -->
 
 Start with the Service Definition:
 
-1. From your package, select your custom entity, **`zce_product_xxx`**, then choose **New > Service Definition** from the context menu, then choose **Next**.
+1. From your package, select your custom entity, **`zce_product_000`**, then choose **New > Service Definition** from the context menu, then choose **Next**.
 
     ![Image depicting step12-choose-service-def](step12-choose-service-def.png)
 
 2. Choose a name and description:
-    - **`Z_EXPOSE_PRODUCTS_XXX`**
+    - **`Z_EXPOSE_PRODUCTS_000`**
     - Expose product data via RFC
 
 3. Choose the transport request; choose **Next**.
@@ -443,11 +434,11 @@ Start with the Service Definition:
 
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
-2. Choose:
-    - Name = **`Z_BIND_PRODUCTS_XXX`**
+2. Enter the following, then choose **Next**:
+    - Name = **`Z_BIND_PRODUCTS_000`**
     - Description = Bind product data via RFC
     - Binding Type = ODATA V2 (UI...)
-    - Service Definition = `ZSD_PRODUCT_XXX`
+    - Service Definition = `ZSD_PRODUCT_000`
 
       ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
 
@@ -462,7 +453,7 @@ The service binding automatically references the service definition and thus the
 
     ![Image depicting step13-activate-service-endpoint](step13-activate-service-endpoint.png)
 
-2. You can now see the Service URL and Entity Set.
+2. Then choose **Publish**. You can now see the Service URL and Entity Set.
 
     ![Image depicting step13b-service-binding-details](step13b-service-binding-details.png)
 
@@ -512,8 +503,8 @@ with the type of your custom entity:
 
     ```ABAP
 
-    DATA lt_product TYPE STANDARD TABLE OF zce_product_via_rfc_xxx.
-    DATA ls_product TYPE zce_product_via_rfc_xxx.
+    DATA lt_product TYPE STANDARD TABLE OF zce_product_via_rfc_000.
+    DATA ls_product TYPE zce_product_via_rfc_000.
 
     ```
 
