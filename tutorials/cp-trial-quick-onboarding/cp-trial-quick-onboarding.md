@@ -30,9 +30,9 @@ So, you've signed up for SAP BTP trial but are not quite sure where to start? Th
 
 A trial account on SAP Business Technology Platform enables you to experience the platform for free for a limited amount of time, offering access to a comprehensive set of platform services, as well as early access to beta functionality. Trial accounts are intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
 
-**Note:** You want to explore SAP Business Technology Platform without time constraints? See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
+>You want to explore SAP Business Technology Platform without time constraints? See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
 
-You can use your SAP BTP trial account for up to 90 days in total. However, your trial account is suspended after 30 days but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 90 days total, you trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
+You can use your SAP BTP trial account for up to 90 days in total. However, your trial account is suspended after 30 days but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 90 days total, your trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
 
 All trial accounts are already using cloud management tools feature set B. See: [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
