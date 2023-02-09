@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../Tutorials"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"4HANA",
+			"ABAP"
+		]
+	}
+}

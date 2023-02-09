@@ -13,7 +13,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ## Prerequisites
 - You have one of the following:
-    - **SAP BTP free tier or free trial account:** You have [Set Up a BTP Account for Tutorials](group.btp-setup).
+    - **SAP BTP free tier or trial account:** You have [Set Up a BTP Account for Tutorials](group.btp-setup).
     - **SAP BTP enterprise account:** You have a subaccount for which you want to manage entitlements. If you need help setting up your subaccount, have a look at [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
 
@@ -35,15 +35,17 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 ### Enter your BTP account
 
-- For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
+- For trial Accounts: <https://account.hanatrial.ondemand.com>
+- For free tier and enterprise accounts on **feature set A**: <https://account.hana.ondemand.com>
+- For free tier and enterprise accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
+
 
 ### Access your subaccount
 
 Click on the tile of your Cloud Foundry subaccount.
 
 <!-- border -->![subaccount](./subaccount.png)
+
 
 ### Open the Destinations view
 

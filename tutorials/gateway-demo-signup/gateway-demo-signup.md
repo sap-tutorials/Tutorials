@@ -1,8 +1,10 @@
 ---
+author_name: Joshua Margo
+author_profile: https://github.com/jmmargo
 parser: v2
 auto_validation: true
 primary_tag: products>sap-gateway
-tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner  ]
+tags: [ products>sap-gateway, topic>cloud, programming-tool>odata, tutorial>beginner  ]
 time: 5
 ---
 

@@ -93,7 +93,7 @@ For more information on how to configure and run predefined pipelines for your o
 
 13. Choose **Save**.
 
-    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+    > See [Initial Setup](https://help.sap.com/docs/CONTINUOUS_DELIVERY/99c72101f7ee40d0b2deb4df72ba1ad3/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
 
 
 [OPTION END]
@@ -147,7 +147,7 @@ For more information on how to configure and run predefined pipelines for your o
 
 13. Choose **Save**.
 
-    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+    > See [Initial Setup](https://help.sap.com/docs/CONTINUOUS_DELIVERY/99c72101f7ee40d0b2deb4df72ba1ad3/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
 
 
 [OPTION END]

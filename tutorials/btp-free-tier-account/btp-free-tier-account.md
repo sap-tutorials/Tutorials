@@ -1,10 +1,10 @@
 ---
 parser: v2
+author_name: Annika Gonnermann
+author_ profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 15
-
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform; tutorial>free-tier ]
-
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -83,6 +83,7 @@ If you've created a new account, you are now asked to add personal details.
 
 ### Configure solution
 
+
 The following page offers to configure your solution. Select:
 
 - **Solution**: Pay-As-You-Go for SAP Business Technology Platform
@@ -156,7 +157,7 @@ You are now in your global account, to be more precise in your **Account Explore
     > Consider naming your subaccount *'Free'*. This way, you'll know exactly which services are free to use.
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
-    - **Region**: Select the region closest to you.
+    - **Region**: Select the region closest to you. You can use the service catalogue in [SAP Discovery Center](https://discovery-center.cloud.sap/viewServices) to see which services with free tier service plans are available in each region.
     > **Caution:** Unfortunately, Cloud Foundry Runtime is currently not available for cf-eu10 (Europe Frankfurt, Amazon Web Services).
 
     - **Description** (optional): Add an additional description to identify your subaccount.

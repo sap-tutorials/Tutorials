@@ -39,15 +39,23 @@ kubectl create namespace tutorial
 
 ### Create a service account
 
-A service account alone won't do the job. You also need to define a Kubernetes `Role` or `ClusterRole` that contains all the desired permissions, which will be assigned to the service account using a `RoleBinding` or a `ClusterRoleBinding`. In this example a `ClusterRole` will be created which provides cluster wide access. A Role would be used if access to only a single namespace is desired. You need to create all three artifacts to use a service account via `kubectl`.
+A service account alone won't do the job. You also need to define a Kubernetes `Role` or `ClusterRole` that contains all the desired permissions, which will be assigned to the service account using a `RoleBinding` or a `ClusterRoleBinding`. In this example a `ClusterRole` will be created which provides cluster wide access. A Role would be used if access to only a single namespace is desired. Additionally, a secret will need to be created which can be generated to either contain a short or long-lived token. In this example a long-lived token will be created. You need to create all four artifacts to use a service account.
 
-1. Create a new file called `tutorial-sa.yaml` with the following payload to create all artifacts (service account, role, role binding, and a `ConfigMap` for verification).
+1. Create a new file called `tutorial-sa.yaml` with the following payload to create all artifacts (service account, secret, role, role binding, and a `ConfigMap` for verification).
 
     ```YAML
     apiVersion: v1
     kind: ServiceAccount
     metadata:
       name: tutorial-service-account
+    ---
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: tutorial-service-account
+      annotations:
+        kubernetes.io/service-account.name: tutorial-service-account
+    type: kubernetes.io/service-account-token
     ---
     kind: ClusterRole
     apiVersion: rbac.authorization.k8s.io/v1
@@ -154,7 +162,7 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
     $ns = "tutorial"
     $API_SERVER_URL = kubectl config view -o=jsonpath='{.clusters[].cluster.server}'
 
-    $SECRET_NAME = kubectl get sa -n $ns $id-tutorial-service-account -o jsonpath='{.secrets[0].name}'
+    $SECRET_NAME = "tutorial-service-account"
 
     $CA = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.ca\.crt}'
 
@@ -211,7 +219,7 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
     ns=tutorial
     API_SERVER_URL=$(kubectl config view -o=jsonpath='{.clusters[].cluster.server}')
 
-    SECRET_NAME=$(kubectl get sa -n $ns tutorial-service-account -ojsonpath='{.secrets[0].name}')
+    SECRET_NAME=tutorial-service-account
 
     CA=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.ca\.crt}')
     TOKEN=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.token}' | base64 --decode)
