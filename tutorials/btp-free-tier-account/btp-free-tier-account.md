@@ -4,7 +4,7 @@ author_name: Annika Gonnermann
 author_ profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner; software-product>sap-business-technology-platform; tutorial>free-tier ]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
