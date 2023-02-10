@@ -106,7 +106,7 @@ There are two ways of navigating in the cockpit:
 - using the left hand-side navigation,
 - or using the breadcrumbs at the top of the page.
 
-There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.). We will refer to the sum of these actions as a **scope**. For example, when you are in a global account, you can add global account members, create subaccounts, and add entitlements to subaccounts. They represent the **global account scope**.
+There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.). The sum of these actions is referred to as a **scope**. For example, when you are in a global account, you can add global account members, create subaccounts, and add entitlements to subaccounts. They represent the **global account scope**.
 
 This scope is reflected in both the left hand-side navigation and the breadcrumbs. This step helps you understand how to use both of them together to navigate through the cockpit in the most efficient way possible.
 
