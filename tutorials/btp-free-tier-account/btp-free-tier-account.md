@@ -4,7 +4,7 @@ author_name: Annika Gonnermann
 author_ profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform; tutorial>free-tier ]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -35,7 +35,7 @@ The global account you will create in this tutorial gives you access to a produc
 
 ---
 
-### Register at sap.com
+### Log On in SAP Store
 
 Start your SAP journey in the SAP Store and create an account for the SAP Store. You need this account in order to be able to sign up for an account.
 
@@ -44,7 +44,7 @@ Start your SAP journey in the SAP Store and create an account for the SAP Store.
 2. Scroll down to **Plans and Pricing**. Select **Based on Usage** > **Add to Cart**.
 
 2. You are now being asked to register your account. Select **Register**.
-    > If you already have an account on www.sap.com (for example, a P, S, C, D or I number), you can enter your account details or the associated e-mail address along with your password. Select **Continue**.
+    > If you already have an account on www.sap.com (for example, a P, S, C, D or I number or an SAP Universal ID), you can enter your account details or the associated e-mail address along with your password. Select **Continue** follow Step 3.
 
     <!-- border -->![Register at sap.com](free-tier-btp-register.png)
 
@@ -113,7 +113,7 @@ Proceed by selecting **Continue to Checkout Review**.
 ### Check order details
 
 
-You can now review your order details. Also, enter your **PO-Number** if available.
+You can now review your order details.
 
 1. If you are happy with the result, proceed by clicking **Place Order**.
 2. You are now asked to verify your credit card. Enter your 3D secure verification code sent to you by your credit card provider.
