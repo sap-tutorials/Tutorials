@@ -1,6 +1,7 @@
 ---
 title: Creating Custom Inbound API in SAP S/4HANA Cloud, public edition
-description: Creating a custom inbound API in SAP S/4HANA Cloud, public edition using Developer extensibility
+description: SAP now offers new capabilities for integration using the developer extensibility offered in the 3 System Landscape to allow customers to create custom APIs using released ABAP objects. We will learn how to create such a custom inbound API in this tutorial.
+
 auto_validation: true
 time: 6
 tags: [ tutorial>intermediate, programming-tool>abap-extensibility]
@@ -13,8 +14,6 @@ primary_tag: software-product>sap-s-4hana-cloud
  - You have created an ABAP Package under the ZCUSTOM-DEVELOPMENT 'super package' and has a Transport Layer attached to it.
 
 ## Details
-SAP now offers new capabilities for integration using the developer extensibility (ABAP environment) offered in the 3 System Landscape to allow customers to create custom APIs using released ABAP objects.
-
 In this tutorial, we will look into one of the capabilities of developer extensibility which is to create a custom Inbound API based on released business objects. In a scenario where a released remote API is not available, but the business object was released for developer extensibility, you could use the approach mentioned below to create a custom API which can prove valuable in extracting data from the system or to integrate with other applications.
 While the blog focuses on the inbound scenario, these capabilities are also available for outbound scenarios.
 
@@ -24,13 +23,14 @@ Refer to the following information for more details:
 
 [Developing APIs for Inbound Communication](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/94ebfa045c75426ea32045f6bbba3be5.html)
 
-### You will learn how to
-  - Identify objects to be consumed
-  - Create a Projection View
-  - Create a Behavior Definition for the CDS projection
-  - Create a Service definition
-  - Create a Service Binding  
-  - Create a Communication Scenario and to test the API
+### You will learn
+  - How to identify objects to be consumed
+  - How to create a projection view
+  - How to create a behavior definition for the CDS projection
+  - How to create a service definition
+  - How to create a service binding  
+  - How to create a communication scenario and to test the API
+  - Test your knowledge
 
 ---
 
@@ -119,4 +119,10 @@ The communication scenario is now available in the S/4HANA Cloud Fiori UI (front
 
 [DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: Test your knowledge](Test your knowledge)]
+
+[VALIDATE_7]
+[ACCORDION-END]
+
 ---
