@@ -4,8 +4,8 @@ author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
-primary_tag: software product>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 # Take a Tour of SAP BTP Trial
@@ -32,7 +32,7 @@ A trial account on SAP Business Technology Platform enables you to experience th
 
 >You want to explore SAP Business Technology Platform without time constraints? See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
 
-You can use your SAP BTP trial account for up to 90 days in total. However, your trial account is suspended after 30 days but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 90 days total, your trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
+You can use your SAP BTP trial account for up to 90 days in total. However, your trial account is suspended after 30 days, but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 90 days total, your trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
 
 All trial accounts are already using cloud management tools feature set B. See: [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
