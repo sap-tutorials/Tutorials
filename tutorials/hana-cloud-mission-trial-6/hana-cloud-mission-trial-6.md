@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Query the Database Using SQL Statements
-description: Learn how to create new tables, view table details, join tables and extract specific data from tables using SQL statements in the SAP HANA Database Explorer.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, topic>sql]
+tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, programming-tool>sql]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Query the Database Using SQL Statements
+<!-- description --> Learn how to create new tables, view table details, join tables and extract specific data from tables using SQL statements in the SAP HANA Database Explorer.
 
 ## Prerequisites
 -  [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
@@ -17,14 +19,14 @@ primary_tag: products>sap-hana-cloud
 - Optional: You can [download the code snippets](https://github.com/SAP-samples/hana-cloud-learning/blob/4ac0be770033d3425cc30a2f22f8f5c0823bb810/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%206/Tutorial%206%20Queries.txt) used in this tutorial from our public GitHub repository.
 
 
-## Details
-### You will learn
+## You will learn
 - How to query your database using the SAP HANA Database Explorer using SQL statements
 - How to create new tables
 - How to join tables
 - How to extract specific data from tables
 
 
+## Intro
 > ![Alex Banner](banner-alex.png)
 > Reminder: This tutorial is part of a mission, in which you will help Alex, the CEO of Best Run Travel, to answer a concrete business question with SAP HANA Cloud, SAP HANA database.
 >
@@ -63,11 +65,12 @@ In this tutorial, you will learn how to query data in your instance using the SA
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the SQL console and set the schema)]
+### Open the SQL console and set the schema
+
 
 1.	Once you're in the SAP HANA Database Explorer, the first step is to open the SQL Console on the left-hand top corner.
 
-    !![Database Explorer with highlight on Open SQL Console](ss-01-database-explorer-open-sql-console.png)
+    <!-- border -->![Database Explorer with highlight on Open SQL Console](ss-01-database-explorer-open-sql-console.png)
 
 2.	Once the SQL console loads, please make sure that the current schema is `SFLIGHT`. You can check this on the top right-hand side of the console.
 
@@ -77,14 +80,13 @@ In this tutorial, you will learn how to query data in your instance using the SA
 set schema SFLIGHT
 ```
 
-    !![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+    <!-- border -->![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Query the most popular travel agents)]
+### Query the most popular travel agents
+
 
 First, let's find out which of the Best Run Travel agents are most popular. For this, we will need the agency number and the booking details. This means we need to use the tables `SBOOK` and `STRAVELAG`.
 
@@ -104,15 +106,14 @@ SELECT * FROM SAGENCYDATA
 
 This will show you the contents of the new table:
 
-!![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
+<!-- border -->![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Join tables to find out which agency makes the most bookings)]
+### Join tables to find out which agency makes the most bookings
+
 
 Next, join the tables `STRAVELAG` and `SAGENCYDATA` based on the column `AGENCYNUM` and extract the top 5 agencies from the result. This will give you the list of agency numbers, names and the number of bookings for the top 5 agencies.
 
@@ -124,14 +125,13 @@ select top 5 SAGENCYDATA.AGENCYNUM, STRAVELAG.NAME,SAGENCYDATA.NUMBOOKINGS from 
 
 In the results panel, you can now see that the travel agency that makes the maximum bookings is `Rainy, Stormy, Cloudy` with a total of **27870 bookings**.
 
-!![Top 5 agency details](ss-04-top-5-agency-details.png)
+<!-- border -->![Top 5 agency details](ss-04-top-5-agency-details.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Find out which days have the most bookings)]
+### Find out which days have the most bookings
+
 
 Since Alex also wants to know on which **days of the week** the top 5 travel agencies make most bookings, we need to use a few more queries.
 
@@ -172,7 +172,7 @@ select SAGBOOKDAYS.AGENCYNUM, STOPAGENCY.NAME, SAGBOOKDAYS.ORDERDAY, SAGBOOKDAYS
 
 6.	Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
 
-    !![Maximum days](ss-05-maximum-days.png)
+    <!-- border -->![Maximum days](ss-05-maximum-days.png)
 
 *Well done!*
 
@@ -184,14 +184,12 @@ Learn in the next tutorial how to get started with SAP Business Application Stud
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

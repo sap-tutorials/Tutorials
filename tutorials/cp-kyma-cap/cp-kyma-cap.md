@@ -1,11 +1,13 @@
 ---
-title: Build a Service-Centric Application with CAP on Kyma
-description: Deploy and run an existing CAP application in Kyma runtime by using built-in tools like API Gateway and Service Mesh technology.
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
+# Build a Service-Centric Application with CAP on Kyma
+<!-- description --> Deploy and run an existing CAP application in Kyma runtime by using built-in tools like API Gateway and Service Mesh technology.
 
 ## Prerequisites
 - You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
@@ -17,10 +19,10 @@ primary_tag: software-product>sap-btp\\, kyma-runtime
 - [Docker Hub Account](https://hub.docker.com/signup)
 
 
-## Details
-### You will learn
+## You will learn
   - How to build a CAP application in the Kyma runtime
 
+## Intro
 The SAP Cloud Application Programming Model helps you keep pace with ever-changing cloud environments. You stay focused on your domain problems, while low-level features like OData protocol serving, message brokers, or multi-tenancy are handled for you.
 
 In this tutorial, you learn how to deploy and run an existing CAP application in Kyma runtime by using built-in tools like API Gateway and Service Mesh technology.
@@ -28,7 +30,8 @@ In this tutorial, you learn how to deploy and run an existing CAP application in
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
+### Clone the Git repository
+
 
 Copy the repository URL.
 
@@ -40,10 +43,9 @@ Copy the repository URL.
     git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the sample)]
+### Explore the sample
+
 
 1. Open the `cap-service` directory in your desired editor.
 
@@ -58,11 +60,10 @@ Copy the repository URL.
 5. Within the `docker` folder you can find the Dockerfile definition that will be used to generate the Docker image. Notice the node version specified on line 2 of the file. This should be changed to match the version you use locally.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Set up local development environment)]
+### Set up local development environment
+
 
 1. Within the `app` directory, run the following command using your command line interface (CLI) to install the application dependencies:
 
@@ -95,10 +96,9 @@ Copy the repository URL.
 
     ![cds commands](cds_commands.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run application locally)]
+### Run application locally
+
 
 1.  Within the `app` directory, run the following command using your CLI to run the CAP service in "watch" mode to confirm all dependencies being installed
 
@@ -139,12 +139,11 @@ Copy the repository URL.
 
 The browser page should resemble
 
-!![App View in Browser](app-in-browser.png)
+<!-- border -->![App View in Browser](app-in-browser.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Build the Docker image)]
+### Build the Docker image
+
 
 Run the following commands from the `cap-service` directory within your CLI.
 
@@ -162,10 +161,9 @@ Run the following commands from the `cap-service` directory within your CLI.
     docker push <your-docker-id>/cap-service
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Use the Docker image locally)]
+### Use the Docker image locally
+
 
 Run the following commands from the `cap-service` directory within your CLI.
 
@@ -223,10 +221,9 @@ Run the following commands from the `cap-service` directory within your CLI.
     docker rm cap-service
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Apply resources to Kyma runtime)]
+### Apply resources to Kyma runtime
+
 
 You can find the resource definitions in the `k8s` folder. If you performed any changes in the configuration, these files may also need to be updated. The folder contains the following files that are relevant to this tutorial:
 
@@ -235,13 +232,16 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
     >You will need the `Kubeconfig` setup to perform these steps as detailed in [Install the Kubernetes Command Line Tool](cp-kyma-download-cli). Please also note that the `kubeconfig` will need to be downloaded and configured once it expires after eight hours.
 
-1. Start by creating the `dev` Namespace if it doesn't already exist:
+1. Start by creating the `dev` Namespace and enabling `Istio`:
 
     ```Shell/Bash
     kubectl create namespace dev
+    kubectl label namespaces dev istio-injection=enabled
     ```
 
     > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
+    > Adding the label `istio-injection=enabled` to the namespace enables `Istio`. `Istio` is the service mesh implementation used by the Kyma runtime.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
 
@@ -289,7 +289,6 @@ cap-service-****   [kyma-gateway.kyma-system.svc.cluster.local]  [cap-service.**
 
   **Congratulations!** You have successfully configured the Cap Service.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

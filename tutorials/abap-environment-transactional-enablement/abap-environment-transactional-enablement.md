@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Add Transactional Behavior to Your Core Data Services
-description: Create a behavior implementation in SAP BTP, ABAP Environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner,  programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
@@ -9,23 +8,27 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Add Transactional Behavior to Your Core Data Services
+<!-- description --> Create a behavior implementation in SAP BTP, ABAP Environment.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
-## Details
-### You will learn
+## You will learn
 - How to define a behavior implementation
 
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 >For the **unmanaged implementation** type, the application developer must implement essential components of the REST contract manually. For the **managed scenario**, all required standard operations (create, update, delete) must only be specified in the behavior definition to obtain a ready-to-run business object.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
+### Open Eclipse
+
   1. Go to your ABAP package `Z_BOOKING_XXX` and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`.
 
@@ -37,10 +40,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Open Eclipse](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create behavior definition)]
+### Create behavior definition
+
   1. Right-click on your data definition `ZI_BOOKING_XXX` and select **New Behavior Definition**.
 
       ![Create behavior definition](behaviordef.png)
@@ -57,10 +59,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create behavior definition](unmanaged.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Implement behavior definition)]
+### Implement behavior definition
+
   1. Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `ETag` handling. Replace the following coding:
 
     ```ABAP
@@ -82,15 +83,14 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Implement behavior definition](saveandactivate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create behavior implementation)]
+### Create behavior implementation
+
   1. In your behavior definition **`ZI_Booking_XXX`**, set the cursor before **`z_i_booking_xxx`** and press **CTRL + 1**. Select **`Create behavior implementation class z_i_booking_xxx`**.
 
       ![Create behavior implementation](behavex.png)
 
-  2. Provide the name **`Z_I_BOOKING_XXX`** and a description and click **Next**.
+  2. Provide a description and click **Next**.
 
       ![Create behavior implementation](behave2.png)
 
@@ -98,10 +98,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create behavior implementation](behave3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement behavior class)]
+### Implement behavior class
+
 
   1. In your implementation class `ZBP_I_BOOKING_XXX`, replace your code in local types with following:
 
@@ -226,6 +225,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       METHOD lock.
        "provide the appropriate lock handling if required
       ENDMETHOD.
+
+      METHOD get_instance_authorizations.
+      ENDMETHOD.
+
     ENDCLASS.
 
 
@@ -276,10 +279,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Check result](result2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,29 +1,32 @@
 ---
-title: Migrate an Existing Application to Version 3.0 of the Cloud SDK
-description: Migrate an existing project to version 3.0 of the SAP Cloud SDK.
+parser: v2
 auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 ---
 
+# Migrate an Existing Application to Version 3.0 of the Cloud SDK
+<!-- description --> Migrate an existing project to version 3.0 of the SAP Cloud SDK.
+
 ## Prerequisites
  - You already have a basic understanding of how applications with the Cloud SDK are developed. If you are new to the Cloud SDK take a look at [how to create a sample application](group.s4sdk-cloud-foundry).
  - You have the necessary development tools (JDK, maven and git) already installed. Take a look at [how to set up your machine](s4sdk-setup) for details on how to install them.
 
-## Details
-### You will learn
+## You will learn
   - How to adapt dependencies
   - How to migrate `ErpCommands`
   - How to adapt tests
 
+## Intro
 This tutorial will be based on a sample application to guide you through the fundamental steps of upgrading to version 3. You will get a feeling for the nature of the changes and be able to perform them for your specific application.
 
 Feel free to apply these steps to your application, but be aware that this tutorial does not cover everything in itself. For a comprehensive guide on migrating an app also consult the [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get the V2 application)]
+### Get the V2 application
+
 
 First step is to get an application that uses the SAP Cloud SDK in version 2. This tutorial uses the `BookAdressManager`. You can download it from [GitHub](https://github.com/SAP/cloud-s4-sdk-book) or clone the repository with:
 
@@ -35,10 +38,9 @@ Open it as maven project in your favorite IDE and take a moment to familiarize y
 
 If you want to test the application on your local system follow the instructions of step 2 in the `readme.md` of the project to set up your connection to an S/4HANA system. You can also hit `mvn clean test-compile` to check everything is set up properly and the app builds. Next, the application will be migrated to version 3 step by step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update dependencies)]
+### Update dependencies
+
 
 You'll start by adapting the dependencies of your project. First step is to change the SDK version which is defined in the parent `pom.xml` in your project root. Open it and look for the list of dependencies, where you will find a reference to the `sdk-bom` in version `2.19.0`.
 
@@ -87,11 +89,10 @@ mvn clean validate
 
 Now that you have updated your dependencies it is time to adapt the actual java code.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Migrate simple OData request)]
+### Migrate simple OData request
+
 
 With the new version of the Cloud SDK it's usage became a lot simpler and more streamlined. This means that your application will become simpler and have less boilerplate code -- you will mostly delete stuff in the following steps. But first you'll have to add a piece.
 
@@ -122,10 +123,9 @@ As you can see, not much has changed. Only `executeRequest()` now takes a destin
 
 This wraps up the first step in migration which is all you need if you want to adapt simple requests. However, the code you just changed resides inside a class that made the execution resilient by extending `ErpCommand`. You may have already noticed that `ErpCommand` is no longer found. In fact it was removed in version 3.0 and got replaced by what is called a `ResilienceConfiguration`, which will integrated in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Migrate resilient OData request)]
+### Migrate resilient OData request
+
 
 If you look closely at the `CreateAddressCommand`s constructor you will find the following statement buried in there:
 
@@ -291,10 +291,9 @@ public class AddressServlet extends HttpServlet {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Migrate cached OData request)]
+### Migrate cached OData request
+
 
 Now you'll move away from the `AddressServlet` and tend to your business partner commands. For the purposes of this tutorial, lets keep the classes instead of removing them. When to have a dedicated class for a command or group of commands now is up to you. For more complex requests it might be convenient to have a dedicated class to keep the code clean and organized.
 
@@ -430,10 +429,9 @@ This wraps up the steps necessary to migrate the application itself. Go ahead an
 
 Now that the main code is changed let's go ahead to adapting your tests.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Adapt unit tests)]
+### Adapt unit tests
+
 
 First you'll need to make changes to the unit tests. Therefore, head towards the `GetAllBusinessPartnersCommandTest` under `unit-tests/` and find the `before()` method. Here you will find stuff that is set up before each test is run. Take note of the invalidation of caches that is performed. Due to the change of the underlying caching framework you'll need to adapt this statement. Replace it with the following code:
 
@@ -464,10 +462,9 @@ mvn clean test -pl unit-tests -am
 
 Then proceed with tackling the integration tests.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Adapt integration tests)]
+### Adapt integration tests
+
 
 You'll now proceed with changing the integration tests and go trough the necessary changes one by one.
 
@@ -517,25 +514,20 @@ mvn clean test-compile -pl integration-tests -am
 
 >In order for the integration tests to run an instance of a S/4HANA system populated with some test data is required. Specifically an existing business partner is needed. Find any business partner in your S/4 system and use their id under `BusinessPartnerServletTest.BUPA_ID` for the tests. Then run the tests with `mvn clean test`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Conclusion)]
+### Conclusion
+
 
 And with that the entire application is successfully migrated to a new version of the Cloud SDK. Version 3.0 offers a more streamlined and powerful API. Migration requires some tweaking but most changes necessary are rather minor.
 
 Find out more about what's new and how to migrate your application by taking a look into the [release notes](https://help.sap.com/doc/6c02295dfa8f47cf9c08a19f2e172901/1.0/en-US/index.html#version-3.0.0-naming) and the [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/). If you like you can now deploy your newly migrated application locally or to Cloud Foundry. If you previously used the `ALLOW_MOCKED_AUTH_HEADER` variable for testing you may remove that, it was removed with 3.0. More information can again be found in the migration guide. You may also get the fully migrated source code of the sample application used here by checking out the [`sdk-v3-migration` branch of the repository](https://github.com/SAP/cloud-s4-sdk-book/tree/sdk-v3-migration).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Appendix)]
+### Appendix
 
 `GetAllBusinessPartnersCommand`:
 
@@ -606,8 +598,6 @@ public class GetAllBusinessPartnersCommand {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

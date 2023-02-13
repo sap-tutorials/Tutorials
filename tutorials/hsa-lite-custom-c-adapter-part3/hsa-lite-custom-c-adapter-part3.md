@@ -1,18 +1,21 @@
 ---
-title: Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite
-description: Learn how to compile, and build our custom C/C++ Adapter into an executable using the given Makefile. Then, test your Custom Adapter by using streamingsubscribe executable that comes with the installation of Streaming Lite.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite
+<!-- description --> Learn how to compile, and build our custom C/C++ Adapter into an executable using the given Makefile. Then, test your Custom Adapter by using streamingsubscribe executable that comes with the installation of Streaming Lite.
+
 ## Prerequisites  
  - **Tutorial:** [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part2.html)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Build the Adapter Code)]
+### Build the Adapter Code
+
 
 Now we need to compile and build our Custom `C/C++` Adapter into an executable. To do this, open up `PuTTY` and navigate to your `"custom_c_adapter"` folder.
 
@@ -20,11 +23,9 @@ Run the command `make` to build the `.cpp` file. This should generate an executa
 
 ![Build Custom C Adapter](buildCustomCAdapter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### See Results
 
-[ACCORDION-BEGIN [Step 2: ](See Results)]
 
 We will now test out our Custom `C/C++` Adapter.
 
@@ -59,8 +60,6 @@ If successful, you should be able to see the rows our Custom `C/C++` Adapter is 
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

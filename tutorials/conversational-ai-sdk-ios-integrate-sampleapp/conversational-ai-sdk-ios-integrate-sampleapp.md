@@ -1,6 +1,5 @@
 ---
-title: Integrate SAP Conversational AI Chatbot into your iOS application
-description: Bring your chatbot to your mobile users with native controls provided by the open-source SAP Conversational AI SDK for iOS.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, software-product>sap-btp-sdk-for-ios, software-product>sap-mobile-services ]
@@ -9,45 +8,47 @@ author_name: Marco Eidinger
 author_profile: https://github.com/MarcoEidinger
 ---
 
+# Integrate SAP Conversational AI Chatbot into your iOS application
+<!-- description --> Bring your chatbot to your mobile users with native controls provided by the open-source SAP Conversational AI SDK for iOS.
+
 ## Prerequisites
  - You have created a SAP Conversational AI chatbot, for example, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](https://bit.ly/3srXE1F)
  - You have generated a sample iOS application as described in the tutorial [Create a Sample iOS App](fiori-ios-scpms-create-sample-app)
 
-## Details
-### You will learn
+## You will learn
   - How to create a mobile channel for your chatbot in SAP Conversational AI
   - How to create a destination in SAP Mobile Services to proxy requests from your iOS application to your chatbot in SAP Conversational AI
   - How to integrate the open-source [SAP Conversational AI SDK for iOS](https://github.com/SAP/cloud-sdk-ios-cai) into an existing iOS application generated with the SAP BTP SDK for iOS Assistant
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Mobile Channel in SAP Conversational AI)]
+### Create a Mobile Channel in SAP Conversational AI
+
 
 Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perform the following steps in the **Connect** tab:
 
 1. Click the `+` button.
 
-    !![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-add.png)
+    <!-- border -->![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-add.png)
 
     A modal popup opens.
 
 2. Enter `Name` and `Application ID`.
 
-    !![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-create.png)
+    <!-- border -->![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-create.png)
 
 3. Click `Create`, then copy `Name` and the generated `Channel ID` and `Token` to reuse later.
 
     ![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-created.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create OAuth2 Client in SAP Conversational AI)]
+### Create OAuth2 Client in SAP Conversational AI
+
 
 
 1. Access `Tokens` through your bot's `Settings`.
 
-    !!["Generate OAuth client"](./connect-settings-oauthclient-generate.png)
+    <!-- border -->!["Generate OAuth client"](./connect-settings-oauthclient-generate.png)
 
 2. Click `Generate` to create the OAuth client Runtime API.
 
@@ -61,20 +62,19 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 5. Copy the generated `Auth URL`, `Client ID` and `Client Secret` to reuse later.
 
-    !![Generated OAuth client](./connect-settings-oauthclient-generated.png)
+    <!-- border -->![Generated OAuth client](./connect-settings-oauthclient-generated.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a destination in SAP Mobile Services)]
+### Create a destination in SAP Mobile Services
+
 
 1. Click on `Mobile Connectivity` in your application definition.
 
-    !!["Navigate to Mobile Connectivity feature"](./ms-features.png)
+    <!-- border -->!["Navigate to Mobile Connectivity feature"](./ms-features.png)
 
 2. Click the `+` button to start the destination create wizard.
 
-    !![Create a new destination](./ms-destination-create.png)
+    <!-- border -->![Create a new destination](./ms-destination-create.png)
 
 3. In **Basic Info** enter the required `Destination Name` and `URL`.
 
@@ -115,14 +115,13 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 8. Click `Ping` to test if the destination can reach its target.
 
-    !![Ping the target system to verify that destination works](./ms-destination-created_test.png)
-
-[VALIDATE_1]
-
-[ACCORDION-END]
+    <!-- border -->![Ping the target system to verify that destination works](./ms-destination-created_test.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Add SAP Conversational AI SDK for iOS to your Xcode project)]
+
+
+### Add SAP Conversational AI SDK for iOS to your Xcode project
+
 
 1. Open your Xcode project.
 
@@ -130,7 +129,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 3. Paste the following URL into the search field: `https://github.com/SAP/cloud-sdk-ios-cai`
 
-    !![Add Package](./xcode_addPackage.png)
+    <!-- border -->![Add Package](./xcode_addPackage.png)
 
 4. Click "Add Package".
 
@@ -141,11 +140,10 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 > Note: You chose Package Product `SAPCAI-requiresToEmbedXCFrameworks` because your app already embeds `SAPCommon` and `SAPFoundation` binary frameworks. You would select package product `SAPCAI` if you did not already embed binary frameworks from SAP BTP SDK for iOS.
 
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Use SAP Conversational AI SDK for iOS in your Xcode project)]
+### Use SAP Conversational AI SDK for iOS in your Xcode project
+
 
 It is finally time to use APIs from the SAP Conversational AI SDK for iOS. Let's create a new file named `AssistantViewManager.swift`.
 
@@ -240,11 +238,10 @@ AssistantViewManager.shared.cleanup()
 
 That code ensures that polling of conversation updates will stop once the user navigates away from the `AssistantView`.
 
-[VALIDATE_3]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your iOS application)]
+### Test your iOS application
+
 
 You are now ready to test your iOS application and initiate a conversation with your chatbot.
 
@@ -252,11 +249,11 @@ You are now ready to test your iOS application and initiate a conversation with 
 
 2. Touch on the row in the `ODataContainers` view.
 
-    !![ODataContainers View](SampleAppODataContainers.png)
+    <!-- border -->![ODataContainers View](SampleAppODataContainers.png)
 
 3. Touch on the right bar button.
 
-    !![Collections View](SampleAppCollectionsModifiedRightBarButtonItem.png)
+    <!-- border -->![Collections View](SampleAppCollectionsModifiedRightBarButtonItem.png)
 
 4. Touch the input field on the bottom to open the keyboard.
 
@@ -270,7 +267,5 @@ You are now ready to test your iOS application and initiate a conversation with 
 
     ![Assistant View with a response](SampleAppChatBotResponse.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

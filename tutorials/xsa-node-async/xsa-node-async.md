@@ -1,11 +1,13 @@
 ---
-title: SAP HANA XS Advanced - Asynchronous Non-Blocking I/O within Node.js SAP HANA applications
-description: Working with asynchronous connections
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
+# SAP HANA XS Advanced - Asynchronous Non-Blocking I/O within Node.js SAP HANA applications
+<!-- description --> Working with asynchronous connections
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Intermediate
@@ -14,18 +16,17 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ## Next Steps
  - [Text Bundles](xsa-node-text)
 
-## Details
-### You will learn  
+## You will learn  
 you will learn about the fundaments of the asynchronous nature of Node.js You will so see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. We will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access.
 
-
-### Time to Complete
+## Time to Complete
 **30 Min**.
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Add second module require statement)]
+### Add second module require statement
+
 
 Return to the Node.js module and the `index.js` source file. Add a second module require statement for `./exerciseAsync`
 
@@ -46,11 +47,9 @@ module.exports = (app, server) => {
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Add an express route handler
 
-[ACCORDION-BEGIN [Step 2: ](Add an express route handler)]
 
 From the code you have just added, you can guess you will need a new file called `exerciseAsync.js` inside your `routes` folder. This is just a test framework.
 
@@ -167,11 +166,9 @@ module.exports = function (server) {
 };
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create a test UI
 
-[ACCORDION-BEGIN [Step 3: ](Create a test UI)]
 
 You will create a quick web user interface within your existing web module to use your test framework with. Create a new folder called `exerciseAsync` in your `web->resources` file.
 
@@ -644,11 +641,9 @@ function localShellStartup(name) {
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Enable websockets
 
-[ACCORDION-BEGIN [Step 4: ](Enable websockets)]
 
 Add the following under the `authenticationMethod` in `xs-app.json`:
 
@@ -661,11 +656,9 @@ Add the following under the `authenticationMethod` in `xs-app.json`:
 
 ![websockets](4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create an async folder
 
-[ACCORDION-BEGIN [Step 5: ](Create an async folder)]
 
 Create a folder under `core_node` called `async`. This is where you will create the rest of the files in this section.
 
@@ -979,21 +972,17 @@ module.exports = {
 };
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create the Text Files
 
-[ACCORDION-BEGIN [Step 6: ](Create the Text Files)]
 
 Take a look at the code you have just created. You will notice the file modules are using two text files. Create them inside the `async` folder using simple lines like `file.txt` with `This is my first file` and `file2.txt` with `This is my second file`
 
 ![js folder](8.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Build and Run
 
-[ACCORDION-BEGIN [Step 7: ](Build and Run)]
 
 You can now run the `core_node` module
 
@@ -1005,12 +994,10 @@ Now change the path in the browser to `/exerciseAsync`. You should see the test 
 
 ![path](12.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test synchronous operations)]
+### Test synchronous operations
+
 
 What do you expect this code will output? From many other programming languages you would expect sequential processing and therefore the End output wouldn't come until after the timer expired. However part of the power of Node.js is asynchronous non-blocking execution of many core elements. In test UI, press the Basic `Async` button.
 
@@ -1046,11 +1033,9 @@ Test your `fileSync.js` from the UI test tool. As you might expect, everything i
 
 ![test file](21.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Test asynchronous operations
 
-[ACCORDION-BEGIN [Step 9: ](Test asynchronous operations)]
 
 Now to look at `fileAsync.js`. Notice that the message output now is embedded as an in-line callback function. It doesn't get executed until the read operation is complete, but the rest of the program flow continues and isn't blocked by the file operation.
 
@@ -1113,11 +1098,9 @@ module.exports = {
 };
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### More async tests
 
-[ACCORDION-BEGIN [Step 10: ](More async tests)]
 
 Test your `httpClient.js` from the test UI. Similar to the earlier file exercise, the after HTTP call console message is output before the response from the HTTP request.
 
@@ -1144,11 +1127,9 @@ Test your `databaseAsync.js` from test UI. As you are hopefully learning to expe
 
 ![test](27.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add more parallelism
 
-[ACCORDION-BEGIN [Step 11: ](Add more parallelism)]
 
 But what if you want more control over the flow of program execution. Maybe you want several database operations to happen in parallel, but then some logic to execute only after all queries are complete. This is one of things the `async` library in Node.js can make easier. In `databaseAsync2.js` you adjust the logic to use the `async.parallel` function. This allows some of the commands to execute in parallel as before, but then have a sync point once all operations are complete to allow further processing.  You will output one final message after everything is done.
 
@@ -1187,6 +1168,3 @@ Test your `databaseAsync2.js` from the test UI. The execution is similar to befo
 
 ![test](29.png)
 
-[DONE]
-
-[ACCORDION-END]

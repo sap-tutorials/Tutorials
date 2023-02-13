@@ -1,6 +1,5 @@
 ---
-title: Create an SAP Fiori App Using SAP Business Application Studio
-description: Develop a simple SAPUI5 freestyle application, adhering to SAP Fiori design guidelines, that will present a list of suppliers from an on-premise backend.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
@@ -9,17 +8,20 @@ author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
+# Create an SAP Fiori App Using SAP Business Application Studio
+<!-- description --> Develop a simple SAPUI5 freestyle application, adhering to SAP Fiori design guidelines, that will present a list of suppliers from an on-premise backend.
+
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
   - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an SAPUI5 application for SAP BTP, Cloud Foundry environment
   - How to test-run the app locally in the dev space
 
+## Intro
 You'll build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `ZGWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo Gateway system.
 
 The flow consists of the following parts:
@@ -38,21 +40,22 @@ The flow consists of the following parts:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new Multitarget Application project)]
+### Create new Multi-target Application project
 
-1. In the menu bar, select **View | Find Command** to open the **command palette**.
 
-    !![open command palette](BAS-Create-MTA-1-.png)
+1. In the left side bar, select **Hamburger icon | View | Command Palette...** to open the **command palette**.
+
+    <!-- border -->![open command palette](BAS-Create-MTA-1-.png)
 
 2. The command palette is opened at the top-center of the SAP Business Application Studio window.
 
-    !![command palette opened](AppStudio-Create-MTA-2-.png)
+    <!-- border -->![command palette opened](AppStudio-Create-MTA-2-.png)
 
 3. Enter the **Fiori: Open CF Application Router Generator** command in the command palette. Type `fiori: open` in the command palette text field to filter the commands.
 
     >Filter the list of commands in the command palette by typing part of the command in the command palette text field.
 
-    !![cf mta and approuter wizard](BAS-Create-MTA-3-.png)
+    <!-- border -->![cf mta and approuter wizard](BAS-Create-MTA-3-.png)
 
 4. The **Application Router Generator Wizard** tab is opened. For **Application Router Configuration**, select the following, and click **Finish**.
 
@@ -63,7 +66,7 @@ The flow consists of the following parts:
     | C | MTA Description | Can be left empty (default) |
     | D | Add route module | **Managed Approuter** |
 
-    !![Fill-in cf mta and approuter wizard](BAS-Create-MTA-4-.png)
+    <!-- border -->![Fill-in cf mta and approuter wizard](BAS-Create-MTA-4-.png)
 
     >When end-users access an app in the Cloud Foundry environment, they actually access the Application Router first. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
 
@@ -71,41 +74,38 @@ The flow consists of the following parts:
 
 5. Wait until the creation of project is completed. A notification that "The files has been generated" appears at the bottom right of the screen.
 
-    !![project creation completed](BAS-Create-MTA-5-.png)
+    <!-- border -->![project creation completed](BAS-Create-MTA-5-.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the project's workspace)]
+### Open the project's folder
 
-Your workspace is an entity containing your project's settings, debug configurations, and task configurations. In SAP Business Application Studio, a workspace is created for you as part of the Project Creation wizard. You can choose to create a new workspace or for each project, or you can set up a multi-root environment. You can find out more about **Workspaces** in the SAP Business Application Studio [documentation](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/0919ce1ca4a342628e49c0f5e9c8cdcf.html).
+1. In the left side bar, select **Hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
-1. In the menu bar, select **File | Open Workspace...** to open the **Open Workspace** dialog.
+    <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
 
-    !![open workspace dialog](BAS-Open-Workspace-1-.png)
+2. The **Open Folder** dialog is opened at the center of the SAP Business Application Studio window. Select the **projects** entry.
 
-2. The **Open Workspace** dialog is opened at the center of the SAP Business Application Studio window. Select the **`FioriDemo`** project within the **projects** folder, and click **Open**.
+    <!-- border -->![open folder dialog](BAS-Open-Workspace-1_1-.png)
 
-    !![open workspace dialog](BAS-Open-Workspace-2-1-.png)
+3. Select the **`FioriDemo`** project within the **projects** folder, and click **OK**.
 
-3. SAP Business Application Studio reloads with the `FioriDemo` project open in its workspace. In the Explorer view you can see the `FioriDemo` project, its folder structure, and files.
+    <!-- border -->![open workspace dialog](BAS-Open-Workspace-2-1-.png)
 
-    >The status bar color changes to blue, indicating that a workspace is open.
+4. SAP Business Application Studio reloads with the `FioriDemo` project open in its workspace. In the Explorer view you can see the `FioriDemo` project, its folder structure, and files.
 
-    !![open workspace dialog](BAS-Open-Workspace-3-.png)
+    >The status bar color changes to blue, indicating that a workspace or folder is open.
 
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
-[ACCORDION-BEGIN [Step 3: ](Generate an app based on SAPUI5 Application template)]
+### Generate an app based on SAPUI5 Application template
 
-1. In the **Welcome** tab click **Start from template**.
+1. In the **Get Started** tab click **Start from template**.
 
-    !![launch generate app](BAS-Generate-App-1-1-.png)
+    <!-- border -->![launch generate app](BAS-Generate-App-1-1-.png)
 
-    >If the Welcome Page does not appear, in the menu bar, select **View | Find Command** to open the **command palette** and select the command **Welcome**. The command palette is opened at the top-center of the SAP Business Application Studio window.
+    >If the **Get Started** Page does not appear, in the left side bar, select **Hamburger icon | Help | Get Started**.
 
-    >!![Welcome Page from help menu](BAS-Welcome-Page-from-Help-Menu-.png)
+    ><!-- border -->![Welcome Page from help menu](BAS-Welcome-Page-from-Help-Menu-.png)
 
     >The easiest way to develop an SAPUI5 freestyle app from scratch is to create it from a template. To continue developing an existing application, the best practice is to use git source code management and clone the repository.
 
@@ -115,16 +115,16 @@ Your workspace is an entity containing your project's settings, debug configurat
 
 2. Select the **SAP Fiori Application** tile, and click **Start**.
 
-    !![fiori template group](BAS-Generate-App-2-1-.png)
+    <!-- border -->![fiori template group](BAS-Generate-App-2-1-.png)
 
-3. For **Floorplan Selection**, select the following, and click **Next**.
+3. For **Template Selection**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Application type | **SAPUI5 freestyle** |
-    | B | Which `floorplan` do you want to use? | **SAPUI5 Application** tile |
+    | B | Which `template` do you want to use? | **SAPUI5 Application** tile |
 
-    !![Floorplan Selection](BAS-Generate-App-3-1-.png)
+    <!-- border -->![Floorplan Selection](BAS-Generate-App-3-1-.png)
 
 4. For **Data Source and Service Selection**, select the following, and click **Next**.
 
@@ -134,11 +134,11 @@ Your workspace is an entity containing your project's settings, debug configurat
     | B | System | **`ES5`** |
     | C | Service | **`ZGWSAMPLE_BASIC (1) - OData V2`** |
 
-    !![Data Source and Service Selection](BAS-Generate-App-4-1-.png)
+    <!-- border -->![Data Source and Service Selection](BAS-Generate-App-4-1-.png)
 
 5. For **Entity Selection > View name**, enter `Suppliers`, and click **Next**.
 
-    !![Entity Selection > View name](BAS-Generate-App-5-1-.png)
+    <!-- border -->![Entity Selection > View name](BAS-Generate-App-5-1-.png)
 
 6. For **Project Attributes**, select the following, and click **Next**.
 
@@ -149,21 +149,21 @@ Your workspace is an entity containing your project's settings, debug configurat
     | C | Application namespace | **ns** |
     | D | Description | **An SAPUI5 freestyle app to view a list of suppliers (demo)** |
     | E | Project folder path | **`/home/user/projects/FioriDemo`** |
-    | F | Minimum SAPUI5 version | **1.84.14 (Source system version)** (default) |
+    | F | Minimum SAPUI5 version | **1.102.1 (Source system version)** (default) |
     | G | Add deployment configuration | **Yes** (default after setting the project folder path)|
     | H | Add FLP configuration | **Yes** |
     | I | Configure advanced options | **No** (default) |
 
-    !![Project Attributes](BAS-Generate-App-6-1-.png)
+    <!-- border -->![Project Attributes](BAS-Generate-App-6-1-.png)
 
 7. For **Deployment Configuration**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Please choose the target | **Cloud Foundry** (default) |
-    | B | Destination name | **ES5 - https: //sapes5.sapdevcenter.com** (default) |
+    | B | Destination name | **ES5 - https: //sapes5.sapdevcenter.com** |
 
-    !![deployment configuration](BAS-Generate-App-7-1-.png)
+    <!-- border -->![deployment configuration](BAS-Generate-App-7-1-.png)
 
 8. For **Fiori Launchpad Configuration**, select the following, and click **Finish**.
 
@@ -174,25 +174,25 @@ Your workspace is an entity containing your project's settings, debug configurat
     | B | Title | **Suppliers** |
     | B | Subtitle (optional) | **Our Suppliers** |
 
-    !![launchpad configuration](BAS-Generate-App-8-1-.png)
+    <!-- border -->![launchpad configuration](BAS-Generate-App-8-1-.png)
 
 9. Wait until the installation of project dependencies is completed. A notification that "The project has been generated" appears at the bottom right of the screen, The **Application Information** tab is opened, and the files and project structure in the **Explorer** view are updated.
 
-    !![application generated](BAS-Generate-App-10-1-.png)
+    <!-- border -->![application generated](BAS-Generate-App-10-1-.png)
 
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the App Locally in the Dev Space)]
+
+### Run the App Locally in the Dev Space
+
 
 1.	Click the **Run Configurations** view button to open the `Run Configurations` view. A set of run configuration that were created as part of the app generation are presented.
 
-    !![local run](BAS-Local-Run-1-1-.png)
+    <!-- border -->![local run](BAS-Local-Run-1-1-.png)
 
 2.	Click the **Play** icon of the **`Start businesspartners`** run configuration to run the app locally in the dev space.
 
-    !![local run](BAS-Local-Run-2-1-.png)
+    <!-- border -->![local run](BAS-Local-Run-2-1-.png)
 
     >You may be prompted to allow pop-ups.
 
@@ -202,63 +202,63 @@ Your workspace is an entity containing your project's settings, debug configurat
 
     >You may be prompted to open the app in a new tab.
 
-    !![local run](BAS-Local-Run-3-1-3-.png)
+    <!-- border -->![local run](BAS-Local-Run-3-1-3-.png)
 
 3. A new browser tab opens showing the app. In this stage of the development, the app only shows a title.
 
     >If the browser tab does not open, or a notification "You have exceeded the number of ports you can expose" appears at the bottom-right of the page, you may need to un-expose ports. Select the **Ports: `Unexpose`** option in the command palette (View | Find Command) to un-expose a port that is in an **[Active]** state. Repeat this procedure until no more than two ports are in **[Active]** state, and try again.
 
-    !![app running locally](AppStudio-Local-Run-3-.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![app running locally](AppStudio-Local-Run-3-.png)
 
 
-[ACCORDION-BEGIN [Step 5: ](Open the layout editor and the code editor)]
+
+### Open the layout editor and the code editor
+
 
 The layout editor allows users to easily make changes in the app using a visual editor. In this tutorial, you will make changes so that data from the backend service is displayed when the app is running.
 
 1. Click **Toggle Bottom Panel** to free screen space for the editors pane.
 
-    !![toggle bottom pane](BAS-Close-Bottom-Pane-1-.png)
+    <!-- border -->![toggle bottom pane](BAS-Close-Bottom-Pane-1-.png)
 
 2. Click the **Explorer** view button to open the `Explorer` view.
 
-    !![open explorer view](BAS-Open-Explorer-View-.png)
+    <!-- border -->![open explorer view](BAS-Open-Explorer-View-.png)
 
 3. Choose **`FioriDemo` > `businesspartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
 
-3. Choose **Open With > Layout Editor**.
+     <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
 
-    !![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
+4. The **Select editor** dialog is opened at the top center of the SAP Business Application Studio window. Select the **Layout Editor** entry.
 
-    >To have the Layout Editor option available after opening the workspace, you may need to wait a bit for the Layout Editor extension to be loaded.
+    <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-2-.png)
 
-4. The **Suppliers** view is opened in the **Layout Editor**.
+    >To have the Layout Editor option available after opening the workspace or folder, you may need to wait a bit for the Layout Editor extension to be loaded.
 
-    !![open layout editor](BAS-Open-Layout-Editor-2-.png)
+5. The **Suppliers** view is opened in the **Layout Editor**.
 
-5. Open the `Suppliers.view.xml` file with the code editor and see how modifications in the Layout Editor are manifested in the code editor. It is not mandatory to open both editors for development. You can do the development work using either of the editors or both. In this tutorial you'll have both editors open for demo purposes.
+    <!-- border -->![open layout editor](BAS-Open-Layout-Editor-2-.png)
 
-    !![Open code editor](BAS-Open-Code-Editor-1-.png)
+6. Open the `Suppliers.view.xml` file with the text editor and see how modifications in the Layout Editor are manifested in the text editor. It is not mandatory to open both editors for development. You can do the development work using either of the editors or both. In this tutorial you'll have both editors open for demo purposes.
 
-6. The **Suppliers** view is opened in the code editor in a tab next to the **Layout Editor**.
+    <!-- border -->![Open code editor](BAS-Open-Code-Editor-1-.png)
 
-    !![open code editor](BAS-Open-Code-Editor-2-.png)
+7. The **Suppliers** view is opened in the text editor in a tab next to the **Layout Editor**.
 
-7. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
+    <!-- border -->![open code editor](BAS-Open-Code-Editor-2-.png)
 
-    !![drag-drop editor](BAS-Drag-Drop-Code-Editor-1-.png)
+8. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
+
+    <!-- border -->![drag-drop editor](BAS-Drag-Drop-Code-Editor-1-.png)
 
     >The **Layout Editor** and code editor are stacked so you can see how making changes to one will be reflected on the other.
 
-    >!![drag-drop editor](BAS-Drag-Drop-Code-Editor-2-.png)
-
-[DONE]
-[ACCORDION-END]
+    ><!-- border -->![drag-drop editor](BAS-Drag-Drop-Code-Editor-2-.png)
 
 
-[ACCORDION-BEGIN [Step 6: ](Make changes to the UI)]
+
+### Make changes to the UI
+
 
 1. Edit your app using the layout editor, with no need to do any coding.
 
@@ -268,55 +268,54 @@ The layout editor allows users to easily make changes in the app using a visual 
 
 2. In the **Controls** pane, enter `List` to filter the controls list in the search box.
 
-    !![Filter List control](BAS-Enhance-App-1-.png)
+    <!-- border -->![Filter List control](BAS-Enhance-App-1-.png)
 
     >In order to get more screen real-estate, click the **Explorer** view button to close the `Explorer` view, and adjust the ratio between the Layout Editor and the code editor.
 
 
 3. Drag the **List** control and drop it on the **View** control in the canvas.
 
-    !![Drag and drop](BAS-Enhance-App-2-.png)
+    <!-- border -->![Drag and drop](BAS-Enhance-App-2-.png)
 
     >Adding the list control to the view is reflected in both the **Layout Editor** and the code editor.
 
-    >!![Link text e.g., Destination screen](BAS-Enhance-App-2-2-.png)
+    ><!-- border -->![Link text e.g., Destination screen](BAS-Enhance-App-2-2-.png)
 
 4. Select the **Standard List Item** control by clicking the **List** control you just added (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
-    !![Open entity set bind window](BAS-Enhance-App-3-.png)
+    <!-- border -->![Open entity set bind window](BAS-Enhance-App-3-.png)
 
     >The **Select Entity Set** view is displayed.
 
 5. Select the **Define entity set and set the selected control as template** option, and in the **Entity Set** dropdown list, choose the `BusinessPartnerSet` entity set. Click **Bind** to complete the operation.
 
-    !![entity set bind window](BAS-Enhance-App-4-.png)
+    <!-- border -->![entity set bind window](BAS-Enhance-App-4-.png)
 
     >The space of the **Select Entity Set** view may be too narrow to show all options. In case you do not see the **Define entity set and set the selected control as template** option, scroll down in the **Select Entity Set** view to make it available.
 
     >The bind operation is reflected in both the **Layout Editor** and the code editor.
 
-    >!![entity set bind window](BAS-Enhance-App-5-.png)
+    ><!-- border -->![entity set bind window](BAS-Enhance-App-5-.png)
 
 6. In the **Properties** pane, in the **Title** property, click the **Bind** icon.
 
-    !![open Title bind window](BAS-Enhance-App-5-2-.png)
+    <!-- border -->![open Title bind window](BAS-Enhance-App-5-2-.png)
 
     >The **Data Binding** view is displayed.
 
 7. Click the **Clear expression** (eraser) icon to clear the default text, and in the data fields double click  `CompanyName`. Click **Bind** to complete the operation.
 
-    !![Title bound](BAS-Enhance-App-6-.png)
+    <!-- border -->![Title bound](BAS-Enhance-App-6-.png)
 
 8. Repeat the last two steps for the **Description** property in the **Properties** pane. Choose  `WebAddress`.
 
-    !![Bind Description](BAS-Enhance-App-8-.png)
+    <!-- border -->![Bind Description](BAS-Enhance-App-8-.png)
 
 9. Wait for the live reload of the app to complete. A list of suppliers is displayed.
 
-    !![Bind Description](AppStudio-Change-UI-9-.png)
+    <!-- border -->![Bind Description](AppStudio-Change-UI-9-.png)
 
-[VALIDATE_5]
-[ACCORDION-END]
+
 
 ---
 

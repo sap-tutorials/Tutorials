@@ -1,6 +1,5 @@
 ---
-title: Detect and Highlight Entities from Unstructured Text with Pre-trained Models
-description: Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
+parser: v2
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
@@ -9,12 +8,15 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Detect and Highlight Entities from Unstructured Text with Pre-trained Models
+<!-- description --> Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
+
+## You will learn
   - How to call and test Business Entity Recognition
   - How to access and use the Business Entity Recognition Swagger UI (User Interface)
   - How to use the Business Entity Recognition pre-trained models to extract entities from unstructured text
 
+## Intro
 The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories. When you finish this tutorial, you will get named entity predictions for the texts you submit to the service.
 
 Business Entity Recognition is a customizable machine learning service, but you can also use the following pre-trained machine learning models:
@@ -24,13 +26,14 @@ Business Entity Recognition is a customizable machine learning service, but you 
 - `sap_generic_entities`
 - `sap_invoice_header`
 
-See [Extracted Entities by Pre-trained Model](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html) and [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html).
+See [Extracted Entities by Pre-trained Model](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html) and [Free Tier Option Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html).
 
-This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, check out the tutorial group [Use Custom Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-custom).  
+This tutorial gives you an introduction to the service using the free tier option for Business Entity Recognition and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, check out the tutorial group [Use Custom Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-custom).  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
+### Authorize Swagger UI
+
 
 You will use Swagger UI, via any web browser, to call the Business Entity Recognition service APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
@@ -38,11 +41,11 @@ In the service key you created for Business Entity Recognition in the previous t
 
 1. To access the Business Entity Recognition Swagger UI, add **`/api/v1`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    !![BER](png-files/service-key-details.png)
+    <!-- border -->![BER](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    !![BER](png-files/swagger.png)
+    <!-- border -->![BER](png-files/swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
 
@@ -50,17 +53,17 @@ In the service key you created for Business Entity Recognition in the previous t
     bearer <access_token>
     ```
 
-    !![BER](png-files/authorize-bearer.png)
+    <!-- border -->![BER](png-files/authorize-bearer.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    !![BER](png-files/authorize-close.png)
-
-[VALIDATE_1]
-[ACCORDION-END]
+    <!-- border -->![BER](png-files/authorize-close.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Enter inference text for sap_address_entity)]
+
+
+### Enter inference text for sap_address_entity
+
 
 Use the **POST /inference/jobs** endpoint to submit the text to be extracted and choose the pre-trained machine learning model you want to use to extract entities from the text.
 
@@ -68,7 +71,7 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    !![BER](png-files/post-try.png)
+    <!-- border -->![BER](png-files/post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_address_entity` pre-trained model example, you can use the following:
 
@@ -82,17 +85,16 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 4. Click **Execute**.
 
-    !![BER](png-files/post-address-payload.png)
+    <!-- border -->![BER](png-files/post-address-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    !![BER](png-files/post-address-id.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![BER](png-files/post-address-id.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Get inference response from sap_address_entity)]
+
+### Get inference response from sap_address_entity
+
 
 Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction results and the confidence level of the `sap_address_entity` model.
 
@@ -100,15 +102,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    !![BER](png-files/get-try.png)
+    <!-- border -->![BER](png-files/get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    !![BER](png-files/get-address-id.png)
+    <!-- border -->![BER](png-files/get-address-id.png)
 
 You should receive a response like the following:
 
-!![BER](png-files/get-address-response.png)
+<!-- border -->![BER](png-files/get-address-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -126,11 +128,10 @@ You can also use the following **payload** example with the `sap_address_entity`
 
 To try out the `sap_address_entity` model with your own unstructured text, keep in mind the model scope and supported languages, as detailed in [`sap_address_entity`](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/55ab2ca0f9064aefbc1425246a1b3d1f.html) and [Supported Languages](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/e710add9d4d743958a3d21b82b3f220d.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Enter inference text for sap_email_business_entity)]
+### Enter inference text for sap_email_business_entity
+
 
 Use the **POST /inference/jobs** endpoint to submit the text to be extracted and choose the pre-trained machine learning model you want to use to extract entities from the text.
 
@@ -138,7 +139,7 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    !![BER](png-files/post-try.png)
+    <!-- border -->![BER](png-files/post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_email_business_entity` pre-trained model example, you can use the following:
 
@@ -152,17 +153,16 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 4. Click **Execute**.
 
-    !![BER](png-files/post-email-payload.png)
+    <!-- border -->![BER](png-files/post-email-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    !![BER](png-files/post-email-id.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![BER](png-files/post-email-id.png)
 
 
-[ACCORDION-BEGIN [Step 5: ](Get inference response from sap_email_business_entity)]
+
+### Get inference response from sap_email_business_entity
+
 
 Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction results and the confidence level of the `sap_email_business_entity` model.
 
@@ -170,15 +170,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    !![BER](png-files/get-try.png)
+    <!-- border -->![BER](png-files/get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    !![BER](png-files/get-email-id.png)
+    <!-- border -->![BER](png-files/get-email-id.png)
 
 You should receive a response like the following:
 
-!![BER](png-files/get-email-response.png)
+<!-- border -->![BER](png-files/get-email-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -196,11 +196,10 @@ You can also use the following **payload** example with the `sap_email_business_
 
 To try out the `sap_email_business_entity` model with your own unstructured text, keep in mind the model scope and supported languages, as detailed in [`sap_email_business_entity`](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/8f940cca185144b8baff1fdf31ce2c82.html) and [Supported Languages](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/e710add9d4d743958a3d21b82b3f220d.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Enter inference text for sap_generic_entities)]
+### Enter inference text for sap_generic_entities
+
 
 Use the **POST /inference/jobs** endpoint to submit the text to be extracted and choose the pre-trained machine learning model you want to use to extract entities from the text.
 
@@ -208,7 +207,7 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    !![BER](png-files/post-try.png)
+    <!-- border -->![BER](png-files/post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_generic_entities` pre-trained model example, you can use the following:
 
@@ -222,17 +221,16 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 4. Click **Execute**.
 
-    !![BER](png-files/post-generic-payload.png)
+    <!-- border -->![BER](png-files/post-generic-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    !![BER](png-files/post-generic-id.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![BER](png-files/post-generic-id.png)
 
 
-[ACCORDION-BEGIN [Step 7: ](Get inference response from sap_generic_entities)]
+
+### Get inference response from sap_generic_entities
+
 
 Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction results and the confidence level of the `sap_generic_entities` model.
 
@@ -240,15 +238,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    !![BER](png-files/get-try.png)
+    <!-- border -->![BER](png-files/get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    !![BER](png-files/get-generic-id.png)
+    <!-- border -->![BER](png-files/get-generic-id.png)
 
 You should receive a response like the following:
 
-!![BER](png-files/get-generic-response.png)
+<!-- border -->![BER](png-files/get-generic-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -266,11 +264,10 @@ You can also use the following **payload** example with the `sap_generic_entitie
 
 To try out the `sap_generic_entities` model with your own unstructured text, keep in mind the model scope and supported languages, as detailed in [`sap_generic_entities`](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/d1cc656813fa4737a5df3aa131bed338.html) and [Supported Languages](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/e710add9d4d743958a3d21b82b3f220d.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Enter inference text for sap_invoice_header)]
+### Enter inference text for sap_invoice_header
+
 
 Use the **POST /inference/jobs** endpoint to submit the text to be extracted and choose the pre-trained machine learning model you want to use to extract entities from the text.
 
@@ -278,7 +275,7 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    !![BER](png-files/post-try.png)
+    <!-- border -->![BER](png-files/post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_invoice_header` pre-trained model example, you can use the following:
 
@@ -292,17 +289,16 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 4. Click **Execute**.
 
-    !![BER](png-files/post-invoice-payload.png)
+    <!-- border -->![BER](png-files/post-invoice-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    !![BER](png-files/post-invoice-id.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![BER](png-files/post-invoice-id.png)
 
 
-[ACCORDION-BEGIN [Step 9: ](Get inference response from sap_invoice_header)]
+
+### Get inference response from sap_invoice_header
+
 
 Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction results and the confidence level of the `sap_invoice_header` model.
 
@@ -310,15 +306,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    !![BER](png-files/get-try.png)
+    <!-- border -->![BER](png-files/get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    !![BER](png-files/get-invoice-id.png)
+    <!-- border -->![BER](png-files/get-invoice-id.png)
 
 You should receive a response like the following:
 
-!![BER](png-files/get-invoice-response.png)
+<!-- border -->![BER](png-files/get-invoice-response.png)
 
 You have now successfully used the `sap_invoice_header` model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
 
@@ -336,5 +332,3 @@ To try out the `sap_invoice_header` model with your own unstructured text, keep 
 
 Congratulations, you have completed this tutorial.
 
-[DONE]
-[ACCORDION-END]

@@ -1,25 +1,28 @@
 ---
-title: Anonymous Blocks
-description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud  ]
 time: 15
 ---
+# Anonymous Blocks
+<!-- description --> Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating SQLScript User Defined Libraries](xsa-sqlscript-libraries)
 
-## Details
-### You will learn  
+## You will learn  
 - How to invoke SQLScript logic without a persistent logic container  
 
+## Intro
 In this exercise, we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create anonymous block )]
+### Create anonymous block 
+
 
 From the Database Explorer page, click the "SQL Console" button
 
@@ -29,30 +32,26 @@ To have an anonymous block you need a do begin … end.  Enter the this code in 
 
 ![SQL tab](2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add body of statement
 
-[ACCORDION-BEGIN [Step 2: ](Add body of statement)]
 
 Copy the logic from the procedure `get_po_header_data` into the body.  Make sure to only copy the code between the BEGIN and END statements
 
 ![logic](3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Declare required variable)]
+### Declare required variable
+
 
 Copy the signature from the procedure `get_po_header_data` into the signature part of the anonymous block. Ensure the parameter is assigned to a query parameter placeholder (?) as shown.
 
 ![sql code](4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Check complete code)]
+### Check complete code
+
 
 The completed code should look very similar to this.
 
@@ -95,17 +94,13 @@ EX_TOP_3_EMP_PO_COMBINED_CNT =
 
 ```
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Run and check results)]
+### Run and check results
+
 
 Click **Run**.  You will notice that the SQLScript code is executed and results are shown.  Again, there is no procedure or function created here, just the SQLScript being executed by the engine.
 
 ![SQL executed](8.png)
 
 
-[DONE]
-[ACCORDION-END]

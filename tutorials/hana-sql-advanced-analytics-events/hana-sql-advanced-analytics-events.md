@@ -1,6 +1,5 @@
 ---
-title: Explore food using Advanced Analytics in SAP HANA
-description: Use predictive and advanced analytics to gain insights on commercial food items
+parser: v2
 time: 45
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -8,19 +7,22 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editio
 primary_tag: products>sap-hana
 ---
 
+# Explore food using Advanced Analytics in SAP HANA
+<!-- description --> Use predictive and advanced analytics to gain insights on commercial food items
+
 ## Prerequisites
  - You are attending a hands-on event with a live instructor
  - You have access to SAP HANA on premise or SAP HANA, express edition -- This tutorial will not work with SAP HANA Cloud
  - The instructor has provided you with log in directions
 
-## Details
-### You will learn
+## You will learn
   - How to apply basic fuzzy search on unstructured data
   - How to train and run a predictive algorithm
   - How to execute a `MapReduce` operation
   - How to use create a graph workspace
 
 
+## Intro
 **This tutorial can only be completed with a live instructor.**
 
 This tutorial uses two databases obtained from two open sources:
@@ -29,7 +31,8 @@ This tutorial uses two databases obtained from two open sources:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to the database)]
+### Connect to the database
+
 
 > This tutorial can only be completed with a live instructor.
 
@@ -43,9 +46,8 @@ For a better experience, make sure you close all of the tabs if there are any op
 
 ![Database explorer](0x.png)
 
-[ACCORDION-END]
+### Explore the existing data
 
-[ACCORDION-BEGIN [Step 2: ](Explore the existing data)]
 
 Find an entry for the food you like. To understand what data looks like, open the schema **FOOD**.
 
@@ -79,10 +81,9 @@ AND contains(product_name, 'bourbon biscuits', fuzzy(0.8,'textsearch=compare'));
 > You are using a fuzzy search on text. The results cover anything with a similarity score of `0.8` to `bourbon biscuits` in this example.
 > Results could also contain typos, differences between upper and lower case and even similar words.
 
-[ACCORDION-END]
 
+### Create a view
 
-[ACCORDION-BEGIN [Step 3: ](Create a view)]
 
 The nutrition grade is an indicator of how much energy for growth is provided by food. You have selected a food that does not have a nutrition grade assigned.  
 
@@ -193,10 +194,8 @@ Press **F8** to run.
 
 ![Open SQL](10.png)
 
+### Create structures for training
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create structures for training)]
 
 Aside from the values for training, the procedure included in the Predictive Analytics Library in SAP HANA requires a table with parameter as an input.
 
@@ -272,9 +271,8 @@ This may take some seconds. Here is some information about the platform you are 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HWP839IWaNU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[ACCORDION-END]
+### Train the model
 
-[ACCORDION-BEGIN [Step 5: ](Train the model)]
 
 You can now call the training algorithm and check the results
 
@@ -294,10 +292,8 @@ SELECT * FROM PAL_FOOD_STATISTICS_TBL;
 
 You can see statistics about the accuracy of the model in the results.
 
+### Use the model to predict the nutrition score
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Use the model to predict the nutrition score)]
 
 Some steps ago, you created a view with all of the foods without a nutrition score. This view is called `PAL_FOOD_DATA_SCORE_VIEW`.
 
@@ -338,9 +334,8 @@ For example:
 
 You now know the most probable nutrition grade for the food you have chosen.
 
-[ACCORDION-END]
+### Get the most popular ingredients
 
-[ACCORDION-BEGIN [Step 7: ](Get the most popular ingredients)]
 
 The ingredients for the commercial foods are contained in a text field, separated by a comma.
 
@@ -439,11 +434,8 @@ lv_code_name = '<<Use your First name, your day of birth and the first letter of
 > ![mapper](12.png)
 >  You can learn more about these examples in this [blog post](https://blogs.sap.com/2018/04/11/sap-hana-2.0-sps-03-new-developer-features-database-development/). Note the input is limited so you can finish on time for this exercise.
 
+### Find who you are connected to through the same food
 
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Find who you are connected to through the same food)]
 
 The previous function associated participants through food and their ingredients. You can now represent that relationship in a graph
 
@@ -468,9 +460,6 @@ Navigate to the **Graph Workspaces** in the **FOODIE** schema. Right-click on th
 ![View graph](graph.png)
 
 **Congratulations!** You are now part of the foodie network and earned a prize. Show your node on the graph to the instructor.
-
-
-[ACCORDION-END]
 
 
 

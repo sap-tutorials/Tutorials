@@ -1,26 +1,29 @@
 ---
-title: Connect to Data Lake Relational Engine Using the Node.js Driver
-description: Create and debug a Node.js application that connects to data lake Relational Engine.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
-## Prerequisites
- - You have completed the first two tutorials in this group.
+# Connect to Data Lake Relational Engine Using the Node.js Driver
+<!-- description --> Create and debug a Node.js application that connects to data lake Relational Engine.
 
-## Details
-### You will learn
+## Prerequisites
+ - You have completed the first tutorial in this group.
+
+## You will learn
   - How to install Node.js and the data lake Relational Engine Node.js driver
   - How to create and debug a Node.js application
   - How to use both the synchronous and asynchronous driver interfaces
 
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/learn).  
+## Intro
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn/).  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js)]
+### Install Node.js
+
 
 Ensure you have Node.js installed and check its version. Enter the following command:
 
@@ -43,10 +46,11 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 ---
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the data lake Relational Engine client for Node.js)]
+### Install the data lake Relational Engine client for Node.js
+
+
+In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
 
 1. Add the dependencies to the driver.
 
@@ -92,10 +96,9 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
     ![npm list](npm-list.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a synchronous Node.js application that queries SAP data lake Relational Engine)]
+### Create a synchronous Node.js application that queries SAP data lake Relational Engine
+
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -129,7 +132,7 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -143,45 +146,44 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
     ```Shell
     node nodeQuery.js
     ```
-![Running nodeQuery.js](Node-query.png)
 
-Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/13e47ad9748d4d4d9536a0518b8ecd67.html), [exec](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/1bec2bc5259d4e9da54a2e1908f246ee.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/8dee077765f5476b8b481ab1de864f14.html).
+    ![Running nodeQuery.js](node-query-sync.png)
 
-Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
+    Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/13e47ad9748d4d4d9536a0518b8ecd67.html), [exec](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/1bec2bc5259d4e9da54a2e1908f246ee.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/8dee077765f5476b8b481ab1de864f14.html).
 
->To enable debug logging of the SAP IQ Node.js client, enter the following command and then rerun the app.
+    Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
->```Shell (Microsoft Windows)
->set DEBUG=*
->node nodeQuery.js
->```  
+    >To enable debug logging of the SAP IQ Node.js client, enter the following command and then rerun the app.
 
->```Shell (Linux or Mac)
->export DEBUG=*
->node nodeQuery.js
->```    
+    >```Shell (Microsoft Windows)
+    >set DEBUG=*
+    >node nodeQuery.js
+    >```  
 
-> ![debug output](debug-flag.png)
+    >```Shell (Linux or Mac)
+    >export DEBUG=*
+    >node nodeQuery.js
+    >```    
 
-> The value of the environment variable DEBUG can be seen and removed with the commands below.
+    > ![debug output](debug-flag.png)
 
->```Shell (Microsoft Windows)
->set DEBUG
->set DEBUG=
->set DEBUG
->```  
+    > The value of the environment variable DEBUG can be seen and removed with the commands below.
 
->```Shell (Linux or Mac)
->printenv | grep DEBUG
->unset DEBUG
->printenv | grep DEBUG
->```
+    >```Shell (Microsoft Windows)
+    >set DEBUG
+    >set DEBUG=
+    >set DEBUG
+    >```  
+
+    >```Shell (Linux or Mac)
+    >printenv | grep DEBUG
+    >unset DEBUG
+    >printenv | grep DEBUG
+    >```
 
 
-[DONE]
-[ACCORDION-END]
+### Create an asynchronous app that uses callbacks
 
-[ACCORDION-BEGIN [Step 4: ](Create an asynchronous app that uses callbacks)]
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -265,22 +267,20 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
             }
         });
     }
-
     ```  
 
-4. Run the app.  
+3. Run the app.  
 
     ```Shell
     node nodeQueryCallback.js
     ```
-![Running nodeQueryCallback.js](Node-query-callback.png)
+    ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    Notice that asynchronous method calls use callback functions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create an asynchronous app that uses promises)]
+### Create an asynchronous app that uses promises
+
 The Node.js driver for the data lake Relational Engine client provides support for promises.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -376,15 +376,14 @@ The Node.js driver for the data lake Relational Engine client provides support f
     ```Shell
     node nodeQueryPromise.js
     ```
-![Running nodeQueryPromise.js](Node-query-promise.png)
+    ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
-
-[DONE]
-[ACCORDION-END]
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 
-[ACCORDION-BEGIN [Step 6: ](Debug the application)]
+
+### Debug the application
+
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
@@ -404,11 +403,11 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

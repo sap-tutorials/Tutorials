@@ -1,11 +1,13 @@
 ---
-title: Create the CAP Service for the SAP SuccessFactors Extension
-description: In this phase of the development you will create and test the service definition for the extension.
+parser: v2
 auto_validation: true
 time: 6
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+# Create the CAP Service for the SAP SuccessFactors Extension
+<!-- description --> In this phase of the development you will create and test the service definition for the extension.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -13,21 +15,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Import SAP SuccessFactors OData Services definitions**](cap-extend-sfsf-import-services)
  - Complete the tutorial: [**Create the CDS Data Model for the SAP SuccessFactors Extension**](cap-extend-sfsf-data-model)
 
-## Details
-### You will learn
+## You will learn
   - How to **create and code the service definition** in your CAP project
   - Understand the  **service definition code**
   - How to **test the service**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the Service Definition File)]
+### Create the service definition file
+
 
 In the previous tutorial from this group, you have defined the data model for your solution and populated it with some initial test data. But, when you first run the application you noticed no services have been defined, thus the entities where not exposed.
 
 In this step you will create the service definition file for further coding.
 
-On the **left-hand pane** of **SAP Business Application Studio**, select the `srv` folder, then click on the **three dots** to the right of the project name and select **New File**.
+On the **left-hand pane** of **SAP Business Application Studio**, (1) select the `srv` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
 ![Figure 1 – Create New File](create-file.png)
 
@@ -35,10 +37,9 @@ On the **dialog** name the file `projman-service.cds` and click **OK**.
 
 ![Figure 2 – Set File Name](set-file-name.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the Service Definition)]
+### Code the service definition
+
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -76,10 +77,9 @@ service ProjectManager @(path : '/projman') {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Definition Code)]
+### Understand the definition code
+
 
 Quickly analyze the service definition code:
 
@@ -95,10 +95,9 @@ In the **Member** entity, besides all regular fields, you add an **additional pr
 
 You also annotate the **Project** entity (the **root entity** of your model) with `@odata.draft.enabled`, because CAP exposes services via the **OData v4 protocol** and, for that version, **Fiori Elements** only displays the **CRUD actions** in the UI if the entity is **draft-enabled**. The `SFSF_User` entity is annotated as `@readonly` and with `@cds.odata.valuelist` as it will be used to populate the value help with SAP SuccessFactors Users to be picked as employees assigned to projects.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the Service)]
+### Test the service
+
 
 Now that you have properly defined a service and exposed the desired entities, you should notice that, in the **Terminal**, `cds watch` has updated:
 
@@ -116,10 +115,8 @@ Notice that CAP has automatically added the **draft control attributes** due to 
 
 If you click the `SFSF_User` link you'll get an error, because that's not an entity defined in the application data model but rather a projection of an entity which should be populated via an OData service consumption. Therefore, CAP cannot use its generic service handlers for such entity as the OData call is delegated to the logic defined by the developer. Thus, for that kind of entities, a custom handler (with specific business logic) must be implemented and you'll do it in the next tutorial from this group.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

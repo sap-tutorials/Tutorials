@@ -1,23 +1,24 @@
 ---
-title: Adding Our Union Calculation View into the Converted Data Model
-description: Replacing old information model with new calculation view
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
+# Adding Our Union Calculation View into the Converted Data Model
+<!-- description --> Replacing old information model with new calculation view
+
 ## Prerequisites
  - **Tutorials**: "Creating a Calculation View from the Union of In-Memory and Extended Tables"
 
-## Details
-### You will learn
+## You will learn
   - How to add extended tables to an existing information model
-
-### Time to Complete
+## Time to Complete
  **15 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Adding Our Union Calculation View into the Converted Data Model)]
+### Adding Our Union Calculation View into the Converted Data Model
+
 
 We have converted the original information into all calculation views so that they can support other calculation views. We then created a new calculation view which was a union between hot and warm data. Now we will replace `ORDERS_CS` with the new calculation view inside of `AV_ORDERS`.
 
@@ -47,17 +48,13 @@ Next, we will select the **Semantics**, to ensure each column is set as the righ
 
 ![Check Semantics Type](check-semantics-type.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Activate View)]
+### Activate View
+
 Navigate to `tutorial_All_Calc` in **Systems**. Under `tutorial_All_Calc` > Calculation Views, right click `AV_ORDERS` and click **Activate**.
 
 ![Activate Views](activate-views.png)
 
 We have successfully added extended tables to an existing information model! In summary, we took the old `AV_ORDERS` used the in-memory table called `ORDERS_CS`, and combined it with `AT_REGION` to create a result set showing each customer key with its corresponding region name, order status, order data, and total price from the last year. This new `AV_ORDERS` view combines the new `CA_UNION` view (which is a union of `ORDERS_CS` and `ORDERS_DT`) with `AT_REGION`, creating a result with the same fields as before, but now includes data from all years, including the data that has been aged out to the extended table in Dynamic Tiering.
 
-[DONE]
-
-[ACCORDION-END]

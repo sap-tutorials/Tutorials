@@ -1,29 +1,30 @@
 ---
-title: Set Up the Eclipse Project for Streaming Lite Custom Java Adapter
-description: Configure the development environment to create a Custom Java Adapter for our Streaming Lite project by copying required files from the SAP HANA system.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 ---
 
+# Set Up the Eclipse Project for Streaming Lite Custom Java Adapter
+<!-- description --> Configure the development environment to create a Custom Java Adapter for our Streaming Lite project by copying required files from the SAP HANA system.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorial:** [Introduction to Writing a Custom Java Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part1.html)
 
-## Details
-### You will learn  
+## You will learn  
 - How to copy over the Java SDK files required from our HANA system to HANA Studio/Eclipse
 - How to prepare the HANA Studio for Custom Java Adapter development
 
 ## Next Steps
 - [Code the Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part3.html)
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Copy Over Java SDK Files)]
+### Copy Over Java SDK Files
+
 
   1. Create a folder on your computer to contain your project files. We will call our folder `"custom_java_adapter"`
 
@@ -37,11 +38,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new Java Project)]
+### Create a new Java Project
+
 
   1. Open Eclipse/HANA Studio
 
@@ -54,12 +54,10 @@ For the question below, select the correct answer, and click **Validate**.
 
     ![Create new Java Project](createNewJavaProject.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a new Source Folder)]
+### Create a new Source Folder
+
 
   1. Under the Source tab, click "Create new source folder"
 
@@ -74,11 +72,9 @@ For the question below, select the correct answer, and click **Validate**.
 
     ![Allow Output Folder For Source Folders](allowOutputFolderForSourceFolders.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create a new Java Class
 
-[ACCORDION-BEGIN [Step 4: ](Create a new Java Class)]
 
   1. Right click on our `"src"` folder, and select `New>Class` to create a new Java class.
 
@@ -94,9 +90,6 @@ For the question below, select the correct answer, and click **Validate**.
 
     ![Java Adapter Ready to Develop](javaAdapterReadyToDevelop.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 ---
 
