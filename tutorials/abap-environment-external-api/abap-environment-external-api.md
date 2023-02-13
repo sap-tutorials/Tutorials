@@ -42,6 +42,7 @@ Throughout this tutorial, object names include the suffix `000`. Always replace 
 1. In ABAP Development Tools (ADT), select your ABAP Cloud Project and choose **New > ABAP Package** from the context menu.
 
 2. Enter the following and choose **Next**:
+    - Super-package: *Your super-package, if you are using one*
     - Name = **`Z_API_OVERPASS_000`**
     - Description = **Get map data using Overpass map service API**
     - Add to favorite packages = Yes
@@ -308,7 +309,7 @@ To be able to access the external service, you will:
 5. Catch any potential exceptions that may be thrown.
 
 A sample of the raw XML output is available here:
-[OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/abap-environment-external-api/OverpassRawOutputXML.txt)
+[OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-environment-external-api/OverpassRawOutputXML.txt)
 
 Implement the method **`if_oo_adt_classrun~main`** by inserting the following code. Replace the `000` with your group number or initials.
 
@@ -419,7 +420,7 @@ To be able to access the external service, you must:
 5. Catch any potential exceptions that may be thrown.
 
 A sample of the raw JSON output is available here:
-[OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/abap-environment-external-api/OverpassRawOutputJSON.txt)
+[OverpassRawOutputXML.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-environment-external-api/OverpassRawOutputJSON.txt)
 
 Implement the method **`if_oo_adt_classrun~main`** by inserting the following code. Replace the `000` with your group number or initials.
 

@@ -105,7 +105,7 @@ The error will disappear.
 
 1. Add the following code to the method implementation **`if_mm_pur_s4_pr_modify_item~modify_item`**:
 
-    The `BAdI` returns an information message if the **`doc type`** is standard. Since this scenario happens almost all the time, this is useful for tracing and debugging purposes.
+    The `BAdI` returns an warning message if the **`doc type`** is standard. Since this triggers the `BAdI` almost every time, this is useful for tracing and debugging purposes.
 
         ```ABAP
         CLASS ZIC_PR_ITEM IMPLEMENTATION.
@@ -179,7 +179,7 @@ You will now execute the app while the trace is active.
 
 2. Choose **Edit**.
 
-3. Trigger the `BAdI` by changing the quantity to a value greater than 10, e.g. 20; notice the error message ID, **`BAdI`**.
+3. Trigger the `BAdI`, e.g. by changing the quantity; notice the message ID, **`BAdI`**.
 
     <!-- border -->   
     ![step5c-error](step5c-error.png)
@@ -289,10 +289,10 @@ The ABAP Debugger stops as soon as the value of the variable is changed after a 
 
 ### More information
 - Start here: SAP blog post: [How to Extend SAP Standard Using ADT](https://blogs.sap.com/2020/08/05/how-to-extend-sap-standard-using-adt/)
-- SAP Help Portal: ABAP Development User Guide: [Working with Business Add-Ins (`BAdIs`)](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/04a1d9415efd4e4fbc58534c99c3a0d3.html)
 - Concepts: SAP Help Portal: Enhancement Technologies: [Business Add-Ins (`BAdIs`)](https://help.sap.com/docs/SAP_NETWEAVER_750/46a2cfc13d25463b8b9a3d2a3c3ba0d9/8ff2e540f8648431e10000000a1550b0.html?locale=en-US)
+- Tasks: SAP Help Portal: ABAP Development User Guide: [Working with Business Add-Ins (`BAdIs`)](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/04a1d9415efd4e4fbc58534c99c3a0d3.html)
 - SAP Help Portal: Sourcing and Procurement: [Adaptation of App Behavior (Overview and List of Available `BAdIs`)](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0e602d466b99490187fcbb30d1dc897c/259a396e6bdb4d08b130049880a3920f.html?locale=en-US)
-- [SAP Help Portal: SAP Cloud Platform (Concepts): ABAP Debugger](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/4ec365a66e391014adc9fffe4e204223.html)
-- [SAP Help Portal: SAP Cloud Platform (Tasks): Debugging ABAP Code in ADT](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/4ec33a996e391014adc9fffe4e204223.html)
+- SAP Help Portal: [SAP Cloud Platform Concepts: ABAP Debugger](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/4ec365a66e391014adc9fffe4e204223.html)
+- SAP Help Portal: [SAP Cloud Platform Tasks: Debugging ABAP Code in ADT](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/4ec33a996e391014adc9fffe4e204223.html)
 
 ---
