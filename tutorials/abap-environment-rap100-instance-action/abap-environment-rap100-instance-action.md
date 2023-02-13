@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, topic>abap-development, software-product>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
