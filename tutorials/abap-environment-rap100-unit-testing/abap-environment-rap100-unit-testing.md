@@ -15,7 +15,7 @@ author_profile: https://github.com/mervey45
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
-## You will learn  
+## You will learn   
   - How to create ABAP unit test class
   - How to enhance test class definition
   - How to implement special methods

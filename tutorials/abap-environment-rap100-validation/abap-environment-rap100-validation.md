@@ -17,7 +17,7 @@ author_profile: https://github.com/mervey45
 
 
 ## You will learn  
-  - How to define validations
+  - How to define validations 
   - How to implement validations
   - How to preview and test enhanced travel app
 
