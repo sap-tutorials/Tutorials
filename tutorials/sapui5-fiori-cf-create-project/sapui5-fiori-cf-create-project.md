@@ -3,12 +3,12 @@ parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
-primary_tag:  software-product>sap-launchpad-service
+primary_tag:  software-product>sap-build-work-zone--standard-edition
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
-# Create a Fiori Launchpad App
+# Create an App for SAP Build Work Zone, standard edition
 <!-- description --> After you set up the environment, use the generator to bootstrap a new SAPUI5 project. Learn about the main components of this basic project and the tools that support it.
 
 ## Prerequisites
@@ -87,7 +87,7 @@ Start the web server locally via the command line.
 npm start
 ```
 
-**Click** on the only tile you see in the SAP Fiori Launchpad to start the SAPUI5 application.
+**Click** on the only tile you see in the SAP Build Work Zone site to start the SAPUI5 application.
 
 <!-- border -->![local](./local.png)
 

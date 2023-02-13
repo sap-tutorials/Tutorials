@@ -1049,8 +1049,7 @@ Add the below content to the file.
 
 ```YAML
 applications:
-- name: objectstore-sample-svc
-  host: <unique ID>-objectstore-sample-svc
+- name: <unique ID>-objectstore-sample-svc
   memory: 2G
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   path: target/objectstore-sample-1.0.0.jar

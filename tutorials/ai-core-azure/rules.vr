@@ -1,0 +1,14 @@
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+Which of the following is an Optional Parameter while creating Azure Object store Secret ?
+
+###Match
+[x] TENANT_ID
+[ ] Path Prefix
+[ ] Name
+[ ] Container Uri
+
+[VALIDATE_2]

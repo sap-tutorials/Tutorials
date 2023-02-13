@@ -24,7 +24,10 @@ author_profile: https://github.com/julieplummer20
 - You have assigned the role **`SAP_BR_DEVELOPER`** in both systems; you will need it to create communication artifacts
 
   
+
 ## You will learn 
+
+
   
   - How to create a secure RFC connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to test the connection using an ABAP handler class
@@ -249,6 +252,7 @@ Next, you will create communication arrangement, pointing to the communication s
     ![step4a-comm-management-tiles](step4a-comm-management-tiles.png)
 
 2. Choose your communication scenario, **`Z_OUTBOUND_RFC_000_CS`**. This name is also entered automatically for the communication arrangement. You can accept this default.
+
 
     <!-- border -->
     ![step4a-new-comm-arr](step4a-new-comm-arr.png)

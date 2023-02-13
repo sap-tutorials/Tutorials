@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
