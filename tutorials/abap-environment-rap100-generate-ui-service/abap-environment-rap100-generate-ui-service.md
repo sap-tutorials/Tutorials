@@ -220,8 +220,19 @@ The generated business service will be transactional, draft-enabled, and enriche
     > If you receive an error message **Invalid XML format of the response**, this may be due to a bug in version 1.26 of the ADT tools.  
     > An update of your ADT plugin to version 1.26.3 will fix this issue.
 
-    ![class](tb.png)  
-
+    | **RAP Layer**                          | **Artefacts**           | **Artefact Names**                                  |
+    |----------------------------------------|-------------------------|-----------------------------------------------------|
+    | **Business Object**                    |                         |                                                     |
+    |                                        | **Data Model**          | Data Definition Name: **`ZRAP100_R_TravelTP_###`**  |
+    |                                        |                         | Alias Name: **`Travel`**                            |  
+    |                                        | **Behavior**            | Implementation Class: **`ZRAP100_BP_TravelTP_###`** |
+    |                                        |                         | Draft Table Name: **`ZRAP100_DTRAV###`**            |  
+    | **Service Projection (BO Projection)** |                         | Name: **`ZRAP100_C_TravelTP_###`**                  |
+    | **Business Services**                  |                         |                                                     |
+    |                                        | **Service Definition**  | Name: **`ZRAP100_UI_Travel_###`**                   |
+    |                                        | **Service Binding**     | Name: **`ZRAP100_UI_Travel_O4_###`**                |
+    |                                        |                         | Binding Type: **`OData V4 - UI`**                   | 
+ 
     ![class](new0.png)                    
 
 
