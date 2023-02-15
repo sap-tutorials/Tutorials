@@ -166,7 +166,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine ODBC driver.  
 
->ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
+>ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.   The version used in this tutorial is 22.1.5.  In a later version, an error "Invalid string or buffer length" was seen during connection.
 
 The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
 
