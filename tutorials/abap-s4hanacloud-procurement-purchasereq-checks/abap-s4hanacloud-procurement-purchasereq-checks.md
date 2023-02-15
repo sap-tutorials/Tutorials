@@ -9,7 +9,7 @@ author_profile: https://github.com/julieplummer20
 
 ---
 
-# Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition
+# Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition 
 <!-- description --> Define and implement a developer extension (`BAdI`), which performs checks during creation of a purchase requisition item.
 
 ## Prerequisites 
