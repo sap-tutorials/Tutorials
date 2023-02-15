@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What is the name of the external service?
+
+###Match
+[ ] BUSINESS_PARTNER
+[x] API_BUSINESS_PARTNER
+[ ] BUSINESS_PARTNER_SERVICE
+[ ] API_BUSINESS_SERVICE
+
+[VALIDATE_1]

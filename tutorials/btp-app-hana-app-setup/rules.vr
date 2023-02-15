@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which value for kind allows to use SQLite in development and SAP HANA in productive mode?
+
+###Match
+[ ] sqlite
+[ ] hana
+[x] sql
+
+[VALIDATE_1]

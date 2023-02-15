@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which is the correct topic to select if you want to receive events when Business Partners are created and changed?
+
+###Match
+[x] sap/s4/beh/businesspartner/v1/BusinessPartner/*
+[ ] sap/s4/beh/businesspartner/v1/BusinessPartnerChanged/*
+[ ] sap/s4/beh/businesspartner/v1/BusinessPartnerCreated/*
+
+[VALIDATE_1]

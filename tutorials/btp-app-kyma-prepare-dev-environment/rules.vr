@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What is the command for creating a Kubernetes namespace with name `my-namespace`?
+
+###Match
+[ ] `kubectl create-namespace my-namespace`
+[x] `kubectl create namespace my-namespace`
+[ ] `kubectl create --namespace=my-namespace`
+
+[VALIDATE_1]

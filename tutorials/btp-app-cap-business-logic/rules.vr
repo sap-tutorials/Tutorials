@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which hook allows you to modify data returned by the service?
+
+###Match
+[ ] before
+[ ] read
+[x] after
+[ ] for
+
+[VALIDATE_1]

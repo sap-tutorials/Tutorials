@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which command is used to display application logs?
+
+###Match
+[ ] cf tail
+[ ] cf status
+[x] cf logs
+[ ] cf logger
+
+[VALIDATE_1]

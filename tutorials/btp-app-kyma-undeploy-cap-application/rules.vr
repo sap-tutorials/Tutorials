@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What's the command for deleting the database secret?
+
+###Match
+[ ] helm uninstall secret cpapp-db
+[x] kubectl delete secret cpapp-db
+[ ] kubectl delete-secret cpapp-db
+[ ] kubectl delete --secret cpapp-db
+
+[VALIDATE_1]

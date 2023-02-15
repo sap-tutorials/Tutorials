@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What is the term used for service assignments to your account?
+
+###Match
+[ ] quota
+[ ] service plan
+[x] entitlement
+[ ] subscription
+
+[VALIDATE_1]

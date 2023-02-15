@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+How do you add event definitions from external SAP S/4HANA cloud events to your CAP app?
+
+###Match
+[ ] Copy files from templates to the `db/data` folder
+[ ] Edit the `package.json` file
+[x] Copy files from templates to the `srv/external` folder
+
+[VALIDATE_1]

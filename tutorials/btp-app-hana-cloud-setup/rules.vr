@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which statement is true for using an existing SAP HANA Cloud instance?
+
+###Match
+[ ] You don't have to map the existing SAP HANA Cloud instance to your space if the SAP HANA Cloud instance is in a different organization.
+[ ] You don't have to map the existing SAP HANA Cloud instance to your space if the SAP HANA Cloud instance is in a different space of the same organization.
+[x] You have to map the existing SAP HANA Cloud instance to your space if the SAP HANA Cloud instance is in a different space.
+
+[VALIDATE_1]

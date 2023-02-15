@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which package adds multi-target application build support to your app?
+
+###Match
+[ ] mta-build
+[ ] mta
+[x] mbt
+[ ] build mbt
+
+[VALIDATE_1]

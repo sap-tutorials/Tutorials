@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+How is a CI/CD build triggered?
+
+###Match
+
+[x] By updating your main branch (using GitHub Webooks)
+[x] By triggering it from the UI
+[x] Periodically in a given time interval
+
+[VALIDATE_1]

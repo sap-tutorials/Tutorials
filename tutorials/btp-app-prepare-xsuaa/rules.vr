@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which annotation marks a service as secured?
+
+###Match
+[ ] @secure
+[ ] @authenticate
+[x] @restrict
+[ ] @authorize
+
+[VALIDATE_1]

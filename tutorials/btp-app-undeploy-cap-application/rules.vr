@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What command was used to delete Multi-Target Applications (MTA) from Cloud Foundry?
+
+###Match
+[ ] cf delete
+[ ] cf remove
+[x] cf undeploy
+[ ] cd unbind
+
+[VALIDATE_1]

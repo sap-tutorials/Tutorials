@@ -1,0 +1,17 @@
+[VALIDATE_6]
+###Rule
+exact-match
+
+###Match
+mvn clean install
+
+[VALIDATE_6]
+
+[VALIDATE_9]
+###Rule
+exact-match
+
+###Match
+com.sap.cloud.sample.helloworld.HelloWorldServlet
+
+[VALIDATE_9]

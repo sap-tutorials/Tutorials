@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+How can you bind the Connectivity service to your CAP service?
+
+###Match
+[ ] modifying the cpapp-connectivity resource in the mta.yaml file
+[x] modifying the cpapp-srv module in the mta.yaml file
+[ ] modifying the package.json file
+
+[VALIDATE_1]

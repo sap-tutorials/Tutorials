@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+After adding the CAP role restriction to entities, what can a user with role `RiskViewer` do?
+
+###Match
+[ ] view and change risks and mitigations
+[ ] view and change risks
+[x] view risks and mitigations
+[ ] view risks
+
+[VALIDATE_1]

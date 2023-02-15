@@ -1,0 +1,16 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+Mark the correct statements.
+
+###Match
+[ ] The `pack` command builds and pushes the Docker image.
+[x] The `pack` command builds the Docker image.
+[ ] You need to first run the `pack` and then `cds build` in order to build the Docker image.
+[x] You need to first run `cds build` and the `pack` in order to build the Docker image.
+[x] You have to run `helm upgrade cpapp ./chart --install` to deploy your service.
+[ ] You have to run `helm install cpapp ./chart --upgrade` to deploy your service.
+
+[VALIDATE_1]

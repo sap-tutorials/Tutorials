@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+Which runtime environments are supported for CAP?
+
+###Match
+[ ] Deno
+[x] Java
+[x] Node.js
+[ ] Chakra
+
+[VALIDATE_1]

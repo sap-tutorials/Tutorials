@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which command was used to create the CAP project?
+
+###Match
+[ ] cds start
+[ ] cds bootstrap
+[x] cds init
+[ ] cds build
+
+[VALIDATE_1]

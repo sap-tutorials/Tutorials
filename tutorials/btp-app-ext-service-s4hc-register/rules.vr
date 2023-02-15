@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which SAP S/4HANA Cloud Extensibility service plan is needed for generic access for SAP S/4HANA Cloud APIs?
+
+###Match
+[x] api-access
+[ ] messaging
+[ ] both
+
+
+[VALIDATE_1]
