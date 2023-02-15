@@ -446,6 +446,11 @@ The following steps walk through the process of exporting to and importing data 
 For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 
 
+### Export and import with data lake Relational Engine (optional)
+An export and import wizard is also provided for data lake Relational Engine instances.  For tables or views, the export data wizard can be accessed by a context menu on the table or view that you wish to export data from or for tables, an import data context menu is available.
+
+Further details on the topic are available at [SAP HANA Cloud, Data Lake Load and Unload Management](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8942f1c84f2101594aad09c82c80aea/e77c96193a604e05ba198e424de2ed6c.html).
+
 ### Export and import schema or catalog objects
 
 

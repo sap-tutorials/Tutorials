@@ -41,7 +41,6 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 ### Overview of SAP HANA Cloud and SAP HANA, express edition
 
-
 There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.  This tutorial will discuss SAP HANA Cloud and SAP HANA, express edition.
 
 |  Version     | Notes
@@ -54,7 +53,6 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 
 ### SAP HANA Cloud
-
 
 Here are a few benefits of using SAP HANA Cloud:
 
@@ -91,7 +89,7 @@ Here are a few benefits of using SAP HANA Cloud:
     <!-- border -->![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
-    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  
+    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is avialable in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
     * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 

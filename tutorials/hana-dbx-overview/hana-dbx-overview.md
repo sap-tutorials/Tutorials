@@ -24,7 +24,6 @@ primary_tag: software-product>sap-hana-cloud
 
 ### SAP HANA database explorer overview
 
-
 The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, executing SQL statements, creating remote sources, working with multi-model data such as graph, spatial and JSON collections, debugging SQLScript, viewing trace files, and troubleshooting.  
 
 It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  The SAP HANA Cloud version offers support for data lake Relational Engine connections, and as of March 14 2022, support was added for the data lake Files container.
@@ -110,7 +109,7 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 ### SAP HANA Cloud free tier or trial
 
->To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 6 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.
+To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 6 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is avialable in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
 Continue on to the next tutorial in this group once you have access to an SAP HANA instance.
 
