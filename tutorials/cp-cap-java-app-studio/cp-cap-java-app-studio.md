@@ -154,6 +154,8 @@ In this step, you will define a simple service, which also defines its own entit
     mvn clean install
     ```
 
+> You might need to adapt the JDK version in the parent `pom.xml` to 11 and run `mvn clean install` again to proceed.
+
 Running this for the first time in a fresh dev space might take a while, depending on the network. Please wait until you see the **BUILD SUCCESS** message before continuing with the tutorial.
 
 After running this command, some files are generated and added to the `srv/src/main/resources/edmx` folder. This is the default path, where CAP Java runtime looks for the model definitions.
