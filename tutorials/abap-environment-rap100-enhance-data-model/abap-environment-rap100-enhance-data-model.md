@@ -35,10 +35,11 @@ author_profile: https://github.com/mervey45
 
 Define and expose new associations in the base BO data model defined in the CDS view entity **`ZRAP100_R_TRAVELTP_###`**:  
 
-  - Associations to the business entities `_Customer_ (_\_Customer_) and _Agency_ (_\_Agency_)`
-  - Associations to helpful information about `_Overall Status_ (_\_OverallStatus_) and _Currency_ (_\_Currency_)`
+  - Associations to the business entities `/DMO/I_Customer` and `/DMO/I_Agency` 
 
-  1. Define the new associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`**, and **`_Currency`**. Open your data definition ![datadefinition](adt_ddls.png) **`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the `_select_` statement as shown on the screenshot below. Format the source code with **Pretty Printer** **(Shift+F1)**.   
+  - Associations to the value help views  `I_Currency` and `/DMO/I_Overall_Status_VH` 
+   
+  1. Define the new associations **`_Agency`**, **`_Customer`**, **`_OverallStatus`**, and **`_Currency`**. Open your data definition ![datadefinition](adt_ddls.png) **`ZRAP100_R_TRAVELTP_###`** and insert the following code snippet after the `select` statement as shown on the screenshot below. Format the source code with **Pretty Printer** **(Shift+F1)**.   
 
     ```ABAP
     association [0..1] to /DMO/I_Agency            as _Agency        on $projection.AgencyID = _Agency.AgencyID
@@ -220,7 +221,8 @@ Enhance the metadata extension![ddlx icon](adt_ddlx.png) to change the appearanc
     - Element **`BookingFee`** - should not be displayed in the list table.
     - Element **`TotalPrice`** - should not be displayed in the list table.
     - Element **`CurrencyCode`** - should not be explicitly displayed, neither in the list table nor on the object page.
-      >Note: The currency code will be automatically displayed on the UI thanks to `@consumption` annotations specified for the element `CurrencyCode` in the BO projection view.
+       **Note:** The currency code will be automatically displayed on the UI thanks to `@consumption` annotations specified for the element `CurrencyCode` in the BO projection view.
+    
     - Element **`Description`** - should not be displayed in the list table.
     - Element **`OverallStatus`** - should have a high display importance on small windows and only its associated descriptive text should be displayed on the UI.
     - Element Attachment - should only be displayed on the object page - not in the list table.
@@ -242,6 +244,8 @@ Enhance the metadata extension![ddlx icon](adt_ddlx.png) to change the appearanc
 Test the enhanced SAP Fiori elements application.
 
   1. Open your service binding ![servicebinding](adt_srvb.png) **`ZRAP100_UI_TRAVEL_O4_###`** and double-click the **Travel** entity set to open the SAP Fiori elements preview.
+
+    ![package](preview4.png)
 
   2. Click **Go** on the app and check the result.
 
