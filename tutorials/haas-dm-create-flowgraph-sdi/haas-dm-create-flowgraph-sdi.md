@@ -4,25 +4,28 @@ auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, topic>big-data, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
 
 # Create a Flow Graph to Replicate Data
+
 <!-- description --> Create a flow graph using SAP HANA service smart data integration for SAP BTP to replicate data into SAP HANA service for SAP BTP.
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have configured SAP HANA service smart data integration for SAP BTP [as explained in this tutorial](haas-dm-connect-sdi).
- - You have created a remote source and configured the access [as explained in this tutorial](haas-dm-access-cross-container-schema).
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have configured SAP HANA service smart data integration for SAP BTP [as explained in this tutorial](haas-dm-connect-sdi).
+- You have created a remote source and configured the access [as explained in this tutorial](haas-dm-access-cross-container-schema).
 
 ## You will learn
-  - How to Create a Virtual Table in SAP Web IDE
-  - How to create a flowgraph to load data from the virtual table
 
+- How to Create a Virtual Table in SAP Web IDE
+- How to create a flowgraph to load data from the virtual table
+
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
 ### Create a Virtual Table

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -317,7 +317,6 @@ ai_api_client = AIAPIV2Client(
 
 ### Perform an action in SAP AI Core
 
-
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click on **Scenarios** in the **ML Operations** app. The term Scenario refers to a use case. You may not have any scenario listed. You will learn how to add workflows (AI pipelines) to SAP AI Core in future tutorials, which can then be used to create scenarios.
@@ -332,12 +331,13 @@ List all the resource groups. Check that there is a resource group named **defau
 
 <!-- border -->![image](img/postman/rg.png)
 
-### Troubleshooting
+>**Troubleshooting (Optional)**
 
-If you receive the error: `RBAC: Access Denied`:
+>If you receive the error: `RBAC: Access Denied`:
 
-1. Click on the collection named **AI Core**, click the **Authorization** tab, and check whether a token is being used or not. It might be that you generated a token but forgot to click **Use Token** in the process.
-2. Click the **Variables** tab and check if the value for `baseUrl` matches the value of `AI_API_URL` and you have the suffix `/v2` at the end.
+>1. Click on the collection named **AI Core**, click the **Authorization** tab, and check whether a token is being used or not. It might be that you generated a token but forgot to click **Use Token** in the process.
+
+>2. Click the **Variables** tab and check if the value for `baseUrl` matches the value of `AI_API_URL` and you have the suffix `/v2` at the end.
 
 [OPTION END]
 

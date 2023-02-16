@@ -2,24 +2,24 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-work-zone]
-primary_tag: software-product>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add a URL App to Your SAP Work Zone Page
-<!-- description --> Create a URL app and add it to a page in SAP Work Zone.
+# Add a URL App to Your Workpage in SAP Build Work Zone, advanced edition
+<!-- description --> Create a URL app and add it to your workpage in an SAP Build Work Zone, advanced edition site.
 
 ## Prerequisites
-- A subaccount in SAP BTP that includes a subscription to the SAP Work Zone service has already been setup for you. Note that SAP Work Zone is not available in a trial account.
-- You've already designed the **Home** page where you'll add this app.   
+- A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service has already been setup for you. Note that SAP Build Work Zone, advanced edition is not available in a trial account
+- You've already designed the **Home** page where you'll add this app  
 
 
 
 
 ## You will learn
-  - How to configure a URL app and add it to your **Home** page in SAP Work Zone
+  - How to configure a URL app and add it to your **Home** page
 
 
 ## Intro
@@ -77,7 +77,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
         <!-- border -->![Define navigation properties](6-navigation-properties.png)
 
-5. Click the **VISUALIZATION** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your work zone.
+5. Click the **VISUALIZATION** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
 
 6. Enter the following values:
 
@@ -107,7 +107,7 @@ You can see your app in the list of content items in the **My Content** screen:
 
   <!-- border -->![View app in my content](9-view-app.png)
 
-To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your work zone. This is described in the following steps.
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your site. This is described in the following steps.
 
 
 
@@ -139,7 +139,7 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 ### Create a group and assign the app to it
 
 
-A group is a set of one or more apps displayed together on the **Applications** page of your work zone. Assigning apps to groups, makes them visible to the user on this page. In this step you'll create a new group and assign the app to it.
+A group is a set of one or more apps displayed together on the **Applications** page of your site. Assigning apps to groups, makes them visible to the user on the workpage. In this step you'll create a new group and assign the app to it.
 
 1. Click the icon in the side panel to navigate back to the **Content Manager**.
 
@@ -157,23 +157,23 @@ A group is a set of one or more apps displayed together on the **Applications** 
 
     <!-- border -->![Assign app to group](15-assign-app-to-group.png)
 
-Your app is configured. Now you'll go to the SAP Work Zone **Applications** page to see that the app appears there.
+Your app is configured. Now you'll go to the **Applications** page to see that the app appears there.
 
 
 
-### View the app in the Applications page of your work zone
+### View the app in the Applications page of your site
 
 
 
-1. Click the **Work Zone Directory** icon in the side panel.
+1. Click the **Site Directory** icon in the side panel.
 
     <!-- border -->![Go to Site Directory](16-go-to-site-directory.png)
 
-2. Click the **Open work zone** icon.
+2. Click the **Open site** icon.
 
     <!-- border -->![Open work zone](17-open-work-zone.png)
 
-3. In the top-level menu of your work zone, click **Applications**.
+3. In the top-level menu of your site, click **Applications**.
 
     <!-- border -->![Open Applications page](18-open-applications-page.png)
 
@@ -194,7 +194,7 @@ Now you're going to add this app to the **Home** page.
 
     > You can also navigate back to the **Home** page from the top navigation bar.  Click **Home** and then select **Home** next to the little house icon.
 
-2. Click the **Expand page settings** wand on the right of the page to expose various icons and then click the pencil icon directly under the wand to open the Page Designer. You can close the tips screen.
+2. Click the pencil icon to open the Page Designer.
 
     <!-- border -->![Open page designer](21-open-page-designer.png)
 
@@ -205,29 +205,15 @@ Now you're going to add this app to the **Home** page.
 
 In the previous tutorial, you added a header to your **Home** page and underneath it, you added a SAPUI5 app. You're now going to add the URL app next to the existing app.
 
-1. Scroll down to the bottom of the page and in the last row, next to the `New Orders` app, click the **+** icon to add another column.
+1. Scroll down to the bottom of the page and in the same section as the `New Orders` app, click the **+ Add Application Tiles**.
 
     <!-- border -->![Add Widget](22-add-widget.png)
 
-2. Click **Add Widget** to open the widget gallery.
 
-2. Under **Standard Tools**, select the **Applications** widget.
-
-    <!-- border -->![Add the Applications widget](23-applications-widget.png)
-
-    >Note that you can also select the **Applications Group** widget to add all the apps that are assigned to a specific group.
-
-3. In the Search box, start typing in the name of your app `Innovation at SAP`, select the app, and then click **Select**.
+2. In the **Tiles** screen, from the search box, start typing in the name of your app `Innovation at SAP`, select the app, and then click **Add**. The app is added to the section on your workpage.
 
     <!-- border -->![Select the app](24-select-app.png)
 
-4. This is how the row with your apps looks:
-
-    <!-- border -->![View row with apps](25-view-second-widget.png)
-
-5. Hover between the 2 columns until you see the column separator and drag it until both apps are aligned.
-
-    <!-- border -->![Align apps](26-align-apps.png)
 
 6. Scroll to the top of the screen and click **Publish**.
 
@@ -236,7 +222,3 @@ In the previous tutorial, you added a header to your **Home** page and underneat
     <!-- border -->![View home page with 2 apps](25-homepage-apps2.png)
 
 7. Click the apps to open them.
-
-
-
-

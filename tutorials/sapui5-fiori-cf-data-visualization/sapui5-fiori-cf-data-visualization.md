@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-build-work-zone--standard-edition, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: programming-tool>odata
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
@@ -130,7 +130,7 @@ You can read more about `VizFrame`s in the [SAPUI5 API Reference](https://sapui5
 
 ### Navigate to the new view
 
-In order to see the new view in your application in the browser, you have to navigate there manually using the pattern you already inspected in step 2. If your application is running in a Fiori Launchpad, attach `&/RouteSales` to the URL. If your application runs standalone, attach `#/RouteSales` to the URL. There is a difference between these two scenarios, because your application in the Fiori Launchpad already requires a hash (`#`) to navigate to it and there is only one hash allowed in a URL.
+In order to see the new view in your application in the browser, you have to navigate there manually using the pattern you already inspected in step 2. If your application is running in a SAP Build Work Zone site, attach `&/RouteSales` to the URL. If your application runs standalone, attach `#/RouteSales` to the URL. There is a difference between these two scenarios, because your application in SAP Build Work Zone already requires a hash (`#`) to navigate to it and there is only one hash allowed in a URL.
 
 ![screen shot of sales view in the browser](salesview.png)
 
@@ -158,7 +158,5 @@ sap.ui.define([
 After saving the file, your browser should automatically refresh the page. You can now click on any data point to get the popover with its exact data.
 
 ![screen shot of popover](popover.png)
-
-
 
 ---

@@ -4,8 +4,8 @@ author_name: Annika Gonnermann
 author_profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
-primary_tag: software product>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 # Take a Tour of SAP BTP Trial
@@ -30,9 +30,9 @@ So, you've signed up for SAP BTP trial but are not quite sure where to start? Th
 
 A trial account on SAP Business Technology Platform enables you to experience the platform for free for a limited amount of time, offering access to a comprehensive set of platform services, as well as early access to beta functionality. Trial accounts are intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
 
-**Note:** You want to explore SAP Business Technology Platform without time constraints? See [btp-free-tier-account](Get an Account on SAP BTP to Try Out Free Tier Service Plans)
+>You want to explore SAP Business Technology Platform without time constraints? See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
 
-You can use your SAP BTP trial account for up to 365 days in total. However, your trial account is suspended after 30 days but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 365 days total, you trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
+You can use your SAP BTP trial account for up to 90 days in total. However, your trial account is suspended after 30 days, but don't worry, you can easily extend that time by selecting **Extend Trial** in the popup window that appears once your trial account has been suspended. After 90 days total, your trial account is deleted but you can always create a new account. For more information, see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
 
 All trial accounts are already using cloud management tools feature set B. See: [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -48,7 +48,7 @@ To become familiar with the specifics of the trial offerings, have a look at the
 - [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/2ffdd2412aff494dbf3de31089c965d4.html?locale=en-US&version=Cloud)
 - [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
 
-### Cloud Foundry
+#### Cloud Foundry
 In addition to global accounts, directories, and subaccounts, the Cloud Foundry environment includes another hierarchical level represented by **orgs** and **spaces**.
 
 **Each Cloud Foundry subaccount contains exactly one Cloud Foundry org.** They have a 1:1 relationship. When you create a Cloud Foundry trial account, you get a global account with one Cloud Foundry subaccount in it, where the org is created automatically. You have the option to create additional Cloud Foundry subaccounts within your trial global account, however, in those, you must create an org yourself by selecting **Enable Cloud Foundry**.
@@ -57,12 +57,12 @@ In addition to global accounts, directories, and subaccounts, the Cloud Foundry 
 
 ![Cloud Foundry trial account model](cf-trial-account-model.png)
 
-### ABAP
+#### ABAP
 Within the Cloud Foundry environment, you can create a new space for ABAP development. This is what we refer to as the ABAP environment. It allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
 
 The ABAP environment is based on the latest ABAP platform cloud release that is also used for SAP S/4HANA Cloud. It leverages the innovations provided by SAP HANA. The software stack contains standard technology components that are familiar from the standalone Application Server ABAP. The ABAP environment supports the ABAP RESTful Application Programming Model including SAP Fiori and Core Data Services (CDS). SAP Services and APIs are offered according to a new allowlist approach. The ABAP environment provides technical access to SAP Business Technology Platform services, such as destination service, integration, machine learning, and IoT.
 
-### Kyma
+#### Kyma
 Kyma environment is a runtime you can use to build cloud-native Kubernetes-based extensions by using microservices and serverless functions. The offered functionality ensures smooth consumption of SAP and non-SAP applications, running workloads in a highly scalable environment, and building event-based and API-based extensions. To enable Kyma trial, log in to your SAP BTP trial home, create a subaccount, add entitlements, and select **Enable Kyma** in the **Overview** section of your subaccount.
 
 ### Entitlements
@@ -106,17 +106,17 @@ There are two ways of navigating in the cockpit:
 - using the left hand-side navigation,
 - or using the breadcrumbs at the top of the page.
 
-There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.). We will refer to the sum of these actions as a **scope**. For example, when you are in a global account, you can add global account members, create subaccounts, and add entitlements to subaccounts. They represent the **global account scope**.
+There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.). The sum of these actions is referred to as a **scope**. For example, when you are in a global account, you can add global account members, create subaccounts, and add entitlements to subaccounts. They represent the **global account scope**.
 
 This scope is reflected in both the left hand-side navigation and the breadcrumbs. This step helps you understand how to use both of them together to navigate through the cockpit in the most efficient way possible.
 
-### Left hand-side navigation
+#### Left hand-side navigation
 
 The left hand-side navigation changes depending on where you are in the cockpit. It reflects the actions possible in that scope.
 
 ![Global Account Left-Hand Navigation](ga-lhn.png)
 
-### Breadcrumbs
+#### Breadcrumbs
 
 You may ask yourself: "If the left hand-side navigation changes depending on where you are in the cockpit, then how can you navigate back?" Simple! You use the breadcrumbs at the top.
 
@@ -157,6 +157,3 @@ Here are some of the tasks you can use the CLI for:
 - Subscribing to applications
 
 To find out more about the btp CLI, you can have a look at this tutorial: [Get Started with the SAP BTP command line interface (btp CLI)](cp-sapcp-getstarted).
-
-
----

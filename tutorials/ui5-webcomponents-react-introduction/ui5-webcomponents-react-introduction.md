@@ -69,9 +69,7 @@ With this you created your first `React` component. To actually render the compo
 ### Embed your new component
 
 
-1. In `App.js` remove everything inside of the `<ThemeProvider>` (or [React.Fragment](https://reactjs.org/docs/fragments.html) `<></>`). You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
-
-> If the `ThemeProvider` is not present in this file, please look in the `index.js` file to see if the component is there. If it is, you do not need to use it here as well, otherwise please continue as described.
+1. In `App.js` remove everything inside of the [React.Fragment](https://beta.reactjs.org/apis/react/Fragment) (`<></>`) and delete the imports (`./App.css` and `@ui5/webcomponents-react`)
 
 2. Import your created component.
 
@@ -83,34 +81,45 @@ With this you created your first `React` component. To actually render the compo
     ```JavaScript  / JSX
     function App() {
       return (
-        <ThemeProvider>
+        <>
           <MyApp />
-        </ThemeProvider>
+        </>
       );
     }
     ```
 
+    > Note that `<MyApp />` is using a self closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and JSX tags. [Here](https://beta.reactjs.org/learn/writing-markup-with-jsx) you can find out more about JSX in general.
+
+4. Check whether the `ThemeProvider` component is used to wrap your `App` component inside `index.js`. The `ThemeProvider` is necessary for using `@ui5/webcomponents-react`, it enables theming, translations, etc.
+
 Your `App.js` file should now look like this:
 
 ```JavaScript  / JSX
-import React from "react";
 import { MyApp } from "./MyApp";
-import { ThemeProvider } from "@ui5/webcomponents-react";
 
 function App() {
   return (
-    <ThemeProvider>
+    <>
       <MyApp />
-    </ThemeProvider>
+    </>
   );
 }
 
 export default App;
 ```
 
+And the render method inside the `index.js` file, like this:
+
+```JavaScript  / JSX
+root.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
+);
+```
+
 
 ### Launch the app to start developing
-
 Now you can start the app in development mode. Execute the following command from the root directory of the project.
 
 ```Shell

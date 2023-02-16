@@ -154,10 +154,6 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Generated Service Name](generated_service_name.png)
 
-1. If prompted, select the first suggested Cloud Foundry service plan with the name **hdi-shared**
-
-    ![CF Plan](cf-plan.png)
-
 1. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     ![Service Creation Progress](progress.png)

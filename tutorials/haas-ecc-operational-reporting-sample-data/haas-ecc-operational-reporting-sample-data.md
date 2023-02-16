@@ -4,26 +4,29 @@ time: 40
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
 
 # SAP HANA service for SAP BTP explore Operational Reporting for SAP ERP Central Component using test data
+
 <!-- description --> Clone and deploy the Calculation Views for SAP ERP Central Component Operational Reporting and import test data to consume from SAP Analytics Cloud
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have a productive instance of the [SAP HANA service for SAP BTP on SAP BTP, Cloud Foundry environment](group.hana-service-setup) **or** have signed up for a [SAP BTP trial account](hcp-create-trial-account) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
- - You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
 
-## Intro
->**This tutorial cannot currently be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have a productive instance of the [SAP HANA service for SAP BTP on SAP BTP, Cloud Foundry environment](group.hana-service-setup) **or** have signed up for a [SAP BTP trial account](hcp-create-trial-account) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
+- You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
 
 ## You will learn
-  - How to import and deploy the template calculation views into SAP HANA using SAP Web IDE
-  - How to remove the pre-built artifacts for Smart Data Integration to explore the templates using the test data
+
+- How to import and deploy the template calculation views into SAP HANA using SAP Web IDE
+- How to remove the pre-built artifacts for Smart Data Integration to explore the templates using the test data
 
 **If you would like to deploy the SAP HANA Operational Reporting Templates for  SAP ERP Central Component (ECC) including the artifacts to integrate with an SAP ERP Central Component system, refer to the [instructions in the repository](https://github.com/SAP-samples/hana-xsa-live-reporting/blob/master/README.md)**
 
+## Intro
+
+>**This tutorial cannot currently be completed with a trial account.**
 ---
 
 ### Clone repository

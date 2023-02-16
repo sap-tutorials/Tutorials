@@ -13,18 +13,18 @@ author_profile: https://github.com/mervey45
 <!-- description --> Create a purchase contract via EML, then create a new purchase order with reference to the newly created purchase contract.
 
 ## Prerequisites  
-- **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program.
 - You have a license for SAP S/4HANA Cloud and have a developer user in it
 - You have installed the latest [Eclipse with ADT](abap-install-adt).
-
-## Intro
->**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
-
 
 ## You will learn  
 - How to create a purchase contract
 - How to create a purchase order
 - How to run ABAP classes
+
+
+## Intro
+>**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+
 
 ---
 
@@ -503,6 +503,3 @@ author_profile: https://github.com/mervey45
 
 
 ### Test yourself
-
-
-

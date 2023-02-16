@@ -12,13 +12,13 @@ author_profile: https://github.com/mervey45
 ## Prerequisites  
 Assign the Business Catalog **`SAP_CORE_BC_EXT`** and **`SAP_CORE_BC_COM`** to your user.
 
-
-
-## Intro
-If you need access to data in your system in a way the system does not offer so far, you can create your own data access by making use of a custom Core Data Services view (custom CDS view). Usually, the data of an application is distributed across several database tables. Using CDS views allows you to model the data access without changing underlying database tables. In general, CDS views are intended to be consumed by a UI, analytics or other systems. CDS View can be built on CDS Views as well. To simplify the data access there are pre-delivered CDS Views, custom CDS views can only be built on.
 ## You will learn  
 - How to create a CDS view to minimize a data set exposed to customer
 - How to expose the CDS view as a web service
+
+## Intro
+If you need access to data in your system in a way the system does not offer so far, you can create your own data access by making use of a custom Core Data Services view (custom CDS view). Usually, the data of an application is distributed across several database tables. Using CDS views allows you to model the data access without changing underlying database tables. In general, CDS views are intended to be consumed by a UI, analytics or other systems. CDS View can be built on CDS Views as well. To simplify the data access there are pre-delivered CDS Views, custom CDS views can only be built on.
+
 ## Time to Complete
 **15 Min**.
 

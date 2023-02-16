@@ -2,13 +2,13 @@
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
+primary_tag: software-product>sap-build-apps--enterprise-edition
 author_name: Daniel Wrolewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Fetch Data from Public API to Your AppGyver Application
+# Fetch Data from Public API to Your SAP Build Application
 <!-- description --> Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
 
 ## You will learn
@@ -22,7 +22,7 @@ In the previous tutorial, you learned how to connect your application to a publi
 
 ### Remove alert component
 
-Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
+Open your draft application in your Composer account, displaying your barcode scanner app.
 
 As you no longer need your application to send an alert, as this was just used as a test, you need to start by removing the alert component in your logic flow.
 
@@ -142,7 +142,7 @@ The data variables are now configured for your application.
 
     Now you must store the data you just retrieved to the data variable.
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
+    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
     -  Select **Output value of another node** and then choose the following:
 

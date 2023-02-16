@@ -1,7 +1,9 @@
 ---
 parser: v2
+author_name: Annika Gonnermann
+author_ profile: https://github.com/AnnikaGonnermann
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>type>free-tier]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-business-technology-platform
 ---
 

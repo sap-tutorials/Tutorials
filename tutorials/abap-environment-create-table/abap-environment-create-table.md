@@ -9,7 +9,7 @@ author_profile: https://github.com/mervey45
 ---
 
 # Create a Simple Database Table for ABAP Environment
-<!-- description --> Create a database table in SAP BTP, ABAP Environment and prefill it with data.
+<!-- description --> Create a database table in SAP BTP, ABAP Environment and pre-fill it with data.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or license.
@@ -165,7 +165,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     *   check the result
         SELECT * FROM ztbooking_xxx INTO TABLE @it_bookings.
         out->write( sy-dbcnt ).
-        out->write( 'data inserted successfully!').
+        out->write( 'data inserted successfully!' ).
 
       ENDMETHOD.
 
@@ -197,6 +197,3 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
 
 ### Test yourself
-
-
-
