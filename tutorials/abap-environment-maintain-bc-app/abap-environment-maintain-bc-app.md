@@ -1,5 +1,6 @@
 ---
-parser: v2
+title: Use Custom Business Configurations app
+description: How to use the Custom Business Configurations app to maintain configurations
 auto_validation: true
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
@@ -8,20 +9,17 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-# Use Custom Business Configurations app
-<!-- description --> Learn how to use the Custom Business Configurations app to maintain configurations.
-
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - This is the third tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
-
 ## You will learn  
-- How to use the Custom Business Configurations app to maintain configurations
+- How start the Custom Business Configurations app
+- Maintain configuration entries
+- Create and select a Customizing Transport Request
 
-
-## Intro
+### Intro
 The [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app serves as an entry point to the configuration objects provided by different applications or partners. You can use the app to adjust these configuration objects to change and influence the system behavior.
 
 The required business catalog is contained in business role template `SAP_BR_BPC_EXPERT (Configuration Expert - Business Process Configuration)`. Ensure the user responsible for maintaining the error codes has this role assigned.
@@ -29,8 +27,8 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 >**Hint:** The trial user in SAP BTP ABAP trial system already has the required catalog.
 
 ---
-### Custom Business Configurations
 
+[ACCORDION-BEGIN [Step 1: ](Custom Business Configurations)]
 
   1. Start the SAP Build Work Zone. You can start the SAP Build Work Zone from ADT if you right-click on your ABAP system in the project explorer and select **Properties**, select **ABAP Development** and click on the system URL.
 
@@ -117,10 +115,10 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 
 >Business Configuration content can be recorded on both software components of type `Business Configuration` or `Development`. The former is recommended, see also [Business Configuration for SAP Cloud Platform ABAP Environment | SAP Blogs](https://blogs.sap.com/2019/12/20/business-configuration-for-sap-cloud-platform-abap-environment/). The transport request must have the attribute `SAP_ATO_TRANSPORT_TYPE` set to `BC` and the attribute `SAP_CUS_TRANSPORT_CATEGORY` set to `DEFAULT_CUST` or `MANUAL_CUST`.
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
-### Test yourself
-
-
-
----
+[VALIDATE_1]
+[ACCORDION-END]

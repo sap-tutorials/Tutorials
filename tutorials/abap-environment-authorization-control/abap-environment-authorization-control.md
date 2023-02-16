@@ -1,5 +1,6 @@
 ---
-parser: v2
+title: Provide authorization control for a Business Configuration Maintenance Object
+description: Provide authorization control for a Business Configuration Maintenance Object
 auto_validation: true
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
@@ -8,21 +9,17 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-# Provide authorization control for a Business Configuration Maintenance Object
-<!-- description --> Provide authorization control for a Business Configuration Maintenance Object
-
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment license. If you have only a trial account, you can skip this tutorial.
 - This is the second tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
-
 
 ## You will learn  
 - How to create an IAM app
 - How to create Business Catalog
 - How to create and assign an IAM Business Catalog to a Business Role
 
-## Intro
+### Intro
 [Authorization control in RAP](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/375a8124b22948688ac1c55297868d06.html) protects your business object against unauthorized access to data:
 
  - To protect data from unauthorized read access, ABAP CDS provides its own authorization concept based on a data control language (DCL).
@@ -31,8 +28,8 @@ author_profile: https://github.com/mervey45
 For this purposes the generated business object is checking authorization object `S_TABU_NAM` with the CDS entity `ZI_ERRORCODE###` and activity `03` (read) / `02` (modify).
 
 ---
-### Create IAM app
 
+[ACCORDION-BEGIN [Step 1: ](Create IAM app)]
 
   1. Right-click on package **`Z_ERROR_CODES_###`**, select **New** > **Other ABAP Repository Object**.
 
@@ -87,10 +84,10 @@ For this purposes the generated business object is checking authorization object
 
  12. Save the IAM app. Further information on IAM apps can be found [here](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/032faaf4f9184484ba9295c81756e831.html).
 
+[DONE]
+[ACCORDION-END]
 
-
-### Create business catalog
-
+[ACCORDION-BEGIN [Step 2: ](Create business catalog)]
 
   1. In the overview section of the IAM app, click on **Create a new Business Catalog and assign the App to it**
 
@@ -112,9 +109,10 @@ For this purposes the generated business object is checking authorization object
 
       ![Publish locally](bc10.png)
 
+[DONE]
+[ACCORDION-END]
 
-### Assign Business Catalog to Business Role and maintain restrictions
-
+[ACCORDION-BEGIN [Step 3: ](Assign Business Catalog to Business Role and maintain restrictions)]
 
   1. To [create a Business Role](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8ffb880eafec4078a1e5051227cb64b1.html) and assign it to your user, start the SAP Build Work Zone. Or right-click on your ABAP system and select **Properties**.
 
@@ -163,9 +161,10 @@ For this purposes the generated business object is checking authorization object
 
 12. Click **Save** to save the Business Role
 
+[DONE]
+[ACCORDION-END]
 
-### Test yourself
+[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-
-
----
+[VALIDATE_1]
+[ACCORDION-END]

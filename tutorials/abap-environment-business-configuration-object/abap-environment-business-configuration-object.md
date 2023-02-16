@@ -1,5 +1,6 @@
 ---
-parser: v2
+title: Create Business Configuration Maintenance Object
+description: Create a Business Configuration Maintenance Object using the ABAP Repository Object Generator.
 auto_validation: true
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
@@ -7,9 +8,6 @@ time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
-# Create Business Configuration Maintenance Object
-<!-- description --> Create a Business Configuration Maintenance Object using the ABAP Repository Object Generator.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -23,14 +21,14 @@ author_profile: https://github.com/mervey45
 - How to enable Log Changes
 - How to generate a Business Configuration Maintenance Object
 
-## Intro
+### Intro
 This tutorial shows you how to create a **SAP Fiori based Table Maintenance app** using the [**ABAP RESTful Application Programming Model**](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html) (RAP) and the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) (CUBCO) app. This tutorial is based on a simplified error code data base model.
 
 >**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
 
 ---
-### Create Package
 
+[ACCORDION-BEGIN [Step 1: ](Create Package)]
 
   1. Open your **ABAP Development Tools**, logon to your **ABAP system** and right-click on **`ZLOCAL`**, select **New** > **ABAP Package**.
 
@@ -50,9 +48,10 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
       ![Create new Transport Request](p3.png)
 
+[DONE]
+[ACCORDION-END]
 
-### Create Data Elements
-
+[ACCORDION-BEGIN [Step 2: ](Create Data Elements)]
 
   1. Right-click on **`Z_ERROR_CODES_###`**, select **New** > **Other ABAP Repository Object**.
 
@@ -93,9 +92,10 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
      ![Data Element definition](e6.png)
   8. Save and activate.
 
+[DONE]
+[ACCORDION-END]
 
-### Create Database Tables
-
+[ACCORDION-BEGIN [Step 3: ](Create Database Tables)]
 
   1. Right-click on Type Group **Dictionary** in package **`Z_ERROR_CODES_###`**, select **New** > **Database Table**.
 
@@ -157,9 +157,10 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
   7. Save and activate.
 
+[DONE]
+[ACCORDION-END]
 
-### Enable Log Changes
-
+[ACCORDION-BEGIN [Step 4: ](Enable Log Changes)]
 
 To use the [**Business Configuration Change Logs**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5c6cf20499894f1083e80dba7c5963d4.html) app, activate the log changes function to keep track of configuration changes in your business configuration tables.
 
@@ -173,9 +174,10 @@ The **Log Changes** flag has to be enabled in the technical settings for the tab
 
 Save and activate.
 
+[DONE]
+[ACCORDION-END]
 
-
-### Create Business Configuration Maintenance Object
+[ACCORDION-BEGIN [Step 5: ](Create Business Configuration Maintenance Object)]
 
 
 A [**Business Configuration Maintenance Object**](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/61159c4dc45b45619b46b4620615c357.html) declares a [Service Binding](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/b58a3c27df4e406f9335d4b346f6be04.html) as relevant for business configuration. They are listed in the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app. By selecting an entry in the app a SAP Fiori elements based UI is rendered to maintain the business configuration.
@@ -236,10 +238,10 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 
 >See also [naming conventions for Development Objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html)
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
-### Test yourself
-
-
-
----
+[VALIDATE_1]
+[ACCORDION-END]

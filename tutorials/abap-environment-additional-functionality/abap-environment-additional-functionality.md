@@ -1,5 +1,6 @@
 ---
-parser: v2
+title: Get to know additional functionality of the Custom Business Configurations app
+description: Get to know additional functionality of the Custom Business Configurations app
 auto_validation: true
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
@@ -7,9 +8,6 @@ time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
-# Get to know additional functionality of the Custom Business Configurations app
-<!-- description --> Learn how to copy and paste data from spreadsheet applications. Get to know how to create business configuration documentation and make use of intent navigation.
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
@@ -23,8 +21,8 @@ author_profile: https://github.com/mervey45
 - How to make use of intent navigation
 
 ---
-### Copy and paste data from spreadsheet applications
 
+[ACCORDION-BEGIN [Step 1: ](Copy and paste data from spreadsheet applications)]
 
 You can add multiple error codes with copy & paste from a [spreadsheet application](https://ui5.sap.com/#/topic/f6a8fd2812d9442a9bba2f6fb296c42e).
 
@@ -65,9 +63,10 @@ You can add multiple error codes with copy & paste from a [spreadsheet applicati
 
       ![Save new rows](spread8.png)
 
+[DONE]
+[ACCORDION-END]
 
-### Create business configuration documentation
-
+[ACCORDION-BEGIN [Step 2: ](Create business configuration documentation)]
 
 You want to provide a detailed documentation of the business configuration to the user of the **Custom Business Configurations** app.
 
@@ -93,10 +92,10 @@ You want to provide a detailed documentation of the business configuration to th
 
       ![Show Documentation action](knowledge6.png)
 
+[DONE]
+[ACCORDION-END]
 
-
-### Make use of intent navigation
-
+[ACCORDION-BEGIN [Step 3: ](Make use of intent navigation)]
 
 You want to navigate from your SAP Fiori app to the maintenance view of a Business Configuration Maintenance Object.
 
@@ -122,9 +121,10 @@ sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then(function
 });
 ```
 
+[DONE]
+[ACCORDION-END]
 
-### Test yourself
+[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-
-
----
+[VALIDATE_1]
+[ACCORDION-END]
