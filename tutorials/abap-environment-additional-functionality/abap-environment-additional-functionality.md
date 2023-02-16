@@ -126,5 +126,4 @@ sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then(function
 ### Test yourself
 
 
-
 ---
