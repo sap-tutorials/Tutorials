@@ -446,7 +446,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
     This creates everything you need to connect to your SAP HANA Cloud instance from the studio. It also adapts your project, so you can use the profiles that we will introduce in the next step. When you started to deploy to SQLite, the `cds.requires` section in your `package.json` was modified accordingly. See what's been added/changed now:
 
-    <!-- border -->![The configuration that has been added or changed in the package.json file.](hdbtable_config.png)
+    <!-- border -->![In the package.json file inside the cds.requires section there's a new production profile that contains the SAP HANA configuration..](hdbtable_config.png)
 
     > ### What's going on?
     You've added the configuration to use SAP HANA Cloud under the `[production]` profile. Using the development profile, `db.kind=sql` evaluates to `sqlite`. This is a default when using configuration profiles, so the development profile is not mentioned here explicitly. You can also [set both configurations explicitly](https://cap.cloud.sap/docs/node.js/cds-env#profiles), if you wish to deviate from or enhance the defaults.
@@ -493,7 +493,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
 1. Enable the binding to your SAP HANA service instance from the run configurations panel.
 
-    <!-- border -->![Bind to your SAP HANA instance from the run configurations panel.](bind-hana.png)
+    <!-- border -->![In the run configurations panel, expand the _Run bookshop-hybrid_ run configuration to access the available _db - hana_ binding. Click on the _Bind_ button at the right side of the _db - hana_ binding and bind to your SAP HANA service instance.](bind-hana.png)
 
 
 1. Run your project with the `Run bookshop-hybrid` configuration.
