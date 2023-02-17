@@ -122,5 +122,4 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 ### Test yourself
 
 
-
 ---
