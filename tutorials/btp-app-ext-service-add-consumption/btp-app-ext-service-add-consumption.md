@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Add the Consumption of an External Service to Your CAP Application
+description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 keywords: cap
 auto_validation: true
 time: 20
@@ -9,16 +10,14 @@ tags: [tutorial>intermediate, software-product-function>sap-cloud-application-pr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Add the Consumption of an External Service to Your CAP Application
-<!-- description --> This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
-
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - Before you start with this tutorial, you have two options:
     - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
     - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
-## You will learn
+## Details
+### You will learn
  - How to get service definition
  - How to add a service to your project
  - How to add mock data
@@ -28,8 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-### Get the Business Partner service definition
-
+[ACCORDION-BEGIN [Step 1: ](Get the Business Partner service definition)]
 SAP publishes service definitions for its major products on **SAP API Business Hub**. These service definitions are required to use remote services in CAP. For example, to call a remote service, build projections upon them, and to mesh-up with them.
 
 1. Open [**SAP API Business Hub**](https://api.sap.com/).
@@ -46,21 +44,22 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
 7. Choose **API Specification**.
 
-    <!-- border -->![API Details](api_details.png)
+    !![API Details](api_details.png)
 
 8.  Choose the download button for `EDMX` option in the **Value** column. Log on to SAP API Business Hub if you have to.
 
     If you are using Google Chrome as a browser, you now see the downloaded EDMX file in the footer bar:
 
-    <!-- border -->![API EDMX](edmxdownload.png)
+    !![API EDMX](edmxdownload.png)
 
     > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `tutorial/templates/ext-service-add/srv/external`.
 
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add the Business Partner service to your project
-
+[ACCORDION-BEGIN [Step 2: ](Add the Business Partner service to your project)]
 From your project's root folder, run the `cds import` command with the path of your downloaded `API_BUSSINESS_PARTNER.edmx` file.
 
 For example:
@@ -95,9 +94,10 @@ Additionally, the file will be registered as service definition in the `package.
       }
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add mock data for Business Partner
-
+[ACCORDION-BEGIN [Step 3: ](Add mock data for Business Partner)]
 In this step, you add some mock data for the business partner service. This allows you to perform tests using the service without the need to connect to an actual remote service.
 
 1. Copy the folder `data` from `tutorial/templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
@@ -128,7 +128,7 @@ In this step, you add some mock data for the business partner service. This allo
 
 4. Choose `A_BusinessPartner`:
 
-    <!-- border -->![API Business Partner service](api-business-partner-service.png)
+    !![API Business Partner service](api-business-partner-service.png)
 
 
     For this application, you need only a few fields from the `A_BusinessPartner` entity. To do this, you create a projection on the external service. Since in this example, you are only interested in the business partners that are suppliers, you use the name `Suppliers` for your projection.
@@ -172,13 +172,14 @@ In this step, you add some mock data for the business partner service. This allo
 
 8. Choose `Suppliers` under `Risks` service:
 
-    <!-- border -->![Suppliers](suppliers.png)
+    !![Suppliers](suppliers.png)
 
     Now, you can see just the supplier information.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Connect to the sandbox service
-
+[ACCORDION-BEGIN [Step 4: ](Connect to the sandbox service)]
 Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-use), you will learn how to connect the business partner service with a real SAP S/4HANA system. In this tutorial here, you use the sandbox system to try out your application with a real remote system.
 
 1. Install the node packages to mock the external services:
@@ -191,7 +192,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
-    <!-- border -->![Sandbox](sandbox.png)
+    !![Sandbox](sandbox.png)
 
 3. Add a new profile `sandbox` that uses the URL of the sandbox in your `package.json` file:
 
@@ -228,9 +229,10 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
     The `API_BUSINESS_PARTNER` service is now configured as a remote service. Service requests will not be automatically delegated to remote services. This delegation happens only for services based on database entities and mock services. For that reason, it worked in the local mocking mode before.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Delegate requests to external services
-
+[ACCORDION-BEGIN [Step 5: ](Delegate requests to external services)]
 To solve this issue, you add some handler code to delegate the call from the `Suppliers` service entity to the remote `API_BUSINESS_PARTNER` service.
 
 1. Open the file `srv/risk-service.js` and add the following lines:
@@ -278,9 +280,10 @@ To solve this issue, you add some handler code to delegate the call from the `Su
 
     The request is sent to the remote service. But it fails, because the sandbox requires an API Key for authentication.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add the API key
-
+[ACCORDION-BEGIN [Step 6: ](Add the API key)]
 You take an API key from **SAP API Business Hub**, put it in an environment variable and add it to all requests for the business partner (`bupa`) service.
 
 This code is required for the sandbox only. The authentication for SAP S/4HANA systems works without custom code.
@@ -291,7 +294,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
 
 3. Choose **Copy Key and Close**.
 
-    <!-- border -->![API Key](api_key.png)
+    !![API Key](api_key.png)
 
 4. Create a new file `.env` in your project folder and add an environment variable in the file with the copied API Key:
 
@@ -339,7 +342,11 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
 
 8. Now, you can see the Business Partner data from the sandbox transformed to your projection.
 
-    <!-- border -->![Business Partner Data](bpartners_data.png)
+    !![Business Partner Data](bpartners_data.png)
 
+[VALIDATE_1]
 The result of this tutorial can be found in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
+
+
+[ACCORDION-END]
 ---

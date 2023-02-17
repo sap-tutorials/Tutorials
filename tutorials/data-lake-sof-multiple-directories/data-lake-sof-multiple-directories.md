@@ -14,7 +14,7 @@ parser: v2
 
 ## Prerequisites
 -	Have access to a licensed managed or standalone SAP HANA data lake.
--	Installation of the HDLFSCLI. See tutorial Getting Started with Data Lake Files HDLFSCLI | Tutorials for SAP Developers.
+-	Installation of the HDLFSCLI. See tutorial [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli)
 -	Load some structured data files inside of a SAP HANA data lake File Container.
 -	Already set up HDLFS Connection in Database Explorer - Setting Up HDLFS Connection In Database Explorer.
 
@@ -28,7 +28,7 @@ parser: v2
 
 Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file container can be done using SQL on Files. Below you will find all of the steps required to start using SQL on Files.
 If you have not yet provisioned an SAP HANA data lake, here is a great tutorial on how to do so!
-Please go through the entire tutorial on **Use SQL on Files to query data from a single file/directory**
+Please go through the entire tutorial on [Use SOF to Query data from Single Directory](data-lake-sof-single-directory)
 
 You will be using the Orders table as a reference.
 
@@ -64,7 +64,7 @@ O_COMMENT             varchar(79)
 ```
 <!-- border --> ![DBX Screenshot](image-1.png)
 
-For information about the parameter definitions and supported data types, see  [CREATE (Remote) TABLE Statement for Data Lake Relational Engine (HANA DB-Managed)](help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/24e694b566814ad285cb32fe3e5d3928.html?state=DRAFT&version=2022_1_QRC)
+For information about the parameter definitions and supported data types, see  [CREATE (Remote) TABLE Statement for Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/24e694b566814ad285cb32fe3e5d3928.html?state=DRAFT&version=2022_1_QRC)
 
 
 Next, You will create a virtual table. Notice in the SQL below where the remote servers name goes and where the reference to the table in the Files Service goes. Over here, you will be creating an ORDERS VIRTUAL TABLE  in HDLRE that points to the ORDERS table that you just created in SQL On Files service.
@@ -132,7 +132,7 @@ LOAD TABLE ORDERS(
 END;
 ```
 
-Make sure you have added your File Container connection in DBX. If not, one can go through the tutorial –[Setting Up HDLFS Connection In Database Explorer](developers.sap.com/tutorials/data-lake-hdlfs-dbx-connection)
+Make sure you have added your File Container connection in DBX. If not, one can go through the tutorial –[Setting Up HDLFS Connection In Database Explorer](data-lake-hdlfs-dbx-connection)
 
 
 <!-- border --> ![DBX Screenshot](image-4.png)
@@ -165,7 +165,7 @@ O_COMMENT FROM COLUMN $8
 
 Notice that directories are located using a 0-index. The `ORDERYEAR` column is directory `$0, ORDERMONTH` column is directory $1, and subsequent directories would be `$1, $2, ... $n`. This tells the parser to look at these directory levels to find the value for the corresponding column name. The value is parsed from what is placed after the **=** in the directory name.
 
-One could also refer the ALTER TABLE ADD DATASOURCE doc for any further reference - [ALTER (Remote) TABLE ADD DATASOURCE Statement for Data Lake Relational Engine (HANA DB-Managed)](help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/e6e7243b09c34d48adf387e96f43c014.html?q=ADD%20DATASOURCE)
+One could also refer the ALTER TABLE ADD DATASOURCE doc for any further reference - [ALTER (Remote) TABLE ADD DATASOURCE Statement for Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a898e08b84f21015969fa437e89860c8/e6e7243b09c34d48adf387e96f43c014.html?q=ADD%20DATASOURCE)
 
 
 
@@ -218,7 +218,7 @@ DROP SCHEMA HDLADMIN_TPCH_SQLONFILES IN FILES_SERVICE;
 
 ### Command line script to cleanup the file container
 
-Connect to OpenSSL. Make sure you are all set up with the HDLFSCI tutorial with generating the certificates. If not, please go through the tutorial - [Getting Started with Data Lake Files HDLFSCLI](developers.sap.com/tutorials/data-lake-file-containers-hdlfscli)
+Connect to OpenSSL. Make sure you are all set up with the HDLFSCI tutorial with generating the certificates. If not, please go through the tutorial - [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli)
 
 Just run the below command to see the files under your path in the File container
 

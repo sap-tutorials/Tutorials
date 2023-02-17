@@ -4,6 +4,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner ]
 primary_tag: topic>sap-community
+author_name: Joshua Margo
+author_profile: https://github.com/jmmargo  
 ---
 
 # Get to Know SAP Tutorials
@@ -19,7 +21,6 @@ primary_tag: topic>sap-community
   - How to complete a tutorial
   - How to earn badges 😀
   - How to see your badges on your profile
-  - How to save your favorite tutorials
   - How to give feedback
 
 ## Intro
@@ -60,7 +61,7 @@ Go to <https://developers.sap.com/tutorial-navigator.html> to open the SAP Tutor
 
 ![Tutorial Navigator](TN.png)
 
-If you want to search for tutorials related to a particular product, select a filter under **Products**.
+If you want to search for tutorials related to a particular product, select a filter under **Software Product**.
 
 You can filter the filters by entering some text, for example, type in `AI` to find the filter for **SAP Conversational AI**.
 
@@ -94,31 +95,12 @@ Of course, you can use both. For example, search for `Python` and then further f
 >More information on tags? See [Using Tags](https://community.sap.com/resources/using-tags).
 
 
-
-### Bookmark tutorials
-
-
-You can bookmark tutorials so you can do them when you have time. Just click the **+** sign in the tile.
-
-![Bookmark](bookmark1.png)
-
-The bookmark icon turns white.
-
-![Bookmark created](bookmark2.png)
-
-Now you can open another browser window to the [developers home page](https://developers.sap.com), and make sure you are logged in with your SAP ID (top right).  
-
-Open the Bookmarks tab and you will see the new tutorial/mission bookmarks.
-
-![Bookmarks tab](bookmark3.png)
-
-
 ### Open mission
 
 
 Make sure you are back in the SAP Tutorial Navigator.
 
-Click the tile called **Create Your First Chatbot with SAP Conversational AI**, which opens the mission page.
+Click the tile called **Build Your First Chatbot with SAP Conversational AI**, which opens the mission page.
 
 ![Link text e.g., Destination screen](mission1.png)
 
@@ -161,15 +143,9 @@ The top part of the tutorial is made up of the following:
 ### See your progress
 
 
-While you are doing the tutorial, you can see your progress in a couple of ways.
+While you are doing the tutorial, you can see your progress as follows.
 
-If you have been clicking the buttons as you complete this tutorial until here, you will see:
-
-- At the top, the percentage completion.
-
-    ![Progress](progress.png)
-
-- At the top and the side, the steps that you have completed.
+If you have been clicking the buttons as you complete this tutorial until here, on the right side, you will see the steps you have completed indicated by a checkmark:
 
     ![Progress on side](progress2.png)
 

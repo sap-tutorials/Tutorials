@@ -8,8 +8,8 @@ author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
-# Test the Connection to the Remote System
-<!-- description --> Test your connection by calling a BAPI via RFC.
+# Call a Remote Function Module (RFC): Test the Connection to the Remote System
+<!-- description --> Test that the connection to the BAPI works via RFC.
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
@@ -22,7 +22,7 @@ author_profile: https://github.com/julieplummer20
 ## Intro
 The class:
 
-1. Connects to the backend system, here an ERP System.
+1. Connects to the backend system, such as an S/4HANA on-premise system.
 2. Calls the BAPI remotely via RFC.
 3. Reads the data from the back end into a local table.
 4. Outputs that local table to the ABAP Console.
@@ -35,25 +35,16 @@ In future, we hope to provide a helper class that generates the appropriate DDL 
 
 1. As before, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
 
-2. Enter a name and description for your class, e.g. `ZCL_OUTPUT_TEST_XXX` and choose Next. **Remember to change `XXX` to your group number**.
+2. Enter the following for your class, then choose **Next**. 
+    - Name: **`ZCL_OUTPUT_TEST_000`**
+    - Description for your class, e.g. **Test RFC BTP to on-premise** 
+    - Interface: **`if_oo_adt_classrun`**. *This enables you to run the class in the console.*
 
-3. Choose or create a transport request, then choose Finish.
+**Remember to change `000` to your group number**.
+
+3. Choose the transport request, then choose **Finish**.
 
 The class is displayed in a new editor.
-
-
-### Add an INTERFACES statement
-
-Add the following `interfaces` statement to the public section:
-
-```ABAP
-PUBLIC SECTION.
-  INTERFACES if_oo_adt_classrun.
-PRIVATE SECTION.
-```
-This enables you to run the class in the console.
-
-
 
 
 ### Define the type for the local table variable
@@ -100,24 +91,23 @@ CATCH cx_root INTO DATA(lx_root).
 
 ENDTRY.
 
-
-
 ```
-
 
 
 ### Set up the connection
 
-Define the connection, replacing `XXX` in both `i_name` and `i_service_instance_name`.
+Define the connection, replacing `000` in each artifact.
 
 ```ABAP
 
-DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                    i_name = |ES5_RFC_XXX|
+DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
+                        comm_scenario          = Z_OUTBOUND_RFC_000_CS     " Communication scenario
+                        service_id             = Z_OUTBOUND_HANA_000       " Outbound service
+                        comm_system_id         = Z_OUTBOUND_HANA_CS_000    " Communication system
 
                        ).
 
-DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+DATA(lv_destination) = lo_destination->get_destination_name( ).
 
 ```
 
@@ -143,7 +133,7 @@ Finally, call the remote BAPI. The exception handling is mandatory to avoid seri
 ```ABAP
 
 CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
-  DESTINATION lv_rfc_dest_name
+  DESTINATION lv_destination
 *   EXPORTING
 *     max_rows              = 25
     TABLES
@@ -159,27 +149,26 @@ CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
 
 ### Add the exception handling statements
 
-Handle any exceptions that occur using a CASE statement.
+1. Handle any exceptions that occur using a CASE statement.
 
-```ABAP
+    ```ABAP
 
-CASE sy-subrc.
-  WHEN 0.
-    LOOP AT lt_product INTO ls_product.
-      out->write( ls_product-name && ls_product-price && ls_product-currencycode ).
-    ENDLOOP.
-  WHEN 1.
-    out->write( |EXCEPTION SYSTEM_FAILURE | && msg ).
-  WHEN 2.
-    out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
-  WHEN 3.
-    out->write( |EXCEPTION OTHERS| ).
-ENDCASE.
+    CASE sy-subrc.
+      WHEN 0.
+        LOOP AT lt_product INTO ls_product.
+          out->write( ls_product-name && ls_product-price && ls_product-currencycode ).
+        ENDLOOP.
+      WHEN 1.
+        out->write( |EXCEPTION SYSTEM_FAILURE | && msg ).
+      WHEN 2.
+        out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
+      WHEN 3.
+        out->write( |EXCEPTION OTHERS| ).
+    ENDCASE.
 
 ```
 
-
-### Save and activate the class
+2. Save and activate the class
 
 
 
@@ -189,7 +178,7 @@ ENDCASE.
 
 ```ABAP
 
-CLASS zjp_out_test DEFINITION
+CLASS ZCL_OUTPUT_TEST_000 DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -202,7 +191,7 @@ ENDCLASS.
 
 
 
-CLASS zjp_out_test IMPLEMENTATION.
+CLASS ZCL_OUTPUT_TEST_000 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
@@ -233,10 +222,14 @@ CLASS zjp_out_test IMPLEMENTATION.
 
     TRY.
 
-        DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-          i_name = |ES5_RFC_XXX|
-          ).
-        DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+    DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
+                            comm_scenario          = Z_OUTBOUND_RFC_000_CS     " Communication scenario
+                            service_id             = Z_OUTBOUND_HANA_000       " Outbound service
+                            comm_system_id         = Z_OUTBOUND_HANA_CS_000    " Communication system
+
+                           ).
+
+    DATA(lv_destination) = lo_destination->get_destination_name( ).
 
 
         "variables needed to call BAPI
@@ -247,7 +240,7 @@ CLASS zjp_out_test IMPLEMENTATION.
 
         "Exception handling is mandatory to avoid dumps
         CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
-          DESTINATION lv_rfc_dest_name
+          DESTINATION lv_destination
           EXPORTING
              max_rows              = 25
           TABLES

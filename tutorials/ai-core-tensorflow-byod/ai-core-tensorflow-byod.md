@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+tags: [ tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -199,7 +199,7 @@ Download and save each of the following files to your local computer. These are 
 | File | Download | Note |
 | --- | --- |  --- |
 | `Dockerfile` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/Dockerfile) | No file extension required. Remove manually if automatically added upon save.
-| `requirements.md` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/requirements.txt)
+| `requirements.txt` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/requirements.txt)
 | `tf_template.py` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/tf_template.py)
 | `serve.py` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/serve.py)
 

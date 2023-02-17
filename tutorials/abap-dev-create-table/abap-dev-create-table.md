@@ -49,19 +49,22 @@ Create a table in your package:
 
 1. Select (right-click) the package and choose **New > Other ABAP Repository Object** from the context menu:
 
-    <!-- border -->![Image depicting step1-new-repo-object](step1-new-repo-object.png)
+    <!-- border -->
+    ![Image depicting step1-new-repo-object](step1-new-repo-object.png)
 
 2. Enter the filter text **Table > Database table**, then choose **Next**.
 
 3. Enter a name such as `ZACCOUNTS_XXX` - always replacing `XXX` with your initials - and a description, then choose **Next**.
 
-    <!-- border -->![step1b-table-name](step1b-table-name.png)
+    <!-- border -->
+    ![step1b-table-name](step1b-table-name.png)
 
 4. Accept the proposed transport request and choose Finish.
 
 The code for the table appears in a new editor. Ignore the annotations at the top for now.
 
-<!-- border -->![Image depicting step1d-table-editor](step1d-table-editor.png)
+<!-- border -->
+![Image depicting step1d-table-editor](step1d-table-editor.png)
 
 
 ### Understand table fields
@@ -78,7 +81,8 @@ There are 3 ways to create a field for a database table:
 
   - Create a **new data element**: If you want to reuse the benefits of data elements - i.e. semantic attributes such as reuse of translatable column headers or a check table, but a suitable one does not exist yet.
 
-    <!-- border -->![overview-domain-dtel](overview-domain-dtel.png)
+    <!-- border -->
+    ![overview-domain-dtel](overview-domain-dtel.png)
 
 In this tutorial, you will create one domain and one data element. For the other fields, you will use a built-in type or existing data element.
 
@@ -102,9 +106,11 @@ Now you will add the field **`account_number`**, based on a primitive type.
 
     ```ABAP
       key account_number : abap.
+
     ```
 
-    <!-- border -->![step3a-create-accnum-field](step3a-create-accnum-field.png)
+    <!-- border -->
+    ![step3a-create-accnum-field](step3a-create-accnum-field.png)
 
 2. From the dropdown list, choose `numc(len)` and specify `len` as 8. Also, specify this key field as not null:
   `key account_number : abap.numc(8) not null;`
@@ -131,14 +137,16 @@ Add a field based on a built-in domain.
 
 1. From your package, select **Dictionary**, then choose **New > Domain** from the context menu.
 
-    <!-- border -->![step4a-new-domain](step4a-new-domain.png)
+    <!-- border -->
+    ![step4a-new-domain](step4a-new-domain.png)
 
 2. Enter following, then choose **Next**.
     - Name: **`Z_CHAR_32`**
     - Description: **Character Domain of Length 32**,
 
 
-    <!-- border -->![step5b-domain-name](step5b-domain-name.png)
+    <!-- border -->
+    ![step5b-domain-name](step5b-domain-name.png)
 
 3. Accept the default transport request and choose **Finish**.
 
@@ -146,7 +154,8 @@ Add a field based on a built-in domain.
     - Data Type: **`CHAR`**
     - Length: **32**
 
-    <!-- border -->![step5c-domain-attributes](step5c-domain-attributes.png)
+    <!-- border -->
+    ![step5c-domain-attributes](step5c-domain-attributes.png)
 
 
 
@@ -156,21 +165,25 @@ Now add the field **`bank`**, based on a new data element, `z_bank_name_xxx`. Yo
 
 1. Select the new data element and choose **Get Quick Fix (Ctrl+1)**. From the list, choose **Create data element …** :
 
-    <!-- border -->![step5a-quick-fix-new-dtel](step5a-quick-fix-new-dtel.png)
+    <!-- border -->
+    ![step5a-quick-fix-new-dtel](step5a-quick-fix-new-dtel.png)
 
 2. The Create data element wizard appears. Enter a name and description and choose **Next**:
 
-    <!-- border -->![step6a-new-dtel](step6a-new-dtel.png)
+    <!-- border -->
+    ![step6a-new-dtel](step6a-new-dtel.png)
 
 3. Accept the default transport request and choose **Finish**:
 
 4. You want your data element to have a character type. Enter the type name of your domain, by entering `Z_CHAR` and choosing **Auto-complete (`Ctrl+Space`)**:
 
-    <!-- border -->![step6c-dtel-w-domain](step6c-dtel-w-domain.png)
+    <!-- border -->
+    ![step6c-dtel-w-domain](step6c-dtel-w-domain.png)
 
 5. Now enter the field labels and lengths:
 
-    <!-- border -->![step6d-field-labels](step6d-field-labels.png)
+    <!-- border -->
+    ![step6d-field-labels](step6d-field-labels.png)
 
 6. Save and activate the data element (`Ctrl+S, Ctrl+F3`).
 
@@ -209,11 +222,13 @@ You will now fix the error caused by the field `Balance`:
 
 1. Place your cursor on the error symbol (it will change from an arrow to a pointing finger). Then click on it:
 
+    <!-- border -->
     ![Image depicting step8a-fix-error](step8a-fix-error.png)
 
 2. The quick fix proposal appears. Choose (double-click on) the proposal **Assign currency code reference to field currency**
 
-    <!-- border -->![Image depicting step8b-assign-curr-code](step8b-assign-curr-code.png)
+    <!-- border -->
+    ![Image depicting step8b-assign-curr-code](step8b-assign-curr-code.png)
   The error message disappears.
 
 3. Save your changes (`Ctrl+S`), but again, do not activate the table yet.
@@ -227,6 +242,7 @@ Before you activate the table, change the technical settings at the top as follo
 
 2. **`EnhancementCategory`** : Place your cursor immediately after the hash symbol (#), delete the existing text, then choose **Auto-complete (`Ctrl+Space`)**:
 
+    <!-- border -->
     ![step9a-tech-settings](step9a-tech-settings.png)
 
 3. Then choose `#EXTENSIBLE_CHARACTER_NUMERIC` from the dropdown list. Your table contains both character-type and numeric-type fields but does not contain any deep structures (such as a structure included within a table row).
@@ -314,8 +330,6 @@ define table ZACCOUNTS_XXX {
 ### Test yourself
 
 
-
-
 ### Fill table: Create class
 
 Finally, you will fill the table with three rows of test data:
@@ -343,11 +357,12 @@ The class appears in a new editor.
     ```
 
     This interface provides a light-weight solution for executing an ABAP program without launching a full user interface.
-    It also lets you display text or data in the Console View.
+    It also lets you display text or data in the ABAP Console.
 
 2. Add the implementation for the **`main`** method of this interface by selecting the interface name and choosing **Add implementation...** from the context menu.
 
-    <!-- border -->![step6a-add-intf](step6a-add-intf.png)
+    <!-- border -->
+    ![step6a-add-intf](step6a-add-intf.png)
 
 
 
@@ -382,21 +397,24 @@ The class appears in a new editor.
 
 2. Save and activate ( **`Ctrl+S, Ctrl+F3`** ) your code.
 
-
+3. Run your class by choosing **Run as Console Application (F9)**.
 
 ### Check your table in Data Preview
 
 Select your table from the Project Explorer and choose **Open With > Data Preview** from the context menu (**F8**).
 
-<!-- border -->![step17a-data-preview](step17a-data-preview.png)
+<!-- border -->
+![step17a-data-preview](step17a-data-preview.png)
 
 Your table should look like this:
 
-<!-- border -->![step17b-data-preview-2](step17b-data-preview-2.png)
+<!-- border -->
+![step17b-data-preview-2](step17b-data-preview-2.png)
 
 You can also right click on the table and choose **Copy All Rows as ABAP Value Statement** from the context menu. You can then paste it into other code.
 
-<!-- border -->![step17c-copy-all-rows](step17c-copy-all-rows.png)
+<!-- border -->
+![step17c-copy-all-rows](step17c-copy-all-rows.png)
 
 
 

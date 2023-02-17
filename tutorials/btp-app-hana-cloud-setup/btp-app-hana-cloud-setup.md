@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Set Up the SAP HANA Cloud Service
+description: This tutorial shows you how to set up the SAP HANA cloud service instance.
 keywords: cap
 auto_validation: true
 time: 25
@@ -9,21 +10,18 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Set Up the SAP HANA Cloud Service
-<!-- description --> This tutorial shows you how to set up the SAP HANA cloud service instance.
-
 ## Prerequisites
  - [Add SAP HANA Support to Your Project](btp-app-hana-app-setup)
 
 
-## You will learn
+## Details
+### You will learn
  - How to set up the SAP HANA Cloud service instance
 
 
 ---
 
-### Prepare to use SAP HANA Cloud service
-
+[ACCORDION-BEGIN [Step 1: ](Prepare to use SAP HANA Cloud service)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create an SAP HANA Cloud service instance first, if you don't have one yet.
@@ -37,9 +35,10 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 >   - [SAP HANA Cloud Getting Started Guide](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/d0aa0ec935c1401e8deb3be35d49730b.html)
 >   - [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html)
 
+[DONE]
+[ACCORDION-END]
 ---
-### Use an existing SAP HANA Cloud service instance
-
+[ACCORDION-BEGIN [Step 2: ](Use an existing SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
@@ -52,7 +51,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 4. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
 
-    <!-- border -->![Choose Subaccount](choose_subaccount.png)
+    !![Choose Subaccount](choose_subaccount.png)
 
 5. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
@@ -68,7 +67,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 10. Choose an organization and again choose the space where you have the SAP HANA Cloud service instance.
 
-    <!-- border -->![SAP HANA Cloud cockpit](hana_cloud_cockpit.png)
+    !![SAP HANA Cloud cockpit](hana_cloud_cockpit.png)
 
 11. Choose your service instance.
 
@@ -90,7 +89,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 4. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
 
-    <!-- border -->![Choose Subaccount](choose_subaccount.png)
+    !![Choose Subaccount](choose_subaccount.png)
 
 5. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
@@ -106,7 +105,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 10. Choose an organization and again choose the space where you have the SAP HANA Cloud service instance.
 
-    <!-- border -->![SAP HANA Cloud cockpit](hana_cloud_cockpit.png)
+    !![SAP HANA Cloud cockpit](hana_cloud_cockpit.png)
 
 11. Choose your service instance.
 
@@ -118,9 +117,10 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create an SAP HANA Cloud service instance
-
+[ACCORDION-BEGIN [Step 3: ](Create an SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
@@ -133,17 +133,17 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 4. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
 
-    <!-- border -->![Choose Subaccount](choose_subaccount.png)
+    !![Choose Subaccount](choose_subaccount.png)
 
 5. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 6. Choose the **Space** that you want to deploy to.
 
-    <!-- border -->![SAP HANA Cloud](hana_cloud_spaces.png)
+    !![SAP HANA Cloud](hana_cloud_spaces.png)
 
 7. Choose **SAP HANA Cloud** in the left-hand pane.
 
-    <!-- border -->![SAP HANA Cloud](hana_cloud_empty.png)
+    !![SAP HANA Cloud](hana_cloud_empty.png)
 
 8. Choose **Create** &rarr; **SAP HANA database**.
 
@@ -151,19 +151,19 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 10. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
+    !![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
 
 11. The **Organization** and **Space** will be selected. Enter the **Instance Name** `cpapp`.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
+    !![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
 
 12. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
+    !![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
 
 13. Choose **Next Step**. The default settings should be sufficient for the tutorial application.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
+    !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
 14. Choose **Next Step**.
 
@@ -171,7 +171,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 16. Choose `Allow only BTP IP addresses`, choose again **Next Step**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
+    !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
 
     > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't need it for the tutorial application.
 
@@ -181,7 +181,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 
-    <!-- border -->![SAP HANA Cloud Instance Created](hana_cloud_created.png)
+    !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
@@ -204,17 +204,17 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 4. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
 
-    <!-- border -->![Choose Subaccount](choose_subaccount.png)
+    !![Choose Subaccount](choose_subaccount.png)
 
 5. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 6. Choose the **Space** that you want to deploy to.
 
-    <!-- border -->![SAP HANA Cloud](hana_cloud_spaces.png)
+    !![SAP HANA Cloud](hana_cloud_spaces.png)
 
 7. Choose **SAP HANA Cloud** in the left-hand pane.
 
-    <!-- border -->![SAP HANA Cloud](hana_cloud_empty.png)
+    !![SAP HANA Cloud](hana_cloud_empty.png)
 
 8. Choose **Create** &rarr; **SAP HANA database**.
 
@@ -222,19 +222,19 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 10. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
+    !![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
 
 11. The **Organization** and **Space** will be selected. Enter the **Instance Name** `cpapp`.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
+    !![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
 
 12. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
+    !![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
 
 13. Choose **Next Step**. The default settings should be sufficient for the tutorial application.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
+    !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
 14. Choose **Next Step**.
 
@@ -242,7 +242,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 16. Choose `Allow only BTP IP addresses`, choose again **Next Step**.
 
-    <!-- border -->![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
+    !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
 
     > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't need it for the tutorial application.
 
@@ -252,7 +252,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 
-    <!-- border -->![SAP HANA Cloud Instance Created](hana_cloud_created.png)
+    !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
@@ -264,5 +264,9 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
 [OPTION END]
 
+[VALIDATE_1]
 The result of this tutorial can be found in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
+
+
+[ACCORDION-END]
 ---

@@ -35,7 +35,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and replace your code with following:
 
     ```ABAP
-    managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
+    managed implementation in class ZBP_I_TRAVEL_M_XXX unique;
 
     define behavior for ZI_TRAVEL_M_XXX alias Travel
     persistent table ztravel_xxx
@@ -114,7 +114,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ### Create implementation class
 
-  1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZCL_BP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zcl_bp_i_travel_m_xxx`** to create your implementation class.
+  1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZBP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zbp_i_travel_m_xxx`** to create your implementation class.
 
       ![Create behavior implementation](implementationx.png)
 
@@ -130,35 +130,14 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior implementation](implementation3.png)
 
-
     >**HINT:** The skeleton code of the class appears in a new editor. The skeleton includes code for the relevant method definitions and implementations, derived from your behavior definition `ZI_TRAVEL_M_XXX`.
 
 
 ### Enhance behavior implementation
 
-  1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
+  1. Switch to **Local Types**.
 
-    In your **global class** replace your code with following:
-
-    ```ABAP
-    CLASS zcl_bp_i_travel_m_xxx DEFINITION
-    PUBLIC
-    ABSTRACT
-    FINAL
-    FOR BEHAVIOR OF ZI_Travel_M_XXX.
-
-    ENDCLASS.
-
-    CLASS zcl_bp_i_travel_m_xxx IMPLEMENTATION.
-    ENDCLASS.
-
-    ```
-
-  2. Switch to **Local Types**.
-
-      ![Enhance behavior implementation](implementation.png)
-
-  3. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
+  2. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -196,15 +175,15 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
         READ ENTITY zi_travel_m_xxx FROM VALUE #( FOR keyval IN keys
                                                           (  %key                    = keyval-%key
-                                                           "  %control-travel_id      = if_abap_behv=>mk-on
-                                                             %control-overall_status = if_abap_behv=>mk-on
+                                                          "  %control-travel_id      = if_abap_behv=>mk-on
+                                                            %control-overall_status = if_abap_behv=>mk-on
                                                             ) )
                                     RESULT DATA(lt_travel_result).
 
 
         result = VALUE #( FOR ls_travel IN lt_travel_result
-                           ( %key                           = ls_travel-%key
-                             %features-%action-acceptTravel = COND #( WHEN ls_travel-overall_status = 'A'
+                          ( %key                           = ls_travel-%key
+                            %features-%action-acceptTravel = COND #( WHEN ls_travel-overall_status = 'A'
                                                                         THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
                           ) ).
 
@@ -214,7 +193,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
         READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
             FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
-                                     %control = VALUE #( agency_id = if_abap_behv=>mk-on ) ) )
+                                    %control = VALUE #( agency_id = if_abap_behv=>mk-on ) ) )
             RESULT DATA(lt_travel).
 
         DATA lt_agency TYPE SORTED TABLE OF /dmo/agency WITH UNIQUE KEY agency_id.
@@ -235,15 +214,31 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           IF ls_travel-agency_id IS NOT INITIAL AND NOT line_exists( lt_agency_db[ agency_id = ls_travel-agency_id ] ).
             APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
             APPEND VALUE #(  mykey = ls_travel-mykey
-                             %msg      = new_message( id       = /dmo/cx_flight_legacy=>agency_unkown-msgid
+                            %msg      = new_message( id       = /dmo/cx_flight_legacy=>agency_unkown-msgid
                                                       number   = /dmo/cx_flight_legacy=>agency_unkown-msgno
                                                       v1       = ls_travel-agency_id
                                                       severity = if_abap_behv_message=>severity-error )
-                             %element-agency_id = if_abap_behv=>mk-on ) TO reported-travel.
+                            %element-agency_id = if_abap_behv=>mk-on ) TO reported-travel.
           ENDIF.
 
         ENDLOOP.
 
+
+      ENDMETHOD.
+
+      METHOD calculatetravelkey.
+
+      ENDMETHOD.
+
+      METHOD set_status_completed.
+
+      ENDMETHOD.
+
+      METHOD validate_customer.
+
+      ENDMETHOD.
+
+      METHOD validate_dates.
 
       ENDMETHOD.
 
@@ -379,48 +374,48 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   1. Now you will implement an action. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
 
     ```ABAP
-      ********************************************************************************
-      *
-      * Implements travel action (in our case: for setting travel overall_status to completed)
-      *
-      ********************************************************************************
-        METHOD set_status_completed.
+    ********************************************************************************
+    *
+    * Implements travel action (in our case: for setting travel overall_status to completed)
+    *
+    ********************************************************************************
+    METHOD set_status_completed.
 
-          " Modify in local mode: BO-related updates that are not relevant for authorization checks
-          MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-                 ENTITY travel
-                    UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
-                                                           overall_status = 'A' " Accepted
-                                                           %control-overall_status = if_abap_behv=>mk-on ) )
-                 FAILED   failed
-                 REPORTED reported.
+      " Modify in local mode: BO-related updates that are not relevant for authorization checks
+      MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+             ENTITY travel
+                UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
+                                                       overall_status = 'A' " Accepted
+                                                       %control-overall_status = if_abap_behv=>mk-on ) )
+             FAILED   failed
+             REPORTED reported.
 
-          " Read changed data for action result
-          READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-               ENTITY travel
-               FROM VALUE #( FOR key IN keys (  mykey = key-mykey
-                                                %control = VALUE #(
-                                                  agency_id       = if_abap_behv=>mk-on
-                                                  customer_id     = if_abap_behv=>mk-on
-                                                  begin_date      = if_abap_behv=>mk-on
-                                                  end_date        = if_abap_behv=>mk-on
-                                                  booking_fee     = if_abap_behv=>mk-on
-                                                  total_price     = if_abap_behv=>mk-on
-                                                  currency_code   = if_abap_behv=>mk-on
-                                                  overall_status  = if_abap_behv=>mk-on
-                                                  description     = if_abap_behv=>mk-on
-                                                  created_by      = if_abap_behv=>mk-on
-                                                  created_at      = if_abap_behv=>mk-on
-                                                  last_changed_by = if_abap_behv=>mk-on
-                                                  last_changed_at = if_abap_behv=>mk-on
-                                                ) ) )
-               RESULT DATA(lt_travel).
+      " Read changed data for action result
+      READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+           ENTITY travel
+           FROM VALUE #( FOR key IN keys (  mykey = key-mykey
+                                            %control = VALUE #(
+                                              agency_id       = if_abap_behv=>mk-on
+                                              customer_id     = if_abap_behv=>mk-on
+                                              begin_date      = if_abap_behv=>mk-on
+                                              end_date        = if_abap_behv=>mk-on
+                                              booking_fee     = if_abap_behv=>mk-on
+                                              total_price     = if_abap_behv=>mk-on
+                                              currency_code   = if_abap_behv=>mk-on
+                                              overall_status  = if_abap_behv=>mk-on
+                                              description     = if_abap_behv=>mk-on
+                                              created_by      = if_abap_behv=>mk-on
+                                              created_at      = if_abap_behv=>mk-on
+                                              last_changed_by = if_abap_behv=>mk-on
+                                              last_changed_at = if_abap_behv=>mk-on
+                                            ) ) )
+           RESULT DATA(lt_travel).
 
-          result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
-                                                      %param    = travel
-                                                    ) ).
+      result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
+                                                  %param    = travel
+                                                ) ).
 
-        ENDMETHOD.
+    ENDMETHOD.
     ```
 
     >**NOTE:**
@@ -507,6 +502,137 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     CLASS lhc_travel IMPLEMENTATION.
 
+    ********************************************************************************
+    *
+    * Implements the dynamic feature handling for travel instances
+    *
+    ********************************************************************************
+      METHOD get_features.
+
+        "%control-<fieldname> specifies which fields are read from the entities
+
+        READ ENTITY zi_travel_m_xxx FROM VALUE #( FOR keyval IN keys
+                                                          (  %key                    = keyval-%key
+                                                          "  %control-travel_id      = if_abap_behv=>mk-on
+                                                            %control-overall_status = if_abap_behv=>mk-on
+                                                            ) )
+                                    RESULT DATA(lt_travel_result).
+
+
+        result = VALUE #( FOR ls_travel IN lt_travel_result
+                          ( %key                           = ls_travel-%key
+                            %features-%action-acceptTravel = COND #( WHEN ls_travel-overall_status = 'A'
+                                                                        THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
+                          ) ).
+
+      ENDMETHOD.
+
+      METHOD validate_agency.
+
+        READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
+            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
+                                    %control = VALUE #( agency_id = if_abap_behv=>mk-on ) ) )
+            RESULT DATA(lt_travel).
+
+        DATA lt_agency TYPE SORTED TABLE OF /dmo/agency WITH UNIQUE KEY agency_id.
+
+        " Optimization of DB select: extract distinct non-initial customer IDs
+        lt_agency = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING agency_id = agency_id EXCEPT * ).
+        DELETE lt_agency WHERE agency_id IS INITIAL.
+        CHECK lt_agency IS NOT INITIAL.
+
+        " Check if customer ID exist
+        SELECT FROM /dmo/agency FIELDS agency_id
+          FOR ALL ENTRIES IN @lt_agency
+          WHERE agency_id = @lt_agency-agency_id
+          INTO TABLE @DATA(lt_agency_db).
+
+        " Raise msg for non existing customer id
+        LOOP AT lt_travel INTO DATA(ls_travel).
+          IF ls_travel-agency_id IS NOT INITIAL AND NOT line_exists( lt_agency_db[ agency_id = ls_travel-agency_id ] ).
+            APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
+            APPEND VALUE #(  mykey = ls_travel-mykey
+                            %msg      = new_message( id       = /dmo/cx_flight_legacy=>agency_unkown-msgid
+                                                      number   = /dmo/cx_flight_legacy=>agency_unkown-msgno
+                                                      v1       = ls_travel-agency_id
+                                                      severity = if_abap_behv_message=>severity-error )
+                            %element-agency_id = if_abap_behv=>mk-on ) TO reported-travel.
+          ENDIF.
+
+        ENDLOOP.
+
+
+      ENDMETHOD.
+
+      METHOD calculatetravelkey.
+        READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+            ENTITY Travel
+              FIELDS ( travel_id )
+              WITH CORRESPONDING #( keys )
+            RESULT DATA(lt_travel).
+
+        DELETE lt_travel WHERE travel_id IS NOT INITIAL.
+        CHECK lt_travel IS NOT INITIAL.
+
+        "Get max travelID
+        SELECT SINGLE FROM ztravel_xxx FIELDS MAX( travel_id ) INTO @DATA(lv_max_travelid).
+
+        "update involved instances
+        MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+          ENTITY Travel
+            UPDATE FIELDS ( travel_id )
+            WITH VALUE #( FOR ls_travel IN lt_travel INDEX INTO i (
+                              %key      = ls_travel-%key
+                              travel_id  = lv_max_travelid + i ) )
+        REPORTED DATA(lt_reported).
+
+
+      ENDMETHOD.
+
+    ********************************************************************************
+    *
+    * Implements travel action (in our case: for setting travel overall_status to completed)
+    *
+    ********************************************************************************
+      METHOD set_status_completed.
+
+        " Modify in local mode: BO-related updates that are not relevant for authorization checks
+        MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+              ENTITY travel
+                  UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
+                                                        overall_status = 'A' " Accepted
+                                                        %control-overall_status = if_abap_behv=>mk-on ) )
+              FAILED   failed
+              REPORTED reported.
+
+        " Read changed data for action result
+        READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+            ENTITY travel
+            FROM VALUE #( FOR key IN keys (  mykey = key-mykey
+                                              %control = VALUE #(
+                                                agency_id       = if_abap_behv=>mk-on
+                                                customer_id     = if_abap_behv=>mk-on
+                                                begin_date      = if_abap_behv=>mk-on
+                                                end_date        = if_abap_behv=>mk-on
+                                                booking_fee     = if_abap_behv=>mk-on
+                                                total_price     = if_abap_behv=>mk-on
+                                                currency_code   = if_abap_behv=>mk-on
+                                                overall_status  = if_abap_behv=>mk-on
+                                                description     = if_abap_behv=>mk-on
+                                                created_by      = if_abap_behv=>mk-on
+                                                created_at      = if_abap_behv=>mk-on
+                                                last_changed_by = if_abap_behv=>mk-on
+                                                last_changed_at = if_abap_behv=>mk-on
+                                              ) ) )
+            RESULT DATA(lt_travel).
+
+        result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
+                                                    %param    = travel
+                                                  ) ).
+
+      ENDMETHOD.
+
+
     **********************************************************************
     *
     * Validate customer data when saving travel data
@@ -516,7 +642,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
         READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
             FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
-                                     %control = VALUE #( customer_id = if_abap_behv=>mk-on ) ) )
+                                    %control = VALUE #( customer_id = if_abap_behv=>mk-on ) ) )
             RESULT DATA(lt_travel).
 
         DATA lt_customer TYPE SORTED TABLE OF /dmo/customer WITH UNIQUE KEY customer_id.
@@ -537,15 +663,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           IF ls_travel-customer_id IS NOT INITIAL AND NOT line_exists( lt_customer_db[ customer_id = ls_travel-customer_id ] ).
             APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
             APPEND VALUE #(  mykey = ls_travel-mykey
-                             %msg      = new_message( id       = /dmo/cx_flight_legacy=>customer_unkown-msgid
+                            %msg      = new_message( id       = /dmo/cx_flight_legacy=>customer_unkown-msgid
                                                       number   = /dmo/cx_flight_legacy=>customer_unkown-msgno
                                                       v1       = ls_travel-customer_id
                                                       severity = if_abap_behv_message=>severity-error )
-                             %element-customer_id = if_abap_behv=>mk-on ) TO reported-travel.
+                            %element-customer_id = if_abap_behv=>mk-on ) TO reported-travel.
           ENDIF.
-
         ENDLOOP.
-
       ENDMETHOD.
 
 
@@ -557,10 +681,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       METHOD validate_dates.
 
         READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
-            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
-                                     %control = VALUE #( begin_date = if_abap_behv=>mk-on
-                                                         end_date   = if_abap_behv=>mk-on ) ) )
-            RESULT DATA(lt_travel_result).
+          FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
+                                  %control = VALUE #( begin_date = if_abap_behv=>mk-on
+                                                      end_date   = if_abap_behv=>mk-on ) ) )
+          RESULT DATA(lt_travel_result).
 
         LOOP AT lt_travel_result INTO DATA(ls_travel_result).
 
@@ -591,142 +715,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                             %element-begin_date = if_abap_behv=>mk-on
                             %element-end_date   = if_abap_behv=>mk-on ) TO reported-travel.
           ENDIF.
-
         ENDLOOP.
-
       ENDMETHOD.
 
-
-    ********************************************************************************
-    *
-    * Implements travel action (in our case: for setting travel overall_status to completed)
-    *
-    ********************************************************************************
-      METHOD set_status_completed.
-
-        " Modify in local mode: BO-related updates that are not relevant for authorization checks
-        MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-               ENTITY travel
-                  UPDATE FROM VALUE #( FOR key IN keys ( mykey = key-mykey
-                                                         overall_status = 'A' " Accepted
-                                                         %control-overall_status = if_abap_behv=>mk-on ) )
-               FAILED   failed
-               REPORTED reported.
-
-        " Read changed data for action result
-        READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-             ENTITY travel
-             FROM VALUE #( FOR key IN keys (  mykey = key-mykey
-                                              %control = VALUE #(
-                                                agency_id       = if_abap_behv=>mk-on
-                                                customer_id     = if_abap_behv=>mk-on
-                                                begin_date      = if_abap_behv=>mk-on
-                                                end_date        = if_abap_behv=>mk-on
-                                                booking_fee     = if_abap_behv=>mk-on
-                                                total_price     = if_abap_behv=>mk-on
-                                                currency_code   = if_abap_behv=>mk-on
-                                                overall_status  = if_abap_behv=>mk-on
-                                                description     = if_abap_behv=>mk-on
-                                                created_by      = if_abap_behv=>mk-on
-                                                created_at      = if_abap_behv=>mk-on
-                                                last_changed_by = if_abap_behv=>mk-on
-                                                last_changed_at = if_abap_behv=>mk-on
-                                              ) ) )
-             RESULT DATA(lt_travel).
-
-        result = VALUE #( FOR travel IN lt_travel ( mykey = travel-mykey
-                                                    %param    = travel
-                                                  ) ).
-
-      ENDMETHOD.
-
-    ********************************************************************************
-    *
-    * Implements the dynamic feature handling for travel instances
-    *
-    ********************************************************************************
-      METHOD get_features.
-
-        "%control-<fieldname> specifies which fields are read from the entities
-
-        READ ENTITY zi_travel_m_xxx FROM VALUE #( FOR keyval IN keys
-                                                          (  %key                    = keyval-%key
-                                                           "  %control-travel_id      = if_abap_behv=>mk-on
-                                                             %control-overall_status = if_abap_behv=>mk-on
-                                                            ) )
-                                    RESULT DATA(lt_travel_result).
-
-
-        result = VALUE #( FOR ls_travel IN lt_travel_result
-                           ( %key                           = ls_travel-%key
-                             %features-%action-acceptTravel = COND #( WHEN ls_travel-overall_status = 'A'
-                                                                        THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled   )
-                          ) ).
-
-      ENDMETHOD.
-
-
-      METHOD calculatetravelkey.
-        READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-            ENTITY Travel
-              FIELDS ( travel_id )
-              WITH CORRESPONDING #( keys )
-            RESULT DATA(lt_travel).
-
-        DELETE lt_travel WHERE travel_id IS NOT INITIAL.
-        CHECK lt_travel IS NOT INITIAL.
-
-        "Get max travelID
-        SELECT SINGLE FROM ztravel_xxx FIELDS MAX( travel_id ) INTO @DATA(lv_max_travelid).
-
-        "update involved instances
-        MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
-          ENTITY Travel
-            UPDATE FIELDS ( travel_id )
-            WITH VALUE #( FOR ls_travel IN lt_travel INDEX INTO i (
-                               %key      = ls_travel-%key
-                               travel_id  = lv_max_travelid + i ) )
-        REPORTED DATA(lt_reported).
-
-
-      ENDMETHOD.
-
-      METHOD validate_agency.
-
-        READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
-            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
-                                     %control = VALUE #( agency_id = if_abap_behv=>mk-on ) ) )
-            RESULT DATA(lt_travel).
-
-        DATA lt_agency TYPE SORTED TABLE OF /dmo/agency WITH UNIQUE KEY agency_id.
-
-        " Optimization of DB select: extract distinct non-initial customer IDs
-        lt_agency = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING agency_id = agency_id EXCEPT * ).
-        DELETE lt_agency WHERE agency_id IS INITIAL.
-        CHECK lt_agency IS NOT INITIAL.
-
-        " Check if customer ID exist
-        SELECT FROM /dmo/agency FIELDS agency_id
-          FOR ALL ENTRIES IN @lt_agency
-          WHERE agency_id = @lt_agency-agency_id
-          INTO TABLE @DATA(lt_agency_db).
-
-        " Raise msg for non existing customer id
-        LOOP AT lt_travel INTO DATA(ls_travel).
-          IF ls_travel-agency_id IS NOT INITIAL AND NOT line_exists( lt_agency_db[ agency_id = ls_travel-agency_id ] ).
-            APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
-            APPEND VALUE #(  mykey = ls_travel-mykey
-                             %msg      = new_message( id       = /dmo/cx_flight_legacy=>agency_unkown-msgid
-                                                      number   = /dmo/cx_flight_legacy=>agency_unkown-msgno
-                                                      v1       = ls_travel-agency_id
-                                                      severity = if_abap_behv_message=>severity-error )
-                             %element-agency_id = if_abap_behv=>mk-on ) TO reported-travel.
-          ENDIF.
-
-        ENDLOOP.
-
-
-      ENDMETHOD.
 
     ENDCLASS.
     ```
@@ -754,16 +745,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Enhance behavior definition for projection view](projection5.png)
 
-      **Hint: If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.**
-   
-
+    >**Hint:** If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.
 
 ### Test yourself
 
+---
 
-
-
-## Next
+### Next
 
 You can [deploy your ABAP application with SAP Business Application Studio](abap-environment-deploy-cf-production). Follow therefore the tutorial.
 
@@ -782,5 +770,4 @@ You can [deploy your ABAP application with SAP Business Application Studio](abap
 
 [Implicit Returning Parameters](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/aceaf8453d4b4e628aa29aa7dfd7d948.html )
 
-[`openSAP` RAP](https://open.sap.com/courses/cp13 )
----
+[RAP course: `openSAP`](https://open.sap.com/courses/cp13 )

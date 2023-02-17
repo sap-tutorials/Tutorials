@@ -1,32 +1,33 @@
 ---
 parser: v2
-auto_validation: true
+auto_validation: true 
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, software-product>sap-hana, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
 
 # Create a Calculation View with Differential Privacy in SAP Web IDE
+
 <!-- description --> Use differential privacy to anonymize confidential data
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have completed the previous tutorials to load data into the table `TGT_SALARIES`
 
-## Intro
->**This tutorial cannot be completed with a trial account.**
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have completed the previous tutorials to load data into the table `TGT_SALARIES`
 
 ## You will learn
-  - How to create Calculation View of type Cube using SAP Web IDE
-  - How to configure differential privacy to add noise to a column
 
+- How to create Calculation View of type Cube using SAP Web IDE
+- How to configure differential privacy to add noise to a column
 
+## Intro
+
+>**This tutorial cannot be completed with a trial account.**
 ---
 
 ### Create a new Calculation view
-
 
 Create a new folder called **models** under `db/src`. Create a new **Calculation View** and call it `SALARIES_ANONYMIZED`
 

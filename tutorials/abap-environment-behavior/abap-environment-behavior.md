@@ -44,7 +44,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   4. Replace your code with following.
 
     ```ABAP
-    managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
+    managed implementation in class zbp_i_travel_m_xxx unique;
 
     define behavior for ZI_TRAVEL_M_XXX alias Travel
     persistent table ztravel_xxx

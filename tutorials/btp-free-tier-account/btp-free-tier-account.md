@@ -1,8 +1,10 @@
 ---
 parser: v2
+author_name: Annika Gonnermann
+author_ profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
@@ -13,18 +15,10 @@ primary_tag: software-product>sap-business-technology-platform
 To activate your consumption-based SAP BTP global account with free tier service plans, you need:
   - an **e-mail address**
   - and a **credit card** for authentication and eventually later for billing purposes.
-  > **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
+  **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
-## How Does Free Tier Work?
+## How does free tier work?
 The global account you will create in this tutorial gives you access to a productive environment with both free and paid plans. If you activate **free tier** plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however. For more information, see [Enterprise Accounts](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/171511cc425c4e079d0684936486eee6.html?locale=en-US&version=Cloud) and [Using Free Service Plans](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/524e1081d8dc4b0f9d055a6bec383ec3.html?locale=en-US&version=Cloud).
-
-## Intro
-If you want to know which services currently offer free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings under **Free Tier Services**.
-
-<!-- border -->![SAP Discovery Center](btp-free-tier-account-dc.png)
-
-
-If you're interested in further information about Free Tier, or if you want to exchange information with other users, explore the [BTP Community Topic page](https://community.sap.com/topics/business-technology-platform).
 
 ## You will learn
   - How to start your SAP journey
@@ -32,10 +26,16 @@ If you're interested in further information about Free Tier, or if you want to e
   - How to create a consumption-based SAP BTP global account with free tier service plans
   - How to create and navigate to your subaccount and space
 
+## Intro
+  If you want to know which services currently offer free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings under **Free Tier Services**.
+
+  <!-- border -->![SAP Discovery Center](btp-free-tier-account-dc.png)
+
+  If you're interested in further information about Free Tier, or if you want to exchange information with other users, explore the [BTP Community Topic page](https://community.sap.com/topics/business-technology-platform).
 
 ---
 
-### Register at sap.com
+### Log On in SAP Store
 
 Start your SAP journey in the SAP Store and create an account for the SAP Store. You need this account in order to be able to sign up for an account.
 
@@ -44,7 +44,7 @@ Start your SAP journey in the SAP Store and create an account for the SAP Store.
 2. Scroll down to **Plans and Pricing**. Select **Based on Usage** > **Add to Cart**.
 
 2. You are now being asked to register your account. Select **Register**.
-    > If you already have an account on www.sap.com (for example, a P, S, C, D or I number), you can enter your account details or the associated e-mail address along with your password. Select **Continue**.
+    > If you already have an account on www.sap.com (for example, a P, S, C, D or I number or an SAP Universal ID), you can enter your account details or the associated e-mail address along with your password. Select **Continue** follow Step 3.
 
     <!-- border -->![Register at sap.com](free-tier-btp-register.png)
 
@@ -81,7 +81,7 @@ If you've created a new account, you are now asked to add personal details.
 2. Next, fill out the address form and provide the following details: **Country**, **Name**, **Address**, **City**, **State**, and **Postal Code**. This information is necessary for billing purposes for when you upgrade your account from free tier service plans to paid service plans.
 
 
-### Configure solution 
+### Configure solution
 
 
 The following page offers to configure your solution. Select:
@@ -113,7 +113,7 @@ Proceed by selecting **Continue to Checkout Review**.
 ### Check order details
 
 
-You can now review your order details. Also, enter your **PO-Number** if available.
+You can now review your order details.
 
 1. If you are happy with the result, proceed by clicking **Place Order**.
 2. You are now asked to verify your credit card. Enter your 3D secure verification code sent to you by your credit card provider.
@@ -157,7 +157,7 @@ You are now in your global account, to be more precise in your **Account Explore
     > Consider naming your subaccount *'Free'*. This way, you'll know exactly which services are free to use.
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
-    - **Region**: Select the region closest to you.
+    - **Region**: Select the region closest to you. You can use the service catalogue in [SAP Discovery Center](https://discovery-center.cloud.sap/viewServices) to see which services with free tier service plans are available in each region.
     > **Caution:** Unfortunately, Cloud Foundry Runtime is currently not available for cf-eu10 (Europe Frankfurt, Amazon Web Services).
 
     - **Description** (optional): Add an additional description to identify your subaccount.

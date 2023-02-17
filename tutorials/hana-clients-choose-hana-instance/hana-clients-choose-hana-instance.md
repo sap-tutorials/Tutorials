@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -26,7 +26,7 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 >---
 
->Note, for connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
+>For connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 
 >---
 
@@ -41,8 +41,7 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 ### Overview of SAP HANA Cloud and SAP HANA, express edition
 
-
-There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.  Note that this tutorial will discuss SAP HANA Cloud and SAP HANA, express edition.
+There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.  This tutorial will discuss SAP HANA Cloud and SAP HANA, express edition.
 
 |  Version     | Notes
 |  :------------- | :-------------
@@ -54,7 +53,6 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 
 ### SAP HANA Cloud
-
 
 Here are a few benefits of using SAP HANA Cloud:
 
@@ -91,7 +89,7 @@ Here are a few benefits of using SAP HANA Cloud:
     <!-- border -->![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
-    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  
+    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is avialable in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
     * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
@@ -113,7 +111,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![SQL Endpoint](SQLEndpoint.png)
 
-    >Note that the SAP HANA Cloud, HANA database trial or free tier instances are shut down overnight and will need to be restarted before working with them the next day.  
+    >The SAP HANA Cloud, HANA database free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.  
 
 2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from SAP HANA Cloud Central.
 
@@ -123,7 +121,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![authentication for dbx](dbx-authenticate.png)
 
-    >Note, the credentials for cockpit database connections can be persisted so they do not need to be entered again by entering them into the SAP HANA cockpit app.  
+    >The credentials for cockpit database connections can be persisted so they do not need to be entered again by entering them into the SAP HANA cockpit app.  
 
     The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and SAP Help Portal topic [SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
 
@@ -168,13 +166,15 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 
 ### SAP HANA, express edition
-
-
 >This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial or free tier as explained in step 3.
 
-SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).  
+SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).  
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details can be found in the [release notes](https://www.sap.com/documents/2022/05/aca852e1-2a7e-0010-bca6-c68f7e60039b.html).   
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS and Linux machines.  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280) or [Getting Started with SAP HANA 2.0, express edition (Virtual Machine Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/8c3bbc4a904d42efac77c09da0bccf64).  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
+
+![SAP HANA express download manager](express-download-manager.png)
+
+Further details can be found in the [release notes](https://www.sap.com/documents/2022/05/aca852e1-2a7e-0010-bca6-c68f7e60039b.html).   
 
 Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in the mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 
@@ -182,8 +182,6 @@ At this point, you should have a running instance of SAP HANA, express edition.
 
 
 ### Connect to SAP HANA, express edition
-
-
 >This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial or free tier as explained in step 3.
 
 A default installation will contain one [system](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/39da3d057f56427ab1bb7f738ca9e7ce.html) database named **SYSTEMDB** and one [tenant](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/623afd167e6b48bf956ebb7f2142f058.html) database named **HXE**.
@@ -267,6 +265,8 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
     ![hdbsql commands](hdbsql-commands2.png)
 
     For further information, see [Port Assignment in Tenant Databases](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/440f6efe693d4b82ade2d8b182eb1efb.html) and [Connecting to SAP HANA Databases and Servers](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/b250e7fef8614ea0a0973d58eb73bda8.html).  
+
+### Knowledge check
 
 Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA, express edition.
 

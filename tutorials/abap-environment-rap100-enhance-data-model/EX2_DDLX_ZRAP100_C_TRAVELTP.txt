@@ -1,0 +1,79 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travels',
+    imageUrl: 'Attachment',  //case-sensitive
+    description: { type: #STANDARD, value: 'TravelID' } //case-sensitive
+  }
+}
+annotate view ZRAP100_C_TRAVELTP_### with
+{
+  @UI.facet: [ {
+    id: 'idIdentification',
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Travel',
+    position: 10
+  } ]
+
+  @UI: {
+        lineItem:       [ { position: 10, importance: #HIGH } ],
+        identification: [ { position: 10 } ],
+        selectionField: [ { position: 10 } ]
+  }
+  TravelID;
+
+  @UI: {
+        lineItem:       [ { position: 20, importance: #HIGH } ],
+        identification: [ { position: 20 } ],
+        selectionField: [ { position: 20 } ]
+  }
+  AgencyID;
+
+  @UI: {
+        lineItem:       [ { position: 30, importance: #HIGH } ],
+        identification: [ { position: 30 } ],
+        selectionField: [ { position: 30 } ]
+  }
+  CustomerID;
+
+  @UI: {
+        lineItem:       [ { position: 40, importance: #MEDIUM } ],
+        identification: [ { position: 40 } ]
+  }
+  BeginDate;
+
+  @UI: {
+        lineItem:       [ { position: 50, importance: #MEDIUM } ],
+        identification: [ { position: 50 } ]
+  }
+  EndDate;
+
+  @UI.identification: [ { position: 60 } ]
+  BookingFee;
+
+  @UI.identification: [ { position: 70 } ]
+  TotalPrice;
+
+  @UI.identification: [ { position: 90 } ]
+  Description;
+
+  @UI: {
+        lineItem:       [ { position: 100, importance: #HIGH } ],
+        identification: [ { position: 100 } ],
+        textArrangement: #TEXT_ONLY
+  }
+  OverallStatus;
+
+  @UI.identification: [ { position: 110 } ]
+  Attachment;
+
+  @UI.hidden: true
+  MimeType;
+
+  @UI.hidden: true
+  Filename;
+
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,8 +1,10 @@
 ---
+author_name: Joshua Margo
+author_profile: https://github.com/jmmargo
 parser: v2
 auto_validation: true
 primary_tag: products>sap-gateway
-tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner  ]
+tags: [ products>sap-gateway, topic>cloud, programming-tool>odata, tutorial>beginner  ]
 time: 5
 ---
 
@@ -79,20 +81,16 @@ You should now see the **SAP Easy Access** screen.  Your account is now active a
 
 ![SAP Gateway Main Screen](8.png)
 
-Enter the URL of the SAP Easy Access page below and click **Validate**.
+Enter the URL of the SAP Easy Access page below and click **Check Answer**.
 
+### Additional Information
 
-
----
-
-## Additional Information
-
-### Account Maintenance
+#### Account Maintenance
 
 - If you need to reset your password, please visit the [SAP Gateway Registration system](https://register.sapdevcenter.com/SUPSignForms) again.  The system will reset your password and email you the new temporary password.
 
 
-### Problems?  Need Help?
+#### Problems?  Need Help?
 There are two different forums, depending on what type of trouble you are experiencing.  *Please use the correct one, or it will take longer to answer your questions.*
 
 - For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP Gateway Community](https://community.sap.com/topics/gateway) Q&A system.  

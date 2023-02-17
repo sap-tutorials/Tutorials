@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 40
-tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+tags: [ software-product-function>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-fiori
 ---
 
 # Extend the Object Page by Adding More Functionality
@@ -258,11 +258,9 @@ The flexible column layout allows you to have the list report and the object pag
 
 1. Right-click the `webapp` folder and select **Show Page Map**.
 
-    In the **Global Page Settings** select the **Flexible Column Layout** and choose the **Mid-Expanded** option for the two column layout.
+    In the **Property Panel** select the **Flexible Column Layout** and choose the `Mid-Expanded` option for the two column layout.
 
     <!-- border -->![Annotation Cursor](t4-flexible-column-layout-global-page-settings.PNG)
-
-    Click **Apply**.
 
 2. Refresh the application. Click on one of the items in the list report to open the object page.
 
