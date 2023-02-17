@@ -10,7 +10,7 @@ author_profile: https://github.com/mervey45
 
 # Enhance the Business Object Data Model and Enable OData Streams
 <!-- description --> Enhance the business object data model and enable OData streams with SAP BTP ABAP environment.
-
+ 
 ## Prerequisites
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
@@ -221,7 +221,7 @@ Enhance the metadata extension![ddlx icon](adt_ddlx.png) to change the appearanc
     - Element **`BookingFee`** - should not be displayed in the list table.
     - Element **`TotalPrice`** - should not be displayed in the list table.
     - Element **`CurrencyCode`** - should not be explicitly displayed, neither in the list table nor on the object page.
-       **Note:** The currency code will be automatically displayed on the UI thanks to `@consumption` annotations specified for the element `CurrencyCode` in the BO projection view.
+       **Hint:** The currency code will be automatically displayed on the UI thanks to `@consumption` annotations specified for the element `CurrencyCode` in the BO projection view.
     
     - Element **`Description`** - should not be displayed in the list table.
     - Element **`OverallStatus`** - should have a high display importance on small windows and only its associated descriptive text should be displayed on the UI.
