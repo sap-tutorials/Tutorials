@@ -98,14 +98,14 @@ The following services with their service plans and entitlements are required fo
 | Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | Step 6: Configure Kyma in your subaccount|
 | SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
 | SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
-| SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
+| SAP Build Work Zone, standard edition             | `standard`   | 1      | active users | [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe) |
 
 
 > The following services are Utility Services, no entitlement needed:
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
-| SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)   |
+| SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe)   |
 | SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)   |
 
 
