@@ -22,9 +22,12 @@ author_profile: https://github.com/mervey45
       - Apple Mac OS X 10.14 or higher
 - Microsoft VC Runtime:
       - For Windows OS: [Microsoft Visual C++ 2013 (x64)](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) for communication with the back-end system is required.
-- Java Runtime:
-      - ADT is validated and tested against OpenJDK and SapMachine JVMs (OpenJDK / [SapMachine](https://sap.github.io/SapMachine/)).
-      - Recent Eclipse packages already include an  AdoptOpenJDK. Any other JRE found on the system is not used. If this is not desired, see note [3035242](https://launchpad.support.sap.com/#/notes/3035242) on how to remove the bundled JRE and use a custom one.
+    >**Hint:** Precisely version Visual Studio 2013 (VC++ 12.0) x64 for communication with the back-end system is required.
+-	Java Runtime:
+      -	ADT is validated and tested against Java versions 11 and 17 (Oracle Java and `OpenJDK`).
+      - The latest Eclipse packages are bundled with [`Eclipse Temurin`](https://adoptium.net/), an `OpenJDK` binary distribution provided by the [`Eclipse Adoptium`](https://projects.eclipse.org/projects/adoptium) project. Any other JRE found on the system is not used. If you want to remove the bundled JRE and use a custom one, see SAP note [3035242](https://launchpad.support.sap.com/#/notes/3035242).
+    >**Hint:** No manual installation of an JRE / JDK is required, since it's already bundled with the latest Eclipse packages which are downloadable as a ready-to-run zip-file. 
+
 
 ---
 
