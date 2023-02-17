@@ -68,13 +68,13 @@ In the previous step you've created an already runnable application. To demo tha
 
 1. Choose `bookshop - development profile (CAP)`.
 
-    <!-- border -->![Create run configuration.](complete-run-conf.png)
+    <!-- border -->![As of now, there's only the development profile available.](complete-run-conf.png)
 
 1. Name your run configuration `Run bookshop-local`.
 
 1. Choose **Run Module** on `Run bookshop-local`.
 
-    <!-- border -->![Create run configuration.](add-run-conf.png)
+    <!-- border -->![Next to the run configuration at the right side, click the run module button.](add-run-conf.png)
 
 
 Open the URL and look at the application, including the sample data for the `Books` entity (select **Books**) that is being served. This is your first, full-fledged OData service created with CAP.
