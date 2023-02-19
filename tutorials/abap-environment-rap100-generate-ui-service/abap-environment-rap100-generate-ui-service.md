@@ -279,7 +279,7 @@ Publish the local service endpoint of your service binding ![service binding](ad
 
 ### Preview the Travel App in SAP S/4HANA on premise (optional)
 
->**Hint:** In **SAP S/4HANA on premise or private cloud systems** publishing the local service endpoint of your service binding does not work from within ADT. Therefore you have to publish the service binding locally using transaction `/IWFND/V4_ADMIN` in these systems.
+>**Hint:** In **SAP S/4HANA on premise or private cloud systems** publishing the local service endpoint of your OData V4 service binding does not work from within ADT. Therefore you have to publish the service binding locally using transaction `/IWFND/V4_ADMIN` in these systems.
 
  1. In the menu click on the button **Run ABAP Development Object as ABAP Application in SAPGUI** or press `Alt+F8`.
 
