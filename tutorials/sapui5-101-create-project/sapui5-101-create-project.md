@@ -13,7 +13,7 @@ time: 15
 <!-- description --> Start working with the SAP Business Application Studio, and create a new empty UI5 project connected to a data source.
 
 ## Prerequisites  
-- **Tutorials:**  [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create)
+- **Tutorials:**  [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create), [Create a Destination in the SAP BTP Cockpit](cp-cf-create-destination)
 
 ## You will learn  
   - How to create a new SAPUI5 project that is connected to a data source
@@ -122,5 +122,7 @@ Running your application has several advantages over deploying it. Among others,
 
 Expand the nodes **`<edmx:Edmx>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
 
-
 ---
+
+
+[def]: cp-cf-create-destination
