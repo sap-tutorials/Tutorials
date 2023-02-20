@@ -323,53 +323,6 @@ Publish the local service endpoint of your service binding ![service binding](ad
 10. Check that your service bindings is now publish and choose the entity **Travel** and press the button **Preview**.
 
 
-### Preview the Travel App in SAP S/4HANA on premise (optional)
-
->**Hint:** In **SAP S/4HANA on premise or private cloud systems** publishing the local service endpoint of your OData V4 service binding does not work from within ADT. Therefore you have to publish the service binding locally using transaction `/IWFND/V4_ADMIN` in these systems.
-
- 1. In the menu click on the button **Run ABAP Development Object as ABAP Application in SAPGUI** or press `Alt+F8`.
-
-     ![onprem](onprem.png)
-
- 2. Type `/iwfnd/v4_admin` as a search string and double-click on the entry `/IWFND/V4_ADMIN` (Transaction).
-
-     ![onprem](onprem2.png)
-
- 3. Click the button **Publish Service Groups** to get a list of service groups that can be published.
-
-     ![onprem](onprem3.png)
-
- 4. Enter following values to search for the service group of your service and press the button **Get Service Groups**:
-
-    - System Alias: LOCAL
-    - Service Group ID: `Z*###*`
-
-     ![onprem](onprem4.png)
-
- 5. Select the entry `ZRAP100_UI_TRAVELTP_O4_###` from the list and press the button **Publish Service Groups**.
-
-     ![onprem](onprem5.png)
-
- 6. In the following popup enter a meaningful description such as `Travel App ###`.
-
-     ![onprem](onprem6.png)
-
- 7. You are now asked to provide a customizing request. Choose an existing customizing request or create a new one and choose a meaningful description.
-
-     ![onprem](onprem7.png)
-
- 8. Confirm the success message and press **Enter**.
-
-     ![onprem](onprem8.png)
-
- 9. Navigate back to your service binding in the project explorer. Right click on it and choose **Refresh**.
- 
-     ![onprem](onprem9.png)
-
-
-10. Check that your service bindings is now publish and choose the entity **Travel** and press the button **Preview**.
-
-
 ### Test yourself
 
 
