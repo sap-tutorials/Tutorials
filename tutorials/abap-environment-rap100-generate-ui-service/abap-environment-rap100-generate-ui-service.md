@@ -274,7 +274,7 @@ Publish the local service endpoint of your service binding ![service binding](ad
  4. Check your result.
 
      ![class](p9.png)
-
+ 
 
 ### Preview the Travel App in SAP S/4HANA on premise (optional)
 
