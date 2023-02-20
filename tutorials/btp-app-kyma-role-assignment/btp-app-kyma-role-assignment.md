@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)
+ - [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe)
 
 ## Details
 ### You will learn

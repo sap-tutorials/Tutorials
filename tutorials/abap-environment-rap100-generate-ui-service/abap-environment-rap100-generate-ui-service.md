@@ -232,9 +232,8 @@ The generated business service will be transactional, draft-enabled, and enriche
     |                                        | **Service Definition**  | Name: **`ZRAP100_UI_Travel_###`**                   |
     |                                        | **Service Binding**     | Name: **`ZRAP100_UI_Travel_O4_###`**                |
     |                                        |                         | Binding Type: **`OData V4 - UI`**                   |
-
-    ![class](new0.png)                     
-
+ 
+    ![class](new0.png)                    
 
  4. Go to the **Project Explorer**, select your package ![package](adt_package.png) **`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects
 

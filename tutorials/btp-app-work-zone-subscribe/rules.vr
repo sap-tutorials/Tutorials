@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+What role is assigned to the `Risks` and `Mitigations` so all users can access them?
+
+###Match
+[ ] Everybody
+[ ] Anyone
+[ ] All
+[x] Everyone
+
+[VALIDATE_1]

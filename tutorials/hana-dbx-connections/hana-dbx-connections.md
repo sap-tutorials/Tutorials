@@ -232,7 +232,7 @@ For additional details on this parameter, see the `system_information` usage par
 To undo this setting, execute the SQL below.
 
 ```SQL
-ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('system_information', 'usage') = 'custom' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') UNSET ('system_information', 'usage') WITH RECONFIGURE;
 ```
 
 ### Database groups (Optional)

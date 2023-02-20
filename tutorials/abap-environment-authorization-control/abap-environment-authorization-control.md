@@ -167,5 +167,4 @@ For this purposes the generated business object is checking authorization object
 ### Test yourself
 
 
-
 ---

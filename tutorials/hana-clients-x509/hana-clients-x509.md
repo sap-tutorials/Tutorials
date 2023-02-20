@@ -200,7 +200,7 @@ SET PSE X509_PSE PURPOSE X509 FOR PROVIDER DEMO_X509_PROVIDER;
 SELECT * FROM PSES;
 ```
 
-There must be a match between the issuer value in the X509 provider and the ISSUER_DISTINGUISHED_NAME of the client certificate.  The needed value was shown in the previous step.
+There must be a match between the issuer value in the X509 provider and the ISSUER_DISTINGUISHED_NAME of the client certificate.  The needed value was shown at the end of step 3.
 
 Further details can be found at [CREATE X509 PROVIDER Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/3b3163d6ad0f4eb9bd73c7c060f49649.html) and [CREATE PSE statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/4d80bf63fc374a7f99be94d8ce70a07a.html).  
 
