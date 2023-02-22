@@ -1,0 +1,14 @@
+[VALIDATE_6]
+###Rule
+single-choice
+
+###Question
+When the app is running, how does it access the data?
+
+###Match
+[X] Through a service
+[ ] Accessing the database directly using SQL commands
+[ ] Generates a batch file that communicates with the data model
+[ ] A deep learning algorithm that acts as a bridge between the user and the database.
+
+[VALIDATE_6]

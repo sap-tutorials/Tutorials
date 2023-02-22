@@ -1,0 +1,14 @@
+[VALIDATE_2]
+###Rule
+multiple-choice
+
+###Question
+What happens when you launch SAP Business Application Studio?
+
+###Match
+[x] If you have not created a dev space, the landing page for SAP Business Application Studio loads.
+[ ] Nothing happens.
+[ ] A bookmark to this page is automatically created.
+[X] If this is not the first dev space, the dev space manager for SAP Business Application Studio loads.
+
+[VALIDATE_2]
