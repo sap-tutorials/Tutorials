@@ -9,9 +9,6 @@ primary_tag: software-product>sap-screen-personas
 # Test Your Mobile SAP Screen Personas Flavor
 <!-- description --> Run your Service Notification app on a mobile device
 
-## Prerequisites
- - SAP Screen Personas SP06 or higher
-
 ## You will learn
   - How to access your SAP Screen Personas flavor on a mobile device
 
@@ -22,7 +19,7 @@ The focus of this tutorial is on testing your adaptive flavor(s) on a mobile dev
 
 ### Access your flavor on a mobile device
 
-On the desktop version of the training system, navigate to transaction **`IW51`** and open the **flavor bar**. Click on your flavor tile, select **Direct Access Link** and then click **Generate QR Code**.
+On the desktop version of the training system, navigate to transaction **`IW51`** and open the **flavor manager**. Click on your flavor tile, select **Direct Access Link** and then click **Generate QR Code**.
 
 ![Generate QR Code](Generate-QR-Code.png)
 
