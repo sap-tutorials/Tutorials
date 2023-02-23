@@ -304,7 +304,7 @@ for train_index, val_index in kf.split(train_x):
     # Score on validation data (hold-out dataset)
     val_step_r2 = clf.score(train_x.iloc[val_index], train_y.iloc[val_index])
     # Metric Logging: Step Information
-    aic_connection.metrics.log_metrics(
+    aic_connection.log_metrics(
         metrics = [
             Metric(name= "(Val) Fold R2", value= float(val_step_r2), timestamp=datetime.utcnow(), step=i),
         ]
@@ -509,6 +509,11 @@ Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executi
 Paste and edit, then execute the following snippet:
 
 ```PYTHON
+tracking_client = Tracking(base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2",
+    auth_url=  aic_service_key["url"] + "/oauth/token",
+    client_id = aic_service_key['clientid'],
+    client_secret = aic_service_key['clientsecret'])
+
 response = tracking_client.query(
     execution_ids = [
         'e1f2169db8760b5d' # list of execution IDs for which to query metrics
