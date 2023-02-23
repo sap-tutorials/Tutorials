@@ -147,7 +147,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
     yo easy-ui5
     ```
 
-5. Choose `generator-ui5-project`. Use the following settings:
+5. Choose `generator-ui5-project`. Use the following settings (The `author` name should be your username):
 
     ![UI5 Terminal](ui5-yo.png)
 
