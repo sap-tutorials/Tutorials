@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -112,7 +112,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
-    >```Shell
+    >```Shell (Microsoft Windows)
     cd C:\SAP\hdbclient\node
     npm install
     cd %HOMEPATH%\HANAClientsTutorial\node
@@ -623,10 +623,9 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP HANA database.
-
-
 
 
 ---

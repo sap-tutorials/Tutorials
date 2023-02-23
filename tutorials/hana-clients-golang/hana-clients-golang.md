@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -43,7 +43,7 @@ If it is not installed, download it from [Download Go](https://golang.org/dl/), 
 
 In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
-Before proceeding, ensure you can create and run an example Go program as described in [Test your installation](https://golang.org/doc/install#testing).
+Before proceeding, ensure you can create and run an example Go program as described in [Tutorial: Get started with Go](https://go.dev/doc/tutorial/getting-started#code).
 
 
 ### Build the SAP HANA Client Go driver
@@ -252,7 +252,9 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     ![Breakpoint](GoBreakpoint.png)  
 
-    >Note that debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+    >Debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Go application that connects to and queries an SAP HANA database.
 

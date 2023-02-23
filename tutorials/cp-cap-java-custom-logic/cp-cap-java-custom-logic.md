@@ -54,7 +54,7 @@ public class OrdersService implements EventHandler {
 <!-- border -->![OrdersService class overview](ordersservice-class.png)
 
 
-> If you see validation errors in your editor, open the context menu on your `pom.xml` and select **Update Project**. That regenerates the classes and makes them available.
+> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Update Project**. That regenerates the classes and makes them available.
 
 
 ### Decrease stock when posting order
