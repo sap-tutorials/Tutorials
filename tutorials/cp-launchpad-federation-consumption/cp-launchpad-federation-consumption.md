@@ -5,6 +5,7 @@ auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity, software-product>sap-launchpad-service, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--advanced-edition]
 primary_tag: software-product>sap-build-work-zone--standard-edition
+parser: v2
 ---
 
 ## Prerequisites
@@ -12,16 +13,15 @@ primary_tag: software-product>sap-build-work-zone--standard-edition
  - You exposed roles in your SAP S/4HANA system. 
  - You have created an SAP Build Work Zone site (see tutorial group [Create your First Business Site with Apps](group.launchpad-cf-create-site)).
 
-## Details
-### You will learn
+
+## You will learn
   - How to create a new content provider 
   - How to add federated content to the My Content area
   - How to make federated roles available in your SAP Build Work Zone site
 
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Content Provider)]
+### Create a new Content Provider
 
 In a first step, you will add the SAP S/4HANA system as a content provider.
 
@@ -47,7 +47,7 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
     |  Runtime Destination for OData  | `Use default runtime destination`
     |  Content Addition Mode  | `Manual addition of selected content items`
 
-   1. Click **Save**.
+5. Click **Save**.
 
        ![Provider creation form](3b-new-content-provider.png)
 
@@ -57,18 +57,18 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
 
     The content provider is added to the list and the content is loaded. This might take some seconds.
 
-  1. Wait till the status says **Created**. If this takes long, try refreshing the browser page.
 
-    ![Provider created](4b-provider-created.png)
+ 6. Wait till the status says **Created**. If this takes long, try refreshing the browser page.
 
-[DONE]
-[ACCORDION-END]
+    <!-- border --> ![Provider created](4b-provider-created.png)
 
-[ACCORDION-BEGIN [Step 2: ](Add roles to My Content)]
+
+
+### Add roles to My Content
 
 1. Click the **Content Manager** icon to manually assign content from your SAP S/4HANA system to ``My Content``, so you can add it to a site.
 
-    !![Content Manager Icon](5a-go-to-content-manager.png)
+    ![Content Manager Icon](5a-go-to-content-manager.png)
 
 2. On top of the page, click **Content Explorer** to access content coming from content providers.
 
@@ -90,11 +90,9 @@ You see that both roles have been added.
 
 ![Roles Added](9-roles-added.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Check roles in My Content)]
+### Check roles in My Content
 
 1. On top of the page, click **My Content**.
 
@@ -108,10 +106,9 @@ You can see that there are 84 apps available in this role. In the next step, you
 
 ![Role Accounts Payable Accountant](12-ap-role-content.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign roles to site)]
+
+### Assign roles to site
 
 To make the apps that come with the two federated roles available in your site, you need to assign the roles to the site.
 
@@ -145,10 +142,8 @@ To make the apps that come with the two federated roles available in your site, 
 
     ![Back to Site Directory](18-back-to-site-directory.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Assign roles to your user)]
+### Assign roles to your user
 
 Apps are only displayed to users with the corresponding roles assigned. You assign those roles as role collections to users in the SAP BTP cockpit.
 
@@ -174,16 +169,14 @@ Apps are only displayed to users with the corresponding roles assigned. You assi
 
 Now you are done in SAP BTP cockpit.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Access the federated content)]
+### Access the federated content
 
 1. Go back to the Site Directory to launch your ``JobCore`` site.
 
 2. Click the **Go to Site** icon.
 
-    ![Open Site](26-open-site.png)
+    <!-- border --> ![Open Site](26-open-site.png)
 
     The site opens in a new browser tab.
 
@@ -195,7 +188,7 @@ Now you are done in SAP BTP cockpit.
 
     ![Click Go](28-go.png)
 
-    ![App Manage outgoing checks](29-manage-checks.png)
+    <!-- border --> ![App Manage outgoing checks](29-manage-checks.png)
 
 5. Click the SAP icon to go back to the Work Zone homepage.
 
@@ -205,8 +198,6 @@ Now you are done in SAP BTP cockpit.
     ![Maintain business partner](30-maintain-business-partner.png)
 
 
-[VALIDATE_6]
-[ACCORDION-END]
 
 
 ---
