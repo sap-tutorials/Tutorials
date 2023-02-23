@@ -29,7 +29,7 @@ author_profile: https://github.com/mervey45
 - How to create IAM apps and business catalogs
 
 ## Intro
->**HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+>**Hint:** The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
 ---
 ### Assign role collection to user
@@ -51,7 +51,7 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas3.png)
 
-      **HINT:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
+      **Hint:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
   5. Enter your e-mail address and click **Show Assignments**.
 
@@ -76,15 +76,15 @@ author_profile: https://github.com/mervey45
 ### Configure destination
 
 
-  1. Select your subaccount **trial**.
+  1. Select your subaccount **trial**. 
 
-    ![assign role collection](bas2.png)
+     ![assign role collection](bas2.png)
 
   2. In the navigation pane expand the **Connectivity** section and select **Destinations**. Click **New Destination**.
 
-    ![assign role collection](destinations.png)
+      ![assign role collection](destinations.png)
 
-    Configure the new destination with the following standard field values.
+      Configure the new destination with the following standard field values.
 
     |  Field Name     | Value
     |  :------------- | :-------------
@@ -115,7 +115,7 @@ author_profile: https://github.com/mervey45
 
   3. Click **Download Trust**.
 
-    ![assign role collection](trust.png)
+     ![assign role collection](trust.png)
 
 
 
@@ -126,7 +126,7 @@ author_profile: https://github.com/mervey45
 
       ![dev](properties.png)
 
-  2.   Select **ABAP Development** and copy the **System URL** without the `-api`. Paste in a browser and log in to the system.
+  2.  Select **ABAP Development** and copy the **System URL** without the `-api`. Paste in a browser and log in to the system.
 
       ![dev](properties2.png)
 
@@ -166,20 +166,18 @@ author_profile: https://github.com/mervey45
 
 
 
-
-
 ### Create dev space
 
 
-  1.  Select **trial**.
+  1. Select **trial**.
 
       ![dev](destination3.png)
 
-  2.   Select **Service Marketplace** and search for **SAP Business Application Studio**. Select actions and click **Go to Application**.
+  2. Select **Service Marketplace** and search for **SAP Business Application Studio**. Select actions and click **Go to Application**.
 
       ![dev](studio212.png)
 
-  3.  Check the privacy statement and click **OK**.
+  3. Check the privacy statement and click **OK**.
 
       ![dev](studio2.png)
 
@@ -200,50 +198,77 @@ author_profile: https://github.com/mervey45
       ![dev](studio5.png)
 
 
-  ### Open workspace
+### Set up organization and space
 
 
   1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
-     Select **Open Folder** to set your workspace.
+     Select the menu on the left side and click **Open Folder** to set your workspace.
 
       ![organization](studio6.png)
 
-  2. Select **projects** and click **Open**.
+  2. Select **`/home/user/projects/`** and click **OK**.
 
       ![organization](studio7.png)
 
+  3. Switch to SAP BTP Trial and select your trial subaccount.
+
+      ![organization](api.png)
+
+  4. Copy your **Cloud Foundry Environment API endpoint** for later use.      
+
+      ![organization](api2.png)
+
+  5. Switch to **SAP Business Application Studio**, select the menu on the left side and click **View > Command Palette**.
+
+      ![organization](s8.png)
+
+  6. Search for **CF: Login to Cloud Foundry** and select it.
+
+      ![organization](s9.png)
+
+  7. Paste your Cloud Foundry API endpoint, enter your credentials and click **Sign in**.
+
+      ![organization](s10.png)
+
+  8. Now you can see, that you are logged in. Set now your cloud foundry target:
+
+     - Cloud Foundry Organization: `<your_global_account>`
+     - Cloud Foundry Space: dev
+
+      ![organization](s11.png)
+
+      Click **Apply**.
 
 
 ### Create list report object page
 
+ 1. Select the menu on the left side and click **View > Command Palette**.
 
-  1. Select **View** > **Find Command**.
+      ![object](s8.png)
 
-    ![object](view.png)
+ 2. Search for **Fiori: Open Application Generator** and select it.
 
-  2. Select **Fiori: Open Application Generator**.  
+      ![object](sg.png)
 
-    ![object](neu9.png)
+ 3. Select **List Report Page** and click **Next >**.
 
-  3. Select **List Report Object Page** and click **Next >**.
-
-    ![object](neu10.png)
+      ![object](s12.png)
 
   4. Configure data source, system and service:
      - Data source: **Connect to a System**
      - System: **`System_XXX_SAML_ASSERTION`**
-     - Service: **`ZSB_SHOP_XXX(1) - OData V2`**
+     - Service: **`ZUI_ONLINESHOP_O4_XXX (0001) - OData V4`**
 
      ![object](list.png)
 
      Click **Next >**.
 
-  5. Select your main entity **`online_shop`** and click **Next >**.
+  5. Select your main entity **`OnlineShop`**, check **Yes** for adding automatically table columns and click **Next >**.
 
-    ![object](list2.png)
+     ![object](list2.png)
 
   6. Configure project attributes:  
-     - Name: **`z_onlineshop_xxx`**
+     - Name: **`z_purchase_req_xxx`**
      - Title: **Online Shop XXX**
      - Description: **A Fiori application.**
      - Add deployment configuration: Yes
@@ -252,25 +277,24 @@ author_profile: https://github.com/mervey45
 
      Click **Next >**.
 
-    ![object](list3.png)
+     ![object](list3.png)
 
-    **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+    **Hint:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
   7. Configure deployment:
 
        - Target: ABAP
        - Destination: `System_XXX_SAML_ASSERTION <your_abap_system_url>`
-       - Name: `z_purchase_xxx`
+       - SAP UI5 ABAP Repository: `z_shop_xxx`
        - Package: `z_purchase_req_xxx`
        - Transport Request: `<your_transport_request>`
-       - Deployment description: `z_onlineshop_xxx`
 
-      <!-- border -->![app](list4.png)
+     ![app](list4.png)
 
-      Click **Next >**.
+       Click **Next >**.
 
-    >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`Z_PURCHASE_REQ_XXX`** and open it. Open your transport organizer to see your transport request. The transport request of the superior folder needs to be chosen. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
-        <!-- border -->![app](transportrequest.png)
+     **Hint:** If you want to copy your transport request, please do following:  Open Eclipse, search your package **`Z_PURCHASE_REQ_XXX`** and open it. Open your transport organizer to see your transport request. The transport request of the superior folder needs to be chosen. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+      ![app](transportrequest.png)
 
   8. Configure Fiori Launchpad:
 
@@ -278,7 +302,7 @@ author_profile: https://github.com/mervey45
        - Action: display
        - Title: Online Shop XXX
 
-      <!-- border -->![app](list5.png)
+      ![app](list5.png)
 
       Click **Finish**.
 
@@ -289,25 +313,28 @@ author_profile: https://github.com/mervey45
 ### Run SAP Fiori application for data preview
 
 
-  1. Press the run button on the left side and select the **`Start z_onlineshop_xxx`** run button to start your SAP Fiori application.
+  1. Select the menu on the left side, right-click your project **`z_purchase_req_xxx`** and select **Open in Integrated Terminal**.
 
       ![run](list6.png)
 
-      **HINT**: An alternative to run the application is to right-click your project folder, open the terminal and enter: `npm start`.
 
-  2. Your default browser will open. Click **Go** to see your result.
+  2. Type **`npm start`** and press **Enter**.
 
       ![run](list7.png)
 
-  3. Check your result.
+  3. Now your preview get's started. Click **Go**.
 
      ![run](list8.png)
+
+  4. Check your result.
+
+     ![run](list9.png)
 
 
 ### Deploy your application
 
 
-1. Click **Files**, right-click your project and select **Open in Terminal**.
+1. Click **Files**, right-click your project and select **Open in Integrated Terminal**.
 
     ![deploy](terminal.png)
 
@@ -323,8 +350,7 @@ author_profile: https://github.com/mervey45
 
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`Z_PURCHASE_REQ_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `Z_PURCHASE_REQ_XXX` by pressing `F5`.
 
-    ![library](bsp.png)
-
+     ![library](bsp.png)
 
 
 ### Create IAM App and business catalog
@@ -355,10 +381,12 @@ author_profile: https://github.com/mervey45
       ![iam](iam4.png)
 
   6. Select following:
-      - Service Type: `OData V2 (deprecated)`
-      - Service Name: `ZSB_SHOP_XXX_0001`    
+      - Service Type: `OData V4`
+      - Service Name: `ZUI_ONLINESHOP_O4_XXX`    
 
       ![iam](iam5.png)
+
+      **Hint:** With **CTRL + Space** you can search for your Service.
 
       Click **OK**.
 
@@ -413,19 +441,19 @@ author_profile: https://github.com/mervey45
 ### Run SAP Fiori application
 
 
-  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`z_onlineshop_xxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Therefore click **Files**, right-click your project and select **Open in Integrated Terminal**.
 
-    ![url](terminal5.png)
+     ![url](terminal.png)
 
 
   2. Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
-    ![url](terminal6.png)
+     ![url](terminal2.png)
 
 
   3. Press **`CTRL and click the following link`** to open the URL in a browser.
 
-     ![url](terminal8.png)
+     ![url](terminal3.png)
 
   4. Log in to your system.
 
@@ -434,6 +462,9 @@ author_profile: https://github.com/mervey45
   5. Click **Go** and check your result.
 
       ![url](list8.png)
+
+      ![url](list9.png)
+
 
 
 
