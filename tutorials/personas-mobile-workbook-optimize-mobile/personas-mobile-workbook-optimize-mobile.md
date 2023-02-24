@@ -2,16 +2,12 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-screen-personas, topic>mobile, products>sap-fiori]
-primary_tag: products>sap-screen-personas
+tags: [ tutorial>beginner, software-product>sap-screen-personas, topic>mobile, software-product>sap-fiori]
+primary_tag: software-product>sap-screen-personas
 ---
 
 # Optimize Your SAP Screen Personas Flavor for Mobile
 <!-- description --> Create differently sized versions of your SAP Screen Personas flavor for use on tablets and mobile phones.
-
-## Prerequisites
- - SAP Screen Personas SP06 or higher
- - A flavor rendered with Slipstream Engine
 
 ## You will learn
   - How to create adaptive versions of your flavor for use on different devices
@@ -29,7 +25,7 @@ In the past two tutorials, you have focused on building a flavor for a generic t
 
 ![IW51 Main Screen](IW51-Main-Screen.png)
 
-To create an adaptive flavor, open the flavor bar. Your flavor tile should be blue, indicating that your flavor is selected. Click the **Show Adaptive Flavors** button (**1**) and then **Add Adaptive Flavor** (**2**).
+To create an adaptive flavor, open the flavor manager. Your flavor tile should be blue, indicating that your flavor is selected. Click the **Show Adaptive Flavors** button (**1**) and then **Add Adaptive Flavor** (**2**).
 
 ![Add Adaptive Flavor](Add-Adaptive-Flavor.png)
 
