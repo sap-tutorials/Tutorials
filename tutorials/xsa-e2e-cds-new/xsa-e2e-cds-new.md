@@ -1,25 +1,26 @@
 ---
-title: Create additional CDS entities and a view
-description: You will create additional CDS entities and a view
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 ---
 
+# Create additional CDS entities and a view
+<!-- description --> You will create additional CDS entities and a view
+
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 You will create two additional entities and a view to expose the data through a Node.js module
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new CDS artifact)]
+### Create a new CDS artifact
+
 
 Back in the development perspective, open the existing Core Data Services file in Code Editor mode:
 
@@ -27,10 +28,9 @@ Back in the development perspective, open the existing Core Data Services file i
 
 You will reuse the existing file to add two more tables and a view.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create two additional entities)]
+### Create two additional entities
+
 
 Replace the existing code with following code into the editor to create two additional entities:
 
@@ -83,11 +83,10 @@ As follows:
 
 ![New CDS artifact](build.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Load data into the entities)]
+### Load data into the entities
+
 
 You will now use plain SQL to load data into your newly created entities. Copy the following code in the SQL console you left open from the database explorer:
 
@@ -123,8 +122,7 @@ Click on the **Run** button:
 
 ![New CDS artifact](sql.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

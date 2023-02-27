@@ -1,26 +1,28 @@
 ---
-title: Perform a Takeover
-description: Introduction to takeovers.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 time: 10
 ---
 
+# Perform a Takeover
+<!-- description --> Introduction to takeovers.
+
 ## Prerequisites
  - **Tutorials** Setting Up SAP HANA System Replication with HANA Studio
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 
-## Details
-### You will learn
+## You will learn
 - When you should perform a takeover
 - How to perform a takeover with HANA Studio
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Performing a Takeover with HANA Studio)]
+### Performing a Takeover with HANA Studio
+
 During a takeover you switch your active system from the current primary system to the secondary system.
 
 If your primary data center is not available, due to a disaster or for planned downtime for example, and a decision has been made to fail over to the secondary data center, you can perform a takeover on your secondary system. Consider questions like:
@@ -61,10 +63,8 @@ The takeover will now proceed. You can select **Run in background** while the ta
 
 The secondary system is now the production system. If the system is already running, it comes out of recovery mode and becomes fully operational immediately: it replays the last transaction logs and starts to accept queries. If the system is offline, it takes over production operation when you start it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

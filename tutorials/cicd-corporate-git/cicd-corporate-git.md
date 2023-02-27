@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
-title: Connect SAP Continuous Integration and Delivery with Your Corporate Git
-description: Set up SAP Continuous Integration and Delivery, use SAP Connectivity service to connect it with your corporate Git repository that is not directly accessible from the Internet, and create and run a basic CI/CD job.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>cloud, programming-tool>sapui5, software-product>sap-connectivity-service, software-product>sap-fiori, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-connectivity-service
 ---
+
+# Connect SAP Continuous Integration and Delivery with Your Corporate Git
+<!-- description --> Set up SAP Continuous Integration and Delivery, use SAP Connectivity service to connect it with your corporate Git repository that is not directly accessible from the Internet, and create and run a basic CI/CD job.
 
 ## Prerequisites
  - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html).
@@ -17,16 +19,14 @@ primary_tag: software-product>sap-connectivity-service
     &nbsp;
     **Note:** Technically, you can use any Git in your corporate network. However, we recommend using GitHub Enterprise or Bitbucket Server because with them you can create webhooks to trigger your jobs automatically.
 
-## Details
-### You will learn
+## You will learn
   - How to set up SAP Continuous Integration and Delivery
   - How to connect SAP Continuous Integration and Delivery with your corporate Git using SAP Connectivity service
   - How to create and trigger a basic continuous integration and delivery (CI/CD) job in SAP Continuous Integration and Delivery
-
-### What is this tutorial about?
-
+## What is this tutorial about?
 This tutorial helps you use SAP Continuous Integration and Delivery with Git repositories in corporate networks that are not exposed to the Internet. To establish a connection between your repository and the Continuous Integration & Delivery service, you'll use the SAP Connectivity service.
 
+## Intro
 The tutorial comprises five main stages:
 
 ![Main stages of the tutorial](tutorial-steps.png)
@@ -51,7 +51,8 @@ The tutorial comprises five main stages:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up SAP Continuous Integration and Delivery)]
+### Set up SAP Continuous Integration and Delivery
+
 
 Enable SAP Continuous Integration and Delivery, assign yourself the administrator role for it, and access the service.
 
@@ -86,10 +87,9 @@ Enable SAP Continuous Integration and Delivery, assign yourself the administrato
 
 12. Choose ![Security icon in the cockpit](icon-dots.png) *(Actions)* **&rarr;** **Go to Application**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the connection with the SAP Cloud Connector)]
+### Set up the connection with the SAP Cloud Connector
+
 
 Add your SAP BTP subaccount to the SAP Cloud Connector.
 
@@ -111,16 +111,15 @@ Add your SAP BTP subaccount to the SAP Cloud Connector.
     | Location ID       | Freely choose a location ID for your subaccount. You'll need this ID for the connection with SAP Continuous Integration and Delivery. |
     | Description       | Optionally, enter a description for your subaccount.                                                                                  |
 
-    !![Add subaccount pop-up in the SAP Connectivity service](add-subaccount.png)
+    <!-- border -->![Add subaccount pop-up in the SAP Connectivity service](add-subaccount.png)
 
 3. Choose **Save**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a virtual system and map it to your corporate Git)]
+### Create a virtual system and map it to your corporate Git
+
 
 In the SAP Connectivity service, add a system mapping and a resource.
 
@@ -150,7 +149,7 @@ In the SAP Connectivity service, add a system mapping and a resource.
 
 11. In the summary, select **Check Internal Host**, and choose **Finish**.
 
-    !![Add system mapping pop-up in the SAP Connectivity service](add-system-mapping.png)
+    <!-- border -->![Add system mapping pop-up in the SAP Connectivity service](add-system-mapping.png)
 
 12. Make sure that your new mapping is selected, and in the **Resources Of my-git:1080** area, choose **+** *(Add)*.
 
@@ -158,12 +157,11 @@ In the SAP Connectivity service, add a system mapping and a resource.
 
 14. Select **Active** and **Path And All Sub-Paths**, and choose **Save**.
 
-    !![Add resource pop-up in the SAP Connectivity service](add-resource.png)
+    <!-- border -->![Add resource pop-up in the SAP Connectivity service](add-resource.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure SAP Continuous Integration and Delivery)]
+### Configure SAP Continuous Integration and Delivery
+
 
 In SAP Continuous Integration and Delivery, configure credentials for your cloud connector and add your Git repository.
 
@@ -201,10 +199,10 @@ In SAP Continuous Integration and Delivery, configure credentials for your cloud
 
 7. Choose **Add**.
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create and trigger a basic CI/CD job)]
+
+### Create and trigger a basic CI/CD job
+
 
 Configure and run a basic job for SAP Continuous Integration and Delivery.
 
@@ -240,10 +238,8 @@ Configure and run a basic job for SAP Continuous Integration and Delivery.
 
     As a result, a new build tile appears in the **Builds** section of your job. If you choose it, the **Build Stages** view opens and you can watch the individual stages of your build run through.
 
-    !![Build stages in SAP Continuous Integration and Delivery](build-stages.png)
+    <!-- border -->![Build stages in SAP Continuous Integration and Delivery](build-stages.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---
 

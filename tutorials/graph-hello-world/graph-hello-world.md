@@ -1,41 +1,42 @@
 ---
+parser: v2
 author_name: Chaim Bendelac
 author_profile: https://github.com/chaim32
-title: Hello Graph! Write Your First SAP Graph Application
-description: Get a brief introduction to SAP Graph, including the SAP Graph Navigator and programming basics.
 keywords: SAP Graph
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-integration-suite
 ---
+# Hello Graph! Write Your First SAP Graph Application
+<!-- description --> Get a brief introduction to SAP Graph, including the SAP Graph Navigator and programming basics.
+
 ## Prerequisites
  - You will use **Node.js** and **npm** to build this application, and to keep it extremely simple, you will use the **Express** web framework. Not familiar with Node.js and Express? Refer to section [Express/Node introduction](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction), which also explains how to easily set up a Node development environment, whether you use Windows, MacOS or Linux.
  - If you prefer to develop in the cloud without installing anything on your computer, SAP offers a great cloud-based development experience alternative in the form of the SAP Business Application Studio. Follow [this tutorial](appstudio-onboarding) for more details on getting your own instance.
  - The rest of this tutorial assumes that you have installed Node.js and npm on your computer.
 
-## Details
-### You will learn
+## You will learn
   - What SAP Graph entails
   - How to navigate connected data entities in the SAP Graph Navigator
   - `hello world` programming essentials to try out SAP Graph
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 
 [SAP Graph](https://community.sap.com/topics/graph) is a new unified API for SAP. It addresses run-away API complexity and integration challenges by providing developers a single connected and unified view of all their business data, consolidating the data models of data sources like SAP S/4HANA, SAP Sales Cloud and SAP SuccessFactors into one, unified and connected, data model, representing all the data in a landscape. This is called the Business Data Graph.
 
-!![SAP Graph Overview](SAP-Graph-overview_sm.png)
+<!-- border -->![SAP Graph Overview](SAP-Graph-overview_sm.png)
 
 A data graph is a connected graph, with data entities serving as the nodes of the graph and edges that represent relationships (which are called associations) between those entities. The nodes of the Business Data Graph are the common enterprise business objects, like Customer, Supplier, Product, Sales and Purchase Order, General Ledger, etc.
 
 SAP Graph was productively released for early adopters in December of 2021. Dedicated support for early adopters of this innovative solution is available. [Sign up to be an early adopter](https://influence.sap.com/sap/ino/#campaign/2940) of SAP Graph or contact us at sap.graph@sap.com if you are interested.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Explore SAP Graph on the SAP Graph Navigator)]
+### Explore SAP Graph on the SAP Graph Navigator
+
 
 The SAP Graph API is documented in the [SAP Graph Navigator](https://navigator.graph.sap/entities).
 
@@ -43,16 +44,15 @@ The SAP Graph API is documented in the [SAP Graph Navigator](https://navigator.g
 
     The index, on the left of the application, shows you over 1,500 entities grouped by data source. The first group of entities are the unified entities. Here is an example of a unified entity, `sap.graph/WorkAssignment`.
 
-    !![WorkAssignment unified entity in SAP Graph Navigator](blog1_navigator_sm.png)
+    <!-- border -->![WorkAssignment unified entity in SAP Graph Navigator](blog1_navigator_sm.png)
 
     In this tutorial, you will create a small application that fetches the unified entity `SalesQuote`.
 
 2. Use the SAP Graph Navigator to look up the definition and corresponding attributes for `SalesQuote`.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Prepare package.json)]
+### Prepare package.json
+
 
 1. Select a folder (directory) where you want to develop your application. In this folder, you will create a small file called `package.json`, with the following content:
 
@@ -79,10 +79,9 @@ The SAP Graph API is documented in the [SAP Graph Navigator](https://navigator.g
 
 3. Now, create another sub-folder, next to `node_modules`, called `src`. This is where you will develop your code.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Prepare graph.js)]
+### Prepare graph.js
+
 First, you will create a boilerplate file in the `src` folder, called `graph.js`. This file will contain a class called `Graph`, which provides a nice wrapper for using SAP Graph. A `get()` function will read the data.
 
 1. Paste the following code into the file and save it. As you can see, it is very simple, and takes advantage of the node-fetch package.
@@ -116,10 +115,9 @@ First, you will create a boilerplate file in the `src` folder, called `graph.js`
 
 2. Go and login to <https://api.sap.com/settings> and choose **Show API Key** to see and save it.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Write a simple application)]
+### Write a simple application
+
 
 Now you are ready to write your first, simple server-side application that uses SAP Graph.
 
@@ -162,17 +160,15 @@ Now you are ready to write your first, simple server-side application that uses 
 
 The browser will invoke your application code, which will call SAP Graph to fetch the data, and if all went well, you will see the following output on your screen:
 
-!![Output](blog2_output_sm.png)
+<!-- border -->![Output](blog2_output_sm.png)
 
 This output should look very similar to what you saw in the SAP Graph Navigator for the `SalesQuote` entity in Step 3.
 
-[DONE]
-[ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Use SAP Graph securely with real data and authentication)]
+### Use SAP Graph securely with real data and authentication
+
 
 Congratulations, you have made it to the end of this tutorial! You now know how to navigate the connected data entities using SAP Graph Navigator, you've set up a lightweight development environment to test out SAP Graph, and you've verified that you can query unified entities. Continue on with Part 3 of the tutorial series on [blogs.sap.com](https://blogs.sap.com/2021/06/25/part-3-use-sap-graph-securely-with-real-data-authentication/) where you can use SAP Graph securely and with real data.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

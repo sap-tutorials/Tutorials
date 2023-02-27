@@ -1,6 +1,5 @@
 ---
-title: Introduce Multitenant Application Development on SAP BTP, Kyma Runtime
-description: Introduce what is multitenancy and how to develop multitenant application on SAP BTP, Kyma Runtime.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
@@ -8,8 +7,10 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
 
-## Details
-### You will learn
+# Introduce Multitenant Application Development on SAP BTP, Kyma Runtime
+<!-- description --> Introduce what is multitenancy and how to develop multitenant application on SAP BTP, Kyma Runtime.
+
+## You will learn
 - What is multitenancy
 - How does multitenancy work for the application consumer
 - What is the workflow of developing multitenant application
@@ -18,7 +19,8 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Multitenancy)]
+### Multitenancy
+
 
 In the Kyma environment, you can develop and run multitenant applications, and share them with multiple consumers simultaneously on SAP BTP.
 
@@ -37,10 +39,9 @@ With tenant-aware applications, you can:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How Does Multitenancy Work for the Application Consumer)]
+### How Does Multitenancy Work for the Application Consumer
+
 
 For a consumer to use a tenant-aware application on SAP BTP, the application owner must ensure that each consumer:
 
@@ -60,30 +61,28 @@ For a consumer to use a tenant-aware application on SAP BTP, the application own
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Sample Scenario)]
+### Sample Scenario
+
 
 **Persona**: <u>Multitenant Application Provider</u>
 
 Let's assume you are a multitenant application provider, for example: `Provider: TIA`. `Provider: TIA` would like to provide an application that displays the logged-in user's name and customer's tenant-related information, shown as below:
 
-!![image-20220114180726352](image-20220114180726352.png)
+<!-- border -->![image-20220114180726352](image-20220114180726352.png)
 
 **Persona**: <u>Customer</u>
 
 A consumer can subscribe to the multitenant application through the SAP BTP Account Cockpit.
 
-!![image-20220114150135988](image-20220114150135988.png)
+<!-- border -->![image-20220114150135988](image-20220114150135988.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Workflow of Developing Multitenant Application)]
+### Workflow of Developing Multitenant Application
+
 
 - Create and Configure the Approuter Application for a Multitenant Application in the Kyma Runtime
 - Secure a Multitenant Application with the Authorization and Trust Management Service (XSUAA) in the Kyma Runtime
@@ -92,8 +91,6 @@ A consumer can subscribe to the multitenant application through the SAP BTP Acco
 - Deploy a Multitenant Application to a Provider subaccount, Kyma Runtime
 - Subscribe a Multitenant Application by a Consumer
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

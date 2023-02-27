@@ -1,0 +1,201 @@
+{
+    "version": 0.6,
+    "generator": "Overpass API 0.7.59 e21c39fe",
+    "osm3s": {
+        "timestamp_osm_base": "2022-12-05T11:24:00Z",
+        "timestamp_areas_base": "2022-12-05T10:28:09Z",
+        "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+        {
+            "type": "node",
+            "id": 269516700,
+            "lat": 49.4415185,
+            "lon": 8.6618083,
+            "tags": {
+                "amenity": "biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 281106162,
+            "lat": 49.4375105,
+            "lon": 8.6751244,
+            "tags": {
+                "addr:city": "Heidelberg",
+                "addr:housenumber": "30",
+                "addr:postcode": "69121",
+                "addr:street": "Wiesenweg",
+                "amenity": "biergarten",
+                "name": "Züchterklause",
+                "opening_hours": "Mo-Su 10:00-22:00",
+                "opening_hours:signed": "no",
+                "phone": "+496221471273",
+                "website": "https://zuechterklause.metro.rest/?lang=de"
+            }
+        },
+        {
+            "type": "node",
+            "id": 298992729,
+            "lat": 49.4442505,
+            "lon": 8.6192695,
+            "tags": {
+                "addr:city": "Edingen-Neckarhausen",
+                "addr:country": "DE",
+                "addr:postcode": "68535",
+                "addr:suburb": "Edingen",
+                "amenity": "biergarten",
+                "name": "Cavos Terrasse",
+                "opening_hours": "Th-Su 15:00-21:00"
+            }
+        },
+        {
+            "type": "node",
+            "id": 302720319,
+            "lat": 49.3708436,
+            "lon": 8.6538050,
+            "tags": {
+                "amenity": "biergarten",
+                "name": "Kleintierzüchterverein"
+            }
+        },
+        {
+            "type": "node",
+            "id": 306004576,
+            "lat": 49.4520178,
+            "lon": 8.6774553,
+            "tags": {
+                "addr:city": "Dossenheim",
+                "addr:housenumber": "45",
+                "addr:postcode": "69221",
+                "addr:street": "Rathausstraße",
+                "amenity": "biergarten",
+                "email": "besen.info@dossema-weinhof.de",
+                "name": "Besenwirtschaft Dossema Weinhof",
+                "opening_hours": "We-Sa 16:00-23:00; Su 11:00-21:00",
+                "phone": "+49 6221 7257617",
+                "website": "http://www.dossema-weinhof.de/",
+                "wheelchair": "limited"
+            }
+        },
+        {
+            "type": "node",
+            "id": 792952203,
+            "lat": 49.3715057,
+            "lon": 8.7014246,
+            "tags": {
+                "amenity": "biergarten",
+                "wheelchair": "yes"
+            }
+        },
+        {
+            "type": "node",
+            "id": 1388878117,
+            "lat": 49.5151362,
+            "lon": 8.6131697,
+            "tags": {
+                "amenity": "biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2354493008,
+            "lat": 49.5090267,
+            "lon": 8.5947174,
+            "tags": {
+                "amenity": "biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2357248595,
+            "lat": 49.5462133,
+            "lon": 8.6773780,
+            "tags": {
+                "amenity": "biergarten",
+                "contact:website": "https://www.burgruinewindeck.de/biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2449678126,
+            "lat": 49.4533762,
+            "lon": 8.7238315,
+            "tags": {
+                "amenity": "biergarten",
+                "name": "Zum weißen Stein",
+                "opening_hours": "PH,We-Su 10:00-19:00",
+                "website": "https://www.zum-weissen-stein.eu/"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3648411745,
+            "lat": 49.5159286,
+            "lon": 8.6112588,
+            "tags": {
+                "amenity": "biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4408096782,
+            "lat": 49.4073691,
+            "lon": 8.6767352,
+            "tags": {
+                "addr:city": "Heidelberg",
+                "addr:housenumber": "139-151",
+                "addr:postcode": "69115",
+                "addr:street": "Bergheimer Straße",
+                "amenity": "biergarten",
+                "name": "Firebowl Sportsbar",
+                "wheelchair": "yes"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4452299869,
+            "lat": 49.4749303,
+            "lon": 8.6691222,
+            "tags": {
+                "amenity": "biergarten"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4510733981,
+            "lat": 49.4022228,
+            "lon": 8.6708793,
+            "tags": {
+                "amenity": "biergarten",
+                "name": "Halle02 im Freien",
+                "website": "http://zollhofgarten.de"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4975134350,
+            "lat": 49.4017014,
+            "lon": 8.6725125,
+            "tags": {
+                "addr:city": "Heidelberg",
+                "addr:housenumber": "2",
+                "addr:postcode": "69115",
+                "addr:street": "Zollhofgarten",
+                "amenity": "biergarten",
+                "name": "Holy Trinity",
+                "website": "http://holytrinity.garden"
+            }
+        },
+        {
+            "type": "node",
+            "id": 7644387782,
+            "lat": 49.3704601,
+            "lon": 8.7061321,
+            "tags": {
+                "amenity": "biergarten",
+                "operator": "Hotel ISG"
+            }
+        }
+    ]
+}

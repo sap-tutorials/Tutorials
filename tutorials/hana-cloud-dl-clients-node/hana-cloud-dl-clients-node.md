@@ -1,26 +1,29 @@
 ---
-title: Connect to Data Lake Relational Engine Using the Node.js Driver
-description: Create and debug a Node.js application that connects to data lake Relational Engine.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
-## Prerequisites
- - You have completed the first two tutorials in this group.
+# Connect to Data Lake Relational Engine Using the Node.js Driver
+<!-- description --> Create and debug a Node.js application that connects to data lake Relational Engine.
 
-## Details
-### You will learn
+## Prerequisites
+ - You have completed the first tutorial in this group.
+
+## You will learn
   - How to install Node.js and the data lake Relational Engine Node.js driver
   - How to create and debug a Node.js application
   - How to use both the synchronous and asynchronous driver interfaces
 
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/learn).  
+## Intro
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn/).  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Node.js)]
+### Install Node.js
+
 
 Ensure you have Node.js installed and check its version. Enter the following command:
 
@@ -43,12 +46,11 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 ---
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the data lake Relational Engine client for Node.js)]
+### Install the data lake Relational Engine client for Node.js
 
-In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQK Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
+
+In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
 
 1. Add the dependencies to the driver.
 
@@ -94,10 +96,9 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
 
     ![npm list](npm-list.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a synchronous Node.js application that queries SAP data lake Relational Engine)]
+### Create a synchronous Node.js application that queries SAP data lake Relational Engine
+
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -131,7 +132,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -180,10 +181,9 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     >printenv | grep DEBUG
     >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create an asynchronous app that uses callbacks)]
+### Create an asynchronous app that uses callbacks
+
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -276,12 +276,11 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     ```
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-    Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    Notice that asynchronous method calls use callback functions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create an asynchronous app that uses promises)]
+### Create an asynchronous app that uses promises
+
 The Node.js driver for the data lake Relational Engine client provides support for promises.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -379,13 +378,12 @@ The Node.js driver for the data lake Relational Engine client provides support f
     ```
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
-
-[DONE]
-[ACCORDION-END]
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 
-[ACCORDION-BEGIN [Step 6: ](Debug the application)]
+
+### Debug the application
+
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
@@ -405,11 +403,11 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

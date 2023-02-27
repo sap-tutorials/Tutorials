@@ -1,6 +1,5 @@
 ---
-title: Create Decision Table and Text Rules
-description: Create and activate the decision tables and text-based rules to create the decision logic.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -9,8 +8,10 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 
-## Details
-### You will learn
+# Create Decision Table and Text Rules
+<!-- description --> Create and activate the decision tables and text-based rules to create the decision logic.
+
+## You will learn
   - How to create decision table rules
   - How to create text rules
 
@@ -22,7 +23,8 @@ author_profile: https://github.com/VandanaVasudevan
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create decision table rules)]
+### Create decision table rules
+
 
 1. Navigate to the **Rules** > **Local Rules** tab, then choose +.
 
@@ -122,10 +124,9 @@ author_profile: https://github.com/VandanaVasudevan
 
     ![Company details](create_dt_15.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create text rules)]
+### Create text rules
+
 
 1. Use the breadcrumb navigation to navigate to **Rules** > **Local Rules** tab, and then choose +.
 
@@ -176,6 +177,4 @@ author_profile: https://github.com/VandanaVasudevan
     ![Some alternative text](create_rules.png)
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,29 +1,32 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Create your First Analytic Application
-description: Build your first application with SAP Analytics Cloud Analytics Designer
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Create your First Analytic Application
+<!-- description --> Build your first application with SAP Analytics Cloud Analytics Designer
+
 <!-- ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - How to add a widget to an application
   - How to implement some logic in an application
   - How to use the script event
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the Application)]
+### Create the Application
+
 
 Analytic applications are like stories in the way they present information to users but provide designers with much more flexibility in terms of specialized widgets and scripting capabilities.
 
@@ -41,10 +44,9 @@ Unlike a story, which can have multiple pages, an app comprises of a single canv
 
 You can also play around with the visibility of widgets based on specific conditions, so you can layer them on top of each other. In addition to the canvas, you can use the **Outline panel** to help select, manage, and configure widgets and work with scripts and services. The **Info Panel** to troubleshoot the app using the Errors and Reference List tabs. We'll show you how to do each with examples below.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Widgets in the Application)]
+### Add Widgets in the Application
+
 
 You can add multiple widgets to the app such as charts, tables, and other objects that are also available in stories, along with a variety of analytic application-specific controls.
 
@@ -68,11 +70,10 @@ In Builder mode, you can define the measures and dimensions you want to display.
 
 Now that the application contains data, let's add other controls and scripts to define how and when certain types of content display. Now save the application with the name `FirstApplication`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add Scripting in the Application)]
+### Add Scripting in the Application
+
 
 You can add logic in the application to display either the chart or table. Add a button at the top of the canvas and name it "Show Table".
 
@@ -111,13 +112,10 @@ Run the application and click the button multiple times. The table or the chart 
 
 ![2.1.12](2.1.12.gif)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 
 ---

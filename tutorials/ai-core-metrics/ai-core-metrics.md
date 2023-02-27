@@ -1,30 +1,33 @@
 ---
-title: Generate metrics and compare models in SAP AI Core
-description: Different ways of Log metrics during training and tag the generated model with the same.
+parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
-## Prerequisites
-- You have the knowledge on ingesting data and generating models with SAP AI Core, from [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#)
+# Generate Metrics and Compare Models in SAP AI Core
+<!-- description --> Explore different ways of logging metrics during training and compare generated models.
 
-## Details
-### You will learn
+## Prerequisites
+- You have an understanding of using data and generating models in SAP AI Core, from [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#)
+
+## You will learn
 - How to log simple metrics on validation data and training data
 - How to log step information along with metrics
 - How to log custom metrics structure
 
-By the end of the tutorial you will be able to use SAP AI Launchpad to compare two models that have been generated with SAP AI Core. This tutorial builds on the previous tutorials on house price prediction and ingesting data.
+## Intro
+In this tutorial, you'll use SAP AI Launchpad to compare two models that have been generated using SAP AI Core. This tutorial builds on the previous tutorials on house price prediction and ingesting data.
 
-> Important: Comparing functionality is only available the SAP AI Launchpad interface, and not the API endpoints. However, this step is optional.
+> Important: Comparing models is only available using SAP AI Launchpad, and not the API endpoints. The comparison step is optional.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Starter code)]
+### Starter code
+
 
 Create a folder named `hello-aicore-metrics`. Within it, create a file called `main.py`, and paste the following starter code to this file.
 
@@ -100,34 +103,33 @@ pickle.dump(clf, open(MODEL_PATH, 'wb'))
 # <PASTE CODE HERE>
 ```
 
-> Note that the snippet includes some place holders that say `# <PASTE CODE HERE>`. We complete these entries throughout the tutorial. For clarity, the comments in the code also include the relevant step number.
+> The snippet includes some placeholders that state `# <PASTE CODE HERE>`. You'll complete these entries throughout the tutorial. For clarity, the comments in the code also include the relevant step number.
 
 This Python script contains all of the modifications needed for logging metrics, meaning that you can leave your previous workflows as they are.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add connection)]
+### Add connection
 
-Add the following connection snippet. The initialization value of `base_url=''` - an empty string - is mandatory, as it indicates the code should be connected to the SAP AI Core environment.
+
+Add the following code snippet.
 
 ```PYTHON
-from ai_core_sdk.ai_core_v2_client import AICoreV2Client
-aic_connection = AICoreV2Client(base_url='') # DO NOT Change, the value is intentionally passed as empty string, When this code will run inside SAP AI Core then the values will be auto-populated
+from ai_core_sdk.tracking import Tracking
+aic_connection = Tracking()
 ...
 ```
 
-> **CAUTION**: The above code is very similar to the code used to connect the SAP AI Core SDK to your local system. However, here it is required to establish connection within the SAP AI Core execution environment.
+> **CAUTION**: This code snippet is very similar to the code used to connect the SAP AI Core SDK to your local system. However, in this case, it is required to establish a connection within the SAP AI Core execution environment.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Basic metric logging)]
+### Add basic metric logging
+
 
 Add the following snippet to log the number of observations in your dataset.
 
 ```PYTHON
-aic_connection.metrics.log_metrics(
+# from ai_core_sdk.models import Metric
+aic_connection.log_metrics(
     metrics = [
         Metric(
             name= "N_observations", value= float(df.shape[0]), timestamp=datetime.utcnow()),
@@ -135,38 +137,36 @@ aic_connection.metrics.log_metrics(
 )
 ```
 
-This reflects, after execution, as shown in SAP AI Launchpad, please zoom in to view.
+After execution, this is shown in SAP AI Launchpad. You can zoom in for details.
 
-!![image](img/ail/basic.png)
+<!-- border -->![image](img/ail/basic.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Step information)]
+### Step information
 
-Add the following snippet to store the metrics on step information. This snippet is also useful for tracking the metrics on epochs of the training process.
+
+Add the following snippet to store metrics for step information. This snippet is also useful for tracking the metrics on epochs of the training process.
 
 ```PYTHON
-aic_connection.metrics.log_metrics(
+aic_connection.log_metrics(
     metrics = [
         Metric(name= "(Val) Fold R2", value= float(val_step_r2), timestamp=datetime.utcnow(), step=i),
     ]
 )
 ```
 
-The variable `i` in is already present in your code to pass to the parameter `step=i`. This reflects as shown in SAP AI Launchpad, when executed. Please zoom in to view.
+The variable `i` is already present in your code to pass to the parameter `step=i`.  This is also shown in SAP AI Launchpad. You can zoom in to view.
 
-!![image](img/ail/step.png)
+<!-- border -->![image](img/ail/step.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Attach metrics to generated model)]
+### Attach metrics to generated model
 
-Add the following snippet to store metrics on step information.
+
+Add the following snippet to store metrics for artifact information.
 
 ```PYTHON
-aic_connection.metrics.log_metrics(
+aic_connection.log_metrics(
     metrics = [
         Metric(
             name= "Test data R2",
@@ -180,24 +180,24 @@ aic_connection.metrics.log_metrics(
 )
 ```
 
-The parameter `value="housepricemodel"` refers to the artifact name, which references the model that will be stored in AWS S3. It is vital that the name of this parameter matches the name that you defined in your YAML workflow.
+The parameter `value="housepricemodel"` refers to the artifact name, which references the model that will be stored in AWS S3. The name of this parameter must match the name that you defined in your YAML workflow.
 
 Your code should resemble:
 
-!![image](img/ail/modelA.png)
+<!-- border -->![image](img/ail/modelA.png)
 
-This reflects as shown in SAP AI Launchpad, when executed:
-!![image](img/ail/modelB.png)
+After execution, this is shown in SAP AI Launchpad.
 
-[DONE]
-[ACCORDION-END]
+<!-- border -->![image](img/ail/modelB.png)
 
-[ACCORDION-BEGIN [Step 6: ](Custom Metrics for model inspection)]
+
+### Custom metrics for model inspection
+
 
 Add the following snippet to store metrics based on a customized structure.
 
 ```PYTHON
-aic_connection.metrics.set_custom_info(
+aic_connection.set_custom_info(
     custom_info= [
         MetricCustomInfo(name= "Feature Importance (verbose)", value=  str(r)),
         MetricCustomInfo(name= "Feature Importance (brief)", value= feature_importances )
@@ -205,13 +205,13 @@ aic_connection.metrics.set_custom_info(
 )
 ```
 
-The structure must be type-cast to `str` (string). Here, the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
+The structure must be type-cast to `str` (a string). Here, the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
 
 The variables `r` and `feature_importances` are already created in the starter code.
 
-This reflects as shown in SAP AI Launchpad, when executed:
+After execution, you can see this in SAP AI Launchpad.
 
-!![image](img/ail/custom.png)
+<!-- border -->![image](img/ail/custom.png)
 
 > ### Permutation Feature Importance
 >
@@ -219,31 +219,30 @@ This reflects as shown in SAP AI Launchpad, when executed:
 >
 > What it is?
 >
-> - Indicates, for a given target, model, dataset and task, how much the model depends on a given feature.
+> - Shows how much a model depends on a given feature for a given target, model, dataset and task.
 > - Gives an empirical estimate of how much loss is attributed to the removal of a given feature.
 >
 > What it is not:
 >
-> - A model, dataset or task agnostic indication of the importance of a given feature. While the method is agnostic, the results are applicable only to the specific input combination.
-> - A perfectly accurate indication of the importance of a given feature for a specific prediction. While this is the goal of the method, it does not account for weaknesses in the model.
+> - A model, dataset or task-agnostic indication of the importance of a given feature. While the method is agnostic, the results are applicable only to the specific input combination.
+> - An accurate indication of the importance of a given feature for a specific prediction. Although this is the goal of the method, it does not account for weaknesses in the model.
 >
 > Advantages:
 >
-> - Model agnostic,
-> - provides global `explainability` - meaning that it estimates each feature's importance to the prediction task.
-> - contributes to model transparency.
+> - Model agnostic.
+> - Provides global `explainability` - meaning that it estimates each feature's importance to the prediction task.
+> - Contributes to model transparency,
 > - The method or function used to measure "error" can be customized, with reference to `scikit` package implementation.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Tags for execution meta after training)]
+### Add tags for execution meta after training
 
-Add the following snippet to tag you execution. The `tags` are customizable key-values.
+
+Add the following snippet to tag your execution. The `tags` are customizable key-values.
 
 ```PYTHON
-aic_connection.metrics.set_tags(
+aic_connection.set_tags(
     tags= [
         MetricTag(name="Validation Method Used", value= "K-Fold"), # your custom name and value
         MetricTag(name="Metrics", value= "R2"),
@@ -251,14 +250,13 @@ aic_connection.metrics.set_tags(
 )
 ```
 
-This reflects as shown in SAP AI Launchpad, when executed:
+After execution, you can see this in SAP AI Launchpad.
 
-!![image](img/ail/tag.png)
+<!-- border -->![image](img/ail/tag.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Complete Files)]
+### Complete files
+
 
 Check your modified `main.py` by comparing it with the following expected `main.py`.
 
@@ -271,8 +269,8 @@ from datetime import datetime
 import pandas as pd
 from ai_core_sdk.models import Metric, MetricTag, MetricCustomInfo, MetricLabel
 #
-from ai_core_sdk.ai_core_v2_client import AICoreV2Client
-aic_connection = AICoreV2Client(base_url='') # DO NOT Change, the value is intentionally passed as empty string, When this code will run inside SAP AI Core then the values will be auto-populated
+from ai_core_sdk.tracking import Tracking
+aic_connection = Tracking()
 #
 # Variables
 DATA_PATH = '/app/data/train.csv'
@@ -285,7 +283,7 @@ X = df.drop('target', axis=1)
 y = df['target']
 #
 # Metric Logging: Basic
-aic_connection.metrics.log_metrics(
+aic_connection.log_metrics(
     metrics = [
         Metric(
             name= "N_observations", value= float(df.shape[0]), timestamp=datetime.utcnow()),
@@ -320,7 +318,7 @@ clf.fit(train_x, train_y)
 # Scoring over test data
 test_r2_score = clf.score(test_x, test_y)
 # Metric Logging: Attaching to metrics to generated model
-aic_connection.metrics.log_metrics(
+aic_connection.log_metrics(
     metrics = [
         Metric(
             name= "Test data R2",
@@ -344,7 +342,7 @@ feature_importances = str('')
 for i in r.importances_mean.argsort()[::-1]:
     feature_importances += f"{df.columns[i]}: {r.importances_mean[i]:.3f} +/- {r.importances_std[i]:.3f} \n"
 # Metric Logging: Custom Structure
-aic_connection.metrics.set_custom_info(
+aic_connection.set_custom_info(
     custom_info= [
         MetricCustomInfo(name= "Feature Importance (verbose)", value=  str(r)),
         MetricCustomInfo(name= "Feature Importance (brief)", value= feature_importances )
@@ -356,7 +354,7 @@ import pickle
 pickle.dump(clf, open(MODEL_PATH, 'wb'))
 #
 # Metric Logging: Tagging the execution
-aic_connection.metrics.set_tags(
+aic_connection.set_tags(
     tags= [
         MetricTag(name="Validation Method Used", value= "K-Fold"), # your custom name and value
         MetricTag(name="Metrics", value= "R2"),
@@ -364,15 +362,15 @@ aic_connection.metrics.set_tags(
 )
 ```
 
-Check your modified `main.py` by comparing it with the following expected `main.py`.
+Check your modified `requirements.txt` by comparing it with the following expected `requirements.txt`.
 
 ```TEXT
 sklearn==0.0
 pandas
-ai-core-sdk>=1.12.0
+ai-core-sdk>=1.15.1
 ```
 
-Create a file called `Dockerfile` with following snippet. This file must not have a file extension or alternative name.
+Create a file called `Dockerfile` with the following snippet. This file must not have a file extension or alternative name.
 
 ```TEXT
 # Specify which base layers (default dependencies) to use
@@ -397,7 +395,7 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-Build your Docker image and push the contents to the cloud, using the following commands in the terminal.
+Use the following commands to build your Docker image and push the contents to the cloud.
 
 ```BASH
 docker build -t <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/house-price:04 .
@@ -456,13 +454,12 @@ spec:
         - "python /app/src/main.py"
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create configuration and execution)]
+### Create configuration and execution
 
-Create a configuration using the following information. The information is taken from the workflow from previous steps. For a reminder of how to create a configuration, see step 11 of [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#).
+
+Create a configuration using the following values. The values are taken from the workflow from previous steps. For help creating a configuration, see step 11 of [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#).
 
 |  | Value |
 | --- | --- |
@@ -473,47 +470,46 @@ Create a configuration using the following information. The information is taken
 | Scenario ID | `learning-datalines`
 | Executable ID | `house-metrics-train`
 
-The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this was set using an environment variable. If no variable is specified, this parameter will continue to be defined by the environment variables.
+The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this has been set using an environment variable. If a variable is not specified, this parameter continues to be defined by the environment variables.
 
-> Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\#)
+> Information: This parameter can be defined using an integer as a string, to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see the [Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html).
 
 Attach your registered artifact to `Input Artifact`, by specifying `housedataset` for this value.
 
 Create an execution from this configuration.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Retrieve metrics)]
+### Retrieve metrics
+
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Navigate through `ML Operations` >  `Executions` > `Metrics Resource` tab of your execution.
+In the `ML Operations` app, choose `Executions`. Navigate to your execution and choose the `Metric Resources` tab.
 
-!![image](img/ail/locate.png)
+<!-- border -->![image](img/ail/locate.png)
 
-For metrics tagged with the artifact name, you can also locate the metrics in the **Models** details page of the artifact.
+For metrics tagged with the artifact name, you can also locate the metrics in the **Models** details for the artifact.
 
-!![image](img/ail/artifact.png)
+<!-- border -->![image](img/ail/artifact.png)
 
 [OPTION END]
 
 
 [OPTION BEGIN [Postman]]
 
-Navigate through `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
+Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
 
-!![image](img/postman/metric.png)
+<!-- border -->![image](img/postman/metric.png)
 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit, and execute the following snippet:
+Paste and edit, then execute the following snippet:
 
 ```PYTHON
-response = ai_core_client.metrics.query(
+response = tracking_client.query(
     execution_ids = [
         'e1f2169db8760b5d' # list of execution IDs for which to query metrics
     ],
@@ -565,20 +561,16 @@ Unnamed: 0: 0.000 +/- 0.000
 
 [OPTION END]
 
-[DONE]
 
-[ACCORDION-END]
+### Compare metrics (optional)
 
-[ACCORDION-BEGIN [Step 11: ](Compare metrics (optional))]
 
-Create two configurations: one with `DT_MAX_DEPTH = 3` and another with `DT_MAX_DEPTH = 6`. Then create executions for both of those configurations.
+Create two configurations: one with `DT_MAX_DEPTH = 3` and the other with `DT_MAX_DEPTH = 6`, then create executions for both configurations.
 
-!![image](img/ail/compare-1.png)
+<!-- border -->![image](img/ail/compare-1.png)
 
-You can then get a metric wise comparison of the executions from the two different configurations.
+You can then compare metrics for the executions using the two different configurations.
 
-!![image](img/ail/compare-2.png)
+<!-- border -->![image](img/ail/compare-2.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

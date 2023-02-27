@@ -1,24 +1,26 @@
 ---
-title: Use SAP HANA Cloud, data lake Events to Schedule Data Movement
-description: SAP HANA Cloud, data lake has a built-in event scheduler that can be used to schedule SQL functionality. Learn how to use this event scheduler to schedule data movement from a SAP HANA Cloud, HANA database to a SAP HANA Cloud, data lake.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
+# Use SAP HANA Cloud, data lake Events to Schedule Data Movement
+<!-- description --> SAP HANA Cloud, data lake has a built-in event scheduler that can be used to schedule SQL functionality. Learn how to use this event scheduler to schedule data movement from a SAP HANA Cloud, HANA database to a SAP HANA Cloud, data lake.
+
 ## Prerequisites
  - A SAP HANA Cloud, HANA database instance
  - A SAP HANA Cloud, data lake instance
 
-## Details
-### You will learn
+## You will learn
   - How to create and schedule events in a SAP HANA Cloud, data lake instance
   - How scheduling data movement from SAP HANA Cloud, HANA database (HDB) to SAP HANA Cloud, data lake (HDLRE) can be achieved through SQL
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Import Data Into an SAP HANA Cloud, HANA database)]
+### Import Data Into an SAP HANA Cloud, HANA database
+
 
 Download and import the `customer.tbl` TPCH data file from [this](https://github.com/SAP-samples/hana-cloud-relational-data-lake-onboarding/blob/main/TPCH/customer.tbl) GitHub repository.
 
@@ -55,10 +57,9 @@ On the "Import Target" step, select "Add to an existing table" and fill in the i
 
 Verify the table mapping and go to step 5 to finish the import.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up a User for Scheduling and Managing Events)]
+### Set up a User for Scheduling and Managing Events
+
 
 Throughout this tutorial you will need a user that has certain permissions. Log into an HDLRE SQL console as HDLADMIN and execute the following SQL to create a user and grant them the permissions needed to complete this tutorial. Comments in the SQL below will explain the permissions being granted.
 
@@ -95,10 +96,9 @@ Now, choose Data Lake Relational Engine and fill in the values with the host and
 
 Click OK and then there should be a new database in the left side menu in the Database Explorer. Right click that instance and open a new SQL console. The rest of the tutorial should be completed from there.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set up a Remote Server from SAP HANA Cloud, data lake to SAP HANA Cloud, HANA database)]
+### Set up a Remote Server from SAP HANA Cloud, data lake to SAP HANA Cloud, HANA database
+
 
 The first task in preparing the HDLRE instance is creating a remote server that connects HDLRE to the HDB instance that contains the data you want to access. First, right click the HANA database in Database Explorer and select properties.
 
@@ -158,11 +158,10 @@ Run the above SQL and expect a result set to be returned.
 
 ![Sample result set of the local temporary table pointing to remote server.](schedule-8.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create and Schedule the Data Movement Event)]
+### Create and Schedule the Data Movement Event
+
 
 HDLRE has a built-in event and event scheduler. You can take advantage of the remote service and the event scheduler to copy data from your HANA database to your HDLRE. Start by creating a destination table for your data. In this case this is just a customer table that is inside HDLRE.
 
@@ -217,7 +216,6 @@ SELECT * FROM HDLRE_CUSTOMER;
 
 Now you have successfully created an event that recurs and moves data from a HANA database to a data lake database. Events can contain any valid SQL operations, so get creative and automate any repetitive SQL workloads with SAP HANA Cloud, data lake events!
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

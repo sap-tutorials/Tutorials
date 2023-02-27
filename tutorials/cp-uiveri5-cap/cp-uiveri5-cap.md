@@ -1,13 +1,15 @@
 ---
-title: Add Automated System Tests for CAP-Based Projects to Your CI/CD Pipeline
-description: Use UIVeri5 to create system tests against a CAP-based sample application. Automate your tests through a CI/CD pipeline.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+# Add Automated System Tests for CAP-Based Projects to Your CI/CD Pipeline
+<!-- description --> Use UIVeri5 to create system tests against a CAP-based sample application. Automate your tests through a CI/CD pipeline.
+
 ## Note
-Please note that this step is deprecated and will be removed or replaced soon. Even though existing test will continue to work, we recomment that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme)
+Please note that UIVeri5 is deprecated and will be removed or replaced soon. Even though existing tests will continue to work, we recommend that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme).
 
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
@@ -28,16 +30,14 @@ Please note that this step is deprecated and will be removed or replaced soon. E
 - If you are located in China, you've configured and downloaded the `chromedriver` that fits your Google Chrome version manually. See [`chromedriver`](https://chromedriver.storage.googleapis.com/index.html).
 
 
-## Details
-### You will learn
+## You will learn
 - How to create system tests with UIVeri5 using the UI5 Test Recorder for CAP-based projects on SAP Business Technology Platform
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
-
-### What Is This Tutorial About?
-
+## What Is This Tutorial About?
 In this tutorial, you'll create and run automated system tests with UIVeri5 against a simple CAP-based sample application. Your sample application is a bookshop, which has basic functions for managing books such as creating and deleting books.
 
+## Intro
 The tutorial consists of three main stages:
 
 ![Tutorial steps](tutorial-steps.png)
@@ -47,9 +47,7 @@ The tutorial consists of three main stages:
 2. Create and run system tests with UIVeri5 that add a new book to your bookshop and check if it's displayed in the list.
 
 3. Automate your system tests by integrating them into a CI/CD pipeline.
-
-### About System Tests with UIVeri5
-
+## About System Tests with UIVeri5
 UIVeri5 is an SAP open-source JavaScript testing framework for SAPUI5 applications. It drives a real browser for your deployed app and simulates authentic user scenarios. System tests check both front-end and back-end and make sure that all pieces of an application work well together.
 
 The following graphic shows the positioning of system tests with UIVeri5 compared to other testing methods and tools. The arrow shape illustrates the granularity of the methods: Compared to unit, component, or integration tests, system tests examine less details and focus on crucial workflows, instead.
@@ -60,15 +58,11 @@ The following graphic shows the positioning of system tests with UIVeri5 compare
 
 >- [UIVeri5: More Stable System Tests for UI5 Applications](https://blogs.sap.com/2019/01/28/uiveri5-more-stable-system-tests-for-ui5-applications/)
 >- [UIVeri5 for E2E testing of UI5 apps](https://blogs.sap.com/2019/01/29/uiveri5-for-e2e-testing-of-ui5-apps/)
-
-### About the SAPUI5 Test Recorder
-
+## About the SAPUI5 Test Recorder
 The SAPUI5 Test Recorder is a tool that helps you create integration and system tests. You can use it in any SAPUI5 application to inspect its user interface, view the control properties, and get code snippets for OPA5 and UIVeri5 tests. As of version 1.74, it is part of the SAPUI5 framework.
 
 > For more information about the SAPUI5 Test Recorder, see [Test Recorder](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d).
-
-### About CI/CD with Project "Piper"
-
+## About CI/CD with Project "Piper"
 Project "Piper" is one of SAP's solutions for continuous integration and delivery. It provides pre-configured Jenkins pipelines, which you can use in your own Jenkins master infrastructure and adapt according your needs. Project "Piper" consists of two different parts:
 
 - A [shared library](https://sap.github.io/jenkins-library/), which contains the description of steps, scenarios, and utilities that are required to use Jenkins pipelines
@@ -81,7 +75,8 @@ Project "Piper" is one of SAP's solutions for continuous integration and deliver
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up and run your CAP-based sample application)]
+### Set up and run your CAP-based sample application
+
 
 In Visual Studio Code, set up and run your bookshop application.
 
@@ -163,10 +158,10 @@ In Visual Studio Code, set up and run your bookshop application.
     ![Conf.js after finishing the project setup](confjs.png)
 
 
-[VALIDATE_6]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Walk through the test scenario)]
+
+### Walk through the test scenario
+
 
 Manually, familiarize yourself with your test scenario before starting to code it. Later, you'll automate the following steps so that they are automatically executed during your system tests.
 
@@ -178,11 +173,11 @@ Manually, familiarize yourself with your test scenario before starting to code i
 
 2. Choose **Create**:
 
-    !![Create button in bookshop app](createButton.png)
+    <!-- border -->![Create button in bookshop app](createButton.png)
 
 3. Enter the title of your new book, for example, *How to Cook Pancakes*:
 
-    !![Title of the new book](EnterTitle.png)
+    <!-- border -->![Title of the new book](EnterTitle.png)
 
 4. From the **Genre** drop-down menu, choose **Fiction**.
 
@@ -192,18 +187,17 @@ Manually, familiarize yourself with your test scenario before starting to code i
 
 7. Verify that the **Edit** button is displayed:
 
-    !![Edit button in bookshop app](editButton.png)
+    <!-- border -->![Edit button in bookshop app](editButton.png)
 
 8. Choose **Back** to return to the list of books.
 
 9. Verify that the new book has been added to the list.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a UIVeri5 script for adding a new book)]
+### Create a UIVeri5 script for adding a new book
+
 
 Create a UIVeri5 script to test the creation of a new book in your bookshop application.
 
@@ -256,11 +250,11 @@ Create a UIVeri5 script to test the creation of a new book in your bookshop appl
 
     As a result, the Test Recorder highlights the entry to indicate its activity:
 
-    !![Test recorder highlights the create button](CreateButtonPress.gif)
+    <!-- border -->![Test recorder highlights the create button](CreateButtonPress.gif)
 
     Now, the Test Recorder provides a code snippet for your test:
 
-    !![Test recorder provides code snippet for UIVeri5 test](SelectDialectUIVeri5.gif)
+    <!-- border -->![Test recorder provides code snippet for UIVeri5 test](SelectDialectUIVeri5.gif)
 
     Please make sure that the dialect *UIVeri5* is selected.
 
@@ -268,10 +262,9 @@ Create a UIVeri5 script to test the creation of a new book in your bookshop appl
 
     ![Clicking the create button action in the manageBooks page object](ClickCreateButtonLogic.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a UIVeri5 script for adding detailed information to your book)]
+### Create a UIVeri5 script for adding detailed information to your book
+
 
 Create a UIVeri5 script to test the addition of detailed information to your newly created book.
 
@@ -301,11 +294,11 @@ Create a UIVeri5 script to test the addition of detailed information to your new
 
     As a result, the Test Recorder highlights the input field to indicate its activity:
 
-    !![teched.spec.js with enter title action](EnterTitle.gif)
+    <!-- border -->![teched.spec.js with enter title action](EnterTitle.gif)
 
     Now, the Test Recorder provides a code snippet for your test:
 
-    !![The test recorder provides a code snippet for the enter title action](EnterBookTitle.png)
+    <!-- border -->![The test recorder provides a code snippet for the enter title action](EnterBookTitle.png)
 
     Please make sure that the dialect *UIVeri5* is selected.
 
@@ -324,11 +317,11 @@ Create a UIVeri5 script to test the addition of detailed information to your new
 
     As a result, the Test Recorder highlights the drop-down icon to indicate its activity:
 
-    !![Highlighted genre drop-down menu](ClickGenreDropDown.gif)
+    <!-- border -->![Highlighted genre drop-down menu](ClickGenreDropDown.gif)
 
     Now, the Test Recorder provides a code snippet for your test:
 
-    !![The test recorder provides a code snippet for the genre drop-down menu](GenreDropDownSnippet.png)
+    <!-- border -->![The test recorder provides a code snippet for the genre drop-down menu](GenreDropDownSnippet.png)
 
     Please make sure that the dialect *UIVeri5* is selected.
 
@@ -455,10 +448,9 @@ Create a UIVeri5 script to test the addition of detailed information to your new
 
     ![Report.html in the file explorer](ReportHtml.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Start the Jenkins build server)]
+### Start the Jenkins build server
+
 
 Start the CX Server as build server for your CI/CD pipeline.
 
@@ -493,7 +485,7 @@ Depending on your operating system, choose one of the following options:
 
 4. Jenkins asks you to log in to create new jobs:
 
-    !![Jenkins Welcome Screen](jenkins-login.png)
+    <!-- border -->![Jenkins Welcome Screen](jenkins-login.png)
 
     For the login, use the default credentials. To view them, run one of the following commands:
 
@@ -509,11 +501,11 @@ Depending on your operating system, choose one of the following options:
 
 2. Choose **General** and deactivate **Use the WSL 2 based engine**. Also, make sure that Docker is running.
 
-    !![Docker resource settings](DockerSettings.png)
+    <!-- border -->![Docker resource settings](DockerSettings.png)
 
 2. Choose **Resources** and extend the **Memory** to at least 4GB:
 
-    !![Docker resource settings](settings_resources.png)
+    <!-- border -->![Docker resource settings](settings_resources.png)
 
 3. Choose **File Sharing** and add a folder from your local file system to which you want to grant file share permissions.
 
@@ -535,7 +527,7 @@ Depending on your operating system, choose one of the following options:
 
 4. Jenkins asks you to log in to create new jobs:
 
-    !![Jenkins Welcome Screen](jenkins-login.png)
+    <!-- border -->![Jenkins Welcome Screen](jenkins-login.png)
 
     For the login, use the default credentials. To view them, run the following command:
 
@@ -546,10 +538,9 @@ Depending on your operating system, choose one of the following options:
     >**Note:** We recommend to change the default credentials immediately.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create and run your CI/CD pipeline)]
+### Create and run your CI/CD pipeline
+
 
 Create and run a build job for your project in Jenkins.
 
@@ -563,7 +554,7 @@ Create and run a build job for your project in Jenkins.
 
 5. In your repository in GitHub, choose **Code**, copy your repository URL for HTTPS, and select branch "*/main"
 
-    !![UiVeri5 Test Report in Jenkins](Jenkins-main.png)
+    <!-- border -->![UiVeri5 Test Report in Jenkins](Jenkins-main.png)
 
 6. In Jenkins, enter your URL as **Repository URL** and choose **Save**.
 
@@ -581,10 +572,8 @@ Create and run a build job for your project in Jenkins.
 
 9. To view the status of your build, choose **UIVeri5 Test Report** from the navigation pane:
 
-    !![UiVeri5 Test Report in Jenkins](TestReportInPiper.png)
+    <!-- border -->![UiVeri5 Test Report in Jenkins](TestReportInPiper.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---
 

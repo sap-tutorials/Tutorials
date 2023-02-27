@@ -1,30 +1,33 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Set Up Single Measure Filters in an Application
-description: Use the Dropdown widget to filter on a measure in a table at runtime
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product-function>sap-analytics-cloud\,-analytics-designer
 ---
 
+# Set Up Single Measure Filters in an Application
+<!-- description --> Use the Dropdown widget to filter on a measure in a table at runtime
+
 <!-- ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - How to use a global variable script
   - How to use a script object
   - How to use the "On Initialization" event
   - How to filter dimensions with the script API
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a Text and a Dropdown Widget)]
+### Add a Text and a Dropdown Widget
+
 
 You can use dropdown widgets in our apps to change the measure displayed in tables and charts. In this example, you will load all the measures from our dataset into a dropdown so that when you select a measure, both the table and chart that have already been set up in our app, will change to reflect the selection.
 
@@ -32,10 +35,9 @@ Start by adding a label to prompt users to select a measure. Next, you will add 
 
 ![2.3.1](2.3.1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Script Variable)]
+### Add Script Variable
+
 
 Now you will add a script variable, which is a global variable that can be used in multiple locations in the app. This script variable will let you access the measure selected from the dropdown. Call the variable `CurrentMeasureFilterSelection` and set the default value to the Gross Margin Plan measure.
 
@@ -43,11 +45,10 @@ Now you will add a script variable, which is a global variable that can be used 
 
 ![2.3.2](2.3.2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add Script Object)]
+### Add Script Object
+
 
 Next, create a script object to define what will happen when a measure is selected. Then, rename the folder `Utils` and the function `setMeasureFilter`. We will also add an argument to the function called `selectedId`. We will leave the type as the default of String. Now we can write the script for the function.
 
@@ -77,10 +78,9 @@ The result will be this.
 
 ![2.3.5](2.3.5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Script to the Dropdown Widget)]
+### Add Script to the Dropdown Widget
+
 
 Now, you will define how to pass the selected measure to the `setMeasureFilter` function through the `onSelect` event of the dropdown widget. Add a script to get the selected value of the dropdown and pass it to the `setMeasureFilter` as a parameter.
 
@@ -90,10 +90,9 @@ Utils.setMeasureFilter(Dropdown_Measures.getSelectedKey());
 
 ![2.3.6](2.3.6.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Script to the OnInitialization Event)]
+### Add Script to the OnInitialization Event
+
 
 Finally, you will define what happens when the application is first run through the `onInitialization` event of the canvas itself. When the application initializes, load all the available measures of the table into the dropdown, set the selected key to the first measure in that list, and then set the measure filter to the same first measure.
 
@@ -120,10 +119,9 @@ if (measures.length > 0) {
 Utils.setMeasureFilter(selectedKey);
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the Application)]
+### Run the Application
+
 
 Now save your changes and run the application. Here in the table, the original measures have been removed and replaced with the default Gross Margin Plan measure.
 
@@ -137,12 +135,9 @@ If you switch to the chart, you can see that both the default measure and the ne
 
 ![2.3.10](2.3.10.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

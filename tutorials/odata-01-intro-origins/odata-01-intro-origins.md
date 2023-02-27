@@ -1,22 +1,24 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
-title: Learn about OData Fundamentals
-description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
 auto_validation: false
 primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 15
 ---
 
-## Details
-### You will learn
+# Learn about OData Fundamentals
+<!-- description --> Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
+
+## You will learn
  - Where OData came from and why it's designed the way it is
  - What the standard OData operations are and how they relate to HTTP
  - What the public Northwind OData service has to offer
  - What OData service documents and metadata documents describe
  - The basics of OData entity types, sets and relationships
 
+## Intro
 OData is an open standard that is both a data format and a protocol for consuming and manipulating data in a uniform way. It's ISO/IEC approved and managed by the [OASIS organization](https://www.oasis-open.org/).
 
 OData has its origins in the world of weblogs and syndication, but now serves to power a great deal of the API and integration activities in typical SAP enterprise environments. This tutorial will help you understand OData from the ground up. By looking briefly at RSS and Atom, precursors of OData in some ways, you'll understand and feel more comfortable with OData and its mechanisms.
@@ -25,7 +27,8 @@ OData has its origins in the world of weblogs and syndication, but now serves to
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Examine RSS, an ancestor of OData)]
+### Examine RSS, an ancestor of OData
+
 
 You can understand OData as being the combination of two essential parts. The first is the format, the second is the protocol. The format defines how data is described, how it is serialized. The protocol defines how that data is manipulated.
 
@@ -88,11 +91,10 @@ rss
 
 Think of this overall structure like a document, with a header and items.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Examine Atom and the Atom Publishing Protocol)]
+### Examine Atom and the Atom Publishing Protocol
+
 
 Atom is a format very similar to RSS, serving the same purpose, and is properly known as the [Atom Syndication Format](https://tools.ietf.org/html/rfc4287). Some may call Atom a successor to RSS. Unlike RSS, which is just a format specification, Atom also has a related protocol called the [Atom Publishing Protocol](https://tools.ietf.org/html/rfc5023) that enables the manipulation of data stored in Atom-formatted resources. This was useful for weblog authors, who could use tools that spoke the Atom Publishing Protocol to edit and publish posts to remote blogging systems.
 
@@ -124,11 +126,10 @@ The Atom Publishing Protocol specification also details the concept of a service
 
 You will see that these fundamental building blocks of Atom are alive and well in the OData protocol today.
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Look at the basics of OData)]
+### Look at the basics of OData
+
 
 The ideas in Atom formed the foundation of OData. OData is described in full at <https://www.odata.org/> but at a simple level, OData has:
 
@@ -148,11 +149,9 @@ Select the link **Browse the Read-Only Northwind Service** and you will see the 
 
 Notice how similar it is to the Atom service document, with a "service" root element and "workspace" elements containing "collection" elements that outline the types of data available. In this case you see that there are `Categories`, `CustomerDemographics`, `Customers`, `Employees` and more available in this service.
 
-[DONE]
 
-[ACCORDION-END]
+### Look at an OData metadata document
 
-[ACCORDION-BEGIN [Step 4: ](Look at an OData metadata document)]
 
 In addition to the service document, an OData service also has a metadata document, a resource which describes the data in the OData service. The metadata document itself is available at a "well-known" URL, which is the service document URL with the value `$metadata` appended. For this Northwind OData service, this means that the metadata document should be available at:
 
@@ -174,10 +173,10 @@ and the definition of an association set that looks like this:
 
 ![Definition of an association set](associationset-definition.png)
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](View the products data in the OData service)]
+
+### View the products data in the OData service
+
 
 In the previous step you examined entity types. These are detailed descriptions of entities available in the OData service. The entities themselves are available in so-called entity sets. The relationship between entities and entity sets with OData is the direct equivalent of the relationship between entries and feeds in RSS and Atom. In fact, you'll see that `entry` and `feed` elements live on in the OData format.
 
@@ -199,10 +198,10 @@ You will see the XML representation of the Products entity set. Unless you alrea
 
 It's not easy to read like this, but you should be still able to discern, even in this rendering, features with which you're now familiar. Notice the XML `feed` element is the root element, representing a collection of things. Notice also the first `entry` element, representing the start of the first product record in this collection.
 
-[VALIDATE_5]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Install a Chrome extension for XML rendering)]
+
+### Install a Chrome extension for XML rendering
+
 
 The Chrome browser is recommended here, as it has a good choice of extensions that can make life easier. There are extensions for Chrome to render XML in a more human-friendly way. One of these extensions is [XML Tree](https://chrome.google.com/webstore/detail/xml-tree/gbammbheopgpmaagmckhpjbfgdfkpadb?hl=en). There are others, but this one will do. Install this in your Chrome browser by following the instructions on the extension page and then reload the [Products entity set resource](https://services.odata.org/V3/Northwind/Northwind.svc/Products). It should now look something like this:
 
@@ -210,10 +209,9 @@ The Chrome browser is recommended here, as it has a good choice of extensions th
 
 Much easier to read, and clearly visible is the structure and relationship described by the `feed` and `entry` elements. It's now also easier to see the actual product data - in this screenshot there is the `Chai` product, with 39 units in stock.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Explore the navigation properties from a product)]
+### Explore the navigation properties from a product
+
 
 In the screenshot in the previous step, notice the `link` XML elements, in particular the ones with the title attribute values `Category`, `Order_Details` and `Supplier`. Notice also the corresponding values of their type attributes: `entry`, `feed` and `entry` respectively:
 
@@ -239,10 +237,9 @@ Follow the same path for the relationship to the `OrderDetails` navigation prope
 
 In this case, the value of the Multiplicity attribute described for this relationship is `*`. This means that there can be zero, one or more order details for a product. This is why when we follow this navigation property the type of the `link` element is `feed`, rather than `entity`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Retrieve a specific product)]
+### Retrieve a specific product
+
 
 The URL <https://services.odata.org/V3/Northwind/Northwind.svc/Products> shows the `Products` entity set, a feed of individual entries, each one representing a product. In each product `entry` element there is a child `id` element with the unique URL for that particular product, like in this example:
 
@@ -254,10 +251,10 @@ Specify that ID in the browser address bar, by adding `(1)` to the end of the ex
 
 Note that the resource returned is the entry for that specific product.
 
-[VALIDATE_8]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Retrieve order details for a specific product)]
+
+### Retrieve order details for a specific product
+
 
 To see how the navigation properties work, go from the individual property entry in the previous step to a list of the related order details. Remembering the navigation property concerned, `Order_Details`, add it to the end of the existing URL in the address bar to navigate to this URL: <https://services.odata.org/V3/Northwind/Northwind.svc/Products(1)/Order_Details>.
 
@@ -267,5 +264,4 @@ Finally, use the OData system query option $count to retrieve the number of orde
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/Products(1)/Order_Details/$count>
 
-[VALIDATE_9]
-[ACCORDION-END]
+

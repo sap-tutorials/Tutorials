@@ -1,21 +1,22 @@
 ---
-title: Create a Custom Business Object
-description: Define the data structure and create the database persistence of a custom business object.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 time: 10
 ---
 
+# Create a Custom Business Object
+<!-- description --> Define the data structure and create the database persistence of a custom business object.
+
 ## Prerequisites  
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
-## Details
-### You will learn
-
+## You will learn
 - Define a custom business object and its a simple data structure
 - Create the database table for the custom business object
 
+## Intro
 **Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
@@ -23,13 +24,13 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 As applications are based on business objects, it all starts with custom business object creation.
 
 In the first parts a manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
-
-### Additional Information
+## Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start Custom Business Objects application)]
+### Start Custom Business Objects application
+
 
 1. Enter your SAP S/4HANA system's Fiori Launchpad.
 
@@ -37,10 +38,9 @@ In the first parts a manager wants to define business objects "Bonus Plan" for e
 
     ![Custom Business Objects application tile](tile_CBO.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a custom business object)]
+### Create a custom business object
+
 
 1. Press **New** to start creation of a custom business object
 
@@ -55,10 +55,9 @@ In the first parts a manager wants to define business objects "Bonus Plan" for e
 
     The details view of the custom business object opens.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define the data structure)]
+### Define the data structure
+
 
 1. In the details view for editing the custom business object switch to **Fields** Section.
 
@@ -84,10 +83,9 @@ In the first parts a manager wants to define business objects "Bonus Plan" for e
 
     ![Custom Business Object's Field List View](CBO_Fieldlist_partly.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add standard data to the structure)]
+### Add standard data to the structure
+
 
 1. In the details view for editing the custom business object switch to  **General Information** Section.
 
@@ -96,20 +94,17 @@ In the first parts a manager wants to define business objects "Bonus Plan" for e
     ![Check System Administrative Data](CBO_checkSysAdminData.png)
     >By checking this box the four fields also appear in the field list. The fields are not editable and will be filled and updated automatically, so that you do not need to implement logic for them. Logic implementations for these fields are even ignored.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create database persistence)]
+### Create database persistence
+
 **Publish** the business object `Bonus Plan`.
 
 ![Press Publish](CBO_pressPublish.png)
 This creates the database persistence of the business object.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

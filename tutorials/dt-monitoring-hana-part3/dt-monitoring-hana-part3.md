@@ -1,10 +1,12 @@
 ---
-title: Stopping and Restarting the Extended Storage Service
-description: Occasionally you will need to stop your extended storage service. One case where this will be required is when you change a configuration parameter, you will need to manually stop the service and then do a restart, in order for the change to take place.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+
+# Stopping and Restarting the Extended Storage Service
+<!-- description --> Occasionally you will need to stop your extended storage service. One case where this will be required is when you change a configuration parameter, you will need to manually stop the service and then do a restart, in order for the change to take place.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -14,17 +16,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://developers.sap.com/tutorials/dt-monitoring-hana-part4.html)
 
-## Details
-### You will learn  
+## You will learn  
  - Stopping the Extended Storage Service using SAP HANA Studio and a SSH session
  - Restarting the Extended Storage Service using a SSH session
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Stopping the Extended Storage Service)]
+### Stopping the Extended Storage Service
+
 
 The easiest way to stop the `esserver` process is to use the "`HDB stop`" command from a SSH session. The "`HDB stop`" command will not just shut down the `esserver`/Dynamic Tiering process but it will shut down the entire HANA system. After the "`HDB stop`" command completes, you can verify the status of the `esserver` process by using the "`HDB info`" command. One benefit of this method is that you know immediately when the stop operation has completed.
 
@@ -44,17 +45,13 @@ Another way to stop the extended storage service is by double clicking on "**<SI
 
 > Note: The screenshots above illustrate stopping the `esserver` process when connected through SAP HANA Studio as the `SYSTEM` user. You would need to allocate an additional permission (SERVICE ADMIN) for the TPCH user to have the same privilege. Make sure to close the Administration window for the TPCH user if you already had it open and then open the Administration window again after you assign the new permissions. This is an example where a database developer would typically not have the same permissions as an administrator and hence cannot do the same functionality. So it is better to stop the services by the SYSTEM user, if you are using Studio to stop the service.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Restarting the Extended Storage Service)]
+### Restarting the Extended Storage Service
+
 To restart the extended storage service from a SSH session, use the "`HDB start`" command. After the command completes, use the "`HDB info`" command to verify the status of the `esserver` process. Just as with using a SSH session to stop the extended storage service, this method lets you immediately know when the start operation has completed.
 
 ![Restarting Extended Storage Service](restarting-es-ssh.png)
 
 With SAP HANA Studio, there is no need to manually restart the extended storage service since it automatically restarts after you stop it.
 
-[DONE]
-
-[ACCORDION-END]
