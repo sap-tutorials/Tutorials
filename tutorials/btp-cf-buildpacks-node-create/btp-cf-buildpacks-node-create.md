@@ -10,8 +10,6 @@ tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, 
 primary_tag: programming-tool>node-js
 ---
 
-# Create a Node.js Application with Cloud Foundry Node.js Buildpack
-<!-- description --> Create a simple application and enable services for it, by using  the Cloud Foundry Node.js Buildpack and Cloud Foundry Command Line Interface (cf CLI).
 
 ## You will learn
   - How to create a simple "Hello World" application in Node.js
