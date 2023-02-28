@@ -1,8 +1,6 @@
 ---
 author_name: Christian Savchev
 author_profile: https://github.com/christiansavchev  
-title: Create a Condition to Catch All Notifications
-description: The condition is an entity in Alert Notification that represents under what condition one event is matched for delivery
 keywords: tutorial
 auto_validation: true
 time: 10
@@ -12,6 +10,7 @@ parser: v2
 ---
 
 # Create a Condition to Catch All Notifications
+<!-- description --> The condition is an entity in Alert Notification that represents under what condition one event is matched for delivery
 
 ## Prerequisites
 - Tutorial: You have activated **Alert Notification** in a trial account as described in [Set Up SAP Alert Notification service for SAP BTP for Initial Use](set-up-alert-notification)
