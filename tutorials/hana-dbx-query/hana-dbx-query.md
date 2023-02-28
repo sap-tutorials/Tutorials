@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -26,15 +26,15 @@ primary_tag: software-product>sap-hana-cloud
 
     ![open SQL console](open-sql-console.png)
 
-2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click the **...** icon.  There are options to connect, disconnect, or change the connection.
+2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click on the **...** icon.  There are options to connect, disconnect, or change the connection.
 
     ![Connected SQL console](connectedSQLConsole.png)  
 
 3. Enter the SQL statements below.
 
     ```SQL
-    SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
+    SELECT * FROM HOTEL;
+    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -55,7 +55,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Messages Tab](MessagesTab.png)
 
-    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
+    > For SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
 
 8. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 
@@ -67,7 +67,7 @@ primary_tag: software-product>sap-hana-cloud
 
     This behavior can be set via the SQL console preferences which is shown in more detail in Step 5: SQL console preferences.
 
-10. Sometimes you need to execute a SQL statement that takes a long time to run--longer than you want to keep your browser open.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
+10. Sometimes you need to execute a SQL statement that takes a long time to run.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
 
@@ -98,7 +98,7 @@ primary_tag: software-product>sap-hana-cloud
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
 
-    SELECT * FROM HOTEL.CUSTOMER FOR JSON;
+    SELECT * FROM CUSTOMER FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)
@@ -121,7 +121,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Keyboard Shortcuts](KeyboardShortcuts.png)
 
-2. Some commonly-used keyboard shortcuts are highlighted in the table below:
+2. Some commonly used keyboard shortcuts are highlighted in the table below:
 
     |  Action     | Shortcut
     |  :------------- | :-------------
@@ -141,7 +141,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Open Keyboard Shortcuts Settings](KeyboardShortcutsSettings.png)
 
-    > Note, double-click on the shortcut to start the recording.
+    > Double-click on the shortcut to start the recording.
 
 4. A SQL console can be toggled to enter full-screen mode.  Double-click a SQL console tab to enter this mode.  
 
@@ -162,7 +162,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Code Completion Options](CodeCompletionOptions.png)
 
-2. By selecting the statement you want to use from the provided options, the SQL statement will be written into the console. Some information will need to be filled in to the generated statement. In the example below, table names need to be replaced and the columns to be used in the ON clause need to be provided.
+2. By selecting the statement, you want to use from the provided options, the SQL statement will be written into the console. Some information will need to be filled into the generated statement. In the example below, table names need to be replaced and the columns to be used in the ON clause need to be provided.
 
     ![Code Completion Statement](CodeCompletionStatement.png)
 
@@ -171,7 +171,7 @@ primary_tag: software-product>sap-hana-cloud
     Copy the following SQL statement into the console and then use the autocomplete shortcut to see the available tables:
 
     ```SQL
-    SELECT * FROM HOTEL.RE
+    SELECT * FROM HOTEL.RES
     ```
 
     ![Code Completion Table](CodeCompletionTable.png)
@@ -195,9 +195,9 @@ primary_tag: software-product>sap-hana-cloud
       R.FREE,
       R.PRICE
     FROM
-      HOTEL.ROOM AS R
+      ROOM AS R
       LEFT OUTER JOIN
-      HOTEL.HOTEL AS H
+      HOTEL AS H
       ON R.HNO = H.HNO;
     ```
 
@@ -218,7 +218,7 @@ primary_tag: software-product>sap-hana-cloud
     Copy the following SQL into the SQL console to populate the Procedures and Functions section of the help panel:
 
     ```SQL
-    SELECT HOTEL.AVERAGE_PRICE('suite') FROM DUMMY;
+    SELECT AVERAGE_PRICE('suite') FROM DUMMY;
     ```
 
     ![Procedures and Functions Referenced](FunctionsReferenced.png)
@@ -229,7 +229,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ```SQL
     SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
-    FROM HOTEL.ROOM
+    FROM ROOM
     GROUP BY TYPE;
     ```
 
@@ -287,7 +287,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     */
 
-    SELECT * FROM HOTEL.RESERVATION
+    SELECT * FROM RESERVATION
         WHERE ARRIVAL >= CURRENT_DATE;
     ```
 
@@ -323,11 +323,8 @@ The statement library contains a mix of pre-populated system statements and user
     ![Update Statement](UpdateStatement.png)
 
 
+### Knowledge check
+
 Congratulations! You have now explored selected features of the SQL console.
-
-
-
-
-
 
 ---

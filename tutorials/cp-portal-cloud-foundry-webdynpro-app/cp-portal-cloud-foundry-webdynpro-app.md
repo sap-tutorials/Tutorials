@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to your site.
 
 ## Prerequisites
-- You have created a destination in SAP BTP cockpit to the SAP Gateway Demo system
+- You have created a destination in SAP BTP cockpit to the SAP Gateway Demo system 
 - You have subscribed to the SAP Build Work Zone, standard edition and created a site
 
 

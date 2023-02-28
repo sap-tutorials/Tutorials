@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -67,7 +67,7 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 9. Press OK to save the data source.  
 
-    > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
+    >Saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 
 For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/66a4169b84b2466892e1af9781049836.html).
@@ -106,7 +106,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 5. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources. Be sure to configure the values of `servernode` and `driver` so that they conform with your setup.
 
-    >Note that the driver's file extension is `dylib` instead of `so` on a Mac.
+    >The driver's file extension is `dylib` instead of `so` on a Mac.
 
     ```.odbc.ini
     [HANA_Cloud]
@@ -143,7 +143,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 An application that supports ODBC can now make use of the created data source.  One example on Windows is Microsoft Excel.  
 
-> Note that Microsoft Excel can be 32 or 64 bit.  This can be seen under **File | Account | About Excel**.    
+>Microsoft Excel can be 32 or 64 bit.  This can be seen under **File | Account | About Excel**.    
 >
 > ![Excel 64 bit](excel-64-bit.png)  
 >
@@ -178,6 +178,8 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
     ![Excel ODBC Connection String](ExcelCS.png)  
 
     For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/73f03d62240f435880ade3bc1242cc05.html).
+
+### Knowledge check
 
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA database and used that data source from Microsoft Excel.
 

@@ -32,7 +32,7 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 ### Custom Business Configurations
 
 
-  1. Start the Fiori Launchpad. You can start the Fiori Launchpad from ADT if you right-click on your ABAP system in the project explorer and select **Properties**, select **ABAP Development** and click on the system URL.
+  1. Start the SAP Build Work Zone. You can start the SAP Build Work Zone from ADT if you right-click on your ABAP system in the project explorer and select **Properties**, select **ABAP Development** and click on the system URL.
 
   2. Logon with the user responsible for maintaining the error codes.
 
@@ -72,7 +72,7 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 
     ![Select transport](m8.png)
 
-11. To create a transport request, return to the Fiori Launchpad Home Page and select the [**Export Customizing Transports**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) tile.
+11. To create a transport request, return to the SAP Build Work Zone Home Page and select the [**Export Customizing Transports**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) tile.
 
      ![Start Export Customizing Transports app](m9.png)
 
@@ -120,7 +120,6 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 
 
 ### Test yourself
-
 
 
 ---

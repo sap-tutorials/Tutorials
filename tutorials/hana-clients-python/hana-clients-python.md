@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -249,6 +249,8 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
     Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)  
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries an SAP HANA database.  
 

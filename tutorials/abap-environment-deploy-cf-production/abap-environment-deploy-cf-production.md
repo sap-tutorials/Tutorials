@@ -53,10 +53,10 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](user3.png)
 
-  5. Select `Business_Application_Studio_Administrator`, `Business_Application_Studio_Developer` and `Business_Application_Studio_Extension_Deployer` and click **Assign Role Collection**.
+  5. Select `Business_Application_Studio_Extension_Deployer` and click **Assign Role Collection**.
 
       ![assign role collection](user4.png)
-
+ 
 
 
 ### Create dev space
@@ -73,7 +73,7 @@ author_profile: https://github.com/mervey45
   3. Create a new dev space:
        - Name: **Fiori**
        - Type: **SAP Fiori**
-
+ 
        Click **Create Dev Space**.
 
      ![dev](studio4.png)
@@ -170,7 +170,6 @@ author_profile: https://github.com/mervey45
 
      **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
-
   7. Configure deployment:
        - Target: ABAP
        - Destination: `<your_abap_system_url>`
@@ -264,7 +263,7 @@ author_profile: https://github.com/mervey45
 
       ![iam](iam4.png)
 
-  5. Select **Services** and add a new one.
+  5. Select **Services** and add a new one. 
 
       ![iam](iam5.png)
 
@@ -276,7 +275,9 @@ author_profile: https://github.com/mervey45
 
       Click **OK**.
 
-      **Save** and **activate** your IAM app.
+      Right-click your IAM App and click **Activate**.
+
+      **HINT:** If you can't find your service name, you can press **CTRL + space** to search for it.
 
   7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 
@@ -295,7 +296,7 @@ author_profile: https://github.com/mervey45
       Click **Next >**.
 
  10. Click **Finish**.
-
+ 
       ![catalog](catalog4.png)
 
  11. Select **Apps** and add a new one.

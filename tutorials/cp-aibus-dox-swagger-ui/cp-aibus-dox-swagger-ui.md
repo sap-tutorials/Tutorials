@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
 ---
 
@@ -24,15 +24,15 @@ The core functionality of Document Information Extraction is to automatically ex
 
 You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-In the service key you created for Document Information Extraction in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
+In the service key you created for Document Information Extraction in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-free-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
 
 1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
 
-    <!-- border -->![DOX](png-files/service-key-details.png)
+    <!-- border -->![DOX](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![DOX](png-files/swagger0.png)
+    <!-- border -->![DOX](swagger0.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
@@ -40,11 +40,11 @@ In the service key you created for Document Information Extraction in the previo
     Bearer <access_token>
     ```
 
-    <!-- border -->![DOX](png-files/Authorize.png)
+    <!-- border -->![DOX](Authorize.png)
 
 4. Click **Authorize**, and then click **Close**.
 
-    <!-- border -->![DOX](png-files/Authorize2.png)
+    <!-- border -->![DOX](Authorize2.png)
 
 
 
@@ -56,13 +56,13 @@ Use the **GET /capabilities** endpoint to see the list of document fields and en
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
-<!-- border -->![DOX](png-files/capabilities.png)
+<!-- border -->![DOX](capabilities.png)
 
-<!-- border -->![DOX](png-files/capabilities2.png)
+<!-- border -->![DOX](capabilities2.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](png-files/capabilitiesResponse.png)
+<!-- border -->![DOX](capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
@@ -83,11 +83,11 @@ Trial users can only create one client. To see your list of clients:
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](png-files/listClient.png)
+<!-- border -->![DOX](listClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](png-files/listClientResponse.png)
+<!-- border -->![DOX](listClientResponse.png)
 
 
 
@@ -104,11 +104,11 @@ Use the **DELETE /clients** endpoint to delete the `default` client.
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](png-files/deleteClient.png)
+<!-- border -->![DOX](deleteClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](png-files/deleteClientResponse.png)
+<!-- border -->![DOX](deleteClientResponse.png)
 
 
 
@@ -125,11 +125,11 @@ Use the **POST /clients** endpoint to create your own client. The **`clientId`**
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](png-files/createClient.png)
+<!-- border -->![DOX](createClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](png-files/createClientResponse.png)
+<!-- border -->![DOX](createClientResponse.png)
 
 You can repeat step 3 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
@@ -156,11 +156,11 @@ Use the **POST /document/jobs** endpoint to upload to the service any document f
 
 >As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
+>- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
->- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf)
+>- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
 
->- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
+>- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
 Do the following:
@@ -219,11 +219,11 @@ Do the following:
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](png-files/testInvoice.png)
+<!-- border -->![DOX](testInvoice.png)
 
 After you have clicked **Execute**, you should receive a response like the following:
 
-<!-- border -->![DOX](png-files/testInvoiceResult.png)
+<!-- border -->![DOX](testInvoiceResult.png)
 
 Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
@@ -244,11 +244,11 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](png-files/getResults.png)
+<!-- border -->![DOX](getResults.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](png-files/getResultsResponse.png)
+<!-- border -->![DOX](getResultsResponse.png)
 
 In the response, you will find some general information about the document you uploaded. In `headerFields`, such as `documentDate` and `taxAmount`, and in `lineItems`, such as `description` and `quantity`, you will find the prediction for the extracted fields.
 

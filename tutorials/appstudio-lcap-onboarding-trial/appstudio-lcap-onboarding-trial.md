@@ -8,8 +8,8 @@ author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
-# Set Up SAP Business Application Studio for Low-Code Development in the Trial Environment
-<!-- description --> SAP Business Application Studio is a development environment available on SAP Business Technology Platform (SAP BTP). This tutorial describes how to perform the onboarding steps for SAP Business Application Studio in the SAP BTP Trial environment. In addition, you learn how to create an SAP Business Application Studio dev space for low-code-based full-stack cloud application development so you can build low-code applications.
+# Set Up SAP Business Application Studio for App Development in the Trial Environment
+<!-- description --> SAP Business Application Studio is a development environment available on SAP Business Technology Platform (SAP BTP). This tutorial describes how to perform the onboarding steps for SAP Business Application Studio in the SAP BTP Trial environment. In addition, you learn how to create an SAP Business Application Studio dev space for developing full-stack applications using productivity tools.
 
 ## Prerequisites
  - You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account))
@@ -17,12 +17,12 @@ author_profile: https://github.com/raz-korn
 ## You will learn
 - How to set up SAP Business Application Studio in the SAP BTP Trial environment
 - How to access the SAP Business Application Studio dev space manager page
-- How to create an SAP Business Application Studio dev space for low-code-based full-stack cloud application development
+- How to create an SAP Business Application Studio dev space for developing full-stack applications using productivity tools
 
 ## Intro
-After completing the steps in this tutorial, you will have set up SAP Business Application Studio on the **SAP BTP Trial environment**. In addition, you will have created a dev space for low-code-based full-stack cloud application development so you can build low-code applications.
+After completing the steps in this tutorial, you will have set up SAP Business Application Studio on the **SAP BTP Trial environment**. In addition, you will have created a dev space for developing full-stack applications using productivity tools.
 
->**Please note:** For the SAP BTP Trial environment, the Low-Code Tools and the Low-Code dev space type are only available on the US East (VA) data center (us10).
+>**Please note:** For the SAP BTP Trial environment, the dev space type **Full-Stack Application Using Productivity Tools** is only available on the US East (VA) data center (us10).
 
 
 >If you want to onboard and access SAP Business Application Studio in an **SAP BTP Enterprise Account** there are two options: it can be obtained through manual subscription, or by using a subscription booster. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. For more information about SAP BTP boosters, see [Boosters] (https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=btp%20booster).
@@ -86,9 +86,9 @@ After completing the steps in this tutorial, you will have set up SAP Business A
 
 2. Choose a name for your dev space.
 
-3. Choose **Low-Code-Based Full-Stack Cloud Application** as the application type.
+3. Choose **Full-Stack Application Using Productivity Tools** as the application type.
 
-    >The **Low-Code-Based Full-Stack Cloud Application** dev space allows you to easily develop, test, build, and deploy apps using the Low Code Application Platform.
+    >The **Full-Stack Application Using Productivity Tools** dev space allows you to easily develop, test, build, and deploy apps using high productivity tools.
 
 4. Choose **Create Dev Space**.
 
@@ -106,6 +106,6 @@ After completing the steps in this tutorial, you will have set up SAP Business A
 
 Well done!
 
-With this, you have successfully completed the setup of SAP Business Application Studio and created a Low-Code-Based Full-Stack Cloud Application dev space.  
+With this, you have successfully completed the setup of SAP Business Application Studio and created a dev space for developing apps using high productivity tools.  
 
 ---
