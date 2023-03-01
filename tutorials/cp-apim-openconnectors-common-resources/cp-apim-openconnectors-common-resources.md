@@ -1,19 +1,21 @@
 ---
-title: Map Fields Between Open Connectors and HubSpot
-description: Use Common Resources templates to map fields from multiple sources to a single field in Open Connectors.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-business-technology-platform]
 primary_tag: products>sap-integration-suite
 ---
 
-## Details
-### You will learn
+# Map Fields Between Open Connectors and HubSpot
+<!-- description --> Use Common Resources templates to map fields from multiple sources to a single field in Open Connectors.
+
+## You will learn
   - How to clone and consume common resource templates
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Navigate to Common Resources)]
+### Navigate to Common Resources
+
 1. Navigate to  Open Connectors home or landing page.
 
     ![Home Page](01-open-connectors-home.png)
@@ -30,10 +32,9 @@ primary_tag: products>sap-integration-suite
 
     ![Basic Companies](03-basic-companies.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Clone Common Resources)]
+### Clone Common Resources
+
 
 1. Select the **Mappings** tab to view details about the mapped connectors of the selected common resource template.
 
@@ -57,10 +58,10 @@ primary_tag: products>sap-integration-suite
 
     >After the common resource is cloned, you would see the common resource cloned to your  Open Connectors tenant and it would show all the mapped connector instances that are present in your tenant.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Common Resources template)]
+
+### Test Common Resources template
+
 
 1. Select the connector instance for HubSpot that you have in your  Open Connectors tenant.
 
@@ -82,7 +83,5 @@ primary_tag: products>sap-integration-suite
 
     ![Raw Response](10-raw-cr-response.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---

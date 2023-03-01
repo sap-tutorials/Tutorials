@@ -1,6 +1,5 @@
 ---
-title: Download Using the Download Manager (GUI Mode)
-description: Use the Download Manager (GUI mode) to download a server-only virtual machine package, or a server + applications virtual machine package.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,50 +7,48 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 2
 ---
 
+# Download Using the Download Manager (GUI Mode)
+<!-- description --> Use the Download Manager (GUI mode) to download a server-only virtual machine package, or a server + applications virtual machine package.
+
 <!-- loiof14d821d2ac14186bbf202586056e1d2 -->
 
 ## Prerequisites
  - **Tutorials:** You have completed [Register](hxe-ua-register)
 
-## Details
-### You will learn
+## You will learn
 You will learn how to download installation packages using the GUI mode Download Manager
 
 ---
 
+## Intro
 You can also download **optional** installation packages (like the SAP Enterprise Architecture Designer Package) at this point in your installation, before you've started the server. However, SAP does not recommend downloading optional installation packages until **after** your server is installed and running.
 
-[ACCORDION-BEGIN [Step 1: ](Select the Linux/x86-64 platform)]
+### Select the Linux/x86-64 platform
+
 
 In Download Manager, from the *Platform* pull-down, select SAP HANA, express edition on `Linux/x86-64`. (Virtual machine method installation is not available for *Linux/Power (little endian)*.)
 
 ![DM_platform_1](DM_platform_1.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Select the VM image
 
-[ACCORDION-BEGIN [Step 2: ](Select the VM image)]
 
 From the *Image* pull-down, select *Virtual Machine*.
 
 ![DM_image_4](DM_image_4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Specify a save directory
 
-[ACCORDION-BEGIN [Step 3: ](Specify a save directory)]
 
 Click *Browse* and select a directory where your downloads will be saved.
 
 ![DM_SaveDir_2](DM_SaveDir_2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Select an OVA and user guide
 
-[ACCORDION-BEGIN [Step 4: ](Select an OVA and user guide)]
 
 Select one or more of the following packages:
 
@@ -81,11 +78,9 @@ Select one or more of the following packages:
 > 
 > 
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Download optional installation packages
 
-[ACCORDION-BEGIN [Step 5: ]((Optional) Download optional installation packages)]
 
 Skip to the next step unless you are an advanced user.
 
@@ -144,11 +139,9 @@ If downloading optional installation packages now, select one or more of the fol
 -   *SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)* - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Download your selections
 
-[ACCORDION-BEGIN [Step 6: ](Download your selections)]
 
 Click the *Download* button.
 
@@ -156,8 +149,5 @@ Your download is complete when a pop-up message appears confirming successful do
 
 ![hxe_downloadmanager_2_2_3](hxe_downloadmanager_2_2_3.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 

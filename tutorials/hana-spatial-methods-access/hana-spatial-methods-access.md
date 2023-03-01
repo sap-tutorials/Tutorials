@@ -1,11 +1,15 @@
 ---
-title: Access methods
-description: Spatial access methods help you to retrieve properties of geometries
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+
+# Access methods
+<!-- description --> Spatial access methods help you to retrieve properties of geometries
 
 ## Prerequisites
  - **Tutorials:** [Introduction to SAP HANA Spatial data types](group.hana-aa-spatial-get-started)
@@ -14,21 +18,20 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
  - [Computation methods](hana-spatial-methods-compute)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn about a number of access methods and how to apply them to different geometries.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access methods)]
+### Access methods
+
 If you have done previous tutorials, then you must have seen some of the spatial access methods already.
 
 E.g. `ST_Dimension()` returned the dimension of a geometry object and could be applied to a geometry of any type - be it a point or a polygon. `ST_X()` returns the X coordinate of an `ST_POINT` and works with points only.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access methods for all geometries)]
+### Access methods for all geometries
+
 Some other methods that can be applied to all types of geometries are presented below.
 
 `ST_XMin()`, `ST_XMax()`, `ST_YMin()`, `ST_YMax` all retrieve corresponding minimum or maximum values of geometry's coordinates `X` and `Y`. There are similar methods available for coordinates `Z` and `M`.
@@ -51,10 +54,9 @@ After running the SQL statement above you should notice is that these methods re
 
 The other access method you used here was `ST_GeometryType()` to check and filter types of geometries.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Access methods for line strings)]
+### Access methods for line strings
+
 You used `ST_GeometryType()` in the previous step as a predicate to select only records for points. Otherwise trying to apply `ST_X()` to a string or polygon would return run-time error during the SQL execution.
 
 There are some access methods that can be used only with line strings. For example:
@@ -75,10 +77,9 @@ WHERE "SHAPE".ST_GeometryType()='ST_LineString';
 
 ![Line strings](access20b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Access methods for collections)]
+### Access methods for collections
+
 Similarly to points in strings you can get a number of individual geometries in collections (types `ST_MultiPoint`, `ST_MultiLineString`, `ST_MultiPolygon`) using `ST_NumGeometries()`. And then access each of them using `ST_GeometryN()` method.
 
 ```sql
@@ -108,8 +109,7 @@ This query now produced 3 different collections. Each of them contains only geom
 
 You will learn more about different kinds of spatial aggregations in a separate tutorial.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a13f280787c10148dc893063dfed1c4.html).

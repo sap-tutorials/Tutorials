@@ -1,26 +1,28 @@
 ---
-title: Database Recovery With HANA Dynamic Tiering
-description: Recover databases with Dynamic Tiering.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 time: 15
 ---
 
+# Database Recovery With HANA Dynamic Tiering
+<!-- description --> Recover databases with Dynamic Tiering.
+
 ## Prerequisites
  - **Tutorials** [Creating Database Backups](https://www.sap.com/)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 
-## Details
-### You will learn
+## You will learn
 - How to choose which type of recovery to perform
 - How to select backup location and prefixes
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Recovering Your Database)]
+### Recovering Your Database
+
 Database recovery can be done either from a command line or from HANA Studio. The preferred way is via HANA Studio.
 
 From the SAP HANA Administrative Console perspective, right click on the System Database in the Systems panel with the `SYSTEM` user, hover over "**Backup and Recovery**" in the pop up menu and select "**Recover Tenant Database...**" Similar to backing up Tenant Databases, recovering Tenant Databases must also be done through the System Database.
@@ -80,11 +82,9 @@ Once the recovery process completes, the Recovery Execution Summary screen will 
 ![Data Recovery Summary](recovery-summary.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

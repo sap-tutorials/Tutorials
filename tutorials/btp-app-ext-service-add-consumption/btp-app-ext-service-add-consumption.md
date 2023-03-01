@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 keywords: cap
@@ -11,8 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) to start.
- - When starting with the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging), refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+    - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
 ## Details
 ### You will learn
@@ -22,9 +24,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to connect to the sandbox service
  - How to delegate requests to external services
  - How to add the API key
-
-
-To start with this tutorial use the result in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 ---
 
@@ -115,7 +114,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     ```
     ...
-    > filling API_BUSINESS_PARTNER.A_BusinessPartner from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
+    > init from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
     ...
     [cds] - mocking API_BUSINESS_PARTNER { at: '/api-business-partner' }
     [cds] - serving RiskService { at: '/service/risk', impl: './srv/risk-service.js' }
@@ -183,9 +182,15 @@ In this step, you add some mock data for the business partner service. This allo
 [ACCORDION-BEGIN [Step 4: ](Connect to the sandbox service)]
 Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-use), you will learn how to connect the business partner service with a real SAP S/4HANA system. In this tutorial here, you use the sandbox system to try out your application with a real remote system.
 
+1. Install the node packages to mock the external services:
+
+    ```
+    npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/util
+    ```
+
 1. Open again the [**Business Partner (A2X)**](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) page on the **SAP API Business Hub**.
 
-2. Under **Overview** **&rarr;** **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
+2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
     !![Sandbox](sandbox.png)
 

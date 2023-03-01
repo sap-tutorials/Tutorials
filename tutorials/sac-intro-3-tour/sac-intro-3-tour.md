@@ -1,28 +1,28 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Take a Tour of SAP Analytics Cloud
-description: Learn how to navigate the user interface of SAP Analytics Cloud
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Take a Tour of SAP Analytics Cloud
+<!-- description --> Learn how to navigate the user interface of SAP Analytics Cloud
+
 <!-- ## Prerequisites
  - Prerequisite 1
  - Prerequisite 2 -->
 
-## Details
-### You will learn
+## You will learn
   - How to navigate the home screen
   - How to navigate the side navigation bar
   - How to navigate the shell bar
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
-
-### Getting Around SAP Analytics Cloud
-
+## Getting Around SAP Analytics Cloud
 After signing into SAP Analytics Cloud, you will see features and applications that can help you increase your work efficiency and productivity. These tools and applications are divided into three main parts.
 
 ![Get to know SAC](Get to know SAC.png)
@@ -36,7 +36,8 @@ After signing into SAP Analytics Cloud, you will see features and applications t
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Personal Home Screen)]
+### Personal Home Screen
+
 
 Your home screen makes it easy for you to access recent Stories, Files, and Analytic Applications and display Featured Files and Recent Files as tiles. You can also pin important visualizations from stories to your home screen. Pinning visualizations help you easily monitor your key performance indicators, and they also act as shortcuts back to the stories.
 
@@ -57,10 +58,9 @@ You can toggle between four tabs on the Home Screen:
 - **Favorites**: Lists the resources you have "starred" as your favorite
 - **Shared With Me**: Lists all the resources shared with you by other users
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Sidebar Navigation)]
+### Sidebar Navigation
+
 
 The sidebar navigation is where you access the main applications and features of SAP Analytics Cloud including Stories, Analytic Applications, Modeling, Data Analyzer, Digital Boardroom, and more. It is located on the left side of the page and can be collapsed and expanded. The navigation bar will always be present, no matter what application you are working in, making it quick and easy for you to switch between different applications.
 
@@ -68,11 +68,10 @@ The sidebar navigation is where you access the main applications and features of
 
 ![Role Based Navigation Bar](Role Based Nav.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](The Shell Bar)]
+### The Shell Bar
+
 
 The shell bar lets you see the breadcrumb navigation and actions relating to the active screen. It also contains universal features including search, search to insight, notifications, discussions, help, user profile settings, and the product switch. With the shell bar, you will have a consistent experience across all SAP Analytics Cloud products.
 ![Shell Bar](Shell Bar.png)
@@ -108,13 +107,10 @@ You can access the SAP Analytics Cloud help topics, release notes, and instructi
 8.	**Knowledge Base**: Access product support SAP Notes and Knowledge Base Articles
 9.	**Submit Ideas**: Submit product enhancement ideas or vote and comment on existing ideas for SAP Analytics Cloud
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+### Test Yourself
+
 
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,33 +1,33 @@
 ---
-title: Test the Custom Java Toolkit Adapter
-description: Test the MQTT Input Adapter we have created using Mosquitto and HANA Studio.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
+
+# Test the Custom Java Toolkit Adapter
+<!-- description --> Test the MQTT Input Adapter we have created using Mosquitto and HANA Studio.
 
 ## Prerequisites
  - **Tutorial:** [Where to Place the Custom Adapter Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part5.html)
 
 ## Next Steps
  - [Further Readings on Custom Adapters](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part7.html)
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Run the `Mosquitto` broker)]
+### Run the `Mosquitto` broker
+
 
 Open a command prompt(`CMD`) and navigate to the install directory of `Mosquitto`. The default location is in **`C:\Program Files(x86)\Mosquitto`**. Run the `Mosquitto` broker by typing **`mosquitto.exe`**
 
 ![Run Mosquitto Exe](runMosquittoExe.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Configure your Streaming Project
 
-[ACCORDION-BEGIN [Step 2: ](Configure your Streaming Project)]
 
 Set up a streaming project like the one shown below if you haven't already set up one in the previous tutorial (Where to Place the Custom Adapter Files). The `ccl` code is provided in the Appendix section.
 
@@ -43,11 +43,9 @@ Replace **`<your-ip-address>`** with the `ip address` of the machine you will be
 
 ![Edit Your IP Address](editYourIpAddress.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Set Default Server URL
 
-[ACCORDION-BEGIN [Step 3: ](Set Default Server URL)]
 
 Ensure that the server you have placed your custom adapter, including the required configuration files on is set as the `Default Server URL`. The `Streaming Server` being used to compile the project that is using the custom adapter needs to have access to the adapter configuration files during the compile process.
 
@@ -59,11 +57,9 @@ Ensure that the server you have placed your custom adapter, including the requir
 
     ![Setting Default URL Preferences](preferences-streaming-analytics.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Run your Streaming Project
 
-[ACCORDION-BEGIN [Step 4: ](Run your Streaming Project)]
 
 In the SAP HANA Streaming Development perspective right click on the project in the Project Explorer, go to SAP HANA streaming analytics, and click on **Compile Streaming Project** to compile your project.
 
@@ -73,11 +69,9 @@ To run your project, right click on the project in the Project Explorer, go to S
 
 ![Run your Streaming Project](run-streaming-project.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open the Input Window
 
-[ACCORDION-BEGIN [Step 5: ](Open the Input Window)]
 
 Switch to the SAP HANA Streaming Run-Test perspective from the Quick Access toolbar in the top right corner of your `IDE`.
 
@@ -87,11 +81,9 @@ Open the input window by double clicking `InputWindow1` in the Run-Test perspect
 
 ![Select Input Window 1](selectInputWindow1.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Send an MQTT Message using Mosquitto
 
-[ACCORDION-BEGIN [Step 6: ](Send an MQTT Message using Mosquitto)]
 
  Open another command prompt (`CMD`) window and navigate to the install directory of `Mosquitto`. The default location is in `C:\Program Files (x86)/Mosquitto`.
 
@@ -106,11 +98,9 @@ You should now be able to view the published `MQTT` message in `InputWindow1`.
 
 In the box below, enter the string you have received in the `MQTT` message on HANA Studio, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix ](&nbsp;)]
+### Appendix
 
 ```SQL
 
@@ -124,7 +114,5 @@ topic = 'test' ;
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
 

@@ -1,20 +1,22 @@
 ---
-title: Trace an SAP HANA Client Connection
-description: Enable trace settings for applications using SAP HANA Client interfaces.
+parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Trace an SAP HANA Client Connection
+<!-- description --> Enable trace settings for applications using SAP HANA Client interfaces.
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to enable tracing using `hdbsqldbc_cons` or environment variables
   - How to record trace details to a file, `stdout`, or `stderr`
 
+## Intro
 Trace files can help SAP Support diagnose unexpected behavior.
 
 Tracing can be configured using executables included with the SAP HANA Client installation.  [SQLDBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/0c20691739094593855ece908b4a3cde.html)-based interfaces use `hdbsqldbc_cons`, except for [ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/35368f78f6884b019caee12c125b255a.html), which uses `hdbodbc_cons`.  For [JDBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html), use `ngdbc.jar`.   
@@ -23,7 +25,8 @@ Trace settings can also be configured using environment variables.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable Tracing)]
+### Enable Tracing
+
 
 1. Enter the following command to see the current trace settings:  
 
@@ -51,6 +54,8 @@ Trace settings can also be configured using environment variables.
     ```
 
     The %p will be replaced with the process ID of the traced application. Including %p in the file name ensures that each process can write its own trace file.
+
+    >The next step provides an example of sending the trace output to `stdout` or `stderr`.  Another option for Node.js applications is to specify a callback to receive the trace output to using the `onTrace` method which is shown in the tutorial [Connect Using the SAP HANA Node.js Interface](hana-clients-node)
 
     Trace categories:  
 
@@ -136,10 +141,9 @@ SQL COMMAND : SELECT B.HOST || ':' || SQL_PORT FROM PUBLIC.M_CONNECTIONS A JOIN 
     hdbsqldbc_cons TRACE OFF
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Additional Trace Settings)]
+### Additional Trace Settings
+
 
 The following are some additional options for tracing.
 
@@ -191,7 +195,7 @@ The following are some additional options for tracing.
 
     ![Environment Variable Values](EnvironmentVariable.png)
 
-4.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
+4.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
     ```Shell
     hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"
@@ -207,11 +211,10 @@ The following are some additional options for tracing.
 
 5.  Tracing can also be enabled in an applications connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f6fb06ffe4484f6fa61f10082b11663d.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Tracing a JDBC Connection)]
+### Tracing a JDBC Connection
+
 
 Java must be installed in order to complete the following steps. To check if it is installed, run the following commands:
 ```Shell
@@ -282,10 +285,9 @@ javac -version
 
 6.  Tracing can also be enabled via the connection parameters.  For further details see [Trace a JDBC Connection Using a Connection String](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/250544c4c9f74855862a40a78d4ee3b5.html).
 
-Congratulations, you have now configured tracing with the SAP HANA Client!
+### Knowledge check
 
-[VALIDATE_1]
-[ACCORDION-END]
+Congratulations, you have now configured tracing with the SAP HANA Client!
 
 
 ---

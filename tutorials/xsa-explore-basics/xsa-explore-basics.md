@@ -1,6 +1,5 @@
 ---
-title: SAP HANA XS Advanced, explore the basic tools
-description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -8,6 +7,9 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 auto_validation: true
 time: 10
 ---
+
+# SAP HANA XS Advanced, explore the basic tools
+<!-- description --> This tutorial will walk you through exploring the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA
 
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
@@ -19,15 +21,15 @@ time: 10
  - [Get started with SAP HANA, XS Advanced development](group.hana-xsa-get-started)
 
 
-## Details
-### You will learn  
+## You will learn  
 - How to connect to the XS Advanced platform using the Command Line Interface
 - How to connect to SAP Web IDE for SAP HANA and the Database Explorer
 - How to connect to administration tools such as the SAP HANA Database Cockpit or the XS Advanced Cockpit
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log in to the XS Command Line Interface from the server)]
+### Log in to the XS Command Line Interface from the server
+
 
 The XS CLI is also available by default in the SAP HANA server with XS Advanced applications. In the case of SAP HANA, express edition, you can access it from the same SSH console you used to start and configure your platform.
 
@@ -68,10 +70,9 @@ You can check on the status of the running applications with command `xs apps`. 
 
 You can also see a list of running services with command `xs services`. You can find more details about [service types and the service marketplace in the SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/33e3c5926feb4098a32edcaa7290c3d1.html) portal.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access the SAP HANA Cockpit or the XS Advanced Cockpit)]
+### Access the SAP HANA Cockpit or the XS Advanced Cockpit
+
 
 You will find some applications with the word `Cockpit` in their names are running by default.
 > Note that the running instances need to show `1/1`. If you see `0/1` and `STARTED` is the requested status, the application is probably still starting.
@@ -88,11 +89,10 @@ The name for the SAP HANA XS Advanced Cockpit is `xsa-cockpit`
 
 You can find out more about the administration tools for SAP HANA 1.0 SPS12 and SAP HANA 2.0 SPS00 and higher in the [dedicated SAP Help](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/577f8d3ffebd4265b73e2c673d934412.html) portal.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Explore the SAP Web IDE for SAP HANA)]
+### Explore the SAP Web IDE for SAP HANA
+
 
 Open a new browser window and copy the URL for the SAP Web IDE for SAP HANA.
 
@@ -116,9 +116,8 @@ The third icon takes you to the settings, where you can configure different aspe
 
 On the left side panel, you will find additional tools that will be explored incrementally along with the XS Advanced application development tutorials.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Connect to your system database)]
+### Connect to your system database
+
 
 Go back into the database explorer, click **+** to add a database and use the options below to connect to the SYSTEM database.
 
@@ -140,5 +139,4 @@ select * from dummy;
 
 Use `F8` or the green **run** icon to execute the query. Enter the result of the query in the box below to complete the validation.
 
-[VALIDATE_1]
-[ACCORDION-END]
+

@@ -1,25 +1,29 @@
 ---
-title: Get to Know SAP Tutorials
-description: Take a tour of the SAP Tutorial Navigator and learn how to complete tutorials and earn badges – and everything else you ever wanted to know about tutorials but were afraid to ask.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner ]
 primary_tag: topic>sap-community
+author_name: Joshua Margo
+author_profile: https://github.com/jmmargo  
 ---
 
-### Prerequisites
+# Get to Know SAP Tutorials
+<!-- description --> Take a tour of the SAP Tutorial Navigator and learn how to complete tutorials and earn badges – and everything else you ever wanted to know about tutorials but were afraid to ask.
+
+## Prerequisites
 - You can view the tutorials without an SAP ID, but you will not be able to keep your progress and earn badges without an SAP ID (nor do this tutorial and earn the tutorial beginner badge). If you don't have one, go to [Create your SAP Universal ID](https://account.sap.com/core/create) or click the person icon at the top-right of this page ![person](person.png).
 
 
-## Details
-### You will learn
+
+## You will learn
   - How to search for tutorials
   - How to complete a tutorial
   - How to earn badges 😀
   - How to see your badges on your profile
-  - How to save your favorite tutorials
   - How to give feedback
 
+## Intro
 We want to give a very quick tour of SAP Tutorials.
 
 Since you are already doing a tutorial -- this tutorial -- you already know some of the basics. Still, we'd like to review some things maybe you didn't know.
@@ -29,7 +33,8 @@ Since you are already doing a tutorial -- this tutorial -- you already know some
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Start to complete this tutorial)]
+### Start to complete this tutorial
+
 In every step of a tutorial, you have either a **Done** button or a question you have to answer. This let's you indicate that you have completed the step and to keep track of your progress.
 
 In order to keep your progress, you must be logged into your SAP account. If the **Done** or **Submit Answer** button has a lock on it, then click it and you will be automatically logged in.
@@ -46,18 +51,17 @@ After clicking the button, it should look like this:
 
 Below, in this step, click the **Done** button (if it is locked, once you are logged in, click it again).
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Open the Tutorial Navigator)]
+### Open the Tutorial Navigator
+
 
 Go to <https://developers.sap.com/tutorial-navigator.html> to open the SAP Tutorial Navigator.
 
 ![Tutorial Navigator](TN.png)
 
-If you want to search for tutorials related to a particular product, select a filter under **Products**.
+If you want to search for tutorials related to a particular product, select a filter under **Software Product**.
 
 You can filter the filters by entering some text, for example, type in `AI` to find the filter for **SAP Conversational AI**.
 
@@ -67,11 +71,10 @@ You can do the same for **Topics**, for such general categories like **Java** or
 
 ![Topics](topics.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Search for a tutorial)]
+### Search for a tutorial
+
 
 Of course, you can do a free text search, which will match words in the title or description.
 
@@ -91,34 +94,13 @@ Of course, you can use both. For example, search for `Python` and then further f
 
 >More information on tags? See [Using Tags](https://community.sap.com/resources/using-tags).
 
-[DONE]
-[ACCORDION-END]
 
+### Open mission
 
-[ACCORDION-BEGIN [Step 4: ](Bookmark tutorials)]
-
-You can bookmark tutorials so you can do them when you have time. Just click the **+** sign in the tile.
-
-![Bookmark](bookmark1.png)
-
-The bookmark icon turns white.
-
-![Bookmark created](bookmark2.png)
-
-Now you can open another browser window to the [developers home page](https://developers.sap.com), and make sure you are logged in with your SAP ID (top right).  
-
-Open the Bookmarks tab and you will see the new tutorial/mission bookmarks.
-
-![Bookmarks tab](bookmark3.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Open mission)]
 
 Make sure you are back in the SAP Tutorial Navigator.
 
-Click the tile called **Create Your First Chatbot with SAP Conversational AI**, which opens the mission page.
+Click the tile called **Build Your First Chatbot with SAP Conversational AI**, which opens the mission page.
 
 ![Link text e.g., Destination screen](mission1.png)
 
@@ -128,12 +110,11 @@ You can also see, in the top-left corner, the badge you will earn if you complet
 
 ![Badge](badge.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 6: ](Open tutorial)]
+### Open tutorial
+
 Open the tutorial **Build Your First Chatbot with SAP Conversational AI**.
 
 The top part of the tutorial is made up of the following:
@@ -158,29 +139,21 @@ The top part of the tutorial is made up of the following:
 
     ![Question](Tutorial2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](See your progress)]
+### See your progress
 
-While you are doing the tutorial, you can see your progress in a couple of ways.
 
-If you have been clicking the buttons as you complete this tutorial until here, you will see:
+While you are doing the tutorial, you can see your progress as follows.
 
-- At the top, the percentage completion.
-
-    ![Progress](progress.png)
-
-- At the top and the side, the steps that you have completed.
+If you have been clicking the buttons as you complete this tutorial until here, on the right side, you will see the steps you have completed indicated by a checkmark:
 
     ![Progress on side](progress2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 8: ](Provide feedback)]
+### Provide feedback
+
 
 While you are doing the tutorial, you have the option of providing feedback to:
 
@@ -193,12 +166,11 @@ While you are doing the tutorial, you have the option of providing feedback to:
 You can also take our survey, and just provide us with feedback on how we are doing. Be gentle.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 9: ](What badges can you earn?)]
+### What badges can you earn?
+
 Every mission in the Tutorial Navigator can earn you a badge. To see all the missions, open the [Tutorial Navigator](https://developers.sap.com/tutorial-navigator.html) and then filter by mission.
 
 ![Mission filter](MissionsFilter.png)
@@ -211,12 +183,11 @@ On the right of the badges page, you can filter the badges, including to see onl
 
 The badges you earn appear in the **Earned Missions** tab of your [SAP profile](https://people.sap.com/#missions:earned).
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 10: ](What other achievements are there?)]
+### What other achievements are there?
+
 
 You can also see a list of key achievements that can you obtain, like doing your first tutorial or completing 3 missions.
 
@@ -224,15 +195,13 @@ Go back to the [developers home page](https://developers.sap.com), and make sure
 
 ![Achievements](achievements.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+### Test yourself
+
 
 Now that you toured the Tutorial Navigator, you can get credit for doing this tutorial by clicking all the **Done** buttons in the steps above, and answering the following question.
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 ---

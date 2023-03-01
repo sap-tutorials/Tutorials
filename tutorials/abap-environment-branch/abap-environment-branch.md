@@ -1,31 +1,34 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Branches with SAP BTP, ABAP Environment
-description: Create your own branch with SAP BTP, ABAP environment.
 primary_tag: products>sap-btp--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 20
 ---
+
+# Create Branches with SAP BTP, ABAP Environment
+<!-- description --> Create your own branch with SAP BTP, ABAP environment.
 
 ## Prerequisites  
   - SAP BTP, ABAP environment user
   - ADT version 2.96 or higher
   - Administrator role assigned to user
 
-## Details
-### You will learn
+## You will learn
   - How to create software component
   - How to pull software component
   - How to release transport request
   - How to create master branch
   - How to create branches
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create software component)]
+### Create software component
+
 1. Logon to ADT, right-click on your ABAP cloud project and select **Properties**.
 
     ![Create software component](component.png)
@@ -50,11 +53,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create software component](component5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Pull software component)]
+### Pull software component
+
 1. In your available software component **`Z_SWCT_XXX`** click **Pull**.
 
     ![Pull software component](pull.png)
@@ -70,10 +72,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ![Pull software component](pull3.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create ABAP class)]
+### Create ABAP class
+
   1. Switch to your ADT, right-click on **Favorite Packages** and select **Add Package**.
 
       ![Create ABAP class](class.png)
@@ -144,11 +145,10 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       **Save** and **activate**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Release transport request)]
+### Release transport request
+
   1. Select your class **`Z_CL_XXX`** and select **Transport Organizer** in your menu. Right-click on your transport task and select **Release**
 
       ![Release transport request](transport.png)
@@ -166,10 +166,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       ![Release transport request](transport4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create new branch)]
+### Create new branch
+
   1. Switch to your ABAP system in your SAP Fiori launchpad, open your software component **`Z_SWCT_XXX`** in **Manage Software Component**.
 
       ![Create new branch](branch5.png)
@@ -194,10 +193,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       ![Create new branch](branch4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,6 +1,5 @@
 ---
-title: Create Scalar User Defined Functions 
-description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -8,54 +7,56 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana-
 time: 15
 ---
 
+# Create Scalar User Defined Functions 
+<!-- description --> Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+
 ## Prerequisites
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:**  [Intermediate Table Variables](hana-cloud-sqlscript-table-var)
 
-## Details
-### You will learn  
+## You will learn  
 - How to create a scalar UDF for generating a full name from the last, first and middle name of the employee
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new function)]
+### Create new function
+
 
 1. Right click on the `src` folder and choose **New Folder**.
 
-    !![New Folder](1_1.png)
+    <!-- border -->![New Folder](1_1.png)
 
 2. Enter the name of the folder as `functions` and click **OK**.
 
-    !![Create Folder](1_2.png)
+    <!-- border -->![Create Folder](1_2.png)
 
 3. Click **View** then  **Find Command..**.
 
-    !![Find Command](1_3.png)
+    <!-- border -->![Find Command](1_3.png)
 
 4. Enter `hana` as the search term, then click on **SAP HANA: Create SAP HANA Database Artifact**
 
-    !![HANA Archifact](1_4.png)
+    <!-- border -->![HANA Archifact](1_4.png)
 
 5. Click the **Browse** icon.
 
-    !![Browse](1_5.png)
+    <!-- border -->![Browse](1_5.png)
 
 6. Select the `functions` folder that you created earlier, then click **Open**.
 
-    !![Select Function](1_6.png)
+    <!-- border -->![Select Function](1_6.png)
 
 7. Use the dropdown, and select **Function** as the Artifact Type. Give the name of the artifact as  `get_full_name`, then click **Create**.
 
-    !![Artifact Type](1_7.png)
+    <!-- border -->![Artifact Type](1_7.png)
 
 8. You will see a message saying that the new artifact as been created. From the functions folder, click on your new function. The SQLScript function editor will then be opened with the shell of your function code.
 
-    !![Editor](1_8.png)
+    <!-- border -->![Editor](1_8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit the function and save)]
+### Edit the function and save
+
 
 1. Enter the code into the editor as shown here.  Please note the default for parameter `im_employeeid` which makes assigning a value to the parameter optional.
 
@@ -83,21 +84,20 @@ time: 15
 
 2. **Save** the function.
 
-    !![save](2_1.png)
+    <!-- border -->![save](2_1.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Edit the procedure and save)]
+### Edit the procedure and save
+
 
 1. Return to your procedure called `get_po_header_data` and modify it. Start by renaming the `LOGINNAME` column of the output table to `FULLNAME`. Also change the output length to 256. This is needed to match later on which the anticipated output structure.
 
-    !![rename](3_1.png)
+    <!-- border -->![rename](3_1.png)
 
 2. Change the last SELECT statement.  Remove the `LOGINNAME` column from the field list and replace it with a call to the scalar function that you created earlier.  Make sure to pass the `NAMEFIRST`, `NAMEMIDDLE` and `NAMELAST` name columns to the scalar function call.
 
-    !![Change select](3_2.png)
+    <!-- border -->![Change select](3_2.png)
 
 3. The completed code should look very similar to this.
 
@@ -143,20 +143,17 @@ time: 15
 
 4. **Save** the procedure.
 
-    !![save](3_3.png)
+    <!-- border -->![save](3_3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and check results)]
+### Deploy and check results
+
 
 1. Use what you have learned already and perform a deploy.
 
-    !![deploy](4_1.png)
+    <!-- border -->![deploy](4_1.png)
 
 2. Then return to the Database Explorer and generate a new CALL statement and run it. Notice the `FULLNAME` column, it shows the results of the scalar `UDF` logic.
 
-    !![Results](4_2.png)
+    <!-- border -->![Results](4_2.png)
 
-[DONE]
-[ACCORDION-END]

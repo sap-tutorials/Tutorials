@@ -1,24 +1,26 @@
 ---
-title: Visualize a Spatial Dataset on SAP HANA Database in SAP HANA Cloud
-description: Learn how to upload and visualize spatial data on a base map with QGIS and SAP HANA database in SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Visualize a Spatial Dataset on SAP HANA Database in SAP HANA Cloud
+<!-- description --> Learn how to upload and visualize spatial data on a base map with QGIS and SAP HANA database in SAP HANA Cloud.
+
 ## Prerequisites
 - Ensure that your SAP HANA database instance within your SAP HANA Cloud trial account is **running** before you proceed.
 - You have connected QGIS to your SAP HANA database in SAP HANA Cloud. If not, we recommend you complete the tutorial [Connect QGIS to SAP HANA database in SAP HANA Cloud](hana-cloud-trial-qgis-1).
 
 
-## Details
-### You will learn
+## You will learn
 - How to upload a spatial dataset to SAP HANA database in SAP HANA Cloud
 - How to add a base map to QGIS project
 - How to add vector data to base map
 
 
+## Intro
 This tutorial group will comprise of the following tasks:
 
 1. Install SAP HANA ODBC Driver
@@ -39,8 +41,9 @@ What have you achieved so far? You have created an SAP HANA database within the 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the spatial dataset)]
-!![OpenStreetMap](ss-01-open-street-map.png)
+### Download the spatial dataset
+
+<!-- border -->![OpenStreetMap](ss-01-open-street-map.png)
 
 As suggested in [this blog](https://blogs.sap.com/2021/02/23/qgis-3.18-supports-sap-hana-cloud/) shown above, you can use the [OpenStreetMap](https://download.geofabrik.de/) data provided by `Geofabrik`. Let's start by looking at the point of interest data in the area of SAP's Headquarter in Waldorf, Germany.
 
@@ -48,10 +51,9 @@ Download the [Shapefile (.shp.zip)](https://download.geofabrik.de/europe/germany
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import dataset into the database)]
+### Import dataset into the database
+
 1. Open **QGIS** and locate the downloaded file **(do not unzip!)** in the browser on the left side.
 
 2. The file can be further expanded in the browser. Do this and locate the layer called **`gis_osm_pois_free_1`**.
@@ -64,15 +66,14 @@ Download the [Shapefile (.shp.zip)](https://download.geofabrik.de/europe/germany
 
 6. If you need confirmation, you can open the SAP HANA Database Explorer or **`DBeaver`** and check for the table that has been created.
 
-    !![Upload to QGIS](ss-02-upload-to-qgis.png)
+    <!-- border -->![Upload to QGIS](ss-02-upload-to-qgis.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add base map to QGIS project)]
+### Add base map to QGIS project
+
 > We now have stored **points of interest (POI's)** with its coordinates in our database. This kind of data (i.e. points, lines, polygons, etc.) given by coordinates is called [**vector data**](https://en.wikipedia.org/wiki/GIS_file_formats#Vector). The vector data can be printed onto a map or even satellite image (which is considered [**raster data**](https://en.wikipedia.org/wiki/GIS_file_formats#Raster)).
 >
 > So, we need to add two different layers to our QGIS project:
@@ -84,7 +85,7 @@ Follow these steps to add a base map to QGIS project:
 
 1. In the browser, left click on **XYZ Tiles** and choose **New Connection**.
 
-    !![New Connection QGIS](ss-03-new-connection-qgis.png)
+    <!-- border -->![New Connection QGIS](ss-03-new-connection-qgis.png)
 
 2. A dialog for a new tile service opens.
 
@@ -101,15 +102,14 @@ Follow these steps to add a base map to QGIS project:
 8. Double-click on **Google Maps Satellite** to add the base layer with satellite imagery.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add vector data to base map)]
+### Add vector data to base map
+
 Follow the steps to add all the fountains around the SAP Headquarter:
 
 1. Locate the dataset that we have previously uploaded to SAP HANA in the browser. In this example, this is the path **`SAP HANA`** > **`hctrial`** > **`DBADMIN`** > **`gis_osm_pois_free_1`**.
 
-    !![Vector Data QGIS](ss-04-vector-data-qgis.png)
+    <!-- border -->![Vector Data QGIS](ss-04-vector-data-qgis.png)
 
 2. Double-click on **`gis_osm_pois_free_1`** to add another layer on top of the base map.
 
@@ -133,16 +133,14 @@ You now know how to visualize data from SAP HANA in QGIS. If you like, you can p
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

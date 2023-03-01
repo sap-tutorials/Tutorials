@@ -1,6 +1,5 @@
 ---
-title: Integrate Charts and Conditional Rendering
-description: Display data in charts using UI5 Web Components for React.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-fiori]
@@ -9,21 +8,25 @@ author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
 
-## Details
-### You will learn
+# Integrate Charts and Conditional Rendering
+<!-- description --> Display data in charts using UI5 Web Components for React.
+
+## You will learn
 -  How to install and import charts
 -  Learn about charts in UI5 web components
 -  How to add dynamic rendering
 
+## Intro
 UI5 Web Components for React also comes with a chart library. In this tutorial, you will integrate two chart types and add data to them. Also you will learn how to conditionally render components, and how React handles updates to the DOM and single components.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install module and import charts)]
+### Install module and import charts
+
 1. Install the chart library of UI5 Web Components for React.
 
     ```Shell
-     npm install @ui5/webcomponents-react-charts --save
+     npm install @ui5/webcomponents-react-charts
     ```
 
 2. Then, import `LineChart` and `BarChart` into `MyApp.jsx`.
@@ -32,10 +35,9 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add charts to Card component)]
+### Add charts to Card component
+
 1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` prop with an empty array as value.
 
     ```JavaScript / JSX
@@ -184,11 +186,10 @@ export function MyApp() {
 }
 ```  
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add conditional rendering)]
+### Add conditional rendering
+
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
 1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
@@ -253,34 +254,33 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
     ```
 
-    And the `avatar` prop, which receives an `Icon` as value, to the `Card` component:
+    Icons can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
+
+    ```JavaScript / JSX
+    import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
+    import barChartIcon from '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
+    ```
+
+    The `Icons` should also be conditionally rendered. Luckily, this is easy:
+
+    Add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
+
     ```JavaScript / JSX
     <CardHeader
       ...
-      avatar={<Icon name="line-chart" />}
+      avatar={<Icon name={lineChartIcon} />}
     />
     ```
 
-    To reduce bundle size, `Icons` need to be imported manually. As we used a `line-chart` add this to your imports.
-
-    ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/line-chart.js';
-    ```
-
-    The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `bar-chart` import:
-    ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
-    ```
-
-    Then change the `name` prop of the `Icon` to the following:
+    Then, change the `name` prop of the `Icon` to the following:
     ```JavaScript / JSX
     <CardHeader
-       avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
+       avatar={ <Icon name={ toggleCharts === "lineChart" ? lineChartIcon : barChartIcon } /> }
        ...
      />
     ```
 
-    Now the `Card` also changes the `Icon` by clicking on the header.
+    Here we go! Now the `Card` also changes the `Icon` by clicking on the header.
 
     ![LineChart](02_bothCharts.png)
 
@@ -292,38 +292,38 @@ import React, { useState } from "react";
 import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/line-chart.js";
-import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 
 const dataset = [
   {
     month: "January",
-    data: 65
+    data: 65,
   },
   {
     month: "February",
-    data: 59
+    data: 59,
   },
   {
     month: "March",
-    data: 80
+    data: 80,
   },
   {
     month: "April",
-    data: 81
+    data: 81,
   },
   {
     month: "May",
-    data: 56
+    data: 56,
   },
   {
     month: "June",
-    data: 55
+    data: 55,
   },
   {
     month: "July",
-    data: 40
-  }
+    data: 40,
+  },
 ];
 
 export function MyApp() {
@@ -337,17 +337,23 @@ export function MyApp() {
   };
   return (
     <div>
-    <Card
-      header={
-        <CardHeader
-          titleText="Card"
-          interactive
-          onClick={handleHeaderClick}
-          avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
-        />
-      }
-      style={{ width: "300px" }}
-    >
+      <Card
+        header={
+          <CardHeader
+            titleText="Card"
+            interactive
+            onClick={handleHeaderClick}
+            avatar={
+              <Icon
+                name={
+                  toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
+                }
+              />
+            }
+          />
+        }
+        style={{ width: "300px" }}
+      >
         <Text style={spacing.sapUiContentPadding}>
           This is the content area of the Card
         </Text>
@@ -370,10 +376,10 @@ export function MyApp() {
 }
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update a component in React - Loading Indicator)]
+
+### Update a component in React - Loading Indicator
+
 One of the main advantages of React is how UI updates are handled. React will only re-render the component if the state of the component has changed. So it will not update the whole UI, but only the component that is affected by changes.
 
 1. In order to demonstrate this behavior, add a new `state` (right after the definition of the previous state).
@@ -426,10 +432,10 @@ This updates the component every time you switch between charts and simulates a 
 
 As you can see, only the component affected by the `state` is updated, and the rest stays the same. If you're working with data, you most probably will need a loading indicator. All UI5 web components that are able to display data have a `loading` prop and therefore also a loading indicator.
 
-[VALIDATE_2]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add dynamic header and text)]
+
+### Add dynamic header and text
+
 To make your `Card` look cleaner and to give the user the information that the header is clickable, you can add some logic to your component.
 
 1. Add a dynamic content `Text`
@@ -457,9 +463,7 @@ To make your `Card` look cleaner and to give the user the information that the h
           avatar={
             <Icon
               name={
-                toggleCharts === "lineChart"
-                  ? "line-chart"
-                  : "horizontal-bar-chart"
+                toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
               }
             />
           }
@@ -478,7 +482,7 @@ To make your `Card` look cleaner and to give the user the information that the h
       ) : (
         <BarChart
           dimensions={[{ accessor: "month" }]}
-          measures={[{ accessor: "data" }]}
+          measures={[{ accessor: "data", label: "Stock Price" }]}
           dataset={dataset}
           loading={loading}
         />
@@ -486,6 +490,4 @@ To make your `Card` look cleaner and to give the user the information that the h
     </Card>
     ```
 
-[DONE]
-[ACCORDION-END]
 ---
