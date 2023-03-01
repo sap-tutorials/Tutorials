@@ -156,7 +156,9 @@ In the next steps you edit the `manifest.json` file to configure the card.
 
 **Results after Step 3:**
 
+
 The application displays dynamic data loaded from the SAP Gateway Demo System (ES5). Note, that the actual displayed products may differ depending on the current data in the ES5 demo system. You can also check the [`manifest.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/appstudio-sapui5-integrationcard-create/manifest_after_step3.json) file at this step. 
+
 To learn more, see the [Destinations](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/destinations) and [Data](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/data) sections in the Card Explorer.
 
 <!-- border -->![Image depicting the application showing dynamic data](3-4.PNG)
@@ -285,7 +287,9 @@ To learn more, see the [Manifest Parameters](https://sapui5.hana.ondemand.com/te
 
 **Results after Step 5:**
 
+
 Check the [`manifest.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/appstudio-sapui5-integrationcard-create/manifest.json) file at this step. It is configured with destinations, parameters, and a filter. 
+
 The application displays the products from the selected category:
 
 <!-- border -->![Image depicting the application showing dynamic data, parameters, and a filter](5-5.PNG)
