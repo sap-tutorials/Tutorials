@@ -12,7 +12,7 @@ parser: v2
 ---
 
 ## Prerequisites
-- **Tutorial**: You have activated **Alert Notification** in a trial account as described in [Set Up SAP Alert Notification service for SAP BTP for Initial Use](set-up-alert-notification)
+- Tutorial: You have activated **Alert Notification** in a trial account as described in [Set Up SAP Alert Notification service for SAP BTP for Initial Use](set-up-alert-notification)
 
 ## You will learn
 - How to create a condition with an event property **Category**, predicate **Is Equal To** and value **NOTIFICATION**. SAP Alert Notification service for SAP BTP uses this condition to filter all relevant events regarding notifications
