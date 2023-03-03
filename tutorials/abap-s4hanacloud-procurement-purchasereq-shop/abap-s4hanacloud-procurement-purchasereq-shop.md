@@ -172,7 +172,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
 
      Verify the maintained entries and press **Next >** to confirm. The needed artifacts will be generated.
 
-     **Please note**: Error Invalid XML format.   
+     **Hint**: Error Invalid XML format.   
      If you receive an error message **Invalid XML format of the response**, this may be due to a bug in version 1.26 of the ADT tools. An update of your ADT plugin to version 1.26.3 will fix this issue.
 
     | **RAP Layer**                          | **Artefacts**           | **Artefact Names**                                  |
