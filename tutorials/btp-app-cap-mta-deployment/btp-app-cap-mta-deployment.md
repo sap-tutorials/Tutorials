@@ -242,7 +242,7 @@ The `mta.yaml` file consists of different modules (Cloud Foundry apps) and resou
 The resources are generated from the `requires` section of `cds` in the `package.json`.
 
 * `cpapp-db` - SAP HANA DB HDMI container
-* `cpapp-uaa` - XSUAA service
+* `cpapp-auth` - XSUAA service
 
 The resources are Cloud Foundry service instances that are automatically created and updated during the MTA deployment.
 

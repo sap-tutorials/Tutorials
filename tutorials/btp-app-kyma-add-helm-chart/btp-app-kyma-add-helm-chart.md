@@ -48,7 +48,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
             repository: <your-container-registry>/cpapp-srv
             tag: latest
     ...
-    hana_deployer:
+    hana-deployer:
         image:
             repository: <your-container-registry>/cpapp-hana-deployer
             tag: latest
@@ -120,7 +120,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Configure SAP HANA secret)]
-2. In the `chart/values.yaml` file, add the binding `db` pointing to the SAP HANA HDI container secret:
+2. In the `chart/values.yaml` file, remove the `serviceInstanceName` line and add the binding `db` pointing to the SAP HANA HDI container secret:
 
     ```YAML[5-6]
     srv:
@@ -131,10 +131,10 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
               fromSecret: cpapp-db
     ```
 
-3. Point the binding `hana` of the SAP HANA deployer to the SAP HANA HDI container secret:
+3. Replace the `serviceInstanceName` and Point the binding `hana` of the SAP HANA deployer to the SAP HANA HDI container secret:
 
     ```YAML[5]
-    hana_deployer:
+    hana-deployer:
         ...
         bindings:
             hana:

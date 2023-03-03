@@ -36,19 +36,19 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
-    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
+2. Choose application type **SAP Fiori elements** and template **List Report Object Page**.
 
        ![V4 Template](vscv4template.png)
 
 3. Choose **Next**.
 
-4. In the next dialog, choose **Use a Local CAP Project** and point to the folder of your current **`cpapp`** project.
+4. In the next dialog, choose **Use a Local CAP Project** and choose your current **`cpapp`** project.
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the SAP Fiori application generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -67,6 +67,8 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 7. Enter `risks` as the module name and `Risks` as the application title.
 
 8. Enter `ns` as the namespace and `Risks` as the description for the application.
+
+9. Leave the default values for all other settings. 
 
 9. Choose **Finish** to generate the application.
 
@@ -93,7 +95,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
     !![Index HTML Page](feappempty.png)
 
-    The table is empty because the application is currently missing UI annotations. You add them in the next step.
+    There are no visible columns because the application is currently missing UI annotations. You add them in the next step.
 
 4. To add the OData annotations, copy the file `risks-service-ui.cds` from `templates/create-ui-fiori-elements/srv` to the `srv` folder of your app.
 
@@ -121,7 +123,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+2. To add a `Mitigation`, click on the value help icon in the input field and select a mitigation.
 
     !![Add Mitigation](addmitigation.png)
 
@@ -129,7 +131,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Fill Main Data](fillriskdata.png)
 
-4. The new risk is created but it has no title and it has no description.
+4. Click on the browser's back button, the new risk is created but it has no title.
 
     !![No Title Risk](notitlerisk.png)
 
