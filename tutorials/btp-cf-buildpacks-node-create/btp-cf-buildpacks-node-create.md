@@ -10,6 +10,7 @@ tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, 
 primary_tag: programming-tool>node-js
 ---
 
+
 ## You will learn
   - How to create a simple "Hello World" application in Node.js
   - How to create an application router for it
@@ -19,13 +20,17 @@ primary_tag: programming-tool>node-js
  - You have a trial or a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html).
  - You have created a subaccount and a space on Cloud Foundry Environment.
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
- - [Node.js] (https://nodejs.org/en/about/releases/) and [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are installed locally. Make sure you have the latest Node.js version. In this tutorial, we use v.18.
+ - [Node.js] (https://nodejs.org/en/about/releases/) and [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are installed locally. Make sure you have the latest Node.js version. In this tutorial, we use v.16.
  - You have installed an integrated development environment, for example [Visual Studio Code] (https://code.visualstudio.com/).
 
 ## Intro
-This tutorial will guide you through creating and setting up a simple Node.js application by using cf CLI. You will start by building and deploying a web application that returns simple data – a **Hello World!** message, and then invoking this app through another one - a web microservice (application router).
+This tutorial will guide you through creating and setting up a simple Node.js application in cf CLI. You will start by building and deploying a web application that returns simple data – a **Hello World!** message, and then invoking this app through a web microservice (application router). Finally, you will set authentication checks and authorization roles to properly access and manage your web application.
+
+---
 
 ### Log on to SAP BTP
+
+
 First, you need to connect to the SAP BTP, Cloud Foundry environment with your productive subaccount. Your Cloud Foundry URL depends on the region where the API endpoint belongs to. To find out which one is yours, see:  [Regions and API Endpoints Available for the CF Environment] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/f344a57233d34199b2123b9620d0bb41.html?version=Cloud)
 
 In this tutorial, we use `eu20.hana.ondemand.com` as an example.
@@ -49,13 +54,18 @@ In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 
 5. Choose the org name and space where you want to create your application.
+   
+    > This step is skipped if you're using a trial account.
 
 
 #### RESULT
+
 Details about your personal SAP BTP subaccount are displayed (API endpoint, user, organization, space).
 
 
 ### Create a Node.js application
+
+
 You're going to create a simple Node.js application.
 
 1. In your local file system, create a new directory (folder). For example: `node-tutorial`
@@ -127,7 +137,7 @@ You're going to create a simple Node.js application.
       "description": "My simple Node.js app",
       "main": "index.js",
       "engines": {
-        "node": "14.x.x"
+        "node": "16.x.x"
       },
       "scripts": {
         "start": "node start.js"
@@ -140,7 +150,7 @@ You're going to create a simple Node.js application.
     }
     ```
 
-8. Inside the `myapp` folder, create another file called `start.js` with the following content:
+8. Inside the `myapp` folder, create a file `start.js` with the following content:
 
     ```JavaScript
     const express = require('express');
@@ -173,12 +183,15 @@ You're going to create a simple Node.js application.
     That is:  `https://node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com`
 
 #### RESULT
+
 Your Node.js application is successfully deployed and running on the SAP BTP, Cloud Foundry environment. A **Hello World!** message is displayed in the browser.
 
 
 
 
 ### Run an Authentication Check
+
+
 Authentication in the SAP BTP, Cloud Foundry environment is provided by the Authorization and Trust Management (XSUAA) service. In this example, OAuth 2.0 is used as the authentication mechanism. The simplest way to add authentication is to use the Node.js `@sap/approuter` package. To do that, a separate Node.js micro-service will be created, acting as an entry point for the application.
 
 1.	In the `node-tutorial` folder, create an `xs-security.json` file for your application with the following content:
@@ -190,7 +203,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     }
     ```
 
-    > **IMPORTANT**: For trial accounts, enter the following additional `oauth2-configuration` lines in your `xs-security.json` file:
+    > **NOTE**: For trial accounts, enter the following additional `oauth2-configuration` lines in your `xs-security.json` file:
     
     
     ```JSON
@@ -199,8 +212,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
       "tenant-mode" : "dedicated",
       "oauth2-configuration": {
         "redirect-uris": [
-            "https://node-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com/",
-            "https://web-1234-aaaa-5678.cfapps.eu20.hana.ondemand.com/"
+            "https://*.cfapps.eu20.hana.ondemand.com/**"
           ]
         }
       }
@@ -374,6 +386,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     > Both the `myapp` and `web` applications are bound to the same Authorization and Trust Management (XSUAA) service instance `nodeuaa`. In this scenario, the authentication is handled by XSUAA through the application router.
 
 #### RESULT
+
 - Click the `My Node.js Application` link. The browser window displays **Application user:** `<e-mail>`, showing the email you have used for your Cloud Foundry logon.
 
 - Check that the `myapp` application is not accessible without authentication. To do that, refresh its previously loaded URL in a web browser – you should get a response `401 Unauthorized`.
@@ -382,6 +395,8 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 
 ### Run an Authorization Check
+
+
 Authorization in the SAP BTP, Cloud Foundry environment is also provided by the XSUAA service. In the previous example, the `@sap/approuter` package was added to provide a central entry point for the business application and to enable authentication. Now to extend the example, authorization will be added through the implementation of a `users` REST service. Different authorization checks will be introduced for the GET and CREATE operations to demonstrate how authorization works. The authorization concept includes elements such as roles, scopes, and attributes provided in the security descriptor file `xs-security.json`. For more information, see: [Application Security Descriptor Configuration Syntax] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/517895a9612241259d6941dbf9ad81cb.html?version=Cloud)
 
 1. To introduce application roles, open the `xs-security.json` in the `node-tutorial` folder, and add scopes and role templates as follows:
@@ -431,7 +446,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
     cf update-service nodeuaa -c xs-security.json
     ```
 
-3.	In the `myapp` folder, create a new file called `users.json` with the following content:
+3.	In the `myapp` folder, create a file `users.json` with the following content:
 
     ```JSON
     [{
@@ -501,7 +516,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
     });
     ```
 
-    > Authorization checks are enforced by the `xssec` package in the `@sap` directory. To every request object, using `passport` and `xssec.JWTStrategy`, a security context is attached as an `authInfo` object. The resulting request object is initialized with the incoming JWT token. To check the full list of methods and properties of the security context, see: [Authentication for Node.js Applications] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/4902b6e66cbd42648b5d9eaddc6a363d.html?version=Cloud)
+    > **NOTE:** Authorization checks are enforced by the `xssec` package in the `@sap` directory. To every request object, using `passport` and `xssec.JWTStrategy`, a security context is attached as an `authInfo` object. The resulting request object is initialized with the incoming JWT token. To check the full list of methods and properties of the security context, see: [Authentication for Node.js Applications] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/4902b6e66cbd42648b5d9eaddc6a363d.html?version=Cloud)
 
       As defined in the `start.js` file, for HTTP GET requests users need the `Display` scope to be authorized. For HTTP POST requests, they need to have the `Update` scope assigned.
 
@@ -576,6 +591,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
 8. Try to access `myapp` again (in a browser) in both ways – directly and through the `web` application router.
 
 #### RESULT
+
 - When you access it directly, you should still get a response `401 Unauthorized`. This is a correct and expected behavior.
 - When you access the `web` application and click the `Show users` link, it should result in a `403 Forbidden` response due to missing permissions. The same error is thrown if you try to add a new user.
 
@@ -583,6 +599,8 @@ To get permissions, you need to create a role collection containing the roles `V
 
 
 ### Assigning Roles to a User in SAP BTP Cockpit
+
+
 1. Open the SAP BTP cockpit and go to your subaccount.
 
 2. From the left-side menu, navigate to `Security` > `Role Collections`.
@@ -613,8 +631,12 @@ To get permissions, you need to create a role collection containing the roles `V
 
 
 #### RESULT
+
 Accessing the `myapp` application results in the following:
 
 - If you try to access it directly, a response `401 Unauthorized` is still displayed due to lack or permissions (roles). This is a correct and expected behavior.
 
 - If you try to access it through the `web` application router, the `Show users` link will show the list of users - **John** and **Paula**. If you enter a new name, it will be successfully recorded in the user database.
+
+
+---
