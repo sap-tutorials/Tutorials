@@ -181,7 +181,7 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 
 Update the `xs-app.json` file:
 
-```JSON[3,8]
+```JSON[2,7]
 {
     "authenticationMethod": "route",
     "routes": [{
