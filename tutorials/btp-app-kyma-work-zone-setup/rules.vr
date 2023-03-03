@@ -3,13 +3,13 @@
 multiple-choice
 
 ###Question
-Which of the following sections are added to the `values.yaml` file after running the `cds add helm:html5_apps_deployer` command?
+Which of the following sections are added to the `values.yaml` file after running the `cds add html5-repo` command?
 
 ###Match
 [x] destinations
-[ ] hana_deployer
+[ ] hana-deployer
 [ ] srv
-[x] html5_apps_deployer
+[x] html5-apps-deployer
 [ ] xsuaa
 [x] html5_apps_repo_host
 

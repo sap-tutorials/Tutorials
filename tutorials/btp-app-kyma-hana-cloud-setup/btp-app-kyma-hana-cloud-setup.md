@@ -26,7 +26,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-Setting up an SAP HANA Cloud service instance directly on Kyma is not possible. Hence, in this tutorial, you will set up an SAP HANA Cloud service instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the SAP HANA Cloud service instance in your Kyma cluster.
+Setting up an SAP HANA Cloud service instance directly on Kyma is not possible for trial accounts. Hence, in this tutorial, you will set up an SAP HANA Cloud service instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the SAP HANA Cloud service instance in your Kyma cluster.
+
+> For non-trial accounts you can create a mapping from the Kyma Dashboard:
+
+> [Create Service Instances for SAP HANA Cloud](https://cap.cloud.sap/docs/guides/deployment/deploy-to-kyma?q=kyma+hana#hana-cloud-instance) in Capire
 
 [DONE]
 [ACCORDION-END]

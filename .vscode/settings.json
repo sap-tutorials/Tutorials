@@ -1,4 +1,7 @@
 {
     "SAP HANA Database Explorer.displaySapWebAnalyticsStartupNotification": false,
-    "SAP HANA Database Artifacts.displaySapWebAnalyticsStartupNotification": false
+    "SAP HANA Database Artifacts.displaySapWebAnalyticsStartupNotification": false,
+    "files.exclude": {
+        "tutorials/{[!b],?[!t],??[!p],???[!-],????[!a],?????[!p],??????[!p]}*":true
+    }
 }
