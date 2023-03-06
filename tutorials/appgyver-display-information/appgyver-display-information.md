@@ -7,7 +7,7 @@ author_name: Daniel Wrolewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Display Fetched Data in Your SAP Build Application
 <!-- description --> Display data fetched from a public API, such as product names and calorific information, in your SAP Build application.
 
@@ -140,7 +140,7 @@ Now click **Save** (for the app, upper right).
 
 Your draft application is now complete, allowing you to scan a food item and then read the product name and calorific information per 100g. To do this, open your Preview app and test the scan feature.
 
-In this example, we are scanning some confectionery:
+In this example, we are scanning some canned item:
 
 ![Scan](Scan.png)
 

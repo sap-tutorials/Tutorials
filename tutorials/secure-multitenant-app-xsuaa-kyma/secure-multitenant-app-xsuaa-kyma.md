@@ -40,16 +40,13 @@ In Kubernetes, you can create and bind to a service instance using the Service C
 ```YAML
 ################### XSUAA ###################
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceInstance
 metadata:
-  annotations:
-    com.sap.cki/source-instance-name: uaa_kyma_multitenant
-  creationTimestamp: null
   name: xsuaa-service
 spec:
-  clusterServiceClassExternalName: xsuaa
-  clusterServicePlanExternalName: application
+  serviceOfferingName: xsuaa
+  servicePlanName: application
   parameters:
     xsappname: multitenant-kyma-demo
     tenant-mode: shared  # define the application provider tenant as a shared tenant
@@ -64,15 +61,12 @@ spec:
       - https://*.<cluster-domain>/**
 
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceBinding
 metadata:
-  creationTimestamp: null
   name: xsuaa-service-binding
 spec:
-  externalID: ""
-  instanceRef:
-    name: xsuaa-service
+  serviceInstanceName: xsuaa-service
   secretName: xsuaa-service-binding
 ```
 
@@ -187,7 +181,7 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 
 Update the `xs-app.json` file:
 
-```JSON[3,8]
+```JSON[2,7]
 {
     "authenticationMethod": "route",
     "routes": [{

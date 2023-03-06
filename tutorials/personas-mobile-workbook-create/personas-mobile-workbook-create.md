@@ -2,15 +2,12 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-screen-personas]
-primary_tag: products>sap-screen-personas
+tags: [tutorial>beginner, software-product>sap-screen-personas]
+primary_tag: software-product>sap-screen-personas
 ---
 
 # Build a Simple SAP Screen Personas Dashboard
 <!-- description --> Simplify the initial screen of IW51 to begin creating a Service Notification application for desktop and mobile devices.
-
-## Prerequisites
- - SAP Screen Personas SP06 or higher
 
 ## You will learn
   - How to hide unneeded fields with SAP Screen Personas
@@ -19,9 +16,12 @@ primary_tag: products>sap-screen-personas
   - How to create a dashboard in SAP Screen Personas
 
 ## Intro
-**SAP Screen Personas** is a software product, included with your existing ERP license, that allows you to personalize **SAP screens**, automate business processes, and run them on your phone, tablet, or desktop. It provides a simple drag and drop approach to modify most **SAP GUI** screens to improve usability and visual appeal.
+**SAP Screen Personas** is a software product that is included with any other licensed SAP product. It allows you to adapt SAP screens, automate business processes, and run them on your phone, tablet, or desktop. It provides a simple drag and drop approach to modify most **SAP GUI screens** to improve their usability and visual appeal.
 
-A screen or set of related screens personalized for an SAP user/role using SAP Screen Personas is called a **flavor**. By the end of this tutorial, you will have created a flavor for transaction IW51 (Create Service Notification) that will greatly simplify the creation of Service Notifications for your users on both desktop and mobile devices. This tutorial will focus on creating the initial screen: a dashboard that launches the main screen of IW51. The next tutorial will cover simplifying that screen and including additional functionality.
+The UI adaptation for a single screen or a set of related screens is called a **flavor** in SAP Screen Personas. SAP Screen Personas provides two main options to create and consume flavors: SAP GUI for HTML for a server-side rendering engine (mostly used for desktop applications) and Slipstream Engine for a client-side rendering engine (mostly used for mobile devices such as phones and tablets). 
+
+By the end of this tutorial, you will have created a flavor for transaction IW51 (Create Service Notification) that will greatly simplify the creation of Service Notifications for your users on both desktop and mobile devices. This tutorial will focus on creating the initial screen: a dashboard that launches the main screen of IW51. The next tutorial will cover simplifying that screen and including additional functionality. To meet the mobile needs of the use case, the tutorial uses the Slipstream Engine option of SAP Screen Personas.
+
 
 ---
 
@@ -30,15 +30,14 @@ To begin, you must log on to your system and then navigate to IW51. Enter your c
 
 ![Navigate to IW51](OK-Code-IW51.png)
 
-
 ### Create the flavor
-To create a flavor, open the flavor bar by clicking on the SAP Screen Personas icon that appears when you hover over the thin blue line at the top of the screen. This line indicates SAP Screen Personas is available to your user.
+To create a flavor, open the flavor manager by clicking on the SAP Screen Personas icon that appears when you hover over the thin blue line at the top of the screen. This line indicates SAP Screen Personas is available to your user.
 
 ![SAP Screen Personas Icon](Personas.png)
 
-The flavor bar will then display all of the flavors available to your user for this transaction. Since you have not created a flavor yet, the only flavor tile available will be for the **Original Screen**. It will be highlighted in blue to indicate that you are currently using it.
+The flavor manager will then display all of the flavors available to your user for this transaction. Since you have not created a flavor yet, the only flavor tile available will be for the **Original Screen**. It will be highlighted in blue to indicate that you are currently using it.
 
-Click the **Add Flavor** button, illustrated as a plus sign (+) on the right side of the flavor bar, to create your flavor.
+Click the **Add Flavor** button, illustrated as a plus sign (+) on the right side of the flavor manager, to create your flavor.
 
 ![Add Flavor Button](Add-Flavor.png)
 
@@ -115,6 +114,5 @@ You have now finished personalizing this initial screen. To view it as your end-
 You should now see the end product of this tutorial without the **Flavor Editor**: a simple dashboard for creating a service notification.
 
 ![Personalized Screen](Finished-Screen.png)
-
 
 ---

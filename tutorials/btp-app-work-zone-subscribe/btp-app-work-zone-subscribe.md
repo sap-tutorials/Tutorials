@@ -146,6 +146,10 @@ You have launched your `Risks` app through the SAP Build Work Zone, standard edi
 
 > If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
+> Do you want to change your Risk Management Site's default theme? Under your avatar, in the User Actions menu, select the Theme Manager.
+
+>     !![Theme Managet](theme-manager.png)
+
 [VALIDATE_1]
 [ACCORDION-END]
 ---

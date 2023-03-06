@@ -277,7 +277,7 @@ author_profile: https://github.com/mervey45
 
       Right-click your IAM App and click **Activate**.
 
-      **Hint:** If you can't find your service name, you can press **CTRL + space** to search for it.
+      **HINT:** If you can't find your service name, you can press **CTRL + space** to search for it.
 
   7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 

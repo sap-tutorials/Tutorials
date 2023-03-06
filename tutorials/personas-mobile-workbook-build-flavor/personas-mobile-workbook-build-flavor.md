@@ -2,15 +2,12 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-screen-personas, topic>mobile, products>sap-fiori]
-primary_tag: products>sap-screen-personas
+tags: [tutorial>intermediate, software-product>sap-screen-personas, topic>mobile, software-product>sap-fiori]
+primary_tag: software-product>sap-screen-personas
 ---
 
 # Personalize Your SAP Screen Personas Flavor
 <!-- description --> Simplify the main screen of IW51 and add barcode scanning functionality.
-
-## Prerequisites
- - SAP Screen Personas SP06 or higher
 
 ## You will learn
   - How to further simplify screens in SAP Screen Personas
@@ -33,7 +30,7 @@ You will then navigate to this screen:
 This will be the basis of your app. To simplify this screen, you will hide the fields, tab strips, and other objects not needed by your users.
 
 
-### Step 2: Simplify the main screen
+### Simplify the main screen
 To begin, open the SAP Screen Personas **flavor editor**. The first step in simplifying this flavor is hiding the **Action Box** container on the right side of the screen. Select it and then click **Hide**.
 
 ![Hide Action Box](Hide-Action-Box.png)
@@ -151,8 +148,9 @@ Give your new **Cancel** button the same dimensions as the **Save** button: **`1
 
 ### Create barcode scanning functionality
 
-With all of the required functionality on the screen, your next step will be to give your users additional functionality to simplify service notification creation even further. This next step will give them access to a barcode scanner so that they do not need to manually enter the equipment number. Once completed, your users will be able to press a button to open the scanner, use their device's camera to scan the barcode, and then a script will populate the **Equipment** field.
->As this feature requires the use of a mobile device camera, it will not work when accessed on a desktop.
+With all of the required functionality on the screen, your next step will be to give your users additional functionality to simplify service notification creation even further. This next step will give them access to a barcode scanner so that they do not need to manually enter the equipment number. SAP Screen Personas offers pre-defined barcode scanner buttons that can be added to any input field in the flavor editor and works out of the box, as the associated script is available and its relationship to the script button is established. For this tutorial, however, the barcode scanner button will be created manually as an example of how script buttons that are added in the flavor editor work with scripts created in the script editor. Once completed, your users will be able to press a button to open the scanner, use their device’s camera to scan the barcode, and then a script will populate the Equipment field.
+As this feature requires the use of a mobile device camera, it will not work when accessed on a desktop
+
 
 To begin, you need to create a script button. To do so, navigate to the **Insert** tab and click **Script Button**.
 
