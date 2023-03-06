@@ -7,7 +7,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Create an Application with SAP Build Apps
 <!-- description --> Create an application with SAP Build Apps on SAP BTP. The application, created in a browser, can be used with the Previewer App to scan physical barcodes on food packaging to display calorific information.
 

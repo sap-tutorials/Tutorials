@@ -1,0 +1,28 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Is it sufficient to subscribe to SAP Omnichannel Promotion Pricing in order to use the complete functionality?
+
+###Match
+[ ] Yes, subscribing is sufficient.
+[x] No, you must also create service instances for the Promotion Pricing services.
+
+[VALIDATE_1]
+
+
+[VALIDATE_3]
+###Rule
+single-choice
+
+###Question
+How many service instances do you have to at least create for your trial scenario?
+
+###Match
+[ ] 1
+[ ] 2
+[x] 3
+[ ] 4
+
+[VALIDATE_3]

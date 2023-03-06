@@ -7,7 +7,7 @@ author_name: Daniel Wrolewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Connect Your SAP Build Application to a Public API
 <!-- description --> Connect your application to a public API and then test that it's pulling the right information.
 
