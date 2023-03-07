@@ -85,7 +85,7 @@ As the alert is currently set to display a static text response only, we want to
 
     ![Save application](Save_app.png)
 
-2. Using your device, open your draft application in the **AppGyver Preview** app and test the feature with a food item barcode.
+2. Using your device, open your draft application in the SAP Build Apps preview app and test the feature with a food item barcode.
 
     ![Open smart phone app](iphoneapp1.png)
 

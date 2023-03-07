@@ -36,6 +36,7 @@ xsuaa:
   servicePlanName: application
   parameters:
     xsappname: cpapp
+    tenant-mode: dedicated
     role-collections:
       - description: Manage Risks
         name: RiskManager
@@ -235,12 +236,6 @@ On macOS, if you get the error `ERROR: failed to build: failed to fetch builder 
 
     ```Shell/Bash
     kubectl get jobs
-    ```
-
-    You should see an empty list of jobs. This indicates that the deployment job was run successfully because the Helm chart is configured to clean up jobs after completion:
-
-    ```
-    NAME                       COMPLETIONS   DURATION   AGE
     ```
 
     If the job fails or if it's still in progress, the job is displayed as incomplete (completions `0/1`) like in this example:

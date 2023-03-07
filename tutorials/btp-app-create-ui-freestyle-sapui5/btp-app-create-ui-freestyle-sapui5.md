@@ -40,20 +40,20 @@ Fortunately, you have also got a choice of several templates that get your appli
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
 
-    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAPUI5 freestyle** and floor plan **SAP Fiori Worklist Application**.
+2. Choose application type **SAPUI5 freestyle** and template **SAP Fiori Worklist Application**.
 
        ![SAPUI5 freestyle](createSAPUI5freestyle_app.png)
 
 
 4. Choose **Next**.
 
-5. In the next dialog, choose **Use a Local CAP Project** and point to the folder of your current `cpapp` project.
+5. In the next dialog, choose **Use a Local CAP Project** and choose your current **`cpapp`** project.
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the SAP Fiori application generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -72,6 +72,8 @@ Fortunately, you have also got a choice of several templates that get your appli
 7. Enter `mitigations` as the module name and `Mitigations` as the application title.
 
 8. Enter `ns` as the namespace and `Mitigations` as the description for the application.
+
+9. Leave the default values for all other settings. 
 
 9. Choose **Finish** to generate the application.
 
@@ -99,7 +101,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 
     As a result, you can see a list but you can only see the IDs of the mitigations both in the list view and on the detail page. This is because the freestyle template only got the information from you that the `Object Collection ID` is the `ID` property of the `mitigations` service. You now need to add additional SAPUI5 controls that are bound to additional properties of the `mitigations` service.
 
-4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` and `<> (ObjectNumber)` columns and instead adding `Description`, `Owner` and `Timeline` columns:
+4. Open the view of the work list `app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` and `tableUnitNumberColumnTitle` columns and instead adding `Description`, `Owner` and `Timeline` columns:
 
     ```XML[2-10,19-23]
         <columns>
@@ -130,7 +132,7 @@ Fortunately, you have also got a choice of several templates that get your appli
         </items>
     ```
 
-5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
+5. Open the view of the object `app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
     ```XML[4,16,28-34]
     <mvc:View

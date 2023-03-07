@@ -1,7 +1,7 @@
 ---
 author_name: Manju Shankar
 author_profile: https://github.com/manjuX
-title: Prepare SAP Build Work Zone, Standard Edition Setup
+title: Prepare SAP Build Work Zone, Standard Edition Setup for Kyma
 description: Learn how to prepare your UI applications, add deployment configuration for HTML5 applications to your project, and configure your Helm chart for HTML5 application deployment.
 keywords: cap
 auto_validation: true
@@ -301,12 +301,12 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     cds add html5-repo
     ```
 
-    This adds three new sections `html5_apps_deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the SAP Build Work Zone, standard edition.
+    This adds three new sections `html5-apps-deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the SAP Build Work Zone, standard edition.
 
-2. Replace `<your-container-registry>` with your container registry URL in the `html5_apps_deployer` section of your `chart/values.yaml` file:
+2. Replace `<your-container-registry>` with your container registry URL in the `html5-apps-deployer` section of your `chart/values.yaml` file:
 
     ```YAML[5]
-    html5_apps_deployer:
+    html5-apps-deployer:
       cloudService: null
       backendDestinations: {}
       image:
@@ -316,14 +316,16 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
 3.  Add the destination and the cloud service to your backend service:
 
-    ```YAML[2-5]
-    html5_apps_deployer:
-      cloudService: cpapp.service
-      backendDestinations:
-        cpapp-srv:
-          service: srv
-      image:
+    ```YAML[3,7-9]
+    html5-apps-deployer:
+      env:
+        SAP_CLOUD_SERVICE: cpapp.service
+      envFrom:
         ...
+    ...
+    backendDestinations:
+      cpapp-srv:
+        service: srv
     ```
 
      The `backendDestinations` configuration creates a destination with the name `cpapp-srv` that points to the URL for your CAP service `srv`.

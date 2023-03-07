@@ -18,8 +18,8 @@ author_profile: https://github.com/julieplummer20
 - Access to the Fiori app **Health Monitoring**
 
 ## You will learn
-  - How to configure outbound communication from your SAP BTP ABAP Environment  using the communication arrangement **`SAP_COM_0276`**
-  - How to configure communication from your SAP BTP ABAP Environment instance to the SAP Cloud ALM service using the communication arrangement  **`SAP_COM_0527`**
+  - How to configure outbound communication from your SAP BTP ABAP Environment  using the communication scenario **`SAP_COM_0276`**
+  - How to configure communication from your SAP BTP ABAP Environment instance to the SAP Cloud ALM service using the communication scenario  **`SAP_COM_0527`**
   - How to configure the use cases you want for SAP Cloud ALM
 
 
@@ -33,8 +33,11 @@ For more information, see SAP Help Portal: [Integration in Central Monitoring an
 
 Throughout this tutorial, objects name include a prefix, such as **`Zxx`** or suffix, such as **`XXX`**. Always replace this with your group number or initials.
 
-<!-- border -->![step0-overview](step0-overview.png)
-<!-- border -->![step0-overview2](step0-overview2.png)
+<!-- border -->
+![step0-overview](step0-overview.png)
+
+<!-- border -->
+![step0-overview2](step0-overview2.png)
 
 ---
 
@@ -44,7 +47,8 @@ In the BTP Cockpit, you need to create a destination service in your BTP subacco
 
 1. Navigate to your **Space**, choose **Instances**, then choose **Create**.
 
-    <!-- border -->![step1a-navigate-to-space-etc](step1a-navigate-to-space-etc.png)
+    <!-- border -->
+    ![step1a-navigate-to-space-etc](step1a-navigate-to-space-etc.png)
 
 2. Enter the following, then choose **Create**.
 
@@ -52,42 +56,52 @@ In the BTP Cockpit, you need to create a destination service in your BTP subacco
     - Plan: **Lite**
     - Instance Name: e.g. **`DST`**
 
-    <!-- border -->![step1a-create-destinations-service](step1a-create-destinations-service.png)
+    <!-- border -->
+    ![step1a-create-destinations-service](step1a-create-destinations-service.png)
 
-3.	Create a service key for your SAP Cloud ALM service and download it; you will need it later.
+3.	Create a service key for your SAP Cloud ALM service and download it; you will need it later - that is, the SAP Cloud ALM service mentioned in the prerequisites above.
+
+    <!-- border -->
+    ![step1c-calm-service-already-created](step1c-calm-service-already-created.png)
+
 
 4. Create a new service key for your SAP BTP ABAP Environment and download it; you will need it later.
 
-    <!-- border -->![step1c-create-service-key-for-steampunk](step1c-create-service-key-for-steampunk.png)
+    <!-- border -->
+    ![step1c-create-service-key-for-steampunk](step1c-create-service-key-for-steampunk.png)
 
 
-### Set up SAP Cloud ALM service
+### Configure destination
 
 In the BTP Cockpit, you need to create a destination to SAP Cloud ALM if you have not already done so.
 
 1. Navigate to your **Subaccount** and choose **Destinations > New Destination**.
 
-    <!-- border -->![step1c-navigate-to-destinations](step1c-navigate-to-destinations.png)
+    <!-- border -->
+    ![step1c-navigate-to-destinations](step1c-navigate-to-destinations.png)
 
 2. Configure the destination to your SAP Cloud ALM service using the credentials in the service key (from step 1.3).
 
-    <!-- border -->![step1b-destination-to-calm](step1b-destination-to-calm.png)
-
-3. Choose scenario **`SAP_COM_0276`**, paste the service key of your destination service (from step 1.4), then choose **Create**.
-
-    <!-- border -->![step2c-comm-arr-create](step2c-comm-arr-create.png)
-
+    <!-- border -->
+    ![step1b-destination-to-calm](step1b-destination-to-calm.png)
 
 
 ### Create Communication Arrangement for Destination Service Integration (SAP_COM_0276)
 
 1.	Logon to your SAP BTP ABAP Environment as Administrator and choose the app **Communication Arrangements**.
 
-    <!-- border -->![step2a-comm-arr](step2a-comm-arr.png)
+    <!-- border -->
+    ![step2a-comm-arr](step2a-comm-arr.png)
 
 2. Choose **New**.
 
-    <!-- border -->![step2b-comm-arr-new](step2b-comm-arr-new.png)
+    <!-- border -->
+    ![step2b-comm-arr-new](step2b-comm-arr-new.png)
+
+3. Choose scenario **`SAP_COM_0276`**, paste the service key of your destination service (from step 1.4), then choose **Create**.
+
+    <!-- border -->
+    ![step2c-comm-arr-create](step2c-comm-arr-create.png)
 
 
 
@@ -95,27 +109,33 @@ In the BTP Cockpit, you need to create a destination to SAP Cloud ALM if you hav
 
 1. Again, choose **New**, then choose **Create**.
 
-    <!-- border -->![step3a-comm-arr-create-SAP_COM_0527](step3a-comm-arr-create-SAP_COM_0527.png)
+    <!-- border -->
+    ![step3a-comm-arr-create-SAP_COM_0527](step3a-comm-arr-create-SAP_COM_0527.png)
 
 2. Create a New **Communication System**.
 
-    <!-- border -->![step3b-comm-system-new-cutout](step3b-comm-system-new-cutout.png)
+    <!-- border -->
+    ![step3b-comm-system-new-cutout](step3b-comm-system-new-cutout.png)
 
-3. From the dropdown list, choose the **Name** for your SAP Cloud ALM service, that you configured in step 1.3 - in this example, **`ABAPK8S_CALM`**.
+3. From the dropdown list, choose the **Name** for your SAP Cloud ALM service, that you configured in step 3.2.
 
-    <!-- border -->![step3c-comm-system-name](step3c-comm-system-name.png)
+    <!-- border -->
+    ![step3c-comm-system-name](step3c-comm-system-name.png)
 
 4. Choose the use cases you want to enable.
 
-    <!-- border -->![step3d-configure-use-cases](step3d-configure-use-cases.png)
+    <!-- border -->
+    ![step3d-configure-use-cases](step3d-configure-use-cases.png)
 
 5. Configure the job execution details as follows and choose **Save**, then save the communication arrangement.
 
-    <!-- border -->![step3e-configure-job-exec-details](step3e-configure-job-exec-details.png)
+    <!-- border -->
+    ![step3e-configure-job-exec-details](step3e-configure-job-exec-details.png)
 
 Your SAP BTP ABAP environment is registered in your SAP Cloud ALM instance. However, it could take **up to one hour** before the first monitoring data is pushed to your  service.
 
-<!-- border -->![step3e-result-calm-health-monitoring](step3e-result-calm-health-monitoring.png)
+<!-- border -->
+![step3e-result-calm-health-monitoring](step3e-result-calm-health-monitoring.png)
 
 
 ### Test yourself
