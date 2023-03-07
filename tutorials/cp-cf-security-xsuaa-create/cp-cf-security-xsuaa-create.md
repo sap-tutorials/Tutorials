@@ -9,7 +9,7 @@ author_profile: https://github.com/MichaelPShea
 ---
 
 # Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
-<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA). 
 
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
