@@ -54,7 +54,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
 
       ![logon](logon4.png)
 
-      > The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+      >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
   5. Click **Next >**.
 
@@ -243,7 +243,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
     }
     ```
   
-    > Please replace **`X`** and **`XXX`** with your ID. 
+    >Please replace **`X`** and **`XXX`** with your ID. 
 
    5. Save and activate.
 
@@ -305,7 +305,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
    
      ![projection](bdef5.png)
 
-     > Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
+     >Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
 
   6. Check your behavior definition:
 
@@ -1067,7 +1067,7 @@ Please replace **`X`**, **`#`** and **`XXX`** with your ID.
 
    3. Save and activate.
 
-    > The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
+    >The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
    4. Go back to your behavior definition `ZR_ONLINESHOPTP_XXX` and activate it again, if needed. 
 
@@ -1130,3 +1130,4 @@ Please replace **`X`**, **`#`** and **`XXX`** with your ID.
 
 
 ### Test yourself
+ 
