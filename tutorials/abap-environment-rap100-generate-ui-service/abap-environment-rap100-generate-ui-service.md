@@ -34,7 +34,9 @@ In this exercise, you will create an ABAP package and database table. In your da
 
 Create your exercise package. This ABAP package will contain all the artefacts you will be creating in the different exercises of this tutorial.
 
- 1. In ADT, go to the **Project Explorer**, right-click on the package `ZLOCAL`, and select **New** > **ABAP Package** from the context menu.
+ 1. In ADT, go to the **Project Explorer**, right-click on the package `ZLOCAL`, and select **New** > **ABAP Package** from the context menu. 
+
+    >If you are using a **preconfigured system**, then you need to add **`ZLOCAL`** to your **favorite packages**.
 
  2. Maintain the required information (`###` is your group ID):
 

@@ -168,7 +168,7 @@ author_profile: https://github.com/mervey45
 
       ![object](s15.png)
 
-     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+     > Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
   7. Configure deployment:
        - Target: ABAP
@@ -182,7 +182,7 @@ author_profile: https://github.com/mervey45
 
       Click **Next >**.
 
-     **HINT:** If you want to copy your transport request, please do following: Open Eclipse, search your package `ZTRAVEL_APP_XXX` and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your transport request underneath the Modifiable folder.
+     > If you want to copy your transport request, please do following: Open Eclipse, search your package `ZTRAVEL_APP_XXX` and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your transport request underneath the Modifiable folder.
      ![app](deploy3.png)
 
 
@@ -277,7 +277,7 @@ author_profile: https://github.com/mervey45
 
       Right-click your IAM App and click **Activate**.
 
-      **HINT:** If you can't find your service name, you can press **CTRL + space** to search for it.
+      > If you can't find your service name, you can press **CTRL + space** to search for it.
 
   7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 
