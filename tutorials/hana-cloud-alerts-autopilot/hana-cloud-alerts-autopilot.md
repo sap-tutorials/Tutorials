@@ -492,6 +492,8 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     ![update event type](event-type-hdbdiskusage.png)
 
+### Knowledge check
+
 Congratulations! You have now created a command in SAP Automation Pilot that can be  used to take action to resolve the alert that triggered the execution of the command.  
 
 

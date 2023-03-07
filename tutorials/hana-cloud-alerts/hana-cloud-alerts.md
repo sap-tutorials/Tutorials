@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud--data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -81,6 +81,14 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
     Note that the check for an alert can be manually triggered by pressing the **Check Now** button.
 
 6. Alerts also have a retention period.  Once triggered, depending on their type, they will remain for a set duration such as 14 or 42 days.
+
+7. Alerts across instances in an SAP BTP subaccount can be seen in SAP HANA Cloud Central for database instances created with the multi-environment tooling or provisioned into the SAP BTP subaccount (Other Environments).  
+
+    ![instances provisioned in a subaccount](provisioned-in-subaccount.png)
+
+    Additional details on the multi-environment tooling can be found at [SAP HANA goes "multi-environment"](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/).
+
+    [subaccount alerts view](subaccount-alerts-view.png)
 
   For additional details, consult [How Alerts are Generated](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/8eca57e7e82e4b788246b6d9db020937.html) and
   the topic [Alerts](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/cloud/en-US/923f1c8f200b44708e7ee68876d5fe2b.html) in the document SAP HANA Cloud Database Administration with SAP HANA Cockpit.
@@ -510,6 +518,8 @@ This step will briefly show an example of how to receive a notification in Slack
 6. After triggering an alert, the Slack channel will show the notification.
 
     ![notification in Slack](slack-notification.png)
+
+### Knowledge check
 
 Congratulations! You have now configured alerts, triggered and viewed them via the SAP HANA cockpit and received them via email, Microsoft Teams, and Slack using the Alert Notification Service.  
 
