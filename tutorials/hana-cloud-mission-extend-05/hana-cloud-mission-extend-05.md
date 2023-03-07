@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Use Smart Data Access to Virtualise Data from the Cloud to an On-Premise Database
-description: Create an SDA connection between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
+
+# Use Smart Data Access to Virtualise Data from the Cloud to an On-Premise Database
+<!-- description --> Create an SDA connection between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 
 ## Prerequisites
 - A **running** SAP HANA Cloud, SAP HANA database instance with a table that contains data.
@@ -15,14 +17,14 @@ primary_tag: products>sap-hana-cloud
 - An instance of the SAP HANA Database Explorer or SAP HANA Studio connected to the SAP HANA on-premise database.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create a remote source to an SAP HANA Cloud, SAP HANA database instance in your SAP HANA on-premise system using Smart Data Access
 - How to then virtualise data from SAP HANA Cloud to an SAP HANA on-premise database
 
 
 
 
+## Intro
 **Smart Data Access (SDA)** can be used to virtualise data from a source SAP HANA Cloud, SAP HANA database to an SAP HANA on-premise target database. Since this HANA-to-HANA federation does not require additional deployment of the Data Provisioning Agent, unlike SDI, SDA is the preferred and simplest way in this direction to virtualise data. SDI may also be used for this direction and offers more advanced replication capabilities. You will learn how to use SDI in the [next tutorial of this group](hana-cloud-mission-extend-06).
 
 ![Infographic SDA](ss-01-infographic-SDA.png)
@@ -34,7 +36,8 @@ In this article, you will learn step by step how to create an SDA connection bet
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Preparations)]
+### Preparations
+
 
 1.	**Start** the SAP HANA platform or express edition on-premise or on cloud hypervisor.
 
@@ -45,7 +48,7 @@ In this article, you will learn step by step how to create an SDA connection bet
     -	The exact **name** of your SAP HANA Cloud, SAP HANA database instance
     -	The **Endpoint** of your SAP HANA Cloud, SAP HANA database instance
 
-    !![HCC SQL Endpoint](ss-02-HCC-sql-endpoint-resized.gif)
+    <!-- border -->![HCC SQL Endpoint](ss-02-HCC-sql-endpoint-resized.gif)
 
 4.	Copy the name of the instance and the endpoint and paste it to a text editor.
 
@@ -59,10 +62,9 @@ After the file has been downloaded, use a text editor which can read a `pem` fil
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a PSE and a certificate)]
+### Create a PSE and a certificate
+
 
 1.	Create a certificate store, also called PSE (personal security environment). You can read more about [PSE and how to import certificates for SSL connections here](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/86e96624e9a74e77994f7544db51061c.html).
 
@@ -86,11 +88,10 @@ COMMENT 'HC';
 > In the next step, we will need to obtain the ID of this certificate to add it to our PSE. Using a comment when creating this certificate will make it easier for us to find it and get its ID.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add the certificate to the PSE)]
+### Add the certificate to the PSE
+
 
 1.	Get the certificate ID of this certificate by running this SQL statement:
 
@@ -112,10 +113,9 @@ SET PSE SSL PURPOSE REMOTE SOURCE;
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the remote source)]
+### Create the remote source
+
 
 To now create a remote source, copy and paste the following statement into your console and replace the `<placeholders>` with your specific information (see instructions below the code).
 
@@ -132,7 +132,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<user_name>;password=<password>';
 
 Once all this information is included, run the statement. Then **refresh** and you will now see on the left in your catalog that the remote source has been successfully created.
 
-!![HANA Studio Remote Source Created](ss-03-HANA-studio-remotesource-created.png)
+<!-- border -->![HANA Studio Remote Source Created](ss-03-HANA-studio-remotesource-created.png)
 
 #### **CAUTION**:
 
@@ -148,16 +148,15 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<user_name>;password=<password>';
 You can read more about how to [create remote sources in the technical documentation here](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/LATEST/en-US/275839492fef49318d92d0e31656ea0a.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a virtual table in your on-premise database)]
+### Create a virtual table in your on-premise database
+
 
 Now that the SDA connection between the SAP HANA on-premise database and the SAP HANA Cloud, SAP HANA database has been created, you can virtualise the data from the cloud to on-premise following these steps:
 
 1.	You can check whether the remote connection is correctly configured by opening the SAP HANA Database Explorer and clicking on **Remote sources**. Then click on the newly created remote source ("HC" in this example). Another tab will open, where you can check whether the objects from your remote source can be retrieved. If you are using SAP HANA Studio for your local instance, expand the catalog items **HC**, then **Null**, then **SYS** to see all the system view tables.
 
-    !![HANA Studio HC SYS Tree Open](ss-04-HANAstudio-HC-SYS-TreeOpen.png)
+    <!-- border -->![HANA Studio HC SYS Tree Open](ss-04-HANAstudio-HC-SYS-TreeOpen.png)
 
 2.	Next, use the SQL Code below to create the virtual table. Make sure to enter the exact name of your SAP HANA Cloud, SAP HANA database instance (at the top of the tile) that you used in the previous step and to include the name of the remote source that you created in step 4. of the previous section ("HC" in our example):
 
@@ -171,23 +170,22 @@ CREATE VIRTUAL TABLE WORKSHOP.VT_TABLES AT "HC"."<instance_name>"."SYS"."TABLES"
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check the content of the new virtual table)]
+### Check the content of the new virtual table
+
 
 
 1.	To check if your virtual table has been created in your on-premise database, open your schema in the catalog of your SAP HANA on-premise.
 
 2. Then, click on **Tables** and you can see the virtual table you have just created. Note, that if you are using the SAP HANA Database Explorer, you must first select TABLES and then filter by the name of your schema.
 
-    !![HANA Studio Virtual Table](ss-05-HANAstudio-virtual-table.png)
+    <!-- border -->![HANA Studio Virtual Table](ss-05-HANAstudio-virtual-table.png)
 
 2.	To check the content of your virtual table, you can run a `SELECT*FROM` statement.
 
 3.	A table view will open. There you can see that the data is being pulled from the remote source to your local SAP HANA on-premise database.
 
-    !![HANA Studio Virtual Table 2](ss-06-HANAstudio-virtual-table2.png)
+    <!-- border -->![HANA Studio Virtual Table 2](ss-06-HANAstudio-virtual-table2.png)
 
 > **Well done!**
 >
@@ -198,14 +196,12 @@ CREATE VIRTUAL TABLE WORKSHOP.VT_TABLES AT "HC"."<instance_name>"."SYS"."TABLES"
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

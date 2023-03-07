@@ -1,28 +1,31 @@
 ---
-title: Connect to SAP HANA Using Python
-description: Install SAP HANA client drivers on Python and connect to an SAP HANA instance.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-cloud-platform--sap-hana-service]
 primary_tag: products>sap-hana
 ---
 
+# Connect to SAP HANA Using Python
+<!-- description --> Install SAP HANA client drivers on Python and connect to an SAP HANA instance.
+
 ## Prerequisites
 - A running SAP HANA database instance and credentials of a database user.
 - Familiarity with Python.
 
-## Details
-### You will learn
+## You will learn
   - How to install the SAP HANA client driver for Python
   - How to install the client driver using a virtual environment (optional)
   - How to connect to an instance of SAP HANA
   - How to use environment variables to provide connection parameters
 
+## Intro
 We recommend using [virtual environments](https://docs.python.org/3/library/venv.html) to localize your Python runtime environment. If you choose to use virtual environments, you can find a guide on using virtual environments [here](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the hdbcli dependency)]
+### Install the hdbcli dependency
+
 [OPTION BEGIN [Virtual Environment]]
 
 Create a virtual environment to localize dependencies:
@@ -90,10 +93,9 @@ Installing collected packages: hdbcli
 Successfully installed hdbcli-2.x.xxx
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Establish a test connection)]
+### Establish a test connection
+
 To establish a simple connection to SAP HANA, you need the following information:
 
 - Database host
@@ -135,10 +137,9 @@ If the connection information used is correct, you should see the following prin
 connected
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Hide sensitive connection parameters)]
+### Hide sensitive connection parameters
+
 [OPTION BEGIN [Unix]]  
 
 Now that you've successfully connected to the database, we need to take out connection parameters and credentials out of the source code. Having connection parameters directly in your source code is insecure, one option is to provide these parameters at runtime as environment variables instead.
@@ -217,6 +218,5 @@ Test run the Python file again with:
 python connect.py
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

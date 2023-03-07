@@ -1,11 +1,15 @@
 ---
-title: Understand Spatial Reference Systems in SAP HANA Spatial
-description: In the context of spatial databases, the defined space in which geometries are described is called a spatial reference system (SRS).
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+
+# Understand Spatial Reference Systems in SAP HANA Spatial
+<!-- description --> In the context of spatial databases, the defined space in which geometries are described is called a spatial reference system (SRS).
 
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -15,13 +19,13 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
 - Introduction to [SAP HANA Spatial methods](https://developers.sap.com/group.hana-aa-spatial-methods.html)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn what Spatial Reference Systems and Spatial Units of Measure are, how they are defined and used in SAP HANA.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Calculating the distance on the flat surface)]
+### Calculating the distance on the flat surface
+
 What is the distance between two points: `(0, 0)` and `(1, 0)`?
 
 ```sql
@@ -48,10 +52,9 @@ FROM "DUMMY";
 
 >More units of measures can be manually created or loaded into the SAP HANA on-prem using a separate Geospatial Metadata Installer. The Geospatial Metadata Installer is available for registered customers and partners.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Introducing Spatial Reference Systems)]
+### Introducing Spatial Reference Systems
+
 
 What if you want to measure a distance between two geographic point where coordinates are latitude and longitude on the Earth? In this case you need to specify what **Spatial Reference System (`SRS`)** is used for geometries in queries.
 
@@ -76,10 +79,9 @@ FROM "ST_SPATIAL_REFERENCE_SYSTEMS" WHERE "SRS_ID"=0;
 
 As you can see it is the `DEFAULT` reference system, with all `x`, `y`, `z` and `m` coordinates. It is based on the flat surface.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Calculating the distance on the round Earth)]
+### Calculating the distance on the round Earth
+
 
 The Spatial Reference System that implements geodetic coordinate system of the Global Positioning System (`GPS`), or [`WGS 84`](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84), has SRID `4326`.
 
@@ -111,10 +113,9 @@ FROM "DUMMY";
 
 SRS with id `4326` is the one of many standardized reference systems. Other may have different assumptions regarding the Earth shape, or may define boundaries to cover only selected countries.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Defining additional Spatial Reference Systems)]
+### Defining additional Spatial Reference Systems
+
 
 More spatial reference systems can be added in SAP HANA Cloud and on-prem SAP HANA 2.0 from SPS05 using `CREATE PREDEFINED SPATIAL REFERENCE SYSTEM IDENTIFIED BY <srs-id>` statement.
 
@@ -152,11 +153,9 @@ Once SQL statements above are executed successfully you should see these new `SR
 
 What is the numeric id of the Spatial Reference System that implements geodetic coordinate system of the Global Positioning System (`GPS`), known as `WGS 84`?
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - Example: [ASCII art map of the World](https://blogs.sap.com/2017/02/13/ascii-art-map-of-the-world-using-sap-hana-geospatial-processing/)
 - Example: [Tell me where the center of Europe is](https://blogs.sap.com/2017/04/11/sap-hana-tell-me-where-the-center-of-europe-is/)
-- Read blog [Spatial Reference Systems – Background Knowledge and the use in SAP HANA](https://archive.sap.com/documents/docs/DOC-75363)
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a2ea357787c101488ecd1b725836f07.html)

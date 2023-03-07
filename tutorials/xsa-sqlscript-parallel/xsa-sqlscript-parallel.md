@@ -1,25 +1,28 @@
 ---
-title: Parallel Processing and Parameters
-description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 time: 15
 ---
+# Parallel Processing and Parameters
+<!-- description --> Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating Stored Procedures](xsa-sqlscript-stored-proc)
 
-## Details
-### You will learn  
+## You will learn  
 - How to take full advantage of parallel processing in SAP HANA by using table variables
 
+## Intro
 In this exercise, we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
+### Edit previous procedure
+
 
 Return to your procedure called `get_po_header_data`.
 
@@ -30,10 +33,9 @@ Define two tabular output parameters which will be used to explicitly pass the r
 ![Define output](2.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign SELECT statements)]
+### Assign SELECT statements
+
 
 Next, assign SELECT statements to the output parameters as shown here.
 
@@ -73,10 +75,9 @@ END
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save and build)]
+### Save and build
+
 
 Save the procedure.
 
@@ -87,10 +88,9 @@ Perform a build on the `hdb` module.
 ![Build Module](6.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the procedure again)]
+### Run the procedure again
+
 
 Return to the Database Explorer page and run the procedure again.
 
@@ -101,14 +101,11 @@ The CALL statement will be inserted into a new "SQL" tab. Click the **Run** butt
 ![Run](9.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check execution time)]
+### Check execution time
+
 
 Check the execution time again, you may notice that it is a bit faster this time. The reason is that these SQL statements are now executed in parallel.
 
 ![Check execution time](10.png)
 
-[DONE]
-[ACCORDION-END]

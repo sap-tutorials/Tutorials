@@ -1,11 +1,13 @@
 ---
-title: Create App for Sending and Receiving Messages Using a Java-Based Client
-description: Develop and deploy a basic Java-based messaging application for sending and receiving messages to a queue.
+parser: v2
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, programming-tool>java, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>intermediate, programming-tool>java, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
+
+# Create App for Sending and Receiving Messages Using a Java-Based Client
+<!-- description --> Develop and deploy a basic Java-based messaging application for sending and receiving messages to a queue.
 
 ## Prerequisites
 - Installed Java 8: [Java download](https://www.java.com/en/download/)
@@ -15,14 +17,14 @@ primary_tag: products>sap-event-mesh
 - Follow [Install the Cloud Foundry Command Line Interface(CLI)](cp-cf-download-cli) to download and work with CLI.
 - Installed IDE of choice (e.g. [Visual Studio](https://code.visualstudio.com/) with installed [Java language support](https://marketplace.visualstudio.com/items?itemName=redhat.java) plugin)
 
-## Details
-### You will learn
+## You will learn
   - How to create a basic messaging client application with Java
   - How to deploy this application to the SAP Event Mesh and test it
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up environment)]
+### Set up environment
+
 
 To download and install the samples, just clone the repository via: [git clone](https://github.com/SAP/enterprise-messaging-client-java-samples)
 
@@ -41,7 +43,7 @@ The git has two applications for you to try out.
 
 Download both the scenarios to your local IDE. After downloading, the project structure will look like this :
 
-!![Project Structure](ProjectStructure.JPG)
+<!-- border -->![Project Structure](ProjectStructure.JPG)
 
 The downloaded project has all the dependencies and required client files for both scenarios mentioned above.
 The Event Mesh service descriptor is `/config/em-config-default.json`. Detailed information on different parameters of the
@@ -49,10 +51,9 @@ descriptor can be found in [Create Instance of SAP Event Mesh](cp-enterprisemess
 
 *Replace the content in the **.json** file with the content of the descriptor in the service instance you have created.*
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the dependencies)]
+### Understand the dependencies
+
 To be able to build, deploy and run the Java message client, ensure the following dependencies are mentioned in the pom.xml.
 
 -  enterprise-messaging spring service connector that provides the `MessagingService`
@@ -82,10 +83,10 @@ i.e. the pom.xml should have dependencies as below.
 
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Code Snippets — common for both examples)]
+
+### Code Snippets — common for both examples
+
 
 1. Open the `manifest.yml` file for the projects and make changes to the following parameters:
 
@@ -127,10 +128,9 @@ i.e. the pom.xml should have dependencies as below.
     Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE));
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Code Snippets — Point to Point communication)]
+### Code Snippets — Point to Point communication
+
 #### Sending
 
 Open the `MessagingServiceRestController.java` source code. Change the value of `QUEUE_PATH` based on the values of the instance you created.
@@ -179,10 +179,9 @@ try (Connection connection = connectionFactory.createConnection();Session sessio
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Code Snippets — Publish and Subscribe)]
+### Code Snippets — Publish and Subscribe
+
 
 Open the `MessageingServiceRestController.java` source code. Change the value of `TOPIC_PATH` and `QUEUE_PATH` based on the values of the instance you created.
 ```Java
@@ -232,18 +231,16 @@ try (
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Build and deploy)]
+### Build and deploy
+
 1. Build the project with maven (`maven clean install`).
 
 2. Push it to Cloud Foundry via `cf push` using CLI from the folder where the executable is available.
 
 3. After successful deployment, follow [Send and Receive Test Event Mesh](cp-enterprisemessaging-test-queue-sendreceive) to test sending and receiving of message using the Java client.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 
 ---

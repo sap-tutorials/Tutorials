@@ -1,6 +1,5 @@
 ---
-title:  Create Custom UI for S/4HANA on SAP Cloud Platform
-description: Create a UI in a SAP Cloud Platform Subaccount's Web IDE and deploy it to the S/4HANA system.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
@@ -9,26 +8,29 @@ author_name: Ulrike Liebherr
 author_profile: https://github.com/Liebherr
 ---
 
+#  Create Custom UI for S/4HANA on SAP Cloud Platform
+<!-- description --> Create a UI in a SAP Cloud Platform Subaccount's Web IDE and deploy it to the S/4HANA system.
+
 ## Prerequisites
 **Authorizations**: Your user needs
 - (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility - Custom Business Objects** (ID: `SAP_CORE_BC_EXT_CBO`) and in your **S/4HANA Cloud** system
 - access to **SAP Web IDE**
 
-## Details
-### You will learn
+## You will learn
 - How to create a UI from template in SAP Web IDE
 - How to adapt that UI to your needs
 - How to test that UI
 - How to deploy that UI as application to the S/4HANA Cloud system's SAPUI5 ABAP Repository
 
+## Intro
 As building UIs in SAP Cloud Platform (Side-by-Side Extensibility) offers more possibilities than UI Adaptation within S/4HANA Cloud (In-App-Extensibility), this tutorial shows you roughly how to build an UI based on a S/4HANA Cloud Custom Business Object's OData service in Web IDE and how to get it to the S/4HANA Cloud system.
-
-### Additional Information
+## Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create UI project from template in SAP Web IDE)]
+### Create UI project from template in SAP Web IDE
+
 <!--Start of equal part with abap-custom-ui-communication-arrangement-->
 In your SAP Cloud Platform Subaccount go to **Services**, search for **SAP Web IDE** and select it.
 
@@ -71,10 +73,9 @@ Customize the template by selecting **`YY1_BONUSPLAN`** as OData collection and 
 
 ![Customize template](webIDE_newLR_customizeTemplate.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure S/4HANA Cloud application tile)]
+### Configure S/4HANA Cloud application tile
+
 To configure the tile that will appear in your S/4HANA Cloud Fiori Launchpad later, do the following:
 Open the `webapp` folder and `manifest.json` file, and make sure to be in **Descriptor Editor** for the file.
 
@@ -96,10 +97,9 @@ Add the following information:
 
 **Save** the file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit UI in SAPUI5 Visual Editor)]
+### Edit UI in SAPUI5 Visual Editor
+
 Open the SAPUI5 Visual Editor for your project **`Bonusplan`** via context menu.
 
 ![Open SAPUI5 Visual Editor](webIDE_openSAPUI5editor.png)
@@ -116,10 +116,9 @@ Make the "Validity End Date" column invisible as well.
 
 Save your changes with CTRL+S.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test UI)]
+### Test UI
+
 Although the Preview in SAPUI5 Editor already gives you an idea on how the UI will look and behave like a test in an own browser window is started this way.
 
 Having just chosen a file of your project in the navigation tree or editor, click the play button to run your application in the test environment of SAP Web IDE.
@@ -130,10 +129,9 @@ Now you get the UI previewed in an own browser window. It has functionality alre
 
 ![Running application in full screen preview](webIDE_runningApplication.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy as application to S/4HANA Cloud)]
+### Deploy as application to S/4HANA Cloud
+
 Right click your project **`Bonusplan`** and deploy it to your S/4HANA Cloud system via context menu **Deploy** > **Deploy to SAPUI5 ABAP Repository**.
 
 ![Deploy UI to S/4HANA system](webIDE_deployToSAPUI5_abapRepository.png)
@@ -146,10 +144,8 @@ Give an application name and description, click **Next** and **Finish**.
 
 ![Set application name](webIDE_deployAddApplicationNameEtc.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

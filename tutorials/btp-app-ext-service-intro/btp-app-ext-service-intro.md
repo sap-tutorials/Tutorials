@@ -1,17 +1,17 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
-title: Introduction to Consuming Remote Services using CAP
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Introduction to Consuming Remote Services Using CAP
 description: Learn about external service APIs, how to get an API definition from the SAP API Business Hub, and how to import an API definition to your project.
 keywords: cap
 auto_validation: true
 time: 10
-tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, products>sap-s-4hana-cloud]
+tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - There are none, this is the very beginning.
+ - There are none, this is the very beginning
 
 ## Details
 ### You will learn
@@ -37,13 +37,19 @@ The tutorials cover a variety of topics and the tasks are bundled in step-by-ste
 - Register Your SAP S/4HANA Cloud System
 - Use Your SAP S/4HANA Cloud Service
 
+!![Solution Overview](solution_overview.png)
+
+> You can also have a look at the [demo](https://youtu.be/OQVUkCs7mzY?t=1819) presented during the SAP Community Call focusing on CAP.
+
+
+
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](What is CAP)]
 CAP is a framework of languages, libraries, and tools for building enterprise-grade services and applications. It guides developers along a 'golden path' of proven best practices and a great wealth of out-of-the-box solutions to recurring tasks.
 
-CAP-based projects benefit from a primary focus on domain. Instead of delving into overly technical disciplines, we focus on accelerated development and safeguarding investments in a world of rapidly changing cloud technologies.
+CAP-based projects benefit from a primary focus on domain. Instead of delving into overly technical disciplines, CAP focuses on accelerated development and safeguarding investments in a world of rapidly changing cloud technologies.
 
 The CAP framework features a mix of proven and broadly adopted open-source and SAP technologies, as highlighted in the following figure.
 

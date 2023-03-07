@@ -1,24 +1,24 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Understand the Differences Between SAP HANA On-Premise and SAP HANA Cloud, SAP HANA Database
-description: Learn about the main differences between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
+# Understand the Differences Between SAP HANA On-Premise and SAP HANA Cloud, SAP HANA Database
+<!-- description --> Learn about the main differences between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
+## You will learn
 - What SAP HANA on-premise and SAP HANA Cloud, SAP HANA database have in common
 - What the differences between on-premise and cloud service are
 - What tools to use with SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 If you are already an SAP HANA customer, you are familiar with the power of SAP HANA and its benefits as an on-premise data management platform. But you might be asking yourself how SAP HANA Cloud, SAP HANA database fits into the picture. First and foremost, SAP HANA Cloud, SAP HANA database is not replacing SAP HANA on-premise. However, SAP HANA Cloud, SAP HANA database is the successor of SAP HANA Service.
 
 > ### **About this mission**
@@ -35,7 +35,8 @@ This first tutorial will give you an overview of the main differences between SA
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 Existing SAP HANA customers can use SAP HANA Cloud, SAP HANA database to **extend their SAP HANA on-premise to the cloud**. This will provide existing SAP HANA customers with more flexibility without having to start from scratch. With SAP HANA Cloud, SAP HANA database you can get the benefits of SAP HANA core but optimized for the cloud. SAP HANA Cloud was also designed to integrate data via replication and data virtualization from multiple sources, one of those being SAP HANA on-premise.
 
 SAP HANA Cloud, SAP HANA database allows customers with an existing SAP HANA on-premise to continue building applications and manage their databases, without having to manage hardware, the operating system, as well as without worrying about backup, updates, software installation, and patches. All of this management and maintenance is taken care of by SAP when you use SAP HANA Cloud, SAP HANA database. **Your SAP HANA on-premise stays as it is**, with the usual updates and support SAP has always offered.
@@ -57,10 +58,9 @@ SAP HANA Cloud, SAP HANA database was developed to be as compatible as possible 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Differences in provisioning)]
+### Differences in provisioning
+
 
 This is where you will see significant differences compared to on-premise. For your SAP HANA database in SAP HANA Cloud, you can use SAP HANA Cloud Central to provision your instances, stop and start them, as well as use the editor to scale them up and down. Provisioning and scaling are a matter of a few clicks and a few minutes, which makes a strong contrast with the process on-premise.
 
@@ -71,11 +71,10 @@ You can also upgrade the software of your instances here. In SAP HANA Cloud, you
 > If you would like to <sub-style="font-size:30px">&#9755;</sub> [jump there](hana-cloud-mission-trial-2), please make sure to come back here to get the most of this mission.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Difference in database users)]
+### Difference in database users
+
 
 SAP is now sharing the responsibilities related to system administration with customers for SAP HANA database on SAP HANA Cloud. As a managed database service, SAP provides 24 by 7 operations, and an extensive set of security, networking, monitoring, and storage services, while customers still have the ability to adjust their database performance and applications for peak performance. SAP accounts have no access to data in any SAP HANA databases within SAP HANA Cloud.
 
@@ -87,10 +86,9 @@ As a security best-practice, it is recommended that you deactivate this user aft
 Besides the DBADMIN user that customers use, there are several other predefined database users that are required to operate the database. For example, if you are a customer of SAP HANA on-premise, you will recognize the SYSTEM user. This user is now exclusively controlled by SAP to create database users and other system activities. [Read more about predefined users in SAP HANA Cloud, SAP HANA database here](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/LATEST/en-US/de4ee8bbbb5710148a04f023da147c8d.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Differences in tools and ways of working)]
+### Differences in tools and ways of working
+
 
 Two of the most important tools you need to interact with your SAP HANA Cloud database and data lakes are the same you already use on your on-premise installation of SAP HANA: SAP HANA cockpit and SAP HANA database explorer.
 
@@ -116,10 +114,9 @@ You can learn more about each tool in the context of SAP HANA Cloud:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](About remote connections)]
+### About remote connections
+
 
 By creating connections to your SAP HANA on-premise databases, you can use data stored in them without leaving the SAP HANA Cloud environment and use SAP HANA Cloud, SAP HANA database as your single-access point to all your data. You can do so by creating remote sources and virtual objects or by replicating data to your SAP HANA Cloud, SAP HANA database instance.
 
@@ -139,14 +136,12 @@ Smart Data Integration requires the use of the Data Provisioning Agent (DP Agent
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

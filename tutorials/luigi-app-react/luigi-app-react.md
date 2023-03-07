@@ -1,20 +1,22 @@
 ---
-title: Build Luigi App with React
-description: Create a mock shopping application with React and configure it using Luigi.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>javascript]
 primary_tag: topic>user-interface
 ---
 
-## Details
-### You will learn
+# Build Luigi App with React
+<!-- description --> Create a mock shopping application with React and configure it using Luigi.
+
+## You will learn
   - How to add content to your React web shopping app
   - How to use Luigi to configure navigation
   - How to create simple micro-frontends using React
 ---
 
-[ACCORDION-BEGIN [Step 1:](Add a file with product data)]
+### Add a file with product data
+
 
 In this step, you will create a file with information about the products on sale in your shopping app.
 
@@ -129,11 +131,10 @@ In a real life implementation, this data would be provided by an external servic
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add Luigi to index.html)]
+### Add Luigi to index.html
+
 
 In this step, you will let Luigi take control of the `index.hmtl` file - the entry point for your app.
 
@@ -159,10 +160,9 @@ In this step, you will let Luigi take control of the `index.hmtl` file - the ent
     </html>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create micro-frontends template)]
+### Create micro-frontends template
+
 
 In this step, you will create another HTML file which will serve as a template for React to create the React micro-frontends.
 
@@ -184,11 +184,10 @@ In this step, you will create another HTML file which will serve as a template f
       </html>
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Configure webpack)]
+### Configure webpack
+
 
 In this step, we configure `webpack` and adjust dependencies in order to make it easier to develop and build the app.
 
@@ -212,10 +211,9 @@ In this step, we configure `webpack` and adjust dependencies in order to make it
           ]),*/
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure Luigi for "Home" node)]
+### Configure Luigi for "Home" node
+
 
 With the help of simple parameters pertaining to [navigation](https://docs.luigi-project.io/docs/navigation-parameters-reference) and [general settings](https://docs.luigi-project.io/docs/general-settings), you will create your first "Home" navigation node and make your application responsive.
 
@@ -336,10 +334,9 @@ These are the Luigi navigation parameters you will use:
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure router for "Home" view)]
+### Configure router for "Home" view
+
 
 In this step, you will make changes to the entry point `index.js` for the React app. You will create a new view called `home.js` in `react-core-mf/src/views`, configure the router for this view, and import the Luigi Client. You will also create a file called `language.js` which will be useful for the next tutorials dealing with localization.
 
@@ -386,7 +383,7 @@ In this step, you will make changes to the entry point `index.js` for the React 
     render(<App />, document.getElementById("root"));
     ```
 
-  2. Next create a new file in `react-core-mf/src/views` called `home.js` and paste the following code into it:
+  2. Next, go to the `react-core-mf/src/views` directory created in step 6 of the [previous tutorial](luigi-app-basic-setup). Create a file called `home.js` and paste the following code into it:
 
     ```JavaScript
     import React, { Component, useState } from "react";
@@ -471,10 +468,9 @@ In this step, you will make changes to the entry point `index.js` for the React 
     };
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add "Products" view to Luigi app)]
+### Add "Products" view to Luigi app
+
 
 In this step, you will add a navigation node in Luigi for the "Products" micro-frontend.
 
@@ -563,10 +559,9 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
     </BrowserRouter>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add "Product Detail" view to Luigi app)]
+### Add "Product Detail" view to Luigi app
+
 
 In this step, you will add the `ProductDetail.js` view to the app. You will be able to show details for each product via a Luigi [dynamic parameter](https://docs.luigi-project.io/docs/navigation-advanced?section=dynamically-changeable-paths), in this case named `:id`.
 
@@ -749,10 +744,9 @@ In this step, you will add the `ProductDetail.js` view to the app. You will be a
       </BrowserRouter>
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Run your core app)]
+### Run your core app
+
 
 In this step, you can check if your core app is configured correctly so far by running it locally.
 
@@ -760,8 +754,7 @@ In this step, you can check if your core app is configured correctly so far by r
 
 2. Input `npm start`. Your application should be up and running at `http://localhost:3000/`. You should be able to see the homepage and "Products" view. You can also navigate toward the `ProductDetail` view via "Products".
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

@@ -1,14 +1,16 @@
 ---
-title: Deploy Your Business Application to Cloud Foundry
-description: Deploy your CAP Node.js application to Cloud Foundry using SAP Business Application Studio.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-business-application-studio
+primary_tag: software-product>sap-business-application-studio
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
 
 ---
+
+# Deploy Your Business Application to Cloud Foundry
+<!-- description --> Deploy your CAP Node.js application to Cloud Foundry using SAP Business Application Studio.
 
 ## Prerequisites
  - You have an SAP HANA service (SAP HANA as a Service or SAP HANA Cloud) available in your space.
@@ -17,13 +19,12 @@ author_profile: https://github.com/Paolaufer
     2. Go to **Service Marketplace**.
     3. Select **SAP HANA Schemas & HDI Containers Trial**.
     4. Click **Create**.
-    !![Create instance](create-new-instance.png)
+    <!-- border -->![Create instance](create-new-instance.png)
     5. From the **Plan** dropdown menu, select `hdi-shared` as the service plan and provide a name for the new instance.
     6. Click **Create**.
 
 
-## Details
-### You will learn
+## You will learn
   - How to test your application using SAP HANA
   - How to deploy your application to Cloud Foundry
 
@@ -32,7 +33,8 @@ author_profile: https://github.com/Paolaufer
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure the dependency to SAP HANA)]
+### Configure the dependency to SAP HANA
+
 
 1. In SAP Business Application Studio, open the `package.json` file.
 
@@ -53,28 +55,27 @@ author_profile: https://github.com/Paolaufer
 
 The result should look as follows:
 
-!![SAP HANA dependencies](test-hana.png)
+<!-- border -->![SAP HANA dependencies](test-hana.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run your app with SAP HANA)]
+### Run your app with SAP HANA
+
 
 
 1. In the **Run Configurations** view, open the run configuration you previously created and make sure that the dependencies have changed and that you can see a dependency to `db(hana)`.
 
-    !![Run COnfiguration SAP HANA dependencies](run.png)
+    <!-- border -->![Run COnfiguration SAP HANA dependencies](run.png)
 
     The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) Moreover, it generates a connection in the **SQLTOOLS** view, so you can instantly check the data in your database.
 
 2. Click the **Bind** icon to the right of the `db` dependency. A list of SAP HANA service instances from your space is presented (you may need to log into Cloud Foundry).
 
-    !![Bind to an SAP HANA service](run5.png)
+    <!-- border -->![Bind to an SAP HANA service](run5.png)
 
 3.	Select the SAP HANA service instance to which you want to bind the dependency.
 
-    !![Bind options](bind-db2.png)
+    <!-- border -->![Bind options](bind-db2.png)
 
       The bind action runs and the dependency is now bound. You will get notifications regarding which tasks are run, and regarding the creation of a new SQL tools connection .
 
@@ -88,13 +89,15 @@ The result should look as follows:
 
 7.	Open the `Authors` tables, and click on the magnifier glass icon next to it.
 
-    !![Tables](authors-tables2.png)
+    <!-- border -->![Tables](authors-tables2.png)
 
 8. In the editor tab that opens, browse the table data and make sure it is correct.
 
+9. Open the **Run Configurations** view.
+
 9. Click the green arrow on the right of the configuration name to run the application.
 
-    !![Run the application](run2.png)
+    <!-- border -->![Run the application](run2.png)
 
 10. When prompted, click **Open in new tab**.
 
@@ -103,10 +106,10 @@ The result should look as follows:
 11. Stop the application by clicking **Stop** in the Debug pane.
 
 
-[VALIDATE_7]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Deploy your application to Cloud Foundry)]
+
+### Deploy your application to Cloud Foundry
+
 
 1.	From the terminal on the bookshop folder, run `cds add mta`.
 This adds an `mta.yaml` file to the root of your application.
@@ -115,19 +118,17 @@ This adds an `mta.yaml` file to the root of your application.
 
 2.	Right-click the `mta.yaml` file and choose **Build MTA Project**.
 
-    !![Build MTA](build-mta.png)
+    <!-- border -->![Build MTA](build-mta.png)
 
       A new folder for `mta_archives` is created containing the new `mtar` file.
 
 3. Right-click the `mtar` file and choose **Deploy MTA Archive**.
 
-    !![Deploy MTA](deploy-mta2.png)
+    <!-- border -->![Deploy MTA](deploy-mta2.png)
 
 Once the task is complete, your application should be available in your Cloud Foundry space.
 To access your application, go to your space in the SAP Cloud Platform cockpit and select **Applications** from the side menu.
 
-[DONE]
-[ACCORDION-END]
 
 
 

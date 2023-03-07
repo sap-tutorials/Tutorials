@@ -1,21 +1,23 @@
 ---
-title: Modify the Way an Embedded Story is Displayed
-description: Change the display mode of an embedded SAP Analytics Cloud story as well as page and language settings.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>javascript, products>sap-api-management, tutorial>license ]
 primary_tag: products>sap-analytics-cloud
 ---
 
+# Modify the Way an Embedded Story is Displayed
+<!-- description --> Change the display mode of an embedded SAP Analytics Cloud story as well as page and language settings.
+
 ## Prerequisites
  - 1.	You have created the web app from the [previous tutorial](sac-embed-story) and you have embedded an SAP Analytics Cloud story in it.
 
-## Details
-### You will learn
+## You will learn
   - How to change the mode an embedded SAP Analytics Cloud story is displayed
   - How to open a story with a specific page
   - How to change the language your story is displayed in
 
+## Intro
 In the previous tutorial [Embed an SAP Analytics Cloud Story in a Simple Web App](sac-embed-story) you have learned how to apply the SAP Analytics Cloud URL API to display a specific story in an `<iframe>`. Now you can make use of the display parameters that are added to the story URL as query parameters after the story ID. The following parameters are available:
 
   -	`mode`: indicates the mode the story will open in. By default, "edit" is enabled. The other modes are "display" and "embed".
@@ -28,7 +30,8 @@ You can find a detailed description of the parameters in the [API documentation]
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enhance the web application)]
+### Enhance the web application
+
 
 In this tutorial you extend the web app by UI elements that dynamically set the display parameters of the URL in the code. You can easily see the effect of the change in the story that is rendered in the `<iframe>`.
 
@@ -278,12 +281,11 @@ In this tutorial you extend the web app by UI elements that dynamically set the 
 
 7.  Save the file `LogResponse.html`.
 
-[DONE]
-[ACCORDION-END]
 
 ---
 
-[ACCORDION-BEGIN [Step 2: ](Start the web application)]
+### Start the web application
+
 
 Now you can start the enhanced web app. If you need support for starting the app, you can go back to step 3 of tutorial [Embed an SAP Analytics Cloud Story in a Simple Web App](sac-embed-story).
 
@@ -318,8 +320,7 @@ You can override the **Language** with the URL API. If you, for example, set the
 >It is also possible to display all data defined in the story, e.g. page names, calculated measure names, as well as model data like dimension names, dimension member names, measure names in the language defined with the URL API. However, the example story in this tutorial does not have story and model translations.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

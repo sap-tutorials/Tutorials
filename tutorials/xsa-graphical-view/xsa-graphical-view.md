@@ -1,6 +1,5 @@
 ---
-title: Create a Dimension Graphical Calculation View (XS Advanced)
-description: Create a graphical calculation view with a dimension data type.
+parser: v2
 primary_tag: products>sap-hana
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -8,19 +7,22 @@ auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
+# Create a Dimension Graphical Calculation View (XS Advanced)
+<!-- description --> Create a graphical calculation view with a dimension data type.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Import SHINE tables and data](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
 
-## Details
-### You will learn  
+## You will learn  
 - How to create a calculation view with a Dimension data type
 - How to perform the basic modelling operations, such as projections and joins
-- This tutorial is also available [as a video](https://www.youtube.com/watch?v=HEiyR7clkrQ)
+- This tutorial is also available [as a video](https://www.youtube.com/watch?v=9MsviYMw5yA)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new folder with a namespace)]
+### Create a new folder with a namespace
+
 
 Create a new file called `models/.hdinamespace` under `/db/src`.
 
@@ -42,11 +44,10 @@ Use the following code in the file
 
 If you do not see the file, go to `View-> Show hidden files`.
 
-[DONE]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a calculation view)]
+### Create a calculation view
+
 
 Right-click on the models folder and create a new calculation view
 
@@ -56,11 +57,9 @@ Call it `PRODUCTS` and choose type `DIMENSION` and click **Create**
 
 ![Call it Products](2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Join Products and Business Partners
 
-[ACCORDION-BEGIN [Step 3: ](Join Products and Business Partners)]
 
 Click the `Create join` button and drop the node at the bottom of the design window
 
@@ -90,11 +89,9 @@ Change the name of the column `Category` to `ProductCategory`
 
 ![Call it Products](7.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Join products, business partners and addresses
 
-[ACCORDION-BEGIN [Step 4: ](Join products, business partners and addresses)]
 
 Create a new join node, and drag the existing node as input
 
@@ -116,12 +113,10 @@ Go to the mapping tab to add columns to the output. Select all columns from the 
 
 Rename the current join node to `Address`
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Join products with texts)]
+### Join products with texts
+
 
 Add a new join node and use the `Address` node as input. Add `Util.Texts` as a data source.
 
@@ -138,12 +133,10 @@ Change the name of the `TEXT` column in the output to `ProductName`.
 
 Rename the join node to `ProductName`.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Join products, business partners and addresses)]
+### Join products, business partners and addresses
+
 
 Add a new join node and use `ProductName` as an input. Add `Util.Texts` again as a source.
 
@@ -159,11 +152,9 @@ Repeat the process of adding columns to the output via the mapping tab. Select a
 
 Rename the join node to `ProductDesc`.
 
-[DONE]
 
-[ACCORDION-END]
+### Finalize the projection
 
-[ACCORDION-BEGIN [Step 7: ](Finalize the projection)]
 
 Connect the node `ProductDesc` to the projection node. Use the `AutoLayout` feature to align the nodes and the `Auto Map by name` button to create the output.  Save the Calculation View.
 
@@ -177,9 +168,7 @@ The output should be similar to the following. Copy the SQL statement produced b
 
 ![Final view](sql.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 ---

@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Configure Systems in Cloud Connector
 description: This tutorial shows you how to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
 keywords: cap
@@ -10,23 +10,16 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - You have developed your CAP application using the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) to continue here.
- - [Prepare SAP S/4HANA System by Activating the Suitable OData Service](btp-app-ext-service-odata-service)
- - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
-    - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 14-17 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+ - [Prepare SAP S/4HANA System by Activating the Business Partner OData Service](btp-app-ext-service-odata-service)
 - On SAP S/4HANA side:
-    - You have a dedicated SAP S/4HANA system.
-    - You must be an administrator of the SAP S/4HANA system.
+    - You have a dedicated SAP S/4HANA system
+    - You must be an administrator of the SAP S/4HANA system
  - On Cloud Connector side:
     - You have downloaded the right Cloud Connector version for your operating system from [SAP Development Tools](https://tools.hana.ondemand.com/#cloud) and have installed Cloud Connector on your machine in accordance with the [installation instructions](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/LATEST/en-US/57ae3d62f63440f7952e57bfcef948d3.html) on the SAP Help Portal.
 
 ## Details
 ### You will learn
-- How to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
+- How to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP
 - How to add subaccount, system mapping and resource
 
 ---
@@ -52,7 +45,7 @@ The Cloud Connector serves as a link between SAP BTP applications and on-premise
 
     !![Add Subaccount](cloud-connector-1.png)
 
-    > - You can look up the required data in the SAP BTP Cockpit.
+    > - You can look up the required data in SAP BTP cockpit.
     > - For example, the field **Subaccount** requires the ID.
 
 [DONE]

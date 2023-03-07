@@ -1,23 +1,25 @@
 ---
-title: SAPUI5 User Interface
-description: SAP HANA XS Advanced, Creating a SAPUI5 user interface to consume XSJS and oData services
+parser: v2
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
+# SAPUI5 User Interface
+<!-- description --> SAP HANA XS Advanced, Creating a SAPUI5 user interface to consume XSJS and oData services
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](xsa-xsodata-create) and [SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module](xsa-html5-expand-module)
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial, you will create a SAPUI5 user interface, including the view and their controllers, to call `xsjs` and OData services. Be sure to have completed [SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module](xsa-html5-expand-module) as this tutorial adds the SAPUI5 service to the project and properly wires it into the `web` module.  With this step done we can focus on creating new SAPUI5 interfaces which leverage this work.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new HTML file)]
+### Create a new HTML file
+
 
 Return to your `web` module and create a new folder named `resources/odataView` with an HTML file called `index.html`
 
@@ -58,11 +60,9 @@ Here is the complete coding for the new page.
 </html>
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create `csrf.js`, `error.js`, and `index.js` 
 
-[ACCORDION-BEGIN [Step 2: ](Create `csrf.js`, `error.js`, and `index.js` )]
 
 There are three utility JavaScript libraries you reference in this HTML page:
 - `common/csrf.js` for the handling of CSRF tokens
@@ -257,11 +257,9 @@ sap.ui.require(["sap/ui/core/Core", "sap/ui/core/Component"], (oCore, Component)
 });
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create optional images folder
 
-[ACCORDION-BEGIN [Step 3: ](Create optional images folder)]
 
 You also reference some images in this HTML page. They aren't critical, but if you want you can create an images folder inside resources and then upload these images from our GIT repository:
 
@@ -271,11 +269,9 @@ You also reference some images in this HTML page. They aren't critical, but if y
 
 ![new images](6.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create `Component.js`
 
-[ACCORDION-BEGIN [Step 4: ](Create `Component.js`)]
 
 Next you need to create your `Component.js` file in the folder `web/resources/odataView`. Here is the coding of this file:  
 
@@ -311,12 +307,10 @@ sap.ui.define([
 
 Here you initialize the SAPUI5 component and in doing so you create an instance of the JSON configuration model. You also load your first view which you will create in the next step.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create manifest.json file)]
+### Create manifest.json file
+
 This file works as an application descriptor. This file provides metadata about the application, such as libraries and other technical details. It also sets the initial view details as well as creates the JSON and OData models.
 
 ```JSON
@@ -413,12 +407,10 @@ This file works as an application descriptor. This file provides metadata about 
 
 You can see the reference to this file in the `Component.js` file. This allows us to separate out a lot of the configuration of our application into a separate `manifest.json` file (as most modern Fiori based UI5 applications are designed).
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create `App.view.xml`)]
+### Create `App.view.xml`
+
 
 Create a folder called `view` inside `odataView`. This is where you will hold all of your views and controllers. Create the root view named `App.view.xml`.
 
@@ -443,11 +435,9 @@ Here is the complete coding of the `App.view.xml` file. It creates the shell con
 </mvc:View>
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create fragments
 
-[ACCORDION-BEGIN [Step 7: ](Create fragments)]
 
 Create a file named `MRead.fragment.xml` in the `view` folder. Here is the complete coding of this file.
 Here you build a panel with your input fields. These fields will allow you to control settings for calling your XSODATA service. You will then have a table control for your purchase order header and another for your purchase order items.  The rendering of these two sections are further separated out into two JavaScript based fragments.
@@ -495,11 +485,9 @@ And one last fragment called `MTableItem.fragment.xml` with the following conten
 
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create a controller for the main view
 
-[ACCORDION-BEGIN [Step 8: ](Create a controller for the main view)]
 
 Create a file named `App.controller.js` in a new folder called `controller`. This file contains all the event handlers for our application. The first event, called `onInit` is triggered automatically when the page starts up. Some of the initial values are set here.
 
@@ -580,11 +568,9 @@ sap.ui.define([
 });
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Create a reusable Controller
 
-[ACCORDION-BEGIN [Step 9: ](Create a reusable Controller)]
 
 Create a reusable controller for further tutorials. Create a file called `BaseController.js` in the `controller` folder with the following code:
 
@@ -658,11 +644,9 @@ sap.ui.define([
 );
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Add model helpers
 
-[ACCORDION-BEGIN [Step 10: ](Add model helpers)]
 
 We can also have reusable functions like formatters, sorters, and grouping functions.  We have prepared these model support tools for you.  You can download the `model.zip` file from `Github` here: [https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip).
 
@@ -672,11 +656,9 @@ Please import this file into the `odataView/model` folder.
 
 ![import model helpers](modelh2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Text strings
 
-[ACCORDION-BEGIN [Step 11: ](Text strings)]
 
 We want to put our text strings into a text bundle. Create a folder inside `odataView` named `i18n` and then a file named `i18n_en.properties`.
 
@@ -715,16 +697,11 @@ notFoundText=The requested resource was not found
 errorText=Sorry, a technical error occurred! Please try again later.
 ```
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Run and test the web module)]So now run the `web` module. It will need to rebuild and redeploy all the newly added artifacts.
+### Run and test the web module
+So now run the `web` module. It will need to rebuild and redeploy all the newly added artifacts.
 
 In the running tab, you should see the `index.html` from earlier. Adjust the URL and add `/odataView`.Test the Execute Service button
 
 ![results](15.png)
 
-[DONE]
-
-[ACCORDION-END]

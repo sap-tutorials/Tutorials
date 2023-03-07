@@ -1,23 +1,26 @@
 ---
-title: Define Destination for S/4HANA Cloud
-description: Create destination in SAP Cloud Platform cockpit to connect to S/4HANA cloud system.
+parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>abap-extensibility, products>sap-s-4hana, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>abap-extensibility, software-product>sap-business-technology-platform, software-product>sap-s-4hana-cloud]
 primary_tag: topic>abap-extensibility
 ---
 
+# Define Destination for S/4HANA Cloud
+<!-- description --> Create destination in SAP Cloud Platform cockpit to connect to S/4HANA cloud system.
+
 ## Prerequisites
-  - Custom Business Object must have been created. If not, then follow the tutorials [Create Custom Business Objects in S/4HANA Cloud](https://developers.sap.com/group.abap-extensibiliy-cbo-cce-ccl.html).
+
+  - Custom Business Object must have been created. If not, then follow the tutorials [Create Custom Business Objects in S/4HANA Cloud](group.abap-extensibiliy-cbo-cce-ccl).
   - You must have SAP Cloud Platform account.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create destination in SAP Cloud Platform to connect to the S/4HANA cloud system
 
 
-[ACCORDION-BEGIN [Step 1: ](Create destination)]
+### Create destination
+
 
 1.	Open SAP Cloud Platform Cockpit and go to **Connectivity > Destinations** option.
 
@@ -25,10 +28,9 @@ primary_tag: topic>abap-extensibility
 
     ![ create new destination](newdestination.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure destination)]
+### Configure destination
+
 
 1.  In **Destination Configuration**, enter the following:
 
@@ -57,18 +59,16 @@ primary_tag: topic>abap-extensibility
       ![test success](testsuccess.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-[VALIDATE_2]
-[ACCORDION-END]
+
+### Test yourself
+
+
+
 
 
 

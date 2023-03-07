@@ -1,15 +1,16 @@
 ---
-title: Introduce Caching to Your Application
-description: Introduce caching to your application using the SAP Cloud SDK.
+parser: v2
 auto_validation: true
-primary_tag: products>sap-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, topic>cloud, topic>java ]
+primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 time: 15
 ---
 
 
-## Details
-### You will learn
+# Introduce Caching to Your Application
+<!-- description --> Introduce caching to your application using the SAP Cloud SDK.
+
+## You will learn
   - What caching is and why you should care about it
   - How a cache works
   - How to cache your OData Call
@@ -18,18 +19,18 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Caches)]
+### Caches
+
 
 Sometimes service calls from your application to external servers turn out to be quite expensive in terms of performance and latency. Further evaluation of the queried data can make things even worse once critical response times are reached for the clients and customers.
 
 To improve responsiveness to the users, the data requested internally by your application can often be stored for subsequent calls. This can be achieved in such a way, that for every request the information previously stored by the application can be reused. This general behavior is called a cache. A cache stores copies of information passing through it. Besides serving improved responsiveness, the technical goal is to reduce the overall required bandwidth and processing requirements, thus eventually lessening the server load and perceived lag. This way the amount of information, that needs to be transmitted across networks, can be reduced.
 
-Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of our modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
+Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How do they work?)]
+### How do they work?
+
 A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
 The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting information.
@@ -41,12 +42,11 @@ Caching is applicable whenever:
 - Your cache will not need to store more data than what would fit in RAM. (By default, the cache is local to a single run of your application. It does not store data in files, or on outside servers.)
 
 
-If these requirements apply to your use case, then we highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
+If these requirements apply to your use case, then it is highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Caching with SAP Cloud SDK)]
+### Caching with SAP Cloud SDK
+
 
 The Cloud SDK makes it easy to cache your requests since it handles most of the complexity under the hood. This includes handling of tenant-aware requests, which is essential in a multi-tenant application. The SDK will isolate the cache on a tenant or principal level automatically, if your request requires it.
 
@@ -61,18 +61,17 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 </dependency>
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Cache your OData call)]
+### Cache your OData call
 
-Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into your application.
 
-In [the resilience tutorial](s4sdk-resilience), you introduced resilience into your application using `resilience4j`. Now, in order to make our OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
+Now that you know why caching is important and how it can help to improve performance and responsiveness, it's finally time to introduce it into your application.
+
+In [the resilience tutorial](s4sdk-resilience), you introduced resilience into your application using `resilience4j`. Now, in order to make your OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
-`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
+`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnerCommand.java`
 
 ```Java
 final ResilienceConfiguration.CacheConfiguration cacheConfig =
@@ -94,14 +93,13 @@ Secondly, you specify the parameters that are to be cached with the data. For yo
 
 Feel free to test that subsequent requests respond faster compared to the first request issued. Deploy your application locally or in the cloud and access the list of business partners a couple of times.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the cache)]
+### Test the cache
+
 
 Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if our cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
@@ -136,10 +134,9 @@ mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](More on testing)]
+### More on testing
+
 
 The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for your integration tests. But now the added cache holds a state that is shared between the tests in your test class, which has to be accounted for.
 
@@ -165,25 +162,20 @@ Executed on its own, this test will still pass as it did before. However, if `te
 
 This wraps up the tutorial. In the next step of this series you will learn how to secure your application on Cloud Foundry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
-[VALIDATE_2]
+### Test yourself
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
-[VALIDATE_3]
 
-[ACCORDION-END]
+### Test yourself
+
+
+
 
 ---

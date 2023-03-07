@@ -1,28 +1,31 @@
 ---
-title: Configure Principal Propagation from SAP BTP, Cloud Foundry environment to SAP BTP, Neo environment
-description: Set up principal propagation in SAP BTP so that you can deploy a SAP BTP, Cloud Foundry environment application that consumes data from a SAP BTP, Neo environment application.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-business-technology-platform
 tags: [  tutorial>intermediate, products>sap-business-technology-platform, products>sap-connectivity-service, tutorial>license ]
 time: 45
 ---
 
+# Configure Principal Propagation from SAP BTP, Cloud Foundry environment to SAP BTP, Neo environment
+<!-- description --> Set up principal propagation in SAP BTP so that you can deploy a SAP BTP, Cloud Foundry environment application that consumes data from a SAP BTP, Neo environment application.
+
 ## Prerequisites  
   - Java
   - Eclipse for Java EE
 
-## Details
-### You will learn  
+## You will learn  
 - How to set up principal propagation in SAP BTP
 - How to establish trust from the SAP BTP, Neo environment to the SAP BTP, Cloud Foundry environment
 
+## Intro
 In this tutorial you will set up a connection between SAP Business Technology Platform, Neo environment (Neo) and SAP Business Technology Platform, Cloud Foundry environment (CF).
 
 A simple application in CF will consume data from an Neo application, and therefore propagate the user details from one environment to the other. This is called "Principal Propagation" and requires some additional steps establishing trust between the environments, to guarantee security.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Adapt the ESPM Application)]
+### Adapt the ESPM Application
+
 1. If you're using Eclipse for the first time, you will see a Welcome Page. Close this page.
 
     ![Close welcome page](01-close-welcome.png)
@@ -59,11 +62,9 @@ A simple application in CF will consume data from an Neo application, and theref
 
     ![Adapt web.xml](01-edit-webxml.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create an approuter
 
-[ACCORDION-BEGIN [Step 2: ](Create an approuter)]
 1. Create a new directory called `approuter` somewhere on your machine.
 
 1. Create a new file called `package.json` inside this directory with the following content:
@@ -130,11 +131,9 @@ Compress-Archive -Force -Path .\* -DestinationPath approuter.zip
 This will also check that all files exist and print a warning if one or more is missing.
 Note: You need to change to the approuter directory using the `cd` command first (Linux, macOS and Windows).
 
-[DONE]
 
-[ACCORDION-END]
+### Build the ESPM Application
 
-[ACCORDION-BEGIN [Step 3: ](Build the ESPM Application)]
 1. Make a right-click on `espm` and select **Export**.
 
     ![Open export dialog](03-export-start.png)
@@ -148,11 +147,9 @@ Note: You need to change to the approuter directory using the `cd` command first
     ![finish war export](03-export-finish.png)
 
 
-[DONE]
 
-[ACCORDION-END]
+### Configuration in the SAP BTP, Neo environment
 
-[ACCORDION-BEGIN [Step 4: ](Configuration in the SAP BTP, Neo environment)]
 
 1. Open the SAP BTP, Neo environment cockpit.
 
@@ -209,11 +206,10 @@ Note: You need to change to the approuter directory using the `cd` command first
     ![open application](04-java-wait.png)
 
 
-[VALIDATE_4]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Establish trust between SAP BTP, Cloud Foundry environment and SAP BTP, Neo environment)]
+### Establish trust between SAP BTP, Cloud Foundry environment and SAP BTP, Neo environment
+
 
 1. Open the SAP BTP, Cloud Foundry environment in a new tab, navigate into your subaccount, go to **Connectivity** > **Destinations** and export the X509 certificate of the destination service by clicking the **Download Trust** button.
 
@@ -302,11 +298,9 @@ Note: You need to change to the approuter directory using the `cd` command first
 
     ![Example destination configuration](05-destination-details.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Configuration in the SAP BTP, Cloud Foundry environment
 
-[ACCORDION-BEGIN [Step 6: ](Configuration in the SAP BTP, Cloud Foundry environment)]
 
 1. Create Destination Service Instance
     - Navigate into your **dev** space.
@@ -415,8 +409,5 @@ Note: You need to change to the approuter directory using the `cd` command first
 
     ![Login into application](06-cf-loginto-app.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

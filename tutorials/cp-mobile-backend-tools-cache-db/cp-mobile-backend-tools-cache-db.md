@@ -1,6 +1,5 @@
 ---
-title: Create a Cached OData Service for Improved Offline OData
-description: Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+parser: v2
 auto_validation: true
 primary_tag: topic>mobile
 tags: [ tutorial>intermediate, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
@@ -9,6 +8,9 @@ author_name: Manuel Stampp
 author_profile: https://github.com/manuel-stampp
 ---
 
+# Create a Cached OData Service for Improved Offline OData
+<!-- description --> Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+
 ## Prerequisites
  - [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata)
  - [Create an Account on the SAP Gateway Demo System](gateway-demo-signup)
@@ -16,8 +18,7 @@ author_profile: https://github.com/manuel-stampp
  - Basic understanding of XML format and OData metadata/[Common Schema Definition Language (CSDL)](https://www.odata.org/documentation/odata-version-3-0/common-schema-definition-language-csdl/)
  - [Access SAP Mobile Services](fiori-ios-hcpms-setup)
 
-## Details
-### You will learn
+## You will learn
   - How to create custom XML annotations to generate an OData service without actual coding
   - Usage of MBT entity handlers for refresh
   - Usage of MBT OData cache databases
@@ -25,15 +26,16 @@ author_profile: https://github.com/manuel-stampp
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create or upload the data model and prepare environment)]
+### Create or upload the data model and prepare environment
+
 
 1. To create a cached service with MBT, you can either upload an existing metadata file or you can use the graphical tools in SAP Business Application Studio to start from scratch.
 
     - For this tutorial please continue editing or copy the MBT project from [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata) mentioned in prerequisites. This is not only about the metadata, but also about service instance creation and binding which are not repeated within this tutorial.
 
-2. Add the ES5's GWSAMPLE service to your subaccount's destinations.
+2. Add the ES5 Gateway Demo System's `GWSAMPLE` service to your subaccount's destinations.
 
-    - Save the following context to a new file, using a local text editor like e.g. *Notepad* or *VS Code*, select **File** &rarr; **New File**, paste the content below and save as plain text file.
+    - Save the following content to a new file, using a local text editor like e.g. *Notepad* or *VS Code*, select **File** &rarr; **New File**, paste the content below and save as plain text file.
 
     ```Plain text file
     Description=ES5 GWSAMPLE Service
@@ -45,49 +47,128 @@ author_profile: https://github.com/manuel-stampp
     sap-client=002
     ```
 
-    - In your subaccount in SAP BTP Cockpit &rarr; select Destinations. Click *Import Destination* and open the file you just created from your file system. Enter the user name and password you defined when registering for the ES5 demo system.
+    - In your subaccount in SAP BTP Cockpit &rarr; select Destinations. Click *Import Destination* and open the file you just created from your file system. Enter the user name and password you defined when registering for the ES5 Gateway Demo System.
 
     ![Subaccount import destination](img_destination_import.png)
 
     ![Subaccount destinations](img_http_destination.png)
 
-    - This tutorial assumes that you completed the tutorial [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your ES5 destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
+    - This tutorial assumes that you completed the tutorial [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your existing `ES5` destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
 
-3. Back in SAP Business Application Studio, to allow consumption of the destination in your application, create and bind a destination service instance.
+3. Back in SAP Business Application Studio, to allow consumption of the destination in your application, add a service instance of type destination to your application's `mtad.yaml`.
 
-    - Make sure you are logged in to Cloud Foundry by clicking at bottom left corner of your status bar to initiate a valid session
+    Open the file `mtad.yaml` that you created in the last Tutorial.
 
-    - Select **Terminal** &rarr; **New Terminal** and execute the following command:
+    In the application's **requires** section, after `- name: MbtEpmDemoService-xsuaa` (line 20), add another line with
 
-        ```Terminal
-        cf create-service destination lite <subaccount><space>MbtEpmDemoService-destination
-        ```
+    ```YAML
+          - name: MbtEpmDemoService-destination
+    ```
 
-    >As in the previous tutorial, replace `<subaccount><space>MbtEpmDemoService` with your actual application name in all the occurrences
+    on the same level.
 
-4. Reference the destination service instance in `manifest.yml` by adding the instance name (that you just created it with) to the **services** of your application (last line only) as below:
+    At the end of the file (resources section), paste the following:
+
+    ```YAML
+      -
+        name: MbtEpmDemoService-destination
+        type: org.cloudfoundry.managed-service   
+        parameters:
+          service: destination
+          service-plan: lite
+    ```
+
+      <details>
+      <summary> **Click to expand** - for reference please see the full `mtad.yaml` file content. </summary>
+
+    ```YAML
+    ---
+    ID: MbtEpmDemoService
+    _schema-version: "3.3"
+    version: 1.0.0
+    modules:
+      -
+        # application
+        name: MbtEpmDemoService
+        # module
+        path: srv/target/odata-service-1.0.0.war
+        type: java
+        parameters:    
+          memory: 1G
+          disk: 2G
+          instances: 1
+        properties:    
+          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
+          TARGET_RUNTIME: tomee7
+        requires:
+          - name: MbtEpmDemoService-xsuaa
+          - name: MbtEpmDemoService-destination
+        # Providing default-url can be re-used for the app router
+        provides:
+          -
+            name: mbtepmdemo-odata
+            properties:
+              url: ${default-url}
+      -
+        # approuter
+        name: MbtEpmDemoService-approuter
+        type: nodejs
+        path: srv/approuter
+        requires:
+          - name: MbtEpmDemoService-xsuaa
+          # require
+          - name: mbtepmdemo-odata
+        parameters:
+          buildpack: nodejs_buildpack
+          instances: 1
+          memory: 128M
+        properties:
+          destinations: >
+            [
+              {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
+            ]  
+    resources:
+      -
+        name: MbtEpmDemoService-xsuaa
+        type: org.cloudfoundry.managed-service   
+        parameters:
+          service: xsuaa
+          service-plan: application
+          path: srv/xs-security.json
+      -
+        name: MbtEpmDemoService-destination
+        type: org.cloudfoundry.managed-service   
+        parameters:
+          service: destination
+          service-plan: lite
+    ```
+    </details>
+
+4. To further allow deployments with `cf push` or `csdl-to-war`, also reference the destination service instance in `manifest.yml` by adding the instance name to the **services** of your application (last line only) as in the reference below:
 
     ```YAML
     applications:
       - buildpack: sap_java_buildpack
-        name: <subaccount><space>MbtEpmDemoService
+        name: MbtEpmDemoService
         path: target/odata-service-1.0.0.war
+        random-route: true
         env:
           TARGET_RUNTIME: tomee7
         services:    
-          - <subaccount><space>MbtEpmDemoService-xsuaa
-          - <subaccount><space>MbtEpmDemoService-destination
+          - MbtEpmDemoService-xsuaa
+          - MbtEpmDemoService-destination
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Annotate your entities for data load from source system)]
+### Annotate your entities for data load from source system
+
 
 1. Open your `metadata.csdl.xml` with **right-click** &rarr; **Open With** &rarr; **Code Editor**
 
-2. Add `edmx` references to the declarations in the first lines - you will need three additional namespaces to be available for the cache database: *SQL*, *Cache* and *HTTP* as in the example below:
+2. Add `edmx` references to the declarations in the first lines - you will need three additional namespaces to be available for the cache database: *SQL*, *Cache* and *HTTP*.
+
+    Paste line 6-14 from the snippet below into your `metadata.csdl.xml` file (after line 5):
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -104,10 +185,13 @@ author_profile: https://github.com/manuel-stampp
         <edmx:Reference Uri="vocabularies/com.sap.cloud.server.odata.http.v1.xml">
             <edmx:Include Namespace="com.sap.cloud.server.odata.http.v1" Alias="HTTP"/>
         </edmx:Reference>
+        <edmx:DataServices>
         [...]
     ```
 
 3. To be able to use the Download Query mentioned in the next step, it will be necessary to flatten the `BusinessPartner` entity type. Therefore move the properties of `CT_Address` into `BusinessPartner` directly.
+
+    To achieve this, replace line 29 with the snippet below:
 
     ```XML
             <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="2"/>
@@ -119,7 +203,9 @@ author_profile: https://github.com/manuel-stampp
             <!--<Property Name="Address" Type="Self.CT_Address" Nullable="false"/>-->
     ```
 
-3. Within the entity type ``BusinessPartner``, add annotations to define the cache refresh query and value mapping:
+3. Within the entity type ``BusinessPartner``, add annotations to define the cache refresh query and value mapping.
+
+    You can paste them anywhere inside the `<EntityType Name="BusinessPartner">` definition, e.g. before the closing tag `</EntityType>` (line 43 if you strictly followed without any blank lines).
 
     ```XML
     <Annotation Term="Cache.RefreshBy" String="loadAll"/>
@@ -159,7 +245,7 @@ author_profile: https://github.com/manuel-stampp
 
     >Within the annotation `HTTP.Request`, you can specify query options to your own choice. The annotation `HTTP.ResponseBody` defines the value mapping from source to the service that is being created here in JSON-style. For the use-case of this tutorial this is trivial as the referenced service was used as a template for the data model. Further options available are described [in the documentation for cache databases](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/cache-databases.html#entity-handlers-for-http).
 
-4. Add the same type of annotations to entity type ``SalesOrder``.
+4. Add the same type of annotations to entity type ``SalesOrder`` inside the tag `<EntityType Name="SalesOrder">` (e.g. before line 102 if you strictly followed without any blank lines).
 
     ```XML
     <Annotation Term="Cache.RefreshBy" String="loadAll"/>
@@ -199,7 +285,9 @@ author_profile: https://github.com/manuel-stampp
     </Annotation>
     ```
 
-5. Finally, add required annotations to the *Entity Container* at the end of the document, as in the following example
+5. Finally, add required annotations to the *Entity Container* at the end of the document.
+
+    Therefore, paste lines 4-6 from the snippet below inside tag `<EntityContainer Name="Com_sap_mbtepmdemoService">` (after line 138).
 
     ```XML
     [...]
@@ -213,12 +301,13 @@ author_profile: https://github.com/manuel-stampp
 
     >**Hint:** If no custom logic or mapping is required, the annotation `Cache.ODataBackend` can be used to [replicate/cache an OData service](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/cache-databases.html#odata-back-end-systems) without having to map all the entity handlers manually and can save a lot of effort for such cases.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Client-Filter and Client-Registration entities to customise a download query)]
+### Add Client-Filter and Client-Registration entities to customise a download query
+
 
 1. Within your Schema, add the following two additional entity types.
+
+    You can paste the following snippet e.g. right before (outside) your Entity Container definition (before line 138).
 
     ```XML
     <EntityType Name="BusinessPartnerFilter">
@@ -243,7 +332,7 @@ author_profile: https://github.com/manuel-stampp
 
     >By adding a ClientRegistration entity, users will be able to register to the service. This will e.g. enable download tracking, upload of client filters and automatically populate the user ID field in the service, e.g. available for download queries. More information can be found in [Enabling Client Registrations](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html)
 
-2. Add the new entity types to the entity container at the end of the document
+2. Add the new entity types (line 3-4 from the snippet below) to the entity container (inside tag `<EntityContainer Name="Com_sap_mbtepmdemoService">`), e.g. right after the annotations you previously added (line 159).
 
     ```XML
     <EntityContainer Name="Com_sap_mbtepmdemoService">
@@ -254,6 +343,8 @@ author_profile: https://github.com/manuel-stampp
     ```
 
 3. Add an annotation to the `BusinessPartner` entity type to make use of the added Filter entity.
+
+    Therefore paste the following snippet inside tag `<EntityType Name="BusinessPartner">`, e.g. after last `</Annotation>` closing tag (after line 75).
 
     ```XML
     <Annotation Term="SQL.DownloadQuery" xmlns="http://docs.oasis-open.org/odata/ns/edm"
@@ -266,6 +357,8 @@ author_profile: https://github.com/manuel-stampp
 
 4. Add a similar download query for `SalesOrder` to follow the referential constraint of the association.
 
+    Paste the snippet inside tag `<EntityType Name="SalesOrder">`, e.g. also after last `</Annotation>` closing tag (after line 140).
+
     ```XML
     <Annotation Term="SQL.DownloadQuery" xmlns="http://docs.oasis-open.org/odata/ns/edm" String="
                     select entity.* from SalesOrder entity where entity.BusinessPartnerID in
@@ -274,16 +367,14 @@ author_profile: https://github.com/manuel-stampp
                     "/>
     ```
 
-5. Build and deploy the service by executing build task ``csdl-to-war`` from *Terminal* menu &rarr; *Run Task*.
+5. Build and deploy the service by executing build task `csdl-to-war-nodeploy` from *Terminal* menu &rarr; *Run Task*.
 
-    - Take care of your ``manifest.yml`` file. Depending on the MBT release, there might be an issue which deletes the content of the app router's destination. If you notice it is missing, recover the destination and run ``cf push`` from terminal to deploy without building the service.
+    Click **Terminal** &rarr; **New Terminal**, enter `cf deploy` in order to deploy the full Multi-Target-Archive (MTA).
 
-        As a **workaround**, you can also remove the whole app router application part in `manifest.yml` after successful `cf push`. This will result in the approuter remaining unchanged during deployment.
-
-For reference please double check with the following documents.
+For reference please double check with the following CSDL file content.
 
   <details>
-  <summary>metadata.csdl.xml</summary>
+  <summary> **Click to expand** - metadata.csdl.xml</summary>
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -437,7 +528,6 @@ For reference please double check with the following documents.
                     <ReferentialConstraint Property="BusinessPartnerID" ReferencedProperty="BusinessPartnerID"/>
                 </NavigationProperty>
             </EntityType>
-
             <EntityType Name="BusinessPartnerFilter">
                 <Annotation Term="SQL.ClientFilter" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
                 <Key>
@@ -477,65 +567,12 @@ For reference please double check with the following documents.
 </details>
 &nbsp;
 
-  <details>
-  <summary>manifest.yml</summary>
 
-```YAML remember to replace *<subaccount><space>* with your own name
----
-applications:
-  - buildpack: sap_java_buildpack
-    name: <subaccount><space>MbtEpmDemoService
-    path: target/odata-service-1.0.0.war
-    env:    
-      SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-      TARGET_RUNTIME: tomee7
-    services:    
-      - <subaccount><space>MbtEpmDemoService-xsuaa
-      - <subaccount><space>MbtEpmDemoService-destination
-  - name: <subaccount><space>MbtEpmDemoService-approuter
-    path: approuter
-    buildpacks:    
-      - nodejs_buildpack
-    memory: 128M
-    services:    
-      - <subaccount><space>MbtEpmDemoService-xsuaa
-    env:
-      destinations: >
-        [
-          {
-            "name":"odata",
-            "url":"https://<subaccount><space>MbtEpmDemoService.cfapps.eu10.hana.ondemand.com",
-            "forwardAuthToken": true
-          }
-        ]
-```
-</details>
-&nbsp;
 
-  <details>
-  <summary>manifest.yml without app router (workaround)</summary>
 
-```YAML remember to replace *<subaccount><space>* with your own name
----
-applications:
-  - buildpack: sap_java_buildpack
-    name: <subaccount><space>MbtEpmDemoService
-    path: target/odata-service-1.0.0.war
-    env:    
-      SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-      TARGET_RUNTIME: tomee7
-    services:    
-      - <subaccount><space>MbtEpmDemoService-xsuaa
-      - <subaccount><space>MbtEpmDemoService-destination
-```
-</details>
 
-&nbsp;
+### Examine and test your OData service
 
-[VALIDATE_4]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Examine and test your OData service)]
 
 1. If not noted down previously, find the application route (URL) assigned to the app router in the space of SAP Business Technology Platform Cockpit and click it
 
@@ -553,10 +590,9 @@ applications:
 
 ---
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Reference your OData service in SAP Mobile Services)]
+### Reference your OData service in SAP Mobile Services
+
 
 1. Log in to SAP Mobile Services Cockpit, e.g. [mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com](https://mobile-service-cockpit-web-preview.cfapps.eu10.hana.ondemand.com/), depending on your landscape provider and region.
 
@@ -572,14 +608,21 @@ applications:
 
     | **Field** | **Value** |
     |----|----|
-    | ID | `com.yourcompany.MbtEpmDemo` |
+    | ID | `com.sap.MbtEpmDemo` |
     | Name | `My Businesspartners` |
     | Description | MDK-based demo for MBT registrations for My Customers  |
-    | Vendor | SAP |
-    | XSUAA Service | `<subaccount><space>MbtEpmDemoService-xsuaa` |
+    | Vendor | `SAP` |
     | Domain of Application Route | *keep default* |
 
     ![SAP Mobile Services Cockpit New App](img_sapms_new_app.png)
+
+    Press **Next**
+
+4. Select the XSUAA Service instance that was created for the OData service: `MbtEpmDemoService-xsuaa` from the dropdown.
+
+    ![XSUAA Service selection](img_sapms_new_app_2.png)
+
+    Press **Next**
 
 4. Select type of application as **Mobile Development Kit Application** and click **Finish** to proceed with default features.
 
@@ -599,5 +642,4 @@ applications:
 
 **Congratulations!** You have successfully created an OData Cache-Database with MBT, linked it to SAP Mobile Services and are now ready for client development.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

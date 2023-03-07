@@ -1,11 +1,13 @@
 ---
-title: Get Started to Collaborate in SAP Business Application Studio
-description: Set up a development space and a project in SAP Business Application Studio and connect it to your SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Get Started to Collaborate in SAP Business Application Studio
+<!-- description --> Set up a development space and a project in SAP Business Application Studio and connect it to your SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
  - [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the free SAP HANA Cloud trial.
@@ -14,14 +16,14 @@ primary_tag: products>sap-hana-cloud
  - Create a free account on <https://github.com/> to use the required sample data.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create an SAP HANA Native Application Dev Space
   - How to create an SAP HANA database project
   - How to view the run-time user of your database connection
 
   **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
+## Intro
 > To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
 
   1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Get started to collaborate in SAP Business Application Studio**
@@ -41,7 +43,8 @@ primary_tag: products>sap-hana-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to changing data structures)]
+### Introduction to changing data structures
+
 
 In SAP HANA Cloud, Data Definition Language (DDL) can be used to create a table or a view in a schema. When you make changes to data structures in this case, you need to make sure that these changes are accepted by the database. Alternately, you can also use Frameworks (e.g., NetWeaver) to generate DDL and take responsibility for the changes made to data structures.
 
@@ -51,10 +54,9 @@ In this tutorial group, you will generate design-time artifacts (or objects) to 
 
 ![Intro Table 2](ss_02_intro_table_2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Check the status of your instance)]
+### Check the status of your instance
+
 
 Before you can start with your development space, you need to make sure that your SAP HANA Cloud, SAP HANA database is running.
 
@@ -73,11 +75,10 @@ Before you can start with your development space, you need to make sure that you
 ![Runnnig Status](ss_04_runnnig_status.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create an SAP HANA Native Application Dev Space )]
+### Create an SAP HANA Native Application Dev Space 
+
 
 1.	Open SAP Business Application Studio. In a trial landscape you can get there via the Trial Home page in SAP BTP cockpit.
     > If you are using a non-trial account, you need to first select your Subaccount from the SAP BTP cockpit. Then, click on Service Marketplace from the left-side Menu bar and search for SAP Business Application Studio. Finally, click on the three dots (Actions) icon for SAP Business Application Studio option and choose Go to Application.
@@ -107,10 +108,9 @@ Before you can start with your development space, you need to make sure that you
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create an SAP HANA Database project )]
+### Create an SAP HANA Database project 
+
 
 1.	After you have opened your dev space in SAP Business Application Studio, select **Start from template** from the welcome screen to create a new project.
 2.	Choose **SAP HANA Database Project template** and click on **Start**.
@@ -131,10 +131,9 @@ Before you can start with your development space, you need to make sure that you
 9.	Click on **Finish** and your project will be created. This process usually takes a moment to complete.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Explore database connection options for your project)]
+### Explore database connection options for your project
+
 
 On the left panel, you can now see your workspace where you have your files, and the SAP HANA Project panel where you can deploy your project and open the HDI container in the SAP HANA Database Explorer. Whenever you add a new database object that can be deployed to your HDI container, it will appear in this panel and you can deploy it. In this area you can also check the database connections of your project.
 Moving your cursor to the name of an object, folder, or connection in this panel, you will see different icons:
@@ -146,17 +145,16 @@ Moving your cursor to the name of an object, folder, or connection in this panel
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View the run-time user (optional))]
+### View the run-time user (optional)
+
 
 When you are opening the HDI container in the SAP HANA Database Explorer, you will automatically be connected as the run-time user and this connection will be added to your list of database connections. To check what user you are currently connected with, you can use the following statement in a SQL console:
 
 
 ```SQL
-SELECT CURRENT_USER "current user" FROM DUMMY;
-	```
+  SELECT CURRENT_USER "current user" FROM DUMMY
+```
 
 
 This shows the statement being used in a connection opened from SAP BTP cockpit or SAP HANA Cloud Central:
@@ -170,13 +168,11 @@ Opening the HDI container from SAP Business Application Studio will show the run
 > You have successfully completed the first tutorial. In the next tutorial, you will create a table in your SAP HANA Database Project and insert sample data into it.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 ---

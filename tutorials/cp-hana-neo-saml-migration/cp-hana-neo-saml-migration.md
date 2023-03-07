@@ -1,11 +1,13 @@
 ---
-title: Reconfigure Trust Relationships on SAP HANA XS Systems
-description: Reconfigure a SAML trust relationship on your SAP HANA XS database system from the file system to the in-memory store.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-hana-service-for-sap-btp
 ---
+
+# Reconfigure Trust Relationships on SAP HANA XS Systems
+<!-- description --> Reconfigure a SAML trust relationship on your SAP HANA XS database system from the file system to the in-memory store.
 
 ## Prerequisites
  - You have installed an **SAP HANA XS system in the SAP BTP, Neo environment** that you'd like to convert to an **SAP HANA MDC system**. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
@@ -13,11 +15,11 @@ primary_tag: products>sap-hana-service-for-sap-btp
  - You have access to your identity provider and the required roles to configure SAML trust relationships.
  - You have installed openSSL or another certification tool.   
 
-## Details
-### You will learn
+## You will learn
   - How to register the service provider and the identity provider certificates in the SAP HANA in-memory store
   - How to reconfigure the trust relationship between your identity provider and your SAP HANA database system
 
+## Intro
 > This tutorial assumes that you want to convert your SAP HANA XS system to an MDC system and, therefore, want to reconfigure your SAML setup to prepare for the conversion. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
 
 >It also assumes that you have already configured a trust relationship between your SAP HANA database system and your identity provider. If you do not use SAML-based authentication, you can ignore this tutorial.
@@ -50,7 +52,8 @@ But before we start, we have to make sure that your database user has been assig
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check or assign required roles)]
+### Check or assign required roles
+
 
 1. Open the **SAP HANA Web-based Development Workbench** on the SAP HANA XS system.
 
@@ -72,10 +75,9 @@ But before we start, we have to make sure that your database user has been assig
 
    For more information on how to create database user and assign roles on SAP HANA XS database systems, see [Create a Database Administration User for SAP HANA XS Databases](https://help.sap.com/viewer/d4790b2de2f4429db6f3dff54e4d7b3a/Cloud/en-US/1658a0868ded48c49a04508f89a8cbfa.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Re-create service provider certificates)]
+### Re-create service provider certificates
+
 
 When you initially established trust, the service provider certificates had been automatically created and stored in the file system. You now have to re-create these certificates to store them in the in-memory store. The SAP HANA database system uses the service provider certificates to sign SAML documents that are exchanged with the identity provider.
 
@@ -94,10 +96,9 @@ You have now generated your service provider certificate consisting of the follo
 
 - *certificate.crt* - the public key
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create certificate collection)]
+### Create certificate collection
+
 
 Create the certificate collection in which you will store the service provider and the identity provider certificates.
 
@@ -124,10 +125,10 @@ Create the certificate collection in which you will store the service provider a
 
 You have now created a PSE store that we'll use to store the "own" certificate and the identity provider certificate.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Upload service provider certificates)]
+
+### Upload service provider certificates
+
 
 1. Prepare the upload of the service provider certificates by copying the values from the files you previously created into a new file:
 
@@ -197,10 +198,9 @@ You have now created a PSE store that we'll use to store the "own" certificate a
 
     You have now uploaded the own certificate into your certificate collection.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Download SAML identity provider certificate)]
+### Download SAML identity provider certificate
+
 
 In this example, we'll use SAP Identity Authentication service as an identity provider, but you complete this step with your own identity provider.
 
@@ -222,10 +222,9 @@ To download the metadata from the IDP provider, we'll do the following:
     -----END CERTIFICATE-----
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Upload SAML identity provider certificate)]
+### Upload SAML identity provider certificate
+
 
   1. In the SAP HANA cockpit, open the **Certificate Store** application.
 
@@ -253,10 +252,9 @@ To download the metadata from the IDP provider, we'll do the following:
 
     You have now added the identity provider certificate to the certificate collection as **Trust** validation.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Make your identity provider trust your SAP HANA system)]
+### Make your identity provider trust your SAP HANA system
+
 To make your identity provider trust your SAP HANA database system again as the service provider, we'll export the certificate from the SAP HANA system and register it as the service provider in the identity provider.
 
 >In this example, we'll use SAP Identity Authentication service as an identity provider, but you complete this step with your own identity provider.
@@ -289,6 +287,4 @@ To make your identity provider trust your SAP HANA database system again as the 
 
 Your certificates are now stored in the in-memory store and you have reconfigured the SAML trust relationship between the SAP HANA XS database system and the identity provider.
 
-[DONE]
-[ACCORDION-END]
 ---

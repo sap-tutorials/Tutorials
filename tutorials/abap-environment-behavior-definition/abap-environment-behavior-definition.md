@@ -1,32 +1,35 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Behavior and Service in SAP BTP, ABAP Environment
-description: Create behavior and services in SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Behavior and Service in SAP BTP, ABAP Environment
+<!-- description --> Create behavior and services in SAP BTP, ABAP environment.
+
 ## Prerequisites  
   - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding).
   - ADT version 2.96 or higher
 
-## Details
-### You will learn
+## You will learn
   - How to create a behavior definition
   - How to create a behavior implementation
   - How to create a service definition
   - How to create a service binding
   - How to test a service
 
+## Intro
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create behavior definition)]
+### Create behavior definition
+
 1. Right-click on **`Z_I_ROOM_XXX`** (data definition) and select **New Behavior Definition**.
 
     ![Create behavior definition](behavior.png)
@@ -58,16 +61,15 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
         delete;
 
         field (mandatory) id;
-        field (read only) lastchangedbyuser, lastchangeddatetime;
+        field (readonly) lastchangedbyuser, lastchangeddatetime;
       }
     ```
    Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create behavior implementation)]
+### Create behavior implementation
+
 1. In your behavior definition `Z_I_ROOM_XXX` set the cursor before the implementation class `Z_I_ROOM_BEHAVE_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `Z_I_ROOM_BEHAVE_XXX`** to create your implementation class.
 
     ![Create behavior implementation](class.png)
@@ -237,10 +239,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
  Save and activate.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create service definition)]
+### Create service definition
+
   1. Right-click on data definition **`Z_I_ROOM_XXX`** and select **New Service Definition**.
 
       ![Create service definition](service.png)
@@ -267,10 +268,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service binding)]
+### Create service binding
+
   1. Right-click on **`Z_I_ROOM_SRV_XXX`** and select **New Service Binding**.
 
       ![Create service binding](binding.png)
@@ -293,10 +293,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create service binding](binding4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test service with browser)]
+### Test service with browser
+
   1. Click on **Service URL** to open your service.
 
       ![Test service with browser](browser.png)
@@ -309,10 +308,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Test service with browser](browser3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open preview for Fiori Elements App)]
+### Open preview for Fiori Elements App
+
   1. Right-click on **`Room`** (Entity Set and Association) and select **Open Fiori Elements App Preview**.
 
       ![Open Preview for Fiori Elements App](fiori.png)
@@ -325,10 +323,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Open Preview for Fiori Elements App](fiori3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

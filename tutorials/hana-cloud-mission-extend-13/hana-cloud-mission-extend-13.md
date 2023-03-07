@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Improve Query Performance in a Multi-Source Data Landscape
-description: Improve the performance of complex queries in a hybrid scenario using replicas and static result cache in SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, software-product-function>sap-hana-cloud\,-data-lake ]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud\,-data-lake ]
+primary_tag: software-product>sap-hana-cloud
 ---
+
+# Improve Query Performance in a Multi-Source Data Landscape
+<!-- description --> Improve the performance of complex queries in a hybrid scenario using replicas and static result cache in SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - A **running** SAP HANA Cloud, SAP HANA database instance in trial or production.
@@ -16,13 +18,13 @@ primary_tag: products>sap-hana-cloud
 - Completion of the previous tutorials in this group is recommended.
 
 
-## Details
-### You will learn
+## You will learn
 - What options are available to you to improve the performance of queries in a complex set up.
 - How to create snapshot replicas
 - How to use static result cache
 
 
+## Intro
 In this tutorial, you will learn how to improve the performance of complex queries in the multi-source data-landscape that we have set up in our SAP HANA Cloud instance.
 First, for a quick reminder of what was covered in this group so far, you can have a look at the hybrid landscape we have created:
 
@@ -42,7 +44,8 @@ Another element in our landscape is a connection to an SAP HANA on-premise datab
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Query data from multiple sources)]
+### Query data from multiple sources
+
 
 To query the data from various sources in a landscape, you can simply include the virtual objects in your queries. Keep in mind that for queries containing objects found in Google BigQuery, you need to put object names in `"quotes"` to handle the lower-case characters that are set as default in Google BigQuery.
 
@@ -59,10 +62,9 @@ Once the view is created, you can easily access the data from both source tables
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get to know query performance improvement methods)]
+### Get to know query performance improvement methods
+
 
 
 Sometimes when multiple systems are involved, multi-layered federations are necessary:
@@ -99,11 +101,10 @@ If you want to virtualise data from SAP HANA Cloud into your SAP HANA on-premise
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a snapshot replica)]
+### Create a snapshot replica
+
 
 
 Let's say in our example, we want to query data federated from another SAP HANA Cloud data lake and from a Google BigQuery database. As we are using SAP HANA Cloud, we have the option of creating hidden replicas ("fabric virtual tables") in our SAP HANA Cloud instance and query those instead of virtual tables.
@@ -135,10 +136,9 @@ If you now include this snapshot replica in complex hybrid queries, the performa
  
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use static result cache)]
+### Use static result cache
+
 
 Let's say, we now want to virtualise data from SAP HANA Cloud to SAP HANA on-premise and perform a query in our SAP HANA on-premise database. Since replicas are not available in SAP HANA on-premise, we will go for the option of static result cache.
 
@@ -192,14 +192,12 @@ You have completed the last tutorial of this group! Now you know about the diffe
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,29 +1,35 @@
 ---
-title: Create a Flow Graph to Replicate Data
-description: Create a flow graph using SAP HANA service smart data integration for SAP BTP to replicate data into SAP HANA service for SAP BTP.
+parser: v2
 auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, topic>big-data, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
+
+# Create a Flow Graph to Replicate Data
+
+<!-- description --> Create a flow graph using SAP HANA service smart data integration for SAP BTP to replicate data into SAP HANA service for SAP BTP.
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have configured SAP HANA service smart data integration for SAP BTP [as explained in this tutorial](haas-dm-connect-sdi).
- - You have created a remote source and configured the access [as explained in this tutorial](haas-dm-access-cross-container-schema).
+
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have configured SAP HANA service smart data integration for SAP BTP [as explained in this tutorial](haas-dm-connect-sdi).
+- You have created a remote source and configured the access [as explained in this tutorial](haas-dm-access-cross-container-schema).
+
+## You will learn
+
+- How to Create a Virtual Table in SAP Web IDE
+- How to create a flowgraph to load data from the virtual table
+
+## Intro
 
 >**This tutorial cannot be completed with a trial account.**
-
-## Details
-### You will learn
-  - How to Create a Virtual Table in SAP Web IDE
-  - How to create a flowgraph to load data from the virtual table
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Virtual Table)]
+### Create a Virtual Table
+
 
 Create a new virtual table in `db/data`.
 
@@ -97,12 +103,11 @@ REMOTE PROPERTY 'dataprovisioning_parameters'='<?xml version="1.0"  encoding="UT
 </Parameters>';
 >```
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Create a Flowgraph artifact)]
+### Create a Flowgraph artifact
+
 
 Create a new `Flowgraph` in `db/data`
 
@@ -112,10 +117,9 @@ Call it `salary_flow`
 
 ![Create Flowgraph](2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add the data source)]
+### Add the data source
+
 
 Click on the **+** button to add a node
 
@@ -143,11 +147,10 @@ Mark all the control fields and delete them
 
 Click **Apply**
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add a Data Target)]
+### Add a Data Target
+
 
 Use the **+** sign to create a data target and drag the arrow from  the source to the target
 
@@ -165,10 +168,9 @@ The target mapping should be populated automatically using the source. Use `TGT_
 
 ![Create Flowgraph](22.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Execute the Flowgraph)]
+### Execute the Flowgraph
+
 
 Click on **Execute** in the Flowgraph.
 
@@ -182,10 +184,9 @@ You will see a success message in the console
 
 ![Create Flowgraph](25.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check data)]
+### Check data
+
 
 Right-click on the database module and choose **Open HDI Container**
 
@@ -197,8 +198,7 @@ In the HDI container, navigate to **Tables** and you will find the table created
 
 Use ![Create Flowgraph](edit.png) **Edit SQL statement** to modify the select statement for a `SELECT COUNT(*)`. Count the total records to complete the validation below
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

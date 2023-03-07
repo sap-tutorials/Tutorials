@@ -1,20 +1,22 @@
 ---
+parser: v2
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
 auto_validation: true
-title: Extend the Built-In OData Features with Custom Code
-description: Learn how to customize your OData service with event handlers.
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Details
-### You will learn
+# Extend the Built-In OData Features with Custom Code
+<!-- description --> Learn how to customize your OData service with event handlers.
+
+## You will learn
 - What custom event handlers are
 - Where and how to define a simple event handler
 - How to use a custom event handler to define an OData function import
 
+## Intro
 This tutorial assumes you've completed the tutorial [Extend your Simple Data Model with a Second Entity](odata-06-extend-odata-service). If you have done, you'll have an OData service `Northbreeze` with two related entities. All OData operations - create, read, update, delete and query - are supported out of the box.
 
 In this tutorial, you'll learn how to add custom behaviour, in the form of handlers, to make your OData service do what you want it to do, beyond the standard operation handling.
@@ -23,7 +25,7 @@ Before you start, open up the workspace in the SAP Business Application Studio (
 
 ---
 
-[ACCORDION-BEGIN [Step N: ](Review the product data)]
+### Review the product data
 
 Let's take the `Products` entity as the target for our explorations of custom functions. Remind yourself of what the data looks like by starting up the service with `cds watch` in a terminal, just like you've done in the previous tutorial.
 
@@ -51,10 +53,7 @@ Open up the service in a new browser tab or window, and navigate to the `Product
 
 Remember that at this stage your fully functioning OData service is a result of purely declarative definitions. Now it's time to add some simple business logic.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step N: ](Create a service implementation)]
+### Create a service implementation
 
 Business logic in OData services belongs in a [service implementation](https://cap.cloud.sap/docs/node.js/services#srv-impls). The simplest way to do this is to create a `service.js` file in the same directory as your `service.cds` file, i.e. in the `srv/` directory. The framework will automatically recognize and use this "sibling" file.
 
@@ -119,14 +118,7 @@ Here's an example of what you should see; this data was retrieved using the syst
 }
 ```
 
-[DONE]
-[ACCORDION-END]
-
-
-
-
-
-[ACCORDION-BEGIN [Step N: ](Modify the custom code)]
+### Modify the custom code
 
 That's great, but let's look now at a simple example of where we might want to change the shape of the data, or, as the documentation describes it, to make "asynchronous modifications".
 
@@ -157,10 +149,7 @@ Once we have the data, in `items`, we return a filtered subset that only include
 
 Once you have this new implementation saved, and your service has restarted, check the `Products` entity set once more, and you should see only a small number of entries; if you're still using the data provided in the tutorials prior to this, there should be 10.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step N: ](Define a function import)]
+### Define a function import
 
 That's great, but there's more that can be done in such a service implementation file.
 
@@ -246,13 +235,7 @@ The function import definition here in the metadata document reflects what we in
 
 Great. Now we can get to writing the implementation of this function import.
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-
-
-
-[ACCORDION-BEGIN [Step N: ](Implement the function import)]
+### Implement the function import
 
 The implementation of this function import might as well go in the same `srv/service.js` file as before, to keep things simple. Here's what the entire contents of the file should look like with all the additions:
 
@@ -328,7 +311,5 @@ That is, there are a total of 3119 stock units across all products.
 
 Well done! You've now successfully implemented an OData V4 unbound function, and hopefully feel comfortable enough to implement your own custom business logic for your CAP-powered OData services.
 
-[DONE]
-[ACCORDION-END]
 
 ---

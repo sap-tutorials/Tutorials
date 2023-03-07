@@ -1,11 +1,15 @@
 ---
-title: Get Started with an SAP Fiori Project in SAP Continuous Integration and Delivery
-description: Configure and run a basic CI/CD pipeline for your SAP Fiori project.
+parser: v2
+author_name: Sarah Lendle
+author_profile: https://github.com/SarahLendle
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, products>sap-fiori]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-fiori]
+primary_tag: software-product>sap-business-technology-platform
 ---
+
+# Get Started with an SAP Fiori Project in SAP Continuous Integration and Delivery
+<!-- description --> Configure and run a basic CI/CD pipeline for your SAP Fiori project.
 
 ## Prerequisites
  - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
@@ -13,16 +17,14 @@ primary_tag: products>sap-business-technology-platform
  - In your public GitHub repository, you have an SAP Fiori project in the Cloud Foundry environment. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
     **Note:** You can also use SAP Continuous Integration and Delivery with private GitHub repositories and other source code management systems. For more information, see [SAP Continuous Integration and Delivery](https://help.sap.com/viewer/product/CONTINUOUS_DELIVERY/Cloud/en-US).
 
-## Details
-### You will learn
+## You will learn
   - How to set up SAP Continuous Integration and Delivery
   - How to create and run a basic job for an SAP Fiori project in the continuous integration and delivery service
   - How to automate the builds of your CI/CD job trough a webhook in GitHub
-
-### What is this tutorial about?
-
+## What is this tutorial about?
 This tutorial helps you set up and use SAP Continuous Integration and Delivery for an SAP Fiori project in the Cloud Foundry environment.
 
+## Intro
 The tutorial comprises four main stages:
 
 ![Main stages of the tutorial](tutorial-steps.png)
@@ -44,7 +46,8 @@ The tutorial comprises four main stages:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up SAP Continuous Integration and Delivery)]
+### Set up SAP Continuous Integration and Delivery
+
 
 Enable SAP Continuous Integration and Delivery, assign yourself the administrator role for it, and access the service.
 
@@ -83,11 +86,10 @@ Enable SAP Continuous Integration and Delivery, assign yourself the administrato
 
 14. Choose ![Three dots icon in the cockpit](icon-dots.png) *(Actions)* **&rarr;** **Go to Application**.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add your repository to SAP Continuous Integration and Delivery)]
+### Add your repository to SAP Continuous Integration and Delivery
+
 
 Connect SAP Continuous Integration and Delivery with the repository in which your sources reside.
 
@@ -111,11 +113,10 @@ Connect SAP Continuous Integration and Delivery with the repository in which you
 
 ![Add repository pop-up in SAP Continuous Integration and Delivery](add-repository.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add a webhook in GitHub)]
+### Add a webhook in GitHub
+
 
 Configure a webhook between your GitHub repository and SAP Continuous Integration and Delivery to automate the builds of your job.
 
@@ -139,15 +140,15 @@ The following graphic illustrates this flow:
 
 6. Enter the **Payload URL**, **Content type**, and **Secret** from the **Webhook Data** pop-up in SAP Continuous Integration and Delivery. For all other settings, leave the default values.
 
-    !![Webhook creation in GitHub](webhook-github.png)
+    <!-- border -->![Webhook creation in GitHub](webhook-github.png)
 
 7. Choose **Add webhook**.
 
-[VALIDATE_3]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create and trigger a basic CI/CD job)]
+
+### Create and trigger a basic CI/CD job
+
 
 Configure a basic job for SAP Fiori projects in the Cloud Foundry environment.
 
@@ -183,10 +184,8 @@ Configure a basic job for SAP Fiori projects in the Cloud Foundry environment.
 
     As a result, a build of the connected job is triggered and a new build tile appears in the **Builds** section of your job. If you choose it, the **Build Stages** view opens and you can watch the individual stages of your build run through.
 
-    !![Build stages in SAP Continuous Integration and Delivery](build-stages.png)
+    <!-- border -->![Build stages in SAP Continuous Integration and Delivery](build-stages.png)
 
-[DONE]
-[ACCORDION-END]
 
 ---
 
