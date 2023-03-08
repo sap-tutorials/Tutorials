@@ -54,7 +54,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
 
       ![logon](logon4.png)
 
-      >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+    >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
   5. Click **Next >**.
 
@@ -305,7 +305,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
    
      ![projection](bdef5.png)
 
-     >Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
+    >Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
 
   6. Check your behavior definition:
 
@@ -606,7 +606,7 @@ You have 2 options to open the documentation inside ADT.
 >     You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
 >       ![service](docuhint.png)
 
->    You can also switch to different layers inside the Element Info.
+>     You can also switch to different layers inside the Element Info.
 >       ![service](docugif.gif)
 
 > **Option 2**:
@@ -1130,4 +1130,4 @@ Please replace **`X`**, **`#`** and **`XXX`** with your ID.
 
 
 ### Test yourself
- 
+  
