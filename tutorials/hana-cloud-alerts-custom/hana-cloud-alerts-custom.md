@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -593,6 +593,8 @@ In this step, the command will be scheduled to run once a week.
 2. Provided commands such as `StopHanaCloudInstance` and `StartHanaCloudIntance` can also be scheduled perhaps to shut down and restart a development SAP HANA Cloud instance on weekends.  The `StopHanaCloudInstance` command is shown below.
 
     ![stop HANA Cloud command](automation-pilot.png)
+
+### Knowledge check
 
 Congratulations! You have now used the SAP Automation Pilot to schedule a query against an SAP HANA Cloud database and to send a notification that reflects the result of the query.
 
