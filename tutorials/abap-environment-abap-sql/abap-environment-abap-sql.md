@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -23,7 +23,11 @@ author_profile: https://github.com/niloofar-flothkoetter
   - Open an ODBC connection in Microsoft Excel and access data
 
 ## Intro
->Always replace `####` with your initials or group number.
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
+Always replace `####` with your initials or group number.
+
+
 ---
 You will learn how you can access CDS view entities in an ABAP system using SQL via ODBC. Open Database Connectivity (ODBC) is a standard API for accessing databases.
 

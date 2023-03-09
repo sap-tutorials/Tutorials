@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license, software-product-function>s-4hana-cloud-abap-environment ]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -24,7 +24,10 @@ author_profile: https://github.com/niloofar-flothkoetter
   - How to consume an Event.
 
 ## Intro
->Always replace `####` with your initials or group number.
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
+Always replace `####` with your initials or group number.
+
 ---
 
 ### Overview
@@ -440,9 +443,6 @@ In this section you will create a communication scenario for the previously gene
 
 
 ### Test yourself
-
-
-
 
 
 ---
