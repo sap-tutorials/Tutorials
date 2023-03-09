@@ -1,0 +1,15 @@
+
+[VALIDATE_4]
+###Rule
+multiple-choice
+
+###Question
+Where can you integrate UI integration cards?
+
+###Match
+[x] Workpages
+[ ] Applications screen
+[x] My Workspace
+[ ] In a knowledge base article
+
+[VALIDATE_4]
