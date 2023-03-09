@@ -1,0 +1,13 @@
+[VALIDATE_26]
+###Rule
+single-choice
+
+###Question
+How is the S/4 system connected to the SAP Event Mesh service?
+
+###Match
+[ ] With a communication system
+[x] With a communication arrangement
+[ ] The connection is created automatically
+
+[VALIDATE_26]

@@ -1,0 +1,13 @@
+[VALIDATE_11]
+###Rule
+single-choice
+
+###Question
+Where you define the Type of your event?
+
+###Match
+[X] In an Event Binding
+[ ] In a Service Definition
+[ ] In a Communication Arrangement
+
+[VALIDATE_11]
