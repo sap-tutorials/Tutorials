@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
   - The two locations where SAP HANA client installs can be downloaded from
 
 ## Intro
-This tutorial will demonstrate how to install the SAP HANA client.  The next tutorial in this mission will demonstrate how to use HDBSQL, which is a command line utility included with the client's installation, to connect to SAP HANA.  The tutorials  cover Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, multiple sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  Note that on Microsoft Windows, the shell used is the Command Prompt.
+This tutorial will demonstrate how to install the SAP HANA client.  The next tutorial in this mission will demonstrate how to use HDBSQL, which is a command line utility included with the client's installation, to connect to SAP HANA.  The tutorials  cover Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, multiple sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  On Microsoft Windows, in this tutorial, the shell used is the Command Prompt.
 
 ---
 
@@ -32,7 +32,7 @@ For a complete list, see [SAP HANA Client Interface Programming Reference](https
 
 For a list of newly added features, see [New and Changed Features in the SAP HANA Client](https://help.sap.com/viewer/79ae9d3916b84356a89744c65793b924/latest/en-US) or the [release notes](https://launchpad.support.sap.com/#/notes/2941449).
 
-The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.13.x` client can connect to SAP HANA Cloud, SAP HANA Service, or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
+The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.15.x` client can connect to SAP HANA Cloud, SAP HANA Service, or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
 
 
 ### Install from SAP Development Tools
@@ -86,9 +86,15 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     >```Shell (Linux or Mac)
     pico ~/.bash_profile
     >```
-    Replace `pico` with your preferred text editor.
 
-    >Add the following line to it after changing it to match the location of where the SAP HANA client was installed.
+    >This tutorial uses notepad and `pico` as default text editors, but any text editor will do.
+    >`Pico` can be installed on SUSE Linux with
+
+    >```Shell (Linux SUSE)
+    sudo zypper install pico
+    >```
+
+    >Add the following line to the .bash_profile after adjusting the path to match the location of where the SAP HANA client was installed.
 
     >```Shell (Linux or Mac)
     export PATH=$PATH:/home/dan/sap/hdbclient
@@ -124,9 +130,6 @@ The SAP Cryptographic Library is only required when client-side data encryption 
 
   - [Download and Install SAP Common Crypto Library in the SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/8e208b44c0784f028b948958ef1d05e7/latest/en-US/463d3ceeb7404eca8762dfe74e9cff62.html)  
 
-  - [Connect to SAP HANA with a Secure Connection from Python](hana-python-secure-connection)
-
-
 
 ### Alternate Install Option, SAP Software Downloads
 
@@ -160,11 +163,13 @@ Another download location is the [Software Downloads](https://support.sap.com/en
     ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT*.SAR
     ```
 
+3.  Install the software as shown in the previous step.
+
     >For further information on SAPCAR or if you are having troubles using it, see [SAP HANA, SAPCAR, and macOS](https://blogs.sap.com/2020/03/18/sap-hana-sapcar-and-macos/).  
 
+### Knowledge check
+
 Congratulations! You now have the SAP HANA client installed.
-
-
 
 
 ---

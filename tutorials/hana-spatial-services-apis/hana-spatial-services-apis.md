@@ -1,18 +1,20 @@
 ---
 parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, tutorial>license, programming-tool>node-js, programming-tool>python]
-primary_tag: products>sap-business-technology-platform
+tags: [software-product-function>sap-hana-spatial, products>sap-business-technology-platform, tutorial>beginner, topic>cloud, tutorial>license, programming-tool>node-js, programming-tool>python]
+primary_tag: software-product-function>sap-hana-spatial
 ---
 
 # Access SAP HANA Spatial Service APIs
 <!-- description --> Explore select functionality available in SAP HANA Spatial Services  including geocoding, mapping and routing.
 
 ## Prerequisites
- - Access to an SAP Business Technology Platform account with the ability to add the SAP HANA Spatial Service
- - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST API
- - A development tool such as Visual Studio Code or the SAP Business Application Studio to create Python and Node.js applications
+  - Access to an SAP Business Technology Platform account with the ability to add the SAP HANA Spatial Service
+  - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST API
+  - A development tool such as Visual Studio Code or the SAP Business Application Studio to create Python and Node.js applications
 
 ## You will learn
   - How to subscribe to the SAP HANA Spatial Service in the SAP Business Technology Platform
@@ -20,10 +22,11 @@ primary_tag: products>sap-business-technology-platform
   - How to call these services from a sample program
 
 ## Intro
-[SAP HANA Spatial Services](https://help.sap.com/docs/SAP_HANA_SPATIAL_SERVICES) provide a unified interface to spatial services that support various back end service providers such as Here and `Esri`.  These services can be accessed through a REST API and provide support for geocoding, routing, and mapping.  Details of these REST APIs can also be found in the [SAP API Business Hub](https://api.sap.com/search?searchterm=sap%20hana%20spatial%20services&tab=All&refinedBy=true&top=12).
+[SAP HANA Spatial Services](https://help.sap.com/docs/SAP_HANA_SPATIAL_SERVICES) provide a unified interface to spatial services that support various back-end service providers such as Here and `Esri`.  These services can be accessed through a REST API and provide support for geocoding, routing, and mapping.  Details of these REST APIs can also be found in the [SAP API Business Hub](https://api.sap.com/search?searchterm=sap%20hana%20spatial%20services&tab=All&refinedBy=true&top=12).
 
 ![HSS in the SAP API Business Hub](API-business-hub2.png)
 
+> The video [Access HANA Spatial Services APIs Using Visual Studio Code](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=1_1gh36cjc) provides a demonstration of accessing the three APIs.
 
 ---
 
@@ -193,7 +196,7 @@ The following instructions will demonstrate how to provide one or more addresses
     code geocode.py
     ```
 
-     Copy the below code into geocode.py.  Highlighted values are to updated with details from your service key.  Sensitive values could alternatively be read from environment variables.
+     Copy the below code into geocode.py.  Highlighted values are to be updated with details from your service key.  Sensitive values could alternatively be read from environment variables.
 
     ```Python[6, 7, 9]
     #Import your dependencies
@@ -241,7 +244,7 @@ The following instructions will demonstrate how to provide one or more addresses
 
 ### Routing
 
-The following instructions will demonstrate how to take two addresses and generate a set of directions between the two addresses.  Further details are available at [Geocoding API v1](https://help.sap.com/docs/SAP_HANA_SPATIAL_SERVICES/c7837a0d78e24fb5b9f66a058ab9f730/d2309e6309584d6db7b23ba4cacd9af1.html).
+The following instructions will demonstrate how to take two addresses and generate a set of directions between the two addresses.  Further details are available at [Routing API v1](https://help.sap.com/docs/SAP_HANA_SPATIAL_SERVICES/c7837a0d78e24fb5b9f66a058ab9f730/b42fac7d6e3e4d12a32bf4e0b2d262e9.html).
 
 1. Add the following to the bottom of `HSS.http`.
 
@@ -305,7 +308,7 @@ The following instructions will demonstrate how to take two addresses and genera
     code route.js
     ```
 
-    Copy the below code into route.js.  Highlighted values are to updated with details from your service key.  Sensitive values could alternatively be read from environment variables.
+    Copy the below code into route.js.  Highlighted values are to be updated with details from your service key.  Sensitive values could alternatively be read from environment variables.
 
     ```JavaScript[3, 4, 6]
     const fetch = require('node-fetch');
@@ -401,6 +404,12 @@ The following instructions will demonstrate how to use the mapping service to re
 2. Send the requests to use the Here provider to return map tiles.
 
     ![Mapping result](mapping-result.png)
+
+3. A mapping control such as the [SAP Fiori GeoMap](https://sapui5.hana.ondemand.com/sdk/#/api/sap.ui.vbm.GeoMap%23overview) can be used to display multiple map tiles and provide items on the map.  The video [Using the SAP HANA Spatial Services Mapping API in a Fiori App](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=1_ra527yhr) provides a demonstration of this.
+
+
+### Knowledge check    
+
 
 Congratulations! You have now used the HANA Spatial Services to perform geocoding, routing, and mapping.  Upcoming features can be seen on the [SAP Road Map Explorer](https://roadmaps.sap.com/board?range=CURRENT-LAST&PRODUCT=73555000100800001421#Q4%202022).
 

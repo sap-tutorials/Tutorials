@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-cloud-sdk]
@@ -16,15 +16,18 @@ primary_tag: products>sap-cloud-sdk
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
  - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
 
-
-## Intro
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 ## You will learn
   - How to build up a complex data structure using the virtual data model
   - How to write deeply nested data to SAP S/4HANA in a single call
   - How to write unit and integration tests for deep insertion
 
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 
 ---
 

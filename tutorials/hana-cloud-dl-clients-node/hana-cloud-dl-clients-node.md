@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the Node.js Driver
@@ -132,7 +132,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -403,6 +403,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 

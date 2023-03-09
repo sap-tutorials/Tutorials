@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
 ---
 
@@ -20,40 +20,40 @@ You can also use the [Schema Configuration](https://help.sap.com/viewer/5fa7265b
 
 In this tutorial, we'll use power of attorney documents as an example of a custom document type that is not supported by Document Information Extraction out of the box. A power of attorney document is a legal instrument authorizing one to act as the attorney or agent for another person in specified or all legal or financial matters.
 
-If you are new to the Document Information Extraction Trial UI, try out first the tutorial: [Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI](cp-aibus-dox-ui).
+If you are new to the Document Information Extraction UI, try out first the tutorial: [Use Machine Learning to Extract Information from Documents with Document Information Extraction UI](cp-aibus-dox-ui).
 
 ---
 
 ### Access schema configuration
 
 
-1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
+1. Open the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app) or [Use Free Tier to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-free-booster-app).
 
 
-    >If you **HAVE NOT** just used the **Set up account for Document Information Extraction** booster to create a service instance for Document Information Extraction Trial, and subscribe to the Document Information Extraction Trial UI, observe the following:
+    >If you **HAVE NOT** just used the **Set up account for Document Information Extraction** booster to create a service instance for Document Information Extraction, and subscribe to the Document Information Extraction UI, observe the following:
 
     >- To access the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for Document Information Extraction Trial.
 
-    ><!-- border -->![Access](png-files/plan.png)
+    ><!-- border -->![Access](plan.png)
 
 
     >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Admin_User_trial`, or the combination of the role collections: `Document_Information_Extraction_UI_End_User_trial` and `Document_Information_Extraction_UI_Templates_Admin_trial`. For more details on how to assign role collections, see step 2 in the tutorial: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
 
-    ><!-- border -->![Access](png-files/roles.png)
+    ><!-- border -->![Access](roles.png)
 
 
     >- After assigning new role collections, **Log Off** from the UI application to see all features you're now entitled to try out.
 
-    ><!-- border -->![Access](png-files/log-off.png)
+    ><!-- border -->![Access](log-off.png)
 
 
 2. To create a custom schema, click the wheels icon and choose **Schema Configuration**.
 
-    <!-- border -->![Access Schema Configuration](png-files/access-schema-configuration.png)
+    <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
 Here, you find the pre-defined SAP schemas, one for each of the standard document types that are supported by Document Information Extraction out of the box. You can't delete or edit SAP schemas, but you can see and **Copy** the information they extract from documents.
 
-<!-- border -->![Access Schema Configuration](png-files/sap-schemas.png)
+<!-- border -->![Access Schema Configuration](sap-schemas.png)
 
 >**CAUTION:**
 
@@ -70,17 +70,17 @@ Here, you find the pre-defined SAP schemas, one for each of the standard documen
 
 To create your own schema, click **Create** and a dialog opens.
 
-<!-- border -->![Create Schema](png-files/create-schema.png)
+<!-- border -->![Create Schema](create-schema.png)
 
 In the dialog, enter a name for your custom schema, `Custom_power_of_attorney_schema`, for instance. Note that the name cannot include blanks. Further, select `Custom` as your `Document Type`.
 
 Click **Create** to create the schema.
 
-<!-- border -->![Create Schema Dialog](png-files/create-schema-dialog.png)
+<!-- border -->![Create Schema Dialog](create-schema-dialog.png)
 
 Now, your schema shows up in the list. Access the schema by clicking on the row.
 
-<!-- border -->![Access Schema](png-files/access-schema.png)
+<!-- border -->![Access Schema](access-schema.png)
 
 
 
@@ -90,7 +90,7 @@ Now, your schema shows up in the list. Access the schema by clicking on the row.
 
 To define your first header field, click **Add**.
 
-<!-- border -->![Add Header Field](png-files/add-header-field.png)
+<!-- border -->![Add Header Field](add-header-field.png)
 
 For each custom field, you have to enter name and data type. The potential data types are `string`, `number`, `date`, `discount` and `currency`. Default extractors are not available for custom documents. Adding a description is optional.
 
@@ -102,11 +102,11 @@ As your first header field, add the shipper number of your power of attorney doc
 
 3. Click **Add** to create the header field.
 
-    <!-- border -->![Create Number](png-files/add-number.png)
+    <!-- border -->![Create Number](add-number.png)
 
 The field now displays in your list of header fields where you find all the information again that you have just entered. You can edit or delete the field by clicking the respective icons on the right.
 
-<!-- border -->![View Number](png-files/added-number.png)
+<!-- border -->![View Number](added-number.png)
 
 Click **Add** again to open the `Add Data Field` dialog.
 
@@ -116,7 +116,7 @@ Click **Add** again to open the `Add Data Field` dialog.
 
 3. Click **Add** to create the field.
 
-    <!-- border -->![Create Name](png-files/add-name.png)
+    <!-- border -->![Create Name](add-name.png)
 
 Go ahead and create the list of header fields as shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
 
@@ -131,7 +131,7 @@ Go ahead and create the list of header fields as shown in the table and image be
 |  `date`               | date                    
 
 
-<!-- border -->![All Header Fields](png-files/all-header-fields.png)
+<!-- border -->![All Header Fields](all-header-fields.png)
 
 
 
@@ -142,11 +142,11 @@ Once you have added all fields, the schema needs to be activated so that it can 
 
 To activate the schema, click **Activate**.
 
-<!-- border -->![Activate Schema](png-files/activate.png)
+<!-- border -->![Activate Schema](activate.png)
 
 Now, the status of your schema changes to `ACTIVE`. To make changes to your schema, you have to **Deactivate** it first.
 
-<!-- border -->![Activate Schema](png-files/active.png)
+<!-- border -->![Activate Schema](active.png)
 
 Congratulations, you have created and activated your first custom schema for power of attorney documents.
 

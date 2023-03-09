@@ -1,6 +1,6 @@
 ---
 author_name: Harshita Suryavanshi
-author_profile: https://github.com/I562950
+author_profile: https://github.com/HarshitaSuryavanshi
 title: Execute Batch Payload Operations Using Java Database Connectivity (JDBC) Receiver Adapter
 description: Learn how to connect, interact, and perform batch operations on your database via JDBC receiver adapter.
 keywords: tutorial

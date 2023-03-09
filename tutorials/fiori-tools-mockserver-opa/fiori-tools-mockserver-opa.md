@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-fiori-tools, software-product>sap-fiori-elements, software-product>sap-business-application-studio ]
+tags: [ tutorial>beginner, software-product>sap-fiori-tools, software-product>sap-fiori, software-product>sap-business-application-studio ]
 primary_tag: software-product>sap-fiori
 author_name: Regina Sheynblat
 author_profile: https://github.com/reginasheynblat
@@ -38,7 +38,7 @@ author_profile: https://github.com/reginasheynblat
 2. If you need to install mock server manually to a project, see the following.
 
     ```URL
-    https://www.npmjs.com/package/@sap/ux-ui5-fe-mockserver-middleware
+    https://github.com/SAP/open-ux-odata
     ```
 
 

@@ -1,34 +1,32 @@
 ---
-parser: v2
+title: Expose Federation Content from SAP S/4HANA
+description: Select and expose roles in SAP S/4HANA to make them available with their assigned apps, groups, catalogs, and spaces in SAP Build Work Zone.
 auto_validation: true
 time: 10
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, software-product>sap-launchpad-service, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
+parser: v2
 ---
 
-# Expose Federation Content from SAP S/4HANA
-<!-- description --> Select and expose roles in SAP S/4HANA to make them available with their assigned apps, groups, catalogs, and spaces in the SAP Launchpad site.
-
 ## Prerequisites
- - You have access to an SAP S/4HANA system with SAP Fiori Front-end Server 2020 that was configured for connectivity with your SAP BTP trial account.
+ - You have access to an SAP S/4HANA system with SAP Fiori Front-end Server 2020 or higher that was configured for connectivity with your SAP BTP trial account. 
 
 
 ## You will learn
   - Create a federation scope
-  - Expose the scope for consumption by the SAP Launchpad
+  - Expose the scope for consumption by SAP Build Work Zone
 
 ---
 
 ### Login to your SAP S/4HANA system
 
-
-Login to your SAP S/4HANA system with SAP Logon.
+Login to your SAP S/4HANA system with SAP Logon. 
 
 ![Login to SAP S/4HANA](1-s4-login.png)
 
 
-### Select SAP Fiori Content for Exposure
 
+### Select SAP Fiori Content for Exposure
 
 1. Enter transaction code ``/n/ui2/cdm3_exp_scope``.
 
@@ -53,8 +51,8 @@ Login to your SAP S/4HANA system with SAP Logon.
     ![Save selected roles](5-s4-save-roles.png)
 
 
-### Expose Selected Roles
 
+### Expose Selected Roles
 
 Click **Expose** to start exposing the selected roles and their assigned content like apps, catalogs, and spaces.
 
@@ -66,8 +64,8 @@ The exposure process starts. In the status bar you can check the progress. Prepa
 
 
 
-### Check exposure log
 
+### Check exposure log
 
 Once the exposure process is finished, the exposure log is displayed. In the status bar, you also see a success message.
 
@@ -81,7 +79,7 @@ Once the exposure process is finished, the exposure log is displayed. In the sta
 
 ![Check warnings](9a-s4-role-details.png)
 
-Now you are done with exposing the content and can go to the SAP  Launchpad to consume the exposed content.
+Now you are done with exposing the content and can go to SAP Build Work Zone to consume the exposed content.
 
 
 

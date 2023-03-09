@@ -1,8 +1,10 @@
 ---
 parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: products>sap-hana
 ---
 

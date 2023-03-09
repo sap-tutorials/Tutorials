@@ -27,6 +27,7 @@ author_profile: https://github.com/mervey45
 This tutorial shows you how to create a **SAP Fiori based Table Maintenance app** using the [**ABAP RESTful Application Programming Model**](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html) (RAP) and the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) (CUBCO) app. This tutorial is based on a simplified error code data base model.
 
 >**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
+
 ---
 ### Create Package
 
@@ -101,7 +102,7 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
       ![New database table](db.png)
 
   2. Create a Database Table:
-     - Name: **`ZERROR_CODE_###`**
+     - Name: **`ZERRCODE_###`**
      - Description: **`Error Code ###`**
 
       ![Create database table](db3.png)
@@ -118,7 +119,7 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
-    define table zerror_code_### {
+    define table zerrcode_### {
       key client            : abap.clnt not null;
       key error_code        : z_error_code_### not null;
       last_changed_at       : abp_lastchange_tstmpl;
@@ -130,7 +131,7 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
   6. Repeat step **3.1.- 3.4** and create another Database Table:
 
-     - Name: **`ZERROR_CODE_T###`**
+     - Name: **`ZERRCODET_###`**
      - Description: **`Error Code Description ###`**
 
     ```ABAP
@@ -139,16 +140,16 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
-    define table zerror_code_t### {
+    define table zerrcodet_### {
       key client            : abap.clnt not null;
       @AbapCatalog.textLanguage
       key langu             : abap.lang not null;
       @AbapCatalog.foreignKey.keyType : #TEXT_KEY
       @AbapCatalog.foreignKey.screenCheck : false
       key error_code        : z_error_code_### not null
-        with foreign key [0..*,1] zerror_code_###
-          where client = zerror_code_t###.client
-            and error_code = zerror_code_t###.error_code;
+        with foreign key [0..*,1] zerrcode_###
+          where client = zerrcodet_###.client
+            and error_code = zerrcodet_###.error_code;
       description           : z_code_description_###;
       local_last_changed_at : abp_locinst_lastchange_tstmpl;
     }
@@ -181,7 +182,7 @@ A [**Business Configuration Maintenance Object**](https://help.sap.com/products/
 
 You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/047e01c3bcdd4303a60b61364bd5b31d.html?version=Cloud) to create the necessary repository objects.
 
-  1. Right-click on **`ZERROR_CODE_###`** and select **Generate ABAP Repository Objects...**.
+  1. Right-click on table **`ZERRCODE_###`** and select **Generate ABAP Repository Objects...**.
 
       ![Start ABAP Repository Objects generator](bc.png)
 
@@ -204,7 +205,7 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 
   5. Select a Transport Request and click **Finish**.
 
-  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects. If you publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4` you can already start the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app from the Fiori Launchpad and select the created Business Configuration Maintenance Object. However you will not be able to read or edit the configuration entries because your user is missing authorizations. Instead you will [provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) in the next tutorial and then finally [use the Custom Business Configurations app](abap-environment-maintain-bc-app).
+  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects. If you publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4` you can already start the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app from the SAP Build Work Zone and select the created Business Configuration Maintenance Object. However you will not be able to read or edit the configuration entries because your user is missing authorizations. Instead you will [provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) in the next tutorial and then finally [use the Custom Business Configurations app](abap-environment-maintain-bc-app).
 
   7. If you only have a trial account you need to perform the following adjustments because you are not able to create Customizing Transport Requests or Business Roles. You can then also skip the following tutorial [Provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) and continue with tutorial [Use Custom Business Configurations app](abap-environment-maintain-bc-app).
       - Edit class `ZBP_I_ERRORCODE###_S`, section **Local Types**. Delete the content of the following methods. Afterwards save and activate the class.
@@ -238,7 +239,6 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 
 
 ### Test yourself
-
 
 
 ---

@@ -396,7 +396,8 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
 >---
 
->This example is for demonstration purposes only.  Consult the [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) for further details on how the storage size affects capacity units.  It is not possible to decrease the storage size.  For additional details see [Change the Size of a SAP HANA Database Instance](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/85eb089a368b4d1eb5e4f8322d1a0b6b.html).
+>This example is for demonstration purposes only.  Consult the [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) for further details on how the storage size affects capacity units.  It is not possible to decrease the storage size.  For additional details see [Managing SAP HANA Database Instances](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/649092e9d9be41c59930179ce4f3d59e.html).
+
 
 1. In the SAP Automation Pilot, open the command `ResizeHANACloudStorage ` and add an executor.
 
@@ -490,6 +491,8 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 10. Now that the test of this command was successful using the `HDBTestAlert`, either disable the action in the subscription in the SAP Alert Notification Service or change the condition in the subscription to use `HDBDiskUsage`.  Additional details on this alert can be found at [HDB Disk Usage](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/807a9f0021354fcc856cbf29cb4f7f18.html).  By default the disk usage alert will create an alert with severity ERROR on 98 % disk usage, which then triggers a storage increase of 40 GB.
 
     ![update event type](event-type-hdbdiskusage.png)
+
+### Knowledge check
 
 Congratulations! You have now created a command in SAP Automation Pilot that can be  used to take action to resolve the alert that triggered the execution of the command.  
 

@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-build-work-zone]
-primary_tag: software-product>sap-build-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -15,6 +15,7 @@ author_profile: https://github.com/LindsayBert
 You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
 &nbsp;
 >**SAP Build Work Zone, advanced edition is not available in a trial account.**
+
 
 ## You will learn
   - How to create a new workspace

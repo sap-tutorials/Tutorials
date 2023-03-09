@@ -36,6 +36,7 @@ xsuaa:
   servicePlanName: application
   parameters:
     xsappname: cpapp
+    tenant-mode: dedicated
     role-collections:
       - description: Manage Risks
         name: RiskManager
@@ -112,6 +113,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
     --buildpack gcr.io/paketo-buildpacks/nodejs \
     --builder paketobuildpacks/builder:base
+    --env BP_NODE_RUN_SCRIPTS=""
     ```
 
 
@@ -131,6 +133,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
         --buildpack gcr.io/paketo-buildpacks/nodejs \
         --builder paketobuildpacks/builder:base
+        --env BP_NODE_RUN_SCRIPTS=""
     ```
 
 2. You should get an output like:
@@ -198,7 +201,7 @@ Now that we've build the docker images, let's push them to the container registr
      !![CAP 401 error](cap_mta_403_error.png)
 
 
-     The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Fiori Launchpad. The Launchpad will trigger the authentication flow to provide the required token to access the service.
+     The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Build Work Zone, standard edition. The SAP Build Work Zone, standard edition will trigger the authentication flow to provide the required token to access the service.
 
 5. List installed helm charts:
 
@@ -233,12 +236,6 @@ On macOS, if you get the error `ERROR: failed to build: failed to fetch builder 
 
     ```Shell/Bash
     kubectl get jobs
-    ```
-
-    You should see an empty list of jobs. This indicates that the deployment job was run successfully because the Helm chart is configured to clean up jobs after completion:
-
-    ```
-    NAME                       COMPLETIONS   DURATION   AGE
     ```
 
     If the job fails or if it's still in progress, the job is displayed as incomplete (completions `0/1`) like in this example:
@@ -336,7 +333,7 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
     cpapp-srv-84964965cd-5mwtm   2/2     Running   0          13m
     ```
 
-2. Your service is made externally available using the `VirtualService` resource from Istio. You can check your externally exposed hostname:
+2. Your service is made externally available using the `VirtualService` resource from `Istio`. You can check your externally exposed hostname:
 
     ```Shell/Bash
     kubectl get virtualservice

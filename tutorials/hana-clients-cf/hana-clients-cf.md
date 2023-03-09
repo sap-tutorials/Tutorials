@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -40,7 +40,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
 
-    >Note that if a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
+    >If a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
 
     ```Shell
     xs -v
@@ -491,6 +491,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![Result](proxy-result.png)
 
+### Knowledge check
 
 Congratulations, you have built, deployed and run an app that queries SAP HANA in Cloud Foundry and XS advanced as well as become familiar with the command line interface.
 
