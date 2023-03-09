@@ -1,0 +1,15 @@
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+When is an application available to end users ?
+
+
+###Match
+[x] When the user has permissions to access it
+[ ] When the app is added to a catalog
+[x] When the application is added to a group and it becomes available on the Applications page
+
+
+[VALIDATE_3]
