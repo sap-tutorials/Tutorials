@@ -12,8 +12,10 @@ author_profile: https://github.com/mervey45
 <!-- description --> Create a database table and generate UI services with SAP BTP ABAP environment.
 
 ## Prerequisites
-- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
-- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
+- You need to have access to an SAP BTP, ABAP environment, or SAP S/4HANA Cloud, ABAP environment or SAP S/4HANA (release 2021 or higher) system.
+For example, you can create [free trial user on SAP BTP, ABAP environment](abap-environment-trial-onboarding).
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap) on the latest Eclipse© platform.
+
 
 ## You will learn  
   - How to create an ABAP package
@@ -32,7 +34,9 @@ In this exercise, you will create an ABAP package and database table. In your da
 
 Create your exercise package. This ABAP package will contain all the artefacts you will be creating in the different exercises of this tutorial.
 
- 1. In ADT, go to the **Project Explorer**, right-click on the package `ZLOCAL`, and select **New** > **ABAP Package** from the context menu.
+ 1. In ADT, go to the **Project Explorer**, right-click on the package `ZLOCAL`, and select **New** > **ABAP Package** from the context menu. 
+
+    >If you are using a **preconfigured system**, then you need to add **`ZLOCAL`** to your **favorite packages**.
 
  2. Maintain the required information (`###` is your group ID):
 
@@ -47,11 +51,11 @@ Create your exercise package. This ABAP package will contain all the artefacts y
       ![package](p.png)
 
 
-
+ 
 ### Create database table
 
 
-Create a database table![table](adt_tabl.png) to store the **Travel** data.   
+Create a database table![table](adt_tabl.png) to store the **Travel** data.    
 A Travel entity defines general travel data, such as the agency ID or customer ID, overall status of the travel booking, and the price of travel.
 
  1. Right-click on your ABAP package **`ZRAP100_###`** and select **New** > **Other ABAP Repository Object** from the context menu.
@@ -232,8 +236,9 @@ The generated business service will be transactional, draft-enabled, and enriche
     |                                        | **Service Definition**  | Name: **`ZRAP100_UI_Travel_###`**                   |
     |                                        | **Service Binding**     | Name: **`ZRAP100_UI_Travel_O4_###`**                |
     |                                        |                         | Binding Type: **`OData V4 - UI`**                   |
- 
-    ![class](new0.png)                    
+
+    ![class](new0.png)                     
+
 
  4. Go to the **Project Explorer**, select your package ![package](adt_package.png) **`ZRAP100_###`**, refresh it by pressing **F5**, and check all generated ABAP repository objects
 
@@ -264,21 +269,23 @@ Publish the local service endpoint of your service binding ![service binding](ad
 
 
  1. Open your service binding ![service binding](adt_srvb.png) **`ZRAP100_UI_TRAVEL_O4_###`** and click **Publish**.
+ 
+     ![class](publish.png)
 
  2. Double-click on the entity **Travel** in the **Entity Set and Association** section to open the **Fiori elements App Preview**.
 
-     ![class](p8.png)
+     ![class](publish2.png)
 
  3. Click the button on the **Travel** app **Go** to load the data.
 
  4. Check your result.
 
      ![class](p9.png)
- 
+
 
 ### Preview the Travel App in SAP S/4HANA on premise (optional)
 
->**Hint:** In **SAP S/4HANA on premise or private cloud systems** publishing the local service endpoint of your OData V4 service binding does not work from within ADT. Therefore you have to publish the service binding locally using transaction `/IWFND/V4_ADMIN` in these systems.
+>In **SAP S/4HANA on premise or private cloud systems** publishing the local service endpoint of your OData V4 service binding does not work from within ADT. Therefore you have to publish the service binding locally using transaction `/IWFND/V4_ADMIN` in these systems.
 
  1. In the menu click on the button **Run ABAP Development Object as ABAP Application in SAPGUI** or press `Alt+F8`.
 
@@ -297,7 +304,7 @@ Publish the local service endpoint of your service binding ![service binding](ad
     - System Alias: LOCAL
     - Service Group ID: `Z*###*`
 
-     ![onprem](onprem4.png)
+     ![onprem](onprem4.png)  
 
  5. Select the entry `ZRAP100_UI_TRAVELTP_O4_###` from the list and press the button **Publish Service Groups**.
 

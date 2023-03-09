@@ -54,7 +54,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
 
       ![logon](logon4.png)
 
-      **HINT**: The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
+    >The administrator receives an welcome e-mail after provisioning. This e-mail includes the system URL. By removing `/ui` you can log into the SAP S/4HANA Cloud ABAP Environment system. Further information can be found [here](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/4b962c243a3342189f8af460cc444883.html?locale=en-US&state=DRAFT).
 
   5. Click **Next >**.
 
@@ -173,6 +173,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
      Verify the maintained entries and press **Next >** to confirm. The needed artifacts will be generated.
 
      **Please note**: Error Invalid XML format.   
+
      If you receive an error message **Invalid XML format of the response**, this may be due to a bug in version 1.26 of the ADT tools. An update of your ADT plugin to version 1.26.3 will fix this issue.
 
     | **RAP Layer**                          | **Artefacts**           | **Artefact Names**                                  |
@@ -242,7 +243,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
     }
     ```
   
-    **Hint:** Please replace **`X`** and **`XXX`** with your ID. 
+    >Please replace **`X`** and **`XXX`** with your ID. 
 
    5. Save and activate.
 
@@ -304,7 +305,7 @@ In this tutorial, wherever X/XXX/#/### appears, use a number (e.g. 000).
    
      ![projection](bdef5.png)
 
-     **Hint:** Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
+    >Please replace **`#`**, **`X`** and **`XXX`** with your ID. 
 
   6. Check your behavior definition:
 
@@ -602,24 +603,24 @@ You have 2 options to open the documentation inside ADT.
 >  3. Now you are able to read the documentation.
       ![service](docu3.png)
 
->   **HINT:** You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
+>     You can also open the Element Info by clicking `i_purchaserequisitiontp` and pressing **`F2`**.
 >       ![service](docuhint.png)
 
->    You can also switch to different layers inside the Element Info.
+>     You can also switch to different layers inside the Element Info.
 >       ![service](docugif.gif)
 
 > **Option 2**:
 
 > 1. Go back to tab `i_purchaserequisitiontp`. You are now able to see the behavior definition folder of the released object `i_purchaserequisitiontp`  in the project explorer. Now navigate to the documentation `i_purchaserequisitiontp` and open it.
       ![service](docu4.png)
->**HINT**: You can also check the API State of released object and see its visibility by selecting the properties.
+>      You can also check the API State of released object and see its visibility by selecting the properties.
 > 2. Now you can see the documentation.
       ![service](docu5.png)
 
  
 ### Enhance behavior implementation
 
-**Hint:** Please replace **`X`**, **`#`** and **`XXX`** with your ID. 
+Please replace **`X`**, **`#`** and **`XXX`** with your ID. 
 
   1. In your **Global Class**, replace your code with following:
 
@@ -1066,7 +1067,7 @@ You have 2 options to open the documentation inside ADT.
 
    3. Save and activate.
 
-    >**HINT:** The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
+    >The option **internal** can be set before the action name to only provide an action for the same BO. An internal action can only be accessed from the business logic inside the business object implementation such as from a determination or from another action.
 
    4. Go back to your behavior definition `ZR_ONLINESHOPTP_XXX` and activate it again, if needed. 
 
@@ -1129,3 +1130,4 @@ You have 2 options to open the documentation inside ADT.
 
 
 ### Test yourself
+  
