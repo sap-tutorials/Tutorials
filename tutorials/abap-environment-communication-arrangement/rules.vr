@@ -1,0 +1,13 @@
+[VALIDATE_13]
+###Rule
+single-choice
+
+###Question
+Where can you add a new inbound communication user?
+
+###Match
+[x] communication system
+[ ] maintain employees
+[ ] communication arrangement
+
+[VALIDATE_13]
