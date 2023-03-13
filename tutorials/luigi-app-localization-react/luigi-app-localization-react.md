@@ -49,7 +49,7 @@ primary_tag: topic>user-interface
         ],
     ```
 
-3. Add following at around line 111:
+3. Add following translation for german inside `myTranslationProvider` function:
 
     ```JavaScript
     var dict = {

@@ -20,13 +20,13 @@ primary_tag: topic>user-interface
 
 In this step, you will add a function to get the current language from Luigi Client and then update it, so that the language of the UI5 micro-frontend can be changed accordingly.
 
- 1. Open the `ui5-mf/uimodule/webapp/controller/MainView.controller.js` and replace its content with the code below:
+ 1. Open the `ui5-mf/webapp/controller/Main.controller.js` and replace its content with the code below:
 
     ```js
     sap.ui.define(["luigi/ui5/controller/BaseController"], function (Controller) {
         "use strict";
 
-        return Controller.extend("luigi.ui5.controller.MainView", {
+        return Controller.extend("luigi.ui5.controller.Main", {
             onInit: function (Controller) {
                 const oModel = new sap.ui.model.json.JSONModel();
 
@@ -58,14 +58,14 @@ In this step, you will add a function to get the current language from Luigi Cli
 
 In this step, you will create files with the text that is to be changed within the UI5 micro-frontend.
 
-1. Find the folder ​`i18n`​ under the ​`uimodule/webapp`​.  Inside it, create a file called `i18n_de_DE.properties` with the following content:
+1. Find the folder ​`i18n`​ under the ​`webapp`​.  Inside it, create a file called `i18n_de.properties` with the following content:
 
     ```json
     ModalText = Produkt Details
     Quantity = Anzahl
     ```
 
-2. Create another file called `i18n_en_US.properties` with the following content:
+2. Create another file called `i18n_en.properties` with the following content:
 
     ```json
     ModalText = Product Details
@@ -76,7 +76,7 @@ In this step, you will create files with the text that is to be changed within t
 ### Add default language to index.html
 
 
-1. Edit the `ui5-mf/uimodule/webapp/index.html` file by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
+1. Edit the `ui5-mf/webapp/index.html` file by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
 
     ```HTML
     <script
@@ -101,7 +101,8 @@ In this step, you will create files with the text that is to be changed within t
 
 This step involves the standard process in UI5 for providing translation.
 
-1. Edit the ​`ui5-mf/uimodule/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
+// This file does not exist ?
+1. Edit the ​`ui5-mf/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
 
     ```XML
     <ObjectAttribute text="{i18n>Quantity}: {orderQuantity}" />
