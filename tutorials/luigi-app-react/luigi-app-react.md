@@ -512,7 +512,7 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
       <Routes>
         <Route path="/home" render={(props) => <Home {...props} localeDict={dict[this.state.currentLocale]} currentLocale={this.state.currentLocale} />} />
         //THIS LINE HAS TO BE ADDED:
-        <Route path="/products" element={<Product localeDict={dict[currentLocale]} />} />
+        <Route path="/products" element={<Products localeDict={dict[currentLocale]} />} />
       </Routes>
     </Router>
     ```
