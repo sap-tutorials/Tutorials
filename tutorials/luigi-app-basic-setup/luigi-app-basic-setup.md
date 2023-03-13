@@ -69,6 +69,8 @@ In this step, you will create a React skeleton project which will be used to cre
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/home.js > src/views/home.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample1.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample2.js
+    curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/public/index.html > public/index.html
+    curl https://github.com/SAP/luigi/blob/main/core/examples/luigi-example-react/public/sampleapp.html > public/sampleapp.html
     ```
 
 8.  Ins​tall and run the configuration:
