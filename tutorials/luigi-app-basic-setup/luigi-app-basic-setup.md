@@ -58,8 +58,8 @@ In this step, you will create a React skeleton project which will be used to cre
 6. Next we need to create the project structure for our simple React app. Create the following folders:
 
     ```Shell
-    mkdir src/views
-    mkdir src/assets
+    mkdir -p src/views
+    mkdir -p src/assets
     ```
     ​
 7. Download the Luigi React simple app files:
