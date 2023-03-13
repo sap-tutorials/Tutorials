@@ -60,6 +60,7 @@ In this step, you will create a React skeleton project which will be used to cre
     ```Shell
     mkdir -p src/views
     mkdir -p src/assets
+    mkdir -p public
     ```
     ​
 7. Download the Luigi React simple app files:
