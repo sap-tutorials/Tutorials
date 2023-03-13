@@ -20,113 +20,113 @@ primary_tag: topic>user-interface
 
 In this step, you will create a file with information about the products on sale in your shopping app.
 
-In a real life implementation, this data would be provided by an external service/API. But for simplicity, you will create a `.js` file containing dummy data. This file will provide the displayed data in the micro-frontend. We will create a similar file in the UI5 microfrontend to avoid bundling issues.
+In a real life implementation, this data would be provided by an external service/API. But for simplicity, you will create a `.js` file containing dummy data. This file will provide the displayed data in the micro-frontend. We will create a similar file in the UI5 micro-frontend to avoid bundling issues.
 
 1. Navigate to `react-core-mf/src/assets` and create a `products.js` file with the following content:
 
     ```Javascript
     export const ProductCollection = [
-        {
-            "id": 101,
-            "name": "Logitech Mouse",
-            "price": 45.0,
-            "stock": 80,
-            "icon": "product",
-            "currencyCode": "EUR",
-            "orderQuantity": 2,
-            "description": "LIGHTSPEED Wireless Gaming Mouse with HERO Sensor"
-        },
-        {
-            "id": 102,
-            "name": "Logitech Keyboard",
-            "price": 50.0,
-            "stock": 22,
-            "icon": "product",
-            "currencyCode": "EUR",
-            "orderQuantity": 1,
-            "description": "A physical keyboard that uses an individual spring and switch for each key. Today, only premium keyboards are built with key switches; however, they were also used in the past, such as in the Model M keyboard from IBM, which used buckling spring switches"
-        },
-        {
-            "id": 103,
-            "name": "HP Optical Mouse",
-            "price": 35.0,
-            "stock": 4,
-            "icon": "product",
-            "currencyCode": "EUR",
-            "orderQuantity": 2,
-            "description": "Utilizing the latest optical sensing technology, the HP USB Optical Scroll Mouse records precise motion."
-        },
-        {
-            "id": 104,
-            "name": "MacBook Pro",
-            "price": 1299.0,
-            "stock": 11,
-            "icon": "laptop",
-            "currencyCode": "EUR",
-            "orderQuantity": 3,
-            "description": "It features a touch-sensitive OLED display strip located in place of the function keys, a Touch ID sensor integrated with the power button, a butterfly mechanism keyboard similar to the MacBook, and four USB-C ports that also serve as Thunderbolt 3 ports."
-        },
-        {
-            "id": 105,
-            "name": "Magic Mouse",
-            "price": 40.0,
-            "stock": 20,
-            "icon": "product",
-            "currencyCode": "EUR",
-            "orderQuantity": 6,
-            "description": "The Magic Mouse 2 (Apple Magic Mouse 2), is a computer mouse developed and released by Apple Inc. It features a multi-touch acrylic surface for scrolling. ... The mouse features a lithium-ion rechargeable battery and Lightning connector for charging and pairing."
-        },
-        {
-            "id": 106,
-            "name": "Brother Printer",
-            "price": 235.0,
-            "stock": 24,
-            "icon": "fx",
-            "currencyCode": "EUR",
-            "orderQuantity": 1,
-            "description": "Our affordable, quality machines provide you with the optimal way to take care of all your printing needs. Shop for the right printer, all-in-one, or fax machine for your home or home office today."
-        },
-        {
-            "id": 107,
-            "name": "iPhone 11",
-            "price": 835.0,
-            "stock": 45,
-            "icon": "iphone",
-            "currencyCode": "EUR",
-            "orderQuantity": 8,
-            "description": "The iPhone 11 dimensions are 150.9mm x 75.7mm x 8.3mm (H x W x D). It weighs about 194 grams (6.84 ounces).It features a 6.1-inch all-screen LCD display and is powered by Apple new A13 bionic chip with Third-Generation Neural Engine."
-        },
-        {
-            "id": 108,
-            "name": "Google Pixel 3a",
-            "price": 299.0,
-            "stock": 54,
-            "icon": "desktop-mobile",
-            "currencyCode": "EUR",
-            "orderQuantity": 7,
-            "description": "At 5.6 inches, the Google Pixel 3a display is proportionate to the relatively small body of the phone – that is to say, it is rather small. The display is Full HD+ and OLED, with a resolution of 2220 x 1080, and because of the relatively small screen size the pixels per inch count is rather high at 441."
-        },
-        {
-            "id": 109,
-            "name": "PlayStation 4",
-            "price": 330.0,
-            "stock": 94,
-            "icon": "video",
-            "currencyCode": "EUR",
-            "orderQuantity": 1,
-            "description": "PS4 is the fourth home video game console produced by Sony Computer Entertainment and is compatible with the PlayStation 3. It was officially announced at a press conference on February 20, 2013 and launched on November 15, 2013."
-        },
-        {
-            "id": 110,
-            "name": "Dell Monitor",
-            "price": 630.0,
-            "stock": 20,
-            "icon": "sys-monitor",
-            "currencyCode": "EUR",
-            "orderQuantity": 3,
-            "description": "34'' U3419W Monitor, Display with stand Height adjustable (115 mm), tiltable (-5° to 21°), rotatable (-30° to 30°) Security slot (cable lock sold separately), anti-theft slot for locking to stand (for display). Includes: DisplayPort cable, HDMI cable, Power cable, Stand, USB 3.0 Type-A to Type-B cable, USB-C cable"
-        }
-    ];
+    {
+        "id": 101,
+        "name": "Mouse",
+        "price": 45.0,
+        "stock": 80,
+        "icon": "product",
+        "currencyCode": "EUR",
+        "orderQuantity": 2,
+        "description": "Wireless Gaming Mouse with Sensor"
+    },
+    {
+        "id": 102,
+        "name": "Keyboard",
+        "price": 50.0,
+        "stock": 22,
+        "icon": "product",
+        "currencyCode": "EUR",
+        "orderQuantity": 1,
+        "description": "A physical keyboard that uses an individual spring and switch for each key. Today, only premium keyboards are built with key switches."
+    },
+    {
+        "id": 103,
+        "name": "Optical Mouse",
+        "price": 35.0,
+        "stock": 4,
+        "icon": "product",
+        "currencyCode": "EUR",
+        "orderQuantity": 2,
+        "description": "Utilizing the latest optical sensing technology, the USB Optical Scroll Mouse records precise motion."
+    },
+    {
+        "id": 104,
+        "name": "Laptop Pro",
+        "price": 1299.0,
+        "stock": 11,
+        "icon": "laptop",
+        "currencyCode": "EUR",
+        "orderQuantity": 3,
+        "description": "Newest laptop featuring a touch-sensitive OLED display."
+    },
+    {
+        "id": 105,
+        "name": "Mouse 2",
+        "price": 40.0,
+        "stock": 20,
+        "icon": "product",
+        "currencyCode": "EUR",
+        "orderQuantity": 6,
+        "description": "The Mouse 2 is a computer mouse featuring a multi-touch acrylic surface for scrolling. The mouse features a lithium-ion rechargeable battery and Lightning connector for charging and pairing."
+    },
+    {
+        "id": 106,
+        "name": "Printer",
+        "price": 235.0,
+        "stock": 24,
+        "icon": "fx",
+        "currencyCode": "EUR",
+        "orderQuantity": 1,
+        "description": "Affordable printer providing you with the optimal way to take care of all your printing needs."
+    },
+    {
+        "id": 107,
+        "name": "Phone 11",
+        "price": 835.0,
+        "stock": 45,
+        "icon": "iphone",
+        "currencyCode": "EUR",
+        "orderQuantity": 8,
+        "description": "The Phone 11 dimensions are 150.9mm x 75.7mm x 8.3mm (H x W x D). It weighs about 194 grams (6.84 ounces)."
+    },
+    {
+        "id": 108,
+        "name": "Phone 3a",
+        "price": 299.0,
+        "stock": 54,
+        "icon": "desktop-mobile",
+        "currencyCode": "EUR",
+        "orderQuantity": 7,
+        "description": "At 5.6 inches, the display is proportionate to the relatively small body of the phone."
+    },
+    {
+        "id": 109,
+        "name": "Game Console 4",
+        "price": 330.0,
+        "stock": 94,
+        "icon": "video",
+        "currencyCode": "EUR",
+        "orderQuantity": 1,
+        "description": "This is the fourth home video game console compatible with all gaming systems."
+    },
+    {
+        "id": 110,
+        "name": "Monitor",
+        "price": 630.0,
+        "stock": 20,
+        "icon": "sys-monitor",
+        "currencyCode": "EUR",
+        "orderQuantity": 3,
+        "description": "34'' Monitor, Display with stand Height adjustable (115 mm), tiltable (-5° to 21°), rotatable (-30° to 30°) Security slot (cable lock sold separately), anti-theft slot for locking to stand (for display). Includes: DisplayPort cable, HDMI cable, Power cable, Stand, USB 3.0 Type-A to Type-B cable, USB-C cable."
+    }
+];
     ```
 
 
@@ -189,23 +189,9 @@ In this step, you will create another HTML file which will serve as a template f
 
 In this step, we configure `webpack` and adjust dependencies in order to make it easier to develop and build the app.
 
-1. Go to `react-core-mf/webpack.config.js`
+1. Go to `react-core-mf/webpack.config.js`. Note that by default the `webpack-dev-server` will redirect all requests to `index.html` which is the app's main entry point where the Luigi Core library is injected. However, since the micro-frontends are also built in the same environment, it's necessary to host the root React micro-frontend app inside another file, in this case named `sampleapp.html`. This has been done in lines 40-16 and a similar approach can be chosen with any other frontend framework:
 
-2. **Note** the following line. By default our `webpack-dev-server` will redirect all requests to `index.html` which is our app's main entry point where the Luigi Core library is injected.
-   However since the microfrontends are also built in the same environemnt, we will need to host the root React microfrontend app inside another file, which we have named `sampleapp.html`. A similar approach can be chosen with any other frontend framework:
-
-    ```Javascript
-      new HTMLWebpackPlugin(
-        Object.assign(
-          {},
-          {
-            inject: true,
-            template: './public/sampleapp.html',
-            filename: 'sampleapp.html'
-          },
-    ```
-
-3. Add a webpack rule to allow importing css in our React project:
+2. In `webpack.config.js` around line 80, add a Webpack rule to allow importing CSS in the React project:
 
     ```Javascript
       module: {
@@ -247,9 +233,7 @@ These are the Luigi navigation parameters you will use:
   - `viewUrl`- the URL of your micro-frontend
 
 
-1. Delete the folder `react-core-mf/src/luigi-config`. (This step is not required.)
-
-2. Go to the file `react-core-mf/public/luigi-config.js`. This is where you can find the Luigi configuration. Copy and paste this code:
+1. Go to the file `react-core-mf/public/luigi-config.js`. This is where you can find the Luigi configuration. Copy and paste this code inside it:
 
     ```JavaScript
    
@@ -260,12 +244,12 @@ These are the Luigi navigation parameters you will use:
                 pathSegment: "home",
                 label: "Home",
                 icon: "home",
-                viewUrl: "/sampleapp.html#/home",
+                viewUrl: "/sampleapp.html#/microfrontend/home",
               },
             ],
           },
           settings: {
-            header: { title: "Luigi React App", logo: "/logo192.png" },
+            header: { title: "Luigi React App"},
             responsiveNavigation: "simpleMobileOnly",
             customTranslationImplementation: myTranslationProvider,
           },
@@ -403,7 +387,7 @@ In this step, you will make changes to the entry point `index.js` for the React 
     export default Home;
     ```
 
-3. Create a new file in `react-core-mf/src/` called `language.js` with following content:
+3. Create a new file in `react-core-mf/src` called `language.js` with the following content:
 
     ```JavaScript
     export const dict = {
@@ -441,17 +425,17 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
             pathSegment: "home",
             label: "Home",
             icon: "home",
-            viewUrl: "/sampleapp.html#/home",
-            //ADD THIS SECTION TO THE CONFIG FILE
+            viewUrl: "/sampleapp.html#/microfrontend/home",
+            //<---Add the section below to the config file--->
             children: [
               {
                 pathSegment: "products",
                 label: "Products",
                 icon: "product",
-                viewUrl: "/sampleapp.html#/products",
+                viewUrl: "/sampleapp.html#/microfrontend/products",
               }
             ],
-            //UNTIL HERE
+            // <------>
           },
         ],
       },
@@ -482,7 +466,7 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
         });
       }, [])
 
-      // navigates to productDetail microfrontend through Luigi Client linkManager Api
+      // navigates to productDetail microfrontend through Luigi Client linkManager API
       function handleItemClick(event) {
         linkManager().withParams({ root: "products" });
         linkManager().navigate(
@@ -504,15 +488,16 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
 4. Add the routing module to the `index.js` by adding the following lines to the file:
 
     ```JavaScript
-    //AROUND LINE 4 PASTE THIS LINE:
+    //<---Around line 8, paste this line: --->:
     import Products from "./views/products.js";
-
-    //AROUND LINE 35 PASTE THIS LINE:
+    //<------>
+   ...
     <Router basename="microfrontend">
       <Routes>
         <Route path="/home" render={(props) => <Home {...props} localeDict={dict[this.state.currentLocale]} currentLocale={this.state.currentLocale} />} />
-        //THIS LINE HAS TO BE ADDED:
+        //<---Around line 45, paste this line: --->
         <Route path="/products" element={<Products localeDict={dict[currentLocale]} />} />
+        //<------>
       </Routes>
     </Router>
     ```
@@ -531,19 +516,19 @@ In this step, you will add the `ProductDetail` view to the app. You will be able
                           pathSegment: "products",
                           label: "Products",
                           icon: "product",
-                          viewUrl: "/sampleapp.html#/products",
-                          // PASTE THIS SECTION
+                          viewUrl: "/sampleapp.html#/microfrontend/products",
+                          //<---Paste the section below to your config:--->
                           keepSelectedForChildren: true,
                           children: [{
                               pathSegment: ':id',
-                              viewUrl: '/sampleapp.html#/productDetail/:id',
+                              viewUrl: '/sampleapp.html#/microfrontend/productDetail/:id',
                               context: { id: ':id' }
                           }]
-                          //UNTIL HERE
+                          //<------>
                       },
     ```
 
-2. Next create a new file in `react-core-mf/src/views` named `productDetail.js` and paste following content into it:
+2. Next, create a new file in `react-core-mf/src/views` named `productDetail.js` and paste following content into it:
 
     ```js
       import React, { useEffect, useState, useRef } from 'react';
@@ -583,7 +568,7 @@ In this step, you will add the `ProductDetail` view to the app. You will be able
           function navBack() {
               // checks if there is a previous view in history
               if (linkManager().hasBack()) {
-                  // navigates to the previously openend microfrontend
+                  // navigates to the previously opened microfrontend
                   linkManager().goBack();
               } else {
                   // navigates to the products page directly
@@ -676,15 +661,17 @@ In this step, you will add the `ProductDetail` view to the app. You will be able
 2. Add the route configuration to the `index.js` by pasting below code into it:
 
     ```JavaScript
-      //PASTE THIS AROUND LINE 5
+        //<---Around line 9, paste this line:--->
         import ProductDetail from './views/productDetail';
-      //PASTE THE MENTIONED LINE AROUND LINE 39
+        //<------>
+       ...
         <Router basename="microfrontend">
           <Routes>
             <Route path="/home" render={(props) => <Home {...props} localeDict={dict[this.state.currentLocale]} currentLocale={this.state.currentLocale} />} />
             <Route path="/products" render={(props) => <Products {...props} localeDict={dict[this.state.currentLocale]} />} />
-            //THIS LINE HAS TO BE ADDED:
-            <Route path="/productDetail/:id" element={<ProductDetail localeDict={dict[currentLocale]} />} />      
+            //<---Around line 50, paste this line:--->
+            <Route path="/productDetail/:id" element={<ProductDetail localeDict={dict[currentLocale]} />} />  
+            //<------>    
           </Routes>
         </Router>
     ```

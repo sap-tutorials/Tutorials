@@ -33,15 +33,14 @@ In this step, you will create a React skeleton project which will be used to cre
     cd luigi-react-ui5
     ```
 
-2. Create a new folder to host our react core app into:
+2. Create a new folder to host the React core app:
 
     ```Shell
     mkdir react-core-mf
     cd react-core-mf
     ```
 
- ​4. Install dependencies: First download the react example package json file containing minimal dependencies required for a React app.
-    Next we need to install styling libraries to handle css files as well as fundamentals and react web components packages.
+ ​3. Download the React example package JSON file containing minimal dependencies required for a React app. Next, install styling libraries to handle CSS files, as well as Fundamentals and React web components packages.
 
     ```Shell
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/package.json > package.json
@@ -49,13 +48,13 @@ In this step, you will create a React skeleton project which will be used to cre
     npm install style-loader css-loader --save-dev
     ```
     ​
-5. We need a simple webpack configuration to bundle our simple react application. For this we will use a readily available minimalistic webpack configuration from an existing [luigi example app](https://github.com/SAP/luigi/blob/main/core/examples/luigi-example-react/webpack.config.js). Download the webpack config using the line below:
+4. The React application will be bundled using Webpack. Download the Luigi Webpack configuration from an existing [Luigi example app](https://github.com/SAP/luigi/blob/main/core/examples/luigi-example-react/webpack.config.js) using the line below:
 
     ```Shell
      curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/webpack.config.js > webpack.config.js
     ```
 
-6. Next we need to create the project structure for our simple React app. Create the following folders:
+5. Next, create the project structure for our simple React app. Create the following folders:
 
     ```Shell
     mkdir -p src/views
@@ -63,11 +62,10 @@ In this step, you will create a React skeleton project which will be used to cre
     mkdir -p public
     ```
     ​
-7. Download the Luigi React simple app files:
+6. Download the Luigi React simple app files:
 
     ```Shell
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/public/luigi-config.js > public/luigi-config.js
-    
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/home.js > src/views/home.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample1.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample2.js
@@ -75,14 +73,14 @@ In this step, you will create a React skeleton project which will be used to cre
     curl https://github.com/SAP/luigi/blob/main/core/examples/luigi-example-react/public/sampleapp.html > public/sampleapp.html
     ```
 
-8.  Ins​tall and run the configuration:
+7.  Ins​tall and run the configuration:
 
     ```Shell
     npm i
     npm run start
     ```
     ​
-9.  Move back into the root directory:
+8.  Move back into the root directory:
 
     ```Shell
     cd ..
@@ -114,7 +112,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
     yo easy-ui5
     ```
 
-5. Choose `app` and use the settings shown in the screenshot below. For the questions "Which framework do you want to use?" and "Who is the author of this application?", choose the default option and press Enter. 
+5. Use the settings shown in the screenshot below. For "Select your generator", use the arrow keys to scroll down and select `app`. For the questions "Which framework do you want to use?" and "Who is the author of this application?", choose the default option and press Enter. 
 
     ![UI5 Terminal](ui5-yo.png)
 
