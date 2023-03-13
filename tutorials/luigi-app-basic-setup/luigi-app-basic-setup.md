@@ -66,7 +66,8 @@ In this step, you will create a React skeleton project which will be used to cre
 7. Download the Luigi React simple app files:
 
     ```Shell
-    curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/index.js > src/index.js
+    curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/public/luigi-config.js > public/luigi-config.js
+    
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/home.js > src/views/home.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample1.js
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample2.js
