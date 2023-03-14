@@ -20,7 +20,7 @@ primary_tag: topic>user-interface
 
 In this step, you will create a file with information about the products on sale in your shopping app.
 
-In a real life implementation, this data would be provided by an external service/API. But for simplicity, you will create a `.js` file containing dummy data. This file will provide the displayed data in the micro-frontend. We will create a similar file in the UI5 micro-frontend to avoid bundling issues.
+In a real life implementation, this data would be provided by an external service/API. But for simplicity, you will create a `.js` file containing dummy data. This file will provide the displayed data in the micro-frontend. You will create a similar file in the UI5 micro-frontend to avoid bundling issues.
 
 1. Navigate to `react-core-mf/src/assets` and create a `products.js` file with the following content:
 
