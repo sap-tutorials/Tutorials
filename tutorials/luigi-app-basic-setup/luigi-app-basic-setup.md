@@ -54,7 +54,7 @@ In this step, you will create a React skeleton project which will be used to cre
      curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/webpack.config.js > webpack.config.js
     ```
 
-5. Next, create the project structure for our simple React app. Create the following folders:
+5. Next, create the project structure for the React app. Create the following folders:
 
     ```Shell
     mkdir -p src/views
@@ -62,7 +62,7 @@ In this step, you will create a React skeleton project which will be used to cre
     mkdir -p public
     ```
     ​
-6. Download the Luigi React simple app files:
+6. Download the Luigi React app files:
 
     ```Shell
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/public/luigi-config.js > public/luigi-config.js
