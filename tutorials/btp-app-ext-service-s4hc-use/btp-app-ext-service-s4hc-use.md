@@ -42,7 +42,7 @@ First, you create a service instance for the SAP S/4HANA Cloud Extensibility ser
 
     `bupa-service-config.json`:
 
-    ```
+    ```JSON
     {
         "systemName": "<set in mta.yaml>",
         "communicationArrangement": {

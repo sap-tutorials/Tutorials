@@ -141,7 +141,7 @@ To make also the header fields editable, you have to change the default setting 
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-    ```YAML[15]
+    ```JSON[15]
     {
         "_version": "1.32.0",
         "sap.app": {

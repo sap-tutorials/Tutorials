@@ -15,13 +15,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to add Navigation Targets
- - How to add SAP Cloud Service
+ - How to add navigation targets and prepare your UI applications
+ - How to add SAP Cloud service
  - How to add the Destination Service and destinations
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add navigation targets)]
+[ACCORDION-BEGIN [Step 1: ](Prepapre UI applications)]
+In this tutorial, you will use the SAP Build Work Zone, standard edition to access your CAP service and its UI. Additionally, the SAP Build Work Zone, standard edition provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
+
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Build Work Zone, standard edition. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
 
 [DONE]
@@ -250,7 +252,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
+[ACCORDION-BEGIN [Step 9: ](Add deployment configuration for the SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -272,7 +274,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Add SAPUI5 freestyle Mitigations application)]
+[ACCORDION-BEGIN [Step 10: ](Add deployment configuration for the SAPUI5 freestyle Mitigations application)]
 Repeat the procedure from the previous step for the `app/mitigation` folder.
 
 1. Switch to `app/mitigations` folder:
@@ -367,7 +369,7 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
 [ACCORDION-BEGIN [Step 12: ](Add UI build files to .gitignore)]
 The SAP Fiori build files do not need to be stored in GitHub. You can add it to your `.gitignore` file:
 
-```Shell/Bash
+```gitignore
 dist/
 resources/
 app/*/package-lock.json

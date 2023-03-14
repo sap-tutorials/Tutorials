@@ -142,7 +142,7 @@ You have launched your `Risks` app through the SAP Build Work Zone, standard edi
 
 > Do you want to change your Risk Management Site's default theme? Under your avatar, in the User Actions menu, select the Theme Manager.
 
->     !![Theme Managet](theme-manager.png)
+>     !![Theme Manager](theme-manager.png)
 
 
 [VALIDATE_1]

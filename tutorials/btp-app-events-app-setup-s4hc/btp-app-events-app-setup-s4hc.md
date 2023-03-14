@@ -121,7 +121,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
 
     <!-- cpes-file db/schema.cds -->
-    ```[13,16-20]
+    ```JavaScript[13,16-20]
     namespace sap.ui.riskmanagement;
     using { managed } from '@sap/cds/common';
 
