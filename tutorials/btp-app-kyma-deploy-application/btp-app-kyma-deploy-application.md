@@ -28,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 The next step is to add the Authorization and Trust Management service which will allow user login, authorization, and authentication checks. Add the following snippet to the `chart/values.yaml` file:
 
 
-```YAML[8-16]
+```YAML[9-17]
 srv:
   ...
 xsuaa:
@@ -67,11 +67,11 @@ CONTAINER_REGISTRY=<your-container-registry>
 
 > Looking for `<your-container-registry>`?
 
->     Value for `<your-container-registry>` is the same as the docker server URL and the path used for docker login. You can quickly check it by running the following command in your terminal:
+> Value for `<your-container-registry>` is the same as the docker server URL and the path used for docker login. You can quickly check it by running the following command in your terminal:
 
->     ```json
->     cat ~/.docker/config.json
->     ```
+> ```json
+> cat ~/.docker/config.json
+> ```
 
 [DONE]
 [ACCORDION-END]
@@ -167,9 +167,10 @@ Now that we've build the docker images, let's push them to the container registr
 [ACCORDION-BEGIN [Step 7: ](Deploy)]
 1. Deploy your app:
 
-     ```Shell/Bash
-     helm upgrade cpapp ./chart --install
-     ```
+    ```Shell/Bash
+    helm upgrade cpapp ./chart --install
+    ```
+
 
     > In case you get an error message about the CPU limits, increase the values for CPU in the file `chart/values.yaml`.
 
@@ -211,7 +212,7 @@ Now that we've build the docker images, let's push them to the container registr
 
      The installed helm chart should be displayed:
 
-     ```
+     ```Shell/Bash
      NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
      cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
      ```
@@ -240,7 +241,7 @@ On macOS, if you get the error `ERROR: failed to build: failed to fetch builder 
 
     If the job fails or if it's still in progress, the job is displayed as incomplete (completions `0/1`) like in this example:
 
-    ```
+    ```Shell/Bash
     NAME                 COMPLETIONS   DURATION   AGE
     cpapp-hana-deployer  0/1           3m7s       3m7s
     ```
@@ -253,7 +254,7 @@ On macOS, if you get the error `ERROR: failed to build: failed to fetch builder 
 
     You should see a list of pods that run on error because of failed deployment attempts:
 
-    ```
+    ```Shell/Bash
     NAME                           READY   STATUS    RESTARTS   AGE
     cpapp-hana-deployer-6s7fl      0/1     Error     0          6m16s
     cpapp-hana-deployer-n5fnq      0/1     Error     0          7m46s
@@ -283,7 +284,7 @@ You can use the `logs` and `describe` commands as described above to inspect the
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Check SAP HANA cloud trusted IP addresses)]
+[ACCORDION-BEGIN [Step 11: ](Check SAP HANA Cloud trusted IP addresses)]
 If you see the error `Connection failed (RTE:[89013] Socket closed by peer`, it's possible that your SAP HANA Cloud instance doesn't allow your Kyma cluster's IP address. You can find more info in [SAP HANA Database Connections](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html).
 
 To specify trusted source IP addresses for your SAP HANA Cloud instance:
@@ -328,7 +329,7 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
     kubectl get pods
     ```
 
-    ```
+    ```Shell/Bash
     NAME                         READY   STATUS    RESTARTS   AGE
     cpapp-srv-84964965cd-5mwtm   2/2     Running   0          13m
     ```
@@ -341,7 +342,7 @@ To specify trusted source IP addresses for your SAP HANA Cloud instance:
 
     It should look like this:
 
-    ```
+    ```Shell/Bash
     NAME              GATEWAYS                                         HOSTS                                                         AGE
     cpapp-srv-bsbj8   ["kyma-gateway.kyma-system.svc.cluster.local"]   ["srv-cpapp-risk-management.c-abc.stage.kyma.ondemand.com"]   2d15h
     ```
