@@ -107,7 +107,7 @@ export const dict = {
 ### Configure localization in React app
 
 
-1. In the file `react-core-mf/src/views/home.js`, around line 8, replace the `const [options]` variable with the following code:
+1. In the file `react-core-mf/src/views/home.js`, update the options state to include both English and German as in the following::
 
     ```JavaScript
     const [options] = useState([{ key: 'en-US', text: 'en-US' }, { key: 'de-DE', text: 'de-DE' }]);

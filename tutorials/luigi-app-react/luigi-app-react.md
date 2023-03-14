@@ -361,10 +361,8 @@ In this step, you will make changes to the entry point `index.js` for the React 
 
     const Home = (props) => {
       const [options] = useState([{ key: 'en-US', text: 'en-US' }]);
-      // const [locale, setLocale] = useState(props.currentLocale);
 
       function onChangeValue(event) {
-        // setLocale(event.detail.selectedOption.innerText);
         sendCustomMessage({
           id: "set-language",
           locale: event.detail.selectedOption.innerText,
