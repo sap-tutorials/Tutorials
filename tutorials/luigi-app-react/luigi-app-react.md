@@ -187,7 +187,7 @@ In this step, you will create another HTML file which will serve as a template f
 ### Configure webpack
 
 
-In this step, we configure `webpack` and adjust dependencies in order to make it easier to develop and build the app.
+In this step, you will configure `webpack` and adjust dependencies in order to make it easier to develop and build the app.
 
 1. Go to `react-core-mf/webpack.config.js`. Note that by default the `webpack-dev-server` will redirect all requests to `index.html` which is the app's main entry point where the Luigi Core library is injected. However, since the micro-frontends are also built in the same environment, it's necessary to host the root React micro-frontend app inside another file, in this case named `sampleapp.html`. This has been done in lines 40-16 and a similar approach can be chosen with any other frontend framework:
 
