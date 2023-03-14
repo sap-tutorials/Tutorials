@@ -61,14 +61,18 @@ In this step, you will create files with the text that is to be changed within t
 1. Find the folder ​`i18n`​ under the ​`webapp`​.  Inside it, create a file called `i18n_de.properties` with the following content:
 
     ```json
-    ModalText = Produkt Details
+    ModalText = Produktdetails
     Quantity = Anzahl
+    appTitle = ui5
+    appDescription = Deutsch
     ```
 
 2. Create another file called `i18n_en.properties` with the following content:
 
     ```json
     ModalText = Product Details
+    appTitle = ui5
+    appDescription = English
     Quantity = Quantity
     ```
 
@@ -101,8 +105,7 @@ In this step, you will create files with the text that is to be changed within t
 
 This step involves the standard process in UI5 for providing translation.
 
-// This file does not exist ?
-1. Edit the ​`ui5-mf/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
+1. Edit the ​`ui5-mf/webapp/view/Main.view.xml` ​file by marking the translated target text. Replace `<ObjectAttribute>` tag with:
 
     ```XML
     <ObjectAttribute text="{i18n>Quantity}: {orderQuantity}" />
