@@ -495,7 +495,6 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
     <!-- border -->![In the run configurations panel, expand the _Run bookshop-hybrid_ run configuration to access the available _db - hana_ binding. Click on the _Bind_ button at the right side of the _db - hana_ binding and bind to your SAP HANA service instance.](bind-hana.png)
 
-
 1. Run your project with the `Run bookshop-hybrid` configuration.
 
     You see in the console log, that your SAP HANA Cloud instance is used.
