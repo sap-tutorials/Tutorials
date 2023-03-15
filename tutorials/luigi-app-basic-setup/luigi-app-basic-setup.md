@@ -114,7 +114,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
 
 5. Use the settings shown in the screenshot below. For "Select your generator", use the arrow keys to scroll down and select `app`. For the questions "Which framework do you want to use?" and "Who is the author of this application?", choose the default option and press Enter. 
 
-    ![UI5 Terminal](ui5-yo.png)
+    <!-- border -->![UI5 Terminal](ui5-yo.png)
 
 
 
