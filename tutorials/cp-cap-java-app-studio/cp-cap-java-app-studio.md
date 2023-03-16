@@ -84,7 +84,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-      -DarchetypeVersion=RELEASE \
+      -DarchetypeVersion=RELEASE -DjdkVersion=11 \
       -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
@@ -153,8 +153,6 @@ In this step, you will define a simple service, which also defines its own entit
     ```Shell/Bash
     mvn clean install
     ```
-
-> You might need to adapt the JDK version in the parent `pom.xml` to 11 and run `mvn clean install` again to proceed.
 
 Running this for the first time in a fresh dev space might take a while, depending on the network. Please wait until you see the **BUILD SUCCESS** message before continuing with the tutorial.
 
