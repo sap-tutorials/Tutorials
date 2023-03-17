@@ -34,7 +34,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
     ```SQLCRIPT
     out ex_products table (PRODUCTID nvarchar(10),
-                           CATEGORY nvarchar(20),
+                           CATEGORY nvarchar(40),
                            PRICE decimal(15,2))
     ```
 
