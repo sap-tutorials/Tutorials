@@ -40,15 +40,23 @@ All applications are created, edited, and managed within what we call a project,
 
 1. Open the [sandbox lobby](https://build-sb1-applicationdevelopment.lcnc.cfapps.eu10.hana.ondemand.com/lobby).
 
-3. Within the application development lobby, click **Create > Build an Application**.
+3. Within the SAP Build lobby, click **Create**.
+   
+    ![Create](startnew1.png)
+   
+    Click **Build an Application**. 
+   
+    ![Create](startnew2.png)
 
-    ![Create SAP Build Apps Project](Create_AppGyver_Project.png)
+    Click **Web & Mobile Application**. 
+
+    ![Create](startnew3.png)
 
 4. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
 
-    ![Create SAP Build Apps Project](Projectname.png)
+    ![Create](startnew4.png)
 
-Your SAP Build application is created, with the Composer Pro view displayed. Once created, projects can be accessed again at any time from your application development lobby.
+Your SAP Build Apps project is created, with the Composer Pro view displayed. Once created, projects can be accessed again at any time from the SAP Build lobby.
 
 
 
