@@ -1,11 +1,15 @@
 ---
-title: Deploy the SAP SuccessFactors Extension Database to SAP HANA Cloud
-description: In this phase of the development you will deploy the extension database to SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 7
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
+author_name: Alessandro Biagi
+author_profile: https://github.com/ale-biagi
 ---
+
+# Deploy the SAP SuccessFactors Extension Database to SAP HANA Cloud
+<!-- description --> In this phase of the development you will deploy the extension database to SAP HANA Cloud.
 
 ## Prerequisites
  - Complete the tutorial: [**Prepare to Develop the SAP SuccessFactors Extension**](cap-extend-sfsf-intro)
@@ -17,15 +21,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Complete the tutorial: [**Prepare the SAP SuccessFactors Extension UI with CDS Annotations**](cap-extend-sfsf-ui-annotations)
  - Complete the tutorial: [**Add Security to the SAP SuccessFactors Extension**](cap-extend-sfsf-add-security)
 
-## Details
-### You will learn
+## You will learn
   - How to **setup your project for SAP HANA**
   - How to **deploy the database to SAP HANA Cloud**
   - How to work with a "**hybrid approach**" (database in the cloud and application running locally)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup project for SAP HANA)]
+### Setup project for SAP HANA
+
 
 So far, all data persistence of your application has been utilizing a **default `SQLite` in-memory database**, which means that, each time you restart the application, all data that has been added/updated is completely lost.
 
@@ -45,12 +49,11 @@ In the **Terminal** type `npm install` and press **Enter** to install the newly 
 
 ![Figure 3 – Install new dependency](install-dep.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy the database to SAP HANA Cloud)]
+### Deploy the database to SAP HANA Cloud
 
-> **IMPORTANT NOTE**: before executing the next steps first make sure:
+
+> **IMPORTANT**: before executing the next steps first make sure:
 >
 > 1. You are properly **logged to Cloud Foundry** as instructed in **step 2** of the tutorial: [**Jump start the SAP SuccessFactors Extension CAP Project**](cap-extend-sfsf-jumpstart)
 > 2. Your SAP HANA Cloud database instance (created following [**this tutorial**](hana-cloud-deploying)) is up and running – remember: on **trial accounts** everything (including **SAP HANA database**) **shuts down overnight**!
@@ -74,18 +77,21 @@ Take a quick look at the `default-env.json` to verify what happened after comman
 
 Notice that a `hana` section has been added to the `VCAP_SERVICES` environment variable, with the **service instance name** of the **HDI container** and the **credentials** (service key) to connect to the SAP HANA Cloud database.
 
+> **IMPORTANT UPDATE**: From **CDS version 5 and above**, this procedure will not modify the `default-env.json` file. Instead, it will create the `.cdsrc-private.json` file containing the service bindings. For such CDS versions you'll need to "re-bind" the **Destination** and **XSUAA** service instances to the local project with: `cds bind --to sfsf-dest,sfsf-xsuaa`. Then, to run the project locally you must use: `cds watch --profile hybrid`. If, in the future, you switch back to the **SQLite in-memory database**, then you can stick with the simple `cds watch`.
+
 If you click on the **Cloud Foundry icon** (small light bulb) on the left-hand pane and **expand the services node**, you'll also see the newly created service instance:
 
 ![Figure 6 – HDI container service instance](hdi-service.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run project locally with the database in the cloud)]
+### Run project locally with the database in the cloud
+
 
 Now, checkout what happens when you execute the application.
 
 In the **Terminal** type `cds watch` and press **Enter**.
+
+> **IMPORTANT**: you must use `cds watch --profile hybrid` when working with **CDS version 5 and above** as per the **update described in the previous step**.)
 
 ![Figure 7 – Project connected to SAP HANA Cloud database](connect-to-hc.png)
 
@@ -97,10 +103,8 @@ If you want to **switch to the `SQLite` in-memory database** again for developme
 
 ![Figure 8 – Switching back to SQLite in-memory](sqlite.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check your knowledge)]
+### Check your knowledge
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
