@@ -24,9 +24,11 @@ In this tutorial, you will learn how to apply styling to the UI5 Web Components.
 
 ### Change style for existing components
 
-You can change the appearance of the Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp). Per default, the Fiori 3 theme parameters are injected into the document head as CSS Variables. If you want to change e.g. the color of all texts, you can do that by creating another style element.
+You can change the appearance of the UI5 Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp).
+Per default, the Fiori 3 theme parameters are injected as CSS Variables into the `<head>`.
+For example, if you want to change the color of all texts that use the `--sapTile_TitleTextColor` variable, you can create an additional `style` tag in the `head` of your application:
 
-Open the `index.html` file inside of your `public` folder and add the following content inside of the `<head>` element:
+Open the `index.html` file inside your `public` folder and add the following content inside the `<head>` element:
 
 ```HTML
   <style>
@@ -128,6 +130,13 @@ If you want to add a custom component to your app, but still want to use the sty
     ![Custom Element](01_customElement.png)
 
    Now you can see, that the element has the same `fontFamily` and uses the same semantic colors as the UI5 Web Components for React.
+
+### Conclusion
+
+In this tutorial mission, you learned the basics of how to build a single page application using UI5 Web Components for React, with routing, styling, and general component behavior and modern React APIs.
+If you have questions about UI5 Web Components for React, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/SAP/ui5-webcomponents-react), where you can file [issues](https://github.com/SAP/ui5-webcomponents-react/issues/new/choose) or participate in [discussions](https://github.com/SAP/ui5-webcomponents-react/discussions).
+
+If you enjoyed this tutorial, you can help us out a lot by starring our repo and become one of our wonderful [stargazers](https://github.com/SAP/ui5-webcomponents-react/stargazers)!
 
 
 

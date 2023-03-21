@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.59 e21c39fe">
+    <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+    <meta osm_base="2022-12-05T11:20:55Z" areas="2022-12-05T10:28:09Z"/>
+    <node id="269516700" lat="49.4415185" lon="8.6618083">
+        <tag k="amenity" v="biergarten"/>
+    </node>
+    <node id="281106162" lat="49.4375105" lon="8.6751244">
+        <tag k="addr:city" v="Heidelberg"/>
+        <tag k="addr:housenumber" v="30"/>
+        <tag k="addr:postcode" v="69121"/>
+        <tag k="addr:street" v="Wiesenweg"/>
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Züchterklause"/>
+        <tag k="opening_hours" v="Mo-Su 10:00-22:00"/>
+        <tag k="opening_hours:signed" v="no"/>
+        <tag k="phone" v="+496221471273"/>
+        <tag k="website" v="https://zuechterklause.metro.rest/?lang=de"/>
+    </node>
+    <node id="298992729" lat="49.4442505" lon="8.6192695">
+        <tag k="addr:city" v="Edingen-Neckarhausen"/>
+        <tag k="addr:country" v="DE"/>
+        <tag k="addr:postcode" v="68535"/>
+        <tag k="addr:suburb" v="Edingen"/>
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Cavos Terrasse"/>
+        <tag k="opening_hours" v="Th-Su 15:00-21:00"/>
+    </node>
+    <node id="302720319" lat="49.3708436" lon="8.6538050">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Kleintierzüchterverein"/>
+    </node>
+    <node id="306004576" lat="49.4520178" lon="8.6774553">
+        <tag k="addr:city" v="Dossenheim"/>
+        <tag k="addr:housenumber" v="45"/>
+        <tag k="addr:postcode" v="69221"/>
+        <tag k="addr:street" v="Rathausstraße"/>
+        <tag k="amenity" v="biergarten"/>
+        <tag k="email" v="besen.info@dossema-weinhof.de"/>
+        <tag k="name" v="Besenwirtschaft Dossema Weinhof"/>
+        <tag k="opening_hours" v="We-Sa 16:00-23:00; Su 11:00-21:00"/>
+        <tag k="phone" v="+49 6221 7257617"/>
+        <tag k="website" v="http://www.dossema-weinhof.de/"/>
+        <tag k="wheelchair" v="limited"/>
+    </node>
+    <node id="792952203" lat="49.3715057" lon="8.7014246">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="wheelchair" v="yes"/>
+    </node>
+    <node id="1388878117" lat="49.5151362" lon="8.6131697">
+        <tag k="amenity" v="biergarten"/>
+    </node>
+    <node id="2354493008" lat="49.5090267" lon="8.5947174">
+        <tag k="amenity" v="biergarten"/>
+    </node>
+    <node id="2357248595" lat="49.5462133" lon="8.6773780">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="contact:website" v="https://www.burgruinewindeck.de/biergarten"/>
+    </node>
+    <node id="2449678126" lat="49.4533762" lon="8.7238315">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Zum weißen Stein"/>
+        <tag k="opening_hours" v="PH,We-Su 10:00-19:00"/>
+        <tag k="website" v="https://www.zum-weissen-stein.eu/"/>
+    </node>
+    <node id="3648411745" lat="49.5159286" lon="8.6112588">
+        <tag k="amenity" v="biergarten"/>
+    </node>
+    <node id="4408096782" lat="49.4073691" lon="8.6767352">
+        <tag k="addr:city" v="Heidelberg"/>
+        <tag k="addr:housenumber" v="139-151"/>
+        <tag k="addr:postcode" v="69115"/>
+        <tag k="addr:street" v="Bergheimer Straße"/>
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Firebowl Sportsbar"/>
+        <tag k="wheelchair" v="yes"/>
+    </node>
+    <node id="4452299869" lat="49.4749303" lon="8.6691222">
+        <tag k="amenity" v="biergarten"/>
+    </node>
+    <node id="4510733981" lat="49.4022228" lon="8.6708793">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Halle02 im Freien"/>
+        <tag k="website" v="http://zollhofgarten.de"/>
+    </node>
+    <node id="4975134350" lat="49.4017014" lon="8.6725125">
+        <tag k="addr:city" v="Heidelberg"/>
+        <tag k="addr:housenumber" v="2"/>
+        <tag k="addr:postcode" v="69115"/>
+        <tag k="addr:street" v="Zollhofgarten"/>
+        <tag k="amenity" v="biergarten"/>
+        <tag k="name" v="Holy Trinity"/>
+        <tag k="website" v="http://holytrinity.garden"/>
+    </node>
+    <node id="7644387782" lat="49.3704601" lon="8.7061321">
+        <tag k="amenity" v="biergarten"/>
+        <tag k="operator" v="Hotel ISG"/>
+    </node>
+</osm>

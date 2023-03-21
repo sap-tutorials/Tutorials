@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-fiori, programming-tool>odata, programming-tool>sapui5,   software-product>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, software-product>sap-fiori, programming-tool>odata, programming-tool>sapui5,   software-product>sap-build-work-zone--standard-edition, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
@@ -13,7 +13,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
-    - **SAP Launchpad service**
+    - **SAP Build Work Zone, standard edition**
     - **Destination**
     - **XSUAA**
     - **HTML5 Application Repository Service**
@@ -69,13 +69,13 @@ With this URL, you are able to access the `flpSandbox.html`
 > You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
-### Embed the application in the SAP Fiori Launchpad
+### Embed the application in SAP Build Work Zone, standard edition
 
 
-Now it's time to embed the app in a full SAP Fiori Launchpad environment:
+Now it's time to embed the app in the SAP Build Work Zone, standard edition:
 
-1. Open the admin UI of the [SAP Launchpad service](cp-portal-cloud-foundry-getting-started)
-2. Access the **Content Provider** menu. You should now see the following screen and **hit the refresh button** to synchronize the Launchpad with HTML5 application repository.
+1. Open the admin UI of the [SAP Build Work Zone, standard edition](cp-portal-cloud-foundry-getting-started)
+2. Access the **Content Provider** menu. You should now see the following screen and **hit the refresh button** to synchronize the Site Manger with the HTML5 application repository.
 
     <!-- border -->![contentProvider](contentProvider.png)
 
@@ -115,8 +115,6 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
     <!-- border -->![openFLP](openFLP.png)
 
-
-
 ### Save a custom filter variant
 
 1. Click on the **Products** to open your web application. Also note that you see your initials in the top-right user menu. This shows you that you have been signed in automatically via Single-Sign-On.
@@ -134,8 +132,5 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 5. Name the view **`TutorialFilter`**, **check both checkboxes**, and hit **Save**. This user-specific variant is now stored in the backend.
 
       <!-- border -->![Define name](./setname.png)
-
-
-
 
 ---

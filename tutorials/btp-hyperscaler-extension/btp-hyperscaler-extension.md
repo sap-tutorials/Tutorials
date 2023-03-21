@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>products>sap-btp--cloud-foundry-environment\, kyma-runtime]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-btp--kyma-runtime]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 # Consume SAP BTP Services from Any Hyperscaler
@@ -23,7 +23,7 @@ primary_tag: products>sap-btp--cloud-foundry-environment
      - [Google Cloud Platform ](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#kubeconfig)
      - [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
      - [Azure](https://docs.microsoft.com/bs-latn-ba/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)
-     - [Alibaba Cloud](https://www.alibabacloud.com/help/doc-detail/86798.htm)
+     - [Alibaba Cloud](https://in.alibabacloud.com/)
 
 
 ## You will learn
@@ -428,5 +428,3 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
   [OPTION END]
 
 **Congratulations!** You have successfully completed the tutorial.
-
-

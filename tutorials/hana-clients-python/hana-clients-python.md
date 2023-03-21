@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -220,7 +220,7 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
   - For information on the SAP HANA Python client, see [Python Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html).
 
-  - For further details on secure connections from Python to SAP HANA see [Connect to SAP HANA with a Secure Connection from Python](hana-python-secure-connection) and [Secure connection from Python to SAP HANA](https://blogs.sap.com/2020/05/07/secure-connection-from-python-to-sap-hana/).
+  - For further details on secure connections from Python to SAP HANA see [Secure connection from Python to SAP HANA](https://blogs.sap.com/2020/05/07/secure-connection-from-python-to-sap-hana/).
 
 
 ### Debug the application
@@ -249,6 +249,8 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
     Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)  
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries an SAP HANA database.  
 

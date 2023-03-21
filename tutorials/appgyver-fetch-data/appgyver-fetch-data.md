@@ -3,7 +3,7 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build-apps--enterprise-edition
-author_name: Daniel Wrolewski
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
@@ -112,6 +112,10 @@ You now need to configure your application to store the data it receives. To do 
 
     ![Save logic](save_logic.png)
 
+    >**Why did we delete default logic?**
+    >
+    >Whenever you create a data variable, default logic is added to fetch the data when the page loads, and then again every 5 seconds. But we want to fetch data only when the user clicks the button and scans a barcode, so we removed the default logic and will later add logic on the button click.
+
 The data variables are now configured for your application.
 
 
@@ -127,6 +131,8 @@ The data variables are now configured for your application.
 2. Click your **Scan** button to open the relevant logic panel.
 
     ![Scan button logic](scan_button_logic.png)
+
+    >This is where we add the logic to scan a barcode and retrieve the data for that product.
 
 3. Using the core logic options, scroll down to **Variables – Set Data Variables** and then drag and drop this into the logic editor.
 

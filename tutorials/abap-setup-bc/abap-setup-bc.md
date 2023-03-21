@@ -20,7 +20,7 @@ The installer can be downloaded free of charge from the [SAP BC homepage](https:
 
 An installation guide and other documentation can be downloaded from the [SAP BC details page](https://support.sap.com/en/product/connectors/bc/details.html).
 
-**If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.**
+> If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.
 
 ---
 
@@ -30,7 +30,7 @@ An installation guide and other documentation can be downloaded from the [SAP BC
 1. Go to the [SAP BC homepage](https://support.sap.com/sbc-download) and download the SAP BC server and developer version.
 2. Install the SAP BC by running the setup file in administrator mode. We recommend to access the setup file from the console.
 
-    **When installing the developer version, make sure to also install the Certificate Toolkit.**
+    > When installing the developer version, make sure to also install the Certificate Toolkit.
 
 3. Install the latest core fix and service release. You can find them on the download page of the SAP BC. Follow the instructions of the installation guides. You can find them in the `ReadMe` text file in the download folder.
 
@@ -73,15 +73,10 @@ An installation guide and other documentation can be downloaded from the [SAP BC
 Copy the private key, the CA's response, and the certificate to the `config` folder of the SAP BC server.
 
 
-
-
-
 ### Test yourself
 
 
-
-
-### Set Up WebSocket RFC from On-Premise to Cloud
+### Set up WebSocket RFC from on-premise to cloud
 
 [WebSocket RFC to Cloud Using SAP Business Connector](abap-websocket-rfc-bc)
 
@@ -92,5 +87,3 @@ Copy the private key, the CA's response, and the certificate to the `config` fol
 
 
 
-
----

@@ -22,6 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to develop and deploy [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap/) applications on [SAP BTP](cp-explore-cloud-platform) using different tools and services step by step.
 
 The tutorials are suitable for new or experienced developers on SAP BTP. The purpose of these tutorials is to help application developers to get a quick start on development, provide best practices, solve common issues, use common services, identify areas that need to be improved, and have an end-to-end scenario for validation. In the tutorials, you get to know, step by step, the development process on SAP BTP.
@@ -64,7 +66,7 @@ SAP BTP is an open set of Software, Platform, and Infrastructure as a Service sy
 
 SAP BTP is also constantly evolving. SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything. This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades. SAP BTP offers you the ability to turn data into business value, compose end-to-end business processes, and build and extend SAP applications quickly.
 
-The central point of entry to the cloud platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
+The central point of entry to the platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
 
 [DONE]
 [ACCORDION-END]

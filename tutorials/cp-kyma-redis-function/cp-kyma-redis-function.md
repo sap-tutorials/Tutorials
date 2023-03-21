@@ -139,7 +139,7 @@ In this step, the URL copied in the previous step will be assigned to an environ
 
 4. Choose the **Edit** option and scroll down to the **Environment Variables** and find the **Environment Variable** with the **Variable Name** `CENTRAL_GATEWAY_URL`
 
-5. Paste the value copied in the previous step into the **Value** field making sure that the value beings with **http://central-application...** and choose **Update**.
+5. Paste the value copied in the previous step into the **Value** field making sure that the value beings with `**http://central-application...**` and choose **Update**.
 
     ![Environment Variable](./assets/env-var.png)
 

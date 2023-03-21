@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--standard-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -12,7 +12,8 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a connection between SAP BTP, Cloud Foundry environment and the SAP Gateway Demo System (ES5).
 
 ## Prerequisites
-- You've created an account in SAP BTP and have subscribed to and configured the SAP Launchpad service.
+- You've created an account in SAP BTP 
+- You've created a user account on the SAP Gateway Demo System (ES5)
 
 
 
@@ -37,9 +38,6 @@ author_profile: https://github.com/LindsayBert
 
 
 
-
-
-
 ### Create destination to SAP Gateway Demo System
 
 
@@ -57,7 +55,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 3.  Add the following destination properties:
 
-    >Important: If you haven't already created a user in ES5 as explained in the prerequisites above, please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](gateway-demo-signup).
+    >Important: If you haven't already created a user in ES5 (see prerequisites above), please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](gateway-demo-signup).
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -74,7 +72,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 5. Enter the following **Additional Properties** depending on your scenario. Click the **New Property** button each time to add a new property.
 
-    >If you're not sure which ones to enter, enter all of them.
+    >If you're not sure which ones to enter, enter all of them. Also make sure that you enter the values correctly, for example, the value 'true' must always be lower case.
 
     |  Field     | Value
     |  :------------- | :-------------

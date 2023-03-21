@@ -9,7 +9,7 @@ author_profile: https://github.com/MichaelPShea
 ---
 
 # Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
-<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
+<!-- description --> Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA). 
 
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
@@ -255,7 +255,7 @@ In the manifest file you have to define a hostname for your application and add 
       timeout: 180
     ```
 
-4. Add the binding for the XSUAA service to your application.
+4. Add the binding for the XSUAA service to your application, in the same file.
 
     ```YAML
       ...
@@ -278,8 +278,16 @@ In the manifest file you have to define a hostname for your application and add 
         - nodejs_buildpack
       memory: 128M
     ```
+    
+6. Add the bindings for the XSUAA service to the approuter.
 
-6. Add a destination to the approuter.
+    ```YAML
+    ...
+      services:
+        - xsuaa-service-tutorial
+    ```
+
+7. Add a destination to the approuter.
 
     ```YAML
     # Application Router
@@ -295,16 +303,11 @@ In the manifest file you have to define a hostname for your application and add 
 
     The `name` parameter is the same as previously defined in the file `xs-app.json`. the `url` parameter is the result of the host name of your application and the region of your Cloud Foundry landscape (`https://<hostname>.cfapps.<region>.hana.ondemand.com`). The `forwardAuthToken` parameter set to true ensures that the approuter forwards the JWT token to the destination.
 
-7. Add the bindings for the XSUAA service to the approuter.
+    Ensure that the landscape mentioned in the route is the same as in the previous steps.
 
-    ```YAML
-    ...
-      services:
-        - xsuaa-service-tutorial
-    ```
 8. Save the file.
 
-When you completed the steps, your manifest.yml file should look like this:
+When you have completed the steps, your manifest.yml file should look like this:
 ```YAML
 applications:
 # Application

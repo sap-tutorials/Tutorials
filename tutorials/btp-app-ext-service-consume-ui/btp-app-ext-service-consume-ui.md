@@ -25,7 +25,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Add Supplier to Risks entity)]
 1. Open `db/schema.cds` and add the supplier to the `Risks` entity using an association to the `Suppliers` entity:
 
-    ```[9-9]
+    ```JavaScript[9-9]
     entity Risks : managed {
         key ID      : UUID  @(Core.Computed : true);
         title       : String(100);
@@ -138,7 +138,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 2. Add the `supplier` annotations:
 
     <!--  -->
-    ```Swift[7-11]
+    ```JavaScript[7-11]
     annotate RiskService.Risks with {
         title       @title: 'Title';
         prio        @title: 'Priority';
@@ -155,7 +155,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 3. Add the `supplier` fields to the `Risks` object page:
 
-    ```Swift[15-16]
+    ```JavaScript[15-16]
     annotate RiskService.Risks with @(
         UI: {
             ...
@@ -182,7 +182,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 4. Add the annotation for the `Suppliers` entity:
 
-    ```Swift
+    ```JavaScript
     annotate RiskService.Suppliers with {
         isBlocked   @title: 'Supplier Blocked';
     }
@@ -216,7 +216,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 2. Add the following annotations to the end of the file:
 
-    ```Swift
+    ```JavaScript
     // Annotations for value help
 
     annotate RiskService.Risks with {

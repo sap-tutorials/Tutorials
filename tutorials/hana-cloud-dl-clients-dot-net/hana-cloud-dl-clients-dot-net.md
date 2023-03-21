@@ -2,12 +2,12 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the .NET Driver
-<!-- description --> Create and debug a .NET application that connects to a data lake Relation Engine.
+<!-- description --> Create and debug a .NET application that connects to a data lake Relational Engine.
 
 ## Prerequisites
  - You have completed the first tutorial in this group.
@@ -85,6 +85,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
       </Reference>
     </ItemGroup>
     ```
+    
     ![dotNET.csproj code](dotNET-csproj-code.png)
 
     Once the `dotNet.csproj` file has been updated, save and close the file.
@@ -107,7 +108,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Linux)
     pico Program.cs
     ```
-
+ 
 5.  Replace the entire contents of `Program.cs` with the code below:  
 
     ```C#
@@ -121,7 +122,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    var connStr = "host=XXXX.iq.hdl.trial-us10.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
+                    var connStr = "host=XXXX.iq.hdl.prod-XXXX.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
                     using (var conn = new SAConnection(connStr)) {
                         conn.Open();
                         var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER";

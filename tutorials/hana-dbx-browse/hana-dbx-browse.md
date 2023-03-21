@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -32,12 +32,12 @@ primary_tag: software-product>sap-hana-cloud
     SET SCHEMA HOTEL;
     ```
 
-    When performing a select against an object in the currently-set schema, the schema name can be omitted.
+    When performing a select against an object in the currently set schema, the schema name can be omitted.
 
     ```SQL
     SET SCHEMA USER1;
-    SELECT * FROM HOTEL.CUSTOMER;  --succeeds
-    SELECT * FROM CUSTOMER;  --fails
+    SELECT * FROM HOTEL.CUSTOMER; --succeeds
+    SELECT * FROM CUSTOMER; --fails
     SET SCHEMA HOTEL;
     SELECT * FROM CUSTOMER; --succeeds
     ```
@@ -60,7 +60,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Show Tables](ShowTables.png)
 
-    A list of all of the tables appears along with additional metadata.
+    A list of all the tables appears along with additional metadata.
 
     ![All Tables](AllTables.png)
 
@@ -85,7 +85,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Table Editor](TableEditor.png)
 
-7. Values can be edited by selecting a cell, pressing enter, and typing in a new value.  New rows can be added by selecting the **+** button.  Changes must be saved by pressing the save button in order to commit them to the table.
+7. Values can be edited by selecting a cell, pressing enter, and typing in a new value.  New rows can be added by selecting the **+** button.  Changes must be saved by pressing the save button to commit them to the table.
 
     ![Add Row To Table](InsertRow.png)
 
@@ -150,7 +150,7 @@ We can see that reservations for suites only make up a small part of the overall
 
     ![where used browser](where-used2.png)
 
-3. The SAP HANA database explorer has the ability to search for an object in one or more databases.
+3. The SAP HANA database explorer can search for an object in one or more databases.
 
     Click the magnifying glass in the top right.  
 
@@ -162,7 +162,9 @@ We can see that reservations for suites only make up a small part of the overall
 
     ![Global Search](GlobalSearch.png)
 
-    The above search returned a function, view, stored procedure, and another view.
+    At this stage, the above search will return 4 results that include a function, view, stored procedure, and another view.
+
+### Knowledge check
 
 Congratulations! You have now used the database browser to view details of objects within an SAP HANA database and have become familiar with some of the features it provides.
 

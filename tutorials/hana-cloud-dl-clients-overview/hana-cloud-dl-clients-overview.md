@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # SAP HANA Cloud, Data Lake Client Interfaces Overview
@@ -388,7 +388,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 ### Connect with the Interactive SQL Client (DBISQL)
 
 
-The data lake client install includes [Interactive SQL Client (DBISQL)](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/4abee782576b4bff9f1a1274d662f74b.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
+The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/a373b67884f21015a722c2c0a58b94ad.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
 1. Start the GUI version of DBISQL from the Microsoft Windows Start menu, by browsing to it under SAP > Interactive SQL and double clicking on it, or by entering `dbisql` in a terminal.
 

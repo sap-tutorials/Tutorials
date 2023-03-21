@@ -1,46 +1,58 @@
 ---
 parser: v2
+title: Call a Remote Function Module (RFC) From SAP BTP, ABAP Environment
+description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, software-product-function>s-4hana-cloud-abap-environment, tutorial>license]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
-# Call a Remote Function Module From SAP Business Technology Platform (BTP), ABAP Environment
-<!-- description --> Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
 
 ## Prerequisites
+
 - **IMPORTANT**: This tutorial cannot be completed on a trial account. If you want to explore some of the concepts of this mission on a trial account, using OData or SOAP rather than RFC, see the following workshop: [SAP BTP, ABAP Environment: Connectivity and Integration](https://github.com/SAP-samples/teched2020-DEV268).
 - You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
-- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
+- **Tutorial**: [Set Up SAP BTP, ABAP Environment and create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 -	You have developer rights to an ABAP on-premise system, such as:
     - [AS ABAP developer edition, latest version](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) or:
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
--	In this on-premise system, you have installed SAP Cloud Connector with Administrator rights. (In the above systems, this is pre-installed)
+- You have configured **SAP Cloud Connector**, connecting your BTP and on-premise systems and have added the appropriate resources
+- You have assigned the role **`SAP_BR_DEVELOPER`** in both systems; you will need it to create communication artifacts
 
-## You will learn
-  - How to open a secure tunnel connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
-  - How to create a destination service instance with an RFC connection
+  
+
+## You will learn 
+
+
+  
+  - How to create a secure RFC connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to test the connection using an ABAP handler class
 
-## Intro
-Throughout this tutorial, replace `XXX` or `JP` with your initials or group number.
+This tutorial mission was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
+Throughout this tutorial, replace `000` with your initials or group number.
 
 **The problem:**
 
-There are two problems when setting up connectivity between the SAP BTP, ABAP Environment and an on-premise:
+There are two problems when setting up connectivity between the SAP BTP, ABAP Environment and an on-premise ABAP System:
 
 - The ABAP Environment "lives" in the Internet, but customer on-premise systems are behind a firewall
 - Remote Function Call (RFC) is not internet-enabled
 
 **The solution:**
 
-- Set up a secure, tunnel connection from the on-premise system to the SAP BTP, ABAP Environment
+Set up a secure connection from the on-premise system to the SAP BTP, ABAP Environment. To do this, you will create:
 
-**Specifically:**
+  - SAP Cloud Connector, to set up the secure tunnel connection
+  - The **`create_by_comm_arrangement`** method of the **`cl_http_destination_provider`** class
+  - Communication artifacts
+  - ABAP class that outputs the retrieved data to the Console
+
+**Technical information:**
 
 1. The ABAP environment tenant fetches the destination from the Destination service instance.
 2. The ABAP environment tenant requests to open the tunnel connection through the Connectivity service.
@@ -48,166 +60,258 @@ There are two problems when setting up connectivity between the SAP BTP, ABAP En
 4. The Cloud Connector opens a tunnel connection to the ABAP environment tenant using its public tenant URL.
 5. After the tunnel is established, it can be used for actual data connection using the RFC or HTTP(S) protocols.
 
-![Image depicting overview-cf-only](overview-cf-only.png)
+<!-- border -->
+![overview-cf-only](overview-cf-only.png)
 
 ---
 
-### Configure SAP Cloud Connector
 
-First, you need to connect your ABAP on-premise system to a Cloud Foundry subaccount by means of SAP Cloud Connector.
+### Check SAP Cloud Connector Configuration
+
+First, you need to connect your ABAP on-premise system to your BTPsub-account by means of SAP Cloud Connector.
 
 1. In your browser, log on to SAP Cloud Connector:
-    - Address = e.g. `https://localhost:<port>` (Default = 8443)
+    - Address = e.g. `https://localhost:<port>` (Default = **`8443`**)
     - User = Administrator
     - Initial password = manage (You will change this when you first log in)
 
-2. Choose **Add Subaccount**:
+2. Your configuration should look like this. 
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Region           | Your region. You can find this in SAP BTP cockpit (see screenshot below) - e.g. here, **Europe (Frankfurt) - AWS**
-    |  Subaccount           | Cloud Foundry Subaccount ID. You can find this by choosing your subaccount in SAP BTP cockpit and choosing the **information (i)** icon. (see screenshot below)
-    |  Display Name    | (Subaccount) Display Name. You can find this in by choosing your subaccount in SAP BTP cockpit (see screenshot below)
-    |  Subaccount User          |
-    |  Password   |
-    |  Location ID | Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. `XXX` for your initials or group number as here
+  <!-- border -->
+  ![step1b-scc-location-id](step1b-scc-location-id.png)
 
-    <!-- border -->![step1a-cf-name-id-subac](step1a-cf-name-id-subac.png)
-
-Your configuration should now look like this. Note down the **Location ID**, here **`XXX`**. You will need it later.
-
-  <!-- border -->![step1b-add-subaccount](step1b-add-subaccount.png)
-  <!-- border -->![step1c-cf-check-scc-xxx](step1c-cf-check-scc-xxx.png)
+  Note down the **Location ID**, e.g. **`SAPDEV`** as here. **You will need it later.**
 
 
 ### Add On-Premise System
 
-1. In the menu in the left pane, expand the subaccount and choose **Cloud To On-Premise > Access Control**.
+1. In the menu in the left pane, expand the sub-account and choose **Cloud To On-Premise > Access Control**.
+    
+2. Note down the **Virtual Host, e.g. `s4h_rfc:sapgw<instance>`** as here. This represents an external hostname, so that you can hide the internal hostname from the outside world. **You will need this external hostname and port later, when creating a destination from SAP BTP cockpit**.
 
-    <!-- border -->![Image depicting step2a-cf-add-onP-system](step2a-cf-add-onP-system.png)
+3. Check that **Result** = **`Reachable`**. If not, check that you chose the correct port, or whether an internal firewall is preventing communication.
 
-2. In the **Mapping Virtual to Internal System** pane, choose **Add (+)**.
+    <!-- border -->
+    ![step2a-scc-virtual-host](step2a-scc-virtual-host.png)
 
-    <!-- border -->![step2b-cf-add-onP-system](step2b-cf-add-onP-system.png)
+4. Check that the list of resources should looks roughly like this.
 
-3. Enter the following values, and choose **Save**.
-
-
-    |  Field Name             | Value
-    |  :----------------------| :-------------
-    |  Backend Type           | **ABAP**
-    |  Protocol               | **`RFC`**
-    |                         | Without Load Balancing
-    |  Application Server     | **IP address of the on-premise server, e.g. of `NPL`**
-    | Instance Number         | **`00`**
-    |  Virtual Host           | e.g. **`nplhost`**. This represents an external hostname, so that you can hide the internal hostname from the outside world. **You will need this external hostname and port later, when creating a destination from SAP BTP cockpit**.
-    |  Virt. Inst. No.        | **`00`**
-    | Principal Type | None
-    |Description | Optional
-    | Check Internal Host | Ticked
-
-    <!-- border -->![step2c-cf-map-system](step2c-cf-map-system.png)
-
-The mapping should now look something like this. Check that the status = `Reachable`. If not, check that you chose the correct port, or whether an internal firewall is preventing communication:
-
-![step2d-cf-mapped-to-virtual-system](step2d-cf-mapped-to-virtual-system.png)  
-
-
-### Specify remote function modules and BAPIs
-
-Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resource you need, `RFC_SYSTEM_INFO`.
-
-1. Add the resource **`RFC_SYSTEM_INFO`** by choosing the **Protocol = RFC**, then choosing **+**.
-
-    <!-- border -->![step3a-cf-add-rfc-resource](step3a-cf-add-rfc-resource.png)
-
-2. Enter the name of the RFC, e.g. **`RFC_SYSTEM_INFO`**. Alternatively, add **`RFC`** as a **Prefix**. Then choose **Save**
-
-    ![step3b-cf-name-rfc](step3b-cf-name-rfc.png)
-
-3. Add BAPIs to the list of resources by choosing **+** again. (You will need this BAPI in a later tutorial.)
-
-4. Enter the name **`BAPI_EPM`** as a **Prefix**, then choose **Save**.
-
-5. The list of resources should now look roughly like this.
-
-    ![step3c-cf-resources-rfc](step3c-cf-resources-rfc.png)
-
+    <!-- border -->
+    ![step2b-scc-resources](step2b-scc-resources.png)
 
 
 ### Check connectivity from SAP BTP cockpit
 
-In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
+In the SAP BTP cockpit of your Cloud Foundry sub-account, choose **Cloud Connectors**:
 
-<!-- border -->![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
+<!-- border -->
+![step3a-btp-cockpit-cloud-connectors](step3a-btp-cockpit-cloud-connectors.png)
 
-> The location ID points to the correct SAP Cloud Connector (located in the on-Premise system); The virtual host points to the on-Premise connection mapped in SAP Cloud Connector.
-
-
-
-### Create destination
-
-You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
-
-1. In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
-
-    <!-- border -->![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
-
-2. Enter the following values:
-
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Name           | e.g. **`NPL_JP`** as here
-    |  Type           | **`RFC`**
-    |  Description    | Can be anything, here **`NPL`**
-    |  Location ID    | same as in step 1, e.g. **`XXX`**
-    |  User   | Your user for the on-premise system, e.g. DEVELOPER
-    |  Password | Your password
-
-3. Add the following additional properties and values, by choosing **New Property**:
+> The **Location ID** points to the correct SAP Cloud Connector (located in the on-Premise system); The **Virtual host** points to the on-Premise connection mapped in SAP Cloud Connector. Later, in your **Communication System** in Fiori Launchpad, you will use these values, as **SCC Location ID** and **Target Host** respectively.
 
 
-    |  Field Name         | Value
-    |  :-------------     | :-------------
-    |  `jco.client.ashost`| Virtual hostname of your on-premise ABAP System, defined in SAP Cloud Connector, e.g. **`<nplhost>`**
-    |  `jco.client.client`| `<Your ABAP System client`, e.g. **001**
-    | `jco.client.sysnr`  | `<Your ABAP System number>`, e.g. **00**
+### Create package
 
-    <!-- border -->![step5b-cf-destination-created](step5b-cf-destination-created.png)
-      .
-    <!-- border -->![step4b-cf-connection-successful](step4b-cf-connection-successful.png)
+Now you need to create the necessary ABAP artifacts in ABAP Development Tools (ADT), starting with a package.
+
+1. In ABAP Development Tools (ADT), select the ABAP Cloud Project and choose **New > ABAP Package** from the context menu.
+
+2. Enter the following and choose **Next**:
+    - Name = **`Z_API_OUTBOUND_RFC_000`**
+    - Description = **Call API from S/4HANA Using RFC**
+    - Package type = **Development**
+
+    <!-- border -->
+    ![step1a-create-package](step1a-create-package.png)
+
+3. Choose **Create new transport request**, enter a description, such as **Get product data from S/4HANA using RFC**, then choose **Finish**.
+
+    <!-- border -->
+    ![step1b-transport-request](step1b-transport-request.png)
 
 
-### Create ABAP class for RFC connection
+### Create outbound service
 
-1. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
+Next, you will establish outbound communication from the BTP instance to the S/4HANA instance.
 
-2. Enter a name and description. The name should be in the form `ZCL_...RFC_XXX`. Replace `XXX` with your group number or initials.
+1. Select your ABAP package and choose **New > Other Repository Object** from the context menu; then enter **Outbound Service**, then choose **Next**.
 
-3. Create or assign a transport request.
+    <!-- border -->
+    ![step2a-new-repo-object](step2a-new-repo-object.png)
+    
+    <!-- border -->
+    ![step2a-new-outbound-service](step2a-new-outbound-service.png)
+
+2. Enter the following and choose **Next**.
+    - Outbound service: **`Z_OUTBOUND_HANA_RFC_000`**. The **`SRFC`** suffix will be added automatically.
+    - Description: **Get data from HANA System using RFC**
+    - Service type: **RFC Service**
+
+    <!-- border -->
+    ![step2b-outbound-service-name](step2b-outbound-service-name.png)
+
+3. Choose the transport request you just created, then choose **Finish**.
+
+The outbound service appears. Add the relevant RFC, **`RFC_GET_SYSTEM_INFO`**, then choose **Save**.
+
+  <!-- border -->
+  ![step2c-new-outbound-service-rfc](step2c-new-outbound-service-rfc.png)
 
 
-### Add interfaces statement; implement main method
+### Create communication scenario
 
-1. Implement the interface by adding this statement to the public section:
+1. Still in ADT, choose **Cloud Communication Management > New > Communication Scenario** from the context menu, then choose **Next**.
 
-    `interfaces if_oo_adt_classrun.`
+    <!-- border -->
+    ![step3a-new-comm-scen](step3a-new-comm-scen.png)
 
-    This allows you to test your class by displaying the output in the ABAP Console.
+2. Enter the following and choose **Next**.
+    - Name: **`Z_OUTBOUND_HANA_RFC_000_CS`**
+    - Description: **`Comm Scen: Call API from HANA using RFC`**
 
-2. In the implementation section, add the METHOD and ENDMETHOD statements:
+    <!-- border -->
+    ![step3b-new-comm-scen-name](step3b-new-comm-scen-name.png)
 
-    `METHOD IF_OO_ADT_CLASSRUN~MAIN.`
-    `ENDMETHOD.`
+3. Choose the transport request you just created, then choose **Finish**.
+
+    The communication scenario appears in a new editor. Ensure the following have been entered:
+
+    - Communication Scenario Type: **Customer Managed**
+    - Allowed Instances: **One instance per scenario and communication system**
+        
+4. On the **Outbound** tab, add your service by choosing **Add**.
+
+    <!-- border -->
+    ![step3c-add-service](step3c-add-service.png)
+
+5. Choose **Browse**, select your outbound service **`Z_OUTBOUND_HANA_000_SRFC`**, then choose **Finish**. The service type **RFC** is entered automatically.
+
+6. Choose **Finish**. Your communication scenario should look like this.
+Make sure that **Supported Authentication Methods > Basic** is ticked, since you will use this method later.
+
+  <!-- border -->
+  ![step3d-comm-scen-finished](step3d-comm-scen-finished.png)
+
+7. Leave the other default settings, choose **Save**, then choose **Publish locally**.
+
+
+### Create communication system in BTP
+
+Now, you need to create the necessary communication artifacts in Fiori Launchpad (of the BTP instance), starting with the communication system.
+This artifact specifies the URL of the API (minus the HTTP(S) protocol) and port.
+
+1. In the Fiori Launchpad home page, choose **Communication Systems**, then choose **New**.
+
+    <!-- border -->
+    [step4a-comm-system](step4a-comm-system.png)
+    <!-- border -->
+    ![step4b-new-comm-system](step4b-new-comm-system.png)
+
+2. Enter the following and choose **Create**.
+
+    - System ID: **`Z_OUTBOUND_HANA_CS_000`**
+    - System Name: **`Z_OUTBOUND_HANA_CS_000`**
+
+3. In **General** and below, enter:
+
+    |  Field Name             | Value
+    |  :----------------------| :-------------
+    |  Host name | *the host name of your ABAP on-premise system, found in the URL of that system's Fiori Launchpad, e.g.: `myhost.s4hana.ondemand.com`*
+    |  Port | Default = **443**
+    | Destination | **Off**
+    | Cloud Connector | **On**
+    | SCC Location ID: |**`SAPDEV`**
+  
+4. In **RFC Settings** 
+  | Load Balancing | Off
+  | Target Host | **`s4h_rfc`**
+  | Client | *Client of your ABAP on-premise system, also found in the URL e.g. 100*
+  | Instance Number | Default = 00
+
+  <!-- border -->
+  ![step4c-comm-system-settings]( step4c-comm-system-settings.png)    
+
+5. Under **Users for Outbound Communication**, enter the following, then choose **Close**:
+    - Authentication method: **User Name and Password** (basic authentication)
+    - User name: *Any name in the form ``BTP_S4H_CU_000``, where* **BTP** *= SAP BTP ABAP Environment and* **S4H** *= ABAP on-Premise System*
+    - Password: *should be generated*. Store this password, e.g. locally, because you will need it later in the on-premise system
+
+    <!-- border -->
+    ![step4d-comm-user-btp-s4h-cu-000](step4d-comm-user-btp-s4h-cu-000.png)
+
+6. Leave the other default settings as they are and choose **Save**.
+
+
+### Create communication arrangement
+
+Next, you will create communication arrangement, pointing to the communication scenario and communication system.
+
+1. Choose **Communication Arrangements**, then choose **New**.
+
+    <!-- border -->
+    ![step4a-comm-management-tiles](step4a-comm-management-tiles.png)
+
+2. Choose your communication scenario, **`Z_OUTBOUND_RFC_000_CS`**. This name is also entered automatically for the communication arrangement. You can accept this default.
+
+
+    <!-- border -->
+    ![step4a-new-comm-arr](step4a-new-comm-arr.png)
+
+    <!-- border -->
+    ![step4b-select-comm-scenario](step4b-select-comm-scenario.png)
+
+3. Choose the communication system you created, **`Z_OUTBOUND_HANA_CS_000`**.
+    The other details, e.g. **Communication User**, **RFC Outbound Service**, and **RFC Function Module** are entered automatically.
+
+4. Check the connection.
+
+
+### Create communication system on-premise
+
+Now you will create the necessary communication artifacts in the on-premise system, starting with the **Communication System**.
+
+1. In **Communication Systems**, choose **New**.
+
+2. Enter the following and choose **Create**.
+
+    - System ID: **`Z_INBOUND_RFC_CS_000`**
+    - System Name: **`Z_INBOUND_RFC_CS_000`**
+
+3. In **Technical Data**, choose **Inbound Only**.
+
+4. In **Users for Inbound Communication**, choose **Add**, then choose your existing communication user from the drop-down list.
+
+
+### Create ABAP class for RFC connection in SAP BTP, ABAP Environment
+
+1. In ABAP Development Tools (ADT), in **Project Explorer**, open your ABAP Environment instance.
+For more information, see [Set Up SAP BTP, ABAP Environment and create Your First Console Application](abap-environment-trial-onboarding).
+
+2. In the project, create a new ABAP package.
+
+3. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
+
+3. 2. Enter the following for your class, then choose **Next**. 
+    - Name: **`ZCL_SYSTEM_INFO_RFC_000`**
+    - Description for your class, e.g. **Test RFC BTP to on-premise** 
+    - Interface: **`if_oo_adt_classrun`**. *This enables you to run the class in the console.*
+
+Replace `000` with your group number or initials.
+
+4. Create or assign a transport request.
 
 
 ### Create variables
 
-Create the data types that specify your remote connection information, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial).
+In the method **`if_oo_adt_classrun~main`**, create the data types that specify your remote connection information
+
+<!-- REVISE THIS, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial). -->
 
     ```ABAP
-    DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                            i_name                  = 'NPL_JP'
+    DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
+                            comm_scenario          = Z_OUTBOUND_RFC_000_CS     " Communication scenario
+                            service_id             = Z_OUTBOUND_HANA_000       " Outbound service
+                            comm_system_id         = Z_OUTBOUND_HANA_CS_000    " Communication system
 
                            ).
 
@@ -246,8 +350,8 @@ Wrap the whole method in an exception using TRY...CATCH.
 catch cx_root into data(lx_root).
   out->write( lx_root->get_text( ) ).
 endtry.
+
 ```    
-![Image depicting step15-try-catch](step15-try-catch.png)
 
 
 ### Check your code
@@ -255,7 +359,7 @@ endtry.
 Your code should look roughly like this:
 
 ```ABAP
-CLASS ZCL_A4C_RFC_XXX DEFINITION
+CLASS ZCL_A4C_RFC_ DEFINITION
   public
   final
   create public .
@@ -266,12 +370,15 @@ protected section.
 private section.
 ENDCLASS.
 
-CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
+CLASS ZCL_A4C_RFC_ IMPLEMENTATION.
   METHOD IF_OO_ADT_CLASSRUN~MAIN.
     TRY.
-      DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                              i_name                  = 'NPL_JP'
-                             ).
+      DATA(lo_destination) = cl_rfc_destination_provider=>create_by_comm_arrangement(
+                              comm_scenario          = Z_OUTBOUND_RFC_000_CS     " Communication scenario
+                              service_id             = Z_OUTBOUND_HANA_000       " Outbound service
+                              comm_system_id         = Z_OUTBOUND_HANA_CS_000    " Communication system
+
+                           ).
 
       DATA(lv_destination) = lo_destination->get_destination_name( ).
 
@@ -289,6 +396,7 @@ CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
   ENDMETHOD.
 
 ENDCLASS.
+
 ```
 
 
@@ -302,9 +410,7 @@ ENDCLASS.
 ### Test yourself
 
 
-
-
-### Add error handling to the class for the RFC connection 
+### Add error handling to the class for the RFC connection
 
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
 
@@ -317,7 +423,7 @@ ENDCLASS.
 
     ```
 
-2. Now evaluate `sy-subrc` by adding the following CASE...ENDCASE statement:
+2. Now evaluate `sy-subrc` by adding the following `CASE...ENDCASE` statement:
 
     ```ABAP
 
@@ -330,31 +436,33 @@ ENDCLASS.
          out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
        WHEN 3.
          out->write( |EXCEPTION OTHERS| ).
-     ENDCASE.
+    ENDCASE.
 
     ```
 
-    ![Image depicting step20-error-handling](step20-error-handling.png)
-
 
 ## More Information
-This tutorial mission is based on a blog post series by Andre Fischer, which is well worth a look:
 
+This tutorial mission is based on a blog post series by Andre Fischer:
 - [How to call a remote function module in your on-premise SAP system from SAP BTP ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
 
-For more information on OData services and SAP Gateway in general, see:
+OData services:
+
+- [Mission: Take a Deep Dive into OData](mission.scp-3-odata)
+
+SAP Gateway in general, see:
+
 - [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-premise Systems, but contains lots of useful background information on the relationships between CDS views and OData services
 
-- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
-
-For more information on connectivity in this context, see:
+Connectivity in this context, see:
 - SAP Help Portal: [SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
 
 - SAP Help Portal: [Setting Up Destinations to Enable On-Premise Connectivity](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/9b6510edf4d844a28f022b3db41f3202.html)
 
 - SAP Help Portal: [Set Up an RFC Destination](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/a69e99c457a54ff881adcff843eea950.html)
 
-For more information on SAP Business Technology Platform (BTP)
+SAP Business Technology Platform (BTP):
+
 - SAP Help Portal: [What is SAP Business Technology Platform (BTP)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 
 - SAP Help Portal: [Getting Started With a Customer Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html) - If you use the booster, these steps are performed automatically for you, but you may be interested in the background information
