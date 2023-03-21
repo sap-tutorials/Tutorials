@@ -255,6 +255,7 @@ The extension also allows you to import and export SQL files to and from your co
     ![History Tab](historyTab.png)
 
     >It is important to note that certain capabilities (listed below) are only available in the web application of SAP HANA database explorer, and are not currently available in the extension.  A few examples are listed below: 
+    >
     > * Execute SQL on multiple databases or as a background activity
     > * Global Search
     > * Debugging SQLScript 
