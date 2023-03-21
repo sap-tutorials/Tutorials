@@ -1,29 +1,32 @@
 ---
-title: Create a Simple Proxy Interface
-description: Create a simple proxy interface to enable monitoring proxy service interfaces with SAP Application Interface Framework.
+parser: v2
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product>sap-s-4hana, tutorial>license]
 primary_tag: software-product>sap-application-interface-framework
 ---
 
+# Create a Simple Proxy Interface
+<!-- description --> Create a simple proxy interface to enable monitoring proxy service interfaces with SAP Application Interface Framework.
+
 ## Prerequisites
  - You have set up SAP Application Interface Framework
  - SAP S/4HANA 1709 or later, AIF 4.0
  - Optional: You're familiar with a test client of your choice, like SoapUI or Postman
 
-## Details
-### You will learn
+## You will learn
   - How to create a simple proxy interface
   - How to set up proxy monitoring in SAP Application Interface Framework
 
 
+## Intro
 In this tutorial, you'll learn how to create a simple proxy interface that enables you to monitor a proxy service interface.
 
 Since you might not have an Enterprise Services Repository of SAP Process Integration/SAP Process Orchestration connected to your backend, this tutorial keeps it simple: you'll create a proxy in the Backend Metadata Repository by leveraging the structures of a standard demo flight booking scenario. After these preparatory steps, you will get started with SAP Application Interface Framework at step six.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create package)]
+### Create package
+
 In order to have a destination for your newly created objects, you need to create a package.
 
 >If you've completed other tutorials for SAP Application Interface Framework, you might already have created a package and can skip this step.
@@ -34,10 +37,9 @@ Open your system. Go to the **Object Navigator** (transaction code `SE80`). From
 
 You have successfully created a new package named `ZDEMO`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign namespace to Backend Metadata Repository)]
+### Assign namespace to Backend Metadata Repository
+
 Next, you need to assign a new namespace to the Backend Metadata Repository.
 
 Run transaction **Assignment Namespace Generating Application** (transaction code `SPXNGENAPPL`). Switch to **Edit** mode, add a new entry, and enter or select the following details for your new namespace:
@@ -48,11 +50,10 @@ Run transaction **Assignment Namespace Generating Application** (transaction cod
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create proxy)]
+### Create proxy
+
 To create a new service interface, run the **proxy editor** (transaction code `SPROXY_START`).
 
 In **Enterprise Services: Initial Screen**, select **Create with Wizard** and carry out the following configuration steps:
@@ -67,16 +68,15 @@ You can now see an overview of your service provider.
 
 ![Create Proxy](service-provider-create-proxy.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Define proxy structures)]
+### Define proxy structures
+
 
 Next, you need to add an operation and a fault message type in the proxy editor.
 
 1. Switch to the **Internal View** tab. Right-click your service provider and select **Add Operation**. Enter the operation name **`PostBookings_01`**. With the new operation selected, switch the **Pattern** of the operation to **Not Reliable** to simplify testing.
 
-    !![Add Operation](proxy-structures-add-operation.png)
+    <!-- border -->![Add Operation](proxy-structures-add-operation.png)
 
 2. Right-click the operation and select **Set Request** > **Select Existing Message Type** from the context menu. In the upcoming **Restrict Value Range** dialog, remove all filters. Enter the message type **`SXIDAL_FBO_REQUEST_MT`** in the **ABAP Name** search filter, and the namespace **`http://sap.com/xi/XI/Demo/Airline`** in the **Namespace** search filter, then press **Enter**. In the search result, select the found entry, and select **Copy**.
 
@@ -84,12 +84,11 @@ Next, you need to add an operation and a fault message type in the proxy editor.
 
 4. **Save** and activate the proxy.
 
-!![Select Fault Message Type](proxy-structures-internal-view.png)
+<!-- border -->![Select Fault Message Type](proxy-structures-internal-view.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement proxy class method)]
+### Implement proxy class method
+
 
 Finally, to book the flights in your test scenario, the proxy class method needs to be implemented.
 
@@ -140,10 +139,9 @@ endmethod.
 
 **Save** and activate the class.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create namespace)]
+### Create namespace
+
 
 As interfaces in SAP Application Interface Framework are grouped using namespaces, you must create a namespace.
 
@@ -155,12 +153,11 @@ Select **New Entries** and enter the following name and description for your new
 | :------- | :--------------
 | **`DEMO_2`** | **`NS for AIF Proxy tutorials`**
 
-!![Create namespace](create-namespace.png)
+<!-- border -->![Create namespace](create-namespace.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create interface)]
+### Create interface
+
 
 While still in **Customizing** (transaction code `/n/AIF/CUST`), navigate to **Interface Development** > **Define Interfaces**.
 
@@ -184,10 +181,9 @@ Select **New Entries** and enter the following parameters based on your proxy cl
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Specify interface engines)]
+### Specify interface engines
+
 
 Next, you have to select the engines that should be used to handle the messages that are processed. If you create a new interface, by default, SAP Application Interface Framework handles the messages as proxy messages, so you can keep the default settings.
 
@@ -203,10 +199,9 @@ In the upcoming dialog, enter your beforehand created namespace **`DEMO_2`**, an
 | Logging Engine     | AIF Application Log
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create interface-specific single index table)]
+### Create interface-specific single index table
+
 
 It's recommended to implement an interface-specific single index table to ensure full flexibility, especially if you expect a high load of messages or if you plan to define key fields for your interface (now or later).
 
@@ -216,20 +211,19 @@ It's recommended to implement an interface-specific single index table to ensure
 
 2. After creating the single index table, activate it by selecting **Display** and then **Activate**.
 
-    !![Activate single index table](single-index-table-activate.png)
+    <!-- border -->![Activate single index table](single-index-table-activate.png)
 
 3. Go to **Customizing** (transaction code `/n/AIF/CUST`) and navigate to **SAP Application Interface Framework** > **Error Handling** > **Define Namespace-Specific Features**. Enter your namespace **`DEMO_2`** and select **Continue**.
 
 4. Select **New Entries** to create a new entry in **Define Interface-Specific Features**. Enter your interface name **`FLBOOK`** and version **`1`** and enter the name of the newly created single index table **`ZFLBOOK_MON_IDX`** in the field **Message Index Table**.
 
-    !![Define Interface-Specific Features](define-interface-specific-features.png)
+    <!-- border -->![Define Interface-Specific Features](define-interface-specific-features.png)
 
 5. **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create recipient for interface)]
+### Create recipient for interface
+
 
 If you want to monitor the newly created interface in the Interface Monitor of the Message Dashboard app, you require a recipient for the interface.
 
@@ -237,14 +231,13 @@ Go to **Customizing** (transaction code `/AIF/CUST`) and navigate to **SAP Appli
 
 In the menu on the left, navigate to **Define Recipients** by double-clicking it. Select **New Entries**, enter the name **`ZPROXY_TEST_RECIPIENT`** for your new recipient, and add a meaningful description.
 
-!![Define Recipients](define-recipients.png)
+<!-- border -->![Define Recipients](define-recipients.png)
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Assign recipient to interface)]
+### Assign recipient to interface
+
 
 To be able to see any data in the Interface Monitor or the Message Dashboard, a recipient must be assigned to the interface you want to monitor.
 
@@ -252,44 +245,41 @@ Go to **Customizing** (transaction code `/AIF/CUST`) and navigate to **SAP Appli
 
 In the menu on the left, double-click **Assign Recipients Without Key Fields** and create a new entry. Enter or select the namespace and the recipient you created before.
 
-!![Assign Recipients Without Key Fields](assign-recipients.png)
+<!-- border -->![Assign Recipients Without Key Fields](assign-recipients.png)
 
 **Save** your changes.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Assign users to recipient)]
+### Assign users to recipient
+
 
 Now the users in charge of monitoring the proxy must be assigned to the recipient.
 
 Run transaction `/AIF/MYRECIPIENTS` and create a new entry. Select the namespace **`DEMO_2`** and recipient `ZPROXY_TEST_RECIPIENT` you created in the steps before. Check the boxes for **Overview** and **Technical User**.
 
-!![Assign User to Recipient](assign-user.png)
+<!-- border -->![Assign User to Recipient](assign-user.png)
 
 **Save** the new entry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create test data)]
+### Create test data
+
 
 Before you can create flight bookings, you need to generate test data.
 
 To do so, run transaction `BC_DATA_GEN`, select the standard data record, and execute the report.
 
-  !![Create Data for Flight Data Model](create-test-data-report.png)
+  <!-- border -->![Create Data for Flight Data Model](create-test-data-report.png)
 
 Open the **Data Browser** (transaction code `SE16`), select the table **SFLIGHTS**, and choose **Execute**. The generated flight data entries are displayed.
 
 >If you run the requests in step 15, select existing flights from this table. Ensure that the flight date is in the future, or your requests will fail.
 
-  !![Generated Flight Data Entries](create-test-data-entries.png)
+  <!-- border -->![Generated Flight Data Entries](create-test-data-entries.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Configure web service)]
+### Configure web service
+
 
 To be able to send booking requests to the proxy interface, you need to define a service and a service binding in the SOA Management.
 
@@ -305,20 +295,19 @@ On the **Configurations** tab, create a new service as follows:
 
 4. In the **Actions** column, select the **Open Binding WSDL Generation** icon to access the Binding WSDL URL that you may need to setup your test client. Copy it for later use.
 
-    !![Define Services and Binding](configure-web-service-configuration.png)
+    <!-- border -->![Define Services and Binding](configure-web-service-configuration.png)
 
 You can find the WSDL URL for binding on the bottom of the upcoming dialog.
 
-!![Binding WSDL URL](configure-web-service-binding.png)
+<!-- border -->![Binding WSDL URL](configure-web-service-binding.png)
 
 If you open the WSDL URL for binding in your internet browser, scroll down to find the end point URL of your service interface.
 
-!![Binding WSDL URL in Browser](configure-web-service-browser.png)
+<!-- border -->![Binding WSDL URL in Browser](configure-web-service-browser.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Send sample request)]
+### Send sample request
+
 
 Use a test client of your choice to send a sample request to the proxy interface. This tutorial specifies the steps for using either **SoapUI** or **Postman**.
 
@@ -330,7 +319,7 @@ Use a test client of your choice to send a sample request to the proxy interface
 
 3. Enter your username and password in the request properties to authenticate to your backend system. Then, enter some existing flight data from table `SFLIGHTS`, and post the request.
 
-    !![Sample Request in SoapUI](sample-request-soapui.png)
+    <!-- border -->![Sample Request in SoapUI](sample-request-soapui.png)
 
 1. If you use **Postman**, create a new POST request, and enter the end point URL of your service interface into the address field.
 
@@ -338,11 +327,11 @@ Use a test client of your choice to send a sample request to the proxy interface
 
 3. In the **Headers** tab, enter the key content-type with value `text/xml`.
 
-    !![Sample Request in Postman, Headers](sample-request-post-headers.png)
+    <!-- border -->![Sample Request in Postman, Headers](sample-request-post-headers.png)
 
 4. Switch to the **Body** tab and select **raw** and the type **XML**. Paste the XML sample request (see below) including the SOAP envelope into the Postman request body. Maintain existing flight data from table `SFLIGHTS`, and select **Send** to send the request.
 
-    !![Sample Request in Postman, Body](sample-request-post-body.png)
+    <!-- border -->![Sample Request in Postman, Body](sample-request-post-body.png)
 
 The following is an example of a booking request:
 
@@ -374,37 +363,34 @@ The following is an example of a booking request:
 ```
 You have successfully sent in a sample request you can monitor in the next step.
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 16: ](Monitor proxy interface)]
+### Monitor proxy interface
+
 
 Finally, you should test your settings and verify that the proxy monitoring is working as planned.
 
 If you're using SAP GUI, check the results of your test in the **Interface Monitor** (transaction code `/n/AIF/IFMON`). You'll only be able to see the new interface if you correctly assigned your user to the recipient.
 
-!![Monitoring in Interface Monitor](monitoring-interface-monitor.png)
+<!-- border -->![Monitoring in Interface Monitor](monitoring-interface-monitor.png)
 
 When you select the summary line for your recipient, you're forwarded to **Monitoring and Error Handling**, where you can see your selected test message(s).
 
-!![Monitoring in Error Handling](monitoring-error-handling.png)
+<!-- border -->![Monitoring in Error Handling](monitoring-error-handling.png)
 
 Alternatively, if you have set up Message Monitoring in the SAP Fiori launchpad, you can check the test results there. For more information, see [How to configure the SAP Fiori Apps for SAP Application Interface Framework](https://blogs.sap.com/2021/11/04/how-to-configure-the-sap-fiori-apps-for-sap-application-interface-framework/).
 
-!![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
+<!-- border -->![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
 
 Congratulations! You've created a simple proxy interface and set up monitoring for it in SAP Application Interface Framework.  
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 17: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

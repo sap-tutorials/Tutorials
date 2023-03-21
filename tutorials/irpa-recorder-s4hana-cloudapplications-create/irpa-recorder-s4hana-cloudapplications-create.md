@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Céline Audin
 author_profile: https://github.com/celineaudinsap
-title: Automate  SAP S/4 HANA Cloud Applications using SAP UI5 Recorder
-description: Automate the process of creating a purchase order in Manage Purchase Orders Application in SAP S/4 HANA Cloud.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-adaptive-server-enterprise-replication]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
+
+# Automate  SAP S/4 HANA Cloud Applications using SAP UI5 Recorder
+<!-- description --> Automate the process of creating a purchase order in Manage Purchase Orders Application in SAP S/4 HANA Cloud.
 
 ## Prerequisites
  - [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
@@ -15,12 +17,12 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
  - Register  to [SAP S/4 HANA Cloud Trial](https://www.sap.com/germany/products/s4hana-erp/trial.html) Account
  - Manage Purchase Orders application must run in the background
 
-## Details
-### You will learn
+## You will learn
   - How to use the SAP UI5 Recorder
   - How to automate applications in SAP S/4 HANA Cloud
 
-[ACCORDION-BEGIN [Step 1: ](Open Manage Purchase Orders Application)]
+### Open Manage Purchase Orders Application
+
 
 1.  Navigate to **SAP S/4 HANA Cloud Trial account.**
 
@@ -28,12 +30,11 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 3.  Select the tile **Manage Purchase Orders**. This will open the **Manage Purchase Orders** application.
 
-    !![Start](irpa-start.png)
+    <!-- border -->![Start](irpa-start.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create your project)]
+### Create your project
+
 
 1.  In the **Cloud Factory**,  click the **Projects** .
 
@@ -43,13 +44,12 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 4.  Click **Create**.
 
-    !![New Project](irpa-newProject.png)
-
-[DONE]
-[ACCORDION-END]
+    <!-- border -->![New Project](irpa-newProject.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Create your application)]
+
+### Create your application
+
 
 > Before recording the steps of a workflow, ensure that the Manage Purchase Orders application and the Cloud Studio are running in a Chrome browser in two separate windows.
 
@@ -59,7 +59,7 @@ Open the **Manage Purchase Orders** application in your SAP S/4 HANA Cloud Trial
 
 2.  From the artifact menu, select the **Application** artifact.
 
-    !![Application](irpa-application.png)
+    <!-- border -->![Application](irpa-application.png)
 
     > ### What is going on?
     >The Cloud Studio starts detecting the applications and their screens currently running on your local machine. When it's done, you'll see a list of screens in the picker panel on the left.
@@ -70,12 +70,11 @@ Open the **Manage Purchase Orders** application in your SAP S/4 HANA Cloud Trial
 
 5.  Click the **Record** button.
 
-    !![Recorder](irpa-recorder.png)
+    <!-- border -->![Recorder](irpa-recorder.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Record your application)]
+### Record your application
+
 This step involves recording the setting of the values for  **Supplier**, **Purchasing Organization** and **Purchasing Group**.
 
 |  Field Name     | Value
@@ -87,13 +86,13 @@ This step involves recording the setting of the values for  **Supplier**, **Purc
 
 >When you click the **Record** button the **Cloud Studio** is locked and you will be directed to the application you want to record. **Recording in progress** pop-up message is displayed.
 
-!![Recorder2](irpa-recorder2.png)
+<!-- border -->![Recorder2](irpa-recorder2.png)
 
 1.  To start the recording, click the recorder ![Recorder button](recorder.png) button. The recorder will capture the screen. You can see it in the **Activities** list.
 
 2.  Click the **Create** button on the page.
 
-    !![Recorder3](irpa-recorder3.png)
+    <!-- border -->![Recorder3](irpa-recorder3.png)
 
 3.  The activity is added.
 
@@ -102,7 +101,7 @@ This step involves recording the setting of the values for  **Supplier**, **Purc
     > ### What is going on?
     >The Recorder captures the first screen of an application automatically and  the following screens must be captured manually by clicking the capture ![Capture button](capture.png) button. Then the actions you perform on that screen will be recorded automatically.
 
-    !![Recorder4](irpa-recorder4.png)
+    <!-- border -->![Recorder4](irpa-recorder4.png)
 
     >**CAUTION:** While recording, if a new screen appears or if there is a change in the UI, you must first click the button manually. You can then perform the actions in the application screens. This is applicable across the workflow recording.
 
@@ -110,33 +109,32 @@ This step involves recording the setting of the values for  **Supplier**, **Purc
 
 5.  In the **Supplier** input field, click the **Show Value Help** icon.
 
-    !![Recorder5](irpa-recorder5.png)
+    <!-- border -->![Recorder5](irpa-recorder5.png)
 
 6.  A change of screen is detected, click the capture ![Capture button](capture.png) button.
     > ### What is going on?
     >Whenever a new screen appears or if there is a change in the UI, the Recorder detects the screen change in most of the cases and displays a hint message. This gives you a hint to capture a screen manually by clicking the Capture button .
     The hint message disappears when you click the capture button or perform any action on the screen.
 
-    !![Recorder6](irpa-recorder6.png)
+    <!-- border -->![Recorder6](irpa-recorder6.png)
 
 7.  Search for the **Supplier ID**: `USSU-TRL04` in the search field and hit enter.
 
 8.  Select the **Supplier**: `USSU-TRL04`.
 
-    !![Recorder7](irpa-recorder7.png)
+    <!-- border -->![Recorder7](irpa-recorder7.png)
 
 9.  A change of screen is detected, click the capture ![Capture button](capture.png) button.
 
 10.  Upon selecting the **Supplier ID**, the **Purchasing Organization** input fills itself with the correct value automatically.
 
-    !![Recorder8](irpa-recorder8.png)
+    <!-- border -->![Recorder8](irpa-recorder8.png)
 
 11.  Now you can repeat the above steps for **Purchasing Group**: `Z10`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Record your application - Material Details)]
+### Record your application - Material Details
+
 
 This step involves recording the setting of the values for  **Material Details** in a table.
 
@@ -148,7 +146,7 @@ This step involves recording the setting of the values for  **Material Details**
 
 1.  Click **Create**.
 
-    !![Recorder9](irpa-recorder9.png)
+    <!-- border -->![Recorder9](irpa-recorder9.png)
 
     A new empty table row is created. The screen must be captured manually.
 
@@ -158,36 +156,36 @@ This step involves recording the setting of the values for  **Material Details**
 
 3.  In the **Material** input field, click the **Show Value Help** icon.
 
-    !![Recorder10](irpa-recorder10.png)
+    <!-- border -->![Recorder10](irpa-recorder10.png)
 
 4.  A change of screen is detected, choose the capture ![Capture button](capture.png) button.
 
-    !![Recorder11](irpa-recorder11.png)
+    <!-- border -->![Recorder11](irpa-recorder11.png)
 
 5.  Search for the **Material**: `MZ-FG-M525` in the search field and hit enter.
 
 6.  Select the **Material**: `MZ-FG-M525`.
 
-    !![Recorder12](irpa-recorder12.png)
+    <!-- border -->![Recorder12](irpa-recorder12.png)
 
 7.  A change of screen is detected, click the capture ![Capture button](capture.png) button.
 
-    !![Recorder13](irpa-recorder13.png)
+    <!-- border -->![Recorder13](irpa-recorder13.png)
 
 8.  Set **Order Quantity** to `200`.
 
 9.  Set **Net Order Price** to `9000`.
 
-    !![Recorder14](irpa-recorder14.png)
+    <!-- border -->![Recorder14](irpa-recorder14.png)
 
 10.  Click **Create**.
 
-    !![Recorder15](irpa-recorder15.png)
+    <!-- border -->![Recorder15](irpa-recorder15.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Export the recording)]
+
+### Export the recording
+
 
     >Once you have completed entering the data in the application screens, you can stop recording. Click the button to stop the recording. After you stop the recording, by default, the **Export** button is displayed.
 
@@ -197,35 +195,34 @@ This step involves recording the setting of the values for  **Material Details**
 
     >**CAUTION:** Before you start exporting the recording to the Cloud Studio, check if the Cloud Studio has not timed out. If it is timed out, you must re-login (do not refresh) to the Cloud Studio and then export the recording.
 
-      !![Export](irpa-export.png)
+      <!-- border -->![Export](irpa-export.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Review the Application and Automation)]
+### Review the Application and Automation
+
 
 >After successful processing, the recorder widget will be closed. You will be redirected to the Cloud Studio and the confirmation message, **Recording successfully exported** is displayed.
 
 The application `Manage Purchase Orders` and the automation `Manage Purchase Order Autom` are successfully exported.
 
-!![Overview](irpa-overview.png)
+<!-- border -->![Overview](irpa-overview.png)
 
 You will find the Declared Application in the **Cloud Studio**. You can view the recorded screens under **Declared Application** and the recorded elements under **Declared Elements**. If required, you can manually edit the screens to add or remove objects.
 
-!![Overview Application](irpa-overviewApplication.png)
+<!-- border -->![Overview Application](irpa-overviewApplication.png)
 
 All the recorded steps will be displayed in the automation designer of the **Cloud Studio**.
 You can then edit the automation to update the Step Details.
 
-!![Overview Automation](irpa-overviewAutomation.png)
+<!-- border -->![Overview Automation](irpa-overviewAutomation.png)
 
 > As per your requirement, you can even record  the Step 1 : Open Manage Purchase Orders Application
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Test your automation)]
+
+### Test your automation
+
 
 1.  Click on **Test**.
 
@@ -238,8 +235,6 @@ You can then edit the automation to update the Step Details.
   **Manages Purchase Order Application** is opened in a browser window and creates the purchase order with values provided in the steps of the Automation.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 

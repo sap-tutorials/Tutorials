@@ -1,39 +1,44 @@
 ---
-title: Using ODBC driver for SQL Service
-description: Consuming CDS View Entities Using ODBC-Based Client Tools
+parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
+# Using ODBC driver for SQL Service
+<!-- description --> Consuming CDS View Entities Using ODBC-Based Client Tools
+
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
  - A 64bit Excel version since the ODBC driver for ABAP is a 64bit driver.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create a service definition and an SQL-typed service binding
   - How to create a communication scenario with object privileges
   - Install the ODBC driver on Windows
   - Create an ODBC data source
   - Open an ODBC connection in Microsoft Excel and access data
 
->Always replace `####` with your initials or group number.
+## Intro
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
+Always replace `####` with your initials or group number.
+
 
 ---
 You will learn how you can access CDS view entities in an ABAP system using SQL via ODBC. Open Database Connectivity (ODBC) is a standard API for accessing databases.
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 To access CDS view entities in an ABAP system via ODBC, these entities first need to be properly exposed in the back–end system before accessing them via the **ODBC driver for ABAP** in an ODBC application. The ODBC application could be any client tool capable of loading an ODBC driver or it could be a program written in a program language capable of using an ODBC driver (e.g. C, C++, python, node.js, PHP). In this tutorial, we will show the Microsoft Excel use case on Windows. The **ODBC driver for ABAP** itself is available on Windows and Linux.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install ODBC driver on Windows)]
+### Install ODBC driver on Windows
+
 
   1. To install the **ODBC driver for ABAP**, you need to visit the SAP Support Portal <https://support.sap.com/en/index.html>
 
@@ -90,10 +95,9 @@ To access CDS view entities in an ABAP system via ODBC, these entities first nee
 
     The ODBC driver is now ready to be used in ODBC data sources.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create two test tables)]
+### Create two test tables
+
 
 You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS** in ADT:
 
@@ -162,10 +166,9 @@ You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS*
       ![save](230.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Fill two test tables)]
+### Fill two test tables
+
 
   1. Now you need to fill your test table with some test data.
 
@@ -247,11 +250,10 @@ You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS*
 
     ![data preview](265.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create CDS view entities for tables)]
+### Create CDS view entities for tables
+
 
   1. Right click on the first table and select **New Data Definition**
 
@@ -283,10 +285,9 @@ You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS*
 
   6. Save and activate your data definitions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create Service Definition and SQL-typed Service Binding)]
+### Create Service Definition and SQL-typed Service Binding
+
 
   Now you need a service definition and a corresponding SQL-typed service binding to define that the new CDS view entities are exposed in a SQL service.
 
@@ -332,10 +333,9 @@ You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS*
     ![service Bin](430.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Communication Scenario)]
+### Create Communication Scenario
+
 
 To access the service binding, you need a technical user in the ABAP system.
 Therefore, you will now to create a communication scenario and a communication arrangement in the SAP BTP ABAP Environment system.
@@ -396,10 +396,9 @@ Therefore, you will now to create a communication scenario and a communication a
       ![publish](545.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a Communication System)]
+### Create a Communication System
+
 
   The final preparation tasks in the ABAP system cannot be performed in ADT and need to be done in the administration UI of the system.
 
@@ -447,10 +446,9 @@ Therefore, you will now to create a communication scenario and a communication a
 
     ![create communication](655.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create a Communication Arrangement)]
+### Create a Communication Arrangement
+
 
   1. Go back to the administration UI and select **Communication Arrangement**.
 
@@ -469,11 +467,10 @@ Therefore, you will now to create a communication scenario and a communication a
     ![save](720.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Create an ODBC data source)]
+### Create an ODBC data source
+
 
   1. Launch the Windows ODBC data source administrator tool from your Windows **Start**. The **ODBC Data Sources (64bit)** tool is part of a standard Windows installation.
 
@@ -517,10 +514,9 @@ Therefore, you will now to create a communication scenario and a communication a
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Open an ODBC connection in Microsoft Excel)]
+### Open an ODBC connection in Microsoft Excel
+
 
   After creating a DSN, you can use this in an ODBC client tool of your choice. For simplicity reasons, we have chosen Microsoft Excel as an example for this tutorial.
 
@@ -569,13 +565,11 @@ Therefore, you will now to create a communication scenario and a communication a
     ![RESULT](940.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

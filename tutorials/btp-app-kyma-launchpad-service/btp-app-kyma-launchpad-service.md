@@ -1,12 +1,12 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Add the SAP Launchpad Service
 description: Learn how to add the SAP Launchpad service.
 keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -72,7 +72,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Instances and Subscriptions](instances_and_subscriptions.png)
 
-3. Choose **Provider Manager** on the left and refresh the `HTML5 Apps` entry there.
+3. Choose **Channel Manager** on the left and refresh the `HTML5 Apps` entry there.
 
     !![Refresh HTML5 Apps](refresh_html5_apps.png)
 

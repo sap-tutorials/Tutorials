@@ -1,20 +1,24 @@
 ---
-title: Updating SAP HANA, express edition (Virtual Machine)
-description: Update your SAP HANA 2.0, express edition VM installation when new patches are released.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
-## Details
+# Updating SAP HANA, express edition (Virtual Machine)
+<!-- description --> Update your SAP HANA 2.0, express edition VM installation when new patches are released.
+
+
 Update SAP HANA 2.0, express edition when new support packages and patches are released. Upgrading is supported only for SAP HANA, express edition 2.0 (SP 00 onward). Upgrading from SAP HANA, express edition 1.0 SP 12 is not supported.
 
+## Intro
 > If you are updating to SAP HANA, express edition 2.0 SP 02, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download Updated Packages)]
+### Download Updated Packages
+
 
 Log in as `hxeadm`. Depending on your version of SAP HANA, express edition, you will either use the built-in update utility, or download the new versions of SAP HANA, express edition through the Download Manager. Your primary choice should be the built-in update utility.
 
@@ -29,11 +33,9 @@ Log in as `hxeadm`. Depending on your version of SAP HANA, express edition, you 
 * If you do not have the update utility, use the Download Manager. Select **Binary Installer** and download the latest files for `hxe.tgz` (server-only), and `hxexsa.tgz` (Applications) if applicable.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Extract the Packages
 
-[ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
 
 Login as `hxeadm` and extract the contents of the packages.
 
@@ -46,11 +48,9 @@ tar -zxf <downloaded_path>/hxexsa.tgz
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### Update the Server Installation
 
-[ACCORDION-BEGIN [Step 3: ](Update the Server Installation)]
 
 Navigate to the directory where you extracted the packages:
 
@@ -75,8 +75,5 @@ Follow the prompts to complete the server update.
 
 
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

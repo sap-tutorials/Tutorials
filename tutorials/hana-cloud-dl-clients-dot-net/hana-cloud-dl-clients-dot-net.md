@@ -1,25 +1,28 @@
 ---
-title: Connect to Data Lake Relational Engine Using the .NET Driver
-description: Create and debug a .NET application that connects to a data lake Relation Engine.
+parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
+
+# Connect to Data Lake Relational Engine Using the .NET Driver
+<!-- description --> Create and debug a .NET application that connects to a data lake Relational Engine.
 
 ## Prerequisites
  - You have completed the first tutorial in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to install the .NET SDK
   - How to create and debug a .NET application that queries a data lake Relational Engine
 
+## Intro
 [.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the .NET SDK)]
+### Install the .NET SDK
+
 
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
@@ -37,10 +40,9 @@ On Linux, follow the instructions for the appropriate Linux version such as [Ins
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a .NET application that queries a data lake Relational Engine)]
+### Create a .NET application that queries a data lake Relational Engine
+
 
 1.  Create a new console app with the below commands:
 
@@ -79,15 +81,26 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Linux)
     <ItemGroup>
       <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
-        <HintPath>/home/dan/DLClient/IQ-17_1/assembly/core2.1/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
+        <HintPath>/home/dan/sap/dlclient/IQ-17_1/assembly/core2.1/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
       </Reference>
     </ItemGroup>
     ```
+    
     ![dotNET.csproj code](dotNET-csproj-code.png)
 
-    Once the `dotNet.csproj` file has been updated, save and close the file.    
+    Once the `dotNet.csproj` file has been updated, save and close the file.
 
-3.  Open an editor to edit the file `Program.cs`.
+3.  Run the app to validate that data lake driver can be loaded:
+
+    ```Shell
+    dotnet run
+    ```
+    >If an error occurs, double check that the hintpath is correct and that the IQ.sh variables have been set.
+
+    ![Result of running the app](result0.png)
+
+
+4.  Open an editor to edit the file `Program.cs`.
     ```Shell (Windows)
     notepad Program.cs
     ```
@@ -95,8 +108,8 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Linux)
     pico Program.cs
     ```
-
-4.  Replace the entire contents of `Program.cs` with the code below:  
+ 
+5.  Replace the entire contents of `Program.cs` with the code below:  
 
     ```C#
     using System;
@@ -109,7 +122,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    var connStr = "host=XXXX.iq.hdl.trial-us10.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
+                    var connStr = "host=XXXX.iq.hdl.prod-XXXX.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
                     using (var conn = new SAConnection(connStr)) {
                         conn.Open();
                         var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER";
@@ -151,20 +164,19 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     The above app makes use of some of the data lake Relational Engine .NET driver  methods, such as [SAConnection](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/3c0ff5b76c5f10148352aa573b2bc242.html).  Connection details for this class can be found at [Connection Properties](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/9da0c496b1cc4245bae5f9cadf98e5fc.html).  See also the [.NET Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/aa95e60108104aac808272f210f52e19.html) in the SAP HANA Cloud, data Lake client interfaces guide.  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 
-5.  Run the app:
+6. Update the host value in the connection string.
+
+7.  Run the app:
 
     ```Shell
     dotnet run
     ```
-    >Before running the program make sure to be in the directory where Program.cs is saved
-
     ![Result of running the app](result.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Debug the application)]
+### Debug the application
+
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -190,10 +202,11 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
+### Knowledge check
+
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

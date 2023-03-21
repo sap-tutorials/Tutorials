@@ -1,6 +1,5 @@
 ---
-title: Create a Backup
-description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a backup for your database using HANA cockpit, HANA studio, or SQL.
+parser: v2
 auto_validation: true
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
@@ -10,6 +9,9 @@ time: 15
 ---
 
 
+# Create a Backup
+<!-- description --> Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a backup for your database using HANA cockpit, HANA studio, or SQL.
+
 ## Prerequisites
  - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
@@ -17,14 +19,13 @@ time: 15
 ## Next Steps
  - [Install and Configure ODBC](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html)
 
-## Details
-### You will learn
+## You will learn
   - How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line
 
 
 ---
 
-[ACCORDION-BEGIN [Option 1: ](SAP HANA Cockpit)]
+### SAP HANA Cockpit
 
 > Note:
 > This option requires an SAP HANA, express edition Server + Applications installation.
@@ -53,11 +54,7 @@ time: 15
 
     ![Successful Backup](successful_backup.png)
 
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
+### SAP HANA Studio
 
 1. On SAP HANA Studio, log on to your SAP HANA, express edition installation.
 
@@ -79,12 +76,7 @@ time: 15
 
 5. Review your backup settings and click __Finish__ to begin creating your backup. Creating your backup will take a few minutes.
 
-[VALIDATE_2]
-
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Option 3: ](SQL and Command Line)]
+### SQL and Command Line
 
 1. In SAP HANA Studio or another connected SQL command line, create a backup user and grant it backup permissions.
 
@@ -167,6 +159,3 @@ time: 15
 
     A list of your backup files is displayed.
 
-[VALIDATE_3]
-
-[ACCORDION-END]

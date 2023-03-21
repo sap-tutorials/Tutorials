@@ -1,30 +1,34 @@
 ---
-title: Forward MQTT and AMC Messages Using an ABAP Daemon
-description: Forward MQTT and AMC Messages using an ABAP Daemon.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [ tutorial>intermediate, topic>abap-development  ]
 ---
 
-### Prerequisites
+# Forward MQTT and AMC Messages Using an ABAP Daemon
+<!-- description --> Forward MQTT and AMC Messages using an ABAP Daemon.
+
+## Prerequisites
   - The ABAP MQTT Client is available on **ABAP Platform 1809** and above.
   - You need to use **ABAP Development Tools**.
 
-## Details
-### You will learn
+
+## You will learn
 - How to use ABAP Messaging Channels (AMC)
 - How to combine MQTT, AMC and ABAP Daemons
 
 
 
-### Time to Complete
+## Time to Complete
 **25 Min**.
 
 ---
 
+## Intro
 In this tutorial, you will create an ABAP Daemon that should act as a bi-directional protocol converter between MQTT and AMC. The daemon should receive MQTT messages, convert them to PCP messages, and forward them via an ABAP Messaging Channel (AMC) to other applications. Forwarding also works in the reverse direction.
 
-[ACCORDION-BEGIN [Step 1: ](Create an ABAP Daemon class)]
+### Create an ABAP Daemon class
+
 Create a new ABAP class **`ZCL_TUTORIAL_MQTT_DAEMON`** extending the base class `CL_ABAP_DAEMON_EXT_BASE`.
 
 As you can see, there is an error in line 1 since the necessary abstract methods have not been implemented yet. Click on the light bulb next to the line number and select **Add 9 unimplemented methods** to resolve this:
@@ -39,10 +43,9 @@ DATA: mv_subscription_topic TYPE string,
 ```
 You will need them later.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an ABAP Messaging Channel)]
+### Create an ABAP Messaging Channel
+
 Create a new ABAP Messaging Channel (AMC). To do so, click on **File** > **New** > **Other...** or press **`Ctrl+N`**.
 
 In the popup window, select **ABAP** > **Connectivity** > **ABAP Messaging Channel Application** or simply search for it.
@@ -65,9 +68,8 @@ Specify further details regarding the channel. Select **`Client`** as the *Activ
 
 Finally, **activate your AMC Application** by pressing **`Ctrl+F3`**.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Implement ABAP Daemon events)]
+### Implement ABAP Daemon events
+
 
 >The implementation of the events `ON_ACCEPT`, `ON_START` and `ON_STOP` is based on the tutorial [**Create a Simple ABAP Daemon**](abap-connectivity-daemon-simple). If you need further information regarding these events, check out the tutorial or take a look at the [official documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
 
@@ -150,10 +152,9 @@ METHOD if_abap_daemon_extension~on_stop.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement static methods)]
+### Implement static methods
+
 In this step, you will create two static methods `START` and `STOP`. They are used to instantiate and terminate your ABAP Daemon and will be called by another ABAP Program.
 
 At first, define the methods by inserting the following code into the `PUBLIC SECTION` in the class definition of your ABAP Daemon class:
@@ -215,9 +216,8 @@ METHOD stop.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 5: ](Handle incoming MQTT messages)]
+### Handle incoming MQTT messages
+
 
 Your ABAP Daemon will process each incoming MQTT message by simply forwarding it to the ABAP Messaging Channel.
 
@@ -254,9 +254,8 @@ METHOD if_mqtt_event_handler~on_message.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 6: ](Handle AMC messages)]
+### Handle AMC messages
+
 As your ABAP Daemon shall also receive AMC messages, you will need to add another interface to your class definition:
 ```ABAP
 INTERFACES if_amc_message_receiver_pcp.
@@ -284,10 +283,9 @@ METHOD if_amc_message_receiver_pcp~receive.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the ABAP Daemon)]
+### Run the ABAP Daemon
+
 **Activate your ABAP Daemon class by pressing `Ctrl+F3`.**
 
 To run the ABAP Daemon, create a new ABAP Program **`Z_TUTORIAL_MQTT_DAEMON_START`** that contains the following line:
@@ -300,10 +298,9 @@ zcl_tutorial_mqtt_daemon=>start( iv_daemon_name = 'mqtt_daemon' iv_subscription_
 
 > Your daemon should now be running in the background. You can check this in the transaction `SMDAEMON`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Prepare interaction with the ABAP Daemon)]
+### Prepare interaction with the ABAP Daemon
+
 In this step, you will create two programs to test the functionality of your ABAP Daemon.
 
 Create an ABAP Program **`Z_TUTORIAL_MQTT_DAEMON_SEND`**, which should send a message to the ABAP Messaging Channel to trigger the forwarding mechanism from AMC to MQTT. Copy the implementation below into this new program:
@@ -384,10 +381,9 @@ As these two programs will need to access your ABAP Messaging Channel, make sure
 
 ![Add authorized programs to the ABAP Messaging Channel](add-authorized-programs.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Interact with the ABAP Daemon)]
+### Interact with the ABAP Daemon
+
 
 Use the [HiveMQ Websocket Client](http://www.hivemq.com/demos/websocket-client/) to subscribe to the MQTT topic `abaptopic/tutorial/publish` as you can see in the image below:
 
@@ -413,5 +409,4 @@ This triggers the forwarding process and your ABAP class will output the receive
 
 ![The forwarded MQTT message was received via the AMC](console-received-message.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+

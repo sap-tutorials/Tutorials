@@ -1,24 +1,27 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Deploy CAP Java App to SAP Business Technology Platform
-description: Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java, software-product>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Details
-### You will learn
+# Deploy CAP Java App to SAP Business Technology Platform
+<!-- description --> Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
+
+## You will learn
   - How to create a Cloud Foundry application manifest
   - How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
 
+## Intro
 In the previous tutorial you made your application ready to run with SAP HANA. In this tutorial, you will deploy the application to SAP BTP, Cloud Foundry environment and have it running fully in the cloud.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Cloud Foundry application manifest)]
+### Create a Cloud Foundry application manifest
+
 
 When deploying an application to Cloud Foundry, you can use a manifest to describe attributes of the deployed application. The manifest can be used together with the Cloud Foundry CLI command `cf push` to deploy the application.
 
@@ -44,10 +47,9 @@ The name of SAP HANA service instance you created in the previous tutorial is us
 
 When your application will be deployed to SAP BTP, it will use this database to store data instead of the in-memory database. In the previous tutorial you added the additional Java system property `-Dspring-boot.run.profiles=cloud` to your application to ensure that. When deploying the application to Cloud Foundry this is done automatically for you by the Cloud Foundry Java Buildpack.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable application for Cloud Foundry)]
+### Enable application for Cloud Foundry
+
 
 Cloud Foundry uses the Open Service Broker API to provide services to applications. When running your application on Cloud Foundry, an environment variable `VCAP_SERVICES` (similar to the content of the `default-env.json`) is available, which contains all required service credentials. CAP Java can automatically read this environment variable and configure your application to use the SAP HANA database. In addition you want to make sure that your application is secure by default, when you deploy it to the cloud. The required dependencies for these aspects are included in the `cds-starter-cloudfoundry` dependency bundle. It also includes the `cds-feature-hana` dependency you added earlier.
 
@@ -60,11 +62,11 @@ Cloud Foundry uses the Open Service Broker API to provide services to applicatio
     </dependency>
     ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Push the application)]
+
+### Push the application
+
 
 You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Business Application Studio:
 
@@ -82,7 +84,7 @@ You are now ready to push your application to the cloud by running the following
 
     The log output should be similar to this one:
 
-    !![screenshot build log output](expected-build-output.png)
+    <!-- border -->![screenshot build log output](expected-build-output.png)
 
 3. Push the application to the cloud by running:
 
@@ -101,13 +103,11 @@ You are now ready to push your application to the cloud by running the following
     cf app bookstore
     ```
 
-    !![console output of cf apps](cf-app-route.png)
+    <!-- border -->![console output of cf apps](cf-app-route.png)
 
 
 5. Open the application in the browser. The according route can be found under `routes` of the previous step.
 
 6. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization locally and in the cloud.
 
-[DONE]
-[ACCORDION-END]
 ---

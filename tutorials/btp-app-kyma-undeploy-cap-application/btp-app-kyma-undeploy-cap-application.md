@@ -1,12 +1,12 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Undeploy Your CAP Application from Kyma
 description: This tutorial shows you how to undeploy your CAP application from Kyma.
 keywords: cap
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp\\, kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

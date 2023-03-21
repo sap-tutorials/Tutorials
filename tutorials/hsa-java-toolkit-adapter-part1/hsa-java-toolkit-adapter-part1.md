@@ -1,11 +1,13 @@
 ---
-title: Introduction to Writing a Custom Java Toolkit Adapter for SAP HANA Streaming Analytics
-description: Gain a comprehensive overview on Custom Adapters for SAP HANA Streaming Analytics, and follow detailed instructions for developing a custom adapter using the Java Toolkit.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 time: 15
 ---
+
+# Introduction to Writing a Custom Java Toolkit Adapter for SAP HANA Streaming Analytics
+<!-- description --> Gain a comprehensive overview on Custom Adapters for SAP HANA Streaming Analytics, and follow detailed instructions for developing a custom adapter using the Java Toolkit.
 
 ## Prerequisites  
  - **Tutorial:** [Get started with SAP HANA streaming analytics for SAP HANA, express edition](group.sds-hxe-get-started)
@@ -15,8 +17,7 @@ time: 15
  - [`Mosquitto`](http://mosquitto.org/) MQTT Broker
  - Java [PAHO](https://eclipse.org/paho/clients/java/) Library
 
-## Details
-### You will learn
+## You will learn
 - About Custom Adapters for SAP HANA Streaming Analytics
 - About the architecture of Custom Adapter file structure
 - About MQTT and `Mosquitto` Broker
@@ -24,7 +25,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](Introduction to Custom Adaptors)]
+### Introduction to Custom Adaptors
 
 This set of tutorials provides instructions on building a custom adapter for SAP HANA Streaming Analytics. We will be using the **SAP HANA Streaming Analytics Adapter Toolkit** to create a custom input adapter that receives `MQTT` messages via the `Mosquitto` broker.
 
@@ -60,11 +61,9 @@ An adapter can be started in either standalone or managed mode. In standalone mo
 
 The steps following this this tutorial will assume the adapter will be running in managed mode, however, more information regarding standalone mode will be provided in the Further Reading section. Ensure you have installed the necessary prerequisites.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

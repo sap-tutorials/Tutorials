@@ -1,6 +1,5 @@
 ---
-title: Create an Anonymized View Using L-Diversity
-description: Add another layer of protection to k-anonymity by using l-diversity to protect sensitive data in SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
@@ -9,24 +8,28 @@ author_name: Thomas Hammer
 author_profile: https://github.com/thomashammerSAP
 ---
 
+# Create an Anonymized View Using L-Diversity
+<!-- description --> Add another layer of protection to k-anonymity by using l-diversity to protect sensitive data in SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
 - It's recommended that you complete the [previous tutorial](hana-cloud-data-anonymization-3).
 - If you would like to run the sample scenario, you need a **running** instance of SAP HANA Cloud, SAP HANA database in trial or production.
 
-## Details
-### You will learn
+## You will learn
 - How to create an anonymized view using l-diversity
 - How to run a sample scenario based on l-diversity
 - About the advantage of using l-diversity in an anonymized view
 
 
+## Intro
 > ### **Disclaimer**
 >
 >In most cases, compliance with data privacy laws is not a product feature. SAP software supports data privacy by providing security features and specific functions relevant to data protection, such as functions for the simplified blocking and deletion of personal data. SAP does not provide legal advice in any form. The definitions and other terms used in this guide are not taken from any given legal source.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to L-Diversity)]
+### Introduction to L-Diversity
+
 
 Now that you know how to create an anonymized view using k-Anonymity, you will see in this tutorial how to add another layer of protection by complementing it with L-Diversity, which will take into account sensitive data in your dataset.
 
@@ -36,10 +39,9 @@ If you want to make sure that the sensitive data of the individuals in these gro
 
 As with k-anonymity, you need to prepare your data anonymization strategy to know what columns contain what types of data. If you are unsure about that, it is recommended that you try the [previous tutorial](hana-cloud-data-anonymization-3).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an anonymized view using L-Diversity)]
+### Create an anonymized view using L-Diversity
+
 
 To use L-Diversity, you only need to slightly change the statement for creating an anonymized view using K-Anonymity.
 
@@ -67,11 +69,10 @@ The higher the value you specify for the L-parameter, the more people in each gr
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Run an example scenario)]
+### Run an example scenario
+
 
 1. First, you must create a sample table `PERSONALDATA` that has sensitive information on people regarding their age. Run the following SQL codes in your SAP HANA Database Explorer.
 
@@ -119,11 +120,11 @@ COLUMN AGE PARAMETERS '{"is_sensitive":true}');
 
 This is what the data looked like before anonymization:
 
-!![l-diversity data before](ss-01-l-diversity-data-before.png)
+<!-- border -->![l-diversity data before](ss-01-l-diversity-data-before.png)
 
 The anonymized view looks like this:
 
-!![l-diversity data after](ss-02-l-diversity-data-after.png)
+<!-- border -->![l-diversity data after](ss-02-l-diversity-data-after.png)
 
 Here you can see that location has been anonymized to level 2 (*) to achieve that at least 2 individuals have different age values in a group of people who share the same quasi-identifying attributes. In this case, everyone who is male or female.
 
@@ -131,7 +132,7 @@ Here you can see that location has been anonymized to level 2 (*) to achieve tha
 
 If we would have only used k-anonymity, we would not be able to leverage privacy guarantees, because, for example, two female individuals from France share the same age (28), therefore revealing their sensitive information:
 
-!![l-diversity data comparison k=2](ss-03-l-diversity-data-comparison.png)
+<!-- border -->![l-diversity data comparison k=2](ss-03-l-diversity-data-comparison.png)
 
 Keep in mind that if you use K-Anonymity with L-Diversity, you can still [combine both with the advanced parameters like min/max, loss, or weighted quasi-identifiers](https://help.sap.com/viewer/1d2f0ecc83b34dbf9aa5d08a48be2377/2.0.05/en-US/a6fa451ac1cb4dde96401ea504ade772.html) as well as [data change strategies](https://help.sap.com/viewer/1d2f0ecc83b34dbf9aa5d08a48be2377/2.0.05/en-US/068cfef6953e49de9945c16a36e67171.html).
 
@@ -145,14 +146,12 @@ For more details on the parameters of L-Diversity, you can read our [technical d
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

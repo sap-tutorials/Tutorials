@@ -1,23 +1,25 @@
 ---
-title: Execute SQL Commands and Create Custom Notifications with SAP Automation Pilot and SAP Alert Notification Service
-description: Learn an approach to schedule SQL statements which are run against an SAP HANA Cloud database and send an email based on the results of the execution.
+parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Execute SQL Commands and Create Custom Notifications with SAP Automation Pilot and SAP Alert Notification Service
+<!-- description --> Learn an approach to schedule SQL statements which are run against an SAP HANA Cloud database and send an email based on the results of the execution.
 
 ## Prerequisites
   - Access to the SAP Business Technology Platform (BTP) that includes SAP HANA Cloud, SAP Alert Notification Service, and SAP Automation Pilot.  These services are available in the SAP BTP free tier.
 
-## Details
-### You will learn
+## You will learn
   - How to create a command in SAP Automation Pilot which connects to and queries an SAP HANA Cloud database instance
   - How to perform queries using the provided `ExecuteHanaCloudSqlStatement`
   - How to perform queries using `hdbcli`, the SAP HANA client driver for Python
   - How to conditionally send a notification (email) with the results of the query using the SAP Alert Notification Service
   - How to schedule an SAP Automation Pilot command
 
+## Intro
 SAP HANA Cloud provides built-in alerts for items such as long running statements, table row counts, expiring database passwords, or low disk space.  This tutorial will demonstrate an approach that can be used to create a notification for use cases not covered by the built-in alerts.  The hotel dataset described in the tutorial [Create Database Objects with SAP HANA Database Explorer](hana-dbx-create-schema) contains a maintenance table where work items are described.  
 
 ![maintenance table](maintenance-table.png)
@@ -38,7 +40,8 @@ An SAP Automation Pilot command will be created to check if any maintenance item
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an SAP Automation Pilot command)]
+### Create an SAP Automation Pilot command
+
 
 This step will create a catalog, an input, and a command in the SAP Automation Pilot.  The command in subsequent steps will execute SQL against the database to determine if there are any unassigned maintenance items.  
 
@@ -178,10 +181,9 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
 At this point, a command has been created and executed.  In the next 2 steps, two different techniques of executing SQL against an SAP HANA Cloud database will be shown.  
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Perform a query using the ExecuteHanaCloudSqlStatement command)]
+### Perform a query using the ExecuteHanaCloudSqlStatement command
+
 
 This step will add an additional executor to the command that can connect to a SAP HANA Cloud database and execute a query.
 
@@ -270,11 +272,10 @@ This step will add an additional executor to the command that can connect to a S
 
 In the above step, it was demonstrated how the provided [SQL Statement](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/024ff1ff1c46465f838c6faf655a9f0a.html) command can be used.  It's output was passed into a Python command where the result could be further processed.  In the next step, an example is shown how to execute SQL statements directly in the Python command.  
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Perform a query using hdbcli in a Python script)]
+### Perform a query using hdbcli in a Python script
+
 
 This step will demonstrate how SQL queries can be made directly in Python rather than using a separate executor
 
@@ -345,10 +346,9 @@ This step will demonstrate how SQL queries can be made directly in Python rather
 
     A command has now been successfully created that can execute SQL against an SAP HANA Cloud database using the Python SAP HANA Client.  With this method, the query and the logic to process the result can be done in one executor.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Forward results to the SAP Alert Notification Service)]
+### Forward results to the SAP Alert Notification Service
+
 
 A second executer will be added in this step.  It will take the output returned from `QueryDB` and forward it to the SAP Alert Notification Service.  
 
@@ -480,10 +480,9 @@ A second executer will be added in this step.  It will take the output returned 
 
     The next step will create a subscription in the SAP Alert Notification Service that will be triggered by the just sent JSON and can then perform an action such as send an email.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Send a notification when there are unassigned maintenance items)]
+### Send a notification when there are unassigned maintenance items
+
 
 The following instructions use the SAP Alert Notification Service to send an email when there are unassigned maintenance items.
 
@@ -567,10 +566,9 @@ The following instructions use the SAP Alert Notification Service to send an ema
     ![email notification](email-notification.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Scheduling commands)]
+### Scheduling commands
+
 
 In this step, the command will be scheduled to run once a week.  
 
@@ -596,8 +594,9 @@ In this step, the command will be scheduled to run once a week.
 
     ![stop HANA Cloud command](automation-pilot.png)
 
+### Knowledge check
+
 Congratulations! You have now used the SAP Automation Pilot to schedule a query against an SAP HANA Cloud database and to send a notification that reflects the result of the query.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

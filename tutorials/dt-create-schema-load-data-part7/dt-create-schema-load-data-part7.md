@@ -1,10 +1,12 @@
 ---
-title: View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View
-description: Create and use a SQL view to query data from both in-memory and Dynamic Tiering tables.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View
+<!-- description --> Create and use a SQL view to query data from both in-memory and Dynamic Tiering tables.
+
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://developers.sap.com/tutorials/dt-create-schema-load-data-part6.html)
@@ -12,18 +14,17 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [Multi-Store Tables](https://developers.sap.com/tutorials/dt-create-schema-load-data-part8.html)
 
-## Details
-### You will learn
+## You will learn
  - Viewing the combined data set for data partitioned between an in-memory and a Dynamic Tiering table instance.
  - Creating and using a SQL view.
  - Querying against a SQL view with conditions.
-
-### Time to Complete
+## Time to Complete
 **5 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Query From Both In-Memory and Dynamic Tiering Tables)]
+### Query From Both In-Memory and Dynamic Tiering Tables
+
 You may have many cases where you only need to access data either from the in-memory table instance (`ORDERS_CS`) or from the Dynamic Tiering table instance (`ORDERS_DT`). However you will also likely have use cases where you need to query the full data set across both table instances, which can be done with a union.
 Run the script below in a SQL Console to query data from both in-memory and Dynamic Tiering tables using a `UNION`.
 
@@ -36,11 +37,9 @@ SELECT * FROM "TPCH"."ORDERS_DT"
 
 ![Union](union.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create and Query against a SQL View
 
-[ACCORDION-BEGIN [Step 2: ](Create and Query against a SQL View)]
 Alternatively you can create an SQL view to query data from multiple tables and simplify the process. Run the script below to create a SQL view.
 
 ```sql
@@ -67,6 +66,4 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
 
 ![Query View](query-view.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Set Up Your CAP Application for Eventing
 description: This tutorial shows you how to configure your CAP service to listen for upcoming events and deploy it to the SAP BTP cockpit.
 keywords: cap
@@ -13,8 +13,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
- - For this tutorial, you have two options:
-  - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
     - Complete the mission [Consume Remote Services from SAP S/4HANA Cloud Using CAP](mission.btp-consume-external-service-cap).
  - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP
@@ -121,7 +121,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
 
     <!-- cpes-file db/schema.cds -->
-    ```[13,16-20]
+    ```JavaScript[13,16-20]
     namespace sap.ui.riskmanagement;
     using { managed } from '@sap/cds/common';
 

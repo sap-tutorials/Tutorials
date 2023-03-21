@@ -1,25 +1,27 @@
 ---
-title: Load Data into Standalone Data Lake in SAP HANA Cloud
-description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Load Data into Standalone Data Lake in SAP HANA Cloud
+<!-- description --> Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
+
 ## Prerequisites
  - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
  - Make sure your data lake instance is running before you start.
  - Download the **supporting files** to gain access to sample data required for loading tables.
 
-## Details
-### You will learn
+## You will learn
   - How to create tables in a standalone data lake
   - How to load data hosted in an Amazon Web Services (AWS) S3 bucket into a standalone data lake
   - How to load data hosted in a Microsoft Azure container into a standalone data lake
 
 
 
+## Intro
 The supporting sample data and code files are available on a public GitHub repository. From the folder [Mission: Get Started with a Standalone Data lake](https://github.com/SAP-samples/hana-cloud-learning/tree/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake) download the zip file [Sample Data](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/Sample%20Data.zip).
 
 In this zip file, you will find four tables:
@@ -38,7 +40,8 @@ If you decide to use Interactive SQL instead of SAP HANA Database Explorer, plea
 
 
 
-[ACCORDION-BEGIN [Step 1: ](Create a new user)]
+### Create a new user
+
 Before you create tables, it is recommended that you also create a new user, so that your new tables are not owned by `HDLADMIN`. With a new user, your new tables will be created under a particular schema.
 
 >This helps you keep your data organized in the simplest level and keeps the tables separate from other tables that might already exist under the `HDLADMIN` user. Creating a new user also allows you to control the permissions as a group and assign whatever roles you require.
@@ -59,10 +62,9 @@ For more in-depth information about creating users in SAP HANA Cloud, data lake,
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create tables in data lake)]
+### Create tables in data lake
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 Now it's time to create tables. In this example, you will create the following tables:
@@ -165,7 +167,7 @@ Let's get started. Follow these steps:
 >
 >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
-!![Create Tables](ss-01-create-tables.png)
+<!-- border -->![Create Tables](ss-01-create-tables.png)
 
 
 To verify, you can select `Tables` from the list of `Catalog` objects of your standalone data lake in the database menu. To view the list of tables, you must choose the schema.
@@ -262,7 +264,7 @@ Let's get started. Follow these steps:
 
 2. The Query tab will now contain the file name as seen below, and then the script can be executed.
 
-    !![Run script dbisql](ss-04-run-script-dbisql.png)
+    <!-- border -->![Run script dbisql](ss-04-run-script-dbisql.png)
 
 >**Attention**: If you are familiar with SAP IQ on-premise, you will notice some differences between SAP IQ and SAP HANA Cloud, data lake.
 >
@@ -270,10 +272,9 @@ Let's get started. Follow these steps:
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Upload sample data)]
+### Upload sample data
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 [OPTION BEGIN [AWS S3 bucket]]
@@ -302,7 +303,7 @@ For instructions on using Amazon Management Console to upload objects to the Ama
 
 After all the mentioned files are uploaded completely, exit from the Amazon Management Console.
 
-!![Amazon S3 Upload](ss-05-amazon-s3-upload.png)
+<!-- border -->![Amazon S3 Upload](ss-05-amazon-s3-upload.png)
 
 [OPTION END]
 
@@ -314,7 +315,7 @@ If you wish to work with a Microsoft Azure container, then you will need the fol
 
 If you do not yet have a storage account and container, please follow the instructions in Microsoft Azure to do so. Subsequently, select the Storage account and then select the container to upload the data files.
 
-!![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
+<!-- border -->![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
 
 The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the Azure container:
 
@@ -323,16 +324,15 @@ The sample data files mentioned at the beginning of this tutorial are used here.
 *	region.tbl
 *	supplier.tbl
 
-!![MS Azure Upload](ss-08-ms-azure-upload.png)
+<!-- border -->![MS Azure Upload](ss-08-ms-azure-upload.png)
 
 After all the mentioned files are uploaded completely, you can exit the Azure portal.
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Load data into data lake tables)]
+### Load data into data lake tables
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 [OPTION BEGIN [AWS S3 bucket]]
@@ -457,7 +457,7 @@ rollback
 ```
 
 
-!![Amazon S3 Load Table script](ss-06-s3-load-script.png)
+<!-- border -->![Amazon S3 Load Table script](ss-06-s3-load-script.png)
 
 At the end of each of the 'LOAD TABLE' statements in the code, replace these variables with your AWS S3 bucket credentials:
 
@@ -584,7 +584,7 @@ rollback
 ```
 
 
-!![MS Load Table script](ss-09-ms-load-script.png)
+<!-- border -->![MS Load Table script](ss-09-ms-load-script.png)
 
 At the end of each of these 'LOAD TABLE' statements in the code provided, replace these variables with your Azure credentials:
 
@@ -607,11 +607,9 @@ Run the script after making the changes. For the data to be loaded, please make 
 
 >In this tutorial, you have learned how to load data into the tables in the SAP HANA Cloud, data lake. In the next tutorial, you will see how to monitor your standalone data lake.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -18,10 +18,9 @@ parser: v2
 - You've finished the tutorial [Create a CAP Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
-- You've downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/)
+- You've downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/).
 - You've downloaded and installed the [MultiApps CF CLI plugin](https://github.com/cloudfoundry/multiapps-cli-plugin/blob/master/README.md).
-- You've to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application
-
+- You've to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
 ---
 
@@ -54,7 +53,13 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     Learn more about those steps in the [Deploy to Cloud Foundry](https://cap.cloud.sap/docs/guides/deployment/to-cf#prepare-for-production) guide in the CAP documentation.
 
-3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
+3. Update your dependencies, as with the previous command you added some dependencies to your `package.json`.
+
+    ```Shell/Bash
+    npm update --package-lock-only
+    ```
+
+4. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
     ```JSON
     "cds": {
@@ -94,7 +99,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     > This will ask you to select Cloud Foundry API, org, and space.
 
-    > The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
+    > The API endpoint is taken by default. If you want to change the API endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
     > If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
 
@@ -103,6 +108,14 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
 
 The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
+
+> In the previous step, you identified your API endpoint. If that has a format like `...us10-001...`, you need to add the following configuration to your `xs-security.json`:
+> ```json
+> "oauth2-configuration": {
+>     "redirect-uris": ["*.cfapps.us10-001.hana.ondemand.com/**"]
+> }
+> ```
+> For other API endpoints you'd need to adapt it accordingly.
 
 1. In VS Code, in the root of your project, execute the following command to build the archive.
     ```Shell/Bash
@@ -123,6 +136,8 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
 
     > This process takes some minutes. In this one step the archive is uploaded to Cloud Foundry, service instances are created, the applications are staged, and then deployed to their target runtimes.
+
+    > If your deployment fails during deploy of `my-bookshop-db-deployer`, make sure that your IP address is configured for connections to SAP HANA Cloud. Or allow connections to all IP addresses at your own risk. We recommend to revert that setting after you've completed the tutorial.
 
 3. In the deploy log, find the application URL of `my-bookshop`:
 

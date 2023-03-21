@@ -1,6 +1,5 @@
 ---
-title: Set Up the Python SDK for Business Entity Recognition
-description: Create a virtual environment and install the Python SDK (Software Development Kit) for Business Entity Recognition.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
@@ -9,18 +8,22 @@ author_name: Nora von Thenen
 author_profile: https://github.com/noravth
 ---
 
-## Details
-### You will learn
+# Set Up the Python SDK for Business Entity Recognition
+<!-- description --> Create a virtual environment and install the Python SDK (Software Development Kit) for Business Entity Recognition.
+
+## You will learn
   - How to set up a virtual environment  
   - How to install the Python SDK for Business Entity Recognition
 
+## Intro
 Use Business Entity Recognition (one of the [SAP AI Business Services](https://help.sap.com/docs/SAP_AI_BUS) in SAP Business Technology Platform) to identify and extract named entities from your text data. For more information, see [Business Entity Recognition help portal documentation](https://help.sap.com/docs/Business_Entity_Recognition).
 
 The Python SDK is available in [GitHub](https://github.com/SAP/business-entity-recognition-client-library).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Python)]
+### Install Python
+
 
 First, you need to make sure that you have Python 3 installed. You need a Python version 3 or higher in order for the SDK to work!
 
@@ -44,10 +47,9 @@ In case you have a Python installation, it will output the version.
 
 In case `command not found` is printed, you do not have Python installed. Head over [here](https://www.python.org/downloads/) and install an up-to-date version. Then, close down and open up a new command prompt or terminal and run the command `python --version` again to check if the installation was successful.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up virtual environment)]
+### Set up virtual environment
+
 
 Next, you will set up a virtual environment using the Python package `venv`. With this package you avoid installing Python packages globally which could break system tools or other projects.
 
@@ -81,11 +83,10 @@ In a terminal, enter `python3 -m venv ber-env` to create a new virtual environme
 
 You can tell that the environment is activated as it is added to your current path.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Install SDK)]
+### Install SDK
+
 
 Finally, you can install the SDK of Business Entity Recognition.
 
@@ -99,10 +100,8 @@ As a first test, enter the command `python -c "import sap_ber_client"` to import
 
 ![Import SDK](import_sdk.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

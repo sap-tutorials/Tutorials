@@ -1,32 +1,35 @@
 ---
-title: Complex Algorithms Using GraphScript
-description: Learn what is GraphScript, and then build complex algorithms in SAP HANA Graph using GraphScript.
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: products>sap-hana
 ---
+
+# Complex Algorithms Using GraphScript
+<!-- description --> Learn what is GraphScript, and then build complex algorithms in SAP HANA Graph using GraphScript.
 
 ## Prerequisites
  - You completed [Pattern Matching using OpenCypher in SQL](hana-graph-overview-pattern-matching-sql)
 
-## Details
-### You will learn
+## You will learn
   - What GraphScript is
   - How to create and execute GraphScript procedures
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What GraphScript is)]
+### What GraphScript is
+
 
 GraphScript is a high-level, powerful domain-specific language. GraphScript is specifically designed to ease the development and integration of complex graph algorithms into the existing data management workflow.
 
  For more please refer to [online documentation for SAP HANA Cloud](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/2020_04_QRC/en-US/47b72452f48f4ca490fbffcb5ca31f92.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Call built-in algorithm from GraphScript)]
+### Call built-in algorithm from GraphScript
+
 
 In the SQL Console paste and execute following code.
 
@@ -63,11 +66,10 @@ CALL "SKIING"."NHOOD"(10, 1, 1, ?);
 
 ![First results](020b.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Custom traverse algorithm)]
+### Custom traverse algorithm
+
 
 In the SQL Console paste and execute following code. It creates a procedure to calculate shortest path distances to stations with restaurants.
 
@@ -110,7 +112,6 @@ When the graph script is executed, then the result is displayed. It shows a shor
 
 What is the shortest path distance in meters from station `15` to station `3`?
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

@@ -1,29 +1,33 @@
 ---
-title: Create a Calculation View with Differential Privacy in SAP Web IDE
-description: Use differential privacy to anonymize confidential data
-auto_validation: true
+parser: v2
+auto_validation: true 
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, software-product>sap-hana, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 ---
+
+# Create a Calculation View with Differential Privacy in SAP Web IDE
+
+<!-- description --> Use differential privacy to anonymize confidential data
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have completed the previous tutorials to load data into the table `TGT_SALARIES`
+
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have completed the previous tutorials to load data into the table `TGT_SALARIES`
+
+## You will learn
+
+- How to create Calculation View of type Cube using SAP Web IDE
+- How to configure differential privacy to add noise to a column
+
+## Intro
 
 >**This tutorial cannot be completed with a trial account.**
-
-## Details
-### You will learn
-  - How to create Calculation View of type Cube using SAP Web IDE
-  - How to configure differential privacy to add noise to a column
-
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Calculation view)]
+### Create a new Calculation view
 
 Create a new folder called **models** under `db/src`. Create a new **Calculation View** and call it `SALARIES_ANONYMIZED`
 
@@ -37,10 +41,9 @@ Use the ![plus sign](3.png) on the node to add a table as a data source. Choose 
 
 ![New calculation view](4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure differential privacy)]
+### Configure differential privacy
+
 
 Double click on the `Anonymize_1` node. This will open the mapping. Double click on `TGT_SALARIES` to add all of the columns to the output
 
@@ -63,11 +66,10 @@ For example:
 
 > For more information about these parameters check the [SAP HANA Security Guide](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/ace3f36bad754cc9bbfe2bf473fccf2f.html)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure semantics)]
+### Configure semantics
+
 
 Connect the `Anonymize_1` node to the **Aggregation** node.
 
@@ -81,10 +83,9 @@ Go into the **Semantics** node and switch `START_YEAR` to attribute
 
 ![Configure privacy](12.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Data preview)]
+### Data preview
+
 
 **Save** and **Build** the calculation view
 
@@ -106,17 +107,14 @@ Change the aggregation for `SALARY` to `COUNT` to answer the question below.
 ![Configure privacy](14.png)
 
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure the HANA Analytics Adapter)]
+### Configure the HANA Analytics Adapter
+
 
 If you have a tenant in SAP Analytics Cloud or a reporting tool such as Analysis for Office, you can configure the SAP HANA Analytics Adapter. The adapter is a Java application that exposes Calculation Views for consumption through Information Access (or `InA`).
 
 Follow the steps in the following blog post if you want to set up the HANA Analytics Adapter: <https://blogs.sap.com/2019/04/24/connecting-the-sap-hana-service-on-cloud-foundry-to-sap-analytics-cloud-the-lazy-approach-pt1/>
 
-[DONE]
-[ACCORDION-END]
 
 ---

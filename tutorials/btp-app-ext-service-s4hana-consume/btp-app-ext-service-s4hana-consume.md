@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Add Services and Consume an External Service from SAP S/4HANA
 description: This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
 keywords: cap
@@ -116,7 +116,7 @@ To consume the external service from our cloud deployed application, you will cr
     |--|--|
     | Name | cpapp-bupa
     | Type | HTTP
-    | URL  | `http://{Virtual host}:{Virtual port}`
+    | URL  | http://{Virtual host}:{Virtual port}
     | Proxy Type | On Premise
     | Authentication | `BasicAuthentication`
     | User | `CPAPP` (as defined in `Step 3: Create a technical user` [from this tutorial](btp-app-ext-service-odata-service))

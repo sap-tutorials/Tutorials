@@ -1,25 +1,28 @@
 ---
-title: Connect Using the SAP HANA .NET Interface
-description: Create and debug a .NET application that connects to SAP HANA using the SAP HANA client.
+parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Connect Using the SAP HANA .NET Interface
+<!-- description --> Create and debug a .NET application that connects to SAP HANA using the SAP HANA client.
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to install the .NET SDK
   - How to create and debug a .NET application that queries an SAP HANA database
 
+## Intro
 [.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the .NET SDK)]
+### Install the .NET SDK
+
 
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
@@ -29,7 +32,7 @@ dotnet --version
 If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 6.0.201.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
-> Note: Select the 'Download .NET SDK x64' option.
+>Select the 'Download .NET SDK x64' option.
 
 ![.NET Core SDK Install](install.png)
 
@@ -39,10 +42,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 >For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a .NET application that queries an SAP HANA database)]
+### Create a .NET application that queries an SAP HANA database
+
 
 1.  Create a new console app with the below commands:
 
@@ -117,7 +119,14 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     Once the `dotNet.csproj` file has been updated, save and close the file.    
 
-3.  Open an editor to edit the file `Program.cs`.
+3.  Run the app to validate that SAP HANA driver can be loaded:
+
+    ```Shell
+    dotnet run
+    ```
+    >If an error occurs, double check that the hintpath is correct.
+
+4.  Open an editor to edit the file `Program.cs`.
     ```Shell (Windows)
     notepad Program.cs
     ```
@@ -126,7 +135,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico Program.cs
     ```
 
-4.  Replace the entire contents of `Program.cs` with the code below:  
+5.  Replace the entire contents of `Program.cs` with the code below:  
 
     ```C#
     using System;
@@ -192,11 +201,11 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     Save and close the `Program.cs` file after replacing the code.
 
-    >Note that the address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
+    >The address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
 
     The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 
-5.  Run the app:
+6.  Run the app:
 
     ```Shell
     dotnet run
@@ -205,11 +214,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     ![Result of running the app](result.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Debug the application)]
+### Debug the application
+
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -235,10 +243,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
+### Knowledge check
+
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
-
-[VALIDATE_1]
-[ACCORDION-END]
 
 ---

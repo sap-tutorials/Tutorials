@@ -1,25 +1,28 @@
 ---
-title: Connect Using the SAP HANA Go Interface
-description: Create and debug a Go application that connects to SAP HANA using the SAP HANA client.
+parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Connect Using the SAP HANA Go Interface
+<!-- description --> Create and debug a Go application that connects to SAP HANA using the SAP HANA client.
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission.
 
-## Details
-### You will learn
+## You will learn
   - How to install Go
   - How to create a Go application that queries a SAP HANA Database
 
+## Intro
 Go is an open source programming language developed by Google to increase productivity among programmers. For more information, see the [Go Documentation](https://golang.org/doc/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Go)]
+### Install Go
+
 The first step is to check if Go is installed, and if so, which version. To do so, enter the following command:
 
 ```Shell
@@ -40,12 +43,11 @@ If it is not installed, download it from [Download Go](https://golang.org/dl/), 
 
 In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
-Before proceeding, ensure you can create and run an example Go program as described in [Test your installation](https://golang.org/doc/install#testing).
+Before proceeding, ensure you can create and run an example Go program as described in [Tutorial: Get started with Go](https://go.dev/doc/tutorial/getting-started#code).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Build the SAP HANA Client Go driver)]
+### Build the SAP HANA Client Go driver
+
 The SAP HANA Client interface for Go, like the other SAP HANA client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fba20e31f75c4f7ca5629083869069e5.html) in the SAP HANA Client Interface Programming Reference Guide.  A 64-bit `gcc` compiler is required.
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
@@ -122,10 +124,9 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     ![result of installing the driver](driver-built.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Go application that queries an SAP HANA database)]
+### Create a Go application that queries an SAP HANA database
+
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\go
@@ -221,10 +222,9 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
 5. For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Debug the application)]
+### Debug the application
+
 
 Visual Studio Code provides plugins for Go and can be used to debug an application.
 
@@ -252,12 +252,13 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     ![Breakpoint](GoBreakpoint.png)  
 
-    >Note that debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+    >Debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Go application that connects to and queries an SAP HANA database.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

@@ -1,26 +1,29 @@
 ---
-title: Connect to Data Lake Relational Engine Using Python Drivers
-description: Create and debug a Python application that connects to data lake Relational Engine using the sqlanydb python driver or the pyodbc bridge.
+parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>python]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>python]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
+
+# Connect to Data Lake Relational Engine Using Python Drivers
+<!-- description --> Create and debug a Python application that connects to data lake Relational Engine using the sqlanydb python driver or the pyodbc bridge.
 
 ## Prerequisites
  - You have completed the first 2 tutorials in this group
 
 
-## Details
-### You will learn
+## You will learn
   - How to install Python and the `sqlanydb` and `pyodbc` Python drivers
   - How to create and debug a Python application that connects to and queries a data lake Relational Engine database using the `sqlanydb` python driver or the `pyodbc` bridge
 
 ---
 
+## Intro
 The following steps create a simple Python app that can connect to and query an SAP HANA data lake Relational Engine.
 
-[ACCORDION-BEGIN [Step 1: ](Install Python)]
+### Install Python
+
 
 The first step is to check if Python and pip are installed.
 
@@ -32,9 +35,11 @@ The first step is to check if Python and pip are installed.
     ```
     If Python is installed, the command will return a value such as Python 3.10.3.
 
+    >In some Linux distributions, python refers to Python 2 and python refers to Python 3.  As Python 2 is obsolete this isn't always the case and python may refer to Python 3.
+
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
-    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
+    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
 
     ![python-install](python-install.png)
 
@@ -59,10 +64,9 @@ The first step is to check if Python and pip are installed.
     zypper install python3-pip
     >```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the sqlanydb Python driver)]
+### Install the sqlanydb Python driver
+
 
 The `sqlanydb` package is the python driver for the data lake Relational Engine and is available at [`PyPI`](https://pypi.org/project/sqlanydb/).
 
@@ -84,10 +88,9 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     ![add a variable named SQLANY_API_DLL](add-variable.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Python application that uses sqlanydb to query the data lake Relational Engine)]
+### Create a Python application that uses sqlanydb to query the data lake Relational Engine
+
 
 1. In a shell, create a folder named `python-sqlanydb`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
@@ -142,10 +145,9 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
 For further information on the Python Driver, visit [Python and Database Access](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bdc877e6c5f1014b7b2d2a9739b2bc8.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install the Python ODBC bridge using pip and PyPI)]
+### Install the Python ODBC bridge using pip and PyPI
+
 
 This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [`PyPI`](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
 
@@ -168,10 +170,9 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
     >If this command fails on Linux, you may need to install gcc-c++, python3-devel, and unixodbc-dev.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a Python application that uses pyodbc to query the data lake Relational Engine)]
+### Create a Python application that uses pyodbc to query the data lake Relational Engine
+
 
 1. In a shell, create a folder named `python-pyodbc`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
@@ -196,7 +197,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     import pyodbc
 
     #Initialize your connection
-    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL_Trial')
+    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL')
 
     #If no errors, print connected
     print('connected')
@@ -234,10 +235,9 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
 The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.   
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Debug the application)]
+### Debug the application
+
 
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
@@ -263,9 +263,10 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     ![VS Code Debugging](debugging.png)  
 
+### Knowledge check
+
 Congratulations! You have now created and debugged a Python application that connects to and queries a data lake Relational Engine database.
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---

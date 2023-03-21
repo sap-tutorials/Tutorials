@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Install ABAP Development Tools (ADT) and abapGit Plugin
-description: Install ABAP Development Tools (ADT) and abapGit plugin for ADT.
 primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 25
@@ -10,8 +9,10 @@ author_profile: https://github.com/mervey45
 ---
 
 
-## Details
-### You will learn
+# Install ABAP Development Tools (ADT) and abapGit Plugin
+<!-- description --> Install ABAP Development Tools (ADT) and abapGit plugin for ADT.
+
+## You will learn
 - How to install ADT
 - How to install `abapGit` plugin
 
@@ -21,13 +22,17 @@ author_profile: https://github.com/mervey45
       - Apple Mac OS X 10.14 or higher
 - Microsoft VC Runtime:
       - For Windows OS: [Microsoft Visual C++ 2013 (x64)](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) for communication with the back-end system is required.
-- Java Runtime:
-      - ADT is validated and tested against OpenJDK and SapMachine JVMs (OpenJDK / [SapMachine](https://sap.github.io/SapMachine/)).
-      - Recent Eclipse packages already include an  AdoptOpenJDK. Any other JRE found on the system is not used. If this is not desired, see note [3035242](https://launchpad.support.sap.com/#/notes/3035242) on how to remove the bundled JRE and use a custom one.
+    >**Hint:** Precisely version Visual Studio 2013 (VC++ 12.0) x64 for communication with the back-end system is required.
+-	Java Runtime:
+      -	ADT is validated and tested against Java versions 11 and 17 (Oracle Java and `OpenJDK`).
+      - The latest Eclipse packages are bundled with [`Eclipse Temurin`](https://adoptium.net/), an `OpenJDK` binary distribution provided by the [`Eclipse Adoptium`](https://projects.eclipse.org/projects/adoptium) project. Any other JRE found on the system is not used. If you want to remove the bundled JRE and use a custom one, see SAP note [3035242](https://launchpad.support.sap.com/#/notes/3035242).
+    >**Hint:** No manual installation of an JRE / JDK is required, since it's already bundled with the latest Eclipse packages which are downloadable as a ready-to-run zip-file. 
+
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install ABAP Development Tools (ADT))]
+### Install ABAP Development Tools (ADT)
+
 
   1. Open the [Eclipse download page](https://www.eclipse.org/downloads/packages/) to download the corresponding Eclipse version.
 
@@ -109,10 +114,9 @@ author_profile: https://github.com/mervey45
       ![eclipse](eclipse18.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install abapGit plugin)]
+### Install abapGit plugin
+
 
 >**HINT:** Step 2 is only mandatory for cloud users.
 
@@ -147,13 +151,11 @@ To transfer your ABAP development objects from on-premise SAP systems to an SAP 
       ![eclipse](plugin8.png)
 
 
-[DONE]
-[ACCORDION-END]
 
 
 >**HINT:** Following this tutorial you will be able to update the latest version of Eclipse and ADT when new releases are available.
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,106 +1,38 @@
 ---
-title: Subscribe to the Low-Code / No-Code Service in SAP BTP
-description: Subscribe to and open the paid Low-Code / No-Code service on SAP BTP, and get access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
-author_name: Akseli Virtanen
-author_profile: https://github.com/akseliv
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform,software-product>sap-build,software-product>sap-appgyver]
+primary_tag: software-product>sap-build-apps--enterprise-edition
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
+parser: v2
 ---
 
-## Prerequisites
- - Access to an SAP BTP account in EU10 with paid Low-Code / No-Code entitlements. See [SAP Discovery Center]  (https://discovery-center.cloud.sap/serviceCatalog/sap-appgyver?region=europe(frankfurt)&service_plan=standard&tab=feature)
+# Subscribe to SAP Build Apps on SAP BTP
+<!-- description --> Subscribe to and open the free version of SAP BTP, using a free-tier service plan.
 
-Alternatively you can use SAP AppGyver's free Community Edition, which includes the same features needed to complete the rest of the mission. You can sign up here: [AppGyver.com] (https://www.appgyver.com)
+## You will learn
+- How to subscribe to and open SAP Build Apps on SAP BTP
+- How to open SAP Build Apps
 
-## Details
-### You will learn
-- How to subscribe to and open the Low-Code / No-Code service on SAP BTP
-- How to access the AppGyver Composer tool within SAP BTP
+## Intro
+The Low-Code / No-Code service on SAP BTP is available with a subscription booster. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. For more information about SAP BTP boosters, view: [Boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=btp%20booster)
 
-The Low-Code / No-Code service on SAP BTP is available with a subscription booster. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. For more information about SAP BTP boosters, view: [Boosters] (https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=btp%20booster)
+>Alternatively, you could use SAP AppGyver's free Community Edition, if you do not need any SAP BTP specific features. The community edition is available here: [AppGyver.com] (https://www.appgyver.com)
 
----
-[ACCORDION-BEGIN [Step 1: ](Search for No-Code / Low-Code Booster)]
+### Create account and install SAP Build Apps
 
-To subscribe to the Low-Code / No-Code service, use the following steps:
+Follow the instructions found in the following video.
 
-From your SAP BTP cockpit, click **Boosters**.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5lCAotjfWWo" frameborder="0" allowfullscreen></iframe>
 
-![Click Booster from SAP BTP Cockpit](Click_Booster.png)
+More information is available from Bea Pasch's blog [SAP Build Apps Free Tier Individual Access](https://blogs.sap.com/2022/11/25/sap-build-apps-free-tier-individual-access/).
 
-Search for **Prepare an Account for Low-Code**, locating the SAP Business Application Studio and SAP AppGyver booster.
+### Open SAP Build Apps
 
-Click the service icon, opening the service overview page.
+Under **Instances and Subscriptions**, locate your **SAP Build Apps** subscription and click to **open** the application.
 
-![Search for low code](Search_Low_Code.png)
+![Open SAP Build Apps](Open_Appgyver.png)
 
-[DONE]
-[ACCORDION-END]
+You're now in the Application Development lobby, from which you can create an SAP Build Apps project.
 
-[ACCORDION-BEGIN [Step 2: ](Start setup wizard)]
-
-Click **Start**, opening the booster wizard.
-
-![Click start](Click_search.png)
-
-The prerequisite checks run automatically.
-
-When both are marked as ***Done***, click **Next**.
-
-![Booster wizard](Booster_wizard.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Configure account details)]
-
-***Note***: When entering your subaccount name, it is important to enter a new subaccount name, rather than targeting an existing SAP BTP subaccount.   
-
-Enter your chosen ***Subaccount Name*** and ***Subdomain*** and then click **Next**.
-
-![Configure subaccount](Configure_subaccount.png)
-
-Add any additional ***Users*** you need and then click **Next**.
-
-![Add users](add_users.png)
-
-Review your service information and then click **Finish**.
-
-![Finish wizard](Finish_wizard.png)
-
-The service set up runs, showing ***Processing*** and then ***Done*** for each item.
-
-![Processing subaccount](Processing_subaccount.png)
-
-Once subscribed, a success message is displayed.
-
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Navigate to SAP BTP subaccount)]
-
-Once all items are marked as ***Done***, click **Navigate to Subaccount**.
-
-![Navigate to subaccount](Navigate_Subaccount.png)
-
-You're now in your SAP BTP subaccount.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Open AppGyver service)]
-
-Click **Instances and Subscriptions**.
-
-Locate your ***SAP AppGyver*** subscription and click to **open** the application.
-
-![Open Appgyver](Open_Appgyver.png)
-
-You're now in the Application Development lobby, from which you will create an AppGyver project in the following tutorials.
-
-
-[DONE]
-[ACCORDION-END]

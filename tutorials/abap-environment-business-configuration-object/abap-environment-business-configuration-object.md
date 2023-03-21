@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Business Configuration Maintenance Object
-description: Create a Business Configuration Maintenance Object using the ABAP Repository Object Generator.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
@@ -9,26 +8,29 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Create Business Configuration Maintenance Object
+<!-- description --> Create a Business Configuration Maintenance Object using the ABAP Repository Object Generator.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - This is the first tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap) (3.26.2 or higher). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
-## Details
-### You will learn  
+## You will learn  
 - How to create Packages
 - How to create Data Elements
 - How to create Database Tables
 - How to enable Log Changes
 - How to generate a Business Configuration Maintenance Object
 
+## Intro
 This tutorial shows you how to create a **SAP Fiori based Table Maintenance app** using the [**ABAP RESTful Application Programming Model**](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html) (RAP) and the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) (CUBCO) app. This tutorial is based on a simplified error code data base model.
 
 >**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
 
-
 ---
-[ACCORDION-BEGIN [Step 1: ](Create Package)]
+### Create Package
+
 
   1. Open your **ABAP Development Tools**, logon to your **ABAP system** and right-click on **`ZLOCAL`**, select **New** > **ABAP Package**.
 
@@ -48,10 +50,9 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
       ![Create new Transport Request](p3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Data Elements)]
+### Create Data Elements
+
 
   1. Right-click on **`Z_ERROR_CODES_###`**, select **New** > **Other ABAP Repository Object**.
 
@@ -92,17 +93,16 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
      ![Data Element definition](e6.png)
   8. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Database Tables)]
+### Create Database Tables
+
 
   1. Right-click on Type Group **Dictionary** in package **`Z_ERROR_CODES_###`**, select **New** > **Database Table**.
 
       ![New database table](db.png)
 
   2. Create a Database Table:
-     - Name: **`ZERROR_CODE_###`**
+     - Name: **`ZERRCODE_###`**
      - Description: **`Error Code ###`**
 
       ![Create database table](db3.png)
@@ -119,7 +119,7 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
-    define table zerror_code_### {
+    define table zerrcode_### {
       key client            : abap.clnt not null;
       key error_code        : z_error_code_### not null;
       last_changed_at       : abp_lastchange_tstmpl;
@@ -131,7 +131,7 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
   6. Repeat step **3.1.- 3.4** and create another Database Table:
 
-     - Name: **`ZERROR_CODE_T###`**
+     - Name: **`ZERRCODET_###`**
      - Description: **`Error Code Description ###`**
 
     ```ABAP
@@ -140,16 +140,16 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
-    define table zerror_code_t### {
+    define table zerrcodet_### {
       key client            : abap.clnt not null;
       @AbapCatalog.textLanguage
       key langu             : abap.lang not null;
       @AbapCatalog.foreignKey.keyType : #TEXT_KEY
       @AbapCatalog.foreignKey.screenCheck : false
       key error_code        : z_error_code_### not null
-        with foreign key [0..*,1] zerror_code_###
-          where client = zerror_code_t###.client
-            and error_code = zerror_code_t###.error_code;
+        with foreign key [0..*,1] zerrcode_###
+          where client = zerrcodet_###.client
+            and error_code = zerrcodet_###.error_code;
       description           : z_code_description_###;
       local_last_changed_at : abp_locinst_lastchange_tstmpl;
     }
@@ -157,10 +157,9 @@ This tutorial shows you how to create a **SAP Fiori based Table Maintenance app*
 
   7. Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enable Log Changes)]
+### Enable Log Changes
+
 
 To use the [**Business Configuration Change Logs**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5c6cf20499894f1083e80dba7c5963d4.html) app, activate the log changes function to keep track of configuration changes in your business configuration tables.
 
@@ -174,17 +173,16 @@ The **Log Changes** flag has to be enabled in the technical settings for the tab
 
 Save and activate.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create Business Configuration Maintenance Object)]
+### Create Business Configuration Maintenance Object
+
 
 A [**Business Configuration Maintenance Object**](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/61159c4dc45b45619b46b4620615c357.html) declares a [Service Binding](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/b58a3c27df4e406f9335d4b346f6be04.html) as relevant for business configuration. They are listed in the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app. By selecting an entry in the app a SAP Fiori elements based UI is rendered to maintain the business configuration.
 
 You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/047e01c3bcdd4303a60b61364bd5b31d.html?version=Cloud) to create the necessary repository objects.
 
-  1. Right-click on **`ZERROR_CODE_###`** and select **Generate ABAP Repository Objects...**.
+  1. Right-click on table **`ZERRCODE_###`** and select **Generate ABAP Repository Objects...**.
 
       ![Start ABAP Repository Objects generator](bc.png)
 
@@ -207,7 +205,7 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 
   5. Select a Transport Request and click **Finish**.
 
-  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects. If you publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4` you can already start the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app from the Fiori Launchpad and select the created Business Configuration Maintenance Object. However you will not be able to read or edit the configuration entries because your user is missing authorizations. Instead you will [provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) in the next tutorial and then finally [use the Custom Business Configurations app](abap-environment-maintain-bc-app).
+  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects. If you publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4` you can already start the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app from the SAP Build Work Zone and select the created Business Configuration Maintenance Object. However you will not be able to read or edit the configuration entries because your user is missing authorizations. Instead you will [provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) in the next tutorial and then finally [use the Custom Business Configurations app](abap-environment-maintain-bc-app).
 
   7. If you only have a trial account you need to perform the following adjustments because you are not able to create Customizing Transport Requests or Business Roles. You can then also skip the following tutorial [Provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) and continue with tutorial [Use Custom Business Configurations app](abap-environment-maintain-bc-app).
       - Edit class `ZBP_I_ERRORCODE###_S`, section **Local Types**. Delete the content of the following methods. Afterwards save and activate the class.
@@ -239,11 +237,8 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 >See also [naming conventions for Development Objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 ---

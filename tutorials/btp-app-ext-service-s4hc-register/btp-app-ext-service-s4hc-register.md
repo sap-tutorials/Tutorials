@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Register Your SAP S/4HANA Cloud System
 description: This tutorial shows you how to register your SAP S/4HANA Cloud system in your SAP BTP cockpit.
 keywords: cap

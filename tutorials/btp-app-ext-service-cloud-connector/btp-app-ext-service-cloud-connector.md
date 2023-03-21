@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Configure Systems in Cloud Connector
 description: This tutorial shows you how to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
 keywords: cap
