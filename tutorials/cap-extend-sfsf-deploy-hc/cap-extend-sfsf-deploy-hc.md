@@ -91,7 +91,7 @@ Now, checkout what happens when you execute the application.
 
 In the **Terminal** type `cds watch` and press **Enter**.
 
-> **IMPORTANT**: you must use `cds watch --profile hybrid` when working with **CDS version 5 and above** as per the **update described in the previous step**.)
+> **IMPORTANT**: you must use `cds watch --profile hybrid` when working with **CDS version 5 and above** as per the **update described in the previous step**.
 
 ![Figure 7 – Project connected to SAP HANA Cloud database](connect-to-hc.png)
 
