@@ -1,0 +1,12 @@
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+Who can access a workspace?
+
+
+###Match
+[x] Users that have been invited to join the workspace
+[ ] Any user in the company
+[x] The administrator who created the workspace
