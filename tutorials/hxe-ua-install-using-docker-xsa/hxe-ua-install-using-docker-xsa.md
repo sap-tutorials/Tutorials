@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Adrian Plata
-author_profile: https://github.com/aplata-sap
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: software-product>sap-hana\,-express-edition
 tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
@@ -118,7 +118,7 @@ sudo docker image rm alpine -f
 ### Download the SAP HANA, express edition Image from the Docker Library
 
 
-Go to [https://hub.docker.com/r/saplabs/hanaexpressxsa](https://hub.docker.com/r/saplabs/hanaexpressxsa).
+Go to [https://hub.docker.com/u/saplabs](ttps://hub.docker.com/u/saplabs). Select hanaexpressxsa.
 
 Copy the Docker pull address. Here's an example:
 
@@ -481,7 +481,7 @@ sudo ./hxe_upgrade.sh
 Follow the prompts to complete the server update.
 
 
-### -Help Command
+### Docker Run Usage: (-Help Command)
 
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
