@@ -53,7 +53,7 @@ There are nineteen cockpit POST API endpoints:
 
 This endpoint registers an SAP HANA resource in the cockpit. You have two options to register a cockpit resource: either by using its instance number or its port number.
 
-**Option 1 - via instance number:**
+[OPTION BEGIN [via Instance Number]]
 
 Copy the following code to your Python program:
 ```Python
@@ -101,8 +101,9 @@ Run the entire program (make sure to delete or comment out the calling statement
     }
 }
 ```
+[OPTION END]
 
-**Option 2 - via port number:**
+[OPTION BEGIN [via Port Number]]
 
 You can also register a resource by specifying the SQL port for its `indexserver` (for tenant databases) or `nameserver` (for a system database).
 
@@ -139,7 +140,7 @@ Run the entire program (make sure to delete or comment out the calling statement
     }
 }
 ```
-
+[OPTION END]
 
 
 ### Call the ResourceUnregister endpoint
