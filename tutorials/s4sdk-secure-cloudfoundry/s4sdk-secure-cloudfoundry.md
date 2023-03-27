@@ -49,7 +49,7 @@ With these basics in mind, let's create the picture of Figure 1 and Figure 2 by 
 
 You will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, you will first set up the necessary structure.
 
-1. Go to your favourite `<destLocation>` and create the `approuter` directory:
+1. Create a new directory for the router `<destLocation>` and create the `approuter` directory:
 
     ```Bash
     cd <destLocation>

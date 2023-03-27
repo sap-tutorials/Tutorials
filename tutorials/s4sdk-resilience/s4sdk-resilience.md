@@ -37,7 +37,7 @@ In order to avoid such scenarios, you need to equip applications with the abilit
 ### Resilience4j
 
 
-The SAP Cloud SDK now builds upon the `Resilience4j` library in order to provide resilience for your cloud applications. In previous versions 2.x the `Hystrix` library was used, which has been in maintenance mode for some time now.
+The SAP Cloud SDK builds upon the `Resilience4j` library in order to provide resilience for your cloud applications.
 
 `Resilience4j` comes with many modules to protect your application from failures. The most important ones are timeouts, bulkheads, and circuit breakers.
 
@@ -57,7 +57,7 @@ If you want to gain a deeper understanding of the inner workings, checkout the [
 
 Now that you know why resilience is important, it's finally time to introduce it into your application. In the last tutorial you created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, you have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
 
-At the same time you will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that starting with version 3 of the SAP Cloud SDK, a separate class is no longer required to implement resilience. You could have also added resilience directly to the existing `BusinessPartnerServlet` class.
+At the same time you will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that a separate class is not required to implement resilience, it can directly be added to the existing `BusinessPartnerServlet` class.
 
 So first create the following class:
 
@@ -245,39 +245,39 @@ Now let's adapt the code in your integration test to check, if your fallback is 
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.module.jsv.JsonSchemaValidator;
-import io.vavr.control.Try;
+import static io.restassured.RestAssured.when;
+
+import java.net.URL;
+
 import org.hamcrest.Matchers;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.net.URI;
-import java.net.URL;
-
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.testutil.MockDestination;
-import com.sap.cloud.sdk.testutil.MockUtil;
 
-import static io.restassured.RestAssured.when;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import io.vavr.control.Try;
 
-@RunWith(Arquillian.class)
-public class BusinessPartnerServletTest {
-    private static final MockUtil mockUtil = new MockUtil();
-    private static final JsonSchemaValidator jsonValidator_List = JsonSchemaValidator
-            .matchesJsonSchemaInClasspath("businesspartners-schema.json");
+@RunWith( Arquillian.class )
+public class BusinessPartnerServletTest
+{
+    private static final JsonSchemaValidator jsonValidator_List =
+        JsonSchemaValidator.matchesJsonSchemaInClasspath("businesspartners-schema.json");
 
     private static final String DESTINATION_NAME = "MyErpSystem";
-    private static final Destination dummyDestination = DefaultDestination.builder().property("name", DESTINATION_NAME).property("URL", "foo").build();
+    private static final Destination dummyDestination =
+        DefaultDestination.builder().property("name", DESTINATION_NAME).property("URL", "foo").build();
 
     @ArquillianResource
     private URL baseUrl;
@@ -285,11 +285,6 @@ public class BusinessPartnerServletTest {
     @Deployment
     public static WebArchive createDeployment() {
         return TestUtil.createDeployment(BusinessPartnerServlet.class);
-    }
-
-    @BeforeClass
-    public static void beforeClass() {
-        mockUtil.mockDefaults();
     }
 
     @Before
@@ -300,28 +295,31 @@ public class BusinessPartnerServletTest {
     @Test
     public void testService() {
         // TODO: insert your service URL down below
-        mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
+        DestinationAccessor
+            .appendDestinationLoader(
+                new DefaultDestinationLoader()
+                    .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
         // HTTP GET response OK, JSON header and valid schema
         when()
-                .get("/businesspartners")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body(jsonValidator_List);
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body(jsonValidator_List);
     }
 
     @Test
     public void testWithFallback() {
         // Simulate a failed VDM call with non-existent destination
-        DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+        DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
 
         // Assure an empty list is returned as fallback
         when()
-                .get("/businesspartners")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body("", Matchers.hasSize(0));
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body("", Matchers.hasSize(0));
     }
 }
 ```
@@ -332,14 +330,17 @@ Make sure to replace the URL in line 58 with the one of your service (e.g. `http
 ```Java
 @Test
 public void testService() {
-    mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
+    DestinationAccessor
+        .appendDestinationLoader(
+            new DefaultDestinationLoader()
+                .registerDestination(DefaultHttpDestination.builder("ERP_001").name(DESTINATION_NAME).build()));
     // HTTP GET response OK, JSON header and valid schema
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body(jsonValidator_List);
 }
 ```
 
