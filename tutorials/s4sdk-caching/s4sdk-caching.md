@@ -57,7 +57,7 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
   <groupId>com.github.ben-manes.caffeine</groupId>
   <artifactId>jcache</artifactId>
   <scope>runtime</scope>
-  <version>2.7.0</version>
+  <version>2.9.3</version>
 </dependency>
 ```
 
@@ -107,22 +107,25 @@ If your servlet got the desired result cached from a previous call, and the ERP 
 @Test
 public void testCache() {
     // TODO: insert your service URL down below
-    mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
+    DestinationAccessor
+        .appendDestinationLoader(
+            new DefaultDestinationLoader()
+                .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body(jsonValidator_List);
 
     // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+    DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body(jsonValidator_List);
 }
 ```
 
@@ -130,7 +133,10 @@ Here, the test expects the request still to be successful, even after swapping o
 
 >If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
 ```Java
-mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
+DestinationAccessor
+    .appendDestinationLoader(
+        new DefaultDestinationLoader()
+            .registerDestination(DefaultHttpDestination.builder("ERP_001").name(DESTINATION_NAME).build()));
 ```
 
 
@@ -146,15 +152,15 @@ Take a look back at the test you just replaced:
 @Test
 public void testWithFallback() {
     // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+    DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
 
     // Assure an empty list is returned as fallback
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body("", Matchers.hasSize(0));
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body("", Matchers.hasSize(0));
 }
 ```
 

@@ -294,7 +294,7 @@ That's it.
 
 **Run the Application on a Local Server**
 
-[Since version 1.1.1 of the SAP S/4HANA Cloud SDK](https://sap.github.io/cloud-s4-sdk-examples/release-notes/), the generated projects can also be run locally out-of-the-box. To do so, first assemble the project using the `mvn clean package` command (see above).
+To do so, first assemble the project using the `mvn clean package` command (see above).
 
 Then, run the following commands to start the local server:
 

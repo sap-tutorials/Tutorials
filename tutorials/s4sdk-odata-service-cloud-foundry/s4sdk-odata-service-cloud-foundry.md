@@ -81,7 +81,7 @@ final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
                 "IsFemale",
                 "CreationDate")
         .build()
-        .execute(destination)
+        .executeRequest(destination)
         .asList(MyBusinessPartnerType.class);
 ```
 
@@ -252,20 +252,20 @@ In order for your application to run you need to provide it with information abo
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
 ```Shell
-$env:destinations='[{name: "MyErpSystem", url: "https://URL"}]'
+$destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 ```
 
 **Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 ```Shell
-$env:destinations='[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]'
+$destinations='[{name: "MyErpSystem", url: "https://URL", "username": ""USER", "password": "PASSWORD"}]'
 ```
 Please change the values URL, USER and PASSWORD accordingly.
 
 You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```Shell
-echo $env:destinations
+echo $destinations
 ```
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
@@ -290,7 +290,7 @@ Nevertheless, there may be circumstances that make the approach via the environm
 
 
 ```Shell
-cf set-env firstapp destinations '[{name: "MyErpSystem", url: "https://URL"}]'
+cf set-env firstapp destinations "[{name: `"MyErpSystem`", url: `"https://URL`"}]"
 ```
 
 Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below). Be aware that depending on your command line interface (for example, on Windows command prompt), you may need to use double quotes instead of single quotes and escape the double quotes.
@@ -728,7 +728,7 @@ If you are still facing problems when connecting to the OData service, try the f
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
+    <version>1.2.11</version>
     <scope>test</scope>
 </dependency>
 
