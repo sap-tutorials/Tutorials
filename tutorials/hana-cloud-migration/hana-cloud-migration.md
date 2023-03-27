@@ -149,8 +149,11 @@ The Self-Service Migration tool provides additional steps to select the target d
 ![migration phases](migration-phases.png)
 
 For further details see:
+
   * [Migration Scenarios Supported by the Self-Service Migration for SAP HANA Cloud Tool](https://help.sap.com/docs/HANA_CLOUD/3c53bc7b58934a9795b6dd8c7e28cf05/1fce86a12738443d9bf1b38e330cba6e.html)
+  
   * [Checks Performed by the Migration Tool](https://help.sap.com/docs/HANA_CLOUD/3c53bc7b58934a9795b6dd8c7e28cf05/db3a47d288e24822b23e9130a34ee877.html)
+  
   * [SAP HANA Cloud Migration: Setup your on-premise HANA system for the Self-Service Migration tool](https://blogs.sap.com/2023/02/17/sap-hana-cloud-migration-setup-your-on-premise-hana-system-for-the-self-service-migration-tool/)
 
 If you wish to perform all or part of a migration manually rather than using the Self-Service Migration Tool, the following are some steps to consider in a migration.
