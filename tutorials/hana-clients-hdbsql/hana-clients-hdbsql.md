@@ -169,6 +169,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
+    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;  --Used in the entity framework tutorial
     ```
 
     >The end of this tutorial contains SQL statements to delete the user, schema and objects created.  This may be helpful if you wish to recreate the sample dataset used in this tutorial.
