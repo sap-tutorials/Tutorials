@@ -37,7 +37,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Configure Container Image)]
+[ACCORDION-BEGIN [Step 2: ](Configure container image)]
 1. Open the file `chart/values.yaml`.
 
 2. Replace the placeholder `<your-container-registry>` with your docker server URL.
@@ -104,7 +104,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
     Result should look like:
 
     ```Shell/Bash
-    *.<xyz123>.stage.kyma.ondemand.com
+    *.<xyz123>.kyma.ondemand.com
     ```
 
     >  `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
@@ -113,7 +113,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
 
     ```YAML[2]
     global:
-        domain: <xyz123>.stage.kyma.ondemand.com
+        domain: <xyz123>.kyma.ondemand.com
     ```
 
 [DONE]
@@ -134,7 +134,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
     ```
 
 
-3. In the `db` section of the `hana-deployer` module, replace `serviceInstanceName: hana` in the binding `hana` with `fromSecret: cpapp-db` so that it also points to the SAP HANA HDI container secret:
+3. In the `hana` section of the `hana-deployer` module bindings, replace `serviceInstanceName: hana` with `fromSecret: cpapp-db` so that it also points to the SAP HANA HDI container secret:
 
     ```YAML[5]
     hana-deployer:

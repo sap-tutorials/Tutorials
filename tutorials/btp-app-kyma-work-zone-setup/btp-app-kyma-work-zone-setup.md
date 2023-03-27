@@ -142,7 +142,7 @@ cds add mta
 3. Enter the following settings:
 
     - ```Destination name ()```: **`cpapp-srv`**
-    - ```Add application to managed application router? (Y/n)```: **`y`**
+    - ```Editing the deployment configuration will overwrite existing configuration, are you sure you want to continue? (Y/n)```: **`y`**
 
 > On Windows, you might get an error when executing this command.
 
@@ -180,12 +180,41 @@ cds add mta
 3. Enter the following settings:
 
     - ```Destination name ()```: **`cpapp-srv`**
-    - ```Add application to managed application router? (Y/n)```: **`y`**
+    - ```Editing the deployment configuration will overwrite existing configuration, are you sure you want to continue? (Y/n)```: **`y`**
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Add SAP Cloud service)]
+[ACCORDION-BEGIN [Step 8: ](Adjust data source path to avoid errors)]
+Make sure that the value of the `uri` parameter of the `mainService` object in both `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` does not start with a forward slash (`/`):
+
+```JSON[8]
+{
+    "_version": "1.32.0",
+
+    "sap.app": {
+        ...
+        "dataSources": {
+            "mainService": {
+                "uri": "service/risk/",
+                "type": "OData",
+                    "settings": {
+                    "odataVersion": "4.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+  }
+  ...
+}
+```
+
+This will ensure you don't get any errors when trying to access the **Risks** or **Mitigations** apps later through the SAP Build Work Zone, standard edition.
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 9: ](Add SAP Cloud service)]
 Add your SAP Cloud service at the end of `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files:
 
 <!-- cpes-file app/risks/webapp/manifest.json:$["sap.cloud"] -->
@@ -208,7 +237,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Create package.json and build script for app deployer)]
+[ACCORDION-BEGIN [Step 10: ](Create package.json and build script for app deployer)]
 1. Create a file `app/package.json` for the HTML5 application deployer application and add the following code to it:
 
     ```JSON
@@ -278,7 +307,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Build HTML5 application deployer image)]
+[ACCORDION-BEGIN [Step 11: ](Build HTML5 application deployer image)]
 1. Set container registry environment variable:
 
     ```Shell/Bash
@@ -314,7 +343,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Configure Helm chart for HTML5 application deployment)]
+[ACCORDION-BEGIN [Step 12: ](Configure Helm chart for HTML5 application deployment)]
 1. Add the HTML5 Application Deployer to your Helm chart:
 
     ```Shell/Bash
@@ -358,7 +387,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Re-deploy your application)]
+[ACCORDION-BEGIN [Step 13: ](Re-deploy your application)]
 Run the deploy command again:
 
 ```Shell/Bash
