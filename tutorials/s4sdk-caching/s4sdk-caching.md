@@ -131,15 +131,6 @@ public void testCache() {
 
 Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
 
->If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
-```Java
-DestinationAccessor
-    .appendDestinationLoader(
-        new DefaultDestinationLoader()
-            .registerDestination(DefaultHttpDestination.builder("ERP_001").name(DESTINATION_NAME).build()));
-```
-
-
 
 ### More on testing
 

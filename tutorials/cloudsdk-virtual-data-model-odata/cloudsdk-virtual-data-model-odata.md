@@ -4,8 +4,8 @@ author_name: Johannes Schneider
 author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Create and Deep Insert with the Virtual Data Model for OData
@@ -95,7 +95,7 @@ public class StoreBusinessPartnerCommand{
 
 > ### What does the code do?
 > The code introduces a `StoreBusinessPartnerCommand` that uses a `BusinessPartnerService`, a `HttpDestination` and a `BusinessPartner` instance to execute a create command.
-Within the run() method, i.e., whenever the command is executed, it calls the `businesspartner service`.
+Within the run() method, whenever the command is executed, it calls the `businesspartner service`.
 >
 > The `StoreBusinessPartnerCommand` takes a `Businesspartner` instance as input. This is a potentially complex (containing nested entities) data type. Therefore, in the next step you need to create a nested data structure based on the `BusinessPartner` data model.
 >

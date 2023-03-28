@@ -47,7 +47,7 @@ The SAP Cloud SDK builds upon the `Resilience4j` library in order to provide res
 
 - **Circuit Breakers:** `Resilience4j` uses the circuit breaker pattern to determine whether a remote service is currently available. Breakers are closed by default. If a remote service call fails too many times, `Resilience4j` will open/trip the breaker. This means that any further calls that should be made to the same remote service are automatically stopped. `Resilience4j` will periodically check if the service is available again, and close the open breaker again accordingly. For more information on the circuit breaker pattern, check [this article by Martin Fowler](https://martinfowler.com/bliki/CircuitBreaker.html).
 
-Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable you can still provide some useful result, e.g. by serving cached data.
+Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable you can still provide some useful result, like by serving cached data.
 
 If you want to gain a deeper understanding of the inner workings, checkout the [`Resilience4j` User Guide] (https://resilience4j.readme.io).
 
@@ -155,7 +155,7 @@ public class GetBusinessPartnersCommand {
 
 To use the `ResilienceDecorator` you need at least two things:
 
-1. The code you want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, the example simply takes the VDM-based code that calls the OData service from the previous tutorial, and puts it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable`, etc.), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here `executeSupplier` is used with a method reference to the VDM-based code.
+1. The code you want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, the example simply takes the VDM-based code that calls the OData service from the previous tutorial, and puts it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable` and others), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here `executeSupplier` is used with a method reference to the VDM-based code.
 
 2. An instance of `ResilienceConfiguration` with identifier parameter set. Here the example uses the class reference, but a string identifier can also be used. Besides the mandatory identifier parameter, the SAP Cloud SDK comes with a default resilience configuration, so you don't need to perform any other configuration on your own. In most cases the default configuration will suffice. However, if you need to change the resilience configuration, you can find more information on this topic in [SAP Cloud SDK Javadoc](https://help.sap.com/doc/ae45330c443b42c5a54bde85dd70aec9/1.0/en-US/com/sap/cloud/sdk/cloudplatform/resilience/ResilienceConfiguration.html)
 
@@ -324,25 +324,7 @@ public class BusinessPartnerServletTest
 }
 ```
 
-Make sure to replace the URL in line 58 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
-
->If you are using a service other than the SAP Business Hub sandbox service or the mock server (see steps 1 and 10 of the [previous tutorial](s4sdk-odata-service-cloud-foundry)), i.e., you stored your system information and your credentials in the `systems.yml` and `credentials.yml` files, change your test code like this:
-```Java
-@Test
-public void testService() {
-    DestinationAccessor
-        .appendDestinationLoader(
-            new DefaultDestinationLoader()
-                .registerDestination(DefaultHttpDestination.builder("ERP_001").name(DESTINATION_NAME).build()));
-    // HTTP GET response OK, JSON header and valid schema
-    when()
-        .get("/businesspartners")
-        .then()
-        .statusCode(200)
-        .contentType(ContentType.JSON)
-        .body(jsonValidator_List);
-}
-```
+Make sure to replace the URL in line 58 with the one of your service (for example `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
 With `testWithFallback()` you added a test to test your resilience. The example intentionally provides a destination (localhost) that does not provide the called OData service in order to make the command fail. Since you implemented a fallback for your command that returns an empty list, you can assert that the response actually contains an empty list.
 

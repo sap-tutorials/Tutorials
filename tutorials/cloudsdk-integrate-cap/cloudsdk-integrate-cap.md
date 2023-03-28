@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr

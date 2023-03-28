@@ -103,7 +103,7 @@ We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourE
 
 
 Some of the steps in the upcoming tutorial blogs will fail if you sit behind a corporate proxy. If you cannot escape the proxy, you need to tell Maven where your proxy is located.
-To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
+To do this, you need to cd to your `~/.m2 directory` (for example on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -125,7 +125,7 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 </settings>
 ```
 
-After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
+After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry and others.
 
 
 ### Test yourself

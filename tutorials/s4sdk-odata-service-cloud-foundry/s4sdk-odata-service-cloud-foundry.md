@@ -141,7 +141,7 @@ For any OData service not part of SAP's API Business Hub, the `StructuredQuery` 
 
 The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, in this example, you will retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
-To get started, open your previously created `Hello World` project (e.g. **`firstapp`**) and **`create a new file`** called `BusinessPartnerServlet.java` in the following location:
+To get started, open your previously created `Hello World` project (example: **`firstapp`**) and **`create a new file`** called `BusinessPartnerServlet.java` in the following location:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
@@ -592,7 +592,7 @@ What you see here in the actual `testService` method, is the usage of `RestAssur
   - HTTP `ContentType` is `application/json`
   - HTTP body is valid JSON code, checked with `businesspartners-schema.json` definition
 
-Make sure to replace the URL in line 52 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
+Make sure to replace the URL in line 52 with the one of your service (for example `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
 
 ### Create JSON Schema for servlet response validation
