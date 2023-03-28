@@ -22,7 +22,7 @@ primary_tag: software-product>sap-cloud-sdk
 ### Concepts
 
 
-Before diving deeper into the real setup of the architecture, let's quickly review the architecture this tutorial intends to go for.
+Before diving deeper into the real setup of the architecture, quickly review the architecture this tutorial intends to go for.
 
 Figure 1 presents the final setup. First, there still is your existing "Hello World" or "Business Partner" Java-based microservice that you have created in the previous tutorials. However, instead of letting the customer access this application directly, you will use the so-called Application Router (App Router) that serves two purposes.
 
@@ -41,7 +41,7 @@ The JWT contains a signature that needs to be verifiable by every microservice t
 
 **Figure 2: Provisioning view with XSUAA binding**
 
-With these basics in mind, let's create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
+With these basics in mind, create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
 
 
 ### Set up the App Router

@@ -23,7 +23,7 @@ Consider the following situation: you are developing a cloud application to prov
 
 However, cloud applications, possibly spanned across multiple services, are inherently complex. So it is safe to assume that something, somewhere will fail at some point in time. For example a call to your database might fail and cause one part of your application to fail. If other parts of your application rely on the part that has failed, these parts will fail as well. So a single failure might cascade through the whole system and break it. This is especially critical for multi-tenancy applications, where a single instance of your application serves multiple customers. A typical S/4HANA multi-tenancy application involves many downstream services, such as on-premise S/4HANA ERP systems.
 
-Let's look at a concrete example: Suppose you have 30 systems your cloud application is dependent on and each system has a "perfect" availability of 99.99%. This means each service is unavailable for 4.32 minutes each month (43200 min * (1 – 0.9999) = 4.32 min).
+Look at a concrete example: Suppose you have 30 systems your cloud application is dependent on and each system has a "perfect" availability of 99.99%. This means each service is unavailable for 4.32 minutes each month (43200 min * (1 – 0.9999) = 4.32 min).
 
 Now assume failures are cascading, so one service being unavailable means the whole application becomes unavailable. Given the equation used above, the situation now looks like this:
 
@@ -238,7 +238,7 @@ Thanks to your new `GetBusinessPartnersCommand`, you can now simply create a new
 
 There is one thing you need to address in order to properly test your code: you need to provide your tests with an ERP endpoint.
 
-Now let's adapt the code in your integration test to check, if your fallback is working correctly:
+Now adapt the code in your integration test to check, if your fallback is working correctly:
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 

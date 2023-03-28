@@ -196,7 +196,7 @@ During development it becomes important to test the code newly implemented to ex
 ### HelloWorldServlet
 
 
-Now that you understand the structure of the project, let's take a closer look at the `HelloWorldServlet`.
+Now that you understand the structure of the project, take a closer look at the `HelloWorldServlet`.
 
 ```java
 @WebServlet("/hello")

@@ -67,7 +67,7 @@ The SAP Cloud SDK now brings the VDM for OData to the Java world to make the typ
 ### The manual way to OData
 
 
-Let's take a look at typical code you could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, a list of business partners is retrieved from an S/4HANA system:
+Take a look at typical code you could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, a list of business partners is retrieved from an S/4HANA system:
 
 ```Java
 final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
@@ -97,7 +97,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 ### Virtual Data Model: The simpler way to OData
 
 
-Now that you have seen some of the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that you have seen some of the possible pitfalls of the current approach, take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
@@ -255,7 +255,7 @@ As mentioned in the Tutorial `Create a sample application on Cloud Foundry using
 $destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 ```
 
-**Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
+Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 ```Shell
 $destinations='[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]'
@@ -307,7 +307,7 @@ As mentioned in the Tutorial `Create a sample application on Cloud Foundry using
 set destinations=[{name: "MyErpSystem", url: "https://URL"}]
 ```
 
-**Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
+Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 ```Shell
 set destinations=[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]
@@ -359,7 +359,7 @@ As mentioned in the Tutorial `Create a sample application on Cloud Foundry using
 export destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 ```
 
-**Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
+Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 
 ```Bash
@@ -494,7 +494,7 @@ To construct an extensible integration test for the newly created `BusinessPartn
   - New: test class
   - New: JSON Schema for servlet response validation
 
-First, let's adjust the Maven pom file of the `integrations-tests` sub-module by adding a dependency for JSON schema validation:
+First, adjust the Maven pom file of the `integrations-tests` sub-module by adding a dependency for JSON schema validation:
 
 `./integration-tests/pom.xml`
 

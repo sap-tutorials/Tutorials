@@ -262,7 +262,7 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function, which creates the new `businessPartner`.
 
 
 ### Run the mock server

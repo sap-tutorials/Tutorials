@@ -99,7 +99,7 @@ Feel free to test that subsequent requests respond faster compared to the first 
 
 Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected, adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
