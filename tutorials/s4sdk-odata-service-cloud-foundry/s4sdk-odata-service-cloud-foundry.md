@@ -67,32 +67,29 @@ The SAP Cloud SDK now brings the VDM for OData to the Java world to make the typ
 ### The manual way to OData
 
 
-Let's take a look at typical code you could write to access any OData service using the Generic OData Client. Here, a list of business partners is retrieved from an S/4HANA system:
+Let's take a look at typical code you could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, a list of business partners is retrieved from an S/4HANA system:
 
 ```Java
-final ErpHttpDestination destination =
-    DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
-final StructuredQuery query =
-    StructuredQuery
-        .onEntity("A_BusinessPartner", ODataProtocol.V4)
-        .select("BusinessPartner", "LastName", "FirstName", "IsMale", "IsFemale", "CreationDate");
-final ODataRequestRead request =
-    new ODataRequestRead(
-        "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-        "A_BusinessPartner",
-        query.getEncodedQueryString(),
-        ODataProtocol.V4);
-final HttpClient client = HttpClientAccessor.getHttpClient(destination);
-// perform the HTTP operation:
-final ODataRequestResultGeneric result = request.execute(client);
-final Collection<MyBusinessPartnerType> businessPartners = result.asList(MyBusinessPartnerType.class);
+final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
+final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
+        .withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+                "A_BusinessPartner")
+        .select("BusinessPartner",
+                "LastName",
+                "FirstName",
+                "IsMale",
+                "IsFemale",
+                "CreationDate")
+        .build()
+        .executeRequest(destination)
+        .asList(MyBusinessPartnerType.class);
 ```
 
-The `StructuredQuery` represents a generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `StructuredQuery` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
+The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
 
-Nevertheless, there are quite a few pitfalls you can fall into when using the plain `StructuredQuery` approach to call OData services:
+Nevertheless, there are quite a few pitfalls you can fall into when using the plain `ODataQueryBuilder` approach to call OData services:
 
-- For `ODataRequestRead("/sap/opu/odata/sap/API_BUSINESS_PARTNER", "A_BusinessPartner", query.getEncodedQueryString(), ODataProtocol.V4)` you already need to know three things: the OData endpoints service path `(/sap/opu/odata/sap)`, the endpoints name `(API_BUSINESS_PARTNER)` and the name of the entity collection `(A_BusinessPartner)` as defined in the metadata of the endpoint.
+- For `.withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER", "A_BusinessPartner")` you already need to know three things: the OData endpoints service path `(/sap/opu/odata/sap)`, the endpoints name `(API_BUSINESS_PARTNER)` and the name of the entity collection `(A_BusinessPartner)` as defined in the metadata of the endpoint.
 - Then, when you want to select specific attributes from the `BusinessPartner` entity type with the `select()` function, you need to know how these fields are named. But since they are only represented as strings in this code, you need to look at the metadata to find out how they're called. The same also applies for functions like `order()` and `filter()`. And of course using strings as parameters is prone to spelling errors that your IDE most likely won't be able to catch for you.
 - Finally, you need to define a class such as `MyBusinessPartnerType` with specific annotations that represents the properties and their types of the result. For this you again need to know a lot of details about the OData service.
 
