@@ -346,10 +346,12 @@ The file needs to be put under your `<projectroot>/integration-tests/src/test/ja
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
-import com.sap.cloud.sdk.testutil.MockUtil;
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.isEmptyString;
+import static org.hamcrest.Matchers.not;
+
+import java.net.URL;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -359,56 +361,64 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.net.URISyntaxException;
-import java.net.URL;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.isEmptyString;
-import static org.hamcrest.Matchers.not;
+import io.restassured.RestAssured;
 
-@RunWith(Arquillian.class)
-public class BusinessPartnerDeepInsertTest {
-    private static final MockUtil mockUtil = new MockUtil();
+@RunWith( Arquillian.class )
+public class BusinessPartnerDeepInsertTest
+{
 
     @ArquillianResource
     private URL baseUrl;
 
     @Deployment
-    public static WebArchive createDeployment() {
-        return TestUtil.createDeployment(BusinessPartnerServlet.class,
+    public static WebArchive createDeployment()
+    {
+        return TestUtil
+            .createDeployment(
+                BusinessPartnerServlet.class,
                 BusinessPartner.class,
                 StoreBusinessPartnerCommand.class,
                 DefaultBusinessPartnerService.class);
     }
 
     @BeforeClass
-    public static void beforeClass() throws URISyntaxException {
-        mockUtil.mockDefaults();
-        mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+    public static void beforeClass()
+    {
+        DestinationAccessor
+            .appendDestinationLoader(
+                new DefaultDestinationLoader()
+                    .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
     }
 
     @Before
-    public void before() {
+    public void before()
+    {
         RestAssured.baseURI = baseUrl.toExternalForm();
     }
 
     @Test
-    public void testStoreAndGetCustomers() {
-
+    public void testStoreAndGetCustomers()
+    {
         given()
-                .params("firstname", "John", "lastname", "Doe", "country", "US", "city", "Tuxedo", "email", "john@doe.com")
-                .when()
-                .post("/businessPartners")
-                .then()
-                .log().all()
-                .statusCode(201)
-                .and()
-                .body("BusinessPartner", not(isEmptyString()))
-                .and()
-                .body("BusinessPartnerUUID", not(isEmptyString()));
+            .params("firstname", "John", "lastname", "Doe", "country", "US", "city", "Tuxedo", "email", "john@doe.com")
+            .when()
+            .post("/businessPartners")
+            .then()
+            .log()
+            .all()
+            .statusCode(201)
+            .and()
+            .body("BusinessPartner", not(isEmptyString()))
+            .and()
+            .body("BusinessPartnerUUID", not(isEmptyString()));
     }
 }
-
 ```
 In addition, you are using a system alias which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
 
