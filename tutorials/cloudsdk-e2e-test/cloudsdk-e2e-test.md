@@ -4,15 +4,15 @@ author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # End-to-End Tests for SAP Cloud SDK Projects
 <!-- description --> Implement end-to-end tests, the highest level of automated tests, and run them in a pipeline.
 
 ## Prerequisites
-This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", e.g. because you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
+This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", for example you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
 
 
