@@ -67,34 +67,37 @@ The SAP Cloud SDK now brings the VDM for OData to the Java world to make the typ
 ### The manual way to OData
 
 
-Let's take a look at typical code you could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, a list of business partners is retrieved from an S/4HANA system:
+Let's take a look at typical code you could write to access any OData service using the Generic OData Client. Here, a list of business partners is retrieved from an S/4HANA system:
 
 ```Java
-final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
-final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
-        .withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-                "A_BusinessPartner")
-        .select("BusinessPartner",
-                "LastName",
-                "FirstName",
-                "IsMale",
-                "IsFemale",
-                "CreationDate")
-        .build()
-        .executeRequest(destination)
-        .asList(MyBusinessPartnerType.class);
+final ErpHttpDestination destination =
+    DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
+final StructuredQuery query =
+    StructuredQuery
+        .onEntity("A_BusinessPartner", ODataProtocol.V4)
+        .select("BusinessPartner", "LastName", "FirstName", "IsMale", "IsFemale", "CreationDate");
+final ODataRequestRead request =
+    new ODataRequestRead(
+        "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+        "A_BusinessPartner",
+        query.getEncodedQueryString(),
+        ODataProtocol.V4);
+final HttpClient client = HttpClientAccessor.getHttpClient(destination);
+// perform the HTTP operation:
+final ODataRequestResultGeneric result = request.execute(client);
+final Collection<MyBusinessPartnerType> businessPartners = result.asList(MyBusinessPartnerType.class);
 ```
 
-The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
+The `StructuredQuery` represents a generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `StructuredQuery` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
 
-Nevertheless, there are quite a few pitfalls you can fall into when using the plain `ODataQueryBuilder` approach to call OData services:
+Nevertheless, there are quite a few pitfalls you can fall into when using the plain `StructuredQuery` approach to call OData services:
 
-- For `.withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER", "A_BusinessPartner")` you already need to know three things: the OData endpoints service path `(/sap/opu/odata/sap)`, the endpoints name `(API_BUSINESS_PARTNER)` and the name of the entity collection `(A_BusinessPartner)` as defined in the metadata of the endpoint.
+- For `ODataRequestRead("/sap/opu/odata/sap/API_BUSINESS_PARTNER", "A_BusinessPartner", query.getEncodedQueryString(), ODataProtocol.V4)` you already need to know three things: the OData endpoints service path `(/sap/opu/odata/sap)`, the endpoints name `(API_BUSINESS_PARTNER)` and the name of the entity collection `(A_BusinessPartner)` as defined in the metadata of the endpoint.
 - Then, when you want to select specific attributes from the `BusinessPartner` entity type with the `select()` function, you need to know how these fields are named. But since they are only represented as strings in this code, you need to look at the metadata to find out how they're called. The same also applies for functions like `order()` and `filter()`. And of course using strings as parameters is prone to spelling errors that your IDE most likely won't be able to catch for you.
 - Finally, you need to define a class such as `MyBusinessPartnerType` with specific annotations that represents the properties and their types of the result. For this you again need to know a lot of details about the OData service.
 
 
-### Virtual Data Model: The new way to OData
+### Virtual Data Model: The simpler way to OData
 
 
 Now that you have seen some of the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
@@ -133,7 +136,7 @@ To sum up the advantages of the OData VDM:
 
 The VDM supports retrieving entities by key and retrieving lists of entities along with `filter()`, `select()`, `orderBy()`, `top()` and `skip()`. You can also resolve navigation properties on demand or eagerly (expand, see [Step 22](https://blogs.sap.com/2018/01/02/step-22-with-the-sap-s4hana-cloud-sdk-extensibility-type-safe-expand-and-dependency-injection-with-the-virtual-data-model-for-odata/)). The VDM also gives easy access to create (see [Step 20](https://blogs.sap.com/2017/12/07/step-20-with-s4hana-cloud-sdk-create-and-deep-insert-with-the-virtual-data-model-for-odata/)), update, and delete operations as well as function imports.
 
-For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder` still is the go to approach for consumption.
+For any OData service not part of SAP's API Business Hub, the `StructuredQuery` still is the go to approach for consumption.
 
 
 ### Write the BusinessPartnerServlet
@@ -493,7 +496,6 @@ To construct an extensible integration test for the newly created `BusinessPartn
   - Adjustment: Maven pom file
   - New: test class
   - New: JSON Schema for servlet response validation
-  - New: `systems.yml` and credentials
 
 First, let's adjust the Maven pom file of the `integrations-tests` sub-module by adding a dependency for JSON schema validation:
 
@@ -527,6 +529,8 @@ Navigate to the integration-tests project and create a new class:
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -535,23 +539,17 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.URI;
 import java.net.URL;
-
-import com.sap.cloud.sdk.testutil.MockDestination;
-import com.sap.cloud.sdk.testutil.MockUtil;
 
 import static io.restassured.RestAssured.when;
 
 @RunWith(Arquillian.class)
 public class BusinessPartnerServletTest {
-    private static final MockUtil mockUtil = new MockUtil();
     private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServletTest.class);
 
     @ArquillianResource
@@ -560,11 +558,6 @@ public class BusinessPartnerServletTest {
     @Deployment
     public static WebArchive createDeployment() {
         return TestUtil.createDeployment(BusinessPartnerServlet.class);
-    }
-
-    @BeforeClass
-    public static void beforeClass() {
-        mockUtil.mockDefaults();
     }
 
     @Before
@@ -576,19 +569,22 @@ public class BusinessPartnerServletTest {
     public void testService() {
         // mock OData service
         // TODO: insert your service URL down below
-        mockUtil.mockDestination(MockDestination.builder("MyErpSystem", URI.create("https://URL")).build());
+        DestinationAccessor
+            .appendDestinationLoader(
+                new DefaultDestinationLoader()
+                    .registerDestination(DefaultHttpDestination.builder("https://URL").name("MyErpSystem").build()));
 
         // JSON schema validation from resource definition
         final JsonSchemaValidator jsonValidator = JsonSchemaValidator
-                .matchesJsonSchemaInClasspath("businesspartners-schema.json");
+            .matchesJsonSchemaInClasspath("businesspartners-schema.json");
 
         // HTTP GET response OK, JSON header and valid schema
         when()
-                .get("/businesspartners")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body(jsonValidator);
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body(jsonValidator);
     }
 }
 ```
@@ -625,84 +621,6 @@ Inside the `integration-tests` project, create a new resource file
 ```
 
 As you can see, the properties `BusinessPartner` and `LastName` will be marked as requirement for every entry of the expected business partner list. The JSON validator would break the test if any of the items was missing a required value.
-
-
-### Systems.json and credentials (optional)
-
-
->If you are testing your application using either the SAP API Business Hub sandbox service or the mock server (deployed locally or on SAP Cloud Foundry), you should skip this step.
-
-If you run your application on SAP BTP, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, you need a way to supply your tests with an ERP destination.
-
-Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This class allows you to mock the ERP destinations you'd typically find on `CloudFoundry`. To provide `MockUtil` with the necessary information, you'll need to add a `systems.json` or `systems.yml` file to your test resources directory. `MockUtil` will read these files and provide your tests with the ERP destinations accordingly. Adapt the URL as before.
-
-`./integration-tests/src/test/resources/systems.yml`
-
-```YAML
-
----
-erp:
-  default: "ERP_001"
-  systems:
-    - alias: "ERP_001"
-      uri: "https://my.erp.system"
-      systemId: "MySystemId"           # optional, defaults to ""
-      sapClient: "001"                 # optional, defaults to default SAP client
-      locale: "en"                     # optional, defaults to English (US)
-      erpEdition: "cloud"              # optional, defaults to "cloud"
-```
-
-Additionally, the `BusinessPartnerServletTest` needs to be changed in the following way:
-
-```Java
-@Test
-public void testService() {
-    // mock OData service
-    mockUtil.mockDestination("MyErpSystem", "ERP_001");
-
-    // JSON schema validation from resource definition
-    final JsonSchemaValidator jsonValidator = JsonSchemaValidator
-            .matchesJsonSchemaInClasspath("businesspartners-schema.json");
-
-    // HTTP GET response OK, JSON header and valid schema
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator);
-}
-```
-
-That's it! You can now start all tests with the default Maven command:
-
-`mvn test -Derp.username=USER -Derp.password=PASSWORD`
-
-Please change the values `USER` and `PASSWORD` accordingly.
-
-![Maven junit tests](maven-junit-test.png)
-
-**Credentials file**
-
-If you do not want to pass the ERP username and password all the time when executing tests or want to execute tests on a continuous delivery pipeline where more people could see the password in log outputs, you can also provide credentials in a `credentials.yml` file that the `SDK` understands.
-
-To do this, create the following `credentials.yml` file in a save location (e.g., like storing your ssh keys in ~/.ssh), i.e., not in the source code repository.
-
-`/secure/local/path/credentials.yml`
-
-```YAML
-
----
-credentials:
-- alias: "ERP_001"
-  username: "user"
-  password: "pass"
-
-```
-
-Afterwards you may pass the credentials file as follows when running tests. Make sure to use the absolute path to the file:
-
-`mvn test -Dtest.credentials=/secure/local/path/credentials.yml`
 
 
 ### Troubleshooting
