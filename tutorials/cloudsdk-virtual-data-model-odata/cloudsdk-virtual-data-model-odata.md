@@ -420,7 +420,7 @@ public class BusinessPartnerDeepInsertTest
     }
 }
 ```
-In addition, you are using a system alias which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
+In addition, you are using a system alias, which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
 
 Both tests together give us a code coverage of 91%:
 
