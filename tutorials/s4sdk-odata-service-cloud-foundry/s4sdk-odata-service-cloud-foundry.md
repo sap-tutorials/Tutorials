@@ -258,7 +258,7 @@ $destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 **Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 ```Shell
-$destinations='[{name: "MyErpSystem", url: "https://URL", "username": ""USER", "password": "PASSWORD"}]'
+$destinations='[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]'
 ```
 Please change the values URL, USER and PASSWORD accordingly.
 
