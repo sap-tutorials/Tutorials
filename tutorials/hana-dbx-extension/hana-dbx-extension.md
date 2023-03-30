@@ -7,7 +7,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Use the SAP HANA Database Explorer Extension
-<!-- description -->  Learn how the SAP HANA database explorer for Visual Studio Code extension can be used to connect to both SAP HANA Cloud and on-premise databases, general Visual Studio Code features, how to use the catalog browser, and how to execute SQL queries.  The SAP HANA database explorer for Visual Studio Code extension contains similar functionality to that in the web-based SAP HANA database explorer although not all functionality is available.
+<!-- description --> Learn how the SAP HANA database explorer for Visual Studio Code extension can be used to connect to both SAP HANA Cloud and on-premise databases, general Visual Studio Code features, how to use the catalog browser, and how to execute SQL queries.  The SAP HANA database explorer for Visual Studio Code extension contains similar functionality to that in the web-based SAP HANA database explorer although not all functionality is available.
 
 
 ## Prerequisites
@@ -27,7 +27,7 @@ primary_tag: software-product>sap-hana-cloud
     
      ![Download Visual Studio Code](downloadVSCode.png)
 
-2. Open Visual Studio Code and install the [SAP HANA database explorer for Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from the Extensions Marketplace. 
+2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from the Extensions marketplace. 
 
     >For more information about the latest features and version updates to the extension, you can refer to the **CHANGELOG** tab.
 
@@ -144,14 +144,25 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 ### Visual Studio Code features
 
-Learn how to change appearance settings and leverage features such as split editor, layout toggles, and the terminal.
+Learn how to change settings and leverage features such as split editor, layout toggles, and the terminal.
 
 1. If you would like to change the color theme of Visual Studio Code, one way to do that is through **File > Preferences > Themes > Color Theme**. From here, you can select from the existing light and dark color themes that are available as well as the additional ones you may have installed from the extension marketplace.
 
     ![change Theme](changeTheme.png)
 
+    ![Themes List](themes-list.png)
 
-2. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
+2. There are also other SAP HANA Cloud database explorer settings that you can set within the Visual Studio Code settings. If you open settings by clicking **Manage** > **Settings**, and search **Database Explorer**, a number of settings for the extension will appear in the list. There are two specific settings to point out that could be particularly useful.
+
+    ![Open Settings](dbx-settings.png)
+
+    - **Max Sql Result Size**: Here you can change the maximum amount of SQL results that you want to allow to be returned by any queries that you run. 
+
+    - **Show Database Explorer Connections**: By selecting/deselecting this checkbox, you can show/hide the SAP HANA Database Explorer connections in your Database List. Note that this will not affect your local connections that are only available in Visual Studio Code.
+
+    ![DBX Settings](dbx-settings2.png)
+
+3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
 
     ```SQL
     SELECT * FROM CUSTOMER;
@@ -183,7 +194,7 @@ Learn how to change appearance settings and leverage features such as split edit
 
     ![Compare Tables](compareTables.png)
 
-3. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
+4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
 
     ![Toggle Panel](togglePanel.png)
 
@@ -250,11 +261,11 @@ The extension also allows you to import and export SQL files to and from your co
 
     ![Error Message](errorMessage.png)
 
-4. Similarly, if you click on the History tab, you will be able to see a list of statements that you have ran and have the ability to search through them. 
+4. Similarly, if you click on the History tab, you will be able to see a list of statements that you have ran along with information about them such as runtime and result. Additionally, you have the ability to search through them, as well as double-click on a statement to paste it into your SQL console.
 
     ![History Tab](historyTab.png)
 
-    >It is important to note that certain capabilities (listed below) are only available in the web application of SAP HANA database explorer, and are not currently available in the extension.  A few examples are listed below: 
+    > It is important to note that certain capabilities (listed below) are only available in the web application of SAP HANA database explorer, and are not currently available in the extension.  A few examples are listed below: 
     >
     > * Execute SQL on multiple databases or as a background activity
     > * Global Search
