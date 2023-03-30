@@ -65,7 +65,7 @@ SELECT DATABASE_NAME, HOST, SQL_PORT, SERVICE_NAME
    WHERE SQL_PORT != 0;
 ```
 
-In this tutorial, we will be migrating the content from the HXE tenant database.  When migrating from a multi-tenant database, each tenant database is migrated to a dedicated SAP HANA Cloud database instance.
+In this tutorial, the content from a tenant database (HXE), will migrated.  When migrating from a multi-tenant database, each tenant database is migrated to a dedicated SAP HANA Cloud database instance.
 
 ### Select an SAP HANA Cloud database
 This tutorial uses an SAP HANA Cloud free tier instance as the migration target.  The following tutorials cover how to sign up for and create a free-tier SAP HANA Cloud instance.
@@ -341,7 +341,7 @@ The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a0
     In the SAP HANA release used in this tutorial, scheduled jobs are not included in the catalog export.
 
 
-2. Import the database objects: In this example, we import the previously exported schema objects and data into the target database (an SAP HANA Cloud database).   We are excluding `GUEST_NOTES` because the JSON document store is not supported in free tier or trial environments.
+2. Import the database objects: This example imports the previously exported schema objects and data into the target database (an SAP HANA Cloud database).  `GUEST_NOTES` is exculded because the JSON document store is not supported in free tier or trial environments.
 
     ```SQL Free Tier or Trial
     IMPORT ALL HAVING OBJECT_NAME != 'GUEST_NOTES' FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
