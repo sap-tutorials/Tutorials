@@ -7,14 +7,15 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Create an Application with SAP Build Apps
 <!-- description --> Create an application with SAP Build Apps on SAP BTP. The application, created in a browser, can be used with the Previewer App to scan physical barcodes on food packaging to display calorific information.
 
 
 ## Prerequisites
-- Access to SAP Build Apps – either on SAP BTP, as described in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service) or the free community edition of SAP AppGyver, available at [AppGyver.com](https://www.appgyver.com).
- - Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+- Access to the SAP Build Apps [sandbox](https://build-sb1-applicationdevelopment.lcnc.cfapps.eu10.hana.ondemand.com/lobby) system. See the [SAP Builders group](https://groups.community.sap.com/t5/sap-builders-blog-posts/announcing-the-sap-build-apps-sandbox/ba-p/128821) for instructions for signing up.
+  - You can instead use your own SAP BTP, as described in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service) or the free community edition of SAP AppGyver, available at [AppGyver.com](https://www.appgyver.com).
+- Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 ## You will learn
   - How to create a no-code project with SAP Build Apps
@@ -31,27 +32,31 @@ The steps provided detail the process using an SAP BTP account within a desktop 
 
 All applications are created, edited, and managed within what we call a project, with one application created per project. Projects, and their related applications, are not automatically saved in this service, so care should be taken before closing a browser.
 
+>**IMPORTANT:** Though you can use any SAP Build Apps version, these tutorials are based on the free sandbox system.
+
 ---
 
 ### Create SAP Build Apps project
 
->If you are working with the free version, just click **Create New**, fill in a name, and click **Create**.
->
->![Create in free version](CreateFromFree.png) 
+1. Open the [sandbox lobby](https://build-sb1-applicationdevelopment.lcnc.cfapps.eu10.hana.ondemand.com/lobby).
 
-1. In BTP, SAP Build Apps projects are created from the application development lobby. To access this lobby from the SAP BTP Cockpit, click **Services - Instances and Subscriptions** and then select **SAP Build Apps**.
+3. Within the SAP Build lobby, click **Create**.
+   
+    ![Create](startnew1.png)
+   
+    Click **Build an Application**. 
+   
+    ![Create](startnew2.png)
 
-    ![Access application development lobby](access_lobby.png)
+    Click **Web & Mobile Application**. 
 
-2. Within the application development lobby, click **Create > Build an Application**.
+    ![Create](startnew3.png)
 
-    ![Create SAP Build Apps Project](Create_AppGyver_Project.png)
+4. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
 
-3. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
+    ![Create](startnew4.png)
 
-    ![Create SAP Build Apps Project](Projectname.png)
-
-Your SAP Build application is created, with the Composer Pro view displayed. Once created, projects can be accessed again at any time from your application development lobby.
+Your SAP Build Apps project is created, with the Composer Pro view displayed. Once created, projects can be accessed again at any time from the SAP Build lobby.
 
 
 
@@ -106,68 +111,34 @@ The application is now saved in draft and available to preview using the Preview
 
 
 ### Preview app in previewer
+>If you are in region US10, then click **Other login options** instead.
+>
+>If you are using the community edition, click **AppGyver Community Edition** and scan the QR code in the **Launch** tab.
 
-1. Open the SAP Build Apps preview app.
 
-2. Log in.
+1. Open the SAP Build Apps preview app on your mobile device, and click **SAP Build Apps**.
 
-    Do one of the following
+    ![Preview](IMG_3950.PNG)
 
-    - #### Using SAP Build Apps in EU10
+    This will display a pin code.
 
-        Click **Launch**, and then click **Open Preview Portal**.
-
-        ![Launch](launch1a.png)
-
-        Now open the SAP Build Apps preview app on your mobile device, and click **SAP Build Apps**.
-
-        ![Preview](IMG_3950.PNG)
-
-        This will display a pin code.
-
-        ![Alt text](IMG_3952.PNG)
-
-        Go back to SAP Build Apps on your desktop, and enter the pin code.
-
-        ![Alt text](Launch2a.png)
-
-        This will refresh the preview app and display a list of your apps. 
-
-    - #### Using SAP Build Apps in EU20
-
-        Click **Launch**, and then click **Open Preview Portal**.
-
-        Now open the SAP Build Apps preview app on your mobile device, and click **Other login options**.
-
-        ![US20](IMG_3940.PNG)
-
-        Change the edition to US10, and then click **Generate code**.
-
-        ![Generate code](IMG_3954.PNG)
-        
-        Go back to SAP Build Apps on your desktop, and enter the pin code.
-
-        This will refresh the preview app and display a list of your apps. 
-
-    - #### Using SAP AppGyver Community Edition
-
-        Click **Launch**.
-
-        ![Click launch](Launch_Preview.png)
-
-        Click the big empty box to display a QR code.
-
-        ![Scan QR to login to your app](scanQR.png)
+    ![Alt text](IMG_3952.PNG)
     
-        In the preview app on your mobile device, click **AppGyver Community Edition**, which opens the camera.
+2. Go back to SAP Build Apps on your desktop, and open the **Launch** tab.
+    
+    ![Launch](launch1a.png)
+    
+    Click **Open Preview Portal**.
 
-        Scan the QR code, which will open up your list of projects. 
+3. Enter the pin code, and press **Enter** or click **Confirm pin**.
 
-3. Whichever method you used, you should now have a list of your apps.
+    ![Alt text](Launch2a.png)
 
-    ![My apps](IMG_3953.PNG)
+    This will refresh the preview app and display a list of your apps. 
 
-    Click **Open** for the `Scanner Application` project.
+4. Click **Open** for the `Scanner Application` project.
+
+    ![My apps](IMG_3953.PNG) 
 
     Your application starts to run.
 

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license, software-product-function>s-4hana-cloud-abap-environment ]
 time: 15
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -22,6 +22,8 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 
 ## Intro
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
 Always replace `XXX` with your initials or group number.
 
 ---
@@ -42,7 +44,6 @@ In case you want to expose developed ABAP services for technical communication, 
   2. Navigate to **ABAP Development** and copy the **System URL**.
 
       ![System URL](Picture18.png)
-
 
 
 

@@ -1,8 +1,8 @@
 ---
 author_name: Manju Shankar
 author_profile: https://github.com/manjuX
-title: Subscribe to the SAP Build Work Zone, Standard Edition
-description: Learn how to subscribe to the SAP SAP Build Work Zone, standard edition.
+title:  Create a SAP Build Work Zone, Standard Edition Site for Your Kyma CAP App
+description: Learn how to create a SAP Build Work Zone, standard edition site for your CAP app deployed on Kyma.
 keywords: cap
 auto_validation: true
 time: 10
@@ -139,6 +139,10 @@ You have launched your `Risks` app through the SAP Build Work Zone, standard edi
   !![Risks App](risks.png)
 
 > If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
+
+> Do you want to change your Risk Management Site's default theme? Under your avatar, in the User Actions menu, select the Theme Manager.
+
+>     !![Theme Manager](theme-manager.png)
 
 
 [VALIDATE_1]

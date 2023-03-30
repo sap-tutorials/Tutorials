@@ -148,12 +148,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    // Option 1, retrieve the connection parameters from the hdbuserstore
-                    // User1UserKey retrieved from hdbuserstore contains server:port, UID and PWD
-                    using (var conn = new HanaConnection("key=User1UserKey;encrypt=true;sslValidateCertificate=false"))
-
-                    //Option2, specify the connection parameters
-                    //using (var conn = new HanaConnection("Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+                    using (var conn = new HanaConnection("Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
 
                     // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                     // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
@@ -199,9 +194,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     }
     ```
 
-    Save and close the `Program.cs` file after replacing the code.
-
-    >The address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
+    Save and close the `Program.cs` file after replacing the code and updating the host and port.
 
     The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 

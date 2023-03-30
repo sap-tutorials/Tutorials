@@ -1,9 +1,9 @@
 {
 	"_version": "1.14.0",
 	"sap.app": {
-		"id": "ns.products_by_vendor_card",
+		"id": "ns.products_by_category_card",
 		"type": "card",
-		"title": "Products by Vendor Card",
+		"title": "Products by Category Card",
 		"subTitle": "UI5 Integration Card of Type List",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -17,66 +17,63 @@
 		}
 	},
 	"sap.card": {
-        "type": "List",
-        "configuration": {
-                            "destinations": {
-                                "ES5": {
-                                    "name": "ES5",
-                                   "defaultUrl": "/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/"
-                                }
-                            },
-                            "parameters": {
-                                "title" : {
-                                    "value": "List Card with Top {{parameters.maxItems}} Products"
-                                },
-                                "subTitle": {
-                                    "value": "These are the top sellers this month"
-                                },
-                                "maxItems": {
-                                    "value": 4
-                              		  },
-                                "selectedSupplierID": {
-                                    "value": 100000056,
-                                    "type": "integer",
-                                    "label": "The default selected supplier"
-                                }
-           		 	        },
-                            "filters": {
-                                "supplier": {
-                                    "value": "{{parameters.selectedSupplierID}}",
-                                    "type": "string",
-                                    "label": "Supplier",
-                                    "description": "Filter the orders by supplier.",
-                                        "item": {
-                                            "path": "/d/results",
-                                            "template": {
-                                                "key": "{Id}",
-                                                "title": "{Name}"
-                                            }
-                                        },
-                                        "data": {
-                                            "request": {
-                                                "url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Suppliers",
-                                            "withCredentials": true
-                                            }
-                                        }
-                                    }
-                                }
-                        },
-        "data": {
-                    "request": {
-                "url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products",
-                "parameters": {
-                                                    "$filter": "Supplier/Id eq '{filters>/supplier/value}'"
-                                                },
-                "withCredentials": true
-                                },
-                                "path": "/d/results"
-                },
-
+		"type": "List",
+		"configuration": {
+			"destinations": {
+				"ES5": {
+					"name": "ES5",
+				   "defaultUrl": "/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/"
+				}
+			},
+			"parameters": {
+				"title" : {
+					"value": "List Card with Top {{parameters.maxItems}} Products"
+				},
+				"subTitle": {
+					"value": "These are the top sellers this month"
+				},
+				"maxItems": {
+					"value": 4
+						},
+						"selectedCategoryName": {
+							"value": "Computer Systems"
+						}		
+					 },
+					 "filters": {
+						 "mainCategory": {
+							 "value": "{{parameters.selectedCategoryName}}",
+							 "type": "string",
+							 "label": "Main Category",
+							 "description": "Filter products by main category.",
+							 "item": {
+								 "path": "/d/results",
+								 "template": {
+									 "key": "{Id}",
+									 "title": "{Name}"
+								 }
+							 },
+							 "data": {
+								 "request": {
+									 "url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/MainCategories",
+									 "withCredentials": true
+								 }
+							 }
+						 }
+					 }	 
+		},
+		"data": {
+			"request": {
+		"url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products",
+		"parameters": {
+			"$filter": "MainCategoryName eq '{filters>/mainCategory/value}'"
+		},
+		"withCredentials": true
+									},
+						"path": "/d/results"
+				},
         "designtime": "dt/configuration",
 		"header": {
-			"title": "Products provided by {filters>/supplier/selectedItem/title} vendor ",
+			"title": "Products filtered by {filters>/mainCategory/selectedItem/title} category",
 			"subTitle": "{{parameters.subTitle}}",
 			"icon": {
 				"src": "sap-icon://desktop-mobile"
@@ -97,7 +94,7 @@
                     "state": "{= ${AverageRating} > 3.5 ? 'Success' : 'Warning' }"
                 }
             },
-            "maxItems": "{{parameters.maxItems}}"
+			"maxItems": "{{parameters.maxItems}}"
         }
 	},
     "sap.platform.mobilecards": {
