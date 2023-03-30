@@ -13,9 +13,11 @@ author_profile: https://github.com/LindsayBert
 
 ## Prerequisites
  - You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
- - You have created an app in SAP Build Apps and a process in SAP Process Automation by following this mission: [Create Sales Order Workflow with SAP Build](https://developers.sap.com/mission.sap-build-apps-create-trigger-process.html)
+ - You have created an app in SAP Build Apps and a process in SAP Process Automation by following this mission: [Create Sales Order Workflow with SAP Build](https://developers.sap.com/mission.sap-build-apps-create-trigger-process.html) 
+
+
 &nbsp;
->**SAP Build Work Zone, advanced edition is not available in a trial account.**
+>**SAP Build Work Zone, advanced edition isn't available in a trial account.**
 
 
 ## You will learn
@@ -23,17 +25,18 @@ author_profile: https://github.com/LindsayBert
   - How to add content to it and design the layout
 
 ## Intro
-In this tutorial, you're going to create a workspace where employees who are part of the sales team can interact with each other, ask questions, and find information, tools, and assets to help them close more deals.
+In this tutorial, you're going to create a workspace where employees who are part of the sales team can interact with other members of the workspace, ask questions, and find information, tools, and assets to help them close more deals.
+
 
 
 ### Download images for your workspace
 
 
-Before you start, download these image files so that they're on your computer ready for you to add to your workpage for the workspace that you will create.
+Before you start, download these image files so that they're on your computer ready for you to add to your workpage for the workspace that you'll create.
 
+- [`workspace_sales_header.png`](Workspace_Images/workspace_sales_header.png)
 - [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
 - [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
-- [`workspace_header_sales.jpg`](Workspace_Images/workspace_header-sales.jpg)
 - [`workspace_image_with_icon1.png`](Workspace_Images/workspace_image_with_icon1.png)
 - [`workspace_image_with_icon2.png`](Workspace_Images/workspace_image_with_icon2.png)
 - [`workspace_image_with_icon3.png`](Workspace_Images/workspace_image_with_icon3.png)
@@ -44,9 +47,9 @@ Before you start, download these image files so that they're on your computer re
 ### Create a workspace
 
 
-Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You can add all kinds of content to it and you can invite other users to join as members.
+Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You can add all kinds of content to your workspace and you can invite other users to join as members.
 
-1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**.
+1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**. You can also use the **New Workspace** button on the right.
 
     <!-- border -->![Create workspace](1-create-new-workspace.png)
 
@@ -54,7 +57,7 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
     <!-- border -->![Select template](2-select-template.png)
 
-    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
+    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial, you won't use a template.
 
 3. Enter this name for your workspace: `Sales Management`. In workshops, use: `<your unique identifier>_Sales Management`.
 
@@ -71,22 +74,7 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
     <!-- border -->![New workspace settings](3-new-workspace-settings.png)
 
-Your workspace is created.
-
-
-
-### Configure your workspace notifications
-
-
-When you create your workspace, you may be prompted to define the frequency of email notifications.
-
-1. Select **Daily** to get any updates to the workspace every day.
-
-2. Click **Accept** to ensure that you've joined the workspace.
-
-  <!-- border -->![Define workspace settings](3a-created-workspace.png)
-
-You can now start building your workspace.
+Your workspace is created and you can now start building your workspace.
 
 <!-- border -->![Start building a workspace](3c-start-building.png)
 
@@ -102,7 +90,7 @@ When you create a new workspace, the header has a dark and light blue background
 
     <!-- border -->![New cover photo](4-new-header-image.png)
 
-2. Browse for the following image that you downloaded: `workspace-header-sales`.
+2. Browse for the following image that you downloaded: `workspace_sales_header`.
 
 3. Reposition your photo to display it as you want, and then click **Save**.
 
@@ -195,7 +183,7 @@ In this step, you'll add images to the second section.
 
     ![Empty image widget](16a-empty-image-widget.png)
 
-5. Hover over the image to expose the settings at the top right of the image and click the cog icon to edit the image widget.
+5. Hover over the image to expose the settings at the top right and click the cog icon to edit the image widget.
 
     <!-- border -->![Open image settings](17-open-settings.png)
 
@@ -223,7 +211,7 @@ In this step, you'll add images to the second section.
 11.  Design the second **Image** widget as follows and then click **Save**.
 
     |  :-------------     | :-------------
-    | Caption             | `Michael Hill, Sales Fulfillment Manager `
+    | Caption             | `Michael Hill, Sales Fulfillment Manager`
     | Caption Layout      | Inline
     | Caption Alignment   | Left
 
@@ -260,7 +248,7 @@ In this step, you'll add images to the second section.
     | Caption Alignment     |All images: Left
 
 
-16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the `More Information` heading in line with the thrid column.
+16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the `More Information` heading in line with the third column.
 
     <!-- border -->![First preview](22-first-preview.png)
 
@@ -367,15 +355,15 @@ Apart from the **Forum** widget, you're going to add a dedicated **Forum** page 
 
     <!-- border -->![Go back to overview page](29-go-to-overview-page.png)
 
-4. Scroll down to your **Actions** widget that you added previously and click **Ask a question**.
+4. Scroll down to your **Actions** widget that you added previously and click **Ask a Question**.
 
     <!-- border -->![Add new question](35-add-a-question.png)
 
-2. Add this question: `What is our sales forecast for the coming year?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
+5. Add this question: `What is our sales forecast for the coming year?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
 
     <!-- border -->![Add first questions](35-first-question.png)
 
-3. Go back to your workspace by using the breadcrumbs at the top.
+6. Go back to your workspace by using the breadcrumbs at the top.
 
     <!-- border -->![Go back to Forums page](35a-go-back.png)
 
