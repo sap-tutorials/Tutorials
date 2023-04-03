@@ -162,7 +162,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![DBX Settings](dbx-settings2.png)
 
-3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
+3. Visual Studio Code also has built-in functionality that allows you to split editors, which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
 
     ```SQL
     SELECT * FROM CUSTOMER;
@@ -194,7 +194,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Compare Tables](compareTables.png)
 
-4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
+4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace, which you can also do by resizing and snapping different areas. Click on the the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
 
     ![Toggle Panel](togglePanel.png)
 
