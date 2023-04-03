@@ -35,7 +35,7 @@ If Go is installed, then it will return the currently installed version, such as
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
-On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go)
+On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go).
 
 >In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
