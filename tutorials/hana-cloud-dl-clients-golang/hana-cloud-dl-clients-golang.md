@@ -261,4 +261,5 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 Congratulations! You have now created and debugged a Go application that connects to and queries an data lake Relational Engine.
 
 
+
 ---
