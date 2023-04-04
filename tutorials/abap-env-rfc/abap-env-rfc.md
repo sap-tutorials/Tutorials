@@ -8,6 +8,7 @@ tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, softw
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
+
 ---
 
 
@@ -21,13 +22,10 @@ author_profile: https://github.com/julieplummer20
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
 - You have configured **SAP Cloud Connector**, connecting your BTP and on-premise systems and have added the appropriate resources
-- You have assigned the role **`SAP_BR_DEVELOPER`** in both systems; you will need it to create communication artifacts
+- You have assigned the business role **`SAP_BR_DEVELOPER`** to your user in both systems; you will need it to create communication artifacts
 
   
-
 ## You will learn 
-
-
   
   - How to create a secure RFC connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to test the connection using an ABAP handler class
@@ -112,7 +110,7 @@ In the SAP BTP cockpit of your Cloud Foundry sub-account, choose **Cloud Connect
 
 ### Create package
 
-Now you need to create the necessary ABAP artifacts in ABAP Development Tools (ADT), starting with a package.
+Now, in SAP BTP ABAP Environment, you need to create the necessary ABAP artifacts in ABAP Development Tools (ADT), starting with a package.
 
 1. In ABAP Development Tools (ADT), select the ABAP Cloud Project and choose **New > ABAP Package** from the context menu.
 
@@ -195,7 +193,7 @@ Make sure that **Supported Authentication Methods > Basic** is ticked, since you
 7. Leave the other default settings, choose **Save**, then choose **Publish locally**.
 
 
-### Create communication system in BTP
+### Create communication system
 
 Now, you need to create the necessary communication artifacts in Fiori Launchpad (of the BTP instance), starting with the communication system.
 This artifact specifies the URL of the API (minus the HTTP(S) protocol) and port.
@@ -252,7 +250,6 @@ Next, you will create communication arrangement, pointing to the communication s
     ![step4a-comm-management-tiles](step4a-comm-management-tiles.png)
 
 2. Choose your communication scenario, **`Z_OUTBOUND_RFC_000_CS`**. This name is also entered automatically for the communication arrangement. You can accept this default.
-
 
     <!-- border -->
     ![step4a-new-comm-arr](step4a-new-comm-arr.png)
@@ -441,7 +438,7 @@ ENDCLASS.
     ```
 
 
-## More Information
+### More Information
 
 This tutorial mission is based on a blog post series by Andre Fischer:
 - [How to call a remote function module in your on-premise SAP system from SAP BTP ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
@@ -457,9 +454,7 @@ SAP Gateway in general, see:
 Connectivity in this context, see:
 - SAP Help Portal: [SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
 
-- SAP Help Portal: [Setting Up Destinations to Enable On-Premise Connectivity](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/9b6510edf4d844a28f022b3db41f3202.html)
-
-- SAP Help Portal: [Set Up an RFC Destination](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/a69e99c457a54ff881adcff843eea950.html)
+- SAP Help Portal: [RFC Communication via Communication Arrangements](https://help.sap.com/docs/btp/sap-business-technology-platform/rfc-communication-via-communication-arrangements)
 
 SAP Business Technology Platform (BTP):
 

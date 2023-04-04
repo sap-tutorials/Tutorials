@@ -235,7 +235,7 @@ The following steps demonstrate how to configure `DBeaver` to connect to SAP HAN
 
     ![New Connection](dbeaver-connect1.png)
 
-    Specify the connection type and fill in the host and port.
+    Specify the connection type and fill in the **Host** and **Port**.
 
     ![Connection Settings](dbeaver-connect2.png)
 

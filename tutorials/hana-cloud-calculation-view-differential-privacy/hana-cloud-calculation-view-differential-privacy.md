@@ -112,7 +112,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 
 ### Configure differential privacy via SQL view
 
-1.  Create a view (artifact type `hdbview`) in the `src/data/models` folder named `V_SALARIES`.
+1.  Create a view (artifact type `hdbview`) in the `src/models` folder named `V_SALARIES`.
 
     <!-- border -->![Configure privacy](6.png)
 

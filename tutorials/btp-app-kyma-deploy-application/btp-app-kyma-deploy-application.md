@@ -46,7 +46,6 @@ xsuaa:
         name: RiskViewer
         role-template-references:
           - '$XSAPPNAME.RiskViewer'
-  config: xs-security.json
 ```
 
 The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa). But in the `config` element, values can be added and overwritten. The value `xsappname` gets overwritten with a space-dependent value. The name has to be unique within a subaccount. This allows multiple deployments of this tutorial in different spaces of the same subaccount. For example, different people of a team that want to try it out and don't want to create a new subaccount for each team member. For a productive application, the `xsappname` should be explicitly set to the desired value. Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
@@ -210,12 +209,12 @@ Now that we've build the docker images, let's push them to the container registr
     helm list
     ```
 
-     The installed helm chart should be displayed:
+    The installed helm chart should be displayed:
 
-     ```Shell/Bash
-     NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-     cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
-     ```
+    ```Shell/Bash
+    NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+    cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
+    ```
 
 [DONE]
 [ACCORDION-END]
