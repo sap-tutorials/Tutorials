@@ -35,7 +35,7 @@ If Go is installed, then it will return the currently installed version, such as
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
-On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go)
+On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go).
 
 >In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
@@ -73,7 +73,7 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 
     On Windows, search **Edit the System Environment Variables** and click on **Environment Variables...**.
     
-    >Optionally, you can also use the **SETX** command in command prompt to set a Windows environment variable. For example, **SETX CGO_LDFLAGS C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll**. Note that this will set a user variable, not a system variable. 
+    >Optionally, you can also use the **SETX** command in command prompt to set a Windows environment variable. For example, `SETX CGO_LDFLAGS C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll`. Note that this will set a user variable, not a system variable. 
 
     ![Edit Environment Variables](editEnvironmentVariables.png)
   
@@ -85,7 +85,7 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 
 4. Set the `CGO_LDFLAGS` environment variable to point to the location of the HDLRE client library as shown below, and set the `LD_LIBRARY_PATH` if needed. 
 
-    On Windows, add the **NEW** System Variable. Set the variable name to **CGO_LDFLAGS** and the variable value to the location of dbcapi library: **C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll**
+    On Windows, add the **NEW** System Variable. Set the variable name to **CGO_LDFLAGS** and the variable value to the location of `dbcapi` library: `C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll`
 
     ![Set Environment Variables](setEnvVar.png)
 
@@ -117,8 +117,8 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     
     ```Shell (Microsoft Windows)
-    mkdir C:\SAP\DataLakeClientsTutorial\go
-    cd C:\SAP\DataLakeClientsTutorial\go
+    mkdir %HOMEPATH%\DataLakeClientsTutorial\go
+    cd %HOMEPATH%\DataLakeClientsTutorial\go
     notepad goQuery.go
 
     ```
@@ -259,6 +259,7 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 ### Knowledge check
 
 Congratulations! You have now created and debugged a Go application that connects to and queries an data lake Relational Engine.
+
 
 
 ---
