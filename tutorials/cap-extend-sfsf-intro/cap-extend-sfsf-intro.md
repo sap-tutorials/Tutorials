@@ -4,6 +4,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
+author_name: Alessandro Biagi
+author_profile: https://github.com/ale-biagi
 ---
 
 # Prepare to Develop the SAP SuccessFactors Extension
@@ -13,8 +15,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Get an **SAP Business Technology Platform** trial account following **[this tutorial](hcp-create-trial-account)**
  - Setup **SAP Business Application Studio** in your trial account following **[this tutorial](appstudio-onboarding)**
  - Create an **SAP HANA Cloud** database instance in your trial account following **[this tutorial](hana-cloud-deploying)** (please, be aware that **everything** in trial accounts **shut down overnight** – applications, databases etc., so make sure you **start your database** instance **before deploying** your solution)
- - Setup the **SAP Launchpad Service** in your trial account following **[this tutorial](cp-portal-cloud-foundry-getting-started)**
+ - Setup the **SAP Work Zone Standard Edition** (formerly **SAP Launchpad Service**) in your trial account following **[this tutorial](cp-portal-cloud-foundry-getting-started)**
  - Have access to an **SAP SuccessFactors tenant** with **admin credentials** (unfortunately there's no trial for that one, so make sure you're granted such access by other means)
+
+> **IMPORTANT UPDATE**: As of **January, 12th, 2023**, **SAP Launchpad Service** has been re-branded to **SAP Work Zone Standard Edition**. As it's been just a product renaming, there's no impact on the functionality, hence not requiring any changes in the procedures described in this tutorial series. Therefore, wherever you read **SAP Launchpad Service** in the tutorials, please read **SAP Work Zone Standard Edition**.
 
 ## You will learn
   - The **business scenario** proposed to build an **SAP SuccessFactors extension**

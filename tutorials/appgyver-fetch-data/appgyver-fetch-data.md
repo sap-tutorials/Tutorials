@@ -3,7 +3,7 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build-apps--enterprise-edition
-author_name: Daniel Wrolewski
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---

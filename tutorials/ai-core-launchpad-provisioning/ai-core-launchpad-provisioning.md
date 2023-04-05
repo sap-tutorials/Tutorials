@@ -20,7 +20,7 @@ author_profile: https://github.com/dhrubpaul
 ## Intro
 #### About SAP AI Core and SAP AI Launchpad
 SAP AI Core and SAP AI Launchpad are services which you can link to your BTP global account. SAP AI Core offers a powerful AI runtime which is natively integrated with SAP AI Launchpad. The launchpad offers an easy-to-use interface to manage AI workflow administration, processes, and tasks.
-
+ 
 #### How Does Free Tier Work?
 Both services are available as either free tier or standard (paid) plans. If you choose **free tier** plans, you can try out SAP AI Core and SAP AI Launchpad for free.
 
@@ -33,7 +33,8 @@ For more information, see [Free Tier (SAP AI Core)](https://help.sap.com/docs/AI
 #### Pre-read
 To find out more about free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore [SAP AI Launchpad](https://discovery-center.cloud.sap/serviceCatalog/sap-ai-launchpad?region=all) and [SAP AI Core](https://discovery-center.cloud.sap/serviceCatalog/sap-ai-core?region=all).
 
-> Remember, only community support is available for free tier service plans and these are not subject to Service Level Agreements.
+> Remember, only community support is available for free tier service plans and these are not subject to Service Level Agreements. 
+> Creating provisions for AI Core and Lauchpad using anything other than the Free Tier provision can incur costs.
 
 ---
 

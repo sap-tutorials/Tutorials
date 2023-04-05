@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
 
 <!-- cpes-file srv/risk-service.cds -->
-```[4-13,15-24]
+```JavaScript[4-13,15-24]
 using { sap.ui.riskmanagement as my } from '../db/schema';
 @path: 'service/risk'
 service RiskService {

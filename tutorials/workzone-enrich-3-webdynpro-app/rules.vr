@@ -1,0 +1,15 @@
+
+[VALIDATE_6]
+###Rule
+single-choice
+
+###Question
+At runtime, where is the Web Dynpro ABAP application we configured running?
+
+###Match
+[ ] SAP Business Technology Platform
+[x] On the backend system: ES5 Gateway demo system
+[ ] SAP Business Application Studio
+[ ] None of the above
+
+[VALIDATE_6]
