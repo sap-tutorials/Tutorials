@@ -8,11 +8,11 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Experience an End-to-End Flow to Complete Your SAP Build Mission
+# Experience the End-to-End Flow
 <!-- description --> Navigate through your site and experience the benefits of SAP Build end to end.
 
 ## Prerequisites
-- You've completed the tutorials in this group: `Create Your First Workspace in the SAP Build Workshop using SAP Build Work Zone, advanced edition`.  
+- You've completed the tutorials in this group: [Create a Workspace With Apps, Information, and Processes Using SAP Build Work Zone](group.build-work-zone-build-apps-integrate)
 
 
 ## You will learn
