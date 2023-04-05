@@ -2,7 +2,7 @@
 parser: v2
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-product>sap-business-technology-platform
 author_name: Anja Nicole Kretz
 author_profile: https://github.com/anjanicolekretz
 ---
