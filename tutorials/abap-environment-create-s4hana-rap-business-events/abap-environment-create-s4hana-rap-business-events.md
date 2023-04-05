@@ -18,7 +18,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## You will learn
   - How to create Business Events with RAP in an On-Premise system
-  - How to set up a channel to connect to SAP Event Mesh
+  - How to set up a channel to connect to SAP Event Mesh 
 
 ## Intro
 >Always replace `####` with your initials or group number.
