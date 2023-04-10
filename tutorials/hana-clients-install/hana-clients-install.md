@@ -119,7 +119,6 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Version of HDBSQL](command-Prompt.png)
 
-
 The install from  SAP Development Tools does not contain the SAP Cryptographic Library.  This can be seen by examining the `C:\SAP\hdbclient\manifest.mf` file.  
 
 The SAP Cryptographic Library is only required when client-side data encryption is used, for LDAP Authentication or for cases where a preference is to use the SAP Common Crypto Library over the libraries provided by the OS.  For more information, see the following:  
@@ -134,7 +133,7 @@ The SAP Cryptographic Library is only required when client-side data encryption 
 ### Alternate Install Option, SAP Software Downloads
 
 
-Another download location is the [Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), which requires signing in before downloading.  Software Downloads provides additional platforms such as 32-bit Windows and AIX.  Versions of the SAP HANA client downloaded from here include the SAP Common Crypto Library.
+Another download location is the [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), which requires signing in before downloading.  SAP Software Downloads provides additional platforms such as 32-bit Windows and AIX.  Versions of the SAP HANA client downloaded from here include the SAP Common Crypto Library.
 
 > For additional details on supported platforms, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) and SAP Note [2938939 - SAP HANA Client Legacy Platforms](https://launchpad.support.sap.com/#/notes/2938939).
 
@@ -146,11 +145,11 @@ Another download location is the [Software Downloads](https://support.sap.com/en
 
     The downloaded software is the same regardless of which one is used.
 
-    ![Software Downloads](softwareDownload.png)
+    ![SAP Software Downloads](softwareDownload.png)
 
 2. Extract the software using SAPCAR.
 
-    The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract it.  SAPCAR can also be downloaded from Software Downloads.
+    The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract it.  SAPCAR can also be downloaded from SAP Software Downloads.
 
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 

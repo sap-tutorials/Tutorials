@@ -45,7 +45,7 @@ javac -version
 If these commands fail, ensure that the folder they are located in, is included in your path.  
 
 
-### The SAP HANA JDBC driver
+### Examine the SAP HANA JDBC driver
 
 
 The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports multiple versions of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the maven repository at https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc.
@@ -144,7 +144,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
                 try {
                     System.out.println("Connection to HANA successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -170,7 +170,6 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
     ```  
 
-
 4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
 
     ```Shell (Microsoft Windows)
@@ -186,7 +185,6 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 See [JDBC Connection Options in Java Code](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/1c86038c05464d31a7dcae14f2d8a7dd.html) for additional details on the `getConnection` method of the `DriverManager`.  
 
 See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/2020_04_QRC/en-US/030a162d380b4ec0bc6a284954c8256d.html) for additional details on the certificate used during the connection.
-
 
 
 ### Debug the application
@@ -217,8 +215,6 @@ Visual Studio Code provides plugins for Java and can be used to debug an applica
     Notice that the program stops running at the breakpoint that was set. Step through the code by pressing F10 and observe the variable values in the variables pane.
 
     ![VS Code Debugging](debugging.png)
-
-
 
 
 ### Browse SAP HANA using DBeaver
