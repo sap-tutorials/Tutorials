@@ -80,11 +80,11 @@ Run the following command to download and install the SAP HANA client for Python
 pip install hdbcli
 ```
 
->If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below.
+>If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below. Ensure that the filename is correct in the install command below because it might change depending on the version of `hdbcli` that you have.
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.12.13.zip
+> pip install hdbcli-2.16.20.zip
 > ```
 
 > If the install still fails, check [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) to ensure that a supported version of Python installed.
@@ -179,8 +179,9 @@ pip install hdbcli
     print('connected')
 
     cursor = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
+    sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;"
     cursor.execute(sql_command)
+
     rows = cursor.fetchall()
     for row in rows:
         for col in row:
@@ -190,7 +191,7 @@ pip install hdbcli
     print("\n")
 
     #Prepared statement example
-    sql_command2 = "call HOTEL.SHOW_RESERVATIONS(?,?);"
+    sql_command2 = "CALL HOTEL.SHOW_RESERVATIONS(?,?);"
     parameters = [11, "2020-12-24"]
     cursor.execute(sql_command2, parameters)
     rows = cursor.fetchall()

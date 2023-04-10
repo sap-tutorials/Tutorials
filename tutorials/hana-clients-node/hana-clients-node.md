@@ -236,8 +236,8 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //connection.onTrace("", null);  //disables callback tracing for the rest of the program
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
-    var t0 = performance.now()
+    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;';
+    var t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     var t1 = performance.now();
