@@ -25,13 +25,23 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
-What is the difference to an SAP Fiori elements based application that you have already built in the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
+What is the difference between a freestyle SAPUI5 app and the SAP Fiori elements based application that you have already built in the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
-An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
+SAP Fiori elements app:
 
-A freestyle UI5 application, on the other hand, lives mainly in your own project - all the views and controllers are in it. It still comes with all the features of SAPUI5 (super rich SAP Fiori compliant [set of UI controls](https://sapui5.hana.ondemand.com/#/controls), [data binding](https://sapui5.hana.ondemand.com/#/topic/e5310932a71f42daa41f3a6143efca9c), [model view controller](https://sapui5.hana.ondemand.com/#/topic/91f233476f4d1014b6dd926db0e91070), and so on), but if you want to, for example, program a screen where a user can edit data, you've got to program it yourself. In SAP Fiori elements, this functionality is available out of the box. With the greater amount of work for standard use cases, however, also comes a greater freedom. In a freestyle app, you can do what you need to do using SAPUI5 or even using third party / open-source components. While there are also options in SAP Fiori elements to adjust your application outside of the possibilities given you via metadata (annotations) using the so-called "Flexible Programming Model", in a freestyle UI5 app, the sky is the limit with respect to freedom and optimization.
+- is built with SAPUI5 where most of the code resides outside your own development project in central components
+- much of its logic is controlled by metadata from your OData service
+- standard use cases available out of the box
+- there are options to adjust your application outside of the possibilities given you via metadata with the so-called "Flexible Programming Model"
 
-Fortunately, you have also got a choice of several templates that get your application kick started for freestyle UI5. They copy the initial code into your project and any change necessary for the app can be done manually by you in the code.
+Freestyle UI5 app:
+
+- lives mainly in your own project - all the views and controllers are in it
+- still comes with all the features of SAPUI5 (super rich SAP Fiori compliant [set of UI controls](https://sapui5.hana.ondemand.com/#/controls), [data binding](https://sapui5.hana.ondemand.com/#/topic/e5310932a71f42daa41f3a6143efca9c), [model view controller](https://sapui5.hana.ondemand.com/#/topic/91f233476f4d1014b6dd926db0e91070), and so on)
+- you can do what you need to do using SAPUI5, third party, and open-source components
+- greater amount of work for standard use cases because you have to program them yourself but also greater freedom and optimization
+
+Fortunately, you also have a choice of several templates that get your application kick started for freestyle UI5. They copy the initial code into your project and any change necessary for the app can be done manually by you in the code.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -42,7 +52,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 
     > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAPUI5 freestyle** and template **SAP Fiori Worklist Application**.
+2. Choose template type **Deprecated Templates** and template **SAP Fiori Worklist Application**.
 
        ![SAPUI5 freestyle](createSAPUI5freestyle_app.png)
 

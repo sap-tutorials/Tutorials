@@ -111,7 +111,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
     --buildpack gcr.io/paketo-buildpacks/nodejs \
-    --builder paketobuildpacks/builder:base
+    --builder paketobuildpacks/builder:base \
     --env BP_NODE_RUN_SCRIPTS=""
     ```
 
@@ -131,7 +131,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
         --buildpack gcr.io/paketo-buildpacks/nodejs \
-        --builder paketobuildpacks/builder:base
+        --builder paketobuildpacks/builder:base \
         --env BP_NODE_RUN_SCRIPTS=""
     ```
 
@@ -167,7 +167,7 @@ Now that we've build the docker images, let's push them to the container registr
 1. Deploy your app:
 
     ```Shell/Bash
-    helm upgrade cpapp ./chart --install
+    helm upgrade cpapp ./chart --install --set-file xsuaa.jsonParameters=xs-security.json
     ```
 
 

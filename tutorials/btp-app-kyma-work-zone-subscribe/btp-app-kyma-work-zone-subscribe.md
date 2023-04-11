@@ -36,7 +36,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Create SAP Build Work Zone, standard edition](create_workzone_instance.png)
 
-4. Keep the default settings for **Service** and **Plan** and choose **Create**.
+4. Keep the default setting for **Service** and choose `standard - Subscription` for **Plan**.
+
+    !![Choose SAP Build Work Zone, standard edition plan](choose_workzone_plan.png)
+
+    > SAP Build Work Zone, standard edition offers two types of `standard` plans. The `standard - Subscription` plan is an application plan that lets you access your applications from a central entry point. This is the plan you need for the purposes of this tutorial. The `standard - Instance` plan is a service plan that will let you integrate with other services using APIs. You do not need this plan for the scope of this tutorial.
+
+5. Choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
