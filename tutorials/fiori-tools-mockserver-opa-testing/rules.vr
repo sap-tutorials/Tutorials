@@ -1,0 +1,59 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+What are the main reasons for using the SAP Fiori elements for OData V4 OPA test library?
+
+###Match
+[ ] The test functions have a better performance.
+[x] You save a lot of time.
+[ ] Native OPA5 functionality is not publicly available.
+[x] You avoid repeatedly rewriting the same code.
+[x] You keep your tests up-to-date with central SAP Fiori elements framework changes.
+
+[VALIDATE_1]
+
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+Why is the application used by the tests started within SAP Fiori launchpad?
+
+###Match
+[ ] To allow the execution of custom defined table actions.
+[x] To be able to use shell functions like navigating back from object pages.
+[ ] To allow pressing a row in a table for navigating to the object page.
+
+[VALIDATE_2]
+
+[VALIDATE_5]
+###Rule
+multiple-choice
+
+###Question
+Why wouldn´t you use the test function iExecuteAction() for pressing the Go button in the list report?
+
+###Match
+[ ] I would use it - it´s the standard test function for triggering action buttons.
+[x] There are specific actions available for triggering the SAP Fiori elements standard actions like Go, Edit, Delete, Save, etc.
+[x] I would use the test function iExecuteSearch(), since it is easier to use and no parameters have to be passed to the function.
+[ ] iExecuteAction() can only be used for custom defined actions.
+
+[VALIDATE_5]
+
+[VALIDATE_6]
+###Rule
+multiple-choice
+
+###Question
+What is the advantage of passing internal names of fields, sections, etc. as parameters to test functions?
+
+###Match
+[ ] Internal names are easier to use when implementing the test function in journeys.
+[x] Stable IDs are built by the test function using the internal names which assures a reliable identification of UI controls.
+[x] Using internal names avoids the risk of having multiple controls identified by the test function.
+[x] There are no language-dependent problems to be expected related to the identification of UI controls when using internal names.
+
+[VALIDATE_6]
