@@ -1,0 +1,15 @@
+
+[VALIDATE_6]
+###Rule
+single-choice
+
+###Question
+What is the protocol that the web shop uses to expose data?
+
+###Match
+[ ] OData V4
+[ ] IDoc
+[ ] SOAP
+[x] OData V2
+
+[VALIDATE_6]

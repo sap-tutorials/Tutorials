@@ -51,7 +51,7 @@ author_profile: https://github.com/Karunaharan
 
 4. Choose **Edit** to start editing the integration flow.
 
-    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in the integration flow.
+    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for every step in the integration flow.
 
       <!-- border -->![Start editing the integration flow](3-1-edit-iflow.png)
 
@@ -78,7 +78,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
 ### Add JSON to XML converter
 
-Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop which is a OData service. You use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
+Input to the integration flow is sent in JSON format. At a later point, we communicate to a web shop which is a OData service. We use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
 
 1. From the palette (the grey bar on the top containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
