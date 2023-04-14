@@ -17,7 +17,7 @@ parser: v2
 >This tutorial was written for SAP BTP ABAP Environment. However, you should be able to use it in SAP S/4HANA Cloud Environment in the same way.
 
 ## You will learn
-  - How to create an OData Service to expose user-related information using the ABAP Developer Tool in Eclipse.
+  - How to create an OData Service to expose user-related information using the ABAP Developer Tool in Eclipse. 
   - How to add the OData Service to your SAPUI5 project in Business Application Studio.
   - How to adjust your SAPUI5 project so that the user-related data is displayed when accessing the application.
 
