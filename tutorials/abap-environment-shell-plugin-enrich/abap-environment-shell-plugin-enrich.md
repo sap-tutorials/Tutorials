@@ -22,7 +22,7 @@ parser: v2
   - How to adjust your SAPUI5 project so that the user-related data is displayed when accessing the application.
 
 ### Create a Business User Role Data Definition
-In this tutorial you will continue working on the shell plug-in you created in the pervious tutorial in this series. You will learn how to enrich it using OData Services to expose user-related information. To do this, you will first need to create a Data Definition to expose the User ID of the current user and the corresponding Business Role information.
+In this tutorial you will continue working on the shell plug-in you created in the pervious tutorial in this series. You will learn how to enrich it using OData Services to expose user-related information. To do this, you will first need to create a Data Definition to expose the User ID of the current user and the corresponding Business Role information. 
 >Throughout this tutorial, you will create various development objects and UI components. Wherever the suffix `XXX` is used, you can substitute it with a nomenclature of your choice. If you do so, make sure to keep the names consistent throughout the whole tutorial.
 
 1. Access ABAP Developer Tool in Eclipse, connect to your SAP BTP ABAP Environment, and open the package you created as part of the previous tutorial.
