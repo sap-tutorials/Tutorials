@@ -444,6 +444,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     View the list of created objects.
 
     ```SQL
+    hdbsql -U USER1UserKey
     \dt HOTEL.
     \dp HOTEL.
     ```

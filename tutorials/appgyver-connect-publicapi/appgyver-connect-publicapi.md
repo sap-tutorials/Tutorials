@@ -29,9 +29,15 @@ Open your draft application in the Composer account.
 
     ![Add data source](add_data_source.png)
 
-2. Click **SAP Build Apps classic data entities > Create Data Entity**, and then select **REST API direct integration**.
+2. Add a connection to a REST API. 
 
-    ![Rest API direct integration](add_data_resource.png)
+    - If you are using SAP Build Apps, then click **SAP Build Apps classic data entities > Create Data Entity**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource.png)
+
+    - If you are using SAP AppGyver Community Edition, click **Add Data Resource**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource-comm.png)
 
 3. Configure the resource with the following details:
 

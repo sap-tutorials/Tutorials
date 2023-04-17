@@ -227,11 +227,15 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     !![Add repository](CICD_add_repository1.png)
 
-4. Add the name and the URL for your repository.
+4. Add the name and the URL for your repository, click on the 'Create Credentials' link in the dropdown for 'Webhook Credential'.
 
     !![Add repository](CICD_add_repository2.png)
 
     > If your GitHub repository is private, enter the name of the GitHub credentials (`github` as created in step [Configure you GitHub credentials](#configure-your-github-credentials) above) in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
+
+5. Add the name, to add the Webhook Credential click on Generate and Create.
+
+    !![Add the name, to add the Webhook Credential click on Generate and Create](CICD_generate_webhook_credential.png)
 
 5. Choose **Add**.
 
