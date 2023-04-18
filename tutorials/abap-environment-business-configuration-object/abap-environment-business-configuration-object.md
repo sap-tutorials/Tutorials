@@ -211,8 +211,8 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
       - Edit class `ZBP_I_ERRORCODE###_S`, section **Local Types**. Delete the content of the following methods. Afterwards save and activate the class.
         - `GET_GLOBAL_AUTHORIZATIONS`
         - `LSC_ZI_ERRORCODE###_S→SAVE_MODIFIED`
-        - `LHC_ZI_ERRORCODE###→VALIDATERECORDCHANGES`
-        - `LHC_ZI_ERRORCODE###TEXT→VALIDATERECORDCHANGES`
+        - `LHC_ZI_ERRORCODE###→VALIDATETRANSPORTREQUEST`
+        - `LHC_ZI_ERRORCODE###TEXT→VALIDATETRANSPORTREQUEST`
 
       - Delete the generated `Access Control` objects
 
