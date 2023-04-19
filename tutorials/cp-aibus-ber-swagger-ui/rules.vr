@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Choose the correct value that needs to be entered when authorizing the Swagger UI for the Business Entity Recognition API.
+
+###Match
+[x] "bearer access_token"
+[ ] "bearer clientid"
+[ ] "bearer tenantid"
+[ ] "bearer clientsecret"
+
+[VALIDATE_1]

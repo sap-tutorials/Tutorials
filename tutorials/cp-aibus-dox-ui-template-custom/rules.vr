@@ -1,0 +1,14 @@
+[VALIDATE_5]
+###Rule
+single-choice
+
+###Question
+If you want to make changes to your template, the status should be:
+
+###Match
+[ ] ACTIVATED
+[ ] ACTIVE
+[ ] DEACTIVATED
+[x] DRAFT
+
+[VALIDATE_5]

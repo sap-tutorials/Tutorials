@@ -1,0 +1,14 @@
+[VALIDATE_3]
+###Rule
+single-choice
+
+###Question
+What does the Row Index field represent?
+
+###Match
+[ ] Page count
+[ ] Page number
+[ ] Row number of a header field
+[X] Row number of a line item
+
+[VALIDATE_3]

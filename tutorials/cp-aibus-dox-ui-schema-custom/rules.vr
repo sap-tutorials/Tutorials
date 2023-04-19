@@ -1,0 +1,14 @@
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+Choose the document type that is NOT considered custom by the Document Information Extraction service.
+
+###Match
+[ ] Article
+[x] Invoice
+[ ] Power of Attorney
+[ ] Résumé
+
+[VALIDATE_2]

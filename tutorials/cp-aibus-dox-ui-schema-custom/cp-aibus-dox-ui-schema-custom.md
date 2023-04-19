@@ -51,7 +51,7 @@ If you are new to the Document Information Extraction UI, try out first the tuto
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
-Here, you find the pre-defined SAP schemas, one for each of the standard document types that are supported by Document Information Extraction out of the box. You can't delete or edit SAP schemas, but you can see and **Copy** the information they extract from documents.
+Here, you find the SAP schemas. The Document Information Extraction UI includes preconfigured SAP schemas for the following standard document types: purchase order, payment advice, and invoice. In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can't delete SAP schemas. You can use them as they're, you can edit them directly, or create copies and adapt the list of fields according to your needs.
 
 <!-- border -->![Access Schema Configuration](sap-schemas.png)
 
@@ -59,9 +59,9 @@ Here, you find the pre-defined SAP schemas, one for each of the standard documen
 
 >Be aware of the following Document Information Extraction Trial UI trial account limitations:​
 
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)​
+>- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
 >- Maximum 10 schemas per trial account
->- Maximum 3 templates per trial account (with a maximum of 5 sample documents each)
+>- Maximum 3 templates per trial account
 
 
 
@@ -72,7 +72,7 @@ To create your own schema, click **Create** and a dialog opens.
 
 <!-- border -->![Create Schema](create-schema.png)
 
-In the dialog, enter a name for your custom schema, `Custom_power_of_attorney_schema`, for instance. Note that the name cannot include blanks. Further, select `Custom` as your `Document Type`.
+In the dialog, enter a name for your custom schema, `Custom_power_of_attorney_schema`, for example. Note that the name cannot include blanks. Further, select `Custom` as your **Document Type** and `Document` for **OCR Engine Type**.
 
 Click **Create** to create the schema.
 
@@ -138,7 +138,7 @@ Go ahead and create the list of header fields as shown in the table and image be
 ### Activate schema
 
 
-Once you have added all fields, the schema needs to be activated so that it can be used to extract information from documents. Right now, the schema has the status `PASSIVE`, indicating that it cannot be used yet.
+Once you have added all fields, the schema needs to be activated so that it can be used to extract information from documents. Right now, the schema has the status `DRAFT`, indicating that it cannot be used yet.
 
 To activate the schema, click **Activate**.
 
@@ -148,7 +148,7 @@ Now, the status of your schema changes to `ACTIVE`. To make changes to your sche
 
 <!-- border -->![Activate Schema](active.png)
 
-Congratulations, you have created and activated your first custom schema for power of attorney documents.
+Congratulations, you have created and activated your custom schema for power of attorney documents.
 
-In the next tutorial: [Create Custom Template for Custom Documents](cp-aibus-dox-ui-template-custom), you'll create a template that uses your schema and add sample documents to show the Document Information Extraction service where each field is located in the document.
+In the next tutorial: [Create Custom Template for Custom Documents](cp-aibus-dox-ui-template-custom), you'll create a template that uses your schema, and associate documents with your template to show the Document Information Extraction service where each field is located in the document.
 

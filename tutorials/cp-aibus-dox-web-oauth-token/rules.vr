@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Choose the correct service key values you use to get OAuth access token for Document Information Extraction via any web browser.
+
+###Match
+[ ] clientid, clientsecret and apiurl
+[ ] tenantid, clientsecret and url
+[ ] clientid, verificationkey and apiurl
+[x] clientid, clientsecret and url
+
+[VALIDATE_1]
