@@ -70,15 +70,15 @@ The SAP BTP Destination should be named: **sap_process_automation_cloud_alm**.
 1. Log on to SAP BTP Cockpit and navigate to the sub-account for your SAP Build Process Automation.
 Go to **Connectivity > Destinations**.
 2. Click on **New Destination**.
-- Name: Enter a name for the destination as `sap_process_automation_cloud_alm`,
-- Type: `HTTP`,
-- URL: SAP Cloud ALM service key parameter `endpoints.Api` without api (make sure to keep the / at the end),
-- Authentication: Select `OAuth2ClientCredentials`,
-- Client ID: SAP Cloud ALM service key parameter `clientid`,
-- Client Secret: SAP Cloud ALM service key parameter `clientsecret`
-- Token Service URL: SAP Cloud ALM service key parameter `uaa.url` url + `/oauth/token`.
+   - Name: Enter a name for the destination as `sap_process_automation_cloud_alm`,
+   - Type: `HTTP`,
+   - URL: SAP Cloud ALM service key parameter `endpoints.Api` without api (make sure to keep the / at the end),
+   - Authentication: Select `OAuth2ClientCredentials`,
+   - Client ID: SAP Cloud ALM service key parameter `clientid`,
+   - Client Secret: SAP Cloud ALM service key parameter `clientsecret`
+   - Token Service URL: SAP Cloud ALM service key parameter `uaa.url` url + `/oauth/token`.
 3. **Save** the destination.
-   ![BTP](btp1.png)
+   ![BTP](spa6.png)
 
 Check the [support portal](https://support.sap.com/en/alm/sap-cloud-alm/operations/expert-portal/setup-managed-services/setup-spa.html) for more information on how to set SAP Build Process Automation monitoring in SAP Cloud ALM.
 
@@ -93,18 +93,20 @@ Check the [support portal](https://support.sap.com/en/alm/sap-cloud-alm/operatio
 4. Register your SAP Build Process Automation service into your SAP Cloud ALM:
    - Enter a **service name** and a **service description**
     ![SPA](spa2.png)
--   Click **Register**
+   -   Click **Register**
 5.  Activate the data collection for the following use-cases:
     - Jobs Monitoring
     - Health Monitoring
-1. **Save** the configuration.
+6. **Save** the configuration.
 
 
 
 ### Adjust Monitoring in SAP Cloud ALM 
 After setting up the monitoring data push to SAP Cloud ALM in your SAP Build Process Automation service, the data collection for the use-cases will be activated automatically with the default monitoring configurations. 
 
-You can adjust the monitoring setup within the monitoring application: Jobs Monitoring, Health Monitoring.
+You can adjust the monitoring setup within the monitoring application: 
+- Jobs Monitoring, 
+- Health Monitoring.
 
 Find more information on the configuration on the **Setup & Configuration** pages for each application. 
 
