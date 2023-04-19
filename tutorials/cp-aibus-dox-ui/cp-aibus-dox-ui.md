@@ -75,7 +75,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 >Be aware of the following Document Information Extraction Trial UI trial account limitation:​
 
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)​
+>- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
 
 
 
