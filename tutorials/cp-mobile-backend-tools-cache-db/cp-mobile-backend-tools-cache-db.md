@@ -29,7 +29,7 @@ author_profile: https://github.com/manuel-stampp
 ### Create or upload the data model and prepare environment
 
 
-1. To create a cached service with MBT, you can either upload an existing metadata file or you can use the graphical tools in SAP Business Application Studio to start from scratch.
+1. To create a cached service with MBT, you should start with an metadata XML file that you can further edit in XML editor.
 
     - For this tutorial please continue editing or copy the MBT project from [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata) mentioned in prerequisites. This is not only about the metadata, but also about service instance creation and binding which are not repeated within this tutorial.
 
@@ -53,7 +53,7 @@ author_profile: https://github.com/manuel-stampp
 
     ![Subaccount destinations](img_http_destination.png)
 
-    - This tutorial assumes that you completed the tutorial [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your existing `ES5` destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
+    - This tutorial assumes that you completed the tutorial [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your existing `ES5` destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
 
 3. Back in SAP Business Application Studio, to allow consumption of the destination in your application, add a service instance of type destination to your application's `mtad.yaml`.
 
@@ -70,8 +70,7 @@ author_profile: https://github.com/manuel-stampp
     At the end of the file (resources section), paste the following:
 
     ```YAML
-      -
-        name: MbtEpmDemoService-destination
+      - name: MbtEpmDemoService-destination
         type: org.cloudfoundry.managed-service   
         parameters:
           service: destination
@@ -87,8 +86,7 @@ author_profile: https://github.com/manuel-stampp
     _schema-version: "3.3"
     version: 1.0.0
     modules:
-      -
-        # application
+      - # application
         name: MbtEpmDemoService
         # module
         path: srv/target/odata-service-1.0.0.war
@@ -105,12 +103,10 @@ author_profile: https://github.com/manuel-stampp
           - name: MbtEpmDemoService-destination
         # Providing default-url can be re-used for the app router
         provides:
-          -
-            name: mbtepmdemo-odata
+          - name: mbtepmdemo-odata
             properties:
               url: ${default-url}
-      -
-        # approuter
+      - # approuter
         name: MbtEpmDemoService-approuter
         type: nodejs
         path: srv/approuter
@@ -128,15 +124,13 @@ author_profile: https://github.com/manuel-stampp
               {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
             ]  
     resources:
-      -
-        name: MbtEpmDemoService-xsuaa
+      - name: MbtEpmDemoService-xsuaa
         type: org.cloudfoundry.managed-service   
         parameters:
           service: xsuaa
           service-plan: application
           path: srv/xs-security.json
-      -
-        name: MbtEpmDemoService-destination
+      - name: MbtEpmDemoService-destination
         type: org.cloudfoundry.managed-service   
         parameters:
           service: destination
