@@ -1,0 +1,28 @@
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+Which statements about accessing a OData Cache-Databases are correct?
+
+###Match
+[x] Defining a custom download query for an entity results in a registration requirement for data queries.
+[ ] Usage of client registrations does not result in further benefits.
+[x] Referential constraints should be considered in the design of custom download queries.
+[ ] After enabling client registrations, you cannot access the service document anymore without registration.
+
+[VALIDATE_3]
+
+[VALIDATE_5]
+###Rule
+single-choice
+
+###Question
+Which XSUAA instance do you have to bind in your SAP Mobile Services application?
+
+###Match
+[ ] You have to create a new XSUAA instance
+[ ] You have use the default instance
+[x] You have to use the same instance as for the referenced service
+
+[VALIDATE_5]
