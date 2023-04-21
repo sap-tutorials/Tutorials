@@ -58,9 +58,11 @@ Once you have successfully subscribed to SAP Build Process Automation in SAP BTP
 
 1. Create an **Instance** for SAP Build Process Automation. 
 2. Enter the values for other fields as shown below and give an instance name. 
+    
     ![Key](Picture-5.png)
 3. Choose **Create**.
 4. Once the instance is created successfully, you can find it in **Instances** section.
+    
     ![Key1](Picture-6.png)
 5. created the instance, select … > **Create Service Key**.
 6. After the key is provisioned, open it and take note of the following fields: Once the service key is created, it contains the URL and the credentials to access to the API.
@@ -87,20 +89,19 @@ The end-point is the concatenation of the following elements:
    - Depending on the REST operations, you may have to find the the definition ID of your workflow. This information is accessible in the `Monitor` view of the SAP Build Process Automation application.
      - ex: `eu10.calm-tenant.workflow-id.gP`.
 
-1. To trigger the creation of a workflow instances, you need to call the POST action on the REST `workflow/rest/v1/workflow-instances` end-point.
+2.  To trigger the creation of a workflow instances, you need to call the POST action on the REST `workflow/rest/v1/workflow-instances` end-point.
 
-The request should contain the following information:
-```js
-{
-    “definitionId“: “eu10.internal-demo-sap-labs-france.xdugp3.gP“,
-    “context“: {
-    “workflow_parameter” : “a parameter value“,
-    “workflow_antother_parameter” : “another parameter value“,
+    The request should contain the following information:
+    ```js
+    {
+        “definitionId“: “eu10.internal-demo-sap-labs-france.xdugp3.gP“,
+        “context“: {
+        “workflow_parameter” : “a parameter value“,
+        “workflow_antother_parameter” : “another parameter value“,
+        }
     }
-}
-```
- 
-
+    ```
+    
 3. The response body will return the following information:
 
     ```js
@@ -283,6 +284,7 @@ From the SAP Cloud ALM external API management, navigate to the subscription tab
 4. Add a **subscription** by pressing the **+** button
 5. Enter a name
 6. Select the **mapping** and the **webhook** created in the previous steps
+
     ![sub1](Picture-10.png)
 
 

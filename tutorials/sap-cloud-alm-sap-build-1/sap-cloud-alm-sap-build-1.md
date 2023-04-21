@@ -1,6 +1,6 @@
 ---
 author_name: Xavier Dupeyrat
-author_profile: https://github.com/jmmargo
+author_profile: https://github.com/xavierdupeyrat
 keywords: tutorial
 auto_validation: true
 time: 25
