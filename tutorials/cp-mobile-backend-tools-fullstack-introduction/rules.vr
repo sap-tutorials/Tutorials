@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+How can you install Mobile Back-end Tools?
+
+###Match
+[ ] As an add-on for your ABAP system.
+[x] As a Visual Studio Code extension in its marketplace.
+[x] It comes pre-installed in SAP Business Application Studio's Mobile App preset.
+[ ] As a part of the ABAP Developer Tools for Eclipse from "tools.hana.ondemand.com"
+
+[VALIDATE_1]
