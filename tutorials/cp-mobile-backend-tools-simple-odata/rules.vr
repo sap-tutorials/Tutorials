@@ -1,0 +1,13 @@
+[VALIDATE_4]
+###Rule
+multiple-choice
+
+###Question
+Which statements about MBT-based OData service are correct?
+
+###Match
+[ ] Embedded database types are supported for the Service's cache in production deployment
+[x] The generator script can create basic security configuration automatically
+[x] Authentication requires an additional service instance binding
+
+[VALIDATE_4]
