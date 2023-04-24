@@ -25,6 +25,7 @@ primary_tag: software-product>sap-signavio-process-intelligence
 
     >The communication user will be used for the technical authentication.
 
+    <!-- border; size:1200px -->
     ![Create Communication user](11.png)
 
 
@@ -89,9 +90,58 @@ primary_tag: software-product>sap-signavio-process-intelligence
     ![Message header Accept](36.png)
 
 7. I also set the properties required by the API. **Primary key**: I use the mandatory field ProjectID. **Schema**: Here we insert the schema of our extracted data. As we are using it in our exchange property, it has to be in one row without spaces.
-   ```JSON 
-   {"type":"record","name":"Projects","fields":[{"name":"ProfitCenter","type":["null","string"]},{"name":"CostCenter","type":["null","string"]},{"name":"ProjectName","type":["null","string"]},{"name":"Customer","type":["null","string"]},{"name":"ProjectID","type":["null","string"]},{"name":"ProjManagerId","type":["null","string"]}]}
-   ```   
+   
+    ```JSON 
+        {
+            "type":"record",
+            "name":"Projects",
+            "fields":[
+                {
+                    "name":"ProfitCenter",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "name":"CostCenter",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "name":"ProjectName",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "name":"Customer",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "name":"ProjectID",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "name":"ProjManagerId",
+                    "type":[
+                        "null",
+                        "string"
+                    ]
+                }
+            ]
+        }
+    ```
+
 **Content type**: **`multipart/form-data; boundary=cpi`** The boundary separates the different values in the payload later. **Token**: **`Bearer <token from Process Intelligence>`** Here we insert the token we received from activating the ingestion API in Process Intelligence. 
 
 ![Message properties](37.png)
@@ -101,7 +151,8 @@ primary_tag: software-product>sap-signavio-process-intelligence
     ![Add properties to header](38.png)
 
 9.  Now I added a groovy script to overcome the line ending issues mentioned in this [blog](https://blogs.sap.com/2019/11/14/what-is-form-data-and-how-to-send-it-from-sap-cloud-platform-integration-cpi/). My groovy script looks like this: 
-    ``` Javascript
+   
+    ```JavaScript
     [import com.sap.gateway.ip.core.customdev.util.Message;
     import java.util.HashMap;
     def Message processData(Message message) {
@@ -117,7 +168,7 @@ primary_tag: software-product>sap-signavio-process-intelligence
        message.setBody(body);
        return message;
        }]
-       ```
+    ```
 
 10. In the final step we need to configure a http channel to the ingestion API in Process Intelligence. As we already provided the authorization directly in the message header with the content modifier, we select no authorization here and just insert the endpoint URL.
     
