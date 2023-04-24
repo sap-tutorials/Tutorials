@@ -112,7 +112,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 > In the previous step, you identified your API endpoint. If that has a format like `...us10-001...`, you need to add the following configuration to your `xs-security.json`:
 > ```json
 > "oauth2-configuration": {
->     "redirect-uris": ["*.cfapps.us10-001.hana.ondemand.com/**"]
+>     "redirect-uris": ["https://*.cfapps.us10-001.hana.ondemand.com/**"]
 > }
 > ```
 > For other API endpoints you'd need to adapt it accordingly.
