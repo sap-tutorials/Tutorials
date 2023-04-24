@@ -42,7 +42,7 @@ Let's see in detail the procedures to access different monitoring views.
 
 ### Explore workload monitoring using SAP HANA Database Explorer
 
-Using **SAP HANA Database Explorer** connected to your data lake, you can display a menu with list of all available Data Lake, IQ monitoring views. This can be done by running the command in the SQL Console:
+Using **SAP HANA Database Explorer** connected to your data lake, you can display a menu with a list of all available data lake Relational Engine monitoring views. This can be done by running the command in the SQL Console:
 
 ```SQL
 SELECT * FROM IQMONVIEWS
@@ -97,7 +97,7 @@ Similarly, you can go to the SAP HANA Cloud Central when the remaining storage s
 
 ### Differentiate between sp_iqsysmon and monitoring views 
 
-The monitoring views and **`sp_iqsysmon`** are intended for very different reporting timescales. The **`sp_iqsysmon`** is a system stored procedure that allows you to define the time interval for monitoring using **Start** and **Stop** parameters. Data lake, IQ continuously monitors performance and displays the latest performance data on the monitoring views. Rather than monitoring over a defined period, monitoring views start gathering performance metrics at server startup and reports the current state of the system.
+The monitoring views and **`sp_iqsysmon`** are intended for very different reporting timescales. The **`sp_iqsysmon`** is a system stored procedure that allows you to define the time interval for monitoring using **Start** and **Stop** parameters. Data lake Relational Engine continuously monitors performance and displays the latest performance data on the monitoring views. Rather than monitoring over a defined period, monitoring views start gathering performance metrics at server startup and reports the current state of the system.
 >For example, you can monitor your system at a 30-second time interval for two hours using **`sp_iqsysmon`**. On the other hand, monitoring views provide a current snapshot of system heath and performance metrics.
 
 It is beneficial to monitor changes in performance over time and this can be achieved by regularly checking the monitoring views at regular intervals. Any metrics moving out of their normal ranges should be evaluated.

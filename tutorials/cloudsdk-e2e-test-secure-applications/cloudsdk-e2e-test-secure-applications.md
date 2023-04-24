@@ -4,8 +4,8 @@ author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
 auto_validation: true
 time: 5
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # End to End Test for Secure Applications
@@ -34,7 +34,7 @@ As preparation please secure your application from the tutorial [End-to-End Test
 
 The first page you see accessing the application is the app-router showing a login form. The basic idea is that the first part of the test is to log in into the application as a user. You adapt the tests in a way that they first visit the login page, enter the credentials and then press the login button.
 
-First, you create the following page object in `e2e-tests/page_objects/login.js`. This page object reads the credentials from the configuration and enters them into the input fields. The selectors of these fields are specified in the elements section. These selectors are working for the standard app-router. For other forms, e.g. on Cloud Platform Neo, or customized forms these selectors need to be updated.
+First, you create the following page object in `e2e-tests/page_objects/login.js`. This page object reads the credentials from the configuration and enters them into the input fields. The selectors of these fields are specified in the elements section. These selectors are working for the standard app-router. For other forms, like Cloud Platform Neo, or customized forms these selectors need to be updated.
 
 ```JavaScript
 "use strict";

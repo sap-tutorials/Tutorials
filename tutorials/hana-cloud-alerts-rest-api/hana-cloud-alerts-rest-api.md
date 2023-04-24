@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -285,6 +285,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html) and [Overview of Available Metrics](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/46e370ced3ef4d2bbd0ec2337df5f565.html).
 
+### Knowledge check
 
 Congratulations! You have now seen how to use a REST API to access alerts and metrics from an SAP HANA Cloud, SAP HANA database.
 

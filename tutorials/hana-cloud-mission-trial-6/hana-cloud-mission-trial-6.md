@@ -12,11 +12,10 @@ primary_tag: products>sap-hana-cloud
 <!-- description --> Learn how to create new tables, view table details, join tables and extract specific data from tables using SQL statements in the SAP HANA Database Explorer.
 
 ## Prerequisites
--  [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
--  If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-1).
-- [Import the sample data needed for this mission](hana-cloud-mission-trial-5).
-- Optional: You can [download the code snippets](https://github.com/SAP-samples/hana-cloud-learning/blob/4ac0be770033d3425cc30a2f22f8f5c0823bb810/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%206/Tutorial%206%20Queries.txt) used in this tutorial from our public GitHub repository.
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-1) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-1-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2)
+- You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
+- Optional: You can [download the code snippets](https://github.com/SAP-samples/hana-cloud-learning/blob/4ac0be770033d3425cc30a2f22f8f5c0823bb810/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%206/Tutorial%206%20Queries.txt) used in this tutorial from our public GitHub repository
 
 
 ## You will learn
@@ -27,41 +26,12 @@ primary_tag: products>sap-hana-cloud
 
 
 ## Intro
+>
 > ![Alex Banner](banner-alex.png)
+>
 > Reminder: This tutorial is part of a mission, in which you will help Alex, the CEO of Best Run Travel, to answer a concrete business question with SAP HANA Cloud, SAP HANA database.
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
-
-
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using an SAP HANA Cloud trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
-
-4.	Create users and manage roles and privileges
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	You are here <sub-style="font-size:30px">&#9755;</sub> **Query the database using SQL statements**
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	Create a calculation view
-
-9.	Grant access to Calculation Views
-
-In this tutorial, you will learn how to query data in your instance using the SAP HANA Database Explorer.
-
-> You can follow the steps in this tutorial also by watching this video:
->
-<iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_6r8ike0s/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
->
-> ### About this video
->
-> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
@@ -70,7 +40,7 @@ In this tutorial, you will learn how to query data in your instance using the SA
 
 1.	Once you're in the SAP HANA Database Explorer, the first step is to open the SQL Console on the left-hand top corner.
 
-    <!-- border -->![Database Explorer with highlight on Open SQL Console](ss-01-database-explorer-open-sql-console.png)
+    ![Database Explorer with highlight on Open SQL Console](ss-01-database-explorer-open-sql-console.png)
 
 2.	Once the SQL console loads, please make sure that the current schema is `SFLIGHT`. You can check this on the top right-hand side of the console.
 
@@ -80,7 +50,7 @@ In this tutorial, you will learn how to query data in your instance using the SA
 set schema SFLIGHT
 ```
 
-    <!-- border -->![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+    ![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
 
 
 
@@ -106,7 +76,7 @@ SELECT * FROM SAGENCYDATA
 
 This will show you the contents of the new table:
 
-<!-- border -->![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
+![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
 
 
 
@@ -125,7 +95,7 @@ select top 5 SAGENCYDATA.AGENCYNUM, STRAVELAG.NAME,SAGENCYDATA.NUMBOOKINGS from 
 
 In the results panel, you can now see that the travel agency that makes the maximum bookings is `Rainy, Stormy, Cloudy` with a total of **27870 bookings**.
 
-<!-- border -->![Top 5 agency details](ss-04-top-5-agency-details.png)
+![Top 5 agency details](ss-04-top-5-agency-details.png)
 
 
 
@@ -172,7 +142,7 @@ select SAGBOOKDAYS.AGENCYNUM, STOPAGENCY.NAME, SAGBOOKDAYS.ORDERDAY, SAGBOOKDAYS
 
 6.	Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
 
-    <!-- border -->![Maximum days](ss-05-maximum-days.png)
+    ![Maximum days](ss-05-maximum-days.png)
 
 *Well done!*
 
@@ -181,7 +151,6 @@ You have completed the sixth tutorial of this mission! You learned how to create
 Since Alex needs to make these insights available to other departments in Best Run Travel, the next step is to create a calculation view to share these findings with other departments.  
 
 Learn in the next tutorial how to get started with SAP Business Application Studio to start creating a calculation view.
-
 
 
 

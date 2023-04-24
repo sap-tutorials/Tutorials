@@ -1,32 +1,31 @@
 ---
-parser: v2
+title: Add Federated SAP S/4HANA Roles to Your SAP Build Work Zone Site
+description: Create a content provider for your SAP S/4HANA system in SAP Build Work Zone provider manager and add the exposed roles to the My Content area and to the Work Zone site, so that end users can access the federated apps and groups.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity, software-product>sap-launchpad-service, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
+parser: v2
 ---
-
-# Add Federated SAP S/4HANA Roles to Your Launchpad Site
-<!-- description --> Create a content provider for your SAP S/4HANA system in the SAP Launchpad service provider manager and add the exposed roles to the My Content area and to the SAP Launchpad site, so that end users can access the federated apps and groups.
 
 ## Prerequisites
  - You have set up SAP Cloud Connector and runtime and design time destinations for your SAP S/4HANA system.
- - You exposed roles in your SAP S/4HANA system.
+ - You exposed roles in your SAP S/4HANA system. 
+ - You have created an SAP Build Work Zone site (see tutorial group [Create your First Business Site with Apps](group.launchpad-cf-create-site)).
+
 
 ## You will learn
-  - How to create a new content provider
+  - How to create a new content provider 
   - How to add federated content to the My Content area
-  - How to make federated roles available in your SAP Launchpad site
-
+  - How to make federated roles available in your SAP Build Work Zone site
 
 ---
 
 ### Create a new Content Provider
 
-
 In a first step, you will add the SAP S/4HANA system as a content provider.
 
-1. Open the SAP Launchpad Site Manager.
+1. Open the Site Manager of SAP Build Work Zone, standard edition.
 
 2. Click the Provider Manager tab.
 
@@ -48,27 +47,28 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
     |  Runtime Destination for OData  | `Use default runtime destination`
     |  Content Addition Mode  | `Manual addition of selected content items`
 
-   5. Click **Save**.
+5. Click **Save**.
 
        ![Provider creation form](3b-new-content-provider.png)
 
     > If you select *Automatic addition of all content items*, all exposed content items will be automatically selected in the Content Explorer and added to the My Content tab, as soon as you create the content provider. In this case, when updating a provider, all the new content items are automatically added. In this exercise, you will add content items manually.
 
-    > If you select *Include group and catalog assignments to roles*, the relationship of groups and catalogs to roles from the SAP S/4HANA system is taken into account for the display of the groups and catalogs on the Launchpad service. For more details see [the documentation](https://help.sap.com/docs/Launchpad_Service/8c8e1958338140699bd4811b37b82ece/215517e6d4f44c96b790bbcb56d63572.html).
+    > If you select *Include group and catalog assignments to roles*, the relationship of groups and catalogs to roles from the SAP S/4HANA system is taken into account for the display of the groups and catalogs on SAP Build Work Zone. For more details see [the documentation](https://help.sap.com/docs/WZ_STD/8c8e1958338140699bd4811b37b82ece/215517e6d4f44c96b790bbcb56d63572.html). 
 
     The content provider is added to the list and the content is loaded. This might take some seconds.
 
-  6. Wait till the status says **Created**. If this takes long, try refreshing the browser page.
 
-    ![Provider created](4b-provider-created.png)
+ 6. Wait till the status says **Created**. If this takes long, try refreshing the browser page.
+
+    <!-- border --> ![Provider created](4b-provider-created.png)
+
 
 
 ### Add roles to My Content
 
-
 1. Click the **Content Manager** icon to manually assign content from your SAP S/4HANA system to ``My Content``, so you can add it to a site.
 
-    <!-- border -->![Content Manager Icon](5a-go-to-content-manager.png)
+    ![Content Manager Icon](5a-go-to-content-manager.png)
 
 2. On top of the page, click **Content Explorer** to access content coming from content providers.
 
@@ -94,7 +94,6 @@ You see that both roles have been added.
 
 ### Check roles in My Content
 
-
 1. On top of the page, click **My Content**.
 
     ![Go to My Content](10-open-my-content.png)
@@ -108,8 +107,8 @@ You can see that there are 84 apps available in this role. In the next step, you
 ![Role Accounts Payable Accountant](12-ap-role-content.png)
 
 
-### Assign roles to site
 
+### Assign roles to site
 
 To make the apps that come with the two federated roles available in your site, you need to assign the roles to the site.
 
@@ -146,7 +145,6 @@ To make the apps that come with the two federated roles available in your site, 
 
 ### Assign roles to your user
 
-
 Apps are only displayed to users with the corresponding roles assigned. You assign those roles as role collections to users in the SAP BTP cockpit.
 
 1. Open the SAP BTP cockpit of your trial account.
@@ -174,12 +172,11 @@ Now you are done in SAP BTP cockpit.
 
 ### Access the federated content
 
-
 1. Go back to the Site Directory to launch your ``JobCore`` site.
 
 2. Click the **Go to Site** icon.
 
-    ![Open Site](26-open-site.png)
+    <!-- border --> ![Open Site](26-open-site.png)
 
     The site opens in a new browser tab.
 
@@ -191,15 +188,14 @@ Now you are done in SAP BTP cockpit.
 
     ![Click Go](28-go.png)
 
-    ![App Manage outgoing checks](29-manage-checks.png)
+    <!-- border --> ![App Manage outgoing checks](29-manage-checks.png)
 
-5. Click the SAP icon to go back to the launchpad homepage.
+5. Click the SAP icon to go back to the Work Zone homepage.
 
 
 6. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
 
     ![Maintain business partner](30-maintain-business-partner.png)
-
 
 
 
