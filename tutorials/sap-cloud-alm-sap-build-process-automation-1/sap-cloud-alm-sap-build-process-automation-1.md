@@ -10,8 +10,8 @@ parser: v2
 ---
 
 
-# SAP Cloud ALM: Activate SAP Build Automation Process Monitoring
-<!-- description --> This tutorial describes how to activate SAP Build Automation Process Monitoring in SAP Cloud ALM.
+# SAP Cloud ALM: Activate SAP Build Process Automation Monitoring
+<!-- description --> This tutorial describes how to activate SAP Build Process Automation Monitoring in SAP Cloud ALM.
 
 
 ## You will learn

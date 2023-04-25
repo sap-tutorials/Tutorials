@@ -27,6 +27,7 @@ parser: v2
 
 ## Introduction
 **SAP Build Process Automation Workflow Trigger**
+
 A business process is started by defining a trigger, an event that indicates to your SAP Build Process Automation tenant to start a process instance.
 
 Process triggers can be either a form, such as a request form, or an API call, where an external system starts the process.
@@ -44,7 +45,7 @@ To receive change messages, you need to register the external application or ser
 
 Each subscription manages a specific resource type by sending change messages to a Webhooks (destinations to external systems), and applies optional transformation mappings(transformation rules for the message payload).
 
-Check this [documentation](https://help.sap.com/docs/cloud-alm/apis/external-apis)
+Check this [documentation](https://help.sap.com/docs/cloud-alm/apis/external-apis) to get more information for SAP Cloud ALM subscriptions.
 
 
 
