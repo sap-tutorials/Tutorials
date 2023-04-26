@@ -48,7 +48,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 If you are not logged in to a Cloud Foundry space - Before you can deploy your new application, set your Cloud Foundry preferences.
 
-1. In the menu bar, select **View | Find Command** to open the **command palette**.
+1. In the left side bar, select the **Hamburger icon | View | Command Palette…** to open the **command palette**.
 
     <!-- border -->![Command Palette-Login to CF](BAS-CF-Login-1-.png)    
 
@@ -58,7 +58,7 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     <!-- border -->![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials, and click **Sign in**.
+3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials, and click **Sign in**. If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under "Cloud Foundry Environment".
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
 
