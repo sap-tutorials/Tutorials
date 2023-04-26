@@ -646,7 +646,6 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
 
 
-
 ### Knowledge check
 
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs. 
