@@ -64,9 +64,9 @@ In the dialog, proceed as follows:
 
 >This tutorial uses the following power of attorney documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
 
-> - [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf)
-> - [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf)
-> - [Sample Power of Attorney 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf)
+> - [Sample Power of Attorney 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf)
+> - [Sample Power of Attorney 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf)
+> - [Sample Power of Attorney 3](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf)
 
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
@@ -77,7 +77,7 @@ In the dialog, proceed as follows:
 
 3. Select the **Schema** you created. Don't select any **Template** this time.
 
-4. Drop the file directly or click **+** to upload one of the power of attorney documents. The following images use the [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf). 
+4. Drop the file directly or click **+** to upload one of the power of attorney documents. The following images use the [Sample Power of Attorney 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf). 
 
 5. Click **Step 2**.
 
@@ -171,7 +171,7 @@ The last step that remains is to activate the template.
 
 3. Select the **Schema** and **Template** you created.
 
-4. Drop the file directly or click **+** to upload one of the other two power of attorney documents. First, use the [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf).
+4. Drop the file directly or click **+** to upload one of the other two power of attorney documents. First, use the [Sample Power of Attorney 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf).
 
 5. Click **Step 2**.
 
@@ -191,6 +191,6 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](results2.png)
 
-    You can repeat this step using the [Sample Power of Attorney 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf).
+    You can repeat this step using the [Sample Power of Attorney 3](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf).
 
     Congratulations, you have completed this tutorial.

@@ -66,9 +66,9 @@ In the dialog, proceed as follows:
 
 >This tutorial uses the following purchase order documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
 
-> - [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
-> - [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
-> - [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf)
+> - [Sample Purchase Order 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
+> - [Sample Purchase Order 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
+> - [Sample Purchase Order 3](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf)
 
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
@@ -79,7 +79,7 @@ In the dialog, proceed as follows:
 
 3. Select the **Schema** you created. Don't select any **Template** this time.
 
-4. Drop the file directly or click **+** to upload one of the purchase order documents. The following images use the [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf). 
+4. Drop the file directly or click **+** to upload one of the purchase order documents. The following images use the [Sample Purchase Order 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf). 
 
 5. Click **Step 2**.
 
@@ -175,7 +175,7 @@ The last step that remains is to activate the template.
 
 3. Select the **Schema** and **Template** you created.
 
-4. Drop the file directly or click **+** to upload one of the other two purchase order documents. First, use the [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf).
+4. Drop the file directly or click **+** to upload one of the other two purchase order documents. First, use the [Sample Purchase Order 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf).
 
 5. Click **Step 2**.
 
@@ -195,6 +195,6 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](results2.png)
 
-    You can repeat this step using the [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf).
+    You can repeat this step using the [Sample Purchase Order 3](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf).
 
     Congratulations, you have completed this tutorial.
