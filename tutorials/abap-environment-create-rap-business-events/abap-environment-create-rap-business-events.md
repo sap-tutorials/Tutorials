@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license, software-product-function>s-4hana-cloud-abap-environment ]
 primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -21,7 +21,11 @@ author_profile: https://github.com/niloofar-flothkoetter
   - How to set up a channel to connect to SAP Event Mesh
 
 ## Intro
->Always replace `####` with your initials or group number.
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
+
+Always replace `####` with your initials or group number.
+
+---
 
 The ABAP RESTful Application Programming Model (RAP) now supports the native consumption and exposure of business events. For exposure, an event can be defined and raised in a RAP business object or in the behavior extension and then published via Event Bindings.
 
@@ -516,3 +520,5 @@ To produce and raise an event you need first to define your RAP Business Object 
 
 
 ### Test yourself
+
+---

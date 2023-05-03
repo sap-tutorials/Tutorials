@@ -70,7 +70,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 
 |  Version     | Notes |
 |  :------------- | :------------- |
-|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 06, which was released in December, 2021 |
+|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 07, which was released on April 4, 2023 |
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.15, which was released in October 2022 |
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/docs/SAP_HANA_COCKPIT/a1199348948f4579b6bc3b7153999749/b30dd56165f3407e8fbce88aaf2c9b27.html) | What's new since the previous on-premise release.  New features are released approximately twice per year |
 |  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set |
@@ -109,7 +109,7 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 ### SAP HANA Cloud free tier or trial
 
-To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 6 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is avialable in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
+To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 6 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
 Continue on to the next tutorial in this group once you have access to an SAP HANA instance.
 
@@ -248,7 +248,7 @@ The software can be downloaded from the [Cloud Foundry Foundation](https://githu
     ```Shell
     cf update-service HC_HDB_Trial -c start.json
     ```
-    
+
     ![starting a SAP HANA Cloud database](cf-start.png)
 
 For more information on the operations available with the Cloud Foundry CLI, refer to the documentation [Using the Cloud Foundry CLI with SAP HANA Cloud](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).  
@@ -288,7 +288,7 @@ The SAP HANA Cloud Guided Experience provides a database user and password that 
 
 ![experience SAP HANA Cloud](experience.png)
 
-A set of guided tours is also available by clicking on the SAP logo in the bottom right. 
+A set of guided tours is also available by clicking on the SAP logo in the bottom right.
 
 ![Guided Experience in the SAP HANA database explorer](experience-dbx.png)
 

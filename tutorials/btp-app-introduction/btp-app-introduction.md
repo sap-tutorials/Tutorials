@@ -66,7 +66,7 @@ SAP BTP is an open set of Software, Platform, and Infrastructure as a Service sy
 
 SAP BTP is also constantly evolving. SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything. This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades. SAP BTP offers you the ability to turn data into business value, compose end-to-end business processes, and build and extend SAP applications quickly.
 
-The central point of entry to the cloud platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
+The central point of entry to the platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
 
 [DONE]
 [ACCORDION-END]

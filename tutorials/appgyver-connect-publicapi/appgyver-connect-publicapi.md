@@ -3,11 +3,11 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build-apps--enterprise-edition
-author_name: Daniel Wrolewski
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Connect Your SAP Build Application to a Public API
 <!-- description --> Connect your application to a public API and then test that it's pulling the right information.
 
@@ -25,13 +25,19 @@ To improve this, you need to configure a data source connected to that informati
 
 Open your draft application in the Composer account.
 
-1. Click your **Scan** button, and then click **Data**.
+1. Click your **Scan** button, and then click the **Data** tab.
 
     ![Add data source](add_data_source.png)
 
-2. Click **Add Data Resources – Rest API direct integration**.
+2. Add a connection to a REST API. 
 
-    ![Rest API direct integration](add_data_resource.png)
+    - If you are using SAP Build Apps, then click **SAP Build Apps classic data entities > Create Data Entity**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource.png)
+
+    - If you are using SAP AppGyver Community Edition, click **Add Data Resource**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource-comm.png)
 
 3. Configure the resource with the following details:
 
@@ -111,5 +117,5 @@ Click **Save**.
 
 ![Link text e.g., Destination screen](save_response.png)
 
-Your draft application is now saved and available in your AppGyver Preview app.
+Your draft application is now saved and available in your SAP Build Apps Preview app.
 

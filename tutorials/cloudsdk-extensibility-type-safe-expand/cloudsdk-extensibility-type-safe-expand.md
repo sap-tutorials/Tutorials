@@ -4,7 +4,7 @@ author_name: Johannes Schneider
 author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: programming-tool>java
 ---
 
@@ -331,7 +331,7 @@ One possibility is to consider a lazy fetch of connected entities only using the
 List<BusinessPartnerAddress> addresses = businessPartner.fetchBusinessPartnerAddress();
 ```
 
-This can be a beneficial approach in cases where the entities contain large data volumes and the interaction with the data allows for a step-by-step resolution of the model (e.g., lazily loading entities for the UI).
+This can be a beneficial approach in cases where the entities contain large data volumes and the interaction with the data allows for a step-by-step resolution of the model (example: lazily loading entities for the UI).
 
 However, if you want to get addresses of many business partners, this approach leads to significant performance issues as each method call corresponds to one remote function call to the S/4HANA APIs. Furthermore, the lazy fetch also gets all fields from the connected entity per default, however, sometimes you may want to select only certain fields.
 
@@ -501,7 +501,7 @@ public class BusinessPartnerServlet extends HttpServlet {
 }
 
 ```
-That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module, etc.) your client code will not be affected and is therefore less prone to changes.
+That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module) your client code will not be affected and is therefore less prone to changes.
 
 > **HINT:** When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
 

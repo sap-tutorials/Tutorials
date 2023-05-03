@@ -56,8 +56,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
     ![create](abapgit16.png)
 
-  3. If you have installed `abapGit` before, you need to go to SE38, search for **ZABAPGIT_STANDALONE** program and press **Execute**. 
-
+  3. If you have installed `abapGit` before, you need to go to SE38, search for **`ZABAPGIT_STANDALONE`** program and press **Execute**. 
 
       ![search program](abapgit1.png)
 
