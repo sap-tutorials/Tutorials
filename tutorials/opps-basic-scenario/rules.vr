@@ -1,0 +1,30 @@
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+For which services do you have to create a trial environment in the SAP API Business Hub to complete this tutorial?
+
+###Match
+[ ] Data Upload service, Data Access service, Administration service
+[ ] None
+[ ] Only for the Data Upload service
+[x] Data Upload service, Data Access service, Calculation service
+
+[VALIDATE_2]
+
+
+[VALIDATE_5]
+###Rule
+single-choice
+
+###Question
+What is the calculated effective sales price that you get as a result?
+
+###Match
+[ ] 5 Euro
+[x] 6 Euro
+[ ] 10 Euro
+[ ] For free
+
+[VALIDATE_5]
