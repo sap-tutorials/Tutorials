@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-launchpad-service, software-product>sap-business-technology-platform, topic>mobile]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--standard-edition, software-product>sap-business-technology-platform, topic>mobile]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 
 ---
 ## Prerequisites
