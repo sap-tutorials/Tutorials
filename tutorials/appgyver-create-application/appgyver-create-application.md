@@ -84,7 +84,7 @@ Click the existing **Headline** field and edit the text to read:  `Barcode Scann
 
 ![Edit UI Headline](EditHeadline.png)
 
-Click the **Paragraph** field and edit the text to read: `Scan a barcode of a food product using your smartphone`
+Click the **Paragraph** (Text) field and edit the text to read: `Scan a barcode of a food product using your smartphone`
 
 ![Barcode Scanner](BarcodeScanner.png)
 
@@ -94,7 +94,7 @@ Click the **Paragraph** field and edit the text to read: `Scan a barcode of a fo
 
 Next, you'll need to add a Scan button which, when tapped, will open the camera device on your smartphone.
 
-To do this, locate the **Button** component (found under **Core > Forms**) and drag and drop this underneath the paragraph field.
+To do this, locate the **Button** component (found under **Core > Forms**) and drag and drop this underneath the paragraph/text field.
 
 ![Adding a button](AddButton.png)
 
