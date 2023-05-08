@@ -8,8 +8,8 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use an Invoice Object Recommendation Dataset Schema to Upload Training Data to Data Attribute Recommendation
-<!-- description --> Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model using the Invoice Object Recommendation business blueprint.
+# Use an Invoice Object Recommendation (IOR) Dataset Schema to Upload Training Data to Data Attribute Recommendation
+<!-- description --> Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model using the Invoice Object Recommendation (IOR) business blueprint.
 
 ## You will learn
   - How to authorize your client to communicate with your Data Attribute Recommendation service instance
@@ -18,11 +18,11 @@ author_profile: https://github.com/Juliana-Morais
 ## Intro
 To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
-Business Use Case: Use the Invoice Object Recommendation business blueprint to assign G/L (general ledger) accounts, cost objects and profitability analysis (CO-PA) dimension values to incoming invoices without a purchase order reference. In this tutorial, you'll train your own machine learning model to get recommendations for G/L (general ledger) accounts. The basic steps include uploading historical invoice data for training, training the machine learning model and, finally, asking the model to make financial object predictions for new incoming invoices.
+Business Use Case: Use the Invoice Object Recommendation (IOR) business blueprint to assign G/L (general ledger) accounts, cost objects and profitability analysis (CO-PA) dimension values to incoming invoices without a purchase order reference. In this tutorial, you'll train your own machine learning model to get recommendations for G/L (general ledger) accounts. The basic steps include uploading historical invoice data for training, training the machine learning model and, finally, asking the model to make financial object predictions for new incoming invoices.
 
-To better understand the Invoice Object Recommendation business blueprint from the Data Attribute Recommendation service, take a look at the following blog posts:
+To better understand the Invoice Object Recommendation (IOR) business blueprint from the Data Attribute Recommendation service, take a look at the following blog posts:
 
--	[Announcement: Invoice Object Recommendation Becomes Part of Data Attribute Recommendation (Part 1)](https://blogs.sap.com/2022/01/04/announcement-invoice-object-recommendation-becomes-part-of-data-attribute-recommendation-part-1/).
+-	[Announcement: Invoice Object Recommendation becomes part of Data Attribute Recommendation (Part 1)](https://blogs.sap.com/2022/01/04/announcement-invoice-object-recommendation-becomes-part-of-data-attribute-recommendation-part-1/).
 
 -	[Announcement: Invoice Object Recommendation becomes part of Data Attribute Recommendation – Technical Details (Part 2)](https://blogs.sap.com/2022/01/05/announcement-invoice-object-recommendation-becomes-part-of-data-attribute-recommendation-technical-details-part-2/).
 
@@ -41,7 +41,7 @@ In the service key you created for Data Attribute Recommendation in the previous
 
 For this tutorial, copy the URL of the Swagger UI for `dm` and open it in a browser tab.
 
->After finishing this tutorial, keep the Swagger UI for `dm` open to perform the clean up tasks in [Use the Invoice Object Recommendation Business Blueprint to Predict Financial Objects](cp-aibus-dar-swagger-ior-predict).
+>After finishing this tutorial, keep the Swagger UI for `dm` open to perform the clean up tasks in [Use the Invoice Object Recommendation (IOR) Business Blueprint to Predict Financial Objects](cp-aibus-dar-swagger-ior-predict).
 
 1. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
@@ -173,7 +173,7 @@ To create the dataset, proceed as follows:
 
     <!-- border -->![Dataset Execute](dataset-execute.png)
 
-3. In the response of the service, you find the `id` of your dataset. Copy it locally as you'll need it in the next steps and also in the next tutorial: [Use the Invoice Object Recommendation Business Blueprint to Train a Machine Learning Model](cp-aibus-dar-swagger-ior-model). Additionally, you find the `status` of the dataset. The status is `NO_DATA` as no data file has been uploaded yet.
+3. In the response of the service, you find the `id` of your dataset. Copy it locally as you'll need it in the next steps and also in the next tutorial: [Use the Invoice Object Recommendation (IOR) Business Blueprint to Train a Machine Learning Model](cp-aibus-dar-swagger-ior-model). Additionally, you find the `status` of the dataset. The status is `NO_DATA` as no data file has been uploaded yet.
 
     <!-- border -->![Dataset Response](dataset-response.png)
 
@@ -187,7 +187,7 @@ You have successfully created a dataset.
 
 The final step of this tutorial is to upload data to your dataset.
 
-In this tutorial, you'll use this [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dar-swagger-ior-upload/Dataset_IOR.csv). Right click on the link, then click ***Save link as*** to open the file dialog. In the dialog, replace the file ending `txt` with `csv` as indicated below. Then save the file.
+In this tutorial, you'll use this [dataset](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dar-swagger-ior-upload/Dataset_IOR.csv). Right click on the link, then click ***Save link as*** to open the file dialog. In the dialog, replace the file ending `txt` with `csv` as indicated below. Then save the file.
 
 <!-- border -->![Save File Dialog](save-file-dialog.png)
 
@@ -229,4 +229,3 @@ To check the validation status of your data, proceed as follows:
     <!-- border -->![Dataset Status Response](dataset-status-response.png)
 
 You have successfully created a dataset and uploaded data. You can now use the dataset to train a machine learning model.
-
