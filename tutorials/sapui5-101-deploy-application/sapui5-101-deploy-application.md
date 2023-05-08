@@ -18,7 +18,6 @@ author_profile: https://github.com/nicoschoenteich
   - How to build a multi-target application (MTA).
   - How to deploy a multi-target application to Cloud Foundry.
 
----
 
 ### Build the application
 
@@ -26,21 +25,23 @@ Build (aka package) the project to an `.mtar` archive to deploy it to Cloud Foun
 
 1. Right-click on the `mta.yaml` file and select **Build MTA Project** to trigger this process.
 
-    <!-- border -->![build](./buildMTA.png)
+    ![build](buildMTA.png)
 
 2. Once the build is finished, you can see a message in the log. You can now find the generated `.mtar` archive in the project tree in the `mta_archives` directory.
 
-    <!-- border -->![buildSuccess](./buildSuccess.png)
+    ![buildSuccessMessage](successLog.png)
 
 ### Deploy the application
 
 1. If you don't have the **Application Info** page open, you can open the Command Palette from menu **View > Command Palette**, type **Application Info**, and select **Fiori: Open Application Info**. Click on the **Deploy Application** tile to start deployment process.
 
-    <!-- border -->![deploy](./deployTile.png)
+    <!-- border -->
+    ![deploy](deployTile.png)
 
 2. Once the process is finished, you can get the URL of the deployed app by running `cf html5-list -u -di sap-btp-sapui5-destination-service -u --runtime launchpad` in a new terminal session.
 
-    <!-- border -->![cfapps](./deployedAppUrl.png)
+    <!-- border -->
+    ![cfapps](deployedAppUrl.png)
 
     > Use the following command in case you use the Portal service
     >
@@ -48,4 +49,3 @@ Build (aka package) the project to an `.mtar` archive to deploy it to Cloud Foun
 
 3. Follow the link in the console to open the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
----
