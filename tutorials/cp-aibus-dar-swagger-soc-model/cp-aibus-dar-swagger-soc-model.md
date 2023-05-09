@@ -8,12 +8,12 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use the Invoice Object Recommendation (IOR) Business Blueprint to Train a Machine Learning Model
-<!-- description --> Train a machine learning model for the Data Attribute Recommendation service, using the Invoice Object Recommendation (IOR) business blueprint.
+# Use the Sales Order Completion (SOC) Business Blueprint to Train a Machine Learning Model
+<!-- description --> Train a machine learning model for the Data Attribute Recommendation service, using the Sales Order Completion (SOC) business blueprint.
 
 ## You will learn
-  - How to train a machine learning model using the Invoice Object Recommendation (IOR) business blueprint
-  - How to deploy a machine learning model to get financial object predictions
+  - How to train a machine learning model using the Sales Order Completion (SOC) business blueprint
+  - How to deploy a machine learning model to get predictions for missing fields in sales order documents
 
 ---
 
@@ -26,7 +26,7 @@ In the service key you created for Data Attribute Recommendation in the previous
 
 For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a browser tab. The Swagger UI for the model manager allows you to train a machine learning model, to delete it, to deploy the model as well as to `undeploy` the model.
 
->After finishing this tutorial, keep the Swagger UI for `mm` open to perform the clean up tasks in [Use the Invoice Object Recommendation (IOR) Business Blueprint to Predict Financial Objects](cp-aibus-dar-swagger-ior-predict).
+>After finishing this tutorial, keep the Swagger UI for `mm` open to perform the clean up tasks in [Use the Sales Order Completion (SOC) Business Blueprint to Predict Missing Sales Order Fields](cp-aibus-dar-swagger-soc-predict).
 
 1. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
@@ -47,11 +47,11 @@ For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a brow
 ### Create a training job
 
 
-To train a machine learning model using the data that you uploaded in [Use an Invoice Object Recommendation (IOR) Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-ior-upload), you create a training job.
+To train a machine learning model using the data that you uploaded in [Use a Sales Order Completion (SOC) Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-soc-upload), you create a training job.
 
 With each training job you provide a model template or a business blueprint which combines data processing rules and machine learning model architecture. You can find the list of available model templates [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e76e8c636974a06967552c05d40e066.html), and the list of available business blueprints [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/091eace025e14793be0e83ef2109b349.html).
 
-The Invoice Object Recommendation (IOR) business blueprint that you use in this tutorial is suited to assign G/L (general ledger) accounts and other financial objects to incoming invoices without a purchase order reference.
+The Sales Order Completion (SOC) business blueprint that you use in this tutorial is suited to predict missing sales order fields that are needed for completion.
 
 To create the training job, proceed as follows:
 
@@ -59,7 +59,7 @@ To create the training job, proceed as follows:
 
     <!-- border -->![Training Job Endpoint](job-endpoint.png)
 
-2. In the text area, replace the parameter value for `datasetId` with the `id` of your dataset that you have created in [Use an Invoice Object Recommendation (IOR) Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-ior-upload). Delete the `modelTemplateId` line from the **Request body**. Replace the parameter value `modelName` with your model name, `ior_tutorial_model`, for example. Make sure the parameter value for `businessBlueprintId` is `4788254b-0bad-4757-a67f-92d5b55f322d`. Click **Execute** to create the training job.
+2. In the text area, replace the parameter value for `datasetId` with the `id` of your dataset that you have created in [Use a Sales Order Completion (SOC) Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-soc-upload). Delete the `modelTemplateId` line from the **Request body**. Replace the parameter value `modelName` with your model name, `soc_tutorial_model`, for example. Make sure the parameter value for `businessBlueprintId` is `9d15125d-2b7b-4136-8872-1ddd337cf36f`, which is the ID of the SOC business blueprint. Click **Execute** to create the training job.
 
     <!-- border -->![Training Job Execute](job-execute.png)
 
@@ -101,7 +101,7 @@ To use the trained model, you need to deploy it. Once deployed, the model is rea
 
     <!-- border -->![Deployment Endpoint](deploy-endpoint.png)
 
-2. In the text area, replace the parameter `modelName` with the name of your model (`ior_tutorial_model`). Click **Execute** to deploy the model.
+2. In the text area, replace the parameter `modelName` with the name of your model (`soc_tutorial_model`). Click **Execute** to deploy the model.
 
     <!-- border -->![Deployment Execute](deploy-execute.png)
 

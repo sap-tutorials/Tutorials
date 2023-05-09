@@ -8,11 +8,11 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use the Invoice Object Recommendation (IOR) Business Blueprint to Predict Financial Objects
-<!-- description --> Get financial objects recommendations using your machine learning model.
+# Use the Sales Order Completion (SOC) Business Blueprint to Predict Missing Sales Order Fields
+<!-- description --> Get recommendations for missing fields in sales order documents using your machine learning model.
 
 ## You will learn
-  - How to predict financial objects using your machine learning model
+  - How to predict missing fields in sales order documents using your machine learning model
   - How to `undeploy` and delete your model
   - How to delete datasets and dataset schemas
 
@@ -25,7 +25,7 @@ In the service key you created for Data Attribute Recommendation in the previous
 
 <!-- border -->![Service Key](service-key-details.png)
 
-For the following step, copy the URL of the Swagger UI for `inference` and open it in a browser tab. The Swagger UI for inference allows you to classify new data using your machine learning model that you have created in [Use the Invoice Object Recommendation (IOR) Business Blueprint to Train a Machine Learning Model](cp-aibus-dar-swagger-ior-model).
+For the following step, copy the URL of the Swagger UI for `inference` and open it in a browser tab. The Swagger UI for inference allows you to classify new data using your machine learning model that you have created in [Use the Sales Order Completion (SOC) Business Blueprint to Train a Machine Learning Model](cp-aibus-dar-swagger-soc-model).
 
 1. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
@@ -43,7 +43,7 @@ For the following step, copy the URL of the Swagger UI for `inference` and open 
 
 
 
-### Predict financial objects
+### Predict missing sales order fields
 
 
 To get the machine learning model predictions, proceed as follows:
@@ -52,9 +52,9 @@ To get the machine learning model predictions, proceed as follows:
 
     <!-- border -->![Inference Endpoint](inference-endpoint.png)
 
-2. Fill the parameter `modelName` with the name of your machine learning model (`ior_tutorial_model`).
+2. Fill the parameter `modelName` with the name of your machine learning model (`soc_tutorial_model`).
 
-3. In the parameter `body`, you have to provide the data that needs to be predicted. According to the dataset schema that you have created in [Use the Invoice Object Recommendation (IOR) Business Blueprint to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-ior-upload), the machine learning model takes the training fields such as BUKRS for company code as input and predicts G/L accounts (HKONT). Replace the text in the parameter `body` with the following:
+3. In the parameter `body`, you have to provide the data that needs to be predicted. According to the dataset schema that you have created in [Use the Sales Order Completion (SOC) Business Blueprint to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-soc-upload), the machine learning model takes the training fields such as `SALESORDERTYPE` and `SALESORGANIZATION` as input and predicts `SALESGROUP` and `SALESOFFICE`. Replace the text in the parameter `body` with the following:
 
     ```JSON
     {
@@ -64,44 +64,24 @@ To get the machine learning model predictions, proceed as follows:
              "objectId":"optional-identifier-1",
              "features":[
                 {
-                   "name":"BUKRS",
-                   "value":"ZN02"
+                   "name":"SALESORDERTYPE",
+                   "value":"SOT_1"
                 },
                 {
-                   "name":"BELNR",
-                   "value":"1500022169"
+                   "name":"SALESORGANIZATION",
+                   "value":"SOO_1"
                 },
                 {
-                   "name":"GJAHR",
-                   "value":"2021"
+                   "name":"DISTRIBUTIONCHANNEL",
+                   "value":"DC_1"
                 },
                 {
-                   "name":"BUZEI",
-                   "value":"3"
+                   "name":"ORGANIZATIONDIVISION",
+                   "value":"OD_1"
                 },
                 {
-                   "name":"KOART",
-                   "value":"S"
-                },
-                {
-                   "name":"WRBTR",
-                   "value":"162709.54"
-                },
-                {
-                   "name":"LIFNR",
-                   "value":"68046473"
-                },
-                {
-                   "name":"BLART",
-                   "value":"KN"
-                },
-                {
-                   "name":"BUDAT",
-                   "value":"20210331"
-                },
-                {
-                   "name":"MWSKZ",
-                   "value":"IF"
+                   "name":"MATERIAL",
+                   "value":"M_1"                
                 }
              ]
           },
@@ -109,44 +89,24 @@ To get the machine learning model predictions, proceed as follows:
              "objectId":"optional-identifier-2",
              "features":[
                 {
-                   "name":"BUKRS",
-                   "value":"ZC04"
+                   "name":"SALESORDERTYPE",
+                   "value":"SOT_1"
                 },
                 {
-                   "name":"BELNR",
-                   "value":"1510043834"
+                   "name":"SALESORGANIZATION",
+                   "value":"SOO_3"
                 },
                 {
-                   "name":"GJAHR",
-                   "value":"2022"
+                   "name":"DISTRIBUTIONCHANNEL",
+                   "value":"DC_1"
                 },
                 {
-                   "name":"BUZEI",
-                   "value":"176"
+                   "name":"ORGANIZATIONDIVISION",
+                   "value":"OD_3"
                 },
                 {
-                   "name":"KOART",
-                   "value":"S"
-                },
-                {
-                   "name":"WRBTR",
-                   "value":"19554"
-                },
-                {
-                   "name":"LIFNR",
-                   "value":"69089950"
-                },
-                {
-                   "name":"BLART",
-                   "value":"KN"
-                },
-                {
-                   "name":"BUDAT",
-                   "value":"20220326"
-                },
-                {
-                   "name":"MWSKZ",
-                   "value":"Q1"
+                   "name":"MATERIAL",
+                   "value":"M_1"                
                 }
              ]
           }
@@ -154,34 +114,51 @@ To get the machine learning model predictions, proceed as follows:
     }    
     ```
 
-4. Click **Execute** to send the above input to the service to get financial object predictions.
+4. Click **Execute** to send the above input to the service to get predictions for missing fields in sales order documents.
 
     <!-- border -->![Inference Execute](inference-execute.png)
 
-In the response of the service, you find the probability and the values for G/L account numbers (HKONT). The probability represents how certain the model is about its prediction. The higher the probability the more confident the model is that the prediction is actually correct. If the probability is close to 1, the model is very certain. The service provides one main prediction and two alternative predictions for each G/L account.
+In the response of the service, you find the probability and the values for `SALESGROUP` and `SALESOFFICE`. The probability represents how certain the model is about its prediction. The higher the probability the more confident the model is that the prediction is actually correct. If the probability is close to 1, the model is very certain. The service provides one main prediction and two alternative predictions for each `SALESGROUP` and `SALESOFFICE`.
 
 <!-- border -->![Inference Execute](inference-response.png)
 
 ```JSON
 {
-  "id": "a4860abd-6a14-40ea-4203-5a3cabb6371a",
+  "id": "3f5eafdb-fc3c-432a-731a-092df6188d1b",
   "predictions": [
     {
       "labels": [
         {
-          "name": "HKONT",
+          "name": "SALESGROUP",
           "results": [
             {
-              "probability": 0.9826196432,
-              "value": "7325581"
+              "probability": 0.987675786,
+              "value": "SG_1"
             },
             {
-              "probability": 0.0098451525,
-              "value": "8015506"
+              "probability": 0.0066182106,
+              "value": "SG_3"
             },
             {
-              "probability": 0.0063656443,
-              "value": "8044756"
+              "probability": 0.005706057,
+              "value": "SG_2"
+            }
+          ]
+        },
+        {
+          "name": "SALESOFFICE",
+          "results": [
+            {
+              "probability": 0.9880228043,
+              "value": "SO_1"
+            },
+            {
+              "probability": 0.0082320822,
+              "value": "SO_2"
+            },
+            {
+              "probability": 0.0037451275,
+              "value": "SO_3"
             }
           ]
         }
@@ -191,19 +168,36 @@ In the response of the service, you find the probability and the values for G/L 
     {
       "labels": [
         {
-          "name": "HKONT",
+          "name": "SALESGROUP",
           "results": [
             {
-              "probability": 0.9783372283,
-              "value": "7515556"
+              "probability": 0.9952125549,
+              "value": "SG_1"
             },
             {
-              "probability": 0.018033715,
-              "value": "7325581"
+              "probability": 0.003377331,
+              "value": "SG_2"
             },
             {
-              "probability": 0.0034737068,
-              "value": "8044756"
+              "probability": 0.0014101767,
+              "value": "SG_3"
+            }
+          ]
+        },
+        {
+          "name": "SALESOFFICE",
+          "results": [
+            {
+              "probability": 0.9940330386,
+              "value": "SO_3"
+            },
+            {
+              "probability": 0.005349447,
+              "value": "SO_2"
+            },
+            {
+              "probability": 0.0006174785,
+              "value": "SO_1"
             }
           ]
         }
@@ -211,12 +205,12 @@ In the response of the service, you find the probability and the values for G/L 
       "objectId": "optional-identifier-2"
     }
   ],
-  "processedTime": "2022-05-10T09:51:12.253115",
+  "processedTime": "2023-05-08T12:14:08.175907",
   "status": "DONE"
 }
 ```
 
-You have successfully used a machine learning model to predict financial objects. Feel free to adapt the examples above and retry the prediction.
+You have successfully used a machine learning model to predict missing fields in sales order documents. Feel free to adapt the examples above and retry the prediction.
 
 
 
@@ -224,7 +218,7 @@ You have successfully used a machine learning model to predict financial objects
 ### Undeploy your model
 
 
-Now that you have learned the whole process about how to use the Invoice Object Recommendation (IOR) Business Blueprint from the Data Attribute Recommendation service, it's time to clean up. This way, the technical limits won't get in your way when trying out other Data Attribute Recommendation tutorials. See [Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/686d2ae094014c8085cebecdb1d37e37.html) and [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
+Now that you have learned the whole process about how to use the Sales Order Completion (SOC) Business Blueprint from the Data Attribute Recommendation service, it's time to clean up. This way, the technical limits won't get in your way when trying out other Data Attribute Recommendation tutorials. See [Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/686d2ae094014c8085cebecdb1d37e37.html) and [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 First, `undeploy` your model. For that, go back to the Swagger UI for `mm` and:
 
@@ -253,7 +247,7 @@ Once `undeployed`, you can delete your model.
 
     <!-- border -->![Inference Endpoint](model-endpoint.png)
 
-2. Fill the parameter `modelName` with the name of your machine learning model (`ior_tutorial_model`). Use the `GET /models` endpoint in case you no longer have the model `name` in hand.
+2. Fill the parameter `modelName` with the name of your machine learning model (`soc_tutorial_model`). Use the `GET /models` endpoint in case you no longer have the model `name` in hand.
 
     <!-- border -->![Inference Endpoint](model-execute.png)
 
