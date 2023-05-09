@@ -93,3 +93,4 @@ Paste the entire command into your terminal again. This time the output is vastl
 ![text editor with parameter added](9.png)
 
 You have now learnt how to use code snippets productively.
+
