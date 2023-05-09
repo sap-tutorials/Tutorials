@@ -38,14 +38,14 @@ Build (aka package) the project to an `.mtar` archive to deploy it to Cloud Foun
     <!-- border -->
     ![deploy](deployTile.png)
 
-2. Once the process is finished, you can get the URL of the deployed app by running `cf html5-list -u -di sap-btp-sapui5-destination-service -u --runtime launchpad` in a new terminal session.
+2. Once the process is finished, you can get the URL of the deployed app by running `cf html5-list -u -di sapbtpsapui5-destination-service -u --runtime launchpad` in a new terminal session.
 
     <!-- border -->
     ![cfapps](deployedAppUrl.png)
 
     > Use the following command in case you use the Portal service
     >
-    > `cf html5-list -di sap-btp-sapui5-destination-service -u  --runtime cpp`
+    > `cf html5-list -di sapbtpsapui5-destination-service -u  --runtime cpp`
 
 3. Follow the link in the console to open the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
