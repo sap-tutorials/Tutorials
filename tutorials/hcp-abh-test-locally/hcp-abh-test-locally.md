@@ -1,5 +1,5 @@
 ---
-title: Test SAP API Business Hub APIs with curl
+title: Test SAP Business Accelerator Hub APIs with curl
 description: Try out an SAP API locally on your machine.
 primary_tag: products>sap-business-technology-platform
 auto_validation: true
@@ -18,7 +18,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 ### You will learn
 - How to use command line tools like curl and jq with REST / OData APIs locally.
 
-You have already discovered the SAP API Business Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
+You have already discovered the SAP Business Accelerator Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
 
 ---
 
@@ -32,7 +32,7 @@ Go to <https://api.sap.com> and navigate to the [Campaign](https://api.sap.com/a
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Generate sample API call code)]
 
-Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP API Business Hub provides you with starter code in a variety of languages and tools for each API.
+Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP Business Accelerator Hub provides you with starter code in a variety of languages and tools for each API.
 
 ![Get/CampaignCollection method](2.png)
 
