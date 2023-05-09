@@ -1,6 +1,5 @@
 ---
-title: Event Consumption in ABAP Development Tools for Eclipse
-description: Consume an Event using Event Consumption Model within a Business Application
+parser: v2
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
@@ -10,6 +9,9 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ---
 
+# Event Consumption in ABAP Development Tools for Eclipse
+<!-- description --> Consume an Event using Event Consumption Model within a Business Application
+
 ## Prerequisites
  - You need to have access to a S/4 HANA system and a SAP BTP ABAP environment system.
  - You need to prepare an event mesh instance in your SAP business technology platform system and download the service key of this instance. For more information see the [Create Instance of SAP Event Mesh] (https://developers.sap.com/tutorials/cp-enterprisemessaging-instance-create.html)
@@ -17,24 +19,23 @@ author_profile: https://github.com/niloofar-flothkoetter
  - You need a user with access to maintain communication arrangement and maintain business user.
 
 
-## Details
-### You will learn
+## You will learn
   - How to create connection between a cloud system and a SAP BTP ABAP environment system.
-  - How to consume an Event.
+  - How to consume an Event. 
 
+## Intro
 >Always replace `####` with your initials or group number.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview)]
+### Overview
+
 An **event** is a data record expressing a significant change in state and its surrounding context. For example, a change of a business object such as business partner, can be indicated by raising a business event. Events will be developed and configured and going to be sent to the event mesh service in the cloud. Since SAP Event Mesh is responsible for message delivery, senders do not need to know which applications, services or systems will receive what data. An interested party having subscribed to this event, can consume, and process it. Event consumption works in ABAP platform, in steampunk. In the event consumption at runtime, you have two main parts which are the event providers and the event consumer system, and both are connected via message broker in our case this would be SAP Event Mesh.
 
   ![Overview](overview-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Communication Arrangement for SAP event mesh instance in the cloud system)]
+### Communication Arrangement for SAP event mesh instance in the cloud system
+
 
 Here you will create a communication arrangement to connect your S/4 system with the SAP Event Mesh. So if you create later a new business partner in this S/4 system and by means of a SAP Event Mesh instance you can consume it in a SAP BTP ABAP environment system. To publish an event in the Cloud, you need first to Create a communication arrangement and then Create Outbound Bindings for the created channel.
 
@@ -77,14 +78,13 @@ Here you will create a communication arrangement to connect your S/4 system with
 
     ![details](1-12.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Outbound Bindings and generate Metadata)]
+### Create Outbound Bindings and generate Metadata
+
 
 Now you need to choose your outbound topic like create, update, etc. And afterwards you can download the created `.json` file. This specification file contains all metadata of the event like how the payload looks like, what kind of types are there, etc.
 
-  1. Search for **Enterprise Event Enablement** App and open it.
+  1. Search for **Enterprise Event Enablement - Configure Channel Binding** App and open it.
 
     ![app](3-1.png)
 
@@ -117,10 +117,9 @@ Now you need to choose your outbound topic like create, update, etc. And afterwa
     >If the metadata is empty please reload the page with F5 and try again.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Event Consumption Model)]
+### Create Event Consumption Model
+
 
 Here you will create an Event Consumption Model with the `.json` file that you downloaded in last step.
 
@@ -173,10 +172,9 @@ Here you will create an Event Consumption Model with the `.json` file that you d
 
   10. Save and activate your event consumption model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Communication Scenario for Event Consumption Model)]
+### Create Communication Scenario for Event Consumption Model
+
 
 In this section you will create a communication scenario for the previously generated Event Consumption Model and you will get explanation of additional steps needed to use it later for the event consumption. Eventually, this communication scenario is used in the productive system to create a communication arrangement with the previously generated Event Consumption Model. Moreover, a `sap_com_0092` communication arrangement will be required in the productive system which denotes the connection from the productive system to the event mesh instance in the SAP BTP ABAP environment system. These two scenarios combined will then enable the event consumption with the generated Event Consumption Model.
 
@@ -218,11 +216,10 @@ In this section you will create a communication scenario for the previously gene
 
     ![Publish](5-6.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create database table for handler method)]
+### Create database table for handler method
+
 
   In this step, you can create a DB table and save the business partner Ids in this DB table. With this you can consume the event which is created in a S/4 system. Creating a DB table in this tutorial is just to help you to save and check your created Ids.
 
@@ -260,10 +257,9 @@ In this section you will create a communication scenario for the previously gene
 
   4. Save and activate the table.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define handle event methods)]
+### Define handle event methods
+
 
   In the consumer extension class, the event processing logic can be implemented. In the generated class, you can find for each event type of the Event Consumption Model a respective handle event method. In each method, the corresponding event type and the typed business data for this event can be found. The latter is commented out so that you can implement your own logic.
 
@@ -313,10 +309,9 @@ In this section you will create a communication scenario for the previously gene
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Communication Arrangement for SAP Event Mesh instance in the SAP BTP ABAP environment system)]
+### Communication Arrangement for SAP Event Mesh instance in the SAP BTP ABAP environment system
+
 
   Then in Fiori launchpad of your SAP BTP ABAP environment system you first need to build a communication arrangement with `sap_com_0092` scenario and the same service key instance you used to build your communication arrangement in the cloud system.
 
@@ -338,10 +333,9 @@ In this section you will create a communication scenario for the previously gene
 
     ![communication](6-3.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Communication Arrangement for event consumption model in the SAP BTP ABAP environment system)]
+### Communication Arrangement for event consumption model in the SAP BTP ABAP environment system
+
 
   The connection between your BTP system and event mesh instance is done, now you need to create another communication arrangement with the scenario you already published in ADT:
 
@@ -379,14 +373,13 @@ In this section you will create a communication scenario for the previously gene
 
     ![save](7-9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Maintain Subscription)]
+### Maintain Subscription
+
 
   Now you need to choose a subscription in your channel to specify in which queue you should get the event message.
 
-  1. In the Fiori launchpad search for **Enterprise Event Enablement** App and open it.
+  1. In the Fiori launchpad search for **Enterprise Event Enablement - Configure Channel Binding** App and open it.
 
     ![Enterprise](6-4.png)
 
@@ -414,10 +407,9 @@ In this section you will create a communication scenario for the previously gene
 
     ![new](6-11.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create business partner)]
+### Create business partner
+
 
   To test your eventing process you need to create a business partner and check if the created ID will appear in the table.
 
@@ -446,13 +438,11 @@ In this section you will create a communication scenario for the previously gene
 
     ![partner id](10-5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 26: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 
 ---

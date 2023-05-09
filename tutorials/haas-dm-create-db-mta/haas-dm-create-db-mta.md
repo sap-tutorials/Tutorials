@@ -1,33 +1,39 @@
 ---
-title: Create a Database Multi-Target Application with SAP HANA service for SAP BTP
-description: Create an application with a database module.
+parser: v2
 auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
+tags: [tutorial>beginner, products>sap-hana, software-product>sap-hana-service-for-sap-btp, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
+# Create a Database Multi-Target Application with SAP HANA service for SAP BTP
+
+<!-- description --> Create an application with a database module.
+
 ## Prerequisites
- - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
- - You have created an instance of SAP HANA service for SAP BTP.
- - You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in SAP BTP, Cloud Foundry environment](webide-multi-cloud).
- - You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE.
- - Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](cp-cf-download-cli).
+
+- This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+- You have created an instance of SAP HANA service for SAP BTP.
+- You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in SAP BTP, Cloud Foundry environment](webide-multi-cloud).
+- You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE.
+- Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](cp-cf-download-cli).
+
+## You will learn
+
+- How to create a multi-target application with a database module in SAP Web IDE Full-Stack
+- How to create a columnar table using declarative SQL
+- How to load data for testing into a columnar table from a CSV file
+- How to access the database explorer to browse your tables, data and use SQL statements
+
+## Intro
 
 >**This tutorial cannot be completed with a trial account.**
-
-## Details
-### You will learn
-  - How to create a multi-target application with a database module in SAP Web IDE Full-Stack
-  - How to create a columnar table using declarative SQL
-  - How to load data for testing into a columnar table from a CSV file
-  - How to access the database explorer to browse your tables, data and use SQL statements
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new project from template)]
+### Create a new project from template
+
 
 Click `File->New` and choose **Project from Template**.
 
@@ -49,10 +55,9 @@ Choose version **2.0 SPS05** and click **Finish**
 
 ![New project from template](5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create database artifacts)]
+### Create database artifacts
+
 
 This project will combine artifacts from an HDI container and a classic, replicated schema.
 
@@ -99,11 +104,10 @@ COMMENT 'Performance evaluation record'
 > &nbsp;
 > This approach allows you to modify the structure of the table without worrying about underlying adaptation operations.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a text index)]
+### Create a text index
+
 
 The table you have just defined will have a large text field with comments from the employees. You want to enable a text index to perform text search and mining operations.
 
@@ -134,10 +138,9 @@ TEXT ANALYSIS ON
 
 **Save** the file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Build the database module)]
+### Build the database module
+
 
 You will be referring to this service later for integrations. For that reason, you will specify a name for the HDI container when it is created by SAP Web IDE.
 
@@ -184,10 +187,9 @@ Right-click on the database module and choose **Build**.
 >&nbsp;
 >  ![Build db](26.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add data from a local file)]
+### Add data from a local file
+
 
 For testing and development purposes, you can use a local file to load data into an HDI container.
 
@@ -227,10 +229,9 @@ Download this `csv` file -- `https://github.com/SAPDocuments/Tutorials/blob/mast
 
 ![Data load](21.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check the data)]
+### Check the data
+
 
 Right click on the `db` module and choose **Open HDI Container**.
 
@@ -255,8 +256,7 @@ SELECT AVG("SATISFACTION_INDEX")
 FROM "DM_HDI_DB_1"."PERFORMANCE";
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

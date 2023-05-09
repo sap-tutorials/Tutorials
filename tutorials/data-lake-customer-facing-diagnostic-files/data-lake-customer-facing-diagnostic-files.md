@@ -1,11 +1,13 @@
 ---
-title: View your SAP HANA Cloud, data lake Diagnostic Files and Audit Logs
-description: SAP HANA data lake allows you access to diagnostic and audit files that contain logs for server information, transactions, server checkpoints, errors and status messages. Learn how setup and access these files through the HDLFSCLI, REST API, and SQL Console.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
+
+# View your SAP HANA Cloud, data lake Diagnostic Files and Audit Logs
+<!-- description --> SAP HANA data lake allows you access to diagnostic and audit files that contain logs for server information, transactions, server checkpoints, errors and status messages. Learn how setup and access these files through the HDLFSCLI, REST API, and SQL Console.
 
 ## Prerequisites
  - Access to the Cloud Foundry space of a SAP HANA Cloud, data lake
@@ -13,8 +15,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
  - [Optional] Completion of [Getting Started with Data Lake Files HDLFSCLI tutorial](group.hana-data-lake-containers)
  - Access to a licensed SAP HANA Cloud, data lake instance
 
-## Details
-### You will learn
+## You will learn
   - How to set up the file container user to get access to the diagnostic files
   - How to download the diagnostic files to your local machine and read them
   - How to use the REST API to retrieve the diagnostic files
@@ -22,7 +23,8 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Access to the Diagnostics User)]
+### Get Access to the Diagnostics User
+
 The SAP HANA Cloud, data lake (HDL) generates diagnostic files that may be useful for understanding common problems in a HDL instance. There is a specific user that can be used to retrieve these files that needs to be enabled.
 
 Start by heading to the Cloud Foundry space where the HDL instance is provisioned. In the space you will find "Instances" under "Services". This is where the diagnostics user's credentials can be found.
@@ -49,10 +51,9 @@ Use the ellipses on the created service key to view the certificates that will h
 
 ![Replacing new line characters with new lines in Visual Studio Code.](diag-files-2.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access and Download the Diagnostic Files using the HDLFSCLI)]
+### Access and Download the Diagnostic Files using the HDLFSCLI
+
 
 If you've set up an HDLFSCLI configuration before, navigate to the `.hdlfscli.config.json` file in your home directory. Open it with a text editor and add a new configuration by pasting the following JSON.
 
@@ -117,10 +118,9 @@ Choose a file in from the diagnostic files container and paste its path into the
 
 `hdlfscli -config tut-diagconfig download <file to download> ./sample-diagnostic-file`
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](View the Diagnostic Files Using the REST API)]
+### View the Diagnostic Files Using the REST API
+
 
 The diagnostic files can also be accessed using a REST API. These examples will use Python to write requests to the REST API. The SAP HANA Cloud, data lake Files REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html).
 
@@ -204,10 +204,9 @@ f.close()
 
 If you look inside the `sample-diagnostic-file` directory, or where ever you specified the file to be written to, you should find a file named `my-diagnostic-file.txt`. Open the file with a text editor to read it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View the Diagnostic Files Using Database Explorer)]
+### View the Diagnostic Files Using Database Explorer
+
 
 Another way to read diagnostic files is through the SQL Console in the Database Explorer. This is made possible through a number of stored procedures and SQL functions. The first procedure you will use is `sp_list_directory` which is similar to the list recursively command in the HDLFSCLI.
 
@@ -242,10 +241,10 @@ s = curs.fetchall()[0][0].decode('utf-8')
 print(s)
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable and View SAP HANA, data lake Audit Logs)]
+
+### Enable and View SAP HANA, data lake Audit Logs
+
 
 Audit logs in SAP HANA, data lake are accessible using the same diagnostic user and retrieval methods as the diagnostic files. In order to find these files, you need to first enable audit logging. Navigate to your SAP HANA Database Explorer SQL Console and follow the steps below.
 
@@ -372,5 +371,3 @@ Once the files are written, in this case in a file named `restapi-myauditfile.tx
 
 For more information on reading the audit files you can checkout the [SAP Help documentation](https://help.sap.com/viewer/a89a0a8384f21015b1e7adbeca456f73/2022_1_QRC/en-US/4c20fb59d0e848e09ffb191c9d2c0b16.html).
 
-[DONE]
-[ACCORDION-END]

@@ -1,22 +1,24 @@
 ---
-title: Move Data from a Free Tier Model or Trial Instance to a Production Instance
-description: Learn to move data, HDI containers, schemas and more from your free tier model or trial instance to your production instance of SAP HANA Cloud, SAP HANA database.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Move Data from a Free Tier Model or Trial Instance to a Production Instance
+<!-- description --> Learn to move data, HDI containers, schemas and more from your free tier model or trial instance to your production instance of SAP HANA Cloud, SAP HANA database.
+
 ## Prerequisites
 - You have access to a free tier model or trial account and a production account in SAP HANA Cloud.
 - You have access to a free tier model or trial and production environment in SAP Business Application Studio.
 
-## Details
-### You will learn
+## You will learn
 - To move development objects from a free tier model or trial environment of SAP Business Application Studio
 - To export catalog objects like schemas and tables from a free tier model or trial environment of SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 If you have data or any kinds of artifacts in your trial account and you would like to make sure you can keep these artifacts in a production environment, then this tutorial will help you. Please remember to follow these steps before your trial account expires, otherwise it won't be possible to recover this data.
 
 For moving objects between trial and production, it's important to differentiate between catalog objects, like tables and schemas, and development objects you created in development projects using SAP Business Application Studio.
@@ -25,7 +27,8 @@ In the first three steps of this article, you will learn how to move **developme
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Export artifacts from free tier model or trial account)]
+### Export artifacts from free tier model or trial account
+
 
 The recommended way to move your artifacts within HDI containers is to deploy each of them to your production environment. To do that, you need to use the SAP Business Application Studio.
 
@@ -34,10 +37,9 @@ The recommended way to move your artifacts within HDI containers is to deploy ea
 2. Right-click on your project name and the click on **Download**. Your export package will be prepared and downloaded for you.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import artifacts into production account)]
+### Import artifacts into production account
+
 
 1. On your productive SAP Business Application Studio, right-click on the Project folder that you want to import your project to.
 
@@ -57,11 +59,10 @@ Alternatively, you can connect to a local or remote Git repository and transfer 
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Deploy development objects to production instance)]
+### Deploy development objects to production instance
+
 
 Finally, if you don't need your design-time project and would rather deploy your development objects to a production instance, please follow these steps:
 
@@ -71,7 +72,7 @@ Finally, if you don't need your design-time project and would rather deploy your
 
 3. Select **Build MTA Project**.
 
-    !![build MTA project](ss-01-build-MTA-project.png)
+    <!-- border -->![build MTA project](ss-01-build-MTA-project.png)
 
 4. This will create a folder called **`mta_archives`**. Expand this folder.
 
@@ -98,10 +99,9 @@ For more details on SAP HDI Containers, please see the technical documents of th
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Export catalog objects)]
+### Export catalog objects
+
 
 In case you would prefer to export your catalog objects, you can see below the options available.
 
@@ -127,10 +127,9 @@ If you simply wish to export a mixed list of artifacts in your main SAP HANA Clo
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Export schemas)]
+### Export schemas
+
 
 If you simply wish to export everything within a particular schema, you can export it with the following steps:
 
@@ -146,10 +145,9 @@ If you simply wish to export everything within a particular schema, you can expo
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Export individual tables )]
+### Export individual tables 
+
 
 If you simply wish to export one individual table, you can export it with the following steps:
 
@@ -174,10 +172,9 @@ Alternatively, you can also export HDI Containers, if needed. Please see the doc
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Import schemas, tables, and other catalog objects)]
+### Import schemas, tables, and other catalog objects
+
 Next, you can import schemas, tables, and other catalog objects into your database by using the SAP HANA Database Explorer.
 
 > ### Prerequisites
@@ -191,7 +188,7 @@ Next, you can import schemas, tables, and other catalog objects into your databa
 
 3. Select the location of the file you want to import. You can select from the following available options shown in the image below:
 
-    !![Catalog object import options](ss-02-catalog-object-import-options.png)
+    <!-- border -->![Catalog object import options](ss-02-catalog-object-import-options.png)
 
 4. Browse for the location of the file you want to import. Select the file and click **Open**.
 
@@ -218,14 +215,12 @@ Now, you have completed the process of importing catalog objects. The time taken
 >
 > Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on SAP HANA Cloud, [click here](https://community.sap.com/topics/hana-cloud).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,10 +1,12 @@
 ---
-title: Introduction to Writing a Custom Java Adapter for Freezer Monitoring Lite
-description: Gain a comprehensive overview on Custom Adapters for Streaming Lite, and follow detailed instructions for developing a custom adapter using the Java SDK.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 ---
+
+# Introduction to Writing a Custom Java Adapter for Freezer Monitoring Lite
+<!-- description --> Gain a comprehensive overview on Custom Adapters for Streaming Lite, and follow detailed instructions for developing a custom adapter using the Java SDK.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -16,20 +18,18 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - `Raspberry Pi 2` microcontroller board setup running `Raspbian` with network connection for `SSH`
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
-## Details
-### You will learn  
+## You will learn  
 - An overview of Custom Adapters for SAP HANA Streaming Lite
 - The steps in order to create and deploy a Custom Java Adapter
 
 ## Next Steps
 - [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part2.html)
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](&nbsp;)]
+### Introduction
 
 The Custom Java Adapter will be executed on a remote device, and will send data into a Streaming Lite project running on that same device. It is up to the Custom Java Adapter to poll any available hardware sensors for values.
 
@@ -57,10 +57,6 @@ CREATE INPUT STREAM isFreezerTemperatureReading SCHEMA (
 ![CCL For Freezer Monitoring Lite](CCLForFreezerMonitoringLite.png)
 
 For the question below, select the correct answer, and click **Validate**.
-
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 ---
 

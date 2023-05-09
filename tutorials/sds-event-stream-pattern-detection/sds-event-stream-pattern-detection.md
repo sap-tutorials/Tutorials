@@ -1,6 +1,5 @@
 ---
-title: Watch for Patterns of Event Streams and Generate Alerts
-description: Add a pattern matching operator to watch for patterns of events in live event streams. When the pattern is detected, generate an alert.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,21 +7,24 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 auto_validation: true
 time: 15
 ---
+# Watch for Patterns of Event Streams and Generate Alerts
+<!-- description --> Add a pattern matching operator to watch for patterns of events in live event streams. When the pattern is detected, generate an alert.
+
 ## Prerequisites
  - **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://developers.sap.com/tutorials/sds-event-stream-playback.html)
 
 ## Next Steps
  - **Tutorials:** [Build Custom Flex Operators to Analyze Event Streams](https://developers.sap.com/tutorials/sds-custom-flex-operators.html)
 
-## Details
-### You will learn  
+## You will learn  
 - How to use the CCL Pattern Matching operator to detect specific patterns of events
 - How to define the alert event that will be generated whenever the pattern is detected
 
 ---
 In this example you are going to use the CCL Pattern Matching operator to watch for a power outage on any machine that lasts for more than 20 seconds.  The machines only send simple **"Power off"** and **"Power On"** events.  So you'll use the pattern matching operator to watch for a **"Power off"** event that is not followed by a **"Power on"** event for the same machine within 20 seconds.
 
-[ACCORDION-BEGIN [Step 1: ](Open your project in the CCL editor)]
+### Open your project in the CCL editor
+
 
 In this tutorial you are going to work in the CCL editor. While you can create a Pattern Matching stream from the visual editor, it's a bit tedious and we're guessing at this point you're probably more likely to just want to see the CCL.
 
@@ -34,11 +36,9 @@ If prompted to save, choose **Yes**.
 
 > If your project wasn't open in any editor at this point, then you can simply double-click on the `.ccl` file in the project folder (in the **Project Explorer** view) to open it in the CCL editor.
 
-[DONE]
 
-[ACCORDION-END]
+### Add the pattern matching stream to your project
 
-[ACCORDION-BEGIN [Step 2: ](Add the pattern matching stream to your project)]
 
 Scroll down to the bottom of the CCL file and paste in the following:
 
@@ -70,11 +70,9 @@ Now let's take a look at the CCL above to understand it:
 
 See the [Streaming Analytics CCL Reference guide](https://help.sap.com/viewer/608c361a786e4ec485224c890cbf1617/2.0.03/en-US/e7965d0d6f0f10149842b86fff8f915b.html) for more information on using the MATCHING clause.
 
-[DONE]
 
-[ACCORDION-END]
+### Compile and check for errors
 
-[ACCORDION-BEGIN [Step 3: ](Compile and check for errors)]
 
 Click the **Compile Streaming Project (F7)** button to check for errors.
 
@@ -82,6 +80,4 @@ Click the **Compile Streaming Project (F7)** button to check for errors.
 
 If you want to see this new operator in action, then run the playback tool to stream in the simulated data file again (see the previous tutorial for details).
 
-[VALIDATE_3]
 
-[ACCORDION-END]

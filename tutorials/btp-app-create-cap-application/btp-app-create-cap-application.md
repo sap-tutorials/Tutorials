@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Create a CAP-Based Application
 description: This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
 keywords: cap
@@ -68,9 +68,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cds watch
     ```
 
-    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.`
+    > In case you get the error: `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`
 
-    > If you get the error `cds : File <npmIstallDirectory>\cds.ps1 cannot be loaded because running scripts is disabled on this system.` after you run `cds watch`, you can run the command:
+    > You can run the command:
 
     > ```bash
     > Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
@@ -84,7 +84,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![CDS Watch](cdswatch.png)
 
-    The CAP server tells you that there is no model yet that it can serve. You add one in the next step.
+    The CAP server tells you that there is no model and no service definitions yet that it can serve. You add some in the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -125,7 +125,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     ```
 
 
-    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. They key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
+    It creates two entities in the namespace `sap.ui.riskmanagement`: `Risks` and `Mitigations`. Each of them has a key called `ID` and several other properties. A Risk has a Mitigation and, therefore, the property `miti` has an association to exactly one Mitigation. A Mitigation in turn can be used for many Risks, so it has a "to many" association. The key is automatically filled by the CAP server, which is exposed to the user of the service with the annotation `@(Core.Computed : true)`.
 
     Notice how the CAP server reacted to dropping the file. It now tells you that it has a model but there are no service definitions yet and, thus, it still can't serve anything. Next, you add a service definition.
 
@@ -197,12 +197,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     >     !![No JSON Viewer](no-json-viewer.png)
     > However, this doesn't mean you have made a mistake in the tutorial. Rather, this is the correct output without any formatting. If you'd like to see a formatted output in your browser, you can add a plugin to your browser. Here are a few exemplary JSON formatters for different browsers:
 
-    > - [Chrome](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli)
+    > - [Chrome](https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
     > - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/jsonview/kmpfgkgaimakokfhgdahhiaaiidiphco)
-    > - [Firefox](https://addons.mozilla.org/bg/firefox/addon/json-formatter/)
     > - [Safari](https://apps.apple.com/us/app/json-peep-for-safari/id1458969831?mt=12)
 
-And that's it. You now have a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
+And that's it. You now have a full blown OData service, which complies with the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
 > The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) with such checks.
 

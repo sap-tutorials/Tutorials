@@ -1,27 +1,33 @@
 ---
-title: WebSocket RFC to Cloud Using SAP Business Connector
-description: Learn how to connect an on-premise system prior to 1909 to cloud using WebSocket RFC.
+parser: v2
 auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
 ---
 
+# WebSocket RFC to Cloud Using SAP Business Connector
+<!-- description --> Learn how to connect an on-premise system prior to 1909 to cloud using WebSocket RFC.
+
 ## Prerequisites
  - Access to an SAP S/4 HANA system prior to version 1909
- - Access to an SAP S/4 HANA Cloud system
+ - Access to the ABAP environment in a cloud system
  - Latest version of SAP Business Connector including all updates installed. To download SAP Business Connector, go to the [download page](https://support.sap.com/sbc-download). For more information about the installation and other documentation, go to the [details page](https://support.sap.com/en/product/connectors/bc/details.html).
  - You've created a private key, signing certificate, and signed certificate as described in the [certificate toolkit guide](https://support.sap.com/content/dam/support/en_us/library/ssp/products/connectors/bc/SBC_CertificateToolkitGuide_481.pdf).
+ - We recommend completing the tutorial [Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud](abap-setup-bc).
 
-## Details
-### You will learn
+## You will learn
   - How to setup a WebSocket RFC connection from an on-premise system to a cloud system using SAP Business Connector.
 
-In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
+## Intro
+
+> In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
+
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 The following tutorial describes how to establish a connection between an on-premise ABAP system and a cloud-based ABAP system.
 
 Technically, the connection works as follows:
@@ -35,12 +41,12 @@ Technically, the connection works as follows:
 
 SAP BC acts as a middleware between the classic CPIC-based RFC protocol and the WebSocket-based RFC protocol that can be `tunneled` through firewalls into the cloud without problems.
 
-**If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.**
+> If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Setting up the source system)]
+
+### Setting up the source system
+
 
 In the source system, you need to setup an RFC destination of type **`T`** and allow SAP BC to register at this destination. The source system will later send all RFC calls, which are intended for the cloud system, to this RFC destination.
 
@@ -62,12 +68,12 @@ In the source system (the on-premise system), set up an RFC destination of type 
 
 ![System URL](wsrfc_2.png) ![System URL](wsrfc_3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Allow SAP BC to register at the RFC destination)]
-**If there is already a line like `P TP=* HOST=*`, you can skip this step.**
+### Allow SAP BC to register at the RFC destination
+
+> If there is already a line like `P TP=* HOST=*`, you can skip this step.
+
 
 1. Run transaction **`SMGW`**.
 2. Choose **`Goto` > Expert Functions > External Security > Maintain ACL Files**.
@@ -77,7 +83,7 @@ In the source system (the on-premise system), set up an RFC destination of type 
     - TP (*): `CLOUD_SYSTEM_VIA_BC`
     - Host: Host/IP where SAP BC will run, e.g. `10.87.64.3`
 
-    **You can find out the IP in the command line. On Windows, enter `ipconfig`. On Mac or Linux, enter `ifconfig`. Copy the IPv4 Address.**
+    > You can find out the IP in the command line. On Windows, enter `ipconfig`. On Mac or Linux, enter `ifconfig`. Copy the IPv4 Address.
 
     - Access: `internal`
     - Cancel: `local`
@@ -86,13 +92,11 @@ In the source system (the on-premise system), set up an RFC destination of type 
     - Save your settings globally.
     - Choose **`Goto` > Reread (global)**
 
-**In releases older than 7.40 SP11, you have to change the `Reginfo` file manually. See [SAP Note 1989587](https://launchpad.support.sap.com/#/notes/1989587) for more information.**
+> In releases older than 7.40 SP11, you have to change the `Reginfo` file manually. See [SAP Note 1989587](https://launchpad.support.sap.com/#/notes/1989587) for more information.
 
 
-[DONE]
-[ACCORDION-END]
+### Communication management in the target system
 
-[ACCORDION-BEGIN [Step 4: ](Communication management in the target system)]
 To provide a service in the cloud system, you must create the following entities:
 
 - Communication user
@@ -138,10 +142,9 @@ However, you can also use your remote-enabled function module with a custom comm
     - Copy the **API-URL**.
 6. Save the communication arrangement.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Define connection parameters for the cloud system in SAP BC)]
+### Define connection parameters for the cloud system in SAP BC
+
 1. Start SAP BC.
 2. Go to **Adapters > SAP**.
 3. Choose **Add SAP Server**.
@@ -154,17 +157,17 @@ However, you can also use your remote-enabled function module with a custom comm
     - Client: Client of the target cloud system (optional)
     - WebSocket Host: API-URL of the communication arrangement without the **`https://`** prefix
 
-    **Including the `https://` prefix leads to an error when you test the connection.**
+    > Including the `https://` prefix leads to an error when you test the connection.
 
     - WebSocket Port: **`443`**
     - Network: **WAN**
     - Choose **Save**.
-
+    
     ![System URL](wsrfc_4.png)
 
 4. Download the certificate of the target cloud system. We recommend using the browser's "show certificate" functionality. Most browsers provide information on the security status of the SSL/TLS connection, usually displayed as a small lock icon. Select this icon and save the CA root certificate to file. We recommend to use Chrome browser for this.
 
-![System URL](wsrfc_5.png)
+    ![System URL](wsrfc_5.png)
 
 5. Add the cloud system's certificate to the trusted list in SAP BC.
     - Copy the certificate to the CA certificate directory of SAP BC. In this tutorial, the directory is in **`C:\sapbc481\Server\config\trust`**
@@ -174,10 +177,9 @@ However, you can also use your remote-enabled function module with a custom comm
 
 6. Test the connection. Select the newly configured SAP server form the server list and choose **Test Connection**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Define connection parameters for the on-premise system in SAP BC)]
+### Define connection parameters for the on-premise system in SAP BC
+
 1. In SAP BC, choose **Adapters > SAP**.
 2. Choose **Add SAP Server**.
     - Name: **`Connection_to_OP`**
@@ -207,10 +209,9 @@ However, you can also use your remote-enabled function module with a custom comm
     - Choose **Save**.
     - Start the listener. Choose the red button in column **Started?**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define routing for function modules)]
+### Define routing for function modules
+
 Define what SAP BC shall do with the incoming RFC requests. In our case, we simply instruct SAP BC to send everything that it receives from the on-premise system to the target cloud system.
 
 1. In SAP BC, choose **Adapters > Routing > Routing Rules**.
@@ -228,20 +229,17 @@ Define what SAP BC shall do with the incoming RFC requests. In our case, we simp
 
     ![System URL](wsrfc_9.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the connection)]
+### Test the connection
+
 1. Run transaction **`SM59`**.
 2. Choose your destination **`MYDESTINATION_XXX`**.
 3. Choose **Connection Test**.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+### Test yourself
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

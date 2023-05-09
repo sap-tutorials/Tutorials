@@ -52,6 +52,7 @@ For the purpose of this tutorial, we are going to choose the `SAP Cloud for Cust
 
 <!-- border -->![SAP Cloud for Customer Package Search](4a.png)
 
+
 ### Explore the API
 
 On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package. Select the Campaign API to explore it in detail.
@@ -102,5 +103,6 @@ The response section displays various entities fetched calling the `GET` method.
 
 
 Feel free to explore other endpoints in this Campaign API.
+
 
 Congratulations, you have just taken your first steps with the SAP API Business Hub and should now be able to navigate it and the content within, confidently.

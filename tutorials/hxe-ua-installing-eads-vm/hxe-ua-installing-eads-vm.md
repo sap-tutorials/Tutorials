@@ -1,12 +1,14 @@
 ---
-title: Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition (Preconfigured VM)
-description: If you downloaded the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
+
+# Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition (Preconfigured VM)
+<!-- description --> If you downloaded the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
 <!-- loio8f68fc9f49774010a5d438fea258f61f -->
 
@@ -15,19 +17,20 @@ time: 15
 You edited your laptop's hosts file.
 
 
-## Details
-### You will learn
+## You will learn
 You will learn how to download, install, and configure the `eadesigner.tgz` SAP EA Designer package.
 
 ---
 
+## Intro
 SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment. Using industry-standard notations and techniques, organizations can leverage rich metadata and use models and diagrams to drive understanding and promote shared outcomes in creating innovative systems, information sets, and processes to support goals and capabilities.
 
 SAP EA Designer is a separate download in the Download Manager.
 
 In this procedure you'll download the SAP EA Designer package (`eadesigner.tgz`) using the built-in Download Manager (Console Mode), extract the package, and run the installation script.
 
-[ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
+### Run the memory management script
+
 
 The `hxe_gc` memory management script frees up available VM memory.
 
@@ -49,11 +52,9 @@ The `hxe_gc` memory management script frees up available VM memory.
 
 The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
-[DONE]
 
-[ACCORDION-END]
+### Download `eadesigner.tgz` using the built-in Download Manager
 
-[ACCORDION-BEGIN [Step 2: ](Download `eadesigner.tgz` using the built-in Download Manager)]
 
 In your VM, from the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`), enter:
 
@@ -63,11 +64,9 @@ HXEDownloadManager_linux.bin linuxx86_64 vm eadesigner.tgz
 
 ![eadesigner_tgz_Download_3](eadesigner_tgz_Download_3.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Navigate to the `Downloads` directory
 
-[ACCORDION-BEGIN [Step 3: ](Navigate to the `Downloads` directory)]
 
 In your VM, enter:
 
@@ -75,11 +74,9 @@ In your VM, enter:
 cd /usr/sap/HXE/home/Downloads
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### View the contents of the `Downloads` directory to confirm `eadesigner.tgz` exists.
 
-[ACCORDION-BEGIN [Step 4: ](View the contents of the `Downloads` directory to confirm `eadesigner.tgz` exists.)]
 
 In your VM, enter:
 
@@ -87,11 +84,9 @@ In your VM, enter:
 ls
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Extract the file.
 
-[ACCORDION-BEGIN [Step 5: ](Extract the file.)]
 
 In your VM, enter:
 
@@ -101,11 +96,9 @@ tar -xvzf eadesigner.tgz
 
 ![easdesigner_tgz_Command_Example_5](easdesigner_tgz_Command_Example_5.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Navigate to the `HANA_EXPRESS_20` directory.
 
-[ACCORDION-BEGIN [Step 6: ](Navigate to the `HANA_EXPRESS_20` directory.)]
 
 In your VM, enter:
 
@@ -113,11 +106,9 @@ In your VM, enter:
 cd HANA_EXPRESS_20
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Run the installation script
 
-[ACCORDION-BEGIN [Step 7: ](Run the installation script)]
 
 In your VM, enter:
 
@@ -127,11 +118,9 @@ sh ./install_eadesigner.sh
 
 Installation begins.
 
-[DONE]
 
-[ACCORDION-END]
+### Follow the installation prompts
 
-[ACCORDION-BEGIN [Step 8: ](Follow the installation prompts)]
 
 -   When prompted for `HANA instance number [90]` press `Enter` to accept the default.
 
@@ -140,11 +129,9 @@ Installation begins.
 -   When prompted for `XSA administrator (XSA_ADMIN) password`, enter the `HANA database master password` you specified when you installed SAP HANA 2.0, express edition.
 
 
-[DONE]
 
-[ACCORDION-END]
+### Complete the installation
 
-[ACCORDION-BEGIN [Step 9: ](Complete the installation)]
 
 When prompted to `Proceed with installation`, enter `Y`. Wait for installation to finish.
 
@@ -152,11 +139,9 @@ A success message displays when installation completes.
 
 ![eadesigner_Successful_Deployment_2](eadesigner_Successful_Deployment_2.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Confirm the status of SAP EA Designer
 
-[ACCORDION-BEGIN [Step 10: ](Confirm the status of SAP EA Designer)]
 
 In your VM, enter:
 
@@ -173,11 +158,9 @@ The output will include all the applications of your organization and space. You
 
 ![eadesigner_xsapps_4](eadesigner_xsapps_4.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Log in
 
-[ACCORDION-BEGIN [Step 11: ](Log in)]
 
 -   Note the URL for `eadesigner`.
 
@@ -192,8 +175,5 @@ The output will include all the applications of your organization and space. You
     ![SAP_EA_Designer_welcome_page_0](SAP_EA_Designer_welcome_page_0.png)
 
 
-[DONE]
-
-[ACCORDION-END]
 
 

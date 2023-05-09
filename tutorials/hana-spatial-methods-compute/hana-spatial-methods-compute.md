@@ -1,11 +1,15 @@
 ---
-title: Computation methods
-description: Computation methods help you calculating characteristics of geometries
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
+
+# Computation methods
+<!-- description --> Computation methods help you calculating characteristics of geometries
 
 ## Prerequisites
  - **Tutorial:** [Access methods](hana-spatial-methods-access)
@@ -14,23 +18,22 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-han
 ## Next Steps
  - [Transformation methods](hana-spatial-methods-transform)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn about a number of computation methods and how to apply them to different geometries.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Compute methods)]
+### Compute methods
+
 You must have seen some of the spatial compute methods already in previous tutorials.
 
 E.g. `ST_Length()` calculated the length of the line string, and `ST_Area()` calculated the area of a polygon.
 
 Some other were used to calculate characteristics of geometries, like `ST_IsRing()` and `ST_IsClosed()` in examples with strings.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Area and perimeter of polygons)]
+### Area and perimeter of polygons
+
 Polygons have a few more useful methods. They can be applied to a collection of polygons (multi-polygon)too.
 
 Besides area you can calculate as well perimeter of surfaces. The perimeter of a polygon includes the length of all rings (exterior and interior).
@@ -61,10 +64,9 @@ WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 
 ![Area and perimeter of multi-polygon](comp20b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Centroid of polygons)]
+### Centroid of polygons
+
 
 The method `ST_Centroid()` returns the point that is the mathematical centroid of a polygon or multi-polygon.
 
@@ -93,10 +95,9 @@ WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 
 ![Centroid of multi-polygon](comp40b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Point on a surface)]
+### Point on a surface
+
 
 Centroid of a polygon is not always at the surface of that polygon. Consider the following example.
 
@@ -156,10 +157,9 @@ You can see on the visualization that the blue dot is indeed located on the yell
 
 ![Centroid and point-on-surface](comp60.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Distance)]
+### Distance
+
 
 The `ST_Distance` method computes the shortest distance between two geometries.
 
@@ -179,8 +179,7 @@ ORDER BY 3 ASC;
 
 ![Distances](comp70b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
 - Blog post [Markers for geographical areas (with SAP HANA SQL)](https://blogs.sap.com/2020/07/10/markers-for-geographical-areas-with-sap-hana-sql/),

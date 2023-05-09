@@ -1,6 +1,5 @@
 ---
-title: Get Started with the SAP BTP Command Line Interface (btp CLI)
-description: Find out what the btp CLI is, download the btp CLI client, and learn how to use it.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
@@ -8,12 +7,14 @@ primary_tag: products>sap-business-technology-platform
 keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
 ---
 
+# Get Started with the SAP BTP Command Line Interface (btp CLI)
+<!-- description --> Find out what the btp CLI is, download the btp CLI client, and learn how to use it.
+
 ## Prerequisites
  - You have access to a global account on SAP BTP that is on feature set B. See [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
  - You are familiar with [the basic concepts of SAP BTP](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/73beb06e127f4e47b849aa95344aabe1.html).
 
-## Details
-### You will learn
+## You will learn
   - What the SAP BTP command line interface (btp CLI) is
   - For which global accounts you can use the btp CLI
   - How the btp CLI works
@@ -24,7 +25,7 @@ keywords: btp, btp cli, btpcli, command line, command line interface, command li
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is the btp CLI?)]
+### What is the btp CLI?
 
 The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server (https://cpcli.cf.eu10.hana.ondemand.com) when you log on to your global account through the btp CLI.
 
@@ -39,21 +40,17 @@ Here are some of the tasks you can use the btp CLI for:
 - Consuming services that are decoupled from the existing environments (referred to as "Other" environment in the Discovery Center), see [Consuming Services in Other Environments Using SAP Service Manager](https://help.sap.com/docs/SERVICEMANAGEMENT/09cc82baadc542a688176dce601398de/0714ac254e83492281d95e25548b388c.html)
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](For which global accounts can I use the btp CLI?)]
+### For which global accounts can I use the btp CLI?
 
 SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](btp CLI vs environment-specific CLIs)]
+### btp CLI vs environment-specific CLIs
 
 Cloud Foundry: You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **btp CLI** relates to the **cf CLI**:
 The btp CLI is the CLI for working with global accounts on SAP BTP. You use the btp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with btp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing service instances and members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you need to use the cf CLI.
@@ -62,11 +59,10 @@ Kyma: The same goes for Kyma: You use the btp CLI for all tasks on global accoun
 
 "Other" Environments: SAP Service Manager allows you to consume services from any runtime environment directly from the subaccount. We refer to this as "other" environment. For this environment type "other", you can use the btp CLI to manage services, instances, plans, and the like, because these are managed on subaccount level. See [Working With Resources of SAP Service Manager Using the btp CLI](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/fe6a53bfe48e4831b2f5ae7f06d4f07d.html).
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Download and install the btp CLI client)]
+
+### Download and install the btp CLI client
 
 1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the btp CLI client for your operating system.
 2. Extract the client executable from the tar.gz archive as follows:
@@ -78,7 +74,7 @@ Kyma: The same goes for Kyma: You use the btp CLI for all tasks on global accoun
     - macOS: `/usr/local/bin`
     - Windows: `C:/Users/<your-user>`
 4. Ensure that the directory with the btp executable is in your PATH.
-    - macOS: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+    - macOS and Linux: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default.
     - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
 5. Open a terminal and enter `btp`.
 
@@ -86,11 +82,9 @@ The output should look similar to this screenshot:
 
 ![CLI info screen](sapcp.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Display help)]
+### Display help
 
 Now type in the following to get syntax instructions and examples help calls:
 
@@ -111,45 +105,37 @@ You can call up help in the client on different levels, from an introductory hel
 |  `btp <ACTION> <GROUP/OBJECT> --help`            | `btp list accounts/subaccount --help`
 |  `btp <ACTION> --help`            | `btp list --help`
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
+### Log in to your global account
 
-Now let's log in. To do so, you need the CLI server URL (https://cpcli.cf.eu10.hana.ondemand.com) and the subdomain of your global account:
+Now let's log in: 
 
-The **CLI server URL** is proposed at login - just accept it with ENTER. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. This server is the back-end of the CLI that routes all requests to the platform services.
-
-   ![CLI server URL](server-url.png)
-
-You can find the **global account subdomain** in the cockpit:
-
-  ![Subdomain of the global account in the cockpit](subdomain-ga.png)
+The **CLI server URL** (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login - just accept it with ENTER. This server routes client requests to the platform services. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. 
 
 You have two options for login:
 
-For login on the command-line, enter:
-
-```Bash
-btp login
-```
-For login with single sign-on through a browser, enter:
+We recommend to login with single sign-on through a browser. To do this, use:
 
 ```Bash
 btp login --sso
 ```
 
-Once you're logged into your global account, it should look similar to this:
+For login on the command-line, use:
+
+```Bash
+btp login
+```
+
+If you have enabled Two-Factor-Authentication, you need to append the token to your password. 
+
+Once you're authenticated, you will automatically be logged in to your global account. If you have access to more than one global account, the CLI will display a list of global accounts  from which you can select one. 
+
+When you're logged in, it should look similar to this:
 
 ![CLI Login](sapcplogin.png)
 
-> If you get an error about your btp CLI client being "too new" and not supported by the server, please return to Step 4 of this tutorial and download an earlier version of the CLI, to either match the server version stated, or one version below. For example, if the server version is stated as 2.9.0 and you have version 2.10.0 of the btp CLI, you can download version 2.8.0 of the btp CLI and then continue with this tutorial. [This issue](https://github.com/SAP-samples/devtoberfest-2021/issues/53) may contain further information that you might find useful.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Understand the command syntax)]
+### Understand the command syntax
 
 ![CLI command syntax](usage.png)
 
@@ -175,25 +161,27 @@ btp assign security/role-collection "Global Account Administrator" --to-user exa
 
 "Global Account Administrator" is the positional parameter, and the other two parameters have keys (`--to-user` and `--of-idp`).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Understand the context you've targeted )]
+### Understand the context you've targeted 
 
-Your first login takes you into the global account whose subdomain you've entered at login. Now, all commands are executed on global account level, unless you specify a different context. Remember you can manage the global account and its directories and subaccounts with the btp CLI. So if you want to change the context in which commands are executed to a directory or a subaccount, you can do so using the target command:
+Your first login takes you into a global account. Now, all commands are executed on global account level, unless you specify a different context. Remember you can manage the global account and its directories and subaccounts with the btp CLI. So if you want to change the context in which commands are executed to a directory or a subaccount, you can do so using the target command. There are two different ways of using this command: 
+
+For an easy, interactive selection of the new target, use: 
 
 ```Bash
-btp target --subaccount <my-subaccount-ID>
+btp target
 ```
-OR
+This will display the children and let you navigate up and down the account hierarchy. 
+
+For directly setting a new target, use:
 
 ```Bash
-btp target --directory <my-directory-ID>
+btp target [--subaccount <ID> | --directory <ID> | --global-account <SUBDOMAN>] 
 ```
 
 The targeting mechanism works according to the hierarchy of entities in the global account:
 
-- After initial login, the global account is targeted.
+- After initial login, a global account is targeted.
 
 - If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `list accounts/subaccount` lists all subaccounts of the global account, even if a subaccount or a directory is targeted.
 
@@ -201,17 +189,16 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 >To find out your current target, use `btp --info`.
 
->To set the target back to the global account, use `btp target -ga`.
+>To set the target back to the current global account, use `btp target -ga`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Enable command autocompletion)]
+### Enable command autocompletion
+
 
 We recommend to enable command autocompletion so you won't have to remember or keep looking up individual commands. Command autocompletion saves you keystrokes when entering command actions, group-object combinations, and their parameters. Autocompletion is supported for  Bash, PowerShell, and Zsh.
 
 ```Bash
-btp enable autocomplete <shell>
+btp enable autocomplete <SHELL>
 ```
 Enter a partial command action, group-object combination, or parameter, and then press the Tab key. The command line either automatically completes your command or, when there's more than one option available, it displays a list of suggested command actions/options/parameters. When a suggestion list is displayed, use the Tab or arrow keys to move through the list and press Enter to make a selection.
 
@@ -219,11 +206,10 @@ When you enable command autocompletion, a script containing all the autocomplete
 
 The autocompletion option remains enabled in future sessions in your current client, until you disable it. To disable command autocompletion and uninstall the autocomplete script, run `disable autocomplete <shell>`.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11:](Try it out and get more information)]
+### Try it out and get more information
+
 
 Here are a few simple examples of commands on global account level that you can try out:
 
@@ -240,8 +226,6 @@ To learn more:
 - Check out this tutorial: [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations).
 - And watch the videos in this [series of live streams on YouTube about the btp CLI](https://help.sap.com/products/link-disclaimer?site=https%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL6RpkC85SLQDXx827kdjKc6HRvdMRZ8P5).
 
-[DONE]
-[ACCORDION-END]
 
 
 ---

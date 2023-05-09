@@ -72,6 +72,7 @@ You can limit the number of results retrieved with the `$top` value provided in 
 You can then switch back to the Code Snippet section, and copy the updated code from the Curl section to paste it into your terminal. When you execute the curl command, and pipe the output into jq again, you should see a nicely formatted list of three campaigns.
 
 ### Add multiple parameters to the API call
+
 Besides the `$top` parameter, you can add multiple parameters to the [Query String](https://en.wikipedia.org/wiki/Query_string) of your API call.
 Now add in a second parameter for `$select`. You only want the `StatusText` and `Status` for the top 3 users. Use the same approach as before - switch to the Parameters section, specify the two values for the `$select` parameter using the drop down menu, then switch back to the Code Snippet section and copy the Curl content again. It should look something like this:
 

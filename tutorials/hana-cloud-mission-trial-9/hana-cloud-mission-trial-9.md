@@ -1,69 +1,45 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Grant Access to Calculation Views
-description: Learn how to create a user and grant others access to your calculation views within the SAP HANA database in SAP HANA Cloud.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
 primary_tag: products>sap-hana-cloud
 ---
 
+# Grant Access to Calculation Views
+<!-- description --> Learn how to create a user and grant others access to your calculation views within the SAP HANA database in SAP HANA Cloud.
+
 ## Prerequisites
--  [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
--  If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2).
-- [Import the sample data needed for this mission](hana-cloud-mission-trial-5).
-- [Set up a development project in SAP Business Application Studio and connect it to your database](hana-cloud-mission-trial-7).
-- [Create a calculation view](hana-cloud-mission-trial-8)
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-1) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-1-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2)
+- You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
+- You have [set up a development project in SAP Business Application Studio and connect it to your database](hana-cloud-mission-trial-7)
+- You have completed the tutorial to [create a calculation view](hana-cloud-mission-trial-8)
 
 
-## Details
-### You will learn
+## You will learn
 - What privileges are needed for others to access your calculation view
 - How to create a role in SAP Business Application Studio
 - How to create a user in the SAP HANA Database Explorer and connect as this user
 
 
+## Intro
+>
 > ![Alex Banner](banner-alex.png)
 >
 > Reminder: This tutorial is part of a mission, in which you will help Alex, the CEO of Best Run Travel, to answer a concrete business question with SAP HANA Cloud, SAP HANA database.
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using an SAP HANA Cloud trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
-
-4.	Create users and manage roles and privileges
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	Query the database using SQL statements
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	Create a calculation view
-
-9.	You are here <sub-style="font-size:30px">&#9755;</sub> **Grant access to Calculation Views**
 
 In this tutorial, you will learn how to make the calculation view you created previously available to others in the organization by creating a new role and granting this role access to the view.
 
-> You can follow the steps in this tutorial also by watching this video:
->
-<iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_aqfw0mwi/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
->
-> ### About this video
->
-> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate a SELECT statement on the column view)]
+### Generate a SELECT statement on the column view
+
 
 To allow others to see the results of your calculation view, you need to grant them the privilege to run `SELECT` statements on this calculation view.
 
@@ -89,7 +65,7 @@ To run `SELECT` statements on calculation views in the new environment, first ma
 
 4.	Right-click on the column view name on the bottom panel and choose to **Generate a SELECT Statement**.
 
-    !![DBX Catalog](ss-01-DBX-catalog.png)
+    ![DBX Catalog](ss-01-DBX-catalog.png)
 
 5.	This will open the SQL Console on the main area of the screen with the `SELECT` statement. On `line 7` you can see a `FROM` clause with two arguments separated by a `.`. The first part is the schema name, the second part is the calculation view name.
 
@@ -97,14 +73,13 @@ To run `SELECT` statements on calculation views in the new environment, first ma
 
 7.	Keep this SQL console open.
 
-    !![Select Statement](ss-02-select-statement.png)
+    ![Select Statement](ss-02-select-statement.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a role)]
+### Create a role
+
 
 Great, now that you have the right schema name, next you will have to grant the authorization to `SELECT` on the Calculation View. This is done by creating an `.hdbrole` file in your development project that grants the `SELECT` privilege.
 
@@ -122,17 +97,16 @@ Great, now that you have the right schema name, next you will have to grant the 
 
 7.	Finally, click on Create.
 
-    !![BAS Create role](ss-03-BAS-create-role.png)
+    ![BAS Create role](ss-03-BAS-create-role.png)
 
 Your role will appear in the file explorer of your project and you can add privileges to it.
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add privileges to the role)]
+### Add privileges to the role
+
 
 In this step, you have two options to add privileges to your role: You can use the **Role Editor** wizard or the **Code Editor**. Click on the option you prefer under the title of this step.
 
@@ -146,14 +120,14 @@ The goal in this step is to add the schema privileges `SELECT` and `EXECUTE` to 
 
 3.	No other options need to be checked, so you can close the role editor.
 
-    !![BAS Role editor](ss-04-BAS-role-editor.png)
+    ![BAS Role editor](ss-04-BAS-role-editor.png)
 
 [OPTION END]
 [OPTION BEGIN [Code Editor]]
 
 1.	Right-click on the `.hdbrole` file, then select **Open with Code Editor**.
 
-    !![BAS Code editor](ss-05-BAS-code-editor.png)
+    ![BAS Code editor](ss-05-BAS-code-editor.png)
 
 2.	Paste the following statements there. Alternatively, you can download this code from our [public GitHub repository](https://github.com/SAP-samples/hana-cloud-learning/blob/181320ae18082d03715c8ea03a61ce2617c9a840/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%209/Tutorial%209%20Queries.txt).
 
@@ -183,10 +157,9 @@ After you are done, deploy the whole project again. When that is completed succe
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a new user in the SAP HANA Database Explorer)]
+### Create a new user in the SAP HANA Database Explorer
+
 
 Now that you have the role created and granted privileges to this role, it's time to grant this role to a user. We will create the public user `report` that shall have read-only access to the calculation view.
 
@@ -224,10 +197,9 @@ GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Connect as the new user)]
+### Connect as the new user
+
 
 You have successfully created the new user `report` and assigned it a role to access your calculation view. With the new user credentials, anyone who has the credentials for this user can run `SELECT` statements on your calculation view.
 
@@ -255,26 +227,20 @@ And with that last step, you have completed the last tutorial of this mission! Y
 >
 > ![Alex Banner final](banner-alex-final.png)
 >
-> Throughout the modules of this mission, you have learned how to provision your first SAP HANA Cloud, SAP HANA database instance, how to use the different SAP HANA Cloud tools, how to import and query data, how set up a development project, create and calculation view and how to make it available to others within your organization.
+> Throughout the tutorials of this mission, you have learned how to provision your first SAP HANA Cloud, SAP HANA database instance, how to use the different SAP HANA Cloud tools, how to import and query data, how set up a development project, create and calculation view and how to make it available to others within your organization.
 
-To quickly recap the tutorial mission, you can also watch all the mission videos in a [playlist](https://microlearning.opensap.com/playlist/dedicated/213248013/1_e5zton4v/1_7y0hucq6) on `openSAP Microlearning` site.
-
-Make sure to get the badge for this mission and share it on your profile in the SAP Community.
-[Click here for more learning materials on SAP HANA Cloud](https://community.sap.com/topics/hana-cloud).
+Make sure to get the badge for this mission and share it on your profile in the SAP Community. [Click here for more learning materials on SAP HANA Cloud](https://community.sap.com/topics/hana-cloud).
 
 Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content!
 
 
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

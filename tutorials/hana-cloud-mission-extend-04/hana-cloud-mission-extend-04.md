@@ -1,25 +1,25 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Understand the Basics About Data Replication and Data Virtualization
-description: Get an overview about the different ways to replicate and virtualize data from different sources to SAP HANA Cloud, SAP HANA database and vice-versa.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Understand the Basics About Data Replication and Data Virtualization
+<!-- description --> Get an overview about the different ways to replicate and virtualize data from different sources to SAP HANA Cloud, SAP HANA database and vice-versa.
+
 ## Prerequisites
-
-
-## Details
-### You will learn
+## You will learn
 - What data replication and data virtualization in SAP HANA Cloud, SAP HANA database are
 - What different connection methods are available to you for replication and virtualization between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise
 - What Smart Data Access (SDA) and Smart Data Integration (SDI) mean
 - How to create remote source connections and virtual tables in the SAP HANA Database Explorer
 
 
+## Intro
 This **tutorial group** will give you an overview of data replication and data virtualization via remote sources to and from SAP HANA Cloud, SAP HANA database.
 
 This first **tutorial** serves as an introduction to this tutorial group. You will get to know the basic concepts and get an overview of the topics covered throughout the tutorials.
@@ -27,7 +27,8 @@ This first **tutorial** serves as an introduction to this tutorial group. You wi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 
 SAP HANA Cloud, SAP HANA database allows you to access remote data as if the data were stored in local tables. This can be achieved either by creating **virtual tables** or by using **data replication** between the systems.
 
@@ -42,10 +43,9 @@ Generally, there are different technologies that support different scenarios of 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access data in SAP HANA Cloud, SAP HANA Database)]
+### Access data in SAP HANA Cloud, SAP HANA Database
+
 
 In this diagram provided by the [technical documentation on Replicating Tables from Remote Sources](https://help.sap.com/viewer/3a6f321771a74066b521198559165ce9/LATEST/en-US/2937dc0404e04f91be3aff16ebd7acaa.html), you can see different methods of replicating data to SAP HANA Cloud, SAP HANA database:
 
@@ -63,30 +63,28 @@ If the source system is neither SAP HANA on-premise nor SAP HANA Cloud, SAP HANA
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access data from SAP HANA Cloud, SAP HANA database)]
+### Access data from SAP HANA Cloud, SAP HANA database
+
 
 Additionally, to virtualise and replicate data the other way around, if SAP HANA Cloud, SAP HANA database is the source system and an SAP HANA on-premise database is the target system, SDA is the preferred method. For this direction, a connection using SDI and the DP Agent is also possible and offers more advanced capabilities. In this tutorial group, we will focus on the recommended scenario of using SDA for this direction.
 
 ![Infographic SDA](ss-02-infographic-SDA.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a remote source in the SAP HANA Database Explorer)]
+### Create a remote source in the SAP HANA Database Explorer
+
 
 > In this step, you can see the general steps to create a remote source connection using the SAP HANA Database Explorer. Throughout the next tutorials, we will walk you through this process step-step-step for different scenarios.
 
 By creating connections to data sources outside of your SAP HANA Cloud database, you can use data stored in these remote sources by creating various virtual tables. To create remote connections, you need to use the SAP Database Explorer, and have at least one instance of SAP HANA Cloud already provisioned.
 
-!![Expanded Catalog add remote source](ss-03-DBX-expanded-catalog-addremotesource.png)
+<!-- border -->![Expanded Catalog add remote source](ss-03-DBX-expanded-catalog-addremotesource.png)
 
 In the SAP HANA Database Explorer, expand the **Catalog** in the panel on the left side of the screen. Then right click on **Remote Sources** and then click on **Add Remote Source**. In the prompt that opens, add the name of the source and then select the adapter to the source you are trying to connect to. The following connections are currently available:
 
-!![DBX – Add Remote Sources](ss-04-DBX-addremotesources-resized.png)
+<!-- border -->![DBX – Add Remote Sources](ss-04-DBX-addremotesources-resized.png)
 
 Depending on the connection you choose, the form and mandatory information needed will change. To connect to an SAP HANA on-premise installation, for example, you would choose the connection **HANA (ODBC)**.
 
@@ -94,29 +92,27 @@ Once you are done filling out the necessary fields, click on **Create**. Your re
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a virtual table in the SAP HANA Database Explorer)]
+### Create a virtual table in the SAP HANA Database Explorer
+
 
 > In this step, you can see the general steps to create virtual tables using the SAP HANA Database Explorer. Throughout the next tutorials, we will walk you through this process step-step-step for different scenarios.
 
 In the SAP HANA Database Explorer, expand the **Catalog** in the panel on the left side of the screen. Then right click on **Remote Sources** and then click on **Show Remote Sources**. All available remote sources are listed in the lower left-hand corner.
 
-!![DBX – Remote Sources](ss-05-DBX-remote-sources-cropped.png)
+<!-- border -->![DBX – Remote Sources](ss-05-DBX-remote-sources-cropped.png)
 
 When you click on one remote source, you will be able to search all the databases, schema, objects, or types within this source. You can then view the individual remote objects. These can be, for example, actual tables of data. To access individual tables, check the boxes next to each table you want to access. Then click on **Create Virtual Objects** on the right-hand side of the screen.
 
-!![DBX – Create virtual tables](ss-06-DBX-create-virtualtables-resized.png)
+<!-- border -->![DBX – Create virtual tables](ss-06-DBX-create-virtualtables-resized.png)
 
 Your virtual tables will be created. You will see them listed on the lower panel on the left side of the screen.
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get an overview of the tutorials ahead)]
+### Get an overview of the tutorials ahead
+
 
 
 In the [next tutorial of this group](hana-cloud-mission-extend-05), you will first learn how to set up the simplest connection method, using SDA. In our scenario, we will use it to virtualise data from SAP HANA Cloud, SAP HANA database to SAP HANA on-premise.
@@ -138,14 +134,12 @@ Now that you have an overview of the roadmap of this learning track, let us get 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: Use Index-Based Cell Access 
-description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+parser: v2
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -9,37 +8,39 @@ time: 10
 
 ---
 
+# Use Index-Based Cell Access 
+<!-- description --> Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
+
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
 - **Tutorials:** [Debugging Stored Procedures](hana-cloud-sqlscript-debugging)
 
-## Details
-### You will learn  
+## You will learn  
 - How to use index-based cell access to manipulate table data.
 
+## Intro
 Using index-based cell access to manipulate table data is faster than using cursors or arrays.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new procedure)]
+### Create a new procedure
+
 
 1. Use what you have learned and create a new procedure called `build_products` in the procedure folder.
 
-    !![procedure editor](1_1.png)
+    <!-- border -->![procedure editor](1_1.png)
 
 2. Use what you have learned about procedure parameters, and define an output parameters as show here.
 
     ```SQLCRIPT
     out ex_products table (PRODUCTID nvarchar(10),
-                           CATEGORY nvarchar(20),
+                           CATEGORY nvarchar(40),
                            PRICE decimal(15,2))
     ```
 
-[DONE]
 
-[ACCORDION-END]
+### Insert procedure code
 
-[ACCORDION-BEGIN [Step 2: ](Insert procedure code)]
 
 1. Between the BEGIN and END statements, using index based cell access, insert rows into an intermediate table variable using the following code.
 
@@ -98,26 +99,23 @@ Using index-based cell access to manipulate table data is faster than using curs
       END
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save, deploy and check results)]
+### Save, deploy and check results
+
 
 1. **Save** the procedure
 
-    !![save](3_1.png)
+    <!-- border -->![save](3_1.png)
 
 2. Perform a **Deploy**
 
-    !![save](3_2.png)
+    <!-- border -->![save](3_2.png)
 
 3. Return to the Database Explorer page and generate and run the CALL statement for this procedure.
 
-    !![DBX](3_3.png)
+    <!-- border -->![DBX](3_3.png)
 
 4. Run the procedure and check the results.
 
-    !![results](3_4.png)
+    <!-- border -->![results](3_4.png)
 
-[DONE]
-[ACCORDION-END]

@@ -1,22 +1,22 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database
-description: To get started with SAP HANA Cloud, SAP HANA database, you will need to use a few different tools. Learn here what you can use them for.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database
+<!-- description --> To get started with SAP HANA Cloud, SAP HANA database, you will need to use a few different tools. Learn here what you can use them for.
+
 ## Prerequisites
-- [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the [SAP HANA Cloud trial](hana-cloud-mission-trial-1).
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2).
-- If you have a free tier model or production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-1) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-1-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2)
 
 
-## Details
-### You will learn
+## You will learn
 - How to use SAP HANA Cloud Central
 - How to access SAP HANA cockpit
 - How to access SAP HANA Database Explorer
@@ -25,6 +25,7 @@ primary_tag: software-product>sap-hana-cloud
 
 
 
+## Intro
 >
 > ![Alex Banner](banner-alex.png)
 >
@@ -32,47 +33,22 @@ primary_tag: software-product>sap-hana-cloud
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using SAP HANA Cloud free tier model or trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	You are here <sub-style="font-size:30px">&#9755;</sub> **Tools to manage and access the SAP HANA Cloud, SAP HANA Database**
-
-4.	Create users and manage roles and privileges
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	Query the database using SQL statements
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	Create a calculation view
-
-9.	Grant access to Calculation Views
-
 In this tutorial, you will get to know the tools you need when interacting with your SAP HANA database in SAP HANA Cloud.
-
-> You can follow the steps in this tutorial also by watching this video:
->
-<iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_64dk2ry6/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
->
-> ### About this video
->
-> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know SAP HANA Cloud Central)]
+### Get to know SAP HANA Cloud Central
+
 
 SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud instances. Here you can provision new instances, scale your existing instances, deal with alerts and issues in existing instances, and more.
 
 **How to open SAP HANA Cloud Central**
 
+>It is important to note that these steps are for accessing SAP HANA Cloud Central through Cloud Foundry. It is also possible to use the multi-environment tooling if you have the **SAP HANA Cloud tools (Application)** entitlement. You can then navigate to your subaccount, head to the **Instances and Subscriptions** page, and create an instance for SAP HANA Cloud with the **tools** plan, which you can then access in the **Subscriptions** tab on this page. Read this [blog post](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/) to learn more.
+
 -	In SAP BTP cockpit, in your space where you see your instances, click on **Manage SAP HANA Cloud** at the top right corner of the screen.
 
-    !![BTP Manage SAP HANA Cloud](ss-01-BTP-manage-SAP-HANA-Cloud.png)
+    ![BTP Manage SAP HANA Cloud](ss-01-BTP-manage-SAP-HANA-Cloud.png)
 
 -	SAP HANA Cloud Central will open in a new tab, where you can manage this instance.
 
@@ -102,7 +78,7 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 -	In SAP HANA Cloud Central you can see all your instances. If you want to manage and maintain multiple instances, you can use the filters and search options on the top center area of the screen.
 
-    !![HCC filters](ss-02-HCC filters_resized.png)
+    ![HCC filters](ss-02-HCC-filters.png)
 
 **Manage your instances**
 
@@ -110,15 +86,14 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 -	One of the most important options you can get from here is the **SQL Endpoint** of your instance. To do so, just click **Copy SQL Endpoint**. You will need this for multiple tasks, such as connecting to other systems.
 
-    !![HCC SQL Endpoint](ss-03-HCC-sql-endpoint.gif)
+    ![HCC SQL Endpoint](ss-03-HCC-sql-endpoint.png)
 
 To learn about more options to create and manage instances with SAP HANA Cloud Central, you can refer to the [**SAP HANA Cloud Administration with SAP HANA Cloud Central Guide**](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/LATEST/en-US/48e1b509c9494d61a6f90e7eaa6f225b.html). There, you can also find instructions how to create and manage SAP HANA Cloud instances using the Cloud Foundry command line interface.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get to know SAP HANA Cockpit)]
+### Get to know SAP HANA Cockpit
+
 
 SAP HANA Cockpit is a tool that can be used to **monitor and manage SAP HANA databases**. Through the SAP HANA Cockpit, for example, it is possible to monitor the amount of CPU and storage that is being used in your SAP HANA Cloud instance. Based on this information, you can make important decisions on how to manage your storage and optimize performance.
 
@@ -134,7 +109,7 @@ Another important feature of the SAP HANA Cockpit is **User Management**, where 
 
 **What you can do in SAP HANA Cockpit**
 
-!![HANA Cockpit Overview](ss-04-HANA-cockpit-overview.png)
+![HANA Cockpit Overview](ss-04-HANA-cockpit-overview.png)
 
 In SAP HANA Cockpit, you can monitor…
 
@@ -168,7 +143,7 @@ Furthermore, you can administer and manage…
 
 3.	Then, click on **Open in SAP HANA Cockpit**.
 
-    !![HCC Open HANA Cockpit](ss-05-HCC-open-hana-cockpit.png)
+    ![HCC Open HANA Cockpit](ss-05-HCC-open-hana-cockpit.png)
 
 4.	The SAP HANA Cockpit will open on a new tab. If this is the first time you are accessing it, you will need to enter the credentials of your DBADMIN user.
 
@@ -176,17 +151,16 @@ You can check out the [technical documentation on all details about SAP HANA Coc
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get to know the SAP HANA Database Explorer)]
+### Get to know the SAP HANA Database Explorer
+
 
 SAP HANA Database Explorer is a tool used to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. In the HANA Database Explorer, you can also access the SQL console.
 
 **What you can do in SAP HANA Database Explorer**
 
-!![Generic DBX](ss-06-database-explorer-generic.png)
+![Generic DBX](ss-06-database-explorer-generic.png)
 
 The SAP HANA Database Explorer offers a graphical interface and the SQL console, giving you choices on how you want to access and manage your data. Among the actions you can do in the Database Explorer are:
 
@@ -202,7 +176,7 @@ Whenever you want to view, add or manage any of the items in the catalog, just r
 
 An important part of the SAP HANA Database Explorer is the **Catalog**. Each database on the SAP HANA Database Explorer has its own catalog, via which it is possible to view data, execute SQL commands and manage remote sources, among other tasks.
 
-!![Database Explorer Catalog](ss-07-database-explorer-catalog.png)
+![Database Explorer Catalog](ss-07-database-explorer-catalog.png)
 
 **How to open SAP HANA Database Explorer**
 
@@ -212,7 +186,7 @@ An important part of the SAP HANA Database Explorer is the **Catalog**. Each dat
 
 3.	Then, click on **Open in SAP HANA Database Explorer**.
 
-    !![HCC Open DBX](ss-08-HCC-open-DBX.png)
+    ![HCC Open DBX](ss-08-HCC-open-DBX.png)
 
 4.	The SAP HANA Database Explorer will open on a new tab. If this is the first time you are accessing it, you will need to enter the credentials of your DBADMIN user.
 
@@ -222,10 +196,9 @@ For more information on how to use the SAP HANA Database Explorer, you can also 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get to know SAP Business Application Studio)]
+### Get to know SAP Business Application Studio
+
 
 SAP Business Application Studio is a development environment available for users with SAP HANA Cloud, SAP HANA database. There, you can create your development projects and model your data, including creating calculation views. This is also the tool you can use to build custom applications that connect and make use of your SAP HANA Cloud databases.
 
@@ -245,7 +218,7 @@ Using SAP Business Application Studio is not strictly necessary to use your tria
 
 1.	Go to the SAP BTP Cockpit trial home page.
 
-    !![Trial Home Page Quick Access BAS](ss-10-Trial-home-page-quick-access-BAS.png)
+    ![Trial Home Page Quick Access BAS](ss-10-Trial-home-page-quick-access-BAS.png)
 
 2.	After logging in, click on the **SAP Business Application Studio** button under the **Quick Tool Access** area.
 
@@ -264,13 +237,13 @@ Using SAP Business Application Studio is not strictly necessary to use your tria
 
 2.	Click on **Service Marketplace** on the right side of the screen
 
-    !![BTP Marketplace](ss-11-BTP-marketplace.png)
+    ![BTP Marketplace](ss-11-BTP-marketplace.png)
 
 3.	Scroll down or use the search bar to find **SAP Business Application Studio**.
 
 4.	On the SAP Business Application Studio tile, click on the **three dots** and select **Create** to add a subscription. If you can see the option **Go to Application**, you are already subscribed and can click on this option to open SAP Business Application Studio.
 
-    !![Add BAS in Marketplace](ss-12-add-BAS-marketplace.png)
+    ![Add BAS in Marketplace](ss-12-add-BAS-marketplace.png)
 
 5.	A new tab will open, and you will be able to use the SAP Business Application Studio.
 
@@ -286,14 +259,11 @@ You have completed the third tutorial of this mission! Now you know how to acces
 
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

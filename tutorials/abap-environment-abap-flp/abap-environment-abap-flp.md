@@ -1,7 +1,6 @@
 ---
+parser: v2
 auto_validation: true
-title: Integrate List Report into ABAP Fiori Launchpad
-description: Integrate your list report application into ABAP Fiori launchpad.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 15
@@ -9,25 +8,30 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
+# Integrate List Report into ABAP Fiori Launchpad
+<!-- description --> Integrate your list report application into ABAP Fiori launchpad.
+
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment license.
 - You have created the [Travel App Group](group.abap-env-restful-managed) in a licensed system.
-- You need to have following business role assigned for your business user `SAP_BR_DEVELOPER`.
+- You need to have following business role assigned for your business user `SAP_BR_DEVELOPER` and `SAP_BR_BPC_EXPERT`.
 - You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
 - You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.
+- You need to have business catalog `SAP_CORE_BC_BCT_TRN_MNG_PC` and `SAP_CORE_BC_BCT_TRN_REL_PC` assigned to your user to see the app.
+- You need to [enable spaces layout](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/64a5e1675ce7413791a654d2228a90be.html?locale=en-US&state=TEST&version=2208.502) in SAP Fiori launchpad to see the app tiles, that are added to spaces or pages.
 
-Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
-
-
-## Details
-### You will learn  
-- How to make use of IAM App and business catalog
+## You will learn  
+- How to make use of IAM App and business catalogs
 - How to create business roles
 - How to pin business catalogs
 - How to create spaces and pages
 
+## Intro
+Learn how to integrate your list report application into ABAP Fiori launchpad.
+
 ---
-[ACCORDION-BEGIN [Step 1: ](Make use of existing IAM App and business catalog)]
+### Make use of existing IAM App and business catalog
+
 
   1. Open ADT, select your package `ZTRAVEL_APP_XXX` and open your IAM App `ZTRAVEL_IAM_XXX`. Add the UI5 application ID to your IAM app and publish it.
 
@@ -42,10 +46,9 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
       If you don't have created a business catalog yet, please create one and publish it locally.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create business role)]
+### Create business role
+
 
   1.  Right-click on your **ABAP system** in the project explorer of ADT and select **Properties**. Click **ABAP Development** and copy the **system URL**.
 
@@ -100,12 +103,11 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
 
        ![role8](role8.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create transport request or use default transport request)]
+### Create transport request or use default transport request
 
-  1.  Log in to your system and select the **Export Customizing Transports** tile.
+
+  1. Log in to your system and select the **Export Customizing Transports** tile.
 
      ![transport](transport.png)
 
@@ -156,10 +158,9 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
       ![transport](task4.png)
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 1: Manage launchpad spaces and assign business role)]
+### Alternative 1: Manage launchpad spaces and assign business role
+
 
 Option 1:
 
@@ -188,27 +189,27 @@ Option 1:
 
       ![transport](space4.png)
 
-  6. Select **Transports** to check your transport request and click **Save**.
+  5. Select **Transports** to check your transport request and click **Save**.
 
       ![transport](space5.png)
 
-  7. Go back to the SAP Fiori homepage and select the **Maintain Business Roles** tile.
+  6. Go back to the SAP Fiori homepage and select the **Maintain Business Roles** tile.
 
       ![transport](businessrole.png)
 
-  8. Search for your business role **`BR_Z_TRAVEL_XXX`** and select it.
+  7. Search for your business role **`BR_Z_TRAVEL_XXX`** and select it.
 
       ![transport](businessrole2.png)
 
-  9. Click **Edit** and select **Assigned Launchpad Spaces**.
+  8. Click **Edit** and select **Assigned Launchpad Spaces**.
 
       ![transport](businessrole3.png)
 
- 10. Click **Add**.
+  9. Click **Add**.
 
       ![transport](businessrole4.png)
 
- 11. Select **Use Existing Space** and select your space.
+ 10. Select **Use Existing Space** and select your space.
 
       ![transport](businessrole5.png)
 
@@ -224,10 +225,45 @@ Option 1:
 
       ![transport](businessrole8.png)
 
-[DONE]
-[ACCORDION-END]
+ 14. Open the Manage Launchpad Pages tile.
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 2: Assign and manage launchpad spaces)]
+      ![transport](managespaces.png)
+
+ 15. Select your page `Z_TRAVEL_APP_XXX`.
+
+      ![page](page.png)
+
+ 16. Select **Page Content** and click **Edit**.    
+
+      ![page](page2.png)
+
+ 17. Add a description to your section tile, select your business catalog and click **Add** and **Save**.
+
+      ![page](page3.png)
+
+ 18. Check your result. Click **Page Preview**.
+
+      ![page](page4.png)
+
+ 19. Check the result in the preview.
+
+      ![page](page5.png)
+
+ 20. Select your user and **Settings**.
+
+      ![page](page6.png)
+
+ 21. Select **Spaces and Pages** and check **Use Spaces**.
+
+      ![page](page7.png)
+
+ 22. Select **Travel App XXX** to see your application.
+
+       ![page](page8.png)
+
+
+### Alternative 2: Assign and manage launchpad spaces
+
 
 Option 2:
 
@@ -275,12 +311,46 @@ Option 2:
 
       ![transport](brole9.png)
 
-[DONE]
-[ACCORDION-END]
+ 10. Open the Manage Launchpad Pages tile.
 
-[ACCORDION-BEGIN [Step 5: ](Execute transport task (Optional))]
+      ![transport](managespaces.png)
 
-If you want to execute your transport task, do following:
+ 11. Select your page `Z_TRAVEL_APP_XXX`.
+
+      ![page](page.png)
+
+ 12. Select **Page Content** and click **Edit**.    
+
+      ![page](page2.png)
+
+ 12. Add a description to your section tile, select your business catalog and click **Add** and **Save**.
+
+      ![page](page3.png)
+
+ 13. Check your result. Click **Page Preview**.
+
+      ![page](page4.png)
+
+ 14. Check the result in the preview.
+
+      ![page](page5.png)
+
+ 15. Select your user and **Settings**.
+
+      ![page](page6.png)
+
+ 16. Select **Spaces and Pages** and check **Use Spaces**.
+
+      ![page](page7.png)
+
+ 17. Select **Travel App XXX** to see your application.
+
+       ![page](page8.png)
+
+
+### Release transport task (Optional)
+
+If you want to release your transport task, do following:
 
 1. Select the **Export Customizing Transports** tile.
 
@@ -310,12 +380,34 @@ If you want to execute your transport task, do following:
 
       ![transport](brole16.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Release transport request (Optional)
 
-[VALIDATE_1]
-[ACCORDION-END]
+If you want to release your transport task, do following:
+
+1. Select the **Export Customizing Transports** tile.
+
+       ![transport](brole10.png)
+
+  2. Click **Go**.
+
+       ![transport](brole11.png)
+
+  3. Select your transport request.
+
+      ![transport](brole12.png)
+
+  4. Select your transport task and select execute. For testing select simulate.
+
+      ![transport](brole16.png)
+
+  5. Go back to your transport request, select it and click **Release > Execute** to transport it.
+
+      ![transport](release.png)
+
+### Test yourself
+
+
+
 
 ---

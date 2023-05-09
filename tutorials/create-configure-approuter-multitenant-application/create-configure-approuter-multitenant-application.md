@@ -1,17 +1,18 @@
 ---
-title: Create and Configure the Approuter Application for a Multitenant Application
-description: Use the tenant-aware approuter application in SAP BTP, Kyma runtime.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Create and Configure the Approuter Application for a Multitenant Application
+<!-- description --> Use the tenant-aware approuter application in SAP BTP, Kyma runtime.
+
 ## Prerequisites
 - You have finished the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), or cloned the repository: [btp-kyma-runtime-multitenancy-tutorial](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial) to find the source for both missions.
 
-## Details
-### You will learn
+## You will learn
 - What is SAP Application Router
 - How to create and configure Application Router
 - How to configure Destination for Application Router in Kyma Runtime
@@ -20,7 +21,8 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know SAP Application Router)]
+### Get to know SAP Application Router
+
 
 Each multitenant application has to deploy its own [SAP Application Router (also knows as Approuter)](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/01c5f9ba7d6847aaaf069d153b981b51.html??locale=en-US), and the application router handles requests of all tenants to the application. The application router is able to determine the tenant identifier out of the URL and then forwards the authentication request to the tenant User Account and Authentication (UAA) service and the related identity zone.
 
@@ -28,10 +30,9 @@ When a consumer accesses the application, their consumer tenant calls the multit
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Approuter Application)]
+### Create Approuter Application
+
 
 1. Create a folder `kyma-multitenant-approuter` in the root directory.
 ```Shell / Bash
@@ -56,11 +57,10 @@ cd kyma-multitenant-approuter
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure Route in Approuter Application)]
+### Configure Route in Approuter Application
+
 
 Then you should configure the **routes** in the security descriptor file `xs-app.json` of the application router so that application requests can be forwarded to the multitenant application destination.
 
@@ -79,10 +79,9 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure Destination with ConfigMap)]
+### Configure Destination with ConfigMap
+
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
@@ -112,10 +111,9 @@ data:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Define Deployment)]
+### Define Deployment
+
 
 Define the deployment object by adding the following code snippets in the file `k8s-deployment-approuter.yaml`:
 
@@ -211,10 +209,9 @@ spec:
 status: {}
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Define Service and APIRule)]
+### Define Service and APIRule
+
 
 Now you can create a `Service` and `APIRule` to make the approuter application accessible to the internet.
 
@@ -270,8 +267,7 @@ spec:
 > Replace the placeholder with your subaccount subdomain and cluster domain. Note that the host name of the approuter application must start with your subaccount subdomain so that the application can be redirected to the right authenticator.
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

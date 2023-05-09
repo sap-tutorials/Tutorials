@@ -45,4 +45,7 @@ Thumbs.db
 
 #  validation files  #
 ######################
-rules.vr
+# VSCode specific files
+*.vr
+*.code-workspace
+

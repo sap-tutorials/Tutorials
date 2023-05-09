@@ -1,30 +1,33 @@
 ---
-title: Generate Metrics and Compare Models in SAP AI Core
-description: Explore different ways of logging metrics during training and compare generated models.
+parser: v2
 auto_validation: true
 time: 45
-tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
+# Generate Metrics and Compare Models in SAP AI Core
+<!-- description --> Explore different ways of logging metrics during training and compare generated models.
+
 ## Prerequisites
 - You have an understanding of using data and generating models in SAP AI Core, from [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#)
 
-## Details
-### You will learn
+## You will learn
 - How to log simple metrics on validation data and training data
 - How to log step information along with metrics
 - How to log custom metrics structure
 
+## Intro
 In this tutorial, you'll use SAP AI Launchpad to compare two models that have been generated using SAP AI Core. This tutorial builds on the previous tutorials on house price prediction and ingesting data.
 
 > Important: Comparing models is only available using SAP AI Launchpad, and not the API endpoints. The comparison step is optional.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Starter code)]
+### Starter code
+
 
 Create a folder named `hello-aicore-metrics`. Within it, create a file called `main.py`, and paste the following starter code to this file.
 
@@ -104,10 +107,9 @@ pickle.dump(clf, open(MODEL_PATH, 'wb'))
 
 This Python script contains all of the modifications needed for logging metrics, meaning that you can leave your previous workflows as they are.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add connection)]
+### Add connection
+
 
 Add the following code snippet.
 
@@ -119,10 +121,9 @@ aic_connection = Tracking()
 
 > **CAUTION**: This code snippet is very similar to the code used to connect the SAP AI Core SDK to your local system. However, in this case, it is required to establish a connection within the SAP AI Core execution environment.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add basic metric logging)]
+### Add basic metric logging
+
 
 Add the following snippet to log the number of observations in your dataset.
 
@@ -138,12 +139,11 @@ aic_connection.log_metrics(
 
 After execution, this is shown in SAP AI Launchpad. You can zoom in for details.
 
-!![image](img/ail/basic.png)
+<!-- border -->![image](img/ail/basic.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Step information)]
+### Step information
+
 
 Add the following snippet to store metrics for step information. This snippet is also useful for tracking the metrics on epochs of the training process.
 
@@ -157,12 +157,11 @@ aic_connection.log_metrics(
 
 The variable `i` is already present in your code to pass to the parameter `step=i`.  This is also shown in SAP AI Launchpad. You can zoom in to view.
 
-!![image](img/ail/step.png)
+<!-- border -->![image](img/ail/step.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Attach metrics to generated model)]
+### Attach metrics to generated model
+
 
 Add the following snippet to store metrics for artifact information.
 
@@ -185,16 +184,15 @@ The parameter `value="housepricemodel"` refers to the artifact name, which refer
 
 Your code should resemble:
 
-!![image](img/ail/modelA.png)
+<!-- border -->![image](img/ail/ModelA.png)
 
 After execution, this is shown in SAP AI Launchpad.
 
-!![image](img/ail/modelB.png)
+<!-- border -->![image](img/ail/ModelB.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Custom metrics for model inspection)]
+### Custom metrics for model inspection
+
 
 Add the following snippet to store metrics based on a customized structure.
 
@@ -213,7 +211,7 @@ The variables `r` and `feature_importances` are already created in the starter c
 
 After execution, you can see this in SAP AI Launchpad.
 
-!![image](img/ail/custom.png)
+<!-- border -->![image](img/ail/custom.png)
 
 > ### Permutation Feature Importance
 >
@@ -237,10 +235,9 @@ After execution, you can see this in SAP AI Launchpad.
 > - The method or function used to measure "error" can be customized, with reference to `scikit` package implementation.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add tags for execution meta after training)]
+### Add tags for execution meta after training
+
 
 Add the following snippet to tag your execution. The `tags` are customizable key-values.
 
@@ -255,12 +252,11 @@ aic_connection.set_tags(
 
 After execution, you can see this in SAP AI Launchpad.
 
-!![image](img/ail/tag.png)
+<!-- border -->![image](img/ail/tag.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete files)]
+### Complete files
+
 
 Check your modified `main.py` by comparing it with the following expected `main.py`.
 
@@ -308,7 +304,7 @@ for train_index, val_index in kf.split(train_x):
     # Score on validation data (hold-out dataset)
     val_step_r2 = clf.score(train_x.iloc[val_index], train_y.iloc[val_index])
     # Metric Logging: Step Information
-    aic_connection.metrics.log_metrics(
+    aic_connection.log_metrics(
         metrics = [
             Metric(name= "(Val) Fold R2", value= float(val_step_r2), timestamp=datetime.utcnow(), step=i),
         ]
@@ -458,11 +454,10 @@ spec:
         - "python /app/src/main.py"
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create configuration and execution)]
+### Create configuration and execution
+
 
 Create a configuration using the following values. The values are taken from the workflow from previous steps. For help creating a configuration, see step 11 of [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#).
 
@@ -483,21 +478,20 @@ Attach your registered artifact to `Input Artifact`, by specifying `housedataset
 
 Create an execution from this configuration.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Retrieve metrics)]
+### Retrieve metrics
+
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 In the `ML Operations` app, choose `Executions`. Navigate to your execution and choose the `Metric Resources` tab.
 
-!![image](img/ail/locate.png)
+<!-- border -->![image](img/ail/locate.png)
 
 For metrics tagged with the artifact name, you can also locate the metrics in the **Models** details for the artifact.
 
-!![image](img/ail/artifact.png)
+<!-- border -->![image](img/ail/artifact.png)
 
 [OPTION END]
 
@@ -506,7 +500,7 @@ For metrics tagged with the artifact name, you can also locate the metrics in th
 
 Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
 
-!![image](img/postman/metric.png)
+<!-- border -->![image](img/postman/metric.png)
 
 [OPTION END]
 
@@ -515,6 +509,11 @@ Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executi
 Paste and edit, then execute the following snippet:
 
 ```PYTHON
+tracking_client = Tracking(base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2",
+    auth_url=  aic_service_key["url"] + "/oauth/token",
+    client_id = aic_service_key['clientid'],
+    client_secret = aic_service_key['clientsecret'])
+
 response = tracking_client.query(
     execution_ids = [
         'e1f2169db8760b5d' # list of execution IDs for which to query metrics
@@ -567,20 +566,16 @@ Unnamed: 0: 0.000 +/- 0.000
 
 [OPTION END]
 
-[DONE]
 
-[ACCORDION-END]
+### Compare metrics (optional)
 
-[ACCORDION-BEGIN [Step 11: ](Compare metrics (optional))]
 
 Create two configurations: one with `DT_MAX_DEPTH = 3` and the other with `DT_MAX_DEPTH = 6`, then create executions for both configurations.
 
-!![image](img/ail/compare-1.png)
+<!-- border -->![image](img/ail/compare-1.png)
 
 You can then compare metrics for the executions using the two different configurations.
 
-!![image](img/ail/compare-2.png)
+<!-- border -->![image](img/ail/compare-2.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,22 +1,26 @@
 ---
-title: Pattern Matching Using OpenCypher in SQL
-description: Execute pattern matching queries in SAP HANA Graph using OpenCypher.
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: products>sap-hana
 ---
+
+# Pattern Matching Using OpenCypher in SQL
+<!-- description --> Execute pattern matching queries in SAP HANA Graph using OpenCypher.
 
 ## Prerequisites
  - You completed [Create an SAP HANA Graph Workspace](hana-graph-overview-setup).
 
-## Details
-### You will learn
+## You will learn
   - How to execute OpenCypher pattern matching queries
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](OpenCypher in SAP HANA SQL)]
+### OpenCypher in SAP HANA SQL
+
 OpenCypher is a declarative graph query language for graph pattern matching developed by the OpenCypher Implementers Group.
 
 SAP HANA Graph allows you to use OpenCypher directly in SQL. For more please refer to [online documentation for SAP HANA Cloud](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/2020_04_QRC/en-US/4c3ee700e7a8458baed3f1141d9380f3.html).
@@ -37,10 +41,9 @@ Only matched nodes with `ticket_office` = 'TRUE' have been selected.
 
 ![Ticket Offices](010.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](More examples with OpenCypher)]
+### More examples with OpenCypher
+
 
 Copy the statement and paste it into Cypher's code field.
 
@@ -74,11 +77,10 @@ You selected only pairs of stations where you can go up using a lift, and then g
 
 ![Beginners](030.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Pattern Matching in calculation scenarios in SAP HANA 2.0)]
+### Pattern Matching in calculation scenarios in SAP HANA 2.0
+
 
 > The following functionality is applicable only to SAP HANA 2.0, but not to SAP HANA Cloud!
 
@@ -125,7 +127,6 @@ As well data is selected from that calculation view using the pattern matching.
 
 ![calc view with OpenCypher](040.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ---
