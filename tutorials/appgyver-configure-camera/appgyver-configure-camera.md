@@ -99,3 +99,6 @@ As an example:
 
 ![View results](iphoneapp3.png)
 
+If you can't find a barcode, here's an example:
+
+![Barcode example](barcode.gif)
