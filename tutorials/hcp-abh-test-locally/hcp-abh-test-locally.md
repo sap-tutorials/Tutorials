@@ -8,7 +8,7 @@ time: 20
 tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub ]
 ---
 
-# Test SAP API Business Hub APIs with curl
+# Test SAP Business Accelerator Hub APIs with curl
 <!-- description --> Try out an SAP API locally on your machine.
 
 ## Prerequisites
@@ -20,7 +20,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 - How to use command line tools like curl and jq with REST / OData APIs locally.
 
 ## Intro
-You have already discovered the SAP API Business Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
+You have already discovered the SAP Business Accelerator Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
 
 ---
 
@@ -32,7 +32,7 @@ Go to <https://api.sap.com> and navigate to the [Campaign](https://api.sap.com/a
 
 ### Generate sample API call code
 
-Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP API Business Hub provides you with starter code in a variety of languages and tools for each API.
+Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP Business Accelerator Hub provides you with starter code in a variety of languages and tools for each API.
 
 ![Get/CampaignCollection method](2.png)
 
@@ -52,7 +52,7 @@ Copy the highlighted curl code to the clipboard.
 
 ### Run sample API call code
 
-Paste the content of the clipboard in a terminal or command line window. Hit **Enter** to run the command. It may take a few seconds before data is seen on your screen.
+Paste the content of the clipboard in a terminal or command line window. Hit **Enter** to run the command. Please note that it may take a few seconds before data is seen on your screen.
 
 > You can use `CTRL+C` to stop the command from running.
 
@@ -72,7 +72,6 @@ You can limit the number of results retrieved with the `$top` value provided in 
 You can then switch back to the Code Snippet section, and copy the updated code from the Curl section to paste it into your terminal. When you execute the curl command, and pipe the output into jq again, you should see a nicely formatted list of three campaigns.
 
 ### Add multiple parameters to the API call
-
 Besides the `$top` parameter, you can add multiple parameters to the [Query String](https://en.wikipedia.org/wiki/Query_string) of your API call.
 Now add in a second parameter for `$select`. You only want the `StatusText` and `Status` for the top 3 users. Use the same approach as before - switch to the Parameters section, specify the two values for the `$select` parameter using the drop down menu, then switch back to the Code Snippet section and copy the Curl content again. It should look something like this:
 
