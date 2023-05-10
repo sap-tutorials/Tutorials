@@ -114,7 +114,7 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 6. Repeat the above substeps for the remaining Promotion Pricing services.
 
-After you have created the service key, click the three dot symbol **°°°** next to the name of your service key and choose **View**. This displays the parameters of the service key, which you need to configure the SAP API Business Hub to fill the solution with your data (see highlighted areas in the screenshot). This step is part of the basic tutorial.
+After you have created the service key, click the three dot symbol **°°°** next to the name of your service key and choose **View**. This displays the parameters of the service key, which you need to configure the SAP Business Accelerator Hub to fill the solution with your data (see highlighted areas in the screenshot). This step is part of the basic tutorial.
 
 >Service keys contain authentication- and authorization-related content and have to be handled securely.
 
@@ -128,7 +128,7 @@ You have now successfully set up your SAP Omnichannel Promotion Pricing trial on
 
 ---
 
-## Additional Information
+### Additional Information
 
 * Basic Tutorial: [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario)
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
