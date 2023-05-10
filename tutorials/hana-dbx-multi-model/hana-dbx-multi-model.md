@@ -140,7 +140,7 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the graph viewer settings. The color used to highlight in the image below is #E5F5FC.
+5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a colour. 
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
@@ -294,13 +294,13 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![view table editor](view-table-metadata.png)
 
-7. Select **Open Data** to view the raw data, and select **View Data** on the SHAPE column of a point of interest.
+7. Select **Open Data** to view the raw data, and select **View Spatial Data** on the SHAPE column of a point of interest. You may choose to select one or multiple points of interest.
 
-    ![view data](view-data.png)
+    ![view data](multiple-spatial-data.png)
 
-    The selected location is shown on a map.
+    The selected location(s) is shown on a map. You can view more details about the point of interest by clicking on a map marker.
 
-    ![view data on a map](view-spatial-data-map.png)
+    ![view data on a map](spatial-data-map.png)
 
     >The Leaflet map is not shown in on-premise installs of the SAP HANA database explorer.
 
