@@ -19,7 +19,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP
-- How to upload master data (regular sales prices and promotional rules) with the help of the SAP API Business Hub
+- How to upload master data (regular sales prices and promotional rules) with the help of the SAP Business Accelerator Hub
 - How to view the uploaded master data
 - How to create a calculation request to determine the effective sales price
 
@@ -51,14 +51,14 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
  -->
 
 
-### Create environments in SAP API Business Hub
+### Create environments in SAP Business Accelerator Hub
 
 
-<!-- Now that you have created the service instances and corresponding credentials, you can set up the environments in the SAP API Business Hub for each SAP Omnichannel Promotion Pricing service. -->
-With the service instances and corresponding credentials that you set up (as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup) ), you can set up the environments in the SAP API Business Hub for each SAP Omnichannel Promotion Pricing service.
+<!-- Now that you have created the service instances and corresponding credentials, you can set up the environments in the SAP Business Accelerator Hub for each SAP Omnichannel Promotion Pricing service. -->
+With the service instances and corresponding credentials that you set up (as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup) ), you can set up the environments in the SAP Business Accelerator Hub for each SAP Omnichannel Promotion Pricing service.
 
 ## Data Upload service
-1. Navigate to [SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/package/OPPS/overview). Log on with the same login information you use for your SAP BTP account.
+1. Navigate to [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://api.sap.com/package/OPPS/overview). Log on with the same login information you use for your SAP BTP account.
 
 2. Select **Data Upload**.  
 
@@ -94,16 +94,16 @@ With the service instances and corresponding credentials that you set up (as des
 ![Service Key](v3_Service_Key.png)
 
 
-You have now created the trial environment for the **Data Upload** service in the SAP API Business Hub. Repeat the sub-steps 1-5 for the **Data Access** service and the **Calculation** service, using the credentials from their respective service keys.
+You have now created the trial environment for the **Data Upload** service in the SAP Business Accelerator Hub. Repeat the sub-steps 1-5 for the **Data Access** service and the **Calculation** service, using the credentials from their respective service keys.
 
 
 
 ### Upload master data
 
 
-Having created the trial environments in the SAP API Business Hub, you can now start uploading the master data with the Data Upload service. The uploaded master data serves as the basis for calculating the effective sales price in step 5 of this tutorial.
+Having created the trial environments in the SAP Business Accelerator Hub, you can now start uploading the master data with the Data Upload service. The uploaded master data serves as the basis for calculating the effective sales price in step 5 of this tutorial.
 
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
 ## Upload regular sales price
 
@@ -257,7 +257,7 @@ With this you uploaded the promotional rule "Buy sunglasses and get 40% off" (pr
 
 You can use the **Data Access** service for checking your uploaded data.
 
-Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the SAP API Business Hub](https://api.sap.com/api/OData/resource).
+Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://api.sap.com/api/OData/resource).
 
 ## Check uploaded regular sales price
 
@@ -297,7 +297,7 @@ You can now calculate the effective sales price based on the data you have uploa
 
 **Desired Result**: The effective sales price for the sunglasses should be **6 Euro**: 10 Euro (regular sales price) minus 40% discount, as the customer is eligible for the promotion "Buy sunglasses and get 40% off".
 
-Let's check if this is the case. Navigate to the [Calculation service on the SAP API Business Hub](https://api.sap.com/api/PriceCalculation/resource).
+Let's check if this is the case. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
 
 <!-- border -->![Calculation](v2_Calculation 2.png)
 
@@ -515,16 +515,16 @@ The response should look similar to this:
 
 
 
-## What to Do Next
+### What to Do Next
 
  Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Apply Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
 
-## Additional Information
+### Additional Information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
-* [SAP Omnichannel Promotion Pricing on the SAP API Business Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
+* [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
 * [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
 
 ---
