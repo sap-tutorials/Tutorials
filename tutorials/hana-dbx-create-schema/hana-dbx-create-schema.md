@@ -81,7 +81,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
 3. Add another SAP HANA database connection using USER1. 
 
-    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options.
+    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options. 
+
+    Uncheck the *Verify the server's certificate using the trusted certificate below* checkbox.
 
     ![add new user1 connection](user1-connection0.png)
 
@@ -309,7 +311,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Explore auto-commit
 
-Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
+Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   
+
+The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
 
 The following steps will demonstrate these settings.
@@ -611,6 +615,8 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
       PRTLIB:PRINT_LINE('Rows inserted: ' || val);
     END;
     ```
+
+    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at ![SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20a78d3275191014b41bae7c4a46d835.html).
 
 5. To run this procedure, execute the SQL statement below.
 
