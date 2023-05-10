@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
  - MacOS/Unix instructions: [jq](https://stedolan.github.io/jq/download/) (curl should already be available)
 
 ## You will learn
-- How to use command line tools like curl and jq with REST / OData APIs locally.
+- How to use command line tools like curl and jq with OData / REST APIs locally.
 
 ## Intro
 You have already discovered the SAP Business Accelerator Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
