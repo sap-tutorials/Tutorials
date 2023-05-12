@@ -13,7 +13,7 @@ parser: v2
 <!-- description --> In this tutorial, we will learn how to develop SAP Build Process Automation Action for SAP Cloud ALM.
 
 ## You will learn
-- How to setup SAP Build Process Automation `Action` to trigger the creation of a `SAP Cloud ALM Task` in a remote SAP Cloud ALM tenant.
+- How to setup SAP Build Process Automation **Action** to trigger the creation of a `SAP Cloud ALM Task` in a remote SAP Cloud ALM tenant.
 
 ## Prerequisites
 - You need a user with the "Destination Administrator" authorizations in the SAP BTP sub-account in which SAP Build Process Automation is subscribed.
@@ -201,7 +201,7 @@ Then, you can add your `action` into your Process:
 
 1. In the Process Builder canvas, click the **+** in output connector.
 2. In the list, choose **Actions > Browse library**.
-3. In the action library pop up, search for the actions for SAP Cloud ALM products.
+3. In the action library pop up, search for the actions for SAP Cloud ALM products. 
 
     ![input](spa11.png)
 4. Select the destination variable to use for the selected action   
