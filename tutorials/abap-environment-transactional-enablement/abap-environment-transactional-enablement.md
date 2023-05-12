@@ -63,22 +63,21 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 ### Implement behavior definition
 
   1. Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `ETag` handling. Replace the following coding:
+```ABAP
+unmanaged implementation in class zbp_i_booking_xxx unique;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
 
-    ```ABAP
-    unmanaged implementation in class zbp_i_booking_xxx unique;
-    //strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
-
-    define behavior for ZI_BOOKING_XXX alias booking
-    //late numbering
-    lock master
-    authorization master ( instance )
-    etag master LastChangedAt
-    {
-      create;
-      update;
-      delete;
-    }
-    ```
+define behavior for ZI_BOOKING_XXX alias booking
+//late numbering
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+}
+```
   2. Save and activate.
 
       ![Implement behavior definition](saveandactivate.png)
@@ -104,7 +103,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
   1. In your implementation class `ZBP_I_BOOKING_XXX`, replace your code in local types with following:
 
-    ```ABAP
+```ABAP
     CLASS lhc_buffer DEFINITION.
     * 1) define the data buffer
       PUBLIC SECTION.
@@ -264,7 +263,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       METHOD check_before_save.
       ENDMETHOD.
     ENDCLASS.
-    ```
+```
 
 
   2. Save and activate.
