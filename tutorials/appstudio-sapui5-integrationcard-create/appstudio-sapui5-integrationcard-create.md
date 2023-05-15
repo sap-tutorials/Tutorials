@@ -62,7 +62,7 @@ Integration cards are UI elements which display concise pieces of information in
     <!-- border -->![Image depicting UI Integration Card template option](2-3.PNG)
 
 4. Fill-in the required project details. Use the **Highlight Card** template, which creates an Integration card of type List and select Finish.
->If you are following this tutorial as part of a workshop, please give your card a unique name. Your card name should be `wz<your unique identifier>_products_by_category_card`.
+>If you are following this tutorial as part of a workshop, please give your card a unique name. In this case your card name should be `wz<your unique identifier>_products_by_category_card`.
 
     | Description                                        | Value   
     | :-------------                                     | :-------------
