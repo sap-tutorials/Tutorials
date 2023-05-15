@@ -1,7 +1,8 @@
+
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
 primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
@@ -22,6 +23,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/4680d260114f4683b79dd3dcc4770166.html).  
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the Feedback link shown below.
+> 
 >![Give Feedback](feedback.png)
 
 ---
@@ -117,7 +119,7 @@ There are multiple ways to create a data lake:
 
     ![Credentials](credentials2.png)
 
-2. The SAP HANA Cockpit can also be used to examine and configure users and roles. 
+2. The SAP HANA Cockpit can also be used to [examine and configure users and roles](https://help.sap.com/docs/SAP_HANA_COCKPIT/afa922439b204e9caf22c78b6b69e4f2/401f00cf3c3342749adab1c27e0ba2d8.html). 
 
 
 ### Create tables, views, functions, and procedures with SAP HANA database explorer
@@ -307,7 +309,9 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     * On Microsoft Windows extract the zip and run setup.exe as an administrator.
 
-        ![Run as an Administrator](run-as-administrator.png)
+        <img src="run-as-administrator.png" alt="Run as admin">
+
+        Finish the steps as instructed.
         
         ![data lake client](data-lake-client-install.png)
 
@@ -324,14 +328,14 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
-        Run `setup.bin` which will start either the GUI installer or text based installer.  To use the text based installer, add -i console.
+        Run `setup.bin` which will start either the GUI installer or text based installer.  To use the text based installer, add `-i console` to the command.
 
         ```Shell (Linux)
         cd ebf*
         ./setup.bin
         ```
 
-3.  Specify an install folder such as C:\sap\DLClient or /home/dan/sap/dlclient and install all the features.
+3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.
 
     ![GUI Installer](windows-gui-install.png)
 
@@ -343,7 +347,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 4.  The installation location can be referenced through an environment variable.
 
-  * On Microsoft Windows, in a newly opened command prompt run the following to see the installation location.
+  * On Microsoft Windows, open a new command prompt window and run the following to see the installation location.
 
     ```Shell (Windows)
     ECHO %IQDIR17%
@@ -384,15 +388,18 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.
 
+<br>
 
 ### Connect with the Interactive SQL Client (DBISQL)
 
-
 The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/a373b67884f21015a722c2c0a58b94ad.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
-1. Start the GUI version of DBISQL from the Microsoft Windows Start menu, by browsing to it under SAP > Interactive SQL and double clicking on it, or by entering `dbisql` in a terminal.
+1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. 
 
-    ![start dbisql](dbisql-start-1.png)
+    ![Find Interactive SQL through the Windows start menu](find-dbisql.png)  
+
+    It can also be accessed by entering `dbisql` in the command prompt.
+    ![Open DBISQL through command prompt](dbisql-from-cmd.png) 
 
 2. Specify the connection type.
 
@@ -536,6 +543,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     INSERT INTO HOTEL.ROOM VALUES(11, 'connecting room', 15, 175.00);
     end;
     ```
+
     >
     ```SQL
     set temporary option auto_commit= 'off';
@@ -546,9 +554,10 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     >
     >Autocommit can also be set via the connection settings dialog.
     >
-    >![autocommit setting](autocommit.png)
+    >![autocommit setting](autocommit.png)   
 
-2. Notice that pressing ctrl-space brings up auto complete (GUI mode only).
+
+2. Notice that pressing ctrl-space brings up auto complete (GUI mode only).     
 
     ![auto complete](show-reservations.png)
 
