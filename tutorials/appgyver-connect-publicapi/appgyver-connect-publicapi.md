@@ -3,7 +3,7 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build-apps--enterprise-edition
-author_name: Daniel Wrolewski
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
@@ -25,13 +25,19 @@ To improve this, you need to configure a data source connected to that informati
 
 Open your draft application in the Composer account.
 
-1. Click your **Scan** button, and then click **Data**.
+1. Click your **Scan** button, and then click the **Data** tab.
 
     ![Add data source](add_data_source.png)
 
-2. Click **Add Data Resources – Rest API direct integration**.
+2. Add a connection to a REST API. 
 
-    ![Rest API direct integration](add_data_resource.png)
+    - If you are using SAP Build Apps, then click **SAP Build Apps classic data entities > Create Data Entity**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource.png)
+
+    - If you are using SAP AppGyver Community Edition, click **Add Data Resource**, and then select **REST API direct integration**.
+
+        ![Rest API direct integration](add_data_resource-comm.png)
 
 3. Configure the resource with the following details:
 
@@ -41,9 +47,7 @@ Open your draft application in the Composer account.
     | **Short description** | Data from Open Food Facts API |
     | **Resource URL** | <https://world.openfoodfacts.org/api/v0> |
 
-4. Click **Save**, saving the data resource.
-
-![Enter data resource information](Enter_data_resource.png)
+    ![Enter data resource information](Enter_data_resource.png)
 
 
 ### Configure Get Record data
@@ -56,7 +60,7 @@ You now need to configure which information is taken from the Open Food Facts AP
 
     ![Configure relative path field](Configure_path.png)
 
-3. Click the existing **URL placeholder key**, and then configure the following settings:
+3. Click the existing **URL placeholder**,(`id`) and then configure the following settings:
 
     | Field | Value |
     |-------|-------|
@@ -73,7 +77,7 @@ You now need to configure which information is taken from the Open Food Facts AP
 
 ### Test data sources
 
-1. To now test that the HTTPS is configured and able to fetch information, click **Test**.
+1. To now test that the data resource is configured properly and able to fetch information, click the **Test** tab.
 
     ![Test configuration](test_config.png)
 
@@ -93,7 +97,7 @@ You now need to configure which information is taken from the Open Food Facts AP
 
     ![Click to run test](Run_test.png)
 
-The test now runs, displaying a Test API call response. In this response, you can see information about the confectionary. This includes the product categories, allergen information, and the brand who manufactured the product.
+The test now runs, displaying a test API call response. In this response, you can see information about the product. This includes the product categories, allergen information, and the brand who manufactured the product.
 
 ![View the results](test_results.png)
 
@@ -107,9 +111,9 @@ To do this, click **Set Schema from Response**.
 
 ![Link text e.g., Destination screen](set_schema.png)
 
-Click **Save**.
+Click **Save Data Entity** (bottom right), and then click **Save** (upper right).
 
 ![Link text e.g., Destination screen](save_response.png)
 
-Your draft application is now saved and available in your AppGyver Preview app.
+Your draft application is now saved and available in your SAP Build Apps Preview app.
 

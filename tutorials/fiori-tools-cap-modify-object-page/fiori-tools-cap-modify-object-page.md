@@ -188,17 +188,17 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 2. Now open the page map. To do so, you can either:
 
     - Right-click your application folder and then select **Show Page Map**.
-    - In the menu, select **View > Find Command > Show Page Map**.
+    - In the hamburger menu, select **View > Command Palette > Show Page Map**.
 
     <!-- border -->![Annotation Cursor](t4-annotation-custom-section-start-page-map.PNG)
 
 3. You now see the page structure of your application. On the object page entry, click the pencil button to configure the object page.
 
-    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-configure-object-page.PNG)
+    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-configure-object-page-new.png)
 
-    The internal structure of the object page is shown. In particular the existing sections are listed. Click the **+** button to add a custom section.
+    The internal structure of the object page is shown. In particular the existing sections are listed. Click the **+** button and select **Add Custom Section**.
 
-    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-page-editor-add-section.PNG)
+    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-page-editor-add-section-new.png)
 
 4. In the **Add Custom Section** dialog, modify the content of the fields as outlined in the image below.
 
@@ -210,7 +210,7 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 
     Back in the page map you see the new custom section **Maximum Processing Time**. When you select the new section you will see its parameters on the right part of the UI.
 
-    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-show-new-section.PNG)
+    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-show-new-section-new.png)
 
 You have now finished the creation of the new custom section. Refresh your application and check the new section displayed on the object page.
 
@@ -260,7 +260,7 @@ The flexible column layout allows you to have the list report and the object pag
 
     In the **Property Panel** select the **Flexible Column Layout** and choose the `Mid-Expanded` option for the two column layout.
 
-    <!-- border -->![Annotation Cursor](t4-flexible-column-layout-global-page-settings.PNG)
+    <!-- border -->![Annotation Cursor](t4-flexible-column-layout-global-page-settings-new.png)
 
 2. Refresh the application. Click on one of the items in the list report to open the object page.
 
