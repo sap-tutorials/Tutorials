@@ -309,7 +309,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     * On Microsoft Windows extract the zip and run setup.exe as an administrator.
 
-        ![Run as administrator](run-as-administrator.png)
+        ![Run setup as administrator](run-as-administrator.png)
 
         Finish the steps as instructed.
         
