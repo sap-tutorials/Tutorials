@@ -31,7 +31,7 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v16.15.1.
+If Node.js is installed, the currently installed version is returned, such as v18.16.0.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -160,7 +160,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     >node nodeQuery.js
     >```  
 
-    >```Shell (Linux or Mac)
+    >```Shell (Linux)
     >export DEBUG=*
     >node nodeQuery.js
     >```    
