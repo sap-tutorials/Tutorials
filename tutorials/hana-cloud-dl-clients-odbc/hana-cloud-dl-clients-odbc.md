@@ -44,7 +44,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 5. Select **SAP IQ** and click **Finish**.
 
-    <!-- border -->![New data source](Create-new-data-source-1.png)
+    ![New data source](Create-new-data-source-1.png)
 
 6. Configure the data source.
 

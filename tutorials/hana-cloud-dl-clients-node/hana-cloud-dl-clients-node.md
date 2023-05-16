@@ -160,27 +160,30 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     >node nodeQuery.js
     >```  
 
-    >```Shell (Linux)
+    Linux or Mac
+    
+    >```Shell
     >export DEBUG=*
     >node nodeQuery.js
-    >```    
+    >```  
 
-    > ![debug output](debug-flag.png)
+    > ![debug output](debug-flag.png)  
 
-    > The value of the environment variable DEBUG can be seen and removed with the commands below.
+    > The value of the environment variable DEBUG can be seen and removed with the commands below.  
 
     >```Shell (Microsoft Windows)
     >set DEBUG
     >set DEBUG=
     >set DEBUG
-    >```  
+    >```   
 
-    >```Shell (Linux or Mac)
+    Linux or Mac
+
+    >```Shell (Linux)
     >printenv | grep DEBUG
     >unset DEBUG
     >printenv | grep DEBUG
-    >```
-
+    >```  
 
 ### Create an asynchronous app that uses callbacks
 
@@ -194,7 +197,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
+    ```Shell (Linux)
     pico nodeQueryCallback.js
     ```
 
