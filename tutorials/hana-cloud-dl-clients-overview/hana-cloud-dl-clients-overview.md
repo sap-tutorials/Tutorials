@@ -309,7 +309,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     * On Microsoft Windows extract the zip and run setup.exe as an administrator.
 
-        <img src="run-as-administrator.png" alt="Run as admin">
+        ![Run setup.exe as administrator](run-as-administrator.png)
 
         Finish the steps as instructed.
         
@@ -386,28 +386,23 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     echo $IQDIR17
     ```
 
-    > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.
+    > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
 
-<br>
 
 ### Connect with the Interactive SQL Client (DBISQL)
 
 The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/a373b67884f21015a722c2c0a58b94ad.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
-1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. 
-
-    ![Find Interactive SQL through the Windows start menu](find-dbisql.png)  
-
-    It can also be accessed by entering `dbisql` in the command prompt.
+1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. It can also be accessed by entering `dbisql` in the command prompt.
     ![Open DBISQL through command prompt](dbisql-from-cmd.png) 
 
-2. Specify the connection type.
+1. Specify the connection type.
 
     ![Connection type](dbisql-connection-type.png)
 
     >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
-3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
+2. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
@@ -544,7 +539,6 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     end;
     ```
 
-    >
     ```SQL
     set temporary option auto_commit= 'off';
     INSERT INTO HOTEL.ROOM VALUES(11, 'triple', 7, 235.00);
