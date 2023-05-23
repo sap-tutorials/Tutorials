@@ -2,6 +2,8 @@
 parser: v2
 author_name: Gergana Tsakova
 author_profile: https://github.com/Joysie
+title: Create an Application with SAP Java Buildpack 
+description: Create a simple Spring Boot application and enable services for it, by using SAP Java Buildpack and Cloud Foundry Command Line Interface (cf CLI).
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product-function>sap-btp-cockpit]
@@ -9,11 +11,14 @@ primary_tag: programming-tool>java
 ---
 
 
-# Create a Java Application via Cloud Foundry Command Line Interface
-<!-- description --> Create a simple Java application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
+## You will learn
+  - How to create a Spring Boot Java project
+  - How to create and deploy a simple "Hello World" application
+  - How to run authentication and authorization checks via the XSUAA service
+ 
 
 ## Prerequisites
- - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html)
+ - You have a trial or productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html)
  - You have created a subaccount and a space on Cloud Foundry Environment
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally
  - You have downloaded [`JDK for SapMachine 11`] (https://sap.github.io/SapMachine/) and [installed] (https://github.com/SAP/SapMachine/wiki/Installation) it locally, configuring your `PATH` and `JAVA_HOME` environment variables
@@ -22,14 +27,9 @@ primary_tag: programming-tool>java
  - You have downloaded and installed [Eclipse IDE for Enterprise Java and Web Developers] (https://www.eclipse.org/downloads/packages/)
 
 
-## You will learn
-  - How to create a simple "Hello World" application in Java
-  - How to run authentication checks via XSUAA service
-  - How to run authorization checks by setting XSUAA scopes
-
 
 ## Intro
-This tutorial will guide you through creating and setting up a simple Node.js application by using cf CLI. You will start by building and deploying a web application that returns simple data – a **Hello World!** message, and then invoking this app through another one - a web microservice (application router).
+This tutorial will guide you through creating and setting up a simple Java application by using cf CLI. You will start by creating a Java project via Spring Boot, and then creating a web application that returns simple data – a **Hello World!** message. This simple app will be invoked through a web microservice (application router). Finally, you will set authentication checks and an authorization role to properly access your web application.
 
 ---
 
@@ -55,7 +55,11 @@ In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 4. When prompted, enter your user credentials – the email and password you have used to register your productive SAP BTP account.
 
-> **IMPORTANT**: If the authentication fails, even though you've entered correct credentials, try [logging in via single sign-on] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/e1009b4aa486462a8951c4d499ce6d4c.html?version=Cloud).
+    > **IMPORTANT**: If the authentication fails, even though you've entered correct credentials, try [logging in via single sign-on] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/e1009b4aa486462a8951c4d499ce6d4c.html?version=Cloud).
+
+5. Choose the org name and space where you want to create your application.
+    
+    > If you're using a trial account, you don't need to choose anything. You can use only one org name, and your default space is `dev`.
 
 #### RESULT
 
@@ -65,7 +69,6 @@ Details about your personal SAP BTP subaccount are displayed (API endpoint, user
 
 
 ### Create a Java Project
-
 
 Before creating an application, you need a Java project. For this tutorial, you can easily create one by using Spring Boot.
 
@@ -104,8 +107,6 @@ You have successfully created a basic Java project.
 
 
 
-
-
 ### Complete your Java Project
 
 
@@ -134,7 +135,7 @@ For this part, you need to configure your `HelloWorld` application, add an extra
         JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
     ```
 
-3. Now open your Eclipse IDE.
+3. Now open your Eclipse IDE, in the `Java` perspective.
 
 4. Choose `File` > `Open Projects from File System`, and browse to your `java-tutorial` folder.
 
@@ -142,7 +143,7 @@ For this part, you need to configure your `HelloWorld` application, add an extra
 
     Your `java-tutorial` project is populated in the `Project Explorer`.
 
-6. Navigate to `src\main\java\com\example\javatutorial` and double-click on `HelloWorldApplication.java`.
+6. Navigate to `src\main\java\com.example.javatutorial` and double-click on `HelloWorldApplication.java`.
 
 7. In the `public static void main` class, add the following line: 	`System.out.println("Hello World!");`
 
@@ -207,7 +208,6 @@ Your Java project is complete and your application is ready to be deployed.
 
 ### Deploy your Java application
 
-
 You are in the Eclipse IDE.
 
 
@@ -235,9 +235,9 @@ You are in the Eclipse IDE.
 
 4. When the staging and deployment steps are completed, the `helloworld` application should be successfully started and its details displayed in the command console.
 
-5. Now open a browser window and enter the generated URL of the application (see the route).
+5. Now open a browser window and enter the generated URL of the `helloworld` application (see `routes`).
 
-  For example:  `https://helloworld-1234-noway.cfapps.eu20.hana.ondemand.com`
+  For example:  `https://helloworld-noway-panda.cfapps.eu20.hana.ondemand.com`
 
 #### RESULT
 
@@ -258,6 +258,21 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     {
       "xsappname" : "helloworld",
       "tenant-mode" : "dedicated"
+    }
+    ```
+
+    > **IMPORTANT**: For trial accounts, enter the following additional `oauth2-configuration` code in your `xs-security.json` file:
+    
+    
+    ```JSON
+    {
+      "xsappname" : "helloworld",
+      "tenant-mode" : "dedicated",
+      "oauth2-configuration": {
+        "redirect-uris": [
+            "https://*.cfapps.eu20.hana.ondemand.com/**"
+          ]
+        }
     }
     ```
 
@@ -301,7 +316,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     </head>
     <body>
       <h1>Java Tutorial</h1>
-      <a href="/helloworld/">My Application</a>
+      <a href="/helloworld/">My Java Application</a>
     </body>
     </html>
     ```
@@ -314,7 +329,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     npm init
     ```
 
-    This will walk you through creating a `package.json` file in the `web` folder. Press **Enter** on every step.
+    Press **Enter** on every step. This process will walk you through creating a `package.json` file in the `web` folder. 
 
 8. Now you need to create a directory `web/node_modules/@sap` and install an `approuter` package in it. To do that, in the `web` directory execute:
 
@@ -343,7 +358,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
           [
             {
               "name":"helloworld",
-              "url":"https://helloworld-1234-noway.cfapps.eu20.hana.ondemand.com/",
+              "url":"https://helloworld-noway-panda.cfapps.eu20.hana.ondemand.com/",
               "forwardAuthToken": true
             }
           ]
@@ -351,7 +366,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
       - javauaa
     ```
 
-    > For the `url` parameter, use the generated URL (the `route` value for the `helloworld` application) from the previous step!
+    > For the `url` value, enter **your** generated URL for the `myapp` application
 
 11. In the `web` folder, create an `xs-app.json` file with the following content:
 
@@ -431,7 +446,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 16. Open a new browser tab or window, and enter the generated URL of the `web` application.
 
-    For example:   `https://web-thankfully-5678.cfapps.eu20.hana.ondemand.com`
+    For example:   `https://web-thankfully-fox.cfapps.eu20.hana.ondemand.com`
 
 17. Enter the credentials for your SAP BTP user.
 
@@ -564,7 +579,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
     }
     ```
 
-7. To introduce application roles, open the `xs-security.json` in the `java-tutorial` folder, and add the necessary scope `Display` and role template `Viewer`, as follows:
+7. To introduce an application role, open the `xs-security.json` in the `java-tutorial` folder, and add the necessary scope `Display` and role template `Viewer`, as follows:
 
     ```JSON
     {
@@ -587,6 +602,9 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
         ]
       }
     ```
+
+    > For trial accounts, adjust the code with the `oauth2-configuration` part. 
+
 
 8. Update the XSUAA service. To do that, in the `java-tutorial` directory execute:
 
@@ -633,7 +651,7 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
 
 5. In the `Roles` tab, click the `Role Name` field.
 
-6. Type **Viewer**. From the displayed results select the `Viewer` role that corresponds to your application, and choose `Add`.
+6. Type **Viewer**. From the displayed results, select the `Viewer` role that corresponds to your application, and choose `Add`.
 
 7. Now go to the `Users` tab, and in the `ID` field, enter your e-mail. Then enter the same e-mail in the `E-Mail` field.
 
@@ -659,5 +677,6 @@ Authorization in the SAP BTP, Cloud Foundry environment is also provided by the 
 
 When you try to access again the `helloworld` application through the app router, it will successfully display the **Hello World!** message.
 
+> In order for the new result to take effect immediately, you might need to clear the cache of your browser. Or just open the `web` application URL in a private/incognito browser tab.
 
 ---

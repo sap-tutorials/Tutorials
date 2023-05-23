@@ -4,8 +4,8 @@ author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Set Up Continuous Integration and Delivery for SAP Cloud SDK
@@ -288,7 +288,7 @@ This is a general security risk in setups where Docker containers need to be abl
 This tutorial describes the approach of project "Piper" to setup and maintain your own Jenkins server using the cx-server lifecycle scripts. However, there are also alternatives to that:
 
 - SAP offers the [SAP Cloud Platform Continuous Integration and Delivery](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/618ca03fdca24e56924cc87cfbb7673a.html) which lets you configure and run predefined continuous integration and delivery (CI/CD) pipelines as a service.
-- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions), [Travis CI](https://travis-ci.com/), etc. Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
+- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions) or [Travis CI](https://travis-ci.com/). Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
 
 ### Additional Resources
 

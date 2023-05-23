@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, programming-tool>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>abap-connectivity, products>sap-business-technology-platform, tutorial>license, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -22,6 +22,8 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## Intro
 Always replace `XXX` with your initials or group number.
+
+This tutorial was written for SAP BTP ABAP Environment. However, you should also be able to use it in SAP S/4HANA Cloud Environment in the same way.
 
 ---
 

@@ -527,7 +527,6 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
 ### Use Azure cloud storage for exports and imports of catalog objects (optional)
 
-
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog operation.
 
 1. Log in to the [Microsoft Azure Portal](https://portal.azure.com/).
@@ -616,6 +615,10 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 8. Start the export catalog wizard and export the maintenance table to the storage service.
 
+    ![Export Data Wizard](exportAzureStorage.png)
+
+    Alternatively, you can use a Secret Key as a Credential (optional).
+    
     The Azure Path is of the format:
 
     `<Storage Account Name>:<generated shared access string>@<Container Name>/<File Name>`
@@ -623,10 +626,6 @@ The following steps walk through the process of using Microsoft Azure storage se
     An example string is shown below:
 
     `danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance`
-
-    ![Export Data Wizard](exportAzureStorage.png)
-
-    Alternatively, you can use a Secret Key as a Credential (optional).
 
     ![Secret Key Azure](secretKeyAzure.png)
 
@@ -641,7 +640,7 @@ The following steps walk through the process of using Microsoft Azure storage se
     The equivalent SQL statement is shown below:
 
     ```SQL
-    EXPORT MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
+    EXPORT MAINTENANCE AS PARQUET INTO 'azure://dansblobcont/maintenance/' WITH CREDENTIAL 'Azure';'
     ```
 
 9. Enter the SQL statement below to drop the table.  It will be added back in the next step.

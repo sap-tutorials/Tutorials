@@ -9,10 +9,10 @@ author_profile: https://github.com/raz-korn
 ---
 
 # Create a Data Model and Expose It as a Service
-<!-- description --> Create a capital expenditures data model and expose it via a service, using the low-code capabilities of SAP Business Application Studio.
+<!-- description --> Create a capital expenditures data model and expose it via a service, using the high productivity development capabilities of SAP Business Application Studio.
 
 ## Prerequisites
- - You have access to SAP Business Application Studio and created a Low-Code-Based Full-Stack Cloud Application dev space, as described in [Set Up SAP Business Application Studio for Low-Code Development in the Trial Environment](appstudio-lcap-onboarding-trial).
+ - You have access to SAP Business Application Studio and created a dev space for developing apps using high productivity tools, as described in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial).
 
 ## You will learn
 - How to create a project from scratch
@@ -26,7 +26,7 @@ author_profile: https://github.com/raz-korn
 
 ### Create a project
 
-1. Enter the **Dev Space** you created in [Set Up SAP Business Application Studio for Low-Code Development in the Trial Environment](appstudio-lcap-onboarding-trial).
+1. Enter the **Dev Space** you created in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial).
 
 2. If no project exists in a dev space the **Create Project** dialog box opens. Enter the **Project Name**, for example, `CapitalExpenditures`, and click **Create**.
 
@@ -36,11 +36,11 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![Create Project 2](BAS-Create-Project-1-.png)
 
-3. Wait for the homepage of SAP Business Application Studio for low-code development to load with the new project.
+3. Wait for the homepage of SAP Business Application Studio to load with the new project.
 
     >Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
 
-    >Loading SAP Business Application Studio for low-code development may take some time, especially if it's the first time in a day.
+    >Loading SAP Business Application Studio may take some time, especially if it's the first time in a day.
 
     <!-- border -->![bas lcap loaded](BAS-Create-Project-4-.png)
 
@@ -249,7 +249,7 @@ It is a common practice in software development to test run any change to an app
 
 To test that the service works well, that is, returns data when it is available in the data model, let's add sample data to your project. Sample data is a powerful tool as it allows you to (1) develop an app with no connectivity to a data source; (2) Debug your app.
 
-1. Go back to the browser tab with SAP Business Application Studio for low-code development, and click the **+** of the **Sample Data** tile.
+1. Go back to the browser tab with SAP Business Application Studio, and click the **+** of the **Sample Data** tile.
 
     <!-- border -->![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-1-.png)
 

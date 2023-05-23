@@ -70,8 +70,7 @@ author_profile: https://github.com/ARiesterer
 
         The mock server generates mock data dynamically when you start the application. Note that, when you use dynamic mock data, you cannot rely on the same set of test data always being used.
 
-
-
+&nbsp;
 
 
 ### Test resources within an SAP Fiori elements application
@@ -89,9 +88,9 @@ author_profile: https://github.com/ARiesterer
 
     - `opaTests.qunit.html`
 
-        This is the file that is started when you execute the tests via console command or **Preview Application** (see Step 3 of this tutorial). Within this html-file, the java-script file `Opa.qunit.js` is started.
+        This is the file that is started when you execute the tests via console command or **Preview Application** (see Step 3 of this tutorial). Within this html-file, the java-script file `OpaTests.qunit.js` is started.
 
-    - `Opa.qunit.js`
+    - `OpaTests.qunit.js`
 
         This file imports the page objects and the OPA journeys that you execute. The journeys are started using the `JourneyRunner`, which allows you to define some advanced options related to the OPA configuration (see details about the `JourneyRunner` in chapter 3 of this step).
 
@@ -99,66 +98,74 @@ author_profile: https://github.com/ARiesterer
         sap.ui.require(
             [
                 'sap/fe/test/JourneyRunner',
-                'sap/fe/demo/travellist/test/integration/pages/MainListReport' ,
-                'sap/fe/demo/travellist/test/integration/pages/MainObjectPage',
-                'sap/fe/demo/travellist/test/integration/OpaJourney'
+                'sap/fe/demo/travellist/test/integration/FirstJourney',
+                'sap/fe/demo/travellist/test/integration/pages/TravelList',
+                'sap/fe/demo/travellist/test/integration/pages/TravelObjectPage',
+                'sap/fe/demo/travellist/test/integration/pages/BookingObjectPage'
             ],
-            function(JourneyRunner, MainListReport, MainObjectPage, Journey) {
+            function(JourneyRunner, opaJourney, TravelList, TravelObjectPage, BookingObjectPage) {
                 'use strict';
                 var JourneyRunner = new JourneyRunner({
                     // start index.html in web folder
                     launchUrl: sap.ui.require.toUrl('sap/fe/demo/travellist') + '/test/flpSandbox.html'
                 });
-
+            
                 JourneyRunner.run(
                     {
-                        pages: { onTheMainPage: MainListReport, onTheDetailPage: MainObjectPage }
+                        pages: { 
+                            onTheTravelList: TravelList,
+                            onTheTravelObjectPage: TravelObjectPage,
+                            onTheBookingObjectPage: BookingObjectPage
+                        }
                     },
-                    Journey.run
+                    opaJourney.run
                 );
             }
-        );        
+        );
         ```
 
-        >The `launchUrl:` parameter (see line 12 in the coding fragment above) contains the `/index.html` as a starting page in your file. Please change this to `/test/flpSandbox.html`. This is necessary to start the application within the shell, which allows you to use test functions that are related to the shell controls (see Step 6, chapter 5: Navigate back to the list-report).
+        >The `launchUrl:` parameter (see line 13 in the coding fragment above) contains the `/index.html` as a starting page in your file. Please change this to `/test/flpSandbox.html`. This is necessary to start the application within the shell, which allows you to use test functions that are related to the shell controls (see Step 6, chapter 5: Navigate back to the list-report).
 
 
-      - `OpaJourney.js`
+      - `FirstJourney.js`
 
-        This is a first journey to demonstrate some basic steps within an OPA test. The journey resets the test data, starts the application, checks the list-report shown and loads data into the list-report table. As a last step, the application is closed. This journey is intended as a basic starting point to which you can add your own specific tests for an enhanced test automation.
+        This is a first journey to demonstrate some basic steps within an OPA test. The journey starts the application, checks the list-report shown and loads data into the list-report table. By clicking on a row a navigation to the object-page is triggered and the successful loading of the object-page is checked. As a last step, the application is closed. This journey is intended as a basic starting point to which you can add your own specific tests for an enhanced test automation.
 
         ```javascript
-        sap.ui.define(['sap/ui/test/opaQunit'], function(opaTest) {
-            'use strict';
+        sap.ui.define([
+            "sap/ui/test/opaQunit"
+        ], function (opaTest) {
+            "use strict";
 
             var Journey = {
                 run: function() {
-                    QUnit.module('Sample journey');
+                    QUnit.module("First journey");
 
-                    opaTest('#000: Start', function(Given, When, Then) {
-                        Given.iResetTestData().and.iStartMyApp("travellist-tile");
-                        Then.onTheMainPage.iSeeThisPage();
+                    opaTest("Start application", function (Given, When, Then) {
+                        Given.iStartMyApp("travellist-tile");
+                        Then.onTheTravelList.iSeeThisPage();
                     });
 
-                    opaTest('#1: ListReport: Check List Report Page loads', function(Given, When, Then) {
-                        When.onTheMainPage.onFilterBar().iExecuteSearch();
-                        Then.onTheMainPage.onTable().iCheckRows();
+                    opaTest("Navigate to ObjectPage", function (Given, When, Then) {
+                        // Note: this test will fail if the ListReport page doesn't show any data
+                        When.onTheTravelList.onFilterBar().iExecuteSearch();
+                        Then.onTheTravelList.onTable().iCheckRows();
+
+                        When.onTheTravelList.onTable().iPressRow(0);
+                        Then.onTheTravelObjectPage.iSeeThisPage();
                     });
 
-                    opaTest('#2: Object Page: Check Object Page loads', function(Given, When, Then) {
-                        Then.onTheDetailPage.iSeeThisPage();
-                    });
-
-                    opaTest('#999: Tear down', function(Given, When, Then) {
+                    opaTest("Teardown", function (Given, When, Then) { 
+                        // Cleanup
                         Given.iTearDownMyApp();
                     });
                 }
-            };
+            }
             return Journey;
         });
         ```
 
-        >In line 9 of the coding fragment above, the application is started by using the function `iStartMyApp()`. Please add the name (semantic object and action) as a parameter to the function `iStartMyApp("travellist-tile")`. You can find the name of your application in the file **/webapp/test/flpSandbox.html** in the `applications:` parameter, which should look similar to the one listed below. Line 3 contains the name of the application.
+        >In line 10 of the coding fragment above, the application is started by using the function `iStartMyApp()`. Please add the name (semantic object and action) as a parameter to the function `iStartMyApp("travellist-tile")`. You can find the name of your application in the file **/webapp/test/flpSandbox.html** in the `applications:` parameter, which should look similar to the one listed below. Line 3 contains the name of the application.
 
 
         ```flpSandbox.html
@@ -176,7 +183,7 @@ author_profile: https://github.com/ARiesterer
         ```
 
 
-      - `pages/MainListReport.js`, `pages/MainObjectPage.js`
+      - `pages/TravelList.js`, `pages/TravelObjectPage.js`, `pages/BookingObjectPage.js`
 
         These are the files where the test library is included (see sap.ui.define statement) and where you can implement application-specific actions and assertions.
 
@@ -184,7 +191,7 @@ author_profile: https://github.com/ARiesterer
         sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
             'use strict';
 
-            var AdditionalCustomListReportDefinition = {
+            var CustomPageDefinitions = {
                 actions: {},
                 assertions: {}
             };
@@ -195,14 +202,14 @@ author_profile: https://github.com/ARiesterer
                     componentId: 'TravelList',
                     entitySet: 'Travel'
                 },
-                AdditionalCustomListReportDefinition
+                CustomPageDefinitions
             );
         });
         ```
 
 3. The `JourneyRunner` class
 
-    This class is used to simplify the start of OPA journeys and to control central OPA5 configuration parameters. An instance of the class is created in the file `Opa.qunit.js` (see chapter 2 in this step). The instance defines the application and the page objects, which are used for the OPA test, and the `run` method of the class executes the journey.
+    This class is used to simplify the start of OPA journeys and to control central OPA5 configuration parameters. An instance of the class is created in the file `OpaTests.qunit.js` (see chapter 2 in this step). The instance defines the application and the page objects, which are used for the OPA test, and the `run` method of the class executes the journey.
 
     Please see further options of this class in the SAPUI5 documentation under
 
@@ -210,14 +217,13 @@ author_profile: https://github.com/ARiesterer
     https://sapui5.hana.ondemand.com/#/api/sap.fe.test.JourneyRunner
     ```
 
-
-
+&nbsp;
 
 
 ### Start the tests
 
 
-To start the OPA journey `OpaJourney.js`, you can choose from one of the following options:
+To start the OPA journey `FirstJourney.js`, you can choose from one of the following options:
 
 - Start via Script from the file `package.json`
 
@@ -227,17 +233,17 @@ To start the OPA journey `OpaJourney.js`, you can choose from one of the followi
     ```package.json
     "scripts": {
       ...
-      "int-tests": "fiori run --config ./ui5-mock.yaml --open 'test/integration/opaTests.qunit.html'"
+      "int-test": "fiori run --config ./ui5-mock.yaml --open 'test/integration/opaTests.qunit.html'"
       ...
     }
     ```
     If this entry is available, you can start the tests using the following command from the console.
     ```console
-    npm run int-tests
+    npm run int-test
     ```
     This command starts a server and automatically opens a separate browser tab for the OPA tests.
 
-    You can also start the tests using the application preview by right-clicking the `webapp/` folder of the application and selecting **Preview Application**. In the context menu, choose the option **int-tests**.
+    You can also start the tests using the application preview by right-clicking the `webapp/` folder of the application and selecting **Preview Application**. In the context menu, choose the option **int-test**.
 
 
 - Start server and tests manually
@@ -261,6 +267,8 @@ To start the OPA journey `OpaJourney.js`, you can choose from one of the followi
 
 If you change the OPA journey while the server is running and while the tests are open in a browser tab, a refresh is triggered automatically. To restore the mock data, you need to restart the server and the tests.
 
+&nbsp;
+
 
 ### Documentation for the SAP Fiori elements for OData V4 OPA test library
 
@@ -282,7 +290,7 @@ The test library is documented in the API reference of the SAPUI5 documentation.
     In the example below, the list-report table is loaded by calling function `iExecuteSearch()`. This function actually presses the **Go** button on the list-report to trigger the loading of data. Since this button is part of the filter bar, the access point `onFilterBar()` is called executing the search.
 
     ```Javascript
-    When.onTheMainPage.onFilterBar().iExecuteSearch();
+    When.onTheTravelList.onFilterBar().iExecuteSearch();
     ```
 
 3. The test functions within the SAP Fiori elements for OData V4 test library
@@ -314,7 +322,7 @@ The test library is documented in the API reference of the SAPUI5 documentation.
     Assertions often have a state parameter, which allows you to check for any properties of a UI control. The coding sample below shows the assertion to check the visibility and enablement of a button. The identifier is passed as part of the service and action name.
 
     ```Javascript
-    When.onTheDetailPage.onHeader()
+    When.onTheTravelObjectPage.onHeader()
         .iCheckAction({ service: "com.c_salesordermanage_sd", action: "ChangeOrderStatus"},
                       { visible: true, enabled: false });
     ```
@@ -324,11 +332,11 @@ The test library is documented in the API reference of the SAPUI5 documentation.
     When you call several functions that belong to the same UI area, the functions can be chained to ease readability. In the example below, the following assertions are executed on the object-page:
 
     - in the header the **Edit** and the **Change Order Status** buttons are checked
-    - with `.and.then.`, the control returns to the object-page (`onTheDetailPage`) and a local test function `iSeeFacetActionButton()`, which is not part of the API, is called
+    - with `.and.then.`, the control returns to the object-page (`onTheTravelObjectPage`) and a local test function `iSeeFacetActionButton()`, which is not part of the API, is called
     - in the footer area, the **Save** button is checked
 
     ```Javascript
-    When.onTheDetailPage
+    When.onTheTravelObjectPage
       .onHeader()
         .iCheckEdit({ visible: true, enabled: false })
         .and.iCheckAction({ service: "com.c_salesordermanage_sd", action: "ChangeOrderStatus"},
@@ -339,13 +347,15 @@ The test library is documented in the API reference of the SAPUI5 documentation.
             .iCheckSave({ visible: true, enabled: true })
     ```
 
+&nbsp;
+
 
 ### Enhancing the OPA journey - testing the list-report
 
 
 Steps 5 and 6 of this tutorial demonstrate the adoption of the SAP Fiori elements for OData V4 OPA test library.  
 
-The OPA test journey available in file `OpaJourney.js` is just a starting point for you to enhance the tests for the list-report and the object-page. This journey currently starts the application after the test data is restored. Then, the list-report table is loaded and a function checks whether data available in the table. As a last step, the application is closed.
+The OPA test journey available in file `FirstJourney.js` is just a starting point for you to enhance the tests for the list-report and the object-page. This journey currently starts the application and loads the list-report table. Then, a function checks whether data is available in the table. A navigation to the object-page is executed before the application is closed in the last step.
 
 In the following chapters, you will add further tests for the list-report to get to know some typical operations on the UI objects needed to do integration testing. The tests are applied to the application's list-report, as shown in the screenshot below.
 
@@ -357,9 +367,9 @@ In the following chapters, you will add further tests for the list-report to get
     You can use the test function `iCheckRows()` to check whether data has been loaded in the table. By simply passing a constant value as the only parameter, you can check that the correct number of records is loaded. Enhance the existing assertion to pass the expected number of loaded records as a parameter. In the example below, 5 records are expected.
 
     ```Javascript
-    opaTest('#1: ListReport: Check List Report Page loads', function(Given, When, Then) {
-        When.onTheMainPage.onFilterBar().iExecuteSearch();
-        Then.onTheMainPage.onTable().iCheckRows(5);
+    opaTest('Navigate to ObjectPage', function(Given, When, Then) {
+        When.onTheTravelList.onFilterBar().iExecuteSearch();
+        Then.onTheTravelList.onTable().iCheckRows(5);
     });
     ```
 
@@ -367,7 +377,7 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      Then.onTheMainPage.onTable()
+      Then.onTheTravelList.onTable()
           .iCheckRows(5)
           .and.iCheckRows({ "Travel": "2" });
     });
@@ -377,7 +387,7 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      Then.onTheMainPage.onTable()
+      Then.onTheTravelList.onTable()
           .iCheckRows(5)
           .and.iCheckRows({ "Travel": "2" })
           .and.iCheckRows({ "Customer": "Ryan (594)" });
@@ -390,10 +400,10 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      When.onTheMainPage.onFilterBar()
+      When.onTheTravelList.onFilterBar()
           .iChangeFilterField("Status", "A")
           .and.iExecuteSearch();
-      Then.onTheMainPage.onTable()
+      Then.onTheTravelList.onTable()
           .iCheckRows(1);
     });
     ```
@@ -405,10 +415,10 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      When.onTheMainPage.onFilterBar()
+      When.onTheTravelList.onFilterBar()
           .iChangeFilterField("Status", "", true)
           .and.iExecuteSearch();
-      Then.onTheMainPage.onTable().iCheckRows(5);
+      Then.onTheTravelList.onTable().iCheckRows(5);
     });
     ```
 
@@ -420,7 +430,7 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      When.onTheMainPage.onTable()
+      When.onTheTravelList.onTable()
           .iSelectRows({ "Customer": "Ryan (594)" })
           .and.iExecuteDelete();
     });
@@ -438,10 +448,10 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      When.onTheMainPage.onTable()
+      When.onTheTravelList.onTable()
           .iSelectRows({ "Customer": "Ryan (594)" })
           .and.iExecuteDelete();
-      When.onTheMainPage.onDialog().iConfirm();
+      When.onTheTravelList.onDialog().iConfirm();
     });
     ```
 
@@ -456,19 +466,11 @@ In the following chapters, you will add further tests for the list-report to get
 
     ```Javascript
     ...
-      When.onTheMainPage.onTable().iPressRow({ "Customer": "Prinz (608)" });
+      When.onTheTravelList.onTable().iPressRow({ "Customer": "Prinz (608)" });
     });
     ```
 
-    The next test chapter in the journey `(#2: Object Page: Check Object Page loads)` still contains a check for the list-report as the first test. This currently leads to an error now, since the navigation to the object-page is already done and the list-report is not visible anymore. To fix this, change the page object for the list-report `onTheMainPage` to the one for the object-page `onTheDetailPage`.
-
-    ```Javascript
-    opaTest('#2: Object Page: Check Object Page loads', function(Given, When, Then) {
-        Then.onTheDetailPage.iSeeThisPage();
-    });
-    ```
-
-
+&nbsp;
 
 
 ### Testing the object-page
@@ -484,7 +486,7 @@ The object-page contains further UI objects you can test using OPA tests. There 
 
     ```Javascript
     ...
-      Then.onTheDetailPage
+      Then.onTheTravelObjectPage
           .iSeeThisPage()
           .and.onHeader().iCheckTitle("Business Trip for Christine, Pierre")
           .and.iCheckEdit({ visible: true, enabled: true });
@@ -501,7 +503,7 @@ The object-page contains further UI objects you can test using OPA tests. There 
 
     ```Javascript
     ...
-      Then.onTheDetailPage
+      Then.onTheTravelObjectPage
           .iSeeThisPage()
           .and.onHeader().iCheckTitle("Business Trip for Christine, Pierre")
           .and.iCheckEdit({ visible: true, enabled: true })
@@ -555,8 +557,8 @@ The object-page contains further UI objects you can test using OPA tests. There 
 
     ```Javascript
     ...
-      When.onTheDetailPage.iGoToSection("Bookings");
-      Then.onTheDetailPage.onTable({ property: "_Booking" }).iCheckRows({ "Airline": "Sunset Wings (SW)"}, 4);
+      When.onTheTravelObjectPage.iGoToSection("Bookings");
+      Then.onTheTravelObjectPage.onTable({ property: "_Booking" }).iCheckRows({ "Airline": "Sunset Wings (SW)"}, 4);
     });
     ```
 
@@ -574,27 +576,27 @@ The object-page contains further UI objects you can test using OPA tests. There 
 
     ```Javascript
     ...
-      When.onTheDetailPage.iGoToSection("General Information");
-      When.onTheDetailPage.onHeader().iExecuteEdit();
-      When.onTheDetailPage.onForm({ section: "GeneralInfo", fieldGroup: "Dates" }).iChangeField({ property: "EndDate" }, "Aug 31, 2021");
-      When.onTheDetailPage.onFooter().iExecuteSave();
+      When.onTheTravelObjectPage.iGoToSection("General Information");
+      When.onTheTravelObjectPage.onHeader().iExecuteEdit();
+      When.onTheTravelObjectPage.onForm({ section: "GeneralInfo", fieldGroup: "Dates" }).iChangeField({ property: "EndDate" }, "Aug 31, 2021");
+      When.onTheTravelObjectPage.onFooter().iExecuteSave();
       Then.iSeeMessageToast("Object saved.");
-      Then.onTheDetailPage.onForm({ section: "GeneralInfo", fieldGroup: "Dates" }).iCheckField({ property: "EndDate" }, { value: "Aug 31, 2021" });
+      Then.onTheTravelObjectPage.onForm({ section: "GeneralInfo", fieldGroup: "Dates" }).iCheckField({ property: "EndDate" }, { value: "Aug 31, 2021" });
     });
     ```
 
 5. Navigate back to the list-report
 
-    As a last step, you will navigate back from the object-page to the list-report. You can do this by calling the shell function `iNavigateBack()`, which just presses the back button of the shell. To be able to call this function, you must have  started the application within SAP Fiori launchpad (see Step 2, chapter 2: Files within the test folders). After navigating back, you again check the list-report using test function `onTheMainPage.iSeeThisPage()`.
+    As a last step, you will navigate back from the object-page to the list-report. You can do this by calling the shell function `iNavigateBack()`, which just presses the back button of the shell. To be able to call this function, you must have  started the application within SAP Fiori launchpad (see Step 2, chapter 2: Files within the test folders). After navigating back, you again check the list-report using test function `onTheTravelList.iSeeThisPage()`.
 
     ```Javascript
     ...
       When.onTheShell.iNavigateBack();
-      Then.onTheMainPage.iSeeThisPage();
+      Then.onTheTravelList.iSeeThisPage();
     });
     ```
 
-
+&nbsp;
 
 ---
 

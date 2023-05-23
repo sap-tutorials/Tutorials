@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Adrian Plata
-author_profile: https://github.com/aplata-sap
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: software-product>sap-hana\,-express-edition
 tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
@@ -88,7 +88,7 @@ sudo docker image rm alpine -f
 ### Download the SAP HANA, express edition Image from the Docker Library
 
 
-Go to  [https://hub.docker.com/r/saplabs/hanaexpress](https://hub.docker.com/r/saplabs/hanaexpress).
+Go to  [https://hub.docker.com/u/saplabs](https://hub.docker.com/u/saplabs). Select hanaexpress.
 
 Copy the Docker pull address. Here's an example:
 

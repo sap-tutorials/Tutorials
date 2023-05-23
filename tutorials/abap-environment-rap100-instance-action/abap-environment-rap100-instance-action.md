@@ -12,8 +12,9 @@ author_profile: https://github.com/mervey45
 <!-- description --> Enhance the business object behavior using instance action with SAP BTP ABAP environment.
 
 ## Prerequisites
-- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
-- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
+- You need to have access to an SAP BTP, ABAP environment, or SAP S/4HANA Cloud, ABAP environment or SAP S/4HANA (release 2021 or higher) system.
+For example, you can create [free trial user on SAP BTP, ABAP environment](abap-environment-trial-onboarding).
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap) on the latest Eclipse© platform.
 
 ## You will learn  
   - How to define actions

@@ -21,7 +21,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## You will learn
   - How to create connection between a cloud system and a SAP BTP ABAP environment system.
-  - How to consume an Event.
+  - How to consume an Event. 
 
 ## Intro
 >Always replace `####` with your initials or group number.
@@ -84,7 +84,7 @@ Here you will create a communication arrangement to connect your S/4 system with
 
 Now you need to choose your outbound topic like create, update, etc. And afterwards you can download the created `.json` file. This specification file contains all metadata of the event like how the payload looks like, what kind of types are there, etc.
 
-  1. Search for **Enterprise Event Enablement** App and open it.
+  1. Search for **Enterprise Event Enablement - Configure Channel Binding** App and open it.
 
     ![app](3-1.png)
 
@@ -379,7 +379,7 @@ In this section you will create a communication scenario for the previously gene
 
   Now you need to choose a subscription in your channel to specify in which queue you should get the event message.
 
-  1. In the Fiori launchpad search for **Enterprise Event Enablement** App and open it.
+  1. In the Fiori launchpad search for **Enterprise Event Enablement - Configure Channel Binding** App and open it.
 
     ![Enterprise](6-4.png)
 
