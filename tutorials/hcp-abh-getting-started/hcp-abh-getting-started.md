@@ -27,7 +27,7 @@ In your browser, open [SAP Business Accelerator Hub](https://api.sap.com/).
 
 <!-- border -->![SAP Business Accelerator Hub page](1.png)
 
-You can explore products, business processes as well as different categories of assets, along with partner and featured content. Choose Explore for quick access to the various sections of the SAP Business Accelerator Hub.
+You can explore products, business processes as well as different categories of assets, along with partner and featured content. Choose **Explore** for quick access to the various sections of the SAP Business Accelerator Hub.
 
 ### Explore API content
 On the SAP Business Accelerator Hub homepage, choose **Categories**.
