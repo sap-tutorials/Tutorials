@@ -19,7 +19,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 ## You will learn
 - How to use command line tools like curl and jq with REST / OData APIs locally.
 
-## Intro
+## Introduction
 You have already discovered the SAP Business Accelerator Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST and OData APIs locally on your machine.
 
 ---
