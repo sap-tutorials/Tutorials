@@ -201,7 +201,7 @@ public class OrdersService implements EventHandler {
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -281,7 +281,7 @@ Next, let's add a method to the `OrdersService` Java class to calculate the `net
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CqnService.EVENT_READ, CdsService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
     public void calculateNetAmount(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -368,7 +368,7 @@ Finally, add a method to the `OrdersService` Java class to calculate the `total`
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CqnService.EVENT_READ, CdsService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
     public void calculateTotal(List<Orders> orders) {
         for (Orders order : orders) {
             // calculate net amount for expanded items
