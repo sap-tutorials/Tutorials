@@ -269,7 +269,7 @@ This step will add an additional executor to the command that can connect to a S
 
     ![Output value](manual-trigger-command-sql.png)
 
-The above step demonstrates how the provided [SQL Statement](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/024ff1ff1c46465f838c6faf655a9f0a.html) command can be used. Its output was passed into a Python command where the result could be further processed. The next step is an example to execute SQL statements directly in the Python command.   
+The above step demonstrates how the provided [SQL Statement](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/024ff1ff1c46465f838c6faf655a9f0a.html) command can be used. Its output was passed into a Python command, where the result could be further processed. The next step is an example to execute SQL statements directly in the Python command.   
 
 
 
