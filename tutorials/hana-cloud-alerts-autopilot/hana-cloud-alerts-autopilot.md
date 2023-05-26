@@ -53,7 +53,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![Assign Admin Role](admin-role.png)
 
-    For additional details see [Permissions and Roles](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/e4b6193a71354aa5854c2c5dc1f4325f.html).
+    For additional details, see [Permissions and Roles](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/e4b6193a71354aa5854c2c5dc1f4325f.html).
 
 3. Once the SAP Automation Pilot service has been created, open its application.  
 
@@ -61,11 +61,13 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     > If you receive a permission error, you may need to log out and log in again for the role assigned in the previous step to take effect.
 
-4. Notice that it provides a set of catalogs containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.  Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Own catalogs are those that are user created and contain user created commands and inputs.  Catalogs provide a way to group a collection of related commands and inputs.
+4. Notice the two sections for catalogs (My Catalogs and Provided Catalogs) containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.
+
+    Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Those in My Catalogs are catalogs that are user-created and contain the commands and inputs they create.  Catalogs provide a way to group a collection of related commands and inputs.
 
     ![Provided catalogs](provided-catalogues.png)
 
-    >Commands can also be scheduled.  An example may be to schedule the starting and stopping of a database instance.  
+    >Commands can also be scheduled.  One example may be to schedule the starting and stopping of a database instance.  
 
 5. It is possible to create commands using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
 
@@ -89,7 +91,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![command input](command-input.png)
 
-9. Select **`welcomeScriptExecutor`**.
+9.  Select **`welcomeScriptExecutor`**.
 
     ![Executor](executor.png)
 
@@ -111,12 +113,15 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![Trigger command](trigger-command.png)
 
-11. Executed commands can be viewed under Executions.
+11. Executed commands can be viewed under the Executions tab. Options to filter Executions include ID, Owner, Status, and Start periods.
 
     ![Executions](executions.png)
 
-12. The output of the successfully run command can be viewed.
+12. Under Output Values, click `Show` to view the output of the successfully run command.
+    
+    ![Show button for output](click-on-output-values.png)
 
+    The output will appear in a pop-up.  
     ![Output](output.png)
 
     This value is coming from the output of the `welcomeScriptExecutor` whose base command `ExecuteScript` has a parameter named output.
@@ -140,7 +145,7 @@ This step will create a catalog that contains a command and an input.  The input
     | Label | Value |
     | -------- | ----- |
     | Name | `ResizeHCDB` |
-    | Display name | Resize SAP HANA Cloud Database |
+    | Display name | `Resize SAP HANA Cloud Database` |
 
 2. Create an input named `BTPTechnicalUser` in the just created catalog.
 
@@ -156,7 +161,7 @@ This step will create a catalog that contains a command and an input.  The input
 
     ![input with keys](input.png)
 
-    >Note these credentials will be used by a Cloud Foundry command to return the details of a SAP HANA database service.  Ensure the user can log in successfully to a site such as [SAP Community](https://community.sap.com/) and not have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.  Additional details on creating a technical user can be found at [Creating a Technical User for Cloud Platform Integration](https://blogs.sap.com/2018/08/17/creating-a-technical-user-for-cloud-platform-integration/).
+    >Note these credentials will be used by a Cloud Foundry command to return the details of a SAP HANA database service.  Ensure the user can log in successfully to a site such as [SAP Community](https://community.sap.com/) and **not** have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.  Additional details on creating a technical user can be found at [Creating a Technical User for Cloud Platform Integration](https://blogs.sap.com/2018/08/17/creating-a-technical-user-for-cloud-platform-integration/).
 
     >![space members](space-members.png)
 
@@ -165,8 +170,8 @@ This step will create a catalog that contains a command and an input.  The input
     | Key Name | Type | Sensitive |
     | -------- | ----- | --- |
     | `alertJSON` | object | no |
-    | password | String | yes |
-    | user | String | no |
+    | `password` | String | yes |
+    | `user` | String | no |
 
     ![new command with inputs](command.png)
 
@@ -191,7 +196,7 @@ This step will create a catalog that contains a command and an input.  The input
     | -------- | ----- |
     | Command | `cf-sapcp:GetCfServiceInstance:1` |
     | Alias | `getHANACloudDBDetails` |
-    | `Automap Parameters` | `true` |
+    | Automap Parameters | `true` |
 
     ![Add an executor](getHANACloudDBDetails.png)
 
@@ -211,9 +216,9 @@ This step will create a catalog that contains a command and an input.  The input
     | -------- | ----- |
     | org | `$(.execution.input.alertJSON.resource.tags.organizationId)` |
     | region | `$(.execution.input.alertJSON.region)` |
-    | `serviceInstance` | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
+    | serviceInstance | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
     | space | `$(.execution.input.alertJSON.resource.tags.spaceId)` |
-    | `includeParameters` | `true` |
+    | includeParameters | `true` |
 
     > For additional details on the use of the $(...) used above, see [Dynamic Expression](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/22621f87e7574f9e9fd1b1b95fe7a61d.html).
 
@@ -242,11 +247,11 @@ This step will create a catalog that contains a command and an input.  The input
 
 This step will configure the SAP Alert Notification Service to invoke the previously created command when a database alert is received.  
 
-1. Create a new service account named `AutoPi` with **Execute** permission.
+1. Create a new service account named `AutoPi` with **Execute** permission and **Basic** Authentication.
 
     ![service account](service-account.png)
 
-    Save the username and password as they will be required in sub-step 3.
+    **Save the username and password** as they will be required in sub-step 3.
 
     This username and password can be used by another service such as the SAP Alert Notification Service to trigger an execution of a command.
 
@@ -258,7 +263,7 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 
     | Tab Name | Label | Value |
     | -------- | ----- | --- |
-    | General | Trigger Type | Alert Notification |
+    | General | Trigger Type | `Alert Notification` |
     | General | Command | `ResizeHANACloudStorage` |
     | General | Input References | `BTPTechnicalUser` |
     | Mapping | Map Event to Command Input Key | `alertJSON` |
@@ -275,11 +280,11 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 
     | Label | Value |
     | -------- | ----- |
-    | Action Type | SAP Automation Pilot |
+    | Action Type | `SAP Automation Pilot` |
     | Name | `Auto_Pilot_Resize_Command` |
-    | Automation Pilot URL | value from sub-step 2 |
-    | Username | value from sub-step 1 |
-    | Password | value from sub-step 1 |
+    | Automation Pilot URL | *value from **sub-step 2*** |
+    | Username | *value from **sub-step 1*** |
+    | Password | *value from **sub-step 1*** |
 
 4. Create three new conditions that will be used to match a create event of a high test alert.
 
@@ -289,31 +294,31 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 
     | Label | Value |
     | -------- | ----- |
-    | Name | HANA-Test-Alert |
+    | Name | `HANA-Test-Alert` |
     | Condition | `eventType` Is Equal To `HDBTestAlert` |
 
     | Label | Value |
     | -------- | ----- |
-    | Name | Severity-ERROR |
-    | Condition | severity Is Equal To ERROR |
+    | Name | `Severity-ERROR` |
+    | Condition | `severity` Is Equal To `ERROR` |
 
     | Label | Value |
     | -------- | ----- |
-    | Name | ANS-Status-CREATE |
-    | Condition | `tags.ans:status` Is Equal To CREATE |
+    | Name | `ANS-Status-CREATE` |
+    | Condition | `tags.ans:status` Is Equal To `CREATE` |
 
     ![create condition dialog](condition.png)
 
 
-5. Update the conditions and action of an Alert Notification Service subscription such as the one created in step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) to use the conditions and action just created.
+5. Update the conditions and action of an Alert Notification Service subscription, such as the one created in step 5 of the [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) tutorial to use the newly created conditions and action.
 
     <!-- border -->![action added to subscription](ans-subscription-updated.png)
 
-    >For the purposes of this example, to make it easy to trigger, the condition matches `HDBTestAlert` rather than `HDBDiskUsage`.  Additional details can be found at [HDB Test Alert](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/8e2f22048df24d1b81cb2c05ce637958.html).
+    >For the purpose of this example, the condition matches `HDBTestAlert` rather than `HDBDiskUsage` to make it easy to trigger.  More details can be found at [HDB Test Alert](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/8e2f22048df24d1b81cb2c05ce637958.html).
 
     >---
 
-    >Note, that multiple alerts will be triggered.  For example, alerts are sent with a status of  CREATE, UPDATE, or CLOSE.  Some alerts also have different thresholds or severity values such as ERROR, WARNING, or NOTICE.  See also [Alerts in SAP HANA Cloud](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/8eca57e7e82e4b788246b6d9db020937.html).
+    >Note that multiple alerts will be triggered.  For example, alerts are sent with a status of  CREATE, UPDATE, or CLOSE.  Some alerts have different thresholds or severity values such as ERROR, WARNING, or NOTICE.  See also [Alerts in SAP HANA Cloud](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/8eca57e7e82e4b788246b6d9db020937.html).
 
 
 6. In the SAP HANA database explorer, trigger the test alert.
@@ -407,7 +412,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
     | -------- | ----- |
     | Command | `scripts-sapcp:ExecuteScript:2` |
     | Alias | `calculateNewStorageSize` |
-    | `Automap Parameters` | `true` |
+    | Automap Parameters | `true` |
 
 2. Select the newly created executor and choose to edit its parameters.
 
@@ -433,7 +438,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     ![STDIN](stdin.png)
 
-    With the above changes, the command will take as its input through STDIN the JSON data passed from the alert containing the current storage size of the SAP HANA database instance and will write out a JSON string that indicates a new size.
+    With the above changes, the command will take (as its input through STDIN) the JSON data passed from the alert containing the current storage size of the SAP HANA database instance. It will also write out a JSON string that indicates a new size.
 
 3. Select **output**, click on **Edit**, and then set it's value to `$(.calculateNewStorageSize.output.output[0])`.
 
@@ -457,7 +462,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
     | -------- | ----- |
     | Command | `cf-sapcp:UpdateCfServiceInstance:1` |
     | Alias | `resizeHANADBStorageSize` |
-    | `Automap Parameters` | `true` |
+    | Automap Parameters | `true` |
 
 6. Select the newly created executor and choose to edit its parameters.
 
@@ -465,12 +470,12 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     | Parameter Name | Value |
     | -------- | ----- |
-    | `org` | `$(.execution.input.alertJSON.resource.tags.organizationId)` |
-    | `region` | `$(.execution.input.alertJSON.region)` |
-    | `serviceInstance` | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
-    | `space` | `$(.execution.input.alertJSON.resource.tags.spaceId)` |
-    | `deadline` | 30 |
-    | `parameters` | `$(.calculateNewStorageSize.output.output[0])` |
+    | org | `$(.execution.input.alertJSON.resource.tags.organizationId)` |
+    | region | `$(.execution.input.alertJSON.region)` |
+    | serviceInstance | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
+    | space | `$(.execution.input.alertJSON.resource.tags.spaceId)` |
+    | deadline | `30` |
+    | parameters | `$(.calculateNewStorageSize.output.output[0])` |
 
 7. In the SAP HANA database explorer, trigger the test alert.
 
@@ -478,17 +483,22 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
     CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
     ```
 
-8. Examine the completed execution.
+8. Examine the completed execution. Click **Show** to view the output value. 
 
     ![execution finished](execution-finished.png)
+    
+    The new storage size is displayed.
+
+    ![new storage size pop-up](output-160.png)
 
 9. The updated storage size will also be visible in SAP HANA Cloud Central.
 
     ![SAP HANA Cloud Storage](sap-hana-cloud-central.png)
 
-    >Note that there may be restrictions on how often an instance can have its storage resized within a period of time and there may be downtime required.  For additional details see [Change the Size of a SAP HANA Database Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/5f4823c45d654d1da28682f03f58ccf7.html).
+    >Note that there may be restrictions on how often an instance can have its storage resized within a period of time. There may be downtime required.  For additional details see [Change the Size of a SAP HANA Database Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/5f4823c45d654d1da28682f03f58ccf7.html).
 
-10. Now that the test of this command was successful using the `HDBTestAlert`, either disable the action in the subscription in the SAP Alert Notification Service or change the condition in the subscription to use `HDBDiskUsage`.  Additional details on this alert can be found at [HDB Disk Usage](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/807a9f0021354fcc856cbf29cb4f7f18.html).  By default the disk usage alert will create an alert with severity ERROR on 98 % disk usage, which then triggers a storage increase of 40 GB.
+10. Now that the test of this command was successful using the `HDBTestAlert`, disable the action in the subscription in the SAP Alert Notification Service *or* change the condition in the subscription to use `HDBDiskUsage`.    
+Additional details on this alert can be found at [HDB Disk Usage](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/807a9f0021354fcc856cbf29cb4f7f18.html).  By default, the disk usage alert will create an alert with severity ERROR on 98 % disk usage, which then triggers a storage increase of 40 GB.
 
     ![update event type](event-type-hdbdiskusage.png)
 
