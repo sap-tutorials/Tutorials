@@ -41,7 +41,7 @@ From the products service that you created in the previous tutorial, we just wan
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE \
+    -DarchetypeVersion=RELEASE -DjdkVersion=11 \
     -DgroupId=com.sap.cap -DartifactId=bookstore
     ```
 

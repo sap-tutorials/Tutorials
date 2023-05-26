@@ -196,7 +196,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![CAP Service successful](cap_successful.png)
 
-1. Finally change the ULR path to `/interaction_items/webapp/index.html`. You are now testing the Fiori free style application from the previous tutorial with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
+1. Finally change to the `Interaction_Items` from the test page. You are now testing with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
 
     ![Fiori with authentication](fiori_with_authentication.png)
 
