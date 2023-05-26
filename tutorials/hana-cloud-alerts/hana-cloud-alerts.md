@@ -167,7 +167,7 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 
 ### View SAP HANA database alerts using the alerts app
 
-The following instructions will show how to view a triggered SAP HANA database alert in SAP HANA Cloud Central, as well as the alerts app in the SAP HANA cockpit.
+The following instructions will show how to view a triggered SAP HANA database alert in SAP HANA Cloud Central, as well as the Alerts app in the SAP HANA cockpit.
 
 1. After the long-running statement completes, open the SAP HANA cockpit alerts app  to view the triggered alerts.  
 
