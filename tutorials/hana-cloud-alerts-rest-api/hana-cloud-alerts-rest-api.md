@@ -7,10 +7,10 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Access SAP HANA Cloud Alerts and Metrics using a REST API
-Learn how to access details of triggered alerts, as well as how to access the list of available database metrics and values of a specified metric using a REST API.
+<!-- description --> Learn how to access details of triggered alerts, a list of available database metrics, and values of a specified metric using a REST API.
 
 ## Prerequisites
- - Access to an SAP HANA Cloud trial or production instance with a version of 2021 QRC 3 or higher.
+ - Access to an SAP HANA Cloud free tier, trial or production instance.
  - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST API.
 
 ## You will learn

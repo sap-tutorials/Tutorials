@@ -7,7 +7,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Execute SQL Commands and Create Custom Notifications with SAP Automation Pilot and SAP Alert Notification Service
-Learn an approach to schedule SQL statements which are run against an SAP HANA Cloud database and send an email based on the results of the execution.
+<!-- description --> Learn an approach to schedule SQL statements which are run against an SAP HANA Cloud database and send an email based on the results of the execution.
 
 ## Prerequisites
   - Access to the SAP Business Technology Platform (BTP) that includes SAP HANA Cloud, SAP Alert Notification Service, and SAP Automation Pilot.  These services are available in the SAP BTP free tier.
@@ -29,14 +29,16 @@ An SAP Automation Pilot command will be created to check if any maintenance item
 ![scenario](scenario.png)
 
 >If you do not already have the `HOTEL.MAINTENANCE` table in an SAP HANA Cloud database, please create it now by following the first 2 steps in the [Create Database Objects with SAP HANA Database Explorer](hana-dbx-create-schema) tutorial.
-
+>
 >---
-
+>
 >If you do not have a subscription to the SAP Automation Pilot service, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) provides details on how to so.  
-
+>
 >---
-
+>
 >If you do not have an instance of the SAP Alert Notification service, see step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts).
+
+
 ---
 
 ### Create an SAP Automation Pilot command

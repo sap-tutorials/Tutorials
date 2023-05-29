@@ -7,25 +7,26 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot
-<!-- description --> Learn how the SAP Automation Pilot can be used together with the SAP Alert Notification Service to react to a SAP HANA database alert.
+<!-- description --> Learn how the SAP Automation Pilot can be used together with the SAP Alert Notification service for SAP BTP to react to a SAP HANA database alert.
 
 ## Prerequisites
- - Have completed the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) that covers alerts and the Alert Notification Service.
- - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud service, SAP Alert Notification Service, and SAP Automation Pilot.  These services are available in the free tier.
+ - Have completed the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) that covers alerts and the Alert Notification service.
+ - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud, SAP Alert Notification service, and the SAP Automation Pilot.  These services are available in the free tier.
+ - An SAP HANA Cloud instance deployed to the Cloud Foundry runtime.
 
 ## You will learn
   - How to setup and become familiar with the SAP Automation Pilot
   - How to create a catalog, an input, and a custom command with multiple executors that will request a storage resize of a SAP HANA database instance
-  - How to trigger a SAP Automation Pilot command from the Alert Notification Service
+  - How to trigger a SAP Automation Pilot command from the Alert Notification service
 
 ## Intro
-A SAP HANA Cloud database or a data lake Relational Engine instance have a set of built-in alerts that when triggered, are sent to the SAP Alert Notification Service (ANS).  This service, in addition to being able to forward details of the alert to various channels (email, Microsoft Teams, Slack, etc.), can trigger a [SAP Automation Pilot](https://discovery-center.cloud.sap/serviceCatalog/automation-pilot?region=all) command.  In this tutorial, a command will be created to attempt to resolve a disk use alert.
+A SAP HANA Cloud database or a data lake Relational Engine instance have a set of built-in alerts that when triggered, are sent to the SAP Alert Notification service (ANS).  This service, in addition to being able to forward details of the alert to various channels (email, Microsoft Teams, Slack, etc.), can trigger a [SAP Automation Pilot](https://discovery-center.cloud.sap/serviceCatalog/automation-pilot?region=all) command.  In this tutorial, a command will be created to attempt to resolve a disk use alert.
 
 ![overview](overview.png)
 
 SAP Automation Pilot includes [provided commands](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/5bbe7dba99d24caeafddf7fa62dc63b9.html) for various services in the BTP, a [scheduler](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/96863a2380d24ba4bab0145bbd78e411.html), and the ability to create new commands.  Examples of the provided commands for a SAP HANA Cloud, SAP HANA database include start, stop, and restart and for Cloud Foundry include `GetCfServiceInstance` and `UpdateCfServiceInstance`.  Commands can be created using a BASH script, Python, Node.js or Perl as described at [Execute Script](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/d0854dbb80d84946bb57791db94b7e20.html).
 
-This tutorial will demonstrate the integration between a triggered database alert, SAP Alert Notification Service, SAP Automation Pilot, and concludes with an example of requesting a storage resize of a SAP HANA database instance based on a disk usage alert.
+This tutorial will demonstrate the integration between a triggered database alert, SAP Alert Notification service, SAP Automation Pilot, and concludes with an example of requesting a storage resize of a SAP HANA database instance based on a disk usage alert.
 
 
 ---
@@ -45,7 +46,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     > ---
 
-    > The SAP Automation Pilot subscription can be located in a different global account or sub account from the SAP Alert Notification service and SAP HANA Cloud database.
+    > The SAP Automation Pilot subscription can be located in a different global account or sub account from the SAP Alert Notification service and the SAP HANA Cloud database.
 
     ![create service](create-service.png)
 
@@ -122,6 +123,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
     ![Show button for output](click-on-output-values.png)
 
     The output will appear in a pop-up.  
+    
     ![Output](output.png)
 
     This value is coming from the output of the `welcomeScriptExecutor` whose base command `ExecuteScript` has a parameter named output.
@@ -242,10 +244,10 @@ This step will create a catalog that contains a command and an input.  The input
 
 
 
-### Trigger a command from a SAP Alert Notification Service alert
+### Trigger a command from a SAP Alert Notification service alert
 
 
-This step will configure the SAP Alert Notification Service to invoke the previously created command when a database alert is received.  
+This step will configure the SAP Alert Notification service to invoke the previously created command when a database alert is received.  
 
 1. Create a new service account named `AutoPi` with **Execute** permission and **Basic** Authentication.
 
@@ -253,7 +255,7 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 
     **Save the username and password** as they will be required in sub-step 3.
 
-    This username and password can be used by another service such as the SAP Alert Notification Service to trigger an execution of a command.
+    This username and password can be used by another service such as the SAP Alert Notification service to trigger an execution of a command.
 
 2. Under Executions select Build Event Trigger.  
 
@@ -310,7 +312,7 @@ This step will configure the SAP Alert Notification Service to invoke the previo
     ![create condition dialog](condition.png)
 
 
-5. Update the conditions and action of an Alert Notification Service subscription, such as the one created in step 5 of the [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) tutorial to use the newly created conditions and action.
+5. Update the conditions and action of an Alert Notification service subscription, such as the one created in step 5 of the [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) tutorial to use the newly created conditions and action.
 
     <!-- border -->![action added to subscription](ans-subscription-updated.png)
 
@@ -327,7 +329,7 @@ This step will configure the SAP Alert Notification Service to invoke the previo
     CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
     ```
 
-    An alert will appear in the SAP HANA Cockpit and a notification will be sent to the SAP Alert Notification Service.  In the SAP Alert Notification Service, the previously edited subscription will trigger the command in the SAP Automation Pilot.
+    An alert will appear in the SAP HANA Cockpit and a notification will be sent to the SAP Alert Notification service.  In the SAP Alert Notification service, the previously edited subscription will trigger the command in the SAP Automation Pilot.
 
 7. Open **Executions** in the SAP Automation Pilot.  Notice that this time, the execution succeeded.  Select the just run execution.  
 
@@ -497,7 +499,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     >Note that there may be restrictions on how often an instance can have its storage resized within a period of time. There may be downtime required.  For additional details see [Change the Size of a SAP HANA Database Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/5f4823c45d654d1da28682f03f58ccf7.html).
 
-10. Now that the test of this command was successful using the `HDBTestAlert`, disable the action in the subscription in the SAP Alert Notification Service *or* change the condition in the subscription to use `HDBDiskUsage`.    
+10. Now that the test of this command was successful using the `HDBTestAlert`, disable the action in the subscription in the SAP Alert Notification service *or* change the condition in the subscription to use `HDBDiskUsage`.    
 Additional details on this alert can be found at [HDB Disk Usage](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/807a9f0021354fcc856cbf29cb4f7f18.html).  By default, the disk usage alert will create an alert with severity ERROR on 98 % disk usage, which then triggers a storage increase of 40 GB.
 
     ![update event type](event-type-hdbdiskusage.png)
