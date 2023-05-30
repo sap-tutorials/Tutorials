@@ -29,6 +29,8 @@ SAP Private Link service establishes a private connection between applications r
 
 To be able to use the functionalities of SAP Private Link service, you first need to set the entitlements in your subaccount. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
 
+If you have a Feature Set B account, you can use directories to group subaccounts. In order to assign a service to a subaccount that is part of a directory that handles entitlements, you have to assign it to the directory first. For more information, see [Cloud Management Tools - Feature Set Overview](https://help.sap.com/docs/btp/sap-business-technology-platform/cloud-management-tools-feature-set-overview).
+
 1. Navigate to your **global account** of SAP BTP cockpit and select **Account Explorer**.
 
     <!-- border -->![Access Account Explorer](private-endpoint_Account-Explorer.png)
@@ -50,7 +52,7 @@ To be able to use the functionalities of SAP Private Link service, you first nee
 ### Define quota in your subaccount
 
 
-You can distribute entitlements and quotas across subaccounts within a global account. Under **Remaining Global Quota**, you see how much quota is still available across your global account. See also [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements).
+You can distribute entitlements and quotas across subaccounts within a global account. Under **Remaining Global Quota**, you can see how much quota is still available across your global account. See also [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements).
 
 Use **+** and **-** to increase or decrease the quota of the SAP Private Link service plan according to your needs.
 
