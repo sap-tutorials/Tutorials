@@ -52,6 +52,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![VS Code](vscode.png)
 
+    > You might see some hidden files in your project in case you have previously customized your `Files: Exclude` settings in VS Code. More info in [Default settings](https://code.visualstudio.com/docs/getstarted/settings#_default-settings).
+
 6. In VS Code choose **Terminal** &rarr; **New Terminal** from its menu.
 
     A new terminal opens in the lower right part of the VS Code screen.
