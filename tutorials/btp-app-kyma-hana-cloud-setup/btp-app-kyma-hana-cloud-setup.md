@@ -77,7 +77,7 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible f
 
 3. In the root folder of your project, execute:
 
-    ```
+    ```Shell/Bash
     ./scripts/create-db-secret.sh cpapp-db
     ```
 

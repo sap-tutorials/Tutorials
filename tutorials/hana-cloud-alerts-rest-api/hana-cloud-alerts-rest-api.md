@@ -2,15 +2,15 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database]
 primary_tag: software-product>sap-hana-cloud
 ---
 
 # Access SAP HANA Cloud Alerts and Metrics using a REST API
-<!-- description --> Learn how to access details of triggered alerts, as well as how to access the list of available database metrics and values of a specified metric using a REST API.
+<!-- description --> Learn how to access details of triggered alerts, a list of available database metrics, and values of a specified metric using a REST API.
 
 ## Prerequisites
- - Access to an SAP HANA Cloud trial or production instance with a version of 2021 QRC 3 or higher.
+ - Access to an SAP HANA Cloud free tier, trial or production instance.
  - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST API.
 
 ## You will learn
@@ -66,11 +66,11 @@ There are multiple tools that enable making calls to a REST API such as Postman,
 
 4. Add the REST Client extension from Marketplace after opening the extensions view.
 
-    <!-- border -->![Install Rest client ](REST-client-install.png)
+    ![Install Rest client ](REST-client-install.png)
 
 5. Try calling the sample REST APIs by clicking on the blue text `Send Request`.  
 
-    <!-- border -->![send request](send-request.png)
+    ![send request](send-request.png)
 
     The results should appear in another pane.  An example result is shown below.
 
@@ -87,9 +87,9 @@ The following steps are required to create a bearer token that will be used in s
 
     ![HANA Cloud instance](HANA-Cloud-service.png)
 
-    Create a service key if one does not exist.
+    Create a service binding if one does not exist.
 
-    <!-- border -->![Create service key](create-service-key.png)
+    ![Create service key](create-service-key.png)
 
     When creating a service key, a JSON file or parameters section is not needed and can be left empty.
 
@@ -103,18 +103,18 @@ The following steps are required to create a bearer token that will be used in s
     #REST Client variables -------------------
 
     #From first part of host.  Example shown below
-    @serviceInstance = 3a2ef55e-4214-4bd9-adfc-f547d8e2d384
+    @serviceInstance = f2a41f04-3eb7-441b-875f-df9e3fe6d8c2
 
     @oauth = oauth/token?grant_type=client_credentials
 
     #From the uaa.url field.  Example value shown below
-    @uaa_url = https://79d1acd2trial.authentication.us10.hana.ondemand.com
+    @uaa_url = https://tracy-wai-ie3a8mut.authentication.us30.hana.ondemand.com
 
     #From the clientid field.  Example value shown below.
-    @clientid = sb-3a2ef55e-4214-4bd9-adfc-f547d8e2d384-89aa!b24182|hct-us10-apigateway-hana-cloud!b7169
+    @clientid = sb-f2a41f04-3eb7-441b-875f-df9e3fe6d8c2-6414!b5208|hc-us30-apigateway-hana-cloud!b2649
 
     #From the clientsecret field.  Example value shown below.
-    @clientsecret = 05Zmy6084dtzX8iUuO4+1ce0C/c=
+    @clientsecret = 381b11e9-29c4-44ed-b609-2c937dcfa5c1$z8euxr_CXT2L9Wb_RRWaOtNxM5ZvhUbyBQp7ZvLS7Wc=
 
     #Provides start and end timestamps for alerts or metrics using REST Client plugin's dynamic variables
     @startTSAlerts  = {{$datetime iso8601 -4 d}}
@@ -142,15 +142,15 @@ The following steps are required to create a bearer token that will be used in s
 ### Retrieve triggered alerts
 
 
-The following instructions will show a few examples of how to view the list of triggered SAP HANA Cloud, SAP HANA database alerts.  If there are no alerts returned, the tutorial, [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) provides examples of how to generate a few alerts including a test alert.
+The following instructions will show a few examples of how to view the list of triggered SAP HANA Cloud, SAP HANA database alerts.  If there are no alerts returned, visit the [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) tutorial to see examples of how to generate a few alerts, including a test alert.
 
-1. Add the following variables to the end of the REST Client variables section of the `AlertsAndMetrics.http` file and update the highlighted value from your service key.
+1. Add the following variables to the end of the REST Client variables section of the `AlertsAndMetrics.http` file. Update the highlighted value from your service key.
 
     ```HTTP[4]
     @gateway_url = https://api.gateway.orchestration
 
     #From host, part after instanceID.hana
-    @host = trial-us10.hanacloud.ondemand.com
+    @host = prod-us30.hanacloud.ondemand.com
     ```
 
 2. Add the following calls to the bottom of the `AlertsAndMetrics.http` file after the line with ###.
@@ -256,7 +256,7 @@ The following instructions will show a few examples of how to view metrics throu
 
 2. Try out the definitions call to get a list of the available metrics
 
-    <!-- border -->![Result of request to show the available metrics](metrics-list.png)
+    ![Result of request to show the available metrics](metrics-list.png)
 
     A few of the returned values are explained below:  
 
@@ -285,6 +285,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html) and [Overview of Available Metrics](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/46e370ced3ef4d2bbd0ec2337df5f565.html).
 
+### Knowledge check
 
 Congratulations! You have now seen how to use a REST API to access alerts and metrics from an SAP HANA Cloud, SAP HANA database.
 

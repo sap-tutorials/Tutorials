@@ -81,7 +81,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
 3. Add another SAP HANA database connection using USER1. 
 
-    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options.
+    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options. 
+
+    Uncheck the *Verify the server's certificate using the trusted certificate below* checkbox.
 
     ![add new user1 connection](user1-connection0.png)
 
@@ -309,7 +311,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Explore auto-commit
 
-Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
+Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   
+
+The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
 
 The following steps will demonstrate these settings.
@@ -612,6 +616,8 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     END;
     ```
 
+    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at ![SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20a78d3275191014b41bae7c4a46d835.html).
+
 5. To run this procedure, execute the SQL statement below.
 
     ```SQL
@@ -630,15 +636,22 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     For additional details see [Procedures](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/d43d91578c3b42b3bacfd89aacf0d62f.html).
 
+6. Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
 
-    >Procedures can also be scheduled in SAP HANA Cloud.  An example follows.  For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
-    >
     ```SQL
     SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
-    CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2021 12 23 * 14 25 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
+    CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2023 04 26 * 14 25 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
     SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
     ```
+    ![Create Scheduled Job](schedule_job.png)
+
+    Details about the scheduled job can also be viewed including its properties, parameters, history, and CREATE statement by opening the **Job Scheduler** in the Catalog Browser and clicking on your scheduled job. Ensure you are filtering by the HOTEL schema. Additionally, you have the ability to disable/enable the scheduled job.
+
+    ![View Scheduled Job](view_job.png)
+    
+    For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
+
 
 ### Knowledge check
 
-Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  
+Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs. 

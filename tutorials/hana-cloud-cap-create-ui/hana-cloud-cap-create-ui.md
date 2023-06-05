@@ -135,15 +135,15 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     ![Fiori Application Generator](fiori_app_gen.png)
 
-1. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
+1. Choose **SAP Fiori** as the template type, select **Worklist Page** as the template and press **Next**
 
     ![Fiori Application Type](application_type.png)
 
-1. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
+1. At the Data Source and Service Selection screen, choose **Use a Local CAP Project**. Select your project as the **Choose your CAP project**. Select `CatalogService (Node.js)` as your OData service. Press **Next**
 
     ![Data Source and Service Selection](data_source.png)
 
-1. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
+1. Choose `Interactions_Header` as the main entity, `ITEMS` for the Navigation entity, leave the `YES` value for the "Automatically add table columns to the list page and a section to the object page if none already exists?" option and press **Next**
 
     ![Entity Selection](entity_selection.png)
 

@@ -83,6 +83,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
+
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -140,6 +143,9 @@ The [MultiApps plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-p
 If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
+
+
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
 
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
@@ -314,15 +320,9 @@ resources:
              - $XSAPPNAME.RiskViewer
 ```
 
-The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa).
+For a productive application, the configuration for XSUAA is read from the `xs-security.json` file. You've already created this file in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa). 
 
-But in the `config` element, values can be added and overwritten.
-
-The value `xsappname` gets overwritten with a space-dependent value. The name has to be unique within a subaccount.
-
-This allows multiple deployments of this tutorial in different spaces of the same subaccount. For example, different people of a team that want to try it out and don't want to create a new subaccount for each team member.
-
-For a productive application, the `xsappname` should be explicitly set to the desired value.
+However, the XSUAA configuration that is read from the`xs-security.json` file can be overwritten in the `config` element of the `mta.yaml` file. For example, in the snippet above, a space-dependent value `cpapp-${space}` overwrites the value `xsappname`. Note that the name has to be unique within a subaccount. Within the scope of this tutorial, this approach allows multiple deployments in different spaces of the same subaccount. This way, different people of a team can try the tutorial without creating a new subaccount for each team member.
 
 Further, you can add role collections using the `xs-security.json` file. Since role collections need to be unique in a subaccount like the `xsappname`, you can add it here and use the `${space}` variable to make them unique like for the `xsappname`.
 

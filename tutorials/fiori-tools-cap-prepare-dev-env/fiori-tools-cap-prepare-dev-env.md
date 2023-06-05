@@ -54,17 +54,17 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 2. Click the link **Clone from Git**.
 
-    <!-- border -->![Click on link "Clone from Git"](click-clone-from-git.png)
+    <!-- border -->![Click on link "Clone from Git"](click-clone-from-git-new.png)
 
     Paste the repository link into the input field and press **Enter**.
 
-    <!-- border -->![Enter the github repository URL](enter-github-repository.png)
+    <!-- border -->![Enter the github repository URL](enter-github-repository-new.png)
 
 3. Wait until the cloning has finished. When you see a toast message in the lower right corner, click **Open** to open the project.
 
     You see your project in the explorer panel as shown in the image below:
 
-    <!-- border -->![Explorer service structure](explorer-project-tree.png)
+    <!-- border -->![Explorer service structure](explorer-project-tree-new.png)
 
 
 ### Complete the service
@@ -72,9 +72,11 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 1. From the menu **Terminal**, select **New Terminal**
 
+    !![Open_terminal](open-terminal-new.png)
+
     Ensure that your terminal prompt shows **fiori-elements-incident-management**. At the terminal prompt, enter **`npm install `** and press **Enter**. This command will download and install all necessary modules from the npm package repository required to run the SAP Fiori elements application.
 
-    <!-- border -->![Enter npm install](enter-npm-install.png)
+    <!-- border -->![Enter npm install](enter-npm-instal-new.png)
 
 2. After the installation is complete, enter **`npm i @sap/cds-dk -g`** at the terminal prompt.
 

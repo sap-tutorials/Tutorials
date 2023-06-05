@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr
@@ -191,7 +191,7 @@ public class BusinessPartnerReadListener implements EventHandler {
 
         final Map<Object, Map<String, Object>> result = new HashMap<>();
         final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).execute(httpDestination);
+                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).executeRequest(httpDestination);
 
         final List<CapBusinessPartner> capBusinessPartners =
                 convertS4BusinessPartnersToCapBusinessPartners(businessPartners, "MyErpSystem");
@@ -207,9 +207,15 @@ public class BusinessPartnerReadListener implements EventHandler {
         final BusinessPartnerService service = new DefaultBusinessPartnerService();
 
         Map<String, Object> m = context.getCqn().entries().get(0);
-        BusinessPartner bp = BusinessPartner.builder().firstName(m.get("firstName").toString()).lastName(m.get("surname").toString()).businessPartner(m.get("ID").toString()).build();
+        BusinessPartner bp =
+            BusinessPartner
+                .builder()
+                .firstName(m.get("firstName").toString())
+                .lastName(m.get("surname").toString())
+                .businessPartner(m.get("ID").toString())
+                .build();
 
-        service.createBusinessPartner(bp).execute(httpDestination);
+        service.createBusinessPartner(bp).executeRequest(httpDestination);
     }
 
     private List<CapBusinessPartner> convertS4BusinessPartnersToCapBusinessPartners(
@@ -256,7 +262,7 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function, which creates the new `businessPartner`.
 
 
 ### Run the mock server
@@ -271,13 +277,13 @@ Once it is up and running, you should see the list of services at <http://localh
 You can run the project on a local mock server. Here, you need to supply the destinations as an environment variable on your local machine.
 
 ```Shell
-set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
+$destinations='[{name: "MyErpSystem", url: "https://URL", "username": ""USER", "password": "PASSWORD"}]'
 ```
 
 Please change the URL accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```Shell
-set destinations
+echo $destinations
 ```
 
 Be aware that the variable is only available in your current terminal session.

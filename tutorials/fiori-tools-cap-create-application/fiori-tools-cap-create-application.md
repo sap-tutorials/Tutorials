@@ -10,32 +10,32 @@ primary_tag: software-product>sap-fiori
 <!-- description --> Create an SAP Fiori elements application of type List Report Object Page based on the SAP Cloud Application Programming Model.
 
 ## You will learn
-- How to create an SAP Fiori application of type List Report Object Page
+- How to create an SAP Fiori application of type List Report application
 - How to use an SAP Fiori elements template with a service in the SAP Business Application Studio
 
 ---
 
 ### Create new SAP Fiori elements application
 
-1. SAP Fiori tools includes an Application Generator that provides a wizard-style approach for creating applications based on SAP Fiori elements page types. You are going to use it to create your List Report Object Page app.
+1. SAP Fiori tools includes an Application Generator that provides a wizard-style approach for creating applications based on SAP Fiori elements page types. You are going to use it to create your List Report Page app.
 
-    From the toolbar menu, open **View** > **Find Command...**, type **`Application Generator`**, and select **Fiori: Open Application Generator**.
+    From the hamburger menu, open **View->Command Palette...**, type **`Application Generator`**, and select **Fiori: Open Application Generator**.
 
-2. Select the tile **List Report Object Page** and click **Next**.
+2. Select the tile **List Report Page** and click **Next**.
 
-    <!-- border -->![Choose tile "List Report Object Page"](choose-tile-list-report.png)
+    <!-- border -->![Choose tile "List Report Page"](choose-tile-list-report-new.png)
 
 3. Now you connect the application template with your OData service. The OData service you use for this example was already prepared during the previous tutorial:  [Prepare Your Development Environment](fiori-tools-cap-prepare-dev-env)
 
     Select the data source for the project. Since you use the locally installed service, choose **Use a local CAP Project** from the dropdown field **Data source**.
 
-    Navigate to and select the project folder location in the input field for your project folder path (as shown in the screenshot).
+    Select the CAP project **fiori-elements-incident-management** in the next input field (as shown in the screenshot).
 
     Choose the service name **`IncidentService (Node.js)`** from the dropdown field **OData service**.
 
     When finished, click **Next**.
 
-    <!-- border -->![Select service related parameters](enter-service-parameters1.png)
+    <!-- border -->![Select service related parameters](enter-service-parameters-new.png)
 
 4. For your application you need to choose the main entity set from the OData service. Objects of this type will be displayed in the list report.
 
@@ -54,8 +54,9 @@ primary_tag: software-product>sap-fiori
     After completion, click **Finish**. The new SAP Fiori elements application is now created from the template using the service and the configurations you provided in this step.
 
     You may see a popup asking whether you want to open the project in a new workspace. Simply close it by clicking the **X**.
+    
 
-    After the project is generated, an Application Information page is shown giving you an overview of project details and tasks that you may perform on this project. It is recommended that you keep this page open as it will be used in other steps. You can open it any time using the menu item **View** > **Find Command...** and select **Fiori: Open Application Info**
+    After the project is generated, an Application Information page will be displayed. This page gives you an overview of project details and tasks that you can perform on the project. It is recommended that you keep this page open as it will be used in other steps. You can open it any time from the hamburger menu, open **View->Command Palette...**, and type/select **Fiori: Open Application Info**
 
      <!-- border -->![Application Information page](application-info-page.png)
 

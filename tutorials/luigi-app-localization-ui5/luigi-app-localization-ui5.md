@@ -20,30 +20,30 @@ primary_tag: topic>user-interface
 
 In this step, you will add a function to get the current language from Luigi Client and then update it, so that the language of the UI5 micro-frontend can be changed accordingly.
 
- 1. Open the `ui5-mf/uimodule/webapp/controller/MainView.controller.js` and replace its content with the code below:
+ 1. Open the `ui5-mf/webapp/controller/Main.controller.js` file and replace its content with the code below:
 
     ```js
     sap.ui.define(["luigi/ui5/controller/BaseController"], function (Controller) {
         "use strict";
 
-        return Controller.extend("luigi.ui5.controller.MainView", {
+        return Controller.extend("luigi.ui5.controller.Main", {
             onInit: function (Controller) {
                 const oModel = new sap.ui.model.json.JSONModel();
 
                 oModel.loadData("../model/products.json");
                 this.getView().setModel(oModel);
-                //THIS HAS BEEN ADDED - TO UPDATE THE CURRENT LANGUAGE
+                //This has been added - to update the current language 
                 const updateCurrentLanguage = () => {
                     const currentLanguage = LuigiClient.uxManager().getCurrentLocale();
                     sap.ui.getCore().getConfiguration().setLanguage(currentLanguage);
                 }
-                //THIS HAS BEEN ADDED - LISTENER FOR LANGUAGE CHANGES
+                //This has been added - listener for language changes 
                 LuigiClient.addInitListener(updateCurrentLanguage);
             },
 
             onListItemPress: function (oEvent) {
                 const id = oEvent.getSource().getBindingContext().getProperty("id");
-                // GETTING TRANSLATED TITLE TEXT FOR THE MODAL TITLE
+                // Getting trasnlated text for the modal text title
                 const title = this.getView().getModel("i18n").getResourceBundle().getText("ModalText");
 
                 LuigiClient.linkManager().openAsModal('/home/products/' + id, { title: title, size: 'm' });
@@ -58,17 +58,21 @@ In this step, you will add a function to get the current language from Luigi Cli
 
 In this step, you will create files with the text that is to be changed within the UI5 micro-frontend.
 
-1. Find the folder ​`i18n`​ under the ​`uimodule/webapp`​.  Inside it, create a file called `i18n_de_DE.properties` with the following content:
+1. Find the ​`i18n`​ folder inside ​`webapp`.  Create a file there called `i18n_de.properties` with the following content:
 
     ```json
-    ModalText = Produkt Details
+    ModalText = Produktdetails
     Quantity = Anzahl
+    appTitle = ui5
+    appDescription = Deutsch
     ```
 
-2. Create another file called `i18n_en_US.properties` with the following content:
+2. Create another file called `i18n_en.properties` with the following content:
 
     ```json
     ModalText = Product Details
+    appTitle = ui5
+    appDescription = English
     Quantity = Quantity
     ```
 
@@ -76,7 +80,7 @@ In this step, you will create files with the text that is to be changed within t
 ### Add default language to index.html
 
 
-1. Edit the `ui5-mf/uimodule/webapp/index.html` file by adding the default language (EN) around line 12, above `data-sap-ui-theme`:
+1. Edit the `ui5-mf/webapp/index.html` file by adding the default language (EN):
 
     ```HTML
     <script
@@ -101,7 +105,7 @@ In this step, you will create files with the text that is to be changed within t
 
 This step involves the standard process in UI5 for providing translation.
 
-1. Edit the ​`ui5-mf/uimodule/webapp/view/Order.view.xml` ​file by marking the translated target text. Replace line 17 with:
+1. Edit the ​`ui5-mf/webapp/view/Main.view.xml` ​file by marking the translated target text. Replace the `<ObjectAttribute>` tag with:
 
     ```XML
     <ObjectAttribute text="{i18n>Quantity}: {orderQuantity}" />

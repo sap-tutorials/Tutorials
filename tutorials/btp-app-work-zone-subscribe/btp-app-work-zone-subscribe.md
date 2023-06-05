@@ -42,7 +42,13 @@ In this tutorial, you will use the SAP Build Work Zone, standard edition to acce
 
     !![Create SAP Build Work Zone, standard edition](create_workzone_instance.png)
 
-4. Keep the default settings for **Service** and **Plan** and choose **Create**.
+4. Keep the default setting for **Service** and choose `standard - Subscription` for **Plan**.
+
+    !![Choose SAP Build Work Zone, standard edition plan](choose_workzone_plan.png)
+
+    > SAP Build Work Zone, standard edition offers two types of `standard` plans. The `standard - Subscription` plan is an application plan that lets you access your applications from a central entry point. This is the plan you need for the purposes of this tutorial. The `standard - Instance` plan is a service plan that will let you integrate with other services using APIs. You do not need this plan for the scope of this tutorial.
+
+5. Choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
@@ -148,7 +154,7 @@ You have launched your `Risks` app through the SAP Build Work Zone, standard edi
 
 > Do you want to change your Risk Management Site's default theme? Under your avatar, in the User Actions menu, select the Theme Manager.
 
->     !![Theme Managet](theme-manager.png)
+>     !![Theme Manager](theme-manager.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

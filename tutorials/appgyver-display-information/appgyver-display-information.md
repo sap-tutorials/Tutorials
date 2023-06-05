@@ -3,11 +3,11 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build-apps--enterprise-edition
-author_name: Daniel Wrolewski
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
-
+ 
 # Display Fetched Data in Your SAP Build Application
 <!-- description --> Display data fetched from a public API, such as product names and calorific information, in your SAP Build application.
 
@@ -30,9 +30,9 @@ To start with, you'll add further visual information to your app in the form of 
 
     ![Change title text](change_title.png)
 
-3. From the core component panel, drag and drop a **Paragraph** component to underneath this title.
+3. From the core component panel, drag and drop a **Text** component to underneath this title.
 
-    ![Add a paragraph](add_paragraph.png)
+    ![Add a text](add_paragraph.png)
 
 
 
@@ -42,7 +42,7 @@ This paragraph now needs to be bound to the data variable you configured in earl
 
 For this example, we will show you how to display the Product Name and Energy-kcals_100g fields.
 
-1. To display the product name, click your **Paragraph** component and then click **Currently bound to: Static text**.
+1. To display the product name, click your **Text** component and then click **Currently bound to: Static text**.
 
     ![Click to bind parag\appgyver-display-informationkraph](bind_paragraph.png)
 
@@ -76,9 +76,9 @@ The paragraph will now display the product name of the scanned food item.
 
 ### Display calorific information
 
-We'll now add the calorific information to your app, using the same steps provided in for the product name information. Repeat Step 1 and Step 2, adding a new paragraph component to your interface.
+We'll now add the calorific information to your app, using the same steps provided in for the product name information. Repeat Step 1 and Step 2, adding a new text component to your interface.
 
-1. Click your **Paragraph** component and then click **Currently bound to: Static text**.
+1. Click your **Text** component and then click **Currently bound to: Static text**.
 
     ![Click to bind paragraph](bind_secondpara.png)
 

@@ -478,7 +478,7 @@ Let us add the `Risk Analysis` application to the launch page where you already 
 
 2. Add the following code after `mitigations-app`:
 
-    ```JavaScript[20-27]
+    ```HTML[20-27]
         <script>
                 window['sap-ushell-config'] = {
                     defaultRenderer: 'fiori2',

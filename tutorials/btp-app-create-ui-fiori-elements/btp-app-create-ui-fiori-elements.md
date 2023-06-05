@@ -38,13 +38,13 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAP Fiori elements** and template **List Report Object Page**.
+2. Choose template type **SAP Fiori** and template **List Report Page**.
 
        ![V4 Template](vscv4template.png)
 
 3. Choose **Next**.
 
-4. In the next dialog, choose **Use a Local CAP Project** and choose your current **`cpapp`** project.
+4. In the next dialog, choose `Use a Local CAP Project` and choose your current `cpapp` project.
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
@@ -56,11 +56,11 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
+5. Select `RiskService(Node.js)` as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
-6. Select **Risks** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
+6. Select `Risks` as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
     ![entitySelection](entityselection.png)
 
@@ -141,7 +141,7 @@ To make also the header fields editable, you have to change the default setting 
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-    ```YAML[15]
+    ```JSON[15]
     {
         "_version": "1.32.0",
         "sap.app": {

@@ -101,7 +101,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 1. The final input will ask you for your Space. Press **Apply**.
     ![Space](space.png)
 
-1. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space. It's normally to see many less options in this tree display than the screenshot.
+1. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space. It's normal to see less options in this tree display than the screenshot depending upon how much other development you might have already done in your BTP account.
 
     ![Org and Space Set Correctly](org_space_set_correctly.png)
 

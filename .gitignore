@@ -46,7 +46,5 @@ Thumbs.db
 #  validation files  #
 ######################
 # VSCode specific files
+*.vr
 *.code-workspace
-tutorials/migration-assessment/rules.vr
-.gitignore
-tutorials/migration-tool/rules.vr

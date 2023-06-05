@@ -32,11 +32,11 @@ In the service key you created for Business Entity Recognition in the previous t
 
 1. To access the Business Entity Recognition Swagger UI, add **`/api/v1`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    <!-- border -->![BER](png-files/service-key-details.png)
+    <!-- border -->![BER](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![BER](png-files/swagger.png)
+    <!-- border -->![BER](swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
 
@@ -44,11 +44,11 @@ In the service key you created for Business Entity Recognition in the previous t
     bearer <access_token>
     ```
 
-    <!-- border -->![BER](png-files/Authorize.png)
+    <!-- border -->![BER](Authorize.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    <!-- border -->![BER](png-files/Authorize2.png)
+    <!-- border -->![BER](Authorize2.png)
 
 
 
@@ -61,17 +61,17 @@ Use the **POST /datasets** endpoint to create a dataset that will be used to tra
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](png-files/post-datasets-1.png)
+    <!-- border -->![BER](post-datasets-1.png)
 
 3. In **payload**, enter a `description` for your dataset, `"Tutorial dataset"`, for example.
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](png-files/post-datasets-2.png)
+    <!-- border -->![BER](post-datasets-2.png)
 
 5. Copy the **`datasetId`** from the **Response body**.
 
-    <!-- border -->![BER](png-files/post-datasets-3.png)
+    <!-- border -->![BER](post-datasets-3.png)
 
 
 
@@ -86,11 +86,11 @@ To see the details of your newly created dataset, use the **GET /datasets/{`data
 
 3. Enter the **`datasetId`** obtained in the previous step and click **Execute**.
 
-    <!-- border -->![BER](png-files/get-datasets-1.png)
+    <!-- border -->![BER](get-datasets-1.png)
 
     You should receive a response like below. Among the `datasetId` and the `description`, you see the `documentCount`. The number of documents include the training data files that you'll upload in the next step.
 
-    <!-- border -->![BER](png-files/get-datasets-2.png)
+    <!-- border -->![BER](get-datasets-2.png)
 
 
 
@@ -103,9 +103,9 @@ Please bear in mind that Business Entity Recognition requires your data to be in
 
 >As an alternative to uploading your own JSON file to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_1.json)
+>- [Sample Training Data 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_1.json)
 
->- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_2.json)
+>- [Sample Training Data 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_2.json)
 
 >Please repeat this step twice and upload one document each time. The more data is available the better predictions the model can give you.
 
@@ -120,11 +120,11 @@ To upload documents, do the following:
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](png-files/post-datasets-docs-1.png)
+    <!-- border -->![BER](post-datasets-docs-1.png)
 
 5. Copy the **`documentId`** from the **Response body**.
 
-    <!-- border -->![BER](png-files/post-datasets-docs-2.png)
+    <!-- border -->![BER](post-datasets-docs-2.png)
 
 
 
@@ -143,11 +143,11 @@ Using the `datasetId` obtained in the previous step, you can obtain the details 
 
 5. Click **Execute**.
 
-    <!-- border -->![BER](png-files/get-datasets-docs-1.png)
+    <!-- border -->![BER](get-datasets-docs-1.png)
 
     You should receive a response, with the document details, like below. This shows you the size of the document in bytes.
 
-    <!-- border -->![BER](png-files/get-datasets-docs-2.png)
+    <!-- border -->![BER](get-datasets-docs-2.png)
 
 
 
@@ -178,11 +178,11 @@ Once the training documents are uploaded, you can submit a training job. This tr
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](png-files/post-training-jobs-1.png)
+    <!-- border -->![BER](post-training-jobs-1.png)
 
 5. Copy the **`jobId`** from the **Response body**. This allows you to check the status of the training.
 
-    <!-- border -->![BER](png-files/post-training-jobs-2.png)
+    <!-- border -->![BER](post-training-jobs-2.png)
 
     This indicates that your training job has been successfully submitted.
 
@@ -206,13 +206,13 @@ To check whether your training already succeeded, you can use the **GET /trainin
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](png-files/get-training-jobs-1.png)
+    <!-- border -->![BER](get-training-jobs-1.png)
 
     You should receive a response like below. The status `RUNNING` indicates that the training is still in progress. In case the status is `PENDING`, then the training has not started yet.
 
-    <!-- border -->![BER](png-files/get-training-jobs-2.png)
+    <!-- border -->![BER](get-training-jobs-2.png)
 
     You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the capabilities of the model, that are the entities the model can recognize.
 
-    <!-- border -->![BER](png-files/get-training-jobs-3.png)
+    <!-- border -->![BER](get-training-jobs-3.png)
 
