@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 40
+time: 10
 tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
