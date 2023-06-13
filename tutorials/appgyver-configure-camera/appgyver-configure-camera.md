@@ -101,4 +101,4 @@ As an example:
 
 If you can't find a barcode, here's an example:
 
-![Barcode example](barcode.gif)
+![Barcode example](barcode.gif)  

@@ -39,7 +39,7 @@ You can choose the editor to develop your CAP application. If you want to exactl
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Command line interpreters)]
-This tutorial contains a number of command line snippets that need to be pasted into a command line window. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
+This tutorial contains a number of command line snippets that need to be pasted into a command line window (sometimes referred to as command line interface (CLI) or terminal). All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Prompt and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
 
 [DONE]
 [ACCORDION-END]

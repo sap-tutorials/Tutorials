@@ -9,34 +9,34 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 
 ---
 
-# Tour the SAP API Business Hub
-<!-- description --> Explore the various features of the SAP API Business Hub, and learn how to find and test APIs.
+# Tour the SAP Business Accelerator Hub
+<!-- description --> Explore the various features of the SAP SAP Business Accelerator Hub, and learn how to find and test APIs.
 
 ## You will learn
-- How to get started with SAP API Business Hub
+- How to get started with SAP Business Accelerator Hub
 
 ## Intro
-SAP API Business Hub is a website to discover, explore, and test APIs from various SAP products such as SAP S/4HANA, SAP SuccessFactors, SAP Customer Experience, SAP BTP, and selected partners. Apart from various product APIs, you can find detailed information on business processes and partner assets. The new workspace feature also enables you to consume integration and workflow content.
+SAP Business Accelerator Hub is a website to discover, explore, and test APIs from various SAP products such as SAP S/4HANA, SAP SuccessFactors, SAP Customer Experience, SAP BTP, and selected partners. Apart from various product APIs, you can find detailed information on business processes and partner assets. The new workspace feature also enables you to consume integration and workflow content.
 
-Want to learn more about the new SAP API Business Hub? Not sure where to get started? Go to [api.sap.com] (https://api.sap.com), and begin your journey.
+Want to learn more about the new SAP SAP Business Accelerator Hub? Not sure where to get started? Go to [api.sap.com] (https://api.sap.com), and begin your journey.
 
 ---
 
-### Go to the SAP API Business Hub
-In your browser, open [SAP API Business Hub](https://api.sap.com/).
+### Go to the SAP Business Accelerator Hub
+In your browser, open [SAP Business Accelerator Hub](https://api.sap.com/).
 
-<!-- border -->![SAP API Business Hub page](1.png)
+<!-- border -->![SAP Business Accelerator Hub page](1.png)
 
-You can explore products, business processes, as well as different categories of assets, along with partner and featured content. Choose Explore for quick access to the various sections of the SAP API Business Hub.
+You can explore products, business processes as well as different categories of assets, along with partner and featured content. Choose **Explore** for quick access to the various sections of the SAP Business Accelerator Hub.
 
 ### Explore API content
-On the SAP API Business Hub homepage, choose **Categories**.
+On the SAP Business Accelerator Hub homepage, choose **Categories**.
 
-<!-- border -->![SAP API Business Hub homepage API tile](2.png)
+<!-- border -->![SAP Business Accelerator Hub homepage API tile](2.png)
 
 Choose APIs from the different categories available.
 
-<!-- border -->![SAP API Business Hub APIs section](2a.png)
+<!-- border -->![SAP Business Accelerator Hub APIs section](2a.png)
 
 ### Search for an API
 
@@ -51,7 +51,6 @@ You can explore APIs either by selecting a type of an API or by selecting an API
 For the purpose of this tutorial, we are going to choose the `SAP Cloud for Customer` package (find it using the search facility).
 
 <!-- border -->![SAP Cloud for Customer Package Search](4a.png)
-
 
 ### Explore the API
 
@@ -73,7 +72,7 @@ Various HTTP methods of API are used to address the functionality of endpoints. 
 
 ### Test an API endpoint
 
-The SAP API Business Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. Select Login at the top of the page.
+The SAP Business Accelerator Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. Select Login at the top of the page.
 
 <!-- border -->![Login](6.png)
 
@@ -104,5 +103,4 @@ The response section displays various entities fetched calling the `GET` method.
 
 Feel free to explore other endpoints in this Campaign API.
 
-
-Congratulations, you have just taken your first steps with the SAP API Business Hub and should now be able to navigate it and the content within, confidently.
+Congratulations, you have just taken your first steps with the SAP Business Accelerator Hub and should now be able to navigate it and the content within, confidently.

@@ -495,7 +495,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Format Options](formatOptions.png)
 
-    Binary Raw is the binary format for SAP HANA Cloud and Binary Data is the format option for SAP HANA as a Service and SAP HANA on-premise.
+    **Binary Raw** is the binary format for SAP HANA Cloud and **Binary Data** is the format option for SAP HANA as a Service and SAP HANA on-premise.
 
 2. The archive file contains the SQL to recreate the table as well as the data of the table, as shown below.
 
@@ -511,7 +511,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Open Import Data Wizard](importCatalogWizard.png)
 
-    Browse to the previously downloaded .tar.gz file and complete the wizard.
+    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired. 
 
     ![Choose file to import](importCatalogWizard2.png)
 
