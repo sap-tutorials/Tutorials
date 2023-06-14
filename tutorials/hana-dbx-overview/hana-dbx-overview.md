@@ -30,13 +30,13 @@ It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP 
 
 ![database explorer](dbx.png)
 
-> The following tools also provide the ability to execute SQL queries.
+The following tools also provide the ability to execute SQL queries.
 
-  > * `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+  * `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-  > * `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+  * `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
-  > * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
+  * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
@@ -202,6 +202,8 @@ The following steps demonstrate how an instance can be started using the BTP CLI
 
     >![copy Configuration](hcc-copy-json.png)
 
+    Additional details on the JSON used can be found at [Parameter Reference](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/13ed4d847bd3485c8b3ef2bc7b89ec79.html)
+
 
 ### Manage SAP HANA Cloud using the Cloud Foundry CLI (optional)
 
@@ -250,6 +252,8 @@ The software can be downloaded from the [Cloud Foundry Foundation](https://githu
     ```
 
     ![starting a SAP HANA Cloud database](cf-start.png)
+
+    Additional details on the JSON used can be found at [Parameter Reference](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/13ed4d847bd3485c8b3ef2bc7b89ec79.html)
 
 For more information on the operations available with the Cloud Foundry CLI, refer to the documentation [Using the Cloud Foundry CLI with SAP HANA Cloud](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).  
 

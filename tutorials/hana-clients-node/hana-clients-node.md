@@ -100,7 +100,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-     
+
     >```Shell (Linux or Mac)
     export HDB_NODE_PLATFORM_CLEAN=1
     npm uninstall @sap/hana-client
@@ -128,7 +128,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![npm list](npm-list.png)
 
-> ### Some Tips
+> Some Tips
 
 >At this point, the SAP HANA client module has been installed into the `HANAClientsTutorials\node\node_modules` folder and added as a dependency in the `packages.json` file.  The following is some extra optional information on NPM.  
 
