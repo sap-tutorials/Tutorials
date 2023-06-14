@@ -2,13 +2,13 @@
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
+primary_tag: software-product>sap-build-apps--enterprise-edition
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Configure AppGyver Application to Open Device Camera
+# Configure SAP Build Application to Open Device Camera
 <!-- description --> Configure the logic flow in your application to enable your device to open your camera on demand, whenever the user clicks the Scan button.
 
 ## You will learn
@@ -16,13 +16,13 @@ parser: v2
   - How to connect user interface elements to actions in your mobile application
 
 ## Intro
-Logic flows are used to capture events in an application, such as a page loading or a user tapping on a button, and to execute actions. To create a barcode scanning app, you need to configure a logic flow that tells your application to open the camera device once the user taps the **Scan** button. To do this, we'll show you how to add the logic to the button, then how to take advantage of AppGyver's QR and Barcode component.
+Logic flows are used to capture events in an application, such as a page loading or a user tapping on a button, and to execute actions. To create a barcode scanning app, you need to configure a logic flow that tells your application to open the camera device once the user taps the **Scan** button. To do this, we'll show you how to add the logic to the button, then how to take advantage of SAP Build Apps's QR and Barcode component.
 
 ---
 
 ### Add logic to button
 
-Open your app, and in the AppGyver Composer, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).
+Open your app, and in the Composer, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).
 
 ![Add logic to button](Add_logic.png)
 
@@ -32,7 +32,7 @@ Open your app, and in the AppGyver Composer, click the **Scan** button and then 
 
 In the logic panel, you can see the ***Event - Component Tap***, which captures when a user taps on the button within the application. We now need to decide what this event triggers.
 
-1. Using the core logic components, scroll down to the ***Device – Scan QR / barcode*** component and drag and drop this into the logic editor. This is a preconfigured QR or barcode scanner component provided by AppGyver, one of many available within your AppGyver account.  
+1. Using the core logic components, scroll down to the ***Device – Scan QR / barcode*** component and drag and drop this into the logic editor. This is a preconfigured QR or barcode scanner component provided by SAP Build Apps, one of many available within your SAP Build Apps account.  
 
     ![Add Scan QR logic to logic editor](ScanQR.png)
 
@@ -85,7 +85,7 @@ As the alert is currently set to display a static text response only, we want to
 
     ![Save application](Save_app.png)
 
-2. Using your device, open your draft application in the **AppGyver Preview** app and test the feature with a food item barcode.
+2. Using your device, open your draft application in the SAP Build Apps preview app and test the feature with a food item barcode.
 
     ![Open smart phone app](iphoneapp1.png)
 
@@ -99,3 +99,6 @@ As an example:
 
 ![View results](iphoneapp3.png)
 
+If you can't find a barcode, here's an example:
+
+![Barcode example](barcode.gif)  

@@ -1,18 +1,17 @@
 ---
-parser: v2
+title: Connect Your SAP BTP Trial Account to SAP S/4HANA for Content Consumption
+description: Set up SAP Cloud Connector to give your SAP BTP trial subaccount access to the SAP S/4HANA system that you configured for content exposure in the previous tutorial and create runtime and design-time destinations for the SAP S/4HANA system on SAP BTP.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-connectivity-service, topic>abap-connectivity, software-product>sap-business-technology-platform, software-product>sap-fiori]
-primary_tag: software-product>sap-launchpad-service
-
+tags: [ tutorial>beginner, software-product>sap-connectivity-service, topic>abap-connectivity, software-product>sap-business-technology-platform, software-product>sap-fiori, software-product>sap-launchpad-service, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
+parser: v2
 ---
-
-# Connect Your SAP BTP Trial Account to SAP S/4HANA for Content Consumption
-<!-- description --> Set up SAP Cloud Connector to give your SAP BTP trial subaccount access to the SAP S/4HANA system that you configured for content exposure in the previous tutorial and create runtime and design-time destinations for the SAP S/4HANA system on SAP BTP.
 
 ## Prerequisites
  - You have an SAP BTP trial account.
- - You have access to both an SAP Cloud Connector and an SAP S/4HANA demo/test system that you want to connect to your SAP BTP trial account. These systems might be provided to you by the instructor in a workshop or you might have set them up from the SAP Cloud Appliance Library yourself. Please make sure that you have the server names, ports and a user and password available.
+ - You have access to both an SAP Cloud Connector and an SAP S/4HANA demo/test system that you want to connect to your SAP BTP trial account. These systems might be provided to you by the instructor in a workshop or you might have set them up from the SAP Cloud Appliance Library yourself. Please make sure that you have the server names, ports and a user and password available. 
+
 
 
 ## You will learn
@@ -24,7 +23,6 @@ primary_tag: software-product>sap-launchpad-service
 
 ### Open SAP Cloud Connector
 
-
 1. Open the URL of your SAP Cloud Connector in Chrome.
 
     > In your SAP S/4HANA trial CAL system, you can access it by connecting via Remote Desktop Connection. You can find the link to the SAP Cloud Connector and the initial password in the Welcome page that can be accessed via the **Welcome** Chrome icon on the desktop.
@@ -32,13 +30,13 @@ primary_tag: software-product>sap-launchpad-service
 
 2. Enter your `user name` and `password` and click **Login**.
 
-    ![SAP Cloud Connector Login](1-scclogin.png)
+    <!-- border --> ![SAP Cloud Connector Login](1-scclogin.png)
 
 3. If required, enter a new password.
 
 
-### Connect your SAP BTP trial subaccount
 
+### Connect your SAP BTP trial subaccount
 
 If this is the first time SAP Cloud Connector is started, you will see the **Define Subaccount** page. Otherwise, the Connector Overview page opens.
 
@@ -71,25 +69,22 @@ If this is the first time SAP Cloud Connector is started, you will see the **Def
 
     ![Select region](4b-scc-selectregion.png)
 
-5. Go back to the BTP Cockpit Overview page and copy the ``subaccount ID`` into the **Subaccount** field.
-6. Enter an easily identifiable display name, e.g. your SAP BTP trial's subdomain into **Display Name**.
-7. Enter the ``email address`` and ``password`` that you use to login to your SAP BTP trial into **Login E-Mail** and **Password**.
-8. If you have attached another SAP Cloud Connector to your SAP BTP trial account already, enter any unique **Location ID** here to distinguish this SAP Cloud Connector from the existing one. Otherwise, you can leave this field empty.
+7. Go back to the BTP Cockpit Overview page and copy the ``subaccount ID`` into the **Subaccount** field.
+8. Enter an easily identifiable display name, e.g. your SAP BTP trial's subdomain into **Display Name**.
+9.  Enter the ``email address`` and ``password`` that you use to login to your SAP BTP trial into **Login E-Mail** and **Password**.
+10. If you have attached another SAP Cloud Connector to your SAP BTP trial account already, enter any unique **Location ID** here to distinguish this SAP Cloud Connector from the existing one. Otherwise, you can leave this field empty.
 
 
     ![Add Subaccount dialogue](6-scc-add-dialogue.png)
 
-7. Click **Save**.
+11. Click **Save**.
 
 You have connected your trial subaccount and can now see it in the subaccount dashboard. The status is still yellow, as backend access has not been configured yet.
 
 ![Subaccount dashboard](7-scc-subaccount-dashboard.png)
 
 
-
-
 ### Configure access control
-
 
 In this step, you specify the on-premise backend system that your trial should be able to access.
 
@@ -137,13 +132,13 @@ In this step, you specify the on-premise backend system that your trial should b
 
 ![Summary screen](17a-scc-summary.png)
 
+
 You now see a new entry in the mappings table. The icon in the **Check Result** column should be green, but the status is still grey, as no accessible resources have been defined yet.
 
 ![System Mapping Overview](18a-scc-system-mapping.png)
 
 
 ### Add resources
-
 
 1. In the lower table **Resources of s4hana:44300** click the **plus** icon.
 
@@ -164,8 +159,8 @@ You now see a new entry in the lower table and the status of the entries in both
 ![summary screen](21a-scc-ac-summary.png)
 
 
-### Create the design-time destination
 
+### Create the design-time destination
 
 The design-time destination is used to fetch the federated content from the content provider system during design-time.
 
@@ -200,7 +195,7 @@ The design-time destination is used to fetch the federated content from the cont
 
 
 
-    ![Design-time Destination](25a-btp-designtime-destination.jpg)
+    <!-- border --> ![Design-time Destination](25a-btp-designtime-destination.jpg)
 
 6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial (CAL) systems, as property name and value.
 
@@ -209,8 +204,9 @@ The design-time destination is used to fetch the federated content from the cont
 ![Additional property](25-2b-btp-designtime-destination.jpg)
 
 
-### Create the runtime destination
 
+
+### Create the runtime destination
 
 The runtime destination is used to launch federated applications at runtime.
 
@@ -236,8 +232,6 @@ The runtime destination is used to launch federated applications at runtime.
 6. Click **Save**.
 
 ![Runtime Destination](27b-btp-runtime-destination.jpg)
-
-
 
 
 

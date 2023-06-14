@@ -84,7 +84,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-      -DarchetypeVersion=RELEASE \
+      -DarchetypeVersion=RELEASE -DjdkVersion=11 \
       -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 

@@ -79,7 +79,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 ### Create service interface
 
-1. In the `srv` (**not `src`!**) folder created another file and name it `interaction_srv.cds`
+1. In the `srv` (**not `src`!**) folder create another file and name it `interaction_srv.cds`
 
     ```Name
     interaction_srv.cds
@@ -153,10 +153,6 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. To make subsequent steps easier, shorten the generated name to `MyHANAApp-dev`
 
     ![Generated Service Name](generated_service_name.png)
-
-1. If prompted, select the first suggested Cloud Foundry service plan with the name **hdi-shared**
-
-    ![CF Plan](cf-plan.png)
 
 1. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 

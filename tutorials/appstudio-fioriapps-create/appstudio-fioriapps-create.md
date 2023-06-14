@@ -79,6 +79,7 @@ The flow consists of the following parts:
 
 ### Open the project's folder
 
+
 1. In the left side bar, select **Hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
@@ -97,7 +98,9 @@ The flow consists of the following parts:
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
-### Generate an app based on SAPUI5 Application template
+
+### Generate an app based on the SAP Fiori Basic template
+
 
 1. In the **Get Started** tab click **Start from template**.
 
@@ -121,8 +124,8 @@ The flow consists of the following parts:
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
-    | A | Application type | **SAPUI5 freestyle** |
-    | B | Which `template` do you want to use? | **SAPUI5 Application** tile |
+    | A | Application type | **SAP Fiori** |
+    | B | Which `template` do you want to use? | **Basic** tile |
 
     <!-- border -->![Floorplan Selection](BAS-Generate-App-3-1-.png)
 
@@ -147,9 +150,9 @@ The flow consists of the following parts:
     | A | Module name | **`businesspartners`** |
     | B | Application title | **Suppliers** |
     | C | Application namespace | **ns** |
-    | D | Description | **An SAPUI5 freestyle app to view a list of suppliers (demo)** |
+    | D | Description | **An SAP Fiori app to view a list of suppliers (demo)** |
     | E | Project folder path | **`/home/user/projects/FioriDemo`** |
-    | F | Minimum SAPUI5 version | **1.102.1 (Source system version)** (default) |
+    | F | Minimum SAPUI5 version | **1.112.3 (Source system version)** (default) |
     | G | Add deployment configuration | **Yes** (default after setting the project folder path)|
     | H | Add FLP configuration | **Yes** |
     | I | Configure advanced options | **No** (default) |

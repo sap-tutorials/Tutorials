@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Assign a Role Collection to a User
+description: This tutorial shows you how to assign roles to users.
 keywords: cap
 auto_validation: true
 time: 5
@@ -9,20 +10,17 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Assign a Role Collection to a User
-<!-- description --> This tutorial shows you how to assign roles to users.
-
 ## Prerequisites
- - [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)
+ - [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe)
 
-## You will learn
+## Details
+### You will learn
  - How to assign roles to users
 
 
 ---
 
-### Assign roles
-
+[ACCORDION-BEGIN [Step 1: ](Assign roles)]
 To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
 
 1. Open **SAP BTP Cockpit**.
@@ -41,10 +39,10 @@ To be able to access the application, your user needs to be assigned to a role c
 
 Your user now appears in the list of the role collection's users.
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Test it
-
+[ACCORDION-BEGIN [Step 2: ](Test it)]
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
@@ -53,9 +51,10 @@ If not, probably you have signed in before adding the role collection to your us
 
 > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
+[DONE]
+[ACCORDION-END]
 ---
-### (Optional) Create a role collection manually
-
+[ACCORDION-BEGIN [Step 3: ]((Optional) Create a role collection manually)]
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
 1. Open **SAP BTP Cockpit**.
@@ -78,11 +77,11 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 3. Open the value help for **Role Name**.
 
-    <!-- border -->![RoleName value help](role_name_value_help.png)
+    !![RoleName value help](role_name_value_help.png)
 
 4. Select `cpapp-...!...` in **Application Identifier** dropdown.
 
-    <!-- border -->![Application Identifier](app_identifier.png)
+    !![Application Identifier](app_identifier.png)
 
     > The **App Identifier** is the **XSAPPID** of your application. It consists of the **XSAPPNAME** that's been used to create the XSUAA service followed by an exclamation mark (`!`) and a landscape-wide unique ID.
 
@@ -92,4 +91,6 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 7. Choose **Save**.
 
+[DONE]
+[ACCORDION-END]
 ---

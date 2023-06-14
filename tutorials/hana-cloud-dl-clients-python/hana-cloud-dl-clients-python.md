@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>python]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>python]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using Python Drivers
@@ -33,11 +33,13 @@ The first step is to check if Python and pip are installed.
     python --version
     python3 --version
     ```
-    If Python is installed, the command will return a value such as Python 3.10.3.
+    If Python is installed, the command will return a value such as Python 3.11.3 (current version).
+
+    >In some Linux distributions, python refers to Python 2 and python refers to Python 3.  As Python 2 is obsolete, this isn't always the case and python may refer to Python 3.
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
-    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
+    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
 
     ![python-install](python-install.png)
 
@@ -49,6 +51,7 @@ The first step is to check if Python and pip are installed.
     pip3 --version
     pip install --upgrade pip
     ```
+    >If you encounter issues with user permissions, run command prompt as an administrator and try again.
 
     The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  Again, use the pip or pip3 command that returns a version 3.4 or greater of Python.
 
@@ -106,7 +109,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     pico pythonQuery.py
     ```
 
-2. Copy the following code into `pythonQuery.py`:
+2. Copy the following code into `pythonQuery.py`. Replace the host value.
 
     ```Python
     #Import your dependencies
@@ -131,9 +134,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     conn.close()
     ```
 
-3. Replace the host value.
-
-4. Run the app. Make sure your data lake Relational Engine is running before executing the app.
+3. Run the app. Make sure your data lake Relational Engine is running before executing the app.
 
     ```Shell
     python pythonQuery.py
@@ -195,7 +196,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     import pyodbc
 
     #Initialize your connection
-    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL_Trial')
+    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL')
 
     #If no errors, print connected
     print('connected')
@@ -206,7 +207,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     rows = curs.fetchall()
     for row in rows:
         for col in row:
-            print ("%s" % col, end=" ")
+            print ("%s" % col, end= " ")
         print ("  ")
 
     curs.close()
@@ -260,6 +261,8 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
     Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)  
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries a data lake Relational Engine database.
 

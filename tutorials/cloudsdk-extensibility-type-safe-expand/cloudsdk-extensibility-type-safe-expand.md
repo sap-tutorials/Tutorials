@@ -1,11 +1,11 @@
 ---
 parser: v2
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: topic>java
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: programming-tool>java
 ---
 
 # Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
@@ -17,18 +17,20 @@ primary_tag: topic>java
 
 
 
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
->
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+ > **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
+ > This tutorial is not actively maintained and might be partially outdated.
+ > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+ > We will provide a link to the updated version of this tutorial as soon as we release it.
+
 
 ## You will learn
   - How to use custom field extensions from S/4HANA in the virtual data model for OData
   - How to join connected entities from the virtual data model in eager fashion
   - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
+
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+
 ---
 
 ### Get ready
@@ -329,7 +331,7 @@ One possibility is to consider a lazy fetch of connected entities only using the
 List<BusinessPartnerAddress> addresses = businessPartner.fetchBusinessPartnerAddress();
 ```
 
-This can be a beneficial approach in cases where the entities contain large data volumes and the interaction with the data allows for a step-by-step resolution of the model (e.g., lazily loading entities for the UI).
+This can be a beneficial approach in cases where the entities contain large data volumes and the interaction with the data allows for a step-by-step resolution of the model (example: lazily loading entities for the UI).
 
 However, if you want to get addresses of many business partners, this approach leads to significant performance issues as each method call corresponds to one remote function call to the S/4HANA APIs. Furthermore, the lazy fetch also gets all fields from the connected entity per default, however, sometimes you may want to select only certain fields.
 
@@ -499,7 +501,7 @@ public class BusinessPartnerServlet extends HttpServlet {
 }
 
 ```
-That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module, etc.) your client code will not be affected and is therefore less prone to changes.
+That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module) your client code will not be affected and is therefore less prone to changes.
 
 > **HINT:** When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
 

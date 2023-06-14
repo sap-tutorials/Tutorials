@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>java]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>java]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the JDBC Driver
@@ -41,7 +41,7 @@ javac -version
 
 If these commands fail, ensure that the folder they are located in is included in your path.  
 
-The following command will install Java on openSUSE Leap 15.2.
+The following command will install Java on openSUSE Leap 15.4.
 
 ```Shell (Linux)
 sudo zypper install java-11-openjdk-devel
@@ -63,6 +63,8 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
 
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
+    >The HOMEPATH environment variable should resolve to your user in your users folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
+
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\java
     cd %HOMEPATH%\DataLakeClientsTutorial\java
@@ -75,7 +77,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     pico JavaQuery.java
     ```
 
-2. Copy the following code into `JavaQuery.java`:
+2. Copy the following code into `JavaQuery.java`. Update the `host` value in the connection string.
 
     ```Java
     import java.sql.*;
@@ -99,7 +101,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
                 try {
                     System.out.println("Connection to data lake Relational Engine successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -115,9 +117,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     }
     ```
 
-3. Update the `host` value in the connection string.
-
-4. Compile the `.java` file into a `.class` file using the following command:
+3. Compile the `.java` file into a `.class` file using the following command:
 
     ```Shell (Microsoft Windows)
     javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java
@@ -126,7 +126,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     javac -cp $IQDIR17/java/sajdbc4.jar:. JavaQuery.java
     ```  
 
-5. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
+4. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
 
     ```Shell (Microsoft Windows)
     java -classpath %IQDIR17%\Java\sajdbc4.jar;. JavaQuery
@@ -182,15 +182,21 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
 
     ![Install DBeaver](dbeaver-install1.png)
 
-2. In `DBeaver`, select **Database | Driver Manager | New** to create a new driver configuration.
+2. In `DBeaver`, select **Database | Driver Manager | New** to create a new driver configuration. Name the driver **SAP HANA Cloud, data lake**
 
     ![New Driver](create-new-driver.png)
 
-3.  Under the **Libraries** tab, specify Java and native components that make up the driver.
+3.  Under the **Libraries** tab, add Java and native components by clicking Add File.
 
-    ![Libraries](create-new-driver-libraries.png)
+    ![Libraries](create-new-drivers-libraries.png)
 
-    Select `sajdbc4.jar` and choose Find Class and press **OK** to save the new driver definition.
+    Press **OK** to save the new driver definition. 
+
+    ![Press OK](press-ok.png)
+
+    Then edit the driver and select `sajdbc4.jar`. Choose Find Class and select the driver class.
+
+    ![Edit Driver library](edit-driver-class.png)
 
     >On Linux, if an error occurs indicating that the library cannot load,  ensure that source IQ.sh has been added to your environment as described at [Step 5: Install the data lake IQ client](hana-cloud-dl-clients-overview).
 
@@ -201,7 +207,7 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
 5. Provide the JDBC URL and credentials and press the **Test Connection** button.  An example of the URL is shown below.
 
     ```JDBC URL
-    jdbc:sqlanywhere:uid=HDLADMIN;pwd=MyPasword1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'
+    jdbc:sqlanywhere:uid=USER1;pwd=Password1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'
     ```
 
     ![Database connection main tab](create-new-driver-test.png)
@@ -213,6 +219,8 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
     ```
 
     ![query in DBeaver](dbeaver-select.png)
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database and used the driver in `DBeaver`.
 

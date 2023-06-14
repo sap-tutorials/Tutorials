@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr
@@ -16,25 +16,21 @@ author_profile: https://github.com/MatKuhr
  - An account on [Cloud Foundry](group.scp-1-get-ready)
 
 
-
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
->
+
 ## You will learn
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
   - How to write a custom event handler for CAP Java
   - How to deploy an application to SAP Cloud Platform Cloud Foundry
   - How to create service that reads/writes business partners from S/4HANA and exposes them as SAP Cloud Application Programming Model
 
+## Intro
 [SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/) enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
-
 However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/).
-
 In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how the SAP Cloud SDK allows you to develop, extend and communicate with other SAP solutions.
-
 > Also check out the full documentation on [how the Cloud SDK integrates with CAP](https://sap.github.io/cloud-sdk/docs/java/guides/cap-sdk-integration).
 
 ---
@@ -195,7 +191,7 @@ public class BusinessPartnerReadListener implements EventHandler {
 
         final Map<Object, Map<String, Object>> result = new HashMap<>();
         final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).execute(httpDestination);
+                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).executeRequest(httpDestination);
 
         final List<CapBusinessPartner> capBusinessPartners =
                 convertS4BusinessPartnersToCapBusinessPartners(businessPartners, "MyErpSystem");
@@ -211,9 +207,15 @@ public class BusinessPartnerReadListener implements EventHandler {
         final BusinessPartnerService service = new DefaultBusinessPartnerService();
 
         Map<String, Object> m = context.getCqn().entries().get(0);
-        BusinessPartner bp = BusinessPartner.builder().firstName(m.get("firstName").toString()).lastName(m.get("surname").toString()).businessPartner(m.get("ID").toString()).build();
+        BusinessPartner bp =
+            BusinessPartner
+                .builder()
+                .firstName(m.get("firstName").toString())
+                .lastName(m.get("surname").toString())
+                .businessPartner(m.get("ID").toString())
+                .build();
 
-        service.createBusinessPartner(bp).execute(httpDestination);
+        service.createBusinessPartner(bp).executeRequest(httpDestination);
     }
 
     private List<CapBusinessPartner> convertS4BusinessPartnersToCapBusinessPartners(
@@ -260,7 +262,7 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function, which creates the new `businessPartner`.
 
 
 ### Run the mock server
@@ -275,13 +277,13 @@ Once it is up and running, you should see the list of services at <http://localh
 You can run the project on a local mock server. Here, you need to supply the destinations as an environment variable on your local machine.
 
 ```Shell
-set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
+$destinations='[{name: "MyErpSystem", url: "https://URL", "username": ""USER", "password": "PASSWORD"}]'
 ```
 
 Please change the URL accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```Shell
-set destinations
+echo $destinations
 ```
 
 Be aware that the variable is only available in your current terminal session.

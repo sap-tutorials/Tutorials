@@ -44,13 +44,13 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
 1. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial and free tier you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
 
-    ![Create Dev Space](AppStudio Dev Space Manager_.png)
+    ![Create Dev Space](AppStudio_Dev_Space_Manager.png)
 
 1. Enter any name you wish for your dev space name and choose **Full Stack Cloud Application** as the kind of application you are creating.
 
     ![Create Dev Space](create_cap_dev_space.png)
 
-1. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artifacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
+1. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artifacts in the same project, we would ask that you also choose **SAP HANA Calculation View Editor** and **SAP HANA Tools at minimum**.
 
     ![Configure Dev Space](configure_cap_dev_space.png)
 
@@ -86,7 +86,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     ![API Endpoint](api_endpoint.png)
 
-1. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
+1. The default value proposed is not necessarily the correct value, please confirm. The value can be found in the SAP BTP cockpit at the Subaccount level
 
     ![Finding the API Endpoint](api_endpoint_from_subaccount.png)
 
@@ -98,11 +98,10 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     ![Organization](organization.png)
 
-1. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
-
+1. The final input will ask you for your Space. Press **Apply**.
     ![Space](space.png)
 
-1. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space.
+1. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space. It's normal to see less options in this tree display than the screenshot depending upon how much other development you might have already done in your BTP account.
 
     ![Org and Space Set Correctly](org_space_set_correctly.png)
 
@@ -132,15 +131,13 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 1. The new project should be added to your workspace automatically.
 
-    ![Open in New Workspace](new_workspace.png)
-
 ### Explore the generated artifacts
 
 1. The wizard has generated a Multi-target Application with two modules: a database module and a service module. Expand them to familiarize yourself with the basic folder structure.
 
     ![New CAP model project structure](new_project_structure.png)
 
-1. The wizard has also populated the `mta.yaml` configuration file with the necessary dependencies and parameters for each module. Open it in the code editor to explore it.
+1. The wizard has also populated the `mta.yaml` configuration file with the necessary dependencies and parameters for each module. Open it in the code editor by right mouse clicking on it and using the **Open With** menu option to explore it.
 
     ![New CAP model project mta.yaml explained](mta_explained.png)
 
@@ -160,8 +157,6 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     ![Adjust db module path](db_path.png)
 
-1. Save these changes
-
 1. In the root of the project there is another important configuration file - the package.json. We are going to need to make several changes to this file as well.
 
     ![Open package.json for editing](package_json.png)
@@ -169,10 +164,6 @@ The Cloud Application Programming Model wizard generates a project that supports
     > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
 
 1. You can completely delete the `devDependencies` section of the `package.json`
-
-1. In the `dependencies` section, update the `@sap/cds` version to `^6`
-
-    ![package.json dependencies](package_json_dependencies.png)
 
 1. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
 
@@ -197,9 +188,7 @@ The Cloud Application Programming Model wizard generates a project that supports
     }
     ```
 
-    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder for the db module but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
-
-1. Save the file
+    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder for the db module but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA Cloud at development time instead of SQLite.
 
 ### Install dependencies
 
@@ -262,4 +251,4 @@ Each time you commit to the local or remote repository, you create a version. Th
 
     ![Commit](commit.png)
 
-> It is recommended to set a remote repository in, for example, GitHub. This will allow you to have a copy of your code outside the SAP Business Application Studio Dev Space.
+> For a real project it is recommended to set a remote repository, for example GitHub. This will allow you to have a copy of your code outside the SAP Business Application Studio Dev Space.

@@ -1,11 +1,11 @@
 ---
 parser: v2
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Create and Deep Insert with the Virtual Data Model for OData
@@ -16,15 +16,18 @@ primary_tag: products>sap-cloud-sdk
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
  - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
 
-
-## Intro
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 ## You will learn
   - How to build up a complex data structure using the virtual data model
   - How to write deeply nested data to SAP S/4HANA in a single call
   - How to write unit and integration tests for deep insertion
 
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 
 ---
 
@@ -92,7 +95,7 @@ public class StoreBusinessPartnerCommand{
 
 > ### What does the code do?
 > The code introduces a `StoreBusinessPartnerCommand` that uses a `BusinessPartnerService`, a `HttpDestination` and a `BusinessPartner` instance to execute a create command.
-Within the run() method, i.e., whenever the command is executed, it calls the `businesspartner service`.
+Within the run() method, whenever the command is executed, it calls the `businesspartner service`.
 >
 > The `StoreBusinessPartnerCommand` takes a `Businesspartner` instance as input. This is a potentially complex (containing nested entities) data type. Therefore, in the next step you need to create a nested data structure based on the `BusinessPartner` data model.
 >
@@ -343,10 +346,12 @@ The file needs to be put under your `<projectroot>/integration-tests/src/test/ja
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
-import com.sap.cloud.sdk.testutil.MockUtil;
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.isEmptyString;
+import static org.hamcrest.Matchers.not;
+
+import java.net.URL;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -356,58 +361,66 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.net.URISyntaxException;
-import java.net.URL;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.isEmptyString;
-import static org.hamcrest.Matchers.not;
+import io.restassured.RestAssured;
 
-@RunWith(Arquillian.class)
-public class BusinessPartnerDeepInsertTest {
-    private static final MockUtil mockUtil = new MockUtil();
+@RunWith( Arquillian.class )
+public class BusinessPartnerDeepInsertTest
+{
 
     @ArquillianResource
     private URL baseUrl;
 
     @Deployment
-    public static WebArchive createDeployment() {
-        return TestUtil.createDeployment(BusinessPartnerServlet.class,
+    public static WebArchive createDeployment()
+    {
+        return TestUtil
+            .createDeployment(
+                BusinessPartnerServlet.class,
                 BusinessPartner.class,
                 StoreBusinessPartnerCommand.class,
                 DefaultBusinessPartnerService.class);
     }
 
     @BeforeClass
-    public static void beforeClass() throws URISyntaxException {
-        mockUtil.mockDefaults();
-        mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+    public static void beforeClass()
+    {
+        DestinationAccessor
+            .appendDestinationLoader(
+                new DefaultDestinationLoader()
+                    .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
     }
 
     @Before
-    public void before() {
+    public void before()
+    {
         RestAssured.baseURI = baseUrl.toExternalForm();
     }
 
     @Test
-    public void testStoreAndGetCustomers() {
-
+    public void testStoreAndGetCustomers()
+    {
         given()
-                .params("firstname", "John", "lastname", "Doe", "country", "US", "city", "Tuxedo", "email", "john@doe.com")
-                .when()
-                .post("/businessPartners")
-                .then()
-                .log().all()
-                .statusCode(201)
-                .and()
-                .body("BusinessPartner", not(isEmptyString()))
-                .and()
-                .body("BusinessPartnerUUID", not(isEmptyString()));
+            .params("firstname", "John", "lastname", "Doe", "country", "US", "city", "Tuxedo", "email", "john@doe.com")
+            .when()
+            .post("/businessPartners")
+            .then()
+            .log()
+            .all()
+            .statusCode(201)
+            .and()
+            .body("BusinessPartner", not(isEmptyString()))
+            .and()
+            .body("BusinessPartnerUUID", not(isEmptyString()));
     }
 }
-
 ```
-In addition, you are using a system alias which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
+In addition, you are using a system alias, which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
 
 Both tests together give us a code coverage of 91%:
 

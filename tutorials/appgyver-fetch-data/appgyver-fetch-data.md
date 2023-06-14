@@ -2,13 +2,13 @@
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-appgyver
-author_name: Daniel Wrolewski
+primary_tag: software-product>sap-build-apps--enterprise-edition
+author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Fetch Data from Public API to Your AppGyver Application
+# Fetch Data from Public API to Your SAP Build Application
 <!-- description --> Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
 
 ## You will learn
@@ -22,7 +22,7 @@ In the previous tutorial, you learned how to connect your application to a publi
 
 ### Remove alert component
 
-Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
+Open your draft application in your Composer account, displaying your barcode scanner app.
 
 As you no longer need your application to send an alert, as this was just used as a test, you need to start by removing the alert component in your logic flow.
 
@@ -112,6 +112,10 @@ You now need to configure your application to store the data it receives. To do 
 
     ![Save logic](save_logic.png)
 
+    >**Why did we delete default logic?**
+    >
+    >Whenever you create a data variable, default logic is added to fetch the data when the page loads, and then again every 5 seconds. But we want to fetch data only when the user clicks the button and scans a barcode, so we removed the default logic and will later add logic on the button click.
+
 The data variables are now configured for your application.
 
 
@@ -128,6 +132,8 @@ The data variables are now configured for your application.
 
     ![Scan button logic](scan_button_logic.png)
 
+    >This is where we add the logic to scan a barcode and retrieve the data for that product.
+
 3. Using the core logic options, scroll down to **Variables – Set Data Variables** and then drag and drop this into the logic editor.
 
     ![Set Data Variable](set_data_variable.png)
@@ -142,7 +148,7 @@ The data variables are now configured for your application.
 
     Now you must store the data you just retrieved to the data variable.
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
+    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
     -  Select **Output value of another node** and then choose the following:
 

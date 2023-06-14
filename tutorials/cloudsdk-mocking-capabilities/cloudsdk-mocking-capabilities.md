@@ -1,11 +1,11 @@
 ---
 parser: v2
-author_name: Philipp Herzig
-author_profile: https://github.com/philippherzig
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Develop an S/4HANA Extension Without a S/4HANA System
@@ -16,21 +16,15 @@ primary_tag: products>sap-cloud-sdk
  - [Introduce resilience to your application](s4sdk-resilience)
 
 
-## Intro
-≤
-
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
- 
+
 ## You will learn
   - What is mocking
   - Why mocking is useful
   - How to mock the access to SAP S/4HANA systems
-
-
-
 
 ---
 
@@ -177,7 +171,7 @@ The code above creates a new test class called `GetBusinessPartnerMockedTest`. T
 >
 >- <p> Third, our first actual testing method `testGetAnyBusinessPartner()`:<p>
 <ol>
-> <li> Here, you first of all create two mocks (i.e., a proxy object) of the business partner service interface and `HttpDestination` that replaces the actual SDK implementation with mocked methods. As you want to mock the entire fluent API including all its delegating classes and not just the interface itself, you also need to provide the `RETURNS_DEEP_STUBS` option.</li>
+> <li> Here, you first of all create two mocks (proxy objects) of the business partner service interface and `HttpDestination` that replaces the actual SDK implementation with mocked methods. As you want to mock the entire fluent API including all its delegating classes and not just the interface itself, you also need to provide the `RETURNS_DEEP_STUBS` option.</li>
 > <li> Then, you do the actually mocking by defining under which condition (when-part), what should happen (then-part). Here, you simply define that when the business partner APIs is called, upon any filter condition, upon any selection criteria, upon any execution context, it shall return Alice and Bob as business partners.</li>
 > <li> Afterwards, you initialize our `GetBusinessPartnersCommand` and pass the mocked business partner service into our production code command. Then, you simply call the command as you do in our production code to get the list of business partners who match our criteria.</li>
 
@@ -223,7 +217,7 @@ Here, you have now replaced the line `.filter(any())` with  `.filter(BusinessPar
 ### Mocking the failure case
 Mocking can also test hard-to-reach code such as certain failure cases.
 
-In the example, you can run into situations where the OData call to the business partner API may fail during runtime (due to failing network, wrong authorizations, etc.). This is unfortunate and you cannot do anything about failing OData calls at design-time, but you must test whether our code behaves correctly in such failure situations and leaves the application in an expected, consistent state.
+In the example, you can run into situations where the OData call to the business partner API may fail during runtime (due to failing network, wrong authorizations or other factors). This is unfortunate and you cannot do anything about failing OData calls at design-time, but you must test whether our code behaves correctly in such failure situations and leaves the application in an expected, consistent state.
 
 Fortunately, you can also mock such failure cases by throwing a dummy `ODataException` and expect a **`ResilienceRuntimeException`** as the test result.
 
@@ -342,7 +336,7 @@ public class GetBusinessPartnerMockedTest {
 }
 ```
 
-- The test itself can be still refactored to avoid duplicate code. For example, certain mock conditions, e.g., any business partner API call could be externalized into a separate method for better reuse and readability.
+- The test itself can be still refactored to avoid duplicate code. For example, certain mock conditions, any business partner API call could be externalized into a separate method for better reuse and readability.
 
 - The mocking facility also works greatly with the SAP Cloud SDK Continuous Delivery Pipeline as introduced in Step 14 with SAP Cloud SDK: Continuous integration and delivery. This helps to achieve higher code coverage and higher qualities which are checked by the pipeline.
 

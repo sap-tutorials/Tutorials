@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the ODBC Driver
@@ -30,11 +30,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![start ODBC Administrator](start-odbc.png)
 
-2. Click the **Drivers** tab and view the installed drivers.  
+2. Click the **Drivers** tab and view the installed drivers. The SAP IQ driver is visible. 
 
     ![odbc admin drivers](drivers-1.png)
 
-    The SAP IQ driver is visible.
+    
 
 3. Click the **User DSN** tab to view the data sources.  
 
@@ -44,7 +44,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 5. Select **SAP IQ** and click **Finish**.
 
-    <!-- border -->![New data source](Create-new-data-source-1.png)
+    ![New data source](Create-new-data-source-1.png)
 
 6. Configure the data source.
 
@@ -58,11 +58,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![test connection](data-source4.png)  
 
-    > Note that if the test fails, try pressing the OK button to save the data source, then try the test again.
+    >If the test fails, try pressing the OK button to save the data source, then try the test again.
 
 8. Press OK to save the data source.  
 
-    > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
+    >The saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
 
@@ -96,10 +96,10 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 4. Configure the values of `driver` and `host` so that they conform with your setup.
 
     ```.odbc.ini
-    [HC_DL_Trial]
-    driver=/home/dan/dlclient/IQ-17_1/lib64/libdbodbc17.so
+    [HC_DL]
+    driver=/home/XXXXX/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
     encryption=TLS(trusted_certificates=*;direct=yes)
-    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443
+    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
     integrated=NO
     log=/tmp/hdlclientlog.txt
     ```
@@ -107,25 +107,35 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL_Trial" -nogui
-    isql -v HC_DL_Trial USER1 Password1
+    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
+    isql -v HC_DL USER1 Password1
     ```
 
-    DBISQL
+    **DBISQL**
+    
+    Some example queries you can run are listed below.
+
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER;
+    ```
+
+    ```SQL
+    SELECT * FROM HOTEL.ROOM;
+    ```
 
     ![ODBC example with dbisql](ODBC-dbisql.png)
 
-    isql
+    **isql**
 
     ![isql query](isql-query.png)
 
-    > To exit dbisql or isql type quit.
+    > To exit dbisql or isql type `quit`.
 
     > ---
 
     > The column width when displaying results in isql can be set using the -m parameter.  
     > ```Shell (Linux)
-    isql -v HC_DL_Trial USER1 Password1 -m6
+    isql -v HC_DL USER1 Password1 -m6
     >```
 
 
@@ -139,7 +149,6 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 1. Open Microsoft Excel.
 
 2.  In the **Data** tab, select **Get Data | From Other Sources | From ODBC**.
-
     ![Excel ODBC](ExcelODBC.png)
 
 3.  Select the previously created data source that contains the connection information to data lake Relational Engine.
@@ -166,7 +175,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine ODBC driver.  
 
->Note that the ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
+>ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.   The version used in this tutorial is 22.1.5.  In a later version, an error "Invalid string or buffer length" was seen during connection.
 
 The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
 
@@ -194,6 +203,7 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
 
     `DBeaver` can also be used to create an entity relationship (ER) diagram, perform a comparison of two selected objects, execute import and export operations, view spatial data on a map, and perform data analysis with its grouping and `calc` panels.
 
+### Knowledge check
 
 For further information on programming an application to use the ODBC client driver, see [ODBC CLI](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/a3171c5084f210159caebadd9e149481.html).
 

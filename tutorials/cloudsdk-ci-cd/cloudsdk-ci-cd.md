@@ -4,8 +4,8 @@ author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Set Up Continuous Integration and Delivery for SAP Cloud SDK
@@ -16,12 +16,8 @@ For getting started with Continuous Integration and Delivery (`Cx`) in your proj
     - **Linux host with Docker**: For instantiating the Cx-server of project "Piper", you need to provide a suitable host or virtual machine with a Linux operating system and Docker installed. Please also ensure that the user with whom you start the Cx-server belongs to the Docker group.
     - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
 
-## Intro
-The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
-
-
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
@@ -30,6 +26,9 @@ The General Purpose Pipeline of project "Piper" uses Docker images for each indi
   - How to develop and release your application in short cycles
   - How to use project "Piper" to set up a CI/CD pipeline for SAP Cloud SDK based projects on SAP Cloud Platform
   - How to set up a CI/CD build server and run your pipeline
+
+## Intro
+The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
 ---
 
@@ -289,7 +288,7 @@ This is a general security risk in setups where Docker containers need to be abl
 This tutorial describes the approach of project "Piper" to setup and maintain your own Jenkins server using the cx-server lifecycle scripts. However, there are also alternatives to that:
 
 - SAP offers the [SAP Cloud Platform Continuous Integration and Delivery](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/618ca03fdca24e56924cc87cfbb7673a.html) which lets you configure and run predefined continuous integration and delivery (CI/CD) pipelines as a service.
-- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions), [Travis CI](https://travis-ci.com/), etc. Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
+- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions) or [Travis CI](https://travis-ci.com/). Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
 
 ### Additional Resources
 

@@ -11,6 +11,9 @@ author_profile: https://github.com/Juliana-Morais
 # Get OAuth Access Token for Personalized Recommendation via Web Browser
 <!-- description --> Retrieve your OAuth access token, which will grant you access to the service APIs.
 
+## Prerequisites
+- You have created service key in tutorial: [Use the Free Tier Service Plan to Set Up Account for Personalized Recommendation and Get Service Key](cp-aibus-pr-booster-free-key)
+
 ## You will learn
   - How to use your service key values to get an OAuth access token via any web browser
 

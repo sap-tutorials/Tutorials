@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Prepare Your Development Environment for CAP
+description: This tutorial shows you how to get started using VS Code as an editor create a directory for development, and start from an example branch.
 keywords: cap
 auto_validation: true
 time: 20
@@ -9,17 +10,15 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Prepare Your Development Environment for CAP
-<!-- description --> This tutorial shows you how to get started using VS Code as an editor create a directory for development, and start from an example branch.
-
 ## Prerequisites
  - (For Windows) You have to install [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the CAP documentation in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows).
  - (For macOS) You have to install Command-Line Tools for Xcode, cause some node modules need binary modules (`node-gyp`). There are two options to install them:
     - Using the command line: `xcode-select --install`
     - Downloading [Xcode](https://developer.apple.com/xcode/) (a login with your Apple ID and password is required). Search for `Command Line Tools for Xcode`.
 
+## Details
 
-## You will learn
+### You will learn
  - How to set up local development Using VS Code
     - How to set up your environment for application development
     - How to install extensions for VS Code
@@ -29,22 +28,23 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-### Editors
-
+[ACCORDION-BEGIN [Step 1: ](Editors)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 This tutorial contains all the installation steps that you would have to do to get started. It's likely that you have some of the software already installed, so you can just skip those steps.
 
 You can choose the editor to develop your CAP application. If you want to exactly go along with the following tutorials, we recommend using VS Code as an editor.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Command line interpreters
+[ACCORDION-BEGIN [Step 2: ](Command line interpreters)]
+This tutorial contains a number of command line snippets that need to be pasted into a command line window (sometimes referred to as command line interface (CLI) or terminal). All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Prompt and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
 
-This tutorial contains a number of command line snippets that need to be pasted into a command line window. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
-
+[DONE]
+[ACCORDION-END]
 ---
-### Install Git
-
+[ACCORDION-BEGIN [Step 3: ](Install Git)]
 Git is the version control system that you need to download the files of this tutorial but also to develop anything in collaboration with others really.
 
 Check whether you already have Git installed. Open a command line window and execute the following command.
@@ -61,9 +61,10 @@ git version 2.x.x
 
 If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer appropriate for your operating system and install it.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install Node.js
-
+[ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
 > Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install.
@@ -82,9 +83,10 @@ You should get an output like:
 v16.x.x
 ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install the SAPUI5 command line interface
-
+[ACCORDION-BEGIN [Step 5: ](Install the SAPUI5 command line interface)]
 1. Check in a command line window whether you already have the UI5 CLI installed.
 
     ```Shell/Bash
@@ -105,9 +107,10 @@ v16.x.x
 
 See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install the Cloud Foundry command line interface
-
+[ACCORDION-BEGIN [Step 6: ](Install the Cloud Foundry command line interface)]
 [OPTION BEGIN [macOS]]
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
@@ -157,9 +160,10 @@ Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-g
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Add CAP tooling
-
+[ACCORDION-BEGIN [Step 7: ](Add CAP tooling)]
 CAP provides you with all the tools to create your data model with entities and your services. It helps you tremendously to get these services running locally during development with an incredible speed. It also creates the connection to both local databases and databases in the cloud (SAP HANA). It comes with different tooling that is used in this tutorial. You can see the details in the [CAP documentation](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 
 1. Install CDS development kit globally in a command line window.
@@ -184,9 +188,10 @@ CAP provides you with all the tools to create your data model with entities and 
 
     To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install VS Code
-
+[ACCORDION-BEGIN [Step 8: ](Install VS Code)]
 [OPTION BEGIN [macOS]]
 
 VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
@@ -226,9 +231,10 @@ Download the package for your Linux distribution and install.
 [OPTION END]
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install VS Code extensions
-
+[ACCORDION-BEGIN [Step 9: ](Install VS Code extensions)]
 You need to install the [**SAP Language Support**](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds) extensions for VS Code:
 
 1. Open VS Code.
@@ -251,9 +257,10 @@ Now, the extension is installed in VS Code. If the extension is already installe
 > - short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0)
 > - [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor)
 
+[DONE]
+[ACCORDION-END]
 ---
-### Install SAP Fiori tools Extension Pack
-
+[ACCORDION-BEGIN [Step 10: ](Install SAP Fiori tools Extension Pack)]
 SAP Fiori tools are a number of extensions for VS Code. They mainly support you in developing SAP Fiori elements apps. In this tutorial, you use the so-called SAP Fiori application generator to create an SAP Fiori elements app, you need this for the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements).
 
 > Additional Documentation:
@@ -278,11 +285,11 @@ You need to install the [**SAP Fiori tools - Extension Pack**](https://marketpla
 
 After a restart of VS Code, you can check for the tools by invoking **View** &rarr; **Extensions** and then scrolling through the list of **Enabled** extensions. They all start with **SAP Fiori tools**. If the extension is already installed and enabled in VS Code, it's updated automatically.
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Install Yeoman
-
-[Yeoman](https://yeoman.io/) is a tool for scaffolding web apps. You'll need it if you want to carry out the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
+[ACCORDION-BEGIN [Step 11: ](Install Yeoman)]
+[Yeoman](https://yeoman.io/) is a tool for scaffolding web apps. You'll need it if you want to carry out the tutorial [Prepare SAP Build Work Zone, Standard Edition Setup](btp-app-work-zone-setup).
 
 1. Check in a terminal whether you already have Yeoman installed:
 
@@ -296,9 +303,10 @@ After a restart of VS Code, you can check for the tools by invoking **View** &ra
     npm install --global yo
     ```
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create a directory for development
-
+[ACCORDION-BEGIN [Step 12: ](Create a directory for development)]
 If a tutorial has prerequisites, they're listed at the beginning of the tutorial.
 
 For the tutorial, you need a directory to develop the app and you need access to the template files. We recommend choosing one root directory (that is the tutorial root directory) for both the directory for your app (`cpapp`) and the tutorial directory (`tutorial`) with the template files. See the table below:
@@ -310,9 +318,10 @@ For the tutorial, you need a directory to develop the app and you need access to
 | `tutorial/templates` | templates provided by the tutorial repository |
 | `cpapp` | the directory that will contain your application |
 
+[DONE]
+[ACCORDION-END]
 ---
-### Download the tutorial
-
+[ACCORDION-BEGIN [Step 13: ](Download the tutorial)]
 Downloading the tutorial gives you easy access to template files that are required for some tutorials.
 
 1. Open a command line window.
@@ -330,9 +339,10 @@ Downloading the tutorial gives you easy access to template files that are requir
     ```
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Create a GitHub repository for your project
-
+[ACCORDION-BEGIN [Step 14: ](Create a GitHub repository for your project)]
 To be able to perform the steps for [CI/CD](btp-app-ci-cd-btp), you will need a public repository. Currently, SAP Continuous Integration and Delivery supports [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/) repositories.
 
 We recommend creating a public [GitHub](https://github.com) repository to save your tutorial application because this is what the tutorial uses. This way, if you have issues with your tutorial application, you can refer to it.
@@ -345,9 +355,10 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 
 > For the sake of simplicity, don't create additional branches in your repository. When initially created, your repository has only one branch - the **`main`** branch. This is the only branch you need to complete the tutorial.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Clone your GitHub repository
-
+[ACCORDION-BEGIN [Step 15: ](Clone your GitHub repository)]
 1. Copy the repository's URL you have created before.
 
 2. Open a command line window.
@@ -368,9 +379,10 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 
 
 
+[DONE]
+[ACCORDION-END]
 ---
-### Start from an example branch
-
+[ACCORDION-BEGIN [Step 16: ](Start from an example branch)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 If you don't want to start from scratch, but from a specific example of the tutorial, you can copy the required files in your project. Alternatively, you can fork the project and work on the fork.
@@ -422,4 +434,6 @@ If you don't want to start from scratch, but from a specific example of the tuto
     npm install
     ```
 
+[DONE]
+[ACCORDION-END]
 ---

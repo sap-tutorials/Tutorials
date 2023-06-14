@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
@@ -41,7 +41,7 @@ From the products service that you created in the previous tutorial, we just wan
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE \
+    -DarchetypeVersion=RELEASE -DjdkVersion=11 \
     -DgroupId=com.sap.cap -DartifactId=bookstore
     ```
 

@@ -4,20 +4,18 @@ author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 # Integration and Unit Tests for SAP Cloud SDK Projects
 <!-- description --> Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
 
 ## Prerequisites
-This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", e.g. because you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
+This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", for example you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
 
 
-
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
@@ -36,14 +34,14 @@ In general, there are multiple kinds of tests differentiating mainly in the gran
 ![Testing Pyramid](testing-pyramid.png)
 
 Integration tests have a reduced complexity. They skip the user interface and work directly on the defined backend APIs. They test the integration between software modules or systems. In our example, we mainly use them to test the integration between backend services and the integration to SAP S/4HANA systems.
-Although they have a reduced complexity, they still have medium costs. They still have an overhead, e.g., for network communications or spawning a small server to make the backend APIs available. You should use them to verify that your backend services can communicate with your SAP S4HANA system and to test that the services behave as the user interface expects it.
+Although they have a reduced complexity, they still have medium costs. They still have an overhead, for example network communications or spawning a small server to make the backend APIs available. You should use them to verify that your backend services can communicate with your SAP S4HANA system and to test that the services behave as the user interface expects it.
 
-Unit tests have the smallest granularity. They can be defined directly on the programming level, e.g., calling methods of your java classes. Dependencies to other modules or systems may be mocked to ensure that they run very quickly and only test the portion under consideration. These tests are usually very cheap. You should use them to verify that your software modules, such as classes, behave as expected.
+Unit tests have the smallest granularity. They can be defined directly on the programming level, for example calling methods of your java classes. Dependencies to other modules or systems may be mocked to ensure that they run very quickly and only test the portion under consideration. These tests are usually very cheap. You should use them to verify that your software modules, such as classes, behave as expected.
 
 
 ### Unit-tests backend
 
-For the modules of your backend services we suggest writing [JUnit](https://github.com/junit-team/junit4/wiki/Getting-started) tests. Please place your unit tests inside `application/src/test`. Unit tests should be very light weight. They should test the modules, e.g. a class, in a isolated manner. Other depended modules or even calls to external destinations, such as an ERP system, may be mocked. For mocking, the SAP Cloud SDK provides mocking facilities with the class `MockUtil`. Furthermore, we recommend using mocking frameworks, such as Mockito or PowerMock.
+For the modules of your backend services we suggest writing [JUnit](https://github.com/junit-team/junit4/wiki/Getting-started) tests. Please place your unit tests inside `application/src/test`. Unit tests should be very light weight. They should test the modules, meaning, a class, in a isolated manner. Other depended modules or even calls to external destinations, such as an ERP system, may be mocked. For mocking, the SAP Cloud SDK provides mocking facilities with the class `MockUtil`. Furthermore, we recommend using mocking frameworks, such as Mockito or PowerMock.
 
 Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
 
@@ -52,7 +50,7 @@ Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn mor
 ### Integration tests backend
 
 
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
+In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
 
 
 ### Mocking basics
@@ -142,7 +140,7 @@ Everything around mocking is located in the class `MockUtil` in the SAP Cloud SD
 In this example, we use the class `MockUtil` in the `beforeClass` method to mock common resources using `mockUtil.mockDefaults()` and to mock the connection to the S/4HANA system. The `mockDefaults` method calls several methods from the `MockUtil` to mock:
 
 | :------------- | :-------------
-| `resetCloudPlatformFacade()` | `Mocks the SAP Cloud Platform environment, i.e. the application name. The Default application name is testapp.`
+| `resetCloudPlatformFacade()` | `Mocks the SAP Cloud Platform environment, which is the application name. The Default application name is testapp.`
 | `mockCurrentLocales()` | `Mocks the current locale to en-US`
 | `mockCurrentTenant()` | `Mocks the tenant id to 00000000-0000-0000-0000-000000000000`
 | `mockCurrentUser()` | `Mocks the user name to MockedUser`

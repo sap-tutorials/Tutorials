@@ -2,21 +2,20 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>mobile, software-product>sap-btp--cloud-foundry-environment, software-product>sap-fiori, software-product>sap-hana-cloud, tutorial>license, tutorial>free-tier]
+tags: [ tutorial>beginner, software-product>sap-fiori, software-product>sap-hana-cloud, software-product>sap-btp--cloud-foundry-environment, topic>mobile]
 primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
 # Create a Data Model and Expose It as a Service
-<!-- description --> Create a capital expenditures data model and expose it via a service, using the low-code capabilities of SAP Business Application Studio.
+<!-- description --> Create a capital expenditures data model and expose it via a service, using the high productivity development capabilities of SAP Business Application Studio.
 
 ## Prerequisites
- - You have access to your Application Development Lobby.
- - If you are doing this as part of Devtoberfest 2022, you can create a trial account and set up SAP Business Application Studio according to [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html), create a low-code Dev Space, and launch the dev space. Finally, create a project.
+ - You have access to SAP Business Application Studio and created a dev space for developing apps using high productivity tools, as described in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial).
 
 ## You will learn
-- How to create a project from scratch from the Application Development Lobby
+- How to create a project from scratch
 - How to create a data model for your application
 - How to expose the data using a service so that you'll be able to use it in your apps
 - How to add sample data
@@ -27,101 +26,119 @@ author_profile: https://github.com/raz-korn
 
 ### Create a project
 
+1. Enter the **Dev Space** you created in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial). 
 
-1. Projects are created from the Application Development Lobby. You can access the Lobby using its bookmark (if you saved it) or from the SAP BTP cockpit: Select the subaccount you created using the [Set Up SAP Business Application Studio for Low-Code Development](appstudio-onboarding) tutorial, expand **Services**, click **Instances and Subscriptions**, and choose **`SAP AppGyver`**.
+2. Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
 
-2. Within the Application Development Lobby, click **Create** and select **Business Application**.
-
-    <!-- border -->![launch bas lcap](BAS-Create-Project-1-.png)
-
-2. Provide a **Project Name**, e.g. `CapitalExpenditures`, and click **Create**.
-
-    <!-- border -->![launch bas lcap](BAS-Create-Project-2-.png)
-
-3. Wait for the homepage of SAP Business Application Studio for low-code development to load.
-
-    >Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
-
-    >Loading SAP Business Application Studio for low-code development may take some time, especially if it's the first time in a day.
+    >Loading SAP Business Application Studio may take some time, especially if it's the first time in a day.
 
     <!-- border -->![bas lcap loaded](BAS-Create-Project-4-.png)
 
     >Close the notification icon at the bottom of the screen (optional).
 
+3. If no project exists in your dev space you have to create a new project. To do so open the **Project Explorer**.
 
-### Model your data: Entities
+    <!-- border -->![Project Explorer](BAS-Create-Project-2-1.png)
+
+4. From the Project Explorer select the button **Create Project**.
+
+    <!-- border -->![Create Project 1](BAS-Create-Project-2-2.png)
+
+5. On the right side a new page opens. Select **Generator Full-Stack Project (Productivity Toolkit)** and press the button **Start**.
+
+    <!-- border -->![Create Project 2](BAS-Create-Project-2-3.png)
+
+6. Enter the **Project Name**, for example, `CapitalExpenditures`, and click **Finish**.
+
+    <!-- border -->![Create Project 1](BAS-Create-Project-2-.png)
+
+7. If a project already exists in your dev space, you can create an additional project by selecting the **+** button in the **Project Explorer**.
+
+    <!-- border -->![Create Project 2](BAS-Create-Project-1-.png)
 
 
-1. From the homepage, click the **+** of the Data Model tile to add a data model to your project.
+### Model your data - Entities
+
+1. To open the home tab please select the **Project Explorer** from the menu on the left.
+
+    <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-1.png)
+
+2. From the Project Explorer select the entry **Home**.
+
+    <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-2.png)
+
+3. From the homepage, click the **+** of the **Data Models** tile to add a data model to your project.
 
     <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-.png)
 
-2. Provide an **Entity Name** for the entity e.g. **`Capex`**, and choose **Create**.
+4. Provide an **Entity Name** for the entity, for example, **`Capex`**.
 
     <!-- border -->![bas lcap create entity](BAS-LCAP-Data-Model-2-.png)
 
-3. Click the **+** to add a property to the **`Capex`** entity.
+5. Click the **+** to add a property to the **`Capex`** entity.
 
     <!-- border -->![bas lcap create entity](BAS-LCAP-Data-Model-3-.png)
 
-4. Select the following:
+6. Select the following:
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Property Name | **description** |
     | B | Property Type | **String** (default) |
-    | C | Key Property | Leave unchecked (default) |
-    | D | Null Value | **Yes** (default) |
-    | E | Many | Leave unchecked (default) |
-    | F | Other Facets (Max Length) | Leave empty (default) |
+    | C | Key | Leave unchecked (default) |
+    | D | Null | **Yes** (default) |
+    | E | Arrayed | Leave unchecked (default) |
+    | F | Max Length | Leave empty |
+    | G | Default Value | Leave empty (default) |
 
     <!-- border -->![bas lcap new property editor](BAS-LCAP-Data-Model-4-.png)
 
-5. Add the following property (click **+**), and choose **Create**.
+7. Add the following property (click **+**). When done with adding the properties choose **Create**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Property Name | **`total_cost`** |
     | B | Property Type | **Integer** |
-    | C | Key Property | Leave unchecked (default) |
-    | D | Max Length | Leave empty (default) |
-    | E | Null Value | **Yes** (default) |
-    | F | Many | Leave unchecked (default) |
+    | C | Key | Leave unchecked (default) |
+    | D | Null | **Yes** (default) |
+    | E | Arrayed | Leave unchecked (default) |
+    | F | Default Value | Leave empty (default) |
 
     <!-- border -->![bas lcap new property editor](BAS-LCAP-Data-Model-5-.png)
 
     The **`Capex`** entity appears in the **Data Model Editor** tab with a default **ID** property.
 
-    >To edit an entity, click the entity's header and choose the **Edit Entity** icon.
+    <!-- border -->![bas lcap new entity](BAS-LCAP-Data-Model-6-.png)
 
-    ><!-- border -->![bas lcap entity editor](BAS-LCAP-Data-Model-6-.png)
+8. To add another data model to your project click the `Add Entity` button in the **Data Model Editor** tab.
 
-6. Access the **Home** tab.
+    <!-- border -->![bas lcap add entity](BAS-LCAP-Data-Model-8-1.png)
 
-    <!-- border -->![bas lcap return to home](BAS-LCAP-Data-Model-7-.png)
+    A new entity appears in the **Data Model Editor** tab.    
 
-7. Click the **+** of the Data Model tile to add a data model to your project.
+    To edit the entity, click the entity's header and choose the **Edit Entity** icon.
 
     <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-8-.png)
 
-8. Provide an **Entity Name** for the entity e.g. **Contractors**.
+9. Provide an **Entity Name** for the entity, for example, **Contractors**.
 
-    <!-- border -->![bas lcap create entity](BAS-LCAP-Data-Model-9-.png)
+    <!-- border -->![bas lcap entity name](BAS-LCAP-Data-Model-9-.png)
 
-9. Change the **Property Name** of the **ID** property to **contractor**, and its **Property Type** to **Integer**.
+10. Change the **Property Name** of the **ID** property to **contractor**, and its **Property Type** to **Integer**.
 
     <!-- border -->![bas lcap edit property](BAS-LCAP-Data-Model-10-.png)
 
-10. Add the following property to the **Contractors** entity, and choose **Create**.
+11. Add the following property to the **Contractors** entity, and choose **Update**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Property Name | **name** |
     | B | Property Type | **String** (default) |
-    | C | Key Property | Leave unchecked (default) |
-    | D | Null Value | **Yes** (default) |
-    | E | Many | Leave unchecked (default) |
-    | F | Other Facets (Max Length) | Leave empty (default) |
+    | C | Key | Leave unchecked (default) |
+    | D | Null | **Yes** (default) |
+    | E | Arrayed | Leave unchecked (default) |
+    | F |Max Length | Leave empty |
+    | G | Default Value | Leave empty (default) |
 
     <!-- border -->![bas lcap add property](BAS-LCAP-Data-Model-11-.png)
 
@@ -129,12 +146,12 @@ author_profile: https://github.com/raz-korn
 
 
 
-### Model your data: Relationship between entities
+### Model your data - Relationship between entities
 
 
-1. Select the **`Capex`** entity, choose the **Add Relationship** icon, and select the **Contractors** entity to add a relationship to the **Contractors** entity.
+1. With relationships you can connect your entities. To do so, select the **`Capex`** entity, choose the **Add Relationship** icon, and select the **Contractors** entity to add a relationship to the **Contractors** entity.
 
-    <!-- border -->![bas lcap add relationship](BAS-LCAP-Data-Model-14-.png)
+    <!-- border -->![bas lcap add relationship](BAS-LCAP-Data-Model-14-.png)    
 
     <!-- border -->![bas lcap add relationship](BAS-LCAP-Data-Model-14-2-.png)
 
@@ -142,15 +159,16 @@ author_profile: https://github.com/raz-korn
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
-    | A | Relationship | **Association** (default) |
-    | B | Relationship Type | **To-One** (default) |
-    | C | Property Name | **contractor** |
-    | D | Target Entity Type | **CapitaExpenditures.Contractors** (default) |
-    | E | Backlink Property | Leave empty (default) |
+    | A | Relationship Type| **Association** (default) |
+    | B | Multiplicity | **To-One** (default) |
+    | C | Key Property | **No** (default) |
+    | D | Property Name | **contractor** |
+    | E | Target Entity | **CapitalExpenditures.Contractors** (default) |
+    | F | Backlink Property | Leave empty (default) |
 
     <!-- border -->![bas lcap add relationship](BAS-LCAP-Data-Model-15-.png)
 
-3. You can re-arrange the entities on the canvas manually or by clicking the **Auto Layout** icon to improve the data model visualization.
+3. You can re-arrange the entities on the canvas by clicking the **Auto Layout** icon to improve the data model visualization. In addition, you can also manually drag the entities over the canvas.
 
     <!-- border -->![bas lcap add relationship](BAS-LCAP-Data-Model-16-.png)
 
@@ -163,7 +181,7 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![bas lcap return from data model editor to home tab](BAS-LCAP-Service-1-.png)
 
-2. Click the **+** of the **Service** tile to add a service through which data from the data model can be accessed.
+2. Click the **+** of the **Services** tile to add a service through which data from the data model can be accessed.
 
     <!-- border -->![bas lcap launch service editor](BAS-LCAP-Service-2-.png)
 
@@ -184,7 +202,7 @@ author_profile: https://github.com/raz-korn
 
     The **`Capex`** service appears in the **Service Editor** tab.
 
-4. Access the **Home** tab, and define the following new service.
+4. To add another new service to your project click the `Add Entity` button in the **Service Editor** tab, define the following, and choose **Create**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -195,45 +213,49 @@ author_profile: https://github.com/raz-korn
     | E | contractor | Leave checked (default) |
     | F | name | Leave checked (default) |
 
+    <!-- border -->![bas lcap add service](BAS-LCAP-Service-5-1.png)
+
     <!-- border -->![bas lcap edit service](BAS-LCAP-Service-5-.png)
 
     The **Contractors** service is added to the **Service Editor**, with association to the **`Capex`** service.
 
     <!-- border -->![bas lcap service editor](BAS-LCAP-Service-6-.png)
 
-5. Select the **`Capex`** service (Which gets highlighted with a blue rectangle indication), and check the **Draft Editing** property.
+5. Select the **`Capex`** service (which gets highlighted with a blue rectangle indication), and check the **Draft Editing** property.
 
-    >A draft is an interim version of a business entity that has not yet been explicitly saved as an active version. This allows users to be e.g. interrupted, and continue later on. For more information visit [SAP Fiori Design Guidelines - Draft Handling](https://experience.sap.com/fiori-design-web/draft-handling/).
+    >A draft is an interim version of a business entity that has not yet been explicitly saved as an active version. This allows users to pause, for example when being interrupted, and continue later on. For more information visit [SAP Fiori Design Guidelines - Draft Handling](https://experience.sap.com/fiori-design-web/draft-handling/).
 
     <!-- border -->![bas lcap draft editing](BAS-LCAP-Service-7-.png)
 
-6. You can re-arrange the entities on the canvas manually or by clicking the **Auto Layout** icon to improve the service visualization.
+6. You can re-arrange the entities on the canvas by clicking the **Auto Layout** icon to improve the service visualization. In addition, you can also manually drag the entities over the canvas.
 
     <!-- border -->![bas lcap service editor auto layout](BAS-LCAP-Service-8-.png)
 
-7. Access the **Home** tab. You can see that both the services are added to the **Service** tile.
+7. Access the **Home** tab. You can see that both the services are added to the **Services** tile.
 
     <!-- border -->![bas lcap service editor auto layout](BAS-LCAP-Service-9-.png)
 
 
 
-### Preview your data
+### Preview your data service
 
 It is a common practice in software development to test run any change to an app as soon as possible. Prior to having the services defined, you were not able to test the app. Since now you have defined the services, you can test them.
 
-1. Choose the **Preview** option from the homepage, and select either **With Sample Data** or **With Live Data** option.
+1. Choose the **Preview** option from the homepage, and select **Run CapitalExpenditures-1**. 
 
+    >**Troubleshooting**: `CapitalExpenditures` is the name you have previously chosen for your project. If you have chosen a different name, this name will be displayed, for example, Run DifferentName-1. 
+  
     <!-- border -->![bas lcap launch preview](BAS-LCAP-Preview-Service-1-.png)
 
 2. The project preview page appears in a new tab with the links which allow you to test the service definition, access data exposed by the service, and more.
 
     <!-- border -->![bas lcap launch preview](BAS-LCAP-Preview-Service-3-.png)
 
-3. Choose the **metadata** to view the service's XML.
+3. In the preview page on the right side under **Services** choose the **metadata** link to view the service's XML. Close the XML file.
 
     <!-- border -->![bas lcap launch preview](BAS-LCAP-Preview-Service-4-.png)
 
-4. Select the **`Capex`** or the **Contractors** **view as code** to view the data from the respective service.
+4. Also in the preview page on the right side under **Services** select the button **view as code** next to **`Capex`** or **Contractors**  to view the data from the respective service.
 
     <!-- border -->![bas lcap launch preview](BAS-LCAP-Preview-Service-5-.png)
 
@@ -242,13 +264,13 @@ It is a common practice in software development to test run any change to an app
 
 ### Add sample data and preview it
 
-To test that the service works well, i.e. returns data when it is available in the data model, let's add sample data to your project. Sample data is a powerful tool as it allows you to (1) develop an app with no connectivity to a data source; (2) Debug your app.
+To test that the service works well, that is, returns data when it is available in the data model, let's add sample data to your project. Sample data is a powerful tool as it allows you to (1) develop an app with no connectivity to a data source; (2) Debug your app.
 
-1. Go back to the browser tab with SAP Business Application Studio for low-code development, and click the **+** of the **Sample Data** tile.
+1. Go back to the browser tab with SAP Business Application Studio, and click the **+** of the **Sample Data** tile.
 
     <!-- border -->![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-1-.png)
 
-2. Choose **Create**, select **Contractors**, and choose **Create**.
+2. Select **Contractors**, select **Create**, and press **Add**.
 
     <!-- border -->![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-2-.png)
 
@@ -264,7 +286,7 @@ To test that the service works well, i.e. returns data when it is available in t
 
     <!-- border -->![bas lcap edit sample data](BAS-LCAP-Add-Sample-Data-4-2-.png)
 
-6. Choose **Create**, select **`Capex`**, and choose **Create**.
+6. Select **`Capex`**, select **Create**, and press **Add**.
 
     <!-- border -->![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-4-3-.png)
 
@@ -276,7 +298,7 @@ To test that the service works well, i.e. returns data when it is available in t
 
     <!-- border -->![bas lcap sample data](BAS-LCAP-Add-Sample-Data-5-.png)
 
-9. Go back to the **project preview** browser tab, and click either the link of the **Contractors** service or the link of the **`Capex`** service. You can view the sample data you have added.
+9. Go back to the **project preview** browser tab, and select the button **view as code** next to **`Capex`** or **Contractors**. You can view the sample data you have added.
 
     <!-- border -->![bas lcap view sample data from service](BAS-LCAP-Add-Sample-Data-6-.png)
 

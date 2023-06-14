@@ -57,7 +57,7 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
   <groupId>com.github.ben-manes.caffeine</groupId>
   <artifactId>jcache</artifactId>
   <scope>runtime</scope>
-  <version>2.7.0</version>
+  <version>2.9.3</version>
 </dependency>
 ```
 
@@ -99,7 +99,7 @@ Feel free to test that subsequent requests respond faster compared to the first 
 
 Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected, adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
@@ -107,32 +107,29 @@ If your servlet got the desired result cached from a previous call, and the ERP 
 @Test
 public void testCache() {
     // TODO: insert your service URL down below
-    mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
+    DestinationAccessor
+        .appendDestinationLoader(
+            new DefaultDestinationLoader()
+                .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body(jsonValidator_List);
 
     // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+    DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body(jsonValidator_List);
 }
 ```
 
 Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
-
->If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
-```Java
-mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
-```
-
 
 
 ### More on testing
@@ -146,15 +143,15 @@ Take a look back at the test you just replaced:
 @Test
 public void testWithFallback() {
     // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+    DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
 
     // Assure an empty list is returned as fallback
     when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body("", Matchers.hasSize(0));
+        .get("/businesspartners")
+        .then()
+        .statusCode(200)
+        .contentType(ContentType.JSON)
+        .body("", Matchers.hasSize(0));
 }
 ```
 

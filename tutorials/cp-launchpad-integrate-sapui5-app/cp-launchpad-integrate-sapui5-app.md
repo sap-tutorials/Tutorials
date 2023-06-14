@@ -2,35 +2,35 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service, products>sap-fiori, programming-tool>html5, programming-tool>sapui5]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--standard-edition, products>sap-fiori, programming-tool>html5, programming-tool>sapui5]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Integrate Your SAPUI5 App into Your Launchpad Site
-<!-- description --> Add an SAPUI5 app to a launchpad site in the SAP Launchpad service.
+# Integrate Your SAPUI5 App into Your Site
+<!-- description --> Add an SAPUI5 app to a site in SAP Build Work Zone, standard edition.
 
 ## Prerequisites
- - You've already created the `JobCore` launchpad site.
- - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment.
+ - You've already created the `JobCore` site
+ - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment
 
 
 ## You will learn
-  - How to add a deployed, custom-developed, SAPUI5 app to your launchpad site
+  - How to add a deployed, custom-developed, SAPUI5 app to your site
 
 ---
-Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your launchpad site.
+Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your site.
 
 
-### Fetch updated content using the Provider Manager
+### Fetch updated content using the Channel Manager
 
 
-1. In the side navigation panel of your subaccount, click **Instances and Subscriptions** and then next to the Launchpad Service, click the **Go to Application** icon next to it.
+1. In the side navigation panel of your subaccount, click **Instances and Subscriptions** and then next to **SAP Build Work Zone, standard edition**, click the **Go to Application** icon.
 
     ![Open launchpad service](000-open-launchpad-service.png)
 
-2. Click the **Provider Manager** icon to view any available content providers.
+2. Click the **Channel Manager** icon to view any available content providers.
 
     ![Open Provider Manager](0-open-provider-manager.png)
 
@@ -50,7 +50,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 ### Add your deployed SAPUI5 app to your content
 
 
-1. Click the Content Manager icon in the side panel to open the **Content Manager**.
+1. Click the icon in the side panel to open the **Content Manager**.
 
     <!-- border -->![Open Content Editor](1-open-content-editor.png)
 
@@ -81,7 +81,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 In this step, you'll create a new group and assign the `Suppliers` app to it.
 
-> A group is a set of one or more apps displayed together in a launchpad site. Assigning apps to groups, makes them visible to the user.
+> A group is a set of one or more apps displayed together in a site. Assigning apps to groups, makes them visible to the user.
 
 1. Click **+ New** in the **Content Manager** and select **Group** to create a new group.
 
@@ -141,7 +141,7 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 
     ![Open site](12-go-to-site.png)
 
-    You'll see all the apps that you have created in your launchpad. In the `Our Suppliers` group, you'll see the `Suppliers` app that we've just created.
+    You'll see all the apps that you have created in your site. In the `Our Suppliers` group, you'll see the `Suppliers` app that we've just created.
 
     ![See all apps](12a-view-launchpad.png)
 
@@ -149,5 +149,3 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 3. Click the app to launch it.
 
     ![View app](13-suppliers-app.png)
-
-

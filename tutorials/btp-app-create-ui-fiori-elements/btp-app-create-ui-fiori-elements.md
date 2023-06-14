@@ -1,7 +1,8 @@
 ---
-parser: v2
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
+title: Create an SAP Fiori Elements-Based UI
+description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
 keywords: cap
 auto_validation: true
 time: 15
@@ -9,16 +10,14 @@ tags: [ tutorial>beginner, software-product-function>sap-cloud-application-progr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-# Create an SAP Fiori Elements-Based UI
-<!-- description --> This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
-
 ## Prerequisites
  - Before you start with this tutorial, you have two options:
     - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
     - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
 
 
-## You will learn
+## Details
+### You will learn
  - How to create an SAP Fiori elements app on top of your previously created CAP application
  - How to modify the UI with OData annotations
  - How to make header info editable
@@ -26,30 +25,30 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-### Overview
-
+[ACCORDION-BEGIN [Step 1: ](Overview)]
 An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 controls, and SAPUI5 model view controller (MVC) concepts. In a plain SAPUI5 or a freestyle SAPUI5 app, all the views and controllers are part of your project. In contrast, in an SAP Fiori elements app most of the code is outside of the project, managed centrally by the SAP Fiori elements team. The code inside your project only references these central components. They take care of creating the UI according to the latest SAP Fiori design guidelines and cover all the controller logic for you out of the box. The UI can be influenced by OData annotations. They determine, for example, which properties of an OData service make up the columns of a table that displays the content of the service.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Generate the UI with an SAP Fiori elements template
-
+[ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
-    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
+2. Choose template type **SAP Fiori** and template **List Report Page**.
 
        ![V4 Template](vscv4template.png)
 
 3. Choose **Next**.
 
-4. In the next dialog, choose **Use a Local CAP Project** and point to the folder of your current **`cpapp`** project.
+4. In the next dialog, choose `Use a Local CAP Project` and choose your current `cpapp` project.
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the SAP Fiori application generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -57,17 +56,19 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
+5. Select `RiskService(Node.js)` as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
-6. Select **Risks** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
+6. Select `Risks` as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
     ![entitySelection](entityselection.png)
 
 7. Enter `risks` as the module name and `Risks` as the application title.
 
 8. Enter `ns` as the namespace and `Risks` as the description for the application.
+
+9. Leave the default values for all other settings. 
 
 9. Choose **Finish** to generate the application.
 
@@ -78,23 +79,23 @@ The application is now generated and in a few seconds you can see it in the `app
 > However, the code there's minimal and it basically inherits its logic from the `sap/fe/core/AppComponent`. The `sap/fe/core/AppComponent` is the base class for SAP Fiori elements. This class is managed centrally by SAP Fiori elements, so you don't need to modify it yourself.
 
 
-
+[VALIDATE_1]
+[ACCORDION-END]
 ---
-### Modify the UI with OData annotations
-
+[ACCORDION-BEGIN [Step 3: ](Modify the UI with OData annotations)]
 1. If it's not still running from the previous tutorial, execute `cds watch` in a VS Code terminal and switch to <http://localhost:4004> in your browser.
 
     You can now see that the CAP server has discovered an HTML page in your `app` folder:
 
-       <!-- border -->![Index HTML Page](feapp.png)
+       !![Index HTML Page](feapp.png)
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
 3. You can now see the application without any data.
 
-    <!-- border -->![Index HTML Page](feappempty.png)
+    !![Index HTML Page](feappempty.png)
 
-    The table is empty because the application is currently missing UI annotations. You add them in the next step.
+    There are no visible columns because the application is currently missing UI annotations. You add them in the next step.
 
 4. To add the OData annotations, copy the file `risks-service-ui.cds` from `templates/create-ui-fiori-elements/srv` to the `srv` folder of your app.
 
@@ -106,32 +107,33 @@ The application is now generated and in a few seconds you can see it in the `app
 
     It now shows a work list with some columns and the data from the service.
 
-       <!-- border -->![SAP Fiori elements Work List](feappworklist.png)
+       !![SAP Fiori elements Work List](feappworklist.png)
 
     > If the work list doesn't show, you might have to clear your cache.
 
 You've now already finished a full blown service and a UI application on top running locally.
 
+[DONE]
+[ACCORDION-END]
 ---
-### Make header info editable
-
+[ACCORDION-BEGIN [Step 4: ](Make header info editable)]
 Let's say that at this point you'd like to edit some of the data or create a new risk in the table. By default, the header info is not editable. Hence, you'll be able to fill in data in the main group fields `Mitigation`, `Priority`, and `Impact`, but won't be able to fill data in any of the header fields `Title` or `Description`. Let's try it out.
 
 1. Choose **Create**.
 
-    <!-- border -->![Create Risk](createrisk.png)
+    !![Create Risk](createrisk.png)
 
-2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+2. To add a `Mitigation`, click on the value help icon in the input field and select a mitigation.
 
-    <!-- border -->![Add Mitigation](addmitigation.png)
+    !![Add Mitigation](addmitigation.png)
 
 3. Try and fill in data in the main group fields `Priority` and `Impact` and choose **Create**.
 
-    <!-- border -->![Fill Main Data](fillriskdata.png)
+    !![Fill Main Data](fillriskdata.png)
 
-4. The new risk is created but it has no title and it has no description.
+4. Click on the browser's back button, the new risk is created but it has no title.
 
-    <!-- border -->![No Title Risk](notitlerisk.png)
+    !![No Title Risk](notitlerisk.png)
 
 To make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
 
@@ -139,7 +141,7 @@ To make also the header fields editable, you have to change the default setting 
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-    ```YAML[15]
+    ```JSON[15]
     {
         "_version": "1.32.0",
         "sap.app": {
@@ -167,11 +169,12 @@ To make also the header fields editable, you have to change the default setting 
 
 3. Create another risk with a title and description.
 
-    <!-- border -->![My New Risk](mynewrisk.png)
+    !![My New Risk](mynewrisk.png)
 
+[DONE]
+[ACCORDION-END]
 ---
-### Check the annotation files
-
+[ACCORDION-BEGIN [Step 5: ](Check the annotation files)]
 Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning you see:
 
 ```JavaScript
@@ -298,7 +301,11 @@ annotate RiskService.Risks with {
 
 The line `Text: miti.description , TextArrangement: #TextOnly,` declares that the text from the description property is displayed for the `miti` association. Then it adds a value help (`ValueList`) for that association, so the user can pick one of the available mitigations when editing the object page.
 
-<!-- border -->![Fiori elements Object Page](feappobjectpage.png)
+!![Fiori elements Object Page](feappobjectpage.png)
 
+[DONE]
 The result of this tutorial can be found in the [`create-ui-fiori-elements`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-fiori-elements) branch.
+
+
+[ACCORDION-END]
 ---

@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the Node.js Driver
@@ -31,7 +31,7 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v16.15.1.
+If Node.js is installed, the currently installed version is returned, such as v18.16.0.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -132,7 +132,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -160,27 +160,30 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     >node nodeQuery.js
     >```  
 
-    >```Shell (Linux or Mac)
+    Linux or Mac
+    
+    >```Shell
     >export DEBUG=*
     >node nodeQuery.js
-    >```    
+    >```  
 
-    > ![debug output](debug-flag.png)
+    > ![debug output](debug-flag.png)  
 
-    > The value of the environment variable DEBUG can be seen and removed with the commands below.
+    > The value of the environment variable DEBUG can be seen and removed with the commands below.  
 
     >```Shell (Microsoft Windows)
     >set DEBUG
     >set DEBUG=
     >set DEBUG
-    >```  
+    >```   
 
-    >```Shell (Linux or Mac)
+    Linux or Mac
+
+    >```Shell (Linux)
     >printenv | grep DEBUG
     >unset DEBUG
     >printenv | grep DEBUG
-    >```
-
+    >```  
 
 ### Create an asynchronous app that uses callbacks
 
@@ -194,7 +197,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
+    ```Shell (Linux)
     pico nodeQueryCallback.js
     ```
 
@@ -403,6 +406,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![VS Code Debugging](debugging.png)
 
+### Knowledge check
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
