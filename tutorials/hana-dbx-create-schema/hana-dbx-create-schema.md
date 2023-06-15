@@ -29,7 +29,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
     ![Open SQL console](open-sql-console.png)
 
-    Notice that the user in the SQL Console is DBADMIN if using SAP HANA Cloud, or SYSTEM if using an on-premise SAP HANA database.  In this step we will create a new user, USER1 that will be used throughout the rest of the tutorials in this tutorial group.
+    Notice that the user in the SQL console is DBADMIN if using SAP HANA Cloud, or SYSTEM if using an on-premise SAP HANA database.  In this step we will create a new user, USER1 that will be used throughout the rest of the tutorials in this tutorial group.
 
 2. Execute the below SQL.
 
@@ -87,11 +87,11 @@ The following steps will create a sample hotel dataset using create and insert s
 
     ![add new user1 connection](user1-connection0.png)
 
-    Open a new SQL Console and notice that it using USER1 and the schema is HOTEL.
+    Open a new SQL console and notice that it using USER1 and the schema is HOTEL.
 
     ![user1 connection sql console](user1-connection.png)
 
-4. The following example demonstrates the privileges using the newly opened SQL Console.  Notice that USER2 does not have the privilege  to perform an insert.
+4. The following example demonstrates the privileges using the newly opened SQL console.  Notice that USER2 does not have the privilege  to perform an insert.
 
     ```SQL
     CREATE TABLE TEST(
@@ -131,7 +131,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Create and populate tables
 
-1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL Console connected to USER1 in the schema of HOTEL.
+1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL console connected to USER1 in the schema of HOTEL.
 
     ```SQL
     --CONNECT USER1 PASSWORD Password1;
@@ -313,7 +313,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
 Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   
 
-The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
+The first setting which can be set in the SQL console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
 
 The following steps will demonstrate these settings.
@@ -335,7 +335,7 @@ The following steps will demonstrate these settings.
 
     ![test1 result](auto-commit-test1.png)
 
-2. In the SQL Console, set auto-commit off.
+2. In the SQL console, set auto-commit off.
 
     ![turn auto-commit off](autocommit-off.png)
 
@@ -356,7 +356,7 @@ The following steps will demonstrate these settings.
 
     ![auto-commit test3](auto-commit-test3.png)
 
-    Until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL Console or database connection.
+    Until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL console or database connection.
 
     Additional details can be found at [ROLLBACK Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20fcc453751910149557fc90fe781449.html) and [COMMIT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d39db97519101480e7f9b76f48c2c4.html).
 
@@ -377,7 +377,7 @@ The following steps will demonstrate these settings.
 
     An error will occur and you can then decide to undo the inserted rows and the table creation by executing a `ROLLBACK;` or you have the option to keep the successfully created table and rows by executing a `COMMIT`.
 
-    Until a COMMIT is executed, the table will not appear in another SQL Console or in the catalog browser.
+    Until a COMMIT is executed, the table will not appear in another SQL console or in the catalog browser.
 
     >The following query can be used to determine if AUTOCOMMIT DDL is enabled.  
     >

@@ -6,8 +6,8 @@ tags: [tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-dat
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Query databases using the SQL Console in SAP HANA Cloud Central
-<!-- description --> Learn how the SQL Console can be used within SAP HANA Cloud Central to quickly query a selected database.  
+# Query Databases Using the SQL Console in SAP HANA Cloud Central
+<!-- description --> Learn how the SQL console can be used within SAP HANA Cloud Central to quickly query a selected database.  
 
 ## Prerequisites
 - An SAP HANA Cloud database
@@ -15,27 +15,27 @@ primary_tag: software-product>sap-hana-cloud
 - You have completed [this](hana-cloud-dl-clients-overview) tutorial which creates a database schema for an SAP HANA Cloud, data lake Relational Engine
 
 ## You will learn
-  - How to open a SQL Console, specify the credentials, and set the current schema
-  - An overview of the functionality provided in the SQL Console
+  - How to open a SQL console, specify the credentials, and set the current schema
+  - An overview of the functionality provided in the SQL console
 
 ---
 
-### Open a SQL Console
-This step demonstrates how a SQL Console can quickly be opened from within SAP HANA Cloud Central and how to change the SQL Console's credentials and schema.
+### Open a SQL console
+This step demonstrates how a SQL console can quickly be opened from within SAP HANA Cloud Central and how to change the SQL console's credentials and schema.
 
-1.  In **SAP HANA Cloud Central**, open a SQL Console by selecting **SQL Console** in the left pane.  Notice that the SQL Console is not associated with a database when opened in this way.
+1.  In **SAP HANA Cloud Central**, open a SQL console by selecting **SQL Console** in the left pane.  Notice that the SQL console is not associated with a database when opened in this way.
 
-    ![open SQL Console](open-sql-console.png)
+    ![open SQL console](open-sql-console.png)
 
-    >Additional SQL Consoles can also be opened by selecting the **+** icon.
+    >Additional SQL consoles can also be opened by selecting the **+** icon.
 
 2.  This time select **Instances**, select a database, and choose **Open SQL Console** from the actions menu.
 
-    ![open SQL Console from an instance](open-sql-console-instance.png)
+    ![open SQL console from an instance](open-sql-console-instance.png)
 
     Notice that it is now connected to the instance named `HC_HDB`.
 
-    ![SQL Console connected to HC_HDB](sql-console-connected.png)
+    ![SQL console connected to HC_HDB](sql-console-connected.png)
 
     >The currently connected user can be seen by executing the SQL statement below.
 
@@ -80,7 +80,7 @@ This step demonstrates how a SQL Console can quickly be opened from within SAP H
 
 
 ### Execute SQL
-This step demonstrates how to execute a SQL query and view query results, messages, and history within a SQL Console.  
+This step demonstrates how to execute a SQL query and view query results, messages, and history within a SQL console.  
 
 1. Execute the following SQL statements.
 
@@ -110,16 +110,16 @@ This step demonstrates how to execute a SQL query and view query results, messag
 
     ![history view](history.png)
 
-    Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL Console or copied.
+    Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL console or copied.
 
     >The history is not persisted across browser reloads.
 
 ### A few things to note
-The SQL Console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
+The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
 
-* Opening the SQL Console within the SAP HANA Cloud Central can be done much quicker than opening the full SAP HANA database explorer.
+* Opening the SQL console within the SAP HANA Cloud Central can be done much quicker than opening the full SAP HANA database explorer.
 
-* The SQL Console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central. 
+* The SQL console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central. 
 
 * The SAP HANA database explorer has some additional functionality
 
@@ -134,8 +134,8 @@ The SQL Console within SAP HANA Cloud Central appears similar to the one within 
     * Ability to run statements against multiple instances
     * Generate SQL Analyzer file or explain plan
     * Statement library
-    * SQL Console settings
+    * SQL console settings
 
 ### Knowledge check
 
-Congratulations! You have now used the SQL Console in SAP HANA Cloud Central and have become familiar with some of the features it provides.
+Congratulations! You have now used the SQL console in SAP HANA Cloud Central and have become familiar with some of the features it provides.
