@@ -57,7 +57,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
 2.  Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
    
-    This tutorial uses the HOTEL schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL Consoles you open will now start with this schema value. 
+    This tutorial uses the HOTEL schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
     
     ```Advanced Options Field
     currentSchema=HOTEL;
@@ -117,7 +117,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     Once logged in, you should see the database instances list from the web-based SAP HANA database explorer appear in your Database List. To open an SAP HANA SQL console in Visual Studio Code, hover over the connection and click the console icon. 
 
-    ![Cloud Foundry SQL Console](cfConsole.png)
+    ![Cloud Foundry SQL console](cfConsole.png)
 
     To open the database in SAP HANA database explorer, click the stacked boxes icon.
 
@@ -162,13 +162,13 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![DBX Settings](dbx-settings2.png)
 
-3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
+3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL console, run the following code.
 
     ```SQL
     SELECT * FROM CUSTOMER;
     ```
 
-    Open another SQL Console, click the split editor icon, and then drag one of the SQL Console tabs into the new space to the right. 
+    Open another SQL console, click the split editor icon, and then drag one of the SQL console tabs into the new space to the right. 
 
     ![Split Editor](splitEditors.png)
 
@@ -234,7 +234,7 @@ The extension also allows you to import and export SQL files to and from your co
 
 ### Run SQL code
 
-1. Open a new SQL Console and use the newly created function with the following code. Click on the dropdown arrow beside Run to view the different Run options. Then, normally **Run** your code.
+1. Open a new SQL console and use the newly created function with the following code. Click on the dropdown arrow beside Run to view the different Run options. Then, normally **Run** your code.
 
     ```SQL
     SELECT AVERAGE_RATING(1) FROM DUMMY;

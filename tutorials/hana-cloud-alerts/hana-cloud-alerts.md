@@ -96,7 +96,7 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 
     ![Open the database explorer](open-dbxt.png)
 
-2. Execute the following query in the SQL Console to trigger a high (indicated by the parameter value of 4) severity test alert.
+2. Execute the following query in the SQL console to trigger a high (indicated by the parameter value of 4) severity test alert.
 
     ```SQL
     CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
