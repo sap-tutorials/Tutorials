@@ -27,13 +27,13 @@ primary_tag: software-product>sap-hana-cloud
     
      ![Download Visual Studio Code](downloadVSCode.png)
 
-2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from the Extensions Marketplace. 
+2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from [https://marketplace.visualstudio.com/](Visual Studio Marketplace) by navigating to **Extensions** and searching for **SAP HANA Database Explorer**.
 
     >For more information about the latest features and version updates to the extension, you can refer to the **CHANGELOG** tab.
 
     ![Install extension](installExtension.png)
 
-3. Open the extension from the new icon in the activity bar (left) and navigate to the Database List. 
+3. Open the extension from the new icon in the activity bar (left) and navigate to the **Database List**. 
 
     ![Open extension](openExtension.png)
 
@@ -49,7 +49,7 @@ primary_tag: software-product>sap-hana-cloud
 
 The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-premise databases as well as an SAP HANA User Store.  In this tutorial, a connection to an SAP HANA Cloud database will be made, but the steps to connect to the other types are very similar. Adding local connections do not require authentication to the SAP Business Technology Platform (BTP) or Cloud Foundry.
 
-1. Hover over the Database List section and click the **+** button to **Add SAP HANA Database**.
+1. Hover over the **Database List** section and click the **+** button to **Add SAP HANA Database**.
 
     ![Add Database](addDatabase.png)
 
@@ -63,7 +63,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
     currentSchema=HOTEL;
     ```
 
-    >Ensure that you connect the database securely using TLS/SSL by ticking the checkbox. If you do not check the Save Password checkbox, you will have to enter your password each time you open a new SQL Console.
+    >Ensure that you connect the database securely using TLS/SSL by ticking the checkbox. If you do not check the Save Password checkbox, you will have to enter your password each time you start using the extension.
 
     ![SAP HANA Cloud Connection](cloudConnection.png)
 
@@ -98,7 +98,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
     cf login -help
     ```
 
-    Ensure that your API Endpoint is correct. Navigate to SAP BTP Cockpit, click on your sub-account, and click on the Cloud Foundry Environment tab, where your API Endpoint will be listed.
+    Ensure that the **API Endpoint** is correct. Navigate to SAP BTP Cockpit, click on your sub-account, and click on the Cloud Foundry Environment tab, where your API Endpoint will be listed.
 
     ![API Endpoint](cloudFoundryEnvironment.png)
 
@@ -127,7 +127,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 ### Using the Database List and Catalog Browser
 
-1. Use the Database List to open the list of schemas in the catalog browser by expanding your database instance, expanding the catalog, and then clicking on Schemas. 
+1. Select **Schemas** to open the list of schemas in the Catalog Browser. 
 
     As you can see, since the current Schema was set to HOTEL using advanced options when adding the database, this list is already filtered for you.  By hovering or clicking on the Catalog Browser section, you will see a filter icon and a refresh icon. 
     
@@ -146,7 +146,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 Learn how to change settings and leverage features such as split editor, layout toggles, and the terminal.
 
-1. If you would like to change the color theme of Visual Studio Code, one way to do that is through **File > Preferences > Themes > Color Theme**. From here, you can select from the existing light and dark color themes that are available as well as the additional ones you may have installed from the extension marketplace.
+1. If you would like to change the color theme of Visual Studio Code, one way to do that is through **File > Preferences > Themes > Color Theme**. From here, you can select from a light or dark color theme.
 
     ![change Theme](changeTheme.png)
 
@@ -206,7 +206,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Create Notepad File](notepadTerminal.png)
 
-    Paste the following code into the file and save it as a SQL file by adding **.sql** to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table. 
+    Paste the following code into the file and save it as a SQL file by adding `.sql` to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table. 
     
     ```SQL
     CREATE OR REPLACE FUNCTION AVERAGE_RATING(destination_id INT)
@@ -226,14 +226,11 @@ The extension also allows you to import and export SQL files to and from your co
 
     ![Import File](openSQLFile.png)
 
-2. Edit the code in the editor by changing the INT in line 2 to FLOAT to change the function to return a more precise average.
+3. Edit the SQL in the editor by changing the INT in line 2 to FLOAT to change the function to return a more precise average.
 
     ![Make Changes and Save](saveFileButton.png)
 
     Click the save icon to save your changes to the SQL file on your computer.
-
-
-
 
 ### Run SQL code
 
@@ -269,7 +266,7 @@ The extension also allows you to import and export SQL files to and from your co
     > * Global Search
     > * Debugging SQLScript 
     > * Graph Views
-    > * Viewing Diagnostic Files in the Catalog Browser
+    > * Viewing diagnostic files in the Catalog Browser
 
 ### Knowledge check
 

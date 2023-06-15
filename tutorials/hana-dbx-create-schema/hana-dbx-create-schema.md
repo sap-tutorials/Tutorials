@@ -616,7 +616,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     END;
     ```
 
-    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at ![SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20a78d3275191014b41bae7c4a46d835.html).
+    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at [SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20a78d3275191014b41bae7c4a46d835.html).
 
 5. To run this procedure, execute the SQL statement below.
 
