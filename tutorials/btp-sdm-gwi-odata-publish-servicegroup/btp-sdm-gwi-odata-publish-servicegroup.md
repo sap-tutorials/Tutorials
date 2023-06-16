@@ -3,7 +3,7 @@ title: Service Group Publishing
 description: To integrate the processing service, you need to publish the service group in the backend system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-s-4hana, software-product>sap-document-management-service]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -28,7 +28,8 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 1: ](Run the transaction "/IWFND/V4_ADMIN")]
 Navigate to **SAP Gateway Service Administration** via transaction `/IWFND/V4_ADMIN` on the SAP Gateway Foundation Hub and click **Publish Service Groups**.
-    !![Transanction](Run the Transanction.png)
+
+  !![Transanction](Run the Transanction.png)
 
 
 [DONE]
@@ -38,7 +39,7 @@ Navigate to **SAP Gateway Service Administration** via transaction `/IWFND/V4_AD
 On the **SAP Gateway Service Publishing** window, enter the **System Alias** in the respective field.
 ><span style="color:red"> **Note:**</span> It is recommended that a System Alias must be used based on your landscape.
 
-!![SystemAliasn](SystemAlias.png)
+  !![SystemAliasn](SystemAlias.png)
 
 
 [DONE]
@@ -53,9 +54,11 @@ On the **SAP Gateway Service Publishing** window, enter the **System Alias** in 
     !![ServiceGroup](ServiceGroup.png)
 
 2. Find **Service Group ID** as **`UI_CMIS_MYFILES_04`** and select it.
-  !![UI_CMIS_MYFILES_04](UI_CMIS_MYFILES_04.png)
+
+    !![UI_CMIS_MYFILES_04](UI_CMIS_MYFILES_04.png)
 
 3. Choose **Publish Service Group**.
+
     !![Step1 Publish_Service_Group](Publish_Service_Group_1.png)
 
 4. Choose **OK**.

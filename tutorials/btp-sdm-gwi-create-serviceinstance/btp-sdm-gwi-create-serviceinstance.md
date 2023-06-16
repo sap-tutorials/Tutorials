@@ -1,9 +1,9 @@
 ---
-title: Create a Service Instance and then a Service Key of SAP Document Management Service, Integration Option
+title: Create a Service Instance and Service Key for SAP Document Management Service, Integration Option
 description: Use the free tier or the standard service plan to create a service instance and the associated service key for Document Management Service, Integration Option.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-hana]
+tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-document-management-service ]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -19,10 +19,11 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ### The Use Case:
 
-  You'll export table data from SAP S/4HANA Cloud, public edition to Google Sheets. You'll achieve this scenario by integrating SAP S/4HANA with Google Workspace using the SAP Document Management Service.
+You'll export table data from SAP S/4HANA Cloud, public edition to Google Sheets. You'll achieve this scenario by integrating SAP S/4HANA with Google Workspace using the SAP Document Management Service.
 
-  Here SAP S/4HANA acts as a source system and Google Drive acts as a target system. You'll also create trust between these systems via SAP BTP cockpit.
-  !![Use Case](UseCase_Architecture.png)
+Here SAP S/4HANA acts as a source system and Google Drive acts as a target system. You'll also create trust between these systems via SAP BTP cockpit.
+
+  ![Use Case](UseCase_Architecture.png)
 
 ---
 
@@ -37,15 +38,17 @@ author_profile: https://github.com/Vikramkulkarni01
     !![NewInstanceCreation](NewInstanceCreation.png)
 
 3. In the next **Information** dialog, click on **View Instance** to navigate to the list of your service instances.
+
     !![ViewInstance](ViewInstance.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Service Key in SAP BTP)]
+[ACCORDION-BEGIN [Step 2: ](Create a Service Key)]
 You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
 1. In the same subaccount, navigate to **Instances and Subscriptions** and choose the demo instance you created in the previous step, then click the **...** dots to open the menu and select **Create Service Key**.
+
   !![CreateServiceKey](CreateServiceKey.png)
 
 2. In the dialog, enter `My tutorial` as the name of your service key. Click **Create** to create the service key.
@@ -53,7 +56,8 @@ You are now able to create a service key for your new service instance. Service 
     !![NewServiceKey](NewServiceKey.png)
 
 3. You can now view the service key in the browser or download it. Click on the **Service Key** and click **View**.
-  !![ViewingKey Image](ViewKey.png)
+
+    !![ViewingKey Image](ViewKey.png)
 
 4. In the credentials view dialog, click on **Form**.
 
@@ -85,17 +89,17 @@ You are now able to create a service key for your new service instance. Service 
 
 5. Choose **Create**.
 
-    ![Create_rolecollections](Create_rolecollections_btp.png)
+    !![Create_rolecollections](Create_rolecollections_btp.png)
 
 **The newly added role collection appears now in the list, but it doesn't contain any roles. To add a role:**
 
 1. Choose the **`SDM_roles`** role collection and then choose **Edit**.
 
-    ![Create_rolecollections](Edit_rolecollections.png)
+    !![Create_rolecollections](Edit_rolecollections.png)
 
 2. Open the value help for **Role Name**.
 
-    ![Role Name](RoleName_Valuehelp.png)
+    !![Role Name](RoleName_Valuehelp.png)
 
 3. Select `SDM_Admin` in list of roles and then choose relevant **`Application Identifier`** from the dropdown.
     >**Note:** The **Application Identifier** should match the second part of your `clientid`.
@@ -106,7 +110,8 @@ You are now able to create a service key for your new service instance. Service 
     Choose **Add**.
 
 4. Choose **Save**.
-    ![Saving Role](Save_Roles.png)
+
+    !![Saving Role](Save_Roles.png)
 
 [DONE]
 [ACCORDION-END]

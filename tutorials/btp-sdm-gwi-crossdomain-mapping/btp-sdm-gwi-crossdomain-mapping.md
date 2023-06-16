@@ -3,7 +3,7 @@ title: Manage Cross-Domain Mapping
 description: The steps mentioned in the tutorials are required if the domain of your email account and Google Workspace is different. In such cases, we need to map your system user account to the Google Workspace domain. For example, if you're using the domain abc.com (jhon.thane1@abc.com) and have a Google Workspace account with the domain abcworkspace.com (jhon.thane1@abcworkspace.com), you need to maintain cross-domain mapping.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>Cloud]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>Cloud, software-product>sap-document-management-service]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -28,6 +28,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 1: ](Get URL value from the service key)]
 Copy the `url:` parameter from your service key.
+
   !![Copy_URL](Copy_URL.png)
 
 [DONE]
@@ -35,6 +36,7 @@ Copy the `url:` parameter from your service key.
 
 [ACCORDION-BEGIN [Step 2: ](Intiating the API execution process)]
 1. Open the Postman. Click on **New** and then select **HTTP Request** to open a new tab on Postman to work on.
+
   !![Postman](NewPostman.png)
 
 2. Select the **POST** method and enter the request URL as like this:
@@ -45,6 +47,7 @@ Copy the `url:` parameter from your service key.
       !![req](RequestURL_ecmservice_Config.png)
 
 3. Navigate to **Authorization** tab and select the type **Bearer Token**. Enter the JSON web token that you generate in tutorial [Generating the JSON Web Token (JWT)](btp-sdm-gwi-onbrepo-jwt-token).
+
     !![GWT_Token_Cross_Domain](GWT_Token_Cross_Domain.png)
 
 4. Navigate to the **Body** tab and copy paste the following code snippet.

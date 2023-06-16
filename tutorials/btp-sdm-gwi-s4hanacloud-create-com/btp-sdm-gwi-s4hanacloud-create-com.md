@@ -3,7 +3,7 @@ title: Configure Outbound SAML OAuth between SAP S/4HANA Cloud, public edition a
 description: In this tutorial, you'll learn how to establish an outbound SAML OAuth configuration from SAP S/4HANA Cloud, public edition to SAP BTP.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-s-4hana-cloud]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -81,19 +81,20 @@ author_profile: https://github.com/Vikramkulkarni01
     !![Audience Field](Audience.png)
 
 7. Scroll down to the section **User for Outbound Communication** and choose **+ Add** (plus button) to create new outbound user.
+
     !![AddOutboundUser](AddOutboundUser.png)
 
 8. In the **New Outbound User** dialog, select **`OAuth 2.0`** in **Authentication Method** field.
 
     Enter `client ID` that you copied from the service key in the **OAuth 2.0 Client ID** field. Enter `clientsecret` that you copied from the service key in the **Client Secret** field.
 
-    ![NewOutboundUserCreation](NewOutboundUserCreation.png)
+    !![NewOutboundUserCreation](NewOutboundUserCreation.png)
 
     Choose **Create**.
 
 9. **Save** the Communication System.
 
-    ![SavetheCommsystem](SavetheCommsystem.png)
+    !![SavetheCommsystem](SavetheCommsystem.png)
 
 
 [DONE]

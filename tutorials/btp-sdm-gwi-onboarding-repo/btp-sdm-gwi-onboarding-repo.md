@@ -3,7 +3,7 @@ title: Create a Repository Using the Onboarding API for Google Drive
 description: Create your repository to Document Management Service, Integration Option as it's required for establishing a connection with Google Drive.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-document-management-service, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -23,6 +23,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 1: ](Get URL value from the service key)]
 Copy the `url:` parameter from the generated service key.
+
   !![Copy_URL](Copy_URL.png)
 
 
@@ -31,17 +32,19 @@ Copy the `url:` parameter from the generated service key.
 
 [ACCORDION-BEGIN [Step 2: ](Get started with onboarding repository)]
 1. Open the Postman. Click on **New** and then select **HTTP Request** to open a new tab on Postman to work on.
-  !![Postman](NewPostman.png)
+
+    !![Postman](NewPostman.png)
 
 2. Select the **POST** method and enter the request URL as like this:
     `"url">/rest/v2/repositories`.
 
-    > **Example:**  You must ensure that you are adding the parameter `/rest/v2/repositories`. So that the final sample request URL looks like this: `https://api-abc-de.cfapps.sap.hana.ondemand.com/rest/v2/repositories`
+    > **Example:**  You must ensure that you are adding the parameter `/rest/v2/repositories` as suffix to the request URL. So that the final sample request URL looks like this: `https://api-abc-de.cfapps.sap.hana.ondemand.com/rest/v2/repositories`
 
       !![req](RequestURL_ecmservice.png)
 
 3. Navigate to **Authorization** tab and select the type **Bearer Token**. Enter the JSON web token that you generate in this tutorial [Generating the JSON Web Token (JWT)](btp-sdm-gwi-onbrepo-jwt-token).
-  !![AuthorizationDetails](Onboard Repo Authorization.png)
+
+    !![AuthorizationDetails](Onboard Repo Authorization.png)
 
 4. Navigate to the **Body** tab and copy paste the following code snippet.
 
@@ -61,7 +64,7 @@ Copy the `url:` parameter from the generated service key.
     }
     ```
 
-    >**Note** Please modify the details according to your needs. It is not necessary to follow the same code snippet. A few details, such as repository IDs and destination names, may change. It is important that you read the Prerequisites again.
+    >**Note** Please modify the details according to your needs. It is not necessary to follow the same code snippet. A few details, such as display name, and destination names, may change. It is important that you read the Prerequisites again.
 
     !![EnterCodeSnippet](EnterCodeSnippet in the Body.png)
 
@@ -71,6 +74,7 @@ Copy the `url:` parameter from the generated service key.
 
 
     **Results**
+
     !![Results](Onboarded repos.png)
 
 [DONE]

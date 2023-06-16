@@ -4,7 +4,7 @@ description: In this tutorial, you are creating an allowlist of trusted hosts.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
-primary_tag: software-product>sap-s-4hana
+primary_tag: software-product>sap-s-4hana-cloud
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---

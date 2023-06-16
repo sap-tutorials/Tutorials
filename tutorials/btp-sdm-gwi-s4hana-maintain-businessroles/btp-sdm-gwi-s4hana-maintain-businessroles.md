@@ -3,8 +3,8 @@ title: Maintain Business Roles and Restrictions in SAP S/4HANA Cloud, public edi
 description: In this tutorial, you create a business role to access the application.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, software-product>sap-s-4hana]
-primary_tag: software-product>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-cloud-front-end]
+primary_tag: software-product>sap-s-4hana-cloud
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 
@@ -89,12 +89,15 @@ author_profile: https://github.com/Vikramkulkarni01
     >**Remember**: During the process of creating a communication system, you maintained **File Share ID** value. Please make sure the same **File Share ID** is being used.
 
     File Share Type
+
       !![File_Share_Type](File_Share_Type.png)
 
     File Share ID
+
       !![File_Share_ID](File_Share_ID.png)
 
     File Share Content Group  
+
       !![File_Share_Content](File_Share_Content Group.png)
 
 
@@ -113,6 +116,7 @@ author_profile: https://github.com/Vikramkulkarni01
     !![Select Username](Select Username.png)
 
 3. Choose **Save**.
+
     !![Save](Save.png)
 
 [DONE]

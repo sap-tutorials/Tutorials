@@ -1,9 +1,9 @@
 ---
-title: Generating the JSON Web Token (JWT)
+title: Create JSON Web Token (JWT) to Authenticate Onboarding Repository API
 description: In this tutorial, you follow the steps by using the parameters from the service key of the Document Management Service, Integration Option instance to generate a JSON Web Token (JWT).
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-hana, software-product>sap-s-4hana, software-product>SAP Document Management Service; topic>Integration]
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-hana, software-product>sap-s-4hana, software-product>sap-document-management-service, topic>Integration]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -72,7 +72,8 @@ Navigate to the service that you created in the previous tutorial [Create a Serv
     !![AuthorizationDetails](AuthorizationDetails.png)
 
 4. When a successful response is received, the status is `200 OK`. Copy the  `access_token` and save it in a secure area.
-  !![JSOn Webtoken](JSONWebToken Generated.png)
+
+    !![JSOn Webtoken](JSONWebToken Generated.png)
 
 
 [DONE]

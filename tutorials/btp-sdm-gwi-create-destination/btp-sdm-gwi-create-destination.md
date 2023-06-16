@@ -1,9 +1,9 @@
 ---
-title: Create a Destination
+title: Create a Destination to Connect Google Drive
 description: Create destinations in your SAP BTP cockpit to connect Google Drive with Document Management Service, Integration Option.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, topic>security, software-product-function>sap-btp-cockpit]
+tags: [ tutorial>beginner, topic>cloud, topic>security, software-product-function>sap-btp-cockpit, software-product>sap-document-management-service ]
 primary_tag: software-product>sap-business-technology-platform
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -43,7 +43,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![ServiceKey](Creating_Service_key_min.gif)
 
-  >**Results:** Your new public/private key pair is generated and downloaded to your machine as a new file. The values from this file will be used in the next step, so please keep it accessible.
+>**Results:** Your new public/private key pair is generated and downloaded to your machine as a new file. The values from this file will be used in the next step, so please keep it accessible.
 
 [DONE]
 [ACCORDION-END]
