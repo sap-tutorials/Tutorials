@@ -8,7 +8,7 @@ author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
 
-# The Use Case for the Challenge
+# The Use Case for the Mission
 <!-- description --> Understand the integration problem that you're going to solve before you get started
 
 ## You will learn
@@ -31,12 +31,12 @@ SAP Integration Suite is available in simple service plans. To know more about t
 Using this integration scenario, you design and execute an integration flow that reads information from a third-party software. To accomplish the scenario, you use SAP Integration Suite, and in particular, its capabilities *Cloud Integration* and *Open Connectors*.
 
 You use *Open Connectors* to
-- identify and establish connection to a third-party software
-- fetch data from the third-party software via APIs  
+1. identify and establish connection to a third-party software
+2. fetch data from the third-party software via APIs  
 
 You use *Cloud Integration* to
-- design a custom integration artifact to fetch data from Open Connectors
-- deploy the integration artifact to a cloud-based runtime location
+1. design a custom integration artifact to fetch data from Open Connectors
+2. deploy the integration artifact to a cloud-based runtime location
 
 Finally, use an open API platform like Postman to securely invoke the deployed integration artifact to see that you're able to fetch data from a third-party software using SAP Integration Suite.
 
