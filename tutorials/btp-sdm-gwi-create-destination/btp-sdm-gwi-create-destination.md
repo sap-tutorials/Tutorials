@@ -113,7 +113,7 @@ Click on the `Check Connection` icon on the newly created Destination to see if 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
  [VALIDATE_6]
 
