@@ -17,7 +17,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log On to the SAP S/4HANA cloud application)]
+[ACCORDION-BEGIN [Step 1: ](Log into SAP S/4HANA Cloud)]
   Log on to SAP S/4HANA Cloud, public edition and search for the **`Maintain Protection Allowlists`** app from the SAP Fiori Launchpad.
   !![LogonScreenApp](MaintainProtectionAllowlistApp.png)
 
@@ -25,7 +25,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Creating trusted network zone)]
+[ACCORDION-BEGIN [Step 2: ](Create trusted network zone)]
   Navigate to the **Trusted Network Zones** tab and click **(+) Create**.
 
    !![TrustedNetworkzone](TrustedNetworkzone.png)
@@ -34,7 +34,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Managing the details)]
+[ACCORDION-BEGIN [Step 3: ](Manage details)]
 1. In the **Add Trusted Host** dialog, add the following details:
 
     |  Field Name     | Value

@@ -21,24 +21,19 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Adding User)]
-Log in to your **Google Workspace** account using *`admin.google.com`* and click on **Add a User**.
+[ACCORDION-BEGIN [Step 1: ](Add User)]
+1. Log in to your **Google Workspace** account using *`admin.google.com`* and click on **Add a User**.
 
-  !![Adding User](Add_User.png)
+    !![Adding User](Add_User.png)
 
-[DONE]
-[ACCORDION-END]
+2. Enter the **User Information** and specify the password for your user.
 
-[ACCORDION-BEGIN [Step 2: ](Manage User Information)]
-Enter the **User Information** and specify the password for your user.
-
-  !![ManageUserinfo](UserInformation.png)
+    !![ManageUserinfo](UserInformation.png)
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 1: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
 [VALIDATE_6]
 

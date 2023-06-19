@@ -123,7 +123,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Knowledge check)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
   [VALIDATE_6]
 

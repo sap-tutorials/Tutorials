@@ -21,7 +21,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get URL value from the service key)]
+[ACCORDION-BEGIN [Step 1: ](Get URL from the service key)]
 Copy the `url:` parameter from the generated service key.
 
   !![Copy_URL](Copy_URL.png)
@@ -70,8 +70,7 @@ Copy the `url:` parameter from the generated service key.
 
     Click **Send**.
 
-    >**Results:** When a successful response is received, the status is `200 OK`.
-
+5. When a successful response is received, the status is `200 OK`.
 
     **Results**
 

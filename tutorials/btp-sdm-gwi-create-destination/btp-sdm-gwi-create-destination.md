@@ -27,7 +27,7 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Downloading the public or private key pair JSON file from Google Cloud console)]
+[ACCORDION-BEGIN [Step 1: ](Download public/private key pair from Google Cloud)]
 
 1. Logon to the [Google Cloud](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) console.
 
@@ -104,7 +104,7 @@ Enter all the following fields in the destination configuration section and conf
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Connection)]
+[ACCORDION-BEGIN [Step 5: ](Check connection)]
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
 

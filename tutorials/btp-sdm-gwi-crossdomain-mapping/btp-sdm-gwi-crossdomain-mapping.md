@@ -1,6 +1,6 @@
 ---
 title: Manage Cross-Domain Mapping
-description: The steps mentioned in the tutorials are required if the domain of your email account and Google Workspace is different. In such cases, we need to map your system user account to the Google Workspace domain. For example, if you're using the domain abc.com (jhon.thane1@abc.com) and have a Google Workspace account with the domain abcworkspace.com (jhon.thane1@abcworkspace.com), you need to maintain cross-domain mapping.
+description: The steps mentioned in the tutorials are required if the domain of your email account and Google Workspace account is different.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>Cloud, software-product>sap-document-management-service]
@@ -24,9 +24,15 @@ author_profile: https://github.com/Vikramkulkarni01
 ### You will learn
   - How do you manage cross domain mapping at the service instance level
 
+### Introduction
+
+  If your domains are different, we need to map your system user account to the Google Workspace domain. For example, if you're using the domain abc.com (jhon.thane1@abc.com) and have a Google Workspace account with the domain abcworkspace.com (jhon.thane1@abcworkspace.com), you need to maintain cross-domain mapping
+
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get URL value from the service key)]
+
+[ACCORDION-BEGIN [Step 1: ](Get url from the service key)]
 Copy the `url:` parameter from your service key.
 
   !![Copy_URL](Copy_URL.png)
@@ -34,7 +40,7 @@ Copy the `url:` parameter from your service key.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Intiating the API execution process)]
+[ACCORDION-BEGIN [Step 2: ](Send your API request)]
 1. Open the Postman. Click on **New** and then select **HTTP Request** to open a new tab on Postman to work on.
 
   !![Postman](NewPostman.png)

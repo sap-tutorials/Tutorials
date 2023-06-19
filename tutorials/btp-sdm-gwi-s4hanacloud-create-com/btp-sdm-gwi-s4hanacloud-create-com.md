@@ -22,7 +22,7 @@ author_profile: https://github.com/Vikramkulkarni01
  - How to add the details that are captured from SAP BTP in SAP S/4HANA Cloud, public edition
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Communication Arrangements)]
+[ACCORDION-BEGIN [Step 1: ](Create communication arrangements)]
 
 1. Log on to the SAP S/4HANA Cloud, public edition and search for the **Communication Arrangements** app.
 
@@ -46,7 +46,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Creating Communication System)]
+[ACCORDION-BEGIN [Step 2: ](Create communication system)]
 
 1. In the Communication Arrangement page that you created in the previous step, choose **New** and create a **New Communication System**.
 
@@ -101,7 +101,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enter Additional Properties in the Communication Arrangements)]
+[ACCORDION-BEGIN [Step 3: ](Enter additional properties)]
 
 1. In the **Communication Arrangement** you created, in the **`Additional     Properties`** section, maintain the following details:
 

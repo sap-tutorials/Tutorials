@@ -1,10 +1,10 @@
 ---
-title: Trust Configuration between SAP S/4HANA Cloud, public edition and SAP BTP Subaccount
-description: In this tutorial you are configuring the trust between SAP S/4HANA Cloud, public edition and the BTP Subaccount.
+title: Establish Trust Configuration between SAP S/4HANA Cloud, public edition and SAP BTP Subaccount
+description: Configure trust between SAP S/4HANA Cloud, public edition and the BTP subaccount. During the configuration, you download the identity providers generated in SAP S/4HANA Cloud, public edition. You import SAML identity provider metadata into your SAP BTP Cloud Foundry account.
 auto_validation: true
-time: 20
+time: 15
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>Cloud, software-product>sap-document-management-service, software-product>sap-s-4hana-cloud]
 primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>intermediate, software-product>sap-s-4hana-cloud]
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---
@@ -20,7 +20,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Downloading SAML2.0 Metadata from SAP S/4HANA Cloud)]
+[ACCORDION-BEGIN [Step 1: ](Download SAML2.0 metadata from SAP S/4HANA cloud)]
 1. Log in to SAP S/4HANA Cloud, public edition with the required admin privileges. Search for **Communication Systems**.
 
     !![Communication Systems Screen](screenshots.png/Communication Systems.png)
@@ -37,7 +37,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Trust Configuration)]
+[ACCORDION-BEGIN [Step 2: ](Create trust configuration)]
 1. Log on to your BTP Subaccount and navigate to the **Trust Configuration** option in the left side menu and click **New Trust Configuration**.
 
     !![NewTrustConfiguration](screenshots.png/NewTrustConfiguration.png)
@@ -61,7 +61,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add Users in the SAP BTP cockpit)]
+[ACCORDION-BEGIN [Step 3: ](Add users in SAP BTP)]
 
 1. Navigate back to the SAP BTP Cockpit home screen and go to the **Users** tab. Click **Create**.
 
@@ -82,7 +82,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download SAML Metadata from SAP BTP Cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Download SAML metadata from SAP BTP cockpit)]
 
 1. In the same subaccount, navigate to the **Trust Configuration** and click **SAML Metadata**. A metadata file gets downloaded to your local system.
 
@@ -98,7 +98,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_2]
 

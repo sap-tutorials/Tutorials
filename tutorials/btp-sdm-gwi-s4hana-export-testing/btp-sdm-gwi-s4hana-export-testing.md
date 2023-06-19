@@ -1,5 +1,5 @@
 ---
-title: Testing Table Export Using SAP UI5 Application
+title: Test Table Export Using SAP UI5 Application
 description: The purpose of this tutorial is to test your setup that was created in the previous tutorial series by exporting data from SAP S/4HANA Cloud, public edition to Google Sheets.
 auto_validation: true
 time: 10
@@ -18,7 +18,7 @@ author_profile: https://github.com/Vikramkulkarni01
 - How to export data from SAP UI (User Interface) tables.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Access Your Application )]
+[ACCORDION-BEGIN [Step 1: ](Access your application )]
 Log on to your S/4HANA Cloud, public edition. Open the **Manage Journal Entries** or **Purchase Orders** or any other applications that is offering a table-based export.
 
   !![Accessing System](LogOntoS4HANACloud.png)
@@ -27,7 +27,7 @@ Log on to your S/4HANA Cloud, public edition. Open the **Manage Journal Entries*
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Exporting Table Details)]
+[ACCORDION-BEGIN [Step 2: ](Export table details)]
 1. The user interface of an application that offers a table base export looks like this: You can use any such application which gives the option to export a table. *This tutorial uses the Purchase Orders application*.
 
     !![Table](LogOntoS4HANACloud2.1.png)

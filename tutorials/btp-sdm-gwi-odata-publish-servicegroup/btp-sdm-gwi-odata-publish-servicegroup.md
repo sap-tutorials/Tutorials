@@ -1,5 +1,5 @@
 ---
-title: Service Group Publishing
+title: Publish Service Group
 description: To integrate the processing service, you need to publish the service group in the backend system.
 auto_validation: true
 time: 10

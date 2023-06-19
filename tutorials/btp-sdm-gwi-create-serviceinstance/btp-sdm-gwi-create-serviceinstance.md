@@ -1,5 +1,5 @@
 ---
-title: Create a Service Instance and Service Key for SAP Document Management Service, Integration Option
+title: Create a Service Instance and Service Key for Document Management Service.
 description: Use the free tier or the standard service plan to create a service instance and the associated service key for Document Management Service, Integration Option.
 auto_validation: true
 time: 20
@@ -27,7 +27,7 @@ Here SAP S/4HANA acts as a source system and Google Drive acts as a target syste
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an instance of the Document Management Service, Integration Option)]
+[ACCORDION-BEGIN [Step 1: ](Create a service instance)]
 
 1. Log on to your SAP BTP subaccount. Navigate to **Service Marketplace** and search for **Document Management Service, Integration Option**. Click **Create** to start the service instance creation dialog.
 
@@ -44,7 +44,7 @@ Here SAP S/4HANA acts as a source system and Google Drive acts as a target syste
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Service Key)]
+[ACCORDION-BEGIN [Step 2: ](Create a service key)]
 You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
 1. In the same subaccount, navigate to **Instances and Subscriptions** and choose the demo instance you created in the previous step, then click the **...** dots to open the menu and select **Create Service Key**.
@@ -117,7 +117,7 @@ You are now able to create a service key for your new service instance. Service 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
 [VALIDATE_6]
 
