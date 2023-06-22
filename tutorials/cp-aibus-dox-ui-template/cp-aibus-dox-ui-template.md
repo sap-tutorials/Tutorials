@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 ### Create template
 
 
-In [Create Custom Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
+In [Create Custom Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
 
 In the Document Information Extraction UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
@@ -43,13 +43,13 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](template-created-dialog.png)
 
-    You now see a list of the associated documents (in our case **No data** yet) and a list of the extraction fields that you have defined in your schema.
+    You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you have defined in your schema.
 
     <!-- border -->![Template](associated.png)
 
     <!-- border -->![Template](extraction.png)
 
-    In the next steps, you'll add a document, get and edit the extraction results, so you can finally associate it with your template.
+    In the next steps, you'll add a document, get the extraction results and edit them so that you can associate the document with your template.
 
 >**CAUTION:**
 
@@ -66,20 +66,20 @@ In the dialog, proceed as follows:
 
 >This tutorial uses the following purchase order documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
 
-> - [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
-> - [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
-> - [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf)
+> - [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
+> - [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
+> - [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf)
 
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
     <!-- border -->![Template](access-document.png)
 
-2. In the Select Document screen, choose `Purchase Order` for the **Document Type**.
+2. On the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
 3. Select the **Schema** you created. Don't select any **Template** this time.
 
-4. Drop the file directly or click **+** to upload one of the purchase order documents. The following images use the [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf). 
+4. Drop the file directly or click **+** to upload one of the purchase order documents. The following images use the [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf). 
 
 5. Click **Step 2**.
 
@@ -158,7 +158,7 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](activate.png)
 
-    Now, the status of your template changes from `DRAFT` to `ACTIVE` which means you can use the template to extract information from documents. To make changes to your template, you have to **Deactivate** it first.
+    Now, the status of your template changes from `DRAFT` to `ACTIVE`, which means you can use the template to extract information from documents. To make changes to your template, you have to **Deactivate** it first.
 
     <!-- border -->![Template](active.png)
     
@@ -175,7 +175,7 @@ The last step that remains is to activate the template.
 
 3. Select the **Schema** and **Template** you created.
 
-4. Drop the file directly or click **+** to upload one of the other two purchase order documents. First, use the [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf).
+4. Drop the file directly or click **+** to upload one of the other two purchase order documents. First, use the [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf).
 
 5. Click **Step 2**.
 
@@ -195,6 +195,6 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](results2.png)
 
-    You can repeat this step using the [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf).
+    You can repeat this step using the [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf).
 
     Congratulations, you have completed this tutorial.

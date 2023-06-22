@@ -41,7 +41,7 @@ Methods to export tables or views
 
 | Method  | Version       | Target                 | Format(s)      |
 | ------- | -------------|------------------------| ----------------|
-| Export from SQL Console | All | local computer         | CSV      |
+| Export from SQL console | All | local computer         | CSV      |
 | [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
 | [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
 | [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
@@ -58,7 +58,7 @@ Methods to import into tables
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
 | [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
-The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL Console and the import data wizard.
+The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL console and the import data wizard.
 
 1. Enter the SQL statement below.
 
@@ -270,8 +270,8 @@ The following steps walk through the process of exporting to and importing data 
     The wizard makes use of the import from statement.  An example is shown below:
 
     ```SQL
-    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv' 
-    INTO MAINTENANCE WITH 
+    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
+    INTO MAINTENANCE WITH
         CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW
         FAIL ON INVALID DATA;
@@ -315,7 +315,7 @@ The following steps walk through the process of exporting to and importing data 
 
     Once complete, a JSON file will be downloaded that contains the `client_email` and `private_key` which will be used when accessing the bucket.
 
-8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL Console and opening the search and replace menu (Ctrl-F).
+8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL console and opening the search and replace menu (Ctrl-F).
 
     ![Remove line breaks](remove-line-breaks.png)
 
@@ -328,9 +328,9 @@ The following steps walk through the process of exporting to and importing data 
     Execute the following SQL to store the private key and service account as a credential in the database. Paste the service account email and private key as user and password.
 
     ```SQL
-    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' 
-        PURPOSE 'GoogleCloud' 
-        TYPE 'PASSWORD' 
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT'
+        PURPOSE 'GoogleCloud'
+        TYPE 'PASSWORD'
         USING 'user=<client_email>;password=<private_key>';
     SELECT * FROM CREDENTIALS;
     --DROP CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD';
@@ -401,7 +401,7 @@ The following steps walk through the process of exporting to and importing data 
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
 
-11. Run the following commands within the SQL Console to perform an export using a Google Cloud Storage bucket.
+11. Run the following commands within the SQL console to perform an export using a Google Cloud Storage bucket.
 
     There are two ways to use the export commands as shown below.
 
@@ -431,7 +431,7 @@ The following steps walk through the process of exporting to and importing data 
     ```
 
 
-14. Run the following commands within the SQL Console to perform an import using a Google Cloud Storage bucket.
+14. Run the following commands within the SQL console to perform an import using a Google Cloud Storage bucket.
 
     ```SQL
     --Uses the previously stored credential
@@ -462,7 +462,7 @@ Methods to export catalog objects
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
 | [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
 | [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
-| [Export catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
+| [Export catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
 | [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
 | [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
@@ -483,7 +483,7 @@ Methods to import catalog objects
 
 Similar to the first section, the maintenance table will be exported and re-imported.  The export statement and the associated export catalog wizard have additional options, including the ability to include other schema objects such as functions and procedures as well as the option to include the SQL statements to recreate the objects.
 
-1. Right-click on the instance HC_HDB (USER1) and choose **Export Catalog Objects**.  
+1. Right-click on the instance `HC_HDB (USER1)` and choose **Export Catalog Objects**.  
 
     ![Open Export Catalog Objects Wizard](exportCatalogObjects.png)
 
@@ -495,9 +495,9 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Format Options](formatOptions.png)
 
-    Binary Raw is the binary format for SAP HANA Cloud and Binary Data is the format option for SAP HANA as a Service and SAP HANA on-premise.
+    **Binary Raw** is the binary format for SAP HANA Cloud and **Binary Data** is the format option for SAP HANA as a Service and SAP HANA on-premise.
 
-2. Examine the exported file.  Notice that it contains the SQL to recreate the table as well as the data of the table.
+2. The archive file contains the SQL to recreate the table as well as the data of the table, as shown below.
 
     ![Exported file](targz.png)
 
@@ -507,11 +507,11 @@ Similar to the first section, the maintenance table will be exported and re-impo
     DROP TABLE MAINTENANCE;
     ```
 
-3. Right-click on the instance HC_HDB (USER1) and choose **Import Catalog**.  
+3. Right-click on the instance `HC_HDB (USER1)` and choose **Import Catalog**.  
 
     ![Open Import Data Wizard](importCatalogWizard.png)
 
-    Browse to the previously downloaded .tar.gz file and complete the wizard.
+    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired. 
 
     ![Choose file to import](importCatalogWizard2.png)
 
@@ -618,7 +618,7 @@ The following steps walk through the process of using Microsoft Azure storage se
     ![Export Data Wizard](exportAzureStorage.png)
 
     Alternatively, you can use a Secret Key as a Credential (optional).
-    
+
     The Azure Path is of the format:
 
     `<Storage Account Name>:<generated shared access string>@<Container Name>/<File Name>`

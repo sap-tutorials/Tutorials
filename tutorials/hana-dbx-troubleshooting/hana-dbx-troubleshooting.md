@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 20
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition ]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -180,11 +180,11 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![Create statement](reservationGenerator2Create.png)
 
-5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
+5. To address these issues, make the following changes and rerun the SQL in the SQL console tab.  
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
     * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
-    >The above changes can be made in the SQL Console.  The Create Statement tab is read only.
+    >The above changes can be made in the SQL console.  The Create Statement tab is read only.
 
 6. Right-click the procedure and choose **Analyze SQLScript Code**.
 
@@ -425,7 +425,7 @@ It can be important to examine SQL statements that consume large amounts of time
 
 ### Viewing trace files with SQL
     
-The SAP HANA database provides a set of monitoring views enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
+The SAP HANA database provides a set of monitoring views (as indicated by 'M') enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
 
 1. Information about the available trace files and content from individual trace files can be queried.
 
@@ -445,18 +445,26 @@ The SAP HANA database provides a set of monitoring views enabling access to the 
 
     ![M_MERGED_TRACES](m_merged_traces.png)
 
-3. The SAP Note [SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700) contains a query named `HANA_TraceFiles_Content` that also includes relevant SAP notes that match certain strings in the trace files.
+3. SAP note [SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700) provides a set of SQL statements that can be used to summarize details of and to provide an analysis of an SAP HANA database.  
+
+    Navigate to the *Attachments* section and download `SQLStatements.zip`.
+
+    ![Attachments section](attachments-section.png) 
+
+    Upload the file to your Statement Library, which can be accessed by right-clicking on the database. This file contains a query named `HANA_TraceFiles_Content`. It includes relevant SAP notes that match certain strings in the trace files. File names suffixed with 'SHC' are specific to SAP HANA Cloud.
+
+    ![Trace files content file in statement library](tracefiles-content.png)
 
     ![Trace files and associated SAP Notes](trace_files2.png)
 
     >Notice above that the modification section can be used to set the begin and end time.
 
-
-
 ### Data lake Relational Engine diagnostic files
     
 
 A data lake Relational engine can contain log files, query plans, and audit files.
+
+> Note that these files are unavailable for Trial users.
 
 1. Log files and query plans can be located and viewed as shown below.
 

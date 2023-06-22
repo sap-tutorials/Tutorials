@@ -105,7 +105,7 @@ Different versions of SAP HANA databases will have slightly different features. 
 
 
 ### Self-Service Migration tool
-The Self-Service Migration tool is used when performing a migration. This tool is accessed from SAP HANA Cloud Central, the main tool for creating and configuring SAP HANA Cloud instances. For more information about SAP HANA Cloud Central, see [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/48e1b509c9494d61a6f90e7eaa6f225b.html).
+The Self-Service Migration tool can be used when performing a migration. It automates the migration process and can reduce the cost and effort of a migration.  It is a free service and SAP manages the temporary storage used during the migration.  This tool is accessed from SAP HANA Cloud Central, the main tool for creating and configuring SAP HANA Cloud instances. For more information about SAP HANA Cloud Central, see [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/48e1b509c9494d61a6f90e7eaa6f225b.html).
 
 ![Migrations in SAP HANA Cloud Central](migrations.png)
 
