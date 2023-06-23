@@ -114,6 +114,55 @@ This step demonstrates how to execute a SQL query and view query results, messag
 
     >The history is not persisted across browser reloads.
 
+5. Execute the following SQL statements.
+
+    ```SQL
+    SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
+
+    SELECT '{
+        "name":"John",
+        "age":30,
+        "cars": {
+            "car1":"Ford",
+            "car2":"BMW",
+            "car3":"Fiat"
+        }
+        }' AS JSON_EXAMPLE
+        FROM DUMMY;
+
+    SELECT '<?xml version="1.0" encoding="UTF-8"?>
+        <breakfast_menu>
+        <food>
+            <name>Strawberry Belgian Waffles</name>
+            <price>$7.95</price>
+            <description>
+            Light Belgian waffles covered with strawberries and whipped cream
+            </description>
+            <calories>900</calories>
+        </food>
+        <food>
+            <name>French Toast</name>
+            <price>$4.50</price>
+            <description>
+            Thick slices made from our homemade sourdough bread
+            </description>
+            <calories>600</calories>
+        </food>
+        <food>
+            <name>Homestyle Breakfast</name>
+            <price>$6.95</price>
+            <description>
+            Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+            </description>
+            <calories>950</calories>
+        </food>
+        </breakfast_menu>' XML_EXAMPLE FROM DUMMY
+    ```
+
+    Double tapping on a result will open a result viewer.
+
+    ![SQL results](result-viewer.png)
+
 ### A few things to note
 The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
 
@@ -128,7 +177,7 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
     * SQL parsing to detect potential errors
     * Code completion of schema objects
     * SQL formatting
-    * SQL viewers for HTML, XML, JSON, binary, and spatial
+    * SQL viewers for spatial
     * Results can be downloaded in a CSV
     * Ability to run statements in the background
     * Ability to run statements against multiple instances

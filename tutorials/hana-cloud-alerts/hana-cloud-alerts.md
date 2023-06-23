@@ -219,8 +219,9 @@ The following instructions will show how to view a triggered SAP HANA database a
 
 
 ### Trigger an alert in SAP HANA Cloud data lake
+The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in **after** the user account has been locked because an incorrect password has been provided too many times.  
 
-The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in after the user account has been locked because an incorrect password has been provided too many times.     
+>This alert is not available in trial accounts.     
 
 1. In an SAP HANA database explorer that is connected to a **data lake**, execute the following SQL to create a login policy and a new user.
 
@@ -246,8 +247,9 @@ The following instructions show one example of triggering the [data lake locked 
 
         ![Locked user2](data-lake-user-locked.png)
 
+3.  Attempt to connect one more time after the account has been locked (4th time) to trigger the alert.
 
-3. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
+4. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
     ```SQL
     CALL sa_get_user_status;
@@ -257,8 +259,6 @@ The following instructions show one example of triggering the [data lake locked 
     ```
 
     The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
-
-
 
 ### Set up email notification when an alert occurs
 
