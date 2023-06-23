@@ -117,7 +117,8 @@ Skipping deletion of services, because the command line option "--delete-service
 Process finished.
 Use "cf dmol -i <MTA_OPERATION_ID>" to download the logs of the process.
 ```
-<MTA_OPERATION_ID> is a unique identifier for each MTA operation. It can be later used for troubleshooting.
+
+><MTA_OPERATION_ID> is a unique identifier for each MTA operation. It can be later used for troubleshooting.
 
 In the output example above, the `application my-first-app` is deployed and started. A service called `my-first-app-service` is also created and is bound to the application. Credentials are provisioned for the service instance and delivered to the application runtime in the `VCAP_SERVICES` environment variable.
 
@@ -167,7 +168,7 @@ my-first-app-service   application-logs   lite     my-first-app   create succeed
 
 All CF entities above compose the MTA with ID “app”. It can be displayed with the command:
 ```Console Command
-$ cf mta app
+cf mta app
 Showing health and status for multi-target app app in org <ORG> / space <SPACE> as <USER>...
 OK
 Version: 1.0.0
