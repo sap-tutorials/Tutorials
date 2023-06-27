@@ -4,8 +4,8 @@ author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 # Create a Calculation View
@@ -34,7 +34,7 @@ primary_tag: products>sap-hana-cloud
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need.
+In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need. 
 
 ---
 
@@ -45,7 +45,7 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 2.	Type **SAP HANA: Create HANA database artifact** and press `Enter` or click on the right option.
 
-3. Under **Path**, change the path so the calculation view is created inside the `src` folder of your project.	
+3. Under **Path**, change the path so the calculation view is created in the `src` folder of your project.	
 
 4. You will see a form appear on the right-side of the screen. Select **Calculation View** as your artifact type.
 
