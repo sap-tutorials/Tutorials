@@ -135,9 +135,13 @@ To use the XSUAA service, a file named `xs-security.json` is necessary. The file
     			]
     		}
     	]
-    }
+          "oauth2-configuration":
+          
+          "redirect-uris": ["https://approuter-product-list-ap25.cfapps.eu10.hana.ondemand.com/login callback"]          
+          }
     ```
     This creates a role collection with a role template, and a role with a reading scope, so a user with this role can view the products.
+    It also adds the redirect URI parameter, which calls the URL of the application router that you will create in the next step. For more information, see [Listing Allowed Redirect URIs](https://help.sap.com/docs/btp/sap-business-technology-platform/security-considerations-for-sap-authorization-and-trust-management-service#loio88b7d9d4c6ff4498b48dbc0b7be8a294).
 
   8. Save the file
 
