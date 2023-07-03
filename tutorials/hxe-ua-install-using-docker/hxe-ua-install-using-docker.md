@@ -1,17 +1,19 @@
 ---
-title: Installing SAP HANA, express edition with Docker
-description: Install SAP HANA, express edition with Docker.
-author_name: Adrian Plata
-author_profile: https://github.com/aplata-sap
+parser: v2
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: software-product>sap-hana\,-express-edition
 tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
 ---
 
-## Details
-### You will learn
+# Installing SAP HANA, express edition with Docker
+<!-- description --> Install SAP HANA, express edition with Docker.
+
+## You will learn
   - How to install SAP HANA, express edition on your preferred Docker setup
 
+## Intro
 This tutorial will show you how to install a **server-only** installation of SAP HANA, express edition on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
 
 If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](hxe-ua-installing-vm-image) or [Binary Method](hxe-ua-installing-binary) installation guides.
@@ -32,17 +34,16 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 
-[ACCORDION-BEGIN [Step 1: ](Install Docker)]
+### Install Docker
+
 
 Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
 > **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
-[DONE]
 
-[ACCORDION-END]
+### Log Into Docker
 
-[ACCORDION-BEGIN [Step 2: ](Log Into Docker)]
 
 To log into your Docker account, run:
 
@@ -52,11 +53,9 @@ sudo docker login
 
 Follow the prompts and provide your Docker ID and password.
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Test Your Docker Installation
 
-[ACCORDION-BEGIN [Step 3: ]((Optional) Test Your Docker Installation)]
 
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
 
@@ -85,18 +84,16 @@ Remove the alpine image with the following command:
 sudo docker image rm alpine -f
 ```
 
-[DONE]
 
-[ACCORDION-END]
+### Download the SAP HANA, express edition Image from the Docker Library
 
-[ACCORDION-BEGIN [Step 4: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
-Go to  [https://hub.docker.com/r/saplabs/hanaexpress](https://hub.docker.com/r/saplabs/hanaexpress).
+Go to  [https://hub.docker.com/u/saplabs](https://hub.docker.com/u/saplabs). Select hanaexpress.
 
 Copy the Docker pull address. Here's an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpress:2.00.054.00.20210603.1
+sudo docker pull saplabs/hanaexpress
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -112,12 +109,10 @@ The SAP HANA, express edition image will be listed as `hanaexpress`.
 > Note:
 > You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password. Once you have logged in, try the pull command again.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Edit the host sysctl.conf file)]
+### Edit the host sysctl.conf file
+
 
 Before you can start the container, ensure that the following parameters are set in your host's `/etc/sysctl.conf` file. The host can be a virtual machine, physical machine, or a cloud instance.
 
@@ -131,11 +126,9 @@ net.ipv4.ip_local_port_range=40000 60999
 
 To edit the `sysctl.conf` file, use the `vi` command to open the file and press `i` to switch to interactive mode. Edit the file as necessary, hit the `esc` key, and type and enter `:wq!` to write and save the changes.
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container
 
-[ACCORDION-BEGIN [Step 6: ]((Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container)]
 
 Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
 
@@ -153,11 +146,9 @@ chown 12000:79 /data/mydirectory
 
 The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
 
-[DONE]
 
-[ACCORDION-END]
+### Set Up Password for SAP HANA, express edition
 
-[ACCORDION-BEGIN [Step 7: ](Set Up Password for SAP HANA, express edition)]
 
 To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
 
@@ -215,11 +206,9 @@ Be sure to do this with each `json` file you use for your Docker containers.
 
 Make a note of the path to the `json` file. You will need this to load the SAP HANA, express edition container.
 
-[DONE]
 
-[ACCORDION-END]
+### Start SAP HANA, express edition Container
 
-[ACCORDION-BEGIN [Step 8: ](Start SAP HANA, express edition Container)]
 
 Use the SAP HANA, express edition image to create a container.
 
@@ -273,11 +262,9 @@ This example creates the SAP HANA, express edition container with the name `expr
 > **Note:**
 > If the Docker container fails to create an SAP HANA instance, you will need to remove the Docker container to try again. Run `docker rm <container_name>` to remove the container. Additionally, you will need to delete the files created in the `/data/directory_name/` directory.
 
-[DONE]
 
-[ACCORDION-END]
+### Log into SAP HANA, express edition Container
 
-[ACCORDION-BEGIN [Step 9: ](Log into SAP HANA, express edition Container)]
 
 To start your SAP HANA, express edition container, run the following command:
 
@@ -292,11 +279,9 @@ sudo docker exec -it express_edition bash
 ```
 
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Test the Container
 
-[ACCORDION-BEGIN [Step 10: ]((Optional) Test the Container)]
 
 When you are logged into the SAP HANA, express edition container, you can test your installation by entering the following:
 
@@ -319,11 +304,9 @@ And you should see the following services running:
 * `hdbdiserver`
 * `hdbwebdispatcher`
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Log Into System or Tenant Database
 
-[ACCORDION-BEGIN [Step 11: ]((Optional) Log Into System or Tenant Database)]
 
 You can log into the system database with the following command:
 
@@ -370,11 +353,9 @@ ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_
 ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = 'localhost' WITH RECONFIGURE;
 >```
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Create Additional SAP HANA, express edition Containers
 
-[ACCORDION-BEGIN [Step 12: ]((Optional) Create Additional SAP HANA, express edition Containers)]
 
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.
 
@@ -393,11 +374,9 @@ store/saplabs/hanaexpress:2.00.054.00.20210603.1 \
 
 This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
-[DONE]
 
-[ACCORDION-END]
+### (Optional) Update Your Docker Image
 
-[ACCORDION-BEGIN [Step 13: ]((Optional) Update Your Docker Image)]
 
 Set the root password and login.
 
@@ -437,16 +416,13 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
-[DONE]
+### -Help Command
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
 
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.054.00.20210603.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.XXX.XX.XXXXXXXX.X -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
@@ -467,9 +443,7 @@ hdb_version
 --agree-to-sap-license Indicates you agree to the SAP Developer Center Software Developer License Agreement.
 ```
 
-[DONE]
 
-[ACCORDION-END]
 
 ### Additional Information
 -  [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports)

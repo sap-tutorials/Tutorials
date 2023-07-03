@@ -1,11 +1,13 @@
 ---
-title: Use SQL on Files to Query Structured Data Files
-description: You will learn how to setup SQL on Files, optimize SQL on Files performance using folder hierarchies, and how to use SQL on Files from an SAP HANA database for both managed and standalone data lakes.
+parser: v2
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, , tutorial>license]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
+
+# Use SQL on Files to Query Structured Data Files
+<!-- description --> You will learn how to setup SQL on Files, optimize SQL on Files performance using folder hierarchies, and how to use SQL on Files from an SAP HANA database for both managed and standalone data lakes.
 
 ## Prerequisites
  - Have access to a licensed managed or standalone SAP HANA data lake.
@@ -14,11 +16,11 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
  - [Download the sample TPCH Data](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/QRC_4_2021/en-US/6e1dd06335704f4c96d48279ca1ed555.html).
  - The sample TPCH Data has been uploaded to your SAP HANA data lake file container.
 
-## Details
-### You will learn
+## You will learn
   - How to define the database objects required to query structured data files.
   - This technology will allow you to explore your data at a low cost before moving the refined data up the [data pyramid](https://blogs.sap.com/2021/12/06/data-management-concepts-and-techniques-in-sap-hana-cloud/).
 
+## Intro
 Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file container can be done using SQL on Files. Below you will find all of the steps required to start using SQL on Files.
 
 If you've not yet provisioned an SAP HANA data lake, [here](hana-cloud-hdl-getting-started-1) is a great tutorial on how to do so!
@@ -27,7 +29,8 @@ Also, the data files used in this tutorial can be found [here](https://github.co
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Establish the SQL on Files Basics)]
+### Establish the SQL on Files Basics
+
 
 For this tutorial all steps are completed through a SQL console connected directly to an SAP HANA Data Lake. The easiest way to find a SQL console is through the SAP Database Explorer. Step 4 of the [SAP HANA Cloud, Data Lake IQ Client Interfaces Overview](https://developers.sap.com/tutorials/hana-cloud-dl-clients-overview.html#3e78548b-cbf9-4481-acce-b67946684bea) tutorial demonstrates where to find the SAP Database Explorer. This list of sections creates the foundation for querying structured files.
 
@@ -103,10 +106,9 @@ ALTER TABLE TPCH.CUSTOMER_SOF IN FILES_SERVICE ADD DATASOURCE
 AS CUSTOMER_DATASOURCE CSV(webhdfs('hdlfs:///TPCH/customer.tbl')) ENCODING 'utf-8';
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Query the Structured File)]
+### Query the Structured File
+
 
 Now that you've created all the foundational database objects for querying our file, you can simply query the files as if it were a table.
 
@@ -116,20 +118,18 @@ Now that you've created all the foundational database objects for querying our f
 SELECT * FROM CUSTOMER_SOF;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Drop a Data Source)]
+### Drop a Data Source
+
 If you want to drop a data source for a SQL on Files table you can do so as well.
 
 ```SQL
 ALTER TABLE TPCH.CUSTOMER_SOF IN FILES_SERVICE DROP DATASOURCE CUSTOMER_DATASOURCE;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Clean Up or Remove SQL on Files Table)]
+### Clean Up or Remove SQL on Files Table
+
 To clean up the SQL on Files table created in step 1, you drop the existing table, then the files service table, and lastly the files service schema.
 
 ```SQL
@@ -140,10 +140,9 @@ DROP SCHEMA TPCH IN FILES_SERVICE;
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optimize SQL on Files Performance Using Folder Hierarchies)]
+### Optimize SQL on Files Performance Using Folder Hierarchies
+
 Another way to declare a data source with SQL on Files is using folder hierarchies. Folder hierarchies allow you to skip (or prune) files that do not need to be parsed in a query. Take a look at the following example.
 
 ![Folder hierarchy definition.](sof-image-1.png)
@@ -246,10 +245,9 @@ ALTER TABLE TPCH.NATION IN FILES_SERVICE ADD DATASOURCE AS NATION_DATASOURCE
 
 Another example can be found in the SAP Help documentation [here](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/QRC_3_2021/en-US/c712a4dff1ad429cad9a2a3e42336e42.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Using SQL on Files from a HANA Cloud database (Standalone SAP HANA data lake))]
+### Using SQL on Files from a HANA Cloud database (Standalone SAP HANA data lake)
+
 
 Structured data files that have been setup to be queried with SQL on Files can also be queried from an SAP HANA Cloud, HANA database (HDB) through virtual tables. The first step in querying structured data files from HDB is creating a remote connection to the corresponding SAP HANA data lake. First, log into a HANA database as a user that has the CREATE REMOTE SOURCE privilege. From the database explorer, add a remote source by finding the 'Remote Sources' entity in the catalog.
 
@@ -285,10 +283,9 @@ Now, your structured data file can be queried from an SAP HANA SQL console.
 
 **Note:** Although the data files can be queried from the HANA console, they will still need to be managed from a Data Lake console. Adding data sources, altering the table schema, and other DDL will need to be performed from an SAP HANA data lake console.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Using SQL on Files from a HANA Cloud database (Managed SAP HANA data lake))]
+### Using SQL on Files from a HANA Cloud database (Managed SAP HANA data lake)
+
 
 When provisioning an SAP HANA Cloud Instance an SAP HANA database can be created along with a managed SAP HANA data lake (HDL). This generates an HDL container and remote connection to the data lake from the HANA database. The interaction between a managed data lake and a standalone data lake from HANA differs only slightly.
 
@@ -347,7 +344,6 @@ Click the check box for the SQL on Files Table and then select "Create Virtual O
 
 And now, you have access to our file's data from an SAP HANA Database. Query and use this table as if it were any other HANA table.
 
-[VALIDATE_7]
-[ACCORDION-END]
+
 
 ---

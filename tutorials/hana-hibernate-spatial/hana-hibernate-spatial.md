@@ -1,23 +1,24 @@
 ---
-title: Create an application to process geospatial data using Hibernate
-description: Create an application for processing geospatial data using Hibernate on SAP HANA leveraging the SAP HANA Spatial engine.
+parser: v2
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Create an application to process geospatial data using Hibernate
+<!-- description --> Create an application for processing geospatial data using Hibernate on SAP HANA leveraging the SAP HANA Spatial engine.
+
 ## Prerequisites  
  - **Proficiency:** Intermediate
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial you will learn how to create an application that process geospatial data using Hibernate on SAP HANA to create the data model, process the data, and interact with the database.
-
-### Time to Complete
+## Time to Complete
 **30 Min**
 
 
-[ACCORDION-BEGIN [Step 1: ](The GDELT data)]
+### The GDELT data
+
 
 The data set you will use for the tutorial is the one provided by the Global Database of Events, Language, and Tone data (GDELT) version 1.0 from the [GDELT project](https://www.gdeltproject.org/).
 
@@ -47,10 +48,9 @@ You can find more details about GDELT version 1 here:
 
 - <https://www.gdeltproject.org/data.html#documentation>
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update the project configuration)]
+### Update the project configuration
+
 
 In order to be able to work with geospatial data in Hibernate, the Hibernate Spatial artefact must be added as a dependency to the Maven project descriptor `pom.xml`.
 
@@ -115,10 +115,9 @@ Don't forget to update the following property values to match your target SAP HA
 
 Save the `persistence.xml` file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Download a GDELT data file)]
+### Download a GDELT data file
+
 
 Download one of the GDELT zipped CSV file, for example `20171005.export.CSV.zip`, from <http://data.gdeltproject.org/events/index.html>.
 
@@ -128,10 +127,9 @@ Save the file locally, then extract the contents of the zip file into the `src/m
 
 &nbsp;
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Define the model)]
+### Define the model
+
 
 The GDELT data can be modelled using four entities:
 
@@ -144,10 +142,9 @@ The entities need to define the attributes listed in the [GDELT file format docu
 
 Therefore, we will need to create the Java classes representing the entities during the following steps.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the Helper class)]
+### Create the Helper class
+
 
 In order to simplify the code, a Java Helper class with reusable static method will be created.
 
@@ -210,10 +207,9 @@ public class Helper {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create the Actor Entity)]
+### Create the Actor Entity
+
 
 This entity defines the attributes listed in the documentation and uses the code as the identifier.
 
@@ -265,10 +261,9 @@ Now, generate the ***Getters*** and ***Setters*** for all the attributes using t
 
 Save the class file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create the Action Entity)]
+### Create the Action Entity
+
 
 Like the actor class this class defines the attributes listed in the documentation and uses the code as the identifier.
 
@@ -317,10 +312,9 @@ Now, generate the ***Getters*** and ***Setters*** for all the attributes using t
 
 Save the class file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create the Geography Entity)]
+### Create the Geography Entity
+
 
 The geography entity is marked as an embeddable entity via the `@Embeddable` annotation. Because of this the geography entities will not be stored in a separate table. Instead they will be stored in the table of a parent entity, in this case the event entity.
 
@@ -378,10 +372,9 @@ Now, generate the ***Getters*** and ***Setters*** for all the attributes using t
 
 Save the class file.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create the Event Entity)]
+### Create the Event Entity
+
 
 This class defines the event-level attributes listed in the documentation and contains associations to the other entities. It uses the global event ID as the identifier.
 
@@ -465,10 +458,9 @@ public class Event {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test The Spatial Data Import)]
+### Test The Spatial Data Import
+
 
 In this application we will be parsing the event data from the downloaded CSV file and then storing it in the database
 
@@ -643,10 +635,9 @@ Imported 112207 records
 
 > **Note:** Depending on which data set file you will be using, the number of records and the number of events in Europe might be different.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test The Spatial Data Querying)]
+### Test The Spatial Data Querying
+
 
 Now that the data is loaded in our database, we run spatial queries.
 
@@ -718,5 +709,4 @@ You should see the following output log in your console:
 Found 14412 events in Europe
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+

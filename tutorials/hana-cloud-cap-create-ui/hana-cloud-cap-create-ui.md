@@ -9,7 +9,7 @@ parser: v2
 
 # Create a User Interface with CAP (SAP HANA Cloud)
 
-<!-- description -->Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
+<!-- description --> Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
 
 ## You will learn
 
@@ -45,7 +45,7 @@ Video tutorial version:
 
     ![npm start](npm_start.png)
 
-    If you accidentally close this dialog, you can always open the running services via **View > Find Command** and then choosing **Ports: Preview** and choosing the running service from the list
+    If you accidentally close this dialog, you can always open the running services via **View > Command Pallette** and then choosing **Ports: Preview** and choosing the running service from the list
 
 1. You should see the list of entities you exposed.
 
@@ -73,7 +73,7 @@ Video tutorial version:
     ?$search=DE
     ```
 
-    !![Play with the OData Service](serach.png)
+    ![Play with the OData Service](serach.png)
 
 1. You can find out more about OData V4 at the [OData organization](https://www.odata.org/documentation/) and the [documentation for SAPUI5](https://ui5.sap.com/#/topic/5de13cf4dd1f4a3480f7e2eaaee3f5b8).
 
@@ -91,7 +91,7 @@ You will now create an [Application Router](https://www.npmjs.com/package/@sap/a
 
 1. Since the web module will be receiving the requests and routing them into the proper processing backend services, such as the OData service you have just tested, it will also be responsible for enforcing authentication.
 
-    These routing logics are done by an application called `approuter`. You can see the Node.js module being called as the starting script for the web module as defined in the file `package.json`.
+    These routing logic is done by an application called `approuter`. You can see the Node.js module being called as the starting script for the web module as defined in the file `package.json`.
 
     ![package.json for app router](app_router_package_json.png)
 
@@ -123,8 +123,6 @@ You will now create an [Application Router](https://www.npmjs.com/package/@sap/a
     }
     ```
 
-    **Save** the changes.
-
     ![xs-app.json](xsapp_json.png)
 
 1. Among other information, this configuration is declaring that requests containing the pattern `^/(.*)$` are routed to a destination called `srv-api`. This destination was defined by the wizard in the `mta.yaml` file and points the service layer of our CAP application.
@@ -133,19 +131,19 @@ You will now create an [Application Router](https://www.npmjs.com/package/@sap/a
 
 We want to create a Fiori freestyle UI for our CAP service.  We will use the wizards to generate most of the UI.
 
-1. From the top menu select **View -> Find Command**. Then type `fiori` into the search box. Select **Fiori Open Application Generator**.
+1. From the top menu select **View -> Command Pallette**. Then type `fiori` into the search box. Select **Fiori Open Application Generator**.
 
     ![Fiori Application Generator](fiori_app_gen.png)
 
-1. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
+1. Choose **SAP Fiori** as the template type, select **Worklist Page** as the template and press **Next**
 
     ![Fiori Application Type](application_type.png)
 
-1. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
+1. At the Data Source and Service Selection screen, choose **Use a Local CAP Project**. Select your project as the **Choose your CAP project**. Select `CatalogService (Node.js)` as your OData service. Press **Next**
 
     ![Data Source and Service Selection](data_source.png)
 
-1. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
+1. Choose `Interactions_Header` as the main entity, `ITEMS` for the Navigation entity, leave the `YES` value for the "Automatically add table columns to the list page and a section to the object page if none already exists?" option and press **Next**
 
     ![Entity Selection](entity_selection.png)
 
@@ -157,7 +155,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     ![New Project Structure](new_structure.png)
 
-1. From the terminal you should still have your `cds watch --profile hybrid` still running (if not restart it). This command watches for changes so your application is already to test with the new UI. Open the browser tab where you were testing it previously.   
+1. From the terminal you should still have your `cds watch --profile hybrid` still running (if not restart it). This command watches for changes so your application is already to test with the new UI. Open the browser tab where you were testing it previously.
 
 1. The CAP test page now has a link to the newly generated application.
 

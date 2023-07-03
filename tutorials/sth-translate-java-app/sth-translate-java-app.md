@@ -1,85 +1,75 @@
 ---
+parser: v2
 author_name: Beatrice Pasch
 author_profile: https://github.com/beapasch
-title: Translate a Java App
-description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>java, tutorial>license ]
 time: 15
 ---
 
+# Translate a Java App
+<!-- description --> Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
+
 ## Prerequisites  
   - **IMPORTANT:** This tutorial cannot be completed on a trial account.
   - [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
-## Details
-### You will learn  
+## You will learn  
   - How to translate the properties file of a Java app using the file upload scenario in SAP Translation Hub
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Locate properties file)]
+### Locate properties file
+
 
 In your Eclipse window, locate the `i18n.properties` file that contains your app texts.
 
 ![Locate i18n.properties file](sth-locate-i18n-prop-file.png)
 
-[DONE]
 
-[ACCORDION-END]
+### View texts in properties file
 
-[ACCORDION-BEGIN [Step 2: ](View texts in properties file)]
 
 Before you get started with the translation process, open the `i18n.properties` file to look at the texts that you're going to translate.
 
 ![Open i18n.properties file](sth-view-texts-i18n-prop-file.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Choose your SAP BTP Neo account
 
-[ACCORDION-BEGIN [Step 3: ](Choose your SAP BTP Neo account)]
 
 In the [SAP BTP cockpit](https://account.eu3.hana.ondemand.com/neo/), choose the tile for your account in the SAP BTP Neo environment.
 
 ![access menu to open service catalog](sth-choose-Neo.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open the service catalog
 
-[ACCORDION-BEGIN [Step 4: ](Open the service catalog)]
 
 Choose **Services** in the navigation area on the left. Search for the SAP Translation Hub service by entering **trans** and then choose the **SAP Translation Hub** tile.
 
 ![open service catalog](sth-open-services.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open SAP Translation Hub UI
 
-[ACCORDION-BEGIN [Step 5: ](Open SAP Translation Hub UI)]
 
 To access the SAP Translation Hub, UI, choose **Go to UI for Translation Workflow**.
 
 ![Go to SAP Translation Hub service](sth-tile-go-to-service.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create a translation project
 
-[ACCORDION-BEGIN [Step 6: ](Create a translation project)]
 
 Create a **File Project** for the .properties file that you're going to upload.
 
 ![Create translation project](sth-create-file-proj.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Enter translation project details
 
-[ACCORDION-BEGIN [Step 7: ](Enter translation project details)]
 
 Enter the following details about your file translation project:
 
@@ -95,11 +85,9 @@ Choose **Proceed to upload file(s)**.
 
 ![Create project](sth-create-file-proj-details.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Upload properties file
 
-[ACCORDION-BEGIN [Step 8: ](Upload properties file)]
 
 You can upload the properties file in two ways: there's the drag & drop option, which automatically starts the translation process, and there's the more traditional file selection option, which requires you to select the file and start the translation process. The end result is the same, it's just a matter of how you prefer to work.
 
@@ -118,22 +106,18 @@ Regardless of the option you choose, you need to start the translation step by s
 
 ![Start translation](sth-translate-fiori-app-success-status.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Review translations
 
-[ACCORDION-BEGIN [Step 9: ](Review translations)]
 
 To review the translated texts, choose the **Translations** tab.
 On this screen, you can switch between target languages and view information about the translation provider and quality rating:
 
 ![Choose translations tab](sth-translations-tab.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Filter by quality index (optional)
 
-[ACCORDION-BEGIN [Step 10: ](Filter by quality index (optional))]
 
 To better plan the language review process, you can filter translations by the quality rating. For example, this enables you to see only those translations that have a quality rating below a certain threshold, such as `50`.
 Choose the filter icon above the **Quality Index** column:
@@ -152,21 +136,17 @@ The following success message confirms your filter setting:
 
 ![Confirm quality index filter](sth-filter-confirm.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Update translations (optional)
 
-[ACCORDION-BEGIN [Step 11: ](Update translations (optional))]
 
 If you want to update any translations, make the changes in the **Translated Text** column and choose **Save Changes**:
 
 ![Save translation project](sth-save-trans-proj.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Download translations
 
-[ACCORDION-BEGIN [Step 12: ](Download translations)]
 
 Now it's time to download your translations so that you see your Java app in other languages. Choose **Download Translations**:
 
@@ -176,11 +156,9 @@ SAP Translation Hub prepares a `zip` file that contains properties files for eac
 
 ![Confirm zip download](sth-zip-downloaded.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Import translations in Eclipse
 
-[ACCORDION-BEGIN [Step 13: ](Import translations in Eclipse)]
 
 Now it's time to head back to your Eclipse window and import the translations into the project for your Java app.
 
@@ -205,11 +183,9 @@ The properties files per target language appear in the `i18n` folder:
 
 ![Show target language properties files](sth-target-prop-files-imported.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Restart Java server (optional)
 
-[ACCORDION-BEGIN [Step 14: ](Restart Java server (optional))]
 
 To see the translations in your Java app, you need to restart the Java server. In Eclipse, switch to the **Git** perspective:  
 
@@ -231,11 +207,9 @@ Depending on system performance, it can take several minutes for the Java server
 
 ![Server started](sth-eclipse-server-started-synchro.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Display app in browser
 
-[ACCORDION-BEGIN [Step 15: ](Display app in browser)]
 
 To see your app in the translated languages, enter the following address in a browser; the last two letters denote the language of your app: `http://localhost:8080/espm-cloud-web/webshop/?sap-language=fr`
 
@@ -245,6 +219,4 @@ The French version of the app appears:
 
 ![Display French version of app](sth-espm-app-browser-fr-version.png)
 
-[VALIDATE_2]
 
-[ACCORDION-END]

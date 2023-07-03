@@ -1,22 +1,23 @@
 ---
-title: Add Advanced Geospatial Processing with Hibernate
-description: Make use of the SAP HANA geospatial engine via Hibernate Spatial.
+parser: v2
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
 time: 20
 ---
 
+# Add Advanced Geospatial Processing with Hibernate
+<!-- description --> Make use of the SAP HANA geospatial engine via Hibernate Spatial.
+
 ## Prerequisites  
 - **Tutorials:** [Prepare to build a translytical application with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-setup.html)
 
-## Details
-### You will learn  
+## You will learn  
   - How to make use of the SAP HANA geospatial engine via Hibernate Spatial
-
-### Motivation
+## Motivation
 The initial implementation of the application not leveraging geospatial processing capabilities has some severe disadvantages.
 
+## Intro
 Here is a query taken from the file `IncidentRepository.java` in the directory `src/main/java/com/sap/hana/hibernate/sample/repositories` that loads the police incidents within a certain distance around a given location:
 
 ```java
@@ -42,7 +43,8 @@ All of these disadvantages can be addressed by using SAP HANA's built-in geospat
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Use geospatial functions for the incident list)]
+### Use geospatial functions for the incident list
+
 Open the file `IncidentRepository.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/repositories`.
 
 In all queries, replace the part starting with
@@ -149,12 +151,10 @@ public Page<Incident> findByLocationNear(Point<G2D> location, Distance distance,
 
 Save the `IncidentRepository.java` file.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Use geospatial functions for the incident heat map)]
+### Use geospatial functions for the incident heat map
+
 Open the file `IncidentLocationAndCountRepository.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/repositories`.
 
 Like in the previous step, replace the part starting with
@@ -237,11 +237,9 @@ public List<IncidentLocationAndCount> findByLocationAndCategory(Point<G2D> locat
 
 Save the `IncidentLocationAndCountRepository.java` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Deploy the application
 
-[ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 With the geospatial changes in place we can now deploy the application again to the cloud.
 
 In a console run the following command from the root directory of the project
@@ -256,11 +254,9 @@ This deployment should be much faster than the initial deployment since the larg
 
 After the deployment has succeeded you can navigate to `https://<your project ID>.appspot.com` to see the changes.
 
-[DONE]
 
-[ACCORDION-END]
+### Learn about Spatial Reference Systems (SRS)
 
-[ACCORDION-BEGIN [Step 4: ](Learn about Spatial Reference Systems (SRS))]
 While the application now processes the incidents correctly, it does so rather slowly. The reason for this is the way that the geospatial data is stored inside the database. In the next steps you'll implement improvements for dealing with the geospatial data.
 
 For an introduction of what spatial reference systems (SRS) are, check out the tutorial [Spatial Reference Systems](hana-spatial-intro6-srs).
@@ -269,11 +265,10 @@ The default spatial reference system used by the application is [WGS 84](http://
 
 Since the data the application uses is restricted to a relatively small area (the city limits of San Francisco), we can use a planar SRS specifically for that region. During deployment the application has already installed the SRS [NAD83(2011) / San Francisco CS13](http://epsg.io/7131) with SRID 7131 into the database. This SRS is a planar SRS for the San Francisco area which should give reasonable accuracy while being computationally much cheaper.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable the SRS transformation)]
+### Enable the SRS transformation
+
 Open the file `DatabaseInitializer.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/app`.
 
 Find the method `transformIncidentLocations` and change
@@ -308,11 +303,9 @@ During application startup the method will now be called and transform the locat
 
 Save the `DatabaseInitializer.java` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Change the SRS used for the incident list
 
-[ACCORDION-BEGIN [Step 6: ](Change the SRS used for the incident list)]
 Now that the locations are available in an optimized representation, you'll need to update the application to make use of the new data.
 
 Open the file `IncidentRepository.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/repositories`.
@@ -406,11 +399,9 @@ public Page<Incident> findByLocationNear(Point<G2D> location, Distance distance,
 
 Save the `IncidentRepository.java` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Change the SRS used for the incident heat map
 
-[ACCORDION-BEGIN [Step 7: ](Change the SRS used for the incident heat map)]
 Open the file `IncidentLocationAndCountRepository.java` from the directory `src/main/java/com/sap/hana/hibernate/sample/repositories`.
 
 Like in the previous step, replace `i.location` with `i.mapLocation` and `:location` with `transform(:location, 7131)` in all queries.
@@ -489,11 +480,9 @@ public List<IncidentLocationAndCount> findByLocationAndCategory(Point<G2D> locat
 
 Save the `IncidentLocationAndCountRepository.java` file.
 
-[DONE]
 
-[ACCORDION-END]
+### Deploy the application
 
-[ACCORDION-BEGIN [Step 8: ](Deploy the application)]
 With the changes in place we can now deploy the application again to the cloud.
 
 In a console run the following command from the root directory of the project
@@ -510,6 +499,4 @@ The retrieval of the incidents should be much faster now.
 
 In the text area below enter the name of the Hibernate Spatial function that is used to compute the set of locations within a given distance of a given location.
 
-[VALIDATE_2]
 
-[ACCORDION-END]

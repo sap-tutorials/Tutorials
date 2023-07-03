@@ -9,7 +9,7 @@ parser: v2
 
 # Create Calculation View and Expose via CAP (SAP HANA Cloud)
 
-<!-- description -->Learn how to combine HANA native artifacts, like calculation views, with SAP Cloud Application Programming Model (CAP)
+<!-- description --> Learn how to combine HANA native artifacts, like calculation views, with SAP Cloud Application Programming Model (CAP)
 
 ## You will learn
 
@@ -42,7 +42,7 @@ For more details on this topic, including advanced features such as parameters a
 
 Calculation Views and other HANA native artifacts allow you to leverage HANA specific features and optimizations that might not otherwise be available at the abstraction layers within the SAP Cloud Application Programming Model. Calculation Views are especially good at aggregation and filtering of large datasets. In this exercise will create a simple join Calculation View based upon or small data set and data model. This is done so we focus on the mechanics of combining HANA native with CAP without needing the typical large data set where the technical advantages of Calculation Views become more apparent.
 
-1. Create a new **Calculation View** via **View > Find Command** and then **SAP HANA: Create SAP HANA Database Artifact** command pallet entry.
+1. Create a new **Calculation View** via **View > Command Pallette** and then **SAP HANA: Create SAP HANA Database Artifact** command pallet entry.
 
     ![New calculation view](new_db_artifact.png)
 
@@ -102,8 +102,6 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
     ![Projection Join](projection_join.png)
 
-1. Save your View
-
 1. From the SAP HANA Projects view, press the Deploy button
 
     ![Deploy](deploy.png)
@@ -142,7 +140,7 @@ We now want to expose our Calculation View to the Cloud Application Programming 
     hana-cli inspectView -v V_INTERACTION -o cds
     ```
 
-    !![inspectView](inspect_view.png)
+    ![inspectView](inspect_view.png)
 
     With this command you are looking up the definition of the view but asking for the output (-o) in the CDS format.
 
@@ -150,17 +148,11 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
     ![Add Proxy entity](add_proxy_entity.png)
 
-1. CDS does have an annotation called `@cds.persistence.exists`. This annotation allows you to re-define an existing DB object and CDS won't attempt to create or alter it. It will just assume it already exists in the matching state.
-
-1. You can also add the annotation `@cds.persistence.calcview`. This will further tell the Cloud Application Programming Model that this target entity is also a Calculation View.
-
-    ![Calculation View Annotation](calcview_annotation.png)
+1. CDS does have an annotation called `@cds.persistence.exists`. This annotation allows you to re-define an existing DB object and CDS won't attempt to create or alter it. It will just assume it already exists in the matching state.There is also the annotation `@cds.persistence.calcview`. This will further tell the Cloud Application Programming Model that this target entity is also a Calculation View.
 
 1. Now open the `interactions_srv.cds` file from the `/srv` folder. Add this new Calculation View based entity to the CAP service as read-only.
 
     ![Add Entity to Service](entity_to_service.png)
-
-1. Save any open files.
 
 1. From the terminal return to the root of the project and issue the command: `cds build`
 

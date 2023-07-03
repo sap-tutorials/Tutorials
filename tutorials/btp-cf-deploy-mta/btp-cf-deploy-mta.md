@@ -183,7 +183,10 @@ name                   service            plan   bound apps     last operation
 my-first-app-service   application-logs   lite   my-first-app   create succeeded
 ```
 
+
+
 ### Create an extension descriptor
+
 
 
 Extension descriptors are files complementary to the main deployment descriptor that provide additional data. They have a file extension `.mtaext` and are external to the MTA archive `.mtar`. They are used to provide deployment specific information, for example, credentials to external services.

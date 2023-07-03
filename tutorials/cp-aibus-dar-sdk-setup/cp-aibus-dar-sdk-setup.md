@@ -1,6 +1,5 @@
 ---
-title: Set Up the SDK for Data Attribute Recommendation
-description: Create a virtual environment and install the Python SDK (Software Development Kit) for Data Attribute Recommendation.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
@@ -9,11 +8,14 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Set Up the SDK for Data Attribute Recommendation
+<!-- description --> Create a virtual environment and install the Python SDK (Software Development Kit) for Data Attribute Recommendation.
+
+## You will learn
   - How to set up a virtual environment
   - How to install the SDK for Data Attribute Recommendation
 
+## Intro
 Use Data Attribute Recommendation (one of the [SAP AI Business Services](https://help.sap.com/docs/SAP_AI_BUS) in SAP Business Technology Platform) to classify entities such as products, stores and users into multiple classes, using free text, numbers and categories. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For the definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 The Data Attribute Recommendation service provides a REST API to communicate and interact with your service instance. The Python SDK for Data Attribute Recommendation provides an implementation that allows you to easily consume the APIs of the service without having to write your own code. It also serves as a reference implementation and can be easily transferred into other programming environments and languages.
@@ -22,7 +24,8 @@ The SDK is available in [GitHub](https://github.com/SAP/data-attribute-recommend
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install Python)]
+### Install Python
+
 
 First, you need to make sure that you have Python installed. Ideally, you have a Python version from 3.5 up to 3.8 as those are actively supported by the SDK.
 
@@ -44,10 +47,9 @@ In case you have a Python installation, it will output the version. If you have 
 
 In case `command not found` is printed, you do not have Python installed. Head over [here](https://www.python.org/downloads/) and install an up-to-date version that is supported by the SDK. Then, close down and open up a new command prompt or terminal and run the command `python --version` again to check if the installation was successful.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up virtual environment)]
+### Set up virtual environment
+
 
 Next, you will set up a virtual environment using the Python package `virtualenv`. With this package you avoid installing Python packages globally which could break system tools or other projects.
 
@@ -91,11 +93,10 @@ In a terminal, enter `python3 -m virtualenv dar-sdk-venv` to create a new virtua
 
 You can tell that the environment is activated as it is added to your current path.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Install SDK)]
+### Install SDK
+
 
 Finally, you can install the SDK of Data Attribute Recommendation.
 
@@ -109,10 +110,8 @@ As a first test, enter the command `python -c "import sap.aibus.dar.client"` to 
 
 ![Import SDK](import-sdk.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

@@ -1,11 +1,13 @@
 ---
-title: Migrate from SAP IQ On-Premise to SAP HANA Cloud, Data Lake
-description: Prepare and execute the migration from SAP IQ on-premise to SAP HANA Cloud, data lake using an S3 or a Microsoft Azure bucket.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-iq, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Migrate from SAP IQ On-Premise to SAP HANA Cloud, Data Lake
+<!-- description --> Prepare and execute the migration from SAP IQ on-premise to SAP HANA Cloud, data lake using an S3 or a Microsoft Azure bucket.
 
 ## Prerequisites
 - You need a running SAP IQ system.
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - You need an S3 or a Microsoft Azure bucket to transfer the data.
 - You need to have a running instance of SAP HANA Cloud, data lake with enough space to receive the amount of data you wish to migrate.
 
-## Details
-### You will learn
+## You will learn
 - How to set up SAP IQ components for migration
 - How to configure an S3 or a MS Azure bucket for migration
 - How to execute the migration
 
 
+## Intro
 SAP HANA Cloud, data lake brings you all cloud advantages that are part of SAP HANA Cloud, such as ease of provisioning, scaling flexibility, security and more. SAP manages the hardware, virtual machines, and operating systems for you, while you set up and manage your own instances to create the data management landscape you need.
 
 SAP HANA Cloud, data lake was built to be compatible with SAP IQ on-premise . That means that it's easy to move large amounts of data from your on-premise installation to the cloud. Keep in mind that you don't have to move your whole landscape, but can rather move at your own pace.
@@ -39,7 +41,8 @@ Let's look at each of those steps in more detail. You can also watch this demo v
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare your SAP IQ system)]
+### Prepare your SAP IQ system
+
 
 To begin, you need to set up a few things in your on-premise SAP IQ system. That includes the following overall steps:
 
@@ -71,10 +74,9 @@ To begin, you need to set up a few things in your on-premise SAP IQ system. That
 4.	Estimate the space needed from SAP IQ to a transfer on-premise machine or NFS. Use `sp_iqspaceused` or use the output from `sp_iqdbspace`. You can also use the output from `pre_migration.log` / `pre_migration.out`.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure an S3 or Microsoft Azure bucket)]
+### Configure an S3 or Microsoft Azure bucket
+
 
 Now, it's time to configure your S3 or Microsoft Azure bucket to receive the data you wish to migrate.
 
@@ -119,11 +121,10 @@ You can follow the next steps to complete the procedure for executing the migrat
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Update your extract or transfer config file)]
+### Update your extract or transfer config file
+
 
 Now that the storage is set and the space is allocated, it's time to execute the migration of your data. Here are the steps to migrate:
 
@@ -168,10 +169,9 @@ Now that the storage is set and the space is allocated, it's time to execute the
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Extract the data using the SAP IQ python script)]
+### Extract the data using the SAP IQ python script
+
 
 
 
@@ -308,10 +308,9 @@ Extraction of all tables is successful
 
     Note that near the bottom are some log files. If there are no issues, you can just skip them.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Upload the data to an S3 or Microsoft Azure bucket)]
+### Upload the data to an S3 or Microsoft Azure bucket
+
 
 Now, to upload the data to your S3 or Microsoft Azure bucket, you will need the following commands.
 
@@ -375,10 +374,9 @@ Finished[#############################################################]  100.000
 …
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Load the data into your target SAP HANA Cloud, data lake)]
+### Load the data into your target SAP HANA Cloud, data lake
+
 
 Finally, here is an example of the commands you can run to load the data into your SAP HANA Cloud, data lake. These commands will import the data into the SAP IQ server using a python script using the `config` file that was used previously.
 
@@ -434,17 +432,15 @@ Here are some useful links that can further assist you in the process:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
 
 
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 
 ---

@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 keywords: cap
@@ -11,8 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - For this tutorial, you have two options:
-  - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
+ - Before you start with this tutorial, you have two options:
+  - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
     - Complete the previous tutorial [Use a Local Launch Page](btp-app-launchpage) with all its prerequisites.
 
 
@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
 
 <!-- cpes-file srv/risk-service.cds -->
-```[4-13,15-24]
+```JavaScript[4-13,15-24]
 using { sap.ui.riskmanagement as my } from '../db/schema';
 @path: 'service/risk'
 service RiskService {

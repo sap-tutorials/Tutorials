@@ -9,7 +9,7 @@ parser: v2
 
 # Add User Authentication to Your Application (SAP HANA Cloud)
 
-<!-- description -->Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application.
+<!-- description --> Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application.
 
 ## You will learn
 
@@ -192,11 +192,11 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Run Application Router](run_app_router.png)
 
-1. Open the application router in a new tab. Click on the `Interactions_Header`. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.
+1. Open the application router in a new tab (the new service instance running on port 5000). Click on the `Interactions_Header`. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.
 
     ![CAP Service successful](cap_successful.png)
 
-1. Finally change the ULR path to `/interaction_items/webapp/index.html`. You are now testing the Fiori free style application from the previous tutorial with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
+1. Finally change to the `Interaction_Items` from the test page. You are now testing with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
 
     ![Fiori with authentication](fiori_with_authentication.png)
 

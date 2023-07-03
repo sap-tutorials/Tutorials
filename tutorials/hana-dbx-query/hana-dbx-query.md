@@ -1,38 +1,40 @@
 ---
-title: Query with the SQL Console in SAP HANA Database Explorer
-description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
+parser: v2
 auto_validation: true
-time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+time: 15
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Query with the SQL Console in SAP HANA Database Explorer
+<!-- description --> Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
  - You have completed the first 3 tutorials in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to run SQL queries using the SQL console and add filters to the results
   - How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Execute SQL)]
+### Execute SQL
+
 
 1. Select a connection and open the SQL console.
 
     ![open SQL console](open-sql-console.png)
 
-2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click the **...** icon.  There are options to connect, disconnect, or change the connection.
+2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click on the **...** icon.  There are options to connect, disconnect, or change the connection.
 
     ![Connected SQL console](connectedSQLConsole.png)  
 
 3. Enter the SQL statements below.
 
     ```SQL
-    SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
+    SELECT * FROM HOTEL;
+    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -45,6 +47,8 @@ primary_tag: software-product>sap-hana-cloud
 
     > The unique constraint violation error is expected and is used here to demonstrate how the results of SQL execution are shown.
 
+    ![Unique constraint error](unique-constraint-error.png)
+
 6. The results of a query can be downloaded and exported.
 
       ![Download Table Results](DownloadResults.png)
@@ -53,7 +57,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Messages Tab](MessagesTab.png)
 
-    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
+    > For SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
 
 8. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 
@@ -65,9 +69,15 @@ primary_tag: software-product>sap-hana-cloud
 
     This behavior can be set via the SQL console preferences which is shown in more detail in Step 5: SQL console preferences.
 
-10. Sometimes you need to execute a SQL statement that takes a long time to run--longer than you want to keep your browser open.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
+10. Sometimes you need to execute a SQL statement that takes a long time to run. In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement. Enter the SQL statement below.
+
+    ```SQL
+    SELECT * FROM CUSTOMER;
+    ```
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
+
+    >If needed, reconnect the database after running the query.
 
 11. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details icon.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
 
@@ -96,7 +106,7 @@ primary_tag: software-product>sap-hana-cloud
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
 
-    SELECT * FROM HOTEL.CUSTOMER FOR JSON;
+    SELECT * FROM CUSTOMER FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)
@@ -107,10 +117,9 @@ primary_tag: software-product>sap-hana-cloud
 
     To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Shortcuts)]
+### Shortcuts
+
 
 1. Keyboard shortcuts are available to provide alternate methods of completing frequently performed tasks. Right-click in the SQL console and choose **Keyboard Shortcuts**.
 
@@ -120,7 +129,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Keyboard Shortcuts](KeyboardShortcuts.png)
 
-2. Some commonly-used keyboard shortcuts are highlighted in the table below:
+2. Some commonly used keyboard shortcuts are highlighted in the table below:
 
     |  Action     | Shortcut
     |  :------------- | :-------------
@@ -140,7 +149,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Open Keyboard Shortcuts Settings](KeyboardShortcutsSettings.png)
 
-    > Note, double-click on the shortcut to start the recording.
+    > Double-click on the shortcut to start the recording.
 
 4. A SQL console can be toggled to enter full-screen mode.  Double-click a SQL console tab to enter this mode.  
 
@@ -152,17 +161,16 @@ primary_tag: software-product>sap-hana-cloud
 
     ![run selected](runSelected.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Autocomplete)]
+### Autocomplete
+
 
 1. Once a statement is started, press `Ctrl+Space` to see a list of possible statements based on what you have typed.  
 
     ![Code Completion Options](CodeCompletionOptions.png)
 
-2. By selecting the statement you want to use from the provided options, the SQL statement will be written into the console. Some information will need to be filled in to the generated statement. In the example below, table names need to be replaced and the columns to be used in the ON clause need to be provided.
+2. By selecting the statement, you want to use from the provided options, the SQL statement will be written into the console. Some information will need to be filled into the generated statement. In the example below, table names need to be replaced and the columns to be used in the ON clause need to be provided.
 
     ![Code Completion Statement](CodeCompletionStatement.png)
 
@@ -171,15 +179,14 @@ primary_tag: software-product>sap-hana-cloud
     Copy the following SQL statement into the console and then use the autocomplete shortcut to see the available tables:
 
     ```SQL
-    SELECT * FROM HOTEL.RE
+    SELECT * FROM HOTEL.RES
     ```
 
     ![Code Completion Table](CodeCompletionTable.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Statement help panel)]
+### Statement help panel
+
 
 1. On the right-hand side of the SQL console, there is a statement help panel that provides more information about statement syntax, and any tables, functions, stored procedures, or SQL functions that have been referenced.
 
@@ -196,9 +203,9 @@ primary_tag: software-product>sap-hana-cloud
       R.FREE,
       R.PRICE
     FROM
-      HOTEL.ROOM AS R
+      ROOM AS R
       LEFT OUTER JOIN
-      HOTEL.HOTEL AS H
+      HOTEL AS H
       ON R.HNO = H.HNO;
     ```
 
@@ -219,7 +226,7 @@ primary_tag: software-product>sap-hana-cloud
     Copy the following SQL into the SQL console to populate the Procedures and Functions section of the help panel:
 
     ```SQL
-    SELECT HOTEL.AVERAGE_PRICE('suite') FROM DUMMY;
+    SELECT AVERAGE_PRICE('suite') FROM DUMMY;
     ```
 
     ![Procedures and Functions Referenced](FunctionsReferenced.png)
@@ -230,7 +237,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ```SQL
     SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
-    FROM HOTEL.ROOM
+    FROM ROOM
     GROUP BY TYPE;
     ```
 
@@ -239,10 +246,9 @@ primary_tag: software-product>sap-hana-cloud
     >Left-click the name of the SQL function in the SQL Functions section to open the SAP help showing detailed information on the function.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](SQL console preferences)]
+### SQL console preferences
+
 
 1. Select **SQL Console** or **SQL Code Completion** from the Global Preferences to see the configurable preference settings for the SQL console.
 
@@ -272,10 +278,9 @@ primary_tag: software-product>sap-hana-cloud
 
   For additional details, consult [SQL Console Preferences](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/2f39e4fdd67545cf805b557357c5a7b3.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Statement library)]
+### Statement library
+
 
 The statement library contains a mix of pre-populated system statements and user-saved statements.
 
@@ -290,7 +295,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     */
 
-    SELECT * FROM HOTEL.RESERVATION
+    SELECT * FROM RESERVATION
         WHERE ARRIVAL >= CURRENT_DATE;
     ```
 
@@ -326,12 +331,8 @@ The statement library contains a mix of pre-populated system statements and user
     ![Update Statement](UpdateStatement.png)
 
 
+### Knowledge check
+
 Congratulations! You have now explored selected features of the SQL console.
-
-[VALIDATE_1]
-[ACCORDION-END]
-
-
-
 
 ---

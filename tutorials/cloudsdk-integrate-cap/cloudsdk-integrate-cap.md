@@ -1,42 +1,42 @@
 ---
-title: Use the SAP Cloud SDK in the SAP Cloud Application Programming Model
-description: Create a SAP Cloud Application Programming Model project to call OData services using the SAP Cloud SDK on Cloud Foundry.
+parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr
 ---
+
+# Use the SAP Cloud SDK in the SAP Cloud Application Programming Model
+<!-- description --> Create a SAP Cloud Application Programming Model project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 
 ## Prerequisites
  - SAP Cloud Application Programming Model
  - Basic knowledge of Spring Boot and Java (optional)
  - An account on [Cloud Foundry](group.scp-1-get-ready)
 
-## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
->
-### You will learn
+
+## You will learn
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
   - How to write a custom event handler for CAP Java
   - How to deploy an application to SAP Cloud Platform Cloud Foundry
   - How to create service that reads/writes business partners from S/4HANA and exposes them as SAP Cloud Application Programming Model
 
+## Intro
 [SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/) enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
-
 However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/).
-
 In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how the SAP Cloud SDK allows you to develop, extend and communicate with other SAP solutions.
-
 > Also check out the full documentation on [how the Cloud SDK integrates with CAP](https://sap.github.io/cloud-sdk/docs/java/guides/cap-sdk-integration).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP Cloud Application Programming Model project)]
+### Create SAP Cloud Application Programming Model project
+
 
 For local development, you need to do the following:
 
@@ -61,14 +61,13 @@ For local development, you need to do the following:
     - The `db` folder stores database-related artifacts.
     - The `srv` folder stores your Java application.
 
-      !![project creation done](projectCreation.png)
+      <!-- border -->![project creation done](projectCreation.png)
 
 Find more information about the SAP Cloud Application Programming Model in its [documentation](https://cap.cloud.sap/docs/get-started/).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define a data model)]
+### Define a data model
+
 
 CAP applications use [Core Data Services](https://cap.cloud.sap/docs/cds/) (CDS) to describe:
 
@@ -79,7 +78,7 @@ In this step, you'll define a data model, which defines the entity.
 
 1. Right-click on the `db` folder and choose **New File**.
 
-    !![new file](dataModel.png)
+    <!-- border -->![new file](dataModel.png)
 
 2. Call it `datamodel.cds` and click **OK** to create the file.
 
@@ -96,17 +95,16 @@ In this step, you'll define a data model, which defines the entity.
     }
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Define a service)]
+### Define a service
+
 
 In this step, you'll define a simple service, which exposes a projection on the entity defined in the data model.
 
 1. Right-click the `srv` folder and choose **New File**.
 
-    !![new file](newFile.png)
+    <!-- border -->![new file](newFile.png)
 
 2. Call the file `cat-service.cds` and click **OK**.
 
@@ -128,13 +126,12 @@ In this step, you'll define a simple service, which exposes a projection on the 
 
 In your project directory, the data model has auto-generated the classes.
 
-!![generated file](genFile.png)
-
-[DONE]
-[ACCORDION-END]
+<!-- border -->![generated file](genFile.png)
 
 
-[ACCORDION-BEGIN [Step 4: ](Integrate SAP Cloud SDK)]
+
+### Integrate SAP Cloud SDK
+
 
 For integrating the SAP Cloud SDK in SAP Cloud Application Programming Model, you need to add the following dependency in your parent POM, which you find in the root directory of your project:
 
@@ -175,11 +172,10 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 
 For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started#integrate-the-sap-cloud-sdk-for-java-into-your-project).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create Java class for event handler)]
+### Create Java class for event handler
+
 
 1. Create a new Java class `BusinessPartnerReadListener` with the following content:
 
@@ -195,7 +191,7 @@ public class BusinessPartnerReadListener implements EventHandler {
 
         final Map<Object, Map<String, Object>> result = new HashMap<>();
         final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).execute(httpDestination);
+                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).executeRequest(httpDestination);
 
         final List<CapBusinessPartner> capBusinessPartners =
                 convertS4BusinessPartnersToCapBusinessPartners(businessPartners, "MyErpSystem");
@@ -211,9 +207,15 @@ public class BusinessPartnerReadListener implements EventHandler {
         final BusinessPartnerService service = new DefaultBusinessPartnerService();
 
         Map<String, Object> m = context.getCqn().entries().get(0);
-        BusinessPartner bp = BusinessPartner.builder().firstName(m.get("firstName").toString()).lastName(m.get("surname").toString()).businessPartner(m.get("ID").toString()).build();
+        BusinessPartner bp =
+            BusinessPartner
+                .builder()
+                .firstName(m.get("firstName").toString())
+                .lastName(m.get("surname").toString())
+                .businessPartner(m.get("ID").toString())
+                .build();
 
-        service.createBusinessPartner(bp).execute(httpDestination);
+        service.createBusinessPartner(bp).executeRequest(httpDestination);
     }
 
     private List<CapBusinessPartner> convertS4BusinessPartnersToCapBusinessPartners(
@@ -245,10 +247,9 @@ The event handler uses the following APIs, which are available for service provi
 * [Event handler methods](https://cap.cloud.sap/docs/java/srv-impl#event-handler-methods) are registered with `@On`, `@Before`, or `@After` annotations. Every event, such as an entity creation, runs through these three [phases](https://cap.cloud.sap/docs/java/srv-impl#event-phases). Each phase has a slightly different semantic.
 * The annotation `@ServiceName` specifies the default service name all event handler methods apply to. Here this is `cloud.sdk.capng`, as this was also the name when defining the service in the CDS model.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Understanding the read and write methods)]
+### Understanding the read and write methods
+
 
 The above class handles the READ and CREATE events (highlighted above).
 
@@ -261,12 +262,11 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function, which creates the new `businessPartner`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the mock server)]
+### Run the mock server
+
 
 In order to make a call to an OData service, there needs to be a service to call. You can set up a local mock server that mimics the business partner and a custom service by following the instructions at [Extending SAP S/4HANA](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual OData services, but it suffices to try it out locally.
 
@@ -277,13 +277,13 @@ Once it is up and running, you should see the list of services at <http://localh
 You can run the project on a local mock server. Here, you need to supply the destinations as an environment variable on your local machine.
 
 ```Shell
-set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
+$destinations='[{name: "MyErpSystem", url: "https://URL", "username": ""USER", "password": "PASSWORD"}]'
 ```
 
 Please change the URL accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```Shell
-set destinations
+echo $destinations
 ```
 
 Be aware that the variable is only available in your current terminal session.
@@ -308,11 +308,10 @@ Be aware that the variable is only available in your current terminal session.
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Run the application)]
+### Run the application
+
 
 
 1. Go to the root of your project by running the following command in the terminal:
@@ -332,18 +331,17 @@ Be aware that the variable is only available in your current terminal session.
 
 4. Choose **`$metadata`** from the welcome page to inspect the OData metadata that is automatically served by the CAP Java runtime.
 
-  !![metadata option](metaData.png)
+  <!-- border -->![metadata option](metaData.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create/read data through Postman)]
+### Create/read data through Postman
+
 
 Do the **GET** request on <http://localhost:8080/odata/v4/cloud.sdk.capng/CapBusinessPartner> from Postman. It fetches the `businessPartner` data from the mock server.
 
 Try to insert some data into the running application. For example, use Postman to do the following post request on same link.
 
-!![postman post](postmanPost.png)
+<!-- border -->![postman post](postmanPost.png)
 
 The **POST** request causes an [OData Insert](https://www.odata.org/getting-started/basic-tutorial/#create) on the entity `CAPBusinessPartner`.
 
@@ -361,11 +359,10 @@ The response will be the created record and should look similar to this output:
 
 You can read the data by doing the **GET** request on same URL .
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Deploy and configure mock server on cloud foundry)]
+### Deploy and configure mock server on cloud foundry
+
 
 You can configure a mock server instance to Cloud Foundry by going inside the mock server directory and pushing the instance to cloud. Do this by running:
 
@@ -402,10 +399,9 @@ cf app odata-mock-server
 cf create-service destination lite MyErpSystem
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Deploy application to Cloud Foundry)]
+### Deploy application to Cloud Foundry
+
 
 1. Go to the `~/projects/cap-business-service` folder and **create a new file** called `manifest.yml`.
 
@@ -465,7 +461,7 @@ cf create-service destination lite MyErpSystem
 
     You can see the following, if the application was successfully deployed.
 
-    !![applicationDeployed](appDeploy.png)
+    <!-- border -->![applicationDeployed](appDeploy.png)
 
 8. To retrieve the application URL run the following command:
 
@@ -475,10 +471,8 @@ cf create-service destination lite MyErpSystem
 
     You can find URL, next to routes.
 
-    !![applicationURL](appUrl.png)
+    <!-- border -->![applicationURL](appUrl.png)
 
 Now you can do the **GET** / **POST** request in the same way as described in step 9.
 
-[DONE]
-[ACCORDION-END]
 ---

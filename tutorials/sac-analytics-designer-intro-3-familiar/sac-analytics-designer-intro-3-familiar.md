@@ -1,26 +1,29 @@
 ---
+parser: v2
 author_name: Fabien Aubert
 author_profile: https://github.com/Fabien33
-title: Get familiar with the Scripting Language in SAP Analytics Cloud, Analytics Designer
-description: Get an overview of SAP Analytics Cloud Analytics Designer scripting capabilities
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product-function>sap-analytics-cloud\,-analytics-designer
 ---
 
-## Details
-### You will learn
+# Get familiar with the Scripting Language in SAP Analytics Cloud, Analytics Designer
+<!-- description --> Get an overview of SAP Analytics Cloud Analytics Designer scripting capabilities
+
+## You will learn
   - What is the scripting language in Analytics Designer
   - How to use the script event
   - How to use the script object and script variable
   - What are the different script statements in Analytics Designer
 
+## Intro
 <!-- Add additional information: Background information, longer prerequisites -->
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Learn the Analytics Designer Scripting Language)]
+### Learn the Analytics Designer Scripting Language
+
 
 You might be wondering why you would want to script and what advantage it could possibly be.  
 
@@ -46,10 +49,9 @@ For example, when calling an API method on a Business Warehouse DataSource, the 
 
 ![3.1](3.1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand Events)]
+### Understand Events
+
 
 Scripts always run in response to something happening in the application. Application events are your hooks. There are several types of events in analytic applications. Some occur in the application itself and some occur on individual widgets.
 
@@ -76,11 +78,10 @@ Most events have no input parameters, like `onSelect` and `onResultChanged`.
 
 ![3.3](3.3.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Global Script Objects & Script Variables)]
+### Understand the Global Script Objects & Script Variables
+
 
 Global script objects act as containers. They allow you to maintain and organize script functions that are not tied to any event and are invoked directly. You can maintain libraries of re-usable functions. These library scripts are called functions.
 
@@ -94,10 +95,9 @@ For example, an analytic application developer can bind a calculated measure whi
 
 ![3.5](3.5.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Learn the Core Scripting Language Features)]
+### Learn the Core Scripting Language Features
+
 
 Normal JavaScript is weakly typed and dynamically typed. Weak typing means that the script writer can implicitly coerce variables to act like different types. For example, you could have an integer value and treat it as if it was a string. Dynamic typing means that the runtime will try to guess the type from the context at that moment and the user can even change the type after the variable is already in use. For example, you could change the value of the before-mentioned integer to another type of object at will; "Dear integer, you are now a duck".  
 
@@ -159,10 +159,9 @@ For example, *String#startsWith* is not available in Microsoft Internet Explorer
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Understand Loop Statements)]
+### Understand Loop Statements
+
 
 Two types of JavaScript loops are possible in SAP Analytics Cloud, analytics designer, *for* and *while* loops. Other types, such as `foreach` iterators, are not supported.
 
@@ -208,10 +207,9 @@ var propValue = selection[propKey];
 };
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Double and Triple Equals Operators)]
+### Double and Triple Equals Operators
+
 
 Plain JavaScript has two kinds of "equals" comparison operators, `==` (double equals) and `===` (triple equals). The main difference between these is that double equals has automatic type casting while triple equals doesn't. With triple equals, both the value and type must be the same for the result to be *true*. The triple equals is known as the strict [equality comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness).
 
@@ -241,10 +239,9 @@ if (aNumber === "1") {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Learn a Few More Statements)]
+### Learn a Few More Statements
+
 
 ### If and Else Statements
 The statements *if* and *else* are supported. Remember that there is no automatic type casting and double equals are valid only if both sides have the same static type:
@@ -293,12 +290,9 @@ switch (i) {
 ### Break Statement
 You can use *break* to break out of loops and *switch* statements, as seen in the example above.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test Yourself)]
+### Test Yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+
 ---

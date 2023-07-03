@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Enable Events from SAP S/4HANA Cloud to SAP BTP
 description: This tutorial shows you how to enable events to be sent from your SAP S/4HANA Cloud system to SAP BTP.
 keywords: cap

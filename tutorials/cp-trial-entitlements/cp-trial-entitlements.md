@@ -1,23 +1,25 @@
 ---
-title: Manage Entitlements on SAP BTP Trial
-description: Configure entitlements and quotas in your SAP BTP trial using the cockpit.
+parser: v2
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-business-technology-platform
-author_name: Jessica Katz
-author_profile: https://github.com/Jessica-Katz
+primary_tag: software-product>sap-business-technology-platform
+author_name: Anja Nicole Kretz
+author_profile: https://github.com/anjanicolekretz
 ---
+
+# Manage Entitlements on SAP BTP Trial
+<!-- description --> Configure entitlements and quotas in your SAP BTP trial using the cockpit.
 
 ## Prerequisites
 - You must have registered for a trial account on SAP Business Technology Platform: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 
-## Details
-### You will learn
+## You will learn
   - How to add missing entitlements to your trial subaccount
   - How to move entitlements from one subaccount to another
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Entitlements and quota)]
+### Entitlements and quota
+
 
 Before you get started, you should understand the difference between entitlements and quota, because you'll encounter these 2 terms quite often.
 
@@ -25,15 +27,14 @@ Before you get started, you should understand the difference between entitlement
 
 - **Quota** is the numeric quantity that defines the maximum allowed consumption of that resource. In other words, **how much** of a service plan you're entitled to use.
 
-Entitlements and quotas are managed at the global account level, distributed to directories and subaccounts, and consumed by the subaccounts.
+Entitlements and quotas are managed at the global account level, distributed to directories and subaccounts, and consumed by the subaccounts.    
 
 When you remove quotas or entitlements from a subaccount, they become available again at global account level and can be assigned to other subaccounts.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Subaccounts and service plans)]
+### Subaccounts and service plans
+
 
 When you sign up for a trial account, you get a subaccount called **trial** automatically created for you, and all trial entitlements assigned to it by default. If you choose to create an additional subaccount and try things out there, you need to manually move the entitlements from the default subaccount to the new subaccount. You may want to:
 
@@ -60,26 +61,20 @@ You can also use **directories** to distribute entitlements. To find out more ab
 
 In this tutorial, you'll work on global account level. You have one global account that is your trial account.
 
-[DONE]
 
-[ACCORDION-END]
+### Add missing entitlements to your subaccount
 
-[ACCORDION-BEGIN [Step 2: ](Add missing entitlements to your subaccount)]
 
 You're most likely here because you did not get all the service plans available on trial automatically entitled to the default **trial** subaccount that was created for you. In this step, you will fix that.
 
-1. Go to the [SAP BTP Trial] (https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) homepage and click **Enter Your Trial Account**.
+1. Go to the [SAP BTP Trial] (https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) homepage and click **Go To Your Trial Account**.
 
 
 2. Use the side navigation to go to **Entitlements** > **Entity Assignments**.  
 
 
-3. In the dropdown menus, choose **Show:** > **Subaccounts** and **Subaccounts:** > **trial** and then choose **Go**.
-
-
-    !![Entity Assignment Choosing Trial](EntityAssignment-ChooseTrial.png)
-
-      This loads a table with all the existing entitlements and quota assigned to that subaccount.
+3. Click the icon in the selection field, the popover will show you your subaccounts. Choose your **trial** subaccount.
+   This loads a table with all the existing entitlements and quota assigned to that subaccount.
 
 4. Click on **Configure Entitlements** to enter edit mode for that subaccount.
 
@@ -88,7 +83,7 @@ You're most likely here because you did not get all the service plans available 
     Right now, you want to add missing entitlements, so choose **Add Service Plans**.
 
 
-    !![Click Configure Entitlemts](ConfigEntitlements.gif)
+    <!-- border -->![Click Configure Entitlements](ConfigEntitlements.gif)
 
 6. In the dialog that opens, you have a list of all services available on trial on the left. You have to go through each of these services and make sure you add any missing service plans to your subaccount.
 
@@ -104,15 +99,14 @@ You're most likely here because you did not get all the service plans available 
 You can now use all these services available on trial in your subaccount.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Move entitlements across subaccounts)]
+### Move entitlements across subaccounts
+
 
 When you sign up for a trial account, you get a subaccount called **trial** automatically created for you, and all trial entitlements assigned to it by default.
 If you choose to create an additional subaccount and try things out there, you need to manually move the entitlements from the default subaccount to the new subaccount. You may want to move over all trial entitlements, only some of them, or even split quota for a service plan between the 2 subaccounts.
 
-1. Go to the [SAP BTP Trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) homepage and click **Enter Your Trial Account**.
+1. Go to the [SAP BTP Trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) homepage and click **Go To Your Trial Account**.
 
 2. Use the side navigation to go to **Entitlements** > **Entity Assignments**.
 
@@ -131,7 +125,7 @@ If you choose to create an additional subaccount and try things out there, you n
 
     **To remove quota for a service plan:** In the **Quota** column, choose the **+/-** buttons to adjust the amount you want to keep in the default subaccount.
 
-    !![Free Some Quota](FreeQuotaEntitlements.png)
+    <!-- border -->![Free Some Quota](FreeQuotaEntitlements.png)
 
 6.	When you're done removing all the service plans and/or quotas from the default subaccount, choose **Save** to exit edit mode for the **trial** subaccount.
 
@@ -144,6 +138,3 @@ Don't forget to increase the quota to the amount you need.
 9. When you're done adding everything, choose **Save** to confirm your changes and exit edit mode for that subaccount.
 
 You've now changed the entitlements and quota distribution across your 2 subaccounts and are ready to deploy applications and create service instances in your new subaccount.
-
-[DONE]
-[ACCORDION-END]

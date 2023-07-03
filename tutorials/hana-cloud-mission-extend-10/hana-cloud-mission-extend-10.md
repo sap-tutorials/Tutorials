@@ -1,13 +1,15 @@
 ---
+parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Access Data from Amazon S3 in SAP HANA Cloud, SAP HANA Database
-description: Get an overview of the multi-source landscape that we have set up and learn how to import data from an Amazon S3 bucket to SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
+
+# Access Data from Amazon S3 in SAP HANA Cloud, SAP HANA Database
+<!-- description --> Get an overview of the multi-source landscape that we have set up and learn how to import data from an Amazon S3 bucket to SAP HANA Cloud, SAP HANA database.
 
 ## Prerequisites
 - You have completed the tutorials in the previous tutorial group and know how to connect SAP HANA Cloud, SAP HANA database to SAP HANA on-premise using [SDA](hana-cloud-mission-extend-05) and [SDI](hana-cloud-mission-extend-06).
@@ -15,13 +17,13 @@ primary_tag: software-product>sap-hana-cloud
 - An Amazon AWS S3 bucket that contains data.
 
 
-## Details
-### You will learn
+## You will learn
 - What connections will be covered in this tutorial group
 - How SAP HANA Cloud, SAP HANA database can be your single gateway in a multi-source landscape
 - How to import data from Amazon S3 to SAP HANA Cloud, SAP HANA database
 
 
+## Intro
 In this **tutorial group**, we will show you an example of a multi-source data landscape in SAP HANA Cloud, SAP HANA database that connects to different on-premise and cloud databases.
 Throughout the tutorials of this group, you can learn how to set up the connections you need for your own landscape. After setting up connections, you can learn how to improve the performance of federated queries.
 
@@ -34,7 +36,8 @@ In this first **tutorial**, you will get an overview of the multi-source landsca
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the multi-source data landscape)]
+### Get to know the multi-source data landscape
+
 
 SAP HANA Cloud is designed to be the single gateway to all your data – no matter where data is stored, be it on a local on-premise database, on an SAP HANA Cloud instance or in non-SAP cloud databases. You can connect any data storages to SAP HANA Cloud and integrate all the data to then manage it in one place.
 
@@ -69,10 +72,9 @@ Now, that you have on overview of the steps ahead, let us start setting up our d
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare in S3)]
+### Prepare in S3
+
 
 > Please note, that if you are working with [Microsoft Azure](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/fd45a3b7917349a1a8cbc81e202c5cdd.html), the steps for importing and exporting described here are similar.
 
@@ -81,13 +83,13 @@ Now, that you have on overview of the steps ahead, let us start setting up our d
 
 3.	You also need the certificate information to access the data in S3. Get the object URL of any CSV file in your dataset folder and select the root certificate of the certificate chain and export as `pem` (X.506 base64 encoded) file, then open the file in a text editor to get the certificate string. Click on any csv-file in your dataset folder and then click on the object URL.
 
-    !![Object URL](ss-03-object-url.png)
+    <!-- border -->![Object URL](ss-03-object-url.png)
 
 4.	Then, click on the lock icon in the URL bar of your browser and then click on the certificate. A new window will open. Select the root certificate of the certificate chain and export as `pem` (X.506 base64 encoded) file, then open the file in a text editor to get the certificate string.
 
-    !![Certificate 1](ss-04-certificate1.png)
+    <!-- border -->![Certificate 1](ss-04-certificate1.png)
 
-    !![Certificate 2](ss-05-certificate2.png)
+    <!-- border -->![Certificate 2](ss-05-certificate2.png)
 
 > ### Amazon root certificates
 >
@@ -95,11 +97,10 @@ Now, that you have on overview of the steps ahead, let us start setting up our d
 
 For further information on how to create and configure Amazon Web Services S3 buckets, please refer to their [technical documentation here](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-configure-bucket.html).
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a PSE and add an S3 certificate)]
+### Create a PSE and add an S3 certificate
+
 
 1.	Open your **SAP HANA Database Explorer** and open a **SQL console**.
 
@@ -137,10 +138,9 @@ SET PSE <INSERT_CERTIFICATE_STORE_NAME> PURPOSE REMOTE SOURCE;
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Import data from S3 to SAP HANA Cloud, SAP HANA database)]
+### Import data from S3 to SAP HANA Cloud, SAP HANA database
+
 
 1.	To import a whole schema from an S3 bucket, you can use the `IMPORT ALL` statement below. Make sure to include the correct S3 region name (e.g. s3-eu-central-1 for Frankfurt, Germany. You can find a list of all S3 region names [here](https://docs.aws.amazon.com/general/latest/gr/rande.html)), access key and secret access key of your S3 user, as well as name of S3 bucket and respective folder:
 
@@ -166,14 +166,12 @@ WITH FIELD DELIMITED BY ',' OPTIONALLY ENCLOSED BY '"' threads 4;
 >
 > Learn in the next tutorial how to virtualise data from a Google BigQuery.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Test yourself
 
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

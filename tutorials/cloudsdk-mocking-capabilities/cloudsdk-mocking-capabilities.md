@@ -1,37 +1,35 @@
 ---
-author_name: Philipp Herzig
-author_profile: https://github.com/philippherzig
-title: Develop an S/4HANA Extension Without a S/4HANA System
-description: Learn about the mocking capabilities of the SAP Cloud SDK and how to test and develop your S/4HANA extension without an S/4HANA system.
+parser: v2
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
+
+# Develop an S/4HANA Extension Without a S/4HANA System
+<!-- description --> Learn about the mocking capabilities of the SAP Cloud SDK and how to test and develop your S/4HANA extension without an S/4HANA system.
 
 ## Prerequisites
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
  - [Introduce resilience to your application](s4sdk-resilience)
 
 
-## Details≤
-
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
- 
-### You will learn
+
+## You will learn
   - What is mocking
   - Why mocking is useful
   - How to mock the access to SAP S/4HANA systems
 
-
-
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check if Bill of Material is updated)]
+### Check if Bill of Material is updated
+
 Complete mocking of S/4HANA APIs only works stable as of SAP Cloud SDK version 3.9.0. Therefore, please make sure, your SDK [Bill of Material](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) is updated accordingly like shown below:
 
 ```XMl
@@ -49,10 +47,9 @@ Complete mocking of S/4HANA APIs only works stable as of SAP Cloud SDK version 3
 </dependencyManagement>
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Mock the Business Partner API)]
+### Mock the Business Partner API
+
 You will learn three basic mocking principles that should empower you with all the tools and requirements you need. You will go over the following important aspects:
 
 - Mocking the happy path generically: Return successfully all business partners without an S/4HANA system.
@@ -174,7 +171,7 @@ The code above creates a new test class called `GetBusinessPartnerMockedTest`. T
 >
 >- <p> Third, our first actual testing method `testGetAnyBusinessPartner()`:<p>
 <ol>
-> <li> Here, you first of all create two mocks (i.e., a proxy object) of the business partner service interface and `HttpDestination` that replaces the actual SDK implementation with mocked methods. As you want to mock the entire fluent API including all its delegating classes and not just the interface itself, you also need to provide the `RETURNS_DEEP_STUBS` option.</li>
+> <li> Here, you first of all create two mocks (proxy objects) of the business partner service interface and `HttpDestination` that replaces the actual SDK implementation with mocked methods. As you want to mock the entire fluent API including all its delegating classes and not just the interface itself, you also need to provide the `RETURNS_DEEP_STUBS` option.</li>
 > <li> Then, you do the actually mocking by defining under which condition (when-part), what should happen (then-part). Here, you simply define that when the business partner APIs is called, upon any filter condition, upon any selection criteria, upon any execution context, it shall return Alice and Bob as business partners.</li>
 > <li> Afterwards, you initialize our `GetBusinessPartnersCommand` and pass the mocked business partner service into our production code command. Then, you simply call the command as you do in our production code to get the list of business partners who match our criteria.</li>
 
@@ -182,11 +179,11 @@ You can try it out by right-clicking on your test class and select `Run As Unit 
 
 If you use an IDE you should see the test passing in very quick time.
 
-!![Test](test.png)
+<!-- border -->![Test](test.png)
 
 Also, in any IDE you can look at the code coverage that this test provides. So far, the test accounts for 77% of all lines of code (you will achieve 100% in this tutorial).
 
-!![Code Coverage](code-coverage.png)
+<!-- border -->![Code Coverage](code-coverage.png)
 
 ### Mocking more specific S/4HANA calls
 In the example above, you simply mocked out any selection and projection criteria using any(). Hence, our mock is not very specific to the actual production code where you filter only for business partners who are customers.
@@ -220,7 +217,7 @@ Here, you have now replaced the line `.filter(any())` with  `.filter(BusinessPar
 ### Mocking the failure case
 Mocking can also test hard-to-reach code such as certain failure cases.
 
-In the example, you can run into situations where the OData call to the business partner API may fail during runtime (due to failing network, wrong authorizations, etc.). This is unfortunate and you cannot do anything about failing OData calls at design-time, but you must test whether our code behaves correctly in such failure situations and leaves the application in an expected, consistent state.
+In the example, you can run into situations where the OData call to the business partner API may fail during runtime (due to failing network, wrong authorizations or other factors). This is unfortunate and you cannot do anything about failing OData calls at design-time, but you must test whether our code behaves correctly in such failure situations and leaves the application in an expected, consistent state.
 
 Fortunately, you can also mock such failure cases by throwing a dummy `ODataException` and expect a **`ResilienceRuntimeException`** as the test result.
 
@@ -243,11 +240,10 @@ public void testGetBusinessPartnerFailure() throws Exception {
 When you run all our three test cases together, you finally end up with a 100% tested codebase, although you do not have used any real S/4HANA system.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Recommendation and hints)]
+### Recommendation and hints
+
 The mocking facilities of the SAP Cloud SDK are based on the open source framework [`Mockito`](http://javadoc.io/page/org.mockito/mockito-core/latest/org/mockito/Mockito.html). Therefore, studying the official documentation for more options and capabilities is recommended.
 
 One of the additional possibilities is to use the **`@Mock`** annotations for providing the mocks in the tests which lead to less code and more readable tests. For example, you can mock the business partner service as well as our two business partner, Alice and Bob and can leave out the mocking per test method. Please note that the **`JUnit`** test has to be annotated with **`@RunWith(MockitoJUnitRunner.Silent.class)`**.The full running code for this is here:
@@ -340,7 +336,7 @@ public class GetBusinessPartnerMockedTest {
 }
 ```
 
-- The test itself can be still refactored to avoid duplicate code. For example, certain mock conditions, e.g., any business partner API call could be externalized into a separate method for better reuse and readability.
+- The test itself can be still refactored to avoid duplicate code. For example, certain mock conditions, any business partner API call could be externalized into a separate method for better reuse and readability.
 
 - The mocking facility also works greatly with the SAP Cloud SDK Continuous Delivery Pipeline as introduced in Step 14 with SAP Cloud SDK: Continuous integration and delivery. This helps to achieve higher code coverage and higher qualities which are checked by the pipeline.
 
@@ -350,22 +346,16 @@ As explained above, you should give favor to unit tests whenever possible to ens
 
 In addition, for mocking the S/4HANA APIs as explained above, you have to have a certain understanding of how the APIs behave, otherwise it would be hard to assert their behaviors. When you do not have any S/4HANA system yet, using the [API Business Hub Sandbox](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud) is recommended to understand the behavior to make better mocking assumptions.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 You learned how to leverage the SAP Cloud SDK to mock S/4HANA calls during development to create fast running unit tests which require a data dependency to SAP S/4HANA.
 
 This way, you can start building and testing your S/4HANA extension on SCP already without having an SAP S/4HANA system. When you utilize an S/4HANA system for integration tests, you can make sure that you have much more unit tests than integration tests to maintain a fast, non-brittle test suite.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 ---

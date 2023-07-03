@@ -1,26 +1,28 @@
 ---
-title: Secure Your Application on SAP Business Technology Platform Cloud Foundry
-description: Protect your Java-based Hello World microservice with authenticated and authorized users.
+parser: v2
 auto_validation: true
 time: 50
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 ---
 
+# Secure Your Application on SAP Business Technology Platform Cloud Foundry
+<!-- description --> Protect your Java-based Hello World microservice with authenticated and authorized users.
+
 ## Prerequisites
  - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application).
 
-## Details
-### You will learn
+## You will learn
   - How to set up and configure the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
   - How to protect your Java microservice so that it only accepts requests based on a valid JSON Web Token (JWT) that is received from the App Router
   - Assign roles and scopes to your application users and let your backend deal with authorization information
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Concepts)]
+### Concepts
 
-Before diving deeper into the real setup of the architecture, let's quickly review the architecture this tutorial intends to go for.
+
+Before diving deeper into the real setup of the architecture, quickly review the architecture this tutorial intends to go for.
 
 Figure 1 presents the final setup. First, there still is your existing "Hello World" or "Business Partner" Java-based microservice that you have created in the previous tutorials. However, instead of letting the customer access this application directly, you will use the so-called Application Router (App Router) that serves two purposes.
 
@@ -39,16 +41,15 @@ The JWT contains a signature that needs to be verifiable by every microservice t
 
 **Figure 2: Provisioning view with XSUAA binding**
 
-With these basics in mind, let's create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
+With these basics in mind, create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the App Router)]
+### Set up the App Router
+
 
 You will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, you will first set up the necessary structure.
 
-1. Go to your favourite `<destLocation>` and create the `approuter` directory:
+1. Create a new directory for the router `<destLocation>` and create the `approuter` directory:
 
     ```Bash
     cd <destLocation>
@@ -109,8 +110,8 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
 
           ![Subomain and Tenant ID in the CF Cockpit](Figure3-1.png)
 
-      - Swap out both instances of `<region_id>` with your specific region (e.g. `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
-      - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, e.g. `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
+      - Swap out both instances of `<region_id>` with your specific region (example: `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+      - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, for example: `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
 
 ### Understanding the AppRouter's `manifest.yml`
 
@@ -188,11 +189,10 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 
 ![helloworld](Figure6-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, you need to protect your java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that you have configured previously using the `xs-security.json` file.
+### Protect your backend microservice
+
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, you need to protect your java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, meaning it understands the OAuth scopes from the JWT that you have configured previously using the `xs-security.json` file.
 
 [OPTION BEGIN [TomEE]]
 
@@ -345,10 +345,9 @@ cf push
 
 If you now call the `/businesspartners` endpoint of your application you will see a [`401` Unauthorized](https://httpstatuses.com/401) status code, as you were not authorized by the App Router. Calling the `/businesspartners` endpoint via your App Router on the other hand will give you a [`403` Forbidden](https://httpstatuses.com/403) status code meaning that you do not have the necessary authorization to see this page. This is to be expected, as you secured the endpoint with the annotation above without assigning the requested role `Display` to your user. You will fix this in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign users to scopes)]
+### Assign users to scopes
+
 
 To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the BTP cockpit.
 
@@ -368,10 +367,9 @@ To regain access to your secured endpoint, you need to get the `Display` OAuth s
 
 Afterwards you have the `Display` OAuth scope assigned to your user, which allows you to access the secured endpoints again.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and test the application)]
+### Deploy and test the application
+
 Now you are ready to build and deploy the application to try all your changes with:
 
 ```Bash
@@ -389,10 +387,9 @@ However, you should still be able to access your application using the App Route
 
 ![Hello World Endpoint](Figure9-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Remove CSRF token protection from backing service)]
+### Remove CSRF token protection from backing service
+
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, you should remove it. For this remove the following lines from your `web.xml`:
 ```XML
 <filter>
@@ -405,24 +402,22 @@ If you have previously exposed the backing service directly to the end user, you
 </filter-mapping>
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Understanding Roles, Role Collections and Scopes)]
+### Understanding Roles, Role Collections and Scopes
+
 The following picture explains how the various concepts are related to each other.
 
 ![Roles, Scopes and Users](Figure9-3.png)
 
-Gray Box: As a BTP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
+Gray Box: As a BTP developer (for example: SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
 
 Orange Box: As an BTP tenant administrator of the business application (customer), you can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
 Green Box: As an administrator of the users (customer), you can assign the role collection to the final user using the SAML attribute `Groups`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Troubleshoot JSON Web Tokens)]
+### Troubleshoot JSON Web Tokens
+
 Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
 
 ```Java
@@ -447,24 +442,22 @@ public class JwtDebugServlet extends HttpServlet {
 Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You should never use this with any productive JWT as these tokens are shared on a public website. Fallback to local solutions.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Troubleshoot OAuth scopes from XSUAA)]
+### Troubleshoot OAuth scopes from XSUAA
+
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
 `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Set up your own identity provider)]
+### Set up your own identity provider
+
 So far, you have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. The following paragraphs quickly explain how the XSUAA service can delegate requests to such an external IdPs.
 
-To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
+To make this happen, the IdP and the service provider (SP) have to exchange security metadata, meaning the IdP has to import the metadata of the SP and vice versa.
 
-You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/saml/metadata`, e.g. `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
+You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/saml/metadata`, for example: `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
 
 Secondly, you need to import the metadata into your IdP. In the following example, a SAP Cloud Identity tenant is used.
 
@@ -477,18 +470,12 @@ Secondly, you need to import the metadata into your IdP. In the following exampl
 4. Click **New Trust Configuration** and add the metadata from the IdP and click **Save**.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_2]
 
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Fundamentals of the SAP BTP, Cloud Foundry environment
-description: Discover the SAP BTP, Cloud Foundry environment, so you're ready to deploy and run applications with confidence.
+parser: v2
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -9,8 +8,10 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-btp--cloud-foundry-environm
 time: 15
 ---
 
-## Details
-### You will learn  
+# Fundamentals of the SAP BTP, Cloud Foundry environment
+<!-- description --> Discover the SAP BTP, Cloud Foundry environment, so you're ready to deploy and run applications with confidence.
+
+## You will learn  
   - What is Cloud Foundry
   - Details about the Platform as a Service (PaaS)
   - How Cloud Foundry assembles and runs your applications
@@ -19,7 +20,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step](Introduction to the Cloud Foundry Foundation)]
+### Introduction to the Cloud Foundry Foundation
 
 ![Cloud Foundry Logo, copyright Cloud Foundry Foundation](cloud-foundry-logo.png)
 
@@ -37,10 +38,7 @@ Cloud Foundry has significant benefits to developers and organizations:
 We will discuss many of these new features in the sections below.
 
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Cloud Foundry - Plaform as a Service PaaS)]
+### Cloud Foundry - Plaform as a Service PaaS
 
 Let's start with what Cloud Foundry provides to you, as developers
 
@@ -52,11 +50,8 @@ Traditional Cloud development moved the hardware and infrastructure out of the o
 
 Platform as a Service PaaS moves control of the runtime - the application servers, databases, and other fundamental applications - away from the organization and to the cloud.
 
-[DONE]
-[ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step](Fixing a PaaS problem - buildpacks and services)]
+### Fixing a PaaS problem - buildpacks and services
 
 PaaS systems suffer from one problem, however.  Moving the runtime layer to the cloud means the organization loses control of the runtime layer.  If the organization wants to make changes, they need to work with the cloud provider.  
 
@@ -76,11 +71,7 @@ Here is a partial list of services on the SAP BTP, Cloud Foundry environment:
 
 ![Partial SAP Cloud Foundry service list](sapcf-services-partial.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step](Development made easy)]
+### Development made easy
 
 The Business Technology Platform makes running and testing an application in the cloud very easy.  In fact, it's a single command to upload and start an application in Cloud Foundry:  `cf push`.
 
@@ -96,10 +87,7 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 
 ![Example of cf push command](cf-push-example1.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Service Marketplace - Services we provide)]
+### Service Marketplace - Services we provide
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
@@ -109,10 +97,7 @@ Our services include SAP software (for example [SAP HANA](https://help.sap.com/v
 
 Of course, [both developers and organizations can bring their own services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to meet the needs of the project or organization.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step](Understanding spaces)]
+### Understanding spaces
 
 Cloud Foundry has a standard working environment for individual applications:  it's called a **space**.  
 
@@ -123,9 +108,6 @@ Spaces are individual working areas, which normally contain a single application
 Organizations can create spaces for individual projects as each space is separate, and isolated from all the others.
 
 ![SAP Cockpit view of a space](cf-space.png)
-
-[DONE]
-[ACCORDION-END]
 
 ---
 

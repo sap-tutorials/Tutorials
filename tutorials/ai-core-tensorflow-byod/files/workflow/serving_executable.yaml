@@ -13,9 +13,9 @@ metadata:
 spec:
   inputs:
     artifacts:
-      - name: modelArtifact
+    - name: modelArtifact
   template:
-    apiVersion: "serving.kubeflow.org/v1beta1"
+    apiVersion: "serving.kserve.io/v1beta1"
     metadata:
       labels: |
         ai.sap.com/resourcePlan: infer.s
