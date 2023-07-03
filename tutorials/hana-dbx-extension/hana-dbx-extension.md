@@ -23,17 +23,17 @@ primary_tag: software-product>sap-hana-cloud
 
 ### Set up 
 
-1.  If not already installed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer. 
+1.  If needed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer. 
     
      ![Download Visual Studio Code](downloadVSCode.png)
 
-2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from the Extensions marketplace. 
+2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from [https://marketplace.visualstudio.com/](Visual Studio Marketplace) by navigating to **Extensions** and searching for **SAP HANA Database Explorer**.
 
     >For more information about the latest features and version updates to the extension, you can refer to the **CHANGELOG** tab.
 
     ![Install extension](installExtension.png)
 
-3. Open the extension from the newly added icon in the activity bar (left) and take a look at the Database List. 
+3. Open the extension from the new icon in the activity bar (left) and navigate to the **Database List**. 
 
     ![Open extension](openExtension.png)
 
@@ -47,35 +47,35 @@ primary_tag: software-product>sap-hana-cloud
 
 ### Add a local database connection  
 
-The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-premise databases as well as an SAP HANA User Store.  In this tutorial, a connection to an SAP HANA Cloud database will be made, but the steps to connect to the other types are very similar. Adding local connections does not require authentication to the SAP Business Technology Platform (BTP) or Cloud Foundry.
+The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-premise databases as well as an SAP HANA User Store.  In this tutorial, a connection to an SAP HANA Cloud database will be made, but the steps to connect to the other types are very similar. Adding local connections do not require authentication to the SAP Business Technology Platform (BTP) or Cloud Foundry.
 
-1. Hover over the Database List section and click the plus button to **Add SAP HANA Database**.
+1. Hover over the **Database List** section and click the **+** button to **Add SAP HANA Database**.
 
     ![Add Database](addDatabase.png)
 
     A form to add a database will open.
 
-2.  Select **SAP HANA Cloud** as your database type, enter the **Host**, **Port**, **User** and **Password** values such as User1 and Password1.  You can also change the display name as desired.
+2.  Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
    
-    Since this tutorial uses the HOTEL schema, specify the default schema value in the **Advanced Options** setting as as shown below.  Once this value is set, any opened SQL Consoles will have start with this schema value. 
+    This tutorial uses the HOTEL schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
     
     ```Advanced Options Field
     currentSchema=HOTEL;
     ```
 
-    >Ensure that you connect to the database securely using TLS/SSL by checking the checkbox. Also, if you do not check the Save Password checkbox, you will have to enter your password each time you open a new SQL Console.
+    >Ensure that you connect the database securely using TLS/SSL by ticking the checkbox. If you do not check the Save Password checkbox, you will have to enter your password each time you start using the extension.
 
     ![SAP HANA Cloud Connection](cloudConnection.png)
 
-    You will get a confirmation notification in the bottom right corner if your database was added successfully, and you will also see it listed under your Local Connections in the Database List.
+    A confirmation notification will appear in the bottom right corner if your database was added successfully. The database will also be listed under Local Connections in the Database List.
 
     ![Successful Connection](successfulConnection.png)
 
 ### Make connections through Cloud Foundry (Optional)
 
-The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension.  In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed.
+The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension. In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed.
 
-1. Open the terminal through Visual Studio Code by clicking on **Terminal > New Terminal** in the Visual Studio Code header bar. 
+1. Open the terminal through Visual Studio Code by navigating to **Terminal** > **New Terminal** in the Visual Studio Code header bar. 
     
     ![Open Terminal](openTerminal.png)
 
@@ -98,7 +98,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
     cf login -help
     ```
 
-    Ensure that your API Endpoint is correct. Navigate to SAP BTP Cockpit, click on your sub-account, and click on the Cloud Foundry Environment tab, where your API Endpoint will be listed.
+    Ensure that the **API Endpoint** is correct. Navigate to SAP BTP Cockpit, click on your sub-account, and click on the Cloud Foundry Environment tab, where your API Endpoint will be listed.
 
     ![API Endpoint](cloudFoundryEnvironment.png)
 
@@ -117,7 +117,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     Once logged in, you should see the database instances list from the web-based SAP HANA database explorer appear in your Database List. To open an SAP HANA SQL console in Visual Studio Code, hover over the connection and click the console icon. 
 
-    ![Cloud Foundry SQL Console](cfConsole.png)
+    ![Cloud Foundry SQL console](cfConsole.png)
 
     To open the database in SAP HANA database explorer, click the stacked boxes icon.
 
@@ -127,7 +127,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 ### Using the Database List and Catalog Browser
 
-1. Use the Database List to open the list of schemas in the catalog browser by expanding your database instance, expanding the catalog, and then clicking on Schemas. 
+1. Select **Schemas** to open the list of schemas in the Catalog Browser. 
 
     As you can see, since the current Schema was set to HOTEL using advanced options when adding the database, this list is already filtered for you.  By hovering or clicking on the Catalog Browser section, you will see a filter icon and a refresh icon. 
     
@@ -146,7 +146,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 Learn how to change settings and leverage features such as split editor, layout toggles, and the terminal.
 
-1. If you would like to change the color theme of Visual Studio Code, one way to do that is through **File > Preferences > Themes > Color Theme**. From here, you can select from the existing light and dark color themes that are available as well as the additional ones you may have installed from the extension marketplace.
+1. If you would like to change the color theme of Visual Studio Code, one way to do that is through **File > Preferences > Themes > Color Theme**. From here, you can select from a light or dark color theme.
 
     ![change Theme](changeTheme.png)
 
@@ -162,13 +162,13 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![DBX Settings](dbx-settings2.png)
 
-3. Visual Studio Code also has built-in functionality that allows you to split editors, which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL Console, run the following code.
+3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL console, run the following code.
 
     ```SQL
     SELECT * FROM CUSTOMER;
     ```
 
-    Open another SQL Console, click the split editor icon, and then drag one of the SQL Console tabs into the new space to the right. 
+    Open another SQL console, click the split editor icon, and then drag one of the SQL console tabs into the new space to the right. 
 
     ![Split Editor](splitEditors.png)
 
@@ -194,7 +194,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Compare Tables](compareTables.png)
 
-4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace, which you can also do by resizing and snapping different areas. Click on the the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
+4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
 
     ![Toggle Panel](togglePanel.png)
 
@@ -204,9 +204,9 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     >Remember where you created this file, as you will need that location later.
 
-    ![Create Notepad File](createNotepad.png)
+    ![Create Notepad File](notepadTerminal.png)
 
-    Paste the following code into the file and save it. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table. 
+    Paste the following code into the file and save it as a SQL file by adding `.sql` to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table. 
     
     ```SQL
     CREATE OR REPLACE FUNCTION AVERAGE_RATING(destination_id INT)
@@ -222,24 +222,19 @@ Learn how to change settings and leverage features such as split editor, layout 
 
 The extension also allows you to import and export SQL files to and from your computer. In the web application, there is a statement library where a user can store SQL files, but with the extension, SQL files that are stored on the file system can also be incorporated into GIT so that file sharing for collaborative work is easier.
 
-1. Clear your SQL console, or close the current one and open a new one. Click on the folder icon to import the file that you just created in the previous step and open it in Visual Studio Code.
+1. Clear your SQL console, or close the current one and open a new console. Click on the folder icon to import the file you created in the previous step and open it in Visual Studio Code.
 
-    ![Import File](importFile.png)
+    ![Import File](openSQLFile.png)
 
-2. Edit the code in the editor by changing the INT in line 2 to FLOAT to change the function to return a more precise average.
+3. Edit the SQL in the editor by changing the INT in line 2 to FLOAT to change the function to return a more precise average.
 
-    ![Make Changes and Save](changeSave.png)
+    ![Make Changes and Save](saveFileButton.png)
 
-    Click the save icon to save your changes to the notepad file on your computer.
-
-    Note you could also save the SQL to a new file by clicking the "Save SQL to File" icon.
-
-    ![Save SQL to File](saveToFile.png)
-
+    Click the save icon to save your changes to the SQL file on your computer.
 
 ### Run SQL code
 
-1. Open a new SQL Console and use the function we just created with the following code. Click on the dropdown menu beside Run for the different run options. Then, normally **Run** your code.
+1. Open a new SQL console and use the newly created function with the following code. Click on the dropdown arrow beside Run to view the different Run options. Then, normally **Run** your code.
 
     ```SQL
     SELECT AVERAGE_RATING(1) FROM DUMMY;
@@ -261,17 +256,17 @@ The extension also allows you to import and export SQL files to and from your co
 
     ![Error Message](errorMessage.png)
 
-4. Similarly, if you click on the History tab, you will be able to see a list of statements that you have ran along with information about them such as runtime and result. Additionally, you have the ability to search through them, as well as double-click on a statement to paste it into your SQL console.
+4. Clicking on the History tab will display a list of statements that you have run, along with information such as its runtime and result. You can also search through the history and paste queries into the SQL console by clicking on a statement.
 
     ![History Tab](historyTab.png)
 
-    > It is important to note that certain capabilities (listed below) are only available in the web application of SAP HANA database explorer, and are not currently available in the extension.  A few examples are listed below: 
+    > Note that certain capabilities (as listed) are only available in the web application of SAP HANA database explorer and are not currently available in the extension. A few examples are listed below: 
     >
     > * Execute SQL on multiple databases or as a background activity
     > * Global Search
     > * Debugging SQLScript 
     > * Graph Views
-    > * Viewing Diagnostic Files in the Catalog Browser
+    > * Viewing diagnostic files in the Catalog Browser
 
 ### Knowledge check
 

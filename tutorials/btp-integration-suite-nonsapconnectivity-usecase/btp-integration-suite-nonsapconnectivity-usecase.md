@@ -11,11 +11,11 @@ author_profile: https://github.com/Karunaharan
 # The Use Case: Connectivity to Non-SAP Applications using SAP Integration Suite
 <!-- description --> Understand the integration problem that you're going to solve before you get started.
 
+
 ## You will learn
  - What is SAP Integration Suite
  - About the integration problem that you're going to solve
 
----
 
 ### What is SAP Integration Suite
 
@@ -32,11 +32,12 @@ By using this integration scenario, you design and execute an integration flow t
 
 You use *Open Connectors* to: 
 1. identify and establish connection to a third-party software
-1. fetch data from the third-party software via APIs  
+2. fetch data from the third-party software via APIs  
 
 You use *Cloud Integration* to: 
 1. design a custom integration flow to fetch data from Open Connectors
-1. deploy the integration flow to a cloud-based runtime location
+2. deploy the integration flow to a cloud-based runtime location
+
 
 Finally, use an open API platform like Postman to securely invoke the deployed integration artifact to see that you're able to fetch data from a third-party software using SAP Integration Suite.
 

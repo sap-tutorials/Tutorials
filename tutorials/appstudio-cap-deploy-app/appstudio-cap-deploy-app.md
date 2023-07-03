@@ -67,7 +67,7 @@ The result should look as follows:
 
     <!-- border -->![Run COnfiguration SAP HANA dependencies](run.png)
 
-    The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) Moreover, it generates a connection in the **SQLTOOLS** view, so you can instantly check the data in your database.
+    The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) 
 
 2. Click the **Bind** icon to the right of the `db` dependency. A list of SAP HANA service instances from your space is presented (you may need to log into Cloud Foundry).
 
@@ -83,7 +83,7 @@ The result should look as follows:
 
     The deployment task runs. Make sure it completes successfully.
 
-5.	Open the **SQLTOOLS** view.
+5.	Open the **SAP HANA database explorer**.
 
 6.	Click on the connection created for your SAP HANA instance.
 

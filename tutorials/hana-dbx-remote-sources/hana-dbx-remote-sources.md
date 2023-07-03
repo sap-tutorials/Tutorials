@@ -38,7 +38,7 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 ### Connect from SAP HANA, express edition to SAP HANA Cloud database
 
 
-1. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
+1. From the SAP HANA Cloud Central, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
 
     >If needed, first create a schema and user.
     ```SQL
@@ -72,20 +72,23 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
 3. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
-     Right-click **Remote Sources** and select **Add Remote Source**.  
+    >This step is optional for SAP HANA Cloud Trial users if you do not have an SAP HANA, express edition database.  If you do not have an SAP HANA, express edition database, proceed to the next step which is Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine.
 
-     ![Add remote source](add-remote-source.png)
-
-     Specify the server, port, extra adapter properties, and credentials (User1, Password1).
-
-     ![Add remote source properties](AddRemoteSource2.png)
-
-    Alternatively, in a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
+    In a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
 
     ```SQL
     CREATE REMOTE SOURCE REMOTE_HC ADAPTER "hanaodbc" CONFIGURATION 'ServerNode=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.prod-ca10.hanacloud.ondemand.com:443;driver=libodbcHDB.so;dml_mode=readwrite;sslTrustStore="-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----"' WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=User1;password=Password1';
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC');
     ```  
+
+    Alternatively, you can create a remote source manually by right-clicking **Remote Sources** and select **Add Remote Source**.  
+
+     ![Add remote source](add-remote-source.png)
+
+     Add a source name and specify the server, port, and credentials (USER1, Password1). The Extra Adapter properties can be retreived by copying the `sslTrustStore` in the SQL query above.
+
+     ![Add remote source properties](AddRemoteSource2.png)
+
 
     Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
 
@@ -224,7 +227,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     For additional details consult [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html).
 
-4. In the SAP HANA database connection, create a remote source from the HANA database to the data lake Relational Engine.  Be sure to replace the host and password values.
+4. In the SAP HANA database connection, create a remote source **from** the HANA database **to** the data lake Relational Engine.  Be sure to replace the host and password values.
+
+    >If you have not already done so, ensure that you have added USER1 to your SAP HANA data lake database, as shown in Step 1.
 
     ```SQL
     CREATE REMOTE SOURCE HC_DL
@@ -287,7 +292,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     Notice that the remote data source is updateable.  Data stored in an SAP HANA Cloud, data lake is stored on disk, which has cost advantages compared to memory storage. SAP HANA Cloud, data lake can also be used to store large amounts of data.
 
-    > Another approach is to use container groups.  For additional details see [Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).  An example follows.
+    > Another approach is to use a relational container.  For additional details see [Manage Relational Containers in Data Lake Relational Engine (SAP HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/9220e7fec0fe4503b5c5a6e21d584e63/0b494fedebb243fc9bd92c87bac7ddd4.html).  An example follows.
     >
     ```SQL
     CALL SYSHDL.CREATE_CONTAINER('HOTEL_CONTAINER', 'DBADMIN');
@@ -376,7 +381,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![connected to SAP HANA database](cloud-connector-virtual-mapping2.png)
 
-7. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer, then right-click **Remote Sources** and select **Add Remote Source**.  
+7. From the SAP HANA Cloud Central, open the SAP HANA database explorer, then right-click **Remote Sources** and select **Add Remote Source**.  
 
     ![Add remote source](add-remote-source.png)
 

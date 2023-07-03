@@ -12,7 +12,7 @@ primary_tag: products>sap-business-technology-platform
 <!-- description --> Learn how to set up a fully-functional trial for SAP Omnichannel Promotion Pricing and how to create roles for your users.
 
 ## Prerequisites
- - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
+ - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
  - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)). 
  - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 
@@ -114,7 +114,7 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 6. Repeat the above substeps for the remaining Promotion Pricing services.
 
-After you have created the service key, click the three dot symbol **°°°** next to the name of your service key and choose **View**. This displays the parameters of the service key, which you need to configure the SAP API Business Hub to fill the solution with your data (see highlighted areas in the screenshot). This step is part of the basic tutorial.
+After you have created the service key, click the three dot symbol **°°°** next to the name of your service key and choose **View**. This displays the parameters of the service key, which you need to configure the SAP Business Accelerator Hub to fill the solution with your data (see highlighted areas in the screenshot). This step is part of the basic tutorial.
 
 >Service keys contain authentication- and authorization-related content and have to be handled securely.
 

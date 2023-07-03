@@ -8,20 +8,20 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Integrate an SAP Build App application into SAP Build Work Zone, advanced edition
-<!-- description --> Add an SAP Build App application to a workpage in your workspace.
+# Integrate an SAP Build Apps application into SAP Build Work Zone, advanced edition
+<!-- description --> Add an SAP Build Apps application to a workpage in your workspace.
 
 ## Prerequisites
 - You've already created the `Sales Management` workspace using SAP Build Work Zone, advanced edition
-- The SAP Build App application called `Sales Order Trigger' has been deployed to SAP BTP and is available to add to your workspace
+- The SAP Build Apps application called `Sales Order Trigger' has been deployed to SAP BTP and is available to add to your workspace
 
 
 ## You will learn
-  - How to add a SAP Build App application to your workspace
+  - How to add a SAP Build Apps application to your workspace
 
   
 ## Intro
-In this tutorial,  you'll add a SAP Build App application to your workspace. Later you will learn how to use the app and create an approval process.
+In this tutorial,  you'll add a SAP Build Apps application to your workspace. Later you will learn how to use the app and create an approval process.
 
 
 ---
@@ -51,7 +51,7 @@ The **Channel Manager** is used to manage content providers. Once a content prov
     <!-- border -->![Open Channel Manager](4-open-channel-manager.png)
 
 
-### Fetch updated content and add your SAP Build App application to your content
+### Fetch updated content and add your SAP Build Apps application to your content
 
 In this step, you're going to fetch updated content from the **HTML5 Apps** content provider that is located in the **Channel Manager**. The updated content is then exposed in the **Content Explorer**. From here you can add it to your content in the **Content Manager**.
 
@@ -62,7 +62,7 @@ In this step, you're going to fetch updated content from the **HTML5 Apps** cont
 
     <!-- border -->![Update content provider](5-update-html5-content-provider.png)
 
-    Once updated, the **HTML5 Apps** content provider will expose your newly deployed SAP Build App application that you will add to your content.
+    Once updated, the **HTML5 Apps** content provider will expose your newly deployed SAP Build Apps application that you will add to your content.
 
 2. Click the icon in the side panel to open the **Content Manager**.
 
