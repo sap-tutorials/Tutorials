@@ -1,6 +1,6 @@
 ---
 author_name: Harshita Suryavanshi
-author_profile: https://github.com/I562950
+author_profile: https://github.com/HarshitaSuryavanshi
 title: Execute Batch Payload Operations Using Java Database Connectivity (JDBC) Receiver Adapter
 description: Learn how to connect, interact, and perform batch operations on your database via JDBC receiver adapter.
 keywords: tutorial
@@ -21,13 +21,13 @@ parser: v2
  - You have configured your [JDBC adapter](https://blogs.sap.com/2018/10/31/configuring-jdbc-adapter-a-step-by-step-guide/).
 
 ## Intro
-The data that you are transferring (sending or receiving) is called payload. The payload sent to the JDBC adapter can be modified. You can modify multiple records in a single payload using either INSERT, UPDATE, or DELETE modes. This can be achieved using Batch Payload functionality.
+The data that you are transferring (sending or receiving) is called payload. This payload sent to the JDBC adapter can be modified. You can modify multiple records in a single payload using either INSERT, UPDATE, or DELETE modes. This can be achieved using Batch Payload functionality.
 
 There are two types of Batch operations:
 
 -	Atomic: This mode considers each batch operation as a single unit. It updates the whole batch operation successfully or reverts the entire operation to its initial state if anything in the batch operation fails.
 
--	Non-Atomic- The operation in this mode varies depending upon the database and its driver. Generally, it updates all the successfully executed records and throws an exception if anything fails. It does not revert the failed records to its initial state.
+-	Non-Atomic: The operation in this mode varies depending upon the database and its driver. Generally, it updates all the successfully executed records and throws an exception if anything fails. It does not revert the failed records to its initial state.
 
 Following the steps below, you will be able to set up a sample database, create an integration flow, upload drivers, and data sources required for JDBC receiver adapter. Then, you can create a payload, execute, and benefit from Batch Payload functionality.
 
@@ -48,7 +48,7 @@ Refer to [Managing JDBC Data Sources](https://help.sap.com/docs/CLOUD_INTEGRATIO
 <!-- border -->![Deploying Data Sources](DS-Deploy.png)
 
 ### Connect with Receiver/Database via JDBC adapter
-Now, create a basic integration flow to understand the basic function of JDBC adapter. In this basic integration scenario, a sender is connected to the Start event via HTTPS Sender adapter and the End event is connected with receiver via JDBC adapter. This JDBC adapter enables the connection of the integration flow with the receiver's database. It allows you to send, receive, update the data of receiver's database.
+Now, create a simple integration flow to understand the basic function of JDBC adapter. In this integration scenario, a sender is connected to the Start event via HTTPS Sender adapter and the End event is connected with receiver via JDBC adapter. This JDBC adapter enables the connection of the integration flow with the receiver's database. It allows you to send, receive, update the data of receiver's database.
 
   <!-- border -->![Initial Integration Flow](Basic-Integration-Flow.png)
 
