@@ -157,7 +157,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 ### Create user and schema
 
 
-This step creates a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
+This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database. 
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
@@ -169,7 +169,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
-    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;  --Used in the entity framework tutorial
+    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;  --Used in the Node.js connection pool example and the entity framework tutorial.
     ```
 
     >The end of this tutorial contains SQL statements to delete the user, schema and objects created.  This may be helpful if you wish to recreate the sample dataset used in this tutorial.

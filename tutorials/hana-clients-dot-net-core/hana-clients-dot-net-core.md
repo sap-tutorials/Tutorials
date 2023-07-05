@@ -29,12 +29,12 @@ The first step is to check if you have the .NET SDK  installed and what version 
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 6.0.201.  
+If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 7.0.305.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
 >Select the 'Download .NET SDK x64' option.
 
-![.NET Core SDK Install](install.png)
+![.NET Core SDK Install](dotnet-install.png)
 
 On Linux, follow the instructions for the appropriate Linux version such as [Install the .NET SDK or the .NET Runtime on openSUSE](https://docs.microsoft.com/en-us/dotnet/core/install/linux-opensuse).
 
@@ -53,11 +53,11 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     dotnet new console -o dotNET
     ```  
 
-    >On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. There are two ways to set an environment variable.
+    >On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. 
 
-    >You can either set it using the export command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, its existence ends when the user's sessions ends. This could become an issue when you want the variable to persist across multiple user sessions.
+    >There are two ways to set an environment variable: using the `EXPORT` command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, however, its existence ends when the user's session ends. This could become an issue when you want the variable to persist across multiple user sessions.
 
-    >Hence, choose the second option to set `HDBDOTNETCORE`.
+    >Hence, we will set the `HDBDOTNETCORE` environment variable via the user profile.
 
     >Open an editor to edit the file `.bash_profile` or `.profile`.
 

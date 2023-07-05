@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -35,7 +35,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     cf -v
     ```
 
-    ![cf cli version](showVersion.png)  
+    ![cf cli version](new-cf-version.png)  
 
 
     To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
@@ -70,7 +70,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     ![cf login](cfLogin.png)
 
-    >If you are an SAP employee, you may need to enter your password plus a two-factor authentication passcode.
+    >If you are an SAP employee, you may need to enter your password followed by a two-factor authentication passcode.
 
     The API URL, if requested, can be found in the [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
 
@@ -235,6 +235,16 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     For additional details, consult [App Manifest Attribute Reference](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html).
 
 2. Deploy the app to Cloud Foundry or XS advanced.
+   
+    Before deploying the app to Cloud Foundry, ensure that you have the **Cloud Foundry Runtime Environment** entitlement enabled for your subaccount. You can find the Entitlements page in the left-hand side menu of SAP BTP Cockpit. 
+    
+    ![Entitlement for CF runtime](cf-runtime-entitlement.png)  
+    
+    If necessary, you can add the entitlement by clicking **Configure Entitlements** > **Add Service Plans** > **Cloud Foundry Runtime**. Then select the `MEMORY` plan. Don't forget to save your changes when finished. 
+    
+    ![Add CF Memory service plan](add-cf-runtime-entitlement.png)
+
+    After verifying that you have the necessary entitlements, run the following:
 
     ```Shell
     cf push
@@ -247,7 +257,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ```Shell
     xs push
     ```
-    .
+    
     ![push result](xsPush.png)
 
     Alternatively, the URL of the app can be found by running the following command:
@@ -260,7 +270,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     xs app nodeQueryCF
     ```
 
-3.  Test the app.
+3.  Test the app.  
 
     ![cf app](cfApp.png)  
     .

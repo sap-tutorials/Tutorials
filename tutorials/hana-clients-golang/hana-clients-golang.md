@@ -91,6 +91,10 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Set Environment Variables](setEnvVar.png)
 
+    Ensure that the `hdbclient` folder is set in your **Path** environment variable. You can set this path by clicking on **New** and browsing for your `hdbclient` folder.
+
+    ![hdbclient path env variable](hdbclient-path.png)
+
     On Linux, add the following lines to the `bash_profile`.
 
     ```Shell (Linux or Mac)
@@ -226,7 +230,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Result](results.png)
 
-For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/)
+For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/).
 
 
 ### Debug the application
