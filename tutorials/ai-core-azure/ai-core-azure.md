@@ -26,13 +26,13 @@ parser: v2
  ## Intro
 **What is Azure Data Store?**
 
-Azure Data Store refers to a collection of data storage solutions offered by Microsoft Azure, including Azure Cosmos DB, Azure Blob Storage, Azure Data Lake Storage, Azure Queue Storage, and Azure Table Storage. These solutions provide scalable, highly available, and secure data storage options for a variety of use cases, such as big data analytics, NoSQL databases, content delivery, and message queuing.
+Azure Data Store refers to a collection of data storage solutions offered by Microsoft Azure, including Azure Blob Storage, Azure Data Lake Storage, Azure Queue Storage, and Azure Table Storage. These solutions provide scalable, highly available, and secure data storage options for a variety of use cases, such as big data analytics, `NoSQL` databases, content delivery, and message queuing.
 
 
 ### System Setup
 For Detailed docs refer : [AI Core Setup](https://developers.sap.com/tutorials/ai-core-setup.html)
 
-- Downloading config for Postman
+- Downloading `config` for Postman
 
 Go to [AI core API](https://api.sap.com/api/AI_CORE_API/overview) and download the JSON File.
 
@@ -46,7 +46,7 @@ Go to [AI core API](https://api.sap.com/api/AI_CORE_API/overview) and download t
 
 ![image](img/import-json.png)
 
-- Once the Import is done you will be able to see the Postman config.
+- Once the Import is done you will be able to see the Postman `config`.
 
 ![image](img/postman.png)
 
@@ -60,13 +60,13 @@ And set the following json as body
 	"type": "azure",
 	"pathPrefix": "<path prefix to be appended>",
 	"data": {
-		"CONTAINER_URI": "https://account_name.blob.core.windows.net/container_name",  # required
-		"REGION": "<region-name>",                  # optional
-		"CLIENT_ID": "<azure-client-id>",           # optional
-		"CLIENT_SECRET": "<azure-client-secret>",   # optional
-		"STORAGE_ACCESS_KEY": "sas_token",          # optional
-		"TENANT_ID": "azure tenant id",             # optional
-		"SUBSCRIPTION_ID": "subscription id",       # optional
+		"CONTAINER_URI": "https://account_name.blob.core.windows.net/container_name",  
+		"REGION": "<region-name>",                  
+		"CLIENT_ID": "<azure-client-id>",         
+		"CLIENT_SECRET": "<azure-client-secret>",  
+		"STORAGE_ACCESS_KEY": "sas_token",          
+		"TENANT_ID": "azure tenant id",             
+		"SUBSCRIPTION_ID": "subscription id",      
 	}
 }
 ```

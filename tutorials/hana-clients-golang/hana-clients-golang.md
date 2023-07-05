@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -31,22 +31,17 @@ go version
 
 ![go version](version.png)
 
-
-If Go is installed, then it will return the currently installed version, such as 1.16.  
+If Go is installed, then it will return the currently installed version, such as 1.19.
 
 >For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
-![Go Install](GoInstall.png)
+On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go).
 
-In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
+>In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
-Before proceeding, ensure you can create and run an example Go program as described in [Test your installation](https://golang.org/doc/install#testing).
-
-
-### Build the SAP HANA Client Go driver
+### Configure the environment
 
 The SAP HANA Client interface for Go, like the other SAP HANA client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fba20e31f75c4f7ca5629083869069e5.html) in the SAP HANA Client Interface Programming Reference Guide.  A 64-bit `gcc` compiler is required.
 
@@ -56,17 +51,15 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     gcc --version
     ```
 
-    ![gcc 64-bit](gccWindows.png)
+    For Windows (if it is not installed), it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, you can install from [winlibs.com](https://winlibs.com/), by scrolling to the **Download** section and downloading the latest release version (UCRT runtime) of the ZIP archive for Win64 to install for the x86_64 architecture, and then extracting the folder.
 
-    If it is not installed, on Linux install the System GNU C compiler.  
+    ![download minGW from WinLibs](winLibsMinGW.png)
 
-    On Windows, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **Mingw-builds**, select **Installation: Sourceforge** to run the installer.
+    If command prompt isn't showing you the installed version after running the version check command, manually add the bin folder to your path by setting it in your environment variables.
 
-    During the install, set the architecture option to `x86_64`.
+    On Linux, install the System GNU C compiler for your version of Linux. Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
 
-    ![MinGW Installation](MingwInstallation.png)
-
-    Add the bin folder to your path.
+    ![gcc 64-bit](gccLinux.png)
 
 2. Examine the Go environment by running the below command:
 
@@ -74,60 +67,56 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     go env
     ```
 
-    Notice that GOROOT is set to a location such as `C:\go` or `/usr/local/go`.  This is the location that the Go SDK is installed to.  
+    Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.19`.  This is the location that the Go SDK is installed to.  
 
     GOPATH is set to a location such as `C:\Users\user\go` or `$HOME/go` and defines the root of your workspace which stores your codebase.
 
-3. Copy the SAP HANA client source code to the Go workspace.  
-    ```Shell (Windows)
-    mkdir %GOPATH%\src
-    xcopy C:\SAP\hdbclient\golang\src %GOPATH%\src\ /s
-    ```
+3. Set the required environment variables.
+
+    On Windows, search **Edit the System Environment Variables** and click on **Environment Variables...**.
+
+    >Optionally, you can also use the **SETX** command in command prompt to set a Windows environment variable. For example, `SETX CGO_LDFLAGS C:\SAP\hdbclient\libdbcapiHDB.dll`. Note that this will set a user variable, not a system variable.
+
+    ![Edit Environment Variables](editEnvironmentVariables.png)
+
+    On Linux, open the `.bash_profile`.
 
     ```Shell (Linux or Mac)
-    mkdir -p $HOME/go/src
-    cp -r ~/sap/hdbclient/golang/src/SAP $HOME/go/src/
+    pico ~/.bash_profile
     ```
 
-    The results are shown in the screenshot below:  
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of the `libdbcapiHDB` library as shown below, and set the `LD_LIBRARY_PATH` if needed.
 
-    ![Result of copying source](hana-client-in-go-src.png)
+    On Windows, add the **NEW** System Variable. Set the variable name to **`CGO_LDFLAGS`** and the variable value to the location of `dbcapi` library: `C:\SAP\hdbclient\libdbcapiHDB.dll`
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  The GO111MODULE variable is required in GO versions >= 1.16 and is described further at [New module changes in Go 1.16](https://blog.golang.org/go116-module-changes).  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
+    ![Set Environment Variables](setEnvVar.png)
 
-    ```Shell (Windows)
-    set CGO_LDFLAGS=c:\sap\hdbclient\libdbcapiHDB.dll
-    set GO111MODULE=auto
-    ```
-    ```Shell (Linux)
+    On Linux, add the following lines to the `bash_profile`.
+
+    ```Shell (Linux or Mac)
     export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.so
-    export GO111MODULE=auto
-    ```
-    ```Shell (Mac)
-    export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.dylib
-    export GO111MODULE=auto
+    export LD_LIBRARY_PATH=$HOME/sap/hdbclient
     ```
 
-5. Run the install for the driver:
+5. Go to the driver folder and create a go module.
+
     ```Shell (Windows)
-    cd c:\sap\hdbclient\golang\src
-    go install SAP/go-hdb/driver
+    cd C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver
+    go mod init "SAP/go-hdb/driver"
+    go mod tidy
     ```
 
     ```Shell (Linux or Mac)
-    cd ~/sap/hdbclient/golang/src
-    go install SAP/go-hdb/driver
+    cd ~/sap/hdbclient/golang/src/SAP/go-hdb/driver
+    go mod init "SAP/go-hdb/driver"
+    go mod tidy
     ```
-
-    The result of this should be that a new go-hdb package is installed into the GOPATH folder.
-
-    ![result of installing the driver](driver-built.png)
-
-
+    ![createModule](createModule.png)
 
 ### Create a Go application that queries an SAP HANA database
 
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
+
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\go
     cd %HOMEPATH%\HANAClientsTutorial\go
@@ -197,22 +186,39 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     Once the `goQuery.go` file has been updated, save and close the file.
 
-3. On Linux or Mac, add the `libdbcapiHDB` library to the path so that the Go driver can find it.  You may do this by adding the following lines to the `.profile` or `.bash_profile` files:
+3. Create another go module and modify its contents:
 
-    ```Shell (Linux)
-    export LD_LIBRARY_PATH=~/sap/hdbclient
+    ```Shell (Windows)
+    go mod init "go/goQuery"
+    go mod tidy
+    notepad go.mod
+    ```   
+
+
+    ```Shell (Linux or Mac)
+    go mod init "go/goQuery"
+    go mod tidy
+    pico go.mod
     ```
-    ```Shell (Mac)
-    export DYLD_LIBRARY_PATH=~/sap/hdbclient
+
+
+4. Add the code below to `go.mod` under the go version line:
+
+    >Make sure the path to the driver folder is correct and make any necessary changes.
+
+    ```Code (Windows)
+    replace SAP/go-hdb/driver v0.1.0 => C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver   
+    require SAP/go-hdb/driver v0.1.0
     ```
 
-    >If the next step to run the application fails with an error message of "Library not loaded", a workaround to place the libdbcapiHDB library in the same directory as the application executable is available.
-    >```Shell (Mac)
-    >cp ~/sap/hdbclient/libdbcapiHDB.dylib .
-    >```
+    ```Code (Linux or Mac)
+    replace SAP/go-hdb/driver v0.1.0 => /home/name/sap/hdbclient/golang/src/SAP/go-hdb/driver
+    require SAP/go-hdb/driver v0.1.0
+    ```
 
+    ![go.mod contents](goModContents.png)
 
-4. Run the application:
+5. Run the application:
 
     ```Shell
     go run goQuery.go
@@ -220,7 +226,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Result](results.png)
 
-5. For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/)
+For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/)
 
 
 ### Debug the application
@@ -252,10 +258,11 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     ![Breakpoint](GoBreakpoint.png)  
 
-    >Note that debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+    >Debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
+
+### Knowledge check
 
 Congratulations! You have now created and debugged a Go application that connects to and queries an SAP HANA database.
-
 
 
 

@@ -9,7 +9,7 @@ author_profile: https://github.com/raz-korn
 ---
 
 # Create a Responsive User Interface Application
-<!-- description --> Create a responsive application (user interface) that connects to your data through a service you previously created, using low-code capabilities of SAP Business Application Studio.
+<!-- description --> Create a responsive application (user interface) that connects to your data through a service you previously created, using the high productivity development capabilities of SAP Business Application Studio.
 
 ## Prerequisites
 - You have created a data model and exposed it as a service. (See [Create a Data Model and Expose It as a Service](appstudio-lcap-create-db-service))
@@ -112,7 +112,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 
     <!-- border -->![bas lcap enable initial load - launch app](BAS-LCAP-Load-Initial-Data-3-.png)
 
-4. Go back to the homepage of SAP Business Application Studio for low-code development, and choose the **Configure Page** button of the **List Report** page.
+4. Go back to the homepage of SAP Business Application Studio, and choose the **Configure Page** button of the **List Report** page.
 
     <!-- border -->![bas lcap enable initial load - launch list report edit](BAS-LCAP-Load-Initial-Data-4-.png)
 
@@ -134,7 +134,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 ### Customize the app - Update table column titles
 
 
-1. In the **Page Map** editor of SAP Business Application Studio for low-code development, expand **Columns**.
+1. In the **Page Map** editor of SAP Business Application Studio, expand **Columns**.
 
     <!-- border -->![bas lcap list page update columns title - expand columns](BAS-LCAP-Update-Column-Titles-1-.png)
 
@@ -162,7 +162,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 ### Customize the app - Present contractor name
 
 
-1. In the **Page Map** editor of SAP Business Application Studio for low-code development, choose **contractor/name** for the **Text** property.
+1. In the **Page Map** editor of SAP Business Application Studio, choose **contractor/name** for the **Text** property.
 
     <!-- border -->![bas lcap list page present contractor name - set text property](BAS-LCAP-Present-Contractor-Name-1-.png)
 
@@ -181,7 +181,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 1. In the application's tab select one object, for example, **Bicycles**. The column titles are not updated yet. In this step we will change the column titles for the single objects.
     <!-- border -->![bas lcap object page ](BAS-LCAP-Update-Object-Page-Titles-1-1.png)
 
-2. In the SAP Business Application Studio for low-code development, choose the **Page Map** option.
+2. In the SAP Business Application Studio, choose the **Page Map** option.
 
     <!-- border -->![bas lcap object page change titles - show page map](BAS-LCAP-Update-Object-Page-Titles-1-.png)
 
@@ -213,7 +213,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 ### Customize the app - Add contractor section to the object page
 
 
-1. In the **Page Map** editor of SAP Business Application Studio for low-code development, hover over **Sections**, and choose the **Add Sections** option.
+1. In the **Page Map** editor of SAP Business Application Studio, hover over **Sections**, and choose the **Add Sections** option.
 
     <!-- border -->![bas lcap object page add section - add section](BAS-LCAP-Add-Contractor-Section-1-.png)
 
@@ -241,7 +241,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 ### Customize the app - Change object page title
 
 
-1. In the **Page Map** editor of SAP Business Application Studio for low-code development, choose **Header**.
+1. In the **Page Map** editor of SAP Business Application Studio, choose **Header**.
 
     <!-- border -->![bas lcap object page change title - select header](BAS-LCAP-Change-Object-Page-Title-1-.png)
 
@@ -257,7 +257,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 
 **Congratulations!**
 
-With this, you have successfully completed developing a business application using low-code capabilities of SAP Business Application Studio.
+With this, you have successfully completed developing a business application using the high productivity development capabilities of SAP Business Application Studio.
 
 During the development you have modelled your business data. You have created a service through which data in the data model is accessed. You have created a user interface, which is actually an app, from which an application user can interact with the data. Throughout the development process, you continually test run the app, which is a development best practice to make sure the development is on-track.
 

@@ -79,7 +79,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 ### Create service interface
 
-1. In the `srv` (**not `src`!**) folder created another file and name it `interaction_srv.cds`
+1. In the `srv` (**not `src`!**) folder create another file and name it `interaction_srv.cds`
 
     ```Name
     interaction_srv.cds

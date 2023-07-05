@@ -99,7 +99,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     > This will ask you to select Cloud Foundry API, org, and space.
 
-    > The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
+    > The API endpoint is taken by default. If you want to change the API endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
     > If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
 
@@ -108,6 +108,14 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
 
 The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
+
+> In the previous step, you identified your API endpoint. If that has a format like `...us10-001...`, you need to add the following configuration to your `xs-security.json`:
+> ```json
+> "oauth2-configuration": {
+>     "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**"]
+> }
+> ```
+> For other API endpoints you'd need to adapt it accordingly.
 
 1. In VS Code, in the root of your project, execute the following command to build the archive.
     ```Shell/Bash
@@ -138,7 +146,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```
     This is the URL of the AppRouter, which enforces the authentication flow.
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.4 you can also try the **Fiori preview**.
 
     <!-- border -->![application preview](application_cloud_fiori.png)
 

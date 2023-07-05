@@ -9,7 +9,8 @@ time: 50
 ---
 
 # Receive Alerts in Your On-Premise System Using Java Web Tomcat 8
-<!-- description --> Configure a connection with an on-premise system to receive alert notifications locally.
+<!-- description --> Configure a connection with an on-premise system to receive alert notifications locally. For example, extend your on-premise application in the corporate network to show alerts for critical or warning metrics of an SAP BTP application in the Neo environment or to take self-healing actions. Furthermore, use the Alerting Channels REST API to configure the channel for receiving such alert notifications.
+
 
 <!-- loio152a1abd1a1f4618baaa6e43f55e37df -->
 
