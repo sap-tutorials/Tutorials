@@ -99,7 +99,7 @@ OK
 Operation ID: <MTA_OPERATION_ID>
 Deploying in org "deploy-service" and space "<SPACE>"
 Detected MTA schema version: "3"
-No deployed MTA detected - this is initial deployment
+No deployed MTA detected - this is initial deployment of MTA with ID "app"
 Detected new MTA version: "1.0.0"
 Processing service "my-first-app-service"...
 Creating service "my-first-app-service" from MTA resource "my-first-app-service"...
@@ -117,6 +117,9 @@ Skipping deletion of services, because the command line option "--delete-service
 Process finished.
 Use "cf dmol -i <MTA_OPERATION_ID>" to download the logs of the process.
 ```
+
+><MTA_OPERATION_ID> is a unique identifier for each MTA operation. It can be later used for troubleshooting.
+
 In the output example above, the `application my-first-app` is deployed and started. A service called `my-first-app-service` is also created and is bound to the application. Credentials are provisioned for the service instance and delivered to the application runtime in the `VCAP_SERVICES` environment variable.
 
 >The example above shows the deployment from a directory where the MTA deployment descriptor is available.
@@ -163,8 +166,27 @@ name                   service            plan     bound apps     last operation
 my-first-app-service   application-logs   lite     my-first-app   create succeeded
 ```
 
+All CF entities above compose the MTA with ID “app”. It can be displayed with the command:
+```Console Command
+cf mta app
+Showing health and status for multi-target app app in org <ORG> / space <SPACE> as <USER>...
+OK
+Version: 1.0.0
+Namespace:
+ 
+Apps:
+name           requested state   instances   memory   disk   urls
+my-first-app   STARTED           1/1         10.9M    5.2M   <ORG>-<SPACE>-my-first-app.<DEFAULT_DOMAIN>
+ 
+Services:
+name                   service            plan   bound apps     last operation
+my-first-app-service   application-logs   lite   my-first-app   create succeeded
+```
+
+
 
 ### Create an extension descriptor
+
 
 
 Extension descriptors are files complementary to the main deployment descriptor that provide additional data. They have a file extension `.mtaext` and are external to the MTA archive `.mtar`. They are used to provide deployment specific information, for example, credentials to external services.

@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 20
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition ]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -180,11 +180,11 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![Create statement](reservationGenerator2Create.png)
 
-5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
+5. To address these issues, make the following changes and rerun the SQL in the SQL console tab.  
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
     * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
-    >The above changes can be made in the SQL Console.  The Create Statement tab is read only.
+    >The above changes can be made in the SQL console.  The Create Statement tab is read only.
 
 6. Right-click the procedure and choose **Analyze SQLScript Code**.
 

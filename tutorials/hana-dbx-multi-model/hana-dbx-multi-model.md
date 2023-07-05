@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -33,7 +33,7 @@ The following steps will create a graph workspace that can display the distance 
 
 In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
-1. Create a vertex table that represents distances between hotels by executing the following in the SQL Console.
+1. Create a vertex table that represents distances between hotels by executing the following in the SQL console.
 
     ```SQL
     CREATE COLUMN TABLE DISTANCES(

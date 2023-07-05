@@ -100,7 +100,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-     
+
     >```Shell (Linux or Mac)
     export HDB_NODE_PLATFORM_CLEAN=1
     npm uninstall @sap/hana-client
@@ -128,7 +128,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![npm list](npm-list.png)
 
-> ### Some Tips
+> Some Tips
 
 >At this point, the SAP HANA client module has been installed into the `HANAClientsTutorials\node\node_modules` folder and added as a dependency in the `packages.json` file.  The following is some extra optional information on NPM.  
 
@@ -286,8 +286,6 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```
 
 ### Create a synchronous app that uses a connection pool
-
-
 Connection pooling can improve performance when making multiple, brief connections to the SAP HANA database.  The following sample makes two connections one after another without using a connection pool and then using a connection pool.  It demonstrates how the time taken to make a connection with a connection retrieved from a pool is significantly shorter.
 
 1. Open a file named `nodeQueryConnectionPool.js` in an editor.
@@ -324,6 +322,7 @@ Connection pooling can improve performance when making multiple, brief connectio
         poolCapacity: 10,  //max # of connections in the pool waiting to be used
         maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
         pingCheck: false,
+        allowSwitchUser: true,  //requires SAP HANA Client 2.17
         maxPooledIdleTime: 3600, //1 hour (in seconds)
     }
 
@@ -332,38 +331,42 @@ Connection pooling can improve performance when making multiple, brief connectio
     queryTable(false, "1st Run");
     queryTable(false, "2nd Run");
     queryTable(true, "1st Run");
-    //console.log(pool.clear());
     queryTable(true, "2nd Run");
+    queryTable(true, "3rd Run", true); //change user
     console.log("Connections in use :" + pool.getInUseCount());
     console.log("Connections in the pool :" + pool.getPooledCount());
 
     //Creates two connections either using connection pooling or not
     //Displays timing information
-    function queryTable(usePool, run) {
+    function queryTable(usePool, run, user2) {
         var t0 = performance.now()
         var connection = null;
-        if (!usePool) {
-            connection = hana.createConnection();
-            connection.connect(connOptions);
-            var t1 = performance.now();
-        }
-        else {
+        if (usePool) { //use the connection pool
             var t0 = performance.now();
             if (pool === null) {
                 pool = hana.createPool(connOptions, poolProperties); //create a connection pool
             }
-
-            connection = pool.getConnection(); //get a connection from the pool
+            if (user2) { //example of changing the user
+                connection = pool.getConnection('USER2','Password3'); //Requires 2.17 of the SAP HANA Client
+            }
+            else {
+                connection = pool.getConnection(); //get a connection from the pool
+            }
+            var t1 = performance.now();
+        }
+        else { //don't use the connection pool
+            connection = hana.createConnection();
+            connection.connect(connOptions);
             var t1 = performance.now();
         }
 
         var t2 = performance.now();
-        var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+        var sql = 'select CURRENT_USER FROM DUMMY;';
         var result = connection.exec(sql);
         var t3 = performance.now();
 
         var t4 = performance.now();
-        //console.log(util.inspect(result, { colors: false }));
+        console.log(util.inspect(result, { colors: false }));
         var t5 = performance.now();
 
         var t6 = performance.now();
@@ -386,9 +389,11 @@ Connection pooling can improve performance when making multiple, brief connectio
     node nodeQueryConnectionPool.js
     ```
 
+    Notice below that the time taken to establish a connection is approx 900 ms which but becomes almost instantaneous when the connection pool is used or about 85 ms when a connection from the pool requires changing the user.
+
     ![Running nodeQueryConnectionPool.js](node-query-connection-pool.png)
 
-    See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.13 release and documented in the 2.14 release.  This new API provides a more direct way to interact with the connection pool.
+    See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.17 release.
 
 
 ### Create an asynchronous app that uses callbacks
