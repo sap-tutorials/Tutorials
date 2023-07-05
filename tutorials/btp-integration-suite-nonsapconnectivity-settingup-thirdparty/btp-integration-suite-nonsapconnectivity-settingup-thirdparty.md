@@ -43,8 +43,10 @@ For the sake of providing an example, we're using a BambooHR trial system that a
 
 SAP Integration Suite communicates with BambooHR via APIs. Each API request that is sent from SAP Integration Suite will be authenticated by BambooHR - for which you must generate an API Key. You can find more information [here](https://documentation.bamboohr.com/docs/getting-started#authentication).
 
-1. In any page of the BambooHR system, in the upper right corner, choose **Account > API Keys**.
+1. On any page of the BambooHR system, in the upper right corner, choose **Account > API Keys**.
 
-2. Add a new API Key by providing a name. Copy the actual key which you will need in the subsequent steps of the mission.
+2. Add a new API Key by providing a name.
+
+3. Copy the actual key. You need the key to perform the subsequent steps of the mission.
 
 ---

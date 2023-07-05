@@ -9,7 +9,7 @@ author_profile: https://github.com/Karunaharan
 ---
 
 # Design an Integration Flow to Connect with Open Connectors 
-<!-- description --> Design an integration flow to integrate the capabilities Cloud Integration and Open Connectors that creates an endpoint to fetch data from BambooHR trial system.
+<!-- description --> Design an integration flow that fetches data from the third-party system. This integration flow uses the capabilities Cloud Integration and Open Connectors.. In this scenario, Open Connectors provides the endpoint to fetch data from BambooHR trial system.
 
 
 ## You will learn
@@ -19,27 +19,29 @@ author_profile: https://github.com/Karunaharan
 
 ### Create an Integration Package and Integration Flow
 
-1. In your SAP Integration Suite home page, choose **Design** > **Integrations** > **Create** to create an integration package.
+1. On the SAP Integration Suite home page, choose **Design** > **Integrations** > **Create** to create an integration package.
 
     <!-- border -->![Create-Package](1-1-Create-Package.png)
     
     > An integration flow is always associated to an integration package.
 
-2. In the **Header** tab, provide a **Name** and **Short Description** for your integration package. Choose **Save**.
-
-    <!-- border -->![Package-Header](1-2-Package-Header.png)
+2. On the **Header** tab, provide a **Name** and **Short Description** for your integration package.
 
     >The **Technical Name** gets populated automatically based on the name that you provide.
 
-3. Choose **Artifacts** tab. Here you will create your first integration flow. Choose **Add** > **Integration Flow**.
+3. Choose **Save**.
 
-4. Enter a **Name** for the integration flow and choose **OK**.
+    <!-- border -->![Package-Header](1-2-Package-Header.png)
+
+4. Choose the **Artifacts** tab. Here you will create your first integration flow. Choose **Add** > **Integration Flow**.
+
+5. Enter a **Name** for the integration flow and choose **OK**.
 
       <!-- border -->![1-4-Integration-Flow](1-4-Integration-Flow.png)
 
-5. Choose **Save** and open the integration flow by selecting it.
+6. Choose **Save** and open the integration flow by selecting it.
 
-6. Choose **Edit** to start editing the integration flow.
+7. Choose **Edit** to start editing the integration flow.
 
     Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you configure the parameters for every step in the integration flow.
 
@@ -48,7 +50,7 @@ author_profile: https://github.com/Karunaharan
 
 ### Connect Sender Channel with HTTPS Adapter
 
-In this step, you define your sender channel and sender adapter. In this case, we use an HTTPS sender adapter. This will help you create a simple HTTP endpoint which you can invoke to execute the integration scenario.
+During this step, you define your sender channel and sender adapter. We use an HTTPS sender adapter to create a simple HTTP connection to invoke the execution of the integration scenario.
 
 1. Choose the **Sender** step. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start** step.
 
@@ -58,7 +60,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
     <!-- border -->![Select HTTPS adapter](2-2-select-https-adapter.png)
 
-3. In the property sheet, select the **Connection** tab. In the **Address** field, enter **`/employees/getdetails`**.
+3. On the property sheet, select the **Connection** tab. In the **Address** field, enter **`/employees/getdetails`**.
 
     Optionally, you can enter any value of your choice, but ensure that you use **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
 
@@ -67,16 +69,18 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
 ### Add Request Reply Step
 
-From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path.
+1. From the palette, choose **Call** > **External Call** > **Request Reply**.
 
-  <!-- border -->![Select Request Reply](3-1-Request-Reply.png)
+    <!-- border -->![Select Request Reply](3-1-Request-Reply.png)
 
-  <!-- border -->![Add request reply](3-1-Request-Reply-Add.png)
+2. Connect it to the message path.
+
+    <!-- border -->![Add request reply](3-1-Request-Reply-Add.png)
 
 
 ### Connect Request Reply to Receiver
 
-1. Move the **Receiver** step right below the **Request Reply** step by selecting it and dragging it. You do this to ensure that your integration flow is elegantly designed.
+1. Move the **Receiver** step right below the **Request Reply** step by selecting and dragging it. You do this to ensure that your integration flow is elegantly designed.
 
     > **TIP:** Use the pan and zoom controls for resizing the canvas.
 
@@ -86,7 +90,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 3. In the **Adapter Type** dialog, select **OpenConnectors**.
 
-4. Select the **Connection** tab in the Property Sheet. 
+4. Select the **Connection** tab on the Property Sheet. 
 
 5. In the **Base URI** field, paste the copied request URL from **Step 5** of [Establish Connection Between Your BambooHR Trial and Open Connectors](btp-integration-suite-nonsapconnectivity-openconnectors).
 
@@ -115,11 +119,13 @@ Now you have configured the Open Connectors receiver adapter to fetch a list of 
 
 Now that you have designed your integration flow, let's deploy it for further execution.
 
-1. Choose **Deploy** to deploy the integration flow. Choose **Yes** in the confirmation dialog for deployment. Upon deployment confirmation, choose the **Deployment Status** tab in the property sheet.
+1. Choose **Deploy** to deploy the integration flow.
 
     <!-- border -->![5-1-Deploy-Status](5-1-Deploy-Status.png)
 
-2. In the **Deployment Status** tab, you can see details about the deployment for the integration flow. The expected deployment status is **Deployed** and runtime status is **Started**.
+2. Choose **Yes** in the confirmation dialog for deployment. Upon deployment confirmation, choose the **Deployment Status** tab on the property sheet.
+
+3. On the **Deployment Status** tab, you can see details about the deployment for the integration flow. The expected deployment status is **Deployed** and runtime status is **Started**.
 
     <!-- border -->![5-2-Deployment-Status](5-2-Deployment-Status.png)
 
