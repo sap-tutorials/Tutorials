@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the ODBC Driver
@@ -30,11 +30,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![start ODBC Administrator](start-odbc.png)
 
-2. Click the **Drivers** tab and view the installed drivers.  
+2. Click the **Drivers** tab and view the installed drivers. The SAP IQ driver is visible. 
 
     ![odbc admin drivers](drivers-1.png)
 
-    The SAP IQ driver is visible.
+    
 
 3. Click the **User DSN** tab to view the data sources.  
 
@@ -44,7 +44,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 5. Select **SAP IQ** and click **Finish**.
 
-    <!-- border -->![New data source](Create-new-data-source-1.png)
+    ![New data source](Create-new-data-source-1.png)
 
 6. Configure the data source.
 
@@ -97,7 +97,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     ```.odbc.ini
     [HC_DL]
-    driver=/home/dan/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
+    driver=/home/XXXXX/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
     encryption=TLS(trusted_certificates=*;direct=yes)
     host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
     integrated=NO
@@ -111,15 +111,25 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     isql -v HC_DL USER1 Password1
     ```
 
-    DBISQL
+    **DBISQL**
+    
+    Some example queries you can run are listed below.
+
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER;
+    ```
+
+    ```SQL
+    SELECT * FROM HOTEL.ROOM;
+    ```
 
     ![ODBC example with dbisql](ODBC-dbisql.png)
 
-    isql
+    **isql**
 
     ![isql query](isql-query.png)
 
-    > To exit dbisql or isql type quit.
+    > To exit dbisql or isql type `quit`.
 
     > ---
 
@@ -139,7 +149,6 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 1. Open Microsoft Excel.
 
 2.  In the **Data** tab, select **Get Data | From Other Sources | From ODBC**.
-
     ![Excel ODBC](ExcelODBC.png)
 
 3.  Select the previously created data source that contains the connection information to data lake Relational Engine.
@@ -166,7 +175,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine ODBC driver.  
 
->ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
+>ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.   The version used in this tutorial is 22.1.5.  In a later version, an error "Invalid string or buffer length" was seen during connection.
 
 The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
 

@@ -54,7 +54,7 @@ public class OrdersService implements EventHandler {
 <!-- border -->![OrdersService class overview](ordersservice-class.png)
 
 
-> If you see validation errors in your editor, open the context menu on your `pom.xml` and select **Update Project**. That regenerates the classes and makes them available.
+> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Update Project**. That regenerates the classes and makes them available.
 
 
 ### Decrease stock when posting order
@@ -68,7 +68,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -92,7 +92,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -114,7 +114,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     import com.sap.cds.ql.cqn.CqnUpdate;
     import com.sap.cds.services.ErrorStatuses;
     import com.sap.cds.services.ServiceException;
-    import com.sap.cds.services.cds.CdsService;
+    import com.sap.cds.services.cds.CqnService;
     import com.sap.cds.services.handler.annotations.Before;
     import com.sap.cds.services.persistence.PersistenceService;
 
@@ -160,7 +160,7 @@ import com.sap.cds.ql.cqn.CqnSelect;
 import com.sap.cds.ql.cqn.CqnUpdate;
 import com.sap.cds.services.ErrorStatuses;
 import com.sap.cds.services.ServiceException;
-import com.sap.cds.services.cds.CdsService;
+import com.sap.cds.services.cds.CqnService;
 import com.sap.cds.services.handler.annotations.Before;
 import com.sap.cds.services.persistence.PersistenceService;
 
@@ -177,7 +177,7 @@ public class OrdersService implements EventHandler {
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -201,7 +201,7 @@ public class OrdersService implements EventHandler {
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -281,7 +281,7 @@ Next, let's add a method to the `OrdersService` Java class to calculate the `net
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
     public void calculateNetAmount(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -368,7 +368,7 @@ Finally, add a method to the `OrdersService` Java class to calculate the `total`
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
     public void calculateTotal(List<Orders> orders) {
         for (Orders order : orders) {
             // calculate net amount for expanded items

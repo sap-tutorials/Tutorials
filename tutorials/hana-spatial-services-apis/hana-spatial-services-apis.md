@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 tags: [software-product-function>sap-hana-spatial, products>sap-business-technology-platform, tutorial>beginner, topic>cloud, tutorial>license, programming-tool>node-js, programming-tool>python]

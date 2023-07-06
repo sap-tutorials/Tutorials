@@ -4,306 +4,308 @@ author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
-# Create a Calculation View
-<!-- description --> Learn how to create your own calculation views in SAP HANA Cloud, SAP HANA database with SAP Business Application Studio using Join and Rank nodes.
+# Create a Development Project in SAP Business Application Studio
+<!-- description --> Create a development project, establish a connection to a database, create a user-provided service and .hdbgrants file, and deploy your project.
 
 ## Prerequisites
--  [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
--  If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2).
-- [Import the sample data needed for this mission](hana-cloud-mission-trial-5).
-- [Set up a development project in SAP Business Application Studio and connect it to your database](hana-cloud-mission-trial-7).
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
+- You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
+- [Download the sample code](https://github.com/SAP-samples/hana-cloud-learning/blob/4ac0be770033d3425cc30a2f22f8f5c0823bb810/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%206/Tutorial%206%20Queries.txt) files from our public GitHub repository
 
 
 ## You will learn
-- How to create a calculation view in SAP Business Application Studio
-- How to use join nodes
-- How to use rank nodes
-- How to preview the output
-
+- How to create an HDI container in a Cloud Foundry runtime that is mapped to a HANA Cloud instance
+- How to create a development space and project in SAP Business Application Studio
+- How to establish a connection to your database
+- How to create a user-provided service
+- How to create an `.hdbgrants` file
+- How to deploy a project
 
 
 ## Intro
+>
 > ![Alex Banner](banner-alex.png)
+>
 > Reminder: This tutorial is part of a mission, in which you will help Alex, the CEO of Best Run Travel, to answer a concrete business question with SAP HANA Cloud, SAP HANA database.
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using an SAP HANA Cloud trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
-
-4.	Create users and manage roles and privileges
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	Query the database using SQL statements
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create a calculation view**
-
-9.	Grant access to Calculation Views
-
-In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need.
-
-> You can follow the steps in this tutorial also by watching this video:
->
-<iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_sxorir18/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
->
-> ### About this video
->
-> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
-
+In this tutorial, you will learn how to start preparations to create a calculation view by setting up a project in SAP Business Application Studio and establishing a connection to your database.
 
 ---
 
-### Create the calculation view
+### Create an HDI Container
+**Important**: If you have been using an instance provisioned under **Other Environments** as shown in the prerequisite tutorials, you must map that instance to a Cloud Foundry organization and optionally a space.
 
+1. In the **SAP BTP Cockpit Overview** page, verify that the Cloud Foundry environment is enabled and that a space exists.
 
-1.	Within your project in the SAP Business Application Studio, click on **View** on the top menu. Then click on **Find command**. Alternatively, use `Ctrl+Shift+P` to access it.
+    ![Check the Cloud Foundry Environment](check-cloud-foundry.png)
 
-2.	Type **SAP HANA: Create HANA database artifact** and press `Enter` or click on the right option.
+    >The list of users that can access a space can be found under **Members** once a space has been opened.
 
-3.	You will see a form appear on the right-side of the screen. Select **Calculation View** as your artifact type.
+2. Copy the **Org ID** under the **Cloud Foundry Environment** tab.
 
-4.	Type a name for your calculation view.
+    ![CF Org ID](cf-org-id.png)
 
-5.	Under **Path**, change the path so the calculation view is created inside the `src` folder of your project.
+3. Open **SAP HANA Cloud Central**. Click on the SAP HANA Cloud database instance used for this tutorial, select **Manage Configurations** from the actions menu, then **Edit** in the top right corner. Under **Instance Mapping**, add an instance mapping by pasting the Cloud Foundry organization ID you just copied.
 
-6.	Finally, click on **Create**.
+    ![Instance mapping](add-cf-mapping.png)
 
+    Once finished, press **Save**.
 
+4. In the SAP BTP Cockpit, go to **Instances and Subscriptions**.  Click **Create**.  
 
+    ![create service](create-hdi.png)
 
-### Create a join node
+    Select **SAP HANA Schemas & HDI containers** under **Service**. Choose the `hdi-shared` plan and provide an Instance Name, such as `HDI_Tutorial`. This is the HDI container you will use in your SAP Business Application Studio project.
 
+    >If necessary, create a Space named `dev` in Cloud Foundry.
+    >
+    >![Create a space called dev](create-space.png)
 
-1.	Once your calculation view is ready, you will see it on the left-side panel, inside the `src` folder. Simply click on the file to open it.
+    ![Create HDI container](add-hdi-container.png)
 
-2.	Now you can see the calculation view editor on the right-side panel.
+    Press next. Here you will specify the instance parameters. To associate the HANA Cloud instance (that you have just mapped to Cloud Foundry) with the HDI container instance, specify the following parameters. Be sure to replace the contents in `database_id` with your SAP HANA database instance ID.
 
-3.	In this example, start with a join node to join two tables. Click on the join icon on the sidebar of the editor and then click on the canvas.
+    ```JSON
+    {
+        "schema":"HDI_Tutorial",
+        "database_id":"<SAP HANA Cloud database instance ID>"
+    }
+    ```
+    >You can copy your SAP HANA Cloud database instance ID from SAP HANA Cloud Central, through the **three dots** menu under the Actions column.
+    >
+    >![Copy instance ID](copy-instance-id.png)
 
-    <!-- border -->![Join Node](ss-01-join-node.png)
+    ![JSON parameters for HDI containers](hdi-parameters1.png)
 
-4.	The join node appears. Next to the node, click on the plus icon to add the tables.
+5. Review and create your instance.
 
-    <!-- border -->![Join Plus icon](ss-02-join-plus-icon.png)
+    When completed, the HDI container will appear as shown below.
 
-5.	On the pop-up, start by selecting the user-provided service on the **Services** drop-down list.
+    ![HDI Container created](hdi-container-created.png)
 
-6.	Type in the first few letters of the table names. Let's start with the `SAGENCYDATA` table, which we created in a previous module.
 
+### Create your development space
 
-    > If you want to see all objects available via the connection service, enter `**` in the search field.
-
-
-7.	To find out the top 5 partners for Best Run Travel, we need to join the `SAGENCY` table with the `STRAVELAG` table. So, let's also add the `STRAVELAG` table to the join node.
-
-8.	Check both objects on the list, then click on **Create Synonym**.
-
-9.	Click on **Finish** without selecting any other options.
-
-10.	You can see that in your file explorer, a new file appeared ending on `.hdbsynonym`. In this file, your synonyms are defined and stored. Click on the file and click on the deploy icon (![Deploy](icon-deploy.png)) at the top right corner.
-
-11.	Go back to the calculation view editor and you should see the two tables in the join node.
-
-    <!-- border -->![Join Node tables added](ss-03-join-node-tables-added.png)
-
-
-
-
-
-### Define the mapping of the join node
-
-
-1.	To properly join the two tables, you need to define how they relate to each other. This is done by editing the join node.
-
-2.	Double click the join node to open the settings.
-
-3.	Under **Join Definition**, click on the column `AGENCYNUM` from one of the tables and drag and drop it on top of the same column from the second table. This determines the key column.
-
-    <!-- border -->![Key mapping](ss-04-key-mapping.gif)
-
-4.	Now click on **Mapping**. Here you can select which columns will be part of the output. Select the columns `AGENCYNUM`, `NUMBOOKING` and `NAME` by double clicking on them. You can see they are added to the output section on the right.
-
-    <!-- border -->![Mapping](ss-05-mapping.png)
-
-5.	Now close the join settings by clicking on the `X` icon at the top right corner.
-
-6.	Now **connect** the join node to the aggregation node above it. Just click on the arrow icon of the join node and drag and drop it on the aggregation node.
-
-    <!-- border -->![Connect Join to Aggregation](ss-06-connect-join-to-aggregation.gif)
-
-
-
-
-### Add a rank node
-
-
-1.	Since we want to see the top 5 results from this join, we will add a **Rank** node next. Click on the rank icon (![Rank](icon-rank.png)) then click **on the link** between Join node and Aggregation node. This will add a Rank node in between them.
-
-2.	To make it easier to view the nodes, click on the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to rearrange the canvas.
-
-    <!-- border -->![Add rank](ss-07-add-rank.gif)
-
-3.	Next, double click the Rank node to open the settings.
-
-4.	Under **Mapping**, make sure all 3 columns are included in the output.
-
-5.	Click on **Definition**. Choose the **Aggregation Function** as `Rank`.
-
-6.	Set the **Result Set Direction** as `Top`. This will order the results descending from highest to lowest.
-
-7.	Set the **Result Set Type** as `Absolute`. This setting determines the unit of values given out by the rank. You could, for example, also select `Percentage` here to get the top 10% of results.
-
-8.	On the **Target Value**, type `5`. This will determine the number of values given out as a result.
-
-9.	The **Offset** should be `0`. Offset determines a number of values that are skipped in the result, for example, with an `Offset = 1` the first value of the rank result would not be reported.
-
-10.	Then click on **Sort Column** to expand this area.
-
-11.	Click on the plus icon to add a **Sort Setting**. Select the column `NUMBOOKINGS` and the direction as **Descending**.
-
-    <!-- border -->![Edit Rank node](ss-08-edit-rank-node.png)
-
-12.	Now close the Rank node panel and double click on the **Aggregation** node.
-
-13.	Under **Mapping**, make sure all columns are selected as part of the output. If a column is not mapped to the output, double click it to add it.
-
-    <!-- border -->![Mapping Aggregation](ss-09-mapping-aggregation.png)
-
-
-
-
-### Deploy the calculation view
-
-
-1.	Now deploy the calculation view. On the SAP HANA Project panel next to the calculation view name or on the top right corner of the screen, click on the deploy icon (![Deploy](icon-deploy.png)). This will deploy the calculation view. Once this is successfully completed, it's time to check the output so far.
-
-2.	To access the data preview, click on the HDI container icon (![Container](icon-container.png)) next to the name of the project. This will open a new tab with the SAP HANA Database Explorer.
-
-3.	On the list of databases, you will now see the HDI container that represents your calculation view. Expand the catalog of that HDI container, then click on **Column Views**.
-
-4.	Next, click on the name of your calculation view on the panel below the catalog and click on **Open Data**.
-
-    <!-- border -->![DBX CV Preview](ss-10-DBX-CV-preview.png)
-
-5.	Then, click on **Raw Data** to see the output of this calculation view so far.
-
-6.	This shows you the top 5 partners of Best Run Travel.
-
-    <!-- border -->![DBX Result preview](ss-11-DBX-result-preview.png)
-
-> You can also preview the results of your calculation view directly in the calculation view editor in SAP Business Application Studio. Right-click on the aggregation node and select **Data Preview**. This will open the data preview inside the calculation view editor.
+> **Reminder:** What is SAP Business Application Studio?
 >
-> ![Data Preview in BAS](ss-12-data-preview-in-BAS.png)
-
-
-
-
-### Add a third table to the view
-
-
-Now that we know the top 5 partners, we need to next find out on which days the top 5 travel agencies have the most bookings. To achieve this, we will add the table `SAGBOOKDAYS` to our view.
-
-1.	Continue working on the same calculation view.
-
-2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created, by adding a join node **between** the rank node and the aggregation node. Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
-
-    <!-- border -->![Add Join 2](ss-13-add-join-2.gif)
-
-3.	Since the Join node is connected to **Rank 1**, its output is already added to the join node. So, you only need to add the `SAGBOOKDAYS` table by clicking on the plus icon. Follow the steps you previously took to add a table and create a synonym.
-
-4.	After the table is there, double click on the second join node.
-
-5.	Under **Definition**, connect the column `AGENCYNUM` from **Rank 1** to the `AGENCYNUM` column from the `SAGBOOKDAYS` table.
-
-    <!-- border -->![Join 2 Definition](ss-14-join-2-definition.png)
-
-6.	On the same panel, under **Mapping**, make sure the following columns are selected for the output: `AGENCYNUM`, `NUMBOOKING`, `NAME`, `ORDERDAY` and `DAYCOUNT`.
-
-    <!-- border -->![Join 2 Mapping](ss-15-join-2-mapping.png)
-
-
-
-
-### Add another rank node
-
-
-1.	To find the days with the most bookings, add another rank node **between** Join 2 and the Aggregation node. Click on the rank icon (![Rank](icon-rank.png)) and then on the connection between the Join 2 and the Aggregation nodes. Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
-
-    <!-- border -->![Add Rank 2](ss-16-add-rank-2.png)
-
-2.	Double click the rank node to open it.
-
-3.	Under Mapping, make sure all 5 columns are selected.
-
-    <!-- border -->![Rank 2 Mapping](ss-17-rank-2-mapping.png)
-
-4.	Then, click on **Definition**. Adjust the settings similar to STEP 4:
-
-      *	**Aggregation Function**: `Rank`
-      *	**Result Set Direction**: `Top`
-      *	**Result Set Type**: `Absolute`
-      *	**Target Value**: `1` (this is different from STEP 4)
-      *	**Offset**: `0`
-
-    <!-- border -->![Rank 2 Definition](ss-18-rank-2-definition.png)
-
-5.	Now click on the Partition Column area, and then click on the plus icon.
-
-    > **What does a partition column do?**
+> SAP Business Application Studio is a service within SAP Business Technology Platform that provides a development environment for SAP Cloud Foundry. This is an important tool to any kind of development with SAP HANA Cloud, SAP HANA database, including creating calculation views.  
 >
-> Defining a partition column will group the rows of the output based on a specific column.
+> SAP Business Application Studio is already included in your trial account. You can access it on the Trial home page. If you are unsure how to open it, please check out [Tutorial 4](hana-cloud-mission-trial-4) of this mission.
+>
 
-    <!-- border -->![Rank 2 Partition](ss-19-rank-2-partition.png)
+ Ensure that your user has the correct permissions to manage the SAP Business Application Studio (i.e. Business Application Studio Administrator). You can check the assigned roles of your users under **Security > Users > *Select your user* > *Select the three dots* > Assign Role Collection**. Ensure your user has the **`Business_Application_Studio_Administrator`** role.  
 
-6.	Add the column `AGENCYNUM` to group the rows based on this column.
+ ![Business Application Studio Administrator role](bas-admin-role.png)
 
-7.	Click on **Sort Column** and click on the **plus** icon. Add the column `DAYCOUNT` and select the sort direction as **Descending**. You can now close the rank settings.
-
-    <!-- border -->![Rank 2 Sort column](ss-20-rank-2-sort-column.png)
-
-8.	Double click the Aggregation node. Under **Mapping**, make sure all the columns under Rank are selected for the output. To add a column to the output, simply double click it.
+The first step in the SAP Business Application Studio is to create your development space. Development spaces are like isolated virtual machines in the cloud containing tailored tools and pre-installed runtimes per business scenario, such as an SAP HANA development project.
 
 
+You are now ready to create your first development space.
+
+1.	Open **SAP Business Application Studio** from the [Trial home page](https://account.hanatrial.ondemand.com/trial/#/home/trial).
+
+    ![Business App Studio through the trial home page](bas-trial-home.png)
+
+    >You may also access the SAP Business Application Studio through the **Instances and Subscriptions** page in SAP BTP Cockpit. SAP Business Application Studio will be listed as an application under the Subscriptions tab.
+    >
+    >![open BAS from subaccount](open-bas.png)
+    >
+    >If you have yet to subscribe to SAP Business Application Studio application, you can create one by clicking **Create** on the top right-hand corner of the screen.
 
 
-### Deploy the view and access the output
+2.	Once you have opened Business Application Studio, click on **Create Dev Space**.
+
+    ![Create Dev Space](LT01_07_01-Create-Dev-Space_resized.png)
+
+3.	Give your development space a name. You can choose any name you prefer, but you cannot use spaces in this name.
+
+4.	Under the name, you need to choose the kind of application you will create. To use SAP HANA tools, such as calculation views, please make sure to check **SAP HANA Native Application** in the list.
+
+    ![Create Dev Space2](create-new-dev-space.png)
+
+5.	On the right-side of the screen, you will see a list of the pre-defined extensions included in this project. You can also choose to select additional extensions to your project, if necessary.
+
+6.	Then, click on **Create Dev Space** on the bottom right-side of the screen. You will return to the list of existing development spaces. Your newly created space is now on the list and you can see the status as **Starting**. This should take no more than a couple of minutes to start.
+
+7.	Once the status changes to **Running**, you can click on the name of the development space to open it.
+
+    ![Create Dev Space3](ss-03-create-Dev-Space3.png)
 
 
-You are almost done!
-
-1.	On the SAP HANA Project panel, click on the deploy icon(![Deploy](icon-deploy.png)) next to the calculation view name. This will deploy the calculation view. Once this is successfully completed, it's time to check the output again.
-
-2.	To access the Data Preview in the SAP HANA Database Explorer, click on the HDI container icon(![Container](icon-container.png)) next to the name of the project or access it directly
-
-3.	On the list of databases, you will now see the HDI container that represents your project. Expand the catalog of that HDI container, then click on **Column Views** to find your calculation view.
-
-4.	Next, click on the name of your calculation view on the panel below the catalog.
-
-5.	From here, you can click on **Raw Data** to see the output of this calculation view. This shows you the top 5 partners of Best Run Travel and the day in which they have the most bookings.
-
-    <!-- border -->![final results](ss-21-final-results.png)
-
-Well done!
-
-You have completed the eighth tutorial of this mission! You learned how to create a calculation view in SAP Business Application Studio using the graphical calculation view editor. You used join and rank nodes to get Alex the business insights they were looking for. Now, all that's left to do is make this calculation view available to others in Alex organization. Learn in the last tutorial how to do that!
+### Create your development project
 
 
+Now you can create a development project within your new space. Follow these steps:
+
+1.	On the **Get Started** page, click on **Start from template**.
+
+    ![Start from Template](bas-welcome.png)
+
+2.	Next, click on **SAP HANA Database Project**, and then click on **Start** at the very bottom of the screen.
+
+    ![HANA project](ss-05-HANA-project.png)
+
+3.	Give your project a name, such as `BestRunTravel`, and then click on **Next**.
+
+4.	The module name defaults to `db`.  Click on **Next**.
+
+5.	In the step **Set Database Information**, you can choose to determine a **Namespace** and a **Schema Name**. These are not mandatory and for the purpose of this mission, *we recommend you leave these fields **empty***.
+
+    Make sure the **SAP HANA database version** is set to `HANA Cloud` and  **Bind the database tutorial to a Cloud Foundry service instance** is set to **Yes**.
+
+    ![DB Information](ss-06-DB-information.png)
+
+6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry.
+
+    ![bind to HDI](bind-to-hdi2.png)
+
+    If you are not already logged into Cloud Foundry, a Cloud Foundry sign-in page will appear.  Check and update, if needed, the API URL to match the URL displayed in SAP BTP Cockpit for the Cloud Foundry environment you plan to use and login.
+
+    ![Cloud Foundry API URL](ss-06-CF-API-URL.png)
+
+7.	Once the login is complete, your organization and space are automatically selected. If you are part of multiple organizations or spaces, you can adjust the preselected options via the drop-down menus.
+
+8. Under **Create a new HDI service instance**, select **No**. This will prompt you to choose a Cloud Foundry service. Select the HDI Container service you created earlier in this tutorial.
+
+    ![Bind to HDI service](bind-to-hdi.png)
+
+9.	Click on **Finish** to create the project.
+
+    Your project will be generated, which takes a few minutes to complete. You can follow the status of your project creation on the bottom right corner of the screen.
+
+    Once the project is complete, the project will open in a new workspace, and the structure can be seen on the left-hand panel.
+
+    ![Open in New Workspace](left-panel.png)
 
 
-### Test yourself
+### Get to know the SAP HANA Project Panel
+On the left panel, you can now see your workspace where you have your files, and the **SAP HANA Project** panel underneath where you can deploy your project and open the HDI container in the SAP HANA database explorer.
+
+> **What is an HDI container?**
+>
+> Applications are bound to an SAP HANA Cloud instance through a schema or an HDI container. HDI containers ensure isolation, and within an SAP HANA database you can define an arbitrary number of HDI containers. HDI containers are isolated from each other by means of schema-level access privileges. You can read more in this [technical documentation](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/LATEST/en-US/9988e476278d408db084a407dff314af.html).
+
+Whenever you add a new database object that can be deployed to your HDI container, it will appear in this panel and you can deploy it. In this area you can also check the database connections of your project.
+
+![SAP HANA Projects panel](projects-panel-resized.png)
+
+Moving your cursor to the name of an object, folder, or connection in this panel, you will see different icons:
+
+-	This icon ![Container](icon-container.png) will open the HDI container in SAP HANA database explorer
+-	This icon ![Deploy](icon-deploy.png) will deploy an object, folder or the whole project to the HDI container or other connected database.
+-	This icon ![Add DB connection](icon-add-DB-connection.png) (only on the Database Connections level) allows you to create a new database connection.
+-	This icon ![Bind green](icon-Bind-green.png) / ![Bind grey](icon-Bind-grey.png)  allows you to bind (green color) or unbind (grey color) a database connection.
+
+**Command Palette**
+
+An important function that can help you get the commands you need, is the `Command Palette`.  
+
+When you open the side menu, click **View**, and select **Command Palette**, a prompt will open at the top center of the screen. In this field, you can search for all commands available and select the one you need.
+
+![Find command](cmd-palette.png)
+
+The most important one for SAP HANA Cloud, SAP HANA database development is the command **Create SAP HANA Database Artifact**. This command will open a UI that allows you to create many database objects, like tables, roles, services, and many more.
+
+![Find Command HDB artifact](ss-11-find-command-HDB-artifact.png)
+
+> To open the **Command Palette**, you can also use the key combination `Ctrl + Shift + P` or F1.
+
+
+### Create a user-provided service
+Now that your project is created and you know the basics of how to navigate SAP Business Application Studio, your next step is to create a user-provided service, which will allow the project to access the data within the database.
+
+1.	In the **SAP HANA Projects** panel, expand your project.
+
+2.	Hover your cursor over the section **Database Connections**, and a plus icon (![Add DB connection](icon-add-DB-connection.png)) will appear. This option allows you to add a new database connection. Click on the icon.
+
+    ![Project panel add DB connection](add-db-connection.png)
+
+3.	In the field **Select connection type**, choose the option **Create user-provided service instance** from the drop-down menu.
+
+4.	Enter a name for your service and provide the user name and password for the `UPS_GRANTOR` user you previously created in step 2 of the [Create Users and Manage Roles and Privileges](hana-cloud-mission-trial-5) tutorial.
+
+    ![USP UI1](ss-13-USP-UI1_.png)
+
+5.	Select the `Generate hdbgrants file` checkbox.
+
+    You will assign a set of privileges to many users directly from your project in an `.hdbgrants` file. This file will specify that the user-provided service will be used to grant the privileges entered in the `.hdbgrants` file in the connected database.
+
+    > This step only has to be done once in the beginning for a project. You will only have to modify the file if you need additional privileges.
+
+6. Click on **Add**. The user-provided service will be created.
+
+    ![USP created](bound-connection.png)
+
+### Modify the hdbgrants file
+
+1. In File explorer, open the `.hdbgrants` file. Here, you can see a template of all different types of privileges you could grant to different user groups. There is a dedicated section for object owner users and application users.
+
+    ![Open .hdbgrants file](open-hdbgrants.png)
+
+2.	For the purposes of this tutorial, we would like to grant the roles we have previously created to object owners and application users. The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
+
+    To do so, replace the contents of the `hdbgrants` file with the following:
+
+    ```JSON
+    {
+        "MyUPS": {
+            "object_owner": {
+                "global_roles": [
+                    {
+                        "roles": ["genericRoleForOO"]
+                    }
+                ]
+            },
+            "application_user": {
+                "global_roles": [
+                    {
+                        "roles": ["genericRoleForAP"]
+                    }
+                ]
+            }
+        }
+    }
+    ```
+
+### Deploy your project
+
+
+Now that the connection to your database is established and the grants file is created, you can deploy the project.
+
+1.	Go to the lower left corner of the screen, where you can see the **SAP HANA Projects** pane.
+
+2.	Next to your project name, you will see a small icon in the shape of a rocket(![Deploy](icon-deploy.png)). Click on it to deploy your project.
+
+    Once the deployment is successfully completed, you will see the completion message in the bottom area of your screen.
+
+    ![Deployment successful](deployment-end.png)
+
+3.  Open the HDI container in the SAP HANA database explorer.
+
+    ![Open HDI container in dbx](open-hdi.png)
+
+4.  Notice that you can now access the tables in the SFLIGHT schema from within the HDI container.
+
+    ```SQL
+    SELECT * FROM SFLIGHT.SAIRPORT;
+    ```
+
+    ![accessing SFLIGHT schema](access-sflight.png)
+
+*Well done!*
+
+You have completed the seventh tutorial of this mission! You learned how to set up a development project in SAP Business Application Studio and connecting it to your database with a user-provided service and an `.hdbgrants` file. You are all set now to create a calculation view.
+Learn in the next tutorial how to create a calculation view to achieve your mission objective.
+
+
+### Knowledge Check
 
 
 

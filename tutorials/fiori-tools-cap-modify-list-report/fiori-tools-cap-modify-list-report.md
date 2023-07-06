@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+tags: [software-product>sap-fiori, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-fiori
 ---
 
@@ -116,19 +116,17 @@ The value help dialog supports full-text search and a filter bar that can help u
 
 
 
-    > ### CollectionPath
-    The `CollectionPath` property defines the entity set to request data for the value help. In this example the data is loaded from the entity set `Category`.
-
-    <!-- -->    
-    > ### $Type
-    The `$Type` property determines the behavior of a single parameter used within the value help. The value `ValueListParameterInOut` is used for parameters which take over values prefilled by the application for filtering the data (-In). On the other hand the selected value will also be passed back to the application (-Out). The value `ValueListParameterDisplayOnly` is used for parameters without interaction between the application and the value help. The parameter is just used for displaying the data for selection.
-
+    >**Properties**
+    >
+    >The `CollectionPath` property defines the entity set to request data for the value help. In this example the data is loaded from the entity set `Category`.
+    >
+    >The `$Type` property determines the behavior of a single parameter used within the value help. The value `ValueListParameterInOut` is used for parameters which take over values prefilled by the application for filtering the data (-In). On the other hand the selected value will also be passed back to the application (-Out). The value `ValueListParameterDisplayOnly` is used for parameters without interaction between the application and the value help. The parameter is just used for displaying the data for selection.
+    >
     >Depending on the value of the `$Type`, additional properties for the parameter need to be defined:
     >
-    * `LocalDataProperty` The property of the source entity set the value help will be defined for.
+    >* `LocalDataProperty` The property of the source entity set the value help will be defined for.
     >
-    *  `ValueListProperty` The property of the target entity set the value help will request data from (see `CollectionPath`). These are the properties presented within the filter bar and table of the value help dialog.
-
+    >*  `ValueListProperty` The property of the target entity set the value help will request data from (see `CollectionPath`). These are the properties presented within the filter bar and table of the value help dialog.
 
 
 3. After saving the file, refreshing the application and opening the value help for the **Category**, you´ll see the improved value help showing the description.

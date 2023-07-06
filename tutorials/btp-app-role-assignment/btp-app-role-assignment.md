@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service)
+ - [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe)
 
 ## Details
 ### You will learn

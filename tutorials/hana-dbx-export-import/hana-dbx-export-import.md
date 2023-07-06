@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -25,9 +25,9 @@ The following steps will demonstrate a few ways to export and import data such a
 >A few differences between exporting and importing data and importing and exporting catalog objects are:  
 >
 >    - Data export and import works with one table or view
->    - Catalog export or import works with multiple objects at one time
->    - Catalog export or import includes the SQL to recreate the object
+>    - Catalog export or import works with more than one objects at one time
 >    - Catalog export or import can include additional objects such as functions and procedures
+>    - Catalog export or import includes the SQL to recreate the object
 
 
 ---
@@ -41,7 +41,7 @@ Methods to export tables or views
 
 | Method  | Version       | Target                 | Format(s)      |
 | ------- | -------------|------------------------| ----------------|
-| Export from SQL Console | All | local computer         | CSV      |
+| Export from SQL console | All | local computer         | CSV      |
 | [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
 | [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
 | [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
@@ -58,12 +58,12 @@ Methods to import into tables
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
 | [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
-The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL Console and the import data wizard.
+The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL console and the import data wizard.
 
 1. Enter the SQL statement below.
 
     ```SQL
-    SELECT * FROM HOTEL.MAINTENANCE;
+    SELECT * FROM MAINTENANCE;
     ```
 
     Left-click on the download toolbar item.
@@ -74,14 +74,14 @@ The following steps will attempt to demonstrate an export and import of data fro
 
     ![Download options](downloadOptions1.png)
 
-    >Note, there is a setting that controls the number of results displayed which may need to be adjusted for tables with larger results.
+    >There is a setting that controls the number of results displayed which may need to be adjusted for tables with larger results.
 
     >![Maximum rows to display setting](maxRows.png)
 
 2. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step.
 
     ```SQL
-    DELETE FROM HOTEL.MAINTENANCE;
+    DELETE FROM MAINTENANCE;
     ```
 
 3. Right-click on the maintenance table and choose **Import Data**.  
@@ -92,19 +92,23 @@ The following steps will attempt to demonstrate an export and import of data fro
 
     ![Choose file to import](importDataWizard2.png)
 
-    Note that header row in the `data.csv` file is used to set the initial values of the source column to database column mappings.
+    The header row in the `data.csv` file is used to set the initial values of the source column to database column mappings.
 
     ![Choose file to import](importDataWizard4.png)
+
+    Complete the wizard.
+
+    ![import succeeded](import-complete.png)
 
     After completing the wizard, the contents of the maintenance table should now be the same as it was before the previously executed delete statement.
 
 4. With SAP HANA, express edition, the following statements can be executed to export and import from a directory on the SAP HANA file system assuming that the directory exists and the user `hxeadm` has permission to access it.
 
     ```SQL
-    EXPORT INTO '/tmp/export/maintenance.csv' FROM HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW;
-    DELETE FROM HOTEL.MAINTENANCE;
+    EXPORT INTO '/tmp/export/maintenance.csv' FROM MAINTENANCE WITH COLUMN LIST IN FIRST ROW;
+    DELETE FROM MAINTENANCE;
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'system') set ('import_export', 'csv_import_path_filter') = '/tmp/export' WITH RECONFIGURE;
-    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
+    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
 
@@ -134,7 +138,7 @@ The following steps are for illustrative purposes only and are not meant to be f
     ```SQL
     EXPORT INTO CSV FILE
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
-    FROM HOTEL.MAINTENANCE
+    FROM MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW;
@@ -147,15 +151,15 @@ The following steps are for illustrative purposes only and are not meant to be f
     The wizard makes use of the import from statement.  An example is shown below:
 
     ```SQL
-    --DELETE FROM HOTEL.MAINTENANCE;
-    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
+    --DELETE FROM MAINTENANCE;
+    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 
 
 ### Use data lake Files for export and import (optional)
 
 
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  Note that this step requires a non trial / non free-tier SAP HANA data lake instance.
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
@@ -163,7 +167,7 @@ The following steps walk through the process of exporting to and importing data 
 
     ![Add Connection](addConnection.png)
 
-    The REST API endpoint can be copied from the instances actions menu in SAP HANA Cloud Central.
+    The REST API endpoint can be copied from the instances action menu in SAP HANA Cloud Central.
 
     ![Add data lake Files](add-data-lake-files.png)
 
@@ -219,7 +223,7 @@ The following steps walk through the process of exporting to and importing data 
     ALTER PSE HTTPS SET OWN CERTIFICATE
     '<Contents from client.key>
     <Contents from client.crt>
-    <Contents from ca.crt>'
+    <Contents from ca.crt>';
     --GRANT REFERENCES ON PSE HTTPS TO USER1;
     SELECT * FROM PSE_CERTIFICATES;
     ```
@@ -230,11 +234,11 @@ The following steps walk through the process of exporting to and importing data 
 
 
     ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
     ```
     You can now use the Database Credential to import/export data.
 
-5. Export the table `HOTEL.MAINTENANCE` into the data lake Files container.
+5. Export the table `MAINTENANCE` into the data lake Files container.
 
     ![Export to data lake Files](export-data-lake-files.png)
 
@@ -243,7 +247,7 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     EXPORT INTO CSV FILE
         'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
-    FROM HOTEL.MAINTENANCE
+    FROM MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW;
@@ -252,7 +256,7 @@ The following steps walk through the process of exporting to and importing data 
 6. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
 
     ```SQL
-    DELETE FROM HOTEL.MAINTENANCE;
+    DELETE FROM MAINTENANCE;
     ```
 
 7. Right-click on the maintenance table and choose **Import Data**.  
@@ -266,7 +270,11 @@ The following steps walk through the process of exporting to and importing data 
     The wizard makes use of the import from statement.  An example is shown below:
 
     ```SQL
-    IMPORT FROM CSV FILE 'hdlfs://example-file-container.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com/directory/data.csv' INTO HOTEL.MAINTENANCE WITH CREDENTIAL 'myCredential'
+    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
+    INTO MAINTENANCE WITH
+        CREDENTIAL 'DL_FILES'
+        COLUMN LIST IN FIRST ROW
+        FAIL ON INVALID DATA;
     ```
 
 
@@ -307,7 +315,7 @@ The following steps walk through the process of exporting to and importing data 
 
     Once complete, a JSON file will be downloaded that contains the `client_email` and `private_key` which will be used when accessing the bucket.
 
-8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL Console and opening the search and replace menu (Ctrl-F).
+8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL console and opening the search and replace menu (Ctrl-F).
 
     ![Remove line breaks](remove-line-breaks.png)
 
@@ -320,9 +328,12 @@ The following steps walk through the process of exporting to and importing data 
     Execute the following SQL to store the private key and service account as a credential in the database. Paste the service account email and private key as user and password.
 
     ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD' USING 'user=<client_email>;password=<private_key>';
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT'
+        PURPOSE 'GoogleCloud'
+        TYPE 'PASSWORD'
+        USING 'user=<client_email>;password=<private_key>';
     SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD';
+    --DROP CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'GoogleCloud' TYPE 'PASSWORD';
     ```
 
     ![Create Credential](createCredentialGCP.png)
@@ -390,18 +401,18 @@ The following steps walk through the process of exporting to and importing data 
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
 
-11. Run the following commands within the SQL Console to perform an export using a Google Cloud Storage bucket.
+11. Run the following commands within the SQL console to perform an export using a Google Cloud Storage bucket.
 
     There are two ways to use the export commands as shown below.
 
     ```SQL
     --Uses the previously stored credential
-    --EXPORT INTO PARQUET FILE 'gs://<bucket>/<objectKey>' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
-    EXPORT INTO PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' FROM HOTEL.MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
+    --EXPORT INTO PARQUET FILE 'gs://<bucket>/<objectKey>' FROM MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
+    EXPORT INTO PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' FROM MAINTENANCE WITH CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --EXPORT INTO PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' FROM HOTEL.MAINTENANCE;
-    EXPORT INTO PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEv...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' FROM HOTEL.MAINTENANCE;
+    --EXPORT INTO PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' FROM MAINTENANCE;
+    EXPORT INTO PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEv...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' FROM MAINTENANCE;
     ```
 
     >An alternative to the above SQL commands is to use the Export Data Wizard. The Wizard can be accessed by right-clicking a table or view and choosing **Export Data**. When using the export wizard, the "gs://" prefix is not needed when specifying the GCS Path.
@@ -416,24 +427,29 @@ The following steps walk through the process of exporting to and importing data 
 13. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
 
     ```SQL
-    DELETE FROM HOTEL.MAINTENANCE;
+    DELETE FROM MAINTENANCE;
     ```
 
 
-14. Run the following commands within the SQL Console to perform an import using a Google Cloud Storage bucket.
+14. Run the following commands within the SQL console to perform an import using a Google Cloud Storage bucket.
 
     ```SQL
     --Uses the previously stored credential
     --IMPORT FROM PARQUET FILE  'gs://<bucket>/<objectKey>' WITH CREDENTIAL 'GoogleCloud';
-    IMPORT FROM PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA CREDENTIAL 'GoogleCloud';
+    IMPORT FROM PARQUET FILE 'gs://hc-storage-bucket/maintenance.parquet' INTO MAINTENANCE WITH FAIL ON INVALID DATA CREDENTIAL 'GoogleCloud';
 
     --Uses the private key as part of the SQL statement
-    --IMPORT FROM PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
-    IMPORT FROM PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEvg...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
+    --IMPORT FROM PARQUET FILE 'gs://<client_email>:<private_key>@<bucket>/<object_id>' INTO MAINTENANCE WITH FAIL ON INVALID DATA;
+    IMPORT FROM PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEvg...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' INTO MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 
 For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 
+
+### Export and import with data lake Relational Engine (optional)
+An export and import wizard is also provided for data lake Relational Engine instances.  For tables or views, the export data wizard can be accessed by a context menu on the table or view that you wish to export data from or for tables, an import data context menu is available.
+
+Further details on the topic are available at [SAP HANA Cloud, Data Lake Load and Unload Management](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8942f1c84f2101594aad09c82c80aea/e77c96193a604e05ba198e424de2ed6c.html).
 
 ### Export and import schema or catalog objects
 
@@ -446,7 +462,7 @@ Methods to export catalog objects
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
 | [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
 | [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
-| [Export catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
+| [Export catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
 | [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
 | [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
@@ -465,15 +481,13 @@ Methods to import catalog objects
 
 > \*\* Max file size in archive is 8 GB (SAP Note [2907201](https://launchpad.support.sap.com/#/notes/2907201)).
 
-> Export and import using cloud storage from Amazon, Microsoft Azure, Google, and Alibaba Cloud is covered in the final step of this tutorial.
-
 Similar to the first section, the maintenance table will be exported and re-imported.  The export statement and the associated export catalog wizard have additional options, including the ability to include other schema objects such as functions and procedures as well as the option to include the SQL statements to recreate the objects.
 
-1. Right-click on the maintenance table and choose **Export Catalog Objects**.  
+1. Right-click on the instance `HC_HDB (USER1)` and choose **Export Catalog Objects**.  
 
     ![Open Export Catalog Objects Wizard](exportCatalogObjects.png)
 
-    Choose **Local Computer** for the export location, provide a name for the Local Archive, select an export format and press **Export**.
+    Choose **Local Computer** for the export location and provide a name for the Local Archive.  Click on **Add Catalog Objects** and search for the table **Maintenance**.  Select an export format such as CSV and press **Export**.
 
     ![Export Catalog Objects Wizard](exportCatalogWizard2.png)
 
@@ -481,30 +495,30 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Format Options](formatOptions.png)
 
-    Note that Binary Raw is the binary format for SAP HANA Cloud and Binary Data is the format option for SAP HANA as a Service and SAP HANA on-premise.
+    **Binary Raw** is the binary format for SAP HANA Cloud and **Binary Data** is the format option for SAP HANA as a Service and SAP HANA on-premise.
 
-2. Examine the exported file.  Notice that it contains the SQL to recreate the table as well as the data of the table.
+2. The archive file contains the SQL to recreate the table as well as the data of the table, as shown below.
 
     ![Exported file](targz.png)
 
 3. Enter the SQL statement below to drop the table.  It will be added back in the next sub-step.
 
     ```SQL
-    DROP TABLE HOTEL.MAINTENANCE;
+    DROP TABLE MAINTENANCE;
     ```
 
-3. Right-click on the tables folder and choose **Import Catalog**.  
+3. Right-click on the instance `HC_HDB (USER1)` and choose **Import Catalog**.  
 
     ![Open Import Data Wizard](importCatalogWizard.png)
 
-    Browse to the previously downloaded .tar.gz file and complete the wizard.
+    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired. 
 
     ![Choose file to import](importCatalogWizard2.png)
 
     The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
 
     ```SQL
-    SELECT * FROM HOTEL.MAINTENANCE;
+    SELECT * FROM MAINTENANCE;
     ```
 
     ![Import succeeded](import_success.png)
@@ -512,7 +526,6 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
 
 ### Use Azure cloud storage for exports and imports of catalog objects (optional)
-
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog operation.
 
@@ -547,9 +560,9 @@ The following steps walk through the process of using Microsoft Azure storage se
     Execute the following SQL to store the storage account and shared access signature (SAS) as a credential in the database. An example of `<storage_account_name>` is `danstestsa`.
 
     ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account_name>;password=<Blob_SAS_token>';
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD' USING 'user=<storage_account_name>;password=<Blob_SAS_token>';
     SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD';
+    --DROP CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'Azure' TYPE 'PASSWORD';
     ```
 
 7. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE. Open your SQL console within SAP HANA database explorer, and run the following commands to create a certificate.
@@ -602,6 +615,10 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 8. Start the export catalog wizard and export the maintenance table to the storage service.
 
+    ![Export Data Wizard](exportAzureStorage.png)
+
+    Alternatively, you can use a Secret Key as a Credential (optional).
+
     The Azure Path is of the format:
 
     `<Storage Account Name>:<generated shared access string>@<Container Name>/<File Name>`
@@ -609,10 +626,6 @@ The following steps walk through the process of using Microsoft Azure storage se
     An example string is shown below:
 
     `danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance`
-
-    ![Export Data Wizard](exportAzureStorage.png)
-
-    Alternatively, you can use a Secret Key as a Credential (optional).
 
     ![Secret Key Azure](secretKeyAzure.png)
 
@@ -627,13 +640,13 @@ The following steps walk through the process of using Microsoft Azure storage se
     The equivalent SQL statement is shown below:
 
     ```SQL
-    EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
+    EXPORT MAINTENANCE AS PARQUET INTO 'azure://dansblobcont/maintenance/' WITH CREDENTIAL 'Azure';'
     ```
 
 9. Enter the SQL statement below to drop the table.  It will be added back in the next step.
 
     ```SQL
-    DROP TABLE HOTEL.MAINTENANCE;
+    DROP TABLE MAINTENANCE;
     ```
 
 10. Import the table using the import catalog objects wizard.
@@ -645,7 +658,7 @@ The following steps walk through the process of using Microsoft Azure storage se
     The equivalent SQL statement is shown below:
 
     ```SQL
-    IMPORT HOTEL.MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
+    IMPORT MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
     ```
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
@@ -703,14 +716,13 @@ The following steps walk through the process of AWS S3 storage service as a targ
     Execute the following SQL to store the access key and secret key as a credential in the database.  
 
     ```SQL
-    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD' USING 'user=<access_key>;password=<secret_key>';
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD' USING 'user=<access_key>;password=<secret_key>';
     SELECT * FROM CREDENTIALS;
-    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD';
+    --DROP CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD';
     ```
 
     Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-    ![Create Credential](createAWSCredential.png)
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
@@ -789,15 +801,15 @@ The following steps walk through the process of AWS S3 storage service as a targ
     The equivalent SQL statement is shown below:
 
     ```SQL
-    --EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
-    EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
+    --EXPORT MAINTENANCE AS PARQUET INTO 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
+    EXPORT MAINTENANCE AS PARQUET INTO 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
     ```
 
     The previously stored credentials can be used for export using SQL:
 
     ```SQL
-    --EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
-    EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
+    --EXPORT MAINTENANCE AS PARQUET INTO 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
+    EXPORT MAINTENANCE AS PARQUET INTO 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
     ```    
 
     > An error regarding an invalid SSL certificate indicates an incorrect SSL certificate is being used.  Additionally, if MFA (Multi-factor Authentication) is enabled, then the export may fail, so ensure that MFA is disabled before exporting.
@@ -805,7 +817,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
 8. Enter the SQL statement below to drop the table. It will be added back in the next step.
 
     ```SQL
-    DROP TABLE HOTEL.MAINTENANCE;
+    DROP TABLE MAINTENANCE;
     ```
 
 9. Import the table using the import catalog objects wizard.
@@ -827,18 +839,20 @@ The following steps walk through the process of AWS S3 storage service as a targ
     The equivalent SQL statement is shown below:
 
     ```SQL
-    --IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
-    IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
+    --IMPORT MAINTENANCE AS PARQUET FROM 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
+    IMPORT MAINTENANCE AS PARQUET FROM 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
     ```    
 
     Alternatively, the previously stored credentials can be used for import:
 
     ```SQL
-    --EXPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
-    IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
+    --EXPORT MAINTENANCE AS PARQUET FROM 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
+    IMPORT MAINTENANCE AS PARQUET FROM 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
     ```    
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
+
+### Knowledge check
 
 Congratulations! You have imported and exported data and catalog objects.
 

@@ -2,14 +2,15 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-launchpad-service, software-product>sap-business-technology-platform, topic>mobile]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--standard-edition, software-product>sap-business-technology-platform, topic>mobile]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 
 ---
-
+## Prerequisites
+  - You already created a site & added some apps to it.
 
 # Access Your Launchpad Site with SAP Mobile Start
-<!-- description --> Access your SAP Launchpad service Site from your mobile device with the native SAP Mobile Start app.
+<!-- description --> Access your SAP Build Work Zone, standard edition Site from your mobile device with the native SAP Mobile Start app.
 
 ## You will learn
   - How to connect the SAP Mobile Start native app with your SAP Launchpad service site
@@ -42,7 +43,7 @@ primary_tag: software-product>sap-launchpad-service
 
     (If the option is not available make sure SAP Mobile Start is enabled in the Site Settings (Step 1), also refreshing the site might  be required for your changes to become active)
 
-    In this screen you can switch between two QR Codes via the toggle button:
+    In this screen you can select your device type (iOS or Android) and switch between the two QR Codes via the toggle button:
 
       1. **Install**:
       This QR-Code can be used to install the SAP Mobile Start app on your device. It's a direct link to the Apple app store page.
@@ -52,7 +53,7 @@ primary_tag: software-product>sap-launchpad-service
 
     ![QR Code Selection](launchpad-qr-codes.PNG)
 
-    (In the future it's planned to offer an option to have SAP Mobile Start deployed via MDM. With that, a specific site can be preconfigured and no QR-Code registration is needed.)
+    (**NOTE**: For the deployment to end-users it's possible to make use of Mobile Device Management (MDM). Administrators can deploy a managed app configuration via the MDM that contains site information. With that end-users can onboard without the need to scan a QR code. See the [documentation](https://help.sap.com/docs/SAP_MOBILE_START/386859cc981742f3b6bb31f7e0d8a168/952cb9e5188f44158f7bb995af272ce8.html) for further information.)
 
 
 
@@ -68,7 +69,7 @@ Use the Install QR-Code from Step 2 to install SAP Mobile Start on your Mobile D
 
 1.	Open the SAP Mobile Start app on your mobile device, press the **Scan** button and make sure to allow camera access.
 
-    (Below the scan button you will find the option to enter the demo mode. This will demonstrate how a fully configured launchpad site with the addition of SAP Task Center looks like.)
+    (Below the scan button you will find the option to enter the demo mode. This will demonstrate how a fully configured site with the addition of SAP Task Center looks like.)
 
 2.	Next, use your device camera to scan the **Register QR-Code** in the launchpad user settings from Step 2. If the scan succeeded, you can continue with the onboarding process.
 
@@ -90,11 +91,11 @@ Use the Install QR-Code from Step 2 to install SAP Mobile Start on your Mobile D
 ### Try the App
 
 
-    ![SAP Mobile Start Screens](mobile-start-navigation.PNG)
+  ![SAP Mobile Start Screens](mobile-start-navigation.PNG)
 
-1.	You can use the navigation icons on the bottom the move between the Start and the Application screen. The Start screen offers an overview for quick access to your most used apps. The Application screen lists all the Site's Groups and Apps.
+1.	You can use the navigation icons on the bottom the move between the Start and the Apps screen. The Start screen offers an overview for quick access to your most used apps. The Apps screen lists all the Groups and Apps available.
 
-2.  Both screens the Start & Application screen have the notification icon and the user (settings) icon. Use them to access the notification section or the Profile and Settings page.
+2.  Both screens the Start & Apps screen have the notification icon and the user (settings) icon. Use them to access the notification section or the Profile and Settings page.
 
 3.  Within the Application screen you can use the search bar to find specific applications.
 

@@ -2,13 +2,13 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-build-work-zone, topic>sapui5]
-primary_tag: software-product>sap-build-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition, topic>sapui5]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
 ---
 
 #  Integrate a UI5 Integration Card to Your SAP Build Work Zone, advanced edition
-<!-- description --> Add a custom UI5 integration card to your workpage in a workspace.
+<!-- description --> Add a custom UI5 integration card to your workspace.
 
 ## Prerequisites
  - You have deployed a UI5 integration card
@@ -17,7 +17,7 @@ author_name: Lindsay Bert
   -  How to make a deployed UI5 integration card available in SAP Build Work Zone, advanced edition and add it to your workpage
 
 ## Intro
-You've already deployed a UI5 integration card. Now in this tutorial, you'll enable it to make it available in your site and later add it to your workpage in a workspace.
+You've already deployed a UI5 integration card. In this tutorial, you'll enable it to make it available in your site and later add it to your workspace.
 
 
 ---
@@ -35,7 +35,12 @@ You've already deployed a UI5 integration card. Now in this tutorial, you'll ena
 
     <!-- border -->![Open Cards section](2-open-card-section.png)
 
-3. Scroll down to view the **Uploaded Cards** section.
+3. Search for your card.
+
+    <!-- border -->![Search for card](3-search-for-card.png)
+
+
+    Your card will display under the **Uploaded Cards** section.
 
     >If you don't see your deployed card, you may need to refresh the browser.
 
@@ -45,7 +50,7 @@ You've already deployed a UI5 integration card. Now in this tutorial, you'll ena
 
 The card is now enabled and can be added to the workpage in your workspace.
 
->In this step, for workshops, use your unique identifier `<your unique identifier>_Products by Vendor Card`.
+>In this step, for workshops, use your unique identifier `<your unique identifier>_Products by Category`.
 
 >You can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
 
@@ -55,11 +60,11 @@ The card is now enabled and can be added to the workpage in your workspace.
 
 Before you add the card to your workspace, let's configure one of the settings of the card.
 
-1. On the `Products by Vendor Card`, click **Configure**.
+1. On the `Products by Category Card`, click **Configure**.
 
     <!-- border -->![Click Configure](3a-click-configure.png)
 
-2. Under **General Settings**, change the **Maximum Items** to 2 and select the destination. If you're in a workshop, you can select the destination that you created:  `<your unique ID_ES5`>. Then click **Save changes**.
+2. Under **General Settings**, change the **Maximum Items** to 2 and select the destination. If you're in a workshop, you can select the destination that you created:  `<your unique ID_ES5`>. Then click **Save**.
 
     <!-- border -->![Change setting](3b-change-setting.png)
 
@@ -73,7 +78,7 @@ In the next step you'll add the card to your workpage in your workspace.
 ### Add your UI5 integration card to your workpage in your workspace
 
 
-1. Click the **Workspaces** menu and select `Employee Innovation Hackathon` to navigate to your workspace.
+1. Click the **Workspaces** menu and select `Sales Management` to navigate to your workspace.
 
     <!-- border -->![Access workspace](4-select-workspace.png)
 
@@ -82,27 +87,23 @@ In the next step you'll add the card to your workpage in your workspace.
 
     <!-- border -->![Open in edit mode](5-open-page-designer.png)
 
-3. Click the **+** below the **Forum** widget and above the **Feed** widget to add a new section to your workspace.
+3. Click **Add Widget**.
 
-    <!-- border -->![Add new row](6-add-new-row.png)
+    <!-- border -->![Add widget](6-add-widget.png)
 
-4. In the added section, click **Add Widget**.
+4. Click **Cards**.
 
-    <!-- border -->![Add widget](7-add-widget.png)
+    ![Click cards](7-click-cards.png)
 
-5. Click **Cards**.
-
-    ![Click cards](7a-click-cards.png)
-
-6. Select the `Products by Vendor Card` widget that you previously created. In a workshop, use your unique identifier `<your unique identifier>_Products by Vendor Card`.
+5. Select the `Products by Category Card` that you created. In a workshop, use your unique identifier `<your unique identifier>_Products by Category Card`.
 
     <!-- border -->![Add the card](8-select-card.png)
 
-7. In the **Add Widget** screen, click **Save**.
+6. In the **Add Widget** screen, click **Save**.
 
     <!-- border -->![Add card](9-add-card.png)
 
-The card you created was added to the workpage of your workspace.
+The card you created is added to the workpage of your workspace.
 
 
 Now let's add a title for the card.
@@ -121,7 +122,7 @@ Now let's add a title for the card.
 3. Design the **Text** widget as follows:
 
     |  :------------- | :-------------
-    | Text            | Type in the following: `Products of vendors sponsoring the hackathon, see what you can win!`.
+    | Text            | Type in the following: `Computer Systems - Best Sellers`.
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
@@ -135,6 +136,6 @@ Now let's add a title for the card.
 
     <!-- border -->![Publish workspace](12-publish.png)
 
-Your workspace should look like this - note that the card is only showing 2 out of 20 products because you configured it that way.
+Your workspace should look like this - note that the card is only showing 2 products because you configured it that way.
 
 <!-- border -->![Final workspace](13-final-workspace.png)

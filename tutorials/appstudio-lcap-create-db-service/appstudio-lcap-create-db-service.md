@@ -9,10 +9,10 @@ author_profile: https://github.com/raz-korn
 ---
 
 # Create a Data Model and Expose It as a Service
-<!-- description --> Create a capital expenditures data model and expose it via a service, using the low-code capabilities of SAP Business Application Studio.
+<!-- description --> Create a capital expenditures data model and expose it via a service, using the high productivity development capabilities of SAP Business Application Studio.
 
 ## Prerequisites
- - You have access to SAP Business Application Studio and created a Low-Code-Based Full-Stack Cloud Application dev space, as described in [Set Up SAP Business Application Studio for Low-Code Development in the Trial Environment](appstudio-lcap-onboarding-trial).
+ - You have access to SAP Business Application Studio and created a dev space for developing apps using high productivity tools, as described in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial).
 
 ## You will learn
 - How to create a project from scratch
@@ -26,43 +26,60 @@ author_profile: https://github.com/raz-korn
 
 ### Create a project
 
-1. Enter the **Dev Space** you created in [Set Up SAP Business Application Studio for Low-Code Development in the Trial Environment](appstudio-lcap-onboarding-trial).
+1. Enter the **Dev Space** you created in [Set Up SAP Business Application Studio for App Development in the Trial Environment](appstudio-lcap-onboarding-trial). 
 
-2. If no project exists in a dev space the **Create Project** dialog box opens. Enter the **Project Name**, for example, `CapitalExpenditures`, and click **Create**.
+2. Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
 
-    <!-- border -->![Create Project 1](BAS-Create-Project-2-.png)
-
-    If a project already exists in your dev space, you can create an additional project by selecting **Project -> Create** in the Home tab.
-
-    <!-- border -->![Create Project 2](BAS-Create-Project-1-.png)
-
-3. Wait for the homepage of SAP Business Application Studio for low-code development to load with the new project.
-
-    >Wait for the "We have finished installing all tools and templates for you, enjoy your work!" notification.
-
-    >Loading SAP Business Application Studio for low-code development may take some time, especially if it's the first time in a day.
+    >Loading SAP Business Application Studio may take some time, especially if it's the first time in a day.
 
     <!-- border -->![bas lcap loaded](BAS-Create-Project-4-.png)
 
     >Close the notification icon at the bottom of the screen (optional).
 
+3. If no project exists in your dev space you have to create a new project. To do so open the **Project Explorer**.
+
+    <!-- border -->![Project Explorer](BAS-Create-Project-2-1.png)
+
+4. From the Project Explorer select the button **Create Project**.
+
+    <!-- border -->![Create Project 1](BAS-Create-Project-2-2.png)
+
+5. On the right side a new page opens. Select **Generator Full-Stack Project (Productivity Toolkit)** and press the button **Start**.
+
+    <!-- border -->![Create Project 2](BAS-Create-Project-2-3.png)
+
+6. Enter the **Project Name**, for example, `CapitalExpenditures`, and click **Finish**.
+
+    <!-- border -->![Create Project 1](BAS-Create-Project-2-.png)
+
+7. If a project already exists in your dev space, you can create an additional project by selecting the **+** button in the **Project Explorer**.
+
+    <!-- border -->![Create Project 2](BAS-Create-Project-1-.png)
+
 
 ### Model your data - Entities
 
+1. To open the home tab please select the **Project Explorer** from the menu on the left.
 
-1. From the homepage, click the **+** of the **Data Models** tile to add a data model to your project.
+    <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-1.png)
+
+2. From the Project Explorer select the entry **Home**.
+
+    <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-2.png)
+
+3. From the homepage, click the **+** of the **Data Models** tile to add a data model to your project.
 
     <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-1-.png)
 
-2. Provide an **Entity Name** for the entity, for example, **`Capex`**.
+4. Provide an **Entity Name** for the entity, for example, **`Capex`**.
 
     <!-- border -->![bas lcap create entity](BAS-LCAP-Data-Model-2-.png)
 
-3. Click the **+** to add a property to the **`Capex`** entity.
+5. Click the **+** to add a property to the **`Capex`** entity.
 
     <!-- border -->![bas lcap create entity](BAS-LCAP-Data-Model-3-.png)
 
-4. Select the following:
+6. Select the following:
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -76,7 +93,7 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![bas lcap new property editor](BAS-LCAP-Data-Model-4-.png)
 
-5. Add the following property (click **+**). When done with adding the properties choose **Create**.
+7. Add the following property (click **+**). When done with adding the properties choose **Create**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -93,7 +110,7 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![bas lcap new entity](BAS-LCAP-Data-Model-6-.png)
 
-6. To add another data model to your project click the `Add Entity` button in the **Data Model Editor** tab.
+8. To add another data model to your project click the `Add Entity` button in the **Data Model Editor** tab.
 
     <!-- border -->![bas lcap add entity](BAS-LCAP-Data-Model-8-1.png)
 
@@ -103,15 +120,15 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![bas lcap open entity editor](BAS-LCAP-Data-Model-8-.png)
 
-7. Provide an **Entity Name** for the entity, for example, **Contractors**.
+9. Provide an **Entity Name** for the entity, for example, **Contractors**.
 
     <!-- border -->![bas lcap entity name](BAS-LCAP-Data-Model-9-.png)
 
-8. Change the **Property Name** of the **ID** property to **contractor**, and its **Property Type** to **Integer**.
+10. Change the **Property Name** of the **ID** property to **contractor**, and its **Property Type** to **Integer**.
 
     <!-- border -->![bas lcap edit property](BAS-LCAP-Data-Model-10-.png)
 
-9. Add the following property to the **Contractors** entity, and choose **Update**.
+11. Add the following property to the **Contractors** entity, and choose **Update**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -249,7 +266,7 @@ It is a common practice in software development to test run any change to an app
 
 To test that the service works well, that is, returns data when it is available in the data model, let's add sample data to your project. Sample data is a powerful tool as it allows you to (1) develop an app with no connectivity to a data source; (2) Debug your app.
 
-1. Go back to the browser tab with SAP Business Application Studio for low-code development, and click the **+** of the **Sample Data** tile.
+1. Go back to the browser tab with SAP Business Application Studio, and click the **+** of the **Sample Data** tile.
 
     <!-- border -->![bas lcap launch add sample data](BAS-LCAP-Add-Sample-Data-1-.png)
 

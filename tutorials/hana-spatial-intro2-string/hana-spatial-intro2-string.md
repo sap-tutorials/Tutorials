@@ -1,9 +1,11 @@
 ---
 parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 5
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 # Understand Strings in SAP HANA Spatial
 <!-- description --> A string ('a curve' in more general) is a spatial data type that connects points

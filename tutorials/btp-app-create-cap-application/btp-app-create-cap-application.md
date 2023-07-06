@@ -52,6 +52,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![VS Code](vscode.png)
 
+    > You might see some hidden files in your project in case you have previously customized your `Files: Exclude` settings in VS Code. More info in [Default settings](https://code.visualstudio.com/docs/getstarted/settings#_default-settings).
+
 6. In VS Code choose **Terminal** &rarr; **New Terminal** from its menu.
 
     A new terminal opens in the lower right part of the VS Code screen.
@@ -84,7 +86,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![CDS Watch](cdswatch.png)
 
-    The CAP server tells you that there is no model yet that it can serve. You add one in the next step.
+    The CAP server tells you that there is no model and no service definitions yet that it can serve. You add some in the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -201,7 +203,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     > - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/jsonview/kmpfgkgaimakokfhgdahhiaaiidiphco)
     > - [Safari](https://apps.apple.com/us/app/json-peep-for-safari/id1458969831?mt=12)
 
-And that's it. You now have a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
+And that's it. You now have a full blown OData service, which complies with the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
 > The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) with such checks.
 

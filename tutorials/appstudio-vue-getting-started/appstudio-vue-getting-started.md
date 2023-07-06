@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>html5, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, programming-tool>html5, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 ---
 
@@ -16,7 +16,7 @@ primary_tag: products>sap-business-application-studio
 ## You will learn
 - How to create a Vue application for SAP BTP, Cloud Foundry environment
 - How to test run the app locally in the dev space
-- How to integrate the app in an SAP launchpad
+- How to integrate the app in an SAP Build Work Zone, standard edition site
 
 ## Intro
 You'll build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `ZGWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo Gateway system.
@@ -54,11 +54,11 @@ You'll build an application that presents a list of suppliers from an on-premise
 ### Create Vue project
 
 
-1. From the **Welcome** tab, click **Start from template**.
+1. Wait for the "We have finished installing all tools and templates..." notification to appear, and then from the **Get Started** tab, click **Start from template**.
 
     <!-- border -->![run vue wizard](BAS-Vue-Wizard-1-.png)
 
-    >If the Welcome Page doesn't appear, from the menu bar, select **Help | Welcome**.
+    >If the Get Started Page doesn't appear, from the burger icon, select **Help | Get Started**.
 
     >The easiest way to develop a Vue app from scratch is to create it from a template. To continue developing an existing application, the best practice is to use Git source code management and clone the repository.
 
@@ -210,10 +210,6 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 
 13. Click **Expose and Open**.
 
-    >The command palette opens at the top-center of the SAP Business Application Studio window. You can optionally add a port description.
-
-    ><!-- border -->![Run app locally in the dev space](BAS-Vue-Run-App-Locally-in-Dev-Space-17-.png)
-
     >The application opens in a separate browser tab.
 
     ><!-- border -->![Run app locally in the dev space](BAS-Vue-Run-App-Locally-in-Dev-Space-18-.png)
@@ -283,7 +279,7 @@ The application runs on build artifacts. Therefore, using the **watch** command 
     <!-- border -->![modify the app](BAS-Vue-Modify-App-5-.png)
 
 
-### Prepare integration with SAP Launchpad service
+### Prepare integration with SAP Build Work Zone, standard edition
 
 
 1. In the **Explorer** view, choose **`VUEDEMO` > `businesspartners`**, and click the `manifest.json` file that you created with the template in a previous step. The **`manifest.json`** file opens in the **Code Editor**.
@@ -306,13 +302,12 @@ The application runs on build artifacts. Therefore, using the **watch** command 
                   "title": "Suppliers"
               }
           }
-      }
-    },
+      },
     ```
 
     <!-- border -->![preps for integration with launchpad](BAS-Vue-Launchpad-Settings-2-.png)
 
-    >Refer to [Add Content to the Launchpad](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/93aef99c934340c09bc95d9a1a7fbce9.html) for more information on the application attributes that are related to the SAP launchpad service.
+    >Refer to [Add Content to the Launchpad](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/93aef99c934340c09bc95d9a1a7fbce9.html) for more information on the application attributes that are related to SAP Build Work Zone, standard edition.
 
 
 
@@ -322,16 +317,18 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 1. Follow the [Build and Deploy Your SAP Fiori App to SAP Business Technology Platform](appstudio-fioriapps-mta-build-deploy) tutorial with the necessary adjustments.
 
 
-### Add your application to  Launchpad
+### Add your application to SAP Build Work Zone, standard edition
 
 
-1. Follow the [Set Up the SAP Launchpad Service](cp-portal-cloud-foundry-getting-started) tutorial to onboard yourself to the SAP Launchpad service.
+1. Follow the [Set Up the SAP Build Work Zone, standard edition Using a Trial Account](cp-portal-cloud-foundry-getting-started) tutorial to get started with SAP Build Work Zone, standard edition.
 
-2. Follow the [Create a Launchpad Site Using the SAP Launchpad Service](cp-portal-cloud-foundry-create-sitelaunchpad) tutorial to create a launchpad site where you will later add the Vue application.
+2. Follow the [Create a Site Using SAP Build Work Zone, standard edition](cp-portal-cloud-foundry-create-sitelaunchpad) tutorial to create a site where you will later add the Vue application.
 
-3. Follow the [Add a URL App to Your Launchpad Site](cp-portal-cloud-foundry-url-applaunchpad) tutorial to add your app to the launchpad site and run the app from within the launchpad. **Use the URL of the deployed application**.
+3. Follow the [Add a URL App to Your Site](cp-portal-cloud-foundry-url-applaunchpad) tutorial to add your app to the site and run the app from within the site. **Use the URL of the deployed application**.
 
-    >Removing the suffix of the application from the URL, such as "-0.0.1", will cause the launchpad to launch the latest deployed version of the app.
+    >Removing the suffix of the application from the URL, such as "-0.0.1", will cause the site to launch the latest deployed version of the app.
+
+    >In the **Navigation** tab obtain the **Semantic Object** and **action** from the `manifest.json`.
 
     <!-- border -->![flp add app](FLP-Add-URL-App-3-.png)
 
@@ -340,6 +337,6 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 
 Congratulations!
 
-You have completed the development of an SAP business application that uses the Vue JavaScript framework, using SAP Business Application Studio. You created the app using a wizard, test run the app locally in the dev space, and built, deployed, and ran the app on SAP BTP, Cloud Foundry environment. As an optional step, you included the app in your SAP launchpad.
+You have completed the development of an SAP business application that uses the Vue JavaScript framework, using SAP Business Application Studio. You created the app using a wizard, test run the app locally in the dev space, and built, deployed, and ran the app on SAP BTP, Cloud Foundry environment. As an optional step, you included the app in your SAP Build Work Zone, standard edition site.
 
 In this tutorial, you learned about high productivity tools that are available out-of-the-box in SAP Business Application Studio, including templates and wizards, the command palette, local run (Run Configurations), and more.

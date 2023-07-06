@@ -59,7 +59,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 4. Click **Create Dev Space**.
 
-    >For development of UI5 Integration Cards that integrate with SAP Work Zone, check the **Development Tools for SAP Work Zone extension** in the **Additional SAP Extensions** section.
+    >For development of UI5 Integration Cards that integrate with SAP Build Work Zone, check the **Development Tools for SAP Build Work Zone** extension in the **Additional SAP Extensions** section.
 
     <!-- border -->![Create Dev Space](AppStudio-Create-Dev-Space-Fiori-.png)
 

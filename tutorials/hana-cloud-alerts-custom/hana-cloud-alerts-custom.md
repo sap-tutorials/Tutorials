@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -29,14 +29,15 @@ An SAP Automation Pilot command will be created to check if any maintenance item
 ![scenario](scenario.png)
 
 >If you do not already have the `HOTEL.MAINTENANCE` table in an SAP HANA Cloud database, please create it now by following the first 2 steps in the [Create Database Objects with SAP HANA Database Explorer](hana-dbx-create-schema) tutorial.
-
+>
 >---
-
+>
 >If you do not have a subscription to the SAP Automation Pilot service, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) provides details on how to so.  
-
+>
 >---
+>
+>If you do not have an instance of the SAP Alert Notification service, see step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts).
 
->If you do not have an instance of the SAP Alert Notification service, step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) provides details on how to do so.
 
 ---
 
@@ -54,8 +55,8 @@ This step will create a catalog, an input, and a command in the SAP Automation P
     | Label | Value |
     | -------- | ----- |
     | Name | `CustNotif` |
-    | Display name | Custom Notifications |
-    | Description | A user catalog which will hold inputs and commands demonstrating how to perform a custom notification |
+    | Display name | `Custom Notifications` |
+    | Description | `A user catalog which will hold inputs and commands demonstrating how to perform a custom notification` |
 
 2. Create an input to store the connection details for an SAP HANA Cloud database.  
 
@@ -65,9 +66,9 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     | Label | Value |
     | -------- | ----- |
-    | Catalog | Custom Notifications |
+    | Catalog | `Custom Notifications` |
     | Name | `SAPHANADB` |
-    | Description | Contains the details to connect to a specific SAP HANA Cloud database |
+    | Description | `Contains the details to connect to a specific SAP HANA Cloud database` |
 
 3. Add the following keys to the input.
 
@@ -75,12 +76,12 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     | Key Name | Type | Sensitive | Description | Value |
     | -------- | ----- | --- | --- | --- |
-    | host | String | no | Host value for a SAP HANA Cloud database | Copy the SQL Endpoint from SAP HANA Cloud Central and strip off :443 |
-    | port | String | no | Port value for a SAP HANA Cloud database | 443 |
-    | user | String | no | The user ID to connect the database | USER1 |
-    | password | String | yes | The password to connect the database | Password1 |
+    | host | String | no | Host value for a SAP HANA Cloud database | *Copy the SQL Endpoint from SAP HANA Cloud Central and remove :443* |
+    | port | String | no | Port value for a SAP HANA Cloud database | `443` |
+    | user | String | no | The user ID to connect the database | `USER1` |
+    | password | String | yes | The password to connect the database | `Password1` |
 
-    >Storing values in an input enables the values to be reused across different commands and if a value needs to be updated, it only has to be updated in one place.
+    >Storing values in an input enables the values to be reused across different commands. If a value needs to be updated, it only has to be updated in one place.
 
 4. Create a command.
 
@@ -90,9 +91,9 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     | Label | Value |
     | -------- | ----- |
-    | Catalog | Custom Notifications |
+    | Catalog | `Custom Notifications` |
     | Name | `CheckMaintenanceItems` |
-    | Description | Perform a check to see if there are any unassigned maintenance items |
+    | Description | `Perform a check to see if there are any unassigned maintenance items` |
 
 5. In the newly created command, select input and add an [additional value](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/f70c599222084a13a13cbd69263d3f44.html) which is the `SAPHANADB` input.
 
@@ -103,7 +104,7 @@ This step will create a catalog, an input, and a command in the SAP Automation P
     | Label | Value |
     | -------- | ----- |
     | Alias | `scriptInput` |
-    | Value Type | Input |
+    | Value Type | `Input` |
     | Input | `SAPHANADB` |
 
     >An alternative method of passing parameters to the command uses the input keys in the contract section.  This is shown in step 4.
@@ -117,15 +118,15 @@ This step will create a catalog, an input, and a command in the SAP Automation P
     | Label | Value |
     | -------- | ----- |
     | Name | `checkResult` |
-    | Type | string |
-    | Sensitive | No |    
-    | Description | JSON string of the result |
+    | Type | `string` |
+    | Sensitive | `No` |    
+    | Description | `JSON string of the result` |
 
 7. Under Configuration, add an executor.  
 
     ![Add executor](add-executor.png)
 
-    Click on Here and specify the values below.
+    Click on **Here** and specify the values below.
 
     ![Add an executor](query-db.png)
 
@@ -133,11 +134,11 @@ This step will create a catalog, an input, and a command in the SAP Automation P
     | -------- | ----- |
     | Command | `scripts-sapcp:ExecuteScript:2` |
     | Alias | `QueryDB` |
-    | `Automap` Parameters | `true` |
+    | Automap Parameters | `true` |
 
     > :2 indicates that this is version 2 of the command.
 
-    > `Automap` parameters is not used in this tutorial so its value can be enabled or disabled.
+    > `Automap parameters` is not used in this tutorial, so its value can be enabled or disabled.
 
 8. Select `QueryDB` and then press the edit parameters button.
 
@@ -175,11 +176,11 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     ![Output value](manual-trigger-command-hello.png)
 
-    >A quick way to return to the command after executing it is to on the link shown below.
+    >A quick way to return to the command after executing it is to click on the link shown below.
 
     >![Return to command](return-to-command.png)
 
-At this point, a command has been created and executed.  In the next 2 steps, two different techniques of executing SQL against an SAP HANA Cloud database will be shown.  
+At this point, a command has been created and executed.  In the next two steps, two different techniques of executing SQL against an SAP HANA Cloud database will be shown.  
 
 
 ### Perform a query using the ExecuteHanaCloudSqlStatement command
@@ -199,7 +200,7 @@ This step will add an additional executor to the command that can connect to a S
     | -------- | ----- |
     | Command | `sql-sapcp:ExecuteHanaCloudSqlStatement:1` |
     | Alias | `SQLStatement` |
-    | `Automap` Parameters | `true` |
+    | Automap Parameters | `true` |
 
 2. Select `SQLStatement` and then press the edit parameters button.
 
@@ -221,9 +222,9 @@ This step will add an additional executor to the command that can connect to a S
 
     | Key | Value |
     | -------- | ----- |
-    | Type | Basic Authentication |
-    | User | $(.scriptInput.user) |
-    | Password | $(.scriptInput.password) |
+    | Type | `Basic Authentication` |
+    | User | `$(.scriptInput.user)` |
+    | Password | `$(.scriptInput.password)` |
 
     Notice that the user or password inputs provide autocompletion after `$(.` is entered.
 
@@ -235,11 +236,11 @@ This step will add an additional executor to the command that can connect to a S
 
     | Key | Value |
     | -------- | ----- |
-    | Result Row Format: | Object |
+    | Result Row Format: | `Object` |
     | Result Transformer | `toArray[0]` |
 
 
-6. Select `QueryDB` and then press the edit parameters button.
+6. Select `QueryDB`. Then press the edit parameters button.
 
     ![edit QueryDB](edit-querydb.png)
 
@@ -257,7 +258,7 @@ This step will add an additional executor to the command that can connect to a S
     print(rows)
     ```
 
-    Under STDIN, specify `$(.SQLStatement.output.result)` so that the output of the previous step can be accessed in the Python code.
+    Under STDIN, specify `$(.scriptInput.password)` so that the output of the previous step can be accessed in the Python code.
 
     ![STDIN](stdin.png)
 
@@ -270,14 +271,14 @@ This step will add an additional executor to the command that can connect to a S
 
     ![Output value](manual-trigger-command-sql.png)
 
-In the above step, it was demonstrated how the provided [SQL Statement](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/024ff1ff1c46465f838c6faf655a9f0a.html) command can be used.  It's output was passed into a Python command where the result could be further processed.  In the next step, an example is shown how to execute SQL statements directly in the Python command.  
+The above step demonstrates how the provided [SQL Statement](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/024ff1ff1c46465f838c6faf655a9f0a.html) command can be used. Its output was passed into a Python command, where the result could be further processed. The next step is an example to execute SQL statements directly in the Python command.   
 
 
 
 ### Perform a query using hdbcli in a Python script
 
 
-This step will demonstrate how SQL queries can be made directly in Python rather than using a separate executor
+This step will demonstrate how SQL queries can be made directly in Python rather than using a separate executor.
 
 1. Optionally delete the executor `SQLStatement`.
 
@@ -353,7 +354,7 @@ This step will demonstrate how SQL queries can be made directly in Python rather
 A second executer will be added in this step.  It will take the output returned from `QueryDB` and forward it to the SAP Alert Notification Service.  
 
 
-1. In the SAP Alert Notification Service, create a basic service key.  The service key will provide the URL and credentials for the SAP Automation Pilot to send notifications to the SAP Alert Notification Service.
+1. In the SAP Alert Notification Service, create a basic service key named `BasicANSServiceKey`.  The service key will provide the URL and credentials for the SAP Automation Pilot to send notifications to the SAP Alert Notification Service.
 
     ![Create an ANS service key](create-service-key.png)
 
@@ -371,9 +372,9 @@ A second executer will be added in this step.  It will take the output returned 
 
     | Label | Value |
     | -------- | ----- |
-    | Catalog | Custom Notifications |
+    | Catalog | `Custom Notifications` |
     | Name | `ANSUserInput` |
-    | Description | Basic credentials (`client_id` and `secret_key`) used to access the SAP Automation Pilot |
+    | Description | `Basic credentials (client_id and secret_key) used to access the SAP Automation Pilot` |
 
 3. Add two keys to the input.
 
@@ -407,7 +408,7 @@ A second executer will be added in this step.  It will take the output returned 
     | ----- | ----- |
     | Command | `monitoring-sapcp:SendAlertNotificationServiceEvent:1` |
     | Alias | `SendNotification` |
-    | `Automap` Parameters | `true` |
+    | Automap Parameters | `true` |
 
 6. Edit the parameters of the just added executor.
 
@@ -419,14 +420,14 @@ A second executer will be added in this step.  It will take the output returned 
 
     | Label | Value |
     | ----- | ----- |
-    | data | $(.QueryDB.output.output[0]) |
-    | password | $(.execution.input.ANSClientSecret) |
-    | `url`  | value from ANS service key + `/cf/producer/v1/resource-events` |
-    | user | $(.execution.input.ANSClientID) |
+    | data | `$(.QueryDB.output.output[0])` |
+    | password | `$(.execution.input.ANSClientSecret)` |
+    | url  | *value from ANS service key* `/cf/producer/v1/resource-events` |
+    | user | `$(.execution.input.ANSClientID)` |
 
 7. Trigger the command which will fail.   Additional inputs are not needed.
 
-    ![trigger the command](trigger.png)
+    ![trigger the command](manual-trigger-command.png)
 
     Examine the reason for the failure.  
 
@@ -436,7 +437,7 @@ A second executer will be added in this step.  It will take the output returned 
 
 8. Edit the parameters of the `QueryDB` executor.
 
-    Replace the script with the content below which will generate a JSON string that is in the correct format for the SAP Alert Notification Service producer API.  The address value will need to be updated to reflect your SAP HANA Cloud instance.
+    Replace the script with the content below. This will generate a JSON string in the correct format for the SAP Alert Notification Service producer API.  
 
     ```Python
     #!/usr/bin/env python3
@@ -495,11 +496,12 @@ The following instructions use the SAP Alert Notification Service to send an ema
     | Label | Value |
     | ----- | ----- |
     | Name | `Unassigned-Maintenance-Items` |
-    | Condition | `eventType is Equal To Unassigned_Maint_EVENT` |
+    | Condition | `eventType` is Equal To `Unassigned_Maint_EVENT` |
+    | Description | `There are items in the table HOTEL.MAINTENANCE that are not assigned.` |  
 
     ![create condition details](create-condition-details.png)
 
-    >A further condition could be added to only send an email when the severity equals WARNING.  When the severity is INFO, there were no unassigned maintenance items.  
+    >A further condition could be added to send an email only when the severity equals WARNING.  When the severity is INFO, there were no unassigned maintenance items.  
 
     >---
 
@@ -521,7 +523,7 @@ The following instructions use the SAP Alert Notification Service to send an ema
 
     ![email action details](create-action-email-details.png)
 
-     Scroll to the Advanced Action Properties section.
+     Scroll to the Additional Properties section.
 
     ![advanced action details](create-action-email-details-advanced.png)
 
@@ -529,11 +531,11 @@ The following instructions use the SAP Alert Notification Service to send an ema
 
     | Label | Value |
     | ----- | ----- |
-    | Email Address | your email address |
+    | Email Address | *your email address* |
     | Subject Template | `{severity} {eventType}` |
     | Payload Template | `Body: {subject}` |
 
-5. A confirmation token will be sent to the email address.  Click on the provided link or copy that value and use it to confirm the action as shown in the next sub-step.
+5. A confirmation token will be sent to the email address.  Click on the provided link or copy confirmation token and use it to confirm the action as shown in the next sub-step.
 
     ![email with confirmation token](ans-sub-action-type-email-confirm0.png)
 
@@ -582,7 +584,7 @@ In this step, the command will be scheduled to run once a week.
     | -------- | ----- |
     | Command | `CheckMaintenanceItems` |
     | Schedule | `Weekly`|
-    | Days | `Monday`|
+    | Weekdays | `Monday`|
     | Hours | `12`|
     | Minutes | `0`|
 
@@ -593,6 +595,8 @@ In this step, the command will be scheduled to run once a week.
 2. Provided commands such as `StopHanaCloudInstance` and `StartHanaCloudIntance` can also be scheduled perhaps to shut down and restart a development SAP HANA Cloud instance on weekends.  The `StopHanaCloudInstance` command is shown below.
 
     ![stop HANA Cloud command](automation-pilot.png)
+
+### Knowledge check
 
 Congratulations! You have now used the SAP Automation Pilot to schedule a query against an SAP HANA Cloud database and to send a notification that reflects the result of the query.
 

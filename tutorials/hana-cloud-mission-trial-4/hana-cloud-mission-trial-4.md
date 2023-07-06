@@ -3,25 +3,27 @@ parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
-time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
-primary_tag: products>sap-hana-cloud
+time: 10
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
-# Create Users and Manage Roles and Privileges
-<!-- description --> Learn how to create users and assign roles and privileges in SAP HANA Cloud, SAP HANA database using SAP HANA Cockpit or SQL statements.
+# Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database
+<!-- description --> To get started with SAP HANA Cloud, SAP HANA database, you will need to use a few different tools. Learn here what you can use them for.
 
 ## Prerequisites
-- [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2).
-- If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 
 
 ## You will learn
-- The basics about the role-based security model in SAP HANA Cloud, SAP HANA database
-- How to create users in SAP HANA cockpit
-- How to assign roles in SAP HANA cockpit
-- How to create users, and assign roles and privileges using SQL statements in SAP HANA Database Explorer
+- How to use SAP HANA Cloud Central
+- How to access SAP HANA cockpit
+- How to access SAP HANA database explorer
+- How to access SAP Business Application Studio
+- How to obtain the SQL Endpoint of your instance
+
+
 
 ## Intro
 >
@@ -31,176 +33,294 @@ primary_tag: products>sap-hana-cloud
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using an SAP HANA Cloud trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
-
-4.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create users and manage roles and privileges**
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	Query the database using SQL statements
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	Create a calculation view
-
-9.	Grant access to Calculation Views
-
-In this tutorial, you will learn how to create users and assign roles and privileges in SAP HANA Cloud, SAP HANA database using SAP HANA Cockpit or SQL statements.
+In this tutorial, you will get to know the tools you need when interacting with your SAP HANA database in SAP HANA Cloud.
 
 ---
 
-### Understand roles and privileges
+### Get to know SAP HANA Cloud Central
 
 
-SAP HANA Cloud, SAP HANA database defines user permissions and privileges using a **role-based security model**.
+SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud instances. Here you can provision new instances, scale your existing instances, deal with alerts and issues in existing instances, and more.
 
-Roles and privileges can be granted to users or revoked from users. A role is a set of privileges that can, as a group, be assigned to a user. Then, as the role's privileges change, the user's privileges change accordingly. Roles can be broken down as follows:
+**How to open SAP HANA Cloud Central**
 
--	**User-Defined Roles** are a custom collection, often created to group privileges and tasks
--	**System Roles** are build-in and automatically created with a new database
+-	In SAP BTP cockpit, open SAP HANA Cloud Central under Instances and Subscriptions.
 
-A privilege provides the ability to perform an operation on the system. A permission, on the other hand, is that ability in the given environment. A user may not have permission to perform a task if they have the privilege, but not on the currently acted on object. Privileges are broken down as follows:
+    ![BTP Manage SAP HANA Cloud](hcc-app.png)
 
--	**System privileges** give you the right to perform the action
--	**Object-level privileges** restrict your right to perform the action to the specified objects, on which the privilege is granted.
+-	SAP HANA Cloud Central will open in a new tab, where you can manage this instance.
 
-When a new object is created, the owner can be defined, otherwise, the creator becomes the owner. This gives privileges to modify the structure of the table and grant other privileges to other database users.
+**What you can do in SAP HANA Cloud Central**
 
-Ownership of a table is not sufficient to load the table with data. The user must also have `INSERT` permission on the table.
+-	*Get an overview of all SAP HANA Cloud instances in a subaccount*
+
+-	*Create SAP HANA Cloud instances*
+
+-	*Find an instance using the instance ID*
+
+-	*Check the status of an instance*
+
+-	*Review notifications*
+
+-	*Check the memory, compute, and storage consumption*
+
+-	*Start and stop instances*
+
+-	*Manage and delete instances*
+
+-	*Open the SAP HANA database instance in SAP HANA cockpit and SAP HANA database explorer*
+
+-	*Open the SAP HANA Cloud, data lake instance in SAP HANA database explorer*
+
+-   *View alerts in the Alerts tab*
+
+-   *Run queries in the SQL console tab*
+
+
+**How to find your instances**
+
+-	In SAP HANA Cloud Central you can see all your instances. If you want to manage and maintain multiple instances, you can use the filters and search options on the top center area of the screen. Use **Adapt Filters** to modify the types of filters displayed.   
+
+    ![HCC filters](hcc-filters.png)
+
+
+**Manage your instances**
+
+-	You can open many options by clicking on the **three dots** under the **Actions** column to each instance on the list. This includes options to manage configurations, start or stop the instance, or delete it. From this menu, you can also open the other tools you can use with your instances, such as SAP HANA database explorer.
+
+-	One of the most important options you can get is the **SQL Endpoint** of your instance. To do so, click **Copy SQL Endpoint**. You will need this for multiple tasks, such as connecting to other systems.
+
+    ![HCC SQL Endpoint](hcc-sqlend.png)
+
+To learn about more options to create and manage instances with SAP HANA Cloud Central, you can refer to the [**SAP HANA Cloud Administration with SAP HANA Cloud Central Guide**](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/LATEST/en-US/48e1b509c9494d61a6f90e7eaa6f225b.html).
 
 
 
 
-### Create users and roles and manage privileges
+
+### Get to know SAP HANA cockpit
+
+SAP HANA cockpit is a tool that can be used to **monitor and manage SAP HANA databases**. Through the SAP HANA cockpit, for example, it is possible to monitor the amount of CPU and storage that is being used in your SAP HANA Cloud instance. Based on this information, you can make important decisions on how to manage your storage and optimize performance.
+
+Another important feature of the SAP HANA cockpit is **User Management**, where you can create customized access roles and assign them to new users that should access the SAP HANA Cloud instance.
+
+Key functionality from the SAP HANA cockpit is now being included in SAP HANA Cloud Central.
+
+> **Two cockpits?**
+>
+> SAP HANA cockpit and SAP BTP Cockpit have similar names but are different tools for different purposes:
+>
+> - **SAP BTP Cockpit** is where you can globally manage instances of different SAP HANA Cloud components and your account, but it also contains many other cloud services.
+>
+> - **SAP HANA cockpit** is specific to SAP HANA Cloud, SAP HANA databases and is used to only monitor and manage SAP HANA databases in SAP HANA Cloud.    
+
+**What you can do in SAP HANA cockpit**
+
+In SAP HANA cockpit, you can monitor…
+
+-	*overall database health*
+
+-	*status and resource usage of individual database services*
+
+-	*database performance across a range of key performance indicators related to memory, disk, and CPU usage*
+
+-	*comparative memory utilization of column tables*
+
+-	*memory statistics of the components of database services*
+
+-	*alerts occurring in the database to analyze patterns of occurrence*
+
+Furthermore, you can administer and manage…
+
+-	*Security settings*
+
+-	*Database users and roles*
+
+-	*Replication services*
+
+-	*Performance improvements*
+
+**How to open SAP HANA cockpit**
+
+1.	To open the SAP HANA cockpit, go to SAP HANA Cloud Central.
+
+2.	Click on the row of the instance you want to view additional details for.
+
+    ![Cockpit functionality within HANA Cloud Central](cockpit-hcc.png)
+
+    If this is the first time you are accessing a database instance, you will need to **Choose Authentication** and enter the credentials of your DBADMIN user.
+
+    ![Choose authentication](choose-auth.png)
+
+    >Alternatively, you can access the SAP HANA cockpit by clicking on the **three dots** in the **Actions** column. Then, click on **Open in SAP HANA Cockpit**.
+    >
+    >![HCC Open HANA Cockpit](hcc-open-cockpit.png)
+    >
+    >SAP HANA cockpit will open on a new tab.
+    >
+    >![HANA Cockpit Overview](cockpit-db-overview.png)
+
+You can check out the [technical documentation](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/6a42679ed8574fb79e94f3e03e6d57bf.html)  on all details about SAP HANA cockpit.
 
 
-Before you add users to an instance, you should create user roles that fit your needs. You can leverage some of the default user roles, edit them, or create completely customized ones.
 
-There are two ways of creating roles you need to know: First, you can use the SAP HANA cockpit and use the user interface there to create and edit roles. Secondly, you can create roles in the SQL console of the SAP HANA Database Explorer.
+### Get to know the SAP HANA database explorer
 
-In this step, you can find instructions on both of these options. Click on **SAP HANA Cockpit** or **SAP HANA Database Explorer** under the headline of this step to select the option you prefer.
+SAP HANA database explorer allows you to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. You also have access to the SQL console.
 
-[OPTION BEGIN [SAP HANA Cockpit]]
+>**Note**: The SQL console can now be accessed directly in HANA Cloud Central by clicking on the SQL console tab.
+>
+>![SQL console tab](sql-console-tab.png)
+>
+>After connecting to a database instance, you can execute SQL queries.
+>
+>![SQL console UI from HANA Cloud Central](sql-console-ui.png)
+>
+>Learn more about how to use the SQL console in HANA Cloud Central by visiting [this tutorial](hana-dbx-hcc).
 
-**Create users and roles in SAP HANA Cockpit**
 
-1.	Open SAP HANA cockpit for your instance from SAP BTP cockpit or SAP HANA Cloud Central.
+**What you can do in SAP HANA database explorer**
 
-    > If this is the first time you are opening the SAP HANA cockpit, you will need to insert the initial database username and the instance password.
+![Generic DBX](ss-06-database-explorer-generic.png)
 
-2.	In SAP HANA cockpit, select the **Security** menu item on the top left-hand side of the screen.
+The SAP HANA database explorer offers a graphical interface and the SQL console, allowing you to freely access and manage your data.
 
-    <!-- border -->![HANA cockpit overview security menu](ss-01-HANA-cockpit-overview-security-menu.png)
 
-3.	Next, under User & Role Management, click on **Role Management** to get started.
+In SAP HANA database explorer, you can:
 
-    <!-- border -->![HANA cockpit Role Management](ss-02-HANA-cockpit-role-management.png)
+-	*Browse the database catalog*
 
-4.	On this screen, you can see a list of all existing user roles on the left-hand side of the screen. If you click on one of them, you will see the details of this role on the right-hand side of the screen. Clicking on one of the roles allows you to edit them, for example, you can assign System, Object and Analytic Privileges and more.
+-	*Execute SQL statements*
 
-    <!-- border -->![HANA cockpit Role Management submenu](ss-03-HANA-cockpit-role-mgmt-submenu.jpg)
+-	*Debug stored procedures*
 
-5.	To create a new user role, however, click on the **plus icon** on the top left-hand side of the screen.
+-	*Add, remove, or manage remote sources*
 
-    <!-- border -->![Plus icon](ss-04-plus-icon.png)
+-	*Import, and export data*
 
-6.	This opens the role creation wizard on the right-hand side of the screen. After specifying your new role, click on **Create** at the bottom right corner of the screen.
+-	*View diagnostic files*
 
-    <!-- border -->![HANA cockpit security create role](ss-05-HANA-cockpit-security-create-role.png)
+If you want to view, add, or manage any of the catalog items, right click on the item and choose from the available options.
 
-7.	Now that you created the role, it's time to assign privileges to it. Click on **Edit** at the top right corner when viewing your new role. You have a few options here. First, you can add some of the existing roles into this one, combining the privileges into one single role.
+An important part of the SAP HANA database explorer is the **Catalog** browser. Each database on the SAP HANA database explorer has its own catalog that allows you to view data, execute SQL commands, and manage remote sources, among other tasks.
 
-    <!-- border -->![HANA cockpit security add privileges](ss-06-HANA-cockpit-security-add-privileges.jpg)
+![Database Explorer Catalog](ss-07-database-explorer-catalog.png)
 
-8.	Next, you can select individual privileges, be it system, object, or analytic privileges. For more technical details on creating roles and deciding on privileges, please see our [technical documentation here](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/LATEST/en-US/dec8d273bb571014b4c2b771d3e0f166.html).
+**How to open SAP HANA database explorer**
 
-9.	Just click on each of these categories. If you want to add anything, first click on **Edit** on the right-hand side of the screen. Next, click on **Add** and select the privileges.
+1.	Open SAP HANA Cloud Central.
 
-10.	On this screen, you can also see which users already are assigned to this role or whether this role is being used by any other roles.
+2.	In the row of the SAP HANA Cloud database instance you want to open in SAP HANA database explorer, click on the **three dots** in the **Actions** column.
 
-    *Your first big step is done! Now it's time to create individual users.*
+3.	Then, click on **Open in SAP HANA database explorer**.
 
-11.	To get started, click on **Role Management** on the very top center of the screen.
+    ![HCC Open DBX](hcc-open-dbx.png)
 
-12.	Select **User Management** from the pop-up.
+4.	The SAP HANA database explorer will open on a new tab. If this is the first time you are accessing it, you will need to enter the credentials of your DBADMIN user.
 
-13.	This screen works just like the previous one, so click on the **plus icon** to add a new user.
+> In this mission, you will use the SAP HANA database explorer for many tasks, so we recommend you bookmark it for easy access.
 
-    <!-- border -->![HANA cockpit security user mgmt](ss-07-HANA-cockpit-security-usermgmt.jpg)
+For more information on how to use the SAP HANA database explorer, you can also check out the tutorial group [Get Started with the SAP HANA database explorer](group.hana-cloud-get-started) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
 
-14.	Next, you can choose between creating a user or creating a restricted user. To know more about what that means, please [click here](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/b3db382e906646849e227156bd4e0c6e.html).
 
-15.	You can follow the steps on our technical documentation to create each user and make decisions about the roles, privileges and authorizations to give them: [Creating a Database User](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/0c27278700ea47f9944db7f1b569e7dd.html).
+
+
+### Get to know SAP Business Application Studio
+
+
+SAP Business Application Studio is a development environment available for users with SAP HANA Cloud, SAP HANA database. There, you can create your development projects and model your data, including calculation views. This is also the tool you can use to build custom applications that connect and make use of your SAP HANA Cloud databases.
+
+Using SAP Business Application Studio is not strictly necessary to use your trial instance, but if you would like to use calculation views and create applications it is strongly recommended. In this mission, you will learn to use it.
+
+**What you can do in SAP Business Application Studio**
+
+The SAP Business Application Studio provides tools specific to building business applications within the SAP ecosystem, covering the end-to-end development cycle. You can:
+
+-	*Create development spaces*
+
+-	*Clone an existing project*
+
+-	*Create a new project using a template*
+
+-	*Use editors for SAP-specific technologies*
+
+-	*Test your application while consuming services from remote sources*
+
+-	*Build and deploy you application as a multi-target application*  
+
+
+> To use SAP Business Application Studio, you need be subscribed to this service within the SAP BTP Cockpit. You must also have Cloud Foundry enabled to add the SAP Business Application Studio entitlement to your trial account.
+>
+> If you are using a *trial account*, you can subscribe automatically via the **quick tool access**.
+>
+> If you are **not** using a trial account or you have added SAP HANA Cloud to an existing SAP BTP trial, you need to **subscribe manually**.
+>
+> Select the option that applies to you by clicking on the options below the step title.
+
+[OPTION BEGIN [Quick tool access]]
+
+**Quick tool access in trial**
+
+1.	Go to the [SAP BTP Cockpit trial home page](https://account.hanatrial.ondemand.com/trial/#/home/trial).
+
+    ![Trial Home Page Quick Access BAS](ss-10-Trial-home-page-quick-access-BAS.png)
+
+2.	After logging in, click on the **SAP Business Application Studio** button under the **Quick Tool Access** area.
+
+5.	A new tab will open with SAP Business Application Studio.
+
+6.	Click **OK** to accept the privacy statement if this is your first time accessing SAP Business Application Studio.
+
+7.	We recommend that you bookmark this URL so you can easily return to the SAP Business Application Studio.
+
+    > You can learn more about the SAP Business Application Studio by visiting the documentation [here](https://help.sap.com/docs/bas/sap-business-application-studio/what-is-sap-business-application-studio).
 
 [OPTION END]
-[OPTION BEGIN [SAP HANA Database Explorer]]
+[OPTION BEGIN [Subscribe manually]]
 
-**Create users and roles in SAP HANA Database Explorer**
+**Manually subscribe to SAP Business Application Studio**
 
-To use SQL statements in the SAP HANA Database Explorer to create users, roles and grant privileges, your current user must have the `USERGROUP OPERATOR` privilege for the user group they are in.
+1.	Navigate to your **Subaccount**.
 
-> If you are using the `DBADMIN` user for this mission, you already have this privilege.
+2.	Click on **Service Marketplace** on the right side of the screen.
 
-1.	Open your instance in SAP HANA Database Explorer from SAP BTP cockpit or SAP HANA Cloud Central.
+    ![BTP Marketplace](ss-11-BTP-marketplace.png)
 
-2.	Right click on your database connection in the catalog and select **Open SQL Console**.
+3.	Scroll down or use the search bar to find **SAP Business Application Studio**.
 
-3.	To create a user, you can use this simplified statement. Instead of the `<placeholders>`, enter your information to this statement, delete the `< >` characters and run the statement. The username must be unique in the database and the password must contain lower case, upper case, digit, and special characters.
+4.	On the SAP Business Application Studio tile, click on the **three dots** and select **Create** to add a subscription. If you can see the option **Go to Application**, you are already subscribed.
 
-```
-CREATE USER <username> PASSWORD "<password>";
-```
+    ![Add BAS in Marketplace](ss-12-add-BAS-marketplace.png)
 
-> Please note that this statement is simplified for an easy start, you have many more options to create the user the way you need it. For example, you can choose different authentication options, validity specifications, optional user parameter options or specify users to be restricted.
+5.  Click on **Users**.
 
-To grant this user roles and privileges, you can use the `GRANT` statement. To use this statement to grant a certain privilege, you must have the privilege and permissions required to grant this privilege.
+    ![Users](users.png)
 
-The `GRANT` statement can also be used to grant privileges to roles.
+     Select the user that will be using the Business Application Studio and add the role collection **`Business_Application_Studio_Developer`**.
 
-This is the generic structure to use the `GRANT` statement for granting privileges on a certain schema or object to a user:
+     ![Assign role collection](role-collection.png)
 
-```SQL
-GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>
-```
+6.	Open the SAP Business Application Studio.
 
-For example, to grant the SELECT privilege for the schema SFLIGHT to a user, you would adjust the statement as follows:
+    ![Open BAS](start-bas.png)
 
-```SQL
-GRANT SELECT ON SCHEMA SFLIGHT TO <user_name>
-```
 
-When granting roles to users, the statement needs to be adjusted as follows:
-```SQL
-GRANT <role_name> TO <user_name>
-```
+7.	Click on **OK** to accept the privacy statement if this is your first time accessing SAP Business Application Studio.
 
-To allow a user to grant a privilege to other users themselves, you need to add `WITH GRANT OPTION` to the end of the statement. For roles and system privileges, you need to add `WITH ADMIN OPTION` to the statement.
+8.	We recommend that you bookmark this URL so you can easily return to the SAP Business Application Studio.
 
-> You can find all the details about syntax elements and all available privileges to grant in the [technical documentation here](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/LATEST/en-US/20f674e1751910148a8b990d33efbdc5.html).
+    > You can learn more about SAP Business Application Studio [here](https://help.sap.com/docs/bas/sap-business-application-studio/what-is-sap-business-application-studio).
 
 [OPTION END]
 
 Well done!
 
-You have completed the fourth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA cockpit and the SAP HANA Database Explorer.
-
-You now know all the basics to start working with our sample data and help Alex gain business insights about their company **Best Run Travel**.
-
-
-Learn in the next tutorial how to import sample data to your SAP HANA Cloud, SAP HANA database.
+You have completed the third tutorial of this mission! Now you know how to access the tools you need to make the best use of your SAP HANA Cloud, SAP HANA database instances. Learn in the next tutorial how to import data into your SAP HANA Cloud database.
 
 
 
 
-
-### Test yourself
+### Knowledge Check
 
 
 

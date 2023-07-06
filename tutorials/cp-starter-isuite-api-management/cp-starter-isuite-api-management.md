@@ -49,9 +49,11 @@ In this step, you copy the endpoint address of the integration flow.
 
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Choose **Design** > **APIs** > **Create** to create an API.
+1. Choose **Settings** > **APIs** to provision the API Management capability. This provisioning might take a few seconds to complete. After the provisioning is complete, refresh your page.
 
-2. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
+2. Choose **Design** > **APIs** > **Create** to create an API.
+
+3. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
 >**IMPORTANT** : Paste only the endpoint URL till **`/http/products`** Otherwise, the scenario will not run appropriately.
 
     |  Parameter    | Settings
@@ -65,33 +67,33 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Select **Create**.
 
-3. On the landing page, choose **Resources** tab and then **Add**.
+4. On the landing page, choose **Resources** tab and then **Add**.
 
     <!-- border -->![Add resources](2-5-create-api-resources.png)
 
-4. In field **Tag** enter **`Product Details`**, and in the field **Path Prefix** enter **`/details`**.  
+5. In field **Tag** enter **`Product Details`**, and in the field **Path Prefix** enter **`/details`**.  
 
     <!-- border -->![Add details](2-6-add-resources.png)
 
-5. Under **Operations**, delete all tabs except the **POST** tab and choose **OK**.
+6. Under **Operations**, delete all tabs except the **POST** tab and choose **OK**.
 
     <!-- border -->![Add operations](2-7-save-resources.png)
 
     The API Resource is displayed.
 
-6. Choose **Deploy** to create and activate the API Proxy for your integration flow.
+7. Choose **Deploy** to create and activate the API Proxy for your integration flow.
 
     <!-- border -->![Deploy](009.png)
 
-7. Choose the **POST** operation to display more details on the API. A default API definition in Open API specification format is also generated.
+8. Choose the **POST** operation to display more details on the API. A default API definition in Open API specification format is also generated.
 
-8. To update the generated API definition in Open API format, choose **Edit > Edit in API Designer**.
+9. To update the generated API definition in Open API format, choose **Edit > Edit in API Designer**.
 
     <!-- border -->![Edit API designer](010.png)
 
     The API designer is opened.
 
-9. In the editable section on the right part of the screen, make the following changes.
+10. In the editable section on the right part of the screen, make the following changes.
 
     Change **Payload** to **`productIdentifier`** and add a row as shown in the following screenshot.
 
@@ -103,13 +105,13 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Choose **Save**.
 
-10. Choose **`RequestProductDetails`** and then the **Resources** tab.
+11. Choose **`RequestProductDetails`** and then the **Resources** tab.
 
     Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     <!-- border -->![Resources Tab API Changes](014.png)
 
-11. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
+12. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
 
     <!-- border -->![Error message](015.png)
 

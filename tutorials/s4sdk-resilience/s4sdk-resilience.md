@@ -23,7 +23,7 @@ Consider the following situation: you are developing a cloud application to prov
 
 However, cloud applications, possibly spanned across multiple services, are inherently complex. So it is safe to assume that something, somewhere will fail at some point in time. For example a call to your database might fail and cause one part of your application to fail. If other parts of your application rely on the part that has failed, these parts will fail as well. So a single failure might cascade through the whole system and break it. This is especially critical for multi-tenancy applications, where a single instance of your application serves multiple customers. A typical S/4HANA multi-tenancy application involves many downstream services, such as on-premise S/4HANA ERP systems.
 
-Let's look at a concrete example: Suppose you have 30 systems your cloud application is dependent on and each system has a "perfect" availability of 99.99%. This means each service is unavailable for 4.32 minutes each month (43200 min * (1 – 0.9999) = 4.32 min).
+Look at a concrete example: Suppose you have 30 systems your cloud application is dependent on and each system has a "perfect" availability of 99.99%. This means each service is unavailable for 4.32 minutes each month (43200 min * (1 – 0.9999) = 4.32 min).
 
 Now assume failures are cascading, so one service being unavailable means the whole application becomes unavailable. Given the equation used above, the situation now looks like this:
 
@@ -37,7 +37,7 @@ In order to avoid such scenarios, you need to equip applications with the abilit
 ### Resilience4j
 
 
-The SAP Cloud SDK now builds upon the `Resilience4j` library in order to provide resilience for your cloud applications. In previous versions 2.x the `Hystrix` library was used, which has been in maintenance mode for some time now.
+The SAP Cloud SDK builds upon the `Resilience4j` library in order to provide resilience for your cloud applications.
 
 `Resilience4j` comes with many modules to protect your application from failures. The most important ones are timeouts, bulkheads, and circuit breakers.
 
@@ -47,7 +47,7 @@ The SAP Cloud SDK now builds upon the `Resilience4j` library in order to provide
 
 - **Circuit Breakers:** `Resilience4j` uses the circuit breaker pattern to determine whether a remote service is currently available. Breakers are closed by default. If a remote service call fails too many times, `Resilience4j` will open/trip the breaker. This means that any further calls that should be made to the same remote service are automatically stopped. `Resilience4j` will periodically check if the service is available again, and close the open breaker again accordingly. For more information on the circuit breaker pattern, check [this article by Martin Fowler](https://martinfowler.com/bliki/CircuitBreaker.html).
 
-Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable you can still provide some useful result, e.g. by serving cached data.
+Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable you can still provide some useful result, like by serving cached data.
 
 If you want to gain a deeper understanding of the inner workings, checkout the [`Resilience4j` User Guide] (https://resilience4j.readme.io).
 
@@ -57,7 +57,7 @@ If you want to gain a deeper understanding of the inner workings, checkout the [
 
 Now that you know why resilience is important, it's finally time to introduce it into your application. In the last tutorial you created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, you have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
 
-At the same time you will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that starting with version 3 of the SAP Cloud SDK, a separate class is no longer required to implement resilience. You could have also added resilience directly to the existing `BusinessPartnerServlet` class.
+At the same time you will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that a separate class is not required to implement resilience, it can directly be added to the existing `BusinessPartnerServlet` class.
 
 So first create the following class:
 
@@ -155,7 +155,7 @@ public class GetBusinessPartnersCommand {
 
 To use the `ResilienceDecorator` you need at least two things:
 
-1. The code you want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, the example simply takes the VDM-based code that calls the OData service from the previous tutorial, and puts it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable`, etc.), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here `executeSupplier` is used with a method reference to the VDM-based code.
+1. The code you want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, the example simply takes the VDM-based code that calls the OData service from the previous tutorial, and puts it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable` and others), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here `executeSupplier` is used with a method reference to the VDM-based code.
 
 2. An instance of `ResilienceConfiguration` with identifier parameter set. Here the example uses the class reference, but a string identifier can also be used. Besides the mandatory identifier parameter, the SAP Cloud SDK comes with a default resilience configuration, so you don't need to perform any other configuration on your own. In most cases the default configuration will suffice. However, if you need to change the resilience configuration, you can find more information on this topic in [SAP Cloud SDK Javadoc](https://help.sap.com/doc/ae45330c443b42c5a54bde85dd70aec9/1.0/en-US/com/sap/cloud/sdk/cloudplatform/resilience/ResilienceConfiguration.html)
 
@@ -238,46 +238,46 @@ Thanks to your new `GetBusinessPartnersCommand`, you can now simply create a new
 
 There is one thing you need to address in order to properly test your code: you need to provide your tests with an ERP endpoint.
 
-Now let's adapt the code in your integration test to check, if your fallback is working correctly:
+Now adapt the code in your integration test to check, if your fallback is working correctly:
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.module.jsv.JsonSchemaValidator;
-import io.vavr.control.Try;
+import static io.restassured.RestAssured.when;
+
+import java.net.URL;
+
 import org.hamcrest.Matchers;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.net.URI;
-import java.net.URL;
-
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.testutil.MockDestination;
-import com.sap.cloud.sdk.testutil.MockUtil;
 
-import static io.restassured.RestAssured.when;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import io.vavr.control.Try;
 
-@RunWith(Arquillian.class)
-public class BusinessPartnerServletTest {
-    private static final MockUtil mockUtil = new MockUtil();
-    private static final JsonSchemaValidator jsonValidator_List = JsonSchemaValidator
-            .matchesJsonSchemaInClasspath("businesspartners-schema.json");
+@RunWith( Arquillian.class )
+public class BusinessPartnerServletTest
+{
+    private static final JsonSchemaValidator jsonValidator_List =
+        JsonSchemaValidator.matchesJsonSchemaInClasspath("businesspartners-schema.json");
 
     private static final String DESTINATION_NAME = "MyErpSystem";
-    private static final Destination dummyDestination = DefaultDestination.builder().property("name", DESTINATION_NAME).property("URL", "foo").build();
+    private static final Destination dummyDestination =
+        DefaultDestination.builder().property("name", DESTINATION_NAME).property("URL", "foo").build();
 
     @ArquillianResource
     private URL baseUrl;
@@ -285,11 +285,6 @@ public class BusinessPartnerServletTest {
     @Deployment
     public static WebArchive createDeployment() {
         return TestUtil.createDeployment(BusinessPartnerServlet.class);
-    }
-
-    @BeforeClass
-    public static void beforeClass() {
-        mockUtil.mockDefaults();
     }
 
     @Before
@@ -300,48 +295,36 @@ public class BusinessPartnerServletTest {
     @Test
     public void testService() {
         // TODO: insert your service URL down below
-        mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
+        DestinationAccessor
+            .appendDestinationLoader(
+                new DefaultDestinationLoader()
+                    .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
         // HTTP GET response OK, JSON header and valid schema
         when()
-                .get("/businesspartners")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body(jsonValidator_List);
-    }
-
-    @Test
-    public void testWithFallback() {
-        // Simulate a failed VDM call with non-existent destination
-        DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
-
-        // Assure an empty list is returned as fallback
-        when()
-                .get("/businesspartners")
-                .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body("", Matchers.hasSize(0));
-    }
-}
-```
-
-Make sure to replace the URL in line 58 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
-
->If you are using a service other than the SAP Business Hub sandbox service or the mock server (see steps 1 and 10 of the [previous tutorial](s4sdk-odata-service-cloud-foundry)), i.e., you stored your system information and your credentials in the `systems.yml` and `credentials.yml` files, change your test code like this:
-```Java
-@Test
-public void testService() {
-    mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
-    // HTTP GET response OK, JSON header and valid schema
-    when()
             .get("/businesspartners")
             .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
             .body(jsonValidator_List);
+    }
+
+    @Test
+    public void testWithFallback() {
+        // Simulate a failed VDM call with non-existent destination
+        DestinationAccessor.setLoader(( n, o ) -> Try.success(dummyDestination));
+
+        // Assure an empty list is returned as fallback
+        when()
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body("", Matchers.hasSize(0));
+    }
 }
 ```
+
+Make sure to replace the URL in line 58 with the one of your service (for example `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
 With `testWithFallback()` you added a test to test your resilience. The example intentionally provides a destination (localhost) that does not provide the called OData service in order to make the command fail. Since you implemented a fallback for your command that returns an empty list, you can assert that the response actually contains an empty list.
 
