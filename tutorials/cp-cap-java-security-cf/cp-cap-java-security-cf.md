@@ -126,7 +126,7 @@ Open your application in the browser. Using the links on the welcome page you ca
 
 To test the secure endpoints of your application, you need a REST client like [Postman](https://www.postman.com/downloads) that supports OAuth 2.0 authentication with type **Authorization Code**.
 
-> Postman may behave differently, when you use SSO to log in to SAP BTP or to a custom identity provider. The following steps assume that you use a Trial account without SSO with the default SAP identity provider.
+> Postman may behave differently, when you use SSO to log in to SAP BTP or a custom identity provider. The following steps assume that you use a Trial account without SSO with the default SAP identity provider.
 
 1. To use the `AdminService`, you need to assign yourself to the role collection `BookStore_Administrators` that was defined in the `xs-security.json` file. To assign this role collection to your user you need to navigate to the **Security** **&rarr;** **Role Collections** section of your SAP BTP subaccount. Select the `BookStore_Administrators` role collection and choose **Edit**. Enter your email address in the **ID** and **E-Mail** field and choose **Save**.
 
