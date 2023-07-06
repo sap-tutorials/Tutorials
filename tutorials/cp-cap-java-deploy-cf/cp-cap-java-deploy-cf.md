@@ -45,7 +45,7 @@ When deploying an application to Cloud Foundry, you can use a manifest to descri
         - bookstore-hana
     ```
 
-The manifest describes the name of the application, the path where the application archive can be found and runtime type. In this tutorial Java Buildpack is used to deploy Spring Boot application from a single JAR archive using Java 17 JRE.
+The manifest describes the name of the application, the path where the application archive can be found and runtime type. In this tutorial Java Buildpack is used to deploy Spring Boot application from a single JAR archive using Java 17.
 
 The route of the application, meaning the HTTP endpoint where it will be available, will be randomized to prevent clashes with other application routes.
 
