@@ -62,7 +62,7 @@ In this step, you can learn how to sign up for the trial of SAP HANA Cloud. If y
 
     >It is important to note that the first time you access your trial, you will need to choose your identity provider (you can choose the default). Additionally, if you have two-factor authentication enabled, you will have to enter the security token that is sent to you based on the method of authentication you have chosen.
 
-    ![Screenshot Trial signup3](ss-03-Trial-Signup3.png)
+    ![Screenshot Trial signup3](welcome-email-new.png)
 
 Congratulations, you have successfully signed up for the SAP HANA Cloud trial! Learn how you can start using SAP HANA Cloud in the [next tutorial](hana-cloud-mission-trial-2).
 

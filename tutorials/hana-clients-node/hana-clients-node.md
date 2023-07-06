@@ -31,7 +31,7 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v18.15.0.
+If Node.js is installed, the currently installed version is returned, such as v18.16.0.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -77,6 +77,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     cd %HOMEPATH%\HANAClientsTutorial\node
     ```
 
+
     ```Shell (Linux or Mac)
     mkdir $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
@@ -100,13 +101,13 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-
+    >
     >```Shell (Linux or Mac)
     export HDB_NODE_PLATFORM_CLEAN=1
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-
+    >
     >---
 
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
@@ -182,7 +183,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     pico nodeQuery.js
     ```
 
-2. Add the code below to `nodeQuery.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQuery.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
     ```JavaScript
     'use strict';
@@ -300,7 +301,8 @@ Connection pooling can improve performance when making multiple, brief connectio
     pico nodeQueryConnectionPool.js
     ```
 
-2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+
 
     ```JavaScript
     'use strict';
@@ -412,7 +414,8 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     pico nodeQueryCallback.js
     ```
 
-2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+
 
     ```JavaScript
     'use strict';
@@ -513,7 +516,8 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     pico nodeQueryPromise.js
     ```
 
-2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+ 
 
     ```JavaScript
     'use strict';
@@ -606,7 +610,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
-1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
+1. If required, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `HANAClientsTutorial` folder.
 
@@ -686,7 +690,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     If the TypeScript is installed, a version value will be returned.
 
-    ![typescript version](tsc-version.png)
+    ![typescript version](typescript-version.png)
 
     If TypeScript is not installed, it can be installed globally with the below command.
 
@@ -704,7 +708,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     npm info @types/node
     ```
 
-    ![node and module versions](node-and-module-list.png)
+    ![node and module versions](npm-list-new.png)
 
     Install the @types/node module which provides type definitions for Node.js.
 
@@ -725,15 +729,15 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     tsc nodeQueryTS.ts
     ```
 
-    ![Typescript error](tsc-error.png)
+    ![Typescript error](tsc-year-error-new.png)
 
 7. Open Visual Studio Code.  Notice that it also shows the error.
 
-    ![TypeScript error shown in Visual Studio Code](error-in-vs-code.png)
+    ![TypeScript error shown in Visual Studio Code](vscode-node-year-error.png)
 
 8. On a new line enter `connection.s` and notice that code completion is provided for the client interface methods.
 
-    ![Code completion of client interface methods](code-completion.png)
+    ![Code completion of client interface methods](set-client-info.png)
 
     Further details on using TypeScript within Visual Studio Code can be found at [TypeScript tutorial in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-tutorial).
 
