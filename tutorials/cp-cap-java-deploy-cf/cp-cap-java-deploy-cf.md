@@ -51,7 +51,7 @@ The route of the application, meaning the HTTP endpoint where it will be availab
 
 The name of SAP HANA service instance you created in the previous tutorial is used here under the services section (`bookstore-hana`).
 
-When your application will be deployed to SAP BTP, it will use this database to store data instead of the in-memory database. In the previous tutorial you added the additional Java system property `-Dspring-boot.run.profiles=cloud` to your application to ensure that. When deploying the application to Cloud Foundry this is via environment variable `SPRING_PROFILES_ACTIVE`.
+When your application will be deployed to SAP BTP, it will use this database to store data instead of the in-memory database. In the previous tutorial you added the additional Java system property `-Dspring-boot.run.profiles=cloud` to your application to ensure that. When deploying the application to Cloud Foundry this is set with environment variable `SPRING_PROFILES_ACTIVE`.
 
 
 ### Enable application for Cloud Foundry
