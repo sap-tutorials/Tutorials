@@ -173,7 +173,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     --Further privileges will be granted later to the tables, views, functions, and procedures that are created below
     GRANT SET ANY CUSTOMER PUBLIC OPTION, READ FILE TO HOTEL_ADMIN, HOTEL_READER;
-    GRANT EXECUTE ON sp_list_directory, sp_real_list_directory TO HOTEL_ADMIN, HOTEL_READER;
+    GRANT EXECUTE ON sp_list_directory TO HOTEL_ADMIN, HOTEL_READER;
+    GRANT EXECUTE ON sp_real_list_directory TO HOTEL_ADMIN, HOTEL_READER;
 
     GRANT ROLE HOTEL_ADMIN TO USER1;
     GRANT ROLE HOTEL_READER TO USER2;
@@ -186,7 +187,7 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     GRANT SELECT ON SCHEMA HOTEL TO HOTEL_READER;
     
     SET SCHEMA HOTEL;
-
+    SELECT CURRENT SCHEMA;
     --Create the objects in the HOTEL schema
     CREATE TABLE HOTEL(
         HNO INTEGER PRIMARY KEY,
@@ -530,7 +531,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/7ca3f60902f3473296cb309533d89210.html) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
-    >Autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
+    >Autocommit is set to on in the SQL console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL console if they are surrounded with begin and end or if autocommit is set to off.
     >
     ```SQL
     begin
