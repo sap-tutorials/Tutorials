@@ -135,7 +135,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico Program.cs
     ```
 
-5.  Replace the entire contents of `Program.cs` with the code below:  
+5.  Replace all content of `Program.cs` with the code below. Be sure to update values where necessary and save the file when finished.
 
     ```C#
     using System;
@@ -148,7 +148,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    using (var conn = new HanaConnection("Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+                    using (var conn = new HanaConnection("Server=999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
 
                     // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                     // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
@@ -212,9 +212,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 ### Debug the application
 
 
-1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
+1. Open Visual Studio Code. If needed, download Visual Studio Code [here](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 

@@ -38,9 +38,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ![cf cli version](new-cf-version.png)  
 
 
-    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
+    To install the CLI, see [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to your path environment variable.
 
-    >If a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
+    >If a different version of CLI is installed, for instance version 8, then use `cf8 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
 
     ```Shell
     xs -v
@@ -72,10 +72,11 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     >If you are an SAP employee, you may need to enter your password followed by a two-factor authentication passcode.
 
-    The API URL, if requested, can be found in the [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
+    The API URL, if requested, can be found in the Overview page in [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
 
     ![api URL](api.png)  
-    .
+    
+    **XS advanced**
 
     ```Shell
     xs login
@@ -95,6 +96,8 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     cf apps
     cf buildpacks
     ```
+
+    **XS advanced**
 
     ```Shell
     xs target
@@ -141,7 +144,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     pico server.js
     ```
 
-4. Add the code below to `server.js`.  
+4. Add the code below to `server.js`. Be sure to update the `serverNode` value and user credentials if necessary.
 
     ```JavaScript    
     var express = require('express');
@@ -201,7 +204,6 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ```
 
     ![running locally](local.png)
-
 
 
 ### Deploy and test in SAP BTP or XS Advanced
@@ -273,7 +275,8 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 3.  Test the app.  
 
     ![cf app](cfApp.png)  
-    .
+    
+    **XS advanced**
 
     ![xs app](xsApp.png)
 
@@ -324,15 +327,17 @@ For additional details see:
     cf env nodeQueryCF
     cf logs nodeQueryCF
     ```
+
     > Alternatively, the trace settings can be specified in the application code.
 
     Refresh the browser and notice that the trace information can now be seen.
 
     ![trace](trace.png)
 
+
 5.  The deployed app can also be managed in the associated cockpit.
 
-    SAP BTP Cockpit  
+    **SAP BTP Cockpit**
 
     ![SAP BTP cockpit](cpCockpit0.png)
 
@@ -340,7 +345,7 @@ For additional details see:
 
     ![SAP BTP cockpit](cpCockpit.png)
 
-    SAP HANA XS Advanced Cockpit
+    **SAP HANA XS Advanced Cockpit**
 
     ![XS advanced cockpit](xsaCockpit.png)
 
@@ -352,7 +357,7 @@ For additional details see:
 
 The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
 
-1. Follow step 3 at [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
+1. Follow step 3 in [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
 
 2. In the project created in step 2, perform the following steps to bind a connectivity service instance to the application.
 
@@ -368,7 +373,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
         ![connectivity service](connectivity-service2.png)
 
-    * Examine the values of the connectivity service.  In particular, the indicated values below are used for the `proxyPort` and `proxyHostname` values in the server.js file and will be to access the proxy service which enables communication with the cloud connector.
+    * Examine the values of the connectivity service.  The indicated values below are used for the `proxyPort` and `proxyHostname` values in the `server.js` file. It will be to access the proxy service which enables communication with the cloud connector.
 
         ![connectivity service](connectivity-service3.png)
 
@@ -403,7 +408,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
     npm install axios
     ```
 
-5. Open the file named `server.js` in an editor and replace its contents.
+5. Open the file named `server.js` in an editor and replace the contents where necessary.
 
     ```Shell (Microsoft Windows)
     notepad server.js

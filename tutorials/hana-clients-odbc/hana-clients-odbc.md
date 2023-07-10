@@ -116,7 +116,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
     sslValidateCertificate = true
 
     [HANA_Express]
-    servernode = linux-bj70:39015
+    servernode = linux-bj71:39015
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     databasename = HXE
     ```
