@@ -127,7 +127,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm list
     ```
 
-    ![npm list](npm-list.png)
+    ![npm list](npm-list-new.png)
 
 > Some Tips
 
@@ -659,7 +659,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     var connOptions: hana.ConnectionOptions = {
         serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
-        //serverNode: '123456-7890-400a-8bbd-41097dfd15ae.hna0.prod-us10.hanacloud.ondemand.com:443',
+        //serverNode: '123456-7890-400a-8bbd-41097dfd15ae.hana0.prod-us10.hanacloud.ondemand.com:443',
         //UID: 'USER1',
         //PWD: 'Password1'
     };

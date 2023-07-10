@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
 - How to create and debug a Python application that queries a SAP HANA database
 
 ## Intro
-In the 2020 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2020#most-popular-technologies) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
+In the 2023 Stack Overflow's annual developer survey, Python ranked 3rd in the [Most popular technologies](https://survey.stackoverflow.co/2023/#most-popular-technologies-language) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
 
 The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
@@ -80,7 +80,9 @@ Run the following command to download and install the SAP HANA client for Python
 pip install hdbcli
 ```
 
->If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below. Ensure that the filename is correct in the install command below because it might change depending on the version of `hdbcli` that you have.
+>If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below. 
+>
+>Ensure that the filename is correct in the install command below because it might change depending on the version of `hdbcli` that you have.
 >
 > ```Shell
 > cd C:\SAP\hdbclient
@@ -229,9 +231,9 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
-1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
+1. Open Visual Studio Code. If needed, download the application [here](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, add the tutorial folder to the workspace by choosing **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 

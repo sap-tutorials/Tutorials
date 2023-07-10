@@ -53,7 +53,7 @@ Before proceeding, ensure that basic connectivity is working with a user name an
 
 2. Go to HANA Cloud Central and open a SQL console for your SAP HANA instance.
    
-   ![Open SQL console in HCC](open-sqlcons.png)
+    ![Open SQL console in HCC](open-sqlcons.png)
 
     Execute the following SQL to create a user to attempt to connect with.
 
@@ -69,7 +69,8 @@ Before proceeding, ensure that basic connectivity is working with a user name an
     hdbsql -j -A -sslprovider mscrypto -u TESTUSER -p Password1 -Z traceFile=stdout -Z traceOptions=debug=warning,flush=on -n xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.hana.trial-us10.hanacloud.ondemand.com:443 "SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;"
     ```
 
-    ```Shell (Linux or macOS)
+
+    ```Shell (Linux or Mac)
     hdbsql -j -A -sslprovider openssl -u TESTUSER -p Password1 -Z traceFile=stdout -Z traceOptions=debug=warning,flush=on -n xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.hana.trial-us10.hanacloud.ondemand.com:443 "SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;"
     ```
 
@@ -77,11 +78,11 @@ Before proceeding, ensure that basic connectivity is working with a user name an
 
 
 ### Create a demo certificate authority
-Perform the following steps in your selected environment.  The result will be a directory named certs containing a private key and a public certificate for a new certificate authority.  In a non demo environment, a trusted certification authority could instead be used.  
+Perform the following steps in your selected environment.  The result will be a directory named `certs` containing a private key and a public certificate for a new certificate authority.  In a non-demo environment, a trusted certification authority could be used instead.  
 
 Any environment with SAP HANA Client installed and that contains a recent OpenSSL version should work.  
  
->This tutorial used a Git Bash shell on Microsoft Windows.  On Microsoft Windows, a forward slash may need to be entered twice such as `-subj "//CN=DEMO_ROOT_CERT_AUTH"`.
+>This tutorial used a Git Bash shell on Microsoft Windows.  On Windows, a forward slash may need to be entered twice, such as `-subj "//CN=DEMO_ROOT_CERT_AUTH"`.
 
 1. Verify that OpenSSL is installed.
 
@@ -124,10 +125,11 @@ Any environment with SAP HANA Client installed and that contains a recent OpenSS
 
 2. Create a client certificate that has been signed by the certificate authority.
 
-    ```Linux or Mac
+    ```Shell (Linux or Mac)
     openssl x509 -req -in test_x509_user.csr -CA demorootca.crt -CAkey demorootca.key -CAcreateserial -days 1 -out test_x509_user.crt
     ls -al
     ```
+
 
     ```Windows
     openssl x509 -req -in test_x509_user.csr -CA demorootca.crt -CAkey demorootca.key -CAcreateserial -days 1 -out test_x509_user.crt
@@ -143,7 +145,7 @@ Any environment with SAP HANA Client installed and that contains a recent OpenSS
     openssl verify -CAfile demorootca.crt test_x509_user.crt
     ```
 
-4. Display the client certificate using Openssl and by examining the certificate once imported into SAP HANA.
+4. Display the client certificate using openssl and by examining the certificate once imported into SAP HANA.
 
     Use openSSL to display the certificate.
     
@@ -154,6 +156,7 @@ Any environment with SAP HANA Client installed and that contains a recent OpenSS
     ![client certificate](display-cert.png)
 
     You can view the contents of the certificate in a notepad editor by using the following command:
+
 
     ```Shell
     notepad test_x509_user.crt
@@ -217,6 +220,7 @@ Further details can be found at [CREATE CERTIFICATE Statement](https://help.sap.
 ### Create an X.509 provider and Personal Security Environment (PSE)
 Execute the following queries in SAP HANA SQL Console in HANA Cloud Central.  
 
+
 ```SQL
 CREATE X509 PROVIDER DEMO_X509_PROVIDER WITH ISSUER 'SP=ON, CN=DEMO_ROOT_CERT_AUTH';
 SELECT * FROM X509_PROVIDERS;
@@ -233,13 +237,15 @@ There must be a match between the issuer value in the X509 provider and the ISSU
 Further details can be found at [CREATE X509 PROVIDER Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/3b3163d6ad0f4eb9bd73c7c060f49649.html) and [CREATE PSE statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/4d80bf63fc374a7f99be94d8ce70a07a.html).  
 
 ### Create a Database User
-Execute the following SQL to create a database user.
+Execute the following SQL statement to create a database user.
+
 
 ```SQL
 CREATE USER TESTX509_TECHNICAL WITH IDENTITY 'CN=TESTX509' FOR X509 PROVIDER DEMO_X509_PROVIDER SET USERGROUP DEFAULT;
 ```
 
-The above is known as an explicit mapping.  The common name or CN value in the user matches to CN value in the client certificate.  It is also possible to use matching rules specified on the provider.  
+
+The above is known as an explicit mapping.  The common name, or CN value, in the user matches to CN value in the client certificate.  It is also possible to use matching rules specified on the provider.  
 
 Further details can be found at [CREATE USER Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20d5ddb075191014b594f7b11ff08ee2.html).
 
@@ -310,15 +316,13 @@ Some of the used connection options are summarized in the table below.  Further 
     notepad nodeQuery.js
     ```
 
-    ```Shell (Linux or macOS)
+    ```Shell (Linux or Mac)
     pico nodeQuery.js
     ```
 
 
 
-4. Add the code below to `nodeQuery.js`. 
-   
-   >If you are using commoncrypto, be sure to replace the contents of `sslCryptoProvider` with `commoncrypto`.
+4. Add the code below to `nodeQuery.js`.  
 
     ```JavaScript
     'use strict';
@@ -350,22 +354,26 @@ Some of the used connection options are summarized in the table below.  Further 
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     connection.disconnect();
-    ```  
-
-    The values for host, port, and pem can be retrieved from an `hdbuserstore` key, such as X509UserKey, or they can be specified in the application. Be sure to replace the placeholder SQL endpoint with the SQL endpoint of your instance.
-
-    ```Shell
-    hdbuserstore SetX509 X509UserKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.hana.trial-us10.hanacloud.ondemand.com:443 ~/certs/test_x509_user.pem
-    hdbuserstore list
     ```
 
-5. Run the app.  
+    >If you are using commoncrypto, be sure to replace the contents of `sslCryptoProvider` with `commoncrypto`.  
+          
+    >The values for host, port, and pem can be retrieved from an `hdbuserstore` key, such as X509UserKey, or they can be specified in the application. Be sure to replace the placeholder SQL endpoint with the SQL endpoint of your instance.
+    >
+    >```Shell
+    >hdbuserstore SetX509 X509UserKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.hana.trial-us10.hanacloud.ondemand.com:443 ~/certs/test_x509_user.pem
+    >hdbuserstore list
+    >```
+    > 
+
+5. Run the app 
 
     ```Shell
     node nodeQuery.js
     ```
 
     ![Running nodeQuery.js](node-query.png)
+    
 
 6. Should you wish to use SAP CommonCryptoLib, make sure the changes in the previous step to set were completed and then change the parameter sslCryptoProvider from openssl to commoncrypto and the authenticationX509 parameter to point to the pse file.
 
