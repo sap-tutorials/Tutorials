@@ -148,7 +148,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![Copy SQL Endpoint](copy-sql-endpoint.png)
 
-3.  The catalog browser can be used to view database objects and a SQL Console can be opened to query the database.
+3.  The catalog browser can be used to view database objects and a SQL console can be opened to query the database.
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
@@ -200,7 +200,7 @@ Instances have additional actions that can be performed on them such as renaming
 
 3.  When a SQL console opens, it connects to the currently selected database instance and displays the current schema and instance name.  
 
-    ![SQL Console connections](SQL-Console-Connections.png)
+    ![SQL console connections](SQL-Console-Connections.png)
 
     It is possible to connect, disconnect, or change the connection via the toolbar items highlighted above.  
 

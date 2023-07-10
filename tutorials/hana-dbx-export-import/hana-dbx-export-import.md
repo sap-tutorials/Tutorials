@@ -41,7 +41,7 @@ Methods to export tables or views
 
 | Method  | Version       | Target                 | Format(s)      |
 | ------- | -------------|------------------------| ----------------|
-| Export from SQL Console | All | local computer         | CSV      |
+| Export from SQL console | All | local computer         | CSV      |
 | [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
 | [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
 | [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
@@ -58,7 +58,7 @@ Methods to import into tables
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
 | [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
-The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL Console and the import data wizard.
+The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL console and the import data wizard.
 
 1. Enter the SQL statement below.
 
@@ -315,7 +315,7 @@ The following steps walk through the process of exporting to and importing data 
 
     Once complete, a JSON file will be downloaded that contains the `client_email` and `private_key` which will be used when accessing the bucket.
 
-8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL Console and opening the search and replace menu (Ctrl-F).
+8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL console and opening the search and replace menu (Ctrl-F).
 
     ![Remove line breaks](remove-line-breaks.png)
 
@@ -401,7 +401,7 @@ The following steps walk through the process of exporting to and importing data 
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
 
-11. Run the following commands within the SQL Console to perform an export using a Google Cloud Storage bucket.
+11. Run the following commands within the SQL console to perform an export using a Google Cloud Storage bucket.
 
     There are two ways to use the export commands as shown below.
 
@@ -431,7 +431,7 @@ The following steps walk through the process of exporting to and importing data 
     ```
 
 
-14. Run the following commands within the SQL Console to perform an import using a Google Cloud Storage bucket.
+14. Run the following commands within the SQL console to perform an import using a Google Cloud Storage bucket.
 
     ```SQL
     --Uses the previously stored credential
