@@ -84,7 +84,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-      -DarchetypeVersion=RELEASE -DjdkVersion=11 \
+      -DarchetypeVersion=RELEASE -DjdkVersion=17 \
       -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
@@ -95,6 +95,9 @@ Before you begin, check the settings of your browser. You need to add domains `o
     - The `srv` folder stores your Java application.
 
       <!-- border -->![project creation done](project-creation-done.png)
+
+    > Until it's the default in the SAP Business Application Studio, you need to set the default JDK to 17.
+    > From the main menu, choose **File** **&rarr;** **Help** **&rarr;** **Show All Commands**, type `Java: Set Default JDK` and choose **JavaSE-17**.
 
 5. From the main menu, choose **File** **&rarr;** **Open Folder**.
 
