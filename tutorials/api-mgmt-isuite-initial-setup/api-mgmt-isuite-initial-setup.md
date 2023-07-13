@@ -76,18 +76,18 @@ To set up the API Management capability from Integration Suite, you should first
 1. On the Integration Suite home page, under **Capabilities**, choose **Add Capabilities**.
    <!-- border -->![Add Capabilities](add-capabilities.png)
 
-2. On the **Activate Capabilities** dialog, under **Select Capabilities**, choose **Design, Develop and Manage APIs** and choose **Next**.
+2. On the **Activate Capabilities** dialog, under **Select Capabilities**, choose **Manage APIs** and choose **Next**.
    <!-- border -->![Add API Management Capability](design-develop-manage.png)
 
-3. If you want to activate API Business Hub Enterprise, select the checkbox **Enable API Business Hub Enterprise** and choose **Next**.
-   <!-- border -->![Activate API Business Hub Enterprise](activate-abhe.png)
+3. To activate API business hub enterprise, select the checkbox **Enable API Business Hub Enterprise**.
+   You must select API business hub enterprise to activate **Graph**. Choose **Next** to proceed.
+   <!-- border -->![Activate API Business Hub Enterprise](activate-abhe-graph.png)
 
 4. Choose **Activate** on the **Activate Capabilities** dialog.
    <!-- border -->![API Portal and API Business Hub Enterprise is Active ](activate-apim.png)
 
 5. On the resulting screen, choose **OK** once the status changes from **In Progress** to **Active**.
-   <!-- border -->![API Portal and API Business Hub Enterprise is Active ](apim-active.png)
-
+   
 6. Log out of **Integration Suite**.
 
 >**IMPORTANT** At this stage, navigate back to the **SAP BTP Cockpit** and assign the **APIManagement.Selfservice.Administrator** role to the user. This role is required to configure API Management service in Integration Suite. To assign the role, choose **Security** > **Users** and select the user to whom you want to assign the role. Under **Role Collections** section, choose **Assign Role Collection**. In the resulting dialog box, select the **APIManagement.Selfservice.Administrator** role and choose **Assign Role Collection**.
