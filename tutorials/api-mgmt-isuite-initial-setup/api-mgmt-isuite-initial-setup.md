@@ -76,7 +76,7 @@ To set up the API Management capability from Integration Suite, you should first
 1. On the Integration Suite home page, under **Capabilities**, choose **Add Capabilities**.
    <!-- border -->![Add Capabilities](add-capabilities.png)
 
-2. On the **Activate Capabilities** dialog, under **Select Capabilities**, choose **Manage APIs** and choose **Next**.
+2. On the **Activate Capabilities** dialog, choose **Manage APIs** and choose **Next**.
    <!-- border -->![Add API Management Capability](design-develop-manage.png)
 
 3. To activate API business hub enterprise, select the checkbox **Enable API Business Hub Enterprise**.
