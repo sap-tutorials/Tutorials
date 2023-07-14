@@ -94,9 +94,21 @@ Add an additional Maven dependency to your project. The dependency brings the ab
     cd ~/projects/bookstore
     ```
 
-2. Ensure your SAP HANA Cloud instance is started.
+2. Add the following configuration in the file `.cdsrc.json` in the root folder of your `bookstore` project:
 
-3. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
+    ```JSON
+    {
+      "hana" : {
+        "deploy-format": "hdbtable"
+      }
+    }
+    ```
+
+    <!-- border -->![.cdsrc.json content](cdsrc.png)
+
+3. Ensure your SAP HANA Cloud instance is started.
+
+4. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana --store-credentials
