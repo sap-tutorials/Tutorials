@@ -53,7 +53,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
-    <!-- border -->![choose space name and type](select-app-type.png)
+    <!-- border -->![Shows the selection of available dev spaces, as well as their predefined and additional extensions.](select-app-type.png)
 
     By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
     The creation of the dev space takes a few seconds.

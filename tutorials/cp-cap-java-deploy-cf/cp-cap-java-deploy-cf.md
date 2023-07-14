@@ -30,22 +30,22 @@ When deploying an application to Cloud Foundry, you can use a manifest to descri
 2. Add the following code to the newly created file and make sure you **Save** the file.
 
     ```YAML
-        ---
-        applications:
-        - name: bookstore
-        path: srv/target/bookstore-exec.jar
-        random-route: true
-        buildpacks:
-        - java_buildpack
-        env: 
-            JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
-            JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
-            SPRING_PROFILES_ACTIVE: cloud
-        services:
-        - bookstore-hana
+    ---
+    applications:
+    - name: bookstore
+      path: srv/target/bookstore-exec.jar
+      random-route: true
+      buildpacks:
+      - java_buildpack
+      env:
+        JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
+        JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+        SPRING_PROFILES_ACTIVE: cloud
+      services:
+      - bookstore-hana
     ```
 
-The manifest describes the name of the application, the path where the application archive can be found and runtime type. In this tutorial Java Buildpack is used to deploy Spring Boot application from a single JAR archive using Java 17.
+The manifest describes the name of the application, the path where the application archive can be found and runtime type. In this tutorial the Java buildpack is used to deploy your Spring Boot application from a single JAR archive using Java 17.
 
 The route of the application, meaning the HTTP endpoint where it will be available, will be randomized to prevent clashes with other application routes.
 

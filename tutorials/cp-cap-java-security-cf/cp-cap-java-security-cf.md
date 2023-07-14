@@ -78,17 +78,17 @@ The XSUAA security descriptor that describes the roles for your application can 
         ---
         applications:
         - name: bookstore
-        path: srv/target/bookstore-exec.jar
-        random-route: true
-        buildpacks:
-        - java_buildpack
-        env: 
+          path: srv/target/bookstore-exec.jar
+          random-route: true
+          buildpacks:
+          - java_buildpack
+          env:
             JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
             JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
             SPRING_PROFILES_ACTIVE: cloud
-        services:
-        - bookstore-hana
-        - bookstore-xsuaa
+          services:
+          - bookstore-hana
+          - bookstore-xsuaa
     ```
 
 With this, your application uses this instance of Authorization and Trust Management Service (XSUAA) to manage authentication of users for your application. You will create the instance with that name in the next step.

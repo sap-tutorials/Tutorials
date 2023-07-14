@@ -85,7 +85,7 @@ Add an additional Maven dependency to your project. The dependency brings the ab
     </dependency>
     ```
 
-### Deploy database artefacts to SAP HANA
+### Deploy database artifacts to SAP HANA
 
 
 1. Go back to the terminal of SAP Business Application Studio and make sure that you are in the root of the bookstore project:
@@ -108,7 +108,7 @@ Add an additional Maven dependency to your project. The dependency brings the ab
 
 3. Ensure your SAP HANA Cloud instance is started.
 
-4. Create an SAP HANA service instance and implicitly push all artefacts to the database using:
+4. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana --store-credentials
@@ -138,7 +138,7 @@ When deploying the application to the cloud, Cloud Foundry will provide the cred
     ```
     >The Java system property `-Dspring-boot.run.profiles=cloud` ensures that the default configuration using H2 as the database, which is still defined in the `application.yaml`, doesn't get activated.
 
-    You can observe the log line `Registered DataSource 'bookstore-hana'`, which indicate that the SAP HANA configuration was picked up.
+    You can observe the log line `Registered DataSource 'ds-bookstore-hana'`, which indicate that the SAP HANA configuration was picked up.
 
 3. Open the file `requests.http` and execute one of the requests that create an order, by choosing **Send Request** above it.
 
