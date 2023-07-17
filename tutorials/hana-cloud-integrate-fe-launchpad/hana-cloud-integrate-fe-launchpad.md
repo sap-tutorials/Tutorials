@@ -13,6 +13,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ## Prerequisites
  - You've deployed your SAP Fiori elements app (including the navigation properties) to SAP BTP, Cloud Foundry environment.
+ - You have [subscribed to SAP Build Work Zone, standard edition](btp-app-work-zone-subscribe). 
 
 
 ## You will learn
