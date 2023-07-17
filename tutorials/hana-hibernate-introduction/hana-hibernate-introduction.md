@@ -1,23 +1,24 @@
 ---
-title: Introduction to Hibernate
-description: This tutorial gives a short introduction to the concepts of the Hibernate ORM (Object/Relational Mapping) framework.
+parser: v2
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
+# Introduction to Hibernate
+<!-- description --> This tutorial gives a short introduction to the concepts of the Hibernate ORM (Object/Relational Mapping) framework.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
 
 
-## Details
-### You will learn  
+## You will learn  
 In this tutorial you will learn the basic concepts of the Hibernate ORM (Object/Relational Mapping) framework.
-
-### Time to Complete
+## Time to Complete
 **5 Min**
 
-[ACCORDION-BEGIN [Step 1: ](The Hibernate ORM framework)]
+### The Hibernate ORM framework
+
 
 [Hibernate](http://hibernate.org/) is an open source object-relational mapping framework for the Java programming language. Its primary purpose is to map an object-oriented domain model written in Java to a relational model that can be persisted in a relational database.
 
@@ -37,10 +38,9 @@ Hibernate is also an implementation of the JPA and can therefore be used with an
 
 Provide an answer to the question below then click on **Validate**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Entities)]
+### Entities
+
 
 The core concept of the Hibernate domain model is the notion of an entity.
 
@@ -88,10 +88,10 @@ public class PhoneNumber {
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Associations)]
+
+### Associations
+
 
 A domain model usually defines relation between different entities.
 
@@ -133,10 +133,9 @@ public class PhoneNumber {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](The Hibernate Session)]
+### The Hibernate Session
+
 
 At application boot time the model is read from the Java classes by the Hibernate framework and transformed into a runtime representation.
 
@@ -148,10 +147,9 @@ The Hibernate `Session` object provides methods for reading and writing data as 
 
 The JPA equivalent of the Hibernate `SessionFactory` is the `EntityManagerFactory`, the JPA equivalent of the Hibernate `Session` is the `EntityManager`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Queries)]
+### Queries
+
 
 The data in the database can be queried in different ways providing different degrees of customization. The entry point of all retrieval methods is an active Hibernate `Session`, or JPA `EntityManager`, respectively.
 
@@ -186,15 +184,12 @@ query.setParameter( 1, "John Doe" );
 Person johnDoe = query.uniqueResult();
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Optional: ](Hibernate References)]
+### Hibernate References
 
 More information about Hibernate can be found using the following links:
 
  - [Hibernate ORM website](http://hibernate.org/orm/)
  - [Hibernate documentation](http://hibernate.org/orm/documentation/),
  - [Hibernate user guide](http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html).
-[DONE]
-[ACCORDION-END]
+

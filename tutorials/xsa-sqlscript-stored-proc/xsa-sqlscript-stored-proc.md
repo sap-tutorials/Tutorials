@@ -1,26 +1,27 @@
 ---
-title: Creating Stored Procedures
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions
+parser: v2
+author_name: Rich Heilman
+author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
-
----
-## Next Steps
-- [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
-
-## Details
-### You will learn  
-In this exercise you will create a small procedure `get_po_header_data` with two implicit SELECT queries.
-**Please note - This tutorial is based on SPS11**
-
-
 ---
 
+# Create Stored Procedures
+<!-- description --> Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 
-[ACCORDION-BEGIN [Step 1: ](Create new procedure)]
+## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+ 
+## You will learn  
+- How to create a small procedure `get_po_header_data` with two implicit SELECT queries
 
-Right click on the **procedures** package and choose **New**, then **HDB Procedure**.
+---
+
+### Create New Procedure
+
+
+Right click on the **procedures** folder and choose **New**, then **Procedure**.
 
 ![New Procedure](1.png)
 
@@ -33,35 +34,61 @@ The editor will then be shown.
 ![Sample](3.png)
 
 
-[ACCORDION-END]
+### Add SELECTs
 
-[ACCORDION-BEGIN [Step 2: ](Change namespace name)]
-
-Change the namespace from "Undefined" to `dev602.procedures`
-
-![Namespace](4.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Add SELECTs)]
 
 Between the BEGIN and END statements, insert the SELECT statements as shown.  These are implicit select statements whose results sets are passed to the caller.  
 
-![Enter Code](5.png)
+```
+SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"
+     FROM "PO.Header" WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";
+
+SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"
+     FROM "PO.Header"  WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
+```
 
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Review complete code)]
-
-The completed code should look similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_10`
-```PROCEDURE "dev602.procedures::get_po_header_data" ( )LANGUAGE SQLSCRIPTSQL SECURITY INVOKER--DEFAULT SCHEMA <default_schema_name>READS SQL DATA ASBEGINSELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header" WHERE PURCHASEORDERID IN (                     SELECT PURCHASEORDERID                          FROM "dev602.data::PO.Item"          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header"  WHERE PURCHASEORDERID IN (                     SELECT PURCHASEORDERID                          FROM "dev602.data::PO.Item"          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";END```
+### Review Complete Code
 
 
-[ACCORDION-END]
+The completed code should look similar to this.
 
-[ACCORDION-BEGIN [Step 5: ](Save and build)]
+```
+PROCEDURE "get_po_header_data"( )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+
+SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"
+     FROM "PO.Header" WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";
+
+SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"
+     FROM "PO.Header"  WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
+
+END
+```
+
+
+### Save and Build
+
 
 Save the procedure.
 
@@ -72,30 +99,23 @@ Perform a build on your `hdb` module.
 ![Build](8.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Invoke procedure)]
+### Run Procedure
 
-Switch over to the HRTT page and look for your procedure
 
-![HRTT](9.png)
+Switch over to the Database Explorer page and look for your procedure. Right-click on the procedure and choose **Generate Call Statement**.
 
-Right-click on the procedure and choose **Invoke Procedure**.
+![DBX](9.png)
 
-![Invoke Procedure](10.png)
 
-A new SQL tab will be opened with the CALL statement inserted.  
-
-![SQL tab](11.png)
-
-Click the **Run** button.
+A new SQL tab will be opened with the CALL statement inserted. Click the **Run** button.
 
 ![Run](12.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check results)]
+### Check Results
+
 
 The two results are then shown in another tab.  
 
@@ -104,7 +124,4 @@ The two results are then shown in another tab.
 Note the execution time.
 
 ![Execution time](14.png)
-
-
-[ACCORDION-END]
 

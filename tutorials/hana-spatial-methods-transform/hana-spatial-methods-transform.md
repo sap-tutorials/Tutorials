@@ -1,137 +1,146 @@
 ---
-title: Transformation methods
-description: Transformation methods transform a geometry into some other geometry
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Computation methods](https://developers.sap.com/tutorials/hana-spatial-methods-compute.html)
+# Transformation methods
+<!-- description --> Transformation methods transform a geometry into some other geometry
 
-## Next Steps
- - Spatial predicates (coming soon)
+## Prerequisites
+ - **Tutorial:** [Computation methods](hana-spatial-methods-compute)
 
-## Details
-### You will learn  
-You will learn about a number of methods transforming one geometries into another.
+## You will learn  
+You will learn about a number of methods to transform geometries into other geometries.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Boundary)]
-`ST_Boundary` method returns the boundary of the geometry value. Boundary depends on the geometry type and its characteristics.
+### Boundary
+
+The `ST_Boundary` method returns the boundary of a geometry. Boundary depends on a geometry type and its characteristics.
 
 A point has no boundary and returns the empty geometry. An empty geometry returns `null`.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Boundary().ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPE".st_GeometryType() = 'ST_Point'
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Boundary().ST_asWKT() AS "BOUNDARY_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() = 'ST_Point'
+ORDER BY 1 ASC;
 ```
 
-![Points boundaries](trans10.png)
+![Points boundaries](trans10b.png)
 
 The boundary for line strings is a collection of their end points.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Boundary().ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPE".st_GeometryType() = 'ST_LineString'
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Boundary().ST_asWKT() AS "BOUNDARY_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() = 'ST_LineString'
+ORDER BY 1 ASC;
 ```
 
-![Lines boundaries](trans20.png)
+![Lines boundaries](trans20b.png)
 
 The boundary for multi line strings is a collection of all their end points of individual line strings in the collection.
 
 ```sql
-select ST_UnionAggr("SHAPE").ST_asWKT(),
-ST_UnionAggr("SHAPE").ST_Boundary().ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPE".st_GeometryType() = 'ST_LineString';
+SELECT
+ST_UnionAggr("SHAPE").ST_asWKT() AS "WKT",
+ST_UnionAggr("SHAPE").ST_Boundary().ST_asWKT() AS "BOUNDARY_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() = 'ST_LineString';
 ```
 
-![Multi lines boundaries](trans30.png)
+![Multi lines boundaries](trans30b.png)
 
-A ring - a special case of a string where the start point is the same as the end point and there are no self-intersections - has no boundary.
+A ring --- a special case of a string where the start point is the same as the end point and there are no self-intersections --- has no boundary.
 
 ```sql
-select new ST_LineString('LINESTRING (6 7,10 3,10 10,6 7)')
-.ST_Boundary().ST_asWKT() from dummy;
+SELECT
+NEW ST_LineString('LINESTRING (6 7,10 3,10 10,6 7)').ST_Boundary().ST_asWKT() AS "BOUNDARY_WKT"
+FROM DUMMY;
 ```
 
-![Ring boundary](trans40.png)
+![Ring boundary](trans40b.png)
 
 The boundary for a polygon is its outer ring and any inner rings.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Boundary().ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPE".st_GeometryType() = 'ST_Polygon'
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Boundary().ST_asWKT() AS "BOUNDARY_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() = 'ST_Polygon'
+ORDER BY 1 ASC;
 ```
 
-![Polygon boundary](trans50.png)
+![Polygon boundary](trans50b.png)
 
-And the example for a polygon with the inner ring to illustrate the output containing both the outer and inner rings as a `MULTILINESTRING`.
+Below is an example for a polygon with the inner ring to illustrate the output containing both the outer and inner rings as a `MULTILINESTRING`.
 
 ```sql
-select
+SELECT
 NEW ST_Polygon('Polygon ((-5 -5, 5 -5, 0 5, -5 -5), (-2 -2, -2 0, 2 0, 2 -2, -2 -2))').ST_Boundary().ST_asWKT()
-from dummy;
+FROM DUMMY;
 ```
 
-![Polygon with inner ring boundary](trans60.png)
+![Polygon with inner ring boundary](trans60b.png)
 
 Obviously the length of a boundary is equal to the perimeter of a polygon.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Boundary().ST_Length(),
-"SHAPE".ST_Perimeter()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPE".st_GeometryType() = 'ST_Polygon'
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Boundary().ST_Length() AS "BOUND_LENGTH",
+"SHAPE".ST_Perimeter() AS "PERIMETER"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() = 'ST_Polygon'
+ORDER BY 1 ASC;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Envelope)]
+### Envelope
 
-`ST_Envelope()` method returns the bounding rectangle for the geometry value. This method cannot be used with geometries in a round-Earth spatial reference system.
+
+`ST_Envelope()` method returns the bounding rectangle for a geometry. This method cannot be used with geometries in a round-Earth spatial reference system.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Envelope().ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPEID" in (3, 7, 12)
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Envelope().ST_asWKT() AS "ENVELOPE_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPEID" IN (3, 7, 12)
+ORDER BY 1 ASC;
 ```
 
-![Boundaries for different geometry types](trans70.png)
+![Boundaries for different geometry types](trans70b.png)
 
-Below are visualizations of boundaries for two geometry types: string (for the shape with `id = 7` from `"TESTSGEO"."SPATIALSHAPES"`) and polygon (`id = 11`).
+Below are visualizations of boundaries for two geometry types: string (for the shape with `id = 7` from `"TUTORIAL_GEO"."SPATIALSHAPES"`) and polygon (`id = 11`).
 
 ```sql
-select ST_asSVGAggr("SHAPE"), ST_asSVGAggr("ENVELOPE") from
+SELECT
+ST_asSVGAggr("SHAPE") AS "SHAPES_SGV",
+ST_asSVGAggr("ENVELOPE") AS "ENVELOPE_SGV"
+FROM
 (
-select
+SELECT
 "SHAPE",
 "SHAPE".ST_Envelope() as "ENVELOPE"
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPEID" in (7, 11)
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPEID" IN (7, 11)
 );
 ```
 
@@ -152,18 +161,18 @@ Combine returned SVG outputs into one and modify drawing parameters to display i
 
 ![Boundaries visualizations](trans80.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Convex hull)]
+### Convex hull
+
 
 `ST_ConvexHull` method returns the convex hull of the geometry value.
 
 ```sql
-select "SHAPE".ST_GeometryType(),
-ST_asSVGAggr("SHAPE"), ST_UnionAggr("SHAPE").ST_ConvexHull().ST_asSVG()
-from "TESTSGEO"."SPATIALSHAPES"
-group by "SHAPE".ST_GeometryType();
+SELECT
+"SHAPE".ST_GeometryType() AS "GEOM_TYPE",
+ST_asSVGAggr("SHAPE") AS "SHAPE", ST_UnionAggr("SHAPE").ST_ConvexHull().ST_asSVG() AS "CONVEXHULL_SGV"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+GROUP BY "SHAPE".ST_GeometryType();
 ```
 
 Below is slightly modified SVG to better display original geometries (in red) and the convex hull (in blue).
@@ -210,19 +219,19 @@ For polygons:
 
 ![Convex hull for polygons](trans110.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Buffer)]
+### Buffer
+
 `ST_Buffer` method returns the geometry that represents all points whose distance from any point of an input geometry is less than or equal to a specified distance.
 
 ```sql
-select
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Buffer(0.5).ST_asWKT()
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPEID" in (3, 7, 11)
- order by 1 asc;
+SELECT
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Buffer(0.5).ST_asWKT() AS "BUFFER_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPEID" IN (3, 7, 11)
+ORDER BY 1 ASC;
 ```
 
 ![Buffer WKT for different geometry types](trans120.png)
@@ -230,17 +239,19 @@ select
 Visualize using the following SQL...
 
 ```sql
-select ST_asSVGAggr("SHAPE"), ST_asSVGAggr("BUFFER") from
-(
-select
+SELECT
+ST_asSVGAggr("SHAPE"),
+ST_asSVGAggr("BUFFER")
+FROM (
+SELECT
 "SHAPE",
-"SHAPE".ST_Buffer(0.5) as "BUFFER"
- from "TESTSGEO"."SPATIALSHAPES"
- where "SHAPEID" in (3, 7, 11)
+"SHAPE".ST_Buffer(0.5) AS "BUFFER"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPEID" IN (3, 7, 11)
 );
 ```
 
-...and modify SVG output for better visualization.
+...and modify SVG output for a better visualization.
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="2.4 -10.6 8.1 8.2">
@@ -256,10 +267,7 @@ select
 
 ![Buffer SVG for different geometry types](trans130.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
-- You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
-
----
+- You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a13f280787c10148dc893063dfed1c4.html).

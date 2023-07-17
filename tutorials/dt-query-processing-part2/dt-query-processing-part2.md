@@ -1,9 +1,12 @@
 ---
-title: Compare Prepared and Executed Plan
-description: Generate and compare Prepared and Executed plans.
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Compare Prepared and Executed Plan
+<!-- description --> Generate and compare Prepared and Executed plans.
+
 ## Prerequisites
  - **Proficiency:** Intermediate
  - **Tutorials:** [Visualize a Graphical Query Plan](https://developers.sap.com/tutorials/dt-query-processing-part1.html)
@@ -11,17 +14,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Next Steps
  - **Tutorials:** [Table Statistics and its Effect on Query Plans](https://developers.sap.com/tutorials/dt-query-processing-part3.html)
 
-## Details
-### You will learn
+## You will learn
  - Generating Prepared and Executed Query Plans.
  - Knowing the difference between a Prepared and Executed Query Plans.
-
-### Time to Complete
+## Time to Complete
 **20 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate a Prepared Plan)]
+### Generate a Prepared Plan
+
 In this tutorial you will be learning the differences between a Prepared and Executed plan. In brief, The key difference between the two plans is that a Prepared Plan is less detailed than an Executed Plan due to the fact that an Executed Plan has more information to work with.
 
 Lets start off by creating a Prepared Plan. In SAP HANA Studio, go to **SAP HANA Administration Console** perspective. In the **Systems** tab on the left hand side, right click on the system you are working with, and select **Open SQL Console**.
@@ -83,9 +85,8 @@ Click on the drop down arrow to fully expand the query plan. Keep the Prepared P
 > Note: Notice how you cannot expand "Remote Row Scan". The reason for this is because the Prepared Plan does not include detailed plan information from Dynamic Tiering and as such the "Remote Row Scan" does not have any information to present.
 
 
-[ACCORDION-END]
+### Generate an Executed Plan
 
-[ACCORDION-BEGIN [Step 2: ](Generate an Executed Plan)]
 Next you will open the Executed Plan for the same query using the script provided in the previous step. Right click inside the SQL console, then select **Visualize Plan** > **Execute**. You can also press **Ctrl** + **Shift** + **X**.
 
 ![Execute](execute.png)
@@ -112,9 +113,9 @@ Once the Inner Plan has been opened, you will see the following showing what ope
 ![Inner Plan](inner-plan.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Comparing Prepared and Executed Plans)]
+### Comparing Prepared and Executed Plans
+
 Left click and hold on the newly created Executed Plan tab. Then drag the tab slightly down and release in order to place the Prepared and Executed Plan side by side to compare them. When dragging the Executed Plan tab, you will see guide lines that indicates how the tab will be displayed after rearrangement.
 
 ![Drag to Compare](drag-to-compare.png)
@@ -134,7 +135,4 @@ Ignore this line. Used for format purposes.
 You can get more detailed information by hovering over an element in the plan as seen below.
 
 ![Detailed Information](detailed-information.png)
-
-
-[ACCORDION-END]
 

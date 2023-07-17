@@ -1,32 +1,35 @@
 ---
-title: Continue Your OData Exploration with EPM
-description: Continue your exploration of OData with the Enterprise Procurement Model (EPM) data set in the Gateway demo system.
+parser: v2
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>odata, tutorial>beginner ]
 time: 15
 ---
 
-## Details
-### You will learn
+# Continue Your OData Exploration with EPM
+<!-- description --> Continue your exploration of OData with the Enterprise Procurement Model (EPM) data set in the Gateway demo system.
+
+## You will learn
  - How to explore an OData service in your browser
  - How to use navigation paths
  - What the common query options are and how to use them
  - How to switch to a JSON output format
 
+## Intro
 The Enterprise Procurement Model (EPM) represents a typical business scenario that is complex enough to have meaning in an enterprise context but still simple enough to use for exploring technologies and techniques at a beginner level.
 
-EPM exists as data in a set of related tables and views, and there are also various OData services that marshal that data and provide business functionality. There are reference apps that you may come across further on in your learning journey; some of these are available in the SAP Web IDE. These reference apps make use of EPM OData services, so a by-product of using EPM in this tutorial is that you'll be more familiar with the data model in general when you discover and make use of the reference apps.
-
-The EPM and the related OData services are available in the SAP Gateway demo system, and there is a specific EPM OData service for the "Shop" reference app that will be used in this tutorial.
+EPM exists as data in a set of related tables and views, and there are also various OData services that marshal that data and provide business functionality. The EPM and the related OData services are available in the SAP Gateway demo system, and there is a specific EPM OData service, intended for use in a reference app called "Shop", that will be used in this tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Find the EPM OData service)]
+### Find the EPM OData service
+
 
 In this step you'll find the EPM OData service by looking for it via the maintenance transaction for the Internet Communication Framework (ICF), to understand how web-based resources in general and OData services in particular are managed within an ABAP system.
 
-Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). Use the menu path `Gui Actions and Settings -> Show OK Code Field` to make the OK Code field appear, so you can enter transaction codes.
+Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the arrow button to make the OK Code field appear, so you can enter transaction codes.
 
 ![menu option to show the OK Code field](show-okcode-field.png)
 
@@ -56,11 +59,11 @@ The resource returned is the OData service document, showing the collections ava
 
 ![OData service document](service-document.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Explore entity relationships)]
+
+### Explore entity relationships
+
 
 At a very high level, the entity types and their relationships in this OData service look like this:
 
@@ -104,11 +107,11 @@ It is also possible to navigate to individual properties within an entity. Try t
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products('HT-1001')/Supplier/WebAddress`
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Page through the products with $top and $skip)]
+
+### Page through the products with $top and $skip
+
 
 OData has system query options `$top` and `$skip` that facilitate paging through large entity sets.
 
@@ -130,10 +133,9 @@ Now get the next 5 suppliers, by using `$skip` in conjunction with `$top`:
 
 > Certain frameworks that process OData, like the [SAP UI5 toolkit](https://ui5.sap.com), use these system query options internally to allow comfortable paging through large data sets in list or table situations.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Have related data included in an entity set request)]
+### Have related data included in an entity set request
+
 
 Instead of navigating from an entity to a related entity or entity set using two requests (one for the original entity and then another for the related data), the `$expand` system query option allows for related data to be returned in-line with resources retrieved, in a single request.
 
@@ -153,10 +155,10 @@ If you look closely at the response, you'll see that there is a `feed` XML eleme
 
 The `SubCategory` entities related to each `MainCategory` entity are returned in-line, in the response to the request for the `MainCategories` entity set.
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Request responses in a JSON format)]
+
+### Request responses in a JSON format
+
 
 You may have found looking through the nested XML structures in the previous step quite tedious. XML is human-readable, but not necessarily human-friendly. The OData specification describes an alternative format in JavaScript Object Notation (JSON). This is a more lightweight format and somewhat easier to read, if you have a browser extension that will format JSON for you.
 
@@ -178,10 +180,9 @@ The response is returned in JSON, and formatted by the `JSONView` is considerabl
 
 > While the entity set and entity responses can be returned in JSON format, the service document and metadata document of an OData service, at least a V2 OData service, cannot - they only exist in XML format.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Reduce the number of properties returned)]
+### Reduce the number of properties returned
+
 
 An OData service may contain a definition of an entity type that has a large number of properties. If the consumer of the service really only needs a couple of them, transferring the rest is an unnecessary load on network traffic and can increase response times. The OData system query option `$select` allows you to specify a smaller list of properties that should be returned.
 
@@ -209,6 +210,8 @@ Specify this URL, to request the first product, along with the name of its suppl
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products?$top=1&$format=json&$expand=Supplier,Reviews&$select=AverageRating,Name,StockQuantity,Supplier/Name,Supplier/FormattedAddress,Reviews/UserDisplayName`
 
+> Depending on how the data has been modified in this demo system, you may find that the first product sometimes has no reviews. In that case, search for one using combinations of the `$top` and `$skip` that you learned about in a previous step.
+
 The query string portion of this URL is quite long and getting difficult to read. Broken down into its parts, we have the following:
 
  - Get the first entity:
@@ -229,11 +232,11 @@ This request brings back exactly what we asked for:
 
 ![review and supplier detail for a product](review-supplier-detail-for-product.png)
 
-[VALIDATE_6]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Reduce the number of entities returned by filtering)]
+
+### Reduce the number of entities returned by filtering
+
 
 The `$filter` system query option can be used to filter the entities according to criteria that can be expressed by a broad set of operators.
 
@@ -267,7 +270,7 @@ Operators can be combined. Try this, by finding out whether there are any produc
 Again, to break this down, we have the following (before the special characters are URL encoded):
 
  - Restrict entries to those where the `MainCategoryId` value is "Software" and where the `StockQuantity` value is less than or equal to 10:
-`$filter=MainCategory eq 'Software' and StockQuantity le 10`
+`$filter=MainCategoryId eq 'Software' and StockQuantity le 10`
 
  - Return only the values for the `StockQuantity` and `Name` properties:
 `$select=StockQuantity,Name`
@@ -277,10 +280,10 @@ Again, to break this down, we have the following (before the special characters 
 
 You can learn more about the different operators available in the [Filter System Query Option ($filter)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption) documentation on the OASIS OData website. You'll see that there are functions available for use with `$filter` too, functions such as `substringof` and `startswith`.
 
-[VALIDATE_7]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Have entities returned in a certain order)]
+
+### Have entities returned in a certain order
+
 
 The final system query option to examine in this tutorial is `$orderby`, which takes the specification of a list of one or more properties, and optional indicators to specify whether ascending order (the default) or descending order is desired.
 
@@ -294,5 +297,3 @@ This is the first part of what's returned - looks good:
 
 There are more system query options, but what you've seen in this tutorial are the main ones. You've been using them primarily in the context of the OData "query" operation, which makes a lot of sense. Some of the system query options are used implicitly in frameworks such as UI5 as stated earlier, but all of them are useful to know to explore, "by hand", an OData service, especially when you intend to use it in building an app.
 
-[DONE]
-[ACCORDION-END]

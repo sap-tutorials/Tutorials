@@ -1,21 +1,23 @@
 ---
-title: Sample Project
-description: For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
-primary_tag: products>sap-hana\,-express-edition  
+parser: v2
+primary_tag: products>sap-hana\,-express-edition
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 time: 15
 ---
 
-## Prerequisites  
- - [Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
+# Sample Project
+<!-- description --> For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
+
+## Prerequisites
  - Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
 
 
 ## Next Steps
  - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
-## Details
-### You will learn  
+## You will learn
   - How to use SAP HANA Studio to load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data
 
 
@@ -23,7 +25,8 @@ time: 15
 In SAP HANA Studio, do the following:
 
 
-[ACCORDION-BEGIN [Step 1: ](Create a New User)]
+### Create a New User
+
 
 1. Under your _SYSTEM_ user login, expand the **Security** folder.
 
@@ -53,10 +56,10 @@ In SAP HANA Studio, do the following:
 
 
 
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create a Schema)]
+### Create a Schema
+
 
 1. Under the _Systems_ panel, right-click on your _SYSTEM_ login and select **Open SQL console**.
 
@@ -103,9 +106,9 @@ In SAP HANA Studio, do the following:
     Click Execute ![execute](execute.png) for each line.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Load Table Data)]
+### Load Table Data
+
 
 1. Import the `STS_FCTCUSTOMERORDER.csv` file.
 
@@ -141,9 +144,9 @@ In SAP HANA Studio, do the following:
 You should see your new tables under the _Tables_ folder under your schema.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a New Package)]
+### Create a New Package
+
 
 1. Log into SAP HANA Studio as your new user.
 
@@ -167,9 +170,9 @@ The new package will appear under your _Content_ folder under your new user logi
 ![Create Package](create_package3.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Load and Connect Data)]
+### Load and Connect Data
+
 
 1. Right click on the package you created earlier and select **New** then **Analytic View...**.
 
@@ -201,10 +204,10 @@ The new package will appear under your _Content_ folder under your new user logi
 Here is an example: ![Connect Data](connecting_data2.png)
 
 
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Edit Semantics)]
+### Edit Semantics
+
 
 1. Select **Semantics** under the _Scenario_ panel.
 
@@ -245,9 +248,9 @@ Here is an example: ![Connect Data](connecting_data2.png)
     An entry will be added to the **Job Log** window panel.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Preview Data)]
+### Preview Data
+
 
 1. Refresh your package's _Analytic View_ folder.
 
@@ -260,9 +263,8 @@ You can now preview your data by dragging _Attributes_ to the **Label axis** pan
 Here is an example: ![Data Preview](preview_data1.png)
 
 
-[ACCORDION-END]
 
 
 ### Additional Information
 - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
-- Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](https://developers.sap.com/topics/hana.tutorials.html)

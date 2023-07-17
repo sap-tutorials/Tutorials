@@ -1,25 +1,27 @@
 ---
-title: SAP HANA XS Advanced - Clone and run SHINE applications
-description: This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 ---
 
+# SAP HANA XS Advanced - Clone and run SHINE applications
+<!-- description --> This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
+
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## You will learn  
 How to clone the SAP HANA `INteractive` Education source code from Git Hub, generate the dependencies and deploy the applications using Web IDE for SAP HANA.
-
-### Time to Complete
-**15 Min**
+## Time to Complete
+**25 Min**
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Clone SHINE from GitHub)]
+### Clone SHINE from GitHub
+
 
 Open SAP Web IDE for SAP HANA and log in with a developer user.
 >Note: By default, the URL for Web IDE in SAP HANA, express edition is `https://hxehost:53075`. You can use command  `xs apps` in space SAP in the Command Line Interface to find out the right
@@ -32,15 +34,14 @@ Copy the URL `https://github.com/SAP/hana-shine-xsa` into the `Clone Git Reposit
 
 ![Clone Git](clone.png)
 
-Wait until the repository is cloned. You will see a success message on the top right corner of Web IDE and the folder in your workspace:
+Wait until the repository is cloned. If you receive a dialog about `Git Ignore System Files`, please choose **Do it later**. You will see a success message on the top right corner of Web IDE and the folder in your workspace:
 
 ![Clone Git](cloned.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Set the project space )]
+### Set the project space 
+
 
 Right-click on the imported project and go to `Project Settings`:
 
@@ -52,10 +53,9 @@ Set the space `development` to the project:
 
 **Close** the settings dialog.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Edit deployment configurations)]
+### Edit deployment configurations
+
 
 You will need to complete some configurations in the deployment descriptor with the proper endpoints.
 
@@ -79,12 +79,11 @@ Finally, you will change the name of the service for the shine-container so you 
 
 ![edit YAML](container.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create additional services)]
+### Create additional services
 
-If you look at the list of resources in the `mta.yaml` file, you will find instances of the User Account and Authentication, the audit log and the job scheduler services. In order to meet the dependencies, these services need to be created. You can use the Command Line Interface for this, available in the server by default in SAP HANA, express edition instances. You can also install it locally using the download manager after you register in the [SAP HANA, express edition site](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+
+If you look at the list of resources in the `mta.yaml` file, you will find instances of the User Account and Authentication, the audit log and the job scheduler services. In order to meet the dependencies, these services need to be created. You can use the Command Line Interface for this, available in the server by default in SAP HANA, express edition instances. You can also install it locally using the download manager after you register in the [SAP HANA, express edition site](https://www.sap.com/products/hana/express-trial.html)
 
 First, locate the file `xs-security.json` that was cloned with the SHINE Git repository from an SSH console. Alternatively, you can export it from Web IDE and upload it to the directory from which you will be issuing the commands.
 
@@ -117,6 +116,7 @@ xs t -s development
 xs create-service xsuaa default shine-uaa -c <<path to xs-security.json>>
 xs cs jobscheduler default shine-scheduler
 xs cs auditlog free shine-auditlog
+xs cs hana securestore secureStore
 ```
 For example:
 
@@ -129,11 +129,10 @@ xs t -s development
 xs s | grep shine
 ```
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Build the SHINE database modules)]
+### Build the SHINE database modules
+
 
 You will build the database modules first.  
 
@@ -151,14 +150,13 @@ Repeat the steps with the `core-db` module.
 
 The rest of the modules will be built automatically before they are run in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the SHINE applications)]
+### Run the SHINE applications
+
 
 You will now run the modules in an order that satisfies dependencies between them. They will be built automatically before running. If you encounter an error stating `No compatible version found`, use the latest version quoted in the error to update the `package.json` file in the module that is failing.
 
-For example, right-click con the `user-js` module and then click on `Run->Run as->Node.js Application`
+For example, right-click con the `user-xsjs` module and then click on `Run->Run as->Node.js Application`
 
 ![Run modules](run-user.png)
 
@@ -170,7 +168,7 @@ And take note of the versions suggested by `npm`
 
 ![Run modules](error.png)
 
-Open the `package.json` file for this module and update the dependency:
+Open the `package.json` file for this module and update any dependencies that are needed according to the previous error log:
 
 ![Run modules](json.png)
 
@@ -180,23 +178,16 @@ You can also get a hint of the dependencies you will need to adjust by right-cli
 
 **Save** the `package.json` file with the updated dependencies and run the module.
 
-Once the `user-js` module is running, run the `core-js` module:
+Once the `user-xsjs` module is running, run the `core-xsjs` module:
 
 ![Run modules](run-core.png)
 
-Then run the `user-java` module:
+Then run the `core-node` module:
 
-![Run modules](run-java.png)
-
->Note: If you get an error about a dependency not being resolved, use **Show dependency updates** and update the file `pom.xml`
-
-![Update java](pom.png)
-
-![Update java](pom2.png)
+![Run modules](run-core-node.png)
 
 Check all the modules are running. You can quickly verify because you will see a green tick next to each one of them:
-
-![Run modules](run-java.png)
+![Run all](run-all.png)
 
 Finally, run the web module. Right-click on the `web->resources->launchpad->index.html` and click on **Run as Web Application**:
 
@@ -206,10 +197,9 @@ A new tab will open in the browser. You can click on the generated URL if the po
 
 >Note: If you get an error related to the version of SAP UI5, update the version of the resource `sapui5-provider` in the `mta.yaml` file. Switch to the SAP space first with command `xs s -t SAP` and take note of the version informed by command `xs mtas` in the CLI for the UI5 library.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check prerequisites)]
+### Check prerequisites
+
 
 You may need to log in again. Use **`XSA_DEV`** and the password you set up.
 
@@ -223,10 +213,9 @@ Any missing dependencies will be marked for you. Click on each of the buttons fo
 
 ![Run web modules](shine_x.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Generate data)]
+### Generate data
+
 
 You are finally presented with different options in the `launchpad`. Click on `Generate Data`:
 
@@ -237,5 +226,4 @@ You can increase the number of transactions in your database or reload master da
 ![Generate data](shine3.png)
 
 
-[VALIDATE_3]
-[ACCORDION-END]
+

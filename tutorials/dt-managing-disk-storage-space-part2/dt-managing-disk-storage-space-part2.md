@@ -1,24 +1,26 @@
 ---
-title: Enlarging a Dbspace File Using Reserved Space
+parser: v2
 primary_tag: products>sap-hana-dynamic-tiering
-description: Use reserved spaces to increase the size of a Dbspace file
+auto_validation: true
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+
+# Enlarging a Dbspace File Using Reserved Space
+<!-- description --> Use reserved spaces to increase the size of a Dbspace file
 
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials** Adding a `Dbspace` File
 
-## Details
-### You will learn
+## You will learn
   - How to enlarge a `Dbspace` file using reserved space in HANA Cockpit
   - How to enlarge a `Dbspace` file using a SQL command
-
-### Time to Complete
+## Time to Complete
  **10 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Enlarging a Dbspace File Using Reserved Space)]
+### Enlarging a Dbspace File Using Reserved Space
+
 When you are ready to use the reserve space you may do it in increments rather than using all of the reserved space at once. Thus, you can enlarge the `Dbspace` file only by what you need.
 
 Navigate to **Manage Dynamic Tiering `Dbspaces`** on your Cockpit. Click on the "**`ES_USER_FILE1`**" created in the last tutorial.
@@ -39,14 +41,13 @@ Once the save completes, the updated `Dbspace` File details for the `ES_USER_FIL
 
 ![New Size](new_db_size.png)
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enlarging Dbspace File through HANA Studio SQL Console)]
+
+### Enlarging Dbspace File through HANA Studio SQL Console
+
 In HANA Studio through the System Database, you may also enlarge a file via the SQL command:
 
 ```sql
 ALTER EXTENDED STORAGE ALTER DBSPACE ES_USER ALTER FILE "ES_USER_FILE1" ADD 10 MB;
 ```
 
-
-[ACCORDION-END]

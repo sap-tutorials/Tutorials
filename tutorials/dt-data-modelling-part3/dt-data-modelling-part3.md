@@ -1,24 +1,26 @@
 ---
-title: Information View Conversion
-description: How to convert information views
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+
+# Information View Conversion
+<!-- description --> How to convert information views
 
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:**: Importing Required Calculation Views
 
-## Details
-### You will learn
+## You will learn
   - How to create new packages
   - How to convert information models
-
-### Time to Complete
+## Time to Complete
  **15 Min**
 
  ---
-[ACCORDION-BEGIN [Step 1: ](Information View Conversion)]
+### Information View Conversion
+
 
  After completing the previous tutorial, create a new package called "`tutorial_All_Calc`". To do this, right click on **Content** inside the left **Systems** panel, and select **New** > **Package** .
 
@@ -44,7 +46,7 @@ In the next screen, we will select our source and target packages for the mass c
 
 ![Configure Package Mappings](configure-package-mappings.png)
 
-Select tutorial from the left panel, and click **Add* to select all views for copying. Make sure to check off the "**Copy as Calculation views**" box. This is *crucial*. Finally, click **Next**.
+Select tutorial from the left panel, and click **Add** to select all views for copying. Make sure to check off the "**Copy as Calculation views**" box. This is *crucial*. Finally, click **Next**.
 
 ![Select Models for Copying](select-models-for-copying.png)
 
@@ -59,9 +61,9 @@ Once that is complete, you can find your calculation views inside the tutorial.
 ![View Calculation Views](view-calculation-views.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Activating New Calculation Views)]
+### Activating New Calculation Views
+
 
 Now that you have created the calculation views, you will need to activate them. Right click `AV_ORDERS`and click **Activate**.
 
@@ -87,5 +89,3 @@ This view takes the attribute view created before (`AT_REGION`) and joins it wit
 **`CALC_ORDERS`**
 This view performs the same functionality as `AV_ORDERS`, but is created as a calculation view type. It uses a union node to join `AT_REGION` and `ORDERS_CS`, to output a table showing each customer key, and the corresponding region name, order status, order date, and total price.
 
-
-[ACCORDION-END]

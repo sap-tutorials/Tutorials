@@ -1,24 +1,30 @@
 ---
-title: Create SAP HANA Graph Workspace
-description: Get overview of what SAP HANA Graph is, load some sample data and create your first graph workspace based on that data.
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, topic>sql]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, programming-tool>sql]
 primary_tag: products>sap-hana
 ---
 
-## Prerequisites
- - Min. SAP HANA 2.0 SPS 03 with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html)
+# Create an SAP HANA Graph Workspace
+<!-- description --> Get an overview of what SAP HANA Graph is, load some sample data, and create your first graph workspace based on that data.
 
-## Details
-### You will learn
+## Prerequisites
+ - SAP HANA Cloud, e.g. [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html), or
+ - SAP HANA 2.0 SPS 04 or higher with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
+ - Completed [SAP HANA Database Explorer Overview](hana-dbx-overview)
+
+## You will learn
   - What SAP HANA Graph is
   - How to create graph workspace using sample data
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP HANA Graph)]
-SAP HANA Graph is an integral part of SAP HANA core functionality. It expands the SAP HANA platform with native support for graph processing and allows you to execute typical graph operations on the data stored in an SAP HANA system.
+### SAP HANA Graph
+
+SAP HANA Graph is an integral part of SAP HANA core functionality. It expands the SAP HANA with native support for graph processing and allows you to execute typical graph operations on the data stored in an SAP HANA system.
 
 Graphs are a powerful abstraction that can be used to model different kinds of networks and linked data coming from many industries, such as logistics and transportation, utility networks, knowledge representation, text processing, and so on.
 
@@ -26,46 +32,47 @@ In SAP HANA, a graph is a set of vertices and a set of edges. Each edge connects
 
 ![Graph](10.png)
 
-For more please refer to [online documentation for SAP HANA 2.0 SPS 3](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.03/en-US/7734f2cfafdb4e8a9d49de5f6829dc32.html) used in these exercises.
+For more please refer to [online documentation for SAP HANA Cloud](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/LATEST/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html) used in these exercises.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Exercise data)]
+### Exercise data
 
-You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.png) and small-scale version is displayed below.
+
+You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.jpg) and the small-scale version can be found below.
 
 ![map](map.png)
 
-Every station got a number (in red circle) and will serve as vertices of our graph. They have additional attributes:
+Every station got an id number (in red circle) and will become a vertex of our graph. They have additional attributes:
 
--	`ticket_office` = 'TRUE' (string, not boolean), is where you buy a ticket and start the day. These are stations 1, 4, 15
--	`restaurant` = 'TRUE' is a place to have a break for a delicious Italian coffee, or to refill with a few slices of pizza. These are stations 2, 3, 5.
+-	`ticket_office = 'TRUE'` (string, not boolean), is where you buy a ticket and start the day. These are stations 1, 4, 15.
+-	`restaurant = 'TRUE'` is a place to have a break for a delicious Italian coffee, or to recharge with a few slices of pizza. These are stations 2, 3, 5.
 
-Stations are connected by either lifts (to go up) or runs (to ski down). Those will be our edges in the graph with a few attributes:
+Stations are connected by either lifts (to go up) or runs (to ski down). These connections will be edges in the graph with a few attributes:
 
--	'lift' or 'run' will be their `mode` attribute
--	`start` and `end` will be ids of connected stations
--	each of them will have attribute `length` as well, measured in meters
--	additionally, runs will have 'blue', 'red', or 'black' values in the attribute `difficulty`
--	attribute `status` is either 'open' or 'close', reflecting if particular lift or run can be used. By default all connections will be open.
-
-
-[DONE]
-[ACCORDION-END]
+-	'lift' or 'run' will be their `mode` attribute,
+-	`start` and `end` will be ids of connected stations,
+-	each of them will have attribute `length`, measured in meters,
+-	additionally, runs will have 'blue', 'red', or 'black' values in the attribute `difficulty`,
+-	attribute `status` is either 'open' or 'close', reflecting if particular lift or run can be used. By default, all connections will be open.
 
 
-[ACCORDION-BEGIN [Step 3: ](Create tables)]
 
-Open SQL Editor connected to your database in SAP Web IDE. The assumption in these exercises is that you are using a schema `DAT646_000`, but you can change it to any other schema of your choice.
 
-Copy following code into your SQL Editor.
+### Create tables
+
+
+Open SAP HANA Database Explorer's SQL Editor and connect to your database.
+
+The assumption in these exercises is that you are using a schema `SKIING`, but you can change it to any other schema of your choice.
+
+Copy the following code into your SQL Editor.
 
 ```sql
-CREATE SCHEMA "DAT646_000";
-SET SCHEMA "DAT646_000";
+--DROP SCHEMA "SKIING" CASCADE;
+CREATE SCHEMA "SKIING";
+SET SCHEMA "SKIING";
 
-CREATE COLUMN TABLE "NODES"(
+CREATE TABLE "NODES"(
 	"node_id" INTEGER NOT NULL,
 	"name" NVARCHAR(16),
 	"ticket_office" NVARCHAR(4),
@@ -75,7 +82,7 @@ CREATE COLUMN TABLE "NODES"(
 	)
 );
 
-CREATE COLUMN TABLE "EDGES"(
+CREATE TABLE "EDGES"(
 	"edge_id" INTEGER NOT NULL,
 	"length" INTEGER,
 	"difficulty" NVARCHAR(16),
@@ -88,36 +95,34 @@ CREATE COLUMN TABLE "EDGES"(
 	)
 );
 
-ALTER TABLE "EDGES" ADD FOREIGN KEY ( "start" ) REFERENCES "NODES" ("node_id") ON UPDATE CASCADE ON DELETE CASCADE ENFORCED VALIDATED
+ALTER TABLE "EDGES" ADD FOREIGN KEY ("start") REFERENCES "NODES" ("node_id") ON UPDATE CASCADE ON DELETE CASCADE ENFORCED VALIDATED
 ;
 ALTER TABLE "EDGES" ADD FOREIGN KEY ( "end" ) REFERENCES "NODES" ("node_id") ON UPDATE CASCADE ON DELETE CASCADE ENFORCED VALIDATED
 ;
 ```
 
-Press `F8` to execute all statements at once, or run them one by one with `F9` key.
+Execute all statements.
 
 You should see two tables created in your schema.
 
-![Created tables](20.png)
+![Created tables](20b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Review tables)]
+### Review tables
+
 
 Open review definitions of both tables.
 
-![Review tables](30.png)
+![Review tables](30b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert data)]
+### Insert data
+
 
 Copy following code into your SQL Editor and execute it.
 
 ```sql
-SET SCHEMA "DAT646_000";
+SET SCHEMA "SKIING";
 
 --Populate NODES
 INSERT INTO "NODES" VALUES (1, 'Pinzolo', 'TRUE', '') ;
@@ -170,50 +175,96 @@ INSERT INTO "EDGES" VALUES (117, 2300, 'black', 12, 4, 'run', 'open') ;
 INSERT INTO "EDGES" VALUES (118, 200, 'blue', 6, 5, 'run', 'open') ;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Preview data)]
+### Preview data
+
 
 Switch to the tab with one of table definitions, and click on **Open Data**. Then repeat it for the second table too.
 
-![Data preview](40.png)
+![Data preview](40b.png)
 
 There should be 15 rows in the table `NODES` and 31 rows in the table `EDGES`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create a graph workspace)]
+### Create a graph workspace
+
 
 Copy following code into your SQL Editor and execute it.
 
 ```sql
-SET SCHEMA "DAT646_000";
+SET SCHEMA "SKIING";
 
-create graph workspace "SKIING"
-edge table "EDGES"
-source column "start"
-target column "end"
-key column "edge_id"
-vertex table "NODES"
-key column "node_id"
+CREATE GRAPH WORKSPACE "SKIING"
+  EDGE TABLE "EDGES"
+    SOURCE COLUMN "start"
+    TARGET COLUMN "end"
+    KEY COLUMN "edge_id"
+  VERTEX TABLE "NODES"
+    KEY COLUMN "node_id"
 ;
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Check the workspace artifact)]
+### Check the workspace artifact
+
 
 Find just created `SKIING` workspace in the `Graph Workspaces` folder of your schema.
 
 Click on it to open its definition.
 
-![Graph workspace](50.png)
+![Graph workspace](50b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
+
+
+### Open Graph Viewer
+
+
+Right click on `SKIING` graph workspace and pick **View Graph**.
+
+The graph viewer will open and load the initial view of graph.
+
+> Note, that the rendering of graph's nodes and edges is different every time
+
+![Open Graph Viewer](60b.png)
+
+
+### Customize a view of the graph
+
+
+Use **Preferences** to customize the view of the graph.
+
+![Add edge labels](70b.png)
+
+You should see labels of edges now.
+
+
+
+### Add more data
+
+
+In reality these lifts starting from the ticket offices can be used as well to go down. So, let's add additional edges.
+
+Add four new records to `EDGES` table by executing following `INSERT` statements in the SQL Console.
+
+```sql
+--Add lifts down to boarding stations
+INSERT INTO "EDGES" VALUES (1061, 1755, '', 2, 1, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1060, 2453, '', 5, 4, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1070, 1223, '', 13, 14, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1071, 1151, '', 14, 15, 'lift', 'open') ;
+```
+
+
+### Reset preview of the graph
+
+
+Go back to Graph Viewer and click on **Reset Graph**.
+
+> Note, that the rendering of graph's nodes and edges is different every time
+
+![Open Graph Viewer](80b.png)
+
+You should see lift connections in both directions now.
 
 ---

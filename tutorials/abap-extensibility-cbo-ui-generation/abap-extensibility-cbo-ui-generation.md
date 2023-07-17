@@ -1,20 +1,19 @@
 ---
-title: Create the UI for a Custom Business Object
-description: Create an own application based on a custom business object and a custom catalog extension.
+parser: v2
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 auto_validation: true
 time: 15
 ---
 
+# Create the UI for a Custom Business Object
+<!-- description --> Create an own application based on a Custom Business Object and a Custom Catalog Extension
+
 ## Prerequisites  
- - **Tutorials:** [Create a Custom Business Object ](https://developers.sap.com/tutorials/abap-extensibility-cbo-create.html)
- - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
+- **Authorizations:** Your user needs a business role with business catalogs **Extensibility - Custom Business Objects** (ID: `SAP_CORE_BC_EXT_CBO`) and **Extensibility - Custom Catalog Extensions** (ID: `SAP_CORE_BC_EXT_CCE`) in your **SAP S/4HANA Cloud** system
 
 
-
-## Details
-### You will learn
+## You will learn
 In the preceding tutorial you created a custom business object with a simple data structure and its persistence.
 To be able to work with a business object you need a user interface. In this tutorial you will
 <ul>
@@ -23,15 +22,22 @@ To be able to work with a business object you need a user interface. In this tut
 </ul>
 At the end you will have a running application that you can create, update and delete custom business object entities with.
 
-### Example
+## Intro
+>**UI Generation** and later done **UI Adaptation** are so called **In-App Extensibility** features done completely inside a S/4HANA system. They are key user functionality with limited possibilities.
+>
+>Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](group.abap-custom-ui-with-webide)).
+
+**Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
-
+## Additional Information
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Start Editing Custom Business Object Bonus Plan)]
+### Start Editing Custom Business Object Bonus Plan
+
 
  **Start** the Custom Business Object's application by clicking its tile
 
@@ -45,10 +51,9 @@ To be able to do changes to the lastly published version of the business object 
 
 ![Press Edit Draft](CBO_editDraft.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Generate UI)]
+### Generate UI
+
 
 **Check** the two boxes for UI Generation and Service Generation.
 
@@ -56,10 +61,9 @@ To be able to do changes to the lastly published version of the business object 
 
 **Publish** the business object to trigger the generation of UI (Master and Detail) and OData Service.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Expose UI as Application)]
+### Expose UI as Application
+
 
 Now you make the UI available as SAP Fiori Launchpad application by assigning it to a Business Catalog which corresponds to a group in Launchpad.
 From the Business Object's overview go to Custom Catalog Extension application by clicking the **Maintain Catalogs** action.
@@ -70,24 +74,23 @@ A new window will open.
 
 Start adding a catalog with the **Add** action.
 
-![Add new Custom Catalog Extension](CCE_add.png)
+<!-- border -->![Add new Custom Catalog Extension](CCE_add.png)
 
-In the opening value help narrow down the result list by searching for `Extensibility`, select the Catalog with role ID `SAP_CORE_BC_EXT` and press **OK**.
+In the opening value help narrow down the result list by searching for `Custom Business`, select the Catalog with role ID `SAP_CORE_BC_EXT_CBO` and press **OK**.
 
-![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
+<!-- border -->![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
 
 >You could also choose another Catalog, but be aware that your user must have a Business Role containing the same to be able to view the created application.
 
 **Select** the just added Catalog and **Publish** it.
 
-![Publishing Custom Catalog Extension](CCE_publish.png)
+<!-- border -->![Publishing Custom Catalog Extension](CCE_publish.png)
 
 This step takes some minutes, the screen refreshes automatically and once the status switches from unpublished to published, you can close this application's window and proceed.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open Bonus Plan application)]
+### Open Bonus Plan application
+
 
 Back in the Custom Business Object application's window, go to the SAP Fiori Launchpad via **Home** action.
 
@@ -100,10 +103,9 @@ Now there is the Bonus Plan application's tile in the **Extensibility** group.
 
 ![Bonus Plans application tile](tile_BonusPlans.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Bonus Plan application)]
+### Test Bonus Plan application
+
 
 **Open** the Bonus Plan application.
 
@@ -127,11 +129,9 @@ Employee ID <any> shall be the one of a sales person that created sales orders w
 
 **Save** the Bonus Plan. The UI will automatically return from Bonus Plan Detail to Master, where you can see one entry in the list of bonus plans now.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

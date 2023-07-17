@@ -1,26 +1,28 @@
 ---
-title: Additional checks in SAP HANA Cockpit and SAP HANA Studio
-description: Performing additional checks for SAP HANA
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+
+# Additional checks in SAP HANA Cockpit and SAP HANA Studio
+<!-- description --> Performing additional checks for SAP HANA
 
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://developers.sap.com/tutorials/dt-monitoring-hana-part3.html)
 
-## Details
-### You will learn  
+## You will learn  
  - Check used memory and set alerts
  - Perform `Dbspace` checks
  - Check which extended storage/dynamic tiering tables have been created
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check Used Memory and Set Alerts)]
+### Check Used Memory and Set Alerts
+
 In SAP HANA Cockpit, you can view some of the statistics for each host that you are running. Navigate to your resource and then click on "**Memory Usage**" as shown below.
 
 ![Memory Usage](memory-usage.png)
@@ -46,9 +48,9 @@ In the search bar on the left side, search for the Dynamic Tiering "`Dbspace usa
 As a test case, you can click on "**Run Check Now**" beside the "**Edit**" button to ensure the alert is working.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Additional Queries to use in SAP HANA Studio)]
+### Additional Queries to use in SAP HANA Studio
+
 There are some queries that aid you to see what is up and working and identify if there is anything missing.
 
 To see all the `Dbspaces`, their sizes, whether additional reserve size was added and some additional information, use the following:
@@ -67,5 +69,3 @@ To identify what extended tables/Dynamic Tiering tables have been created in you
 SELECT * FROM "SYS"."M_ES_TABLES"
 ```
 
-
-[ACCORDION-END]

@@ -1,50 +1,56 @@
 ---
+parser: v2
 auto_validation: true
-title: Create Business Partner in S/4HANA Cloud using ABAP Environment Data
-description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Cloud Platform ABAP Environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>intermediate, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 20
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
-### Prerequisites  
-- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name  `OutboundCommunication`.
-- Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
-- Integration between S/4 HANA Cloud and SAP Cloud Platform ABAP Environment completed​.
+# Create business partner in S/4HANA Cloud using ABAP Environment data
+<!-- description --> Create a business partner in an S/4HANA Cloud system based on a business user in SAP Business Technology Platform ABAP Environment.
 
-## Details
-### You will learn  
-  - How to implement outbound service call from SAP Cloud Platform ABAP Environment to S/4 HANA Cloud service
-  - How to retrieve data of logged in business user in SAP Cloud Platform ABAP Environment
-  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP Cloud Platform ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
+## Prerequisites
+- Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system as described in [Creating a Communication Arrangement in SAP S/4HANA Cloud](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/889fbe37b7b344deabfbdc78ab16e544.html).
+- Destination `S4BusinessPartnerOAuth2` for the S/4Cloud system was created on subaccount level as described in [Creating the OAuth2SAMLBearerAssertion Destination to SAP S/4HANA Cloud](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b968a25fe20e4f9a8f4366d1972fc7d4.html)
+- Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
+- Integration between S/4 HANA Cloud and SAP BTP ABAP Environment completed​.
+
+
+## You will learn
+  - How to implement outbound service call from SAP BTP ABAP Environment to S/4 HANA Cloud service
+  - How to retrieve data of logged in business user in SAP BTP ABAP Environment
+  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP BTP ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
   - Return business partner id after creation
 
+## Intro
 Create all ABAP artifacts with namespace `Z...` for local development.
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+Always replace `XXX` with your initials or group number.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download service metadata)]
+### Download service metadata
+
   1. Copy the service URL from communication arrangement on S/4 HANA Cloud system in a browser.
 
-  2. Remove `–api` in the link and add `/$metadata` at the end of the link and press enter.
+  2. Remove `-api` from your URL an add `/$metadata` at the end of the link and press enter. Login with your communication user and password.
 
       ![Download Service Metadata](Metadata1.png)
 
-  3. Right click on the page and save the Metadata as a `.edmx` file.
+  3. Right click the page and save the Metadata as a `.edmx` file.
 
       ![Save Service Metadata](Metadata2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create your own ABAP package)]
+### Create your own ABAP package
+
 Mark the steps 2 as completed by pressing `Done` if you have already created the package `Z_Package_XXX` (where XXX is your group number) in the previous tutorials.
 
   1. Open Eclipse and connect to your system.
 
-  2. Right click on main package **ZLOCAL**  and choose **New** > **ABAP Package**.
+  2. Right click the main package **ZLOCAL**  and choose **New** > **ABAP Package**.
 
   3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of **ZLOCAL**.
       - Name: `Z_PACKAGE_XXX`
@@ -65,11 +71,10 @@ Mark the steps 2 as completed by pressing `Done` if you have already created the
 
 You can add your package to **Favorite Packages**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add OData client proxy)]
-  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **OData Client Proxy**.
+### Add service consumption model
+
+  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **Service Consumption Model**.
 
       ![choose OData Proxy](Picture1.png)
 
@@ -77,35 +82,38 @@ You can add your package to **Favorite Packages**.
 
       ![next](Picture2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create OData client proxy)]
-  1. Enter the package name and a name for the service definition that will be generated as part of the client proxy.
+### Create service consumption model
 
-  2. Upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+  1. Enter a name for your service consumption model, a service definition will be generated as part of the service consumption model with this name.
+
+  2. Enter a description and choose **OData** as **Remote Consumption Mode**.
 
   3. Click **Next**.
 
-      ![Create OData Client Proxy](Picture3.png)
+      ![Create Service Consumption Model](Picture3.png)
 
-[DONE]
-[ACCORDION-END]
+  4. Upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+
+  5. Click **Next**.
+
+      ![upload file](Picture3-1.png)
 
 
-[ACCORDION-BEGIN [Step 5: ](Change ABAP artifact names)]
-  1. Add the `XXX` at the end of each name.
+
+### Change ABAP artifact names
+
+  1. Add the `_XXX` at the end of each name.
 
   2. Click on **Next**.
 
       ![change Artifact Names](Picture5.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](ABAP artifact generation list)]
+### ABAP artifact generation list
+
   1. Click on **Next** by artifact generation list.
 
       ![List](Picture6.png)
@@ -116,21 +124,19 @@ You can add your package to **Favorite Packages**.
 
       ![Select transport request](Picture7.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Check created service definition)]
+### Check created service definition
+
 Open service definitions in your package and make sure if your new service definition is created successfully.
 
 ![check service Definition](Picture8.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Add HTTP service)]
-  1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **HTTP Service**.
+### Add HTTP service
+
+  1. Right click your package and choose **New** > **Other ABAP Repository Object** > **HTTP Service**.
 
       ![Add HTTP Service](http1.png)
 
@@ -138,11 +144,10 @@ Open service definitions in your package and make sure if your new service defin
 
       ![Add HTTP Service](http2.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create HTTP service)]
+### Create HTTP service
+
   1. Enter a name and a description.
       - Name: `ZS4_BUPA_XXX`
       - Description: `call S/4 Business Partner`
@@ -155,11 +160,10 @@ Open service definitions in your package and make sure if your new service defin
 
       ![Create HTTP Service](http4.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Create handler class)]
+### Create handler class
+
   1. Go to the HTTP Service that you created in the last step.
 
   2. Open **Handler Class**.
@@ -175,7 +179,7 @@ Open service definitions in your package and make sure if your new service defin
 |  `iv_service_definition_name`     |               Data definition created as part of client proxy                     |
 Retrieve Name of `ZA_BusinessPartner_XXX` Data Definition.
 
-```swift
+```ABAP
 CLASS zcl_s4_bupa_xxx DEFINITION PUBLIC CREATE PUBLIC .
   PUBLIC SECTION.
     INTERFACES if_http_service_extension .
@@ -186,7 +190,6 @@ CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
     TRY.
         DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
              i_name                  = 'S4BusinessPartnerOAuth2'
-             i_service_instance_name = 'OutboundCommunication'
              i_authn_mode =  if_a4c_cp_service=>user_propagation
          ).
 
@@ -233,7 +236,7 @@ CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
         DATA(lo_create_response) = lo_create_request->execute( ).
         lo_create_response->get_business_data( IMPORTING es_business_data = ls_bupa ).
 
-        response->set_text( |Business parter { ls_bupa-businesspartner } was created| ).
+        response->set_text( |Business partner { ls_bupa-businesspartner } was created| ).
 
       CATCH cx_root INTO DATA(lx_exception).
         response->set_text( lx_exception->get_text( ) ).
@@ -243,11 +246,15 @@ ENDCLASS.
 
 ```
 
-[DONE]
-[ACCORDION-END]
+  4. Save and activate all objects that you created.
+
+      ![activate](activate.png)
 
 
-[ACCORDION-BEGIN [Step 11: ](Test service with business user)]
+
+
+### Test service with business user
+
   1. Navigate to HTTP service and click On URL.
 
       ![Copy the link](Picture9.png)
@@ -255,7 +262,7 @@ ENDCLASS.
   2. Enter business user email and password and click Log on.
 
       business user requires the `SAP_BR_BUPA_MASTER_SPECIALIST` business role.
-      This User has the same email-address for both S/4 HANA and SAP Cloud Platform ABAP Environment.
+      This User has the same email-address for both S/4 HANA and SAP BTP ABAP Environment.
 
       ![Log On](Picture11.png)
 
@@ -264,11 +271,10 @@ ENDCLASS.
 
       ![Copy number](Picture12.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Open maintain business partner in SAP S/4 HANA)]
+### Open maintain business partner in SAP S/4 HANA
+
   1. Open SAP Fiori Launchpad and login with the business user.
 
       ![open s/4](Picture14.png)
@@ -277,21 +283,18 @@ ENDCLASS.
 
       ![business partner master](Picture15.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Verify business partner in SAP S/4 HANA)]
+### Verify business partner in SAP S/4 HANA
+
 Enter created Business Partner number in the related field and press enter.
 Check data of the created business service.
 
 ![verify](Picture13.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+
 ---

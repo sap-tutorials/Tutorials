@@ -1,28 +1,30 @@
 ---
-title: Create Tables and Import Data
-description: Create in-memory column store and Dynamic Tiering tables. Import data into both types of tables.
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Create Tables and Import Data
+<!-- description --> Create in-memory column store and Dynamic Tiering tables. Import data into both types of tables.
+
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)
- - **Files:** Download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
+ - **Tutorials:** [Create a New User and Assign Permissions](dt-create-schema-load-data-part2)
+ - **Files:** Download the data files zip `https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip` and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 ## Next Steps
- - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://developers.sap.com/tutorials/dt-create-schema-load-data-part4.html)
+ - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](dt-create-schema-load-data-part4)
 
-## Details
-### You will learn
+## You will learn
  - Creating HANA in-memory column store and Dynamic Tiering extended store tables.
  - Loading data into the in-memory and extended tables.
-
-### Time to Complete
+## Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Tables)]
+### Create Tables
+
 This tutorial is a continuation from previous tutorials. It assumes that you have created a "`TPCH`" user with the correct permissions and signed onto your system in Studio with the user. In **SAP HANA Administration Console** perspective, right click on your system connection signed on with the "`TPCH`" user (format: `<SID> (TPCH)`) and select **Open SQL Console**.
 
 ![Open SQL Console](open-sql-console.png)
@@ -287,23 +289,21 @@ After Studio finishes refreshing, you should see the tables listed below under t
 ![Table Created](table_created.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Script Explanation)]
+### Script Explanation
+
 The key syntax difference when creating a Dynamic Tiering table is the addition of the "USING EXTENDED STORAGE" clause to the "CREATE TABLE" statement as seen in the picture below. You may also notice that it did not explicitly state that the Dynamic Tiering tables should be "COLUMN" tables. All Dynamic Tiering tables are stored as columnar tables, so the use of "CREATE COLUMN TABLE" vs "CREATE TABLE" is optional.
 
 ![Create Table Statements Comparison](in-memory-and-dt-comparison.png)
 
 
-[ACCORDION-END]
+### Download Data Files and Copy to HANA Directory
 
-[ACCORDION-BEGIN [Step 3: ](Download Data Files and Copy to HANA Directory)]
 One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system. Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host. "`<SID>`" is your system's System ID. For example, the `<SID>` as seen in the pictures in step 1 is `HA1` This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 
-[ACCORDION-END]
+### Import Data into Tables
 
-[ACCORDION-BEGIN [Step 4: ](Import Data into Tables)]
 In **SAP HANA Administration Console** perspective, right click on your system signed on with the TPCH user (format: `<sid> (TPCH)`) and select **Open SQL Console**.
 
 ![Open SQL Console](open-sql-console.png)
@@ -383,7 +383,4 @@ Go to the **System** tab on the left side. By clicking the drop down arrow,  exp
 ![Open Data Preview](open-data.png)
 
 ![Data Preview](data-preview.png)
-
-
-[ACCORDION-END]
 

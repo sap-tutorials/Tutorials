@@ -1,27 +1,27 @@
 ---
-title: Monitoring SAP HANA Using SAP HANA Cockpit and SAP HANA Studio for SAP HANA Dynamic Tiering
-description: Checking the esserver process and coordinator types to determine if Dynamic Tiering is running and if extended storage is created and running.
-
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, topic>big-data, topic>sql ]
 ---
+
+# Monitoring SAP HANA Using SAP HANA Cockpit and SAP HANA Studio for SAP HANA Dynamic Tiering
+<!-- description --> Checking the esserver process and coordinator types to determine if Dynamic Tiering is running and if extended storage is created and running.
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. 
+- **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
 - **Integrated Development Environment:** Cockpit is already installed and configured. Basic working knowledge of SAP HANA Studio and SAP HANA Cockpit. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 - **Credentials:** Have a cockpit admin user and password with access to your HANA system and access to "`<SID>adm`" for a SSH session
 
 ## Next Steps
  - **Tutorials:** [Creating and Removing Extended Storage](https://developers.sap.com/tutorials/dt-monitoring-hana-part2.html)
 
-## Details
-### You will learn
+## You will learn
  - Capabilities of SAP HANA Cockpit related to SAP HANA Dynamic Tiering
  - Checking the `Esserver` Status to see if Dynamic Tiering is active
  - Checking Coordinator Types to see if extended storage is running and created
-
-### Time to Complete
+## Time to Complete
 **10 Min**
 
 ---
@@ -31,6 +31,7 @@ SAP HANA cockpit provides a single point of access to a range of SAP HANA admini
   - How to stop and start extended storage
   - How to add and remove additional space for extended storage
 
+## Intro
 SAP HANA cockpit is also used for monitoring and managing checks which include:
 
   - Analyzing usage of CPU, memory and tables i.e. how much memory is being used
@@ -39,7 +40,8 @@ SAP HANA cockpit is also used for monitoring and managing checks which include:
 
 SAP HANA Studio is a rich client tool based on an Eclipse platform. SAP HANA Studio is the central development environment and a key administration and monitoring tool for SAP HANA. There are a several tabs providing detailed status information for the HANA system. For example, the "Overview" tab in the HANA Studio displays the overall status of the HANA system including the Dynamic Tiering component. More detailed status information for each process on a per host basis is then provided under the "Landscape" tab. We will explain the contents of these tabs in more detail later on in this lesson.
 
-[ACCORDION-BEGIN [Step 1: ](Checking the Status of the Esserver)]
+### Checking the Status of the Esserver
+
 One of the most important things to be validated once your Dynamic Tiering node is installed is to see whether everything is up and running. The `esserver` is the Dynamic Tiering server process. If the `esserver` is running, it means the Dynamic Tiering environment is active and running.
 
 One way to check the status of the `esserver` is through SAP HANA Cockpit. Navigate to your system on SAP HANA Cockpit and the click under "**Overall Database Status**".
@@ -74,10 +76,10 @@ Once you are logged in as `<sid>adm` you may run the command "**`HDB info`**" to
 ![Check esserver](esserver-putty.png)
 
 
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Checking Different Services)]
+### Checking Different Services
+
 The `M_SERVICES` view enables a user to identify the coordinator type for the `esserver`. There are three different coordinator types that you might see beside your `esserver`.
 
   - None -This means that your extended storage service is running, however you have not yet added/created any extended storage as yet. If your Dynamic Tiering host is causing a problem, then you know that you need to add the extended storage in order to fix the possible issue
@@ -90,8 +92,4 @@ To view the coordinator types in SAP HANA Studio, execute the following in a SQL
 select * from M_SERVICES
 ```
 ![Coordinator Type](coordinator-type-studio.png)
-
-
-[ACCORDION-END]
-
 

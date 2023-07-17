@@ -1,6 +1,6 @@
 ---
-title: Using a HANA Reference Element in a Smart Data Streaming project
-description: Part 4 of 9. Add a HANA Reference element and using a Join operator to combine reference and streaming data.
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
@@ -8,8 +8,10 @@ author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
 
-## Details
-### You will learn  
+# Using a HANA Reference Element in a Smart Data Streaming project
+<!-- description --> Part 4 of 9. Add a HANA Reference element and using a Join operator to combine reference and streaming data.
+
+## You will learn  
  - How to add a HANA Reference element to the project
  - How to join event streams to SAP HANA tables in order to enrich raw event data
  - How to filter and analyzing data based on context or historical information from HANA
@@ -19,7 +21,8 @@ time: 15
 
 ---
 
-#### Add HANA Reference Element
+### Add HANA Reference Element
+    
 
 1. This is a continuation from part 3 of this tutorial group. Before proceeding, please make sure that `"freezer_monitoring"` project is opened and the project diagram is the active tab in HANA Studio. If not, go to **File** > **Open File...** to open the project. Navigate to the **SAP HANA Administration Console** perspective.
 
@@ -44,7 +47,9 @@ time: 15
     ![change name to machineref](add-hana-table/5-change-name-to-machineref.png)
 
 
-#### Join Event Stream To The HANA Table
+
+### Join Event Stream To The HANA Table
+    
 
 1. Click **Join** in the **Palette** and drop it onto the canvas.
 
@@ -93,3 +98,4 @@ time: 15
 12. We want to join on MACHINEID. Select **MACHINEID : string** in each source column and then click **Add**. Once its been added click **OK**.
 
     ![join clause](event-streaming/12-join-clause.png)
+

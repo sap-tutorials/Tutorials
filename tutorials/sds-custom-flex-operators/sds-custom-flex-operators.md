@@ -1,6 +1,5 @@
 ---
-title: Build Custom Flex Operators to Analyze Event Streams
-description: See how flex operators can be used to apply custom operations to event streams. Use CCL Script to correlate and match events to produce higher-level events.  Also implement a flex operator to update a table showing the current status of a set of devices.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,14 +7,16 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 auto_validation: true
 time: 20
 ---
+# Build Custom Flex Operators to Analyze Event Streams
+<!-- description --> See how flex operators can be used to apply custom operations to event streams. Use CCL Script to correlate and match events to produce higher-level events.  Also implement a flex operator to update a table showing the current status of a set of devices.
+
 ## Prerequisites
 - **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://developers.sap.com/tutorials/sds-event-stream-pattern-detection.html)
 
 ## Next Steps
 - **Tutorial:** [Publish events to SDS via the REST interface](https://developers.sap.com/tutorials/sds-rest-publish.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to use the Flex Operator and incoming events to update status information
  - How to match and correlate multiple events to produce a single output event
  - How to use CCL Script to write an event handler
@@ -24,40 +25,36 @@ time: 20
 ---
 In this tutorial you will add two Flex operators to your streaming project. Flex operators are custom operators written in CCL Script that give you the ability to do things that you couldn't do using standard relational SQL operators.  
 
+## Intro
 - The first flex operator will be used to record power outages in the SAP HANA database, but the trick is that we don't want to record individual "power on" and "power off" events in the database. Instead, we prefer to have a single database record for each power outage, with the power-off time, the power-on time, and the duration.  So you will use the flex operator to match "power on" events with the earlier "power off" event for the same machine, and then create a single output event with all the information about the power outage.
 - The second flex operator will update a window that shows the current status of every machine.
 
-[ACCORDION-BEGIN [Step 1: ](Add a flex operator to your project)]
+### Add a flex operator to your project
+
 
 In the **SAP HANA Streaming Development** perspective, with your project open in the visual editor, drag and drop a **Flex** operator from the **Palette** to the canvas.
 
 ![add flex item](1-addflexitem.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Connect the Flex operator to the event stream
 
-[ACCORDION-BEGIN [Step 2: ](Connect the Flex operator to the event stream)]
 
 Connect the **`DEVICE_EVENTS`** stream to the new Flex operator.
 
 ![connect](2-connect.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Rename it
 
-[ACCORDION-BEGIN [Step 3: ](Rename it)]
 
 Click the **Edit** button on the Flex operator, and rename it `POWER_OUTAGES`.
 
 ![rename](3-rename.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add columns to define the schema
 
-[ACCORDION-BEGIN [Step 4: ](Add columns to define the schema)]
 
 Click the **Add Column** button shown below four times to add four columns.
 
@@ -67,11 +64,9 @@ Change the column names and data types to match the screenshot provided. Double-
 
 ![rename columns](5-renamecolumns.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add a local declaration block
 
-[ACCORDION-BEGIN [Step 5: ](Add a local declaration block)]
 
 Via the dropdown arrow of the **`POWER_OUTAGES`** element, click **Modify** > **Edit Local Declaration(s)**. You can also press **e**.
 
@@ -91,11 +86,9 @@ Paste it into the Edit Expression Value console, as seen below.
 
 ![enter declaration](7-enterdeclaration.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add the event handler script
 
-[ACCORDION-BEGIN [Step 6: ](Add the event handler script)]
 
 Now it's time to add the block of CCL Script that will function as an event handler:  it will be invoked on every event received on the **`DEVICE_EVENTS`** stream.
 
@@ -125,11 +118,10 @@ ON DEVICE_EVENTS {
 ```
 > Note: The `msdate` variable type is a timestamp with millisecond precision. The default format is `YYYY-MMDDTHH:MM:SS:SSS`. When an `msdate` is subtracted from another `msdate`, the resulting value is of type interval. The interval data type is in microseconds, hence the division by 60000000.
 
-[VALIDATE_6]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Change the Flex operator to produce an output stream instead of a window)]
+### Change the Flex operator to produce an output stream instead of a window
+
 
 The visual editor creates this Flex operator as a window by default, but we want this to be a stream. This change isn't something you can do from the visual editor, so you need to open the CCL editor.
 
@@ -151,11 +143,9 @@ Here are some notes on the CCL Script used here:
     - Next, check to see if the incoming event is a "`POWER_ON`" event. If it is, and if there is a "`POWER_OFF`" event for this machine in the dictionary, then construct and publish an output event.
     - Anytime you publish an event from a Flex operator you have to explicitly set the "`OpCode`" of the event being produced – thus, the use of the "`setOpcode`" function.
 
-[DONE]
 
-[ACCORDION-END]
+### Add another Flex operator - this one to track the status of all machines
 
-[ACCORDION-BEGIN [Step 8: ](Add another Flex operator - this one to track the status of all machines)]
 
 In this step you are going to do something a bit different. You're going to add another Flex operator - but for a very different purpose. This Flex operator produces what you'll call the "Dashboard" which has current status information for each machine. Now this is just a table - there's no visualization - but it could easily be used to drive a dashboard.
 
@@ -207,11 +197,9 @@ It should look like this:
 
 ![ccl script](2-ccl-script.png)
 
-[DONE]
 
-[ACCORDION-END]
+### View the complete project in CCL Script
 
-[ACCORDION-BEGIN [Step 9:](View the complete project in CCL Script)]
 
 View the complete project in the CCL editor. You should see something like this:
 
@@ -371,6 +359,4 @@ PROPERTIES
 	table = 'ACTIVITY_HIST' ;
 
 ```
-[DONE]
 
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition (Preconfigured VM)
-description: SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
+parser: v2
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -8,20 +7,24 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition (Preconfigured VM)
+<!-- description --> SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
+
 <!-- loio5a9927fcad7c436d9fb8a36062acc1b8 -->
 
 ## Prerequisites
  - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
 
-## Details
-### You will learn
+## You will learn
 You will learn how to download, install, and configure the `shine.tgz` SAP HANA Interactive Education package.
 
 ---
 
+## Intro
 SHINE is a separate download in the Download Manager. To use SHINE, you need the Server + Applications Virtual Machine (`hxexsa.ova`) package. Use the Download Manager to download the SAP HANA Interactive Education package, `shine.tgz`.
 
-[ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
+### Run the memory management script
+
 
 Run the `hxe_gc` memory management script to free up available VM memory.
 
@@ -41,9 +44,9 @@ Run the `hxe_gc` memory management script to free up available VM memory.
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download `shine.tgz`)]
+### Download `shine.tgz`
+
 
 In your VM, download `shine.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
@@ -51,9 +54,9 @@ In your VM, download `shine.tgz` using the built-in Download Manager. From the s
 HXEDownloadManager_linux.bin linuxx86_64 vm shine.tgz
 ```
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Extract `shine.tgz`)]
+### Extract `shine.tgz`
+
 
 In your VM, extract `shine.tgz`:
 
@@ -61,9 +64,9 @@ In your VM, extract `shine.tgz`:
 tar -xvzf shine.tgz
 ```
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the installation script)]
+### Run the installation script
+
 
 As the `hxeadm` user, run:
 
@@ -71,4 +74,3 @@ As the `hxeadm` user, run:
 <extracted_path>/HANA_EXPRESS_20/install_shine.sh
 ```
 
-[ACCORDION-END]

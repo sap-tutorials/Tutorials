@@ -1,28 +1,33 @@
 ---
-title: Install and Configure unixODBC
-description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will install and configure unixODBC.
+parser: v2
 auto_validation: true
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
 time: 15
 ---
-## Prerequisites  
+# Install and Configure unixODBC
+<!-- description --> Learn how to complete common tasks when setting up a new database. In this tutorial, you will install and configure unixODBC.
+
+## Prerequisites
  - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
  - A registered version of SUSE. See the [SAP HANA Academy](https://www.youtube.com/watch?v=e6SIsAFVPoY) video for details.
 
 
-## Details
-### You will learn  
+## You will learn
   - How to download, install, and configure `unixODBC` to connect from your SAP HANA, express edition host machine to a client machine
 
 
+## Intro
 In the following How-To, the "host machine" refers to the machine on which you will be installing and configuring unixODBC. The "client machine" refers to the machine (or machines) you will be connecting to using unixODBC.
 
 > You will need the IP address of your host and client machine(s). Have that information available while you proceed through this how-to.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit the hosts File of the Client Database)]
+### Edit the hosts File of the Client Database
+
 
 Before you can connect to your client database using unixODBC, you must update the client's `hosts` file with the IP address of your SAP HANA, express edition host machine. You will need to do this with each client database.
 
@@ -50,13 +55,12 @@ On your client machine(s), do the following:
     sudo sh - c 'echo <ip_address_of_host>    <alias> >> /etc/hosts'
     ```
 
-[DONE]
-[ACCORDION-END]
 
 > **Note:**
 > The remaining steps are performed on your host machine.
 
-[ACCORDION-BEGIN [Step 2: ](Install the unixODBC Driver Manager)]
+### Install the unixODBC Driver Manager
+
 
 > **Note:**
 > If you have not registered your version of SUSE, you will have no repositories loaded onto your machine. For more information, see  the [SAP HANA Academy](https://www.youtube.com/watch?v=e6SIsAFVPoY) video for details.
@@ -92,10 +96,9 @@ On your client machine(s), do the following:
 
     ![unixODBC install success](odbcinst.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the .odbc.ini File)]
+### Create the .odbc.ini File
+
 
 1. Log in as `<sid>adm` and move to `/usr/sap/HXE/home` directory.
 
@@ -133,11 +136,10 @@ On your client machine(s), do the following:
     databasename = client
     ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Use the isql Command to Connect to Your System)]
+### Use the isql Command to Connect to Your System
+
 
 Connect to your system with the `isql` command.
 
@@ -155,5 +157,4 @@ If successful, a list of commands displays:
 
 ![Successful Connection](odbcconnect_success.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+

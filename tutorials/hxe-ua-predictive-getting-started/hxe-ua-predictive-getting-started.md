@@ -1,22 +1,22 @@
 ---
-title: Getting Started with Predictive Analytics
-description: This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to configure your installation for the sample projects by creating a tenant database and a new user to manage that database.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
-## Prerequisites  
-  - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
-## Details
-### You will learn  
+# Getting Started with Predictive Analytics
+<!-- description --> This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to configure your installation for the sample projects by creating a tenant database and a new user to manage that database.
+
+## You will learn  
   - How to prepare your SAP HANA, express edition installation for Predictive Analytics
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Ensure AFL is Installed)]
+### Ensure AFL is Installed
+
 
 Log in to your system database and select your database. Click on the Administration icon ![Administration Icon](administration.png) and under the __Overview__ tab, next to _Installed Plug-ins_ check that **AFL** is installed.
 
@@ -31,9 +31,9 @@ SELECT * FROM SYS.AFL_FUNCTIONS WHERE PACKAGE_NAME='PAL';
 If a list of AFL functions is generated, AFL PAL Functions are installed.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Tenant Database and Activate the Script Server)]
+### Create a Tenant Database and Activate the Script Server
+
 
 Through your SQL command line, create a new tenant database.
 
@@ -55,9 +55,9 @@ ALTER DATABASE <DATABASE_NAME> ADD 'scriptserver';
 
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connect to Your Tenant Database)]
+### Connect to Your Tenant Database
+
 
 Click on the __Add System...__ icon ![Add System](add_system.png).
 
@@ -75,9 +75,9 @@ Click __Finish__.
 
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download and Import the PAL Schema Sample Data)]
+### Download and Import the PAL Schema Sample Data
+
 
 Open your preferred web browser and visit the [SAP HANA Academy GitHub](https://github.com/saphanaacademy/PAL/tree/master/Source%20Data) page and download the `PAL21.zip` file. Extract the `PAL21.zip` onto your local machine.
 
@@ -106,9 +106,9 @@ Importing the data will take some time.
 > ![PAL Tables](PAL_tables_2.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a New User and Grant Proper Permissions for the Tenant Database)]
+### Add a New User and Grant Proper Permissions for the Tenant Database
+
 
 Open an SQL command line to your **tenant** database.
 
@@ -155,9 +155,9 @@ GRANT SELECT ON SCHEMA PAL TO _SYS_REPO;
 
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Log in to the Tenant Database with the New User)]
+### Log in to the Tenant Database with the New User
+
 
 Right-click on your tenant database. Select **Add System with Different User...**.
 
@@ -173,16 +173,12 @@ Click **Finish**.
 > You may be asked to give your new user a new password.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Grant Access to New User Schema)]
+### Grant Access to New User Schema
+
 
 Open an SQL command line to your **tenant** database through your **new user** and enter the following:
 
 ```bash
 GRANT SELECT, INSERT, DELETE ON SCHEMA <NEW_USER> TO _SYS_REPO;
 ```
-
-
-[ACCORDION-END]
-

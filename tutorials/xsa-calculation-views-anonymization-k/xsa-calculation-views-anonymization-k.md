@@ -1,26 +1,37 @@
 ---
-title: Create a Calculation View with K-anonymity (XS Advanced)
-description: Anonymize data to protect privacy.
-auto_validation: true
+parser: v2
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: topic>big-data
-tags: [  tutorial>intermediate, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+tags: [  tutorial>intermediate, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 time: 20
 ---
 
-## Details
-### You will learn  
+# Create a Calculation View with K-anonymity (XS Advanced)
+<!-- description --> Anonymize data to protect privacy.
 
+## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+
+## You will learn  
  - How to create a Calculation View using an `anonymization` node
- - Use `k-anonymity` to hide data that can identify individuals by comparing other identifying information. See the [SAP Help for more information](https://help.sap.com/viewer/e8e6c8142e60469bb401de5fdb6f7c00/2.0.03/en-US/205f52e73c4a422e91fb9a0fbd5f3ec6.html)
+ - Use `k-anonymity` to hide data that can identify individuals by comparing other identifying information. See the [SAP Help for more information](https://help.sap.com/viewer/e8e6c8142e60469bb401de5fdb6f7c00/latest/en-US/205f52e73c4a422e91fb9a0fbd5f3ec6.html)
  - How to create a calculation view
  - Use artifacts to import data from text file
 
+
+## Intro
+***GitHub repository available***
+
+ This project can be cloned from this repository: [https://github.com/SAP/hana-xsa-calculation-view-anonymity](https://github.com/SAP/hana-xsa-calculation-view-anonymity)
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
+### Check pre-requisites
+
 
 ### Map a space to your tenant
-Make sure your project is using a space that is mapped to a tenant. Here is how to [create a new space,](https://sap.com/developer/tutorials/xsa-setup-new-space.html) only if you do not want to use the default development space and [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html)
+Make sure your project is using a space that is mapped to a tenant. Here is how to [how to map it to a tenant database](xsa-tenant-db-space).
 
 ### Start the script server in your tenant database
 If you have not already, log in to your System database as SYSTEM and execute the following statement. In HANA express, as `hxeadm`
@@ -35,26 +46,24 @@ You can also do this from the Database Explorer tool, as user SYSTEM and logged 
 
 ![Add scriptserver](db.png)
 
-> Note: This example assumes the tenant database is the default first tenant created in SAP HANA, express edition. Replace `HXE` with eh name of your tenant. You can query available tenants from table `M_DATABASES`
+> Note: This example assumes the tenant database is the default first tenant created in SAP HANA, express edition. Replace `HXE` with the name of your tenant. You can query available tenants from table `M_DATABASES`
 
 ### Deploy your database module in the space mapped to the tenant
-If you created the database module before mapping the space to the tenant, you will see the HDI container in the space but it will still be connected to the system database. The system database is meant for administration purposes and does not have the necessary engines to execute advanced analytics such as `anonymization`.
+**FOLLOW THESE STEPS ONLY if you created the database module before mapping the space to the tenant**, you will see the HDI container in the space but it will still be connected to the system database. The system database is meant for administration purposes and does not have the necessary engines to execute advanced analytics such as `anonymization`.
 
 Use command `xs ds` to delete the HDI container and deploy it again once the space has been mapped to the tenant database.
 
 > Note: An indication of using the system database after completing the SQL statement in the previous prerequisite is an error stating `column store error search table error No ScriptServer available` or similar.
 
-[DONE]
 
-[ACCORDION-END]
+### Log in to SAP Web IDE for SAP HANA and create a project
 
-[ACCORDION-BEGIN [Step 2: ](Log in to SAP Web IDE for SAP HANA and create a project)]
 
 Right-click **Workspace** and choose **New > Project from template**.
 
-![Create a new project](4.png)
+![Create a new project](40.png)
 
-Click **Next**.
+Choose SAP HANA Database Application and then click **Next**.
 
 ![Create a new project](5.png)
 
@@ -62,41 +71,21 @@ Call your project `ANALYTICS` and click **Next**.
 
 ![Create a new project](6.png)
 
-Make sure you are using the space that is mapped to the tenant database:
+Make sure you are using the space that is mapped to the tenant database. Also you must clear out the `Namespace` field.  Click **Finish**.
 
 ![Create a new project](7.png)
 
 Click **Finish** to create your project.
 
-[DONE]
 
-[ACCORDION-END]
+### Create a table
 
-[ACCORDION-BEGIN [Step 3: ](Create a database module)]
 
-**Right-click** on the project and select **New > SAP HANA Database Module**.
+In the `db/src` folder, create a folder called `data` and a file called `jobs.hdbtable`. Use the following code for the table:
 
-![New DB module](8.png)
-
-Call the module `db` and click **Next**.
-
-![New DB module](9.png)
-
-Flag **Build module after creation** and click **Finish**.
-
-![New DB module](10.png)
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create a table)]
-
-In the `src` folder, create a folder called `data` and a file called `jobs.hdbtable`. Use the following code for the table:
-
-```text
+```SQL
 COLUMN TABLE JOBS (
-	ID INTEGER CS_INT GENERATED BY DEFAULT AS IDENTITY (NO CYCLE NO CACHE NO MINVALUE START WITH 300001000 INCREMENT BY 1 MAXVALUE 399999999) NOT NULL COMMENT 'Opinion ID',
+	ID INTEGER GENERATED BY DEFAULT AS IDENTITY (NO CYCLE NO CACHE NO MINVALUE START WITH 300001000 INCREMENT BY 1 MAXVALUE 399999999) NOT NULL COMMENT 'Opinion ID',
 	ORIGIN_COUNTRY NVARCHAR(100),
 	CURRENT_ROLE NVARCHAR(100),
 	JOB_LIKES NVARCHAR(100),
@@ -107,10 +96,9 @@ COLUMN TABLE JOBS (
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Insert data into your tables)]
+### Insert data into your tables
+
 
 In the data folder, create a file called `data.csv` with the following content:
 
@@ -139,7 +127,7 @@ United States	Intern	Learning new technologies in Big Data	21	2
 
 Create another file called `load.hdbtabledata` and add the following contents into it
 
-```text
+```json
 {
 "format_version": 1,
 "imports": [{
@@ -167,10 +155,9 @@ Create another file called `load.hdbtabledata` and add the following contents in
 **Save** all of the files and **Build** the `db` module.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a Calculation View)]
+### Create a Calculation View
+
 
 Create folder called `models` under `src` and a calculation view of type cube called `K_ANONYMITY`
 
@@ -194,9 +181,9 @@ Double-click on the node and add all of the fields to the output. Then click on 
 
 Set `ID` as the sequence column, `2` as the value for `k` and click on `+` to add quasi columns:
 
-![Add all fields to output](11.png)
+![Add all fields to output](10.png)
 
-Choose the Country
+Choose the `ORIGIN_COUNTRY`
 
 ![Add all fields to output](a1.png)
 
@@ -217,11 +204,10 @@ Click **Back**. Connect the `JOBS` node to the aggregation node.
 >&nbsp;
 > In this example, there are single combinations of job roles in specific countries. In other words, if the other fields were sensitive information such as the salary and somebody knew who filled in the spreadsheet, they could deduce an individual's salary because of the unique combination of job role and country.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Configure semantics and test)]
+### Configure semantics and test
+
 
 Click on the aggregation node and add all of the columns to the output.
 
@@ -235,8 +221,5 @@ Once finished, right-click and choose the data preview. Choose `Raw Data` to com
 
 Sort the column `CURRENT TENURE` descending. What is the value of the first Origin Country?
 
-[VALIDATE_1]
-
-[ACCORDION-END]
 
 ---

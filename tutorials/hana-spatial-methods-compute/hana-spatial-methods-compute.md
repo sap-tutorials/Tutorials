@@ -1,104 +1,113 @@
 ---
-title: Computation methods
-description: Computation methods help you calculating characteristics of geometries
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 auto_validation: true
 time: 15
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, programming-tool>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Access methods](https://developers.sap.com/tutorials/hana-spatial-methods-access.html)
+# Computation methods
+<!-- description --> Computation methods help you calculating characteristics of geometries
+
+## Prerequisites
+ - **Tutorial:** [Access methods](hana-spatial-methods-access)
+ - You must have the table `"TUTORIAL_GEO"."SPATIALSHAPES"` from previous tutorials already created and loaded in your system to be able to run examples from this tutorial.
 
 ## Next Steps
- - [Transformation methods](https://developers.sap.com/tutorials/hana-spatial-methods-transform.html)
+ - [Transformation methods](hana-spatial-methods-transform)
 
-## Details
-### You will learn  
+## You will learn  
 You will learn about a number of computation methods and how to apply them to different geometries.
-
->You must have table `"TESTSGEO"."SPATIALSHAPES"` from previous tutorials already created and loaded in your system to be able to run examples from this tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Compute methods)]
-If you have done previous tutorials, then you must have seen some of the spatial compute methods already.
+### Compute methods
+
+You must have seen some of the spatial compute methods already in previous tutorials.
 
 E.g. `ST_Length()` calculated the length of the line string, and `ST_Area()` calculated the area of a polygon.
 
-Some other calculate characteristics of geometries, like `ST_IsRing()` and `ST_IsClosed()` in case of strings.
+Some other were used to calculate characteristics of geometries, like `ST_IsRing()` and `ST_IsClosed()` in examples with strings.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Area and perimeter of polygons)]
-Polygons have a few more useful methods. They can be applied to a collection of polygons (multi-polygon) as well.
+### Area and perimeter of polygons
+
+Polygons have a few more useful methods. They can be applied to a collection of polygons (multi-polygon)too.
 
 Besides area you can calculate as well perimeter of surfaces. The perimeter of a polygon includes the length of all rings (exterior and interior).
 
 ```sql
-SELECT "SHAPE".ST_asWKT(), "SHAPE".ST_Area(), "SHAPE".ST_Perimeter()
-FROM "TESTSGEO"."SPATIALSHAPES"
+SELECT "SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Area() AS "AREA",
+ROUND("SHAPE".ST_Perimeter(), 4) AS "PERIMETER"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
 WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon');
 ```
 
-![Area and perimeter of polygons](comp10.png)
+![Area and perimeter of polygons](comp10b.png)
 
 As mentioned, you can calculate area and perimeter of multi-polygons as well. Below is the example of computations of the multi-polygon, which is a result of union aggregation of individual polygons in the table.
 
 ```sql
-SELECT "AGGRSHAPE".ST_asWKT(), "AGGRSHAPE".ST_Area(), "AGGRSHAPE".ST_Perimeter()
+SELECT
+"AGGRSHAPE".ST_asWKT() AS "WKT",
+"AGGRSHAPE".ST_Area() AS "AREA",
+ROUND("AGGRSHAPE".ST_Perimeter(), 2) AS "PERIMETER"
 FROM (
 SELECT ST_UnionAggr("SHAPE") as "AGGRSHAPE"
-FROM "TESTSGEO"."SPATIALSHAPES"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
 WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 )
 ```
 
-![Area and perimeter of multi-polygon](comp20.png)
+![Area and perimeter of multi-polygon](comp20b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Centroid of polygons)]
+### Centroid of polygons
+
 
 The method `ST_Centroid()` returns the point that is the mathematical centroid of a polygon or multi-polygon.
 
 ```sql
-SELECT "SHAPE".ST_asWKT(), "SHAPE".ST_Centroid().ST_asWKT()
-FROM "TESTSGEO"."SPATIALSHAPES"
-WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon');
+SELECT
+"SHAPE".ST_asWKT() AS "WKT",
+"SHAPE".ST_Centroid().ST_asWKT() AS "CENTROID_WKT"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_GeometryType() IN ('ST_Polygon');
 ```
 
-![Centroids of polygons](comp30.png)
+![Centroids of polygons](comp30b.png)
 
 And another example where all individual polygons are combined into one multi-polygon.
 
 ```sql
-SELECT "AGGRSHAPE".ST_asWKT(), "AGGRSHAPE".ST_Centroid().ST_asWKT()
+SELECT
+"AGGRSHAPE".ST_asWKT() AS "WKT",
+"AGGRSHAPE".ST_Centroid().ST_asWKT() AS "CENTROID_WKT"
 FROM (
 SELECT ST_UnionAggr("SHAPE") as "AGGRSHAPE"
-FROM "TESTSGEO"."SPATIALSHAPES"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
 WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 );
 ```
 
-![Centroid of multi-polygon](comp40.png)
+![Centroid of multi-polygon](comp40b.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Point on a surface)]
+### Point on a surface
+
 
 Centroid of a polygon is not always at the surface of that polygon. Consider the following example.
 
 ```sql
-SELECT "PolygonWithInnerRing".st_asSVG(),
-"PolygonWithInnerRing".st_centroid().st_asSVG()
+SELECT
+"PolygonWithInnerRing".ST_asSVG() AS "SVG",
+"PolygonWithInnerRing".ST_Centroid().ST_asSVG() AS "CENTROID_SVG"
 FROM (
 SELECT NEW ST_Polygon('Polygon ((-5 -5, 5 -5, 0 5, -5 -5), (-2 -2, -2 0, 2 0, 2 -2, -2 -2))') as "PolygonWithInnerRing"
-FROM dummy
+FROM "DUMMY"
 );
 ```
 
@@ -122,12 +131,12 @@ In some cases you will need to have a point (like some sort of marker on the map
 Update the example above to include the calculation of the point-on-surface.
 
 ```sql
-SELECT "PolygonWithInnerRing".ST_asSVG(),
-"PolygonWithInnerRing".ST_Centroid().st_asSVG(),
-"PolygonWithInnerRing".ST_PointOnSurface().st_asSVG()
+SELECT
+"PolygonWithInnerRing".ST_asSVG() AS "SVG",
+"PolygonWithInnerRing".ST_PointOnSurface().ST_asSVG() AS "CENTROID_SVG"
 FROM (
 SELECT NEW ST_Polygon('Polygon ((-5 -5, 5 -5, 0 5, -5 -5), (-2 -2, -2 0, 2 0, 2 -2, -2 -2))') as "PolygonWithInnerRing"
-FROM dummy
+FROM "DUMMY"
 );
 ```
 
@@ -148,32 +157,30 @@ You can see on the visualization that the blue dot is indeed located on the yell
 
 ![Centroid and point-on-surface](comp60.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Distance)]
+### Distance
+
 
 The `ST_Distance` method computes the shortest distance between two geometries.
 
->This method can only be used with geometries in a round-Earth spatial reference system for point to point calculations.
+>In a round-Earth spatial reference system this method can only be used with geometries for point to point calculations.
 
-The statement below will return five geometries from the table `SPATIALSHAPES` that are closest to the point (0,0).
+The statement below will return five geometries from the table `SPATIALSHAPES` that are closest to the point `(0,0)`.
 
 ```sql
-select top 5
-"SHAPEID", "SHAPE".ST_asWKT(),
-"SHAPE".ST_Distance(new st_point('POINT (0 0)'))
-from "TESTSGEO"."SPATIALSHAPES"
-where "SHAPE".st_isEmpty() = 0
-order by 3 asc;
+SELECT TOP 5
+"SHAPEID",
+"SHAPE".ST_asWKT() AS "WKT",
+ROUND("SHAPE".ST_Distance(NEW ST_Point('POINT (0 0)')), 4) AS "DISTANCE"
+FROM "TUTORIAL_GEO"."SPATIALSHAPES"
+WHERE "SHAPE".ST_isEmpty() = 0
+ORDER BY 3 ASC;
 ```
 
-![Distances](comp70.png)
+![Distances](comp70b.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 ### Optional
-- You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
-
----
+- Blog post [Markers for geographical areas (with SAP HANA SQL)](https://blogs.sap.com/2020/07/10/markers-for-geographical-areas-with-sap-hana-sql/),
+- You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a13f280787c10148dc893063dfed1c4.html).

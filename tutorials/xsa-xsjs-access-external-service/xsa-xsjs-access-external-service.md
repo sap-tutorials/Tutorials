@@ -1,25 +1,25 @@
 ---
-title: SAP HANA, XS Advanced - Access an external HTTP service
-description: Create an XSJS service with outbound HTTP connectivity
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+time: 15
 ---
+
+# SAP HANA, XS Advanced - Access an external HTTP service
+<!-- description --> Create an XSJS service with outbound HTTP connectivity
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+ 
+## You will learn  
+How to create a user-provided service to perform and outbound HTTP request to an external system in an XSJS service. This tutorial assumes you have completed the [basic end-to-end group](https://developers.sap.com/group.hana-xsa-get-started.html), as it requires an [existing database module](xsa-hdi-module) and [Node.js module](xsa-xsjs-xsodata) with XSJS support.
 
-## Details
-### You will learn  
-How to create a user-provided service to perform and outbound HTTP request to an external system in an XSJS service. This tutorial assumes you have completed the [basic end-to-end group](https://developers.sap.com/group.hana-xsa-get-started.html), as it requires an [existing database module](https://sap.com/developer/tutorials/xsa-hdi-module.html) and [Node.js module](https://sap.com/developer/tutorials/xsa-xsjs-xsodata.html) with XSJS support.
-
-
-### Time to Complete
-**15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a user-provided service)]
+### Create a user-provided service
+
 
 If you are using SAP HANA, express edition 2.0 SPS03 or higher, you can do this from the XS Advanced Cockpit. If you are using a lower version or do not have access to the XS Advanced Cockpit, scroll down.
 
@@ -62,11 +62,9 @@ You will be prompted for the values. Use the same as in the `JSON` definition ab
 
 ![Create CUPS CLI](cups.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add the dependency to the Node.js module
 
-[ACCORDION-BEGIN [Step 2: ](Add the dependency to the Node.js module)]
 
 Back in SAP Web IDE for SAP HANA, open the `MTA.yaml` editor in graphical mode. Add a new resource in the `Resources` tab.
 
@@ -95,12 +93,10 @@ Go into the `Modules` tab. Add the `EXTERNAL_HTTP` service as a dependency to th
 
 ![Edit YAML](dependency.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create an HTTP destination)]
+### Create an HTTP destination
+
 
 Within the Node.js module with `XSJS` compatibility, within the `lib` folder, create a file called `EXTERNAL_HTTP.xshttpdest`.
 
@@ -119,11 +115,9 @@ timeout = 0;
 
 > Edit the proxy configuration if applicable
 
-[DONE]
 
-[ACCORDION-END]
+### Call the service in an `XSJS` service
 
-[ACCORDION-BEGIN [Step 4: ](Call the service in an `XSJS` service)]
 
 Create a new file in the `lib` folder called `searchImages.xsjs`. Add the following code into it.
 
@@ -174,9 +168,7 @@ if (response.status === $.net.http.INTERNAL_SERVER_ERROR) {
 
 Change the search parameter to `chocolate` and the index to 7 to complete the validation below. What number is shown on the top left side of the picture?
 
-[VALIDATE_2]
 
-[ACCORDION-END]
 
 
 ---

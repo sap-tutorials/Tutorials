@@ -1,66 +1,39 @@
 ---
-title: Install Postman extension for Google Chrome as a REST client
-description: Install Postman extension for Google Chrome as a REST client
+parser: v2
 primary_tag: topic>cloud
-tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform ]
+tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 time: 5
 ---
 
-## How-To Details
-In this ***how-to*** guide, you learn how to install and configure the [Google Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
+# Install Postman REST Client
+<!-- description --> Install Postman REST client so you can interact with your REST API.
 
-Postman will allow you to interact with REST API. In addition, you will
- setup the Postman Interceptor extension so that you can reuse your current Google Chrome session cookies while interacting with the APIs.
+## You will learn
+ - How to install and configure the [Postman](https://www.getpostman.com/) client
 
----
 
-[ACCORDION-BEGIN [Step 1: ](Install Google Chrome)]
+### Install Postman
 
-If you haven't done so yet, please install [Google Chrome](https://www.google.com/chrome/).
 
-[ACCORDION-END]
+Go to <https://www.getpostman.com/downloads/> to download Postman. Once downloaded, follow the installation instructions.
 
-[ACCORDION-BEGIN [Step 2: ](Install the Postman extension for Chrome)]
+![Download Postman](install-postman.png)
 
-Open **Google Chrome** and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
-[ACCORDION-END]
+### Configure Postman
 
-[ACCORDION-BEGIN [Step 3: ](Install the Postman Interceptor extension for Chrome)]
 
-Install the [Postman Interceptor extension](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo).
+Open Postman by searching for it in your programs.
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Configure Postman)]
-
-Click on **Apps**
-
-![Google Chrome](01.png)
-
-Click on the **Postman** icon
-
-You will get access to all the ***Google Chrome*** installed extension.
-
-Click on **Postman**
-
-![Postman](02.png)
-
-You are almost set to move to your next tutorial.
-
-![Postman](03.png)
-
-Enable the Interceptor by clicking on the Interceptor icon as highlighted.
-
-![Postman](04.png)
+![Open Postman](open-postman.png)
 
 Click on the **Tools** icon ![Postman](06.png), then select **Settings** from the menu.
 
-Enable the ***Automatically follow redirects*** option as highlighted.
+![Open Settings](open-settings.png)
 
-![Postman](05.png)
+Disable the **SSL certificate verification** and enable the **Automatically follow redirects** option as highlighted.
+
+![Settings](settings.png)
 
 You are now all set to move to your next tutorial.
-
-[ACCORDION-END]
 

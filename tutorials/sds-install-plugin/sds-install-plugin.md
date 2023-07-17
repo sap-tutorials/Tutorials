@@ -1,9 +1,11 @@
 ---
-title: Installing the streaming studio plugin
-description: Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.
+parser: v2
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, products>sap-hana-streaming-analytics ]
 ---
+
+# Installing the streaming studio plugin
+<!-- description --> Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.
 
 ## Prerequisites  
  **Proficiency:** Beginner
@@ -11,17 +13,16 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics ]
 ## Next Steps
  [Create a Streaming Project with SAP HANA streaming analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
-## Details
-Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.
-### You will learn  
 
-
-### Time to Complete
+## Intro
+Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.## You will learn  
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the plugin)]
+### Install the plugin
+
 1. Use the Download Manager to download the streaming studio plugin file.
 
 2. Extract the contents of the streaming studio plugin file.
@@ -59,9 +60,8 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 11. If you are installing the plugin into studio for Linux, log off of the machine and log back in.
 
 
-[ACCORDION-END]
+### Open the streaming perspectives
 
-[ACCORDION-BEGIN [Step 2: ](Open the streaming perspectives)]
 
 1. In studio, select _Window > Perspective > Open Perspective > Other_, then select the **SAP HANA Streaming Development** perspective and click **OK**:
 
@@ -71,10 +71,10 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 
     ![SAP HANA Streaming Run-Test perspective](open-run-test.png)
 
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add a streaming analytics connection)]
+### Add a streaming analytics connection
+
 
 Here we will connect studio to the SAP HANA streaming analytics server.
 
@@ -116,9 +116,8 @@ Here we will connect studio to the SAP HANA streaming analytics server.
     ![Default Server URL](set-default-server-url-hdbstudio.png)
 
 
-[ACCORDION-END]
+### Add a HANA service
 
-[ACCORDION-BEGIN [Step 4: ](Add a HANA service)]
 
 In this step we will create a named **Data Service** on the SAP HANA streaming analytics server.  In this case, the data service will connect to a particular HANA database. Streaming projects use named data services to connect to database tables.
 
@@ -147,5 +146,3 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Discover](discover-hdbstudio.png)
 
-
-[ACCORDION-END]

@@ -1,31 +1,33 @@
 ---
-title: Build and Deploy Streaming Lite Project
-description: Learn how to create, compile and deploy a streaming analytics project.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 ---
 
+# Build and Deploy Streaming Lite Project
+<!-- description --> Learn how to create, compile and deploy a streaming analytics project.
+
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorial:** [Install Streaming Lite and Setup Freezer Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
 
-## Details
-### You will learn  
+## You will learn  
 - How to build a Streaming Lite project on HANA Studio
 - How to deploy our project on `Raspberry Pi 2`
 
 ## Next Steps
 - [Test Streaming Lite Project](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part4.html)
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
+## Intro
 Streaming Lite runs `.ccx` files, which come from standard HANA Studio Streaming Analytics projects. We will be creating a streaming project called `"freezer_monitoring_lite"` in HANA Studio. After creating and compiling the Streaming Analytics project, we will obtain a `.ccx` file. This file is then uploaded to the `Raspberry Pi` and run by Streaming Lite.
 
-[ACCORDION-BEGIN [Step 1: ](Build Streaming Analytics Project)]
+### Build Streaming Analytics Project
+
 
   1. Create project `"freezer_monitoring_lite"`
 
@@ -107,11 +109,10 @@ Streaming Lite runs `.ccx` files, which come from standard HANA Studio Streaming
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy Streaming Lite)]
+### Deploy Streaming Lite
+
 
 Connect to your `Raspberry Pi` with `WinSCP`, and move your `.ccx` file over onto the `Pi`. We are moving it into the `/home/pi` directory.
 
@@ -130,9 +131,6 @@ You should now see our Streaming Lite project running:
 
 ![Streaming Lite Project Running](StreamingLiteProjectRunning.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 ---
 

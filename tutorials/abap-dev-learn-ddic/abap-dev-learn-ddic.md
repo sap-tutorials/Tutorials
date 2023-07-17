@@ -1,55 +1,56 @@
 ---
-title: Learn about the ABAP Data Dictionary
-description: Open an ABAP package containing Data Dictionary objects and find out more about them.
+parser: v2
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 ---
+
+# Learn about the ABAP Data Dictionary
+<!-- description --> Open an ABAP package containing Data Dictionary objects and find out more about them.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have a running ABAP application server (AS ABAP). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://developers.sap.com/trials-downloads.html).
- - **Tutorial**: [Create an ABAP project](https://developers.sap.com/tutorials/abap-create-project.html)
+ - You have a running ABAP application server (AS ABAP). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html).
+ - **Tutorial**: [Create an ABAP project](abap-create-project)
 
-## Details
-### You will learn
+## You will learn
   - How to find objects in the ABAP Dictionary
 
+## Intro
 The ABAP Dictionary describes and manages all the data definitions (metadata) used in the ABAP system to work with data types, database tables, and views. In this tutorial, you will open an ABAP package containing some of these objects and find out how they fit together.
 
 You will open an ABAP package, **`SAPBC_DATAMODEL`**, and look at the ABAP Dictionary objects in it. This package contains all the object types you will learn about in this tutorial (and more), and is delivered with every ABAP System.
 
 For more information, see [Data Types](https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/index.htm?file=abenddic_data_types.htm) in the ABAP Keyword Documentation.
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add package to favorites)]
+### Add package to favorites
+
 
 Before you start exploring the Dictionary objects, you will add the relevant package to your favorites for convenience:
 
-  1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
+1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
+
     ![Image depicting step1-expand-project](step1-expand-project.png)
 
-  2. Select Favorite Packages, then choose Add Package… from the context menu:
+2. Select Favorite Packages, then choose Add Package… from the context menu:
 
     ![Image depicting step1b-add-package](step1b-add-package.png)
 
-  3. Enter **`SAPBC`** in the search field, then choose the package **`SAPBC_DATAMODEL`** from the matching items box:
+3. Enter **`SAPBC`** in the search field, then choose the package **`SAPBC_DATAMODEL`** from the matching items box:
 
     ![Image depicting step1c-choose-package](step1c-choose-package.png)
 
-  The package is added to your favorites:
+The package is added to your favorites:
 
-  ![Image depicting step1d-fave-package-added](step1d-fave-package-added.png)
+    ![Image depicting step1d-fave-package-added](step1d-fave-package-added.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Expand package
 
-[ACCORDION-BEGIN [Step 2: ](Expand package)]
 
 Expand the package **`SAPBC_DATAMODEL`** again by choosing the arrow, then expanding the Dictionary folder:
 
@@ -65,11 +66,9 @@ You will see a long list of folders of Dictionary objects in alphabetical order.
 
 You will now explore how these concepts fit together.
 
-[DONE]
 
-[ACCORDION-END]
+### Open transparent table definition
 
-[ACCORDION-BEGIN [Step 3: ](Open transparent table definition)]
 
 > Important: Database tables represented on the ABAP server are known as "transparent tables" - to distinguish them from internal tables (which you will learn about later in this tutorial).
 
@@ -79,11 +78,9 @@ Open the table **`SFLIGHT`** by choosing **`SAPBC_DATAMODEL` -> Dictionary -> Da
 
 The definition of the table appears, including technical settings and key fields:
 
-[DONE]
 
-[ACCORDION-END]
+### Open table in data preview
 
-[ACCORDION-BEGIN [Step 4: ](Open table in data preview)]
 
 Now select (right-click) the table **`SFLIGHT`** again, then choose **Open With Data Preview** from the context menu:
 
@@ -93,11 +90,9 @@ Finally, something that looks like a table!
 
 ![Image depicting step4b-sflight-in-data-preview](step4b-sflight-in-data-preview.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Open a data element
 
-[ACCORDION-BEGIN [Step 5: ](Open a data element)]
 
 Now go back to the table definition. Find the field CARRID. This field has been defined using a data element, `S_CARR_ID`. Navigate to the definition of `S_CARR_ID` by selecting it, then choosing **Navigate To (F3)** from the context menu:
 
@@ -113,13 +108,11 @@ The relationship between these Dictionary objects looks like this:
 
 ![Image depicting ddic-objects](ddic-objects.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Table types and internal tables
 
-[ACCORDION-BEGIN [Step 6: ](Table types and internal tables)]
 
-These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Get started with ABAP development](https://developers.sap.com/group.abap-basic-app.html).
+These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Start Developing ABAP Tables](group.abap-dev-tables).
 
   - A **table type** describes the data type of an internal table in ABAP. You can create an internal table, based on the structure of a database table, and then use this internal table to manipulate the data in your application.
   - A **structure** is a data type that consists of a single row of one or more components, such as elementary types. This is a powerful concept: You can create a structure representing a single row of a table, and then use it to manipulate table data in your application.
@@ -129,11 +122,9 @@ The relationship between them looks like this:
 
 ![Image depicting ddic-objects-itab](ddic-objects-itab.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Search helps
 
-[ACCORDION-BEGIN [Step 7: ](Search helps)]
 
 You use search help to help your users select a valid value for an input field from a dropdown list. For example, if the input field is **Airline code**, you could provide a dropdown list including AA (American Airlines), BA (British Airways) and so on. Alternatively, if the field is **Customer ID**, the search help will show values that have already been entered in the table **Customers.**
 
@@ -146,11 +137,10 @@ For more information on how to do this, see the [SAP Help Portal](https://help.s
 You should now understand six important ABAP Dictionary objects and the relationship between them.
 Now, You can either:
 
-  - [Learn about the ABAP Repository for development objects](coming soon) or
+  - [Learn about the ABAP Repository for development objects](abap-dev-learn-repo) or
+  - [Go back to ABAP for Newbies](https://community.sap.com/topics/abap/abap-for-newbies)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 

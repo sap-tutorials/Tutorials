@@ -1,6 +1,5 @@
 ---
-title: Join an Event Stream to a HANA Table
-description: Add a HANA Reference element to a streaming project. The Reference element is a proxy for a HANA table, allowing the HANA table to be accessed within the streaming project. Then, using a Join operator, join the input stream to the HANA table to enrich the incoming events with reference data from the HANA database.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,20 +7,23 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 auto_validation: true
 time: 20
 ---
+# Join an Event Stream to a HANA Table
+<!-- description --> Add a HANA Reference element to a streaming project. The Reference element is a proxy for a HANA table, allowing the HANA table to be accessed within the streaming project. Then, using a Join operator, join the input stream to the HANA table to enrich the incoming events with reference data from the HANA database.
+
 ## Prerequisites
  - **Tutorials:** [Run and Test a Streaming Project](https://developers.sap.com/tutorials/sds-run-test.html)
 
 ## Next Steps
    **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://developers.sap.com/tutorials/sds-event-stream-moving-average.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to reference a HANA database table in your streaming project using a HANA Reference element.  In streaming projects, a Reference element points at a HANA database table and pulls data in from the table as needed
  - How to join a live event stream to a HANA table to enrich raw event data with reference data from the HANA database
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a HANA database table to your project)]
+### Add a HANA database table to your project
+
 
 After completing the previous tutorial in this series, you should still have your project open, but you are likely in the Streaming Run-Test perspective.  Go back to the Streaming Development perspective.  If the project isn't still open in the visual editor, open it now.
 
@@ -54,12 +56,10 @@ Change the name of the reference element to `MACHINE_REF` by clicking on the ico
 
 ![change name to machineref](5-change-name-to-machineref.png)
 
-[VALIDATE_1]
 
 
-[ACCORDION-END]
+### Join the event stream to the reference table
 
-[ACCORDION-BEGIN [Step 2: ](Join the event stream to the reference table)]
 
 Click **Join** in the **Streams and Windows** drawer of the **Palette** and drag and drop it onto the canvas.
 
@@ -79,11 +79,9 @@ Select the **Connector** tool again and now add a connection from `MACHINE_REF` 
 
 ![connect machineref to join](4-connect-machineref-to-join.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Configure the Join operator
 
-[ACCORDION-BEGIN [Step 3: ](Configure the Join operator)]
 
 Rename `Join1` to `DEVICE_EVENTS` and press **Enter**.
 
@@ -115,12 +113,10 @@ Set the join condition on MACHINEID: select **MACHINEID : string** in each sourc
 
 ![join clause](12-join-clause.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4:](Edit project in the CCL editor)]
+### Edit project in the CCL editor
+
 
 To open the project in the CCL editor, in the Streaming Development perspective do one of the following:
 
@@ -165,6 +161,3 @@ CREATE REFERENCE MACHINE_REF
 
 ```
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Download the Installer Files
-description: Use the Download Manager in console mode to download SAP HANA 2.0, express edition installation packages.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
@@ -8,35 +7,39 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 2
 ---
 
+# Download the Installer Files
+<!-- description --> Use the Download Manager in console mode to download the SAP HANA 2.0, express edition server only installer, XSA applications installer, and additional installation packages.
+
 <!-- loio605bef28cbed45a58c53d00c2c1375a1 -->
 
 ## Prerequisites
 Close the Download Manager if it is running in GUI mode.
 
 
-## Details
-### You will learn
-You will learn how to download the binary image of SAP HANA 2.0, express edition and optional additional components.
+## You will learn
+You will learn how to download the binary image of SAP HANA 2.0, express edition, plus the Applications package, and optional additional components.
 
 ---
 
+## Intro
 > Note:
 > The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user, download the platform-independent Download Manager (`HXEDownloadManager.jar`) to use console mode.
 > 
 > 
 
-[ACCORDION-BEGIN [Step 1: ](Open a command prompt)]
+### Open a command prompt
 
-Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`
+
+Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`).
 
 > Note:
 > If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the <sid>`adm` user.
 > 
 > 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Display the command help using the `-h` argument)]
+### Display the command help using the `-h` argument
+
 
 Linux `x86_64` Download Manager example:
 
@@ -55,9 +58,9 @@ java -jar HXEDownloadManager.jar -h
 > 
 > 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Familiarize yourself with the command syntax, and the command arguments)]
+### Familiarize yourself with the command syntax, and the command arguments
+
 
 Command syntax is:
 
@@ -99,9 +102,11 @@ Valid <file> values:
 | `sdi.tgz` |SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
 | `dpagent_linux_x86_64.tgz` |SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.|
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download one or more files)]
+### Download one or more files
+
+
+If you want applications like XS Advanced, Web IDE, and SAP HANA Cockpit, download both `hxe.tgz` and `hxexsa.tgz`. If you want optional packages like SAP HANA streaming analytics (`hsa.tgz`), download them now as well.
 
 This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and the SHINE package (`shine.tgz`).
 
@@ -117,6 +122,5 @@ It downloads *Getting Started with SAP HANA, express edition (Binary Installer M
 java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxexsa.tgz
 ```
 
-[ACCORDION-END]
 
 

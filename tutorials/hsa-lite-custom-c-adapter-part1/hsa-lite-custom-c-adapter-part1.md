@@ -1,15 +1,17 @@
 ---
-title: Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite
-description: Gain an overview of Custom C Adapters that work with either HANA Streaming Analytics or Streaming Lite. The Custom C/C++ Adapter will be created using the C and C++ SDK, and built using a makefile which we will provide. The purpose of this tutorial is to show how to create your own Custom C/C++ Adapter given a specific schema.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
+# Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite
+<!-- description --> Gain an overview of Custom C Adapters that work with either HANA Streaming Analytics or Streaming Lite.
+
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://developers.sap.com/group.sds-hxe-get-started.html)
- - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
+ - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](group.sds-hxe-get-started)
+ - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](hsa-streaming-lite-freezer-monitoring-part1)
  - SAP HANA 2.0 system with minimum version SP02
  - Streaming Analytics server running on SAP HANA
  - C/C++ editor of your choice
@@ -18,19 +20,16 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
 ## Next Steps
- - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part2.html)
+ - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](hsa-lite-custom-c-adapter-part2)
 
-## Details
-### You will learn  
+## You will learn  
 - An overview of Custom C/C++ Adapters for SAP HANA Streaming Lite
 - The steps in order to create and deploy a Custom C/C++ Adapter
 - How to create a Makefile for a Custom C/C++ Adapter
 
-### Time to Complete
-**15 Min**
-
 ---
 
+## Intro
 This tutorial will go over how to create a Custom `C/C++` Adapter that will work with either HANA Streaming Analytics or Streaming Lite. In the testing section, the Custom `C/C++` Adapter will be executed on a remote device, and will send data into a Streaming Lite project running on that same device. It is up to the Custom `C/C++` Adapter to poll any available hardware sensors for values.
 
 The Custom `C/C++` Adapter will be created using the `C/C++` `SDK`, and built using a `makefile` which we will provide. In this document, we will be building an adapter to feed data into the Freezer Monitoring Lite project. The purpose of this tutorial is to show how to create your own Custom `C/C++` Adapter given a specific schema.
@@ -60,7 +59,8 @@ CREATE INPUT STREAM isFreezerTemperatureReading SCHEMA (
 
 You do not require the `"SWS_Output1"` Streaming Web Service Output Adapter to go through this tutorial. All you need is the `isFreezerTemperatureReading` input stream..
 
-[ACCORDION-BEGIN [Step 1: ](Create the Makefile)]
+### Create the Makefile
+
 
 Connect to your `Raspberry Pi` with `WinSCP`, and create a folder called `"custom_c_adapter"` in the root directory `(/home/pi)`
 
@@ -80,9 +80,10 @@ clean:
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+### Test yourself
+
+
+
 
 ---
-

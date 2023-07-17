@@ -1,32 +1,33 @@
 ---
-title: Create a Simple ABAP Daemon
-description: Learn how to create ABAP Daemons and interact with them using PCP messages.
+parser: v2
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [ tutorial>intermediate, topic>abap-development ]
+tags: [ tutorial>intermediate, topic>abap-development  ]
 ---
+
+# Create a Simple ABAP Daemon
+<!-- description --> Learn how to create ABAP Daemons and interact with them using PCP messages.
 
 ## Prerequisites
 - Your system needs to be based on **SAP NetWeaver 7.52** or higher.
 - You need to use **ABAP Development Tools**.
 
-## Details
-### You will learn
+## You will learn
 - How to create and run an ABAP Daemon
 - How to send PCP messages to an ABAP Daemon
 
-
-### Introduction to ABAP Daemons
+## Introduction to ABAP Daemons
 ABAP Daemons are provided by the ABAP Daemon Framework (ADF). They are used to handle events in a reliable way by running in sessions with unlimited lifetime. ABAP programs can communicate with the daemons by sending messages to them using ABAP Messaging Channels and message type Push Channel Protocol.
 
+## Intro
 You can make yourself more familiar with the ABAP Daemon Framework by reading the [official documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
 
 > **Push Channel Protocol (PCP)** is a communications format similar to a simple HTTP message. It consists of header fields (name-value pairs) for metadata and a message body. For further information, have a look at the [Specification of the Push Channel Protocol](https://blogs.sap.com/2015/07/27/specification-of-the-push-channel-protocol-pcp/).
-
-### Time to Complete
+## Time to Complete
 **20 Min**.
 
-[ACCORDION-BEGIN [Step 1: ](Create a new ABAP Daemon class)]
+### Create a new ABAP Daemon class
+
 ABAP Daemons are instances of an ABAP Daemon class that extend the base class `CL_ABAP_DAEMON_EXT_BASE`.
 
 First, create a new ABAP class `ZCL_TUTORIAL_SIMPLE_DAEMON` and set `CL_ABAP_DAEMON_EXT_BASE` as its superclass.
@@ -35,10 +36,9 @@ As you can see there is an error in line 1 since the necessary abstract methods 
 
 ![Add unimplemented methods in ABAP Development Tools](add-unimplemented-methods.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement ON_ACCEPT method)]
+### Implement ON_ACCEPT method
+
 Before a new instance of the ABAP Daemon class can be created, its `ON_ACCEPT` method is called to determine if the daemon should start.
 
 Replace your `ON_ACCEPT` method with the following code. It accepts all start requests from your own class and rejects all requests from any other program. This is achieved by checking the calling program that initiated the start.
@@ -61,11 +61,10 @@ METHOD if_abap_daemon_extension~on_accept.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Implement ON_START method)]
+### Implement ON_START method
+
 To start the ABAP Daemon, the `ON_START` method is executed.
 
 You can include a PCP message containing arbitrary startup parameters which can be accessed in the `ON_START` method.
@@ -97,10 +96,9 @@ ENDMETHOD.
 ```
 > **CAUTION!** Please add your own exception handling for productive applications as this has not been included in this simple tutorial.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement ON_TIMEOUT method)]
+### Implement ON_TIMEOUT method
+
 While your ABAP Daemon is running in the background, the `ON_TIMEOUT` method will be triggered when the timeout elapses. Therefore, you need to implement a handler interface. Add this code to the `PUBLIC SECTION` of your class:
 ```ABAP
 INTERFACES if_abap_timer_handler.
@@ -131,10 +129,9 @@ METHOD if_abap_timer_handler~on_timeout.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement ON_MESSAGE method)]
+### Implement ON_MESSAGE method
+
 You can also send PCP messages to your daemon while it is continuously running in the background. The `ON_MESSAGE` method will be called every time the daemon receives a PCP message.
 
 In this tutorial, you will send a plain text to the daemon, which then will be shown in a popup message. As a real life example, you could imagine the ABAP Daemon receiving live data from a sensor and sending a notification under certain conditions.
@@ -158,10 +155,9 @@ METHOD if_abap_daemon_extension~on_message.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement the static method START)]
+### Implement the static method START
+
 > Since the security concept of ABAP Daemons is based on "source code authorization" (see documentation), i.e. only the program (e.g. a class) which starts the daemon has the right to send messages to the daemon or to stop it. For simplicity reasons we use the daemon class to implement the start, stop and send functionalities for the daemon to access them from different programs.
 
 This simple ABAP Daemon will be started by a static method. Thus, you need to create a new method `START` in your daemon class with two import parameters:
@@ -198,10 +194,9 @@ METHOD start.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement the static method SEND)]
+### Implement the static method SEND
+
 Implement a static method `SEND` which will be used to send text to the daemon and therefore trigger its `ON_MESSAGE` method. The method will need the following importing parameters:
 
 - `IV_DAEMON_NAME`: The name of the daemon that will receive the message.
@@ -244,10 +239,9 @@ METHOD send.
 ENDMETHOD.
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the ABAP Daemon)]
+### Run the ABAP Daemon
+
 **Congratulations, you have now created your first ABAP Daemon class!
 Activate it by pressing `Ctrl+F3`.**
 
@@ -265,10 +259,9 @@ You should see a popup notification every 10 seconds:
 
 ![Popup message from an ABAP Daemon](popup-timeout.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Send messages to the ABAP Daemon)]
+### Send messages to the ABAP Daemon
+
 In addition to the timeout, you can trigger a popup message manually by calling the static `SEND` method. Create another ABAP Program `Z_TUTORIAL_SIMPLE_DAEMON_SEND` with the following content:
 
 ```abap
@@ -282,10 +275,9 @@ Feel free to change the message text in line 1. After activating and executing t
 
 > **If you do not receive any message:** Make sure your daemon has been started previously in step 8. The daemon will keep running even after the popup messages stop.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Stop the ABAP Daemon)]
+### Stop the ABAP Daemon
+
 You can monitor all running ABAP Daemons using transaction `SMDAEMON` in SAPGUI. There you can see their state, check for errors, and also restart and terminate them.
 
 To stop your daemon, select it from the list and go to **ABAP Daemon** > **Terminate Daemon**.
@@ -328,10 +320,9 @@ from any ABAP Program.
 
 > For further information on ABAP Daemons, see the [ABAP Daemons documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test your application)]
+### Test your application
+
 
 Start your daemon using the following line of code. Note that the daemon name is now significantly longer and the timeout is negative.
 
@@ -339,5 +330,4 @@ Start your daemon using the following line of code. Note that the daemon name is
 zcl_tutorial_simple_daemon=>start( iv_daemon_name = 'does_the_daemon_start_up_if_you_use_this_as_your_daemon_name' iv_timeout = -10000 ).
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+

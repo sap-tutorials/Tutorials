@@ -1,9 +1,0 @@
-{
-	"url_featureextraction": "/ml-dest/imagefeatureextraction/feature-extraction",
-	"url_similarityscoring": "/ml-dest/similarityscoring/similarity-scoring",
-	"method": "POST",
-	"accept": "application/json",
-	"fileType": "zip,tar",
-	"mimeType": "application/x-zip-compressed,application/zip,application/octet-stream",
-	"APIKey": "2ddSBnNEGkDvfuxAQERA6SBWrn7iXS6V"
-}

@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+Which technical concept is introduced and configured in this tutorial?
+
+###Match
+[ ] SAP Fiori App
+[ ] Launchpad Tile
+[x] Navigation Target
+[ ] Theming
+
+[VALIDATE_1]

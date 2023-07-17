@@ -1,28 +1,30 @@
 ---
-title: Installing and Configuring the Streaming Studio Plugin
-description: Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
+parser: v2
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
+
+# Installing and Configuring the Streaming Studio Plugin
+<!-- description --> Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
     - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](https://developers.sap.com/tutorials/hxe-ua-installing-streaming.html)
-    - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
  - [Create a Streaming Project with SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
-## Details
-Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 
-### Time to Complete
+## Intro
+Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
+## Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit the /etc/hosts File)]    
+### Edit the /etc/hosts File
+    
 
 If you're running SAP HANA, express edition in a virtual machine or cloud server instance, then depending on the network configuration, you may need to edit the `/etc/hosts` file on your local machine so Eclipse can connect to the streaming analytics server.
 
@@ -52,9 +54,9 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the plugin)]
+### Install the plugin
+
 
 1. Use the SAP HANA, express edition Download Manager to download the streaming studio plugin, `hsa_plugin.zip`.
 
@@ -93,9 +95,9 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 11. If you are installing the plugin into Eclipse for Linux, log off of the machine and log back in.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the streaming perspectives)]
+### Open the streaming perspectives
+
 
 1. In Eclipse, select _Window > Perspective > Open Perspective > Other_, then select the **SAP HANA Streaming Development** perspective and click **OK**:
 
@@ -108,10 +110,10 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
     ![SAP HANA Streaming Run-Test perspective](open-run-test.png)
 
 
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add a streaming analytics connection)]
+### Add a streaming analytics connection
+
 
 Here we will connect our streaming design time tools to the SAP HANA streaming analytics server.
 
@@ -153,9 +155,9 @@ Here we will connect our streaming design time tools to the SAP HANA streaming a
     ![Default Server URL](set-default-server-url.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a HANA service)]
+### Add a HANA service
+
 
 In this step we will create a named **Data Service** on the SAP HANA streaming analytics server.  In this case, the data service will connect to a particular HANA database. Streaming projects use named data services to connect to database tables.
 
@@ -191,6 +193,4 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Discover](discover.png)
 
-
-[ACCORDION-END]
 

@@ -1,30 +1,28 @@
 ---
-title: Database Recovery With HANA Dynamic Tiering
-description: Recovering Databases with Dynamic Tiering
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
+time: 15
 ---
 
+# Database Recovery With HANA Dynamic Tiering
+<!-- description --> Recover databases with Dynamic Tiering.
+
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials** [Creating Database Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part2.html)
+ - **Tutorials** [Creating Database Backups](https://www.sap.com/)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 
-## Next Steps
-  - **Tutorials** [Reviewing Available Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part4.html)
-
-## Details
-### You will learn
+## You will learn
 - How to choose which type of recovery to perform
 - How to select backup location and prefixes
 
-### Time to Complete
-**15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Recovering Your Database)]
+### Recovering Your Database
+
 Database recovery can be done either from a command line or from HANA Studio. The preferred way is via HANA Studio.
 
 From the SAP HANA Administrative Console perspective, right click on the System Database in the Systems panel with the `SYSTEM` user, hover over "**Backup and Recovery**" in the pop up menu and select "**Recover Tenant Database...**" Similar to backing up Tenant Databases, recovering Tenant Databases must also be done through the System Database.
@@ -74,13 +72,19 @@ It will then present the "**Review Recovery Settings**" window. If the informati
 ![Review Recovery Settings](review-recovery-settings.png)
 
 You can now view the recovery being performed for both Dynamic Tiering and the core HANA host.
+
 > Note: To perform recovery, you should have the same or higher version of SAP HANA installed as the version used to create the BACKUP
 
 ![Data Recovery Performance](watch-data-recovery.png)
 
 Once the recovery process completes, the Recovery Execution Summary screen will be displayed.
+
 ![Data Recovery Summary](recovery-summary.png)
 
 
-[ACCORDION-END]
+
+
+### Test yourself
+
+
 

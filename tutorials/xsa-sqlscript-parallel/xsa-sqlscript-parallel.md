@@ -1,28 +1,28 @@
 ---
-title: Parallel Processing and Parameters
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions
+parser: v2
+author_name: Rich Heilman
+author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 15
 ---
+# Parallel Processing and Parameters
+<!-- description --> Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating Stored Procedures](https://developers.sap.com/tutorials/xsa-sqlscript-stored-proc.html)
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+- **Tutorials:** [Creating Stored Procedures](xsa-sqlscript-stored-proc)
 
-## Next Steps
-- [Intermediate Table Variables](https://developers.sap.com/tutorials/xsa-sqlscript-table-var.html)
+## You will learn  
+- How to take full advantage of parallel processing in SAP HANA by using table variables
 
-## Details
-### You will learn  
-In this exercise we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
-**Please note - This tutorial is based on SPS11**
-
-### Time to Complete
-**15 Min**.
+## Intro
+In this exercise, we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
 
 ---
 
+### Edit previous procedure
 
-[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
 Return to your procedure called `get_po_header_data`.
 
@@ -33,24 +33,51 @@ Define two tabular output parameters which will be used to explicitly pass the r
 ![Define output](2.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign SELECT statements)]
+### Assign SELECT statements
+
 
 Next, assign SELECT statements to the output parameters as shown here.
 
 ![assign select](3.png)
 
-The completed code should be similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_11`
+The completed code should be similar to this.
 
 ```
-PROCEDURE "dev602.procedures::get_po_header_data" (    OUT EX_PO_CREATE_CNT TABLE(       CREATE_CNT INTEGER,      "HISTORY.CREATEDBY.EMPLOYEEID" NVARCHAR(10)),    OUT EX_PO_CHANGE_CNT TABLE(       CHANGE_CNT INTEGER,       "HISTORY.CHANGEDBY.EMPLOYEEID"  NVARCHAR(10)) )  	LANGUAGE SQLSCRIPT	SQL SECURITY INVOKER	--DEFAULT SCHEMA <default_schema_name>	READS SQL DATA ASBEGINex_po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header" WHERE PURCHASEORDERID IN (            SELECT PURCHASEORDERID                   FROM "dev602.data::PO.Item"      WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";ex_po_change_cnt =  SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header"  WHERE PURCHASEORDERID IN (             SELECT PURCHASEORDERID                  FROM "dev602.data::PO.Item"      WHERE "PRODUCT.PRODUCTID" IS NOT NULL)    GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";END
+PROCEDURE "get_po_header_data"(
+    OUT EX_PO_CREATE_CNT TABLE(
+       CREATE_CNT INTEGER,
+      "HISTORY.CREATEDBY.EMPLOYEEID" NVARCHAR(10)),
+    OUT EX_PO_CHANGE_CNT TABLE(
+       CHANGE_CNT INTEGER,
+       "HISTORY.CHANGEDBY.EMPLOYEEID"  NVARCHAR(10)) )  
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+
+ex_po_create_cnt = SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"
+     FROM "PO.Header" WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";
+
+ex_po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"
+     FROM "PO.Header"  WHERE PURCHASEORDERID IN (
+                     SELECT PURCHASEORDERID
+                          FROM "PO.Item"
+          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
+GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
+
+END
 ```
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save and build)]
+### Save and build
+
 
 Save the procedure.
 
@@ -61,32 +88,24 @@ Perform a build on the `hdb` module.
 ![Build Module](6.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Invoke the procedure again)]
+### Run the procedure again
 
-Return to the HRTT page and invoke the procedure again.
+
+Return to the Database Explorer page and run the procedure again.
 
 ![HRTT](7.png)
 
-The CALL statement will be inserted into a new "SQL" tab
-
-![Call statement](8.png)
-
-Click the **Run** button
+The CALL statement will be inserted into a new "SQL" tab. Click the **Run** button
 
 ![Run](9.png)
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check execution time)]
+### Check execution time
+
 
 Check the execution time again, you may notice that it is a bit faster this time. The reason is that these SQL statements are now executed in parallel.
 
 ![Check execution time](10.png)
-
-
-[ACCORDION-END]
-
 

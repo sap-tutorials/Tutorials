@@ -1,25 +1,27 @@
 ---
-title: Access Protected SAP Analytics Cloud Resources with OAuth Two-Legged Flow
-description: Develop a sample client application that embeds an SAP Analytics Cloud story and configure the OAuth two-legged flow to provide access to the API.
+parser: v2
 auto_validation: true
-primary_tag: products>sap-cloud-platform-connectivity
-tags: [  tutorial>intermediate, topic>cloud, topic>sapui5, topic>security, products>sap-analytics-cloud, products>sap-cloud-platform-connectivity ]
+primary_tag: software-product>sap-analytics-cloud
+tags: [  tutorial>intermediate, topic>cloud, programming-tool>sapui5, topic>security, software-product>sap-analytics-cloud, software-product>sap-cloud-platform-connectivity  ]
 time: 60
 author_name: Virat Tiwari
 author_profile: https://github.com/virattiwari7
 ---
 
+# Access Protected SAP Analytics Cloud Resources with OAuth Two-Legged Flow
+<!-- description --> Develop a sample client application that embeds an SAP Analytics Cloud story and configure the OAuth two-legged flow to provide access to the API.
+
 ## Prerequisites  
  - An administrator account on an SAP Analytics Cloud tenant
  - An administrator account in the SAP Cloud Identity Authentication service tenant
- - An administrator account on SAP Cloud Platform
+ - An administrator account on SAP Business Technology Platform
 
-## Details
 
-### You will learn  
+## You will learn  
 - How to configure secure access to SAP Analytics Cloud resources with a two-legged OAuth flow
 - The roles involved in the two- and three-legged OAuth flows
 
+## Intro
 SAP Analytics Cloud (SAC) leverages the OAuth 2.0 framework to provide secure access to its resources exposed via REST APIs, for example, story APIs. SAC provides support for both two-legged and three-legged OAuth flows.
 
 Both flows involve the following roles:
@@ -35,15 +37,13 @@ Both flows involve the following roles:
   - **Resource / Authorization Server: API**   
 
     The resource server hosts the protected user accounts.  The authorization server verifies the identity of the user and, then, issues access tokens to the application.
-
-#### Three-Legged versus Two-Legged OAuth 2.0 Flows####
+### Three-Legged versus Two-Legged OAuth 2.0 Flows####
 In the three-legged flow, all three roles are _actively_ involved. For example, the user must explicitly authorize the client application to access the resources that the user owns.
 
 In the two-legged flow, on the other hand, the user is not actively involved. Instead, the SAML bearer assertion token obtained during the login to the client application is exchanged with the SAP Analytic Cloud OAuth token behind the scenes.
 
 An important factor to consider when you choose between the three-legged and two-legged flows is the customer landscape. Typically, you find a central IDP in an enterprise landscape. The purpose of a central IDP within an enterprise is to manage Identity federation and provide an SSO experience to end users across different applications. With this landscape, you should implement the two-legged flow to ensure a seamless OEM experience.
-
-#### Overview of the Two-Legged Flow####
+### Overview of the Two-Legged Flow####
 The two-legged flow requires heavy configuration so before you start, review the following diagram and description for an overview of what you want to accomplish:
 ![OAuth Two-Legged Flow](OAuthTwoLeggedFlow.PNG)
 
@@ -61,9 +61,10 @@ The two-legged flow requires heavy configuration so before you start, review the
 </li><li>The web application requests the protected resource from SAP Analytics Cloud by presenting the access token. SAC validates the access token, and, if valid, serves the request. The access token is sent in the authorization request header field using bearer authentication scheme.</li></ol></li></ol>
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create a web application)]
+### Create a web application
 
-Start by creating a sample web application and deploying it in SAP Cloud Platform.
+
+Start by creating a sample web application and deploying it in SAP Business Technology Platform.
 
 1. Download the application from the following git repository:
 
@@ -71,9 +72,9 @@ Start by creating a sample web application and deploying it in SAP Cloud Platfor
 
 2. To create the war file, run the following command: 'maven clean install'.
 
-3. Deploy the war file in SAP Cloud Platform.
+3. Deploy the war file in SAP Business Technology Platform.
 
-    Log into your SAP Cloud Platform account and go to **Applications > Java Applications**. Click **Deploy Application**.
+    Log into your SAP Business Technology Platform account and go to **Applications > Java Applications**. Click **Deploy Application**.
 
       ![Deploy Application](1-3aDeployApp.png)
 
@@ -83,20 +84,18 @@ Start by creating a sample web application and deploying it in SAP Cloud Platfor
 
      ![War File Location](1-3BDeployAppupd.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Fetch the SAML bearer assertion token)]
+### Fetch the SAML bearer assertion token
+
 
 With the sample web application deployed, you can now configure authentication via an Identity Provider.
 
-For the purposes of this example, you configure SAP Cloud Platform to act as a Service Provider and the SAP Cloud Platform Identity Authentication tenant as an Identity Provider.
+For the purposes of this example, you configure SAP Business Technology Platform to act as a Service Provider and the SAP Business Technology Platform Identity Authentication tenant as an Identity Provider.
 
-For more information about this configuration, see [Configuring SAML SSO for SAP Cloud Platform Using Custom Identity Provider](https://blogs.sap.com/2017/04/13/configure-saml-sso-for-sap-cloud-platform-using-an-external-identity-provider/).
+For more information about this configuration, see [Configuring SAML SSO for SAP Business Technology Platform Using Custom Identity Provider](https://blogs.sap.com/2017/04/13/configure-saml-sso-for-sap-cloud-platform-using-an-external-identity-provider/).
 
-1. Log into the SAP Cloud Platform cockpit, go to **Security > Trust**, and click **Edit**.
+1. Log into the SAP Business Technology Platform cockpit, go to **Security > Trust**, and click **Edit**.
 
 2. Select the configuration type **Custom**.
 
@@ -110,7 +109,7 @@ For more information about this configuration, see [Configuring SAML SSO for SAP
 
       Click **Get Metadata** to download the Service Provider Metadata file and save it in a local folder.
 
-5. Log into the SAP Cloud Platform Identity Authentication Tenant, with your administrator account, and go to **Application & Resources > Applications**.       
+5. Log into the SAP Business Technology Platform Identity Authentication Tenant, with your administrator account, and go to **Application & Resources > Applications**.       
 
       ![Navigation to Applications](2-5Applications.png)
 
@@ -140,7 +139,7 @@ For more information about this configuration, see [Configuring SAML SSO for SAP
 
      ![Save Metadata](2-92SaveMetadata.png)
 
-10. In the SAP Cloud Platform Cockpit go to **Security > Trust** and click the **Application Identity Provider** tab.
+10. In the SAP Business Technology Platform Cockpit go to **Security > Trust** and click the **Application Identity Provider** tab.
 
       Then, click **Add Trusted Identity Provider.**
 
@@ -164,11 +163,9 @@ If the browser redirects you to the IDP to offer the login page to the user, the
 
 This concludes the first part (Fetch SAML Bearer Assertion Token) of setting up the OAuth two-legged flow.
 
-[DONE]
 
-[ACCORDION-END]
+### Exchange the assertion token with the OAuth token
 
-[ACCORDION-BEGIN [Step 3: ](Exchange the assertion token with the OAuth token)]
 
 The sample web application that you created needs to get the OAuth token to access the protected resources on SAP Analytics Cloud so the administrator should create an OAuth client on the SAP Analytics Cloud tenant.
 
@@ -201,9 +198,9 @@ For more information, see [Managing OAuth Clients and Trusted Identity Providers
 
 ### Maintain the Trusted Identity Provider for the SAML Bearer Assertion###
 
-   You also need to maintain the Trusted Identity Provider for the SAML bearer assertion flow to maintain trust between SAP Cloud Platform and SAP Analytics Cloud to pass SAML bearer assertion token.
+   You also need to maintain the Trusted Identity Provider for the SAML bearer assertion flow to maintain trust between SAP Business Technology Platform and SAP Analytics Cloud to pass SAML bearer assertion token.
 
-1. Log into SAP Cloud Platform and go to **Security > Trust**.
+1. Log into SAP Business Technology Platform and go to **Security > Trust**.
 
      Copy the information from the **Signing Certificate** field for your local Service Provider.
 
@@ -219,7 +216,7 @@ For more information, see [Managing OAuth Clients and Trusted Identity Providers
 
 3. Enter the name, provider name, and the signing certificate.
 
-      Enter the same provider name as the one specified in SAP Cloud Platform and the signing certificate information that you copied previously.
+      Enter the same provider name as the one specified in SAP Business Technology Platform and the signing certificate information that you copied previously.
 
      Save the settings.   
 
@@ -235,13 +232,13 @@ For more information, see [Managing OAuth Clients and Trusted Identity Providers
 
       For instructions on doing this, see: [Embedding SAP Analytics Cloud Story with URL API and SAML2 SSO based on WSO2 Identity Server](https://blogs.sap.com/2017/09/30/embedding-sap-analytics-cloud-story-with-url-api-and-saml2-sso-based-on-wso2-identity-server/).
 
-### Create a new connectivity destination in SAP Cloud Platform
+### Create a new connectivity destination in SAP Business Technology Platform
 
-Finally, because the sample web application will consume REST APIs, you need to create a new connectivity destination in SAP Cloud Platform.
+Finally, because the sample web application will consume REST APIs, you need to create a new connectivity destination in SAP Business Technology Platform.
 
 You can use the connectivity destination to connect the sample web application to an internet service which, in this case, happens to be provided by SAP Analytics Cloud.
 
-1. In the the SAP Cloud Platform Cockpit, go to **Connectivity > Destinations**.
+1. In the SAP Business Technology Platform Cockpit, go to **Connectivity > Destinations**.
 
        Click **New Destinations**.
 
@@ -279,9 +276,7 @@ Before you test the entire flow, remember to set the browser to accept cookies f
 
 ![Successful Results](MasterDetail.png)
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 
 

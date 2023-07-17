@@ -1,40 +1,41 @@
 ---
-title: Load ESRI files via Eclipse
-description: Load ESRI files via Eclipse
+parser: v2
+author_name: Markus Fath
+author_profile: https://github.com/fath-markus
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana-studio ]
+tags: [  tutorial>beginner, topic>big-data, programming-tool>sql, products>sap-hana, products>sap-hana-studio ]
 time: 20
 ---
+
+# Load ESRI files via Eclipse
+<!-- description --> Load ESRI files via Eclipse
 
 ## Prerequisites  
  - Eclipse is setup for CodeJam exercises
 
-## Details
-### You will learn  
+## You will learn  
   - How to load ESRI shape files into SAP HANA using Eclipse
 
+## Intro
 Add additional information: Background information, longer prerequisites
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download Geotech files)]
+### Download Geotech files
+
 
 Download two zip files from [http://bit.ly/GeotechFiles](http://bit.ly/GeotechFiles) to your computer.
 
 Uncompress them.
 
+### View file content with Mapshaper
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](View file content with Mapshaper)]
 
 Open [`Mapshaper`](https://mapshaper.org/) web site and load `Continents.zip` file to check the content.
 
 
-[ACCORDION-END]
+### Create a schema to load files
 
-
-[ACCORDION-BEGIN [Step 3: ](Create a schema to load files)]
 
 Create a schema `GEOTECH` using SQL.
 
@@ -42,10 +43,8 @@ Create a schema `GEOTECH` using SQL.
 CREATE SCHEMA "GEOTECH";
 ```
 
+### Load files via Eclipse
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Load files via Eclipse)]
 
 In Eclipse in SAP HANA Administration go to **File** -> **Import**.
 
@@ -75,10 +74,8 @@ On **Options...** screen type:
 
 Click **Finish**
 
+### Verify loaded data
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Verify loaded data)]
 
 Check there are 8 records loaded using SQL:
 
@@ -86,15 +83,10 @@ Check there are 8 records loaded using SQL:
 SELECT COUNT(*) FROM "GEOTECH"."continent";
 ```
 
+### Load countries file
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Load countries file)]
 
 Repeat the same steps to load `cntry00` data into `"GEOTECH"` schema as well.
-
-
-[ACCORDION-END]
 
 
 ---

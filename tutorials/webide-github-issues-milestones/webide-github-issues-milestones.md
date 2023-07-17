@@ -1,71 +1,80 @@
 ---
-title: Creating issues, setting milestones and assigning issues to collaborators
-description: Collaborative Development Using GitHub and SAP Web IDE
+parser: v2
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+time: 10
 ---
-## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:**
-  - [Creating project in SAP Web IDE and importing it into GitHub](https://developers.sap.com/tutorials/webide-github-import-project.html)
 
-## Next Steps
- - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://developers.sap.com/tutorials/webide-github-branching.html)
+# Create Issues and Assign to Collaborators
+<!-- description --> Create issues and milestones, and assign issues to collaborators to support collaborative development using GitHub and SAP Web IDE.
 
-## Details
-### You will learn  
-In this tutorial, you'll learn how to create issues, set milestones for delivery and how to assign issues and tasks to collaborators.
-
-
-### Time to Complete
-**10 Min**.
+## You will learn  
+  - How to create issues
+  - How to assign issues and tasks to collaborators
+  - How to set milestones for delivery
 
 ---
 
-1. Go to your GitHub Organization repository.
-
-2. Click on the **Issues** tab to open GitHub Issues. Click on the **New Issue** button to create a new issue.
-
-    ![GitHub issues](p4_2.png)
-
-3. Enter the details about the change required.
-
-    a. In this instance, you will create 2 issues, one issue to remove **Ordered by** label from the Purchase Order header and the other issue to add a **Product ID** column to the Order Details table.
-
-    b. Click on the **Labels** and assign it as **Enhancement**. Labels can be used to categorize issues into bug/enhancements and custom labels even.
-
-    ![GitHub issues](p4_3b.png)
-
-    c. You can assign a specific collaborator to work on a issue. To do this, click on **Assignees** and select the collaborator who will work on this.
-
-    ![Assign issues](p4_3c.png)
-
-    d. You can set milestones for specific issues. Milestones are how similar issues and deadlines can be set and categorized. To create a milestone, click on the **Milestone** and enter a name for the milestone. If it doesn't exist, you will be prompted to create them.
-
-    ![Assign issues](p4_3d.png)
-
-    e. Click on **Submit new issue** to create the new issue.
-
-4.  Once the issue is created, you can add comments, discuss about and even add emoji to express your interest in the issue.
-
-    ![Issue created](p4_4.png)
-
-5. You can assign deadlines for milestones.
-
-    a. To do this, click on **Issues** tab of your GitHub organization repository. Then click on the **Milestones** tab.
-
-    ![Milestone tab](p4_5a.png)
-
-    b. Click on **Edit** and assign a due date.
-
-    ![Milestone tab](p4_5b.png)
-
-    C. Click on **Save changes** to update the milestone.
+### Create new issue in GitHub
 
 
-    ![Update milestones](p4_5c.png)
+Go to your GitHub organization repository.
 
-6. Similarly, you can create new milestones, update existing ones and check for status of current milestones from this page.
+Click on the **Issues** tab, and then click on **New Issue** to create a new issue.
 
-    ![Milestones status](p4_6.png)
+![GitHub issues](p4_2.png)
+
+
+### Fill in issue details
+
+
+Enter the details about the change required.
+
+In this instance, you will create 2 issues, one issue to remove **Ordered by** label from the Purchase Order header and the other issue to add a **Product ID** column to the Order Details table.
+
+Click **Labels** and set it as **Enhancement**. Labels can be used to categorize issues into bug/enhancements. You can make your own custom labels.
+
+![GitHub issues](p4_3b.png)
+
+You can assign a specific collaborator to work on an issue. To do this, click **Assignees** and select the collaborator who will work on this.
+
+![Assign issues](p4_3c.png)
+
+You can set milestones for specific issues. Milestones are how similar issues and deadlines can be set and categorized. To create a milestone, click **Milestone** and enter a name for the milestone. If it doesn't exist, you will be prompted to create it.
+
+![Assign issues](p4_3d.png)
+
+Click **Submit new issue**.
+
+
+### Add comments to issue
+
+
+Once the issue is created, you can add comments, discuss it, and even add an emoji to express your interest in the issue.
+
+![Issue created](p4_4.png)
+
+
+### Assign deadlines for milestones
+
+
+You can assign deadlines for milestones.
+
+To do this, click the **Issues** tab of your GitHub organization repository, then click the **Milestones** tab.
+
+![Milestone tab](p4_5a.png)
+
+Click **Edit** and assign a due date.
+
+![Milestone tab](p4_5b.png)
+
+Click **Save changes**.
+
+
+![Update milestones](p4_5c.png)
+
+
+Similarly, you can create new milestones, update existing ones, and check for status of current milestones from this page.
+
+![Milestones status](p4_6.png)
 

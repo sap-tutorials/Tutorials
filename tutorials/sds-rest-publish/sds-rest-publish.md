@@ -1,6 +1,5 @@
 ---
-title: Publish Events to Streaming via the REST Interface
-description: Publish input events to a streaming project via the http REST interface.
+parser: v2
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
@@ -8,6 +7,9 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 auto_validation: true
 time: 15
 ---
+
+# Publish Events to Streaming via the REST Interface
+<!-- description --> Publish input events to a streaming project via the http REST interface.
 
 ## Prerequisites
  - **Tutorials:**  One of the following:
@@ -17,14 +19,14 @@ time: 15
  - [Configuring the Web Service Provider (WSP)](sds-web-service-provider-configuration)
  - [Using the Streaming Web Service](sds-streaming-web-service)
 
-## Details
-### You will learn  
+## You will learn  
 How to use the **Postman** API test tool to publish input events to your streaming project via the streaming REST interface.
 
 ---
 Before you begin, make sure that your streaming server is running, and the Streaming Web Service (SWS) is running on the streaming server.
 
-[ACCORDION-BEGIN [Step 1: ](Enable the REST interface for your streaming project)]
+### Enable the REST interface for your streaming project
+
 
 Streaming projects can expose REST and Web Socket interfaces, but this is not enabled by default. So your first step is to expose the REST interface for your `freezer_monitor` project.  
 
@@ -48,21 +50,18 @@ Finally:
 1. Re-start your project with the new configuration.
 2. Open the `MACHINEDATA` input stream in the **Stream View**. Later, after you post an event, you'll be able to see data populate there.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download or install a REST client)]
+### Download or install a REST client
+
 
 For this tutorial you need a way of creating the calls to send to the server. We created this tutorial using Postman, although you can use whatever REST client you like.
 
-You can get Postman from <http://www.getpostman.com/>.
+You can get Postman from <http://www.postman.com/>.
 
-[DONE]
 
-[ACCORDION-END]
+### Confirm that you can connect to SWS
 
-[ACCORDION-BEGIN [Step 3: ](Confirm that you can connect to SWS)]
 
 The `REST` and `Web Socket` interfaces for streaming projects are provided by the Streaming Web Service (SWS) - a service of the streaming cluster. At this point SWS should already be running on your streaming cluster. Let's make sure you can connect to it.
 
@@ -84,11 +83,9 @@ If you get an error indicating no response, then you aren't able to connect to t
 - Double-check the IP address (or hostname) you are using in the http GET request.
 - Confirm that the SWS web server is running.
 
-[DONE]
 
-[ACCORDION-END]
+### Get an authorization token
 
-[ACCORDION-BEGIN [Step 4: ](Get an authorization token)]
 
 Before you can publish messages, SWS requires that you request for a token for the specific resource you intend to access. The returned token then needs to be included in the headers of subsequent POSTs.  To get an authorization token you need to send a POST request as follows:
 
@@ -122,11 +119,9 @@ Copy the token - you'll need it in the next step.  Don't copy the full response,
 
 >Note: The token is only valid for a set number of seconds, which is defined in streaming cluster configuration and can be changed from the HANA cockpit or using the command line tools. The default value is only 5 minutes. After this time period, a new token will need to be requested.
 
-[DONE]
 
-[ACCORDION-END]
+### Post an Event
 
-[ACCORDION-BEGIN [Step 5: ](Post an Event)]
 
 Now you're ready to post your event to the `MACHINEDATA` input stream of the `freezer_monitor` project running in the `default` workspace. The URL for this call looks like this:
 
@@ -205,6 +200,3 @@ The structure of the array format is more compact (and a bit more efficient) but
 
 With this method, every field must be sent a value, and the order they are typed must correspond to the schema.
 
-[DONE]
-
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Create a Streaming Project with SAP HANA Streaming Analytics
-description: Create an SAP HANA streaming analytics project using the streaming plug-in for SAP HANA studio.
+parser: v2
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 author_name: Aaron Patkau
@@ -9,11 +8,13 @@ auto_validation: true
 time: 20
 ---
 
+# Create a Streaming Project with SAP HANA Streaming Analytics
+<!-- description --> Create an SAP HANA streaming analytics project using the streaming plug-in for SAP HANA studio.
+
 ## Prerequisites  
  - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://developers.sap.com/tutorials/hxe-ua-streaming-plugin.html)
 
-## Details
-### You will learn
+## You will learn
  - How to create a new streaming project
  - How to define an input stream to receive incoming events, including the field structure (schema) for the incoming events
  - How to add a filter to apply to the event stream
@@ -22,7 +23,8 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new streaming project)]
+### Create a new streaming project
+
 
 Go to **File** > **New** > **Project...**.
 
@@ -38,11 +40,10 @@ Enter `freezer_monitor` in the **Name** field (be sure to only use lowercase) an
 
 Select **Finish**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an Input Stream)]
+### Create an Input Stream
+
 
 All events enter a streaming project via an input stream or input window. When you create the project, it creates a default input stream called "NEWSTREAM".
 
@@ -55,11 +56,9 @@ Click the icon to the left of the stream's name and change it to **MACHINEDATA**
 
 > Note that stream names are case-sensitive
 
-[DONE]
 
-[ACCORDION-END]
+### Define columns for each field in the incoming events
 
-[ACCORDION-BEGIN [Step 3: ](Define columns for each field in the incoming events)]
 
 Streams and windows all have a fixed set of typed columns (schema). Events arriving on a particular input stream must contain a set of fields that is compatible (number and type of fields) with the input stream.  Events with different field sets are typically processed by different input streams.
 
@@ -105,11 +104,9 @@ Click the **-** button to collapse the element.
 
 ![drag stream](10-drag-stream.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add a filter
 
-[ACCORDION-BEGIN [Step 4: ](Add a filter)]
 
 Drag and drop the **Filter** element from the **Streams and Windows** drawer of the **Palette** onto the canvas.
 
@@ -119,11 +116,9 @@ Rename the stream, `Filter1`, to **`ACTIVITY_HIST`** by clicking on the filter i
 
 ![rename](2-rename-filter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Connect it to an event stream
 
-[ACCORDION-BEGIN [Step 5: ](Connect it to an event stream)]
 
 Select **Connector** from the **Palette**.
 
@@ -133,11 +128,9 @@ Click on the **`MACHINEDATA`** element and then on the **`ACTIVITY_HIST`** eleme
 
 ![connect](4-connect-parts.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Define the filter criteria
 
-[ACCORDION-BEGIN [Step 6: ](Define the filter criteria)]
 
 Double-click on the **1** under **`ACTIVITY_HIST`** > **Filter** to edit the filter expression.
 
@@ -153,6 +146,3 @@ Select the **All Iconic** option (icon shown below) to collapse all the items.
 
 ![collapse all](7-collapse.png)
 
-[DONE]
-
-[ACCORDION-END]

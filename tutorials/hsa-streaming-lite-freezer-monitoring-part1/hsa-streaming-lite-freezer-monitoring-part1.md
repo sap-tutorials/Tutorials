@@ -1,33 +1,30 @@
 ---
-title: Introduction to Freezer Monitoring Lite
-description: Walk through creating and deploying a Streaming Lite project. 
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
+# Introduction to Freezer Monitoring Lite
+<!-- description --> Walk through creating and deploying a Streaming Lite project.
+
 ## Prerequisites  
- - **Proficiency:** Beginner
  - SAP HANA 2.0 system with minimum version SP02
  - Streaming Analytics Server running on SAP HANA
  - HANA Studio Development Environment, `PuTTY`, and `WinSCP`
  - `Raspberry Pi 2` microcontroller board setup running `Raspbian` with network connection for `SSH`
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
-## Next Steps
-  - [Install Streaming Lite and Setup Freezer Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
-
-## Details
-### You will learn  
+## You will learn  
 - An overview of SAP HANA Streaming Lite
 - The steps in order to create and deploy a Streaming Lite project
 
-### Time to Complete
-**15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](&nbsp;)]
+### Introduction
+
 
 Streaming Lite (SL) is a component of HAHA Streaming Analytics (HSA), designed for edge processing in `IoT` scenarios. It's a slimmed down version of the Streaming Analytics server, and connects through an internal output adapter to the full HANA Streaming Analytics server via a `WebSocket` connection. This allows for deployment of streaming projects on remote gateway devices, such as a Raspberry Pi (the device used in this tutorial).
 
@@ -45,9 +42,10 @@ In this tutorial, we are focusing solely on creating and deploying a Streaming L
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
+### Test yourself
+
+
+
 
 ---
-

@@ -1,31 +1,31 @@
 ---
-title: Configure Principal Propagation from Cloud Foundry to Neo
-description: Set up principal propagation in SAP Cloud Platform so that you can deploy a Cloud Foundry application that consumes data from a Neo application.
+parser: v2
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>intermediate, products>sap-business-technology-platform, products>sap-connectivity-service, tutorial>license ]
+time: 45
 ---
 
+# Configure Principal Propagation from SAP BTP, Cloud Foundry environment to SAP BTP, Neo environment
+<!-- description --> Set up principal propagation in SAP BTP so that you can deploy a SAP BTP, Cloud Foundry environment application that consumes data from a SAP BTP, Neo environment application.
+
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - Java
- - Eclipse for Java EE
+  - Java
+  - Eclipse for Java EE
 
-## Details
-### You will learn  
-- How to set up principal propagation in SAP Cloud Platform
-- How to establish trust from the Neo environment to the Cloud Foundry environment
+## You will learn  
+- How to set up principal propagation in SAP BTP
+- How to establish trust from the SAP BTP, Neo environment to the SAP BTP, Cloud Foundry environment
 
-In this tutorial you will set up a connection between SAP Cloud Platform Neo environment (Neo) and Cloud Foundry environment (CF).
+## Intro
+In this tutorial you will set up a connection between SAP Business Technology Platform, Neo environment (Neo) and SAP Business Technology Platform, Cloud Foundry environment (CF).
 
 A simple application in CF will consume data from an Neo application, and therefore propagate the user details from one environment to the other. This is called "Principal Propagation" and requires some additional steps establishing trust between the environments, to guarantee security.
 
-### Time to Complete
-**45 Min**
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Adapt the ESPM Application)]
+### Adapt the ESPM Application
+
 1. If you're using Eclipse for the first time, you will see a Welcome Page. Close this page.
 
     ![Close welcome page](01-close-welcome.png)
@@ -62,11 +62,9 @@ A simple application in CF will consume data from an Neo application, and theref
 
     ![Adapt web.xml](01-edit-webxml.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create an approuter
 
-[ACCORDION-BEGIN [Step 2: ](Create an approuter)]
 1. Create a new directory called `approuter` somewhere on your machine.
 
 1. Create a new file called `package.json` inside this directory with the following content:
@@ -81,18 +79,11 @@ A simple application in CF will consume data from an Neo application, and theref
   },
   "license": "ISC",
   "dependencies": {
-    "@sap/approuter": "^5.3.0"
+    "@sap/approuter": "^9.1"
   }
 }
 ```
 This tells Node (npm) to fetch and start the approuter.
-
-1. Create a file called `.npmrc` with the following content:
-```
-@sap:registry=https://npm.sap.com/
-```
-This tells Node (npm) where to find the SAP dependencies (the approuter and its dependencies).
-> Note: On Windows, if you get the error message "You must type a file name", call your file `.npmrc.`. Windows will then automatically remove the trailing dot.
 
 1. Create a file called `xs-app.json` with the following content:
 ```json
@@ -125,14 +116,14 @@ This configures the routing inside the approuter.
 1. Create a zip archive called `approuter.zip` containing all the file in the `approuter` folder. It's important that the files are in the top level of the zip file!
 You can use this commands in `bash` (Linux and macOS) to create the zip file:
 ```bash
-for file in static/retailer static/images xs-app.json .npmrc package.json ; do
+for file in static/retailer static/images xs-app.json package.json ; do
   if [[ ! -e $file ]] ; then echo -e "\e[33m[WARNING] $file does not exist\e[0m"; fi ;
 done
 zip -r approuter.zip .
 ```
 or use `PowerShell` (Windows):
 ```powershell
-foreach ($file in @("static\retailer", "static\images","xs-app.json",".npmrc", "package.json")){
+foreach ($file in @("static\retailer", "static\images","xs-app.json","package.json")){
    if (-not (Test-Path $file)) { Write-Warning "$file does not exist" }
 }
 Compress-Archive -Force -Path .\* -DestinationPath approuter.zip
@@ -140,11 +131,9 @@ Compress-Archive -Force -Path .\* -DestinationPath approuter.zip
 This will also check that all files exist and print a warning if one or more is missing.
 Note: You need to change to the approuter directory using the `cd` command first (Linux, macOS and Windows).
 
-[DONE]
 
-[ACCORDION-END]
+### Build the ESPM Application
 
-[ACCORDION-BEGIN [Step 3: ](Build the ESPM Application)]
 1. Make a right-click on `espm` and select **Export**.
 
     ![Open export dialog](03-export-start.png)
@@ -156,15 +145,13 @@ Note: You need to change to the approuter directory using the `cd` command first
 1. Select a Destination on your machine and click **Finish**.
 
     ![finish war export](03-export-finish.png)
-    
 
-[DONE]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configuration in the Neo environment)]
+### Configuration in the SAP BTP, Neo environment
 
-1. Open the Neo cockpit.
+
+1. Open the SAP BTP, Neo environment cockpit.
 
 1. Navigate to **SAP HANA / SAP ASE** > **Databases & Schemas** and click **New**
 
@@ -173,11 +160,11 @@ Note: You need to change to the approuter directory using the `cd` command first
 1. Create a database named `espm` and select a password. Make sure you don't lose it, we'll need it soon.
 
     ![create database dialog](04-database-create-dialog.png)
-    
+
 1. Wait until you see the event with description **Tenant DB creation finished successfully (created and configured)** (this can take up to 15 minutes). Now navigate back to your subaccount.
 
     ![wait and navigate back](04-database-wait.png)
-    
+
 1. Navigate to **Applications** > **Java Applications** and click **Deploy Application**
 
     ![click deploy application](04-java-open-deploy.png)
@@ -185,19 +172,19 @@ Note: You need to change to the approuter directory using the `cd` command first
 1. Select the `espm-cloud-web.war` you've exported in the first step, be sure to use the **Tomcat 8** Runtime and click deploy. Note: Don't change the name of the application.
 
     ![deploy application](04-java-deploy.png)
-    
+
 1. Wait until the application is successfully deployed and click **Done**.
 
     ![click done](04-java-deploy-done.png)
-    
+
 1. Open the details of the application by clicking its name.
 
     ![open details](04-java-open-details.png)
-    
+
 1. Navigate to **Configuration** > **Data Source Bindings** and click **New Binding**.
 
     ![new binding](04-java-open-binding.png)
-    
+
 1. Enter `SYSTEM` and the password you choose while creating the database as credentials and click **Save**.
 
     ![create database binding](04-java-save-binding.png)
@@ -219,16 +206,15 @@ Note: You need to change to the approuter directory using the `cd` command first
     ![open application](04-java-wait.png)
 
 
-[VALIDATE_4]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Establish trust between CF and Neo)]
+### Establish trust between SAP BTP, Cloud Foundry environment and SAP BTP, Neo environment
 
-1. Open the CF environment in a new tab, navigate into your subaccount, go to **Connectivity** > **Destinations** and export the X509 certificate of the destination service by clicking the **Download Trust** button.
+
+1. Open the SAP BTP, Cloud Foundry environment in a new tab, navigate into your subaccount, go to **Connectivity** > **Destinations** and export the X509 certificate of the destination service by clicking the **Download Trust** button.
 
     ![Download Certificate](05-download-trust.png)
-    
+
 1. Go to **Overview** and find your subaccounts id and the landscape host. You will need it later. **Notice:** The landscape host does **not** include `api.cf.`!
 
     ![Find subaccount details](05-find-cf-details.png)
@@ -243,7 +229,7 @@ Note: You need to change to the approuter directory using the `cd` command first
     |:---------------------|:----------------------------------------------------------------|
     | Name                 | `cfapps.` + Landscape Host + `/` + subaccount ID e.g. `cfapps.eu10.hana.ondemand.com/77f532e6-71f7-44e9-9761-c0b24f6f38ca` |
     | Signing Certificate  | Open the certificate file downloaded earlier with your favorite editor and copy everything between **\-\-\-\-\-BEGIN CERTIFICATE\-\-\-\-\-** and **\-\-\-\-\-END CERTIFICATE\-\-\-\-\-**. |
-    
+
 
     ![Trusted IDP details](05-trusted-idp-details.png)
 
@@ -261,7 +247,7 @@ Note: You need to change to the approuter directory using the `cd` command first
     | Confidential         | checked                                                         |
     | Secret               | Generate a random password and save it somewhere for later use  |
     | Redirect URI         | Unused in this scenario. Use e.g. `https://example.com`         |
-    
+
     Example:
 
     ![OAuth client sample configuration](05-register-new-client-details.png)
@@ -284,12 +270,12 @@ Note: You need to change to the approuter directory using the `cd` command first
     | Use default JDK truststore | Checked                                                     |
 
     Add the following Additional properties:
-    
+
     | Property               | Value                                                    |
     |:-----------------------|:---------------------------------------------------------|
     | `authnContextClassRef` | `urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession` |
     | `nameIdFormat`         | `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` |
-    
+
     Use this table to find the correct audience for your landscape:
 
     | Landscape            | Audience                                  |
@@ -307,16 +293,14 @@ Note: You need to change to the approuter directory using the `cd` command first
     | US East (Ashburn)    | `https://us1.hana.ondemand.com/services`  |
     | US West (Chandler)   | `https://us2.hana.ondemand.com/services`  |
     | US East (Sterling)   | `https://us3.hana.ondemand.com/services`  |
-    
+
     Example:
 
     ![Example destination configuration](05-destination-details.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Configuration in the SAP BTP, Cloud Foundry environment
 
-[ACCORDION-BEGIN [Step 6: ](Configuration in the CF environment)]
 
 1. Create Destination Service Instance
     - Navigate into your **dev** space.
@@ -425,8 +409,5 @@ Note: You need to change to the approuter directory using the `cd` command first
 
     ![Login into application](06-cf-loginto-app.png)
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

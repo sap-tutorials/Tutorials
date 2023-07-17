@@ -1,20 +1,23 @@
 ---
-title: Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming
-description: Part 6 of 9. Create and use Derived Window to analyze events, filter data, and generate alerts.
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
 author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
-## Details
-### You will learn  
+# Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming
+<!-- description --> Part 6 of 9. Create and use Derived Window to analyze events, filter data, and generate alerts.
+
+## You will learn  
  - Using a Derived Window to analyze events and filter data.
  - Using reference data from a HANA table for detecting alert conditions.
 
 ---
 
-#### Add Derived Window to Generate Alerts
+### Add a Derived Window
+    
 
 1. Click **Derived Window** in the **Palette** and drop it onto the canvas.
 
@@ -27,6 +30,10 @@ time: 15
 3. Change the new window name to `ALARM_TEMP` and press **Enter** when done.
 
     ![rename to alarm temp](3-renametoalarmtemp.png)
+
+
+### Edit Column Expressions
+  
 
 4. Click Add Column Expression **f(x)** icon shown below.
 
@@ -64,6 +71,11 @@ time: 15
 
     ![rename second expression](12-renamesecondexp.png)
 
+
+
+### Add a Filter
+  
+
 13. Now click **Add Query Clause** to add a query clause. We want to add a filter such that this window only contains rows for machines that have a current average temperature above the max specified for the machine.
 
     ![add query](13-addquery.png)
@@ -83,3 +95,4 @@ time: 15
 17. Click Compile Project icon to check for errors.
 
     ![compile for error](17-compileforerror.png)
+

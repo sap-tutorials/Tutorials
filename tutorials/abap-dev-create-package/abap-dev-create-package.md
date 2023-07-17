@@ -1,20 +1,23 @@
 ---
-title: Create an ABAP Package
-description: Create an ABAP package, which will enable you to structure your development objects.
+parser: v2
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 10
 ---
+# Create an ABAP Package
+<!-- description --> Create an ABAP package, which will enable you to structure your development objects.
 
-## Details
-### You will learn  
-- How to create **ABAP packages**
-- How to create **transport requests**
+##Prerequisites
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
+
+## You will learn  
+- How to create an ABAP package, used to group all the subsequent development objects you create in this group of tutorials
+- How to create a transport request
 - How to add an ABAP package to your *Favorite packages* list in ABAP Development Tools (ADT)
 
-You will create a package in the ABAP Development Tools. Later, you will use this package to group all the subsequent development objects you create in this group of tutorials.
-
+## Intro
 Generally you create one project for each backend connection, and then, inside that project, one package for each self-contained development unit – containing all the relevant development objects. A set of packages delivered together form a software component.
 
 Each package is then assigned to a transport layer.
@@ -39,17 +42,16 @@ For more information, see
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a package)]
+### Select project
 
-Select the project you created previously, then choose *<Project>* > **New > ABAP Package**:
+
+Select the ABAP Cloud Project you created previously, then choose **New > ABAP Package**:
 
 ![Image depicting step1-new-package](step1-new-package.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Create package
 
-[ACCORDION-BEGIN [Step 2: ](Define the package)]
 
 1. Enter the following and choose **Next**:
     - Name = **`Zxx_TUTORIALS`**, where **`xx`** = your initials
@@ -58,7 +60,7 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
     ![Image depicting step2-define-package](step2-define-package.png)
 
-2. Choose a **Software Component**, by placing the cursor in the field and choosing **Autocomplete (Ctrl+Space)**, then choose **HOME** (default for customer developments):
+2. Choose a **Software Component**, by placing the cursor in the field and choosing **Autocomplete (Ctrl+Space)**, then choose **HOME** (default for customer developments) or **LOCAL** (for tests):
 
       ![Image depicting step2b-sw-component](step2b-sw-component.png)
 
@@ -73,18 +75,16 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
       ![Image depicting step2d-transport-request](step2d-transport-request.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Add to favorite packages
 
-[ACCORDION-BEGIN [Step 3: ](Add to favorite packages)]
 (Optional, but recommended): Finally, add this new packages to your **Favorite packages**:
 
 1. In your project, select (right-click on)  **Favorite packages**, then choose  **Add a package…**:
 
     ![Image depicting step4-add-fave-package](step4-add-fave-package.png)
 
-2. Enter the first three characters of your package (**`Zxx`**, where **`xx`** = your initials), then choose the package, then choose **OK**:
+2. Enter the first three characters of your package -- **`Zxx`**, where **`xx`** = your initials. Then choose the package, then choose **OK**.
 
     ![Image depicting step4b-choose-package](step4b-choose-package.png)
 
@@ -92,14 +92,10 @@ The package is added to the list.
 
 And that's it. You can now group development objects that belong together in one package.
 
-[DONE]
 
-[ACCORDION-END]
+### Test yourself
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---

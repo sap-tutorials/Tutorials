@@ -1,25 +1,27 @@
 ---
-title: Multi-Store Tables
-description: Create Multi-Store Tables
+parser: v2
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
+# Multi-Store Tables
+<!-- description --> Create Multi-Store Tables
+
 ## Prerequisites
  - **Proficiency:** Beginner
   - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://developers.sap.com/tutorials/dt-create-schema-load-data-part7.html)
 
-## Details
-### You will learn
+## You will learn
  - What a Multi-Store table is
  - Partitioning Types
  - Creating Multi-Store Tables
-
-### Time to Complete
+## Time to Complete
 **10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Multi-store Tables)]
+### Multi-store Tables
+
 
 Multi-store tables are a type of SAP HANA column tables which can have partitions in the in-memory DEFAULT COLUMN STORAGE as well as other partitions in Dynamic Tiering EXTENDED STORAGE.
 
@@ -32,9 +34,9 @@ Multi-store data management allows for administration tasks to be carried out mo
 One function of multi-store tables is data aging which allows you to "age out" older data using Dynamic Tiering. Every multi-store table contains at least two partitions: one of which is in the in-memory DEFAULT STORAGE and the other is in disk based EXTENDED STORAGE. This allows you to still access and update older data without managing two separate systems for current or older data and is cost effective as well. There may be some older data that isn't frequently used and so the "cold" data is moved into extended storage and the "hot" new and frequently used data remains in-memory.
 
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Partitioning Types and Creating a Multi-store Table)]
+### Partitioning Types and Creating a Multi-store Table
+
 
 The types of partitioning include: range partitioning, hash-range and range-range partitioning, and time-selection partitioning.
 
@@ -105,9 +107,8 @@ PARTITION BY RANGE ("L_ORDERKEY")
 >Note: Notice how the multi-store table does not show an "`EXTENDED`" or other attributes in Studio
 
 
-[ACCORDION-END]
+### Importing Data in to a Multi-store Table
 
-[ACCORDION-BEGIN [Step 3: ](Importing Data in to a Multi-store Table)]
 To import data into the newly created table, execute the following in a SQL Console.
 
 ``` sql
@@ -118,9 +119,8 @@ Confirm the table has been filled with data after executing by right clicking on
 >Note: The "`IMPORT`" statement cannot use the "`THREADS`" clause since it will be loading into Dynamic Tiering.
 
 
-[ACCORDION-END]
+### Viewing Multi-store Partitions
 
-[ACCORDION-BEGIN [Step 4: ](Viewing Multi-store Partitions)]
 There are several database administration views available to provide information for partitioned tables, including multi-store tables. Some of the information available includes:
 
 - What partitions exist for a given table
@@ -153,7 +153,5 @@ SELECT * FROM M_ES_TABLES where TABLE_NAME = 'LINEITEM_MS' AND SCHEMA_NAME = 'TP
 ![Data Check ES](DataCheckES.png)
 Notice that only 1 partition is shown in EXTENDED STORAGE and that it has a `PART_ID` of -1. The `PART_ID` is -1 because although logically, the Dynamic Tiering portion has multiple partitions within it, physically the Dynamic Tiering portion is stored as a single table. Since the data for the "`LINEITEM_MS`" partitions in EXTENDED STORAGE are in a single physical partition, we can't tell how much data is in each logical partition. However, we can see from the "`TABLE_SIZE`" column that data has been stored in EXTENDED STORAGE for the "`LINEITEM_MS`" table.
 
-
-[ACCORDION-END]
 
 ---

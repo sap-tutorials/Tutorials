@@ -1,9 +1,11 @@
 ---
-title: Configuring the Web Service Provider (WSP)
-description: Using SAP HANA Cockpit to Configure Web Services Provider
+parser: v2
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
+
+# Configuring the Web Service Provider (WSP)
+<!-- description --> Using SAP HANA Cockpit to Configure Web Services Provider
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -15,18 +17,17 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ## Next Steps
 - **Tutorials** : [Publish Events to SDS via the REST Interface](https://developers.sap.com/tutorials/sds-rest-publish.html)
 
-## Details
 
-### You will learn
+## You will learn
  - How to configure the Web Service Provider (WSP) to use REST Posts
  - How to configure the WSP to use `WebSockets`
  - How to start and stop the WSP
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configuring the Web Service Provider to Use REST Posts)]
+### Configuring the Web Service Provider to Use REST Posts
+
 The Web Services Provider (WSP) exposes an HTTP interface that grants client applications access to and several capabilities in smart data streaming and its projects. The provider supports `REST`, `SOAP`, and `WebSocket` connections.
 
 For higher performance and better scalability, it is recommended that you use the Streaming Web Service.
@@ -62,9 +63,8 @@ Click **Save** in the bottom right corner. We will need to restart all running n
 
 ![Save](save.png)
 
+### Configuring the Web Service Provider to Use WebSockets
 
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 2: ](Configuring the Web Service Provider to Use WebSockets)]
 
 Open up HANA Cockpit, similar to Step 1, and navigate to **Streaming Analytics** > **Configure Streaming Cluster** > **Web Services Provider**.
 
@@ -100,9 +100,8 @@ Click **Save** in the bottom right corner. We will need to restart all running n
 ![Save](save.png)
 
 
-[ACCORDION-END]
+### Starting and Stopping the WSP
 
-[ACCORDION-BEGIN [Step 3: ](Starting and Stopping the WSP)]
 Previous to running the WSP, ensure you have one of the following:
 - The `execute service service wsp` permission.
 - The `start service service wsp` permission.
@@ -120,9 +119,7 @@ In the bottom right corner of the page, select Start or Stop.
 ![Start WSP](start_wsp.png)
 
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Optional: ](Appendix)]
+### Appendix
 
 The general properties section contains properties for `REST`, `SOAP`, and `WebSocket` connections:
 
@@ -193,6 +190,4 @@ If you are using HTTPS, fill out the properties in the Security section. If you 
 |Keystore Password|The password for the keystore file, which can be encrypted. If encrypted, provide a symmetric cipher to decrypt the password in the Cipher File field.|
 |Keystore Type|The type of keystore being used.|
 
-
-[ACCORDION-END]
 

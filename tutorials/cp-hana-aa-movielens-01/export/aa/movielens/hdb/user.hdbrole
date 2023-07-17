@@ -1,4 +1,0 @@
-role public.aa.movielens.cds::user extends catalog role "sap.pa.apl.base.roles::APL_EXECUTE", "AFLPM_CREATOR_ERASER_EXECUTE", "AFL__SYS_AFL_AFLPAL_EXECUTE"
-{
-    schema public.aa.movielens.cds:MOVIELENS.hdbschema: SELECT, EXECUTE, CREATE ANY;
-}

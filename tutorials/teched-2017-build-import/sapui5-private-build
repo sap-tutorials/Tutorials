@@ -1,8 +1,0 @@
-#
-#Mon Aug 08 22:03:42 UTC 2016
-URL=https\://www.build.me/staticcontent/sapui5privatelibs
-Name=sapui5-private-build
-ProxyType=Internet
-Type=HTTP
-Authentication=NoAuthentication
-Description=Private version of UI5 for WebIDE
