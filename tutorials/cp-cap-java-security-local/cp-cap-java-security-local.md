@@ -28,7 +28,7 @@ In the previous tutorial you have added authentication to your application by ad
 
 3. Observe that the response contains status `HTTP/1.1 401 `.
 
-    <!-- border -->![authentication required for HTTP request](authentication-required.png)
+    <!-- border -->![The request without authentication header and it's response.](authentication-required.png)
 
 4. To create an order, you need to provide credentials. For local development CAP has built-in mock users. Modify the request like follows:
 
@@ -155,7 +155,7 @@ You will now add a user role `Administrators` to your application.
               additional:
                 firstName: Sabine
                 lastName: Autumnpike
-                email: Sabine.Autumnpike@mail.com            
+                email: Sabine.Autumnpike@mail.com
     ```
 
     > You used the attribute `roles` to add the `Administrators` role to that user.

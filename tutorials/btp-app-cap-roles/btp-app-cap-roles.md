@@ -71,7 +71,7 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 
 1. Copy the file `templates/cap-roles/.cdsrc.json` to your project directory `cpapp`. If you are asked to replace an existing file with the same name, confirm.
 
-    > You have to make hidden files visible in your operating system in order to see the file.
+    > You have to make hidden files visible in your operating system in order to see the file. The keyboard shortcut is <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>.</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>H</kbd> for Windows.
 
     The file defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
 

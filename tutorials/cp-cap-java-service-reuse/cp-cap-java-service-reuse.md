@@ -41,7 +41,7 @@ From the products service that you created in the previous tutorial, we just wan
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE -DjdkVersion=11 \
+    -DarchetypeVersion=RELEASE -DjdkVersion=17 \
     -DgroupId=com.sap.cap -DartifactId=bookstore
     ```
 
@@ -284,11 +284,11 @@ After defining the domain model and the services that you want to expose, you co
 
 5. When you open the URL in a new tab, you will see a welcome page. To see the books data click on **Books** directly from the welcome page.
 
-    > Instead of clicking on the Books entry on the welcome page, you could simple add `odata/v4/BooksService/Books` to the URL.
+    > Instead of clicking on the Books entry on the welcome page, you could simple add `/odata/v4/BooksService/Books` to the URL.
 
     <!-- border -->![data for books entity](books-data.png)
 
-6. To read the localized German example data, append the query parameter `?sap-language=de` to the URL. For example, `<APP_URL>/odata/v4/BooksService/Books?sap-language=de`. Try to switch the language between German (`de`) and English (`en`).
+6. To read the localized German example data, append the query parameter `?sap-locale=de` to the URL. For example, `<APP_URL>/odata/v4/BooksService/Books?sap-locale=de`. Try to switch the language between German (`de`) and English (`en`).
 
 Great Job! You have successfully developed the bookstore application and reused your products service from the previous tutorial.
 

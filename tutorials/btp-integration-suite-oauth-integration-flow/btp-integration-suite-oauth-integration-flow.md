@@ -115,7 +115,7 @@ You now define a service to go along to your service instance.
 
 Example: This is how the JSON representation of the service key looks like when you open it in SAP BTP cockpit:
 
-<!-- border -->![JSON File](btp-integration-JSON-file.png)
+<!-- border -->![JSON File](btp-integration-JSON-file-2.png)
 
 
 ### Prepare the Certificate and Key Content
@@ -201,7 +201,7 @@ If you have configured everything correctly, you receive a response in Postman t
     
     You will notice that on top of the model, the integration flow component palette is activated that allows you to add shapes to the model. 
 
-    <!-- border -->![Component Palette](btp-integration-design-integration-flow-4.png) 
+    <!-- border -->![Component Palette](btp-integration-design-integration-flow-4-2.png) 
 
 11. Click the **Receiver** shape and remove it by selecting the recycle bin icon. 
     
@@ -212,24 +212,24 @@ If you have configured everything correctly, you receive a response in Postman t
 12. Select the Sender shape so that the icons appear next to it - instead can we add the graphic here and remove the bit from ”like” to “before” as shown for the Receiver shape before. Delete the sender shape.
 13. Again, select the Sender shape so that icons appear next to it. Select the arrow icon (as shown in the figure above) and drag and drop it to the integration flow **Start** shape. 
 
-     <!-- border -->![Drag and Drop Arrow Icon](btp-integration-design-integration-flow-6.png)  
+     <!-- border -->![Drag and Drop Arrow Icon](btp-integration-design-integration-flow-6-2.png)  
 
     A screen  where you can select an adapter type opens. Select HTTPS.   
 
     In this scenario, the sender system (Postman) calls the integration flow through a basic HTTPS request. 
 
-     <!-- border -->![Choose Adapter Type](btp-integration-design-integration-flow-7.png) 
+     <!-- border -->![Choose Adapter Type](btp-integration-design-integration-flow-7-2.png) 
 
     As long as the connection line is selected, you can access the properties sheet of the HTTPS adapter. 
 
 14. Within the configurations for the HTTPS adapter, choose the **Connection** tab.
 15. For **Address** enter **/GetTimestamp**. Keep the other settings (for the parameters **Authorization**, **User Roles**, and **CSRF Protected**) as they are. The role **ESBMessaging.send** is assigned to the service key. 
 
-     <!-- border -->![Connection Tab](btp-integration-design-integration-flow-8.png) 
+     <!-- border -->![Connection Tab](btp-integration-design-integration-flow-8-2.png) 
 
 16. In the palette on top of the model, select the **Message Transformers** icon and choose **Content Modifier**.
 
-     <!-- border -->![Message Transformers Icon](btp-integration-design-integration-flow-9.png) 
+     <!-- border -->![Message Transformers Icon](btp-integration-design-integration-flow-9-2.png) 
 
     Place the cursor on the connection line between the Start and the End shapes to add the Content Modifier element to the integration flow. 
 
@@ -239,9 +239,9 @@ If you have configured everything correctly, you receive a response in Postman t
 
     **${date:now:yyyy-MM-dd HH:mm:ss}**
 
-    <!-- border -->![Body Field](btp-integration-design-integration-flow-10.png) 
+    <!-- border -->![Body Field](btp-integration-design-integration-flow-10-2.png) 
 
-    The so-configured Content Modifier element creates a message body with the actual timestamp. 
+    The so-configured Content Modifier element creates a message body with the actual timestamp.  
 
     The expression **${date:now:yyyy-MM-dd HH:mm:ss}** is an Apache Camel Simple language expression. Apache Camel is the open-source component behind Cloud Integration. 
 
@@ -260,7 +260,7 @@ Perform the following steps to deploy the integration scenario.
 3. Choose **OK**. 
 4. Go to **Monitor** > **Integrations**.
 
-     <!-- border -->![Integration Suite Navigation](btp-integration-design-integration-flow-11.png) 
+     <!-- border -->![Integration Suite Navigation](btp-integration-design-integration-flow-11-2.png) 
 
 5. Select the left tile under **Manage Integration Content**. 
 
@@ -271,7 +271,7 @@ Perform the following steps to deploy the integration scenario.
 6. Select the newly deployed integration flow. 
 7. In tab **Endpoints**, you find the endpoint address.
 
-     <!-- border -->![Endpoints Tab](btp-integration-design-integration-flow-12.png)  
+     <!-- border -->![Endpoints Tab](btp-integration-design-integration-flow-12-2.png)  
 
 8. Copy the endpoint address to the clipboard. You need it to configure the Postman client. 
 
