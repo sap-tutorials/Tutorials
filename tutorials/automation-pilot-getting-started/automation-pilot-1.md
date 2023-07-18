@@ -1,16 +1,11 @@
----
-author_name: Elena Grigorova
-author_profile:  
-title: Get Started with SAP Automation Pilot
-description: This tutorial will guide you through the process of setting up a SAP Automation Pilot account and accessing it for the first time.
-keywords: tutorial
+
 auto_validation: false
 time: 10
 tags: [ tutorial>beginner, type>tutorial ]
 primary_tag: type>tutorial
 parser: v2
 ---
-
+# Get Started with SAP Automation Pilot
 <!-- description --> This tutorial will guide you through the process of setting up a SAP Automation Pilot account and accessing it for the first time. 
 
 
