@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Set Up Your CAP Application for Eventing
 description: This tutorial shows you how to configure your CAP service to listen for upcoming events and deploy it to the SAP BTP cockpit.
 keywords: cap
@@ -13,18 +13,18 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
- - For this tutorial, you have two options:
-  - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
     - Complete the mission [Consume Remote Services from SAP S/4HANA Cloud Using CAP](mission.btp-consume-external-service-cap).
  - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP
+    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service).
+    - Your SAP BTP subaccount has quota for the services `SAP Build Work Zone, standard edition` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe).
  - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant
-    - You must be an administrator of the SAP S/4HANA Cloud system
-    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system
+    - You have a dedicated SAP S/4HANA Cloud tenant.
+    - You must be an administrator of the SAP S/4HANA Cloud system.
+    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
 ## Details
 ### You will learn
@@ -121,7 +121,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
 
     <!-- cpes-file db/schema.cds -->
-    ```[13,16-20]
+    ```JavaScript[13,16-20]
     namespace sap.ui.riskmanagement;
     using { managed } from '@sap/cds/common';
 
@@ -273,7 +273,7 @@ Now simulate locally business partner creation and update, and see the results:
     > Can't run the `curl` command?
 
     > * If you encounter any errors running the `curl` command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
-    > * If you still like to use a different command line interpreter, here is a useful tutorial on how to [Install cURL](iot-cf-install-curl).
+    > * If you still like to use a different command line interpreter, you can use cURL. For MacOS cURL should already be available, for Windows see the instructions on how to install [cURL](https://chocolatey.org/packages/Curl).
 
 
 4. Refresh the page and choose **Go** again. You will see a new risk in the table.

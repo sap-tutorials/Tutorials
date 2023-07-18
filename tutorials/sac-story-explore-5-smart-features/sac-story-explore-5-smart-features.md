@@ -1,27 +1,30 @@
 ---
+parser: v2
 author_name: Katryn Cheng
 author_profile: https://github.com/katmcheng
-title: Leverage Smart Features for Automated Insights and Search
-description: Automatically discover more insights with the power of Smart Features available in SAP Analytics Cloud
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: software-product>sap-analytics-cloud
 ---
 
+# Leverage Smart Features for Automated Insights and Search
+<!-- description --> Automatically discover more insights with the power of Smart Features available in SAP Analytics Cloud
+
 ## Prerequisites
 - You have access to an SAP Analytics Cloud account
 
-## Details
-### You will learn
+## You will learn
   - How to discover new insights within your data with Smart Insights
   - How to get answers quickly with Search to Insight
 
+## Intro
 Smart Insights and Search to Insight are two powerful features within SAP Analytics Cloud that use machine learning to find hidden insights in your data displayed in auto-generated charts.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand Top Contributors Easily with Smart Insights)]
+### Understand Top Contributors Easily with Smart Insights
+
 Understanding the top contributors within your dataset used to take manually slicing and dicing into different measures and dimensions. There are many challenges with this approach and it can result in inaccurate insights because you can understand only what your eyes can see.
 
 Now with Smart Insights, anyone can get statistically accurate insights into top contributors with a single click. It saves you hours of effort and helps give you more confidence when it comes time to make decisions.
@@ -62,10 +65,9 @@ To learn more, here are more in-depth resources on Smart Insights:
 
 - [Smart Insights Help Guide](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/c9eb30cc1e5b4c439cb871bf9612d2ac.html)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Answers Faster with Search to Insight)]
+### Get Answers Faster with Search to Insight
+
 
 Search to Insight is a feature that enables users to search for quick answers to questions directly through SAP Analytics Cloud stories using natural, everyday language. Simply type what you would like to know from your data – such as "Net Revenue for the last quarter" – into the search box, and SAP Analytics Cloud will create an appropriate visualization to your query.
 
@@ -89,13 +91,10 @@ To learn more, here are more in-depth resources on Search to Insight:
 
 - [Search to Insight Help Guide](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/e1b4914ffbc8438eb1aefccf70362d39.html)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test Yourself)]
+### Test Yourself
+
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

@@ -1,6 +1,5 @@
 ---
-title: Create a Cached OData Service for Improved Offline OData
-description: Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+parser: v2
 auto_validation: true
 primary_tag: topic>mobile
 tags: [ tutorial>intermediate, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
@@ -9,6 +8,9 @@ author_name: Manuel Stampp
 author_profile: https://github.com/manuel-stampp
 ---
 
+# Create a Cached OData Service for Improved Offline OData
+<!-- description --> Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
+
 ## Prerequisites
  - [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata)
  - [Create an Account on the SAP Gateway Demo System](gateway-demo-signup)
@@ -16,8 +18,7 @@ author_profile: https://github.com/manuel-stampp
  - Basic understanding of XML format and OData metadata/[Common Schema Definition Language (CSDL)](https://www.odata.org/documentation/odata-version-3-0/common-schema-definition-language-csdl/)
  - [Access SAP Mobile Services](fiori-ios-hcpms-setup)
 
-## Details
-### You will learn
+## You will learn
   - How to create custom XML annotations to generate an OData service without actual coding
   - Usage of MBT entity handlers for refresh
   - Usage of MBT OData cache databases
@@ -25,9 +26,10 @@ author_profile: https://github.com/manuel-stampp
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create or upload the data model and prepare environment)]
+### Create or upload the data model and prepare environment
 
-1. To create a cached service with MBT, you can either upload an existing metadata file or you can use the graphical tools in SAP Business Application Studio to start from scratch.
+
+1. To create a cached service with MBT, you should start with an metadata XML file that you can further edit in XML editor.
 
     - For this tutorial please continue editing or copy the MBT project from [Create a simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata) mentioned in prerequisites. This is not only about the metadata, but also about service instance creation and binding which are not repeated within this tutorial.
 
@@ -51,7 +53,7 @@ author_profile: https://github.com/manuel-stampp
 
     ![Subaccount destinations](img_http_destination.png)
 
-    - This tutorial assumes that you completed the tutorial [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your existing `ES5` destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
+    - This tutorial assumes that you completed the tutorial [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection) where you registered for an ES5 user and learned how to manage an SAP BTP destination. You can alternatively rename your existing `ES5` destination and append the OData service's sub-path ``/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/``to the URL of the destination.
 
 3. Back in SAP Business Application Studio, to allow consumption of the destination in your application, add a service instance of type destination to your application's `mtad.yaml`.
 
@@ -68,8 +70,7 @@ author_profile: https://github.com/manuel-stampp
     At the end of the file (resources section), paste the following:
 
     ```YAML
-      -
-        name: MbtEpmDemoService-destination
+      - name: MbtEpmDemoService-destination
         type: org.cloudfoundry.managed-service   
         parameters:
           service: destination
@@ -85,8 +86,7 @@ author_profile: https://github.com/manuel-stampp
     _schema-version: "3.3"
     version: 1.0.0
     modules:
-      -
-        # application
+      - # application
         name: MbtEpmDemoService
         # module
         path: srv/target/odata-service-1.0.0.war
@@ -103,12 +103,10 @@ author_profile: https://github.com/manuel-stampp
           - name: MbtEpmDemoService-destination
         # Providing default-url can be re-used for the app router
         provides:
-          -
-            name: mbtepmdemo-odata
+          - name: mbtepmdemo-odata
             properties:
               url: ${default-url}
-      -
-        # approuter
+      - # approuter
         name: MbtEpmDemoService-approuter
         type: nodejs
         path: srv/approuter
@@ -126,15 +124,13 @@ author_profile: https://github.com/manuel-stampp
               {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
             ]  
     resources:
-      -
-        name: MbtEpmDemoService-xsuaa
+      - name: MbtEpmDemoService-xsuaa
         type: org.cloudfoundry.managed-service   
         parameters:
           service: xsuaa
           service-plan: application
           path: srv/xs-security.json
-      -
-        name: MbtEpmDemoService-destination
+      - name: MbtEpmDemoService-destination
         type: org.cloudfoundry.managed-service   
         parameters:
           service: destination
@@ -158,10 +154,9 @@ author_profile: https://github.com/manuel-stampp
     ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Annotate your entities for data load from source system)]
+### Annotate your entities for data load from source system
+
 
 1. Open your `metadata.csdl.xml` with **right-click** &rarr; **Open With** &rarr; **Code Editor**
 
@@ -300,10 +295,9 @@ author_profile: https://github.com/manuel-stampp
 
     >**Hint:** If no custom logic or mapping is required, the annotation `Cache.ODataBackend` can be used to [replicate/cache an OData service](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/cache-databases.html#odata-back-end-systems) without having to map all the entity handlers manually and can save a lot of effort for such cases.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Client-Filter and Client-Registration entities to customise a download query)]
+### Add Client-Filter and Client-Registration entities to customise a download query
+
 
 1. Within your Schema, add the following two additional entity types.
 
@@ -569,10 +563,10 @@ For reference please double check with the following CSDL file content.
 
 
 
-[VALIDATE_4]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Examine and test your OData service)]
+
+### Examine and test your OData service
+
 
 1. If not noted down previously, find the application route (URL) assigned to the app router in the space of SAP Business Technology Platform Cockpit and click it
 
@@ -590,10 +584,9 @@ For reference please double check with the following CSDL file content.
 
 ---
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Reference your OData service in SAP Mobile Services)]
+### Reference your OData service in SAP Mobile Services
+
 
 1. Log in to SAP Mobile Services Cockpit, e.g. [mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com](https://mobile-service-cockpit-web-preview.cfapps.eu10.hana.ondemand.com/), depending on your landscape provider and region.
 
@@ -643,5 +636,4 @@ For reference please double check with the following CSDL file content.
 
 **Congratulations!** You have successfully created an OData Cache-Database with MBT, linked it to SAP Mobile Services and are now ready for client development.
 
-[VALIDATE_6]
-[ACCORDION-END]
+

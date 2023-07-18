@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Undeploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to undeploy your Multi-Target Application (MTA) from Cloud Foundry.
 keywords: cap
@@ -33,10 +33,11 @@ cf undeploy cpapp --delete-service-keys --delete-services
 
 > Delete applications only.
 
-> Alternatively, you can delete only the applications with the following command:
+> The undeploy command needs the MTA ID (the MTA ID is the name of your app) as a parameter, you can delete only the applications with the following command:
 > ```bash
 > cf undeploy cpapp
 > ```
+> To learn more about the `cf undeploy` command, see [Undeploy Content](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/fab96a603a004bd992822c83d4b01370.html?locale=en-US).
 
 [DONE]
 [ACCORDION-END]

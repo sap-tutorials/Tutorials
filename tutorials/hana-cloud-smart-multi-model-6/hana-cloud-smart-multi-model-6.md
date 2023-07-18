@@ -1,11 +1,13 @@
 ---
-title: Connect Nodes, Centroids and Voronoi Cells to POI
-description: Learn how you can enhance a table with POI's by adding columns that hold Voronoi cells, Centroids and Node references that can be used for calculating shortest paths between POI's.
+parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
 primary_tag: products>sap-hana-cloud
 ---
+
+# Connect Nodes, Centroids and Voronoi Cells to POI
+<!-- description --> Learn how you can enhance a table with POI's by adding columns that hold Voronoi cells, Centroids and Node references that can be used for calculating shortest paths between POI's.
 
 ## Prerequisites
 - You have completed the tutorial [Visualize a **`Voronoi`** cell using a Scalable Vector Graphic](hana-cloud-smart-multi-model-5).
@@ -13,13 +15,13 @@ primary_tag: products>sap-hana-cloud
 - Make sure your database instance is **running** before you start.
 
 
-## Details
-### You will learn
+## You will learn
 - How to assign **`Voronoi`** cells to nodes of a transportation network
 - How to assign a centroid to a Point of Interest
 - How to add a node reference to a POI table
 
 
+## Intro
 In your dataset, you have points of interest (table `LONDON_POI`) as well as nodes of the transportation network (table `LONDON_VERTICES`). Of course, there is a spatial relation between both (e.g. distance measured by `ST_Distance`). In this tutorial, you will learn how to assign each POI to its closest node in the transportation network. You can think of example- assigning a bar to its closest street corner.
 
 This way, you will later be able to calculate shortest paths between points of interest. These are the steps involved:
@@ -31,7 +33,8 @@ This way, you will later be able to calculate shortest paths between points of i
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Assign Voronoi cells to all nodes)]
+### Assign Voronoi cells to all nodes
+
 The first thing you need to do is to enhance the table `LONDON_VERTICES` by a column `VORONOI_CELL` that holds the `Voronoi` cell of the respective vertex/node as an `ST_Geometry`.
 
 To enhance the existing table, execute this statement:
@@ -53,10 +56,9 @@ WHEN MATCHED THEN UPDATE SET LONDON_VERTICES.VORONOI_CELL = v.CELL;
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign a centroid to each Point of Interest)]
+### Assign a centroid to each Point of Interest
+
 Now you can enhance the table `LONDON_POI` by a column `SHAPE_CENTROID` that holds the centroid of the respective point of interest. Note, that many POI's are polygons.
 
 
@@ -81,11 +83,10 @@ SET SHAPE_CENTROID =
 ```
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enhance the POI table with node reference)]
+### Enhance the POI table with node reference
+
 Now that you added the two columns, you need to connect each POI with its closest vertex in the transportation network. For this, enhance the table `LONDON_POI` with a column `VERTEX_OSMID` and fill in the `osmid` of the closest vertex.
 
 For physically enhancing the table, you need to consider that the referenced `osmid` in the table `LONDON_VERTICES` is of type **BIGINT**.
@@ -106,7 +107,7 @@ WHEN MATCHED THEN UPDATE SET lp.VERTEX_OSMID = lv."osmid";
 ```
 
 This picture illustrates the snapping logic.
-!![POI Snapping](ss-01-poi-snapping.png)
+<!-- border -->![POI Snapping](ss-01-poi-snapping.png)
 
 You have now connected each point of interest to a node/vertex in the transportation network. This will allow you to calculate shortest paths between POI's in the following tutorials.
 
@@ -114,14 +115,12 @@ You have now connected each point of interest to a node/vertex in the transporta
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+### Test yourself
 
 
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

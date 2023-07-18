@@ -1,11 +1,13 @@
 ---
-title: Code Custom C/C++ Adapter for Freezer Monitoring Lite
-description:  
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 time: 30
 ---
+
+# Code Custom C/C++ Adapter for Freezer Monitoring Lite
+<!-- description -->  
 
 ## Prerequisites  
  - **Tutorial:** [Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part1.html)
@@ -13,13 +15,15 @@ time: 30
 ## Next Steps
  - [Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part3.html)
 
-## Details
 
+
+## Intro
 The full source for `custom_c_adapter.cpp` is available in the **Appendix** section of this tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create File)]
+### Create File
+
 
 Remember how we created a `Makefile` in the root directory `(/home/pi)` in the previous tutorial [Introduction to Custom `C/C++` Adapters for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part1.html). Now inside of the same folder, create another new blank file called `"custom_c_adapter.cpp"`.
 
@@ -29,11 +33,9 @@ Reopen it using a `C/C++` editor from your own computer. To do this, right click
 
 ![Create CPP Adapter File](createCPPAdapterFile.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Include Statements
 
-[ACCORDION-BEGIN [Step 2: ](Include Statements)]
 
 Your blank `"custom_c_adapter.cpp"` file should now be open in `Notepad++`. The first thing to do is add all the include statements needed for our program.
 
@@ -58,12 +60,10 @@ using namespace std;
 
 The first block of include statements are standard `C` and `C++` libraries. The second block of include statements are Streaming Analytics specific `SDK` header files, located in the directory `$STREAMING_HOME/lib/sdk`. The `SDK`'s shared object libraries are located in `$STREAMING_HOME/lib`, and will be linked at build-time. These paths are defined in our `Makefile`.
 
-[DONE]
-
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Declare Global Variables)]
+### Declare Global Variables
+
 
 We will be using two global variables, which can be used by any function in our `.cpp` file. We will declare a `"g_error"` of type `EspError`, and a `"g_creds"` of type `EspCredentials`. This declaration must be made ahead of all function declarations.
 
@@ -77,11 +77,9 @@ EspCredentials *g_creds = NULL;
 
 `g_error` will be used to hold any error data in case one of the `SDK` calls fail. `g_creds` will contain the user credentials needed to connect to the streaming project.
 
-[DONE]
 
-[ACCORDION-END]
+### `print_error_and_exit` function
 
-[ACCORDION-BEGIN [Step 4: ](`print_error_and_exit` function)]
 
 Our Custom `C/C++` Adapter will contain three functions. Parameters omitted, they are `print_error_and_exit()`, `exec()`, and `main()`.
 
@@ -108,11 +106,9 @@ void print_error_and_exit(EspError * streamingError, int line) {
 
 You are required to call `esp_sdk_stop()` in order to cleanly shut down the adapter. This is an `SDK` call.
 
-[DONE]
 
-[ACCORDION-END]
+### `exec` function
 
-[ACCORDION-BEGIN [Step 5: ](`exec` function)]
 
 This function takes one parameter, `char const *cmd`, and returns a `string`. It is used to output the value printed by whatever command is given in input. This function is useful because various scripts can be executed to poll external hardware sensors on our `Raspberry Pi` (or other remote device).
 
@@ -137,11 +133,9 @@ string exec(char const* cmd)
 
 For example, if `cmd = "echo 90"` is passed in, the function will return `"90"`. Additionally, if we had a python script called `SensorPoll.py`, we can pass in `cmd = "sudo python SensorPoll.py"`. This will return the output of the sensor being polled.
 
-[DONE]
 
-[ACCORDION-END]
+### `main` function
 
-[ACCORDION-BEGIN [Step 6: ](`main` function)]
 
 The `main()` function is where a connection will be established between our code and the streaming lite project, and where the values are sent to the stream.
 
@@ -556,11 +550,9 @@ int main(){
 
 For the question below, select all of the correct answers, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](&nbsp;)]
+### Appendix
 
 `custom_c_adapter.cpp`
 
@@ -740,7 +732,5 @@ int main() {
 }
 ```
 
-[DONE]
 
-[ACCORDION-END]
 ---

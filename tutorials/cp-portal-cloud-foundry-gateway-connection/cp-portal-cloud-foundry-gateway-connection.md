@@ -1,66 +1,65 @@
 ---
-title: Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)
-description: Create a connection between SAP BTP, Cloud Foundry environment and the SAP Gateway Demo System (ES5).
+parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--standard-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
+# Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)
+<!-- description --> Create a connection between SAP BTP, Cloud Foundry environment and the SAP Gateway Demo System (ES5).
+
 ## Prerequisites
-- You've created an account in SAP BTP and have subscribed to and configured the SAP Launchpad service.
+- You've created an account in SAP BTP 
+- You've created a user account on the SAP Gateway Demo System (ES5)
 
 
 
-## Details
-### You will learn
+## You will learn
   - How to create a destination between SAP BTP and the SAP Gateway Demo System account
 
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Open your subaccount)]
+### Open your subaccount
+
 
 1. Log on to SAP BTP.
 
 2. Select your subaccount.
 
-    !![Select subaccount](2-click-trial.png)
+    <!-- border -->![Select subaccount](2-click-trial.png)
 
-> If you're using an SAP BTP Trial account, after you log in to SAP BTP, you would first need to click **Go To Your Trial Account**.  !![Enter trial account](1-enter-trial-account.png)
-
-
+> If you're using an SAP BTP Trial account, after you log in to SAP BTP, you would first need to click **Go To Your Trial Account**.  <!-- border -->![Enter trial account](1-enter-trial-account.png)
 
 
 
-[DONE]
-[ACCORDION-END]
 
+### Create destination to SAP Gateway Demo System
 
-[ACCORDION-BEGIN [Step 2: ](Create destination to SAP Gateway Demo System)]
 
 In this step, you'll create connectivity between SAP BTP and the SAP Gateway Demo system account.
 
 1.  In the left navigation panel, click **Destinations** under **Connectivity**.
 
-    !![Open destinations](3-open-destinations.png)
+    <!-- border -->![Open destinations](3-open-destinations.png)
 
 2. Click **New Destination**.
 
-    !![New destination](4-create-destination.png)
+    <!-- border -->![New destination](4-create-destination.png)
 
 
 
 3.  Add the following destination properties:
 
-    >Important: If you haven't already created a user in ES5 as explained in the prerequisites above, please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](gateway-demo-signup).
+    >Important: If you haven't already created a user in ES5 (see prerequisites above), please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](gateway-demo-signup).
 
     |  Field     | Value
     |  :------------- | :-------------
-    |  Name           | `ES5`
+    |  Name           | `ES5` - if you're using a shared subaccount like in a workshop, please give your destination a unique name: `<unique id>_ES5`
     |  Type          | `HTTP`
     |  Description    | `SAP Gateway ES5`
     |  URL           | `https://sapes5.sapdevcenter.com`
@@ -73,7 +72,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 5. Enter the following **Additional Properties** depending on your scenario. Click the **New Property** button each time to add a new property.
 
-    >If you're not sure which ones to enter, enter all of them.
+    >If you're not sure which ones to enter, enter all of them. Also make sure that you enter the values correctly, for example, the value 'true' must always be lower case.
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -97,7 +96,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 7. Click **Check Connection** to make sure that everything is working.
 
-    !![Check connection](6-check-connection.png)
+    <!-- border -->![Check connection](6-check-connection.png)
 
     You'll get confirmation that the connection is established.
 
@@ -105,7 +104,6 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
     >This is not an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
 
-[VALIDATE_6]
-[ACCORDION-END]
+
 
 ---

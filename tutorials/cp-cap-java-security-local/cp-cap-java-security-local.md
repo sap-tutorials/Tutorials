@@ -1,8 +1,7 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Add Authentication and Authorization to the Application
-description: Add authentication and authorization to the application and test it locally with mock users
 keywords: cap
 auto_validation: true
 time: 20
@@ -10,13 +9,16 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform, pr
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Details
-### You will learn
+# Add Authentication and Authorization to the Application
+<!-- description --> Add authentication and authorization to the application and test it locally with mock users
+
+## You will learn
   - How to add authentication and authorization to the application
   - How to test security aspects with the application running locally
   ---
 
-[ACCORDION-BEGIN [Step 1: ](Add authentication to the Orders service)]
+### Add authentication to the Orders service
+
 
 In the previous tutorial you have added authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behaviour based on Spring Security. You will now demonstrate this behaviour using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
 
@@ -26,7 +28,7 @@ In the previous tutorial you have added authentication to your application by ad
 
 3. Observe that the response contains status `HTTP/1.1 401 `.
 
-    !![authentication required for HTTP request](authentication-required.png)
+    <!-- border -->![The request without authentication header and it's response.](authentication-required.png)
 
 4. To create an order, you need to provide credentials. For local development CAP has built-in mock users. Modify the request like follows:
 
@@ -53,11 +55,11 @@ In the previous tutorial you have added authentication to your application by ad
 
 6. When choosing entities of the `OrdersService` on the welcome page you will also have to provide credentials now. You can use `authenticated` user and empty password there as well.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add mock users to application configuration)]
+
+### Add mock users to application configuration
+
 
 Built-in mock users are good for initial local testing, but you may need separate different users for your application to test it further. You will now add some custom mock users to the application:
 
@@ -91,7 +93,7 @@ Built-in mock users are good for initial local testing, but you may need separat
 
 2. Restart your application with the command `mvn spring-boot:run`. In the startup logs you can observe the created mock users with their user names, roles, and passwords. They are added in addition to the built-in mock users.
 
-    !![users are added to application at startup](mock-users.png)
+    <!-- border -->![users are added to application at startup](mock-users.png)
 
 3. Modify the HTTP request, you have used earlier to include credentials to one of the mock users:
 
@@ -116,10 +118,9 @@ Built-in mock users are good for initial local testing, but you may need separat
 
 > The payload of the response contains the name of your user in fields `createdBy` and `modifiedBy`, provided by the `managed` aspect that you added to your domain model earlier.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add users with roles to the application)]
+### Add users with roles to the application
+
 
 You will now add a user role `Administrators` to your application.
 
@@ -154,7 +155,7 @@ You will now add a user role `Administrators` to your application.
               additional:
                 firstName: Sabine
                 lastName: Autumnpike
-                email: Sabine.Autumnpike@mail.com            
+                email: Sabine.Autumnpike@mail.com
     ```
 
     > You used the attribute `roles` to add the `Administrators` role to that user.
@@ -181,10 +182,9 @@ You will now add a user role `Administrators` to your application.
 
 6. Remove the `Authorization` header or change the credentials to a different mock user. Observe that the `AdminService` is not available to them.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Advanced authorizations on the entities)]
+### Advanced authorizations on the entities
+
 
 CAP can do more than simple role-based authorizations. To illustrate that, you will implement the following use case:
 
@@ -269,7 +269,6 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
 
 Congratulations, you have learned how to add basic security to your application and test it locally. You can model your business users and implement authorization requirements.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 ---

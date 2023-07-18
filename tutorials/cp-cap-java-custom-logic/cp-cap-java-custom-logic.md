@@ -1,24 +1,25 @@
 ---
+parser: v2
 author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
-title: Extend the Bookstore with Custom Code
-description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
-## Details
-### You will learn
+# Extend the Bookstore with Custom Code
+<!-- description --> Extend the previously built bookstore with custom coding, for example, to validate requests.
+
+## You will learn
   - How to use the CAP Java SDK
   - How to use the debugger in SAP Business Application Studio
 
+## Intro
 In the previous tutorial, you have built the data model and exposed the services of your bookstore application. In this tutorial, you will extend the bookstore with custom code to calculate the `total` and `netAmount` elements of the `Orders` and `OrderItems` entity. In addition, when creating an order the available stock of a book will be checked and decreased.
 
----
 
-[ACCORDION-BEGIN [Step 1: ](Define custom handler for OrdersService)]
+### Define custom handler for `OrdersService`
 
 In one of the previous tutorials, you have already seen how to register a [custom event handler](https://cap.cloud.sap/docs/java/provisioning-api) to handle `READ` or `CREATE` events of an entity. You used the `@On` annotation, which replaces the default handling of an event that is provided by the CAP Java runtime.
 
@@ -30,7 +31,7 @@ First of all, a new Java class for your event handler methods needs to be define
 
 2. Go to `srv/src/main/java/com/sap/cap/bookstore` and create a new folder called `handlers`.
 
-    !![handlers package](handlers-package.png)
+    <!-- border -->![handlers package](handlers-package.png)
 
 3. In the created package, create the `OrdersService.java` file with the following content and make sure you **Save** the file:
 
@@ -50,12 +51,14 @@ public class OrdersService implements EventHandler {
 }
 ```
 
-!![OrdersService class overview](ordersservice-class.png)
+<!-- border -->![OrdersService class overview](ordersservice-class.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Decrease stock when posting order)]
+> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Update Project**. That regenerates the classes and makes them available.
+
+
+### Decrease stock when posting order
+
 
 You will now add a method to the `OrdersService` Java class to decrease the stock whenever a new order item is posted.
 
@@ -65,7 +68,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -89,7 +92,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -97,7 +100,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
             }
         }
     }
-    ```  
+    ```
 
 2. Add the following import statements to the top of the `OrdersService` Java class and make sure you **Save** the file:
 
@@ -111,7 +114,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     import com.sap.cds.ql.cqn.CqnUpdate;
     import com.sap.cds.services.ErrorStatuses;
     import com.sap.cds.services.ServiceException;
-    import com.sap.cds.services.cds.CdsService;
+    import com.sap.cds.services.cds.CqnService;
     import com.sap.cds.services.handler.annotations.Before;
     import com.sap.cds.services.persistence.PersistenceService;
 
@@ -157,7 +160,7 @@ import com.sap.cds.ql.cqn.CqnSelect;
 import com.sap.cds.ql.cqn.CqnUpdate;
 import com.sap.cds.services.ErrorStatuses;
 import com.sap.cds.services.ServiceException;
-import com.sap.cds.services.cds.CdsService;
+import com.sap.cds.services.cds.CqnService;
 import com.sap.cds.services.handler.annotations.Before;
 import com.sap.cds.services.persistence.PersistenceService;
 
@@ -174,7 +177,7 @@ public class OrdersService implements EventHandler {
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -198,7 +201,7 @@ public class OrdersService implements EventHandler {
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -211,23 +214,22 @@ public class OrdersService implements EventHandler {
 
 If your `OrdersService.java` file still shows some errors right-click on the `pom.xml` in the `srv` directory and choose **Update Project**. After closing and reopening the `OrderService.java` file the errors should be gone.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test handler)]
+### Test handler
+
 
 1. Go to the terminal in SAP Business Application Studio and stop your application if it's still running by using **`CTRL+C`**.
 
 2. Choose the **Run Configuration** icon on the side panel of SAP Business Application Studio.
 
-    !![select the run configurations item](run-configurations.png)
+    <!-- border -->![select the run configurations item](run-configurations.png)
 
 3. Choose the **Create Configuration** icon (plus sign) and select **`Bookstore`** as your project to run. Choose **Enter** to confirm the name.
 
 4. Click the green arrow to start the application.
 
-    !![start run configuration](start-runconfiguration.png)
+    <!-- border -->![start run configuration](start-runconfiguration.png)
 
     You should see the application starting in the **Debug Console**.
 
@@ -270,17 +272,16 @@ If your `OrdersService.java` file still shows some errors right-click on the `po
 
       Basically, by repeating the request, you're ordering 2 books each time and therefore decreasing the stock by 2.
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Calculate netAmount of order item)]
+
+### Calculate `netAmount` of order item
 
 Next, let's add a method to the `OrdersService` Java class to calculate the `netAmount` element of the `OrderItems` entity.
 
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
     public void calculateNetAmount(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -312,22 +313,21 @@ Let's break it down again:
 
 - In the last line the net amount of the order item is calculated, based on the price of the book and the amount of books ordered.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test handler)]
+### Test handler
+
 
 1. In SAP Business Application Studio, stop your application if it's still running by clicking on the red stop icon in the **Debug** side panel.
 
-    !![stop debugging button](stop-debug.png)
+    <!-- border -->![stop debugging button](stop-debug.png)
 
 2. Choose the **Run Configuration** icon on the side panel of SAP Business Application Studio.
 
-    !![select the run configurations item](run-configurations.png)
+    <!-- border -->![select the run configurations item](run-configurations.png)
 
 3. Click the green arrow to start the application.
 
-    !![start run configuration](start-runconfiguration.png)  
+    <!-- border -->![start run configuration](start-runconfiguration.png)
 
     You should see the application starting in the **Debug Console**.
 
@@ -353,23 +353,22 @@ Let's break it down again:
 
 7. From the welcome page, choose **`OrderItems`** and you will see that the `netAmount` element is filled with the calculated value.
 
-    !![order items welcome page](order-item-welcome.png)
+    <!-- border -->![order items welcome page](order-item-welcome.png)
 
-    !![calculated net amount](calculated-net-amount.png)
+    <!-- border -->![calculated net amount](calculated-net-amount.png)
 
     >You can also add `/odata/v4/OrdersService/OrderItems` to the end of your app URL.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Calculate total amount of order)]
+### Calculate total amount of order
+
 
 Finally, add a method to the `OrdersService` Java class to calculate the `total` element of the `Orders` entity.
 
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
     public void calculateTotal(List<Orders> orders) {
         for (Orders order : orders) {
             // calculate net amount for expanded items
@@ -404,22 +403,21 @@ Let's break down the code:
 
 - For each order item, the net amount is calculated first by reusing the method `calculateNetAmount`. After that all net amounts are added to the order's total amount.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test the handler)]
+### Test the handler
+
 
 1. In SAP Business Application Studio stop your application if it's still running by clicking on the stop icon in the **Debug** side panel.
 
-    !![stop debugging button](stop-debug.png)
+    <!-- border -->![stop debugging button](stop-debug.png)
 
 2. Choose the **Run Configuration** icon on the side panel of SAP Business Application Studio.
 
-    !![select the run configurations item](run-configurations.png)
+    <!-- border -->![select the run configurations item](run-configurations.png)
 
 3. Click on the green arrow to start the application, which appears when you hover over the run configuration.
 
-    !![start run configuration](start-runconfiguration.png)
+    <!-- border -->![start run configuration](start-runconfiguration.png)
 
     You should see the application starting in the **Debug Console**.
 
@@ -429,7 +427,7 @@ Let's break down the code:
 
 6. From the welcome page, choose **Orders**. You will see that the `total` element is filled with the calculated value.
 
-    !![total calculated](total-calculated.png)
+    <!-- border -->![total calculated](total-calculated.png)
 
     >You can also add `/odata/v4/OrdersService/Orders` to the end of your app URL.
 
@@ -437,16 +435,14 @@ Let's break down the code:
 
     This expands the `Orders` with its `OrderItems`. You will see that the `netAmount` element of the `OrderItems` is calculated.
 
-    !![expand items of Order](expand-item.png)
+    <!-- border -->![expand items of Order](expand-item.png)
 
 8. Stop your application by clicking on the stop icon in the **Debug** side panel.
 
-    !![stop debugging button](stop-debug.png)
+    <!-- border -->![stop debugging button](stop-debug.png)
 
 Great job!
 
 You have extended the application with quite some custom business logic. In the next tutorial you will start to make the application ready for SAP BTP, by running it with SAP HANA as the database.
 
-[DONE]
-[ACCORDION-END]
 ---

@@ -1,37 +1,39 @@
 ---
-title: Register a Multitenant Application to the SAP SaaS Provisioning Service
-description: Register a Node.js application to the SAP SaaS Provisioning Service (saas-registry) in the Kyma runtime to make it available for subscription to SaaS consumer tenants.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Register a Multitenant Application to the SAP SaaS Provisioning Service
+<!-- description --> Register a Node.js application to the SAP SaaS Provisioning Service (saas-registry) in the Kyma runtime to make it available for subscription to SaaS consumer tenants.
+
 ## Prerequisites
 - You have finished the tutorial [Implement Subscription Callbacks for a Multitenant Application](implement-subscription-callback-multitenant)
 
-## Details
-### You will learn
+## You will learn
 - How to create SaaS Provisioning Service instance for multitenancy in the Kyma runtime
 - How to consume SaaS Provisioning Service instance credential from the backend application
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP SaaS Provisioning Service Instance and Credential)]
+### Create SAP SaaS Provisioning Service Instance and Credential
+
 
 **1.** Create an instance and binding of SAP SaaS Provisioning Service by adding the following part to the deployment file `k8s-deployment-services.yaml`:
 
 ```YAML
 ################### SaaS Provisioning Service ###################
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceInstance
 metadata:
   name: saas-registry-service
 spec:
-  clusterServiceClassExternalName: saas-registry
-  clusterServicePlanExternalName: application
+  serviceOfferingName: saas-registry
+  servicePlanName: application
   parameters:
     # the xsappname refers to the one defined in xsuaa service
     xsappname: multitenant-kyma-demo
@@ -44,15 +46,12 @@ spec:
       onSubscriptionAsync: false
       onUnSubscriptionAsync: false
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceBinding
 metadata:
-  creationTimestamp: null
   name: saas-registry-service-binding
 spec:
-  externalID: ""
-  instanceRef:
-    name: saas-registry-service
+  serviceInstanceName: saas-registry-service
   secretName: saas-registry-service-binding
 ```
 
@@ -74,10 +73,9 @@ spec:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access Instance Credential from Backend Application )]
+### Access Instance Credential from Backend Application 
+
 
 Mount the Secret as a volume to the pod in the `k8s-deployment-backend.yaml`:
 
@@ -95,8 +93,7 @@ Mount the Secret as a volume to the pod in the `k8s-deployment-backend.yaml`:
           secretName: saas-registry-service-binding
 ```
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---

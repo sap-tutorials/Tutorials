@@ -1,36 +1,39 @@
 ---
+parser: v2
 author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
-title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
-description: Use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
+
+# Set Up Continuous Integration and Delivery for SAP Cloud SDK
+<!-- description --> Use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 
 ## Prerequisites
 For getting started with Continuous Integration and Delivery (`Cx`) in your project, you need to assure the following prerequisites:
     - **Linux host with Docker**: For instantiating the Cx-server of project "Piper", you need to provide a suitable host or virtual machine with a Linux operating system and Docker installed. Please also ensure that the user with whom you start the Cx-server belongs to the Docker group.
     - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
 
-The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
-## Details
-
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
 
-### You will learn
+## You will learn
   - How to develop and release your application in short cycles
   - How to use project "Piper" to set up a CI/CD pipeline for SAP Cloud SDK based projects on SAP Cloud Platform
   - How to set up a CI/CD build server and run your pipeline
 
+## Intro
+The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate a new project using the SAP Cloud SDK for Java)]
+### Generate a new project using the SAP Cloud SDK for Java
+
 
 First, generate a new project using the SAP Cloud SDK for Java which can later be deployed to SAP Cloud Platform via tools provided by project "Piper". If you already completed the tutorial [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) before, you can also reuse the project during this tutorial.
 
@@ -41,14 +44,13 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes"\
 "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
 ```
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Install and manage the Cx-server)]
+### Install and manage the Cx-server
+
 Cx-server is a build server based on Jenkins. Its lifecycle is maintained by a script called `cx-server`. It can be found in the same named folder on the root of each SAP Cloud SDK project archetype. Alternatively, you can also follow the first steps in the [Operations Guide for CX Server](https://github.com/SAP/devops-docker-cx-server/blob/master/docs/operations/cx-server-operations-guide.md#introduction). Together with the `server.cfg` file, this is all you need for starting your instance of the Cx-server.
 
-!![CX Server Folder](cx-server-folder.png)
+<!-- border -->![CX Server Folder](cx-server-folder.png)
 
 ### Copy the Cx-server lifecycle management script to the target host
 First, Cx-server folder needs to be copied to the future host on which the Cx-server is intended to run. For this, copy the folder from your archetype to a place on your Linux server, for example, via secure copy:
@@ -116,15 +118,14 @@ Congratulations! Your Cx-server is now starting up. Once it is running, you can 
 
 Jenkins should welcome you with the following screen:
 
-!![Jenkins Welcome](jenkins-welcome.png)
+<!-- border -->![Jenkins Welcome](jenkins-welcome.png)
 
 Next, you can continue with the basic setup and start building your project by adding your source code repository.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update and customize the Cx-server)]
+### Update and customize the Cx-server
+
 
 In certain cases, you will need to create a new Cx-server container, for example, for:
 
@@ -175,11 +176,9 @@ Waiting for running jobs to finish...... success.
 
 Afterwards call `cx-server remove` to delete its corresponding Docker container. To create a new instance, you can subsequently call `cx-server start`. This will instantiate a new container based on the current configuration. As long as you do not change the home directory of Jenkins, the new container will reuse the previous Cx-server configuration and all other persisted state information.
 
-[DONE]
 
-[ACCORDION-END]
+### Build your first project
 
-[ACCORDION-BEGIN [Step 4: ](Build your first project)]
 After configuring and starting your Cx-server instance, you are ready to build, test, and deploy your first cloud application. We will use the application we generated in step 1.
 
 Before creating your build job, you need to configure your SCM system of choice. In our example, we will assume that your project is located in GitHub Enterprise. Alternatively, you can also skip the next step (Setup GitHub Enterprise) and use your account on github.com.
@@ -189,7 +188,7 @@ Before creating your build job, you need to configure your SCM system of choice.
 ### Set up GitHub Enterprise
 Go to your Jenkins main page and navigate to **Manage Jenkins > Configure System**. On the configuration page, look for `GitHub Enterprise Servers`. Here, add the API endpoint of your GitHub Enterprise server, which typically ends with `/api/v3` (for example `https://github.corp/api/v3`), and assign a name to it. Now you are ready to create a build job for your project.
 
-!![GitHub Enterprise Server](github-enterprise-server.png)
+<!-- border -->![GitHub Enterprise Server](github-enterprise-server.png)
 
 ### Create a Jenkins job for your project
 To create a build job for your project, navigate to **New Item** in the Jenkins main menu. On the following screen, choose **Multi-branch Pipeline** and specify a name for your project´s build job.
@@ -202,31 +201,31 @@ If your repository is set to private, please also create and use a pair of suita
 
 To control when Jenkins will start a build run and what it will build during that run, you can use the **Behaviors** section of the configuration. The example below shows a configuration that will build all branches and GitHub pull requests. Finally, save your updated configuration by clicking `Save` on the bottom of the page.
 
-!![Branch source](branche-source.png)
+<!-- border -->![Branch source](branche-source.png)
 
 Congratulations! Jenkins will now scan your repository and trigger a build.
 
 The best way to get an overview of the build status is to open the job, navigate to the currently running build, and open it in the blue ocean UI of Jenkins.
 
-!![Jenkins Blue Ocean](jenkins-blue-ocean.png)
+<!-- border -->![Jenkins Blue Ocean](jenkins-blue-ocean.png)
 
 The resulting pipeline should look as shown in the following screenshot.
 
-!![Pipeline](pipeline.png)
+<!-- border -->![Pipeline](pipeline.png)
 
 Please note that your pipeline skipped multiple stages, such as the "Release" stage, because you did not configure a deployment target yet. To deploy your application to your SAP Cloud Platform account, you need to add a target to your `.pipeline/config.yml` file.
 
 Moreover, if you already built integration tests that require credentials, you also need to create corresponding records in the Jenkins credentials store and map them via an appropriate entry in the configuration file. Credentials can be created by navigating to **Credentials > System > Global Credentials**.
 
-!![Jenkins System](jenkins-system.png)
+<!-- border -->![Jenkins System](jenkins-system.png)
 
 On this screen, click **Add Credentials** and enter username, password, as well as an ID for your credentials record.
 
-!![Add Credentials](jenkis-add-credentials.png)
+<!-- border -->![Add Credentials](jenkis-add-credentials.png)
 
 As a result, navigating to **Credentials** should show your freshly created entry.
 
-!![Jenkins Credentials](jenkins-credentials.png)
+<!-- border -->![Jenkins Credentials](jenkins-credentials.png)
 
 Finally, you can now leverage this credentials record by adding the credentials configuration property to the `Integration` stage of your `.pipeline/config.yml`.
 
@@ -246,21 +245,19 @@ For enabling Jenkins to automatically run builds in the future, you should open 
 
 This is also a good point to set up Jenkins to know its own URL. Navigate to **Manage Jenkins > Configure System**, search for **`Jenkins Location`**, and specify **`Jenkins URL`**.
 
-!![Jenkins Location](jenkins-location.png)
+<!-- border -->![Jenkins Location](jenkins-location.png)
 
 Jenkins will use this value to create links to its resources, for example, when creating quality check entries in context of pull requests that are initiated by developers within the project.
 
-!![Checks Passed](checks-passed.png)
+<!-- border -->![Checks Passed](checks-passed.png)
 
 Furthermore, you can adopt the number of executors to match the power of your host machine. By default, the Cx-server uses 4 executors, which means that up to three stages of build jobs can run in parallel.
 
 We recommend to increase the number executors to at least the number of cores of your machine. This will help your Cx-server to finish build jobs faster, especially when running multiple in parallel.
 
-[DONE]
 
-[ACCORDION-END]
+### Troubleshoot
 
-[ACCORDION-BEGIN [Step 5: ](Troubleshoot)]
 
 ### Pipeline does not start after commit
 Check if your webhook is setup properly and that it succeeds in delivering commit events. Furthermore, ensure that your project and, therefore, also the Jenkins file are located in the root of your git repository. One way of achieving this, is to generate the archetype in the parent folder of your local repository with `artifactId=<repository name>`.
@@ -268,12 +265,11 @@ Check if your webhook is setup properly and that it succeeds in delivering commi
 In the future, we will use this section to address common challenges and how they can be resolved. For example, how you can access the Cx-server log files, how you can get shell access to your Cx-server, and how to customize it for your environment when you are using self signed certificates.
 
 
-[DONE]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 6: ](More information)]
+### More information
+
 
 
 ### Questions and Bugs
@@ -292,7 +288,7 @@ This is a general security risk in setups where Docker containers need to be abl
 This tutorial describes the approach of project "Piper" to setup and maintain your own Jenkins server using the cx-server lifecycle scripts. However, there are also alternatives to that:
 
 - SAP offers the [SAP Cloud Platform Continuous Integration and Delivery](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/618ca03fdca24e56924cc87cfbb7673a.html) which lets you configure and run predefined continuous integration and delivery (CI/CD) pipelines as a service.
-- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions), [Travis CI](https://travis-ci.com/), etc. Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
+- You can also make use of other CI/CD services, such as [GitHub Actions](https://github.com/features/actions) or [Travis CI](https://travis-ci.com/). Project "Piper" also offers a [CLI variant](https://sap.github.io/jenkins-library/cli/) of the library which can be used on these services to implement a continuous delivery pipeline.
 
 ### Additional Resources
 
@@ -302,8 +298,5 @@ This tutorial describes the approach of project "Piper" to setup and maintain yo
 
 [Docker Documentation](https://docs.docker.com/)
 
-[DONE]
-
-[ACCORDION-END]
 
 ---

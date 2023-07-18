@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
 keywords: cap
@@ -49,13 +49,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** &rarr; **Spaces**.
+4. Choose **Cloud Foundry** &rarr; **Spaces**.
 
-3. Choose your space.
+5. Choose your space.
 
-4. Choose on the application whose logs you want to access.
+6. Choose on the application whose logs you want to access.
 
-5. Choose **Logs**.
+7. Choose **Logs**.
 
     !![App Logs](cpapp-srv-logs.png)
 

@@ -1,26 +1,25 @@
 ---
-title: Test Your Mobile SAP Screen Personas Flavor
-description: Run your Service Notification app on a mobile device
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-screen-personas, topic>mobile, software-product>sap-fiori]
 primary_tag: software-product>sap-screen-personas
 ---
 
-## Prerequisites
- - SAP Screen Personas SP06 or higher
+# Test Your Mobile SAP Screen Personas Flavor
+<!-- description --> Run your Service Notification app on a mobile device
 
-## Details
-### You will learn
+## You will learn
   - How to access your SAP Screen Personas flavor on a mobile device
 
+## Intro
 The focus of this tutorial is on testing your adaptive flavor(s) on a mobile device. The screenshots used will feature a mobile phone, but the same process applies to a tablet.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: Access your flavor on a mobile device](Access your flavor on a mobile device)]
+### Access your flavor on a mobile device
 
-On the desktop version of the training system, navigate to transaction **`IW51`** and open the **flavor bar**. Click on your flavor tile, select **Direct Access Link** and then click **Generate QR Code**.
+On the desktop version of the training system, navigate to transaction **`IW51`** and open the **flavor manager**. Click on your flavor tile, select **Direct Access Link** and then click **Generate QR Code**.
 
 ![Generate QR Code](Generate-QR-Code.png)
 
@@ -32,11 +31,7 @@ Next, scan the QR code with your device and launch the resulting URL. You will b
 
 ![Scan Personas QR](Scan-Personas-QR.jpg)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 2: Test your flavor](Test your flavor)]
+### Test your flavor
 
 Enter your credentials and tap **Log On** to begin testing your flavor.
 
@@ -50,10 +45,7 @@ You should then seen the simplified screen for your mobile device. If you have b
 
 ![Simplified Screen](Simple-Screen.jpg)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: Optional: Test your barcode scanner](Optional: Test your barcode scanner)]
+### Optional: Test your barcode scanner
 
 If desired, you can also test the barcode scanner within you flavor. You will need to generate a QR code that represents a valid equipment number in your system. If you are using the training system provided by the SAP Screen Personas team, you can use the following **`210100019`**, **`210100024`**, or **`210100013`**.
 
@@ -71,5 +63,3 @@ Your **Functional Location** and **Equipment** fields should then automatically 
 
 Congratulations, you have a built a working mobile flavor with SAP Screen Personas!
 
-[VALIDATE_1]
-[ACCORDION-END]

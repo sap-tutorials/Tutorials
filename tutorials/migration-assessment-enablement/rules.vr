@@ -1,0 +1,15 @@
+
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+Which role collections are required to enable Migration Assessment capability?
+
+###Match
+[X] PIMAS_Administrator
+[ ] PI_Administrator
+[X] PIMAS_IntegrationAnalyst
+[ ] PI_Integration_Developer
+
+[VALIDATE_3]

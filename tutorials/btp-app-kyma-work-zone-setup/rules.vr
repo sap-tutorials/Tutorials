@@ -1,0 +1,16 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+Which of the following sections are added to the `values.yaml` file after running the `cds add html5-repo` command?
+
+###Match
+[x] destinations
+[ ] hana-deployer
+[ ] srv
+[x] html5-apps-deployer
+[ ] xsuaa
+[x] html5_apps_repo_host
+
+[VALIDATE_1]

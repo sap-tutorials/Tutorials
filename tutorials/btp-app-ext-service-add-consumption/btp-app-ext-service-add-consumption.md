@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 keywords: cap
@@ -12,8 +12,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
- - For this tutorial, you have two options:
-    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
     - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
 ## Details
@@ -70,7 +70,7 @@ cds import ~/Downloads/API_BUSINESS_PARTNER.edmx
 
 Output:
 
-```
+```Shell/Bash
 [cds] - imported API to srv/external/API_BUSINESS_PARTNER.csn
 > use it in your CDS models through the like of:
 
@@ -84,7 +84,7 @@ The command will copy the EDMX file to the `srv/external` folder of your project
 Additionally, the file will be registered as service definition in the `package.json` file:
 
 <!-- snippet package.json API_BUSINESS_PARTNER -->
-```JavaScript[4-8]
+```JSON[4-8]
   "cds": {
     "requires": {
        ...
@@ -112,7 +112,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     In the `cds watch` output, you find the information about the two services:
 
-    ```
+    ```Shell/Bash
     ...
     > init from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
     ...
@@ -135,7 +135,7 @@ In this step, you add some mock data for the business partner service. This allo
 
 5. Open the `db/schema.cds` file and add the following entity at the end of the file:
 
-    ```Swift
+    ```JavaScript
     using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER';
 
         entity Suppliers as projection on bupa.A_BusinessPartner {
@@ -149,7 +149,7 @@ In this step, you add some mock data for the business partner service. This allo
 
 6. Expose supplier information through your service by adding the following lines to your `srv/risk-service.cds` file:
 
-    ```Swift[7-13]
+    ```JavaScript[7-13]
     service RiskService {
         entity Risks @(restrict : [
         ...
@@ -184,7 +184,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 1. Install the node packages to mock the external services:
 
-    ```
+    ```Shell/Bash
     npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/util
     ```
 

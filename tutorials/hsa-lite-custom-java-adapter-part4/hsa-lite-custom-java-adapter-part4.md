@@ -1,17 +1,18 @@
 ---
-title: Deploy and Test the Streaming Lite Custom Adapter
-description: Learn how to deploy our Custom Java Adapter by creating a .jar file and transferring it to our Raspberry Pi, and to test it using the streamingsubscribe executable.
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 time: 15
 ---
 
+# Deploy and Test the Streaming Lite Custom Adapter
+<!-- description --> Learn how to deploy our Custom Java Adapter by creating a .jar file and transferring it to our Raspberry Pi, and to test it using the streamingsubscribe executable.
+
 ## Prerequisites  
  - [Code the Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part3.html)
 
-## Details
-### You will learn  
+## You will learn  
  - How to deploy our Custom Java Adapter into a .jar file
  - How to transfer the .jar file to our Raspberry Pi
  - How to test our Custom Java Adapter by subscribing to the event streams
@@ -19,7 +20,8 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Deploy the Adapter)]
+### Deploy the Adapter
+
 
 After we have finished coding the adapter, we can go ahead and create a jar file.
 
@@ -43,11 +45,9 @@ Copy over the entire `custom_java_adapter` folder onto your `Raspberry Pi`, into
 
 ![Copy Custom Java Adapter](copyCustomJavaAdapter.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Test the Adapter
 
-[ACCORDION-BEGIN [Step 2: ](Test the Adapter)]
 
 We will now start Streaming Lite and run our Custom Java Adapter. To see what our Custom Java Adapter is inputting, we will subscribe to the `isFreezerTemperatureReading` stream of our `freezer_monitoring_lite` project.
 
@@ -84,9 +84,7 @@ If our Custom Java Adapter is working correctly, you will be able to see the row
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
 ---
 

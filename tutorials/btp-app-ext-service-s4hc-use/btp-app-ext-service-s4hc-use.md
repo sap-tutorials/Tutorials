@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
 description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
 keywords: cap
@@ -42,7 +42,7 @@ First, you create a service instance for the SAP S/4HANA Cloud Extensibility ser
 
     `bupa-service-config.json`:
 
-    ```
+    ```JSON
     {
         "systemName": "<set in mta.yaml>",
         "communicationArrangement": {
@@ -176,9 +176,9 @@ Otherwise, deploy your application as described in the tutorial [Multi-Target Ap
 [ACCORDION-BEGIN [Step 3: ](Test your CAP application with SAP S/4HANA Cloud connectivity)]
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote S/4HANA system.
 
-> Don't forget to perform the steps from the tutorial [Subscribe to the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
+> Don't forget to perform the steps from the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe) before you continue with this step to be able to create entries in the **Risks** application.
 
-1. Open your **SAP BTP Launchpad Service** site as described in the tutorial [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service).
+1. Open your **SAP Build Work Zone, standard edition** site as described in the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe).
 
 2. Choose the **Risks** application.
 
@@ -186,7 +186,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
 
-    > In case you get an error `Forbidden`.
+    > In case you get an error `Forbidden`. 
 
     > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
 

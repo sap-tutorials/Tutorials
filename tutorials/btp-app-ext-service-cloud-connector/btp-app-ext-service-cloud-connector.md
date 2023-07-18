@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Manju Shankar
+author_profile: https://github.com/manjuX
 title: Configure Systems in Cloud Connector
 description: This tutorial shows you how to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
 keywords: cap
@@ -12,8 +12,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Prerequisites
  - [Prepare SAP S/4HANA System by Activating the Business Partner OData Service](btp-app-ext-service-odata-service)
 - On SAP S/4HANA side:
-    - You have a dedicated SAP S/4HANA system
-    - You must be an administrator of the SAP S/4HANA system
+    - You have a dedicated SAP S/4HANA system.
+    - You must be an administrator of the SAP S/4HANA system.
  - On Cloud Connector side:
     - You have downloaded the right Cloud Connector version for your operating system from [SAP Development Tools](https://tools.hana.ondemand.com/#cloud) and have installed Cloud Connector on your machine in accordance with the [installation instructions](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/LATEST/en-US/57ae3d62f63440f7952e57bfcef948d3.html) on the SAP Help Portal.
 

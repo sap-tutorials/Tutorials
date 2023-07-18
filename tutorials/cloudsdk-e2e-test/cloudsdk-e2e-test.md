@@ -1,26 +1,27 @@
 ---
+parser: v2
 author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
-title: End-to-End Tests for SAP Cloud SDK Projects
-description: Implement end-to-end tests, the highest level of automated tests, and run them in a pipeline.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
+# End-to-End Tests for SAP Cloud SDK Projects
+<!-- description --> Implement end-to-end tests, the highest level of automated tests, and run them in a pipeline.
+
 ## Prerequisites
-This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", e.g. because you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
+This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", for example you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
 
-## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
->
-### You will learn
+
+## You will learn
   - How to write end-to-end tests for your application
   - How to configure Nightwatch-api
   - How to configure Cucumber
@@ -28,7 +29,8 @@ To follow this tutorial please download and extract an [example project](https:/
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](End-to-end tests)]
+### End-to-end tests
+
 For the end-to-end tests we use [Cucumber](https://github.com/cucumber/cucumber-js) and [Nightwatch-api](https://nightwatch-api.netlify.com/). It runs your tests using the chrome driver in the browser against a running version of your application. The version can run locally or on SAP Cloud Platform.
 
 The example application you downloaded as prerequisite contains a frontend application which can list and create business partners. You can find it in `application/src/main/webapp/address-manager`.
@@ -95,11 +97,10 @@ module.exports = {
 };
 ```
 
-[VALIDATE_1]
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure Nightwatch)]
+### Configure Nightwatch
+
 
 To configure Nightwatch we create the following file in `e2e-tests/nightwatch.conf.js`:
 
@@ -181,11 +182,9 @@ module.exports = {
 
 This configuration file defines some constants and places where the reports are located. Please note, that we use the folder `s4hana_pipeline/reports` to store all reports. This path is later required by our pipeline. In `launch_url` you can see that, the URL tested against and can be defined as command line argument.
 
-[DONE]
 
-[ACCORDION-END]
+### Configure Cucumber
 
-[ACCORDION-BEGIN [Step 3: ](Configure Cucumber)]
 
 Furthermore, we also have to configure Cucumber to start and configure `chromedriver` as well as Nightwatch. Therefore, we create the file `e2e-tests/cucumber.conf.js` with the following content:
 
@@ -276,11 +275,9 @@ The final folder structure looks as follows:
 
 ![E2ETest Folders](e2e-tests-folders.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Execute test
 
-[ACCORDION-BEGIN [Step 4: ](Execute test)]
 
 Now you can run the following commands to execute your tests. Note that the launch URL must be unprotected as we have not yet implemented a login step. [End-to-end tests against secured applications](cloudsdk-e2e-test-secure-applications) explains how you can also target apps that require authentication.
 
@@ -293,13 +290,11 @@ You should see the following result:
 
 ![E2ETests Result](e2e-tests-result.png)
 
-[DONE]
 
-[ACCORDION-END]
+### Run E2E tests in the pipeline
 
-[ACCORDION-BEGIN [Step 5: ](Run E2E tests in the pipeline)]
 
-!![S4SDK Pipeline](e2epipeline.png)
+<!-- border -->![S4SDK Pipeline](e2epipeline.png)
 
 Please setup a continuous delivery pipeline for this project as learned in  [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 
@@ -330,11 +325,10 @@ The section `Acceptance` consists of two sections. Before you can run the end-to
 
 The tests are executed once per entry in the list. For each entry the URL is passed as `launchUrl` to the test. The `credentialsId` is used to read the corresponding credentials from the credentials store in Jenkins. Thus, you have to create these credentials, as explained in the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). The `username` and `password` is read from the credentials store and passed as environment variable to the test.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Troubleshoot and questions)]
+### Troubleshoot and questions
+
 
 Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `sap-cloud-sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 
@@ -342,8 +336,5 @@ For an overview of SAP Cloud SDK related questions, go to <https://stackoverflow
 
 You think that you found a bug in one of our Continuous Delivery artifacts? Feel free to open an issue in our GitHub repository on <https://github.com/SAP/jenkins-library/issues>.
 
-[DONE]
-
-[ACCORDION-END]
 
 ---
