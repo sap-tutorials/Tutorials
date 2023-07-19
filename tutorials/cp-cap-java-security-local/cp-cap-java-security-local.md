@@ -17,10 +17,26 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to test security aspects with the application running locally
   ---
 
+
+### Enable Authentication
+
+In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behavior based on Spring Security.
+
+1. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` tag replace the `cds-feature-hana` dependency you added in the previous tutorial with the `cds-starter-cloudfoundry` dependency. Make sure you **Save** the file.
+
+    ```xml
+    <dependency>
+        <groupId>com.sap.cds</groupId>
+        <artifactId>cds-starter-cloudfoundry</artifactId>
+    </dependency>
+    ```
+
+
+
 ### Add authentication to the Orders service
 
 
-In the previous tutorial you have added authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behaviour based on Spring Security. You will now demonstrate this behaviour using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
+You will now demonstrate this behavior using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
 
 1. Start the application with the command `mvn spring-boot:run`.
 
