@@ -29,7 +29,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
     ![Open SQL console](open-sql-console.png)
 
-    Notice that the user in the SQL Console is DBADMIN if using SAP HANA Cloud, or SYSTEM if using an on-premise SAP HANA database.  In this step we will create a new user, USER1 that will be used throughout the rest of the tutorials in this tutorial group.
+    Notice that the user in the SQL console is DBADMIN if using SAP HANA Cloud, or SYSTEM if using an on-premise SAP HANA database.  In this step we will create a new user, USER1 that will be used throughout the rest of the tutorials in this tutorial group.
 
 2. Execute the below SQL.
 
@@ -81,15 +81,17 @@ The following steps will create a sample hotel dataset using create and insert s
 
 3. Add another SAP HANA database connection using USER1. 
 
-    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options.
+    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options. 
+
+    Uncheck the *Verify the server's certificate using the trusted certificate below* checkbox.
 
     ![add new user1 connection](user1-connection0.png)
 
-    Open a new SQL Console and notice that it using USER1 and the schema is HOTEL.
+    Open a new SQL console and notice that it using USER1 and the schema is HOTEL.
 
     ![user1 connection sql console](user1-connection.png)
 
-4. The following example demonstrates the privileges using the newly opened SQL Console.  Notice that USER2 does not have the privilege  to perform an insert.
+4. The following example demonstrates the privileges using the newly opened SQL console.  Notice that USER2 does not have the privilege  to perform an insert.
 
     ```SQL
     CREATE TABLE TEST(
@@ -129,7 +131,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Create and populate tables
 
-1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL Console connected to USER1 in the schema of HOTEL.
+1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL console connected to USER1 in the schema of HOTEL.
 
     ```SQL
     --CONNECT USER1 PASSWORD Password1;
@@ -309,7 +311,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Explore auto-commit
 
-Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
+Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   
+
+The first setting which can be set in the SQL console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
 
 The following steps will demonstrate these settings.
@@ -331,7 +335,7 @@ The following steps will demonstrate these settings.
 
     ![test1 result](auto-commit-test1.png)
 
-2. In the SQL Console, set auto-commit off.
+2. In the SQL console, set auto-commit off.
 
     ![turn auto-commit off](autocommit-off.png)
 
@@ -352,7 +356,7 @@ The following steps will demonstrate these settings.
 
     ![auto-commit test3](auto-commit-test3.png)
 
-    Until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL Console or database connection.
+    Until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL console or database connection.
 
     Additional details can be found at [ROLLBACK Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20fcc453751910149557fc90fe781449.html) and [COMMIT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d39db97519101480e7f9b76f48c2c4.html).
 
@@ -373,7 +377,7 @@ The following steps will demonstrate these settings.
 
     An error will occur and you can then decide to undo the inserted rows and the table creation by executing a `ROLLBACK;` or you have the option to keep the successfully created table and rows by executing a `COMMIT`.
 
-    Until a COMMIT is executed, the table will not appear in another SQL Console or in the catalog browser.
+    Until a COMMIT is executed, the table will not appear in another SQL console or in the catalog browser.
 
     >The following query can be used to determine if AUTOCOMMIT DDL is enabled.  
     >
@@ -612,6 +616,8 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     END;
     ```
 
+    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at [SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20a78d3275191014b41bae7c4a46d835.html).
+
 5. To run this procedure, execute the SQL statement below.
 
     ```SQL
@@ -630,15 +636,22 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     For additional details see [Procedures](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/d43d91578c3b42b3bacfd89aacf0d62f.html).
 
+6. Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
 
-    >Procedures can also be scheduled in SAP HANA Cloud.  An example follows.  For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
-    >
     ```SQL
     SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
-    CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2021 12 23 * 14 25 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
+    CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2023 04 26 * 14 25 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
     SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
     ```
+    ![Create Scheduled Job](schedule_job.png)
+
+    Details about the scheduled job can also be viewed including its properties, parameters, history, and CREATE statement by opening the **Job Scheduler** in the Catalog Browser and clicking on your scheduled job. Ensure you are filtering by the HOTEL schema. Additionally, you have the ability to disable/enable the scheduled job.
+
+    ![View Scheduled Job](view_job.png)
+    
+    For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
+
 
 ### Knowledge check
 
-Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  
+Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs. 

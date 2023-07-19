@@ -391,7 +391,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 Run the deploy command again:
 
 ```Shell/Bash
-helm upgrade cpapp ./chart --install
+helm upgrade cpapp ./chart --install --set-file xsuaa.jsonParameters=xs-security.json
 ```
 
 

@@ -7,7 +7,7 @@ primary_tag: products>sap-hana-cloud
 ---
 
 # Perform Backup and Recovery of Standalone Data Lake in SAP HANA Cloud
-<!-- description --> Learn to backup and recover the data in your standalone data lake in SAP HANA Cloud using a trial account.
+<!-- description --> Learn to backup and recover the data in your standalone data lake in SAP HANA Cloud using a production account.
 
 ## You will learn
   - The backup schedule for the database
@@ -81,7 +81,7 @@ When creating a service request for data lake recovery, be sure to complete the 
 
     >The **Service ID** is the same as the **Instance ID** for your data lake. This can be found from the SAP HANA Cloud Central.
 
-    <!-- border -->![Instance ID](ss-04-instance-ID.png)
+    ![Instance ID](ss-04-instance-ID.png)
 
 
 >In this tutorial, you have learned about the backup and recovery process of your database using SAP HANA Cloud, data lake. Make sure to take note of the frequency of the backups, their time of occurrence and the process for recovery.
@@ -90,7 +90,6 @@ For more learning materials on **SAP HANA Cloud**, [click here](https://communit
 
 
 ### Test yourself
-
 
 
 

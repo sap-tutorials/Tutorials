@@ -91,16 +91,16 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Generate the UI with an SAP Fiori elements template)]
+[ACCORDION-BEGIN [Step 3: ](Generate the UI with an SAP Fiori template)]
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
     > In case you get an error launching the Application Generator, see the [SAP Fiori tools FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) on SAP Help Portal to find a solution.
 
-2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
+2. Choose application type **SAP Fiori** and floor plan **List Report Page**.
 
-       ![V4 Template](vscv4template_fea.png)
+       !![V4 Template](analytics-template-selection.png)
 
     > Why not use the Analytical List Page floor plan?
 
@@ -122,11 +122,11 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
-    ![CAPpro](datasourceselection_fea.png)
+    !![CAPpro](analytics-data-source.png)
 
 6. Select **Risks Analysis** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
-    ![entitySelection](entityselection_fea.png)
+    !![entitySelection](analytics-entity-selection.png)
 
 7. Enter `risk-analysis` as the module name and `Risk Analysis` as the application title.
 
@@ -134,7 +134,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 9. Choose **Finish** to generate the application.
 
-    ![Project Names](project_attributes_fea.png)
+    !![Project Names](analytics-project-attributes.png)
 
 The application is now generated and in a few seconds you can see it in the `app` folder of your project. It contains a `risk-analysis` and a `webapp` folder with a `Component.js` file that is characteristic for an SAPUI5 app.
 

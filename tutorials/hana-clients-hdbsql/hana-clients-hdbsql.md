@@ -63,7 +63,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         >```Shell (Linux or Mac)
         mkdir ~/.ssl
         # Download the public root certificate used by HANA Cloud
-        wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem -O ~/.ssl/DigiCertGlobalRootCA.crt.pem
+        wget --no-check-certificate https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem -O ~/.ssl/DigiCertGlobalRootCA.crt.pem
         # Show the command help for the sapgenpse
         sapgenpse -h
         # SECDIR & LD_LIBRARY_PATH environment variables are required when using the commoncrypto library
@@ -81,12 +81,12 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -a ~/.ssl/DigiCertGlobalRootCA.crt.pem
         # View the contents of the PSE
         sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -l
-        # Connect using the SAP commoncrypto library rather than OpenSSL.
-        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        # Connect using the SAP commoncrypto library rather than OpenSSL. Replace the host, user, and password values.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u <USER> -p <Password>
         >```
 
         >```Shell (Windows)
-        REM In a browser download https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt
+        REM In a browser download https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
         REM Show the command help for the sapgenpse
         sapgenpse -h
         REM SECDIR environment variable is required when using the commoncrypto library
@@ -102,11 +102,12 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt
         REM View the contents of the PSE
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
-        REM Connect using the SAP commoncrypto library rather than OpenSSL.
-        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        REM Connect using the SAP commoncrypto library rather than OpenSSL. Replace the host, user, and password values.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u <USER> -p <Password>
         >```
 
         > For additional details see [Server Certificate Authentication](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/a95754380f4c4c05b728524f9cd652e3.html).
+
 
         >---
 
@@ -157,7 +158,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 ### Create user and schema
 
 
-This step creates a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
+This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database. 
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
@@ -169,7 +170,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
-    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;  --Used in the entity framework tutorial
+    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;  --Used in the Node.js connection pool example and the entity framework tutorial.
     ```
 
     >The end of this tutorial contains SQL statements to delete the user, schema and objects created.  This may be helpful if you wish to recreate the sample dataset used in this tutorial.
@@ -199,7 +200,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
     Notice that the current user and schema have also changed from `DBADMIN` or `SYSTEM` to `USER1` and that the schema is now HOTEL.
 
 For further information on SQL to create a user or schema, see [CREATE USER Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html), [CREATE SCHEMA Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d4ecad7519101497d192700ce5f3df.html),
-[Grant Statement(Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), and  [Privileges](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/fb0f9b103d6940f28f3479b533c351e9.html).
+ [Grant Statement(Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), and [Privileges](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/fb0f9b103d6940f28f3479b533c351e9.html).
 
 
 
@@ -444,6 +445,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     View the list of created objects.
 
     ```SQL
+    hdbsql -U USER1UserKey
     \dt HOTEL.
     \dp HOTEL.
     ```
@@ -490,16 +492,26 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
 2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
 
-    Given the following file:
+    Create a file named `findCustomers.sql`.
 
-    ```SQL (find_customers.sql)
+    ```Shell (Windows)
+    notepad findCustomers.sql
+    ```
+
+    ```Shell (Linux or Mac)
+    pico findCustomers.sql
+    ```
+
+    Given the following SQL statement:
+
+    ```SQL (findCustomers.sql)
     SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
     ```
 
-    It could be called using:
+    We can call the query by executing the following command:
 
     ```Shell
-    hdbsql -A -U user1UserKey -V nameParam=J% -I find_customers.sql
+    hdbsql -A -U USER1UserKey -V nameParam=J% -I findCustomers.sql
     ```
 
     ![example of substitution parameters](subst.png)
@@ -528,7 +540,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![Prompting for parameters](prepared.png)
 
-    In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase whereas, in the previous step, which used substitution variables, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
+    In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase. In the previous step which used substitution variables, however, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
 
 ### Knowledge check
 

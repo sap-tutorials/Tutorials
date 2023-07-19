@@ -31,17 +31,19 @@ go version
 
 ![go version linux](version2.png)
 
-If Go is installed, then it will return the currently installed version, such as 1.19.
+If Go is installed, then it will return the currently installed version, such as 1.20.4
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
-On Linux, follow the instructions for the appropriate Linux version such as the [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go)
+On Linux, follow the instructions for the appropriate Linux version: [Installing Go for openSUSE](https://en.opensuse.org/SDB:Go).
 
->In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
+>Note: A new shell window must be opened for the system to recognize the Go installation and for executing any future Go commands. 
 
-### Configure the Environment
+### Configure the environment
 
-The data lake Relational Engine Client interface for Go, like the other data lake Relational Engine client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/0f3109338be048e187caa9646199e3db.html?state=DRAFT) in the SAP HANA Cloud, Data Lake Client Interfaces Reference Guide. In order to use the Go Driver, a 64-bit `gcc` compiler is required.
+The data lake Relational Engine Client interface for Go, like the other data lake Relational Engine client interfaces (except JDBC), makes use of a C library named SQLDBC.  
+
+The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/0f3109338be048e187caa9646199e3db.html?state=DRAFT) in the SAP HANA Cloud, Data Lake Client Interfaces Reference Guide. In order to use the Go Driver, a 64-bit `gcc` compiler is required.
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
@@ -49,15 +51,22 @@ The data lake Relational Engine Client interface for Go, like the other data lak
     gcc --version
     ```
 
-    If it is not installed, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). 
-    
-    For Windows, you can install from [WinLibs.com](https://winlibs.com/), and download the latest release version (UCRT runtime) of the ZIP archive for Win64 to install for the x86_64 architecture, and then extract the folder. 
+    On Windows (if needed), download the compiler from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, follow the link to [winlibs.com](https://winlibs.com/), by navigating to the **Download** section. Find the latest release version of the Zip archive (UCRT runtime) for Win64 – x86_64. Then extract the folder. 
 
     ![download minGW from WinLibs](winLibsMinGW.png)
 
-    If command prompt isn't showing you the installed version after running the version check command, manually add the bin folder to your path by setting it in your environment variables.
+    If command prompt isn't displaying the installed version after running the version check command, manually add the `bin` folder to your path by setting it in your System environment variables.
 
-    On Linux, install the System GNU C compiler for your version of Linux. Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
+    >On Windows, search **Edit the System Environment Variables** and click on **Environment Variables...**.
+    >
+    ![Edit Environment Variables](editEnvironmentVariables.png)
+
+    Look for the `Path` environment variable and double click to edit. Select **Browse** and manually browse through your File Explorer to find the bin folder
+
+    ![Add bin to path](add-bin-to-path.png)  
+
+  On Linux, install the System GNU C compiler for your version of Linux. 
+    >Note: if you are using openSUSE, minGW is included in the installation for Go through YaST.
 
     ![gcc 64-bit](gccLinux.png)
 
@@ -72,10 +81,10 @@ The data lake Relational Engine Client interface for Go, like the other data lak
     GOPATH is set to a location such as `C:\Users\user\go` or `$HOME/go` and defines the root of your workspace which stores your codebase.
 
 3. Set the required environment variables.
+    
+    >On Windows, navigate to the start menu and search for **system** environment variables.    
+    Optionally, you can also use the **SETX** command in command prompt to set a Windows environment variable. For example, `SETX CGO_LDFLAGS C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll`. Note that this will set a user variable, not a system variable. 
 
-    On Windows, search **Edit the System Environment Variables** abd click on **Environment Variables...**.
-
-    ![Edit Environment Variables](editEnvironmentVariables.png)
   
     On Linux, open the .bash_profile 
 
@@ -85,7 +94,7 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 
 4. Set the `CGO_LDFLAGS` environment variable to point to the location of the HDLRE client library as shown below, and set the `LD_LIBRARY_PATH` if needed. 
 
-    On Windows, add the **NEW** System Variable. Set the variable name to **CGO_LDFLAGS** and the variable value to the location of dbcapi library: **C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll**
+    On Windows, add a **NEW** System Variable. Set the variable name to **CGO_LDFLAGS** and the value as the location of `dbcapi` library: `C:\SAP\hdlclient\IQ-17_1\Bin64\dbcapi.dll`
 
     ![Set Environment Variables](setEnvVar.png)
 
@@ -97,11 +106,11 @@ The data lake Relational Engine Client interface for Go, like the other data lak
     ```
     ![.bash_profile contents](bashProfileAfterCGO.png)
 
-5. Go to the driver folder and create a go module.
+5. Navigate to the driver folder and create a Go module.
 
     ```Shell (Windows)
     cd C:\SAP\hdlclient\IQ-17_1\SDK\golang\SAP\go-hdlre\driver
-    go mod init "SAP\go-hdlre\driver"
+    go mod init "SAP/go-hdlre/driver"
     go mod tidy
     ```
     
@@ -112,35 +121,30 @@ The data lake Relational Engine Client interface for Go, like the other data lak
     ```
     ![createModule](createModule.png)
 
+### Create a Go application that queries an SAP HANA database
 
-### Create a Go application that queries an SAP HANA Cloud data lake
-
-1. Under your `DataLakeClientsTutorial` folder, create a folder named `go`. Enter the newly created directory, and open a file named `goQuery.go` in an editor.
-
-    ```Shell (Windows)
-    cd C:\SAP\DataLakeClientsTutorial
-    mkdir -p go
-    cd go
+1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
+    
+    ```Shell (Microsoft Windows)
+    mkdir %HOMEPATH%\DataLakeClientsTutorial\go
+    cd %HOMEPATH%\DataLakeClientsTutorial\go
     notepad goQuery.go
     ```
 
     ```Shell (Linux)
-    cd ~/DataLakeClientsTutorial
-    mkdir -p go
-    cd go
+    mkdir -p ~/DataLakeClientsTutorial/go
+    cd ~/DataLakeClientsTutorial/go
     pico goQuery.go
     ```
 2. Add the code below to `goQuery.go`:
-      
-      >Ensure that you replace part of the string in the connection parameters with your host URL
 
     ```Go Code
     package main
 
     import (
       "fmt"
-      "database/sql"
-      "log"
+    	"database/sql"
+    	"log"
 
       _ "SAP/go-hdlre/driver"
       )
@@ -148,7 +152,7 @@ The data lake Relational Engine Client interface for Go, like the other data lak
     func main() {
       //specify the connection parameters
       connectString := "hdlre://User1:Password1@xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.iq.hdl.prod-ca10.hanacloud.ondemand.com:443?enc='TLS{tls_type=rsa;direct=yes}'"
-      
+
       fmt.Println("Connect String is " + connectString)
 
       db, err := sql.Open("hdlre", connectString)
@@ -176,28 +180,32 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 
       err = rows.Err()
       if err != nil {
-        log.Fatal(err)
+      	log.Fatal(err)
       }
     }
     ```
+
     Once the `goQuery.go` file has been updated, save and close the file.
 
 3. Create another go module and modify its contents:
 
-     ```Shell (Windows)
+    ```Shell (Windows)
     go mod init "go/goQuery"
     go mod tidy
     notepad go.mod
     ```   
-    
+
+
     ```Shell (Linux)
     go mod init "go/goQuery"
     go mod tidy
     pico go.mod
     ```
 
+
 4. Add the code below to `go.mod` under the go 1.19 (version) line:
-    >make sure the path to the driver folder is correct and make any necessary changes.
+    
+    >Make any necessary changes to ensure the path to the driver folder is correct.
 
     ```Code (Windows)
     replace SAP/go-hdlre/driver v0.1.0 => C:\SAP\hdlclient\IQ-17_1\SDK\golang\SAP\go-hdlre\driver   
@@ -214,11 +222,12 @@ The data lake Relational Engine Client interface for Go, like the other data lak
 5. Run the application:
 
     ```Shell
-    go run goQuery.go 
+    go run goQuery.go
     ```
 
     ![Result](results.png)
 
+For more information on the API's used, consult the SAP HANA Cloud, data lake connection specific properties at [Connect from Go to Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/0b55e305d26941c191c71eaa07f72bb5.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/)
 
 
 ### Debug the application
@@ -246,14 +255,17 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     Notice that the program stops running at the breakpoint that was set.
 
-    Observe the variable values in the leftmost pane.  Step through code.
+    Observe the variable values in the leftmost pane.  Step through the code.
 
     ![Breakpoint](GoBreakpoint.png)  
 
     >Note that debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
 
-Congratulations! You have now created and debugged a Go application that connects to and queries an data lake Relational Engine.
 
+
+### Knowledge check
+
+Congratulations! You have now created and debugged a Go application that connects to and queries an data lake Relational Engine.
 
 
 

@@ -63,7 +63,7 @@ Let's get started with setting up the prerequisites.
 
 ### Access your SAP Sales and Service Core tenant
 
-For this exercise, you'll need a SAP Sales and Service Core tenant (formerly SAP Cloud for Customer or SAP C4C) with admin rights. Unfortunately a trial isn't available. But if you don't have an account you may want to test this Sales Order creation exercise with any other platform, such as your SAP S/4HANA Cloud directly (if On Premise, follow this [blog post](https://blogs.sap.com/2022/05/09/create-purchase-orders-in-s-4hana-by-enabling-a-public-api-from-a-s-4hana-on-premise-system-using-sap-api-management-and-cloud-connector/) to know how to expose your API). If you don't have a  S/4HANA environment, maybe you want to try the free trial [here](https://www.sap.com/products/s4hana-erp/trial.html).
+For this exercise, you'll need a SAP Sales and Service Core tenant (formerly SAP Cloud for Customer or SAP C4C) with admin rights. Unfortunately a trial isn't available. But if you don't have an account you may want to test this Sales Order creation exercise with any other platform, such as your SAP S/4HANA Cloud directly (if On Premise, follow this [blog post](https://blogs.sap.com/2022/05/09/create-purchase-orders-in-s-4hana-by-enabling-a-public-api-from-a-s-4hana-on-premise-system-using-sap-api-management-and-cloud-connector/) to know how to expose your API). If you don't have a  S/4HANA environment, maybe you want to try the free trial [here](https://www.sap.com/products/erp/s4hana-private-edition/trial.html).
 
 - In SAP Sales and Service Core, you have created the product with which you will simulate the purchase. As the example shown below:
 

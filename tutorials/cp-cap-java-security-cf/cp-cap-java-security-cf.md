@@ -61,23 +61,34 @@ The XSUAA security descriptor that describes the roles for your application can 
           "description": "BookStore Administrators",
           "role-template-references": ["$XSAPPNAME.Administrators"]
         }
-      ]
+      ],
+      "oauth2-configuration": {
+        "redirect-uris": ["https://*.cfapps.us10-001.hana.ondemand.com/**"]
+      }
     }
     ```
 
     > You added the name of your application in the attribute `xsappname` and declared a role collection to which you can assign users later.
 
+    > The value of the last attribute "oauth2-configuration" depends on the landscape where your account is deployed. Check the API URL returned by the command `cf target` and change data center ID in the value `https://*.cfapps.**us10-001**.hana.ondemand.com/**` accordingly.
+
 4. Open the `manifest.yml` file and add the line `bookstore-xsuaa` under the `services` so that the result looks like this:
 
     ```YAML
-    ---
-    applications:
-    - name: bookstore
-      path: srv/target/bookstore-exec.jar
-      random-route: true
-      services:
-      - bookstore-hana
-      - bookstore-xsuaa
+        ---
+        applications:
+        - name: bookstore
+          path: srv/target/bookstore-exec.jar
+          random-route: true
+          buildpacks:
+          - java_buildpack
+          env:
+            JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
+            JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+            SPRING_PROFILES_ACTIVE: cloud
+          services:
+          - bookstore-hana
+          - bookstore-xsuaa
     ```
 
 With this, your application uses this instance of Authorization and Trust Management Service (XSUAA) to manage authentication of users for your application. You will create the instance with that name in the next step.
@@ -115,7 +126,7 @@ Open your application in the browser. Using the links on the welcome page you ca
 
 To test the secure endpoints of your application, you need a REST client like [Postman](https://www.postman.com/downloads) that supports OAuth 2.0 authentication with type **Authorization Code**.
 
-> Postman may behave differently, when you use SSO to log in to SAP BTP or to a custom identity provider. The following steps assume that you use a Trial account without SSO with the default SAP identity provider.
+> Postman may behave differently, when you use SSO to log in to SAP BTP or a custom identity provider. The following steps assume that you use a Trial account without SSO with the default SAP identity provider.
 
 1. To use the `AdminService`, you need to assign yourself to the role collection `BookStore_Administrators` that was defined in the `xs-security.json` file. To assign this role collection to your user you need to navigate to the **Security** **&rarr;** **Role Collections** section of your SAP BTP subaccount. Select the `BookStore_Administrators` role collection and choose **Edit**. Enter your email address in the **ID** and **E-Mail** field and choose **Save**.
 

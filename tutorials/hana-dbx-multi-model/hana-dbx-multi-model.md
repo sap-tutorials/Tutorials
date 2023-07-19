@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -33,7 +33,7 @@ The following steps will create a graph workspace that can display the distance 
 
 In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
-1. Create a vertex table that represents distances between hotels by executing the following in the SQL Console.
+1. Create a vertex table that represents distances between hotels by executing the following in the SQL console.
 
     ```SQL
     CREATE COLUMN TABLE DISTANCES(
@@ -140,7 +140,7 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the graph viewer settings. The color used to highlight in the image below is #E5F5FC.
+5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a colour. 
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
@@ -294,13 +294,13 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![view table editor](view-table-metadata.png)
 
-7. Select **Open Data** to view the raw data, and select **View Data** on the SHAPE column of a point of interest.
+7. Select **Open Data** to view the raw data, and select **View Spatial Data** on the SHAPE column of a point of interest. You may choose to select one or multiple points of interest.
 
-    ![view data](view-data.png)
+    ![view data](multiple-spatial-data.png)
 
-    The selected location is shown on a map.
+    The selected location(s) is shown on a map. You can view more details about the point of interest by clicking on a map marker.
 
-    ![view data on a map](view-spatial-data-map.png)
+    ![view data on a map](spatial-data-map.png)
 
     >The Leaflet map is not shown in on-premise installs of the SAP HANA database explorer.
 

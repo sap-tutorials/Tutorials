@@ -163,7 +163,7 @@ Let's get started. Follow these steps:
 
 
 
->**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+>**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
 >
 >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
@@ -258,7 +258,7 @@ Let's get started. Follow these steps:
 
     ```
 
-    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
     >
     >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 

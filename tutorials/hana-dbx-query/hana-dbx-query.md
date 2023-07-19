@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -47,6 +47,8 @@ primary_tag: software-product>sap-hana-cloud
 
     > The unique constraint violation error is expected and is used here to demonstrate how the results of SQL execution are shown.
 
+    ![Unique constraint error](unique-constraint-error.png)
+
 6. The results of a query can be downloaded and exported.
 
       ![Download Table Results](DownloadResults.png)
@@ -67,9 +69,15 @@ primary_tag: software-product>sap-hana-cloud
 
     This behavior can be set via the SQL console preferences which is shown in more detail in Step 5: SQL console preferences.
 
-10. Sometimes you need to execute a SQL statement that takes a long time to run.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
+10. Sometimes you need to execute a SQL statement that takes a long time to run. In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement. Enter the SQL statement below.
+
+    ```SQL
+    SELECT * FROM CUSTOMER;
+    ```
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
+
+    >If needed, reconnect the database after running the query.
 
 11. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details icon.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
 

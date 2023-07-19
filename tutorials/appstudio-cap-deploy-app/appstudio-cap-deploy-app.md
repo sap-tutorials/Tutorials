@@ -67,43 +67,45 @@ The result should look as follows:
 
     <!-- border -->![Run COnfiguration SAP HANA dependencies](run.png)
 
-    The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) Moreover, it generates a connection in the **SQLTOOLS** view, so you can instantly check the data in your database.
+    The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) 
 
 2. Click the **Bind** icon to the right of the `db` dependency. A list of SAP HANA service instances from your space is presented (you may need to log into Cloud Foundry).
 
     <!-- border -->![Bind to an SAP HANA service](run5.png)
 
-3.	Select the SAP HANA service instance to which you want to bind the dependency.
+3. If prompted, log in to the Cloud Foundry environment. 
+
+4.	Select the SAP HANA service instance to which you want to bind the dependency.
 
     <!-- border -->![Bind options](bind-db2.png)
 
       The bind action runs and the dependency is now bound. You will get notifications regarding which tasks are run, and regarding the creation of a new SQL tools connection .
 
-4.	After a few moments, a dialog box asking you to deploy your data model is displayed. Choose **Yes**.  
+5.	After a few moments, a dialog box asking you to deploy your data model is displayed. Choose **Yes**.  
 
     The deployment task runs. Make sure it completes successfully.
 
-5.	Open the **SQLTOOLS** view.
+6.	From the Command Palette, select **SAP HANA:Open the SAP HANA database explorer**.
 
-6.	Click on the connection created for your SAP HANA instance.
+7.	Click on the connection created for your SAP HANA instance.
 
-7.	Open the `Authors` tables, and click on the magnifier glass icon next to it.
+8.	Open the `Authors` tables, and click on the magnifier glass icon next to it.
 
     <!-- border -->![Tables](authors-tables2.png)
 
-8. In the editor tab that opens, browse the table data and make sure it is correct.
+9. In the editor tab that opens, browse the table data and make sure it is correct.
 
-9. Open the **Run Configurations** view.
+10. Open the **Run Configurations** view.
 
-9. Click the green arrow on the right of the configuration name to run the application.
+11. Click the green arrow on the right of the configuration name to run the application.
 
     <!-- border -->![Run the application](run2.png)
 
-10. When prompted, click **Open in new tab**.
+12. When prompted, click **Open in new tab**.
 
     The application opens in the browser and you can click to see the metadata and entities of the service. The data is now retrieved from the SAP HANA database in your Cloud Foundry space.
 
-11. Stop the application by clicking **Stop** in the Debug pane.
+13. Stop the application by clicking **Stop** in the Debug pane.
 
 
 

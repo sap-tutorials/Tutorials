@@ -43,7 +43,7 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     > `--for production` adds all configuration added by this command in the `package.json` file into a `cds.requires.[production]` block.
 
-    > `hana` configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud. In addition, the `hdb` driver for SAP HANA is added as a dependency. A data source of type `hana-cloud` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+    > `hana` configures deployment for SAP HANA, so a data source of type `hana` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
     > `mta` adds the `mta.yaml` file. This file reflects your project configuration.
 
@@ -112,7 +112,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 > In the previous step, you identified your API endpoint. If that has a format like `...us10-001...`, you need to add the following configuration to your `xs-security.json`:
 > ```json
 > "oauth2-configuration": {
->     "redirect-uris": ["*.cfapps.us10-001.hana.ondemand.com/**"]
+>     "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**"]
 > }
 > ```
 > For other API endpoints you'd need to adapt it accordingly.
@@ -146,7 +146,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```
     This is the URL of the AppRouter, which enforces the authentication flow.
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.4 you can also try the **Fiori preview**.
 
     <!-- border -->![application preview](application_cloud_fiori.png)
 
