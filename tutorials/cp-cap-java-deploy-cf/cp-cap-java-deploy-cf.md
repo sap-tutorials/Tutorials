@@ -20,43 +20,6 @@ In the previous tutorial you added authentication to your application. In this t
 
 ---
 
-### Identify SAP BTP Cloud Foundry endpoint
-
-
-The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
-
-1. Go to [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) and choose **Go To Your Trial Account**.
-
-    <!-- border -->![business technology platform cockpit view](cockpit.png)
-
-2. Navigate to your subaccount by hitting the corresponding tile.
-
-    <!-- border -->![subaccount tile](subaccount-tile.png)
-
-3. Copy the **Cloud Foundry API endpoint** value as you will need it in the next step.
-
-    <!-- border -->![CF API endpoint value](api-endpoint.png)
-
-
-### Log into SAP BTP Cloud Foundry environment
-
-
-1. In SAP Business Application Studio, open a terminal by choosing **Terminal** **&rarr;** **New Terminal** from the main menu.
-
-2. Run the following command to configure which Cloud Foundry environment you want to connect to in the terminal. **Replace** `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
-
-    ```Shell/Bash
-    cf api <CF_API_ENDPOINT>
-    ```
-
-3. Authenticate using your login credentials using the following command in the terminal:
-
-    ```Shell/Bash
-    cf login
-    ```
-
-
-
 
 ### Provision an Instance of SAP HANA Cloud
 
@@ -64,7 +27,6 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 You first need to provision your SAP HANA Cloud instance, which is a prerequisite to later on create a SAP HANA HDI Container to deploy your database artifacts to.
 
 1. Follow the tutorial [Provision an Instance of SAP HANA Cloud](hana-cloud-mission-trial-2). Use `bookstore-db` as the name of your database. Make sure to allow access to your SAP HANA Cloud from all IPs and that instance of the SAP HANA you have created is mapped to your subaccount and space where you working with this tutorial.
-
 
 
 ### Enhance project configuration for production
@@ -146,6 +108,44 @@ The XSUAA security descriptor that describes the roles for your application can 
     > You added the name of your application in the attribute `xsappname` and declared a role collection to which you can assign users later.
 
     > The value of the last attribute "oauth2-configuration" depends on the landscape where your account is deployed. Check the API URL returned by the command `cf target` and change data center ID in the value `https://*.cfapps.**us10-001**.hana.ondemand.com/**` accordingly.
+
+You've finished your project configuration and prepared for deployment. The next steps will show you how to deploy to SAP BTP Cloud Foundry environment.
+
+### Identify SAP BTP Cloud Foundry endpoint
+
+
+The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
+
+1. Go to [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) and choose **Go To Your Trial Account**.
+
+    <!-- border -->![business technology platform cockpit view](cockpit.png)
+
+2. Navigate to your subaccount by hitting the corresponding tile.
+
+    <!-- border -->![subaccount tile](subaccount-tile.png)
+
+3. Copy the **Cloud Foundry API endpoint** value as you will need it in the next step.
+
+    <!-- border -->![CF API endpoint value](api-endpoint.png)
+
+
+### Log into SAP BTP Cloud Foundry environment
+
+
+1. In SAP Business Application Studio, open a terminal by choosing **Terminal** **&rarr;** **New Terminal** from the main menu.
+
+2. Run the following command to configure which Cloud Foundry environment you want to connect to in the terminal. **Replace** `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
+
+    ```Shell/Bash
+    cf api <CF_API_ENDPOINT>
+    ```
+
+3. Authenticate using your login credentials using the following command in the terminal:
+
+    ```Shell/Bash
+    cf login
+    ```
+
 
 
 

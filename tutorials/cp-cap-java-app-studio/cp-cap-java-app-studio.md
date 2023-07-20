@@ -47,11 +47,11 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
 
-    <!-- border -->![enter subaccount](enter-subaccount.png)
+    <!-- border -->![Explained in the accompanying text.](enter-subaccount.png)
 
 3. On the welcome page choose **Create Dev Space**.
 
-4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
+4. Type **`CAPTutorial`** as the name for your dev space and select **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
     <!-- border -->![Shows the selection of available dev spaces, as well as their predefined and additional extensions.](select-app-type.png)
 
@@ -60,7 +60,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 5. When it's ready, open your dev space by clicking on the name.
 
-    <!-- border -->![open dev space](open-dev-space.png)
+    <!-- border -->![The page showing all dev spaces. In this example it just holds one dev space.](open-dev-space.png)
 
     > Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) in the SAP Business Application Studio documentation for more details on how your development environment can be affected.
 
@@ -96,7 +96,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
       <!-- border -->![project creation done](project-creation-done.png)
 
-    > Until it's the default in the SAP Business Application Studio, you need to set the default JDK to 17.
+    > Check in the SAP Business Application Studio, if the default JDK is set to 17.
     > From the main menu, choose **File** **&rarr;** **Help** **&rarr;** **Show All Commands**, type `Java: Set Default JDK` and choose **JavaSE-17**.
 
 5. From the main menu, choose **File** **&rarr;** **Open Folder**.
