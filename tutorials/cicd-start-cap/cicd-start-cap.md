@@ -4,7 +4,7 @@ author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
 auto_validation: true
 time: 60
-tags: [tutorial>beginner, topic>cloud, topic>user-interface, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to create and run a basic job for an SAP Cloud Application Programming Model project
   - How to automate the builds of your CI/CD job trough a webhook in GitHub
 
-### Set Up SAP Continuous Integration and Delivery
+### Set up SAP Continuous Integration and Delivery
 
 Enable SAP Continuous Integration and Delivery, add the required permissions, and access the service.
 
@@ -38,9 +38,9 @@ Enable SAP Continuous Integration and Delivery, add the required permissions, an
    
 4. In the **New Instance or Subscription** pop-up, select the **Subscription** plan and choose **Create**.
 
-5. From the navigation pane, choose ![Security icon in the cockpit](icon-security.png) **Security** **&rarr;** **Users**.
+5. From the navigation pane, choose **Security** **&rarr;** **Users**.
 
-    >If you use an enterprise account, you need to be a User & Role Administrator of your subaccount to view the ![Security icon in the cockpit](icon-security.png) **Security** section. See [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
+    >**Note:** If you use an enterprise account, you need to be a User & Role Administrator of your subaccount to view the **Security** section. See [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
 6. Choose the name of your user.
 
@@ -54,10 +54,11 @@ Enable SAP Continuous Integration and Delivery, add the required permissions, an
 
 10. Search for `Continuous Integration & Delivery` and choose the appearing service tile.
 
-11. Choose **...** **&rarr;** **Go to Application**.
+11. Choose **Go to Application**.
 
     ![Accessing the CI/CD service](go-to-application.png)
 
+As a result, the user interface of the SAP Continuous Integration and Delivery service opens.
 
 
 ### Configure your SAP BTP credentials
@@ -84,7 +85,9 @@ Create credentials for deploying your application to SAP BTP, Cloud Foundry envi
 
 ### (Optional) Configure your GitHub credentials
 
-If your GitHub repository is not private, you can skip this section. If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery can connect to it.
+>**Note:** If your GitHub repository is not private, you can skip this section.
+
+If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery can connect to it.
 
 1. In the **Credentials** tab in SAP Continuous Integration and Delivery, choose **+** *(Create Credentials)*.
 
@@ -94,17 +97,20 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 4. For **Username**, enter your GitHub username.
 
-5. For **Password**, use a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). When creating the token, select **repo** as scope.
+5. For **Password**, use a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+    >**Note:** When creating the token, select **repo** as scope.
 
 6. Choose **Create**.
 
 
 
-### Add Your repository to SAP Continuous Integration and Delivery
+### Add your repository to SAP Continuous Integration and Delivery
 
 Connect SAP Continuous Integration and Delivery to the repository in which your project sources reside.
 
-1. In SAP Continuous Integration and Delivery, choose **Repositories** → **+** _(Add)_.
+1. In SAP Continuous Integration and Delivery, choose **Repositories** → **+** *(Add)*.
+
+    ![Repositories](repositories.png)
 
 2. In the **Add Repository** pane, add a name for your repository.
 
@@ -112,7 +118,7 @@ Connect SAP Continuous Integration and Delivery to the repository in which your 
 
 4. Paste it into the **Clone URL** field in the **Add Repository** pane in SAP Continuous Integration and Delivery.
 
-5. If your GitHub repository is private, choose the GitHub credentials you've created in the previous step from the **Credentials** drop-down list.
+5. (Optional) If your GitHub repository is private, choose the GitHub credentials you've created in the previous step from the **Credentials** drop-down list.
 
 
 
@@ -121,7 +127,7 @@ Connect SAP Continuous Integration and Delivery to the repository in which your 
 
 Configure a webhook between your GitHub repository and SAP Continuous Integration and Delivery to automate the builds of your job.
 
-A webhook with GitHub allows you to automate SAP Cloud Platform Continuous Integration and Delivery builds: Whenever you push changes to your GitHub repository, a webhook push event is sent to the service to trigger a build of the connected job.
+A webhook with GitHub allows you to automate SAP Continuous Integration and Delivery builds: Whenever you push changes to your GitHub repository, a webhook push event is sent to the service to trigger a build of the connected job.
 
 The following graphic illustrates this flow:
 
@@ -131,9 +137,11 @@ The following graphic illustrates this flow:
 
 2. In the **Webhook Credential** drop-down list, choose **Create Credentials**.
 
-3. In the **Create Credentials** pop-up, enter a name for your credential, which is unique in your SAP BTP subaccount, for example **`webhook`**
+3. In the **Create Credentials** pop-up, enter a name for your credential, which is unique in your SAP BTP subaccount, for example **`webhook`**.
    
-4. Choose **Generate** next to **Secret** to generate a random token string. **Caution:** Note down the secret as you won't be able to see it again.
+4. Choose **Generate** next to **Secret** to generate a random token string.
+   
+    >**Caution:** Note down the secret as you won't be able to see it again.
 
 5. Choose **Create**.
    
@@ -142,10 +150,10 @@ The following graphic illustrates this flow:
 7. In the **Repositories** tab in SAP Continuous Integration and Delivery, choose your repository.
    
 8. In your repository pane, choose **...** → **Webhook Data**.
+   
+    ![Way to access webhook data](webhook-data.png)
 
-![Way to access webhook data](webhook-data.png)
-
-As a result, the **Webhook Creation** pop-up opens.
+    As a result, the **Webhook Creation** pop-up opens.
 
 9.  In your project in GitHub, go to the **Settings** tab.
 
@@ -166,43 +174,33 @@ Configure a basic job for SAP Cloud Application Model projects.
 
 2. In the **General Information** section of the **Create Job** pane, enter the following values:
 
-|   Parameter  |  Value   |
-| --- | --- |
-|  Job Name	   |  Freely choose a unique name for your job.
-| Repository |From the drop-down list, choose your repository.
-|   Branch  |    Enter the branch of your repository for which you want to configure your CI/CD job, for example, `main`. |
-|  Pipeline   |   	From the drop-down list, choose **SAP Cloud Application Programming Model**.  |
-|  Version   | 	If you create a new job, the latest version is selected by default.    |
-|   State  |    To enable your job, choose **ON**. |
+    * **Job Name:** Freely choose a unique name for your job.
+    * **Repository:** From the drop-down list, choose your repository.
+    * **Branch:** Enter the branch of your repository for which you want to configure your CI/CD job, for example, `main`.
+    * **Pipeline:** From the drop-down list, choose **SAP Cloud Application Programming Model**.
+    * **Version:** If you create a new job, the latest version is selected by default.
+    * **State:** To enable your job, choose **ON**.
 
-![General CI/CD Job Information](CICD_generalinfo.png)
+3.  In the  **Build Retention** section, keep the default values.
 
-4.  In the  **Build Retention** section, keep the default values.
+4. In the **Stages** section, choose **Job Editor** as **Configuration Mode**.
 
-5. In the **Stages** section, choose **Job Editor** as **Configuration Mode**.
+5. For the **Build** stage, keep the default values.
 
-6. For the **Build** stage, keep the default values.
+6. For the **Acceptance** stage, enter the following values for the **Deploy to Cloud Foundry Space** step:
 
-7. For the **Acceptance** stage, enter the following values for the **Deploy to Cloud Foundry Space** step:
+    * **Application Name:** Enter a unique application name.
+    * **API Endpoint:** Enter the URL of your SAP BTP, Cloud Foundry API Endpoint. You can find it in the overview of your subaccount in the SAP BTP cockpit, under the **Cloud Foundry Environment:** tab.
+    * **Org Name:** Enter the name of your Cloud Foundry organization. You can also find it in the overview of your subaccount.
+    * **Space:** Enter the name of the Cloud Foundry space in which you want to test your application.
+    * **Credentials:** From the drop-down list, choose the SAP BTP credentials you created.
+   
+     ![Deploy to CF Space in the UI](CICD_deploystep.png)
 
-|   Parameter  |   Value  |
-| --- | --- |
-| Application Name | Enter a unique application name. |
-|   API Endpoint  |   Enter the URL of your SAP BTP, Cloud Foundry API Endpoint. You can find it in the overview of your subaccount in the SAP BTP cockpit, under the **Cloud Foundry Environment** tab.  |
-|    Org Name |  Enter the name of your Cloud Foundry organization. You can also find it in the overview of your subaccount.   |
-|    Space | Enter the name of the Cloud Foundry space in which you want to test your application.    |
-|    Credentials |    From the drop-down list, choose the SAP BTP credentials you created.  |
+7. Switch all other stages off and choose **Create**.
+   
+    >**Note:** As this tutorial focuses on how to get started with SAP Continuous Integration and Delivery, we've decided to configure only a very basic CI/CD pipeline in it. For how to configure more elaborate ones, see [Supported Pipelines](https://help.sap.com/docs/continuous-integration-and-delivery/sap-continuous-integration-and-delivery/supported-pipelines?language=en-US&version=Cloud).
 
-![Deploy to CF Space in the UI](CICD_deploystep.png)
-
-8. Switch all other stages off and choose **Create**.
-
-> As this tutorial focuses on how to get started with SAP Continuous Integration and Delivery, we’ve decided to configure only a very basic CI/CD pipeline in it. For how to configure more elaborate ones, see [Supported Pipelines](https://help.sap.com/docs/continuous-integration-and-delivery/sap-continuous-integration-and-delivery/supported-pipelines?language=en-US&version=Cloud).
-
-9. To run your CI/CD pipeline, choose **Run**.
+8. To run your CI/CD pipeline, choose **Run**.
 
 As a result, a build of the connected job is triggered and a new build tile appears in the **Builds** section of your job. If you choose it, the **Build Stages** view opens and you can watch the individual stages of your build run through. The pipeline run might take a few minutes.
-
-You can get an overview of the test results in the detailed log of your build:
-
-![How to show the full log of a build](full-log.png)
