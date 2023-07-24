@@ -73,7 +73,7 @@ You should receive a response like the following:
 
 When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
-Trial users can only create one client. To see your list of clients:
+Free tier and trial users can only create one client. To see your list of clients:
 
 1. Expand the **GET /clients** endpoint.
 
@@ -136,13 +136,13 @@ You can repeat step 3 to see the **`clientId`** and **`clientName`** of the clie
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction trial account limitations:​
+>Be aware of the following Document Information Extraction free tier and trial account limitations:​
 
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
+>- Maximum 40 uploaded document pages per tenant in a rolling period of seven days (each document can have more than one page). The rolling period starts when you upload the first document. After seven days, you can once again upload to the service up to 40 document pages.
 
->- Maximum 1 created `clientId`
+>- Maximum 1 client per tenant
 
->- Maximum 10 created enrichment `dataIds`
+>- Maximum 10 enrichment data records per tenant
 
 
 
@@ -156,11 +156,11 @@ Use the **POST /document/jobs** endpoint to upload to the service any document f
 
 >As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Invoice 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
+>- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
->- [Sample Invoice 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
+>- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
 
->- [Sample Invoice 3](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
+>- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
 Do the following:

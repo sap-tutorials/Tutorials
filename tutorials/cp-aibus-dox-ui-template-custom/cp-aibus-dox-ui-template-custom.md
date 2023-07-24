@@ -51,11 +51,11 @@ In the dialog, proceed as follows:
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction Trial UI trial account limitations:​
+>Be aware of the following Document Information Extraction free tier and trial account limitations:​
 
->- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
->- Maximum 10 schemas per trial account
->- Maximum 3 templates per trial account
+>- Maximum 40 uploaded document pages per tenant in a rolling period of seven days (each document can have more than one page). The rolling period starts when you upload the first document. After seven days, you can once again upload to the service up to 40 document pages.
+>- Maximum 10 schemas per client
+>- Maximum 3 templates per tenant
 
 
 
