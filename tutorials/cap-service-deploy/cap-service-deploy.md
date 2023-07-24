@@ -43,7 +43,7 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     > `--for production` adds all configuration added by this command in the `package.json` file into a `cds.requires.[production]` block.
 
-    > `hana` configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud. In addition, the `hdb` driver for SAP HANA is added as a dependency. A data source of type `hana-cloud` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+    > `hana` configures deployment for SAP HANA, so a data source of type `hana` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
     > `mta` adds the `mta.yaml` file. This file reflects your project configuration.
 

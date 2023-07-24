@@ -12,7 +12,7 @@ author_profile: https://github.com/Karunaharan
 <!-- description --> Prepare your existing SAP Integration Suite tenant or set up a trial account.
 
 ## Prerequisites
-- If you don't have an SAP Integration Suite tenant, create a **trial account on SAP Business Technology Platform:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- If you don't have an SAP Integration Suite tenant, create a **trial account on SAP Business Technology Platform:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account).
 - If you have an SAP Integration Suite tenant, start from **Step 3**.
 
 ## You will learn
@@ -41,9 +41,9 @@ This step is relevant only if you're setting up your trial account. If you alrea
 
 > - If you have already subscribed to Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one SAP Integration Suite tenant per trial account.
 
-1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by choosing **Go To Your Trial Account**.
+2. Navigate to the trial global account by choosing **Enter Your Trial Account**.
 
     <!-- border -->![Trial global account](1-2-FoundationsCockpit_trial page.png)
 
@@ -52,9 +52,9 @@ This step is relevant only if you're setting up your trial account. If you alrea
     <!-- border -->![Access Trial account](1-3-access_trial_account.png)
 
 
-### Subscribe to SAP Integration Suite service
+### Subscribe to SAP Integration Suite
 
-This step is relevant only if you're setting up your trial account. If you already have an SAP Integration Tenant, start with **Step 3**.
+This step is relevant only if you're setting up your trial account. If you already have an SAP Integration Suite tenant, start with **Step 3**.
 
 1. Select **Services > Instances and Subscriptions**.
 
@@ -66,7 +66,7 @@ This step is relevant only if you're setting up your trial account. If you alrea
 
     >If SAP Integration Suite is not visible in the **Services** list, you must assign SAP Integration Suite trial entitlements. To assign entitlements, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
-    >- In the tutorial referred above, after **Step 3.5**, there is a list of available services on the left pane.
+    >- In the tutorial [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements), after **Step 3.5**, there is a list of available services on the left pane.
 
     >- Filter for **Integration Suite** and select the service.
 
@@ -118,11 +118,11 @@ This step is relevant only if you're setting up your trial account. If you alrea
 
     <!-- border -->![Wait for activation](3-3-Ok.png)
 
-4. Verify that the activated capabilities are seen in the home page.
+4. Verify that the activated capabilities are seen on the home page.
 
     <!-- border -->![Activation-complete](3-4-Activation-complete.png)
 
->Though activation is complete you can't access the activated capabilities. To access each capability, you must first assign capability-specific roles which is explained in the next step.
+>Though activation is complete, you can't yet access the activated capabilities. To access each capability, you must first assign capability-specific roles which is explained in the next step.
 
 
 ### Assign roles for the activated capabilities

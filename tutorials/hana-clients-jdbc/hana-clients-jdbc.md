@@ -14,7 +14,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## You will learn
   - How to install Java
-  - How to create and debug a Java application that queries a SAP HANA database
+  - How to create and debug a Java application that queries an SAP HANA database
   - How to connect to SAP HANA in `DBeaver` using the SAP HANA JDBC driver
 
 ## Intro
@@ -26,7 +26,7 @@ primary_tag: software-product>sap-hana-cloud
 ### Install a JDK
 
 
-Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+Ensure that you have a Java Development Kit (JDK) installed and ensure that it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
 
 A few options include:
 
@@ -43,6 +43,12 @@ javac -version
 ```
 
 If these commands fail, ensure that the folder they are located in, is included in your path.  
+
+The following command will install Java on openSUSE Leap 15.5.
+
+```Shell (Linux)
+sudo zypper install java-11-openjdk-devel
+```
 
 
 ### Examine the SAP HANA JDBC driver
@@ -75,15 +81,19 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
     ```Shell (Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
+    ```
+    
+    Alternatively, you may run
 
-    or
-
+    ```Shell (Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```  
+
 
     ```Shell (Linux or Mac)
     java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```
+
     ![Link text e.g., Destination screen](java-driver-result.png)
 
 See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
@@ -92,7 +102,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 ### Create a Java application that queries SAP HANA
 
 
-1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in the Notepad text editor.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\java
@@ -108,7 +118,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     pico JavaQuery.java
     ```
 
-2. Copy the following code into `JavaQuery.java`:
+2. Copy the following code into `JavaQuery.java`. Then save and exit the file.
 
     ```Java
     import java.sql.*;

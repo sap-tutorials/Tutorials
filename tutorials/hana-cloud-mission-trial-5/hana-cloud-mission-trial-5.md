@@ -4,20 +4,20 @@ author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 # Import Data into SAP HANA Cloud, SAP HANA Database
-<!-- description --> Learn in this tutorial how to use the SAP HANA Database Explorer to import the sample data needed for this mission from a tar.gz file.
+<!-- description --> Learn in this tutorial how to use the SAP HANA database explorer to import the sample data needed for this mission from a tar.gz file.
 
 ## Prerequisites
-- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-1) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-1-ft), or a production environment of SAP HANA Cloud, SAP HANA database
-- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2)
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 
 
 ## You will learn
-- How to import catalog objects from your local machine to your database using the SAP HANA Database Explorer
+- How to import catalog objects from your local machine to your database using the SAP HANA database explorer
 
 ## Intro
 >
@@ -41,16 +41,17 @@ Note the location of the file.
 
 
 
-### Open the SAP HANA Database Explorer
+### Open the SAP HANA database explorer
 
 
-1.	Open SAP BTP cockpit or SAP HANA Cloud Central.
+1.	Under Instances and Subscriptions, open SAP HANA Cloud Central.
+    ![HCC application](hcc-app.png)
 
-2.	Click on your instance and select the option to **Open the SAP HANA Database Explorer**.
+2.	In the **Actions** column, click on the **three dots** and select the option to **Open in SAP HANA Database Explorer**.
 
-    ![Open the SAP HANA Database Explorer](ss-01-open-SAP-HANA-database-explorer.png)
+    ![Open the SAP HANA database explorer](open-dbx.png)
 
-3.	The SAP HANA Database Explorer will open in a new tab.
+3.	SAP HANA database explorer will open in a new tab.
 
 
 
@@ -91,7 +92,7 @@ Note the location of the file.
 >
 >     ![Import CSV2.png](ss-08-import-CSV2.png)
 
-> - You will then be asked to specify the column mappings as well as how errors should be handled.
+> - You will then be asked to specify the column mappings, as well as how errors should be handled.
 >
 >     ![Import CSV3.png](ss-09-import-CSV3.png)
 
@@ -103,9 +104,9 @@ Note the location of the file.
 
 Once the data is imported, you can take a look at it.
 
-Click on **Tables** to view all your newly imported tables. Please note that your data will be automatically stored in a new schema, called `SFLIGHT`.
+Click on **Tables** to view all your newly imported tables. Please note that your data will be automatically stored in a new schema named `SFLIGHT`.
 
-To make sure you can see your new tables, click on the **Choose Schema** button next to the schema name on the bottom left-hand side panel.
+To ensure that you can see your new tables, click on the **Choose Schema** button next to the schema name on the bottom left-hand side panel.
 
 ![view tables - change schema](ss-10-view-tables-change-schema.png)
 
@@ -117,7 +118,7 @@ Click **OK** and the list of available tables will be displayed on the same side
 
 ![View Tables](ss-12-view-tables.png)
 
-If you want to see the data inside any of your tables, you can right click on any of them and then click on **Open Data**.
+If you want to see the data inside any of your tables, right click on any of them and then click on **Open Data**.
 
 ![Open Data](ss-13-open-data.png)
 
@@ -125,16 +126,16 @@ This will open the table on the main panel.
 
 ![Data Preview resized](ss-14-data-preview.png)
 
-Feel free to browse the dataset now to get an overview of the data available.
+You can browse the dataset to get a better overview of the data available.
 
 *Well done!*
 
-You have completed the fifth tutorial of this mission! Now you know how to import tar.gz files to your database using the SAP HANA Database Explorer.
+You have completed the fifth tutorial of this mission! Now you know how to import tar.gz files to your database using the SAP HANA database explorer.
 
-Learn in the next tutorial how to query the data.
+Learn in the next tutorial how to create and manage users and privileges. 
 
 
-### Test yourself
+### Knowledge Check
 
 
 

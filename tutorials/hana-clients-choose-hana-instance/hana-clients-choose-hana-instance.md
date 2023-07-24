@@ -10,7 +10,7 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 
 ## Prerequisites
- - A Microsoft Windows, Linux or Mac computer
+ - A Microsoft Windows, Linux, or Mac computer
  - A machine that can run SAP HANA, express edition if the SAP HANA Cloud trial or free tier is not used
 
 ## You will learn
@@ -75,7 +75,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/de4ee8bbbb5710148a04f023da147c8d.html), [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html), and [Predefined Users in HANA 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/de4ee8bbbb5710148a04f023da147c8d.html).  
 
-  Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20a760537519101497e3cfe07b348f3c.html).  Compatibility information can be found at [Compatibility with Other SAP HANA Versions](https://help.sap.com/viewer/3c53bc7b58934a9795b6dd8c7e28cf05/hanacloud/en-US/11cc86c44d0b4dd3bf70e16870d9d4df.html).
+  Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-sap-hana-database-instance-using-sap-hana-cloud-central).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20a760537519101497e3cfe07b348f3c.html).  Compatibility information can be found at [Compatibility with Other SAP HANA Versions](https://help.sap.com/viewer/3c53bc7b58934a9795b6dd8c7e28cf05/hanacloud/en-US/11cc86c44d0b4dd3bf70e16870d9d4df.html).
 
 
 
@@ -86,7 +86,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     Continue on with this tutorial once you have created an SAP HANA Cloud trial or free tier instance as shown below.
 
-    <!-- border -->![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
+    ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
     The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is avialable in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
@@ -99,7 +99,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
 
-    For more information on SAP BTP see the following:
+    For more information on SAP BTP see the following product pages and help documentation:
 
     * [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
 
@@ -107,54 +107,46 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [https://help.sap.com/viewer/product/BTP/Cloud/en-US](https://help.sap.com/viewer/product/BTP/Cloud/en-US)
 
-    Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
+    Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
 
-    >The SAP HANA Cloud, HANA database free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.  
+    >The SAP HANA Cloud, HANA database free tier or trial instances are shut down on a nightly basis and will need to be restarted before working with them the next day.  
 
-2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from SAP HANA Cloud Central.
+2. Open a SQL console for your database instance from SAP HANA Cloud Central.
 
-    ![Open with DBX](from-directory.png)
+    ![Open SQL console](sql-cons.png)
 
-    You will be asked to enter the credentials for the database.  Enter **DBADMIN** and the password that was specified when the instance was created.
-
-    ![authentication for dbx](dbx-authenticate.png)
+    If needed, you will be asked to enter the credentials for the database.  Enter **DBADMIN** and the password that was specified when the instance was created.
 
     >The credentials for cockpit database connections can be persisted so they do not need to be entered again by entering them into the SAP HANA cockpit app.  
 
     The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and SAP Help Portal topic [SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
 
 
-3. Open a SQL console by clicking the **Open SQL Console** toolbar item in the top-left of the screen.  
-
-    ![Database Explorer](databaseExplorer.png)  
-
-4. Run the following query to see the name of the database you are currently connected to.  
+3. Run the following query to see the name of the database you are currently connected to.  
 
     ```SQL
     SELECT * FROM M_DATABASE;
     ```
 
-    ![Database Explorer Result](databaseExplorerResult.png)  
+    ![Database Explorer Result](m-database.png)  
 
-5. In the SAP HANA database explorer, the current schema shows DBADMIN.  A schema is a container for other database objects such as tables and views.
-
-    ![current schema](current-schema.png)
-
-    Another way to see the current schema and the connected user is via SQL as shown below.  The DUMMY table is available in every HANA database that has one column and one row.  It provides a convenient  way to call a function or perform a simple test.
+4. A schema is a container for other database objects such as tables and views and the current schema can be seen via SQL as shown below.  The DUMMY table is available in every HANA database that has one column and one row.  It provides a convenient  way to call a function or perform a simple test.
 
     ```SQL
     SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
     ```
 
-6. To see the list of services, enter the following SQL statement:
+    ![SQL console results](select-user-schema.png)
+
+5. To see the list of services, enter the following SQL statement:
 
     ```SQL
     SELECT * FROM M_SERVICES;
     ```
 
-7. To see information about the database server, enter the following SQL statement:
+6. To see information about the database server, enter the following SQL statement:
 
     ```SQL
     SELECT * FROM M_HOST_INFORMATION;

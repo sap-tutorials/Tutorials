@@ -25,7 +25,7 @@ primary_tag: software-product>sap-hana-cloud
 ### Install the .NET Core EF CLI
 The `dotnet` tool command can be used to install and manage tools that extend .NET.  The following are a few examples that can be run to show help, to list the local and globally installed tools, to uninstall `dotnet-ef` if an incompatible version is installed, and to search the repository for version details of the `dotnet-ef` tool.
 
-```Shell
+```
 dotnet tool -?
 dotnet tool list -?
 dotnet tool list
@@ -34,7 +34,7 @@ dotnet tool uninstall dotnet-ef -g
 dotnet tool search dotnet-ef --detail
 ```
 
-As of 2023 QRC 1, the supported version is EF Core 6.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
+The SAP HANA Client 2.17 release supports EF Core 6.0 & 7.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
 Run the following command to install version 6 of the dotnet-ef tool.
 
@@ -114,7 +114,9 @@ dotnet tool list -g
     ```Shell
     dotnet run
     ```
-    >If a warning occurs mentioning that a reference could not be resolved, double check that the hintpath is correct.
+    The expected output is `Hello, World!`.
+
+    >If a warning occurs mentioning that a reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
 
 4. Open an editor and create a file named `HotelModel.cs`.
 
@@ -158,7 +160,7 @@ dotnet tool list -g
     }
     ```
 
-    Ensure that you update the host URL and optionally the user name and password.  Note that calls to EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted) it will delete all objects in the schema USER2.
+    Be sure to update the host URL and optionally the user name and password.  Note that calls to EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted) it will delete all objects in the schema USER2.
 
 6.  Open an editor to edit the file `Program.cs`.
 
@@ -170,7 +172,7 @@ dotnet tool list -g
     pico Program.cs
     ```
 
-7.  Replace the entire contents of `Program.cs` with the code below:  
+7.  Replace the entire contents of `Program.cs` with the code below. Save and close the file when finished.
 
     ```C#
     using var db = new HotelContext();
@@ -192,7 +194,7 @@ dotnet tool list -g
 
     Further details on SAP HANA Client entity core driver can be found at [Entity Framework Core Support](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/3e6ef454ffc94cda8fefb0acf5be007b.html).  Further .NET API details can be found in the [.NET API browser](https://learn.microsoft.com/en-us/dotnet/api/?view=efcore-6.0).
 
-6.  Run the app:
+8.  Run the app:
 
     ```Shell
     dotnet run
@@ -206,9 +208,9 @@ dotnet tool list -g
 ### Debug the application
 
 
-1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
+1. Open Visual Studio Code. If needed, download the application [here](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 

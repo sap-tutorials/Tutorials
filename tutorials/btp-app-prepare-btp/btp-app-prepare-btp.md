@@ -29,32 +29,37 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 You need an SAP BTP account to deploy the services and applications. 
 
-In general, you have a choice of the following options:
+In general, you have a choice of the following alternative options:
 
 **Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial get automatically assigned to your trial account.
 
 > When running the tutorial with a trial account, please have in mind the following considerations:
 
-> * Choose host region `cf-us10` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
-> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
+> * Choose region `US East (VA) - AWS` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
+> * If you use an existing trial account, make sure the region is different from `Singapore - Azure`. Otherwise, some services required throughout the tutorial might be missing from your account. You can check the region for your subaccount on your subaccount's **Overview** page.
 
-**Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
+**Live:** *(alternative)* There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Create a Trial account)]
-You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and have [access](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
+[ACCORDION-BEGIN [Step 2: ](Create a Trial Account)]
+Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. Alternatively, if you're planning to use this tutorial productively, skip this step and proceed with **Step 3: Create a Live Account** below.
 
-A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that should be sufficient to do this tutorial are set up for you.
+You can [register for a trial account](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) or [access your existing trial account](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
+
+When creating a trial account, a global account, a subaccount, a Cloud Foundry org, and space with some entitlements are set up for you. This setup is sufficient to do the tutorial.
 
 Continue with **Step 8: Check and assign entitlements** below.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Create a Live Account)]
+[ACCORDION-BEGIN [Step 3: ]((Alternative) Create a Live Account)]
+If you just want to try out things and don't want to use any of the parts of this tutorial productively, skip this step and go to **Step 2: Create a Trial Account** above.
+There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects. 
+
 If you choose to create an account on Live, you have to select a number of services that you need to subscribe to, for example, an SAP HANA database. For each service, there are so-called `entitlements`, which are basically the service plans and the number of units that you want from each service. When you create an account, you need to provide these also.
 
 
@@ -63,6 +68,8 @@ If you choose to create an account on Live, you have to select a number of servi
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
+> If you are using a trial account, a subaccount is already set up for you as part of the trial account creation process.
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer** in the left navigation pane.
@@ -89,20 +96,22 @@ If you choose to create an account on Live, you have to select a number of servi
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Configure Cloud Foundry in your subaccount)]
-This creates a [Cloud Foundry (CF) Org](https://docs.cloudfoundry.org/concepts/roles.html#orgs) in your subaccount. There's always one Cloud Foundry org per subaccount. Later on, when you log on to Cloud Foundry, it asks you which Cloud Foundry org you want to log on to. For any development in you subaccount, you need to choose this org for your subaccount.
+> If you are using a trial account, a Cloud Foundry org is already set up for you as part of the trial account creation process.
+
+
+This creates a [Cloud Foundry (CF) Org](https://docs.cloudfoundry.org/concepts/roles.html#orgs) in your subaccount. There's always one Cloud Foundry org per subaccount. Later on, when you log on to Cloud Foundry, it asks you which Cloud Foundry org you want to log on to. For any development in your subaccount, you need to choose this org for your subaccount.
 
 1. Choose **Enable Cloud Foundry**.
 
-2. Enter a **Cloud Foundry Org Name** and choose **OK** (suggestion: use `SAP_` as prefix, for example: `SAP_<project name>`).
-
-3. (Optional) In the left navigation pane under the section **Cloud Foundry**, choose **Org Members** and add users for your new account. Your own user should already be there. You can add other users if needed and assign a role to them.
-
-4. On the left-hand pane under **Security**, choose **Administrators** and add the required security administrators. Again, your user should be-filled. You can add other users if needed.
+2. Change the default value for **Org Name** as required and choose **Create**.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Create a Cloud Foundry space)]
+> If you are using a trial account, a space in your Cloud Foundry org is already set up for you as part of the trial account creation process.
+
+
 Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org/concepts/roles.html#spaces). Each Cloud Foundry org can have 0 to n spaces, you create just one here.
 
 1. Open the subaccount page in SAP BTP cockpit.
@@ -120,12 +129,12 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Assign users in the Cloud Foundry space)]
+[ACCORDION-BEGIN [Step 7: ]((Optional) Check and assign users in the Cloud Foundry space)]
 1. Open the **Spaces** overview in SAP BTP cockpit. You can just choose the tile for the space that was created.
 
-2. Choose **Members** in the left navigation pane.
+2. Choose **Members** in the left navigation pane. You'll see your own user that's automatically assigned as Space Manager and Space Developer. 
 
-3. (Optional) Choose **Add Members** to add all required users, again your own user should already be part of the list.
+3. (Optional) Choose **Add Members** to add additional users as required. Again, your own user should already be part of the list.
 
 4. (Optional) Add a distribution list of your `CFDeployment` technical user as Space Manager if you have one.
 
@@ -133,7 +142,9 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Check and assign entitlements)]
-In this section, you assign a portion of the entitlements that you've bought for your global account to the individual subaccounts. In this example, you have only one subaccount. However, if you have 3 subaccounts, for example, and have bought 100 units of the HTML5 service, you could assign 50 units to the first subaccount, 20 to the second, and the remaining 30 to the third subaccount.
+If you are using a trial account, the entitlements needed for this tutorial are already assigned as part of the trial account creation process and you can just double-check if everything is correct.
+
+If you are using a live account, in this section you assign a portion of the entitlements that you've bought for your global account to the individual subaccounts. In this example, you have only one subaccount. However, if you have 3 subaccounts, for example, and have bought 100 units of the HTML5 service, you could assign 50 units to the first subaccount, 20 to the second, and the remaining 30 to the third subaccount.
 
 The following services with their service plans and entitlements are required for the different tutorial modules and will be needed throughout the tutorial.
 

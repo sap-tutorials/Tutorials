@@ -292,7 +292,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     Notice that the remote data source is updateable.  Data stored in an SAP HANA Cloud, data lake is stored on disk, which has cost advantages compared to memory storage. SAP HANA Cloud, data lake can also be used to store large amounts of data.
 
-    > Another approach is to use container groups.  For additional details see [Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).  An example follows.
+    > Another approach is to use a relational container.  For additional details see [Manage Relational Containers in Data Lake Relational Engine (SAP HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/9220e7fec0fe4503b5c5a6e21d584e63/0b494fedebb243fc9bd92c87bac7ddd4.html).  An example follows.
     >
     ```SQL
     CALL SYSHDL.CREATE_CONTAINER('HOTEL_CONTAINER', 'DBADMIN');

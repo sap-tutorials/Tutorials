@@ -32,7 +32,7 @@ For a complete list, see [SAP HANA Client Interface Programming Reference](https
 
 For a list of newly added features, see [New and Changed Features in the SAP HANA Client](https://help.sap.com/viewer/79ae9d3916b84356a89744c65793b924/latest/en-US) or the [release notes](https://launchpad.support.sap.com/#/notes/2941449).
 
-The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.15.x` client can connect to SAP HANA Cloud, SAP HANA Service, or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
+The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.17.x` client can connect to SAP HANA Cloud, SAP HANA Service, or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
 
 
 ### Install from SAP Development Tools
@@ -62,15 +62,15 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     ./hdbsetup
     ```  
 
-    Set the install directory to `C:\sap\hdbclient` on Microsoft Windows or to `users/your_user/sap/hdbclient` on Linux or macOS and complete the installation.  
+    Set the install directory to `C:\SAP\hdbclient` on Microsoft Windows or to `users/your_user/sap/hdbclient` on Linux or macOS and complete the installation.  
 
-    ![Client-install](client-installer.png)
+    ![Client-install](download-client.png)
 
     > If the install fails, try running the installer with administrator privilege (i.e. On Microsoft Windows, right-click on `hdbsetup.exe` and choose Run as an administrator).
 
     > If an older version is already installed, it can be upgraded or it can be uninstalled by running `hdbuninst` from the folder where the client is installed.  For example `c:\sap\hdbclient\install\hdbuninst`
 
-4. After the installation process is completed, update your path environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for environment variables.
+4. After the installation process is completed, update your `Path` environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for **environment variables**.
 
     ![Environment variable](env-variable.png)
 
@@ -117,7 +117,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     hdbsql -v
     ```
 
-    ![Version of HDBSQL](command-Prompt.png)
+    ![Version of HDBSQL](hdbsql-v-cmd-prompt.png)
 
 The install from  SAP Development Tools does not contain the SAP Cryptographic Library.  This can be seen by examining the `C:\SAP\hdbclient\manifest.mf` file.  
 
@@ -145,7 +145,7 @@ Another download location is the [SAP Software Downloads](https://support.sap.co
 
     The downloaded software is the same regardless of which one is used.
 
-    ![SAP Software Downloads](softwareDownload.png)
+    ![SAP Software Downloads](client-2-17.png)
 
 2. Extract the software using SAPCAR.
 
