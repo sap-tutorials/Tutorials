@@ -71,12 +71,12 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](ready.png)
 
+
 >**CAUTION:**
 
 >Be aware of the following Document Information Extraction Trial UI trial account limitation:​
 
->- >- Maximum 40 uploaded document pages per tenant in a rolling period of seven days (each document can have more than one page). The rolling period starts when you upload the first document. After seven days, you can once again upload to the service up to 40 document pages.
-
+>- Maximum 40 uploaded document pages per tenant in a rolling period of 7 days (each document can have more than 1 page, for example, if your documents have 20 pages each, you're only able to upload 2 documents until the next rolling period of 7 days starts, and if your documents have 2 pages each, you're only able to upload 20 documents until the next rolling period of 7 days starts). The rolling period starts when you upload the first document. After 7 days (at the same time you uploaded the first document), you can once again upload to the service up to 40 document pages.
 
 
 
