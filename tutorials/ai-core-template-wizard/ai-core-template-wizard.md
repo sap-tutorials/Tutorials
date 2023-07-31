@@ -49,7 +49,7 @@ step 1:**  press Command + shift + p for *mac* and Control + shift + p for *Wind
 
 ![](img/tempelate_gen6.png)
 
-**Step 7:** Choose the demo sample project as classification H2O and click on next.
+**Step 7:** Choose the demo sample project as Movie Recommendation and click on next.
 
 ![](img/tempelate_gen7.png)
 
@@ -63,12 +63,12 @@ Step 9: It will create all the required folders in the current directory.
 ![](img/tempelate_gen9.png)
 
 
-## Deploying Template to AI Core
+### Deploying Template to AI Core
 
 In the Generated tempelate visit Template folder > Pipelines and replace `ai-core_creds.json` and `S3_creds.json` with your Actual AI core Creds.
 
-![](img/run_movie1.png)
+![](img/run_movie1.jpg)
 
 Once done Under the same pipelines folder open AI-core-skd-notebook and replace the Configure variables with your own Variables and click on run all.
 
-![](img/run_movie2.png)
+![](img/run_movie2.jpg)
