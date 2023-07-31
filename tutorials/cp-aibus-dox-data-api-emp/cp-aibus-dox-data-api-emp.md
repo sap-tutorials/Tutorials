@@ -28,7 +28,7 @@ After performing step 1 of the tutorial [Use Machine Learning to Extract Informa
 
 When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
-Trial users can only create one client. To see your list of clients:
+Free tier and trial users can only create one client. To see your list of clients:
 
 1. Expand the **GET /clients** endpoint.
 
@@ -91,14 +91,13 @@ You can repeat step 1 to see the **`clientId`** and **`clientName`** of the clie
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction trial account limitations:​
+>Be aware of the following Document Information Extraction free tier and trial account limitations:​
 
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
+>- Maximum 40 uploaded document pages per tenant in a rolling period of 7 days (each document can have more than 1 page, for example, if your documents have 20 pages each, you're only able to upload 2 documents until the next rolling period of 7 days starts, and if your documents have 2 pages each, you're only able to upload 20 documents until the next rolling period of 7 days starts). The rolling period starts when you upload the first document. After 7 days (at the same time you uploaded the first document), you can once again upload to the service up to 40 document pages.
 
->- Maximum 1 created `clientId`
+>- Maximum 1 client per tenant
 
->- Maximum 10 created enrichment `dataIds`
-
+>- Maximum 10 enrichment data records per tenant
 
 
 
@@ -257,7 +256,7 @@ Do the following:
 
 2. Click **Try it out**.
 
-3. Right click [Sample Invoice 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf), then click ***Save link as*** to download locally the document file for this enrich employee data example.
+3. Right click [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf), then click ***Save link as*** to download locally the document file for this enrich employee data example.
 > You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 4, matches your document fields.
 
 4. Upload the document file you want to enrich.

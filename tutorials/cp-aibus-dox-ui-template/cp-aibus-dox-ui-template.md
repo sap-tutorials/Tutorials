@@ -51,13 +51,16 @@ In the dialog, proceed as follows:
 
     In the next steps, you'll add a document, get the extraction results and edit them so that you can associate the document with your template.
 
+
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction Trial UI trial account limitations:​
+>Be aware of the following Document Information Extraction free tier and trial account limitations:​
 
->- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
->- Maximum 10 schemas per trial account
->- Maximum 3 templates per trial account
+>- Maximum 40 uploaded document pages per tenant in a rolling period of 7 days (each document can have more than 1 page, for example, if your documents have 20 pages each, you're only able to upload 2 documents until the next rolling period of 7 days starts, and if your documents have 2 pages each, you're only able to upload 20 documents until the next rolling period of 7 days starts). The rolling period starts when you upload the first document. After 7 days (at the same time you uploaded the first document), you can once again upload to the service up to 40 document pages.
+
+>- Maximum 10 schemas per client
+
+>- Maximum 3 templates per tenant
 
 
 
