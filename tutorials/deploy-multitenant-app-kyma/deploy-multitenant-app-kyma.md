@@ -68,13 +68,13 @@ brew install buildpacks/tap/pack
 <p> </p>
     In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-approuter --builder paketobuildpacks/builder:full
+pack build multitenant-approuter --builder paketobuildpacks/builder-jammy-base
 docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
 ```
 
     In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
+pack build multitenant-kyma-backend --builder paketobuildpacks/builder-jammy-base
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
 ```
 

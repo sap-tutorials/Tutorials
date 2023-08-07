@@ -62,7 +62,7 @@ As you can only create one private repository in a free Docker hub account, Dock
 **2.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
 ```Shell / Bash
-pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
+pack build multitenant-kyma-backend --builder paketobuildpacks/builder-jammy-base
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
 ```
 
