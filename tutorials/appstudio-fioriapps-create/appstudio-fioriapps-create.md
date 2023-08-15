@@ -94,8 +94,6 @@ The flow consists of the following parts:
 
 4. SAP Business Application Studio reloads with the `FioriDemo` project open in its workspace. In the Explorer view you can see the `FioriDemo` project, its folder structure, and files.
 
-    >The status bar color changes to blue, indicating that a workspace or folder is open.
-
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
 
