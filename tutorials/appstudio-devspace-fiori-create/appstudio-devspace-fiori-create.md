@@ -85,8 +85,6 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
     >You may be prompted to accept the legal terms.
 
-    >The purple color of the status bar indicates that there is no open workspace or folder.
-
     >Wait until "We have finished installing all tools and templates" notification appears at the bottom right of the screen.
 
 
