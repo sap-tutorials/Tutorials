@@ -8,7 +8,7 @@ tags: [ tutorial>advanced, software-product>sap-concur]
 primary_tag: software-product>sap-concur
 ---
 
-# Call Concur APIs using a Multiple Use Bearer Token.
+# Call Concur Apis Using A Multiple Use Bearer Token
 <!-- description --> Use a refresh token to get a multiple use bearer token to call a Concur API.
 
 ## Prerequisites
@@ -28,11 +28,9 @@ primary_tag: software-product>sap-concur
 1. Go to the [**Company Request Token**](https://www.concursolutions.com/nui/authadmin/companytokens) screen.
 2. Enter your App ID in the required field and click Submit to regenerate your company request token.
 3. Copy/paste the Company UUID and company request token fields to a text file.
-
-<!-- border -->![image](img/company-request-token-created.png)
+        <!-- border -->![image](img/company-request-token-created.png)
 4. Click **OK** after you have saved this information to a text file.
-
-<!-- border -->![image](img/company-request-token-created-ok.png)
+        <!-- border -->![image](img/company-request-token-created-ok.png)
 
 ### Setup the NodeJs app
 1. Get the [`NodeJs sample code`](https://github.com/SAP-samples/concur-api-samplecode).
