@@ -33,9 +33,9 @@ Open your application in the browser. Using the links on the welcome page you ca
 
 1. To retrieve the application URL run the following command:
 
-  ```Shell/Bash
-  cf app bookstore
-  ```
+    ```Shell/Bash
+    cf app bookstore
+    ```
 
 2. Open the application in the browser. The according route can be found under routes of the previous step.
 

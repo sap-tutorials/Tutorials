@@ -31,8 +31,7 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
 
 ### Enhance project configuration for production
 
-
-To prepare the project, execute the following in the root level of your project:
+1. To prepare the project, execute the following in the root level of your project:
 
     ```Shell/Bash
     cds add hana,mta,xsuaa,approuter --for production
