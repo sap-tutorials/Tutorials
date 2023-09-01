@@ -156,7 +156,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 
 1. In the root of your project, execute the following command to build the archive.
     ```Shell/Bash
-    mbt build -t gen --mtar mta.tar
+    mbt build -t gen --mtar mta.mtar
     ```
 
     > For this you need the MBT Build Tool, which SAP Business Application Studio has already installed.
@@ -165,7 +165,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 
 2. Deploy the archive using `cf deploy`.
     ```Shell/Bash
-    cf deploy gen/mta.tar
+    cf deploy gen/mta.mtar
     ```
 
     > For this you need the MultiApps CF CLI plugin, which SAP Business Application Studio has already installed.
