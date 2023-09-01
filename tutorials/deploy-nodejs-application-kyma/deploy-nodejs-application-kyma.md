@@ -134,16 +134,16 @@ In the root directory `multitenancy-kyma-tutorial`, create a new YAML file calle
 ```yaml
 
 ---
-apiVersion: gateway.kyma-project.io/v1alpha1
+apiVersion: gateway.kyma-project.io/v1beta1
 kind: APIRule
 metadata:
-  creationTimestamp: null
   labels:
     app: kyma-multitenant-node-multitenancy
     release: multitenancy
   name: kyma-multitenant-node-multitenancy
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
+  host: kyma-multitenant-node-multitenancy
   rules:
   - accessStrategies:
     - handler: allow
@@ -156,16 +156,13 @@ spec:
     - HEAD
     path: /.*
   service:
-    host: <subaccount-subadomain>-node.<cluster-domain> # replace with the values of your account
     name: kyma-multitenant-node-multitenancy
     port: 8080
-status: {}
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: kyma-multitenant-node-multitenancy
     release: multitenancy
@@ -176,15 +173,12 @@ spec:
     matchLabels:
       app: kyma-multitenant-node-multitenancy
       release: multitenancy
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: kyma-multitenant-node-multitenancy
         release: multitenancy
     spec:
-      automountServiceAccountToken: true
       imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
       containers:
@@ -194,40 +188,31 @@ spec:
         - name: TMPDIR
           value: /tmp
         image: <docker-hub-account>/multitenant-kyma-backend:v1  # replace with your Docker Hub account name
-        livenessProbe:
-          exec:
-            command:
-            - nc
-            - -z
-            - localhost
-            - "8080"
-          failureThreshold: 1
-          initialDelaySeconds: 60
-          periodSeconds: 30
-          successThreshold: 1
-          timeoutSeconds: 60
         name: kyma-multitenant-node-multitenancy
         ports:
-        - containerPort: 8080
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
         readinessProbe:
-          exec:
-            command:
-            - nc
-            - -z
-            - localhost
-            - "8080"
-          failureThreshold: 1
-          initialDelaySeconds: 60
-          periodSeconds: 30
-          successThreshold: 1
-          timeoutSeconds: 60
+          httpGet:
+            path: /
+            port: http
+        startupProbe:
+          httpGet:
+            path: /
+            port: http
+          failureThreshold: 15
+          periodSeconds: 2
         resources:
           limits:
-            ephemeral-storage: 256M
+            cpu: 100m
             memory: 256M
           requests:
             cpu: 100m
-            ephemeral-storage: 256M
             memory: 256M
         securityContext:
           allowPrivilegeEscalation: false
@@ -235,16 +220,14 @@ spec:
             drop:
             - ALL
           privileged: false
+          runAsNonRoot: true
           readOnlyRootFilesystem: false
         volumeMounts:
         - mountPath: /tmp
           name: tmp
-      securityContext:
-        runAsNonRoot: true
       volumes:
       - emptyDir: {}
         name: tmp
-status: {}
 
 ---
 apiVersion: v1
