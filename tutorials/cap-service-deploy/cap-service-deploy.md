@@ -59,7 +59,11 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
     npm update --package-lock-only
     ```
 
-4. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
+4. Following this tutorial strictly, you don't have an own UI yet in your project. In this case you need to open the `app/xs-app.json` file and remove the `welcomeFile` property. Otherwise you'll run into a `Not Found` error after deployment as an `index.html` file is requested that is not available.
+
+    > For productive applications this is different and the command `cds add approuter` is of course tailored for productive applications. That's why we need this extra step here in this starter tutorial.
+
+5. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
     ```JSON
     "cds": {
@@ -72,6 +76,8 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
     > `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
 
     > Don't edit the `gen/db/package.json` file.
+
+
 
 ### Identify SAP BTP Cloud Foundry endpoint
 

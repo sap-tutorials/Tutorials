@@ -111,7 +111,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
     --buildpack gcr.io/paketo-buildpacks/nodejs \
-    --builder paketobuildpacks/builder:base \
+    --builder paketobuildpacks/builder-jammy-base \
     --env BP_NODE_RUN_SCRIPTS=""
     ```
 
@@ -131,7 +131,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
         --buildpack gcr.io/paketo-buildpacks/nodejs \
-        --builder paketobuildpacks/builder:base \
+        --builder paketobuildpacks/builder-jammy-base \
         --env BP_NODE_RUN_SCRIPTS=""
     ```
 

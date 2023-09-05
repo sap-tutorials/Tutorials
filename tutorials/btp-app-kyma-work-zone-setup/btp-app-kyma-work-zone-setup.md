@@ -329,7 +329,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
          --env BP_NODE_RUN_SCRIPTS=build \
          --path app \
          --buildpack gcr.io/paketo-buildpacks/nodejs \
-         --builder paketobuildpacks/builder:base
+         --builder paketobuildpacks/builder-jammy-base
     ```
 
     The parameter `--env BP_NODE_RUN_SCRIPTS=build` triggers the build script in the `app/package.json`, which runs the UI5 build for the SAP Fiori applications as it is defined in the `app/build.sh` file. The build result appears in the docker image only. It's not on your file system.

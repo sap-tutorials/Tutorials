@@ -908,8 +908,8 @@ spec:
           path: /app/data/ # where to copy in the Dataset in the Docker image
     outputs:
       artifacts:
-        - name: housepricemodel # name of the artifact generated, and folder name when placed in S3, complete directory will be `../<executaion_id>/housepricemodel`
-          globalName: housemodel # local identifier name to the workflow, also used above in annotation
+        - name: housepricemodel # local identifier name to the workflow
+          globalName: housemodel # name of the artifact generated, and folder name when placed in S3, complete directory will be `../<executaion_id>/housemodel`. Also used above in annotation
           path: /app/model/ # from which folder in docker image (after running workflow step) copy contents to cloud storage
           archive:
             none:   # specify not to compress while uploading to cloud
