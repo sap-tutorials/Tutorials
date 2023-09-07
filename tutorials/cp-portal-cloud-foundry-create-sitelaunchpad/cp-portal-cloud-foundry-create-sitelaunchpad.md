@@ -12,13 +12,14 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a site to which you can later add business apps.
 
 ## Prerequisites
-You have subscribed to SAP Build Work Zone, standard edition and assigned yourself to the `Launchpad_Admin` role
+ - You have subscribed to SAP Build Work Zone, standard edition and assigned yourself to the `Launchpad_Admin` role
+ 
 
 ## You will learn
   - How to create a site using SAP Build Work Zone, standard edition
 
 ## Intro
-In this tutorial we'll create a site for a recruiting company called `JobCore`. We'll then add business apps to this site.
+In this tutorial we'll create a site for a company called `JobCore`. We'll then add business apps to this site.
 
 ### Create a site
 
@@ -40,14 +41,27 @@ You've just created a site called `JobCore`.
 
 
 
-### Navigate to the Site Directory
+### Select the Spaces and Pages - New Experience view mode
 
 
-When you create a site, you are directed to the **Site Settings** screen where you can edit the site settings and assign a site to a specific user role.
+When you create a site, you are directed to the **Site Settings** screen where you can edit the site settings. In this screen, you'll select the new experience view mode. This is also where you assign a site to a specific user role.
 
-Navigate back to the **Site Directory** to view the site tile.
+> By enabling **Spaces and Pages – New Experience** view mode, you'll be able to create spaces and pages locally in dedicated editors. You will be able to design your pages by adding sections with UI integration cards and app tiles. If you already have existing spaces and pages that were integrated from remote content providers in the **Spaces and Pages** view mode, in the new experience, they are displayed side by side with spaces and pages that you create locally.
 
-  ![Navigate to site directory](3_to_site_directory.png)
+  1. Click **Edit** in the top right corner of the screen.
+
+      ![Edit site settings](4_edit_site_settings.png)
+
+  2. Under **Display**, select **Spaces and Pages - New Experience**.
+
+      ![Select new experience](5_select_new_experience.png)
+
+  3. Click **Save**.
+
+
+### Navigate back to the Site Directory to view the site tile.
+
+  ![Navigate to site directory](3-to-site-directory.png)
 
 
   Your site is empty for now. In the next tutorials, you're going to add business apps to your site.
