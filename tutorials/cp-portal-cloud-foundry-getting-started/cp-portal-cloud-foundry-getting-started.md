@@ -22,7 +22,8 @@ author_profile: https://github.com/LindsayBert
   - How to access SAP Build Work Zone, standard edition
 
 ## Intro
-  >You can also do this tutorial using a SAP BTP free plan option. To do this, please follow this tutorial: [Set Up SAP Build Work Zone, standard edition Using the Free Tier Model for SAP BTP](cp-portal-cloud-foundry-setup-freetier).
+    
+>You can also do this tutorial using a SAP BTP free plan option. To do this, please follow this tutorial: [Set Up SAP Build Work Zone, standard edition Using the Free Tier Model for SAP BTP](cp-portal-cloud-foundry-setup-freetier).
 
 In this group of tutorials our goal is to create a site using SAP Build Work Zone, standard edition. But before we can do this, there are some steps you'll need to do in the SAP BTP cockpit.
 
@@ -94,7 +95,7 @@ Before you can access the SAP Build Work Zone, standard edition, you first need 
 To be able to access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
 
 
-1. Click **Role Collections** from the side menu.
+1. Under **"Security** click **Role Collections** from the side menu.
 
       <!-- border -->![Open role collections](10-role-collections.png)
 
