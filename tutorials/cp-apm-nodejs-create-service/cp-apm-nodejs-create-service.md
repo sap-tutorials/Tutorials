@@ -476,6 +476,16 @@ Click on `Send Request` inside the `test.http` file, to execute requests against
 
 The REST client gives you the response of your service and you see immediately if the request was successful.
 
+Use the following request to answer the next question:
+
+```HTTP
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{"ID": 201, "title": "Some Title"}
+
+```
+
 
 ### Add custom logic
 
