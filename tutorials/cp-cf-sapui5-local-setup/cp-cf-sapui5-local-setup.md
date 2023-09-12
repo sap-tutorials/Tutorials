@@ -12,7 +12,7 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Prepare you local development environment to implement successful SAPUI5 projects.
 
 ## Prerequisites
- - [Install Node.js version 16](https://nodejs.dev/en/about/releases/)
+ - [Install the latest Node.js LTS version (currently 16)](https://nodejs.org/en/download/)
  - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
 ## You will learn
@@ -51,9 +51,9 @@ Use the following command to test whether the installation has been successful.
 yo
 ```
 
-You should see the easy-ui5 generator in the list of generators:
+You should see the Easy Ui5 generator in the list of generators:
 
-![easy-ui5](./verify.png)
+![EasyUI5](./verify.png)
 
 
 This plugin has also been published on [GitHub](https://github.com/SAP/generator-easy-ui5).
