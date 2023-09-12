@@ -18,7 +18,7 @@ author_profile: https://github.com/nicoschoenteich
 ## You will learn
   - How to install the Yeoman scaffolding tool
   - How to install the easy-ui5 generator plugin for Yeoman
-  - How the Multi-Target Application (MTA) build tool for Cloud Foundry works
+  - How to install the Multi-Target Application (MTA) build tool for Cloud Foundry
 
 
 ---
