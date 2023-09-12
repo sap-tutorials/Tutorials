@@ -185,7 +185,7 @@ In this step, you will add a detail page that shows some additional information.
 
     <!-- border -->![handle press](handlepress.png)
 
-5. **Click** on any list item. This should trigger a navigation to a new page.
+5. **Click** on any list item. This should trigger the navigation to a new page.
 
 ### Add UI elements to the detail page
 
