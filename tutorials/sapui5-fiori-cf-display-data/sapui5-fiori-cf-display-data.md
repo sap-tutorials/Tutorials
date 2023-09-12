@@ -115,16 +115,16 @@ Again, please accept the modification of the manifest file.
 
 3. Switch to your first terminal session, stop the process and restart it. Restarting is necessary because the live-reload feature doesn't notice changes in the `ui5.yaml` file.
 
-```Terminal
-<ctrl + c>
-npm start
-```
+    ```Terminal
+    <ctrl + c>
+    npm start
+    ```
 
-> Alternatively, you can directly invoke `npx ui5 serve -o test/flpSandbox.html`, which is equivalent to `npm start`  - or run `npx ui5 serve`, which won't open a new page in the browser.
+    > Alternatively, you can directly invoke `npx ui5 serve -o test/flpSandbox.html`, which is equivalent to `npm start`  - or run `npx ui5 serve`, which won't open a new page in the browser.
 
-Now you should see the Northwind products in the SAPUI5 list control:
+    Now you should see the Northwind products in the SAPUI5 list control:
 
-<!-- border -->![list](list.png)
+    <!-- border -->![list](list.png)
 
 ### Display more product information on a detail page
 
