@@ -42,7 +42,7 @@ cf marketplace
   Getting all service offerings from marketplace in org... / xy... trial as admin...
 
   offering       plans       description
-  privatelink    beta    Link service establishes a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
+  privatelink    standard   Link service establishes a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
 ```
 
 Make sure you can see `privatelink` in the sample output.
