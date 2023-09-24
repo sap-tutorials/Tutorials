@@ -235,7 +235,7 @@ You can see what is missing by executing the following statement in a SQL consol
  call SYS.GET_INSUFFICIENT_PRIVILEGE_ERROR_DETAILS ('<GUID>', ?)
 ```
 
-This procedure will show the session user name, the technical user (HDI object owner) executing the statement, the privilege (e.g., `SELECT`) and some flags starting with `IS_MISSING`. A `TRUE` value under one of those flags indicates missing authorizations.
+This procedure will show the session user name, the technical user (HDI object owner) executing the statement, the privilege (e.g., `SELECT`) and some flags starting with `IS_MISSING`. A `TRUE` value under one of those flags indicates missing authorizations. 
 
 Make sure the user in the user provided service has permissions for `SELECT` and `SELECT METADATA` with grant option.
 
