@@ -96,7 +96,7 @@ With the page type and data source defined, the next step is to configure the ma
 |  :------------- | :------------- | :-------------
 | **Module name** |  **Set the name of the module for this application that will be loaded at runtime. It also determines the directory name of generated application**           | **`myfioriapp`**
 | **Application title** |  **Set the application title that will be displayed in the header of the application**           | **`Manage Products`**
-| **Application namespace** |  **Set a unique package name for the application module being created**    | **`Namespace1`**
+| **Application namespace** |  **Set a unique package name for the application module being created**    | **`namespace1`**
 | **Description** |  **Add a description for your project**          | **`SAP Fiori elements application for managing products`**
 | **Project folder path** |  **Select the folder where you would like to save your project**   | Click the folder selection icon and select the root folder you created in step 1.
 | **Minimum SAPUI5 version** |  **Choose minimum SAPUI5 version for your application**   | Use the default suggested value
