@@ -62,23 +62,31 @@ While the free tier is the go-to option for individuals and enterprises wanting 
 
 ### Configure your account and add SAP HANA Cloud
 
-Now that you have an SAP BTP account (either Free Tier or Free Trial) you need to add SAP HANA Cloud to it.  While both free environments have access to SAP HANA Cloud, neither create an SAP HANA Cloud database instance by default.  If you've never setup SAP HANA Cloud in your SAP BTP Account, you must follow the steps in the list tutorial group in order to get started: [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2).
+Now that you have an SAP BTP account (either Free Tier or Free Trial) you need to add SAP HANA Cloud to it.  While both free environments have access to SAP HANA Cloud, neither create an SAP HANA Cloud database instance by default.  If you've never setup SAP HANA Cloud in your SAP BTP Account, you must follow the steps in the this tutorial group in order to get started: First [Start Using SAP HANA Cloud Trial in SAP BTP Cockpit](hana-cloud-mission-trial-2) to ensure that you have the entitlements and subscription you need. And then [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3). But during this second tutorial step, please take the following additional steps/checks.
 
-1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2) This wizard used in the above tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud using a variety of external development tools.
+1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) This wizard used in the above tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud using a variety of external development tools.
 
     <!-- border -->![Allow All IP addresses](trial4.png)
 
-2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
+1. Also while in the "Advanced Settings", we want to configure the Instance Mapping. The HANA Cloud instance lives at your BTP sub account level and isn't immediately available in either the Cloud Foundry nor Kyma runtimes. In order to use HANA for HDI or CAP based development, you need to map the instance to your runtime of choice. For this Tutorial we will map to the default Cloud Foundry runtime of your trial account.  
+
+    <!-- border -->![Add Mapping](addMapping.png)
+
+1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).  Note: you can also supply a Space ID in the Environment Group column but it is not required. If no value is supplied the HANA Cloud instance is automatically available to all spaces within an Organization.
+
+    <!-- border -->![Add Mapping Instance](addMappingInstance.png)
+
+1. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 
     <!-- border -->![HANA Cloud Instance](trial5.png)
 
-3. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
+1. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
-4. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
+1. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
     <!-- border -->![HANA Cloud stopped](hana_stopped.png)
 
-5. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
+1. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
 
 ### Create SAP Business Application Studio Dev Space
 
@@ -192,19 +200,27 @@ Artifacts in the current project will be translated into a physical database sch
 
     <!-- border -->![Bind](bind.png)
 
-2. In the dialog that appears near the top of the screen, choose the **Create a new service instance**
+1. In the first dialog at the top of the screen, choose **Bind to an HDI container**
+
+    <!-- border -->![Bind](bindToHDI.png)
+
+1. In the dialog that appears near the top of the screen, choose the **Create a new service instance**
 
     <!-- border -->![Create New Service Instance](create_new_service.png)
 
-3. Accept the default service instance name
+1. Accept the default service instance name
 
     <!-- border -->![Default Name](default_service_instance_name.png)
 
-4. Press **Enter**.  It will take a minute or so to complete the creation
+1. Press **Enter**.  It will take a minute or so to complete the creation
 
     <!-- border -->![Create Service](creating_service_instance1.png)
 
-5. Once created, return to the **SAP HANA PROJECTS** view. Press the **Deploy** button.
+1. Occasionally the binding will fail on the first try with a timing issue. If you receive this error, just repeat the process of binding but this time you will see the HDI container (my-hdi) in the **Select a service instance** list (since it did actually create successfully). Choose it from the list to continue.
+
+    <!-- border -->![Bind Failure](bindFailure.png)
+
+1. Once created, return to the **SAP HANA PROJECTS** view. Press the **Deploy** button.
 
     <!-- border -->![Press Deploy](press_deploy.png)
 
@@ -219,13 +235,13 @@ Artifacts in the current project will be translated into a physical database sch
 
     <!-- border -->![Deploy Log](deploy_log.png)
 
-6. Press the **Open HDI container** button.
+1. Press the **Open HDI container** button.
 
     <!-- border -->![Open HDI container](open_hdi_container.png)
 
     The database explorer will start loading in a new browser tab. If asked to add a database connection, click **No**.
 
-7. You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository.
+1. You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository.
 
     <!-- border -->![Database Explorer Tables](database_explorer_tables.png)
 
