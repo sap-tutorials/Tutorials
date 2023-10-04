@@ -8,7 +8,7 @@ author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add an SAPUI5 App to Your Site
+# Integrate an SAPUI5 App to SAP Build Work Zone
 <!-- description --> Add an existing SAPUI5 app to a site in the SAP Build Work Zone, standard edition.
 
 ## Prerequisites
@@ -19,7 +19,7 @@ author_profile: https://github.com/LindsayBert
   - How to add an existing SAPUI5 app to your site
 
 ## Intro
-In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your site.
+In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Work Zone.
 
 ### Open Content Manager
 
