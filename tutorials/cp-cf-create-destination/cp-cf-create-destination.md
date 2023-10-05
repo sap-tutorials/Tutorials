@@ -33,11 +33,11 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 ---
 
-### Enter your BTP account
+### Enter your SAP BTP account
 
-- For trial Accounts: <https://account.hanatrial.ondemand.com>
-- For free tier and enterprise accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For free tier and enterprise accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
+- For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
+- For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
+- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
 
 
 ### Access your subaccount
@@ -53,7 +53,7 @@ Click on the **Destinations** button on the left panel and click **New Destinati
 
 <!-- border -->![destination](./destination.png)
 
-### Create new destination
+### Create a new destination
 Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**.
 
 Field Name     | Value
@@ -65,15 +65,14 @@ URL            | **`https://services.odata.org`**
 Proxy Type     | **`Internet`**
 Authentication | **`NoAuthentication`**
 
-And the following *Additional Properties*
+Add the following *Additional Properties*:
 
 Property Name     | Value
 :------------- | :-------------
 `HTML5.DynamicDestination`           | **`true`**
 `WebIDEEnabled`           | **`true`**
 
-> Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
-> You can find more information on the used properties in the [documentation](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/7e49887e6fd34182bebeca5a6841a0cc.html)
+> Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`. You can find more information on the used properties in the [documentation](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/7e49887e6fd34182bebeca5a6841a0cc.html)
 
 When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
 
