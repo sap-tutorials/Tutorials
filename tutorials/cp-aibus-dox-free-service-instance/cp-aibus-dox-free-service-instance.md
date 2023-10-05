@@ -58,7 +58,7 @@ To use Document Information Extraction, you need to make sure that your account 
 
     <!-- border -->![Add Service Plans](add-service-plans.png)
 
-  3.  In the dialog, select `Document Information Extraction` and choose the `free` service plan. Click **Add 1 Service Plan**.
+  3.  In the dialog, select `Document Information Extraction`. Choose the `free` and `default (Application)` service plans. Click **Add 2 Service Plans**.
 
     >You can also perform this tutorial series using the `blocks_of_100` service plan. For that, choose the `blocks_of_100` plan in this step (instead of free). For more information on the service plans available for Document Information Extraction and their usage details, see [Service Plans](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/2c17b2aa8d6b4fa8a5c6259a33feb360.html).
 
@@ -96,7 +96,7 @@ Next, you will create an instance of the Document Information Extraction service
 
     <!-- border -->![Create Instance](create-instance.png)
 
-2. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-info-extraction-key` and click **Create**.
+2. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create**.
 
     >Choose `blocks_of_100` in this step (instead of free) if you're using the `blocks_of_100` plan to perform this tutorial series.
 
@@ -119,7 +119,7 @@ You are now able to create a service key for your new service instance. Service 
 
     <!-- border -->![Service Key](create-service-key.png)
 
-2. In the dialog, enter `doc-info-extraction-inst` as the name of your service key. Click **Create** to create the service key.
+2. In the dialog, enter `doc-info-extraction-key` as the name of your service key. Click **Create** to create the service key.
 
     <!-- border -->![Create Service Key](create-service-key-name.png)
 
