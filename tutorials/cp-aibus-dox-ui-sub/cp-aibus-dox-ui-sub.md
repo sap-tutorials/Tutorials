@@ -20,7 +20,7 @@ primary_tag: topic>machine-learning
 ### Get subscribed
 
 
-After completing the prerequisite tutorial [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial UI.
+After completing the prerequisite tutorial [Use Trial to Create a Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial UI.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
@@ -30,7 +30,7 @@ After completing the prerequisite tutorial [Create Service Instance for Document
 
     <!-- border -->![DOX-UI](access-service-marketplace.png)
 
-3. Search for **Document Information Extraction Trial UI** and click the tile.
+3. Search for **Document Information Extraction Trial** and click the tile.
 
     <!-- border -->![DOX-UI](tile.png)
 
@@ -38,7 +38,7 @@ After completing the prerequisite tutorial [Create Service Instance for Document
 
     <!-- border -->![DOX-UI](subscribe.png)
 
-5. In the dialog, click **Create** once again.
+5. In the dialog, choose the `default Subscription` service plan and click **Create**.
 
   <!-- border -->![DOX-UI](dialog-create.png)
 
@@ -59,11 +59,11 @@ The subscription will now be created. Click on **View Subscription** to go to th
 
     <!-- border -->![DOX-UI](role-collection.png)
 
-3. Choose **`Document_Information_Extraction_UI_Admin_User_trial`** to access all the features available in the UI application and click **Assign Role Collection**.
+3. Choose **`Document_Information_Extraction_UI_Templates_Admin_trial`** to access all the features available in the UI application and click **Assign Role Collection**.
 
     <!-- border -->![DOX-UI](assign-role-collection.png)
 
-You're now assigned to the **`Document_Information_Extraction_UI_Admin_User_trial`** role collection.
+You're now assigned to the **`Document_Information_Extraction_UI_Templates_Admin_trial`** role collection.
 
 <!-- border -->![DOX-UI](roles.png)
 

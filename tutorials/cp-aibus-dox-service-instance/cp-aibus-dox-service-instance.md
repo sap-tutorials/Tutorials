@@ -101,7 +101,7 @@ Click **Create Instance** to start the creation dialog.
 
 <!-- border -->![Service Instance](create-instance.png)
 
-In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create**.
 
 <!-- border -->![Create Instance](create-instance-dialog.png)
 

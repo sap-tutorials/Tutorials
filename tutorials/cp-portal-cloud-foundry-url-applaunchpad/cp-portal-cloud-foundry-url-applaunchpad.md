@@ -9,14 +9,14 @@ author_profile: https://github.com/LindsayBert
 ---
 
 
-# Add a URL App to Your Site
+# Integrate a URL App to SAP Build Work Zone
 <!-- description --> Create a URL app and add it to your site.
 
 ## You will learn
   - How to create a URL app and add it to your site
 
 ## Intro
-Use the **Content Manager** to add a URL app to your site.
+Use the **Content Manager** to add apps to SAP Build Work Zone.
 
 ### Open the Content Manager
 

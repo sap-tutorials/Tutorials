@@ -9,7 +9,7 @@ author_profile: https://github.com/LindsayBert
 ---
 
 
-# Create a Space and a Page and Add Apps
+# Design Your Site With the New SAP Build Work Zone Experience
 <!-- description --> Create a page, assign it to a space, and then add apps to your page.
 
 ## Prerequisites
