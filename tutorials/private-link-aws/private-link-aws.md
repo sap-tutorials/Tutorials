@@ -12,7 +12,7 @@ primary_tag: software-product-function>sap-btp-cockpit
 <!-- description --> Connect SAP Private Link Service to AWS Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 
 ## Prerequisites
- - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link Service entitlement: [Set Up SAP Private Link Service on Amazon Web Services (Beta)](private-link-service-onboarding-aws)
+ - You have a global account and subaccount on SAP Business Technology Platform with SAP Private Link Service entitlement: [Set Up SAP Private Link Service on Amazon Web Services](private-link-service-onboarding-aws)
  - You have created an AWS Endpoint Service in the Amazon VPC Console. [Create a service powered by AWS Private Link](https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html)
  - When creating the Endpoint Service, make sure you allowlist the SAP BTP CF AWS Account IDs as described in [Only allow requests from SAP BTP CF's AWS account](https://help.sap.com/docs/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/e0455888a6e44eb2bda8b8edb13dc55a.html?locale=en-US&version=CLOUD)
  - You have installed Cloud Foundry CLI. See [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli)
@@ -71,18 +71,18 @@ To create and enable a private link, you need to define the connection to the se
 Currently, you do not have any service instances enabled. Therefore, you need to create one. To create a new private link, you need the following information:
 
 - service offering (`private link`),
-- service plan (`beta`),
+- service plan,
 - a unique name (for instance, `privatelink-test`),
 - service name from AWS (for example, `com.amazonaws.vpce.us-east-1.<service-id>`).
 
 Enter `cf create-service` and add that information. Your command should look like this:
 
 ```Shell/Bash
-cf create-service privatelink beta privatelink-test -c '{"serviceName":"ServiceName"}'
+cf create-service privatelink privatelink-test -c '{"serviceName":"ServiceName"}'
 ```
 
 > **Example**:
-`cf create-service privatelink beta privatelink-test -c '{"serviceName": "com.amazonaws.vpce.us-east-1.<service-id>"}'
+`cf create-service privatelink privatelink-test -c '{"serviceName": "com.amazonaws.vpce.us-east-1.<service-id>"}'
 `
 
 If the creation of the service instance was accepted, you receive a success message telling you to proceed.
@@ -186,7 +186,7 @@ After the creation of your service binding, your application receives the inform
             "instance_name": "privatelink-test"
             "label": "privatelink",
             "name": "privatelink-test",
-            "plan": "beta",
+            "plan": "standard",
             "provider": null,
             "syslog_drain_url": null,
             "tags": [
