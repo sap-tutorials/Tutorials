@@ -35,7 +35,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](plan.png)
 
 
-    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial`. For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+     >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -102,7 +102,9 @@ To define your first header field, click **Add** to the right of the headline `H
 
 <!-- border -->![Add Header Field](add-header-field.png)
 
-For each field, you have to enter a name, a data type, a setup type, and optionally a default extractor and a description. The potential data types are `string`, `number`, `date`, `discount` and `currency`. To use one of the included standard fields of Document Information Extraction, select them for the default extractor.
+For each field, you have to enter a name, a data type, a setup type, and optionally a default extractor and a description. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
+
+The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor (standard fields supported by Document Information Extraction) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
 
 As your first header field, add the number of your purchase order which identifies your document.
 
@@ -110,7 +112,7 @@ As your first header field, add the number of your purchase order which identifi
 
 2. Select `string` for the `Data Type`. Note that a document number is a `string`, even though it consists of numbers, as it is an arbitrary combination of numbers without meaning. In contrast, price is an example of the data type `number`.
 
-3. As all business documents have a unique identification, Document Information Extraction already includes a standard field. Select `default` for the `Setup Type` and then select `documentNumber` for the `Default Extractor`.
+3. As all business documents have a unique identification, Document Information Extraction already includes a standard field. Select `auto` for the `Setup Type` and then select `documentNumber` for the `Default Extractor`.
 
 4. Click **Add** to create the header field.
 
@@ -128,28 +130,28 @@ Click **Add** again to open the dialog.
 
 2. Select `string` for the `Data Type`.
 
-3. As Document Information Extraction offers no equivalent field, select `default` for the `Setup Type` but leave the default extractor blank. Click **Add** to create the field.
+3. As Document Information Extraction offers no equivalent field, select `manual` for the `Setup Type` but leave the default extractor blank. Click **Add** to create the field.
 
     <!-- border -->![Create Purchase Order Status](add-purchase-order-status.png)
 
 You have now created your first custom field. Go ahead and create the list of header fields as shown in the table and image below. Pay attention to which fields have a default extractor and which do not. Feel free to extend or reduce the list of header fields.
 
-|  Field Name           | Data Type   | Default Extractor
-|  :------------------- | :---------- | :-----------------
-|  `purchaseOrderNumber`| string      | `documentNumber`
-|  `purchaseOrderStatus`| string      | none
-|  `vendor`             | string      | `senderName`           
-|  `vendorSite`         | string      | `senderAddress`
-|  `shipTo`             | string      | `shipToAddress`
-|  `orderType`          | string      | none
-|  `terms`              | string      | `paymentTerms`              
-|  `orderCurrency`      | string      | `currencyCode`
-|  `entryDate`          | date        | `documentDate`
-|  `shipDate`           | date        | `deliveryDate`
-|  `cancelDate`         | date        | none
-|  `totalCostNet`       | number      | `netAmount`              
-|  `totalCostGross`     | number      | `grossAmount`
-|  `totalVatAmount`     | number      | none
+|  Field Name           | Data Type   | Setup Type  | Default Extractor
+|  :------------------- | :---------- | :---------- | :-----------------
+|  `purchaseOrderNumber`| string      | auto        | `documentNumber`
+|  `purchaseOrderStatus`| string      | manual      | none
+|  `vendor`             | string      | auto        | `senderName`           
+|  `vendorSite`         | string      | auto        | `senderAddress`
+|  `shipTo`             | string      | auto        | `shipToAddress`
+|  `orderType`          | string      | manual      | none
+|  `terms`              | string      | auto        | `paymentTerms`              
+|  `orderCurrency`      | string      | auto        | `currencyCode`
+|  `entryDate`          | date        | auto        | `documentDate`
+|  `shipDate`           | date        | auto        | `deliveryDate`
+|  `cancelDate`         | date        | manual      | none
+|  `totalCostNet`       | number      | auto        | `netAmount`              
+|  `totalCostGross`     | number      | auto        | `grossAmount`
+|  `totalVatAmount`     | number      | manual      | none
 
 
 <!-- border -->![All Header Fields](all-header-fields.png)
@@ -171,7 +173,7 @@ In the dialog proceed as follows:
 
 2. Select `string` for the `Data Type`.
 
-3. Select `default` for the `Setup Type`, leave the default extractor blank, and click **Add** to create the field.
+3. Select `manual` for the `Setup Type`, leave the default extractor blank, and click **Add** to create the field.
 
 <!-- border -->![Add SKU Number](add-sku-number.png)
 
@@ -181,16 +183,16 @@ The field now displays in your list of line item fields where you find all the i
 
 You have now created your first line item field. Go ahead and create the list of line item fields as shown in the table and image below. Pay attention to which fields have a default extractor and which do not. Feel free to extend or reduce the list of line item fields.
 
-|  Field Name           | Data Type   | Default Extractor
-|  :------------------- | :---------- | :-----------------
-|  `skuNumber`          | string      | none
-|  `description`        | string      | `description`
-|  `upcNumber`          | string      | none            
-|  `quantity`           | number      | `quantity`
-|  `unitPriceNet`       | number      | none  
-|  `unitPriceGross`     | number      | none
-|  `vatRate`            | number      | none              
-|  `totalCost`          | number      | none
+|  Field Name           | Data Type   | Setup Type  | Default Extractor
+|  :------------------- | :---------- | :---------- | :-----------------
+|  `skuNumber`          | string      | manual      | none
+|  `description`        | string      | auto        | `description`
+|  `upcNumber`          | string      | manual      | none            
+|  `quantity`           | number      | auto        | `quantity`
+|  `unitPriceNet`       | number      | manual      | none  
+|  `unitPriceGross`     | number      | manual      | none
+|  `vatRate`            | number      | manual      | none              
+|  `totalCost`          | number      | manual      | none
 
 
 <!-- border -->![All Line Item Field](all-line-item-fields.png)
@@ -213,4 +215,3 @@ Now, the status of your schema changes to `ACTIVE`. To make changes to your sche
 Congratulations, you have created and activated your custom schema for purchase order documents.
 
 In the next tutorial: [Create Custom Template for Purchase Order Documents](cp-aibus-dox-ui-template), you'll create a template that uses your schema, and associate documents with your template to show the Document Information Extraction service where each field is located in the document.
-
