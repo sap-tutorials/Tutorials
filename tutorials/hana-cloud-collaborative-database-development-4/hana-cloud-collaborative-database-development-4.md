@@ -34,7 +34,7 @@ primary_tag: software-product>sap-hana-cloud
     > To answer the second question, create template projects that help you set up service connections, handle synonyms and prepare authorization management. You can create these templates once in the beginning and give your project team members a head-start. Using the template, they can build on your work and can quickly start working productively. The following 4 tutorials in this tutorial group will help you learn how to collaborate efficiently:
 
 
-4. You are here <sub font-size="30px">&#9755;</sub> **Prepare your SAP HANA Database Project for collaboration**
+4. You are here <sub font-size="60px">&#9755;</sub> **Prepare your SAP HANA Database Project for collaboration**
 5. Generate users and roles for assigning privileges
 6. Enhance your project with services, synonyms and grants
 7. Collaborate on an SAP HANA Database Project template
