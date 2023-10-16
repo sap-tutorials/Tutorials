@@ -1,0 +1,13 @@
+
+[VALIDATE_2]
+###Rule
+multiple-choice
+
+###Question
+When should you update your Mobile Services app's offline configuration?
+
+###Match
+[X] A new entity type is added to your mobile app configuration.
+[X] The 'Defer Batch Response' setting is changed for the 'OData Service Technical Name' provided when generating the offline configuration.
+[ ] The OData Mobile Data Object Field Selection or Data Filter settings are changed.
+[VALIDATE_2]
