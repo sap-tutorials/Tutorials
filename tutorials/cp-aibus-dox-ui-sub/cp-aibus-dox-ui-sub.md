@@ -10,7 +10,7 @@ primary_tag: topic>machine-learning
 <!-- description --> Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 
 ## Prerequisites
-- You have created a service instance for Document Information Extraction: [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
+- You have created a service instance for Document Information Extraction: [Use Trial to Create a Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
 
 ## You will learn
   - How to subscribe, assign role collection and access Document Information Extraction Trial UI
@@ -81,5 +81,4 @@ The Document Information Extraction Trial UI is displayed:
 
 <!-- border -->![DOX-UI](app.png)
 
-You have successfully subscribed to the Document Information Extraction Trial UI. Find out how to use the application in the next tutorial: [Use the Document Information Extraction Trial UI](cp-aibus-dox-ui).
-
+You have successfully subscribed to the Document Information Extraction Trial UI. Find out how to use the application in the next tutorial: [Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI](cp-aibus-dox-ui).

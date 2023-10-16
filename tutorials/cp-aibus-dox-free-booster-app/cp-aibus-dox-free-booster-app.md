@@ -60,7 +60,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     <!-- border -->![UI application](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `doc-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `doc-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt)**. Click **Next**.
 
     <!-- border -->![UI application](booster-subaccount.png)
 
@@ -105,9 +105,9 @@ Step 4 is optional. If you're not interested, you can set it to **Done** and go 
 ### Access subscription (optional)
 
 
-> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction UI, you've created with the **Set up account for Document Information Extraction** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the Document Information Extraction application, you've subscribed to using the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
-Do the following to access your subscription to the Document Information Extraction UI, without having to run the **Set up account for Document Information Extraction** booster once again:
+Do the following to access the Document Information Extraction application, without having to run the **Set up account for Document Information Extraction** booster once again:
 
 1. Close the booster **Success** dialog box.
 
@@ -117,7 +117,7 @@ Do the following to access your subscription to the Document Information Extract
 
     <!-- border -->![UI application](access-global-account.png)
 
-3. Click **Account Explorer** on the navigation side bar and access the subaccount you used to create your Document Information Extraction UI subscription.
+3. Click **Account Explorer** on the navigation side bar and access the subaccount you used to create your subscription to the Document Information Extraction application.
 
     <!-- border -->![UI application](subaccounts.png)
 
@@ -129,5 +129,4 @@ Do the following to access your subscription to the Document Information Extract
 
     <!-- border -->![UI application](application.png)
 
-Congratulations, you have completed this tutorial.
-
+Congratulations, you've completed this tutorial.

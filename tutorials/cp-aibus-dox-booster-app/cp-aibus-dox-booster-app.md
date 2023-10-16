@@ -11,7 +11,7 @@ primary_tag: topic>machine-learning
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
+- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
   - How to access your trial account
@@ -82,16 +82,16 @@ You have successfully used the booster **Set up account for Document Information
 
 >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
 
-You are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+You're now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
 
 
 ### Access subscription (optional)
 
 
-> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've created with the **Set up account for Document Information Extraction** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the Document Information Extraction Trial application, you've subscribed to using the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
-Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
+Do the following to access the Document Information Extraction Trial application, without having to run the **Set up account for Document Information Extraction** booster once again:
 
 1. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
@@ -103,13 +103,12 @@ Do the following to access your subscription to the Document Information Extract
 
     <!-- border -->![UI application](subscriptions.png)
 
-4. Search for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
+4. Search for **Document Information Extraction Trial** under **Subscriptions** and click the arrow on the right to access it.
 
     <!-- border -->![UI application](subscriptions-tile.png)
 
-5. Here, you can click **Go to Application** to navigate to the application, and also manage the **Document Information Extraction Trial UI** roles.
+5. Here, you can click **Go to Application** to navigate to the application.
 
     <!-- border -->![UI application](subscriptions-action.png)
 
-Congratulations, you have completed this tutorial.
-
+Congratulations, you've completed this tutorial.

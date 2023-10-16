@@ -10,9 +10,11 @@ primary_tag: products>sap-fiori
 <!-- description --> Display data in fields and tables on the object page using annotations.
 
 ## Prerequisites
-- You have prepared your OData service as described in the previous tutorial [Prepare the RAP service](fiori-tools-rap-prepare-service).
-- You have finished the previous tutorial [Refine the List Report with Annotations](fiori-tools-rap-modify-list-report).
-
+- You have prepared your OData service as described in the previous tutorial [Prepare the RAP-Based Travel Service](fiori-tools-rap-prepare-service).
+- Ensure that you have finished all steps in previous tutorials:
+  [Prepare the RAP-Based Travel Service](fiori-tools-rap-prepare-service)
+  [Generate an SAP Fiori Elements Application based on a RAP-based Service](fiori-tools-rap-create-application)
+  [Refine the List Report with Annotations](fiori-tools-rap-modify-list-report)
 
 ## You will learn
   - How to add a title and a subtitle to the object page header
@@ -20,9 +22,12 @@ primary_tag: products>sap-fiori
   - How to add a section and use field groups to structure data
   - How to add a table
   - How to include pictures in a table
+  - How to modify an SAP Fiori elements application to add features like flexible column layout and  initial load of data
+  - How to update the metadata in your frontend application
 
 ## Intro
 >Whenever your unique suffix for creating objects is needed, the object names within this tutorial are named with suffix "######". For the screenshots the suffix "000100" was used.
+
 ---
 
 ### Add title and subtitle to object page header
@@ -388,5 +393,95 @@ In this step you will add the airline logo in a new column at the beginning of t
     <!-- border -->![App airline logos](t3-app-booking-airline-logos.png)
 
 
+
+### Activate flexible column layout
+
+
+With the flexible column layout you can have the list report and the object page open at the same time without the need to navigate back and forth between them.
+
+1. In the SAP Business Application Studio open the context menu by right clicking on your `webapp` folder and select the menu entry **Show Page Map**.
+
+    <!-- border -->![Right-click on webapp folder](SetFCL_1a.png)
+
+2. In the left area of the page map you see the UI structure of your application listing the tiles of the list report and the object page. In the right area you can see the page settings. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
+
+    <!-- border -->![The Page Map with page map and layout settings](SetFCL_2a.png)
+
+3. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page.
+
+    <!-- border -->![Click go on list report after refresh](SetFCL_3.png)
+
+    Now the object page is displayed together with the list report. When you select another item in the list report, the object page is updated.
+
+    &nbsp;
+
+
+
+### Activate initial loading of data
+
+
+As a last step of the tutorial you will activate the initial load feature that will trigger the loading of data within the list report automatically, i.e. without having to choose **Go**.
+
+1. Open the page map once again as shown in the previous step by choosing the **Show Page Map** option in the context menu of your application folder.
+
+2. In the UI structure of your application switch to edit mode of the **List Report** tile.
+
+    <!-- border -->![Configure Page icon on list report block](InitialLoad_1a.png)
+
+3. Now the structure of the list report is shown. Open the properties of the list report table by selecting the **Table** component.
+
+    <!-- border -->![Click on table in page editor](InitialLoad_2a.png)
+
+4. In the list of table properties select the value **Enabled** for the table property **Initial Load**. This setting is immediately active without the need of any confirmation.
+
+    <!-- border -->![Select true for initial load in drop down field](InitialLoad_3a.png)
+
+5. Your application is updated and you will see that the data of the list report table is loaded immediately without choosing **Go**.
+
+    <!-- border -->![Restart the app and see the initial load of data](InitialLoad_4.png)
+
+    &nbsp;
+
+
+
+### Update the metadata in your frontend application
+
+You will need to update the local copy of the metadata in order to work with the annotations locally in Fiori tools extensions such as XML Annotation LSP, Guided Development or Page Editor. 
+
+>As long as your application preview is based on the real service metadata, you will see the changes you made in the backend without refreshing the local metadata.
+
+You will now learn how to update the metadata with the next steps.
+
+1. Switch to the SAP Business Application Studio with your generated application from second tutorial [Generate an SAP Fiori Elements Application based on a RAP-based Service](fiori-tools-rap-create-application). If the application preview is already running in other browser tab, then you do not need to stop it. 
+   
+    From the hamburger menu, open **View->Command Palette...**, type **`Service Manager`**, and select **Fiori: Open Service Mananger**.
+
+    In the main service row click the `edit button`.
+
+    <!-- border -->![Start Service Manger](ServiceManager_1.png)
+
+2. Choose **Refresh** to update local metadata of your application.
+   
+    <!-- border -->![Refresh Service](ServiceManager_2.png)
+   
+    The Service Manager has updated the service metadata in the application’s **webapp/localService** folder.
+
+
+
+---
+
+Over the past four tutorials, you have used the SAP ABAP RESTful Application Programming Model, SAP Fiori tools and SAP Fiori elements for OData V4 to build this application. You have learned how to:
+
+- Use the wizard-style approach of SAP Fiori tools to generate an application based on an existing service
+
+- Refine a RAP based service with additional annotations to improve the user interface
+
+- Configure the application using the Page Map and Page Editor
+  
+- Refresh the local copy of service metadata in SAP Business Application Studio with Service Manager
+
+
+
+All of these tools (and more) can be used with any of the available SAP Fiori elements page types. Enjoy your future projects!
 
 ---
