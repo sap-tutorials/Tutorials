@@ -70,7 +70,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | **Cloud Connector Location ID**       | Used to set **Cloud Connector Location Id** for the Mobile Services Mobile Destinations                                                                                                                                                              |
     | **Background Job User**               | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
    
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **oData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
+    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 3. If you are not using a Middleware Server with an RFC Destination with Basic Authentication enabled, then you should receive a sign-in prompt after executing the transaction. Please use your SAP BTP username and password to sign in.
 
@@ -247,7 +247,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![OfflineProg](offlineprog.png)
 
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **oData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
+    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 4. Please ensure to save the generated file with a `.ini` file extension.
 
