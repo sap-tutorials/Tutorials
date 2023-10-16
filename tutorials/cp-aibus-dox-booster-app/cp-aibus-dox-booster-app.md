@@ -82,7 +82,7 @@ You have successfully used the booster **Set up account for Document Information
 
 >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
 
-You are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+You're now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
 
 

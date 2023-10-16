@@ -71,7 +71,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     <!-- border -->![Add Service Plan](save-entitlements.png)    
 
-You are now entitled to use Document Information Extraction and create instances of the service.
+You're now entitled to use Document Information Extraction and create instances of the service.
 
 >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
@@ -109,7 +109,7 @@ In the following dialog, click on **View Instance** to be navigated to the list 
 
 <!-- border -->![View Instances](view-instance.png)
 
-You have successfully created a service instance for Document Information Extraction.
+You've successfully created a service instance for Document Information Extraction.
 
 
 
@@ -126,10 +126,8 @@ You are now able to create a service key for your new service instance. Service 
 
       <!-- border -->![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
+You've successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 <!-- border -->![View Service Key](view-service-key.png)
 
 You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
-
-

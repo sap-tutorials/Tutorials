@@ -95,5 +95,4 @@ The Document Information Extraction UI is displayed:
 
 <!-- border -->![DOX-UI](app.png)
 
-You have successfully subscribed to the Document Information Extraction UI.
-
+You've successfully subscribed to the Document Information Extraction application.
