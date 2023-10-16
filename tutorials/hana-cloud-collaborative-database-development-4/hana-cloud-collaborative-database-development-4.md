@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 # Prepare Your SAP HANA Database Project for Collaboration
@@ -41,8 +41,6 @@ primary_tag: products>sap-hana-cloud
 
 
 This tutorial will show you how to prepare your SAP HANA Database Project for collaboration.
-
----
 
 ### Create a role with grant option
 
