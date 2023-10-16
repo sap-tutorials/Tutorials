@@ -30,7 +30,7 @@ primary_tag: software-product>sap-hana-cloud
 1. Get started to collaborate in SAP Business Application Studio
 2. Import data into a table in SAP HANA Database Project
 3. Change data structures using HDBTABLE and HDBMIGRATIONTABLE objects
-</li>
+
     > To answer the second question, create template projects that help you set up service connections, handle synonyms and prepare authorization management. You can create these templates once in the beginning and give your project team members a head-start. Using the template, they can build on your work and can quickly start working productively. The following 4 tutorials in this tutorial group will help you learn how to collaborate efficiently:
 
 
@@ -44,8 +44,6 @@ This tutorial will show you how to prepare your SAP HANA Database Project for co
 
 ### Create a role with grant option
 
-
-
 Now that you know the difference between `hdbtable` and `hdbmigration` table objects when changing data structures, we need to prepare some rights for the next tutorials. In this tutorial, you will create roles with specific permissions to give other users access to these tables. This is necessary, e.g., for creating calculation views, which you will do in the [last tutorial](hana-cloud-collaborative-database-development-7).
 
 First, we want to create a role that contains SELECT privileges with grant option, which means when someone is assigned this role, they can grant this privilege to others themselves.
@@ -56,7 +54,7 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 3.	In the window for creating a new SAP HANA Database Artifact, click on the     folder icon in the first field. Navigate to your project, the **`src`** folder, and then click on **Open**.
 
-4.	Select the artifact type as **Role (`hdbrole`)**.
+4.	Select the artifact type as **Role `hdbrole`**.
 
     <!-- border -->![Create hdbrole](ss-01-create-hdbrole.png)
 
@@ -75,9 +73,9 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
     <!-- border -->![Edit hdbrole name](ss-02-edit-hdbrole-name.png)
 
-    > ### IMPORTANT
+    > **IMPORTANT**
     >
-    > The '**#**' character at the end of the role name is necessary to create this role. Whenever you create roles with grant or admin options, they need to have a '**#**' character at the end of the role name.
+    > The **`#`** character at the end of the role name is necessary to create this role. Whenever you create roles with grant or admin options, they need to have a **`#`** character at the end of the role name.
 
 3.	Next, click on the tab **Object Privileges**. In the column **Object Name**, click on the ![Explorer Icon](ss-explorer-icon.png) icon in the first row.
 
@@ -168,7 +166,7 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
     <!-- border -->![Token](ss-11-token.png)
 
-> ### CAUTION
+> **CAUTION**
 > After you proceed to the next step, you cannot go back to view the token again unless you have saved it in another location. In such a case, you will need to generate a new token.
 
 
@@ -205,7 +203,7 @@ You have now committed all the changes made to the data structures during this s
 ### Add a remote origin via HTTPS connection
 
 
-1.	Go to the terminal and paste the following command. Before you hit Enter, replace <Username> with your GitHub username and <Repository name> with your GitHub repository name. (in this case for example: WS3_1)
+1.	Go to the terminal and paste the following command. Before you hit Enter, replace `Username` with your GitHub username and `Repository name` with your GitHub repository name. (in this case for example: WS3_1)
 
     ```Shell/Bash
     git remote add origin https://github.com/<Username>/<Repository name>.git
@@ -246,9 +244,3 @@ You can go back to your GitHub repository and verify that all the folders of you
 
 ### Test yourself
 
-
-
-
-
-
----
