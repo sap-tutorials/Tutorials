@@ -13,32 +13,68 @@ primary_tag: topic>machine-learning
 - You have created a service instance for Document Information Extraction: [Use Trial to Create a Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
 
 ## You will learn
-  - How to subscribe, assign role collection and access Document Information Extraction Trial UI
+  - How to add the entitlements for the Document Information Extraction Trial application
+  - How to subscribe, assign role collection and access the Document Information Extraction Trial application
 
 ---
 
-### Get subscribed
+### Check entitlements
 
 
-After completing the prerequisite tutorial [Use Trial to Create a Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial UI.
+After completing the prerequisite tutorial [Use Trial to Create a Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial application.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
     <!-- border -->![DOX-UI](enter-trial-account.png)
 
-2. On the navigation side bar, click **Service Marketplace**.
+2. On the navigation side bar, click **Entitlements** to see a list of all eligible services and applications. You are entitled to use every service in this list according to the assigned plan.
+   
+3. Search for **Document Information Extraction Trial**. ***If you find `document-information-extraction-trial-application` in the list, you are entitled to use the Document Information Extraction Trial application. Now you can set this step to **Done** and proceed with Step 2.***
+
+    <!-- border -->![Entitlements](check-entitlements.png)
+
+***ONLY if you DO NOT find `document-information-extraction-trial-application` in your list, proceed as follows:***
+
+  1. Click **Configure Entitlements**.
+
+    ![Configure Entitlements](configure-entitlements.png)
+
+  2. Click **Add Service Plans**.
+
+    ![Add Service Plan](add-service-plans.png)
+
+  3. Select **Document Information Extraction Trial**, and choose the **`default (Application)`** plan. Click **Add 1 Service Plan**.
+
+    <!-- border -->![Add Service Plan](add-entitlements.png)
+
+  4. **Save** your **Entitlements** changes.
+
+    <!-- border -->![Add Service Plan](save-entitlements.png)    
+
+You're now entitled to subscribe to the Document Information Extraction Trial application.
+
+>For more details on how to configure entitlements, quotas, subaccounts and plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
+
+
+
+### Get subscribed
+
+
+The **Service Marketplace** is where you find all the services and applications available on SAP BTP.
+
+1. To access it, click **Service Marketplace** on the navigation side bar.
 
     <!-- border -->![DOX-UI](access-service-marketplace.png)
 
-3. Search for **Document Information Extraction Trial** and click the tile.
+2. Search for **Document Information Extraction Trial** and click the tile.
 
     <!-- border -->![DOX-UI](tile.png)
 
-4. Click **Create**.
+3. Click **Create**.
 
     <!-- border -->![DOX-UI](subscribe.png)
 
-5. In the dialog, choose the `default Subscription` service plan and click **Create**.
+4. In the dialog, choose the `default Subscription` plan and click **Create**.
 
   <!-- border -->![DOX-UI](dialog-create.png)
 
@@ -77,7 +113,7 @@ Go back to **Instances and Subscriptions**, click the dots to open the menu and 
 
 <!-- border -->![DOX-UI](go-to-app.png)
 
-The Document Information Extraction Trial UI is displayed:
+The Document Information Extraction Trial application is displayed:
 
 <!-- border -->![DOX-UI](app.png)
 
