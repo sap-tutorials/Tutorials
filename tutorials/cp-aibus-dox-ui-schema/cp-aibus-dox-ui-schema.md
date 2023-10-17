@@ -45,7 +45,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](log-off.png)
 
 
-2. To create a custom schema, click the wheels icon and choose **Schema Configuration**.
+2. To create a custom schema, click the cogwheels icon and choose **Schema Configuration**.
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
