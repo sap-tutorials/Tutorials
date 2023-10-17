@@ -36,8 +36,7 @@ primary_tag: software-product>sap-fiori
 
 4. For your application you need to choose the main entity set from the OData service. Objects of this type will be displayed in the list report.
 
-    In your application, start with **Incidents**. As your application will not have a sub-object page, you do not need a navigation entity. 
-    Leave **Yes** selected for the prompt **Automatically add table columns to the list page and a section to the object page if none already exists**?.
+    In your application, start with **Incidents**. As your application will not have a sub-object page, you do not need a navigation entity. Leave **Yes** selected for the prompt **Automatically add table columns to the list page and a section to the object page if none already exists?**.
 
     When finished, click **Next**.
 
