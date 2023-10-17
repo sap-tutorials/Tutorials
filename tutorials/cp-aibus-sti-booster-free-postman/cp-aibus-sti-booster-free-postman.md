@@ -61,7 +61,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     <!-- border -->![Postman](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt)**. Click **Next**.
 
     <!-- border -->![Postman](booster-subaccount.png)
 
