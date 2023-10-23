@@ -57,7 +57,7 @@ Create a file called `tests.http` in the root of your project and copy the follo
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   # &sap-locale=de
@@ -275,7 +275,7 @@ To test this, restart your application from the debug panel and add a new reques
 # Submit Order
 #
 
-POST http://localhost:4004/buy/Orders
+POST http://localhost:4004/odata/v4/buy/Orders
 Content-Type: application/json;IEEE754Compatible=true
 
 { "Items":[{"book_ID":201, "amount":5}]  }
@@ -318,7 +318,7 @@ Create an entry for a new book, using the `AdminService`. Copy the request into 
 ```HTTP[5]
 ### ------------------------------------------------------------------------
 # Create book
-POST http://localhost:4004/admin/Books
+POST http://localhost:4004/odata/v4/admin/Books
 Content-Type: application/json;IEEE754Compatible=true
 Authorization: Basic alice:
 
@@ -342,7 +342,7 @@ Now try to get exactly the book you've just created.
 ```HTTP
 ### -------------------------------------------------------------------------
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
    &$filter=ID eq 2
 ```
 
@@ -407,7 +407,7 @@ Open the `tests.http` file and uncomment the `sap-locale` part of the GET reques
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   &sap-locale=de
