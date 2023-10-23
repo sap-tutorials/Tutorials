@@ -40,8 +40,6 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     To install the CLI, see [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to your path environment variable.
 
-    >If a different version of CLI is installed, for instance version 8, then use `cf8 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
-
     ```Shell
     xs -v
     ```
@@ -108,7 +106,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     ![services](cliExample.png)  
 
-    Additional details can be found at [Getting Started with the cf CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html) and [Get Started with the XS CLI Client](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/c00ed3f74c12479e9f3a8cdeb6e1519a.html).    
+    Additional details can be found at [Getting Started with the cf CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html) and [Get Started with the XS CLI Client](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/c00ed3f74c12479e9f3a8cdeb6e1519a.html).    
 
 
 ### Create Node.js app that queries SAP HANA
@@ -283,9 +281,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 For additional details see:
 
-[Developing Node.js in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3a7a0bece0d044eca59495965d8a0237.html)
+[Developing Node.js in the Cloud Foundry Environment](https://help.sap.com/docs/btp/sap-business-technology-platform/developing-node-js-in-cloud-foundry-environment)
 
-[Tutorial: Setting up your JavaScript Application in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/30d629eab05d41b9b853d417bdb2fc08.html)
+[Tutorial: Setting up your JavaScript Application in XS Advanced](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/30d629eab05d41b9b853d417bdb2fc08.html)
 
 
 ### Additional commands
@@ -355,7 +353,7 @@ For additional details see:
 ### Connect from the Node.js app running in the cloud to an on-premise database (optional)
 
 
-The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
+The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
 
 1. Follow step 3 in [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
 
@@ -508,7 +506,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
 ### Knowledge check
 
-Congratulations, you have built, deployed and run an app that queries SAP HANA in Cloud Foundry and XS advanced as well as become familiar with the command line interface.
+Congratulations, you have built, deployed, and run an app that queries SAP HANA in Cloud Foundry and XS advanced as well as become familiar with the command line interface.
 
 
 

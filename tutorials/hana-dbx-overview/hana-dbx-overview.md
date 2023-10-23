@@ -121,13 +121,13 @@ To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3
 
 The instructions on how to setup a free SAP HANA Cloud free tier or trial within SAP BTP are well covered in several other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
-
   * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
-  * [SAP Learning Journey - Provisioning and Administration with SAP HANA Cloud](https://learning.sap.com/learning-journey/provisioning-and-administration-with-sap-hana-cloud)
+  * [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
 
   * [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
+
+  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
 
   For more information on the SAP BTP see the following:
 
