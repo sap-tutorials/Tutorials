@@ -211,7 +211,7 @@ Now add an association from the `Authors` entity to the `Books` entity and use a
 
 Open the `data-model.cds` file in the graphical modeler and add a new relationship to the **Authors** entity.
 
-Use `books` as property name, select `my.bookshop.Books` as target entity and use `author` as backlink property.
+Stick with the defaults, which means using `books` as property name, `my.bookshop.Books` as target entity and `authors` as backlink property.
 
 <!-- border -->![The **New Relationship** screen to define the association to-many, the property name, the target entity type, and the backlink property.](graph-modeler-assoc-many.png)
 
