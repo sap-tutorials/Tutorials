@@ -41,7 +41,7 @@ The project wizard helps you create a CAP project.
 
 1. Select **CAP Project** and **Start** the wizard.
 
-1. Enter `bookshop` as the project name and select **Basic Sample Files**. Leave the rest as is.
+1. Enter `bookshop` as the project name and select **Minimal Sample**. Leave the rest as is.
 
 1. Click **Finish**.
 
@@ -122,7 +122,7 @@ Select the **Books** entity and add a relationship.
 
 <!-- border -->![Selected books entity in the graphical modeler and a pointer to the **Add relationship** icon.](graph-modeler-2.png)
 
-Use `author` as property name and select `my.bookshop.Authors` as target entity.
+Switch **Direction** to **Unidirectional** and then stick with the defaults, which means using `authors` as property name and `my.bookshop.Authors` as target entity.
 
 <!-- border -->![The **New Relationship** screen to define the association to-one, the property name, and the target entity type.](graph-modeler-3.png)
 
