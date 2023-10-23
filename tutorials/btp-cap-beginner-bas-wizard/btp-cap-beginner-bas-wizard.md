@@ -41,7 +41,7 @@ The project wizard helps you create a CAP project.
 
 1. Select **CAP Project** and **Start** the wizard.
 
-1. Enter `bookshop` as the project name and select **Basic Sample Files**. Leave the rest as is.
+1. Enter `bookshop` as the project name and select **Minimal Sample**. Leave the rest as is.
 
 1. Click **Finish**.
 
