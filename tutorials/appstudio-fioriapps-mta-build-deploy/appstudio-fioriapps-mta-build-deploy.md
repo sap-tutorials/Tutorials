@@ -34,7 +34,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 ### Build the application
 
 
-1. In the **Explorer** pane, right-click the `mta.yaml` file and select **Build MTA Project**.
+1. In the **Explorer** pane, navigate to **`webapp` > `view` > `node_modules`**. Right-click the `mta.yaml` file and select **Build MTA Project**.
 
     <br><br><!-- border -->![build mta](BAS-Build-1-.png)
 
@@ -58,7 +58,7 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     <!-- border -->![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials, and click **Sign in**. If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under "Cloud Foundry Environment".
+3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials (email and password), and click **Sign in**. If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under "Cloud Foundry Environment".
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
 
@@ -89,6 +89,8 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
     >The deployment process takes a few minutes. When the deployment process is complete, the notifications **Process finished.** and **Terminal will be reused by tasks.** will appear at the bottom of the **Task: Deploy** console.
 
     ><!-- border -->![deploy success](BAS-Deploy-2-.png)
+
+    If you have issues with the deployment, check out the [SAP Business Application Guided Answers](https://ga.support.sap.com/dtp/viewer/index.html#/tree/2827/actions/41344) for troubleshooting.
 
 
 ### Access the application on SAP BTP, Cloud Foundry environment
