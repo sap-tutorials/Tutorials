@@ -23,11 +23,9 @@ author_profile: https://github.com/Karunaharan
   ### Create an integration package and integration flow
 
 
-1. Choose **Design** > **Integrations** > **Create** to create an integration package.
+1. Choose **Design** > **Integrations and APIs** > **Create** to create an integration package.
 
-    >An integration flow should be associated with an integration package.
-
-      <!-- border -->![Create integration package](2-1-create-integration-package.png)
+    >An integration flow must be associated with an integration package.
 
       In the **Header** tab, provide a **Name** and **Short Description** for your integration package.
 

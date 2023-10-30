@@ -19,11 +19,9 @@ author_profile: https://github.com/Karunaharan
 
 ### Create an Integration Package and Integration Flow
 
-1. On the SAP Integration Suite home page, choose **Design** > **Integrations** > **Create** to create an integration package.
-
-    <!-- border -->![Create-Package](1-1-Create-Package.png)
+1. On the SAP Integration Suite home page, choose **Design** > **Integrations and APIs** > **Create** to create an integration package.
     
-    > An integration flow is always associated to an integration package.
+    > An integration flow must be associated to an integration package.
 
 2. On the **Header** tab, provide a **Name** and **Short Description** for your integration package.
 
