@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### Open SAP Business Application Studio
 
 
-As mentioned in the prerequisites of this tutorial, we assume that you've already set up your SAP Business Application Studio and created the needed dev space.
+As mentioned in the prerequisites of this tutorial, we assume that you've already set up your SAP Business Application Studio and created the needed Full Stack Cloud Application dev space.
 
 If the dev space is not running, you need to start it and enter the SAP Business Application Studio.
 
