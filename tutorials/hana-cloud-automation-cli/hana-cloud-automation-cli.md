@@ -21,7 +21,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ---
 
-SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating, deleting, starting, stopping, updating, upgrading, cloning, or running diagnostic checks.
+SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating, deleting, starting, stopping, updating, upgrading, cloning, or running diagnostic checks. 
 
 ![SAP HANA Cloud Central](HCC.png)
 
