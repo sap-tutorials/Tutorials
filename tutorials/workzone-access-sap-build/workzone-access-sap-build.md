@@ -37,12 +37,67 @@ There are 2 ways to access SAP Build Work Zone, advanced edition:
 
     <!-- border -->![Create](1-create.png)
 
-3. Click **Build a Business Site**.
+3. Click the **Build a Business Site** tile.
 
     <!-- border -->![Build a business site](2-build-business-site.png)
 
-4. Click **Manage Pages and Workspaces**.
+4. Click the **Manage Workpages and Workspaces** tile.
 
-    <!-- border -->![Manage pages and workspaces](3-manage-pages-workspaces.png)
+    <!-- border -->![Manage pages and workspaces](3-manage-workpages-workspaces.png)
 
     You've accessed SAP Build Work Zone, advanced edition and you can now create a workspace and add content to your pages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
