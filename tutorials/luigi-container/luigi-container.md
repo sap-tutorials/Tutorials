@@ -78,7 +78,7 @@ npm install ui5-tooling-modules -D
 
 2. In this step, you will add the UI5 tooling task and middleware declaration. Open your application's `ui5.yaml` file. Replace the content with the one below. 
 
-> **Note:** Keep in mind that the version numbers might be newer in your case.
+> **Note:** Keep in mind that the version numbers might be higher in your case.
 
 ```yaml
 specVersion: "3.0"
@@ -205,7 +205,7 @@ npm install @luigi-project/container
 
 5. Go to the `package.json` file and ensure that the ` @luigi-project/container` and `ui5-tooling-modules` dependencies are added.
 
-> **Note:** Keep in mind that the version numbers might be newer in your case.
+> **Note:** Keep in mind that the version numbers might be higher in your case.
 
 ```json
 [...]
@@ -221,7 +221,7 @@ npm install @luigi-project/container
 
 ### Use Luigi Container 
 
-1. In this step, you will use Luigi container in your app and configure the Luigi [viewURL](https://docs.luigi-project.io/docs/navigation-parameters-reference/?section=viewurl) property in order to render a micro frontend on the page.
+1. In this step, you will use Luigi Container in your app and configure the Luigi [viewURL](https://docs.luigi-project.io/docs/navigation-parameters-reference/?section=viewurl) property in order to render a micro frontend on the page.
 
 Go to the `webapp/view/Main.view.xml` file of your UI5 application. Replace the content with the following: 
 
