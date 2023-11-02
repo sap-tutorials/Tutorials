@@ -56,6 +56,8 @@ Paste the content of the clipboard in a terminal or command line window. Hit **E
 
 >**Important:** In a Windows command prompt/terminal, you must use double-quotes ("") for your entire payload and escape any other double-quotes(\") inside the payload.
 
+>Also, if `revocation function error` occurs, pass `-k` or `--insecure` as parameter to bypass this check in Windows system.
+
 >You can use `CTRL+C` to stop the command from running.
 
 ![terminal with code copied](6.png)
