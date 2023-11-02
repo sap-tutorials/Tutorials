@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Aleksandra Simeonova
+author_profile: https://github.com/alexandra-simeonova
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>javascript]
@@ -31,8 +33,6 @@ This tutorial will show you how to incorporate micro frontends inside a [UI5](ht
 > **Note:** In addition to this tutorial, you can also experiment with the Luigi Container test app on [GitHub](https://github.com/SAP/luigi/tree/main/container/test-app).
 
 ---
-
-## Steps
 
 ### Install UI5 generator 
 
