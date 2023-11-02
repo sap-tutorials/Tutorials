@@ -20,11 +20,11 @@ primary_tag: topic>user-interface
 
 ## Intro
 
-[Project "Luigi"](luigi-project.io) is an open-source micro frontend framework suitable for SAP environments, providing Fiori-compliant navigation out-of-the-box. Luigi is technology-agnostic, allowing you to create your app using any given frontend toolkit. 
+[Project "Luigi"](https://luigi-project.io) is an open-source micro frontend framework suitable for SAP environments, providing Fiori-compliant navigation out-of-the-box. Luigi is technology-agnostic, allowing you to create your app using any given frontend toolkit. 
 
 Normally, Luigi consists of two main parts: **Luigi Core** and **Luigi Client**. Core refers to the main app which houses the micro frontends, while Client refers to the micro frontends themselves. 
 
-However, a third feature called **Luigi Container** allows you to easily insert Luigi micro frontends anywhere without the need for a Luigi Core application. This feature simplifies the use of Luigi for developers, eliminating the need for significant changes in their applications.
+However, a third feature called [Luigi Container](https://docs.luigi-project.io/docs/luigi-container) allows you to easily insert Luigi micro frontends anywhere without the need for a Luigi Core application. This feature simplifies the use of Luigi for developers, eliminating the need for significant changes in their applications.
 
 This tutorial will show you how to incorporate micro frontends inside a [UI5](https://sdk.openui5.org) application. Nevertheless, a similar process will also apply to other frontend frameworks such as [Angular](https://angular.io/) or [React](https://react.dev/).
 
