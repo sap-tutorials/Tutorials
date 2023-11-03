@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add Business Logic to Your Application
 description: This tutorial shows you how to create an SAP Fiori Elements app on top of your previously created CAP application.
 keywords: cap

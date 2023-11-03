@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Use Events from SAP S/4HANA Cloud to Update Your Deployed CAP Application
 description: This tutorial shows you how to create and change a Business Partner in your SAP S/4HANA Cloud system and see the updates in your CAP application.
 keywords: cap

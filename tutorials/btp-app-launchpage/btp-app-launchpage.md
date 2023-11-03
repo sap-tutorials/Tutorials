@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Use a Local Launch Page
 description: This tutorial shows you how to add a launch page for local testing.
 keywords: cap
