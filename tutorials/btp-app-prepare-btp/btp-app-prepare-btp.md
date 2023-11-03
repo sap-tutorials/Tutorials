@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare for SAP BTP Development
 description: Learn how to prepare SAP BTP and Cloud Foundry for application deployment.
 keywords: cap

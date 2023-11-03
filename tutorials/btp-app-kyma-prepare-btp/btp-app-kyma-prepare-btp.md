@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare for SAP BTP Development with Kyma
 description: Learn how to prepare SAP BTP and Kyma for application deployment.
 keywords: cap

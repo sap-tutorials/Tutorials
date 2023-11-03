@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add SAP HANA Support to Your Project
 description: This tutorial shows you how to set up the SAP HANA Cloud service instance.
 keywords: cap

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Create a UI Using Freestyle SAPUI5
 description: This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
 keywords: cap
