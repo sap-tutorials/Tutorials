@@ -84,7 +84,7 @@ You're most likely here because you did not get all the service plans available 
 
 5. Once in edit mode, you can change quotas for existing service plans, add new service plans to the subaccount or remove service plans from that subaccount to make them available again at global account level.
 
-    Right now, you want to add missing entitlements, so choose **Add Service Plans**. Have a look at the following example. Please note that you need to enable entitlements according to your use case:
+    Right now, you want to add missing entitlements, so choose **Add Service Plans**. Have a look at the following example. Please note that you need to enable entitlements according to your needs:
 
 
     <!-- border -->![Click Configure Entitlemts](ConfigEntitlements.gif)
