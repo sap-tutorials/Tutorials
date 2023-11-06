@@ -52,7 +52,7 @@ In addition, SAP Automation Pilot provides an option to schedule commands and pr
 ### Import the automation catalog
 The catalog below contains commands and inputs for those commands that can be used to automate tasks within SAP HANA Cloud instances.
 
-1. Import the catalog below into the SAP Automation Pilot.
+1. Import the catalog below into the SAP Automation Pilot.  
 
     ![import catalog](import.png)
 
@@ -903,8 +903,10 @@ The catalog below contains commands and inputs for those commands that can be us
                 "errorMessages": []
               },
               {
-                "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                "execute": "sm-sapcp:UpdateServiceInstance:1",
                 "input": {
+                  "instanceId": "$(.InstanceDetails.instanceId)",
+                  "serviceKey": "$(.InstanceDetails.serviceKey)",
                   "deadline": "30",
                   "parameters": "$(.generateJSON.output.output[0])"
                 },
@@ -954,11 +956,13 @@ The catalog below contains commands and inputs for those commands that can be us
 
     ![my catalog](my-catalog.png)
 
+    >Should you wish to delete this catalog, perhaps to import a newer version, press the Edit Multiple button for both commands and inputs as a non empty catalog cannot be deleted.
+
 2. Examine the imported commands and inputs.
 
     ![Commands](commands.png)
 
-    The commands that start with CF are for instances that were provisioned to Cloud Foundry.  
+    The commands and inputs that start with CF are for instances that were provisioned to Cloud Foundry.  
 
     ![Inputs](inputs.png)
 
@@ -993,13 +997,13 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         No additional inputs are required.
 
-       The command will then complete, and its status can be examined.
+        The command will then complete, and its status can be examined.
 
-      ![completed command](status.png)
+        ![completed command](status.png)
 
-      The status of the SAP HANA Cloud instance will update to Starting.
+        The status of the SAP HANA Cloud instance will update to Starting.
 
-      ![HCC starting](starting.png)
+        ![HCC starting](starting.png)
 
 3. Open the command **UpdateHC**.  It can be used to perform an update of an SAP HANA Cloud instance.  
 
@@ -1035,7 +1039,7 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         This check is performed in the validation step of the commmand getParams.  
         
-      ![validate step](validation.png)
+        ![validate step](validation.png)
 
         This is performed using a [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#). 
 
@@ -1126,7 +1130,7 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         This check is performed in the validation step of the commmand getParams.  
         
-      ![validate step](validation2.png)
+        ![validate step](validation2.png)
 
         This is performed using a [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#). 
 
