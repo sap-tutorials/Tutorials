@@ -28,9 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Access your global account.
 
-    <!-- border -->![Postman](global-account.png)
-
-    >You can also perform this tutorial series using a trial account. For that, follow the steps in [Use Trial to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman).
+    <!-- border -->![Postman](global-account.png)    
 
 
 

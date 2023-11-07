@@ -24,11 +24,11 @@ In the following tutorials, Postman is used to communicate and interact with you
 ### Download locally Postman environment
 
 
-If you have downloaded locally the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-free-postman) or [Use Trial to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman), you can set steps 1 and 2 to **Done** and proceed with Step 3.
+If you have downloaded locally the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-free-postman), you can set steps 1 and 2 to **Done** and proceed with Step 3.
 
 Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
-In step 5, you are going to use this feature to store your service key details obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) or [Use Trial to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key) and reuse them in your requests to your service instance.
+In step 5, you are going to use this feature to store your service key details obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) and reuse them in your requests to your service instance.
 
 Make a local copy of the Postman environment sample file for Service Ticket Intelligence available on GitHub:
 
@@ -103,7 +103,7 @@ Select it to be able to use the requests in the collection.
 ### Edit Postman environment
 
 
-If you are using the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-free-postman) or [Use Trial to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman), your service key details have already been entered in the Postman environment sample file. You can set this step to **Done** and proceed with the next tutorial: [Use Service Ticket Intelligence and Postman to Classify Service Requests](cp-aibus-sti-postman-classification).
+If you are using the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-free-postman), your service key details have already been entered in the Postman environment sample file. You can set this step to **Done** and proceed with the next tutorial: [Use Service Ticket Intelligence and Postman to Classify Service Requests](cp-aibus-sti-postman-classification).
 
 1. Click **Environment quick look**.
 
@@ -113,7 +113,7 @@ If you are using the Postman environment and collection sample files from the **
 
     <!-- border -->![Postman](postman-environment-edit.png)
 
-    As detailed in the images below, enter the following values from your service key (obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) or [Use Trial to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key)) into the corresponding spaces of the **Manage Environments** dialog box:
+    As detailed in the images below, enter the following values from your service key (obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key)) into the corresponding spaces of the **Manage Environments** dialog box:
 
     |  Service key value                                                | Postman variable
     |  :----------------------------------------------------------------| :--------------------
