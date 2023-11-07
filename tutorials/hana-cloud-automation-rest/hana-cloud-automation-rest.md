@@ -261,7 +261,7 @@ In this step, a [Node.js](https://nodejs.org/en) application will be used to upd
 
     Highlighted values are to be updated with details from your binding key. Sensitive values could alternatively be read from environment variables.  Remember to also update the instance ID.
 
-    ```JavaScript[4, 5, 7, 9, 10]
+    ```JavaScript[4, 7, 9, 10, 16]
     const fetch = require('node-fetch');
 
     //replace with your url from the service manager binding
