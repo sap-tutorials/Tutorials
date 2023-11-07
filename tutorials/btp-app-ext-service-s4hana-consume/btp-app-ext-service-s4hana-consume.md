@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add Services and Consume an External Service from SAP S/4HANA
 description: This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
 keywords: cap

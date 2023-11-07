@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Introduction to Application Development Using CAP and Node.js
 description: Learn about SAP Cloud Application Programming Model (CAP) and application development on SAP BTP.
 keywords: cap

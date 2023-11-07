@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Set Up SAP HANA Cloud for Kyma
 description: Learn how to add SAP HANA client and configuration, create an HDI container for an SAP HANA Cloud instance on Cloud Foundry, and create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
 keywords: cap
@@ -70,7 +70,8 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible f
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Set Up SAP HANA Cloud)]
-1. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
+1. Make sure that your HANA instance described in the pre-requisites is running.
+2. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
 
     - Cloud Foundry: run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
     - Kyma: you should be already logged in, if you've followed the instructions in `Step 4: Login to your Kyma cluster` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in `Step 6: Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment).

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
 description: This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
 keywords: cap

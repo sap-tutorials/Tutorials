@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add Helm Chart
 description: Learn how to add a Helm chart to your project and configure container image, pull secret, cluster domain, and SAP HANA secret in the Helm chart.
 keywords: cap
@@ -54,14 +54,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
             tag: latest
     ```
 
-    > Looking for your docker server URL?
-
-    > The docker server URL is the same as provided in `Step 6: Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
-
-    > ```json
-    > cat ~/.docker/config.json
-    > ```
-
     > In case you're using Docker Hub as your container registry, replace the placeholder `<your-container-registry>` with your Docker Hub user ID.
 
 
@@ -70,7 +62,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Configure pull secret)]
-1. In the `chart/values.yaml` file, make sure that the pull secret is defined:
+1. In the `chart/values.yaml` file, define the pull secret as the one you created before:
 
     ```YAML[4]
     global:

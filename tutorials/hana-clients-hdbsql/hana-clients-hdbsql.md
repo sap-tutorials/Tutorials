@@ -17,14 +17,14 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a user, schema, tables and import data
 
 ## Intro
-HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another more user-friendly option to execute SQL operations is the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of a HANA Cloud instance or a server + applications SAP HANA, express edition install.  
+HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another more user-friendly option to execute SQL operations is the [SQL Console](hana-dbx-hcc) that is part of SAP HANA Cloud Central or the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of a server + applications SAP HANA, express edition install.  
 
 ---
 
 ### Connect to SAP HANA using hdbsql
 
 
-This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
+This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
 
@@ -106,7 +106,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u <USER> -p <Password>
         >```
 
-        > For additional details see [Server Certificate Authentication](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/a95754380f4c4c05b728524f9cd652e3.html).
+        > For additional details see [Server Certificate Authentication](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/a95754380f4c4c05b728524f9cd652e3.html).
 
 
         >---
@@ -115,7 +115,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
-        > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).  
+        > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).  
         >
         > It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to `trust.pem` and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
         >
@@ -158,7 +158,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 ### Create user and schema
 
 
-This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database. 
+This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent step and will be used to connect to the database. 
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
@@ -199,15 +199,15 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
 
     Notice that the current user and schema have also changed from `DBADMIN` or `SYSTEM` to `USER1` and that the schema is now HOTEL.
 
-For further information on SQL to create a user or schema, see [CREATE USER Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html), [CREATE SCHEMA Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d4ecad7519101497d192700ce5f3df.html),
- [Grant Statement(Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), and [Privileges](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/fb0f9b103d6940f28f3479b533c351e9.html).
+For further information on SQL to create a user or schema, see [CREATE USER Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control), [CREATE SCHEMA Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-schema-statement-data-definition),
+ [Grant Statement(Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control), and [Privileges](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/privileges).
 
 
 
 ### Store connection details in secure user store (hdbuserstore)
 
 
-Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [SAP HANA User Store](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/708e5fe0e44a4764a1b6b5ea549b88f4.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
+Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [SAP HANA User Store](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/708e5fe0e44a4764a1b6b5ea549b88f4.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
 
 1. Exit out of `hdbsql` and type `hdbuserstore` to see a list of available commands such as Set, List and Delete.
 
@@ -236,7 +236,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     > Starting with the 2.6 SAP HANA client, connections on port 443 enable encryption by default so the `-e or -attemptencrypt` parameters are not needed for SAP HANA Cloud connections.
 
-[Using Stored Connection Information](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/708e5fe0e44a4764a1b6b5ea549b88f4.html) contains details on how an application can use a `hdbuserstore` key.
+[Using Stored Connection Information](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/708e5fe0e44a4764a1b6b5ea549b88f4.html) contains details on how an application can use a `hdbuserstore` key.
 
 
 
@@ -452,7 +452,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
      ![View the list of tables and procedures](list-tables-procs.png)
 
-    For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
+    For further information, see [CREATE TABLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-table-statement-data-definition) and [INSERT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/insert-statement-data-manipulation).
 
 
     > ### Some Tips
@@ -465,7 +465,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     SELECT * FROM "HOTEL"."ROOM"; --succeeds
     ```
 
-    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/introduction-to-sql#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
     > ---
 
@@ -482,7 +482,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 ### Interactive, non-interactive, substitution variables, and prepared statements
 
 
-1. HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
+1. HDBSQL can [run commands](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
     ```SQL
     SELECT * FROM HOTEL.CUSTOMER; -- interactive
@@ -490,7 +490,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     hdbsql -U USER1UserKey -I hotel.sql -- batch file
     ```
 
-2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
+2. [Substitution variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
 
     Create a file named `findCustomers.sql`.
 

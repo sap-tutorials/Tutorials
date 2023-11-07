@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Configure and Run a Predefined SAP Continuous Integration and Delivery (CI/CD) Pipeline
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 keywords: cap

@@ -6,7 +6,7 @@ tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Executing SAP HANA Cloud tasks from the command line
+# Executing SAP HANA Cloud Tasks from the Command Line
 <!-- description --> Learn how to execute administrative tasks from the command line which can be more efficient and less error prone when performing repetitive tasks.
 
 ## Prerequisites
@@ -17,15 +17,15 @@ primary_tag: software-product>sap-hana-cloud
 ## You will learn
   - How to execute SQL commands against an SAP HANA Cloud instance using hdbsql or dbisql from the command line
   - An overview of two different runtimes that SAP HANA Cloud can be provisioned into
-  - How to use the BTP, CF, and service manager command line interfaces (CLI's) with an SAP HANA Cloud instance
+  - How to use the BTP, CF, and service manager command line interfaces (CLIs) with an SAP HANA Cloud instance
 
 ---
 
-SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating a database instance, starting, or stopping an instance, updating an instance, or running diagnostic checks.
+SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating, deleting, starting, stopping, updating, upgrading, cloning, or running diagnostic checks. 
 
 ![SAP HANA Cloud Central](HCC.png)
 
-A text-based interface can be faster, more efficient, and less error prone when performing repetitive tasks.  This tutorial will provide examples of performing management tasks using the command line.
+A text-based interface can be faster, more efficient, and less error prone when performing repetitive tasks.  This tutorial will provide examples of performing administrative tasks using the command line.
 
 ![running and scheduling tasks](running-scheduling.png)
 
@@ -101,7 +101,7 @@ The example shown below uses HANA_Configuration_Overview_SHC which is one of the
 
 
 ### SAP HANA Cloud runtimes
-The SAP Business Technology Platform (SAP BTP) provides multiple [runtimes](https://help.sap.com/docs/btp/sap-business-technology-platform/environments) in which services can be run.  This becomes important when attempting to interact with the service from a command line interface (CLI) as there are different CLI's for each runtime environment.
+The SAP Business Technology Platform (SAP BTP) provides multiple [runtimes](https://help.sap.com/docs/btp/sap-business-technology-platform/environments) in which services can be run.  This becomes important when attempting to interact with the service from a command line interface (CLI) as there are different CLIs for each runtime environment.
 
 ![SAP BTP runtimes for SAP HANA Cloud](runtimes.png)
 
@@ -119,7 +119,7 @@ Further details can be found at [Consuming SAP BTP Services from Various Environ
 
     When creating an instance using the Cloud Foundry edition of SAP HANA Cloud Central, the instance is provisioned in the Cloud Foundry environment.
 
-    You can also choose to copy the JSON parameters that the multi-environment edition wizard generates and then use the SAP BTP wizard (or one of the CLI's shown in the next section) to provision the instance in your environment of choice.
+    You can also choose to copy the JSON parameters that the multi-environment edition wizard generates and then use the SAP BTP wizard (or one of the CLIs shown in the next section) to provision the instance in your environment of choice.
 
     ![copy configuration](create-json.png)
 
@@ -140,9 +140,9 @@ Further details can be found at [Consuming SAP BTP Services from Various Environ
 
 
 ### Overview of the CLIs
-A command line interface (CLI) is a text-based interface.  There are three different CLI's that can be used with an SAP HANA Cloud instance to perform administrative tasks such as start, stop, create, delete, update, or upgrade.
+A command line interface (CLI) is a text-based interface.  There are three different CLIs that can be used with an SAP HANA Cloud instance to perform administrative tasks such as start, stop, create, delete, update, or upgrade.
 
-The CLI used depends on if the SAP HANA Cloud instances were provisioned to the subaccount (Other) or to a Cloud Foundry space.  Details on the three CLIs can be found at [Create and Manage SAP HANA Cloud Instances Using the CLI](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-and-manage-sap-hana-cloud-instances-using-cli).  
+The CLI used depends on whether the SAP HANA Cloud instances were provisioned to the subaccount (Other) or to a Cloud Foundry space.  Details on the three CLIs can be found at [Create and Manage SAP HANA Cloud Instances Using the CLI](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-and-manage-sap-hana-cloud-instances-using-cli).  
 
 [SAP BTP CLI](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/7c6df2db6332419ea7a862191525377c.html) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.  More details can be found in the [btp CLI Command Reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-cli-command-reference).  Details on how to install the CF CLI can be found in the tutorial [Get Started with the SAP BTP Command Line Interface](cp-sapcp-getstarted).  Additionally, the SAP BTP CLI can be used to create and configure subaccounts.
 
@@ -392,7 +392,7 @@ This step will be used to update the description of the instance.  The existing 
 * Run the below command to stop the specified instance.
 
     ```Shell
-    btp.exe update services/instance --id <Instance ID> --parameters stop.json
+    btp update services/instance --id <Instance ID> --parameters stop.json
     ```
 
 #### Start an instance
@@ -409,7 +409,7 @@ This step will be used to update the description of the instance.  The existing 
 * Run the below command to start the specified instance.
 
     ```Shell
-    btp.exe update services/instance --id <Instance ID> --parameters start.json
+    btp update services/instance --id <Instance ID> --parameters start.json
     ```
 
 #### Check for and apply software updates
@@ -450,6 +450,132 @@ A tool such as [jq](https://github.com/jqlang/jq) can be used to filter the resu
 * Check in SAP HANA Cloud Central to see that the upgrade is occurring.  
 
     ![after upgrade](after-upgrade.png)
+
+### Optional Examples using the BTP CLI
+The following examples require a non trial or free tier SAP HANA Cloud instance.
+
+#### Clone an instance
+An SAP HANA Cloud database instance may be cloned.  As an example, you may wish to periodically replace a QA instance with a new instance that has a copy of the latest data from a production instance.  
+
+1. Select an instance to clone.  It **cannot** have an attached data lake.  To verify that it does not have an attached data lake, confirm that it has the option **Add Data Lake** and that it has the option **Create Template to Clone Instance**.
+
+    ![add data lake](add-data-lake.png)
+
+2. Create a file named **clone-template.json** with the contents below and modify it as appropriate.
+    ```JSON
+    {
+        "data": {
+            "requestedOperation": {
+                "name": "TEMPLATE_BACKUP",
+                "arguments": {
+                    "template_name": "<name>",
+                    "template_storage_endpoint": "<hdl-files-storage-endpoint>",
+                    "hdl_access_token": "<hdl_access_token>",
+                    "backup_encryption_passphrase": "<encryption_passphrase>"
+                }
+            }
+        }
+    }
+    ```
+    
+    ![clone.json](clone-json.png)
+
+    Notice that endpoint above is the Files REST API Endpoint prefixed with hdlfs://  
+
+    The token above is the concatenation of client.key, client.crt, and ca.crt with the newlines removed.
+
+    Further information about data lake files and the certificates required to configure an instance can be found at step 4 of [Add Databases to the SAP HANA Database Explorer](hana-dbx-connections).
+
+3. Create the template.
+
+    ```Shell
+    btp update services/instance --id <instance ID> --parameters clone-template.json
+    ```
+
+    ![create the template](create-template.png)
+
+    After the command completes, the template files can be viewed in the specified data lake files instance.  
+    
+    ![template files](cloning-template-files.png)
+
+4. Create a file named **clone.json** with the contents below and modify it as appropriate.
+
+    ```JSON
+    {
+        "data": {
+            "requestedOperation": {
+            "name": "TEMPLATE_RECOVERY",
+            "arguments": {
+                "template_name": "<name>",
+                "template_storage_endpoint": "<hdl-files-storage-endpoint>",
+                "hdl_access_token": "<hdl_access_token>",
+                "backup_encryption_passphrase": "<encryption_passphrase>"
+            },
+            "provisioned_size_gib": <disk size in GB>,
+                "systempassword": "<password>",
+                .....
+            }
+        }
+    }
+    ```
+
+    The contents after requestedOperation are the same as the create.json covered previously.
+
+    ![create clone json example](create-clone-json.png)   
+
+5. After the template has been created, it can be used to create the clone.
+
+    ```Shell
+    btp create services/instance --name <instance name to create> --offering-name hana-cloud --plan-name hana --parameters clone.json
+    ```
+
+    ![create the clone](create-clone.png)
+
+    After the command completes, a new SAP HANA Cloud instance named Clone is created that will have the same schema and data as the instance Clone_Source.  The data is stored in the files created when the template was created so the data in the clone reflects the data that was captured during the template creation.
+    
+    ![creating clone](creating-clone.png)
+
+Additional details can be found at [Clone an SAP HANA Database Instance](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/clone-sap-hana-database-instance).
+
+#### Perform a takeover
+A takeover from an SAP HANA instance to a replica can performed.  This can happen automatically or can be triggered from the SAP HANA Cloud Central actions menu or using the CLI command illustrated below.  Additional details on the topic of replicas can be found at [Increasing System Availability](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/increasing-system-availability).
+
+1. Find an instance to perform a takeover on.  It will have a replica, and its action menu will have an option to start a takeover.
+
+    ![instance with a replica](replica.png)
+
+2. The details of the replica can be seen when after selecting Manage Configuration from the actions menu.
+
+    ![manage configuration](replica-edit.png)
+
+3. Create a file named **takeover.json** with the contents below and modify it as appropriate.
+
+    ```JSON
+    {
+        "data": {
+            "requestedOperation": {
+                "name": "synchronous_replication_takeover"
+            },
+            "arguments": {
+                "secondary_az": "us-east-1c"
+            }
+        }
+    }
+    ```
+
+4. Perform the takeover
+
+    ```Shell
+    btp update services/instance --id <instance ID> --parameters takeover.json
+    ```
+
+    ![start a takeover](takeover.png)
+
+    The instance will briefly show a starting status and when it is back to running, the source database will now be in the new availability zone.
+
+    ![after takeover](after-takeover.png)
+
+
 
 ### Examples using the CF CLI
 
@@ -736,4 +862,4 @@ Further details can be found at [Service Manager Control (SMCTL) CLI Commands](h
 
 
 ### Knowledge check
-You have now executed a diagnostic SQL statements from the command line, are aware of the different runtimes in the SAP BTP platform that an SAP HANA Cloud instance can be provisioned to, and have used one or more of the CLIs to manage an SAP HANA Cloud instance.
+You have now executed diagnostic SQL statements from the command line, are aware of the different runtimes in the SAP BTP platform that an SAP HANA Cloud instance can be provisioned to, and have used one or more of the CLIs to manage an SAP HANA Cloud instance.

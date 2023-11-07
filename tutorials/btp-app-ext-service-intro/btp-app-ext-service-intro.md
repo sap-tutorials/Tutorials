@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Introduction to Consuming Remote Services Using CAP
 description: Learn about external service APIs, how to get an API definition from the SAP API Business Hub, and how to import an API definition to your project.
 keywords: cap

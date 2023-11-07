@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare SAP S/4HANA System by Activating the Business Partner OData Service
 description: This tutorial shows you how to activate your Business Partner OData service and creating a technical user.
 keywords: cap
