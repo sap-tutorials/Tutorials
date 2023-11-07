@@ -236,7 +236,7 @@ There must be a match between the issuer value in the X509 provider and the ISSU
 
 Further details can be found at [CREATE X509 PROVIDER Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/3b3163d6ad0f4eb9bd73c7c060f49649.html) and [CREATE PSE statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/4d80bf63fc374a7f99be94d8ce70a07a.html).  
 
-### Create a Database User
+### Create a database user
 Execute the following SQL statement to create a database user.
 
 

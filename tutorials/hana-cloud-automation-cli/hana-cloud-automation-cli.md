@@ -29,6 +29,7 @@ A text-based interface can be faster, more efficient, and less error prone when 
 
 ![running and scheduling tasks](running-scheduling.png)
 
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ### Executing SQL Statements from a shell
 
@@ -42,6 +43,8 @@ The example shown below uses HANA_Configuration_Overview_SHC which is one of the
 1. Open the SAP Note, download the zip file, and unzip its contents.  It contains many diagnostic queries for an SAP HANA database.  The download section shown below is near the bottom of the SAP Note.
 
     ![download attachment](download-sql-statements.png)
+
+    The HANA_Configuration_Overview_SHC.txt diagnostic query will be used.
 
     ![hana configuration overview](hana-configuration-overview.png)
 
@@ -144,7 +147,7 @@ A command line interface (CLI) is a text-based interface.  There are three diffe
 
 The CLI used depends on whether the SAP HANA Cloud instances were provisioned to the subaccount (Other) or to a Cloud Foundry space.  Details on the three CLIs can be found at [Create and Manage SAP HANA Cloud Instances Using the CLI](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-and-manage-sap-hana-cloud-instances-using-cli).  
 
-[SAP BTP CLI](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/7c6df2db6332419ea7a862191525377c.html) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.  More details can be found in the [btp CLI Command Reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-cli-command-reference).  Details on how to install the CF CLI can be found in the tutorial [Get Started with the SAP BTP Command Line Interface](cp-sapcp-getstarted).  Additionally, the SAP BTP CLI can be used to create and configure subaccounts.
+[SAP BTP CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/account-administration-using-sap-btp-command-line-interface-btp-cli) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.  More details can be found in the [btp CLI Command Reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-cli-command-reference).  Details on how to install the CF CLI can be found in the tutorial [Get Started with the SAP BTP Command Line Interface](cp-sapcp-getstarted) and [BTP Onboarding: BTP CLI](https://www.youtube.com/watch?v=eFOjC4OAp2w&list=PLkzo92owKnVw3l4fqcLoQalyFi9K4-UdY&index=5).  Additionally, the SAP BTP CLI can be used to create and configure subaccounts.
 
 [Cloud Foundry CLI (CF CLI)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-cloud-foundry-command-line-interface-cf-cli-with-sap-hana-cloud) can be used to create, update, configure, or delete instances provisioned in a Cloud Foundry space.  Further details can be found at [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) and [Cloud Foundry Releases](https://github.com/cloudfoundry/cli/releases).
 
@@ -451,7 +454,7 @@ A tool such as [jq](https://github.com/jqlang/jq) can be used to filter the resu
 
     ![after upgrade](after-upgrade.png)
 
-### Optional Examples using the BTP CLI
+### Additional Examples using the BTP CLI (Optional)
 The following examples require a non trial or free tier SAP HANA Cloud instance.
 
 #### Clone an instance
