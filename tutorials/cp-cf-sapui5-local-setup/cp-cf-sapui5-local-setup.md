@@ -59,7 +59,7 @@ You should see the easy-ui5 generator in the list of generators:
 
 ### Install the MTA build tool
 
-In Cloud Foundry, applications are usually being ship as so called `mta` archives. The [Multi-target Application Archive Builder](https://github.com/SAP/cloud-mta-build-tool) is a standalone command-line tool that builds a deployment-ready multi-target application archive `.mtar` file. You can leverage `npm` to install this tool as well:
+In Cloud Foundry, applications are usually being shipped as so called `mta` archives. The [Multi-target Application Archive Builder](https://github.com/SAP/cloud-mta-build-tool) is a standalone command-line tool that builds a deployment-ready multi-target application archive `.mtar` file. You can leverage `npm` to install this tool as well:
 
 ```Bash
 npm install -g mbt
