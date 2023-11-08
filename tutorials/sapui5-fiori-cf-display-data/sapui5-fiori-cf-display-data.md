@@ -9,15 +9,15 @@ author_profile: https://github.com/nicoschoenteich
 ---
 
 # Display Data from the Northwind Service
-<!-- description --> Learn how to display data in your application and how to navigate between views.
+<!-- description --> Learn how to display data in your SAPUI5 application and how to navigate between views.
 
 ## Prerequisites
-- You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
+- You have previously created a SAPUI5 based project, for instance with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
 
 ## You will learn
-  - How to use a sub-generator to add an OData model to the SAPUI5 application
-  - How to navigate between SAPUI5 views
-  - How to configure UI5 Tooling middlewares
+  - How to use a sub-generator to add an OData model to the SAPUI5 application.
+  - How to navigate between SAPUI5 views.
+  - How to configure UI5 Tooling middlewares.
 
 ---
 
@@ -33,10 +33,12 @@ Newer versions of the easy-ui5 generator create projects that contain two views 
 
 ### Add a list to the products view
 
-**Replace** the current content of the `Products.view.xml` with the following content: A page that contains a list and uses [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html):
+**Replace** the current content of the `Products.view.xml` with the following content: A page that contains a list and uses [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html) (also called "list binding"):
 
-```XML [4-10]
-<mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
+```XML [6-12]
+<mvc:View
+  controllerName="tutorial.products.controller.Products"
+  displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <Page id="Products" title="Available Products">
@@ -61,7 +63,6 @@ To populate the list with items, bind a data source to the application. For this
 yo easy-ui5 project newmodel
 ```
 
-
 |  Parameter     | Value
 |  :------------- | :-------------
 |  What is the name of your model, press enter if it is the default model?        | **keep blank**
@@ -70,7 +71,7 @@ yo easy-ui5 project newmodel
 |  What is the data source URL?   | **`V2/Northwind/Northwind.svc/`**
 |  Which count mode do you want to use?   | **`Inline`**
 
-Again, please accept the modification of the manifest file.
+Again, please accept the modifications to the manifest file.
 
 > The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.json` if you don't like it.
 
@@ -78,7 +79,7 @@ Again, please accept the modification of the manifest file.
 
 1. All requests to the data source will be sent to `<webapp URL>/V2/Northwind/Northwind.svc/`.
 
-    **Modify** the `uimodule/webapp/xs-app.json` file to redirect the traffic to a destination. Replace the entire file with the following content:
+    **Modify** the `uimodule/webapp/xs-app.json` file, which is the routing configuration file for the application router ([documentation](https://help.sap.com/docs/btp/sap-business-technology-platform/managed-application-router)), to redirect the traffic to a destination. Replace the entire file with the following content:
 
     ```JSON [4-9]
     {
@@ -101,7 +102,7 @@ Again, please accept the modification of the manifest file.
 
     ```
 
-2. You already created a destination named "Northwind" in Cloud Foundry environment of SAP BTP. Now it's time to add a mocked destination to your local setup as well.
+2. You already created this destination named "Northwind" in SAP BTP, Cloud Foundry environment in a [previous tutorial](cp-cf-create-destination). Now it's time to add a mocked destination to your local setup as well.
 
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination:
 
@@ -111,7 +112,7 @@ Again, please accept the modification of the manifest file.
                 url: "https://services.odata.org/"
     ```
 
-    > YAML is quite nice to read, but writing it can be cumbersome as the indention of the lines is crucial. Please make sure your file looks exactly as shown in the next screenshot. If you edit these files often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support).
+    > YAML is quite nice to read, but writing it can be cumbersome as the indentation of the lines is crucial. Please make sure your file looks exactly as shown in the next screenshot. If you edit these files often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support).
 
 3. Switch to your first terminal session, stop the process and restart it. Restarting is necessary because the live-reload feature doesn't notice changes in the `ui5.yaml` file.
 
@@ -128,7 +129,7 @@ Again, please accept the modification of the manifest file.
 
 ### Display more product information on a detail page
 
-In this step, you will add a detail page that shows some additional information. You will use an easy-ui5 sub-generator to create a new view.
+In this step, you will add a detail page that shows some additional information. You will use another easy-ui5 sub-generator to create a new view.
 
 1. Switch back to the second terminal session and run another sub-generator:
     ```Terminal
@@ -157,12 +158,12 @@ In this step, you will add a detail page that shows some additional information.
 
 3. Change the type of the list items and add an event listener in the `uimodule/webapp/view/Products.view.xml` file:
     ```XML
-    <StandardListItem type="Navigation" press="handleListItemPress" title="{ProductName}" />
+    <StandardListItem type="Navigation" press=".handleListItemPress" title="{ProductName}" />
     ```
 
     <!-- border -->![standard list item](listitem.png)
 
-4. Add navigation logic to the `uimodule/webapp/controller/Products.controller.js` to handle the press event:
+4. Add navigation logic to the `uimodule/webapp/controller/Products.controller.js` to handle the press event. This press event gets the UI5 router, gets the selected `ProductID`, and then passes this id to the navigation method of the router ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)):
 
     ```JavaScript [8-14]
     sap.ui.define([
@@ -179,6 +180,7 @@ In this step, you will add a detail page that shows some additional information.
             productId: selectedProductId
           });
         }
+
       });
     });
     ```
@@ -189,7 +191,7 @@ In this step, you will add a detail page that shows some additional information.
 
 ### Add UI elements to the detail page
 
-1. Add controller logic to `uimodule/webapp/controller/ProductDetail.controller.js` to parse the selected product from the routing arguments and to bind the product to the view.
+1. Add controller logic to `uimodule/webapp/controller/ProductDetail.controller.js` to parse the selected product from the routing arguments and to bind the product to the view ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)).
 
     ```JavaScript [8-27]
     sap.ui.define([
@@ -224,7 +226,7 @@ In this step, you will add a detail page that shows some additional information.
     });
     ```
 
-2. Add the required declarations to the `uimodule/webapp/view/ProductDetail.view.xml` view to display some properties.
+2. Add the required declarations to the `uimodule/webapp/view/ProductDetail.view.xml` view to to consume the newly bound model and display some properties.
 
 ```XML [4-11]
 <mvc:View controllerName="tutorial.products.controller.ProductDetail" displayBlock="true"
@@ -241,7 +243,7 @@ xmlns:mvc="sap.ui.core.mvc">
 </mvc:View>
 ```
 
-3. Once you save the view, the web app should update automatically and display a view similar to this one.
+3. Once you save the view, the web app should update automatically and display a view similar to this one. We will enrich this UI with more controls in the [next tutorial](sapui5-fiori-cf-fiorify).
 
 <!-- border -->![detail view](detail.png)
 
