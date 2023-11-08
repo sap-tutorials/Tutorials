@@ -24,10 +24,10 @@ Document Information Extraction allows you to leverage LLMs to extract informati
 
 
 Before you upload a custom document for extraction, you’ll create a corresponding schema. In this tutorial, we provide sample files and settings for the following types of custom document:
-    - Delivery note
-    - Résumé
-    - Birth certificate
-    - Work contract 
+- Delivery note
+- Résumé
+- Birth certificate
+- Work contract 
   
 Before creating your schema, decide which type of document you want to use it with. This will determine the naming and the settings that you use.
 
@@ -41,7 +41,7 @@ Before creating your schema, decide which type of document you want to use it wi
 
     <!-- border -->![LLM](create-schema.png)
 
-4. In the dialog, enter a name for your custom schema - `delivery_note_schema`, for example. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**.
+4. In the dialog, enter a name for your custom schema - `delivery_note_schema`, for example. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
 
 5. Click **Create** to create the schema.
 
@@ -90,7 +90,7 @@ Click **Add** again to open the **Add Data Field** dialog.
 
     <!-- border -->![LLM](add-ponumber.png)
 
-Go ahead and create the list of header fields and line item fields as shown in the table and image below. Pay attention to the different data types and that the last three fields are line item fields (not header fields). Feel free to extend or reduce the list of fields.
+Now, go ahead and add the remaining header fields and line item fields shown in the table and image below. Pay attention to the different data types and that the last three fields are line item fields (not header fields). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name             | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	  | :----------   | :----------    
@@ -162,7 +162,7 @@ You can now repeat the steps previouly described for the following documents (us
 
 - Résumé - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/resume.pdf)
 
-Create the list of header fields as shown in the table and image below. Don't forget to add a description for `degree`, `employer` and `jobTitle` (as in the image). Feel free to extend or reduce the list of fields.
+Create the header fields shown in the table and image below. Don't forget to add a description for `degree`, `employer` and `jobTitle` (as in the image). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name           | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	| :----------   | :----------    
@@ -178,7 +178,7 @@ Create the list of header fields as shown in the table and image below. Don't fo
 
 - Birth Certificate (in Chinese) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth-certificate.jpeg)
 
-Create the list of header fields as shown in the table and image below. Pay attention to the different data types and don't forget to add a description for `name` (as in the image). Feel free to extend or reduce the list of fields.
+Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for `name` (as in the image). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name             | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	  | :----------   | :----------    
@@ -194,7 +194,7 @@ Create the list of header fields as shown in the table and image below. Pay atte
 
 - Work Contract (in German) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work-contract.pdf)
 
-Create the list of header fields as shown in the table and image below. Pay attention to the different data types and don't forget to add a description for all fields (as in the image). Feel free to extend or reduce the list of fields.
+Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for all fields (as in the image). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name           | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	| :----------   | :----------    
