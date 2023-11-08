@@ -1,9 +1,11 @@
 ---
 parser: v2
 auto_validation: true
-time: 15
+time: 25
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Trial and Generative AI to Extract Information from Custom Documents with Document Information Extraction UI
@@ -32,7 +34,6 @@ Before you upload a custom document for extraction, you’ll create a correspond
 - Birth certificate
   
 - Work contract 
-  
   
 In the first example, you'll use a delivery note. After working through this example, you can go on and try out the other custom document types covered in Step 5.
 
