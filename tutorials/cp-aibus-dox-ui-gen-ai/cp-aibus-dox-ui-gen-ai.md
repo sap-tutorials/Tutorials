@@ -12,24 +12,24 @@ primary_tag: topic>machine-learning
 ## You will learn
   - How to create and activate a custom schema for custom documents
   - How to define the fields that you want to extract from a custom document 
-  - How to upload a custom document to Document Information Extraction
+  - How to upload a custom document to the Document Information Extraction UI
   - How to get extraction results using the schema you’ve created and LLMs
 
 ## Intro
-Document Information Extraction allows you to leverage LLMs to extract information from custom document types. When you finish this tutorial, you’ll get field value predictions for the documents that you upload to the Document Information Extraction UI. 
+Document Information Extraction allows you to leverage LLMs to extract information from custom document types. When you finish this tutorial, you’ll get field value predictions for the documents you upload to the Document Information Extraction UI. 
 
 ---
 
 ### Create schema
 
 
-Before you upload a custom document for extraction, you’ll create a corresponding schema. In this tutorial, we provide sample files and settings for the following types of custom document:
+Before you upload a custom document for extraction, you’ll create a corresponding schema. In this tutorial, we provide sample files and settings for the following custom documents:
 - Delivery note
 - Résumé
 - Birth certificate
 - Work contract 
   
-Before creating your schema, decide which type of document you want to use it with. This will determine the naming and the settings that you use.
+In the first example, you'll use a delivery note. After working through this example, you can go on and try out the other custom document types covered in Step 5.
 
 1. Open the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
 
@@ -147,9 +147,11 @@ Congratulations, you've now created and activated your custom schema for deliver
 
     The document status changes from `PENDING` to `READY`.
 
-    <!-- border -->![LLM](results.png)
+    <!-- border -->![LLM](ready.png)
 
 8. Click the document row and **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
+
+    <!-- border -->![LLM](results.png)
 
 Congratulations, you've now successfully extracted information from a delivery note document using the schema configuration feature from Document Information Extraction and LLMs.
 
