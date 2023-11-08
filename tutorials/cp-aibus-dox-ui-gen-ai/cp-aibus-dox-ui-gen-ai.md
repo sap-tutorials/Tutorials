@@ -184,7 +184,7 @@ Create the header fields shown in the table and image below. Don't forget to add
 <!-- border -->![LLM](resume-all-fields.png)
 
 
-- Birth Certificate (in Chinese) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth-certificate.jpeg)
+- Birth Certificate (in Chinese) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth_certificate.png)
 
 Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for `name` (as in the image). Feel free to extend or reduce the list of fields.
 
@@ -200,7 +200,7 @@ Create the header fields shown in the table and image below. Pay attention to th
 <!-- border -->![LLM](birth-certificate-all-fields.png)
 
 
-- Work Contract (in German) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work-contract.pdf)
+- Work Contract (in German) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work_contract.pdf)
 
 Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for all fields (as in the image). Feel free to extend or reduce the list of fields.
 
