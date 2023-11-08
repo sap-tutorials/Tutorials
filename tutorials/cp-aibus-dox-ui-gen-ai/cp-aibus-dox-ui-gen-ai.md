@@ -24,10 +24,15 @@ Document Information Extraction allows you to leverage LLMs to extract informati
 
 
 Before you upload a custom document for extraction, you’ll create a corresponding schema. In this tutorial, we provide sample files and settings for the following custom documents:
+
 - Delivery note
+  
 - Résumé
+  
 - Birth certificate
+  
 - Work contract 
+  
   
 In the first example, you'll use a delivery note. After working through this example, you can go on and try out the other custom document types covered in Step 5.
 
