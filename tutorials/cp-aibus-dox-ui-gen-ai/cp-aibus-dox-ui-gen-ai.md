@@ -8,8 +8,12 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Trial and Generative AI to Extract Information from Custom Documents with Document Information Extraction UI
-<!-- description --> Extract information from custom documents. The Document Information Extraction service doesn't support custom document types out of the box. So, in this tutorial, you'll create a custom schema to define the fields that you want to extract from custom documents (such as delivery notes and birth certificates) using LLMs (Large Language Models).
+# Use Trial to Extract Information from Custom Documents with Generative AI and Document Information Extraction
+<!-- description --> Learn how to create a custom schema in the Document Information Extraction UI application to define the fields that you want to extract from custom documents (such as delivery notes and birth certificates) using LLMs (Large Language Models).
+
+## Prerequisites
+- You've created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You've access to the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app)
 
 ## You will learn
   - How to create and activate a custom schema for custom documents
@@ -69,6 +73,12 @@ To add your first header field, click **Add**.
 <!-- border -->![LLM](add-field.png)
 
 You must enter a field name and data type for each custom field. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. Default extractors aren't available for custom documents. You can also optionally add a field label (user-friendly name) and a description.
+
+>Description is an optional entry. It can be useful if you want to include an explanation or some additional context for a field. 
+
+>You can also use description for other purposes, such as categorizing fields. For example, in the description of the field `contractType` in work contracts, you could specify `yes`, if the contract is limited and `no` if the contract is not. Or you could specify that the line item field `skillType` in a résumé can be technical or language.
+
+>See Step 5 for examples of schemas that use the description field.
 
 As your first header field, add the number of the delivery note.
 
@@ -155,7 +165,7 @@ Congratulations, you've now created and activated your custom schema for deliver
 
     <!-- border -->![LLM](ready.png)
 
-8. Click the document row and **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
+8. Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 
