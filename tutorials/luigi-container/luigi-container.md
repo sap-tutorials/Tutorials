@@ -38,11 +38,11 @@ This tutorial will show you how to incorporate micro frontends inside a [UI5](ht
 
 1. Open a new Command Prompt/Terminal window and install the UI5 generator: 
 
-`npm install -g yo generator-easy-ui5`
+    `npm install -g yo generator-easy-ui5`
 
 2. Run this command to ensure that Yeoman has been installed correctly: 
 
-`yo`
+    `yo`
 
 Make sure the `easy-ui5` generator is listed.
 
@@ -50,7 +50,7 @@ Make sure the `easy-ui5` generator is listed.
 
 1. Create your UI5 project:
 
-`yo easy-ui5`
+    `yo easy-ui5`
 
 2. Answer the prompts in this way to create your new project: 
 
@@ -58,10 +58,10 @@ Make sure the `easy-ui5` generator is listed.
 
 3. Run the app locally:
 
-```shell
-cd luigi.ui5app
-npm start # or "yarn start"
-```
+    ```shell
+    cd luigi.ui5app
+    npm start # or "yarn start"
+    ```
 
 ### Install Luigi Container 
 
@@ -71,193 +71,187 @@ To use npm packages in UI5, you need to first install the tooling extension `ui5
 
 1. In your project directory, run: 
 
-```shell
-npm install ui5-tooling-modules -D
-```
+    ```shell
+    npm install ui5-tooling-modules -D
+    ```
 
 
-2. In this step, you will add the UI5 tooling task and middleware declaration. Open your application's `ui5.yaml` file. Replace the content with the one below. 
+2. In this step, you will add the UI5 tooling task and middleware declaration. Open your application's `ui5.yaml` file. Replace the content with the one below. Keep in mind that the version numbers might be higher in your case.
 
-> **Note:** Keep in mind that the version numbers might be higher in your case.
-
-```yaml
-specVersion: "3.0"
-metadata:
-  name: luigi.ui5app
-type: application
-framework:
-  name: OpenUI5
-  version: "1.120.0"
-  libraries:
-    - name: sap.m
-    - name: sap.ui.core
-    - name: themelib_sap_fiori_3
-    - name: themelib_sap_horizon
-builder:
-  customTasks:
-    - name: ui5-tooling-modules-task
-      afterTask: generateVersionInfo
-server:
-  customMiddleware:
-    - name: ui5-tooling-modules-middleware
-      afterMiddleware: compression
-    - name: ui5-middleware-livereload
-      afterMiddleware: compression
-```
+    ```yaml
+    specVersion: "3.0"
+    metadata:
+    name: luigi.ui5app
+    type: application
+    framework:
+    name: OpenUI5
+    version: "1.120.0"
+    libraries:
+        - name: sap.m
+        - name: sap.ui.core
+        - name: themelib_sap_fiori_3
+        - name: themelib_sap_horizon
+    builder:
+    customTasks:
+        - name: ui5-tooling-modules-task
+        afterTask: generateVersionInfo
+    server:
+    customMiddleware:
+        - name: ui5-tooling-modules-middleware
+        afterMiddleware: compression
+        - name: ui5-middleware-livereload
+        afterMiddleware: compression
+    ```
 
 3. Create a new folder called `control` in `luigi.ui5app/webapp`. In it, create a file called `LuigiContainer.js` and paste the following content into it: 
 
-```javascript
-sap.ui.define([
-    "sap/ui/core/webc/WebComponent",
-    "@luigi-project/container"
-], function(WebComponent) {
-    "use strict";
+    ```javascript
+    sap.ui.define([
+        "sap/ui/core/webc/WebComponent",
+        "@luigi-project/container"
+    ], function(WebComponent) {
+        "use strict";
 
-    /**
-     * The luigi.ui5app.control.LuigiContainer is a component to render a Luigi micro frontend (iframe or web component based) without the need of it being a Luigi Core application.
-     */
-    var LuigiContainer = WebComponent.extend("luigi.ui5app.control.LuigiContainer", {
-        metadata: {
-            tag: "luigi-container",
-            properties: {
-                /**
-                 * Defines the view URL to load
-                 */
-                viewURL: {
-                    type: "string",
-                    defaultValue: "",
-                    mapping: {
-                        to: "viewURL"
+        /**
+         * The luigi.ui5app.control.LuigiContainer is a component to render a Luigi micro frontend (iframe or web component based) without the need of it being a Luigi Core application.
+         */
+        var LuigiContainer = WebComponent.extend("luigi.ui5app.control.LuigiContainer", {
+            metadata: {
+                tag: "luigi-container",
+                properties: {
+                    /**
+                     * Defines the view URL to load
+                     */
+                    viewURL: {
+                        type: "string",
+                        defaultValue: "",
+                        mapping: {
+                            to: "viewURL"
+                        }
+                    },
+
+                    /**
+                     * Defines whether to load the Luigi component as web component
+                     */
+                    webComponent: {
+                        type: "any",
+                        defaultValue: false,
+                        mapping: {
+                            to: "webcomponent",
+                            formatter: "_mapIsWebComponent"
+                        }
+                    },
+
+                    /**
+                     * Defines the height of the control
+                     */
+                    height: {
+                        type: "sap.ui.core.CSSSize",
+                        mapping: "style"
+                    },
+
+                    /**
+                     * Defines the width of the control
+                     */
+                    width: {
+                        type: "sap.ui.core.CSSSize",
+                        mapping: "style"
+                    },
+
+                    /**
+                     * Defines label of the Luigi component
+                     */
+                    label: {
+                        type: "string",
+                        defaultValue: ""
+                    },
+
+                    /**
+                     * Defines the context to use
+                     */
+                    context: {
+                        type: "object",
+                        defaultValue: {}
+                    },
+
+                    theme: {
+                        type: "string",
+                        defaultValue: ""
                     }
                 },
+                methods: [
+                    "updateContext", /** Updates the context of the Luigi component */ 
+                    "sendCustomMessage", /** Sends a custom message to the referenced iFrame or web component */
+                    "closeAlert" /** Sends a message to the Luigi component notifying that the alert has been closed */
+                ] 
+            }
+        });
 
-                /**
-                 * Defines whether to load the Luigi component as web component
-                 */
-                webComponent: {
-                    type: "any",
-                    defaultValue: false,
-                    mapping: {
-                        to: "webcomponent",
-                        formatter: "_mapIsWebComponent"
-                    }
-                },
+        LuigiContainer.prototype._mapIsWebComponent = function(vIsWebComponent) {
+            return vIsWebComponent !== "false" && vIsWebComponent ? "true" : undefined;
+        };
 
-                /**
-                 * Defines the height of the control
-                 */
-                height: {
-                    type: "sap.ui.core.CSSSize",
-                    mapping: "style"
-                },
-
-                /**
-                 * Defines the width of the control
-                 */
-                width: {
-                    type: "sap.ui.core.CSSSize",
-                    mapping: "style"
-                },
-
-                /**
-                 * Defines label of the Luigi component
-                 */
-                label: {
-                    type: "string",
-                    defaultValue: ""
-                },
-
-                /**
-                 * Defines the context to use
-                 */
-                context: {
-                    type: "object",
-                    defaultValue: {}
-                },
-
-                theme: {
-                    type: "string",
-                    defaultValue: ""
-                }
-            },
-            methods: [
-                "updateContext", /** Updates the context of the Luigi component */ 
-                "sendCustomMessage", /** Sends a custom message to the referenced iFrame or web component */
-                "closeAlert" /** Sends a message to the Luigi component notifying that the alert has been closed */
-            ] 
-        }
+        return LuigiContainer;
     });
-
-    LuigiContainer.prototype._mapIsWebComponent = function(vIsWebComponent) {
-        return vIsWebComponent !== "false" && vIsWebComponent ? "true" : undefined;
-    };
-
-    return LuigiContainer;
-});
-```
+    ```
 
 4. In Command Prompt/Terminal, download the Luigi Container npm package: 
 
-```shell
-npm install @luigi-project/container
-```
+    ```shell
+    npm install @luigi-project/container
+    ```
 
-5. Go to the `package.json` file and ensure that the ` @luigi-project/container` and `ui5-tooling-modules` dependencies are added.
+5. Go to the `package.json` file and ensure that the ` @luigi-project/container` and `ui5-tooling-modules` dependencies are added. Keep in mind that the version numbers might be higher in your case.
 
-> **Note:** Keep in mind that the version numbers might be higher in your case.
-
-```json
-[...]
-"devDependencies": {
-[...]
-//Around line 30
-    "ui5-tooling-modules": "^3.2.4"
-},
-"dependencies": {
-    "@luigi-project/container": "^1.0.0"
-}
-```
+    ```json
+    [...]
+    "devDependencies": {
+    [...]
+    //Around line 30
+        "ui5-tooling-modules": "^3.2.4"
+    },
+    "dependencies": {
+        "@luigi-project/container": "^1.0.0"
+    }
+    ```
 
 ### Use Luigi Container 
 
-1. In this step, you will use Luigi Container in your app and configure the Luigi [viewURL](https://docs.luigi-project.io/docs/navigation-parameters-reference/?section=viewurl) property in order to render a micro frontend on the page.
+1. In this step, you will use Luigi Container in your app and configure the Luigi [viewURL](https://docs.luigi-project.io/docs/navigation-parameters-reference/?section=viewurl) property in order to render a micro frontend on the page. Go to the `webapp/view/Main.view.xml` file of your UI5 application. Replace the content with the following: 
 
-Go to the `webapp/view/Main.view.xml` file of your UI5 application. Replace the content with the following: 
+    ```xml
+    <mvc:View
+        controllerName="luigi.ui5app.controller.Main"
+        displayBlock="true"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:core="sap.ui.core"
+        xmlns:luigi="luigi.ui5app.control"
+        core:require="{
+            core: 'sap/ui/core/Core'
+        }">
 
-```xml
-<mvc:View
-	controllerName="luigi.ui5app.controller.Main"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core"
-	xmlns:luigi="luigi.ui5app.control"
-	core:require="{
-		core: 'sap/ui/core/Core'
-	}">
+        <Page
+            title="{i18n>appTitle}"
+            text="{i18n>appTitle}"
+            icon="sap-icon://accept"
+            id="page"
+            description="{i18n>appDescription}">
+            <content>
+                <luigi:LuigiContainer viewURL="https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html" theme="{= core.getConfiguration().getTheme() }"/>
+            </content>
+        </Page>
 
-	<Page
-		title="{i18n>appTitle}"
-		text="{i18n>appTitle}"
-		icon="sap-icon://accept"
-		id="page"
-		description="{i18n>appDescription}">
-		<content>
-			<luigi:LuigiContainer viewURL="https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html" theme="{= core.getConfiguration().getTheme() }"/>
-		</content>
-	</Page>
-
-</mvc:View>
-```
+    </mvc:View>
+    ```
 
 The Luigi micro frontend has the URL `https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html` which is a sample shopping application. 
 
 2. Run your application:
 
-```shell
-npm start
-```
+    ```shell
+    npm start
+    ```
 
 3. Open `http://localhost:8080/` in your browser. You should see the sample shopping app on your page: 
 
@@ -265,13 +259,13 @@ npm start
 
 4. Now that your application is using Luigi Container, you can easily exchange micro frontends in order to create a modular, scalable app. To insert a different micro frontend, simply go back to `webapp/view/Main.view.xml` and change the Luigi [viewURL](https://docs.luigi-project.io/docs/navigation-parameters-reference/?section=viewurl) property like so:  
 
-```xml
-[...]
-        <content>
-			<luigi:LuigiContainer viewURL="https://fiddle.luigi-project.io/examples/microfrontends/fundamental/table-demo-page.html" theme="{= core.getConfiguration().getTheme() }"/>
-		</content>
-[...]
-```
+    ```xml
+    [...]
+            <content>
+                <luigi:LuigiContainer viewURL="https://fiddle.luigi-project.io/examples/microfrontends/fundamental/table-demo-page.html" theme="{= core.getConfiguration().getTheme() }"/>
+            </content>
+    [...]
+    ```
 
 5. Open `http://localhost:8080/` in your browser. You should see the new micro frontend on your page: 
 
