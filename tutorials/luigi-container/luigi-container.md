@@ -245,15 +245,13 @@ To use npm packages in UI5, you need to first install the tooling extension `ui5
     </mvc:View>
     ```
 
-The Luigi micro frontend has the URL `https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html` which is a sample shopping application. 
-
 2. Run your application:
 
     ```shell
     npm start
     ```
 
-3. Open `http://localhost:8080/` in your browser. You should see the sample shopping app on your page: 
+3. Open `http://localhost:8080/` in your browser. You should see a sample shopping app with the URL `https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html` on your page: 
 
     <!-- border -->![Shopping micro frontend](shopping.png)
 
