@@ -22,7 +22,7 @@ To follow along with this tutorial, ensure you have access to a [free BTP trial 
 
 ## You will learn
 
-  - How to install and configure the Terraform Provider for BTP.
+ - How to install and configure the Terraform Provider for BTP.
  - How to manage your BTP resources as code, making them more reproducible, maintainable, and scalable.
  - How to clean up your BTP resources when they are no longer needed, helping you avoid unnecessary costs and resource consumption.
 
