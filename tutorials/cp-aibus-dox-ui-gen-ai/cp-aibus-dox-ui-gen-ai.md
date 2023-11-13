@@ -9,7 +9,7 @@ author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Trial to Extract Information from Custom Documents with Generative AI and Document Information Extraction
-<!-- description --> Learn how to create a custom schema in the Document Information Extraction UI application to define the fields that you want to extract from custom documents (such as delivery notes and birth certificates) using LLMs (Large Language Models).
+<!-- description --> Learn how to use Document Information Extraction with generative AI to automate the extraction of information from custom document types using large language models (LLMs).
 
 ## Prerequisites
 - You've created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
@@ -22,7 +22,7 @@ author_profile: https://github.com/Juliana-Morais
   - How to get extraction results using the schema you’ve created and LLMs
 
 ## Intro
-Document Information Extraction allows you to leverage LLMs to extract information from custom document types. When you finish this tutorial, you’ll get field value predictions for the documents you upload to the Document Information Extraction UI. 
+In this tutorial, you’ll create a schema and define the fields that you want to extract from custom document types using LLMs. You’ll then use your schema to get field value predictions for various documents that you upload to the Document Information Extraction UI, including delivery notes and birth certificates.
 
 ---
 
@@ -51,7 +51,7 @@ In the first example, you'll use a delivery note. After working through this exa
 
     <!-- border -->![LLM](create-schema.png)
 
-4. In the dialog, enter a name for your custom schema - `delivery_note_schema`, for example. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
+4. In the dialog, enter a name for your custom schema – for example, `delivery_note_schema`. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
 
 5. Click **Create** to create the schema.
 
@@ -74,9 +74,9 @@ To add your first header field, click **Add**.
 
 You must enter a field name and data type for each custom field. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. Default extractors aren't available for custom documents. You can also optionally add a field label (user-friendly name) and a description.
 
->Description is an optional entry. It can be useful if you want to include an explanation or some additional context for a field. 
+>A description is an optional entry. It can be useful if you want to include an explanation or some additional context for a field. 
 
->You can also use description for other purposes, such as categorizing fields. For example, in the description of the field `contractType` in work contracts, you could specify `yes`, if the contract is limited and `no` if the contract is not. Or you could specify that the line item field `skillType` in a résumé can be technical or language.
+>You can also use a description for other purposes, such as categorizing fields. For example, in the description of the field `limitedContract` in work contracts, you could specify `yes`, if the contract is limited and `no` if the contract is not. Or you could specify that the line item field `skillType` in a résumé can be technical or language.
 
 >See Step 5 for examples of schemas that use the description field.
 
@@ -88,9 +88,9 @@ As your first header field, add the number of the delivery note.
 
 3. Select `auto` as the **Setup Type** and click **Add** to create the header field. 
    
-    >Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details on this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html).
+>Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details on this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html).
 
-    <!-- border -->![LLM](add-number.png)
+<!-- border -->![LLM](add-number.png)
 
 The field now appears in your list of header fields, where you can see all the information that you've just entered. You can edit or delete the field by clicking the respective icons on the right.
 
@@ -104,9 +104,9 @@ Click **Add** again to open the **Add Data Field** dialog.
 
 3. Select `auto` as the **Setup Type** and click **Add** to create the field.
 
-    <!-- border -->![LLM](add-ponumber.png)
+<!-- border -->![LLM](add-ponumber.png)
 
-Now, go ahead and add the remaining header fields and line item fields shown in the table and image below. Pay attention to the different data types and that the last three fields are line item fields (not header fields). Feel free to extend or reduce the list of fields.
+Now, go ahead and add the remaining header fields and line item fields shown in the table and image below. Pay attention to the different data types and notice that the last three fields are line item fields (not header fields). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name             | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	  | :----------   | :----------    
@@ -141,7 +141,7 @@ Congratulations, you've now created and activated your custom schema for deliver
 ### Get extraction results
 
 
-1. Access **Document** from navigation on the left of the screen, then click **+** to upload a new document.
+1. Access **Document** from the navigation on the left of the screen, then click **+** to upload a new document.
 
     <!-- border -->![LLM](add-document.png)
 
@@ -149,15 +149,17 @@ Congratulations, you've now created and activated your custom schema for deliver
    
 3. Select the **Schema** you created (`delivery_note_schema`).
    
-4. Drop the file directly or click **+** to upload the [delivery note](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/delivery_note.jpg) sample document.
+4. Right click on the link, then click ***Save link as*** to download locally the [delivery note](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/delivery_note.jpg) sample document.
+   
+5. Drag and drop the file directly or click **+** to upload the sample document.
 
-5. Click **Step 2**.
+6. Click **Step 2**.
 
     <!-- border -->![LLM](upload.png)
 
-6. Click **Step 3** and then click **Review**.
+7. Click **Step 3** and then click **Review**.
    
-7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
+8. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
 
     <!-- border -->![LLM](review.png)
 
@@ -165,7 +167,7 @@ Congratulations, you've now created and activated your custom schema for deliver
 
     <!-- border -->![LLM](ready.png)
 
-8. Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
+9.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 
@@ -178,7 +180,7 @@ Congratulations, you've now successfully extracted information from a delivery n
 You can now repeat the steps previouly described for the following documents (using the suggested fields or your own fields):
 
 
-- Résumé - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/resume.pdf)
+- Résumé – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/resume.pdf)
 
 Create the header fields shown in the table and image below. Don't forget to add a description for `degree`, `employer` and `jobTitle` (as in the image). Feel free to extend or reduce the list of fields.
 
@@ -194,7 +196,7 @@ Create the header fields shown in the table and image below. Don't forget to add
 <!-- border -->![LLM](resume-all-fields.png)
 
 
-- Birth Certificate (in Chinese) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth_certificate.png)
+- Birth Certificate (in Chinese) – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth_certificate.png)
 
 Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for `name` (as in the image). Feel free to extend or reduce the list of fields.
 
@@ -210,7 +212,7 @@ Create the header fields shown in the table and image below. Pay attention to th
 <!-- border -->![LLM](birth-certificate-all-fields.png)
 
 
-- Work Contract (in German) - [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work_contract.pdf)
+- Work Contract (in German) – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work_contract.pdf)
 
 Create the header fields shown in the table and image below. Pay attention to the different data types and don't forget to add a description for all fields (as in the image). Feel free to extend or reduce the list of fields.
 
