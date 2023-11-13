@@ -72,9 +72,15 @@ Now that you have an SAP BTP account (either Free Tier or Free Trial) you need t
 
     <!-- border -->![Add Mapping](addMapping.png)
 
-1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).  Note: you can also supply a Space ID in the Environment Group column but it is not required. If no value is supplied the HANA Cloud instance is automatically available to all spaces within an Organization.
+1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).  
 
     <!-- border -->![Add Mapping Instance](addMappingInstance.png)
+
+1. In the Environment Group of the Mapping supply the Space ID from your Cloud Foundry Environment (which can be found in the URL of the BTP Cockpit after navigating to the Space details).
+
+    <!-- border -->![Add Mapping Space](addMappingSpace1.png)
+
+    <!-- border -->![Add Mapping Space](addMappingSpace2.png)
 
 1. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 
@@ -86,7 +92,7 @@ Now that you have an SAP BTP account (either Free Tier or Free Trial) you need t
 
     <!-- border -->![HANA Cloud stopped](hana_stopped.png)
 
-1. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
+1. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-4) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
 
 ### Create SAP Business Application Studio Dev Space
 
