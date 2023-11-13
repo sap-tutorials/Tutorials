@@ -16,15 +16,13 @@ Terraform is an open-source tool that allows you to define and provide cloud inf
 
 By combining Terraform with [SAP Business Technology Platform (BTP)](https://www.sap.com/products/technology-platform.html), you can programmatically manage your BTP environments.
 
-
 ## Prerequisites
 
 To follow along with this tutorial, ensure you have access to a [free BTP trial account](hcp-create-trial-account) and Terraform installed on your machine. You can download it from the official [Terraform website](https://developer.hashicorp.com/terraform/downloads).
 
-
 ## You will learn
 
- - How to install and configure the Terraform Provider for BTP.
+  - How to install and configure the Terraform Provider for BTP.
  - How to manage your BTP resources as code, making them more reproducible, maintainable, and scalable.
  - How to clean up your BTP resources when they are no longer needed, helping you avoid unnecessary costs and resource consumption.
 
@@ -41,7 +39,7 @@ terraform {
   required_providers {
     btp = {
       source  = "SAP/btp"
-      version = "0.6.0-beta1"
+      version = "0.6.0-beta2"
     }
   }
 }
@@ -72,7 +70,6 @@ Replace `<your_username>` and `<your_password>` with your actual BTP username an
 
 You are now ready to use the Terraform provider for BTP to manage your resources.
 
-
 ### Provisioning Subaccounts
 
 With the provider set up, you can now provision resources on BTP. Let's first create a subaccount using the `btp_subaccount` resource. Create a new file `main.tf` and add the following content:
@@ -96,7 +93,6 @@ Terraform will prompt you to confirm the changes. Type `yes` and press **Enter**
 ![run terraform apply to create subaccount](./terraform-apply1.png)
 
 The subaccount has just been created for you.
-
 
 ### Managing Subaccount Entitlements
 
@@ -124,13 +120,11 @@ Terraform will prompt you to confirm the changes. Type `yes` and press **Enter**
 
 The subaccount is now entitled for the alert-notification service.
 
-
 ### Managing More Resources
 
 The Terraform Provider for SAP BTP offers a wide range of resources that you can manage using Terraform. In addition to creating subaccounts and setting entitlements, you can provision and manage other resources such as service instances, service bindings, role collections, and more.
 
 To get a better understanding of the capabilities of the provider and the available resources, check out the provider documentation at [https://registry.terraform.io/providers/SAP/btp/latest/docs](https://registry.terraform.io/providers/SAP/btp/latest/docs). It provides detailed information about each resource, including their properties and usage examples.
-
 
 ### Destroying Resources with Terraform
 
