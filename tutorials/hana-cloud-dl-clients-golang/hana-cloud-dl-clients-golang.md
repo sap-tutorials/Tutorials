@@ -51,7 +51,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https
     gcc --version
     ```
 
-    On Windows (if needed), download the compiler from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, follow the link to [winlibs.com](https://winlibs.com/), by navigating to the **Download** section. Find the latest release version of the Zip archive (UCRT runtime) for Win64 – x86_64. Then extract the folder. 
+    On Windows (if needed), download the compiler from [MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, follow the link to [winlibs.com](https://winlibs.com/).  Navigate to the **Release versions** section. Find the latest release version of the Zip archive (UCRT runtime) for Win64 – x86_64. Then extract the folder. 
 
     ![download minGW from WinLibs](winLibsMinGW.png)
 
@@ -65,9 +65,8 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https
 
     ![Add bin to path](add-bin-to-path.png)  
 
-  On Linux, install the System GNU C compiler for your version of Linux. 
-    >Note: if you are using openSUSE, minGW is included in the installation for Go through YaST.
-
+    On Linux, install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
+    
     ![gcc 64-bit](gccLinux.png)
 
 2. Examine the Go environment by running the below command:
@@ -121,7 +120,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https
     ```
     ![createModule](createModule.png)
 
-### Create a Go application that queries an SAP HANA database
+### Create a Go application that queries an SAP data lake Relational Engine
 
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     

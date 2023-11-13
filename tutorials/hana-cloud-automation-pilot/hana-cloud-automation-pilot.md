@@ -47,7 +47,7 @@ The SAP Automation Pilot provides the following catalogs to aid in managing an S
 
       ![cf-sapcp catalog](cf-sapcp.png)
 
-In addition, SAP Automation Pilot provides an option to schedule commands and provides integration with the SAP Alert Notification service which is used to send an email or create an incident in various ticketing systems.  If you do not already have the SAP Automation Pilot configured, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) demonstrates how to get started.
+In addition, SAP Automation Pilot provides an option to schedule commands and provides integration with the SAP Alert Notification service which is used to send an email or create an incident in various ticketing systems.  If you do not already have the SAP Automation Pilot configured, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) and the tutorial [Get Started with SAP Automation Pilot](https://developers.sap.com/tutorials/automation-pilot-1.html) demonstrate how to get started.
 
 ### Import the automation catalog
 The catalog below contains commands and inputs for those commands that can be used to automate tasks within SAP HANA Cloud instances.
@@ -224,12 +224,18 @@ The catalog below contains commands and inputs for those commands that can be us
               "type": "object",
               "sensitive": false,
               "description": null
+            },
+            "servicePlanId": {
+              "type": "string",
+              "sensitive": false,
+              "description": "Required for MassUpgradeHC when attempting to get a  list of all the SAP HANA Cloud database instances in a subaccount.  Obtained via btp list services/plan --fields-filter \"name contains 'hana'\" "
             }
           },
           "values": {
             "instanceId": "be0bdfe8-e0a3-468b-84a6-b1ba14b5f5ce",
             "instanceName": "HC_HDB",
-            "serviceKey": "{\n  \"clientid\": \"sb-aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\",\n  \"clientsecret\": \"5bb27450-7089-4a44-9168-bac14fc4425e$H6CK7PbCfpRfW30xT_lN6FypTZEaDRnb9tCsXM6xIX4=\",\n  \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\",\n  \"url\": \"https://dansftsubaccount.authentication.ca10.hana.ondemand.com\",\n  \"xsappname\": \"aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\"\n}"
+            "serviceKey": "{\n  \"clientid\": \"sb-aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\",\n  \"clientsecret\": \"5bb27450-7089-4a44-9168-bac14fc4425e$H6CK7PbCfpRfW30xT_lN6FypTZEaDRnb9tCsXM6xIX4=\",\n  \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\",\n  \"url\": \"https://dansftsubaccount.authentication.ca10.hana.ondemand.com\",\n  \"xsappname\": \"aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\"\n}",
+            "servicePlanId": "e573479c-39f8-4774-80a9-12d762b0f159"
           },
           "tags": {}
         }
@@ -388,6 +394,132 @@ The catalog below contains commands and inputs for those commands that can be us
           "inputKeys": {},
           "outputKeys": {},
           "tags": {}
+        },
+        {
+          "configuration": {
+            "values": [
+              {
+                "alias": "InstanceDetails",
+                "valueFrom": {
+                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                  "inputKey": null
+                }
+              },
+              {
+                "alias": "Upgrade",
+                "valueFrom": {
+                  "inputReference": "Automation-<<<TENANT_ID>>>:Upgrade:1",
+                  "inputKey": null
+                }
+              }
+            ],
+            "output": {
+              "result": "$(.upgrade.output.outputs[])",
+              "instancesFound": "$(.getInstances.output.serviceInstances | map({name: .name,  env: .context.env_type, instanceId: .id, service_plan: .service_plan_id}))",
+              "instanceList": "$(.getInstances.output.serviceInstances)"
+            },
+            "executors": [
+              {
+                "execute": "sm-sapcp:ListServiceInstances:1",
+                "input": {
+                  "fieldSelector": "service_plan_id eq '$(.InstanceDetails.servicePlanId)' and context/env_type eq 'sapcp'",
+                  "serviceKey": "$(.InstanceDetails.serviceKey)"
+                },
+                "alias": "getInstances",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": {
+                  "semantic": "OR",
+                  "conditions": [
+                    {
+                      "semantic": "OR",
+                      "cases": [
+                        {
+                          "expression": "$(.getInstances.output.totalResultsCount) ",
+                          "operator": "GREATER_THAN",
+                          "semantic": "OR",
+                          "values": [
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": [
+                  {
+                    "message": "No instances found to update",
+                    "when": {
+                      "semantic": "OR",
+                      "conditions": [
+                        {
+                          "semantic": "OR",
+                          "cases": [
+                            {
+                              "expression": "$(.execution.error.originalMessage)",
+                              "operator": "STARTS_WITH",
+                              "semantic": "OR",
+                              "values": [
+                                "Validation"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "execute": "utils-sapcp:ForEach:1",
+                "input": {
+                  "inputs": "$(.getInstances.output.serviceInstances | map({ instanceId: .id })) ",
+                  "defaultValues": "{ \"parameters\": $(.Upgrade.parameters), \"serviceKey\": $(.InstanceDetails.serviceKey) }",
+                  "command": "sm-sapcp:TriggerUpdateServiceInstance:1"
+                },
+                "alias": "upgrade",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": null,
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": []
+              }
+            ],
+            "listeners": []
+          },
+          "id": "Automation-<<<TENANT_ID>>>:MassUpgradeHC:1",
+          "name": "MassUpgradeHC",
+          "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+          "catalog": "Automation-<<<TENANT_ID>>>",
+          "version": 1,
+          "inputKeys": {},
+          "outputKeys": {
+            "result": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "instancesFound": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "instanceList": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            }
+          },
+          "tags": {
+            "feature:priority": "medium"
+          }
         },
         {
           "configuration": {
@@ -570,7 +702,7 @@ The catalog below contains commands and inputs for those commands that can be us
                 "repeat": null,
                 "errorMessages": [
                   {
-                    "message": "No patches or up updates found",
+                    "message": "No patches or updates found",
                     "when": {
                       "semantic": "OR",
                       "conditions": [
@@ -619,7 +751,7 @@ The catalog below contains commands and inputs for those commands that can be us
                   "parameters": "$(.generateJSON.output.output[0])",
                   "space": "$(.CFInstanceDetails.resourceGroup) "
                 },
-                "alias": "update",
+                "alias": "upgrade",
                 "progressMessage": null,
                 "initialDelay": null,
                 "pause": null,
@@ -864,7 +996,7 @@ The catalog below contains commands and inputs for those commands that can be us
                 "repeat": null,
                 "errorMessages": [
                   {
-                    "message": "No patches or up updates found",
+                    "message": "No patches or updates found",
                     "when": {
                       "semantic": "OR",
                       "conditions": [
@@ -910,7 +1042,7 @@ The catalog below contains commands and inputs for those commands that can be us
                   "deadline": "30",
                   "parameters": "$(.generateJSON.output.output[0])"
                 },
-                "alias": "update",
+                "alias": "upgrade",
                 "progressMessage": null,
                 "initialDelay": null,
                 "pause": null,
@@ -1043,10 +1175,45 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         This is performed using a [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#). 
 
-    * Additional customization can be performed in the **generateJSON** command.
+    * Additional customization can be performed in the **generateJSON** command.  
 
         ![generate Update JSON](generateUpdateJSON.png)
 
+        If no further customization is needed, the JSON could instead be specified directly in the parameter parameters in the upgrade executor using the below JSON.
+
+        ```JSON
+        {
+          "data": {
+            "productVersion": {
+              "releaseCycle": "generally-available-quarterly",
+              "track": "$(.getParams.output.CommandOutput.availableUpgradeVersions[0].track)",
+              "id": "$(.getParams.output.CommandOutput.availableUpgradeVersions[0].id)"
+            }
+          }
+        } 
+        ``` 
+
+5. Open the command **MassUpgradeHC**.  This command takes two input parameters.  The parameter **InstanceDetails** includes the serviceKey which is used for authentication and the servicePlanId is used as a filter to return only SAP HANA Cloud instances in the getInstances executor.  The parameter **Upgrade** specifies the product version that should be used when upgrading the list of SAP HANA Cloud instances.  
+
+    ![UpgradeHC3 command](upgradeHC3.png)
+
+    * Prior to triggering the command, examine the instances in SAP HANA Cloud Central and note any instances that have an upgrade available to them.
+
+        ![Viewing available upgrade details in HCC](upgrade-hcc2.png)  
+
+    * The getInstances executor returns the list of SAP HANA Cloud instances that have been deployed to the subaccount.  It does not include instances deployed to a Cloud Foundry space.
+
+        ![getInstances executor](mass-upgrade-getInstances.png)
+
+    * The upgrade executor loops through the list of instances returned by getInstances and attempts to upgrade each instance.
+
+        ![upgrade executor](mass-upgrade.png)
+
+    * After triggering the command, examine the instances in SAP HANA Cloud Central and note that they now have been upgraded to the specified version.  
+    
+    * The output of the command also indicates the list of instances found.
+
+        ![MassupgradeHC output](mass-upgrade-output.png)
 
 ### Execute commands for instances provisioned to Cloud Foundry
 The examples shown include commands to start, stop, update, and upgrade an SAP HANA Cloud instance.  The commands make use of two common input parameters that specify the instance to target and the credentials to use.
@@ -1118,7 +1285,7 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
     * Trigger the command and examine the output once it completes.
 
-        ![updgrade HC Output](upgradeHCOutput.png)
+        ![updgrade HC Output](upgradeHCCOutput.png)
 
     * In SAP HANA Cloud Central, the notification that there is a new version available will disappear and the new version will be shown.
 
@@ -1137,6 +1304,20 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
     * Additional customization can be performed in the **generateJSON** command.
 
         ![generate Update JSON](cf-generateUpdateJSON.png)
+      
+        If no further customization is needed, the JSON could instead be specified directly in the parameter parameters in the upgrade executor using the below JSON.
+
+        ```JSON
+        {
+          "data": {
+            "productVersion": {
+              "releaseCycle": "generally-available-quarterly",
+              "track": "$(.getParams.output.parameters.availableUpgradeVersions[0].track)",
+              "id": "$(.getParams.output.parameters.availableUpgradeVersions[0].id)"
+            }
+          }
+        } 
+        ```
 
         An additional upgrade example is available at [Patch Update of HANA Cloud Database](https://github.com/SAP-samples/automation-pilot-examples/tree/main/patch-update-hana-cloud).
 
