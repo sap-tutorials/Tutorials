@@ -37,22 +37,9 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
 2. To prepare the project, execute in the root level of your project in VS Code:
 
-[OPTION BEGIN [CMD, Bash]]
-
-```CMD/Bash
-cds add hana,mta,xsuaa,approuter --for production
-```
-
-[OPTION END]
-
-[OPTION BEGIN [Powershell]]
-
-```pws
-cds add "hana,mta,xsuaa,approuter" --for production
-```
-
-[OPTION END]
-
+    ```Shell/Bash
+    cds add hana,mta,xsuaa,approuter --for production
+    ```
 
     > `--for production` adds all configuration added by this command in the `package.json` file into a `cds.requires.[production]` block.
 
