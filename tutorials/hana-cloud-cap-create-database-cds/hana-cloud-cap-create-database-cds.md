@@ -124,7 +124,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 ### Explore generated design-time artifacts
 
-1. If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
+1. If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `/gen/db/src` called `gen`.
 
     ![Results of cds build](generated_objects.png)
 
@@ -146,6 +146,10 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Confirm Credentials](confirm_credentials.png)
 
+1. Your first choice will be for the binding option.  Choose `Bind to an HDI container`.
+
+    ![Bind to an HDI container](bind_hdi.png)
+
 1. You might be presented with options for existing service instances (if you've completed other tutorials or have performed other HANA development). But for this exercise we want to choose **Create a new service instance**
 
     ![Create a new service instance](create_Service_instance.png)
@@ -157,6 +161,8 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     ![Service Creation Progress](progress.png)
+
+1. Sometimes the binding step fails due to a timing issue. If so simply repeat the binding but this time do not create a new container name but select the existing HDI container that has been created from the previous attempt  `MyHANAApp-dev`
 
 1. Upon completion, the Database Connections will now show the service bound to the instance the wizard just created.
 
