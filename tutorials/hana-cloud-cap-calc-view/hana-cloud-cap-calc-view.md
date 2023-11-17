@@ -168,8 +168,8 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
 1. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
-1. You can test your view via the service layer by adding `/catalog/V_Interaction` to the path.
+1. You can test your view via the service layer by adding `/odata/v4/catalog/V_Interaction` to the path.
 
     ![Test](test_view.png)
 
-Congratulations! You have now successfully combined HANA native artifacts with the SAP Cloud Application Programming Model and learned the modern HANA way to expose Calculation Views via OData.
+Congratulations! You have now successfully combined HANA native artifacts with the SAP Cloud Application Programming Model and learned the modern HANA way to expose Calculation Views via OData. 
