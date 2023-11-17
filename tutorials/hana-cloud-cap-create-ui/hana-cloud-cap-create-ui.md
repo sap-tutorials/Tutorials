@@ -41,6 +41,10 @@ Video tutorial version:
 
     ![npm install](npm_install.png)
 
+1. Our project is setup for real XSUAA security and we will use that later in this tutorial.  But for now we want to test without configuration of the necessary authentication and authorization setup. To do so, open the package.json file in the root of your project. Change the `cds.requires.auth` property from `xsuaa` to `mocked` so we can test with mock authentication.
+
+    ![Mocked Authentication](mocked_auth.png)
+
 1. Now issue the command `cds watch --profile hybrid`. This will start the CAP service locally and use the binding configuration to connect to our remote HANA database instance. Once started you will see a dialog with a button that says **Open in New Tab**. Press this button to test the CAP service in a new browser tab.
 
     ![npm start](npm_start.png)
@@ -79,13 +83,9 @@ Video tutorial version:
 
 ### Configure routing
 
-You will now create an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
+You will use an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This was generated into a project using the initial wizard. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
 
-1. Open another Terminal instance (so that the watch command can continue to run in the other instance). Issue the command `cds add approuter`.
-
-    ![Create MTA Module](create_module.png)
-
-1. This will complete the wizard and generate a folder named `app` in the root of your project.
+1. You should see a folder named `app` in the root of your project.
 
     ![New folder for App Router](new_folder_app_router.png)
 
