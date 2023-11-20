@@ -112,8 +112,4 @@ Clicking on the instance row opens an instance overview page to the right.
 
 There, you can find more information about your instance.
 
-<!-- border -->![Instance details page ](instances-and-subscriptions.png)
-
-
-
 ---
