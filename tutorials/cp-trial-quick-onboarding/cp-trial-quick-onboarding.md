@@ -132,7 +132,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 2. **Global account**: This contains all your subaccounts and entitlements.
 
-3. The third item represents your **subaccount**.
+3. The third item represents your **subaccount**. You can have more than one. 
 
 4. Afterwards, you have your **space** as the fourth item.
 
