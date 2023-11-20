@@ -29,10 +29,10 @@ In this group of tutorials our goal is to create a site using SAP Build Work Zon
 
 >SAP Build Work Zone, standard edition offers two types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in Step 1. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
 
-### Subscribe to the SAP Build Work Zone, standard edition
+### Subscribe to SAP Build Work Zone, standard edition
 
 
-Before you can access the SAP Build Work Zone, standard edition, you first need to subscribe to it.
+Before you can access SAP Build Work Zone, standard edition, you first need to subscribe to it.
 
 1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Go To Your Trial Account**.
 
