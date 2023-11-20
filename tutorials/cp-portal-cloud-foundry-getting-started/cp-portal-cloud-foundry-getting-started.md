@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> To get started with building a site in SAP Build Work Zone, standard edition, you must perform the required onboarding steps.
 
 ## Prerequisites
-  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/israel/products/business-technology-platform/trial.html). Scroll down and click **Get trial now**.
+  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://account.hanatrial.ondemand.com/trial/#/home/trial). Scroll down and click **Get trial now**.
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
@@ -92,7 +92,7 @@ Before you can access the SAP Build Work Zone, standard edition, you first need 
 ### Add yourself to the Launchpad_Admin role
 
 
-To be able to access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
+To access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
 
 
 1. Under **"Security** click **Role Collections** from the side menu.
