@@ -99,7 +99,7 @@ The following steps are required to create a bearer token that will be used in s
 
 3. Replace the contents of AlertsAndMetrics.http file with the contents below.  Highlighted values are to be updated with details from your service key.
 
-    ```HTTP[4, 9, 12, 15, ]
+    ```HTTP[4, 9, 12, 15]
     #REST Client variables -------------------
 
     #From first part of host.  Example shown below
@@ -134,7 +134,7 @@ The following steps are required to create a bearer token that will be used in s
     ###
     ```
 
-4. Execute the Request Bearer Token call using the Send Request link.  Copy the returned `access_token` value to the **bearer** variable on line 24 of the file AlertsAndMetrics.http.
+4. Execute the Request Bearer Token call using the Send Request link.  Copy the returned `access_token` value to the **bearer** variable on line 24 of the file AlertsAndMetrics.http.  Do not include the double quotation marks.
 
     ![start of the access_token to be Copied](access_token.png)
 
@@ -159,14 +159,21 @@ The following instructions will show a few examples of how to view the list of t
     #Alerts REST API calls --------------------------
 
     #Get the triggered alerts (events) for a specific instance
-    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=INFO,NOTICE,WARNING,ERROR
     Authorization: Bearer {{bearer}}
 
     ###
 
     #Get the triggered alerts (events) for a specific instance for a specific time period such as 4 days ago
     #The data is kept only for a certain duration, such as 7 days
-    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR&startTimestamp={{startTSAlerts}}&endTimestamp={{endTSAlerts}}
+    #Note that only alerts that have an endTimestamp are returned
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=INFO,NOTICE,WARNING,ERROR&startTimestamp={{startTSAlerts}}&endTimestamp={{endTSAlerts}}
+    Authorization: Bearer {{bearer}}
+
+    ###
+
+    #Get the triggered alerts (events) that are still active
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=Active&startTimestamp={{startTSAlerts}}
     Authorization: Bearer {{bearer}}
 
 
@@ -179,11 +186,9 @@ The following instructions will show a few examples of how to view the list of t
 
     > The `endTimestamp` is optional.
 
-3. Try out the events calls.
+3. Try out the /events calls.
 
     ![Result of request to return the triggered alerts](triggered-alert.png)
-
-    For additional details on the alerts REST API, see [APIs for Alerts](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/81d5c960888741cc8875ab225c540f0a.html).
 
 4. Available alert rules can also be accessed with the REST API. Add the following content to `AlertsAndMetrics.http` above the `#Authorization REST API call` line.
 
@@ -208,7 +213,7 @@ The following instructions will show a few examples of how to view the list of t
     ###
     ```
 
-6. Try out the alert rules calls. The first call will return a list of all alert rules.
+6. Try out the /rules calls. The first call will return a list of all alert rules.
 
     ![Result of request to return alert rules](all_alert_rules.png)
 
@@ -216,7 +221,7 @@ The following instructions will show a few examples of how to view the list of t
 
     ![Result of request to return the HDBDiskUsage alert rule](disk_usage_alert_rule.png)
 
-    For additional details on the alerts REST API, see [APIs for Alerts](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/81d5c960888741cc8875ab225c540f0a.html) and [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/ALERT_NOTIFICATION/5967a369d4b74f7a9c2b91f5df8e6ab6/6f75804854254aa59f0faf399688f467.html).  
+    For additional details on the alerts REST API, see [APIs for Alerts](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/apis-for-alerts) and [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/sap-hana-cloud-service-database-events).  
 
 
 ### Access database metrics
@@ -246,6 +251,7 @@ The following instructions will show a few examples of how to view metrics throu
     Authorization: Bearer {{bearer}}
 
     ###
+    
     ```
 
     > Metrics data is only persisted for a fixed amount of time after the current date such as 7 days.
@@ -254,7 +260,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     > The `endTimestamp` is optional.
 
-2. Try out the definitions call to get a list of the available metrics
+2. Try out the /definitions call to get a list of the available metrics
 
     ![Result of request to show the available metrics](metrics-list.png)
 
@@ -273,7 +279,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     * `count` is shown at the end of the JSON request.  In this case there were 48 metrics available.
 
-3. Try out the values call to see the values for a specific metric.
+3. Try out the /values call to see the values for a specific metric.
 
     ![Result of request to show a specific metric](metric-values.png)
 
@@ -281,9 +287,9 @@ The following instructions will show a few examples of how to view metrics throu
 
     ![index server service](index-service.png)
 
-    >Metrics can also be accessed via SQL queries.  For additional details see [`M_LOAD_HISTORY_SERVICE` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/261022b7e22b4de9b04f931b78c4c6b4.html).  Note that when accessing metrics via SQL queries, the database must be accessible as the data is stored in the tenant database.  When accessing metrics via the REST API, the metrics data is stored outside of the tenant database.
+    >Metrics can also be accessed via SQL queries.  For additional details see [`M_LOAD_HISTORY_SERVICE` System View](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/m-load-history-service-system-view).  Note that when accessing metrics via SQL queries, the database must be accessible as the data is stored in the tenant database.  When accessing metrics via the REST API, the metrics data is stored outside of the tenant database.
 
-    For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html) and [Overview of Available Metrics](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/46e370ced3ef4d2bbd0ec2337df5f565.html).
+    For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/apis-for-metrics) and [Overview of Available Metrics](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/overview-of-available-metrics).
 
 ### Knowledge check
 

@@ -9,7 +9,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Start Using SAP HANA Cloud Free Tier in SAP BTP Cockpit
-<!-- description --> Learn how to get started with the free tier model or how to add it to an existing account on SAP Business Technology Platform.
+<!-- description --> Learn how to get started with SAP HANA Cloud free tier or how to add it to an existing account on SAP Business Technology Platform.
 
 ## Prerequisites
 ## You will learn
@@ -64,68 +64,58 @@ Once you have your SAP BTP account setup, proceed to the next step to learn how 
 
 1.	In the SAP BTP cockpit, click on your **subaccount**.
 
-2.	Then click on **Entitlements** on the left-hand side menu. Here you can see all the services associated with your account.
+    ![open the subaccount](open-subaccount.png)
+
+2.	Then click on **Entitlements** on the left-hand side menu and search for entitlements for SAP HANA.
 
     ![BTP Entitlements](BTP-entitlements-ft.png)
 
-3.	Enter `HANA` in the search field and make sure you have entitlements for the services (and service plans) listed here:
+3.	Confirm that you have entitlements for the services (and service plans) listed here:
 
-    - SAP HANA Cloud: `tools (Application)`, `hana`, `hana-cloud-connection`, and `relational-data-lake`
-    - SAP HANA Schemas & HDI Containers: `hdi-shared`, `schema`, and `securestore`
+    - SAP HANA Cloud:          
+      * `relational-data-lake-free`
+      * `hana-cloud-connection-free`
+      * `hana-free`
+      * `tools`
 
-    If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen.
+    - SAP HANA Schemas & HDI Containers: 
+      * `hdi-shared`
+      * `schema`
+      * `securestore`
 
-    ![BTP Configure Entitlements](BTP-configure-entitlements-ft.png)
+4. If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen, then click on **Add Service Plans** in the same area of the screen.
 
-4.	Click on **Add Service Plans** in the same area of the screen.
-
-    ![BTP add service plan](BTP-add-service-plan-ft.png)
-
-5.	In the pop-up that opens, type `HANA` in the search box to see all relevant entitlements.
+    In the pop-up that opens, type `SAP HANA` in the search box to see all relevant entitlements.
 
     ![BTP select entitlements](add-serv-plans.png)
 
-6.	Select the missing entitlements by checking the boxes. Since you want to make use of the SAP HANA Cloud free tier services, ensure you select the available plans for **SAP HANA Cloud** with titles ending in **-free**, as well as the SAP HANA Cloud Tools application:
-
-    -  `tools (Application)`
-    -  `hana-free`
-    -  `hana-cloud-connection-free`
-    -  `relational-data-lake-free`   
-
-
-    ![BTP Add Services HANA](ft-schemas-hc.png)
-
-    You also need to add the following plans for **SAP HANA Schemas & HDI Containers**:
-    - `hdi-shared`
-    - `schema`
-    - `securestore`
-
-    ![BTP Add Services schemas](ft-add-schema-plans.png)
-
-7.	Click on **Add X Service Plans**, where X is the amount of services you want to add.  
-
-    ![BTP Add Services](ft-add-eight-serv-plans.png)
-
-8.	On the top right-hand side of the screen, make sure to click on **Save**.
+    After clicking on **Add X Service Plans**, where X is the number of services you want to add,  make sure to click on the **Save** button.
+    
     ![BTP entitlements save](BTP-entitlement-save-ft.png)
 
-9. From the SAP BTP Cockpit, click on **Instances and Subscriptions** on the left-hand side menu and select **Create** in the top-right corner. Select **SAP HANA Cloud** under Service and **tools** under Plan and click create. SAP HANA Cloud will be visible under **Applications**.
+### Add a subscription to SAP HANA Cloud tools
+
+1. From SAP BTP Cockpit, click on **Services** and then **Service Marketplace**.  Search for **SAP HANA Cloud** and click **Create** in the top-right corner. 
+
+    ![Create an instance of SAP HANA Cloud](create-instance.png)
+  
+2. Select **SAP HANA Cloud** under Service and **tools** under Plan.  
 
     ![subscribe to tooling](subscribe-to-tooling-existing-acct.png)
 
-10. To ensure that your desired user has permissions to manage SAP HANA Cloud database instances, navigate to **Security** > **Users** from the left-hand side menu and click on your user.  
+3. To ensure that your desired user has the necessary permissions to manage instances in HANA Cloud Central, navigate to **Security** > **Users** in the left hand side menu. Then click on your user.  
 
     ![user management](user-mgmt.png)
 
-    Click on the **three dots** in the right-hand panel to find the **Assign Role Collection** button.  
+    Click on the **Assign Role Collection** button.
 
     ![assign role collection](assign-role.png)  
 
-    Select **SAP HANA Cloud Administrator** then click Assign Role Collection.  
+    Select **SAP HANA Cloud Administrator** then click Assign Role Collection.
 
     ![Select SAP HANA admin role](role-selected.png)
 
-11. Navigate back to the **Instances and Subscriptions** page. Then click on SAP HANA Cloud under Applications to open SAP HANA Cloud Central.  
+4. Navigate to **Services**, **Instances and Subscriptions** and click on **SAP HANA Cloud** to open SAP HANA Cloud Central.   
 
     ![hana cloud central](hcc-app.png)
 
@@ -139,7 +129,7 @@ Use the **Help** button at the top right-hand corner of the screen once you are 
 
 ![BTP Help](BTP-help.png)
 
-For further details, consult our documentation material [here](https://help.sap.com/viewer/product/BTP/LATEST/en-US).
+For further details, consult our documentation material [here](https://help.sap.com/docs/btp).
 
 
 ### Understand Accounts, Directories, and Subaccounts
@@ -147,7 +137,7 @@ Your account on SAP Business Technology Platform is called a **global account**.
 
 ![BTP Global Account](BTP-global-account.png)
 
-Below you can see a simplified diagram of a global account in SAP BTP Cockpit with different ways in which directories, subaccounts, are used to organize SAP HANA database and data lake instances.  Of course, once you use SAP HANA Cloud, you will most likely have many more databases, subaccounts and perhaps even global accounts. These levels will then help you keep everything well-organized.
+Below you can see a simplified diagram of a global account in SAP BTP Cockpit with different ways in which directories, subaccounts, are used to organize SAP HANA database and data lake instances.  Of course, once you use SAP HANA Cloud, you will most likely have many more databases, subaccounts, and perhaps even global accounts. These levels will then help you keep everything well-organized.
 
 ![BTP Illustration](btp-illustration.png)
 
