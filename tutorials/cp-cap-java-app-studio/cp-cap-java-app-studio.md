@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to expose ports of the application in SAP Business Application Studio to the internet.
 
 ## Intro
-First things first, you need to set up your development environment and check that everything is running smoothly.
+First things first: You need to set up your development environment and check that everything is running smoothly.
 
 For this tutorial, we use the SAP Business Application Studio as the development tool of choice. SAP Business Application Studio provides a web-based Visual Studio Code-like experience. So, it's like VS Code, but for your browser.
 
