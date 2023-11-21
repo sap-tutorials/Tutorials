@@ -16,7 +16,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to prepare your application for deployment with security enabled
   - How to test authorizations on the applications deployed to SAP BTP, Cloud Foundry
 ---
-Before you deploy your authentication-enabled application you have to create an instance of service **Authorization and Trust Management Service** (XSUAA) and configure it, bind it to your application and provide it with the security descriptor that contains roles and scopes of your application. See section [Protecting Your Application](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c5c565f37c946faa154909004331d57.html) in the SAP BTP documentation for more details.
+Before you deploy your authentication-enabled application you have to create an instance of service **Authorization and Trust Management Service** (XSUAA) and configure it, bind it to your application and provide it with the security descriptor that contains roles and scopes of your application. For more details, see section [Protecting Your Application](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c5c565f37c946faa154909004331d57.html) in the SAP BTP documentation.
 
 ### Generate security descriptor and update application manifest
 
