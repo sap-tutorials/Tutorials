@@ -1,14 +1,14 @@
 ---
 parser: v2
-author_name: Beatrice Pasch
-author_profile: https://github.com/beapasch
+author_name: Kerstin Bier
+author_profile: https://github.com/bierke
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-web-ide, software-product>sap-translation-hub, tutorial>license ]
 time: 10
 ---
 
-# Deploy an SAP Fiori App to SAP BTP
+# Deploy an SAP Fiori App to SAP BTP (Neo environment)
 <!-- description --> Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP BTP.
 
 ## Prerequisites  

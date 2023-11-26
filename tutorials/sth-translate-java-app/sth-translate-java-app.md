@@ -1,14 +1,14 @@
 ---
 parser: v2
-author_name: Beatrice Pasch
-author_profile: https://github.com/beapasch
+author_name: Kerstin Bier
+author_profile: https://github.com/bierke
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>java, tutorial>license ]
 time: 15
 ---
 
-# Translate a Java App
+# Translate a Java App (Neo environment)
 <!-- description --> Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
 
 ## Prerequisites  
@@ -20,7 +20,7 @@ time: 15
 
 
 ---
-### Locate properties file
+### Locate .properties file
 
 
 In your Eclipse window, locate the `i18n.properties` file that contains your app texts.
@@ -28,7 +28,7 @@ In your Eclipse window, locate the `i18n.properties` file that contains your app
 ![Locate i18n.properties file](sth-locate-i18n-prop-file.png)
 
 
-### View texts in properties file
+### View texts in .properties file
 
 
 Before you get started with the translation process, open the `i18n.properties` file to look at the texts that you're going to translate.
