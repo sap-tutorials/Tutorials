@@ -8,8 +8,6 @@ tags: [  tutorial>beginner, software-product>sap-translation-hub, software-produ
 time: 10
 ---
 
-primary_tag: software-product>sap-translation-hub
-tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-
 # Translate an SAP Fiori App (Neo environment)
 <!-- description --> Use SAP Translation Hub to translate your SAP Fiori app.
 
