@@ -35,13 +35,19 @@ By combining in-memory storage with columnar store, data operations are performe
 
     <!-- border -->![Allow All IP addresses](trial4.png)
 
-1. Also while in the "Advanced Settings", we want to configure the Instance Mapping. The HANA Cloud instance lives at your BTP sub account level and isn't immediately available in either the Cloud Foundry nor Kyma runtimes. In order to use HANA for HDI or CAP based development, you need to map the instance to your runtime of choice. For this Tutorial we will map to the default Cloud Foundry runtime of your trial account.  
+1. Also while in the "Advanced Settings", we want to configure the Instance Mapping. The HANA Cloud instance lives at your BTP sub account level and isn't immediately available in either the Cloud Foundry nor Kyma runtimes. In order to use HANA for HDI (HANA Deployment Infrastructure) or CAP (Cloud Application Programming Model) based development, you need to map the instance to your runtime of choice. For this Tutorial we will map to the default Cloud Foundry runtime of your trial account.  
 
     <!-- border -->![Add Mapping](addMapping.png)
 
-1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).  Note: you can also supply a Space ID in the Environment Group column but it is not required. If no value is supplied the HANA Cloud instance is automatically available to all spaces within an Organization.
+1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).
 
     <!-- border -->![Add Mapping Instance](addMappingInstance.png)
+
+1. In the Environment Group of the Mapping supply the Space ID from your Cloud Foundry Environment (which can be found in the URL of the BTP Cockpit after navigating to the Space details).
+
+    <!-- border -->![Add Mapping Space](addMappingSpace1.png)
+
+    <!-- border -->![Add Mapping Space](addMappingSpace2.png)
 
 1. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 

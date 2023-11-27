@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a Go application that queries a SAP HANA Database
 
 ## Intro
-Go is an open source programming language developed by Google to increase productivity among programmers. For more information, see the [Go Documentation](https://golang.org/doc/).
+Go is an open-source programming language developed by Google to increase productivity among programmers. For more information, see the [Go Documentation](https://golang.org/doc/).
 
 ---
 
@@ -43,7 +43,7 @@ On Linux, follow the instructions for the appropriate Linux version such as the 
 
 ### Configure the environment
 
-The SAP HANA Client interface for Go, like the other SAP HANA client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fba20e31f75c4f7ca5629083869069e5.html) in the SAP HANA Client Interface Programming Reference Guide.  A 64-bit `gcc` compiler is required.
+The SAP HANA Client interface for Go, like the other SAP HANA client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Set Up Your Application to Use the Go Driver Package](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/fba20e31f75c4f7ca5629083869069e5.html) in the SAP HANA Client Interface Programming Reference Guide.  A 64-bit `gcc` compiler is required.
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
@@ -85,7 +85,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     pico ~/.bash_profile
     ```
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of the `libdbcapiHDB` library as shown below, and set the `LD_LIBRARY_PATH` if needed.
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of the `libdbcapiHDB` library as shown below and set the `LD_LIBRARY_PATH` if needed.
 
     On Windows, add the **NEW** System Variable. Set the variable name to **`CGO_LDFLAGS`** and the variable value to the location of `dbcapi` library: `C:\SAP\hdbclient\libdbcapiHDB.dll`
 
@@ -230,11 +230,9 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Result](results.png)
 
-For more information on the API's used, consult the SAP HANA connection specific properties at [Connect to SAP HANA from Go](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/).
-
+For more information on the API's used, consult the SAP HANA connection specific properties at [Go Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/).
 
 ### Debug the application
-
 
 Visual Studio Code provides plugins for Go and can be used to debug an application.
 

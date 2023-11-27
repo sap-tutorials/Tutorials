@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Annika Gonnermann
-author_profile: https://github.com/AnnikaGonnermann
+author_name: Madeline Schaefer
+author_profile: https://github.com/Madeline-Schaefer
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
@@ -132,7 +132,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 2. **Global account**: This contains all your subaccounts and entitlements.
 
-3. The third item represents your **subaccount**.
+3. The third item represents your **subaccount**. You can have more than one. 
 
 4. Afterwards, you have your **space** as the fourth item.
 
@@ -140,7 +140,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 6. This would be the instance of the deployed application.
 
-To get an overview of the navigation in the cockpit, have a look at our guided tour: **Get Familiar with the Cockpit**. To start the guided tour, navigate to your global account scope and open SAP Companion.
+To get an overview of the navigation in the cockpit, have a look at our guided tour: **Get Familiar with the Cockpit**. To start the guided tour, navigate to your global account scope and open SAP Companion by clicking on the icon next to the user menu.
 
 <!-- border -->![Start Guided Tour](guidedtour.png)
 

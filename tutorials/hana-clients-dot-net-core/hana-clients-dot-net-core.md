@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
   - How to create and debug a .NET application that queries an SAP HANA database
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and macOS operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
@@ -73,7 +73,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     >export HDBDOTNETCORE=/home/dan/sap/hdbclient/dotnetcore
     >```
 
-    >Run the source command to immediately apply all the changes made to the `.bash_profile` file
+    >Run the source command to immediately apply all the changes made to the `.bash_profile` file.
 
     >```Shell (Linux or Mac)
     >source ~/.bash_profile
@@ -196,7 +196,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     Save and close the `Program.cs` file after replacing the code and updating the host and port.
 
-    The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
+    The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 
 6.  Run the app:
 

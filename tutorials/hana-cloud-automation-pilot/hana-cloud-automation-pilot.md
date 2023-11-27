@@ -47,12 +47,12 @@ The SAP Automation Pilot provides the following catalogs to aid in managing an S
 
       ![cf-sapcp catalog](cf-sapcp.png)
 
-In addition, SAP Automation Pilot provides an option to schedule commands and provides integration with the SAP Alert Notification service which is used to send an email or create an incident in various ticketing systems.  If you do not already have the SAP Automation Pilot configured, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) demonstrates how to get started.
+In addition, SAP Automation Pilot provides an option to schedule commands and provides integration with the SAP Alert Notification service which is used to send an email or create an incident in various ticketing systems.  If you do not already have the SAP Automation Pilot configured, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) and the tutorial [Get Started with SAP Automation Pilot](https://developers.sap.com/tutorials/automation-pilot-1.html) demonstrate how to get started.
 
 ### Import the automation catalog
 The catalog below contains commands and inputs for those commands that can be used to automate tasks within SAP HANA Cloud instances.
 
-1. Import the catalog below into the SAP Automation Pilot.
+1. Import the catalog below into the SAP Automation Pilot.  
 
     ![import catalog](import.png)
 
@@ -184,37 +184,6 @@ The catalog below contains commands and inputs for those commands that can be us
           "tags": {}
         },
         {
-          "id": "Automation-<<<TENANT_ID>>>:CFUpgradeDetails:1",
-          "name": "CFUpgradeDetails",
-          "description": "The release cycle, track, and version to upgrade to",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "id": {
-              "type": "string",
-              "sensitive": false,
-              "description": "The new version to upgrade to such as 2023.16.17"
-            },
-            "track": {
-              "type": "string",
-              "sensitive": false,
-              "description": "A track value such as 2023.16 for QRC 2 2023"
-            },
-            "releaseCycle": {
-              "type": "string",
-              "sensitive": false,
-              "description": "A value such as generally-available-quarterly"
-            }
-          },
-          "values": {
-            "id": "2023.16.17",
-            "track": "2023.16",
-            "releaseCycle": "generally-available-quarterly"
-          },
-          "tags": {}
-        },
-        {
           "id": "Automation-<<<TENANT_ID>>>:Stop:1",
           "name": "Stop",
           "description": "Stop JSON for an SAP HANA Cloud instance",
@@ -255,12 +224,18 @@ The catalog below contains commands and inputs for those commands that can be us
               "type": "object",
               "sensitive": false,
               "description": null
+            },
+            "servicePlanId": {
+              "type": "string",
+              "sensitive": false,
+              "description": "Required for MassUpgradeHC when attempting to get a  list of all the SAP HANA Cloud database instances in a subaccount.  Obtained via btp list services/plan --fields-filter \"name contains 'hana'\" "
             }
           },
           "values": {
-            "instanceId": "496c16df-34a8-4ec7-bbbe-a2f9bd9c1d85",
+            "instanceId": "be0bdfe8-e0a3-468b-84a6-b1ba14b5f5ce",
             "instanceName": "HC_HDB",
-            "serviceKey": "{\n  \"clientid\": \"sb-166d84bf-73f3-4df1-a8a2-6324b89e84a0!b196428|service-manager!b1476\",\n  \"clientsecret\": \"57ddf27f-cc2a-4170-a5e9-620d830e1d76$vvJpnICFx3JjwuM2rBGlDOcKSDzZX7P3PEnGegKRzbI=\",\n  \"sm_url\": \"https://service-manager.cfapps.us10.hana.ondemand.com\",\n  \"url\": \"https://a02e56dbtrial.authentication.us10.hana.ondemand.com\",\n  \"xsappname\": \"166d84bf-73f3-4df1-a8a2-6324b89e84a0!b196428|service-manager!b1476\"\n}"
+            "serviceKey": "{\n  \"clientid\": \"sb-aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\",\n  \"clientsecret\": \"5bb27450-7089-4a44-9168-bac14fc4425e$H6CK7PbCfpRfW30xT_lN6FypTZEaDRnb9tCsXM6xIX4=\",\n  \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\",\n  \"url\": \"https://dansftsubaccount.authentication.ca10.hana.ondemand.com\",\n  \"xsappname\": \"aed8de6f-2401-4e27-8db3-15c00ad34a5d!b2030|service-manager!b16\"\n}",
+            "servicePlanId": "e573479c-39f8-4774-80a9-12d762b0f159"
           },
           "tags": {}
         }
@@ -431,6 +406,132 @@ The catalog below contains commands and inputs for those commands that can be us
                 }
               },
               {
+                "alias": "Upgrade",
+                "valueFrom": {
+                  "inputReference": "Automation-<<<TENANT_ID>>>:Upgrade:1",
+                  "inputKey": null
+                }
+              }
+            ],
+            "output": {
+              "result": "$(.upgrade.output.outputs[])",
+              "instancesFound": "$(.getInstances.output.serviceInstances | map({name: .name,  env: .context.env_type, instanceId: .id, service_plan: .service_plan_id}))",
+              "instanceList": "$(.getInstances.output.serviceInstances)"
+            },
+            "executors": [
+              {
+                "execute": "sm-sapcp:ListServiceInstances:1",
+                "input": {
+                  "fieldSelector": "service_plan_id eq '$(.InstanceDetails.servicePlanId)' and context/env_type eq 'sapcp'",
+                  "serviceKey": "$(.InstanceDetails.serviceKey)"
+                },
+                "alias": "getInstances",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": {
+                  "semantic": "OR",
+                  "conditions": [
+                    {
+                      "semantic": "OR",
+                      "cases": [
+                        {
+                          "expression": "$(.getInstances.output.totalResultsCount) ",
+                          "operator": "GREATER_THAN",
+                          "semantic": "OR",
+                          "values": [
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": [
+                  {
+                    "message": "No instances found to update",
+                    "when": {
+                      "semantic": "OR",
+                      "conditions": [
+                        {
+                          "semantic": "OR",
+                          "cases": [
+                            {
+                              "expression": "$(.execution.error.originalMessage)",
+                              "operator": "STARTS_WITH",
+                              "semantic": "OR",
+                              "values": [
+                                "Validation"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "execute": "utils-sapcp:ForEach:1",
+                "input": {
+                  "inputs": "$(.getInstances.output.serviceInstances | map({ instanceId: .id })) ",
+                  "defaultValues": "{ \"parameters\": $(.Upgrade.parameters), \"serviceKey\": $(.InstanceDetails.serviceKey) }",
+                  "command": "sm-sapcp:TriggerUpdateServiceInstance:1"
+                },
+                "alias": "upgrade",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": null,
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": []
+              }
+            ],
+            "listeners": []
+          },
+          "id": "Automation-<<<TENANT_ID>>>:MassUpgradeHC:1",
+          "name": "MassUpgradeHC",
+          "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+          "catalog": "Automation-<<<TENANT_ID>>>",
+          "version": 1,
+          "inputKeys": {},
+          "outputKeys": {
+            "result": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "instancesFound": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "instanceList": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            }
+          },
+          "tags": {
+            "feature:priority": "medium"
+          }
+        },
+        {
+          "configuration": {
+            "values": [
+              {
+                "alias": "InstanceDetails",
+                "valueFrom": {
+                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                  "inputKey": null
+                }
+              },
+              {
                 "alias": "description",
                 "valueFrom": {
                   "inputReference": "Automation-<<<TENANT_ID>>>:Description:1",
@@ -497,21 +598,21 @@ The catalog below contains commands and inputs for those commands that can be us
               }
             ],
             "output": {
-              "current": "$(.CFGetAvailableUpgradeVersions.output.currentVersion)",
-              "available": "$(.CFGetAvailableUpgradeVersions.output.availableVersions)"
+              "instanceParameters": "$(.getDetails.output.parameters) "
             },
             "executors": [
               {
-                "execute": "dblm-sapcp:GetHanaCloudInstanceUpdateVersions:1",
+                "execute": "cf-sapcp:GetCfServiceInstance:1",
                 "input": {
-                  "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
                   "password": "$(.CFUser.password)",
-                  "resourceName": "$(.CFInstanceDetails.resourceName)",
+                  "org": "$(.CFInstanceDetails.subAccount)",
+                  "serviceInstance": "$(.CFInstanceDetails.resourceName)",
                   "region": "$(.CFInstanceDetails.region)",
                   "user": "$(.CFUser.user)",
-                  "subAccount": "$(.CFInstanceDetails.subAccount)"
+                  "includeParameters": "true",
+                  "space": "$(.CFInstanceDetails.resourceGroup)"
                 },
-                "alias": "CFGetAvailableUpgradeVersions",
+                "alias": "getDetails",
                 "progressMessage": null,
                 "initialDelay": null,
                 "pause": null,
@@ -524,20 +625,15 @@ The catalog below contains commands and inputs for those commands that can be us
             ],
             "listeners": []
           },
-          "id": "Automation-<<<TENANT_ID>>>:CFGetAvailableUpgradeDetails:1",
-          "name": "CFGetAvailableUpgradeDetails",
+          "id": "Automation-<<<TENANT_ID>>>:CFGetInstanceParameters:1",
+          "name": "CFGetInstanceParameters",
           "description": "Get details on available upgrades for an SAP HANA Cloud Instance provisioned in Cloud Foundry",
           "catalog": "Automation-<<<TENANT_ID>>>",
           "version": 1,
           "inputKeys": {},
           "outputKeys": {
-            "current": {
-              "type": "object",
-              "sensitive": false,
-              "description": null
-            },
-            "available": {
-              "type": "object",
+            "instanceParameters": {
+              "type": "string",
               "sensitive": false,
               "description": null
             }
@@ -560,31 +656,102 @@ The catalog below contains commands and inputs for those commands that can be us
                   "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
                   "inputKey": null
                 }
-              },
-              {
-                "alias": "CFUpgradeDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFUpgradeDetails:1",
-                  "inputKey": null
-                }
               }
             ],
-            "output": {},
+            "output": {
+              "availableUpgradeVersions": "$(.getParams.output.parameters.availableUpgradeVersions)",
+              "appliedVersion": "$(.generateJSON.output.output[0])",
+              "previousProductVersion": "$(.getParams.output.parameters.currentProductVersion)"
+            },
             "executors": [
               {
-                "execute": "dblm-sapcp:UpdateHanaCloudInstance:1",
+                "execute": "cf-sapcp:GetCfServiceInstance:1",
                 "input": {
-                  "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
                   "password": "$(.CFUser.password)",
-                  "resourceName": "$(.CFInstanceDetails.resourceName)",
-                  "releaseTrack": "$(.CFUpgradeDetails.track)",
+                  "org": "$(.CFInstanceDetails.subAccount)",
+                  "serviceInstance": "$(.CFInstanceDetails.resourceName)",
                   "region": "$(.CFInstanceDetails.region)",
-                  "releaseCycle": "$(.CFUpgradeDetails.releaseCycle)",
-                  "version": "$(.CFUpgradeDetails.id)",
                   "user": "$(.CFUser.user)",
-                  "subAccount": "$(.CFInstanceDetails.subAccount)"
+                  "includeParameters": "true",
+                  "space": "$(.CFInstanceDetails.resourceGroup)"
                 },
-                "alias": "CFUpgradeHC",
+                "alias": "getParams",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": {
+                  "semantic": "OR",
+                  "conditions": [
+                    {
+                      "semantic": "OR",
+                      "cases": [
+                        {
+                          "expression": "$(.getParams.output.parameters.availableUpgradeVersions) | length",
+                          "operator": "GREATER_THAN",
+                          "semantic": "OR",
+                          "values": [
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": [
+                  {
+                    "message": "No patches or updates found",
+                    "when": {
+                      "semantic": "OR",
+                      "conditions": [
+                        {
+                          "semantic": "OR",
+                          "cases": [
+                            {
+                              "expression": "$(.execution.error.originalMessage)",
+                              "operator": "STARTS_WITH",
+                              "semantic": "OR",
+                              "values": [
+                                "Validation"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "execute": "scripts-sapcp:ExecuteScript:2",
+                "input": {
+                  "stdin": "$(.getParams.output.parameters)",
+                  "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
+                },
+                "alias": "generateJSON",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": null,
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": []
+              },
+              {
+                "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                "input": {
+                  "password": "$(.CFUser.password) ",
+                  "org": "$(.CFInstanceDetails.subAccount) ",
+                  "serviceInstance": "$(.CFInstanceDetails.resourceName) ",
+                  "region": "$(.CFInstanceDetails.region) ",
+                  "user": "$(.CFUser.user)",
+                  "parameters": "$(.generateJSON.output.output[0])",
+                  "space": "$(.CFInstanceDetails.resourceGroup) "
+                },
+                "alias": "upgrade",
                 "progressMessage": null,
                 "initialDelay": null,
                 "pause": null,
@@ -603,7 +770,23 @@ The catalog below contains commands and inputs for those commands that can be us
           "catalog": "Automation-<<<TENANT_ID>>>",
           "version": 1,
           "inputKeys": {},
-          "outputKeys": {},
+          "outputKeys": {
+            "availableUpgradeVersions": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "appliedVersion": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "previousProductVersion": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            }
+          },
           "tags": {}
         },
         {
@@ -775,27 +958,91 @@ The catalog below contains commands and inputs for those commands that can be us
                   "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
                   "inputKey": null
                 }
-              },
-              {
-                "alias": "upgrade",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Upgrade:1",
-                  "inputKey": null
-                }
               }
             ],
-            "output": {},
+            "output": {
+              "availableUpgradeVersions": "$(.getParams.output.CommandOutput.availableUpgradeVersions)",
+              "appliedVersion": "$(.generateJSON.output.output[0])",
+              "previousProductVersion": "$(.getParams.output.CommandOutput.currentProductVersion)"
+            },
             "executors": [
+              {
+                "execute": "Automation-<<<TENANT_ID>>>:GetInstanceParameters:1",
+                "input": {},
+                "alias": "getParams",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": {
+                  "semantic": "OR",
+                  "conditions": [
+                    {
+                      "semantic": "OR",
+                      "cases": [
+                        {
+                          "expression": "$(.getParams.output.CommandOutput.availableUpgradeVersions) | length",
+                          "operator": "GREATER_THAN",
+                          "semantic": "OR",
+                          "values": [
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": [
+                  {
+                    "message": "No patches or updates found",
+                    "when": {
+                      "semantic": "OR",
+                      "conditions": [
+                        {
+                          "semantic": "OR",
+                          "cases": [
+                            {
+                              "expression": "$(.execution.error.originalMessage)",
+                              "operator": "STARTS_WITH",
+                              "semantic": "OR",
+                              "values": [
+                                "Validation"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "execute": "scripts-sapcp:ExecuteScript:2",
+                "input": {
+                  "stdin": "$(.getParams.output.CommandOutput)",
+                  "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
+                },
+                "alias": "generateJSON",
+                "progressMessage": null,
+                "initialDelay": null,
+                "pause": null,
+                "when": null,
+                "validate": null,
+                "autoRetry": null,
+                "repeat": null,
+                "errorMessages": []
+              },
               {
                 "execute": "sm-sapcp:UpdateServiceInstance:1",
                 "input": {
                   "instanceId": "$(.InstanceDetails.instanceId)",
-                  "displayName": "$(.InstanceDetails.instanceName)",
                   "serviceKey": "$(.InstanceDetails.serviceKey)",
                   "deadline": "30",
-                  "parameters": "$(.upgrade.parameters)"
+                  "parameters": "$(.generateJSON.output.output[0])"
                 },
-                "alias": "update",
+                "alias": "upgrade",
                 "progressMessage": null,
                 "initialDelay": null,
                 "pause": null,
@@ -814,7 +1061,23 @@ The catalog below contains commands and inputs for those commands that can be us
           "catalog": "Automation-<<<TENANT_ID>>>",
           "version": 1,
           "inputKeys": {},
-          "outputKeys": {},
+          "outputKeys": {
+            "availableUpgradeVersions": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "appliedVersion": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "previousProductVersion": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            }
+          },
           "tags": {}
         }
       ]
@@ -825,11 +1088,13 @@ The catalog below contains commands and inputs for those commands that can be us
 
     ![my catalog](my-catalog.png)
 
+    >Should you wish to delete this catalog, perhaps to import a newer version, press the Edit Multiple button for both commands and inputs as a non empty catalog cannot be deleted.
+
 2. Examine the imported commands and inputs.
 
     ![Commands](commands.png)
 
-    The commands that start with CF are for instances that were provisioned to Cloud Foundry.  
+    The commands and inputs that start with CF are for instances that were provisioned to Cloud Foundry.  
 
     ![Inputs](inputs.png)
 
@@ -864,13 +1129,13 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         No additional inputs are required.
 
-       The command will then complete, and its status can be examined.
+        The command will then complete, and its status can be examined.
 
-      ![completed command](status.png)
+        ![completed command](status.png)
 
-      The status of the SAP HANA Cloud instance will update to Starting.
+        The status of the SAP HANA Cloud instance will update to Starting.
 
-      ![HCC starting](starting.png)
+        ![HCC starting](starting.png)
 
 3. Open the command **UpdateHC**.  It can be used to perform an update of an SAP HANA Cloud instance.  
 
@@ -884,21 +1149,71 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         ![updated description](updated-description.png)
 
-4. Open the command **UpgradeHC**.  It can be used to perform an upgrade of an SAP HANA Cloud instance.
+4. Open the command **UpgradeHC**.  This command takes an input parameter to specify the instance to target.  It can be used to perform an upgrade of an SAP HANA Cloud instance and selects the instance to upgrade to from a value returned by a call to GetInstanceParameters.  This command could then be scheduled to run nightly or weekly which would then keep the SAP HANA Cloud instance running using the latest available patch or update.  
+    
+    ![UpgradeHC2 command](upgradeHC2.png)
 
-    Similar to the previous example, this command takes two input parameters; one to specify the instance to target and one to describe the change the update should make.  In this case the update will be to upgrade to a new version.  
+    * Prior to triggering the command, examine the instance in SAP HANA Cloud Central.
 
-    * Open the **Upgrade** input parameter and edit its value to reflect the version to be upgraded to.
+        ![Viewing available upgrade details in HCC](upgrade-hcc2.png)
 
-        ![upgrade JSON](upgrade.png)
+    * Trigger the command and examine the output.
 
-        These values can be taken from SAP HANA Cloud Central, by using the command **GetInstanceParameters**, or by making a request using the BTP CLI.
+        ![updgrade HC Output](upgradeHCOutput.png)
 
-        ![Viewing available upgrade details in HCC](upgrade-hcc.png)
+    * Once the command completes, the notification that there is a new version available will disappear and the new version will be shown in SAP HANA Cloud Central.
 
-    * Trigger the command.  Once the command completes, the notification that there are new versions available will disappear and the new version will be shown in SAP HANA Cloud Central.
+        ![HCC After the upgrade](hcc-after-update2.png)
+      
+    * If there is not an available version to update to, an error message is shown.
 
-        ![HCC After the upgrade](hcc-after-update.png)
+        ![no version to update to](no-version-to-update.png)
+
+        This check is performed in the validation step of the commmand getParams.  
+        
+        ![validate step](validation.png)
+
+        This is performed using a [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#). 
+
+    * Additional customization can be performed in the **generateJSON** command.  
+
+        ![generate Update JSON](generateUpdateJSON.png)
+
+        If no further customization is needed, the JSON could instead be specified directly in the parameter parameters in the upgrade executor using the below JSON.
+
+        ```JSON
+        {
+          "data": {
+            "productVersion": {
+              "releaseCycle": "generally-available-quarterly",
+              "track": "$(.getParams.output.CommandOutput.availableUpgradeVersions[0].track)",
+              "id": "$(.getParams.output.CommandOutput.availableUpgradeVersions[0].id)"
+            }
+          }
+        } 
+        ``` 
+
+5. Open the command **MassUpgradeHC**.  This command takes two input parameters.  The parameter **InstanceDetails** includes the serviceKey which is used for authentication and the servicePlanId is used as a filter to return only SAP HANA Cloud instances in the getInstances executor.  The parameter **Upgrade** specifies the product version that should be used when upgrading the list of SAP HANA Cloud instances.  
+
+    ![UpgradeHC3 command](upgradeHC3.png)
+
+    * Prior to triggering the command, examine the instances in SAP HANA Cloud Central and note any instances that have an upgrade available to them.
+
+        ![Viewing available upgrade details in HCC](upgrade-hcc2.png)  
+
+    * The getInstances executor returns the list of SAP HANA Cloud instances that have been deployed to the subaccount.  It does not include instances deployed to a Cloud Foundry space.
+
+        ![getInstances executor](mass-upgrade-getInstances.png)
+
+    * The upgrade executor loops through the list of instances returned by getInstances and attempts to upgrade each instance.
+
+        ![upgrade executor](mass-upgrade.png)
+
+    * After triggering the command, examine the instances in SAP HANA Cloud Central and note that they now have been upgraded to the specified version.  
+    
+    * The output of the command also indicates the list of instances found.
+
+        ![MassupgradeHC output](mass-upgrade-output.png)
 
 ### Execute commands for instances provisioned to Cloud Foundry
 The examples shown include commands to start, stop, update, and upgrade an SAP HANA Cloud instance.  The commands make use of two common input parameters that specify the instance to target and the credentials to use.
@@ -945,6 +1260,8 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         ![HCC starting](cf-starting.png)
 
+    * An addition example that demonstrates how to perform start and stop operations on multiple instances at once is available at [Mass Stop/Start HANA Cloud Databases](https://github.com/SAP-samples/automation-pilot-examples/tree/main/mass-stop-start-hana-cloud).
+
 3. Open the command **CFUpdateHC**.  The command can be used to perform an update of an SAP HANA Cloud instance.  
 
     * Examine the **Description** input parameter.  This parameter describes the change that will be made.
@@ -957,19 +1274,50 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         ![updated description](cf-updated-description.png)
 
-4. Open the command **CFUpgradeHC**.  It can be used to perform an upgrade of an SAP HANA Cloud instance.  
 
-    * Open the input parameter named **CFUpgradeDetails** and edit its values to reflect the version to be upgraded to.  
+4. Open the command **CFUpgradeHC**.  It can be used to perform an upgrade of an SAP HANA Cloud instance.  This command takes two input parameters; one to specify the instance to target and another for the credentials to use.  The command can be used to perform an upgrade of an SAP HANA Cloud instance and selects the instance to upgrade to from a value returned by a call to GetCfServiceInstance.  This command could then be scheduled to run nightly or weekly which would then keep the SAP HANA Cloud instance running using the latest available patch or update.  
+    
+    ![CFUpgradeHC command](cf-upgrade.png)
 
-        ![upgrade JSON](cf-upgrade.png)
+    * Prior to triggering the command, examine the instance to be upgraded in SAP HANA Cloud Central.
 
-        These values can be taken from SAP HANA Cloud Central as shown below, by using the command **CFGetAvailableUpgradeDetails**, or by making a request using the CF CLI.
+        ![Viewing available upgrade details in HCC](cf-upgrade-hcc.png)
 
-        ![upgrade available](upgrade-available.png)
+    * Trigger the command and examine the output once it completes.
 
-    * Trigger the command.  Once the command has completed, the notification that there are new versions available will disappear and the new version will be shown.
+        ![updgrade HC Output](upgradeHCCOutput.png)
 
-        ![HCC After the upgrade](cf-hcc-after-update.png)
+    * In SAP HANA Cloud Central, the notification that there is a new version available will disappear and the new version will be shown.
+
+        ![HCC After the upgrade](cf-hcc-after-upgrade.png)
+      
+    * If there is not an available version to update to, an error message is shown.
+
+        ![no version to update to](cf-no-version-to-update.png)
+
+        This check is performed in the validation step of the commmand getParams.  
+        
+        ![validate step](validation2.png)
+
+        This is performed using a [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#). 
+
+    * Additional customization can be performed in the **generateJSON** command.
+
+        ![generate Update JSON](cf-generateUpdateJSON.png)
+      
+        If no further customization is needed, the JSON could instead be specified directly in the parameter parameters in the upgrade executor using the below JSON.
+
+        ```JSON
+        {
+          "data": {
+            "productVersion": {
+              "releaseCycle": "generally-available-quarterly",
+              "track": "$(.getParams.output.parameters.availableUpgradeVersions[0].track)",
+              "id": "$(.getParams.output.parameters.availableUpgradeVersions[0].id)"
+            }
+          }
+        } 
+        ```
 
         An additional upgrade example is available at [Patch Update of HANA Cloud Database](https://github.com/SAP-samples/automation-pilot-examples/tree/main/patch-update-hana-cloud).
 

@@ -49,9 +49,9 @@ In this step, you copy the endpoint address of the integration flow.
 
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Choose **Settings** > **APIs** to provision the API Management capability. This provisioning might take a few seconds to complete. After the provisioning is complete, refresh your page.
+1. Choose **Settings** > **APIs** to provision the API Management capability. This provisioning might take a few seconds to complete. After the provisioning is complete, refresh your webpage.
 
-2. Choose **Design** > **APIs** > **Create** to create an API.
+2. Choose **Configure** > **APIs** > **Create** to create an API.
 
 3. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
 >**IMPORTANT** : Paste only the endpoint URL till **`/http/products`** Otherwise, the scenario will not run appropriately.

@@ -40,10 +40,10 @@ The flow consists of the following parts:
 
 ---
 
-### Create new Multi-target Application project
+### Create new Multitarget Application project
 
 
-1. In the left side bar, select **Hamburger icon | View | Command Palette...** to open the **command palette**.
+1. In the left side bar, select **the hamburger icon | View | Command Palette...** to open the **command palette**.
 
     <!-- border -->![open command palette](BAS-Create-MTA-1-.png)
 
@@ -51,9 +51,9 @@ The flow consists of the following parts:
 
     <!-- border -->![command palette opened](AppStudio-Create-MTA-2-.png)
 
-3. Enter the **Fiori: Open CF Application Router Generator** command in the command palette. Type `fiori: open` in the command palette text field to filter the commands.
+3. Enter the **Fiori: Open CF Application Router Generator** command in the command palette.
 
-    >Filter the list of commands in the command palette by typing part of the command in the command palette text field.
+    >Type `fiori: open` in the command palette text field to filter the commands.
 
     <!-- border -->![cf mta and approuter wizard](BAS-Create-MTA-3-.png)
 
@@ -80,15 +80,15 @@ The flow consists of the following parts:
 ### Open the project's folder
 
 
-1. In the left side bar, select **Hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
+1. In the left side bar, select **the hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
 
-2. The **Open Folder** dialog is opened at the center of the SAP Business Application Studio window. Select the **projects** entry.
+2. The **Open Folder** dialog is opened at the center of the SAP Business Application Studio window. First, select the **projects** entry.
 
     <!-- border -->![open folder dialog](BAS-Open-Workspace-1_1-.png)
 
-3. Select the **`FioriDemo`** project within the **projects** folder, and click **OK**.
+3. Then select the **`FioriDemo`** project within the **projects** folder, and click **OK**.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-2-1-.png)
 
@@ -104,7 +104,7 @@ The flow consists of the following parts:
 
     <!-- border -->![launch generate app](BAS-Generate-App-1-1-.png)
 
-    >If the **Get Started** Page does not appear, in the left side bar, select **Hamburger icon | Help | Get Started**.
+    >If the **Get Started** Page does not appear, in the left side bar, select **the hamburger icon | Help | Get Started**.
 
     ><!-- border -->![Welcome Page from help menu](BAS-Welcome-Page-from-Help-Menu-.png)
 
@@ -150,7 +150,7 @@ The flow consists of the following parts:
     | C | Application namespace | **ns** |
     | D | Description | **An SAP Fiori app to view a list of suppliers (demo)** |
     | E | Project folder path | **`/home/user/projects/FioriDemo`** |
-    | F | Minimum SAPUI5 version | **1.112.3 (Source system version)** (default) |
+    | F | Minimum SAPUI5 version | (Use the default) |
     | G | Add deployment configuration | **Yes** (default after setting the project folder path)|
     | H | Add FLP configuration | **Yes** |
     | I | Configure advanced options | **No** (default) |
@@ -201,13 +201,9 @@ The flow consists of the following parts:
 
     >A new tab opens in SAP Business Application Studio where you can see the log of the running app.
 
-    >You may be prompted to open the app in a new tab.
-
     <!-- border -->![local run](BAS-Local-Run-3-1-3-.png)
 
 3. A new browser tab opens showing the app. In this stage of the development, the app only shows a title.
-
-    >If the browser tab does not open, or a notification "You have exceeded the number of ports you can expose" appears at the bottom-right of the page, you may need to un-expose ports. Select the **Ports: `Unexpose`** option in the command palette (View | Find Command) to un-expose a port that is in an **[Active]** state. Repeat this procedure until no more than two ports are in **[Active]** state, and try again.
 
     <!-- border -->![app running locally](AppStudio-Local-Run-3-.png)
 
@@ -226,7 +222,7 @@ The layout editor allows users to easily make changes in the app using a visual 
 
     <!-- border -->![open explorer view](BAS-Open-Explorer-View-.png)
 
-3. Choose **`FioriDemo` > `businesspartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
+3. Choose **`FioriDemo` > `businesspartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file and click **Open with...**
 
      <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
 

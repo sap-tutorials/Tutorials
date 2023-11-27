@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Undeploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to undeploy your Multi-Target Application (MTA) from Cloud Foundry.
 keywords: cap

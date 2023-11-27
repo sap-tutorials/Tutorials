@@ -95,10 +95,10 @@ Video tutorial version:
         try {
             let dbQuery = ' Call "sleep"( )'
             let result = await cds.run(dbQuery, { })
-            console.log(result)
+            cds.log().info(result)
             return true
         } catch (error) {
-            console.error(error)
+            cds.log().error(error)
             return false
         }
         })
@@ -113,7 +113,7 @@ Video tutorial version:
 
 1. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
-1. The CAP preview UI doesn't list functions or actions, however. Manually add `/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
+1. The CAP preview UI doesn't list functions or actions, however. Manually add `/odata/v4/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
 
     ![Test Service](sleep_true.png)
 

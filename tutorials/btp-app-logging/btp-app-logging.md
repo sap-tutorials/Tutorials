@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
 keywords: cap

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title:  Create a SAP Build Work Zone, Standard Edition Site for Your Kyma CAP App
 description: Learn how to create a SAP Build Work Zone, standard edition site for your CAP app deployed on Kyma.
 keywords: cap

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Consume the External Service in the UI of Your Application
 description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
 keywords: cap

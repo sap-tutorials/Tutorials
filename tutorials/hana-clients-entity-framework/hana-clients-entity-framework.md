@@ -11,14 +11,14 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission
- - You have completed the 8th tutorial on .NET in this mission
+ - You have completed the previous tutorial on .NET in this mission
 
 ## You will learn
   - How to install the .NET Core EF CLI
   - How to create and debug an EF Core application that queries an SAP HANA database
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
 
 ---
 
@@ -36,10 +36,10 @@ dotnet tool search dotnet-ef --detail
 
 The SAP HANA Client 2.17 release supports EF Core 6.0 & 7.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-Run the following command to install version 6 of the dotnet-ef tool.
+Run the following command to install version 7 of the dotnet-ef tool.
 
 ```Shell
-dotnet tool install dotnet-ef --version 6.0.14 -g
+dotnet tool install dotnet-ef --version 7.0.12 -g
 dotnet tool list -g
 ```  
 
@@ -79,13 +79,13 @@ dotnet tool list -g
         <Reference Include="Sap.Data.Hana.Core.v2.1">
             <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
         </PackageReference>
     </ItemGroup>
     ```
@@ -95,13 +95,13 @@ dotnet tool list -g
         <Reference Include="Sap.Data.Hana.Core.v2.1">
             <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
         </PackageReference>
     </ItemGroup>
     ```
@@ -109,14 +109,14 @@ dotnet tool list -g
 
     Once the `dotNet.csproj` file has been updated, save, and close the file.    
 
-3.  Run the app to validate that SAP HANA DLLs can be loaded:
+3.  Run the app to validate that SAP hdbclient DLLs can be loaded:
 
     ```Shell
     dotnet run
     ```
     The expected output is `Hello, World!`.
 
-    >If a warning occurs mentioning that a reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
+    >If a warning occurs mentioning that a SAP reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
 
 4. Open an editor and create a file named `HotelModel.cs`.
 

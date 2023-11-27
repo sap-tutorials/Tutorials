@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare Your Kyma Development Environment
 description: This tutorial shows you how to install tools used in this tutorial, log in to your Kyma cluster, create a namespace for your app, and create a container registry secret.
 keywords: cap
@@ -156,7 +156,11 @@ There are two additional steps for Windows users only:
     ```Shell/Bash
     kubectl create namespace risk-management
     ```
-   You should get a message `namespace/risk-management created`.
+    You should get a message `namespace/risk-management created`.
+   
+> Error messages on macOS
+
+> There might be some messages that look like an error but check if you get the message `namespace/risk-management created` at the end.
 
 2. Switch context to the namespace:
 

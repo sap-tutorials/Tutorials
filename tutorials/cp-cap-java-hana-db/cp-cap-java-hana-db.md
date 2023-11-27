@@ -16,7 +16,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to use SAP HANA for your local running application
 
 ## Intro
-In the previous tutorial, you have added custom coding to your bookstore application. In this tutorial, you will make the application ready to be deployed to SAP Business Technology Platform (SAP BTP). In order to make our application cloud-ready, you will switch to SAP HANA as our database.
+In the previous tutorial, you have added custom coding to your bookstore application. In this tutorial, you will make the application ready to be deployed to SAP Business Technology Platform (SAP BTP). In order to make your application cloud-ready, you will switch to SAP HANA as your database.
 
 ---
 
