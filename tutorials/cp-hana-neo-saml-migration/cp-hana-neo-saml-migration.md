@@ -17,7 +17,7 @@ primary_tag: products>sap-hana-service-for-sap-btp
 
 ## You will learn
   - How to register the service provider and the identity provider certificates in the SAP HANA in-memory store
-  - How to reconfigure the trust relationship between your identity provider and your SAP HANA database system
+  - How to reconfigure the trust relationship between your identity provider and your SAP HANA database system.
 
 ## Intro
 > This tutorial assumes that you want to convert your SAP HANA XS system to an MDC system and, therefore, want to reconfigure your SAML setup to prepare for the conversion. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
