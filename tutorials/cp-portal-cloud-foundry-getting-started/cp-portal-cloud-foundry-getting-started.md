@@ -76,6 +76,8 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
     ![Create](7-create.png)
 
+    > Note that to work in SAP Build Work Zone, standard edition, you need to create a subscription. To integrate with custom developed apps and to connect with other services, you need to create an instance.
+
 8. You'll get confirmation that your subscription is being created. Click **View Subscription**.
 
     ![View subscription](8-view-subscription.png)
