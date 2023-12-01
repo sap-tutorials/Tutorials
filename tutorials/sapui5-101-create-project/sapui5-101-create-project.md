@@ -57,7 +57,7 @@ SAP Fiori tools includes an Application Generator that provides a wizard-style a
 
 3. Specify the template type **SAP Fiori** and the **Basic** template and go to the **Next** screen.
 
-    <!-- border -->![sapui5Template](./basicTemplate.png)
+    <!-- border -->![sapui5Template](./basicTemplate1.png)
 
 4. Now you have the option to connect your SAPUI5 application to a data source. Select **Connect to an OData Service** and enter the following service URL **`https://services.odata.org/V2/Northwind/Northwind.svc/`** before you click **Next**.
 
@@ -78,13 +78,15 @@ SAP Fiori tools includes an Application Generator that provides a wizard-style a
 
       <!-- border -->![applicationInfo](./applicationInfo.png)
 
->You can keep the Application Information page open as it will be needed later. In case you close it, you can open the Command Palette from menu **View** > **Find Commands**, type **`Application Info`**, and select **Fiori: Open Application Info**.
+>You can keep the Application Information page open as it will be needed later. In case you close it, you can open the Command Palette from menu **View** > **Command Palette...**, type **`Application Info`**, and select **Fiori: Open Application Info**.
 
 ### Run the web app
 
 Running your application has several advantages over deploying it. Among others, it's faster, doesn't require a "build" step and won't minify your JavaScript codebase.
 
-1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click the **Create configuration** button and then selection your project `sapui5`. Another window will open for further configuration. Select `test/flpSandbox.html` for the **File** for your configuration and then click **Save**. 
+1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click the **Create configuration** button and then selection your project `sapui5`. Another window will open for further configuration. Select `test/flpSandbox.html` for the **File Name** for your configuration and then click **Save**. 
+
+    <!-- border -->![runConfigFileName](./runConfigFileName.png)
 
 2. Click on the **▶** icon of the first run configuration to add start the SAPUI5 app.
 
