@@ -28,15 +28,15 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
 ### Project final adjustments and preparations
 
-1. In this tutorial mission we've combined several different development types (HANA, CAP, Fiori) and wizards into a single project. This has required several workarounds to the project structure to make it all work together.  Furthermore we will need a few more adjustments before we can deploy the complete application.
+1. In this tutorial mission we've combined several different development types (HANA, CAP, Fiori) and wizards into a single project. This has required several workarounds to the project structure to make it all work together.  We just need a couple more adjustments before we can deploy the complete application.
 
-1. We will begin with the `xs-security.json` file. We need to make one adjustments to this file. Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want add a similar redirection allowance for when our application will be running from SAP BTP Cloud Foundry, environment. Add a line for `https://*.hana.ondemand.com/**`. Your `xs-security.json` should now look like this:
+1. We will begin with the `xs-security.json` file. We need to make one adjustment to this file. Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want add a similar redirection allowance for when our application will be running from SAP BTP Cloud Foundry, environment. Add a line for `https://*.hana.ondemand.com/**`. Your `xs-security.json` should now look like this:
 
     <!-- border -->![xs-security.json adjustments](xs_security_adjust3.png)
 
-1. The rest of the adjustments we need to make are all in the `mta.yaml` file in the root of the project. This is the file that will control the build and deployment of the application.
+1. The other adjustment needs to be made in the `mta.yaml` file in the root of the project. This is the file that will control the build and deployment of the application.
 
-1. The first adjustment we want to make is to the app router module section. We added `default-env.json` file to the project so that we could test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module. That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
+1. The adjustment we want to make is to the app router module section. We added `default-env.json` file to the project so that we could test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module. That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
 
     <!-- border -->![mta.yaml app router module build parameters](mta_db_adjustments.png)
 
