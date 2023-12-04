@@ -1,8 +1,7 @@
 ---
-title: Set Up SAP Private Link Service on Amazon Web Services
+parser: v2
 author_name: Madeline Schaefer
 author_profile: https://github.com/Madeline-Schaefer
-description: Get onboarded to connect SAP Private Link service on Amazon Web Services in SAP BTP.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-private-link-service, tutorial>license, software-product>sap-business-technology-platform, software-product-function>sap-btp-cockpit]
@@ -10,22 +9,24 @@ keywords: private, link, amazon, connection, Cloud Foundry, CF, CLI, BTP, endpoi
 primary_tag: software-product-function>sap-private-link-service
 ---
 
+# Set Up SAP Private Link Service on Amazon Web Services
+<!-- description --> Get onboarded to connect SAP Private Link service on Amazon Web Services in SAP BTP.
+
 ## Prerequisites
-- You have a global account and subaccount on SAP Business Technology Platform. See [Getting Started with SAP Business Technology Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/144e1733d0d64d58a7176e817fa6aeb3.html).
+- You have a global account and a subaccount on SAP Business Technology Platform. See [Getting Started with SAP Business Technology Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/144e1733d0d64d58a7176e817fa6aeb3.html).
 - You have enabled features for your subaccount. See [Create Subaccount](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/05280a123d3044ae97457a25b3013918.html?q=create%20subaccount) or [Change Subaccount Details](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/567d4a84bfdc428f8f3640e07261f73a.html?q=subaccount%20details).
 
-## Details
-### You will learn
+## You will learn
   - How to start with SAP Private Link service on Amazon Web Services
   - How to enable SAP Private Link service in BTP cockpit
 
+## Intro
 SAP Private Link service establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
 !![Overview of SAP Private Link service functionality](private-endpoint.png)
 
----
 
-[ACCORDION-BEGIN [Step 1: ](Select Subaccount)]
+### Select Subaccount
 To be able to use the functionalities of SAP Private Link service, you first need to set the entitlements in your subaccount. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
 
 1. Navigate to your **global account** of SAP BTP cockpit and select **Account Explorer**.
@@ -51,11 +52,9 @@ To be able to use the functionalities of SAP Private Link service, you first nee
 
      !![Save assignemnts](2022-11-22_13-43-19.png)
 
-[VALIDATE_1]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable Cloud Foundry runtime)]
+### Enable Cloud Foundry runtime
 
 Navigate to the **Overview** tab of your subaccount and check whether you've already enabled **Cloud Foundry runtime**. By default, Cloud Foundry runtime is not enabled.
 
@@ -81,8 +80,6 @@ Once Cloud Foundry runtime has been enabled, you get the information on your API
 
 Congratulations! You have successfully completed the onboarding of SAP Private Link service. Continue with [Connect SAP Private Link Service to AWS Private Link Service](https://developers.sap.com/tutorials/private-link-aws.html).
 
-[DONE]
-[ACCORDION-END]
 
 
----
+
