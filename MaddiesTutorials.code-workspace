@@ -1,15 +1,16 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../Tutorials-Contribution"
-		}
-	],
-	"settings": {
-		"githubPullRequests.ignoredPullRequestBranches": [
-			"master"
-		]
-	}
+    "folders": [
+        {
+            "path": "../btp-foundation"
+        },
+        {
+            "path": "../btp-foundation-Contribution"
+        },
+        {
+            "path": "."
+        },
+        {
+            "path": "../Tutorials-Contribution"
+        }
+    ]
 }
