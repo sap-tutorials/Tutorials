@@ -21,6 +21,12 @@ primary_tag: products>sap-hana
 
 Ready to explore SAP HANA Cloud? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA Cloud to use text, graph and geospatial processing inside the database.
 
+## Video Version
+
+Video tutorial version:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ztDOYsNB204" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Get to know SAP HANA Cloud
 
 SAP HANA Cloud is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, vector, and more — to pull insights from all types of data.
