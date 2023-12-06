@@ -12,54 +12,49 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 <!-- description --> Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 
 ## You will learn
-  - How to create a Cloud Foundry application manifest
+  - How to prepare project configuration for deployment using facets
   - How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
 
 ## Intro
-In the previous tutorial you made your application ready to run with SAP HANA. In this tutorial, you will deploy the application to SAP BTP, Cloud Foundry environment and have it running fully in the cloud.
+In the previous tutorial you added authentication to your application. In this tutorial, you will deploy the application to SAP BTP, Cloud Foundry environment and have it running fully in the cloud.
 
 ---
 
-### Create a Cloud Foundry application manifest
+
+### Provision an Instance of SAP HANA Cloud
 
 
-When deploying an application to Cloud Foundry, you can use a manifest to describe attributes of the deployed application. The manifest can be used together with the Cloud Foundry CLI command `cf push` to deploy the application.
+You first need to provision your SAP HANA Cloud instance, which is a prerequisite to later on create a SAP HANA HDI Container to deploy your database artifacts to.
 
-1. Go to the `~/projects/bookstore` folder and **create a new file** called **`manifest.yml`**.
+1. Follow the tutorial [Provision an Instance of SAP HANA Cloud](hana-cloud-mission-trial-2). Use `bookstore-db` as the name of your database. Make sure to allow access to your SAP HANA Cloud from all IPs and that instance of the SAP HANA you have created is mapped to your subaccount and space where you working with this tutorial.
 
-2. Add the following code to the newly created file and make sure you **Save** the file.
 
-    ```YAML
-    ---
-    applications:
-    - name: bookstore
-      path: srv/target/bookstore-exec.jar
-      random-route: true
-      buildpacks:
-      - java_buildpack
-      env:
-        JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
-        JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
-        SPRING_PROFILES_ACTIVE: cloud
-      services:
-      - bookstore-hana
+### Enhance project configuration for production
+
+1. To prepare the project, execute the following in the root level of your project:
+
+    ```Shell/Bash
+    cds add hana,mta,xsuaa,approuter --for production
     ```
 
-The manifest describes the name of the application, the path where the application archive can be found and runtime type. In this tutorial the Java buildpack is used to deploy your Spring Boot application from a single JAR archive using Java 17.
+    > `--for production` adds all configuration added by this command in the `.cdsrc.json` file into a `requires.[production]` block.
 
-The route of the application, meaning the HTTP endpoint where it will be available, will be randomized to prevent clashes with other application routes.
+    > `hana` configures deployment for SAP HANA, so a data source of type `hana` is added in the `requires.[production].db` block.
 
-The name of SAP HANA service instance you created in the previous tutorial is used here under the services section (`bookstore-hana`).
+    > `mta` adds the `mta.yaml` file. This file reflects your project configuration.
 
-When your application will be deployed to SAP BTP, it will use this database to store data instead of the in-memory database. In the previous tutorial you added the additional Java system property `-Dspring-boot.run.profiles=cloud` to your application to ensure that. When deploying the application to Cloud Foundry this is set with environment variable `SPRING_PROFILES_ACTIVE`.
+    > `xsuaa` creates an `xs-security.json` and also the needed configuration in the `mta.yaml` file. An authentication of kind `xsuaa` is added in the `requires.[production].auth` block.
 
+    > `approuter` adds the configuration and needed files for a standalone AppRouter so that the authentication flow works after deployment.
+
+    Learn more about those steps in the [Deploy to Cloud Foundry](https://cap.cloud.sap/docs/guides/deployment/to-cf?impl-variant=java#prepare-for-production) guide in the CAP documentation.
 
 ### Enable application for Cloud Foundry
 
 
-Cloud Foundry uses the Open Service Broker API to provide services to applications. When running your application on Cloud Foundry, an environment variable `VCAP_SERVICES` (similar to the content of the `default-env.json`) is available, which contains all required service credentials. CAP Java can automatically read this environment variable and configure your application to use the SAP HANA database. In addition you want to make sure that your application is secure by default, when you deploy it to the cloud. The required dependencies for these aspects are included in the `cds-starter-cloudfoundry` dependency bundle. It also includes the `cds-feature-hana` dependency you added earlier.
+Cloud Foundry uses the Open Service Broker API to provide services to applications. When running your application on Cloud Foundry, an environment variable `VCAP_SERVICES` is available, which contains all required service credentials. CAP Java can automatically read this environment variable and configure your application to use the SAP HANA database. In addition you want to make sure that your application is secure by default, when you deploy it to the cloud. The required dependencies for these aspects are included in the `cds-starter-cloudfoundry` dependency bundle, which you added in the previous tutorial.
 
-1. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` tag replace the `cds-feature-hana` dependency you added in the previous tutorial with the `cds-starter-cloudfoundry` dependency. Make sure you **Save** the file.
+1. Check the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` that the `cds-starter-cloudfoundry` dependency is there.
 
     ```xml
     <dependency>
@@ -68,49 +63,127 @@ Cloud Foundry uses the Open Service Broker API to provide services to applicatio
     </dependency>
     ```
 
+### Update security descriptor
 
 
+The XSUAA security descriptor that describes the roles for your application can be generated from your CDS service definitions. It is used to configure your XSUAA service instance and has been generated using the CDS facet `cds add xsuaa` in a previous step.
 
-### Push the application
+1. Open the `xs-security.json` file in SAP Business Application Studio and update the file so it looks like that:
 
-
-You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Business Application Studio:
-
-1. Make sure that you are in the root of the bookstore project:
-
-    ```Shell/Bash
-    cd ~/projects/bookstore
+    ```JSON
+    {
+      "xsappname": "bookstore",
+      "tenant-mode": "dedicated",
+      "scopes": [
+        {
+          "name": "$XSAPPNAME.Administrators",
+          "description": "Administrators"
+        }
+      ],
+      "attributes": [],
+      "role-templates": [
+        {
+          "name": "Administrators",
+          "description": "generated",
+          "scope-references": [
+            "$XSAPPNAME.Administrators"
+          ],
+          "attribute-references": []
+        }
+      ],
+      "role-collections": [
+        {
+          "name": "BookStore_Administrators",
+          "description": "BookStore Administrators",
+          "role-template-references": ["$XSAPPNAME.Administrators"]
+        }
+      ],
+      "oauth2-configuration": {
+        "redirect-uris": ["https://*.cfapps.us10-001.hana.ondemand.com/**"]
+      }
+    }
     ```
 
-2. Build your application once by running:
+    > You added the name of your application in the attribute `xsappname` and declared a role collection to which you can assign users later.
+
+    > The value of the last attribute "oauth2-configuration" depends on the landscape where your account is deployed. Check the API URL returned by the command `cf target` and change data center ID in the value `https://*.cfapps.**us10-001**.hana.ondemand.com/**` accordingly.
+
+You've finished your project configuration and prepared for deployment. The next steps will show you how to deploy to SAP BTP Cloud Foundry environment.
+
+### Identify SAP BTP Cloud Foundry endpoint
+
+
+The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
+
+1. Go to [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) and choose **Go To Your Trial Account**.
+
+    <!-- border -->![business technology platform cockpit view](cockpit.png)
+
+2. Navigate to your subaccount by hitting the corresponding tile.
+
+    <!-- border -->![subaccount tile](subaccount-tile.png)
+
+3. Copy the **Cloud Foundry API endpoint** value as you will need it in the next step.
+
+    <!-- border -->![CF API endpoint value](api-endpoint.png)
+
+
+### Log into SAP BTP Cloud Foundry environment
+
+
+1. In SAP Business Application Studio, open a terminal by choosing **Terminal** **&rarr;** **New Terminal** from the main menu.
+
+2. Run the following command to configure which Cloud Foundry environment you want to connect to in the terminal. **Replace** `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
     ```Shell/Bash
-    mvn clean install
+    cf api <CF_API_ENDPOINT>
     ```
 
-    The log output should be similar to this one:
-
-    <!-- border -->![screenshot build log output](expected-build-output.png)
-
-3. Push the application to the cloud by running:
+3. Authenticate using your login credentials using the following command in the terminal:
 
     ```Shell/Bash
-    cf push
+    cf login
     ```
 
-     The manifest will be [automatically picked up](https://cli.cloudfoundry.org/en-US/cf/push.html).
 
 
-    > Provide the credentials you usually log in to SAP BTP if you are asked to log in.
 
-4. To retrieve the application URL run the following command:
+### Deploy using cf deploy
+
+SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
+
+The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
+
+1. In the root of your project, execute the following command to build the archive.
+    ```Shell/Bash
+    mbt build -t gen --mtar mta.mtar
+    ```
+
+    > For this you need the MBT Build Tool, which SAP Business Application Studio has already installed.
+
+    The `-t` option defines the target folder of the build result as the `gen` folder of your project. As part of this build implicitly `cds build --production` is executed. This implicit build uses then all the configuration you've added in the step 1.2 when using `--for production`.
+
+2. Deploy the archive using `cf deploy`.
+    ```Shell/Bash
+    cf deploy gen/mta.mtar
+    ```
+
+    > For this you need the MultiApps CF CLI plugin, which SAP Business Application Studio has already installed.
+
+    During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
+
+    > This process takes some minutes. In this one step the archive is uploaded to Cloud Foundry, service instances are created, the applications are staged, and then deployed to their target runtimes.
+
+    > If your deployment fails during deploy of `bookstore-db-deployer`, make sure that your IP address is configured for connections to SAP HANA Cloud. Or allow connections to all IP addresses at your own risk. We recommend to revert that setting after you've completed the tutorial.
+
+3. In the deploy log, find the application URL of `bookstore`:
 
     ```Shell/Bash
-    cf app bookstore
+    Application "bookstore" started and available at "[org]-[space]-bookstore.cfapps.[region].hana.ondemand.com"
     ```
+    This is the URL of the AppRouter, which enforces the authentication flow.
 
-    <!-- border -->![console output of cf apps](cf-app-route.png)
-
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
 
 5. Open the application in the browser. The according route can be found under `routes` of the previous step.
 
