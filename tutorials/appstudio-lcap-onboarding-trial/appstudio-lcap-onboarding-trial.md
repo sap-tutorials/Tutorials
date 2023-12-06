@@ -17,7 +17,7 @@ author_profile: https://github.com/raz-korn
 ## You will learn
 - How to set up SAP Business Application Studio in the SAP BTP Trial environment
 - How to access the SAP Business Application Studio dev space manager page
-- How to create an SAP Business Application Studio dev space for developing full-stack applications using productivity tools
+- How to create an SAP Business Application Studio dev space for developing full-stack applications using productivity tools 
 
 ## Intro
 After completing the steps in this tutorial, you will have set up SAP Business Application Studio on the **SAP BTP Trial environment**. In addition, you will have created a dev space for developing full-stack applications using productivity tools.
