@@ -12,7 +12,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 <!-- description --> Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 
 ## You will learn
-  - How to prepare project configuration for deployment using facets
+  - How to prepare project configuration for deployment using `cds add` commands
   - How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
 
 ## Intro

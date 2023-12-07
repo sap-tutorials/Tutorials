@@ -23,7 +23,7 @@ Before you deploy your authentication-enabled application you have to create an 
 
 Open your application in the browser. Using the links on the welcome page you can check that you can't access the `Orders` entity or everything under the `AdminService`. You should see a `401` error in case you click on these.
 
-1. To use the `AdminService`, you need to assign yourself to the role collection `BookStore_Administrators` that was defined in the `xs-security.json` file. To assign this role collection to your user you need to navigate to the **Security** **&rarr;** **Role Collections** section of your SAP BTP subaccount. Select the `BookStore_Administrators` role collection and choose **Edit**. Enter your email address in the **ID** and **E-Mail** field and choose **Save**.
+To use the `AdminService`, you need to assign yourself to the role collection `BookStore_Administrators` that was defined in the `xs-security.json` file. To assign this role collection to your user you need to navigate to the **Security** **&rarr;** **Role Collections** section of your SAP BTP subaccount. Select the `BookStore_Administrators` role collection and choose **Edit**. Enter your email address in the **ID** and **E-Mail** field and choose **Save**.
 
     <!-- border -->![role assignment to administrator](role-assignment.png)
 
