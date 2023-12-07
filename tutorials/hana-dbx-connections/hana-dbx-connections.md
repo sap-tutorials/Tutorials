@@ -75,12 +75,11 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
 
     >![connect using TLS](encryption2.png)
 
-    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).
-
-
-    >For a HANA Cloud database, the host and port values can be copied from SAP HANA Cloud Central.  
+    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).
 
     >---
+
+    >For a HANA Cloud database, the host and port values can be copied from SAP HANA Cloud Central.  
 
     >![copy host and port](host-and-port.png)
 
@@ -97,6 +96,10 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >```
 
     >![SQL port query](sql-port.png)
+
+    >---
+
+    >Instructions on using X.509 certificate are provided at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509).
 
 4.  After pressing OK, a new instance will appear whose type is SAP HANA Database.
 
@@ -123,6 +126,9 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >
     >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4e2e8382f8484edba31b8b633005e937.html) and the [SET Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20fd82b675191014b22c8af08d0b319c.html).
 
+5.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a client certificate and how to configure SAP HANA Cloud for use with certificate authentication.
+
+    ![X.509 certificate authentication](cert-auth.png)
 
 ### Add a data lake Relational Engine database
 
@@ -161,6 +167,21 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     Diagnostic files can also be viewed in the Logs directory.
 
+4.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
+
+    ```SQL
+    CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
+    CREATE USER TESTX509_TECHNICAL LOGIN POLICY X509Policy IDENTIFIED BY 'Password123';
+    CREATE X509 PROVIDER X509Provider WITH ISSUER 'CN=DEMO_ROOT_CERT_AUTH, SP=ON';
+    CREATE CERTIFICATE X509_CERT PURPOSE X509 FOR PROVIDER X509Provider FROM '-----BEGIN CERTIFICATE----- contents from demorootca.crt
+    -----END CERTIFICATE-----';
+    GRANT X509 LOGIN TO 'CN=TESTX509' FOR PROVIDER X509Provider as USER TESTX509_TECHNICAL; 
+    SELECT * FROM SYSCERTIFICATE; 
+    SELECT * FROM SYSX509PROVIDERS;
+    SELECT user_name, subject_name FROM SYSX509LOGINMAP, SYSUSER WHERE database_uid=user_id;
+    ```
+
+    Additional details on the SQL above can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options), [Create X509 Provider Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-x509-provider-statement-for-data-lake-relational-engine), and [Grant X509 Login Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/grant-x509-login-statement-for-data-lake-relational-engine).
 
 ### Add a data lake Files container (Optional)
 
@@ -172,7 +193,7 @@ A [data lake Files container](https://help.sap.com/viewer/b239ed4bb73a4f07886657
 
     Additional details on how to configure the data lake Files container including the certificates and how to perform queries using SQL on Files can be found at [Managing Data Lake Files](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/afe91bfba419464a84b7a05e7960d6f9.html) and [Getting to know SAP HANA data lake Files](group.hana-data-lake-containers).
 
-2. Once added, the contents of the file container can be browsed.  Files can be added, deleted or viewed.
+2. Once added, the contents of the file container can be browsed.  Files can be added, deleted, or viewed.
 
     ![data lake Files container](data-lake-file-container.png)
 

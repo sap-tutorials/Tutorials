@@ -99,7 +99,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         >```Shell (Windows)
         REM Add the certificate to the PSE
-        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
         REM View the contents of the PSE
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
         REM Connect using the SAP commoncrypto library rather than OpenSSL. Replace the host, user, and password values.
