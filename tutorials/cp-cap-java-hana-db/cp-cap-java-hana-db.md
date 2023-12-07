@@ -74,6 +74,8 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
 
 Add an additional Maven dependency to your project. The dependency brings the ability to read SAP HANA service bindings and configure the SAP HANA connectivity.
 
+> Skip this step, if you already have the `cds-starter-cloudfoundry` dependency in your `srv/pom.xml`.
+
 1. Navigate back to the File Explorer by clicking on the corresponding icon.
 
 2. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and add the following dependency under the `<dependencies>` tag and make sure you **Save** the file:

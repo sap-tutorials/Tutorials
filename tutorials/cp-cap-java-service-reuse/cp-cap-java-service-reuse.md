@@ -258,7 +258,7 @@ After defining the domain model and the services that you want to expose, you co
     +	`sap.capire.products-Products_texts.csv`
     +	`sap.capire.bookstore-Authors.csv`
 
-    The name of the CSV has to match the pattern [namespace]-[entity name] exactly otherwise the the application will fail to start.
+    The name of the CSV has to match the pattern [namespace]-[entity name] exactly, otherwise the application will fail to start.
 
 
 
