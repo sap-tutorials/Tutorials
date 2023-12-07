@@ -27,7 +27,7 @@ author_profile: https://github.com/LindsayBert
 
 In this group of tutorials our goal is to create a site using SAP Build Work Zone, standard edition. But before we can do this, there are some steps you'll need to do in the SAP BTP cockpit.
 
->SAP Build Work Zone, standard edition offers two types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in Step 1. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
+>SAP Build Work Zone, standard edition offers 2 types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in Step 1. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
 
 ### Subscribe to SAP Build Work Zone, standard edition
 
@@ -76,7 +76,7 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
     ![Create](7-create.png)
 
-    > Note that to work in SAP Build Work Zone, standard edition, you need to create a subscription. To integrate with custom developed apps and to connect with other services, you need to create an instance.
+    > Note that to work in SAP Build Work Zone, standard edition, to integrate content from the backend, you need to create a subscription. If you also want to integrate custom developed apps or plugins, you need to also create an instance.
 
 8. You'll get confirmation that your subscription is being created. Click **View Subscription**.
 
