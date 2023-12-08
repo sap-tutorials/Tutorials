@@ -29,6 +29,8 @@ You will then run your application -- still without any custom coding required -
 
 From the products service that you created in the previous tutorial, we just want to reuse the domain and service models. For the bookstore, which you will develop in this tutorial, we need to create and initialize a bookstore project first.
 
+> Make sure you stopped your application from the previous tutorial.
+
 1. From the main menu of SAP Business Application Studio, choose **Terminal** **&rarr;** **New Terminal**.
 
 2. Before adding the `bookstore` project, we need to make sure that you are in the projects folder. Both projects (`products-service` and `bookstore`) should be placed next to each other. Run the following command in the newly created terminal to go back to the projects folder:
@@ -272,7 +274,6 @@ After defining the domain model and the services that you want to expose, you co
     ```
 
 2. Ensure that you have stopped all previously running applications (including the `products-service` application) by using **`CTRL+C`**.
-> In case you forgot to stop the `products-service` application and the tab in which it was started is no longer opened you can run `killall mvn` in the terminal to ensure it's terminated.
 
 3. Start the application by running:
 
