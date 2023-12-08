@@ -35,7 +35,7 @@ To use the `AdminService`, you need to assign yourself to the role collection `B
 
 ### Test application on SAP BTP
 
-1. To take effect of the change to the role collection, you nned to restart the approuter:
+1. To take effect of the change to the role collection, you need to restart the approuter:
 
     ```Shell/Bash
     cf restart bookstore
