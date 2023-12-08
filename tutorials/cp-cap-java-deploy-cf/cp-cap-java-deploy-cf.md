@@ -51,6 +51,7 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
 
 ### Enable application for Cloud Foundry
 
+> When you've followed the previous tutorials, you've already added this dependency and can skip this step.
 
 Cloud Foundry uses the Open Service Broker API to provide services to applications. When running your application on Cloud Foundry, an environment variable `VCAP_SERVICES` is available, which contains all required service credentials. CAP Java can automatically read this environment variable and configure your application to use the SAP HANA database. In addition you want to make sure that your application is secure by default, when you deploy it to the cloud. The required dependencies for these aspects are included in the `cds-starter-cloudfoundry` dependency bundle, which you added in the previous tutorial.
 
@@ -63,10 +64,12 @@ Cloud Foundry uses the Open Service Broker API to provide services to applicatio
     </dependency>
     ```
 
-### Update security descriptor
+### Update `xs-security.json` and `xs-app.json`
 
 
-The XSUAA security descriptor that describes the roles for your application can be generated from your CDS service definitions. It is used to configure your XSUAA service instance and has been generated using the CDS facet `cds add xsuaa` in a previous step.
+The XSUAA security descriptor (`xs-security.json`) that describes the roles for your application can be generated from your CDS service definitions. It is used to configure your XSUAA service instance and has been generated using the CDS facet `cds add xsuaa` in a previous step. The `xs-app.json` has been generated using `cds add approuter` in the previous step. Following this tutorial strictly, you don't have an own UI yet in your project. In this case you need to remove the `welcomeFile` property. Otherwise you'll run into a `Not Found` error after deployment as an `index.html` file is requested that is not available.
+
+    > For productive applications this is different and the command `cds add approuter` is of course tailored for productive applications. That's why we need this extra step here in this starter tutorial.
 
 1. Open the `xs-security.json` file in SAP Business Application Studio and update the file so it looks like that:
 
@@ -107,6 +110,8 @@ The XSUAA security descriptor that describes the roles for your application can 
     > You added the name of your application in the attribute `xsappname` and declared a role collection to which you can assign users later.
 
     > The value of the last attribute "oauth2-configuration" depends on the landscape where your account is deployed. Check the API URL returned by the command `cf target` and change data center ID in the value `https://*.cfapps.**us10-001**.hana.ondemand.com/**` accordingly.
+
+  2. Open the `app/xs-app.json` file and remove the `welcomeFile` property.
 
 You've finished your project configuration and prepared for deployment. The next steps will show you how to deploy to SAP BTP Cloud Foundry environment.
 
@@ -187,6 +192,6 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 
 5. Open the application in the browser. The according route can be found under `routes` of the previous step.
 
-6. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization locally and in the cloud.
+6. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization in the cloud.
 
 ---

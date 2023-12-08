@@ -55,8 +55,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     <!-- border -->![Shows the selection of available dev spaces, as well as their predefined and additional extensions.](select-app-type.png)
 
-    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
-    The creation of the dev space takes a few seconds.
+    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time. The creation of the dev space takes a few seconds.
 
 5. When it's ready, open your dev space by clicking on the name.
 
@@ -95,9 +94,6 @@ Before you begin, check the settings of your browser. You need to add domains `o
     - The `srv` folder stores your Java application.
 
       <!-- border -->![project creation done](project-creation-done.png)
-
-    > Check in the SAP Business Application Studio, if the default JDK is set to 17.
-    > From the main menu, choose **File** **&rarr;** **Help** **&rarr;** **Show All Commands**, type `Java: Set Default JDK` and choose **JavaSE-17**.
 
 5. From the main menu, choose **File** **&rarr;** **Open Folder**.
 
