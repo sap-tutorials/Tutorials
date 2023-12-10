@@ -69,15 +69,12 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 [ACCORDION-BEGIN [Step 3: ](Complete the service)]
 
-1. From the menu **Terminal**, select **New Terminal**
+1. From the hamburger menu select **Terminal** and then **New Terminal**
 
     Ensure that your terminal prompt shows **fiori-elements-incident-management**. At the terminal prompt, enter **`npm install `** and press **Enter**. This command will download and install all necessary modules from the npm package repository required to run the SAP Fiori elements application.
 
     ![Enter npm install](enter-npm-install.png)
 
-2. After the installation is complete, enter **`npm i @sap/cds-dk -g`** at the terminal prompt.
-
-    This will start the command line client and development toolkit for the SAP Cloud Application Programming Model. You will need this client to run your SAP Fiori elements application in the tutorial [Generate a Fiori elements application](fiori-tools-cap-create-application). For more information about the command line client, refer to the documentation pages of [SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/get-started/).
 
 Your development environment is now ready.
 
