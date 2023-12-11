@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> To get started with building a site in SAP Build Work Zone, standard edition, you must perform the required onboarding steps.
 
 ## Prerequisites
-  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/israel/products/business-technology-platform/trial.html). Scroll down and click **Get trial now**.
+  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://account.hanatrial.ondemand.com/trial/#/home/trial). Scroll down and click **Get trial now**.
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
@@ -27,12 +27,12 @@ author_profile: https://github.com/LindsayBert
 
 In this group of tutorials our goal is to create a site using SAP Build Work Zone, standard edition. But before we can do this, there are some steps you'll need to do in the SAP BTP cockpit.
 
->SAP Build Work Zone, standard edition offers two types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in Step 1. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
+>SAP Build Work Zone, standard edition offers 2 types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in Step 1. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
 
-### Subscribe to the SAP Build Work Zone, standard edition
+### Subscribe to SAP Build Work Zone, standard edition
 
 
-Before you can access the SAP Build Work Zone, standard edition, you first need to subscribe to it.
+Before you can access SAP Build Work Zone, standard edition, you first need to subscribe to it.
 
 1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Go To Your Trial Account**.
 
@@ -76,6 +76,8 @@ Before you can access the SAP Build Work Zone, standard edition, you first need 
 
     ![Create](7-create.png)
 
+    > Note that to work in SAP Build Work Zone, standard edition, to integrate content from the backend, you need to create a subscription. If you also want to integrate custom developed apps or plugins, you need to also create an instance.
+
 8. You'll get confirmation that your subscription is being created. Click **View Subscription**.
 
     ![View subscription](8-view-subscription.png)
@@ -92,7 +94,7 @@ Before you can access the SAP Build Work Zone, standard edition, you first need 
 ### Add yourself to the Launchpad_Admin role
 
 
-To be able to access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
+To access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
 
 
 1. Under **"Security** click **Role Collections** from the side menu.

@@ -158,7 +158,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     <!-- border -->![Actions](019.png)
 
-5. After the success message is displayed, navigate to the **Design** > **APIs**.
+5. After the success message is displayed, navigate to the **Configure** > **APIs**.
 
 6. Choose the API that you created in the previous step.
 

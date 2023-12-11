@@ -99,7 +99,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         >```Shell (Windows)
         REM Add the certificate to the PSE
-        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
         REM View the contents of the PSE
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
         REM Connect using the SAP commoncrypto library rather than OpenSSL. Replace the host, user, and password values.
@@ -115,7 +115,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
-        > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).  
+        > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients) and [3397584 - HANA Cloud Connections will switch from "DigiCert Global Root CA" to "DigiCert Global Root G2"](https://me.sap.com/notes/3397584).  
         >
         > It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to `trust.pem` and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
         >

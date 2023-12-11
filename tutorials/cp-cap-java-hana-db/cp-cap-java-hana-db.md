@@ -9,70 +9,35 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Use SAP HANA as the Database for a CAP Java Application
-<!-- description --> Use SAP HANA in SAP Business Technology Platform as database for your CAP Java application.
+<!-- description --> Use SAP HANA in SAP Business Technology Platform from your local CAP Java application.
 
 ## You will learn
   - How to use the CDS CLI to do deployments to SAP HANA
   - How to use SAP HANA for your local running application
 
 ## Intro
-In the previous tutorial, you have added custom coding to your bookstore application. In this tutorial, you will make the application ready to be deployed to SAP Business Technology Platform (SAP BTP). In order to make our application cloud-ready, you will switch to SAP HANA as our database.
+In the previous tutorial, you have deployed bookstore application to SAP BTP. In this tutorial, you will connect from your locally running application to your SAP HANA Cloud on SAP BTP. This hybrid setups let's you develop your service locally while being connected to your SAP HANA Cloud database and reduces turnaround times.
 
 ---
 
-### Identify SAP BTP Cloud Foundry endpoint
-
-
-The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
-
-1. Go to [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) and choose **Go To Your Trial Account**.
-
-    <!-- border -->![business technology platform cockpit view](cockpit.png)
-
-2. Navigate to your subaccount by hitting the corresponding tile.
-
-    <!-- border -->![subaccount tile](subaccount-tile.png)
-
-3. Copy the **Cloud Foundry API endpoint** value as you will need it in the next step.
-
-    <!-- border -->![CF API endpoint value](api-endpoint.png)
-
-
 ### Log into SAP BTP Cloud Foundry environment
-
-
-First you need to create and initialize an SAP HANA database schema in SAP BTP. As you will deploy your application to SAP BTP, Cloud Foundry Environment, you will also create the SAP HANA service there.
 
 1. In SAP Business Application Studio, open a terminal by choosing **Terminal** **&rarr;** **New Terminal** from the main menu.
 
-2. Run the following command to configure which Cloud Foundry environment you want to connect to in the terminal. **Replace** `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
-
-    ```Shell/Bash
-    cf api <CF_API_ENDPOINT>
-    ```
-
-3. Authenticate using your login credentials using the following command in the terminal:
+2. Authenticate using your login credentials using the following command in the terminal:
 
     ```Shell/Bash
     cf login
     ```
-
-
-
-
-### Provision an Instance of SAP HANA Cloud
-
-
-You first need to provision your SAP HANA Cloud instance, which is a prerequisite to later on create a SAP HANA HDI Container to deploy your database artifacts to.
-
-1. Follow the tutorial [Provision an Instance of SAP HANA Cloud](hana-cloud-mission-trial-2). Use `bookstore-db` as the name of your database. Make sure to allow access to your SAP HANA Cloud from all IPs and that instance of the SAP HANA you have created is mapped to your subaccount and space where you working with this tutorial.
-
+>  Should you need to specify the `<CF_API_ENDPOINT>` again, use the actual value you obtained in the previous tutorial.
 
 
 ### Configure application to use SAP HANA locally
 
 
 Add an additional Maven dependency to your project. The dependency brings the ability to read SAP HANA service bindings and configure the SAP HANA connectivity.
+
+> In a previous tutorial, you already added the `cds-starter-cloudfoundry` dependency in your `srv/pom.xml`. In this case you can skip the following and go to the next step.
 
 1. Navigate back to the File Explorer by clicking on the corresponding icon.
 
@@ -87,6 +52,7 @@ Add an additional Maven dependency to your project. The dependency brings the ab
 
 ### Deploy database artifacts to SAP HANA
 
+Assuming you don't want to use the same service instance as you created during your deployment, you're creating a new service instance with the same data for your hybrid test cycles here. If you want to use the recently deployed one, use `bookstore-db` instead of `bookstore-hana` in the following.
 
 1. Go back to the terminal of SAP Business Application Studio and make sure that you are in the root of the bookstore project:
 

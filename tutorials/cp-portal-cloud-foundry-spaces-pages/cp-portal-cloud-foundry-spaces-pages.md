@@ -38,41 +38,39 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 
     ![Enter a title](3-enter-title.png)
 
+4. Click **Save**.
+
 ### Add apps to the page    
 
-1. In the **Design** tab, click **Edit**.
-
-    ![Click edit](3a-click-edit.png)
-
-2. Click **Add Section**.
+1. Click **Add Section**.
 
     ![Add a section](4-add-section.png)
 
-3. Give the section a title, `My Apps` and click **Add Widget**.
+2. Give the section a title, `My Apps` and click **Add Widget**.
 
     ![Enter title for section](5-section-title.png)
 
-4. In the **Add Widgets** screen, click **Tiles**.
+3. In the **Add Widgets** screen, click **Tiles**.
 
     > In this screen you'll see all the apps that you can access from your subaccount. 
 
     ![Select tiles](6-select-tiles.png)
 
-5. Select the `External Community` and the `New Orders` apps and click **Add**.
+4. Select the `External Community` and the `New Orders` apps and click **Add**.
 
     > You can select one or more apps to add to your page - they will display side by side in a section.
 
     ![Select apps and add them to your page](7-select-apps.png)
 
-6. Click **Save**. This is how your page looks:
+5. Click **Save**. This is how your page looks:
 
     ![View page](8-view-page.png)
 
-7. Go back to your Content Manager using the breadcrumbs at the top.
+6. Go back to your Content Manager using the breadcrumbs at the top.
 
     ![Go back to Content Manager](9-go-back-to-content-manager.png)
 
-8. See that the page you created is in the list of content items.
+7. See that the page you created is in the list of content items.
 
     ![View app in content items list](10-page-in-list.png)
 
@@ -102,7 +100,7 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 
 In this step, you'll assign the space to the `Everyone` role. 
 
->Spaces are assigned to a role and users assigned to a specific role are able to access the space and see the relevant pages assigned to it.Content assigned to the `Everyone` role is visible to all users.
+>Spaces are assigned to a role and users assigned to a specific role are able to access the space and see the relevant pages assigned to it.  Content assigned to the `Everyone` role is visible to all users.
 
 1. From the Content Manager, click the `Everyone` role.
 

@@ -28,27 +28,17 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
 ### Project final adjustments and preparations
 
-1. In this tutorial mission we've combined several different development types (HANA, CAP, Fiori) and wizards into a single project. This has required several workarounds to the project structure to make it all work together.  Furthermore we will need a few more adjustments before we can deploy the complete application.
+1. In this tutorial mission we've combined several different development types (HANA, CAP, Fiori) and wizards into a single project. This has required several workarounds to the project structure to make it all work together.  We just need a couple more adjustments before we can deploy the complete application.
 
-1. We will begin with the `xs-security.json` file. We need to make one adjustments to this file. Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want add a similar redirection allowance for when our application will be running from SAP BTP Cloud Foundry, environment. Add a line for `https://*.hana.ondemand.com/**`. Your `xs-security.json` should now look like this:
+1. We will begin with the `xs-security.json` file. We need to make one adjustment to this file. Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want add a similar redirection allowance for when our application will be running from SAP BTP Cloud Foundry, environment. Add a line for `https://*.hana.ondemand.com/**`. Your `xs-security.json` should now look like this:
 
     <!-- border -->![xs-security.json adjustments](xs_security_adjust3.png)
 
-1. The rest of the adjustments we need to make are all in the `mta.yaml` file in the root of the project. This is the file that will control the build and deployment of the application.
+1. The other adjustment needs to be made in the `mta.yaml` file in the root of the project. This is the file that will control the build and deployment of the application.
 
-1. The first adjustment we want to make is to the database module section. We added `default-env.json` and `.env` files to the project so that we could deploy and test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module. That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
+1. The adjustment we want to make is to the app router module section. We added `default-env.json` file to the project so that we could test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module. That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
 
-    <!-- border -->![mta.yaml database module build parameters](mta_db_adjustments.png)
-
-1. The next adjustment to `mta.yaml` is rather substantial, **but please note**: you might not need to make these changes.  Depending upon which tutorial you are following up to this point, these sections might not exist in your `mta.yaml`.  That's fine.  If the section that we ask you to remove are already missing, then simply move onto the next steps. There are different ways to deploy the UI content of our project. We could use standalone application router, managed application router, Fiori launchpad, and/or the HTML5 repository. The wizard that we've used previously setup our project to use a standalone application router but also the HTML5 repository. For your project needs you might decide on different combination of these options and you should explore the impact that each choice has on your deployment approach. However for this tutorial, we've chosen to stay with the standalone application router, but not to use the HTML5 repository. This is a choice that simplifies the setup and is good for small scale applications where you don't mind keeping the UI5 content local within the application router service itself. Therefore we can simply remove all the references and dependencies to the HTML5 Repository and UI Deployer in your `mta.yaml` file.
-
-    <!-- border -->![Remove UI Deployer and HTML5 Repo from mta.yaml services](mta_approuter_adjustments.png)
-
-    Note: If you wanted to keep the HTML5 repository, then some additional changes to the build parameters of the UI Deployer and to the xs-app.json of the application router would be necessary.
-
-1. The last adjustment is a continuation of the previous step.  We need to also remove all references to the HTML Repo and UI Deployer from the resources section of the `mta.yaml` file as well.
-
-    <!-- border -->![Remove UI Deployer and HTML5 Repo from mta.yaml resources](mta_resources_adjustments.png)
+    <!-- border -->![mta.yaml app router module build parameters](mta_db_adjustments.png)
 
 ### Use the Cloud MTA Build tool to package your project for deployment
 
@@ -92,6 +82,6 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
     <!-- border -->![SAP BTP Cockpit application detail](cockpit_app_url.png)
 
-1. Remember to test via the Application Router as only that application will have the redirect to the Login Screen to generate the security token. But other than the different URLs everything should work the same as when we tested with authorization from the SAP Business Application Studio.  Also because the database container was deployed to a new HDI container instance; you will need to return to the Database Explorer, connect to this new instance and load the data from CSV files.  
+1. Remember to test via the Application Router as only that application will have the redirect to the Login Screen to generate the security token. But other than the different URLs everything should work the same as when we tested with authorization from the SAP Business Application Studio.  Also because the database container was deployed to a new HDI container instance; you will need to return to the Database Explorer, connect to this new instance and load the data from CSV files.  Will now have two copies of the same HDI container instance. One used for development and one deployed via the MTA that is used for testing.  Often you would deploy these into separate spaces or even sub accounts, but to keep this tutorial easier we only use one of each of these and deploy into the same.
 
 ---

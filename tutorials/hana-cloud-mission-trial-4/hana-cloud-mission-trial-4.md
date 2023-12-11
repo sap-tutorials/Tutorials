@@ -44,7 +44,7 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 **How to open SAP HANA Cloud Central**
 
--	In SAP BTP cockpit, open SAP HANA Cloud Central under Instances and Subscriptions.
+-	In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the Subscriptions tab.
 
     ![BTP Manage SAP HANA Cloud](hcc-app.png)
 
@@ -68,9 +68,9 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 -	*Manage and delete instances*
 
--	*Open the SAP HANA database instance in SAP HANA cockpit and SAP HANA database explorer*
+-	*Open the SAP HANA Cloud instance in SAP HANA cockpit and SAP HANA database explorer*
 
--	*Open the SAP HANA Cloud, data lake instance in SAP HANA database explorer*
+-   *Perform SAP HANA database migrations*
 
 -   *View alerts in the Alerts tab*
 
@@ -79,10 +79,9 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 **How to find your instances**
 
--	In SAP HANA Cloud Central you can see all your instances. If you want to manage and maintain multiple instances, you can use the filters and search options on the top center area of the screen. Use **Adapt Filters** to modify the types of filters displayed.   
+-	In SAP HANA Cloud Central you can see all your instances. If you want to manage and maintain multiple instances, you can use the filters and search options on the top center area of the screen. Use **Adapt Filters** to modify the types of filters displayed.
 
     ![HCC filters](hcc-filters.png)
-
 
 **Manage your instances**
 
@@ -142,7 +141,7 @@ Furthermore, you can administer and manage…
 
 **How to open SAP HANA cockpit**
 
-1.	To open the SAP HANA cockpit, go to SAP HANA Cloud Central.
+1.	Open SAP HANA Cloud Central.
 
 2.	Click on the row of the instance you want to view additional details for.
 
@@ -152,7 +151,7 @@ Furthermore, you can administer and manage…
 
     ![Choose authentication](choose-auth.png)
 
-    >Alternatively, you can access the SAP HANA cockpit by clicking on the **three dots** in the **Actions** column. Then, click on **Open in SAP HANA Cockpit**.
+    >Alternatively, you can open the SAP HANA cockpit by clicking on the **three dots** in the **Actions** column. Then, click on **Open in SAP HANA Cockpit**.
     >
     >![HCC Open HANA Cockpit](hcc-open-cockpit.png)
     >
@@ -168,7 +167,7 @@ You can check out the [technical documentation](https://help.sap.com/viewer/9630
 
 SAP HANA database explorer allows you to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. You also have access to the SQL console.
 
->**Note**: The SQL console can now be accessed directly in HANA Cloud Central by clicking on the SQL console tab.
+>**Note**: The SQL console can now be accessed directly in HANA Cloud Central by clicking on the SQL console toolbar item or through the actions menu.
 >
 >![SQL console tab](sql-console-tab.png)
 >
@@ -282,17 +281,13 @@ The SAP Business Application Studio provides tools specific to building business
 
 1.	Navigate to your **Subaccount**.
 
-2.	Click on **Service Marketplace** on the right side of the screen.
+2.	Click on **Service Marketplace** on the left side of the screen.
+
+3.	Scroll down or use the search bar to find **SAP Business Application Studio** and click on the three dots and choose **Create** to add a subscription.  If you can see the option **Go to Application**, you are already subscribed.
 
     ![BTP Marketplace](ss-11-BTP-marketplace.png)
 
-3.	Scroll down or use the search bar to find **SAP Business Application Studio**.
-
-4.	On the SAP Business Application Studio tile, click on the **three dots** and select **Create** to add a subscription. If you can see the option **Go to Application**, you are already subscribed.
-
-    ![Add BAS in Marketplace](ss-12-add-BAS-marketplace.png)
-
-5.  Click on **Users**.
+4.  Click on **Security** and then **Users**.
 
     ![Users](users.png)
 
@@ -300,14 +295,14 @@ The SAP Business Application Studio provides tools specific to building business
 
      ![Assign role collection](role-collection.png)
 
-6.	Open the SAP Business Application Studio.
+5.	Open the SAP Business Application Studio.
 
     ![Open BAS](start-bas.png)
 
 
-7.	Click on **OK** to accept the privacy statement if this is your first time accessing SAP Business Application Studio.
+6.	Click on **OK** to accept the privacy statement if this is your first time accessing SAP Business Application Studio.
 
-8.	We recommend that you bookmark this URL so you can easily return to the SAP Business Application Studio.
+7.	We recommend that you bookmark this URL so you can easily return to the SAP Business Application Studio.
 
     > You can learn more about SAP Business Application Studio [here](https://help.sap.com/docs/bas/sap-business-application-studio/what-is-sap-business-application-studio).
 
