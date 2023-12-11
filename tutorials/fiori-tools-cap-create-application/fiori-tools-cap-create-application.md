@@ -40,7 +40,7 @@ primary_tag: software-product>sap-fiori
 
     When finished, click **Next**.
 
-5. Maintain specific attributes of the application project as follows:
+5. Maintain specific attributes of the application project as follows (Minimum SAPUI5 version is updated automatically):
 
     ![Provide project attributes](provide-project-attributes.png)
 
