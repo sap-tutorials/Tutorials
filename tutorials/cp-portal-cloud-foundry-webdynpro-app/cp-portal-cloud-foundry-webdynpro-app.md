@@ -95,10 +95,10 @@ You can see your Web Dynpro ABAP app in the list:
   ![View app](8a-view-app.png)
 
 In the next steps, we'll make the app visible for users. To do this, we need to assign the app to a role (the same role that the user is assigned to). Depending on which view mode has been set in the **Site Settings** screen, we also need to add the app to a page if you're working in **Spaces and Pages - New Experience** mode. If you're working in **Groups** mode or in **Spaces and Pages** mode, then you'll assign your app to a group. 
+Here's a view of the **Site Settings** screen with the different view modes.  In this tutorial we'll be working in the **Spaces and Pages - New Experience** mode.
 
-Here's a view of the **Site Settings** screen with the different view modes. In this tutorial we'll be working in the **Spaces and Pages - New Experience** mode.
+![View modes](28-view-modes.png)
 
-![Site Settings](26-site-settings-screen.png)
 
 If you're not sure what view mode is selected, go to the **Site Settings** screen as follows: 
 
@@ -107,6 +107,10 @@ If you're not sure what view mode is selected, go to the **Site Settings** scree
     ![Open Site Settings](27-open-settings.png) 
     
  2. On the right side of the screen, under **View Mode**, you can see which mode you're working in. To change it, click **Edit** and then **Save** your changes.
+
+ 3. Once you're done, go back to the Content Manager using the breadcrumbs at the top of the screen.
+
+    ![Site Settings](26-site-settings-screen.png)
 
 
 ### Assign the app to the Everyone role
