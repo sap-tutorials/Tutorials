@@ -78,6 +78,10 @@ SAP Fiori tools includes an Application Generator that provides a wizard-style a
 
       <!-- border -->![applicationInfo](./applicationInfo.png)
 
+8. Verify that all the required files have been generated. It should look like the example below.
+
+      <!-- border -->![generatedFiles](./generatedFiles.png)
+
 >You can keep the Application Information page open as it will be needed later. In case you close it, you can open the Command Palette from menu **View** > **Command Palette...**, type **`Application Info`**, and select **Fiori: Open Application Info**.
 
 ### Run the web app
