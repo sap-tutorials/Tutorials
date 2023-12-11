@@ -17,7 +17,7 @@ author_profile: https://github.com/Karunaharan
 ## You will learn
   - How to define and expose an integration flow endpoint as an API
   - How to assign a policy to your API
-  - How to call your API and execute the integration flow using the API portal
+
 ## Context
 In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
 
@@ -50,6 +50,7 @@ In this step, you copy the endpoint address of the integration flow.
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
 1. Choose **Settings** > **APIs** to provision the API Management capability. This provisioning might take a few seconds to complete. After the provisioning is complete, refresh your webpage.
+> The page is available only if you're provisioning the capability as a first-time user.
 
 2. Choose **Configure** > **APIs** > **Create** to create an API.
 
@@ -120,7 +121,6 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 ### Copy credentials from service key
 
-
  In this step, you'll copy the client ID, client secret, and token URL from the service key that you automatically generated in your SAP BTP account. See: [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
 1. In your SAP BTP subaccount, navigate to your service instance page. Choose **Services** > **Instances and Subscriptions**.
@@ -129,13 +129,11 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
       <!-- border -->![view key](3-2-key-view.png)
 
-      >**TIP**: In trial accounts, the default name that the booster provides for the service instance is **default-it-rt-integration-flow**. In free tier accounts, the instance name is user-defined.
+>**TIP**: In trial accounts, the default name that the booster provides for the service instance is **default-it-rt-integration-flow**. In free tier accounts, the instance name is user-defined.
 
 3. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
 
       <!-- border -->![Copy clientid and clientsecret](3-3-copy-clientid-secret-tokenurl.png)
-
-
 
 
 ### Assign policy template
@@ -151,8 +149,6 @@ This grant type works in the following way: In a first call, the API client prov
     <!-- border -->![choose API](017.png)
 
 3. Navigate to **Artifacts** tab.
-
-    <!-- border -->![Artifacts1](018.png)
 
 4. Under **Actions**, choose **Copy**.
 
