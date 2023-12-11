@@ -20,7 +20,7 @@ author_profile: https://github.com/raz-korn
 ## Intro
 The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment. 
 
-For setting up SAP Business Application Studio in an Enterprise Account refer to [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html) topic of the SAP Business Application Studio Administrator Guide.
+For setting up SAP Business Application Studio in an Enterprise Account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
 
 In an Enterprise Account you can set up SAP Business Application Studio as a Free-Tier service by checking its **free** plan during its entitlement configuration.
 
