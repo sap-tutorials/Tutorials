@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Machine Learning to Extract Information from Documents with Swagger UI
@@ -149,11 +151,11 @@ Use the **POST /document/jobs** endpoint to upload to the service any document f
 
 >As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
+>- [Sample Invoice 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
->- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
+>- [Sample Invoice 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
 
->- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
+>- [Sample Invoice 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
 Do the following:
