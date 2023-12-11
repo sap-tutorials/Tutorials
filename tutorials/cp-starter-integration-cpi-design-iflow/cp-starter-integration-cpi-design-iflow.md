@@ -76,7 +76,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
 ### Add JSON to XML converter
 
-Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop, which is a OData service. You use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
+Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop, which is a OData service that understands only XML. You use a converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
 
 1. From the palette (the grey bar on the top containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
@@ -89,6 +89,7 @@ Input to the integration flow is sent in JSON format. At a later point, you comm
 
 ### Add and configure content modifier
 
+The Content Modifier allows you to modify a incoming message by changing the content of the data containers that are involved in message processing (message header, message body, or message exchange). The data written to the message header using a Content Modifier also becomes part of the outbound message addressed to a receiver system. For more information about Content Modifier, see [Content Modifier Basics](https://help.sap.com/docs/integration-suite/sap-integration-suite/content-modifier-basics).
 
 1. Choose **Message Transformers > Content Modifier** and add it to the message path, as you did for the **JSON to XML Converter**.
 
@@ -109,6 +110,7 @@ Input to the integration flow is sent in JSON format. At a later point, you comm
 
 ### Add request reply step
 
+Certain integration scenarios might require that Cloud Integration communicates with an external service, retrieves data from it, and further processes the data. In such cases, you can use the request reply step as an exit to connect to the external service.
 
 From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path, similar to the previous steps.
 
@@ -116,10 +118,10 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
   <!-- border -->![Connect request reply step](7-1-connect-request-reply.png)
 
+You have now created a step that will (in the further step) connect and communicate with on OData service, and retrieves data from it.
 
 
 ### Connect request reply to receiver
-
 
 1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the editor. You do this to ensure that your integration flow is elegantly designed.
 
