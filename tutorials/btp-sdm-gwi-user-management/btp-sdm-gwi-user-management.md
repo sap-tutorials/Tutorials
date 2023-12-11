@@ -17,7 +17,7 @@ author_profile: https://github.com/Vikramkulkarni01
   - How to add users to the Google Workspace admin console.
   - How to manage user information.
 
-> **Tip**: You can skip this tutorial if you have already created a user in the Google Workspace console. If it has not yet been created, follow these steps:
+> **Tip**: You can skip this tutorial if you have already created a user in the `Google Workspace` console. If it has not yet been created, follow these steps:
 
 ---
 
@@ -26,9 +26,11 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Adding User](Add_User.png)
 
-2. Enter the **User Information** and specify the password for your user.
+2. Enter the **User Information** and specify the relevant information for your user.
 
-    !![ManageUserinfo](UserInformation.png)
+    >**Important**: Confirm your *Google Workspace* email ID matches your SAP BTP user email, even if the domain differs. See the screenshot below for an example, where the domain is `workspace.com`, resulting in the user email: *`demo.user@workspace.com`*.
+  
+    !![ManageUserinfo](AddUser_GWV1.png)
 
 [DONE]
 [ACCORDION-END]
