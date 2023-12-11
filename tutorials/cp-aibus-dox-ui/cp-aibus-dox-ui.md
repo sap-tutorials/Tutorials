@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI
@@ -22,7 +24,7 @@ The core functionality of Document Information Extraction is to automatically ex
 ### Upload documents
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 Upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
 
