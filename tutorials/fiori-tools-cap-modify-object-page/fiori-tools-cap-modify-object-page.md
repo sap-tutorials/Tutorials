@@ -82,7 +82,7 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 
 1. Using drag&drop move the existing folder `ext` located in `test-resources` to the `webapp` folder of the incidents application.
 
-    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-ext-3.png)
+    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-ext-4.png)
 
 2. In Page Editor, press the **+** icon in the **Sections** node and choose **Add Custom Section**.
 
