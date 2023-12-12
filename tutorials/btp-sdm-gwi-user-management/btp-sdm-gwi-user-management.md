@@ -28,7 +28,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 2. Enter the **User Information** and specify the relevant information for your user.
 
-    >**Important**: Confirm your *Google Workspace* email ID matches your SAP BTP user email, even if the domain differs. See the screenshot below for an example, where the domain is `workspace.com`, resulting in the user email: *`demo.user@workspace.com`*.
+    >**Important**: Confirm your *Google Workspace* email ID matches your SAP BTP user email, even if the domain differs. See the screenshot below for an example, where the domain is `sapworkspace.com`, resulting in the user email: *`demo.user@sapworkspace.com`*.
   
     !![ManageUserinfo](AddUser_GWV1.png)
 
