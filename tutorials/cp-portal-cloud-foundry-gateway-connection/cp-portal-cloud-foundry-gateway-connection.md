@@ -43,14 +43,13 @@ author_profile: https://github.com/LindsayBert
 
 In this step, you'll create connectivity between SAP BTP and the SAP Gateway Demo system account.
 
-1.  In the left navigation panel, click **Destinations** under **Connectivity**.
+1.  In the left navigation panel, under **Connectivity**, click **Destinations**.
 
     <!-- border -->![Open destinations](3-open-destinations.png)
 
-2. Click **New Destination**.
+2. Click **Create Destination**.
 
     <!-- border -->![New destination](4-create-destination.png)
-
 
 
 3.  Add the following destination properties:
@@ -102,7 +101,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
     ![Connection established](7-connection-established.png)
 
-    >This is not an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
+    >This isn't an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
 
 
 

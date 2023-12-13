@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Set Up Your CAP Application for Eventing
 description: This tutorial shows you how to configure your CAP service to listen for upcoming events and deploy it to the SAP BTP cockpit.
 keywords: cap

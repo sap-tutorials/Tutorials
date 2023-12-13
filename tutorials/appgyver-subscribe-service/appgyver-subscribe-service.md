@@ -24,7 +24,7 @@ The Low-Code / No-Code service on SAP BTP is available with a subscription boost
 
 Follow the instructions found in the following video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5lCAotjfWWo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gk-jZaM6_Rc" frameborder="0" allowfullscreen></iframe>
 
 More information is available from Bea Pasch's blog [SAP Build Apps Free Tier Individual Access](https://blogs.sap.com/2022/11/25/sap-build-apps-free-tier-individual-access/).
 

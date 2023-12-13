@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare SAP Build Work Zone, Standard Edition Setup
 description: This tutorial shows you how to add the SAP Launchpad application.
 keywords: cap

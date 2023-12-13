@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Subscribe to the SAP Build Work Zone, Standard Edition
 description: This tutorial shows you how to subscribe to the SAP SAP Build Work Zone, standard edition.
 keywords: cap

@@ -4,6 +4,8 @@ auto_validation: true
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 time: 20
+author_name: Junjie Tang
+author_profile: https://github.com/jjtang1985
 ---
 
 
@@ -33,7 +35,7 @@ Clicking on "Enter Your Trial Account" will lead you to your account overview:
 
 Now that your account is activated and configured, you will need the `Cloud Foundry` command line interface (CF CLI) to deploy and manage your `Cloud Foundry` applications.
 
-To install the CLI, you can either grab the latest release on the [official release page](https://github.com/cloudfoundry/cli/releases) or use your favorite [package manager](https://github.com/cloudfoundry/cli#installing-using-a-package-manager).
+To install the CLI, you can grab the latest release on the [official release page](https://github.com/cloudfoundry/cli/releases).
 
 In order to deploy applications on `SAP Cloud Foundry` you need to provide the CF CLI with an API endpoint. The API endpoint depends on the region you chose for your account:
 
@@ -77,10 +79,10 @@ mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -Darchety
 
 During the generation process, Maven will require additional parameters to form your project:
 
-  -  **`groupId`** - An identifier representing your group, company or organization (example: `com.sap.cloud.sdk.tutorial`)
-  -  **`artifactId`** - An identifier for your application (example: `firstapp`)
-  -  **`version`** - The version of your application (example: `1.0-SNAPSHOT`)
-  -  **`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, for example `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
+  -  **`groupId`** - An identifier representing your group, company or organization (e.g. `com.sap.cloud.sdk.tutorial`)
+  -  **`artifactId`** - An identifier for your application (e.g. `firstapp`)
+  -  **`version`** - The version of your application (e.g. `1.0-SNAPSHOT`)
+  -  **`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, e.g. `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
 
 After providing these values, Maven will generate your project from the archetype.
 
@@ -190,13 +192,13 @@ Once a Jenkins server is configured for your personal needs, the files in the pr
 
 This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module `application/src/test`, or in a separate `unit-tests` module that is not part of the archetype. For that topic you can also refer to the articles and educational videos by Martin Fowler. His post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html) is a good starting point.
 
-During development it becomes important to test the code newly implemented to external services, by running logic in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven sub-module. That way the runnable application itself can be later shipped without tests and their dependency.
+During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven sub-module. That way the runnable application itself can be later shipped without tests and their dependency.
 
 
 ### HelloWorldServlet
 
 
-Now that you understand the structure of the project, take a closer look at the `HelloWorldServlet`.
+Now that you understand the structure of the project, let's take a closer look at the `HelloWorldServlet`.
 
 ```java
 @WebServlet("/hello")
@@ -294,7 +296,7 @@ That's it.
 
 **Run the Application on a Local Server**
 
-To do so, first assemble the project using the `mvn clean package` command (see above).
+[Since version 1.1.1 of the SAP S/4HANA Cloud SDK](https://sap.github.io/cloud-s4-sdk-examples/release-notes/), the generated projects can also be run locally out-of-the-box. To do so, first assemble the project using the `mvn clean package` command (see above).
 
 Then, run the following commands to start the local server:
 

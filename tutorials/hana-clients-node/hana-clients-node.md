@@ -94,7 +94,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     >![pre built libraries](prebuilt.png)
 
-    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
+    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
 
     >```Shell (Microsoft Windows)
     set HDB_NODE_PLATFORM_CLEAN=1
@@ -127,7 +127,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm list
     ```
 
-    ![npm list](npm-list-new.png)
+    ![npm list](npm-list.png)
 
 > Some Tips
 
@@ -254,7 +254,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Running nodeQuery.js](Node-query.png)
 
-    Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
+    Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/fdafeb1d881947bb99abd53623996b70.html).
 
     Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
@@ -635,7 +635,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     ![declaration file](ts-declaration-file.png)
 
-    Notice that it contains definitions for the methods of the SAP HANA Client Node.js interface.  The method `setClientInfo` in particular will be highlighted in substep 6.
+    Notice that it contains definitions for the methods of the SAP HANA Client Node.js interface.  The method `setClientInfo` will be highlighted in substep 6.
 
 2. Open a file named `nodeQueryTS.js` in an editor.
 

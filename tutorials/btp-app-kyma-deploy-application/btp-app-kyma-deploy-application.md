@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Deploy Your CAP Application to Kyma
 description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your CAP app to your Kyma cluster, and troubleshoot it, if needed.
 keywords: cap
@@ -111,7 +111,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
     --buildpack gcr.io/paketo-buildpacks/nodejs \
-    --builder paketobuildpacks/builder-jammy-base \
+    --builder paketobuildpacks/builder:base \
     --env BP_NODE_RUN_SCRIPTS=""
     ```
 
@@ -131,7 +131,7 @@ CONTAINER_REGISTRY=<your-container-registry>
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
         --buildpack gcr.io/paketo-buildpacks/nodejs \
-        --builder paketobuildpacks/builder-jammy-base \
+        --builder paketobuildpacks/builder:base \
         --env BP_NODE_RUN_SCRIPTS=""
     ```
 

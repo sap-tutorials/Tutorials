@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Create Custom Schema for Custom Documents
@@ -37,7 +39,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](plan.png)
 
 
-    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Admin_User_trial`, or the combination of the role collections: `Document_Information_Extraction_UI_End_User_trial` and `Document_Information_Extraction_UI_Templates_Admin_trial`. For more details on how to assign role collections, see step 2 in the tutorial: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -47,7 +49,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](log-off.png)
 
 
-2. To create a custom schema, click the wheels icon and choose **Schema Configuration**.
+2. To create a custom schema, click the cogwheels icon and choose **Schema Configuration**.
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
@@ -89,7 +91,9 @@ To define your first header field, click **Add**.
 
 <!-- border -->![Add Header Field](add-header-field.png)
 
-For each custom field, you have to enter name and data type. The potential data types are `string`, `number`, `date`, `discount` and `currency`. Default extractors are not available for custom documents. Adding a description is optional.
+For each field, you have to enter a name, a data type, and a setup type. Adding a description is optional. Default extractors aren't available for custom documents. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
+
+The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
 
 As your first header field, add the shipper number of your power of attorney document.
 
@@ -97,7 +101,7 @@ As your first header field, add the shipper number of your power of attorney doc
 
 2. Select `string` for the `Data Type`. Note that a shipper number is a `string`, even though it consists of numbers, as it is an arbitrary combination of numbers without meaning. In contrast, price is an example of the data type `number`.
 
-3. Select `default` for the `Setup Type` and click **Add** to create the header field.
+3. Select `manual` for the `Setup Type` and click **Add** to create the header field.
 
     <!-- border -->![Create Number](add-number.png)
 
@@ -111,21 +115,21 @@ Click **Add** again to open the `Add Data Field` dialog.
 
 2. Select `string` for the `Data Type`.
 
-3. Select `default` for the `Setup Type` and click **Add** to create the field.
+3. Select `manual` for the `Setup Type` and click **Add** to create the field.
 
     <!-- border -->![Create Name](add-name.png)
 
 Go ahead and create the list of header fields as shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
 
-|  Field Name           | Data Type   
-|  :------------------- | :----------
-|  `shipperNumber`      | string       
-|  `fullName`           | string      
-|  `EIN`                | string                  
-|  `state`              | string       
-|  `fullAddress`        | string       
-|  `capacity`           | string       
-|  `date`               | date                    
+|  Field Name           | Data Type     | Setup Type   
+|  :------------------- | :----------   | :----------    
+|  `shipperNumber`      | string        | manual       
+|  `fullName`           | string        | manual
+|  `EIN`                | string        | manual           
+|  `state`              | string        | manual       
+|  `fullAddress`        | string        | manual       
+|  `capacity`           | string        | manual       
+|  `date`               | date          | manual                    
 
 
 <!-- border -->![All Header Fields](all-header-fields.png)

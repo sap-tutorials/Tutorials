@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Assign a Role Collection to a User
 description: This tutorial shows you how to assign roles to users.
 keywords: cap

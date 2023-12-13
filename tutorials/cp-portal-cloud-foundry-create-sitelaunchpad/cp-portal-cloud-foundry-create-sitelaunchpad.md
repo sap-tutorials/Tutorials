@@ -44,9 +44,9 @@ You've just created a site called `JobCore`.
 ### Select the Spaces and Pages - New Experience view mode
 
 
-When you create a site, you are directed to the **Site Settings** screen where you can edit the site settings. In this screen, you'll select the new experience view mode. This is also where you assign a site to a specific user role.
+When you create a site, you are directed to the **Site Settings** screen. In this screen, you'll select the new experience view mode. This is also where you will assign roles to your site.
 
-> By enabling **Spaces and Pages – New Experience** view mode, you'll be able to create spaces and pages locally in dedicated editors. You will be able to design your pages by adding sections with UI integration cards and app tiles. If you already have existing spaces and pages that were integrated from remote content providers in the **Spaces and Pages** view mode, in the new experience, they are displayed side by side with spaces and pages that you create locally.
+> By enabling **Spaces and Pages – New Experience** view mode, you'll be able to create spaces and pages locally in dedicated editors. You will be able to design your pages by adding sections with UI integration cards and app tiles. If you integrate spaces and pages from remote content providers, they will be displayed side by side with spaces you create.   
 
   1. Click **Edit** in the top right corner of the screen.
 

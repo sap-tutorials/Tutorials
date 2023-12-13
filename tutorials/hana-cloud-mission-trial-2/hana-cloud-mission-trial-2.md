@@ -36,77 +36,37 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 > If you have a **production environment** of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this mission.
 
-### Configure entitlements for SAP HANA Cloud on an existing SAP BTP trial account (optional)
->If you have an existing SAP BTP trial account, this section will walk you through adding entitlements to your SAP BTP account so you can start using the appropriate services.
-
+### Examine entitlements for SAP HANA Cloud
 
 1.	In the SAP BTP Cockpit, click on your **subaccount**.
+  
+    ![open the trial subaccount](subaccount.png)
 
-2.	Then click on **Entitlements** on the left-hand side menu. Here you can see all the services associated with your account.
+2.	Then click on **Entitlements** on the left-hand side menu and search for entitlements for SAP HANA.
 
     ![BTP Entitlements](BTP-entitlements.png)
 
-3.	Enter `HANA` in the search field and make sure you have entitlements for the services (and service plans) listed here:
+3.	Notice that the following entitlements are shown.
 
     - SAP HANA Cloud: `tools (Application)`, `hana`, `hana-cloud-connection`, and `relational-data-lake`
 
     -	SAP HANA Schemas & HDI Containers: `hdi-shared`, `schema`, and `securestore`
 
-    If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen.
+### Add a subscription to SAP HANA Cloud tools
 
-    ![BTP Configure Entitlements](BTP-configure-entitlements-trial.png)
+1. From SAP BTP Cockpit, click on **Services** and then **Service Marketplace**.  Search for **SAP HANA Cloud** and click **Create** in the top-right corner. 
 
-4.	Click on **Add Service Plans** in the same area of the screen.
-
-    ![BTP add service plan](BTP-add-service-plan-trial.png)
-
-5.	In the pop-up that opens, type `HANA` in the search box to see all relevant entitlements. Notice that there is a tools (Application) plan as part of the new multi-environment tooling.
-
-    ![BTP select entitlements](add-entitlements-existing.png)
-
-6.	Select the missing entitlements by checking the boxes.
-
-    - SAP HANA Cloud: `tools (Application)`, `hana`, `hana-cloud-connection`, and `relational-data-lake`
-
-        > Existing trial accounts must add the `tools (Application)` plan to subscribe to multi-environment SAP HANA Cloud tools. Those with new trial or free tier accounts will have this entitlement automatically enabled by default.
-
-         ![BTP select entitlements](confirm-tools-app-existing-acct.png)
-
-    -	SAP HANA Schemas & HDI Containers: `hdi-shared`, `schema`, and `securestore`
-
-        You will see two options in the list related to Schemas and HDI containers. Please make sure to select the one that **does not** say **Trial**, as you can see on the screenshot below.
-
-        > The reason not to select the **SAP HANA Schemas & HDI Containers Trial** entitlement is that it is made for a trial of *SAP HANA Service*, not SAP HANA Cloud.
-
-        ![BTP select entitlements](BTP-select-entitlements-trial-schemas.png)
-
-7.	Click on **Add X Service Plans**, where X is the amount of services you want to add.
-
-    ![BTP Add Services](add-1-service-plan.png)
-
-8.	On the top right-hand side of the screen, make sure to click on **Save**.
-
-    ![BTP entitlements save](BTP-entitlements-save.png)
-
-
-
-### Add a subscription to SAP HANA Cloud
-
->This step is necessary regardless of whether you have an existing or new SAP HANA trial account.
-
-1. From SAP BTP Cockpit, click on **Instances and Subscriptions** on the left-hand side menu.
-
-    ![Instances and subscriptions in left-hand side menu](instances-subscriptions.png)
-
-    Select **Create** in the top-right corner. Select **SAP HANA Cloud** under Service and **tools** under Plan.  
+    ![Create an instance of SAP HANA Cloud](create-instance.png)
+  
+2. Select **SAP HANA Cloud** under Service and **tools** under Plan.  
 
     ![subscribe to tooling](subscribe-to-tooling-existing-acct.png)
 
-2. To ensure that your desired user has the necessary permissions to manage instances in HANA Cloud Central, navigate to **Security** > **Users** in the left hand side menu. Then click on your user.  
+3. To ensure that your desired user has the necessary permissions to manage instances in HANA Cloud Central, navigate to **Security** > **Users** in the left-hand side menu. Then click on your user.  
 
     ![user management](user-mgmt.png)
 
-    Click on the **three dots** in the right-hand panel to find the **Assign Role Collection** button.
+    Click on the **Assign Role Collection** button.
 
     ![assign role collection](assign-role.png)  
 
@@ -114,7 +74,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
     ![Select SAP HANA admin role](role-selected.png)
 
-3. Navigate back to the **Instances and Subscriptions** page. Then click on **SAP HANA Cloud** under Applications to open SAP HANA Cloud Central.   
+4. Navigate to **Instances**, **Instances and Subscriptions** and click on **SAP HANA Cloud** to open SAP HANA Cloud Central.   
 
     ![hana cloud central](hcc-app.png)
 
@@ -133,7 +93,7 @@ When you first access your trial account, you will see the [**Trial Home Page**]
 
 This is where you can enter your account but also find helpful resources to get to know the SAP BTP Cockpit in detail:
 
--	Take the virtual tour once you start your trial for the first time.
+- Take the virtual tour once you start your trial for the first time.
 
     ![Screenshot Trial home page Tour](ss-10-trial-home-page-tour.png)
 
@@ -147,15 +107,15 @@ There is also some built-in functionality that can help you with using SAP BTP C
 
     ![BTP Help](BTP-trial-period.png)
 
--	For further details, consult our documentation material [here](https://help.sap.com/viewer/product/BTP/LATEST/en-US).
+-	For further details, consult our documentation material [here](https://help.sap.com/docs/btp).
 
 
 ### Understand Accounts, Directories, Subaccounts, and Spaces
 Your account on SAP Business Technology Platform is called a **global account**. As the administrator, you will have full control of your global account and be able to create directories, subaccounts, and instances. Subaccounts are a smaller part of your global account. Directories are groups of subaccounts under the global account.
 
-![BTP Global Account](ss-11-BTP-global-account.png)
+![BTP Global Account](BTP-global-account.png)
 
-Below you can see a simplified diagram of a global account in SAP BTP cockpit with different ways in which directories and  subaccounts are used to organize SAP HANA database and data lake instances.  Of course, once you use SAP HANA Cloud, you will most likely have many more databases, subaccounts and perhaps even global accounts. These levels will then help you keep everything well-organized.
+Below you can see a simplified diagram of a global account in SAP BTP cockpit with different ways in which directories and  subaccounts are used to organize SAP HANA database and data lake instances.  Of course, once you use SAP HANA Cloud, you will most likely have many more databases, subaccounts, and perhaps even global accounts. These levels will then help you keep everything well-organized.
 
 ![BTP Illustration](btp-org-illustration.png)
 

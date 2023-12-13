@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 keywords: cap

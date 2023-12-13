@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 keywords: cap
