@@ -13,7 +13,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## You will learn
   - How to write an entity definition
-  - How to use some generic CAP artefacts like aspects and types
+  - How to use some generic CAP artifacts like aspects and types
   - What associations and compositions are
   - How to make the project reusable
 

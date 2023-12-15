@@ -40,7 +40,7 @@ In this step, you will create a React skeleton project which will be used to cre
     cd react-core-mf
     ```
 
- ​3. Download the React example package JSON file containing minimal dependencies required for a React app. Next, install styling libraries to handle CSS files, as well as Fundamentals and React web components packages.
+ 3. Download the React example package JSON file containing minimal dependencies required for a React app. Next, install styling libraries to handle CSS files, as well as Fundamentals and React web components packages.
 
     ```Shell
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/package.json > package.json

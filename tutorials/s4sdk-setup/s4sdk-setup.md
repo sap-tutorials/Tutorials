@@ -4,6 +4,8 @@ auto_validation: true
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 time: 10
+author_name: Junjie Tang
+author_profile: https://github.com/jjtang1985
 ---
 
 # Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
@@ -103,7 +105,7 @@ We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourE
 
 
 Some of the steps in the upcoming tutorial blogs will fail if you sit behind a corporate proxy. If you cannot escape the proxy, you need to tell Maven where your proxy is located.
-To do this, you need to cd to your `~/.m2 directory` (for example on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
+To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -125,10 +127,6 @@ To do this, you need to cd to your `~/.m2 directory` (for example on Windows: `C
 </settings>
 ```
 
-After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry and others.
-
-
-### Test yourself
-
+After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
 ---

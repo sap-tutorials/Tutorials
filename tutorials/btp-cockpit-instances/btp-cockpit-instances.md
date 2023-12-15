@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Annika Gonnermann
-author_profile: https://github.com/AnnikaGonnermann
+author_name: Daniel Korac
+author_profile: https://github.com/danielforsap
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, topic>cloud]
@@ -12,7 +12,7 @@ primary_tag: products>sap-business-technology-platform
 <!-- description --> Create a service instance for services, environments and applications in SAP Business Technology Platform.
 
 ## Prerequisites
- - If you use a **trial account**, complete the following set-up tutorials first:
+ - If you use a **trial account**, complete the following setup tutorials first:
     - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
     - [Manage Entitlements](cp-trial-entitlements)
  - If you use an **enterprise account**, complete the following set-up tutorials first:

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>business-entity-recognition, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Use Free Tier to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-free-key) or [Use Trial to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-key).
 
-<!-- border -->![BER Service Keys](png-files/service-key-details.png)
+<!-- border -->![BER Service Keys](service-key-details.png)
 
 
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![BER TOKEN](png-files/web-browser.png)
+<!-- border -->![BER TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

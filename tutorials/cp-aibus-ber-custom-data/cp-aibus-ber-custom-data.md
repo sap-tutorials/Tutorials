@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>business-entity-recognition, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Create Dataset and Upload Training Data
@@ -103,9 +105,9 @@ Please bear in mind that Business Entity Recognition requires your data to be in
 
 >As an alternative to uploading your own JSON file to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Training Data 1](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_1.json)
+>- [Sample Training Data 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_1.json)
 
->- [Sample Training Data 2](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_2.json)
+>- [Sample Training Data 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-ber-custom-data/Tutorial_training_data_2.json)
 
 >Please repeat this step twice and upload one document each time. The more data is available the better predictions the model can give you.
 

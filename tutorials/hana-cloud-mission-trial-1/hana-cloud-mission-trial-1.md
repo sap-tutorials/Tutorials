@@ -8,7 +8,7 @@ tags: [tutorial>beginner, software-product>sap-hana-cloud]
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Sign up for an SAP HANA Cloud Trial account
+# Sign up for an SAP HANA Cloud Trial account 
 <!-- description --> Learn about the SAP HANA Cloud trial and the process to sign up for it.
 
 ## Intro

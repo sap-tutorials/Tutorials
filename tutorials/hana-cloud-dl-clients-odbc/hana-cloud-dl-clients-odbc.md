@@ -35,7 +35,6 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
     ![odbc admin drivers](drivers-1.png)
 
     
-
 3. Click the **User DSN** tab to view the data sources.  
 
 4. Click **Add** to create a new data source to connect to a data lake Relational Engine database.  
@@ -149,6 +148,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 1. Open Microsoft Excel.
 
 2.  In the **Data** tab, select **Get Data | From Other Sources | From ODBC**.
+
     ![Excel ODBC](ExcelODBC.png)
 
 3.  Select the previously created data source that contains the connection information to data lake Relational Engine.
