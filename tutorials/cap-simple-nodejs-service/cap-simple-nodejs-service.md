@@ -40,7 +40,7 @@ In this series of tutorials, you will implement a CAP Service with very easy fun
 
 
 ---
-### Create your preconfigured dev space
+### Create your pre-configured dev space
 
 1. Open **SAP Business Application Studio**.
 
