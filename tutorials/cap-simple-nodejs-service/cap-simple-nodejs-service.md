@@ -321,7 +321,7 @@ This step describes how to test the service locally using a file that contains t
 
     Check in BTP Cockpit, if the API Endpoint of your Cloud Foundry environment is matching the information you used for the script https://api.cf.us10-001.hana.ondemand.com
 
-    <!-- border -->![endpont](APIEndpoint.png)
+    <!-- border -->![endpoint](APIEndpoint.png)
 
 5. Under `mta_archives`, right click on `sap-build-cap-sample-library_1.0.0.mtar` and select Deploy MTA Archive.
 
