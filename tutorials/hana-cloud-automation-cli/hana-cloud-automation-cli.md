@@ -233,7 +233,7 @@ The subaccount ID can be obtained on the BTP Cockpit Overview page for the subac
 ![subaccount ID](subaccount-id.png)
 
 #### Create an instance
-In order to create an instance, a JSON describing the instance is required and a plan ID.
+In order to create an instance, JSON describing the instance is required as well as a plan ID.
 
 * Create a JSON file named **create.json** that specifies the parameters of the instance to be created.  The JSON can be generated in the SAP HANA Cloud Central instance creation wizard or can come from an existing instance.
 
@@ -640,7 +640,7 @@ Log on to Cloud Foundry using an API endpoint.
     ![cf login](cf-login.png)
 
 #### Create an instance
-In order to create an instance, a JSON describing the instance is required as is a service offering name and plan.
+In order to create an instance, JSON describing the instance is required, as well as a service offering name and plan.
 
 * Create a JSON file named **create.json**.
 

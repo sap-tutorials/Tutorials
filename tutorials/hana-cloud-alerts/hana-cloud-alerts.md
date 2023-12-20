@@ -22,7 +22,7 @@ Alerts can inform you of potential issues before they occur, such as when the nu
 
 You can find details of any raised alerts through the alerts app in SAP HANA Cloud Central or by using the [REST API](hana-cloud-alerts-rest-api) (SAP HANA database). This is known as a pull approach.
 
-Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
+Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.  A list of built-in events can be found at [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/sap-hana-cloud-service-database-events).
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
