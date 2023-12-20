@@ -15,7 +15,7 @@ author_profile: https://github.com/dhrubpaul
 ## Prerequisites
 
 - You have an SAP AI Core service instance and service key. 
-- You're using the sap-internal service plan.
+- You're using the extended service plan in SAP AI Core.The Generative AI Hub will only reflect if the extended service plan is checked.If you are using a standard plan or free tier plan ,you will still be able to upgrade to extended service plan.However Generative AI Hub is not supported in Free Tier.
 - You have completed the client authorization for your preferred user interface. 
 
 For more information, see [SAP AI Core documentation](https://help.sap.com/doc/7ca8e589556c4596abafe95545dfc212/CLOUD/en-US/553250b6ec764a05be43a7cd8cba0526.pdf).
