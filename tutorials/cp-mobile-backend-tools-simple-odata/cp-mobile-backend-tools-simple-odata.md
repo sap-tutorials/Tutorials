@@ -430,7 +430,7 @@ If the service shall be accessible independently and authentication is required,
 
     ![BTP Cockpit Application with marked application route](img_btp_application_route.png)
 
-    >Take note: If you created your Cloud Foundry environment in a `-00x`-environment (like e.g. `us10-001` or `eu10-004`), you might receive the error `"The redirect_uri has an invalid domain"`. If this is the case, you will have to allow-list your application uri in the `xs-security.json` file and re-run `cf deploy`. 
+    >Take note: If you created your Cloud Foundry environment in a `-00x`-environment (like e.g. `us10-001` or `eu10-004`), you might receive the error `"The redirect_uri has an invalid domain"`. If this is the case, you will have to allow-list your application uri in the `xs-security.json` file (like in the screenshot above) and re-run `cf deploy`. 
 
     ```json
     {
