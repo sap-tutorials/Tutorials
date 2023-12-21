@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
 - How to create and debug a Python application that queries a SAP HANA database
 
 ## Intro
-In the 2023 Stack Overflow's annual developer survey, Python ranked 3rd in the [Most popular technologies](https://survey.stackoverflow.co/2023/#most-popular-technologies-language) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
+In the 2023 Stack Overflow's annual developer survey, Python ranked 3rd in the [Most popular technologies](https://survey.stackoverflow.co/2023/#most-popular-technologies-language) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/) or [The Python Tutorial](https://docs.python.org/3/tutorial/).
 
 The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
@@ -233,11 +233,9 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
 
 ### Debug the application
-
-
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
-1. Open Visual Studio Code. If needed, download the application [here](https://code.visualstudio.com/Download).
+1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
 2. If you have not already done so, add the tutorial folder to the workspace by choosing **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 

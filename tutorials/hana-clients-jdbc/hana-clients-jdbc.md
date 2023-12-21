@@ -28,7 +28,7 @@ primary_tag: software-product>sap-hana-cloud
 
 Ensure that you have a Java Development Kit (JDK) installed and ensure that it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download)
+An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
 
 To verify that the JDK is correctly set up, run the following:
 

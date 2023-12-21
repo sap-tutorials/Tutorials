@@ -319,7 +319,7 @@ If you wish to access alerts and metrics for multiple instances with one API cal
 
 4. Create a new file named AlertsAndMetrics2.http file with the contents below.  Highlighted values are to be updated with details from the service binding created in the previous step and optionally an instance ID.
 
-    ```HTTP[6, 9, 12, 15, 17]
+    ```HTTP[6, 9, 12, 15, 18]
     #REST Client variables -------------------
 
     @oauth = oauth/token?grant_type=client_credentials

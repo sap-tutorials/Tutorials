@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to create and debug a .NET application that queries a data lake Relational Engine
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
