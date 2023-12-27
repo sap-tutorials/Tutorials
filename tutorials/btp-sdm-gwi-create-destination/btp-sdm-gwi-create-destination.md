@@ -76,7 +76,13 @@ Enter all the following fields in the destination configuration section and conf
   Description    | **`Destination to connect Google Drive`**
   URL            | **`https://www.googleapis.com/drive/v3`**
   Proxy Type     | **`Internet`**
-  Authentication | **`NoAuthentication`**
+  Authentication | **`OAuth2ClientCredentials`**
+  Client ID      | **`A client ID that is obtained from a JSON file.`**
+  Client Secret  | **`Enter the key from the JSON file`**
+  Token Service URL Type | **`Dedicated`**
+  Token Service URL | **`A token URI that is obtained from a JSON file.`**
+
+
 
   And the following ***Additional Properties:***
 
@@ -85,16 +91,12 @@ Enter all the following fields in the destination configuration section and conf
 
   Property Name     | Value
   :------------- | :-------------
-  `google.auth_provider_x509_cert_url` | *An `auth_provider_x509_cert_url` obtained from the JSON file*
-  `google.auth_uri` | *The Google authentication URI obtained from a JSON file*
   `google.client_email` | *A client email obtained from a JSON file.*
-  `google.client_id` | *A client ID obtained from a JSON file*
-  `google.client_x509_cert_url` | *A client X509 certificate URL obtained from a JSON file*
-  `google.private_key` | *Enter the Google Cloud private key*
   `google.private_key_id` | *A private key ID obtained from a JSON file*
   `google.project_id` | *A project ID obtained from a JSON file*
-  `google.token_uri` | *A token URI obtained from a JSON file*
-  `google.type` | **`service_account`**
+
+  >**Caution:**
+  When connecting your services to SAP BTP services and on-premise systems, credentials are exposed in plain text to the person performing the configuration. Make sure that you've operational countermeasures in place to prevent unauthorized copies of credentials from being leaked.
 
   When you specify a URL with the HTTPS scheme, a checkbox Use default **JDK truststore** will appear. Ensure that this is checked.
 
