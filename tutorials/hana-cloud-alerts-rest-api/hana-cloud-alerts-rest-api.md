@@ -394,6 +394,12 @@ If you wish to access alerts and metrics for multiple instances with one API cal
 
     ###
 
+    #Get the metric HDLCPUUsage for multiple SAP HANA Cloud data lake instances (values)
+    GET {{gateway_url}}/metrics/v1/values?names=HDLCPUUsage
+    Authorization: Bearer {{bearer}}
+
+    ###
+
     #Get the metric HDBMemoryUsed for the indexserver and order the values
     GET {{gateway_url}}/metrics/v1/values?names=HDBMemoryUsed&$filter=dimensions/service_name eq indexserver&$orderby=values/value desc
  
