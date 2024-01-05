@@ -84,7 +84,7 @@ Enter all the following fields in the destination configuration section and conf
 
 
 
-  And the following ***Additional Properties:***
+  And the following **Additional Properties**:
 
   > <span style="color:red"> Note: </span> Open the downloaded JSON file with public/private key pair from Google service accounts. For more information about the detailed steps, see [Configure Service Account Access](https://developers.google.com/workspace/guides/create-credentials?hl=en#create_credentials_for_a_service_account).
 
@@ -95,12 +95,12 @@ Enter all the following fields in the destination configuration section and conf
   `google.private_key_id` | *A private key ID obtained from a JSON file*
   `google.project_id` | *A project ID obtained from a JSON file*
 
-  >**Caution:**
+  > **Note:**
   When connecting your services to SAP BTP services and on-premise systems, credentials are exposed in plain text to the person performing the configuration. Make sure that you've operational countermeasures in place to prevent unauthorized copies of credentials from being leaked.
 
   When you specify a URL with the HTTPS scheme, a checkbox Use default **JDK truststore** will appear. Ensure that this is checked.
 
-  !![HTTPDestination](NewDestinatioFormat.png)
+  !![HTTPDestination](NewDestinatioFormat_v1.png)
 
 
 [DONE]
