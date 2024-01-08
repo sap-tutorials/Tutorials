@@ -24,12 +24,11 @@ In this tutorial, you will learn how to create routes to different paths of your
 
 ### Create a Detail page
 
-In `src` create a `Detail.jsx` file.
+In `src` create a `Detail.tsx` file.
 
 Inside of that file, create the `Detail` component that will return a title to your liking.
 
-```JavaScript / JSX
-import React from "react";
+```TypeScript / TSX
 import { Title } from "@ui5/webcomponents-react";
 
 export function Detail() {
@@ -50,15 +49,15 @@ export function Detail() {
     npm install react-router-dom
     ```
 
-2. Import `HashRouter` in `src/App.js`.
+2. Import `HashRouter` in `src/App.tsx`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { HashRouter } from "react-router-dom";
     ```
 
     And wrap your root component inside of it:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <HashRouter>
         <MyApp />
     </HashRouter>
@@ -67,26 +66,23 @@ export function Detail() {
 ### Create Home component
 
 
-1. In `src`, create a new `Home.jsx` file.
+1. In `src`, create a new `Home.tsx` file.
 
     For now only create a `Home` component that returns `null`.
 
-    ```JavaScript / JSX
-    import React from "react";
-
+    ```TypeScript / TSX
     export function Home() {
       return null;
     }
     ```
 
-2. Refactor `MyApp.jsx`.
+2. Refactor `MyApp.tsx`.
 
-    Some refactoring is necessary now. Extract every component and the corresponding logic except for the `ShellBar` from `MyApp.jsx` and move it to `Home.jsx`.
+    Some refactoring is necessary now. Extract every component and the corresponding logic except for the `ShellBar` from `MyApp.tsx` and move it to `Home.tsx`.
 
-    `MyApp.jsx` should now look like this:
+    `MyApp.tsx` should now look like this:
 
-    ```JavaScript / JSX
-    import React from "react";
+    ```TypeScript / TSX
     import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
     import addIcon from "@ui5/webcomponents-icons/dist/add.js";
 
@@ -107,13 +103,12 @@ export function Detail() {
         </div>
       );
     }
-
     ```
 
-    And `Home.jsx` like this:
+    And `Home.tsx` like this:
 
-    ```JavaScript / JSX
-    import React, { useState } from "react";
+    ```TypeScript / TSX
+    import { useState } from "react";
     import {
       AnalyticalTable,
       Card,
@@ -288,7 +283,7 @@ export function Detail() {
                 <CustomListItem>
                   <FlexBox
                     direction={FlexBoxDirection.Column}
-                    style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                    style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
                   >
                     <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                       <Text
@@ -312,7 +307,7 @@ export function Detail() {
                 <CustomListItem>
                   <FlexBox
                     direction={FlexBoxDirection.Column}
-                    style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                    style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
                   >
                     <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                       <Text
@@ -359,9 +354,9 @@ export function Detail() {
 ### Import Router components
 
 
-1. In `MyApp.jsx`, import `Routes`, `Route` and `Navigate` from `react-router-dom` and the `Home` and `Detail` components.
+1. In `MyApp.tsx`, import `Routes`, `Route` and `Navigate` from `react-router-dom` and the `Home` and `Detail` components.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { Routes, Route, Navigate } from "react-router-dom";
     import { Home } from "./Home";
     import { Detail } from "./Detail";
@@ -369,7 +364,7 @@ export function Detail() {
 
 2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Routes` and the component (`element`) displayed respectively.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     return (
       <>
         <ShellBar
@@ -386,7 +381,7 @@ export function Detail() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="*" element={<Navigate replace to="/home" />} />
         </Routes>
       </>
     );
@@ -407,7 +402,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
 1. Go into your `Home` component and add `interactive` and `onClick={handleProgressHeaderClick}` to your second `CardHeader` component.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -424,10 +419,10 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
 2. Define the `handleProgressHeaderClick` function as follows. And import the `useNavigate` hook from `react-router-dom`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { useNavigate } from "react-router-dom";
     ```
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const navigate = useNavigate();
     const handleProgressHeaderClick = () => {
       navigate("/detail");
@@ -440,16 +435,16 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
     Normally when you click on the Logo of the app, it should send you back to your `Home` screen. Let's implement that.
 
-    Go into your `MyApp.jsx` file where your `ShellBar` is located and add an `onLogoClick` prop. The function is almost the same as for the `onHeaderClick`, but this time the destination should be the default page.
+    Go into your `MyApp.tsx` file where your `ShellBar` is located and add an `onLogoClick` prop. The function is almost the same as for the `onHeaderClick`, but this time the destination should be the default page.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const navigate = useNavigate();
     const handleLogoClick = () => {
       navigate("./");
     };
     ```
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <ShellBar
       logo={<img src="reactLogo.png" />}
       profile={<Avatar image="profilePictureExample.png" />}
@@ -464,10 +459,9 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
 If needed, you can compare your files with the following code references:
 
-`MyApp.jsx`:
+`MyApp.tsx`:
 
-```JavaScript / JSX
-import React from "react";
+```TypeScript / TSX
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
 import addIcon from "@ui5/webcomponents-icons/dist/add.js";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
@@ -503,10 +497,10 @@ export function MyApp() {
 }
 ```
 
-`Home.jsx`:
+`Home.tsx`:
 
-```JavaScript / JSX
-import React, { useState } from "react";
+```TypeScript / TSX
+import { useState } from "react";
 import {
   AnalyticalTable,
   Card,
@@ -688,7 +682,7 @@ export function Home() {
             <CustomListItem>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                   <Text
@@ -712,7 +706,7 @@ export function Home() {
             <CustomListItem>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                   <Text
