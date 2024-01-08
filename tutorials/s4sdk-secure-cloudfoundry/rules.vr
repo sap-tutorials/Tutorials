@@ -1,0 +1,31 @@
+[VALIDATE_13]
+###Rule
+multiple-choice
+
+###Question
+In terms of OAuth 2.0, what role does the Authorization and Trust Management (xsuaa) service play in the application security setup?
+
+###Match
+[ ] Resource owner
+[ ] Client application
+[x] Authorization server
+[ ] Resource server
+
+[VALIDATE_13]
+
+[VALIDATE_14]
+###Rule
+multiple-choice
+
+###Question
+Which of the following authorization artifacts of applications running in the Cloud Foundry environment on SAP Cloud Platform can be specified at the application design time?
+
+###Match
+[x] Scope
+[x] Role template
+[ ] Role collection
+[ ] Role
+[ ] User group
+
+
+[VALIDATE_14]
