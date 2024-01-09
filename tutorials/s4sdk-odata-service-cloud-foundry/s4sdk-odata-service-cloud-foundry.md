@@ -278,20 +278,20 @@ In order for your application to run you need to provide it with information abo
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project locally. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
 ```Shell
-$env:destinations='[{name: "MyErpSystem", url: "https://URL"}]'
+$destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 ```
 
 **Note:** Some services, other than the sandbox service, may require user credentials for the request execution.
 If you would like to connect to such a service, use the following snippet instead:
 ```Shell
-$env:destinations='[{name: "MyErpSystem", url: "https://URL", "user": "USER", "password": "PASSWORD"}]'
+$destinations='[{name: "MyErpSystem", url: "https://URL", "user": "USER", "password": "PASSWORD"}]'
 ```
 Please change the values URL, USER and PASSWORD accordingly.
 
 You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```Shell
-echo $env:destinations
+echo $destinations
 ```
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
