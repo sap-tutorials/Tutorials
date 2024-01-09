@@ -199,7 +199,8 @@ The command creates a blank metadata file for you that you can now open and edit
     ```YAML manifest.yml
     ---
     applications:
-      - # application
+      -
+        # application
         name: MbtEpmDemoService
         # module
         path: deploy/odata-service-1.0.0.war
@@ -211,7 +212,9 @@ The command creates a blank metadata file for you that you can now open and edit
         memory: 2G
         disk: 2G
         env:
-          TARGET_RUNTIME: tomee7
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
           # jco-config
           USE_JCO: false
           # log-config
@@ -223,32 +226,41 @@ The command creates a blank metadata file for you that you can now open and edit
           # [h2db]
           # destination-service
           # [no-destinations]
+          # xsuaa-service
+          # [no-xsuaa-service]
     ```
+
     >When inserting snippets to YAML files, pay attention to the indentation of the lines, as YAML is indentation-sensitive. Before pasting, make sure that your cursor is set to beginning of an empty line.
 
     >**Hint:** You can indent multiple line back or forward by selecting them and pressing **(Shift + TAB)** or **(TAB)** on your keyboard.
 
 8. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war` to generate, deploy and run the service to your space. You can observe in the Terminal if the run was successful.
 
-    ![Deployment log](img_run_log.png)
+    ![Deployment log and cf apps output](img_run_log.png)
 
-9.  (Optional) If you want your service to load test data, you can switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `srv` &rarr; `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+    **Congratulations!** You just deployed an OData service. You can find out the application route using `cf apps` in Terminal or through BTP Cockpit and open the URL in e.g. in your browser.
+    ![OData service document in browser, accessed via URL](img_browser_service.png)
 
-    You can also edit the generated test data inside the folder `srv` &rarr; `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
+    >At this point you created an OData service that you can already use for prototyping, development etc. Keep in mind that data is not persistent when using MBT with H2 database. In the next step you will learn how to implement authentication, which might not be necessary for pure testing purposes.
+
+9.  (Optional) If you want your service to load test data, you may switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `srv` &rarr; `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+
+    You might want to edit the generated test data inside the folder `srv` &rarr; `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
+
+    There is also the possibility to include initial data which will be loaded on every fresh database initialization, for non-testing scenarios.
 
     ![Test Mode and Test Data](img_test_data.png)
 
 >In case you struggle on generating the service, you might find the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/generating.html) helpful.
 
-**At this point you created an OData service that you can already use for prototyping, development etc. In the next step you will learn how to implement authentication, which might not be necessary for pure testing purposes.**
 
 ### Configure authentication and app router
 
 If the service shall be accessible independently and authentication is required, an Authorization and Trust Management Service (XSUAA) service binding as well as an app router will be required for your OData service. If you are looking for more details of this service, you might want to go through [Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create) tutorial and its references, already covering the same for another application type.
 
-1. Open the file ``tasks.json`` from folder ``.vscode`` and uncomment the line `"-login", "XSUAA",` in the configurations `csdl-to-war` and `csdl-to-war-nodeploy` as shown below.
+1. Open the file ``tasks.json`` from folder ``.vscode`` and uncomment the lines `"-login", "XSUAA",` and `"-xsuaa", "<xsuaa-instance-name>",` in the configurations `csdl-to-war` and `csdl-to-war-nodeploy` as shown below. Thereby replace `<xsuaa-instance-name>` with `MbtEpmDemoService-xsuaa`.
 
-    >Sometimes it may happen that, due to automatic formatting in SAP Business Application Studio, comments may have been removed from `tasks.json` file. You can try to restore them with **Undo** [CMD] / [CNTRL] + [Z]. Alternatively, recreate the file or add the parameters `"-login", "XSUAA",` manually. Take care of the parameter order, as some parameters are interpreted as a pair, key (prefixed with "-") and value.
+    >Sometimes it may happen that, due to automatic formatting in SAP Business Application Studio, comments may have been removed from `tasks.json` file. You can try to restore them with **Undo** [CMD] / [CTRL] + [Z]. Alternatively, recreate the file or add the parameters `"-login", "XSUAA",` manually. Take care of the parameter order, as some parameters are interpreted as a pair, key (prefixed with "-") and value.
 
     ![Uncomment for XSUAA security](img_uncomment_login.png)
 
@@ -288,16 +300,19 @@ If the service shall be accessible independently and authentication is required,
 
     ![Create new files](animation_create_approuter_files4.gif)
 
-5. Finally, the XSUAA service binding need to be reflected for deployment. You can achieve this by adding them to the ``manifest.yml`` that was generated in your workspace.
+5. Finally, verify the XSUAA service binding in `manifest.yml` that should have been updated in your workspace. The tools leverages specific comments for parsing and recreating the file.
 
-    - To bind the XSUAA service instance, add the following lines:
+    - The end section of the file should have been updated to contain:
 
     ```YAML
-        services:    
           - MbtEpmDemoService-xsuaa
     ```
 
-    >**Important:** Do not execute the ``csdl-to-war`` tasks anymore. First we need to create the service instances via the Multi-Target-Archive. When they are created, you can work with ``csdl-to-war`` again in order to push just the OData service. This will be quicker than deploying the full MTA.
+    - Under certain circumstances, it might happen that the `# services:` section is not automatically uncommented. Therefore, please uncomment it in case.
+
+    - The placeholder comment `# xsuaa-service` marks the following line to be overwritten with the name given in the task. By removing the placeholder, you may disable this feature.
+
+    >**Important:** Do not execute the `csdl-to-war` task anymore but stick to `-nodeploy`. First it's necessary to create the service instances via the Multi-Target-Application archive. When they are created, you may work with `csdl-to-war` again in order to push the OData service only. This will be quicker than deploying the full MTA.
 
     For reference check the full `manifest.yml` file content.
 
@@ -317,19 +332,22 @@ If the service shall be accessible independently and authentication is required,
         memory: 2G
         disk: 2G
         env:
-          TARGET_RUNTIME: tomee7
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
           # jco-config
           USE_JCO: false
           # log-config
           # [console]
           # debug-opts
           # [none]
-        services:    
-          - MbtEpmDemoService-xsuaa
+        services:
           # db-service
           # [h2db]
           # destination-service
           # [no-destinations]
+          # xsuaa-service
+          - MbtEpmDemoService-xsuaa
     ```
 
 6. Create a MTA deployment descriptor.
@@ -346,18 +364,26 @@ If the service shall be accessible independently and authentication is required,
     _schema-version: '3.3'
     version: 1.0.0
     modules:
-      - # application
+      -
+        # application
         name: MbtEpmDemoService
         # module
         path: srv/deploy/odata-service-1.0.0.war
         type: java
-        parameters:    
-          memory: 1G
-          disk: 2G
+        parameters:
           instances: 1
-        properties:    
-          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-          TARGET_RUNTIME: tomee7
+          memory: 2G
+          disk: 2G
+        properties:
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+          # jco-config
+          USE_JCO: false
+          # log-config
+          # [console]
+          # debug-opts
+          # [none]
         requires:
           - name: MbtEpmDemoService-xsuaa
         # provide default-url to be re-used for the app router's destination
@@ -404,16 +430,16 @@ If the service shall be accessible independently and authentication is required,
 
     ![BTP Cockpit Application with marked application route](img_btp_application_route.png)
 
-    >Take note: If you created your Cloud Foundry environment in a `-00x`-environment (like e.g. `us10-001`, currently used in SAP BTP Trial by default), you might receive the error `"The redirect_uri has an invalid domain"`. If this is the case, you will have to allow-list your application uri in the `xs-security.json` file and re-run `cf deploy`. 
+    >Take note: If you created your Cloud Foundry environment in a `-00x`-environment (like e.g. `us10-001` or `eu10-004`), you might receive the error `"The redirect_uri has an invalid domain"`. If this is the case, you will have to allow-list your application uri in the `xs-security.json` file (like in the screenshot above) and re-run `cf deploy`. 
 
     ```json
-      [...]
-      "tenant-mode": "dedicated",
-      "xsappname": "MbtEpmDemoService",
+    {
       "oauth2-configuration":
       {
           "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**", "https://*.eu10-004.hana.ondemand.com/**", "https://*.eu10.hana.ondemand.com/**"]
       },
+      [...]
+    }
     ```
 
 ---
