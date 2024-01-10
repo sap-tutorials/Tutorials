@@ -14,7 +14,6 @@ primary_tag: software-product>sap-cloud-sdk
 ## Prerequisites
  - [Introduce Resilience to Your Application](s4sdk-resilience)
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
- - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
 > **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
 > This tutorial is not actively maintained and might be partially outdated.
@@ -236,106 +235,6 @@ To run it on a localhost, run the following:
 Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID, which was enriched by S/4HANA.
 
 <!-- border -->![screenshot](screenshot.png)
-
-
-### Write a unit test
-
-As learned in [Develop an S/4HANA Extension Without a S/4HANA System](cloudsdk-mocking-capabilities) you can utilize mocking to test the functionality without an S/4HANA system to achieve code coverage, fast running tests and better testable code.
-
-For this purpose, you are creating the following test class, which checks the basic assumptions of our API as well as the failure case.
-
-The file needs to be put under your `<projectroot>/unit-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
-
-```Java
-package com.sap.cloud.sdk.tutorial;
-
-import com.google.common.collect.Lists;
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
-import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
-
-@RunWith(MockitoJUnitRunner.Silent.class)
-public class GetBusinessPartnerMockedTest {
-    private static BusinessPartner alice;
-    private static BusinessPartner bob;
-
-    @BeforeClass
-    public static void beforeClass() throws Exception {
-        alice = new BusinessPartner();
-        alice.setFirstName("Alice");
-
-        bob = new BusinessPartner();
-        bob.setFirstName("Bob");
-    }
-
-    @Test
-    public void testGetAnyBusinessPartner() throws Exception {
-        final BusinessPartnerService service = Mockito.mock(BusinessPartnerService.class, RETURNS_DEEP_STUBS);
-        final HttpDestination httpDestination = Mockito.mock(HttpDestination.class);
-
-        when(service.getAllBusinessPartner()
-                .select(any())
-                .filter(any())
-                .orderBy(any(),any())
-                .top(any())
-                .executeRequest(any()))
-                .thenReturn(Lists.newArrayList(alice, bob));
-
-        final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
-
-        assertEquals(2, businessPartnerList.size());
-        assertEquals("Alice", businessPartnerList.get(0).getFirstName());
-        assertEquals("Bob", businessPartnerList.get(1).getFirstName());
-    }
-
-    @Test
-    public void testGetSpecificBusinessPartner() throws Exception {
-        final BusinessPartnerService service = Mockito.mock(BusinessPartnerService.class, RETURNS_DEEP_STUBS);
-        final HttpDestination httpDestination = Mockito.mock(HttpDestination.class);
-        when(service.getAllBusinessPartner()
-                .select(any())
-                .filter(any())
-                .orderBy(any(),any())
-                .top(any())
-                .executeRequest(any()))
-                .thenReturn(Lists.newArrayList(alice));
-
-        final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
-
-        assertEquals(1, businessPartnerList.size());
-        assertEquals("Alice", businessPartnerList.get(0).getFirstName());
-    }
-
-    @Test(expected = ResilienceRuntimeException.class)
-    public void testGetBusinessPartnerFailure() throws Exception {
-        final BusinessPartnerService service = Mockito.mock(BusinessPartnerService.class, RETURNS_DEEP_STUBS);
-        final HttpDestination httpDestination = Mockito.mock(HttpDestination.class);
-
-        when(service.getAllBusinessPartner()
-                .select(any())
-                .filter(any())
-                .orderBy(any(),any())
-                .top(any())
-                .executeRequest(any()))
-                .thenThrow(new ODataException(null, "Something went wrong", null));
-
-        new GetBusinessPartnersCommand(httpDestination, service).execute();
-    }
-}
-```
-
 
 ### Write an integration test
 
