@@ -15,15 +15,14 @@ author_profile: https://github.com/dhrubpaul
 ## Prerequisites
 
 - You have an SAP AI Core service instance and service key. 
-- You're using the extended service plan in SAP AI Core.The Generative AI Hub will only reflect if the extended service plan is checked.If you are using a standard plan or free tier plan ,you will still be able to upgrade to extended service plan.However Generative AI Hub is not supported in Free Tier.
- ![image](images/plan.png)
+- You're using the Extended service plan.
 - You have completed the client authorization for your preferred user interface. 
 
 For more information, see [SAP AI Core documentation](https://help.sap.com/doc/7ca8e589556c4596abafe95545dfc212/CLOUD/en-US/553250b6ec764a05be43a7cd8cba0526.pdf).
 
 ## You will learn
-- How to virtually deploy an LLM model.
-- How to use the model to execute different queries.
+- How to deploy an LLM model.
+- How to use the models to execute different queries.
 
 
 ### Checking for foundation-models scenario
@@ -58,7 +57,7 @@ Go to the configuration tab in ML Operations, click create.
 
 
 - Give a name for the configuration, 
-- select the foundation-models scenario. 
+- Select the foundation-models scenario. 
 - Choose the version and executable ID. 
 
 
@@ -74,15 +73,15 @@ These are the models available as of now:
 
 Note that the model version can be given as *latest*. If the model version is not specified, it will be set to *latest* by default.
 
-Click **next** -> **review** -> **create**.
+Click **Next** -> **Review** -> **Create**.
 
-Model versions have deprecation dates. Where a model version is specified, the virtual deployment will stop working on the deprecation date of that model version.
+Model versions have deprecation dates. Where a model version is specified, the deployment will stop working on the deprecation date of that model version.
 
 Implement one of the following model upgrade options:
 
-- **Auto Upgrade:** Create or patch an LLM configuration with model version latest. When a new model version is supported by SAP AI Core, existing virtual deployments will automatically use the latest version of the given model.
+- **Auto Upgrade:** Create or patch an LLM configuration with model version latest. When a new model version is supported by SAP AI Core, existing deployments will automatically use the latest version of the given model.
 
-- **Manual Upgrade:** Patch an LLM configuration with your chosen replacement model version. This model version will be used in your virtual deployments irrespective of updates to the models supported by SAP AI Core.
+- **Manual Upgrade:** Patch an LLM configuration with your chosen replacement model version. This model version will be used in your deployments irrespective of updates to the models supported by SAP AI Core.
 
 [OPTION END]
 
@@ -123,18 +122,18 @@ Take note of the configuration id generated in the response.
 
 Note that the model version can be set to *latest*, to use the latest version of the model. If the model version is not specified, it will be set to *latest* by default.
 
-Model versions have deprecation dates. Where a model version is specified, the virtual deployment will stop working on the deprecation date of that model version.
+Model versions have deprecation dates. Where a model version is specified, the deployment will stop working on the deprecation date of that model version.
 
 Implement one of the following model upgrade options:
 
-- **Auto Upgrade:** Create or patch an LLM configuration with model version latest. When a new model version is supported by SAP AI Core, existing virtual deployments will automatically use the latest version of the given model.
+- **Auto Upgrade:** Create or patch an LLM configuration with model version latest. When a new model version is supported by SAP AI Core, existing deployments will automatically use the latest version of the given model.
 
-- **Manual Upgrade:** Patch an LLM configuration with your chosen replacement model version. This model version will be used in your virtual deployments irrespective of updates to the models supported by SAP AI Core.
+- **Manual Upgrade:** Patch an LLM configuration with your chosen replacement model version. This model version will be used in your deployments irrespective of updates to the models supported by SAP AI Core.
 
 
 [OPTION END]
 
-### Creating a virtual deployment
+### Creating a deployment
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
@@ -148,11 +147,11 @@ Set duration as standard and click review.
 
 ![image](images/ail07.png)
 
-Once you create the virtual deployment, wait for the current status to be set to *RUNNING*.
+Once you create the deployment, wait for the current status to be set to *RUNNING*.
 
 ![image](images/ail08.png)
 
-Once the virtual deployment is running, you can access your models in the Generative AI Hub.
+Once the deployment is running, you can access your models in the Generative AI Hub.
 
 [OPTION END]
 
@@ -160,7 +159,7 @@ Once the virtual deployment is running, you can access your models in the Genera
 
 You can make LLM available for use by creating a virtual LLM deployment. You can do so once for each model and model version.
 
-Create a virtual deployment by sending a POST request to ```{{baseUrl}}/lm/deployments```
+Create a deployment by sending a POST request to ```{{baseUrl}}/lm/deployments```
 
 Include the following JSON in the body of the request
 
@@ -174,7 +173,7 @@ Replace the ```configurationId``` value with the *id* you received in the previo
 
 ![image](images/pm03.png)
 
-Once the virtual deployment is created, check the status of virtual deployment by sending a GET request to ```{{baseUrl}}/lm/deployments```
+Once the deployment is created, check the status of deployment by sending a GET request to ```{{baseUrl}}/lm/deployments```
 
 ![image](images/pm04.png)
 
@@ -560,79 +559,6 @@ Include the following in the body of the request.
 
 [OPTION END]
 
-
-### Translation
-
-An example is constructed to ask the LLM to detect the language of the message. The message is enclosed within triple backticks for clarity.
-
-[OPTION BEGIN [SAP AI Launchpad]]
-
-Copy the following text into the prompt editor and click **Run**.
-
-```TEXT
-Tell me what language this is: Here is a demo on Large language Models
-```
-
-![image](images/ail15.png)
-
-Another example is formulated to instruct the LLM to translate the given message to both Malayalam and German
-
-```TEXT
-Translate the following  text to Malayalam and german: Here is a demo on Large language Models
-```
-
-![image](images/ail16.png)
-
-[OPTION END]
-
-[OPTION BEGIN[POSTMAN]]
-
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
-
-Include the following in the body of the request.
-
-```JSON
-{
-"messages": [
-    {
-        "role": "user",
-        "content": "Tell me what language this is: Here is a demo on Large language Models"
-    }
-],
-"max_tokens": 100,
-"temperature": 0.0,
-"frequency_penalty": 0,
-"presence_penalty": 0,
-"stop": "null"
-}
-```
-
-![image](images/pm08.png)
-
-Another example is formulated to instruct the LLM to translate the given message to both Malayalam and German.
-
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
-
-Include the following in the body of the request.
-
-```JSON
-{
-"messages": [
-    {
-        "role": "user",
-        "content": "Translate the following  text to Malayalam and german: Here is a demo on Large language Models"
-    }
-],
-"max_tokens": 100,
-"temperature": 0.0,
-"frequency_penalty": 0,
-"presence_penalty": 0,
-"stop": "null"
-}
-```
-![image](images/pm09.png)
-
-[OPTION END]
 
 ### Expansion
 
