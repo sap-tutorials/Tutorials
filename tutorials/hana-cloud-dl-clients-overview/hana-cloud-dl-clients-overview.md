@@ -1,4 +1,3 @@
-
 ---
 parser: v2
 auto_validation: true
@@ -17,7 +16,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - Information about SAP HANA Cloud, data lake Relational Engine
   - How to install the data lake client
   - How to create sample tables, views, and procedures
-  - How to connect using SAP HANA cockpit, SAP HANA database explorer and the Interactive SQL Client
+  - How to connect using SAP HANA cockpit, SAP HANA database explorer, and the Interactive SQL Client
 
 ## Intro
 This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine).  
@@ -37,7 +36,7 @@ SAP HANA Cloud is composed of multiple components.
 
   * SAP HANA Cloud, data lake is composed of two components:  data lake Relational Engine and data lake Files.    
 
-    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Many client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
+    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
     [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sql-on-files), which enables SQL queries to be performed on them.  
 
@@ -45,7 +44,7 @@ SAP HANA Cloud is composed of multiple components.
 
 ### Choose where to deploy the database instances
 
-The SAP BTP platform provides multiple runtime environments such as Kyma and Cloud Foundry.  When a HANA Cloud or data lake instance is created, it can be created at the BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Runtime Environment = Other) and one that was provisioned into Cloud Foundry.
+The SAP BTP platform provides multiple runtime environments such as Kyma and Cloud Foundry.  When a HANA Cloud or data lake instance is created, it can be created at the BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
 
 ![Runtime Environments](runtime.png)
 
@@ -112,11 +111,11 @@ There are multiple ways to create a data lake:
     ![Credentials](credentials2.png) 
 
 
-### Create tables, views, functions, and procedures with SAP HANA database explorer
+### Create tables, views, functions, and procedures
 
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
-1. From the action menu, select **Open SQL Console** or **Open in SAP HANA Database Explorer**.
+1. From the action menu, select **Open SQL Console**.
 
     ![open database explorer](open-sql-console.png)
 
@@ -134,7 +133,11 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     Additional details can be found at [System Functions](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-functions) and [Stored Procedures in Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-procedures-for-data-lake-relational-engine).
 
 
-3. In the SAP HANA database explorer, execute the following SQL statements.
+3.  From the actions menu, select **Open in SAP HANA Database Explorer**.
+
+    ![open the SAP HANA database explorer](open-dbx.png)
+
+    In the SAP HANA database explorer, execute the following SQL statements.
 
     ```SQL
     ---- drops the schema and all objects it contains
@@ -323,7 +326,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
-        Run `setup.bin` which will start either the GUI installer or text based installer.  To use the text based installer, add `-i console` to the command.
+        Run `setup.bin` which will start either the GUI installer or text-based installer.  To use the text-based installer, add `-i console` to the command.
 
         ```Shell (Linux)
         cd ebf*

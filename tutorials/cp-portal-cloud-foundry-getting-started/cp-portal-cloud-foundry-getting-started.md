@@ -49,7 +49,7 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
 3. Click the **trial** tile to navigate to your trial subaccount in the SAP BTP cockpit. If you're using your own subaccount, you can select it instead.
 
-      ![Open trial account](3_open_subaccount.png)
+    ![Open trial account](3-open-subaccount.png)
 
 4. Click **Service Marketplace** in the left navigation panel.
 
@@ -66,7 +66,7 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
     The **SAP Build Work Zone, standard edition** Overview page opens.
 
-6.  Under the **Applications Plans** tab, click the Actions icon (...) and select **Create** to create a new subscription.
+6.  Under the **Applications Plans** tab, click the Actions icon (...), and select **Create** to create a new subscription.
 
     ![Create subscription](6-create-subscription.png)
 
@@ -94,10 +94,10 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 ### Add yourself to the Launchpad_Admin role
 
 
-To access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a site.
+To access **SAP Build Work Zone, standard edition**, users must be assigned to the `Launchpad_Admin` role. In this step, you assign yourself to this role so that you can access the service and create a site.
 
 
-1. Under **"Security** click **Role Collections** from the side menu.
+1. Under **Security** click **Role Collections** from the side menu.
 
       <!-- border -->![Open role collections](10-role-collections.png)
 

@@ -103,16 +103,16 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 3: ](Enter additional properties)]
 
-1. In the **Communication Arrangement** you created, in the **`Additional     Properties`** section, maintain the following details:
+1. In the **Communication Arrangement** you created, in the **`Additional Properties`** section, maintain the following details:
 
     | Property Name | Property Value
     | :------------- | :-------------
     | File Share ID | **`ZTEST`**
     | File Share Type | **`2`**
-    | Repository ID | **`GOOGLE_DRIVE`**
+    | Repository ID | **`MyTutONBRepo`**. Ensure that you've added the *`externalID`* as repo ID that you onboarded while executing the tutorial [Create a Repository Using the Onboarding API for Google Drive](https://developers.sap.com/tutorials/btp-sdm-gwi-onboarding-repo.html). Refer to the **Step2.4**.
     | Description | **`For tutorial purposes`**
 
-    !![AdditionalProperties_comm](AdditionalProperties_comm.png)
+    !![AdditionalProperties_comm](AdditionalProperties_commv1.png)
 
 2. In **Outbound Services** section, maintain the following details:
 

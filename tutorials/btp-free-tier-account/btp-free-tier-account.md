@@ -73,7 +73,7 @@ The following page offers to configure your solution. Select:
 
   <!-- border -->![Configure your solution](btp-free-tier-account-configure-3-months.png)
 
-Proceed by selecting **Check Out**.
+Select **Check Out**.
 
 
 ### Add payment details
