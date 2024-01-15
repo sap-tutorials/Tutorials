@@ -454,15 +454,15 @@ In the `OData` VDM for Java, we have decided to combine both methods with each o
 #### Working with expanded entities
 After you did a successful API call, you may want to work with the associated entity collections. For this purpose, the VDM provides two important methods on each entity instance that can be used for retrieval:
 
-First, the `getOrFetch() method:`
+First, the `getOrFetch()` method:
 
 ```Java
- List<Address> businessPartnerAddresses = businessPartner.getBusinessPartnerAddressOrFetch();
- ```
+List<Address> businessPartnerAddresses = businessPartner.getBusinessPartnerAddressOrFetch();
+```
 
 This method either returns the list of connected entities, if previously eagerly fetched or will lazily fetch the entities, if not. Therefore, this method guarantees to not return any null values but might break due to a thrown `ODataException`, in case a lazy fetch is initiated due to missing authorizations, timeouts or system unavailability.
 
-Secondly, a `getIfPresent()` method
+Secondly, a `getIfPresent()` method:
 
 ```Java
 Option<List<Address>> businessPartnerAddresses =

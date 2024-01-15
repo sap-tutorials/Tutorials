@@ -106,11 +106,11 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
 
    Adapt the file as follows:
 
-    - Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
-      ![Subomain and Tenant ID in the CF Cockpit](Figure3-1.png)
+   1. Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
+     ![Subomain and Tenant ID in the CF Cockpit](Figure3-1.png)
 
-    - Swap out both instances of `<region_id>` with your specific region (e.g. `us10-001`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
-    - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, e.g. `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
+   2. Swap out both instances of `<region_id>` with your specific region (e.g. `us10-001`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+   3. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, e.g. `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
 
 ### Understanding the AppRouter's `manifest.yml`
 
