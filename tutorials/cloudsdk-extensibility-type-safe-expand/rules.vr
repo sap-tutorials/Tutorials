@@ -1,0 +1,14 @@
+[VALIDATE_4]
+###Rule
+single-choice
+
+###Question
+Assume you want to fetch a list of multiple entities together with associated entities. Which strategy will lead to the least amount of requests to the OData service?
+
+###Match
+[x] Eager type expand
+[ ] Lazy loading
+[ ] There is no difference
+[ ] None of the above
+
+[VALIDATE_4]
