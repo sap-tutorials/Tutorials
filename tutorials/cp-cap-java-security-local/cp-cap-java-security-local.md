@@ -20,7 +20,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ### Enable Authentication
 
-In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behavior based on Spring Security.
+In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enables CAP Java's secure-by-default behavior based on Spring Security.
 
 1. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` tag add the `cds-starter-cloudfoundry` dependency. Make sure you **Save** the file.
 
