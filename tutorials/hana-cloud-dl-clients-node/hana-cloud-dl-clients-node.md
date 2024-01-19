@@ -355,7 +355,10 @@ The Node.js driver for the data lake Relational Engine client provides support f
                     }
                     else {
                         console.log(util.inspect(values, { colors: false }));
-                        return processResults(results);
+                        processResults(results)
+                        .then((results) => {
+                            resolve(results);
+                        });
                     }
                 })
                 .catch (err => {

@@ -585,7 +585,10 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
                     }
                     else {
                         console.log(util.inspect(values, { colors: false }));
-                        return processResults(results);
+                        processResults(results)
+                        .then((results) => {
+                            resolve(results);
+                        });
                     }
                 })
                 .catch (err => {
