@@ -15,6 +15,8 @@ primary_tag: programming-tool>java
 - [Introduce Resilience to Your Application](s4sdk-resilience)
 - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
+> **Please note that the sandbox service does not support extending it by adding custom fields, you might have to use an actual S/4 system to try the tutorial out.**
+
 ## You will learn
 - How to use custom field extensions from S/4HANA in the virtual data model for OData
 - How to join connected entities from the virtual data model in eager fashion
@@ -57,9 +59,6 @@ public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
     private final Destination destination;
-    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
-    // private static final String APIKEY_HEADER = "apikey";
-    // private static final String SANDBOX_APIKEY = "";
 
     public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
@@ -80,8 +79,6 @@ public class GetBusinessPartnersCommand {
                     .filter(BusinessPartner.CUSTOMER.ne(""))
                     .select(BusinessPartner.FIRST_NAME,
                             BusinessPartner.LAST_NAME)
-                    // TODO: uncomment the line below, if you are using the sandbox service
-                    // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
                      .executeRequest(destination);
 
         } catch (final ODataException e) {
@@ -199,9 +196,6 @@ public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
     private final Destination destination;
-    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
-    // private static final String APIKEY_HEADER = "apikey";
-    // private static final String SANDBOX_APIKEY = "";    
 
     public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
@@ -224,8 +218,6 @@ public class GetBusinessPartnersCommand {
                             BusinessPartner.LAST_NAME,
                             new BusinessPartnerField<String>("YY1_ApprovedBy_bus"),
                             new BusinessPartnerField<String>("YY1_ProposedBy_bus"))
-                    // TODO: uncomment the line below, if you are using the sandbox service
-                    // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
                     .executeRequest(destination);
 
         } catch (final ODataException e) {
@@ -398,9 +390,6 @@ public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
     private final Destination destination;
-    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
-    // private static final String APIKEY_HEADER = "apikey";
-    // private static final String SANDBOX_APIKEY = "";    
 
     public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
@@ -433,8 +422,6 @@ public class GetBusinessPartnersCommand {
                                                     )
                                                 )
                         )
-                    // TODO: uncomment the line below, if you are using the sandbox service
-                    // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
                      .executeRequest(destination);
         } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
