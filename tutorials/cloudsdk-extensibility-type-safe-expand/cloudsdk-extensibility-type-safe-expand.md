@@ -341,7 +341,7 @@ public class BusinessPartnerController
 }
 ```
 
-As a result, you can now expose our new `MyBusinessPartner` entity via our initial contoller which should lead to the following result:
+As a result, you can now expose our new `MyBusinessPartner` entity via our initial controller which should lead to the following result:
 
 <!-- border -->![Test](screenshot555.png)
 
