@@ -165,30 +165,46 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL console or copied.
 
-7. Examine the **Connection Settings**.  
+7. Examine the **SQL Console Settings**.  
 
     ![connection settings](connection-settings.png)
 
-    Execute the following SQL which is used to illustrate the settings.
+    * Execute the following SQL which is used to illustrate the result behavior settings.
 
-    ```SQL
-    SELECT * FROM M_SYSTEM_INFORMATION_STATEMENTS;
+        ```SQL
+        SELECT * FROM M_SYSTEM_INFORMATION_STATEMENTS;
 
-    SELECT COUNT(*) FROM SYS.TABLE_COLUMNS;
-    SELECT * FROM TABLE_COLUMNS;
-    ```
+        SELECT COUNT(*) FROM SYS.TABLE_COLUMNS;
+        SELECT * FROM TABLE_COLUMNS;
+        ```
 
-    Notice that only the first 1024 bytes from the column STATEMENT are displayed in the results view for the Blocked Transactions row.  These limits can be adjusted in the connection settings dialog.
+        Notice that only the first 1024 bytes from the column STATEMENT are displayed in the results view for the Blocked Transactions row.  These limits can be adjusted in the connection settings dialog.
 
-    ![limit for large objects](settings-result3.png)
+        ![limit for large objects](settings-result3.png)
 
-    Notice that over 6000 rows are in TABLE_COLUMNS.
+        Notice that over 6000 rows are in TABLE_COLUMNS.
 
-    ![one thousand row limit](settings-result1.png)
+        ![one thousand row limit](settings-result1.png)
 
-     The first 1000 are displayed.
+        The first 1000 are displayed.
 
-    ![one thousand row limit](settings-result2.png)
+        ![one thousand row limit](settings-result2.png)
+
+    * Execute the following SQL which is used to illustrate the result display display settings.
+
+        ```SQL
+        SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
+        ```
+
+        The below is the result when this setting is disabled.
+
+        ![no formatting](no-formatting.png)
+
+        The below is the result when this setting is enabled.
+
+        ![format settings](result-format-settings.png)
+
+        ![result formatted](formatted.png)
 
 8. Execute the following SQL statements.
 
@@ -251,6 +267,10 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
 * Opening the SQL console within the SAP HANA Cloud Central can be done much quicker than opening the full SAP HANA database explorer.
 
 * The SQL console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central. 
+
+* The SQL console in SAP HANA Cloud Central has the following additional features
+
+    * Ability to format results
 
 * The SAP HANA database explorer has some additional functionality
 
