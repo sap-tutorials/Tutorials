@@ -4,26 +4,23 @@ author_name: Johannes Schneider
 author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
-primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 # Create and Deep Insert with the Virtual Data Model for OData
 <!-- description --> Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
 
 ## Prerequisites
- - [Introduce Resilience to Your Application](s4sdk-resilience)
- - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+- [Introduce Resilience to Your Application](s4sdk-resilience)
+- [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
-> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
+> **Please note that the sandbox service does not support testing creating entities, you might have to use an actual S/4 system to try the tutorial out.**
 
 ## You will learn
-  - How to build up a complex data structure using the virtual data model
-  - How to write deeply nested data to SAP S/4HANA in a single call
-  - How to write unit and integration tests for deep insertion
+- How to build up a complex data structure using the virtual data model
+- How to write deeply nested data to SAP S/4HANA in a single call
+- How to write unit and integration tests for deep insertion
 
 ## Intro
 Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
@@ -32,9 +29,7 @@ Use advanced features of the [Virtual Data Model for OData](https://sap.github.i
 
 ### Motivation
 
-Deep Insert is already part of the [OData specification, version2](https://www.odata.org/documentation/odata-version-2-0/operations/) without this explicit name. Although not supported yet, the [OData specification, version4](http://docs.oasis-open.org/odata/odata/v4.0/os/part1-protocol/odata-v4.0-os-part1-protocol.html#_Toc372793718) is much more explicit on the semantics.
-
-Citing from the spec, Deep Insert is defined as:
+Deep Insert is defined as:
 
 - A request to create an entity that includes related entities, represented using the appropriate inline representation, is referred to as a deep insert.
 
@@ -42,37 +37,37 @@ Citing from the spec, Deep Insert is defined as:
 
 - On failure, the service **MUST NOT** create any of the entities.
 
-This means deep insert is an atomic operation that is either successful or fails for all entities. Furthermore, it is for insert-only operations, that is, the OData spec does not foresee any deep update operation yet. To be fair, it is part of the [4.01 working draft spec](https://issues.oasis-open.org/browse/ODATA-666), but the tutorials haven't covered any provider implementations yet, in particular as S/4HANA APIs are based on OData V2.
+This means deep insert is an atomic operation that is either successful or fails for all entities.
 
 
 ### Write the application code
 
 
-To get started, you first of all create a new class called `StoreBusinessPartnerCommand`. It will serve as a single place to build the commands we want to execute. If you did our previous tutorials the following code might look familiar.
+To get started, create a new class called `StoreBusinessPartnerCommand`. It will serve as a single place to build the commands we want to execute. If you did our previous tutorials the following code might look familiar.
 
 The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory.
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.BusinessPartnerService;
 
 public class StoreBusinessPartnerCommand{
 
     private final BusinessPartnerService businessPartnerService;
     private final BusinessPartner businessPartner;
-    private final HttpDestination httpDestination;
-
-    public StoreBusinessPartnerCommand(HttpDestination httpDestination, BusinessPartnerService businessPartnerService, BusinessPartner businessPartner) {
-        this.businessPartnerService = businessPartnerService;
+    private final Destination destination;
+    
+    public StoreBusinessPartnerCommand(Destination destination, BusinessPartnerService businessPartnerService, BusinessPartner businessPartner) {
+        this.businessPartnerService = businessPartnerService;;
         this.businessPartner = businessPartner;
-        this.httpDestination = httpDestination;
+        this.destination = destination;
     }
 
     public BusinessPartner execute() {
@@ -83,7 +78,8 @@ public class StoreBusinessPartnerCommand{
         try {
             return businessPartnerService
                     .createBusinessPartner(businessPartner)
-                    .executeRequest(httpDestination);
+                    .executeRequest(destination)
+                    .getResponseEntity().get();
         } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
@@ -93,121 +89,120 @@ public class StoreBusinessPartnerCommand{
 ```
 
 > ### What does the code do?
-> The code introduces a `StoreBusinessPartnerCommand` that uses a `BusinessPartnerService`, a `HttpDestination` and a `BusinessPartner` instance to execute a create command.
-Within the run() method, whenever the command is executed, it calls the `businesspartner service`.
+> The code introduces a `StoreBusinessPartnerCommand` that uses a `BusinessPartnerService`, a `Destination` and a `BusinessPartner` instance to execute a create command.
+Within the run() method, i.e., whenever the command is executed, it calls the `businesspartner service`.
 >
-> The `StoreBusinessPartnerCommand` takes a `Businesspartner` instance as input. This is a potentially complex (containing nested entities) data type. Therefore, in the next step you need to create a nested data structure based on the `BusinessPartner` data model.
+> The `StoreBusinessPartnerCommand` takes a `BusinessPartner` instance as input. This is a potentially complex (containing nested entities) data type. Therefore, in the next step you need to create a nested data structure based on the `BusinessPartner` data model.
 >
 > The structure you are interested in is presented below. The root entity will be the business partner which is connected to zero-to-many `BusinessPartnerRoles` and `BusinessPartnerAddresses` which is again connected to zero-to-many `EMailAddresses`:
 
 <!-- border -->![DataModel-4](DataModel-4.png)
 
-For this purpose, you are creating a new simple servlet that exposes a POST method to our clients.
+For this purpose, you are editing the `BusinessPartnerController` to expose a POST method to our clients.
 
 ```Java
-package com.sap.cloud.sdk.tutorial;
-
+package com.sap.cloud.sdk.tutorial.controllers;
 import com.google.gson.Gson;
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
-import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.AddressEmailAddress;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerRole;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+
+import com.sap.cloud.sdk.tutorial.GetBusinessPartnersCommand;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.List;
 
-@WebServlet("/businessPartners")
-public class BusinessPartnerServlet extends HttpServlet {
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
 
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServlet.class);
+import com.sap.cloud.sdk.tutorial.StoreBusinessPartnerCommand;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.Address;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.EmailAddress;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.Role;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.DefaultBusinessPartnerService;
+
+@RestController
+public class BusinessPartnerController
+{
+    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
     private static final String DESTINATION_NAME = "MyErpSystem";
 
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
-        throws ServletException, IOException {
-
+    @RequestMapping( path = "/businesspartners", method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getBusinessPartner()
+    {
         try {
-            final ErpHttpDestination destination = DestinationAccessor.getDestination(DESTINATION_NAME).asHttp().decorate(DefaultErpHttpDestination::new);
-            final List<BusinessPartner> businessPartners = new GetBusinessPartnersCommand(destination).execute();
+            final Destination destination = DestinationAccessor.getDestination(DESTINATION_NAME);
 
-            response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(businessPartners));
+            final List<BusinessPartner> businessPartners =
+                    new GetBusinessPartnersCommand(destination).execute();
 
+            return ResponseEntity.ok( new Gson().toJson(businessPartners));
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write(e.getMessage());
-            e.printStackTrace(response.getWriter());
+            return ResponseEntity.internalServerError().body("Failed to fetch business partners.");
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        final String firstname = request.getParameter("firstname");
-        final String lastname = request.getParameter("lastname");
-        final String country = request.getParameter("country");
-        final String city = request.getParameter("city");
-        final String email = request.getParameter("email");
-
-        //do consistency checks here...
-
-        final AddressEmailAddress emailAddress = AddressEmailAddress.builder()
-                .emailAddress(email)
-                .build();
-
-        final BusinessPartnerAddress businessPartnerAddress = BusinessPartnerAddress.builder()
-                .country(country)
-                .cityName(city)
-                .emailAddress(emailAddress)
-                .build();
-
-        final BusinessPartnerRole businessPartnerRole = BusinessPartnerRole.builder()
-                .businessPartnerRole("FLCU01")
-                .build();
-
-        final BusinessPartner businessPartner = BusinessPartner.builder()
-                .firstName(firstname)
-                .lastName(lastname)
-                .businessPartnerCategory("1")
-                .correspondenceLanguage("EN")
-                .businessPartnerAddress(businessPartnerAddress)
-                .businessPartnerRole(businessPartnerRole)
-                .build();
-
-        String responseBody;
-
+    @PostMapping( path = "/businesspartners", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> postBusinessPartner(@RequestBody Map<String,String> input) {
         try {
-            final HttpDestination httpDestination = DestinationAccessor.getDestination(DESTINATION_NAME).asHttp();
-            final BusinessPartner storedBusinessPartner = new StoreBusinessPartnerCommand(httpDestination, new DefaultBusinessPartnerService(), businessPartner).execute();
+            final String firstName = Option.of(input.get("firstName")).getOrElse("");
+            final String lastName = Option.of(input.get("lastName")).getOrElse("");
+            final String country = Option.of(input.get("country")).getOrElse("");
+            final String city = Option.of(input.get("city")).getOrElse("");
+            final String emailAddress = Option.of(input.get("emailAddress")).getOrElse("");
 
-            responseBody = new Gson().toJson(storedBusinessPartner);
-            response.setStatus(HttpServletResponse.SC_CREATED);
+            //do consistency checks here...
+            
+            final EmailAddress emailAddress = EmailAddress.builder()
+                    .emailAddress(email)
+                    .build();
 
+            final Address businessPartnerAddress = Address.builder()
+                    .countryRegionKey(country)
+                    .city(city)
+                    .emailAddress(emailAddress)
+                    .build();
+
+            final Role businessPartnerRole = Role.builder()
+                    .bPRole("FLCU01")
+                    .build();
+
+            final BusinessPartner businessPartner = BusinessPartner.builder()
+                    .firstName(firstname)
+                    .lastName(lastname)
+                    .bPCategory("1")
+                    .correspondenceLang("EN")
+                    .businessPartnerAddress(businessPartnerAddress)
+                    .businessPartnerRole(businessPartnerRole)
+                    .build();
+
+            // Rest of your logic here...
+            final Destination destination = DestinationAccessor.getDestination(DESTINATION_NAME);
+            final BusinessPartner storedBusinessPartner = new StoreBusinessPartnerCommand(destination, new DefaultBusinessPartnerService(), businessPartner).execute();
+
+            return ResponseEntity.ok( new Gson().toJson(storedBusinessPartner));
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            responseBody = e.getMessage();
+            return ResponseEntity.internalServerError().body("Failed to post business partner. ");
         }
-
-        response.setContentType("application/json");
-        response.getOutputStream().print(responseBody);
     }
+
 }
+
+
 ```
 > ### What does the code do?
-> The code implements a new Servlet exposed under the `businessPartner` URL path. It expects five parameters to be set: `firstname`, `lastname`, `country`, `city` and `e-mail`. For readability reasons, you omit details for checking that these parameters are actually set and throw corresponding error messages to the client, which is an aspect you should definitively do in any productive code.
+> The code adds a new POST request exposed under the `businesspartner` URL path. It expects five parameters to be set: `firstname`, `lastname`, `country`, `city` and `e-mail`. For readability reasons, you omit details for checking that these parameters are actually set and throw corresponding error messages to the client, which is an aspect you should definitively do in any productive code.
 >
 > Based on the five input parameters, you are creating the various entities.
 >
@@ -229,7 +224,7 @@ To run it on a localhost, run the following:
 
 ```Bash
  mvn clean install
- mvn tomee:run -pl application
+ mvn spring-boot:run
 ```
 
 Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID, which was enriched by S/4HANA.
@@ -238,92 +233,128 @@ Then you can use a tool like Postman or Curl to check whether the code works. As
 
 ### Write an integration test
 
-Just the unit test might not be sufficient when you want to test the real integration with S/4HANA. Therefore, you would also like to leverage an integration test as used in previous tutorials.
+Let's write an integration test to test the newly introduced create functionality.
 
 The file needs to be put under your `<projectroot>/integration-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.isEmptyString;
-import static org.hamcrest.Matchers.not;
-
-import java.net.URL;
-
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.arquillian.test.api.ArquillianResource;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
+import com.google.gson.Gson;
+import org.hamcrest.core.IsEqual;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestinationLoader;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultHttpDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 
-import io.restassured.RestAssured;
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.head;
+import static com.github.tomakehurst.wiremock.client.WireMock.post;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith( Arquillian.class )
+@SpringBootTest
+@AutoConfigureMockMvc
+@ExtendWith(SpringExtension.class)
+@WireMockTest
 public class BusinessPartnerDeepInsertTest
 {
+    private static final String DESTINATION_NAME = "MyErpSystem";
+    private Destination destination;
 
-    @ArquillianResource
-    private URL baseUrl;
+    @Autowired
+    private MockMvc mockMvc;
 
-    @Deployment
-    public static WebArchive createDeployment()
-    {
-        return TestUtil
-            .createDeployment(
-                BusinessPartnerServlet.class,
-                BusinessPartner.class,
-                StoreBusinessPartnerCommand.class,
-                DefaultBusinessPartnerService.class);
-    }
+    private static final String ODATA_RESPONSE_JSON = """
+            {
+              "d": {
+                "BusinessPartner": "string",
+                "CreationDate": "/Date(1492041600000)/",
+                "CreationTime": "PT15H51M04S",
+                "FirstName": "John",
+                "LastName": "Doe",
+                "to_BusinessPartnerAddress": {
+                  "results": [
+                    {
+                      "BusinessPartner": "string",
+                      "CityName": "Tuxedo",
+                      "Region": "US",
+                      "to_EmailAddress": {
+                        "results": [
+                          {
+                            "AddressID": "string",
+                            "EmailAddress": "john@doe.com"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                  }
+                }
+              }
+            """;
 
-    @BeforeClass
-    public static void beforeClass()
-    {
-        DestinationAccessor
-            .appendDestinationLoader(
-                new DefaultDestinationLoader()
-                    .registerDestination(DefaultHttpDestination.builder("https://URL").name(DESTINATION_NAME).build()));
-    }
-
-    @Before
-    public void before()
-    {
-        RestAssured.baseURI = baseUrl.toExternalForm();
+    @BeforeEach
+    void before( final WireMockRuntimeInfo wm ){
+        destination = DefaultHttpDestination.builder(wm.getHttpBaseUrl()).name(DESTINATION_NAME).build();
+        final DefaultDestinationLoader defaultDestinationLoader = new DefaultDestinationLoader().registerDestination(destination);
+        DestinationAccessor.prependDestinationLoader(defaultDestinationLoader);
     }
 
     @Test
-    public void testStoreAndGetCustomers()
-    {
-        given()
-            .params("firstname", "John", "lastname", "Doe", "country", "US", "city", "Tuxedo", "email", "john@doe.com")
-            .when()
-            .post("/businessPartners")
-            .then()
-            .log()
-            .all()
-            .statusCode(201)
-            .and()
-            .body("BusinessPartner", not(isEmptyString()))
-            .and()
-            .body("BusinessPartnerUUID", not(isEmptyString()));
+    void testStoreAndGetCustomers() throws Exception {
+
+        stubFor(head(urlPathEqualTo("/sap/opu/odata/sap/API_BUSINESS_PARTNER")).withHeader("X-CSRF-TOKEN", equalTo("fetch"))
+                .willReturn(aResponse()
+                        .withHeader("Content-Type", "application/json")
+                        .withHeader("X-CSRF-TOKEN","myCsrfTokenValue")));
+
+        stubFor(post(urlPathEqualTo("/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner"))
+                .withHeader("X-CSRF-TOKEN", equalTo("myCsrfTokenValue"))
+                .willReturn(aResponse().withBody(ODATA_RESPONSE_JSON).withStatus(201)));
+
+        final MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/businesspartners").contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content("""
+                                    {
+                                    "firstname": "John",
+                                    "lastname": "Doe",
+                                    "country": "US",
+                                    "city": "Tuxedo",
+                                    "email": "john@doe.com"
+                                   }
+                                """))
+                .andExpect(status().is2xxSuccessful())
+                .andReturn();
+        final String contentAsString = mvcResult.getResponse().getContentAsString();
+        final BusinessPartner businessPartner = new Gson().fromJson(contentAsString, BusinessPartner.class);
+        assertThat(businessPartner.getFirstName(), IsEqual.equalTo("John"));
     }
 }
 ```
-In addition, you are using a system alias, which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
 
-Both tests together give us a code coverage of 91%:
+You can run the test by executing the following command from the project's root folder or run your test easily by clicking the 'Run' button in your IDE's user interface
 
-<!-- border -->![screenshot2](screenshot2.png)
+```Bash
+mvn test
+```
 
 
 ### Test yourself
