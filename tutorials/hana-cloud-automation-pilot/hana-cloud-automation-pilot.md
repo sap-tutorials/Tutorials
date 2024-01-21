@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 15
+time: 20
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake, software-product-function>sap-automation-pilot]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -193,8 +193,8 @@ The catalog below contains examples of commands and inputs for those commands th
             "instanceId": "b00eac16-5486-4f27-a52b-359f250273c3",
             "instanceName": "HC_HDB",
             "instanceBindingKey": "{}",
-            "servicePlanId" : "e573479c-39f8-4774-80a9-12d762b0f159",
-            "smBindingKey" : "{}"
+            "servicePlanId": "e573479c-39f8-4774-80a9-12d762b0f159",
+            "smBindingKey": "{}"
           },
           "tags": {}
         },
@@ -626,6 +626,89 @@ The catalog below contains examples of commands and inputs for those commands th
             },
             "previousProductVersion": {
               "type": "string",
+              "sensitive": false,
+              "description": null
+            }
+          },
+          "tags": {}
+        },
+        {
+          "configuration": {
+            "values": [],
+            "output": {
+              "EchoAsString": "$(.execution.input.InputArray[])",
+              "AlternateSelectOddNumbers": "$(.execution.input.InputArray | map(select(. %2 == 1)))",
+              "ReverseArray": "$(.execution.input.InputArray | reverse)",
+              "NotFirstNotLast": "$(.execution.input.InputArray | .[1:-1] )",
+              "Add100": "$( [.execution.input.InputArray[] | . + 100 ] )",
+              "EchoInputArray": "$(.execution.input.InputArray)",
+              "SelectOddNumbers": "$( [ .execution.input.InputArray[] | select (. %2 == 1 ) ] )",
+              "ValuesGreaterThan1": "$(.execution.input.InputArray | map(select(. >1) ) )"
+            },
+            "executors": [],
+            "listeners": []
+          },
+          "id": "Automation-<<<TENANT_ID>>>:ExampleCommand:1",
+          "name": "ExampleCommand",
+          "description": "An example command that demonstrates how inputs can be manipulated using jq or dynamic expressions.",
+          "catalog": "Automation-<<<TENANT_ID>>>",
+          "version": 1,
+          "inputKeys": {
+            "InputArray": {
+              "type": "array",
+              "sensitive": false,
+              "required": false,
+              "minSize": null,
+              "maxSize": null,
+              "minValue": null,
+              "maxValue": null,
+              "allowedValues": null,
+              "allowedValuesFromInputKeys": null,
+              "suggestedValues": null,
+              "suggestedValuesFromInputKeys": null,
+              "defaultValue": "[1, 2, 3, 4, 5]",
+              "defaultValueFromInput": null,
+              "description": null
+            }
+          },
+          "outputKeys": {
+            "EchoAsString": {
+              "type": "string",
+              "sensitive": false,
+              "description": null
+            },
+            "AlternateSelectOddNumbers": {
+              "type": "array",
+              "sensitive": false,
+              "description": ""
+            },
+            "ReverseArray": {
+              "type": "array",
+              "sensitive": false,
+              "description": null
+            },
+            "NotFirstNotLast": {
+              "type": "array",
+              "sensitive": false,
+              "description": null
+            },
+            "Add100": {
+              "type": "array",
+              "sensitive": false,
+              "description": null
+            },
+            "EchoInputArray": {
+              "type": "array",
+              "sensitive": false,
+              "description": null
+            },
+            "SelectOddNumbers": {
+              "type": "array",
+              "sensitive": false,
+              "description": null
+            },
+            "ValuesGreaterThan1": {
+              "type": "array",
               "sensitive": false,
               "description": null
             }
@@ -1193,6 +1276,13 @@ The catalog below contains examples of commands and inputs for those commands th
     The list of inputs are shown below.  Notice that the names that start with CF are for instances that were provisioned to Cloud Foundry.  
 
     ![Inputs](inputs.png)
+
+3. Trigger the **ExampleCommand**.  It provides an array input of [1, 2, 3, 4, 5] and transforms the input using [dynamic expression](https://help.sap.com/docs/automation-pilot/automation-pilot/dynamic-expression?locale=en-US) which uses jq.  A playground is available for jq at [jq play](https://jqplay.org/#).  
+
+    ![example command](example-command.png)
+
+    ![jq play](jq-play.png)
+
 
 Further examples can be found at [automation pilot examples](https://github.com/SAP-samples/automation-pilot-examples).
 
