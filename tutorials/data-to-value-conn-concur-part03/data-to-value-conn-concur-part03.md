@@ -42,7 +42,7 @@ To extend connectivity beyond SAP Datasphere standard remote connectivity and co
    ![discoveriflow](./images/dscreatedatabaseuser.png)
 5. Provide a **Database User Name Suffix** for your schema, and enable both **Read and Write access**. Click on **Create** to close.
    ![discoveriflow](./images/dsenterdatbasedetails.png)
-6. Once created, Click the little **information** icon next to your user to open its details.
+6. Once created, Deploy the space to activate it. Click the little information icon next to your user to open its details.
    ![discoveriflow](./images/dsgetdbuserinfo.png)
 7. Take note of the **Database User Name**, **Host Name**, **Port** and **Password**. To see the password you have to request one by clicking the button. Make sure to note this password down as you won’t be able to retrieve it again afterwards.
    ![discoveriflow](./images/dsgetdbuserdetailsagain.png)
@@ -97,7 +97,7 @@ Make sure to change the Database Type to **SAP HANA Cloud**, and use the correct
    ![discoveriflow](./images/iflowenterdsvalues.png)
 3. Click on **Deploy** to store this credential. 
 
-### Update the existing integration flow
+### Modify the integration flow's script 
 
 In previous [tutorial](../data-to-value-conn-concur-part02/data-to-value-conn-concur-part02.md), we have already used pre-packaged integration content which help us to get started with minimal integration efforts. Now we are going to extend the same integration package.
 
@@ -140,7 +140,23 @@ In previous [tutorial](../data-to-value-conn-concur-part02/data-to-value-conn-co
 When you've finished the definition of your script, Click **OK**.
    ![discoveriflow](./images/iflowdefscript.png)
 
-### Deploy & Monitor Integration Flow
+### Add steps to connect with Database
+
+We have already discussed the **JDBC (Java Database Connectivity) adapter** enables you to connect SAP Cloud Integration to cloud or on-premise databases and execute **SQL operations** on the database.
+
+To connect to the database we need to create a data source under **Manage JDBC material->JDBC Data Source** which you have already created in previous steps. Once these prerequisites are done then we can create an iflow that will push data from the SQL database.
+
+1. You use the Receiver elements to model remote systems that are connected to your integration flow. **Search** and select **Receiver** from the integration palette and **drop** it onto canvas.
+   ![discoveriflow](./images/dsaddreceiver.png)
+2. To establish inter-communication between integration flows you can use the **Request Reply** integration pattern with an **JDBC adapter**. Search and Select Request Reply from the integration palette and drop it into the Integration Process.
+   ![discoveriflow](./images/dsaddrequestreply.png)
+3. Select and connect the **Request Reply** integration step to the **Receiver**.
+   ![discoveriflow](./images/dsconnectreceiver.png)
+4. This would open the Adapter list, from the available Adapter select **JDBC** in the Adapter Type option dialog. 
+   ![discoveriflow](./images/dsseladaptertype.png)
+5. Under the Connection tab, enter the name of the **JDBC data source**, which you have created in previous steps, and check **Batch Mode** this enables you to process collection queries in a single request. For more details, see [Batch Payload and Operation.](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/batch-payload-and-operation)
+![discoveriflow](./images/dsupdateconnection.png)
+### Deploy & Monitor integration Flow
 
 1. Select **Save** and then select **Deploy** to deploy the integration flow to SAP Integration Suite tenant. This will trigger the deployment of your integration flow.
    ![discoveriflow](./images/iflowsaveanddeploy.png) 
@@ -148,9 +164,9 @@ When you've finished the definition of your script, Click **OK**.
 Since the integration flow was designed as a Run immediate timer-based integration the flow will be executed as soon as it deployed. Select **Completed Messages** tile to view the successfully executed
 integration flows. In case of any failure, it will appear under **Failed Messages**.
 ![discoveriflow](./images/iflowcheckcompletemsg.png) 
-3. Check the status of the newly created integration flow from the **Monitor Message Processing**. If status changes to **Completed** then go the **Attachments** Tab and click on **Response Payload attachment**.
+1. Check the status of the newly created integration flow from the **Monitor Message Processing**. If status changes to **Completed** then go the **Attachments** Tab and click on **Response Payload attachment**.
    ![discoveriflow](./images/iflowmonmagpro.png) 
-4. Now open the Datasphere **Database Explorer** and log in with the credentials. In the explorer **Search** for you table, Right click on it and select **Open Data** to check the records.
+2. Now open the Datasphere **Database Explorer** and log in with the credentials. In the explorer **Search** for you table, Right click on it and select **Open Data** to check the records.
    ![discoveriflow](./images/iflowgetallrecords.png) 
 
 ### Modeling using Graphical view
