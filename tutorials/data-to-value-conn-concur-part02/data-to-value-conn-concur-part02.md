@@ -103,7 +103,7 @@ After you've successfully copied integration flow package, go to the Design tab 
    ![newiflow](./images/iflowprocessdirectconf.png)
 3. Now select the **Receiver** Tab and select the Receiver to **SAP_Concur_API**. Enter the Connection **Address** the **Concur's url** which we have consume above and for connection **Query** mention. 
    ![newiflow](./images/iflowconfconnection.png)
-4. Change the Receiver to **SAP_Concur_API**
+4. Change the Receiver to **SAP_Concur_Authentication**
    ![newiflow](./images/iflowconfrecauth.png)
 5. Enter the connection **Address** the concur **OAuth Token URL.**
    ![newiflow](./images/iflowconfoauthtoken.png)
@@ -136,7 +136,7 @@ After you've successfully copied integration flow package, go to the Design tab 
    - Change the name of Request Reply step to **Get Expense Report** in the General tab to improve readability.
    - Select and connect the **Get Expense Report** integration step to the Receiver. 
    ![newiflow](./images/iflowconnectrec.png)
-8.  This would open the Adapter list, from the available Adapter. Select **ProcessDirect** in the Adapter Type option dialog.
+8.  This would open the Adapter list. From the available Adapter select **ProcessDirect** in the Adapter Type option dialog.
     The Integration Flow which we have copied from the **Catalog** is a **Consumer Integration Flow** using ProcessDirect adapter you can consume it from other integration flow.
    ![newiflow](./images/iflowaddprodirect.png)
 9.  Under the Connection tab, enter Address as **/Concur/API**.
@@ -150,7 +150,7 @@ After you've successfully copied integration flow package, go to the Design tab 
 
 This is the Groovy script you can use to push the message log to the Response Payload. **Copy** and **Paste** it to script editor. **Copy** & **Paste** it.
 
-```
+```JAVA
 
 import com.sap.gateway.ip.core.customdev.util.Message;
 import java.util.HashMap;
