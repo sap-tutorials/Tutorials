@@ -45,9 +45,9 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 3. In the Select Document screen, choose the **Document Type**.
 
-    <!-- border -->![DOX-UI-App](file-type.png)
+    <!-- border -->![DOX-UI-App](type.png)
 
-4. Drop files directly or click **+** to upload one or more document files. Click **Step 2**.
+4. Drop files directly or click **+** (Upload) to upload one or more document files. Click **Step 2**.
 
     <!-- border -->![DOX-UI-App](drop-files.png)
 
@@ -67,7 +67,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](pending.png)
 
-    Status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the document once again.
+    The status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents once again.
 
     <!-- border -->![DOX-UI-App](ready.png)
 
@@ -85,11 +85,11 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](choose.png)
 
-    You see the page preview of the document file you uploaded.
+2. You see the page preview of the document file you uploaded. Click **Extraction Results**.
 
     <!-- border -->![DOX-UI-App](extraction-results.png)
 
-2. Click **Extraction Results** to see the Header Fields and Line Items extraction results.
+   You see the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](extraction-results-done.png)
 
@@ -129,7 +129,9 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](confirm.png)
 
-    Status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
+    The status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
+
+    <!-- border -->![DOX-UI-App](confirmed.png)
 
 
 
