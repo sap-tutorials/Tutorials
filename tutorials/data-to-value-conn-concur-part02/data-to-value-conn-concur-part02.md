@@ -150,7 +150,7 @@ After you've successfully copied integration flow package, go to the Design tab 
 
 This is the Groovy script you can use to push the message log to the Response Payload. **Copy** and **Paste** it to script editor. **Copy** & **Paste** it.
 
-```
+```JAVA
 
 import com.sap.gateway.ip.core.customdev.util.Message;
 import java.util.HashMap;
