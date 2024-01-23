@@ -89,7 +89,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](extraction-results.png)
 
-   You see the Header Fields and Line Items extraction results.
+    You see the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](extraction-results-done.png)
 
@@ -99,7 +99,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](confidence.png)
 
-3. In case corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
+3. If corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](edit-1.png)
 

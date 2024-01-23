@@ -16,7 +16,7 @@ author_profile: https://github.com/Juliana-Morais
 - You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to access your trial account
+  - How to access your trial account 
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
 
