@@ -12,8 +12,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - You have a SAP HANA Cloud service instance on Cloud Foundry in your SAP BTP subaccount. You can follow instructions in **Step 3 Create an SAP HANA Cloud service instance** of [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) to create one if you haven't already.
- - If you'd like to use an existing SAP HANA Cloud service instance from a different SAP BTP subaccount, follow the steps in **Step 2 Use an existing SAP HANA Cloud service instance** of  [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) to map the HANA Cloud instance to your Cloud Foundry space.
+ - You can set up a new SAP HANA Cloud service instance as per [Step 2 (Optional) Create an SAP HANA Cloud service instance](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud service instance as described in [Step 3 (Optional) Use an existing SAP HANA Cloud service instance](btp-app-hana-cloud-setup)
 
 
 ## Details
@@ -22,6 +21,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
@@ -47,24 +60,21 @@ Setting up an SAP HANA Cloud service instance directly on Kyma is not possible f
 2. Check the changes in the `package.json` file done by `cds add hana`:
 
     <!-- cpes-file package.json:$.cds -->
-    ```JSON[4-15]
+    ```JSON[4-10]
     {
         "name": "cpapp",
         ...
         "cds": {
             "requires": {
                 "[production]": {
-                    "db": {
-                        "kind": "hana-cloud"
-                    }
-                },
-                "db": {
-                    "kind": "sql"
+                    "db": "hana"
                 }
             }
         }
     }
     ```
+
+3. In the generated code, update "hana" to "hana-cloud".
 
 [DONE]
 [ACCORDION-END]
