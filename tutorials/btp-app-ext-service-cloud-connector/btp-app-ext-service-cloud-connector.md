@@ -23,6 +23,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How to add subaccount, system mapping and resource
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Configure system access in Cloud Connector)]
 The Cloud Connector serves as a link between SAP BTP applications and on-premise systems. It combines an easy setup with a clear configuration of the systems that are exposed to the SAP BTP. At the same time, the cloud connector lets you use existing on-premise assets without exposing the entire internal landscape. See [Cloud Connector documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/LATEST/en-US/e6c7616abb5710148cfcf3e75d96d596.html) for more details.

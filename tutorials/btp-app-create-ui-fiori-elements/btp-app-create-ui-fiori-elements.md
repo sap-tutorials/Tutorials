@@ -24,6 +24,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to check the annotation files
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 controls, and SAPUI5 model view controller (MVC) concepts. In a plain SAPUI5 or a freestyle SAPUI5 app, all the views and controllers are part of your project. In contrast, in an SAP Fiori elements app most of the code is outside of the project, managed centrally by the SAP Fiori elements team. The code inside your project only references these central components. They take care of creating the UI according to the latest SAP Fiori design guidelines and cover all the controller logic for you out of the box. The UI can be influenced by OData annotations. They determine, for example, which properties of an OData service make up the columns of a table that displays the content of the service.
@@ -67,6 +81,8 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 7. Enter `risks` as the module name and `Risks` as the application title.
 
 8. Enter `ns` as the namespace and `Risks` as the description for the application.
+
+9. For `Minimum SAPUI5 version` select the latest version from the dropdown.
 
 9. Leave the default values for all other settings. 
 
