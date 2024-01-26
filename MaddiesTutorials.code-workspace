@@ -12,5 +12,10 @@
         {
             "path": "../Tutorials-Contribution"
         }
-    ]
+    ],
+    "settings": {
+        "githubPullRequests.ignoredPullRequestBranches": [
+            "master"
+        ]
+    }
 }
