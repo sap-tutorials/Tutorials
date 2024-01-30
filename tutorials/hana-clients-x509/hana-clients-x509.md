@@ -44,7 +44,7 @@ The SAP HANA Client can use different [cryptographic service providers](https://
 
 As a first step, we will ensure that basic connectivity is working with a user name and password.  The steps below check the version of the SAP HANA Client, create a test user, and attempt to connect using basic authentication with mscrypto or OpenSSL.  The SQL commands can be run by an admin user such as DBADMIN in the SQL console or hdbsql.
 
-1. Check the version of SAP HANA Client on your machine.  
+1. Check the version of SAP HANA Client on your machine and ensure it is a recent release.  
 
     ```Shell
     hdbsql -v 

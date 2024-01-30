@@ -39,7 +39,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 -	If you do not restart your instance within **30 days**, it will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
--	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **16 GB of memory, 1 vCPUs, and 80 GB of storage**.
+-	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **16 GB of memory, 1 vCPU, and 80 GB of storage**.
 
 -   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45G memory) and are therefore *not supported* in a trial account.
 
