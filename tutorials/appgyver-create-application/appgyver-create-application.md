@@ -15,7 +15,7 @@ parser: v2
 ## Prerequisites
 - Access to an SAP Build Apps system. Use one of the following:
     - Free [community edition](https://www.appgyver.com/community) of SAP Build Apps / AppGyver.
-    - SAP Build Apps on an SAP BTP trial account: [Create an SAP BTP trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html), and then [install SAP Build App](https://youtu.be/ZpQM2B1v2GY).
+    - SAP Build Apps on an SAP BTP trial account: [Create an SAP BTP trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html), and then [install SAP Build Apps](https://youtu.be/ZpQM2B1v2GY).
 - Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 
