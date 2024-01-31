@@ -13,9 +13,11 @@ parser: v2
 
 
 ## Prerequisites
-- Access to the SAP Build Apps [sandbox](https://build-sb1-applicationdevelopment.lcnc.cfapps.eu10.hana.ondemand.com/lobby) system. See the [SAP Builders group](https://groups.community.sap.com/t5/sap-builders-blog-posts/announcing-the-sap-build-apps-sandbox/ba-p/128821) for instructions for signing up.
-  - You can instead use your own SAP BTP, as described in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service) or the free community edition of SAP AppGyver, available at [AppGyver.com](https://www.appgyver.com).
-- Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+- Access to an SAP Build Apps system. Use one of the following:
+    - Free [community edition](https://www.appgyver.com/community) of SAP Build Apps / AppGyver.
+    - SAP Build Apps on an SAP BTP trial account: [Create an SAP BTP trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html), and then [install SAP Build App](https://youtu.be/ZpQM2B1v2GY).
+- Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+
 
 ## You will learn
   - How to create a no-code project with SAP Build Apps
