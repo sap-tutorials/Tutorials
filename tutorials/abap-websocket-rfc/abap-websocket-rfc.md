@@ -192,7 +192,7 @@ The connection test returns a ping result.
 
 ### Result
 
-You have test sent a string (`Hello world!`) to the RFM in the provider system. The string is returned as `Hello world! How are you?` to the consumer system.
+You have sent a string (`Hello world!`) to the RFM in the provider system. The string is returned as `Hello world! How are you?` to the consumer system.
 
 ### Test yourself
 
