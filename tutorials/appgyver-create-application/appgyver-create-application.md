@@ -34,15 +34,31 @@ The steps provided detail the process using an SAP BTP account within a desktop 
 
 All applications are created, edited, and managed within what we call a project, with one application created per project. Projects, and their related applications, are not automatically saved in this service, so care should be taken before closing a browser.
 
->**IMPORTANT:** Though you can use any SAP Build Apps version, these tutorials are based on the free sandbox system.
+>**IMPORTANT:** Though you can use any SAP Build Apps version, these tutorials are based on a SAP BTP trial account.
 
 ---
 
 ### Create SAP Build Apps project
 
-1. Open the [sandbox lobby](https://build-sb1-applicationdevelopment.lcnc.cfapps.eu10.hana.ondemand.com/lobby).
+1. Open the SAP Build lobby in your trial account by doing the following:
 
-3. Within the SAP Build lobby, click **Create**.
+    - Open the SAP BTP cockpit by going to [https://account.hanatrial.ondemand.com/cockpit](https://account.hanatrial.ondemand.com/cockpit).
+
+    - Click **Go to Your Trial Account**.
+
+    - Under Subaccounts, click the **trial** tile.     
+
+        ![Subaccount](start1.png)
+
+    - Under Instances and Subscriptions, click the button next to SAP Build Apps.
+    
+        ![Instance](start2.png)
+        
+        This opens the SAP Build lobby.
+
+        ![SAP Build lobby](start3.png)
+
+2. Within the SAP Build lobby, click **Create**.
    
     ![Create](startnew1.png)
    
@@ -54,7 +70,7 @@ All applications are created, edited, and managed within what we call a project,
 
     ![Create](startnew3.png)
 
-4. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
+3. Enter `Scanner Application` for the project name, and an optional description, then click **Create**.
 
     ![Create](startnew4.png)
 
