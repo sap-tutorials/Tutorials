@@ -7,7 +7,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Use the SAP HANA Database Explorer Extension
-<!-- description --> Learn how the SAP HANA database explorer for Visual Studio Code extension can be used to connect to both SAP HANA Cloud and on-premise databases, general Visual Studio Code features, how to use the catalog browser, and how to execute SQL queries.  The SAP HANA database explorer for Visual Studio Code extension contains similar functionality to that in the web-based SAP HANA database explorer although not all functionality is available.
+<!-- description --> Learn how the SAP HANA database explorer for Visual Studio Code extension can be used to connect to both SAP HANA Cloud and on-premise databases, about related general Visual Studio Code features, how to use the catalog browser, and how to execute SQL queries.  The SAP HANA database explorer for Visual Studio Code extension contains similar functionality to that in the web-based SAP HANA database explorer although not all functionality is available.
 
 
 ## Prerequisites
@@ -27,7 +27,7 @@ primary_tag: software-product>sap-hana-cloud
     
      ![Download Visual Studio Code](downloadVSCode.png)
 
-2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from [https://marketplace.visualstudio.com/](Visual Studio Marketplace) by navigating to **Extensions** and searching for **SAP HANA Database Explorer**.
+2. Open Visual Studio Code and install the [SAP HANA database explorer Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer) from [Visual Studio Marketplace](https://marketplace.visualstudio.com/) by navigating to **Extensions** and searching for **SAP HANA Database Explorer**.
 
     >For more information about the latest features and version updates to the extension, you can refer to the **CHANGELOG** tab.
 

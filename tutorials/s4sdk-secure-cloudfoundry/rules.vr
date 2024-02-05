@@ -1,4 +1,4 @@
-[VALIDATE_13]
+[VALIDATE_11]
 ###Rule
 multiple-choice
 
@@ -11,9 +11,9 @@ In terms of OAuth 2.0, what role does the Authorization and Trust Management (xs
 [x] Authorization server
 [ ] Resource server
 
-[VALIDATE_13]
+[VALIDATE_11]
 
-[VALIDATE_14]
+[VALIDATE_12]
 ###Rule
 multiple-choice
 
@@ -28,4 +28,4 @@ Which of the following authorization artifacts of applications running in the Cl
 [ ] User group
 
 
-[VALIDATE_14]
+[VALIDATE_12]

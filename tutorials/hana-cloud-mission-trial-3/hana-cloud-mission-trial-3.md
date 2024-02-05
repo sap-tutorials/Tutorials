@@ -21,11 +21,11 @@ primary_tag: software-product>sap-hana-cloud
 ## Intro
 A few notes to remember about free tier model and trial accounts:
 
--	If you are using a free tier model or trial account, you will only be able to create one instance with a predefined size (30GB of memory, 2vCPUs, and 120GB of storage). However, the process to create the instance is very similar to production environments, the difference being that in a production environment you have the ability to further customize your instance. For example, you are able to change advanced settings for your SAP HANA Cloud instance.  
+-	If you are using a free tier model or trial account, you will only be able to create one instance with a predefined size (32 GB of memory, 2 vCPUs, and 120 GB of storage for free tier and 16 GB of memory, 1 vCPU, and 80 GB of storage for trial). However, the process to create the instance is very similar to production environments, the difference being that in a production environment you have the ability to further customize your instance. For example, you are able to change advanced settings for your SAP HANA Cloud instance.  
 
 -	Free tier model and trial instances will be **stopped on a nightly basis**. Each time you start working with your free tier model or trial instance, you need to restart it.
 
--	If you do not restart your instance within **30 days**, it will be **deleted**. Your BTP account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
+-	If you do not restart your trial instance within **30 days**, it will be **deleted**. Your BTP account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
 - The instance summary card: Trial (left) and free tier (middle) does not display a cost estimate. If you are using free tier, ensure you see the free tier indicator icon since paid tier (right) will show you a cost estimate meaning charges will be incurred if you create an instance.
 
@@ -98,7 +98,9 @@ In a production environment, you are able to select a performance class and choo
 
 [OPTION BEGIN [Free Tier/Trial]]
 
-In a free tier model or trial environment the size allocation is predefined to the instance, which is as follows: 32 GB for memory, 120 GB for storage and 2 vCPUs for computation.
+For a free tier instance, the size allocation is predefined to 32 GB for memory, 120 GB for storage and 2 vCPUs for computation.
+
+For a trial instance, the size allocation is predefined to 16 GB for memory, 80 GB for storage and 1 vCPU for computation.
 
 ![SAP HANA Database Memory Allocation](hdb-memory.png)
 

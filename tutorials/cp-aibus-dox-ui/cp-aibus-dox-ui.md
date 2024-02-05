@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-ai-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -37,21 +37,19 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
-1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
+1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).   
 
-    <!-- border -->![DOX-UI-App](app.png)
-
-2. In the top right, click **+** (Upload a new document).
+2. In the top right, click **+** (Upload Document).
 
     <!-- border -->![DOX-UI-App](upload.png)
 
-3. In the Select Document screen, drop files directly or click **+** to upload one or more document files.
+3. In the Select Document screen, choose the **Document Type**.
+
+    <!-- border -->![DOX-UI-App](type.png)
+
+4. Drop files directly or click **+** (Upload) to upload one or more document files. Click **Step 2**.
 
     <!-- border -->![DOX-UI-App](drop-files.png)
-
-4. Select the **Document Type**. Click **Step 2**.
-
-    <!-- border -->![DOX-UI-App](file-type.png)
 
 5. In **Step 2**, select the header fields you want to extract from the documents you've uploaded. Click **Step 3**.
 
@@ -69,7 +67,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](pending.png)
 
-    Status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the document once again.
+    The status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents once again.
 
     <!-- border -->![DOX-UI-App](ready.png)
 
@@ -87,23 +85,21 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](choose.png)
 
-    You see the page preview of the document file you uploaded.
+2. You see the page preview of the document file you uploaded. Click **Extraction Results**.
 
     <!-- border -->![DOX-UI-App](extraction-results.png)
 
-2. Click **Extraction Results** to see the Header Fields and Line Items extraction results.
+    You see the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](extraction-results-done.png)
 
     See also the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), yellow (confidence between 51% and 79%), and green (confidence between 80% and 100%).
 
-    <!-- border -->![DOX-UI-App](confidence-range.png)
-
     See the prediction confidence score for each header field and line item extraction result by hovering the mouse over a field name, for example **Invoice Number**.
 
     <!-- border -->![DOX-UI-App](confidence.png)
 
-3. In case corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
+3. If corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](edit-1.png)
 
@@ -133,26 +129,25 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     <!-- border -->![DOX-UI-App](confirm.png)
 
-    Status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
+    The status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
+
+    <!-- border -->![DOX-UI-App](confirmed.png)
 
 
 
 ### Delete documents
 
 
-1. In the Documents screen, click the document row where you see Document Name, Upload Date and Status.
+1. In the Documents screen, select the document you want to delete. Click **Delete**.
 
-    <!-- border -->![DOX-UI-App](choose-delete.png)
+    <!-- border -->![DOX-UI-App](choose-delete.png) 
 
-    You see the page preview of the document file you uploaded.
-
-    <!-- border -->![DOX-UI-App](extraction-results-delete.png)
-
-2. Click **Delete** and then click **OK** to delete the document you selected.
+2.  Click **Yes** to delete the document you selected.
+    
+    <!-- border -->![DOX-UI-App](yes.png)
 
     The document is then removed from the Documents list.
 
     <!-- border -->![DOX-UI-App](gone.png)
 
-Congratulations, you have completed this tutorial.
-
+Congratulations, you've completed this tutorial.
