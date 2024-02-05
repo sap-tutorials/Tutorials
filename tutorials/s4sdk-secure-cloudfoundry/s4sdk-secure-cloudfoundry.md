@@ -323,7 +323,7 @@ In addition all JWTs are required to contain the `Display` scope.
 Depending on your setup your integration tests may now fail if they are not authenticated.
 In that case leverage the XSUAA testing library to mock request authentication.
 
-1. Add the testing capabilities via the following dependency into your integration test `integration-tests/pom.xml`:
+1. Add the testing capabilities via the following dependency into your `application/pom.xml`:
 
     ```XML
     <dependency>
@@ -342,7 +342,7 @@ In that case leverage the XSUAA testing library to mock request authentication.
                 "sap.security.services.xsuaa.clientid=sb-clientId!t0815" } )
 ```
 
-3. Create a JWT for testing (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
+1. Create a JWT for testing (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
 
   ```JAVA
 @RegisterExtension

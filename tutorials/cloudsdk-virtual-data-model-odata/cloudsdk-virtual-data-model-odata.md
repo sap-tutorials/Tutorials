@@ -4,23 +4,23 @@ author_name: Johannes Schneider
 author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
-primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 # Create and Deep Insert with the Virtual Data Model for OData
 <!-- description --> Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
 
 ## Prerequisites
-- [Introduce Resilience to Your Application](s4sdk-resilience)
-- [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+ - [Introduce Resilience to Your Application](s4sdk-resilience)
+ - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
 > **Please note that the sandbox service does not support testing creating entities, you might have to use an actual S/4 system to try the tutorial out.**
 
 ## You will learn
-- How to build up a complex data structure using the virtual data model
-- How to write deeply nested data to SAP S/4HANA in a single call
-- How to write unit and integration tests for deep insertion
+  - How to build up a complex data structure using the virtual data model
+  - How to write deeply nested data to SAP S/4HANA in a single call
+  - How to write unit and integration tests for deep insertion
 
 ## Intro
 Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
@@ -235,7 +235,7 @@ Then you can use a tool like Postman or Curl to check whether the code works. As
 
 Let's write an integration test to test the newly introduced create functionality.
 
-The file needs to be put under your `<projectroot>/integration-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
+The file needs to be put under your `<projectroot>/application/src/test/java/com/sap/cloud/sdk/tutorial` directory.
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
