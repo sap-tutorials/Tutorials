@@ -1174,6 +1174,35 @@ When your execution shows status **COMPLETED**, you will see that a new model ar
 
 Generating and associating metrics (model quality) will covered in a separate tutorial.
 
+### Schedule your execution (Optional)
+
+Go to executions and click on *Schedule*.
+
+![image](img/ail/sch1.png)
+
+Choose your scenario and click on **Next**.
+
+![image](img/ail/sch2.png)
+
+Choose your executable and click on **Next**.
+
+![image](img/ail/sch3.png)
+
+Choose your configuration and click on **Next**.
+
+![image](img/ail/sch4.png)
+
+Give a name for the schedule and set the time.
+
+![image](img/ail/sch5.png)
+
+Click **Create**.
+
+![image](img/ail/sch6.png)
+
+Now go to **Schedules** to see your schedules.
+
+![image](img/ail/sch7.png)
 
 ### Locate your model in AWS S3
 
@@ -1185,6 +1214,9 @@ aws s3 ls s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/model/<YOUR_EX
 ```
 
 You are listing the files in the path `example-dataset/house-price-toy/model/` because this is the value you set earlier for the `pathPrefix` variable, for your object store secret named `default`.
+
+
+
 
 <!-- border -->![image](img/aws-model.png)
 
