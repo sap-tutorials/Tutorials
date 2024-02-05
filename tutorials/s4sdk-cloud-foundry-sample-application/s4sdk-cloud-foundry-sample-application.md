@@ -46,7 +46,7 @@ In order to deploy applications on `SAP Cloud Foundry` you need to provide the C
 
 Now enter the following commands (in this case for the US region):
 
-```bash!!!!
+```bash
 cf api https://api.cf.us10-001.hana.ondemand.com
 cf login
 ```
