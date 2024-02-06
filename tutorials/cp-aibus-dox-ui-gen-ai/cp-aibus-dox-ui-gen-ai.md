@@ -43,7 +43,7 @@ In the first example, you'll use a delivery note. After working through this exa
 
 1. Open the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
 
-2. To access the schema configuration feature, click the cogwheels icon and choose **Schema Configuration**.
+2. In the left navigation pane, click **Schema Configuration**.
 
     <!-- border -->![LLM](access-schema-configuration.png)
 
@@ -55,11 +55,9 @@ In the first example, you'll use a delivery note. After working through this exa
 
 5. Click **Create** to create the schema.
 
-    <!-- border -->![LLM](create-schema-dialog.png)
+    <!-- border -->![LLM](create-schema-dialog.png)    
 
-    Your schema now appears in the list. 
-
-6. Access the schema by clicking on it.
+6. Your schema now appears in the list. Access the schema by clicking on it.
 
     <!-- border -->![LLM](access-schema.png)
 
@@ -86,7 +84,7 @@ As your first header field, add the number of the delivery note.
 
 2. Select `string` as the **Data Type**.
 
-3. Select `auto` as the **Setup Type** and click **Add** to create the header field. 
+3. Use `auto` as the **Setup Type** and click **Add**.
    
 >Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details on this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html).
 
@@ -102,7 +100,7 @@ Click **Add** again to open the **Add Data Field** dialog.
 
 2. Select `string` as the **Data Type**.
 
-3. Select `auto` as the **Setup Type** and click **Add** to create the field.
+3. Use `auto` as the **Setup Type** and click **Add**.
 
 <!-- border -->![LLM](add-ponumber.png)
 
@@ -141,7 +139,7 @@ Congratulations, you've now created and activated your custom schema for deliver
 ### Get extraction results
 
 
-1. Access **Document** from the navigation on the left of the screen, then click **+** to upload a new document.
+1. Access **Document** from the navigation on the left of the screen, then click **+** to upload the delivery note document.
 
     <!-- border -->![LLM](add-document.png)
 
@@ -167,7 +165,7 @@ Congratulations, you've now created and activated your custom schema for deliver
 
     <!-- border -->![LLM](ready.png)
 
-9.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the document using LLMs and the schema that you created.
+9.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the delivery note using LLMs and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 
