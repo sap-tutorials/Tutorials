@@ -18,7 +18,7 @@ author_profile: https://github.com/dhrubpaul
 - You're using the Extended service plan.
 - You have completed the client authorization for your preferred user interface. 
 
-For more information, see [SAP AI Core documentation](https://help.sap.com/doc/7ca8e589556c4596abafe95545dfc212/CLOUD/en-US/553250b6ec764a05be43a7cd8cba0526.pdf).
+For more information, see [SAP AI Core documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/initial-setup).
 
 ## You will learn
 - How to deploy an LLM model.
