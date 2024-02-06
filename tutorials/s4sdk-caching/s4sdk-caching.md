@@ -102,7 +102,7 @@ Let's adapt the test and check what happens when the OData service is not availa
 
 Replace the `testService` test with `testServiceWithCache()` code below:
 
-`integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
+`application/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
 
 ```Java
 @Test

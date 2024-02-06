@@ -472,9 +472,9 @@ To construct an extensible integration test for the newly created `BusinessPartn
 - New: test class
 
 
-First, let's adjust the Maven pom file of the `integrations-tests` sub-module by adding a dependency for Wiremock:
+First, let's adjust the Maven pom file of the `application` sub-module by adding a dependency for Wiremock:
 
-`./integration-tests/pom.xml`
+`./application/pom.xml`
 
 ```XML
 <dependency>
@@ -491,9 +491,9 @@ _Hint: Do not forget to reload your maven project in order to include the newly 
 ### Test class
 
 
-Navigate to the integration-tests project and create a new class:
+Navigate to the application project and create a new class:
 
-`./integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`
+`./application/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -613,7 +613,7 @@ In case you are trying to connect to an OData service endpoint on a server witho
 
 If you are still facing problems when connecting to the OData service, try the following to get more insights into what is happening and what can be logged:
 
-- Add a logger implementation to the test artifact's dependencies in order to get more detailed log output during tests: expand the dependencies section of `integration-tests/pom.xml` with:
+- Add a logger implementation to the test artifact's dependencies in order to get more detailed log output during tests: expand the dependencies section of `application/pom.xml` with:
 
 
 ```XML

@@ -101,16 +101,11 @@ firstapp
 │   .gitignore
 │   manifest.yml
 │   pom.xml
-├───application [firstapp-application]
-└───integration-tests [firstapp-integration-tests]
+└───application [firstapp-application]
 ```
 
-The first thing you will notice is the different directories:
+The first thing you will notice is the sub-directory `application [firstapp-application]`. This project will contain the source code of your application, as well as the tests and the configuration. The separation between the parent directory and the sub-directory allows you to add further modules as a multi-module project while defining shared dependencies centrally in the parent `pom.xml`.
 
-  - `application [firstapp-application]`
-  - `integration-tests [firstapp-integration-tests]`
-
-There are two Maven sub-modules `application [firstapp-application]` and `integration-tests [firstapp-integration-tests]`, which serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and sensitive integration tests without deploying the application.
 Additionally, **`manifest.yml`** is the deployment descriptor for `Cloud Foundry`. This file will be covered in more detail later in this tutorial.
 
 #### Multiple modules project
@@ -147,39 +142,24 @@ application [firstapp-application]
     │
     └───test
         └───java
-            └───com.sap.cloud.sdk.tutorial
-                    UnitTest.java
+        │   └───com.sap.cloud.sdk.tutorial
+        │           UnitTest.java
+        │           HelloWorldControllerTest.java
+        └───resources
+                expected.json   
 ```
 
   - **`pom.xml`** - This is your project management file for Maven where you can maintain other open source dependencies or use plugins that simplify your build environment.
   - **`src/main/java`** - Here goes your production code, nothing else. As you can see, there's already the `HelloWorldController`, which will be look at in more detail soon.
   - **`src/main/resources`** - Anything that you require in your production code but is not compilable code goes here (typically things like API definition files for `OData`, `OpenAPI` or `Logback`).
-  - **`src/test/java`** - Contains the unit tests for your application. The purpose of classes in here is to test and validate single aspects of data flow and computational operations of your application project.
-
-**`integration-tests`** contains the integration tests for your application. Its structure is similar to **`application`**.
-
-```
-integration-tests [firstapp-integration-tests]
-│   pom.xml
-│
-└───src
-    └───test
-        ├───java
-        │   └───com.sap.cloud.sdk.tutorial
-        │           HelloWorldControllerTest.java
-        │
-        └───resources
-                expected.json   
-```
-
-  - **`src/test/java`**	- Here you can put all your integration tests. As you can see, it already contains `HelloWorldControllerTest` corresponding to the `HelloWorldController`.
-  - **`src/test/resources`** - Here are all the resources needed for the integration tests to run or validate.
+  - **`src/test/java`** - Contains the tests for your application. The purpose of classes in here is to test and validate the data flow and computational operations of your application project.
+  - **`src/test/resources`** - Here are all the resources needed for the tests to run or validate.
 
 #### Unit tests and integration tests
 
 This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module `application/src/test`, or in a separate `unit-tests` module that is not part of the archetype. For that topic you can also refer to the articles and educational videos by Martin Fowler. His post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html) is a good starting point.
 
-During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven sub-module. That way the runnable application itself can be later shipped without tests and their dependency.
+During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment.
 
 
 ### HelloWorldController

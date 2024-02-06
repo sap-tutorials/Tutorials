@@ -4,8 +4,8 @@ author_name: Johannes Schneider
 author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
-primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 # Create and Deep Insert with the Virtual Data Model for OData
@@ -235,7 +235,7 @@ Then you can use a tool like Postman or Curl to check whether the code works. As
 
 Let's write an integration test to test the newly introduced create functionality.
 
-The file needs to be put under your `<projectroot>/integration-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
+The file needs to be put under your `<projectroot>/application/src/test/java/com/sap/cloud/sdk/tutorial` directory.
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
