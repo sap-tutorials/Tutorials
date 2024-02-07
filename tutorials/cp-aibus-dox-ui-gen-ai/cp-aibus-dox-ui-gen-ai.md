@@ -226,4 +226,4 @@ Create the header fields shown in the table and image below. Pay attention to th
 <!-- border -->![LLM](work-contract-all-fields.png)
 
 
-Congratulations, you've completed this tutorial. Feel free to repeat the steps using your own documents.
+Congratulations, you've completed this tutorial. Feel free to repeat the steps using your own custom documents.
