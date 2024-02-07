@@ -8,15 +8,15 @@ author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Create Custom Schema for Purchase Order Documents
-<!-- description --> Create a custom schema for your purchase order documents to extract information from similar documents using the Document Information Extraction service.
+# Create Schema for Purchase Order Documents
+<!-- description --> Create a schema for your purchase order documents to extract information from similar documents using the Document Information Extraction service.
 
 ## You will learn
-  - How to create a custom schema for purchase order documents
+  - How to create a schema for purchase order documents
   - How to add standard and custom data fields for the header and line item information of purchase order documents
 
 ## Intro
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. The service supports extraction from the following standard document types out of the box: invoices, payment advices, and purchase orders. You can customize the information extracted from these document types by creating a custom schema and adding the specific information that you have in your documents. Additionally, you can add completely new document types.
+The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. The service supports extraction from the following standard document types out of the box: invoices, payment advices, and purchase orders. You can customize the information extracted from these document types by creating a schema and adding the specific information that you have in your documents. Additionally, you can add completely new document types.
 
 If you are new to the Document Information Extraction UI, first try out the tutorial: [Use Machine Learning to Extract Information from Documents with Document Information Extraction UI](cp-aibus-dox-ui).
 
@@ -35,7 +35,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](plan.png)
 
 
-     >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
+    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -45,7 +45,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](log-off.png)
 
 
-2. To create a custom schema, click the cogwheels icon and choose **Schema Configuration**.
+2. In the left navigation pane, click **Schema Configuration**.
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
@@ -67,7 +67,7 @@ To create your own schema, click **Create** and a dialog opens.
 
 <!-- border -->![Create Schema](create-schema.png)
 
-In the dialog, enter a name for your custom schema, `Custom_purchase_order_schema`, for example. Note that the name cannot include blanks. Further, select `Purchase Order` as your **Document Type**.
+In the dialog, enter a name for your schema, `purchase_order_schema`, for example. Note that the name cannot include blanks. Further, select `Purchase Order` as your **Document Type**.
 
 Click **Create** to create the schema.
 
@@ -94,7 +94,6 @@ The image below shows an example purchase order. All the fields that you define 
 
 
 
-
 ### Add header fields
 
 
@@ -114,15 +113,15 @@ As your first header field, add the number of your purchase order which identifi
 
 3. As all business documents have a unique identification, Document Information Extraction already includes a standard field. Select `auto` for the `Setup Type` and then select `documentNumber` for the `Default Extractor`.
 
-4. Click **Add** to create the header field.
+4. Click **Add** to add the header field.
 
     <!-- border -->![Create Purchase Order Number](add-document-number.png)
 
-The field now displays in your list of header fields, where you again find all the information that you have just entered. You can edit or delete the field by clicking the respective icons on the right.
+The field now displays in your list of header fields, where you again find all the information that you've just entered. You can edit or delete the field by clicking the respective icons on the right.
 
 <!-- border -->![View Purchase Order Number](added_purchase-order-number.png)
 
-You have now created your first header field that uses a standard field provided by Document Information Extraction. Next, you'll create your first custom header field, namely the status of your purchase order. In the example above, you find it right below the document number.
+You've now added your first header field that uses a default extractor from Document Information Extraction. Next, you'll add your first custom header field,
 
 Click **Add** again to open the dialog.
 
@@ -130,11 +129,11 @@ Click **Add** again to open the dialog.
 
 2. Select `string` for the `Data Type`.
 
-3. As Document Information Extraction offers no equivalent field, select `manual` for the `Setup Type` but leave the default extractor blank. Click **Add** to create the field.
+3. As Document Information Extraction offers no equivalent field, select `manual` for the `Setup Type`. Click **Add** to add the field.
 
     <!-- border -->![Create Purchase Order Status](add-purchase-order-status.png)
 
-You have now created your first custom field. Go ahead and create the list of header fields as shown in the table and image below. Pay attention to which fields have a default extractor and which do not. Feel free to extend or reduce the list of header fields.
+You've now added your first custom field. Go ahead and add the list of header fields as shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of header fields.
 
 |  Field Name           | Data Type   | Setup Type  | Default Extractor
 |  :------------------- | :---------- | :---------- | :-----------------
@@ -173,15 +172,15 @@ In the dialog proceed as follows:
 
 2. Select `string` for the `Data Type`.
 
-3. Select `manual` for the `Setup Type`, leave the default extractor blank, and click **Add** to create the field.
+3. Select `manual` for the `Setup Type` and click **Add** to add the field.
 
 <!-- border -->![Add SKU Number](add-sku-number.png)
 
-The field now displays in your list of line item fields where you find all the information again that you have just entered.
+The field now displays in your list of line item fields where you find all the information again that you've just entered.
 
 <!-- border -->![View SKU Number](added-sku-number.png)
 
-You have now created your first line item field. Go ahead and create the list of line item fields as shown in the table and image below. Pay attention to which fields have a default extractor and which do not. Feel free to extend or reduce the list of line item fields.
+You've now added your first line item field. Go ahead and add the list of line item fields as shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of line item fields.
 
 |  Field Name           | Data Type   | Setup Type  | Default Extractor
 |  :------------------- | :---------- | :---------- | :-----------------
@@ -202,7 +201,7 @@ You have now created your first line item field. Go ahead and create the list of
 ### Activate schema
 
 
-Once you have added all header and line item fields, the schema needs to be activated so that it can be used to extract information from documents. Right now, the schema has the status `DRAFT`, indicating that it cannot be used yet.
+Once you've added all header and line item fields, the schema needs to be activated so that it can be used to extract information from documents. Right now, the schema has the status `DRAFT`, indicating that it cannot be used yet.
 
 To activate the schema, click **Activate**.
 
@@ -212,6 +211,6 @@ Now, the status of your schema changes to `ACTIVE`. To make changes to your sche
 
 <!-- border -->![Activate Schema](active.png)
 
-Congratulations, you have created and activated your custom schema for purchase order documents.
+Congratulations, you've created and activated your own schema for purchase order documents.
 
-In the next tutorial: [Create Custom Template for Purchase Order Documents](cp-aibus-dox-ui-template), you'll create a template that uses your schema, and associate documents with your template to show the Document Information Extraction service where each field is located in the document.
+In the next tutorial: [Create Template for Purchase Order Documents](cp-aibus-dox-ui-template), you'll create a template that uses your schema, and associate documents with your template to show the Document Information Extraction service where each field is located in the document.
