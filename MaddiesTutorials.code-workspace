@@ -15,7 +15,8 @@
     ],
     "settings": {
         "githubPullRequests.ignoredPullRequestBranches": [
-            "master"
+            "master",
+            "main"
         ]
     }
 }
