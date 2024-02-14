@@ -11,7 +11,7 @@ author_profile: https://github.com/felixdraeger
 <!-- description --> Learn how to establish a WebSocket RFC connection from an on-premise to a cloud system.
 
 ## You will learn
-- how to connect an on-premise system to cloud using WebSocket RFC.
+- How to connect an on-premise system to cloud using WebSocket RFC.
 
 
 

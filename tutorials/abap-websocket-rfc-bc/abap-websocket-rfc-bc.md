@@ -174,7 +174,7 @@ However, you can also use your remote-enabled function module with a custom comm
 
     If your corporate firewall requires an HTTP proxy for outbound connections, you need to make this proxy known to the SAP BC. For this, go to **Settings > Proxy Servers > Secure Proxy (HTTPS)** and enter the host, port, and, if necessary, user information of your proxy server. Here, only basic proxy authentication can be configured.
 
-6. Test the connection. Select the newly configured SAP server form the server list and choose **Test Connection**.
+6. Test the connection. Select the newly configured SAP server from the server list and choose **Test Connection**.
 
 
 ### Define connection parameters for the on-premise system in SAP BC
