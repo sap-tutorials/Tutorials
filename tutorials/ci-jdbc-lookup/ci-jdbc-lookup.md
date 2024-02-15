@@ -9,7 +9,7 @@ primary_tag: software-product>sap-integration-suite
 ---
 
 # Learn how to migrate JDBC Lookups from SAP Process Orchestration to Cloud Integration
-<!-- description --> This tutorial is developed into two different steps, one for the SAP Process Orchestration and the other for the Cloud Integration capability of SAP Integration Suite.
+<!-- description -->This tutorial is developed into two different steps, one for the SAP Process Orchestration and the other for the Cloud Integration capability of SAP Integration Suite.
 In this sample scenario we are moving data from system A to system B and enrich with content data.
 
 
