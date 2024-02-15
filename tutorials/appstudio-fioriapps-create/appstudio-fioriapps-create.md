@@ -40,7 +40,6 @@ The flow consists of the following parts:
 
 ---
 
-
 ### Create a New Multitarget Application Project
 
 
@@ -233,7 +232,7 @@ The layout editor allows users to easily make changes in the app using a visual 
 
     >You may need to wait a bit for the layout editor extension to load.
 
-The **Suppliers** view opens in the layout editor.
+    The **Suppliers** view opens in the layout editor.
 
     <!-- border -->![open layout editor](BAS-Open-Layout-Editor-2-.png)
 
