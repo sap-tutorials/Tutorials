@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>data-attribute-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -19,6 +19,8 @@ author_profile: https://github.com/Juliana-Morais
 To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: Use the Sales Order Completion (SOC) business blueprint in the context of the sales order process to predict missing fields that are needed for completion. With a dedicated pre-processing, the business blueprint takes care of imbalanced datasets as well as model training split based on the sales order object.
+
+To better understand the Sales Order Completion (SOC) business blueprint from the Data Attribute Recommendation service, take a look at the blog post: ?
 
 ---
 
@@ -155,7 +157,7 @@ You have successfully created a dataset.
 
 The final step in this tutorial is to upload data to your dataset.
 
-In this tutorial, you'll use this [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/cp-aibus-dar-swagger-soc-upload/Dataset_SOC.csv). Right click on the link, then click ***Save link as*** to open the file dialog. In the dialog, replace the file ending `txt` with `csv` as indicated below. Then save the file.
+In this tutorial, you'll use this [dataset](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dar-swagger-soc-upload/Dataset_SOC.csv). Right click on the link, then click ***Save link as*** to open the file dialog. In the dialog, replace the file ending `txt` with `csv` as indicated below. Then save the file.
 
 <!-- border -->![Save File Dialog](save-file-dialog.png)
 

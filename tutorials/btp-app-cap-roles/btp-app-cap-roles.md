@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 keywords: cap
@@ -23,6 +23,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to access the application with a user and password
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Adding CAP role restrictions to entities)]
 1. Open the file `srv/risk-service.cds`.
@@ -67,17 +81,51 @@ With this change, a user with the role `RiskViewer` can view risks and mitigatio
 [ACCORDION-BEGIN [Step 2: ](Add Users for local testing)]
 Since the authorization checks have been added to the CAP model, they apply not only when deployed to the cloud but also for local testing. Therefore, we need a way to log in to the application locally.
 
-CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we use the `.cdsrc.json` file to add the users.
+CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we will edit the `cpapp/package.json` file to add the users.
 
-1. Copy the file `templates/cap-roles/.cdsrc.json` to your project directory `cpapp`. If you are asked to replace an existing file with the same name, confirm.
+1. Add the following to your cpapp/package.json:
 
-    > You have to make hidden files visible in your operating system in order to see the file.
+```JSON[9-29]
+{
+  "name": "cpapp",
+  ...
+  "cds": {
+    "requires": {
+      "[production]": {
+        ...
+      },
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+              "risk.viewer@tester.sap.com": {
+                  "password": "initial",
+                  "ID": "risk.viewer@tester.sap.com",
+                  "roles": [
+                    "RiskViewer"
+                  ]
+              },
+              "risk.manager@tester.sap.com": {
+                  "password": "initial",
+                  "ID": "risk.manager@tester.sap.com",
+                  "roles": [
+                    "RiskManager"
+                  ]
+              }
+          }
+        }
+      }
+      ...
+    },
+  ...
+  }
+}
+```
 
-    The file defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
+    This configuration defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
 
 2. Let's look at the `risk.manager@tester.sap.com` example.
 
-    <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
     ```JSON[7-14]
     {
       "[development]": {

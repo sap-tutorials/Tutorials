@@ -7,10 +7,10 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Alerts in SAP HANA Database and Data Lake
-<!-- description --> Learn how to configure and view alerts in SAP HANA Cloud and how the SAP Alert Notification service for SAP BTP can be used to send alerts to other channels.
+<!-- description --> Learn how to configure and view SAP HANA Cloud alerts and how the SAP Alert Notification service for SAP BTP can be used to send alerts to other channels.
 
 ## Prerequisites
- - Access to a SAP HANA Cloud trial or production instance.
+ - Access to a SAP HANA Cloud instance.
 
 ## You will learn
   - An overview of alerts
@@ -20,9 +20,9 @@ primary_tag: software-product>sap-hana-cloud
 ## Intro
 Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake Relational Engine is locked out.  
 
-You can find details of any raised alerts through **SAP HANA Cloud Central** (SAP HANA database and data lake Relational Engine), the **Alerts app** in the SAP HANA cockpit (for SAP HANA database), or by using the [REST API](hana-cloud-alerts-rest-api) (SAP HANA database). This is known as a pull approach.
+You can find details of any raised alerts through the alerts app in SAP HANA Cloud Central or by using the [REST API](hana-cloud-alerts-rest-api) (SAP HANA database). This is known as a pull approach.
 
-Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
+Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.  A list of built-in events can be found at [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/sap-hana-cloud-service-database-events).
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
@@ -40,6 +40,8 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 2. In the Monitoring view, open the Alert Definitions app.
 
     ![alerts app in the cockpit](alerts-app-cockpit.png)
+
+    > The SAP HANA Cockpit also has an alerts app to view triggered alerts but it only includes alerts from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
 
 3. The three alerts that will be triggered in step 2 of this tutorial are shown below.
 
@@ -84,7 +86,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
 6. Alerts also have a retention period.  Once triggered, depending on their type, they will remain for a set duration such as 14 or 42 days.
 
-  For additional details, consult [Alerts in SAP HANA Cloud](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/8eca57e7e82e4b788246b6d9db020937.html) in the administration guide for SAP HANA cockpit.
+For additional details, consult [Alerts in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/alerts-in-sap-hana-cloud) in the administration guide for SAP HANA cockpit.
 
 
 ### Trigger alerts in a SAP HANA database
@@ -92,9 +94,9 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 The following instructions demonstrate a few examples of triggering alerts in a SAP HANA database.      
 > Perform these actions on a non-production system, such as a trial or free tier account.
 
-1. Open the SAP HANA database explorer.
+1. Open the SQL console.
 
-    ![Open the database explorer](open-dbxt.png)
+    ![Open the database explorer](open-sql-console.png)
 
 2. Execute the following query in the SQL console to trigger a high (indicated by the parameter value of 4) severity test alert.
 
@@ -102,28 +104,28 @@ The following instructions demonstrate a few examples of triggering alerts in a 
     CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
     ```
 
-    > The alert will be viewed in the SAP HANA Cockpit and under the Alerts tab in HANA Cloud Central, which will be covered in step 3.
+    > The alert will be viewed in the alerts app in step 3.
 
-3. Execute the following SQL to trigger long-running statements (ID 39) alert at each threshold. Ensure the thresholds are set to 180, 120, and 60 seconds with an interval time set to 1 minute.
+3. Trigger the long-running statements (ID 39) alert.
 
-    >To set the Thresholds for Prioritized Alerting, go to the **Long-running statements** alert under the **Alert Definitions** app. Click **edit** to set the thresholds and interval according to the image below.   
-    > ![Threshold setting](alert-threshold.png)
+    * Go to the **Long-running statements** alert in the **Alert Definitions** app. 
     
+        Click **edit** to set the thresholds and interval.  
+    
+        Set  the thresholds to 180, 120, and 60 seconds with an interval time set to 1 minute.
 
-    ```SQL
-    DO BEGIN
-      USING SQLSCRIPT_SYNC AS SYNCLIB;
-      CALL SYNCLIB:SLEEP_SECONDS( 300 );  --runs for 5 minutes
-      -- Now execute a query
-      SELECT * FROM M_TABLES;
-    END;
-    ```
+        ![Threshold setting](alert-threshold.png)
+    
+    * Execute the following SQL
 
-    >Long running statements can be run as background activities in the SAP HANA database explorer which will continue even if the browser's connection drops or the tab is closed.  
-    >
-    >![run as a background activity](run-as-background.png)
-    >
-    For additional details on the database explorer see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started).
+        ```SQL
+        DO BEGIN
+        USING SQLSCRIPT_SYNC AS SYNCLIB;
+        CALL SYNCLIB:SLEEP_SECONDS( 300 );  --runs for 5 minutes
+        -- Now execute a query
+        SELECT * FROM M_TABLES;
+        END;
+        ```
 
 4. The record count of non-partitioned column-store tables (ID 17) alert can be triggered by executing the following SQL.  
 
@@ -159,51 +161,33 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 
     > Note that two other alerts may also be triggered by the above SQL: table growth of non-partitioned column-store tables and record count of column-store table partitions.
 
-5. The Database Overview in the SAP HANA cockpit will indicate if a medium or high alert was triggered.  The refresh interval can be set to control how often the contents of the page are updated.
-
-    ![monitoring with refresh on](cockpit-monitoring.png)
-
-
 ### View SAP HANA database alerts using the alerts app
 
-The following instructions will show how to view a triggered SAP HANA database alert in SAP HANA Cloud Central, as well as the alerts app in the SAP HANA cockpit.
+The following instructions will show how to view a triggered SAP HANA database alert in SAP HANA Cloud Central.
 
-1. After the long-running statement completes, open the SAP HANA cockpit alerts app  to view the triggered alerts.  
-
-    ![viewing the triggered alerts in the cockpit](triggered-alerts-cockpit.png)
-
-    > Note that only alerts generated from the SAP HANA embedded statistics server (ESS) are displayed in the SAP HANA cockpit. Events corresponding to ESS alerts can be identified by the Alert ID appended to the event name.  See [Monitoring Alerts](https://help.sap.com/docs/SAP_HANA_ONE/1c837b3899834ddcbae140cc3e7c7bdd/923f1c8f200b44708e7ee68876d5fe2b.html) for more details.    
-
-    >---
-
-    > Alerts under **Current** are alerts that were triggered by the last scheduled run of the alert definition.  You may need to select **Past** from the Type drop down.
-
-    >---
-
-    > Alerts can be sorted and grouped.
-
-    > ![sort and group](sort-and-group.png)
-
-    >---
-
-    > Details about a SQL statement from a long-running statement alert can be found out with the following query. The statement hash can be found in the alert title.
-
-    >```SQL
-    SELECT * FROM M_SQL_PLAN_CACHE WHERE STATEMENT_HASH='XXXXXXXXXXXXXXXXXXXXX';
-    >```
-
-    >![using the statement hash](long-running-statement-hash.png)
-
-
-2. In SAP HANA Cloud Central multi-environment edition, alerts can be seen for all instances in an SAP BTP subaccount.  
+1. In SAP HANA Cloud Central,  alerts can be seen for all instances in an SAP BTP subaccount.  
 
     Navigate to the alerts tab.
 
     ![subaccount alerts view](subaccount-alerts-view.png)  
 
-    You can filter alerts by Type, Severity, Instance (for SAP HANA Cloud, SAP HANA database instances), and Time Range. 
+    Filter can be set for Type, Severity, Instance, Instance Type, and Time Range. 
+    
     ![alerts view in HCC](alerts-hcc.png) 
-     More details on the multi-environment tooling can be found at [SAP HANA goes "multi-environment"](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/) and [Monitoring Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/b8cc733919ff40eb8725ef47316c840b.html).
+
+    Alerts can be filtered by Current or All. Current Alerts have a Start Time value but no End Time value, as the end time is added when the alert is closed.  Closed alerts appear in type filter All rather than Current.  
+
+    Additional details can be found in [Monitoring Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/alerts).
+    
+2. Details about a SQL statement from a long-running statement alert can be found out with the following query. The statement hash can be found in the alert description.
+
+    ```SQL
+    SELECT STATEMENT_STRING
+      FROM M_SQL_PLAN_CACHE 
+      WHERE STATEMENT_HASH='XXXXXXXXXXXXXXXXXXXXX';
+    ```
+
+    ![using the statement hash](long-running-statement-hash.png)
 
 3. The test alert will resolve itself after 5 minutes or be resolved (indicated by the parameter value of 0) by executing the following statement.
 
@@ -212,17 +196,15 @@ The following instructions will show how to view a triggered SAP HANA database a
     ```
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
-
-    >In SAP HANA Cloud Central, alerts can be filtered by Current or All. Current Alerts have a Start Time value but no End Time value, as the end time is added when the alert is closed.  Closed alerts appear in type filter All rather than Current.  
-    >
-    > Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
-
+    
+Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
 
 ### Trigger an alert in SAP HANA Cloud data lake
+The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in **after** the user account has been locked because an incorrect password has been provided too many times.  
 
-The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in after the user account has been locked because an incorrect password has been provided too many times.     
+>This alert is not available in trial accounts.     
 
-1. In an SAP HANA database explorer that is connected to a **data lake**, execute the following SQL to create a login policy and a new user.
+1. In a SQL console that is connected to a **data lake**, execute the following SQL to create a login policy and a new user.
 
     ```SQL
     CREATE LOGIN POLICY lp max_failed_login_attempts=3;
@@ -232,22 +214,29 @@ The following instructions show one example of triggering the [data lake locked 
     ALTER USER user2 LOGIN POLICY lp;
     ```
 
-2. The instructions below will create a new connection to the data lake using user2 but with an incorrect password.
+    Additional details can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options).
 
-    * First choose **Properties** for the existing connection and copy the host value.
+2. The instructions below will attempt to connect to the data lake using user2 but with an incorrect password.
 
-        ![properties of the existing connection](dl-properties.png)
+    * Click on the instance, select the data lake instance, uncheck **Use cached credentials if possible**.
 
-    * Create a new connection using the copied host, port 443, user2 and an incorrect password.
+        ![do not use cachec credentials](connect-dl.png)
+
+    * Enter user2 and an incorrect password.
 
         ![adding a connection with an incorrect password](add-data-lake.png)
 
-    * After pressing OK, an attempt will be made to connect to the data lake.  After three failed attempts with an incorrect password, user2 will become locked.  This can be seen in the User & Role Management app in SAP HANA Cloud Central or the SAP HANA cockpit.
+    * After pressing OK, an attempt will be made to connect to the data lake.  After three failed attempts with an incorrect password, user2 will become locked.  This can be seen in the User & Role Management app in SAP HANA Cloud Central.
 
         ![Locked user2](data-lake-user-locked.png)
 
+3.  Attempt to connect one more time after the account has been locked (4th time) to trigger the alert.
 
-3. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
+4. The alert can now be seen in the alerts app in SAP HANA Cloud Central.
+
+    ![data lake user locked](data-lake-user-locked-hcc.png)
+
+5. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
     ```SQL
     CALL sa_get_user_status;
@@ -257,8 +246,6 @@ The following instructions show one example of triggering the [data lake locked 
     ```
 
     The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
-
-
 
 ### Set up email notification when an alert occurs
 

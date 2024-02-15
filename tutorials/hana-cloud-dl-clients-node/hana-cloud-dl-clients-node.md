@@ -23,15 +23,13 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
 ---
 
 ### Install Node.js
-
-
 Ensure you have Node.js installed and check its version. Enter the following command:
 
 ```Shell
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v18.16.0.
+If Node.js is installed, the currently installed version is returned, such as v20.10.0.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -46,11 +44,8 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 ---
 
 
-
 ### Install the data lake Relational Engine client for Node.js
-
-
-In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
+The Node.js driver covered in this tutorial is `@sap\iq-client` which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.
 
 1. Add the dependencies to the driver.
 
@@ -98,8 +93,6 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
 
 
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
-
-
 1. Open a file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
@@ -112,7 +105,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     pico nodeQuery.js
     ```
 
-2. Add the code below to `nodeQuery.js`.
+2. Add the code below to `nodeQuery.js` and update the **host** variable.
 
     ```JavaScript
     'use strict';
@@ -149,7 +142,7 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
 
     ![Running nodeQuery.js](node-query-sync.png)
 
-    Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/13e47ad9748d4d4d9536a0518b8ecd67.html), [exec](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/1bec2bc5259d4e9da54a2e1908f246ee.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/8dee077765f5476b8b481ab1de864f14.html).
+    Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/connect-string-object-function-method), [exec](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/exec-ute-string-array-object-function-method) and [disconnect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/disconnect-close-end-function-method).
 
     Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
@@ -186,7 +179,6 @@ In addition to the Node.js driver covered in this tutorial which is `@sap\iq-cli
     >```  
 
 ### Create an asynchronous app that uses callbacks
-
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -201,7 +193,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     pico nodeQueryCallback.js
     ```
 
-2. Add the code below to `nodeQueryCallback.js`.
+2. Add the code below to `nodeQueryCallback.js` and update the host variable.
 
     ```JavaScript
     'use strict';
@@ -283,7 +275,6 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
 
 ### Create an asynchronous app that uses promises
-
 The Node.js driver for the data lake Relational Engine client provides support for promises.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -364,7 +355,10 @@ The Node.js driver for the data lake Relational Engine client provides support f
                     }
                     else {
                         console.log(util.inspect(values, { colors: false }));
-                        return processResults(results);
+                        processResults(results)
+                        .then((results) => {
+                            resolve(results);
+                        });
                     }
                 })
                 .catch (err => {
@@ -381,13 +375,10 @@ The Node.js driver for the data lake Relational Engine client provides support f
     ```
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
-
+    The above code makes use of the [promise module](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/promise-module).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
 
 ### Debug the application
-
-
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
 1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
@@ -407,7 +398,6 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     ![VS Code Debugging](debugging.png)
 
 ### Knowledge check
-
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
 

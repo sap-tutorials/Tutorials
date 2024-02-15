@@ -70,7 +70,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Navigation Icons](DebuggerNavigationIcons.png)
 
-    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
+    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/sap-hana-database-explorer-debugger-tutorials-sap-hana-cloud-database).
 
 
 ### Code coverage
@@ -100,7 +100,7 @@ The code coverage tool shows statements that have been run.  This can be helpful
 
 ### SQLScript analysis
 
-The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/latest/en-US/f7e1c7fbce6f4db49e29d7cc58b78384.html) can be used to identify patterns indicating problems in code quality, security, or performance.  Follow the steps below to try it out.
+The [SQLScript code analyzer](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-sqlscript-reference/sqlscript-code-analyzer) can be used to identify patterns indicating problems in code quality, security, or performance.  Follow the steps below to try it out.
 
 1. Create a new procedure to generate fictitious hotel reservations. The procedure accepts a number of reservations to generate and a room type.
 
@@ -182,7 +182,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
 5. To address these issues, make the following changes and rerun the SQL in the SQL console tab.  
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
-    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
+    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/is-sql-injection-safe-function-security) function.  Uncomment lines 24 - 26 to try this.
 
     >The above changes can be made in the SQL console.  The Create Statement tab is read only.
 
@@ -221,15 +221,15 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
 
 For further details see the links below.
 
-[View Execution Plans for SQL Statements, Procedures, and Anonymous Blocks](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/c41b37e67fa647b392c05b41804aee39.html)
+[View Execution Plans for SQL Statements, Procedures, and Anonymous Blocks](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/view-execution-plans-for-sql-statements-procedures-and-anonymous-blocks-sap-hana-cloud-database)
 
-[Explain Plan](https://help.sap.com/viewer/9de0171a6027400bb3b9bee385222eff/latest/en-US/ee5e2ac159f14cc897c8b3a5f39a38b5.html)
+[Explain Plan](https://help.sap.com/docs/SAP_HANA_PLATFORM/9de0171a6027400bb3b9bee385222eff/ee5e2ac159f14cc897c8b3a5f39a38b5.html)
 
 
 
 ### SQL Analyzer
 
-The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code or as an additional extension (SAP Performance Tools) in the SAP Business Application Studio.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.  A previous version of the SQL Analyzer is also included in the on-premise SAP HANA database explorer, the on-premise SAP HANA cockpit as well as SAP HANA studio.  
+The SQL Analyzer provides a graphical view of how a SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code or as an additional extension (SAP Performance Tools) in the SAP Business Application Studio.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.
 
 1. Run the following SQL.
 
@@ -246,7 +246,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![Reservations by Hotel](reservationsByHotel.png)
 
-2. If using SAP HANA Cloud, HANA database, choose **Analyze | Generate SQL Analyzer Plan File**.  
+2. Choose **Analyze | Generate SQL Analyzer Plan File**.  
 
     ![Generate PLV](generatePLV.png)
 
@@ -254,7 +254,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![Download Plan](downloadPlan.png)
     
-    Once the file has been saved it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
+    Once the file has been downloaded it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
 
     * In Visual Studio Code:
 
@@ -276,20 +276,15 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
             ![Add plan file](bas-add-plan-file.png)
 
-
-3. If using an on-premise edition, choose **Analyze | Analyze SQL** to execute the SQL and to view graphically how the SQL was executed.  Alternatively, choose to download the `plv` file and open it in the SQL Analyzer in Visual Studio Code or the SAP Business Application Studio.
-
-    ![Analyze SQL](SQLAnalyzer0.png)  
-
-4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the peak memory, the result record count, and accessed tables.
+3. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the peak memory, the result record count, and accessed tables.
 
     ![SQL Analyzer](SQLAnalyzerNew.png)
 
-5. Switch to the **PLAN GRAPH** tab to visually see details of the query execution.
+4. Switch to the **PLAN GRAPH** tab to visually see details of the query execution.
 
     ![timeline](SQLAnalyzer2New.png)
 
->Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/1458a4079b294a58a57eca5823025108.html) and [SQL analyzer tool for SAP HANA](https://help.sap.com/docs/HANA_SQL_ANALYZER) for more information.
+    For additional details, refer to [SQL analyzer tool for SAP HANA](https://help.sap.com/docs/HANA_SQL_ANALYZER).
 
 
 ---

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Create a CAP-Based Application
 description: This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
 keywords: cap
@@ -21,6 +21,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
+
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
 1. Open a command line window.
 
@@ -30,16 +45,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cd <tutorial root directory>
     ```
 
-3. Switch to your project root folder.
+4. Execute the following command:
+
+    ```Shell/Bash
+    cds init cpapp
+    ```
+    This creates a `cpapp` directory and an initial CAP project within the `cpapp` directory. 
+
+3. Switch to your `cpapp` directory.
 
     ```Shell/Bash
     cd cpapp
-    ```
-
-4. Create an initial CAP project by executing the command `cds init`.
-
-    ```Shell/Bash
-    cds init
     ```
 
 5. Open the project in VS Code.
@@ -92,9 +108,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add files to the project)]
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
-2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
+2. Open the directory `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 
     !![Windows](codeandfinder.png)
 
@@ -177,12 +193,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     You have now added two comma-separated value (CSV) files that contain local data for both the `Risks` and the `Mitigations` entities. A quick look into the `sap.ui.riskmanagement-Risks.csv` (the name consists of your namespace and the name of your database entity from the `schema.cds` file) file shows data like this:
 
     ```csv
-    ID;createdAt;createdBy;title;prio;descr;miti_id;impact
-    20466922-7d57-4e76-b14c-e53fd97dcb11;2021-04-27;max.mustermann@muster.com;CFR non-compliance;Fred Fish;3;Recent restructuring might violate CFR code 71;20466921-7d57-4e76-b14c-e53fd97dcb11;10000
+    ID;createdAt;createdBy;title;prio;descr;miti_ID;impact
+    20466922-7d57-4e76-b14c-e53fd97dcb11;2021-04-27T00:00:00.000Z;max.mustermann@muster.com;CFR non-compliance;Fred Fish;3;Recent restructuring might violate CFR code 71;20466921-7d57-4e76-b14c-e53fd97dcb11;10000
     ...
     ```
 
-    The first line contains all the properties from your `Risks` entity. While the other ones are straight forward, consider the `miti_id` property. In your entity, you only have a `miti` property, so where does it come from? `miti` is an association to `Mitigations`, as `Mitigations` could have several key properties, the association on the database needs to point to all of these, therefore the CAP server creates a property `<AssociationProperty>_<AssociatedEntityKey>` for each key.
+    The first line contains all the properties from your `Risks` entity. While the other ones are straight forward, consider the `miti_ID` property. In your entity, you only have a `miti` property, so where does it come from? `miti` is an association to `Mitigations`, as `Mitigations` could have several key properties, the association on the database needs to point to all of these, therefore the CAP server creates a property `<AssociationProperty>_<AssociatedEntityKey>` for each key.
 
     As always, the CAP server has noticed the change.
 

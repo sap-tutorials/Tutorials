@@ -11,8 +11,8 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - Have completed the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) that covers alerts and the Alert Notification service.
- - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud, SAP Alert Notification service, and the SAP Automation Pilot.  These services are available in the free tier.
- - An SAP HANA Cloud instance deployed to the Cloud Foundry runtime.
+ - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud, SAP Alert Notification service, and the SAP Automation Pilot.  These services are available in SAP BTP free tier.
+ - An SAP HANA Cloud instance deployed to a Cloud Foundry runtime.
 
 ## You will learn
   - How to setup and become familiar with the SAP Automation Pilot
@@ -24,7 +24,7 @@ A SAP HANA Cloud database or a data lake Relational Engine instance have a set o
 
 ![overview](overview.png)
 
-SAP Automation Pilot includes [provided commands](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/5bbe7dba99d24caeafddf7fa62dc63b9.html) for various services in the BTP, a [scheduler](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/96863a2380d24ba4bab0145bbd78e411.html), and the ability to create new commands.  Examples of the provided commands for a SAP HANA Cloud, SAP HANA database include start, stop, and restart and for Cloud Foundry include `GetCfServiceInstance` and `UpdateCfServiceInstance`.  Commands can be created using a BASH script, Python, Node.js or Perl as described at [Execute Script](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/d0854dbb80d84946bb57791db94b7e20.html).
+SAP Automation Pilot includes [provided commands](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/5bbe7dba99d24caeafddf7fa62dc63b9.html) for various services in the BTP, a [scheduler](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/96863a2380d24ba4bab0145bbd78e411.html), and the ability to create new commands.  Examples of the provided commands for a SAP HANA Cloud, SAP HANA database include start, stop, and restart and for Cloud Foundry include `GetCfServiceInstance` and `UpdateCfServiceInstance`.  Commands can be created using a BASH script, Python, or Node.js as described at [Execute Script](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/d0854dbb80d84946bb57791db94b7e20.html).
 
 This tutorial will demonstrate the integration between a triggered database alert, SAP Alert Notification service, SAP Automation Pilot, and concludes with an example of requesting a storage resize of a SAP HANA database instance based on a disk usage alert.
 
@@ -50,7 +50,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![create service](create-service.png)
 
-2. Under **Users**, select your user and assign the role `AutomationPilot_Admin`.
+2. Under **Users**, select your user and assign the role collection `AutomationPilot_Admin`.
 
     ![Assign Admin Role](admin-role.png)
 
@@ -64,17 +64,17 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
 4. Notice the two sections for catalogs (My Catalogs and Provided Catalogs) containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.
 
-    Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Those in My Catalogs are catalogs that are user-created and contain the commands and inputs they create.  Catalogs provide a way to group a collection of related commands and inputs.
+    Provided Catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Those in My Catalogs are catalogs that are user-created and contain created commands and inputs.  Catalogs provide a way to group a collection of related commands and inputs.
 
     ![Provided catalogs](provided-catalogues.png)
 
     >Commands can also be scheduled.  One example may be to schedule the starting and stopping of a database instance.  
 
-5. It is possible to create commands using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
+5. It is possible to create executors in a command using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
 
     ![script examples](script-examples.png)
 
-6. Each command example inherits from the base `ExecuteScript`.
+6. Each example inherits from the base `ExecuteScript`.
 
     ![Execute script](execute-script.png)
 
@@ -132,7 +132,6 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
 At this point, you should now have a subscription to the SAP Automation Pilot service and be familiar with some basic concepts of the service such as commands, inputs, and executions.
 
-
 ### Create a catalog, an input, and a command
 
 
@@ -167,7 +166,7 @@ This step will create a catalog that contains a command and an input.  The input
 
     >![space members](space-members.png)
 
-4. Create a command named `ResizeHANACloudStorage` in the previously created catalog and add the following input keys to the command under the section Contract.
+4. Create a command named `ResizeHANACloudStorage` in the previously created catalog and add the following input keys to the command under the section **Contract**.
 
     | Key Name | Type | Sensitive |
     | -------- | ----- | --- |
@@ -179,14 +178,14 @@ This step will create a catalog that contains a command and an input.  The input
 
     The values for these keys will be set in step 3 when a trigger from an alert is created for this command.  
 
-5. In the command `ResizeHANACloudStorage`, add an output key under the section Contract.
+5. In the command `ResizeHANACloudStorage`, add an output key under the section **Contract**.
 
     | Key Name | Type | Sensitive |
     | -------- | ----- | --- |
     | `storageSize` | object | no |
 
 
-6. Under Configuration, add an executor.  
+6. Under **Configuration**, add an executor.  
 
     ![Add executor](add-executor.png)
 
@@ -257,7 +256,7 @@ This step will configure the SAP Alert Notification service to invoke the previo
 
     This username and password can be used by another service such as the SAP Alert Notification service to trigger an execution of a command.
 
-2. Under Executions select Build Event Trigger.  
+2. Under **Executions**, select **Build Event Trigger**.  
 
     ![build even trigger](build-event-trigger.png)
 

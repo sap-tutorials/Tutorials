@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>data-attribute-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key
@@ -88,7 +90,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 <!-- border -->![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Data Attribute Recommendation](cp-aibus-dar-free-service-instance) to manually create the service instance and service key for Da
+>If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Data Attribute Recommendation](cp-aibus-dar-free-service-instance) to manually create the service instance and service key for Data Attribute Recommendation using the free tier service plan.
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to expose ports of the application in SAP Business Application Studio to the internet.
 
 ## Intro
-First things first, you need to set up your development environment and check that everything is running smoothly.
+First things first: You need to set up your development environment and check that everything is running smoothly.
 
 For this tutorial, we use the SAP Business Application Studio as the development tool of choice. SAP Business Application Studio provides a web-based Visual Studio Code-like experience. So, it's like VS Code, but for your browser.
 
@@ -47,20 +47,19 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
 2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
 
-    <!-- border -->![enter subaccount](enter-subaccount.png)
+    <!-- border -->![Explained in the accompanying text.](enter-subaccount.png)
 
 3. On the welcome page choose **Create Dev Space**.
 
-4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
+4. Type **`CAPTutorial`** as the name for your dev space and select **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
-    <!-- border -->![choose space name and type](select-app-type.png)
+    <!-- border -->![Shows the selection of available dev spaces, as well as their predefined and additional extensions.](select-app-type.png)
 
-    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
-    The creation of the dev space takes a few seconds.
+    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you will need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time. The creation of the dev space takes a few seconds.
 
 5. When it's ready, open your dev space by clicking on the name.
 
-    <!-- border -->![open dev space](open-dev-space.png)
+    <!-- border -->![The page showing all dev spaces. In this example it just holds one dev space.](open-dev-space.png)
 
     > Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) in the SAP Business Application Studio documentation for more details on how your development environment can be affected.
 
@@ -84,7 +83,7 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-      -DarchetypeVersion=RELEASE -DjdkVersion=11 \
+      -DarchetypeVersion=RELEASE -DjdkVersion=17 \
       -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 

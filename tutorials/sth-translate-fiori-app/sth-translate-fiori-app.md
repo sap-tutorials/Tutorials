@@ -1,14 +1,14 @@
 ---
 parser: v2
-author_name: Beatrice Pasch
-author_profile: https://github.com/beapasch
+author_name: Kerstin Bier
+author_profile: https://github.com/bierke
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5, tutorial>license ]
 time: 10
 ---
 
-# Translate an SAP Fiori App
+# Translate an SAP Fiori App (Neo environment)
 <!-- description --> Use SAP Translation Hub to translate your SAP Fiori app.
 
 ## Prerequisites  

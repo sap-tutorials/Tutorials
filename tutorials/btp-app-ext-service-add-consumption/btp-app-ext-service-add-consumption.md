@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 keywords: cap
@@ -26,6 +26,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add the API key
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Get the Business Partner service definition)]
 SAP publishes service definitions for its major products on **SAP API Business Hub**. These service definitions are required to use remote services in CAP. For example, to call a remote service, build projections upon them, and to mesh-up with them.
@@ -338,7 +352,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
     cds watch --profile sandbox
     ```
 
-7. Open the CAP application's URL and try to access your `Suppliers` service again: [http://localhost:4004/service/risk/Suppliers?$top=11](http://localhost:4004/service/risk/Suppliers?$top=11)
+7. Open the CAP application's URL and try to access your `Suppliers` service again: [http://localhost:4004/service/risk/Suppliers?$top=11](http://localhost:4004/odata/v4/service/risk/Suppliers?$top=11)
 
 8. Now, you can see the Business Partner data from the sandbox transformed to your projection.
 

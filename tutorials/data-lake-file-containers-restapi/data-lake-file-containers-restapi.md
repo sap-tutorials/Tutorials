@@ -1,4 +1,6 @@
 ---
+author_name: Jason Hinsperger
+author_profile: https://github.com/saphinsperg
 parser: v2
 auto_validation: true
 time: 30

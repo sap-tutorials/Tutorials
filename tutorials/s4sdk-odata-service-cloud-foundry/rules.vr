@@ -1,0 +1,29 @@
+[VALIDATE_10]
+
+###Rule
+multiple-choice
+
+###Question
+Which versions of SAP S/4HANA are supported?
+
+###Match
+[x] SAP S/4HANA Cloud
+[x] SAP S/4HANA (on-premise)
+
+[VALIDATE_10]
+
+[VALIDATE_11]
+
+###Rule
+single-choice
+
+###Question
+Which services in SAP Cloud Platform allow defining the configuration of the S/4HANA system to connect to?
+
+###Match
+[ ] Authorization and trust management
+[x] Destination configuration
+[ ] Portal service
+[ ] You cannot configure it, the configuration should be defined in source code
+
+[VALIDATE_11]

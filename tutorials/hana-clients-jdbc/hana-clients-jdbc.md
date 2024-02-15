@@ -14,7 +14,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## You will learn
   - How to install Java
-  - How to create and debug a Java application that queries a SAP HANA database
+  - How to create and debug a Java application that queries an SAP HANA database
   - How to connect to SAP HANA in `DBeaver` using the SAP HANA JDBC driver
 
 ## Intro
@@ -26,14 +26,9 @@ primary_tag: software-product>sap-hana-cloud
 ### Install a JDK
 
 
-Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+Ensure that you have a Java Development Kit (JDK) installed and ensure that it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-A few options include:
-
-* [Java JDK](https://www.oracle.com/technetwork/java/javase/overview/index.html) such as [Java SE 11 (LTS)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-
-* [A SAP supported version of the `OpenJDK`](https://sap.github.io/SapMachine/#download)
-
+An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
 
 To verify that the JDK is correctly set up, run the following:
 
@@ -43,6 +38,12 @@ javac -version
 ```
 
 If these commands fail, ensure that the folder they are located in, is included in your path.  
+
+The following command will install Java on openSUSE Leap 15.5.
+
+```Shell (Linux)
+sudo zypper install java-11-openjdk-devel
+```
 
 
 ### Examine the SAP HANA JDBC driver
@@ -75,15 +76,19 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
     ```Shell (Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
+    ```
+    
+    Alternatively, you may run
 
-    or
-
+    ```Shell (Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```  
+
 
     ```Shell (Linux or Mac)
     java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```
+
     ![Link text e.g., Destination screen](java-driver-result.png)
 
 See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
@@ -92,7 +97,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 ### Create a Java application that queries SAP HANA
 
 
-1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in the Notepad text editor.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\java
@@ -108,7 +113,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     pico JavaQuery.java
     ```
 
-2. Copy the following code into `JavaQuery.java`:
+2. Copy the following code into `JavaQuery.java`. Then save and exit the file.
 
     ```Java
     import java.sql.*;
@@ -202,7 +207,7 @@ Visual Studio Code provides plugins for Java and can be used to debug an applica
 
     ![Java extensions](extensions.png)
 
-4. Once the Java Extension Pack has been installed, expand the Java Project Explorer and click on the **+** icon to add the JDBC driver as a referenced library.
+4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
 
     ![referenced libraries](ref-libraries.png)
 
@@ -216,14 +221,13 @@ Visual Studio Code provides plugins for Java and can be used to debug an applica
 
     ![VS Code Debugging](debugging.png)
 
-
 ### Browse SAP HANA using DBeaver
 
-`DBeaver` is a free and open source database tool and can be used with the SAP HANA JDBC driver.
+`DBeaver` is a free and open-source database tool and can be used with the SAP HANA JDBC driver.
 
 The following steps demonstrate how to configure `DBeaver` to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
 
-1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
+1. [Download](https://dbeaver.io/download/), install or unzip, and run the community edition of `DBeaver`.
 
     ![Install DBeaver](dbeaver-install1.png)
 
@@ -243,7 +247,7 @@ The following steps demonstrate how to configure `DBeaver` to connect to SAP HAN
 
     ![Driver Settings](dbeaver-connect3.png)
 
-3. After finishing the wizard, the catalog of the database can be viewed and SQL statements can be executed.
+3. After finishing the wizard, the catalog of the database can be viewed, and SQL statements can be executed.
 
     ![Query](dbeaver-query1.png)
 

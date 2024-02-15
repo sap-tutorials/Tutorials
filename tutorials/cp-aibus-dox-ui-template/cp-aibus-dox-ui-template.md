@@ -1,15 +1,15 @@
 ---
 parser: v2
 auto_validation: true
-time: 20
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
+time: 30
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Create Custom Template for Purchase Order Documents
-<!-- description --> Create a custom template for purchase order documents to extract information from similar documents using the Document Information Extraction service.
+# Create Template for Purchase Order Documents
+<!-- description --> Create a template for purchase order documents to extract information from similar documents using the Document Information Extraction service.
 
 ## You will learn
   - How to create a template for purchase order documents using your schema
@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 ### Create template
 
 
-In [Create Custom Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
+In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
 
 In the Document Information Extraction UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
@@ -29,11 +29,11 @@ In the Document Information Extraction UI, access **Template** on the left navig
 
 In the dialog, proceed as follows:
 
-1. Enter a name for your template, `Custom_purchase_order_template`, for example.
+1. Enter a name for your template, `purchase_order_template`, for example.
 
 2. Choose `Purchase Order` as your `Document Type`.
 
-3. Select the schema you created in [Create Custom Schema for Purchase Order Documents](cp-aibus-dox-ui-schema).
+3. Select the schema you created in [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema).
 
 4. Click **Create** to create your template.
 
@@ -43,37 +43,33 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](template-created-dialog.png)
 
-    You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you have defined in your schema.
+    You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you've defined in your schema.
 
     <!-- border -->![Template](associated.png)
 
     <!-- border -->![Template](extraction.png)
 
-    In the next steps, you'll add a document, get the extraction results and edit them so that you can associate the document with your template.
+    In the next steps, you'll upload a document, get the extraction results and edit them so that you can associate the document with your template.
+
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction Trial UI trial account limitations:​
-
->- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
->- Maximum 10 schemas per trial account
->- Maximum 3 templates per trial account
+>When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
-### Add document and get extraction results
+### Upload document and get extraction results
 
 
 >This tutorial uses the following purchase order documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
 
 > - [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
 > - [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
-> - [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf)
 
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](access-document.png)
+    <!-- border -->![Template](add-document.png)
 
 2. On the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
@@ -169,7 +165,7 @@ The last step that remains is to activate the template.
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](access-document2.png)
+    <!-- border -->![Template](add-document2.png)
 
 2. In the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
@@ -195,6 +191,6 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](results2.png)
 
-    You can repeat this step using the [Sample Purchase Order 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-3.pdf).
+    You can now create a schema and a template, and use them to get the extraction results for your own standard document types: invoices, payment advices, and purchase orders.
 
-    Congratulations, you have completed this tutorial.
+    Congratulations, you've completed this tutorial.

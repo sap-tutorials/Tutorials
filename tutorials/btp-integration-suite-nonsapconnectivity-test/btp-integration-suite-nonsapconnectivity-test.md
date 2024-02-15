@@ -9,7 +9,7 @@ author_profile: https://github.com/Karunaharan
 ---
 
 # Test Your Integration Scenario
-<!-- description --> ****
+<!-- description --> During this step, you will test the end-to-end integration scenario that you have built so far.
 
 
 ## You will learn
@@ -22,18 +22,18 @@ In this step, you copy the endpoint address of the deployed integration flow.
 
 1. Open your integration flow.
 
-2. In the **Deployment Status** tab of the property sheet, choose the **Navigate to Manage Integration Content**.
+2. On the **Deployment Status** tab of the property sheet, choose the **Navigate to Manage Integration Content**.
 
     <!-- border -->![Access Deployed Artifact](1-2-Monitoring.png)
 
-3. In the **Endpoints** tab, choose **Copy** icon. If you don't see an endpoint, wait for a few minutes until the endpoint appears.
+3. On the **Endpoints** tab, choose **Copy** icon. If you don't see an endpoint, wait for a few minutes until the endpoint appears.
 
     <!-- border -->![Copy Endpoint URL](1-3-Copy-Endpoint.png)
 
 
 ### Test the integration scenario
 
-In this step, you test your integration design using Postman. You can use any testing platform of your choice.
+During this step, you test your integration design using Postman. You can use any testing platform of your choice.
 
 1. Open your **Postman** application.
 
@@ -45,7 +45,8 @@ In this step, you test your integration design using Postman. You can use any te
 
 5. Hit the **Send** button. You receive a HTTP status 200 with the data from BambooHR system in the **Body** field.
 
-You've now successfully solved the integration problem that was shown in [The Use Case for the Challenge](btp-integration-suite-nonsapconnectivity-usecase).
+Congratulations!
+You've now successfully solved the integration problem that was shown in [The Use Case for the Challenge](btp-integration-suite-nonsapconnectivity-usecase). You see the data coming from your BambooHR trial system.
 
 
 ### Optional Step: Integrate with your own application

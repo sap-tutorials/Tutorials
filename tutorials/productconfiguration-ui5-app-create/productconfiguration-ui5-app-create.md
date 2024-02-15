@@ -1,7 +1,7 @@
 ---
 parser: v2
 author_name: Angelica Rodriguez
-author_profile: https://github.com/angelicarodriguezv
+author_profile: https://github.com/rodriguezangelica
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, programming-tool>sapui5, software-product>sap-web-ide]

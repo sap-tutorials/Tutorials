@@ -75,7 +75,7 @@ The `srv` is not deployable now as it doesn't include any information about the 
     "private": true,
     "dependencies": {
         "@sap/audit-logging": "^5.0.0",
-        "@sap/cds": "^5",
+        "@sap/cds": "^6",
         "@sap/hana-client": "^2.6.61",
         "@sap/xsenv": "^3.1.0",
         "@sap/xssec": "^3.2.0",

@@ -45,9 +45,9 @@ author_profile: https://github.com/Karunaharan
 
 3. Enter a name for the instance.
 
-4. In the **Company Name** field, enter the domain name that you created for your BambooHR trial. You've copied this value in [Preparing Your BambooHR Trial Account ](btp-integration-suite-nonsapconnectivity-settingup-thirdparty).
+4. In the **Company Name** field, enter the domain name that you created for your BambooHR trial. You've copied this value in [Preparing Your BambooHR Trial Account](btp-integration-suite-nonsapconnectivity-settingup-thirdparty).
 
-5. In the **API Key** field, enter the API Key that you generated for your BambooHR trial. You've copied this value in [Preparing Your BambooHR Trial Account ](btp-integration-suite-nonsapconnectivity-settingup-thirdparty).
+5. In the **API Key** field, enter the API Key that you generated for your BambooHR trial. You've copied this value in [Preparing Your BambooHR Trial Account](btp-integration-suite-nonsapconnectivity-settingup-thirdparty).
 
 6. Choose **Create Instance**.
 
@@ -79,7 +79,7 @@ You've now successfully created a BambooHR connector instance. In this step, you
 
 ### Create a Security Material in Cloud Integration
 
-In a further tutorial in the mission, you'll establish integration between Cloud Integration and BambooHR through Open Connectors. For this integration to work as expected, Open Connectors must authenticate you via a user credential. 
+In a later tutorial of this mission, you'll establish an integration between Cloud Integration and BambooHR through Open Connectors. For this integration to work as expected, Open Connectors must authenticate you via a user credential. 
 
 In this step, you'll create a security material in Cloud Integration that takes care of this authentication.
 
@@ -106,7 +106,7 @@ In this step, you'll create a security material in Cloud Integration that takes 
 
 ### Copy the Request URL
 
-In a further tutorial in the mission, you will have to provide a request to this **GET /employees** API so that Cloud Integration invokes it.
+In a later tutorial of this mission, you will have to provide a request to this **GET /employees** API so that Cloud Integration invokes it.
 
 In the successful API response, copy the **Request URL**.
 

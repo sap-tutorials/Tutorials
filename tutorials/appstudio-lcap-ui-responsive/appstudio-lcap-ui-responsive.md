@@ -24,7 +24,7 @@ author_profile: https://github.com/raz-korn
 ### Create an application
 
 
-1. From the home page, click the **+** of the **User Interface** tile.
+1. From the storyboard, click the **+** of the **User Interface** tile.
 
     <!-- border -->![bas lcap launch create ui wizard](BAS-LCAP-Add-UI-Responsive-1-.png)
 
@@ -59,17 +59,17 @@ author_profile: https://github.com/raz-korn
 
     <!-- border -->![bas lcap launch create ui wizard - app generation completed](BAS-LCAP-Add-UI-Responsive-6-.png)
 
-    The app is added to the **User Interface** tab in the home page.
+    The app is added to the **User Interface** tab in the storyboard.
 
-    The **Page Map** (`CapexReport`) editor is opened side-by-side to the home page.
+    The **Page Map** (`CapexReport`) editor is opened side-by-side to the storyboard.
 
 
 ### Preview the app
 
 
-1. If the preview is running, choose **Stop Preview**. If the **Project Preview** tab is open, close it.
+1. If the **Project Preview** tab is open, close it.
 
-2. Choose **Preview** and select **Run CapitalExpenditures-1**..
+2. Choose **Run and Debug** green button from the top right of the screen.
 
     <!-- border -->![bas lcap preview with sample data](BAS-LCAP-Preview.png)
 
@@ -112,7 +112,7 @@ To avoid clicking on the **Go** option every time you want to present the inform
 
     <!-- border -->![bas lcap enable initial load - launch app](BAS-LCAP-Load-Initial-Data-3-.png)
 
-4. Go back to the homepage of SAP Business Application Studio, and choose the **Configure Page** button of the **List Report** page.
+4. Go back to the storyboard of SAP Business Application Studio, and choose the **Configure Page** button of the **List Report** page.
 
     <!-- border -->![bas lcap enable initial load - launch list report edit](BAS-LCAP-Load-Initial-Data-4-.png)
 
@@ -261,7 +261,7 @@ With this, you have successfully completed developing a business application usi
 
 During the development you have modelled your business data. You have created a service through which data in the data model is accessed. You have created a user interface, which is actually an app, from which an application user can interact with the data. Throughout the development process, you continually test run the app, which is a development best practice to make sure the development is on-track.
 
-And in this tutorial, you learned about high-productivity tools that are available out-of-the-box in SAP Business Applications Studio, such as: home page, project explorer, data model editor, service editor, templates and wizards, application editors, application preview, and much more.
+And in this tutorial, you learned about high-productivity tools that are available out-of-the-box in SAP Business Applications Studio, such as: storyboard, project explorer, data model editor, service editor, templates and wizards, application editors, application preview, and much more.
 
 
 ---

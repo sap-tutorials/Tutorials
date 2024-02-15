@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
+tags: [tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
 author_name: Nora von Thenen
 author_profile: https://github.com/noravth

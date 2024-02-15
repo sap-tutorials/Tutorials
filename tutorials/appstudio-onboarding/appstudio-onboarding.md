@@ -18,7 +18,7 @@ author_profile: https://github.com/raz-korn
   - How to set up SAP Business Application Studio
 
 ## Intro
-The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment.
+The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment. 
 
 For setting up SAP Business Application Studio in an enterprise account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
 

@@ -11,21 +11,21 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission
- - You have completed the 8th tutorial on .NET in this mission
+ - You have completed the previous tutorial on .NET in this mission
 
 ## You will learn
   - How to install the .NET Core EF CLI
   - How to create and debug an EF Core application that queries an SAP HANA database
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
 
 ---
 
 ### Install the .NET Core EF CLI
 The `dotnet` tool command can be used to install and manage tools that extend .NET.  The following are a few examples that can be run to show help, to list the local and globally installed tools, to uninstall `dotnet-ef` if an incompatible version is installed, and to search the repository for version details of the `dotnet-ef` tool.
 
-```Shell
+```
 dotnet tool -?
 dotnet tool list -?
 dotnet tool list
@@ -34,12 +34,12 @@ dotnet tool uninstall dotnet-ef -g
 dotnet tool search dotnet-ef --detail
 ```
 
-As of 2023 QRC 1, the supported version is EF Core 6.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
+The SAP HANA Client 2.17 release supports EF Core 6.0 & 7.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-Run the following command to install version 6 of the dotnet-ef tool.
+Run the following command to install version 7 of the dotnet-ef tool.
 
 ```Shell
-dotnet tool install dotnet-ef --version 6.0.14 -g
+dotnet tool install dotnet-ef --version 7.0.12 -g
 dotnet tool list -g
 ```  
 
@@ -79,13 +79,13 @@ dotnet tool list -g
         <Reference Include="Sap.Data.Hana.Core.v2.1">
             <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
         </PackageReference>
     </ItemGroup>
     ```
@@ -95,13 +95,13 @@ dotnet tool list -g
         <Reference Include="Sap.Data.Hana.Core.v2.1">
             <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
         </PackageReference>
     </ItemGroup>
     ```
@@ -109,12 +109,14 @@ dotnet tool list -g
 
     Once the `dotNet.csproj` file has been updated, save, and close the file.    
 
-3.  Run the app to validate that SAP HANA DLLs can be loaded:
+3.  Run the app to validate that SAP hdbclient DLLs can be loaded:
 
     ```Shell
     dotnet run
     ```
-    >If a warning occurs mentioning that a reference could not be resolved, double check that the hintpath is correct.
+    The expected output is `Hello, World!`.
+
+    >If a warning occurs mentioning that a SAP reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
 
 4. Open an editor and create a file named `HotelModel.cs`.
 
@@ -158,7 +160,7 @@ dotnet tool list -g
     }
     ```
 
-    Ensure that you update the host URL and optionally the user name and password.  Note that calls to EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted) it will delete all objects in the schema USER2.
+    Be sure to update the host URL and optionally the user name and password.  Note that calls to EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted) it will delete all objects in the schema USER2.
 
 6.  Open an editor to edit the file `Program.cs`.
 
@@ -170,7 +172,7 @@ dotnet tool list -g
     pico Program.cs
     ```
 
-7.  Replace the entire contents of `Program.cs` with the code below:  
+7.  Replace the entire contents of `Program.cs` with the code below. Save and close the file when finished.
 
     ```C#
     using var db = new HotelContext();
@@ -192,7 +194,7 @@ dotnet tool list -g
 
     Further details on SAP HANA Client entity core driver can be found at [Entity Framework Core Support](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/3e6ef454ffc94cda8fefb0acf5be007b.html).  Further .NET API details can be found in the [.NET API browser](https://learn.microsoft.com/en-us/dotnet/api/?view=efcore-6.0).
 
-6.  Run the app:
+8.  Run the app:
 
     ```Shell
     dotnet run
@@ -206,9 +208,9 @@ dotnet tool list -g
 ### Debug the application
 
 
-1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
+1. Open Visual Studio Code. If needed, download the application [here](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 

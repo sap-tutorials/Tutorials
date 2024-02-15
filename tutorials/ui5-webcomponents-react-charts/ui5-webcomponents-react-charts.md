@@ -29,9 +29,9 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
      npm install @ui5/webcomponents-react-charts
     ```
 
-2. Then, import `LineChart` and `BarChart` into `MyApp.jsx`.
+2. Then, import `LineChart` and `BarChart` into `MyApp.tsx`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
     ```
 
@@ -40,7 +40,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` prop with an empty array as value.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Text style={spacing.sapUiContentPadding}>
       This is the content area of the Card
     </Text>
@@ -51,7 +51,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 2. Add data to your component, since `data` is static you can define it outside of the component, right above your `MyApp` component.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const dataset = [
       {
         month: "January",
@@ -86,7 +86,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 3. Now add the `dataset` to your `LineChart` and configure the `dimensions` and `measures` props.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <LineChart
       dimensions={[{ accessor: "month" }]}
       measures={[{ accessor: "data", label: "Stock Price" }]}
@@ -102,7 +102,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
     We want the same data just with a different representation, therefore you can use the same props as you did with the `LineChart`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <BarChart
       dimensions={[{ accessor: "month" }]}
       measures={[{ accessor: "data", label: "Stock Price" }]}
@@ -112,9 +112,9 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
     Two charts are rendered now with equal datasets but different representation.
 
-Your `MyApp.jsx` component should look like this:
+Your `MyApp.tsx` component should look like this:
 
-```JavaScript / JSX
+```TypeScript / TSX
 import React from "react";
 import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
@@ -192,20 +192,20 @@ export function MyApp() {
 
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
-1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
-    - Import the `useState` function in the header of the `MyApp.jsx` file (replace the current import of React).
-    ```JavaScript / JSX
-      import React, { useState } from "react";
+1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://react.dev/reference/react/useState) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
+    - Import the `useState` function in the header of the `MyApp.tsx` file.
+    ```TypeScript / TSX
+      import { useState } from "react";
     ```
     - Use the `useState` function in the right after you start to define the `MyApp` function (before the click handler).
-    ```JavaScript / JSX
+    ```TypeScript / TSX
       const [toggleCharts, setToggleCharts] = useState("lineChart");
     ```
 
 2. By clicking on the `CardHeader` the state should be set corresponding to the chart which should be displayed.
 
     Rewrite your `onClick` function so it will handle this logic.
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const handleHeaderClick = () => {
       if (toggleCharts === "lineChart") {
         setToggleCharts("barChart");
@@ -215,7 +215,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     };
     ```
 3. To only render the current chart, add the following lines to the render of the component:
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -250,13 +250,13 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 4. You can further improve your `CardHeader` component by using the `avatar` `prop` and adding an `Icon` to it.
 
     Add the following import to your component:
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
     ```
 
     Icons can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
     import barChartIcon from '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
     ```
@@ -265,7 +265,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 
     Add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CardHeader
       ...
       avatar={<Icon name={lineChartIcon} />}
@@ -273,7 +273,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     ```
 
     Then, change the `name` prop of the `Icon` to the following:
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CardHeader
        avatar={ <Icon name={ toggleCharts === "lineChart" ? lineChartIcon : barChartIcon } /> }
        ...
@@ -287,8 +287,8 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 
 
 If something went wrong you can compare your component to this code snippet:
-```JavaScript / JSX
-import React, { useState } from "react";
+```TypeScript / TSX
+import { useState } from "react";
 import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
@@ -384,13 +384,13 @@ One of the main advantages of React is how UI updates are handled. React will on
 
 1. In order to demonstrate this behavior, add a new `state` (right after the definition of the previous state).
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
       const [loading, setLoading] = useState(false);
     ```
 
 2. Then edit your `handleHeaderClick` function like this:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const handleHeaderClick = () => {
         if (toggleCharts === "lineChart") {
           setLoading(true);
@@ -410,7 +410,7 @@ One of the main advantages of React is how UI updates are handled. React will on
 
 3. Add `loading` to both of your charts.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <LineChart
       dimensions={[{ accessor: "month" }]}
       measures={[{ accessor: "data", label: "Stock Price" }]}
@@ -419,7 +419,7 @@ One of the main advantages of React is how UI updates are handled. React will on
     />
     ```
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <BarChart
       dimensions={[{ accessor: "month" }]}
       measures={[{ accessor: "data", label: "Stock Price" }]}
@@ -442,7 +442,7 @@ To make your `Card` look cleaner and to give the user the information that the h
 
     The content text is not really informative. Let's change that and display the type of the chart. Add the following constants to your component (after the event handler):
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const contentTitle = toggleCharts === 'lineChart' ? 'Line Chart' : 'Bar Chart';
     const switchToChart = toggleCharts === 'lineChart' ? 'Bar Chart' : 'Line Chart';
     ```
@@ -452,7 +452,7 @@ To make your `Card` look cleaner and to give the user the information that the h
     First change the value of `titleText` to something that explains the content of the `Card` (e.g., `"Stock Price"`).
     Then add a `subtitleText` prop. Here you can give the users the information that they can switch between charts by clicking the header.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader

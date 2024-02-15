@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Create an SAP Fiori Elements-Based Analytical UI for your CAP Application
 description: This tutorial shows you how to create an analytical page using SAP Fiori elements app on top of your previously created CAP application.
 keywords: cap
@@ -31,6 +31,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 SAP Fiori elements is a framework that comprises the most commonly used floor plans and is designed to:
@@ -91,16 +105,16 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Generate the UI with an SAP Fiori elements template)]
+[ACCORDION-BEGIN [Step 3: ](Generate the UI with an SAP Fiori template)]
 1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
     > In case you get an error launching the Application Generator, see the [SAP Fiori tools FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) on SAP Help Portal to find a solution.
 
-2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
+2. Choose application type **SAP Fiori** and floor plan **List Report Page**.
 
-       ![V4 Template](vscv4template_fea.png)
+       !![V4 Template](analytics-template-selection.png)
 
     > Why not use the Analytical List Page floor plan?
 
@@ -122,11 +136,11 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
-    ![CAPpro](datasourceselection_fea.png)
+    !![CAPpro](analytics-data-source.png)
 
 6. Select **Risks Analysis** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
-    ![entitySelection](entityselection_fea.png)
+    !![entitySelection](analytics-entity-selection.png)
 
 7. Enter `risk-analysis` as the module name and `Risk Analysis` as the application title.
 
@@ -134,7 +148,7 @@ Create a new service for Analytics as given in [Create a CAP-Based Application](
 
 9. Choose **Finish** to generate the application.
 
-    ![Project Names](project_attributes_fea.png)
+    !![Project Names](analytics-project-attributes.png)
 
 The application is now generated and in a few seconds you can see it in the `app` folder of your project. It contains a `risk-analysis` and a `webapp` folder with a `Component.js` file that is characteristic for an SAPUI5 app.
 
@@ -167,7 +181,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Add the following lines to it:
 
-    ```JSON[24-70]
+    ```JSON[25-70]
     {
         "_version": "1.40.0",
         "sap.app": {
@@ -191,8 +205,8 @@ The application is now generated and in a few seconds you can see it in the `app
                             ...
                             "navigation": {
                             ...
-                            },
-                            "initialLoad": true,
+                            }
+                            ,"initialLoad": true,
                             "views": {
                                 "paths": [
                                     {

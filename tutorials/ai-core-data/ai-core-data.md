@@ -532,7 +532,37 @@ With your object store secret created, you can now reference any sub-folders to 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+You can create the create artifact for first `train.csv` that we uploaded to `jan` folder by visiting Datasets tab under ML operations and clicking on ADD.
+
+<!-- border -->![image](img/ail/artifact1.jpg)
+
+Choose scenario as House Price (Tutorial) and click next.
+
+<!-- border -->![image](img/ail/artifact2.jpg)
+
+
+Enter name as `House Price Dataset 101` enter description for the dataset and click next.
+
+<!-- border -->![image](img/ail/artifact3.jpg)
+
+Enter the URL as `ai://mys3/data/jan` and click on next
+
+<!-- border -->![image](img/ail/artifact4.jpg)
+
+Enter the labels for your Dataset and click on Review
+
+<!-- border -->![image](img/ail/artifact5.jpg)
+
+You would be able to see all the details for the artifact you are trying to register just validate all the data and click on add.
+
+<!-- border -->![image](img/ail/artifact6.jpg)
+
+You would be able to see the artifact created in the datasets tab that can be located at ML operations > datasets.
+
+<!-- border -->![image](img/ail/artifact7.jpg)
+
+
+
 
 [OPTION END]
 
@@ -629,7 +659,7 @@ print(response.__dict__)
 
 You have learnt to add data artifacts, allowing you to ingest more data over time.
 
-### Important points to notice
+**Important points to notice**
 
 1. Notice the `url` used in above snippet is `ai://mys3/data/jan`, here `mys3` is the object store secret name that you created previously. Hence the path translates as `ai://<PATH_PREFIX_OF_mys3>/data/jan` which is the directory that your dataset file is located in.
 2. The `url` points to a directory, not a file, which gives you advantage that you can store multiple files in an AWS S3 directory and register the directory containing all files as a single artifact.
@@ -770,7 +800,8 @@ Use the artifact ID of the `jan` dataset and the placeholder names to create a c
     ]
 }
 ```
-### Important points
+
+**Important points**
 
 1. You bind the artifact in the section `inputArtifactBindings`, where `key` denotes the placeholder name from your workflow and `artifactId` is the unique ID of the artifact that you registered. In later steps, you will bind the `feb` dataset's artifact ID, to learn how the same workflow can be used with multiple datasets.
 
@@ -804,7 +835,7 @@ print(response.__dict__)
 
 <!-- border -->![image](img/aics/config.png)
 
-### Important points
+**Important points**
 
 1. You bind the artifact in the section `inputArtifactBindings`, where `key` denotes the placeholder name from your workflow and `artifactId` is the unique ID of the artifact that you registered. In later steps, you will bind the `feb` dataset's artifact ID, to learn how the same workflow can be used with multiple datasets.
 
@@ -908,8 +939,8 @@ spec:
           path: /app/data/ # where to copy in the Dataset in the Docker image
     outputs:
       artifacts:
-        - name: housepricemodel # name of the artifact generated, and folder name when placed in S3, complete directory will be `../<executaion_id>/housepricemodel`
-          globalName: housemodel # local identifier name to the workflow, also used above in annotation
+        - name: housepricemodel # local identifier name to the workflow
+          globalName: housemodel # name of the artifact generated, and folder name when placed in S3, complete directory will be `../<executaion_id>/housemodel`. Also used above in annotation
           path: /app/model/ # from which folder in docker image (after running workflow step) copy contents to cloud storage
           archive:
             none:   # specify not to compress while uploading to cloud
@@ -1024,11 +1055,13 @@ Enter a configuration name and select your other details. Select your updated th
 
 Type `5` for the `DT_MAX_DEPTH` field and click **Next**.
 
-Attach the `feb` artifact that you have registered.
+Attach the `feb` artifact that you have registered and click **Review**.
 
 <!-- border -->![image](img/ail/config-f-2.png)
 
-Click **Review** > **Create**.
+click **Create**.
+
+![image](img/ail/create_conf.png)
 
 [OPTION END]
 
@@ -1089,12 +1122,13 @@ print(response.__dict__)
 
 ### Create another execution
 
-
 Use your new configuration to create an execution.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click **Create Execution** in the configuration details page.
+
+<!-- border -->![image](img/ail/create_exec.png)
 
 <!-- border -->![image](img/ail/output.png)
 
@@ -1140,6 +1174,35 @@ When your execution shows status **COMPLETED**, you will see that a new model ar
 
 Generating and associating metrics (model quality) will covered in a separate tutorial.
 
+### Schedule your execution (Optional)
+
+Go to executions and click on *Schedule*.
+
+![image](img/ail/sch1.png)
+
+Choose your scenario and click on **Next**.
+
+![image](img/ail/sch2.png)
+
+Choose your executable and click on **Next**.
+
+![image](img/ail/sch3.png)
+
+Choose your configuration and click on **Next**.
+
+![image](img/ail/sch4.png)
+
+Give a name for the schedule and set the time.
+
+![image](img/ail/sch5.png)
+
+Click **Create**.
+
+![image](img/ail/sch6.png)
+
+Now go to **Schedules** to see your schedules.
+
+![image](img/ail/sch7.png)
 
 ### Locate your model in AWS S3
 
@@ -1151,6 +1214,9 @@ aws s3 ls s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/model/<YOUR_EX
 ```
 
 You are listing the files in the path `example-dataset/house-price-toy/model/` because this is the value you set earlier for the `pathPrefix` variable, for your object store secret named `default`.
+
+
+
 
 <!-- border -->![image](img/aws-model.png)
 

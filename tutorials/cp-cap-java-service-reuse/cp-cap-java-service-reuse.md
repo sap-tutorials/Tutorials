@@ -29,6 +29,8 @@ You will then run your application -- still without any custom coding required -
 
 From the products service that you created in the previous tutorial, we just want to reuse the domain and service models. For the bookstore, which you will develop in this tutorial, we need to create and initialize a bookstore project first.
 
+> Make sure you stopped your application from the previous tutorial.
+
 1. From the main menu of SAP Business Application Studio, choose **Terminal** **&rarr;** **New Terminal**.
 
 2. Before adding the `bookstore` project, we need to make sure that you are in the projects folder. Both projects (`products-service` and `bookstore`) should be placed next to each other. Run the following command in the newly created terminal to go back to the projects folder:
@@ -41,7 +43,7 @@ From the products service that you created in the previous tutorial, we just wan
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE -DjdkVersion=11 \
+    -DarchetypeVersion=RELEASE -DjdkVersion=17 \
     -DgroupId=com.sap.cap -DartifactId=bookstore
     ```
 
@@ -258,7 +260,7 @@ After defining the domain model and the services that you want to expose, you co
     +	`sap.capire.products-Products_texts.csv`
     +	`sap.capire.bookstore-Authors.csv`
 
-    The name of the CSV has to match the pattern [namespace]-[entity name] exactly otherwise the the application will fail to start.
+    The name of the CSV has to match the pattern [namespace]-[entity name] exactly, otherwise the application will fail to start.
 
 
 
@@ -272,7 +274,6 @@ After defining the domain model and the services that you want to expose, you co
     ```
 
 2. Ensure that you have stopped all previously running applications (including the `products-service` application) by using **`CTRL+C`**.
-> In case you forgot to stop the `products-service` application and the tab in which it was started is no longer opened you can run `killall mvn` in the terminal to ensure it's terminated.
 
 3. Start the application by running:
 
@@ -284,11 +285,11 @@ After defining the domain model and the services that you want to expose, you co
 
 5. When you open the URL in a new tab, you will see a welcome page. To see the books data click on **Books** directly from the welcome page.
 
-    > Instead of clicking on the Books entry on the welcome page, you could simple add `odata/v4/BooksService/Books` to the URL.
+    > Instead of clicking on the Books entry on the welcome page, you could simple add `/odata/v4/BooksService/Books` to the URL.
 
     <!-- border -->![data for books entity](books-data.png)
 
-6. To read the localized German example data, append the query parameter `?sap-language=de` to the URL. For example, `<APP_URL>/odata/v4/BooksService/Books?sap-language=de`. Try to switch the language between German (`de`) and English (`en`).
+6. To read the localized German example data, append the query parameter `?sap-locale=de` to the URL. For example, `<APP_URL>/odata/v4/BooksService/Books?sap-locale=de`. Try to switch the language between German (`de`) and English (`en`).
 
 Great Job! You have successfully developed the bookstore application and reused your products service from the previous tutorial.
 
