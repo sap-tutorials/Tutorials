@@ -159,7 +159,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
       If there's an output of a version of `brew`, you got brew and it's best if you install the CF CLI.
 
     ```Shell/Bash
-    brew install cloudfoundry/tap/cf-cli
+    brew install cloudfoundry/tap/cf-cli@8
     ```
 
       If you don't have `brew`, you might want to consider installing [brew](https://brew.sh/), because it lets you install many software packages easily even outside the context of this tutorial.

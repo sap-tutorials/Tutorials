@@ -111,7 +111,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`.
 
-    ```YAML[4-9]
+    ```YAML[4-8]
     ...
     resources:
     ...
@@ -120,6 +120,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
       parameters:
         service: application-logs
         service-plan: lite
+    parameters:
+    ...
     ```
 2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
