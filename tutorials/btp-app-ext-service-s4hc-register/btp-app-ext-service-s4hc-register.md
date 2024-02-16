@@ -58,9 +58,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
       !![s4h1](s4h1.png)
 
-6. Choose **Get Token**.
+6. In the dropdown list for **Communication Scenario Groups**, Choose **All Communication Scenarios**.
 
       !![s4h1](s4h1_get_token.png)
+
+6. Choose **Get Token**.
+
+      !![s4h1](s4h1_get_token2.png)
 
 7. Copy the generated token and keep this page open.
 
@@ -87,7 +91,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
       !![s4h5](s4h5.png)
 
-6. Choose **Save** and wait until the status displayed for your newly registered system switches to **Enabled** – potentially you need to refresh your page.
+6. Choose **Create**, then choose **Yes** to approve the creation, and wait until the status displayed for your newly registered system switches to **Enabled** – it's possible that you would need to refresh your page.
 
       !![s4h6](s4h6.png)
 

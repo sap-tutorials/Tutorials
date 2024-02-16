@@ -12,8 +12,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - Before you start with this tutorial, you have two options:
-  - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`launchpage`](btp-app-launchpage) branch.
-    - Complete the previous tutorial [Use a Local Launch Page](btp-app-launchpage) with all its prerequisites.
+- Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-business-logic`](btp-app-cap-business-logic) branch.
+- Complete the previous tutorial [Add Business Logic to Your Application](btp-app-cap-business-logic) with all its prerequisites.
 
 
 ## Details
@@ -83,17 +83,17 @@ Since the authorization checks have been added to the CAP model, they apply not 
 
 CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we will edit the `cpapp/package.json` file to add the users.
 
-1. Add the following to your cpapp/package.json:
+1. Add this to the end of the file `cpapp/package.json`:
 
-```JSON[9-29]
+```JSON[7-31]
 {
   "name": "cpapp",
   ...
-  "cds": {
+  "sapux": [
+    "app/risks"
+  ]
+  ,"cds": {
     "requires": {
-      "[production]": {
-        ...
-      },
       "[development]": {
         "auth": {
           "kind": "mocked",
@@ -115,9 +115,7 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
           }
         }
       }
-      ...
-    },
-  ...
+    }
   }
 }
 ```
@@ -156,9 +154,7 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 [ACCORDION-BEGIN [Step 3: ](Access the Risks application with password)]
 When accessing the `Risks` service in your browser, you get a basic auth popup now, asking for your user and password. You can use the two users to log in and see that it works.
 
-1. With `cds watch` running, go to <http://localhost:4004/launchpage.html>.
-
-2. Choose **Risks** and choose **Go**.
+1. With `cds watch` running, go to <http://localhost:4004/risks/webapp/index.html>.
 
 3. Enter **Username**: `risk.manager@tester.sap.com`.
 

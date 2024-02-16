@@ -47,7 +47,7 @@ To be able to access the application, your user needs to be assigned to a role c
 
 5. Choose **Edit**.
 
-5. Enter the **E-Mail Address** of your user.
+5. Enter the **E-Mail Address** of your user in the ID Field under **Users**, as you type a popup will appear showing your user, choose it.
 
 6. Choose **Save**.
 
