@@ -20,9 +20,9 @@ author_profile: https://github.com/raz-korn
 ## Intro
 The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment. 
 
-For setting up SAP Business Application Studio in an Enterprise Account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
+For setting up SAP Business Application Studio in an enterprise account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
 
-In an Enterprise Account you can set up SAP Business Application Studio as a Free-Tier service by checking its **free** plan during its entitlement configuration.
+In an enterprise account you can set up SAP Business Application Studio as a free-tier service by selecting the **free** plan during entitlement configuration.
 
 ---
 
@@ -48,11 +48,11 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
     <!-- border -->![Cloud Foundry Enabled](CFEnabled.png)
  
-4. If Cloud Foundry is not enabled, press the button **Enable Cloud Foundry**.
+4. If Cloud Foundry is not enabled, press the **Enable Cloud Foundry** button.
 
     <!-- border -->![Enable Cloud Foundry](EnableCF.png)
 
-### Check for Needed Entitlements
+### Check for Required Entitlements
 
 1. Go to **Entitlements**. 
 
@@ -60,7 +60,7 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
 2. Make sure the entitlements listed below are added. If you can’t find the entitlements make sure to add them as described here: [Setting Up Your Trial Account | SAP Help Portal](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-env-setting-up-your-trial-account?locale=f16df12fab9f4fe1b8a4122f0fd54b6e.html).
 
-    Authorization and Trust Management Service – all 4 plans should be added.
+    Authorization and Trust Management Service – add all 4 plans.
 
     <!-- border -->![Entitlements](Entitlements01.png)
  
@@ -83,11 +83,11 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
     <!-- border -->![launch sap business application studio](BTP-Access-AppStudio-.png)
 
-    >In recently created trial accounts, SAP Business Application Studio is subscribed to by default.
+    >When you create a new trial account, you are subscribed to SAP Business Application Studio by default.
 
-    >If you receive an error message and your recently created account was created with error, it is recommended that you re-create your account: delete the account and then [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+    >If you receive an error message, we recommend that you recreate your account: delete the account and then [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
-    >**CAUTION:** If you receive an error message and your account was not created recently, you need to add a subscription to SAP Business Application Studio. Answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
+    >**Important:** If you receive an error message but your account was not created recently, you need to add a subscription to SAP Business Application Studio. Answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
 
 3. You might be asked to accept the legal terms. Check the box and click **OK**.
 
@@ -97,7 +97,7 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
 
     <!-- border -->![sap business application studio welcome](BAS-Welcome--.png)
 
-    >If this is not the first dev space, the dev space manager for SAP Business Application Studio loads.
+    >If this is not the first dev space, the dev space manager for SAP Business Application Studio opens.
 
     ><!-- border -->![Create Dev Space](BAS-Dev-Space-Manager-Empty-.png)
 
@@ -108,16 +108,14 @@ In an Enterprise Account you can set up SAP Business Application Studio as a Fre
     >Dev space manager for SAP Business Application Studio
     ><!-- border -->![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
 
-    >**Bookmark this page!**
-
-    >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
+    >Create a bookmark to this page to make it easy for you to get back to SAP Business Application Studio later.
 
     <br>
-    >**PAY ATTENTION:** If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
+    >If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step and mark the rest of the steps as "Completed".
 
-### Add SAP Business Application Studio subscription to subaccount
+### Add the SAP Business Application Studio Subscription to the Subaccount
 
-Depending on when you created the SAP BTP Trial account, this subscription might already be added in the subaccount. If you are not subscribed to SAP Business Application Studio, follow this step to add the SAP Business Application Studio subscription to a subaccount.
+Depending on when you created the SAP BTP Trial account, this subscription might already be added to the subaccount. If you are not subscribed to SAP Business Application Studio, follow this step to add the SAP Business Application Studio subscription to a subaccount.
 
 1. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
@@ -139,13 +137,13 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
 3. From the navigation area, click **Service Marketplace**.
 
-    <!-- border -->![opensubscriptions](Cockpit-Navigate-to-Subscriptions-.png)
+    <!-- border -->![opensubscriptions](Cockpit-Navigate-to-Subscriptions-2.png)
 
 4. In the **Service Marketplace** page, search for **`studio`**.
 
     <!-- border -->![filterservice](Cockpit-Filter-and-Select-AppStudio-Subscription-.png)
 
-5. Click **Actions** icon (three dots) to open the list of available actions.
+5. Click the **Actions** icon (three dots) to open the list of available actions.
 
     <!-- border -->![subscribe](Cockpit-Subscribe-.png)
 
@@ -175,7 +173,7 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     <!-- border -->![legalterms](AppStudio-Terms-.png)
 
-3. An **Access Denied** page may appear. Log out from SAP Business Application Studio and then log in as depicted below.
+3. An **Access Denied** page may appear. Log out from SAP Business Application Studio and then log in as shown here.
 
     <!-- border -->![Logout](AppStudio-Access-Denied-Logout-.png)
     &nbsp;
@@ -189,20 +187,18 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     <!-- border -->![legalterms](AppStudio-Terms-.png)
 
-6. A new tab opens and the welcome page for SAP Business Application Studio loads.
+6. A new tab opens and the welcome page for SAP Business Application Studio opens.
 
     <!-- border -->![sap business application studio welcome](BAS-Welcome--.png)
 
-7. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
+7. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager.
 
     <!-- border -->![sap business application studio welcome](BAS-Welcome-.png)
 
     >Dev space manager for SAP Business Application Studio
     ><!-- border -->![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
 
-    >**Bookmark this page!**
-
-    >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
+    >Create a bookmark to this page to make it easy for you to get back to SAP Business Application Studio later.
 
 
 ---

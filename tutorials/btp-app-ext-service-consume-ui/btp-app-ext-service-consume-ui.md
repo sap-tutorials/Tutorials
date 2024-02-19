@@ -208,7 +208,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
     cds watch --profile sandbox
     ```
 
-6. Open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app)
+6. Open the **Risks** application: [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html)
 
 7. Choose **Go**.
 
@@ -268,7 +268,7 @@ The last thing you add is the value help to select a supplier from the remote sy
     cds watch --profile sandbox
     ```
 
-4. Open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app)
+4. Open the **Risks** application: [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html)
 
 5. Choose **Go**.
 

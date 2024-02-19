@@ -147,7 +147,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Fill Main Data](fillriskdata.png)
 
-4. Click on the browser's back button, the new risk is created but it has no title.
+4. Close the tab and choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html), the new risk is created but it has no title.
 
     !![No Title Risk](notitlerisk.png)
 
@@ -186,6 +186,8 @@ To make also the header fields editable, you have to change the default setting 
 3. Create another risk with a title and description.
 
     !![My New Risk](mynewrisk.png)
+
+4. Close the tab and choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html), a new risk is created and it has the title and description.
 
 [DONE]
 [ACCORDION-END]

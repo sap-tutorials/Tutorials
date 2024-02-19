@@ -93,17 +93,18 @@ And created scopes and roles for both in the `xs-security.json` file:
   "scopes": [
     {
       "name": "$XSAPPNAME.RiskViewer",
-      "description": "Risk Viewer"
+      "description": "RiskViewer"
     },
     {
       "name": "$XSAPPNAME.RiskManager",
-      "description": "Risk Manager"
+      "description": "RiskManager"
     }
   ],
+  "attributes": [],
   "role-templates": [
     {
       "name": "RiskViewer",
-      "description": "Risk Viewer",
+      "description": "generated",
       "scope-references": [
         "$XSAPPNAME.RiskViewer"
       ],
@@ -111,7 +112,7 @@ And created scopes and roles for both in the `xs-security.json` file:
     },
     {
       "name": "RiskManager",
-      "description": "Risk Manager",
+      "description": "generated",
       "scope-references": [
         "$XSAPPNAME.RiskManager"
       ],

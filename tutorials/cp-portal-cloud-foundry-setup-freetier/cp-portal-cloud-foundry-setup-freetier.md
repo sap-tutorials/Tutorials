@@ -45,25 +45,25 @@ author_profile: https://github.com/LindsayBert
 
     <!-- border -->![Open Entitlements](1-open-entitlements.png)
 
-2. In the **Select Entities** dropdown list, choose the `JobCore EMEA` subaccount that you want to assign entitlements to, and click **Select**.
+2. In the **Select Subaccount and Directories** dropdown list, choose the `JobCore EMEA` subaccount that you want to assign entitlements to, and click **Select**.
 
-    <!-- border -->![Select entities](2-select-entities.png)
+    <!-- border -->![Select entities](2-select-subaccount.png)
 
     You'll see a table for the subaccount with all the entitlements it already has.
 
-3. Click **Configure Entitlements**.
+3. Click **Edit**.
 
-    <!-- border -->![Configure entitlements](3-configure-entitlements.png)
+    <!-- border -->![Click edit](3-click-edit.png)
 
 4. Click **Add Service Plans**.
 
     <!-- border -->![Add Service plan](4-add-service-plan.png)
 
-5. Search for **SAP Build Work Zone, standard edition** and then check the **free (Application)** plan that you want to entitle.
+5. Search for **SAP Build Work Zone, standard edition**, check the **free (Application)** plan that you want to entitle and then click **Add 1 Service Plan**.
 
-6. Click **Add Service Plan** to exit the popup screen.
+    <!-- border -->![Add Service plan](5-free-plan.png)
 
-7. Click **Save**.
+6. Click **Save**.
 
     <!-- border -->![Save](6-save.png)
 
@@ -75,25 +75,30 @@ author_profile: https://github.com/LindsayBert
 
 Now that you've entitled your subaccount for the free plan, you will subscribe to SAP Build Work Zone, standard edition.
 
-1. Open your `JobCore EMEA` subaccount and select **Services** > **Service Marketplace**.
+1. From the Account Explorer, search for and open your `JobCore EMEA` subaccount.
+
+    <!-- border -->![Open subaccount](7-search-for-subaccount.png)
+
+
+2. Select **Services** > **Service Marketplace**.
 
     <!-- border -->![Go to service Marketplace](7-go-to-service-marketplace.png)
 
-2. Enter `build work zone` in the search field to search for the **SAP Build Work Zone, advanced edition** tile.
+3. Enter `SAP Build` in the search field to search for the **SAP Build Work Zone, standard edition** tile.
 
-    <!-- border -->![Find launchpad tile](8-search-launchpad.png)
+    <!-- border -->![Find launchpad tile](8-search-standard-edition.png)
 
-3. Click the tile to get information about the service and then click **Create** in the top right corner to subscribe to the service.
+4. Click the tile to get information about the service and then click **Create** in the top right corner to subscribe to the service.
 
     <!-- border -->![Create subscription](9-create-subscription.png)
 
-      You'll get a popup with basic information about the subscription, showing that your plan is `free`.  Click **Create**.
+5. From the popup you'll see that your plan is **free**. Click **Create**.
 
+    <!-- border -->![Subscription details ](10-subscription-details.png)
 
-  4. You are informed that your request for a new subscription is in process. Click **View Subscription** to view the **Subscribed** status on the **Services and Instances** page.
+6. You are informed that your request for a new subscription is in process. Click **View Subscription** to view the **Subscribed** status on the **Services and Instances** page.
 
       <!-- border -->![View Subscription](11-view-subscription.png)
-
 
 
 

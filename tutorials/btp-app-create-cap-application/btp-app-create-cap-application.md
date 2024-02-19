@@ -20,7 +20,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add files to your project
 
 ---
-
 > This tutorial will soon be phased out. 
 > 
 > For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
@@ -204,7 +203,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     > You may have to stop the CAP server with <kbd>Ctrl</kbd> + <kbd>C</kbd> and restart it with the `cds watch` command.
 
-8. Revisit the `Risks` entity <http://localhost:4004/service/risk/Risks> in your browser. You now see the data exposed.
+8. Revisit the `Risks` entity <http://localhost:4004/odata/v4/service/risk/Risks> in your browser. You now see the data exposed.
 
     !![Service Data](servicedata.png)
 

@@ -119,7 +119,7 @@ Once you have your SAP BTP account setup, proceed to the next step to learn how 
 
     ![hana cloud central](hcc-app.png)
 
-Congratulations, you have added free tier services to your account on SAP BTP! You now have the ability to [provision your free tier instance of SAP HANA Cloud](hana-cloud-mission-trial-2) and start your journey.
+Congratulations, you have added free tier services to your account on SAP BTP! You now have the ability to [provision your free tier instance of SAP HANA Cloud](hana-cloud-mission-trial-3) and start your journey.
 
 
 ### Get to know SAP BTP cockpit
