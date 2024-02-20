@@ -4,14 +4,13 @@ author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database ]
 primary_tag: software-product>sap-hana-cloud
 ---
 
 # Monitoring an SAP HANA Cloud, SAP HANA Database
 <!-- description --> Learn what you can monitor in SAP HANA Cloud, SAP HANA database and how to do that in SAP HANA cockpit.
 
-## Prerequisites
 ## You will learn
 - What SAP HANA on-premise and SAP HANA Cloud, SAP HANA database have in common
 - What the differences between on-premise and cloud service are
@@ -24,9 +23,6 @@ With SAP HANA Cloud, you can manage your databases with the SAP HANA cockpit, ju
 Important to know is that, even though you will manage your SAP HANA Cloud database with the SAP HANA cockpit, for the short term, you will need two different instances of the cockpit: one for your on-premises databases and another for the cloud databases.
 
 This tutorial will give you an overview of the main differences between SAP HANA on-premise and SAP HANA Cloud, SAP HANA database in terms of monitoring.
-
-
----
 
 ### Introduction to SAP HANA Cockpit
 
