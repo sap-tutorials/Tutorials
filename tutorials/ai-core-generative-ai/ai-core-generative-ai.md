@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-ai-core, topic>machine-learning]
+tags: [ tutorial>beginner, software-product>sap-ai-core, topic>machine-learning]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul 
 author_profile: https://github.com/dhrubpaul
@@ -29,7 +29,8 @@ For more information, see [SAP AI Core documentation](https://help.sap.com/docs/
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Check whether the *foundation-models* scenario is present in your workspace
+Go to **ML Operations** -> **Scenarios**. Check whether the **foundation-models** scenario is present in your AI-Core workspace.
+
 
 ![image](images/ail05.png)
 
@@ -37,9 +38,11 @@ Check whether the *foundation-models* scenario is present in your workspace
 
 [OPTION BEGIN [POSTMAN]]
 
-Check whether the *foundation-models* scenario is present in your workspace
+Check whether the **foundation-models** scenario is present in your workspace. Send a GET request to 
 
-Send a GET request to ```{{baseUrl}}/lm/scenarios```
+```
+{{baseUrl}}/lm/scenarios
+```
 
 Always make sure that AI-Resource-Group header is set to your resource group id.
 
@@ -51,14 +54,15 @@ Always make sure that AI-Resource-Group header is set to your resource group id.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Go to the configuration tab in ML Operations, click create.
+Go to **ML Operations** -> **Configurations**. Click on the **Create** button
 
 ![image](images/ail04.png)
 
 
-- Give a name for the configuration, 
-- Select the foundation-models scenario. 
-- Choose the version and executable ID. 
+1. Give a name for the configuration.
+1. Select the **foundation-models** scenario. 
+1. Choose the version.
+1. Choose the Executable ID.
 
 
 ![image](images/ail03.png)
@@ -73,7 +77,7 @@ These are the models available as of now:
 
 Note that the model version can be given as *latest*. If the model version is not specified, it will be set to *latest* by default.
 
-Click **Next** -> **Review** -> **Create**.
+Click on **Next** -> **Review** -> **Create** to create the configuration.
 
 Model versions have deprecation dates. Where a model version is specified, the deployment will stop working on the deprecation date of that model version.
 
@@ -87,7 +91,13 @@ Implement one of the following model upgrade options:
 
 [OPTION BEGIN [POSTMAN]]
 
-Create a new configuration by sending a POST request to ```{{baseURL}}/lm/configurations```
+Create a new configuration by sending a POST request to 
+
+```
+{{baseURL}}/lm/configurations
+```
+
+Include the following in the body of the request.
 
 ```JSON
 {
@@ -143,7 +153,7 @@ Once you created the configuration, click on **Create Deployment**.
 
 ![image](images/ail06.png)
 
-Set duration as standard and click review.
+Set duration as standard and click on the **Review** button.
 
 ![image](images/ail07.png)
 
@@ -159,25 +169,84 @@ Once the deployment is running, you can access your models in the Generative AI 
 
 You can make LLM available for use by creating a virtual LLM deployment. You can do so once for each model and model version.
 
-Create a deployment by sending a POST request to ```{{baseUrl}}/lm/deployments```
+Create a deployment by sending a POST request to 
+
+```
+{{baseUrl}}/lm/deployments
+```
 
 Include the following JSON in the body of the request
 
 ```JSON
 {
-  "configurationId":  "7b760c52-73a9-4192-8351-1b7b384d8c5f"
+  "configurationId":  "<configuration-id>"
 }
 ```
 
-Replace the ```configurationId``` value with the *id* you received in the previous step.
+Replace the ```<configuration-id>``` value with the *id* you received in the previous step.
 
 ![image](images/pm03.png)
 
-Once the deployment is created, check the status of deployment by sending a GET request to ```{{baseUrl}}/lm/deployments```
+Once the deployment is created, check the status of deployment by sending a GET request to 
+
+```
+{{baseUrl}}/lm/deployments
+```
 
 ![image](images/pm04.png)
 
-Note the ```deploymentUrl```, which you will be using for executing queries.
+Note down the ```deploymentUrl``` in the response, which you will be using for executing your queries.
+
+[OPTION END]
+
+
+### Prompt Management
+
+[OPTION BEGIN [SAP AI Launchpad]]
+
+In the Generative AI Hub, you can manage your prompts in the Prompt Management page. Go to **Generative AI Hub** -> **Prompt Management**. Here you can click on a prompt to go to its details page.
+
+![image](images/p_manage06.png)
+
+1. Here on the left hand pane, you can see the different versions of the prompt. Once you choose a new version, the details of that version will be displayed.
+
+1. Click on **Open in Prompt Editor** to open the chosen prompt in the prompt editor.
+
+1. You can delete the prompt by clicking the **Delete** button.
+
+![image](images/p_manage05.png)
+
+In the prompt management page, you can filter the prompts based on created date, collection, model used, etc. 
+
+![image](images/p_manage04.png)
+
+If the filter pane is not visible, click on the toggle button to display it.
+
+![image](images/p_manage03.png)
+
+You can add some prompts to favorite for quick access. Click on the star icon to add  prompts to favorites. Click on the **Favorites** tab to see them.
+
+![image](images/p_manage02.png)
+
+You can also select multiple prompts and delete them.
+
+![image](images/p_manage01.png)
+
+[OPTION END]
+
+### Prompt Administration
+
+[OPTION BEGIN [SAP AI Launchpad]]
+
+Go to **Generative AI Hub** -> **Administration**.
+
+![image](images/adm02.png)
+
+Here you can delete all the data of a particular user. Type the email id of the user and press *Enter*.
+
+If the user data is found, the **Delete** button will become active. Click on the **Delete** button to delete all the prompts saved by that particular user.
+
+![image](images/adm01.png)
 
 [OPTION END]
 
@@ -219,15 +288,15 @@ Scroll down and click on the arrow to select Model and parameters.
 
 - ```Temperature``` What sampling temperature to use, between 0 and 2. Higher values will make the output more random, while lower values will make it more focused and deterministic.
 
-After selecting the model and setting the parameters, give your prompt in the prompt field, and click on **Run** to get your output. You can save the response by clicking **Save**
+After selecting the model and setting the parameters, give your prompt in the prompt field, and click on the **Run** button to get your output. You can save the response by clicking on the **Save** button.
 
 ![image](images/p_edit04.png)
 
-Click on **Create New** if you want to start a new prompt.
+Click on the **Create New** button if you want to start a new prompt.
 
 ![image](images/p_edit03.png)
 
-You can open a previously saved prompt by clicking on **Select**
+You can open a previously saved prompt by clicking on the **Select** button.
 
 ![image](images/p_edit02.png)
 
@@ -239,7 +308,14 @@ Choose the prompt and click **Select** to open the prompt.
 
 [OPTION BEGIN [POSTMAN]]
 
-To make a query, send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15.```
+To make a query, send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
+
+*Note :* with each inference request we need to pass the AI core JWT token and AI-Resource-Group in header with your resource group id as value. failing to pass same will throw and 404 Error. Refer step 1 on how to set Headers in Postman
+
 
 Include the following JSON in the body of the request
 
@@ -280,57 +356,43 @@ You can also include optional parameters such as:
 
 [OPTION END]
 
-### Prompt Management
 
-[OPTION BEGIN [SAP AI Launchpad]]
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-In the Generative AI Hub, you can manage your prompts in the Prompt Management page.
+To install the generative-ai-hub-sdk package in your system, open your terminal or command prompt and run the following command.
 
-![image](images/p_manage06.png)
+```TEXT
+pip3 install generative-ai-hub-sdk
+```
 
-Click on a prompt to go to the details page.
+Now you have generative-ai-hub-sdk installed in your system.
 
-1. Here on the left hand pane, you can see the different versions of the prompt. Once you choose a new version, the details of that version will be displayed.
 
-1. Click on **Open in Prompt Editor** to open the chosen prompt in the prompt editor.
+You have to configure proxy modules to use the large language models. 
 
-1. You can delete the prompt by clicking the **Delete** button.
+Open your terminal or command prompt and navigate to the folder where you have your ai-core keys. Then run the following command to configure it.
 
-![image](images/p_manage05.png)
+```TEXT
+aicore-llm configure -k keys.txt
+```
+![image](images/aicore-llm.png)
 
-In the prompt management page, you can filter the prompts based on created date, collection, model used, etc. 
 
-![image](images/p_manage04.png)
+You can use the gen_ai_hub for prompting large language models such as gpt-3.5, gpt-4 and falcon-40b.
 
-If the filter pane is not visible, click on the toggle button to display it.
+Open a python programming environment of your choice and run the following code
 
-![image](images/p_manage03.png)
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+from gen_ai_hub.proxy.langchain.init_models import init_embedding_model
 
-You can add some prompts to favorite for quick access. Click on the star on a prompt to add them to favorites. Click on the *favorites* tab to see them.
-
-![image](images/p_manage02.png)
-
-You can also select multiple prompts and delete them.
-
-![image](images/p_manage01.png)
-
-[OPTION END]
-
-### Prompt Administration
-
-[OPTION BEGIN [SAP AI Launchpad]]
-
-In the Generative AI Hub, go to Prompt Administration tab.
-
-![image](images/adm02.png)
-
-Here you can delete all the data of a particular user. Type the email id of the user and press *Enter*.
-
-If the user data is found, the **Delete** button will become active. Click on the delete button to delete all the prompts saved by that user
-
-![image](images/adm01.png)
+llm = init_llm('gpt-4', temperature=0., max_tokens=256)
+embeddings = init_embedding_model('text-embedding-ada-002')
+chat.invoke('What is generative AI?').content
+```
 
 [OPTION END]
+
 
 ### Text Summarization
 
@@ -338,7 +400,9 @@ This example tasks the LLM with condensing and summarizing a given text. The tex
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Your task is to generate a short summary of a text.
@@ -394,12 +458,18 @@ Beyer
 Wirtschaftsprufer [German Public Auditor]
 Wiegand Wirtschaftsprufer [German Public Auditor]
 ```
+
 ![image](images/ail12.png)
+
 [OPTION END]
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -424,13 +494,82 @@ Include the following in the body of the request.
 [OPTION END]
 
 
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+open Jupter notebook or python IDE and run the following code to infrence the model using GPT-3.5-turbo .
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """Your task is to generate a short summary of a text.
+Summarize the text below, in at most 30 words. 
+
+Review: Independent Assurance Practitioner's Report
+To the Supervisory Board of SAP SE, Walldorf
+We have performed a limited assurance engagement on the non-financial statement of SAP SE (further "Company" or "SAP") and on the non-financial statement of the parent company that is combined with it, which are published in the Management Report, (further "combined non-financial statement") for the period from January 1 to December 31, 2022.
+Responsibilities of Management
+Management of the company is responsible for the preparation of the combined non-financial statement in accordance with Sections 315c in conjunction with 289c to 289e HGB ["Handelsgesetzbuch": German Commercial Code] and Article 8 of REGULATION (EU) 2020/852 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of June 18, 2020 on establishing a framework to facilitate sustainable investment and amending Regulation (EU) 2019/2088 (hereinafter the "EU Taxonomy Regulation") and the Delegated Acts adopted thereunder, as well as for making their own interpretation of the wording and terms contained in the EU Taxonomy Regulation and the delegated acts adopted thereunder as set out in section "Sustainable Finance: EU Taxonomy Disclosures" of the combined non-financial statement.
+This responsibility includes the selection and application of appropriate non-financial reporting methods and making assumptions and estimates about individual non-financial disclosures of the group that are reasonable in the circumstances. Furthermore, management is responsible for such internal control as they consider necessary to enable the preparation of a combined non-financial statement that is free from material misstatement, whether due to fraud or error.
+The EU Taxonomy Regulation and the Delegated Acts issued thereunder contain wording and terms that are still subject to considerable interpretation uncertainties and for which clarifications have not yet been published in every case. Therefore, management has disclosed their interpretation of the EU Taxonomy Regulation and the Delegated Acts adopted thereunder in section "Sustainable Finance: EU Taxonomy Disclosures" of the combined non-financial statement. They are responsible for the defensibility of this interpretation. Due to the immanent risk that indeterminate legal terms may be interpreted differently, the legal conformity of the interpretation is subject to uncertainties.
+Independence and Quality Assurance of the Assurance Practitioner's firm
+We have complied with the independence and quality assurance requirements set out in the national legal provisions and professional pronouncements, in particular the Professional Code for German Public Auditors and Chartered Accountants (in Germany) and the quality assurance standard of the German Institute of Public Auditors (Institut der Wirtschaftsprufer, IDW) regarding quality assurance requirements in audit practice (IDW QS 1).
+Responsibility of the Assurance Practitioner
+Our responsibility is to express a conclusion with limited assurance on the combined non-financial statement based on our assurance engagement.
+We conducted our assurance engagement in accordance with International Standard on Assurance Engagements (ISAE) 3000 (Revised): "Assurance Engagements other than Audits or Reviews of
+41/335
+  SAP Integrated Report 2022
+ To Our Stakeholders
+    Combined Group Consolidated Financial Further Information on Management Report Statements IFRS Sustainability
+  Additional Information
+  Historical Financial Information" issued by the IAASB. This standard requires that we plan and perform the assurance engagement to obtain limited assurance about whether any matters have come to our attention that cause us to believe that the company's non-financial statement, is not prepared, in all material respects, in accordance with Sections 315c in conjunction with 289c to 289e HGB and the EU Taxonomy Regulation and the Delegated Acts issued thereunder as well as the interpretation by management disclosed in section "Sustainable Finance: EU Taxonomy Disclosures" of the combined non-financial statement. We do not, however, issue a separate conclusion for each disclosure.
+In a limited assurance engagement, the procedures performed are less extensive than in a reasonable assurance engagement, and accordingly, a substantially lower level of assurance is obtained. The selection of the assurance procedures is subject to the professional judgment of the assurance practitioner.
+In the course of our assurance engagement we have, among other things, performed the following assurance procedures and other activities:
+– Interviewing employees responsible for the materiality analysis at group level in order to obtain an understanding on the approach for identifying key issues and related reporting limits of SAP,
+– Carrying out a risk assessment, inclusive of media analysis, on relevant information on sustainability performance of SAP in the reporting period,
+– Assessing the design and implementation of systems and processes for identifying, handling, and monitoring information on environmental, employee and social matters, human rights and combating corruption and bribery, including the consolidation of data,
+– Interviewing staff on group level, who are responsible for the disclosures on concepts, due diligence processes, results and risks, the performance of internal control activities and the consolidation of the disclosures,
+– Inspecting selected internal and external documents,
+– Analytically assessing the data and trends of the quantitative information, which is reported on group level of all locations,
+– Evaluating the local data collection, validation, and reporting processes as well as the reliability of the reported data by means of a sampling survey at two locations,
+– Interviewing of responsible staff on group level to obtain an understanding of the approach to identify relevant economic activities in accordance with the EU taxonomy,
+– Evaluating the design and implementation of systems and procedures for identifying, processing, and monitoring information on turnover, capital expenditures and operating expenditures for the taxonomy-relevant economic activities for the first two environmental objectives climate change mitigation and climate change adaptation,
+– Evaluating the data collection, validation, and reporting processes, as well as the reliability of the reported data for the taxonomy-aligned economic activities in conjunction with the assessment of the technical evaluation criteria for the substantial contribution, the fulfilment of the DNSH-criteria and the documentation of the minimum safeguard,
+– Assessment of the overall presentation of the disclosures.
+In determining the disclosures in accordance with Article 8 of the EU Taxonomy Regulation, management is required to interpret undefined legal terms. Due to the immanent risk that undefined legal terms may be interpreted differently, the legal conformity of their interpretation and, accordingly, our assurance engagement thereon are subject to uncertainties.
+Assurance Opinion
+Based on the assurance procedures performed and the evidence obtained, nothing has come to our attention that causes us to believe that the combined non-financial statement of SAP SE, Walldorf for
+42/335
+
+ SAP Integrated Report 2022
+To Our Stakeholders
+Combined Group Consolidated Financial Further Information on Management Report Statements IFRS Sustainability
+Additional Information
+the period from January 1 to December 31, 2022 has not been prepared, in all material respects, in accordance with Sections 315c in conjunction with 289c to 289e HGB and the EU Taxonomy Regulation and the Delegated Acts issued thereunder as well as the interpretation by management as disclosed in section "Sustainable Finance: EU Taxonomy Disclosures" of the combined non-financial statement.
+Restriction of Use
+This assurance report is solely addressed to SAP SE, Walldorf.
+Our assignment for SAP SE, Walldorf and professional liability is governed by the General Engagement Terms for Wirtschaftsprufer (German Public Auditors) and Wirtschaftsprufungs- gesellschaften (German Public Audit Firms) (Allgemeine Auftragsbedingungen fur Wirtschaftsprufer und Wirtschaftsprufungsgesellschaften) in the version dated January 1, 2017 (https://www.kpmg.de/bescheinigungen/lib/aab_english.pdf). By reading and using the information contained in this assurance report, each recipient confirms having taken note of provisions of the General Engagement Terms (including the limitation of our liability for negligence to EUR 4 million as stipulated in No. 9) and accepts the validity of the attached General Engagement Terms with respect to us.
+Mannheim, den 22. Februar 2023
+KPMG AG Wirtschaftsprufungsgesellschaft
+Beyer
+Wirtschaftsprufer [German Public Auditor]
+Wiegand Wirtschaftsprufer [German Public Auditor]"""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
+
+
 ### Question Answering
 
 This example instructs the LLM to formulate a concise response to a specific question, with the context provided for reference. The LLM's answer should be encapsulated within triple backticks, ensuring a clear distinction between the question and the response. If the LLM is uncertain about the correct answer based on the provided context, it is instructed to reply with "Unsure about answer", offering a clear acknowledgment of uncertainty rather than providing potentially inaccurate information. Where we took a part of memo by Christian Klein from SAP Annual report.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Answer the question  based on the context below. Keep the answer short and concise. 
@@ -491,7 +630,11 @@ Question: How is SAP performing?
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```TEXT
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -514,13 +657,81 @@ Include the following in the body of the request.
 
 [OPTION END]
 
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """Answer the question  based on the context below. Keep the answer short and concise. 
+Respond "Unsure about answer" if not sure about the answer.
+Context: Dear Fellow Shareholders,
+It's hard to summarize the year 2022 in a few words – as the pandemic continued, the world also faced new and unexpected challenges, such as the terrible war in Ukraine, that hugely impacted all of our lives. We have faced conflicts and geopolitical tensions, climate change, the energy crisis, inflation, and volatile markets. Yet, once again, we have seen solidarity in times of crisis – people coming together to provide support to those in need when it mattered most. Despite the ongoing uncertainties in the world, SAP has remained in a strong position.
+2022 marked the 50th anniversary of SAP, which we celebrated together with our customers, partners, and colleagues across the world. Five decades ago, our founders set out to redefine business software and in doing so, forever changed the way the world runs. Their innovative thinking, pioneering spirit, and drive laid the foundation for the rise of SAP – and they are still the basis for our success today, as we are carrying their legacy forward to drive positive change for our planet and its people – something that has never been more relevant or important than today.
+Our hearts remain with the people impacted by the war in Ukraine. As announced, SAP has stopped all sales in Russia and Belarus, and we are in the process of a total withdrawal from these markets. For 2023, while business wind-down continues, our focus is on further reducing the remaining SAP footprint in Russia. We hope for the swift restoration of peace and will continue to help those affected by this war.
+7/335
+  SAP Integrated Report 2022
+ To Our Stakeholders
+    Combined Group Consolidated Financial Further Information on Management Report Statements IFRS Sustainability
+  Additional Information
+  The last year was a stark reminder that no one business, government, or society can tackle the greatest challenges of our time alone. For that, a change is needed, and technology plays a key role in finding solutions to our global challenges.
+Over two years ago, we embarked on our transformation journey to move SAP towards a cloud company. This, together with our vision to enable every organization and every industry to become a network of intelligent, sustainable enterprises, is perfectly aligned with the challenges our customers face. From increasing speed and agility, building transparent and resilient supply chains, and recording, reporting, and acting on sustainability, our solutions provide the value our customers need:
+– With RISE with SAP, we enable organizations to become agile, intelligent enterprises.
+– With the SAP Business Network, we connect millions of companies, allowing organizations to
+benefit from connected networks.
+– With our SAP sustainability solutions, we enable organizations to truly operate sustainably.
+Looking at our financial numbers, we met all of our outlook metrics in 2022. Our strong full-year 2022 results at a glance:
+– Cloud revenue continued to be our main growth driver, increasing by 24%1.
+– Current cloud backlog increased by 24%1.
+– Total revenue grew 5%1.
+– IFRS Operating profit was flat, while non-IFRS operating profit decreased by 7%1.
+– Free cash flow was €4.35 billion.
+2022 was a volatile year on the market, with technology stocks particularly hard hit. Our shares were not immune from this overall trend. Our share price decreased 22.8% in 2022, below the DAX, which lost 12.4%, but better than the NASDAQ 100, which decreased 33% over the course of the year. We want our shareholders to participate in our success. Therefore, we have proposed an annual dividend of €2.05 per share2,  an increase of approximately 5% over the prior year's regular dividend.
+Customer Net Promoter Score (NPS) decreased 7 points year over year to 3 in 2022, hitting the lower end of the revised outlook range. SAP's Employee Engagement Index decreased 3 percentage points to 80%, a continued high level of engagement at the low end of the revised outlook range. The software as a service-industry scores overall have declined over the past few years of the pandemic. SAP continues to get feedback about needed improvements around pricing increases, licensing structure, product-related topics, support, service and stability of account team relationships. This type of transparent feedback and accountability helps provide us with the information to better focus investments and further improve our customer relationships. SAP's retention rate was 92.3% (2021: 92.8%). Further, the proportion of women in management increased to 29.4% (2021: 28.3%) and we also reached 35% of women in the workforce. Net carbon emissions continued to decrease, at 85 kilotons in 2022, down 25 kt year over year.
+In addition to driving our ESG goals internally, we also take our wider social and environmental responsibility very seriously:
+– In total, SAP donated more than €4.2 million to support Ukraine in cooperation with organizations such as UNICEF, UNHCR, and the German Red Cross. This includes our employee donation campaign which became SAP's largest employee donation campaign to date.
+– SAP extended its partnership with UNICEF through Generation Unlimited (GenU), focusing on employability. The partnership also supports SAP Educate to Employ, a new program educating
+1 At constant currencies
+2 Pending approval of Annual General Meeting of Shareholders
+ 8/335
+
+  SAP Integrated Report 2022
+ To Our Stakeholders
+    Combined Group Consolidated Financial Further Information on Management Report Statements IFRS Sustainability
+  Additional Information
+  youth in need on soft skills, foundational knowledge, and SAP skills to enable a pathway to a successful career in the SAP ecosystem.
+– Together with partners, we launched the TRANSFORM Support Hub offering virtual pro bono consulting opportunities worldwide, connecting SAP employees to social enterprises.
+Net-net: We believe that together with our customers, colleagues, and partners around the world, we can turn the world's greatest challenges into opportunities for a prosperous and greener future. 2022 was one of the most important years in our history. As we head into 2023, we are committed to further optimizing and improving our business. We are deepening our focus on delivering lifetime value to current and new customers in the cloud and on high-growth opportunities where SAP can lead. Across SAP, we are laying the foundation for SAP's ongoing success, expanding our position as the #1 Enterprise Application company on the planet, powered by our leading platform. 
+Finally, I want to express my deepest thanks for your continuous trust in SAP. I certainly look back on 2022 with pride and gratitude for the many ways SAP's teams around the world are making a difference. I'm very much looking forward to 2023, and the great achievements our over 100,000 colleagues will continue to deliver as we pursue our vision to enable every organization and every industry to become a network of intelligent, sustainable enterprises.
+Sincerely,
+Christian Klein CEO, SAP SE
+9/335
+
+  
+ SAP Integrated Report 2022
+To Our Stakeholders
+Combined Group Consolidated Financial Further Information on Management Report Statements IFRS Sustainability
+Additional Information
+SAP Executive Board
+Question: How is SAP performing?
+"""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
+
 ### Text Classification - Sentiment Analysis
 
 This example directs an LLM to perform sentiment analysis on a provided product review. The LLM is instructed to assess the sentiment of the review text and respond with a single word, either "positive" or "negative". The review text is clearly delineated using triple backticks, ensuring clarity about which portion of the text needs to be analyzed. This format aims to extract concise and direct sentiment evaluations without any ambiguity.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 What is the sentiment of the following product review, 
@@ -531,11 +742,16 @@ Give your answer as a single word, either "positive" or "negative".
 Review text: '''SAP has Best work Environment and Best ERP product'''
 ```
 ![image](images/ail14.png)
+
 [OPTION END]
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```TEXT
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -559,6 +775,25 @@ Include the following in the body of the request.
 
 [OPTION END]
 
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """What is the sentiment of the following product review, 
+which is delimited with triple single quotes?
+
+Give your answer as a single word, either "positive" or "negative".
+
+Review text: '''SAP has Best work Environment and Best ERP product'''"""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
 
 ### Expansion
 
@@ -566,7 +801,9 @@ Here in this demo we are going to try out show text expansion qualities of AI co
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Expand it into a 500 word blog post
@@ -579,7 +816,11 @@ SAP AI core is a platform for building AI applications. which can be used to tra
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```TEXT
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -603,13 +844,31 @@ Include the following in the body of the request.
 
 [OPTION END]
 
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """Expand it into a 500 word blog post
+SAP AI core is a platform for building AI applications. which can be used to train and deploy AI applications. as well as act as a model and dataset artifactory."""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
+
 ### Tone adjustment
 
 Here in tone Adjustment we are trying to showcase use the LLM's capabilities to change/modify the tone of a text written by a new employee at SAP to proper professional tone.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Translate the following input to a Corporate language
@@ -622,7 +881,11 @@ Sap Blue a new product from SAP. that is a gig based product. launched in 2016 r
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```TEXT
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -646,13 +909,33 @@ Include the following in the body of the request.
 
 [OPTION END]
 
+
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """Translate the following input to a Corporate language
+Sap Blue a new product from SAP. that is a gig based product. launched in 2016 relaunched in 2023."""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
+
+
 ### Spell-check / Grammar-check
 
 Here we picked a paragraph on SAP and made a few spelling and grammatical errors. Now we will be asking the LLM to fix those errors by proofreading the content.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 proofread and correct this review: SAP SE is a German multinationl software company based in Walldorf, Baden-Wurttemberg. It develops enterprise software to manage business operations and customer relations. The company is the world leading enterprise resource planing software vendor.
@@ -664,7 +947,11 @@ proofread and correct this review: SAP SE is a German multinationl software comp
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -688,13 +975,30 @@ Include the following in the body of the request.
 
 [OPTION END]
 
-### Doing multiple tasks at once
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Copy the following text into the prompt editor and click **Run**.
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """proofread and correct this review: SAP SE is a German multinationl software company based in Walldorf, Baden-Wurttemberg. It develops enterprise software to manage business operations and customer relations. The company is the world leading enterprise resource planing software vendor."""
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
+
+### Doing multiple tasks at once
 
 We picked up a random review from trust pilot on SAP ERP and want the LLM to perform multiple tasks at once which include sentiment analysis, checking if the user is angry with the product, which product/item they are talking about and which brand does it belong to.
 
 [OPTION BEGIN [SAP AI Launchpad]]
+
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Identify the following items from the review text: 
@@ -717,7 +1021,11 @@ Review text: '''A true ERP software available in the market which captures 60% o
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -741,6 +1049,31 @@ Include the following in the body of the request.
 
 [OPTION END]
 
+[OPTION BEGIN [GENERATIVE AI HUB SDK]]
+
+Similarly change the value for prompt and re-run the cell in jupter notebook.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+
+prompt = """Identify the following items from the review text: 
+- Sentiment (positive or negative)
+- Is the reviewer expressing anger? (true or false)
+- Item purchased by reviewer
+- Company that made the item
+
+The review is delimited with triple backticks.
+Format your response as a JSON object with "Sentiment", "Anger", "Item" and "Brand" as the keys.
+If the information isn't present, use "unknown" as the value.
+Make your response as short as possible. Format the Anger value as a boolean.
+
+Review text: '''A true ERP software available in the market which captures 60% of market share and known as a ERP leader. The best part about the product that it can be used cloud based and it can be integrated with several modules which are equally relevant as a department. I have been a part of SAP from past 12+ years and I am extremely happy of using and referring this product to others as well. This isn't only beneficial for companies but can also make careers for humans as well. Now a days cloud based functionality and integration with API tools are the best part in it. Easy to customize according to the requirement of a client. It has several features and capabilities 1. Cost efficient, 2. Advance data management, 3. Saves time, 4. Increase productivity, 5. Real time data saving to server's, 6. Avoid duplication and ensures transparency. Best product available in the market.''' """
+
+llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
+chat.invoke(prompt).content
+```
+
+[OPTION END]
 
 ### Few-Shot Prompting
 
@@ -756,7 +1089,9 @@ In summary, by using a few-shot learning approach, the model is guided to unders
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 Your task is to answer in a consistent style.
@@ -779,7 +1114,11 @@ Grandparent:
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
@@ -824,7 +1163,9 @@ In summary, from a prompt engineering standpoint, this example effectively lever
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Copy the following text into the prompt editor and click **Run**.
+Go to **Generative AI Hub** -> **Prompt Editor**.
+
+Copy the following text into the message box and click on the **Run** button.
 
 ```TEXT
 You are a customer service AI assistant. 
@@ -847,7 +1188,11 @@ Customer review: So, they still had the 17 piece system on seasonal sale for aro
 
 [OPTION BEGIN[POSTMAN]]
 
-Send a POST request to ```{{deploymentUrl}}/chat/completions?api-version=2023-05-15```
+Send a POST request to 
+
+```
+{{deploymentUrl}}/chat/completions?api-version=2023-05-15
+```
 
 Include the following in the body of the request.
 
