@@ -41,7 +41,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 -	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **16 GB of memory, 1 vCPU, and 80 GB of storage**.
 
--   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45G memory) and are therefore *not supported* in a trial account.
+-   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45 GB of memory) and are therefore *not supported* in a trial account.
 
 
 ### Sign up for the SAP HANA Cloud trial

@@ -44,7 +44,7 @@ In this tutorial, you will learn how to create an SAP Business Technology Platfo
 
 -	With the free tier model for SAP BTP you start with a productive account right away. The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  
 
--	The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30GB of memory, 2vCPUs, and 120GB of storage**.
+-	The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30 GB of memory, 2 vCPUs, and 120 GB of storage**.
 
 -	In comparison, SAP BTP trial (introduced in the first tutorial) allows you to build full applications in a test environment to learn and explore the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
 
