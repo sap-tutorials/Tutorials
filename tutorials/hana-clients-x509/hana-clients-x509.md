@@ -239,6 +239,7 @@ Execute the following SQL statement to create a database user.
 
 ```SQL
 CREATE USER TESTX509_TECHNICAL WITH IDENTITY 'CN=TESTX509' FOR X509 PROVIDER DEMO_X509_PROVIDER SET USERGROUP DEFAULT;
+SELECT * FROM USERS WHERE USER_NAME = 'TESTX509_TECHNICAL';
 ```
 
 The above is known as an explicit mapping.  The common name, or CN value, in the user matches to CN value in the client certificate.  It is also possible to use matching rules specified on the provider.  
@@ -396,7 +397,9 @@ If you wish to undo the steps in this tutorial, execute the following SQL and co
 DROP USER TESTX509_TECHNICAL;
 DROP PSE X509_PSE;
 DROP CERTIFICATE DEMOROOTCA_CERT;
+DROP CERTIFICATE X509_USER_CERT;
 DROP X509 PROVIDER DEMO_X509_PROVIDER;
+DROP USER TESTUSER;
 ```
 
 ```Shell (Microsoft Windows)
