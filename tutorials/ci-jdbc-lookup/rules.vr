@@ -1,0 +1,14 @@
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+Which fields are MANDATORY to define the SQL Statement in SAP Cloud Integration?
+
+###Match
+[X] Access Parameters
+[X] Table Name
+[ ] SP Parameters
+[X] SQL Action
+
+[VALIDATE_3]
