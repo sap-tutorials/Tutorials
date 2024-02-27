@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-service-for-sap-btp
 # Reconfigure Trust Relationships on SAP HANA XS Systems
 <!-- description --> Reconfigure a SAML trust relationship on your SAP HANA XS database system from the file system to the in-memory store.
 
-## Prerequisites
+## Prerequisites 
  - You have installed an **SAP HANA XS system in the SAP BTP, Neo environment** that you'd like to convert to an **SAP HANA MDC system**. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
  - You have configured a trust relationship between your identity provider and your SAP HANA XS system using SAML on the file system.
  - You have access to your identity provider and the required roles to configure SAML trust relationships.
