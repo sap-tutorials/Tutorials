@@ -1,125 +1,115 @@
-import logging
-
-FORMAT = "%(asctime)s:%(name)s:%(levelname)s - %(message)s"
-# Use filename="file.log" as a param to logging to log to a file
-logging.basicConfig(format=FORMAT, level=logging.INFO)
-
-
-"""# Inferencing"""
-
 import os
-import logging
+
 import numpy as np
-"""### Load Model"""
+import tensorflow as tf
 
-#loading best model
+from sklearn.preprocessing import LabelEncoder
+from tensorflow import keras
+
+DEFAULT_SERVE_PATH = 'tf_files'
+SERVE_PATH = os.environ.get('SERVE_FILES_PATH') or DEFAULT_SERVE_PATH
+AVAILABLE_GPUS = tf.config.list_physical_devices('GPU')
+
 class Model:
-  def __init__(
-      self,
-      source_path='/content'
-  ):
-    self.source_path = source_path
-    self.model = None
-    self.load_model()
-  #
-  def load_model(
-      self,
-      filename = 'model.h5'
-    ):
-    from tensorflow.keras.models import load_model
-    self.model = load_model(f'{self.source_path}/{filename}')
-    self.model.summary()
-    return self.model
-  def predict(self, seq):
-    '''
-    Parameters
-    ---
-    seq : numpy.ndarray
-      <1, MAX_PAD_LEN>
-    '''
-    return self.model.predict(seq)
+    """
+    A class representing a machine learning model for prediction.
 
+    Parameters:
+    - source_path: The path to the directory containing the model file. Default is 'tf_files'.
 
-"""### Text Process - pre and post"""
+    Attributes:
+    - source_path: The path to the directory containing the model file.
+    - model: The loaded TensorFlow/Keras model.
+    """
+    def __init__(self, source_path: str = SERVE_PATH) -> None:
+        self.source_path = source_path
+        self.model = None
+        self.__load_model()
 
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+    def __load_model(self, filename: str = 'model.h5') -> None:
+        model_filepath = os.path.join(self.source_path, filename)
+        self.model = keras.models.load_model(model_filepath, compile=False)
+
+    def predict(self, seq: np.ndarray) -> np.ndarray:
+        """
+        Generates predictions using the loaded model.
+
+        Parameters:
+        - seq: Input sequence for prediction -- shape <1, MAX_PAD_LEN>
+
+        Returns:
+        - Predicted values based on the input sequence.
+        """
+        return self.model.predict(seq)
+
 
 class TextProcess:
-  def __init__(
-      self,
-      source_path='/content'
-    ):
-    self.source_path = source_path
-    #
-    self.max_pad_len = None # assinged in next line
-    self.get_pad_len()
-    #
-    self.encoder = None 
-    self.load_label_encoder()
-    #
-    self.load_tokenizer()
-  #
-  def get_pad_len(self, filename='max_pad_len.txt'):
-    with open(f'{self.source_path}/{filename}') as file:
-      self.max_pad_len = int(file.read())
-  #
-  def load_label_encoder(
-      self,
-      filename='label_encoded_classes.npy'
-    ):
-    from sklearn.preprocessing import LabelEncoder
-    self.encoder = LabelEncoder()
-    self.encoder.classes_ = np.load(f'{self.source_path}/{filename}')
-    return self.encoder
-  #
-  def load_tokenizer(self,
-      filename = 'tokens.json'
-    ):
-    # read as <str> from JSON file
-    with open(f'{self.source_path}/{filename}', 'r') as tokenfile:
-      tokens_info = tokenfile.read()
-    #
-    from tensorflow.keras.preprocessing.text import tokenizer_from_json
-    self.tokenizer = tokenizer_from_json(tokens_info)
-    return self.tokenizer
-  #
-  def pre_process(self, sentence):
-    '''converts sentence to token
-    
-    Parameters
-    ---
-    sentence : str
+    """
+    A class for text processing including tokenization, padding, and post-processing predictions.
 
-    Returns
-    ---
-    x_seq : numpy.ndarray shape <1, self.max_pad_len>
-    '''
-    x_seq = self.tokenizer.texts_to_sequences(sentence)
-    x_seq = pad_sequences(x_seq, maxlen=self.max_pad_len)
-    return x_seq
-  #
-  def post_process(self, prediction):
-    '''Convert back to orginial class name
+    Parameters:
+    - source_path: The path to the directory containing the required files. Default is 'tf_files'.
 
-    Parameters
-    ---
-    prediction : numpy.ndarray (dtype = float32, shape = (1, n_classes) #n_classes captured within the model
-    
-    Returns:
-    ---
-    dict 
-      <predicted_class_name, probability>
-      ONLY the maximum confident class
-    '''
-    prediction_flatten = prediction.flatten()
-    probability_argmax = np.argmax(
-        prediction_flatten
-    )
-    probability = prediction_flatten[probability_argmax]
-    #
-    predicted_class_name = self.encoder.inverse_transform(
-        [probability_argmax]
-    )[0]
-    return {predicted_class_name: float(probability)}
+    Attributes:
+    - source_path: The path to the directory containing the required files.
+    - max_pad_len: The maximum length for padding sequences.
+    - encoder: The label encoder for mapping classes to integers.
+    - tokenizer: The text tokenizer.
+    """
+    def __init__(self, source_path: str = SERVE_PATH) -> None:
+        self.source_path = source_path
 
+        self.max_pad_len = None
+        self.__get_pad_len()
 
+        self.encoder = None
+        self.__load_label_encoder()
+
+        self.tokenizer = None
+        self.__load_tokenizer()
+
+    def __get_pad_len(self, filename: str = 'max_pad_len.txt') -> None:
+        pad_len_filepath = os.path.join(self.source_path, filename)
+        with open(pad_len_filepath) as file:
+            self.max_pad_len = int(file.read())
+
+    def __load_label_encoder(self, filename: str = 'label_encoded_classes.npy') -> None:
+        encoded_classes_path = os.path.join(self.source_path, filename)
+        self.encoder = LabelEncoder()
+        self.encoder.classes_ = np.load(encoded_classes_path)
+
+    def __load_tokenizer(self, filename: str = 'tokens.json') -> None:
+        tokenizer_path = os.path.join(self.source_path, filename)
+        with open(tokenizer_path, 'r') as tokenfile:
+            tokens_info = tokenfile.read()
+        self.tokenizer = keras.preprocessing.text.tokenizer_from_json(tokens_info)
+
+    def pre_process(self, sentence: str) -> np.ndarray:
+        """
+        Pre-processes a given sentence by tokenizing and padding it.
+
+        Parameters:
+        - sentence: input sentence for processing
+
+        Returns:
+        - the pre-processed sequence -- shape <1, MAX_PAD_LEN>
+        """
+        x_seq = self.tokenizer.texts_to_sequences([sentence])
+        return keras.utils.pad_sequences(x_seq, maxlen=self.max_pad_len)
+
+    def post_process(self, prediction: np.ndarray) -> dict:
+        """
+        Post-processes the model's prediction by extracting the predicted class and its probability.
+
+        Parameters:
+        - prediction: the model's raw prediction (dtype = float32, shape = (1, n_classes) #n_classes captured within the model
+
+        Returns:
+        - a dictionary containing the predicted class and its probability. Only the maximum confident class
+        """
+        prediction_flatten = prediction.flatten()
+        probability_argmax = np.argmax(prediction_flatten)
+        probability = prediction_flatten[probability_argmax]
+
+        predicted_class_name = self.encoder.inverse_transform([probability_argmax])[0]
+        return {predicted_class_name: float(probability)}
