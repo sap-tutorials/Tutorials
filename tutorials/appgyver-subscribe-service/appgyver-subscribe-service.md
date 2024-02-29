@@ -1,8 +1,8 @@
 ---
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform,software-product>sap-build,software-product>sap-appgyver]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform,software-product>sap-build]
+primary_tag: software-product>sap-build-apps
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
