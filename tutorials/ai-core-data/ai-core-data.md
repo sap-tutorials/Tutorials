@@ -427,7 +427,7 @@ You now know how to upload and use multiple datasets with SAP AI Core.
 List your files in your AWS S3 bucket by editing the following command:
 
 ```BASH
-aws s3 ls s3//<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
+aws s3 ls s3://<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 ```
 > **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a file called train, which is of type: comma separated value.
 
