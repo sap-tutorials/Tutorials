@@ -36,9 +36,9 @@ The Use Case Buddy uses straightforward and practical questions to assess the pr
 
 ### Understand how the Use Case Buddy works
 
-Building the Use Case Buddy and making it work for your organisation will bring huge benefits! But to be able to do this, it helps to understand the intended setup.
+Building the Use Case Buddy and making it work for your organization will bring huge benefits! But to be able to do this, it helps to understand the intended setup.
 
-1. Take a look at this 📷 [demo video](https://video.sap.com/media/t/1_r2s0z7jd) to see how it could look like at your organization.
+1. Take a look at this 📷 [demo video](https://dam.sap.com/mac/u/a/Dm9PwBT.htm?rc=10) to see how it could look like at your organization.
 
 2. Go over the solution diagram for the Use Case Buddy setup including the respective roles. This is our target for this tutorial. 
 
