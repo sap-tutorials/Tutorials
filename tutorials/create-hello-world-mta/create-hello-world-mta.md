@@ -29,17 +29,17 @@ You define the entities that have to be deployed, namely modules and resources r
 1. Create an empty text file and name it `mtad.yaml.`
 2. Using a text editor, enter the following data in the file:
 
->Strictly adhere to the correct indentations when working with YAML files, and do not use the tabulator character.
-
     ``` YAML
     _schema-version: '3.1'
 
     parameters:
-       hcp-deployer-version: '1.1.0'
+        hcp-deployer-version: '1.1.0'
 
     ID: com.example.demo.basic
     version: 0.1.0
     ```
+
+    >Strictly adhere to the correct indentations when working with YAML files, and do not use the tabulator character.
 
     The example above instructs the SAP BTP to:
 
@@ -47,7 +47,6 @@ You define the entities that have to be deployed, namely modules and resources r
     * Use deploy features specific to the SAP BTP marked as version `1.0`
     * Deploy the Multitarget Application as a Solution with ID `com.example.demo.basic`
     * Consider the Multitarget Application version as a version `0.1.0`
-
 
 3. Create the module that describes the Java application. In the mtad.yaml, add the following data:
 
@@ -86,7 +85,7 @@ You define the entities that have to be deployed, namely modules and resources r
 
     The information about your database ID and credentials are, however, subaccount-specific. To keep the `mtad.yaml` target platform independent, you have to create an MTA extension descriptor. This file is used in addition to your primary descriptor file, and contains data that is account-specific.
 
->Security-sensitive data, for example database credentials, should be always deployed using an MTA extension descriptor, so that this data is encrypted.
+    >Security-sensitive data, for example database credentials, should be always deployed using an MTA extension descriptor, so that this data is encrypted.
 
 
 
@@ -112,14 +111,14 @@ resources:
         password : mypassword
     ```
 
-The example above instructs the SAP BTP to:
+    The example above instructs the SAP BTP to:
 
-- Extend the `com.example.demo.basic` MTA deployment descriptor with the `com.example.demo.basic.config` MTA extension descriptor
-- Define the title and description for the target solution that will be visible in the SAP BTP
-- Extend the db-binding resource and define within the following parameters:
-    - Alias of the database
-    - User for the database schema that you own
-    - Password for the database schema that you own
+    - Extend the `com.example.demo.basic` MTA deployment descriptor with the `com.example.demo.basic.config` MTA extension descriptor
+    - Define the title and description for the target solution that will be visible in the SAP BTP
+    - Extend the db-binding resource and define within the following parameters:
+        - Alias of the database
+        - User for the database schema that you own
+        - Password for the database schema that you own
 
 
     At this point of the procedure, the MTA deployment descriptor, MTA extension descriptor, and the Java application `.war` files are compiled. You can now package your Multitarget Application archive and deploy it to the SAP BTP.
@@ -161,7 +160,8 @@ MTA archives are compliant to the JAR file specification. This allows you to use
 2. Place the `mtad.yaml` and the `MANIFEST.MF` files inside the `META-INF` directory.
 3. Place the `example.war` archive inside the root directory.
 
->The MTA extension descriptor file is deployed separately from the MTA archive.
+
+    > The MTA extension descriptor file is deployed separately from the MTA archive.
 
     The root directory should now be structured as follows:
 
