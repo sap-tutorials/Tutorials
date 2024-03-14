@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-fiori]
 primary_tag: programming-tool>sapui5
 ---
 
-# Key User Adaptation for SAPUI5 Applications - Deep Dive
+# Key User Adaptation for SAPUI5 Applications - UI Changes and Modes
 <!-- description --> Learn more about the key user adaptation feature of SAPUI5 flexibility while trying different actions.
 
 ## You will learn
