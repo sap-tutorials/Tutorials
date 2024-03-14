@@ -15,7 +15,7 @@ parser: v2
   - How you can ideate, collect and differentiate ideas from your users
   - How to build your own Use Case Buddy for your organization
   - How to connect SAP Build Apps, SAP Build Process Automation and SAP Build Work Zone Advanced Edition
-  - How to change and customize contents, logics and workflows in the SAP Build portfolio 
+  - How to customize contents, logics and workflows in the SAP Build portfolio 
 
 ## Prerequisites  
  - You have an account in SAP BTP ([Check out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html) in case you want to start fresh)
@@ -45,7 +45,7 @@ Building the Use Case Buddy and making it work for your organization will bring 
      <!-- size:400px -->
     ![SignUp](visuals/solution_diagram.png)
 
-    The key user with a potential use case would be using the Use Case Buddy App built using SAP Build Apps, to the their use case and answer few set of questions which will then automatically calculate the complexity of the use case. Now this idea and description will be forwarded to IT admins/teams to check the feasibility of creating the use case using SAP Build Process Automation. The IT admins will review the use case and its complexity, and will make choice for the level of collaboration that might be needed to create the use case. For instance if they only need to check the final result for a low complexity use-case or whether they need to actively help because the needed systems are very big for a higher complexity use case.
+    The key user with a potential use case would be using the Use Case Buddy App built using SAP Build Apps, to the their use case and answer few set of questions which will then automatically calculate the complexity of the use case. Now this idea and description will be forwarded to IT admins to check the feasibility of creating the use case using SAP Build Process Automation. The IT admins will review the use case and its complexity, and will make choice for the level of collaboration that might be needed to create the use case. For instance if they only need to check the final result for a low complexity use-case or whether they need to actively help because the needed systems are very big for a higher complexity use case.
     And ultimately the Use Case would be forwarded to a business site on SAP Build Work Zone Advanced Edition which then lists all of the Use Cases in a central repository.
 
 **Ready to move on? You've got all you need now!**
@@ -53,7 +53,7 @@ Building the Use Case Buddy and making it work for your organization will bring 
 
 ### Get the templates
 
-1. The templates are stored on the [SAP Build Governance Resource Center](https://workzone.one.int.sap/site#workzone-notification?sap-app-origin-hint=&/groups/dfHGUSyc55Z70bNJiHhIsR/workpage_tabs/u4QN8ZTukJEYfR1SXxfMPQ). If you're not already signed up for the SAP Build Governance Resource Center - [sign up](https://url.sap/f96fc8) to get access. Please fill in your email, so that you can be added.
+1. The templates are available on the [SAP Build Governance Resource Center](https://workzone.one.int.sap/site#workzone-notification?sap-app-origin-hint=&/groups/dfHGUSyc55Z70bNJiHhIsR/workpage_tabs/u4QN8ZTukJEYfR1SXxfMPQ). If you're not already signed up for the SAP Build Governance Resource Center - [sign up](https://url.sap/f96fc8) to get access. Please fill in your email, so that you can be added.
     
     You will get an email invitation afterwards. Please accept the invitation. *Note: Access requests may take up to some hours to verify and trigger the email, so kindly be patient.*
     
@@ -240,6 +240,7 @@ After you've setup the destination you are now ready to create an action project
     ![APISpec](visuals/apispec10.png)
 
     Enter the values of New Field as follows:
+    
     - **Key**: *id*
     - **Mandatory**: *Yes*
     - **Parameter**: *Path*
