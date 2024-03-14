@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-fiori]
 primary_tag: programming-tool>sapui5
 ---
 
-# Key User Adaptation for SAPUI5 Applications - Advanced Topics
+# Key User Adaptation for SAPUI5 Applications - Custom Actions, Views and Embedded Content
 <!-- description --> Learn advanced SAPUI5 flexibility key user adaptation features using an SAP Fiori elements application: custom actions, views and embedding external content.
 
 ## You will learn
