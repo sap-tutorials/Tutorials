@@ -87,7 +87,7 @@ Different users work with SAPUI5 applications differently - e.g. depending on wh
 
 ---
 
-Congratulations! You just made your first key user adaptations and activated your first version. In a real system, all end users would see your version of the app: a tailored UI of the Manage Products app to work more efficiently.
+Congratulations! You have just made your first key user adaptations and activated your first version. In a real system, all end users would see your version of the app: a tailored UI of the Manage Products app to work more efficiently.
 
 >Notice that, if you reload the app, your changes will still be there.
 
