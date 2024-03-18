@@ -11,6 +11,7 @@ author_profile: https://github.com/dhrubpaul
 # Ingest Live Data into your House Price Predictor with SAP AI Core
 <!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
 
+
 ## Prerequisites
 - You have knowledge on connecting code to AI workflows of SAP AI Core.
 - You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#).
@@ -26,8 +27,24 @@ By the end of the tutorial you will have two models trained on two different dat
 
 >**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
 
----
+>  **Please Note : In order to execute this tutorial you have  to upgrade to Standard Plan from Free Tier of AI Core.**
+ 
+> If you have run the first  two tutorials
 
+> 1.Quick Start Your first AI project using SAP AI Core
+
+> 2.Build a house Price predictor with SAP AI Core   
+
+> Using SAP AI Core Free Tier then you have fulfilled all your quota for execution with the free tier. If you have run the execution once then you cannot run any more executions.
+
+> As the Tutorials will need you to run multiple executions, hence you need to upgrade your AI Core Plan from free tier to Standard  as shown in the successive steps in the tutorial.
+
+
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_04_ingest_live_data_into_your_house_price_predictor_with_sap_ai_core/ingest-data-house-predictor.ipynb)
+
+---
 ### Modify AI code
 
 
