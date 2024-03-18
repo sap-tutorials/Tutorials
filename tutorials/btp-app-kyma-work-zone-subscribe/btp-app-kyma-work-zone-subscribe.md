@@ -102,33 +102,33 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![HTML5 Apps Content Provider](html5_apps_content_provider.png)
 
-5. Add the `Risks` and `Mitigations` to **My Content**.
+5. Add the `Risks` to **My Content**.
 
     !![Add Apps to My Content](add_apps_to_my_content.png)
 
-6. Choose **Content Manager** &rarr; **My Content**.
+6. Choose **Content Manager**.
 
 7. In the item list, choose the item `Everyone`.
 
     !![Role Everyone](role_everyone.png)
 
-    > `Everyone` is a role that has to be assigned to the `Risks` and `Mitigations` apps so all users can access them.
+    > `Everyone` is a role that has to be assigned to the `Risks` apps so all users can access it.
 
-8. Choose **Edit**, click on the search field, assign the `Risks` and `Mitigations` apps to the role, and choose **Save**.
+8. Choose **Edit**, click on the search field, assign the `Risks` apps to the role, and choose **Save**.
 
     !![Add Apps to Role](apps_to_role_everyone.png)
 
-9. Navigate back to **My Content**.
+9. Navigate back to **Content manager**.
 
-10. Choose **New** &rarr; **Group**.
+10. Choose **Create** &rarr; **Group**.
 
     !![New Group](new_group.png)
 
-11. Type in `Risk Management` as the title of the group and assign the `Risks` and `Mitigations` apps to it.
+11. Type in `Risk Management` as the title of the group and assign the `Risks` app to it, and choose **Save**.
 
     !![Create Group](create_group.png)
 
-    > This way, you are telling the SAP Build Work Zone, standard edition to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
+    > This way, you are telling the SAP Build Work Zone, standard edition to display the `Risks` app in a group called `Risk Management`.
 
 12. Choose **Site Directory** &rarr; **Create Site**.
 

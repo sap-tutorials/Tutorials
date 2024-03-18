@@ -4,6 +4,8 @@ auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
+author_name: Felix Draeger
+author_profile: https://github.com/felixdraeger
 ---
 
 # Set Up Local Configuration in SOAMANAGER

@@ -219,7 +219,7 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js v16 is sufficient for this tutorial.
+> Node.js v18 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -231,8 +231,9 @@ Open the file `package.json` and add the following snippet:
     ...
   },
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
+  ...
 ```
 
 [DONE]

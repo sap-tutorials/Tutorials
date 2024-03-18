@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-ai-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -24,9 +24,14 @@ The core functionality of Document Information Extraction is to automatically ex
 ### Upload documents
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-languages-and-countries-regions). If you're interested in processing other document types, try out the following tutorial missions:
 
-Upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
+>- [Use Generative AI to Process Business Documents] (https://developers.sap.com/mission.gen-ai-process-business-documents.html)
+>- [Shape Machine Learning to Process Custom Business Documents] (https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html)
+
+>See also [Supported Document Types and File Formats] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types-and-file-formats).
+
+Upload to the service any standard document type file (in PDF format or single-page JPEG, PNG, and TIFF format) that has content in headers and tables, such as an invoice.
 
 >As an alternative to uploading your own documents to the service, you can use the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 

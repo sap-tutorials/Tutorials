@@ -227,7 +227,7 @@ Thanks to your new `GetBusinessPartnersCommand`, you can now simply create a new
 
 Let's now write an integration test to check, if your fallback is working correctly. Add `testWithFallback()` to your `BusinessPartnerControllerTest` class:
 
- `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
+ `application/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
