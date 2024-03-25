@@ -10,7 +10,7 @@ parser: v2
 ---
 
 # Setup SAP Build Code in SAP BTP
-<!-- description --> SAP Build Code is a low-code solution that provides generative AI-based code development with the Joule copilot, optimized for Java and JavaScript application development. It offers a turn-key environment for coding, testing, integrations, and application lifecycle management.
+<!-- description --> SAP Build Code provides generative AI-based code development with Joule copilot, optimized for Java and JavaScript application development. It offers a turn-key environment for coding, testing, integrations, and application lifecycle management.
 
 Perform these preparatory steps to set up your system for creating your business applications in SAP Build Code.
 
