@@ -1,4 +1,4 @@
-[VALIDATE_3]
+[VALIDATE_4]
 ###Rule
 multiple-choice
 
@@ -11,4 +11,4 @@ Which fields are MANDATORY to define the SQL Statement in SAP Cloud Integration?
 [ ] SP Parameters
 [X] SQL Action
 
-[VALIDATE_3]
+[VALIDATE_4]
