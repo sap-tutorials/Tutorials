@@ -1,25 +1,27 @@
 ---
-title: Load Data into Standalone Data Lake in SAP HANA Cloud
-description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
+# Load Data into Standalone Data Lake in SAP HANA Cloud
+<!-- description --> Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
+
 ## Prerequisites
- - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
+ - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier, trial, or production account.
  - Make sure your data lake instance is running before you start.
  - Download the **supporting files** to gain access to sample data required for loading tables.
 
-## Details
-### You will learn
+## You will learn
   - How to create tables in a standalone data lake
   - How to load data hosted in an Amazon Web Services (AWS) S3 bucket into a standalone data lake
   - How to load data hosted in a Microsoft Azure container into a standalone data lake
 
 
 
+## Intro
 The supporting sample data and code files are available on a public GitHub repository. From the folder [Mission: Get Started with a Standalone Data lake](https://github.com/SAP-samples/hana-cloud-learning/tree/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake) download the zip file [Sample Data](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/Sample%20Data.zip).
 
 In this zip file, you will find four tables:
@@ -34,22 +36,21 @@ In this zip file, you will find four tables:
 
 In the same GitHub folder, you can also find the SQL scripts used in this tutorial as a [zip file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip) or as individual files.
 
-If you decide to use Interactive SQL instead of SAP HANA Database Explorer, please copy the SQL Scripts used in this tutorial onto the machine where you installed the Interactive SQL.
+If you decide to use Interactive SQL instead of SAP HANA database explorer, please copy the SQL Scripts used in this tutorial onto the machine where you installed the Interactive SQL.
 
 
 
-[ACCORDION-BEGIN [Step 1: ](Create a new user)]
+### Create a new user
+
 Before you create tables, it is recommended that you also create a new user, so that your new tables are not owned by `HDLADMIN`. With a new user, your new tables will be created under a particular schema.
 
 >This helps you keep your data organized in the simplest level and keeps the tables separate from other tables that might already exist under the `HDLADMIN` user. Creating a new user also allows you to control the permissions as a group and assign whatever roles you require.
 
 To add a new user, follow these steps:
 
-1. Login to **SAP HANA Database Explorer**.
+1. Log in to **SAP HANA Cloud Central**. In the **Actions** column of your standalone data lake, click on the **three dots** and select **Open SQL Console**. This will open a SQL console connected to your data lake.
 
-2. Select your SAP HANA Cloud, data lake in the list of databases, then open the SQL Console by clicking on the ![SQL](DBX_SQL icon.png) **icon**.
-
-3. Create a new user with the statement given below. Provide your new username and password in the appropriate fields.
+2. Enter your data lake credentials if prompted. Then create a new user with the statement given below. Provide your new username and password in the appropriate fields.
 ```SQL
 CREATE USER <username> IDENTIFIED BY <password>
 ```
@@ -59,28 +60,30 @@ For more in-depth information about creating users in SAP HANA Cloud, data lake,
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create tables in data lake)]
+### Create tables in data lake
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 Now it's time to create tables. In this example, you will create the following tables:
 
->* customer
+* customer
 * nation
 * region
 * supplier
 
-[OPTION BEGIN [SAP HANA Database Explorer]]
+[OPTION BEGIN [SQL Console]]
 
 Let's get started. Follow these steps:
 
-1.	In SAP HANA Database Explorer, make sure your SQL Console is open.
+1.	In SAP HANA Cloud Central, open the SQL console of your data lake by clicking on the **three dots** under the **Actions** column.
 
-2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
+    ![Open SQL Console in HANA Cloud Central](hdl-open-sql-cons.png)
 
-```SQL
+
+2.	Copy the code given below into the SQL Console. Then execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
+
+    ```SQL
      /*==============================================================*/                      
      /* Created on:     11/21/2008 2:40:41 PM                        */
      /*==============================================================*/
@@ -155,20 +158,16 @@ Let's get started. Follow these steps:
        add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
           references TPCH.NATION (N_NATIONKEY)
           on delete restrict on update restrict;
+    ```
+
+    ![Create Tables](ss-01-create-tables.png)
+
+    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+    >
+    >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
 
-```
-
-
-
->**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
->
->For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
-
-!![Create Tables](ss-01-create-tables.png)
-
-
-To verify, you can select `Tables` from the list of `Catalog` objects of your standalone data lake in the database menu. To view the list of tables, you must choose the schema.
+    To verify, you can select `Tables` from the list of `Catalog` objects of your standalone data lake in the database menu. To view the list of tables, you must choose the schema.
 
 [OPTION END]
 
@@ -256,30 +255,29 @@ Let's get started. Follow these steps:
 
     ```
 
-    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
     >
     >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
 2. The Query tab will now contain the file name as seen below, and then the script can be executed.
 
-    !![Run script dbisql](ss-04-run-script-dbisql.png)
+    ![Run script dbisql](ss-04-run-script-dbisql.png)
 
->**Attention**: If you are familiar with SAP IQ on-premise, you will notice some differences between SAP IQ and SAP HANA Cloud, data lake.
->
->The data lake takes responsibility of managing administrative tasks such as storage allocation, and you don't need to specify `dbspace` usage, as was required while using SAP IQ. One of the impacts of this change is that the syntax for creating a table no longer supports a **USING** clause, as this specification is handled automatically by the data lake.
+    >**Attention**: If you are familiar with SAP IQ on-premise, you will notice some differences between SAP IQ and SAP HANA Cloud, data lake.
+    >
+    >The data lake takes responsibility of managing administrative tasks such as storage allocation, and you don't need to specify `dbspace` usage, as was required while using SAP IQ. One of the impacts of this change is that the syntax for creating a table no longer supports a **USING** clause, as this specification is handled automatically by the data lake.
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Upload sample data)]
+### Upload sample data
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 [OPTION BEGIN [AWS S3 bucket]]
 If you wish to work with an S3 bucket on Amazon Web Services (AWS), then you will need the following details about your S3 bucket to load the data into the data lake:
 
->* Account ID
+* Account ID
 *	IAM username
 *	AWS Password
 *	AWS access key ID
@@ -293,7 +291,7 @@ You can find this information in your **Amazon Management Console**.
 
 The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the S3 bucket:
 
->*	customer.tbl
+*	customer.tbl
 *	nation.tbl
 *	region.tbl
 *	supplier.tbl
@@ -302,43 +300,42 @@ For instructions on using Amazon Management Console to upload objects to the Ama
 
 After all the mentioned files are uploaded completely, exit from the Amazon Management Console.
 
-!![Amazon S3 Upload](ss-05-amazon-s3-upload.png)
+![Amazon S3 Upload](s3-load-data.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Microsoft Azure container]]
 If you wish to work with a Microsoft Azure container, then you will need the following details about your Azure container to load the data into the data lake:
 
->* Container name
+* Container name
 * Connection string of the Azure container
 
 If you do not yet have a storage account and container, please follow the instructions in Microsoft Azure to do so. Subsequently, select the Storage account and then select the container to upload the data files.
 
-!![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
+![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
 
 The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the Azure container:
 
->* customer.tbl
+* customer.tbl
 *	nation.tbl
 *	region.tbl
 *	supplier.tbl
 
-!![MS Azure Upload](ss-08-ms-azure-upload.png)
+![MS Azure Upload](azure-load-data.png)
 
 After all the mentioned files are uploaded completely, you can exit the Azure portal.
 
 [OPTION END]
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Load data into data lake tables)]
+### Load data into data lake tables
+
 > **For this step, select your preferred method by clicking on the options under the step title.**
 
 [OPTION BEGIN [AWS S3 bucket]]
-Now it's time to load the data from the S3 bucket into your data lake.
+You will now load the data from the S3 bucket into your data lake.
 
-Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. You can also find this code in `LoadTables_AWS.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip). **But before you execute it, make the following changes in the script**.
+Copy the SQL script given below into the SQL Console component in the SAP HANA Cloud Central. You can also find this code in `LoadTables_AWS.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip). **But before you execute it, make the following changes in the script**.
 
 ```SQL
 /* Create an S3 bucket in AWS */
@@ -452,16 +449,14 @@ commit
 ;
 rollback
 ;
-
-
 ```
 
 
-!![Amazon S3 Load Table script](ss-06-s3-load-script.png)
+![Amazon S3 Load Table script](s3-load-data.png)
 
 At the end of each of the 'LOAD TABLE' statements in the code, replace these variables with your AWS S3 bucket credentials:
 
- * **``<your_bucket_name>``** : For example, if the path to the uploaded files in the Amazon S3 bucket is ''s3://hdl-sample-data/customer.tbl'', then **``<your_bucket_name>``** is: hdl-sample-data
+* **``<your_bucket_name>``** : For example, if the path to the uploaded files in the Amazon S3 bucket is ''s3://hdl-sample-data/customer.tbl'', then **``<your_bucket_name>``** is: hdl-sample-data
 *	**``<your_access_key_id>``** : Example: EXAMPLEMOCNLUCMIJPJK
 *	**``<your_secret_access_key>``** : Example: r2Jt4Exa/MplE8Lqv0ZA2SYdIXLdgTBsExample
 *	**``<your_aws_region>``** : Example: us-east-2
@@ -583,8 +578,7 @@ rollback
 
 ```
 
-
-!![MS Load Table script](ss-09-ms-load-script.png)
+![MS Load Table script](azure-load-data.png)
 
 At the end of each of these 'LOAD TABLE' statements in the code provided, replace these variables with your Azure credentials:
 
@@ -594,7 +588,7 @@ At the end of each of these 'LOAD TABLE' statements in the code provided, replac
     >
     >Example: `BB://mycontainer76543/mydirectory/mysubdirectory/customer.tbl`
 
-*	**``<azure_connection_string>``** : You can find azure connection string in the Azure portal. From your storage account, navigate towards Access Keys details under Security features. Locate the Connection string section and copy the connection string to the clipboard.
+*	**``<azure_connection_string>``** : You can find the Azure connection string in the Azure portal. From your storage account, navigate towards Access Keys details under Security features. Locate the Connection string section and copy the connection string to the clipboard.
 >
     Example: `DefaultEndpointsProtocol=https;AccountName=datalake54321;AccountKey=EXamPLe/eXAmPlE==;EndpointSuffix=core.windows.net.`
 
@@ -607,11 +601,9 @@ Run the script after making the changes. For the data to be loaded, please make 
 
 >In this tutorial, you have learned how to load data into the tables in the SAP HANA Cloud, data lake. In the next tutorial, you will see how to monitor your standalone data lake.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+### Knowledge Check
 
-[VALIDATE_7]
-[ACCORDION-END]
+
+
 
 ---

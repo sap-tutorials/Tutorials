@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
 description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
 keywords: cap
@@ -10,20 +10,7 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
  - [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register)
- - When starting with the result from the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
- - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
-    - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform steps 14–17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
- - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant.
-    - You must be an administrator of the SAP S/4HANA Cloud system.
-    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
 ## Details
 ### You will learn
@@ -31,10 +18,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your CAP application
  - How to test your CAP application with SAP S/4HANA Cloud connectivity
 
-
-To start with this tutorial use the result in the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch.
-
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Connect to the business partner service on your SAP S/4HANA Cloud system)]
 Earlier in the tutorial you used a sandbox system to use the business partner service in your application. In this tutorial, you will connect to your SAP S/4HANA Cloud system.
@@ -58,7 +56,7 @@ First, you create a service instance for the SAP S/4HANA Cloud Extensibility ser
 
     `bupa-service-config.json`:
 
-    ```
+    ```JSON
     {
         "systemName": "<set in mta.yaml>",
         "communicationArrangement": {
@@ -192,9 +190,9 @@ Otherwise, deploy your application as described in the tutorial [Multi-Target Ap
 [ACCORDION-BEGIN [Step 3: ](Test your CAP application with SAP S/4HANA Cloud connectivity)]
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote S/4HANA system.
 
-> Don't forget to perform steps 14–17 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
+> Don't forget to perform the steps from the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe) before you continue with this step to be able to create entries in the **Risks** application.
 
-1. Open your **SAP BTP Launchpad Service** site as described in the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
+1. Open your **SAP Build Work Zone, standard edition** site as described in the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe).
 
 2. Choose the **Risks** application.
 
@@ -212,7 +210,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     > Why there's no data in the `Risks` application?
 
-    > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, there's no test files in the deployment archive.
+    > As explained in **Step 6 Exclude CSV files from deployment** of [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, there's no test files in the deployment archive.
 
 4. Choose **Create**.
 
@@ -231,12 +229,8 @@ When creating new entries in the **Risks** application, you should be able to us
 Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
-
-
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

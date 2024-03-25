@@ -1,6 +1,5 @@
 ---
-title: Introduce Caching to Your Application
-description: Introduce caching to your application using the SAP Cloud SDK.
+parser: v2
 auto_validation: true
 primary_tag: software-product>sap-cloud-sdk
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
@@ -8,8 +7,10 @@ time: 15
 ---
 
 
-## Details
-### You will learn
+# Introduce Caching to Your Application
+<!-- description --> Introduce caching to your application using the SAP Cloud SDK.
+
+## You will learn
   - What caching is and why you should care about it
   - How a cache works
   - How to cache your OData Call
@@ -18,7 +19,8 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Caches)]
+### Caches
+
 
 Sometimes service calls from your application to external servers turn out to be quite expensive in terms of performance and latency. Further evaluation of the queried data can make things even worse once critical response times are reached for the clients and customers.
 
@@ -26,10 +28,9 @@ To improve responsiveness to the users, the data requested internally by your ap
 
 Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How do they work?)]
+### How do they work?
+
 A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
 The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting information.
@@ -43,28 +44,26 @@ Caching is applicable whenever:
 
 If these requirements apply to your use case, then it is highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Caching with SAP Cloud SDK)]
+### Caching with SAP Cloud SDK
+
 
 The Cloud SDK makes it easy to cache your requests since it handles most of the complexity under the hood. This includes handling of tenant-aware requests, which is essential in a multi-tenant application. The SDK will isolate the cache on a tenant or principal level automatically, if your request requires it.
 
-In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial, you will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for this purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
+In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial, you will use the `JCache` adapter [Caffeine](https://github.com/ben-manes/caffeine) for this purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
 
 ```XML
 <dependency>
   <groupId>com.github.ben-manes.caffeine</groupId>
   <artifactId>jcache</artifactId>
   <scope>runtime</scope>
-  <version>2.7.0</version>
+  <version>3.1.8</version>
 </dependency>
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Cache your OData call)]
+### Cache your OData call
+
 
 Now that you know why caching is important and how it can help to improve performance and responsiveness, it's finally time to introduce it into your application.
 
@@ -94,96 +93,81 @@ Secondly, you specify the parameters that are to be cached with the data. For yo
 
 Feel free to test that subsequent requests respond faster compared to the first request issued. Deploy your application locally or in the cloud and access the list of business partners a couple of times.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the cache)]
-
-Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
-
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
-
-`integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
-
-```Java
-@Test
-public void testCache() {
-    // TODO: insert your service URL down below
-    mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
-
-    // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
-}
-```
-
-Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
-
->If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
-```Java
-mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
-```
+### Test the cache
 
 
-[DONE]
-[ACCORDION-END]
+Now that you have a working command with caching functionality you also have to adapt your test. In `testService` we previously stubbed for a successful response from the OData service. Now, we want to test that the cache is working as expected.
+Let's adapt the test and check what happens when the OData service is not available.
 
-[ACCORDION-BEGIN [Step 6: ](More on testing)]
+Replace the `testService` test with `testServiceWithCache()` code below:
 
-The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for your integration tests. But now the added cache holds a state that is shared between the tests in your test class, which has to be accounted for.
-
-Take a look back at the test you just replaced:
+`application/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
 
 ```Java
 @Test
-public void testWithFallback() {
-    // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+public void testServiceWithCache() throws Exception {
+        stubFor(get(anyUrl())
+        .willReturn(okJson(ODATA_RESPONSE_JSON)));
+        mockMvc.perform(MockMvcRequestBuilders.get("/businesspartners"))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.content().json(RESPONSE_JSON));
 
-    // Assure an empty list is returned as fallback
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body("", Matchers.hasSize(0));
+        stubFor(get(anyUrl())
+        .willReturn(serviceUnavailable()));
+        mockMvc.perform(MockMvcRequestBuilders.get("/businesspartners"))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.content().json(RESPONSE_JSON));
 }
 ```
 
-Executed on its own, this test will still pass as it did before. However, if `testService` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. By changing the test you avoided such issues since your new test does not interfere with other tests. While being sufficient for this tutorial, in a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
+Remember to add a static import to `com.github.tomakehurst.wiremock.client.WireMock.serviceUnavailable`.
+Here, the test expects the request still to be successful, even though the second time we stub the OData service to return a `503`, which means that the results are retrieved for the second time from the cache instead.
+
+### More on testing
+
+
+The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. 
+
+But now the `testWithFallback` test will behave differently based on the order of execution.Executed on its own, this test will still pass as it did before. However, if `testServiceWithCache` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. In a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
+
+You can still make both tests pass, by explicity setting the order of execution. Make the following changes to the `BusinessPartnerControllerTest` class: 
+
+```diff
++   @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class BusinessPartnerControllerTest {
+...
+```
+
+```diff
+    @Test
++   @Order(1)    
+    public void testWithFallback() throws Exception {
+    ...}
+```
+
+```diff
+    @Test
++   @Order(2)    
+    public void testServiceWithCache() throws Exception {
+    ...}
+```
+Please remember to add the required imports for the `Order` and `MethodOrderer` annotations.
 
 This wraps up the tutorial. In the next step of this series you will learn how to secure your application on Cloud Foundry.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
-[VALIDATE_1]
+### Test yourself
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
-[VALIDATE_2]
+### Test yourself
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
-[VALIDATE_3]
+### Test yourself
 
-[ACCORDION-END]
+
 
 ---

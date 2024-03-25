@@ -1,6 +1,5 @@
 ---
-title: Create a Simple OData Service with Mobile Back-End Tools
-description: Create and deploy a simple OData Service with SAP Mobile Services, mobile back-end tools (MBT) using the CSDL graphical modeler.
+parser: v2
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-business-application-studio]
@@ -9,49 +8,55 @@ author_name: Manuel Stampp
 author_profile: https://github.com/manuel-stampp
 ---
 
+# Create a Simple OData Service with Mobile Back-End Tools
+<!-- description --> Create and deploy a simple OData Service with SAP Mobile Services, mobile back-end tools (MBT).
+
 ## Prerequisites
   - [Get Ready to Develop on SAP Business Technology Platform](group.scp-1-get-ready)
   - [Setup your Business Application Studio environment for Mobile](cp-mobile-bas-setup)
+  - [Learn about OData Fundamentals](odata-01-intro-origins)
+  - If you want to reproduce this tutorial in Visual Studio Code instead of SAP Business Application Studio, make sure to follow [installation instructions for Visual Studio Code extension](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/setup.html#visual-studio-code-extension) and [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) including [`multiapps` plugin](https://github.com/cloudfoundry/multiapps-cli-plugin). This tutorial does not focus on setup and specifics as it focuses on SAP Business Application Studio which is pre-configured and ready-to-go.
 
-## Details
-### You will learn
-  - How to use graphical editor to create your OData model
+## You will learn
+  - How OData metadata (CSDL) is structured
   - How to deploy an OData service with SAP Mobile Services, mobile back-end tools
   - How to create an app router and configure login
 
-The mobile back-end tools is a set of tools that enable a developer to model an OData service and generate a Java EE web application to implement the OData service, along with automatic creation of the necessary database tables within a pre-existing database schema.
+## Intro
+The mobile back-end tools are a set of tools that enable a developer to model an OData service and generate a Java EE web application to implement the OData service, along with automatic creation of the necessary database tables within a pre-existing database schema.
 
-In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData service publicly available on the SAP Gateway Demo system (ES5), using the MBT graphical modeler in SAP Business Application Studio. In further tutorials you can therefore extend, connect and build an app on top of it.
+In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData service publicly available on the SAP Gateway Demo system (ES5) using the XML Editor in SAP Business Application Studio. In further tutorials you can therefore extend, connect and build an app on top of it.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create metadata file in SAP Business Application Studio)]
+### Create metadata file in SAP Business Application Studio
+
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
 2. Open your workspace's default projects folder.
 
-    Click **Files & Folders** on the **Welcome** screen or **File** &rarr; **Open**.
+    Select the **Explorer** panel from the **Activity Bar** and click **Open Folder**.
 
-    Select **projects** in the popup window and click **Open**.
+    Enter **projects** in the popup prompt and click **OK**.
 
-    ![Open projects folder](img_open_projects_folder.png)
+    ![Image depicts locations of the Icons to click](img_open_projects_folder.png)
 
-3. Select **File** &rarr; **New Folder**.
+3. Click **New Folder** icon next to **PROJECTS**.
 
     Name the folder `MBTEPMDemoService`.
 
-    Select **File** &rarr; **Open**, select the folder, and click **Open**.
+    From **Activity Bar** menu, select **File** &rarr; **Open Folder**, select the folder, and click **OK**.
 
     > This will be the root folder of the OData service. It is important that this is specifically opened, because the following commands will deploy files to the currently opened folder.
 
-3. Select **View** &rarr; **Find Command**.
+4. Select **View** &rarr; **Command Palette...** or press [CMD] / [CTRL] + [SHIFT] + [P] keys.
 
-4. Type `MBT` and select **MBT: New OData CSDL document (metadata)** and press **Enter**.
+5. Type `MBT` and select **MBT: New OData CSDL document (metadata)** and press **Enter**.
 
     ![Command selection](img_task_new_csdl.png)
 
-5. Answer the prompts with the following values:
+6. Answer the prompts with the following values:
 
     | **Prompt** | **Value** |
     |----|----|
@@ -60,167 +65,97 @@ In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData se
     | Namespace alias name | `Self` |
     | Metadata file name | `metadata.csdl.xml` |
 
-The command creates a blank metadata file for you that you can now open and edit with the graphical editor.
+The command creates a blank metadata file for you that you can now open and edit with the XML editor.
 
-[DONE]
-[ACCORDION-END]
+### Add entities to the OData service
 
-[ACCORDION-BEGIN [Step 2: ](Add entities to the OData service)]
+1. Open the file `metadata.csdl.xml`, paste the following content and save.
 
-> In the end of this step, the full content of the CSDL file is linked, so you **do not have to build all the properties**. Nevertheless you are encouraged to create a complex type, the entities, some properties and especially the association yourself in Graphical Modeler.
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/odata/ns/edmx http://docs.oasis-open.org/odata/odata/v4.0/os/schemas/edmx.xsd http://docs.oasis-open.org/odata/ns/edm http://docs.oasis-open.org/odata/odata/v4.0/os/schemas/edm.xsd">
+        <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+            <edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+        </edmx:Reference>
+        <edmx:DataServices>
+            <Schema Namespace="com.sap.mbtepmdemo" Alias="Self" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <ComplexType Name="CT_Address">
+                    <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                    <Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                    <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                    <Property Name="PostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                </ComplexType>
+                <EntityType Name="BusinessPartner">
+                    <Key>
+                        <PropertyRef Name="BusinessPartnerID"/>
+                    </Key>
+                    <Property Name="Address" Type="Self.CT_Address" Nullable="false"/>
+                    <Property Name="BusinessPartnerID" Type="Edm.Int64" Nullable="false"/>
+                    <Property Name="BusinessPartnerRole" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                    <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                    <Property Name="FaxNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                    <Property Name="LegalForm" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                    <NavigationProperty Name="ToSalesOrders" Type="Collection(Self.SalesOrder)" Partner="ToBusinessPartner"/>
+                </EntityType>
+                <EntityType Name="SalesOrder">
+                    <Key>
+                        <PropertyRef Name="SalesOrderID"/>
+                    </Key>
+                    <Property Name="BillingStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
+                    <Property Name="BillingStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
+                    <Property Name="BusinessPartnerID" Type="Edm.Int64" Nullable="false"/>
+                    <Property Name="ChangedAt" Type="Edm.DateTimeOffset" Nullable="true" Precision="7"/>
+                    <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Nullable="true" Precision="7"/>
+                    <Property Name="CurrencyCode" Type="Edm.String" Nullable="true" MaxLength="5"/>
+                    <Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="CustomerName" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                    <Property Name="DeliveryStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
+                    <Property Name="DeliveryStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
+                    <Property Name="GrossAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
+                    <Property Name="LifecycleStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
+                    <Property Name="LifecycleStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
+                    <Property Name="NetAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
+                    <Property Name="Note" Type="Edm.String" Nullable="true" MaxLength="255"/>
+                    <Property Name="NoteLanguage" Type="Edm.String" Nullable="true" MaxLength="2"/>
+                    <Property Name="SalesOrderID" Type="Edm.Int64" Nullable="false"/>
+                    <Property Name="TaxAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
+                    <NavigationProperty Name="ToBusinessPartner" Type="Self.BusinessPartner" Nullable="false" Partner="ToSalesOrders">
+                        <ReferentialConstraint Property="BusinessPartnerID" ReferencedProperty="BusinessPartnerID"/>
+                    </NavigationProperty>
+                </EntityType>
+                <EntityContainer Name="Com_sap_mbtepmdemoService">
+                    <EntitySet Name="BusinessPartnerSet" EntityType="Self.BusinessPartner">
+                        <NavigationPropertyBinding Path="ToSalesOrders" Target="SalesOrderSet"/>
+                    </EntitySet>
+                    <EntitySet Name="SalesOrderSet" EntityType="Self.SalesOrder">
+                        <NavigationPropertyBinding Path="ToBusinessPartner" Target="BusinessPartnerSet"/>
+                    </EntitySet>
+                </EntityContainer>
+            </Schema>
+        </edmx:DataServices>
+    </edmx:Edmx>
+    ```
 
-> You can also open the CSDL file as XML document instead of the graphical editor - either by clicking **Switch Editor** (icon) button in the top left corner of the graphical modeler or by right-clicking the file &rarr; **Open with** &rarr; **Code Editor**. This is especially helpful if you want to import parts of existing models or perform advanced changes which exceed the graphical modeler's capabilities.
+2. Take note of the different parts in the CSDL document:
 
-0. Click the file `metadata.csdl.xml` on the left panel in order to open it by default in the Graphical Modeler. Please note that the graphical modeler is only available when the file ending is `.csdl.xml`.
+    - Top declarations and references
+      
+        - XML namespace declarations
+  
+        - EDMX references for annotation includes relevant for MBT
+    
+    - `DataServices` part
+        
+        - The `DataServices` declaration describes the actual data model of the service
+        
+        - In the given example, it contains a complex type, two entity types and an entity container for the entity set declarations
 
-1. Having **complex Types** selected, click the **+** button to add a new complex type with name ``CT_Address``
+### Generate and run the service
 
-    ![New complex type](img_new_complex_type.png)
-
-2. From **Complex Types**, select the type ``CT_Address`` and click **+** to add the following properties:
-
-    | **Name** | **Type** | **Max Length** |
-    |----|----|----|
-    | ``AddressType`` | *String* | *2* |
-    | ``Building`` | *String* | *10* |
-    | ``City`` | *String* | *40* |
-    | ``Country`` | *String* | *3* |
-    | ``PostalCode`` | *String* | *10* |
-    | ``Street`` | *String* | *60* |
-
-    ![Complex type properties](img_complex_type_attributes.png)
-
-3. Having **Entity Types** selected, press the **+** button to add a new entity type with name ``BusinessPartner``
-
-    ![New entity](img_new_entity.png)
-
-4. Select the entity and click **+** to add the following properties:
-
-    | **Name** | **Type** | **Max Length** |
-    |----|----|----|
-    | ``Address`` | ``CT_Address`` |  |
-    | ``BusinessPartnerRole`` | *String* | *3* |
-    | ``CompanyName`` | *String* | *80* |
-    | ``LegalForm`` | *String* | *10* |
-    | ``PhoneNumber`` | *String* | *30* |
-    | ``FaxNumber`` | *String* | *30* |
-    | ``EmailAddress`` | *String* | *255* |
-
-5. Repeat sub-step **4** and **5** for the entity ``SalesOrder`` and the following attributes. Tick the checkbox **nullable** for the marked properties.
-
-    | **Name** | **Type** | **Max Length** | **Nullable** |
-    |----|----|----|----|
-    | ``Note`` | *String* | *255* | *tick* |
-    | ``NoteLanguage`` | *String* | *2* | *tick* |
-    | ``CustomerID`` | *String* | *10* | *tick* |
-    | ``CustomerName`` | *String* | *80* | *tick* |
-    | ``CurrencyCode`` | *String* | *5* | *tick* |
-    | ``GrossAmount`` | *Decimal* | *Precision: 16, Scale: 3* | *tick* |
-    | ``NetAmount`` | *Decimal* | *Precision: 16, Scale: 3* | *tick* |
-    | ``TaxAmount`` | *Decimal* | *Precision: 16, Scale: 3* | *tick* |
-    | ``LifecycleStatus`` | *String* | *1* | *tick* |
-    | ``LifecycleStatusDescription`` | *String* | *60* | *tick* |
-    | ``BillingStatus`` | *String* | *1* | *tick* |
-    | ``BillingStatusDescription`` | *String* | *60* | *tick* |
-    | ``DeliveryStatus`` | *String* | *1* | *tick* |
-    | ``DeliveryStatusDescription`` | *String* | *60* | *tick* |
-    | ``CreatedAt`` | ``DateTimeOffset`` | | *tick* |
-    | ``ChangedAt`` | ``DateTimeOffset`` | | *tick* |
-
-6. Having ``BusinessPartner`` selected, click **+** and add the **Navigation to** ``SalesOrders`` with the following properties:
-
-    - Tick *Navigation* and *Collection*
-    - Name: ``ToSalesOrders``
-    - Type: ``SalesOrder``
-    - Partner: ``ToBusinessPartner``
-
-    This will create the association as well as the bi-directional navigation properties.
-
-    ![Animation create relationship](gif_add_navigation.gif)
-
-> If you built not all the properties as described, please complete the CSDL file with the file content below.
-
-  <details>
-  <summary> **Click to expand** to see the full CSDL file.</summary>
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/odata/ns/edmx http://docs.oasis-open.org/odata/odata/v4.0/os/schemas/edmx.xsd http://docs.oasis-open.org/odata/ns/edm http://docs.oasis-open.org/odata/odata/v4.0/os/schemas/edm.xsd">
-    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
-        <edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
-    </edmx:Reference>
-    <edmx:DataServices>
-        <Schema Namespace="com.sap.mbtepmdemo" Alias="Self" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-            <ComplexType Name="CT_Address">
-                <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="2"/>
-                <Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40"/>
-                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
-                <Property Name="PostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60"/>
-            </ComplexType>
-            <EntityType Name="BusinessPartner">
-                <Key>
-                    <PropertyRef Name="BusinessPartnerID"/>
-                </Key>
-                <Property Name="Address" Type="Self.CT_Address" Nullable="false"/>
-                <Property Name="BusinessPartnerID" Type="Edm.Int64" Nullable="false"/>
-                <Property Name="BusinessPartnerRole" Type="Edm.String" Nullable="false" MaxLength="3"/>
-                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="80"/>
-                <Property Name="FaxNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
-                <Property Name="LegalForm" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
-                <NavigationProperty Name="ToSalesOrders" Type="Collection(Self.SalesOrder)" Partner="ToBusinessPartner"/>
-            </EntityType>
-            <EntityType Name="SalesOrder">
-                <Key>
-                    <PropertyRef Name="SalesOrderID"/>
-                </Key>
-                <Property Name="BillingStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
-                <Property Name="BillingStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
-                <Property Name="BusinessPartnerID" Type="Edm.Int64" Nullable="false"/>
-                <Property Name="ChangedAt" Type="Edm.DateTimeOffset" Nullable="true" Precision="7"/>
-                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Nullable="true" Precision="7"/>
-                <Property Name="CurrencyCode" Type="Edm.String" Nullable="true" MaxLength="5"/>
-                <Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="CustomerName" Type="Edm.String" Nullable="true" MaxLength="80"/>
-                <Property Name="DeliveryStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
-                <Property Name="DeliveryStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
-                <Property Name="GrossAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
-                <Property Name="LifecycleStatus" Type="Edm.String" Nullable="true" MaxLength="1"/>
-                <Property Name="LifecycleStatusDescription" Type="Edm.String" Nullable="true" MaxLength="60"/>
-                <Property Name="NetAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
-                <Property Name="Note" Type="Edm.String" Nullable="true" MaxLength="255"/>
-                <Property Name="NoteLanguage" Type="Edm.String" Nullable="true" MaxLength="2"/>
-                <Property Name="SalesOrderID" Type="Edm.Int64" Nullable="false"/>
-                <Property Name="TaxAmount" Type="Edm.Decimal" Nullable="true" Precision="16" Scale="3"/>
-                <NavigationProperty Name="ToBusinessPartner" Type="Self.BusinessPartner" Nullable="false" Partner="ToSalesOrders">
-                    <ReferentialConstraint Property="BusinessPartnerID" ReferencedProperty="BusinessPartnerID"/>
-                </NavigationProperty>
-            </EntityType>
-            <EntityContainer Name="Com_sap_mbtepmdemoService">
-                <EntitySet Name="BusinessPartnerSet" EntityType="Self.BusinessPartner">
-                    <NavigationPropertyBinding Path="ToSalesOrders" Target="SalesOrderSet"/>
-                </EntitySet>
-                <EntitySet Name="SalesOrderSet" EntityType="Self.SalesOrder">
-                    <NavigationPropertyBinding Path="ToBusinessPartner" Target="BusinessPartnerSet"/>
-                </EntitySet>
-            </EntityContainer>
-        </Schema>
-    </edmx:DataServices>
-</edmx:Edmx>
-```
-</details>
-
-&nbsp;
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Generate and run the service)]
-
-1. Select **View** &rarr; **Find Command** (or press **Shift + CTRL/CMD + P**).
+1. Select **View** &rarr; **Command Palette...** (or press **Shift + CTRL/CMD + P**).
 
 2. Type `cf login`, click **CF: Login to Cloud Foundry**
 
@@ -228,11 +163,13 @@ The command creates a blank metadata file for you that you can now open and edit
 
     ![CF Login](img_cf_login.png)
 
-2. Select **View** &rarr; **Find Command** (or press **Shift + CTRL/CMD + P**).
+    >If the correct **Cloud Foundry Organization** and **Space** are not shown, take care to use the correct API endpoint in the dialog. In case of doubt, double check the `API Endpoint` in **BTP Cockpit**, **Overview** of the **Subaccount**, e.g. `https://api.cf.us10-001.hana.ondemand.com`.
 
-3. Type `MBT` and select **MBT: Create tasks.json file**.
+3. Select **View** &rarr; **Command Palette...** (or press **Shift + CTRL/CMD + P**).
 
-4. In the input dialog, confirm the options as given in the following table:
+4. Type `MBT` and select **MBT: Create tasks.json file**.
+
+5. In the input dialog, confirm the options as given in the following table:
 
     | Prompt | Value |
     |----|----|
@@ -244,51 +181,86 @@ The command creates a blank metadata file for you that you can now open and edit
     | `Target folder where generate odata service` | *Keep Default* |
     | `Do you want to add MTA support` | *Yes* |
     | `Enter the module name of MTA project` | `srv` |
+    | `...` (no description) | `/home/user/projects/MBTEPMDemoService/metadata.csdl.xml` or the path that matches your previously created file |
+    | `Should enable offline feature when run 'setup-mobile-app' task?` | *Yes* (not relevant for this tutorial) |
+    | `Should assign features for MDK app when run 'setup-mobile-app' task?` | *Yes* (not relevant for this tutorial) |
+    | `Enter the Cloud Foundry destination service name` | `MbtEpmDemoService-destination` |
 
     > Make sure to not use underscores in the application name
 
     > The selected database type will be corresponding, explicit database for the MBT OData service.  For the sake of simplicity, for this tutorial's purpose an embedded H2 database type is used, which is not supported for productive use.
 
-5. In the last step of the wizard, an **Open File** dialog comes up. Locate `metadata.csdl.xml` file from your workspace and click **Open Metadata**.
+6. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war-nodeploy` to generate and build the service.
 
-    ![SAP Business Application Studio Wizard](img_open_csdl_file.png)
+7. Open the file `manifest.yml` in `srv` folder and add a line with `random-route: true`.
 
-6. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war-nodeploy` to generate and compile the service.
+    Check with the following example for reference:
 
-7. Open the file `manifest.yml` in `srv` folder and add a line with `random-route: true`, as in the following:
-
-    ```YAML
+    ```YAML manifest.yml
     ---
     applications:
-      - buildpack: sap_java_buildpack
+      -
+        # application
         name: MbtEpmDemoService
-        path: target/odata-service-1.0.0.war
+        # module
+        path: deploy/odata-service-1.0.0.war
         random-route: true
-        env:    
-          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-          TARGET_RUNTIME: tomee7
+        buildpacks:
+          # buildpack
+          - sap_java_buildpack
+        instances: 1
+        memory: 2G
+        disk: 2G
+        env:
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+          # jco-config
+          USE_JCO: false
+          # log-config
+          # [console]
+          # debug-opts
+          # [none]
+        # services:
+          # db-service
+          # [h2db]
+          # destination-service
+          # [no-destinations]
+          # xsuaa-service
+          # [no-xsuaa-service]
     ```
 
-6. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war` to generate, deploy and run the service to your space. You can observe in the Terminal if the run was successful.
+    >When inserting snippets to YAML files, pay attention to the indentation of the lines, as YAML is indentation-sensitive. Before pasting, make sure that your cursor is set to beginning of an empty line.
 
-    ![Deployment log](img_run_log.png)
+    >**Hint:** You can indent multiple line back or forward by selecting them and pressing **(Shift + TAB)** or **(TAB)** on your keyboard.
 
-7. (Optional) If you want your service to load test data, you can switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `srv` &rarr; `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+8. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war` to generate, deploy and run the service to your space. You can observe in the Terminal if the run was successful.
 
-    You can also edit the generated test data inside the folder `srv` &rarr; `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
+    ![Deployment log and cf apps output](img_run_log.png)
+
+    **Congratulations!** You just deployed an OData service. You can find out the application route using `cf apps` in Terminal or through BTP Cockpit and open the URL in e.g. in your browser.
+    ![OData service document in browser, accessed via URL](img_browser_service.png)
+
+    >At this point you created an OData service that you can already use for prototyping, development etc. Keep in mind that data is not persistent when using MBT with H2 database. In the next step you will learn how to implement authentication, which might not be necessary for pure testing purposes.
+
+9.  (Optional) If you want your service to load test data, you may switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `srv` &rarr; `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+
+    You might want to edit the generated test data inside the folder `srv` &rarr; `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
+
+    There is also the possibility to include initial data which will be loaded on every fresh database initialization, for non-testing scenarios.
 
     ![Test Mode and Test Data](img_test_data.png)
 
 >In case you struggle on generating the service, you might find the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/generating.html) helpful.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure authentication and app router)]
+### Configure authentication and app router
 
 If the service shall be accessible independently and authentication is required, an Authorization and Trust Management Service (XSUAA) service binding as well as an app router will be required for your OData service. If you are looking for more details of this service, you might want to go through [Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create) tutorial and its references, already covering the same for another application type.
 
-1. Open the file ``tasks.json`` from folder ``.vscode`` and uncomment the line `"-login", "XSUAA",` in **every** of the configurations as shown below.
+1. Open the file ``tasks.json`` from folder ``.vscode`` and uncomment the lines `"-login", "XSUAA",` and `"-xsuaa", "<xsuaa-instance-name>",` in the configurations `csdl-to-war` and `csdl-to-war-nodeploy` as shown below. Thereby replace `<xsuaa-instance-name>` with `MbtEpmDemoService-xsuaa`.
+
+    >Sometimes it may happen that, due to automatic formatting in SAP Business Application Studio, comments may have been removed from `tasks.json` file. You can try to restore them with **Undo** [CMD] / [CTRL] + [Z]. Alternatively, recreate the file or add the parameters `"-login", "XSUAA",` manually. Take care of the parameter order, as some parameters are interpreted as a pair, key (prefixed with "-") and value.
 
     ![Uncomment for XSUAA security](img_uncomment_login.png)
 
@@ -296,13 +268,11 @@ If the service shall be accessible independently and authentication is required,
 
 2. To update the project and generate the file, select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war-nodeploy`.
 
-    >In your workspace a file ``xs-security.json`` will be generated inside `srv` folder. It contains two basic roles and corresponding scopes: ``Everyone`` (for users) and ``ViewMetrics`` (for administrators). Use this file to create a service instance via MTA.
+    >In your workspace, a file ``xs-security.json`` will be generated inside `srv` folder. It contains standard roles and corresponding scopes: ``Everyone`` (for users) as well as ``ViewMetrics`` and ``Àdministrator`` (for administrators). Later you will reference this file to create a service instance via MTA.
 
-    >If you do not find the file, try to close and re-open `tasks.json` file. This will refresh the file system cache. Then re-run the task.
+3. Right-click the `srv` folder in your workspace, then click **New Folder**, name it `approuter` and confirm with **OK**.
 
-4. Right-click the `srv` folder in your workspace, then click **New Folder**, name it `approuter` and confirm with **OK**.
-
-5. Right-click the folder `approuter` in your workspace and select **New File** for two files `package.json` and `xs-app.json` with the content below.
+4. Right-click the folder `approuter` in your workspace and select **New File** for two files `package.json` and `xs-app.json` with the content below.
 
     ```JSON package.json
     {
@@ -316,6 +286,8 @@ If the service shall be accessible independently and authentication is required,
     }
     ```
 
+    >You may ignore the error `The "@sap/approuter" package is not installed(npm_dependency_issues)`. This is expected and not an issue.
+
     ```JSON xs-app.json
     {
       "routes": [{
@@ -328,55 +300,61 @@ If the service shall be accessible independently and authentication is required,
 
     ![Create new files](animation_create_approuter_files4.gif)
 
-7. Finally, the XSUAA service binding need to be reflected for deployment. You can achieve this by adding them to the ``manifest.yml`` that was generated in your workspace.
+5. Finally, verify the XSUAA service binding in `manifest.yml` that should have been updated in your workspace. The tools leverages specific comments for parsing and recreating the file.
 
-    - Initially, your `manifest.yml` should look like the following:
-
-    ```YAML
-    applications:
-      - buildpack: sap_java_buildpack
-        name: MbtEpmDemoService
-        path: target/odata-service-1.0.0.war
-        random-route: true
-        env:
-          TARGET_RUNTIME: tomee7
-    ```
-
-    >When inserting these snippets, pay attention to the indentation of the lines, as YAML is indentation-sensitive. Before pasting, make sure that your cursor is set to beginning of an empty line.
-
-    >**Hint:** You can indent multiple line back or forward by selecting them and pressing **(Shift + TAB)** or **(TAB)** on your keyboard.
-
-    - To bind the XSUAA service instance, add the following lines:
+    - The end section of the file should have been updated to contain:
 
     ```YAML
-        services:    
           - MbtEpmDemoService-xsuaa
     ```
 
-    >**Important:** Do not execute the ``csdl-to-war`` tasks anymore. First we need to create the service instances via the Mutli-Target-Archive. When they are created, you can work with ``csdl-to-war`` again in order to push just the OData service. This will be quicker than deploying the full MTA.
+    - Under certain circumstances, it might happen that the `# services:` section is not automatically uncommented. Therefore, please uncomment it in case.
 
-      <details>
-      <summary> **Click to expand** - for reference check the full `manifest.yml` file content. </summary>
+    - The placeholder comment `# xsuaa-service` marks the following line to be overwritten with the name given in the task. By removing the placeholder, you may disable this feature.
+
+    >**Important:** Do not execute the `csdl-to-war` task anymore but stick to `-nodeploy`. First it's necessary to create the service instances via the Multi-Target-Application archive. When they are created, you may work with `csdl-to-war` again in order to push the OData service only. This will be quicker than deploying the full MTA.
+
+    For reference check the full `manifest.yml` file content.
 
     ```YAML
     ---
     applications:
-      - buildpack: sap_java_buildpack
+      -
+        # application
         name: MbtEpmDemoService
-        path: target/odata-service-1.0.0.war
-        env:    
-          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-          TARGET_RUNTIME: tomee7
-        services:    
+        # module
+        path: deploy/odata-service-1.0.0.war
+        random-route: true
+        buildpacks:
+          # buildpack
+          - sap_java_buildpack
+        instances: 1
+        memory: 2G
+        disk: 2G
+        env:
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+          # jco-config
+          USE_JCO: false
+          # log-config
+          # [console]
+          # debug-opts
+          # [none]
+        services:
+          # db-service
+          # [h2db]
+          # destination-service
+          # [no-destinations]
+          # xsuaa-service
           - MbtEpmDemoService-xsuaa
     ```
-      </details>
 
-8. Create a MTA deployment descriptor.
+6. Create a MTA deployment descriptor.
 
-    Right-click the file `mta.yaml` in the root project folder and click **Duplicate**.
+    Duplicate the file `mta.yaml` by copying and pasting the file in the same directory.
 
-    Rename the copy file to `mtad.yaml`.
+    Rename the copied file to `mtad.yaml`.
 
     Replace the content with the following to include all required resources:
 
@@ -390,25 +368,30 @@ If the service shall be accessible independently and authentication is required,
         # application
         name: MbtEpmDemoService
         # module
-        path: srv/target/odata-service-1.0.0.war
+        path: srv/deploy/odata-service-1.0.0.war
         type: java
-        parameters:    
-          memory: 1G
-          disk: 2G
+        parameters:
           instances: 1
-        properties:    
-          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-          TARGET_RUNTIME: tomee7
+          memory: 2G
+          disk: 2G
+        properties:
+          TARGET_RUNTIME: tomcat
+          JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+          JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+          # jco-config
+          USE_JCO: false
+          # log-config
+          # [console]
+          # debug-opts
+          # [none]
         requires:
           - name: MbtEpmDemoService-xsuaa
-        # Providing default-url to be re-used for the app router's destination
+        # provide default-url to be re-used for the app router's destination
         provides:
-          -
-            name: mbtepmdemo-odata
+          - name: mbtepmdemo-odata
             properties:
               url: ${default-url}
-      -
-        # approuter
+      - # approuter
         name: MbtEpmDemoService-approuter
         type: nodejs
         path: srv/approuter
@@ -421,14 +404,13 @@ If the service shall be accessible independently and authentication is required,
           instances: 1
           memory: 128M
         properties:
-        # Here we reference the provided URL for automatic linking
+        # reference the provided URL for automatic linking
           destinations: >
             [
               {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
             ]  
     resources:
-      -
-        name: MbtEpmDemoService-xsuaa
+      - name: MbtEpmDemoService-xsuaa
         type: org.cloudfoundry.managed-service   
         parameters:
           service: xsuaa
@@ -436,15 +418,32 @@ If the service shall be accessible independently and authentication is required,
           path: srv/xs-security.json
     ```
 
-9. Click **Terminal** &rarr; **New Terminal**, type `cf deploy` and press Enter.
+7. Click **Terminal** &rarr; **New Terminal**, type `cf deploy` and press Enter.
 
-    Wait for the deployment to be finished. MTA deployment may take a while, especially when it is initially deployed.
+    Wait for the deployment to be finished. MTA deployment may take a while, especially when it is initially deployed. When the command terminates it will show a terminal output like the following (green box).
 
-[VALIDATE_4]
-[ACCORDION-END]
+    ![Application "MbtEpmDemoService-approuter" started and available](img_cf_deploy.png)
+
+8.  Open and examine the OData service using the approuter via your browser.
+
+    Find the application route either from the terminal output (red box) or via the applications in BTP Cockpit, as in the following screenshot.
+
+    ![BTP Cockpit Application with marked application route](img_btp_application_route.png)
+
+    >Take note: If you created your Cloud Foundry environment in a `-00x`-environment (like e.g. `us10-001` or `eu10-004`), you might receive the error `"The redirect_uri has an invalid domain"`. If this is the case, you will have to allow-list your application uri in the `xs-security.json` file (like in the screenshot above) and re-run `cf deploy`. 
+
+    ```json
+    {
+      "oauth2-configuration":
+      {
+          "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**", "https://*.eu10-004.hana.ondemand.com/**", "https://*.eu10.hana.ondemand.com/**"]
+      },
+      [...]
+    }
+    ```
 
 ---
 
-**Congratulations!** You have now created a stand-alone OData service with Mobile Back-End Tools. You can now continue with the next Tutorial of the mission to configure the service as Cache-DB and integrate data from another system.
+**Congratulations!** You just created a stand-alone OData service with Mobile Back-End Tools. You can now continue with the next Tutorial of the mission to configure the service as Cache-DB and integrate data from another system.
 
 ---

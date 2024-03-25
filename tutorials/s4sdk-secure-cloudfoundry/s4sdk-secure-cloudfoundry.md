@@ -1,24 +1,25 @@
 ---
-title: Secure Your Application on SAP Business Technology Platform Cloud Foundry
-description: Protect your Java-based Hello World microservice with authenticated and authorized users.
+parser: v2
 auto_validation: true
 time: 50
 tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, programming-tool>java ]
 primary_tag: software-product>sap-cloud-sdk
 ---
 
-## Prerequisites
- - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application).
+# Secure Your Application on SAP Business Technology Platform Cloud Foundry
+<!-- description --> Protect your Java-based Hello World microservice with authenticated and authorized users.
 
-## Details
-### You will learn
-  - How to set up and configure the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
-  - How to protect your Java microservice so that it only accepts requests based on a valid JSON Web Token (JWT) that is received from the App Router
-  - Assign roles and scopes to your application users and let your backend deal with authorization information
+## Prerequisites
+- You completed all steps until [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry).
+
+## You will learn
+- How to set up and configure the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
+- How to protect your Java microservice so that it only accepts requests based on a valid JSON Web Token (JWT) that is received from the App Router
+- Assign roles and scopes to your application users and let your backend deal with authorization information
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Concepts)]
+### Concepts
 
 Before diving deeper into the real setup of the architecture, let's quickly review the architecture this tutorial intends to go for.
 
@@ -41,17 +42,17 @@ The JWT contains a signature that needs to be verifiable by every microservice t
 
 With these basics in mind, let's create the picture of Figure 1 and Figure 2 by setting up the App Router, XSUAA and backend microservices to enable full application security.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the App Router)]
+### Set up the App Router
+
 
 You will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, you will first set up the necessary structure.
 
-1. Go to your favourite `<destLocation>` and create the `approuter` directory:
+1. Create a new directory for the router `security` and create the `approuter` directory inside it:
 
     ```Bash
-    cd <destLocation>
+    mkdir security
+    cd security
     mkdir approuter
     cd approuter
     ```
@@ -70,7 +71,7 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
     }
     ```
 
-3. Within `<destLocation>/approuter` create a new file called `xs-app.json` with the following content:
+3. Within `security/approuter` create a new file called `xs-app.json` with the following content:
 
     ```JSON
     {
@@ -83,7 +84,7 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
     }
     ```
 
-4. Last but not least create a new `manifest.yml` file within `<destLocation>` for the app router microservice with the following content:
+4. Last but not least create a new `manifest.yml` file within `security` for the app router microservice with the following content:
 
     ```YAML
 
@@ -103,14 +104,13 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
         - my-xsuaa
     ```
 
-    Adapt the file as follows:
+   Adapt the file as follows:
 
-      - Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
+   1. Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
+     ![Subomain and Tenant ID in the CF Cockpit](Figure3-1.png)
 
-          ![Subomain and Tenant ID in the CF Cockpit](Figure3-1.png)
-
-      - Swap out both instances of `<region_id>` with your specific region (e.g. `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
-      - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, e.g. `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
+   2. Swap out both instances of `<region_id>` with your specific region (e.g. `us10-001`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+   3. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`. Note: The URI specified for `<APPLICATION_URL>` must be absolute, e.g. `https://<app-name>.cfapps.<region>.hana.ondemand.com`.
 
 ### Understanding the AppRouter's `manifest.yml`
 
@@ -128,13 +128,13 @@ Last but not least the `services` section declares to bind your own XSUAA servic
 
 Now you need to create a service binding to the XSUAA service. As a prerequisite you require an `xs-security.json` (security descriptor) file that contains a declaration about authorization scopes you intend to use in your application. For example, simply declare a `DISPLAY` scope that will be used later on to authorize your users. In addition, a so-called role template called `Viewer` that references your `DISPLAY` scope is declared.
 
-Put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
+Put this file to `security/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
 >The `xsappname` has to be unique within the entire XSUAA instance. We suggest you follow the same pattern of `<app-name>-<subdomain>`.
 
 >As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
-`<destLocation>/xs-security.json`:
+`security/xs-security.json`:
 
 ```JSON
 {
@@ -154,29 +154,34 @@ Put this file to `<destLocation>/xs-security.json`. For a more detailed explanat
         "$XSAPPNAME.Display"
       ]
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+    ]
+  }
 }
 ```
 
 Create the file and change the app name just like before.
 
-Then create a service instance called `my-xsuaa` of the XSUAA service by issuing the following command and using the `xs-security.json` file:  
+Then create a service instance called `my-xsuaa` of the XSUAA service by issuing the following command and using the `xs-security.json` file:
 
 ```Bash
 cf create-service xsuaa application my-xsuaa -c xs-security.json
 ```
-
+Note: If you are not currently in the `security` folder, you need to specify the path to the `xs-security.json` file in the command above.
 If you have created this instance of the XSUAA service before without the `xs-security.json` parameter, you can unbind and delete the existing instance with these commands before creating it with the above command:
 
 ```Bash
 cf unbind-service firstapp my-xsuaa
-cf delete-service my-xsuaa​
+cf delete-service my-xsuaa
 ```
 
 After you have created the XSUAA service instance, deploy the app router using the following (with the appropriate API endpoint of your Cloud Foundry region):
 
 ```Bash
-cd <destLocation>
+cd security
 cf push
 ```
 
@@ -188,78 +193,23 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 
 ![helloworld](Figure6-1.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
+### Protect your backend microservice
+
 After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, you need to protect your java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that you have configured previously using the `xs-security.json` file.
 
-[OPTION BEGIN [TomEE]]
+In the following, you will use the security capabilities of the [SAP BTP Spring Security Client Library](https://github.com/SAP/cloud-security-services-integration-library/tree/main/spring-security) to protect the microservices.
 
-**The following steps apply to the `TomEE` runtimes. For Spring please select the relevant tab at the top of this section.**
-
-In the following, you will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
-
-In your `application/src/main/webapp/WEB-INF/web.xml` file, add the following login configuration:
-
-```XML
-<login-config>
-    <auth-method>XSUAA</auth-method>
-</login-config>
-```
-
-This enables authentication of requests using incoming OAuth authentication tokens.
-
-Additionally make sure that the following `security-constraint` block is contained in your `web.xml` file:
-
-```XML
-<security-constraint>
-    <web-resource-collection>
-        <web-resource-name>Baseline Security</web-resource-name>
-        <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-        <role-name>*</role-name>
-    </auth-constraint>
-</security-constraint>
-
-<security-role>
-    <role-name>Display</role-name>
-</security-role>
-<!--
-<security-role>
-    <role-name>Further Role Name</role-name>
-</security-role>
--->
-```
-
-That way all endpoints of your application can be accessed by users with any of the role names specified in the `security-role` tags.
-
-To specifically secure your endpoints by requiring a specific role you now only need to add an annotation to your endpoint. For your `BusinessPartnerServlet` this looks like this:
-
-```Java
-@ServletSecurity(@HttpConstraint(rolesAllowed = { "Display" }))
-public class BusinessPartnerServlet extends HttpServlet {
-  // ...
-}
-```
-
-This will allow only users with the provided role to have access to the annotated endpoint. Compare for this the `xs-security.json` you created earlier to create the XSUAA service.
-
-[OPTION END]
-
-[OPTION BEGIN [Spring]]
-
-**The following steps apply to the Spring runtimes. For `TomEE` please select the relevant tab at the top of this section.**
-
-In the following, you will use the security capabilities of the [SAP CP Spring XSUAA Security Library](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/spring-xsuaa#setup-security-context-for-http-requests) to protect the microservices.
-
-In your applications `pom.xml` ensure the following dependency is present:
+In your applications `pom.xml` ensure the following dependencies are present:
 
 ```XML
 <dependency>
-    <groupId>com.sap.cloud.security.xsuaa</groupId>
-    <artifactId>xsuaa-spring-boot-starter</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<dependency>
+<groupId>com.sap.cloud.security</groupId>
+<artifactId>resourceserver-security-spring-boot-starter</artifactId>
 </dependency>
 ```
 
@@ -267,35 +217,102 @@ This provides the necessary capabilities of the XSUAA library for Spring.
 Leverage them in setting up a `SecurityConfiguration`:
 
 ```JAVA
+package com.sap.cloud.sdk.tutorial;
+
+import com.sap.cloud.security.spring.config.IdentityServicesPropertySourceFactory;
+import com.sap.cloud.security.spring.token.authentication.AuthenticationToken;
+import com.sap.cloud.security.token.TokenClaims;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.web.SecurityFilterChain;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Configuration
-@EnableWebSecurity(debug = true) // TODO "debug" may include sensitive information. Do not use in a production system!
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+@EnableWebSecurity( debug = true ) // TODO "debug" may include sensitive information. Do not use in a production system!
+@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true )
+@PropertySource( factory = IdentityServicesPropertySourceFactory.class, ignoreResourceNotFound = true, value = { "" } )
+public class SecurityConfiguration
+{
     @Autowired
-    XsuaaServiceConfiguration xsuaaServiceConfiguration;
+    Converter<Jwt, AbstractAuthenticationToken> authConverter; // Required only when Xsuaa is used
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // session is created by approuter
-                .and()
-                .authorizeRequests()
-                .antMatchers("/*").authenticated()
-                .antMatchers("/*").hasAuthority("Display")
-                .anyRequest().denyAll()
-                .and()
-                .oauth2ResourceServer()
-                .jwt()
-                .jwtAuthenticationConverter(getJwtAuthenticationConverter());
+    @Bean
+    public SecurityFilterChain filterChain( HttpSecurity http )
+            throws Exception
+    {
+        // @formatter:off
+        return http
+                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+                .authorizeHttpRequests(registry -> registry
+                        .requestMatchers("/**").hasAuthority("Display")
+                        .requestMatchers("/**").authenticated()
+                        .anyRequest().denyAll())
+
+                .oauth2ResourceServer(oauth2Config -> oauth2Config
+                        .jwt(jwtConfig -> jwtConfig
+                                .jwtAuthenticationConverter(new MyCustomHybridTokenAuthenticationConverter())))   // Adjust the converter to represent your use case
+                // Use MyCustomHybridTokenAuthenticationConverter when IAS and XSUAA is used
+                // Use MyCustomIasTokenAuthenticationConverter when only IAS is used
+                .build();
+        // @formatter: on
     }
 
-    /**
-     * Customizes how GrantedAuthority are derived from a Jwt
-     */
-    Converter<Jwt, AbstractAuthenticationToken> getJwtAuthenticationConverter() {
-        return new TokenAuthenticationConverter(xsuaaServiceConfiguration).setLocalScopeAsAuthorities(true);
+    //Workaround for hybrid use case until Cloud Authorization Service is globally available.
+    class MyCustomHybridTokenAuthenticationConverter implements Converter<Jwt, AbstractAuthenticationToken>
+    {
+        @Override
+        public AbstractAuthenticationToken convert( Jwt jwt )
+        {
+            if( jwt.hasClaim(TokenClaims.XSUAA.EXTERNAL_ATTRIBUTE) ) {
+                return authConverter.convert(jwt);
+            }
+            return new AuthenticationToken(jwt, deriveAuthoritiesFromGroup(jwt));
+        }
+
+        private Collection<GrantedAuthority> deriveAuthoritiesFromGroup( Jwt jwt )
+        {
+            Collection<GrantedAuthority> groupAuthorities = new ArrayList<>();
+            if( jwt.hasClaim(TokenClaims.GROUPS) ) {
+                List<String> groups = jwt.getClaimAsStringList(TokenClaims.GROUPS);
+                for( String group : groups ) {
+                    groupAuthorities.add(new SimpleGrantedAuthority(group.replace("IASAUTHZ_", "")));
+                }
+            }
+            return groupAuthorities;
+        }
+    }
+
+    //Workaround for IAS only use case until Cloud Authorization Service is globally available.
+    class MyCustomIasTokenAuthenticationConverter implements Converter<Jwt, AbstractAuthenticationToken>
+    {
+        @Override
+        public AbstractAuthenticationToken convert( Jwt jwt )
+        {
+            final List<String> groups = jwt.getClaimAsStringList(TokenClaims.GROUPS);
+            final List<GrantedAuthority>
+                    groupAuthorities =
+                    groups == null ?
+                            Collections.emptyList() :
+                            groups.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+            return new AuthenticationToken(jwt, groupAuthorities);
+        }
     }
 }
 ```
@@ -306,7 +323,7 @@ In addition all JWTs are required to contain the `Display` scope.
 Depending on your setup your integration tests may now fail if they are not authenticated.
 In that case leverage the XSUAA testing library to mock request authentication.
 
-1. Add the testing capabilities via the following dependency:
+1. Add the testing capabilities via the following dependency into your `application/pom.xml`:
 
     ```XML
     <dependency>
@@ -316,23 +333,55 @@ In that case leverage the XSUAA testing library to mock request authentication.
     </dependency>
     ```
 
-1. Annotate your test class with `@TestPropertySource(properties = {"xsuaa.uaadomain=localhost", "xsuaa.xsappname=xsapp!t0815", "xsuaa.clientid=sb-clientId!t0815"})`
+2. Annotate your test class `HelloWorldControllerTest` with (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
+```java
+@TestPropertySource(
+        properties = {
+                "sap.security.services.xsuaa.uaadomain=http://localhost:9001",
+                "sap.security.services.xsuaa.xsappname=xsapp!t0815",
+                "sap.security.services.xsuaa.clientid=sb-clientId!t0815" } )
+```
 
-1. Create a JWT for testing:
+1. Create a JWT for testing (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
 
   ```JAVA
-  @ClassRule
-  public static final SecurityTestRule rule = SecurityTestRule.getInstance(Service.XSUAA);
+@RegisterExtension
+static SecurityTestExtension extension = SecurityTestExtension.forService(Service.XSUAA) // or Service.IAS
+        .setPort(9001);
 
-  static String jwt = "Bearer " + rule.getPreconfiguredJwtGenerator()
-                .withLocalScopes("Display")
-                .createToken().getTokenValue();
+static String jwt = "Bearer " + context.getPreconfiguredJwtGenerator()
+        .withLocalScopes("Display")
+        .createToken()
+        .getTokenValue();
   ```
 
-1. Add the JWT in the authorization header of your test requests.
+4. Add the JWT in the authorization header of your test requests.
+```java
+ThreadContextExecutor.fromNewContext().execute(() -> {
+    mvc
+    .perform(MockMvcRequestBuilders.get("/hello")
+    .header(HttpHeaders.AUTHORIZATION, jwt)
+    )
+    .andExpect(status().isOk())
+    .andExpect(content().json(IOUtils.toString(inputStream, StandardCharsets.UTF_8)));
+    });
+```
 
-[OPTION END]
+5. Run the integration tests again. They should now pass. **Note:** For the purpose of this tutorial, we are only adjusting the `HelloWorldControllerTest` class, you would also have to make similar changed to `BusinessPartnerControllerTest` class. We would be skipping that for now.(You could also comment the test cases in `BusinessPartnerControllerTest` class to proceed with the tutorial). 
 
+6. Also enhance your `manifest.yml` file by adding an environment variable and a service binding for the XSUAA service instance:
+```diff
+  env:
+    TARGET_RUNTIME: main
+    SPRING_PROFILES_ACTIVE: 'cloud'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    JBP_CONFIG_COMPONENTS: 'jres: [''com.sap.xs.java.buildpack.jre.SAPMachineJRE'']'
+    JBP_CONFIG_SAP_MACHINE_JRE: '{ use_offline_repository: false, version: 17.0.5 }' 
++   xsuaa_connectivity_instance_name: my-xsuaa
+  services:
++ - my-xsuaa
+  - my-destination
+```
 
 At this point you should now rebuild your application and push it to Cloud Foundry.
 
@@ -345,10 +394,9 @@ cf push
 
 If you now call the `/businesspartners` endpoint of your application you will see a [`401` Unauthorized](https://httpstatuses.com/401) status code, as you were not authorized by the App Router. Calling the `/businesspartners` endpoint via your App Router on the other hand will give you a [`403` Forbidden](https://httpstatuses.com/403) status code meaning that you do not have the necessary authorization to see this page. This is to be expected, as you secured the endpoint with the annotation above without assigning the requested role `Display` to your user. You will fix this in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign users to scopes)]
+### Assign users to scopes
+
 
 To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the BTP cockpit.
 
@@ -358,7 +406,7 @@ To regain access to your secured endpoint, you need to get the `Display` OAuth s
 
 ![Creating a Role Collection](Figure8-2.png)
 
-3. Afterwards, select the role collection **Business Partner Manager**, select **Edit**, and add a new role. From the menu, select your application and the corresponding role template and role. Finish up the process by adding the newly created role and saving the **Business Partner Manager** role collection.
+3. Afterwards, select the role collection **Business Partner Manager**, select **Edit**, and add a new role. From the menu, select your application and the corresponding role template and role. Finish up the process by adding the newly created role and saving the **Business Partner Manager**.
 
 ![Creating a Role](Figure8-3.png)
 
@@ -368,47 +416,19 @@ To regain access to your secured endpoint, you need to get the `Display` OAuth s
 
 Afterwards you have the `Display` OAuth scope assigned to your user, which allows you to access the secured endpoints again.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and test the application)]
-Now you are ready to build and deploy the application to try all your changes with:
+### Deploy and test the application
 
-```Bash
-cd /path/to/firstapp/application
-mvn clean install
-cd /path/to/firstapp
-cf push
-```
-
-After deployment, accessing your backend service directly should not be possible anymore and result in the following message:
-
-![XML file](Figure8-1.png)
-
-However, you should still be able to access your application using the App Router as entry point:
+You should now be able to access your application using the App Router as entry point:
 
 ![Hello World Endpoint](Figure9-1.png)
 
-[DONE]
-[ACCORDION-END]
+And accessing your backend service directly is still not possible and result in the following message:
 
-[ACCORDION-BEGIN [Step 5: ](Remove CSRF token protection from backing service)]
-If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, you should remove it. For this remove the following lines from your `web.xml`:
-```XML
-<filter>
-  <filter-name>RestCsrfPreventionFilter</filter-name>
-  <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
-</filter>
-<filter-mapping>
-  <filter-name>RestCsrfPreventionFilter</filter-name>
-  <url-pattern>/*</url-pattern>
-</filter-mapping>
-```
+![XML file](Figure8-1.png)
 
-[DONE]
-[ACCORDION-END]
+### Understanding Roles, Role Collections and Scopes
 
-[ACCORDION-BEGIN [Step 6: ](Understanding Roles, Role Collections and Scopes)]
 The following picture explains how the various concepts are related to each other.
 
 ![Roles, Scopes and Users](Figure9-3.png)
@@ -419,76 +439,46 @@ Orange Box: As an BTP tenant administrator of the business application (customer
 
 Green Box: As an administrator of the users (customer), you can assign the role collection to the final user using the SAML attribute `Groups`.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Troubleshoot JSON Web Tokens)]
-Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
+### Troubleshoot JSON Web Tokens
+
+Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the JWT out.
 
 ```Java
-@WebServlet("/debug")
-public class JwtDebugServlet extends HttpServlet {
+@RestController
+public class AccessorsSpringController {
+    private ResponseEntity<?> getResponseEntity(@Nonnull Try<?> maybeValue) {
+        return maybeValue.isFailure()
+                ? ResponseEntity.internalServerError().body(maybeValue.getCause())
+                : ResponseEntity.ok(maybeValue.get());
+    }
 
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response )
-            throws ServletException, IOException
-    {
-        response.setContentType("text/plain");
-        Enumeration headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements()) {
-            String key = (String) headerNames.nextElement();
-            String value = request.getHeader(key);
-
-            response.getOutputStream().println(key+" : "+value);
-        }
+    @GetMapping("/authToken")
+    public ResponseEntity<?> getAuthToken() {
+        return getResponseEntity(AuthTokenAccessor.tryGetCurrentToken());
     }
 }
 ```
+Call the `<your-application-url>/authToken` endpoint to print the JWT.
 Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You should never use this with any productive JWT as these tokens are shared on a public website. Fallback to local solutions.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Troubleshoot OAuth scopes from XSUAA)]
-In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
+### Troubleshoot OAuth scopes from XSUAA
 
-`https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
+In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL, which you can find in the credentials of your XSUAA service instance:
+![XSUAA credentials](Figure10-1.png)
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Set up your own identity provider)]
-So far, you have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. The following paragraphs quickly explain how the XSUAA service can delegate requests to such an external IdPs.
-
-To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
-
-You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/saml/metadata`, e.g. `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
-
-Secondly, you need to import the metadata into your IdP. In the following example, a SAP Cloud Identity tenant is used.
-
-1. Within the IdP, you have to create a new application called `MyApp` where you select the **SAML 2.0 Configuration**.
-
-2. Import the SP's metadata and click **Save**.
-
-3. Back in the BTP account cockpit you need to add the IdP's metadata in the same manner.
-
-4. Click **New Trust Configuration** and add the metadata from the IdP and click **Save**.
+Use the `url` value and append `/config?action=who` to it: 
+`<url-from-XSUAA-credentials>/config?action=who`
 
 
-[DONE]
-[ACCORDION-END]
+### Test yourself
 
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
-[VALIDATE_1]
+### Test yourself
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
-[VALIDATE_2]
-
-[ACCORDION-END]
+---

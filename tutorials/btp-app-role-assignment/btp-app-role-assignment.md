@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Assign a Role Collection to a User
 description: This tutorial shows you how to assign roles to users.
 keywords: cap
@@ -11,19 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
+ - [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe)
 
 ## Details
 ### You will learn
@@ -31,6 +19,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Assign roles)]
 To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
@@ -39,13 +41,13 @@ To be able to access the application, your user needs to be assigned to a role c
 
 2. Go to the **Subaccount** where you have deployed your service and application.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Select `RiskManager-<your space>` in the list of role collections.
 
 5. Choose **Edit**.
 
-5. Enter the **E-Mail Address** of your user.
+5. Enter the **E-Mail Address** of your user in the ID Field under **Users**, as you type a popup will appear showing your user, choose it.
 
 6. Choose **Save**.
 
@@ -65,19 +67,19 @@ If not, probably you have signed in before adding the role collection to your us
 
 > Why there's no data in the `Risks` application?
 
-> As explained in step 6 [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
+> As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)]
+[ACCORDION-BEGIN [Step 3: ]((Optional) Create a role collection manually)]
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
 1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount**.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Choose the ( &#x2B; ) icon to create a new role collection.
 

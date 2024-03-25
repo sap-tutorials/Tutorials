@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Consume the External Service in the UI of Your Application
 description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
 keywords: cap
@@ -12,7 +12,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - When starting with the result from the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
 
 ## Details
 ### You will learn
@@ -21,15 +20,26 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add supplier information to the Risks UI
  - How to add value help to select a supplier
 
-
-To start with this tutorial use the result in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
-
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Add Supplier to Risks entity)]
 1. Open `db/schema.cds` and add the supplier to the `Risks` entity using an association to the `Suppliers` entity:
 
-    ```[9-9]
+    ```JavaScript[9-9]
     entity Risks : managed {
         key ID      : UUID  @(Core.Computed : true);
         title       : String(100);
@@ -142,7 +152,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 2. Add the `supplier` annotations:
 
     <!--  -->
-    ```Swift[7-11]
+    ```JavaScript[7-11]
     annotate RiskService.Risks with {
         title       @title: 'Title';
         prio        @title: 'Priority';
@@ -159,7 +169,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 3. Add the `supplier` fields to the `Risks` object page:
 
-    ```Swift[15-16]
+    ```JavaScript[15-16]
     annotate RiskService.Risks with @(
         UI: {
             ...
@@ -186,7 +196,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 4. Add the annotation for the `Suppliers` entity:
 
-    ```Swift
+    ```JavaScript
     annotate RiskService.Suppliers with {
         isBlocked   @title: 'Supplier Blocked';
     }
@@ -198,7 +208,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
     cds watch --profile sandbox
     ```
 
-6. Open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app)
+6. Open the **Risks** application: [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html)
 
 7. Choose **Go**.
 
@@ -220,7 +230,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 2. Add the following annotations to the end of the file:
 
-    ```Swift
+    ```JavaScript
     // Annotations for value help
 
     annotate RiskService.Risks with {
@@ -258,7 +268,7 @@ The last thing you add is the value help to select a supplier from the remote sy
     cds watch --profile sandbox
     ```
 
-4. Open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app)
+4. Open the **Risks** application: [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html)
 
 5. Choose **Go**.
 

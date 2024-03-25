@@ -1,28 +1,31 @@
 ---
-title: Create Multi-Cloud Application Consuming Object Store Service
-description: Create a Java application that can work with different Object Stores like AWS S3, GCS and deploy the application on SAP Business Technology Platform.
+parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, topic>java, products>sap-btp--cloud-foundry-environment, tutorial>license]
-primary_tag: topic>java
+tags: [ tutorial>intermediate, programming-tool>java, software-product>sap-btp-cloud-foundry-environment]
+primary_tag: programming-tool>java
+author_name: Abhinav Singh
+author_profile: https://github.com/singhabhi1999
 ---
+
+# Create Multi-Cloud Application Consuming Object Store Service
+<!-- description --> Create a Java application that can work with different Object Stores like Swift, AWS S3, GCS and deploy the application on SAP Cloud Platform.
 
 ## Prerequisites
  - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
  - [Maven 3.3+](https://maven.apache.org/download.cgi)
  - [Eclipse](https://www.eclipse.org/downloads/)
- - [Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
- - SAP Business Technology Platform account
+ - [SAP Cloud Platform Global account](https://help.sap.com/viewer/e275296cbb1e4d5886fa38a2a2c78c06/Cloud/en-US/667f34ba9222450491c2b848cd17e189.html)
  - [Provision Object Store Service](https://discovery-center.cloud.sap/#/serviceCatalog/object-store-service)
  - Basic knowledge of spring
  - Basic knowledge of Cloud Foundry
 
-## Details
-### You will learn
+## You will learn
   - How to create an Object Store service
   - How to perform CRUD operations on Object Store
   - How to deploy and test the application on Cloud Foundry
 
+## Intro
 This tutorial shows how to create a single code line multi-cloud Java application using spring framework to perform operations like upload, download, delete and list  files in Object Stores. The created application can run on Cloud Foundry consuming the `objectstore` service provided by the platform. The application is referred to as a multi-cloud application because a single code line works with different cloud providers like `Amazon Web Services(AWS)`, `OpenStack` and `Google Cloud Platform(GCP)`.
 
 The application uses the [`Apache jclouds`](https://jclouds.apache.org/) library, which provides a multi-cloud toolkit that gives you the freedom to create applications that are portable across clouds.
@@ -34,7 +37,8 @@ The application uses the [`Apache jclouds`](https://jclouds.apache.org/) library
 ![Project Structure](projectStructure.PNG)
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Import the initial project)]
+### Import the initial project
+
 
 You can skip the steps of setting up a basic spring boot project and clone/download the skeletal project from the [git repository](https://github.com/SAP/cloud-objectstore-java-sample/tree/tutorial).
 
@@ -45,10 +49,9 @@ It also contains `Application.java` class which is the entry point into the appl
 
 > Note: If you face any issues while building/importing the application, you can remove the content in `.m2` folder and try again.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add required properties, dependencies)]
+### Add required properties, dependencies
+
 
 Edit `pom.xml` file and add the required dependencies.
 
@@ -97,12 +100,12 @@ You can add the dependency based on the Object Store vendor that you are using.
 
 `jackson-databind` is required to parse JSON.  
 
-[VALIDATE_2]
-[ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 3: ](Create ContextInitializer)]
+
+### Create ContextInitializer
+
 In this step you will set the application context based on the environment.
 
 Create package: `com.sap.refapps.objectstore.config`
@@ -193,11 +196,11 @@ This service plan can be used to identify the Object Store provider and set the 
 
 In `getActiveProfile()` method, add more conditional statements based on the service plans of the supported IaaS vendors that you would like to use.
 
-[VALIDATE_3]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Register ContextInitializer)]
+
+### Register ContextInitializer
+
 
 Edit `Application.java` as shown below. This is required to register the custom `ApplicationContextInitializer` that you created in the previous step.
 
@@ -218,10 +221,9 @@ public class Application {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Configuration class)]
+### Create Configuration class
+
 
 You need to create configuration classes depending on the number of cloud providers you are planning to run the application on. This class stores the required credentials and gets the `BlobStoreContext` by passing these credentials.
 
@@ -367,11 +369,10 @@ public class GoogleCloudPlatformConfiguration {
 `@Profile("cloud-aws")` annotation,  is used  to  load the right configuration and service implementation classes based on the active provider. For example, if the active provider is `"cloud-aws"`, then `AWS` configuration and service classes will be loaded.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create model class for blob file)]
+### Create model class for blob file
+
 
 In this step you will create a model class for blob file. This class stores the metadata including size, `contentType`, bucket(container in which the file will be stored), `etag` (unique identifier) and so on of the blob file that you are trying to upload/download from Object Store.
 
@@ -450,10 +451,9 @@ public class BlobFile {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create REST controller)]
+### Create REST controller
+
 
 In this step you will create the REST endpoints for upload, download, delete, list operations.
 The service class required by the controller will be created in the next step
@@ -627,10 +627,9 @@ public class ObjectstoreController {
 
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create service classes)]
+### Create service classes
+
 
 Following the spring guidelines, create a service interface and separate service implementations for each IaaS provider.
 
@@ -826,10 +825,10 @@ public class GCPObjectStoreService implements ObjectStoreService {
 
 ```
 
-[VALIDATE_8]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create repository class)]
+
+### Create repository class
+
 
 The repository class is common for all the Object Store providers and it deals with the actual business logic. This class makes calls to `jclouds` API -- for example, `putBlob()`, `getBlob()` -- to perform operation in Object Store.
 
@@ -1040,10 +1039,9 @@ public class ObjectStoreRepository {
 }
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add a manifest file)]
+### Add a manifest file
+
 
 Create a file `manifest.yml` in the root folder of the project.
 
@@ -1051,8 +1049,7 @@ Add the below content to the file.
 
 ```YAML
 applications:
-- name: objectstore-sample-svc
-  host: <unique ID>-objectstore-sample-svc
+- name: <unique ID>-objectstore-sample-svc
   memory: 2G
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   path: target/objectstore-sample-1.0.0.jar
@@ -1063,10 +1060,9 @@ applications:
 Provide a `unique ID` in the host for the application. The host name has to be unique across the Cloud Foundry landscape.
 The service `objectstore-service` will be created in the next step.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Build and deploy the application)]
+### Build and deploy the application
+
 
 In this step you will create an Object Store service, build and deploy the application on Cloud Foundry.
 
@@ -1106,11 +1102,10 @@ The steps below should be performed in a command prompt or terminal.
 
     >**Note:** If you face any issues while building/importing the application, you can clear the content in `.m2` folder and try again.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Test the application)]
+### Test the application
+
 
 [Postman Client](https://www.getpostman.com/apps) can be used to test / access the REST API endpoints.
 
@@ -1187,10 +1182,9 @@ On a successful delete operation, you will the get the below response:
   - Response Body: <name> `deleted from ObjectStore.`
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Extend the application)]
+### Extend the application
+
 
 Follow the steps below to extend the application to work with other cloud providers.
 
@@ -1205,7 +1199,5 @@ Follow the steps below to extend the application to work with other cloud provid
 Source code of the application that works on `AWS`, `GCP` and `OpenStack` is published in [git repository](https://github.com/SAP/cloud-objectstore-java-sample).
 
 
-[DONE]
-[ACCORDION-END]
 
 ---

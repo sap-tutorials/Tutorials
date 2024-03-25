@@ -1,6 +1,5 @@
 ---
-title: Understand the Cloud Foundry Application Lifecycle for Buildpack Applications
-description: Understand the application lifecycle in Cloud Foundry and what happens when you cf push.
+parser: v2
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
@@ -9,21 +8,24 @@ author_name: Beyhan Veli
 author_profile: https://github.com/beyhan
 ---
 
+# Understand the Cloud Foundry Application Lifecycle for Buildpack Applications
+<!-- description --> Understand the application lifecycle in Cloud Foundry and what happens when you cf push.
+
 ## Prerequisites
  - **Tutorials** [Fundamentals of the SAP BTP, Cloud Foundry environment](cp-cf-fundamentals)
  - **Tutorials** [Download and Prepare App for Cloud Foundry Deployment](cp-cf-dev-01-prepare-app)
  - **Tutorials** [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli)
 
 
-## Details
-### You will learn
+## You will learn
   - What happens when you CF Push
   - The lifecycle of buildpack applications
   - Differences between restarting, re-staging, and re-deploying
   - How Cloud Foundry handles crashes and shutdowns, and the process of evacuation
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Push your application to Cloud Foundry)]
+### Push your application to Cloud Foundry
+
 
 When you push an application to Cloud Foundry (`cf push`), by default it uses a [buildpack](https://docs.cloudfoundry.org/buildpacks/) (either specified by you or auto-detected by Cloud Foundry) to download required dependencies, compile everything needed for your application, and produce a [droplet](https://docs.cloudfoundry.org/concepts/glossary.html) - an artifact - that can be used to run your application in a container. A `cf push` goes through three phases:
 
@@ -46,26 +48,25 @@ Once you run the command you will see lots of output print to the screen, and if
 
 The uploading phase begins as follows:
 
-!![Uploading](uploading-phase.png)
+<!-- border -->![Uploading](uploading-phase.png)
 
 After that, the staging phase begins. You can see the buildpacks being downloaded (since a specific buildpack is not specified it downloads all of them):
 
-!![Staging Begins](staging-phase.png)
+<!-- border -->![Staging Begins](staging-phase.png)
 
 You can also see when the droplet get uploaded:
 
-!![Droplet uploaded](droplet-uploaded.png)
+<!-- border -->![Droplet uploaded](droplet-uploaded.png)
 
 And finally you see the starting phase:
 
-!![Application starting](starting-phase.png)
+<!-- border -->![Application starting](starting-phase.png)
 
 > If you run `cf push` for an existing application, _all instances of that application are stopped_ and new instances are started with the code you just pushed. Users that try to access the app during this time may get various HTTP error messages, such as "404" ("file not found") and others, while the application is redeployed. The Cloud Foundry API `v3` support the so called [Rolling App Deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html) with `cf push <app-name> --strategy rolling` which allows to push an app without downtime. The API `v3` are also supported on SAP BTP.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand when and how to re-start, re-stage, or re-push your application)]
+### Understand when and how to re-start, re-stage, or re-push your application
+
 
 Knowing when to re-stage, restart, or re-push is useful in properly maintaining your application with minimal downtime or even without a downtime. All this can be a little confusing, so here's a quick summary and overview:
 
@@ -76,10 +77,10 @@ Knowing when to re-stage, restart, or re-push is useful in properly maintaining 
 - _Re-start_ - app instances when there are changed environment variables or service bindings. Additionally, `cf restart <app-name>` is useful when you want to quickly recycle application processes and get an application back to a fresh/known state. If you're interested in more details check out the [official documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html#restart).
 
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand application crashes, shutdowns, and evacuations)]
+
+### Understand application crashes, shutdowns, and evacuations
+
 
 Every application stops running at some point, whether from a normal shutdown, a crash, or a restart. Cloud Foundry handles all of these scenarios as follows:
 
@@ -91,8 +92,7 @@ Every application stops running at some point, whether from a normal shutdown, a
 
 > Always run at least two app instances for any environment or workload considered "production" so as not to introduce single points of failure.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 
 ---

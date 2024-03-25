@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Enable Events from SAP S/4HANA Cloud to SAP BTP
 description: This tutorial shows you how to enable events to be sent from your SAP S/4HANA Cloud system to SAP BTP.
 keywords: cap
@@ -11,29 +11,29 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
- - [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register)
- - [Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application](btp-app-ext-service-s4hc-use)
  - [Set Up Your CAP Application for Eventing](btp-app-events-app-setup-s4hc)
- - When starting with the result from the [`events-app-setup-s4hc`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/events-app-setup-s4hc) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the content of the branch.
- - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
-    - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform step 14-17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
- - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant.
-    - You must be an administrator of the SAP S/4HANA Cloud system.
-    - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
 
 ## Details
 ### You will learn
  - How to add an event topic to your event channel
 
+
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Add the Business Partner topic to your event channel)]
 1. Log on to your SAP S/4HANA Cloud system.

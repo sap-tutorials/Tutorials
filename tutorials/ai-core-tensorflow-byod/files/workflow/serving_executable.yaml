@@ -3,19 +3,19 @@ kind: ServingTemplate
 metadata:
   name: tf-text-clf-serve
   annotations:
-    scenarios.ai.sap.com/description: "Tensorlfow text classification"
+    scenarios.ai.sap.com/description: "Tensorflow text classification"
     scenarios.ai.sap.com/name: "movie-review-clf"
-    executables.ai.sap.com/description: "Tensorlfow GPU Serving executable"
-    executables.ai.sap.com/name: "serve-exectuable"
+    executables.ai.sap.com/description: "Tensorflow GPU Serving executable"
+    executables.ai.sap.com/name: "serve-executable"
   labels:
     scenarios.ai.sap.com/id: "tf-text-clf"
     ai.sap.com/version: "1.0.0"
 spec:
   inputs:
     artifacts:
-      - name: modelArtifact
+    - name: modelArtifact
   template:
-    apiVersion: "serving.kubeflow.org/v1beta1"
+    apiVersion: "serving.kserve.io/v1beta1"
     metadata:
       labels: |
         ai.sap.com/resourcePlan: infer.s

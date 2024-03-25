@@ -1,33 +1,29 @@
 ---
-title: Connect to Data Lake Relational Engine Using the JDBC Driver
-description: Create and debug a Java application that connects to data lake Relational Engine.
+parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>java]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>java]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
+
+# Connect to Data Lake Relational Engine Using the JDBC Driver
+<!-- description --> Create and debug a Java application that connects to the data lake Relational Engine.
 
 ## Prerequisites
  - You have completed the first tutorial in this group.
 
-## Details
-### You will learn
+## You will learn
   - How to create and debug a Java application that connects to and queries a data lake Relational Engine database
-  - How to connect to a data lake Relational Engine in `DBeaver`
 
+## Intro
 [Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install a JDK)]
-
+### Install a JDK
 Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path. Details of the driver and supported versions can be found at [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd02ce86c5f101482b78476939fb83a.html) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
 
-A few options include:
-
-* [Java JDK](https://www.oracle.com/technetwork/java/javase/overview/index.html) such as [Java SE 11 (LTS)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-
-* [A SAP supported version of the `OpenJDK`](https://sap.github.io/SapMachine/#download)
+An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
 
 To verify that the JDK is correctly set up, run the following:
 
@@ -38,29 +34,25 @@ javac -version
 
 If these commands fail, ensure that the folder they are located in is included in your path.  
 
-The following command will install Java on openSUSE Leap 15.2.
+The following command will install Java on openSUSE Leap 15.4.
 
 ```Shell (Linux)
 sudo zypper install java-11-openjdk-devel
 ```
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](The SAP IQ JDBC driver)]
+### The data lake Relational Engine JDBC driver
+The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
 
-The SAP IQ JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
-
-A native JDBC driver called `jConnect` is also provided. This tutorial focuses on the SAP IQ JDBC driver.
+A native JDBC driver called `jConnect` is also provided. This tutorial focuses on the [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/jdbc-drivers).
 
 See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd02ce86c5f101482b78476939fb83a.html) for additional details.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Java application that queries data lake Relational Engine)]
-
+### Create a Java application that queries data lake Relational Engine
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+
+    >The HOMEPATH environment variable should resolve to your user in your users folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\java
@@ -74,7 +66,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     pico JavaQuery.java
     ```
 
-2. Copy the following code into `JavaQuery.java`:
+2. Copy the following code into `JavaQuery.java`. Update the `host` value in the connection string.
 
     ```Java
     import java.sql.*;
@@ -98,7 +90,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
                 try {
                     System.out.println("Connection to data lake Relational Engine successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -114,9 +106,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     }
     ```
 
-3. Update the `host` value in the connection string.
-
-4. Compile the `.java` file into a `.class` file using the following command:
+3. Compile the `.java` file into a `.class` file using the following command:
 
     ```Shell (Microsoft Windows)
     javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java
@@ -125,7 +115,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     javac -cp $IQDIR17/java/sajdbc4.jar:. JavaQuery.java
     ```  
 
-5. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
+4. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
 
     ```Shell (Microsoft Windows)
     java -classpath %IQDIR17%\Java\sajdbc4.jar;. JavaQuery
@@ -138,12 +128,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
 
 See [JDBC Program Structure](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd5a89b6c5f1014ad1bae9e04645f43.html) for additional details.  
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Debug the application)]
-
+### Debug the application
 Visual Studio Code can run and debug a Java application. It is a lightweight but powerful source code editor available on Microsoft Windows, macOS, and Linux.
 
 1. If required, [Download Visual Studio Code](https://code.visualstudio.com/Download).
@@ -156,7 +141,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     ![Java extensions](extensions.png)
 
-4. Once the Java Extension Pack has been installed, expand the Java Project Explorer and click on the **+** icon to add the JDBC driver as a referenced library.
+4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
 
     ![referenced libraries](ref-libraries.png)
 
@@ -170,54 +155,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     ![VS Code Debugging](debugging.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Browse a data lake Relational Engine using DBeaver with JDBC)]
-
-`DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine JDBC driver.  
-
-The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
-
-1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
-
-    ![Install DBeaver](dbeaver-install1.png)
-
-2. In `DBeaver`, select **Database | Driver Manager | New** to create a new driver configuration.
-
-    ![New Driver](create-new-driver.png)
-
-3.  Under the **Libraries** tab, specify Java and native components that make up the driver.
-
-    ![Libraries](create-new-driver-libraries.png)
-
-    Select `sajdbc4.jar` and choose Find Class and press **OK** to save the new driver definition.
-
-    >On Linux, if an error occurs indicating that the library cannot load,  ensure that source IQ.sh has been added to your environment as described at [Step 5: Install the data lake IQ client](hana-cloud-dl-clients-overview).
-
-4. Select **Database | New Database Connection | All** and select the newly created driver definition.  
-
-    ![Database connection](dbeaver-connection.png)
-
-5. Provide the JDBC URL and credentials and press the **Test Connection** button.  An example of the URL is shown below.
-
-    ```JDBC URL
-    jdbc:sqlanywhere:uid=HDLADMIN;pwd=MyPasword1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'
-    ```
-
-    ![Database connection main tab](create-new-driver-test.png)
-
-6. A SQL Console can now be opened and queries can be executed.
-
-    ```SQL
-    SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;
-    ```
-
-    ![query in DBeaver](dbeaver-select.png)
-
-Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database and used the driver in `DBeaver`.
-
-[VALIDATE_1]
-[ACCORDION-END]
+### Knowledge check
+Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database.
 
 ---

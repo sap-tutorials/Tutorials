@@ -1,28 +1,31 @@
 ---
-title: Create Instance of SAP Event Mesh
-description:  Create an instance of SAP Event Mesh service from SAP Business Technology Platform Cockpit and understand in detail about it's each property.  
+parser: v2
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: software-product>sap-event-mesh
 ---
 
+# Create Instance of SAP Event Mesh
+<!-- description -->  Create an instance of SAP Event Mesh service from SAP Business Technology Platform Cockpit and understand in detail about it's each property.  
+
 ## Prerequisites
 - SAP Business Technology Platform environment with SAP Event Mesh entitlement  
 
-## Details
-### You will learn
+## You will learn
   - How to create an SAP Event Mesh service instance
   - How to access the Service Key of a SAP Event Mesh service instance
 
 
+## Intro
 **IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of SAP Event Mesh](cp-enterprisemessaging-learn-messaging-concepts).
 
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create an instance)]
+### Create an instance
+
 
 1. Open the SAP Business Technology Platform cockpit, Cloud Foundry environment.
 
@@ -101,10 +104,10 @@ primary_tag: software-product>sap-event-mesh
 
 >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
-[VALIDATE_1]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understanding Service Key of SAP Event Mesh)]
+
+### Understanding Service Key of SAP Event Mesh
+
 
 When an instance of SAP Event Mesh is created with the steps mentioned above, it stores the information of the protocols, corresponding end-points and authorizations which can be used to bind it to an Application. **Service Key** holds this information when an instance of SAP Event Mesh is created.
 You can create a service key of the instance with the following steps depicted through following three images.
@@ -184,8 +187,7 @@ Do find below a template Service Key of an SAP Event Mesh instance.
 
 Now you can proceed with the tutorial [Create Queues and Queue Subscriptions for Event Mesh](cp-enterprisemessaging-queue-queuesubscription) to create queues and queue subscriptions so you can start working with SAP Event Mesh.
 
-[VALIDATE_2]
-[ACCORDION-END]
+
 
 
 

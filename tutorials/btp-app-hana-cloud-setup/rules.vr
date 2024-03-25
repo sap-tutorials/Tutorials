@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+For which type of account are SAP HANA instances created automatically??
+
+###Match
+[ ] Trial
+[ ] Live
+[ ] All
+[x] None
+
+[VALIDATE_1]

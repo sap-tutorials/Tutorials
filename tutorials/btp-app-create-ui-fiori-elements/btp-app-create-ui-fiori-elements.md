@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Create an SAP Fiori Elements-Based UI
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
 keywords: cap
@@ -11,9 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
+ - Before you start with this tutorial, you have two options:
+    - Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
+    - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
+
 
 ## Details
 ### You will learn
@@ -22,10 +23,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to make header info editable
  - How to check the annotation files
 
-
-To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
-
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 controls, and SAPUI5 model view controller (MVC) concepts. In a plain SAPUI5 or a freestyle SAPUI5 app, all the views and controllers are part of your project. In contrast, in an SAP Fiori elements app most of the code is outside of the project, managed centrally by the SAP Fiori elements team. The code inside your project only references these central components. They take care of creating the UI according to the latest SAP Fiori design guidelines and cover all the controller logic for you out of the box. The UI can be influenced by OData annotations. They determine, for example, which properties of an OData service make up the columns of a table that displays the content of the service.
@@ -34,23 +46,23 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
-    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    > In case you get an error launching the SAP Fiori application generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
+2. Choose template type **SAP Fiori** and template **List Report Page**.
 
        ![V4 Template](vscv4template.png)
 
 3. Choose **Next**.
 
-4. In the next dialog, choose **Use a Local CAP Project** and point to the folder of your current **`cpapp`** project.
+4. In the next dialog, choose `Use a Local CAP Project` and choose your current `cpapp` project.
 
     > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-    > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
+    > This is an issue with the SAP Fiori application generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
     > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
@@ -58,17 +70,21 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
+5. Select `RiskService(Node.js)` as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
-6. Select **Risks** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
+6. Select `Risks` as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
     ![entitySelection](entityselection.png)
 
 7. Enter `risks` as the module name and `Risks` as the application title.
 
 8. Enter `ns` as the namespace and `Risks` as the description for the application.
+
+9. For `Minimum SAPUI5 version` select the latest version from the dropdown.
+
+9. Leave the default values for all other settings. 
 
 9. Choose **Finish** to generate the application.
 
@@ -91,15 +107,11 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
-3. On the launch page that now comes up, choose the **Risks** tile.
-
-    !![Index HTML Page](feapptile.png)
-
-    You can now see the application without any data.
+3. You can now see the application without any data.
 
     !![Index HTML Page](feappempty.png)
 
-    The table is empty because the application is currently missing UI annotations. You add them in the next step.
+    There are no visible columns because the application is currently missing UI annotations. You add them in the next step.
 
 4. To add the OData annotations, copy the file `risks-service-ui.cds` from `templates/create-ui-fiori-elements/srv` to the `srv` folder of your app.
 
@@ -127,7 +139,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+2. To add a `Mitigation`, click on the value help icon in the input field and select a mitigation.
 
     !![Add Mitigation](addmitigation.png)
 
@@ -135,7 +147,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Fill Main Data](fillriskdata.png)
 
-4. The new risk is created but it has no title and it has no description.
+4. Close the tab and choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html), the new risk is created but it has no title.
 
     !![No Title Risk](notitlerisk.png)
 
@@ -145,7 +157,7 @@ To make also the header fields editable, you have to change the default setting 
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-    ```YAML[15]
+    ```JSON[15]
     {
         "_version": "1.32.0",
         "sap.app": {
@@ -174,6 +186,8 @@ To make also the header fields editable, you have to change the default setting 
 3. Create another risk with a title and description.
 
     !![My New Risk](mynewrisk.png)
+
+4. Close the tab and choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html), a new risk is created and it has the title and description.
 
 [DONE]
 [ACCORDION-END]

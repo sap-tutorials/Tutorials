@@ -1,10 +1,12 @@
 ---
-title: Performing a Failback
-description: How to initiate failbacks in HANA Studio
+parser: v2
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
+
+# Performing a Failback
+<!-- description --> How to initiate failbacks in HANA Studio
 
 ## Prerequisites
  - **Proficiency:** Advanced
@@ -12,17 +14,16 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 
-## Details
-### You will learn
+## You will learn
 - The prerequisites needed to set up a Fail-back
 - How to perform a fail-back in HANA Studio
-
-### Time to Complete
+## Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction)]
+### Introduction
+
 To fail-back to your original primary system, you must switch the roles of your systems back to their original configuration. To do so, the original primary system will have to be started as a secondary system. After both systems are back in sync, you can perform a takeover on the original primary system.
 
 Before you perform a fail-back, ensure that the following pre-requisites are met:
@@ -32,11 +33,9 @@ Before you perform a fail-back, ensure that the following pre-requisites are met
 - The original primary system is not running.
 - The current primary system is running.
 
-[DONE]
 
-[ACCORDION-END]
+### Performing a Failback
 
-[ACCORDION-BEGIN [Step 2: ](Performing a Failback)]
 After a takeover has been carried out the roles between primary and secondary can be switched over.
 
 In the case of a failover, the former primary has to be registered as the secondary with the now active primary system. The roles are switched compared to the original setup.
@@ -100,6 +99,4 @@ Review the details, and click **Finish**.
 
 The primary system and secondary system have their original roles again.
 
-[VALIDATE_1]
 
-[ACCORDION-END]

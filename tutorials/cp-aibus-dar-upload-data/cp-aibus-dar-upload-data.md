@@ -1,17 +1,21 @@
 ---
-title: Upload Data to Data Attribute Recommendation
-description: Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
+parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
-## Details
-### You will learn
+# Upload Data to Data Attribute Recommendation
+<!-- description --> Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
+
+## You will learn
   - How to authorize your client to communicate with your Data Attribute Recommendation service instance
   - How to do upload data to your Data Attribute Recommendation service instance to train a machine learning model
 
+## Intro
 To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: When creating the master data of a product, classifying the product into correct category and product hierarchy is a manual process that involves a product expert.
@@ -22,7 +26,8 @@ The first steps to create this machine learning model that predicts categories a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get an access token)]
+### Get an access token
+
 
 To communicate with your service instance, you need to retrieve an OAuth access token which will grant you access to the Data Attribute Recommendation APIs. This access token is added to all your service instance requests.
 
@@ -38,11 +43,10 @@ The response includes your `access_token` plus its expiration time `expires_in`.
 
 ![Receive Access Token](access-token.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create dataset schema)]
+### Create dataset schema
+
 
 Now, you need to create a new dataset schema. A dataset schema describes the structure of datasets.
 
@@ -58,11 +62,10 @@ To create this dataset schema, click **Send** to send the request.
 
 You have successfully created a dataset schema.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](List all dataset schemas)]
+### List all dataset schemas
+
 
 To see the details of all dataset schemas that you have created, select the request `Get Datasets Schemas collection` in the folder `Upload Data`. click **Send** to send the request.
 
@@ -72,11 +75,10 @@ In the response, you find your newly created dataset schema plus all other schem
 
 ![List Dataset Schemas Response](get-dataset-schemas-response.png)
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create dataset)]
+### Create dataset
+
 
 Next, you need to create a dataset using the dataset schema that you have created. The dataset is a table that holds the data that you will upload later.
 
@@ -90,11 +92,10 @@ In the response, you find the details of your newly created dataset, including t
 
 You have successfully created a dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload data)]
+### Upload data
+
 
 The final step is to upload data to your dataset.
 
@@ -120,11 +121,10 @@ In the response, you see that the status of your dataset has changed to `VALIDAT
 
 You have successfully uploaded data to your dataset.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](See dataset status)]
+### See dataset status
+
 
 To see the current status of your dataset, select the request **Get Dataset by id** in the folder `Upload Data`. Then click **Send** to send the request.
 
@@ -138,11 +138,9 @@ Note that you will not be able to [Use Data Attribute Recommendation to Train a 
 
 Your data is now validated and ready to be used to train a machine learning model.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+### Test yourself
 
-[VALIDATE_1]
-[ACCORDION-END]
+
+

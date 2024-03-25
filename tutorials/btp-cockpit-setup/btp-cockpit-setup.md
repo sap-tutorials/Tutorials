@@ -1,18 +1,22 @@
 ---
-title: Get an SAP BTP Account for Tutorials
-description: Learn which account model on SAP Business Technology Platform is best suited for your purposes so you can do the tutorials involving SAP BTP services and applications (trial or free tier).
+parser: v2
+author_name: Madeline Schaefer
+author_ profile: https://github.com/Madeline-Schaefer
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>type>free-tier]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-business-technology-platform
 ---
 
-## Details
-### You will learn
+# Get an SAP BTP Account for Tutorials
+<!-- description --> Learn which account model on SAP Business Technology Platform is best suited for your purposes so you can do the tutorials involving SAP BTP services and applications (trial or free tier).
+
+## You will learn
   - How to decide which account model on SAP Business Technology Platform is suited for you
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understanding Trial vs. Free Tier)]
+### Understanding Trial vs. Free Tier
+
 
 There are a couple of ways to do SAP Business Technology Platform (BTP) tutorials and to try out SAP BTP services and applications:
 
@@ -31,24 +35,22 @@ There are a couple of ways to do SAP Business Technology Platform (BTP) tutorial
     - posts and announcements on the [SAP BTP topic page](https://community.sap.com/topics/business-technology-platform) -- there's a quick link there to post your questions, too.
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Which to choose?)]
+### Which to choose?
+
 
 Some services are available to try out for free in both free tier and a trial account, some are available free only in trial, and some are only available with a paid license.
 
 If you want to know which services currently offer which service plans, visit [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings. You find free tier service plans under **Free Tier Services**.
 
- !![SAP Discovery Center](btp-free-tier-dc.png)
+ <!-- border -->![SAP Discovery Center](btp-free-tier-dc.png)
 
 >**IMPORTANT:** Free tier service plans are not designed for productive use. SAP provides no associated support with free tier services plans either.  If you think you have encountered a runtime issue with a plan, you can ask a question on the [SAP Community Q&A site](https://answers.sap.com/index.html) and tag the appropriate service as part of your question.  SAP product folks monitor these forums, so your request should get proper attention quickly.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How to set up an account)]
+### How to set up an account
+
 
 Choose one of the following missions:
 
@@ -65,8 +67,6 @@ Choose one of the following missions:
 
 - **Trial:** If you do not have an account of any type yet and you want to try out services for a limited amount of time, follow the instructions in [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
-[DONE]
-[ACCORDION-END]
 
 
 

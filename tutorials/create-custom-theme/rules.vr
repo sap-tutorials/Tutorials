@@ -1,0 +1,50 @@
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+Can you base your custom theme on another custom theme?
+
+###Match
+[ ] Yes, every theme can be a base theme for your custom theme.
+[x] No, only SAP themes can be used as a base theme.
+[VALIDATE_2]
+
+[VALIDATE_6]
+###Rule
+multiple-choice
+
+###Question
+Why is it a good idea to define own colors in the Palette tab?
+
+###Match
+[x] It makes it more easy to enter colors.
+[ ] It would be too easy if you could just enter directly color values.
+[x] When the Corporate Identity changes you only need to change color values in one place.
+[VALIDATE_6]
+
+[VALIDATE_7]
+###Rule
+single-choice
+
+###Question
+Do you have to use colors defined in the Palette tab?
+
+###Match
+[ ] Yes, all colors to be used have to be defined in the Palette tab.
+[ ] No, you have to enter all colors directly—the Palette definitions are only as a memory aid.
+[x] No, you can use colors from the Palette tab, HTML color names, hex values, or other definitions allowed for HTML/CSS files.
+[VALIDATE_7]
+
+[VALIDATE_9]
+###Rule
+single-choice
+
+###Question
+What has to be done to make a custom theme available in the system?
+
+###Match
+[ ] It is enough to save the theme
+[x] The theme has to be saved and published
+[ ] A test build is already enough
+[VALIDATE_9]

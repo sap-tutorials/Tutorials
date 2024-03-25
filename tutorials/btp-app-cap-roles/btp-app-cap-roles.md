@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 keywords: cap
@@ -11,53 +11,40 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - You need to install [passport](http://www.passportjs.org/)
+ - Before you start with this tutorial, you have two options:
+- Follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-business-logic`](btp-app-cap-business-logic) branch.
+- Complete the previous tutorial [Add Business Logic to Your Application](btp-app-cap-business-logic) with all its prerequisites.
+
 
 ## Details
 ### You will learn
- - How to enable authentication support
  - How to add role restrictions to entities
  - How to add a local user for testing
  - How to access the application with a user and password
 
-
-To start with this tutorial use the result in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
-
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
-[ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
-To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js.
-
-> Additional Documentation:
-
->    [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked)
-
-1. Navigate to your project folder.
-
-2. Install the `passport` module.
-
-    ```Shell/Bash
-    npm install passport
-    ```
-
-
-[VALIDATE_1]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 2: ](Adding CAP role restrictions to entities)]
+[ACCORDION-BEGIN [Step 1: ](Adding CAP role restrictions to entities)]
 1. Open the file `srv/risk-service.cds`.
 
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
 
 <!-- cpes-file srv/risk-service.cds -->
-```[4-13,15-24]
+```JavaScript[4-13,15-24]
 using { sap.ui.riskmanagement as my } from '../db/schema';
 @path: 'service/risk'
 service RiskService {
@@ -91,20 +78,52 @@ With this change, a user with the role `RiskViewer` can view risks and mitigatio
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add Users for local testing)]
+[ACCORDION-BEGIN [Step 2: ](Add Users for local testing)]
 Since the authorization checks have been added to the CAP model, they apply not only when deployed to the cloud but also for local testing. Therefore, we need a way to log in to the application locally.
 
-CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we use the `.cdsrc.json` file to add the users.
+CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we will edit the `cpapp/package.json` file to add the users.
 
-1. Copy the file `templates/cap-roles/.cdsrc.json` to your project directory `cpapp`. If you are asked to replace an existing file with the same name, confirm.
+1. Add this to the end of the file `cpapp/package.json`:
 
-    > You have to make hidden files visible in your operating system in order to see the file.
+```JSON[7-31]
+{
+  "name": "cpapp",
+  ...
+  "sapux": [
+    "app/risks"
+  ]
+  ,"cds": {
+    "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+              "risk.viewer@tester.sap.com": {
+                  "password": "initial",
+                  "ID": "risk.viewer@tester.sap.com",
+                  "roles": [
+                    "RiskViewer"
+                  ]
+              },
+              "risk.manager@tester.sap.com": {
+                  "password": "initial",
+                  "ID": "risk.manager@tester.sap.com",
+                  "roles": [
+                    "RiskManager"
+                  ]
+              }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
-    The file defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
+    This configuration defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
 
 2. Let's look at the `risk.manager@tester.sap.com` example.
 
-    <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
     ```JSON[7-14]
     {
       "[development]": {
@@ -132,12 +151,10 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Access the Risks application with password)]
+[ACCORDION-BEGIN [Step 3: ](Access the Risks application with password)]
 When accessing the `Risks` service in your browser, you get a basic auth popup now, asking for your user and password. You can use the two users to log in and see that it works.
 
-1. With `cds watch` running, go to <http://localhost:4004/launchpage.html>.
-
-2. Choose **Risks** and choose **Go**.
+1. With `cds watch` running, go to <http://localhost:4004/risks/webapp/index.html>.
 
 3. Enter **Username**: `risk.manager@tester.sap.com`.
 
@@ -151,13 +168,9 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 > Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the login data in your browser. For Google Chrome, restart your browser (complete shutdown and restart) by entering `chrome://restart` in the address line.
 
-
-
-[DONE]
+[VALIDATE_1]
 The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

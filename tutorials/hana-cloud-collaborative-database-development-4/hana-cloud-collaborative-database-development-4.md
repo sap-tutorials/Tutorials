@@ -1,19 +1,20 @@
 ---
-title: Prepare Your SAP HANA Database Project for Collaboration
-description: Create HDBROLEs and synchronize your SAP HANA Database Project with Git to prepare your project for collaboration.
+parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
+
+# Prepare Your SAP HANA Database Project for Collaboration
+<!-- description --> Create HDBROLEs and synchronize your SAP HANA Database Project with Git to prepare your project for collaboration.
 
 ## Prerequisites
 - You need to complete the [previous tutorial](hana-cloud-collaborative-database-development-3) about changing data structures using HDBTABLE and HDBMIGRATIONTABLE Objects.
 - Make sure your instance of SAP HANA Cloud, SAP HANA database is **running**.
 
 
-## Details
-### You will learn
+## You will learn
 - How to create an HDBROLE with grant options
 - How to create an HDBROLE without grant options
 - How to create a new repository and token in GitHub
@@ -21,6 +22,7 @@ primary_tag: products>sap-hana-cloud
 - How to add a remote origin via HTTPS connection
 
 
+## Intro
 **Are you wondering what the best way is to manage changing data structures? Do you want to know how to collaborate more efficiently when working in development projects?**
 
 > To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
@@ -28,11 +30,11 @@ primary_tag: products>sap-hana-cloud
 1. Get started to collaborate in SAP Business Application Studio
 2. Import data into a table in SAP HANA Database Project
 3. Change data structures using HDBTABLE and HDBMIGRATIONTABLE objects
-</li>
+
     > To answer the second question, create template projects that help you set up service connections, handle synonyms and prepare authorization management. You can create these templates once in the beginning and give your project team members a head-start. Using the template, they can build on your work and can quickly start working productively. The following 4 tutorials in this tutorial group will help you learn how to collaborate efficiently:
 
 
-4. You are here <sub-style="font-size:30px">&#9755;</sub> **Prepare your SAP HANA Database Project for collaboration**
+4. You are here <sub font-size="60px">&#9755;</sub> **Prepare your SAP HANA Database Project for collaboration**
 5. Generate users and roles for assigning privileges
 6. Enhance your project with services, synonyms and grants
 7. Collaborate on an SAP HANA Database Project template
@@ -40,10 +42,7 @@ primary_tag: products>sap-hana-cloud
 
 This tutorial will show you how to prepare your SAP HANA Database Project for collaboration.
 
----
-
-[ACCORDION-BEGIN [Step 1: ](Create a role with grant option)]
-
+### Create a role with grant option
 
 Now that you know the difference between `hdbtable` and `hdbmigration` table objects when changing data structures, we need to prepare some rights for the next tutorials. In this tutorial, you will create roles with specific permissions to give other users access to these tables. This is necessary, e.g., for creating calculation views, which you will do in the [last tutorial](hana-cloud-collaborative-database-development-7).
 
@@ -55,29 +54,28 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 3.	In the window for creating a new SAP HANA Database Artifact, click on the     folder icon in the first field. Navigate to your project, the **`src`** folder, and then click on **Open**.
 
-4.	Select the artifact type as **Role (`hdbrole`)**.
+4.	Select the artifact type as **Role `hdbrole`**.
 
-    !![Create hdbrole](ss-01-create-hdbrole.png)
+    <!-- border -->![Create hdbrole](ss-01-create-hdbrole.png)
 
 5.	Under 'Specify the artifact name' option enter the name **`inventory_with_grant`**.
 
 6.	The database version should be HANA Cloud, by default. Without making any further changes, click on **Create**.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign privileges to the role with grant option)]
+### Assign privileges to the role with grant option
+
 
 
 1.	A new file **`inventory_with_grant.hdbrole`** can be seen under the `src` folder in the EXPLORER panel. Click on this role file to open the **Role Editor** window.
 
 2.	Click on **Edit** for the Role name. Rename it as **`inventory_with_grant#`**.
 
-    !![Edit hdbrole name](ss-02-edit-hdbrole-name.png)
+    <!-- border -->![Edit hdbrole name](ss-02-edit-hdbrole-name.png)
 
-    > ### IMPORTANT
+    > **IMPORTANT**
     >
-    > The '**#**' character at the end of the role name is necessary to create this role. Whenever you create roles with grant or admin options, they need to have a '**#**' character at the end of the role name.
+    > The **`#`** character at the end of the role name is necessary to create this role. Whenever you create roles with grant or admin options, they need to have a **`#`** character at the end of the role name.
 
 3.	Next, click on the tab **Object Privileges**. In the column **Object Name**, click on the ![Explorer Icon](ss-explorer-icon.png) icon in the first row.
 
@@ -86,15 +84,14 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 5.	In the column **Privileges with Grant Option**, click on the arrow where it says **Choose privileges** to select from a list of privileges with grant option that you want to assign to this role.
 
-    !![Privileges with grant](ss-03-privileges-with-grant.png)
+    <!-- border -->![Privileges with grant](ss-03-privileges-with-grant.png)
 
 6.	Check the **SELECT** privilege.
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a second role without grant option)]
+### Create a second role without grant option
+
 
 Now you will create a new role having privileges without the grant option. Repeat the steps from the previous step with a few modifications:
 
@@ -102,13 +99,13 @@ Now you will create a new role having privileges without the grant option. Repea
 
 2.	Once the file **`inventory_without_grant.hdbrole`** can be seen under the `src` folder in the explorer panel, open this role file in the **Role Editor**.
 
-    !![Explorer view of new hdbrole](ss-04-explorer-view-new-hdbrole.png)
+    <!-- border -->![Explorer view of new hdbrole](ss-04-explorer-view-new-hdbrole.png)
 
 3.	Again, in the tab **Object Privileges**, in the field **Object Privileges**, select the table **INVENTORY** .
 
 4.	In the column **Privileges**, click on the arrow where it says **Choose privileges** to select from a list of privileges that you want to assign to this role.
 
-    !![Privileges](ss-05-privileges.png)
+    <!-- border -->![Privileges](ss-05-privileges.png)
 
 5.	Check the **SELECT** privilege.
 
@@ -116,11 +113,10 @@ Now you will create a new role having privileges without the grant option. Repea
 
 > These roles will be used in the [last tutorial](hana-cloud-collaborative-database-development-7) to share calculation views among different users.
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a new repository in GitHub)]
+### Create a new repository in GitHub
+
 
 When collaborating with others on development projects, pushing your files to a git repository is very helpful. In this last section, we will establish a connection to GitHub, create a new repository and sync our development project with the repository.
 
@@ -130,7 +126,7 @@ When collaborating with others on development projects, pushing your files to a 
 
 3.	In the top right corner, click on **New** to create a new repository.
 
-    !![New Git repository](ss-06-new-git-repository.png)
+    <!-- border -->![New Git repository](ss-06-new-git-repository.png)
 
 4.	Under Create a new repository, enter **WS3_1** as the Repository name.
 
@@ -140,12 +136,11 @@ When collaborating with others on development projects, pushing your files to a 
 
 7.	Click on **Create repository** to finish. Your first step is done, and you have an empty repository ready to have the content from your development project.
 
-    !![Create repository](ss-07-create-repository.png)
+    <!-- border -->![Create repository](ss-07-create-repository.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Generate a GitHub token)]
+### Generate a GitHub token
+
 
 There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH requires you to use your GitHub password and HTTPS requires the use of a token. We recommend using HTTPS for higher security. In this step we will create a GitHub token that can be used to connect to git.
 
@@ -157,11 +152,11 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
 4.	Click on **Generate new token** at the top right corner of the screen. You will be asked to sign in using your GitHub account password.
 
-    !![Generate tokens](ss-08-generate-tokens.png)
+    <!-- border -->![Generate tokens](ss-08-generate-tokens.png)
 
 5.	After signing in, enter a **name** for the token (for example: `MyNewToken`) under the caption Note.
 
-    !![My new token](ss-09-my-new-token.png)
+    <!-- border -->![My new token](ss-09-my-new-token.png)
 
 6.	Next you can select an **expiration date**.
 
@@ -169,21 +164,20 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
 8.	Copy the new token you generated and paste it in a safe location that could be accessed later.
 
-    !![Token](ss-11-token.png)
+    <!-- border -->![Token](ss-11-token.png)
 
-> ### CAUTION
+> **CAUTION**
 > After you proceed to the next step, you cannot go back to view the token again unless you have saved it in another location. In such a case, you will need to generate a new token.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Connect your development project to GitHub)]
+### Connect your development project to GitHub
+
 
 1.	Go back to SAP Business Application Studio.
 
 2.	On the left menu, click on the  ![Source Control Icon](ss-source-control-icon.png) icon to go to the **Source Control** panel. Here, you can see all the recent updates to your project that have not been pushed to GitHub yet. In this panel, you can also administer your GitHub connection and changes from a menu instead of using the terminal.
 
-    !![Git icon](ss-12-git-icon.png)
+    <!-- border -->![Git icon](ss-12-git-icon.png)
 
 3.	Open a terminal by clicking on **Terminal** at the top navigation bar and select **Open Terminal**.
 
@@ -193,24 +187,23 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
     git init
     ```
 
-    !![Git initialized](ss-13-git-initialized.png)
+    <!-- border -->![Git initialized](ss-13-git-initialized.png)
 
     This will initialize the empty Git repository.
 
 5.	Type **first commit** in the Message box under the Source Control panel. Click on the **tick mark** icon at the top of the panel to stage all your changes and commit them.
 
-    !![first commit](ss-14-first-commit.png)
+    <!-- border -->![first commit](ss-14-first-commit.png)
 
 6.	Select **Yes** or **Always**, if you encounter a message box asking what action to take when the commit (tick mark) icon is selected.
 
 You have now committed all the changes made to the data structures during this session. Next, you will add the remote origin and push the staged changes to your repository.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a remote origin via HTTPS connection)]
+### Add a remote origin via HTTPS connection
 
-1.	Go to the terminal and paste the following command. Before you hit Enter, replace <Username> with your GitHub username and <Repository name> with your GitHub repository name. (in this case for example: WS3_1)
+
+1.	Go to the terminal and paste the following command. Before you hit Enter, replace `Username` with your GitHub username and `Repository name` with your GitHub repository name. (in this case for example: WS3_1)
 
     ```Shell/Bash
     git remote add origin https://github.com/<Username>/<Repository name>.git
@@ -228,7 +221,7 @@ You have now committed all the changes made to the data structures during this s
 
 5.	There, enter your Git username and press **Enter**.
 
-    !![Git username for connection](ss-15-git-username-for-connection.png)
+    <!-- border -->![Git username for connection](ss-15-git-username-for-connection.png)
 
 6.	Next, paste the token you had generated from GitHub in the prompt and press **Enter**.
 
@@ -239,7 +232,7 @@ You have now committed all the changes made to the data structures during this s
     ```Shell/Bash
     git push -u origin master
 ```
-    !![Git push objects](ss-16-git-push-objects.png)
+    <!-- border -->![Git push objects](ss-16-git-push-objects.png)
 
     This pushes all the committed changes to the GitHub repository.
 
@@ -248,14 +241,6 @@ You can go back to your GitHub repository and verify that all the folders of you
 
 >You have successfully completed the fourth tutorial. In the next tutorial, you will generate users and roles for assigning privileges necessary for collaborating on the project.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+### Test yourself
 
-
-
-[VALIDATE_7]
-[ACCORDION-END]
-
----

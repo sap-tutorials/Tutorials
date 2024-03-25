@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
 keywords: cap
@@ -11,19 +11,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
  - [Assign a Role Collection to a User](btp-app-role-assignment)
 
 ## Details
@@ -33,10 +20,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to enable Logging Service for your CAP application
  - How to test the Logging Service
 
-
-To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
-
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Access logs from command line window)]
 1. Display recent logs.
@@ -65,13 +63,13 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+4. Choose **Cloud Foundry** &rarr; **Spaces**.
 
-3. Choose your space.
+5. Choose your space.
 
-4. Choose on the application whose logs you want to access.
+6. Choose on the application whose logs you want to access.
 
-5. Choose **Logs**.
+7. Choose **Logs**.
 
     !![App Logs](cpapp-srv-logs.png)
 
@@ -85,7 +83,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -113,7 +111,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`.
 
-    ```YAML[4-9]
+    ```YAML[4-8]
     ...
     resources:
     ...
@@ -122,6 +120,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
       parameters:
         service: application-logs
         service-plan: lite
+    parameters:
+    ...
     ```
 2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
@@ -230,13 +230,9 @@ The available fields are displayed on the left side of the screen. You can add f
 
 The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
-
-
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

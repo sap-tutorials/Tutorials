@@ -1,23 +1,23 @@
 ---
-title: Deploy a Multitenant Application to a Provider subaccount, Kyma Runtime
-description: Build a Node.js application into OCI image and push it into Docker registry. Based on that, deploy the application into the Kyma runtime.
+parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
+# Deploy a Multitenant Application to a Provider subaccount, Kyma Runtime
+<!-- description --> Build a Node.js application into OCI image and push it into Docker registry. Based on that, deploy the application into the Kyma runtime.
+
 ## Prerequisites
-- You have a Kyma runtime environment on SAP Business Technology Platform (BTP). If not, please follow this tutorial: [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started).
+- You have a Kyma runtime environment on SAP Business Technology Platform (BTP) and the relevant command line tools. If not, please follow the tutorials [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) and [Install the Kubernetes Command Line Tool](cp-kyma-download-cli).
 - You have installed [Docker](https://docs.docker.com/get-started/#download-and-install-docker).
 - You have [Docker Hub](https://hub.docker.com/) account.
-- You have installed [Kubernetes command-line tool](https://kubernetes.io/docs/tasks/tools/#kubectl).
 - You have finished the tutorial [Register a Multitenant Application to the SAP SaaS Provisioning Service](register-multitenant-app-saas-provisioning-service).
 
 
 
-## Details
-### You will learn
+## You will learn
 - How to build Application to OCI Image
 - How to push OCI image to Docker Hub
 - How to deploy applications into Kyma runtime
@@ -25,32 +25,27 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Determine SAP BTP Subaccount Subdomain)]
+### Determine SAP BTP Subaccount Subdomain
+
 
 Open your subaccount in the Cockpit. In the overview page, find the subdomain for your deployment.
 
 For example:
 
-!![image-20211214133316133](image-20211214133316133.png)
+<!-- border -->![image-20211214133316133](image-20211214133316133.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Determine Kyma Cluster Domain)]
+### Determine Kyma Cluster Domain
 
-In your Kyma dashboard, find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file or in the URL of the Kyma dashboard.
 
-For example:
-
-!![image-20211214133533870](image-20211214133533870.png)
+Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
 
 
 
-[DONE]
-[ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Build Application to OCI Image)]
+### Build Application to OCI Image
+
 
 1. Install tool
 <p> </p>
@@ -73,22 +68,19 @@ brew install buildpacks/tap/pack
 <p> </p>
     In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-approuter --builder paketobuildpacks/builder:full
-docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
+pack build <docker-hub-account>/multitenant-approuter:v1 --builder paketobuildpacks/builder-jammy-base
 ```
 
     In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
-docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
+pack build <docker-hub-account>/multitenant-kyma-backend:v1 --builder paketobuildpacks/builder-jammy-base
 ```
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Push OCI Image to Docker Hub)]
+### Push OCI Image to Docker Hub
+
 
 **1.** Log in to Docker using this command:
 
@@ -108,22 +100,20 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v1
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Namespace)]
+### Create Namespace
+
 
 If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have created a namespace in the Kyma environment called `multitenancy-ns`. If not, create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-!![image-20220214150615225](image-20220214150615225.png)
+<!-- border -->![image-20220214150615225](image-20220214150615225.png)
 
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy Secret for Docker Hub)]
+### Deploy Secret for Docker Hub
+
 
 Since the OCI image is stored in your Docker hub, you need to provide the access information to your Kyma cluster that you can pull the images from those repositories.
 
@@ -144,10 +134,9 @@ imagePullSecrets:
 
 
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy Application into Kyma Runtime)]
+### Deploy Application into Kyma Runtime
+
 
 **1.** Deploy consumed services by executing this command:
 
@@ -171,8 +160,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 
 
 
-[VALIDATE_1]
-[ACCORDION-END]
+
 
 
 ---
