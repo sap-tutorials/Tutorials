@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build-code
 parser: v2
 ---
 
-# Create a CAP Service and an SAP Fiori Application with Generative AI in SAP Build Code
+# Create a Full-Stack SAP Fiori Application with Joule in SAP Build Code
 <!-- description --> In this tutorial, you will use the Generative AI capabilities of Joule to create a CAP service with SAP Build Code. 
 
 
