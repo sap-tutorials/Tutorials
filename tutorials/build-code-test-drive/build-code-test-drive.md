@@ -15,7 +15,7 @@ parser: v2
 
 ## You will learn
 - To leverage the power of Joule in SAP Build Code
-- To use the one-click deployment option in SAP Build Code
+- To use the one-click deployment option in SAP Build Code 
 
 
 ## Prerequisites
