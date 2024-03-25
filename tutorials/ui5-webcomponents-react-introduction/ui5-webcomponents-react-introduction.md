@@ -38,7 +38,7 @@ UI5 Web Components for React provides various [templates](https://sap.github.io/
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx degit SAP/ui5-webcomponents-react/examples/vite-ts#main my-app
+npx degit SAP/ui5-webcomponents-react/templates/vite-ts#main my-app
 cd my-app
 npm i
 ```
