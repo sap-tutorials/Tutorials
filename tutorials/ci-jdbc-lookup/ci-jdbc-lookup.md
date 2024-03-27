@@ -80,13 +80,13 @@ The first approach created to bridge the gap of the non-existence of JDBC Lookup
 3.	Set and personalize the parameters used to define the SQL Statement in the next step, through a "Content Modifier". In the following table there are the fields, the description and the guidelines to fill them in:
 
 
-	|  Field Name     				| Description                                        | Guidelines                               | Necessity
-	|  :------------- 				| :-------------                                     | :-------------                           | :-------------           
-	|  Access Parameters            | `All the fields needed to access the DataBase`     | `All seperated by commas`                | `Mandatory`  
-	|  Key Parameters               | `Fields used as keys to fetch the data`            | `All seperated by commas`                | `Mandatory`
-	|  SQL Action                   | `Action to operate on the SQL Statment`            | `Only one and using capital letters`     | `Mandatory`
-	|  Table Name                   | `Name of the table for access`                     | `Only one and using capital letters`     | `Mandatory`
-    |  SP Parameters                | `Parameters to fill in case of action Execute. Only relevant for stored procedures`     | `All seperated by commas`                | `Optional`
+	|  Field Name     			| Property Name	        | Description                                        | Guidelines                               | Necessity
+	|  :------------- 			| :------------- 	    | :-------------                                     | :-------------                           | :-------------           
+	|  Access Parameters        | access                | `All the fields needed to access the DataBase`     | `All seperated by commas`                | `Mandatory`  
+	|  Key Parameters           | key                   | `Fields used as keys to fetch the data`            | `All seperated by commas`                | `Mandatory`
+	|  SQL Action               | action                | `Action to operate on the SQL Statment`            | `Only one and using capital letters`     | `Mandatory`
+	|  Table Name               | table                 | `Name of the table for access`                     | `Only one and using capital letters`     | `Mandatory`
+    |  SP Parameters            | spParams              | `Parameters to fill in case of action Execute. Only relevant for stored procedures`     | `All seperated by commas`                | `Optional`
   
 
 4.	Define a dynamic SQL Statement with the fields value defined in the previous step. The script shown below can be applied in all scenarios:
@@ -102,7 +102,7 @@ The first approach created to bridge the gap of the non-existence of JDBC Lookup
         def dbTableName = message.getProperty("table")
         def sqlAction = message.getProperty("action") 
         def keyParam = message.getProperty("key")
-        def spParams = message.getProperty("SPParams") 
+        def spParams = message.getProperty("spParams") 
     
 
         def bodyString = message.getBody(java.lang.String) as String;
