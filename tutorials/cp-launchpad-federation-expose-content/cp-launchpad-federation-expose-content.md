@@ -36,6 +36,13 @@ Login to your SAP S/4HANA system with SAP Logon.
 
     ![Select roles](3a-s4-select-roles.png)
 
+
+
+> **Note**: When using an SAP S/4HANA 2023 FPS01 system, the screen will look a bit different and give you the option to select between exposure version 1 and version 2. In this tutorial, simply keep version 1. To learn more about the exposure versions, please check the [documentation](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/federation-of-remote-content-providers).
+>  ![Exposure Screen 2023 FPS01](3b-s42023fps01.png)
+> 
+
+
 3. Then click the **Multiple Selection** icon to open role selection.
 
     ![Multiple Selection Icon](3c-s4-multiselect.png)
