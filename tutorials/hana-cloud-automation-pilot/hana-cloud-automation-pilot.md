@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake, software-product-function>sap-automation-pilot]
+tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake, software-product>sap-automation-pilot]
 primary_tag: software-product>sap-hana-cloud
 ---
 

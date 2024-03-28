@@ -138,11 +138,15 @@ primary_tag: software-product>sap-hana-cloud
     |  Format Code    | `Ctrl+B`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Go to Line | `Ctrl+L`
+    |  Go to next SQL Console tab | `Ctrl+Alt+Page up`
+    |  Go to the previous SQL Console  tab | `Ctrl+Alt+Page down`
+    |  Open a new SQL Console tab | `Ctrl+Alt+C`
     |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
-    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Jump to Matching Brackets | `Ctrl+P`
     |  Run All | `F8`
     |  Run Statement | `F9`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Switch tabs      | `Ctrl+Alt+Page up` `Ctrl+Alt+Page down`
     |  Text Completion | `Ctrl+Space` (requires two or more characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
