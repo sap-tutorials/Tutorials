@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot]
 primary_tag: software-product>sap-hana-cloud
 ---
 
