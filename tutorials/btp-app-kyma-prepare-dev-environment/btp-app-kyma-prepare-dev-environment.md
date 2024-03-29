@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare Your Kyma Development Environment
 description: This tutorial shows you how to install tools used in this tutorial, log in to your Kyma cluster, create a namespace for your app, and create a container registry secret.
 keywords: cap
@@ -25,22 +25,33 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Verify your @sap/cds and @sap/cds-dk versions)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed.
+Make sure you're using the latest CAP tooling version.
 
-Run the following commands in your project directory:
+Delete any outdated `package-lock.json` files in your project directory and run the following commands:
+
+1. `npm install --global @sap/cds-dk` to install globally the latest `@sap/cds-dk` version.
 
 1. `npm install` to install your local package.
 
-2. `cds version` to check the globally installed `@sap/cds-dk` version and your locally installed `@sap/cds` version.
-
-To upgrade, run the following commands in your project directory:
-
-- `npm install @sap/cds@>=6`
-- `npm install -g @sap/cds-dk@>=6`
+2. `cds version` to double check that the globally installed `@sap/cds-dk` version and your locally installed `@sap/cds` version match.
 
 [DONE]
 [ACCORDION-END]
@@ -143,13 +154,12 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     ```
 >     In case you experience problems running the commands, check Step 2: `Command Line Interpreters` from [Set Up Local Development Using VS Code](btp-app-set-up-local-development) for more details on recommended CLIs.
 
-=== "Windows"
 
-    There are two additional steps for Windows users only:
+There are two additional steps for Windows users only:
 
-    3. Go to `C:\ProgramData\chocolatey\bin`.
+3. Go to `C:\ProgramData\chocolatey\bin`.
 
-    4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
+4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
 
 [DONE]
 [ACCORDION-END]
@@ -160,7 +170,11 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
     ```Shell/Bash
     kubectl create namespace risk-management
     ```
-   You should get a message `namespace/risk-management created`.
+    You should get a message `namespace/risk-management created`.
+   
+> Error messages on macOS
+
+> There might be some messages that look like an error but check if you get the message `namespace/risk-management created` at the end.
 
 2. Switch context to the namespace:
 
@@ -208,15 +222,15 @@ kubectl create secret docker-registry container-registry \
 
     > Looking for your docker server URL?
 
-    >     The docker server URL is the path used for docker login, so you can quickly check it by running the following command in your terminal:
+    > The docker server URL is the path used for docker login, so you can quickly check it by running the following command in your terminal:
 
-    >     ```json
-    >     cat ~/.docker/config.json
-    >     ```
+    > ```json
+    > cat ~/.docker/config.json
+    > ```
 
 4. Check if the secret was successfully created:
 
-    ```
+    ```Shell/Bash
     kubectl get secret
     ```
     You should be able to see the newly created secret.

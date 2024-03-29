@@ -11,7 +11,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## Prerequisites
 - You have completed the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario) and [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
-- You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
+- You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
 - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
@@ -19,12 +19,9 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP
-- How to upload a **promotional rule with an additional bonus** with the help of the SAP API Business Hub
+- How to upload a **promotional rule with an additional bonus** with the help of the SAP Business Accelerator Hub
 - How to execute a calculation request that includes an additional bonus with SAP Omnichannel Promotion Pricing
 
-## Intro
->This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
-	![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---
 
@@ -58,10 +55,10 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
  -->
 
 
-### Create environments in SAP API Business Hub
+### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP API Business Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
 
@@ -70,7 +67,7 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now upload the promotional rule that includes the additional bonus with the Data Upload service.
 
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
 <!-- border -->![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
 <!-- border -->![Data Upload Regular Promotional Rule 2](Data Upload Regular Promotional Rule 1b.png)
@@ -218,8 +215,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
     </IDOC>
 </_-ROP_-PROMOTION03>
 ```
-7. Choose **Execute**.
-8. Make sure you get the HTTP response **200**.
+1. Choose **Execute**.
+2. Make sure you get the HTTP response **200**.
 
 With this, you uploaded the promotional rule "Buy one coffee machine and one bag of deluxe coffee to get one cleaning kit for free" (promotion ID: `9103`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **May 1st, 2021 to May 7th, 2021**.
 
@@ -230,7 +227,7 @@ With this, you uploaded the promotional rule "Buy one coffee machine and one bag
 
 >In this tutorial, you only need to upload the regular sales price for the cleaning kit. You have already uploaded the regular sales price of **500 Euro** for the product **coffee machine** (material number: `COFFEE_MACHINE`, unit of measure: `PCE`) and for the product **DELUXE COFFEE** with the validity period **May 1st, 2021 to December 31st, 2021** in step 3 of the tutorial [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/api/DataUpload/resource).
+Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource).
 
 <!-- border -->![Data Upload Regular Sales Price 1](Data-Upload-Regular-Sales-Price-1.png)
 <!-- border -->![Data Upload Regular Sales Price 1b](Data Upload Regular Sales Price 1b.png)
@@ -299,7 +296,7 @@ Let's see if this is the case:
 <!-- border -->![Calculation 2](Calculation 2b.png)
 
 
-1. Navigate to the [Calculation service on the SAP API Business Hub](https://api.sap.com/api/PriceCalculation/resource).
+1. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
 2. For **API Environment**, select your trial environment for the Calculation service.
 3. Open the **POST** request `/restapi/{tenantName}` and choose **Try Out**.
 4. In the field `tenantName` enter the `identityzone` from the service key you have created for the Calculation service in your SAP BTP account.
@@ -353,9 +350,9 @@ Make sure you get the HTTP response **200**.
 
 ### Additional Information
 
-* [Official Product Documentation](https://help.sap.com/viewer/product/OPP/Cloud/en-US)
-* [Trial Documentation](https://help.sap.com/viewer/0c145d124b784b548b618cda8a5b2aba/Cloud/en-US/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
-* [SAP Omnichannel Promotion Pricing on the SAP API Business hub](https://help.sap.com/viewer/0c145d124b784b548b618cda8a5b2aba/Cloud/en-US/67a9da084cf84e058cb3a3911971bdd0.html)
+* [Official Product Documentation](https://help.sap.com/docs/OPP)
+* [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
+* [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
 * [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
 
 ---

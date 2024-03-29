@@ -2,62 +2,65 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-build-work-zone--standard-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
-# Add an SAPUI5 App to Your Launchpad Site
-<!-- description --> Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
+# Integrate an SAPUI5 App to SAP Build Work Zone
+<!-- description --> Add an existing SAPUI5 app to a site in the SAP Build Work Zone, standard edition.
 
 ## Prerequisites
- - You've already created the `JobCore` site.  
+ - You've already created the `JobCore` site
 
 
 ## You will learn
-  - How to add an existing SAPUI5 app to your launchpad site
+  - How to add an existing SAPUI5 app to your site
 
 ## Intro
-In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your launchpad site.
+In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Work Zone.
 
 ### Open Content Manager
 
 
  Click the Content Manager icon in the side panel to open the **Content Manager**.
 
->The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
+> When you open the **Content Manager** you'll see a list of content items that have been added to your subaccount. From here you can manually configure new content items and view any other available content items. You can also access the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
 
-  ![Open Content Manager](1-open-content-manager.png)
+  <!-- border -->![Open Content Manager](1-open-content-manager.png)
 
 
 ### Create and configure new app
 
 
-1.  Click **+ New** and select **App** from the list.  
+1.  Click **Create** and select **App** from the list.  
 
-    ![Add an app](2-add-app.png)
+    <!-- border -->![Add an app](2-add-app.png)
 
+2. In the header area of the app editor, enter a title `New Orders`.  
 
-    The app editor opens with the **PROPERTIES** tab in focus.
+    <!-- border -->![Add a title](2a-add-title.png)
 
-2. Enter the following values:
-
-    * **Title**: `New Orders`
+3. Under the **Configuration** tab, enter the following values (some will already be there by default):
 
     * **Open App**: In place
+
+    * **System**: No System
+
+    * **App UI Technology**: URL
 
     * **URL**:  `https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html`
 
     <!-- border -->![Enter app properties](3-add-app-properties.png)
 
-    >When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
+    > When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
-3. Click the **NAVIGATION** tab to specify the intent of your app.
+4. Click the **Navigation** tab to specify the intent of your app.
 
     > The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
 
-4. Enter the following values:
+5. Enter the following values:
 
     * **Semantic Object**: `Order`
 
@@ -65,113 +68,59 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to you
 
     <!-- border -->![Add navigation properties](4-navigation-properties.png)
 
-5. Click the **VISUALIZATION** tab.
+6. Click the **Visualization** tab.
 
-    In this tab, you specify how the app will be displayed in the launchpad site.
+    In this tab, you specify how the app will be displayed in the site.
 
-6. Enter the following values:
+7. Enter the following values:
 
       * **Subtitle**: `Shopping Cart `
 
       * **Information**:  `Order Now!`
 
-      * **Icon**: Click the browse icon, type `my-sales-order`, click on the displayed icon, and click **OK**.
+      * **Icon**: Click the browse icon, type `my-sales-order`, and click on the displayed icon to add it to your tile.
 
-      On the right, you can see a preview of the tile with all the properties you entered.
-      Click **Save**.
+8. On the right, you can see a preview of the tile with all the properties you entered. Click **Save**.
 
-    <!-- border -->![Add visualization properties](5-vizualization-properties.png)
-
+    <!-- border -->![Add visualization properties](5-visualization-properties.png)
 
 
 ### View the app that you created
 
 
-Click the Content Manager icon in the left side panel to navigate back to the **Content Manager**.
+Go back to the Content Manager by clicking on the breadcrumbs.
 
   <!-- border -->![Go back to Content Manager](6-back-to-content-manager.png)
 
 You can see your app in the list of content items:
 
-<!-- border -->![View app in content manager list](7-view-app.png)
+  <!-- border -->![View app in content manager list](7-view-app.png)
 
-For end users to access the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it's visible in the site.
-
-This is described in the following steps.
+For end users to access the app in runtime, you must assign the app to a role. 
 
 
 ### Assign the app to the Everyone role
 
 
-
->Content assigned to the `Everyone` role is visible to all users.
+> Content assigned to the `Everyone` role is visible to all users.
 
 1. Click the **Everyone** role.
 
-    <!-- border -->![Select everyone role](10-everyone-role.png)
+    <!-- border -->![Select everyone role](8-everyone-role.png)
 
 2. Click **Edit**.
 
-    ![Click Edit](11-edit.png)
+    <!-- border -->![Click Edit](9-edit.png)
 
-3. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
+3. Under the **Apps** tab, you'll see that your `New Orders` app has an **X** in the **Assignment Status** column. Click the toggle to assign the app to the `Everyone` role.
 
-    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
+    <!-- border -->![Assign app to role](10-assign-app-to-role.png)
 
-4. In the **Results** list, click the **+** icon next to the `New Orders` app to assign this role to your app.
-
-    <!-- border -->![Assign role to app](12-assign-role.png)
-
-    You'll see that the icon changes.
-
-5. Click **Save**.
-
-
-### Create a group and assign the app to it
-
-
-
->A group is a set of one or more apps displayed together in a launchpad site.
- Assigning apps to groups, makes them visible to the user.
-
-1. Click the Content Manager icon to navigate back to the **Content Manager**.
-
-2. Click **+ New** and select **Group** to create a group.
-
-    <!-- border -->![Add a new group](8-add-group.png)
-
-2. Enter `Purchasing` as the **Title** and in the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see `New Orders`.
-
-3. In the **Results** list, click **+** to assign the `New Orders` app to your group.
-
-    <!-- border -->![Configure group properties](9-configure-group.png)
+    
+    > If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
 
 4. Click **Save**.
 
-    ![Save group](9a-save-group.png)
 
-
-
-
-### Review the site
-
-
-1. Click the Site Directory icon in the left panel to open the **Site Directory**.
-
-    <!-- border -->![Open Site Directory](13-open-site-directory.png)
-
-2. On the `JobCore` tile, click the **Go to site** icon.
-
-    <!-- border -->![Go to site](14-go-to-site.png)
-
-3. This is what you'll see:
-
-    <!-- border -->![View site](15-view-site.png)
-
-    Your `New Orders` app is displayed in the `Purchasing` group.
-
-4. Click the `New Orders` tile to launch the app. You can click on the different items in the opened app on the left to view their details.
-
-You've successfully added an app to your launchpad site. In the next tutorial, you'll add another app.
-
+You've successfully created an SAPUI5 app. In the next tutorial, you'll create another app (URL app) and then you'll add both apps to a page.
 

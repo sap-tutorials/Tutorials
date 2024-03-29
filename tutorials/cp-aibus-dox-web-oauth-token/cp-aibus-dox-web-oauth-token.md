@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-ai-business-services, software-product>sap-business-technology-platform, software-product>document-information-extraction, topic>artificial-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Get OAuth Access Token for Document Information Extraction via Web Browser
@@ -17,7 +19,7 @@ primary_tag: topic>machine-learning
 ### Get OAuth access token details
 
 
-To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
+To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-free-key). 
 
 <!-- border -->![DOX Service Key](service-key-details.png)
 

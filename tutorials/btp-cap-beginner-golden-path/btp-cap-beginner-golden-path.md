@@ -57,11 +57,10 @@ Create a file called `tests.http` in the root of your project and copy the follo
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   # &sap-locale=de
-
 ```
 
 Click on **Send Request** inside the `tests.http` file, to execute requests against your service.
@@ -93,7 +92,7 @@ CAP comes with a set of reuse content that we recommend to use. You benefit from
 * **Extensibility** using Aspects
 
 
-### Conceptual modeling: Aspects
+#### Conceptual modeling: Aspects
 
 
 Aspects give you shortcuts, for concise and comprehensible models, interoperability and out-of-the-box runtime features connected to them.
@@ -131,7 +130,7 @@ This aspect is also [used](https://cap.cloud.sap/docs/cds/cdl#using) in your pro
 There are other common reuse aspects. Have a look at the [documentation for `cuid`](https://cap.cloud.sap/docs/cds/common#aspect-cuid) and [ for `temporal`](https://cap.cloud.sap/docs/cds/common#aspect-temporal).
 
 
-### Conceptual modeling: Types
+#### Conceptual modeling: Types
 
 
 Types are standard definitions of often needed entities. Using and reusing them fosters interoperability between applications but lets you enhance those definitions at the same time.
@@ -212,7 +211,7 @@ Now add an association from the `Authors` entity to the `Books` entity and use a
 
 Open the `data-model.cds` file in the graphical modeler and add a new relationship to the **Authors** entity.
 
-Use `books` as property name, select `my.bookshop.Books` as target entity and use `author` as backlink property.
+Stick with the defaults, which means using `books` as property name, `my.bookshop.Books` as target entity and `authors` as backlink property.
 
 <!-- border -->![The **New Relationship** screen to define the association to-many, the property name, the target entity type, and the backlink property.](graph-modeler-assoc-many.png)
 
@@ -220,7 +219,7 @@ This is how your data model looks now in the graphical modeler.
 
 <!-- border -->![The graphical modeler showing the authors and books entity and a visual representation of their relationship.](graph-modeler-assoc-many-1.png)
 
-This is a [_one-to-many_ association](https://cap.cloud.sap/docs/guides/domain-models#one--to-many-associations). Such an association always needs `on` conditions (backlink property) referring to some reverse association on the target side. Basically this expresses, that in your model **one book has exactly one author** and at the same time **one author can have many books**. If you defined your service accordingly, as in the `AdminService`, you can find all books of an author if you navigate the `Author` entity (`/admin/Authors?$expand=books`).
+This is a [_one-to-many_ association](https://cap.cloud.sap/docs/guides/domain-models#one--to-many-associations). Such an association always needs `on` conditions (backlink property) referring to some reverse association on the target side. Basically this expresses, that in your model **one book has exactly one author** and at the same time **one author can have many books**. If you defined your service accordingly, as in the `AdminService`, you can find all books of an author if you navigate the `Author` entity (`/admin/Authors?$expand=books`). Use `Alice` without a password to access the service. You'll learn more about it later in this tutorial.
 
 > You can even deep read associated entities: `/admin/Authors?$expand=books($expand=currency)`
 
@@ -276,7 +275,7 @@ To test this, restart your application from the debug panel and add a new reques
 # Submit Order
 #
 
-POST http://localhost:4004/buy/Orders
+POST http://localhost:4004/odata/v4/buy/Orders
 Content-Type: application/json;IEEE754Compatible=true
 
 { "Items":[{"book_ID":201, "amount":5}]  }
@@ -308,7 +307,6 @@ entity OrderItems {
 
 ### Authentication and Authorization
 
-
 For a use case like authentication and authorization, you just need to enrich models with additional metadata. Use [Annotations](https://cap.cloud.sap/docs/cds/annotations), it's as simple as that. In CAP annotations can serve several purposes. Those can be general purposes like defining the title or description, or more specific purposes like [input validation](https://cap.cloud.sap/docs/cds/annotations#input-validation), [persistence](https://cap.cloud.sap/docs/cds/annotations#persistence), [UIs](https://cap.cloud.sap/docs/advanced/fiori), or [authentication and authorization](https://cap.cloud.sap/docs/guides/authorization).
 
 For the `AdminService` you need to be a user with the admin role. That restriction is introduced by the annotation `@(requires:'admin')`. This requires you to authenticate and have the proper authorization (`admin`). In the following request, you add the authentication to the request header.
@@ -320,7 +318,7 @@ Create an entry for a new book, using the `AdminService`. Copy the request into 
 ```HTTP[5]
 ### ------------------------------------------------------------------------
 # Create book
-POST http://localhost:4004/admin/Books
+POST http://localhost:4004/odata/v4/admin/Books
 Content-Type: application/json;IEEE754Compatible=true
 Authorization: Basic alice:
 
@@ -333,7 +331,6 @@ Authorization: Basic alice:
   "price": "12.05",
   "currency_code": "USD"
 }
-
 ```
 
 You get a success message. You've successfully used `alice` as an admin persona to create a book.
@@ -345,7 +342,7 @@ Now try to get exactly the book you've just created.
 ```HTTP
 ### -------------------------------------------------------------------------
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
    &$filter=ID eq 2
 ```
 
@@ -360,10 +357,9 @@ Now you have access to a service exposing all books that are available and for e
 
 ### Localization
 
-
 CAP offers convenient workflows for localized texts (i18n) and localized data.
 
-### i18n
+#### i18n
 
 When you plan to internationalize your application and provide translation for your target markets, you can either externalize your texts into `.properties` files or into CSV-based text bundles. There are default locations for your text bundles. If you stick to these defaults, CAP saves you some efforts and does the routing for you.
 
@@ -371,7 +367,7 @@ Text bundles can be placed in and are fetched from folders named `_i18n`, `i18n`
 
 How different layers of texts in your application or coming from reuse bundles are merged, is described in the [CAP documentation](https://cap.cloud.sap/docs/guides/i18n#merging-algorithm). This deep dive into this topic is not covered here.
 
-### Localized data
+#### Localized data
 
 To offer localized data you have prepared the localized data as described in the "i18n" chapter.
 
@@ -411,7 +407,7 @@ Open the `tests.http` file and uncomment the `sap-locale` part of the GET reques
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   &sap-locale=de
@@ -427,18 +423,16 @@ _If you'd like to learn more about serving localized data, have a look at our [C
 
 ### Using Databases
 
-
-
 When deploying to databases, be it SQLite or SAP HANA, there are some defaults that you can stick to.
 
-### Use the `db` folder
+#### Use the `db` folder
 
 If you keep all your database related artifacts in the `db` folder, the build process, that generates the database-specific artifacts out of your data model, doesn't need additional configuration.
 
 [Initial or sample data](https://cap.cloud.sap/docs/guides/databases#providing-initial-data) is picked up automatically if you comply with the following convention. The folder is one of `db/data`, `db/csv`, or `db/src/csv` and the filename follows the pattern `<namespace>-<entity>.csv`.
 
 
-### Use configuration profiles
+#### Use configuration profiles
 
 There are two profiles available out of the box: development and production. By default all tasks are performed for the development profile. This means with regard to our database, that we are targeting SQLite, to have results quickly. The production profile in the default case targets SAP HANA. You can also create your custom profiles and configure them according to your needs.
 
@@ -452,7 +446,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
     This creates everything you need to connect to your SAP HANA Cloud instance from the studio. It also adapts your project, so you can use the profiles that we will introduce in the next step. When you started to deploy to SQLite, the `cds.requires` section in your `package.json` was modified accordingly. See what's been added/changed now:
 
-    <!-- border -->![The configuration that has been added or changed in the package.json file.](hdbtable_config.png)
+    <!-- border -->![In the package.json file inside the cds.requires section there's a new production profile that contains the SAP HANA configuration..](hdbtable_config.png)
 
     > ### What's going on?
     You've added the configuration to use SAP HANA Cloud under the `[production]` profile. Using the development profile, `db.kind=sql` evaluates to `sqlite`. This is a default when using configuration profiles, so the development profile is not mentioned here explicitly. You can also [set both configurations explicitly](https://cap.cloud.sap/docs/node.js/cds-env#profiles), if you wish to deviate from or enhance the defaults.
@@ -465,7 +459,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
     <!-- border -->![The cloud foundry login wizard.](cf_login.png)
 
-1. Deploy to SAP HANA Cloud: `cds deploy --to hana --bind --production`
+1. Deploy to SAP HANA Cloud: `cds deploy --to hana --production`
 
     Besides all necessary steps around the deployment, this also creates a service key and saves it into the `.cdsrc-private.json` file for [hybrid testing](https://cap.cloud.sap/docs/advanced/hybrid-testing).
 
@@ -496,6 +490,10 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
 
     > ### What's going on?
     As you're using the production profile in your run configuration, this automatically requests the JWT authentication strategy. To become not too complex at this point, this environment configuration here, overrides the default (JWT) strategy and uses again mocked authentication strategy.
+
+1. Enable the binding to your SAP HANA service instance from the run configurations panel.
+
+    <!-- border -->![In the run configurations panel, expand the _Run bookshop-hybrid_ run configuration to access the available _db - hana_ binding. Click on the _Bind_ button at the right side of the _db - hana_ binding and bind to your SAP HANA service instance.](bind-hana.png)
 
 1. Run your project with the `Run bookshop-hybrid` configuration.
 

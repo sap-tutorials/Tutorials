@@ -1,13 +1,15 @@
 ---
-parser: v2
+author_name: Dimitri Herber
+author_profile: https://github.com/fakirdi
 auto_validation: true
 time: 15
-tags: [software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-fiori
+tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
+primary_tag: products>sap-fiori
+parser: v2
 ---
 
-# Refine the List Report with Additional Annotations
-<!-- description --> Add more annotations to the list report to show additional columns and selection fields, implement a Value Help and configure the application to load data automatically.
+# Refine the List Report with Additional UI Elements 
+<!-- description --> Configure additional UI elements based on annotations and manifest settings to the list report with no coding effort, namely add columns and selection fields, enhance a Value Help and configure the application to load data automatically.
 
 ## Prerequisites
 - You have prepared your development environment by completing the tutorial [Prepare your Development Environment](fiori-tools-cap-prepare-dev-env)
@@ -15,190 +17,124 @@ primary_tag: software-product>sap-fiori
 
 ## You will learn
   - How to add additional filter fields in the filter bar
+  - How to enhance a Value Help for the filter field
   - How to add an additional column in the list report table
   - How to configure the list report to load data automatically
-  - How to implement a Value Help for the Category field
+  
 
 
-## Intro
-In SAP Fiori elements applications, UI annotations are used to refine the user interface. All annotations are documented in the [OData 4.0 Vocabularies - SAP UI Wiki page](https://wiki.scn.sap.com/wiki/display/EmTech/OData+4.0+Vocabularies+-+SAP+UI).
+In SAP Fiori elements applications, UI annotations are used to refine the user interface. All annotations are documented in the [OData 4.0 Vocabularies](https://sap.github.io/odata-vocabularies/vocabularies/UI.html). With SAP Fiori Tools - Application modeler, you don't have to be an annotation expert, as the necessary UI annotations are automatically generated when you add or modify the UI elements for your application. You can easily navigate to the annotations behind the UI elements to review and/or manually update them in the code editor.
 
 
-### Add filter field Category to the filter bar
+### Add filter field to the filter bar
 
+In this step, you will learn how to add filters to the List Report page of your application using the Page Editor and see the auto generated annotation code in the local annotation file.
 
-Open the `annotations.cds` file located in the `app` folder of your service.
+1. From the Application Information page, click on the **ListReport** page
+   
+    <!-- border -->![Open List Report Page](t3-open-list-report-page.png)
 
-<!-- border -->![Annotation Cursor](t3-annotation-service-cds-file.PNG)
+    The Page Editor view opens up listing all the major page elements in the application outline structure.
 
->There's a second `annotations.cds` file below folder `app/incidents`. This file was created during the generation of the application and is not meant to be modified within this tutorial.
+2. Press the **+** icon in the **Filter Fields** sub-node of the **Filter Bar** node on the outline. It becomes visible, once you hover over the sub-node.
+   
+    <!-- border -->![Add Filter Fields Icon](t3-add-filter-fields.png)
 
-The annotation `SelectionFields` defines the filter fields offered in the filter bar.
+3.  When prompted, choose **category_code** as **Filter Field** and press **Add**.
+    
+    <!-- border -->![Add Filter Fields Icon](t3-add-filter-fields-dialog.png)
 
-Search for the `SelectionFields` annotation and add an additional field `category_code` to the existing list of fields, as shown in the coding example below. When editing the file, code completion helps to select the field.
+    The new filter field is added to the filter bar. The application preview (if started) is automatically refreshed to display it.
 
+    <!-- border -->![New Filter Field](t3-annotation-selection-field-category.PNG)
+
+> This is enabled by copying the `UI.SelectionFields` annotation to the local annotation file and updating it with `category_code` property in the background. You can press ![Navigate to source code](t3-navigate-source-code.png) (Navigate to source code) icon displayed in the **Filter Fields** sub-node on hover to see the updated annotation in the local annotation file.
 
 ```CDS
 SelectionFields : [
     incidentStatus_code,
     priority_code,
-    //insert your selection fields enhancement here
     category_code
 ],
 ```
 
-After saving the file, the server will be restarted and when refreshing the application, the new field is added to the filter bar.
+### Enhance value help
 
-<!-- border -->![Annotation Cursor](t3-annotation-selection-field-category.PNG)
-
-
-
-
-### Implement a value help
-
-
-Applications can bring up value help for fields that allow users to choose from existing values. Once the property has a value list annotation, it is displayed as an input field with a value help icon.
+Applications can bring up value help for fields that allow users to choose from existing values. Once the property has a value list annotation, it is displayed as an input field with a value help icon. 
 The value help dialog supports full-text search and a filter bar that can help users to find the right value.
 
+In this step, you will learn how to enhance the value help defined in the project to be displayed as a drop-down list and enhance it with additional information.
 
-1. Click on the value help icon in the **Category** selection field to take a look at the current value help.
+1. In the application preview, click on the value help icon in the **Category** filter to take a look at the current value help.
 
-    <!-- border -->![Annotation Cursor](t3-value-help-icon2.PNG)
+    <!-- border -->![Value Help Icon](t3-value-help-icon2.PNG)
 
     The default value help will look like this:
 
-    <!-- border -->![Annotation Cursor](t3-value-help-autogenerated.PNG)
+    <!-- border -->![Standard Value Help](t3-value-help-autogenerated.PNG)
 
-2. To enrich the current value help with a description property, proceed as follows:
+2. To enrich the current value help with a description property and get it displayed as a drop-down, proceed as follows:
 
-    Open the `common.cds` file located in the `srv` folder of your service.
+    - In the Page Editor, select the **Category** sub-node on the outline under **Filter Fields** to show the properties of this filter field. 
 
+    - In the Properties pane displayed to the right of the outline, find the **Display Type** property. Currently it shows **Value Help (base layer)**, indicating that value help is defined in the layer lower than this app. To enhance the value help settings, choose **Value Help** instead.
 
-    <!-- border -->![Annotation Cursor](t3-value-help-commoncds-file.PNG)
+      <!-- border -->![Filter Properties](t3-initial-load-filter-properties.png)
 
-    Add the `ValueList` code (lines 11-26) to the category property of the `Incidents` entity in the `common.cds` file.    
+    - In the pop-up dialog, make sure **Display as Dropdown** is switched on, press **Add Column** under **Results List**,  choose **desc** in the **Property** column and press **Apply**.
 
-    ```CDS
-    annotate service.Incidents with {
-        incidentStatus @Common : {
-            Text            : incidentStatus.name,
-            TextArrangement : #TextOnly,
-            ValueListWithFixedValues
-        };
-        category       @Common : {
-            Text            : category.name,
-            TextArrangement : #TextOnly,
-            //insert your value list here
-            ValueList       : {
-                $Type          : 'Common.ValueListType',
-                Label          : 'Category',
-                CollectionPath : 'Category',
-                Parameters     : [
-                {
-                    $Type             : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : category_code,
-                    ValueListProperty : 'code'
-                },
-                {
-                    $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'descr'
-                }
-                ]
-            }
-        };
-        priority       @Common : {
-            Text            : priority.name,
-            TextArrangement : #TextOnly,
-            ValueListWithFixedValues
-        };
-    };
-    ```
+        <!-- border -->![Value Help Dialog](t3-value-help-dialog-updated.png)
 
+3. Application preview is refreshed and displays the **Category** filter as drop-down list and shows the value help with the description column.
 
-
-    > ### CollectionPath
-    The `CollectionPath` property defines the entity set to request data for the value help. In this example the data is loaded from the entity set `Category`.
-
-    <!-- -->    
-    > ### $Type
-    The `$Type` property determines the behavior of a single parameter used within the value help. The value `ValueListParameterInOut` is used for parameters which take over values prefilled by the application for filtering the data (-In). On the other hand the selected value will also be passed back to the application (-Out). The value `ValueListParameterDisplayOnly` is used for parameters without interaction between the application and the value help. The parameter is just used for displaying the data for selection.
-
-    >Depending on the value of the `$Type`, additional properties for the parameter need to be defined:
-    >
-    * `LocalDataProperty` The property of the source entity set the value help will be defined for.
-    >
-    *  `ValueListProperty` The property of the target entity set the value help will request data from (see `CollectionPath`). These are the properties presented within the filter bar and table of the value help dialog.
-
-
-
-3. After saving the file, refreshing the application and opening the value help for the **Category**, you´ll see the improved value help showing the description.
-
-
-    <!-- border -->![Annotation Cursor](t3-value-help-added-description.PNG)
-
-
-
-
-
-
-### Add column title to the list report table
-
-
-To add an additional column to the list report table, you will use the annotation `LineItem`. Again, ensure that the `annotations.cds` file of the service is opened (see step 1).
-
-Now search for the annotation `LineItem` of the `Incidents` entity and add the new column representing the field `title` as shown in the coding below.
-
-```CDS
-LineItem : [
-    {
-        $Type : 'UI.DataField',
-        Value : identifier,
-    },
-    {
-        $Type                     : 'UI.DataField',
-        Value                     : priority_code,
-        Criticality               : priority.criticality,
-        CriticalityRepresentation : #WithoutIcon,
-
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : incidentStatus_code
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : category_code
-    },
-    //insert your line item enhancement here
-    {
-        $Type : 'UI.DataField',
-        Value : title
-    }
-],
-```
-
-After saving and refreshing the application, you will see the column added to the table.
-
-<!-- border -->![Annotation Cursor](t3-annotation-line-item-LR.PNG)
-
+    <!-- border -->![Updated Value Help](t3-value-help-added-description.PNG)
 
 
 ### Configure the application to load data automatically
 
+In this step, you will learn how to configure the application to load data automatically when started without the need of pressing the **Go** button.
 
-In this step you will learn how to configure the application to load data automatically when started without needing to press the **Go** button.
+1. In the Page Editor, select the **table** node on the outline to show the properties of the table.
 
-1. From the Application Information page, click on the **`ListReport`** page.  
+    <!-- border -->![Table Properties](t3-initial-load-table-properties.PNG)
+2.  In the Properties pane, locate the **Initial Load** property and set it to **Enabled**.
 
-    <!-- border -->![Annotation Cursor](t3-open-list-report-page.png)
+    <!-- border -->![Initial Load](t3-initial-load-table-properties-initial-load-true.PNG)
+>To easily find the specific property in the Properties pane, you can use the Search Properties field in the top right corner.
+1. After the application is refreshed, the table data will be loaded automatically.
 
-2. The **Page Editor** will open. Select the **table** node on the tree-structure to show the properties of the table. Set **Initial Load**, which controls whether or not the table automatically loads, to `Enabled`.
-
-    <!-- border -->![Annotation Cursor](t3-initial-load-table-properties.PNG)
-
-3. You just need to refresh your application and the data will be loaded automatically.
+    <!-- border -->![Add Column](t3-initial-load-table-preview.png)
 
 
-At this point, you have added a new field to the filter bar and one more column within the list report table. Your data is loaded automatically due to the configured initial load feature.
+### Add column to the list report table
 
-In the next tutorial, you will refine the Object Page by adding new fields and extend it with a new section leveraging the Flexible Programming Model.
+In this step, you will learn how to enhance the list report table with additional column. 
+
+1. In the Page Editor, press the **+** icon in the **Column** sub-node of the **Table** node on the outline and choose **Add Basic Columns**.
+
+    <!-- border -->![Add Column](t3-add-column.png)
+
+2. When prompted, choose **title** in the **Columns** field
+
+    <!-- border -->![Add Column Dialog](t3-add-title-column.png)
+
+    > You can filter the list of suggestions by typing a few characters of the option you want to choose. This will filter the list of suggestions.
+
+3. Press **Add**.
+
+    The application preview refreshes and displays the column added to the table.
+
+    <!-- border -->![Annotation Cursor](t3-annotation-line-item-LR.PNG)
+
+    > If your preview window is not wide enough, the last column is not visible unless its Importance property is set to High or Medium.
+
+
+
+---
+
+At this point, you have added a new field to the filter bar and one more column within the list report table. You enhanced the value help to be displayed as a drop-down and include the description. Your data is loaded automatically due to the configured initial load feature.
+
+In the next tutorial, you will refine the object page by adding new fields and extend it with a new section leveraging the flexible programming model.
+
+---
+

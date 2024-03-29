@@ -133,6 +133,7 @@ In this step, you specify the on-premise backend system that your trial should b
     ![Summary screen](17a-scc-summary.png)
 
 
+
 You now see a new entry in the mappings table. The icon in the **Check Result** column should be green, but the status is still grey, as no accessible resources have been defined yet.
 
 ![System Mapping Overview](18a-scc-system-mapping.png)
@@ -193,17 +194,14 @@ The design-time destination is used to fetch the federated content from the cont
 
 5. Click **New Property** to add an additional property to your destination.
 
-
-
     ![Design-time Destination](25b-btp-designtime-destination.jpg)
+
 
 6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial (CAL) systems, as property name and value.
 
 7. Click **Save**.
 
     ![Additional property](25c-btp-designtime-destination.jpg)
-
-
 
 
 ### Create the runtime destination
@@ -232,7 +230,5 @@ The runtime destination is used to launch federated applications at runtime.
 6. Click **Save**.
 
     ![Runtime Destination](27c-btp-runtime-destination.jpg)
-
-
 
 ---

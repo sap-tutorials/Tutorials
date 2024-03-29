@@ -23,9 +23,9 @@ So far, you have built your first `Card` component. Now to take things further, 
 
 ### Add necessary imports
 
-To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.jsx`.
+To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.tsx`.
 
-```JavaScript / JSX
+```TypeScript / TSX
 import {
   Avatar,
   Card,
@@ -54,11 +54,11 @@ import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
-> Again, you can try it out on the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-shellbar--generated-default-story).
+> Again, you can try it out in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/docs/layouts-floorplans-shellbar--docs).
 
 1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <ShellBar primaryTitle="My App" />
     ```
 
@@ -68,13 +68,13 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either an `img` tag or the `Avatar` component, the `profile` prop only accepts the `Avatar` component. First add the `logo` prop like this:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
      <ShellBar logo={<img src="" />} primaryTitle="My App" />
     ```
 
     Then pass the `profile` prop like this:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <ShellBar
       logo={<img src="" />}
       profile={<Avatar><img src="" /></Avatar>}
@@ -88,7 +88,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     [`profilePictureExample.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/profilePictureExample.png)
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <ShellBar
       logo={<img src="reactLogo.png" />}
       profile={
@@ -104,7 +104,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     By passing a `ShellBarItem` as `child` you are able to add custom elements to your `ShellBar`. The element is basically a `Button` with responsive behavior and styling adapted to the `ShellBar`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <ShellBar
       logo={<img src="reactLogo.png" />}
       profile={
@@ -124,7 +124,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     Add this line to your imports:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import addIcon from "@ui5/webcomponents-icons/dist/add.js";
     ```
 
@@ -136,8 +136,8 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
 Your component should now look like this:
 
-```JavaScript / JSX
-import React, { useState } from "react";
+```TypeScript / TSX
+import { useState } from "react";
 import {
   Avatar,
   Card,
@@ -275,7 +275,7 @@ export function MyApp() {
 
 1. To wrap the `List` add a `Card` (right after the first one).
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -290,19 +290,19 @@ export function MyApp() {
 
 2. Add the list `Icon` to your imports.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import listIcon from "@ui5/webcomponents-icons/dist/list.js";
     ```
 
 3. Add the `List` component as child of the `Card`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <List></List>
     ```
 
 4. To render elements of the list, use the `StandardListItem` and pass a `string` as child.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
      <List>
        <StandardListItem>Activity 1</StandardListItem>
      </List>
@@ -310,7 +310,7 @@ export function MyApp() {
 
 5. The user should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
      <StandardListItem additionalText="finished" additionalTextState={ValueState.Success}>
        Activity 1
      </StandardListItem>
@@ -323,7 +323,7 @@ export function MyApp() {
 
     First, create two `CustomListItem`s below the completed items.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CustomListItem></CustomListItem>
     <CustomListItem></CustomListItem>
     ```
@@ -335,7 +335,7 @@ export function MyApp() {
     - `value`: The value, which indicates the progress
     - `valueState`: The value-state (color) of the indicator
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CustomListItem>
       <ProgressIndicator value={89} valueState={ValueState.Success} />
     </CustomListItem>
@@ -347,7 +347,7 @@ export function MyApp() {
 7. The indicators are displayed as part of the list item, but the title and status of the activities is still missing.
 For this, add two `Text` components above the indicator:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CustomListItem>
       <Text>Activity 3</Text>
       <Text>in progress</Text>
@@ -357,7 +357,7 @@ For this, add two `Text` components above the indicator:
 
 8. All necessary information are now available in each item, but the formatting looks terrible. Let's fix that by using a flex box:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CustomListItem>
       <FlexBox direction={FlexBoxDirection.Column}>
         <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
@@ -373,11 +373,11 @@ For this, add two `Text` components above the indicator:
 
 9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this as well, pass the `style` prop, to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html):
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <CustomListItem>
       <FlexBox
         direction={FlexBoxDirection.Column}
-        style={{ width: "100%", ...spacing.sapUiContentPadding }}
+        style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
       >
         <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
           <Text style={{ fontSize: ThemingParameters.sapFontLargeSize }}>
@@ -408,7 +408,7 @@ For this, add two `Text` components above the indicator:
 
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -424,14 +424,14 @@ For this, add two `Text` components above the indicator:
 
     Also import the `table-view` `Icon`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
     ```
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data or a unique `id` property. The value of `Header` will be shown as column header.
 
     You can create your own data or just use the code below and paste it right after the definition of the `dataset` of the chart.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     const tableData = new Array(500).fill(null).map((_, index) => {
       return {
         name: `name${index}`,
@@ -465,7 +465,7 @@ For this, add two `Text` components above the indicator:
 
 3. Display the data by replacing the current table with.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <AnalyticalTable data={tableData} columns={tableColumns} />
     ```
 
@@ -477,7 +477,7 @@ For this, add two `Text` components above the indicator:
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <AnalyticalTable
       data={tableData}
       columns={tableColumns}
@@ -493,7 +493,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
     To add a padding to the cards, you can use `spacing` again. Inside of the style property [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the `spacing` object and append the style. Do this for each `Card` component.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -505,7 +505,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
     >
     ```
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -517,7 +517,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
     >
     ```
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -533,7 +533,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
     To properly align the tiles, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available, also apply the `style` prop to add a padding to the whole content area.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap}
@@ -546,8 +546,8 @@ Your component should now look like this:
 
 <!-- border -->![Dashboard](05_dashboard.png)
 
-```JavaScript / JSX
-import React, { useState } from "react";
+```TypeScript / TSX
+import { useState } from "react";
 import {
   Avatar,
   Card,
@@ -737,7 +737,7 @@ export function MyApp() {
             <CustomListItem>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                   <Text
@@ -761,7 +761,7 @@ export function MyApp() {
             <CustomListItem>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiContentPadding }}
+                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
                   <Text

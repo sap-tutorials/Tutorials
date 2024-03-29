@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add SAP HANA Support to Your Project
 description: This tutorial shows you how to set up the SAP HANA Cloud service instance.
 keywords: cap
@@ -20,6 +20,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA client and configuration to your project)]
 1. Run the following command in your project root folder:
@@ -33,19 +47,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     Changes in the `package.json` file done by `cds add hana`:
 
     <!-- cpes-file package.json:$.cds -->
-    ```JSON[4-13]
+    ```JSON[5-8]
     {
         "name": "cpapp",
         ...
         "cds": {
             "requires": {
                 "[production]": {
-                    "db": {
-                        "kind": "hana-cloud"
-                    }
-                },
-                "db": {
-                    "kind": "sql"
+                    "db": "hana"
                 }
             }
         }

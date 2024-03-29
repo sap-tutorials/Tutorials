@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 keywords: cap
@@ -22,11 +22,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Install the MTA build tool mbt)]
-As a result of this tutorial, you have a running CAP application in the cloud based on SAP HANA. You will deploy the user interface later in the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
+As a result of this tutorial, you have a running CAP application in the cloud based on SAP HANA. You will deploy the user interface later in the tutorial [Prepare SAP Build Work Zone, Standard Edition Setup](btp-app-work-zone-setup).
 
-The deployment is based on MTA ( *Multi-Target Application*, sometimes also called *MultiApps*) technology. The [MTA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d04fc0e2ad894545aebfd7126384307c.html) is a SAP-proprietary way to do deployments consisting of multiple modules that can be implemented in different technologies.
+The deployment is based on MTA (*Multi-Target Application*, sometimes also called *MultiApps*) technology. The [MTA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d04fc0e2ad894545aebfd7126384307c.html) is a SAP-proprietary way to do deployments consisting of multiple modules that can be implemented in different technologies.
 
 > Advantages compared to the `cf push` method:
 
@@ -82,6 +96,9 @@ The [MultiApps plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-p
 If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
+
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
+
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -142,6 +159,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
+
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -199,7 +219,7 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js v16 is sufficient for this tutorial.
+> Node.js v18 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -211,8 +231,9 @@ Open the file `package.json` and add the following snippet:
     ...
   },
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
+  ...
 ```
 
 [DONE]
@@ -242,7 +263,7 @@ The `mta.yaml` file consists of different modules (Cloud Foundry apps) and resou
 The resources are generated from the `requires` section of `cds` in the `package.json`.
 
 * `cpapp-db` - SAP HANA DB HDMI container
-* `cpapp-uaa` - XSUAA service
+* `cpapp-auth` - XSUAA service
 
 The resources are Cloud Foundry service instances that are automatically created and updated during the MTA deployment.
 
@@ -260,7 +281,12 @@ In one of the first steps creating the CAP application, you have added two CSV f
 
 >  This can cause the deletion of all files of the affected database table with a change of a data file, even if the data file for the affected table has been removed before. SAP HANA remembers all data files that have ever been deployed to the table and might restore it. Only data files that contain data, which are defined by the application developer and can't be changed by the application should be delivered in this way. Delivering files for tables with customer data already caused data loss in productive scenarios! See section [Providing Initial Data](https://cap.cloud.sap/docs/guides/databases#providing-initial-data) in the CAP documentation for more details.
 
-Install the dependencies and to avoid any loss of data, you change the MTA build parameters to remove all the `CSV` files and the `hdbtabledata` that is generated by the CAP server out of the `CSV` files. Add the following line to the `mta.yaml` file:
+You change the MTA build parameters to:
+
+- install all the dependencies with production profiles.
+- remove all the DB data (`CSV` files and the `hdbtabledata`) that is generated by the CAP server out of the `CSV` files.
+
+Add the following line to the `mta.yaml` file:
 
 <!-- snippet mta.yaml build-parameters -->
 ```YAML[5,7]
@@ -277,10 +303,10 @@ build-parameters:
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 7: ](Add Authorization and Trust Management service (XSUAA))]
-The next step is to add the Authorization and Trust Management service to `mta.yaml` to allow user login, authorization, and authentication checks. Update the name and resource as shown.
+The next step is to add the Authorization and Trust Management service to `mta.yaml` to allow user login, authorization, and authentication checks. Update the name (from `cpapp-auth` to `cpapp-uaa`) and resource as shown.
 
 <!-- snippet mta.yaml resources: cpapp-uaa -->
-```YAML[6,9,16-27]
+```YAML[6,9,18-27]
 modules:
       - name: cpapp-srv
       ...
@@ -309,15 +335,9 @@ resources:
              - $XSAPPNAME.RiskViewer
 ```
 
-The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa).
+For a productive application, the configuration for XSUAA is read from the `xs-security.json` file. You've already created this file in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa). 
 
-But in the `config` element, values can be added and overwritten.
-
-The value `xsappname` gets overwritten with a space-dependent value. The name has to be unique within a subaccount.
-
-This allows multiple deployments of this tutorial in different spaces of the same subaccount. For example, different people of a team that want to try it out and don't want to create a new subaccount for each team member.
-
-For a productive application, the `xsappname` should be explicitly set to the desired value.
+However, the XSUAA configuration that is read from the`xs-security.json` file can be overwritten in the `config` element of the `mta.yaml` file. For example, in the snippet above, a space-dependent value `cpapp-${space}` overwrites the value `xsappname`. Note that the name has to be unique within a subaccount. Within the scope of this tutorial, this approach allows multiple deployments in different spaces of the same subaccount. This way, different people of a team can try the tutorial without creating a new subaccount for each team member.
 
 Further, you can add role collections using the `xs-security.json` file. Since role collections need to be unique in a subaccount like the `xsappname`, you can add it here and use the `${space}` variable to make them unique like for the `xsappname`.
 
@@ -331,7 +351,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-> `NPM` uses a file called `package-lock.json` to remember which actual version of package was installed and later installs these exact versions and ignores any updates in minor releases not explicitly specified in the package.json file. Maintaining this is important for production applications for consistency. For the purposes of this tutorial we would like you to use the latest versions of the packages. To ensure this, delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
+> `NPM` uses a file called `package-lock.json` to remember which actual version of package was installed and later installs these exact versions and ignores any updates in minor releases not explicitly specified in the `package.json` file. Maintaining this is important for production applications for consistency. For the purposes of this tutorial, use the latest versions of the packages. To ensure this, delete your older `package-lock.json` and run `npm install --package-lock-only` to generate it again to avoid errors due to use of older versions.
 
 1. Build the MTA module from your project root folder:
 
@@ -383,7 +403,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
     !![CAP 403 error](cap_mta_403_error.png)
 
-The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Fiori Launchpad. The Launchpad will trigger the authentication flow to provide the required token to access the service.
+The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Build Work Zone, standard edition. The SAP Build Work Zone, standard edition will trigger the authentication flow to provide the required token to access the service.
 
 [DONE]
 The result of this tutorial can be found in the [`cap-mta-deployment`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-mta-deployment) branch.

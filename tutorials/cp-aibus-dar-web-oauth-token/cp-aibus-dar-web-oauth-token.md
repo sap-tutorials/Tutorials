@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>data-attribute-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-free-key) or [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
-<!-- border -->![DAR Service Key](png-files/service-key.png)
+<!-- border -->![DAR Service Key](service-key.png)
 
 
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![DAR TOKEN](png-files/web-browser.png)
+<!-- border -->![DAR TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

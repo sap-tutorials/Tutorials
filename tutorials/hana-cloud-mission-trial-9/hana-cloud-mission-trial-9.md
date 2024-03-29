@@ -3,271 +3,290 @@ parser: v2
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 auto_validation: true
-time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+time: 15
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
-# Grant Access to Calculation Views
-<!-- description --> Learn how to create a user and grant others access to your calculation views within the SAP HANA database in SAP HANA Cloud.
+# Create a Calculation View
+<!-- description --> Learn how to create your own calculation views in SAP HANA Cloud, SAP HANA database with SAP Business Application Studio using Join and Rank nodes. 
 
 ## Prerequisites
--  [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
--  If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
-- [Provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-2).
-- [Import the sample data needed for this mission](hana-cloud-mission-trial-5).
-- [Set up a development project in SAP Business Application Studio and connect it to your database](hana-cloud-mission-trial-7).
-- [Create a calculation view](hana-cloud-mission-trial-8)
+- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
+- You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
+- You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
+- You have [set up a development project in SAP Business Application Studio and connected it to your database](hana-cloud-mission-trial-8)
 
 
 ## You will learn
-- What privileges are needed for others to access your calculation view
-- How to create a role in SAP Business Application Studio
-- How to create a user in the SAP HANA Database Explorer and connect as this user
+- How to create a calculation view in SAP Business Application Studio
+- How to use join nodes
+- How to use rank nodes
+- How to preview the output
+
 
 
 ## Intro
+>
 > ![Alex Banner](banner-alex.png)
 >
 > Reminder: This tutorial is part of a mission, in which you will help Alex, the CEO of Best Run Travel, to answer a concrete business question with SAP HANA Cloud, SAP HANA database.
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
-
-1.	Start using an SAP HANA Cloud trial in SAP BTP Cockpit
-
-2.	Provision an instance of SAP HANA Cloud, SAP HANA database
-
-3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
-
-4.	Create users and manage roles and privileges
-
-5.	Import data into SAP HANA Cloud, SAP HANA Database
-
-6.	Query the database using SQL statements
-
-7.	Create a development project in SAP Business Application Studio
-
-8.	Create a calculation view
-
-9.	You are here <sub-style="font-size:30px">&#9755;</sub> **Grant access to Calculation Views**
-
-In this tutorial, you will learn how to make the calculation view you created previously available to others in the organization by creating a new role and granting this role access to the view.
-
-> You can follow the steps in this tutorial also by watching this video:
->
-<iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_aqfw0mwi/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
->
-> ### About this video
->
-> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
+In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need. 
 
 ---
 
-### Generate a SELECT statement on the column view
+### Create the calculation view
 
 
-To allow others to see the results of your calculation view, you need to grant them the privilege to run `SELECT` statements on this calculation view.
+1.	Within your project in the SAP Business Application Studio, click on **View** from the side menu. Then click on **Command Palette**. Alternatively, use `Ctrl+Shift+P` to access it.
 
-To run `SELECT` statements on calculation views in the new environment, first make sure that the you have the correct schema name. This schema is not the `SFLIGHT` schema we previously created, but rather the schema automatically created for the calculation view.
+2.	Type **SAP HANA: Create HANA database artifact** and press `Enter` or click on the right option.
 
-1. To find out the schema name, open the **SAP HANA Database Explorer**.
+3. Under **Path**, change the path so the calculation view is created in the `src` folder of your project.	
 
-2. Find your HDI container in the catalog.
+4. You will see a form appear on the right-side of the screen. Select **Calculation View** as your artifact type.
 
-    > ### Not sure how to find the HDI container of your project in the catalog?
+5.	Type a name for your calculation view, such as `calculationView`.
+
+6.	Leave the rest of the options as they are. Finally, click on **Create**.
+
+    ![Create calculation view](create-calc-view.png)
+
+
+
+### Create a join node
+
+
+1.	The calculation view will open automatically upon creation.
+
+2. In this example, start with a join node to join two tables. Click on the join icon on the sidebar of the editor and then click anywhere on the canvas.
+
+    ![Join Node](ss-01-join-node.png)
+
+3.	The join node appears. Next to the node, click on the plus icon to add the tables.
+
+    ![Join Plus icon](ss-02-join-plus-icon.png)
+
+4.	On the pop-up, start by selecting the user-provided service on the **Services** drop-down list.
+
+    ![Select user-provided service](add-user-provided-service.png)
+
+5. Search for the `SAGENCYDATA` table, which we created in a previous tutorial.
+
+    > If you want to see all objects available via the connection service, enter `**` in the search field.
+
+
+6.	We can find the top 5 partners for Best Run Travel by joining the `SAGENCY` table with the `STRAVELAG` table. Add the `STRAVELAG` table to the join node.
+
+7.	Once both objects are selected, click on **Create Synonym**.
+
+    ![Create synonym](create-synonym.png)
+
+8.	Click on **Finish** without selecting any other options.
+
+9.	In your file explorer, a new file will appear ending with `.hdbsynonym`. In this file, your synonyms are defined and stored. Go back to the calculation view editor and you should see the two tables in the join node.
+
+    ![Join Node tables added](ss-03-join-node-tables-added.png)
+
+
+
+
+
+### Define the mapping of the join node
+
+
+1.	To properly join the two tables, you need to define how they relate to each other. This is done by editing the join node.
+
+2.	Double click the join node to open the settings.
+
+3.	Under **Join Definition**, click on the column `AGENCYNUM` from one of the tables and drag and drop it on top of the same column from the second table. This determines the key column.
+
+    ![Key mapping](ss-04-key-mapping.gif)
+
+4.	Click on the **Mapping** tab. Here you can select which columns will be part of the output. Select the columns `AGENCYNUM`, `NUMBOOKING`, and `NAME` by double clicking on them. You can see they are added to the output section on the right.
+
+    ![Mapping](ss-05-mapping.png)
+
+5.	Close the join settings by clicking on the `X` icon at the top right corner.
+
+6.	Now **connect** the join node to the aggregation node above it. Just click on the arrow icon of the join node and drag and drop it on the aggregation node.
+
+    ![Connect Join to Aggregation](ss-06-connect-join-to-aggregation.gif)
+
+
+
+
+### Add a rank node
+
+
+1.	Since we want to see the top 5 results from this join, we will add a **Rank** node next. Click on the rank icon (![Rank](icon-rank.png)) then click **on the link** between Join node and Aggregation node. This will add a Rank node in between them.
+
+    >To make it easier to view the nodes, you can click on the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to rearrange the canvas.
+
+
+2.	Next, double click the Rank node to open the settings.
+
+3.	Under **Mapping**, make sure all 3 columns are included in the output.
+
+    ![Mapping output](output-column.png)
+
+4.	Click on **Definition**. Choose the **Aggregation Function** as `Rank`.
+
+5.	Set the **Result Set Direction** as `Top`. This will order the results descending from highest to lowest.
+
+6.	Set the **Result Set Type** as `Absolute`. This setting determines the unit of values given out by the rank. You could, for example, also select `Percentage` here to get the top 10% of results.
+
+7.	On the **Target Value**, type `5`. This will determine the number of values given out as a result.
+
+8.	The **Offset** should be `0`. Offset determines a number of values that are skipped in the result, for example, with an `Offset = 1` the first value of the rank result would not be reported.
+
+9.	Then click on **Sort Column** to expand this area.
+
+10.	Click on the plus icon to add a **Sort Setting**. Select the column `NUMBOOKINGS` and the direction as **Descending**.
+
+    ![Edit Rank node](ss-08-edit-rank-node.png)
+
+11.	Now close the Rank node panel and double click on the **Aggregation** node.
+
+12.	Under **Mapping**, make sure all columns are selected as part of the output. If a column is not mapped to the output, double click it to add it.
+
+    ![Mapping Aggregation](ss-09-mapping-aggregation.png)
+
+
+
+
+### Deploy the calculation view
+
+
+1.	Now deploy the calculation view. In the SAP HANA Project panel next to the calculation view name or on the top right corner of the screen, click on the deploy icon (![Deploy](icon-deploy.png)). This will deploy the calculation view. Once this is successfully completed, it's time to check the output so far.
+
+2.	To access the data preview, click on the HDI container icon (![Container](icon-container.png)) next to the name of the project. This will open a new tab with the SAP HANA database explorer.
+
+3.	On the list of databases, you will now see the HDI container that represents your calculation view. Expand the catalog of that HDI container, then click on **Column Views**.
+
+4.	Next, click on the name of your calculation view on the panel below the catalog and click on **Open Data**.
+
+    ![DBX CV Preview](open-col-view.png)
+
+5.	Then, click on **Raw Data** to see the output of this calculation view so far.
+
+6.	This shows you the top 5 partners of Best Run Travel.
+
+    ![DBX Result preview](raw-data.png)
+
+> You can also preview the results of your calculation view directly in the calculation view editor in SAP Business Application Studio. Right-click on the aggregation node and select **Data Preview**. This will open the data preview inside the calculation view editor.
 >
-> Unless you specified a name for your container manually upon creation of your project, the default name will look something like this:
->
-> `SharedDevKey@[name of your dev project]-hdidb-[sequence of characters] ([name of your space])`
->
-> In our example, it is listed as follows:
->
-> `SharedDevKey@BestRunTravel-hdidb-ws-g6mq2 (dev)`
->
-> Alternatively, you can go to SAP Business Application Studio and click on the HDI container icon (![Container](icon-container.png)), which will directly open the right container in the catalog.
+> ![Data Preview in BAS](ss-12-data-preview-in-BAS.png)
 
-3.	Click on **Column Views**.
 
-4.	Right-click on the column view name on the bottom panel and choose to **Generate a SELECT Statement**.
 
-    <!-- border -->![DBX Catalog](ss-01-DBX-catalog.png)
 
-5.	This will open the SQL Console on the main area of the screen with the `SELECT` statement. On `line 7` you can see a `FROM` clause with two arguments separated by a `.`. The first part is the schema name, the second part is the calculation view name.
+### Add a third table to the view
 
-6.	Copy the name of the schema and save it for later, for example using a text editor.
 
-7.	Keep this SQL console open.
+Now that we know the top 5 partners, we need to next find out on which days the top 5 travel agencies have the most bookings. To achieve this, we will add the table `SAGBOOKDAYS` to our view.
 
-    <!-- border -->![Select Statement](ss-02-select-statement.png)
+1.	Continue working on the same calculation view.
 
+2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created. Add a join node **between** the rank node and the aggregation node.
 
+    >Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
 
+3.	Since the Join node is connected to **Rank 1**, its output is already added to the join node. So, you only need to add the `SAGBOOKDAYS` table by clicking on the plus icon. Follow the steps you previously took to add a table and create a synonym.
 
-### Create a role
+    ![Create synonym for SAGBOOKDAYS table](create-synonym-2.png)
 
+4.	After the table is there, double click on the second join node.
 
-Great, now that you have the right schema name, next you will have to grant the authorization to `SELECT` on the Calculation View. This is done by creating an `.hdbrole` file in your development project that grants the `SELECT` privilege.
+5.	Under **Join Definition**, connect the column `AGENCYNUM` from **Rank 1** to the `AGENCYNUM` column from the `SAGBOOKDAYS` table.
 
-1.	Go to your project in SAP Business Application Studio and start your development space if needed.
+    ![Join 2 Definition](ss-14-join-2-definition.png)
 
-2.	You need the command **SAP HANA: Create HANA database artifact** that you got to know in the previous tutorial. Access it by clicking on **View** on the top menu and selecting **Find command** or pressing `Ctrl+Shift+P`. Unless you see it in your recently used commands, type `SAP HANA` and select it from the list.
+6.	On the same panel, under **Mapping**, make sure the following columns are selected for the output: `AGENCYNUM`, `NUMBOOKING`, `NAME`, `ORDERDAY` and `DAYCOUNT`.
 
-3.	In the wizard, make sure the path to save the role file is in the SRC folder of your project.
+    ![Join 2 Mapping](ss-15-join-2-mapping.png)
 
-4.	Choose the database version **HANA Cloud**.
 
-5.	Select the artifact type as ``**Role (hdbrole)**``.
 
-6.	Name your role `PublicAccessSchema`.
 
-7.	Finally, click on Create.
+### Add another rank node
 
-    <!-- border -->![BAS Create role](ss-03-BAS-create-role.png)
 
-Your role will appear in the file explorer of your project and you can add privileges to it.
+1.	To find the days with the most bookings, add another rank node **between** Join 2 and the Aggregation node. Click on the rank icon (![Rank](icon-rank.png)) and then on the connection between the Join 2 and the Aggregation nodes. 
+Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
 
 
+2.	Double click the rank node to open it.
 
+3.	Under Mapping, make sure all 5 columns appear in the Output Columns. If not, double click to add them.
 
+    ![Rank 2 Mapping](ss-17-rank-2-mapping.png)
 
-### Add privileges to the role
+4.	Then, click on **Definition**. Adjust the settings similar to STEP 4:
 
+      *	**Aggregation Function**: `Rank`
+      *	**Result Set Direction**: `Top`
+      *	**Result Set Type**: `Absolute`
+      *	**Target Value**: `1` (this is different from STEP 4)
+      *	**Offset**: `0`
 
-In this step, you have two options to add privileges to your role: You can use the **Role Editor** wizard or the **Code Editor**. Click on the option you prefer under the title of this step.
+    ![Rank 2 Definition](ss-18-rank-2-definition.png)
 
-The goal in this step is to add the schema privileges `SELECT` and `EXECUTE` to the role ` PublicAccessSchema`
+5.	Now click on the Partition Column area, and then click on the plus icon.
 
-[OPTION BEGIN [Role Editor]]
+    > **What does a partition column do?**
+    >
+    > Defining a partition column will group the rows of the output based on a specific column.
+    >
+    >![Rank 2 Partition](ss-19-rank-2-partition.png)
 
-1.	Click on the `.hdbrole` file. This will open the role editor.
+6.	Add the column `AGENCYNUM` to group the rows based on this column.
 
-2.	Click on **Schema Privileges** and check the boxes in the column **Privileges** for `SELECT` and `EXECUTE`.
+    ![partition column](partition-col.png)
 
-3.	No other options need to be checked, so you can close the role editor.
+7.	Click on **Sort Column** and click on the **plus** icon. Add the column `DAYCOUNT` and select the sort direction as **Descending**. You can now close the rank settings.
 
-    <!-- border -->![BAS Role editor](ss-04-BAS-role-editor.png)
+    ![Rank 2 Sort column](sort-col.png)
 
-[OPTION END]
-[OPTION BEGIN [Code Editor]]
+8.	Double click the Aggregation node. Under **Mapping**, make sure all the columns under the Rank are selected for the output. To add a column to the output, simply double click it.
 
-1.	Right-click on the `.hdbrole` file, then select **Open with Code Editor**.
+    ![Aggegration Node Mapping tab](aggregation-node-output.png)
 
-    <!-- border -->![BAS Code editor](ss-05-BAS-code-editor.png)
 
-2.	Paste the following statements there. Alternatively, you can download this code from our [public GitHub repository](https://github.com/SAP-samples/hana-cloud-learning/blob/181320ae18082d03715c8ea03a61ce2617c9a840/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%209/Tutorial%209%20Queries.txt).
 
-    ```JSON
-{
-    "role": {
-        "name": "PublicAccessSchema",
-        "schema_privileges": [
-            {
-                "privileges": [
-                    "SELECT",
-                    "EXECUTE"
-                ]
-            }
-        ]
-    }
-}
-```
 
-3.	Note that, if you have added a namespace to your `db` folder, you will have to edit the syntax to include that. Before `PublicAccessSchema`, add your namespace and `::`.
+### Deploy the view and access the output
 
-[OPTION END]
 
-Deploy the `.hdbrole` file by clicking on the deploy icon (![Deploy](icon-deploy.png)) next to it on the SAP HANA Projects area or on the top right corner of the main panel.
+You are almost done!
 
-After you are done, deploy the whole project again. When that is completed successfully, you can continue.
+1.	On the SAP HANA Project panel, click on the deploy icon(![Deploy](icon-deploy.png)) next to the calculation view name. This will deploy the calculation view. Once this is successfully completed, it's time to check the output again.
 
 
+2.	To access the Data Preview in the SAP HANA database explorer, click on the HDI container icon(![Container](icon-container.png)) next to the name of the project or access it directly.
 
+    ![Open HDI container](open-hdi.png)
 
-### Create a new user in the SAP HANA Database Explorer
+3.	On the list of databases, you will now see the HDI container that represents your project. Expand the catalog of that HDI container, then click on **Column Views** to find your calculation view.
 
+4.	Next, click on the name of your calculation view on the panel below the catalog. Then click on **Open Data**.
 
-Now that you have the role created and granted privileges to this role, it's time to grant this role to a user. We will create the public user `report` that shall have read-only access to the calculation view.
+    ![Open data](open-data.png)
 
-1.	Go back to your tab with the **SAP HANA Database Explorer** and open a SQL Console by clicking on the SQL icon (![SQL](icon-sql.png)) at the top left corner. Make sure that the connection is opened for an user that has system privileges `ROLE ADMIN` and `USER ADMIN`, e.g., database user `DBADMIN`.
+5.	From here, you can click on **Raw Data** to see the output of this calculation view. This shows you the top 5 partners of Best Run Travel and the day in which they have the most bookings.
 
-2.	Paste the following statement in the SQL Console. Change the password in the statement and then run.
+    ![final results](ss-21-final-results.png)
 
-    ```SQL
-CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
-```
+Well done!
 
-    > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
+You have completed the eighth tutorial of this mission! You learned how to create a calculation view in SAP Business Application Studio using the graphical calculation view editor. You used join and rank nodes to get Alex the business insights they were looking for. Now, all that's left to do is make this calculation view available to others in Alex organization. Learn in the last tutorial how to do that!
 
-3.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
 
-4.	Use the following statement.
 
-    ```SQL
-GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
-```
-
-5. Replace the `<schema name>` with the calculation view schema you copied in the beginning of this tutorial.
-
-6. Make sure to remove the `<>` characters and then run the statement.
-
-> ### Custom vs. default roles
->
-> You can also use the default role that has the `container name.default` access. As soon as an HDI container is created, the default access role is created. You can find the name of the role by using the statement `SELECT * FROM ROLES`
->
-> The role you are looking for should consist of the schema name and the role name `access_role`.
->
-> ![default role resized](ss-07-default-role.png)
->
-> If you don't need a customized role, you can use this one. In a productive system, we recommend creating your own roles with just the privileges needed.
-
-
-
-
-### Connect as the new user
-
-
-You have successfully created the new user `report` and assigned it a role to access your calculation view. With the new user credentials, anyone who has the credentials for this user can run `SELECT` statements on your calculation view.
-
-1.	To test this, first log in with your new user by typing the following statement:
-
-    ```
-CONNECT report PASSWORD <Your_Password>
-```
-
-2.	You should now see at the top of the screen, over the SQL console the user you connected with.
-
-3.	Since you granted this user `SELECT` privileges, you should be able to run `SELECT` statements on the column view.
-
-4.	Go back to the SQL console you opened in STEP 1, when you generated a `SELECT` statement of the column view. If you have closed it in the meantime, simply right-click on the column view and click on **Generate a SELECT Statement**.
-
-5.	Copy the whole statement from this SQL console and paste it to the console that you used to connect with the user `report`.
-
-6.	Execute the statement using the `report`-user console. When you see the results of this query you know that your test was successful, and the user can now access your view.
-
-And with that last step, you have completed the last tutorial of this mission! You learned how to create a new user role and how to grant access to your calculation view using SAP Business Application Studio and SAP HANA Database Explorer.
-
-> **Congratulations! You successfully completed this mission!**
->
-> You achieved your goal of helping Alex find the business insights they were looking for and share these insights with others!
->
-> ![Alex Banner final](banner-alex-final.png)
->
-> Throughout the modules of this mission, you have learned how to provision your first SAP HANA Cloud, SAP HANA database instance, how to use the different SAP HANA Cloud tools, how to import and query data, how set up a development project, create and calculation view and how to make it available to others within your organization.
-
-To quickly recap the tutorial mission, you can also watch all the mission videos in a [playlist](https://microlearning.opensap.com/playlist/dedicated/213248013/1_e5zton4v/1_7y0hucq6) on `openSAP Microlearning` site.
-
-Make sure to get the badge for this mission and share it on your profile in the SAP Community.
-[Click here for more learning materials on SAP HANA Cloud](https://community.sap.com/topics/hana-cloud).
-
-Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content!
-
-
-
-
-
-### Test yourself
+### Knowledge Check
 
 
 

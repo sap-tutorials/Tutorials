@@ -23,7 +23,7 @@ In the previous tutorial, you have built the data model and exposed the services
 
 In one of the previous tutorials, you have already seen how to register a [custom event handler](https://cap.cloud.sap/docs/java/provisioning-api) to handle `READ` or `CREATE` events of an entity. You used the `@On` annotation, which replaces the default handling of an event that is provided by the CAP Java runtime.
 
-As we want to augment the default handling now, we'll use the [`@Before`](https://cap.cloud.sap/docs/java/srv-impl#before) and [`@After`](https://cap.cloud.sap/docs/java/srv-impl#after) annotations. Event handlers registered using the `@Before` annotation are meant to perform validation of the input entity data. This makes it possible to validate the available stock of a particular book before creating an order. In contrast event handlers registered using the `@After` annotation can post-process returned entities. This is useful for calculating the `total` and `netAmount` elements after reading orders or their items from the database.
+As we want to augment the default handling now, we'll use the [`@Before`](https://cap.cloud.sap/docs/java/srv-impl#before) and [`@After`](https://cap.cloud.sap/docs/java/srv-impl#after) annotations. Event handlers registered using the `@Before` annotation are meant to perform validation of the input entity data. This makes it possible to validate the available stock of a particular book before creating an order. In contrast, event handlers registered using the `@After` annotation can post-process returned entities. This is useful for calculating the `total` and `netAmount` elements after reading orders or their items from the database.
 
 First of all, a new Java class for your event handler methods needs to be defined:
 
@@ -54,7 +54,7 @@ public class OrdersService implements EventHandler {
 <!-- border -->![OrdersService class overview](ordersservice-class.png)
 
 
-> If you see validation errors in your editor, open the context menu on your `pom.xml` and select **Update Project**. That regenerates the classes and makes them available.
+> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Reload Project**. That regenerates the classes and makes them available.
 
 
 ### Decrease stock when posting order
@@ -68,7 +68,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -92,7 +92,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -114,7 +114,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     import com.sap.cds.ql.cqn.CqnUpdate;
     import com.sap.cds.services.ErrorStatuses;
     import com.sap.cds.services.ServiceException;
-    import com.sap.cds.services.cds.CdsService;
+    import com.sap.cds.services.cds.CqnService;
     import com.sap.cds.services.handler.annotations.Before;
     import com.sap.cds.services.persistence.PersistenceService;
 
@@ -160,7 +160,7 @@ import com.sap.cds.ql.cqn.CqnSelect;
 import com.sap.cds.ql.cqn.CqnUpdate;
 import com.sap.cds.services.ErrorStatuses;
 import com.sap.cds.services.ServiceException;
-import com.sap.cds.services.cds.CdsService;
+import com.sap.cds.services.cds.CqnService;
 import com.sap.cds.services.handler.annotations.Before;
 import com.sap.cds.services.persistence.PersistenceService;
 
@@ -177,7 +177,7 @@ public class OrdersService implements EventHandler {
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -201,7 +201,7 @@ public class OrdersService implements EventHandler {
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -212,7 +212,7 @@ public class OrdersService implements EventHandler {
 }
 ```
 
-If your `OrdersService.java` file still shows some errors right-click on the `pom.xml` in the `srv` directory and choose **Update Project**. After closing and reopening the `OrderService.java` file the errors should be gone.
+If your `OrdersService.java` file still shows some errors right-click on the `pom.xml` in the `srv` directory and choose **Reload Project**. After closing and reopening the `OrderService.java` file the errors should be gone.
 
 
 
@@ -281,7 +281,7 @@ Next, let's add a method to the `OrdersService` Java class to calculate the `net
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
     public void calculateNetAmount(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -368,7 +368,7 @@ Finally, add a method to the `OrdersService` Java class to calculate the `total`
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
     public void calculateTotal(List<Orders> orders) {
         for (Orders order : orders) {
             // calculate net amount for expanded items
@@ -443,6 +443,6 @@ Let's break down the code:
 
 Great job!
 
-You have extended the application with quite some custom business logic. In the next tutorial you will start to make the application ready for SAP BTP, by running it with SAP HANA as the database.
+You have extended the application with quite some custom business logic. In the next tutorial you will start to make the application ready for SAP BTP, by adding authentication and authorization.
 
 ---

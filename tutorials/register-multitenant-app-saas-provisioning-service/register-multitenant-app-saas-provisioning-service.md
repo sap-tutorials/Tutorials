@@ -27,13 +27,13 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ```YAML
 ################### SaaS Provisioning Service ###################
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceInstance
 metadata:
   name: saas-registry-service
 spec:
-  clusterServiceClassExternalName: saas-registry
-  clusterServicePlanExternalName: application
+  serviceOfferingName: saas-registry
+  servicePlanName: application
   parameters:
     # the xsappname refers to the one defined in xsuaa service
     xsappname: multitenant-kyma-demo
@@ -46,15 +46,12 @@ spec:
       onSubscriptionAsync: false
       onUnSubscriptionAsync: false
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
+apiVersion: services.cloud.sap.com/v1alpha1
 kind: ServiceBinding
 metadata:
-  creationTimestamp: null
   name: saas-registry-service-binding
 spec:
-  externalID: ""
-  instanceRef:
-    name: saas-registry-service
+  serviceInstanceName: saas-registry-service
   secretName: saas-registry-service-binding
 ```
 

@@ -50,14 +50,14 @@ If these requirements apply to your use case, then it is highly recommend that y
 
 The Cloud SDK makes it easy to cache your requests since it handles most of the complexity under the hood. This includes handling of tenant-aware requests, which is essential in a multi-tenant application. The SDK will isolate the cache on a tenant or principal level automatically, if your request requires it.
 
-In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial, you will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for this purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
+In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial, you will use the `JCache` adapter [Caffeine](https://github.com/ben-manes/caffeine) for this purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
 
 ```XML
 <dependency>
   <groupId>com.github.ben-manes.caffeine</groupId>
   <artifactId>jcache</artifactId>
   <scope>runtime</scope>
-  <version>2.7.0</version>
+  <version>3.1.8</version>
 </dependency>
 ```
 
@@ -97,84 +97,76 @@ Feel free to test that subsequent requests respond faster compared to the first 
 ### Test the cache
 
 
-Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
+Now that you have a working command with caching functionality you also have to adapt your test. In `testService` we previously stubbed for a successful response from the OData service. Now, we want to test that the cache is working as expected.
+Let's adapt the test and check what happens when the OData service is not available.
 
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+Replace the `testService` test with `testServiceWithCache()` code below:
 
-`integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
+`application/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerControllerTest.java`:
 
 ```Java
 @Test
-public void testCache() {
-    // TODO: insert your service URL down below
-    mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+public void testServiceWithCache() throws Exception {
+        stubFor(get(anyUrl())
+        .willReturn(okJson(ODATA_RESPONSE_JSON)));
+        mockMvc.perform(MockMvcRequestBuilders.get("/businesspartners"))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.content().json(RESPONSE_JSON));
 
-    // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body(jsonValidator_List);
+        stubFor(get(anyUrl())
+        .willReturn(serviceUnavailable()));
+        mockMvc.perform(MockMvcRequestBuilders.get("/businesspartners"))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+        .andExpect(MockMvcResultMatchers.content().json(RESPONSE_JSON));
 }
 ```
 
-Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
-
->If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
-```Java
-mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
-```
-
-
+Remember to add a static import to `com.github.tomakehurst.wiremock.client.WireMock.serviceUnavailable`.
+Here, the test expects the request still to be successful, even though the second time we stub the OData service to return a `503`, which means that the results are retrieved for the second time from the cache instead.
 
 ### More on testing
 
 
-The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for your integration tests. But now the added cache holds a state that is shared between the tests in your test class, which has to be accounted for.
+The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. 
 
-Take a look back at the test you just replaced:
+But now the `testWithFallback` test will behave differently based on the order of execution.Executed on its own, this test will still pass as it did before. However, if `testServiceWithCache` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. In a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
 
-```Java
-@Test
-public void testWithFallback() {
-    // Simulate a failed VDM call with non-existent destination
-    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+You can still make both tests pass, by explicity setting the order of execution. Make the following changes to the `BusinessPartnerControllerTest` class: 
 
-    // Assure an empty list is returned as fallback
-    when()
-            .get("/businesspartners")
-            .then()
-            .statusCode(200)
-            .contentType(ContentType.JSON)
-            .body("", Matchers.hasSize(0));
-}
+```diff
++   @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class BusinessPartnerControllerTest {
+...
 ```
 
-Executed on its own, this test will still pass as it did before. However, if `testService` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. By changing the test you avoided such issues since your new test does not interfere with other tests. While being sufficient for this tutorial, in a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
+```diff
+    @Test
++   @Order(1)    
+    public void testWithFallback() throws Exception {
+    ...}
+```
+
+```diff
+    @Test
++   @Order(2)    
+    public void testServiceWithCache() throws Exception {
+    ...}
+```
+Please remember to add the required imports for the `Order` and `MethodOrderer` annotations.
 
 This wraps up the tutorial. In the next step of this series you will learn how to secure your application on Cloud Foundry.
 
 
-### Test yourself
-
-
-
 
 ### Test yourself
 
 
 
-
 ### Test yourself
 
+
+
+### Test yourself
 
 
 

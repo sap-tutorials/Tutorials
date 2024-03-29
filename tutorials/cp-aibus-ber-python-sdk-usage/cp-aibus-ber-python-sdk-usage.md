@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
+tags: [tutorial>intermediate, tutorial>free-tier, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
 author_name: Nora von Thenen
 author_profile: https://github.com/noravth
@@ -17,7 +17,9 @@ author_profile: https://github.com/noravth
   - How to upload data and do a batch inference using a pre-trained model
 
 ## Intro
-The repository, initial setup documentation and example code of the Python SDK can be found [here](https://github.com/SAP/business-entity-recognition-client-library). The pre-trained models and the entities you can extract can be found [here](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html).
+The repository, initial setup documentation and example code of the Python SDK can be found [here](https://github.com/SAP/business-entity-recognition-client-library). The pre-trained models and the entities you can extract can be found [here](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html). The Tech Byte video of this tutorial you can find here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ucZFrONCVZ4" frameborder="0" allowfullscreen></iframe>
 
 ---
 

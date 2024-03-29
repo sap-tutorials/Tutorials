@@ -11,7 +11,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## Prerequisites
 - You have completed the tutorials [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario) and [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
-- You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
+- You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
 - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
@@ -20,12 +20,9 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP.
-- How to upload a **promotional rule** with the help of the SAP API Business Hub. The promotional rule includes an example about applying a coupon to a transaction and how to add loyalty points.
+- How to upload a **promotional rule** with the help of the SAP Business Accelerator Hub. The promotional rule includes an example about applying a coupon to a transaction and how to add loyalty points.
 - How to apply a promotional rule and execute the calculation request.
 
-## Intro
->This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
-	![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---
 
@@ -55,10 +52,10 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
  -->
 
 
-### Create environments in SAP API Business Hub
+### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP API Business Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
 ### Upload promotional rule
@@ -66,7 +63,7 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now upload the promotional rule with the Data Upload service.
 
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP API Business Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
 <!-- border -->![Data upload 1](data_upload_1.png)
 <!-- border -->![Data upload 2](data_upload_2.png)
@@ -332,7 +329,7 @@ Let's see if this is the case:
 <!-- border -->![Calculation 2](Calculation 2.png)
 
 
-1. Navigate to the [Calculation service on the SAP API Business Hub](https://api.sap.com/api/PriceCalculation/resource).
+1. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
 2. For **API Environment**, select your trial environment for the Calculation service.
 3. Open the **POST** request `/restapi/{tenantName}` and choose **Try Out**.
 4. In the field `tenantName` enter the `identityzone` from the service key you have created for the Calculation service in your SAP BTP account.
@@ -383,9 +380,9 @@ Make sure you get the HTTP response **200**.
 
 ### Additional Information
 
-* [Official Product Documentation](https://help.sap.com/viewer/product/OPP/Cloud/en-US)
-* [Trial Documentation](https://help.sap.com/viewer/0c145d124b784b548b618cda8a5b2aba/Cloud/en-US/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
-* [SAP Omnichannel Promotion Pricing on the SAP API Business hub](https://help.sap.com/viewer/0c145d124b784b548b618cda8a5b2aba/Cloud/en-US/67a9da084cf84e058cb3a3911971bdd0.html)
+* [Official Product Documentation](https://help.sap.com/docs/OPP)
+* [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
+* [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
 * [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
 
 ---

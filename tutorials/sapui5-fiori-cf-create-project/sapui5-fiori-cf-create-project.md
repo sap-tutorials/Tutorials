@@ -3,20 +3,20 @@ parser: v2
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
-primary_tag:  software-product>sap-launchpad-service
+primary_tag:  software-product>sap-build-work-zone--standard-edition
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
-# Create a Fiori Launchpad App
-<!-- description --> After you set up the environment, use the generator to bootstrap a new SAPUI5 project. Learn about the main components of this basic project and the tools that support it.
+# Create an App for SAP Build Work Zone, standard edition
+<!-- description --> Use a generator to create a new SAPUI5 project. Learn about the main components of this basic project and the required tooling.
 
 ## Prerequisites
- - Install at least version 3.1.4 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
+ - You have previously installed the [easy-ui5 generator](cp-cf-sapui5-local-setup) (at least version 3.1.4).
 
 ## You will learn
-  - How to create a new SAPUI5 project on your local machine
-  - How the UI5 tooling helps you to develop more efficient
+  - How to create a new SAPUI5 project on your local machine.
+  - How the UI5 Tooling helps you develop efficiently.
 
 
 ---
@@ -24,14 +24,13 @@ author_profile: https://github.com/nicoschoenteich
 
 ### Scaffold a SAPUI5 project
 
-Run the following command to trigger the creation of a new project.
+Run the following command to trigger the creation of a new project:
+
 ```Terminal
 yo easy-ui5 project
 ```
 
-
-Choose the following responses for the prompted parameters.
-
+Choose the following responses when prompted:
 
 |  Parameter     | Value
 |  :------------- | :-------------
@@ -43,20 +42,16 @@ Choose the following responses for the prompted parameters.
 |  Which view type do you want to use? | **`XML`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
-|  Would you like to add JavaScript code assist libraries to the project?    | **`Yes`**
 |  Would you like to initialize a local git repository for the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
-
   <!-- border -->![yeoman](./yeoman.png)
 
-The following installation of the project's dependencies might take a while.
-
+The following installation of the project's dependencies might take a while. If asked to overwrite files, answer with `y` (for "yes") and hit "enter".
 
 ### Inspect the generated code
 
-
-Let's have a look at the generated code. Go to the newly created directory and open the code with your favorite editor (here Visual Studio Code).
+Let's have a look at the generated code. Go to the newly created directory and open the code with your favorite editor:
 
 ```Bash
 code tutorial.products/
@@ -66,37 +61,35 @@ You can see that the wizard created a bunch of folders and files.
 
 <!-- border -->![vscode](./vscode.png)
 
-The main code for the SAPUI5 app can be found in the directory `webapp`. You can also find the following directories:
+The main code for the SAPUI5 app can be found in the `webapp/` directory. You can also find the following directories:
 
-- `deployer`: A Cloud Foundry tasks which uploads the static web resources to the HTML5 application repository service during deploy-time.
-- `uimodule`: The source file of your SAP Fiori app.
+- `deployer/`: Once the project gets built, the application content will be moved here. From here, a deployment tasks will upload the static web resources to Cloud Foundry, more specifically the SAP HTML5 Application Repository Service.
+- `uimodule/`: This directory contains the application source code (`webapp/`) as well as the `ui5.yaml`, which is the configuration file for the UI5 Tooling. The UI5 Tooling will provide a web server to serve our application.
 
-You might miss the folders `dist` and `mta_archives` as they will be created later during the build step.
+You might miss the folders `dist/` and `mta_archives/` - these be created later during the build step.
 
-
-The `package.json` file contains much useful information about the project. The `npm scripts` are especially interesting since they wrap the command you will use later.
+The `package.json` file contains a lot of useful information about the project. It is also the file that essentially turns our project into a Node.js based application. The `npm scripts` are especially interesting since they wrap the commands you will use later.
 
 ### Test the web app locally
 
+This project leverages the [UI5 Tooling](https://github.com/SAP/ui5-tooling). The UI5 Tooling provides a web server, which is the perfect fit for SAPUI5 development. It is easily extendable, for example with [mocked destinations](https://www.npmjs.com/package/ui5-middleware-cfdestination) and a [live-reload feature](https://www.npmjs.com/package/ui5-middleware-livereload). The great thing is, you don't have to worry about this for now. The easy-ui5 generator already installed these two middlewares for you. Additional UI5 Tooling middlewares can be found on [npmjs.com](https://www.npmjs.com/search?q=ui5-middleware).
 
-This project leverages the [UI5 tooling framework](https://github.com/SAP/ui5-tooling) for development. This tool belt can help you to start a local web server and is extendable so you can integrate [mocked destinations](https://github.com/petermuessig/ui5-ecosystem-showcase/tree/master/packages/ui5-middleware-cfdestination) and a [live-reload feature](https://github.com/petermuessig/ui5-ecosystem-showcase/tree/master/packages/ui5-middleware-livereload) when files are updated. The great thing is, you don't have to worry about this for now. The easy-ui5 generator already installed these two tasks for you. Additional UI5 tooling tasks can be found on [npm.com](https://www.npmjs.com/search?q=ui5-task).
-
-Start the web server locally via the command line.
+Start the web server locally via the command line:
 
 ```Bash
 npm start
 ```
 
-**Click** on the only tile you see in the SAP Fiori Launchpad to start the SAPUI5 application.
+**Click** on the only tile in the launchpad to start the SAPUI5 application:
 
 <!-- border -->![local](./local.png)
 
 
-> Hint: Put windows next to each other to benefit from the live-reload feature. This way, you will be able to see the changes in the website right when you do file modifications without having to switch to another window.
+> Hint: Put windows next to each other to benefit from the live-reload feature. This way, you will be able to see the changes in the browser right when you do file modifications - without having to switch to another window.
 
 ### Modify the title
 
-**Open** the i18n file [`uimodule/webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
+**Open** the i18n ("internationalization") file [`uimodule/webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
 ```TEXT [6,9,11]
 # This is the resource bundle for tutorial.products
 
@@ -111,13 +104,10 @@ appDescription=App Description
 title=Coming soon!
 ```
 
-You should see the result of your action immediately in the browser.
+You should see the result of your action immediately in the browser:
 
 <!-- border -->![livereload](livereload.gif)
 
-> Optional: Depending on your region, you can also add a new i18n file and maintain the corresponding properties in there. Possible file names could be `i18n_en_US.properties`, `i18n_en_GB.properties`, or `i18n_de_DE.properties`,
-
-
-
+> Optional: Depending on your region, you can also add a new i18n file and maintain the corresponding properties in there. Possible file names could be `i18n_en_US.properties`, `i18n_en_GB.properties`, `i18n_de_DE.properties`, and so on.
 
 ---

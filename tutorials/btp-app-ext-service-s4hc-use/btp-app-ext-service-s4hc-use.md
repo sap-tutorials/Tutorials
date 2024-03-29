@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
 description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
 keywords: cap
@@ -19,6 +19,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your CAP application with SAP S/4HANA Cloud connectivity
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Connect to the business partner service on your SAP S/4HANA Cloud system)]
 Earlier in the tutorial you used a sandbox system to use the business partner service in your application. In this tutorial, you will connect to your SAP S/4HANA Cloud system.
@@ -42,7 +56,7 @@ First, you create a service instance for the SAP S/4HANA Cloud Extensibility ser
 
     `bupa-service-config.json`:
 
-    ```
+    ```JSON
     {
         "systemName": "<set in mta.yaml>",
         "communicationArrangement": {
@@ -176,9 +190,9 @@ Otherwise, deploy your application as described in the tutorial [Multi-Target Ap
 [ACCORDION-BEGIN [Step 3: ](Test your CAP application with SAP S/4HANA Cloud connectivity)]
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote S/4HANA system.
 
-> Don't forget to perform the steps from the tutorial [Subscribe to the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
+> Don't forget to perform the steps from the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe) before you continue with this step to be able to create entries in the **Risks** application.
 
-1. Open your **SAP BTP Launchpad Service** site as described in the tutorial [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service).
+1. Open your **SAP Build Work Zone, standard edition** site as described in the tutorial [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-work-zone-subscribe).
 
 2. Choose the **Risks** application.
 

@@ -1,8 +1,8 @@
 ---
 parser: v2
 auto_validation: true
-time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js]
+time: 20
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -31,7 +31,7 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v16.15.1.
+If Node.js is installed, the currently installed version is returned, such as v20.10.0.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -39,7 +39,7 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
 ---
 
->During the installation, there is no need to install Chocolatey.  
+>During the installation, there is no need to install tools for native modules.  
 >
 >![Chocolatey](Chocolatey.png)
 
@@ -57,7 +57,6 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
 
 ### Install SAP HANA client for Node.js from NPM
-
 
 Node.js packages are available using [NPM](https://www.npmjs.com/), which is the standard package manager for Node.js.  
 
@@ -78,6 +77,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     cd %HOMEPATH%\HANAClientsTutorial\node
     ```
 
+
     ```Shell (Linux or Mac)
     mkdir $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
@@ -94,25 +94,25 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     >![pre built libraries](prebuilt.png)
 
-    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
+    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
 
     >```Shell (Microsoft Windows)
     set HDB_NODE_PLATFORM_CLEAN=1
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-
+    >
     >```Shell (Linux or Mac)
     export HDB_NODE_PLATFORM_CLEAN=1
     npm uninstall @sap/hana-client
     npm install @sap/hana-client
     >```
-
+    >
     >---
 
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
-    >```Shell
+    >```Shell (Microsoft Windows)
     cd C:\SAP\hdbclient\node
     npm install
     cd %HOMEPATH%\HANAClientsTutorial\node
@@ -129,7 +129,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![npm list](npm-list.png)
 
-> ### Some Tips
+> Some Tips
 
 >At this point, the SAP HANA client module has been installed into the `HANAClientsTutorials\node\node_modules` folder and added as a dependency in the `packages.json` file.  The following is some extra optional information on NPM.  
 
@@ -169,9 +169,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 >```
 
 
-
 ### Create a synchronous Node.js application that queries SAP HANA
-
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -185,7 +183,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     pico nodeQuery.js
     ```
 
-2. Add the code below to `nodeQuery.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQuery.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
     ```JavaScript
     'use strict';
@@ -207,7 +205,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
 
-        //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
+        //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
 
@@ -215,7 +213,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //To use the SAP crypto provider, uncomment the below line.
         //sslCryptoProvider: 'commoncrypto',
 
-        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
+        //As of SAP HANA client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem', //Used to specify where the trust store is located
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
@@ -239,8 +237,8 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //connection.onTrace("", null);  //disables callback tracing for the rest of the program
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
-    var t0 = performance.now()
+    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;';
+    var t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     var t1 = performance.now();
@@ -256,42 +254,39 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Running nodeQuery.js](Node-query.png)
 
-    Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
+    Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/fdafeb1d881947bb99abd53623996b70.html).
 
     Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
-    >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
+4. To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
-    >```Shell (Microsoft Windows)
-    >set DEBUG=*
-    >node nodeQuery.js
-    >```  
+    ```Shell (Microsoft Windows)
+    set DEBUG=*
+    node nodeQuery.js
+    ```  
 
-    >```Shell (Linux or Mac)
-    >export DEBUG=*
-    >node nodeQuery.js
-    >```    
+    ```Shell (Linux or Mac)
+    export DEBUG=*
+    node nodeQuery.js
+    ```    
 
-    > ![debug output](debug-flag.png)
+    ![debug output](debug-flag.png)
 
-    > The value of the environment variable DEBUG can be seen and removed with the commands below.
+    The value of the environment variable DEBUG can be seen and removed with the commands below.
 
-    >```Shell (Microsoft Windows)
-    >set DEBUG
-    >set DEBUG=
-    >set DEBUG
-    >```  
+    ```Shell (Microsoft Windows)
+    set DEBUG
+    set DEBUG=
+    set DEBUG
+    ```  
 
-    >```Shell (Linux or Mac)
-    >printenv | grep DEBUG
-    >unset DEBUG
-    >printenv | grep DEBUG
-    >```
-
+    ```Shell (Linux or Mac)
+    printenv | grep DEBUG
+    unset DEBUG
+    printenv | grep DEBUG
+    ```
 
 ### Create a synchronous app that uses a connection pool
-
-
 Connection pooling can improve performance when making multiple, brief connections to the SAP HANA database.  The following sample makes two connections one after another without using a connection pool and then using a connection pool.  It demonstrates how the time taken to make a connection with a connection retrieved from a pool is significantly shorter.
 
 1. Open a file named `nodeQueryConnectionPool.js` in an editor.
@@ -306,7 +301,8 @@ Connection pooling can improve performance when making multiple, brief connectio
     pico nodeQueryConnectionPool.js
     ```
 
-2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+
 
     ```JavaScript
     'use strict';
@@ -328,6 +324,7 @@ Connection pooling can improve performance when making multiple, brief connectio
         poolCapacity: 10,  //max # of connections in the pool waiting to be used
         maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
         pingCheck: false,
+        allowSwitchUser: true,  //requires SAP HANA client 2.17
         maxPooledIdleTime: 3600, //1 hour (in seconds)
     }
 
@@ -336,38 +333,42 @@ Connection pooling can improve performance when making multiple, brief connectio
     queryTable(false, "1st Run");
     queryTable(false, "2nd Run");
     queryTable(true, "1st Run");
-    //console.log(pool.clear());
     queryTable(true, "2nd Run");
+    queryTable(true, "3rd Run", true); //change user
     console.log("Connections in use :" + pool.getInUseCount());
     console.log("Connections in the pool :" + pool.getPooledCount());
 
     //Creates two connections either using connection pooling or not
     //Displays timing information
-    function queryTable(usePool, run) {
+    function queryTable(usePool, run, user2) {
         var t0 = performance.now()
         var connection = null;
-        if (!usePool) {
-            connection = hana.createConnection();
-            connection.connect(connOptions);
-            var t1 = performance.now();
-        }
-        else {
+        if (usePool) { //use the connection pool
             var t0 = performance.now();
             if (pool === null) {
                 pool = hana.createPool(connOptions, poolProperties); //create a connection pool
             }
-
-            connection = pool.getConnection(); //get a connection from the pool
+            if (user2) { //example of changing the user
+                connection = pool.getConnection('USER2','Password2'); //Requires 2.17 of the SAP HANA client
+            }
+            else {
+                connection = pool.getConnection(); //get a connection from the pool
+            }
+            var t1 = performance.now();
+        }
+        else { //don't use the connection pool
+            connection = hana.createConnection();
+            connection.connect(connOptions);
             var t1 = performance.now();
         }
 
         var t2 = performance.now();
-        var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+        var sql = 'select CURRENT_USER FROM DUMMY;';
         var result = connection.exec(sql);
         var t3 = performance.now();
 
         var t4 = performance.now();
-        //console.log(util.inspect(result, { colors: false }));
+        console.log(util.inspect(result, { colors: false }));
         var t5 = performance.now();
 
         var t6 = performance.now();
@@ -390,9 +391,11 @@ Connection pooling can improve performance when making multiple, brief connectio
     node nodeQueryConnectionPool.js
     ```
 
-    ![Running nodeQueryConnectionPool.js](NnodeQueryConnectionPool.png)
+    Notice below that the time taken to establish a connection is approx 900 ms which but becomes almost instantaneous when the connection pool is used or about 85 ms when a connection from the pool requires changing the user.
 
-    See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.13 release and documented in the 2.14 release.  This new API provides a more direct way to interact with the connection pool.
+    ![Running nodeQueryConnectionPool.js](node-query-connection-pool.png)
+
+    See [Node.js Connection Pooling](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/e252ff9b2cb44dd9925901e39025ce77.html) for additional details.  The example above uses a new API that was added in the 2.17 release.
 
 
 ### Create an asynchronous app that uses callbacks
@@ -411,7 +414,8 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     pico nodeQueryCallback.js
     ```
 
-2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+
 
     ```JavaScript
     'use strict';
@@ -512,7 +516,8 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     pico nodeQueryPromise.js
     ```
 
-2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
+ 
 
     ```JavaScript
     'use strict';
@@ -580,7 +585,10 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
                     }
                     else {
                         console.log(util.inspect(values, { colors: false }));
-                        return processResults(results);
+                        processResults(results)
+                        .then((results) => {
+                            resolve(results);
+                        });
                     }
                 })
                 .catch (err => {
@@ -600,14 +608,12 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 
     The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
-
-
 ### Debug the application
 
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
-1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
+1. If required, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `HANAClientsTutorial` folder.
 
@@ -624,9 +630,133 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     ![VS Code Debugging](debugging.png)
 
 
+### Use TypeScript
+[TypeScript](https://www.typescriptlang.org/) is a superset of JavaScript that provides optional types, compile-time checking, and code completion when using a tool such as Visual Studio Code.  The following step provides an example of using TypeScript with the SAP HANA client Node.js interface.
+
+1. Examine the interface file which is located at `C:\SAP\hdbclient\node\lib\index.d.ts` in SAP HANA client versions 2.16 and higher.
+
+    ![declaration file](ts-declaration-file.png)
+
+    Notice that it contains definitions for the methods of the SAP HANA client Node.js interface.  The method `setClientInfo` will be highlighted in substep 6.
+
+2. Open a file named `nodeQueryTS.js` in an editor.
+
+    ```Shell (Microsoft Windows)
+    notepad nodeQueryTS.ts
+    ```
+
+    Substitute `pico` below for your preferred text editor.  
+
+    ```Shell (Linux or Mac)
+    pico nodeQueryTS.ts
+    ```
+
+3. Add the code below to `nodeQueryTS.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+
+    ```JavaScript
+    "use strict";
+    import * as hana from '@sap/hana-client';
+
+    var connection: hana.Connection = hana.createConnection();
+
+    var connOptions: hana.ConnectionOptions = {
+        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+        //serverNode: '123456-7890-400a-8bbd-41097dfd15ae.hana0.prod-us10.hanacloud.ondemand.com:443',
+        //UID: 'USER1',
+        //PWD: 'Password1'
+    };
+
+    connection.connect(connOptions);
+    connection.setClientInfo("CURRENT_YEAR", 2023);  //should be "2023"
+
+    console.log("Year session value is " + connection.getClientInfo("CURRENT_YEAR"));
+
+    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?";
+
+    var statement: hana.Statement = connection.prepare(sql1);
+    var result1: hana.ResultSet = statement.executeQuery(['M%']);
+    var moreData: boolean = result1.next();
+    while (moreData) {
+        var row : {[key: string]: string} = result1.getValues();
+        console.log(row);
+        moreData = result1.next();
+    }
+    connection.disconnect();
+    ```
+
+4. Check if TypeScript is already installed and if not install it.
+
+    ```Shell
+    tsc -version
+    ```
+
+    If the TypeScript is installed, a version value will be returned.
+
+    ![typescript version](typescript-version.png)
+
+    If TypeScript is not installed, it can be installed globally with the below command.
+
+    ```Shell
+    npm install -g typescript
+    ```
+
+5. Add the types module.
+
+    First check the Node.js version, determine what modules are in the current project, and what are the available versions of `@types/node`.
+
+    ```Shell
+    npm info @types/node
+    ```
+
+    Install the @types/node module which provides type definitions for Node.js.
+
+    ```Shell
+    npm install @types/node
+    node -v
+    npm list
+    ```
+
+    ![node and module versions](npm-list-new.png)
+
+    >The major version of Node.js and the `@types/node` versions should match.  If you need to uninstall `@types/node` and install a different version, an example is shown below of the commands to do so.
+
+
+    >```Shell
+    >npm uninstall @types/node
+    >npm install @types/node@18.15.11
+    >```
+
+6. Run the TypeScript compiler and notice that it finds an error.
+
+    ```Shell
+    tsc nodeQueryTS.ts
+    ```
+
+    ![Typescript error](tsc-year-error-new.png)
+
+7. Open Visual Studio Code.  Notice that it also shows the error.
+
+    ![TypeScript error shown in Visual Studio Code](vscode-node-year-error.png)
+
+8. On a new line enter `connection.s` and notice that code completion is provided for the client interface methods.
+
+    ![Code completion of client interface methods](set-client-info.png)
+
+    Further details on using TypeScript within Visual Studio Code can be found at [TypeScript tutorial in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-tutorial).
+
+9. Correct the error, compile, and run the app.  The error can be corrected by changing 2023 to "2023".
+
+    ```Shell
+    tsc nodeQuery.TS.ts
+    node nodeQueryTS.js
+    ```
+
+    ![Running node application](node-query-ts-execute.png)
+
+
+### Knowledge check
+
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP HANA database.
-
-
 
 
 ---

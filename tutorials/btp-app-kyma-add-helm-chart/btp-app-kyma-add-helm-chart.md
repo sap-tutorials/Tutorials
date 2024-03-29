@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Add Helm Chart
 description: Learn how to add a Helm chart to your project and configure container image, pull secret, cluster domain, and SAP HANA secret in the Helm chart.
 keywords: cap
@@ -24,11 +24,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Add Helm chart)]
 1. In the root directory of your project, run:
 
-    ```
+    ```Shell/Bash
     cds add helm
     ```
 
@@ -37,7 +51,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Configure Container Image)]
+[ACCORDION-BEGIN [Step 2: ](Configure container image)]
 1. Open the file `chart/values.yaml`.
 
 2. Replace the placeholder `<your-container-registry>` with your docker server URL.
@@ -48,19 +62,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
             repository: <your-container-registry>/cpapp-srv
             tag: latest
     ...
-    hana_deployer:
+    hana-deployer:
         image:
             repository: <your-container-registry>/cpapp-hana-deployer
             tag: latest
     ```
-
-    > Looking for your docker server URL?
-
-    > The docker server URL is the same as provided in `Step 6: Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
-
-    > ```json
-    > cat ~/.docker/config.json
-    > ```
 
     > In case you're using Docker Hub as your container registry, replace the placeholder `<your-container-registry>` with your Docker Hub user ID.
 
@@ -70,7 +76,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Configure pull secret)]
-1. In the `chart/values.yaml` file, make sure that the pull secret is defined:
+1. In the `chart/values.yaml` file, define the pull secret as the one you created before:
 
     ```YAML[4]
     global:
@@ -97,14 +103,14 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
 
 1. Get the host name pattern of the cluster with the following command:
 
-    ```YAML
+    ```Shell/Bash
     kubectl get gateway -n kyma-system kyma-gateway -o jsonpath='{.spec.servers[0].hosts[0]}'
     ```
 
     Result should look like:
 
-    ```
-    *.<xyz123>.stage.kyma.ondemand.com
+    ```Shell/Bash
+    *.<xyz123>.kyma.ondemand.com
     ```
 
     >  `<xyz123>` is a placeholder for a string of characters that's unique for your cluster.
@@ -113,32 +119,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
 
     ```YAML[2]
     global:
-        domain: <xyz123>.stage.kyma.ondemand.com
-    ```
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 5: ](Configure SAP HANA secret)]
-2. In the `chart/values.yaml` file, add the binding `db` pointing to the SAP HANA HDI container secret:
-
-    ```YAML[5-6]
-    srv:
-        bindings:
-            auth:
-              ...
-            db:
-              fromSecret: cpapp-db
-    ```
-
-3. Point the binding `hana` of the SAP HANA deployer to the SAP HANA HDI container secret:
-
-    ```YAML[5]
-    hana_deployer:
-        ...
-        bindings:
-            hana:
-                fromSecret: cpapp-db
+        domain: <xyz123>.kyma.ondemand.com
     ```
 
 [VALIDATE_1]

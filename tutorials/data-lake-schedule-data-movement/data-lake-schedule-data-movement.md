@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Robert Waywell
+author_profile: https://github.com/RobWaywellSAP
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud]

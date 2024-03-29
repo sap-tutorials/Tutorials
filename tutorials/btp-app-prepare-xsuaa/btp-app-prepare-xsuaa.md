@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare User Authentication and Authorization (XSUAA) Setup
 description: This tutorial shows you how to set up User Authentication and Authorization (XSUAA).
 keywords: cap
@@ -20,6 +20,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
@@ -37,16 +51,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
 <!-- cpes-file package.json:$.cds.requires -->
-```JSON[7-9]
+```JSON[7]
 {
   ...
   "cds": {
     "requires": {
       "[production]": {
-        ...
-        "auth": {
-          "kind": "xsuaa"
-        }
+        "db": "hana",
+        "auth": "xsuaa"
       }
     }
   }
@@ -81,17 +93,18 @@ And created scopes and roles for both in the `xs-security.json` file:
   "scopes": [
     {
       "name": "$XSAPPNAME.RiskViewer",
-      "description": "Risk Viewer"
+      "description": "RiskViewer"
     },
     {
       "name": "$XSAPPNAME.RiskManager",
-      "description": "Risk Manager"
+      "description": "RiskManager"
     }
   ],
+  "attributes": [],
   "role-templates": [
     {
       "name": "RiskViewer",
-      "description": "Risk Viewer",
+      "description": "generated",
       "scope-references": [
         "$XSAPPNAME.RiskViewer"
       ],
@@ -99,7 +112,7 @@ And created scopes and roles for both in the `xs-security.json` file:
     },
     {
       "name": "RiskManager",
-      "description": "Risk Manager",
+      "description": "generated",
       "scope-references": [
         "$XSAPPNAME.RiskManager"
       ],

@@ -20,7 +20,7 @@ parser: v2
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 - You've downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/).
 - You've downloaded and installed the [MultiApps CF CLI plugin](https://github.com/cloudfoundry/multiapps-cli-plugin/blob/master/README.md).
-- You've to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
+- You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
 ---
 
@@ -43,7 +43,7 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     > `--for production` adds all configuration added by this command in the `package.json` file into a `cds.requires.[production]` block.
 
-    > `hana` configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud. In addition, the `hdb` driver for SAP HANA is added as a dependency. A data source of type `hana-cloud` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+    > `hana` configures deployment for SAP HANA, so a data source of type `hana` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
     > `mta` adds the `mta.yaml` file. This file reflects your project configuration.
 
@@ -59,7 +59,11 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
     npm update --package-lock-only
     ```
 
-4. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
+4. Following this tutorial strictly, you don't have an own UI yet in your project. In this case you need to open the `app/xs-app.json` file and remove the `welcomeFile` property. Otherwise you'll run into a `Not Found` error after deployment as an `index.html` file is requested that is not available.
+
+    > For productive applications this is different and the command `cds add approuter` is of course tailored for productive applications. That's why we need this extra step here in this starter tutorial.
+
+5. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
     ```JSON
     "cds": {
@@ -70,8 +74,6 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
 
     ```
     > `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
-
-    > Don't edit the `gen/db/package.json` file.
 
 ### Identify SAP BTP Cloud Foundry endpoint
 
@@ -99,15 +101,25 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     > This will ask you to select Cloud Foundry API, org, and space.
 
-    > The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
+    > The API endpoint is taken by default. If you want to change the API endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
     > If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
 
 ### Deploy using cf deploy
 
+> Make sure that your SAP HANA Cloud instance is running, see Prerequisites, before you go on with this step.
+
 SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
 
 The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
+
+> In the previous step, you identified your API endpoint. If that has a format like `...us10-001...`, you need to add the following configuration to your `xs-security.json`:
+> ```json
+> "oauth2-configuration": {
+>     "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**"]
+> }
+> ```
+> For other API endpoints you'd need to adapt it accordingly.
 
 1. In VS Code, in the root of your project, execute the following command to build the archive.
     ```Shell/Bash
@@ -138,7 +150,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```
     This is the URL of the AppRouter, which enforces the authentication flow.
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.4 you can also try the **Fiori preview**.
 
     <!-- border -->![application preview](application_cloud_fiori.png)
 

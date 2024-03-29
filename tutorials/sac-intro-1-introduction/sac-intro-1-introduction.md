@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Katryn Cheng
-author_profile: https://github.com/katmcheng
+author_name: Megan Hoy
+author_profile: https://github.com/meganhoy
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
@@ -142,10 +142,6 @@ Here is an overview of the core Planning features in SAP Analytics Cloud:
 
 SAP Analytics Cloud for planning provides tools for planning and analysis, collaborative budgeting, long-range strategic planning, work-force capital planning, and predictive planning and scenario modeling.
 
-> If you are interested in learning more about SAP Analytics Cloud's planning features, register for these free online courses hosted by product experts, and get access to hands-on exercises for practical experience.
-
-> - [Planning with SAP Analytics Cloud](https://open.sap.com/courses/sac3)
-> - [Planning with SAP Analytics Cloud - Advanced Topics](https://open.sap.com/courses/sac4)
 
 Click [here](https://community.sap.com/topics/cloud-analytics/planning#introduction-to-sap-analytics-cloud-for-planning) to learn more.
 

@@ -1,6 +1,6 @@
 ---
-author_name:Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Introduction to Application Development Using CAP and Node.js
 description: Learn about SAP Cloud Application Programming Model (CAP) and application development on SAP BTP.
 keywords: cap
@@ -20,8 +20,24 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - What is SAP BTP
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to develop and deploy [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap/) applications on [SAP BTP](cp-explore-cloud-platform) using different tools and services step by step.
 
 The tutorials are suitable for new or experienced developers on SAP BTP. The purpose of these tutorials is to help application developers to get a quick start on development, provide best practices, solve common issues, use common services, identify areas that need to be improved, and have an end-to-end scenario for validation. In the tutorials, you get to know, step by step, the development process on SAP BTP.
@@ -64,7 +80,7 @@ SAP BTP is an open set of Software, Platform, and Infrastructure as a Service sy
 
 SAP BTP is also constantly evolving. SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything. This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades. SAP BTP offers you the ability to turn data into business value, compose end-to-end business processes, and build and extend SAP applications quickly.
 
-The central point of entry to the cloud platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
+The central point of entry to the platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
 
 [DONE]
 [ACCORDION-END]

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-fiori-tools, software-product>sap-fiori-elements, software-product>sap-business-application-studio ]
+tags: [ tutorial>beginner, software-product>sap-fiori-tools, software-product>sap-fiori, software-product>sap-business-application-studio ]
 primary_tag: software-product>sap-fiori
 author_name: Regina Sheynblat
 author_profile: https://github.com/reginasheynblat
@@ -38,7 +38,7 @@ author_profile: https://github.com/reginasheynblat
 2. If you need to install mock server manually to a project, see the following.
 
     ```URL
-    https://www.npmjs.com/package/@sap/ux-ui5-fe-mockserver-middleware
+    https://github.com/SAP/open-ux-odata
     ```
 
 
@@ -53,9 +53,7 @@ author_profile: https://github.com/reginasheynblat
 
     ![Start-Mock](StartMock.png)
 
-     If you will see some status messages in the console window and a popup-message telling you that the application will open in a new browser tab. Click the `Open` button to switch to the new browser tab.
-
-     ![Confirm new tab](StartMockApp.png)
+     If you see some status message in the console window and a popup-message telling you that the application will open in a new browser tab, click the `Open` button to switch to the new browser tab.
 
       In the new browser tab showing your application, choose **Go** to load data.
 
@@ -67,7 +65,7 @@ author_profile: https://github.com/reginasheynblat
 ### Using Data Editor
 
 
-When running an application using `start-mock` the mock data is generated on the fly.  But, by using the Data Editor you can generate mock data that will be stored as **.json** format under the  `webapp/localService/mockdata` folder. Therefore, allowing you to change data and make it more meaningful for your application.
+When running an application using `start-mock` the mock data is generated on the fly.  But, by using the Data Editor you can generate mock data that will be stored as **.json** format under the  `webapp/localService/data` folder. Therefore, allowing you to change data and make it more meaningful for your application.
 
 1. In the SAP Business Application Studio open the context menu by right clicking on your `webapp` folder and select menu entry **Open Data Editor**.
 
@@ -77,7 +75,7 @@ When running an application using `start-mock` the mock data is generated on the
 
     ![Create Mock Data](CreateMockData.png)
 
-     Data will be generated for each entity and property combination and stored under `webapp/localService/mockdata`
+     Data will be generated for each entity and property combination and stored under `webapp/localService/data`
 
      ![Mock Data](MockData.png)
 
@@ -95,24 +93,22 @@ You can also see the call in your `metadata.xml` file.
 
   ![MetadataFile](MetadatafileValueHelp.png)
 
-To test this out you can also disable the backend and show that the Value Help is blank. Open your `ui5-mock.yaml` file, and comment out the backend call.
+To test this out you can also disable the backend and check that the Value Help does not open. Open your `ui5-mock.yaml` file, and comment out the backend call.
 
   ![BackEnd](ExampleofBackend.png)
 
-  Validate that Value Help is blank.
+  Validate that Agency Value help does not open.
 
->If you don't see blank values,please make sure you stop your server and restart.
+>If you still see data in Value Help,please make sure you stop your server and restart.
 
-  ![Blank ValueHelp](BlankValueHelp.png)
+  Before proceeding to the next steps, please enable your backend.  
 
-  Before proceeding to the next steps, please enable your Value Help.  
-
-To be completely off-line, you would need to add additional mock services for each of the Value Lists References in your `metadata.xml`. In this step you will add a mock service for  **Agency** that will support your Value Help.
+To be completely off-line, you would need to add additional mock services for each of the Value List References in your `metadata.xml`. In this step you will add a mock service for  **Agency** that will support your Value Help.
 
 1.  To mock the service for Agency value Help you need the following:
 
     * Agency Value Help metadata file
-    * Agency Value Help service URL (`urlBasePath`)
+    * Agency Value Help service URL (`urlPath`)
     * A `config.json` file that will tell mock server where to find these file
     * Adjust your `ui5-mock.yaml` file to read your new  `config.json` file
 
@@ -135,27 +131,28 @@ To be completely off-line, you would need to add additional mock services for ea
 
     You should see the new metadata document, save it to `webapp/localService/AgencyVHMetadata.xml`    
 
-3. Agency Value Help service URL (`urlBasePath`)        
+3. Agency Value Help service URL (`urlPath`)        
 
-    `urlBasePath` - is the path you copied from your  *info server:ux-proxy* without the **$metadata**
+    `urlPath` - is the path you copied from your  *info server:ux-proxy* without the **$metadata**
 
 4. Putting it all together in a new `config.json` file.  
 
     Right-click on `localService` folder and select `New File`. Create the `config.json` under the following path `webapp/localService/config.json`.
 
 
-5. In your `ui5-mock.yaml` file copy the configuration-service.
+5. From your `ui5-mock.yaml` file copy the service-configuration.
 
-    Depending on where you place your `config.json` adjust the file path for the metadata file in `metadataXmlPath` and the mock data in `mockdataRootPath`.
 
     ![UI-Mock Copy](ConfigCopy.png)
 
+    Depending on where you place your `config.json` adjust the path for the metadata file in `metadataPath` and the mock data in `mockdataPath`.
+
     ```json
     [{
-      "urlBasePath": "/sap/opu/odata4/sap/zui_fe_travel_######_o4/srvd/sap/zui_fe_travel_######_o4/0001",
+      "urlBasePath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd/sap/zfe_ui_travel_o4_######/0001",
       "name": "",
-      "metadataXmlPath": "./metadata.xml",
-      "mockdataRootPath": "./mockdata",
+      "metadataPath": "./metadata.xml",
+      "mockdataPath": "./data",
       "generateMockData": true
     }]
     ```
@@ -174,12 +171,10 @@ To be completely off-line, you would need to add additional mock services for ea
 
     ```yaml
     name: sap-fe-mockserver
-    beforeMiddleware: fiori-tools-proxy
+    beforeMiddleware: csp
     configuration:
       mockFolder: webapp/localService
     ```
-
-    <!-- border -->![UI5-Mock.yaml File](ui5mockyamlfile.png)
 
 7. Validate that your mock server still works by executing `start-mock` command under **Preview Application**   
 
@@ -188,17 +183,17 @@ To be completely off-line, you would need to add additional mock services for ea
     ![ui5-mock.yaml formatting](ui5mockyamlformatting.png)
 
 8. Adding the new configuration to your `config.json`
-    * `urlBasePath` - is the path you copied from your  *info server:ux-proxy* without the **$metadata**
-    * `metadataXmlPath` - reflects the path and the name of your new metadata file that was saved in the above step.
+    * `urlPath` - is the path you copied from your  *info server:ux-proxy* without the **$metadata**
+    * `metadataPath` - reflects the path and the name of your new metadata file that was saved in the above step.
 
     ```json
     {
-        "urlBasePath": "/sap/opu/odata4/sap/zui_fe_travel_######_o4/srvd_f4/dmo/i_agency/0001;ps=%27srvd-zfe_travel_######-0001%27;va=%27com.sap.gateway.srvd.zfe_travel_######.v0001.et-zc_fe_travel_######.agencyid%27",
+        "urlPath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd_f4/dmo/i_agency/0001;ps=%27srvd-zfe_ui_travel_######-0001%27;va=%27com.sap.gateway.srvd.zfe_ui_travel_######.v0001.et-zfe_c_travel_######.agencyid%27",
         "name": "",
-        "metadataXmlPath": "./AgencyVHMetadata.xml",
-        "mockdataRootPath": "./mockdata",
+        "metadataPath": "./AgencyVHMetadata.xml",
+        "mockdataPath": "./data",
         "generateMockData": true
-    }]
+    }
     ```
 
     ![New Config File](NewConfigFile.png)

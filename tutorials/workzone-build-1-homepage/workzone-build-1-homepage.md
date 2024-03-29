@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-build-work-zone]
-primary_tag: software-product>sap-build-work-zone
+tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition]
+primary_tag: software-product>sap-build-work-zone--advanced-edition
 author name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Open the Home page, add content to it, and change the overall layout.
 
 ## Prerequisites
-A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service, has already been setup for you.
+ - A subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone, advanced edition service, has already been setup for you.
 &nbsp;
 
 >**SAP Build Work Zone, advanced edition is not available in a trial account.**

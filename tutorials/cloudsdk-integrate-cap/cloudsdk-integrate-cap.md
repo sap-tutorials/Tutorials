@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr
@@ -14,27 +14,18 @@ author_profile: https://github.com/MatKuhr
  - SAP Cloud Application Programming Model
  - Basic knowledge of Spring Boot and Java (optional)
  - An account on [Cloud Foundry](group.scp-1-get-ready)
+ - Understand how to [Connect to an OData Service using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)
 
-
-
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
->
 ## You will learn
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
   - How to write a custom event handler for CAP Java
   - How to deploy an application to SAP Cloud Platform Cloud Foundry
   - How to create service that reads/writes business partners from S/4HANA and exposes them as SAP Cloud Application Programming Model
 
+## Intro
 [SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/) enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
-
 However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/).
-
 In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how the SAP Cloud SDK allows you to develop, extend and communicate with other SAP solutions.
-
 > Also check out the full documentation on [how the Cloud SDK integrates with CAP](https://sap.github.io/cloud-sdk/docs/java/guides/cap-sdk-integration).
 
 ---
@@ -159,15 +150,9 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 
 ```XML
 <dependency>
-    <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
-    <artifactId>scp-cf</artifactId>
+    <groupId>com.sap.cloud.sdk</groupId>
+    <artifactId>sdk-core</artifactId>
 </dependency>
-
-<dependency>
-    <groupId>com.sap.cloud.sdk.s4hana</groupId>
-    <artifactId>s4hana-all</artifactId>
-</dependency>
-
 <dependency>
   <groupId>com.sap.cds</groupId>
   <artifactId>cds-integration-cloud-sdk</artifactId>
@@ -187,15 +172,22 @@ For more information, visit the documentation of the [SAP Cloud SDK](https://sap
 @Component
 @ServiceName("cloud.sdk.capng")
 public class BusinessPartnerReadListener implements EventHandler {
-
-    private final HttpDestination httpDestination = DestinationAccessor.getDestination("MyErpSystem").asHttp();
+    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
+    // private static final String APIKEY_HEADER = "apikey";
+    // private static final String SANDBOX_APIKEY = "";
 
     @On(event = CdsService.EVENT_READ, entity = "cloud.sdk.capng.CapBusinessPartner")
     public void onRead(CdsReadEventContext context) throws ODataException {
+        final Destination destination = DestinationAccessor.getDestination("MyErpSystem");
 
         final Map<Object, Map<String, Object>> result = new HashMap<>();
         final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).execute(httpDestination);
+            new DefaultBusinessPartnerService()
+                .getAllBusinessPartner()
+                .top(10)
+                // TODO: uncomment the line below, if you are using the sandbox service
+                // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+                .executeRequest(destination);
 
         final List<CapBusinessPartner> capBusinessPartners =
                 convertS4BusinessPartnersToCapBusinessPartners(businessPartners, "MyErpSystem");
@@ -208,12 +200,22 @@ public class BusinessPartnerReadListener implements EventHandler {
 
     @On(event = CdsService.EVENT_CREATE, entity = "cloud.sdk.capng.CapBusinessPartner")
     public void onCreate(CdsCreateEventContext context) throws ODataException {
-        final BusinessPartnerService service = new DefaultBusinessPartnerService();
+        final Destination destination = DestinationAccessor.getDestination("MyErpSystem");
 
         Map<String, Object> m = context.getCqn().entries().get(0);
-        BusinessPartner bp = BusinessPartner.builder().firstName(m.get("firstName").toString()).lastName(m.get("surname").toString()).businessPartner(m.get("ID").toString()).build();
+        BusinessPartner bp =
+            BusinessPartner
+                .builder()
+                .firstName(m.get("firstName").toString())
+                .lastName(m.get("surname").toString())
+                .businessPartner(m.get("ID").toString())
+                .build();
 
-        service.createBusinessPartner(bp).execute(httpDestination);
+        new DefaultBusinessPartnerService()
+          .createBusinessPartner(bp)
+          // TODO: uncomment the line below, if you are using the sandbox service
+          // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+          .executeRequest(destination);
     }
 
     private List<CapBusinessPartner> convertS4BusinessPartnersToCapBusinessPartners(
@@ -260,7 +262,7 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function which creates the new `businessPartner`.
 
 
 ### Run the mock server

@@ -1,13 +1,13 @@
 ---
 parser: v2
-author_name: Beatrice Pasch
-author_profile: https://github.com/beapasch
+author_name: Kerstin Bier
+author_profile: https://github.com/bierke
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5, tutorial>license ]
 time: 10
 ---
-# Prepare an SAP Fiori App for Translation
+# Prepare an SAP Fiori App for Translation in Web IDE (Neo environment)
 <!-- description --> Prepare an app based on an SAP Fiori reference app and prepare it for translation with SAP Translation Hub.
 
 ## Prerequisites  

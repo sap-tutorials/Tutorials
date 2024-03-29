@@ -10,10 +10,9 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 <!-- description --> Build a Node.js application into OCI image and push it into Docker registry. Based on that, deploy the application into the Kyma runtime.
 
 ## Prerequisites
-- You have a Kyma runtime environment on SAP Business Technology Platform (BTP). If not, please follow this tutorial: [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started).
+- You have a Kyma runtime environment on SAP Business Technology Platform (BTP) and the relevant command line tools. If not, please follow the tutorials [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) and [Install the Kubernetes Command Line Tool](cp-kyma-download-cli).
 - You have installed [Docker](https://docs.docker.com/get-started/#download-and-install-docker).
 - You have [Docker Hub](https://hub.docker.com/) account.
-- You have installed [Kubernetes command-line tool](https://kubernetes.io/docs/tasks/tools/#kubectl).
 - You have finished the tutorial [Register a Multitenant Application to the SAP SaaS Provisioning Service](register-multitenant-app-saas-provisioning-service).
 
 
@@ -69,14 +68,12 @@ brew install buildpacks/tap/pack
 <p> </p>
     In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-approuter --builder paketobuildpacks/builder:full
-docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
+pack build <docker-hub-account>/multitenant-approuter:v1 --builder paketobuildpacks/builder-jammy-base
 ```
 
     In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 ```Shell / Bash
-pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
-docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
+pack build <docker-hub-account>/multitenant-kyma-backend:v1 --builder paketobuildpacks/builder-jammy-base
 ```
 
 

@@ -1,9 +1,11 @@
 ---
+author_name: Jason Hinsperger
+author_profile: https://github.com/saphinsperg
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, , tutorial>license]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Using the SAP HANA data lake File Store REST API
@@ -19,7 +21,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
   - Users without access to the HDLFSCLI can use the REST API to perform File Store operations.
 
 ## Intro
-SAP HANA data lake file containers are accessible via a REST API. The official REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_3_2021/en-US/html/index.html). However, below are some python demonstrations using some of the common endpoints. Although this tutorial doesn't cover other endpoint testing tools, these endpoints and the contents of the request body can be used in any other http interface such as PostMan or CURL.
+SAP HANA data lake file containers are accessible via a REST API. The official REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/html/index.html). However, below are some python demonstrations using some of the common endpoints. Although this tutorial doesn't cover other endpoint testing tools, these endpoints and the contents of the request body can be used in any other http interface such as PostMan or CURL.
 
 ---
 

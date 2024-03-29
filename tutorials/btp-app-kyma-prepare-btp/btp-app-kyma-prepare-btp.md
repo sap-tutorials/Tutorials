@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare for SAP BTP Development with Kyma
 description: Learn how to prepare SAP BTP and Kyma for application deployment.
 keywords: cap
@@ -24,6 +24,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
@@ -98,14 +112,14 @@ The following services with their service plans and entitlements are required fo
 | Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | Step 6: Configure Kyma in your subaccount|
 | SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
 | SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
-| SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
+| SAP Build Work Zone, standard edition             | `standard`   | 1      | active users | [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe) |
 
 
 > The following services are Utility Services, no entitlement needed:
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
-| SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)   |
+| SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Subscribe to the SAP Build Work Zone, Standard Edition](btp-app-kyma-work-zone-subscribe)   |
 | SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)   |
 
 
@@ -154,6 +168,27 @@ This creates in your subaccount a Kyma instance that is a complete Kubernetes cl
 
     !![Kyma Enabled](kyma_enabled.png)
 
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 7: ](Enable the Btp-Operator Module for your Kyma Cluster)]
+You need to enable the **btp-operator** module for your Kyma cluster so you can map your SAP HANA Cloud service instance to the Kyma cluster. Follow the steps below:
+
+1. Navigate to your subaccount and choose **Link to dashboard** under the **Kyma Environment** tab to go to the dashboard page.
+
+2. On the dashboard page, click on modify in the **installed modules** table header.
+
+      <!-- border; size:540px --> !![modify installed modules](kyma-modify-modules.png)
+
+2. Choose **Edit**.
+
+      <!-- border; size:540px --> !![click on edit to allow changing default modules](kyma-default-edit.png)
+
+4. Select the checkbox for **btp-operator** under **Modules** and choose **Update**.
+
+      <!-- border; size:540px --> !![add btp-operator by checking the box and clicking update](kyma-default-update.png)
+
+> You can find more info in [Enable and Disable a Kyma Module](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module).
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -1,7 +1,9 @@
 ---
 parser: v2
+author_name: Madeline Schaefer
+author_ profile: https://github.com/Madeline-Schaefer
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>type>free-tier]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-business-technology-platform
 ---
 

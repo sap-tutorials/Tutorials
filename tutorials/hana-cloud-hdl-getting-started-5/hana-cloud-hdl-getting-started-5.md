@@ -7,7 +7,7 @@ primary_tag: products>sap-hana-cloud
 ---
 
 # Perform Backup and Recovery of Standalone Data Lake in SAP HANA Cloud
-<!-- description --> Learn to backup and recover the data in your standalone data lake in SAP HANA Cloud using a trial account.
+<!-- description --> Learn to backup and recover the data in your standalone data lake in SAP HANA Cloud using a production account.
 
 ## You will learn
   - The backup schedule for the database
@@ -21,28 +21,26 @@ The backup and recovery process of SAP HANA Cloud, data lake is managed by SAP i
 
 ---
 
-### Introduction to Database backups
+### Introduction to database backups
 
 Data lake instances are automatically backed up at regular intervals to safeguard your database and ensure that it can be recovered fast.
 
 Backups of data lake instances are stored in the object store of the corresponding infrastructure as-a-service (IaaS) provider. That means that instances on AWS are stored in Amazon S3 buckets, and those on Microsoft Azure are stored in the Azure blob store, for example.
 
-All backups are encrypted using the capabilities of the IaaS provider and are replicated in additional availability zones in the same region. **The retention time for backups is 15 days.**
+All backups are encrypted using the capabilities of the IaaS provider and are replicated in additional availability zones in the same region. **The default retention time is 14 days and can be increased or decreased.**
 
 
-
-
-### What is the Database backup schedule?
+### What is the database backup schedule?
 
 The backup schedule can be categorized into three types:
 
--	Full backups occur daily **at 12:00 AM UTC**
+-	Full backups occur daily **at 12:00 AM UTC**.
 
 -	Incremental backups occur **every 3 hours** following the full backup. This is independent of the region the database was configured in.
 
--	Incremental since full backups occur **at 12 PM UTC of each day**
+-	Incremental since full backups occur **at 12 PM UTC of each day**.
 
-<!-- border -->![Backup Time schedule](ss-01-time-schedule.png)
+![Backup Time schedule](ss-01-time-schedule.png)
 
 
 
@@ -53,10 +51,7 @@ Incremental backups save the changes that happen within the last 3 hours. 'Incre
 
 If there is a **failure** at an instance, this is what happens:
 
-<!-- border -->![Failure Scenario](ss-02-failure-scenario.png)
-
-
-
+![Failure Scenario](ss-02-failure-scenario.png)
 
 
 
@@ -64,8 +59,7 @@ If there is a **failure** at an instance, this is what happens:
 
 Recovery is done by the **SAP HANA Cloud team** upon request from customers. Every recovery is made based on automatic database backups and the recovery point objective is 3 hours.
 
-To initiate a recovery, open a service request with **SAP Support**.
-For details, see [Data Lake Service Requests](https://help.sap.com/viewer/9220e7fec0fe4503b5c5a6e21d584e63/LATEST/en-US/120a364f420944f2b9193176d48c9226.html) in the technical documentation.
+To initiate a recovery, open a service request with **SAP Support**. For details, see [Data Lake Service Requests](https://help.sap.com/viewer/9220e7fec0fe4503b5c5a6e21d584e63/LATEST/en-US/120a364f420944f2b9193176d48c9226.html) in the technical documentation.
 
 
 
@@ -73,15 +67,15 @@ For details, see [Data Lake Service Requests](https://help.sap.com/viewer/9220e7
 
 When creating a service request for data lake recovery, be sure to complete the description section using the following structure:
 
-1.	**Service ID** of the respective SAP HANA Data lake instance
+1.	**Service ID** of the respective SAP HANA data lake instance
 
 2.	**Timestamp in UTC (ISO format)** (as received from procedure) to which the instance is to be recovered (must be within the last 14 days)
 
-    <!-- border -->![Service Request](ss-03-service-request.png)
+    ![Service Request](ss-03-service-request.png)
 
     >The **Service ID** is the same as the **Instance ID** for your data lake. This can be found from the SAP HANA Cloud Central.
 
-    <!-- border -->![Instance ID](ss-04-instance-ID.png)
+    ![Instance ID](hdl-instance-id.png)
 
 
 >In this tutorial, you have learned about the backup and recovery process of your database using SAP HANA Cloud, data lake. Make sure to take note of the frequency of the backups, their time of occurrence and the process for recovery.
@@ -89,8 +83,7 @@ When creating a service request for data lake recovery, be sure to complete the 
 For more learning materials on **SAP HANA Cloud**, [click here](https://community.sap.com/topics/hana-cloud). Follow our tag in the [**SAP Community**](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content!
 
 
-### Test yourself
-
+### Knowledge Check
 
 
 

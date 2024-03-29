@@ -1,0 +1,14 @@
+[VALIDATE_6]
+
+###Rule
+multiple-choice
+
+###Question
+Which of the following answers is correct:
+
+###Match
+[x] pom.xml - This is your project management file for Maven where you can maintain other open source dependencies or use plugins.
+[x] HelloWorldController.java - This Java file contains a web endpoint that customers can visit.
+[x] manifest.yml - This is the deployment descriptor used by Cloud Foundry to deploy your application.
+
+[VALIDATE_6]

@@ -26,15 +26,15 @@ parser: v2
 
 Video tutorial version:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AvROFBCEcEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/anvKQP8yOr4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Create XSUAA configuration
 
-We are going to set up production level security using the [SAP Authorization and Trust Management service for SAP BTP in the Cloud Foundry environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/649961f8d4ad463daca33b3a20deba4c.html) and more specifically the User Account and Authorization or UAA Service. By default CAP allows you to mock your security for testing during development. However we also want to teach you how to setup the full production security and test that during development as well.  
+We are going to set up production level security using the [SAP Authorization and Trust Management service for SAP BTP in the Cloud Foundry environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/649961f8d4ad463daca33b3a20deba4c.html) and more specifically the User Account and Authorization or UAA Service. By default CAP allows you to mock your security for testing during development (which we used in the last tutorial). However we also want to teach you how to setup the full production security and test that during development as well.  
 
 The UAA will provide user identity, as well as assigned roles and user attributes. This is done in the form of a JWT token in the Authorization header of the incoming HTTP request.  We will need the Application Router we added to our application in the last tutorial to perform the redirect to the UAA Login Page and then forward this JWT token to your CAP service. Therefore this will be a multiple step process.
 
-1. In the previous tutorial, we generated an Application Router into a our project. When we did, the wizard created an xs-security.json file in the root of the project. This file is used during the creation or update of the XSUAA service instance and controls the roles, scopes, attributes and role templates that will be part of the security for your application.  What was generated was a basic version of the xs-security.json that will only require authentication but not specific roles.
+1. In the previous tutorial, we used an Application Router in our project. When we did, the wizard created an xs-security.json file in the root of the project. This file is used during the creation or update of the XSUAA service instance and controls the roles, scopes, attributes and role templates that will be part of the security for your application.  What was generated was a basic version of the xs-security.json that will only require authentication but not specific roles.
 
     ![Basic xs-security.json](basic_xs_security.png)
 
@@ -111,6 +111,10 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Create XSUAA service](create_service.png)
 
+1. Finally return the `package.json` file in the root. In the last tutorial we changed the authentication configuration to `mocked`. Now we can change it back to `xsuaa`.
+
+    ![XSUAA back in the package.json](mocked_to_xsuaa.png)
+
 ### Configure the application
 
 1. From the terminal, we need to create a service key. This will give us access to the credentials for your XSUAA instance.
@@ -119,7 +123,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
     cf create-service-key MyHANAApp-auth default  
     ```
 
-1. Change back to the root of your project in the terminal and issue the command `cds bind -2 MyHANAApp-auth:default`.  This is the same command that we used to bind our running CAP application to HANA DB earlier. Now we are adding a binding to the security XSUAA service as well.
+2. Change back to the root of your project in the terminal and issue the command `cds bind -2 MyHANAApp-auth:default`.  This is the same command that we used to bind our running CAP application to HANA DB earlier. Now we are adding a binding to the security XSUAA service as well.
 
     ![CDS Bind](cds_bind.png)
 
@@ -165,6 +169,11 @@ The UAA will provide user identity, as well as assigned roles and user attribute
             "authenticationType": "xsuaa"
         },
         {
+            "source": "^/appconfig/",
+            "localDir": ".",
+            "cacheControl": "no-cache, no-store, must-revalidate"
+        },
+        {
             "source": "^/user-api(.*)",
             "target": "$1",
             "service": "sap-approuter-userapi"
@@ -182,7 +191,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
 ### Test
 
-1. If you open the CAP service test page and try to access one of the service endpoints or metadata, you should receive an Unauthorized error.
+1. If you open the CAP service test page (`cds watch --profile hybrid` if you need to restart it) and try to access one of the service endpoints or metadata, you should receive an Unauthorized error.
 
     ![Unauthorized](unauthorized_cap.png)
 
@@ -196,7 +205,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![CAP Service successful](cap_successful.png)
 
-1. Finally change the ULR path to `/interaction_items/webapp/index.html`. You are now testing the Fiori free style application from the previous tutorial with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
+1. Finally change to the `Interaction_Items` from the test page. You are now testing with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
 
     ![Fiori with authentication](fiori_with_authentication.png)
 

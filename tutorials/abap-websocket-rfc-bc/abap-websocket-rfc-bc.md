@@ -4,6 +4,8 @@ auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, topic>abap-development]
 primary_tag: topic>abap-connectivity
+author_name: Felix Draeger
+author_profile: https://github.com/felixdraeger
 ---
 
 # WebSocket RFC to Cloud Using SAP Business Connector
@@ -11,7 +13,7 @@ primary_tag: topic>abap-connectivity
 
 ## Prerequisites
  - Access to an SAP S/4 HANA system prior to version 1909
- - Access to an SAP S/4 HANA Cloud system
+ - Access to the ABAP environment in a cloud system
  - Latest version of SAP Business Connector including all updates installed. To download SAP Business Connector, go to the [download page](https://support.sap.com/sbc-download). For more information about the installation and other documentation, go to the [details page](https://support.sap.com/en/product/connectors/bc/details.html).
  - You've created a private key, signing certificate, and signed certificate as described in the [certificate toolkit guide](https://support.sap.com/content/dam/support/en_us/library/ssp/products/connectors/bc/SBC_CertificateToolkitGuide_481.pdf).
  - We recommend completing the tutorial [Set Up the SAP Business Connector for On-Premise WebSocket RFC to Cloud](abap-setup-bc).
@@ -20,7 +22,7 @@ primary_tag: topic>abap-connectivity
   - How to setup a WebSocket RFC connection from an on-premise system to a cloud system using SAP Business Connector.
 
 ## Intro
-In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
+> In this tutorial, wherever **`XXX`** appears, use a number (e.g. **`000`**).
 
 ---
 
@@ -39,7 +41,7 @@ Technically, the connection works as follows:
 
 SAP BC acts as a middleware between the classic CPIC-based RFC protocol and the WebSocket-based RFC protocol that can be `tunneled` through firewalls into the cloud without problems.
 
-**If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.**
+> If the on-premise ABAP System is an S/4HANA version 1909 or newer, the underlying ABAP platform can perform WebSocket RFC calls without any additional component. The business connector is not required in this case.
 
 
 ### Setting up the source system
@@ -69,7 +71,7 @@ In the source system (the on-premise system), set up an RFC destination of type 
 
 ### Allow SAP BC to register at the RFC destination
 
-**If there is already a line like `P TP=* HOST=*`, you can skip this step.**
+> If there is already a line like `P TP=* HOST=*`, you can skip this step.
 
 1. Run transaction **`SMGW`**.
 2. Choose **`Goto` > Expert Functions > External Security > Maintain ACL Files**.
@@ -79,7 +81,7 @@ In the source system (the on-premise system), set up an RFC destination of type 
     - TP (*): `CLOUD_SYSTEM_VIA_BC`
     - Host: Host/IP where SAP BC will run, e.g. `10.87.64.3`
 
-    **You can find out the IP in the command line. On Windows, enter `ipconfig`. On Mac or Linux, enter `ifconfig`. Copy the IPv4 Address.**
+    > You can find out the IP in the command line. On Windows, enter `ipconfig`. On Mac or Linux, enter `ifconfig`. Copy the IPv4 Address.
 
     - Access: `internal`
     - Cancel: `local`
@@ -88,7 +90,7 @@ In the source system (the on-premise system), set up an RFC destination of type 
     - Save your settings globally.
     - Choose **`Goto` > Reread (global)**
 
-**In releases older than 7.40 SP11, you have to change the `Reginfo` file manually. See [SAP Note 1989587](https://launchpad.support.sap.com/#/notes/1989587) for more information.**
+> In releases older than 7.40 SP11, you have to change the `Reginfo` file manually. See [SAP Note 1989587](https://launchpad.support.sap.com/#/notes/1989587) for more information.
 
 
 
@@ -154,17 +156,17 @@ However, you can also use your remote-enabled function module with a custom comm
     - Client: Client of the target cloud system (optional)
     - WebSocket Host: API-URL of the communication arrangement without the **`https://`** prefix
 
-    **Including the `https://` prefix leads to an error when you test the connection.**
+    > Including the `https://` prefix leads to an error when you test the connection.
 
     - WebSocket Port: **`443`**
     - Network: **WAN**
     - Choose **Save**.
-
+    
     ![System URL](wsrfc_4.png)
 
 4. Download the certificate of the target cloud system. We recommend using the browser's "show certificate" functionality. Most browsers provide information on the security status of the SSL/TLS connection, usually displayed as a small lock icon. Select this icon and save the CA root certificate to file. We recommend to use Chrome browser for this.
 
-![System URL](wsrfc_5.png)
+    ![System URL](wsrfc_5.png)
 
 5. Add the cloud system's certificate to the trusted list in SAP BC.
     - Copy the certificate to the CA certificate directory of SAP BC. In this tutorial, the directory is in **`C:\sapbc481\Server\config\trust`**
@@ -172,7 +174,7 @@ However, you can also use your remote-enabled function module with a custom comm
 
     If your corporate firewall requires an HTTP proxy for outbound connections, you need to make this proxy known to the SAP BC. For this, go to **Settings > Proxy Servers > Secure Proxy (HTTPS)** and enter the host, port, and, if necessary, user information of your proxy server. Here, only basic proxy authentication can be configured.
 
-6. Test the connection. Select the newly configured SAP server form the server list and choose **Test Connection**.
+6. Test the connection. Select the newly configured SAP server from the server list and choose **Test Connection**.
 
 
 ### Define connection parameters for the on-premise system in SAP BC

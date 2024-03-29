@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Trial to Create a Service Instance for Document Information Extraction
@@ -11,7 +13,7 @@ primary_tag: topic>machine-learning
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
+- You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
   - How to check your Document Information Extraction entitlements
@@ -71,7 +73,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     <!-- border -->![Add Service Plan](save-entitlements.png)    
 
-You are now entitled to use Document Information Extraction and create instances of the service.
+You're now entitled to use Document Information Extraction and create instances of the service.
 
 >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
@@ -101,7 +103,7 @@ Click **Create Instance** to start the creation dialog.
 
 <!-- border -->![Service Instance](create-instance.png)
 
-In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create**.
 
 <!-- border -->![Create Instance](create-instance-dialog.png)
 
@@ -109,7 +111,7 @@ In the following dialog, click on **View Instance** to be navigated to the list 
 
 <!-- border -->![View Instances](view-instance.png)
 
-You have successfully created a service instance for Document Information Extraction.
+You've successfully created a service instance for Document Information Extraction.
 
 
 
@@ -126,10 +128,8 @@ You are now able to create a service key for your new service instance. Service 
 
       <!-- border -->![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
+You've successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 <!-- border -->![View Service Key](view-service-key.png)
 
 You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
-
-

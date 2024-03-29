@@ -17,10 +17,26 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to test security aspects with the application running locally
   ---
 
+
+### Enable Authentication
+
+In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enables CAP Java's secure-by-default behavior based on Spring Security.
+
+1. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` tag add the `cds-starter-cloudfoundry` dependency. Make sure you **Save** the file.
+
+    ```xml
+    <dependency>
+        <groupId>com.sap.cds</groupId>
+        <artifactId>cds-starter-cloudfoundry</artifactId>
+    </dependency>
+    ```
+
+
+
 ### Add authentication to the Orders service
 
 
-In the previous tutorial you have added authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behaviour based on Spring Security. You will now demonstrate this behaviour using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
+You will now demonstrate this secure-by-default behavior using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
 
 1. Start the application with the command `mvn spring-boot:run`.
 
@@ -28,7 +44,7 @@ In the previous tutorial you have added authentication to your application by ad
 
 3. Observe that the response contains status `HTTP/1.1 401 `.
 
-    <!-- border -->![authentication required for HTTP request](authentication-required.png)
+    <!-- border -->![The request without authentication header and it's response.](authentication-required.png)
 
 4. To create an order, you need to provide credentials. For local development CAP has built-in mock users. Modify the request like follows:
 
@@ -155,7 +171,7 @@ You will now add a user role `Administrators` to your application.
               additional:
                 firstName: Sabine
                 lastName: Autumnpike
-                email: Sabine.Autumnpike@mail.com            
+                email: Sabine.Autumnpike@mail.com
     ```
 
     > You used the attribute `roles` to add the `Administrators` role to that user.
@@ -235,7 +251,7 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
     }
     ```
 
-    With separate requests you can see that each user, except administrators only has access to their own orders and items. Execute the following requests by adding them to the `requests.http` file to verify that:
+    With separate requests you can see that each user, except administrators, only has access to their own orders and items. Execute the following requests by adding them to the `requests.http` file to verify that:
 
     ```HTTP
     ### Read Orders as Mia

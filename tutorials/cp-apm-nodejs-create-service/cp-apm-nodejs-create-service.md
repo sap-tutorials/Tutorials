@@ -19,7 +19,7 @@ parser: v2
   - How to add custom handlers to serve requests that aren't handled automatically
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 18. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
 - (Windows only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) section of the CAP documentation.
 - You've installed an HTTP client, for example, [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
@@ -215,7 +215,7 @@ After initializing the project, you should see the following empty folders:
      > init from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:49:32, in: 874.456ms
@@ -262,9 +262,9 @@ Add service provider logic to return mock data.
 
 3. To test your service, click on these links:
 
-    - <http://localhost:4004/catalog/Books>
+    - <http://localhost:4004/odata/v4/catalog/Books>
 
-    - <http://localhost:4004/catalog/Authors>
+    - <http://localhost:4004/odata/v4/catalog/Authors>
 
     > You should see the mock data that you've added for the `Books` and `Authors` entities.
 
@@ -351,7 +351,7 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
      > init from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:49:47, in: 861.036ms
@@ -362,13 +362,13 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
 
 4. To test your service, open a web browser and go to:
 
-    <http://localhost:4004/catalog/Books>
+    <http://localhost:4004/odata/v4/catalog/Books>
 
-    <http://localhost:4004/catalog/Authors>
+    <http://localhost:4004/odata/v4/catalog/Authors>
 
     > As you now have a fully capable SQL database with some initial data, you can send complex OData queries, served by the built-in generic providers.
 
-    <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
+    <http://localhost:4004/odata/v4/catalog/Authors?$expand=books($select=ID,title)>
 
     > You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
@@ -417,7 +417,7 @@ Instead of using in-memory, you can also use persistent databases.
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { url: 'sqlite.db', database: 'db/my-bookshop.db' }
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:54:53, in: 830.398ms
@@ -435,7 +435,7 @@ In the root of your project, create a file called `test.http` and copy the follo
 #
 # Browse Books
 #
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   # &sap-language=de
@@ -444,13 +444,13 @@ GET http://localhost:4004/catalog/Books?
 #
 # Get Author wit ID 101
 #
-GET http://localhost:4004/catalog/Authors(101)
+GET http://localhost:4004/odata/v4/catalog/Authors(101)
 
 ###
 #
 # Update Author with ID 101
 #
-POST http://localhost:4004/catalog/Authors
+POST http://localhost:4004/odata/v4/catalog/Authors
 Content-Type: application/json
 
 {"ID": 101, "name": "Some Author"}
@@ -460,7 +460,7 @@ Content-Type: application/json
 #
 # Order a Book
 #
-POST http://localhost:4004/catalog/Orders
+POST http://localhost:4004/odata/v4/catalog/Orders
 Content-Type: application/json;IEEE754Compatible=true
 
 {"book_ID": 201, "amount": 5}
@@ -475,6 +475,16 @@ Click on `Send Request` inside the `test.http` file, to execute requests against
 > This `Send Request` button is provided by the [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client). It appears for every single request. This is important for the following step, when you execute, for example, the `Order a Book` request.
 
 The REST client gives you the response of your service and you see immediately if the request was successful.
+
+Use the following request to answer the next question:
+
+```HTTP
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{"ID": 201, "title": "Some Title"}
+
+```
 
 
 ### Add custom logic

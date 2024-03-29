@@ -10,7 +10,7 @@ parser: v2
 
 ## Prerequisites
 - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
-- To integrate federated content into an SAP Build Work Zone site, you already need a site available in your SAP BTP trial account. Please follow at least the first two tutorials of the [Create your First Business Site with Apps](group.launchpad-cf-create-site) tutorial group or the full [Deliver your First Business Site Using SAP Build Work Zone, standard edition](mission.launchpad-cf) mission to set up SAP Build Work Zone, standard edition on your SAP BTP trial account. 
+- To integrate federated content into an SAP Build Work Zone site, you already need a site available in your SAP BTP trial account. Please follow at least the first two tutorials of the [Create your First Business Site with Apps](group.launchpad-cf-create-site) tutorial group or the full [Deliver your First Business Site Using SAP Build Work Zone, standard edition](mission.launchpad-cf) mission to set up SAP Build Work Zone, standard edition on your SAP BTP trial account.
 - To test content federation, you need an SAP S/4HANA system on release 2020 or newer and have administrator access to it. This tutorial describes the configuration of an SAP S/4HANA 2020 system which you can also get as [SAP S/4 HANA Fully Activated Appliance 30-day trial system](https://www.sap.com/products/s4hana-erp/trial.html). You can find more details about the process to start your SAP S/4HANA trial in this [Quick Start Document](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=1).
 &nbsp;
 To avoid reconfiguration of the SAP Cloud Connector after each restart, we recommend to use the system with a static public IP address.

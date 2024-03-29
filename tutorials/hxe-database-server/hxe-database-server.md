@@ -8,18 +8,18 @@ primary_tag: products>sap-hana\,-express-edition
 ---
 
 # SAP HANA, express edition - Server Only Deployment Options
+
 <!-- description --> Learn the options to deploy the database-only version of SAP HANA, express edition in a local computer.
 
-## Prerequisites  
- - You must register for the product before downloading SAP HANA, express edition. Follow the steps in [Register for SAP HANA, express edition](hxe-ua-register).
+## Prerequisites
 
-## You will learn  
-  - How to deploy locally the database-only version of SAP HANA, express edition
+- You must register for the product before downloading SAP HANA, express edition. Follow the steps in [Register for SAP HANA, express edition](hxe-ua-register).
+
+## You will learn
+
+- How to deploy locally the database-only version of SAP HANA, express edition
 
 ## Intro
-Watch the following video to learn more about the server-only option of SAP HANA, express edition.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FeA2w6Psjto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Choose one of the steps below for a local deployment of SAP HANA, express edition.
 
@@ -27,15 +27,10 @@ Choose one of the steps below for a local deployment of SAP HANA, express editio
 
 ### Check RAM memory in your laptop
 
-
 >To deploy locally, you must have 8GB RAM, but 12GB is recommended.
 
-Not sure how much RAM you have?
-
- - How to check RAM in a [Windows computer](https://developers.sap.com/tutorials/hxe-ram-disk-ms.html)
- - How to check RAM in a [MAC computer](https://developers.sap.com/tutorials/hxe-ram-disk-mac.html)
-
 > ###  Not enough RAM or space on disk?
+
 If you do not have enough RAM, we would recommend SAP HANA Cloud trial which is a completely free, hosted and cloud managed solution. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
 
 ### Virtual Machine on a Windows or Mac
@@ -46,15 +41,11 @@ SAP HANA, express edition runs on certain distributions of Linux. You can use a 
 
 See [Install SAP HANA 2.0, express edition on a Preconfigured Virtual Machine](group.hxe-install-vm).
 
-
-
 ### Docker container on a Linux operating system
 
 ***This option runs on Linux operating systems only.***
 
 Follow these instructions to pull and run the Docker container in any of the supported Linux distributions: [Installing SAP HANA, express edition with Docker](hxe-ua-install-using-docker)
-
-
 
 ### Manual installation using Binary Installer
 
@@ -63,8 +54,5 @@ Follow these instructions to pull and run the Docker container in any of the sup
 This option allows for some customization of the operating system and the platform.
 
 See [Install SAP HANA, express edition on a Native Linux Machine](group.hxe-install-binary).
-
-
-
 
 ---

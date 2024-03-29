@@ -1,34 +1,30 @@
 ---
 parser: v2
-author_name: Philip Herzig
-author_profile: https://github.com/HerzigP
+author_name: Johannes Schneider
+author_profile: https://github.com/Johannes-Schneider
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
-primary_tag: topic>java
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+primary_tag: programming-tool>java
 ---
 
-# Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
+# Extensibility and Type-Safe Expand with the Virtual Data Model for OData
 <!-- description --> Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 
 ## Prerequisites
- - [Introduce Resilience to Your Application](s4sdk-resilience)
- - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+- [Introduce Resilience to Your Application](s4sdk-resilience)
+- [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
-
-
-## Intro
-> ## We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
->
-Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+> **Please note that the sandbox service does not support extending it by adding custom fields, you might have to use an actual S/4 system to try the tutorial out.**
 
 ## You will learn
-  - How to use custom field extensions from S/4HANA in the virtual data model for OData
-  - How to join connected entities from the virtual data model in eager fashion
-  - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
+- How to use custom field extensions from S/4HANA in the virtual data model for OData
+- How to join connected entities from the virtual data model in eager fashion
+- How to leverage dependency injection to decouple your client code better from the SDK-provided classes
+
+## Intro
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+
 ---
 
 ### Get ready
@@ -41,30 +37,36 @@ This file needs to be put under your `<projectroot>/application/src/main/java/co
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Collections;
+import java.util.List;
+
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.BusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.DefaultBusinessPartnerService;
 
 import java.util.List;
 
 public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
-    private final HttpDestination httpDestination;
+    private final Destination destination;
 
-    public GetBusinessPartnersCommand(HttpDestination destination) {
+    public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
     }
 
-    public GetBusinessPartnersCommand(HttpDestination httpDestination, BusinessPartnerService businessPartnerService) {
+    public GetBusinessPartnersCommand(Destination destination, BusinessPartnerService businessPartnerService) {
         this.businessPartnerService = businessPartnerService;
-        this.httpDestination = httpDestination;
+        this.destination = destination;
     }
 
     public List<BusinessPartner> execute() {
@@ -77,61 +79,70 @@ public class GetBusinessPartnersCommand {
                     .filter(BusinessPartner.CUSTOMER.ne(""))
                     .select(BusinessPartner.FIRST_NAME,
                             BusinessPartner.LAST_NAME)
-                     .executeRequest(httpDestination));
+                     .executeRequest(destination);
 
-        } catch (ODataException e) {
+        } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
     }
 }
 ```
 
-You will be also using the following simple Servlet that consumes our `GetBusinessPartnerCommand`.
+You will be also using the following controller that consumes our `GetBusinessPartnerCommand`.
 
-This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial/controllers` directory:
 
 ```Java
-package com.sap.cloud.sdk.tutorial;
+package com.sap.cloud.sdk.tutorial.controllers;
 
 import com.google.gson.Gson;
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.GetBusinessPartnersCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
-@WebServlet("/businessPartners")
-public class BusinessPartnerServlet extends HttpServlet {
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.cloudplatform.connectivity.exception.DestinationAccessException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServlet.class);
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+
+@RestController
+@RequestMapping( "/businesspartners" )
+public class BusinessPartnerController
+{
+    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
     private static final String DESTINATION_NAME = "MyErpSystem";
 
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
-            throws ServletException, IOException {
+    @RequestMapping( method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getBusinessPartner()
+    {
         try {
-            final ErpHttpDestination destination = DestinationAccessor.getDestination(DESTINATION_NAME)
-                    .asHttp().decorate(DefaultErpHttpDestination::new);
+            final Destination destination = DestinationAccessor.getDestination(DESTINATION_NAME);
 
             final List<BusinessPartner> businessPartners =
                     new GetBusinessPartnersCommand(destination).execute();
-            response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(businessPartners));
+            return ResponseEntity.ok( new Gson().toJson(businessPartners));
+
+        } catch (final DestinationAccessException e) {
+            logger.error(e.getMessage(), e);
+            return ResponseEntity.internalServerError().body("Failed to fetch destination.");
+        } catch (final ODataException e) {
+            logger.error(e.getMessage(), e);
+            return ResponseEntity.internalServerError().body("Failed to fetch business partners.");
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write(e.getMessage());
-            e.printStackTrace(response.getWriter());
+            return ResponseEntity.internalServerError().body("Unexpected error occurred while fetching business partners.");
         }
     }
+
 }
 
 ```
@@ -163,30 +174,36 @@ This file needs to be put under your `<projectroot>/application/src/main/java/co
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Collections;
+import java.util.List;
+
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.BusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.DefaultBusinessPartnerService;
 
 import java.util.List;
 
 public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
-    private final HttpDestination httpDestination;
+    private final Destination destination;
 
-    public GetBusinessPartnersCommand(HttpDestination destination) {
+    public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
     }
 
-    public GetBusinessPartnersCommand(HttpDestination httpDestination, BusinessPartnerService businessPartnerService) {
+    public GetBusinessPartnersCommand(Destination destination, BusinessPartnerService businessPartnerService) {
         this.businessPartnerService = businessPartnerService;
-        this.httpDestination = httpDestination;
+        this.destination = destination;
     }
 
     public List<BusinessPartner> execute() {
@@ -201,9 +218,9 @@ public class GetBusinessPartnersCommand {
                             BusinessPartner.LAST_NAME,
                             new BusinessPartnerField<String>("YY1_ApprovedBy_bus"),
                             new BusinessPartnerField<String>("YY1_ProposedBy_bus"))
-                     .executeRequest(httpDestination);
+                    .executeRequest(destination);
 
-        } catch (ODataException e) {
+        } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
     }
@@ -239,7 +256,7 @@ This file needs to be put under your `<projectroot>/application/src/main/java/co
 ```Java
 package com.sap.cloud.sdk.tutorial;
 import com.google.gson.annotations.SerializedName;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 
 public class MyBusinessPartner extends BusinessPartner {
 
@@ -260,57 +277,71 @@ public class MyBusinessPartner extends BusinessPartner {
 }
 
 ```
-In our servlet, you need to adapt the logic a bit to wrap and unwrap the original business partner into our own business partner entity.
+In our controller, you need to adapt the logic a bit to wrap and unwrap the original business partner into our own business partner entity.
 
 The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
-
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
+import com.google.common.collect.Lists;
 import com.google.gson.Gson;
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.GetBusinessPartnersCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
-@WebServlet("/businessPartners")
-public class BusinessPartnerServlet extends HttpServlet {
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.cloudplatform.connectivity.exception.DestinationAccessException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServlet.class);
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+
+@RestController
+@RequestMapping( "/businesspartners" )
+public class BusinessPartnerController
+{
+    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
     private static final String DESTINATION_NAME = "MyErpSystem";
 
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
-            throws ServletException, IOException {
+    @RequestMapping( method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getBusinessPartner()
+    {
         try {
-            final ErpHttpDestination destination = DestinationAccessor.getDestination(DESTINATION_NAME)
-                    .asHttp().decorate(DefaultErpHttpDestination::new);
+            final Destination destination = DestinationAccessor.getDestination(DESTINATION_NAME);
 
-            final List<BusinessPartner> myBusinessPartners =
+            final List<BusinessPartner> businessPartners =
                     new GetBusinessPartnersCommand(destination).execute();
-            response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(myBusinessPartners));
+            
+            final List<MyBusinessPartner> myBusinessPartners = Lists.newArrayList();
+
+            for (final BusinessPartner businessPartner : businessPartners) {
+                myBusinessPartners.add(new MyBusinessPartner(businessPartner));
+            }
+            return ResponseEntity.ok( new Gson().toJson(myBusinessPartners));
+
+        } catch (final DestinationAccessException e) {
+            logger.error(e.getMessage(), e);
+            return ResponseEntity.internalServerError().body("Failed to fetch destination.");
+        } catch (final ODataException e) {
+            logger.error(e.getMessage(), e);
+            return ResponseEntity.internalServerError().body("Failed to fetch business partners.");
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write(e.getMessage());
-            e.printStackTrace(response.getWriter());
+            return ResponseEntity.internalServerError().body("Unexpected error occurred while fetching business partners.");
         }
     }
-}
 
+}
 ```
 
-As a result, you can now expose our new `MyBusinessPartner` entity via our initial servlet which should lead to the following result:
+As a result, you can now expose our new `MyBusinessPartner` entity via our initial controller which should lead to the following result:
 
 <!-- border -->![Test](screenshot555.png)
 
@@ -326,7 +357,7 @@ So far, you have been working with the `BusinessPartner` entity only. However, t
 One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In the case of your business partner, you could fetch the associated addresses with the following line of code:
 
 ```Java
-List<BusinessPartnerAddress> addresses = businessPartner.fetchBusinessPartnerAddress();
+List<Address> addresses = businessPartner.fetchBusinessPartnerAddress();
 ```
 
 This can be a beneficial approach in cases where the entities contain large data volumes and the interaction with the data allows for a step-by-step resolution of the model (e.g., lazily loading entities for the UI).
@@ -336,37 +367,37 @@ However, if you want to get addresses of many business partners, this approach l
 In such cases, you rather prefer to resolve the association already eagerly upon the first API call. In `OData` language, this is called an expand on navigational properties, in SQL speak this refers to a left outer join between parent and child tables.
 
 #### How-to
-In the example below, you present an example that expands for every business partner its corresponding list of addressed, followed by a partial projection on the `City` and `Country` properties of the associated `BusinessPartnerAddress` entity, followed by another expand to the `AddressEMailAddress` entity where you project on the `EMail_Address` property only.
+In the example below, you present an example that expands for every business partner its corresponding list of addressed, followed by a partial projection on the `City` and `Country` properties of the associated `Address` entity, followed by another expand to the `EMailAddress` entity where you project on the `EMail_Address` property only.
 
 The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.BusinessPartnerService;
+import com.sap.cloud.sdk.tutorial.datamodel.odata.services.DefaultBusinessPartnerService;
 
 import java.util.List;
 
 public class GetBusinessPartnersCommand {
 
     private final BusinessPartnerService businessPartnerService;
-    private final HttpDestination httpDestination;
+    private final Destination destination;
 
-    public GetBusinessPartnersCommand(HttpDestination destination) {
+    public GetBusinessPartnersCommand(Destination destination) {
         this(destination, new DefaultBusinessPartnerService());
     }
 
-    public GetBusinessPartnersCommand(HttpDestination httpDestination, BusinessPartnerService businessPartnerService) {
+    public GetBusinessPartnersCommand(Destination destination, BusinessPartnerService businessPartnerService) {
         this.businessPartnerService = businessPartnerService;
-        this.httpDestination = httpDestination;
+        this.destination = destination;
     }
 
     public List<BusinessPartner> execute() {
@@ -380,19 +411,19 @@ public class GetBusinessPartnersCommand {
                     .select(BusinessPartner.FIRST_NAME,
                             BusinessPartner.LAST_NAME,
                             new BusinessPartnerField<String>("YY1_ApprovedBy_bus"),
-                            new BusinessPartnerField<String>("YY1_ProposedBy_bus"))
+                            new BusinessPartnerField<String>("YY1_ProposedBy_bus"),
                             BusinessPartner.TO_BUSINESS_PARTNER_ADDRESS
                                         .select(
-                                                BusinessPartnerAddress.CITY_NAME,
-                                                BusinessPartnerAddress.COUNTRY,
-                                                BusinessPartnerAddress.TO_EMAIL_ADDRESS
+                                                Address.CITY,
+                                                Address.COUNTRY_REGION_KEY,
+                                                Address.TO_EMAIL_ADDRESS
                                                     .select(
-                                                            AddressEmailAddress.EMAIL_ADDRESS
+                                                            EmailAddress.EMAIL_ADDRESS
                                                     )
                                                 )
                         )
-                     .executeRequest(httpDestination);
-        } catch (ODataException e) {
+                     .executeRequest(destination);
+        } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
     }
@@ -410,104 +441,28 @@ In the `OData` VDM for Java, we have decided to combine both methods with each o
 #### Working with expanded entities
 After you did a successful API call, you may want to work with the associated entity collections. For this purpose, the VDM provides two important methods on each entity instance that can be used for retrieval:
 
-First, the `getOrFetch() method:`
+First, the `getOrFetch()` method:
 
 ```Java
- List<BusinessPartnerAddress> businessPartnerAddresses = businessPartner.getBusinessPartnerAddressOrFetch();
- ```
-
- This method either returns the list of connected entities, if previously eagerly fetched or will lazily fetch the entities, if not. Therefore, this method guarantees to not return any null values but might break due to a thrown `ODataException`, in case a lazy fetch is initiated due to missing authorizations, timeouts or system unavailability.
-
-Secondly, a `getOrNull()` method
-
-```Java
-Optional<List<BusinessPartnerAddress>> businessPartnerAddresses =
-                businessPartner.getBusinessPartnerAddressOrNull();
+List<Address> businessPartnerAddresses = businessPartner.getBusinessPartnerAddressOrFetch();
 ```
 
-This method returns an Optional of the return type signifying that the connected entity might be null as no lazy fetch is initiated. Therefore, this method guarantees to do no lazy fetch but cannot guarantee to return a value. As a consequence, this method also does not throw any `ODataException`.
+This method either returns the list of connected entities, if previously eagerly fetched or will lazily fetch the entities, if not. Therefore, this method guarantees to not return any null values but might break due to a thrown `ODataException`, in case a lazy fetch is initiated due to missing authorizations, timeouts or system unavailability.
 
-
-
-### Dependency injection
-
-
-#### What is dependency injection?
-With SAP Cloud SDK version 3.11.0, it has also introduced the possibility to use dependency injection with the virtual data model for OData and BAPI. In a nutshell, dependency injection is a major object-oriented inversion of control principle that allows to decouple the call direction from the initialization direction. This leads to less coupled dependencies which are easier to maintain, for example, if a dependency changes, the client does not need to be touched.
-
-Sounds complicated? Nope, it is really a 25-dollar term for a 5-cent concept, however, it makes your code cleaner and less dependent on the actual implementation.
-
-#### How-to
-So far, you have initialized the business partner service directly from our servlet like this
-```Java
-BusinessPartnerService businessPartnerService = new DefaultBusinessPartnerService();
-```
-
-This unnecessarily exposes implementation details to the client code. Instead, in our client code we just want to declare which kind of interface we would like to consume and get the corresponding implementation "injected" from the outside during runtime to achieve a higher degree of decoupling.
-
-To do this, you can rewrite our initial servlet with the `@Inject` annotation like this
-
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+Secondly, a `getIfPresent()` method:
 
 ```Java
-package com.sap.cloud.sdk.tutorial;
-
-import com.google.gson.Gson;
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import org.jboss.arquillian.core.api.annotation.Inject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
-
-@WebServlet("/businessPartners")
-public class BusinessPartnerServlet extends HttpServlet {
-
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServlet.class);
-    private static final String DESTINATION_NAME = "MyErpSystem";
-
-    @Inject
-    private BusinessPartnerService businessPartnerService;
-
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            final ErpHttpDestination destination = DestinationAccessor.getDestination(DESTINATION_NAME)
-                    .asHttp().decorate(DefaultErpHttpDestination::new);
-
-            final List<BusinessPartner> businessPartnerList =
-                    new GetBusinessPartnersCommand(destination).execute();
-            response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(businessPartnerList));
-        } catch (final Exception e) {
-            logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write(e.getMessage());
-            e.printStackTrace(response.getWriter());
-        }
-    }
-}
-
+Option<List<Address>> businessPartnerAddresses =
+                businessPartner.getBusinessPartnerAddressIfPresent();
 ```
-That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module, etc.) your client code will not be affected and is therefore less prone to changes.
 
-> **HINT:** When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
+This method returns an Option of the return type signifying that the connected entity might be empty as no lazy fetch is initiated. Therefore, this method guarantees to do no lazy fetch but cannot guarantee to return a value. As a consequence, this method also does not throw any `ODataException`.
 
 
 ### Test yourself
 
 
-In this tutorial, you learned how to leverage the latest capabilities of the Virtual Data Model for `OData` using the `SAP Cloud SDK`. This includes using custom fields from `SAP S/4HANA` within your logic, leveraging type-safe expand for GET requests and relying on dependency injection to supply the service implementations. This gives you even greater capabilities and lets you integrate with `SAP S/4HANA` even faster and easier.
+In this tutorial, you learned how to leverage the latest capabilities of the Virtual Data Model for `OData` using the `SAP Cloud SDK`. This includes using custom fields from `SAP S/4HANA` within your logic and leveraging type-safe expand for GET requests. This gives you even greater capabilities and lets you integrate with `SAP S/4HANA` even faster and easier.
 
 
 

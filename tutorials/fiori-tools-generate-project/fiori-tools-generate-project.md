@@ -52,7 +52,7 @@ In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, 
 ### Select application template
 
 
-The **Command Palette** will then close and a new tab for the Application Generator will open. Since the purpose of this tutorial is to create an SAP Fiori elements List Report Page app, ensure that **SAP Fiori elements** is selected in the Application Type menu.
+The **Command Palette** will then close and a new tab for the Application Generator will open. Since the purpose of this tutorial is to create an SAP Fiori elements List Report Page app, ensure that **SAP Fiori** is selected in the Template Type menu.
 
 <!-- border -->![Select Application Type](t2-application-type.png)
 
@@ -96,7 +96,7 @@ With the page type and data source defined, the next step is to configure the ma
 |  :------------- | :------------- | :-------------
 | **Module name** |  **Set the name of the module for this application that will be loaded at runtime. It also determines the directory name of generated application**           | **`myfioriapp`**
 | **Application title** |  **Set the application title that will be displayed in the header of the application**           | **`Manage Products`**
-| **Application namespace** |  **Set a unique package name for the application module being created**    | **`Namespace1`**
+| **Application namespace** |  **Set a unique package name for the application module being created**    | **`namespace1`**
 | **Description** |  **Add a description for your project**          | **`SAP Fiori elements application for managing products`**
 | **Project folder path** |  **Select the folder where you would like to save your project**   | Click the folder selection icon and select the root folder you created in step 1.
 | **Minimum SAPUI5 version** |  **Choose minimum SAPUI5 version for your application**   | Use the default suggested value
@@ -110,7 +110,7 @@ Your project structure should look like the image below.
 
 <!-- border -->![VSCode Project Folder](t2-project-structure-1.png)
 
-Once your project has been generated, **Application Information** page will be shown for the project you have created. **Application Information** page gives you a quick overview of the most essential information for your project. You can find more information on **Application Information** page here: `https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/c3e0989caf6743a88a52df603f62a52a.html`.
+Once your project has been generated, **Application Information** page will be shown for the project you have created. **Application Information** page gives you a quick overview of the most essential information for your project. You can find more information on **Application Information** page here: <https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/c3e0989caf6743a88a52df603f62a52a.html>.
 
 >Do not close the Application Information page as it will be needed later. In case you do, open the Command Palette using **CMD/CTRL + Shift + P**, type **Application Info**, and select **Fiori: Open Application Info**
 
@@ -136,7 +136,7 @@ From the options, you will need to select a npm script. Select `start` and press
 
 SAP Fiori tools also provides the option to run your application with mock data, which can be used when you face a slow internet connection or an unavailable backend system. For the best learning experience with this tutorial, we will use this option to preview the app.
 
-To download the mock data we have provided for you, navigate to the [SAP Fiori tools Sample repository on GitHub](https://github.com/SAP-samples/fiori-tools-samples/blob/main/V2/mockData/SEPMRA_PROD_MAN/mockdata.zip). Click **Download** to download the zip file of the project.
+To download the mock data we have provided for you, navigate to the [SAP Fiori tools Sample repository on GitHub](https://github.com/SAP-samples/fiori-tools-samples/blob/main/V2/mockData/SEPMRA_PROD_MAN/data.zip). Click **Download** to download the zip file of the project.
 
 ![Download mock data from GitHub](t2-github-samples.png)
 

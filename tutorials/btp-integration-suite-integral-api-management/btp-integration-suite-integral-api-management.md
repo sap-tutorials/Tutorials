@@ -43,21 +43,21 @@ author_profile: https://github.com/mariajosesap
 
     ![Add the route rules](create_set_cors_policy.png)
 
-6. Copy and paste this script (read message on line 5):
+6. Copy and paste this script:
 
     <!-- cpes-file db/schema.cds -->
     ```XML
     <!-- This policy can be used to create or modify the standard HTTP request and response messages -->
     <AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
-            <Add>
+            <Set>
                 <Headers>
-                <!-- Set up this header, however if you come across to this error: " 'Access-Control-Allow-Origin' header contains multiple values, but only one is allowed when executing the test on Build Apps ", then remove it and try it again: <Header name="Access-Control-Allow-Origin">*</Header> -->
+                    <Header name="Access-Control-Allow-Origin">*</Header>
                     <Header name="Access-Control-Allow-Headers">set-cookie, origin, accept, maxdataserviceversion, x-csrf-token, authorization, dataserviceversion, accept-language, x-http-method, content-type, X-Requested-With, apikey</Header>
                     <Header name="Access-Control-Max-Age">3628800</Header>
                     <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
                     <Header name="Access-Control-Expose-Headers">set-cookie, x-csrf-token, x-http-method</Header>
                 </Headers>
-            </Add>
+            </Set>
             <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
             <AssignTo createNew="false" type="response">response</AssignTo>
     </AssignMessage>
@@ -73,6 +73,8 @@ author_profile: https://github.com/mariajosesap
     ![Preflight Condition String](preflight.png)
 
     This is all you need to avoid CORS issues when calling our API from SAP Build Apps.
+
+    >On write "preflight" step, you may find a bug on the API Management UI, where the Update button stay on grey/disable. To avoid it and save your changes, you must create a dummy assign message anywhere, save it and then remove it.
 
 ### Create a Key Value Map for your SAP Cloud Integration Credentials
 

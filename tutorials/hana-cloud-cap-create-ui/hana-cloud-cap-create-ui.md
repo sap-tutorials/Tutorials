@@ -25,7 +25,7 @@ parser: v2
 
 Video tutorial version:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6WY70LyLS1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Run the services
 
@@ -40,6 +40,10 @@ Video tutorial version:
 1. Run the command `npm install` to install any Node.js dependent modules needed by the Cloud Application Programming Model.
 
     ![npm install](npm_install.png)
+
+1. Our project is setup for real XSUAA security and we will use that later in this tutorial.  But for now we want to test without configuration of the necessary authentication and authorization setup. To do so, open the package.json file in the root of your project. Change the `cds.requires.auth` property from `xsuaa` to `mocked` so we can test with mock authentication.
+
+    ![Mocked Authentication](mocked_auth.png)
 
 1. Now issue the command `cds watch --profile hybrid`. This will start the CAP service locally and use the binding configuration to connect to our remote HANA database instance. Once started you will see a dialog with a button that says **Open in New Tab**. Press this button to test the CAP service in a new browser tab.
 
@@ -79,13 +83,9 @@ Video tutorial version:
 
 ### Configure routing
 
-You will now create an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
+You will use an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This was generated into a project using the initial wizard. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
 
-1. Open another Terminal instance (so that the watch command can continue to run in the other instance). Issue the command `cds add approuter`.
-
-    ![Create MTA Module](create_module.png)
-
-1. This will complete the wizard and generate a folder named `app` in the root of your project.
+1. You should see a folder named `app` in the root of your project.
 
     ![New folder for App Router](new_folder_app_router.png)
 
@@ -135,15 +135,15 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     ![Fiori Application Generator](fiori_app_gen.png)
 
-1. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
+1. Choose **SAP Fiori** as the template type, select **Worklist Page** as the template and press **Next**
 
     ![Fiori Application Type](application_type.png)
 
-1. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
+1. At the Data Source and Service Selection screen, choose **Use a Local CAP Project**. Select your project as the **Choose your CAP project**. Select `CatalogService (Node.js)` as your OData service. Press **Next**
 
     ![Data Source and Service Selection](data_source.png)
 
-1. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
+1. Choose `Interactions_Header` as the main entity, `ITEMS` for the Navigation entity, leave the `YES` value for the "Automatically add table columns to the list page and a section to the object page if none already exists?" option and press **Next**
 
     ![Entity Selection](entity_selection.png)
 

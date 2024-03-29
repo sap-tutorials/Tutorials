@@ -2,25 +2,26 @@
 parser: v2
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-launchpad-service, software-product>sap-fiori, programming-tool>html5, programming-tool>sapui5]
-primary_tag: software-product>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-build-work-zone--standard-edition, software-product>sap-fiori, programming-tool>html5, programming-tool>sapui5]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
 
-# Integrate Your SAP Fiori Elements App into a New Launchpad Site
-<!-- description --> Add an SAP Fiori elements app to a launchpad site in the SAP Launchpad service.
+# Integrate Your SAP Fiori Elements App into SAP Build Work Zone, standard edition
+<!-- description --> Add an SAP Fiori elements app to a site in SAP Build Work Zone, standard edition.
 
 ## Prerequisites
  - You've deployed your SAP Fiori elements app (including the navigation properties) to SAP BTP, Cloud Foundry environment.
+ - You have [subscribed to SAP Build Work Zone, standard edition](btp-app-work-zone-subscribe). 
 
 
 ## You will learn
-  - How to create a new launchpad site
-  - How to add a deployed SAP Fiori elements app to your launchpad site
+  - How to create a new site in SAP Build Work Zone, standard edition
+  - How to add a deployed SAP Fiori elements app to the site
 
 ---
-Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your launchpad site.
+Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to your site in SAP Build Work Zone, standard edition.
 
 
 ### Create a site
@@ -30,11 +31,11 @@ Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to 
 1. Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome).
 
 
-2. In the side navigation panel of your subaccount, click **Instances and Subscriptions**, and then from the **Subscriptions** tab, click **SAP Launchpad Service** and the **Go to Application** icon.
+2. In the side navigation panel of your subaccount, click **Instances and Subscriptions**, and then from the **Subscriptions** tab, click **SAP Build Work Zone, standard edition** and the **Go to Application** icon.
 
     The Site Manager opens with the Site Directory in focus. From here, you'll create your new site.
 
-    > Note: In the side panel of the SAP Launchpad service, you'll see four tools. You can see all existing sites in the **Site Directory**. This is also where you can create new sites. The **Content Manager**  is where you'll manage cross-site content such as business apps. And the **Provider Manager** helps you to manage content providers. Content providers expose business content that you can integrate into your launchpad sites. The fourth icon opens **Settings** to configure various settings related to the SAP Launchpad service.
+    > Note: In the side panel of the SAP Build Work Zone, standard edition, you'll see four tools. You can see all existing sites in the **Site Directory**. This is also where you can create new sites. The **Content Manager**  is where you'll manage cross-site content such as business apps. And the **Provider Manager** helps you to manage content providers. Content providers expose business content that you can integrate into your sites. The fourth icon opens **Settings** to configure various settings related to the SAP Build Work Zone, standard edition.
 
 3. Click **Create Site**.
 
@@ -56,7 +57,7 @@ Navigate back to the **Site Directory** to view the site tile.
 <!-- border -->![Navigate to site directory](3_to_site_directory.png)
 
 
-Your site is empty for now. In the following steps, you're going to add business apps to your launchpad site.
+Your site is empty for now. In the following steps, you're going to add business apps to your site.
 
 
 ### Fetch updated content using the Provider Manager
@@ -147,7 +148,7 @@ In this step, you'll assign the `List Report` app to the `Everyone` role. This i
 
     <!-- border -->![Open site](12-go-to-site.png)
 
-    You'll see all the apps that you have added to your launchpad. In the `Default` group, you'll see the `Show Items` app that we've just created. This looks similar to what you've seen in the previous tutorial, but this time the app runs in a production-ready SAP Fiori Launchpad. You can see the difference when you look at the top-right corner; you can find the initials of your user there.
+    You'll see all the apps that you have added to your site. In the `Default` group, you'll see the `Show Items` app that we've just created. This looks similar to what you've seen in the previous tutorial, but this time the app runs in a production-ready site of SAP Build Work Zone, standard edition. You can see the difference when you look at the top-right corner; you can find the initials of your user there.
 
     <!-- border -->![See all apps](12a-view-launchpad.png)
 
@@ -181,6 +182,6 @@ In this step, you'll assign the `List Report` app to the `Everyone` role. This i
     <!-- border -->![saved-view](saved-view.png)
 
 
-Congratulations! You have successfully embedded and tested the SAP Fiori elements app in a production level SAP Fiori Launchpad. On top of that, you've used a [SAPUI5 Flexibility](https://sapui5.hana.ondemand.com/#/topic/a8e55aa2f8bc4127923b20685a6d1621) feature to persist custom filter views in the backend.
+Congratulations! You have successfully embedded and tested the SAP Fiori elements in your SAP Build Work Zone, standard edition site. On top of that, you've used a [SAPUI5 Flexibility](https://sapui5.hana.ondemand.com/#/topic/a8e55aa2f8bc4127923b20685a6d1621) feature to persist custom filter views in the backend.
 
 

@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>javascript]
@@ -70,11 +72,16 @@ In the end, the homepage for your finished app should look like this:
 
 <!-- border -->![Luigi shopping app](luigi-shopping-app.png)
 
-If you need help with the tutorials:
 
-- Refer to the source code for the completed app on our [SAP Samples repository](https://github.com/SAP-samples/luigi-micro-frontend-application).  
+### Further support
+
+
+If you need help with the tutorials or Luigi in general, you can:
+
+- Refer to the source code for the completed tutorial app on our [SAP Samples repository](https://github.com/SAP-samples/luigi-micro-frontend-application).  
+- Refer to the [Luigi documentation](https://docs.luigi-project.io/docs/getting-started).
+- Check out our [GitHub Discussions](https://github.com/SAP/luigi/discussions) page.
 - Contact the Luigi team on [Slack](https://slack.luigi-project.io).
-
 
 
 
