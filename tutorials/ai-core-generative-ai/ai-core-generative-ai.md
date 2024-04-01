@@ -41,7 +41,7 @@ Go to **ML Operations** -> **Scenarios**. Check whether the **foundation-models*
 Check whether the **foundation-models** scenario is present in your workspace. Send a GET request to 
 
 ```
-{{baseUrl}}/lm/scenarios
+{{apiUrl}}/v2/lm/scenarios
 ```
 
 Always make sure that AI-Resource-Group header is set to your resource group id.
@@ -94,7 +94,7 @@ Implement one of the following model upgrade options:
 Create a new configuration by sending a POST request to 
 
 ```
-{{baseURL}}/lm/configurations
+{{apiUrl}}/v2/lm/configurations
 ```
 
 Include the following in the body of the request.
@@ -172,7 +172,7 @@ You can make LLM available for use by creating a virtual LLM deployment. You can
 Create a deployment by sending a POST request to 
 
 ```
-{{baseUrl}}/lm/deployments
+{{apiUrl}}/v2/lm/deployments
 ```
 
 Include the following JSON in the body of the request
@@ -190,7 +190,7 @@ Replace the ```<configuration-id>``` value with the *id* you received in the pre
 Once the deployment is created, check the status of deployment by sending a GET request to 
 
 ```
-{{baseUrl}}/lm/deployments
+{{apiUrl}}/v2/lm/deployments
 ```
 
 ![image](images/pm04.png)
@@ -370,17 +370,23 @@ Now you have generative-ai-hub-sdk installed in your system.
 
 You have to configure proxy modules to use the large language models. 
 
-Open your terminal or command prompt and navigate to the folder where you have your ai-core keys. Then run the following command to configure it.
+We recommend setting these values as environment variables for AI core creds via config file. The default path for this file is ~/.aicore/config.json.
 
-```TEXT
-aicore-llm configure -k keys.txt
+open Notepad and replace the values in below json with your AI core Service keys that you downloaded from BTP and press `Command + S` to save file. A pop up will appear on the screen where navigate to ~/.aicore/ and location and save the file as config.json
+
+```JSON
+{
+  "AICORE_AUTH_URL": "https://* * * .authentication.sap.hana.ondemand.com",
+  "AICORE_CLIENT_ID": "* * * ",
+  "AICORE_CLIENT_SECRET": "* * * ",
+  "AICORE_RESOURCE_GROUP": "* * * ",
+  "AICORE_BASE_URL": "https://api.ai.* * *.cfapps.sap.hana.ondemand.com/v2"
+}
 ```
-![image](images/aicore-llm.png)
-
 
 You can use the gen_ai_hub for prompting large language models such as gpt-3.5, gpt-4 and falcon-40b.
 
-Open a python programming environment of your choice and run the following code
+Open a python programming environment of your choice and run the following code we deployed these models at step 3.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -388,7 +394,7 @@ from gen_ai_hub.proxy.langchain.init_models import init_embedding_model
 
 llm = init_llm('gpt-4', temperature=0., max_tokens=256)
 embeddings = init_embedding_model('text-embedding-ada-002')
-chat.invoke('What is generative AI?').content
+llm.invoke('What is generative AI?').content
 ```
 
 [OPTION END]
@@ -555,7 +561,7 @@ Wirtschaftsprufer [German Public Auditor]
 Wiegand Wirtschaftsprufer [German Public Auditor]"""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -718,7 +724,7 @@ Question: How is SAP performing?
 """
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -790,7 +796,7 @@ Give your answer as a single word, either "positive" or "negative".
 Review text: '''SAP has Best work Environment and Best ERP product'''"""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -855,7 +861,7 @@ prompt = """Expand it into a 500 word blog post
 SAP AI core is a platform for building AI applications. which can be used to train and deploy AI applications. as well as act as a model and dataset artifactory."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -921,7 +927,7 @@ prompt = """Translate the following input to a Corporate language
 Sap Blue a new product from SAP. that is a gig based product. launched in 2016 relaunched in 2023."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -985,7 +991,7 @@ from gen_ai_hub.proxy.langchain.init_models import init_llm
 prompt = """proofread and correct this review: SAP SE is a German multinationl software company based in Walldorf, Baden-Wurttemberg. It develops enterprise software to manage business operations and customer relations. The company is the world leading enterprise resource planing software vendor."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
@@ -1070,7 +1076,7 @@ Make your response as short as possible. Format the Anger value as a boolean.
 Review text: '''A true ERP software available in the market which captures 60% of market share and known as a ERP leader. The best part about the product that it can be used cloud based and it can be integrated with several modules which are equally relevant as a department. I have been a part of SAP from past 12+ years and I am extremely happy of using and referring this product to others as well. This isn't only beneficial for companies but can also make careers for humans as well. Now a days cloud based functionality and integration with API tools are the best part in it. Easy to customize according to the requirement of a client. It has several features and capabilities 1. Cost efficient, 2. Advance data management, 3. Saves time, 4. Increase productivity, 5. Real time data saving to server's, 6. Avoid duplication and ensures transparency. Best product available in the market.''' """
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-chat.invoke(prompt).content
+llm.invoke(prompt).content
 ```
 
 [OPTION END]
