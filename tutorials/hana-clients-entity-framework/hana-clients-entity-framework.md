@@ -39,7 +39,7 @@ The SAP HANA Client 2.17 release supports EF Core 6.0 & 7.0.  For a list version
 Run the following command to install version 7 of the dotnet-ef tool.
 
 ```Shell
-dotnet tool install dotnet-ef --version 7.0.12 -g
+dotnet tool install dotnet-ef --version 7.0.17 -g
 dotnet tool list -g
 ```  
 
@@ -83,9 +83,9 @@ dotnet tool list -g
             <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
         </PackageReference>
     </ItemGroup>
     ```
@@ -99,9 +99,9 @@ dotnet tool list -g
             <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.12">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
         </PackageReference>
     </ItemGroup>
     ```
@@ -148,7 +148,7 @@ dotnet tool list -g
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseHana("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UserName=User2;Password=Password2");
+            options.UseHana("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UserName=User2;Password=Password2;CurrentSchema=User2");
         }
     }
 

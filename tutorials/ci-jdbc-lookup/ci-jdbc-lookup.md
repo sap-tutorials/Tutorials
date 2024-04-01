@@ -9,15 +9,14 @@ primary_tag: software-product>sap-integration-suite
 ---
 
 # Learn how to migrate JDBC Lookups from SAP Process Orchestration to Cloud Integration
-<!-- description --> This tutorial is developed into two different steps, one for the SAP Process Orchestration and the other for the Cloud Integration capability of SAP Integration Suite.
+<!-- description --> This tutorial is developed into three different steps, one for the SAP Process Orchestration and the other two are distinct options with different processes for the Cloud Integration capability of SAP Integration Suite.
 In this sample scenario we are moving data from system A to system B and enrich with content data.
 
 
 
 ## Intro
 
-JDBC Lookup is a method used to enhance a specific set of data retrieved from a given data source with extra inputs.
-This method can be done in both platforms, SAP Process Orchestration and Cloud Integration, in two distinguished ways. The main difference between them is the number of messages sent. SAP Process Orchestration sends one SQL Statement per key wanted, where the solution created in Cloud Integration sends one SQL Statement with all the information required. 
+JDBC Lookup is a method used to enhance a specific set of data retrieved from a given data source with extra inputs. This method can be done in both platforms, SAP Process Orchestration and Cloud Integration, in three distinguished ways, one dedicated operation in SAP Process Orchestration and two created in Cloud Integration. The main difference between them is the number of messages sent. SAP Process Orchestration sends one SQL Statement per key wanted, where the solutions created in Cloud Integration send one SQL Statement with all the information required. In Cloud Integration this method does **not** have a single specific approach to operate the JDBC Lookup, but it can be done by two simple integration flow systems shown later in this tutorial.
 
 
 
@@ -68,26 +67,26 @@ For this method to work we need to make sure that the package has JDBC connectio
 
 
 
-### Create the JDBC Lookup function on Cloud Integration
+### Create the JDBC Lookup function on Cloud Integration using XSLT Mapping
 
-In the Cloud Integration this method does **not** have a single specific approach to operate the JDBC Lookup, but it can be done by a simple integration flow system through the following steps (the final integration flow can be seen in the last step):
+The first approach created to bridge the gap of the non-existence of JDBC Lookup in Cloud Integration is done by using XSLT Mapping. It can be done following the next steps (the final integration flow can be seen in the last step):
 
 1.	Retrieve the data from the data source.  
 
 2.	Use a Sequential Multicast to create two branches, one to carry the initial message and one to operate the JDBC Lookup.
 
-    ![Two Branches](ci-step-2.png)  
+    ![Two Branches](ci-xslt-step-2.png)  
 
 3.	Set and personalize the parameters used to define the SQL Statement in the next step, through a "Content Modifier". In the following table there are the fields, the description and the guidelines to fill them in:
 
 
-	|  Field Name     				| Description                                        | Guidelines                               | Necessity
-	|  :------------- 				| :-------------                                     | :-------------                           | :-------------           
-	|  Access Parameters            | `All the fields needed to access the DataBase`     | `All seperated by commas`                | `Mandatory`  
-	|  Key Parameters               | `Fields used as keys to fetch the data`            | `All seperated by commas`                | `Mandatory`
-	|  SQL Action                   | `Action to operate on the SQL Statment`            | `Only one and using capital letters`     | `Mandatory`
-	|  Table Name                   | `Name of the table for access`                     | `Only one and using capital letters`     | `Mandatory`
-    |  SP Parameters                | `Parameters to fill in case of action Execute. Only relevant for stored procedures`     | `All seperated by commas`                | `Optional`
+	|  Field Name     			| Property Name	        | Description                                        | Guidelines                               | Necessity
+	|  :------------- 			| :------------- 	    | :-------------                                     | :-------------                           | :-------------           
+	|  Access Parameters        | access                | `All the fields needed to access the DataBase`     | `All seperated by commas`                | `Mandatory`  
+	|  Key Parameters           | key                   | `Fields used as keys to fetch the data`            | `All seperated by commas`                | `Mandatory`
+	|  SQL Action               | action                | `Action to operate on the SQL Statment`            | `Only one and using capital letters`     | `Mandatory`
+	|  Table Name               | table                 | `Name of the table for access`                     | `Only one and using capital letters`     | `Mandatory`
+    |  SP Parameters            | spParams              | `Parameters to fill in case of action Execute. Only relevant for stored procedures`     | `All seperated by commas`                | `Optional`
   
 
 4.	Define a dynamic SQL Statement with the fields value defined in the previous step. The script shown below can be applied in all scenarios:
@@ -103,7 +102,7 @@ In the Cloud Integration this method does **not** have a single specific approac
         def dbTableName = message.getProperty("table")
         def sqlAction = message.getProperty("action") 
         def keyParam = message.getProperty("key")
-        def spParams = message.getProperty("SPParams") 
+        def spParams = message.getProperty("spParams") 
     
 
         def bodyString = message.getBody(java.lang.String) as String;
@@ -172,7 +171,7 @@ In the Cloud Integration this method does **not** have a single specific approac
 
 5.	Join both branches and gather the messages in one XML File.
 
-    ![Join Branches](ci-step-5.png)  
+    ![Join Branches](ci-xslt-step-5.png)  
 
 6.	Combine the messages through XSLT Mapping. Sample script below:
 
@@ -214,9 +213,37 @@ In the Cloud Integration this method does **not** have a single specific approac
 
 7.	Send the final message.
 
-    ![Final iFlow](ci-final.png)
+    ![Final XSLT iFlow](ci-xslt-final.png)
 
 
+
+### Create the JDBC Lookup function on Cloud Integration using Process Direct
+
+The second approach created for Cloud Integration uses Process Direct to combine the messages via Content Enricher instead of using an XSLT Mapping script. The next steps explain how this can be done (the final integration flow can be seen in the last step):
+
+1.  Retrieve the data from the data source.  
+
+2.  Insert a Content Enricher connected with a receiver via Process Direct in the direction shown in the image below. Give a name to the "Connection Detail" in the Process Direct configurations.
+
+    ![Process Direct](ci-pd-step-2.png)
+
+3.  The Content Enricher needs to have the "Aggregation Algorithm" as "Enrich" and the fields "Path to Node" and "Key Element" need to be filled with the correct format from the messages.
+
+    ![Content Enricher](ci-pd-step-3.png)
+
+4.  Add an Integration Process and connect it with a Sender via Process Direct using the same connection detail as the one created in the previous step.
+
+    ![Integration Process](ci-pd-step-4.png)
+
+5.  Follow steps 3 and 4 from the previous chapter 2 "Create the JDBC Lookup function on Cloud Integration using XSLT Mapping" to create the SQL statement and insert them in the newly placed Integration Step.
+
+6.  Use a Message Mapping to transform the message received from the Content Enricher into the intended format.
+
+    ![Message Mapping](ci-pd-step-6.png)
+
+7.  Send the final message.
+
+    ![Final PD iFlow](ci-pd-final.png)
 
 
 
