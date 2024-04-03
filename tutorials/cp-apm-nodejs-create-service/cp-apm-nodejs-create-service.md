@@ -386,7 +386,7 @@ Instead of using in-memory, you can also use persistent databases.
 2. Install `SQLite3` packages.
 
     ```Shell/Bash
-    npm i sqlite3 -D
+    npm i sqlite3 --no-save
     ```
 
 3. Configure the database in your `package.json` in the `cds.requires.db` section.
