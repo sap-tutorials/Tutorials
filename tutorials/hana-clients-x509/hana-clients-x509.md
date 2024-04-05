@@ -311,7 +311,7 @@ Further details can be found at [CREATE USER Statement](https://help.sap.com/doc
     ```
 
     ```Shell (Linux or Mac)
-    mkdir $HOME/HANAClientsTutorial/nodeX509OpenSSL
+    mkdir -p $HOME/HANAClientsTutorial/nodeX509OpenSSL
     cd $HOME/HANAClientsTutorial/nodeX509OpenSSL
     ```
 
