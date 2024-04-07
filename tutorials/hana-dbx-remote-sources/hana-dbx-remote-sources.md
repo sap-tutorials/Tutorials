@@ -36,8 +36,6 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 ---
 
 ### Connect from SAP HANA, express edition to SAP HANA Cloud database
-
-
 1. From the SAP HANA Cloud Central, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
 
     >If needed, first create a schema and user.
@@ -186,8 +184,6 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 
 ### Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine
-
-
 [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/cloud/en-US) can be used to store large amounts of data that is not accessed and updated as frequently as data in an SAP HANA database.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake Relational Engine and access the table from the associated SAP HANA database instance.
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
@@ -315,8 +311,6 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 
 ### Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector (optional)
-
-
 The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
 
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central: Actions > Manage Configuration > Edit.
@@ -332,7 +326,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
     The following commands were used to start the Cloud Connector.
 
     ```Shell (Microsoft Windows)
-    set PATH=<Java Installation Directory\bin>
+    set PATH=<Java Installation Directory\bin>;C:\Windows\System32
     set JAVA_HOME=<Java Installation Directory>
     cd C:\SAP\scc20
     go.bat
