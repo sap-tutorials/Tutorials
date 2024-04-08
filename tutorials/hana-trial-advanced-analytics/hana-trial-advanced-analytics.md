@@ -466,7 +466,7 @@ Congratulations on helping Thomas find and collaborate with other developers!
 
 If you are ready to explore more features with your own local copy of SAP HANA, you can also download SAP HANA, express edition. SAP HANA, express editions is **free** up to 32 GB of RAM, **even for productive use**. You can:
 
-- [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
+- [Register for a free download](https://www.sap.com/products/technology-platform/hana/express-trial.html)
 
 Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP BTP trial or free tier.
 
