@@ -241,6 +241,8 @@ The following steps demonstrate how to configure `DBeaver` to connect to SAP HAN
 
     `DBeaver` can also be used to create an entity relationship (ER) diagram, perform a comparison of two selected objects, execute import and export operations, view spatial data on a map, and perform data analysis with its grouping and `calc` panels.
 
+### Knowledge check
+
 Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database and used the JDBC driver in `DBeaver`.
 
 

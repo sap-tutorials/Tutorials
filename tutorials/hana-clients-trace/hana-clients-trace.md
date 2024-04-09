@@ -51,7 +51,7 @@ Trace settings can also be configured using environment variables, or via connec
     ```Shell (Linux or Mac)
     hdbsqldbc_cons TRACE SQL ON LEVEL INFO
     hdbsqldbc_cons TRACE TIMING ON
-    mkdir /tmp/traces
+    mkdir -p /tmp/traces
     hdbsqldbc_cons TRACE FILENAME /tmp/traces/SQLDBC-%p.txt
     ```
 

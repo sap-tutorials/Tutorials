@@ -79,7 +79,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 
     ```Shell (Linux or Mac)
-    mkdir $HOME/HANAClientsTutorial/node
+    mkdir -p $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
     ```
 
