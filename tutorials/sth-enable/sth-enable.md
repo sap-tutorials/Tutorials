@@ -1,24 +1,24 @@
 ---
 parser: v2
-author_name: Beatrice Pasch
-author_profile: https://github.com/beapasch
+author_name: Kerstin Bier
+author_profile: https://github.com/bierke
 primary_tag: software-product>sap-translation-hub
 auto_validation: true
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, tutorial>license ]
 time: 5
 ---
 
-# Enable the SAP Translation Hub Service
-<!-- description --> Enable the SAP Translation Hub service in the SAP BTP cockpit.
+# Enable the SAP Translation Hub Service (Neo environment)
+<!-- description --> Enable the SAP Translation Hub service in the SAP BTP cockpit, Neo environment.
 
 ## Prerequisites  
- - **IMPORTANT:** This tutorial cannot be completed on a trial account.
+This tutorial is for SAP Translation Hub in the Neo environment. It cannot be completed on a trial account. We recommend migrating to SAP Translation Hub on SAP BTP multi-cloud as soon as possible. 
 
 ## You will learn  
-  - How to enable the SAP Translation Hub service on SAP Business Technology Platform (BTP)
+  - How to enable the SAP Translation Hub service on SAP BTP, Neo environment.
 
 
-  ---
+
 ### Open the service catalog
 
 
