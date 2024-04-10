@@ -21,6 +21,9 @@ author_profile: https://github.com/dhrubpaul
 - How to create a table and store embeddings in HANA Vector Store.
 - How to use the embeddings in Retrieval Augmented Generation.
 
+Please find downloadable sample notebooks for the tutorials : Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/08_VectorStore/Hana/rag_hana_vector.ipynb)
+
 ### Loading vector data from a csv file
 
 Download the following ```csv``` file and save it in your system.
@@ -248,3 +251,129 @@ response = ask_llm(query=query, retrieval_augmented_generation=True, k=4)
 ```
 
 ![image](images/img12.png)
+
+### Creating a connection using dbapi
+
+```PYTHON
+import hdbcli
+from hdbcli import dbapi
+
+cc = dbapi.connect(
+    address='<address>',
+    port='<port-number>',
+    user='<user>',
+    password='<password>',
+    encrypt=True
+    )
+```
+
+### Using insert methods to write directly into the table
+
+Execute the following code to extract data from the csv file and store it in a list
+
+```PYTHON
+import csv
+
+data = []
+with open('GRAPH_DOCU_2503.csv', encoding='utf-8') as csvfile:
+    csv_reader = csv.reader(csvfile)
+    for row in csv_reader:
+        try:
+            data.append(row)
+        except:
+            print(row)
+```
+
+![image](images/hana1.png)
+
+### Creating a table and adding data
+
+To create a table, execute the following python code.
+
+```PYTHON
+# Create a table
+cursor = cc.cursor()
+sql_command = '''CREATE TABLE TABLENAME(ID1 BIGINT, ID2 BIGINT, L1 NVARCHAR(3), L2 NVARCHAR(3), L3 NVARCHAR(3), FILENAME NVARCHAR(100), HEADER1 NVARCHAR(5000), HEADER2 NVARCHAR(5000), TEXT NCLOB, VECTOR_STR REAL_VECTOR);'''
+cursor.execute(sql_command)
+cursor.close()
+```
+
+Now we insert our data into the table we created
+
+```PYTHON
+cursor = cc.cursor()
+sql_insert = 'INSERT INTO TABLE10043(ID1, ID2, L1, L2, L3, FILENAME, HEADER1, HEADER2, TEXT, VECTOR_STR) VALUES (?,?,?,?,?,?,?,?,?,TO_REAL_VECTOR(?))'
+cursor.executemany(sql_insert,data[1:])
+```
+
+![image](images/hana2.png)
+
+### Modifying the run_vector_search function
+
+We can modify the run_vector_search function to make use of the VECTOR_STR column for similarity search
+
+```PYTHON
+cursor = cc.cursor()
+def run_vector_search(query: str, metric="COSINE_SIMILARITY", k=4):
+    if metric == 'L2DISTANCE':
+        sort = 'ASC'
+    else:
+        sort = 'DESC'
+    query_vector = get_embedding(query)
+    sql = '''SELECT TOP {k} "ID2", "TEXT"
+        FROM "TABLE10043"
+        ORDER BY "{metric}"("VECTOR_STR", TO_REAL_VECTOR('{qv}')) {sort}'''.format(k=k, metric=metric, qv=query_vector, sort=sort)
+    cursor.execute(sql)
+    hdf = cursor.fetchall()
+    return hdf[:k]
+```
+
+![image](images/hana3.png)
+
+### Querying the LLM
+
+Now create a function ```ask_llm()``` to query the LLM while using the similar vectors as context. Execute the following python code.
+
+```PYTHON
+from gen_ai_hub.proxy.langchain.openai import ChatOpenAI
+from gen_ai_hub.proxy.core.proxy_clients import get_proxy_client
+proxy_client = get_proxy_client('gen-ai-hub') # for an AI Core proxy
+
+def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIMILARITY', k = 4) -> str:
+
+    class color:
+        RED = '\033[91m'
+        BLUE = '\033[94m'
+        BOLD = '\033[1m'
+        END = '\033[0m'
+    context = ''
+    if retrieval_augmented_generation == True:
+        print(color.RED + 'Running retrieval augmented generation.' + color.END)
+        print(color.RED + '\nEmbedding the query string and running HANA vector search.' + color.END)
+        context = run_vector_search(query, metric, k)
+        print(color.RED + '\nHANA vector search returned {k} best matching documents.'.format(k=k) + color.END)
+        print(color.RED + '\nGenerating LLM prompt using the context information.' + color.END)
+    else:
+        print(color.RED + 'Generating LLM prompt WITHOUT context information.' + color.END)
+    df_context = run_vector_search(query=query, metric="COSINE_SIMILARITY",k=1)
+    prompt = promptTemplate.format(query=query, context=' '.join(str(df_context)))
+    print(color.RED + '\nAsking LLM...' + color.END)
+    llm = ChatOpenAI(proxy_model_name='gpt-4', proxy_client=proxy_client)
+    response = llm.invoke(prompt).content
+    print(color.RED + '...completed.' + color.END)
+    print(color.RED + '\nQuery: ' + color.END, query)
+    print(color.BLUE + '\nResponse:' + color.BLUE)
+    print(response)
+```
+
+![image](images/hana4.png)
+
+Now you can test the function using a query. Run the following python code.
+
+```PYTHON
+query = "I want to calculate a shortest path. How do I do that?"
+
+response = ask_llm(query=query, retrieval_augmented_generation=True, k=4)
+```
+
+![image](images/hana5.png)
