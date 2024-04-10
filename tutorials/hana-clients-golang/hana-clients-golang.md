@@ -30,7 +30,7 @@ go version
 
 ![go version](version.png)
 
-If Go is installed, then it will return the currently installed version, such as 1.19.
+If Go is installed, then it will return the currently installed version, such as 1.22.1.
 
 >For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
@@ -50,6 +50,8 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     gcc --version
     ```
 
+    ![gcc 64-bit](gccLinux.png)
+
     For Windows (if it is not installed), it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, you can install from [winlibs.com](https://winlibs.com/), by scrolling to the **Download** section and downloading the latest release version (UCRT runtime) of the ZIP archive for Win64 to install for the x86_64 architecture, and then extracting the folder.
 
     ![download minGW from WinLibs](winLibsMinGW.png)
@@ -66,7 +68,6 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     On Linux, install the System GNU C compiler for your version of Linux. Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
 
-    ![gcc 64-bit](gccLinux.png)
 
 2. Examine the Go environment by running the below command:
 
@@ -74,7 +75,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     go env
     ```
 
-    Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.19`.  This is the location that the Go SDK is installed to.  
+    Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.22`.  This is the location that the Go SDK is installed to.  
 
     GOPATH is set to a location such as `C:\Users\user\go` or `$HOME/go` and defines the root of your workspace which stores your codebase.
 

@@ -27,7 +27,7 @@ This tutorial will give you an overview of the main differences between SAP HANA
 
 ### Introduction to SAP HANA Cockpit
 
-> If you feel familiar with SAP HANA cockpit from using it with your SAP HANA on-premise database, you can skip this tutorial and <sub-style="font-size:30px">&#9755;</sub>[jump to the next one](hana-cloud-mission-trial-2) to learn about provisioning.
+> If you feel familiar with SAP HANA cockpit from using it with your SAP HANA on-premise database, you can skip this tutorial and <sub style="font-size:30px">&#9755;</sub>[jump to the next one](hana-cloud-mission-trial-2) to learn about provisioning.
 
 SAP HANA cockpit is your main tool to manage and monitor your SAP HANA Cloud, SAP HANA databases.
 

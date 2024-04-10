@@ -6,6 +6,7 @@ tags: [ tutorial>Beginner, software-product>sap-ai-core, topic>machine-learning]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul 
 author_profile: https://github.com/dhrubpaul
+
 ---
 
 # Using pgvector store with LLMs in AI core through Gen AI SDK
@@ -20,6 +21,12 @@ author_profile: https://github.com/dhrubpaul
 
 - How to set up PostgreSQL with pgvector in SAP BTP
 - How to use pgvector to do similarity search
+
+## Intro
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/08_VectorStore/PGVector/PG-vector.ipynb)
+
 
 ### Enable PostgreSQL
 
