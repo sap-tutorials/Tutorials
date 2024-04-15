@@ -38,7 +38,7 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 
     ![Enter a title](3-enter-title.png)
 
-4. Click **Save**.
+
 
 ### Add apps to the page    
 
