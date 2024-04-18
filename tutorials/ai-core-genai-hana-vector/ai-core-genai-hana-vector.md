@@ -28,7 +28,7 @@ Please find downloadable sample notebooks for the tutorials : Note that these tu
 
 Download the following ```csv``` file and save it in your system.
 
- [Download File](files/GRAPH_DOCU_QRC3.csv)
+ [Download File](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/files/GRAPH_DOCU_2503.csv)
 
 Execute the following python code in the same folder. This will load the data and store it in a data-frame.
 
