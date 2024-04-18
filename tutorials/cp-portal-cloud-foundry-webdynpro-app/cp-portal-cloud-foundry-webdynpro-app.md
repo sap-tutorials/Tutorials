@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-build-work-zone--standard-edition]
-primary_tag: software-product>sap-build-work-zone--standard-edition
+tags: [ tutorial>beginner, sap-conversational-ai>sap-business-technology-platform, sap-conversational-ai>sap-build-work-zone--standard-edition]
+primary_tag: sap-conversational-ai>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -42,7 +42,7 @@ In this tutorial, you'll use the **Content Manager** in SAP Build Work Zone, sta
 ### Configure the Web Dynpro ABAP app
 
 
-1.  In the **Content Manager**, click **+ New** and then select **App** from the list.
+1.  In the **Content Manager**, click **Create** and then select **App** from the list.
 
     <!-- border -->![Create new app](4-new-app.png)
 
@@ -95,6 +95,7 @@ You can see your Web Dynpro ABAP app in the list:
   ![View app](8a-view-app.png)
 
 In the next steps, we'll make the app visible for users. To do this, we need to assign the app to a role (the same role that the user is assigned to). Depending on which view mode has been set in the **Site Settings** screen, we also need to add the app to a page if you're working in **Spaces and Pages - New Experience** mode. If you're working in **Groups** mode or in **Spaces and Pages** mode, then you'll assign your app to a group. 
+
 Here's a view of the **Site Settings** screen with the different view modes.  In this tutorial we'll be working in the **Spaces and Pages - New Experience** mode.
 
 ![View modes](28-view-modes.png)
