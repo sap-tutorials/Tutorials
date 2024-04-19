@@ -165,7 +165,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     ![Test UI](test_ui.png)
 
-1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
+1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app/router`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
 
 Congratulations! You have created your first, full application.
 
