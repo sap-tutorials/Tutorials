@@ -2,8 +2,8 @@
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>intermediate, products>sap-hana, software-product-function>sap-cloud-application-programming-model, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, sap-conversational-ai>sap-hana, sap-conversational-ai>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
+primary_tag: sap-conversational-ai>sap-hana-cloud
 parser: v2
 ---
 
@@ -197,7 +197,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     This means your security setup is working. Accessing the CAP service directly will always produce an error now as there is no authentication token present.  We need to run via the Application Router to generate and forward the authentication token.
 
-1. Without stopping the CAP service, open a second terminal. In this terminal run `cds bind --exec -- npm start --prefix app` to start the Application Router but using the `cds bind` command to inject all the `UAA` configuration into the Application Router automatically and securely as well.
+1. Without stopping the CAP service, open a second terminal. In this terminal run `cds bind --exec -- npm start --prefix app/router` to start the Application Router but using the `cds bind` command to inject all the `UAA` configuration into the Application Router automatically and securely as well.
 
     ![Run Application Router](run_app_router.png)
 
