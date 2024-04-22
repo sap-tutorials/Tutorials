@@ -25,7 +25,7 @@ In this tutorial, you will learn how to apply styling to the UI5 Web Components.
 ### Change style for existing components
 
 You can change the appearance of the UI5 Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp).
-Per default, the Horizon theme parameters are injected as CSS Variables into the `<head>`.
+Per default, the Horizon theme parameters are added to the `adoptedStyleSheets` of the `document`.
 For example, if you want to change the color of all texts that use the `--sapTile_TitleTextColor` variable, you can create an additional `style` rule with the following content:
 
 Open the `index.css` file inside your `src` folder and add the following content:
@@ -36,7 +36,7 @@ Open the `index.css` file inside your `src` folder and add the following content
 }
 ```
 
-The `sapTile_TitleTextColor` CSS Variable changes the style of the `Card` titles and the `*` selector appends the style to all elements.
+The `sapTile_TitleTextColor` CSS Variable is used in the `CardHeader` component to set the color of the title. With the `*` selector, you can apply styles to all elements in the subtree and therefore change the color of all components using `sapTile_TitleTextColor`.
 
 ![Custom Style](02_customStyle.png)
 
@@ -50,12 +50,15 @@ A full list of all supported CSS Variables can be found in the [`ThemingParamete
 ### Style your own component
 
 
-If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can import the `ThemingParameters` that contain the various CSS variables used in our theming. If you want to style your components with the [`react-jss`](https://cssinjs.org/react-jss) syntax, you can use the custom `jss` styling hook `createUseStyles`.
+If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can use the global CSS vars ([`ThemingParameters`](https://sap.github.io/ui5-webcomponents-react/?path=/docs/knowledge-base-public-utils--docs#theming-parameters)). If you want to style your components with a CSS-in-JS library like [`react-jss`](https://cssinjs.org/react-jss), or want to use the React inline styling, you can use the `ThemingParameters` directly.
+
+In this step we will use [CSS Modules](https://github.com/css-modules/css-modules) and inline styling to style a custom component.
+
+> **Note:** The Vite template already includes support for CSS Modules, so you can use them out of the box.
 
 1. Create a custom component `MyCustomElement.tsx` under `./src` with following content:
 
     ```TypeScript / TSX
-    import { createUseStyles } from 'react-jss';
     import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     export const MyCustomElement = () => {
@@ -66,7 +69,7 @@ If you want to add a custom component to your app, but still want to use the sty
       );
     };
     ```
-2. Add inline-styles with the `ThemingParameters` to the `<span>`
+2. Add inline-styles to apply `ThemingParameters` to the `<span>`
 
     ```TypeScript / TSX
     <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
@@ -76,36 +79,40 @@ If you want to add a custom component to your app, but still want to use the sty
 
     The `ThemingParameters` contain all available styling parameters. With this it is possible to style custom components with the standardized styles of the UI5 Web Components.
 
-3. Add styling with `react-jss` and the `createUseStyles` hook
+3. Add styling using CSS Modules
+
+    First create a new file `MyCustomElement.module.css` in the same folder as `MyCustomElement.tsx` with the following content:
+
+    ```CSS
+     .container {
+       background-color: var(--sapBackgroundColor);
+       font-family: var(--sapFontFamily);
+       height: 50px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+    ```
+    Then import the CSS file in your `MyCustomElement.tsx` file and add the class to the `div` element.
 
     ```TypeScript / TSX
-    import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base";
-
-    const styles = {
-      container: {
-        backgroundColor: ThemingParameters.sapBackgroundColor,
-        fontFamily: ThemingParameters.sapFontFamily,
-        height: "50px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }
-    };
-
-    const useStyles = createUseStyles(styles);
-
-    export const MyCustomElement = () => {
-      const classes = useStyles();
-
-      return (
-        <div className={classes.container}>
-          <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
-            My custom Text Element
-          </span>
-        </div>
-      );
-    };
+      import { ThemingParameters } from '@ui5/webcomponents-react-base';
+      import classes from './MyCustomElement.module.css';
+      
+      export const MyCustomElement = () => {
+        return (
+          <div className={classes.container}>
+            <span
+              style={{
+                color: ThemingParameters.sapNegativeColor,
+                fontSize: ThemingParameters.sapFontHeader1Size,
+              }}
+            >
+              My custom Text Element
+            </span>
+          </div>
+        );
+      };
     ```
 
 4. Import the custom component and add it to your `Home` component.
@@ -125,7 +132,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```
     ![Custom Element](01_customElement.png)
 
-   Now you can see, that the element has the same `fontFamily` and uses the same semantic colors as the UI5 Web Components for React.
+   Now you can see, that the element has the same `fontFamily` and uses the same semantic colors as UI5 Web Components for React.
 
 ### Conclusion
 
