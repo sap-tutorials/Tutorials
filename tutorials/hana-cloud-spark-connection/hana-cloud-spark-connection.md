@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Robert Waywell
+author_profile: https://github.com/RobWaywellSAP
 auto_validation: true
 time: 15
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database]
