@@ -2,8 +2,8 @@
 auto_validation: false
 time: 30
 level: Intermediate
-tags: [ tutorial>intermediate, topic>cloud, sap-conversational-ai>sap-business-technology-platform, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-work-zone--advanced-edition, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation ]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-build, software-product>sap-build-work-zone--advanced-edition, software-product>sap-build-apps, software-product>sap-build-process-automation ]
+primary_tag: software-product>sap-build
 author_name: Friederike Marby
 author_profile: https://github.com/FriederikeMa
 parser: v2

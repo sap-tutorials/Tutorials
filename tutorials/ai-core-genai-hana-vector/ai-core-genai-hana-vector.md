@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, sap-conversational-ai>sap-ai-core, topic>machine-learning]
-primary_tag: sap-conversational-ai>sap-ai-core
+tags: [ tutorial>beginner, software-product>sap-ai-core, topic>machine-learning]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul 
 author_profile: https://github.com/dhrubpaul
 ---

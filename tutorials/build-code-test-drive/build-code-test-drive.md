@@ -4,8 +4,8 @@ author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, sap-conversational-ai>sap-business-application-studio, sap-conversational-ai>sapui5, sap-conversational-ai>sap-mobile-services, sap-conversational-ai>sap-fiori-elements, sap-conversational-ai>sap-cloud-application-programming-model, sap-conversational-ai>sap-business-technology-platform ]
-primary_tag: sap-conversational-ai>sap-build-code
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-build-code
 parser: v2
 ---
 

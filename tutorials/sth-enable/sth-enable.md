@@ -2,9 +2,9 @@
 parser: v2
 author_name: Kerstin Bier
 author_profile: https://github.com/bierke
-primary_tag: sap-conversational-ai>sap-translation-hub
+primary_tag: software-product>sap-translation-hub
 auto_validation: true
-tags: [  tutorial>beginner, sap-conversational-ai>sap-translation-hub, sap-conversational-ai>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, tutorial>license ]
 time: 5
 ---
 

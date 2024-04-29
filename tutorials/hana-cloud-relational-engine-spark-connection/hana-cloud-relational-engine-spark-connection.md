@@ -5,7 +5,7 @@ author_profile: https://github.com/RobWaywellSAP
 auto_validation: true
 time: 15
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
-primary_tag: sap-conversational-ai>sap-hana-cloud
+primary_tag: software-product>sap-hana-cloud
 ---
 
 # Accessing SAP HANA Data lake Relational Engine using Apache Spark

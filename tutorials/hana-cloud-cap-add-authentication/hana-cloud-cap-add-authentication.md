@@ -2,8 +2,8 @@
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, sap-conversational-ai>sap-hana, sap-conversational-ai>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
-primary_tag: sap-conversational-ai>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
+primary_tag: software-product>sap-hana-cloud
 parser: v2
 ---
 
