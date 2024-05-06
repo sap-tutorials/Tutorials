@@ -118,7 +118,7 @@ To view the app in runtime, you must assign the app to a role. You also need to 
 
 3. Click the search box to see any available apps in the list below.
 
-    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `New`) to search for the app.
+    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Search`) to search for the app.
 
 4. In the **Assignment Status** column, drag the toggle switch to the right next to the `Search POs` app to assign this role to your app. You'll see that the icon changes.
 
