@@ -65,19 +65,19 @@ Last but not least, you need to pass credentials to the provider to authenticate
 
 For Windows you have two options to export the environment variables:
 
-1. For Windows CMD use:
+If you use Windows CMD, do the export via the following commands:
 
-   ```Shell
-   set BTP_USERNAME=<your_username>
-   set BTP_PASSWORD=<your_password>
-   ```
+```Shell
+set BTP_USERNAME=<your_username>
+set BTP_PASSWORD=<your_password>
+```
 
-1. For Powershell use:
+If you use Powershell, do the export via the following commands:
 
-   ```Shell
-   $Env:BTP_USERNAME = '<your_username>'
-   $Env:BTP_PASSWORD = '<your_password>'
-   ```
+```Shell
+$Env:BTP_USERNAME = '<your_username>'
+$Env:BTP_PASSWORD = '<your_password>'
+```
 
 [OPTION END]
 
