@@ -147,7 +147,7 @@ While you are doing the tutorial, you can see your progress as follows.
 
 If you have been clicking the buttons as you complete this tutorial until here, on the right side, you will see the steps you have completed indicated by a checkmark:
 
-    ![Progress on side](progress2.png)
+![Progress on side](progress2.png)
 
 
 
