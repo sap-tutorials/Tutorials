@@ -151,7 +151,7 @@ The CLI used depends on whether the SAP HANA Cloud instances were provisioned to
 
 [Cloud Foundry CLI (CF CLI)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-cloud-foundry-command-line-interface-cf-cli-with-sap-hana-cloud) can be used to create, update, configure, or delete instances provisioned in a Cloud Foundry space.  Further details can be found at [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) and [Cloud Foundry Releases](https://github.com/cloudfoundry/cli/releases).
 
-[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool  ](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
+[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
 
 The following steps will provide examples of each CLI as well as accessing the SAP Service Manager REST API.  **Please install one or more of the CLIs before proceeding.**
 
@@ -713,12 +713,6 @@ cf services
 
 ```Shell
 cf service HC_HDB_CF
-```
-
-or
-
-```Shell
-cf service HC_HDB_CF --params
 ```
 
 ![cf service details](cf-service-details.png)

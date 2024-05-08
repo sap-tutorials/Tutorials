@@ -22,17 +22,15 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 ### Install the .NET SDK
-
-
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 7.0.305.  
+If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 8.0.203.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
->Select the 'Download .NET SDK x64' option.
+
 
 ![.NET Core SDK Install](dotnet-install.png)
 
@@ -44,8 +42,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 
 ### Create a .NET application that queries an SAP HANA database
-
-
 1.  Create a new console app with the below commands:
 
     ```Shell (Microsoft Windows)
@@ -176,7 +172,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
                                 var sbRow = new System.Text.StringBuilder();
                                 for (var i = 0; i < reader.FieldCount; i++)
                                 {
-                                    sbRow.Append(reader[i].ToString().PadRight(20));
+                                    var result = reader[i].ToString();
+                                    if (result is not null) {
+                                        sbRow.Append(result.PadRight(20));
+                                    }
                                 }
                                 Console.WriteLine(sbRow.ToString());
                             }

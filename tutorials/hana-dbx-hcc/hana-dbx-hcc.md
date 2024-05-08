@@ -279,7 +279,7 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
     * SQL parsing to detect potential errors
     * Code completion of schema objects
     * SQL formatting
-    * SQL viewers for spatial
+    * Viewer for spatial and graph data
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
     * Generate SQL Analyzer file or explain plan

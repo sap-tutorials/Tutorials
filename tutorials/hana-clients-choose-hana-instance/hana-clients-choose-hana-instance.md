@@ -46,7 +46,7 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 |  Version     | Notes
 |  :------------- | :-------------
 |  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 07, which was released on April 4rd, 2023.
-|  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 06.
+|  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 07.
 |  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
 
 
@@ -58,7 +58,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * Hardware is managed by a cloud provider (e.g. AWS, Azure, or GCP).
 
-  * Many data center locations to choose from [Data Center Locations](https://www.sap.com/canada/about/trust-center/data-center.html?mode=solution&currentLevel=world&solutionId=NZA62)
+  * Many data center locations to choose from as listed in the [SAP Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan)
 
   * [Backups](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/backup-and-recovery) are automatic and recovery can be initiated in SAP HANA Cloud Central.    
 
@@ -80,33 +80,34 @@ Here are a few benefits of using SAP HANA Cloud:
 
 ### Connect to SAP HANA Cloud
 
+>To complete the tutorials in the mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
-1. >To complete the tutorials in the mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
+The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
-    Continue with this tutorial once you have created an SAP HANA Cloud trial or free tier instance as shown below.
+* [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
-    ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
+* [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
 
-    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
+* [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
 
-    * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
-
-    * [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
-    
-    * [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
-
-    * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
+* [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
 
-    For more information on SAP BTP see the following product pages and help documentation:
+For more information on SAP BTP see the following product pages and help documentation:
 
-    * [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
+* [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
 
-    * [https://developers.sap.com/topics/business-technology-platform.html](https://developers.sap.com/topics/business-technology-platform.html)  
+* [https://developers.sap.com/topics/business-technology-platform.html](https://developers.sap.com/topics/business-technology-platform.html)  
 
-    * [https://help.sap.com/docs/btp](https://help.sap.com/docs/btp)
+* [https://help.sap.com/docs/btp](https://help.sap.com/docs/btp)
 
-    Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
+
+Continue with this tutorial once you have created an SAP HANA Cloud trial or free tier instance as shown below.
+
+![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
+
+
+1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
 

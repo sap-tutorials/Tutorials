@@ -69,7 +69,11 @@ Object Page:
 
 ![Original Manage Credit Accounts: Object Page](2_ManageCreditAccounts_OriginalObjectPage.png)
 
-If you want to view the original *Manage Credit Accounts* application in My Home in SAP S/4HANA Cloud Public Edition, you must first log onto your ABAP system as an Administrator, open the *Manage Workforce* application, and assign the *Credit Controller (SAP_BR_CREDIT_CONTROLLER)* business role to your user (for more information, see [Maintain Business Users](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e40e710321c74f28916affa9ae984bce.html?state=DRAFT&version=2402.500)).
+If you want to view the original Manage Credit Accounts application in My Home in SAP S/4HANA Cloud Public Edition, you must first log onto your ABAP system as an Administrator, open the *Maintain Business Roles* application, create a business role from the role template *SAP_BR_CREDIT_CONTROLLER* and assign the business role to your user (for more information, see [How to Create a Business Role from a Template](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/ec310a8b669a45ca898dc4dd91d97de2.html?state=DRAFT&profile=20086626)).
+
+Watch this short video to see what changes you’ll make once you complete the three developer tutorials:
+
+<iframe width="560" height="315" src="https://sapvideo.cfapps.eu10-004.hana.ondemand.com/?entry_id=1_5r7r5h0n" frameborder="0" allowfullscreen></iframe>
 
 ### Create an application variant by SAPUI5 Adaptation Project in SAP Business Application Studio
 

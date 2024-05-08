@@ -274,7 +274,7 @@ AVERAGE_DAYS=Average Days
 ROLLING_12_MONTHS=Rolling 12 Months
 
 #XTIT
-NO_DATA=no Data
+NO_DATA=No Data
 ```
 
 ### Create utils folder for function call and model generator

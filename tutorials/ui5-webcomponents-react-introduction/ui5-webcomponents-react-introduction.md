@@ -33,12 +33,12 @@ This first tutorial will start by creating a React application that is able to c
 
 ### Bootstrap the app with the Vite template
 
-UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates--docs) for starting your project. In this tutorial, we'll use the Vite template.
+UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
 
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx degit SAP/ui5-webcomponents-react/examples/vite-ts#main my-app
+npx degit SAP/ui5-webcomponents-react/templates/vite-ts#main my-app
 cd my-app
 npm i
 ```
@@ -46,7 +46,9 @@ npm i
 These commands sets up a [Vite](https://vitejs.dev/) project, creating a React Application with [TypeScript](https://www.typescriptlang.org/) and incorporating all essential dependencies for UI5 Web Components for React.
 
 > ### Why TypeScript?
+> 
 > TypeScript, a superset of JavaScript and brings a lot of advantages for developers:
+> 
 > - **Easy Debugging:** Helps catch errors early.
 > - **Code Guidance:** Provides hints for better coding.
 > - **Tool Support:** Offers autocompletion and navigation in editors.
@@ -73,7 +75,7 @@ These commands sets up a [Vite](https://vitejs.dev/) project, creating a React A
 > ### Structure of a React component
 This is a very simple component, but it already shows you the basic structure of all components. The file starts with the import statements in the first few lines. Then, the component will be defined as a function (or as a [class](https://reactjs.org/docs/react-component.html)). This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
 
-With this you created your first `React` component. To actually render the component you will have to add it to your `src/App.ts`.
+With this you created your first `React` component. To actually render the component you will have to add it to your `src/App.tsx`.
 
 ### Embed your new component
 

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 

@@ -21,6 +21,9 @@ author_profile: https://github.com/dhrubpaul
 ## Intro
 If you want to use SAP AI Core with python, select the tab for **SAP AI Core SDK** or **AI API client SDK**.
 
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_01_set_up_tools_to_connect_with_and_operate_sap_ai_core/setup_create_connection.ipynb)
+  
 ---
 
 ### Get your SAP AI Core keys
