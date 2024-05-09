@@ -465,6 +465,7 @@ An SAP HANA Cloud database instance may be cloned.  As an example, you may wish 
     ![add data lake](add-data-lake.png)
 
 2. Create a file named **clone-template.json** with the contents below and modify it as appropriate.
+    
     ```JSON
     {
         "data": {
