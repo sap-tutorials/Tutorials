@@ -52,7 +52,7 @@ To predict data records, proceed as follows:
 
     <!-- border -->![Inference Endpoint](inference-endpoint.png)
 
-2. In the parameter `modelName`, enter your model name, `regression-model`, for example.
+2. In the parameter `modelName`, enter your model name, `regression_tutorial_model`, for example.
 
 3. In the parameter `body`, you have to provide the data you want to predict. According to the dataset schema that you have created in [Use the Regression Model Template to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-regression-upload), **the machine learning model takes the manufacturer and description of the product as input and predicts the price of the product**. Replace the text in the parameter `body` with the following:
 
@@ -170,7 +170,7 @@ Once `undeployed`, you can delete your model.
 
     <!-- border -->![Inference Endpoint](model-endpoint.png)
 
-2. Fill the parameter `modelName` with the name of your machine learning model (`ior_tutorial_model`). Use the `GET /models` endpoint in case you no longer have the model `name` in hand.
+2. Fill the parameter `modelName` with the name of your machine learning model (`regression_tutorial_model`). Use the `GET /models` endpoint in case you no longer have the model `name` in hand.
 
     <!-- border -->![Inference Endpoint](model-execute.png)
 
