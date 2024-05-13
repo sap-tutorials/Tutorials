@@ -11,7 +11,9 @@ primary_tag: software-product>sap-hana-cloud
 
 ![Terraform](terraform.png)
 
-When working with Terraform, a description of a target state is provided in a file named `main.tf`.  Terraform will compare the last known state of the system to the target state and will determine the changes required.  If the Terraform Provider for SAP BTP is being used to update the state of an instance, it is not recommended to also use other tools such as SAP HANA Cloud Central or the BTP CLI to make further updates.  For additional details, see [Drift Detection](https://github.com/SAP/terraform-provider-btp/blob/main/guides/DRIFTDETECTION.md).  The provider works with SAP HANA Cloud instances in a subaccount.  If you wish to provision to Cloud Foundry, see the community provided [cloudfoundry](https://registry.terraform.io/providers/cloudfoundry-community/cloudfoundry/latest) provider.
+When working with Terraform, a description of a target state is provided in a file named `main.tf`.  Terraform will compare the last known state of the system to the target state and will determine the changes required.  If the Terraform Provider for SAP BTP is being used to update the state of an instance, it is not recommended to also use other tools such as SAP HANA Cloud Central or the BTP CLI to make further updates.  For additional details, see [Drift Detection](https://github.com/SAP/terraform-provider-btp/blob/main/guides/DRIFTDETECTION.md).  The provider works with SAP HANA Cloud instances in a subaccount.  If you wish to provision to Cloud Foundry, consider using the Cloud Foundry provider.  See also [https://registry.terraform.io/namespaces/SAP](https://registry.terraform.io/namespaces/SAP).
+
+![SAP Terraform Providers](SAP-Terraform-Providers.png)
 
 ## Prerequisites
 - An SAP BTP account
@@ -47,14 +49,14 @@ When working with Terraform, a description of a target state is provided in a fi
 
     ![Terraform Provider for SAP BTP](btp-provider.png)
 
-3. Paste the following contents into provider.tf and save the file.  This file will specify that we wish to use the Terraform Provider for SAP BTP, which [version](https://registry.terraform.io/providers/SAP/btp/latest) to use, and which global SAP BTP account to target.
+3. Paste the following contents into provider.tf and save the file.  This file will specify that we wish to use the Terraform Provider for SAP BTP, which [version](https://registry.terraform.io/providers/SAP/btp/latest) to use, and which global SAP BTP account to target.  Details of what has changed between releases can be found on the [Releases](https://github.com/SAP/terraform-provider-btp/releases) page.
 
     ```Terraform
     terraform {
       required_providers {
         btp = {
           source  = "SAP/btp"
-          version = "~>1.2.0"
+          version = "~>1.3.0"
         }
       }
     }
@@ -66,13 +68,13 @@ When working with Terraform, a description of a target state is provided in a fi
 
     Update the value of globalaccount to match your account.  This value can be obtained from the URL parameter in the SAP BTP Cockpit
 
-  4. Initialize the project.
+4. Initialize the project.
 
-      ```Shell
-      terraform init
-      ```
+    ```Shell
+    terraform init
+    ```
 
-      ![initialize the provider](init.png)
+    ![initialize the provider](init.png)
      
 For additional details, see [Creating SAP HANA Cloud Instances Using Terraform](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/creating-sap-hana-cloud-instances-using-terraform) and [Basic CLI Features](https://developer.hashicorp.com/terraform/cli/commands).
 

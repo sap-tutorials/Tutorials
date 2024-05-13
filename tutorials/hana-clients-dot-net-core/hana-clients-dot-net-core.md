@@ -98,17 +98,18 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
-      </Reference>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+          <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
+        </Reference>
     </ItemGroup>
     ```
 
     ```Shell (Linux or Mac)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.Data.Hana.Net.v6.0.dll</HintPath>
       </Reference>
+      
     </ItemGroup>
     ```
     ![dotNET.csproj code](dotNET-csproj-code.png)
