@@ -36,32 +36,56 @@ primary_tag: products>sap-business-technology-platform
 
 2. Navigate to your subaccount. It is usually named `trial`.
 
-3. In the navigation pane, open **Services > Service Marketplace**.
+In case you plan to use the trial subaccount that was initially created when setting up your SAP BTP trial account, please proceed with the following steps: 
 
-4. Search for **SAP Omnichannel Promotion Pricing (Trial)** and click on the tile.
+1. In the navigation pane, open **Services > Service Marketplace**.
 
-5. Choose **Create**.
+2. Search for **SAP Omnichannel Promotion Pricing (Trial)** and click on the tile.
 
-6. In the popup, the service and plan are preselected for you. Choose **Create** to subscribe to the application.
+3. Choose **Create**.
+
+4. In the popup, the service and plan are preselected for you. Choose **Create** to subscribe to the application.
 
 <!-- The subscription process is finished once the status icon changes from **Processing** to **Subscribed**. -->
 
-Once the subscription is finished, you can choose the three dot symbol **°°°** and  **Go to Application** in the **Application Plans** section to make configuration settings in the **Configure Omnichannel Promotion Pricing** app. <!-- Using the app is optional and not part of the basic tutorial but is included in our advanced tutorial.-->
-<!-- Add link to advanced tutorial once available -->
 
+In case you plan to use a manually created subaccount, please proceed with the following steps:
 
+1. In the navigation pane, open **Entitlements**.
+
+2. Choose **Edit**.
+
+3. Choose **Add Service Plans**.
+
+4. Search for SAP Omnichannel Promotion Pricing.
+
+5. Select SAP Omnichannel Promotion Pricing as Available Plan.
+
+6. Choose **Add Service Plans**.
+
+7. Choose **Save**.
+
+8. Repeat sub-steps 2-7 with Promotion Pricing, Administration Trial, Promotion Pricing, Calculation Trial, Promotion Pricing, Data Access Trial, Promotion Pricing, Data Upload Trial.  
+
+9. Navigate back to your subaccount.
+
+10. In the navigation pane open **Services > Service Marketplace**.
+
+11. In the notification box shown in the header choose **Enable Cloud Foundry**.
+
+12. Navigate back to your subaccount and choose **Create Space**.
 
 
 ### Set up roles and authorizations
 
 
-In order to use the apps provided with SAP Omnichannel Promotion Pricing, you must create a role collection and assign users to it. With the **Configure Omnichannel Promotion Pricing** app, you can maintain various parameters to influence the behavior of the **Calculation service**. With the **Maintain Promotions** app, you can create promotional rules and define, for example, eligibilities and rewards. Using the apps is not part of the tutorials.
+In order to use the apps provided with SAP Omnichannel Promotion Pricing, you must create a role collection and assign users to it. With the **Configure Omnichannel Promotion Pricing** app, you can maintain various parameters to influence the behavior of the **Calculation service**. With the **Maintain Promotions** app, you can create promotional rules and define, for example, eligibilities and rewards. Using the apps is optional and currently not described in the tutorials for the SAP Omnichannel Promotion Pricing trial.
 
 1. Navigate back to your subaccount.
 
 2. In the navigation pane, choose **Security > Role Collections**.
 
-3. Select the **+** icon to create a new role collection.
+3. Choose **Create** to create a new role collection.
 
 4. Enter a name and description and choose **Create**.
 
@@ -69,7 +93,18 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS`** from the dropdown list.
 
-7. Assign **User** or **User Groups** to your role collection and choose **Save**.
+7. Assign **User** or **User Groups** to your role collection and choose **Save**. 
+
+Optional: Once you have set up the roles and authorizations, you can do the following steps: 
+
+1. Navigate back to your subaccount. 
+
+2. Choose **Services > Instances and Subscriptions**. 
+
+3. In Application, next to SAP Omnichannel Promotion Pricing, choose the three dot symbol **°°°** and  **Go to Application**.  
+
+4. In the **Application Plans** section you can make configuration settings in the **Configure Omnichannel Promotion Pricing** app and you can maintain promotions in the **Maintain Promotions** app.  <!-- Using the app is optional and not part of the basic tutorial but is included in our advanced tutorial.-->
+<!-- Add link to advanced tutorial once available -->
 
 
 
