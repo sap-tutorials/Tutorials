@@ -117,7 +117,7 @@ For additional details, see [Creating SAP HANA Cloud Instances Using Terraform](
     Additional details can be found at [btp_subaccount_entitlement](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount_entitlement) and [btp_subaccount (Resource)](https://registry.terraform.io/providers/SAP/btp/latest/docs/resources/subaccount).
 
 2. Provide credentials for Terraform to use with the SAP BTP.
-
+    
     ```Shell (Microsoft Windows)
     set BTP_USERNAME=dan@hotmail.com
     set BTP_PASSWORD=mypassword
@@ -130,21 +130,21 @@ For additional details, see [Creating SAP HANA Cloud Instances Using Terraform](
   
 3. Apply the changes.
 
-      ```Shell
-      terraform apply -auto-approve
-      ```
+    ```Shell
+    terraform apply -auto-approve
+    ```
 
-      Alternatively, to view the changes that would be made run the command below.
+    Alternatively, to view the changes that would be made run the command below.
 
-      ```Shell
-      terraform plan
-      ```
+    ```Shell
+    terraform plan
+    ```
 
-      ![Provision a subaccount](provision-subaccount.png)
+    ![Provision a subaccount](provision-subaccount.png)
 
   4.  In the SAP BTP Cockpit, examine the subaccount and added entitlements.
 
-      ![View the subaccount](subaccount-created.png)
+    ![View the subaccount](subaccount-created.png)
 
 ### Use Terraform to subscribe to SAP HANA Cloud Central and assign a role collection
 1. Paste the following code at the end of `main.tf`.  Update the user_name value to match your SAP BTP user name.
