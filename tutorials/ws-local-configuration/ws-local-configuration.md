@@ -9,10 +9,10 @@ author_profile: https://github.com/felixdraeger
 ---
 
 # Set Up Local Configuration in SOAMANAGER
-<!-- description --> Learn how to set up local configuration in ABAP Web services to create the runtime configuration for multiple proxy entities.
+<!-- description --> Learn how to set up local configuration in ABAP web services to create the runtime configuration for multiple proxy entities.
 
 ## Prerequisites
-- Basic knowledge about Web services and SOAMANAGER
+- Basic knowledge about web services and SOAMANAGER
 - User in two development systems with permission to run transaction SOAMANAGER
 - Two development systems in which no local configuration exists yet
 - Service definition and a service group containing a service consumer, e.g. `srt_test_group` and `srt_test_provider` (available in every ABAP system)
@@ -39,7 +39,7 @@ In general, endpoints and logical ports often rely on the same settings, such as
 
 A set of consumer proxies is collected within a service group. The service definitions in the underlying profile create a relationship between the service group. In result, they can automatically configure the corresponding endpoints for each service definition and the corresponding logical ports for each consumer proxy.
 
-Another advantage is that the local configuration of a service group makes it possible to define so-called logical receiver determinations to route Web service messages to different provider systems.
+Another advantage is that the local configuration of a service group makes it possible to define so-called logical receiver determinations to route web service messages to different provider systems.
 
 In older releases or documentation, local configuration is often called smart configuration or mass configuration.
 
@@ -77,7 +77,7 @@ In a profile, a certain set of parameters is included which is then used for con
 
 
 
-### Create User account
+### Create a user account
 
 A user account stores credentials. These are then used to store them in the corresponding logical port. When the endpoint is called via the logical port of the consumer proxy, these stored credentials are used.
 
@@ -93,7 +93,7 @@ A user account stores credentials. These are then used to store them in the corr
 
 
 
-### Create a Provider System
+### Create a provider system
 
 A provider system describes the parameters and access to a system that contains the service definitions. In a provider system, a profile/version is referenced. The profile is then used during configuration to create parameters for the logical port.
 
@@ -136,7 +136,7 @@ A provider system describes the parameters and access to a system that contains 
 
     <!-- border -->![Services Registry settingsL](lc9.png)
 
-9. Choose **Next
+9. Choose **Next**.
 
 10. Choose **Retrieve Business Applications** and **Finish**.
 
@@ -144,7 +144,7 @@ A provider system describes the parameters and access to a system that contains 
 
 
 
-### Create profile and provider system in System B
+### Create a profile and a provider system in system B
 
 In system B, Repeat step 3 with the same settings as in system A, and 5 with the provider system settings below. Do not repeat step 4.
 
@@ -158,7 +158,7 @@ Use the following provider system settings:
 - Access URL for WSIL: Use the same WSIL URL as in step 5 (see step 5 **Enter access URL for WSIL**).
 
 
-### Create business scenario in System B
+### Create a business scenario in system B
 
 In system B, the service definitions are assigned to profiles which result in end points for the service definitions after configuration. The profile information is used during configuration to enrich the end points with the required parameter settings.
 
@@ -181,7 +181,7 @@ In system B, the service definitions are assigned to profiles which result in en
 8. Activate the integration scenario by choosing **Yes** in the pop-up window.
 
 
-### Create business scenario in System A
+### Create business scenario in system A
 
 In a business scenario, the setup is prepared for the logical ports and endpoints.
 
@@ -203,7 +203,7 @@ On consumer side, it is specified which consumer proxies need to be configured f
 
 7. Choose **Assign IBC Reference**.
 
-8. Choose your provider system from the list and click **Assign to Service Group**.
+8. Choose your provider system from the list. Ignore this **Is Configured** checkbox and choose **Assign to Service Group**.
 
     <!-- border -->![Service Group Assignment](lc3.png)
 
