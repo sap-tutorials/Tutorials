@@ -12,16 +12,16 @@ author_name: Lindsay Bert
 
 ## Prerequisites
  - You have created a destination in SAP BTP cockpit to the SAP Gateway Demo System
- - You have an environment set up and you can access your SAP Build Work Zone, advanced edition
+ - You have an environment set up and you can access SAP Build Work Zone, advanced edition
  - You have opened SAP Build Work Zone, advanced edition 
 
 ## You will learn
   - How to add a Web Dynpro ABAP backend application to your workpage
-  -
+
 
 
 ## Intro
-To add business apps to SAP Build Work Zone, advanced edition, you configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your site - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu and displays the business apps that the user has permissions to launch.
+To add business apps to SAP Build Work Zone, advanced edition, you configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your site. The page can be accessed from the top-level menu of the site and displays the business apps that a user has permissions to launch.
 
 ---
 
@@ -49,24 +49,25 @@ The **Content Manager** opens with the **My Content** tab in focus.
 ### Configure the Web Dynpro ABAP app
 
 
-1. In the **Content Manager**, click **+ New** and select **App** from the dropdown list.
+1. In the **Content Manager**, click **Create** and select **App** from the dropdown list.
 
     <!-- border -->![Add new app](4-new-app.png)
 
-    The app editor opens with the **PROPERTIES** tab in focus.
+    The app editor opens with the **Configuration** tab in focus.
+
 
 2. Enter the following values:
 
     |  Field     | Value
     |  :------------- | :-------------
-    |  Title           | `Search POs` In a workshop, use: `<your unique identifier>_Search POs`.
+    |  Title           | `Search POs`. In a workshop, use: `<your unique identifier>_Search POs`.
     |  System          | Select the value `ES5`. In a workshop use: `<your unique identifier>_ES5`.
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
 
     <!-- border -->![App properties](5-app-properties.png)
 
-3. In the **NAVIGATION** tab, enter these values:
+3. In the **Navitation** tab, enter these values:
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -75,23 +76,22 @@ The **Content Manager** opens with the **My Content** tab in focus.
 
     <!-- border -->![Add navigation properties](6-navigation-properties.png)
 
-4. In the **VISUALIZATION** tab, enter these values and then click **Save**.
+4. In the **Visualization** tab, enter these values and then click **Save**.
 
     |  Field     | Value
     |  :------------- | :-------------
     |  Subtitle           | `Search for Purchase Orders`
-    |  Icon          | Click the browse icon, type `activity-2`. You'll see two icons. Click the first one and then click **OK**.
+    |  Icon          | Click the browse icon, type `activity-2`. You'll see two icons. Click the first one to add it. 
+    
+    You can see all the visualization properties you defined in the preview tile.
 
     <!-- border -->![Add visualization properties](7-visualization-properties.png)
-
-
-
 
 
 ### View the app in the Content Manager
 
 
-Click the icon in the left side panel to open the **Content Manager**.
+Click **Content Manager** in the breadcrumbs in the top header to navigate back to the **Content Manager**.
 
   <!-- border -->![Back to Content Manager](8-back.png)
 
@@ -116,11 +116,13 @@ To view the app in runtime, you must assign the app to a role. You also need to 
 
     <!-- border -->![Edit everyone role](11-edit-role.png)
 
-3. Click the search box in the **Assignments** panel on the right, any available apps are shown in the list below.
+3. Click the search box to see any available apps in the list below.
 
-4. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role. You'll see that the icon changes to an **X**.
+    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Search`) to search for the app.
 
-5. Then click **Save**.
+4. In the **Assignment Status** column, drag the toggle switch to the right next to the `Search POs` app to assign this role to your app. You'll see that the icon changes.
+
+5. Click **Save**. 
 
     <!-- border -->![Assign app to role](12-assign-app-to-role.png)
 
@@ -132,19 +134,17 @@ The `Search POs` app is now assigned to the `Everyone` role. In the next step yo
 
 >A group is a set of one or more apps displayed together in the **Applications** page of your site. Assigning apps to groups, makes them visible to users.
 
-1. Click the icon in the side panel to navigate back to the **Content Manager**.
+1. Click **Content Manager** in the breadcrumbs in the top header to navigate back to the **Content Manager**.
 
-2. Click **+ New** and select **Group** to open the Group editor.
+2. Click **Create** and select **Group** to open the Group editor.
 
     <!-- border -->![Create a new group](13-new-group.png)
 
 3. Name the group `Purchase Orders`.
 
-4. In the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
+4. Click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
 
-5. In the list, click **+** to assign the `Search POs` app to your group.
-
-    You'll see that the icon changes to an **X**.
+5. IIn the **Assignment Status** column, drag the toggle switch to the right next to the `Search POs` app to assign it to the group. You'll see that the icon changes.
 
 6. Click **Save**.
 

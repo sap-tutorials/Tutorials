@@ -14,7 +14,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ## Prerequisites
  - Access to a non-trial SAP HANA data lake instance.
  - Python and/or some other REST API request tool.
- - [Download the sample TPCH Data](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/QRC_4_2021/en-US/6e1dd06335704f4c96d48279ca1ed555.html).
+ - [Download the sample TPCH Data](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/download-sample-tpch-data).
 
 ## You will learn
   - How to use the SAP HANA data lake File Store REST API.
@@ -32,11 +32,17 @@ First, in the top of a python script append the following and fill in the variab
 
 ```python
 import http.client
+import ssl
 
 FILES_REST_API='<File Container REST API>'
 CONTAINER = '<File Container ID>'
 CRT_PATH = '<Path to Client Certificate>'
 KEY_PATH= '<Path to Client Key>'
+
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+context.check_hostname = False
+context.verify_mode = ssl.CERT_NONE
+context.load_cert_chain(certfile=CRT_PATH, keyfile=KEY_PATH)
 ```
 
 
@@ -53,10 +59,8 @@ request_headers = {
     'x-sap-filecontainer': CONTAINER,
     'Content-Type': 'application/octet-stream'
 }
-connection = http.client.HTTPSConnection(
-    FILES_REST_API, port=443, key_file=KEY_PATH, cert_file=CRT_PATH)
-connection.request(
-    method="PUT", url=request_url, body=file, headers=request_headers)
+connection = http.client.HTTPSConnection(FILES_REST_API, port=443, context=context)
+connection.request(method="PUT", url=request_url, body=file, headers=request_headers)
 response = connection.getresponse()
 response.close()
 ```
@@ -81,10 +85,8 @@ request_headers = {
     'x-sap-filecontainer': CONTAINER,
     'Content-Type': 'application/json'
 }
-connection = http.client.HTTPSConnection(
-    FILES_REST_API, port=443, key_file=KEY_PATH, cert_file=CRT_PATH)
-connection.request(
-    method="GET", url=request_url, body=None, headers=request_headers)
+connection = http.client.HTTPSConnection(FILES_REST_API, port=443, context=context)
+connection.request(method="GET", url=request_url, body=None, headers=request_headers)
 response = connection.getresponse()
 
 print(response.read())
@@ -104,7 +106,7 @@ request_headers = {
     'x-sap-filecontainer': CONTAINER,
     'Content-Type': 'application/json'
 }
-connection = http.client.HTTPSConnection(FILES_REST_API, port=443, key_file=KEY_PATH, cert_file=CRT_PATH)
+connection = http.client.HTTPSConnection(FILES_REST_API, port=443, context=context)
 connection.request(method="GET", url=request_url, body=None, headers=request_headers)
 response = connection.getresponse()
 print(response.read())
@@ -125,11 +127,8 @@ request_headers = {
     'Content-Type': 'application/json'
 }
 
-connection = http.client.HTTPSConnection(
-  FILES_REST_API, port=443, key_file=KEY_PATH, cert_file=CRT_PATH)
-
-connection.request(
-  method="GET", url=request_url, body=None, headers=request_headers)
+connection = http.client.HTTPSConnection(FILES_REST_API, port=443, context=context)
+connection.request(method="GET", url=request_url, body=None, headers=request_headers)
 
 response = connection.getresponse()
 
@@ -141,7 +140,7 @@ response.close()
 
 ### Explore and Experiment!
 
-These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include DELETE, APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
+These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/html/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include DELETE, APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
 
 To replicate these requests in other languages or HTTP tools, copy the request headers, FILES REST API + request URL, and body contents.
 

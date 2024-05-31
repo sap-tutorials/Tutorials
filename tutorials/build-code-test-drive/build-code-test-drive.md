@@ -4,7 +4,7 @@ author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product-function>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
 primary_tag: software-product>sap-build-code
 parser: v2
 ---
@@ -15,7 +15,6 @@ parser: v2
 
 ## You will learn
 - To leverage the power of Joule in SAP Build Code
-- To use the one-click deployment option in SAP Build Code
 
 
 ## Prerequisites
@@ -28,7 +27,7 @@ parser: v2
 >**Note** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different.
 
 1. Navigate to the SAP Build lobby.
-2. Click **Create** to start the creation process.
+2. Click **Create** to start the creation process.  
 <br>
     <!-- border -->![Create](create1.png)
 
@@ -51,7 +50,7 @@ parser: v2
 
 8. Click **Create**.
     
-    <!-- border -->![Create](create-3.png)
+    <!-- border -->![Create](ClickCreate.png)
 
     You can see the project being created in the Project table of the lobby.  
     >The creation of the project may take a few moments.
@@ -75,7 +74,7 @@ Let's create an application for a customer loyalty program. The customer can get
 >**Note:** Joule is a Generative AI assistant that will create code for you. The code might be different every time you trigger the prompt, so the examples shown in the tutorial might not be exactly the same as what you see in your system.
 
 
-1. In the SAP Build Code development environment, open the digital assistant, Joule, from the activity bar.
+1. In SAP Business Application Studio, the SAP Build Code development environment, open the digital assistant, Joule, from the activity bar.
 
     <!-- border -->![Open Joule](21.png)
 
@@ -286,7 +285,7 @@ To display and test the content we created for the customer loyalty program, we 
 
     It might take a few moments for the UI to be created because the dependencies need to be installed. 
 
-6. Repeat this procedure for the **Customers** and the **Redemptions** entities.
+6. Repeat steps 2 through 5 to create additional UI apps for the **Customers** and the **Redemptions** entities.
 
     **Customer**:
 
@@ -306,10 +305,23 @@ To display and test the content we created for the customer loyalty program, we 
 
     And that's it! You've created an application.
 
-    To preview your application, once the files have been generated, go to the upper-right corner, and click ![preview](playgreen.png) (Run and Debug).
+7. To preview your application, once the files have been generated, go to the upper-right corner, and click ![preview](playgreen.png) (Run and Debug).
 
     <!-- border -->![open app preview](56.png)
 
     The application's preview is displayed.
 
-    <!-- border -->![app preview](57.png)
+    <!-- border -->![app preview](preview1.png)
+
+8. Click **Go**.
+
+    <!-- border -->![app preview](preview2.png)
+
+    The customer information is displayed.
+
+    <!-- border -->![app preview](preview3.png)
+
+9. From the dropdown list at the top of the page, select **Home** to go back and preview the other applications.
+
+    <!-- border -->![app preview](preview4.png)
+

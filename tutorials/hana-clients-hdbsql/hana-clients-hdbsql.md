@@ -190,7 +190,10 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
     CONNECT USER1 PASSWORD Password1;
     CREATE SCHEMA HOTEL;
     SET SCHEMA HOTEL;
+    GRANT SELECT ON SCHEMA HOTEL TO USER2;
+    GRANT SELECT ON SCHEMA HOTEL TO DBADMIN;
     SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
+
     ```
 
     Notice that the current user and schema have also changed from `DBADMIN` or `SYSTEM` to `USER1` and that the schema is now HOTEL.
@@ -249,6 +252,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 3. Copy the following SQL into the file `hotel.sql`.  
 
     ```SQL
+    --CONNECT USER1 PASSWORD Password1;
     SET SCHEMA HOTEL;
     CREATE COLUMN TABLE HOTEL(
       hno INTEGER PRIMARY KEY,
@@ -456,10 +460,9 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ```SQL
     --DO NOT EXECUTE UNLESS YOU ARE FINISHED WITH THE TUTORIAL
-    DELETE FROM HOTEL.CITY;
-    DROP TABLE HOTEL.CITY;
     DROP SCHEMA HOTEL CASCADE;
     DROP USER USER1 CASCADE;
+    DROP USER USER2 CASCADE;
     ```
 
 ### Interactive, non-interactive, substitution variables, and prepared statements

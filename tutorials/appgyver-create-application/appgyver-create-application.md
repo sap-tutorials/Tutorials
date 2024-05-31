@@ -1,8 +1,8 @@
 ---
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>mobile, sap-conversational-ai>sap-business-technology-platform]
-primary_tag: sap-conversational-ai>sap-build-apps
+tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-build-apps
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
