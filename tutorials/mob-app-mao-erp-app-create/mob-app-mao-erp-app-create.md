@@ -14,7 +14,7 @@ parser: v2
 ## Prerequisites
 - Access to your SAP BTP Subaccount and Space.
 - Access to the SAP Mobile Services service in your SAP BTP subaccount.
-- Implement SAP Notes 3371516 and 3377944 in your system to get the latest updates for the SAP Service and Asset Manager Mobile Services App Create transaction `/MERP/CPMS_APPCREATE`. Note 3371516 (component MOB-APP-MAO-FND) contains updates to the Mobile Services App Admin classes on which note 3377944 (component MOB-APP-MAO-ERP) depends on. Please ensure note 3371516 can be implemented in your system before implementing note 3377944.
+- Implement SAP Notes 3432545 and 3472370 in your system to get the latest updates for the SAP Service and Asset Manager Mobile Services App Create transaction `/MERP/CPMS_APPCREATE`. Note 3432545 (component MOB-APP-MAO-FND) contains updates to the Mobile Services App Admin classes on which note 3472370 (component MOB-APP-MAO-ERP) depends on. Please ensure note 3432545 can be implemented in your system before implementing note 3472370.
 
 ## You will learn
 - How to create and update an SAP Mobile Services app for the SAP Service and Asset Manager mobile app using the MS App Create transaction `/MERP/CPMS_APPCREATE`.
@@ -37,40 +37,40 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![AdminAPI](adminapi.png)
 
-2. The **SAP Cloud Connector Location Id**, **Virtual Host** & **Port** can be found in the **Cloud Connector** section of the SAP BTP Cockpit in your subaccount.
+2. The **SAP Cloud Connector Location Id** and **Virtual Host** can be found in the **Cloud Connector** section of the SAP BTP Cockpit in your subaccount.
 
     ![CCInfo](ccinfo.png)
 
-    1. The **SAP Cloud Connector Location Id** is within the parenthesis (i.e., `ConvergedCloud`). If there are no parenthesis, then the **SCC Location Id** is not required.
+    1. The **SAP Cloud Connector Location Id** is located within the parenthesis (i.e., `ConvergedCloud`). If there are no parenthesis, then the **SCC Location Id** is not required.
 
-    2. The **Virtual Host** and **Port** are separated by a colon (i.e., `<host>`:`<port>`).
+    2. The **Virtual Host** is located in the Host column of the Exposed Back-End Systems table. Please remove any leading or trailing spaces when copied.
 
 ### Create the Mobile Services App via the MS App Create Transaction
 
 1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your desired variant.
 
-2. Fill in the **Admin API**, **SCC Location Id**, **Virtual Host** & **Port**. Please review the **Background Job User** parameter (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (optional). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
+2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please review the **Background Job User** parameter (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (optional). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
 
     ![SelScreen](selscreen.png)
 
-    | Parameter                             | What's the use?                                                                                                                                                                                                                                      |
-    | :------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Cloud Foundry** or **Neo**          | Only the SAP BTP Cloud Foundry Environment is supported currently.                                                                                                                                                                                   |
-    | **MS Admin API or MW Server GUID**    | Used to establish a connection from the SAP Backend to the SAP Mobile Services service.                                                                                                                                                              |
-    | **OData Service Mobile App**          | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
-    | **OData Service Technical Name**      | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
-    | **OData Service Group Version**       | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
-    | **MS Application ID**                 | The unique application identifier given to the SAP Mobile Services app.                                                                                                                                                                              |
-    | **MS Application Name**               | The application name given to the SAP Mobile Services app.                                                                                                                                                                                           |
-    | **MS Application Description**        | The application description given to the SAP Mobile Services app.                                                                                                                                                                                    |
-    | **MS Vendor Name**                    | The vendor name given to the SAP Mobile Services app.                                                                                                                                                                                                |
-    | **MS Application Timeout**            | The maximum time in milliseconds before a client connection times out in your environment. After that timeout period, the connection is closed.                                                                                                      |
-    | **Enable Multiple Threads**           | Enable the use of up to 3 threads for Batch Requests sharing the same Sync Priority. The Sync Priority of a Batch Request is based on the corresponding OData Mobile Data Object configuration of the Entity Sets contained within a Batch Request.  |
-    | **SCC X.509 Virtual Host** & **Port** | Used to generate the URL for the Mobile Services Mobile Destinations                                                                                                                                                                                 |
-    | **Cloud Connector Location ID**       | Used to set **Cloud Connector Location Id** for the Mobile Services Mobile Destinations                                                                                                                                                              |
-    | **Background Job User**               | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
+    | Parameter                          | What's the use?                                                                                                                                                                                                                                      |
+    | :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | **Cloud Foundry** or **Neo**       | Only the SAP BTP Cloud Foundry Environment is supported currently.                                                                                                                                                                                   |
+    | **MS Admin API or MW Server GUID** | Used to establish a connection from the SAP Backend to the SAP Mobile Services service.                                                                                                                                                              |
+    | **OData Service Mobile App**       | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
+    | **OData Service Technical Name**   | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
+    | **OData Service Group Version**    | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
+    | **MS Application ID**              | The unique application identifier given to the SAP Mobile Services app.                                                                                                                                                                              |
+    | **MS Application Name**            | The application name given to the SAP Mobile Services app.                                                                                                                                                                                           |
+    | **MS Application Description**     | The application description given to the SAP Mobile Services app.                                                                                                                                                                                    |
+    | **MS Vendor Name**                 | The vendor name given to the SAP Mobile Services app.                                                                                                                                                                                                |
+    | **MS Application Timeout**         | The maximum time in milliseconds before a client connection times out in your environment. After that timeout period, the connection is closed.                                                                                                      |
+    | **MS App License Type**            | The Service Plan used by Mobile Services                                                                                                                                                                                                             |
+    | **SCC X.509 Virtual Host**         | Used to generate the URL for the Mobile Services Mobile Destinations                                                                                                                                                                                 |
+    | **Cloud Connector Location ID**    | Used to set **Cloud Connector Location Id** for the Mobile Services Mobile Destinations                                                                                                                                                              |
+    | **Background Job User**            | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
    
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
+    >**WARNING:** Any change that may affect the offline configuration (e.g., a new entity type is added to your mobile app configuration, or the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 3. If you are not using a Middleware Server with an RFC Destination with Basic Authentication enabled, then you should receive a sign-in prompt after executing the transaction. Please use your SAP BTP username and password to sign in.
 
@@ -84,13 +84,14 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![UpdateApp](updateapp.png)
 
-    | Feature                      | What is Updated?                                                                                                       |
-    | :--------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-    | **Mobile Offline Access**    | Updates the offline configuration of your app.                                                                         |
-    | **Mobile Connectivity**      | Updates the offline and online destination settings of your app.                                                       |
-    | **Mobile App Update**        | Assigns the feature to your app if not already assigned.                                                               |
-    | **Mobile Push Notification** | Updates the Predefined Global Push Configuration to **SAP ASSET MANAGER**                                              |
-    | **Usage Metering**           | Creates Usage Metering Middleware Server and Background Job. Existing Middleware Server and Background Job are deleted |
+    | Feature                             | What is Updated?                                                                                                                      |
+    | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+    | **Update Mobile Offline Access**    | Updates the offline configuration of your app.                                                                                        |
+    | **Update Usage Metering**           | Creates Usage Metering Middleware Server and Background Job. Existing Middleware Server and Background Job are deleted.               |
+    | **Compare Offline Configuration**   | Compare offline configuration properties, request groups and request download phases between the backend and the mobile services app. |
+    | **Update Mobile Connectivity**      | Updates the offline and online destination settings of your app.                                                                      |
+    | **Update Mobile App Update**        | Assigns the feature to your app if not already assigned.                                                                              |
+    | **Update Mobile Push Notification** | Updates the Predefined Global Push Configuration to **SAP ASSET MANAGER**.                                                            |
 
 ### Review the Created Mobile Services App
 
