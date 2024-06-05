@@ -84,12 +84,14 @@ If you want to consume the service via the user interface, you need to create a 
 4. In your subaccount, navigate to **Security**, and then **Role Collections** to select the role collection **`SAP Translation Hub Document Translation`** . Here you can configure which users or user groups get access to the application.
 
 5. In order to add users, click on **Edit**. To add individual users, enter their e-mail addresses under **Users**. You can use **Default identity provider**. You can add more users by using the **+** sign. 
+
     <!-- border -->
    ![Add users to role collection](05-add-roles.png)
 
 6. Click on **Save**. 
 
 7. Navigate back to **Instances and Subscriptions**. You can go to the application by using the shortcut or the menu option. 
+
     <!--border-->
    ![Access the application](05-open-application.png)
 
@@ -102,6 +104,7 @@ If you need API credentials (e.g., to use the service via one of the existing in
 1. Access the **Service Marketplace** and click on the service **SAP Translation Hub**.
 
 2. Under **Service Plans**, select the plan you want to use ( **`free`** or **`default`** ) and click on the button to **Create** a new instance.
+
     <!-- border -->
    ![Service instance](06-create-instance.png)
 
@@ -126,8 +129,10 @@ You are now able to create service bindings for your new service instance. Servi
 2. In the dialog, enter a binding name, such as **`demo-binding`** as the name of your service binding. Click **Create** to create the service binding.
 
 You have successfully created a service binding for your service instance. You can now either view the service binding in the browser or download it.
+
     <!-- border -->
    ![API credentials](08-API-credentials.png)
 
 You will need the values of the service bindings, for example, for the following:
+
 - [Enter credentials for Document Translation in SAP Enable Now](https://enablenowexpert.com/?p=714)
