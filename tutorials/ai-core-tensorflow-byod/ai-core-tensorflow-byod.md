@@ -100,10 +100,10 @@ for rg in response.resources:
 5. Upload all model files to your AWS S3 bucket. Edit and run the following commands.
 
     ```BASH[1-4]
-    aws s3 cp model.h5 s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp max_pad_len.txt s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp label_encoded_classes.npy s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp tokens.json s3://<YOUR_BUKCET_ID>/movie-clf/model/  
+    aws s3 cp model.h5 s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp max_pad_len.txt s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp label_encoded_classes.npy s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp tokens.json s3://<YOUR_BUCKET_ID>/movie-clf/model/  
 
     ```
 
@@ -114,7 +114,7 @@ for rg in response.resources:
 
 
     ```BASH[1]
-    aws s3 ls s3://<YOUR_BUKCET_ID>/movie-clf/model/
+    aws s3 ls s3://<YOUR_BUCKET_ID>/movie-clf/model/
     ```
 
     It should look like the following:
@@ -140,7 +140,7 @@ response = ai_core_client.object_store_secrets.create(
     type = "S3",
     name = "my-s3-secret1",
     path_prefix = "movie-clf",
-    endpoint = "s3.eu-central-1.amazonaws.com", # Change this
+    endpoint = "s3-eu-central-1.amazonaws.com", # Change this
     bucket = "asd-11111111-2222-3333-4444-55555555555", # Change this
     region = "eu-central-1", # Change this
     data = {
@@ -221,7 +221,7 @@ You should then see:
 
     <!-- border -->![img](img/acs/6_3.png)
 
-After yourGia workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
+After your workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
 
 
 ### Register model as artifact
