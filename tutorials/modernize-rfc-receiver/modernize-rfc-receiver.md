@@ -8,7 +8,7 @@ tags: [  software-product>sap-integration-suite, software-product>cloud-integrat
 primary_tag: software-product>sap-integration-suite
 ---
 
-# Learn how to modernize RFC Receiver Communications into API-Based protocols in Cloud Integration.
+# Learn How to Modernize RFC Receiver Communications into API-Based Protocols in Cloud Integration
 <!-- description --> This tutorial describes the different possibilities regarding generating SOAP Web Services or ODATA APIs using the existing RFC Function Module for a ABAP backend system (e.g., SAP S/4HANA, ECC) inbound communication. 
 Besides leveraging more modern monitoring capabilities, it allows you an easier migration of your scenarios from SAP Process Orchestration to SAP Integration Suite.
 
@@ -29,7 +29,6 @@ On this Tutorial, we **won't** cover:
 
   - ABAP techniques and best practices.
 
----
 
 ### Generate Service Provider from RFC Function Module
 
@@ -77,7 +76,6 @@ A Service Provider is created when your requirement is to expose a Web Service i
 
     > Please note that by doing this, you don't have to re-implement your code on the new service or similar. The new Web Service will wrap the existing Function Module code.
 
----
 
 ### Configure Service Binding in SOAMANAGER
 
@@ -106,8 +104,7 @@ A Service Provider is created when your requirement is to expose a Web Service i
     ![Image](Ref/sp_14_2.png)
 
     ![Image](Ref/sp_14_3.png)
-
----
+ 
 
 ### Test the Service Provider
 
@@ -124,8 +121,7 @@ A Service Provider is created when your requirement is to expose a Web Service i
     ![Image](Ref/16.png)
 
     ![Image](Ref/16_2.png)
-
----
+ 
 
 ### Setting up SOAP Receiver Adapter on Cloud Integration 
 
@@ -138,8 +134,7 @@ A Service Provider is created when your requirement is to expose a Web Service i
 2.  Select the WSDL as described below.
  
     ![Image](Ref/SP_16.png)
-
----
+ 
 
 ### [OPTIONAL] Re-Generate Service Provider
 
@@ -154,8 +149,7 @@ If you need to update the structures of your Web Service, proceed as described b
 3.  Confirm the operation and activate the object.
    
     ![Image](Ref/sp_18.png)
-
----
+ 
 
 ### Test yourself 
 
@@ -164,5 +158,3 @@ If you need to update the structures of your Web Service, proceed as described b
 
 
 
-
----

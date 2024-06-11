@@ -8,7 +8,7 @@ tags: [  software-product>sap-integration-suite, software-product>cloud-integrat
 primary_tag: software-product>sap-integration-suite
 ---
 
-# Learn how to modernize RFC Sender Communications into API-Based protocols in Cloud Integration.
+# Learn How to Modernize RFC Sender Communications into API-Based protocols in Cloud Integration
 <!-- description --> This tutorial describes the different possibilities regarding generating SOAP Web Services using the existing RFC Function Module for a ABAP backend system (e.g., SAP S/4HANA, ECC) outbound communication. 
 Besides leveraging more modern monitoring capabilities, it allows you an easier migration of your scenarios from SAP Process Orchestration to SAP Integration Suite.
 
@@ -29,7 +29,6 @@ On this Tutorial, we **won't** cover:
 
   - ABAP techniques and best practices.
 
----
 
 ### Generate Service Consumer from RFC Function Module
 
@@ -79,7 +78,6 @@ A Service Consumer is created when your requirement is to communicate from an AB
 
     ![Image](Ref/4.png)
 
----
 
 ### Setting up SOAP Sender Adapter on Cloud Integration 
 
@@ -97,7 +95,6 @@ A Service Consumer is created when your requirement is to communicate from an AB
  
     ![Image](Ref/100.png)
 
----
 
 ### Configure a Logical Port in SOAMANAGER
 
@@ -140,7 +137,6 @@ A Service Consumer is created when your requirement is to communicate from an AB
     ![Image](Ref/13.png)
 
 
----
 
 ### Update your ABAP source code
 
@@ -191,7 +187,6 @@ The code above can be replaced with the following ABAP code in order to invoke t
 
 After proceeding with the changes on your ABAP code, don't forget to `Save` and `Activate` your code.
 
----
 
 ### Test the Service Consumer
 
@@ -209,7 +204,6 @@ After proceeding with the changes on your ABAP code, don't forget to `Save` and 
 
     ![Image](Ref/16_2.png)
 
----
 
 ### [OPTIONAL] Re-Generate Service Consumer
 
@@ -226,7 +220,6 @@ If you need to update the structures of your Web Service, you have two options:
     ![Image](Ref/50.png)
 
 
----
 
 ### Test yourself 
 
@@ -235,5 +228,3 @@ If you need to update the structures of your Web Service, you have two options:
 
 
 
-
----
