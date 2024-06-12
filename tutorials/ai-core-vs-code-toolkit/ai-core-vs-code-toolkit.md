@@ -13,6 +13,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 - Understanding Of SAP AI Core
+- Installing SAP AI Core toolkit VS Code extension
 
 ## You will learn
 - Setup Vs code Toolkit
@@ -115,7 +116,7 @@ In the same directory, create a file named `Dockerfile` with **no extension**. T
 ```TEXT
 # Specify which base layers (default dependencies) to use
 # You may find more base layers at https://hub.docker.com/
-FROM python:3.7
+FROM python:3.11
 #
 # Creates directory within your Docker image
 RUN mkdir -p /app/src/
@@ -143,7 +144,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
-docker buildx build –load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+docker buildx build --load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
@@ -186,7 +187,7 @@ docker push docker.io/<YOUR_USERNAME>/house-price:01
 
 Here we will be adding our GitHub repository to AI core.
 
-**Step 1:** Select Ai core connection > Go inside admin operations > right click on GitHub repository and click on create git repository.
+**Step 1:** Select Ai core connection > Go inside admin operations > right click on GitHub repository and click on "Register git repository".
 
 <!-- border -->![](img/Adding_GitHub1.png)
 
@@ -207,11 +208,9 @@ Step 3: Fill the details GitHub URL, Name for GitHub, Username, password/token a
 
 <!-- border -->![](img/Adding_GitHub6.png)
 
-
-
 ### Creating an application
 
-Here we are adding an application from the GitHub repository we added to AI core.
+Here we add an application from the GitHub repository we just added to AI core.
 
 **Step 1:** Select Ai core connection > Go inside admin operations > right click on Applications and click on Register Application. A Pop up will open
 
