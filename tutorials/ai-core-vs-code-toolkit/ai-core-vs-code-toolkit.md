@@ -217,7 +217,8 @@ Here we add an application from the GitHub repository we just added to AI core.
 <!-- border -->![](img/Creating_application1.png)
 
 
-Step 2: Fill the details like application Name, GitHub URL, For following this tutorial enter Git version as HEAD (you can choose any specific commit too for the same repository If you are using Head make sure its in CAPS) also enter the path to Argo templates and press enter. This would mark as Completion of registering an application.
+Step 2: Fill the details like application Name, GitHub URL, For following this tutorial enter Git version as HEAD (you can choose any specific commit for the same repository, but if you are using HEAD make sure it's in uppercase), also enter the path to Argo templates and press enter. 
+This would mark as Completion of registering an application.
 
 **Please follow screenshots below**
 
@@ -311,15 +312,17 @@ Step 1: Select Ai core connection > Go inside ML operations > > Go inside ML Sce
 
 <!-- border -->![](img/Artifact1.png)
 
-Step 2: Enter the artifact name for reference, choose type as dataset and enter the artifact URL as : AI://<object\_credStore\_name>/Path\_to\_dataset, and the description for your reference. **In our case it would be ai://default/data**
+Step 2: Enter the artifact name for reference, choose type as dataset and enter the artifact URL as _AI://<object\_credStore\_name>/Path\_to\_dataset_, and the description for your reference.
 
 A pop-up will appear on the screen enter the values as per the screenshots below.
 
 <!-- border -->![](img/Artifact2.png)
 
-**Choose dataset.**
+**Choose dataset as an artifact type.**
 
 <!-- border -->![](img/Artifact3.png)
+
+**Choose ai://default/data as an artifact URL**
 
 <!-- border -->![](img/Artifact4.png)
 
