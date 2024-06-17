@@ -29,7 +29,8 @@ parser: v2
 1. Navigate to the SAP Build lobby.
 2. Click **Create** to start the creation process.  
 <br>
-    <!-- border -->![Create](create1.png)
+
+    <!-- border -->![Create](1.2red.png)
 
 3. Click the **Build an Application** tile.
 
@@ -41,7 +42,7 @@ parser: v2
 
 5. Click the **Full-Stack Application** tile.
    
-    <!-- border -->![Select Full-Stack Application](15red.png)
+    <!-- border -->![Select Full-Stack Application](tutorial2_1_5red.png)
 
 6. Enter a name for your project.
 
