@@ -44,13 +44,13 @@ Perform these preparatory steps to set up your system for creating your business
 4. Open the booster to see the overview, components, and additional resources, and click **Start**.
 
    
-    <!-- border -->![Booster Information](start_booster2.png)
+    <!-- border -->![Booster Information](booster1.png)
 
     The booster checks for required authorizations, compatible providers, and regions, as prerequisites for successful execution.
 
 5. After running the booster, in the popup window, click **Navigate to Subaccount**.
     
-    <!-- border -->![Navigate to Subaccount](navigate-subaccount.png)
+    <!-- border -->![Navigate to Subaccount](tutorial1_5red.png)
 
 
 ### Verify Subscription
