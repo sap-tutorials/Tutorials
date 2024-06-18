@@ -232,7 +232,7 @@ def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIM
         print(color.RED + '\nGenerating LLM prompt using the context information.' + color.END)
     else:
         print(color.RED + 'Generating LLM prompt WITHOUT context information.' + color.END)
-    prompt = promptTemplate.format(query=query, context=' '.join(df_context['TEXT'].astype('string')))
+    prompt = promptTemplate.format(query=query, context=context)
     print(color.RED + '\nAsking LLM...' + color.END)
     llm = ChatOpenAI(proxy_model_name='gpt-4', proxy_client=proxy_client)
     response = llm.invoke(prompt).content
@@ -341,7 +341,7 @@ from gen_ai_hub.proxy.langchain.openai import ChatOpenAI
 from gen_ai_hub.proxy.core.proxy_clients import get_proxy_client
 proxy_client = get_proxy_client('gen-ai-hub') # for an AI Core proxy
 
-def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIMILARITY', k = 4) -> str:
+def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIMILARITY', k=4) -> str:
 
     class color:
         RED = '\033[91m'
@@ -357,7 +357,6 @@ def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIM
         print(color.RED + '\nGenerating LLM prompt using the context information.' + color.END)
     else:
         print(color.RED + 'Generating LLM prompt WITHOUT context information.' + color.END)
-    df_context = run_vector_search(query=query, metric="COSINE_SIMILARITY",k=1)
     prompt = promptTemplate.format(query=query, context=' '.join(str(df_context)))
     print(color.RED + '\nAsking LLM...' + color.END)
     llm = ChatOpenAI(proxy_model_name='gpt-4', proxy_client=proxy_client)
