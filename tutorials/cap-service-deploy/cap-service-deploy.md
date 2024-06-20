@@ -75,10 +75,6 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
     ```
     > `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
 
-    > Don't edit the `gen/db/package.json` file.
-
-
-
 ### Identify SAP BTP Cloud Foundry endpoint
 
 The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI.
@@ -110,6 +106,8 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
     > If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
 
 ### Deploy using cf deploy
+
+> Make sure that your SAP HANA Cloud instance is running, see Prerequisites, before you go on with this step.
 
 SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
 

@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>javascript]

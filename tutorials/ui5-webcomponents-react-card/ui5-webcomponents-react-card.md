@@ -23,15 +23,15 @@ There you can try out the different components and also take a look at the codin
 
 ---
 
-### Add components to MyApp.jsx
+### Add components to MyApp.tsx
 
 First you need to import the components you want to use.
 
 You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react). Take your time to play around a little, change some `props` and take a look at the coding.
 
-1. Start with importing a `Card` component into your `MyApp.jsx` file (right below the existing import statement).
+1. Start with importing a `Card` component into your `MyApp.tsx` file.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { Card } from "@ui5/webcomponents-react";
     ```
 
@@ -39,7 +39,7 @@ You can check out all available components in the [Storybook](https://sap.github
 
     In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/4-ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add some text as `children`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <div>
       <Card>This is the content area of the Card</Card>
     </div>
@@ -51,7 +51,7 @@ Your webpage should now look like this.
 
 And the file like this:
 
-```JavaScript / JSX
+```TypeScript / TSX
 import { Card } from "@ui5/webcomponents-react";
 
 export function MyApp() {
@@ -71,13 +71,13 @@ The heading area of the `Card` component is empty, this is because it didn't rec
 
 1. Import the `CardHeader`.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { Card, CardHeader } from "@ui5/webcomponents-react";
     ```
 
 2. Add the `CardHeader` component to your `Card` and give it a title by setting the `titleText` prop:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <div>
       <Card header={<CardHeader titleText="Card" />}>
         This is the content area of the Card
@@ -87,15 +87,15 @@ The heading area of the `Card` component is empty, this is because it didn't rec
 
 2. Now the `Card` has a header area, but the `font-family` of the content area differs from the `Card` header. All UI5 Web Components for React components use the same styling, this includes `font-family`, `color`, etc.  
 
-     Add the `Text` import to your `MyApp.jsx` file.
+     Add the `Text` import to your `MyApp.tsx` file.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
     ```
 
     And wrap the text within the `Text` component.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <div>
       <Card header={<CardHeader titleText="Card" />}>
         <Text>This is the content area of the Card</Text>
@@ -109,13 +109,13 @@ The `font-family` of the content now corresponds to the `font-family` of the hea
 
 ### Style your component
 
-In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using normal CSS or even authoring tools like [JSS](https://cssinjs.org/?v=v10.0.0), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
+In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)) or even authoring tools like [JSS](https://cssinjs.org), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
 
 The Card now spreads across the whole screen, this behavior is intended so it takes up the whole space of its container.
 
 1. To restrict the `width` of the `Card`, add the `style` prop.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card header={<CardHeader titleText="Card" />} style={{ width: "300px" }}>
       <Text>This is the content area of the Card</Text>
     </Card>
@@ -128,28 +128,27 @@ The Card now spreads across the whole screen, this behavior is intended so it ta
     Execute this in your terminal:
 
     ```Shell
-    npm install @ui5/webcomponents-react-base --save
+    npm install @ui5/webcomponents-react-base
     ```
 
     Then import:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     import { spacing } from "@ui5/webcomponents-react-base";
     ```
 
     And finally add this to your `Text` component:
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Text style={spacing.sapUiContentPadding}>
       This is the content area of the Card
     </Text>
     ```
     Hereby you get a standardized content-padding. `spacing` comes with many more properties, feel free to test them and see what they do.
 
-After this step `MyApp.jsx` should look like this:
-```JavaScript / JSX
-import React from "react";
-import { Card, Text, CardHeader } from "@ui5/webcomponents-react";
+After this step `MyApp.tsx` should look like this:
+```TypeScript / TSX
+import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 
 export function MyApp() {
@@ -174,7 +173,7 @@ And your application like this:
 
 1. The Card header can also be clickable. For this you need to set its `interactive` prop to true.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={<CardHeader titleText="Card" interactive />}
       ...
@@ -185,7 +184,7 @@ And your application like this:
 
 2.  To make the header react to a click, add a function as value to the `onClick` prop.
 
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     <Card
       header={
         <CardHeader
@@ -199,7 +198,7 @@ And your application like this:
     ```
 
 3. Now, add the callback function right in the beginning of the component (definition function):
-    ```JavaScript / JSX
+    ```TypeScript / TSX
     export function MyApp() {
       const handleHeaderClick = () => {
         alert("Header clicked");
@@ -208,8 +207,7 @@ And your application like this:
     ```
 
 The file now looks like this:
-```JavaScript / JSX
-import React from "react";
+```TypeScript / TSX
 import { Card, Text, CardHeader } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 

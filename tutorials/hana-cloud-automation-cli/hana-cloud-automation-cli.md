@@ -151,7 +151,7 @@ The CLI used depends on whether the SAP HANA Cloud instances were provisioned to
 
 [Cloud Foundry CLI (CF CLI)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-cloud-foundry-command-line-interface-cf-cli-with-sap-hana-cloud) can be used to create, update, configure, or delete instances provisioned in a Cloud Foundry space.  Further details can be found at [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) and [Cloud Foundry Releases](https://github.com/cloudfoundry/cli/releases).
 
-[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool  ](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
+[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
 
 The following steps will provide examples of each CLI as well as accessing the SAP Service Manager REST API.  **Please install one or more of the CLIs before proceeding.**
 
@@ -233,7 +233,7 @@ The subaccount ID can be obtained on the BTP Cockpit Overview page for the subac
 ![subaccount ID](subaccount-id.png)
 
 #### Create an instance
-In order to create an instance, a JSON describing the instance is required and a plan ID.
+In order to create an instance, JSON describing the instance is required as well as a plan ID.
 
 * Create a JSON file named **create.json** that specifies the parameters of the instance to be created.  The JSON can be generated in the SAP HANA Cloud Central instance creation wizard or can come from an existing instance.
 
@@ -465,6 +465,7 @@ An SAP HANA Cloud database instance may be cloned.  As an example, you may wish 
     ![add data lake](add-data-lake.png)
 
 2. Create a file named **clone-template.json** with the contents below and modify it as appropriate.
+    
     ```JSON
     {
         "data": {
@@ -640,7 +641,7 @@ Log on to Cloud Foundry using an API endpoint.
     ![cf login](cf-login.png)
 
 #### Create an instance
-In order to create an instance, a JSON describing the instance is required as is a service offering name and plan.
+In order to create an instance, JSON describing the instance is required, as well as a service offering name and plan.
 
 * Create a JSON file named **create.json**.
 
@@ -713,12 +714,6 @@ cf services
 
 ```Shell
 cf service HC_HDB_CF
-```
-
-or
-
-```Shell
-cf service HC_HDB_CF --params
 ```
 
 ![cf service details](cf-service-details.png)

@@ -10,7 +10,7 @@ parser: v2
 ---
 
 # Create simple CAP Service with Node.js using the SAP Business Application Studio
-<!-- description --> Use SAP Business Application Studio to develop a basic CAP Node.js service for Cloud Foundry. You will use only simple JavaScript functions (no database) and learn some basics from the SAP Cloud Application Programming Models (CAP).
+<!-- description --> Use SAP Business Application Studio to develop a basic CAP Node.js service for Cloud Foundry. You will use only simple JavaScript functions (no database) and learn some basics from the SAP Cloud Application Programming Model (CAP).
 
 ## You will learn
   - How to create a Dev Space in SAP Business Application Studio
@@ -36,11 +36,11 @@ In this tutorial group you will learn all the steps to finally consume a CAP Ser
 <!-- border -->![steps](Steps.png)
 
 ## The Use Case
-In this series of tutorials, You will implement a CAP Service with very easy functions like converting a String to a number, converting a list of ids to a comma separated String and finally consume the CAP Service API functions in SAP Build Process Automation Process.
+In this series of tutorials, you will implement a CAP Service with very easy functions like converting a String to a number, converting a list of ids to a comma separated String and finally consume the CAP Service API functions in SAP Build Process Automation Process.
 
 
 ---
-### Create your preconfigured dev space
+### Create your pre-configured dev space
 
 1. Open **SAP Business Application Studio**.
 
@@ -48,11 +48,11 @@ In this series of tutorials, You will implement a CAP Service with very easy fun
 
     <!-- border -->![Create DEV Space](step2-newicon-create-dev-space.png)
 
-3. Use name **`demo`** for your dev space and select kind **`Full-Stack Cloud Application Using Productivity Tools`**. 
+3. Use name **`demo`** for your dev space and select kind **`Full-Stack Application Using Productivity Tools`**. 
 
     <!-- border -->![name](CreateNameKind.png)
 
-    >By selecting **Full-Stack Cloud Application Using Productivity Tools**, your dev space comes with several extensions out-of-the-box that you need to develop CAP services.
+    >By selecting **Full-Stack Application Using Productivity Tools**, your dev space comes with several extensions out-of-the-box that you need to develop CAP services.
 
 4.  Choose **Create Dev Space**.
 
@@ -69,34 +69,21 @@ In this series of tutorials, You will implement a CAP Service with very easy fun
 
 ### Create a Project
 
-1. We will not create a project using the wizard, choose **Cancel**.
-
-    <!-- border -->![create project](CreateProject.png)
-
-2. Close the **Home** tab, choose **X**.
-
-    <!-- border -->![close hometab](CloseHomeTab.png)
-
-3. Use the **File** menu to create a **New Project from Template**.
+1. Use the **File** menu to create a **New Project from Template**.
 
     <!-- border -->![file menu](FileMenu.png)
 
-4. Choose **CAP Project** from the templates and choose **Start**.
+2. Choose **CAP Project** from the templates and choose **Start**.
 
     <!-- border -->![cap project](NewCAP-1.png)
 
-5. Enter the **CAP Project Details**, use name **`sap-build-cap-sample-library`**, select **`MTA based...`**  and choose **Finish**.
+3. Enter the **CAP Project Details**, use name **`sap-build-cap-sample-library`**, select **`Cloud Foundry: MTA Deployment`**  and choose **Finish**.
 
     >Runtime **Node.js** is already selected.
 
     <!-- border -->![finish](ProjectDetails.png)
 
-6. Close the **Home** and **Guided Development** tabs, we are not using them. 
-
-    <!-- border -->![guidedHome](GuidedHomeTab.png)
-
-
-7. Change the view from **Project Explorer** to **Explorer**, choose **View** > **Explorer**.
+4. Change the view from **Project Explorer** to **Explorer**, choose **View** > **Explorer**.
 
     <!-- border -->![guidedHome](ViewExplorer.png)
 
@@ -307,52 +294,60 @@ This step describes how to test the service locally using a file that contains t
 
 ### Deploy your Service to Cloud Foundry
 
-We will use a script to build and deploy the service.
+1. Select the package.json file and copy and paste the following code after `scripts`:
 
-1. On the **`sap-build-cap-sample-library`** folder, create a new file called **`script.sh`**.
+    ```JSON
+    ,
+    "cds": {
+    "requires": { "auth": { "kind": "dummy" }}
+    }
+    ```
 
-2. Select the file **`script.sh`** and copy the following content into the editor.
+    <!-- border -->![Update package json](PackageJson.png)
+
+2. Run the following command in the Terminal window:
 
     ```Shell / Bash
-    # set API endpoint and login to Cloud Foundry
-    cf api https://api.cf.us10-001.hana.ondemand.com
-    cf login
-    # some needed npm settings
-    npm update --package-lock-only
-    npm set registry=https://registry.npmjs.org/
-    # build the service locally
-    mbt build -t gen --mtar mta.tar
-    # deploy the service to the BTP space
-    cf deploy gen/mta.tar
-    # generate the openAPI spec for the service, used to create the Action project
-    cds compile srv --service all -o docs --to openapi
+    npm install
     ```
+
+3. Right click on the file mta.yaml and select Build MTA Project.
+
+    <!-- border -->![Build MTA Project](BuildProject.png)
+
+    The service gets built, wait until the tasks are completed.
 
 4. Check your API endpoint definition.
 
     Check in BTP Cockpit, if the API Endpoint of your Cloud Foundry environment is matching the information you used for the script https://api.cf.us10-001.hana.ondemand.com
 
-    <!-- border -->![endpont](APIEndpoint.png)
+    <!-- border -->![endpoint](APIEndpoint.png)
 
+5. Under `mta_archives`, right click on `sap-build-cap-sample-library_1.0.0.mtar` and select Deploy MTA Archive.
 
-5. Run the following command in the **Terminal** window:
+    <!-- border -->![Deploy MTA Archive](DeployMTAArchive.png)
 
-    ```Shell / Bash
-    bash script.sh
-    ```
+    You will provide your login information to sign in to the Cloud Foundry environment.
 
-6. During script execution, when asked for:
+6. Validate the Cloud Foundry Endpoint and enter your username and password. 
+   
+    > In case you are using two factor authentication, you need to append the One-time password code to your password.
 
-       - your login information, enter **Email** and **Password**
+    > If you select the SSO Passcode authentication method, SAP Business Technology Platform will grant you a temporary authentication code to sign in.
 
-       - your space, on trial **dev** is created as default Cloud Foundry space
+    <!-- border -->![Cloud Foundry Sign in](CloudFoundrySignIn.png)
 
-    <!-- border -->![exec script](CFLogin.png)
+7. Select Cloud Foundry Organization and Space.
+   
+    > On trial, **dev** is created as default Cloud Foundry space
 
+    <!-- border -->![Cloud Foundry Target](CloudFoundryTarget.png)
 
->Once the tasks are completed, your service should be available and running in your Cloud Foundry space. Also a file with the **openAPI** specification is created. This file will be used in a next tutorial.
+    Your service should be available and running in your Cloud Foundry space.
 
->In the **BTP Cockpit** you can check if the service is running:
+    In the **BTP Cockpit** you can check if the service is running:
 
-><!-- border -->![service started](ServiceStarted.png)<div>&nbsp;</div>
+    <!-- border -->![service started](ServiceStarted.png)
+
+---
 

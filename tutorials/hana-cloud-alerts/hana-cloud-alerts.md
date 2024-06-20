@@ -22,15 +22,13 @@ Alerts can inform you of potential issues before they occur, such as when the nu
 
 You can find details of any raised alerts through the alerts app in SAP HANA Cloud Central or by using the [REST API](hana-cloud-alerts-rest-api) (SAP HANA database). This is known as a pull approach.
 
-Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
+Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.  A list of built-in events can be found at [SAP HANA Cloud Service Database Events](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/sap-hana-cloud-service-database-events).
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
 ### Examine SAP HANA Cloud, HANA Database alert definitions
-
-
 In this step, the SAP HANA cockpit will be used to examine three alert definitions.
 
 1. Open the SAP HANA cockpit from HANA Cloud Central.
@@ -41,7 +39,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
     ![alerts app in the cockpit](alerts-app-cockpit.png)
 
-    > The SAP HANA Cockpit also has an alerts app to view triggered alerts but it only includes alerts from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
+    >SAP HANA Cloud Central also has an alerts app to view triggered alerts.  It displays alerts for all instances in a subaccount and additionally displays additional alerts that do not originate from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
 
 3. The three alerts that will be triggered in step 2 of this tutorial are shown below.
 
@@ -255,7 +253,7 @@ The SAP Business Technology Platform (BTP) includes a service called the SAP Ale
 
 For an overview of the SAP Alert Notification service for SAP BTP and information about the different service plans including free tier, see [SAP Alert Notification service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification?region=all&tab=service_plan) in the SAP Discovery Center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
 
-In this step, SAP ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of SAP ANS will be created.  Then, two conditions will be created; one that matches notifications sent from a SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
+In this step, the Alert Notification Service will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the Alert Notification Service will be created.  Then, two conditions will be created; one that matches notifications sent from a SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
 
 1. Create an instance of the Alert Notification service in the SAP BTP Cockpit.
 

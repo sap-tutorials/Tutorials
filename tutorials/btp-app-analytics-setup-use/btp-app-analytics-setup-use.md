@@ -31,6 +31,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 SAP Fiori elements is a framework that comprises the most commonly used floor plans and is designed to:
@@ -167,9 +181,9 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Add the following lines to it:
 
-    ```JSON[24-70]
+    ```JSON[25-70]
     {
-        "_version": "1.40.0",
+        "_version": "1.59.0",
         "sap.app": {
             ...
         },
@@ -184,15 +198,15 @@ The application is now generated and in a few seconds you can see it in the `app
                     ...
                 ],
                 "targets": {
-                "RiskAnalysisList": {
+                "RisksAnalysisList": {
                     ...
                     "options": {
                         "settings": {
                             ...
                             "navigation": {
                             ...
-                            },
-                            "initialLoad": true,
+                            }
+                            ,"initialLoad": true,
                             "views": {
                                 "paths": [
                                     {
@@ -241,7 +255,7 @@ The application is now generated and in a few seconds you can see it in the `app
                                 }
                             }
                     },
-                    "RiskAnalysisObjectPage": {
+                    "RisksAnalysisObjectPage": {
                         ...
                     }
                 }
@@ -468,6 +482,8 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
     !![Dashboard](fea_result_page.png)
 
+<!--
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -518,7 +534,7 @@ Let us add the `Risk Analysis` application to the launch page where you already 
 
     !![Launchpage](fea_Launchpage.png)
 
-
+ -->
 [VALIDATE_1]
 The result of this tutorial can be found in the [`analytics`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/analytics) branch.
 

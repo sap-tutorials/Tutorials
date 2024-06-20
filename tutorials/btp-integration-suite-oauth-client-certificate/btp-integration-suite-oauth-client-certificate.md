@@ -75,7 +75,7 @@ Define a service instance. With a service instance, you define how to access a c
 ### Define Service Key
 
 
-You now define a service to go along to your service instance.
+You now define a service to go along to your service instance in the cockpit.
 
 1. Select the newly created service instance.
 

@@ -11,6 +11,7 @@ author_profile: https://github.com/dhrubpaul
 # Ingest Live Data into your House Price Predictor with SAP AI Core
 <!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
 
+
 ## Prerequisites
 - You have knowledge on connecting code to AI workflows of SAP AI Core.
 - You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#).
@@ -26,8 +27,24 @@ By the end of the tutorial you will have two models trained on two different dat
 
 >**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
 
----
+>  **Please Note : In order to execute this tutorial you have  to upgrade to Standard Plan from Free Tier of AI Core.**
+ 
+> If you have run the first  two tutorials
 
+> 1.Quick Start Your first AI project using SAP AI Core
+
+> 2.Build a house Price predictor with SAP AI Core   
+
+> Using SAP AI Core Free Tier then you have fulfilled all your quota for execution with the free tier. If you have run the execution once then you cannot run any more executions.
+
+> As the Tutorials will need you to run multiple executions, hence you need to upgrade your AI Core Plan from free tier to Standard  as shown in the successive steps in the tutorial.
+
+
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_04_ingest_live_data_into_your_house_price_predictor_with_sap_ai_core/ingest-data-house-predictor.ipynb)
+
+---
 ### Modify AI code
 
 
@@ -427,7 +444,7 @@ You now know how to upload and use multiple datasets with SAP AI Core.
 List your files in your AWS S3 bucket by editing the following command:
 
 ```BASH
-aws s3 ls s3//<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
+aws s3 ls s3://<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 ```
 > **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a file called train, which is of type: comma separated value.
 
@@ -532,7 +549,37 @@ With your object store secret created, you can now reference any sub-folders to 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-> **IMPORTANT** Currently, SAP AI Launchpad offers no functionality to perform this step. Please perform this step using any one of the alternative options from the option tab.
+You can create the create artifact for first `train.csv` that we uploaded to `jan` folder by visiting Datasets tab under ML operations and clicking on ADD.
+
+<!-- border -->![image](img/ail/artifact1.jpg)
+
+Choose scenario as House Price (Tutorial) and click next.
+
+<!-- border -->![image](img/ail/artifact2.jpg)
+
+
+Enter name as `House Price Dataset 101` enter description for the dataset and click next.
+
+<!-- border -->![image](img/ail/artifact3.jpg)
+
+Enter the URL as `ai://mys3/data/jan` and click on next
+
+<!-- border -->![image](img/ail/artifact4.jpg)
+
+Enter the labels for your Dataset and click on Review
+
+<!-- border -->![image](img/ail/artifact5.jpg)
+
+You would be able to see all the details for the artifact you are trying to register just validate all the data and click on add.
+
+<!-- border -->![image](img/ail/artifact6.jpg)
+
+You would be able to see the artifact created in the datasets tab that can be located at ML operations > datasets.
+
+<!-- border -->![image](img/ail/artifact7.jpg)
+
+
+
 
 [OPTION END]
 
@@ -629,7 +676,7 @@ print(response.__dict__)
 
 You have learnt to add data artifacts, allowing you to ingest more data over time.
 
-### Important points to notice
+**Important points to notice**
 
 1. Notice the `url` used in above snippet is `ai://mys3/data/jan`, here `mys3` is the object store secret name that you created previously. Hence the path translates as `ai://<PATH_PREFIX_OF_mys3>/data/jan` which is the directory that your dataset file is located in.
 2. The `url` points to a directory, not a file, which gives you advantage that you can store multiple files in an AWS S3 directory and register the directory containing all files as a single artifact.
@@ -770,7 +817,8 @@ Use the artifact ID of the `jan` dataset and the placeholder names to create a c
     ]
 }
 ```
-### Important points
+
+**Important points**
 
 1. You bind the artifact in the section `inputArtifactBindings`, where `key` denotes the placeholder name from your workflow and `artifactId` is the unique ID of the artifact that you registered. In later steps, you will bind the `feb` dataset's artifact ID, to learn how the same workflow can be used with multiple datasets.
 
@@ -804,7 +852,7 @@ print(response.__dict__)
 
 <!-- border -->![image](img/aics/config.png)
 
-### Important points
+**Important points**
 
 1. You bind the artifact in the section `inputArtifactBindings`, where `key` denotes the placeholder name from your workflow and `artifactId` is the unique ID of the artifact that you registered. In later steps, you will bind the `feb` dataset's artifact ID, to learn how the same workflow can be used with multiple datasets.
 
@@ -1024,11 +1072,13 @@ Enter a configuration name and select your other details. Select your updated th
 
 Type `5` for the `DT_MAX_DEPTH` field and click **Next**.
 
-Attach the `feb` artifact that you have registered.
+Attach the `feb` artifact that you have registered and click **Review**.
 
 <!-- border -->![image](img/ail/config-f-2.png)
 
-Click **Review** > **Create**.
+click **Create**.
+
+![image](img/ail/create_conf.png)
 
 [OPTION END]
 
@@ -1089,12 +1139,13 @@ print(response.__dict__)
 
 ### Create another execution
 
-
 Use your new configuration to create an execution.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 Click **Create Execution** in the configuration details page.
+
+<!-- border -->![image](img/ail/create_exec.png)
 
 <!-- border -->![image](img/ail/output.png)
 
@@ -1140,6 +1191,35 @@ When your execution shows status **COMPLETED**, you will see that a new model ar
 
 Generating and associating metrics (model quality) will covered in a separate tutorial.
 
+### Schedule your execution (Optional)
+
+Go to executions and click on *Schedule*.
+
+![image](img/ail/sch1.png)
+
+Choose your scenario and click on **Next**.
+
+![image](img/ail/sch2.png)
+
+Choose your executable and click on **Next**.
+
+![image](img/ail/sch3.png)
+
+Choose your configuration and click on **Next**.
+
+![image](img/ail/sch4.png)
+
+Give a name for the schedule and set the time.
+
+![image](img/ail/sch5.png)
+
+Click **Create**.
+
+![image](img/ail/sch6.png)
+
+Now go to **Schedules** to see your schedules.
+
+![image](img/ail/sch7.png)
 
 ### Locate your model in AWS S3
 
@@ -1151,6 +1231,9 @@ aws s3 ls s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/model/<YOUR_EX
 ```
 
 You are listing the files in the path `example-dataset/house-price-toy/model/` because this is the value you set earlier for the `pathPrefix` variable, for your object store secret named `default`.
+
+
+
 
 <!-- border -->![image](img/aws-model.png)
 

@@ -80,7 +80,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 
 
-Congratulations, you have added the SAP HANA Cloud entitlements and subscribed to the multi-environment tools.  You now have the ability to [provision your trial instance of SAP HANA Cloud](hana-cloud-mission-trial-2) and start your journey.
+Congratulations, you have added the SAP HANA Cloud entitlements and subscribed to the multi-environment tools.  You now have the ability to [provision your trial instance of SAP HANA Cloud](hana-cloud-mission-trial-3) and start your journey.
 
 ### Get to know SAP BTP Cockpit
 SAP BTP Cockpit is a web-based interface used to manage SAP cloud applications, such as SAP HANA Cloud. This is where you can manage your SAP Business Technology Platform account and users as well as create new instances whenever necessary.  

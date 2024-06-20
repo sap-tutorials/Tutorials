@@ -9,22 +9,24 @@ parser: v2
 ---
 
 # Create a CAP Business Service with Node.js Using Visual Studio Code
+
 <!-- description --> Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 
 ## You will learn
-  - How to develop a sample business service using CAP and `Node.js`
-  - How to define a simple data model and a service that exposes the entities you created in your data model
-  - How to run your service locally
-  - How to deploy the data model to an `SQLite` database
-  - How to add custom handlers to serve requests that aren't handled automatically
+
+- How to develop a sample business service using CAP and `Node.js`
+- How to define a simple data model and a service that exposes the entities you created in your data model
+- How to run your service locally
+- How to deploy the data model to an `SQLite` database
+- How to add custom handlers to serve requests that aren't handled automatically
 
 ## Prerequisites
+
 - You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 18. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
 - (Windows only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) section of the CAP documentation.
 - You've installed an HTTP client, for example, [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
-
 
 ---
 
@@ -58,7 +60,6 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This lists the available `cds` commands. For example, use `cds --version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
-
 ### Install VS Code extension
 
 1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
@@ -76,7 +77,6 @@ Before you start, make sure that you've completed the prerequisites.
     > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
     > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
-
 
 ### Start project
 
@@ -140,6 +140,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
     npm install
     ```
+
 4. In the command line window run the following:
 
     ```Shell/Bash
@@ -221,6 +222,7 @@ After initializing the project, you should see the following empty folders:
     [cds] - launched at 18/05/2022, 19:49:32, in: 874.456ms
     [cds] - [ terminate with ^C ]
     ```
+
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
@@ -317,9 +319,9 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 ### Add initial data
 
-In VS Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
+In VS Code you will add plain CSV files in folder `db/data` to fill your database tables with initial data.
 
-1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
+1. In the `db` folder, choose **New File** and enter `data/my.bookshop-Authors.csv` to create a new folder `data` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
 
     ```CSV
     ID;name
@@ -329,7 +331,7 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
     170;Richard Carpenter
     ```
 
-2. In the newly created `csv` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
+2. In the newly created `data` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
 
     ```CSV
     ID;title;author_ID;stock
@@ -339,11 +341,12 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
     252;Eleonora;150;555
     271;Catweazle;170;22
     ```
+
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
+    > Make sure that you now have a folder hierarchy `db/data/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/data` folder.
 
-    > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
+    > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
@@ -383,18 +386,45 @@ Instead of using in-memory, you can also use persistent databases.
 2. Install `SQLite3` packages.
 
     ```Shell/Bash
-    npm i sqlite3 -D
+    npm i sqlite3 --no-save
+    ```
+
+3. Configure the database in your `package.json` in the `cds.requires.db` section.
+
+    ```json
+    {
+      "name": "my-bookshop",
+      "version": "1.0.0",
+      "description": "A simple CAP project.",
+      "repository": "<Add your repository here>",
+      "license": "UNLICENSED",
+      "private": true,
+      "dependencies": {
+        "@sap/cds": "^7",
+        "express": "^4"
+      },
+      "devDependencies": {
+        "@cap-js/sqlite": "^1"
+      },
+      "scripts": {
+        "start": "cds-serve"
+      },
+      "cds": { "requires": {
+       "db": {
+          "kind": "sqlite",
+          "credentials": { "url": "db/my-bookshop.sqlite" }
+       }
+    }}
+    }
     ```
 
 3. Deploy the data model to an `SQLite` database:
 
     ```Shell/Bash
-    cds deploy --to sqlite:db/my-bookshop.db
+    cds deploy
     ```
 
     > You've now created an `SQLite` database file under `db/my-bookshop.db`.
-
-    > This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
 
     > The difference to the automatically provided in-memory database is that you now get a persistent database stored in the local file.
 
@@ -486,7 +516,6 @@ Content-Type: application/json
 
 ```
 
-
 ### Add custom logic
 
 1. In VS Code open the file `cat-service.js` and replace the existing code with:
@@ -516,6 +545,7 @@ Content-Type: application/json
 
     }
     ```
+
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
     > Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.

@@ -11,7 +11,7 @@ author_profile: https://github.com/jjtang1985
 # Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
 <!-- description --> Set up your system to create an SAP Business Technology Platform application with the SAP Cloud SDK.
 
-## You will learn  
+## You will learn
 In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Business Technology Platform application.
 
 ## Intro
@@ -25,12 +25,12 @@ For a complete overview, visit the [SAP Cloud SDK documentation](https://sap.git
 
 To develop with the [SAP Cloud SDK for Java](https://sap.github.io/cloud-sdk/docs/java/overview-cloud-sdk-for-java) you will need to have two things installed:
 
-- Java 8 or 11
-- Maven 3
+- Java 17
+- Maven 3.9+
 
 If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
 
-> Note: Java 11 is only available on SAP Business Technology Platform: Cloud Foundry
+> Note: Java 17 is only available on SAP Business Technology Platform: Cloud Foundry
 
 [OPTION BEGIN [On Windows]]
 
@@ -41,10 +41,8 @@ For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 2. Install the Java Development Kit:
 
     ```shell
-    choco install adoptopenjdk8
+    winget install Microsoft.OpenJDK.17
     ```
-
-    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
 
 3. Install Maven:
 
@@ -62,18 +60,15 @@ For Mac OS adhere to the following steps:
 1. Install `Homebrew`. `Homebrew` is a package manager for Mac which will be useful for installing necessary components. Install it by opening a terminal and issuing the following command:
 
     ```bash
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
 2. Install Java Development Kit 8:
 
     ```bash
     brew update
-    brew tap AdoptOpenJDK/openjdk
-    brew cask install adoptopenjdk8
+    brew install openjdk@17
     ```
-
-    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
 
 3. Install Maven:
 
@@ -128,5 +123,10 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 ```
 
 After finishing these steps, you are ready to start the development of your SAP Business Technology Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
+
+
+### Test yourself
+
+
 
 ---

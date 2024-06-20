@@ -1,9 +1,9 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:2.10.0-gpu-jupyter
 
 ENV LANG C.UTF-8
 
 COPY requirements.txt ./requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip3 install --ignore-installed -r requirements.txt
 
 ENV SERVE_FILES_PATH=/mnt/models
 

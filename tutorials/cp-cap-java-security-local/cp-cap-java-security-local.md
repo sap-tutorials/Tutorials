@@ -10,17 +10,19 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Add Authentication and Authorization to the Application
+
 <!-- description --> Add authentication and authorization to the application and test it locally with mock users
 
 ## You will learn
-  - How to add authentication and authorization to the application
-  - How to test security aspects with the application running locally
-  ---
 
+- How to add authentication and authorization to the application
+- How to test security aspects with the application running locally
+
+  ---
 
 ### Enable Authentication
 
-In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enabled CAP Java's secure-by-default behavior based on Spring Security.
+In this tutorial you add authentication to your application by adding the `cds-starter-cloudfoundry` dependency, which enables CAP Java's secure-by-default behavior based on Spring Security.
 
 1. Edit the `pom.xml` in the `srv` directory (not the `pom.xml` file located in the root project folder) and under the `<dependencies>` tag add the `cds-starter-cloudfoundry` dependency. Make sure you **Save** the file.
 
@@ -31,10 +33,7 @@ In this tutorial you add authentication to your application by adding the `cds-s
     </dependency>
     ```
 
-
-
 ### Add authentication to the Orders service
-
 
 You will now demonstrate this secure-by-default behavior using the `OrdersService`. For now, you only require that the user who wants to create the order must be authenticated. CAP provides built-in users that represent common authentication scenarios for local development.
 
@@ -42,7 +41,7 @@ You will now demonstrate this secure-by-default behavior using the `OrdersServic
 
 2. Open the `requests.http` file and execute the first **Create Order** request by choosing **Send Request** above it.
 
-3. Observe that the response contains status `HTTP/1.1 401 `.
+3. Observe that the response contains status `HTTP/1.1 401`.
 
     <!-- border -->![The request without authentication header and it's response.](authentication-required.png)
 
@@ -71,11 +70,7 @@ You will now demonstrate this secure-by-default behavior using the `OrdersServic
 
 6. When choosing entities of the `OrdersService` on the welcome page you will also have to provide credentials now. You can use `authenticated` user and empty password there as well.
 
-
-
-
 ### Add mock users to application configuration
-
 
 Built-in mock users are good for initial local testing, but you may need separate different users for your application to test it further. You will now add some custom mock users to the application:
 
@@ -85,6 +80,7 @@ Built-in mock users are good for initial local testing, but you may need separat
     ---
     spring:
       config.activate.on-profile: default
+      sql.init.schema-locations: classpath:schema-h2.sql
     cds:
       datasource:
         auto-config.enabled: false
@@ -134,9 +130,7 @@ Built-in mock users are good for initial local testing, but you may need separat
 
 > The payload of the response contains the name of your user in fields `createdBy` and `modifiedBy`, provided by the `managed` aspect that you added to your domain model earlier.
 
-
 ### Add users with roles to the application
-
 
 You will now add a user role `Administrators` to your application.
 
@@ -198,14 +192,12 @@ You will now add a user role `Administrators` to your application.
 
 6. Remove the `Authorization` header or change the credentials to a different mock user. Observe that the `AdminService` is not available to them.
 
-
 ### Advanced authorizations on the entities
-
 
 CAP can do more than simple role-based authorizations. To illustrate that, you will implement the following use case:
 
-+ Each authenticated user should be able to view only their orders and order items.
-+ Administrator should be able to view all orders of all users.
+- Each authenticated user should be able to view only their orders and order items.
+- Administrator should be able to view all orders of all users.
 
 You can use the `@restrict` annotation to add more sophisticated authorization checks to your services.
 
@@ -284,7 +276,5 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
     You will see all orders and items.
 
 Congratulations, you have learned how to add basic security to your application and test it locally. You can model your business users and implement authorization requirements.
-
-
 
 ---

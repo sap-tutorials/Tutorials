@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -11,7 +11,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - Have completed the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) that covers alerts and the Alert Notification service.
- - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud, SAP Alert Notification service, and the SAP Automation Pilot.  These services are available in the free tier.
+ - Access to the SAP Business Technology Platform (BTP) that includes the SAP HANA Cloud, SAP Alert Notification service, and the SAP Automation Pilot.  These services are available in SAP BTP free tier.
  - An SAP HANA Cloud instance deployed to a Cloud Foundry runtime.
 
 ## You will learn
@@ -46,7 +46,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     > ---
 
-    > The SAP Automation Pilot subscription can be located in a different global account or sub account from the SAP Alert Notification service and the SAP HANA Cloud database.
+    > The SAP Automation Pilot subscription can be located in a different global account or subaccount from the SAP Alert Notification service and the SAP HANA Cloud database.
 
     ![create service](create-service.png)
 
@@ -64,17 +64,17 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
 4. Notice the two sections for catalogs (My Catalogs and Provided Catalogs) containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.
 
-    Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Those in My Catalogs are catalogs that are user-created and contain the commands and inputs they create.  Catalogs provide a way to group a collection of related commands and inputs.
+    Provided Catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Those in My Catalogs are catalogs that are user-created and contain created commands and inputs.  Catalogs provide a way to group a collection of related commands and inputs.
 
     ![Provided catalogs](provided-catalogues.png)
 
     >Commands can also be scheduled.  One example may be to schedule the starting and stopping of a database instance.  
 
-5. It is possible to create commands using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
+5. It is possible to create executors in a command using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
 
     ![script examples](script-examples.png)
 
-6. Each command example inherits from the base `ExecuteScript`.
+6. Each example inherits from the base `ExecuteScript`.
 
     ![Execute script](execute-script.png)
 
@@ -131,7 +131,6 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
     ![output definition](output-defined.png)
 
 At this point, you should now have a subscription to the SAP Automation Pilot service and be familiar with some basic concepts of the service such as commands, inputs, and executions.
-
 
 ### Create a catalog, an input, and a command
 

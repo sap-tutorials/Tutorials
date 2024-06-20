@@ -74,7 +74,6 @@ For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/d
 
 
 ### Configure a data source on Linux or Mac with unixODBC
-
 The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) can be used to configure and test a data source on Linux or Mac.  
 
 1. On SUSE Linux, the YaST installer can be used to install unixODBC.
@@ -110,13 +109,13 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ```.odbc.ini
     [HANA_Cloud]
-    servernode = 61964be8-39e8-4622-9a2b-ba3a38be2f75.hana.hanacloud.ondemand.com:443
+    servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     encrypt = true
     sslValidateCertificate = true
 
     [HANA_Express]
-    servernode = linux-bj71:39015
+    servernode = hxehost:39015
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     databasename = HXE
     ```

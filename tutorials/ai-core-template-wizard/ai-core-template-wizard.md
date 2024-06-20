@@ -21,53 +21,70 @@ author_profile: https://github.com/dhrubpaul
 ## Intro
 In this tutorial we would be Creating a movie recommendation Template and deploying the same using AI core.
 
+### Installing Application wizard in Visual Studio Code
+
+In your Visual Studio Code Application, go to extensions and search for application wizard. Go to the Applictation wizard by SAP OS and install it.
+
+![image](img/inst1.png)
+
+Press Command + shift + p for *mac* and Control + shift + p for *Windows* to open control center and choose open template wizard.
+
+![image](img/open.png)
+
+When the template wizard is open, click on **Explore and Install generators**.
+
+![image](img/inst2.png)
+
+Search for *ai core* and install the **@sap/ai-core** generator.
+
+![image](img/inst3.png)
 
 ### Generate a template for movie recommendaiton
 
 -  press Command + shift + p for *mac* and Control + shift + p for *Windows* to open control center and choose open template wizard.
 
-![](img/tempelate_gen1.png)
+![image](img/open.png)
 
 - Once the Template generator opens choose AI core and press start.
 
-![](img/tempelate_gen2.png)
+![image](img/tempelate_gen2.png)
 
 - If you have your custom code choose Basic Project or if you wanted to use the pre-generated training and serving code use AI core sample project for this demo we are going to use.
 
-![](img/tempelate_gen3.png)
+![image](img/tempelate_gen3.png)
 
 - enter the project name and version and press enter
 
-![](img/tempelate_gen4.png)
+![image](img/tempelate_gen4.png)
 
 - fill up the details like scenario ID and Resource plan.
 
-![](img/tempelate_gen5.png)
+![image](img/tempelate_gen5.png)
 
 - Similarly fill the details for Serving Plan.
 
-![](img/tempelate_gen6.png)
+![image](img/tempelate_gen6.png)
 
 - Choose the demo sample project as Movie Recommendation and click on next.
 
-![](img/tempelate_gen7.png)
+![image](img/tempelate_gen7.png)
 
 
 - As a last step add the Docker Details like Docker registry URL and username and click next to create the project.
 
-![](img/tempelate_gen8.png)
+![image](img/tempelate_gen8.png)
 
 - It will create all the required folders in the current directory.
 
-![](img/tempelate_gen9.png)
+![image](img/tempelate_gen9.png)
 
 
 ### Deploying Template to AI Core
 
-In the generated tempelate visit Template folder > Pipelines and replace `ai-core_creds.json` and `S3_creds.json` with your actual AI core Creds.
+In the generated template visit Template folder > Pipelines and replace `ai-core_creds.json` and `S3_creds.json` with your actual AI core credentials.
 
-![](img/run_movie1.jpg)
+![image](img/run_movie1.jpg)
 
 Once done Under the same pipelines folder open AI-core-skd-notebook and replace the Configure variables with your own Variables and click on run all.
 
-![](img/run_movie2.jpg)
+![image](img/run_movie2.jpg)

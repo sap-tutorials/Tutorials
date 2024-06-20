@@ -42,7 +42,7 @@ author_profile: https://github.com/manuel-stampp
 
     Open the file `mtad.yaml` that you created in the previous Tutorial [Create a Simple OData Service with Mobile Back-End Tools](cp-mobile-backend-tools-simple-odata).
 
-    In the application's **requires** section, after `- name: MbtEpmDemoService-xsuaa` (line 20), add another line with
+    In the application's **requires** section, after `- name: MbtEpmDemoService-xsuaa` (line 27), add another line with
 
     ```YAML
           - name: MbtEpmDemoService-destination
@@ -65,82 +65,105 @@ author_profile: https://github.com/manuel-stampp
     ```YAML
     ---
     ID: MbtEpmDemoService
-    _schema-version: "3.3"
+    _schema-version: '3.3'
     version: 1.0.0
     modules:
-      -
+      - 
         # application
         name: MbtEpmDemoService
         # module
-        path: srv/target/odata-service-1.0.0.war
+        path: srv/deploy/odata-service-1.0.0.war
         type: java
-        parameters:    
-          memory: 1G
-          disk: 2G
-          instances: 1
-        properties:    
-          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
-          TARGET_RUNTIME: tomee7
+        parameters:
+        instances: 1
+        memory: 2G
+        disk: 2G
+        properties:
+        TARGET_RUNTIME: tomcat
+        JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+        JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+        # jco-config
+        USE_JCO: false
+        # log-config
+        # [console]
+        # debug-opts
+        # [none]
         requires:
-          - name: MbtEpmDemoService-xsuaa
-          - name: MbtEpmDemoService-destination
-        # Providing default-url can be re-used for the app router
+        - name: MbtEpmDemoService-xsuaa
+        - name: MbtEpmDemoService-destination
+        # provide default-url to be re-used for the app router's destination
         provides:
-          -
-            name: mbtepmdemo-odata
+        - name: mbtepmdemo-odata
             properties:
-              url: ${default-url}
-      -
-        # approuter
+            url: ${default-url}
+    - # approuter
         name: MbtEpmDemoService-approuter
         type: nodejs
         path: srv/approuter
         requires:
-          - name: MbtEpmDemoService-xsuaa
-          # require
-          - name: mbtepmdemo-odata
+        - name: MbtEpmDemoService-xsuaa
+        # require
+        - name: mbtepmdemo-odata
         parameters:
-          buildpack: nodejs_buildpack
-          instances: 1
-          memory: 128M
+        buildpack: nodejs_buildpack
+        instances: 1
+        memory: 128M
         properties:
-          destinations: >
+        # reference the provided URL for automatic linking
+        destinations: >
             [
-              {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
+            {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
             ]  
     resources:
-      - name: MbtEpmDemoService-xsuaa
+    - name: MbtEpmDemoService-xsuaa
         type: org.cloudfoundry.managed-service   
         parameters:
-          service: xsuaa
-          service-plan: application
-          path: srv/xs-security.json
-      - name: MbtEpmDemoService-destination
+        service: xsuaa
+        service-plan: application
+        path: srv/xs-security.json
+    - name: MbtEpmDemoService-destination
         type: org.cloudfoundry.managed-service   
         parameters:
-          service: destination
-          service-plan: lite
+        service: destination
+        service-plan: lite
     ```
 
-4. To further allow deployments with `cf push` or `csdl-to-war`, also reference the destination service instance in `manifest.yml` by adding the instance name to the **services** of your application (last line only) as in the reference below:
+4. To further allow deployments with `cf push` or `csdl-to-war`, also reference the destination service instance in `manifest.yml` by adding the instance name to the **services** of your application and deleting the placeholder as in the reference below:
 
     ```YAML
+    ---
     applications:
-      - buildpack: sap_java_buildpack
+      -
+        # application
         name: MbtEpmDemoService
-        path: target/odata-service-1.0.0.war
+        # module
+        path: deploy/odata-service-1.0.0.war
         random-route: true
+        buildpacks:
+        # buildpack
+        - sap_java_buildpack
+        instances: 1
+        memory: 2G
+        disk: 2G
         env:
-          TARGET_RUNTIME: tomee7
-        services:    
-          - MbtEpmDemoService-xsuaa
-          - MbtEpmDemoService-destination
+        TARGET_RUNTIME: tomcat
+        JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+        JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 11.+ }"
+        # jco-config
+        USE_JCO: false
+        # log-config
+        # [console]
+        # debug-opts
+        # [none]
+        services:
+        # db-service
+        # [h2db]
+        - MbtEpmDemoService-destination
+        # xsuaa-service
+        - MbtEpmDemoService-xsuaa
     ```
 
-
-
 ### Annotate your entities for data load from source system
-
 
 1. Open your `metadata.csdl.xml` with text editor.
 
@@ -282,8 +305,8 @@ author_profile: https://github.com/manuel-stampp
 8. You can now access the data from source system via your cached OData service by executing the URL from approuter, as in the last step of the previous tutorial of this mission. The data can be accessed by appending either `BusinessPartnerSet` or `SalesOrderSet` to the URL.
 
     >The URL should look like the following: `https://[your-org]-[your-space]-mbtepmdemoservice-approuter.cfapps.[landscape-host].hana.ondemand.com/BusinessPartnerSet`
-    - If you experience any issues on querying the data, please try to sort them out first before continuing with the next step. After the next step it will become much more difficult.
-    - The service should return corresponding data from the source system and render it in a simple table. You can use standard OData query parameters to restrict the returned data.
+       - If you experience any issues on querying the data, please try to sort them out first before continuing with the next step. After the next step it will become much more difficult.
+       - The service should return corresponding data from the source system and render it in a simple table. You may use standard OData query parameters to restrict the returned data.
 
 ### Add Client-Filter and Client-Registration entities to customise a download query
 
@@ -539,18 +562,19 @@ author_profile: https://github.com/manuel-stampp
 
 ### Examine and test your OData service
 
-   1. If not noted down previously, find the application route (URL) assigned to the app router in the space of SAP Business Technology Platform Cockpit and click it
+1. If not noted down previously, find the application route (URL) assigned to the app router in the space of SAP Business Technology Platform Cockpit and click it
 
-        ![Application Routes in SCP Cockpit](img_application_route.png)
+    - ![Application Routes in SAP BTP Cockpit](img_application_route.png)
 
-       - A new browser tab will open, showing the service document
+    - A new browser tab will open, showing the service document
 
-        ![Service Document](img_service_document.png)
+    ![Service Document](img_service_document.png)
 
-   2. Call `/BusinessPartnerSet` or `SalesOrderSet` and notice an error that the `Client-Instance-ID` header is missing.
+2. Call `/BusinessPartnerSet` or `SalesOrderSet` and notice an error that the `Client-Instance-ID` header is missing.
 
-        >Due to the custom download query incorporating the `BusinessPartnerFilter`, you can only query this data set if you registered to the service and sent your `Client-Instance-ID` header representing your registration. Without a filter uploaded, you will still see an empty response.
-        >You can perform such a [Client Registration](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html#registration-header) also in a REST client, while the recommended approach would be to use a mobile application that automates this procedure.
+    >Due to the custom download query incorporating the `BusinessPartnerFilter`, you can only query this data set if you registered to the service and sent your `Client-Instance-ID` header representing your registration. Without a filter uploaded, you will still see an empty response.
+
+    >You may perform such a [Client Registration](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html#registration-header) also in a REST client, while the typical approach would be to use a mobile application that automates this procedure.
 
 ---
 

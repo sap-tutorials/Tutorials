@@ -14,7 +14,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - You have created your GitHub repository as described in **Step 14 Create a GitHub repository for your project** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - You have cloned your GitHub repository to your `cpapp` folder as described in **Step 15 Clone your GitHub repository** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
- - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e)
+ - You can set up a new SAP HANA Cloud service instance as per [Step 2 (Optional) Create an SAP HANA Cloud service instance](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud service instance as described in [Step 3 (Optional) Use an existing SAP HANA Cloud service instance](btp-app-hana-cloud-setup).
 
 ## Details
 ### You will learn
@@ -24,6 +24,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to run the CI/CD pipeline that automatically builds, tests, and deploys your code changes
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
@@ -85,7 +99,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your user and select an **Identity Provider**.
+11. Add a new row in the **Users** section table, enter your user in the first column and select the row that will show up in the popup matching your user.
 
     !![Users](CICD_edit_users.png)
 
@@ -139,7 +153,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your user and select an **Identity Provider**.
+11. Add a new row in the **Users** section table, enter your user in the first column and select the row that will show up in the popup matching your user.
 
     !![Users](CICD_edit_users.png)
 
@@ -162,10 +176,6 @@ For more information on how to configure and run predefined pipelines for your o
 2. Choose the **Go to Application** icon located next to the **Continuous Integration & Delivery** subscription.
 
     !![CICD](CICD_access.png)
-
-3. Use your credentials to log in to the application.
-
-    !![CICD App](CICD_application.png)
 
 [DONE]
 [ACCORDION-END]
@@ -223,17 +233,17 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 2. For **Job Name**, enter a freely chosen name for your job, which is unique in your SAP BTP subaccount, for example **`RiskApplication`**.
 
-3. Under **Repository**, choose **Add Repository**.
+3. Choose the **Value Help** next to the input field for  **Repository**, at the bottom of the popup dialog choose **Add Repository**.
 
     !![Add repository](CICD_add_repository1.png)
 
-4. Add the name and the URL for your repository, click on the 'Create Credentials' link in the dropdown for 'Webhook Credential'.
+4. Add the name and the URL for your repository, click on the **Value Help** next to the 'Webhook Credential' input box.
 
     !![Add repository](CICD_add_repository2.png)
 
     > If your GitHub repository is private, enter the name of the GitHub credentials (`github` as created in step [Configure you GitHub credentials](#configure-your-github-credentials) above) in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
 
-5. Add the name, to add the Webhook Credential click on Generate and Create.
+5. Add the name, to add the Webhook Credential click on Generate, copy it somewhere safe and finally choose Create.
 
     !![Add the name, to add the Webhook Credential click on Generate and Create](CICD_generate_webhook_credential.png)
 
@@ -241,7 +251,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 6. For **Branch**, enter the GitHub branch of your repository from which you want to receive push events. In this example, **`main`**.
 
-7. As **Pipeline**, choose **SAP Cloud Application Programming Model**.
+7. As **Pipeline**, choose **Cloud Foundry Environment**.
 
 8. Keep the default values in the **BUILD RETENTION** tab.
 
@@ -265,15 +275,15 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Space** step on.
 
-    !![CAP Job](CICD_CAP_job_stages.png)
-
 16. Replace the placeholders `<YOUR ORG NAME>`, `<YOUR SPACE NAME>`, and `<YOUR CLOUD FOUNDRY ENDPOINT>` with the values of the space in the Cloud Foundry environment to which you want to deploy. You can get the values from your subaccount overview in the SAP BTP cockpit.
 
     !![Cockpit](CP_API_Endpoint.png)
 
 17. For **Deploy Type**, choose `standard`.
 
-17. For **Credentials**, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used `cfdeploy`.
+17. For **Credentials**, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials) from the **Value Help** next to the Credentials input box. In the example we used `cfdeploy`.
+
+    !![CAP Job](CICD_CAP_job_stages.png)
 
     > Use a technical user instead of your personal credentials.
 
@@ -289,7 +299,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 [ACCORDION-BEGIN [Step 7: ](Create a GitHub webhook)]
 GitHub webhooks allow you to automate CI/CD builds. Whenever you push changes to your GitHub repository, a webhook push event is sent to the service to trigger a build of the connected job.
 
-To create a webhook in GitHub, you need some data that has been automatically created during the previous step. You can find this data, the *Payload URL* and *Secret*, when you open the detail view of an existing repository in the **Repositories** tab.
+To create a webhook in GitHub, you need some data including the *Payload URL*, to automatically create the URL open the detail view of the existing repository in the **Repositories** tab.
 
 1. Choose the name of your repository and choose **Webhook Data**.
 
@@ -307,7 +317,7 @@ To create a webhook in GitHub, you need some data that has been automatically cr
 
     !![Webhook](GH_webhook.png)
 
-5. Enter the **Payload URL**, **Content type**, and **Secret** from the **Webhook Data** in SAP Continuous Integration and Delivery. For all other settings, leave the default values.
+5. Enter the **Payload URL**, **Content type** from the **Webhook Data** in SAP Continuous Integration and Delivery. Enter the **Secret** that you had saved previously. For all other settings, leave the default values.
 
 6. Choose **Add webhook**.
 
@@ -319,9 +329,9 @@ To create a webhook in GitHub, you need some data that has been automatically cr
 [ACCORDION-BEGIN [Step 8: ](Verify the success of your build)]
 You have to trigger your job manually the first time after creation.
 
-1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Trigger Build**.
+1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Run**.
 
-    !![Trigger Job](CICD_trigger_job.png)
+    !![Run the Job](CICD_trigger_job.png)
 
     Verify that a new tile appears in the **Builds** view. This tile should be marked as running.
 

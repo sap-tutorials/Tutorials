@@ -52,14 +52,14 @@ If this is the first time SAP Cloud Connector is started, you will see the **Def
 
 3. Click **Go To Your Trial Account**, then click the **trial** tile.
 
-    ![Trial subaccount](22a-btp-go-to-trial.jpg)
+    ![Trial subaccount](22b-btp-go-to-trial.jpg)
 
 
 4. You can find the required information to enter in the SAP Cloud Connector form on this Overview page. You can identify the region, the provider and  the subaccount ID in the **General** section.
 
     Copy the region, e.g. US East (VA).
 
-    ![BTP Cockpit Overview](5b-btp-cockpit-overview.png)
+    ![BTP Cockpit Overview](5c-btp-cockpit-overview.png)
 
 5. Go back to the SAP Cloud Connector tab. In the form, click the Select icon in the **Region** field.
 
@@ -130,7 +130,8 @@ In this step, you specify the on-premise backend system that your trial should b
 
 10. In the summary, check the **Check Internal Host** checkbox and click **Finish**.
 
-![Summary screen](17a-scc-summary.png)
+    ![Summary screen](17a-scc-summary.png)
+
 
 
 You now see a new entry in the mappings table. The icon in the **Check Result** column should be green, but the status is still grey, as no accessible resources have been defined yet.
@@ -169,11 +170,11 @@ The design-time destination is used to fetch the federated content from the cont
 
 2. In the menu, navigate to **Connectivity** > **Destinations**.
 
-    ![Go to Destinations](23a-btp-goto-destinations.png)
+    ![Go to Destinations](23b-btp-goto-destinations.png)
 
-3. Click **New Destination**.
+3. Click **Create Destination**.
 
-    ![Destination screen](24a-btp-new-destination.png)
+    ![Destination screen](24b-btp-new-destination.png)
 
 
 4. Fill in the form:
@@ -193,17 +194,14 @@ The design-time destination is used to fetch the federated content from the cont
 
 5. Click **New Property** to add an additional property to your destination.
 
+    ![Design-time Destination](25b-btp-designtime-destination.jpg)
 
-
-    <!-- border --> ![Design-time Destination](25a-btp-designtime-destination.jpg)
 
 6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial (CAL) systems, as property name and value.
 
 7. Click **Save**.
 
-![Additional property](25-2b-btp-designtime-destination.jpg)
-
-
+    ![Additional property](25c-btp-designtime-destination.jpg)
 
 
 ### Create the runtime destination
@@ -212,7 +210,7 @@ The runtime destination is used to launch federated applications at runtime.
 
 1. Below the destination that you just created, click **Clone**.
 
-    ![Clone Destination](26-btp-clone-destination.png)
+   ![Clone Destination](26a-btp-clone-destination.png)
 
 2. Change the **Name** of the new destination to **`s4hanart`**.
 
@@ -231,8 +229,6 @@ The runtime destination is used to launch federated applications at runtime.
 
 6. Click **Save**.
 
-![Runtime Destination](27b-btp-runtime-destination.jpg)
-
-
+    ![Runtime Destination](27c-btp-runtime-destination.jpg)
 
 ---

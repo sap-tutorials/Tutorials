@@ -24,10 +24,13 @@ By the end of the tutorial you will have your AI code in form of a Docker image,
 
 You may still complete this tutorial if you are not familiar with the Python programming language.
 
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/build-house-predictor.ipynb)
+
 ---
 
 ### Create a Docker account and generate a Docker access token
-
 
 You need a Docker repository to store your AI code on the cloud in the form of Docker images. SAP AI core will fetch your code from this Docker repository. The image ensures that your code is bundled along with all of the dependencies, directory structure and drivers that are required when using GPU.
 
@@ -49,7 +52,6 @@ Follow the guided steps, and then store the token that you receive in your local
 
 
 ### Install Docker Desktop
-
 
 [Download and Install](https://www.docker.com/products/docker-desktop) Docker Desktop. You will need Docker Desktop to help you build Docker images of your AI code.
 
@@ -703,3 +705,34 @@ Check the status of your execution. When the status turns to **COMPLETED**, you 
 [OPTION END]
 
 
+### Scheduling Execution (optional)
+
+AI core Also provides the functionality to auto shedule Executions based on Time. 
+
+To shedule an Execution at particular time of the day visit ML `operations > shedules` and click on Add
+
+<!-- border -->![image](img/ail/Schedule1.jpg)
+
+Choose senario as House price and click on next
+
+<!-- border -->![image](img/ail/Schedule2.jpg)
+
+Choose Executable and click on next.
+
+<!-- border -->![image](img/ail/Schedule3.jpg)
+
+Now a screen will appear where you can choose between the avilable Execution config and click on next
+
+<!-- border -->![image](img/ail/Schedule4.jpg)
+
+Now we need to choose the Schedule for our execution. Enter name as `Demo-Schedule` and choose between date and time in case you need to run the Execution for once else Choose recurring Enter the cron Job and choose the start and end date and click on Review
+
+<!-- border -->![image](img/ail/Schedule5.jpg)
+
+Check all the details before creating the execution and click on Create.
+
+<!-- border -->![image](img/ail/Schedule6.jpg)
+
+You would be able to see the schedule created under schedules tab in ML operations
+
+<!-- border -->![image](img/ail/Schedule7.jpg)

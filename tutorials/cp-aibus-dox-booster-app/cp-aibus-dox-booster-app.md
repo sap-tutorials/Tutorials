@@ -16,7 +16,7 @@ author_profile: https://github.com/Juliana-Morais
 - You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to access your trial account
+  - How to access your trial account 
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
 
@@ -29,7 +29,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    <!-- border -->![Trial global account](trial.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -95,21 +95,23 @@ You're now all set to [Use Machine Learning to Extract Information from Document
 
 Do the following to access the Document Information Extraction Trial application, without having to run the **Set up account for Document Information Extraction** booster once again:
 
-1. Navigate to your trial global account by clicking **Go To Your Trial Account**.
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+   
+2. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-2. From your global account page, choose `trial` to access your subaccount.
+3. From your global account page, choose `trial` to access your subaccount.
 
     <!-- border -->![UI application](subaccount.png)
 
-3. Click **Instances and Subscriptions** on the navigation side bar.
+4. Click **Instances and Subscriptions** on the navigation side bar.
 
     <!-- border -->![UI application](subscriptions.png)
 
-4. Search for **Document Information Extraction Trial** under **Subscriptions** and click the arrow on the right to access it.
+5. Search for **Document Information Extraction Trial** under **Subscriptions** and click the arrow on the right to access it.
 
     <!-- border -->![UI application](subscriptions-tile.png)
 
-5. Here, you can click **Go to Application** to navigate to the application.
+6. Here, you can click **Go to Application** to navigate to the application.
 
     <!-- border -->![UI application](subscriptions-action.png)
 
