@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build-code
 parser: v2
 ---
 
-# Create a Full-Stack SAP Fiori Application with Joule in SAP Build Code
+# Create a Full-Stack Application with SAP Fiori UI using Joule in SAP Build Code
 <!-- description --> In this tutorial, you will use the Generative AI capabilities of Joule to create a CAP service with SAP Build Code. 
 
 
@@ -18,7 +18,7 @@ parser: v2
 
 
 ## Prerequisites
-- You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account))
+- You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account)).
 - You have completed the [Setup SAP Build Code](https://developers.sap.com/tutorials/build-code-setup.html) tutorial. 
 
 
@@ -86,7 +86,7 @@ Let's create an application for a customer loyalty program. The customer can get
 
 3. Expand the **Data Model and Service Creation** section, and click **Open Joule**.
 
-    <!-- border -->![Open Joule2](22.png)
+    <!-- border -->![Open Joule2](open_guide.png)
 
 4.  Copy the prompt below.
 
@@ -105,13 +105,13 @@ Let's create an application for a customer loyalty program. The customer can get
 
 5. Paste the code in the text field, and click the arrow ![send arrow](askjoule.png) to send the prompt to Joule.
 
-    <!-- border -->![Enter Prompt](25.png) 
+    <!-- border -->![Enter Prompt](send_prompt2.png) 
 
     The code is generated and is displayed below your prompt. 
     
 6. Accept the code. <br/>
 
-    <!-- border -->![accept](26.png)
+    <!-- border -->![accept](accept_code.png)
     
     Depending on the server, it may take a few moments for Joule to create the data models and services for you.<br>
 
@@ -120,20 +120,20 @@ Let's create an application for a customer loyalty program. The customer can get
     >**Tip**: To open the Storyboard, navigate to the **Project Explorer**, expand your project, and select **Storyboard**. 
 
 
-### Enhance the Sample Data Using Joule 
+### Enhance the Application Data Using Joule 
 
-<!-- description --> Joule created the CAP data model and the OData service. In addition, Joule created some sample data by default. We will now ask Joule to provide additional sample data.
+<!-- description --> Joule created the CAP data model and the OData service. In addition, Joule created some data by default. We will now ask Joule to provide additional data.  
 
-1. Open the Sample Data editor in the Storyboard by selecting **Open Editor** -> **Sample Data**.
+1. Open the Data editor in the Storyboard by selecting **Open Editor** -> **Sample Data**.
 
     <!-- border -->![OpenEditor](31.png)
 
-2. In the Sample Data Editor, select the **Customers** data entity, and add 5 more rows. Click **Add**.
+2. In the Data Editor, select the **Customers** data entity, go to the **INITIAL DATA** tab, and add 5 more rows. Click **Add**.
 
-    <!-- border -->![Click Add](32.png)
+    <!-- border -->![Click Add](initial_data.png)
 
 
-3. Click **Enhance**. This will reopen Joule to modify the sample data. 
+3. Click **Enhance**. This will reopen Joule to modify the application data. 
 
     <!-- border -->![Enhance](33a.png)
 
@@ -153,8 +153,8 @@ Let's create an application for a customer loyalty program. The customer can get
 
     The code is generated and is displayed below your prompt.
 
-4. Accept the code.
-    This will add the customer names, email addresses, and purchases. 
+4. Accept the code.<br>
+   This will add the customer names, email addresses, and purchases. 
 
     <!-- border -->
     ![Accept](36.png)
