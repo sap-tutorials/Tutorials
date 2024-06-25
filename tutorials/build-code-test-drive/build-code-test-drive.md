@@ -18,7 +18,7 @@ parser: v2
 
 
 ## Prerequisites
-- You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account))
+- You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account)).
 - You have completed the [Setup SAP Build Code](https://developers.sap.com/tutorials/build-code-setup.html) tutorial. 
 
 
