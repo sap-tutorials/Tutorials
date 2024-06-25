@@ -13,9 +13,11 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 
-- Access to SAP AI core with sap extended plan.
+- Access to SAP AI core with SAP extended plan.
+- Access to a Hana DB instance (you can refer to [this tutorial](https://developers.sap.com/tutorials/hana-cloud-deploying.html))
 - Have python3 installed in your system.
 - Have generative-ai-hub-sdk installed in your system.
+- Have hana-ml installed in your system.
 
 ## You will learn
 - How to create a table and store embeddings in HANA Vector Store.
@@ -34,7 +36,7 @@ Execute the following python code in the same folder. This will load the data an
 
 ```PYTHON
 import pandas as pd
-df = pd.read_csv('GRAPH_DOCU_QRC3.csv', low_memory=False)
+df = pd.read_csv('GRAPH_DOCU_2503.csv', low_memory=False)
 df.head(3)
 ```
 
@@ -167,7 +169,7 @@ def run_vector_search(query: str, metric="COSINE_SIMILARITY", k=4):
         sort = 'DESC'
     query_vector = get_embedding(query)
     sql = '''SELECT TOP {k} "ID", "HEADER1", "HEADER2", "TEXT"
-        FROM "GRAPH_DOCU_QRC3"
+        FROM "GRAPH_DOCU_QRC3_2201"
         ORDER BY "{metric}"("VECTOR", TO_REAL_VECTOR('{qv}')) {sort}'''.format(k=k, metric=metric, qv=query_vector, sort=sort)
     hdf = cc.sql(sql)
     df_context = hdf.head(k).collect()
@@ -230,7 +232,7 @@ def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIM
         print(color.RED + '\nGenerating LLM prompt using the context information.' + color.END)
     else:
         print(color.RED + 'Generating LLM prompt WITHOUT context information.' + color.END)
-    prompt = promptTemplate.format(query=query, context=' '.join(df_context['TEXT'].astype('string')))
+    prompt = promptTemplate.format(query=query, context=context)
     print(color.RED + '\nAsking LLM...' + color.END)
     llm = ChatOpenAI(proxy_model_name='gpt-4', proxy_client=proxy_client)
     response = llm.invoke(prompt).content
@@ -293,7 +295,7 @@ To create a table, execute the following python code.
 ```PYTHON
 # Create a table
 cursor = cc.cursor()
-sql_command = '''CREATE TABLE TABLENAME(ID1 BIGINT, ID2 BIGINT, L1 NVARCHAR(3), L2 NVARCHAR(3), L3 NVARCHAR(3), FILENAME NVARCHAR(100), HEADER1 NVARCHAR(5000), HEADER2 NVARCHAR(5000), TEXT NCLOB, VECTOR_STR REAL_VECTOR);'''
+sql_command = '''CREATE TABLE TABLE10043(ID1 BIGINT, ID2 BIGINT, L1 NVARCHAR(3), L2 NVARCHAR(3), L3 NVARCHAR(3), FILENAME NVARCHAR(100), HEADER1 NVARCHAR(5000), HEADER2 NVARCHAR(5000), TEXT NCLOB, VECTOR_STR REAL_VECTOR);'''
 cursor.execute(sql_command)
 cursor.close()
 ```
@@ -339,7 +341,7 @@ from gen_ai_hub.proxy.langchain.openai import ChatOpenAI
 from gen_ai_hub.proxy.core.proxy_clients import get_proxy_client
 proxy_client = get_proxy_client('gen-ai-hub') # for an AI Core proxy
 
-def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIMILARITY', k = 4) -> str:
+def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIMILARITY', k=4) -> str:
 
     class color:
         RED = '\033[91m'
@@ -355,7 +357,6 @@ def ask_llm(query: str, retrieval_augmented_generation: bool, metric='COSINE_SIM
         print(color.RED + '\nGenerating LLM prompt using the context information.' + color.END)
     else:
         print(color.RED + 'Generating LLM prompt WITHOUT context information.' + color.END)
-    df_context = run_vector_search(query=query, metric="COSINE_SIMILARITY",k=1)
     prompt = promptTemplate.format(query=query, context=' '.join(str(df_context)))
     print(color.RED + '\nAsking LLM...' + color.END)
     llm = ChatOpenAI(proxy_model_name='gpt-4', proxy_client=proxy_client)
