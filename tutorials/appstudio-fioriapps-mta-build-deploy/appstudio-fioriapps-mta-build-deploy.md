@@ -34,7 +34,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 ### Build the application
 
 
-1. In the **Explorer** pane, navigate to **`webapp` > `view` > `node_modules`**. Right-click the `mta.yaml` file and select **Build MTA Project**.
+1. In the **Explorer** pane, right-click the `mta.yaml` file and select **Build MTA Project**.
 
     <br><br><!-- border -->![build mta](BAS-Build-1-.png)
 
@@ -93,6 +93,23 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
     If you have issues with the deployment, check out the [SAP Business Application Guided Answers](https://ga.support.sap.com/dtp/viewer/index.html#/tree/2827/actions/41344) for troubleshooting.
 
 
+### Open the application
+
+1. Go back to your SAP BTP Trial account and click the button **Go To Your Trial Account**. 
+
+<!-- border -->![deploy mtar](BAS-Open-1-.png)
+
+2. Click the trial tile to navigate to your trial subaccount in the SAP BTP cockpit. 
+
+<!-- border -->![deploy mtar](BAS-Open-2-.png)
+
+3. Select **HTML5 Applications** in the left navigation panel.
+
+<!-- border -->![deploy mtar](BAS-Open-3-.png)
+
+4. You will see a list of all HTML5 Application you deployed up to now. Select the one you deployed in the previous step.
+
+<!-- border -->![deploy mtar](BAS-Open-4-.png)
 
 ---
 

@@ -12,7 +12,7 @@ author_profile: https://github.com/raz-korn
 <!-- description --> Create an SAP Business Application Studio dev space, a preconfigured environment with the required tools and extensions tailored for a specific business scenario.
 
 ## Prerequisites
-  - You have access to SAP Business Application Studio (to onboard SAP Business Application Studio in a trial account, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)). 
+  - You have access to SAP Business Application Studio (to onboard SAP Business Application Studio in a trial account, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)).
 
 
 ## You will learn
@@ -63,7 +63,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
     <!-- border -->![Create Dev Space](AppStudio-Create-Dev-Space-Fiori-.png)
 
-    >The dev space is in status **STARTING**. Wait until it is in status **RUNNING**. This might take a couple of minutes.
+    >The dev space is in status **STARTING**. Wait until it is in status **RUNNING**. This might take a couple of seconds.
 
     <!-- border -->![Dev Space Starting](BAS-Dev-Space-Starting-.png)
 
