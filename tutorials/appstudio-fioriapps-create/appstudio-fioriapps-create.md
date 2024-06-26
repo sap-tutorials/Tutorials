@@ -40,59 +40,20 @@ The flow consists of the following parts:
 
 ---
 
-### Create a New Multitarget Application Project
+### Create a New Folder for your Project
 
 
-1. In the left-hand sidebar, select **the hamburger icon | View | Command Palette...** to open the **command palette**.
-
-    <!-- border -->![open command palette](BAS-Create-MTA-1-.png)
-
-2. The command palette opens at the top-center of the SAP Business Application Studio window.
-
-    <!-- border -->![command palette opened](AppStudio-Create-MTA-2-.png)
-
-3. Enter the **Fiori: Open CF Application Router Generator** command in the command palette.
-
-    >Type `fiori: open` in the command palette text field to filter the commands.
-
-    <!-- border -->![cf mta and approuter wizard](BAS-Create-MTA-3-.png)
-
-4. The **Application Router Generator Wizard** tab opens. For **Application Router Configuration**, configure the following, and click **Finish**.
-
-    | Parameter | Value |
-    |:----------|:------|
-    | Application router project path | **/home/user/projects** (default) |
-    | MTA ID | **`FioriDemo`** |
-    | MTA Description | Can be left empty (default) |
-    | Add route module | **Managed Approuter** |
-
-    <!-- border -->![Fill-in cf mta and approuter wizard](BAS-Create-MTA-4-.png)
-
-    >When end users access an app in the Cloud Foundry environment, they actually access the Application Router first. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
-
-    >We recommend using the **Managed Application Router**. It provides many benefits, compared to the Standalone Application Router, such as saving resources, lowering maintenance efforts, etc. The Standalone Application Router should only be used in advanced cases, for example when application router extensibility is required. More information is available in [Developing HTML5 Applications in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/11d77aa154f64c2e83cc9652a78bb985.html).
-
-5. Wait until the creation of project is completed. A notification that "The files has been generated" appears at the bottom right of the screen.
-
-    <!-- border -->![project creation completed](BAS-Create-MTA-5-.png)
-
-
-### Open the Project's Folder
-
-
-1. In the left-hand sidebar, select **the hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
+1. In the left-hand sidebar of SAP Business Application Studio, select **the hamburger icon | File | Open Folder...** to open the **Open Folder** dialog.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-1-.png)
 
 2. The **Open Folder** dialog opens at the center of the SAP Business Application Studio window. First, select the **projects** entry.
 
-    <!-- border -->![open folder dialog](BAS-Open-Workspace-1_1-.png)
-
-3. Then select the **`FioriDemo`** project within the **projects** folder and click **OK**.
+3. Then click **OK**.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-2-1-2.png)
 
-4. SAP Business Application Studio reloads with the `FioriDemo` project open in its workspace. In the Explorer view you can see the `FioriDemo` project, its folder structure, and files.
+4. In the project explorer, select **New Folder…** to create a new folder for your project. Insert `FioriDemo` as folder name.
 
     <!-- border -->![open workspace dialog](BAS-Open-Workspace-3-.png)
 
@@ -122,7 +83,6 @@ The flow consists of the following parts:
 
     | Parameter | Value |
     |:----------|:------|
-    | Application type | **SAP Fiori** |
     | Which `template` do you want to use? | **Basic** tile |
 
     <!-- border -->![Floorplan Selection](BAS-Generate-App-3-1-.png)
@@ -151,9 +111,11 @@ The flow consists of the following parts:
     | Description | **An SAP Fiori app to view a list of suppliers (demo)** |
     | Project folder path | **`/home/user/projects/FioriDemo`** |
     | Minimum SAPUI5 version | (Use the default) |
-    | Add deployment configuration | **Yes** (default after setting the project folder path)|
+    | Add deployment configuration | **Yes** |
     | Add FLP configuration | **Yes** |
     | Configure advanced options | **No** (default) |
+
+    Make sure to set the correct project folder path.
 
     <!-- border -->![Project Attributes](BAS-Generate-App-6-1-.png)
 
@@ -163,6 +125,7 @@ The flow consists of the following parts:
     |:----------|:------|
     | Please choose the target | **Cloud Foundry** (default) |
     | Destination name | **ES5 - https: //sapes5.sapdevcenter.com** |
+    | Add application to managed application router? | **Yes** |
 
     <!-- border -->![deployment configuration](BAS-Generate-App-7-1-.png)
 
@@ -222,7 +185,7 @@ The layout editor allows users to easily make changes in the app using a visual 
 
     <!-- border -->![open explorer view](BAS-Open-Explorer-View-.png)
 
-3. Choose **`FioriDemo` > `businesspartners` > `webapp` > `view`**, right-click the `Suppliers.view.xml` file, and click **Open with...**
+3. Choose **`FioriDemo` / `businesspartners` > `webapp` > `view`**, right-click the `Suppliers.view.xml` file, and click **Open with...**
 
      <!-- border -->![Open with Layout Editor](BAS-Open-Layout-Editor-1-.png)
 
