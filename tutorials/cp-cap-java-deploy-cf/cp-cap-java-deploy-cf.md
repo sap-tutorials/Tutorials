@@ -59,7 +59,7 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
       index-page.enabled: true
     ```
 
-    > `cds.index-page.enabled: true` enables the generated index page and the SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorials. These features are meant to help you during development and should not be used in productive applications.
+    > Setting `cds.index-page.enabled: true` turns on the generated index page and the SAP Fiori preview in `production` mode, just like you've seen in your local application in previous tutorials. These features are designed to assist you during development and should not be used in productive applications.
 
 ### Enable application for Cloud Foundry
 
