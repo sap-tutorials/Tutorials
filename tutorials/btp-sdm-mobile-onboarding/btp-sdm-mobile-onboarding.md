@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-time: 15
+time: 30
 tags: [ tutorial>beginner, topic>mobile, topic>Document Management Service, software-product>sap-business-technology-platform, software-product>sap-mobile-services,  software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-document-management-service
 author_name: Vikram Kulkarni
@@ -111,6 +111,25 @@ To use the application, ensure that your user account is associated with a role 
 
     >Note: You might need to log out and log back in to make sure your new role collection is taken into account.
 
+### Creating a repository
+
+1. In your subaccount, navigate to **Services** &rarr; **Instances and Subscriptions**, click the button next to **Document Management Service, Application Option**.
+
+    <!-- border -->![Go To Application in your subbacount](GoTo_Application.png)
+
+2. Log on and click the **Document Management Service Admin**.
+
+    <!-- border -->![Accessing Repo Creation Tile](Selecting_Repo_Tile.png)
+
+3. Click **Add Repository**.
+
+    <!-- border -->![Add Repository](Add_Repo.png)
+
+4. Choose **Internal** as a Repository Type, enter the **Display Name** of your choice, and click **Add**. 
+
+<!-- border -->![Adding Repository](Add_Repo_Details_Page.png)
+
+>The repository you've set up will be available for access via the mobile application in the subsequent steps.
 
 
 ### Go to the application and access the QR code
@@ -141,6 +160,7 @@ To use the application, ensure that your user account is associated with a role 
 
 ### Installing mobile application
 <!-- description --> In this step, you are installing the mobile application on your device.
+>>**Note:** If you are planning to test the mobile app with the different users, it's required to assign the role of **`SDM_User`** to the respective users within the SAP BTP subaccount.
 
 1.  Download the app. For iOS devices, go to the [App Store](https://apps.apple.com/in/app/sap-document-management/id6504613204). For Android devices, visit the [Google Play Store](https://play.google.com/store/apps/details?id=com.sap.sdm.mobileapp&hl=en_IN&gl=US).
 
@@ -162,7 +182,7 @@ To use the application, ensure that your user account is associated with a role 
    
     <!-- border -->![Continue Screen](Mobile_Scan_Continue.png)
 
-    >**Results**: A list of repositories is displayed. 
+    >**Results**: A repository that you created in the earlier steps is displayed.
 
 7. To refresh the list manually, pull down on the list and release it.
     
