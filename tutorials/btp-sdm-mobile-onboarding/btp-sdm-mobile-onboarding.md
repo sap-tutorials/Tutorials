@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-time: 15
+time: 30
 tags: [ tutorial>beginner, topic>mobile, topic>Document Management Service, software-product>sap-business-technology-platform, software-product>sap-mobile-services,  software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-document-management-service
 author_name: Vikram Kulkarni
@@ -20,7 +20,6 @@ parser: v2
   - How to subscribe to SAP Document Management Service, Application Option
   - How to access the QR code from the SAP Mobile Services cockpit.
   - How to onboard mobile applications.
-  - How to create repository.
   - How to sync your repositories.
 
 ---
@@ -91,9 +90,9 @@ To use the application, ensure that your user account is associated with a role 
 
     <!-- border -->![Role Name](Editing_Role_Name.png)
 
-6. Search for the role **`SDMWeb_Admin`**, **`SDM_Admin`** and **`SDM_MobileAdmin`**, select it, and choose **Add**.
+6. Search for the role **`SDM_MobileAdmin`** and **`SDM_User`**, select it, and choose **Add**.
    
-    <!-- border -->![Role Name](Adding_Role_3.png)
+    <!-- border -->![Role Name](Adding_Role_2.png)
 
 7. Choose **Save**. 
    
@@ -111,7 +110,6 @@ To use the application, ensure that your user account is associated with a role 
     You have now assigned the **Mobile Admin** role collection to your user.
 
     >Note: You might need to log out and log back in to make sure your new role collection is taken into account.
-
 
 ### Creating a repository
 
@@ -142,7 +140,7 @@ To use the application, ensure that your user account is associated with a role 
 
 2. Log on to the application.
 
-3. Click the **Document Management Service Mobile Application Onboarding** tile.
+3. Click the **Document Management Service Mobile Admin** tile.
     
     <!-- border -->![Admin View](MobileAdminView_gettingStarted_Horizon.png)
 
@@ -152,7 +150,7 @@ To use the application, ensure that your user account is associated with a role 
 
 5. Click **Mobile Services Cockpit**.
 
-    <!-- border -->![Accessing Mobile Service Cockpit](Access_Mobile_Services_Cockpit.png)
+    <!-- border -->![Acccessing Mobile Service Cockpit](Access_Mobile_Services_Cockpit.png)
 
 6. Navigate to the **APIs** tab.
 
@@ -162,7 +160,7 @@ To use the application, ensure that your user account is associated with a role 
 
 ### Installing mobile application
 <!-- description --> In this step, you are installing the mobile application on your device.
->**Note:** If you are planning to test the mobile app with the different users, it's required to assign the role of **`SDM_User`** to the respective users within the SAP BTP subaccount.
+>>**Note:** If you are planning to test the mobile app with the different users, it's required to assign the role of **`SDM_User`** to the respective users within the SAP BTP subaccount.
 
 1.  Download the app. For iOS devices, go to the [App Store](https://apps.apple.com/in/app/sap-document-management/id6504613204). For Android devices, visit the [Google Play Store](https://play.google.com/store/apps/details?id=com.sap.sdm.mobileapp&hl=en_IN&gl=US).
 
@@ -184,7 +182,7 @@ To use the application, ensure that your user account is associated with a role 
    
     <!-- border -->![Continue Screen](Mobile_Scan_Continue.png)
 
-    >**Results**: A repository that you created in the earlier steps is displayed. 
+    >**Results**: A repository that you created in the earlier steps is displayed.
 
 7. To refresh the list manually, pull down on the list and release it.
     
