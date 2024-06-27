@@ -9,25 +9,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Deploy CAP Java App to SAP Business Technology Platform
+
 <!-- description --> Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 
 ## You will learn
-  - How to prepare project configuration for deployment using `cds add` commands
-  - How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
+
+- How to prepare project configuration for deployment using `cds add` commands
+- How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
 
 ## Intro
+
 In the previous tutorial you added authentication to your application. In this tutorial, you will deploy the application to SAP BTP, Cloud Foundry environment and have it running fully in the cloud.
 
 ---
 
-
 ### Provision an Instance of SAP HANA Cloud
-
 
 You first need to provision your SAP HANA Cloud instance, which is a prerequisite to later on create a SAP HANA HDI Container to deploy your database artifacts to.
 
 1. Follow the tutorial [Provision an Instance of SAP HANA Cloud](hana-cloud-mission-trial-2). Use `bookstore-db` as the name of your database. Make sure to allow access to your SAP HANA Cloud from all IPs and that instance of the SAP HANA you have created is mapped to your subaccount and space where you working with this tutorial.
-
 
 ### Enhance project configuration for production
 
@@ -49,6 +49,18 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
 
     Learn more about those steps in the [Deploy to Cloud Foundry](https://cap.cloud.sap/docs/guides/deployment/to-cf?impl-variant=java#prepare-for-production) guide in the CAP documentation.
 
+2. (Optional) Following this tutorial strictly, you don't have an own UI yet in your project. To enable the index page with SAP Fiori preview, add the following configuration in the `application.yaml` of your `bookstore` project in VS Code:
+
+    ```yaml
+    ---
+    spring:
+      config.activate.on-profile: cloud
+    cds:
+      index-page.enabled: true
+    ```
+
+    > `cds.index-page.enabled: true` enables the generated index page and the SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorials. These features are meant to help you during development and should not be used in productive applications.
+
 ### Enable application for Cloud Foundry
 
 > When you've followed the previous tutorials, you've already added this dependency and can skip this step.
@@ -64,12 +76,9 @@ Cloud Foundry uses the Open Service Broker API to provide services to applicatio
     </dependency>
     ```
 
-### Update `xs-security.json` and `xs-app.json`
+### Update `xs-security.json`
 
-
-The XSUAA security descriptor (`xs-security.json`) that describes the roles for your application can be generated from your CDS service definitions. It is used to configure your XSUAA service instance and has been generated using the CDS facet `cds add xsuaa` in a previous step. The `xs-app.json` has been generated using `cds add approuter` in the previous step. Following this tutorial strictly, you don't have an own UI yet in your project. In this case you need to remove the `welcomeFile` property. Otherwise you'll run into a `Not Found` error after deployment as an `index.html` file is requested that is not available.
-
-    > For productive applications this is different and the command `cds add approuter` is of course tailored for productive applications. That's why we need this extra step here in this starter tutorial.
+The XSUAA security descriptor (`xs-security.json`) that describes the roles for your application can be generated from your CDS service definitions. It is used to configure your XSUAA service instance and has been generated using the CDS facet `cds add xsuaa` in a previous step.
 
 1. Open the `xs-security.json` file in SAP Business Application Studio and update the file so it looks like that:
 
@@ -111,12 +120,7 @@ The XSUAA security descriptor (`xs-security.json`) that describes the roles for 
 
     > The value of the last attribute "oauth2-configuration" depends on the landscape where your account is deployed. Check the API URL returned by the command `cf target` and change data center ID in the value `https://*.cfapps.**us10-001**.hana.ondemand.com/**` accordingly.
 
-  2. Open the `app/xs-app.json` file and remove the `welcomeFile` property.
-
-You've finished your project configuration and prepared for deployment. The next steps will show you how to deploy to SAP BTP Cloud Foundry environment.
-
 ### Identify SAP BTP Cloud Foundry endpoint
-
 
 The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
 
@@ -132,9 +136,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     <!-- border -->![CF API endpoint value](api-endpoint.png)
 
-
 ### Log into SAP BTP Cloud Foundry environment
-
 
 1. In SAP Business Application Studio, open a terminal by choosing **Terminal** **&rarr;** **New Terminal** from the main menu.
 
@@ -150,9 +152,6 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
     cf login
     ```
 
-
-
-
 ### Deploy using cf deploy
 
 SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
@@ -160,6 +159,7 @@ SAP provides an application format that respects the single modules and their te
 The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
 
 1. In the root of your project, execute the following command to build the archive.
+
     ```Shell/Bash
     mbt build -t gen --mtar mta.mtar
     ```
@@ -169,6 +169,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     The `-t` option defines the target folder of the build result as the `gen` folder of your project. As part of this build implicitly `cds build --production` is executed. This implicit build uses then all the configuration you've added in the step 1.2 when using `--for production`.
 
 2. Deploy the archive using `cf deploy`.
+
     ```Shell/Bash
     cf deploy gen/mta.mtar
     ```
@@ -186,6 +187,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```Shell/Bash
     Application "bookstore" started and available at "[org]-[space]-bookstore.cfapps.[region].hana.ondemand.com"
     ```
+
     This is the URL of the AppRouter, which enforces the authentication flow.
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
