@@ -311,30 +311,28 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 
 ### Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector (optional)
-The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
+The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector?version=Cloud) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
 
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central: Actions > Manage Configuration > Edit.
 
     ![Enable the Cloud Connector](enable-cloud-connector.png)
 
-2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector was installed on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
+2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector is running on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
 
-    ![Install](cloud-connector-install1.png)
-
-3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/204aaad4270245f3baa0c57c8ab1dd60.html), a Java JDK is required.  
+3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/installation-on-microsoft-windows-os?version=Cloud), a Java JDK is required.  
 
     The following commands were used to start the Cloud Connector.
 
     ```Shell (Microsoft Windows)
     set PATH=<Java Installation Directory\bin>;C:\Windows\System32
     set JAVA_HOME=<Java Installation Directory>
-    cd C:\SAP\scc20
+    cd C:\SAP\CC
     go.bat
     ```
 
     ![Started](cloud-connector-windows.png)
 
-    >It may take a while to start the Cloud Connector (3 minutes) and a line such as Cloud Connector 2.15.1 started will appear as shown above when it is started.
+    >It may take a while to start the Cloud Connector and a line such as Cloud Connector 2.17.0 started will appear as shown above when it is started.
 
 4. In a browser, open the URL <https://localhost:8443>.  
 
@@ -359,7 +357,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![Connected](cloud-connector-subaccount-connected.png)
 
-    For additional details, see [Initial Configuration](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/db9170a7d97610148537d5a84bf79ba2.html).
+    For additional details, see [Initial Configuration](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector-initial-configuration?version=Cloud).
 
 6. Configure the Cloud Connector to connect to the on-premise database.
 
@@ -375,7 +373,11 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![connected to SAP HANA database](cloud-connector-virtual-mapping2.png)
 
-7. From the SAP HANA Cloud Central, open the SAP HANA database explorer, then right-click **Remote Sources** and select **Add Remote Source**.  
+    Once the cloud connector has been installed and configured to connect to a BTP subaccount, it will appear as shown below in the SAP BTP Cockpit.
+
+    ![](btp-cloud-connector.png)
+
+7. In the SAP HANA database explorer connected to SAP HANA Cloud, right-click **Remote Sources** and select **Add Remote Source**.  
 
     ![Add remote source](add-remote-source.png)
 
