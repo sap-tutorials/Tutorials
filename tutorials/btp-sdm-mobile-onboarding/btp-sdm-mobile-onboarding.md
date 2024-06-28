@@ -91,7 +91,7 @@ To use the application, ensure that your user account is associated with a role 
 
     <!-- border -->![Role Name](Editing_Role_Name.png)
 
-6. Search for the role **`SDM_MobileAdmin`** and **`SDM_User`**, select it, and choose **Add**.
+6. Search for the role **`SDM_MobileAdmin`**, **`SDMWeb_Admin`**, and **`SDM_Admin`**, select it, and choose **Add**.
    
     <!-- border -->![Role Name](Adding_Role_2.png)
 
