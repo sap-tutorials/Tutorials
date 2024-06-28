@@ -153,6 +153,8 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     >The shortcut keys may vary depending on the OS and browser used.
 
+    For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
+
 5. Examine the **Messages** tab.
 
     ![messages tab](messages-tab.png)

@@ -281,7 +281,7 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     SELECT * FROM SYSPSE;
     CREATE PSE HTTPS;
-    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DigiCertRootCA';  --
+    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DigiCertRootCA';
     ALTER PSE HTTPS ADD CERTIFICATE <object_id>;
     ```
 
@@ -314,7 +314,7 @@ The following steps walk through the process of exporting to and importing data 
 
     ```SQL
     DELETE FROM HOTEL.MAINTENANCE;
-    LOAD TABLE HOTEL.MAINTENANCE (MNO, HNO, DESCRIPTION, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
+    LOAD TABLE HOTEL.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
     CONNECTION_STRING 'ENDPOINT=https://060acb0b-de9b-4801-9aa0-0dcfe503f0f0.files.hdl.prod-us10.hanacloud.ondemand.com'
     WITH CREDENTIAL 'DL_FILES' 
     ESCAPES OFF;

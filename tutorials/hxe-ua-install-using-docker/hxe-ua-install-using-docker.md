@@ -24,8 +24,6 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 
 SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jump-start application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data.
 
-The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
-
 SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
 | Linux OS | OS Version | Docker Editions
@@ -415,6 +413,7 @@ sudo ./hxe_upgrade.sh
 ```
 
 Follow the prompts to complete the server update.
+
 
 ### -Help Command
 

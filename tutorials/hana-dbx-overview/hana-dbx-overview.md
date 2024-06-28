@@ -156,7 +156,7 @@ Once installed, a useful starting point is the page below.
 It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP HANA cockpit manager.
 
 ### SAP HANA Cloud Guided Experience
-The SAP HANA Cloud Guided Experience provides a database user and password that has access to a specific schema free for 30 days.  The database user can be used with the SAP HANA cockpit and SAP HANA database explorer.  The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users.  To register, open the [SAP HANA Cloud Get Started](https://www.sap.com/products/technology-platform/hana/get-started.html?sort=latest_desc&tab=product-demos) and select Experience SAP HANA Cloud.
+The SAP HANA Cloud Guided Experience provides a database user and password that has access to a specific schema free for 30 days.  The database user can be used with the SAP HANA cockpit and SAP HANA database explorer.  The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users.  To get started, click on Try Now on Discover SAP HANA Cloud section of the trial page of [SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html).
 
 ![experience SAP HANA Cloud](experience.png)
 

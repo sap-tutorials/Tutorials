@@ -136,11 +136,11 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a colour. 
+5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a color. 
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
-Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.
+Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.  Graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
 
 ### Use graph algorithms in the SAP HANA database explorer
