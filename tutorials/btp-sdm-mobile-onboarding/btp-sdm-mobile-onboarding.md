@@ -15,6 +15,7 @@ parser: v2
  - You have enabled entitlement for the service **Document Management Service, Application Option** in the SAP BTP cockpit. For more information about the initial setup, see [Subscribing to Document Management Service, Application Option](https://help.sap.com/docs/document-management-service/sap-document-management-service/subscribing-to-document-management-service-application-option?locale=en-US&version=Cloud).
  - You have administrator privileges to subscribe to services in the SAP BTP subaccount.
 
+ 
 ## You will learn
   - How to subscribe to SAP Document Management Service, Application Option
   - How to access the QR code from the SAP Mobile Services
