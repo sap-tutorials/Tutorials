@@ -11,16 +11,17 @@ parser: v2
 <!-- description --> The SAP Document Management Service mobile app is available for both Android and iOS platforms. This robust application brings the functionality of the SAP Document Management Service to your fingertips, wherever you may be. This tutorial will guide you through the onboarding steps, enabling you to integrate the SAP Document Management Service mobile app within your own Document Management Service, Application Option user interface. Furthermore, you will learn how to effectively manage and control the application features using the SAP Mobile Services cockpit, enhancing overall efficiency and productivity.
 
 ## Prerequisites
- - You've access to the SAP BTP subaccount.
- - You've subscribed to the service **Document Management Service, Application Option** in the SAP BTP cockpit. For more information about the initial setup, see [Subscribing to Document Management Service, Application Option](https://help.sap.com/docs/document-management-service/sap-document-management-service/subscribing-to-document-management-service-application-option?locale=en-US&version=Cloud).
- - You've necessary administrator privileges and included the role **`SDM_MobileAdmin`** into your account.
- - You've assigned **`SDM_User`** role to the users who are required to use the mobile application. 
+ - You have access to the SAP BTP subaccount.
+ - You have enabled entitlement for the service **Document Management Service, Application Option** in the SAP BTP cockpit. For more information about the initial setup, see [Subscribing to Document Management Service, Application Option](https://help.sap.com/docs/document-management-service/sap-document-management-service/subscribing-to-document-management-service-application-option?locale=en-US&version=Cloud).
+ - You have administrator privileges to subscribe to services in the SAP BTP subaccount.
+
  
 ## You will learn
   - How to subscribe to SAP Document Management Service, Application Option
-  - How to access the QR code from the SAP Mobile Services cockpit.
-  - How to onboard mobile applications.
-  - How to sync your repositories.
+  - How to access the QR code from the SAP Mobile Services
+  - How to onboard mobile application
+  - How to create a repository
+  - How to sync your repositories
 
 ---
 ### Check entitlements
@@ -90,7 +91,7 @@ To use the application, ensure that your user account is associated with a role 
 
     <!-- border -->![Role Name](Editing_Role_Name.png)
 
-6. Search for the role **`SDM_MobileAdmin`** and **`SDM_User`**, select it, and choose **Add**.
+6. Search for the role **`SDM_MobileAdmin`**, **`SDMWeb_Admin`**, and **`SDM_Admin`**, select it, and choose **Add**.
    
     <!-- border -->![Role Name](Adding_Role_2.png)
 
@@ -160,7 +161,8 @@ To use the application, ensure that your user account is associated with a role 
 
 ### Installing mobile application
 <!-- description --> In this step, you are installing the mobile application on your device.
->>**Note:** If you are planning to test the mobile app with the different users, it's required to assign the role of **`SDM_User`** to the respective users within the SAP BTP subaccount.
+
+>**Note:** If you are planning to test the mobile app with the different users, it's required to assign the role of **`SDM_User`** to the respective users within the SAP BTP subaccount.
 
 1.  Download the app. For iOS devices, go to the [App Store](https://apps.apple.com/in/app/sap-document-management/id6504613204). For Android devices, visit the [Google Play Store](https://play.google.com/store/apps/details?id=com.sap.sdm.mobileapp&hl=en_IN&gl=US).
 
