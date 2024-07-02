@@ -13,6 +13,7 @@ author_profile: https://github.com/Juliana-Morais
 
 ## You will learn
   - How to use the Document Information Extraction Trial UI to upload new documents
+  - What schemas and SAP schemas are and how to use them
   - How to see and edit the extraction results
   - How to delete documents
 
@@ -48,31 +49,31 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     <!-- border -->![DOX-UI-App](upload.png)
 
-3. In the Select Document screen, choose the **Document Type**.
+3. On the Select Document screen, choose the **Document Type**.
 
     <!-- border -->![DOX-UI-App](type.png)
 
-4. Drop files directly or click **+** (Upload) to upload one or more document files. Click **Step 2**.
+4. Next, select the **Schema**. 
+
+    <!-- border -->![DOX-UI-App](choose-schema.png) 
+
+    >**NOTE:**
+
+    >You must select a schema when you add documents. By default, Document Information Extraction proposes the appropriate preconfigured SAP schema for your document type. To see the header and line item fields that are available in an SAP schema, choose **Schema Configuration** on the left of the Documentation Information Extraction UI and then choose the desired schema to display its details.
+
+    >You can also create schemas of your own. To find out how to create schemas, see [Create Schema for Purchase Order Documents](cp-aibus-dox-schema) and [Create Schema for Custom Documents](cp-aibus-dox-schema-custom). 
+    
+    >For more information about schemas, see step 2 of this tutorial, **Understand schemas**.
+
+5.  Drop files directly or click **+** (Upload) to upload one or more document files. Click **Confirm**.
 
     <!-- border -->![DOX-UI-App](drop-files.png)
 
-5. In **Step 2**, select the header fields you want to extract from the documents you've uploaded. Click **Step 3**.
-
-    <!-- border -->![DOX-UI-App](step-2.png)
-
-6. In **Step 3**, select the line items you want to extract from the documents you've uploaded. Click **Review**.
-
-    <!-- border -->![DOX-UI-App](step-3.png)
-
-7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![DOX-UI-App](review.png)
-
-    You see the Document Name, Upload Date and Status of the documents you have just uploaded.
+    You see the Document Name, Upload Date, and Status of the documents you have just uploaded.
 
     <!-- border -->![DOX-UI-App](pending.png)
 
-    The status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents once again.
+    The status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents again.
 
     <!-- border -->![DOX-UI-App](ready.png)
 
@@ -81,12 +82,27 @@ Upload to the service any standard document type file (in PDF format or single-p
 
 >When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
+### Understand schemas
 
+
+A schema contains a list of header fields and line item fields representing the target information that you want to extract from a particular type of document. You must select a schema when you add documents to the Document Information Extraction UI.
+
+You can either create your own schema from scratch or use a preconfigured SAP schema. The Document Information Extraction UI provides SAP schemas for the following standard document types:
+
+* Purchase order
+* Payment advice
+* Invoice 
+
+In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use these schemas unchanged to upload documents.
+
+If you don’t want to configure your own schema, you can select the appropriate SAP schema unedited when you add a document on the Document Information Extraction UI. No configuration is needed when you use SAP schemas in this way. Alternatively, you can copy a suitable SAP schema and edit the default fields in line with your needs.
+
+>**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 
 ### See and edit extraction results
 
 
-1. In the Documents screen, click the document row where you see Document Name, Upload Date and Status.
+1. On the Documents screen, click the document row where you see Document Name, Upload Date, and Status.
 
     <!-- border -->![DOX-UI-App](choose.png)
 
@@ -98,17 +114,17 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     <!-- border -->![DOX-UI-App](extraction-results-done.png)
 
-    See also the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), yellow (confidence between 51% and 79%), and green (confidence between 80% and 100%).
+    You also see the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), orange (confidence between 51% and 79%), and green (confidence between 80% and 100%).
 
-    See the prediction confidence score for each header field and line item extraction result by hovering the mouse over a field name, for example **Invoice Number**.
+    To see the prediction confidence score for each header field and line item extraction result,  hover the mouse over a field name, for example **Invoice Number**.
 
     <!-- border -->![DOX-UI-App](confidence.png)
 
-3. If corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
+3. If corrections are needed, and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](edit-1.png)
 
-    See an example where the **Currency Code** header field extraction result is edited:
+    Here, you see an example where the **Currency Code** header field extraction result is edited:
 
     <!-- border -->![DOX-UI-App](edit-currency-code-1.png)
 
@@ -118,9 +134,9 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     <!-- border -->![DOX-UI-App](edit-2.png)
 
-5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
+5. To edit fields, first select a value in the document page preview, and choose the appropriate name from the **Field** dropdown list on the **Assign Field** dialog. Then, add or change the extraction value, if necessary. Finally, click **Apply** to add the selected field to the Header Fields or Line Items extraction results.
 
-    See an example where the Buyer Contact value is selected in the document page preview and added to the Header Fields extraction results:
+    Here, you see an example where the value for the Buyer Contact field is selected in the document page preview and added to the Header Fields extraction results:
 
     <!-- border -->![DOX-UI-App](edit-buyer-1.png)
 
@@ -143,7 +159,7 @@ Upload to the service any standard document type file (in PDF format or single-p
 ### Delete documents
 
 
-1. In the Documents screen, select the document you want to delete. Click **Delete**.
+1. On the Documents screen, select the document you want to delete. Click **Delete**.
 
     <!-- border -->![DOX-UI-App](choose-delete.png) 
 

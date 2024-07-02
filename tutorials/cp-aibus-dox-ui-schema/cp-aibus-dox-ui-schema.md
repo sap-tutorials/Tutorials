@@ -49,7 +49,15 @@ If you are new to the Document Information Extraction UI, first try out the tuto
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
-Here, you find the SAP schemas. The Document Information Extraction UI includes preconfigured SAP schemas for the following standard document types: purchase order, payment advice, and invoice. In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can’t delete or change SAP schemas. You can use them as they are, or create copies and adapt the list of fields according to your needs.
+Here, you find the SAP schemas. The Document Information Extraction UI provides preconfigured SAP schemas for the following standard document types:
+
+* Purchase order
+* Payment advice
+* Invoice 
+
+In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use SAP schemas unchanged to upload documents.
+
+>**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 
 <!-- border -->![Access Schema Configuration](sap-schemas.png)
 
@@ -63,11 +71,11 @@ Here, you find the SAP schemas. The Document Information Extraction UI includes 
 ### Create schema
 
 
-To create your own schema, click **Create** and a dialog opens.
+To create your own schema, click **Create**.
 
 <!-- border -->![Create Schema](create-schema.png)
 
-In the dialog, enter a name for your schema, `purchase_order_schema`, for example. Note that the name cannot include blanks. Further, select `Purchase Order` as your **Document Type**.
+In the dialog that appears, enter a name for your schema, `purchase_order_schema`, for example. Note that the name cannot include blanks. Further, select `Purchase Order` as your **Document Type**.
 
 Click **Create** to create the schema.
 
@@ -82,13 +90,13 @@ Now, your schema shows up in the list. Access the schema by clicking on the row.
 ### Understand schemas
 
 
-A schema defines a list of header fields and line item fields that represent the information you want to extract from a document.
+A schema contains a list of header fields and line item fields representing the target information that you want to extract from a particular type of document. You must select a schema when you add documents to the Document Information Extraction UI.
 
-Header fields represent information that is specific to your document and only occurs one time. This may include the document number, any sender information, or the total amount of the order. In contrast, line item fields represent the products that you ordered, where each line is one product, often with a certain quantity attached. Thus, the line item fields extract the information for each product in your order. Those may include the article number, the price and the quantity.
+You can either create your own schema from scratch or use a preconfigured SAP schema. If you don’t want to configure your own schema, you can select the appropriate SAP schema unedited when you add a document on the Document Information Extraction UI. No configuration is needed when you use SAP schemas in this way. Alternatively, you can copy a suitable SAP schema and edit the default fields in line with your needs.
 
 Document Information Extraction already includes a number of fields that it can extract. See [here](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html) which header fields are supported and [here](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/ff3f5efe11c14744b2ce60b95d210486.html) which line item fields are supported. Additionally, you can define custom fields. In the next step, you'll learn about both.
 
-The image below shows an example purchase order. All the fields that you define in your schema in this tutorial are highlighted. The header fields represent all information outside of the table that occurs once. The line item fields represent all information within the table, which occurs per product. You can, of course, extend or reduce the information that you want to extract.
+The image below shows an example of a purchase order. All the fields that you define in your schema in this tutorial are highlighted. The header fields represent all information outside the table that occurs once. The line item fields represent all information within the table that occurs for each product. You can, of course, extend or reduce the information that you want to extract.
 
 <!-- border -->![Purchase Order Example](purchase-order-example.png)
 
@@ -97,7 +105,7 @@ The image below shows an example purchase order. All the fields that you define 
 ### Add header fields
 
 
-To define your first header field, click **Add** to the right of the headline `Header Fields`.
+To define your first header field, click **Add** to the right of the heading `Header Fields`.
 
 <!-- border -->![Add Header Field](add-header-field.png)
 
@@ -105,7 +113,9 @@ For each field, you have to enter a name, a data type, a setup type, and optiona
 
 The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor (standard fields supported by Document Information Extraction) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
 
-As your first header field, add the number of your purchase order which identifies your document.
+If you'd like to find out more about setup types and how they relate to document types, extraction methods, and default extractors, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types).
+
+As your first header field, add the purchase order number, which identifies your document.
 
 1. Enter an appropriate name for your field, `purchaseOrderNumber`, for example.
 
@@ -133,7 +143,7 @@ Click **Add** again to open the dialog.
 
     <!-- border -->![Create Purchase Order Status](add-purchase-order-status.png)
 
-You've now added your first custom field. Go ahead and add the list of header fields as shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of header fields.
+You've now added your first custom field. Go ahead and add the header fields shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of header fields.
 
 |  Field Name           | Data Type   | Setup Type  | Default Extractor
 |  :------------------- | :---------- | :---------- | :-----------------
@@ -160,7 +170,7 @@ You've now added your first custom field. Go ahead and add the list of header fi
 ### Add line item fields
 
 
-Next, you need to define the line item fields. As your first line item field, add the SKU (Stock Keeping Unit) that uniquely identifies an article.
+Next, you need to define the line item fields. As your first line item field, add the SKU (stock keeping unit) that uniquely identifies an article.
 
 Click **Add** to the right of the headline `Line Item Fields`.
 
@@ -176,11 +186,11 @@ In the dialog proceed as follows:
 
 <!-- border -->![Add SKU Number](add-sku-number.png)
 
-The field now displays in your list of line item fields where you find all the information again that you've just entered.
+The field now displays in your list of line item fields, where you find all the information again that you've just entered.
 
 <!-- border -->![View SKU Number](added-sku-number.png)
 
-You've now added your first line item field. Go ahead and add the list of line item fields as shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of line item fields.
+You've now added your first line item field. Go ahead and add the line item fields shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of line item fields.
 
 |  Field Name           | Data Type   | Setup Type  | Default Extractor
 |  :------------------- | :---------- | :---------- | :-----------------
@@ -201,7 +211,7 @@ You've now added your first line item field. Go ahead and add the list of line i
 ### Activate schema
 
 
-Once you've added all header and line item fields, the schema needs to be activated so that it can be used to extract information from documents. Right now, the schema has the status `DRAFT`, indicating that it cannot be used yet.
+Once you've added all header and line item fields, you need to activate the schema so that you can use it to extract information from documents. Right now, the schema has the status `DRAFT`, indicating that it cannot be used yet.
 
 To activate the schema, click **Activate**.
 
