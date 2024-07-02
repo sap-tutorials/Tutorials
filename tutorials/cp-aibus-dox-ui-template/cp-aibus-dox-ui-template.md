@@ -49,7 +49,7 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](extraction.png)
 
-    In the next steps, you'll upload a document, get the extraction results and edit them so that you can associate the document with your template.
+    In the next steps, you'll upload a document, get the extraction results, and edit them so that you can associate the document with your template.
 
 
 >**CAUTION:**
@@ -61,7 +61,7 @@ In the dialog, proceed as follows:
 ### Upload document and get extraction results
 
 
->This tutorial uses the following purchase order documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
+>This tutorial uses the following purchase order documents. Download them to follow along (right-click on the link, then click ***Save link as*** to download the files locally):
 
 > - [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf)
 > - [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf)
@@ -73,25 +73,19 @@ In the dialog, proceed as follows:
 
 2. On the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
-3. Select the **Schema** you created. Don't select any **Template** this time.
+3. Select the **Schema** you created. Don't select a **Template** this time.
 
 4. Drop the file directly or click **+** to upload one of the purchase order documents. The following images use the [Sample Purchase Order 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-1.pdf). 
 
-5. Click **Step 2**.
+5. Click **Confirm**.
 
     <!-- border -->![Template](upload.png)
-
-6. The selection of header fields and line item fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7.  Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review.png)
 
     The document status changes from `PENDING` to `READY`.
 
     <!-- border -->![Template](ready.png)
 
-8. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
+6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
 
     <!-- border -->![Template](results.png)
 
@@ -106,7 +100,7 @@ Before associating the document with your template, make sure the extraction res
 
     <!-- border -->![Template](edit.png)
 
-    This is an example on how to edit the field `cancelDate`:
+    This is an example of how to edit the field `cancelDate`:
 
     <!-- border -->![Template](cancelDate.png)
 
@@ -173,24 +167,18 @@ The last step that remains is to activate the template.
 
 4. Drop the file directly or click **+** to upload one of the other two purchase order documents. First, use the [Sample Purchase Order 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template/sample-purchase-order-2.pdf).
 
-5. Click **Step 2**.
+5. Click **Confirm**.
 
     <!-- border -->![Template](upload2.png)
-
-6. The selection of header fields and line item fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review2.png)
 
     The document status changes from `PENDING` to `READY`.
 
     <!-- border -->![Template](ready2.png)
 
-8. Click the document row and **Extraction Results** to see the information extracted from the document using the schema and template you created.
+6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema and template you created.
 
     <!-- border -->![Template](results2.png)
 
-    You can now create a schema and a template, and use them to get the extraction results for your own standard document types: invoices, payment advices, and purchase orders.
+    You can now create a schema and a template and use them to get the extraction results for your own standard document types: invoices, payment advices, and purchase orders.
 
     Congratulations, you've completed this tutorial.
