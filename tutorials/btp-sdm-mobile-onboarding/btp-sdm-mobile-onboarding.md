@@ -128,9 +128,9 @@ To use the application, ensure that your user account is associated with a role 
 
 4. Choose **Internal** as a Repository Type, enter the **Display Name** of your choice, and click **Add**. 
 
-<!-- border -->![Adding Repository](Add_Repo_Details_Page.png)
+    <!-- border -->![Adding Repository](Add_Repo_Details_Page.png)
 
->The repository you've set up will be available for access via the mobile application in the subsequent steps.
+    >**Results:** The repository you've set up will be available for access via the mobile application in the subsequent steps.
 
 
 ### Go to the application and access the QR code
@@ -157,7 +157,7 @@ To use the application, ensure that your user account is associated with a role 
 
     <!-- border -->![Accessing API tab](QR_Code_Scan_API_tab.png)
 
->**Results:** You've accessed the QR code. Keep this tab open and proceed with the next step.
+    >**Results:** You've accessed the QR code. Keep this tab open and proceed with the next step.
 
 ### Installing mobile application
 <!-- description --> In this step, you are installing the mobile application on your device.
