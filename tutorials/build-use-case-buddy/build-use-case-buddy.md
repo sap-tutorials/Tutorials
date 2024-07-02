@@ -45,8 +45,7 @@ Building the Use Case Buddy and making it work for your organization will bring 
      <!-- size:400px -->
     ![SignUp](visuals/solution_diagram.png)
 
-    The key user with a potential use case would be using the Use Case Buddy App built using SAP Build Apps, to the their use case and answer few set of questions which will then automatically calculate the complexity of the use case. Now this idea and description will be forwarded to IT admins to check the feasibility of creating the use case using SAP Build Process Automation. The IT admins will review the use case and its complexity, and will make choice for the level of collaboration that might be needed to create the use case. For instance if they only need to check the final result for a low complexity use-case or whether they need to actively help because the needed systems are very big for a higher complexity use case.
-    And ultimately the Use Case would be forwarded to a business site on SAP Build Work Zone Advanced Edition which then lists all of the Use Cases in a central repository.
+     Users input the details of their use case idea, and the app calculates its complexity. IT admins can then review and approve or deny the idea. Approved use cases are listed in a repository to further collaborate on.
 
 **Ready to move on? You've got all you need now!**
     
@@ -65,12 +64,14 @@ Building the Use Case Buddy and making it work for your organization will bring 
     <!-- size:150px -->
     ![SignUp](visuals/SignUp3.png)
 
-    In case you don't receive an invitation mail after 24 hours, use this [link](https://workzone.one.int.sap/) and then create an SAP universal ID account or use your existing one. Afterwards when you're logged in, look for the invitation in the notifications (bell button) and join the workspace from there. This will only work when you signed up with your email before.
+    *In case you don't receive an invitation mail after 24 hours, use this [link](https://workzone.one.int.sap/) and then create an SAP universal ID account or use your existing one. Afterwards when you're logged in, look for the invitation in the notifications (bell button) and join the workspace from there. This will only work when you signed up with your email before.*
     
     <!-- size:300px -->
     ![SignUp](visuals/SignUp4.png)
 
-2. Scroll down in the SAP Build Governance Resource center until you reach the widget for the Use Case Buddy. Click on *Click here to get the templates.* and download the templates on the next page.
+1. Scroll down in the SAP Build Governance Resource center until you reach the widget for the Use Case Buddy. Click on *Click here to get the templates* and download the templates on the next page.
+
+2. Extract the templates for the Use Case Buddy from the file you just downloaded. You will use them on their own later on.
 
 ### Import the templates for SAP Build Apps & Process Automation
 
@@ -93,10 +94,12 @@ Building the Use Case Buddy and making it work for your organization will bring 
 
     <!-- size:400px -->
     ![Import](visuals/Import4.png)
+    
+    *In case you receive an error due to missing roles at this point, it may be that you lack the right roles in your BTP cockpit setup. A quick role assignment should fix that. Please refer to this [guide]( https://help.sap.com/docs/build-apps/service-guide/configuring-user-roles) and use the mentioned roles.*
 
-1. Repeat the steps with the other templates you downloaded. 
+2. Repeat the steps with the other templates you downloaded. 
 
-1. All done! Now you can see your imported projects.
+3. All done! Now you can see your imported projects.
 
     <!-- size:300px -->
     ![Import](visuals/Import5.png)
