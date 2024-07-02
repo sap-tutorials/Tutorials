@@ -348,7 +348,7 @@ This adds csv files with a single header line for all entities to the `db/data/`
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > Make sure that you now have a folder hierarchy `db/data/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/data` folder.
+    > You can ignore for now the additional files `cds add data` generated for you.
 
     > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
@@ -387,13 +387,7 @@ Instead of using in-memory, you can also use persistent databases.
 
 1. If `cds watch` is running, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
-2. Install `SQLite3` packages.
-
-    ```Shell/Bash
-    npm i sqlite3 --no-save
-    ```
-
-3. Configure the database in your `package.json` in the `cds.requires.db` section.
+2. Configure the database in your `package.json` in the `cds.requires.db` section.
 
     ```json
     {
