@@ -16,7 +16,7 @@ author_profile: https://github.com/Juliana-Morais
 - You've access to the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app)
 
 ## You will learn
-  - How to create and activate a custom schema for custom documents
+  - How to create and activate your own schema for custom documents
   - How to define the fields that you want to extract from a custom document 
   - How to upload a custom document to the Document Information Extraction UI
   - How to get extraction results using the schema you’ve created and LLMs
@@ -47,11 +47,11 @@ In the first example, you'll use a delivery note. After working through this exa
 
     <!-- border -->![LLM](access-schema-configuration.png)
 
-3. To create your own schema, click **Create**. A dialog opens.
+3. To create your own schema, click **Create**.
 
     <!-- border -->![LLM](create-schema.png)
 
-4. In the dialog, enter a name for your custom schema – for example, `delivery_note_schema`. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
+4. In the dialog that opens, enter a name for your own schema – for example, `delivery_note_schema`. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
 
 5. Click **Create** to create the schema.
 
@@ -132,7 +132,7 @@ Now, the status of your schema changes to `ACTIVE`. To make changes to your sche
 
 <!-- border -->![LLM](active.png)
 
-Congratulations, you've now created and activated your custom schema for delivery note documents.
+Congratulations, you've now created and activated your own schema for delivery note documents.
 
 
 
@@ -147,25 +147,19 @@ Congratulations, you've now created and activated your custom schema for deliver
    
 3. Select the **Schema** you created (`delivery_note_schema`).
    
-4. Right click on the link, then click ***Save link as*** to download locally the [delivery note](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/delivery_note.jpg) sample document.
+4. Right-click on the link, then click ***Save link as*** to download the [delivery note](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/delivery_note.jpg) sample document locally.
    
 5. Drag and drop the file directly or click **+** to upload the sample document.
 
-6. Click **Step 2**.
-
     <!-- border -->![LLM](upload.png)
 
-7. Click **Step 3** and then click **Review**.
-   
-8. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![LLM](review.png)
-
+6. Click **Confirm**.
+  
     The document status changes from `PENDING` to `READY`.
 
     <!-- border -->![LLM](ready.png)
 
-9.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the delivery note using LLMs and the schema that you created.
+7.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the delivery note using LLMs and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 
@@ -180,7 +174,7 @@ You can now repeat the steps previouly described for the following documents (us
 
 - Résumé – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/resume.pdf)
 
-Create the header fields shown in the table and image below. Don't forget to add a description for `degree`, `employer` and `jobTitle` (as in the image). Feel free to extend or reduce the list of fields.
+Create the header fields shown in the table and image below. Don't forget to add a description for `degree`, `employer`, and `jobTitle` (as in the image). Feel free to extend or reduce the list of fields.
 
 |  Field Type		    |  Field Name           | Data Type     | Setup Type   
 |  :------------------- |  :-------------------	| :----------   | :----------    

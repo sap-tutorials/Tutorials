@@ -53,7 +53,15 @@ If you are new to the Document Information Extraction UI, first try out the tuto
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
-Here, you find the SAP schemas. The Document Information Extraction UI includes preconfigured SAP schemas for the following standard document types: purchase order, payment advice, and invoice. In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can’t delete or change SAP schemas. You can use them as they are, or create copies and adapt the list of fields according to your needs.
+Here, you find the SAP schemas. The Document Information Extraction UI provides preconfigured SAP schemas for the following standard document types:
+
+* Purchase order
+* Payment advice
+* Invoice 
+
+In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use SAP schemas unchanged to upload documents.
+
+>**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 
 <!-- border -->![Access Schema Configuration](sap-schemas.png)
 
@@ -67,11 +75,11 @@ Here, you find the SAP schemas. The Document Information Extraction UI includes 
 ### Create schema
 
 
-To create your own schema, click **Create** and a dialog opens.
+To create your own schema, click **Create**.
 
 <!-- border -->![Create Schema](create-schema.png)
 
-In the dialog, enter a name for your schema, `power_of_attorney_schema`, for example. Note that the name cannot include blanks. Further, select `Custom` as your **Document Type** and `Document` for **OCR Engine Type**.
+In the dialog that appears, enter a name for your schema, `power_of_attorney_schema`, for example. Note that the name cannot include blanks. Further, select `Custom` as your **Document Type** and `Document` for **OCR Engine Type**.
 
 Click **Create** to create the schema.
 
@@ -93,7 +101,9 @@ To define your first header field, click **Add**.
 
 For each field, you have to enter a name, a data type, and a setup type. Adding a description is optional. Default extractors aren't available for custom documents. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
 
-The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
+The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor (standard fields supported by Document Information Extraction) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
+
+If you'd like to find out more about setup types and how they relate to document types, extraction methods, and default extractors, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types).
 
 As your first header field, add the shipper number of your power of attorney document.
 
@@ -119,7 +129,7 @@ Click **Add** again to open the `Add Data Field` dialog.
 
     <!-- border -->![Create Name](add-name.png)
 
-Go ahead and add the list of header fields as shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
+Go ahead and add the header fields shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
 
 |  Field Name           | Data Type     | Setup Type   
 |  :------------------- | :----------   | :----------    
