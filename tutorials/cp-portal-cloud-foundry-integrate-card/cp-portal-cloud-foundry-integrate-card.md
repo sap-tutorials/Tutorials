@@ -119,7 +119,7 @@ To do this, go to the Content Manager in SAP Build Work Zone, standard edition.
 
 ### Add a header in your page
 
-1. Go back to the Site Manager using the back arrow.
+1. Go back to the Site Manager by using the back arrow.
 
     <!-- border -->![Back to Site Manager](21-go-back.png)
 
