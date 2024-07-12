@@ -75,17 +75,17 @@ Once you have your SAP BTP account setup, proceed to the next step to learn how 
 3.	Confirm that you have entitlements for the services (and service plans) listed here:
 
     - SAP HANA Cloud:          
-      * `relational-data-lake-free`
-      * `hana-cloud-connection-free`
+      * `tools (Application)`
       * `hana-free`
-      * `tools`
-
+      * `hana-cloud-connection-free`
+      * `relational-data-lake-free`
+    
     - SAP HANA Schemas & HDI Containers: 
       * `hdi-shared`
       * `schema`
       * `securestore`
 
-4. If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen, then click on **Add Service Plans** in the same area of the screen.
+4. If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Edit** on the top right-hand corner of the screen, then click on **Add Service Plans** in the same area of the screen.
 
     In the pop-up that opens, type `SAP HANA` in the search box to see all relevant entitlements.
 

@@ -48,9 +48,16 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 3.	Notice that the following entitlements are shown.
 
-    - SAP HANA Cloud: `tools (Application)`, `hana`, `hana-cloud-connection`, and `relational-data-lake`
+    - SAP HANA Cloud: 
+      * `tools (Application)`
+      * `hana-cloud-connection`
+      * `hana`
+      * `relational-data-lake`
 
-    -	SAP HANA Schemas & HDI Containers: `hdi-shared`, `schema`, and `securestore`
+    - SAP HANA Schemas & HDI Containers: 
+      * `hdi-shared`
+      * `schema`
+      * `securestore`
 
 ### Add a subscription to SAP HANA Cloud tools
 
