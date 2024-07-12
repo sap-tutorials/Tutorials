@@ -140,6 +140,7 @@ You will now add a user role `Administrators` to your application.
     ---
     spring:
       config.activate.on-profile: default
+      sql.init.schema-locations: classpath:schema-h2.sql
     cds:
       datasource:
         auto-config.enabled: false
