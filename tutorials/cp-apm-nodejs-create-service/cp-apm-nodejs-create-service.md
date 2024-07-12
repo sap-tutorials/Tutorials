@@ -227,7 +227,7 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    <!-- border; size:540px -->![application](application_local.png)
+    <!-- border; size:540px -->![Generated index page](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
@@ -274,9 +274,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `data-model.cds`.
+1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `schema.cds`.
 
-2. Add the following code to the file `data-model.cds`:
+2. Add the following code to the file `schema.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -306,7 +306,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
-    using my.bookshop as my from '../db/data-model';
+    using my.bookshop as my from '../db/schema';
 
     service CatalogService {
       entity Books @readonly as projection on my.Books;
