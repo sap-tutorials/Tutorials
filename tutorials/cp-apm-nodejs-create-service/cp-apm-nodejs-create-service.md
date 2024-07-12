@@ -348,7 +348,7 @@ This adds csv files with a single header line for all entities to the `db/data/`
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > You can ignore for now the additional files `cds add data` generated for you.
+    > For now, you can ignore the additional files that `cds add data` generated for you.
 
     > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 

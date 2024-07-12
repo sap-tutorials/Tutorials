@@ -14,7 +14,7 @@ parser: v2
 
 ## You will learn
 
-- How to deploy your CAP business service on SAP BTP and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details
+- How to deploy your CAP business service on SAP BTP and bind appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details
 
 ## Prerequisites
 
