@@ -52,11 +52,11 @@ In this tutorial, you will learn how to start preparations to create a calculati
 
     ![CF Org ID](cf-org-id.png)
 
-3. Open **SAP HANA Cloud Central**. Click on the SAP HANA Cloud database instance used for this tutorial, select **Manage Configurations** from the actions menu, then **Edit** in the top right corner. Under **Instance Mapping**, add an instance mapping by pasting the Cloud Foundry organization ID you just copied.
+3. Open **SAP HANA Cloud Central**. Click on the SAP HANA Cloud database instance used for this tutorial, select **Manage Configurations** from the actions menu, then **Add Mapping** in the top right corner. Under **Instance Mapping**, add an instance mapping by pasting the Cloud Foundry organization ID you just copied.
 
     ![Instance mapping](add-cf-mapping.png)
 
-    Once finished, press **Save**.
+    Once finished, press **Review and Save**.
 
 4. In the SAP BTP Cockpit, go to **Instances and Subscriptions**.  Click **Create**.  
 

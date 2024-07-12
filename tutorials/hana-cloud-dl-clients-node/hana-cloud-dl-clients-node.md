@@ -328,7 +328,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
             return PromiseModule.close(results);
         })
         .then(() => {
-            PromiseModule.drop(statement);
+            return PromiseModule.drop(statement);
         })
         .then(() => {
             PromiseModule.disconnect(connection);
