@@ -284,7 +284,6 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
     * Viewer for spatial and graph data
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
-    * Statement library
 
 ### Knowledge check
 

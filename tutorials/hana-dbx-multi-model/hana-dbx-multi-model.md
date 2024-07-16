@@ -305,13 +305,13 @@ JSON collections can be imported using the import data wizard but are required t
     ```
     ![parks with tennis courts](parks-with-tennis-courts.png)
 
-Additional details can be found at [hana_ml.docstore package](https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/2024_1_QRC/en-US/hana_ml.docstore.html#hana_ml.docstore.create_collection_from_elements).
+Additional details can be found at [hana_ml.docstore package](https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/latest/en-US/hana_ml.docstore.html#hana_ml.docstore.create_collection_from_elements).
 
 
 ### Import and view spatial data
 This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 
-1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in Waterloo`**.  Scroll through the results and choose the selection below.
+1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest Waterloo`**.  Scroll through the results and choose the selection below.
 
     ![Search](search.png)
 
@@ -383,7 +383,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![find and replace](find-replace.png)
 
-    To see the required formatting for importing JSON documents, see [SAP HANA Database JSON Document Store Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f2d68919a1ad437fac08cc7d1584ff56/d2ee307ee64145b1867fbd95b0f1ba88.html?version=2021_2_QRC).
+    To see the required formatting for importing JSON documents, see [SAP HANA Database JSON Document Store Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/import-and-export).
 
 11. Upload the file to a cloud storage provider.
 

@@ -227,7 +227,7 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    <!-- border; size:540px -->![application](application_local.png)
+    <!-- border; size:540px -->![Generated index page](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
@@ -274,9 +274,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `data-model.cds`.
+1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `schema.cds`.
 
-2. Add the following code to the file `data-model.cds`:
+2. Add the following code to the file `schema.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -306,7 +306,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
-    using my.bookshop as my from '../db/data-model';
+    using my.bookshop as my from '../db/schema';
 
     service CatalogService {
       entity Books @readonly as projection on my.Books;
@@ -348,7 +348,7 @@ This adds csv files with a single header line for all entities to the `db/data/`
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > Make sure that you now have a folder hierarchy `db/data/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/data` folder.
+    > For now, you can ignore the additional files that `cds add data` generated for you.
 
     > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
@@ -387,13 +387,7 @@ Instead of using in-memory, you can also use persistent databases.
 
 1. If `cds watch` is running, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
-2. Install `SQLite3` packages.
-
-    ```Shell/Bash
-    npm i sqlite3 --no-save
-    ```
-
-3. Configure the database in your `package.json` in the `cds.requires.db` section.
+2. Configure the database in your `package.json` in the `cds.requires.db` section.
 
     ```json
     {
