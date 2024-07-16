@@ -84,9 +84,9 @@ As your first header field, add the number of the delivery note.
 
 2. Select `string` as the **Data Type**.
 
-3. Use `auto` as the **Setup Type** and click **Add**.
+3. Use `auto` as the **Setup Type** and click **Save**.
    
->Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details on this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html).
+>Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details of this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html).
 
 <!-- border -->![LLM](add-number.png)
 
@@ -100,7 +100,7 @@ Click **Add** again to open the **Add Data Field** dialog.
 
 2. Select `string` as the **Data Type**.
 
-3. Use `auto` as the **Setup Type** and click **Add**.
+3. Use `auto` as the **Setup Type** and click **Save**.
 
 <!-- border -->![LLM](add-ponumber.png)
 
@@ -116,6 +116,9 @@ Now, go ahead and add the remaining header fields and line item fields shown in 
 |  line item field      |  `unitOfMeasure`        | string        | auto                      
 
 <!-- border -->![LLM](all-fields.png)
+
+>**NOTE:** The Document Information Extraction UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
+
 
 
 

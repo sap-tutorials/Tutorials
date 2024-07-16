@@ -35,7 +35,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](plan.png)
 
 
-    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
+    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details about how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -123,7 +123,7 @@ As your first header field, add the purchase order number, which identifies your
 
 3. As all business documents have a unique identification, Document Information Extraction already includes a standard field. Select `auto` for the `Setup Type` and then select `documentNumber` for the `Default Extractor`.
 
-4. Click **Add** to add the header field.
+4. Click **Save** to add the header field.
 
     <!-- border -->![Create Purchase Order Number](add-document-number.png)
 
@@ -139,7 +139,7 @@ Click **Add** again to open the dialog.
 
 2. Select `string` for the `Data Type`.
 
-3. As Document Information Extraction offers no equivalent field, select `manual` for the `Setup Type`. Click **Add** to add the field.
+3. As Document Information Extraction offers no equivalent field, select `manual` for the `Setup Type`. Click **Save** to add the field.
 
     <!-- border -->![Create Purchase Order Status](add-purchase-order-status.png)
 
@@ -165,6 +165,9 @@ You've now added your first custom field. Go ahead and add the header fields sho
 
 <!-- border -->![All Header Fields](all-header-fields.png)
 
+>**NOTE:** The Document Information Extraction UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
+
+
 
 
 ### Add line item fields
@@ -182,7 +185,7 @@ In the dialog proceed as follows:
 
 2. Select `string` for the `Data Type`.
 
-3. Select `manual` for the `Setup Type` and click **Add** to add the field.
+3. Select `manual` for the `Setup Type` and click **Save** to add the field.
 
 <!-- border -->![Add SKU Number](add-sku-number.png)
 
