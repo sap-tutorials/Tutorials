@@ -93,7 +93,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
 
 
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
-1. Open a file named `nodeQuery.js` in an editor.
+1. Create a new file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
     notepad nodeQuery.js
