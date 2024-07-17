@@ -333,7 +333,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         ./setup.bin
         ```
 
-3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.
+3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help avoid any issues with paths.
 
     ![GUI Installer](windows-gui-install.png)
 
