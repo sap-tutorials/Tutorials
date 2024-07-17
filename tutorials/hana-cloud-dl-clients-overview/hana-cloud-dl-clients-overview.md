@@ -386,6 +386,8 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
 
+    >NOTE:-If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
+    
 
 ### Connect with the Interactive SQL Client (DBISQL)
 
@@ -423,6 +425,8 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     >```Shell (Linux)
     dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
+
+    >NOTE:-If you encounter the error message "error while loading shared libraries: libnsl.so.1: cannot open shared object file: No such file or directory," you will need to install libnsl.so.1.
 
     >![DBISQL connected nogui](dbisql-nogui.png)
 
