@@ -1,8 +1,8 @@
 ---
 parser: v2
 auto_validation: true
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Nico Schoenteich
+author_profile: https://github.com/nicoschoenteich
 tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 primary_tag: products>sap-btp--cloud-foundry-environment
 time: 15
@@ -30,6 +30,7 @@ Open the installer on your computer, and follow the installation instructions.
 
 > For more help with the CLI installation, look at the [Cloud Foundry CLI installation documentation](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 
+
 ### Test the Cloud Foundry CLI
 
 Open a command prompt on your computer.  
@@ -49,6 +50,7 @@ To test the CLI, type in the following:
 You should see a list of Cloud Foundry commands.
 
 <!-- border -->![Cloud Foundry list of Commands](cfhelp.png)
+
 
 ### Determine your Cloud Foundry URL
 
@@ -83,7 +85,7 @@ Next, open a command line prompt on your computer.  In the command line screen, 
 ```bash
 cf login -a <URL>
 ```
-> Replace the `<URL>` section with the URL you selected from the table.
+> Replace the `<URL>` section with the URL you selected from the table. For more information on the log in using the Command Line Interface (CLI), go to the SAP BTP Help Portal [Log On to the Cloud Foundry Environment Using the Cloud Foundry Command Line Interface](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/7a37d66c2e7d401db4980db0cd74aa6b.html?locale=en-US) website.
 
 When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space.
 
