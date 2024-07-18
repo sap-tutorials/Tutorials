@@ -49,7 +49,7 @@ To test the CLI, type in the following:
 
 You should see a list of Cloud Foundry commands.
 
-<!-- border -->![Cloud Foundry list of Commands](cfhelp.png)
+![Cloud Foundry list of Commands](cfhelp.png)
 
 
 ### Determine your Cloud Foundry URL
@@ -68,15 +68,15 @@ You can also identify your API Endpoint using your Cloud Foundry account:
 
 First, navigate to the [SAP BTP cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
 
-<!-- border -->![entertrial](entertrial.png)
+![entertrial](entertrial.png)
 
 Next, click on the subaccount.
 
-<!-- border -->![subaccount](subaccount.png)
+![subaccount](subaccount.png)
 
 The **API Endpoint** is displayed on the left-hand side of the **Overview** page.
 
-<!-- border -->![endpoint](endpoint.png)
+![endpoint](endpoint.png)
 
 ### Log in using the CLI
 
