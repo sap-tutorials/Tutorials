@@ -12,9 +12,9 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
 
 ## You will learn
-  - How to do add breakpoints to your JavaScript code
-  - How to log data to the console
-  - How to use the Google Chrome Dev Tools.
+  - How to do add breakpoints to your JavaScript code.
+  - How to log data to the browser console.
+  - How to use the browser dev tools.
 
 ---
 
@@ -22,77 +22,71 @@ author_profile: https://github.com/nicoschoenteich
 
 Add a simple message page to let the users know you are still working on this app.
 
-Replace the existing page in the file `webapp/view/MainView.view.xml` with
-```JavaScript
-<MessagePage showHeader="false"
-  description="More content to come"
-  text="Stay tuned!"
-  icon="sap-icon://home" />
+Replace the existing `<Page />` control in the file `myui5app/webapp/view/MainView.view.xml` with the following code:
+
+```XML
+<MessagePage
+    showHeader="false"
+    description="More content to come"
+    text="Stay tuned!"
+    icon="sap-icon://home" />
 ```
 
+> Tip: You can put your editor window and browser window right next to each other to benefit from the live reload feature of the web server even more.
 
-![message](./messagepage.png)
-
-
+![message](./message.gif)
 
 ### Write a log message to the console
 
-Add this `onBeforeRendering` hook to the file `webapp/controller/MainView.controller.js` (before the `onInit` hook). This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
+SAPUI5 provides [lifecycle hooks](https://sapui5.hana.ondemand.com/sdk/#/topic/121b8e6337d147af9819129e428f1f75.html) to execute logic at certain points in the lifecycle of the app. For example, the `onBeforeRendering` hook can be used to do clean-up tasks each time before the view is being rendered (and the HTML is placed in the DOM). For the purpose of practice however, you will simply log an error to the browser console.
+
+Paste the following `onBeforeRendering` hook into the file `myui5app/webapp/controller/MainView.controller.js`, right after the existing `onInit` hook:
+
 ```JavaScript
+,
 onBeforeRendering: function() {
-    jQuery.sap.log.error("A problem occurred!");
-},
+    console.error("A problem occurred!");
+}
 ```
 
 ![logger](./logger.png)
 
-
-> This `onBeforeRendering` method is called every time the View is rendered, before the Renderer is called and the HTML is placed in the DOM-Tree. It can be used to perform clean-up-tasks before re-rendering.
-
-
-
 ### Add a breakpoint
 
+Another lifecycle hook provided by SAPUI5 is the `onAfterRendering` hook, which gets executed - well - after rendering. Why don't we use it to practice setting a breakpoint and calling the debugger of the browser, so we can inspect the app at that specific moment of its lifecycle.
 
-Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of your app.
+Paste the following `onAfterRendering` hook into the file `myui5app/webapp/controller/MainView.controller.js`:
+
 ```JavaScript
 ,
-
 onAfterRendering: function() {
 	debugger
-},
+}
 ```
 
 ![debugger](./debugger.png)
 
-
-> This `onAfterRendering` method is called every time the view is rendered, after the HTML is placed in the DOM-Tree. It can be used to apply additional changes to the DOM after the Renderer has finished.
-
-
-
 ### Stop at the breakpoint
 
-Test the changes  on your local machine.
-```
-npm start
-```
-This command should start the app and open your browser automatically. Open the Chrome Dev Tools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by **clicking F12**. **Refresh the page** to run the script one more time.
+Test the changes by running the app on your local machine.
 
-You should now see that the app reached the breakpoint (the dev tools automatically switched to the `Sources` tab).
+Execute the following command from the project root:
+
+```Bash
+npm run start:myui5app
+```
+
+This command should start the app and open your browser automatically. Open the dev tools of your browser. You should now see that the app reached the breakpoint (the dev tools automatically switched to the `Sources` tab). With the execution of the script being stopped, you can hover over variables in the script to inspect them or even execute command using the "Console" tab. This is essential for debugging complex apps and understanding what's going on at certain points in the script.
 
 ![stopped](./stopped.png)
 
-
 ### See the error log message
 
-Click **F8** to jump over the breakpoint and **switch** to the `Console` tab.
+Click the blue arrow (in the yellow box) or press F8 to resume the script execution and then switch to the "Console" tab.
+
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
 
-![testlog](./testlog.png)
-
-
-
-
+![log](./log.png)
 
 
 ---

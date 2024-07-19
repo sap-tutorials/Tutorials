@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 - How to specify the SAP Business Application Studio usage parameter for a generic OData service.
 
 ## Intro
-Destinations are key building blocks in SAP BTP, as they are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
+Destinations are key building blocks on SAP BTP, as they are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
 A destination has a name, a URL, authentication details, and other optional configuration details.
 
@@ -37,7 +37,7 @@ The Northwind OData services are available in several versions. Most tutorials c
 
 - For (free) Trial Accounts: <https://account.hanatrial.ondemand.com>
 - For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
+- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace `eu10` with your region.)
 
 
 ### Access your subaccount
@@ -82,7 +82,7 @@ When specifying a URL with the HTTPS scheme, a checkbox **Use default JDK trusts
 
 ### Check the connection
 
-Click on the **Check Connection** icon on the newly created Destination to see if everything works as expected:
+Click on the **Check Connection** icon on the newly created destination to see if everything works as expected:
 
 ![check destination function](./checkdest.png)
 

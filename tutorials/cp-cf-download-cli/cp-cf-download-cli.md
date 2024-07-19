@@ -12,9 +12,9 @@ time: 15
 <!-- description --> Download and install the CLI, which allows access via the command line.
 
 ## You will learn  
- - How to download the Command Line Interface (CLI) package
- - How to install the CLI and connect it to Cloud Foundry
- - How to explore a few basic CLI commands
+ - How to download the Command Line Interface (CLI) package.
+ - How to install the CLI and connect it to Cloud Foundry.
+ - How to explore a few basic CLI commands.
 
 ---
 
@@ -45,7 +45,9 @@ Next, test the Cloud Foundry command line interface to make sure it is installed
 
 To test the CLI, type in the following:
 
-    cf
+```Bash
+cf
+```
 
 You should see a list of Cloud Foundry commands.
 
