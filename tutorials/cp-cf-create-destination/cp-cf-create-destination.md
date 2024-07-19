@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 - How to specify the SAP Business Application Studio usage parameter for a generic OData service.
 
 ## Intro
-Destinations are key building blocks in SAP BTP, as they are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
+Destinations are key building blocks on SAP BTP, as they are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
 A destination has a name, a URL, authentication details, and other optional configuration details.
 
@@ -35,23 +35,23 @@ The Northwind OData services are available in several versions. Most tutorials c
 
 ### Enter your SAP BTP account
 
-- For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
+- For (free) Trial Accounts: <https://account.hanatrial.ondemand.com>
 - For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
+- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace `eu10` with your region.)
 
 
 ### Access your subaccount
 
 Click on the tile of your Cloud Foundry subaccount:
 
-<!-- border -->![subaccount](./subaccount.png)
+![subaccount](./subaccount.png)
 
 
 ### Open the Destinations view
 
-Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form:
+Click on the **Destinations** button on the left panel and click **Create Destination** to open a new destination configuration form:
 
-<!-- border -->![destination](./destination.png)
+![destination](./destination.png)
 
 ### Create a new destination
 
@@ -77,12 +77,12 @@ Property Name     | Value
 
 When specifying a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
 
-<!-- border -->![new destination entered](./newdest.png)
+![new destination entered](./newdest.png)
 
 
 ### Check the connection
 
-Click on the `Check Connection` icon on the newly created Destination to see if everything works as expected:
+Click on the **Check Connection** icon on the newly created destination to see if everything works as expected:
 
-<!-- border -->![check destination function](./checkdest.png)
+![check destination function](./checkdest.png)
 

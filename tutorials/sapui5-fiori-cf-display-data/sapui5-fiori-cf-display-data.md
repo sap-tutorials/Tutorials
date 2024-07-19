@@ -12,7 +12,7 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Learn how to display data in your SAPUI5 application and how to navigate between views.
 
 ## Prerequisites
-- You have previously created a SAPUI5 based project, for instance with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local).
 
 ## You will learn
   - How to use a subgenerator to add an OData model to the SAPUI5 application.
@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ### Rename "MainView" to "Products"
 
-The easy-ui5 generator creates projects with uimodules that contain two views out of the box: The `App.view.xml`, which is the outer container of the application, and the `MainView.view.xml`, where you can start developing your application content right away. At this point, it makes sense to rename the `MainView.view.xml` to something more meaningful.
+The easy-ui5 generator creates projects with myui5apps that contain two views out of the box: The `App.view.xml`, which is the outer container of the application, and the `MainView.view.xml`, where you can start developing your application content right away. At this point, it makes sense to rename the `MainView.view.xml` to something more meaningful.
 
 1. Rename the file `MainView.view.xml` to `Products.view.xml`.
 1. In the `Products.view.xml` file, **replace** all references to `MainView` with `Products`.
@@ -37,7 +37,7 @@ The easy-ui5 generator creates projects with uimodules that contain two views ou
 
 ```XML [6-12]
 <mvc:View
-  controllerName="uimodule.controller.Products"
+  controllerName="myui5app.controller.Products"
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
@@ -52,6 +52,8 @@ The easy-ui5 generator creates projects with uimodules that contain two views ou
 ```
 
 If you check your app in the browser, you'll immediately be able to see that the `App.view.xml` embeds the `Products.view.xml` and displays an empty list. The list is still empty, because there is no data source bound to the application yet.
+
+> In case you still have the breakpoint set up from the [previous tutorial](cp-cf-sapui5-local-debug) (in the `myui5app/webapp/controller/Products.controller.js`), feel free to delete it now.
 
 ### Add a data source
 
@@ -73,7 +75,7 @@ yo easy-ui5 project model
 
 Please accept the modifications to existing files.
 
-After restarting the server (`ctrl+C`, then `npm run start:uimodule`), you should see the list of products in your SAPUI5 application.
+After restarting the server (`ctrl+C`, then `npm run start:myui5app`), you should see the list of products in your SAPUI5 application.
 
 ![list](list.png)
 
@@ -81,28 +83,35 @@ After restarting the server (`ctrl+C`, then `npm run start:uimodule`), you shoul
 
 The subgenerator already added a proxy (to redirect traffic to the data source) to the `ui5.yaml` of the application. This proxy however only works during development. Once the application runs productively, the `xs-app.json` configuration file (as part of the [SAP Application Router](https://help.sap.com/docs/btp/sap-business-technology-platform/managed-application-router)) takes effect.
 
-Replace the content of the `uimodule/webapp/xs-app.json` file with the following code:
+Replace the content of the `myui5app/webapp/xs-app.json` file with the following code:
 
-```JSON [4-9]
+```JSON [10-15]
 {
-  "welcomeFile": "/index.html",
-  "routes": [
-    {
-      "source": "^/V2/(.*)$",
-      "authenticationType": "none",
-      "destination": "Northwind",
-      "csrfProtection": false
-    },
-    {
-      "source": "^(.*)",
-      "target": "$1",
-      "authenticationType": "xsuaa",
-      "service": "html5-apps-repo-rt"
-    }
-  ]
+	"welcomeFile": "/index.html",
+	"authenticationMethod": "route",
+	"routes": [
+		{
+			"source": "/user-api/currentUser$",
+			"target": "/currentUser",
+			"service": "sap-approuter-userapi"
+		},
+		{
+			"source": "^/V2/(.*)$",
+			"authenticationType": "none",
+			"destination": "Northwind",
+			"csrfProtection": false
+		},
+		{
+			"source": "^(.*)$",
+			"target": "$1",
+			"service": "html5-apps-repo-rt",
+			"authenticationType": "xsuaa"
+		}
+	]
 }
-
 ```
+
+> Caution: The order of routes in the `xs-app.json` file does matter, as they will be checked for from top to bottom, so make sure you keep the same order as in the code above.
 
 With this code you added a new route to the SAP Application Router, which redirects traffic to the `Northwind` destination, which was configured in a [previous tutorial](cp-cf-create-destination).
 
@@ -122,9 +131,9 @@ yo easy-ui5 project view
 | Do you want to set up a JavaScript controller for your new view? | **`Yes`**
 | Do you want to set up a route and target for your new view? | **`Yes`**
 
-Once again, accept that the generator can overwrite existing files.
+Again, accept that the generator can overwrite existing files.
 
-2. Open the `uimodule/webapp/manifest.json` file and add the `productID` to the pattern of the newly created route `RouteProductDetail`:
+2. Open the `myui5app/webapp/manifest.json` file and add the `productID` to the pattern of the newly created route `RouteProductDetail`:
 
 ```JSON [3]
 {
@@ -136,45 +145,45 @@ Once again, accept that the generator can overwrite existing files.
 }
 ```
 
-3. Change the type of the list items and add an event listener in the `uimodule/webapp/view/Products.view.xml` file:
+3. Change the type of the list items and add an event listener in the `myui5app/webapp/view/Products.view.xml` file:
 
 ```XML
 <StandardListItem type="Navigation" press=".handleListItemPress" title="{ProductName}" />
 ```
 
-![standard list item](listitem.png)
+![listitem](listitem.png)
 
-4. Add navigation logic to the `uimodule/webapp/controller/Products.controller.js` to handle the press event. This press event gets the UI5 router, gets the selected `ProductID`, and then passes this id to the navigation method of the router ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)):
+4. Add navigation logic to the `myui5app/webapp/controller/Products.controller.js` to handle the press event. This press event gets the UI5 router, gets the selected `ProductID`, and then passes this id to the navigation method of the router ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)):
 
-```JavaScript [8-14]
+```JavaScript [11-17]
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+	"sap/ui/core/mvc/Controller"
 ],
-    /**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
-     */
-    function(Controller) {
-        "use strict";
+	/**
+	 * @param {typeof sap.ui.core.mvc.Controller} Controller
+	 */
+	function(Controller) {
+		"use strict";
 
-        return Controller.extend("uimodule.controller.Products", {
-            handleListItemPress: function(oEvent) {
-                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
-                oRouter.navTo("RouteProductDetail", {
-                    productId: selectedProductId
-                });
-            }
-        });
-    });
+		return Controller.extend("myui5app.controller.Products", {
+			handleListItemPress: function(oEvent) {
+				const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				const selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
+				oRouter.navTo("RouteProductDetail", {
+					productId: selectedProductId
+				});
+			}
+		});
+	});
 ```
 
 ![handle press](handlepress.png)
 
-5. Click on any list item. This should trigger the navigation to the new page.
+5. Back in the app in the browser, click on any list item. This should trigger the navigation to the new page.
 
 ### Add UI elements to the detail page
 
-1. Add controller logic to `uimodule/webapp/controller/ProductDetail.controller.js` to parse the selected product from the routing arguments and to bind the product to the view ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)).
+1. Add controller logic to `myui5app/webapp/controller/ProductDetail.controller.js` to parse the selected product from the routing arguments and to bind the product to the view ([documentation](https://sapui5.hana.ondemand.com/sdk/#/topic/2366345a94f64ec1a80f9d9ce50a59ef)).
 
 ```JavaScript [12-31]
 sap.ui.define([
@@ -186,7 +195,7 @@ sap.ui.define([
     function(Controller) {
         "use strict";
 
-        return Controller.extend("uimodule.controller.ProductDetail", {
+        return Controller.extend("myui5app.controller.ProductDetail", {
 
             onInit: function() {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -212,11 +221,11 @@ sap.ui.define([
     });
 ```
 
-2. Add the required declarations to the `uimodule/webapp/view/ProductDetail.view.xml` view to to consume the newly bound model and display some properties.
+2. Add the required declarations to the `myui5app/webapp/view/ProductDetail.view.xml` view to to consume the newly bound model and display some properties.
 
-```XML [4-11]
+```XML [6-13]
 <mvc:View
-    controllerName="uimodule.controller.ProductDetail"
+    controllerName="myui5app.controller.ProductDetail"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     displayBlock="true">
@@ -233,6 +242,6 @@ sap.ui.define([
 
 3. Once you save the view, the web app should update automatically and display a view similar to this one. We will enrich this UI with more controls in the [next tutorial](sapui5-fiori-cf-fiorify).
 
-![detail view](detail.png)
+![detail](detail.png)
 
 ---
