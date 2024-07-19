@@ -11,6 +11,9 @@ author_profile: https://github.com/nicoschoenteich
 # Debug Your SAPUI5 App
 <!-- description --> Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
 
+## Prerequisites
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local).
+
 ## You will learn
   - How to do add breakpoints to your JavaScript code.
   - How to log data to the browser console.

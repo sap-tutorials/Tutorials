@@ -13,6 +13,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ## Prerequisites
 - You have previously [created an SAPUI5 application](cp-cf-sapui5-local) and select `SAP Build Work Zone, standard edition` as the deployment target.
+- You have also completed all other tutorial as part of the mission [Develop an App for SAP Build Work Zone, standard edition with Your Own Dev Tools](mission.sapui5-cf-launchpad).
 - You have [set up an SAP BTP account for tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services:
     - **SAP Build Work Zone, standard edition**
     - **Destination Service**

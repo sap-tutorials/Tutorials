@@ -12,6 +12,10 @@ author_profile: https://github.com/nicoschoenteich
 # Add Smart Controls to the User Interface
 <!-- description --> Replace the current UI controls with more complex (smart) controls that fully leverage the OData protocol.
 
+## Prerequisites
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local) and selected `SAP Build Work Zone, standard edition` as the deployment target.
+  - You have also completed all other tutorial as part of the mission [Develop an App for SAP Build Work Zone, standard edition with Your Own Dev Tools](mission.sapui5-cf-launchpad).
+
 ## You will learn
   - How to use smart controls like the SmartFilterBar, SmartList, or the ObjectPage.
   - Why smart controls can save you much boilerplate code.

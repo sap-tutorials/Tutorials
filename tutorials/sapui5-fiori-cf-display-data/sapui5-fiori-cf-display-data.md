@@ -12,7 +12,7 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Learn how to display data in your SAPUI5 application and how to navigate between views.
 
 ## Prerequisites
-- You have previously created a SAPUI5 based project, for instance with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local).
 
 ## You will learn
   - How to use a subgenerator to add an OData model to the SAPUI5 application.

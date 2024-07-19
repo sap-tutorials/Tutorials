@@ -12,9 +12,8 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Learn how to visualize data with a VizFrame.
 
 ## Prerequisites
-- You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
-- You have [added the Northwind Service as a data source and default model](sapui5-fiori-cf-display-data) to your application.
-- You have version 3.1.4 or higher of the [easy-ui5 generator](cp-cf-sapui5-local-setup) installed.
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local) and selected `SAP Build Work Zone, standard edition` as the deployment target.
+  - You have also completed all other tutorial as part of the mission [Develop an App for SAP Build Work Zone, standard edition with Your Own Dev Tools](mission.sapui5-cf-launchpad).
 
 ## You will learn
   - How to use a sub-generator to add a new view.
@@ -135,7 +134,7 @@ In order to see the new view in your application in the browser, you have to nav
 
 ### Implement a popover
 
-You might have noticed that you can hover over the single data points of the line chart and click them, but nothing happens yet. Insert the below `onAfterRendering` method into the `myui5app/webapp/controller/Sales.controller.js` file to connect the `VizFrame` with the popover, which is already defined in the `myui5app/webapp/view/Sales.view.xml` (step 3).
+You might have noticed that you can click on single data points of the line chart, but nothing happens (yet). Insert the below `onAfterRendering` method into the `myui5app/webapp/controller/Sales.controller.js` file to connect the `VizFrame` with the popover, which is already defined in the `myui5app/webapp/view/Sales.view.xml` (step 3).
 
 ```javascript [14-18]
 sap.ui.define([
