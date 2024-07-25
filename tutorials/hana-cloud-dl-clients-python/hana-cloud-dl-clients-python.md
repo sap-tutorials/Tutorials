@@ -35,7 +35,8 @@ The first step is to check if Python and pip are installed.
     ```
     If Python is installed, the command will return a value such as Python 3.12.1.
 
-    >In some Linux distributions, python refers to Python 2 and python refers to Python 3.  As Python 2 is obsolete, this isn't always the case and python may refer to Python 3.
+    >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.
+
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
@@ -76,11 +77,6 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     python setup.py install
     ```
 
-    ```Shell (Linux)
-    cd $IQDIR17/sdk/python
-    python setup.py install
-    ```
-
     This should create additional build directories in the current folder.
 
     >If the error 'no module named setuptools' appears, the following may be used as a workaround until this issue is resolved.
@@ -88,6 +84,46 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     >```Shell
     pip install setuptools
     ```
+
+
+    On Linux the rest of the steps will be executed in a virtual enviroment.
+
+    First make a project folder, and create a virtual environment inside it. To do so, open the terminal app, write the following command, and hit return, here pyvenv is the name of the folder that you wish to create the virtual enviroment in.
+
+    ```Shell(Linux)
+    mkdir $HOME/pyvenv
+    ```
+    Now, use the venv command to create a virtual environment inside the given folder, here python-virtualenv is the name of the virtual enviroment that is to be created.
+
+    ```Shell(Linux)
+    cd $HOME/pyvenv
+    python3 -m venv pyvenv/python-virtualenv
+    ```
+    We now activate the virtual enviroment , which we will use to complete the rest of the steps for linux based systems.
+
+    ```Shell(Linux)
+    source pyvenv/python-virtualenv/bin/activate
+    ```
+
+    A succesfull activation looks like this:-
+
+    ![python-install](virtualenv.png)
+
+
+
+    Now execute :-
+
+    
+    ```Shell (Linux)
+    cd $IQDIR17/sdk/python
+    python3 setup.py install
+    ```
+
+
+
+
+
+
 
 2. On Microsoft Windows, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
 
