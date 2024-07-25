@@ -7,8 +7,8 @@ tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner
 primary_tag: products>sap-fiori
 ---
 ## Prerequisites
-- You need a trial account on SAP Cloud Platform. If you don't have one, follow the instructions in: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
-- Ensure that you have started SAP Business Application Studio in your SAP Cloud Platform trial account. For detailed instructions: [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
+- You need a trial account on SAP Business Technology Platform. If you don't have one, follow the instructions in: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+- Ensure that you have started SAP Business Application Studio in your SAP Business Technology Platform trial account. For detailed instructions: [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn

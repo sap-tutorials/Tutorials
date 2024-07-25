@@ -94,9 +94,7 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 
     >The content of field **Fragment Name** represents one of the prepared artifacts located in the `ext` folder.
 
-    In the Page Editor, you can now see the new custom section **Maximum Processing Time**. When you select the new section you will see its parameters on the right part of the UI.
-
-    <!-- border -->![Annotation Cursor](t4-annotation-custom-section-show-new-section.PNG)
+    In the Page Editor, you can now see the new custom section **Maximum Processing Time**. When you select the new section you will see its parameters on the right part of the UI. 
 
     You have now finished the creation of the new custom section. Once the application preview is refreshed, check the new section displayed on the object page.
     
@@ -150,9 +148,9 @@ At this point, your list report object page application is complete.
 
 <!-- border -->![Prepare for Translation](t4-i18n.png)
 
-Over the past four tutorials, you have used the SAP Cloud Platform, SAP Fiori tools and SAP Fiori elements to build this application. You have learned how to:
+Over the past four tutorials, you have used the SAP Business Technology Platform, SAP Fiori tools and SAP Fiori elements to build this application. You have learned how to:
 
-- Set up your development environment using SAP Cloud Platform
+- Set up your development environment using SAP Business Technology Platform
 
 - Use the wizard-style approach of SAP Fiori tools to generate an application based on an existing service and SAP Fiori elements UI templates
 
