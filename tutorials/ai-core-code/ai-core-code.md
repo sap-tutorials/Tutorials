@@ -101,7 +101,7 @@ Create another file `requirements.txt` in the same directory. Here you will ment
 Paste the following snippet into `requirements.txt`.
 
 ```TEXT
-sklearn==0.0
+scikit-learn
 ```
 
 <!-- border -->![image](img/code-requirements.png)
