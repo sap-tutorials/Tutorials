@@ -431,7 +431,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Project Name:  | `myHANAProj`
     |  Space:         | development
     |  Namespace:     | Clear the default value
-    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 06
+    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 07
 
 
 5.  After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  

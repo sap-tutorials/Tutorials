@@ -46,13 +46,19 @@ In this tutorial, you will learn how to start preparations to create a calculati
 
     ![Check the Cloud Foundry Environment](check-cloud-foundry.png)
 
-    >The list of users that can access a space can be found under **Members** once a space has been opened.
+    Take note of the the **Org Name** under the **Cloud Foundry Environment** tab as this will be needed in the next step.
 
-2. Copy the **Org ID** under the **Cloud Foundry Environment** tab.
+2. If a Cloud Foundry space does not exist, create one.
 
-    ![CF Org ID](cf-org-id.png)
+    ![Check if a Cloud Foundry space exists](check_if_a_space_exists.png)
 
-3. Open **SAP HANA Cloud Central**. Click on the SAP HANA Cloud database instance used for this tutorial, select **Manage Configurations** from the actions menu, then **Add Mapping** in the top right corner. Under **Instance Mapping**, add an instance mapping by pasting the Cloud Foundry organization ID you just copied.
+    >The list of users that can access a space can be found under **Space Members** once a space has been opened.
+
+3. Open **SAP HANA Cloud Central**. Click on the SAP HANA Cloud database instance used for this tutorial, select **Manage Configurations** from the actions menu.  Select **Instance Mapping**.  Select the option to **Sign Into the Cloud Foundry Environment**.  
+
+    ![Instance Mapping](instance_mapping.png)
+
+    Then select **Add Mapping** and select your Cloud Foundry organization.
 
     ![Instance mapping](add-cf-mapping.png)
 
@@ -63,10 +69,6 @@ In this tutorial, you will learn how to start preparations to create a calculati
     ![create service](create-hdi.png)
 
     Select **SAP HANA Schemas & HDI containers** under **Service**. Choose the `hdi-shared` plan and provide an Instance Name, such as `HDI_Tutorial`. This is the HDI container you will use in your SAP Business Application Studio project.
-
-    >If necessary, create a Space named `dev` in Cloud Foundry.
-    >
-    >![Create a space called dev](create-space.png)
 
     ![Create HDI container](add-hdi-container.png)
 
@@ -96,9 +98,7 @@ In this tutorial, you will learn how to start preparations to create a calculati
 > **Reminder:** What is SAP Business Application Studio?
 >
 > SAP Business Application Studio is a service within SAP Business Technology Platform that provides a development environment for SAP Cloud Foundry. This is an important tool to any kind of development with SAP HANA Cloud, SAP HANA database, including creating calculation views.  
->
-> SAP Business Application Studio is already included in your trial account. You can access it on the Trial home page. If you are unsure how to open it, please check out [Tutorial 4](hana-cloud-mission-trial-4) of this mission.
->
+> If you are unsure how to open it, please check out [Tutorial 4](hana-cloud-mission-trial-4) of this mission.
 
  Ensure that your user has the correct permissions to manage the SAP Business Application Studio (i.e. Business Application Studio Administrator). You can check the assigned roles of your users under **Security > Users > *Select your user* > *Select the three dots* > Assign Role Collection**. Ensure your user has the **`Business_Application_Studio_Administrator`** role.  
 
@@ -109,16 +109,11 @@ The first step in the SAP Business Application Studio is to create your developm
 
 You are now ready to create your first development space.
 
-1.	Open **SAP Business Application Studio** from the [Trial home page](https://account.hanatrial.ondemand.com/trial/#/home/trial).
+1.	Open **SAP Business Application Studio** 
 
-    ![Business App Studio through the trial home page](bas-trial-home.png)
-
-    >You may also access the SAP Business Application Studio through the **Instances and Subscriptions** page in SAP BTP Cockpit. SAP Business Application Studio will be listed as an application under the Subscriptions tab.
-    >
-    >![open BAS from subaccount](open-bas.png)
-    >
-    >If you have yet to subscribe to SAP Business Application Studio application, you can create one by clicking **Create** on the top right-hand corner of the screen.
-
+    ![open BAS from subaccount](open-bas.png)
+    
+    If you have yet to subscribe to SAP Business Application Studio application, you can create one by clicking **Create** on the top right-hand corner of the screen.
 
 2.	Once you have opened Business Application Studio, click on **Create Dev Space**.
 
@@ -166,7 +161,7 @@ Now you can create a development project within your new space. Follow these ste
 
     ![bind to HDI](bind-to-hdi2.png)
 
-    If you are not already logged into Cloud Foundry, a Cloud Foundry sign-in page will appear.  Check and update, if needed, the API URL to match the URL displayed in SAP BTP Cockpit for the Cloud Foundry environment you plan to use and login.
+    Check and update, if needed, the API URL to match the URL displayed in SAP BTP Cockpit for the Cloud Foundry environment you plan to use and login.
 
     ![Cloud Foundry API URL](ss-06-CF-API-URL.png)
 
@@ -190,7 +185,7 @@ On the left panel, you can now see your workspace where you have your files, and
 
 > **What is an HDI container?**
 >
-> Applications are bound to an SAP HANA Cloud instance through a schema or an HDI container. HDI containers ensure isolation, and within an SAP HANA database you can define an arbitrary number of HDI containers. HDI containers are isolated from each other by means of schema-level access privileges. You can read more in this [technical documentation](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/LATEST/en-US/9988e476278d408db084a407dff314af.html).
+> Applications are bound to an SAP HANA Cloud instance through a schema or an HDI container. HDI containers ensure isolation, and within an SAP HANA database you can define an arbitrary number of HDI containers. HDI containers are isolated from each other by means of schema-level access privileges. You can read more in this [technical documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/binding-applications-to-sap-hana-cloud-instance).
 
 Whenever you add a new database object that can be deployed to your HDI container, it will appear in this panel and you can deploy it. In this area you can also check the database connections of your project.
 

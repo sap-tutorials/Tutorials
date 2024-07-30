@@ -106,15 +106,15 @@ This is where you can enter your account but also find helpful resources to get 
 
 There is also some built-in functionality that can help you with using SAP BTP Cockpit and provide you with more information:
 
--	Use the **Help** button at the top right-hand corner of the screen once you are logged in. This will open a **Help Topics** pane where areas that you can get help custom to the page will appear, as well as embedded links to guided answers and documentation.
+- Use the **Help** button at the top right-hand corner of the screen once you are logged in. This will open a **Help Topics** pane where areas that you can get help custom to the page will appear, as well as embedded links to guided answers and documentation.
 
     ![BTP Help](BTP-help-trial.png)
 
--   Use **Trial Period** to get more information about your SAP BTP Trial.
+- Use **Trial Period** to get more information about your SAP BTP Trial.
 
     ![BTP Help](BTP-trial-period.png)
 
--	For further details, consult our documentation material [here](https://help.sap.com/docs/btp).
+- For further details, consult our documentation material [here](https://help.sap.com/docs/btp).
 
 
 ### Understand Accounts, Directories, Subaccounts, and Spaces

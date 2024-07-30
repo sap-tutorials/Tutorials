@@ -194,8 +194,6 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 > If you do not wish to enable a data lake, you can skip this step by clicking on **Review and Create** in the bottom-right corner.
 
-![Data Lake General](ss-14-data-lake-general.png)
-
 [OPTION BEGIN [Production]]
 1.	If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud.
 
