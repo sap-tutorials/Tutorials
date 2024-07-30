@@ -18,7 +18,7 @@ primary_tag: software-product>sap-api-management
   - Access API Management features and resources available on Integration Suite.
 
 ## Intro
-To set up the API Management capability from Integration Suite, you should first have an Integration Suite subscription.
+To set up the API Management capability from Integration Suite, you should first have an Integration Suite subscription. 
 
 >**IMPORTANT** Ensure that you don't have an instance of starter plan created in the same subaccount, where you plan to create an Integration Suite subscription. Also, note that API Management capabilities from Integration Suite and API Management subscriptions using the standalone tile cannot coexist in the same subaccount.
 
