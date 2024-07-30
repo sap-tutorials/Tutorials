@@ -58,7 +58,7 @@ In Visual Studio Code's **Activity Bar**, click the icon for extensions.
 
 Next, clear the **Search Box** at the top of the **Extensions** view, type **`SAP Fiori tools`**, and then press **Enter**.
 
-Click the extension called `SAP Fiori tools - Extensions Pack`, and then click **Install**.
+Click the extension called `SAP Fiori tools - Extension Pack`, and then click **Install**.
 
 ![VSCode Extensions install button](t1-manage-extensions-install.png)
 
