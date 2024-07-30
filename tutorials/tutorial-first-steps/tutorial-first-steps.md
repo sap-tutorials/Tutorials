@@ -92,7 +92,7 @@ You can instead search by tag, so if I wanted to get all the SAP Conversational 
 
 Of course, you can use both. For example, search for `Python` and then further filter by `SAP Conversational AI` tag.
 
->More information on tags? See [Using Tags](https://community.sap.com/resources/using-tags).
+>More information on tags? See [SAP Managed Tags](https://community.sap.com/t5/help/faqpage/title/Associated_Products).
 
 
 ### Open mission
