@@ -32,7 +32,7 @@ In this tutorial you will learn how to create an API Proxy based on the API Prov
 ### Access the API Proxies
 
 
-Open the **Integration Suite** and choose **Design Develop, and Manage APIs**.
+Open the **Integration Suite** and choose **Design Develop, and Manage APIs** tile.
 
 ![Open SAP API Management API Portal](01-access_api_portal_cf.png)
 
