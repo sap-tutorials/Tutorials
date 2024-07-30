@@ -13,7 +13,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 - You have [set up an Enterprise SAP BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and set up entitlements and service instances for **SAP AI Core**.
-- You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
+- You have [set up your Git Repository with SAP AI Core](https://developers.sap.com/tutorials/ai-core-helloworld.html).
 - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
 
 

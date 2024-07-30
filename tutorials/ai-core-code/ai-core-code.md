@@ -631,7 +631,7 @@ docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:02 .
 Upload your code to your Docker registry.
 
 ```BASH
-docker upload docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
+docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
 ```
 
 <!-- border -->![image](img/code-push-2.png)
