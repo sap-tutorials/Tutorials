@@ -636,7 +636,8 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     For additional details see [Procedures](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/d43d91578c3b42b3bacfd89aacf0d62f.html).
 
-6. Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
+### Schedule a stored procedure
+Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
 
     ```SQL
     SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
