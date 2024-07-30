@@ -8,8 +8,8 @@ tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginne
 time: 15
 ---
 
-# Get a Free Account on SAP BTP Trial
-<!-- description --> Sign up for a free trial account on SAP BTP.
+# Get an Account on SAP BTP Trial
+<!-- description --> Sign up for a trial account on SAP BTP.
 
 ## You will learn  
   - How to register on the SAP website
