@@ -4,6 +4,8 @@ auto_validation: true
 time: 6
 tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
+author_name: Alessandro Biagi
+author_profile: https://github.com/ale-biagi
 ---
 
 # Jump start the SAP SuccessFactors Extension CAP Project
@@ -100,13 +102,7 @@ Now type `cds init sfsf-projman` and press **Enter**. The output should look lik
 
 Notice that `sfsf-projman` is the **project and application name** and also the **project folder name**. Now, open the project as a workspace.
 
-From the **top menu**, click on **File** and select **Open Workspace…**
-
-![Figure 17 – Open Workspace](open-workspace.png)
-
-In the **dialog**, (1) select the `sfsf-projman` folder under projects (2) and the **VS Code Workspace (*.code-workspace)** from the **Format dropdown**, then (3) click **Open**
-
-![Figure 18 – Set Workspace](set-workspace.png)
+From the **top menu**, click on **File** and select **Open Folder…** and, in the **textbox**, select the `sfsf-projman` folder under `projects` (`/home/user/projects/sfsf-projman/`) and click **OK**.
 
 
 ### Understand the project structure
