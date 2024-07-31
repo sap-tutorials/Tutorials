@@ -125,30 +125,11 @@ net.ipv4.ip_local_port_range=40000 60999
 To edit the `sysctl.conf` file, use the `vi` command to open the file and press `i` to switch to interactive mode. Edit the file as necessary, hit the `esc` key, and type and enter `:wq!` to write and save the changes.
 
 
-### (Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container
-
-
-Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
-
-```bash
-mkdir -p /data/<directory_name>
-chown <hxeadm userID or name>:<sapsys groupID or name> /data/<directory_name>
-```
-
-For example:
-
-```bash
-mkdir -p /data/mydirectory
-chown 12000:79 /data/mydirectory
-```
-
-The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
-
 
 ### Set Up Password for SAP HANA, express edition
 
 
-To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
+To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in */data/<dir_for_password_file>*.
 
 Create the `json` file:
 
@@ -196,8 +177,8 @@ This file serves as the master password for your SAP HANA, express edition users
 You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
 
 ```bash
-sudo chmod 600 /data/<directory_name>/<file_name>.json
-sudo chown 12000:79 /data/<directory_name>/<file_name>.json
+sudo chmod 600 /data/<dir_for_password_file>/<file_name>.json
+sudo chown 12000:79 /data/<dir_for_password_file>/<file_name>.json
 ```
 
 Be sure to do this with each `json` file you use for your Docker containers.
