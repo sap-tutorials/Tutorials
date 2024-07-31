@@ -366,7 +366,7 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 | --- | --- |
 | `AI-Resource-Group` | `default` |
 
-**RESPONSE**
+**REQUEST BODY**
 
 ```JSON
 {

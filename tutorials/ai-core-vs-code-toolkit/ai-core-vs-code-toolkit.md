@@ -13,7 +13,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 - Understanding Of SAP AI Core
-- Installing SAP AI Core toolkit VS Code extension
+- [Installing SAP AI Core toolkit VS Code extension](https://help.sap.com/docs/sap-ai-core/sap-ai-core-toolkit/sap-ai-core-toolkit)
 
 ## You will learn
 - Setup Vs code Toolkit

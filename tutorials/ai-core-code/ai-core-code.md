@@ -145,7 +145,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
-docker buildx build –load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
