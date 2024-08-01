@@ -94,7 +94,7 @@ To use npm packages in UI5, you need to first install the tooling extension `ui5
     builder:
       customTasks:
         - name: ui5-tooling-modules-task
-          afterTask: generateVersionInfo
+          afterTask: replaceVersions
     server:
       customMiddleware:
         - name: ui5-tooling-modules-middleware
