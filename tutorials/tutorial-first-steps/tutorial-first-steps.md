@@ -175,15 +175,17 @@ Every mission in the Tutorial Navigator can earn you a badge. To see all the mis
 
 ![Mission filter](MissionsFilter.png)
 
-You can also see all available badges -- not just tutorials but also community missions -- on the [badges](https://community.sap.com/resources/missions-badges) page.
+To see the badges that you have earned on the SAP Community, navigate to the [SAP Community](https://community.sap.com/).  Be sure to log in if you have not already.
 
-![Badges page](badgesAll.png)
+From the account options, select **My Content**.
 
-On the right of the badges page, you can filter the badges, including to see only tutorial-related badges.
+![Navigate to the SAP Community](nav-to-community.png)
 
-The badges you earn appear in the **Earned Missions** tab of your [SAP profile](https://people.sap.com/#missions:earned).
+Select **View all badges**.
 
+![View all badges](all-badges-button.png)
 
+![All badges screen](all-badges.png)
 
 
 ### What other achievements are there?
