@@ -262,7 +262,7 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          name: istio-system
+          kubernetes.io/metadata.name: istio-system
       podSelector:
         matchLabels:
           app: istio-ingressgateway
