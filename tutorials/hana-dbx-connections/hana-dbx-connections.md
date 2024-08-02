@@ -6,43 +6,43 @@ tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-da
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Add Databases to  the SAP HANA Database Explorer
-<!-- description --> This tutorial will explore different database connection types, such as SAP HANA Cockpit Database, SAP HANA Cloud, data lake Relational Engine, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
+# Add Databases to the SAP HANA Database Explorer
+<!-- description --> This tutorial will explore different instance types, such as SAP HANA Cockpit Database, SAP HANA Cloud, data lake Relational Engine, data lake Files, and SAP HANA Deployment Infrastructure (HDI) that can be added, along with the different operations that can be performed on them.
 
 ## Prerequisites
 - An SAP HANA database such as SAP HANA Cloud free tier, trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 
 ## You will learn
-- How to add different database types in the SAP HANA database explorer
-- Additional operations that can be performed on a database
+- How to add different instance types in the SAP HANA database explorer
+- Additional operations that can be performed on an instance
 
 ## Intro
-Database connections in the SAP HANA database explorer represent SAP HANA or data lake Relational Engine databases that you browse and interact with.  
+Instances in the SAP HANA database explorer represent SAP HANA, data lake Relational Engine, or data lake Files connections that you browse and interact with.  
 
-SQL consoles are associated with a database connection.
+SQL consoles are associated with a database instance.
 
 ![sql console connection](sql-console-connection.png)
 
 ---
 
-### Add an SAP HANA cockpit database connection
+### Add an SAP HANA cockpit database instance
 
 
-Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
+Instances defined in SAP HANA Cloud Central, the SAP BTP cockpit, or in SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
 1.  From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](from-directory.png)
 
-    >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set when the database instance was created.
+    >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set when the instance was created.
 
     >---
 
-    >The credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA cockpit.
+    >The credentials can be saved so they do not need to be re-entered if they are entered into  SAP HANA Cloud Central, or SAP HANA cockpit.
 
-    Notice that when the SAP HANA database explorer opens, the selected database is the one from the selected tile or administered database.  Also note that the URL contains a `&databaseid=`.  
+    Notice that when the SAP HANA database explorer opens, the selected instance is the one from the selected tile or administered database.  Also note that the URL contains a `&databaseid=`.  
 
-    If this URL is saved as a bookmark, each time the page is opened, the matching database will be selected in the catalog browser.
+    If this URL is saved as a bookmark, each time the page is opened, the matching instance will be selected in the catalog browser.
 
     ![databaseid parameter](open-in-dbx2.png)
 
@@ -52,13 +52,13 @@ Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened i
 
 ### Add an SAP HANA database connection
 
-Databases can also be added directly to the SAP HANA database explorer.  To connect to an SAP HANA Cloud or on-premise database, the host, port, user name, and  password must be provided.  
+Instances can also be added directly to the SAP HANA database explorer.  To connect to an SAP HANA Cloud or on-premise database, the host, port, user name, and  password must be provided.  
 
-1.  In the SAP HANA database explorer, press the **+** button to add a new database.
+1.  In the SAP HANA database explorer, press the **+** button to add a new instance.
 
     ![Add a new database](new-connection0.png)
 
-2.  For database type, choose **SAP HANA Database**.
+2.  For Instance Type, choose **SAP HANA Database**.
 
     ![Database types](connection-type.png)
 
@@ -68,21 +68,24 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     ![encrypted connection](encrypted.png)
 
-    >Remember to remove the colon and port number from the host name and add the port to the port field.
 
     >---
 
-    >When connecting to an SAP HANA Cloud instance, the database connection must use TLS.
+    >When connecting to an SAP HANA Cloud instance, the connection must use TLS.
 
     >![connect using TLS](encryption2.png)
 
-    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).
+    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).
 
     >---
 
     >For a HANA Cloud database, the host and port values can be copied from SAP HANA Cloud Central.  
 
     >![copy host and port](host-and-port.png)
+
+    >Remember to remove the colon and port number from the host name and add the port to the port field.
+
+    ![Image of where the port number is](remove-port-number.png) 
 
     >---
 
@@ -94,7 +97,11 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     >![SQL port query](sql-port.png)
 
-4.  After pressing OK, a new database will appear whose type is SAP HANA Database.
+    >---
+
+    >Instructions on using X.509 certificate are provided at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509).
+
+4.  After pressing OK, a new instance will appear whose type is SAP HANA Database.
 
     ![new database](new-connection.png)
 
@@ -112,13 +119,16 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
     >These values can be seen by opening a SQL console and noticing the schema that the database is using or by executing the following queries.
 
     >```SQL
-    >SELECT * FROM M_SESSION_CONTEXT WHERE CONNECTION_ID=current_connection;
-    >SELECT * FROM SYS.M_CONNECTIONS WHERE CONNECTION_ID=current_connection;
-    >SELECT ISOLATION_LEVEL FROM PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
+    >SELECT * FROM M_SESSION_CONTEXT WHERE CONNECTION_ID = current_connection;
+    >SELECT * FROM M_CONNECTIONS WHERE CONNECTION_ID = current_connection;
+    >SELECT ISOLATION_LEVEL FROM M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
     >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4e2e8382f8484edba31b8b633005e937.html) and the [SET Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20fd82b675191014b22c8af08d0b319c.html).
 
+5.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a client certificate and how to configure SAP HANA Cloud for use with certificate authentication.
+
+    ![X.509 certificate authentication](cert-auth.png)
 
 ### Add a data lake Relational Engine database
 
@@ -128,7 +138,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![add a data lake](add-data-lake.png)
 
-    Ensure that the allowed connections list is set to **Allow all IP addresses**.
+    If this is a non-production database, the allowed connections list can be set to **Allow all IP addresses**.
 
     ![allowed connections](allow-all.png)
 
@@ -144,7 +154,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![Copy SQL Endpoint](copy-sql-endpoint.png)
 
-3.  The catalog browser can be used to view database objects and a SQL Console can be opened to query the database.
+3.  The catalog browser can be used to view database objects and a SQL console can be opened to query the database.
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
@@ -157,6 +167,21 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     Diagnostic files can also be viewed in the Logs directory.
 
+4.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
+
+    ```SQL
+    CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
+    CREATE USER TESTX509_TECHNICAL LOGIN POLICY X509Policy IDENTIFIED BY 'Password123';
+    CREATE X509 PROVIDER X509Provider WITH ISSUER 'CN=DEMO_ROOT_CERT_AUTH, SP=ON';
+    CREATE CERTIFICATE X509_CERT PURPOSE X509 FOR PROVIDER X509Provider FROM '-----BEGIN CERTIFICATE----- contents from demorootca.crt
+    -----END CERTIFICATE-----';
+    GRANT X509 LOGIN TO 'CN=TESTX509' FOR PROVIDER X509Provider as USER TESTX509_TECHNICAL; 
+    SELECT * FROM SYSCERTIFICATE; 
+    SELECT * FROM SYSX509PROVIDERS;
+    SELECT user_name, subject_name FROM SYSX509LOGINMAP, SYSUSER WHERE database_uid=user_id;
+    ```
+
+    Additional details on the SQL above can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options), [Create X509 Provider Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-x509-provider-statement-for-data-lake-relational-engine), and [Grant X509 Login Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/grant-x509-login-statement-for-data-lake-relational-engine).
 
 ### Add a data lake Files container (Optional)
 
@@ -168,7 +193,7 @@ A [data lake Files container](https://help.sap.com/viewer/b239ed4bb73a4f07886657
 
     Additional details on how to configure the data lake Files container including the certificates and how to perform queries using SQL on Files can be found at [Managing Data Lake Files](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/afe91bfba419464a84b7a05e7960d6f9.html) and [Getting to know SAP HANA data lake Files](group.hana-data-lake-containers).
 
-2. Once added, the contents of the file container can be browsed.  Files can be added, deleted or viewed.
+2. Once added, the contents of the file container can be browsed.  Files can be added, deleted, or viewed.
 
     ![data lake Files container](data-lake-file-container.png)
 
@@ -180,9 +205,9 @@ A [data lake Files container](https://help.sap.com/viewer/b239ed4bb73a4f07886657
 
 ### Additional database connection features
 
-Databases have additional actions that can be performed on them such as renaming, connecting as a different user, changing the connection of a SQL console, and viewing an overview of the connected database.  
+Instances have additional actions that can be performed on them such as renaming, connecting as a different user, changing the connection of a SQL console, and viewing an overview of the connected SAP HANA Cloud, SAP HANA database.  
 
-1.  To rename a connection, right-click a database and choose **Properties**.
+1.  To rename an instance, right-click on an instance and choose **Properties**.
 
     ![database properties](properties.png)
 
@@ -190,19 +215,19 @@ Databases have additional actions that can be performed on them such as renaming
 
     ![renaming a connection](properties2.png)
 
-2.  To connect to the same database but with different credentials, right-click a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials perhaps because you need elevated permissions.  The USER1 database user will be created in the next tutorial.
+2.  To connect to the same instance but with different credentials, right-click an instance and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same instance but with a different set of credentials perhaps because you need elevated permissions.  The USER1 database user will be created in the next tutorial.
 
     ![connecting as a different user](clone.png)
 
-3.  When a SQL console opens, it connects to the currently selected database connection and displays the current schema and connection.  
+3.  When a SQL console opens, it connects to the currently selected database instance and displays the current schema and instance name.  
 
-    ![SQL Console connections](SQL-Console-Connections.png)
+    ![SQL console connections](SQL-Console-Connections.png)
 
     It is possible to connect, disconnect, or change the connection via the toolbar items highlighted above.  
 
     > Subsequent tutorials assume the connected user is DBADMIN or SYSTEM.
 
-4.  To see information about an SAP HANA database, right-click a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the database version.
+4.  To see information about an SAP HANA database, right-click on an instance and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the database version.
 
     ![database overview](overview.png)
 
@@ -242,7 +267,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
 ![run on multiple](run-on-multiple.png)  
 
-1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.    
+1. With SAP HANA Cloud, all databases created in a Cloud Foundry space are placed in a group.  As seen below, the space name is dev.    
 
     ![group by space](group-by-space.png)
 
@@ -260,6 +285,8 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
+    >This feature does not apply to SAP HANA Cloud instances deployed to the subaccount or when used with the multi-environment tooling.
+
 2. With SAP HANA, express edition or an on-premise install, a tool called SAP HANA Cockpit Manager can be used to register databases and organize them into groups.
 
     ![registered resources](cockpit-manager.png)
@@ -275,9 +302,6 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
     >The ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA Cockpit Manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
-
-    >---
-
 
 
 ### Native HANA development with HDI (Optional)
@@ -407,7 +431,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Project Name:  | `myHANAProj`
     |  Space:         | development
     |  Namespace:     | Clear the default value
-    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 06
+    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 07
 
 
 5.  After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  

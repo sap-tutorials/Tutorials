@@ -45,7 +45,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
 >**WHERE TO START**:
 
-> - **Are you new to SAP BTP Trial?** - skip the rest of the note and continue with the tutorial.
+> - **Are you new to SAP BTP Trial?** - skip the rest of the note and continue with this tutorial.
 
 > - You already have a SAP BTP trial account but new to SAP Integration Suite:
 
@@ -92,21 +92,21 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     <!-- border -->![Create Subscription](3-4-Create_Subscription.png)
 
-5. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
+5. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, select the Three-Dot-Icon and choose **Assign Role Collection**.
 
     <!-- border -->![Assign Roles](3-6-Assign-Roles.png)
 
-6. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+6. In the dialog that appears, select **Integration_Provisioner**. Choose **Assign Role Collection**.
 
     <!-- border -->![Assign Role Collection](3-7-Assign-Role-Collection.png)
 
-7. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the Integration Suite home page.
+7. Go back to **Instances and Suscriptions**. Select **Integration Suite**. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the Integration Suite home page.
 
     <!-- border -->![Assign Role Collection](3-8-Go-to-Application.png)
 
 
 
-### Provision the capabilities
+### Activate the capabilities
 
 >**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Cloud Integration, or API Management) if you have already subscribed to them in the same subaccount.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
@@ -117,7 +117,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     <!-- border -->![Integration suite launchpad](4-1-isuitenewlaunchpage.png)
 
-    For this tutorial, you must select the **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs click** capabilities. Choose **Next**.
+    For this tutorial, you must select the **Build Integration Scenarios** and **Manage APIs** capabilities. Choose **Next**.
 
     <!-- border -->![Add Capabilities](4-1-Addcapapbilities.png)
 

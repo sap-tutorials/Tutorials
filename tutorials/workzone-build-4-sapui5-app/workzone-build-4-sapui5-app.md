@@ -25,7 +25,7 @@ author_profile: https://github.com/LindsayBert
 ## Intro
 To add business apps to your site, you need to configure them in a tool called the **Content Manager**, located in the Site Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs.
 
-Once configured, the app appears as a tile in the **Applications** page of your site - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu and displays the business apps that a user has permissions to launch.
+Once configured, the app appears as a tile in the **Applications** page of your site - a single page from where you can launch your apps. The page can be accessed from the top-level menu and displays the business apps that a user has permissions to launch.
 
 
 ### Open the Content Manager
@@ -46,13 +46,7 @@ Once configured, the app appears as a tile in the **Applications** page of your 
 
     <!-- border -->![Open content manager](3-open-content-manager.png)
 
-The Content Manager has two tabs:
-
-- **My Content** where you can manually configure content items (such as apps, roles, groups, and catalogs) and view any other available content items in your subaccount.
-
-- The **Content Explorer** where you can explore exposed content from available content providers and add it to your subaccount (added content is displayed in **My Content**).
-
-The **Content Manager** is part of the Site Manager, where administrators can configure their business content. The Site Manager also includes the following tools:
+The **Content Manager** is part of the Site Manager, where administrators can create and configure their business content. They can also use the **Content Explorer** to explore exposed content from available content providers. The Site Manager also includes the following tools:
 
 - The **Site Directory** where the site's tile is located. From here you can update the site settings - for example, assign the site to a specific role.
 
@@ -62,17 +56,16 @@ The **Content Manager** is part of the Site Manager, where administrators can co
 
 - The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
 
-<!-- border -->![Tabs and tools](5-tabs-and-tools.png)
-
 
 ### Create and configure a new app
 
+First create and configure the app.
 
-First you need to create and configure the app.
-
-1. Click **+ New** and select **App** from the list. The app editor opens with the **PROPERTIES** tab in focus.
+1. Click **Create** and select **App** from the dropdown list. 
 
     <!-- border -->![Add app](6-add-app.png)
+
+    The app editor opens with the **Configuration** tab in focus.
 
 2. Enter the following values:
 
@@ -86,7 +79,7 @@ First you need to create and configure the app.
 
     >When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the App UI Technology dropdown list, you would select SAPUI5. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
-3. Click the **NAVIGATION** tab to specify the intent of your app.
+3. Click the **Navigation** tab to specify the intent of your app.
 
     >The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
 
@@ -99,7 +92,7 @@ First you need to create and configure the app.
 
       <!-- border -->![Define navigation properties](8-navigation-properties.png)
 
-5. Click the **VISUALIZATION** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
+5. Click the **Visualization** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
 
 6. Enter the following values:
 
@@ -107,10 +100,9 @@ First you need to create and configure the app.
 
     * **Information**:  `Order Now!`
 
-    * **Icon**: Click the browse icon, type `my-sales-order`, click on the displayed icon, and click **OK**.
+    * **Icon**: Click the browse icon, type `my-sales-order`, and click on the displayed icon, to add it. 
 
-7.  On the right, you can see a preview of the tile with all the properties you entered.
- Click **Save**.
+7. On the right, you can see a preview of the tile with all the properties you entered. Click **Save**.
 
     <!-- border -->![Define visualizaton properties](9-vizualization-properties.png)
 
@@ -119,7 +111,7 @@ First you need to create and configure the app.
 ### View the app in the Content Manager
 
 
-Click the **Content Manager** icon in the left side panel to navigate back to the Content Manager.
+Click **Content Manager** in the breadcrumbs in the top header to navigate back to the Content Manager.
 
 <!-- border -->![Go back to Content Manager](10-go-to-content-manager.png)
 
@@ -141,17 +133,17 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
     <!-- border -->![Click Edit](13-edit.png)
 
-3. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
+3. Click the search box in the search box to see any available apps in the list below.
 
     >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
 
-4. In the **Results** list, click the **+** icon next to the `New Orders` app to assign this role to your app. You'll see that the icon changes.
+4. In the **Assignment Status** column, drag the toggle switch to the right next to the `New Orders` app to assign this role to your app. You'll see that the icon changes.
 
 5. Click **Save**.
 
     <!-- border -->![Assign role to app](14-assign-role.png)
 
-Once an application is configured, it becomes available to be added to your workpages.
+Once an application is configured, it becomes available to add to your workpages.
 
 
 ### Create a group and assign the app to it
@@ -159,15 +151,15 @@ Once an application is configured, it becomes available to be added to your work
 
 A group is a set of one or more apps displayed together on the **Applications** page of your site. Assigning apps to groups, makes them visible to the user from this page. In this step you'll create a new group and assign the app to it.
 
-1. Click the icon in the side panel to navigate back to the **Content Manager**.
+1. Click **Content Manager** in the breadcrumbs in the top header to navigate back to the Content Manager.
 
-2. Click **+ New** and select **Group** to create a group.
+2. Click **Create** and select **Group** to create a group.
 
     <!-- border -->![Create a group](15-create-group.png)
 
-3. Enter `Purchasing` as the **Title** and in the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see `New Orders`.
+3. Enter `Purchasing` as the **Title**.
 
-4. In the **Results** list, click **+** next to the `New Orders` app to assign it to your group.
+4. In the **Assignment Status** column, drag the toggle switch to the right next to the `New Orders` app to assign it to your group. You'll see that the icon changes. 
 
 5. Click **Save**.
 

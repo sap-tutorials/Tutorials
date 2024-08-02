@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr
@@ -14,12 +14,7 @@ author_profile: https://github.com/MatKuhr
  - SAP Cloud Application Programming Model
  - Basic knowledge of Spring Boot and Java (optional)
  - An account on [Cloud Foundry](group.scp-1-get-ready)
-
-
-> **We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)**
-> This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
-> We will provide a link to the updated version of this tutorial as soon as we release it.
+ - Understand how to [Connect to an OData Service using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)
 
 ## You will learn
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
@@ -155,15 +150,9 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 
 ```XML
 <dependency>
-    <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
-    <artifactId>scp-cf</artifactId>
+    <groupId>com.sap.cloud.sdk</groupId>
+    <artifactId>sdk-core</artifactId>
 </dependency>
-
-<dependency>
-    <groupId>com.sap.cloud.sdk.s4hana</groupId>
-    <artifactId>s4hana-all</artifactId>
-</dependency>
-
 <dependency>
   <groupId>com.sap.cds</groupId>
   <artifactId>cds-integration-cloud-sdk</artifactId>
@@ -183,15 +172,22 @@ For more information, visit the documentation of the [SAP Cloud SDK](https://sap
 @Component
 @ServiceName("cloud.sdk.capng")
 public class BusinessPartnerReadListener implements EventHandler {
-
-    private final HttpDestination httpDestination = DestinationAccessor.getDestination("MyErpSystem").asHttp();
+    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
+    // private static final String APIKEY_HEADER = "apikey";
+    // private static final String SANDBOX_APIKEY = "";
 
     @On(event = CdsService.EVENT_READ, entity = "cloud.sdk.capng.CapBusinessPartner")
     public void onRead(CdsReadEventContext context) throws ODataException {
+        final Destination destination = DestinationAccessor.getDestination("MyErpSystem");
 
         final Map<Object, Map<String, Object>> result = new HashMap<>();
         final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService().getAllBusinessPartner().top(10).execute(httpDestination);
+            new DefaultBusinessPartnerService()
+                .getAllBusinessPartner()
+                .top(10)
+                // TODO: uncomment the line below, if you are using the sandbox service
+                // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+                .executeRequest(destination);
 
         final List<CapBusinessPartner> capBusinessPartners =
                 convertS4BusinessPartnersToCapBusinessPartners(businessPartners, "MyErpSystem");
@@ -204,12 +200,22 @@ public class BusinessPartnerReadListener implements EventHandler {
 
     @On(event = CdsService.EVENT_CREATE, entity = "cloud.sdk.capng.CapBusinessPartner")
     public void onCreate(CdsCreateEventContext context) throws ODataException {
-        final BusinessPartnerService service = new DefaultBusinessPartnerService();
+        final Destination destination = DestinationAccessor.getDestination("MyErpSystem");
 
         Map<String, Object> m = context.getCqn().entries().get(0);
-        BusinessPartner bp = BusinessPartner.builder().firstName(m.get("firstName").toString()).lastName(m.get("surname").toString()).businessPartner(m.get("ID").toString()).build();
+        BusinessPartner bp =
+            BusinessPartner
+                .builder()
+                .firstName(m.get("firstName").toString())
+                .lastName(m.get("surname").toString())
+                .businessPartner(m.get("ID").toString())
+                .build();
 
-        service.createBusinessPartner(bp).execute(httpDestination);
+        new DefaultBusinessPartnerService()
+          .createBusinessPartner(bp)
+          // TODO: uncomment the line below, if you are using the sandbox service
+          // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+          .executeRequest(destination);
     }
 
     private List<CapBusinessPartner> convertS4BusinessPartnersToCapBusinessPartners(
@@ -256,7 +262,7 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `executeRequest` function which creates the new `businessPartner`.
 
 
 ### Run the mock server

@@ -1,0 +1,14 @@
+[VALIDATE_10]
+###Rule
+multiple-choice
+
+###Question
+What is the difference between a private and a public workspace?
+
+###Match
+[x] Private makes your workspace available to a specific set of members that you’ve invited to the workspace.
+[x] Public makes your workspace available to all employees of the company who can access this site.
+[ ] Private only enables the company managers to access the workspace.
+[ ] Public allows internal and external users to access the workspace.
+
+[VALIDATE_10]

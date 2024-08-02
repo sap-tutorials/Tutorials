@@ -25,7 +25,7 @@ parser: v2
 
 Video tutorial version:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6WY70LyLS1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Run the services
 
@@ -40,6 +40,10 @@ Video tutorial version:
 1. Run the command `npm install` to install any Node.js dependent modules needed by the Cloud Application Programming Model.
 
     ![npm install](npm_install.png)
+
+1. Our project is setup for real XSUAA security and we will use that later in this tutorial.  But for now we want to test without configuration of the necessary authentication and authorization setup. To do so, open the package.json file in the root of your project. Change the `cds.requires.auth` property from `xsuaa` to `mocked` so we can test with mock authentication.
+
+    ![Mocked Authentication](mocked_auth.png)
 
 1. Now issue the command `cds watch --profile hybrid`. This will start the CAP service locally and use the binding configuration to connect to our remote HANA database instance. Once started you will see a dialog with a button that says **Open in New Tab**. Press this button to test the CAP service in a new browser tab.
 
@@ -79,13 +83,9 @@ Video tutorial version:
 
 ### Configure routing
 
-You will now create an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
+You will use an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This was generated into a project using the initial wizard. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
 
-1. Open another Terminal instance (so that the watch command can continue to run in the other instance). Issue the command `cds add approuter`.
-
-    ![Create MTA Module](create_module.png)
-
-1. This will complete the wizard and generate a folder named `app` in the root of your project.
+1. You should see a folder named `app` in the root of your project.
 
     ![New folder for App Router](new_folder_app_router.png)
 
@@ -95,7 +95,7 @@ You will now create an [Application Router](https://www.npmjs.com/package/@sap/a
 
     ![package.json for app router](app_router_package_json.png)
 
-1. We need to install the approuter dependency now as well.  From the terminal change to the `app` folder and issue the command `npm install`
+1. We need to install the approuter dependency now as well.  From the terminal change to the `app/router` folder and issue the command `npm install`
 
     ![app router npm install](app_router_npm_install.png)
 
@@ -127,23 +127,23 @@ You will now create an [Application Router](https://www.npmjs.com/package/@sap/a
 
 1. Among other information, this configuration is declaring that requests containing the pattern `^/(.*)$` are routed to a destination called `srv-api`. This destination was defined by the wizard in the `mta.yaml` file and points the service layer of our CAP application.
 
-### Create a Fiori freestyle web interface
+### Create a Fiori web interface
 
-We want to create a Fiori freestyle UI for our CAP service.  We will use the wizards to generate most of the UI.
+We want to create a Fiori UI for our CAP service.  We will use the wizards to generate most of the UI.
 
 1. From the top menu select **View -> Command Pallette**. Then type `fiori` into the search box. Select **Fiori Open Application Generator**.
 
     ![Fiori Application Generator](fiori_app_gen.png)
 
-1. Choose **SAPUI5 freestyle** as the application type, select **SAP Fiori Worklist Application** as the floor plan and press **Next**
+1. Select **Worklist Page** as the template and press **Next**
 
     ![Fiori Application Type](application_type.png)
 
-1. At the Data Source and Service Selection screen, choose **Use a Local CAP Node.js Project**. Select your project root as the **CAP project folder path**. Select `CatalogService` as your OData service. Press **Next**
+1. At the Data Source and Service Selection screen, choose **Use a Local CAP Project**. Select your project as the **Choose your CAP project**. Select `CatalogService (Node.js)` as your OData service. Press **Next**
 
     ![Data Source and Service Selection](data_source.png)
 
-1. Choose `Interactions_Items` as the Object collection, `INTHeader_ID` for the remaining columns and press **Next**
+1. Choose `Interactions_Header` as the main entity, `ITEMS` for the Navigation entity, leave the `YES` value for the "Automatically add table columns to the list page and a section to the object page if none already exists?" option and press **Next**
 
     ![Entity Selection](entity_selection.png)
 
@@ -161,11 +161,209 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     ![CAP Test Page Link](cap_test_ui.png)
 
-1. Clicking that link will launch the generated Fiori free style UI for the CAP service.
+1. Clicking that link will launch the generated Fiori UI for the CAP service.
 
     ![Test UI](test_ui.png)
 
 1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
+
+### Enahance the Fiori UI via Annotations
+
+1. The Fiori application template wizard already created an annotations.cds file with some basic annotation entries for your application.  This is how the preview that we used in the last step already had `partner` and `country_code` fields in the output.
+
+    ![annotations.cds](annotations_cds1.png)
+
+2. Let's now extend the wizard generated annotations to include more fields in our application. With a few lines of annotations we can reshape the entire UI.
+
+3. Replace the `annotations.cds` with the following content:
+
+    ```cds
+    using CatalogService as service from '../../srv/interaction_srv';
+
+    annotate service.Interactions_Header with @(
+    UI.HeaderInfo                : {
+        Title         : {
+            $Type: 'UI.DataField',
+            Value: partner,
+        },
+        TypeName      : 'Incident',
+        TypeNamePlural: 'Incidens',
+        Description   : {Value: country.descr}
+    },
+    UI.HeaderFacets            : [{
+            $Type             : 'UI.ReferenceFacet',
+            Target            : '@UI.FieldGroup#Admin'
+    }],
+    UI.FieldGroup #GeneratedGroup: {
+        $Type: 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type: 'UI.DataField',
+                Label: 'Partner',
+                Value: partner,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'Country',
+                Value: country_code,
+            },
+            {
+                $Type                  : 'UI.DataField',
+                Label                  : 'Country',
+                ![@Common.FieldControl]: #ReadOnly,
+                Value                  : country.descr,
+            },
+        ]
+    },
+    UI.FieldGroup #Admin       : {Data : [
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt
+        }
+        ]
+    },
+    UI.Facets                    : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID    : 'GeneratedFacet1',
+            Label : 'General Information',
+            Target: '@UI.FieldGroup#GeneratedGroup',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Interaction Items',
+            Target: 'items/@UI.LineItem'
+        }
+    ],
+    UI.LineItem                  : [
+        {
+            $Type: 'UI.DataField',
+            Label: 'Partner',
+            Value: partner,
+        },
+        {
+            $Type                  : 'UI.DataField',
+            Label                  : 'Country',
+            ![@Common.FieldControl]: #ReadOnly,
+            Value                  : country.name,
+        },
+    ]
+    );
+
+    annotate service.Interactions_Items with @(
+    UI.HeaderInfo                : {
+        Title         : {
+            $Type: 'UI.DataField',
+            Value: text,
+        },
+        TypeName      : 'Interaction Item',
+        TypeNamePlural: 'Interaction Items'
+    },
+    UI.FieldGroup #GeneratedGroup: {
+        $Type: 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type: 'UI.DataField',
+                Label: 'Text',
+                Value: text,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'Date',
+                Value: date,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'Price',
+                Value: price,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'Currency',
+                Value: currency_code,
+            }
+        ]
+    },
+    UI.Facets                    : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID    : 'GeneratedFacet1',
+            Label : 'General Information',
+            Target: '@UI.FieldGroup#GeneratedGroup',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Item Translations',
+            Target: 'texts/@UI.LineItem'
+        }
+    ],
+    UI.LineItem                  : [
+        {
+            $Type: 'UI.DataField',
+            Label: 'Text',
+            Value: text,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Date',
+            Value: date,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Price',
+            Value: price,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Currency',
+            Value: currency_code,
+        }
+    ]
+    );
+
+    annotate service.Interactions_Items.texts with @(UI: {
+    Identification : [{Value: text}],
+    SelectionFields: [
+        locale,
+        text
+    ],
+    LineItem       : [
+        {
+            Value: locale,
+            Label: 'Locale'
+        },
+        {Value: text}
+    ]
+    });
+
+    annotate service.Interactions_Items.texts with {
+    ID @UI.Hidden;
+    };
+
+   // Add Value Help for Locales
+   annotate service.Interactions_Items.texts {
+    locale @(
+        ValueList.entity: 'Languages',
+        Common.ValueListWithFixedValues,
+    )
+   }
+   ```
+
+4. Run the application again and you will new functionality including value help for country and currency as well as the ability to see and maintain the translatable text element.
+
+    ![annotations example](annotations_example.png)
 
 Congratulations! You have created your first, full application.
 

@@ -38,21 +38,19 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
     <!-- border -->![Open Business Content](2-open-business-content.png)
 
-3. Click **Content Manager**.
+3. Click **Content Manager** to open it.
 
     <!-- border -->![Open Content Manager](3-open-content-manager.png)
-
-    The **Content Manager** opens with the **My Content** tab in focus.
 
 
 ### Create and configure a new app
 
 
-1. From the **Content Manager**, click **+ New** and select **App** from the list.
+1. From the **Content Manager**, click **Create** and select **App** from the list.
 
     <!-- border -->![Create new app](4-create-new-app.png)
 
-    The App editor opens with the **PROPERTIES** tab in focus.
+    The App editor opens with the **Configuration** tab in focus.
 
 2. Enter the following values:
 
@@ -64,7 +62,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
       <!-- border -->![Define app properties](5-app-properties.png)
 
-3. Click the **NAVIGATION** tab to specify the intent of your app.
+3. Click the **Navigation** tab to specify the intent of your app.
 
     >The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
 
@@ -77,7 +75,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
         <!-- border -->![Define navigation properties](6-navigation-properties.png)
 
-5. Click the **VISUALIZATION** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
+5. Click the **Visualization** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
 
 6. Enter the following values:
 
@@ -85,7 +83,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
       * **Information**:  `Learn about SAP.iO`
 
-      * **Icon**: Click the browse icon, type `visits`, click on the displayed icon, and click **OK**.
+      * **Icon**: Click the browse icon, type `visits`, click on the displayed icon to add it.
 
 7.  On the right, you can see a preview of the tile with all the properties you entered.
      Click **Save**.
@@ -99,11 +97,11 @@ You've configured the URL app and in the next step you'll go back to the **Conte
 ### View the app in the Content Manager
 
 
-Click the **Content Manager** icon in the left side panel to navigate back to it.
+Click **Content Manager** in the breadcrumbs in the header to navigate back to it.
 
   <!-- border -->![Go back to the Content Manager](8-back-to-content-manager.png)
 
-You can see your app in the list of content items in the **My Content** screen:
+You can see your app in the list of content items:
 
   <!-- border -->![View app in my content](9-view-app.png)
 
@@ -125,11 +123,11 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
     <!-- border -->![Click Edit](11-click-edit.png)
 
-3. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
+3. Click the search box in the on the right to view any available apps in the list below.
 
     >If you have many apps, you can type some letters of your app name in the search bar, (for example, `In`) to search for the app.
 
-4. In the **Results** list, click the **+** icon next to the `Innovation at SAP` app to assign this role to your app. You'll see that the icon changes.
+4. In the **Assignment Status** column, drag the toggle switch to the right next to the `Innovation at SAP` app to assign this role to your app. You'll see that the icon changes.
 
 5. Click **Save**.
 
@@ -141,17 +139,17 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
 A group is a set of one or more apps displayed together on the **Applications** page of your site. Assigning apps to groups, makes them visible to the user on the workpage. In this step you'll create a new group and assign the app to it.
 
-1. Click the icon in the side panel to navigate back to the **Content Manager**.
+1. Click **Content Manager** in the breadcrumbs in the header to navigate back to it.
 
     <!-- border -->![Go back to the Content manager](13-back-to-content-manager.png)
 
-2. Click **+ New** and select **Group** to create a group.
+2. Click **Create** and select **Group** to create a group.
 
     <!-- border -->![Add new group](14-add-new-group.png)
 
-3. Enter `SAP` as the **Title** and in the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps.
+3. Enter `SAP` as the **Title**. 
 
-4. In the **Results** list, click **+** next to the `Innovation at SAP` app to assign it to your group.
+4. In the **Assignment Status** column, drag the toggle switch to the right next to the `Innovation at SAP` app to assign it to this group. You'll see that the icon changes.
 
 5. Click **Save**.
 

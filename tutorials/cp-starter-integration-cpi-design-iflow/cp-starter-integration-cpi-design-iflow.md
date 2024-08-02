@@ -23,11 +23,9 @@ author_profile: https://github.com/Karunaharan
   ### Create an integration package and integration flow
 
 
-1. Choose **Design** > **Integrations** > **Create** to create an integration package.
+1. Choose **Design** > **Integrations and APIs** > **Create** to create an integration package.
 
-    >An integration flow should be associated with an integration package.
-
-      <!-- border -->![Create integration package](2-1-create-integration-package.png)
+    >An integration flow must be associated with an integration package.
 
       In the **Header** tab, provide a **Name** and **Short Description** for your integration package.
 
@@ -51,7 +49,7 @@ author_profile: https://github.com/Karunaharan
 
 4. Choose **Edit** to start editing the integration flow.
 
-    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in the integration flow.
+    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for every step in the integration flow.
 
       <!-- border -->![Start editing the integration flow](3-1-edit-iflow.png)
 
@@ -78,7 +76,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 
 ### Add JSON to XML converter
 
-Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop which is a OData service. You use the converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
+Input to the integration flow is sent in JSON format. At a later point, you communicate to a web shop, which is a OData service that understands only XML. You use a converter for this JSON to XML conversion. After the input is converted into XML, the message is sent as header information to the OData service to fetch the required product details.
 
 1. From the palette (the grey bar on the top containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
@@ -91,6 +89,7 @@ Input to the integration flow is sent in JSON format. At a later point, you comm
 
 ### Add and configure content modifier
 
+The Content Modifier allows you to modify a incoming message by changing the content of the data containers that are involved in message processing (message header, message body, or message exchange). The data written to the message header using a Content Modifier also becomes part of the outbound message addressed to a receiver system. For more information about Content Modifier, see [Content Modifier Basics](https://help.sap.com/docs/integration-suite/sap-integration-suite/content-modifier-basics).
 
 1. Choose **Message Transformers > Content Modifier** and add it to the message path, as you did for the **JSON to XML Converter**.
 
@@ -111,6 +110,7 @@ Input to the integration flow is sent in JSON format. At a later point, you comm
 
 ### Add request reply step
 
+Certain integration scenarios might require that Cloud Integration communicates with an external service, retrieves data from it, and further processes the data. In such cases, you can use the request reply step as an exit to connect to the external service.
 
 From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path, similar to the previous steps.
 
@@ -118,10 +118,10 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
   <!-- border -->![Connect request reply step](7-1-connect-request-reply.png)
 
+You have now created a step that will (in the further step) connect and communicate with on OData service, and retrieves data from it.
 
 
 ### Connect request reply to receiver
-
 
 1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the editor. You do this to ensure that your integration flow is elegantly designed.
 

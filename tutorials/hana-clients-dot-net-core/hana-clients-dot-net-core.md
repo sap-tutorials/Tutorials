@@ -17,24 +17,22 @@ primary_tag: software-product>sap-hana-cloud
   - How to create and debug a .NET application that queries an SAP HANA database
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and macOS operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
 ### Install the .NET SDK
-
-
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 6.0.201.  
+If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 8.0.203.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
->Select the 'Download .NET SDK x64' option.
 
-![.NET Core SDK Install](install.png)
+
+![.NET Core SDK Install](dotnet-install.png)
 
 On Linux, follow the instructions for the appropriate Linux version such as [Install the .NET SDK or the .NET Runtime on openSUSE](https://docs.microsoft.com/en-us/dotnet/core/install/linux-opensuse).
 
@@ -44,8 +42,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 
 ### Create a .NET application that queries an SAP HANA database
-
-
 1.  Create a new console app with the below commands:
 
     ```Shell (Microsoft Windows)
@@ -53,11 +49,11 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     dotnet new console -o dotNET
     ```  
 
-    >On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. There are two ways to set an environment variable.
+    >On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. 
 
-    >You can either set it using the export command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, its existence ends when the user's sessions ends. This could become an issue when you want the variable to persist across multiple user sessions.
+    >There are two ways to set an environment variable: using the `EXPORT` command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, however, its existence ends when the user's session ends. This could become an issue when you want the variable to persist across multiple user sessions.
 
-    >Hence, choose the second option to set `HDBDOTNETCORE`.
+    >Hence, we will set the `HDBDOTNETCORE` environment variable via the user profile.
 
     >Open an editor to edit the file `.bash_profile` or `.profile`.
 
@@ -73,7 +69,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     >export HDBDOTNETCORE=/home/dan/sap/hdbclient/dotnetcore
     >```
 
-    >Run the source command to immediately apply all the changes made to the `.bash_profile` file
+    >Run the source command to immediately apply all the changes made to the `.bash_profile` file.
 
     >```Shell (Linux or Mac)
     >source ~/.bash_profile
@@ -102,17 +98,18 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
-      </Reference>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+          <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
+        </Reference>
     </ItemGroup>
     ```
 
     ```Shell (Linux or Mac)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.Data.Hana.Net.v6.0.dll</HintPath>
       </Reference>
+      
     </ItemGroup>
     ```
     ![dotNET.csproj code](dotNET-csproj-code.png)
@@ -135,7 +132,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico Program.cs
     ```
 
-5.  Replace the entire contents of `Program.cs` with the code below:  
+5.  Replace all content of `Program.cs` with the code below. Be sure to update values where necessary and save the file when finished.
 
     ```C#
     using System;
@@ -148,12 +145,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    // Option 1, retrieve the connection parameters from the hdbuserstore
-                    // User1UserKey retrieved from hdbuserstore contains server:port, UID and PWD
-                    using (var conn = new HanaConnection("key=User1UserKey;encrypt=true;sslValidateCertificate=false"))
-
-                    //Option2, specify the connection parameters
-                    //using (var conn = new HanaConnection("Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+                    using (var conn = new HanaConnection("Server=999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
 
                     // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                     // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
@@ -181,7 +173,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
                                 var sbRow = new System.Text.StringBuilder();
                                 for (var i = 0; i < reader.FieldCount; i++)
                                 {
-                                    sbRow.Append(reader[i].ToString().PadRight(20));
+                                    var result = reader[i].ToString();
+                                    if (result is not null) {
+                                        sbRow.Append(result.PadRight(20));
+                                    }
                                 }
                                 Console.WriteLine(sbRow.ToString());
                             }
@@ -199,11 +194,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     }
     ```
 
-    Save and close the `Program.cs` file after replacing the code.
+    Save and close the `Program.cs` file after replacing the code and updating the host and port.
 
-    >The address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
-
-    The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
+    The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 
 6.  Run the app:
 
@@ -219,9 +212,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 ### Debug the application
 
 
-1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
+1. Open Visual Studio Code. If needed, download Visual Studio Code [here](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 

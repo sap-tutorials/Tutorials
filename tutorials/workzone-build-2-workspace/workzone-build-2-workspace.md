@@ -12,9 +12,12 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a workspace and add content to it that you can share with other members of your workspace.
 
 ## Prerequisites
-You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
+ - You have an environment set up and you can access your SAP Build Work Zone, advanced edition.
+ - You have created an app in SAP Build Apps and a process in SAP Process Automation by following this mission: [Create Sales Order Workflow with SAP Build](https://developers.sap.com/mission.sap-build-apps-create-trigger-process.html) 
+
+
 &nbsp;
->**SAP Build Work Zone, advanced edition is not available in a trial account.**
+>**SAP Build Work Zone, advanced edition isn't available in a trial account.**
 
 
 ## You will learn
@@ -22,18 +25,18 @@ You have an environment set up and you can access your SAP Build Work Zone, adva
   - How to add content to it and design the layout
 
 ## Intro
-In this tutorial, you're going to create a workspace where employees who joined the company hackathon challenge, can interact with other members of the workspace, ask questions, and find out all that they need to know.
+In this tutorial, you're going to create a workspace where employees who are part of the sales team can interact with other members of the workspace, ask questions, and find information, tools, and assets to help them close more deals.
 
 
 
 ### Download images for your workspace
 
 
-Before you start, download these image files so that they're on your computer ready for you to add to your workpage for the workspace that you will create.
+Before you start, download these image files so that they're on your computer ready for you to add to your workpage for the workspace that you'll create.
 
+- [`workspace_sales_header.png`](Workspace_Images/workspace_sales_header.png)
 - [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
 - [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
-- [`workspace_header_image.jpg`](Workspace_Images/workspace_header_image.jpg)
 - [`workspace_image_with_icon1.png`](Workspace_Images/workspace_image_with_icon1.png)
 - [`workspace_image_with_icon2.png`](Workspace_Images/workspace_image_with_icon2.png)
 - [`workspace_image_with_icon3.png`](Workspace_Images/workspace_image_with_icon3.png)
@@ -44,9 +47,9 @@ Before you start, download these image files so that they're on your computer re
 ### Create a workspace
 
 
-Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You can add all kinds of content to it and you can invite other users to join as members.
+Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You can add all kinds of content to your workspace and you can invite other users to join as members.
 
-1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**.
+1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**. You can also use the **New Workspace** button on the right.
 
     <!-- border -->![Create workspace](1-create-new-workspace.png)
 
@@ -54,15 +57,14 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
     <!-- border -->![Select template](2-select-template.png)
 
-    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
+    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial, you won't use a template.
 
-3. Enter this name for your workspace: `Employee Innovation Hackathon`. In workshops, use: `<your unique identifier>_Employee Innovation Hackathon`.
+3. Enter this name for your workspace: `Sales Management`. In workshops, use: `<your unique identifier>_Sales Management`.
 
     >**Tip:** Always use a name that would help users distinguish your workspace from others.
 
 
-
-4. Copy and paste this description for your workspace: `Get together and find the answers to your questions about the hackathon!`
+4. Copy and paste this description for your workspace: `Use this workspace to manage our team sales orders and collaborate!`
 
 5. Select `Private`.
 
@@ -72,22 +74,7 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
     <!-- border -->![New workspace settings](3-new-workspace-settings.png)
 
-Your workspace is created.
-
-
-
-### Configure your workspace notifications
-
-
-When you create your workspace, you may be prompted to define the frequency of email notifications.
-
-1. Select **Daily** to get any updates to the workspace every day.
-
-2. Click **Accept** to ensure that you've joined the workspace.
-
-  <!-- border -->![Define workspace settings](3a-created-workspace.png)
-
-You can now start building your workspace.
+Your workspace is created and you can now start building your workspace.
 
 <!-- border -->![Start building a workspace](3c-start-building.png)
 
@@ -103,7 +90,7 @@ When you create a new workspace, the header has a dark and light blue background
 
     <!-- border -->![New cover photo](4-new-header-image.png)
 
-2. Browse for the following image that you downloaded: `workspace_header-image`.
+2. Browse for the following image that you downloaded: `workspace_sales_header`.
 
 3. Reposition your photo to display it as you want, and then click **Save**.
 
@@ -118,24 +105,25 @@ When you create a new workspace, the header has a dark and light blue background
 
 In this step, you'll add a workpage to your workspace - this workpage will describe the purpose of the workspace and will feature relevant content.
 
-1. Click **+** to add a page tab.
+1. Click **+** to add a tab for your workpage to the workspace navigation bar.
 
     <!-- border -->![Add page tab](6-add-page-tab.png)
 
-2. From the **Add New Page** screen, select the **Workpage** tile.
+2. From the **Add Tab to Navigation Bar** screen, select the **Workpage** tile.
 
-    <!-- border -->![Add overview page](7-select-overview-page.png)
+    <!-- border -->![Add workpage](7-select-workpage.png)
 
-3. Select the blank layout at the bottom right of the screen and click **OK**. The Page Designer is now active.
+3. Enter a title for the workpage: `Sales Orders`.
 
-    <!-- border -->![Select layout](8-select-layout.png)
+    <!-- border -->![Enter workpage title](7a-workpage-title.png)
 
+4. Select the **Workpage Type**. You can either select an existing workpage or you can create a new one. In this tutorial, we'll select **New Workpage**. Select the folder where you want to save it (usually the Content folder), and click **Add**.
 
-5. Enter a title for the workpage: `About the Hackathon`.
+    <!-- border -->![New Workpage](8-create-new-workpage.png)
 
-    <!-- border -->![Title of overview page](9-name-overview-page.png)
+This is your new workpage and you can start adding content to it:
 
-
+<!-- border -->![View Workpage](9-new-workpage.png)
 
 
 ### Design the first section of your workpage
@@ -143,18 +131,22 @@ In this step, you'll add a workpage to your workspace - this workpage will descr
 
 In this step, you'll add two text widgets next to each other in the first section of the workpage.
 
-1. Click **Add Widget** in the first section to open the widget gallery.
+1. Click **+** to add a section to your workpage.
+
+    <!-- border -->![Add section](9a-add-section1.png)
+
+2. Click **Add Widget** in the first section to open the widget gallery.
 
     <!-- border -->![Add widget](10-add-widget1.png)
 
-2. Select the **Text** widget.
+3. Select the **Text** widget.
 
     <!-- border -->![Add text widget](11-select-text-widget.png)
 
 3. Design the **Text** widget as follows:
 
     |  :------------- | :-------------
-    | Text            | Type in the following: `Approach our experts with all your questions`.
+    | Text            | Type in the following: `Verify your sales orders with our sales managers`.
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
@@ -182,28 +174,28 @@ In this step, you'll add images to the second section.
 
 1. Click the **+** under the first section to add a new section.
 
-    <!-- border -->![Add a second row](14-add-second-row.png)
+    <!-- border -->![Add a second row](14-add-second-section.png)
 
 2. In the second section, click **Add Widget**.
 
-    <!-- border -->![Add widget to row 2](15-add-widget-row2.png)
+    <!-- border -->![Add widget to row 2](15-add-widget-section2.png)
 
 3. Select the **Image** widget.
 
     <!-- border -->![Add image widget](16-add-image-widget.png)
 
-4. Click the link in the widget to browse for the image that you saved on your computer: `workspace_row2_image 1`
+4. Click the link in the widget to browse for the image that you've saved on your computer and open it: `workspace_row2_image 1`
 
     ![Empty image widget](16a-empty-image-widget.png)
 
-5. Click the cog icon in the top right of the image to edit the image widget.
+5. Hover over the image to expose the settings at the top right and click the cog icon to edit the image widget.
 
     <!-- border -->![Open image settings](17-open-settings.png)
 
 6. Design the **Image** widget as follows:
 
     |  :-------------     | :-------------
-    | Caption             | `Carla Grant, IT Expert`
+    | Caption             | `Carla Grant, Sales Manager`
     | Caption Layout      | Inline
     | Caption Alignment   | Left
 
@@ -224,7 +216,7 @@ In this step, you'll add images to the second section.
 11.  Design the second **Image** widget as follows and then click **Save**.
 
     |  :-------------     | :-------------
-    | Caption             | `Michael Hill, ML Expert`
+    | Caption             | `Michael Hill, Sales Fulfillment Manager`
     | Caption Layout      | Inline
     | Caption Alignment   | Left
 
@@ -246,7 +238,7 @@ In this step, you'll add images to the second section.
 14. Click the cog icon at the top right of the first image widget and design as follows. When you're done, click **Save**.
 
     |  :-------------     | :-------------                
-    | Caption             |`Real Customer Challenges`
+    | Caption             |`Sales Invoices`
     | Caption Layout      |Overlay
     | Background Opacity  |0%
     | Caption Alignment   |Left
@@ -254,20 +246,24 @@ In this step, you'll add images to the second section.
 15. In the same way, design the other 3 images as follows. When you're done click **Save** each time:
 
     |  :-------------     | :-------------                
-    | Caption             | Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Submission Criteria`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
-    | Link To        |Add this link to the **second** image widget that you named `Product Documentation`: <https://help.sap.com/viewer/product/WZ/Cloud/en-US> <div>&nbsp;</div><div> Once you've published your site you can click on this image to open the SAP Work Zone documentation product page.
+    | Caption             | Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Consider Your Sales Pitch`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
+    | Link To           |Add this link to the **second** image widget that you named `Product Documentation`: <https://help.sap.com/viewer/product/WZ/Cloud/en-US> <div>&nbsp;</div><div> Once you've published your site, you can click on this image to open the SAP Work Zone documentation product page.
     | Caption Layout        |All images: Overlay
     | Background Opacity    |All images: 0%
     | Caption Alignment     |All images: Left
 
 
-16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the text headings above the images.
+16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the `More Information` heading in line with the third column.
+
+    <!-- border -->![Align images](21b-align-images.png)
+
+    This is how your second section looks:
 
     <!-- border -->![First preview](22-first-preview.png)
 
 17. To increase the spacing between this section and the first section, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
-    ![Edit section settings](22a-edit-row-settings.png)
+    <!-- border --> ![Edit section settings](22a-edit-section-settings.png)
 
 18. Under **Padding Top**, add the value `30` pixels and click **Save**.
 
@@ -281,17 +277,17 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 1. Click **+** at the bottom of the second section to add another section.
 
-    <!-- border -->![Add the third row](22a-add-third-row.png)
+    <!-- border -->![Add the third section](22a-add-third-section.png)
 
 2. Click **Add Widget**.
 
-3. Select the **Action** widget.
+3. Select the **Action** widget in the new section.
 
-    >Adding an **Action** widget enables workspace members to choose from a selection of commonly used action types. In this tutorial, we want the workspace members to ask questions or add ideas.
+    > Adding an **Action** widget enables workspace members to choose from a selection of commonly used action types. In this tutorial, we want the workspace members to ask questions or add ideas.
 
     <!-- border -->![Add an action widget](23-add-action-widget.png)
 
-4. Enter the **Widget Title**: `Add your Hackathon Questions & Ideas`.
+4. Enter the **Widget Title**: `Add Your Questions & Ideas`.
 
 5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your workpage.
 
@@ -313,34 +309,35 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     <!-- border -->![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **Save**.
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `What would you like to know?`, and click **Save**.
 
     > On the workpage, only 2 of the questions, ideas or discussions from the forum will be displayed.  
 
     <!-- border -->![Design the forum widget](27-design-forum-widget.png)
 
 
-    Now let's add the **Feed** widget.
-
-10.  Add another section.
-
-    <!-- border -->![Add another section](27-add-another-widget.png)
-
-11. Click **Add Widget**
-
-      <!-- border -->![Add another section](27a-add-widget.png)
-
-12. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
-
-    You've now added all three widgets.
-
-13. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
+10. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
     <!-- border -->![Edit row settings](28-edit-row-settings.png)
 
-14. Under **Padding Top**, add the value `30`pixels and click **Save**.
+11. Under **Padding Top**, add the value `30`pixels and click **Save**.
+
+    Now let's add the **Feed** widget.
+
+12.  Add another section.
+
+    <!-- border -->![Add another section](27-add-another-section.png)
+
+13. Click **Add Widget**
+
+      <!-- border -->![Add another section](27a-add-widget.png)
+
+14. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
+
 
 15. Now **Publish** the workpage to make it visible to members of the workspace. Without doing this, the workpage is only visible to you.
+
+    > You can save your workpage as a draft so check how it looks before publishing.
 
     <!-- border -->![Publish](28-publish.png)
 
@@ -354,33 +351,33 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 ### Add a forums tab and ask a question
 
 
-Apart from the **Forum** widget, you're going to add a dedicated **Forum** page tab. From this page, workspace members can see all the questions, ideas and discussions in the forums that have been created for the workspace.
+Apart from the **Forum** widget, you're going to add a dedicated **Forum** tab to the navigation bar of your workspace. From this tab, workspace members can see all the questions, ideas, and discussions in the forums that have been created for the workspace.
 
 1. Click the **+** icon.
 
     <!-- border -->![Add new page tab](28-add-new-page.png)
 
-2.  In the **Add New Page** screen, under the **Content** category, select **Forums** to add the **Forums**  page tab to your workspace. The forum page tab opens a screen displaying all the different forum topics.
+2.  In the **Add Tab to Navigation Bar** screen, under the **Content** category, select the **Forums** tile to add it as a tab to your workspace navigation bar. You'll get a list of all the forum topics in the workspace.
 
-    In the next steps, we ask a question in the forum.
+    In the next steps, you'll ask a question in the forum.
 
-3. Go back to your workpage by clicking the **About the Hackathon** workpage.
+3. Go back to your workpage by clicking the **Sales Orders** workpage in the navigation bar.
 
-    <!-- border -->![Go back to overview page](29-go-to-overview-page.png)
+    <!-- border -->![Go back to overview page](29-go-to-workpage.png)
 
-4. Scroll down to your **Actions** widget that you added previously and click **Ask a question**.
+4. Scroll down to your **Actions** widget that you added previously and click **Ask a Question**.
 
     <!-- border -->![Add new question](35-add-a-question.png)
 
-2. Add this question: `What time does the hackathon start?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
+5. Add this question: `What is our sales forecast for the coming year?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
 
     <!-- border -->![Add first questions](35-first-question.png)
 
-3. Go back to your workspace by using the breadcrumbs at the top.
+6. Go back to your workspace by using the breadcrumbs at the top.
 
     <!-- border -->![Go back to Forums page](35a-go-back.png)
 
-You can see that your question has been added to your workpage as well as to your feed.
+Note that your question has been added to your workpage as well as to your feed.
 
 <!-- border -->![View question](36-view-questions.png)
 

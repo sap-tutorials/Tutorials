@@ -26,7 +26,7 @@ parser: v2
 
 Video version of tutorial:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hlHY7eBriRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uS_vT-gHYMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Create database entities
 
@@ -49,37 +49,47 @@ The SAP Cloud Application Programming model utilizes core data services to defin
     ```CAP CDS
     namespace app.interactions;
 
-    using { Country } from '@sap/cds/common';
+    using {
+        Country,
+        Currency,
+        cuid,
+        managed
+    } from '@sap/cds/common';
+
     type BusinessKey : String(10);
-    type SDate : DateTime;
-    type LText : String(1024);
+    type Price       : Decimal(10, 2);
+    type Text        : String(1024);
 
-
-    entity Interactions_Header {
-      key ID : Integer;
-      ITEMS  : Composition of many Interactions_Items on ITEMS.INTHeader = $self;
-      PARTNER  : BusinessKey;
-      LOG_DATE  : SDate;
-      BPCOUNTRY : Country;
-
-    };
-    entity Interactions_Items {
-
-        key INTHeader : association to Interactions_Header;
-        key TEXT_ID : BusinessKey;
-            LANGU   : String(2);
-            LOGTEXT : LText;
+    entity Headers : cuid, managed {
+        items   : Composition of many Items
+                      on items.interaction = $self;
+        partner : BusinessKey;
+        country : Country;
     };
 
+    entity Items : cuid {
+        interaction : Association to Headers;
+        text        : localized Text;
+        date        : DateTime;
+        @Semantics.amount.currencyCode: 'currency'
+        price       : Price;
+        currency    : Currency;
+    };
     ```
 
     > What is going on?
     >
     > You are declaring two entities with relationships between each other. The design-time artifacts declared in this file will be converted to run-time, physical artifacts in the database. In this example, the entities will become tables.
 
+1. We are using a reusable set of content (lists of countries, currencies, etc) provided by SAP in the above model. We also have to add this dependency to our project. From the command line issue the following command to do so:
+
+    ```shell
+    npm add @sap/cds-common-content --save
+    ```
+
 ### Create service interface
 
-1. In the `srv` (**not `src`!**) folder created another file and name it `interaction_srv.cds`
+1. In the `srv` (**not `src`!**) folder create another file and name it `interaction_srv.cds`
 
     ```Name
     interaction_srv.cds
@@ -90,23 +100,24 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. Use the following content in this new file:
 
     ```CAP CDS
-
     using app.interactions from '../db/interactions';
+    using {sap} from '@sap/cds-common-content';
+
     service CatalogService {
 
-     entity Interactions_Header
-        as projection on interactions.Interactions_Header;
+        @odata.draft.enabled: true
+        entity Interactions_Header as projection on interactions.Headers;
 
-     entity Interactions_Items
-        as projection on  interactions.Interactions_Items;
+        entity Interactions_Items  as projection on interactions.Items;
 
+        @readonly
+        entity Languages           as projection on sap.common.Languages;
     }
-
     ```
 
 1. Save all.
 
-    >  What is going on?
+    > What is going on?
     >
     > You are declaring services to expose the database entities you declared in the previous step.
 
@@ -124,7 +135,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 ### Explore generated design-time artifacts
 
-1. If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
+1. If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `/gen/db/src` called `gen`.
 
     ![Results of cds build](generated_objects.png)
 
@@ -146,6 +157,10 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Confirm Credentials](confirm_credentials.png)
 
+1. Your first choice will be for the binding option.  Choose `Bind to an HDI container`.
+
+    ![Bind to an HDI container](bind_hdi.png)
+
 1. You might be presented with options for existing service instances (if you've completed other tutorials or have performed other HANA development). But for this exercise we want to choose **Create a new service instance**
 
     ![Create a new service instance](create_Service_instance.png)
@@ -157,6 +172,8 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     ![Service Creation Progress](progress.png)
+
+1. Sometimes the binding step fails due to a timing issue. If so simply repeat the binding but this time do not create a new container name but select the existing HDI container that has been created from the previous attempt  `MyHANAApp-dev`
 
 1. Upon completion, the Database Connections will now show the service bound to the instance the wizard just created.
 
@@ -213,7 +230,7 @@ You can now check the generated tables and views in the Database Explorer.
 
 ### Load data into your tables
 
-1. Download the [header file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/Header.csv) and the [items file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/Items.csv) into your local file system.
+1. Download the [header file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Headers.csv) and the [items file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Items.csv) and the [texts file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Items.texts.csv) into your local file system.
 
 1. Right-click again on the header table and choose **Import Data**.
 
@@ -247,7 +264,7 @@ You can now check the generated tables and views in the Database Explorer.
 
     ![Import data](16.png)
 
-1. Repeat the process with the `Items.csv` file into the `Items` table.
+1. Repeat the process with the `app.interactions-Items.csv` and `app.interactions-Items.texts.csv` files into the `ITEMS` and `ITEMS_TEXTS` tables.
 
     1![Import data](17.png)
 
@@ -260,5 +277,5 @@ You can now check the generated tables and views in the Database Explorer.
 1. Add the following WHERE clause to the SELECT statement and execute it to complete the validation below.
 
     ```SQL
-    where "LOGTEXT"  like '%happy%';
+    where "TEXT"  like '%happy%';
     ```

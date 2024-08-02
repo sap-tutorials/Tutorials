@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>service-ticket-intelligence, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -28,9 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Access your global account.
 
-    <!-- border -->![Postman](global-account.png)
-
-    >You can also perform this tutorial series using a trial account. For that, follow the steps in [Use Trial to Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman).
+    <!-- border -->![Postman](global-account.png)    
 
 
 
@@ -61,7 +59,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     <!-- border -->![Postman](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt)**. Click **Next**.
 
     <!-- border -->![Postman](booster-subaccount.png)
 

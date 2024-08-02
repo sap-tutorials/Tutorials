@@ -17,7 +17,7 @@ primary_tag: software-product>sap-hana-cloud
 - How to create and debug a Python application that queries a SAP HANA database
 
 ## Intro
-In the 2020 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2020#most-popular-technologies) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
+In the 2023 Stack Overflow's annual developer survey, Python ranked 3rd in the [Most popular technologies](https://survey.stackoverflow.co/2023/#most-popular-technologies-language) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/) or [The Python Tutorial](https://docs.python.org/3/tutorial/).
 
 The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
@@ -35,16 +35,16 @@ python --version
 python3 --version
 ```
 
-If Python is installed, the command will return a value such as Python 3.10.3.  
+If Python is installed, the command will return a value such as Python 3.12.2.
 
-Details on supported versions of Python for the [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
+Details on supported versions of Python for the [SAP HANA client for Python](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f3b8fabf34324302b123297cdbe710f0.html) can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
 
 If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
 On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
 
-![python-install](python-install.png)
+![python-install](install-python.png)
 
 You should now be able to open a new shell and verify that Python is installed.
 
@@ -70,7 +70,7 @@ pip install --upgrade pip
 zypper install python3-pip
 >```
 
-The repository that contains Python packages is [`PyPI`](https://pypi.org/) and includes a package for the SAP HANA client for Python.
+The repository that contains Python packages is [PyPI](https://pypi.org/project/hdbcli/) and includes a package for the SAP HANA client for Python.
 
 ![hdbcli on PyPI](PyPI.png)  
 
@@ -80,11 +80,13 @@ Run the following command to download and install the SAP HANA client for Python
 pip install hdbcli
 ```
 
->If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below.
+>If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below. 
+>
+>Ensure that the filename is correct in the install command below because it might change depending on the version of `hdbcli` that you have.
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.12.13.zip
+> pip install hdbcli-2.20.15.zip
 > ```
 
 > If the install still fails, check [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) to ensure that a supported version of Python installed.
@@ -109,7 +111,7 @@ pip install hdbcli
 > A specific version can be installed using the following command.
 >
 > ```Shell
-> pip install hdbcli==2.4.167
+> pip install hdbcli==2.18.22
 > ```
 
 > ---
@@ -158,29 +160,36 @@ pip install hdbcli
     #verify the architecture of Python
     print ("Platform architecture: " + platform.architecture()[0])
 
-    #Initialize your connection
-    conn = dbapi.connect(
-        #Option 1, retrieve the connection parameters from the hdbuserstore
-        key='USER1UserKey', # address, port, user and password are retrieved from the hdbuserstore
+    try :
+        #Initialize your connection
+        conn = dbapi.connect(
+            #Option 1, retrieve the connection parameters from the hdbuserstore
+            key='USER1UserKey', # address, port, user and password are retrieved from the hdbuserstore
 
-        #Option2, specify the connection parameters
-        #address='10.7.168.11',
-        #port='39015',
-        #user='User1',
-        #password='Password1',
+            #Option2, specify the connection parameters
+            #address='6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com',
+            #port='443',
+            #user='User1',
+            #password='Password1',
 
-        #Additional parameters
-        #encrypt=True, # must be set to True when connecting to HANA as a Service
-        #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud)
-        #sslValidateCertificate=False #Must be set to false when connecting
-        #to an SAP HANA, express edition instance that uses a self-signed certificate.
-    )
+            #Additional parameters
+            #encrypt=True, # must be set to True when connecting to HANA as a Service
+            #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud)
+            #sslValidateCertificate=False #Must be set to false when connecting
+            #to an SAP HANA, express edition instance that uses a self-signed certificate.
+        )
+    except dbapi.Error as er:
+        print('Connect failed, exiting')
+        print(er)
+        exit()
+
     #If no errors, print connected
     print('connected')
 
     cursor = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
+    sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;"
     cursor.execute(sql_command)
+
     rows = cursor.fetchall()
     for row in rows:
         for col in row:
@@ -190,7 +199,7 @@ pip install hdbcli
     print("\n")
 
     #Prepared statement example
-    sql_command2 = "call HOTEL.SHOW_RESERVATIONS(?,?);"
+    sql_command2 = "CALL HOTEL.SHOW_RESERVATIONS(?,?);"
     parameters = [11, "2020-12-24"]
     cursor.execute(sql_command2, parameters)
     rows = cursor.fetchall()
@@ -218,19 +227,17 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
   - For further examples of accessing a database from Python, see [Python and SQL](https://www.python-course.eu/sql_python.php) and [Python MySQL](https://www.w3schools.com/python/python_mysql_insert.asp).  
 
-  - For information on the SAP HANA Python client, see [Python Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html).
+  - For information on the SAP HANA Python client, see [Python Application Programming](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f3b8fabf34324302b123297cdbe710f0.html).
 
-  - For further details on secure connections from Python to SAP HANA see [Connect to SAP HANA with a Secure Connection from Python](hana-python-secure-connection) and [Secure connection from Python to SAP HANA](https://blogs.sap.com/2020/05/07/secure-connection-from-python-to-sap-hana/).
+  - For further details on secure connections from Python to SAP HANA see [Secure connection from Python to SAP HANA](https://blogs.sap.com/2020/05/07/secure-connection-from-python-to-sap-hana/).
 
 
 ### Debug the application
-
-
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
-2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, add the tutorial folder to the workspace by choosing **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 
@@ -238,7 +245,7 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     ![Python Extension](extension.png)
 
-    Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension.  Click **Install**.
+    If necessary, Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension.  Click **Install**.
 
 4. Place a breakpoint on line the line `for row in rows:`.
 

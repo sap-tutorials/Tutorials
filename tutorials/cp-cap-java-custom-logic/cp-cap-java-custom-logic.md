@@ -9,21 +9,23 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Extend the Bookstore with Custom Code
+
 <!-- description --> Extend the previously built bookstore with custom coding, for example, to validate requests.
 
 ## You will learn
-  - How to use the CAP Java SDK
-  - How to use the debugger in SAP Business Application Studio
+
+- How to use the CAP Java SDK
+- How to use the debugger in SAP Business Application Studio
 
 ## Intro
-In the previous tutorial, you have built the data model and exposed the services of your bookstore application. In this tutorial, you will extend the bookstore with custom code to calculate the `total` and `netAmount` elements of the `Orders` and `OrderItems` entity. In addition, when creating an order the available stock of a book will be checked and decreased.
 
+In the previous tutorial, you have built the data model and exposed the services of your bookstore application. In this tutorial, you will extend the bookstore with custom code to calculate the `total` and `netAmount` elements of the `Orders` and `OrderItems` entity. In addition, when creating an order the available stock of a book will be checked and decreased.
 
 ### Define custom handler for `OrdersService`
 
 In one of the previous tutorials, you have already seen how to register a [custom event handler](https://cap.cloud.sap/docs/java/provisioning-api) to handle `READ` or `CREATE` events of an entity. You used the `@On` annotation, which replaces the default handling of an event that is provided by the CAP Java runtime.
 
-As we want to augment the default handling now, we'll use the [`@Before`](https://cap.cloud.sap/docs/java/srv-impl#before) and [`@After`](https://cap.cloud.sap/docs/java/srv-impl#after) annotations. Event handlers registered using the `@Before` annotation are meant to perform validation of the input entity data. This makes it possible to validate the available stock of a particular book before creating an order. In contrast event handlers registered using the `@After` annotation can post-process returned entities. This is useful for calculating the `total` and `netAmount` elements after reading orders or their items from the database.
+As we want to augment the default handling now, we'll use the [`@Before`](https://cap.cloud.sap/docs/java/srv-impl#before) and [`@After`](https://cap.cloud.sap/docs/java/srv-impl#after) annotations. Event handlers registered using the `@Before` annotation are meant to perform validation of the input entity data. This makes it possible to validate the available stock of a particular book before creating an order. In contrast, event handlers registered using the `@After` annotation can post-process returned entities. This is useful for calculating the `total` and `netAmount` elements after reading orders or their items from the database.
 
 First of all, a new Java class for your event handler methods needs to be defined:
 
@@ -53,12 +55,9 @@ public class OrdersService implements EventHandler {
 
 <!-- border -->![OrdersService class overview](ordersservice-class.png)
 
-
-> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Update Project**. That regenerates the classes and makes them available.
-
+> If you see validation errors in your editor, open the context menu on your `pom.xml` in the `srv` directory and select **Reload Project**. That regenerates the classes and makes them available.
 
 ### Decrease stock when posting order
-
 
 You will now add a method to the `OrdersService` Java class to decrease the stock whenever a new order item is posted.
 
@@ -68,7 +67,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -92,7 +91,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -114,7 +113,7 @@ You will now add a method to the `OrdersService` Java class to decrease the stoc
     import com.sap.cds.ql.cqn.CqnUpdate;
     import com.sap.cds.services.ErrorStatuses;
     import com.sap.cds.services.ServiceException;
-    import com.sap.cds.services.cds.CdsService;
+    import com.sap.cds.services.cds.CqnService;
     import com.sap.cds.services.handler.annotations.Before;
     import com.sap.cds.services.persistence.PersistenceService;
 
@@ -160,7 +159,7 @@ import com.sap.cds.ql.cqn.CqnSelect;
 import com.sap.cds.ql.cqn.CqnUpdate;
 import com.sap.cds.services.ErrorStatuses;
 import com.sap.cds.services.ServiceException;
-import com.sap.cds.services.cds.CdsService;
+import com.sap.cds.services.cds.CqnService;
 import com.sap.cds.services.handler.annotations.Before;
 import com.sap.cds.services.persistence.PersistenceService;
 
@@ -177,7 +176,7 @@ public class OrdersService implements EventHandler {
     @Autowired
     PersistenceService db;
 
-    @Before(event = CdsService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = OrderItems_.CDS_NAME)
     public void validateBookAndDecreaseStock(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -201,7 +200,7 @@ public class OrdersService implements EventHandler {
         }
     }
 
-    @Before(event = CdsService.EVENT_CREATE, entity = Orders_.CDS_NAME)
+    @Before(event = CqnService.EVENT_CREATE, entity = Orders_.CDS_NAME)
     public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
         for (Orders order : orders) {
             if (order.getItems() != null) {
@@ -212,12 +211,9 @@ public class OrdersService implements EventHandler {
 }
 ```
 
-If your `OrdersService.java` file still shows some errors right-click on the `pom.xml` in the `srv` directory and choose **Update Project**. After closing and reopening the `OrderService.java` file the errors should be gone.
-
-
+If your `OrdersService.java` file still shows some errors right-click on the `pom.xml` in the `srv` directory and choose **Reload Project**. After closing and reopening the `OrderService.java` file the errors should be gone.
 
 ### Test handler
-
 
 1. Go to the terminal in SAP Business Application Studio and stop your application if it's still running by using **`CTRL+C`**.
 
@@ -255,7 +251,7 @@ If your `OrdersService.java` file still shows some errors right-click on the `po
 
 7. Choose **Send Request** to execute the request.
 
-8. From the welcome page, choose **Books** and you will see that the stock of the book `Wuthering Heights` was decreased to 10.
+8. From the index page, choose **Books** and you will see that the stock of the book `Wuthering Heights` was decreased to 10.
 
       You can also add `/odata/v4/BooksService/Books` to the end of your app URL. Remember the app URL is the URL created when you run your application.  You may also combine the requests in the file you have created by adding a second request at the end of the file:
 
@@ -272,8 +268,6 @@ If your `OrdersService.java` file still shows some errors right-click on the `po
 
       Basically, by repeating the request, you're ordering 2 books each time and therefore decreasing the stock by 2.
 
-
-
 ### Calculate `netAmount` of order item
 
 Next, let's add a method to the `OrdersService` Java class to calculate the `netAmount` element of the `OrderItems` entity.
@@ -281,7 +275,7 @@ Next, let's add a method to the `OrdersService` Java class to calculate the `net
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = OrderItems_.CDS_NAME)
     public void calculateNetAmount(List<OrderItems> items) {
         for (OrderItems item : items) {
             String bookId = item.getBookId();
@@ -313,9 +307,7 @@ Let's break it down again:
 
 - In the last line the net amount of the order item is calculated, based on the price of the book and the amount of books ordered.
 
-
 ### Test handler
-
 
 1. In SAP Business Application Studio, stop your application if it's still running by clicking on the red stop icon in the **Debug** side panel.
 
@@ -351,7 +343,7 @@ Let's break it down again:
 
 6. Choose **Send Request** above the new request to execute the request.
 
-7. From the welcome page, choose **`OrderItems`** and you will see that the `netAmount` element is filled with the calculated value.
+7. From the index page, choose **`OrderItems`** and you will see that the `netAmount` element is filled with the calculated value.
 
     <!-- border -->![order items welcome page](order-item-welcome.png)
 
@@ -359,16 +351,14 @@ Let's break it down again:
 
     >You can also add `/odata/v4/OrdersService/OrderItems` to the end of your app URL.
 
-
 ### Calculate total amount of order
-
 
 Finally, add a method to the `OrdersService` Java class to calculate the `total` element of the `Orders` entity.
 
 1. Add the following code to the class and make sure you **Save** the file:
 
     ```Java
-    @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
+    @After(event = { CqnService.EVENT_READ, CqnService.EVENT_CREATE }, entity = Orders_.CDS_NAME)
     public void calculateTotal(List<Orders> orders) {
         for (Orders order : orders) {
             // calculate net amount for expanded items
@@ -403,9 +393,7 @@ Let's break down the code:
 
 - For each order item, the net amount is calculated first by reusing the method `calculateNetAmount`. After that all net amounts are added to the order's total amount.
 
-
 ### Test the handler
-
 
 1. In SAP Business Application Studio stop your application if it's still running by clicking on the stop icon in the **Debug** side panel.
 
@@ -425,7 +413,7 @@ Let's break down the code:
 
 5. Choose **Send Request** above the third request and execute the request.
 
-6. From the welcome page, choose **Orders**. You will see that the `total` element is filled with the calculated value.
+6. From the index page, choose **Orders**. You will see that the `total` element is filled with the calculated value.
 
     <!-- border -->![total calculated](total-calculated.png)
 
@@ -443,6 +431,6 @@ Let's break down the code:
 
 Great job!
 
-You have extended the application with quite some custom business logic. In the next tutorial you will start to make the application ready for SAP BTP, by running it with SAP HANA as the database.
+You have extended the application with quite some custom business logic. In the next tutorial you will start to make the application ready for SAP BTP, by adding authentication and authorization.
 
 ---

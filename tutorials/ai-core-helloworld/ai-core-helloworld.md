@@ -1,17 +1,15 @@
 ---
-parser: v2
+author_name: Dhrubajyoti Paul
+author_profile: https://github.com/dhrubpaul
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-launchpad
-author_name: Dhrubajyoti Paul
-author_profile: https://github.com/dhrubpaul
+parser: v2
 ---
+
 # Quick Start for Your First AI Project Using SAP AI Core
 <!-- description --> Learn the fundamentals of SAP AI Core and create your Hello, World! AI scenario.
-
-## Prerequisites
-- Have Postman, Python (AI Libraries) or SAP AI Launchpad set up. You can set any of these up using [this tutorial](https://developers.sap.com/tutorials/ai-core-setup.html/#)
 
 ## You will learn
 - How to connect GitHub to SAP AI Core
@@ -19,12 +17,16 @@ author_profile: https://github.com/dhrubpaul
 - How to check the sync status and debug errors in your AI workflow
 - How to run workflows in SAP AI Core
 
+## Prerequisites
+- Have Postman, Python (AI Libraries) or SAP AI Launchpad set up. You can set any of these up using [this tutorial](https://developers.sap.com/tutorials/ai-core-setup.html/#)
+
 ## Intro
 You will create an AI workflow for your Hello, World! workflow, and connect and execute it in your SAP AI Core instance. You will see that workflows between GitHub and SAP AI Core can be auto synced, and it is possible to use this workflow after subscription, to connect to your actual AI code.
 
 The terms "executable" and "workflow" can be used interchangeably to refer to the YAML files, introduced in this tutorial.
 
----
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_02_quick_start_for_your_first_ai_project_using_ai_core/quick_start_helloworld.ipynb)
 
 ### Create a GitHub repository
 
@@ -302,7 +304,7 @@ You will directed to the details page of your application.
 
 1. Click the **Refresh** button.
 
-2. View the time elapsed since the last **Reconciled At**. The application automatically actively syncs with your GitHub repository at intervals of ~3 minutes. You can use **Refresh** button to update your page and check the status of your application.
+2. View the time elapsed since the last **Reconciled At**. You can use **Refresh** button to update your page and check the status of your application.
 
 3. Click the **i tooltip** in the **Health** log to see the most recent sync log.
 
@@ -333,6 +335,8 @@ for workflow_sync_status in response.sync_ressources_status:
 <!-- border -->![image](img2/aics/app-status.png)
 
 [OPTION END]
+
+> **Note:** The application automatically actively syncs with your GitHub repository at intervals of ~3 minutes.
 
 If there are any errors in the syntax of your executable then this application status will report `message` with the error in the code output.
 

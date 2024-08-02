@@ -36,9 +36,7 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 ---
 
 ### Connect from SAP HANA, express edition to SAP HANA Cloud database
-
-
-1. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
+1. From the SAP HANA Cloud Central, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
 
     >If needed, first create a schema and user.
     ```SQL
@@ -72,20 +70,23 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
 3. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
-     Right-click **Remote Sources** and select **Add Remote Source**.  
+    >This step is optional for SAP HANA Cloud Trial users if you do not have an SAP HANA, express edition database.  If you do not have an SAP HANA, express edition database, proceed to the next step which is Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine.
 
-     ![Add remote source](add-remote-source.png)
-
-     Specify the server, port, extra adapter properties, and credentials (User1, Password1).
-
-     ![Add remote source properties](AddRemoteSource2.png)
-
-    Alternatively, in a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
+    In a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
 
     ```SQL
     CREATE REMOTE SOURCE REMOTE_HC ADAPTER "hanaodbc" CONFIGURATION 'ServerNode=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.prod-ca10.hanacloud.ondemand.com:443;driver=libodbcHDB.so;dml_mode=readwrite;sslTrustStore="-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----"' WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=User1;password=Password1';
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC');
     ```  
+
+    Alternatively, you can create a remote source manually by right-clicking **Remote Sources** and select **Add Remote Source**.  
+
+     ![Add remote source](add-remote-source.png)
+
+     Add a source name and specify the server, port, and credentials (USER1, Password1). The Extra Adapter properties can be retreived by copying the `sslTrustStore` in the SQL query above.
+
+     ![Add remote source properties](AddRemoteSource2.png)
+
 
     Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
 
@@ -183,8 +184,6 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 
 ### Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine
-
-
 [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/cloud/en-US) can be used to store large amounts of data that is not accessed and updated as frequently as data in an SAP HANA database.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake Relational Engine and access the table from the associated SAP HANA database instance.
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
@@ -224,7 +223,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     For additional details consult [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html).
 
-4. In the SAP HANA database connection, create a remote source from the HANA database to the data lake Relational Engine.  Be sure to replace the host and password values.
+4. In the SAP HANA database connection, create a remote source **from** the HANA database **to** the data lake Relational Engine.  Be sure to replace the host and password values.
+
+    >If you have not already done so, ensure that you have added USER1 to your SAP HANA data lake database, as shown in Step 1.
 
     ```SQL
     CREATE REMOTE SOURCE HC_DL
@@ -287,7 +288,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     Notice that the remote data source is updateable.  Data stored in an SAP HANA Cloud, data lake is stored on disk, which has cost advantages compared to memory storage. SAP HANA Cloud, data lake can also be used to store large amounts of data.
 
-    > Another approach is to use container groups.  For additional details see [Data Lake Relational Engine (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).  An example follows.
+    > Another approach is to use a relational container.  For additional details see [Manage Relational Containers in Data Lake Relational Engine (SAP HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/9220e7fec0fe4503b5c5a6e21d584e63/0b494fedebb243fc9bd92c87bac7ddd4.html).  An example follows.
     >
     ```SQL
     CALL SYSHDL.CREATE_CONTAINER('HOTEL_CONTAINER', 'DBADMIN');
@@ -310,32 +311,28 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 
 ### Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector (optional)
-
-
-The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
+The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector?version=Cloud) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
 
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central: Actions > Manage Configuration > Edit.
 
     ![Enable the Cloud Connector](enable-cloud-connector.png)
 
-2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector was installed on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
+2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector is running on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
 
-    ![Install](cloud-connector-install1.png)
-
-3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/204aaad4270245f3baa0c57c8ab1dd60.html), a Java JDK is required.  
+3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/installation-on-microsoft-windows-os?version=Cloud), a Java JDK is required.  
 
     The following commands were used to start the Cloud Connector.
 
     ```Shell (Microsoft Windows)
-    set PATH=<Java Installation Directory\bin>
+    set PATH=<Java Installation Directory\bin>;C:\Windows\System32
     set JAVA_HOME=<Java Installation Directory>
-    cd C:\SAP\scc20
+    cd C:\SAP\CC
     go.bat
     ```
 
     ![Started](cloud-connector-windows.png)
 
-    >It may take a while to start the Cloud Connector (3 minutes) and a line such as Cloud Connector 2.15.1 started will appear as shown above when it is started.
+    >It may take a while to start the Cloud Connector and a line such as Cloud Connector 2.17.0 started will appear as shown above when it is started.
 
 4. In a browser, open the URL <https://localhost:8443>.  
 
@@ -360,7 +357,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![Connected](cloud-connector-subaccount-connected.png)
 
-    For additional details, see [Initial Configuration](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/db9170a7d97610148537d5a84bf79ba2.html).
+    For additional details, see [Initial Configuration](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector-initial-configuration?version=Cloud).
 
 6. Configure the Cloud Connector to connect to the on-premise database.
 
@@ -376,7 +373,11 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
     ![connected to SAP HANA database](cloud-connector-virtual-mapping2.png)
 
-7. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer, then right-click **Remote Sources** and select **Add Remote Source**.  
+    Once the cloud connector has been installed and configured to connect to a BTP subaccount, it will appear as shown below in the SAP BTP Cockpit.
+
+    ![](btp-cloud-connector.png)
+
+7. In the SAP HANA database explorer connected to SAP HANA Cloud, right-click **Remote Sources** and select **Add Remote Source**.  
 
     ![Add remote source](add-remote-source.png)
 

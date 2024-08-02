@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -20,27 +20,24 @@ primary_tag: software-product>sap-hana-cloud
 ## Intro
 In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
 
-For additional details, consult  [The XS Advanced Programming Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/df19a03dc07e4ba19db4e0006c1da429.html).  For a more complete example, see the Node.js topics in week 3 of [Software Development on SAP HANA](https://open.sap.com/courses/hana7).
+For additional details, consult  [The XS Advanced Programming Model](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/df19a03dc07e4ba19db4e0006c1da429.html).
 
 ---
 
 ### Get started with the Command Line Interface (CLI)
+The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI used for apps running in SAP HANA, express edition is named `xs`.   
 
-
-The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI used for apps running in SAP HANA, express edition is named `xs`.
-
-1. Check to see if you have the CLI installed and verify the version.  
+1. Check to see if you have the CF CLI installed and verify the version.  
 
     ```Shell
     cf -v
     ```
 
-    ![cf cli version](showVersion.png)  
+    ![cf cli version](new-cf-version.png)  
 
+    To install the CLI, see [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to your path environment variable.
 
-    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
-
-    >If a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
+    Check to see if you have the XS CLI installed and verify its version.
 
     ```Shell
     xs -v
@@ -70,12 +67,19 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     ![cf login](cfLogin.png)
 
-    >If you are an SAP employee, you may need to enter your password plus a two-factor authentication passcode.
+    >If you are an SAP employee, you may need to enter your password followed by a two-factor authentication passcode or if you have single sign-on enabled use the --sso option.
 
-    The API URL, if requested, can be found in the [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
+    The API URL, if requested, can be found in the Overview page in [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
 
-    ![api URL](api.png)  
-    .
+    ![api URL](api.png)
+
+    The API URL can be set with the below command.
+
+    ```Shell
+    cf api <API Endpoint>
+    ```  
+    
+    **XS advanced**
 
     ```Shell
     xs login
@@ -96,6 +100,8 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     cf buildpacks
     ```
 
+    **XS advanced**
+
     ```Shell
     xs target
     xs services
@@ -105,12 +111,10 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     ![services](cliExample.png)  
 
-    Additional details can be found at [Getting Started with the cf CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html) and [Get Started with the XS CLI Client](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/c00ed3f74c12479e9f3a8cdeb6e1519a.html).    
+    Additional details can be found at [Getting Started with the cf CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html) and [Get Started with the XS CLI Client](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/c00ed3f74c12479e9f3a8cdeb6e1519a.html).    
 
 
 ### Create Node.js app that queries SAP HANA
-
-
 1.  Create a folder named `nodeCF\nodeQueryCF` and enter the newly created directory.
 
     ```Shell (Microsoft Windows)
@@ -119,7 +123,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ```
 
     ```Shell (Linux or Mac)
-    mkdir $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
+    mkdir -p $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
     cd $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
     ```
 
@@ -141,7 +145,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     pico server.js
     ```
 
-4. Add the code below to `server.js`.  
+4. Add the code below to `server.js`. Be sure to update the `serverNode` value and user credentials if necessary.
 
     ```JavaScript    
     var express = require('express');
@@ -200,13 +204,12 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     node server.js
     ```
 
+    Open a browser and enter a URL similar to http://localhost:3000/Customers.
+
     ![running locally](local.png)
 
 
-
 ### Deploy and test in SAP BTP or XS Advanced
-
-
 1. Create a deployment descriptor.
 
     ```Shell (Microsoft Windows)
@@ -235,6 +238,16 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     For additional details, consult [App Manifest Attribute Reference](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html).
 
 2. Deploy the app to Cloud Foundry or XS advanced.
+   
+    Before deploying the app to Cloud Foundry, ensure that you have the **Cloud Foundry Runtime Environment** entitlement enabled for your subaccount. You can find the Entitlements page in the left-hand side menu of SAP BTP Cockpit. 
+    
+    ![Entitlement for CF runtime](cf-runtime-entitlement.png)  
+    
+    If necessary, you can add the entitlement by clicking **Configure Entitlements** > **Add Service Plans** > **Cloud Foundry Runtime**. Then select the `MEMORY` plan. Don't forget to save your changes when finished. 
+    
+    ![Add CF Memory service plan](add-cf-runtime-entitlement.png)
+
+    After verifying that you have the necessary entitlements, run the following:
 
     ```Shell
     cf push
@@ -247,7 +260,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ```Shell
     xs push
     ```
-    .
+    
     ![push result](xsPush.png)
 
     Alternatively, the URL of the app can be found by running the following command:
@@ -260,32 +273,46 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     xs app nodeQueryCF
     ```
 
-3.  Test the app.
+3.  Test the app.  
 
     ![cf app](cfApp.png)  
-    .
+    
+    **XS advanced**
 
     ![xs app](xsApp.png)
 
-
 For additional details see:
 
-[Developing Node.js in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3a7a0bece0d044eca59495965d8a0237.html)
+[Developing Node.js in the Cloud Foundry Environment](https://help.sap.com/docs/btp/sap-business-technology-platform/developing-node-js-in-cloud-foundry-environment)
 
-[Tutorial: Setting up your JavaScript Application in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/30d629eab05d41b9b853d417bdb2fc08.html)
+[Tutorial: Setting up your JavaScript Application in XS Advanced](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/30d629eab05d41b9b853d417bdb2fc08.html)
 
 
 ### Additional commands
+1.  The available buildpacks can be found using the command below.
 
+    ```Shell
+    cf buildpacks
+    ```
 
-1.  The app can be stopped and started with the below commands:
+    If you use another buildpack such as .NET and encounter the error "Cannot find a matching libadonetHDB.so", this can be corrected by adding the below entry to the .csproj file.
+
+    ```Shell
+    <ItemGroup>
+        <Content Include="./libadonetHDB.so">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    ```
+
+2.  The app can be stopped and started with the below commands:
 
     ```Shell
     cf stop nodeQueryCF
     cf start nodeQueryCF
     ```
 
-2.  The applications lifecycle events can be seen with the below command:
+3.  The applications lifecycle events can be seen with the below command:
 
     ```Shell
     cf events nodeQueryCF
@@ -293,10 +320,10 @@ For additional details see:
 
     ![events](events.png)
 
-3.  The logs of the application can be seen with the below command:
+4.  The logs of the application can be seen with the below command:
 
     ```Shell
-    cf logs --recent nodeQueryCF
+    cf logs nodeQueryCF --recent
     ```
 
     The following command will show the tail of the log.
@@ -305,7 +332,7 @@ For additional details see:
     cf logs nodeQueryCF
     ```
 
-4.  As of version 2.7, the SAP HANA client interfaces can output trace information to `stdout` or `stderr`.
+5.  As of version 2.7, the SAP HANA client interfaces can output trace information to `stdout` or `stderr`.
 
     ```Shell
     cf set-env nodeQueryCF HDB_SQLDBC_TRACEFILE stdout
@@ -314,15 +341,17 @@ For additional details see:
     cf env nodeQueryCF
     cf logs nodeQueryCF
     ```
+
     > Alternatively, the trace settings can be specified in the application code.
 
     Refresh the browser and notice that the trace information can now be seen.
 
     ![trace](trace.png)
 
-5.  The deployed app can also be managed in the associated cockpit.
 
-    SAP BTP Cockpit  
+6.  The deployed app can also be managed in the associated cockpit.
+
+    **SAP BTP Cockpit**
 
     ![SAP BTP cockpit](cpCockpit0.png)
 
@@ -330,19 +359,18 @@ For additional details see:
 
     ![SAP BTP cockpit](cpCockpit.png)
 
-    SAP HANA XS Advanced Cockpit
+    **SAP HANA XS Advanced Cockpit**
 
     ![XS advanced cockpit](xsaCockpit.png)
 
     Note that the number of running instances can be [scaled](https://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html) if needed.
 
 
+
 ### Connect from the Node.js app running in the cloud to an on-premise database (optional)
+The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
 
-
-The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
-
-1. Follow step 3 at [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
+1. Follow step 3 in [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
 
 2. In the project created in step 2, perform the following steps to bind a connectivity service instance to the application.
 
@@ -358,7 +386,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
 
         ![connectivity service](connectivity-service2.png)
 
-    * Examine the values of the connectivity service.  In particular, the indicated values below are used for the `proxyPort` and `proxyHostname` values in the server.js file and will be to access the proxy service which enables communication with the cloud connector.
+    * Examine the values of the connectivity service.  The indicated values below are used for the `proxyPort` and `proxyHostname` values in the `server.js` file. It will be to access the proxy service which enables communication with the cloud connector.
 
         ![connectivity service](connectivity-service3.png)
 
@@ -393,7 +421,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
     npm install axios
     ```
 
-5. Open the file named `server.js` in an editor and replace its contents.
+5. Open the file named `server.js` in an editor and replace the contents where necessary.
 
     ```Shell (Microsoft Windows)
     notepad server.js
@@ -492,8 +520,7 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
     ![Result](proxy-result.png)
 
 ### Knowledge check
-
-Congratulations, you have built, deployed and run an app that queries SAP HANA in Cloud Foundry and XS advanced as well as become familiar with the command line interface.
+Congratulations, you have built, deployed, and run an app that queries SAP HANA in Cloud Foundry and XS advanced as well as become familiar with the command line interface.
 
 
 

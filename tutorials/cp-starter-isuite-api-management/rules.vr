@@ -1,0 +1,15 @@
+[VALIDATE_4]
+###Rule
+multiple-choice
+
+###Question
+Which of the following values are mandatory to authorize the API client and to call an integration flow as an HTTP endpoint?
+
+###Match
+[X] clientid
+[ ] roles
+[X] clientsecret
+[ ] url
+[X] tokenurl
+
+[VALIDATE_4]

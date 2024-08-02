@@ -57,7 +57,7 @@ Create a file called `tests.http` in the root of your project and copy the follo
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   # &sap-locale=de
@@ -211,7 +211,7 @@ Now add an association from the `Authors` entity to the `Books` entity and use a
 
 Open the `data-model.cds` file in the graphical modeler and add a new relationship to the **Authors** entity.
 
-Use `books` as property name, select `my.bookshop.Books` as target entity and use `author` as backlink property.
+Stick with the defaults, which means using `books` as property name, `my.bookshop.Books` as target entity and `authors` as backlink property.
 
 <!-- border -->![The **New Relationship** screen to define the association to-many, the property name, the target entity type, and the backlink property.](graph-modeler-assoc-many.png)
 
@@ -219,7 +219,7 @@ This is how your data model looks now in the graphical modeler.
 
 <!-- border -->![The graphical modeler showing the authors and books entity and a visual representation of their relationship.](graph-modeler-assoc-many-1.png)
 
-This is a [_one-to-many_ association](https://cap.cloud.sap/docs/guides/domain-models#one--to-many-associations). Such an association always needs `on` conditions (backlink property) referring to some reverse association on the target side. Basically this expresses, that in your model **one book has exactly one author** and at the same time **one author can have many books**. If you defined your service accordingly, as in the `AdminService`, you can find all books of an author if you navigate the `Author` entity (`/admin/Authors?$expand=books`).
+This is a [_one-to-many_ association](https://cap.cloud.sap/docs/guides/domain-models#one--to-many-associations). Such an association always needs `on` conditions (backlink property) referring to some reverse association on the target side. Basically this expresses, that in your model **one book has exactly one author** and at the same time **one author can have many books**. If you defined your service accordingly, as in the `AdminService`, you can find all books of an author if you navigate the `Author` entity (`/admin/Authors?$expand=books`). Use `Alice` without a password to access the service. You'll learn more about it later in this tutorial.
 
 > You can even deep read associated entities: `/admin/Authors?$expand=books($expand=currency)`
 
@@ -275,7 +275,7 @@ To test this, restart your application from the debug panel and add a new reques
 # Submit Order
 #
 
-POST http://localhost:4004/buy/Orders
+POST http://localhost:4004/odata/v4/buy/Orders
 Content-Type: application/json;IEEE754Compatible=true
 
 { "Items":[{"book_ID":201, "amount":5}]  }
@@ -318,7 +318,7 @@ Create an entry for a new book, using the `AdminService`. Copy the request into 
 ```HTTP[5]
 ### ------------------------------------------------------------------------
 # Create book
-POST http://localhost:4004/admin/Books
+POST http://localhost:4004/odata/v4/admin/Books
 Content-Type: application/json;IEEE754Compatible=true
 Authorization: Basic alice:
 
@@ -342,7 +342,7 @@ Now try to get exactly the book you've just created.
 ```HTTP
 ### -------------------------------------------------------------------------
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
    &$filter=ID eq 2
 ```
 
@@ -407,7 +407,7 @@ Open the `tests.http` file and uncomment the `sap-locale` part of the GET reques
 
 ```HTTP
 # Browse Books as any user
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   &sap-locale=de

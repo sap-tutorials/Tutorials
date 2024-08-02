@@ -29,7 +29,7 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 1. Open the administrator by entering ODBC after clicking on the Microsoft Windows start icon.  
 
-    >Ensure that you choose the 64-bit version assuming that you have the 64-bit version of the SAP HANA client installed.
+    >Ensure that you choose the 64-bit version if you have the 64-bit version of the SAP HANA client installed.
 
     ![start ODBC Administrator](start-odbc.png)
 
@@ -70,11 +70,10 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
     >Saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 
-For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/66a4169b84b2466892e1af9781049836.html).
+For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/66a4169b84b2466892e1af9781049836.html).
 
 
 ### Configure a data source on Linux or Mac with unixODBC
-
 The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) can be used to configure and test a data source on Linux or Mac.  
 
 1. On SUSE Linux, the YaST installer can be used to install unixODBC.
@@ -110,13 +109,13 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ```.odbc.ini
     [HANA_Cloud]
-    servernode = 61964be8-39e8-4622-9a2b-ba3a38be2f75.hana.hanacloud.ondemand.com:443
+    servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     encrypt = true
     sslValidateCertificate = true
 
     [HANA_Express]
-    servernode = linux-bj70:39015
+    servernode = hxehost:39015
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     databasename = HXE
     ```
@@ -177,7 +176,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 
     ![Excel ODBC Connection String](ExcelCS.png)  
 
-    For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/73f03d62240f435880ade3bc1242cc05.html).
+    For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/73f03d62240f435880ade3bc1242cc05.html).
 
 ### Knowledge check
 

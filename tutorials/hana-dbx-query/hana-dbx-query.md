@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -47,6 +47,8 @@ primary_tag: software-product>sap-hana-cloud
 
     > The unique constraint violation error is expected and is used here to demonstrate how the results of SQL execution are shown.
 
+    ![Unique constraint error](unique-constraint-error.png)
+
 6. The results of a query can be downloaded and exported.
 
       ![Download Table Results](DownloadResults.png)
@@ -67,9 +69,15 @@ primary_tag: software-product>sap-hana-cloud
 
     This behavior can be set via the SQL console preferences which is shown in more detail in Step 5: SQL console preferences.
 
-10. Sometimes you need to execute a SQL statement that takes a long time to run.  In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement.  
+10. Sometimes you need to execute a SQL statement that takes a long time to run. In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement. Enter the SQL statement below.
+
+    ```SQL
+    SELECT * FROM CUSTOMER;
+    ```
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
+
+    >If needed, reconnect the database after running the query.
 
 11. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details icon.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
 
@@ -130,11 +138,15 @@ primary_tag: software-product>sap-hana-cloud
     |  Format Code    | `Ctrl+B`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Go to Line | `Ctrl+L`
+    |  Go to next SQL Console tab | `Ctrl+Alt+Page up`
+    |  Go to the previous SQL Console  tab | `Ctrl+Alt+Page down`
+    |  Open a new SQL Console tab | `Ctrl+Alt+C`
     |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
-    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Jump to Matching Brackets | `Ctrl+P`
     |  Run All | `F8`
     |  Run Statement | `F9`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Switch tabs      | `Ctrl+Alt+Page up` `Ctrl+Alt+Page down`
     |  Text Completion | `Ctrl+Space` (requires two or more characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.

@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 keywords: cap
@@ -22,6 +22,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Install the MTA build tool mbt)]
 As a result of this tutorial, you have a running CAP application in the cloud based on SAP HANA. You will deploy the user interface later in the tutorial [Prepare SAP Build Work Zone, Standard Edition Setup](btp-app-work-zone-setup).
@@ -83,6 +97,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
+
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -142,6 +159,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
+> Make sure you've installed the Cloud Foundry CLI (as described in [Step 6: Install the Cloud Foundry command line interface](btp-app-#install-the-cloud-foundry-command-line-interface)) before proceeding with the steps below.
+
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -199,7 +219,7 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js v16 is sufficient for this tutorial.
+> Node.js v18 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -211,8 +231,9 @@ Open the file `package.json` and add the following snippet:
     ...
   },
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
+  ...
 ```
 
 [DONE]
@@ -242,7 +263,7 @@ The `mta.yaml` file consists of different modules (Cloud Foundry apps) and resou
 The resources are generated from the `requires` section of `cds` in the `package.json`.
 
 * `cpapp-db` - SAP HANA DB HDMI container
-* `cpapp-uaa` - XSUAA service
+* `cpapp-auth` - XSUAA service
 
 The resources are Cloud Foundry service instances that are automatically created and updated during the MTA deployment.
 
@@ -314,15 +335,9 @@ resources:
              - $XSAPPNAME.RiskViewer
 ```
 
-The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa).
+For a productive application, the configuration for XSUAA is read from the `xs-security.json` file. You've already created this file in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa). 
 
-But in the `config` element, values can be added and overwritten.
-
-The value `xsappname` gets overwritten with a space-dependent value. The name has to be unique within a subaccount.
-
-This allows multiple deployments of this tutorial in different spaces of the same subaccount. For example, different people of a team that want to try it out and don't want to create a new subaccount for each team member.
-
-For a productive application, the `xsappname` should be explicitly set to the desired value.
+However, the XSUAA configuration that is read from the`xs-security.json` file can be overwritten in the `config` element of the `mta.yaml` file. For example, in the snippet above, a space-dependent value `cpapp-${space}` overwrites the value `xsappname`. Note that the name has to be unique within a subaccount. Within the scope of this tutorial, this approach allows multiple deployments in different spaces of the same subaccount. This way, different people of a team can try the tutorial without creating a new subaccount for each team member.
 
 Further, you can add role collections using the `xs-security.json` file. Since role collections need to be unique in a subaccount like the `xsappname`, you can add it here and use the `${space}` variable to make them unique like for the `xsappname`.
 

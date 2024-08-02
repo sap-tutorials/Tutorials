@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>service-ticket-intelligence, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -92,7 +92,7 @@ Once the server started, the Jupyter notebook automatically opens in the browser
 ### Add credentials
 
 
-Finally, you need to upload the service key file that you obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) or [Use Trial to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key).
+Finally, you need to upload the service key file that you obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key).
 
 On the Jupyter notebook page that you opened in the previous step, click **Upload**.
 
@@ -112,6 +112,3 @@ Now, the file shows in the list of documents and folders. With that, you are don
 
 
 ### Test yourself
-
-
-

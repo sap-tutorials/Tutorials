@@ -26,7 +26,7 @@ parser: v2
 
 Video tutorial version:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zb_9ccGXIRk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zKsx91qicwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Create calculation view
 
@@ -50,7 +50,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
     ![Create calculation view](create_calc_view.png)
 
-1. The new artifact is created in the `/db/src` folder alongside the `/gen` content created by CAP.  This way you can have a single HANA database model that contains both HANA native content and CAP generated content.
+1. The new artifact is created in the `/db/src` folder.  This way you can have a single HANA database model that contains both HANA native content and CAP generated content.
 
     ![View created in the /db/src folder](folder_view.png)
 
@@ -68,11 +68,11 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
     ![Add data source](add_data_source.png)
 
-1. Type in `HEADER` and then select the table you created earlier via CDS called `APP_INTERACTIONS_INTERACTIONS_HEADER` and press **Finish**.
+1. Type in `HEADER` and then select the table you created earlier via CDS called `APP_INTERACTIONS_HEADER` and press **Finish**.
 
     ![Add header table](header_table.png)
 
-1. Repeat the process to add the `APP_INTERACTIONS_INTERACTIONS_ITEMS` table to the same join node.  You should see both artifacts in the join node.
+1. Repeat the process to add the `APP_INTERACTIONS_ITEMS` table to the same join node.  You should see both artifacts in the join node.
 
     ![Both tables in join](both_in_join.png)
 
@@ -80,7 +80,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
     ![Join Definition on the right](join_definition.png)
 
-1. Drag and drop the `ID` field to the `INTHEADER_ID` field.  
+1. Drag and drop the `ID` field to the `INTERACTION_ID` field.  
 
     ![Create Join](create_join.png)
 
@@ -88,7 +88,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
     ![Cardinality](cardinality.png)
 
-1. In the **Mapping** tab, add all the columns except `INTHEADER_ID` as output columns.
+1. In the **Mapping** tab, add all the columns except `ID*` Columns as output columns.
 
     ![Mapping](mapping.png)
 
@@ -168,8 +168,8 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
 1. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
-1. You can test your view via the service layer by adding `/catalog/V_Interaction` to the path.
+1. You can test your view via the service layer by adding `/odata/v4/catalog/V_Interaction` to the path.
 
     ![Test](test_view.png)
 
-Congratulations! You have now successfully combined HANA native artifacts with the SAP Cloud Application Programming Model and learned the modern HANA way to expose Calculation Views via OData.
+Congratulations! You have now successfully combined HANA native artifacts with the SAP Cloud Application Programming Model and learned the modern HANA way to expose Calculation Views via OData. 

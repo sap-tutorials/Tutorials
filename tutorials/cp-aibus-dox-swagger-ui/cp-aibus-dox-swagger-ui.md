@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Machine Learning to Extract Information from Documents with Swagger UI
@@ -73,7 +75,7 @@ You should receive a response like the following:
 
 When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
-Trial users can only create one client. To see your list of clients:
+Free tier and trial users can only create one client. To see your list of clients:
 
 1. Expand the **GET /clients** endpoint.
 
@@ -136,14 +138,7 @@ You can repeat step 3 to see the **`clientId`** and **`clientName`** of the clie
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction trial account limitations:​
-
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
-
->- Maximum 1 created `clientId`
-
->- Maximum 10 created enrichment `dataIds`
-
+>When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
@@ -156,11 +151,11 @@ Use the **POST /document/jobs** endpoint to upload to the service any document f
 
 >As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
+>- [Sample Invoice 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
->- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
+>- [Sample Invoice 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
 
->- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
+>- [Sample Invoice 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
 Do the following:

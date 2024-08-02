@@ -9,22 +9,24 @@ parser: v2
 ---
 
 # Create a CAP Business Service with Node.js Using Visual Studio Code
+
 <!-- description --> Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 
 ## You will learn
-  - How to develop a sample business service using CAP and `Node.js`
-  - How to define a simple data model and a service that exposes the entities you created in your data model
-  - How to run your service locally
-  - How to deploy the data model to an `SQLite` database
-  - How to add custom handlers to serve requests that aren't handled automatically
+
+- How to develop a sample business service using CAP and `Node.js`
+- How to define a simple data model and a service that exposes the entities you created in your data model
+- How to run your service locally
+- How to deploy the data model to an `SQLite` database
+- How to add custom handlers to serve requests that aren't handled automatically
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+
+- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 20. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
 - (Windows only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) section of the CAP documentation.
 - You've installed an HTTP client, for example, [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
-
 
 ---
 
@@ -58,7 +60,6 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This lists the available `cds` commands. For example, use `cds --version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
-
 ### Install VS Code extension
 
 1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
@@ -75,8 +76,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
-    > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
-
+    > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/tools/cds-editors#cds-editor) in the CAP documentation.
 
 ### Start project
 
@@ -140,6 +140,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
     npm install
     ```
+
 4. In the command line window run the following:
 
     ```Shell/Bash
@@ -215,17 +216,18 @@ After initializing the project, you should see the following empty folders:
      > init from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:49:32, in: 874.456ms
     [cds] - [ terminate with ^C ]
     ```
+
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
 
-    <!-- border; size:540px -->![application](application_local.png)
+    <!-- border; size:540px -->![Generated index page](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
@@ -262,9 +264,9 @@ Add service provider logic to return mock data.
 
 3. To test your service, click on these links:
 
-    - <http://localhost:4004/catalog/Books>
+    - <http://localhost:4004/odata/v4/catalog/Books>
 
-    - <http://localhost:4004/catalog/Authors>
+    - <http://localhost:4004/odata/v4/catalog/Authors>
 
     > You should see the mock data that you've added for the `Books` and `Authors` entities.
 
@@ -272,9 +274,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `data-model.cds`.
+1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `schema.cds`.
 
-2. Add the following code to the file `data-model.cds`:
+2. Add the following code to the file `schema.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -304,7 +306,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
-    using my.bookshop as my from '../db/data-model';
+    using my.bookshop as my from '../db/schema';
 
     service CatalogService {
       entity Books @readonly as projection on my.Books;
@@ -317,33 +319,38 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 ### Add initial data
 
-In VS Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
+You will add plain CSV files in folder `db/data` to fill your database tables with initial data. In the command line window execute the following:
 
-1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
+```sh
+cds add data
+```
 
-    ```CSV
-    ID;name
-    101;Emily Brontë
-    107;Charlote Brontë
-    150;Edgar Allen Poe
-    170;Richard Carpenter
-    ```
+This adds csv files with a single header line for all entities to the `db/data/` folder. The name of the files matches the entities' namespace and name, separated by `-`.
 
-2. In the newly created `csv` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
+1. Open the file `db/data/my.bookshop-Authors.csv` and add the following sample data to the file:
 
     ```CSV
-    ID;title;author_ID;stock
-    201;Wuthering Heights;101;12
-    207;Jane Eyre;107;11
-    251;The Raven;150;333
-    252;Eleonora;150;555
-    271;Catweazle;170;22
+    101,Emily Brontë
+    107,Charlote Brontë
+    150,Edgar Allen Poe
+    170,Richard Carpenter
     ```
+
+2. Open the file `db/data/my.bookshop-Books.csv` and add the following sample data to the file:
+
+    ```CSV
+    201,Wuthering Heights,101,12
+    207,Jane Eyre,107,11
+    251,The Raven,150,333
+    252,Eleonora,150,555
+    271,Catweazle,170,22
+    ```
+
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
+    > For now, you can ignore the additional files that `cds add data` generated for you.
 
-    > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
+    > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
@@ -351,7 +358,7 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
      > init from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:49:47, in: 861.036ms
@@ -362,13 +369,13 @@ In VS Code you will add plain CSV files in folder `db/csv` to fill your database
 
 4. To test your service, open a web browser and go to:
 
-    <http://localhost:4004/catalog/Books>
+    <http://localhost:4004/odata/v4/catalog/Books>
 
-    <http://localhost:4004/catalog/Authors>
+    <http://localhost:4004/odata/v4/catalog/Authors>
 
     > As you now have a fully capable SQL database with some initial data, you can send complex OData queries, served by the built-in generic providers.
 
-    <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
+    <http://localhost:4004/odata/v4/catalog/Authors?$expand=books($select=ID,title)>
 
     > You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
@@ -380,33 +387,54 @@ Instead of using in-memory, you can also use persistent databases.
 
 1. If `cds watch` is running, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
-2. Install `SQLite3` packages.
+2. Configure the database in your `package.json` in the `cds.requires.db` section.
 
-    ```Shell/Bash
-    npm i sqlite3 -D
+    ```json
+    {
+      "name": "my-bookshop",
+      "version": "1.0.0",
+      "description": "A simple CAP project.",
+      "repository": "<Add your repository here>",
+      "license": "UNLICENSED",
+      "private": true,
+      "dependencies": {
+        "@sap/cds": "^7",
+        "express": "^4"
+      },
+      "devDependencies": {
+        "@cap-js/sqlite": "^1"
+      },
+      "scripts": {
+        "start": "cds-serve"
+      },
+      "cds": { "requires": {
+       "db": {
+          "kind": "sqlite",
+          "credentials": { "url": "db/my-bookshop.sqlite" }
+       }
+    }}
+    }
     ```
 
 3. Deploy the data model to an `SQLite` database:
 
     ```Shell/Bash
-    cds deploy --to sqlite:db/my-bookshop.db
+    cds deploy
     ```
 
-    > You've now created an `SQLite` database file under `db/my-bookshop.db`.
-
-    > This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
+    > You've now created an `SQLite` database file under `db/my-bookshop.sqlite`.
 
     > The difference to the automatically provided in-memory database is that you now get a persistent database stored in the local file.
 
 4. Open `SQLite` and view the newly created database:
 
     ```Shell/Bash
-    sqlite3 db/my-bookshop.db -cmd .dump
+    sqlite3 db/my-bookshop.sqlite -cmd .dump
     ```
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
 6. Run your service.
 
@@ -417,7 +445,7 @@ Instead of using in-memory, you can also use persistent databases.
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { url: 'sqlite.db', database: 'db/my-bookshop.db' }
-    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/odata/v4/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
     [cds] - launched at 18/05/2022, 19:54:53, in: 830.398ms
@@ -435,7 +463,7 @@ In the root of your project, create a file called `test.http` and copy the follo
 #
 # Browse Books
 #
-GET http://localhost:4004/catalog/Books?
+GET http://localhost:4004/odata/v4/catalog/Books?
   # &$select=title,stock
   # &$expand=currency
   # &sap-language=de
@@ -444,13 +472,13 @@ GET http://localhost:4004/catalog/Books?
 #
 # Get Author wit ID 101
 #
-GET http://localhost:4004/catalog/Authors(101)
+GET http://localhost:4004/odata/v4/catalog/Authors(101)
 
 ###
 #
 # Update Author with ID 101
 #
-POST http://localhost:4004/catalog/Authors
+POST http://localhost:4004/odata/v4/catalog/Authors
 Content-Type: application/json
 
 {"ID": 101, "name": "Some Author"}
@@ -460,7 +488,7 @@ Content-Type: application/json
 #
 # Order a Book
 #
-POST http://localhost:4004/catalog/Orders
+POST http://localhost:4004/odata/v4/catalog/Orders
 Content-Type: application/json;IEEE754Compatible=true
 
 {"book_ID": 201, "amount": 5}
@@ -476,6 +504,15 @@ Click on `Send Request` inside the `test.http` file, to execute requests against
 
 The REST client gives you the response of your service and you see immediately if the request was successful.
 
+Use the following request to answer the next question:
+
+```HTTP
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{"ID": 201, "title": "Some Title"}
+
+```
 
 ### Add custom logic
 
@@ -506,6 +543,7 @@ The REST client gives you the response of your service and you see immediately i
 
     }
     ```
+
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
     > Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.

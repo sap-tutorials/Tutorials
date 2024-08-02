@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -22,18 +22,16 @@ A graph can be used to show the connections between items such as the connection
 
 SAP HANA provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.
 
-This tutorial is meant to be an introduction to this topic.  For a deeper dive on the topics of graph and spatial, see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) and [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data).
+This tutorial is meant to be an introduction to this topic.  For additional content see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started),  [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data), and the [Guided Experience - Introduction to SAP HANA Cloud](https://academy-journey.cfapps.eu10.hana.ondemand.com/learning-journey/prd-hc-introduction).
 
 ---
 
 ### Create a graph workspace
-
-
 The following steps will create a graph workspace that can display the distance between hotels in a state.
 
 In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
-1. Create a vertex table that represents distances between hotels by executing the following in the SQL Console.
+1. Create a vertex table that represents distances between hotels by executing the following in the SQL console.
 
     ```SQL
     CREATE COLUMN TABLE DISTANCES(
@@ -108,8 +106,6 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
 
 ### Explore a graph using the graph viewer
-
-
 1. Open the graph viewer.
 
     ![DISTANCEGRAPH graph viewer](distance-graph-workspace-viewer.png)
@@ -140,17 +136,14 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the graph viewer settings. The color used to highlight in the image below is #E5F5FC.
+5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a color. 
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
-Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.
-
-
+Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.  Graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
 
 ### Use graph algorithms in the SAP HANA database explorer
-
 The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
 The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
@@ -188,10 +181,7 @@ The following steps will walk through using the shortest path algorithm to deter
     ![Graph Algorithms](graph-algorithms.png)
 
 
-
 ### Create, populate, and query a JSON collection (optional)
-
-
 SAP HANA provides the ability to store and query JSON data.  This can be useful if the schema of the data is often changed or if you wish to join data in SQL queries that comes from both SQL tables and JSON data.
 
 The following steps will demonstrate how to create a JSON collection that can be used to collect notes about customers staying at a hotel.
@@ -222,8 +212,6 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
-    >JSON collections can also be populated using the import data wizard.  
-
 4. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
 
     ```SQL
@@ -251,12 +239,79 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![JSON text](json-text.png)
 
+Further examples can be found in the [The Small JSON Document Store Cookbook](https://community.sap.com/t5/technology-blogs-by-sap/the-small-json-document-store-cookbook/ba-p/13516348).
+
+### Import a JSON collection using the hana_ml.docstore package (optional)
+JSON collections can be imported using the import data wizard but are required to be in a specified format as mentioned at [Import and Export](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/import-and-export).  An alternative method of performing an import is shown in this step.
+
+1. Find a JSON collection to be imported.  The example below uses the Parks dataset from [City of Waterloo Open Data](https://opendata-city-of-waterloo.opendata.arcgis.com/) downloaded as a GeoJSON file. 
+
+2. Create a Python application and update the host variable below. 
+
+    ```Shell (Microsoft Windows)
+    notepad loadJSON.py
+    ```
+    
+    ```Python
+    from hana_ml import docstore
+    from hana_ml.dataframe import ConnectionContext
+
+    import json
+
+    host = 'xxxxx-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com'
+    port = 443
+    user = 'USER1'
+    passwd = 'Password1'
+
+    try :
+        conn = ConnectionContext(address=host, port=port, user=user, password=passwd)
+    except ConnectionContext.Error as er:
+        print('Connect failed, exiting')
+        print(er)
+        exit()
+
+    #If no errors, print connected
+    print('connected')
+
+    with open("ParksInWaterloo.geojson") as json_file:
+        data = json.load(json_file)
+
+    docstore.create_collection_from_elements(conn, 
+        collection_name="WATERLOO_PARKS", elements=[data], drop_exist_coll=True, schema="HOTEL")
+    ```
+
+3. Add the required packages.
+
+    ```Shell
+    pip install hana_ml
+    pip install shapely
+    ```
+
+4. Run the application.
+
+    ```Shell
+    python loadJSON.py 
+    ```
+
+    ![load the collection](load-collection.png)
+
+5. Query the imported collection.
+
+    ```SQL
+    SELECT CARDINALITY("features")  FROM "HOTEL"."WATERLOO_PARKS";
+    SELECT "features" FROM "HOTEL"."WATERLOO_PARKS";
+    SELECT "features" FROM "HOTEL"."WATERLOO_PARKS" UNNEST "features" as "f";
+    SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTEL"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
+    ```
+    ![parks with tennis courts](parks-with-tennis-courts.png)
+
+Additional details can be found at [hana_ml.docstore package](https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/latest/en-US/hana_ml.docstore.html#hana_ml.docstore.create_collection_from_elements).
+
+
 ### Import and view spatial data
-
-
 This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 
-1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in Waterloo`**.  Scroll through the results and choose the selection below.
+1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest Waterloo`**.  Scroll through the results and choose the selection below.
 
     ![Search](search.png)
 
@@ -294,13 +349,13 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![view table editor](view-table-metadata.png)
 
-7. Select **Open Data** to view the raw data, and select **View Data** on the SHAPE column of a point of interest.
+7. Select **Open Data** to view the raw data, and select **View Spatial Data** on the SHAPE column of a point of interest. You may choose to select one or multiple points of interest.
 
-    ![view data](view-data.png)
+    ![view data](multiple-spatial-data.png)
 
-    The selected location is shown on a map.
+    The selected location(s) is shown on a map. You can view more details about the point of interest by clicking on a map marker.
 
-    ![view data on a map](view-spatial-data-map.png)
+    ![view data on a map](spatial-data-map.png)
 
     >The Leaflet map is not shown in on-premise installs of the SAP HANA database explorer.
 
@@ -328,7 +383,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![find and replace](find-replace.png)
 
-    To see the required formatting for importing JSON documents, see [SAP HANA Database JSON Document Store Guide](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f2d68919a1ad437fac08cc7d1584ff56/d2ee307ee64145b1867fbd95b0f1ba88.html?version=2021_2_QRC).
+    To see the required formatting for importing JSON documents, see [SAP HANA Database JSON Document Store Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/import-and-export).
 
 11. Upload the file to a cloud storage provider.
 
@@ -375,8 +430,6 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
 
 ### Use spatial functions in a query
-
-
 1. The following statement shows the list of points of interest within 3 kilometers of the `Delta` hotel.
 
     ```SQL

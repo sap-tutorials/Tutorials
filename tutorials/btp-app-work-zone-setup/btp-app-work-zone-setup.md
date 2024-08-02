@@ -1,6 +1,6 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 title: Prepare SAP Build Work Zone, Standard Edition Setup
 description: This tutorial shows you how to add the SAP Launchpad application.
 keywords: cap
@@ -15,13 +15,29 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to add Navigation Targets
- - How to add SAP Cloud Service
+ - How to add navigation targets and prepare your UI applications
+ - How to add SAP Cloud service
  - How to add the Destination Service and destinations
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
-[ACCORDION-BEGIN [Step 1: ](Add navigation targets)]
+[ACCORDION-BEGIN [Step 1: ](Prepapre UI applications)]
+In this tutorial, you will use the SAP Build Work Zone, standard edition to access your CAP service and its UI. Additionally, the SAP Build Work Zone, standard edition provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
+
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Build Work Zone, standard edition. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
 
 [DONE]
@@ -61,40 +77,8 @@ Navigation targets are required to navigate between applications, but also to st
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
-Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
-
-<!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
-```JSON[8-19]
-{
-  ...
-  "sap.app": {
-    "id": "ns.mitigations",
-    ...
-    "dataSources": {
-      ...
-    },
-    "crossNavigation": {
-      "inbounds": {
-        "Mitigations-display": {
-          "signature": {
-            "parameters": {},
-            "additionalParameters": "allowed"
-          },
-          "semanticObject": "Mitigations",
-          "action": "display"
-        }
-      }
-    }
-  }
-}
-```
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 4: ](Add SAP Cloud service)]
-Add your SAP Cloud service at the end of `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files:
+[ACCORDION-BEGIN [Step 3: ](Add SAP Cloud service)]
+Add your SAP Cloud service at the end of the file `app/risks/webapp/manifest.json`:
 
 <!-- cpes-file app/risks/webapp/manifest.json:$["sap.cloud"] -->
 ```JSON[6-9]
@@ -116,7 +100,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Add the SAP Destination service)]
+[ACCORDION-BEGIN [Step 4: ](Add the SAP Destination service)]
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-destination -->
@@ -139,7 +123,7 @@ The service configuration option `HTML5Runtime_enabled: true` is required to mak
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Add SAP HTML5 Application Repository service)]
+[ACCORDION-BEGIN [Step 5: ](Add SAP HTML5 Application Repository service)]
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
 <!-- snippet mta.yaml resources: cpapp-html5-repo-host -->
@@ -158,7 +142,7 @@ The SAP HTML5 Application Repository service stores static UI files. In the depl
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Add destinations)]
+[ACCORDION-BEGIN [Step 6: ](Add destinations)]
 You add three destinations for the SAP Destination service that are used by the SAP Build Work Zone, standard edition:
 
 1. `cpapp-app-srv` - The destination to the CAP service. It is required by your UIs running in SAP Build Work Zone, standard edition to access your service.
@@ -228,7 +212,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Install required UI tools and MTA)]
+[ACCORDION-BEGIN [Step 7: ](Install required UI tools and MTA)]
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module in the root folder of your project:
 
     ```Shell/Bash
@@ -250,7 +234,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
+[ACCORDION-BEGIN [Step 8: ](Add deployment configuration for the SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -272,30 +256,8 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Add SAPUI5 freestyle Mitigations application)]
-Repeat the procedure from the previous step for the `app/mitigation` folder.
-
-1. Switch to `app/mitigations` folder:
-
-    ```Shell/Bash
-    cd ../../app/mitigations
-    ```
-
-2. Add deployment configuration:
-
-    ```Shell/Bash
-    fiori add deploy-config cf
-    ```
-
-    It will ask for the destination name.
-
-3. Enter `cpapp-app-srv` for the destination name again.
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 11: ](Check the results in mta.yaml)]
-The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fiori application. Each build result is a ZIP file that contains optimized UI resources and a ZIP file `manifest-bundle.zip` with the `manifest.json` and the `i18n` files. The latter is required by the SAP Build Work Zone, standard edition.
+[ACCORDION-BEGIN [Step 9: ](Check the results in mta.yaml)]
+The newly added module `nsrisks` does the build of the SAP Fiori application. Each build result is a ZIP file that contains optimized UI resources and a ZIP file `manifest-bundle.zip` with the `manifest.json` and the `i18n` files. The latter is required by the SAP Build Work Zone, standard edition.
 
 1. Check the `risks` application module `nsrisks`:
 
@@ -306,24 +268,6 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
     - name: nsrisks
       type: html5
       path: app/risks
-      build-parameters:
-        build-result: dist
-        builder: custom
-        commands:
-        - npm install
-        - npm run build:cf
-        supported-platforms: []
-    ```
-
-2. Check the `mitigations` application module `nsmitigations`:
-
-    <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsmitigations" -->
-    ```YAML
-    modules:
-      ...
-    - name: nsmitigations
-      type: html5
-      path: app/mitigations
       build-parameters:
         build-result: dist
         builder: custom
@@ -355,19 +299,15 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
           - nsrisks.zip
           name: nsrisks
           target-path: resources/
-        - artifacts:
-          - nsmitigations.zip
-          name: nsmitigations
-          target-path: resources/
     ```
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Add UI build files to .gitignore)]
+[ACCORDION-BEGIN [Step 10: ](Add UI build files to .gitignore)]
 The SAP Fiori build files do not need to be stored in GitHub. You can add it to your `.gitignore` file:
 
-```Shell/Bash
+```gitignore
 dist/
 resources/
 app/*/package-lock.json
@@ -380,7 +320,7 @@ app/*/package-lock.json
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](Re-build and re-deploy the .mtar file)]
+[ACCORDION-BEGIN [Step 11: ](Re-build and re-deploy the .mtar file)]
 1. Build your project with the MTA Build Tool (MBT) in the root folder of your project:
 
     ```Shell/Bash

@@ -1,8 +1,8 @@
 ---
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform,software-product>sap-build,software-product>sap-appgyver]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform,software-product>sap-build]
+primary_tag: software-product>sap-build-apps
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
@@ -20,13 +20,17 @@ The Low-Code / No-Code service on SAP BTP is available with a subscription boost
 
 >Alternatively, you could use SAP AppGyver's free Community Edition, if you do not need any SAP BTP specific features. The community edition is available here: [AppGyver.com] (https://www.appgyver.com)
 
+
+
+
 ### Create account and install SAP Build Apps
 
 Follow the instructions found in the following video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5lCAotjfWWo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gk-jZaM6_Rc" frameborder="0" allowfullscreen></iframe>
 
-More information is available from Bea Pasch's blog [SAP Build Apps Free Tier Individual Access](https://blogs.sap.com/2022/11/25/sap-build-apps-free-tier-individual-access/).
+
+
 
 ### Open SAP Build Apps
 

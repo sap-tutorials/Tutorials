@@ -26,7 +26,7 @@ As an integration developer, you need to make sure that you design integration f
 - Each integration flow can be deployed and executed with minimum effort. That way, you can test each guideline or pattern on your own.
 - You can use each reference integration flow as a basis for creating more complex scenarios.
 
-Currently, the following topics are covered by the integration flow design guidelines:
+Currently, the following topics are covered by the integration flow design guidelines - check them out for more inspiration on what you can do with SAP Integration Suite:
 
 - [Learn the Basics](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/ebc6034cd1044e4093683cf61425175a.html)
 - [Run an Integration Flow Under Well-Defined Boundary Conditions](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/f8cf97498d2549daab65db34f11e119d.html)

@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Adrian Plata
-author_profile: https://github.com/aplata-sap
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: software-product>sap-hana\,-express-edition
 tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
@@ -23,8 +23,6 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 ---
 
 SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jump-start application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data.
-
-The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
 
 SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
@@ -88,7 +86,7 @@ sudo docker image rm alpine -f
 ### Download the SAP HANA, express edition Image from the Docker Library
 
 
-Go to  [https://hub.docker.com/r/saplabs/hanaexpress](https://hub.docker.com/r/saplabs/hanaexpress).
+Go to  [https://hub.docker.com/u/saplabs](https://hub.docker.com/u/saplabs). Select hanaexpress.
 
 Copy the Docker pull address. Here's an example:
 
@@ -127,30 +125,11 @@ net.ipv4.ip_local_port_range=40000 60999
 To edit the `sysctl.conf` file, use the `vi` command to open the file and press `i` to switch to interactive mode. Edit the file as necessary, hit the `esc` key, and type and enter `:wq!` to write and save the changes.
 
 
-### (Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container
-
-
-Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
-
-```bash
-mkdir -p /data/<directory_name>
-chown <hxeadm userID or name>:<sapsys groupID or name> /data/<directory_name>
-```
-
-For example:
-
-```bash
-mkdir -p /data/mydirectory
-chown 12000:79 /data/mydirectory
-```
-
-The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
-
 
 ### Set Up Password for SAP HANA, express edition
 
 
-To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
+To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in */data/<dir_for_password_file>*.
 
 Create the `json` file:
 
@@ -198,8 +177,8 @@ This file serves as the master password for your SAP HANA, express edition users
 You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
 
 ```bash
-sudo chmod 600 /data/<directory_name>/<file_name>.json
-sudo chown 12000:79 /data/<directory_name>/<file_name>.json
+sudo chmod 600 /data/<dir_for_password_file>/<file_name>.json
+sudo chown 12000:79 /data/<dir_for_password_file>/<file_name>.json
 ```
 
 Be sure to do this with each `json` file you use for your Docker containers.
@@ -415,6 +394,7 @@ sudo ./hxe_upgrade.sh
 ```
 
 Follow the prompts to complete the server update.
+
 
 ### -Help Command
 

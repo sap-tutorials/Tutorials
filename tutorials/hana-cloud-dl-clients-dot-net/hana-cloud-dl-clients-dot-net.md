@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
-primary_tag: software-product-function>sap-hana-cloud\,-data-lake
+tags: [tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud]
+primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the .NET Driver
@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
   - How to create and debug a .NET application that queries a data lake Relational Engine
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
@@ -68,7 +68,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the Sap.Data.SQLAnywhere.Core.v2.1.dll is located on your machine.
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
@@ -109,7 +109,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico Program.cs
     ```
  
-5.  Replace the entire contents of `Program.cs` with the code below:  
+5.  Replace the entire contents of `Program.cs` with the code below. Update the host value in the connection string.
 
     ```C#
     using System;
@@ -162,11 +162,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     Save and close the `Program.cs` file after replacing the code.
 
-    The above app makes use of some of the data lake Relational Engine .NET driver  methods, such as [SAConnection](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/3c0ff5b76c5f10148352aa573b2bc242.html).  Connection details for this class can be found at [Connection Properties](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/9da0c496b1cc4245bae5f9cadf98e5fc.html).  See also the [.NET Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/aa95e60108104aac808272f210f52e19.html) in the SAP HANA Cloud, data Lake client interfaces guide.  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
+    >The above app makes use of some of the data lake Relational Engine .NET driver  methods, such as [SAConnection](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/3c0ff5b76c5f10148352aa573b2bc242.html).  Connection details for this class can be found at [Connection Properties](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/9da0c496b1cc4245bae5f9cadf98e5fc.html).  See also the [.NET Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/aa95e60108104aac808272f210f52e19.html) in the SAP HANA Cloud, data Lake client interfaces guide.  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 
-6. Update the host value in the connection string.
-
-7.  Run the app:
+6.  Run the app.
 
     ```Shell
     dotnet run

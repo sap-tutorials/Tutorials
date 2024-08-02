@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>personalized-recommendation, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -59,7 +59,7 @@ Now, you will use the **Set up account for Personalized Recommendation** booster
 
     <!-- border -->![Service Key](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `pr-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `pr-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt)**. Click **Next**.
 
     <!-- border -->![Service Key](booster-subaccount.png)
 

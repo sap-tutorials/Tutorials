@@ -9,13 +9,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Create a Reusable Service
+
 <!-- description --> Create a service that will later on be reused in another CAP Java project.
 
 ## You will learn
-  - How to write an entity definition
-  - How to use some generic CAP artefacts like aspects and types
-  - What associations and compositions are
-  - How to make the project reusable
+
+- How to write an entity definition
+- How to use some generic CAP artifacts like aspects and types
+- What associations and compositions are
+- How to make the project reusable
 
   The previous tutorial was about quickly setting up a working CAP application and read/write some mock data. This tutorial is about learning how to extend the application to a complete products service.
 
@@ -24,7 +26,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ### Define the domain model
-
 
 In the previous tutorial, you defined a service, which defined its own entity. When modeling with CDS the best practice is to separate services from the domain model.
 
@@ -57,9 +58,7 @@ Therefore, you will now define the complete domain model that is used by the pro
     }
     ```
 
-
 ### Understand keywords
-
 
 As you can see, the domain model defines two entities:
 
@@ -73,37 +72,33 @@ It also imports various common definitions from the `@sap/cds/common` package (a
 - `managed`
 - `CodeList`
 
-In addition, the domain model uses the CDS keywords `localized`, `Association` , and `Composition`.
-Let's explain these imports and keywords in more detail:
+In addition, the domain model uses the CDS keywords `localized`, `Association` , and `Composition`. Let's explain these imports and keywords in more detail:
 
-### The `localized` Keyword
+### The `localized` keyword
 
 The `localized` keyword can be used to mark elements, which require translation. The ability to store translations for different languages and to store a default fallback translation is automatically handled by CDS for you. You will see this in action in more detail in the next tutorial.
 
-### Associations and Compositions
+### Associations and compositions
 
 Associations and compositions can be used to define relationships between entities. They often allow you to define these relationships without explicitly working with foreign keys.
 
 While associations define a rather loose coupling between the entities, compositions define a containment relationship. Compositions can also be thought of as defining deep structures. You can perform `deep inserts` and `upserts` along these structures.
 
-In your domain model, the `Categories` entities define a `parent` and `children` element. This enables a hierarchy of categories. The children of a category are modelled as a composition. A category with all of its children defines a deep nested structure. Deleting a category would automatically delete all of its children. However, the parent of a category is modelled as an association. Deleting a category obviously shouldn't delete its parent.
+In your domain model, the `Categories` entity defines a `parent` and `children` element. This enables a hierarchy of categories. The children of a category are modelled as a composition. A category with all of its children defines a deep nested structure. Deleting a category would automatically delete all of its children. However, the parent of a category is modelled as an association. Deleting a category obviously shouldn't delete its parent.
 
-### The `cuid` and `managed` Aspects
+### The `cuid` and `managed` aspects
 
 Both `cuid` and `managed` are [aspects](https://cap.cloud.sap/docs/cds/cdl#aspects). Aspects extend an entity with additional elements. The [`cuid`](https://cap.cloud.sap/docs/cds/common#aspect-cuid) aspect adds a `key` element `ID` of type `UUID` to the entity.
 
 The [`managed`](https://cap.cloud.sap/docs/cds/common#aspect-managed) aspect adds four additional elements to the entity. These capture the time of the creation and last update of the entity, and the user, which performed the creation and last update.
 
-### The `CodeList` Aspect and the `Currency` Type
+### The `CodeList` aspect and the `Currency` type
 
 [`CodeLists`](https://cap.cloud.sap/docs/cds/common#aspect-sapcommoncodelist) can be used to store global, translatable definitions based on codes, such as currencies, countries, or languages. Especially for UIs, a `CodeList` can be useful to provide a value help for certain input fields.
 
 The [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) definition is a type. It defines an association to a `Currencies` entity. The [`Currencies`](https://cap.cloud.sap/docs/cds/common#entity-sapcommoncurrencies) entity is based on ISO 4217 and uses three-letter alpha codes as keys such as `EUR` or `USD` and provides the possibility to store the corresponding currency symbol such as `€` or `$`.
 
-
-
 ### Get more information about `@sap/cds/common`
-
 
 Look at these explained keywords yourself and learn more about it.
 
@@ -117,11 +112,7 @@ Look at these explained keywords yourself and learn more about it.
 
     <!-- border -->![right-click to peek definition information](rightclick-peek.png)
 
-
-
-
 ### Rewrite the `AdminService`
-
 
 In the first tutorial, you defined a simple service, called `AdminService`, which directly defined the entity `Products`. As you now have defined the `Products` entity in your domain model, the `AdminService` just needs to expose it. In addition, you defined the `Categories` entity, which should also be part of your service.
 
@@ -142,9 +133,7 @@ In this example you will use the most simple projection, which exposes the domai
     }
     ```
 
-
 ### Use CAP's generic persistence handling
-
 
 The CAP Java SDK provides out-of-the-box capabilities to store and retrieve entities from a database. Therefore, no custom coding is required if entities are stored in the database. The entities defined in your `AdminService` will be automatically served via OData and you can just delete the `AdminService.java` file that was created earlier.
 
@@ -152,11 +141,9 @@ The CAP Java SDK provides out-of-the-box capabilities to store and retrieve enti
 
 By default, the CAP Java SDK uses an in-memory H2 database. The content of this database will be lost when the application is stopped.
 
-In case you need a persistent database between application runs you can use a file-based `SQLite` database as described in section [Using Databases](https://cap.cloud.sap/docs/guides/databases) in the CAP documentation.
-
+In case you need a persistent database between application runs you can use a file-based `SQLite` database as described in section [Using Databases](https://cap.cloud.sap/docs/guides/databases-sqlite?impl-variant=java) in the CAP documentation.
 
 ### Run and test your application
-
 
 1. Stop your application if it is still running. Now restart your application by running `mvn spring-boot:run` in the terminal and open it in a new tab.
 
@@ -185,9 +172,7 @@ In case you need a persistent database between application runs you can use a fi
 
 5. Make sure to stop your application after testing it by using **`CTRL+C`**.
 
-
 ### Set up for reuse
-
 
 In the following tutorial, the application will be reused by a bookstore application. The reuse of models can be achieved by publishing NPM modules with the models and defining dependencies to these NPM modules in other applications. There are a two steps we need to perform to prepare the `products-service` application for reuse.
 

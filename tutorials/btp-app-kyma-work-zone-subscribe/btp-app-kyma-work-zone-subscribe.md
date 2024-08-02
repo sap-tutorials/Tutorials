@@ -1,8 +1,8 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
-title: Subscribe to the SAP Build Work Zone, Standard Edition
-description: Learn how to subscribe to the SAP SAP Build Work Zone, standard edition.
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
+title:  Create a SAP Build Work Zone, Standard Edition Site for Your Kyma CAP App
+description: Learn how to create a SAP Build Work Zone, standard edition site for your CAP app deployed on Kyma.
 keywords: cap
 auto_validation: true
 time: 10
@@ -20,6 +20,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to SAP Build Work Zone, standard edition)]
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
@@ -36,7 +50,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Create SAP Build Work Zone, standard edition](create_workzone_instance.png)
 
-4. Keep the default settings for **Service** and **Plan** and choose **Create**.
+4. Keep the default setting for **Service** and choose `standard - Subscription` for **Plan**.
+
+    !![Choose SAP Build Work Zone, standard edition plan](choose_workzone_plan.png)
+
+    > SAP Build Work Zone, standard edition offers two types of `standard` plans. The `standard - Subscription` plan is an application plan that lets you access your applications from a central entry point. This is the plan you need for the purposes of this tutorial. The `standard - Instance` plan is a service plan that will let you integrate with other services using APIs. You do not need this plan for the scope of this tutorial.
+
+5. Choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
@@ -82,33 +102,33 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![HTML5 Apps Content Provider](html5_apps_content_provider.png)
 
-5. Add the `Risks` and `Mitigations` to **My Content**.
+5. Add the `Risks` to **My Content**.
 
     !![Add Apps to My Content](add_apps_to_my_content.png)
 
-6. Choose **Content Manager** &rarr; **My Content**.
+6. Choose **Content Manager**.
 
 7. In the item list, choose the item `Everyone`.
 
     !![Role Everyone](role_everyone.png)
 
-    > `Everyone` is a role that has to be assigned to the `Risks` and `Mitigations` apps so all users can access them.
+    > `Everyone` is a role that has to be assigned to the `Risks` apps so all users can access it.
 
-8. Choose **Edit**, click on the search field, assign the `Risks` and `Mitigations` apps to the role, and choose **Save**.
+8. Choose **Edit**, click on the search field, assign the `Risks` apps to the role, and choose **Save**.
 
     !![Add Apps to Role](apps_to_role_everyone.png)
 
-9. Navigate back to **My Content**.
+9. Navigate back to **Content manager**.
 
-10. Choose **New** &rarr; **Group**.
+10. Choose **Create** &rarr; **Group**.
 
     !![New Group](new_group.png)
 
-11. Type in `Risk Management` as the title of the group and assign the `Risks` and `Mitigations` apps to it.
+11. Type in `Risk Management` as the title of the group and assign the `Risks` app to it, and choose **Save**.
 
     !![Create Group](create_group.png)
 
-    > This way, you are telling the SAP Build Work Zone, standard edition to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
+    > This way, you are telling the SAP Build Work Zone, standard edition to display the `Risks` app in a group called `Risk Management`.
 
 12. Choose **Site Directory** &rarr; **Create Site**.
 
@@ -139,6 +159,10 @@ You have launched your `Risks` app through the SAP Build Work Zone, standard edi
   !![Risks App](risks.png)
 
 > If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
+
+> Do you want to change your Risk Management Site's default theme? Under your avatar, in the User Actions menu, select the Theme Manager.
+
+>     !![Theme Manager](theme-manager.png)
 
 
 [VALIDATE_1]

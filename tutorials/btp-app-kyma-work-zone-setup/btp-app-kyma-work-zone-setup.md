@@ -1,7 +1,7 @@
 ---
-author_name: Manju Shankar
-author_profile: https://github.com/manjuX
-title: Prepare SAP Build Work Zone, Standard Edition Setup
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
+title: Prepare SAP Build Work Zone, Standard Edition Setup for Kyma
 description: Learn how to prepare your UI applications, add deployment configuration for HTML5 applications to your project, and configure your Helm chart for HTML5 application deployment.
 keywords: cap
 auto_validation: true
@@ -21,11 +21,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+> This tutorial will soon be phased out. 
+> 
+> For more tutorials about how to develop and deploy a full stack CAP application on SAP BTP, see:
+>
+> - [Develop a Full-Stack CAP Application Following SAP BTP Developer’s Guide](https://developers.sap.com/group.cap-application-full-stack.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Cloud Foundry Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-application.html)
+> - [Deploy a Full-Stack CAP Application in SAP BTP, Kyma Runtime Following SAP BTP Developer’s Guide](https://developers.sap.com/group.deploy-full-stack-cap-kyma-runtime.html)
+>
+> To continue learning how to implement business applications on SAP BTP, see:
+>
+> - [SAP BTP Developer’s Guide](https://help.sap.com/docs/btp/btp-developers-guide/what-is-btp-developers-guide?version=Cloud&locale=en-US)
+> - [Related Hands-On Experience](https://help.sap.com/docs/btp/btp-developers-guide/related-hands-on-experience?version=Cloud&locale=en-US)
+> - [Tutorials for ABAP Cloud](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-abap-cloud?version=Cloud&locale=en-US)
+> - [Tutorials for SAP Cloud Application Programming Model](https://help.sap.com/docs/btp/btp-developers-guide/tutorials-for-sap-cloud-application-programming-model?version=Cloud&locale=en-US)
 
 [ACCORDION-BEGIN [Step 1: ](Prepare UI Applications)]
 In this tutorial, you will use the SAP Build Work Zone, standard edition to access your CAP service and its UI. Additionally, the SAP Build Work Zone, standard edition provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
-Navigation targets are required to navigate between applications, but also to start the applications from SAP Build Work Zone, standard edition. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
+Navigation targets are required to navigate between applications, but also to start the applications from SAP Build Work Zone, standard edition. In the next steps, you add the navigation target `Risks-display` to the application manifest (`manifest.json`) file.
 
 [DONE]
 [ACCORDION-END]
@@ -64,48 +78,14 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
-1. Open the file `app/mitigations/webapp/manifest.json`.
-
-2. Add the external navigation target to the `sap.app` JSON object, but this time with `semanticObject` name `Mitigations`. You can add it right after the `dataSources` object:
-
-<!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
-```JSON[8-19]
-{
-  ...
-  "sap.app": {
-    "id": "ns.mitigations",
-    ...
-    "dataSources": {
-      ...
-    },
-    "crossNavigation": {
-      "inbounds": {
-        "Mitigations-display": {
-          "signature": {
-            "parameters": {},
-            "additionalParameters": "allowed"
-          },
-          "semanticObject": "Mitigations",
-          "action": "display"
-        }
-      }
-    }
-  }
-}
-```
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 4: ](Install required UI tools)]
-1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module in the root folder of your project:
+[ACCORDION-BEGIN [Step 3: ](Install required UI tools)]
+1. Install the [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as a global module in the root folder of your project:
 
     ```Shell/Bash
     npm install --global @sap/ux-ui5-tooling
     ```
 
-2. Install [SAP Fiori application generator](https://www.npmjs.com/package/@sap/generator-fiori) package as global module:
+2. Install the [SAP Fiori application generator](https://www.npmjs.com/package/@sap/generator-fiori) package as a global module:
 
     ```Shell/Bash
     npm install --global @sap/generator-fiori
@@ -114,12 +94,24 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 4: ](Add CAP deployment descriptor)]
+Since you're working with a CAP application, there must be an `mta.yaml` deployment descriptor file in your project directory. This file is used during Cloud Foundry deployments to determine what Cloud Foundry apps and service instances should be created. In the context of deploying to Kyma, however, the `mta.yaml` file will not be used for deployment. Instead, it will only be used by the SAP Fiori generator to add the deployment configurations for the SAP Fiori applications `Risks` and `Mitigations`. To create the deployment descriptor, run the following command in your project root folder:
+
+```Shell/Bash
+cds add mta
+```
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 5: ](Add deployment configuration for the SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
     cd app/risks
     ```
+
+2. Run npm install
 
 2. Add deployment configuration:
 
@@ -132,13 +124,13 @@ Navigation targets are required to navigate between applications, but also to st
 3. Enter the following settings:
 
     - ```Destination name ()```: **`cpapp-srv`**
-    - ```Add application to managed application router? (Y/n)```: **`y`**
+    - ```Editing the deployment configuration will overwrite existing configuration, are you sure you want to continue? (Y/n)```: **`y`**
 
 > On Windows, you might get an error when executing this command.
 
 > The CDS development kit that we use in this tutorial series includes a batch executable file. Since it's not a binary, executing it on Windows might return an error similar to this one:
 
-> ```
+> ```bash
 > Error @sap/fiori:deploy-config cf --base ui5.yaml --config ui5-deploy.yaml
 > spawnSync cds ENOENT
 > ```
@@ -154,36 +146,54 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Mitigations application)]
-1. Switch to the `app/mitigations` folder:
+[ACCORDION-BEGIN [Step 6: ](Adjust data source path to avoid errors)]
+Make sure that the value of the `uri` parameter of the `mainService` object in `app/risks/webapp/manifest.json` does not start with a forward slash (`/`):
 
-    ```Shell/Bash
-    cd ../../app/mitigations/
-    ```
+```JSON[8]
+{
+    "_version": "1.32.0",
 
-2. Add the deployment configuration:
+    "sap.app": {
+        ...
+        "dataSources": {
+            "mainService": {
+                "uri": "service/risk/",
+                "type": "OData",
+                    "settings": {
+                    "odataVersion": "4.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+  }
+  ...
+}
+```
 
-    ```Shell/Bash
-    fiori add deploy-config cf
-    ```
-
-3. Enter the following settings:
-
-    - ```Destination name ()```: **`cpapp-srv`**
-    - ```Add application to managed application router? (Y/n)```: **`y`**
+This will ensure that you don't get any errors when trying to access the **Risks** app later through the SAP Build Work Zone, standard edition.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Change cloud service)]
-The `fiori` command automatically sets some value to the SAP Cloud service property in both  `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files. Change the `sap.cloud.service` property in `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json`:
+[ACCORDION-BEGIN [Step 7: ](Add SAP Cloud service)]
+Add your SAP Cloud service at the end of the file `app/risks/webapp/manifest.json`:
 
-```JSON[3]
-"sap.cloud": {
+<!-- cpes-file app/risks/webapp/manifest.json:$["sap.cloud"] -->
+```JSON[6-9]
+{
+  "_version": "",
+  ...
+  "sap.fiori": {
+    ...
+  },
+  "sap.cloud": {
     "public": true,
     "service": "cpapp.service"
+  }
 }
 ```
+
+The name of your SAP Cloud service (`cpapp` in this case) should be unique within an SAP BTP region. It is used to identify the resources that belong to one UI in the SAP Build Work Zone, standard edition.
 
 [DONE]
 [ACCORDION-END]
@@ -195,17 +205,15 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     {
         "name": "html5-deployer",
         "scripts": {
-            "start": "node node_modules/@sap/html5-app-deployer/index.js",
-            "build": "bash build.sh"
+            "start": "node node_modules/@sap/html5-app-deployer/index.js"
         },
         "workspaces": [
-            "risks",
-            "mitigations"
+            "risks"
         ]
     }
     ```
 
-    The `build` script triggers the build of the Fiori applications for deployment in the HTML5 application repository. The two UI applications are referred as sub packages ("workspaces") which is required for the build.
+    The `build` script triggers the build of the Fiori application for deployment in the HTML5 application repository. The Risks UI application is referred to as a sub package ("workspaces") which is required for the build.
 
     The deployer is run with the `start` script.
 
@@ -216,23 +224,17 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
     set -e
 
-    npm run build:cf --prefix risks
-    npm run build:cf --prefix mitigations
+    npm run build:cf --prefix app/risks
 
-    rm -rf resources
-    mkdir -p resources
+    rm -rf gen/ui
+    mkdir -p gen/ui/resources
 
-    mv risks/dist/nsrisks.zip resources
-    mv mitigations/dist/nsmitigations.zip resources
-
-    if [ "$CNB_STACK_ID" != "" ]; then
-        # Delete directories if running in CNB build to avoid them getting packaged
-        rm -rf risks
-        rm -rf mitigations
-    fi
+    mv app/risks/dist/nsrisks.zip gen/ui/resources
+    cp app/risks/webapp/index.html gen/ui/
+    cp app/package.json gen/ui
     ```
 
-    This script calls the UI5 build for the two SAP Fiori applications and copies the result into the `resources` directory.
+    This script calls the UI5 build for the Risks SAP Fiori application and copies the result into the `resources` directory.
 
 
 3. Navigate back to your project root folder:
@@ -252,7 +254,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     When switching to the `npm` workspace feature old `package-lock.json` and `node_modules` cause problems. Therefore, execute the following command:
 
     ```Shell/Bash
-    rm -rf {app,app/risks,app/mitigations}/{node_modules,package-lock.json}
+    rm -rf {app,app/risks}/{node_modules,package-lock.json}
     ```
 
 [DONE]
@@ -273,14 +275,19 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     > cat ~/.docker/config.json
     > ```
 
+2. Run the build script:
+
+    ```Shell/Bash
+    bash app/build.sh
+    ```
 2. Build docker image:
 
     ```Shell/Bash
     pack build $CONTAINER_REGISTRY/cpapp-html5-deployer \
-         --env BP_NODE_RUN_SCRIPTS=build \
-         --path app \
-         --buildpack gcr.io/paketo-buildpacks/nodejs \
-         --builder paketobuildpacks/builder:base
+          --env BP_NODE_RUN_SCRIPTS="" \
+          --path gen/ui \
+          --buildpack gcr.io/paketo-buildpacks/nodejs \
+          --builder paketobuildpacks/builder:base
     ```
 
     The parameter `--env BP_NODE_RUN_SCRIPTS=build` triggers the build script in the `app/package.json`, which runs the UI5 build for the SAP Fiori applications as it is defined in the `app/build.sh` file. The build result appears in the docker image only. It's not on your file system.
@@ -297,16 +304,16 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [ACCORDION-BEGIN [Step 10: ](Configure Helm chart for HTML5 application deployment)]
 1. Add the HTML5 Application Deployer to your Helm chart:
 
-    ```
+    ```Shell/Bash
     cds add html5-repo
     ```
 
-    This adds three new sections `html5_apps_deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the SAP Build Work Zone, standard edition.
+    This adds three new sections `html5-apps-deployer` and `html5_apps_repo_host`  and `destinations` to the `chart/values.yaml` file and also copies a few additional files in the `chart/templates` folder. It deploys your HTML5 applications using the `cpapp-html5-deployer` image and creates the required destinations to access the CAP service. The `HTML5Runtime_enabled` option makes the destinations accessible for the SAP Build Work Zone, standard edition.
 
-2. Replace `<your-container-registry>` with your container registry URL in the `html5_apps_deployer` section of your `chart/values.yaml` file:
+2. Replace `<your-container-registry>` with your container registry URL in the `html5-apps-deployer` section of your `chart/values.yaml` file:
 
     ```YAML[5]
-    html5_apps_deployer:
+    html5-apps-deployer:
       cloudService: null
       backendDestinations: {}
       image:
@@ -316,22 +323,23 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
 3.  Add the destination and the cloud service to your backend service:
 
-    ```YAML[2-5]
-    html5_apps_deployer:
-      cloudService: cpapp.service
-      backendDestinations:
-        cpapp-srv:
-          service: srv
-      image:
+    ```YAML[3,8-9]
+    html5-apps-deployer:
+      env:
+        SAP_CLOUD_SERVICE: cpapp.service
+      envFrom:
         ...
+    ...
+    backendDestinations:
+      cpapp-srv:
+        service: srv
     ```
 
      The `backendDestinations` configuration creates a destination with the name `cpapp-srv` that points to the URL for your CAP service `srv`.
      With this step we're reflecting in the `values.yaml` file the configurations you already did for:
 
-     - Destination `cpapp-srv` for the Risks application, done in `Step 5: Add SAP Fiori elements Risks application`.
-     - Destination `cpapp-srv` for the Mitigations application, done in `Step 6: Add SAP Fiori elements Mitigations application`.
-     - Cloud service for both applications, done  `Step 7: Change Cloud Service`.
+     - Destination `cpapp-srv` for the Risks application, done in `Step 5: Add deployment configuration for the SAP Fiori elements Risks application`.
+     - Cloud service for both applications, done  `Step 7: Add Cloud Service`.
 
 [DONE]
 [ACCORDION-END]
@@ -340,7 +348,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 Run the deploy command again:
 
 ```Shell/Bash
-helm upgrade cpapp ./chart --install
+helm upgrade cpapp ./chart --install --set-file xsuaa.jsonParameters=xs-security.json
 ```
 
 
