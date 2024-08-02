@@ -91,7 +91,9 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 ### Learn about the service marketplace
 
-In the service marketplace you can find all services that are available on  **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
+In the service marketplace you can find all services that are available on  **any** of the environments. 
+
+Open the **Services** menu section on the left, and select **Service Marketplace** within that to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
 <!-- border -->![Service Marketplace](marketplace.png)
 
