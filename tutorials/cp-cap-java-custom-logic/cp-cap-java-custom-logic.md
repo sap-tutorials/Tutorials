@@ -31,14 +31,14 @@ First of all, a new Java class for your event handler methods needs to be define
 
 1. From the terminal, stop your application if it's still running using **`CTRL+C`**.
 
-2. Go to `srv/src/main/java/com/sap/cap/bookstore` and create a new folder called `handlers`.
+2. Go to `srv/src/main/java/customer/bookstore` and create a new folder called `handlers`.
 
     <!-- border -->![handlers package](handlers-package.png)
 
 3. In the created package, create the `OrdersService.java` file with the following content and make sure you **Save** the file:
 
 ```Java
-package com.sap.cap.bookstore.handlers;
+package customer.bookstore.handlers;
 
 import cds.gen.ordersservice.OrdersService_;
 import com.sap.cds.services.handler.EventHandler;
@@ -142,7 +142,7 @@ It's important to note, that the CAP Java SDK automatically takes care of combin
 The complete **OrdersService.java** file should now have the following format:
 
 ```Java
-package com.sap.cap.bookstore.handlers;
+package customer.bookstore.handlers;
 
 import cds.gen.ordersservice.OrdersService_;
 import com.sap.cds.services.handler.EventHandler;
