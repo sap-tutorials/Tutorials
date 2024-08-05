@@ -159,7 +159,7 @@ After running this command, some files are generated and added to the `srv/src/m
 
 While creating the project skeleton, the application `Application.java` file was created, which contains a `main` method. The `Application.java` is the startup class for the Spring Boot container.
 
-1. Look at the `Application.java` in the `com.sap.cap.productsservice` package (file path: `srv/src/main/java/com/sap/cap/productsservice`).
+1. Look at the `Application.java` in the `customer.products_service` package (file path: `srv/src/main/java/customer/products_service`).
 
     <!-- border -->![open Application.java class](application-class.png)
 
