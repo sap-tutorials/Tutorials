@@ -9,7 +9,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Using the SAP HANA data lake File Store REST API with Node.js
-<!-- description --> Learn how to use the SAP HANA data lake REST API to manage, upload, download, and list your files using Node.js.
+<!-- description --> Learn how to use the SAP HANA data lake REST API to manage, upload, delete, and list your files using Node.js.
 
 ## Prerequisites
  - Access to a non-trial SAP HANA data lake instance.
@@ -242,10 +242,149 @@ Example Output-
 ![Liststatusrecursive Display](recursive.png)
 
 
+### Use the DELETE Endpoint
+
+The DELETE Endpoint is used to delete a file.
+
+Fill in the code below with your information.The following code sets up the API call to the `DELETE` endpoint and will delete the given file in your SAP data lake File Store.
+
+```Javascript
+const file_path='/nodeTutorialFiles'; //Define the path where the file to be deleted is located within the data lake.
+const file_name='FirstTUTORIALFile'; //name of the file that needs to be deleted.
+const options = {
+    hostname: FILES_REST_API,
+    port: 443,
+    path: `/webhdfs/v1/${file_path}/${file_name}?op=DELETE`,
+    method: 'DELETE',
+    key: fs.readFileSync(KEY_PATH),
+    cert: fs.readFileSync(CRT_PATH),
+    headers: {
+      'x-sap-filecontainer': CONTAINER,
+      'Content-Type': 'application/json'
+    },
+    rejectUnauthorized: false, 
+    
+  };
+if (file_name!=''){
+const req = https.request(options, (response)=>{
+  let str='';
+  response.on('data', function (chunk) {
+    str += chunk;
+  });
+  response.on('end', function () {
+    const obj=JSON.parse(str);
+    if (obj.boolean===false){
+        console.log("statuscode:"+response.statusCode)
+        console.log(str);
+        console.log("File or directory does not exist, make sure the file/directory exists and try again!");
+        }
+    else{
+        console.log(str);
+        console.log('File Deleted');
+    }
+  });
+
+});
+req.on('error', (e) => {
+  console.error('Request error:', e);
+});
+req.end();
+}
+else{
+    console.log("Please enter a valid file name and try again!");
+}
+
+```
+Run the code .
+
+Example Output-
+
+The file that was meant to be deleted no longer exists in DBX.
+
+Or 
+
+Upon attempting to access the file via the command line, an error message indicates that the file no longer exists, confirming its deletion.
+
+
+`hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -cacert <PATH>\ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> cat <file_path>/<file_name>`
+
+![Liststatusrecursive Display](delete.png)
+
+
+### Use the DELETE_BATCH Endpoint
+
+The DELETE_BATCH Endpoint is used to delete multiple files in a single go.
+
+Fill in the code below with your information.The following code sets up the API call to the `DELETE_BATCH` endpoint and will delete the given files in your SAP data lake File Store.
+
+```Javascript
+const filePathList = [   //A list containing all the file paths of the files that need to be deleted.
+  "/nodeTutorialFiles/Test",
+  "/nodeTutorialFiles/Test2"
+];
+
+const postData = JSON.stringify({
+  files: filePathList.map(path => ({ path }))
+});
+
+const options = {
+    hostname: FILES_REST_API,
+    port: 443,
+    path: '/webhdfs/v1/?op=DELETE_BATCH',
+    method: 'POST',
+    key: fs.readFileSync(KEY_PATH),
+    cert: fs.readFileSync(CRT_PATH),
+    headers: {
+      'x-sap-filecontainer': CONTAINER,
+      'Content-Type': 'application/json'
+    },
+    rejectUnauthorized: false
+};
+
+const req = https.request(options, (response)=>{
+  let str='';
+  response.on('data', function (chunk) {
+    str += chunk;
+  });
+  response.on('end', function () {
+    console.log('statusCode: ' + response.statusCode);
+    console.log("status:" +response.statusMessage);
+    console.log('Response:', str);
+    console.log('Files Deleted');
+  });
+
+});
+req.on('error', (e) => {
+  console.error('Request error:', e);
+});
+req.write(postData);
+req.end();
+
+```
+Run the code .
+
+Example Output-
+
+The files that were meant to be deleted no longer exists in DBX.
+
+Or 
+
+Upon attempting to access the files via the command line, an error message indicates that the files no longer exists, confirming thier deletion.
+
+
+`hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -cacert <PATH>\ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> cat <file_path>/<file_name>`
+
+![Liststatusrecursive Display](delete_batch.png)
+
+
+>Note:-the call returns true, if all the files listed were successfully deleted, regardless of whether or not the files actually existed when the delete batch was initiated.  If a file does not exist in the list you provided, this is not considered an error.  
+
+
+
 
 ### Explore and Experiment!
 
-These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include DELETE, APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
+These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
 
 To replicate these requests in other languages or HTTP tools, copy the request headers, FILES REST API + request URL, and body contents.
 
