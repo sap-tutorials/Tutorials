@@ -356,6 +356,7 @@ static String jwt = "Bearer " + context.getPreconfiguredJwtGenerator()
   ```
 
 4. Add the JWT in the authorization header of your test requests.
+
 ```java
 ThreadContextExecutor.fromNewContext().execute(() -> {
     mvc
@@ -370,6 +371,7 @@ ThreadContextExecutor.fromNewContext().execute(() -> {
 5. Run the integration tests again. They should now pass. **Note:** For the purpose of this tutorial, we are only adjusting the `HelloWorldControllerTest` class, you would also have to make similar changed to `BusinessPartnerControllerTest` class. We would be skipping that for now.(You could also comment the test cases in `BusinessPartnerControllerTest` class to proceed with the tutorial). 
 
 6. Also enhance your `manifest.yml` file by adding an environment variable and a service binding for the XSUAA service instance:
+
 ```diff
   env:
     TARGET_RUNTIME: main
