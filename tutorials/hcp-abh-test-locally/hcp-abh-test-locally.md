@@ -2,8 +2,8 @@
 parser: v2
 primary_tag: products>sap-business-technology-platform
 auto_validation: true
-author_name: Prathibha GC
-author_profile: https://github.com/Prathibha-Mouli
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
 time: 20
 tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub ]
 ---
