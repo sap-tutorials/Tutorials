@@ -344,7 +344,7 @@ In that case leverage the XSUAA testing library to mock request authentication.
 
 1. Create a JWT for testing (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
 
-  ```JAVA
+```java
 @RegisterExtension
 static SecurityTestExtension extension = SecurityTestExtension.forService(Service.XSUAA) // or Service.IAS
         .setPort(9001);
@@ -353,7 +353,7 @@ static String jwt = "Bearer " + context.getPreconfiguredJwtGenerator()
         .withLocalScopes("Display")
         .createToken()
         .getTokenValue();
-  ```
+```
 
 4. Add the JWT in the authorization header of your test requests.
 
