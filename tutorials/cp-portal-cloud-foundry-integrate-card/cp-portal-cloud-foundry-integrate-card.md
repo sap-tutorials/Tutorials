@@ -112,7 +112,9 @@ To do this, go to the Content Manager in SAP Build Work Zone, standard edition.
 
     <!-- border -->![Open Site Settings](16-open-site-settings.png)
 
-3. In the **Assignments** panel, click inside the search box to open a list of available roles. You'll see the `ContentPackageRole`. Assign it to the site by clicking the **+** next to the role name and then click **Save**.
+3. Click **Edit**.
+
+4. In the **Assignments** panel, click inside the search box to open a list of available roles. You'll see the `ContentPackageRole`. Assign it to the site by clicking the **+** next to the role name and then click **Save**.
 
     <!-- border -->![Assign role to site](17-assign-role-to-site.png)    
 
@@ -133,10 +135,23 @@ To do this, go to the Content Manager in SAP Build Work Zone, standard edition.
 
 4. Click **Edit**.
 
-5. In the section where you've added the card, enter `My Card` as the **Section Title** and click **Save**.
+5. Click **+** to add a new secion.
+
+    <!-- border -->![Name section](25-add-section.png)
+
+6. In the **Section Title** field, type **My Cards**
 
     <!-- border -->![Name section](24-name-section.png)
 
+7. Click **Add Widget**
+
+    <!-- border -->![Add widget](26-add-widget.png)
+
+8. Select **Cards**.
+
+    <!-- border -->![Select card](27-select-cards.png)
+
+9. Select the **Products by Category Card** to add it to your **Overview** page and then click **Save**.
 
 ### View the card in your runtime site
 
@@ -144,10 +159,10 @@ To do this, go to the Content Manager in SAP Build Work Zone, standard edition.
 
     <!-- border -->![Go back to Site Directory](18-open-site-directory.png)   
 
-2. Click on the **Go to site** icon.
+2. Click the **Go to site** icon.
 
      <!-- border -->![Go to site](19-go-to-site.png) 
 
-3. This is what you'll see:
+3. You'll see that your card has been added to the **Overview** page:
 
-    <!-- border -->![Final view](20-final-view.png) 
+    <!-- border -->![Final view](22-view-card.png) 
