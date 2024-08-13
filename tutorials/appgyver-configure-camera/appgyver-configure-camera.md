@@ -95,10 +95,10 @@ As the alert is currently set to display a static text response only, we want to
 
     And scanning a barcode will return the barcode number only, as no further information has been configured for the event yet.
 
-As an example:
-
-![View results](iphoneapp3.png)
-
 If you can't find a barcode, here's an example:
 
 ![Barcode example](barcode.gif)  
+
+The result should be:
+
+![View results](iphoneapp3.png)
