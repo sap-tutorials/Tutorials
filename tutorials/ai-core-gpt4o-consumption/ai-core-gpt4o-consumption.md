@@ -38,10 +38,11 @@ NOTE: **do not use DOS Prompt instead of PowerShell**
 Enter the following command after replacing `<deployment_url>`, `<resource-group>`, `<token>` with the values for the corresponding model.
 
 NOTE: 
- - for windows devices, **replace "curl" with "curl.exe"**
+ - for macOS based devices use  use the **bash** command
+ - for windows devices, use the **PowerShell** command
  - Update the “url” to the link of the image resource you want to query the model upon and give the corresponding query in the “text” parameter.
 
-```powershell
+```bash
 curl -L '<deployment_url>/chat/completions?api-version=2023-05-15' \
 --header 'AI-Resource-Group: <resource-group>' \
 --header 'Content-Type: application/json' \
@@ -58,7 +59,7 @@ curl -L '<deployment_url>/chat/completions?api-version=2023-05-15' \
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/scene detection.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/sceneDetection.jpg"
               }
           }
         ]
@@ -66,6 +67,10 @@ curl -L '<deployment_url>/chat/completions?api-version=2023-05-15' \
     ],
     "max_tokens": 4096
 }'
+```
+
+```PowerShell
+curl.exe -L "<deployment_url>/chat/completions?api-version=2023-05-15" --header "AI-Resource-Group: <resource-group>" --header "Content-Type: application/json" --header "Authorization: Bearer <token>" --data '{\"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"text\",\"text\": \"describe the scene\"},{\"type\":\"image_url\",\"image_url\": {\"url\": \"https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/sceneDetection.jpg\"}}]}],\"max_tokens\": 4096 }'
 ```
 [OPTION END]
 
@@ -103,7 +108,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/scene detection.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/sceneDetection.jpg"
               }
           }
         ]
@@ -143,10 +148,11 @@ NOTE: **do not use DOS Prompt instead of PowerShell**
 Enter the following command after replacing `<deployment_url>`, `<resource-group>`, `<token>` with the values for the corresponding model.
 
 NOTE: 
- - for windows devices, **replace "curl" with "curl.exe"**
+ - for macOS based devices use  use the **bash** command
+ - for windows devices, use the **PowerShell** command
  - Update the “url” to the link of the image resource you want to query the model upon and give the corresponding query in the “text” parameter.
 
-```powershell
+```bash
 curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
 --header 'AI-Resource-Group: <resource-group>' \
 --header 'Content-Type: application/json' \
@@ -163,7 +169,7 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/object detection.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg"
               }
           }
         ]
@@ -171,6 +177,10 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
     ],
     "max_tokens": 4096
 }'
+```
+
+```PowerShell
+curl.exe -L "<deployment_url>/chat/completions?api-version=2023-05-15" --header "AI-Resource-Group: <resource-group>" --header "Content-Type: application/json" --header "Authorization: Bearer <token>" --data '{\"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"text\",\"text\": \"describe the scene\"},{\"type\":\"image_url\",\"image_url\": {\"url\": \"https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg\"}}]}],\"max_tokens\": 4096 }'
 ```
 [OPTION END]
 
@@ -208,7 +218,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/object detection.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg"
               }
           }
         ]
@@ -220,7 +230,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
 
 Add the above data in the body of the POST call, then hit ‘Send’ as follows - 
 
-![image](img/scene%20detection.png)
+![image](img/object%20detection.png)
 
 We get the following output accurately describing the scene in the image:
 
@@ -248,10 +258,11 @@ NOTE: **do not use DOS Prompt instead of PowerShell**
 Enter the following command after replacing `<deployment_url>`, `<resource-group>`, `<token>` with the values for the corresponding model.
 
 NOTE: 
- - for windows devices, **replace "curl" with "curl.exe"**
+ - for macOS based devices use  use the **bash** command
+ - for windows devices, use the **PowerShell** command
  - Update the “url” to the link of the image resource you want to query the model upon and give the corresponding query in the “text” parameter.
 
-```powershell
+```bash
 curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
 --header 'AI-Resource-Group: <resource-group>' \
 --header 'Content-Type: application/json' \
@@ -268,7 +279,7 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/graph.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/graph.jpg"
               }
           }
         ]
@@ -276,6 +287,10 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
     ],
     "max_tokens": 4096
 }'
+```
+
+```PowerShell
+curl.exe -L "<deployment_url>/chat/completions?api-version=2023-05-15" --header "AI-Resource-Group: <resource-group>" --header "Content-Type: application/json" --header "Authorization: Bearer <token>" --data '{\"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"text\",\"text\": \"describe the scene\"},{\"type\":\"image_url\",\"image_url\": {\"url\": \"https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/graph.jpg\"}}]}],\"max_tokens\": 4096 }'
 ```
 [OPTION END]
 
@@ -313,7 +328,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/graph.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/graph.jpg"
               }
           }
         ]
@@ -325,7 +340,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
 
 Add the above data in the body of the POST call, then hit ‘Send’ as follows - 
 
-![image](img/scene%20detection.png)
+![image](img/graph.png)
 
 We get the following output accurately describing the scene in the image:
 
@@ -353,10 +368,11 @@ NOTE: **do not use DOS Prompt instead of PowerShell**
 Enter the following command after replacing `<deployment_url>`, `<resource-group>`, `<token>` with the values for the corresponding model.
 
 NOTE: 
- - for windows devices, **replace "curl" with "curl.exe"**
+ - for macOS based devices use  use the **bash** command
+ - for windows devices, use the **PowerShell** command
  - Update the “url” to the link of the image resource you want to query the model upon and give the corresponding query in the “text” parameter.
 
-```powershell
+```bash
 curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
 --header 'AI-Resource-Group: <resource-group>' \
 --header 'Content-Type: application/json' \
@@ -373,7 +389,7 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/math.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/math.jpg"
               }
           }
         ]
@@ -381,6 +397,10 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
     ],
     "max_tokens": 4096
 }'
+```
+
+```PowerShell
+curl.exe -L "<deployment_url>/chat/completions?api-version=2023-05-15" --header "AI-Resource-Group: <resource-group>" --header "Content-Type: application/json" --header "Authorization: Bearer <token>" --data '{\"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"text\",\"text\": \"describe the scene\"},{\"type\":\"image_url\",\"image_url\": {\"url\": \"https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg\"}}]}],\"max_tokens\": 4096 }'
 ```
 [OPTION END]
 
@@ -418,7 +438,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/math.jpg"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/math.jpg"
               }
           }
         ]
@@ -430,7 +450,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
 
 Add the above data in the body of the POST call, then hit ‘Send’ as follows - 
 
-![image](img/scene%20detection.png)
+![image](img/math.png)
 
 We get the following output accurately describing the scene in the image:
 
@@ -458,10 +478,11 @@ NOTE: **do not use DOS Prompt instead of PowerShell**
 Enter the following command after replacing `<deployment_url>`, `<resource-group>`, `<token>` with the values for the corresponding model.
 
 NOTE: 
- - for windows devices, **replace "curl" with "curl.exe"**
+ - for macOS based devices use  use the **bash** command
+ - for windows devices, use the **PowerShell** command
  - Update the “url” to the link of the image resource you want to query the model upon and give the corresponding query in the “text” parameter.
 
-```powershell
+```bash
 curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
 --header 'AI-Resource-Group: <resource-group>' \
 --header 'Content-Type: application/json' \
@@ -478,7 +499,7 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/Sample-handwritten-text-input-for-OCR-1.png"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/handwrittenText.png"
               }
           }
         ]
@@ -486,6 +507,10 @@ curl -L '<deployment-url>/chat/completions?api-version=2023-05-15' \
     ],
     "max_tokens": 4096
 }'
+```
+
+```PowerShell
+curl.exe -L "<deployment_url>/chat/completions?api-version=2023-05-15" --header "AI-Resource-Group: <resource-group>" --header "Content-Type: application/json" --header "Authorization: Bearer <token>" --data '{\"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"text\",\"text\": \"describe the scene\"},{\"type\":\"image_url\",\"image_url\": {\"url\": \"https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg\"}}]}],\"max_tokens\": 4096 }'
 ```
 [OPTION END]
 
@@ -523,7 +548,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
            {
               "type": "image_url",
               "image_url": {
-                 "url": "https://raw.githubusercontent.com/Cibi-SAP/ai-core/main/Sample-handwritten-text-input-for-OCR-1.png"
+                 "url": "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/handwrittenText.png"
               }
           }
         ]
@@ -535,7 +560,7 @@ Now that we’re done with the pre-requisites, we’ll proceed to using the API 
 
 Add the above data in the body of the POST call, then hit ‘Send’ as follows - 
 
-![image](img/scene%20detection.png)
+![image](img/handwrittenText.png)
 
 We get the following output accurately describing the scene in the image:
 
