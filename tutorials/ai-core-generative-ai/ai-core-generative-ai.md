@@ -477,10 +477,8 @@ Open a python programming environment of your choice and run the following code 
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
-from gen_ai_hub.proxy.langchain.init_models import init_embedding_model
 
 llm = init_llm('gpt-4', temperature=0., max_tokens=256)
-embeddings = init_embedding_model('text-embedding-ada-002')
 llm.invoke('What is generative AI?').content
 ```
 
