@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, programming-tool>java, software-product>sap-btp-cloud-foundry-environment]
+tags: [ tutorial>intermediate, programming-tool>java, software-product>sap-btp--cloud-foundry-runtime-and-environment ]
 primary_tag: programming-tool>java
 author_name: Abhinav Singh
 author_profile: https://github.com/singhabhi1999
@@ -1049,7 +1049,8 @@ Add the below content to the file.
 
 ```YAML
 applications:
-- name: <unique ID>-objectstore-sample-svc
+- name: objectstore-sample-svc
+  host: <unique ID>-objectstore-sample-svc
   memory: 2G
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   path: target/objectstore-sample-1.0.0.jar
