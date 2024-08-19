@@ -504,10 +504,11 @@ Use the ID of configuration to create your execution.
 
 ```PYTHON
 # Create execution using configuration
-ai_core_client.execution.create(
+response = ai_core_client.execution.create(
     configuration_id = '<YOUR_CONFIGURATION_ID>', # Change this value.
     resource_group = 'default'
 )
+response.__dict__
 ```
 
 <!-- border -->![image](img2/aics/conf-exec.png)
