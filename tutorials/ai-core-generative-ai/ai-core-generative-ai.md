@@ -449,7 +449,7 @@ You can also include optional parameters such as:
 To install the generative-ai-hub-sdk package in your system, open your terminal or command prompt and run the following command.
 
 ```TEXT
-pip3 install generative-ai-hub-sdk
+pip3 install generative-ai-hub-sdk[all]
 ```
 
 Now you have generative-ai-hub-sdk installed in your system.
