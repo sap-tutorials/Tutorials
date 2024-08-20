@@ -13,7 +13,11 @@ author_profile: https://github.com/kannankumar
 <!-- description --> Use computer vision package integrated with SAP AI Core, to train an AI model to read electricity meters.
 
 ## Prerequisites
-
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links (for internal SAP stakeholders only) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?locale=en-US)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have completed the tutorial to [set up SAP Computer Vision package for SAP AI Core](cv-package-aicore-setup)
 - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html)
 - You have [created a Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)

@@ -15,8 +15,13 @@ author_profile: https://github.com/dhrubpaul
 - How to inference GPT4o with multimodal inputs on AI core
 
 ## Prerequisites
-Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
-Ai core Instance with Standard Plan or Extended Plan
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links (for internal SAP stakeholders only) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?locale=en-US)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
+-Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
+-Ai core Instance with Standard Plan or Extended Plan
 
 Multimodality refers to the ability of a model to process and interpret different types of inputs, such as text, images, audio, or video. In the context of GPT-4o on SAP AI Core, multimodal input allows the model to understand and generate responses that incorporate both text and visual data. This enhances the model's ability to perform complex tasks, such as scene detection, object recognition, and image analysis, by combining the strengths of both language processing and image recognition.
 In this tutorial, we'll demonstrate these capabilities with the help of GPT-4o, with a sample input and output, which can be replicated in future for various use cases.
