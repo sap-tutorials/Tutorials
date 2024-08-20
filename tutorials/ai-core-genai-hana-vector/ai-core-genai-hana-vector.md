@@ -48,7 +48,7 @@ Source: https://pypi.org/project/generative-ai-hub-sdk/
 
 ### Loading vector data from a csv file
 
-The dataset in [GRAPH_DOCU_2503.csv](files/GRAPH_DOCU_QRC3.csv) includes pre-computed vector embeddings. We have incorporated these vectors into the CSV file to facilitate a quick start with vector search, eliminating the need to generate embeddings using an additional function.
+The dataset in [GRAPH_DOCU_2503.csv](https://github.com/sap-tutorials/Tutorials-Contribution/blob/cadc28cdaddf3c5ff7113d3c678148957de8fac5/tutorials/ai-core-genai-hana-vector/files/GRAPH_DOCU_QRC3.csv) includes pre-computed vector embeddings. We have incorporated these vectors into the CSV file to facilitate a quick start with vector search, eliminating the need to generate embeddings using an additional function.
 
 This dataset is specifically derived from the Graph Engine section of the [SAP HANA Cloud documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/sap-hana-cloud-sap-hana-database-graph-reference), as found on the SAP Help Portal.
 
