@@ -12,9 +12,14 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Deploy AI models and set up serving pipelines to scale prediction server.
 
 ## Prerequisites
- - You have connected code to the AI workflows of SAP AI Core using [this tutorial](ai-core-code).
- - You have trained a model using SAP AI Core, such as the house price predictor model in [this tutorial](ai-core-data), or your own model trained in your local system. If you trained your own local model, follow [this tutorial](ai-core-tensorflow-byod) to use it with SAP AI Core.
- - You know how to locate artifacts. This is explained in [this tutorial](ai-core-data).
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links (for internal SAP stakeholders only) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?locale=en-US)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
+- You have connected code to the AI workflows of SAP AI Core using [this tutorial](ai-core-code).
+- You have trained a model using SAP AI Core, such as the house price predictor model in [this tutorial](ai-core-data), or your own model trained in your local system. If you trained your own local model, follow [this tutorial](ai-core-tensorflow-byod) to use it with SAP AI Core.
+- You know how to locate artifacts. This is explained in [this tutorial](ai-core-data).
 
 ## You will learn
   - How to create deployment server an for AI model

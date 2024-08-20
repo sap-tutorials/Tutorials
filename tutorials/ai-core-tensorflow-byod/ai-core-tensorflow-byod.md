@@ -12,6 +12,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Bring a pre-trained text classifier Tensorflow model to SAP AI Core, and write a workflow which will enable GPU deployment of this model, for movie review classification.
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links (for internal SAP stakeholders only) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?locale=en-US)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have [set up an Enterprise SAP BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and set up entitlements and service instances for **SAP AI Core**.
 - You have [set up your Git Repository with SAP AI Core](https://developers.sap.com/tutorials/ai-core-helloworld.html).
 - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)

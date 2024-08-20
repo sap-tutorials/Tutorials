@@ -12,6 +12,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Explore different ways of logging metrics during training and compare generated models.
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links (for internal SAP stakeholders only) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?locale=en-US)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have an understanding of using data and generating models in SAP AI Core, from [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#)
 
 ## You will learn
