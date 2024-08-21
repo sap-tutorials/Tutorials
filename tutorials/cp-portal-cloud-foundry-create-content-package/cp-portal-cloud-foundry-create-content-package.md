@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a content package that includes a UI integration card with it's associated role.
 
 ## Prerequisites
- - You've created a UI integration card with data coming from the SAP Gateway Demo System. If you decide to skip this tutorial you can copy and paste the `manifest.json` file and insert it in this tutorial (more details further down).
+ - You've created a UI integration card using this tutorial: [Create a UI5 Integration Card that Displays Data from the Gateway Demo System](https://developers.sap.com/tutorials/appstudio-sapui5-integrationcard-create.html). You can decide to skip this tutorial - in this case you will copy and paste the `manifest.json` file from this tutorial and insert it in the relevant step below.
  - You have a subscription to SAP Business Application Studio
  - You've created a **Dev Space** in SAP Business Application Studio. For more information, see [Create a Dev Space for SAP Fiori Apps](https://developers.sap.com/tutorials/appstudio-devspace-fiori-create.html)
 
@@ -20,9 +20,9 @@ author_profile: https://github.com/LindsayBert
   - How to create a content package that includes a UI integration card
 
 ## Intro
-A content package is a collection of content items such as cards, roles, pages, and spaces that are bundled together in a ZIP file that can easily be uploaded and used in your site. Once the content in the content package has been activated, it's ready for use in the pages of your site.  
+A content package is a collection of content items such as cards, roles, pages, and spaces that are bundled together in a ZIP file that can easily be uploaded and used in your site.   
 
-In this tutorial, you'll learn how to create a content package in SAP Business Application Studio. The content package will include a UI integration card as well as the role that the card is assigned to. If you prefer to skip the card creation tutorial, you will be able to copy the ready-made code for the card, and paste it in this tutorial later.
+In this tutorial, you'll learn how to create a content package in SAP Business Application Studio. The content package will include a UI integration card as well as the role that the card is assigned to. 
 
 ### Check for development tools for SAP Build Work Zone extension
 
@@ -32,7 +32,7 @@ In this tutorial, you'll learn how to create a content package in SAP Business A
 
     <!-- border -->![Image depicting SAP Business Application Studio with configured dev spaces – click on Edit button](1-2.PNG)
 
-3. Ensure that the **Development Tools for SAP Build Work Zone** extension is checked and save the changes if necessary.
+3. Ensure that the **Development Tools for SAP Build Work Zone** extension is checked, and save the changes if necessary.
 
     <!-- border -->![Image depicting SAP BAS with Development Tools for SAP Build Work Zone extension selected](1-3.PNG)
 
