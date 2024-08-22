@@ -60,7 +60,9 @@ The **Site Directory** opens.
 
     <!-- border -->![View card in the role editor](14a-view-card-in-role.png)
 
-### Add a header in your page
+### Add a header to your page
+
+In this step, you'll add a header to your page for the card that you will add.
 
 1. Go back to the Content Manager by using the breadcrumbs above.
 
@@ -138,7 +140,7 @@ The `ContentPackageRole` is part of the content in the content package ZIP file.
 
     <!-- border -->![Add User](11-add-user.png)
 
-    >Note that you will need to log out and log in again in order for the role assignement to take effect. 
+    >Note that assignment to the role can take time. If you don't want to wait, you can log out and log in again in order for the role assignment to take effect. 
 
 ### View the card in your runtime site
 
