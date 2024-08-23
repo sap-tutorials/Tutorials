@@ -4,7 +4,7 @@ author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
 primary_tag: software-product>sap-build-code
 parser: v2
 ---
