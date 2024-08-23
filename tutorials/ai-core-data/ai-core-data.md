@@ -104,7 +104,7 @@ Your code reads the data file `train.csv` from the location `/app/data`, which w
 Create file `requirements.txt` as shown below. Here, if you don't specify a particular version, as shown for `pandas`, then the latest version of the package will be fetched automatically.
 
 ```TEXT
-sklearn==0.0
+scikit-learn
 pandas
 ```
 
