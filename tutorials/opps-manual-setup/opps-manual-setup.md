@@ -49,7 +49,7 @@ In case you plan to use the trial subaccount that was initially created when set
 <!-- The subscription process is finished once the status icon changes from **Processing** to **Subscribed**. -->
 
 
-In case you plan to use a manually created subaccount, please proceed with the following steps:
+In case you plan to use a manually created subaccount or want to add new services not present at the time of creating your subaccount, please proceed with the following steps:
 
 1. In the navigation pane, open **Entitlements**.
 
@@ -65,7 +65,7 @@ In case you plan to use a manually created subaccount, please proceed with the f
 
 7. Choose **Save**.
 
-8. Repeat sub-steps 2-7 with Promotion Pricing, Administration Trial, Promotion Pricing, Calculation Trial, Promotion Pricing, Data Access Trial, Promotion Pricing, Data Upload Trial.  
+8. Repeat sub-steps 2-7 with Promotion Pricing, Administration Trial, Promotion Pricing, Calculation Trial, Promotion Pricing, Data Access Trial, Promotion Pricing, Data Upload Trial, Promotion Pricing, Coupon Management Trial.  
 
 9. Navigate back to your subaccount.
 
@@ -119,7 +119,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 3. Search for **`promotion`**. This will display all four **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
 
-    <!-- border -->![Promotion Pricing Services](v2_Promotion-Pricing-Services.png)
+    <!-- border -->![Promotion Pricing Services](Service_marketplace.png)
 
 4. Choose the tile of the **Promotion Pricing, Calculation** service.
 
@@ -127,7 +127,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 6. In the popup, most options are already preselected for you. Just enter a name for your instance and choose **Create**.
 
-7. Repeat substeps 3 - 6 with the **Promotion Pricing, Data Access** and **Promotion Pricing, Data Upload** services.
+7. Repeat substeps 3 - 6 with the **Promotion Pricing, Data Access**, **Promotion Pricing, Data Upload** and **Promotion Pricing, Coupon Management** services.
 >You can skip the **Promotion Pricing, Administration** service. It is not needed in a trial scenario.
 
 
@@ -145,9 +145,21 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
       <!-- border -->![Three Dot Symbol](v2_Three-Dot-Symbol.png)
 
-5. In the popup, enter a name for the service key and choose **Create**.
+5. In the popup, enter a name for the service key. 
 
-6. Repeat the above substeps for the remaining Promotion Pricing services.
+> Note: For **Promotion Pricing, Coupon Management** service, you must also upload the binding parameters in .json format, or copy and paste the following .json parameters.
+>   "xs-security": {
+    "xsappname": "ABCouponManagement",
+    "authorities": [
+      "$XSMASTERAPPNAME.PlanActiveCoupons",
+      "$XSMASTERAPPNAME.MaintainInactiveCoupons",
+      "$XSMASTERAPPNAME.ActivateAndDeleteCoupons",
+      "$XSMASTERAPPNAME.RedeemCouponCodes"]
+> The xsappname is used to specify the name of the application to which the authorities are being granted. You can use any name for your use case.
+
+6. Choose **Create**.
+
+7. Repeat the above substeps for the remaining Promotion Pricing services.
 
 After you have created the service key, click the three dot symbol **°°°** next to the name of your service key and choose **View**. This displays the parameters of the service key, which you need to configure the SAP Business Accelerator Hub to fill the solution with your data (see highlighted areas in the screenshot). This step is part of the basic tutorial.
 
