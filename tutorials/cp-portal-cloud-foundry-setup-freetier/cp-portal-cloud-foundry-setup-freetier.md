@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Get started with building a site in SAP Build Work Zone, standard edition using the free tier option.
 
 ## Prerequisite
- Before you can follow this tutorial, you need to first get a SAP BTP subaccount with a Free Tier Service plan. To obtain it, please follow: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account).
+ Before you can follow this tutorial, you need to first get a SAP BTP subaccount with a Free Tier Service plan. To obtain it, please follow: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account). 
 
  When following the above tutorial, please use these values:
 
