@@ -67,16 +67,54 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+
+messages = [{"role": "user", "content": "what is SAP business AI"} ]
+
+kwargs = dict(model_name='gpt-35-turbo', messages=messages)
+response = chat.completions.create(**kwargs)
+
+print(response.to_dict()["choices"][0]["message"]["content"])
+```
+
+**NOTE** - you can switch the model name between gpt-gpt-35-turbo/gpt-35-turbo-16k/gpt-4-32k/gpt-4 as per requirement.
+
+![image](img/1.%20sdkGpt4.png)
+
 [OPTION END]
 
 For more information on the models refer to [Models - OpenAI](https://platform.openai.com/docs/models/models)
@@ -115,16 +153,53 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import embeddings
+
+response = embeddings.create(
+    input="Every decoding is another encoding.",
+    model_name="text-embedding-ada-002"
+)
+print(response.data)
+```
+
+**NOTE** - you can switch the model name between text-embedding-ada-002/text-embedding-3-small/text-embedding-3-large as per requirement.
+
+![image](img/2.%20sdkTextEmbedding.png)
+
 [OPTION END]
 
 For more information on the models refer to [Embeddings - OpenAI](https://platform.openai.com/docs/guides/embeddings/use-cases).
@@ -171,16 +246,52 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+
+messages = [{"role": "user", "content": "what is SAP business AI"} ]
+
+kwargs = dict(model_name='tiiuae--falcon-40b-instruct', messages=messages)
+response = chat.completions.create(**kwargs)
+
+print(response.to_dict()["choices"][0]["message"]["content"])
+```
+
+![image](img/3.%20sdkFalcon.png)
+
 [OPTION END]
 
 For more information on the models refer to [HuggingFace - Falcon](https://huggingface.co/tiiuae/falcon-40b).
@@ -242,16 +353,56 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.google.clients import GenerativeModel
+proxy_client = get_proxy_client('gen-ai-hub')
+kwargs = dict({'model_name': 'gemini-1.0-pro'})
+model = GenerativeModel(proxy_client=proxy_client, **kwargs)
+content = [{
+    "role": "user",
+    "parts": [{
+        "text": "Write a story about a magic backpack."
+    }]
+}]
+model_response = model.generate_content(content)
+print(model_response.candidates[0].content.parts[0].text)
+```
+
+![image](img/4.%20sdkGemini.png)
+
 [OPTION END]
 
 For more information on the models refer to [Gemini Models](https://deepmind.google/technologies/gemini/).
@@ -297,16 +448,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [PaLM 2 for text](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text).
@@ -366,16 +528,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [PaLM 2 for chat](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-chat).
@@ -420,16 +593,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [Text embeddings API ](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api).
@@ -474,16 +658,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [Text embeddings API ](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api).
@@ -544,16 +739,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [What is Luminous?](https://docs.aleph-alpha.com/docs/introduction/luminous/)
@@ -600,16 +806,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [What is Luminous?](https://docs.aleph-alpha.com/docs/introduction/luminous/)
@@ -656,16 +873,27 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
 [OPTION END]
 
 For more information on the models refer to [What is Luminous?](https://docs.aleph-alpha.com/docs/introduction/luminous/)
@@ -716,16 +944,52 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+
+messages = [{"role": "user", "content": "what is SAP business AI"} ]
+
+kwargs = dict(model_name='mistralai--mixtral-8x7b-instruct-v01', messages=messages)
+response = chat.completions.create(**kwargs)
+
+print(response.to_dict()["choices"][0]["message"]["content"])
+```
+
+![image](img/5.%20sdkMixtral.png)
+
 [OPTION END]
 
 For more information on the models refer to [Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1).
@@ -774,16 +1038,64 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+import json
+from gen_ai_hub.proxy.native.amazon.clients import Session
+
+bedrock = Session().client(model_name="amazon--titan-text-express")
+body = json.dumps(
+    {
+            "inputText": "Explain black holes to 8th graders.",
+            "textGenerationConfig": {
+                "maxTokenCount": 3072,
+                "stopSequences": [],
+                "temperature": 0.7,
+                "topP": 0.9,
+            },
+    }
+)
+response = bedrock.invoke_model(body=body)
+response_body = json.loads(response.get("body").read())
+print(response_body['results'][0]['outputText'])
+```
+
+**NOTE** - you can switch the model name between amazon--titan-text-express/amazon--titan-text-lite as per requirement.
+
+![image](img/6.%20sdkTitan.png)
+
 [OPTION END]
 
 For more information on the models refer to [Amazon Titan Text models](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-titan-models-express-lite-bedrock/).
@@ -833,16 +1145,65 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.amazon.clients import Session
+
+bedrock = Session().client(model_name="anthropic--claude-3-haiku")
+conversation = [
+    {
+        "role": "user",
+        "content": [
+            {
+                "text": "Describe the purpose of a 'hello world' program in one line."
+            }
+        ],
+    }
+]
+response = bedrock.converse(
+    messages=conversation,
+    inferenceConfig={"maxTokens": 512, "temperature": 0.5, "topP": 0.9},
+)
+
+print(response['output']['message']['content'][0]['text'])
+```
+
+**NOTE** - you can switch the model name between anthropic--claude-3-haiku/anthropic--claude-3-sonnet as per requirement.
+
+![image](img/7.%20sdkAnthropic.png)
+
 [OPTION END]
 
 For more information on the models refer to [Claude 3 Family](https://www.anthropic.com/news/claude-3-family).
@@ -892,16 +1253,52 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+
+messages = [{"role": "user", "content": "what is SAP business AI"} ]
+
+kwargs = dict(model_name='meta--llama3-70b-instruct', messages=messages)
+response = chat.completions.create(**kwargs)
+
+print(response.to_dict()["choices"][0]["message"]["content"])
+```
+
+![image](img/8.%20sdkLlama.png)
+
 [OPTION END]
 
 For more information on the models refer to [Meta-Llama-3-70B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct).
@@ -951,16 +1348,63 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.amazon.clients import Session
+
+bedrock = Session().client(model_name="anthropic--claude-3-opus")
+conversation = [
+    {
+        "role": "user",
+        "content": [
+            {
+                "text": "Describe the purpose of a 'hello world' program in one line."
+            }
+        ],
+    }
+]
+response = bedrock.converse(
+    messages=conversation,
+    inferenceConfig={"maxTokens": 512, "temperature": 0.5, "topP": 0.9},
+)
+
+print(response['output']['message']['content'][0]['text'])
+```
+
+![image](img/9.%20sdkAnthropic.png)
+
 [OPTION END]
 
 For more information on the models refer to [Claude 3 Family](https://www.anthropic.com/news/claude-3-family).
@@ -1003,16 +1447,57 @@ To begin using the APIs in AI Core, we start with setting up the authentication 
 
 ![image](img/consumption1.png)
 ![image](img/consumption2.png)
+Once the `Access Token URL`, `Client ID` and `Client Secret` are updated, we can proceed to generating a token. Scroll to the bottom and click on 'Get New Access Token'.
+![image](img/consumption23.png)
 For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+
 NOTE: the deployment URL is specific to the model we intend to use.
 
 ![image](img/consumption34.png)
+
+Next, we'll head to the AI Core/lm/deployments/consumption, and select the model we want to use.
+
+![image](img/consumption45.png)
+
 Add the name of your respective resource group. 
 
 ![image](img/consumption5.png)
-Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+Lastly, to begin making API calls, we’ll set up the authentication method to fetch the token from parent. For this, we'll go to Authorization and set the Auth Types as `Inherit auth from parent`.
 
 ![image](img/consumption6.png)
+
+Now we’re ready to use the API for various models.
+
+[OPTION END]
+
+[OPTION BEGIN [GenAI Hub SDK]]
+
+In this example we will see how to consume this generative AI model using Generative AI Hub SDK.
+
+Before we proceed, we need to ensure that SAP generative AI hub SDK has been successfully installed and set-up on our device. Refer to [generative-ai-hub-sdk 2.1.1](https://pypi.org/project/generative-ai-hub-sdk/) for the instructions for the same.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+For inferencing the corresponding model through Generative AI Hub SDK, execute the following python command - 
+
+```PYTHON
+from gen_ai_hub.proxy.native.amazon.clients import Session
+
+bedrock = Session().client(model_name="amazon--titan-embed-text")
+body = json.dumps(
+    {
+        "inputText": "Please recommend books with a theme similar to the movie 'Inception'.",
+    }
+)
+response = bedrock.invoke_model(
+    body=body,
+)
+response_body = json.loads(response.get("body").read())
+print(response_body)
+```
+
+![image](img/10.%20sdkTitanEmbedText.png)
+
 [OPTION END]
 
 For more information on the models refer to [Amazon Titan Text models](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-titan-models-express-lite-bedrock/).
