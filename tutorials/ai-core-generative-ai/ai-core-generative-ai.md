@@ -13,7 +13,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Understand the principles of prompt engineering and learn to create effective prompts for AI models like ChatGPT. Prompt engineering is crucial for obtaining desired outputs from AI models. It helps in guiding the model's response in a particular direction.
 
 ## Prerequisites
-
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have an SAP AI Core service instance and service key. 
 - You're using the Extended service plan.
 - You have completed the client authorization for your preferred user interface. 
@@ -449,7 +453,7 @@ You can also include optional parameters such as:
 To install the generative-ai-hub-sdk package in your system, open your terminal or command prompt and run the following command.
 
 ```TEXT
-pip3 install generative-ai-hub-sdk
+pip3 install generative-ai-hub-sdk[all]
 ```
 
 Now you have generative-ai-hub-sdk installed in your system.
@@ -477,10 +481,8 @@ Open a python programming environment of your choice and run the following code 
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
-from gen_ai_hub.proxy.langchain.init_models import init_embedding_model
 
 llm = init_llm('gpt-4', temperature=0., max_tokens=256)
-embeddings = init_embedding_model('text-embedding-ada-002')
 llm.invoke('What is generative AI?').content
 ```
 
