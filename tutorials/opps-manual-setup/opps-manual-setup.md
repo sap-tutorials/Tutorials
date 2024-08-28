@@ -14,7 +14,7 @@ primary_tag: products>sap-business-technology-platform
 ## Prerequisites
  - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
  - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)). 
- - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
+ - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21). 
 
 
 
