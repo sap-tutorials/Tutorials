@@ -148,13 +148,18 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 5. In the popup, enter a name for the service key. 
 
 > Note: For **Promotion Pricing, Coupon Management** service, you must also upload the binding parameters in .json format, or copy and paste the following .json parameters.
->   "xs-security": {
+```json
+   {
+   "xs-security": {
     "xsappname": "ABCouponManagement",
     "authorities": [
       "$XSMASTERAPPNAME.PlanActiveCoupons",
       "$XSMASTERAPPNAME.MaintainInactiveCoupons",
       "$XSMASTERAPPNAME.ActivateAndDeleteCoupons",
-      "$XSMASTERAPPNAME.RedeemCouponCodes"]
+      "$XSMASTERAPPNAME.RedeemCouponCodes"]}
+}
+```
+
 > The xsappname is used to specify the name of the application to which the authorities are being granted. You can use any name for your use case.
 
 6. Choose **Create**.
