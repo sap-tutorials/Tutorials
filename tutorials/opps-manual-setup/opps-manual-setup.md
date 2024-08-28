@@ -21,7 +21,7 @@ primary_tag: products>sap-business-technology-platform
 ## You will learn
   - How to subscribe to SAP Omnichannel Promotion Pricing trial on SAP BTP
   - How to set up roles and authorizations
-  - How to create service instances and service keys 
+  - How to create service instances and service keys
 
   In this tutorial, you will learn how to set up SAP Omnichannel Promotion Pricing including its services.
   With SAP Omnichannel Promotion Pricing, you can calculate effective sales prices in your sales channel applications by applying promotional rules. You drive a seamless buying experience because you provide the same calculation based on the same promotion and price data across all sales channels.
