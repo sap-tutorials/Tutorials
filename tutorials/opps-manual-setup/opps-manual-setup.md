@@ -151,14 +151,14 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 ```json
    {
-   "xs-security": {
+    "xs-security": {
     "xsappname": "ABCouponManagement",
     "authorities": [
       "$XSMASTERAPPNAME.PlanActiveCoupons",
       "$XSMASTERAPPNAME.MaintainInactiveCoupons",
       "$XSMASTERAPPNAME.ActivateAndDeleteCoupons",
       "$XSMASTERAPPNAME.RedeemCouponCodes"]}
-}
+   }
 ```
 
 > The xsappname is used to specify the name of the application to which the authorities are being granted. You can use any name for your use case.
