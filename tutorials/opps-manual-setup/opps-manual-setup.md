@@ -148,6 +148,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 5. In the popup, enter a name for the service key. 
 
 > Note: For **Promotion Pricing, Coupon Management** service, you must also upload the binding parameters in .json format, or copy and paste the following .json parameters.
+
 ```json
    {
    "xs-security": {
