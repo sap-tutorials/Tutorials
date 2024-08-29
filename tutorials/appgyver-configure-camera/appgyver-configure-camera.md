@@ -8,6 +8,7 @@ author_profile: https://github.com/thecodester
 parser: v2
 ---
 
+
 # Configure SAP Build Application to Open Device Camera
 <!-- description --> Configure the logic flow in your application to enable your device to open your camera on demand, whenever the user clicks the Scan button.
 
