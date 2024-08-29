@@ -115,7 +115,7 @@ The flow consists of the following parts:
     | Add FLP configuration | **Yes** |
     | Configure advanced options | **No** (default) |
 
-    Make sure to set the correct project folder path.
+    Make sure to set the correct project folder path and to use the latest SAPUI5 version, which should be added as default.
 
     <!-- border -->![Project Attributes](BAS-Generate-App-6-1-.png)
 
