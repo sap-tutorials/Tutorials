@@ -27,7 +27,7 @@ The Low-Code / No-Code service on SAP BTP is available with a subscription boost
 
 Follow the instructions found in the following video.
 
-<iframe width="560" height="315" src="https://youtu.be/ZpQM2B1v2GY?si=oIQQYRczI6H7ClOu" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
 
 
 
