@@ -5,6 +5,7 @@ auto_validation: true
 time: 15
 tags: [ software-product>sap-fiori, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-fiori
+contributors: [ Dimitri Herber > fakirdi, Conrad Bernal > cjbernal, Joachim Fiess > jo-fiess, Hitesh Parmar > hitesh-parmar]
 ---
 ## You will learn
 - How to create an SAP Fiori application of type list report application

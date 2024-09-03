@@ -3,9 +3,10 @@ author_name: Dimitri Herber
 author_profile: https://github.com/fakirdi
 auto_validation: true
 time: 15
-tags: [ software-product-function>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+tags: [ software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-fiori
 parser: v2
+contributors: [ Dimitri Herber > fakirdi, Conrad Bernal > cjbernal, Joachim Fiess > jo-fiess, Hitesh Parmar > hitesh-parmar]
 ---
 
 # Extend the Object Page by Adding More Functionality
