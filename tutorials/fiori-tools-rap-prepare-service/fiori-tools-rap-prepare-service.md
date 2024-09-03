@@ -4,7 +4,7 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori-elements, products>sap-business-technology-platform, products>sap-btp--abap-environment]
 primary_tag: products>sap-fiori
-contributors: [ Dimitri Herber > fakirdi, Conrad Bernal > cjbernal, Joachim Fiess > jo-fiess, Hitesh Parmar > hitesh-parmar]
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Prepare the RAP-Based Travel Service
