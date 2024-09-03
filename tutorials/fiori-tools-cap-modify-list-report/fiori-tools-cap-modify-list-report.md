@@ -6,6 +6,7 @@ time: 15
 tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
 primary_tag: products>sap-fiori
 parser: v2
+contributors: [ Dimitri Herber > fakirdi, Conrad Bernal > cjbernal, Joachim Fiess > jo-fiess, Hitesh Parmar > hitesh-parmar]
 ---
 
 # Refine the List Report with Additional UI Elements 
