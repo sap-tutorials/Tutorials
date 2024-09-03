@@ -54,10 +54,10 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
 2.  Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
    
-    This tutorial uses the HOTEL schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
+    This tutorial uses the HOTELS schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
     
     ```Advanced Options Field
-    currentSchema=HOTEL;
+    currentSchema=HOTELS;
     ```
 
     >Ensure that you connect the database securely using TLS/SSL by ticking the checkbox. If you do not check the Save Password checkbox, you will have to enter your password each time you start using the extension.
@@ -133,7 +133,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 ### Using the Database List and Catalog Browser
 1. Select **Schemas** to open the list of schemas in the Catalog Browser. 
 
-    As you can see, since the current Schema was set to HOTEL using advanced options when adding the database, this list is already filtered for you.  By hovering or clicking on the Catalog Browser section, you will see a filter icon and a refresh icon. 
+    As you can see, since the current Schema was set to HOTELS using advanced options when adding the database, this list is already filtered for you.  By hovering or clicking on the Catalog Browser section, you will see a filter icon and a refresh icon. 
     
 2. Click on the filter icon. 
 
@@ -143,7 +143,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     ![Filter Hotel](filterHotel.png) 
 
-3. Clicking OK will apply your filter selections. Keep the HOTEL filter selected and click OK. 
+3. Clicking OK will apply your filter selections. Keep the HOTELS filter selected and click OK. 
 
 
 ### Visual Studio Code features
