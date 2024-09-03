@@ -17,13 +17,13 @@ Close the Download Manager if it is running in GUI mode.
 
 
 ## You will learn
-You will learn how to download the binary image of SAP HANA 2.0, express edition and optional additional components.
+How to download the binary image of SAP HANA 2.0, express edition and optional additional components.
 
 ---
 
 ## Intro
 > Note:
-> The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user, download the platform-independent Download Manager (`HXEDownloadManager.jar`) to use console mode.
+> The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user and wish to use console mode, download the platform-independent Download Manager (`HXEDownloadManager.jar`).
 > 
 > 
 
