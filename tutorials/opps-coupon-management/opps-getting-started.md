@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Lena Bast
-author_profile: https://github.com/BastLena
+author_name: Aathira P
+author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
