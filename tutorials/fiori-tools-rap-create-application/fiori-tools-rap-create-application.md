@@ -6,7 +6,7 @@ author_profile: https://github.com/fakirdi
 time: 20
 tags: [software-product>sap-fiori, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-business-application-studio, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-fiori
-contributors: [ Dimitri Herber > fakirdi, Conrad Bernal > cjbernal, Joachim Fiess > jo-fiess, Hitesh Parmar > hitesh-parmar]
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Generate an SAP Fiori Elements Application based on a RAP-based Service
