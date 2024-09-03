@@ -117,7 +117,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 2. In the navigation pane, choose **Services > Service Marketplace**.
 
-3. Search for **`promotion`**. This will display all four **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
+3. Search for **`promotion`**. This will display all **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
 
     <!-- border -->![Promotion Pricing Services](Service_marketplace.png)
 
@@ -146,22 +146,6 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
       <!-- border -->![Three Dot Symbol](v2_Three-Dot-Symbol.png)
 
 5. In the popup, enter a name for the service key. 
-
-> Note: For **Promotion Pricing, Coupon Management** service, you must also upload the binding parameters in .json format, or copy and paste the following .json parameters.
-
-```json
-   {
-    "xs-security": {
-    "xsappname": "ABCouponManagement",
-    "authorities": [
-      "$XSMASTERAPPNAME.PlanActiveCoupons",
-      "$XSMASTERAPPNAME.MaintainInactiveCoupons",
-      "$XSMASTERAPPNAME.ActivateAndDeleteCoupons",
-      "$XSMASTERAPPNAME.RedeemCouponCodes"]}
-   }
-```
-
-> The xsappname is used to specify the name of the application to which the authorities are being granted. You can use any name for your use case.
 
 6. Choose **Create**.
 
