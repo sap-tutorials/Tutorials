@@ -12,7 +12,7 @@ primary_tag: software-product>sap-business-technology-platform
 <!-- description --> Sign up for a productive account on SAP Business Technology Platform and try out SAP's services with free tier service plans.
 
 ## Prerequisites
-This tutorial helps you to sign an **enterprise account** with SAP that includes services with free service plans. If you are acting as an individual and just want to learn and explore SAP Business Technology Platform, start your journey by creating a [SAP BTP trial account](https://www.sap.com/registration/trial.908cb719-0e03-421c-a091-daca045f0acc.html), which allows you to try out SAP BTP services in a separate environment. Note that the trial landscape offers different service plans than the free tier model for SAP TP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
+This tutorial helps you to sign an **enterprise account** with SAP that includes services with free service plans. If you are acting as an individual and just want to learn and explore SAP Business Technology Platform, start your journey by creating a [SAP BTP trial account](https://www.sap.com/registration/trial.908cb719-0e03-421c-a091-daca045f0acc.html), which allows you to try out SAP BTP services in a separate environment. Note that the trial landscape offers different service plans than the free tier model for SAP BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
 ## How does free tier work?
 The global account you will create in this tutorial gives you access to a productive environment with both free and paid plans. If you activate **free tier** plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however. For more information, see [Enterprise Accounts](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/171511cc425c4e079d0684936486eee6.html?locale=en-US&version=Cloud) and [Using Free Service Plans](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/524e1081d8dc4b0f9d055a6bec383ec3.html?locale=en-US&version=Cloud).
@@ -73,7 +73,7 @@ The following page offers to configure your solution. Select:
 
   <!-- border -->![Configure your solution](btp-free-tier-account-configure-3-months.png)
 
-Select **Check Out**.
+Proceed by selecting **Check Out**.
 
 
 ### Add payment details

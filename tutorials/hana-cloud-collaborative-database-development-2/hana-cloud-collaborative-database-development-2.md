@@ -27,7 +27,7 @@ primary_tag: products>sap-hana-cloud
 >To answer the first question, learn what benefits different table types in SAP HANA Cloud, SAP HANA database can offer you based on your needs. The following 3 tutorials in this tutorial group will help you navigate through your challenges with the managing data structures:
 
 1.	Get started to collaborate in SAP Business Application Studio
-2.	You are here <sub-style="font-size:30px">&#9755;</sub> **Import data into a table in SAP HANA Database Project**
+2.	You are here <sub style="font-size:30px">&#9755;</sub> **Import data into a table in SAP HANA Database Project**
 3.	Change data structures using `HDBTABLE` and `HDBMIGRATIONTABLE` objects
 
     > To answer the second question, create template projects that help you set up service connections, handle synonyms and prepare authorization management. You can create these templates once in the beginning and give your project team members a head-start. Using the template, they can build on your work and can quickly start working productively.

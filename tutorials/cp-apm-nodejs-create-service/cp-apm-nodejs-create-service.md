@@ -22,7 +22,7 @@ parser: v2
 
 ## Prerequisites
 
-- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 18. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 20. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
 - (Windows only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) section of the CAP documentation.
 - You've installed an HTTP client, for example, [REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
@@ -76,7 +76,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
-    > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
+    > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/tools/cds-editors#cds-editor) in the CAP documentation.
 
 ### Start project
 
@@ -227,7 +227,7 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    <!-- border; size:540px -->![application](application_local.png)
+    <!-- border; size:540px -->![Generated index page](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
@@ -274,9 +274,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `data-model.cds`.
+1. In the **`db`** folder choose the **New File** icon in VS Code and create a new file called `schema.cds`.
 
-2. Add the following code to the file `data-model.cds`:
+2. Add the following code to the file `schema.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -306,7 +306,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
-    using my.bookshop as my from '../db/data-model';
+    using my.bookshop as my from '../db/schema';
 
     service CatalogService {
       entity Books @readonly as projection on my.Books;
@@ -319,32 +319,36 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 ### Add initial data
 
-In VS Code you will add plain CSV files in folder `db/data` to fill your database tables with initial data.
+You will add plain CSV files in folder `db/data` to fill your database tables with initial data. In the command line window execute the following:
 
-1. In the `db` folder, choose **New File** and enter `data/my.bookshop-Authors.csv` to create a new folder `data` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
+```sh
+cds add data
+```
+
+This adds csv files with a single header line for all entities to the `db/data/` folder. The name of the files matches the entities' namespace and name, separated by `-`.
+
+1. Open the file `db/data/my.bookshop-Authors.csv` and add the following sample data to the file:
 
     ```CSV
-    ID;name
-    101;Emily Brontë
-    107;Charlote Brontë
-    150;Edgar Allen Poe
-    170;Richard Carpenter
+    101,Emily Brontë
+    107,Charlote Brontë
+    150,Edgar Allen Poe
+    170,Richard Carpenter
     ```
 
-2. In the newly created `data` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
+2. Open the file `db/data/my.bookshop-Books.csv` and add the following sample data to the file:
 
     ```CSV
-    ID;title;author_ID;stock
-    201;Wuthering Heights;101;12
-    207;Jane Eyre;107;11
-    251;The Raven;150;333
-    252;Eleonora;150;555
-    271;Catweazle;170;22
+    201,Wuthering Heights,101,12
+    207,Jane Eyre,107,11
+    251,The Raven,150,333
+    252,Eleonora,150,555
+    271,Catweazle,170,22
     ```
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-    > Make sure that you now have a folder hierarchy `db/data/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/data` folder.
+    > For now, you can ignore the additional files that `cds add data` generated for you.
 
     > After you added these files, `cds watch` restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
@@ -383,13 +387,7 @@ Instead of using in-memory, you can also use persistent databases.
 
 1. If `cds watch` is running, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
-2. Install `SQLite3` packages.
-
-    ```Shell/Bash
-    npm i sqlite3 --no-save
-    ```
-
-3. Configure the database in your `package.json` in the `cds.requires.db` section.
+2. Configure the database in your `package.json` in the `cds.requires.db` section.
 
     ```json
     {
@@ -424,19 +422,19 @@ Instead of using in-memory, you can also use persistent databases.
     cds deploy
     ```
 
-    > You've now created an `SQLite` database file under `db/my-bookshop.db`.
+    > You've now created an `SQLite` database file under `db/my-bookshop.sqlite`.
 
     > The difference to the automatically provided in-memory database is that you now get a persistent database stored in the local file.
 
 4. Open `SQLite` and view the newly created database:
 
     ```Shell/Bash
-    sqlite3 db/my-bookshop.db -cmd .dump
+    sqlite3 db/my-bookshop.sqlite -cmd .dump
     ```
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
 6. Run your service.
 

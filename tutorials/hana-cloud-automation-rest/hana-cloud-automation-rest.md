@@ -7,7 +7,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Automating SAP HANA Cloud Tasks with a REST API
-<!-- description --> Learn how the SAP Service Manager's REST API can be used in a REST Client or in a Node.js application.
+<!-- description --> Learn how the SAP Service Manager's REST API can be used in a REST Client or in a Node.js application with instances that have been provisioned to the subaccount.
 
 ## Prerequisites
 - An SAP BTP account
@@ -30,7 +30,7 @@ A service manager instance will be created.  It can then be used to manage SAP H
  
     ![create a service manager instance](create-service-manager-instance.png)
 
-2. Create a service binding by clicking on the just created service manager instance and selecting **Create** under **Service Bindings**.
+2. Create a service binding by clicking on the just created service manager instance and choose **Create** under **Service Bindings**.
 
     ![add a binding](create-service-manager-binding.png)
 
@@ -39,8 +39,8 @@ A service manager instance will be created.  It can then be used to manage SAP H
     ![service manager binding](service-manager-binding.png)
 
 ### Try out the REST APIs
-The [SAP Service Manager's APIs](https://help.sap.com/docs/service-manager/sap-service-manager/working-with-sap-service-manager-apis) are available through a REST API.  Details of the REST API can be seen in the [Business Accelerator Hub](https://api.sap.com/api/APIServiceManagment/resource/Service_Instances).
-
+The [SAP Service Manager's APIs](https://help.sap.com/docs/service-manager/sap-service-manager/working-with-sap-service-manager-apis) are available through a REST API.  Details of the REST API can be seen in the [Business Accelerator Hub](https://api.sap.com/api/APIServiceManager/resource/Service_Instances).
+ 
 The API's can be invoked using a tool such as the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for Visual Studio Code.  Additional details on how to use the REST Client can be found at the tutorial [Access SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
 
 1. Create a folder and a text file that will contain REST API calls and open the file with Visual Studio Code.
@@ -88,14 +88,14 @@ The API's can be invoked using a tool such as the [REST Client](https://marketpl
 
     #Service plan query
     #See also https://help.sap.com/docs/service-manager/sap-service-manager/filtering-parameters-and-operators
-    #See also https://api.sap.com/api/APIServiceManagment/resource/Service_Plans
+    #See also https://api.sap.com/api/APIServiceManager/resource/Service_Plans
     GET {{uri}}/v1/service_plans?fieldQuery=name eq 'hana'
     Authorization: Bearer {{bearer}}
 
     ###
 
     #Instance query
-    #See also https://api.sap.com/api/APIServiceManagment/resource/Service_Instances
+    #See also https://api.sap.com/api/APIServiceManager/resource/Service_Instances
     GET {{uri}}/v1/service_instances
     Authorization: Bearer {{bearer}}
 

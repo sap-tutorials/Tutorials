@@ -4,6 +4,7 @@ auto_validation: true
 time: 30
 tags: [ products>sap-fiori-elements, tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--abap-environment]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Refine the List Report with Annotations

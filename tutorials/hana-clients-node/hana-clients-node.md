@@ -558,7 +558,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
             return PromiseModule.close(results);
         })
         .then(() => {
-            PromiseModule.drop(statement);
+            return PromiseModule.drop(statement);
         })
         .then(() => {
             PromiseModule.disconnect(connection);

@@ -58,8 +58,6 @@ You can read through the steps required to implement a feature and then either a
 At this point, you are done with Guided Development. You can close the `ListReport_SEPMRA_C_PD_product.json` tab, as well as the Guided Development tab: `Guided Development - myfioriapp`.
 
 
-
-
 ### Copy backend annotation visually to local annotation file
 
 

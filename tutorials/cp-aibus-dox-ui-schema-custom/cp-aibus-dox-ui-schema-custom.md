@@ -39,7 +39,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
     ><!-- border -->![Access](plan.png)
 
 
-    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details on how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
+    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details about how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -53,7 +53,15 @@ If you are new to the Document Information Extraction UI, first try out the tuto
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
-Here, you find the SAP schemas. The Document Information Extraction UI includes preconfigured SAP schemas for the following standard document types: purchase order, payment advice, and invoice. In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can’t delete or change SAP schemas. You can use them as they are, or create copies and adapt the list of fields according to your needs.
+Here, you find the SAP schemas. The Document Information Extraction UI provides preconfigured SAP schemas for the following standard document types:
+
+* Purchase order
+* Payment advice
+* Invoice 
+
+In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use SAP schemas unchanged to upload documents.
+
+>**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 
 <!-- border -->![Access Schema Configuration](sap-schemas.png)
 
@@ -67,11 +75,11 @@ Here, you find the SAP schemas. The Document Information Extraction UI includes 
 ### Create schema
 
 
-To create your own schema, click **Create** and a dialog opens.
+To create your own schema, click **Create**.
 
 <!-- border -->![Create Schema](create-schema.png)
 
-In the dialog, enter a name for your schema, `power_of_attorney_schema`, for example. Note that the name cannot include blanks. Further, select `Custom` as your **Document Type** and `Document` for **OCR Engine Type**.
+In the dialog that appears, enter a name for your schema, `power_of_attorney_schema`, for example. Note that the name cannot include blanks. Further, select `Custom` as your **Document Type** and `Document` for **OCR Engine Type**.
 
 Click **Create** to create the schema.
 
@@ -93,7 +101,9 @@ To define your first header field, click **Add**.
 
 For each field, you have to enter a name, a data type, and a setup type. Adding a description is optional. Default extractors aren't available for custom documents. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
 
-The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
+The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor (standard fields supported by Document Information Extraction) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
+
+If you'd like to find out more about setup types and how they relate to document types, extraction methods, and default extractors, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types).
 
 As your first header field, add the shipper number of your power of attorney document.
 
@@ -101,7 +111,7 @@ As your first header field, add the shipper number of your power of attorney doc
 
 2. Select `string` for the `Data Type`. Note that a shipper number is a `string`, even though it consists of numbers, as it is an arbitrary combination of numbers without meaning. In contrast, price is an example of the data type `number`.
 
-3. Select `manual` for the `Setup Type` and click **Add** to add the header field.
+3. Select `manual` for the `Setup Type` and click **Save** to add the header field.
 
     <!-- border -->![Create Number](add-number.png)
 
@@ -115,11 +125,11 @@ Click **Add** again to open the `Add Data Field` dialog.
 
 2. Select `string` for the `Data Type`.
 
-3. Select `manual` for the `Setup Type` and click **Add** to add the field.
+3. Select `manual` for the `Setup Type` and click **Save** to add the field.
 
     <!-- border -->![Create Name](add-name.png)
 
-Go ahead and add the list of header fields as shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
+Go ahead and add the header fields shown in the table and image below. Pay attention to the different data types. Feel free to extend or reduce the list of header fields.
 
 |  Field Name           | Data Type     | Setup Type   
 |  :------------------- | :----------   | :----------    
@@ -133,6 +143,9 @@ Go ahead and add the list of header fields as shown in the table and image below
 
 
 <!-- border -->![All Header Fields](all-header-fields.png)
+
+>**NOTE:** The Document Information Extraction UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
+
 
 
 

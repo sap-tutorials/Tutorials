@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 primary_tag: products>sap-integration-suite
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-integration-suite, products>sap-gateway ]
+tags: [  tutorial>beginner, topic>cloud, programming-tool>odata, products>sap-integration-suite, products>sap-gateway ]
 time: 15
 ---
 # Create an API Proxy
@@ -29,26 +29,18 @@ In this tutorial you will learn how to create an API Proxy based on the API Prov
 
 
 
-### Access the SAP API Management API Portal
+### Access the API Proxies
 
 
-Open the **API Management, API Portal** (you can get the URL from Integration Suite Launchpad, click on Design Develop, and Manage APIs).
+Open the **Integration Suite** and choose **Design Develop, and Manage APIs**.
 
 ![Open SAP API Management API Portal](01-access_api_portal_cf.png)
 
 
 
-### Quick start an API creation
-
-
-From the Home screen under the Quick Actions tile, click on **API**. This will bring up the Create API wizard.
-
-![Click on API](02-API-cf.png)
-
-
 ### View and create APIs
 
-To view your APIs that you have previously created, select from the **Hamburger Menu** in the upper left corner and click **Develop**.
+To view your APIs that you have previously created, select from the **Hamburger Menu** in the upper left corner, choose **Configure** and select **APIs**.
 
 ![Click on Develop](03-manage-cf.png)
 
@@ -128,7 +120,7 @@ API proxy is deployed.
 ### Test your API Proxy
 
 
-To Test your API proxy, navigate to **Test** from navigation bar.
+To Test your API proxy, navigate to **Test** from navigation bar and select **APIs**.
 ![Navigate Test](13-Navtest-cf.png)
 
 Select your API and provide the user name and password and click **OK**.

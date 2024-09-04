@@ -13,7 +13,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Understand the principles of prompt engineering and learn to create effective prompts for AI models like ChatGPT. Prompt engineering is crucial for obtaining desired outputs from AI models. It helps in guiding the model's response in a particular direction.
 
 ## Prerequisites
-
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have an SAP AI Core service instance and service key. 
 - You're using the Extended service plan.
 - You have completed the client authorization for your preferred user interface. 
@@ -24,6 +28,79 @@ For more information, see [SAP AI Core documentation](https://help.sap.com/docs/
 - How to deploy an LLM model.
 - How to use the models to execute different queries.
 
+
+### Provisioning SAP AI Core
+
+#### Provision SAP AI Core in your global account
+
+Open the SAP BTP cockpit and access your global account.
+
+<!-- border -->![BTP Cockpit](images/btpcockpit.png)
+
+Check the entitlements for your account by clicking `Entitlements` and searching for SAP AI Core.
+
+<!-- border -->![Check Entitlements](images/checkentitlements.png)
+
+Click `Configure Entitlements` > `Add Service Plans`.
+
+<!-- border -->![Set SAP AI Core as an entitlement](images/configureentitlements.png)
+<!-- border -->![Set SAP AI Core as an entitlement](images/addserviceplan.png)
+
+Select SAP AI Core and the `extended` service plan.
+
+<!-- border -->![Set SAP AI Core as an entitlement](images/aicoreentitlement.png)
+
+Save your new entitlement.
+
+<!-- border -->![Save](images/saveentitlement.png)
+
+#### Run the booster for SAP AI Core
+
+Choose `Boosters` from the navigation pane. Find and choose the booster for `SAP AI Core` from the selection. 
+
+<!-- border -->![Locate the SAP AI Core booster](images/boostercore.png)
+
+The booster tile contains information about SAP AI Core.  Click `Start` when you are ready. 
+
+When you start a booster, a wizard opens up which guides you through the required steps.
+
+<!-- border -->![Start the booster](images/coreboosterstart.png)
+#### View your instances and create your keys
+
+In the subaccount section of SAP BTP Cockpit, choose `Services` from the left navigation menu and `Instances and subscriptions` from the page. 
+
+<!-- border -->![View instances and subscriptions](images/instancesandsubscriptions.png)
+
+To see the details of your new instance, click the chevron on the entry.
+
+To create the keys that you need to access your instance, click the three dots > `Create Service Key`.
+
+<!-- border -->![Create keys](images/createkeys1.png)
+
+Enter a `Key Name` of your choice and click `Create`.
+
+<!-- border -->![Create keys](images/createkeys2.png)
+<!-- border -->![View new keys](images/keys.png)
+
+Once your keys have been created, you can view or download them at any time by locating the key and clicking the three dots and choosing from the available options.
+
+<!-- border -->![Locate the keys in SAP AI Cockpit](images/viewkeys.png)
+
+#### Provision SAP AI Launchpad in your global account
+
+> **Note:** SAP AI Launchpad is optional, but is the recommended interface for use with SAP AI Core.
+
+Configure your entitlement as before, but select `SAP AI Launchpad`.
+
+#### Run the booster for SAP AI Launchpad
+
+Choose `Boosters` from the navigation pane, and then choose the booster for `SAP AI Launchpad` from the selection. 
+
+<!-- border -->![Locate the booster for SAP AI Launchpad](images/boosterailp.png)
+
+Click `Start` when you are ready.
+
+<!-- border -->![Start the booster](images/lpboosterstart.png)
 
 ### Checking for foundation-models scenario
 
@@ -38,10 +115,25 @@ Go to **ML Operations** -> **Scenarios**. Check whether the **foundation-models*
 
 [OPTION BEGIN [POSTMAN]]
 
-Check whether the **foundation-models** scenario is present in your workspace. Send a GET request to 
+To begin using the APIs in AI Core, we start with setting up the authentication methods.
+
+![image](images/consumption1.png)
+![image](images/consumption2.png)
+For ease of access, we set up the region, baseUrl and deploymentUrl variables as a pre-requisite. This avoids the need of passing these values repeatedly for different scenarios. 
+NOTE: the deployment URL is specific to the model we intend to use.
+
+![image](images/consumption34.png)
+Add the name of your respective resource group. 
+
+![image](images/consumption5.png)
+Next, to begin making API calls, we’ll create a new access token. Now we’re ready to use the API for various models.
+
+![image](images/consumption6.png)
+
+Next, we'll check whether the **foundation-models** scenario is present in your workspace. Send a GET request to 
 
 ```
-{{apiUrl}}/v2/lm/scenarios
+{{baseUrl}}/lm/scenarios
 ```
 
 Always make sure that AI-Resource-Group header is set to your resource group id.
@@ -94,7 +186,7 @@ Implement one of the following model upgrade options:
 Create a new configuration by sending a POST request to 
 
 ```
-{{apiUrl}}/v2/lm/configurations
+{{baseUrl}}/lm/configurations
 ```
 
 Include the following in the body of the request.
@@ -172,7 +264,7 @@ You can make LLM available for use by creating a virtual LLM deployment. You can
 Create a deployment by sending a POST request to 
 
 ```
-{{apiUrl}}/v2/lm/deployments
+{{baseUrl}}/lm/deployments
 ```
 
 Include the following JSON in the body of the request
@@ -190,7 +282,7 @@ Replace the ```<configuration-id>``` value with the *id* you received in the pre
 Once the deployment is created, check the status of deployment by sending a GET request to 
 
 ```
-{{apiUrl}}/v2/lm/deployments
+{{baseUrl}}/lm/deployments
 ```
 
 ![image](images/pm04.png)
@@ -314,8 +406,7 @@ To make a query, send a POST request to
 {{deploymentUrl}}/chat/completions?api-version=2023-05-15
 ```
 
-*Note :* with each inference request we need to pass the AI core JWT token and AI-Resource-Group in header with your resource group id as value. failing to pass same will throw and 404 Error. Refer step 1 on how to set Headers in Postman
-
+NOTE: For each API call, we need to generate a fresh Access Token (as demonstrated in Step 2), and update the deploymentUrl to the corresponding model in use. We also need to update our AI-Resource-Group (also demonstrated in Step 2). These steps need to completed prior to sending the POST request to avoid receiving erroneous response.
 
 Include the following JSON in the body of the request
 
@@ -362,7 +453,7 @@ You can also include optional parameters such as:
 To install the generative-ai-hub-sdk package in your system, open your terminal or command prompt and run the following command.
 
 ```TEXT
-pip3 install generative-ai-hub-sdk
+pip3 install generative-ai-hub-sdk[all]
 ```
 
 Now you have generative-ai-hub-sdk installed in your system.
@@ -390,10 +481,8 @@ Open a python programming environment of your choice and run the following code 
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
-from gen_ai_hub.proxy.langchain.init_models import init_embedding_model
 
 llm = init_llm('gpt-4', temperature=0., max_tokens=256)
-embeddings = init_embedding_model('text-embedding-ada-002')
 llm.invoke('What is generative AI?').content
 ```
 

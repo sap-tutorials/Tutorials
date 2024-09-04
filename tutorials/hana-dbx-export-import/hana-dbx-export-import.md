@@ -10,7 +10,7 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+- An SAP HANA database such as SAP HANA Cloud trial, free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
 - Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
@@ -25,7 +25,7 @@ The following steps will demonstrate a few ways to export and import data such a
 >A few differences between exporting and importing data and importing and exporting catalog objects are:  
 >
 >    - Data export and import works with one table or view
->    - Catalog export or import works with more than one objects at one time
+>    - Catalog export or import works with more than one object at one time
 >    - Catalog export or import can include additional objects such as functions and procedures
 >    - Catalog export or import includes the SQL to recreate the object
 
@@ -33,8 +33,6 @@ The following steps will demonstrate a few ways to export and import data such a
 ---
 
 ### Export and import data
-
-
 The following tables list the different options available in the SAP HANA database explorer to export and import data from a single table or view.
 
 Methods to export tables or views
@@ -42,21 +40,21 @@ Methods to export tables or views
 | Method  | Version       | Target                 | Format(s)      |
 | ------- | -------------|------------------------| ----------------|
 | Export from SQL console | All | local computer         | CSV      |
-| [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
-| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
-| [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
+| [Export data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-data-into-file-sap-hana-cloud-database)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
+| [Export into statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-into-statement-data-import-export)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
+| [Export into statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
 
 Methods to import into tables
 
 | Method  | Version       | Source          | Format(s)       | Notes |
 | ------- | -------------|------------------------| ----------------| ------------|
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)   | |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | data lake Files, local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
-| [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
-| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON  (for document stores)  | |
-| [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
-| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
+| [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
+| [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)   | SAP HANA Cloud, HANA database    | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)   | |
+| [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)    | SAP HANA Cloud, HANA database   | data lake Files, local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
+| [Import data wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
+| [Import from statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-from-statement-data-import-export) | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON  (for document stores)  | |
+| [Import from statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
+| [Insert into table name select from statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/insert-statement-data-manipulation) | All  | local or remote tables  | select statement |  |
 
 The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL console and the import data wizard.
 
@@ -135,7 +133,7 @@ The following steps are for illustrative purposes only and are not meant to be f
 
     ```SQL
     EXPORT INTO CSV FILE
-        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
     FROM MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
@@ -227,7 +225,6 @@ The following steps walk through the process of exporting to and importing data 
 
 4.  Execute the following SQL to store a credential in the database for the user.
 
-
     ```SQL
     SELECT * FROM CREDENTIALS;
     CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
@@ -242,7 +239,7 @@ The following steps walk through the process of exporting to and importing data 
 
     ```SQL
     EXPORT INTO CSV FILE
-        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
     FROM MAINTENANCE
     WITH
         CREDENTIAL 'DL_FILES'
@@ -263,10 +260,10 @@ The following steps walk through the process of exporting to and importing data 
 
     ![Import from data lake Files](importDataWizardDataLakeFiles.png)
 
-    The wizard makes use of the import from statement.  An example is shown below:
+    The wizard makes use of the import from statement.  An example is shown below.
 
     ```SQL
-    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTEL/maintenance.csv'
+    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
     INTO MAINTENANCE WITH
         CREDENTIAL 'DL_FILES'
         COLUMN LIST IN FIRST ROW
@@ -281,7 +278,7 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     SELECT * FROM SYSPSE;
     CREATE PSE HTTPS;
-    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DigiCertRootCA';  --
+    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DigiCertRootCA';
     ALTER PSE HTTPS ADD CERTIFICATE <object_id>;
     ```
 
@@ -303,7 +300,7 @@ The following steps walk through the process of exporting to and importing data 
 2. Export or unload the data from the MAINTENANCE table to a data lake Files instance.  Note that the CONNECTION_STRING and WITH CREDENTIALS are not required if you are targeting the associated data lake Files instance.
 
     ```SQL
-    UNLOAD SELECT * FROM HOTEL.MAINTENANCE
+    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
     INTO FILE 'hdlfs:///maint.csv'
     NULL FORMAT EMPTY
     CONNECTION_STRING 'ENDPOINT=060acb0b-de9b-4801-9aa0-0dcfe503f0f0.files.hdl.prod-us10.hanacloud.ondemand.com'
@@ -313,8 +310,8 @@ The following steps walk through the process of exporting to and importing data 
 3.  Import or load the data back into the MAINTENANCE table.
 
     ```SQL
-    DELETE FROM HOTEL.MAINTENANCE;
-    LOAD TABLE HOTEL.MAINTENANCE (MNO, HNO, DESCRIPTION, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
+    DELETE FROM HOTELS.MAINTENANCE;
+    LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
     CONNECTION_STRING 'ENDPOINT=https://060acb0b-de9b-4801-9aa0-0dcfe503f0f0.files.hdl.prod-us10.hanacloud.ondemand.com'
     WITH CREDENTIAL 'DL_FILES' 
     ESCAPES OFF;
@@ -323,8 +320,6 @@ The following steps walk through the process of exporting to and importing data 
 Additional details can be found at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files) and [Loading Data From Data Lake Files to Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/loading-data-from-data-lake-files).
 
 ### Use Google Cloud Storage (GCS) for data exports and imports (optional)
-
-
 The following steps walk through the process of exporting to and importing data from Google Cloud Storage service with a SAP HANA Cloud, SAP HANA database.
 
 1. Sign in to the [Google Cloud Console](https://console.cloud.google.com/).
@@ -382,7 +377,7 @@ The following steps walk through the process of exporting to and importing data 
 
     ![Create Credential](createCredentialGCP.png)
 
-    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
+    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-credential-statement-access-control) and [CREDENTIALS System View](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/credentials-system-view).
 
 10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer and run the following commands to create a certificate.
 
@@ -443,7 +438,7 @@ The following steps walk through the process of exporting to and importing data 
 
     >The GTS Root R1 certificate used above was downloaded from [Google Trust Services' Repository](https://pki.goog/repository/) under Download CA certificates > Root CAs >.  It was downloaded in the .PEM format.
 
-    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
+    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/certificate-management).
 
 11. Run the following commands within the SQL console to perform an export using a Google Cloud Storage bucket.
 
@@ -462,7 +457,6 @@ The following steps walk through the process of exporting to and importing data 
     >An alternative to the above SQL commands is to use the Export Data Wizard. The Wizard can be accessed by right clicking a table or view and choosing **Export Data**. When using the export wizard, the "gs://" prefix is not needed when specifying the GCS Path.
     >
     >    ![Export Data Wizard](exportGCSWizard.png)
-
 
 12. Verify the export was completed successfully by refreshing your bucket within Google Cloud Console.
 
@@ -487,33 +481,31 @@ The following steps walk through the process of exporting to and importing data 
     IMPORT FROM PARQUET FILE 'gs://hc-service-account@hc-storage-proj.iam.gserviceaccount.com:-----BEGIN PRIVATE KEY-----MIIEvg...-----END PRIVATE KEY-----@hc-storage-bucket/maintenance2.parquet' INTO MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
 
-For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
+For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
 ### Export and import schema or catalog objects
-
-
 The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
 Methods to export catalog objects
 
 | Method                  | Version | Target                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
-| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
-| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
+| [Export catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
+| [Export catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
 | [Export catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
-| [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
-| [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
+| [Export statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-statement-data-import-export) | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
+| [Export statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
 
 Methods to import catalog objects
 
 | Method                  | Version | Source                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
-| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html) | All  | Local computer | CSV, Binary   | 2 GB max |
-| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
-| [Import catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\* |
-| [Import statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f75ade751910148492a90e5e375b8f.html) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
-| [Import statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f75ade751910148492a90e5e375b8f.html) | SAP HANA on-premise | SAP HANA file system       | CSV, Binary                        | \*\* |
+| [Import catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database) | All  | Local computer | CSV, Binary   | 2 GB max |
+| [Import catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
+| [Import catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\* |
+| [Import statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-statement-data-import-export) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
+| [Import statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20f75ade751910148492a90e5e375b8f.html) | SAP HANA on-premise | SAP HANA file system       | CSV, Binary                        | \*\* |
 
 > \* SAP HANA Cloud, HANA database only
 
@@ -560,8 +552,6 @@ Similar to the first section, the maintenance table will be exported and re-impo
     ```
 
     ![Import succeeded](import_success.png)
-
-
 
 ### Use Azure cloud storage for exports and imports of catalog objects (optional)
 
@@ -644,7 +634,7 @@ The following steps walk through the process of using Microsoft Azure storage se
     SELECT * FROM PSE_CERTIFICATES;
     ```
 
-    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
+    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/certificate-management).
 
     The certificate string above is from the root certificate used for the Azure Portal.
 
@@ -699,12 +689,10 @@ The following steps walk through the process of using Microsoft Azure storage se
     IMPORT MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
     ```
 
-    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
+    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
 
 ### Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional)
-
-
 The following steps walk through the process of AWS S3 storage service as a target for an export catalog operation.
 
 1. Log in to the [AWS S3 Management Console](https://console.aws.amazon.com/s3/home).
@@ -762,7 +750,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
     Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 
-    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
+    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-credential-statement-access-control) and [CREDENTIALS System View](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/credentials-system-view).
 
 6. In the SAP HANA database explorer, create the certificate used by AWS to the HANA Cloud PSE.
 
@@ -808,7 +796,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
     ```
 
-    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
+    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/certificate-management).
 
 7. Start the export catalog wizard and export the maintenance table to the storage service.
 
@@ -888,10 +876,9 @@ The following steps walk through the process of AWS S3 storage service as a targ
     IMPORT MAINTENANCE AS PARQUET FROM 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
     ```    
 
-    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
+    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
 ### Knowledge check
-
 Congratulations! You have imported and exported data and catalog objects.
 
 

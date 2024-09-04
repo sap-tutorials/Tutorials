@@ -47,7 +47,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![specify the data source name](data-source1.png)  
 
-    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option.
+    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option and then click on Login.
 
     ![specify the credentials, host and port](data-source2.png)  
 
@@ -99,12 +99,15 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     log=/tmp/hdlclientlog.txt
     ```
 
+    Here the driver path is the path to your libdodbc17.so file.
+
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
     dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
     isql -v HC_DL USER1 Password1
     ```
+dsn is the name set in the odbc.ini file in the previous step.
 
     **DBISQL**
     

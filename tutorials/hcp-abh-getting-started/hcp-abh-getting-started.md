@@ -1,8 +1,8 @@
 ---
 parser: v2
 primary_tag: products>sap-business-technology-platform
-author_name: Prathibha GC
-author_profile: https://github.com/Prathibha-Mouli
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
 auto_validation: true
 time: 15
 tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub  ]
@@ -27,7 +27,7 @@ In your browser, open [SAP Business Accelerator Hub](https://api.sap.com/).
 
 <!-- border -->![SAP Business Accelerator Hub page](1.png)
 
-You can explore products, business processes as well as different categories of assets, along with partner and featured content. Choose **Explore** for quick access to the various sections of the SAP Business Accelerator Hub.
+You can explore products, business processes as well as different categories of assets, along with partner and featured content. Choose **Explore** (top-left) for quick access to the various sections of the SAP Business Accelerator Hub.
 
 ### Explore API content
 On the SAP Business Accelerator Hub homepage, choose **Categories**.
@@ -44,7 +44,7 @@ Different APIs, policy templates, and API packages are available under the API c
 
 <!-- border -->![Searching for types of APIs APIs](3.png)
 
-You can explore APIs either by selecting a type of an API or by selecting an API package. Navigate to the Packages tab. You can choose any package for testing.
+You can explore APIs either by selecting a type of an API or by selecting an API package. Navigate to the **Packages** tab. You can choose any package for testing.
 
 <!-- border -->![API Hub Packages search](4.png)
 
@@ -54,7 +54,7 @@ For the purpose of this tutorial, we are going to choose the `SAP Cloud for Cust
 
 ### Explore the API
 
-On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package. Select the Campaign API to explore it in detail.
+On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package. Select the **Campaign** API to explore it in detail.
 
 <!-- border -->![SAP Cloud for Customer API package details](5.png)
 
@@ -64,7 +64,7 @@ The **`API Reference`** section provides information and functions that are offe
 
 <!-- border -->![Campaign API References](5a.png)
 
-The API can contain one or more endpoints which are organized into groups. On the left-hand side of selected API - **Campaign**, you can see six groups of endpoints.
+The API can contain one or more endpoints which are organized into groups. On the left-hand side of selected API – **Campaign** – you can see six groups of endpoints.
 
 <!-- border -->![Campaign API](5b.png)
 
@@ -72,17 +72,17 @@ Various HTTP methods of API are used to address the functionality of endpoints. 
 
 ### Test an API endpoint
 
-The SAP Business Accelerator Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. Select Login at the top of the page.
+The SAP Business Accelerator Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. 
+
+Select **Login** at the top of the page.
 
 <!-- border -->![Login](6.png)
 
-Once logged on, choose the Try Out button in the **`Overview`** section.
+Once logged on, go to the **Overview** section and click **Try Out**.
 
 <!-- border -->![The "Try out" button](6a.png)
 
-Selecting this will open the Try Out View.
-
-For the purpose of this tutorial the **`GET /CampaignCollection`** operation has been selected for testing.
+Make sure **`GET /CampaignCollection`** is selected. You will use that call for testing.
 
 <!-- border -->![Get method for Campaign API](6b.png)
 
@@ -92,7 +92,7 @@ Calling the `GET` operation on the `/CampaignCollection` endpoint will return a 
 
 You can also select the `$orderby` to sort the display order based on `Object ID`, `Object ID description`, `Campaign Type`, and so on.
 
-Once the required inputs are entered, Choose `Run` at the top right corner to view the response.
+Once the required inputs are entered, scroll back to the top of the page and click `Run` at the top-right corner.
 
 <!-- border -->![API Run](8.png)
 
