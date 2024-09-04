@@ -65,7 +65,7 @@ Choose one of the following missions:
     - [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements)
     - [Create a Service Instance for SAP BTP](btp-cockpit-instances)
 
-- **Trial:** If you do not have an account of any type yet and you want to try out services for a limited amount of time, follow the instructions in [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+- **Trial:** If you do not have an account of any type yet and you want to try out services for a limited amount of time, follow the instructions in [Get a Free Account on SAP BTP Trial](../hcp-create-trial-account/hcp-create-trial-account.md).
 
 
 
