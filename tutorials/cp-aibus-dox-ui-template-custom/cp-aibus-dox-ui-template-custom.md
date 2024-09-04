@@ -49,7 +49,7 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](extraction.png)
 
-    In the next steps, you'll upload a document, get the extraction results and edit them so that you can associate the document with your template.
+    In the next steps, you'll upload a document, get the extraction results, and edit them so that you can associate the document with your template.
 
 
 >**CAUTION:**
@@ -61,7 +61,7 @@ In the dialog, proceed as follows:
 ### Upload document and get extraction results
 
 
->This tutorial uses the following power of attorney documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
+>This tutorial uses the following power of attorney documents. Download them to follow along (right-click on the link, then click ***Save link as*** to download the files locally):
 
 > - [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf)
 > - [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf)
@@ -78,21 +78,15 @@ In the dialog, proceed as follows:
 
 4. Drop the file directly or click **+** to upload one of the power of attorney documents. The following images use the [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf). 
 
-5. Click **Step 2**.
+5. Click **Confirm**.
 
     <!-- border -->![Template](upload.png)
-
-6. The selection of header fields and line item fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7.  Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review.png)
 
     The document status changes from `PENDING` to `READY`.
 
     <!-- border -->![Template](ready.png)
 
-8. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
+6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
 
     <!-- border -->![Template](results.png)
 
@@ -103,7 +97,7 @@ In the dialog, proceed as follows:
 ### Edit extraction results
 
 
-Before associating the document with your template, make sure the extraction results are correct.
+Before associating the document with your template, make the extraction results are correct.
 
 1. Click **Edit**. You can edit extracted values manually on the right of the screen. You can also select them from the page preview in the middle of the screen. To do the latter, hover your mouse over the page preview. The mouse pointer changes to a crosshair cursor. Position the cursor at the corner of the value you wish to select. Then, hold down the left mouse button. Move the cursor diagonally to the opposite corner to draw a bounding box around the value you want to select. Select the appropriate header or line item field from the **Field** dropdown in the **Assign Field** dialog. Add or change the value, as necessary.
 
@@ -172,15 +166,9 @@ The last step that remains is to activate the template.
 
 4. Drop the file directly or click **+** to upload one of the other two power of attorney documents. First, use the [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf).
 
-5. Click **Step 2**.
-
     <!-- border -->![Template](upload2.png)
 
-6. The selection of fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review2.png)
+5. Click **Confirm**.
 
     The document status changes from `PENDING` to `READY`.
 

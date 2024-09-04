@@ -92,7 +92,7 @@ You can instead search by tag, so if I wanted to get all the SAP Conversational 
 
 Of course, you can use both. For example, search for `Python` and then further filter by `SAP Conversational AI` tag.
 
->More information on tags? See [Using Tags](https://community.sap.com/resources/using-tags).
+>More information on tags? See [SAP Managed Tags](https://community.sap.com/t5/help/faqpage/title/Associated_Products).
 
 
 ### Open mission
@@ -147,7 +147,7 @@ While you are doing the tutorial, you can see your progress as follows.
 
 If you have been clicking the buttons as you complete this tutorial until here, on the right side, you will see the steps you have completed indicated by a checkmark:
 
-    ![Progress on side](progress2.png)
+![Progress on side](progress2.png)
 
 
 
@@ -175,15 +175,17 @@ Every mission in the Tutorial Navigator can earn you a badge. To see all the mis
 
 ![Mission filter](MissionsFilter.png)
 
-You can also see all available badges -- not just tutorials but also community missions -- on the [badges](https://community.sap.com/resources/missions-badges) page.
+To see the badges that you have earned on the SAP Community, navigate to the [SAP Community](https://community.sap.com/).  Be sure to log in if you have not already.
 
-![Badges page](badgesAll.png)
+From the account options, select **My Content**.
 
-On the right of the badges page, you can filter the badges, including to see only tutorial-related badges.
+![Navigate to the SAP Community](nav-to-community.png)
 
-The badges you earn appear in the **Earned Missions** tab of your [SAP profile](https://people.sap.com/#missions:earned).
+Select **View all badges**.
 
+![View all badges](all-badges-button.png)
 
+![All badges screen](all-badges.png)
 
 
 ### What other achievements are there?

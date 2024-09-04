@@ -12,20 +12,19 @@ author_profile: https://github.com/nicoschoenteich
 <!-- description --> Learn how to visualize data with a VizFrame.
 
 ## Prerequisites
-- You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
-- You have [added the Northwind Service as a data source and default model](sapui5-fiori-cf-display-data) to your application.
-- You have version 3.1.4 or higher of the [easy-ui5 generator](cp-cf-sapui5-local-setup) installed.
+  - You have previously [created an SAPUI5 application](cp-cf-sapui5-local) and selected `SAP Build Work Zone, standard edition` as the deployment target.
+  - You have also completed all other tutorial as part of the mission [Develop an App for SAP Build Work Zone, standard edition with Your Own Dev Tools](mission.sapui5-cf-launchpad).
 
 ## You will learn
-  - How to use a sub-generator to add a new view
-  - How to add a `VizFrame` to visualize data
-  - How to manually navigate between SAPUI5 views
+  - How to use a sub-generator to add a new view.
+  - How to add a `VizFrame` to visualize data.
+  - How to manually navigate between SAPUI5 views.
 
 ---
 
 ### Add a new view
 
-Add a new view to your SAPUI5 application by using an `easy-ui5` sub-generator.
+Add a new view to your SAPUI5 application by using an `easy-ui5` subgenerator.
 
 **Open** a new terminal session on root level of your project and execute:
 
@@ -33,28 +32,27 @@ Add a new view to your SAPUI5 application by using an `easy-ui5` sub-generator.
 yo easy-ui5 project newview
 ```
 
-|  Parameter     | Value
-|  :------------- | :-------------
-|  What is the name of the new view?         | **`Sales`**
-|  Would you like to create a corresponding controller as well?     | **`Yes`**
-|  Do you want to add an OPA5 page object?  | **`No`**
-|  Would you like to create a route in the manifest?  | **`Yes`**
+| Parameter | Value
+| :------------- | :-------------
+| How do you want to name your new view? | **`Sales`**
+| Do you want to set up a JavaScript controller for your new view? | **`Yes`**
+| Do you want to set up a route and target for your new view? | **`Yes`**
 
-The routes are added to the `uimodule/webapp/manifest.json` file. The generator asks you whether you want to overwrite the `manifest.json` file, which is necessary in this case, so type `yes` when prompted.
+The routes are added to the `myui5app/webapp/manifest.json` file. The generator asks you whether you want to overwrite the `manifest.json` file, which is necessary in this case, so type `yes` when prompted.
 
 ### Inspect the modifications
 
-As you can see in the log, the generator created a new view with its corresponding controller. It also modified the `uimodule/webapp/manifest.json` by adding a new route as well as a new target. You can see the pattern for the new `Sales` route is `RouteSales`. This is the piece that we will later attach to the URL of our application to reach this view.
+As you can see in the log, the generator created a new view with its corresponding controller. It also modified the `myui5app/webapp/manifest.json` by adding a new route as well as a new target. You can see the pattern for the new `RouteSales` route is `sales`. This is the piece that we will later attach to the URL of our application to reach this view.
 
-![screen shot of manifest with new route](manifest.png)
+![manifest](manifest.png)
 
 ### Add the VizFrame
 
-The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the data from the Northwind Service. **Remove** the entire content view and replace it with the below code.
+The `myui5app/webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the data from the Northwind Service. **Remove** the entire content view and replace it with the below code.
 
 ```XML
  <mvc:View
-  controllerName="tutorial.products.controller.Sales"
+  controllerName="myui5app.controller.Sales"
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
@@ -130,33 +128,39 @@ You can read more about `VizFrame`s in the [SAPUI5 API Reference](https://sapui5
 
 ### Navigate to the new view
 
-In order to see the new view in your application in the browser, you have to navigate there manually using the pattern you already inspected in step 2. If your application is running in a SAP Build Work Zone site, attach `&/RouteSales` to the URL. If your application runs standalone, attach `#/RouteSales` to the URL. There is a difference between these two scenarios, because your application in SAP Build Work Zone already requires a hash (`#`) to navigate to it and there is only one hash allowed in a URL.
+In order to see the new view in your application in the browser, you have to navigate there manually using the pattern you already inspected in step 2. If your application is running in a Fiori launchpad, attach `&/sales` to the URL. If your application runs standalone, attach `#/sales` to the URL. There is a difference between these two scenarios, because your application in a Fiori launchpad requires a hash (`#`) to navigate to it and there is only one hash allowed in a URL.
 
-![screen shot of sales view in the browser](salesview.png)
+![salesview](salesview.png)
 
 ### Implement a popover
 
-You might have noticed that you can hover over the single data points of the line chart and click them, but nothing happens yet. Insert the below `onAfterRendering` method into the `Sales.controller.js` to connect the `VizFrame` with the popover, which is already defined in the `uimodule/webapp/view/Sales.view.xml` (step 3).
+You might have noticed that you can click on single data points of the line chart, but nothing happens (yet). Insert the below `onAfterRendering` method into the `myui5app/webapp/controller/Sales.controller.js` file to connect the `VizFrame` with the popover, which is already defined in the `myui5app/webapp/view/Sales.view.xml` (step 3).
 
-```javascript [7-11]
-
+```javascript [14-18]
 sap.ui.define([
-    "tutorial/products/controller/BaseController"
-], function (Controller) {
-    "use strict";
+	"sap/ui/core/mvc/Controller"
+],
+	/**
+	 * @param {typeof sap.ui.core.mvc.Controller} Controller
+	 */
+	function(Controller) {
+		"use strict";
 
-    return Controller.extend("tutorial.products.controller.Sales", {
-        onAfterRendering: function () {
-            const oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
-            const oPopOver = this.getView().byId("idPopOver");
-            oPopOver.connect(oVizFrame.getVizUid());
-        }
-    });
-});
+		return Controller.extend("myui5app.controller.Sales", {
+			onInit: function() {
+
+			},
+			onAfterRendering: function() {
+				const oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+				const oPopOver = this.getView().byId("idPopOver");
+				oPopOver.connect(oVizFrame.getVizUid());
+			}
+		});
+	});
 ```
 
 After saving the file, your browser should automatically refresh the page. You can now click on any data point to get the popover with its exact data.
 
-![screen shot of popover](popover.png)
+![popover](popover.png)
 
 ---

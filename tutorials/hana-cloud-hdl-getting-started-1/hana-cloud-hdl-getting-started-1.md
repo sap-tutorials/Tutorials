@@ -11,7 +11,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - Access to SAP HANA Cloud, either with a free tier, trial account, or with a production account.
- - If you do not have a trial account yet, sign up [here](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html).
+ - If you do not have a trial account yet, sign up [here](https://www.sap.com/products/technology-platform/pricing.html).
 
 ## You will learn
   - About the two main components of SAP HANA Cloud, data lake; data lake Relational Engine and data lake Files

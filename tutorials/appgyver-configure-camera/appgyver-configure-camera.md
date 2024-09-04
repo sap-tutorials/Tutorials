@@ -2,11 +2,12 @@
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+primary_tag: software-product>sap-build-apps
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
+
 
 # Configure SAP Build Application to Open Device Camera
 <!-- description --> Configure the logic flow in your application to enable your device to open your camera on demand, whenever the user clicks the Scan button.
@@ -95,10 +96,10 @@ As the alert is currently set to display a static text response only, we want to
 
     And scanning a barcode will return the barcode number only, as no further information has been configured for the event yet.
 
-As an example:
-
-![View results](iphoneapp3.png)
-
 If you can't find a barcode, here's an example:
 
 ![Barcode example](barcode.gif)  
+
+The result should be:
+
+![View results](iphoneapp3.png)

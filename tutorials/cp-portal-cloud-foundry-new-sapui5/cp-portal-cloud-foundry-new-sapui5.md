@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Add an existing SAPUI5 app to a site in the SAP Build Work Zone, standard edition.
 
 ## Prerequisites
- - You've already created the `JobCore` site
+ - You've already created the `JobCore` site 
 
 
 ## You will learn

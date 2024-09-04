@@ -20,8 +20,6 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 ### Execute SQL
-
-
 1. Select a connection and open the SQL console.
 
     ![open SQL console](open-sql-console.png)
@@ -34,7 +32,8 @@ primary_tag: software-product>sap-hana-cloud
 
     ```SQL
     SELECT * FROM HOTEL;
-    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
+    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', 
+      NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -119,8 +118,6 @@ primary_tag: software-product>sap-hana-cloud
 
 
 ### Shortcuts
-
-
 1. Keyboard shortcuts are available to provide alternate methods of completing frequently performed tasks. Right-click in the SQL console and choose **Keyboard Shortcuts**.
 
     ![Open Keyboard Shortcuts](OpenKeyboardShortcuts.png)
@@ -168,8 +165,6 @@ primary_tag: software-product>sap-hana-cloud
 
 
 ### Autocomplete
-
-
 1. Once a statement is started, press `Ctrl+Space` to see a list of possible statements based on what you have typed.  
 
     ![Code Completion Options](CodeCompletionOptions.png)
@@ -183,15 +178,13 @@ primary_tag: software-product>sap-hana-cloud
     Copy the following SQL statement into the console and then use the autocomplete shortcut to see the available tables:
 
     ```SQL
-    SELECT * FROM HOTEL.RES
+    SELECT * FROM HOTELS.RES
     ```
 
     ![Code Completion Table](CodeCompletionTable.png)
 
 
 ### Statement help panel
-
-
 1. On the right-hand side of the SQL console, there is a statement help panel that provides more information about statement syntax, and any tables, functions, stored procedures, or SQL functions that have been referenced.
 
     ![Help Panel](HelpPanel.png)
@@ -252,8 +245,6 @@ primary_tag: software-product>sap-hana-cloud
 
 
 ### SQL console preferences
-
-
 1. Select **SQL Console** or **SQL Code Completion** from the Global Preferences to see the configurable preference settings for the SQL console.
 
     ![Error Handling Settings](SQLConsolePrefs.png)
@@ -261,6 +252,12 @@ primary_tag: software-product>sap-hana-cloud
     >When changing these preferences, remember to press the **Save** button.
 
 2. Notice that there is a preference to limit the number of rows to display as well as the maximum number of open results.  The following shows the results of these being set to 50 and 2.
+
+    ```SQL
+    SELECT * FROM HOTEL;
+    SELECT * FROM RESERVATION;
+    SELECT * FROM CUSTOMER;
+    ```
 
     ![Limit results](limitResults.png)
 
@@ -280,12 +277,10 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Syntax Checker Settings](SyntaxCheckerSettings.png)
 
-  For additional details, consult [SQL Console Preferences](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/2f39e4fdd67545cf805b557357c5a7b3.html).
+  For additional details, consult [SQL Console Preferences](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/sql-console-preferences).
 
 
 ### Statement library
-
-
 The statement library contains a mix of pre-populated system statements and user-saved statements.
 
 1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** icon.
@@ -318,7 +313,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     ![Statement Library](StatementLibrary.png)
 
-    >Previously, some of the included system statements came from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  If you wish to add these, they can be downloaded from the SAP Note referenced above and added as user statements.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
+    >Previously, some of the included system statements came from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  If you wish to add these, they can be downloaded from the SAP Note referenced above and added as user statements.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/m-system-information-statements-system-view).
 
 5. To run a statement, select one from the statement library and click the **Open in SQL Console** icon.
 
@@ -336,7 +331,6 @@ The statement library contains a mix of pre-populated system statements and user
 
 
 ### Knowledge check
-
 Congratulations! You have now explored selected features of the SQL console.
 
 ---

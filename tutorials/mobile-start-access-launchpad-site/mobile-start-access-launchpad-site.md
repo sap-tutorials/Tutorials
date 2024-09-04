@@ -7,7 +7,7 @@ primary_tag: software-product>sap-build-work-zone--standard-edition
 
 ---
 ## Prerequisites
-  - You already created a site & added some apps to it.
+  - You already created a site & added some apps to it. 
 
 # Access Your Launchpad Site with SAP Mobile Start
 <!-- description --> Access your SAP Build Work Zone, standard edition Site from your mobile device with the native SAP Mobile Start app.

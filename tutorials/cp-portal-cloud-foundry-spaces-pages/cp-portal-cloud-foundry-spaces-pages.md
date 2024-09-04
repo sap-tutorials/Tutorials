@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, sap-conversational-ai>sap-business-technology-platform, sap-conversational-ai>sap-fiori, sap-conversational-ai>sap-build-work-zone--standard-edition]
-primary_tag: sap-conversational-ai>sap-build-work-zone--standard-edition
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-fiori, software-product>sap-build-work-zone--standard-edition]
+primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---

@@ -88,7 +88,12 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     >It is also possible on Microsoft Windows to set this using the SETX command from a shell.
 
 
-    On Linux, add the following lines to the `.bash_profile`.
+    On Linux, open the '.bash_profile' and add the following lines.
+
+    
+    ```Shell (Linux)
+    pico .bash_profile 
+    ```
 
     ```Shell (Linux)
     export CGO_LDFLAGS=$HOME/sap/dlclient/IQ-17_1/lib64/libdbcapi_r.so
