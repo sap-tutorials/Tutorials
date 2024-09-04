@@ -8,8 +8,8 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platfor
 primary_tag: products>sap-business-technology-platform
 ---
 
-# Set Up SAP Omnichannel Promotion Pricing
-<!-- description --> Learn how to set up a fully-functional trial for SAP Omnichannel Promotion Pricing and how to create roles for your users.
+# How to Create Coupons and Use Them
+<!-- description --> Learn how to set up a fully-functional trial for Coupon Management Service and how to create coupons for your users.
 
 ## Prerequisites
  - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
