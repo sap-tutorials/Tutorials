@@ -54,7 +54,7 @@ If you want to know which services currently offer which service plans, visit [S
 
 Choose one of the following missions:
 
-- **Free Tier:** If you want to explore SAP BTP without time limits, see [Get an SAP BTP Account for Tutorials](btp-cockpit-setup).
+- **Free Tier:** If you want to explore SAP BTP without time limits, see [Get an SAP BTP Free Tier Account](../btp-free-tier-account/btp-free-tier-account.md).
 
     Also, if your company already has an existing consumption-based SAP BTP global account, you can explore the free tier model there. In such accounts, free tier service plans will appear alongside paid service plans in the service marketplace.
 
