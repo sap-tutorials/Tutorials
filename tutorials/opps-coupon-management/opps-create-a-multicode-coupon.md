@@ -1,27 +1,34 @@
 ---
 parser: v2
+author_name: Aathira P
+author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 20
-tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
-# Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing
-<!-- description --> Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a mix-and-match promotion rule on top of the regular sales price.
+# Create a Multi-Code Coupon with SAP Omnichannel Promotion Pricing
+<!-- description --> Learn how to set up a fully-functional trial for Coupon Management Service and how to create multi-code coupons for your promotional campaigns.
 
 ## Prerequisites
-- You have completed the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
-- You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
-- You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
-- You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
+ - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
+ - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)). 
+ - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
+ - You have set up SAP Omnichannel Promotion Pricing as described in Set Up SAP Omnichannel Promotion Pricing
 
 
 
 ## You will learn
-- How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP
-- How to upload a **mix-and-match promotional rule** with the help of the SAP Business Accelerator Hub
-- How to execute a calculation request to determine the effective sales price
+  - How to subscribe to SAP Omnichannel Promotion Pricing trial on SAP BTP
+  - How to set up roles and authorizations
+  - How to create service instances and service keys
+
+  In this tutorial, you will learn how to set up SAP Omnichannel Promotion Pricing including its services.
+  With SAP Omnichannel Promotion Pricing, you can calculate effective sales prices in your sales channel applications by applying promotional rules. You drive a seamless buying experience because you provide the same calculation based on the same promotion and price data across all sales channels.
+  You are a promotion planner and you want to create a campaign for coffee machine to promote it. You are planning to generate xxx multi-code coupons using coupon management service. Generate coupon objects and read coupon codes to finalize the campaign and give info to the target audience. Using coupon mgmt service, he will generate the codes and read them. Finally, he delivers to the audience. 
+  Identify the promotions in OPPS to use the coupons. We have to upload the promotions first using the data upload service. With this, the promotions are ready for use. 
+
 
 
 ---
