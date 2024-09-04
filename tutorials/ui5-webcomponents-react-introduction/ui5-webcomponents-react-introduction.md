@@ -33,7 +33,6 @@ This first tutorial will start by creating a React application that is able to c
 
 ### Bootstrap the app with the Vite template
 
-
 UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
 
 > #### Please note!
@@ -47,7 +46,6 @@ npx degit SAP/ui5-webcomponents-react/templates/vite-ts#v1.29.x my-app
 cd my-app
 npm i
 ```
-
 
 These commands sets up a [Vite](https://vitejs.dev/) project, creating a React Application with [TypeScript](https://www.typescriptlang.org/) and incorporating all essential dependencies for UI5 Web Components for React.
 
