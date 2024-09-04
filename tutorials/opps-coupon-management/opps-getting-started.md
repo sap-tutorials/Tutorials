@@ -26,6 +26,8 @@ primary_tag: products>sap-business-technology-platform
 
   In this tutorial, you will learn how to set up SAP Omnichannel Promotion Pricing including its services.
   With SAP Omnichannel Promotion Pricing, you can calculate effective sales prices in your sales channel applications by applying promotional rules. You drive a seamless buying experience because you provide the same calculation based on the same promotion and price data across all sales channels.
+  You are a promotion planner and you want to create a campaign for coffee machine to promote it. You are planning to generate xxx multi-code coupons using coupon management service. Generate coupon objects and read coupon codes to finalize the campaign and give info to the target audience. Using coupon mgmt service, he will generate the codes and read them. Finally, he delivers to the audience. 
+  Identify the promotions in OPPS to use the coupons. We have to upload the promotions first using the data upload service. With this, the promotions are ready for use. 
 
 ---
 
