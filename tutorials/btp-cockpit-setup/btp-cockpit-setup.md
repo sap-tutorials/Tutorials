@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Madeline Schaefer
-author_ profile: https://github.com/Madeline-Schaefer
+author_name: Annika Gonnermann
+author_ profile: https://github.com/AnnikaGonnermann
 time: 5
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-business-technology-platform
@@ -54,7 +54,11 @@ If you want to know which services currently offer which service plans, visit [S
 
 Choose one of the following missions:
 
+<<<<<<< Updated upstream
 - **Free Tier:** If you want to explore SAP BTP without time limits, see [Get an SAP BTP Free Tier Account](../btp-free-tier-account/btp-free-tier-account.md).
+=======
+- **Free Tier:** If you want to explore SAP BTP without time limits, see [Get an SAP BTP Free Tier Account](btp-free-tier-account).
+>>>>>>> Stashed changes
 
     Also, if your company already has an existing consumption-based SAP BTP global account, you can explore the free tier model there. In such accounts, free tier service plans will appear alongside paid service plans in the service marketplace.
 
@@ -65,7 +69,7 @@ Choose one of the following missions:
     - [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements)
     - [Create a Service Instance for SAP BTP](btp-cockpit-instances)
 
-- **Trial:** If you do not have an account of any type yet and you want to try out services for a limited amount of time, follow the instructions in [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+- **Trial:** If you do not have an account of any type yet and you want to try out services for a limited amount of time, follow the instructions in [Get a Free Account on SAP BTP Trial](../hcp-create-trial-account/hcp-create-trial-account.md).
 
 
 
