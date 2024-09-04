@@ -161,6 +161,12 @@ While you are doing the tutorial, you have the option of providing feedback to:
 
 - Tell us how we can improve a tutorial, by reporting a bug and opening up an issue in our GitHub repository.
 
+- The feedback button is located on the top right of the browser window.
+
+![Feedback button](feedback-button.png)
+
+- Once you click on the Feedback button, you are given a choice to post a message in the SAP Community, provide feedback related to this tutorial, and/or take a survey.
+  
 ![Feedback](feedback.png)
 
 You can also take our survey, and just provide us with feedback on how we are doing. Be gentle.
