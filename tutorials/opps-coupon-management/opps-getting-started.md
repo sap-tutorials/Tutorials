@@ -8,8 +8,8 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platfor
 primary_tag: products>sap-business-technology-platform
 ---
 
-# Create a Multi-Code Coupon for a Promotional Campaign
-<!-- description --> Learn how to set up a fully-functional trial for Coupon Management Service and how to create multi-code coupons for your users.
+# Create a Multi-Code Coupon with SAP Omnichannel Promotion Pricing
+<!-- description --> Learn how to set up a fully-functional trial for Coupon Management Service and how to create multi-code coupons for your promotional campaigns.
 
 ## Prerequisites
  - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
