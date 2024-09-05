@@ -177,7 +177,8 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
 3. Replace the `annotations.cds` with the following content:
 
-    ```cds
+    ``` cds
+
     using CatalogService as service from '../../srv/interaction_srv';
 
     annotate service.Interactions_Header with @(
@@ -352,7 +353,6 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
     ID @UI.Hidden;
     };
 
-   // Add Value Help for Locales
    annotate service.Interactions_Items.texts {
     locale @(
         ValueList.entity: 'Languages',
