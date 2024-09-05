@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, programming-tool>python]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -156,8 +156,10 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     ![edit output](edit-output.png)
 
-    Set the value to be `$(.QueryDB.output.output[0])`.
-
+    | Label | Value |
+    | -------- | ----- |
+    | checkResult | `$(.QueryDB.output.output[0])` |
+    
     This will take the result printed in the `QueryDB` executor and set it to the output of the command.
 
     > For additional details on the use of the `$(...)` used above, see [Dynamic Expression](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/22621f87e7574f9e9fd1b1b95fe7a61d.html).
@@ -258,9 +260,9 @@ This step will add an additional executor to the command that can connect to a S
     print(rows)
     ```
 
-    Under STDIN, specify `$(.scriptInput.password)` so that the output of the previous step can be accessed in the Python code.
+    Under STDIN, specify `$(.SQLStatement.output.result)` so that the output of the previous step can be accessed in the Python code.
 
-    ![STDIN](stdin.png)
+    ![STDIN](stdin1.png)
 
 
 7. Trigger the execution.  Additional inputs are not needed.

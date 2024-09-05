@@ -4,16 +4,20 @@ auto_validation: true
 time: 30
 tags: [ products>sap-fiori-elements, tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--abap-environment]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Refine the List Report with Annotations
 <!-- description --> Add additional annotations to show filter fields and columns on the list report as well as to allow the selection of data using a value help.
 
 ## Prerequisites
- - You have prepared your OData service as described in the previous tutorial [Prepare the RAP Service](fiori-tools-rap-prepare-service).
+ - Ensure that you have finished all steps in previous tutorials:
+  [Prepare the RAP-Based Travel Service](fiori-tools-rap-prepare-service)
+  [Generate an SAP Fiori Elements Application based on a RAP-based Service](fiori-tools-rap-create-application)
 
 ## You will learn
   - How to add additional columns and filter fields
+  - How to update the frontend application
   - How to add list report header information
   - How to define a value help as a drop-down list
   - How to define criticality ratings
@@ -61,13 +65,12 @@ To finish this step, choose **Save** and **Activate** to take over the changes i
 <!-- border -->![Create new metadata extension file](MetadataExtension_4.png)
 
 
-Check your changes by refreshing the preview of your application and choose **Go** to load the data.
+Check your changes by refreshing of your real application preview in BAS or use the quick service preview in ADT. Choose **Go** to load the data.
 
 <!-- border -->![Create new metadata extension file](MetadataExtension_5.png)
 
 You will now see the column **Travel ID** made visible on the list report table by the `@UI.lineItem` annotation added to the metadata extensions file. The data shown in the column is loaded from the database with the request triggered by the **Go** button.
-
-
+    
 
 ### Add table columns and filter bar selection fields
 

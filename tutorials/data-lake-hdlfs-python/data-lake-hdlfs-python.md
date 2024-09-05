@@ -9,11 +9,11 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 # Copy Data Between Data Lake Files Instances Using Python
-<!-- description --> Copy a root directory from a source SAP HANA data lake Files instance to a target SAP HANA data lake files instance. A Python script is provided to execute this copy which leverages the SAP HANA Cloud, data lake Files REST API. 
+<!-- description --> Copy a root directory from a source SAP HANA data lake Files instance to a target SAP HANA data lake Files instance. A Python script is provided to execute this copy which leverages the SAP HANA Cloud, data lake Files REST API. 
 
 ## Prerequisites
  - Two running non-trial SAP HANA data lake Files instances – a source and a target
- - Both instances added to SAP HANA database explorer; [instructions to add](data-lake-hdlfs-dbx-connection)
+ - Both instances added to SAP HANA database explorer; [instructions to add data lake Files container](hana-dbx-connections)
  - Read permissions on the source instance
  - Read and write permissions on the target instance
  - Client certificates set up on both instances, and a copy of the client certificate and client key files for each instance; [instructions to set up certificates](https://blogs.sap.com/2021/08/05/setting-up-initial-access-to-hana-cloud-data-lake-files/)
@@ -31,7 +31,7 @@ Note that for simplicity, the same client certificate will be used for both the 
 
 In this step, we will create a directory called `My_Directory` with two subdirectories, `Subdirectory_1` and `Subdirectory_2`, with a file in each subdirectory. The files can be of any format, however this tutorial will use text files. 
 
-1. Create and save the following  text files locally. 
+1. Create and save the following text files locally. 
 
     ```File_1.txt
     This is my first text file.
@@ -42,7 +42,7 @@ In this step, we will create a directory called `My_Directory` with two subdirec
     This is my second text file. 
     ```
 
-2. In database explorer, upload these files to your source HDLFS instance. Upon uploading the file with the following relative path, the directory `My_Directory` with subdirectory `Subdirectory_1` will be created. 
+2. In database explorer, upload these files to your source HANA data lake Files storage (HDLFS) instance. Upload `File_1.txt`, setting the relative path as `My_Directory/Subdirectory_1`. This will upload the file and create a new directory `My_Directory` with subdirectory `Subdirectory_1`. 
 
     ![Upload files](upload-files.png)
 

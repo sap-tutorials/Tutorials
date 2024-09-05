@@ -11,14 +11,15 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
  - You have completed the first 3 tutorials in this mission
- - You have completed the 8th tutorial on .NET in this mission
+ - You have completed the previous tutorial on .NET in this mission
 
 ## You will learn
   - How to install the .NET Core EF CLI
   - How to create and debug an EF Core application that queries an SAP HANA database
+  - How to use the scaffold command to generate entity classes for pre-existing schema tables
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
 
 ---
 
@@ -36,18 +37,24 @@ dotnet tool search dotnet-ef --detail
 
 The SAP HANA Client 2.17 release supports EF Core 6.0 & 7.0.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-Run the following command to install version 6 of the dotnet-ef tool.
+Run the following command to install version 7 of the dotnet-ef tool.
 
 ```Shell
-dotnet tool install dotnet-ef --version 6.0.14 -g
+dotnet tool install dotnet-ef --version 7.0.17 -g
 dotnet tool list -g
 ```  
 
 ![.NET Core EF CLI Install](install.png)
 
+The help for the .NET Command Line Tools can be displayed as shown below.
+
+```Shell
+dotnet ef -h
+```
+
+![entity framework tools](entity-framework-tools.png)
 
 ### Create a .NET Core EF application that queries an SAP HANA database
-
 1.  Create a new console app with the below commands:
 
     ```Shell (Microsoft Windows)
@@ -60,7 +67,7 @@ dotnet tool list -g
     dotnet new console -o EFCore
     ```
 
-2.  Open the `dotNET.csproj` file:
+2.  Open the `EFCore.csproj` file:
 
     ```Shell (Microsoft Windows)
     cd EFCore
@@ -76,47 +83,49 @@ dotnet tool list -g
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
-        <Reference Include="Sap.Data.Hana.Core.v2.1">
-            <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
+        <Reference Include="Sap.Data.Hana.Core.v6.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
         </PackageReference>
     </ItemGroup>
     ```
 
     ```Shell (Linux or Mac)
     <ItemGroup>
-        <Reference Include="Sap.Data.Hana.Core.v2.1">
-            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
+        <Reference Include="Sap.Data.Hana.Core.v6.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.Data.Hana.Net.v6.0.dll</HintPath>
         </Reference>
-        <Reference Include="Sap.EntityFrameworkCore.Hana.v6.0">
-            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v6.0.dll</HintPath>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
 
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
         </PackageReference>  
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.14">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
         </PackageReference>
     </ItemGroup>
     ```
+
     ![csproj file](csproj-file.png)
 
     Once the `dotNet.csproj` file has been updated, save, and close the file.    
 
-3.  Run the app to validate that SAP HANA DLLs can be loaded:
+3.  Run the app to validate that SAP hdbclient DLLs can be loaded:
 
     ```Shell
     dotnet run
     ```
     The expected output is `Hello, World!`.
 
-    >If a warning occurs mentioning that a reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
+    >If a warning occurs mentioning that a SAP reference could not be resolved, revisit the `EFCore.csproj` file and double check that the hintpath is correct.
 
 4. Open an editor and create a file named `HotelModel.cs`.
 
@@ -148,7 +157,7 @@ dotnet tool list -g
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseHana("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UserName=User2;Password=Password2");
+            options.UseHana("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UserName=User2;Password=Password2;CurrentSchema=User2");
         }
     }
 
@@ -190,8 +199,6 @@ dotnet tool list -g
     Console.WriteLine("Found: " + hotels.Name);
     ```
 
-    Save and close the `Program.cs` file after replacing the code.
-
     Further details on SAP HANA Client entity core driver can be found at [Entity Framework Core Support](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/3e6ef454ffc94cda8fefb0acf5be007b.html).  Further .NET API details can be found in the [.NET API browser](https://learn.microsoft.com/en-us/dotnet/api/?view=efcore-6.0).
 
 8.  Run the app:
@@ -204,10 +211,7 @@ dotnet tool list -g
     ![Result of running the app](result.png)
 
 
-
 ### Debug the application
-
-
 1. Open Visual Studio Code. If needed, download the application [here](https://code.visualstudio.com/Download).
 
 2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
@@ -228,8 +232,182 @@ dotnet tool list -g
 
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-### Knowledge check
+### Generate scaffolding classes for an existing schema
+The following steps demonstrate the process of generating entity type classes and a DbContext class based on an existing database schema.  Additional details can be found at [Scaffolding (Reverse Engineering)](https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli).
 
+1. Create a new console app with the below commands:
+
+    ```Shell (Microsoft Windows)
+    cd %HOMEPATH%/HANAClientsTutorial
+    dotnet new console -o EFCoreScaffold
+    ```  
+
+    ```Shell (Linux or Mac)
+    cd $HOME/HANAClientsTutorial
+    dotnet new console -o EFCoreScaffold
+    ```
+
+2. Open the `EFCoreScaffold.csproj` file:
+
+    ```Shell (Microsoft Windows)
+    cd EFCoreScaffold
+    notepad EFCoreScaffold.csproj
+    ```
+
+    ```Shell (Linux or Mac)
+    cd EFCoreScaffold
+    pico EFCoreScaffold.csproj
+    ```
+
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET and entity driver from.  Modify the `HintPath` section with the information about where the dlls are located on your machine.
+
+    ```Shell (Microsoft Windows)
+    <ItemGroup>
+        <Reference Include="Sap.Data.Hana.Core.v6.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
+        </Reference>
+
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
+        </PackageReference>  
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
+        </PackageReference>
+    </ItemGroup>
+    ```
+
+    ```Shell (Linux or Mac)
+    <ItemGroup>
+        <Reference Include="Sap.Data.Hana.Core.v6.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.Data.Hana.Net.v6.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
+            <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
+        </Reference>
+
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17">
+        </PackageReference>  
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.17">
+        </PackageReference>
+    </ItemGroup>
+    ```
+
+3. Install the required package `Microsoft.EntityFrameworkCore.Design`.
+
+    ```Shell
+    dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.17
+    ```
+
+    The list of installed packages can be seen using the below command.
+
+    ```Shell
+    dotnet list package
+    ```
+
+    ![package list](package-list.png)
+
+    Additional details can be found at [dotnet add package](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package) and [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design)
+
+4. Use the scaffold command to generate entity classes for the HOTEL schema.
+
+    ```Shell
+    dotnet ef dbcontext scaffold "Server=xxxxxx-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443;uid=USER2;pwd=Password2;Current Schema=HOTEL" Sap.EntityFrameworkCore.Hana.v7.0 --schema HOTEL --context HotelContext
+    ```
+
+    ![scaffold command](scaffold.png)
+
+    Should you wish to regenerate the files in the future and overwrite the existing files, the `--force` parameter can be used.  Additional details on the scaffold command can be found at [.NET Core CLI](https://learn.microsoft.com/en-us/ef/core/cli/dotnet#dotnet-ef-dbcontext-scaffold).
+    
+5. Open an editor to edit the file `Program.cs`.
+
+    ```Shell (Windows)
+    notepad Program.cs
+    ```
+
+    ```Shell (Linux or Mac)
+    pico Program.cs
+    ```
+
+6.  Replace the entire contents of `Program.cs` with the code below. Save and close the file when finished.
+
+    ```C#
+    using EFCoreScaffold;
+
+    using var db = new MyHotelContext(true);
+
+    // Create
+    Console.WriteLine("Inserting a new maintenance item");
+    db.Add(new Maintenance { Mno = 3, Description = "Replace cracked mirror in lobby bathroom" });
+    db.SaveChanges();
+
+    // Read
+    Console.WriteLine("Querying for a maintenance item");
+    var maintenanceItems = db.Maintenances
+        .OrderBy(b => b.Hno).Last();
+    Console.WriteLine("Found item#: " + maintenanceItems.Mno + "  Desc: " + maintenanceItems.Description);
+    ```
+
+7. Open an editor to edit the file `HotelContext.cs`.  
+
+    ```Shell (Windows)
+    notepad HotelContext.cs
+    ```
+
+    ```Shell (Linux or Mac)
+    pico HotelContext.cs
+    ```
+
+8. Delete the `OnConfiguring` method.  This will be added to the `MyHotelContext.cs` class.
+
+9. In the already open file `HotelContext.cs`, change the name of the keys so they do not start with _SYS with a search and replace.  
+
+10. Open an editor to create and edit a new file named `MyHotelContext.cs`.  
+
+    ```Shell (Windows)
+    notepad MyHotelContext.cs
+    ```
+
+    ```Shell (Linux or Mac)
+    pico MyHotelContext.cs
+    ```
+
+11. Add the code below. Save and close the file when finished.  Note that the schema is changed to be USER2 while the original objects are in the schema HOTEL.
+
+    ```C#
+    using Microsoft.EntityFrameworkCore;
+    using Sap.EntityFrameworkCore.Hana;
+
+    namespace EFCoreScaffold;
+    internal class MyHotelContext : HotelContext
+    {
+        public MyHotelContext(bool createTables) : base()
+        {
+            if (createTables)
+            {
+                // Delete the existing database tables and re-create new tables.
+                Database.EnsureDeleted();
+                Database.EnsureCreated();
+            }
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseHana("Server=xxxxxxxx-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443;uid=USER2;pwd=Password2;Current Schema=USER2");
+        }
+    }
+    ```
+
+12. Run the app:
+
+    ```Shell
+    dotnet run
+    ```
+
+    ![Result of running the app](results2.png)
+
+
+### Knowledge check
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 

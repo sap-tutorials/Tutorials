@@ -2,8 +2,10 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Trial to Set Up Account for Document Information Extraction and Go to Application
@@ -11,10 +13,10 @@ primary_tag: topic>machine-learning
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
+- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to access your trial account
+  - How to access your trial account 
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
 
@@ -27,7 +29,7 @@ primary_tag: topic>machine-learning
 
 2. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    <!-- border -->![Trial global account](trial.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -82,34 +84,35 @@ You have successfully used the booster **Set up account for Document Information
 
 >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
 
-You are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+You're now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
 
 
 ### Access subscription (optional)
 
 
-> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've created with the **Set up account for Document Information Extraction** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the Document Information Extraction Trial application, you've subscribed to using the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
-Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
+Do the following to access the Document Information Extraction Trial application, without having to run the **Set up account for Document Information Extraction** booster once again:
 
-1. Navigate to your trial global account by clicking **Go To Your Trial Account**.
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+   
+2. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-2. From your global account page, choose `trial` to access your subaccount.
+3. From your global account page, choose `trial` to access your subaccount.
 
     <!-- border -->![UI application](subaccount.png)
 
-3. Click **Instances and Subscriptions** on the navigation side bar.
+4. Click **Instances and Subscriptions** on the navigation side bar.
 
     <!-- border -->![UI application](subscriptions.png)
 
-4. Search for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
+5. Search for **Document Information Extraction Trial** under **Subscriptions** and click the arrow on the right to access it.
 
     <!-- border -->![UI application](subscriptions-tile.png)
 
-5. Here, you can click **Go to Application** to navigate to the application, and also manage the **Document Information Extraction Trial UI** roles.
+6. Here, you can click **Go to Application** to navigate to the application.
 
     <!-- border -->![UI application](subscriptions-action.png)
 
-Congratulations, you have completed this tutorial.
-
+Congratulations, you've completed this tutorial.

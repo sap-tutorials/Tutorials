@@ -12,7 +12,7 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Use remote table replication after you have established a connection from an SAP HANA on-premise database to SAP HANA Cloud, SAP HANA database with the cloud connector.
 
 ## Prerequisites
--	An SAP HANA on-premise database with SPS05 or higher if you want to use Remote Table Replication. If you have [SAP HANA express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html) SPS04 Rev45, however, you may still use the cloud connector for SDA virtual access.
+-	An SAP HANA on-premise database with SPS05 or higher if you want to use Remote Table Replication. If you have [SAP HANA express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html) SPS04 Rev45, however, you may still use the cloud connector for SDA virtual access.
 -	A **running** instance of an SAP HANA Cloud, SAP HANA database (trial or production) in a Cloud Foundry environment. For more information how to use SAP BTP Connectivity in a Neo environment, [please refer to this documentation](https://help.sap.com/viewer/b865ed651e414196b39f8922db2122c7/LATEST/en-US/5ceb84290d5644638f73d40fde3af5d0.html).
 -	An established [remote source connection using the cloud connector](hana-cloud-mission-extend-08).
 

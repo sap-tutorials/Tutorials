@@ -12,8 +12,9 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Add an SAPUI5 app to a site in SAP Build Work Zone, standard edition.
 
 ## Prerequisites
- - You've already created the `JobCore` site
+ - You've already created the `JobCore` site 
  - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment
+ - If you're working with Spaces and Pages, you've created a space and a page and assigned the space to a role, as described in this tutorial: [Create a Space and a Page and Add Apps](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-spaces-pages.html)
 
 
 ## You will learn
@@ -54,15 +55,13 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
     <!-- border -->![Open Content Editor](1-open-content-editor.png)
 
-    >The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
-
-2. Click the **Content Explorer** tab to explore content from the available content providers.
+2. Click the **Content Explorer** button to explore content from the available content providers.
 
     ![Open Content Explorer](2-content-explorer.png)
 
 3. Select the **HTML5 Apps** provider.
 
-    ![Select the HTML5 tile](3a-select-HTML5-tile.png)
+    ![Select the HTML5 tile](3a-select-HTML-tile.png)
 
 4. You'll see that your `Suppliers` app that you've just created in SAP Business Application Studio, already exists in this provider. Select it and click **+ Add to My Content**.
 

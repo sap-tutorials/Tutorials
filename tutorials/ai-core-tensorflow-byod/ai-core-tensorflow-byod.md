@@ -12,8 +12,13 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Bring a pre-trained text classifier Tensorflow model to SAP AI Core, and write a workflow which will enable GPU deployment of this model, for movie review classification.
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have [set up an Enterprise SAP BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and set up entitlements and service instances for **SAP AI Core**.
-- You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
+- You have [set up your Git Repository with SAP AI Core](https://developers.sap.com/tutorials/ai-core-helloworld.html).
 - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
 
 
@@ -100,10 +105,10 @@ for rg in response.resources:
 5. Upload all model files to your AWS S3 bucket. Edit and run the following commands.
 
     ```BASH[1-4]
-    aws s3 cp model.h5 s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp max_pad_len.txt s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp label_encoded_classes.npy s3://<YOUR_BUKCET_ID>/movie-clf/model/  
-    aws s3 cp tokens.json s3://<YOUR_BUKCET_ID>/movie-clf/model/  
+    aws s3 cp model.h5 s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp max_pad_len.txt s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp label_encoded_classes.npy s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+    aws s3 cp tokens.json s3://<YOUR_BUCKET_ID>/movie-clf/model/  
 
     ```
 
@@ -114,7 +119,7 @@ for rg in response.resources:
 
 
     ```BASH[1]
-    aws s3 ls s3://<YOUR_BUKCET_ID>/movie-clf/model/
+    aws s3 ls s3://<YOUR_BUCKET_ID>/movie-clf/model/
     ```
 
     It should look like the following:
@@ -157,6 +162,71 @@ You should see the following response:
 <!-- border -->![img](img/acs/3.png)
 
 > Note that depending on your region, your  AWS endpoint syntax may differ from the example above. In the event of an error, try this step again with alternative syntax. For available syntaxes, please see the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html)
+
+
+### Create workflow to serve your model
+
+
+Save the following executable file in your local system:
+
+| Filename | Download link |
+| -------- | ------------- |
+| `serving_executable.yaml` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/workflow/serving_executable.yaml) |
+
+In the executable, ensure the following.
+
+<!-- border -->![img](img/acs/6_0.png)
+
+1. Ensure that your `resourcePlan` is set to `infer.s`. This will enable the GPU node in deployment. Find all the available resource plans [here](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/57f4f19d9b3b46208ee1d72017d0eab6.html).
+
+2. Replace `docker-registry-secret` with the name of your docker registry secret. You can create and use multiple docker secrets in SAP AI Core. [See how to create docker registry secret](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html).
+
+3. Set your docker image URL.
+
+Save your executable.
+
+
+### Sync workflow with SAP AI Core
+
+
+You will create a folder in your GitHub repository connected SAP AI Core, where you will store the workflow (executable). You will then register this folder as an **Application** in SAP AI Core to enable syncing of the workflow as an executable.
+
+> You can create multiple **Applications** in SAP AI Core for syncing multiple folders. This helps you organize separate folders for storing workflows YAML files for separate use cases.
+
+1. Create a folder named `tutorial-tf-text-clf` in your GitHub repository connected to SAP AI Core. Place the following workflows inside it:
+
+    <!-- border -->![img](img/acs/6_1.png)
+
+2. Edit and execute the code below to create an **Application** and sync the folder `tutorial-tf-text-clf`.
+
+    ```PYTHON[4]
+    response = ai_core_client.applications.create(
+    application_name = "tf-clf-app",
+    revision = "HEAD",
+    repository_url = "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME", # Change this
+    path = "tutorial-tf-text-clf"
+    )
+
+    print(response.__dict__)
+    ```
+You should then see:
+
+    <!-- border -->![img](img/acs/6_2.png)
+
+3. Verify your workflow sync status, using the following code:
+
+    ```PYTHON
+    response = ai_core_client.applications.get_status(application_name = 'tf-clf-app')
+
+    print(response.__dict__)
+    print('*'*80)
+    print(response.sync_ressources_status[0].__dict__)
+    ```
+You should then see:
+
+    <!-- border -->![img](img/acs/6_3.png)
+
+After your workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
 
 
 ### Register model as artifact
@@ -259,73 +329,6 @@ Follow the steps to upload the files downloaded in step two as a docker image.
     ```
 
     <!-- border -->![img](img/docker-push.png)
-
-
-
-### Create workflow to serve your model
-
-
-Save the following executable file in your local system:
-
-| Filename | Download link |
-| -------- | ------------- |
-| `serving_executable.yaml` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/workflow/serving_executable.yaml) |
-
-In the executable, ensure the following.
-
-<!-- border -->![img](img/acs/6_0.png)
-
-1. Ensure that your `resourcePlan` is set to `infer.s`. This will enable the GPU node in deployment. Find all the available resource plans0 [here](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/57f4f19d9b3b46208ee1d72017d0eab6.html).
-
-2. Replace `docker-registry-secret` with the name of your docker registry secret. You can create and use multiple docker secrets in SAP AI Core. [See how to create docker registry secret](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html).
-
-3. Set your docker image URL.
-
-Save your executable.
-
-
-### Sync workflow with SAP AI Core
-
-
-You will create a folder in your GitHub repository connected SAP AI Core, where you will store the workflow (executable). You will then register this folder as an **Application** in SAP AI Core to enable syncing of the workflow as an executable.
-
-> You can create multiple **Applications** in SAP AI Core for syncing multiple folders. This helps you organize separate folders for storing workflows YAML files for separate use cases.
-
-1. Create a folder named `tutorial-tf-text-clf` in your GitHub repository connected to SAP AI Core. Place the following workflows inside it:
-
-    <!-- border -->![img](img/acs/6_1.png)
-
-2. Edit and execute the code below to create an **Application** and sync the folder `tutorial-tf-text-clf`.
-
-    ```PYTHON[4]
-    response = ai_core_client.applications.create(
-    application_name = "tf-clf-app",
-    revision = "HEAD",
-    repository_url = "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME", # Change this
-    path = "tutorial-tf-text-clf"
-    )
-
-    print(response.__dict__)
-    ```
-You should then see:
-
-    <!-- border -->![img](img/acs/6_2.png)
-
-3. Verify your workflow sync status, using the following code:
-
-    ```PYTHON
-    response = ai_core_client.applications.get_status(application_name = 'tf-clf-app')
-
-    print(response.__dict__)
-    print('*'*80)
-    print(response.sync_ressources_status[0].__dict__)
-    ```
-You should then see:
-
-    <!-- border -->![img](img/acs/6_3.png)
-
-After you workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
-
 
 
 ### Create configuration for deployment

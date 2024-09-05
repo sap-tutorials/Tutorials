@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to create and debug a .NET application that queries a data lake Relational Engine
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
@@ -68,7 +68,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the Sap.Data.SQLAnywhere.Core.v2.1.dll is located on your machine.
 
     ```Shell (Microsoft Windows)
     <ItemGroup>

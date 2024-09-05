@@ -23,27 +23,30 @@ primary_tag: software-product>sap-hana-cloud
 ### Open a SQL console
 This step demonstrates how a SQL console can quickly be opened from within SAP HANA Cloud Central and how to change the SQL console's credentials and schema.
 
-1.  In **SAP HANA Cloud Central**, open a SQL console by selecting **SQL Console** in the left pane.  Notice that the SQL console is not associated with a database when opened in this way.
+1.  In **SAP HANA Cloud Central** open a SQL console by selecting **SQL Console** in the left pane.  Notice that the SQL console is not associated with a database when opened in this way.
 
     ![open SQL console](open-sql-console.png)
 
-    >Additional SQL consoles can also be opened by selecting the **+** icon.
+    Additional SQL consoles can also be opened by selecting the **+** icon.
 
 2.  This time select **Instances**, select a database, and choose **Open SQL Console** from the actions menu.
 
     ![open SQL console from an instance](open-sql-console-instance.png)
 
-    Notice that it is now connected to the instance named `HC_HDB`.
+    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the instance label.
 
     ![SQL console connected to HC_HDB](sql-console-connected.png)
 
-    >The currently connected user can be seen by executing the SQL statement below.
+3. The currently connected user can be seen by executing the SQL statement below.
 
-    >```SQL
-    >SELECT CURRENT_USER FROM DUMMY;
-    >```
+    ```SQL
+    SELECT CURRENT_USER FROM DUMMY;
+    ```
 
-3.  If you wish to connect to the database using a different set of credentials, select the **Connect this SQL console to a different instance** icon, select the current database and uncheck **Use cached credentials if possible**.
+    ![Current user](current-user.png)
+
+
+4.  If you wish to connect to the database using a different set of credentials, select the **Connect this SQL console to a different instance** icon, select the current database and uncheck **Use cached credentials if possible**.
 
     ![Change credentials](change-credentials.png)
 
@@ -51,7 +54,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![change credentials](change-credenitals2.png)
 
-    You can also use the following SQL to view and change the connected user.
+    You can also use the following SQL for an SAP HANA database to change and change the connected user.
 
     ```SQL
     CONNECT USER1 PASSWORD Password1;
@@ -60,11 +63,19 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![Change credentials using SQL](change-credentials-sql.png)
 
-4.  The current schema can be set and viewed using the SQL statements below.
+    The SQL to view the current user for a data lake Relational Engine is shown below.
 
     ```SQL
-    SET SCHEMA HOTEL;
-    SELECT CURRENT_SCHEMA FROM DUMMY;
+    SELECT CURRENT USER;
+    ```
+
+    ![Show current user for a data lake Relational Engine](current-user-dl.png)
+
+5.  The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
+
+    ```SQL
+    SET SCHEMA HOTELS;
+    SELECT CURRENT_SCHEMA, CURRENT_USER FROM DUMMY;
     ```
 
     ![Set the schema](set-schema.png)
@@ -72,49 +83,132 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
     For data lake Relational Engine instances, the current schema can be set and viewed as shown below.
 
     ```SQL
-    SET SCHEMA HOTEL;
-    SELECT CURRENT SCHEMA;
+    SET SCHEMA HOTELS;
+    SELECT CURRENT SCHEMA, CURRENT USER;
     ```
 
     ![set the schema of a data lake RE](set-schema-dl.png)
 
+6. Multiple light and dark themes are available.  
+
+    Click on the SAP HANA Cloud Central settings icon.  Then select **Settings** > **Appearance**.  The default theme is SAP Morning Horizon. 
+
+    ![available themes](themes.png)
 
 ### Execute SQL
-This step demonstrates how to execute a SQL query and view query results, messages, and history within a SQL console.  
+This step demonstrates how to execute a SQL query, examine the statement help, view the query results, messages, and history tabs within a SQL console.  
 
 1. Execute the following SQL statements.
 
     ```SQL
-    SELECT * FROM CUSTOMER;
-    SELECT * FROM HOTEL.HOTEL_ROOMS_VIEW;
+    SELECT * FROM HOTELS.CUSTOMER;
     SELECT * FROM NON_EXISTENT_TABLE;
+    SELECT * FROM NON_EXISTENT_TABLE2;
+    SELECT * FROM HOTELS.HOTEL_ROOMS_VIEW;
     ```
+
+    The following error dialog appears.  Select  **Skip All**.
+
+    ![SQL Execution Error dialog](error-dialog.png)
+
+    Notice that there is an error marker beside the lines that could not be executed.  Pressing **Alt+E** will display further details and advances to the next error when pressed more than once.
 
     ![SQL results](sql-results.png)
 
-    Notice that two result tabs are shown, one for each SQL statement.
+    Notice that two result tabs are shown, one for each SQL statement that generated a result.
 
-2. Place the cursor on line two and open the **Statement Help** panel.
+2. Results can be downloaded as shown below.
+
+    ![download results](download-results.png)
+
+    Options are provided on how to format the data.
+
+    ![download options](download-options.png)
+    
+    Rows can also be selected and then copied to the clipboard by pressing Ctrl+C.
+
+    ![](copy-results.png)
+
+3. Place the cursor on line four and open the **Syntax Help** panel.
 
     ![statement help panel](statement-help.png)
 
     Notice that for SAP HANA Cloud, SAP HANA databases, links to the related documentation and details on the objects used in the SQL statement are shown.
 
-3. Examine the **Messages** tab.
+4. Commonly used shortcut keys are listed below.  Try a few of them out.
+
+    Action | Shortcut
+    ------ | ------
+    Add Comment Block | Ctrl+Shift+/
+    Comment/Uncomment Line | Ctrl+/
+    To Uppercase | Ctrl+Alt+U
+    To Lowercase | Ctrl+Shift+U
+    Go to Next Error | Alt+E
+    Go to Previous Error | Alt+Shift+E
+    Go to Line | Ctrl+L
+    Jump to Matching Brackets | Ctrl+P
+    Run All | F8
+    Run Statement |	F9
+    Text Completion | Ctrl+Space 
+
+    >The shortcut keys may vary depending on the OS and browser used.
+
+    For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
+
+5. Examine the **Messages** tab.
 
     ![messages tab](messages-tab.png)
 
     Notice that details of the statements executed are shown including metrics information such as the amount of memory consumed.
 
-4. Examine the **History** tab.
+6. Examine the **History** tab.
 
     ![history view](history.png)
 
     Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL console or copied.
 
-    >The history is not persisted across browser reloads.
+7. Examine the **SQL Console Settings**.  
 
-5. Execute the following SQL statements.
+    ![connection settings](connection-settings.png)
+
+    * Execute the following SQL which is used to illustrate the result behavior settings.
+
+        ```SQL
+        SELECT * FROM M_SYSTEM_INFORMATION_STATEMENTS;
+
+        SELECT COUNT(*) FROM SYS.TABLE_COLUMNS;
+        SELECT * FROM TABLE_COLUMNS;
+        ```
+
+        Notice that only the first 1024 bytes from the column STATEMENT are displayed in the results view for the Blocked Transactions row.  These limits can be adjusted in the connection settings dialog.
+
+        ![limit for large objects](settings-result3.png)
+
+        Notice that over 6000 rows are in TABLE_COLUMNS.
+
+        ![one thousand row limit](settings-result1.png)
+
+        The first 1000 are displayed.
+
+        ![one thousand row limit](settings-result2.png)
+
+    * Execute the following SQL which is used to illustrate the result display display settings.
+
+        ```SQL
+        SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
+        ```
+
+        The below is the result when this setting is disabled.
+
+        ![no formatting](no-formatting.png)
+
+        The below is the result when this setting is enabled.
+
+        ![format settings](result-format-settings.png)
+
+        ![result formatted](formatted.png)
+
+8. Execute the following SQL statements.
 
     ```SQL
     SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
@@ -163,6 +257,12 @@ This step demonstrates how to execute a SQL query and view query results, messag
 
     ![SQL results](result-viewer.png)
 
+9. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the icons shown below.
+
+    ![download and import](download-and-import.png)
+
+
+
 ### A few things to note
 The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
 
@@ -170,20 +270,20 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
 
 * The SQL console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central. 
 
+* The SQL console in SAP HANA Cloud Central has the following additional features
+
+    * Ability to format results
+    * Support for SAP Morning and Evening Horizon themes
+
 * The SAP HANA database explorer has some additional functionality
 
     * Persistency of SQL tabs and their contents
     * SQL debugging
-    * SQL parsing to detect potential errors
     * Code completion of schema objects
     * SQL formatting
-    * SQL viewers for spatial
-    * Results can be downloaded in a CSV
+    * Viewer for spatial and graph data
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
-    * Generate SQL Analyzer file or explain plan
-    * Statement library
-    * SQL console settings
 
 ### Knowledge check
 

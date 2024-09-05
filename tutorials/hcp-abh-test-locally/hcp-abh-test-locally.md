@@ -2,8 +2,8 @@
 parser: v2
 primary_tag: products>sap-business-technology-platform
 auto_validation: true
-author_name: Prathibha GC
-author_profile: https://github.com/Prathibha-Mouli
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
 time: 20
 tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub ]
 ---
@@ -32,15 +32,18 @@ Go to <https://api.sap.com> and navigate to the [Campaign](https://api.sap.com/a
 
 ### Generate sample API call code
 
-Select `GET/CampaignCollection` method under **API Reference**. Glance through the `GET/CampaignCollection` to understand the parameters. The SAP Business Accelerator Hub provides you with starter code in a variety of languages and tools for each API.
+Go to **API Reference**.
+
+Select `GET/CampaignCollection` method and glance through it to understand the parameters. The SAP Business Accelerator Hub provides you with starter code in a variety of languages and tools for each API.
 
 ![Get/CampaignCollection method](2.png)
 
-Choose **Try Out** to proceed further.
+Click **Try Out**.
 
 ![Try Out](3.png)
 
 The API call starter code is available in various languages like JavaScript and Swift. You will be using the curl code in this example.
+
 Choose **Code Snippet** and select **the Curl section** to view the generated code. This personalized snippet already includes your unique API key.
 
 ![Curl Code](4.png)
@@ -54,7 +57,11 @@ Copy the highlighted curl code to the clipboard.
 
 Paste the content of the clipboard in a terminal or command line window. Hit **Enter** to run the command. Please note that it may take a few seconds before data is seen on your screen.
 
-> You can use `CTRL+C` to stop the command from running.
+>**Important:** In a Windows command prompt/terminal, you must use double-quotes ("") instead of the single-quotes ('') for your entire payload and escape any other double-quotes(\") inside the payload.
+
+>Also, if `revocation function error` occurs, pass `-k` or `--insecure` as parameter to bypass this check in Windows system.
+
+>You can use `CTRL+C` to stop the command from running.
 
 ![terminal with code copied](6.png)
 
@@ -67,13 +74,25 @@ The formatted output represents the results of a simple call to the Campaign Col
 ![Formatted output data](7.png)
 
 ### Limit the number of results
-You can limit the number of results retrieved with the `$top` value provided in the *Parameter* section of the `GET/CampaignCollection` method. Switch back for a moment from the Code Snippet section to the Parameters section in the [Try Out](https://api.sap.com/api/campaign/tryout) area and modify the value of the `$top` parameter to request just 3 results.
+You can limit the number of results retrieved with the `$top` value provided in the *Parameter* section of the `GET/CampaignCollection` method. 
 
-You can then switch back to the Code Snippet section, and copy the updated code from the Curl section to paste it into your terminal. When you execute the curl command, and pipe the output into jq again, you should see a nicely formatted list of three campaigns.
+Switch back for a moment from the **Code Snippet** section to the **Parameters** section in the [Try Out](https://api.sap.com/api/campaign/tryout) area and modify the value of the `$top` parameter to request just 3 results.
+
+![Limit to 3 records](7a.png)
+
+You can then switch back to the **Code Snippet** section, and copy the updated code from the **Curl** section to paste it into your terminal. When you execute the curl command, and pipe the output into jq again, you should see a nicely formatted list of three campaigns.
+
+![Results](7b.png)
+
 
 ### Add multiple parameters to the API call
 Besides the `$top` parameter, you can add multiple parameters to the [Query String](https://en.wikipedia.org/wiki/Query_string) of your API call.
-Now add in a second parameter for `$select`. You only want the `StatusText` and `Status` for the top 3 users. Use the same approach as before - switch to the Parameters section, specify the two values for the `$select` parameter using the drop down menu, then switch back to the Code Snippet section and copy the Curl content again. It should look something like this:
+
+Now add in a second parameter for `$select`. You only want the `StatusText` and `Status` for the top 3 users. Use the same approach as before – switch to the **Parameters** section, specify the two values for the `$select` parameter using the dropdown menu, then switch back to the **Code Snippet** section and copy the **Curl** content again. 
+
+![Setting parameters](9a.png)
+
+The Curl code should look something like this:
 
 ```bash
 curl --request GET \
@@ -87,9 +106,9 @@ curl --request GET \
 
 Notice how the parameters are [encoded](https://en.wikipedia.org/wiki/Percent-encoding) in the query string.
 
-Paste the entire command into your terminal again. This time the output is vastly reduced:
+Paste the entire command into your terminal again. This time the output is vastly reduced.
 
-![text editor with parameter added](9.png)
+![Parameters added](9b.png)
 
 You have now learnt how to use code snippets productively.
 

@@ -12,6 +12,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Use SAP AI Launchpad, Postman or python to connect with SAP AI Core.
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have created an SAP AI Core instance.
 
 ## You will learn
@@ -21,6 +26,9 @@ author_profile: https://github.com/dhrubpaul
 ## Intro
 If you want to use SAP AI Core with python, select the tab for **SAP AI Core SDK** or **AI API client SDK**.
 
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_01_set_up_tools_to_connect_with_and_operate_sap_ai_core/setup_create_connection.ipynb)
+  
 ---
 
 ### Get your SAP AI Core keys

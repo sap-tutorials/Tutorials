@@ -9,21 +9,24 @@ author_profile: https://github.com/manuel-stampp
 ---
 
 # Onboard an MDK Client to Your OData Cache Database
+
 <!-- description --> Implement onboarding for an app based on SAP Mobile Services, mobile development kit (MDK) to your OData Cache Database based on SAP Mobile Services, mobile back-end tools (MBT)
 
 ## Prerequisites
+
 - This tutorial requires that you have a running OData Cache Database in your space, connected to SAP Mobile Services. It is based on the project created in [Create a cached OData Service for improved Offline OData](cp-mobile-backend-tools-cache-db)
 - **Tutorial** [Set Up SAP Business Application Studio for Multi-Channel Development](cp-mobile-bas-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
-
 ## You will learn
-  - How to create an MDK sample app using a template in SAP Business Application Studio
-  - How to deploy an MDK app to Mobile Services and run it in mobile client
-  - How to onboard an MDK app to an OData Service destination in SAP Mobile Services that [requires client registrations](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html)
-  - How to work with client filters
+
+- How to create an MDK sample app using a template in SAP Business Application Studio
+- How to deploy an MDK app to Mobile Services and run it in mobile client
+- How to onboard an MDK app to an OData Service destination in SAP Mobile Services that [requires client registrations](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mbt/client-registrations.html)
+- How to work with client filters
 
 ## Intro
+
 In some cases where the OData producer implements specific synchronisation logic and/or requires  download tracking on OData producer side, you might face an OData service that requires client registrations. For these services, before data can be synchronised via an `InitializeOffline.action`, a registration procedure must be sent to the OData producer.
 
 This tutorial shall give an example how you could implement such an initialization procedure for an SAP Mobile Services, mobile development kit (MDK) client. The tutorial shares a lot of common steps with the tutorial [Quick Start with the Mobile Development Kit (MDK)](cp-mobile-dev-kit-quick-start), but focuses on another scenario. These common steps are similar, but not equal and do in case of this tutorial not cover the MDK web client. It is still recommendable to go through both tutorials if you want to learn more about MDK.
@@ -32,18 +35,17 @@ This tutorial shall give an example how you could implement such an initializati
 
 ### Create a new MDK project in SAP Business Application Studio
 
-
 This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. From the **Welcome page**, select **Start from template** or (alternatively) select **View** &rarr; **Find Command**, type in 'create project' and select **SAP Business Application Studio: Create Project from Template**.
+2. From the **Welcome page**, select **Start from template** or (alternatively) select **View** &rarr; **Find Command**, type in 'Open Template' and select **Open Template Wizard**.
 
-    <!-- border -->![MDK](img_project_from_template.png)
+    ![MDK](img_project_from_template.png)
 
 3. Select **MDK Project** and click **Start**.
 
-    <!-- border -->![MDK](img_1.3.png)
+    ![MDK](img_1.3.png)
 
 4. In **Basic Information** step, provide the below information and click **Next**:
 
@@ -53,7 +55,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your project name` | `EpmCacheApp` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    <!-- border -->![MDK](img_mdk_wizard_basic.png)
+    ![MDK](img_mdk_wizard_basic.png)
 
     >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
@@ -68,25 +70,23 @@ This step includes creating the mobile development kit project in the editor.
     | `Enter a path to service` | Blank (leave it empty) |
     | `Enable Offline` | **Yes** |
 
-    <!-- border -->![MDK](img_template_service.png)
+    ![MDK](img_template_service.png)
 
-8. In **OData Collections** step, click **Select all data collections** &rarr; **Yes**.
+6. In **OData Collections** step, click **Select all data collections** &rarr; **Yes**.
 
-    <!-- border -->![MDK](img_template_collections.png)
+    ![MDK](img_template_collections.png)
 
     >In [this tutorial](cp-mobile-backend-tools-cache-db), server-side configuration for this MDK app was already done.
 
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections and open it in a new workspace. You should now see the `EpmCacheApp` project in the workspace.
-
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections and open it in a new workspace. You should now see the `EpmCacheApp` project in the workspace.
 
 ### Get familiar with generated project structure
 
-
 This is how the project structure looks like within the workspace.
 
-<!-- border -->![MDK](img_project_structure.png)
+![MDK](img_project_structure.png)
 
-These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
+These are the [metadata definitions](https://help.sap.com/doc/3642933ef2e1478fb1578ef2acba4ae9/Latest/en-US/reference/schemadoc/App.schema.html) available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
 - **`InitializeOffline.action`**: This action will initialize the offline store in the MDK mobile client and will download the required data to the offline store on the mobile device. In Web environment, it will initialize the service to be consumed in online mode.
 
@@ -102,9 +102,7 @@ These are the metadata definitions available in the editor and the format in whi
 
 >You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
-
 ### Create rules required for the registration process
-
 
 The approach for handling the service onboarding introduced here will leverage MDK Online communication to send a registration before the initial synchronization of the offline store is made.
 
@@ -167,20 +165,17 @@ The procedure consists of an additional MDK Service for online communication, ad
     }
     ```
 
-
-
 ### Create MDK Service for online and map rules
 
-
-1. Duplicate Service `com_sap_MbtEpmDemo.service` and `.com_sap_MbtEpmDemo.xml` via right-click &rarr; **duplicate** and rename them to `com_sap_MbtEpmDemoOnline.service` and `.com_sap_MbtEpmDemoOnline.xml` keeping the corresponding endings.
+1. Duplicate Service `com_sap_MbtEpmDemo.service` and `.com_sap_MbtEpmDemo.xml` by copying and pasting them in the same directory, then rename them to `com_sap_MbtEpmDemoOnline.service` and `.com_sap_MbtEpmDemoOnline.xml` keeping the corresponding endings.
 
     ![Duplicate files](gif_duplicate_service.gif)
 
-2. Open `com_sap_MbtEpmDemoOnline.service` and uncheck **Enable Offline Store** and save.
+2. Open `com_sap_MbtEpmDemoOnline.service`, disable **Enable Offline Store** and save.
 
     ![Uncheck Enable Offline Store flag](img_service_uncheck_offline.png)
 
-3. Edit `com_sap_MbtEpmDemo` to reflect the created rule for custom header. Therefore open `com_sap_MbtEpmDemo.service`, expand **Headers** and enter the following:
+3. Edit `com_sap_MbtEpmDemo.service` to reflect the created rule for custom header. Therefore open `com_sap_MbtEpmDemo.service`, expand **Headers** and enter the following:
 
     | Name | Value |
     | ---- | ----- |
@@ -190,8 +185,7 @@ The procedure consists of an additional MDK Service for online communication, ad
 
     ![Select rule from Object Browser](img_select_rule.png)
 
-4. Expand folders **Actions** &rarr; **Service**, right-click &rarr; **duplicate** ``InitializeOffline.action`` and rename the copy to `InitializeOnline.action`.
-
+4. Expand folders **Actions** &rarr; **Service**, duplicate `InitializeOffline.action` and rename the copy to `InitializeOnline.action`.
 5. Click it to open and switch **Service** through dropdown to `EpmCacheServiceOnline.service`. Remove all the **Defining Requests**.
 
     ![Create initialize online action](gif_action_initialize_online.gif)
@@ -200,9 +194,9 @@ The procedure consists of an additional MDK Service for online communication, ad
 
 7. Switch service to `/EpmCacheApp/Services/EpmCacheServiceOnline.service`
 
-9. Via **Object Browser**, locate and insert rule `RandomInt64.js` as value for `ClientId`. Alternatively you can paste `/EpmCacheApp/Rules/RandomInt64.js`
+8. Via **Object Browser**, locate and insert rule `RandomInt64.js` as value for `ClientId`. Alternatively you can paste `/EpmCacheApp/Rules/RandomInt64.js`
 
-10. In **Headers** section, add the following entry:
+9. In **Headers** section, add the following entry:
 
     | Name | Value |
     | ---- | ----- |
@@ -212,15 +206,13 @@ The procedure consists of an additional MDK Service for online communication, ad
 
     ![Modify client registration action](img_action_client_registration.png)
 
-
 ### Modify UI for client filter upload
-
 
 To allow proper upload of a filter entity, modify `BusinessPartnerFilterSet_Create.page` to meet requirements
 
 1. Click `BusinessPartnerFilterSet_Create.page` from **Pages** &rarr; `BusinessPartnerFilterSet` folder to open it with **MDK page Editor**.
 
-2. Expand **Container Item** on the **Controls** pane and drag a list picker control it into the existing section.
+2. Expand **Form Cell Controls** on the **Controls** pane and drag a list picker control it into the existing section.
 
 3. Via right-click, delete the `CountryFilter` and `FilterID` elements.
 
@@ -244,16 +236,13 @@ To allow proper upload of a filter entity, modify `BusinessPartnerFilterSet_Crea
 
 6. Open `BusinessPartnerFilterSet_CreateEntity.action` to reflect the change made in the UI and link the rule.
 
-7. For property `CountryFilter`, via Object Browser choose **selected value** of the picker control created (`#Page:BusinessPartnerFilterSet_Create/#Control:CountryPicker/#SelectedValue`).
+   - For property `CountryFilter`, via Object Browser choose **selected value** of the picker control created (`#Page:BusinessPartnerFilterSet_Create/#Control:CountryPicker/#SelectedValue`).
 
-8. For property `FilterId`, link the rule `RandomInt64.js` (`/EpmCacheApp/Rules/RandomInt64.js`).
+   - For property `FilterId`, link the rule `RandomInt64.js` (`/EpmCacheApp/Rules/RandomInt64.js`).
 
     ![Edit filter create action](gif_action_filter_edit.gif)
 
-
-
 ### Put everything together and switch onboarding flow
-
 
 1. Like in step 3, create a new rule. This one shall control the onboarding flow and will be triggered from `Application.app`.
 
@@ -304,9 +293,7 @@ To allow proper upload of a filter entity, modify `BusinessPartnerFilterSet_Crea
 
     ![Update application to reflect new offline bootstrap](gif_application_app.gif)
 
-
 ### Deploy and activate the application
-
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, deploy this application definition to Mobile Services to consume it as Mobile application.
 
@@ -322,9 +309,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
    You should see successful messages for the deployment including the current revision.
 
-
 ### Populate the QR code for onboarding the Mobile app
-
 
 SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
 
@@ -334,9 +319,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 <!-- border -->![MDK](img_onboarding.png)
 
-
 ### Run the app
-
 
 > Make sure that all application instances are started in SAP BTP Cockpit, as **trial landscapes shut down applications every day**.
 
@@ -345,7 +328,6 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
 Once you accept app update, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. Click either entity, it navigates to detail page, you can create, update, delete a record.
-
 
 If you followed only this series of tutorials, the OData service cannot accept create, delete or update-requests on `CustomerSet` and `SalesOrderSet`. You can still modify data locally, but you will not be able to successfully synchronize.
 
@@ -365,12 +347,9 @@ Perform the following steps to verify all the mechanisms work.
 
 6. Optionally, create another Filter for **DE** or **US**. You will notice, after synchronization, that corresponding data was populated in the business partner page.
 
-    >The big advantage of this kind of filtering is, that the defining requests in the app remain stable so that the Offline Store definition does not have to be modified and delta tokens remain valid. Just the OData producer recognizes the filter and will send different data on the next download query for this specific registration.
+    >The crucial advantage of this kind of filtering is, that the defining requests in the app remain stable so that the Offline Store definition does not have to be modified and delta tokens remain valid. Only the OData producer recognizes the filter and will send different data on the next download query for this specific registration.
 
     ![Run the app demo](gif_run_app.gif)
-
-
-
 
 **Congratulations!** You have created a simple MDK-Based mobile application that can register to a cache database and make use of client-filters.
 

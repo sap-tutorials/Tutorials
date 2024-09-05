@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, programming-tool>javascript]
@@ -40,7 +42,7 @@ In this step, you will create a React skeleton project which will be used to cre
     cd react-core-mf
     ```
 
- ​3. Download the React example package JSON file containing minimal dependencies required for a React app. Next, install styling libraries to handle CSS files, as well as Fundamentals and React web components packages.
+ 3. Download the React example package JSON file containing minimal dependencies required for a React app. Next, install styling libraries to handle CSS files, as well as Fundamentals and React web components packages.
 
     ```Shell
     curl https://raw.githubusercontent.com/SAP/luigi/main/core/examples/luigi-example-react/package.json > package.json
@@ -114,7 +116,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
 
 5. Use the settings shown in the screenshot below. For "Select your generator", use the arrow keys to scroll down and select `app`. For the questions "Which framework do you want to use?" and "Who is the author of this application?", choose the default option and press Enter. 
 
-    <!-- border -->![UI5 Terminal](ui5-yo.png)
+    ![UI5 Terminal](ui5-yo.png)
 
 
 

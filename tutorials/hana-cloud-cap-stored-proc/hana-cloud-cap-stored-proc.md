@@ -26,7 +26,7 @@ parser: v2
 
 Video tutorial version:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wr9KpbqsNpM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ddDugMPtMDg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Create stored procedure
 
@@ -95,26 +95,20 @@ Video tutorial version:
         try {
             let dbQuery = ' Call "sleep"( )'
             let result = await cds.run(dbQuery, { })
-            console.log(result)
+            cds.log().info(result)
             return true
         } catch (error) {
-            console.error(error)
+            cds.log().error(error)
             return false
         }
         })
     })
     ```
 
-1. From the terminal return to the root of the project and issue the command: `cds build`
-
-    ```shell
-    cds build
-    ```
-
 1. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
-1. The CAP preview UI doesn't list functions or actions, however. Manually add `/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
+1. The CAP preview UI doesn't list functions or actions, however. Manually add `/odata/v4/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
 
     ![Test Service](sleep_true.png)
 
-You've now added an OData function to your service layer which in turn is implemented as an SAP HANA Stored Procedure
+You've now added an OData function to your service layer which in turn is implemented as an SAP HANA Stored Procedure 

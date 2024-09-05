@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--standard-edition]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition ]
 primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert

@@ -9,14 +9,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 # Reuse a CAP Java Service
+
 <!-- description --> Create a new application and reuse the existing CAP Java service.
 
 ## You will learn
+
 - How to reuse a CAP project through NPM packages
 - How to load sample data using CSV files
 - How to use the localized keyword
 
 ## Intro
+
 Now, that your products service is ready to be reused, you will build a bookstore application upon it.
 
 In this tutorial you will create the model and the services of the bookstore application. After that you will initialize the database of your bookstore application with localized example data coming from CSV files.
@@ -29,6 +32,8 @@ You will then run your application -- still without any custom coding required -
 
 From the products service that you created in the previous tutorial, we just want to reuse the domain and service models. For the bookstore, which you will develop in this tutorial, we need to create and initialize a bookstore project first.
 
+> Make sure you stopped your application from the previous tutorial.
+
 1. From the main menu of SAP Business Application Studio, choose **Terminal** **&rarr;** **New Terminal**.
 
 2. Before adding the `bookstore` project, we need to make sure that you are in the projects folder. Both projects (`products-service` and `bookstore`) should be placed next to each other. Run the following command in the newly created terminal to go back to the projects folder:
@@ -40,9 +45,7 @@ From the products service that you created in the previous tutorial, we just wan
 3. Now that you are in the correct folder, run the following command:
 
     ```Shell/Bash
-    mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE -DjdkVersion=17 \
-    -DgroupId=com.sap.cap -DartifactId=bookstore
+    cds init bookstore --add java
     ```
 
 4. To open the bookstore project in a new workspace go to **File** **&rarr;** **Open Folder**.
@@ -55,13 +58,11 @@ From the products service that you created in the previous tutorial, we just wan
 
     > If you have any problem indication for any of the `pom.xml` files yet, don't worry and ignore them for now.
 
-
 ### Install reusable service as npm dependency
-
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
 
-> ### Make sure that you have followed all the sub-steps in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
+> **Make sure that you have followed all the sub-steps in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.**
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 
@@ -70,8 +71,8 @@ First, we need to simulate a release of the `product-service` module, and consum
     ```Shell/Bash
     cd ~/projects/bookstore
     ```
-    > This step is optional if you are already in the right directory.
 
+    > This step is optional if you are already in the right directory.
 
 2. Install the reusable service project as npm dependency:
 
@@ -79,11 +80,11 @@ First, we need to simulate a release of the `product-service` module, and consum
     npm install $(npm pack ../products-service -s)
     ```
 
-    > `npm pack` creates a tarball from the `products-service`, which is then directly used as a dependency in the bookstore application. More about `npm pack`: <https://docs.npmjs.com/cli-commands/pack.html>.
+    > `npm pack` creates a tarball from the `products-service`, which is then directly used as a dependency in the bookstore application. Learn more about [`npm pack`](https://docs.npmjs.com/cli-commands/pack.html).
 
-    >You will find a `sap-capire-products-1.0.0.tgz` in the root folder of the bookstore project, which is the tarball file of the `products-service` project.
+    > You will find a `sap-capire-products-1.0.0.tgz` in the root folder of the bookstore project, which is the tarball file of the `products-service` project.
 
-3. Install all other packages and simplify the overall dependency structure [`npm dedupe`](https://docs.npmjs.com/cli/dedupe):
+3. Install all other packages and simplify the overall dependency structure using [`npm dedupe`](https://docs.npmjs.com/cli/dedupe):
 
     ```Shell/Bash
     npm install && npm dedupe
@@ -93,10 +94,7 @@ First, we need to simulate a release of the `product-service` module, and consum
 
     <!-- border -->![dependency to tutorial products as tarball in package.json](tarball-dependency.png)
 
-
-
 ### Define bookstore domain model
-
 
 Now that you have created your bookstore project, you need to define the domain model.
 
@@ -153,9 +151,7 @@ In addition, it imports the `Products` entity, which is reused for the `Books` e
 
 The `total` element of the `Orders` entity and the `netAmount` element of the `OrderItems` entity are annotated with [`@readonly`](https://cap.cloud.sap/docs/guides/providing-services#crud). This means the value of these elements cannot be set by a client. The value is calculated by custom code. You will implement this custom code in a later tutorial. Both of these entities are also annotated with [`@Capabilities.Updatable: false`](https://cap.cloud.sap/docs/guides/providing-services#crud), which means that they cannot be updated, only created and deleted.
 
-
 ### Define bookstore service
-
 
 You will now define the services, that should expose the entities you have defined in your domain model:
 
@@ -201,9 +197,7 @@ The `AdminService` is reused from the products service. But we've added the `Aut
 
 It's considered best practice to define services with a single use-case in mind. For example, the `AdminService` is meant for administrating Products, Authors and Categories, while the `BooksService` is meant for exposing a catalog of books and authors, hiding administrative data such as creation and modification times from the end user.
 
-
 ### Load sample data using CSV files
-
 
 After defining the domain model and the services that you want to expose, you could already start your application. But first, we'd like to add some sample data to your database. To do so, we'll need to use some CSV files:
 
@@ -253,17 +247,14 @@ After defining the domain model and the services that you want to expose, you co
 
     You should now have 4 CSV files with sample data. The files deliver initial data for the service that we reuse and for one entity that we created in the `bookstore` service:
 
-    + `sap.capire.products-Categories.csv`
-    +	`sap.capire.products-Products.csv`
-    +	`sap.capire.products-Products_texts.csv`
-    +	`sap.capire.bookstore-Authors.csv`
+    - `sap.capire.products-Categories.csv`
+    - `sap.capire.products-Products.csv`
+    - `sap.capire.products-Products_texts.csv`
+    - `sap.capire.bookstore-Authors.csv`
 
-    The name of the CSV has to match the pattern [namespace]-[entity name] exactly otherwise the the application will fail to start.
-
-
+    The name of the CSV has to match the pattern [namespace]-[entity name] exactly, otherwise the application will fail to start.
 
 ### Run and test the bookstore application
-
 
 1. In the terminal, go to the root of the bookstore project:
 
@@ -272,7 +263,6 @@ After defining the domain model and the services that you want to expose, you co
     ```
 
 2. Ensure that you have stopped all previously running applications (including the `products-service` application) by using **`CTRL+C`**.
-> In case you forgot to stop the `products-service` application and the tab in which it was started is no longer opened you can run `killall mvn` in the terminal to ensure it's terminated.
 
 3. Start the application by running:
 

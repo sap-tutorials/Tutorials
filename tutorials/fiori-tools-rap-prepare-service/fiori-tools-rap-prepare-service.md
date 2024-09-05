@@ -4,14 +4,15 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori-elements, products>sap-business-technology-platform, products>sap-btp--abap-environment]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Prepare the RAP-Based Travel Service
 <!-- description --> Prepare a travel service based on the SAP ABAP RESTful Application Programming Model (RAP).
 
 ## Prerequisites
- - You need a trial account for the SAP Business Technology Platform. Follow these instructions in case you need to set up an account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - Prepare your SAP Business Technology Platform ABAP Environment: [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding) -- be sure to also check the prerequisites of this linked tutorial which include the installation of the ABAP Development Tools.
+ - You need a trial account for the SAP Business Technology Platform. Follow these instructions in case you need to set up an account: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+ - Prepare your SAP Business Technology Platform ABAP Environment: [Create an SAP BTP ABAP Environment Trial User](abap-environment-trial-onboarding) -- be sure to also check the prerequisites of this linked tutorial which include the installation of the ABAP Development Tools.
 
 
 

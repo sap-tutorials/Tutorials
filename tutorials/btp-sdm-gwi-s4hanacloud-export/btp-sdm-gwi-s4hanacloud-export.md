@@ -47,6 +47,7 @@ author_profile: https://github.com/Vikramkulkarni01
     !![SAML_Metadata](screenshots.png/SAML_Metadata.png)
 
 3. Verify the trust configuration by clicking on the recently created trust configuration in the above step (Reference: `Step 2.2`).
+    >**Important**: Verify that the SAP backend system's host name is correctly specified in the trust configuration. Double-check the selected **`Origin Key`** for accuracy and ensure that the protocol is set to **`SAML`**.
 
     !![ShowDetailsIssuer](screenshots.png/ShowDetailsIssuer.png)
 
@@ -63,17 +64,18 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 3: ](Add users in SAP BTP)]
 
-1. Navigate back to the SAP BTP Cockpit home screen and go to the **Users** tab. Click **Create**.
+1. Navigate back to the SAP BTP Cockpit home screen and go to the **Security** > **Users** tab. Click **Create**.
 
-    In the **New User** dialog, enter the **Username**, select the newly created **Identity Provider**, add the email address of the user, and click **Create**.
+    In the **Create User** dialog, enter the **Username**, select the newly created **Identity Provider**, add the email address of the user, and click **Create**.
 
-    !![NewUser](screenshots.png/NewUser.png)
+    !![NewUser](screenshots.png/NewUserV1.png)
 
-    >**IMPORTANT**: The e-mail address of the user must be identical to the one used in the SAP S/4HANA system. The mail address can be identified using the Maintain Business User or Manage Workforce option.
+    >**IMPORTANT**: The e-mail address of the user must be identical to the one used in the SAP S/4HANA system. The email address can be identified using the *`Maintain Business User`* or *`Manage Workforce`* option. It's important to note that the email IDs are identical. For example, if your SAP system user email ID is **demo.user@myexample.com** then the SAP BTP Cockpit user email ID is the as same your SAP system user email ID, and it should also be maintained as : **demo.user@myexample.com**.
+
 
 2. Select the newly created user from the list and click on **Assign Role Collection**.
 
-    !![AssignRoleCollections](screenshots.png/AssignRoleCollections.png)
+    !![AssignRoleCollections](screenshots.png/AssignRoleCollectionsV1.png)
 
 3. Assign the user role collection of the **SAP Document Management Service, Integration Option** (For example, `SDM_roles` or the role collection that you created) which is defined in the subaccount. For more information, see the 3rd step in this tutorial [Create a Service Instance and then a Service Key of SAP Document Management Service, Integration Option](btp-sdm-gwi-create-serviceinstance).
 

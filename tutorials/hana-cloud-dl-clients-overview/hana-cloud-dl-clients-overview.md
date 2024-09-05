@@ -1,4 +1,3 @@
-
 ---
 parser: v2
 auto_validation: true
@@ -8,7 +7,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # SAP HANA Cloud, Data Lake Client Interfaces Overview
-<!-- description --> Learn about the SAP HANA Cloud, data lake, how to create a free tier or trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+<!-- description --> Learn about the SAP HANA Cloud, data lake, how to create a free tier or trial instance, how to examine the data lake Relational Engine using SAP HANA Cloud Central, how to install the data lake client, and how to query the database using the SQL Console or the Interactive SQL Client.
 
 ## Prerequisites
  - A computer running Microsoft Windows or Linux.
@@ -17,10 +16,10 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - Information about SAP HANA Cloud, data lake Relational Engine
   - How to install the data lake client
   - How to create sample tables, views, and procedures
-  - How to connect using SAP HANA cockpit, SAP HANA database explorer and the Interactive SQL Client
+  - How to connect using SAP HANA cockpit, SAP HANA database explorer, and the Interactive SQL Client
 
 ## Intro
-This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/4680d260114f4683b79dd3dcc4770166.html).  
+This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine).  
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the Feedback link shown below.
 > 
@@ -33,37 +32,31 @@ This tutorial group will provide guidance on setting up an instance of [SAP HANA
 
 SAP HANA Cloud is composed of multiple components.
 
-  * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/7a27607b08ba46d5b253365e703b1c1a.html) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+  * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/introduction-to-sap-hana-cloud) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
   * SAP HANA Cloud, data lake is composed of two components:  data lake Relational Engine and data lake Files.    
 
-    [Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a896c6a184f21015b5bcf4c7a967df07/bedae75d1482413d92af8ca7f43d430b.html) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Many client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/viewer/product/SAP_SQL_Anywhere/17.0/en-US) and SAP Adaptive Server Enterprise.
+    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
-    [Data Lake Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a896c6a184f21015b5bcf4c7a967df07/502642d7fd0e4a5b9b3a61c8ac4d5ce5.html) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a896c6a184f21015b5bcf4c7a967df07/b8ed121f351a4a56a451b9ba6f10f88e.html), which enables SQL queries to be performed on them.  
+    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sql-on-files), which enables SQL queries to be performed on them.  
 
     >Note, that the data lake Files component is currently not available in free tier or trial accounts.
 
 ### Choose where to deploy the database instances
 
-The SAP BTP platform provides multiple runtime environments such as Kyma and Cloud Foundry.  When a HANA Cloud or data lake instance is created, it can be created at the BTP subaccount or in a Cloud Foundry space.  The tools (SAP HANA Cloud Central, SAP HANA cockpit, and SAP HANA database explorer) can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Runtime Environment = Other) and one that was provisioned into Cloud Foundry.
+The SAP BTP platform provides multiple runtime environments such as Kyma and Cloud Foundry.  When a HANA Cloud or data lake instance is created, it can be created at the BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
 
 ![Runtime Environments](runtime.png)
 
-The new multi-environment tooling (once a subscription and setup is complete) can be accessed under subscriptions.
+The multi-environment tooling (once a subscription and setup is complete) can be accessed under subscriptions.
 
 ![multi environment tools](multi-env-tools.png)
 
-The previous version of the tooling can be accessed within a Cloud Foundry space.
-
-![Cloud Foundry tools](cf-tools.png)
-
-Further details on this topic can be found at [SAP HANA Cloud goes multi-environment](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/) and [SAP TechEd DA261 - Multi-Environment SAP HANA Cloud Tools](https://github.com/SAP-samples/teched2022-DA261/tree/main/exercises/multi-environment/ex1).
-
 ### Create a data lake instance
 
->To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
+>To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
 
-The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a89a80f984f21015b2b2c84d2498d36d/02710372f294441a9f2c7874763232b6.html).
+The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/quick-start-tutorial-for-standalone-data-lake).
 
 There are multiple ways to create a data lake:  
 
@@ -85,13 +78,13 @@ There are multiple ways to create a data lake:
 
     A standalone data lake can be configured with additional options such a collation value of UTF8BIN and blank padding set to ON to be more compatible with an on-premise SAP IQ.
 
-1. Using the SAP BTP Cockpit open SAP HANA Cloud Central using one of the two methods described in the step Choose where to deploy the database instances.
+1. Open SAP HANA Cloud Central.  
 
 2. If a data lake is not already present, add one using one of the three methods previously described.
 
     Take note when creating the data lake that the administration user is HDLADMIN.
 
-    >The HDLADMIN user has a [login policy](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a43f448484f21015924f9951e9b77e32.html) that enforces the [update of the password](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a458edd784f2101580a1eca5042678f8.html) after 180 days.  
+    >The HDLADMIN user has a [login policy](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/login-policy-options) that enforces the [update of the password](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/changing-password-single-control) after 180 days.  
 
 3. As this instance is a free tier or trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
@@ -103,32 +96,28 @@ There are multiple ways to create a data lake:
 
     >**Important:** SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
+### Examine the Data Lake
 
-### Open the SAP HANA cockpit
-
-
-1. Once the data lake has been created, use the actions menu (three dots) to open SAP HANA cockpit.  
+1. Once the data lake has been created it's details can be examined.  
 
     ![Open in cockpit](open-cockpit.png)
 
-    Input your credentials. These are stored by the SAP HANA cockpit and are shared with the SAP HANA database explorer in cockpit connections once entered into the following dialog.
+    Input your credentials. These are stored by SAP HANA Cloud Central.
 
     ![Credentials](credentials.png)
 
-    After you enter your credentials, should you wish to use a different set of credentials, the current credentials can be cleared using **Clear Credentials** and new credentials may be entered.
+    After you enter your credentials, should you wish to use a different set of credentials, the current credentials can be updated using **Sign in to the Instance**.
 
-    ![Credentials](credentials2.png)
-
-2. The SAP HANA Cockpit can also be used to [examine and configure users and roles](https://help.sap.com/docs/SAP_HANA_COCKPIT/afa922439b204e9caf22c78b6b69e4f2/401f00cf3c3342749adab1c27e0ba2d8.html). 
+    ![Credentials](credentials2.png) 
 
 
-### Create tables, views, functions, and procedures with SAP HANA database explorer
+### Create tables, views, functions, and procedures
 
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
-1. In SAP HANA cockpit, select **Open SQL Console** to open the SAP HANA database explorer.
+1. From the action menu, select **Open SQL Console**.
 
-    ![open database explorer](open-dbx.png)
+    ![open database explorer](open-sql-console.png)
 
 2. Execute a few queries.
 
@@ -139,12 +128,16 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
     ```
 
-    ![SAP HANA database explorer](dbx-query.png)
+    ![SAP HANA database explorer](sql-console-query.png)
 
-    Additional details can be found at [System Functions](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a52da06984f21015bf279b4c69002e5e.html) and [System Procedures for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a598917d84f210159e1fff1a89345de9.html).
+    Additional details can be found at [System Functions](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-functions) and [Stored Procedures in Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-procedures-for-data-lake-relational-engine).
 
 
-3. In the SAP HANA database explorer, execute the following SQL statements.
+3.  From the actions menu, select **Open in SAP HANA Database Explorer**.
+
+    ![open the SAP HANA database explorer](open-dbx.png)
+
+    In the SAP HANA database explorer, execute the following SQL statements.
 
     ```SQL
     ---- drops the schema and all objects it contains
@@ -291,16 +284,20 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ![DBX Create](sql-commands.png)
 
-    Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
+    Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-table-statement-for-data-lake-relational-engine), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-view-statement-for-data-lake-relational-engine), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-procedure-statement-for-data-lake-relational-engine).
 
-    > Identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5e4ad6a84f21015ab0c854d2822461a.html).
+    > Identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/sap-hana-cloud-data-lake-sql-reference-for-data-lake-relational-engine).
 
 For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
 
 ### Install the data lake client
 
-1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
+1.  Open [SAP for me](https://me.sap.com/softwarecenter) and navigate to **Support Packages & Patches** | **By Alphabetical Index (A-Z)**.
+
+    ![SAP for Me Download Software](sap-for-me.png)
+
+ 2. Navigate to **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
     ![data lake software downloads](dl-software-downloads.png)
 
@@ -329,14 +326,14 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
-        Run `setup.bin` which will start either the GUI installer or text based installer.  To use the text based installer, add `-i console` to the command.
+        Run `setup.bin` which will start either the GUI installer or text-based installer.  To use the text-based installer, add `-i console` to the command.
 
         ```Shell (Linux)
         cd ebf*
         ./setup.bin
         ```
 
-3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.
+3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help avoid any issues with paths.
 
     ![GUI Installer](windows-gui-install.png)
 
@@ -389,10 +386,12 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
     > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
 
+    >NOTE:-If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
+    
 
 ### Connect with the Interactive SQL Client (DBISQL)
 
-The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/a373b67884f21015a722c2c0a58b94ad.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
+The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/dbisql-interactive-sql-utility), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
 1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. It can also be accessed by entering `dbisql` in the command prompt.
     ![Open DBISQL through command prompt](dbisql-from-cmd.png) 
@@ -426,6 +425,8 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     >```Shell (Linux)
     dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
+
+    >NOTE:-If you encounter the error message "error while loading shared libraries: libnsl.so.1: cannot open shared object file: No such file or directory," you will need to install libnsl.so.1.
 
     >![DBISQL connected nogui](dbisql-nogui.png)
 
@@ -529,7 +530,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     COMMIT;
     ```
 
-    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/7ca3f60902f3473296cb309533d89210.html) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
+    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/insert-statement-for-data-lake-relational-engine). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/load-table-statement-for-data-lake-relational-engine) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
     >Autocommit is set to on in the SQL console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL console if they are surrounded with begin and end or if autocommit is set to off.
     >
@@ -582,10 +583,6 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
 ### Knowledge check    
 
-
 Congratulations! You have created and connected to a data lake Relational Engine. In the following tutorials, the client interfaces will be used to connect from ODBC, JDBC and Node.js.
-
-
-
 
 ---

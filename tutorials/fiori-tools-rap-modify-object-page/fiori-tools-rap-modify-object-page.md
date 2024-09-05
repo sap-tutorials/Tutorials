@@ -1,18 +1,21 @@
 ---
 parser: v2
 auto_validation: true
-time: 20
+time: 40
 tags: [ tutorial>beginner, products>sap-fiori-tools]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Refine the Object Page with Annotations
 <!-- description --> Display data in fields and tables on the object page using annotations.
 
 ## Prerequisites
-- You have prepared your OData service as described in the previous tutorial [Prepare the RAP service](fiori-tools-rap-prepare-service).
-- You have finished the previous tutorial [Refine the List Report with Annotations](fiori-tools-rap-modify-list-report).
-
+- You have prepared your OData service as described in the previous tutorial [Prepare the RAP-Based Travel Service](fiori-tools-rap-prepare-service).
+- Ensure that you have finished all steps in previous tutorials:
+  [Prepare the RAP-Based Travel Service](fiori-tools-rap-prepare-service)
+  [Generate an SAP Fiori Elements Application based on a RAP-based Service](fiori-tools-rap-create-application)
+  [Refine the List Report with Annotations](fiori-tools-rap-modify-list-report)
 
 ## You will learn
   - How to add a title and a subtitle to the object page header
@@ -20,9 +23,13 @@ primary_tag: products>sap-fiori
   - How to add a section and use field groups to structure data
   - How to add a table
   - How to include pictures in a table
+  - How to modify an SAP Fiori elements application to add features like flexible column layout and  initial load of data
+  - How to update the metadata in your frontend application
+  - How to add side effects using guided development
 
 ## Intro
 >Whenever your unique suffix for creating objects is needed, the object names within this tutorial are named with suffix "######". For the screenshots the suffix "000100" was used.
+
 ---
 
 ### Add title and subtitle to object page header
@@ -301,7 +308,7 @@ In this step you will add a new section that contains a table with booking infor
 
     Choose **Next** and then **Finish**.
 
-3. In the metadata extensions file `ZC_FE_BOOKING_######` use `@UI.lineItem` annotations to add some fields from the Booking view `ZC_FE_BOOKING_###### Projection View for Booking` to the bookings table. Replace the content of `ZC_FE_BOOKING_######` by the following code:
+3. In the metadata extensions file `ZC_FE_BOOKING_######` use `@UI.lineItem` annotations to add some fields from the Booking view `ZC_FE_BOOKING_###### Projection View for Booking` to the bookings table. Add `textArrangement` for **CustomerID** and **CarrierID** like you did it for list report. Replace the content of `ZC_FE_BOOKING_######` by the following code:
 
     ```CDS
     @Metadata.layer: #CORE
@@ -316,9 +323,11 @@ In this step you will add a new section that contains a table with booking infor
         BookingDate;
 
         @UI.lineItem: [ { position: 30 } ]
+        @UI.textArrangement: #TEXT_ONLY
         CustomerID;
 
         @UI.lineItem: [ { position: 40 } ]
+        @UI.textArrangement: #TEXT_ONLY
         CarrierID;
 
         @UI.lineItem: [ { position: 50 } ]
@@ -389,4 +398,376 @@ In this step you will add the airline logo in a new column at the beginning of t
 
 
 
+### Activate flexible column layout
+
+
+With the flexible column layout you can have the list report and the object page open at the same time without the need to navigate back and forth between them.
+
+1. In the SAP Business Application Studio open the context menu by right clicking on your `webapp` folder and select the menu entry **Show Page Map**.
+
+    <!-- border -->![Right-click on webapp folder](SetFCL_1a.png)
+
+2. In the left area of the page map you see the UI structure of your application showing the two pages, the list report and the object page. In the right area you can see the property panel with the application settings. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
+
+    <!-- border -->![The Page Map with page map and layout settings](SetFCL_2a.png)
+
+3. The application is refreshed automatically. Choose **Go** to load data into the list report table. Select any of the items within the table to open the object page.
+
+    <!-- border -->![Click go on list report after refresh](SetFCL_3.png)
+
+    Now the object page is displayed together with the list report. When you select another item in the list report, the object page is updated.
+
+    &nbsp;
+
+
+
+### Activate initial loading of data
+
+
+In this step you will activate the initial load feature that will trigger the loading of data within the list report automatically, i.e. without having to choose **Go**.
+
+1. Open the page map once again as shown in the previous step by choosing the **Show Page Map** option in the context menu of your application folder.
+
+2. In the UI structure of your application switch to edit mode of the **List Report** tile.
+
+    <!-- border -->![Configure Page icon on list report block](InitialLoad_1a.png)
+
+3. Now the structure of the list report is shown. Open the properties of the list report table by selecting the **Table** component.
+
+    <!-- border -->![Click on table in page editor](InitialLoad_2a.png)
+
+4. In the list of table properties select the value **Enabled** for the table property **Initial Load**. This setting is immediately active without the need of any confirmation.
+
+    <!-- border -->![Select true for initial load in drop down field](InitialLoad_3a.png)
+
+5. Your application is updated and you will see that the data of the list report table is loaded immediately without choosing **Go**.
+
+    <!-- border -->![Restart the app and see the initial load of data](InitialLoad_4.png)
+
+    &nbsp;
+
+
+
+### Update the metadata in your frontend application
+
+You will need to update the local copy of the metadata in order to work with the annotations locally in Fiori tools extensions such as XML Annotation LSP, Guided Development or Page Editor. 
+
+>As long as your application preview is based on the real service metadata, you will see the changes you made in the backend without refreshing the local metadata.
+
+You will now learn how to update the metadata with the next steps.
+
+1. Switch to the SAP Business Application Studio with your generated application from second tutorial [Generate an SAP Fiori Elements Application based on a RAP-based Service](fiori-tools-rap-create-application). If the application preview is already running in other browser tab, then you do not need to stop it. 
+   
+    From the hamburger menu, open **View->Command Palette...**, type **`Service Manager`**, and select **Fiori: Open Service Mananger**.
+
+    In the main service row click the `edit button`.
+
+    <!-- border -->![Start Service Manger](ServiceManager_1.png)
+
+2. Choose **Refresh** to update local metadata of your application.
+   
+    <!-- border -->![Refresh Service](ServiceManager_2.png)
+   
+    The Service Manager has updated the service metadata in the application's **webapp/localService** folder.
+
+
+### Add side effects using guided development
+
+
+For the managed scenario with draft, you need to define side effects on the travel entity for immediate feedback on the Fiori Elements UI. The side effect will trigger the recalculation of the **Total Price** on every change of the **Booking Fee**.
+
+>There are several ways to add side effects. One is via the **local annotations** in the app and another one is directly in the backend via **ABAP CDS**. Users choose the right one for themselves. In this tutorial we will show you how to add the local annotations using **guided development**.
+
+But first you need to define the internal action **reCalcTotalPrice** in the behavior definition and implement it in the behavior implementation class for **Travel**. The action **reCalcTotalPrice** is called by determinations if changes on prices in the travel entity itself or in the child entities are executed. The total price on the travel entity is then recalculated.
+
+1. Define the internal action **reCalcTotalPrice**.
+   
+    In Eclipse open the behavior definition for the Travel `ZI_FE_TRAVEL_######` in **Behavior Definitions** folder and add the following code line to define the internal action.
+
+    ```CDS
+    define behavior for ZI_FE_Travel_###### alias Travel
+    {
+    ...
+    internal action reCalcTotalPrice;
+    ...
+    }
+    ```
+
+    Choose **Save** and **Activate**.
+
+    >Remember: Internal actions can only be called from BO internal consumers. In our demo scenario, the action is called from determinations on all BO entities, whenever a booking fee or a currency code field is changed.
+   
+
+2. Implement the internal action **reCalcTotalPrice** in the behavior implementation class for **Travel**.
+   
+    Via a quick fix assist (Ctrl+Shift+1), you can generate the method declaration in the behavior pool directly from the behavior definition editor (your method will be in the implementation class `ZBP_I_FE_TRAVEL_######->LHC_TRAVEL`).
+
+    <!-- border -->![Using a quck fix assist](SideEffectGuide_11.png)
+
+    The added **method declaration** will look like:
+    ```ABAP
+    reCalcTotalPrice FOR MODIFY
+            IMPORTING keys FOR ACTION Travel~reCalcTotalPrice,
+    ```
+
+    **Implementation**: To determine the total price of a travel, all prices must be converted to the travel currency and then summed up. This is done for each BO entity separately.
+
+    Add the following code lines to the method `reCalcTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
+
+    ```ABAP
+    METHOD reCalcTotalPrice.
+
+        TYPES: BEGIN OF ty_amount_per_currencycode,
+                amount        TYPE /dmo/total_price,
+                currency_code TYPE /dmo/currency_code,
+        END OF ty_amount_per_currencycode.
+
+        DATA: amount_per_currencycode TYPE STANDARD TABLE OF ty_amount_per_currencycode.
+
+        " Read all relevant travel instances.
+        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+            ENTITY Travel
+                FIELDS ( BookingFee CurrencyCode )
+                WITH CORRESPONDING #( keys )
+            RESULT DATA(travels).
+
+        DELETE travels WHERE CurrencyCode IS INITIAL.
+
+        LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).
+        " Set the start for the calculation by adding the booking fee.
+        amount_per_currencycode = VALUE #( ( amount        = <travel>-BookingFee
+                                            currency_code = <travel>-CurrencyCode ) ).
+
+        " Read all associated bookings and add them to the total price.
+        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+            ENTITY Travel BY \_Booking
+            FIELDS ( FlightPrice CurrencyCode )
+            WITH VALUE #( ( %tky = <travel>-%tky ) )
+            RESULT DATA(bookings).
+
+        LOOP AT bookings INTO DATA(booking) WHERE CurrencyCode IS NOT INITIAL.
+        COLLECT VALUE ty_amount_per_currencycode( amount        = booking-FlightPrice
+                currency_code = booking-CurrencyCode ) INTO amount_per_currencycode.
+        ENDLOOP.
+
+
+        CLEAR <travel>-TotalPrice.
+        LOOP AT amount_per_currencycode INTO DATA(single_amount_per_currencycode).
+        " If needed do a Currency Conversion
+        IF single_amount_per_currencycode-currency_code = <travel>-CurrencyCode.
+            <travel>-TotalPrice += single_amount_per_currencycode-amount.
+        ELSE.
+            /dmo/cl_flight_amdp=>convert_currency(
+                EXPORTING
+                iv_amount                   =  single_amount_per_currencycode-amount
+                iv_currency_code_source     =  single_amount_per_currencycode-currency_code
+                iv_currency_code_target     =  <travel>-CurrencyCode
+                iv_exchange_rate_date       =  cl_abap_context_info=>get_system_date( )
+            IMPORTING
+                ev_amount                   = DATA(total_booking_price_per_curr)
+            ).
+            <travel>-TotalPrice += total_booking_price_per_curr.
+        ENDIF.
+        ENDLOOP.
+        ENDLOOP.
+
+        " write back the modified total_price of travels
+        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+        ENTITY travel
+            UPDATE FIELDS ( TotalPrice )
+            WITH CORRESPONDING #( travels ).
+    ENDMETHOD.
+    ```
+
+    Choose **Save** and **Activate**.
+
+3. Define the determination **calculateTotalPrice**.
+   
+    The actual calculation of the total price is done by the action **recalcTotalPrice**. The determination just executes the action.
+
+    Define a determination on **modify** with operation trigger **create** and field triggers **BookingFee** and **CurrencyCode**. Also define the field **TotalPrice** as **read only**, as the value must no be defined externally.
+   
+    In the behavior definition for the Travel `ZI_FE_TRAVEL_######` add the following code lines.
+   
+    ```CDS
+    define behavior for ZI_FE_Travel_###### alias Travel
+    {
+    ...
+    field ( readonly ) TotalPrice;
+    determination calculateTotalPrice on modify { create; field BookingFee, CurrencyCode; }
+    ...
+    }
+    ```
+
+    Choose **Save** and **Activate**.
+
+
+4.  Implement the method **calculateTotalPrice**.
+
+    Via a quick fix assist (Ctrl+Shift+1), you can generate the method declaration in the behavior pool directly from the behavior definition editor (your method will be in the implementation class `ZBP_I_FE_TRAVEL_######->LHC_TRAVEL`).
+
+    **Implementation**: Execute the action recalcPrice when the trigger fields are changed. 
+
+    Add the following code lines to the method `calculateTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
+
+    ```ABAP
+    METHOD calculateTotalPrice.
+        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+            ENTITY Travel
+            EXECUTE reCalcTotalPrice
+            FROM CORRESPONDING #( keys ).
+    ENDMETHOD.
+        
+    ```
+
+    Choose **Save** and **Activate**.
+
+    >At this point the backend implementation for the total price recalculation is finished. Now if you start the application preview in SAP Business Application Studio, navigate from List Report to Object Page, click on **Edit**, change the **booking fee** and **Save** the data. The total price is recalculated. Note that **Total Price** field is read only now.
+
+    With the next steps you will learn how to add side effects to update the total price after changing the booking fee directly. This means, if you change the field `booking fee` and jump into another field, the total price is already re-calculated without the need to save the data. For this we will use **Guided Development**.
+
+
+5. Switch to the SAP Business Application Studio with your generated application. 
+   
+    From the hamburger menu, open **View->Command Palette...**, type **Guided Development**, and select **Fiori: Open Guided Development**.
+
+    In the **Search guides** field type `side effects` and then select the **Configure side effects** guide. This guide contains two steps.
+
+    >In the right upper corner you can use the **Fullscreen** button, to hide/show the search view. 
+
+    <!-- border -->![Open Configure Side Effects Guide](SideEffectGuide_1.png)
+
+6. Switch to the first step of the guide. Here you will configure the property **BookingFee** from Entity Type **Travel** as a source of the side effect.
+
+    <!-- border -->![Add Side Effect Source Options](SideEffectGuide_2.png)
+
+    In the code snippet preview you will see the annotations and the file name, which will be changed.
+
+    Choose **Insert Snippet**.
+
+    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_3.png)
+
+    The **anonnotations.xml** file editor opens with newly added annotations for side effect source.
+
+    <!-- border -->![Annotations result in the file](SideEffectGuide_4.png)
+
+7. Switch to the second step of the guide. Here you will configure the **TotalPrice** as a side effect target.
+
+    Choose **Insert Snippet**.
+
+    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_5.png)
+
+    The **anonnotations.xml** is adopted with a new lines.
+
+    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_6.png)
+
+
+8. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page. Choose **Edit** to start chaning data of the draft.
+
+    Change the amount of **Booking Fee** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
+
+    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_7.png)
+
+    >**Self study (OPTIONAL)**: at this point the recalculation is triggered if the **Booking Fee** amount is changed. What do you need to change in the backend and side effects to trigger **Total Price** recalculation, if the **Flight Price** of a **Booking** is changed on the UI? Hint: the **Travel** entity has an association to **Booking** entity with the property **FlightPrice**. 
+    
+    **Use the suggested solution in points 9-12 below for the self-check.**
+
+
+9.  (OPTIONAL) Define the determination **calculateTotalPrice** in **Booking** behavior.
+   
+    The actual calculation of the total price is done by the action **recalcTotalPrice**. You need the determination in **Booking** behavior to execute the action.
+
+    Define a determination on **modify** with operation trigger **create** and field triggers **FlightPrice** and **CurrencyCode**.
+   
+    In the behavior definition for the Travel `ZI_FE_TRAVEL_######` add the following code lines.
+
+
+    ```CDS
+    define behavior for ZI_FE_Booking_###### alias Booking
+    {
+    ...
+    determination calculateTotalPrice on modify { create; field FlightPrice, CurrencyCode; }
+    ...
+    }
+    ```
+
+    Choose **Save** and **Activate**.
+
+
+10. (OPTIONAL) Implement the method **calculateTotalPrice**.
+
+    Via a quick fix assist (Ctrl+Shift+1), you can generate the method declaration in the behavior pool directly from the behavior definition editor (your method will be in the implementation class `ZBP_I_FE_BOOKING_######->LHC_TRAVEL` class).
+
+    **Implementation**: Execute the reCalcTotalPrice on root node when the trigger fields are changed. 
+
+    Add the following code lines to the method `calculateTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
+
+    ```ABAP
+    METHOD calculateTotalPrice.
+        " Read all parent UUIDs
+        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+        ENTITY Booking BY \_Travel
+            FIELDS ( TravelUUID  )
+            WITH CORRESPONDING #(  keys  )
+        RESULT DATA(travels).
+
+        " Trigger Re-Calculation on Root Node
+        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+        ENTITY Travel
+            EXECUTE reCalcTotalPrice
+            FROM CORRESPONDING  #( travels ).
+    ENDMETHOD. 
+    ```
+
+    The backend implementations is finished.
+
+    Choose **Save** and **Activate**.
+
+11. (OPTIONAL) Switch again to the SAP Business Application Studio and the **Configure Side Effects Guide**. Configure the property **FlightPrice** via navigation property **Booking** as a source and the property **TotalPrice** remains as a target for the new side effect.
+
+    >Change the side effect qulifier name as this will be an additional side effect. 
+
+    <!-- border -->![Add Side Effect Source Options](SideEffectGuide_8.png)
+
+    Choose **Insert Snippet** for source and then in **step 2** insert curresponding snippet for **TotalPrice as target**.
+
+    The resulting **anonnotations.xml** file opens with newly added source and target annotations for your second side effect.
+
+    <!-- border -->![Annotations result in the file](SideEffectGuide_9.png)
+
+12. (OPTIONAL) Refresh the application and choose **Edit** on object page to start changing data of the draft.
+
+    Now change the amount of **Flight Price** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
+
+    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_10.png)
+
+
 ---
+
+Over the past four tutorials, you have used the SAP ABAP RESTful Application Programming Model, SAP Fiori tools and SAP Fiori elements for OData V4 to build this application. You have learned how to:
+
+- Use the wizard-style approach of SAP Fiori tools to generate an application based on an existing service
+
+- Refine a RAP based service with additional annotations to improve the user interface
+
+- Configure the application using the Page Map and Page Editor
+  
+- Refresh the local copy of service metadata in SAP Business Application Studio with Service Manager
+
+- Add side effects using Guided Development
+
+
+
+All of these tools (and more) can be used with any of the available SAP Fiori elements page types. Enjoy your future projects!
+
+---
+
+
+
+
+
+
+
+
+
+ 

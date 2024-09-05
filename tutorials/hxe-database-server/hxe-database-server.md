@@ -29,11 +29,6 @@ Choose one of the steps below for a local deployment of SAP HANA, express editio
 
 >To deploy locally, you must have 8GB RAM, but 12GB is recommended.
 
-Not sure how much RAM you have?
-
-- How to check RAM in a [Windows computer](https://developers.sap.com/tutorials/hxe-ram-disk-ms.html)
-- How to check RAM in a [MAC computer](https://developers.sap.com/tutorials/hxe-ram-disk-mac.html)
-
 > ###  Not enough RAM or space on disk?
 
 If you do not have enough RAM, we would recommend SAP HANA Cloud trial which is a completely free, hosted and cloud managed solution. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)

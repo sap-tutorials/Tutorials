@@ -58,14 +58,12 @@ You can read through the steps required to implement a feature and then either a
 At this point, you are done with Guided Development. You can close the `ListReport_SEPMRA_C_PD_product.json` tab, as well as the Guided Development tab: `Guided Development - myfioriapp`.
 
 
-
-
 ### Copy backend annotation visually to local annotation file
 
 
 This app features a target entity type that has already been pre-configured with the `UI.SelectionFields` annotation term. This is what provides the filters above the list in your app preview. This next step involves adding a new filter for **Supplier**, using the **Service Modeler** in SAP Fiori tools to copy the already existing backend annotation term and add a new field.
 
-The Service Modeler is a graphical tool that provides a visualization of an OData service, including its backend and local annotations. The Service Modeler helps you easily find entities or projections and their associated annotations.
+The Service Modeler is a graphical tool that provides a visualization of an OData service, including its backend and local annotations. The Service Modeler helps you easily find entities or properties and their associated annotations.
 
 1. To access the Service Modeler, launch the Visual Studio Code Command Palette by pressing **`CMD/Ctrl + Shift + P`** and then typing **`Service Modeler`**. Select **Fiori: Open Service Modeler**.
 
@@ -73,23 +71,27 @@ The Service Modeler is a graphical tool that provides a visualization of an ODat
 
 >If you have more than one project in your workspace, you will have to select the project you have created for this tutorial.
 
-The **Service Modeler** will open in a list view mode, listing all the projections (e.g., entity types) present in the underlying OData service. Some entries feature an `@` icon, which signifies that there are annotations attached to those targets.
+The **Service Modeler** will open, listing all the entities and their properties present in the underlying OData service displayed in a tree list. Some nodes feature an `@` icon, which signifies that there are annotations attached to those targets.
 
-2. For the projection **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**, click on the `@` icon to view all the annotations for **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**.
+1. For the entity **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**, click on the node to view all the annotations for **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**.
 
     <!-- border -->![Open Service Modeler](t3-service-modeler-launch-annotation-view2.png)
 
-    This opens **Annotation List View**, where you can see that for `target SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`, all the annotation terms come from sources such as the local annotation file `annotation.xml`, the backend annotation file `SEPMRA_PROD_MAN_ANNO_MDL.xml`, and `metadata.xml`. Since the requirement is to add a new filter, you have to modify **`UI.SelectionFields`**.
+    This opens **Annotation Side Panel**, where you can see that for `target SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`, all the annotation terms come from sources such as the local annotation file `annotation.xml`, the backend annotation file `SEPMRA_PROD_MAN_ANNO_MDL.xml`, and `metadata.xml`. Since the requirement is to add a new filter, you have to modify **`UI.SelectionFields`**.
 
-3. Copy **`UI.SelectionFields`** from the backend `SEPMRA_PROD_MAN_ANNO_MDL.xml` source to the local `annotation.xml` source by clicking the **Copy** icon next to **`UI.SelectionFields`** under `SEPMRA_PROD_MAN_ANNO_MDL.xml`.
+2. Copy **`UI.SelectionFields`** from the backend `SEPMRA_PROD_MAN_ANNO_MDL.xml` source to the local `annotation.xml` source by clicking the **Copy** icon next to **`UI.SelectionFields`** under `SEPMRA_PROD_MAN_ANNO_MDL.xml`.
 
     <!-- border -->![Copy with Service Modeler](t3-service-modeler-copy3.png)
 
     **`UI.SelectionFields`** under `SEPMRA_PROD_MAN_ANNO_MDL.xml` has now been formatted with a strike through, giving you a visual indication that **`UI.SelectionsFields`** at runtime will be picked up from the local annotation file.
 
-    The local `annotation.xml` file will open in another tab, with the exact code to be changed highlighted.
+    You can view the annotation copied to `annotation.xml` by clicking the **Show in Source** icon next to the annotation term. The annotation is highlighted in the source file.
 
-4. Close the **Service Modeler** tab.
+    <!-- Add Image --> 
+   
+   <!-- The local `annotation.xml` file will open in another tab, with the exact code to be changed highlighted. -->
+
+3. Close the **Service Modeler** tab.
 
 
 ### Edit UI.SelectionFields in code editor

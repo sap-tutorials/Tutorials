@@ -7,11 +7,11 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 # Index and Search Text In a SAP HANA Cloud, data lake
-<!-- description --> Learn how to use and configure a text index on text columns in a SAP HANA Cloud, data lake. Then learn how to perform a text search on those columns when querying the data.
+<!-- description --> Learn how to use and configure a text index on text columns in an SAP HANA Cloud, data lake. Then learn how to perform a text search on those columns when querying the data.
 
 ## Prerequisites
  - A provisioned SAP HANA Cloud, data lake
- - Access to the SAP HANA Cloud, data lake File Store
+ - Access to an SAP HANA Cloud, data lake Files store
  - Access to the SAP Database Explorer
  - An installation of the HDLFSCLI
 
@@ -25,7 +25,7 @@ Searching long text for keywords may assist in filtering or analyzing important 
 
 ---
 
-### Import the Data into a SAP HANA Cloud, data lake.
+### Import the Data into a SAP HANA Cloud, data lake
 
 
 To import the data into your SAP HANA Cloud, data lake (HDLRE) you first need the data files. SAP hosts some sample files that you can pull from Git to your local machine. Go to [this](https://github.com/SAP-samples/hana-cloud-relational-data-lake-onboarding/blob/main/event_samp.CSV) GitHub repository and click the copy raw contents button.
@@ -34,13 +34,17 @@ To import the data into your SAP HANA Cloud, data lake (HDLRE) you first need th
 
 Then create a local text file and paste the contents that were just copied. Save the text file as `events_data.csv`. Open a terminal or command prompt and navigate to the location of your file.
 
-`cd <path_to_file>`
+```Terminal
+cd <path_to_file>
+```
 
 ![Sample command prompt command for changing directories.](text-search-2.png)
 
 Now, you can use your HDLFSCLI to put the data file into the SAP HANA Cloud, data lake File Store. If you haven't set up your HDLFSCLI configuration yet, checkout the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial. Use the HDLFSCLI upload command to upload the `events_data.csv`
 
-`hdlfscli -config <your-hdl-files-config> upload events_data.csv events_data.csv`
+```Terminal
+hdlfscli -config <your-hdl-files-config> upload events_data.csv events_data.csv
+```
 
 ![Sample HDLFSCLI upload command.](text-search-3.png)
 
@@ -196,7 +200,7 @@ SELECT * FROM EVENT;
 ```
 
 
-### Create a Text Index on a Text Column.
+### Create a Text Index on a Text Column
 
 
 In the HDL Relational Engine, you can create different kinds of text indexes which can be used for text searching. In the EVENTS table you created earlier, consider the `Actor1Geo_FullName` and `Actor2Geo_FullName` columns. Run the following select to take a look at the data.
@@ -229,7 +233,7 @@ The above creates the index on both columns using the configuration that you def
 
 
 
-### Query the Table Using the CONTAINS function.
+### Query the Table Using the CONTAINS function
 
 
 To make use of the text index that you created above, you can use the CONTAINS function. The CONTAINS function when used on a text index allows you to search your text columns for key words, partial key words (using * operator), and words that are near each other. Learn more about what's possible with text searching in the (SAP Help documentation)[https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5f9128284f21015be99d1a8e8925c94.html?q=CONTAINS%20text%20search]. Try a simple query on your index.
@@ -297,6 +301,8 @@ SELECT DISTINCT(Actor1Geo_FullName), CT.score FROM EVENT CONTAINS(EVENT.Actor1Ge
 ![Sample result from fuzzy searching for United States in the event table.](text-search-9.png)
 
 Notice, all the entries with the closest match to the exact search term have the highest score. One way to think about the score is that it can help you identify how relevant a certain piece of data is to the search term you are using.
+
+### Knowledge check
 
 You now know how to create a text index on a `text` or `varchar` column, configure that text index, and use the CONTAINS function to perform a text search on your data. Be sure to check out the SAP Help documentation for more information on [text indexes](https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5efed9884f210158fd8bd686e7be818.html) and performing [text search](https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5f8abf084f2101580319c6ef971d09c.html).
 

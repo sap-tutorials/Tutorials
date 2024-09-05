@@ -2,12 +2,14 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
-# Create Custom Template for Custom Documents
-<!-- description --> Create a custom template for custom documents (which are not supported out of the box) to extract information from similar documents using the Document Information Extraction service.
+# Create Template for Custom Documents
+<!-- description --> Create a template for custom documents (which are not supported out of the box) to extract information from similar documents using the Document Information Extraction service.
 
 ## You will learn
   - How to create a template for custom documents using your schema
@@ -19,7 +21,7 @@ primary_tag: topic>machine-learning
 ### Create template
 
 
-In [Create Custom Schema for Custom Documents](cp-aibus-dox-ui-schema-custom), you defined a schema that includes a list of header fields you want to extract from power of attorney documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
+In [Create Schema for Custom Documents](cp-aibus-dox-ui-schema-custom), you defined a schema that includes a list of header fields you want to extract from power of attorney documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
 
 In Document Information Extraction UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
@@ -27,11 +29,11 @@ In Document Information Extraction UI, access **Template** on the left navigatio
 
 In the dialog, proceed as follows:
 
-1. Enter a name for your template, `Custom_power_of_attorney_template`, for example.
+1. Enter a name for your template, `power_of_attorney_template`, for example.
 
 2. Choose `Custom` as your `Document Type`.
 
-3. Select the schema you created in [Create Custom Schema for Custom Documents](cp-aibus-dox-ui-schema-custom).
+3. Select the schema you created in [Create Schema for Custom Documents](cp-aibus-dox-ui-schema-custom).
 
 4. Click **Create** to create your template.
 
@@ -41,28 +43,25 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](template-created-dialog.png)
 
-    You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you have defined in your schema.
+    You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you've defined in your schema.
 
     <!-- border -->![Template](associated.png)
 
     <!-- border -->![Template](extraction.png)
 
-    In the next steps, you'll add a document, and get and edit the extraction results, so you can finally associate it with your template.
+    In the next steps, you'll upload a document, get the extraction results, and edit them so that you can associate the document with your template.
+
 
 >**CAUTION:**
 
->Be aware of the following Document Information Extraction Trial UI trial account limitations:​
-
->- Maximum 40 uploaded document pages per trial account in a rolling period of seven days
->- Maximum 10 schemas per trial account
->- Maximum 3 templates per trial account
+>When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
-### Add document and get extraction results
+### Upload document and get extraction results
 
 
->This tutorial uses the following power of attorney documents. Download them to follow along (right click on the link, then click ***Save link as*** to download the files locally):
+>This tutorial uses the following power of attorney documents. Download them to follow along (right-click on the link, then click ***Save link as*** to download the files locally):
 
 > - [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf)
 > - [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf)
@@ -71,7 +70,7 @@ In the dialog, proceed as follows:
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](access-document.png)
+    <!-- border -->![Template](add-document.png)
 
 2. On the Select Document screen, choose `Custom` for the **Document Type**.
 
@@ -79,21 +78,15 @@ In the dialog, proceed as follows:
 
 4. Drop the file directly or click **+** to upload one of the power of attorney documents. The following images use the [Sample Power of Attorney 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-1.pdf). 
 
-5. Click **Step 2**.
+5. Click **Confirm**.
 
     <!-- border -->![Template](upload.png)
-
-6. The selection of header fields and line item fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7.  Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review.png)
 
     The document status changes from `PENDING` to `READY`.
 
     <!-- border -->![Template](ready.png)
 
-8. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
+6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
 
     <!-- border -->![Template](results.png)
 
@@ -104,7 +97,7 @@ In the dialog, proceed as follows:
 ### Edit extraction results
 
 
-Before associating the document with your template, make sure the extraction results are correct.
+Before associating the document with your template, make the extraction results are correct.
 
 1. Click **Edit**. You can edit extracted values manually on the right of the screen. You can also select them from the page preview in the middle of the screen. To do the latter, hover your mouse over the page preview. The mouse pointer changes to a crosshair cursor. Position the cursor at the corner of the value you wish to select. Then, hold down the left mouse button. Move the cursor diagonally to the opposite corner to draw a bounding box around the value you want to select. Select the appropriate header or line item field from the **Field** dropdown in the **Assign Field** dialog. Add or change the value, as necessary.
 
@@ -165,7 +158,7 @@ The last step that remains is to activate the template.
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](access-document2.png)
+    <!-- border -->![Template](add-document2.png)
 
 2. On the Select Document screen, choose `Custom` for the **Document Type**.
 
@@ -173,15 +166,9 @@ The last step that remains is to activate the template.
 
 4. Drop the file directly or click **+** to upload one of the other two power of attorney documents. First, use the [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf).
 
-5. Click **Step 2**.
-
     <!-- border -->![Template](upload2.png)
 
-6. The selection of fields comes from the schema and cannot be edited. Click **Step 3** and then click **Review**.
-
-7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
-
-    <!-- border -->![Template](review2.png)
+5. Click **Confirm**.
 
     The document status changes from `PENDING` to `READY`.
 
@@ -193,4 +180,6 @@ The last step that remains is to activate the template.
 
     You can repeat this step using the [Sample Power of Attorney 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf).
 
-    Congratulations, you have completed this tutorial.
+    You can now create a schema and a template, and use them to get the extraction results for your own custom document types.
+
+    Congratulations, you've completed this tutorial.
