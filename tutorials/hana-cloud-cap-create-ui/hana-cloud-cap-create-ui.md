@@ -177,8 +177,6 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
 3. Replace the `annotations.cds` with the following content:
 
-    ``` cds
-
     using CatalogService as service from '../../srv/interaction_srv';
 
     annotate service.Interactions_Header with @(
@@ -359,7 +357,6 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
         Common.ValueListWithFixedValues,
     )
    }
-   ```
 
 4. Run the application again and you will new functionality including value help for country and currency as well as the ability to see and maintain the translatable text element.
 
