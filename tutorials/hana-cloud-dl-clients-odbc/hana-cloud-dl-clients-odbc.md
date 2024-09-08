@@ -114,11 +114,11 @@ dsn is the name set in the odbc.ini file in the previous step.
     Some example queries you can run are listed below.
 
     ```SQL
-    SELECT * FROM HOTEL.CUSTOMER;
+    SELECT * FROM HOTELS.CUSTOMER;
     ```
 
     ```SQL
-    SELECT * FROM HOTEL.ROOM;
+    SELECT * FROM HOTELS.ROOM;
     ```
 
     ![ODBC example with dbisql](ODBC-dbisql.png)
@@ -166,9 +166,9 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
     > Note, if an error occurs that mentions, you do not have permission to select from SYSINDEX, a newer version of the driver may be needed.
 
-### Knowledge check
 For further information on programming an application to use the ODBC client driver, see [ODBC CLI](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/a3171c5084f210159caebadd9e149481.html).
 
+### Knowledge check
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA Cloud, data lake Relational Engine database and used that data source from unixODBC and Microsoft Excel.
 
 ---
