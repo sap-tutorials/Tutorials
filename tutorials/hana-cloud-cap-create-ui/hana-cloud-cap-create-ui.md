@@ -358,6 +358,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
         Common.ValueListWithFixedValues,
     )
     }
+    ```
 
 4. Run the application again and you will new functionality including value help for country and currency as well as the ability to see and maintain the translatable text element.
 
