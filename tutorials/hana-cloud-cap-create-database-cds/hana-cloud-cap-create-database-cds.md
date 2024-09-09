@@ -124,7 +124,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. From the terminal issue the command: `cds build`
 
     ```shell
-    cds build
+    cds build --production
     ```
 
     ![cds build](cds_build.png)
