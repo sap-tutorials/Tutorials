@@ -9,7 +9,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 # Create Multi-Code Coupons with SAP Omnichannel Promotion Pricing
-<!-- description --> Learn how to use SAP Omnichannel Promotion Pricing for calculating the effective sales price by applying a coupon to the transaction and adding loyalty points.
+<!-- description --> Learn how to use SAP Omnichannel Promotion Pricing for creating multi-code coupons in your promotions.
 
 ## Prerequisites
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
@@ -21,7 +21,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP.
-- How to upload a **promotional rule** with the help of the SAP Business Accelerator Hub. The promotional rule includes an example about applying a coupon to a transaction and how to add loyalty points.
+- How to upload a **promotional rule** with the help of the SAP Business Accelerator Hub. The promotional rule includes an example about creating multi-code coupons.
 - How to apply a promotional rule and execute the calculation request.
 
 
