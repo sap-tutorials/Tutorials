@@ -20,8 +20,8 @@ If you are an SAP Developer or SAP employee, please refer to the following links
 [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
 [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
--Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
--Ai core Instance with Standard Plan or Extended Plan
+- Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
+- Ai core Instance with Standard Plan or Extended Plan
 
 Multimodality refers to the ability of a model to process and interpret different types of inputs, such as text, images, audio, or video. In the context of GPT-4o on SAP AI Core, multimodal input allows the model to understand and generate responses that incorporate both text and visual data. This enhances the model's ability to perform complex tasks, such as scene detection, object recognition, and image analysis, by combining the strengths of both language processing and image recognition.
 In this tutorial, we'll demonstrate these capabilities with the help of GPT-4o, with a sample input and output, which can be replicated in future for various use cases.
@@ -146,6 +146,71 @@ We get the following output accurately describing the scene in the image:
 ![image](img/scene%20detection%20output.png)
 [OPTION END]
 
+[OPTION BEGIN [GenAI SDK]]
+To utilize the GPT-4o model, which supports both text and image inputs, use the code below. This example demonstrates how to create a prompt with an image URL and a text query, enabling the model to process and provide a response based on both visual and textual information.
+
+Note: You can replace the image URL with any image of your choice and modify the text prompt to ask the model any question about that image based on your specific needs.
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+import requests
+import base64
+
+def encode_image_from_url(image_url):
+    """Download and encode image to base64 format from URL."""
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        raise Exception(f"Failed to download image. Status code: {response.status_code}")
+
+def create_image_prompt(image_url, text_prompt):
+    """Create a prompt message for the model with the image data."""
+    # Encode image URL to base64 format
+    image_base64 = encode_image_from_url(image_url)
+    
+    # Create messages including both text and image input
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": text_prompt
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": image_url  # Use the direct image URL
+                    }
+                }
+            ]
+        }
+    ]
+    return messages
+
+def get_response_from_model(model_name, messages):
+    """Send messages to the model and return the response."""
+    kwargs = dict(model_name=model_name, messages=messages)
+    response = chat.completions.create(**kwargs)
+    return response.to_dict()["choices"][0]["message"]["content"]
+
+# Example usage
+image_url = "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/sceneDetection.jpg"
+text_prompt = "Describe the image in one line."  # Prompt asking for the description
+model_name = "gpt-4o"  # Replace with the model that supports image input
+
+# Create prompt with image and text
+messages = create_image_prompt(image_url, text_prompt)
+
+# Get response from model
+response = get_response_from_model(model_name, messages)
+print(response)
+```
+By following this example, you can easily integrate image-based inputs with the GPT-4o model and leverage its ability to understand and generate responses based on both visual and text content. For additional guidance, refer to the screenshot below.
+![image](img/sceneDetectionSDK.png)
+[OPTION END]
+
 For more information on the models refer to [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
 
 ### Object Detection
@@ -266,6 +331,71 @@ Add the above data in the body of the POST call, then hit ‘Send’ as follows 
 We get the following output accurately describing the scene in the image:
 
 ![image](img/object%20detection%20output.png)
+[OPTION END]
+
+[OPTION BEGIN [GenAI SDK]]
+To utilize the GPT-4o model, which supports both text and image inputs, use the code below. This example demonstrates how to create a prompt with an image URL and a text query, enabling the model to process and provide a response based on both visual and textual information.
+
+Note: You can replace the image URL with any image of your choice and modify the text prompt to ask the model any question about that image based on your specific needs.
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+import requests
+import base64
+
+def encode_image_from_url(image_url):
+    """Download and encode image to base64 format from URL."""
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        raise Exception(f"Failed to download image. Status code: {response.status_code}")
+
+def create_image_prompt(image_url, text_prompt):
+    """Create a prompt message for the model with the image data."""
+    # Encode image URL to base64 format
+    image_base64 = encode_image_from_url(image_url)
+    
+    # Create messages including both text and image input
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": text_prompt
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": image_url  # Use the direct image URL
+                    }
+                }
+            ]
+        }
+    ]
+    return messages
+
+def get_response_from_model(model_name, messages):
+    """Send messages to the model and return the response."""
+    kwargs = dict(model_name=model_name, messages=messages)
+    response = chat.completions.create(**kwargs)
+    return response.to_dict()["choices"][0]["message"]["content"]
+
+# Example usage
+image_url = "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/objectDetection.jpg"
+text_prompt = "give me the bottle color and its count."  # Prompt asking for the description
+model_name = "gpt-4o"  # Replace with the model that supports image input
+
+# Create prompt with image and text
+messages = create_image_prompt(image_url, text_prompt)
+
+# Get response from model
+response = get_response_from_model(model_name, messages)
+print(response)
+```
+By following this example, you can easily integrate image-based inputs with the GPT-4o model and leverage its ability to understand and generate responses based on both visual and text content. For additional guidance, refer to the screenshot below.
+![image](img/objectDetectionSDK.png)
 [OPTION END]
 
 For more information on the models refer to [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
@@ -390,6 +520,71 @@ We get the following output accurately describing the scene in the image:
 ![image](img/graph%20analysis%20output.png)
 [OPTION END]
 
+[OPTION BEGIN [GenAI SDK]]
+To utilize the GPT-4o model, which supports both text and image inputs, use the code below. This example demonstrates how to create a prompt with an image URL and a text query, enabling the model to process and provide a response based on both visual and textual information.
+
+Note: You can replace the image URL with any image of your choice and modify the text prompt to ask the model any question about that image based on your specific needs.
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+import requests
+import base64
+
+def encode_image_from_url(image_url):
+    """Download and encode image to base64 format from URL."""
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        raise Exception(f"Failed to download image. Status code: {response.status_code}")
+
+def create_image_prompt(image_url, text_prompt):
+    """Create a prompt message for the model with the image data."""
+    # Encode image URL to base64 format
+    image_base64 = encode_image_from_url(image_url)
+    
+    # Create messages including both text and image input
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": text_prompt
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": image_url  # Use the direct image URL
+                    }
+                }
+            ]
+        }
+    ]
+    return messages
+
+def get_response_from_model(model_name, messages):
+    """Send messages to the model and return the response."""
+    kwargs = dict(model_name=model_name, messages=messages)
+    response = chat.completions.create(**kwargs)
+    return response.to_dict()["choices"][0]["message"]["content"]
+
+# Example usage
+image_url = "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/graph.jpg"
+text_prompt = "what is this graph about"  # Prompt asking for the description
+model_name = "gpt-4o"  # Replace with the model that supports image input
+
+# Create prompt with image and text
+messages = create_image_prompt(image_url, text_prompt)
+
+# Get response from model
+response = get_response_from_model(model_name, messages)
+print(response)
+```
+By following this example, you can easily integrate image-based inputs with the GPT-4o model and leverage its ability to understand and generate responses based on both visual and text content. For additional guidance, refer to the screenshot below.
+![image](img/graphSDK.png)
+[OPTION END]
+
 For more information on the models refer to [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
 
 ### Math
@@ -512,6 +707,71 @@ We get the following output accurately describing the scene in the image:
 ![image](img/math%20output.png)
 [OPTION END]
 
+[OPTION BEGIN [GenAI SDK]]
+To utilize the GPT-4o model, which supports both text and image inputs, use the code below. This example demonstrates how to create a prompt with an image URL and a text query, enabling the model to process and provide a response based on both visual and textual information.
+
+Note: You can replace the image URL with any image of your choice and modify the text prompt to ask the model any question about that image based on your specific needs.
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+import requests
+import base64
+
+def encode_image_from_url(image_url):
+    """Download and encode image to base64 format from URL."""
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        raise Exception(f"Failed to download image. Status code: {response.status_code}")
+
+def create_image_prompt(image_url, text_prompt):
+    """Create a prompt message for the model with the image data."""
+    # Encode image URL to base64 format
+    image_base64 = encode_image_from_url(image_url)
+    
+    # Create messages including both text and image input
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": text_prompt
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": image_url  # Use the direct image URL
+                    }
+                }
+            ]
+        }
+    ]
+    return messages
+
+def get_response_from_model(model_name, messages):
+    """Send messages to the model and return the response."""
+    kwargs = dict(model_name=model_name, messages=messages)
+    response = chat.completions.create(**kwargs)
+    return response.to_dict()["choices"][0]["message"]["content"]
+
+# Example usage
+image_url = "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/math.jpg"
+text_prompt = "find x"  # Prompt asking for the description
+model_name = "gpt-4o"  # Replace with the model that supports image input
+
+# Create prompt with image and text
+messages = create_image_prompt(image_url, text_prompt)
+
+# Get response from model
+response = get_response_from_model(model_name, messages)
+print(response)
+```
+By following this example, you can easily integrate image-based inputs with the GPT-4o model and leverage its ability to understand and generate responses based on both visual and text content. For additional guidance, refer to the screenshot below.
+![image](img/mathSDK.png)
+[OPTION END]
+
 For more information on the models refer to [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
 
 ### Image to Text
@@ -632,6 +892,71 @@ Add the above data in the body of the POST call, then hit ‘Send’ as follows 
 We get the following output accurately describing the scene in the image:
 
 ![image](img/imagetotext%20output.png)
+[OPTION END]
+
+[OPTION BEGIN [GenAI SDK]]
+To utilize the GPT-4o model, which supports both text and image inputs, use the code below. This example demonstrates how to create a prompt with an image URL and a text query, enabling the model to process and provide a response based on both visual and textual information.
+
+Note: You can replace the image URL with any image of your choice and modify the text prompt to ask the model any question about that image based on your specific needs.
+
+```PYTHON
+from gen_ai_hub.proxy.native.openai import chat
+import requests
+import base64
+
+def encode_image_from_url(image_url):
+    """Download and encode image to base64 format from URL."""
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return base64.b64encode(response.content).decode("utf-8")
+    else:
+        raise Exception(f"Failed to download image. Status code: {response.status_code}")
+
+def create_image_prompt(image_url, text_prompt):
+    """Create a prompt message for the model with the image data."""
+    # Encode image URL to base64 format
+    image_base64 = encode_image_from_url(image_url)
+    
+    # Create messages including both text and image input
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": text_prompt
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": image_url  # Use the direct image URL
+                    }
+                }
+            ]
+        }
+    ]
+    return messages
+
+def get_response_from_model(model_name, messages):
+    """Send messages to the model and return the response."""
+    kwargs = dict(model_name=model_name, messages=messages)
+    response = chat.completions.create(**kwargs)
+    return response.to_dict()["choices"][0]["message"]["content"]
+
+# Example usage
+image_url = "https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/09_BusinessAIWeek/images/handwrittenText.png"
+text_prompt = "extract text"  # Prompt asking for the description
+model_name = "gpt-4o"  # Replace with the model that supports image input
+
+# Create prompt with image and text
+messages = create_image_prompt(image_url, text_prompt)
+
+# Get response from model
+response = get_response_from_model(model_name, messages)
+print(response)
+```
+By following this example, you can easily integrate image-based inputs with the GPT-4o model and leverage its ability to understand and generate responses based on both visual and text content. For additional guidance, refer to the screenshot below.
+![image](img/handwrittenTextSDK.png)
 [OPTION END]
 
 For more information on the models refer to [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
