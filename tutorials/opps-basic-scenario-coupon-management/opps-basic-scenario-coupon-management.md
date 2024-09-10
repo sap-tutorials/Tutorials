@@ -30,13 +30,11 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: In your **Heidelberg** store (business unit ID: `FC01`) you want to promote coffee machines to free up stock. For this, you have created the following promotion: **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 5 Euro off and 100 loyalty points**.
-* Your promotion is valid from **May 1st, 2021 until May 7th, 2021**.
+* Business goal: In your **Heidelberg** store (business unit ID: `FC01`) you want to promote coffee machines to free up stock. For this, you have created the following promotion: **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off**.
+* Your promotion is valid from **September 1st, 2024 until September 30th, 2024**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
-* A customer put one **coffee machine** in the shopping cart.
-* You call the Calculation service with the shopping cart information (store, products, date, time).
-* The Calculation service calculates the effective sales price by applying the promotional rules.
-
+* You are planning to generate 200 coupon codes and read them.
+* You call the Coupon service with the promotion information (store, products, date, time).
 
 
 <!-- ### Set up SAP Omnichannel Promotion Pricing
