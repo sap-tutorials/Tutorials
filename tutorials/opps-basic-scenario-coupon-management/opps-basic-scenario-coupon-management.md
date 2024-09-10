@@ -1,12 +1,14 @@
 ---
 parser: v2
+author_name: Aathira P
+author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 10
 tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
-# Apply Incentives (Coupons and Loyalty Points) with SAP Omnichannel Promotion Pricing
+# Create Multi-Code Coupons with SAP Omnichannel Promotion Pricing
 <!-- description --> Learn how to use SAP Omnichannel Promotion Pricing for calculating the effective sales price by applying a coupon to the transaction and adding loyalty points.
 
 ## Prerequisites
