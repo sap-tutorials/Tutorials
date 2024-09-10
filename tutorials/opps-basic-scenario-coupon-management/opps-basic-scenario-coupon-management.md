@@ -54,7 +54,7 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
 ### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Coupon Management service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
 ### Upload promotional rule
