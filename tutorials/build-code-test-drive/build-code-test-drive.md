@@ -27,8 +27,8 @@ parser: v2
 >**Note** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different.
 
 1. Navigate to the SAP Build lobby.
+
 2. Click **Create** to start the creation process.  
-<br>
 
     <!-- border -->![Create](1.2red.png)
 
@@ -68,6 +68,9 @@ parser: v2
     <!-- border -->![SAP Business Application Studio](19.png)
 
 
+
+
+
 ### Create Data Entities with Joule
 
 Let's create an application for a customer loyalty program. The customer can get bonus points by purchasing products and can redeem these points. 
@@ -79,7 +82,8 @@ Let's create an application for a customer loyalty program. The customer can get
 
     <!-- border -->![Open Joule](21.png)
 
-    >Note: If you do not see the icon, click Additional Views and select **Joule** from the list.
+    >If you do not see the icon, click Additional Views and select **Joule** from the list.
+    >
     >![Find Joule icon](additional_views.png)
 
 
@@ -117,6 +121,11 @@ Let's create an application for a customer loyalty program. The customer can get
     Once you accept the code, you will see the update on the right side in the Storyboard tab.<br>
 
     >**Tip**: To open the Storyboard, navigate to the **Project Explorer**, expand your project, and select **Storyboard**. 
+
+
+
+
+
 
 
 ### Enhance the Application Data Using Joule 
@@ -159,6 +168,10 @@ Let's create an application for a customer loyalty program. The customer can get
     ![Accept](joule_accept_code.png)
 
 
+
+
+
+
 ### Create Application Logic with Joule 
 
 We already have created the data model, service, and sample data with Joule. Now we want to create some logic for our service. We would like to calculate the bonus points automatically when a customer makes a purchase. Additionally, we want to provide logic for customers to redeem these bonus points.
@@ -167,9 +180,8 @@ We already have created the data model, service, and sample data with Joule. Now
 
     <!-- border -->![Open in Graphical Modeler](purchases_logic.png)
     
-    
-    >If you do not see the entity, click the Show All icon.
-    > <br/>
+    >If you do not see the entity, click the **Show All** icon.
+    >
     >![Show All icon](show_all.png)
 
 3. In the **Add Application Logic** dialog, leave the default values, and click **Add**.
@@ -211,8 +223,9 @@ We already have created the data model, service, and sample data with Joule. Now
 
     ![Add](joule019.png)
 
-    > **Note:** Joule typically generates different code each time for the same prompt. If yours is different to what you can see here, that's fine as long as it does the same job.<br/> 
-    If there are no obvious errors, just keep working on the exercise. If you  aren't sure, you can ask Joule to try again by clicking **Regenerate**.  
+    > Joule typically generates different code each time for the same prompt. If yours is different to what you can see here, that's fine as long as it does the same job.
+    > 
+    >If there are no obvious errors, just keep working on the exercise. If you  aren't sure, you can ask Joule to try again by clicking **Regenerate**.  
 
 8. Go back to the storyboard. 
 
@@ -220,8 +233,8 @@ We already have created the data model, service, and sample data with Joule. Now
 
     <!-- border -->![Add logic](add_logic.png)
 
-    >If you do not see the entity, click the Show All icon.
-    > <br/>
+    >If you do not see the entity, click the **Show All** icon.
+    >
     >![Show All icon](show_all.png)
 
 9. In the **Add Application Logic** dialog, leave the default values, and click **Add**.
@@ -254,6 +267,10 @@ We already have created the data model, service, and sample data with Joule. Now
 
     <!-- border -->![generated code](points.png)
  
+ 
+
+
+
 
 ###  Add UI to the Application  
 
@@ -264,6 +281,7 @@ To display and test the content we created for the customer loyalty program, we 
     <!-- border -->![Add UI](51a.png)
 
 2. We will start with the user interface for the **Purchases** data entity. 
+
     Set the **Display name** to **Purchases** and the **Description** to **Manage Purchases**, and then click **Next**.
 
     <!-- border -->![UI details](52a.png)
@@ -318,7 +336,7 @@ To display and test the content we created for the customer loyalty program, we 
 
     <!-- border -->![app preview](preview3.png)
 
-9. From the dropdown list at the top of the page, select **Home** to go back and preview the other applications.
+9.  From the dropdown list at the top of the page, select **Home** to go back and preview the other applications.
 
     <!-- border -->![app preview](preview4.png)
 
