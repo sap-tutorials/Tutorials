@@ -76,7 +76,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 6. Copy the following raw data and paste it into the body:
 ```json
 { 
-"generatedCodeCount": 10, 
+"generatedCodeCount": 200, 
 "validFrom": "2025-09-07" 
 }
 ```
@@ -85,6 +85,34 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 With this, you created the coupon object for the promotional rule **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
+
+### Generate Coupon Codes
+
+
+You can generate coupon codes with the multi-code coupon object created using the Coupon Management service. 
+
+Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagement/resource). Log on with the same login information that you use for your SAP BTP account.
+
+<!-- border -->![Coupon management 1](coupon_management_1.png)
+<!-- border -->![Coupon management 2](coupon_management_2.png)
+
+
+1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
+2. On the left-hand side, choose **Generate coupon codes using OAuth2**.
+3. Open the **POST** request `/idocinbound`.
+4. Choose **Try Out**.
+5. For the **Request body**, choose `application/json`.
+6. Copy the following raw data and paste it into the body:
+```json
+{ 
+"generatedCodeCount": 200, 
+"validFrom": "2025-09-07" 
+}
+```
+7. Choose **Execute**.
+8. Make sure you get the HTTP response **200**.
+
+With this, you generated the coupon codes for the multi-code coupon **TIME FOR COFFEE** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
 
 ### Upload promotional rule
