@@ -77,11 +77,11 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 ```json
 { 
 "generatedCodeCount": 200, 
-"validFrom": "2025-09-07" 
+"validFrom": "2024-09-01" 
 }
 ```
 7. Choose **Execute**.
-8. Make sure you get the HTTP response **200**.
+8. Make sure you get the HTTP response **201**.
 
 With this, you created the coupon object for the promotional rule **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
@@ -106,7 +106,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 ```json
 { 
 "generatedCodeCount": 200, 
-"validFrom": "2025-09-07" 
+"validFrom": "2024-09-01" 
 }
 ```
 7. Choose **Execute**.
