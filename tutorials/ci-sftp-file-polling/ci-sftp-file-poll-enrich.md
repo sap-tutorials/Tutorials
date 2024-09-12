@@ -8,7 +8,7 @@ tags: [  software-product>sap-integration-suite, software-product>cloud-integrat
 primary_tag: software-product>sap-integration-suite
 ---
 
-# Learn how to migrate the SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
+# Learn how to migrate SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
 <!-- description --> This tutorial covers the file polling by Poll enrich with SFTP Adapter in the SAP Integration Suite and achieve the file selection based on the list of filenames by Content Modifier with Iterating Splitter.
 
 ## Intro
@@ -42,6 +42,8 @@ DummyD_Dummy1_*.csv
 
 3. Add Iterating Splitter to split the input message based on line breaks, process each line individually, handle messages sequentially. In the following table there are the configurations inside the Interacting:
 
+  ![Add Branches]( IteratingSplitter.png)  
+
     |  Configuration Name               | Usage         | Description                                      
     |  :-------------           | :-------------        | :------------- 
     |  Expression Type | Line Break               | `This setting indicates that the splitter will use line breaks as the delimiter to split the content. Each line in the input will be treated as a separate message part. ` 
@@ -51,9 +53,6 @@ DummyD_Dummy1_*.csv
     |  Stop on Exception             | Checked                 | `When checked, this setting ensures that the processing will stop if an exception occurs in any of the split messages. This is useful for error handling, ensuring that issues are addressed before proceeding further in the process. `  
 
     
-
-![Add Branches]( IteratingSplitter.png)  
-
 ### Add local Integration Process Call to poll files from SFTP Server
 
 1.  Build the Process Call and the Local Integration Process Call  poll_files. Local integration process poll_files will be triggered from the calling process afterwards.
