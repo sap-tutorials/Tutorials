@@ -62,7 +62,7 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now create a multi-code coupon object with the Coupon Management service. 
 
-Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagement/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 <!-- border -->![Coupon management 1](coupon_management_1.png)
 <!-- border -->![Coupon management 2](coupon_management_2.png)
@@ -91,7 +91,7 @@ With this, you created the coupon object for the promotional rule **Buy a coffee
 
 You can generate coupon codes with the multi-code coupon object created using the Coupon Management service. 
 
-Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagement/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 <!-- border -->![Coupon management 1](coupon_management_1.png)
 <!-- border -->![Coupon management 2](coupon_management_2.png)
