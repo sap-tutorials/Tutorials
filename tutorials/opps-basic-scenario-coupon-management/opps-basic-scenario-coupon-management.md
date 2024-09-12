@@ -80,8 +80,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 "validFrom": "2025-09-07" 
 }
 
-
-7. Choose **Execute**.
+\ 7. Choose **Execute**.
 
 
 ### Upload promotional rule
