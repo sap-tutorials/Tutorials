@@ -68,6 +68,15 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 <!-- border -->![Coupon management 2](coupon_management_2.png)
 
 
+1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
+2. On the left-hand side, choose **Create coupon object using OAuth2**.
+3. Open the **POST** request `/idocinbound`.
+4. Choose **Try Out**.
+5. For the **Request body**, choose `application/json`.
+6. Copy the following raw data and paste it into the body:
+```json
+
+
 ### Upload promotional rule
 
 
