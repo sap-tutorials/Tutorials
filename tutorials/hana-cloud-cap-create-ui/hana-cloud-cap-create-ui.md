@@ -165,7 +165,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
     ![Test UI](test_ui.png)
 
-1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
+1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app/router/`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
 
 ### Enahance the Fiori UI via Annotations
 
@@ -177,7 +177,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
 3. Replace the `annotations.cds` with the following content:
 
-    ```cds
+    ```CDS
     using CatalogService as service from '../../srv/interaction_srv';
 
     annotate service.Interactions_Header with @(
@@ -352,14 +352,13 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
     ID @UI.Hidden;
     };
 
-   // Add Value Help for Locales
-   annotate service.Interactions_Items.texts {
+    annotate service.Interactions_Items.texts {
     locale @(
         ValueList.entity: 'Languages',
         Common.ValueListWithFixedValues,
     )
-   }
-   ```
+    }
+    ```
 
 4. Run the application again and you will new functionality including value help for country and currency as well as the ability to see and maintain the translatable text element.
 

@@ -40,9 +40,7 @@ DummyD_Dummy1_*.csv
 ```
 ![Filename](list-filenames.png)  
 
-3. Add Iterating Splitter to split the input message based on line breaks, process each line individually, handle messages sequentially. In the following table there are the configurations inside the Interacting:
-
-  ![Add Branches]( IteratingSplitter.png)  
+3.  Add Iterating Splitter to split the input message based on line breaks, process each line individually, handle messages sequentially. In the following table there are the configurations inside the Interacting:
 
     |  Configuration Name               | Usage         | Description                                      
     |  :-------------           | :-------------        | :------------- 
@@ -52,7 +50,9 @@ DummyD_Dummy1_*.csv
     |  Table Name               | Unchecked                 | `When unchecked, the splitter will process the split messages sequentially. If checked, the splitter could process multiple split messages in parallel, which can improve performance for large datasets. `      
     |  Stop on Exception             | Checked                 | `When checked, this setting ensures that the processing will stop if an exception occurs in any of the split messages. This is useful for error handling, ensuring that issues are addressed before proceeding further in the process. `  
 
-    
+
+![Add Branches]( IteratingSplitter.png)  
+
 ### Add local Integration Process Call to poll files from SFTP Server
 
 1.  Build the Process Call and the Local Integration Process Call  poll_files. Local integration process poll_files will be triggered from the calling process afterwards.

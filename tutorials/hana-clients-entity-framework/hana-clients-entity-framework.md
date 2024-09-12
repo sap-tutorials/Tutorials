@@ -19,7 +19,12 @@ primary_tag: software-product>sap-hana-cloud
   - How to use the scaffold command to generate entity classes for pre-existing schema tables
 
 ## Intro
-[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  Entity Framework Core is a modern object-database mapper for .NET and can reduce data access code in an application.  THe first example shown below either requires an empty database or one with the following table.
+
+```SQL
+CONNECT USER2 Password2;
+CREATE TABLE "Hotel" ("Id" int, "Name" VARCHAR (20), "Address" VARCHAR (60));
+```
 
 ---
 
@@ -86,7 +91,7 @@ dotnet ef -h
         <Reference Include="Sap.Data.Hana.Core.v6.0">
             <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
         </Reference>
-        </Reference>
+
         <Reference Include="Sap.EntityFrameworkCore.Hana.v7.0">
             <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.EntityFrameworkCore.Hana.v7.0.dll</HintPath>
         </Reference>
@@ -145,7 +150,7 @@ dotnet ef -h
 
     public class HotelContext : DbContext
     {
-        public DbSet<HotelEF> Hotels { get; set; }
+        public DbSet<HotelEF> Hotel { get; set; }
 
         public HotelContext()
         {
@@ -194,7 +199,7 @@ dotnet ef -h
 
     // Read
     Console.WriteLine("Querying for a hotel");
-    var hotels = db.Hotels
+    var hotels = db.Hotel
         .OrderBy(b => b.Name).Last();
     Console.WriteLine("Found: " + hotels.Name);
     ```
@@ -309,10 +314,10 @@ The following steps demonstrate the process of generating entity type classes an
 
     Additional details can be found at [dotnet add package](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package) and [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design)
 
-4. Use the scaffold command to generate entity classes for the HOTEL schema.
+4. Use the scaffold command to generate entity classes for the HOTELS schema.  Update the SQL endpoint.
 
     ```Shell
-    dotnet ef dbcontext scaffold "Server=xxxxxx-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443;uid=USER2;pwd=Password2;Current Schema=HOTEL" Sap.EntityFrameworkCore.Hana.v7.0 --schema HOTEL --context HotelContext
+    dotnet ef dbcontext scaffold "Server=xxxxxx-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443;uid=USER2;pwd=Password2;Current Schema=HOTELS" Sap.EntityFrameworkCore.Hana.v7.0 --schema HOTELS --context HotelsContext
     ```
 
     ![scaffold command](scaffold.png)
@@ -334,7 +339,7 @@ The following steps demonstrate the process of generating entity type classes an
     ```C#
     using EFCoreScaffold;
 
-    using var db = new MyHotelContext(true);
+    using var db = new MyHotelsContext(true);
 
     // Create
     Console.WriteLine("Inserting a new maintenance item");
@@ -348,40 +353,38 @@ The following steps demonstrate the process of generating entity type classes an
     Console.WriteLine("Found item#: " + maintenanceItems.Mno + "  Desc: " + maintenanceItems.Description);
     ```
 
-7. Open an editor to edit the file `HotelContext.cs`.  
+7. Open an editor to edit the file `HotelsContext.cs`.  
 
     ```Shell (Windows)
-    notepad HotelContext.cs
+    notepad HotelsContext.cs
     ```
 
     ```Shell (Linux or Mac)
-    pico HotelContext.cs
+    pico HotelsContext.cs
     ```
 
-8. Delete the `OnConfiguring` method.  This will be added to the `MyHotelContext.cs` class.
+8. Delete the `OnConfiguring` method.  This will be added to the `MyHotelsContext.cs` class.
 
-9. In the already open file `HotelContext.cs`, change the name of the keys so they do not start with _SYS with a search and replace.  
-
-10. Open an editor to create and edit a new file named `MyHotelContext.cs`.  
+9. Open an editor to create and edit a new file named `MyHotelsContext.cs`.  
 
     ```Shell (Windows)
-    notepad MyHotelContext.cs
+    notepad MyHotelsContext.cs
     ```
 
     ```Shell (Linux or Mac)
-    pico MyHotelContext.cs
+    pico MyHotelsContext.cs
     ```
 
-11. Add the code below. Save and close the file when finished.  Note that the schema is changed to be USER2 while the original objects are in the schema HOTEL.
+10. Add the code below. Update the Server= line to match your SAP HANA Cloud SQL endpoint.  Save and close the file when finished.  Note that the schema is changed to be USER2 while the original objects are in the schema HOTELS.
 
     ```C#
     using Microsoft.EntityFrameworkCore;
     using Sap.EntityFrameworkCore.Hana;
 
     namespace EFCoreScaffold;
-    internal class MyHotelContext : HotelContext
+    internal class MyHotelsContext : HotelsContext
     {
-        public MyHotelContext(bool createTables) : base()
+        public MyHotelsContext(bool createTables) : base()
         {
             if (createTables)
             {
@@ -398,7 +401,7 @@ The following steps demonstrate the process of generating entity type classes an
     }
     ```
 
-12. Run the app:
+11. Run the app:
 
     ```Shell
     dotnet run

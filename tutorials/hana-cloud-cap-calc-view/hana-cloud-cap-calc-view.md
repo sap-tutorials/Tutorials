@@ -157,7 +157,7 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 1. From the terminal return to the root of the project and issue the command: `cds build`
 
     ```shell
-    cds build
+    cds build --production
     ```
 
     ![CDS build](cds_build.png)

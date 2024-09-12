@@ -24,8 +24,6 @@ The following steps create a simple Python app that can connect to and query an 
 ---
 
 ### Install Python
-
-
 The first step is to check if Python is installed.
 
 Enter the commands below.
@@ -50,8 +48,6 @@ You should now be able to open a new shell and verify that Python is installed.
 
 
 ### Install SAP HANA client for Python using pip and PyPI
-
-
 The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.
 
 ```Shell
@@ -132,8 +128,6 @@ pip install hdbcli
 
 
 ### Create Python application that queries SAP HANA
-
-
 1. In a shell, create a folder named `python`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
     ```Shell (Microsoft Windows)
@@ -187,7 +181,7 @@ pip install hdbcli
     print('connected')
 
     cursor = conn.cursor()
-    sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;"
+    sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;"
     cursor.execute(sql_command)
 
     rows = cursor.fetchall()
@@ -199,7 +193,7 @@ pip install hdbcli
     print("\n")
 
     #Prepared statement example
-    sql_command2 = "CALL HOTEL.SHOW_RESERVATIONS(?,?);"
+    sql_command2 = "CALL HOTELS.SHOW_RESERVATIONS(?,?);"
     parameters = [11, "2020-12-24"]
     cursor.execute(sql_command2, parameters)
     rows = cursor.fetchall()
@@ -260,10 +254,6 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 ### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries an SAP HANA database.  
-
-
-
-
 
 
 ---
