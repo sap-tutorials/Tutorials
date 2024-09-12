@@ -109,7 +109,6 @@ The following steps were performed on Linux (using WSL) with an installation of 
 
 
 ### Create a client certificate
-
 1. Create a private user key and a certificate signing request.
 
     ```Shell
@@ -119,7 +118,6 @@ The following steps were performed on Linux (using WSL) with an installation of 
     ```
 
     ![create client certificate](user-csr.png)
-
 
 
 2. Create a client certificate that has been signed by the certificate authority.
@@ -175,7 +173,6 @@ The following steps were performed on Linux (using WSL) with an installation of 
 
 
 ### Create a PEM and Personal Security Environment (PSE) file for the SAP HANA Client
-
 The details of the client certificate needed for authentication will be stored in a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file when using OpenSSL or a Personal Security Environment (PSE) file when using SAP CommonCryptoLib.  A PSE can either be file based or be an object in the SAP HANA database.  The SAP HANA Client needs to be able to access certificate details when connecting to the database and hence needs the certificate details to be stored in a file.
 
 1. Create a PEM file for use with OpenSSL.
@@ -194,7 +191,6 @@ The details of the client certificate needed for authentication will be stored i
 
 
 ### Add the demorootca.crt to the CERTIFICATES table
-
 1. View the contents of the `demorootca.crt` file.
 
     ```Shell
@@ -247,7 +243,6 @@ The above is known as an explicit mapping.  The common name, or CN value, in the
 Further details can be found at [CREATE USER Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control).
 
 ### Connect using the SAP HANA database explorer using an X.509 certificate
-
 1. Open the SAP HANA database explorer.
     
     ![open SAP HANA database explorer from SAP HANA Cloud Central](open-dbx.png)
@@ -286,7 +281,6 @@ Further details can be found at [CREATE USER Statement](https://help.sap.com/doc
     | authenticationX509 | A string containing the X509 certificate or the name of a file containing the X509 certificate |
 
 ### Connect from a Linux, macOS, or Microsoft Windows Client with HDBSQL using X.509 and SAP Cryptographic Library (CommonCryptoLib)
-
 1. A few steps are required to enable the usage of CommonCryptoLib such as the setting of an environment variable named SECUDIR to the location of the SAP HANA Client install and the creation of a personal security environment file that contains the root certificate of the SAP HANA Cloud database. Follow the steps documented in the tutorial [Create a User, Tables and Import Data Using SAP HANA HDBSQL](hana-clients-hdbsql) (in a note in step 1) to use commoncrtypo.
 
 2. Connect using CommonCryptoLib.
@@ -302,7 +296,6 @@ Further details can be found at [CREATE USER Statement](https://help.sap.com/doc
     ![HDBSQL connection with commoncrypto](commoncrypto-linux.png)
 
 ### Connect from a Node.js app using X.509 and OpenSSL or CommonCryptoLib
-
 1. Create a folder named `nodeX509OpenSSL` and enter the newly created directory.
 
     ```Shell (Microsoft Windows)
@@ -370,7 +363,7 @@ Further details can be found at [CREATE USER Statement](https://help.sap.com/doc
 
     >If you are using commoncrypto, be sure to replace the contents of `sslCryptoProvider` with `commoncrypto`.  
           
-    >The values for host, port, and pem can be retrieved from an `hdbuserstore` key, such as X509UserKey, or they can be specified in the application. Be sure to replace the placeholder SQL endpoint with the SQL endpoint of your instance.
+    >The values for host, port, and pem can be retrieved from an `hdbuserstore` key, such as X509UserKey, or they can be specified in the application. Be sure to replace the placeholder SQL endpoint with the SQL endpoint of your instance.  Further details can be found at [hdbuserstore Commands](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/db46cfc4c5db4692aa84b46e357d47b8.html).
     >
     >```Shell
     >hdbuserstore SetX509 X509UserKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.hana.trial-us10.hanacloud.ondemand.com:443 ~/certs/test_x509_user.pem
@@ -390,7 +383,6 @@ Further details can be found at [CREATE USER Statement](https://help.sap.com/doc
 6. Should you wish to use SAP CommonCryptoLib, make sure the changes in the previous step to set were completed and then change the parameter sslCryptoProvider from openssl to commoncrypto and the authenticationX509 parameter to point to the pse file.
 
 ### Cleanup (optional)
-
 If you wish to undo the steps in this tutorial, execute the following SQL and commands.
 
 ```SQL
@@ -413,7 +405,6 @@ rm *
 ```
 
 ### Knowledge check
-
 Congratulations! You have now used an X.509 client certificate when connecting to an SAP HANA Cloud database.
 
 

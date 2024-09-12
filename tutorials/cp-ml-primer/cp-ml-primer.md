@@ -91,10 +91,10 @@ A notebook contains individual cells which can be used either for an executable 
 
 A python package is a module that can be installed and used in your environment. Since we are running this tutorial in a Jupyter server in the cloud, some of the packages we will be using will need to be installed.
 
-Run notebook code to import `sys` package and install & import `numpy` package
+Run notebook code to install & import `numpy` package
 ```python
-import sys
-!{sys.executable} -m pip install numpy
+%pip install numpy
+import numpy as np
 ```
 
 
@@ -105,8 +105,6 @@ import sys
 #### Simple Array
 0. Find code cell for simple array and enter code:
 ```Python
-import numpy as np
-#
 simple_array = np.array([5, 10])
 print(f'simple array contents: {simple_array}')
 print(f'simple array shape: {simple_array.shape}')
@@ -147,7 +145,7 @@ Pandas is like a small, in-memory date store that allows for processing data. In
 
 Install `Pandas` package by creating and running new code cell:
 ```python
-!{sys.executable} -m pip install pandas
+%pip install pandas
 import pandas as pd
 ```
 
@@ -205,7 +203,7 @@ Now that you are familiar with some of the basic tools, it's time to dive into m
 For this tutorial, you will use scikit-learn, a popular machine learning library for python.
 
 ```python
-!{sys.executable} -m pip install sklearn
+%pip install sklearn
 ```
 
 
@@ -370,7 +368,7 @@ The confusion matrix shows our agreements and disagreements for both target valu
 
 0. Install `matplotlib` package
 ```python
-!{sys.executable} -m pip install matplotlib
+%pip install matplotlib
 ```
 0. Build chart
 ```python

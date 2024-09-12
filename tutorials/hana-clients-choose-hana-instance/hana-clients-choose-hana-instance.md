@@ -40,7 +40,6 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 ---
 
 ### Overview of SAP HANA Cloud and SAP HANA, express edition
-
 There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.
 
 |  Version     | Notes
@@ -51,7 +50,6 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 
 ### SAP HANA Cloud
-
 Here are a few benefits of using SAP HANA Cloud:
 
   * Software updates are automatically applied by SAP.
@@ -79,7 +77,6 @@ Here are a few benefits of using SAP HANA Cloud:
 
 
 ### Connect to SAP HANA Cloud
-
 >To complete the tutorials in the mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
 The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
@@ -256,11 +253,8 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     For further information, see [Port Assignment in Tenant Databases](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/440f6efe693d4b82ade2d8b182eb1efb.html) and [Connecting to SAP HANA Databases and Servers](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/b250e7fef8614ea0a0973d58eb73bda8.html).  
 
+
 ### Knowledge check
-
 Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA, express edition.
-
-
-
 
 ---

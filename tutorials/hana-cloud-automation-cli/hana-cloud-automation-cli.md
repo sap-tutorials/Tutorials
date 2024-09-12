@@ -164,7 +164,7 @@ Before proceeding ensure that your user has the subaccount service administrator
 
 Additional details can be found at [Role Collections and Roles in Global Accounts, Directories, and Subaccounts](https://help.sap.com/docs/btp/sap-business-technology-platform/role-collections-and-roles-in-global-accounts-directories-and-subaccounts).
 
-The commands below were executed in a Microsoft Windows PowerShell.  This shell offers code completion by pressing the tab key.  To try out the autocompletion, enter btp, a space, and press the tab key.  
+The commands below were executed in a Microsoft Windows PowerShell.  This shell offers code completion by pressing the tab key.  To try out the autocompletion, enter btp, a space, and press the tab key.  If needed, you can enable autocompletion as described at [Enable Command Autocompletion](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-command-autocompletion?version=Cloud). 
 
 ![Auto complete](auto-complete.png)
 
@@ -172,7 +172,7 @@ Select an action and press tab again to view the available operations for that a
 
 ![Auto complete](auto-complete2.png)
 
-#### Version and help
+#### Version
 
 ```Shell
 btp --version
@@ -288,7 +288,7 @@ In order to create an instance, JSON describing the instance is required as well
 
     ![btp being created](btp-creating.png)
 
-A more advanced example using a bash script is provided at [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations).  Additional details can be found at [Commands in the btp CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/commands-in-btp-cli).
+A more advanced example using a bash script is provided at [Automate Account Operations with the Command Line Interface (CLI)](https://github.com/SAP-samples/cp-cli-automate-operations).  Additional details can be found at [Commands in the btp CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/commands-in-btp-cli).
 
 #### Delete an instance
 Do not follow this step unless you no longer require your SAP HANA Cloud instance.
