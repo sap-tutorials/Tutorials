@@ -57,6 +57,12 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
 In order to continue with the next steps, you need to have already set up your trial environments for the Coupon Management service, Data Upload service and Data Access service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
+### Create Multi-Code Coupon Object
+
+
+You can now create a multi-code coupon object with the Coupon Management service. 
+
+
 ### Upload promotional rule
 
 
