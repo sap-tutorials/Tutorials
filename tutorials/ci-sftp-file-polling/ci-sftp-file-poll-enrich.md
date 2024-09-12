@@ -8,7 +8,7 @@ tags: [  software-product>sap-integration-suite, software-product>cloud-integrat
 primary_tag: software-product>sap-integration-suite
 ---
 
-# Learn how to migrate the SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
+# Learn how to migrate SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
 <!-- description --> This tutorial covers the file polling by Poll enrich with SFTP Adapter in the SAP Integration Suite and achieve the file selection based on the list of filenames by Content Modifier with Iterating Splitter.
 
 ## Intro
@@ -32,23 +32,24 @@ In SAP Process Orchestration (PO), advanced file selection is typically used whe
 2.  Use a Content Modifier to process the message content. This Content Modifier should contain a list of all filenames in the Message Body. This step is used here to initialize a list of file names, specifying multiple possible CSV file patterns to be used by subsequent steps. 
 The specific file name patterns include eg.: 
 
-```
+```Expression
 Dummy_A_*.csv 
 DummyB_*.csv 
 DummyC_*.csv 
 DummyD_Dummy1_*.csv 
 ```
-
 ![Filename](list-filenames.png)  
 
 3.  Add Iterating Splitter to split the input message based on line breaks, process each line individually, handle messages sequentially. In the following table there are the configurations inside the Interacting:
+
     |  Configuration Name               | Usage         | Description                                      
     |  :-------------           | :-------------        | :------------- 
     |  Expression Type | Line Break               | `This setting indicates that the splitter will use line breaks as the delimiter to split the content. Each line in the input will be treated as a separate message part. ` 
     |  Grouping          | 1                  | `This setting specifies the number of items to be grouped together in each split message. A value of "1" means that each individual line (or item) will be processed separately. `  
     |  Streaming              | Unchecked                | `When unchecked, this means that the splitter will not process the input as a continuous stream. Instead, it will handle the input as a whole. `   
     |  Table Name               | Unchecked                 | `When unchecked, the splitter will process the split messages sequentially. If checked, the splitter could process multiple split messages in parallel, which can improve performance for large datasets. `      
-    |  Stop on Exception             | Checked                 | `When checked, this setting ensures that the processing will stop if an exception occurs in any of the split messages. This is useful for error handling, ensuring that issues are addressed before proceeding further in the process.. `      
+    |  Stop on Exception             | Checked                 | `When checked, this setting ensures that the processing will stop if an exception occurs in any of the split messages. This is useful for error handling, ensuring that issues are addressed before proceeding further in the process. `  
+
 
 ![Add Branches]( IteratingSplitter.png)  
 
@@ -58,22 +59,24 @@ DummyD_Dummy1_*.csv
         ![Local Integration Process]( poll_files.png)  
 
 2.  Configure a Content Modifier set_filename_dir to define directory and filename in the following property table:
-     | Action | Name | Source Type | Source Value | Data Type                                            
-     | :------------- | :------------- | :------------- | :------------- | :-------------                                            
-     | Create | dir | Constant | `/` |                                           
-     | Create | filename | Expression | ${in.body} | java.lang.String                                                                                    
+     
+    | Action | Name | Source Type | Source Value | Data Type                                            
+    | :------------- | :------------- | :------------- | :------------- | :-------------                                            
+    | Create | dir | Constant | `/` |                                           
+    | Create | filename | Expression | ${in.body} | java.lang.String                                                                           
 
 3.  Add Poll Enrich. It provides the ability polling content from an external component and enrich the original message with it. Currently, you can use the Poll Enrich step to read content from an SFTP server.
 Define Poll Enrich with Replace as Aggregation Algorithm. It indicates that the current message payload will be removed and replaced with the newly retrieved file content.
 ![Poll Enrich]( poll_files.png)  
-1. In the SFTP Sender, configure the file access parameters by the properties defined for directory and file name. Set up the address and credentials alias based on your case. 
-![ SFTP Sender]( SFTP.png)  
-2. Set a content modifier after polling the file to process the headers during runtime. 
 
-    | Action | Name | Source Type | Source Value | Data Type                                            
-    | :------------- | :------------- | :------------- | :------------- | :-------------                                            
-    | Create | Directory | Header | `CamelFileParent` |                                           
-    | Create | Filename | Header | `CamelFileNameOnly` | 
+4. In the SFTP Sender, configure the file access parameters by the properties defined for directory and file name. Set up the address and credentials alias based on your case. 
+![ SFTP Sender]( SFTP.png)  
+5. Set a content modifier after polling the file to process the headers during runtime. 
+
+    | Action | Name | Source Type | Source Value      
+    | :------------- | :------------- | :------------- | :-------------                                        
+    | Create | Directory | Header | `CamelFileParent`                                       
+    | Create | Filename | Header | `CamelFileNameOnly` 
 
 Note: If the file exists and has been successfully polled by the file adapter in SAP Cloud Integration, the CamelFileParent and CamelFileNameOnly headers will be present in the message headers during runtime. These headers are automatically generated by the Apache Camel framework, which is embedded in SAP Cloud Integration, and they capture important file metadata such as:
 CamelFileParent: The directory path of the file.
