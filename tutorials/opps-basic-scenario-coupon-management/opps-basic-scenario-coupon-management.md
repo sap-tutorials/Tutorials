@@ -348,7 +348,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         </_-ROP_-E1_PRICE_RULE>
       </_-ROP_-E1_PROMOTION_RULE>
       <_-ROP_-E1_PROMOTION_TEXT SEGMENT="1">
-        <DESCRIPTION>Buy a coffee machine and show coupon TIME FOR COFFEE to get 5 Euro off and 100 points</DESCRIPTION>
+        <DESCRIPTION>Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off</DESCRIPTION>
         <NAME>Coffee machine promotion</NAME>
         <SPRAS_ISO>EN</SPRAS_ISO>
       </_-ROP_-E1_PROMOTION_TEXT>
@@ -361,7 +361,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 
 With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
->In this tutorial, you only upload the promotional rule. You have already uploaded the regular sales price of **500 Euro** for the product **coffee machine** (material number: `COFFEE_MACHINE`, unit of measure: `PCE`) with the validity period **May 1st, 2021 to December 31st, 2021** in step 3 of the tutorial [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
+>In this tutorial, you only upload the promotional rule. You have already uploaded the regular sales price of **500 Euro** for the product **coffee machine** (material number: `COFFEE_MACHINE`, unit of measure: `PCE`) with the validity period **September 1st, 2024 to September 30th, 2024** in step 3 of the tutorial [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
 
 
