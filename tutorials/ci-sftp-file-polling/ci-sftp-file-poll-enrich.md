@@ -8,7 +8,7 @@ tags: [  software-product>sap-integration-suite, software-product>cloud-integrat
 primary_tag: software-product>sap-integration-suite
 ---
 
-# Learn how to migrate SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
+# Learn how to migrate the SFTP Advanced File Selection from SAP Process Orchestration to Cloud Integration
 <!-- description --> This tutorial covers the file polling by Poll enrich with SFTP Adapter in the SAP Integration Suite and achieve the file selection based on the list of filenames by Content Modifier with Iterating Splitter.
 
 ## Intro
