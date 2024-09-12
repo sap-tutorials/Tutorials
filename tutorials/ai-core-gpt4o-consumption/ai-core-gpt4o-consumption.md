@@ -24,7 +24,7 @@ If you are an external developer or a customer or a partner kindly refer to this
 - Ai core Instance with Standard Plan or Extended Plan
 
 Multimodality refers to the ability of a model to process and interpret different types of inputs, such as text, images, audio, or video. In the context of GPT-4o on SAP AI Core, multimodal input allows the model to understand and generate responses that incorporate both text and visual data. This enhances the model's ability to perform complex tasks, such as scene detection, object recognition, and image analysis, by combining the strengths of both language processing and image recognition.
-In this tutorial, we'll demonstrate these capabilities with the help of GPT-4o, with a sample input and output, which can be replicated in future for various use cases.
+In this tutorial, we will demonstrate these capabilities with the help of GPT-4o, with a sample input and output, which can be replicated in future for various use cases.
 
 ### Scene Detection
 
