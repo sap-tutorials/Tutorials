@@ -82,7 +82,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 ```
 7. Choose **Execute**.
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 5 Euro off and 100 points" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **May 1st, 2021 to May 7th, 2021**.
+With this, you created the coupon object for the promotional rule **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
 
 ### Upload promotional rule
