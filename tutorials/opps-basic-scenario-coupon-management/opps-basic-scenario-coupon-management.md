@@ -74,6 +74,14 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 4. Choose **Try Out**.
 5. For the **Request body**, choose `application/json`.
 6. Copy the following raw data and paste it into the body:
+```json
+{ 
+"generatedCodeCount": 10, 
+"validFrom": "2025-09-07" 
+}
+
+
+7. Choose **Execute**.
 
 
 ### Upload promotional rule
