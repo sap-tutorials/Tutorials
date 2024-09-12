@@ -39,7 +39,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 ### Set Cloud Foundry preferences
 
-If you are not logged in to a Cloud Foundry space - Before you can deploy your new application, set your Cloud Foundry preferences.
+If you are not logged in to a Cloud Foundry space, before you can deploy your new application, set your Cloud Foundry preferences.
 
 1. In the left side bar, select the **Hamburger icon | View | Command Palette…** to open the **command palette**.
 
@@ -55,11 +55,11 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
     
-    If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under "Cloud Foundry Environment".
+    If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on **Overview** on the left and you can see the URL of the **API endpoint** under **Cloud Foundry Environment**.
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-1.png)
 
-4. Select authentication method as SSO Passcode.
+4. Select authentication method as **SSO Passcode**.
 
     Choose the link **Open a new browser page to generate your SSO passcode**.
 
@@ -67,9 +67,11 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     Enter the Temporary Authentication Code as **SSO Passcode**.
 
-    Choose Sign in.
+    Choose **Sign in**.
 
-5. Select the Cloud Foundry organization, Cloud Foundry space, and click **Apply**.
+    <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
+
+5. Select the **Cloud Foundry organization**, **Cloud Foundry Space**, and click **Apply**.
 
     If the Cloud Foundry Target dropdowns are empty you need to change the default Cloud Foundry Endpoint to the one of your subaccount (see previous step). To obtain your subaccount's Cloud Foundry Endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under **Cloud Foundry Environment**.
 
@@ -77,9 +79,9 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-4-.png)
 
-    >**You have been logged in.** notification appears at the bottom-right of your screen.
+    A notification **You have been logged in.** appears at the bottom-right of your screen.
 
-    ><!-- border -->![Logged in to CF](BAS-CF-Login-5-.png)
+    <!-- border -->![Logged in to CF](BAS-CF-Login-5-.png)
 
 
 ### Deploy the application
