@@ -76,8 +76,23 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 6. Copy the following raw data and paste it into the body:
 ```json
 { 
-"generatedCodeCount": 200, 
-"validFrom": "2024-09-01" 
+  "ID": "01234567-89ab-cdef-0123-456789abcdef",
+  "status": "INACTIVE",
+  "displayID": "TIMEFORCOFFEE",
+  "type": "MULTICODE",
+  "name": "TIME FOR COFFEE",
+  "description": "string",
+  "validFrom": "2024-09-01",
+  "validTo": "2024-09-30",
+  "couponCodeValidityPeriodInDays": 0,
+  "maxCodeGenerationCount": 0,
+  "texts": [
+    {
+      "locale": "string",
+      "ID": "01234567-89ab-cdef-0123-456789abcdef",
+      "description": "string"
+    }
+  ]
 }
 ```
 7. Choose **Execute**.
