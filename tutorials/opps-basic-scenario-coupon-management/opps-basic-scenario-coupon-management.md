@@ -34,7 +34,7 @@ primary_tag: products>sap-business-technology-platform
 * Your promotion is valid from **September 1st, 2024 until September 30th, 2024**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
 * You are planning to generate 200 coupon codes and read them.
-* You call the Coupon service with the promotion information (store, products, date, time).
+* You call the coupon service with the promotion information (store, products, date, time).
 
 
 <!-- ### Set up SAP Omnichannel Promotion Pricing
@@ -54,7 +54,7 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
 ### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Coupon Management service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the Coupon Management service, Data Upload service and Data Access service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
 ### Upload promotional rule
