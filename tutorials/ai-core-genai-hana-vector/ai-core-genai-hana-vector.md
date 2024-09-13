@@ -33,7 +33,7 @@ Please find downloadable sample notebooks for the tutorials : Note that these tu
 To install the generative-ai-hub-sdk package in your system, open your terminal or command prompt and run the following command.
 
 ```
-%pip install generative-ai-hub-sdk
+pip3 install generative-ai-hub-sdk
 ```
 
 Once the package is installed, you need to configure proxy modules to use the large language models. We recommend setting these values as environment variables for AI Core credentials via a configuration file. The default path for this file is ~/.aicore/config.json. 
@@ -130,7 +130,8 @@ cursor.executemany(sql_insert,data[1:])
 First, you'll need to install the hana_ml package to work with SAP HANA and set up the AI Core proxy using generative-ai-hub-sdk. Run the following command to install hana_ml:
 
 ```PYTHON
-%pip install hana_ml
+!pip install hana_ml
+!pip install generative-ai-hub-sdk[langchain]
 ```
 
 After installing, you can proceed with the following code to import the necessary packages and initialize the AI Core proxy:
@@ -151,7 +152,6 @@ For example, if a user enters the prompt "How can I run a shortest path algorith
 
 ```PYTHON
 # Get embeddings
-%pip install generative-ai-hub-sdk[langchain]
 from gen_ai_hub.proxy.native.openai import embeddings
 
 def get_embedding(input, model="text-embedding-ada-002") -> str:
@@ -219,7 +219,7 @@ The code defines a function retrieve_and_query_llm() that performs a similarity 
 ```PYTHON
 # Import necessary modules, and define a function to query an LLM with a formatted prompt and vector-based context
 
-%pip install tiktoken
+!pip install tiktoken
 import tiktoken
 from gen_ai_hub.proxy.langchain.openai import ChatOpenAI
 
