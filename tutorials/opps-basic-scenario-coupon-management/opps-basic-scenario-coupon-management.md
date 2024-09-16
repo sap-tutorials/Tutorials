@@ -30,15 +30,11 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region (business unit ID: `FC01`). For this, you have created the following promotion: **Buy a coffee machine and use the coupon COFFEE LOVERS to get 50 Euro off**.
-* Your promotion is valid from **October 1st, 2024 until December 31st, 2024**.
-* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
+* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store (business unit ID: `FC01`). For this, you have created the following promotion: **Buy a coffee machine and use the coupon COFFEELOVER to get 50 Euro off**.
 * In the **Coupon Management** service, you are planning to create a multi-code coupon with the ID **COFFEELOVER**.
 * As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you want to create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign. 
-
-As a second step, you create the following promotion for your Heidelberg store (business unit ID: FC01): Buy a coffee machine and show the coupon COFFEELOVER and get 50 Euro off.    
-* You are planning to generate 200 coupon codes and read them.
-* You call the coupon service with the promotion information (store, products, date, time).
+* Your promotion is valid from **October 1st, 2024 until December 31st, 2024**.
+* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
 
 
 <!-- ### Set up SAP Omnichannel Promotion Pricing
