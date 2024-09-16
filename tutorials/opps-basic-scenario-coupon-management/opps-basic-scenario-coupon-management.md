@@ -20,9 +20,9 @@ primary_tag: products>sap-business-technology-platform
 
 
 ## You will learn
-- How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP.
-- How to upload a **promotional rule** with the help of the SAP Business Accelerator Hub. The promotional rule includes an example about creating multi-code coupons.
-- How to apply a promotional rule and execute the calculation request.
+- How to use the **Coupon Management** service of SAP Omnichannel Promotion Pricing in your trial environment on SAP BTP. 
+- How to **create and read coupon codes** with the **Coupon Management** service that can be used by marketing channels to drive promotional campaigns. 
+- How to upload a promotional rule into **SAP Omnichannel Promotion Pricing** database with the help of the **Data Upload** service. 
 
 
 ---
@@ -30,8 +30,8 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: In your **Heidelberg** store (business unit ID: `FC01`) you want to promote coffee machines to free up stock. For this, you have created the following promotion: **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off**.
-* Your promotion is valid from **September 1st, 2024 until September 30th, 2024**.
+* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region (business unit ID: `FC01`). For this, you have created the following promotion: **Buy a coffee machine and show the coupon COFFEE LOVERS to get 50 Euro off**.
+* Your promotion is valid from **October 1st, 2024 until December 31st, 2024**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
 * You are planning to generate 200 coupon codes and read them.
 * You call the coupon service with the promotion information (store, products, date, time).
