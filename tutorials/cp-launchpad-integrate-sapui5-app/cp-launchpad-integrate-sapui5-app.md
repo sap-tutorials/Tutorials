@@ -14,7 +14,8 @@ author_profile: https://github.com/LindsayBert
 
 ## Prerequisites
  - You've already created the `JobCore` site
- - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment
+ - You've created a custom SAPUI5 application and deployed it to SAP BTP, Cloud Foundry environment
+ - You've created a space and a page and assigned the space to a role, as described in this tutorial: [Create a Space and a Page and Add Apps](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-spaces-pages.html)
 
 
 ## You will learn
@@ -142,22 +143,3 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 3. Go ahead and click the apps to launch them.
 
    
-### Review your site
-
-
-1. Click the **Site Directory** icon to open the Site Directory.
-
-    ![Open site directory](11-open-site-directory.png)
-
-2. Click **Go to site** on the site tile.
-
-    ![Open site](12-go-to-site.png)
-
-    You'll see all the apps that you have created in your site. In the `Our Suppliers` group, you'll see the `Suppliers` app that we've just created.
-
-    ![See all apps](12a-view-launchpad.png)
-
-
-3. Click the app to launch it.
-
-    ![View app](13-suppliers-app.png)
