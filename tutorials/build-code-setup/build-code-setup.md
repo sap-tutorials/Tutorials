@@ -3,7 +3,7 @@ author_name: Paola Laufer
 author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
-time: 5
+time: 10
 tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product-function>sap-fiori-elements, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
 primary_tag: software-product>sap-build-code
 parser: v2
@@ -67,3 +67,5 @@ Perform these preparatory steps to set up your system for creating your business
     The SAP Build lobby opens.
 
     <!-- border -->![SAP Build Lobby](sap-build-lobby.png)
+
+>**IMPORTANT:** When you run the booster, the needed roles are added to your user in the default IDP. But if you are also using a custom IDP, for example because you also installed SAP Build Apps, you may need to also add the roles **Build Code Administrator** and **Build Code Developer**.   

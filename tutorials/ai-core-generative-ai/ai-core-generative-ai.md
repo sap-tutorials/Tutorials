@@ -18,9 +18,9 @@ If you are an SAP Developer or SAP employee, please refer to the following links
 [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
 [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
-- You have an SAP AI Core service instance and service key. 
-- You're using the Extended service plan.
 - You have completed the client authorization for your preferred user interface. 
+- Access to SAP AI Core instance with the Extended plan 
+- Python and programming IDE (e.g. VSCode)
 
 For more information, see [SAP AI Core documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/initial-setup).
 
@@ -163,9 +163,7 @@ In input parameters, give name and version of the model you want to use.
 
 ![image](images/ail02.png)
 
-These are the models available as of now:
-
-![image](images/ail01.png)
+Refer to this for the list of models available as of now: [Models and Scenarios in the Generative AI Hub](https://help.sap.com/docs/ai-launchpad/generative-ai-hub-in-sap-ai-launchpad-e2eb894cbc6445f99784ccd973d2ddee/models-and-scenarios-in-generative-ai-hub#models)
 
 Note that the model version can be given as *latest*. If the model version is not specified, it will be set to *latest* by default.
 
@@ -288,57 +286,6 @@ Once the deployment is created, check the status of deployment by sending a GET 
 ![image](images/pm04.png)
 
 Note down the ```deploymentUrl``` in the response, which you will be using for executing your queries.
-
-[OPTION END]
-
-
-### Prompt Management
-
-[OPTION BEGIN [SAP AI Launchpad]]
-
-In the Generative AI Hub, you can manage your prompts in the Prompt Management page. Go to **Generative AI Hub** -> **Prompt Management**. Here you can click on a prompt to go to its details page.
-
-![image](images/p_manage06.png)
-
-1. Here on the left hand pane, you can see the different versions of the prompt. Once you choose a new version, the details of that version will be displayed.
-
-1. Click on **Open in Prompt Editor** to open the chosen prompt in the prompt editor.
-
-1. You can delete the prompt by clicking the **Delete** button.
-
-![image](images/p_manage05.png)
-
-In the prompt management page, you can filter the prompts based on created date, collection, model used, etc. 
-
-![image](images/p_manage04.png)
-
-If the filter pane is not visible, click on the toggle button to display it.
-
-![image](images/p_manage03.png)
-
-You can add some prompts to favorite for quick access. Click on the star icon to add  prompts to favorites. Click on the **Favorites** tab to see them.
-
-![image](images/p_manage02.png)
-
-You can also select multiple prompts and delete them.
-
-![image](images/p_manage01.png)
-
-[OPTION END]
-
-### Prompt Administration
-
-[OPTION BEGIN [SAP AI Launchpad]]
-
-Go to **Generative AI Hub** -> **Administration**.
-
-![image](images/adm02.png)
-
-Here you can delete all the data of a particular user. Type the email id of the user and press *Enter*.
-
-If the user data is found, the **Delete** button will become active. Click on the **Delete** button to delete all the prompts saved by that particular user.
-
-![image](images/adm01.png)
 
 [OPTION END]
 
@@ -481,10 +428,61 @@ Open a python programming environment of your choice and run the following code 
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
-
-llm = init_llm('gpt-4', temperature=0., max_tokens=256)
-llm.invoke('What is generative AI?').content
+ 
+llm = init_llm('gpt-4', temperature=0.0, max_tokens=256)
+response = llm.invoke('What is generative AI?').content 
+print('Response:', response)
 ```
+
+[OPTION END]
+
+### Prompt Management
+
+[OPTION BEGIN [SAP AI Launchpad]]
+
+In the Generative AI Hub, you can manage your prompts in the Prompt Management page. Go to **Generative AI Hub** -> **Prompt Management**. Here you can click on a prompt to go to its details page.
+
+![image](images/p_manage06.png)
+
+1. Here on the left hand pane, you can see the different versions of the prompt. Once you choose a new version, the details of that version will be displayed.
+
+1. Click on **Open in Prompt Editor** to open the chosen prompt in the prompt editor.
+
+1. You can delete the prompt by clicking the **Delete** button.
+
+![image](images/p_manage05.png)
+
+In the prompt management page, you can filter the prompts based on created date, collection, model used, etc. 
+
+![image](images/p_manage04.png)
+
+If the filter pane is not visible, click on the toggle button to display it.
+
+![image](images/p_manage03.png)
+
+You can add some prompts to favorite for quick access. Click on the star icon to add  prompts to favorites. Click on the **Favorites** tab to see them.
+
+![image](images/p_manage02.png)
+
+You can also select multiple prompts and delete them.
+
+![image](images/p_manage01.png)
+
+[OPTION END]
+
+### Prompt Administration
+
+[OPTION BEGIN [SAP AI Launchpad]]
+
+Go to **Generative AI Hub** -> **Administration**.
+
+![image](images/adm02.png)
+
+Here you can delete all the data of a particular user. Type the email id of the user and press *Enter*.
+
+If the user data is found, the **Delete** button will become active. Click on the **Delete** button to delete all the prompts saved by that particular user.
+
+![image](images/adm01.png)
 
 [OPTION END]
 
@@ -650,9 +648,9 @@ Wirtschaftsprufer [German Public Auditor]
 Wiegand Wirtschaftsprufer [German Public Auditor]"""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
-
 [OPTION END]
 
 
@@ -813,7 +811,8 @@ Question: How is SAP performing?
 """
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
 
 [OPTION END]
@@ -885,7 +884,8 @@ Give your answer as a single word, either "positive" or "negative".
 Review text: '''SAP has Best work Environment and Best ERP product'''"""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
 
 [OPTION END]
@@ -950,7 +950,9 @@ prompt = """Expand it into a 500 word blog post
 SAP AI core is a platform for building AI applications. which can be used to train and deploy AI applications. as well as act as a model and dataset artifactory."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
+
 ```
 
 [OPTION END]
@@ -1016,7 +1018,8 @@ prompt = """Translate the following input to a Corporate language
 Sap Blue a new product from SAP. that is a gig based product. launched in 2016 relaunched in 2023."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
 
 [OPTION END]
@@ -1080,7 +1083,8 @@ from gen_ai_hub.proxy.langchain.init_models import init_llm
 prompt = """proofread and correct this review: SAP SE is a German multinationl software company based in Walldorf, Baden-Wurttemberg. It develops enterprise software to manage business operations and customer relations. The company is the world leading enterprise resource planing software vendor."""
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
 
 [OPTION END]
@@ -1165,7 +1169,8 @@ Make your response as short as possible. Format the Anger value as a boolean.
 Review text: '''A true ERP software available in the market which captures 60% of market share and known as a ERP leader. The best part about the product that it can be used cloud based and it can be integrated with several modules which are equally relevant as a department. I have been a part of SAP from past 12+ years and I am extremely happy of using and referring this product to others as well. This isn't only beneficial for companies but can also make careers for humans as well. Now a days cloud based functionality and integration with API tools are the best part in it. Easy to customize according to the requirement of a client. It has several features and capabilities 1. Cost efficient, 2. Advance data management, 3. Saves time, 4. Increase productivity, 5. Real time data saving to server's, 6. Avoid duplication and ensures transparency. Best product available in the market.''' """
 
 llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
-llm.invoke(prompt).content
+response = llm.invoke(prompt).content
+print('Response:', response)
 ```
 
 [OPTION END]

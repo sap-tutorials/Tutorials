@@ -160,7 +160,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     print('connected')
 
     curs = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
+    sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
     curs.execute(sql_command)
     rows = curs.fetchall()
     for row in rows:
@@ -236,7 +236,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     print('connected')
 
     curs = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
+    sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
     curs.execute(sql_command)
     rows = curs.fetchall()
     for row in rows:

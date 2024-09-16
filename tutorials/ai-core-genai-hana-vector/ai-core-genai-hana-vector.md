@@ -131,6 +131,7 @@ First, you'll need to install the hana_ml package to work with SAP HANA and set 
 
 ```PYTHON
 !pip install hana_ml
+!pip install generative-ai-hub-sdk[langchain]
 ```
 
 After installing, you can proceed with the following code to import the necessary packages and initialize the AI Core proxy:
@@ -151,7 +152,6 @@ For example, if a user enters the prompt "How can I run a shortest path algorith
 
 ```PYTHON
 # Get embeddings
-!pip install generative-ai-hub-sdk[langchain]
 from gen_ai_hub.proxy.native.openai import embeddings
 
 def get_embedding(input, model="text-embedding-ada-002") -> str:

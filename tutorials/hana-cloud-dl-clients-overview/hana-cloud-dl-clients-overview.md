@@ -7,7 +7,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # SAP HANA Cloud, Data Lake Client Interfaces Overview
-<!-- description --> Learn about the SAP HANA Cloud, data lake, how to create a free tier or trial instance, how to examine the data lake Relational Engine using SAP HANA Cloud Central, how to install the data lake client, and how to query the database using the SQL Console or the Interactive SQL Client.
+<!-- description --> Learn about SAP HANA Cloud, data lake, how to create a free tier or trial instance, how to examine the data lake Relational Engine using SAP HANA Cloud Central, how to install the data lake client, and how to query the database using the SQL Console or the Interactive SQL Client.
 
 ## Prerequisites
  - A computer running Microsoft Windows or Linux.
@@ -16,7 +16,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - Information about SAP HANA Cloud, data lake Relational Engine
   - How to install the data lake client
   - How to create sample tables, views, and procedures
-  - How to connect using SAP HANA cockpit, SAP HANA database explorer, and the Interactive SQL Client
+  - How to connect using SAP HANA Central, SAP HANA database explorer, and the Interactive SQL Client
 
 ## Intro
 This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine).  
@@ -27,24 +27,21 @@ This tutorial group will provide guidance on setting up an instance of [SAP HANA
 
 ---
 
-### Overview of SAP HANA Cloud, data lake
-
-
+### Overview of SAP HANA Cloud
 SAP HANA Cloud is composed of multiple components.
 
   * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/introduction-to-sap-hana-cloud) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
   * SAP HANA Cloud, data lake is composed of two components:  data lake Relational Engine and data lake Files.    
 
-    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
+    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/docs/SAP_IQ), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
     [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sql-on-files), which enables SQL queries to be performed on them.  
 
-    >Note, that the data lake Files component is currently not available in free tier or trial accounts.
+    >Note, that the data lake Files component, is currently not available in free tier or trial accounts.
 
 ### Choose where to deploy the database instances
-
-The SAP BTP platform provides multiple runtime environments such as Kyma and Cloud Foundry.  When a HANA Cloud or data lake instance is created, it can be created at the BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
+The SAP BTP platform provides multiple runtime environments such as Cloud Foundry and Kyma.  When a HANA Cloud or data lake instance is created, it can be created in a BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
 
 ![Runtime Environments](runtime.png)
 
@@ -53,8 +50,7 @@ The multi-environment tooling (once a subscription and setup is complete) can be
 ![multi environment tools](multi-env-tools.png)
 
 ### Create a data lake instance
-
->To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
+>To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed.  There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
 
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/quick-start-tutorial-for-standalone-data-lake).
 
@@ -97,12 +93,11 @@ There are multiple ways to create a data lake:
     >**Important:** SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
 ### Examine the Data Lake
-
-1. Once the data lake has been created it's details can be examined.  
+1. Once the data lake has been created, it's details can be examined.
 
     ![Open in cockpit](open-cockpit.png)
 
-    Input your credentials. These are stored by SAP HANA Cloud Central.
+    Input your credentials. These will be stored by SAP HANA Cloud Central.
 
     ![Credentials](credentials.png)
 
@@ -141,16 +136,16 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ```SQL
     ---- drops the schema and all objects it contains
-    -- SET SCHEMA HOTEL;
+    -- SET SCHEMA HOTELS;
     -- DROP VIEW HOTEL_ROOMS_VIEW;
     -- DROP PROCEDURE SHOW_RESERVATIONS;
     -- DROP TABLE MAINTENANCE;
     -- DROP TABLE RESERVATION;
     -- DROP TABLE CUSTOMER;
-    -- DROP TABLE HOTEL.ROOM;
+    -- DROP TABLE ROOM;
     -- DROP TABLE HOTEL;
     -- DROP FUNCTION AVERAGE_PRICE;
-    -- DROP SCHEMA HOTEL;
+    -- DROP SCHEMA HOTELS;
 
     -- DROP USER USER1;
     -- DROP USER USER2;
@@ -173,13 +168,13 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     GRANT ROLE HOTEL_READER TO USER2;
 
     --Create a schema for the sample hotel dataset  
-    CREATE SCHEMA HOTEL;
+    CREATE SCHEMA HOTELS;
 
     --Specify the privileges for the roles on the schema HOTEL
-    GRANT CREATE ANY, SELECT, UPDATE, INSERT, DELETE, EXECUTE PROCEDURE ON SCHEMA HOTEL TO HOTEL_ADMIN;
-    GRANT SELECT ON SCHEMA HOTEL TO HOTEL_READER;
+    GRANT CREATE ANY, SELECT, UPDATE, INSERT, DELETE, EXECUTE PROCEDURE ON SCHEMA HOTELS TO HOTEL_ADMIN;
+    GRANT SELECT ON SCHEMA HOTELS TO HOTEL_READER;
     
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT CURRENT SCHEMA;
     --Create the objects in the HOTEL schema
     CREATE TABLE HOTEL(
@@ -240,8 +235,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
         R.TYPE,
         R.FREE,
         R.PRICE
-    FROM HOTEL.ROOM R
-        LEFT JOIN HOTEL.HOTEL H ON R.HNO = H.HNO
+    FROM HOTELS.ROOM R
+        LEFT JOIN HOTELS.HOTEL H ON R.HNO = H.HNO
             ORDER BY H.NAME;
 
     CREATE OR REPLACE FUNCTION AVERAGE_PRICE(room_type CHAR(6))
@@ -280,7 +275,7 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
         END;
     ```
 
-    Select **Tables**, and set the schema filter to be **HOTEL** to limit the returned tables to be those that were just created in the HOTEL schema.
+    Select **Tables**, and set the schema filter to be **HOTELS** to limit the returned tables to be those that were just created in the HOTEL schema.
 
     ![DBX Create](sql-commands.png)
 
@@ -333,7 +328,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         ./setup.bin
         ```
 
-3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help avoid any issues with paths.
+3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.  Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help reduce issues with paths.
 
     ![GUI Installer](windows-gui-install.png)
 
@@ -384,25 +379,25 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     echo $IQDIR17
     ```
 
-    > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
+    >In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
 
-    >NOTE:-If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
+    ---
+
+    >If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
     
 
 ### Connect with the Interactive SQL Client (DBISQL)
-
 The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/dbisql-interactive-sql-utility), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
 1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. It can also be accessed by entering `dbisql` in the command prompt.
-    ![Open DBISQL through command prompt](dbisql-from-cmd.png) 
 
-1. Specify the connection type.
+2. Specify the connection type.
 
     ![Connection type](dbisql-connection-type.png)
 
     >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
-2. Provide the connection details. See below on how to obtain the instance ID and landscape values.
+3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
@@ -432,14 +427,12 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
 
 ### Insert data with Interactive SQL Client (DBISQL)
-
-
 1. Execute the following insert statements to provide some sample data.
 
     >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -c "uid..." sql.sql`.
 
     ```SQL
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     INSERT INTO HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
     INSERT INTO HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
     INSERT INTO HOTEL VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11788');
@@ -536,21 +529,23 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     >
     ```SQL
     begin
-    INSERT INTO HOTEL.ROOM VALUES(11, 'garden view', 13, 190.00);
-    INSERT INTO HOTEL.ROOM VALUES(11, 'connecting room', 15, 175.00);
+    INSERT INTO HOTELS.ROOM VALUES(11, 'double', 13, 190.00);
+    INSERT INTO HOTELS.ROOM VALUES(11, 'single', 15, 175.00);
     end;
     ```
 
     ```SQL
     set temporary option auto_commit= 'off';
-    INSERT INTO HOTEL.ROOM VALUES(11, 'triple', 7, 235.00);
-    INSERT INTO HOTEL.ROOM VALUES(11, 'quad', 5, 275.00);
+    INSERT INTO HOTELS.ROOM VALUES(11, 'triple', 7, 235.00);
+    INSERT INTO HOTELS.ROOM VALUES(11, 'quad', 5, 275.00);
     set temporary option auto_commit= 'on';
     ```
     >
     >Autocommit can also be set via the connection settings dialog.
     >
     >![autocommit setting](autocommit.png)   
+    >
+    >![autocommit setting](auto-commit-hcc.png)
 
 
 2. Notice that pressing ctrl-space brings up auto complete (GUI mode only).     
@@ -560,7 +555,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     Query a table, a view, invoke a function, and call a stored procedure.
 
     ```SQL
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT * FROM HOTEL;
     SELECT * FROM HOTEL_ROOMS_VIEW;
     SELECT AVERAGE_PRICE('single'), AVERAGE_PRICE('double'), AVERAGE_PRICE('suite') FROM DUMMY;
@@ -572,7 +567,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTELS.CUSTOMER;"
     dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 

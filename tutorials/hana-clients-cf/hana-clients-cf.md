@@ -171,7 +171,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
           if (err) {
               return console.error(err);
           }
-          var sql = 'select * from HOTEL.CUSTOMER;';
+          var sql = 'select * from HOTELS.CUSTOMER;';
           var rows = connection.exec(sql, function(err, rows) {
               if (err) {
                   return console.error(err);
@@ -465,7 +465,7 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
             if (err) {
                 return console.error(err);
             }
-            var sql = 'select * from HOTEL.CUSTOMER;';
+            var sql = 'select * from HOTELS.CUSTOMER;';
             var rows = connection.exec(sql, function(err, rows) {
                 if (err) {
                     return console.error(err);
