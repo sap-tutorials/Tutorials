@@ -179,7 +179,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Bound Connection](bound_connection.png)
 
-1. We are now ready to deploy the development content into the database. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
+1. We are now ready to deploy the development content into the database. Before you go ahead, we recommend that you increase the default number of scrollback lines in the integrated terminal, if you're using a Dev Space in SAP Business Application Studio. This is because there are many lines of log output about to be generated and you will want to see them all. So use menu path **File -> Preferences -> Settings** and search for the "Terminal › Integrated: Scrollback" setting. Set the value to 10000. Now, once you've done that, you're ready to deploy. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
 
     ![Deploy](deploy.png)
 
