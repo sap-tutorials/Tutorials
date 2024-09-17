@@ -54,7 +54,7 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
 ### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Coupon Management service, Data Upload service and Data Access service in the SAP Business Accelerator Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the **Coupon Management service, Data Upload service and Data Access service** in the **SAP Business Accelerator Hub**. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario). The same is applicable for **Coupon Management** service too. 
 
 
 ### Create Multi-Code Coupon Object
@@ -68,8 +68,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 <!-- border -->![Coupon management 2](coupon_management_2.png)
 
 
-1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
-2. On the left-hand side, choose **Create coupon object**.
+1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
+2. On the left-hand side, choose **Coupon**.
 3. Open the **POST** request `/Coupon`.
 4. Choose **Try Out**.
 5. For the **Request body**, choose `application/json`.
