@@ -99,7 +99,7 @@ The response should look like the following sample
 With this, you have created a multi-code coupon with the ID **COFFEELOVER** for the promotional rule **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**.
 
 
-### Generate Coupon Codes
+### Generate coupon codes
 
 
 You can generate coupon codes with the multi-code coupon object created using the Coupon Management service. 
@@ -374,8 +374,11 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 
 With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
 
->In this tutorial, you only upload the promotional rule. You have already uploaded the regular sales price of **500 Euro** for the product **coffee machine** (material number: `COFFEE_MACHINE`, unit of measure: `PCE`) with the validity period **September 1st, 2024 to September 30th, 2024** in step 3 of the tutorial [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
+### Change status of coupon object
+
+
+When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **inactive to active**. 
 
 
 ### Check uploaded master data
@@ -384,7 +387,7 @@ With this, you uploaded the promotional rule "Buy a coffee machine and show coup
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 
-### Read Coupon Codes
+### Read coupon codes
 
 
 You can read the coupon codes created using the Coupon Management service. 
