@@ -250,9 +250,9 @@ In this step you try out the API to get product details as a response from the r
 
 ### Congratulations!
 
-    You have successfully set up your Integration Suite tenant, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
+You have successfully set up your Integration Suite tenant, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
 
-    This scenario showed you how to use Integration Suite, and in particular, its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
+This scenario showed you how to use Integration Suite, and in particular, its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
 
 
 ---
