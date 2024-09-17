@@ -99,6 +99,24 @@ The response should look like the following sample
 With this, you have created a multi-code coupon with the ID **COFFEELOVER** for the promotional rule **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**.
 
 
+### Change status of coupon object
+
+
+When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **inactive to active**.
+
+
+Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
+
+
+1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
+2. On the left-hand side, choose **Coupon**.
+3. Open the **PATCH** request `/Coupon({ID})`.
+4. Choose **Parameters**.
+5. For ID, enter the **technical coupon ID** from the coupon object you just created.
+6. Choose **Run**. 
+
+
+
 ### Generate coupon codes
 
 
@@ -372,13 +390,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 7. Choose **Execute**.
 8. Make sure you get the HTTP response **200**.
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
-
-
-### Change status of coupon object
-
-
-When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **inactive to active**. 
+With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**. 
 
 
 ### Check uploaded master data
