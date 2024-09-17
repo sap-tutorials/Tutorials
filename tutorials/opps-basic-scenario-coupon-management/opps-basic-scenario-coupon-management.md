@@ -78,27 +78,25 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 { 
   "ID": "01234567-89ab-cdef-0123-456789abcdef",
   "status": "INACTIVE",
-  "displayID": "TIMEFORCOFFEE",
+  "displayID": "COFFEELOVER",
   "type": "MULTICODE",
-  "name": "TIME FOR COFFEE",
-  "description": "string",
-  "validFrom": "2024-09-01",
-  "validTo": "2024-09-30",
-  "couponCodeValidityPeriodInDays": 0,
-  "maxCodeGenerationCount": 0,
-  "texts": [
-    {
-      "locale": "string",
-      "ID": "01234567-89ab-cdef-0123-456789abcdef",
-      "description": "string"
-    }
-  ]
+  "name": "COFFEELOVER",
+  "description": "Discount 50 Euro for coffee machine",
+  "validFrom": "2024-10-01",
+  "validTo": "2024-12-31",
+  "couponCodeValidityPeriodInDays": 90,
+  "maxCodeGenerationCount": 100
 }
 ```
 7. Choose **Execute**.
 8. Make sure you get the HTTP response **201**.
 
-With this, you created the coupon object for the promotional rule **Buy a coffee machine and show the coupon TIME FOR COFFEE to get 100 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
+The response should look like the following sample
+
+
+9. From the response, note down the technical coupon ID as you will use it later. 
+
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** for the promotional rule **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**.
 
 
 ### Generate Coupon Codes
