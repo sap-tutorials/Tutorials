@@ -22,7 +22,6 @@ Go is an open-source programming language developed by Google to increase produc
 ---
 
 ### Install Go
-
 The first step is to check if Go is installed, and if so, which version. To do so, enter the following command:
 
 ```Shell
@@ -40,7 +39,6 @@ On Linux, follow the instructions for the appropriate Linux version: [Installing
 >Note: A new shell window must be opened for the system to recognize the Go installation and for executing any future Go commands. 
 
 ### Configure the environment
-
 The data lake Relational Engine Client interface for Go, like the other data lake Relational Engine client interfaces (except JDBC), makes use of a C library named SQLDBC.  
 
 The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/0f3109338be048e187caa9646199e3db.html?state=DRAFT) in the SAP HANA Cloud, Data Lake Client Interfaces Reference Guide. In order to use the Go Driver, a 64-bit `gcc` compiler is required.
@@ -88,7 +86,12 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     >It is also possible on Microsoft Windows to set this using the SETX command from a shell.
 
 
-    On Linux, add the following lines to the `.bash_profile`.
+    On Linux, open the '.bash_profile' and add the following lines.
+
+    
+    ```Shell (Linux)
+    pico .bash_profile 
+    ```
 
     ```Shell (Linux)
     export CGO_LDFLAGS=$HOME/sap/dlclient/IQ-17_1/lib64/libdbcapi_r.so
@@ -112,7 +115,6 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     ![createModule](createModule.png)
 
 ### Create a Go application that queries an SAP data lake Relational Engine
-
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     
     ```Shell (Microsoft Windows)
@@ -153,7 +155,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
       }
       defer db.Close()
 
-      rows, err := db.Query("SELECT NAME, ADDRESS from HOTEL.CUSTOMER")
+      rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
       if err != nil {
         log.Fatal(err)
       }
@@ -192,7 +194,6 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     go mod tidy
     pico go.mod
     ```
-
 
 4. Add the code below to `go.mod` under the go 1.19 (version) line:
     
@@ -253,7 +254,6 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
 
 ### Knowledge check
-
 Congratulations! You have now created and debugged a Go application that connects to and queries a data lake Relational Engine.
 
 

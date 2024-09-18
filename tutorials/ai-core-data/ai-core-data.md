@@ -11,7 +11,13 @@ author_profile: https://github.com/dhrubpaul
 # Ingest Live Data into your House Price Predictor with SAP AI Core
 <!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
 
+
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have knowledge on connecting code to AI workflows of SAP AI Core.
 - You have created your first pipeline with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#).
 
@@ -26,8 +32,24 @@ By the end of the tutorial you will have two models trained on two different dat
 
 >**IMPORTANT** Before you start this tutorial with SAP AI Launchpad, it is recommended that you set up at least one other tool, either Postman or Python (SAP AI Core SDK) because some steps of this tutorial cannot be performed with SAP AI Launchpad.
 
----
+>  **Please Note : In order to execute this tutorial you have  to upgrade to Standard Plan from Free Tier of AI Core.**
+ 
+> If you have run the first  two tutorials
 
+> 1.Quick Start Your first AI project using SAP AI Core
+
+> 2.Build a house Price predictor with SAP AI Core   
+
+> Using SAP AI Core Free Tier then you have fulfilled all your quota for execution with the free tier. If you have run the execution once then you cannot run any more executions.
+
+> As the Tutorials will need you to run multiple executions, hence you need to upgrade your AI Core Plan from free tier to Standard  as shown in the successive steps in the tutorial.
+
+
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_04_ingest_live_data_into_your_house_price_predictor_with_sap_ai_core/ingest-data-house-predictor.ipynb)
+
+---
 ### Modify AI code
 
 
@@ -82,7 +104,7 @@ Your code reads the data file `train.csv` from the location `/app/data`, which w
 Create file `requirements.txt` as shown below. Here, if you don't specify a particular version, as shown for `pandas`, then the latest version of the package will be fetched automatically.
 
 ```TEXT
-sklearn==0.0
+scikit-learn
 pandas
 ```
 
@@ -427,7 +449,7 @@ You now know how to upload and use multiple datasets with SAP AI Core.
 List your files in your AWS S3 bucket by editing the following command:
 
 ```BASH
-aws s3 ls s3//<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
+aws s3 ls s3://<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 ```
 > **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a file called train, which is of type: comma separated value.
 

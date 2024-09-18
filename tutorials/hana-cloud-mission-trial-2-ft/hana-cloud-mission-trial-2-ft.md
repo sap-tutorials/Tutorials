@@ -44,7 +44,9 @@ In this tutorial, you will learn how to create an SAP Business Technology Platfo
 
 -	With the free tier model for SAP BTP you start with a productive account right away. The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  
 
--	The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30GB of memory, 2vCPUs, and 120GB of storage**.
+-	The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30 GB of memory, 2 vCPUs, and 120 GB of storage**.
+
+-   If you do not restart your instance within **30 days**, it will be **deleted**. Additional details are available at [SAP HANA Database License](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-license).
 
 -	In comparison, SAP BTP trial (introduced in the first tutorial) allows you to build full applications in a test environment to learn and explore the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
 
@@ -73,17 +75,17 @@ Once you have your SAP BTP account setup, proceed to the next step to learn how 
 3.	Confirm that you have entitlements for the services (and service plans) listed here:
 
     - SAP HANA Cloud:          
-      * `relational-data-lake-free`
-      * `hana-cloud-connection-free`
+      * `tools (Application)`
       * `hana-free`
-      * `tools`
-
+      * `hana-cloud-connection-free`
+      * `relational-data-lake-free`
+    
     - SAP HANA Schemas & HDI Containers: 
       * `hdi-shared`
       * `schema`
       * `securestore`
 
-4. If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Configure Entitlements** on the top right-hand corner of the screen, then click on **Add Service Plans** in the same area of the screen.
+4. If you do not have any of the entitlements above, you need to add them to your account. To do that, click on **Edit** on the top right-hand corner of the screen, then click on **Add Service Plans** in the same area of the screen.
 
     In the pop-up that opens, type `SAP HANA` in the search box to see all relevant entitlements.
 

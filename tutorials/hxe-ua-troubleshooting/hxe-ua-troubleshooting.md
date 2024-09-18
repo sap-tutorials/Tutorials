@@ -188,19 +188,11 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
-### Memory Limit Exceeded - Additional Local Capacity
-
-**Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory on your local machine.
-
-**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
-
 ### Memory Limit Exceeded - No Additional Local Capacity
 
-**Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory but you do not have any more available on your local machine.
+**Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition.
 
-**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
-
-Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+**Solution:** Consider migrating to SAP HANA Cloud.  Visit the [SAP HANA Cloud](https://www.sap.com/canada/products/technology-platform/hana.html) homepage to view more details about SAP HANA Cloud.
 
 ### Local Memory Usage Exceeded
 

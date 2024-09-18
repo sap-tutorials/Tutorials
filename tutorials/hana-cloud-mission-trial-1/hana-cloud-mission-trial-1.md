@@ -41,28 +41,22 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 -	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **16 GB of memory, 1 vCPU, and 80 GB of storage**.
 
--   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45G memory) and are therefore *not supported* in a trial account.
+-   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45 GB of memory) and are therefore *not supported* in a trial account.
 
 
 ### Sign up for the SAP HANA Cloud trial
 In this step, you can learn how to sign up for the trial of SAP HANA Cloud. If you already have an SAP BTP trial account, proceed to the next step to add the appropriate entitlements to your account.
 
 
-1.	Click on [this link](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) to get to the sign-up page. Don't forget to come back here after you signed up. Once you received your confirmation email, you can continue with this mission.
+1.	Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy  page. Don't forget to come back here after you signed up. Once you received your confirmation email, you can continue with this mission.
 
     ![Screenshot Trial signup1](ss-01-trial-Signup1.png)
 
-2.	Click on **Start your free trial today** and enter your sign-up information.
+2.	You will then receive a confirmation email with a link to access your trial.
 
-    ![Screenshot Trial signup2](ss-02-Trial-Signup2.png)
-
-3.	Once you click submit, you will be asked to verify your email address. Check your email inbox and click on the link provided.
-
-4.	You will then receive a confirmation email with a link to access your trial. Click on the button that says **Access Your Trial** and make sure to bookmark this page for easy access later.
+    ![Open the trial](ss-02-Trial-Signup2.png)
 
     >It is important to note that the first time you access your trial, you will need to choose your identity provider (you can choose the default). Additionally, if you have two-factor authentication enabled, you will have to enter the security token that is sent to you based on the method of authentication you have chosen.
-
-    ![Screenshot Trial signup3](welcome-email-new.png)
 
 Congratulations, you have successfully signed up for the SAP HANA Cloud trial! Learn how you can start using SAP HANA Cloud in the [next tutorial](hana-cloud-mission-trial-2).
 

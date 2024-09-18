@@ -14,10 +14,7 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
 - The SAP Fiori dev space is in status `RUNNING` and you opened it.
 - You completed [Create an SAP Fiori App Using SAP Business Application Studio](appstudio-fioriapps-create).
-- For the deployment step, additional prerequisites apply. You need to have the following available in the Cloud Foundry space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
-    - Cloud Foundry Runtime: 1GB free
-    - Destination: 1 free
-    - HTML5 Applications: 1 free
+- Make sure you have completed all steps listed in [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html). Especially adding all required entitlements is important.
 
 ## You will learn
   - How to build and deploy an application to SAP BTP, Cloud Foundry environment
@@ -25,16 +22,13 @@ author_profile: https://github.com/raz-korn
   - How to run the deployed app from your space on SAP BTP, Cloud Foundry environment
 
 ## Intro
-After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
+After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the **dev space manager** of SAP Business Application Studio and click the **Play** icon. When the dev space is in state **RUNNING**, click on the dev space name.
 
 The period for idle time for Factory accounts is different than for trial accounts.
 
----
-
 ### Build the application
 
-
-1. In the **Explorer** pane, navigate to **`webapp` > `view` > `node_modules`**. Right-click the `mta.yaml` file and select **Build MTA Project**.
+1. In the **Explorer** pane, right-click the `mta.yaml` file and select **Build MTA Project**.
 
     <br><br><!-- border -->![build mta](BAS-Build-1-.png)
 
@@ -45,8 +39,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 ### Set Cloud Foundry preferences
 
-
-If you are not logged in to a Cloud Foundry space - Before you can deploy your new application, set your Cloud Foundry preferences.
+If you are not logged in to a Cloud Foundry space, before you can deploy your new application, set your Cloud Foundry preferences.
 
 1. In the left side bar, select the **Hamburger icon | View | Command Palette…** to open the **command palette**.
 
@@ -58,23 +51,40 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
     <!-- border -->![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select the API endpoint, provide your credentials (email and password), and click **Sign in**. If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under "Cloud Foundry Environment".
+3. A **Cloud Foundry Sign In** tab opens in SAP Business Application Studio. Select your API endpoint.
+
+    <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
+    
+    If you don't know your API endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on **Overview** on the left and you can see the URL of the **API endpoint** under **Cloud Foundry Environment**.
+
+    <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-1.png)
+
+4. Select authentication method as **SSO Passcode**.
+
+    Choose the link **Open a new browser page to generate your SSO passcode**.
+
+    Sign in with the appropriate identity provider, and copy the **Temporary Authentication Code**.
+
+    Enter the Temporary Authentication Code as **SSO Passcode**.
+
+    Choose **Sign in**.
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-3-.png)
 
-4. Select the Cloud Foundry organization, Cloud Foundry space, and click **Apply**.
+5. Select the **Cloud Foundry organization**, **Cloud Foundry Space**, and click **Apply**.
 
-    If the Cloud Foundry Target dropdowns are empty you need to change the default Cloud Foundry Endpoint to the one of your subaccount (see previous step). To obtain your subaccount’s Cloud Foundry Endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under “Cloud Foundry Environment”.
+    If the Cloud Foundry Target dropdowns are empty you need to change the default Cloud Foundry Endpoint to the one of your subaccount (see previous step). To obtain your subaccount's Cloud Foundry Endpoint open the SAP Business Technology Platform Cockpit and navigate to your subaccount. Click on Overview on the left and you can see the URL of the API endpoint under **Cloud Foundry Environment**.
+
+    If the dropdown for Select Cloud Foundry Space is empty, check if you have created the needed Cloud Foundry Space as described in the section **Create your Trial Space** in [Setting Up Your Trial Account](https://help.sap.com/docs/btp/sap-business-technology-platform/cf-env-setting-up-your-trial-account?locale=f16df12fab9f4fe1b8a4122f0fd54b6e.html).
 
     <!-- border -->![Cloud Foundry Login dialog](BAS-CF-Login-4-.png)
 
-    >**You have been logged in.** notification appears at the bottom-right of your screen.
+    A notification **You have been logged in.** appears at the bottom-right of your screen.
 
-    ><!-- border -->![Logged in to CF](BAS-CF-Login-5-.png)
+    <!-- border -->![Logged in to CF](BAS-CF-Login-5-.png)
 
 
 ### Deploy the application
-
 
 Deploy your application to SAP BTP, Cloud Foundry environment.
 
@@ -84,7 +94,7 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
 
     >The application deployment to the space you are connected to starts and a notification appears. You can follow the deployment progress in the **Task: Deploy** console at the bottom of your screen.
 
-3. Wait for the deployment to complete.
+2. Wait for the deployment to complete.
 
     >The deployment process takes a few minutes. When the deployment process is complete, the notifications **Process finished.** and **Terminal will be reused by tasks.** will appear at the bottom of the **Task: Deploy** console.
 
@@ -93,55 +103,23 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
     If you have issues with the deployment, check out the [SAP Business Application Guided Answers](https://ga.support.sap.com/dtp/viewer/index.html#/tree/2827/actions/41344) for troubleshooting.
 
 
-### Access the application on SAP BTP, Cloud Foundry environment
+### Open the application
 
+1. Go back to your SAP BTP Trial account and click the button **Go To Your Trial Account**. 
 
-Run the deployed app on SAP BTP. The steps below show you how to access your new application and run it. You will use CF commands in a terminal for this.
+<!-- border -->![deploy mtar](BAS-Open-1-.png)
 
-1. In the left side bar, select the **Hamburger icon | Terminal | New Terminal**.
+2. Click the trial tile to navigate to your trial subaccount in the SAP BTP cockpit. 
 
-    <!-- border -->![open new terminal tab](BAS-Access-App-On-CF-1-.png)
+<!-- border -->![deploy mtar](BAS-Open-2-.png)
 
-2. A new terminal tab is opened.
+3. Select **HTML5 Applications** in the left navigation panel.
 
-    <!-- border -->![new terminal tab opened](BAS-Access-App-On-CF-2-.png)
+<!-- border -->![deploy mtar](BAS-Open-3-.png)
 
-    >The folder it is opened in is the specific project folder. You can use the following command in the terminal to verify it:
-    ```Shell/Bash
-    pwd
-    ```
-    <!-- border -->![pwd](BAS-Access-App-On-CF-3-.png)
+4. You will see a list of all HTML5 Application you deployed up to now. Select the one you deployed in the previous step.
 
-3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-destination-service`.
-
-4. Execute the following command in the terminal to get the details of the deployed application and its URL:
-
-    ```Shell/Bash
-    cf html5-list -di FioriDemo-destination-service -u -rt launchpad
-    ```
-
-    <!-- border -->![details of deployed app on CF](BAS-Access-App-On-CF-4-.png)
-
-    >To find out more about this command execute in the terminal:
-    ```Shell/Bash
-    cf help html5-list
-    ```
-
-5. Press [CTRL] and click the app's link in the terminal.
-
-    <!-- border -->![app url](BAS-Access-App-On-CF-5-.png)
-
-    >You can use this URL in any browser to access your new application in your space on SAP BTP, Cloud Foundry environment.
-
-    >Here we are using the [SAP Launchpad service](https://discovery-center.cloud.sap/serviceCatalog/launchpad-service) you configured in an earlier step. It enables organizations to establish a central point of access to SAP (e.g. SAP S/4HANA), custom-built, and third party applications and extensions, both on the cloud and on premise.
-
-6. The app is running on SAP BTP, Cloud Foundry environment, accessing data from an on-premise backend.
-
-    <!-- border -->![app running on cf](BAS-Access-App-On-CF-6-.png)
-
-
-
----
+<!-- border -->![deploy mtar](BAS-Open-4-.png)
 
 Congratulations!
 

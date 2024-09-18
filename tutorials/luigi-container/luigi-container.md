@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Aleksandra Simeonova
-author_profile: https://github.com/alexandra-simeonova
+author_name: Mahati Shankar
+author_profile: https://github.com/smahati
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>javascript]
@@ -81,26 +81,27 @@ To use npm packages in UI5, you need to first install the tooling extension `ui5
     ```yaml
     specVersion: "3.0"
     metadata:
-    name: luigi.ui5app
+      name: luigi.ui5app
     type: application
     framework:
-    name: OpenUI5
-    version: "1.120.0"
-    libraries:
+      name: OpenUI5
+      version: "1.121.1"
+      libraries:
         - name: sap.m
         - name: sap.ui.core
         - name: themelib_sap_fiori_3
         - name: themelib_sap_horizon
     builder:
-    customTasks:
+      customTasks:
         - name: ui5-tooling-modules-task
-        afterTask: generateVersionInfo
+          afterTask: replaceVersions
     server:
-    customMiddleware:
+      customMiddleware:
         - name: ui5-tooling-modules-middleware
-        afterMiddleware: compression
+          afterMiddleware: compression
         - name: ui5-middleware-livereload
-        afterMiddleware: compression
+          afterMiddleware: compression
+
     ```
 
 3. Create a new folder called `control` in `luigi.ui5app/webapp`. In it, create a file called `LuigiContainer.js` and paste the following content into it: 
@@ -251,7 +252,7 @@ To use npm packages in UI5, you need to first install the tooling extension `ui5
     npm start
     ```
 
-3. Open `http://localhost:8080/` in your browser. You should see a sample shopping app with the URL `https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html` on your page: 
+3. Open `http://localhost:8080/` in your browser. You should see a sample shopping app with the URL `https://sdk.openui5.org/test-resources/sap/m/demokit/cart/webapp/index.html` on your page:
 
     <!-- border -->![Shopping micro frontend](shopping.png)
 

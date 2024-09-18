@@ -9,7 +9,7 @@ parser: v2
 ---
 
 ## Prerequisites
- - You have set up SAP Cloud Connector and runtime and design time destinations for your SAP S/4HANA system.
+ - You have set up SAP Cloud Connector and runtime and design time destinations for your SAP S/4HANA system. 
  - You exposed roles in your SAP S/4HANA system. 
  - You have created an SAP Build Work Zone site (see tutorial group [Create your First Business Site with Apps](group.launchpad-cf-create-site)).
 
@@ -198,6 +198,6 @@ Now you are done in SAP BTP cockpit.
     ![Maintain business partner](30-maintain-business-partner.png)
 
 
-
+ > Note: If you select *Spaces and Pages - New Experience* as **View Mode** in the Site Settings, you can now also add the federated apps to pages you create on SAP Build Work Zone with the page editor.
 
 ---

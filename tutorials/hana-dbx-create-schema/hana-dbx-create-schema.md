@@ -10,7 +10,7 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Create a user group, users, roles, and populate a sample schema that includes tables, views, functions and procedures using the SQL console.
 
 ## Prerequisites
-  - An SAP HANA database such as SAP HANA Cloud free tier, trial, or the SAP HANA, express edition that includes the SAP HANA database explorer
+  - An SAP HANA database such as SAP HANA Cloud free trial, free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
 
 ## You will learn
   - How to create a user group, users, roles, and a schema
@@ -23,8 +23,6 @@ The following steps will create a sample hotel dataset using create and insert s
 ---
 
 ### Create a usergroup, users, roles, and a schema
-
-
 1. In the SAP HANA database explorer, select the database HC_HDB and open a SQL console. 
 
     ![Open SQL console](open-sql-console.png)
@@ -59,9 +57,9 @@ The following steps will create a sample hotel dataset using create and insert s
     GRANT HOTEL_READER TO USER2;
 
     CONNECT USER1 PASSWORD Password1;
-    CREATE SCHEMA HOTEL;
-    GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO HOTEL_ADMIN;
-    GRANT SELECT ON SCHEMA HOTEL TO HOTEL_READER;
+    CREATE SCHEMA HOTELS;
+    GRANT ALL PRIVILEGES ON SCHEMA HOTELS TO HOTEL_ADMIN;
+    GRANT SELECT ON SCHEMA HOTELS TO HOTEL_READER;
 
     --view the objects owned by USER1
     SELECT SCHEMA_NAME, OBJECT_NAME, OBJECT_TYPE, OWNER_NAME FROM "PUBLIC"."OWNERSHIP" WHERE OWNER_NAME = 'USER1';
@@ -71,23 +69,21 @@ The following steps will create a sample hotel dataset using create and insert s
     
     Privileges can be assigned to users directly or a better practice is to assign users to a role that has a set of privileges.
 
-    It is recommended to not use the DBADMIN user for day-to-day operations in production environments.  Having specific users for specific tasks also will aid in auditing.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/HANA_CLOUD_DATABAS/f9c5015e72e04fffa14d7d4f7267d897/c511ddf1767947f0adfc9636148718d9.html).
+    It is recommended to not use the DBADMIN user for day-to-day operations in production environments.  Having specific users for specific tasks also will aid in auditing.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/deactivate-dbadmin-user).
 
-    For additional details on the commands above consult [CREATE USERGROUP Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9869125ea93548009820702f5bd897d8.html), [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html), [CREATE Role Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d4a23b75191014a182b123906d5b16.html), and [GRANT Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20f674e1751910148a8b990d33efbdc5.html). The user USER1 will be used in the remainder of this tutorial group.
+    For additional details on the commands above consult [CREATE USERGROUP Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-usergroup-statement-access-control), [CREATE USER Statement (Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control), [CREATE Role Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control), and [GRANT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control). The user USER1 will be used in the remainder of this tutorial group.
 
-    >Users and roles can also be managed in the SAP HANA Cloud Cockpit under the User & Role Management tile.  Additional details can be found at [User and Role Management](https://help.sap.com/docs/HANA_CLOUD/9630e508caef4578b34db22014998dba/923b896cabdb415487919f28dbbc4bfd.html).
+    >Users and roles can also be managed in the SAP HANA Cloud Cockpit under the User & Role Management tile.  Additional details can be found at [User and Role Management](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 
     >![roles management](roles-cockpit.png)
 
 3. Add another SAP HANA database connection using USER1. 
 
-    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTEL in the advanced options. 
-
-    Uncheck the *Verify the server's certificate using the trusted certificate below* checkbox.
+    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTELS in the advanced options. 
 
     ![add new user1 connection](user1-connection0.png)
 
-    Open a new SQL console and notice that it using USER1 and the schema is HOTEL.
+    Open a new SQL console and notice that it using USER1 and the schema is HOTELS.
 
     ![user1 connection sql console](user1-connection.png)
 
@@ -98,19 +94,19 @@ The following steps will create a sample hotel dataset using create and insert s
       myValue NVARCHAR(50)
     );
     
-    --USER1 has all privileges on the HOTEL schema
+    --USER1 has all privileges on the HOTELS schema
     SELECT * FROM TEST; --succeeds
     INSERT INTO TEST VALUES('Value1'); --succeeds
     
     --USER2 can only select
     CONNECT USER2 PASSWORD Password2;
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT * FROM TEST; --succeeds
     INSERT INTO TEST VALUES('Value2'); --fails
     
     --Remove the unused table
     CONNECT USER1 PASSWORD Password1;
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     DROP TABLE TEST;
     ```
 
@@ -130,12 +126,11 @@ The following steps will create a sample hotel dataset using create and insert s
     
 
 ### Create and populate tables
-
-1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL console connected to USER1 in the schema of HOTEL.
+1. Create tables that represent a basic hotel administration system by running the SQL statements below in a SQL console connected to USER1 in the schema of HOTELS.
 
     ```SQL
     --CONNECT USER1 PASSWORD Password1;
-    --SET SCHEMA HOTEL;
+    --SET SCHEMA HOTELS;
     
     CREATE COLUMN TABLE HOTEL(
         hno INTEGER PRIMARY KEY,
@@ -190,7 +185,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
     ```
 
-    > To find the newly created tables in the database browser, select the Tables folder and set the schema to **HOTEL**.  If needed, the contents of the database browser can be updated by pressing the refresh button.
+    > To find the newly created tables in the database browser, select the Tables folder and set the schema to **HOTELS**.  If needed, the contents of the database browser can be updated by pressing the refresh button.
     >
     >![find tables in database browser](viewTables.png)
 
@@ -200,7 +195,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
     >![view the table's SQL](view-table-sql.png)
 
-2. Execute the following SQL statements to add data into the tables in the `HOTEL` schema.
+2. Execute the following SQL statements to add data into the tables in the `HOTELS` schema.
 
     ```SQL
     INSERT INTO HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '98121', NEW ST_POINT('POINT(-122.347340 47.610546)', 4326));
@@ -292,7 +287,7 @@ The following steps will create a sample hotel dataset using create and insert s
     INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
     ```
 
-    For additional details see [CREATE Table statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d58a5f75191014b2fe92141b7df228.html) and [Insert Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20f7f70975191014a76da70c9181720e.html).
+    For additional details see [CREATE Table statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-table-statement-data-definition) and [Insert Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/insert-statement-data-manipulation).
 
  3. The data can now be queried.
 
@@ -306,11 +301,10 @@ The following steps will create a sample hotel dataset using create and insert s
 
     ![case sensitivity](case-sensitivity.png)
 
-    For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+    For further details, consult [Identifiers and case sensitivity](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/introduction-to-sql#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
 
 ### Explore auto-commit
-
 Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be committed together, or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   
 
 The first setting which can be set in the SQL console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
@@ -358,7 +352,7 @@ The following steps will demonstrate these settings.
 
     Until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL console or database connection.
 
-    Additional details can be found at [ROLLBACK Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20fcc453751910149557fc90fe781449.html) and [COMMIT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d39db97519101480e7f9b76f48c2c4.html).
+    Additional details can be found at [ROLLBACK Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/rollback-statement-transaction-management) and [COMMIT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/commit-statement-transaction-management).
 
 3. Execute the following SQL statements.
 
@@ -388,7 +382,7 @@ The following steps will demonstrate these settings.
     	AND key = 'DDL_AUTO_COMMIT';
     ```
 
-    Additional details can be found at [SET TRANSACTION AUTOCOMMIT DDL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d538d11053bd4f3f847ec5ce817a3d4c.html).
+    Additional details can be found at [SET TRANSACTION AUTOCOMMIT DDL Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/set-transaction-autocommit-ddl-statement-transaction-management).
 
 4. Ensure both settings are back to their default values before continuing.
 
@@ -398,11 +392,7 @@ The following steps will demonstrate these settings.
     SET TRANSACTION AUTOCOMMIT DDL ON;
     ```
 
-
-
 ### Create a partition
-
-
 Partitions can be created to divide the data in a large table into smaller parts.  
 
 1. Execute the following SQL statement to create one partition that contains older reservations and one that contains reservations made in 2020 or later.  
@@ -415,9 +405,9 @@ Partitions can be created to divide the data in a large table into smaller parts
     ));
     ```
 
-    In the example in this section, older reservation data will be stored on disk rather than in memory.  Other reasons for partitioning include load balancing across multiple hosts and the 2 billion row size limit on a non-partitioned table.  For more details see [Table Partitioning](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/c2ea130bbb571014b024ffeda5090764.html) and [SAP Note: 2044468 - FAQ: SAP HANA Partitioning](https://launchpad.support.sap.com/#/notes/2044468).
+    In the example in this section, older reservation data will be stored on disk rather than in memory.  Other reasons for partitioning include load balancing across multiple hosts and the 2 billion row size limit on a non-partitioned table.  For more details see [Table Partitioning](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/table-partitioning) and [SAP Note: 2044468 - FAQ: SAP HANA Partitioning](https://launchpad.support.sap.com/#/notes/2044468).
 
-2. Execute the following SQL to make the partition containing older reservations  loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html).
+2. Execute the following SQL to make the partition containing older reservations loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/reduce-memory-footprint-using-page-loadable-columns-in-sap-hana-nse).
 
     ```SQL
     ALTER TABLE RESERVATION ALTER PARTITION 1 PAGE LOADABLE;
@@ -427,25 +417,22 @@ Partitions can be created to divide the data in a large table into smaller parts
 
     ![reservation table partition](partition.png)
 
-    The following select statement shows the load unit type of columns in the schema HOTEL.
+    The following select statement shows the load unit type of columns in the schema HOTELS.
 
     ```SQL
-    SELECT TABLE_NAME, PART_ID, COLUMN_NAME, LOAD_UNIT FROM M_CS_COLUMNS WHERE SCHEMA_NAME = 'HOTEL';
+    SELECT TABLE_NAME, PART_ID, COLUMN_NAME, LOAD_UNIT FROM M_CS_COLUMNS WHERE SCHEMA_NAME = 'HOTELS';
     ```
 
     ![column and page loadable](partition-details.png)
 
     Notice above that the partition 1 (containing older reservations) is page loadable and partition 2 (containing recent reservations) is column loadable.  
 
-For further information see [Reduce the Memory Footprint Using Page-Loadable Columns](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html) and SAP Note: [2799997 - FAQ: SAP HANA Native Storage Extension (NSE)](https://launchpad.support.sap.com/#/notes/2799997).  
+For further information see [Reduce the Memory Footprint Using Page-Loadable Columns](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/reduce-memory-footprint-using-page-loadable-columns-in-sap-hana-nse) and SAP Note: [2799997 - FAQ: SAP HANA Native Storage Extension (NSE)](https://launchpad.support.sap.com/#/notes/2799997).  
 
-Another option for data that is accessed less frequently is the SAP HANA Data Lake.  Additional information on when to use Native Store Extensions and Data Lake can be found at [Introduction to SAP HANA Cloud - Storage Options](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/7a27607b08ba46d5b253365e703b1c1a.html#loio7a27607b08ba46d5b253365e703b1c1a__section_storage_options).
-
+Another option for data that is accessed less frequently is the SAP HANA Data Lake.  Additional information on when to use Native Store Extensions and Data Lake can be found at [Storage Options](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/storage-options).
 
 
 ### Create views
-
-
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
     ```SQL
@@ -487,10 +474,6 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
             ORDER BY H.NAME;
     ```
 
-    > To find the newly created views in the database browser, select the **Views** folder.
-    >
-    > ![views](views.png)
-
 4. The result of calling `HOTEL_ROOMS_VIEW` can be seen below.
 
     ```SQL
@@ -499,13 +482,10 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     ![HOTEL_ROOMS_VIEW](rooms-view.png)
 
-    For additional details see [CREATE VIEW Statement (Data Definition)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5fa9b75191014a33eee92692f1702.html).
-
+    For additional details see [CREATE VIEW Statement (Data Definition)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-view-statement-data-definition).
 
 
 ### Create functions and stored procedures
-
-
 1. User-defined functions and procedures can be used to save a set of SQL statements.  Functions are considered read-only in that they cannot make modifications to the data.  Stored procedures can modify the data using DDL or DML statements.
 
     Execute the following SQL to create a function that calculates the average price of a specific room type.
@@ -520,12 +500,6 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     END;
     ```
 
-    > To find the newly created function in the database browser, select the **Functions** folder.
-    >
-    > ![functions](function.png)
-
-    >---
-
     >Should you wish to examine the SQL of a function, it can be viewed after selecting a functions' context menu **Open**.
 
     >![view the functions's SQL](view-function-sql.png)
@@ -538,7 +512,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     ![calling a function](calling-a-function.png)
 
-    For additional details see [User-Defined Functions](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/765815cd7d214ed38c190dc2f570fe39.html).
+    For additional details see [User-Defined Functions](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-sqlscript-reference/user-defined-functions).
 
 3. Functions such as the one above that return single defined values are know as scalar user defined functions.  Table user defined functions can return a tabular result set.  The following is an example of user defined function that returns results in a table format.
 
@@ -634,24 +608,26 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     The parameters are listed in the parameters tab and once they are manually filled in or loaded from a file, the procedure can be called.
 
-    For additional details see [Procedures](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/d43d91578c3b42b3bacfd89aacf0d62f.html).
+    For additional details see [Procedures](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-sqlscript-reference/procedures).
 
-6. Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
+### Schedule a stored procedure
+Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
 
-    ```SQL
-    SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
-    CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2023 04 26 * 14 25 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
-    SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
-    ```
-    ![Create Scheduled Job](schedule_job.png)
+```SQL
+SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
+CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2024 08 23 * 12 21 0' ENABLE PROCEDURE RESERVATION_GENERATOR PARAMETERS numtogenerate=10;
+--DROP SCHEDULER JOB GEN_RESERVATIONS_JOB;
+SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
+```
 
-    Details about the scheduled job can also be viewed including its properties, parameters, history, and CREATE statement by opening the **Job Scheduler** in the Catalog Browser and clicking on your scheduled job. Ensure you are filtering by the HOTEL schema. Additionally, you have the ability to disable/enable the scheduled job.
+![Create Scheduled Job](schedule_job.png)
 
-    ![View Scheduled Job](view_job.png)
+Details about the scheduled job can also be viewed including its properties, parameters, history, and CREATE statement by opening the **Job Scheduler** in the Catalog Browser and clicking on your scheduled job. Ensure you are filtering by the HOTELS schema. Additionally, you have the ability to disable/enable the scheduled job.
+
+![View Scheduled Job](view_job.png)
     
-    For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
+For additional details see [Scheduling Administrative Tasks](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/scheduling-administrative-tasks) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-scheduler-job-statement-data-definition).
 
 
 ### Knowledge check
-
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs. 

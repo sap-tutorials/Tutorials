@@ -22,8 +22,6 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 ### Install the .NET SDK
-
-
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
 ```Shell
@@ -42,8 +40,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 
 ### Create a .NET application that queries a data lake Relational Engine
-
-
 1.  Create a new console app with the below commands:
 
     ```Shell (Microsoft Windows)
@@ -68,7 +64,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the Sap.Data.SQLAnywhere.Core.v2.1.dll is located on your machine.
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
@@ -99,7 +95,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     ![Result of running the app](result0.png)
 
-
 4.  Open an editor to edit the file `Program.cs`.
     ```Shell (Windows)
     notepad Program.cs
@@ -125,7 +120,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
                     var connStr = "host=XXXX.iq.hdl.prod-XXXX.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
                     using (var conn = new SAConnection(connStr)) {
                         conn.Open();
-                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER";
+                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
                         using (var cmd = new SACommand(query, conn)) {
                             using (var reader = cmd.ExecuteReader()) {
                                 Console.WriteLine("Query result:");
@@ -174,8 +169,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 
 ### Debug the application
-
-
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
 2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `DataLakeClientsTutorial` folder.
@@ -201,7 +194,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ### Knowledge check
-
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 

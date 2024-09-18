@@ -79,7 +79,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 
     ```Shell (Linux or Mac)
-    mkdir $HOME/HANAClientsTutorial/node
+    mkdir -p $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
     ```
 
@@ -205,7 +205,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
 
-        //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
+        //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
 
@@ -213,7 +213,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //To use the SAP crypto provider, uncomment the below line.
         //sslCryptoProvider: 'commoncrypto',
 
-        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
+        //As of SAP HANA client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem', //Used to specify where the trust store is located
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
@@ -237,7 +237,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //connection.onTrace("", null);  //disables callback tracing for the rest of the program
 
-    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;';
+    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;';
     var t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -324,7 +324,7 @@ Connection pooling can improve performance when making multiple, brief connectio
         poolCapacity: 10,  //max # of connections in the pool waiting to be used
         maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
         pingCheck: false,
-        allowSwitchUser: true,  //requires SAP HANA Client 2.17
+        allowSwitchUser: true,  //requires SAP HANA client 2.17
         maxPooledIdleTime: 3600, //1 hour (in seconds)
     }
 
@@ -349,7 +349,7 @@ Connection pooling can improve performance when making multiple, brief connectio
                 pool = hana.createPool(connOptions, poolProperties); //create a connection pool
             }
             if (user2) { //example of changing the user
-                connection = pool.getConnection('USER2','Password3'); //Requires 2.17 of the SAP HANA Client
+                connection = pool.getConnection('USER2','Password2'); //Requires 2.17 of the SAP HANA client
             }
             else {
                 connection = pool.getConnection(); //get a connection from the pool
@@ -442,7 +442,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
             return console.error(err);
         }
         //Prepared statement example
-        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         const parameters = [11, '2020-12-24'];
         var results = statement.execQuery(parameters, function(err, results) {
             if (err) {
@@ -544,7 +544,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     PromiseModule.connect(connection, connOptions)
         .then(() => {
              //Prepared statement example
-             return PromiseModule.prepare(connection, 'CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+             return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         })
         .then((stmt) => {
             statement = stmt;
@@ -558,7 +558,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
             return PromiseModule.close(results);
         })
         .then(() => {
-            PromiseModule.drop(statement);
+            return PromiseModule.drop(statement);
         })
         .then(() => {
             PromiseModule.disconnect(connection);
@@ -631,14 +631,13 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 
 ### Use TypeScript
+[TypeScript](https://www.typescriptlang.org/) is a superset of JavaScript that provides optional types, compile-time checking, and code completion when using a tool such as Visual Studio Code.  The following step provides an example of using TypeScript with the SAP HANA client Node.js interface.
 
-[TypeScript](https://www.typescriptlang.org/) is a superset of JavaScript that provides optional types, compile-time checking, and code completion when using a tool such as Visual Studio Code.  The following step provides an example of using TypeScript with the SAP HANA Client Node.js interface.
-
-1. Examine the interface file which is located at `C:\SAP\hdbclient\node\lib\index.d.ts` in SAP HANA Client versions 2.16 and higher.
+1. Examine the interface file which is located at `C:\SAP\hdbclient\node\lib\index.d.ts` in SAP HANA client versions 2.16 and higher.
 
     ![declaration file](ts-declaration-file.png)
 
-    Notice that it contains definitions for the methods of the SAP HANA Client Node.js interface.  The method `setClientInfo` will be highlighted in substep 6.
+    Notice that it contains definitions for the methods of the SAP HANA client Node.js interface.  The method `setClientInfo` will be highlighted in substep 6.
 
 2. Open a file named `nodeQueryTS.js` in an editor.
 
@@ -672,7 +671,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     console.log("Year session value is " + connection.getClientInfo("CURRENT_YEAR"));
 
-    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?";
+    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE ?";
 
     var statement: hana.Statement = connection.prepare(sql1);
     var result1: hana.ResultSet = statement.executeQuery(['M%']);
@@ -706,20 +705,21 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     First check the Node.js version, determine what modules are in the current project, and what are the available versions of `@types/node`.
 
     ```Shell
-    node -v
-    npm list
     npm info @types/node
     ```
-
-    ![node and module versions](npm-list-new.png)
 
     Install the @types/node module which provides type definitions for Node.js.
 
     ```Shell
     npm install @types/node
+    node -v
+    npm list
     ```
 
+    ![node and module versions](npm-list-new.png)
+
     >The major version of Node.js and the `@types/node` versions should match.  If you need to uninstall `@types/node` and install a different version, an example is shown below of the commands to do so.
+
 
     >```Shell
     >npm uninstall @types/node

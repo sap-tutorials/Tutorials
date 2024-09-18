@@ -5,6 +5,7 @@ time: 10
 tags: [ tutorial>beginner, software-product>sap-build-work-zone--advanced-edition]
 primary_tag: software-product>sap-build-work-zone--advanced-edition
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 # Access SAP Build Work Zone, advanced edition from the SAP BTP Training Subaccount

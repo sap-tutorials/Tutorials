@@ -32,7 +32,7 @@ primary_tag: products>sap-hana-cloud
 
 4. Prepare your SAP HANA Database Project for collaboration
 5. Generate users and roles for assigning privileges
-6. You are here <sub-style="font-size:30px">&#9755;</sub> **Enhance your project with services, synonyms and grants**
+6. You are here <sub style="font-size:30px">&#9755;</sub> **Enhance your project with services, synonyms and grants**
 7. Collaborate on an SAP HANA Database Project template
 
 This tutorial will show you how to enhance your project with services, synonyms, and grants.

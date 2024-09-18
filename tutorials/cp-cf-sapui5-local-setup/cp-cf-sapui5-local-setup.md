@@ -16,9 +16,9 @@ author_profile: https://github.com/nicoschoenteich
  - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
 ## You will learn
-  - How to install the Yeoman scaffolding tool
-  - How to install the easy-ui5 generator plugin for Yeoman
-  - How to install the Multi-Target Application (MTA) build tool for Cloud Foundry
+  - How to install the Yeoman scaffolding tool.
+  - How to install the easy-ui5 generator plugin for Yeoman.
+  - How to install the Multi-Target Application (MTA) build tool for Cloud Foundry.
 
 
 ---

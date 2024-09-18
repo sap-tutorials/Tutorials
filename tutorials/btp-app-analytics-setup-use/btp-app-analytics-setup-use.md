@@ -183,7 +183,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
     ```JSON[25-70]
     {
-        "_version": "1.40.0",
+        "_version": "1.59.0",
         "sap.app": {
             ...
         },
@@ -198,7 +198,7 @@ The application is now generated and in a few seconds you can see it in the `app
                     ...
                 ],
                 "targets": {
-                "RiskAnalysisList": {
+                "RisksAnalysisList": {
                     ...
                     "options": {
                         "settings": {
@@ -255,7 +255,7 @@ The application is now generated and in a few seconds you can see it in the `app
                                 }
                             }
                     },
-                    "RiskAnalysisObjectPage": {
+                    "RisksAnalysisObjectPage": {
                         ...
                     }
                 }
@@ -482,6 +482,8 @@ Similarly, other charts like **Line Chart for Visual Filters** can be added.
 
     !![Dashboard](fea_result_page.png)
 
+<!--
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -532,7 +534,7 @@ Let us add the `Risk Analysis` application to the launch page where you already 
 
     !![Launchpage](fea_Launchpage.png)
 
-
+ -->
 [VALIDATE_1]
 The result of this tutorial can be found in the [`analytics`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/analytics) branch.
 

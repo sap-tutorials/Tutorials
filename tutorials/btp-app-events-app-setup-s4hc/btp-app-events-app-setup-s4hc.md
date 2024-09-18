@@ -267,7 +267,7 @@ So, you have added logic to create a new risk when an event for a newly created 
 
 Now simulate locally business partner creation and update, and see the results:
 
-1. Run `cds watch` and open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app).
+1. Run `cds watch` and open the **Risks** application: [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html).
 
 2. Choose **Go** and login to see the new **Status** column.
 

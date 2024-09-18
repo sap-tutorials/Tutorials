@@ -14,7 +14,7 @@ primary_tag: software-product>sap-hana-cloud
 ## Prerequisites
 -	A **running** instance of SAP HANA Cloud, SAP HANA database.
 -	An SAP HANA on-premise database that contains data.
--	The SAP HANA on-premise database should be running on SAP HANA platform edition. Alternatively, you can [download and install the latest SAP HANA express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html#20) either as binary in Linux or as VM (Virtual Machine) locally or in any cloud provider like Amazon Web Services, Microsoft Azure or Google Cloud Platform.
+-	The SAP HANA on-premise database should be running on SAP HANA platform edition. Alternatively, you can [download and install the latest SAP HANA express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html) either as binary in Linux or as VM (Virtual Machine) locally or in any cloud provider like Amazon Web Services, Microsoft Azure or Google Cloud Platform.
 -	An instance of the SAP HANA Database Explorer or SAP HANA Studio connected to the SAP HANA on-premise database.
 -	Lastly, you need to install the Data Provisioning Agent, which you can [download here](https://tools.hana.ondemand.com/#cloudintegration).
 

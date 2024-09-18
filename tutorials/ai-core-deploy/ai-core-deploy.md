@@ -4,7 +4,7 @@ auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, software-product>sap-ai-core, topic>machine-learning]
 primary_tag: software-product>sap-ai-core
-author_name: Dhrubajyoti Paul
+author_name: Dhrubajyoti Paul 
 author_profile: https://github.com/dhrubpaul
 ---
 
@@ -12,9 +12,14 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Deploy AI models and set up serving pipelines to scale prediction server.
 
 ## Prerequisites
- - You have connected code to the AI workflows of SAP AI Core using [this tutorial](ai-core-code).
- - You have trained a model using SAP AI Core, such as the house price predictor model in [this tutorial](ai-core-data), or your own model trained in your local system. If you trained your own local model, follow [this tutorial](ai-core-tensorflow-byod) to use it with SAP AI Core.
- - You know how to locate artifacts. This is explained in [this tutorial](ai-core-data).
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
+- You have connected code to the AI workflows of SAP AI Core using [this tutorial](ai-core-code).
+- You have trained a model using SAP AI Core, such as the house price predictor model in [this tutorial](ai-core-data), or your own model trained in your local system. If you trained your own local model, follow [this tutorial](ai-core-tensorflow-byod) to use it with SAP AI Core.
+- You know how to locate artifacts. This is explained in [this tutorial](ai-core-data).
 
 ## You will learn
   - How to create deployment server an for AI model
@@ -25,6 +30,10 @@ author_profile: https://github.com/dhrubpaul
 You will create a deployment server for AI models to use in online inferencing. It is possible to change the names of components mentioned in this tutorial, without breaking the functionality, unless stated explicitly.
 
 The deployment server demonstrated in this tutorial can only be used in the backend of your AI project. For security reasons, in your real set up you will not be able to directly make prediction calls from your front end application to the deployment server. Doing so will lead to an inevitable Cross-origin Resource Sharing (CORS) error. As a temporary resolution, please deploy another application between your front end application and this deployment server. This middle application should use the SAP AI Core SDK (python package) to make calls to the deployment server.
+
+
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_05_make_predictions_for_house_prices_with_sap_ai_core/make-prediction.ipynb)
 
 ---
 
@@ -305,9 +314,15 @@ print(response.__dict__)
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click **Start Deployment** in the configuration details page. This starts a new deployment with the values specified in the configuration.
+Click **Start Deployment** in the configuration details page.
 
 <!-- border -->![deploy](img/ail/deploy1.jpg)
+
+A next Screen will apear where you need to choose time to live for Deployment either you can choose standard for unlimtied time or Custom with set Expiry for Deployment
+
+<!-- border -->![TTL](img/ail/deploy3.png)
+
+Once You have choosen TTL for deployment click on review. and once you are sure Click Next. This starts a new deployment with the values specified in the configuration.
 
 > **WARNING** While your deployment is initializing, it may show the status that the deployment ID is not found.
 
@@ -356,7 +371,7 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 | --- | --- |
 | `AI-Resource-Group` | `default` |
 
-**RESPONSE**
+**REQUEST BODY**
 
 ```JSON
 {
@@ -457,7 +472,7 @@ To update your existing deployment with this newly created configuration, click 
 
 Click on your deployment row in the table, then click **Update**.
 
-<!-- border -->![deployment update](img/ail/dep_update1.jpg)
+<!-- border -->![deployment update](img/ail/dep_update1.png)
 
 Select the configuration named `House Predictor Feb` and click **Update**.
 
@@ -503,6 +518,7 @@ print(response.__dict__)
 
 The **Current Status** of your deployment changes to **Unknown** while your new model is copied to the serving engine. After the deployment has been copied successfully, the status changes to **Running** and is ready to make new predictions.
 
+<!-- border -->![deployment update](img/ail/dep_update3.jpg)
 
 ### Stop a deployment
 
@@ -539,3 +555,14 @@ print(response.__dict__)
 
 
 ---
+
+### Check Running Resources (optional)
+
+
+You can check the Current running Pods Using in AI Lauchpad Choosing the Deployment and clicking on Scaling tab
+
+<!-- border -->![resource](img/ail/resource1.jpg)
+
+Similary if you want to check for resource plan just visit the resources tab 
+
+<!-- border -->![resource](img/ail/resource2.jpg)

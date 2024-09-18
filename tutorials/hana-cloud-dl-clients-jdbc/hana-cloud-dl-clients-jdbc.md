@@ -44,9 +44,7 @@ sudo zypper install java-11-openjdk-devel
 ### The data lake Relational Engine JDBC driver
 The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
 
-A native JDBC driver called `jConnect` is also provided. This tutorial focuses on the [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/jdbc-drivers).
-
-See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd02ce86c5f101482b78476939fb83a.html) for additional details.
+See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/jdbc-drivers) for additional details.
 
 
 ### Create a Java application that queries data lake Relational Engine
@@ -90,7 +88,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
                 try {
                     System.out.println("Connection to data lake Relational Engine successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);

@@ -151,7 +151,7 @@ The CLI used depends on whether the SAP HANA Cloud instances were provisioned to
 
 [Cloud Foundry CLI (CF CLI)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-cloud-foundry-command-line-interface-cf-cli-with-sap-hana-cloud) can be used to create, update, configure, or delete instances provisioned in a Cloud Foundry space.  Further details can be found at [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) and [Cloud Foundry Releases](https://github.com/cloudfoundry/cli/releases).
 
-[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool  ](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
+[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
 
 The following steps will provide examples of each CLI as well as accessing the SAP Service Manager REST API.  **Please install one or more of the CLIs before proceeding.**
 
@@ -164,7 +164,7 @@ Before proceeding ensure that your user has the subaccount service administrator
 
 Additional details can be found at [Role Collections and Roles in Global Accounts, Directories, and Subaccounts](https://help.sap.com/docs/btp/sap-business-technology-platform/role-collections-and-roles-in-global-accounts-directories-and-subaccounts).
 
-The commands below were executed in a Microsoft Windows PowerShell.  This shell offers code completion by pressing the tab key.  To try out the autocompletion, enter btp, a space, and press the tab key.  
+The commands below were executed in a Microsoft Windows PowerShell.  This shell offers code completion by pressing the tab key.  To try out the autocompletion, enter btp, a space, and press the tab key.  If needed, you can enable autocompletion as described at [Enable Command Autocompletion](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-command-autocompletion?version=Cloud). 
 
 ![Auto complete](auto-complete.png)
 
@@ -172,7 +172,7 @@ Select an action and press tab again to view the available operations for that a
 
 ![Auto complete](auto-complete2.png)
 
-#### Version and help
+#### Version
 
 ```Shell
 btp --version
@@ -288,7 +288,7 @@ In order to create an instance, JSON describing the instance is required as well
 
     ![btp being created](btp-creating.png)
 
-A more advanced example using a bash script is provided at [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations).  Additional details can be found at [Commands in the btp CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/commands-in-btp-cli).
+A more advanced example using a bash script is provided at [Automate Account Operations with the Command Line Interface (CLI)](https://github.com/SAP-samples/cp-cli-automate-operations).  Additional details can be found at [Commands in the btp CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/commands-in-btp-cli).
 
 #### Delete an instance
 Do not follow this step unless you no longer require your SAP HANA Cloud instance.
@@ -465,6 +465,7 @@ An SAP HANA Cloud database instance may be cloned.  As an example, you may wish 
     ![add data lake](add-data-lake.png)
 
 2. Create a file named **clone-template.json** with the contents below and modify it as appropriate.
+    
     ```JSON
     {
         "data": {
@@ -713,12 +714,6 @@ cf services
 
 ```Shell
 cf service HC_HDB_CF
-```
-
-or
-
-```Shell
-cf service HC_HDB_CF --params
 ```
 
 ![cf service details](cf-service-details.png)

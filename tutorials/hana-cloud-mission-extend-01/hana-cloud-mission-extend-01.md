@@ -68,7 +68,7 @@ You can also upgrade the software of your instances here. In SAP HANA Cloud, you
 
 > You will learn throughout this mission how to provision an instance of SAP HANA Cloud, SAP HANA database in the fourth tutorial of this group.
 >
-> If you would like to <sub-style="font-size:30px">&#9755;</sub> [jump there](hana-cloud-mission-trial-2), please make sure to come back here to get the most of this mission.
+> If you would like to <sub style="font-size:30px">&#9755;</sub> [jump there](hana-cloud-mission-trial-2), please make sure to come back here to get the most of this mission.
 
 
 

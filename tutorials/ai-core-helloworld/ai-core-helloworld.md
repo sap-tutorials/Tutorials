@@ -18,6 +18,11 @@ parser: v2
 - How to run workflows in SAP AI Core
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - Have Postman, Python (AI Libraries) or SAP AI Launchpad set up. You can set any of these up using [this tutorial](https://developers.sap.com/tutorials/ai-core-setup.html/#)
 
 ## Intro
@@ -25,6 +30,8 @@ You will create an AI workflow for your Hello, World! workflow, and connect and 
 
 The terms "executable" and "workflow" can be used interchangeably to refer to the YAML files, introduced in this tutorial.
 
+Please find downloadable sample notebooks for the tutorials : . Note that these tutorials are for demonstration purposes only and should not be used in production environments. To execute them properly, you'll need to set up your own S3 bucket or provision services from BTP, including an AI Core with a standard plan for narrow AI and an extended plan for GenAI HUB. Ensure you input the service keys of these services into the relevant cells of the notebook.
+[Link to notebook](https://github.com/SAP-samples/ai-core-samples/blob/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_02_quick_start_for_your_first_ai_project_using_ai_core/quick_start_helloworld.ipynb)
 
 ### Create a GitHub repository
 
@@ -502,10 +509,11 @@ Use the ID of configuration to create your execution.
 
 ```PYTHON
 # Create execution using configuration
-ai_core_client.execution.create(
+response = ai_core_client.execution.create(
     configuration_id = '<YOUR_CONFIGURATION_ID>', # Change this value.
     resource_group = 'default'
 )
+response.__dict__
 ```
 
 <!-- border -->![image](img2/aics/conf-exec.png)
