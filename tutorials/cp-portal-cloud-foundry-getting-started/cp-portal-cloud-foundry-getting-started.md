@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition ]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--standard-edition ]
 primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
@@ -61,7 +61,7 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
     ![Click Launchpad tile](5-find-launchpad-tile.png)
 
-    >If you aren't able to find the **SAP Build Work Zone, standard edition** tile, or if you can't access it, you may be using an older trial account. You can easily add it to your account via the **Entitlements** area. Click **Edit** and then **Add Service Plans**. Then search for `SAP Build Work Zone`, check the standard (applications) plan, and click **Add 1 Service Plan**. Don't forget to save in the next screen.
+    >If you aren't able to find the **SAP Build Work Zone, standard edition** tile, or if you can't access it, you may be using an older trial account. You can easily add it to your account via the **Entitlements** area. Click **Edit** and then **Add Service Plans**. Search for `SAP Build Work Zone`, check the standard (applications) plan, and click **Add 1 Service Plan**. Don't forget to save in the next screen.
 
 
     The **SAP Build Work Zone, standard edition** Overview page opens.

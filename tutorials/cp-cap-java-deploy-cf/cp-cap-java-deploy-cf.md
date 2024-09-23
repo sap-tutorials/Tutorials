@@ -190,10 +190,8 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 
     This is the URL of the AppRouter, which enforces the authentication flow.
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `odata/v4/catalog/Books`. Application data is fetched from SAP HANA.
 
-5. Open the application in the browser. The according route can be found under `routes` of the previous step.
-
-6. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization in the cloud.
+5. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization in the cloud.
 
 ---

@@ -433,6 +433,7 @@ llm = init_llm('gpt-4', temperature=0.0, max_tokens=256)
 response = llm.invoke('What is generative AI?').content 
 print('Response:', response)
 ```
+![image](images/step5OP.png)
 
 [OPTION END]
 
@@ -651,6 +652,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
+![image](images/step6OP.png)
 [OPTION END]
 
 
@@ -814,7 +816,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
-
+![image](images/step7OP.png)
 [OPTION END]
 
 ### Text Classification - Sentiment Analysis
@@ -887,7 +889,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
-
+![image](images/step8OP.png)
 [OPTION END]
 
 ### Expansion
@@ -954,6 +956,7 @@ response = llm.invoke(prompt).content
 print('Response:', response)
 
 ```
+![image](images/step9OP.png)
 
 [OPTION END]
 
@@ -1021,6 +1024,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
+![image](images/step10OP.png)
 
 [OPTION END]
 
@@ -1086,6 +1090,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
+![image](images/step11OP.png)
 
 [OPTION END]
 
@@ -1172,6 +1177,7 @@ llm = init_llm('gpt-35-turbo', temperature=0., max_tokens=256)
 response = llm.invoke(prompt).content
 print('Response:', response)
 ```
+![image](images/step12OP.png)
 
 [OPTION END]
 
