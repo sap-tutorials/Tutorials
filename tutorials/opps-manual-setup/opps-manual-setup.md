@@ -91,7 +91,7 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 5. Select the role collection you've just created from the list and choose **Edit**.
 
-6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS`** from the dropdown list.
+6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS_Promotions`** from the dropdown list.
 
 7. Assign **User** or **User Groups** to your role collection and choose **Save**. 
 
