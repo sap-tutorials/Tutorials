@@ -96,7 +96,7 @@ The response should look like the following sample
 
 9. From the response, note down the technical coupon ID as you will use it later. 
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** for the promotional rule **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**.
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1st, 2024 to December 31st, 2024**.
 
 
 ### Change status of coupon object
