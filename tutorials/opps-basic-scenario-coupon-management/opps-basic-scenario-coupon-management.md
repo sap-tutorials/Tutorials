@@ -96,6 +96,7 @@ The response should look like the following sample:
 
 9. From the response, note down the technical coupon ID as you will use it later.
     
+    
 With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1st, 2024 to December 31st, 2024**.
 
 
@@ -114,7 +115,6 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 
 When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **inactive to active**.
 
-
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 
@@ -126,13 +126,13 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 6. Choose **Run**. 
 7. Make sure you get the HTTP response **200**.
 
-
 You have now successfully changed the status of the coupon code. 
+
 
 ### Generate coupon codes
 
 
-You can generate coupon codes with the multi-code coupon object created using the Coupon Management service. 
+Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
@@ -141,10 +141,10 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 
 1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
-2. On the left-hand side, choose **Generate coupon codes**.
+2. On the left-hand side, choose **Coupon**.
 3. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
-4. Choose **Try Out**.
-5. For the **Request body**, choose `application/json`.
+4. Choose **Parameters**.
+5. For ID, enter the **technical coupon ID** from the coupon object you just created.
 6. Copy the following raw data and paste it into the body:
 ```json
 { 
