@@ -105,7 +105,7 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **GET** request `/Coupon`.
 3. Choose **Run**.
-4. Make sure you get the HTTP response **201**. 
+4. Make sure you get the HTTP response **200**. 
 5. In the response body, you should see the coupon that you have created.  
 
 
@@ -124,8 +124,10 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 4. Choose **Parameters**.
 5. For ID, enter the **technical coupon ID** from the coupon object you just created.
 6. Choose **Run**. 
+7. Make sure you get the HTTP response **200**.
 
 
+You have now successfully changed the status of the coupon code. 
 
 ### Generate coupon codes
 
