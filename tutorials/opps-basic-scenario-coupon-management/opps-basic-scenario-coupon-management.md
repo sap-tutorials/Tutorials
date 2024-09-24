@@ -100,6 +100,15 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
+
+
+1. On the left-hand side, choose **Coupon**.
+2. Open the **GET** request `/Coupon`.
+3. Choose **Run**.
+4. Make sure you get the HTTP response **201**. 
+5. In the response body, you should see the coupon that you have created.  
+
+
 ### Change status of coupon object
 
 
