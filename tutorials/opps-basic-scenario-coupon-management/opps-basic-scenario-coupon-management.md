@@ -91,14 +91,15 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 7. Choose **Execute**.
 8. Make sure you get the HTTP response **201**.
 
-The response should look like the following sample
+The response should look like the following sample:
 
 
-9. From the response, note down the technical coupon ID as you will use it later. 
-
+9. From the response, note down the technical coupon ID as you will use it later.
+    
 With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1st, 2024 to December 31st, 2024**.
 
 
+**Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
 ### Change status of coupon object
 
 
