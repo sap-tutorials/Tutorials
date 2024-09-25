@@ -148,14 +148,14 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 6. Copy the following raw data and paste it into the body:
 ```json
 { 
-"generatedCodeCount": 200, 
-"validFrom": "2024-09-01" 
+"generatedCodeCount": 100, 
+"validFrom": "2024-10-01" 
 }
 ```
-7. Choose **Execute**.
+7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
-With this, you generated the coupon codes for the multi-code coupon **TIME FOR COFFEE** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
+With this, you have now created a batch of **100** unique codes for the coupon **COFFEELOVER**. You must note down the batch ID to read the coupon codes.
 
 
 ### Upload promotional rule
