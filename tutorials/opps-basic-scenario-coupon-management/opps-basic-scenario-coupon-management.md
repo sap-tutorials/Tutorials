@@ -185,10 +185,6 @@ To finalize your promotional campaign, you must set up the following promotion f
 You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
 In this tutorial, we will use the **Data Upload** service.
 
-### Upload promotional rule
-
-
-You can now upload the promotional rule with the Data Upload service.
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
