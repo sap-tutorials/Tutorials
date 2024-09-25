@@ -174,6 +174,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
+You must note down the coupon code value as it will be used for redeeming the coupon.
+
 
 ### Upload promotional rule
 
