@@ -160,30 +160,19 @@ With this, you have now created a batch of **100** unique codes for the coupon *
 ### Read coupon codes
 
 
-You can read the coupon codes created using the Coupon Management service. 
+You can now read the coupon codes created using the Coupon Management service to circulate the coupon information to the target group as part of your promotional campaign. 
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Coupon management 1](coupon_management_1.png)
-<!-- border -->![Coupon management 2](coupon_management_2.png)
-
-
 1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
-2. On the left-hand side, choose **Read coupon codes**.
-3. Open the **GET** request `/Coupon({ID})`.
-4. Choose **Try Out**.
-5. For the **Request body**, choose `application/json`.
-6. Copy the following raw data and paste it into the body:
-```json
-{ 
-"generatedCodeCount": 200, 
-"validFrom": "2024-09-01" 
-}
-```
-7. Choose **Execute**.
-8. Make sure you get the HTTP response **200**.
+2. On the left-hand side, choose **Code Batch**.
+3. Open the **GET** request `/CodeBatch({ID})/codes`.
+4. Choose **Parameters**.
+5. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
+6. Choose **Run**.
+7. Make sure you get the HTTP response **200**.
 
-With this, you can read the coupon codes generated for the multi-code coupon **TIME FOR COFFEE** for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**.
+With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
 
 ### Upload promotional rule
