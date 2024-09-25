@@ -182,7 +182,8 @@ You must note down the coupon code value as it will be used for redeeming the co
 To finalize your promotional campaign, you must set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
 * Buy a coffee machine and show the coupon **COFFEELOVER to get 50 Euro off**.  
 * The promotion is valid from October 1st, 2024 to December 31st, 2024.
-You can do so either using the **Maintain Promotions** app or the **Data Upload** service.  
+You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
+In this tutorial, we will use the **Data Upload** service.
 
 ### Upload promotional rule
 
