@@ -152,7 +152,7 @@ Next, you'll need to add a scan button which, when tapped, will open the camera 
 
 The application is now saved and available to preview using the preview app on your smartphone.
 
-
+ 
 
 ### Preview app on your device
 >👉 **IMPORTANT:** Depending on which SAP Build Apps you are using – with the community edition or SAP BTP trial -- you will select different buttons to get started with the preview app.
