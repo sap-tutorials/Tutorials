@@ -62,7 +62,7 @@ To improve on this, you will configure a data source that has food information r
 
 
 
-### Configure Get Record data
+### Configure retrieve data
 You now need to configure which information is taken from the Open Food Facts API. This can be achieved using a **Retrieve** request.
 
 1. Click on **Retrieve** and enable the request by turning on the toggle switch.
@@ -95,7 +95,7 @@ You now need to configure which information is taken from the Open Food Facts AP
 
 
 ### Test data sources
-We will now test to see if the resource is configured properly.
+You will now test to see if the resource is configured properly.
 
 1. Go to the **Test** tab.
 
@@ -111,11 +111,11 @@ We will now test to see if the resource is configured properly.
 
     ![Run test](test2.png)
 
-The test now runs. Scroll down a little to see the response.
+3. Scroll down a little to see the response.
 
-In this response, you can see information about the product. This includes the product categories, allergen information, and the brand that manufactured the product.
+    In this response, you can see information about the product. This includes the product categories, allergen information, and the brand that manufactured the product.
 
-![View the results](test_results.png)
+    ![View the results](test_results.png)
 
 
 

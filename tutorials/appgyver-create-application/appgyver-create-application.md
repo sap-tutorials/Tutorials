@@ -103,34 +103,33 @@ For more detailed coverage of the features available in the app builder area, vi
 
 
 ### Edit app interface
-
 You'll now start to create a basic layout for your application, starting with editing text.
 
-Select the Title component (the one that says **Headline**) by clicking it once.
+1. Select the **Title** component (the one that says **Headline**) by clicking it once.
 
-![Select title](select1.png)
+    ![Select title](select1.png)
 
-Now click the text to select the text.
+    Click the text to select the text.
 
-![Select text](select2.png)
+    ![Select text](select2.png)
 
-Copy-and-paste or type in the following:
+    Copy-and-paste or type in the following:
 
-```Text
-Barcode Scanner.
-```
+    ```Text
+    Barcode Scanner.
+    ```
 
-![Paste text](select3.png)
+    ![Paste text](select3.png)
 
-Double-click the **Text** component to highlight the text, and paste in the following:
+2. Double-click the **Text** component to highlight the text, and paste in the following:
 
-```Text
-Scan a barcode of a food product using your smartphone
-```
+    ```Text
+    Scan a barcode of a food product using your smartphone
+    ```
 
-![Text field](select4.png)
+    ![Text field](select4.png)
 
->Instead of editing text directly inside a component, you can also set the text using the **Content** property in the **Properties** tab to the right. This option is needed if you set the text based on a formula or variable.
+    >Instead of editing text directly inside a component, you can also set the text using the **Content** property in the **Properties** tab to the right. This option is needed if you set the text based on a formula or variable.
 
 
 
@@ -139,17 +138,17 @@ Scan a barcode of a food product using your smartphone
 
 Next, you'll need to add a scan button which, when tapped, will open the camera device on your smartphone.
 
-To do this, locate the **Button** component (found under **Core > Forms**) and drag and drop this underneath the paragraph/text field.
+1. Locate the **Button** component (found under **Core > Forms**) and drag and drop this underneath the paragraph/text field.
 
-![Adding a button](AddButton.png)
+    ![Adding a button](AddButton.png)
 
-Edit the button label by clicking the word **Button** inside the button and typing `Scan`.
+2. Edit the button label by clicking the word **Button** inside the button and typing `Scan`.
 
-![Edit button text](EditButtonText.png)
+    ![Edit button text](EditButtonText.png)
 
-Click **Save** (upper right).
+3. Click **Save** (upper right).
 
-![Save Project](SaveProject.png)
+    ![Save Project](SaveProject.png)
 
 The application is now saved and available to preview using the preview app on your smartphone.
 
@@ -167,11 +166,11 @@ The application is now saved and available to preview using the preview app on y
 
 1. Assuming you are using an SAP BTP trial account, open the SAP Build Apps preview app on your mobile device, and click **Other login options**.
 
-    ![Open preview app](preview1.png)
+    ![Open preview app](preview1.PNG)
 
     Select the US10 region from the dropdown list.
 
-    ![Select US10](preview2.png)
+    ![Select US10](preview2.PNG)
     
     This will display a pin code.
 

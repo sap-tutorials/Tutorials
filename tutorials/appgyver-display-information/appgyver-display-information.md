@@ -181,7 +181,7 @@ It enables you to scan a barcode of a food item and retrieve the product name an
 
 1. Open the SAP Build Apps preview app, and select your app to preview.
    
-   >If the preview app timed out, go to the **Launch** tab and reopen the app. Instructions are in the first tutorial of this mission.
+    >If the preview app timed out, go to the **Launch** tab and reopen the app. Instructions are in the first tutorial of this mission.
 
 2. Click **Scan**. The camera will open to let you scan a barcode.
 

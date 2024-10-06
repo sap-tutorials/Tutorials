@@ -80,6 +80,8 @@ After adding a **Get Record**, you need to indicate what backend you want to mak
     
     Select **QR barcode content** as the specific output.
 
+    ![Output value](output_value_node2.png)
+
     Click **Save**.
 
 The Get Record flow function should now be able to fetch data for any food barcode you scan with your application.
@@ -110,7 +112,7 @@ You now need to configure your application to store the data it receives. To do 
 
     ![Add data variables](add_data_variable.png)
 
-    Select your ***Open Food Facts*** variable.
+    Select your **Open Food Facts** variable.
 
     ![Select open food facts](open_food_facts.png)
 
