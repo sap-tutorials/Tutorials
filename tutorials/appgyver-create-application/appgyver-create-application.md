@@ -15,7 +15,7 @@ parser: v2
 ## Prerequisites
 - Access to an SAP Build Apps system. Use one of the following:
     - Free [community edition](https://www.appgyver.com/community) of SAP Build Apps / AppGyver.
-    - SAP Build Apps on an SAP BTP trial account: [Create an SAP BTP trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html), and then [install SAP Build Apps](https://youtu.be/ZpQM2B1v2GY).
+    - SAP Build Apps on an SAP BTP trial account <div>&nbsp;</div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
 - Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
 
@@ -66,6 +66,10 @@ All applications are created, edited, and managed within what we call a project,
    
     ![Create](startnew2.png)
 
+    Click **SAP Build Apps**. 
+   
+    ![Create](startnew2a.png)
+
     Click **Web & Mobile Application**. 
 
     ![Create](startnew3.png)
@@ -80,17 +84,21 @@ Your SAP Build Apps project is created, and the default **Home page** is display
 
 ### Understand SAP Build Apps
 
-![Composer Pro](composerPro.png)
+![Editor](composerPro.png)
 
 When working with SAP Build Apps, the majority of your time will be spent in the app builder area. This area allows you to complete key tasks such as, but not limited to, the following:
 
 - Define your app's structure and navigation logic
+
 - Build pixel-perfect user interfaces
+
 - Create complex logic with visual programming
+
 - Integrate with external data resources
+
 - Bind data to your components to create dynamic views, and more
 
-For more detailed coverage of the features available in Composer Pro, view the [SAP Build Apps documentation](https://help.sap.com/docs/BUILD_APPS/431746e4c663458aa68d9754b237bfc6/daece9f87abf4f7187a14ae0b1f8b2ab.html).
+For more detailed coverage of the features available in the app builder area, view the [SAP Build Apps documentation](https://help.sap.com/docs/BUILD_APPS/431746e4c663458aa68d9754b237bfc6/daece9f87abf4f7187a14ae0b1f8b2ab.html).
 
 
 
@@ -98,15 +106,31 @@ For more detailed coverage of the features available in Composer Pro, view the [
 
 You'll now start to create a basic layout for your application, starting with editing text.
 
-Click the existing **Headline** field and edit the text to read:  `Barcode Scanner`
+Select the Title component (the one that says **Headline**) by clicking it once.
 
-![Edit UI Headline](EditHeadline.png)
+![Select title](select1.png)
 
-Click the **Text** field and edit the text to read: `Scan a barcode of a food product using your smartphone`
+Now click the text to select the text.
 
-![Barcode Scanner](BarcodeScanner.png)
+![Select text](select2.png)
 
+Copy-and-paste or type in the following:
 
+```Text
+Barcode Scanner.
+```
+
+![Paste text](select3.png)
+
+Double-click the **Text** component to highlight the text, and paste in the following:
+
+```Text
+Scan a barcode of a food product using your smartphone
+```
+
+![Text field](select4.png)
+
+>Instead of editing text directly inside a component, you can also set the text using the **Content** property in the **Properties** tab to the right. This option is needed if you set the text based on a formula or variable.
 
 
 
@@ -119,7 +143,7 @@ To do this, locate the **Button** component (found under **Core > Forms**) and d
 
 ![Adding a button](AddButton.png)
 
-Edit the button label to read `Scan`.
+Edit the button label by clicking the word **Button** inside the button and typing `Scan`.
 
 ![Edit button text](EditButtonText.png)
 
@@ -132,22 +156,30 @@ The application is now saved and available to preview using the preview app on y
 
 
 ### Preview app on your device
->👉 **IMPORTANT:** If you are using the community edition, then you will click the **SAP Build Apps** tile on the preview app.
+>👉 **IMPORTANT:** Depending on which SAP Build Apps you are using – with the community edition or SAP BTP trial -- you will select different buttons to get started with the preview app.
 
->If you are in region US10 (generally for the SAP BTP trial), then you will click **Other login options** on the preview app.
+>- If you are using the community edition, the first thing you do is click the **SAP Build Apps** tile.
+
+>- If you are using SAP BTP trial (region US20), you will click **Other login options**.
+
+>The instructions below assume you are using a trial account, but also provide alternatives if you are using an SAP BTP account in region EU10.
 
 
+1. Assuming you are using an SAP BTP trial account, open the SAP Build Apps preview app on your mobile device, and click **Other login options**.
 
-1. Open the SAP Build Apps preview app on your mobile device, and click **SAP Build Apps**.
+    ![Open preview app](preview1.png)
 
-    >If you are using a trial account in the US10 region, click **Other login options**, then select **SAP Build Apps US10** and click **Generate code**.
+    Select the US10 region from the dropdown list.
 
-    ![Preview](IMG_3950.PNG)
-
+    ![Select US10](preview2.png)
+    
     This will display a pin code.
 
-    ![Alt text](IMG_3952.PNG)
-    
+    ![Pin code](preview3.png)  
+
+    >If you are using an account in the EU10 region, from the first screen simply click the **SAP Build Apps** tile and this will display a pin code.
+
+
 2. Go back to SAP Build Apps on your desktop, and open the **Launch** tab.
     
     ![Launch](launch1a.png)
