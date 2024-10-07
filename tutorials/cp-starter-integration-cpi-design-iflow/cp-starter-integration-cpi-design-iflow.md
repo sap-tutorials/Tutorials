@@ -139,17 +139,13 @@ You have now created a step that will (in the further step) connect and communic
 
     <!-- border -->![Select message protocol](8-3-select-odata-adapter-msg-protocol.png)
 
-4. Select the **Connection** tab. In the **Address** field, enter **`https://refapp-espm-ui-cf.cfapps.eu10.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
-
-    <!-- border -->![Enter connection details for OData adapter](8-4-odata-connection-details.png)
+4. Select the **Connection** tab. In the **Address** field, enter **`https://refapps-espm-ui-cf.cfapps.eu10.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
 
 5. Select the **Processing** tab and choose **Select** in the **Resource Path** field.
 
     <!-- border -->![OData processing resource path selection - 1](8-5-odata-processing-1.png)
 
 6. Ensure the connection details are the same and choose **Step 2**.
-
-    <!-- border -->![OData processing resource path selection - 2](8-6-odata-processing-2.png)
 
 7. Choose the **Select Entity** field and choose **Products** from the dropdown list.
 
