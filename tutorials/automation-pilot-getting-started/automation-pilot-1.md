@@ -1,6 +1,6 @@
 ---
-author_name: Elena Grigorova
-author_profile: https://github.com/ElenaGrigorova 
+author_name: Kristina Kalpakchieva
+author_profile: https://github.com/KristinaKalpakchieva
 auto_validation: false
 time: 10
 tags: [ tutorial>beginner, type>tutorial, software-product>sap-automation-pilot ]
