@@ -87,4 +87,10 @@ In the last step, we are using the receiver adapter ProcessDirect. Therefore, af
 Before sending the message to the next integration flow, you also have the option to take advantage of the Headers Directory and Filename which were set before and build your own message based on the specific scenario.
 ![ProcessDirect Branches]( ProcessDirect.png)  
 
-### Test yourself 
+If you want to get a more detailed example for SFTP Poll Use Case with split and multicast, please refer to the following link:
+https://github.com/sap-tutorials/Tutorials-Contribution/blob/master/tutorials/ci-sftp-file-polling/Use%20Case%202.pdf
+
+
+
+
+### Test yourself
