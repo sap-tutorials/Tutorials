@@ -11,7 +11,7 @@ parser: v2
 
 # Setup SAP Build Code in SAP BTP
 <!-- description --> SAP Build Code provides generative AI-based code development with Joule copilot, optimized for Java and JavaScript application development. It offers a turn-key environment for coding, testing, integrations, and application lifecycle management.
->**Note** The trial version of SAP Build Code is currently only available in the US10 region. 
+>The trial version of SAP Build Code is currently only available in the US10 region. 
 
 Perform these preparatory steps to set up your system for creating your business applications in SAP Build Code.
 
@@ -24,14 +24,18 @@ Perform these preparatory steps to set up your system for creating your business
 
 ### Run the SAP Build Code Booster
 
->**Notes** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different. <br>
+>This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different. <br>
     
 
 1. Access your [global account](https://account.hanatrial.ondemand.com/) and click **Go To Your Trial Account**.
 
     <!-- border -->![Open Trial account](open_trial_subaccount.png)
 
-2. In the navigation pane, click **Boosters**. 
+2. Unsubscribe from SAP Business Application Studio.
+
+    > **Important:** Any project created in SAP Business Application Studio will be lost. Make sure to backup your projects before you unsubscribe.
+
+3. In the navigation pane, click **Boosters**. 
 
     <!-- border -->![Boosters](boosters-navpane.png)
     
