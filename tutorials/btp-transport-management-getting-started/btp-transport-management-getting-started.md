@@ -131,8 +131,10 @@ To enable the usage of the user interface of SAP Cloud Transport Management serv
 [OPTION BEGIN [Trial Account]]
 
 1. In your subaccount, go to **Services > Service Marketplace**.
+
 2. Use the *Search* field to filter for *transport management*.
-3. The *Cloud Transport Management* tile is displayed.  
+
+3. The *Cloud Transport Management* tile is displayed.    
 
     ![Subscription1](screenshots/Subscription01.png)
 
