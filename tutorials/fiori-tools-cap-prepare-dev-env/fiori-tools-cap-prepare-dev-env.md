@@ -5,6 +5,7 @@ auto_validation: true
 time: 20 minutes
 tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 ## Prerequisites
 - You need a trial account on SAP Business Technology Platform. If you don't have one, follow the instructions in: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).

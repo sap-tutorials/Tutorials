@@ -4,6 +4,7 @@ auto_validation: true
 time: 40
 tags: [ tutorial>beginner, products>sap-fiori-tools]
 primary_tag: products>sap-fiori
+contributors: [ Dimitri Herber>https://github.com/fakirdi, Conrad Bernal>https://github.com/cjbernal, Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
 
 # Refine the Object Page with Annotations

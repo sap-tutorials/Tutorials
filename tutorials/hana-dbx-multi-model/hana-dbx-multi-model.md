@@ -22,7 +22,7 @@ A graph can be used to show the connections between items such as the connection
 
 SAP HANA provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.
 
-This tutorial is meant to be an introduction to this topic.  For additional content see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started),  [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data), and the [Guided Experience - Introduction to SAP HANA Cloud](https://academy-journey.cfapps.eu10.hana.ondemand.com/learning-journey/prd-hc-introduction).
+This tutorial is meant to be an introduction to this topic.  For additional content see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started),  [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data), and the multi-model chapters in [Basic Trial - Introduction to SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html) that is available once you sign up for the basic trial.
 
 ---
 
@@ -102,7 +102,7 @@ In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertice
 
     ![DISTANCEGRAPH properties](distance-graph-workspace.png)
 
-For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Reference](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/30d1d8cfd5d0470dbaac2ebe20cefb8f.html).
+For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Reference](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/sap-hana-cloud-sap-hana-database-graph-reference).
 
 
 ### Explore a graph using the graph viewer
@@ -140,7 +140,7 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
-Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.  Graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
+Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.  Graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
 
 ### Use graph algorithms in the SAP HANA database explorer
@@ -194,7 +194,7 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![enable the document store](hc-document-store.png)
 
-    For an on-premise server, add the document service as described at [Enable the SAP HANA JSON Document Store](https://help.sap.com/viewer/3e48dd3ad36e41efbdf534a89fdf278f/latest/en-US/28334f8e631c447598d2591305b28660.html).
+    For an on-premise server, add the document service as described at [Enable the SAP HANA JSON Document Store](https://help.sap.com/docs/SAP_HANA_PLATFORM/3e48dd3ad36e41efbdf534a89fdf278f/28334f8e631c447598d2591305b28660.html).
 
 2. Create a collection named `GUEST_NOTES`.
 
@@ -229,7 +229,7 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![collection queries](join-query.png)
 
-    For additional details see the [SELECT Statement](https://help.sap.com/viewer/f2d68919a1ad437fac08cc7d1584ff56/latest/en-US/991ab0d69db542e992a61b4b40f348e8.html) in the JSON Document Store guide.
+    For additional details see the [SELECT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/select-statement) in the JSON Document Store guide.
 
 5. The properties of the JSON collection can also be viewed.  
 
@@ -277,7 +277,7 @@ JSON collections can be imported using the import data wizard but are required t
         data = json.load(json_file)
 
     docstore.create_collection_from_elements(conn, 
-        collection_name="WATERLOO_PARKS", elements=[data], drop_exist_coll=True, schema="HOTEL")
+        collection_name="WATERLOO_PARKS", elements=[data], drop_exist_coll=True, schema="HOTELS")
     ```
 
 3. Add the required packages.
@@ -298,10 +298,10 @@ JSON collections can be imported using the import data wizard but are required t
 5. Query the imported collection.
 
     ```SQL
-    SELECT CARDINALITY("features")  FROM "HOTEL"."WATERLOO_PARKS";
-    SELECT "features" FROM "HOTEL"."WATERLOO_PARKS";
-    SELECT "features" FROM "HOTEL"."WATERLOO_PARKS" UNNEST "features" as "f";
-    SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTEL"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
+    SELECT CARDINALITY("features")  FROM "HOTELS"."WATERLOO_PARKS";
+    SELECT "features" FROM "HOTELS"."WATERLOO_PARKS";
+    SELECT "features" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f";
+    SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
     ```
     ![parks with tennis courts](parks-with-tennis-courts.png)
 
@@ -309,7 +309,7 @@ Additional details can be found at [hana_ml.docstore package](https://help.sap.c
 
 
 ### Import and view spatial data
-This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
+This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/support-for-esri-shapefiles) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest Waterloo`**.  Scroll through the results and choose the selection below.
 
@@ -331,13 +331,13 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >If importing an `ESRI Shapefile` from a cloud storage provider, the file must be unzipped, and the object name would be `folder_name/shapefle_name_minus_the_shp_extension`.
 
-4. Choose to import the `ESRI shapefile` into the schema **HOTEL**.  
+4. Choose to import the `ESRI shapefile` into the schema **HOTELS**.  
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
     ![Choose schema and reference system](importESRI2.png)
 
-    >By default, the database server adds the following [spatial reference systems](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloudC/en-US/d23499bcd2951014ad38a3bd89faf03e.html) System View can be queried for available spatial reference systems.
+    >By default, the database server adds the following [spatial reference systems](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/spatial-reference-systems-srs-and-spatial-reference-identifiers-srid) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/st-spatial-reference-systems-system-view?q=ST_SPATIAL_REFERENCE_SYSTEMS) System View can be queried for available spatial reference systems.
 
 5. Rename the imported table as it was created using mixed case.
 
@@ -369,7 +369,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     ![view the spatial data](long-point-data.png)
 
-    Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html).
+    Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/spatial-reference-systems-srs-and-spatial-reference-identifiers-srid).
 
 9. Optionally follow the rest of the sub-steps to import a `GeoJSON` file as a JSON Collection.
 
@@ -395,7 +395,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Choose **Import Data** and provide the credentials to the storage bucket containing the JSON file.
 
-13. Choose to import the JSON file into the schema **HOTEL** and name the collection **`POI_WATERLOO_JSON`**.
+13. Choose to import the JSON file into the schema **HOTELS** and name the collection **`POI_WATERLOO_JSON`**.
 
     ![import JSON](import-JSON.png)
 
@@ -467,9 +467,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >The map may not display if the byte limit is exceeded. The byte limit can be changed in the SQL console settings.
 
-    For additional details, see [ST_Point Type](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a29e653787c1014813b997510a8cc06.html), [ST_Distance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a182aa3787c101481f996e3d419c720.html), [ST_WithinDistance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a1cc028787c1014b4afe2c72ff94316.html), and [ST_UnionAggr Method](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/601aa9fb93e241af96faafcb8f01b12e.html).
+    For additional details, see [ST_Point Type](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/st-point-type), [ST_Distance](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/st-distance-method), [ST_WithinDistance](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/st-withindistance-method), and [ST_UnionAggr Method](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/601aa9fb93e241af96faafcb8f01b12e.html).
 
-    To view all access methods for spatial data, see [SAP HANA Spatial Reference for SAP HANA Cloud - Accessing and Manipulating Spatial Data](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2d11d7787c1014ac3a8663250814c2.html).
+    To view all access methods for spatial data, see [SAP HANA Spatial Reference for SAP HANA Cloud - Accessing and Manipulating Spatial Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/accessing-and-manipulating-spatial-data).
 
     >The latitude and longitude for a location in Google Maps can be obtained for a given address via the marker's context menu.  
 

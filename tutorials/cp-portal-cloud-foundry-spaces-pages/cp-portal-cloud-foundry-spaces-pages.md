@@ -2,12 +2,12 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-fiori, software-product>sap-build-work-zone--standard-edition]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, products>sap-build-work-zone--standard-edition]
 primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
-
+ 
 
 # Design Your Site With the New SAP Build Work Zone Experience
 <!-- description --> Create a page, assign it to a space, and then add apps to your page.
@@ -38,7 +38,7 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 
     ![Enter a title](3-enter-title.png)
 
-
+4. Click **Save**.
 
 ### Add apps to the page    
 

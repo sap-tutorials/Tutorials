@@ -3,15 +3,15 @@ author_name: Paola Laufer
 author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
-time: 5
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product-function>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
+time: 10
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product-function>sap-fiori-elements, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
 primary_tag: software-product>sap-build-code
 parser: v2
 ---
 
 # Setup SAP Build Code in SAP BTP
 <!-- description --> SAP Build Code provides generative AI-based code development with Joule copilot, optimized for Java and JavaScript application development. It offers a turn-key environment for coding, testing, integrations, and application lifecycle management.
->**Note** The trial version of SAP Build Code is currently only available in the US10 region. 
+>The trial version of SAP Build Code is currently only available in the US10 region. 
 
 Perform these preparatory steps to set up your system for creating your business applications in SAP Build Code.
 
@@ -24,14 +24,18 @@ Perform these preparatory steps to set up your system for creating your business
 
 ### Run the SAP Build Code Booster
 
->**Notes** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different. <br>
+>This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different. <br>
     
 
 1. Access your [global account](https://account.hanatrial.ondemand.com/) and click **Go To Your Trial Account**.
 
     <!-- border -->![Open Trial account](open_trial_subaccount.png)
 
-2. In the navigation pane, click **Boosters**. 
+2. Unsubscribe from SAP Business Application Studio.
+
+    > **Important:** Any project created in SAP Business Application Studio will be lost. Make sure to backup your projects before you unsubscribe.
+
+3. In the navigation pane, click **Boosters**. 
 
     <!-- border -->![Boosters](boosters-navpane.png)
     
@@ -67,3 +71,5 @@ Perform these preparatory steps to set up your system for creating your business
     The SAP Build lobby opens.
 
     <!-- border -->![SAP Build Lobby](sap-build-lobby.png)
+
+>**IMPORTANT:** When you run the booster, the needed roles are added to your user in the default IDP. But if you are also using a custom IDP, for example because you also installed SAP Build Apps, you may need to also add the roles **Build Code Administrator** and **Build Code Developer**.   

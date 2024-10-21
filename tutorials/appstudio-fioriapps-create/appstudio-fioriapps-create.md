@@ -34,7 +34,7 @@ The flow consists of the following parts:
 
 >**Important**
 
->After a period of idle time the dev space is automatically stopped. In order to restart the dev space, open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
+>After a period of idle time the dev space is automatically stopped. In order to restart the dev space, open the **dev space manager**, click the **Play** icon, and - when the dev space is running again - click the dev space.
 
 >The period of idle time for enterprise accounts is different than for trial accounts.
 
@@ -75,7 +75,7 @@ The flow consists of the following parts:
 
     > You can also create a project from the terminal using Yeoman (`@sap/fiori` generator).
 
-2. Select the **SAP Fiori Application** tile, and click **Start**.
+2. Select the **SAP Fiori generator** tile, and click **Start**.
 
     <!-- border -->![fiori template group](BAS-Generate-App-2-1-.png)
 
@@ -87,7 +87,7 @@ The flow consists of the following parts:
 
     <!-- border -->![Floorplan Selection](BAS-Generate-App-3-1-.png)
 
-4. For **Data Source and Service Selection**, select the following, and click **Next**.
+4. For **Data Source and Service Selection**, select the following, and click **Next**. 
 
     | Parameter | Value |
     |:----------|:------|
@@ -110,14 +110,19 @@ The flow consists of the following parts:
     | Application namespace | **ns** |
     | Description | **An SAP Fiori app to view a list of suppliers (demo)** |
     | Project folder path | **`/home/user/projects/FioriDemo`** |
-    | Minimum SAPUI5 version | (Use the default) |
+    | Minimum SAPUI5 version | (Use the latest version)  |
     | Add deployment configuration | **Yes** |
     | Add FLP configuration | **Yes** |
     | Configure advanced options | **No** (default) |
 
-    Make sure to set the correct project folder path.
+    Make sure to set the correct project folder path and to use the latest SAPUI5 version.
 
     <!-- border -->![Project Attributes](BAS-Generate-App-6-1-.png)
+
+    > You might need to scroll to see the latest version when selecting the **Minimum SAPUI5version**.
+
+    ><!-- border --> ![Minimum SAPUI5 version](BAS-Generate-App-6-2-.png)
+
 
 7. For **Deployment Configuration**, select the following, and click **Next**.
 
@@ -150,9 +155,13 @@ The flow consists of the following parts:
 ### Run the App Locally in the Dev Space
 
 
-1.	Click the **Run Configurations** button to open the `Run Configurations` view. You'll see a set of run configurations that were created when you generated the app.
+1.	Click the **Run Configurations** icon to open the `Run Configurations` view. You'll see a set of run configurations that were created when you generated the app.
 
     <!-- border -->![local run](BAS-Local-Run-1-1-.png)
+
+    >If you use a smaller screen the **Run Configurations** icon might be hidden. Then search for the **...** icon. Selecting this icon will open a menu showing all hidden menu entries.
+
+    ><!-- border -->![hidden menu entries](BAS-Generate-App-10-2-.png)
 
 2.	Hover over the **`Start businesspartners`** run configuration and click the **Play** icon next to it to run the app locally in the dev space.
 
@@ -224,7 +233,7 @@ Edit your app using the layout editor, with no need to do any coding.
 
 >Tip 1: Since autosave is enabled by default, every change to a file triggers the live reload of the app. If you place the browser with the running app and the browser window with SAP Business Application Studio side by side, you'll be able to see how changes trigger the app's live reload.
 
->Tip 2: To trigger live reload only when you save a file, in the menu bar, select **File | Auto Save** to toggle auto save from enable (default) to disable. A checkmark next to auto save indicates that auto save is enabled.
+>Tip 2: To trigger live reload only when you save a file, in the menu bar, select **File | Auto Save** to toggle auto save from enable (default) to disable. A check mark next to auto save indicates that auto save is enabled.
 
 1. In the **Controls** pane, enter `List` in the search box to filter the controls.
 

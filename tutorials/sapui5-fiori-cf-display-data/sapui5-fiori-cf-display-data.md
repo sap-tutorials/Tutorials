@@ -72,6 +72,7 @@ yo easy-ui5 project model
 | Which binding mode do you want to use? | **`TwoWay`**
 | What is the data source url of your service? | **`https://services.odata.org/V2/Northwind/Northwind.svc/`**
 | Do you want to set up a proxy for the new model? | **`Yes`**
+| Do you want to set up a route (xs-app.json) and destination for your new model? | **`No`**
 
 Please accept the modifications to existing files.
 

@@ -7,7 +7,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # SAP HANA Database Explorer Overview
-<!-- description --> Learn about the SAP HANA database explorer and how to start using it with SAP HANA Cloud free tier, trial, SAP HANA, express edition, or SAP HANA Cloud Guided Experience.
+<!-- description --> Learn about the SAP HANA database explorer and how to start using it with SAP HANA Cloud trial, free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial.
 
 ## Prerequisites
  - A machine that can run SAP HANA, express edition if the other options are not used
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-hana-cloud
 ## You will learn
   - About the features provided by the SAP HANA database explorer
   - Details about the version differences between the SAP HANA database explorer in SAP HANA Cloud and in an on-premise installation such as SAP HANA, express edition
-  - How to get started with SAP HANA Cloud free tier, trial, SAP HANA, express edition, or SAP HANA Cloud Guided Experience
+  - How to get started with SAP HANA Cloud trial, free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial
 ---
 
 
@@ -48,10 +48,6 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
     ![opening the SAP HANA database explorer from the SAP HANA Cockpit](open-dbx-from-hana-cockpit.png)
 
-* From the SAP Business Technology Platform (SAP BTP) Cockpit when the instances are deployed into a Cloud Foundry space.
-
-    ![opening the SAP HANA database explorer from the SAP BTP Cockpit](open-dbx-from-hana-cloud.png)
-
 * From the Business Application Studio in a SAP HANA Native Application development space
 
     The command palette or the SAP HANA Projects panel can be used to open the SAP HANA database explorer.
@@ -62,22 +58,23 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
     ![opening the SAP HANA database explorer from the SAP Web IDE](open-dbx-from-web-ide.png)
 
-    >Once the SAP HANA database explorer extension is enabled, the SAP HANA database explorer can be shown by selecting the icon highlighted above.
-
 The following are some related documentation links for SAP HANA and the SAP HANA database explorer.
 
 |  Version     | Notes |
 |  :------------- | :------------- |
-|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 07, which was released on April 4, 2023 |
+|  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM) | Released in November 2016. Current version is 2.0 SPS 07, which was released on April 4, 2023 |
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/7fa981c8f1b44196b243faeb4afb5793.html) | Current version is 2.16, which was released in October 2023 |
-|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/docs/SAP_HANA_COCKPIT/a1199348948f4579b6bc3b7153999749/b30dd56165f3407e8fbce88aaf2c9b27.html) | What's new since the previous on-premise release.   |
-|  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set |
-|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 07 |
-|  [SAP HANA, express edition, release notes for SPS 07, revision 72](https://www.sap.com/documents/2023/12/242fc18e-9c7e-0010-bca6-c68f7e60039b.html)  | The version of the Database Explorer (HRTT) for this release is  2.15 |
-|  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 with quarterly new releases |
+|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/docs/SAP_HANA_COCKPIT/a1199348948f4579b6bc3b7153999749/d48e43fed096438c94f7ee0636f155ef.html) | What's new since the previous on-premise release.   |
+|  [SAP Web IDE for SAP HANA](https://help.sap.com/docs/SAPWEBIDE?version=SAPWEBIDE4HANA) | SAP Help documentation set |
+|  [SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)   | Released in September 2016.  Current version is 2.0 SPS 07 |
+|  [SAP HANA, express edition, release notes for SPS 07, revision 76](https://www.sap.com/documents/2023/12/242fc18e-9c7e-0010-bca6-c68f7e60039b.html)  | The version of the SAP HANA database explorer (HRTT) for this release is  2.16 |
+|  [SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)   | Released in March 2020 with quarterly new releases |
 |  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/getting-started-with-sap-hana-database-explorer)   | New features are released as often as every two weeks. |
-|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/whats-new/2495b34492334456a49084831c2bea4e?Category=SAP%20HANA%20Database%20Explorer&locale=en-US)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
+|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/whats-new/2495b34492334456a49084831c2bea4e?Category=SAP%20HANA%20Database%20Explorer&locale=en-US)   | What's New.  This link is also available from the Help menu in the SAP HANA database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
 
+Functionality such as executing SQL statements and browsing database schema is now also available in SAP HANA Cloud Central providing one tool for administration.
+
+![database objects](hana-cloud-central.png)
 
 ### Version information
 
@@ -93,7 +90,7 @@ The image below shows the SAP HANA database explorer running in an on-premise in
 
 ![latest available version for on-premise](dbx-on-premise-version.png)
 
-For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.15.X has been released, there will no longer be fixes made to  the 2.14.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
+For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.16.X has been released, there will no longer be fixes made to  the 2.15.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
 
 The SAP Software download links (requires an S-User ID to access) below are for the on-premise version of the SAP HANA Cockpit, the SAP Web IDE, and the SAP HANA database explorer.  These pages also contain links to release notes that describe fixes made to each release.
 
@@ -105,19 +102,19 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 
 
-### SAP HANA Cloud free tier or trial
+### SAP HANA Cloud trial or free tier
 
 To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 4 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
 
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
->SAP HANA Cloud free tier or trial instances are shut down overnight (i.e. 12:00 AM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
+>SAP HANA Cloud trial or free tier instances are shut down overnight (i.e. 10:00 PM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
 
 >---
 
->In QRC 3 of 2022, a new version of the SAP HANA Cloud tools (SAP HANA Cloud Central, SAP HANA cockpit, and SAP HANA database explorer) was released.  SAP BTP provides multiple runtime environments such as Kyma and Cloud Foundry. When a HANA Cloud or data lake instance is created, it can be provisioned at the BTP subaccount or in a Cloud Foundry space.  The runtime environment label in SAP HANA Cloud Central or in the SAP BTP Cockpit indicates where the instance has been provisioned with the value of Other Environments indicating that it was provisioned at the SAP BTP subaccount.  Further details can be found at [SAP HANA Cloud goes multi-environment](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/).
+>In QRC 3 of 2022, a new version of the SAP HANA Cloud tools (SAP HANA Cloud Central, SAP HANA cockpit, and SAP HANA database explorer) was released which runs in the subaccount rather than Cloud Foundry.  This edition of the SAP HANA Cloud tools can better support instances of SAP HANA Cloud running in multiple environments.  SAP BTP provides multiple runtime environments such as Kyma and Cloud Foundry. When a HANA Cloud or data lake instance is created, it can be provisioned at the BTP subaccount or in a Cloud Foundry space.  The runtime environment label in SAP HANA Cloud Central or in the SAP BTP Cockpit indicates where the instance has been provisioned with the value of Other Environments indicating that it was provisioned at the SAP BTP subaccount.  Further details can be found at [SAP HANA Cloud goes multi-environment](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/).
 
-The instructions on how to setup a free SAP HANA Cloud free tier or trial within SAP BTP are well covered in several other sources listed below.  
+The instructions on how to setup a free SAP HANA Cloud trial or free tier within SAP BTP are well covered in several other sources listed below.  
 
   * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
@@ -133,7 +130,7 @@ The instructions on how to setup a free SAP HANA Cloud free tier or trial within
 
   * <https://developers.sap.com/topics/business-technology-platform.html>
 
-  * <https://help.sap.com/viewer/product/BTP/Cloud/en-US>
+  * <https://help.sap.com/docs/btp>
 
 Continue on to the next tutorial in this group once you have access to an SAP HANA instance.
 
@@ -141,7 +138,7 @@ Continue on to the next tutorial in this group once you have access to an SAP HA
 
 >This step only needs to be completed if you currently do not have access to an SAP HANA instance and did not setup an SAP HANA instance through the SAP HANA Cloud as explained in step 3.
 
-An alternative option to using the SAP HANA Cloud free tier or trial is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).
+An alternative option to using the SAP HANA Cloud trial or free tier is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).
 
 SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS and Linux machines.  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280) or [Getting Started with SAP HANA 2.0, express edition (Virtual Machine Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/8c3bbc4a904d42efac77c09da0bccf64).  The **Applications** option adds XS Advanced, the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
 
@@ -155,17 +152,21 @@ Once installed, a useful starting point is the page below.
 
 It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP HANA cockpit manager.
 
-### SAP HANA Cloud Guided Experience
-The SAP HANA Cloud Guided Experience provides a database user and password that has access to a specific schema free for 30 days.  The database user can be used with the SAP HANA cockpit and SAP HANA database explorer.  The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users.  To get started, click on Try Now on Discover SAP HANA Cloud section of the trial page of [SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html).
+### SAP HANA Cloud Basic Trial
+The SAP HANA Cloud Basic Trial provides a database user and password that has access to a specific schema free for 30 days.  The database user can be used with the SAP HANA database explorer.  The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users.  To get started, click on Try Now on Discover SAP HANA Cloud section of the trial page of [SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html).
 
 ![experience SAP HANA Cloud](experience.png)
 
-A set of guided tours is also available by clicking on the SAP logo in the bottom right.
+The SAP HANA database explorer is shown below connected to the provided instance.
 
 ![Guided Experience in the SAP HANA database explorer](experience-dbx.png)
 
+A tutorial is available to be used with the basic trial.  
+
+![basic trial tutorial content](basic-trial-content.png)
+
 ### Knowledge check
 
-Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud free tier, trial, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
+Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
 
 ---

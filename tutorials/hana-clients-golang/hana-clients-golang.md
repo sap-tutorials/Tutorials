@@ -41,7 +41,6 @@ On Linux, follow the instructions for the appropriate Linux version such as the 
 >In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
 ### Configure the environment
-
 The SAP HANA Client interface for Go, like the other SAP HANA client interfaces, except for JDBC, makes use of a C library named SQLDBC.  The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [`cgo`](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Set Up Your Application to Use the Go Driver Package](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/fba20e31f75c4f7ca5629083869069e5.html) in the SAP HANA Client Interface Programming Reference Guide.  A 64-bit `gcc` compiler is required.
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
@@ -112,7 +111,6 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     ![createModule](createModule.png)
 
 ### Create a Go application that queries an SAP HANA database
-
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
 
     ```Shell (Microsoft Windows)
@@ -159,7 +157,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
       }
       defer db.Close()
 
-      rows, err := db.Query("SELECT NAME, ADDRESS from HOTEL.CUSTOMER")
+      rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
       if err != nil {
         log.Fatal(err)
       }
@@ -227,7 +225,6 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 For more information on the API's used, consult the SAP HANA connection specific properties at [Go Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/8d61ae225ae44b0bab2fb2285009f68d.html), [Go Database/SQL Tutorial](http://go-database-sql.org/index.html), and [Package SQL](https://golang.org/pkg/database/sql/).
 
 ### Debug the application
-
 Visual Studio Code provides plugins for Go and can be used to debug an application.
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
@@ -256,8 +253,8 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     >Debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
 
-### Knowledge check
 
+### Knowledge check
 Congratulations! You have now created and debugged a Go application that connects to and queries an SAP HANA database.
 
 

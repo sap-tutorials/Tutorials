@@ -22,8 +22,6 @@ HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  H
 ---
 
 ### Connect to SAP HANA using hdbsql
-
-
 This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
@@ -131,7 +129,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         
       _Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
-      A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients) and [3397584 - HANA Cloud Connections will switch from "DigiCert Global Root CA" to "DigiCert Global Root G2"](https://me.sap.com/notes/3397584).  
+      A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients) and [3397584 - HANA Cloud Connections will switch from "DigiCert Global Root CA" to "DigiCert TLS RSA4096 Root G5"](https://me.sap.com/notes/3397584).  
         
       It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to `trust.pem` and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
 
@@ -152,8 +150,6 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
 
 ### Create user and schema
-
-
 This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent step and will be used to connect to the database. 
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
@@ -188,15 +184,15 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
     SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
     GRANT CREATE SCHEMA TO USER1;
     CONNECT USER1 PASSWORD Password1;
-    CREATE SCHEMA HOTEL;
-    SET SCHEMA HOTEL;
-    GRANT SELECT ON SCHEMA HOTEL TO USER2;
-    GRANT SELECT ON SCHEMA HOTEL TO DBADMIN;
+    CREATE SCHEMA HOTELS;
+    SET SCHEMA HOTELS;
+    GRANT SELECT ON SCHEMA HOTELS TO USER2;
+    GRANT SELECT ON SCHEMA HOTELS TO DBADMIN;
     SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
 
     ```
 
-    Notice that the current user and schema have also changed from `DBADMIN` or `SYSTEM` to `USER1` and that the schema is now HOTEL.
+    Notice that the current user and schema have also changed from `DBADMIN` or `SYSTEM` to `USER1` and that the schema is now HOTELS.
 
 For further information on SQL to create a user or schema, see [CREATE USER Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control), [CREATE SCHEMA Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-schema-statement-data-definition),
  [Grant Statement(Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control), and [Privileges](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/privileges).
@@ -253,7 +249,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ```SQL
     --CONNECT USER1 PASSWORD Password1;
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     CREATE COLUMN TABLE HOTEL(
       hno INTEGER PRIMARY KEY,
       name NVARCHAR(50) NOT NULL,
@@ -427,7 +423,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     Confirm that 15 records have been inserted.  
 
     ```Shell
-    hdbsql -U USER1UserKey "SELECT COUNT(*) FROM HOTEL.CUSTOMER";
+    hdbsql -U USER1UserKey "SELECT COUNT(*) FROM HOTELS.CUSTOMER";
     ```
 
     ![result](select.png)
@@ -436,11 +432,13 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ```SQL
     hdbsql -U USER1UserKey
-    \dt HOTEL.
-    \dp HOTEL.
+    \dt HOTELS.
+    \dp HOTELS.
     ```
 
      ![View the list of tables and procedures](list-tables-procs.png)
+
+     If the output is not aligned, aligned output mode can be toggled with \al in hdbsql.
 
     For further information, see [CREATE TABLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-table-statement-data-definition) and [INSERT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/insert-statement-data-manipulation).
 
@@ -448,9 +446,9 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 5. Identifiers such as table names are automatically upper cased unless they are within "".  
     
     ```SQL
-    SELECT * FROM HoTeL.RoOm;  --succeeds
-    SELECT * FROM "HoTeL"."RoOm"; --fails
-    SELECT * FROM "HOTEL"."ROOM"; --succeeds
+    SELECT * FROM HoTeLs.RoOm;  --succeeds
+    SELECT * FROM "HoTeLs"."RoOm"; --fails
+    SELECT * FROM "HOTELS"."ROOM"; --succeeds
     ```
 
     For further details, consult [Identifiers and case sensitivity](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/introduction-to-sql#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
@@ -460,19 +458,17 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ```SQL
     --DO NOT EXECUTE UNLESS YOU ARE FINISHED WITH THE TUTORIAL
-    DROP SCHEMA HOTEL CASCADE;
+    DROP SCHEMA HOTELS CASCADE;
     DROP USER USER1 CASCADE;
     DROP USER USER2 CASCADE;
     ```
 
 ### Interactive, non-interactive, substitution variables, and prepared statements
-
-
 1. HDBSQL can [run commands](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
     ```SQL
-    SELECT * FROM HOTEL.CUSTOMER; -- interactive
-    hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    SELECT * FROM HOTELS.CUSTOMER; -- interactive
+    hdbsql -U USER1UserKey "SELECT * FROM HOTELS.CUSTOMER"; -- non-interactive
     hdbsql -U USER1UserKey -I hotel.sql -- batch file
     ```
 
@@ -491,7 +487,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     Given the following SQL statement:
 
     ```SQL (findCustomers.sql)
-    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
+    SELECT * FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE '&nameParam'
     ```
 
     We can call the query by executing the following command:
@@ -507,29 +503,29 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```SQL
     \vd titleParam Mr
     \vl
-    SELECT * FROM HOTEL.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
+    SELECT * FROM HOTELS.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
     ```
 
     ![further example of substitution parameters](subst2.png)
 
     See [SAP HANA HDBSQL Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) for details on the options to list and define substitution variables.
 
-3. As of version 2.13, HDBSQL will prompt for required parameters.  A few examples follow.
+3. HDBSQL will prompt for required parameters.  A few examples follow.
 
     ```SQL
-    SELECT * FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?;
+    SELECT * FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE ?;
     ```
 
     ```SQL
-    CALL HOTEL.SHOW_RESERVATIONS(?, ?);
+    CALL HOTELS.SHOW_RESERVATIONS(?, ?);
     ```
 
     ![Prompting for parameters](prepared.png)
 
     In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase. In the previous step which used substitution variables, however, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
 
-### Knowledge check
 
+### Knowledge check
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 
 

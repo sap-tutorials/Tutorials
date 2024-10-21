@@ -4,7 +4,7 @@ author_profile: https://github.com/PaoLaufer
 keywords: tutorial
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-application-studio, software-product>sapui5, software-product>sap-mobile-services, software-product>sap-fiori-elements, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform ]
 primary_tag: software-product>sap-build-code
 parser: v2
 ---
@@ -27,8 +27,8 @@ parser: v2
 >**Note** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different.
 
 1. Navigate to the SAP Build lobby.
+
 2. Click **Create** to start the creation process.  
-<br>
 
     <!-- border -->![Create](1.2red.png)
 
@@ -47,7 +47,7 @@ parser: v2
 6. Enter a name for your project.
 
 7. Select the dev space where you want the project to reside.
-    >SAP Build Code recommends the dev space it deems most suitable, and it will automatically create a new one for you if you don't already have one. If you have other dev spaces of the same type (for example, Full-Stack), you can select between them. If you want to create a different dev space, or a dev space or another type, go to the Dev Space Manager. See [Working in the Dev Space Manager](https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/ad40d52d0bea4d79baaf9626509caf33.html?locale=en-US&state=DRAFT&version=SHIP).
+    >SAP Build Code recommends the dev space it deems most suitable, and it will automatically create a new one for you if you don't already have one. If you have other dev spaces of the same type (for example, Full-Stack), you can select between them. If you want to create a different dev space, or a dev space or another type, go to the Dev Space Manager. See [Working in the Dev Space Manager](https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/ad40d52d0bea4d79baaf9626509caf33.html?locale=en-US).
 
 8. Click **Create**.
     
@@ -68,6 +68,9 @@ parser: v2
     <!-- border -->![SAP Business Application Studio](19.png)
 
 
+
+
+
 ### Create Data Entities with Joule
 
 Let's create an application for a customer loyalty program. The customer can get bonus points by purchasing products and can redeem these points. 
@@ -79,14 +82,10 @@ Let's create an application for a customer loyalty program. The customer can get
 
     <!-- border -->![Open Joule](21.png)
 
-    >Note: If you do not see the icon, click Additional Views and select **Joule** from the list.
+    >If you do not see the icon, click Additional Views and select **Joule** from the list.
+    >
     >![Find Joule icon](additional_views.png)
 
-2. Click **Open Guide**. 
-
-3. Expand the **Data Model and Service Creation** section, and click **Open Joule**.
-
-    <!-- border -->![Open Joule2](open_guide.png)
 
 4.  Copy the prompt below.
 
@@ -103,15 +102,19 @@ Let's create an application for a customer loyalty program. The customer can get
     Each purchase will be associated to a product and is called selectedProduct.
     ```
 
-5. Paste the code in the text field, and click the arrow ![send arrow](askjoule.png) to send the prompt to Joule.
+5. At the bottom of the Joule view, select one of the slash commands suggested and then paste the code in the text field.
 
-    <!-- border -->![Enter Prompt](send_prompt2.png) 
+    <!-- border -->![Enter command](joule1.png) 
+
+6. Click the arrow ![send arrow](joulearrow.png) to send the prompt to Joule.
+
+    <!-- border -->![Enter Prompt](joule2A.png) 
 
     The code is generated and is displayed below your prompt. 
     
 6. Accept the code. <br/>
 
-    <!-- border -->![accept](accept_code.png)
+    <!-- border -->![accept](joule2B.png)
     
     Depending on the server, it may take a few moments for Joule to create the data models and services for you.<br>
 
@@ -120,22 +123,27 @@ Let's create an application for a customer loyalty program. The customer can get
     >**Tip**: To open the Storyboard, navigate to the **Project Explorer**, expand your project, and select **Storyboard**. 
 
 
+
+
+
+
+
 ### Enhance the Application Data Using Joule 
 
 <!-- description --> Joule created the CAP data model and the OData service. In addition, Joule created some data by default. We will now ask Joule to provide additional data.  
 
-1. Open the Data editor in the Storyboard by selecting **Open Editor** -> **Sample Data**.
+1. Click **Open Data Editor**.
 
-    <!-- border -->![OpenEditor](31.png)
+    <!-- border -->![OpenEditor](joule 3.png)
 
-2. In the Data Editor, select the **Customers** data entity, go to the **INITIAL DATA** tab, and add 5 more rows. Click **Add**.
+2. In the Data Editor, select the **Customers** data entity, go to the **SAMPLE DATA** tab, and add 5 more rows. Click **Add**.
 
-    <!-- border -->![Click Add](initial_data.png)
+    <!-- border -->![Click Add](joule08.png)
 
 
 3. Click **Enhance**. This will reopen Joule to modify the application data. 
 
-    <!-- border -->![Enhance](33a.png)
+    <!-- border -->![Enhance](joule09.png)
 
 4. Copy the prompt below:
 
@@ -147,9 +155,9 @@ Let's create an application for a customer loyalty program. The customer can get
     Both total reward points and total redeemed reward points must not be rounded, must not be identical. and must always sum to one-tenth of the total purchase value for each customer.
     ```
 
-5. Paste the prompt in the text field, and click the arrow (![send arrow](askjoule.png)) to send the prompt to Joule.
+5. Paste the prompt in the text field, and click the arrow (![send arrow](joulearrow.png)) to send the prompt to Joule.
 
-    <!-- border -->![New Prompt](34a.png) 
+    <!-- border -->![New Prompt](jouleenhance.png) 
 
     The code is generated and is displayed below your prompt.
 
@@ -157,38 +165,38 @@ Let's create an application for a customer loyalty program. The customer can get
    This will add the customer names, email addresses, and purchases. 
 
     <!-- border -->
-    ![Accept](36.png)
+    ![Accept](joule_accept_code.png)
+
+
+
+
 
 
 ### Create Application Logic with Joule 
 
 We already have created the data model, service, and sample data with Joule. Now we want to create some logic for our service. We would like to calculate the bonus points automatically when a customer makes a purchase. Additionally, we want to provide logic for customers to redeem these bonus points.
 
-1. In the Storyboard, click on the **Purchases** entity under **Services**, and select **Open in Graphical Modeler**.
+1. In the Storyboard, click on the **Purchases** entity under **Services**, and select **Add Logic**.
 
-    <!-- border -->![Open in Graphical Modeler](41a.png)
-
-2. Select the **Purchases** entity by clicking on the title. Then, click **Add Logic**.
-
-    <!-- border -->![Add Logic](42a.png)
-
-    >If you do not see the entity, click the Show All icon.
+    <!-- border -->![Open in Graphical Modeler](purchases_logic.png)
+    
+    >If you do not see the entity, click the **Show All** icon.
     >
-    ><!-- border -->![Show All icon](show_all.png)
+    >![Show All icon](show_all.png)
 
 3. In the **Add Application Logic** dialog, leave the default values, and click **Add**.
 
-    <!-- border -->![Add](43a.png)
+    <!-- border -->![Add](add_app_logic.png)
 
     The Application Logic Editor opens.
 
 4. In the **Standard Event** section, select **Create**. That means that this logic will be automatically executed if an OData create operation is requested. <br/> 
 
-    <!-- border -->![Add logic](44a.png)
+    <!-- border -->![Add logic](app_logic.png)
 
 5. Click **Open Code Editor**, and select **Application Logic**. This will open Joule again to allow us to send a prompt to Joule to create the logic for us.
 
-    <!-- border -->![Create](45a.png)
+    <!-- border -->![Create](app_logic2.png)
 
 6. Copy the prompt below:
 
@@ -200,7 +208,7 @@ We already have created the data model, service, and sample data with Joule. Now
     
 7. Paste the prompt in the text field, and click the arrow (![Send prompt](prompt_arrow.png)) to send the prompt to Joule.
     
-    <!-- border -->![Enter prompt](46a.png)
+    <!-- border -->![Enter prompt](app_logic3.png)
 
     So Joule created code that implements the following logic:
 
@@ -213,32 +221,33 @@ We already have created the data model, service, and sample data with Joule. Now
 
 7. Accept the code. 
 
-    ![Add](48a.png)
+    ![Add](joule019.png)
 
-    > **Note:** Joule typically generates different code each time for the same prompt. If yours is different to what you can see here, that's fine as long as it does the same job.<br/> 
-    If there are no obvious errors, just keep working on the exercise. If you  aren't sure, you can ask Joule to try again by clicking **Regenerate**.  
+    > Joule typically generates different code each time for the same prompt. If yours is different to what you can see here, that's fine as long as it does the same job.
+    > 
+    >If there are no obvious errors, just keep working on the exercise. If you  aren't sure, you can ask Joule to try again by clicking **Regenerate**.  
 
-8. Go back to the `service.cds` tab. 
+8. Go back to the storyboard. 
 
-9. Select the **Redemptions** entity by clicking on the title. Then, click **Add Logic**.
+9. Select the **Redemptions** entity under **Services** and select  **Add Logic**. 
 
-    <!-- border -->![Add logic](49a.png)
+    <!-- border -->![Add logic](add_logic.png)
 
-    >If you do not see the entity, click the Show All icon.
-    > <br/>
+    >If you do not see the entity, click the **Show All** icon.
+    >
     >![Show All icon](show_all.png)
 
 9. In the **Add Application Logic** dialog, leave the default values, and click **Add**.
 
-    <!-- border -->![Add](49b.png)
+    <!-- border -->![Add](logic.png)
 
 10. In the **Standard Event** section, select **Create**.
 
-    <!-- border -->![Add app logic](410a.png)
+    <!-- border -->![Add app logic](createlogic.png)
 
 11. Click **Open Code Editor**, and select **Application Logic**. This will open Joule again to allow us to send a prompt to Joule to create the logic for us.
 
-    <!-- border -->![open app logic editor](411a.png)
+    <!-- border -->![open app logic editor](red_logic.png)
 
 11. Copy the prompt below::
 
@@ -248,16 +257,20 @@ We already have created the data model, service, and sample data with Joule. Now
 
 12. Paste the prompt in the text field, and click the arrow (![Send prompt](prompt_arrow.png)) to send the prompt to Joule.
 
-    <!-- border -->![Add prompt](413.png)
+    <!-- border -->![Add prompt](joulelogic.png)
 
 13. Accept the code. 
 
-    <!-- border -->![Accept the generated code](414.png)
+    <!-- border -->![Accept the generated code](accept2.png)
 
     Have a closer look at the generated code. It even includes some checks to see if the customer has enough points to redeem.
 
-    <!-- border -->![generated code](415.png)
+    <!-- border -->![generated code](points.png)
  
+ 
+
+
+
 
 ###  Add UI to the Application  
 
@@ -268,6 +281,7 @@ To display and test the content we created for the customer loyalty program, we 
     <!-- border -->![Add UI](51a.png)
 
 2. We will start with the user interface for the **Purchases** data entity. 
+
     Set the **Display name** to **Purchases** and the **Description** to **Manage Purchases**, and then click **Next**.
 
     <!-- border -->![UI details](52a.png)
@@ -308,7 +322,7 @@ To display and test the content we created for the customer loyalty program, we 
 
 7. To preview your application, once the files have been generated, go to the upper-right corner, and click ![preview](playgreen.png) (Run and Debug).
 
-    <!-- border -->![open app preview](56.png)
+    <!-- border -->![open app preview](addUI.png)
 
     The application's preview is displayed.
 
@@ -322,7 +336,7 @@ To display and test the content we created for the customer loyalty program, we 
 
     <!-- border -->![app preview](preview3.png)
 
-9. From the dropdown list at the top of the page, select **Home** to go back and preview the other applications.
+9.  From the dropdown list at the top of the page, select **Home** to go back and preview the other applications.
 
     <!-- border -->![app preview](preview4.png)
 

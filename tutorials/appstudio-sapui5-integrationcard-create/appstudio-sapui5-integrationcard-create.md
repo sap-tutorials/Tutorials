@@ -15,7 +15,7 @@ author name: Boris Dafov
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
-- To deploy a UI5 Integration card in the SAP Build Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone service. Additionally, you have to configure a destination for SAP Build Work Zone instance See [Creating a Destination to the Content Repository](https://help.sap.com/docs/WZ/7d3b9c7211ca4d7a9630b524205ee836/4a90162810014b9396dd0edd00b9bc78.html).
+- To deploy a UI5 Integration card in the SAP Build Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone service. Additionally, you have to configure a destination for SAP Build Work Zone instance. See [Development Tools for SAP Build Work Zone](https://help.sap.com/docs/build-work-zone-advanced-edition/sap-build-work-zone-advanced-edition/development-tools-for-sap-build-work-zone-advanced-edition).
 
 
 >**IMPORTANT:** SAP Build Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
@@ -158,8 +158,6 @@ In the next steps you edit the `manifest.json` file to configure the card.
 
 The application displays dynamic data loaded from the SAP Gateway Demo System (ES5). Note, that the actual displayed products may differ depending on the current data in the ES5 demo system. You can also check the [manifest.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/appstudio-sapui5-integrationcard-create/manifest_after_step3.json) file at this step. To learn more, see the [Destinations](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/destinations) and [Data](https://sapui5.hana.ondemand.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/data) sections in the Card Explorer.
 
-
-
 <!-- border -->![Image depicting the application showing dynamic data](3-4.PNG)
 
 If you would like to deploy the card and see how it looks on SAP Build Work Zone, you can skip to Step 6 and deploy it. In the next steps you add card capabilities that can make your card more interactive.
@@ -287,8 +285,6 @@ To learn more, see the [Manifest Parameters](https://sapui5.hana.ondemand.com/te
 **Results after Step 5:**
 
 If you have any issues you can check the [manifest.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/appstudio-sapui5-integrationcard-create/manifest.json) file at this step. It is configured with destinations, parameters, and a filter. 
-
-
 The application displays the products from the selected category:
 
 <!-- border -->![Image depicting the application showing dynamic data, parameters, and a filter](5-5.PNG)
@@ -340,6 +336,10 @@ The `dt/configuration.js` now looks like:
 
 
 ### Deploy card
+
+>If you are using SAP Build Work Zone, advanced edition, please continue following this tutorial to deploy your card.
+
+>If you are using SAP Build Work Zone, standard edition, you will first have to create a Content Package before you can deploy the card. Please skip this step and follow the tutorial that explains how to create the content package: [Create a Content Package with Your UI Integration Card](cp-portal-cloud-foundry-create-content-package)
 
 1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Build Work Zone**  option from the dropdown menu.
 

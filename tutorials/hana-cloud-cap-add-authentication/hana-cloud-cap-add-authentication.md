@@ -58,7 +58,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
     entity Languages           as projection on sap.common.Languages;
 
     @readonly
-    @restrict: [{ grant: 'READ', where: 'COUNTRY_CODE = ''DE'''}]
+    @restrict: [{ grant: 'READ', where: 'country_code = ''DE'''}]
     entity HeaderView as projection on interactions.Headers;
 
     }

@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a site to which you can later add business apps.
 
 ## Prerequisites
- - You have subscribed to SAP Build Work Zone, standard edition and assigned yourself to the `Launchpad_Admin` role
+ - You have subscribed to SAP Build Work Zone, standard edition and assigned yourself to the `Launchpad_Admin` role 
  
 
 ## You will learn
