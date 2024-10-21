@@ -19,10 +19,24 @@ parser: v2
 - How to add a new section.  
 - How to visualize Payment Trends as a simple chart.   
 
+
 ## Prerequisites
 You must first have completed all the steps in [Work with SAPUI5 Adaptation Projects to Generate and Make Simple Changes to an Application Variant](sapui5-adaptation-change-variant).
 
 ## Intro
+**Important information**
+
+This group of three tutorials focuses on SAPUI5 Adaptation Projects in SAP S/4HANA Cloud Public Edition. The same basic principles and features of SAPUI5 Adaptation Projects similarly apply to SAP S/4HANA and SAP S/4HANA Cloud Private Edition. While the first and second tutorials also largely apply to SAP S/4HANA and SAP S/4HANA Cloud Private Edition, the third tutorial applies specifically to SAP S/4HANA Cloud Public Edition.
+
+To learn more about SAPUI5 Adaptation Projects in SAP S/4HANA, please see the SAP Help Portal:
+
+ - [Extending an SAP Fiori Application for an On-Premise System](https://help.sap.com/docs/bas/developing-sap-fiori-app-in-sap-business-application-studio/adaptation-project-for-on-premise-system)
+ - [Working with an Adaptation Project](https://help.sap.com/docs/bas/developing-sap-fiori-app-in-sap-business-application-studio/working-with-adaptation-project)
+
+Please note: the documentation is also valid for SAP S/4HANA Cloud Private Edition.
+
+**When to extend**
+
 SAP S/4HANA Cloud Public Edition delivers the latest industry best practices, innovations, and business applications to you as a service. If a standard SAP Fiori application doesn’t fully support your business process or the specific needs of some of your business users, you can extend SAP S/4HANA Cloud Public Edition by creating and adapting an application variant, while the original SAP Fiori application remains available and unchanged.  In an application variant, you can extend the original code to define changes that fulfill the specific business requirements of different business roles, user groups, organizational units, and countries. For example, you might want to create an application variant to simplify and streamline a specific process by hiding fields not required by casual users, visualizing data as a chart, or changing a responsive table to a grid table to make information easier to process.  
 
 **New for SAP S/4HANA Cloud Public Edition 2402**
@@ -45,8 +59,8 @@ Object Page:
 ### Access your SAPUI5 Adaptation Project
 
 1. Log onto SAP Business Application Studio (BAS) and access your SAP Fiori development space. 
-2. Expand the *Projects* folder and right-click on the adaptation project you created in Tutorial 1 and select *Open SAPUI5 Visual Editor* from the context menu. 
-3. The List Report of the Manage Credit Accounts application is displayed in *Preview* mode.  
+2. Expand the *Projects* folder and right-click on the adaptation project you created in Tutorial 1 and select *Open Adaptation Editor* from the context menu. 
+3. The List Report of the Manage Credit Accounts application is displayed in *UI Adaptation* mode.  Switch to *Navigation* mode.
 4. Choose the `Go` button to populate the table with data. 
 5. Select a business partner by choosing the chevron button to navigate to the Object Page.
 
@@ -54,9 +68,9 @@ Object Page:
 
 ### Extend Object Page with Controller
 
-Working with SAPUI5 Visual Editor:
+Working with Adaptation Editor:
 
-1. On the Object Page, switch from *Preview* to *Edit* mode and select the entire Object Page. After you’ve selected the Object Page in its entirety, choose the `Extend With Controller` button from the visual context menu.
+1. On the Object Page, switch from *Navigation* to *UI Adaptation* mode and select the entire Object Page. After you’ve selected the Object Page in its entirety, choose the `Extend With Controller` button from the visual context menu.
 
 	![Object Page: Extend with Controller](2_Object Page Extend with Controller.png)
 
@@ -79,7 +93,9 @@ Working with SAPUI5 Visual Editor:
 
 	- A corresponding .xml file is generated in your workspace in the *webapp* folder under *changes --> fragments --> extension_chart.fragment.xml*. This file opens automatically in the main window of SAP Business Application Studio. 
 
-7. In the *extension_chart.fragment.xml* file generated in step 6, enter the following code: 
+7.  Press *Save*.
+
+8. In the *extension_chart.fragment.xml* file generated in step 6, enter the following code: 
 
 	```XML
 	<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:objectPage="sap.uxap" 
@@ -117,7 +133,7 @@ Working with SAPUI5 Visual Editor:
 
 	![Extension Chart Fragment](4_Extension Chart Fragment XML.png)
 
-8. In the *OPExtensionController.js* file generated in step 2, enter the following code: 
+9. In the *OPExtensionController.js* file generated in step 2, enter the following code: 
 	- Hint: `<your initials>` needs to be replaced by the initials chosen for your project name. E.g., if the project name is creditaccounts.appvar.cl1 then you need to replace `<your initials>` with *cl1*.
 
 	```JavaScript
@@ -397,7 +413,7 @@ For more information, see
 - [Internationalization](https://help.sap.com/docs/bas/584e0bcbfd4a4aff91c815cefa0bce2d/45e17b0290f846c1aec2be737cddaa3f.html?locale=en-US&state=PRODUCTION&version=Cloud)
 
  
-After you’ve finished making the requested changes to your application variant, you can preview the changes made. To do this, expand the *webapp* folder in your SAP Business Application workspace and right-click on the *manifest.appdescr_variant* file. In the context menu, choose *Adaptation Project --> Open Preview*. 
+After you’ve finished making the requested changes to your application variant, you can preview the changes made. To do this, expand the *webapp* folder in your SAP Business Application workspace and right-click on the *manifest.appdescr_variant* file. In the context menu, choose *Preview Application*. 
 
 [Preview the Adaptation Project](https://help.sap.com/docs/bas/584e0bcbfd4a4aff91c815cefa0bce2d/a8038817f4ee43508f8c5fab254783b8.html?locale=en-US&state=PRODUCTION&version=Cloud)
 
