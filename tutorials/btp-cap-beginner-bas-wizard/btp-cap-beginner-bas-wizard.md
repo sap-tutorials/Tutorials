@@ -152,13 +152,12 @@ The next step is to have a file-based persistence of your data. And it's just so
 1. Add the needed configuration for a file-based SQLite database to your `package.json`.
 
     ```json
-
-"cds": { "requires": {
-    "db": {
-       "kind": "sqlite",
-       "credentials": { "url": "db.sqlite" }
-    }
- }}
+    "cds": { "requires": {
+        "db": {
+        "kind": "sqlite",
+        "credentials": { "url": "db.sqlite" }
+        }
+    }}
     ```
 
 1. Open a terminal by going to **Terminal > New Terminal** and deploy your data to a file-based SQLite3 database.
