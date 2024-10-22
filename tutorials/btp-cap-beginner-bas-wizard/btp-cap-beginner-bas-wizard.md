@@ -103,7 +103,6 @@ entity Authors : managed {
 ```
 
 > ### What is going on?
-
 Besides defining the namespace, you see the `using` directive at the beginning of your file. This is your way to easily use capabilities and content from other modules or from within your project. Have a look at the [documentation for the `using` directive to learn more.](https://cap.cloud.sap/docs/cds/cdl#using)
 
 As books are written by authors you want to add that relationship to your model. You could establish that relationship by adding CDS code to your files. Here you use the graphical modeler inside the studio for that.
