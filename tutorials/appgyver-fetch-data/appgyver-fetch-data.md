@@ -1,96 +1,118 @@
 ---
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform, software-product>sap-build]
+primary_tag: software-product>sap-build-apps
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
 
-# Fetch Data from Public API to Your SAP Build Application
-<!-- description --> Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
+# Fetch Data from Public API to Your App
+<!-- description --> Configure your application to fetch records from a public API when a food item is scanned.
 
 ## You will learn
-  - How to configure your application to fetch records from a public API
-  - How to configure data variables.
+  - How to fetch records from a public API
+  - How to configure data variables
 
 ## Intro
-In the previous tutorial, you learned how to connect your application to a public API. From here, you now need to configure the application to read specific information from that API once a barcode has been scanned. This again uses the Get Record HTTPS request, but this time that request is triggered with a logic flow.
+In the previous tutorial, you learned how to connect your application to a public API. From here, you now need to configure the application to read specific information from that API once a barcode has been scanned. 
+
+This again uses the **retrieve** request, as when you testing the data resource, but this time that request is triggered with a logic flow.
 
 
 
 ### Remove alert component
+As you no longer need your application to send an alert, as this was just used as a test, you need to remove this flow funcion.
 
-Open your draft application in your Composer account, displaying your barcode scanner app.
+1. Open your app, and go to **UI Canvas** tab.
 
-As you no longer need your application to send an alert, as this was just used as a test, you need to start by removing the alert component in your logic flow.
+2. Click the **Scan** button, then click **Show Logic for Button1**.
 
-To do this, click your **Scan** button and then click **Show Logic for Button1**.
+    ![Show logic for button 1](show_logic.png)
 
-![Show logic for button 1](show_logic.png)
+    >If the logic canvas is already open, you can just click the buton.
 
-Remove the **Alert** component from your logic panel, as this is no longer needed.
+3. Select the **Alert** flow function, and click the **X**.
 
-![Remove alert component](alert_component.png)
+    ![Remove alert component](alert_component.png)
+
+
+
 
 
 ### Add Get Record component
 
 You now need to add your new logic flow for what should happen after the barcode has been scanned. For your application, you want the barcode scanner to fetch data from the data resource you configured in the previous tutorial.
 
-To do this, using the core logic options, scroll down to **Data – Get Record** and then drag and drop this into the logic editor.
+1. In the **Core** logic tab, scroll down and drag a **Get Record** flow function. 
 
-![Add Get Record component](get_record.png)
+    ![Add Get Record component](get_record.png)
 
-Add a connector from the top Scan QR/barcode option to the Get Record option, indicating the flow of logic in your application.
+2. Connect the top output of the **Scan QR/Barcode** flow funcion to the input of the **Get Record flow function.
 
-![Add connector](add_connector.png)
+    ![Add connector](add_connector.png)
+
+
+
 
 
 
 ### Edit binding
+After adding a **Get Record**, you need to indicate what backend you want to make a request to and what data you want to send (if any).
 
-Once the logic flow is set, you need to bind the information to the output of the scanner node.
 
-1. To do this, select the **Get Record** element and, using the properties panel, click **Currently bound to: Static text**, opening the binding options screen.
+1. In the logic canvas, select **Get Record** element.
+   
+    The **Resource Name** is already set to the **OpenFoodFacts** data resource since this is the only data resource in the app.
 
     ![Currently bound options](currently_bound.png)
 
-2. Click **Output value of another node**.
+2. Next to the barcode input, click the **X**.
+
+    ![Binding type](bind1.png)
+
+    Since we want to send the barcode the user scanned (which the **Scan QR/Barcode** flow function will output), we select **Output value of another node**.
 
     ![Output value edit](output_value_node.png)
 
-    Configure the binding to the following:
+    Select **Scan QR/Barcode** as the logic node to get the data from.
+    
+    Select **QR barcode content** as the specific output.
 
-    - **Select logic node** – Scan QR/barcode
-    - **Select node output** – Scan QR/barcode / QR barcode content
+    ![Output value](output_value_node2.png)
 
-3. Click **Save**.
+    Click **Save**.
 
 The Get Record flow function should now be able to fetch data for any food barcode you scan with your application.
 
-![Edit binding](edit_binding.png)
+
+
+
+
 
 
 
 ### Add data variables
-
 You now need to configure your application to store the data it receives. To do this, you need to add data variables.
 
-1. To do this, switch to the **Variables** view.
+1. Switch to the **Variables** view.
 
     ![Switch to variables view](variables_view.png)
 
-2. Click **Data Variables**.
+2. Click **Data Variables** (on the left).
 
     ![Data variables](data_variables.png)
+
+    After reading, click the **Welcome to variables** message to hide it (if the message appears).
+
+    ![Welcome message](data_variables2.png)
 
 3. Click **Add Data Variable**.
 
     ![Add data variables](add_data_variable.png)
 
-    Select your ***Open Food Facts*** variable.
+    Select your **Open Food Facts** variable.
 
     ![Select open food facts](open_food_facts.png)
 
@@ -98,33 +120,27 @@ You now need to configure your application to store the data it receives. To do 
 
     ![Select single data record](single_data_record.png)
 
-4. Data variables come with default logic that fetches new information every five seconds, however your app should only fetch information when a barcode is scanned. As a result, you need to remove the default logic. 
+4. Data variables come with default logic that fetches new information when the page loads. But you want to fetch data only when the user clicks the button and scans a barcode, so you will remove the default logic and later add logic on the button click.
 
-    To do this, click **Show Logic for Empty Page**.
-
-    ![Click show logic button](show_logic_empty.png)
-
-    Then delete the default logic by highlighting it and pressing the **delete button** on the keyboard.
+    Select the **Get record** and **Set data variable** flow functions by drawing a rectangle around them.
 
     ![Delete default logic](delete_default_logic.png)
 
-    Click **Save**.
+    Press the **Delete** key.
+    
+5. Click **Save** (upper right).
 
-    ![Save logic](save_logic.png)
 
-    >**Why did we delete default logic?**
-    >
-    >Whenever you create a data variable, default logic is added to fetch the data when the page loads, and then again every 5 seconds. But we want to fetch data only when the user clicks the button and scans a barcode, so we removed the default logic and will later add logic on the button click.
 
-The data variables are now configured for your application.
+
+
 
 
 
 ### Store API data in data variable
+Finally, we want to store the data we retrieve when the user scans a barcode into the data variable.
 
-1. Click **View** to switch back to your application interface view. 
-
-    From here, you will need to add the final piece to your logic flow, storing the retrieved data into the data variable.
+1. Click **View** to switch back to the user interface view. 
 
     ![Change view](change_view.png)
 
@@ -132,44 +148,57 @@ The data variables are now configured for your application.
 
     ![Scan button logic](scan_button_logic.png)
 
-    >This is where we add the logic to scan a barcode and retrieve the data for that product.
+    >This is where we added the logic to scan a barcode and retrieve the data for that product.
 
-3. Using the core logic options, scroll down to **Variables – Set Data Variables** and then drag and drop this into the logic editor.
+3. Drag a **Set Data Variable** flow function onto the logic canvas.
 
     ![Set Data Variable](set_data_variable.png)
 
-    Add a connector from the top **Get record** option to the **Set data variable** option.
+    Connect the top **Get record** output to the **Set data variable** input.
 
     ![Add connector](add_connector_options.png)
 
-5. Click the **Set data variable** element and click **Currently bound to: object with properties**.
+5. Select the **Set data variable** flow function.
 
-    ![Currently bound](currently_bound_option.png)
+    Since you only have one data variable, it is already selected.
+    
+    ![Currently bound](currently_bound1.png)
 
-    Now you must store the data you just retrieved to the data variable.
+6. Now you will select the data to store in the variable.
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
+    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (if the app hangs, just click to exit). So we have provided a second way to store the data using a formula.
 
-    -  Select **Output value of another node** and then choose the following:
+    -  Under **data**, select the binding type square.
+        
+        ![Select binding type](binddata1.png)
 
-        - ***Select logic node***: Get record
-        - ***Select node output***: Record
+        Select **Output value of another node**. 
+        
+        Select **Get Record**.
+        
+        Select **Record**.
 
-        ![Link text e.g., Destination screen](select_get_record.png)
+        >It may take 30 seconds for the browser to catch up. Just wait.
+
+        ![Bind output](select_get_record.png)
 
     - Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
 
-        Select **Formula**, and then enter for the formula the following:
+        Under **data**, select the binding type square.
+        
+        Select **Formula** (instead of **Output value of another node**), click the existing formula and replace it with the following:
 
         ```JavaScript
         outputs["Get record"].record
         ```
 
+        Click **Save** twice.
+
     Click **Save** to save this logic (no matter how you entered it).
 
     ![Save the logic](save_data_variable.png)
 
-6. Click **Save** (upper right) to save your draft application.
+7. Click **Save** (upper right) to save your draft application.
 
     ![Link text e.g., Destination screen](save_draft.png)
 

@@ -14,6 +14,8 @@ primary_tag: software-product>sap-integration-suite
 ## Intro
 In SAP Process Orchestration (PO), advanced file selection is typically used when working with the File Adapter in an Integrated Configuration (ICO) or Sender Agreement. It allows you to apply complex filtering logic to select files based on specific patterns, timestamps, or metadata. If you want to migration/implement this function in SAP Integration Suite, you need to know how to define, split, poll and process files in SAP Cloud Integration. The Apache Camel framework provides robust file handling capabilities, such as reading files from directories and handles them based on their presence. We´re using an example integration flow to provide you the step-by-step process and we hope you can ensure efficient and error-managed file handling within your integration processes.  
 
+If you want to get an example with split and multicast in detail, please refer to the [SFTP Poll Use Case](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ci-sftp-file-polling/Use%20Case%202.pdf).
+
 ## Prerequisites
 - Get permission to the SAP Integration Suite for design and monitor
 - Have access to an SFTP Server for file upload and download
@@ -87,4 +89,6 @@ In the last step, we are using the receiver adapter ProcessDirect. Therefore, af
 Before sending the message to the next integration flow, you also have the option to take advantage of the Headers Directory and Filename which were set before and build your own message based on the specific scenario.
 ![ProcessDirect Branches]( ProcessDirect.png)  
 
-### Test yourself 
+
+
+### Test yourself

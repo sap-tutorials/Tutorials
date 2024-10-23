@@ -434,7 +434,7 @@ Instead of using in-memory, you can also use persistent databases.
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 6. Run your service.
 

@@ -97,7 +97,7 @@ Select **Security** from the navigation bar and click **New Access Token**.
 ###Creating a Docker Image
 
 Create a directory (folder) named `custom-llm`.
-Create a file `.dockerfile`. Paste the following snippet in the file.
+Create a file `Dockerfile`. Paste the following snippet in the file.
 
 ```dockerfile
 # Specify the base layers (default dependencies) to use
@@ -241,6 +241,16 @@ Use the following information for reference:
 - **Path:** The folder in your GitHub where your workflow is located. For this tutorial it is LearningScenarios.
 
 - **Revision:** The is the unique ID of your GitHub commit. Set this to HEAD to have it automatically refer to the latest commit.
+
+**NOTE:**
+
+1. If creation of application fails, check the ollama.yaml file, and ensure that the names in lines #4, #7, #9, and #11 are unique, and haven't been used previously.
+
+2. Generate a fresh classic git token for authentication, with all necessary privileges provided during creation.
+
+3. Ensure that you have put the correct url in `YOUR_DOCKER_REGISTRY_URL` while setting up docket secret.
+
+4. Refresh the launchpad, and create a fresh application.   
 
 ### Creating configuration
 
